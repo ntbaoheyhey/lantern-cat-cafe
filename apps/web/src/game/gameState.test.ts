@@ -89,7 +89,7 @@ it('switchApi restarts from the new API and drops late answers from the old one'
   let release: (r: ClaimResult) => void = () => {};
   const slow = new MockGameApi();
   const late = new Promise<ClaimResult>((r) => (release = r));
-  const old = { ...slow, getState: () => slow.getState(), claim: () => late, equip: slow.equip, fightBoss: slow.fightBoss };
+  const old = { ...slow, getState: () => slow.getState(), claim: () => late, equip: slow.equip, fightBoss: slow.fightBoss, forgeRelic: () => slow.forgeRelic(), reportMint: slow.reportMint };
   const loop = new GameLoop({ api: old });
   await loop.start(document);
   const pending = loop.claim();

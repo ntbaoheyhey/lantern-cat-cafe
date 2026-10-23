@@ -12,5 +12,7 @@ export function withSessionGuard(api: GameApi, onUnauthenticated: () => void): G
     claim: () => guard(api.claim()),
     equip: (gearId) => guard(api.equip(gearId)),
     fightBoss: () => guard(api.fightBoss()),
+    forgeRelic: () => guard(api.forgeRelic()),
+    reportMint: (nonce, txHash) => guard(api.reportMint(nonce, txHash)),
   };
 }
