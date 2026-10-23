@@ -64,7 +64,9 @@ export class GameLoop {
   private doc: Document | null = null;
   private listeners = new Set<() => void>();
   private snap: GameSnapshot = this.compute();
-  private readonly api: GameApi;
+  private api: GameApi;
+  /** Bumped by stop(); answers that arrive for an older generation are dropped. */
+  private gen = 0;
   private readonly now: () => number;
 
   constructor(opts: GameLoopOptions) {
@@ -114,18 +116,22 @@ export class GameLoop {
     if (this.doc) return;
     this.doc = doc;
     doc.addEventListener('visibilitychange', this.onVisibility);
+    const gen = this.gen;
     try {
-      this.server = await this.api.getState();
-      this.prediction = reconcile(this.prediction, this.server);
+      const state = await this.api.getState();
+      if (gen !== this.gen) return; // stopped meanwhile
+      this.server = state;
+      this.prediction = reconcile(this.prediction, state);
     } catch {
       /* keep zeros; the next claim will fill in */
     }
-    if (this.doc !== doc) return; // stopped meanwhile
+    if (gen !== this.gen) return;
     if (doc.visibilityState === 'hidden') this.publish();
     else this.resume();
   }
 
   stop(): void {
+    this.gen++;
     this.pause();
     this.doc?.removeEventListener('visibilitychange', this.onVisibility);
     this.doc = null;
@@ -158,6 +164,17 @@ export class GameLoop {
     this.publish();
   }
 
+  /** Swap the API (sign in or out): drop everything known and restart from the new API's state. */
+  switchApi(api: GameApi): void {
+    const doc = this.doc;
+    this.stop();
+    this.api = api;
+    this.prediction = EMPTY_PREDICTION;
+    this.server = null;
+    this.publish();
+    if (doc) void this.start(doc);
+  }
+
   /** Take a fresher server answer (claim, equip, boss fight) as the new baseline. */
   adopt(state: ServerState): void {
     this.advance();
@@ -169,7 +186,9 @@ export class GameLoop {
   /** Claim now and replace the prediction with the server's numbers. */
   async claim(): Promise<ClaimResult | null> {
     try {
+      const gen = this.gen;
       const result = await this.api.claim();
+      if (gen !== this.gen) return null; // the API was swapped or the loop stopped
       this.adopt(result);
       return result;
     } catch {
