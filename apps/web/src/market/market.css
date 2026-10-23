@@ -8,3 +8,6 @@
 .market-form input, .market-form select { min-height: 32px; font: inherit; max-width: 140px; }
 .tabpanel .market-hint { font-size: 0.8rem; color: var(--muted); margin: 0; }
 @media (max-width: 480px) { .market-listings li { grid-template-columns: 1fr auto; } }
+.market-relics li, .market-relic { display: flex; align-items: center; gap: 8px; }
+.market-relics img, .market-relic img { image-rendering: pixelated; border-radius: 4px; }
+.market-relics small { font-weight: 400; color: var(--muted); }
