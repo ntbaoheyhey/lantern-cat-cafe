@@ -81,7 +81,7 @@ describe('forge', () => {
 
   it('reports why forging is blocked', async () => {
     const s = await new MockGameApi({ now: () => 0 }).getState();
-    expect(s.forge).toEqual({ blockedBy: 'no_boss_key', forgedToday: false, pending: null });
+    expect(s.forge).toEqual({ blockedBy: 'no_boss_key', forgedToday: false, pending: null, today: null });
     await expect(new MockGameApi({ now: () => 0 }).forgeRelic()).rejects.toEqual(
       new GameApiError('forge_blocked', 'no_boss_key'),
     );
@@ -95,7 +95,12 @@ describe('forge', () => {
     expect(voucher.relicId).toBe(String(relicIdFor(voucher.rarityName)));
     expect(voucher.rarity).toBe(rarityIndex(voucher.rarityName));
     expect(voucher.signature).toBe(DEMO_SIGNATURE);
-    expect(state.forge).toEqual({ blockedBy: null, forgedToday: true, pending: voucher });
+    expect(state.forge).toEqual({
+      blockedBy: null,
+      forgedToday: true,
+      pending: voucher,
+      today: { relicId: voucher.relicId, rarityName: voucher.rarityName, minted: false, txHash: null },
+    });
     // Asking again returns the same voucher without charging.
     const again = await api.forgeRelic();
     expect(again.voucher).toEqual(voucher);
@@ -118,7 +123,12 @@ describe('forge', () => {
     const { voucher } = await api.forgeRelic();
     await expect(api.reportMint('999', '0x1')).rejects.toEqual(new GameApiError('not_found'));
     const s = await api.reportMint(voucher.nonce, '0x1');
-    expect(s.forge).toEqual({ blockedBy: 'daily_limit', forgedToday: true, pending: null });
+    expect(s.forge).toEqual({
+      blockedBy: 'daily_limit',
+      forgedToday: true,
+      pending: null,
+      today: { relicId: voucher.relicId, rarityName: voucher.rarityName, minted: true, txHash: '0x1' },
+    });
     await expect(api.forgeRelic()).rejects.toEqual(new GameApiError('forge_blocked', 'daily_limit'));
   });
 });

@@ -136,7 +136,7 @@ describe("relic-forge", () => {
       { day: "2026-10-31", spent: false },
     ]);
     expect(r.state).toMatchObject({ shards: 5, bossKeys: 1 });
-    expect(r.state.forge).toEqual({ blockedBy: null, forgedToday: true, pending: r.voucher });
+    expect(r.state.forge).toEqual({ blockedBy: null, forgedToday: true, pending: r.voucher, today: null });
     expect(await vouchers(p.id)).toEqual([
       { nonce: r.voucher.nonce, status: "issued", relic_id: relicIdFor(rarity), rarity, tx_hash: null },
     ]);
@@ -211,11 +211,11 @@ describe("relic-forge", () => {
 
     clock = T0 + 3600_000;
     const blocked = await getState(deps, p.id);
-    expect(blocked.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect(blocked.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null, today: null });
     await expect(forgeRelic(deps, p.id)).rejects.toMatchObject({ code: "forge_blocked", reason: "daily_limit" });
 
     clock = Date.UTC(2026, 10, 1, 17, 0, 1); // 00:00:01 UTC+7 on 2026-11-02
-    expect((await getState(deps, p.id)).forge).toEqual({ blockedBy: null, forgedToday: false, pending: null });
+    expect((await getState(deps, p.id)).forge).toEqual({ blockedBy: null, forgedToday: false, pending: null, today: null });
     const next = await forgeRelic(deps, p.id);
     expect(next.voucher.nonce).not.toBe(v.nonce);
     expect(await shards(p.id)).toBe(0);
@@ -234,7 +234,7 @@ describe("relic-forge", () => {
     expect(await shards(poor.id)).toBe(COST - 1);
     expect(await keys(poor.id)).toEqual([{ day: "2026-10-31", spent: false }]);
     expect(await vouchers(poor.id)).toEqual([]);
-    expect((await getState(deps, poor.id)).forge).toEqual({ blockedBy: "not_enough_shards", forgedToday: false, pending: null });
+    expect((await getState(deps, poor.id)).forge).toEqual({ blockedBy: "not_enough_shards", forgedToday: false, pending: null, today: null });
   });
 
   it("two concurrent forges spend once and both get the same voucher", async () => {
@@ -262,7 +262,7 @@ describe("relic-forge", () => {
     });
     expect(out.status).toBe("new");
     const noSigner: GameDeps = { ...deps, relic: { chain, nft: NFT } };
-    expect((await getState(noSigner, p.id)).forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect((await getState(noSigner, p.id)).forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null, today: null });
     const pending = (await getState(deps, p.id)).forge.pending!;
     expect(await recover(pending)).toBe(SIGNER);
     expect((await getState(noSigner, p.id)).forge.pending).toEqual(pending);
@@ -287,7 +287,7 @@ describe("relic-mint-report", () => {
     const { p, v } = await forged();
     const tx = mintTx(v);
     const s = await reportMint(deps, p.id, v.nonce, tx.toUpperCase().replace("0X", "0x"));
-    expect(s.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect(s.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null, today: null });
     expect(await vouchers(p.id)).toEqual([expect.objectContaining({ status: "minted", tx_hash: tx })]);
     const again = await reportMint(deps, p.id, v.nonce, tx);
     expect(again).toEqual(s);
@@ -361,6 +361,7 @@ describe("HTTP", () => {
           blockedBy: null,
           forgedToday: true,
           pending: { player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
+          today: null,
         },
         power: 1,
         goldPerSecond: 1,
