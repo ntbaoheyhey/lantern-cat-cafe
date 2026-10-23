@@ -1,0 +1,32 @@
+.forge { display: grid; gap: 8px; max-width: 640px; }
+.forge-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+.tabpanel .forge-stats { display: grid; grid-template-rows: auto auto; grid-auto-flow: column; grid-template-columns: none; gap: 2px 20px; }
+.forge-stats dt { font-size: 0.8rem; }
+.forge-stats dd { font-weight: 600; }
+.forge-odds { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--muted); align-self: center; }
+.forge-actions, .forge-mint { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.forge-result { display: grid; gap: 6px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; }
+.tabpanel .forge-result p { margin: 0; color: var(--text); }
+.forge-btn {
+  min-height: 36px;
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  justify-self: start;
+}
+.forge-go { background: #b86bff; }
+.forge-btn:disabled { opacity: 0.5; cursor: default; }
+.tabpanel .forge-note { color: #ffb86b; }
+.tabpanel .forge-error { color: #ff8080; }
+.tabpanel .forge-done { color: #6fdc8c; }
+.forge-done a, .forge-result a { color: var(--accent); }
+.forge-reveal { font-size: 1.05rem; animation: forge-pop 0.6s ease-out; }
+.forge-reveal.forging { color: var(--muted); animation: forge-pulse 0.8s ease-in-out infinite alternate; }
+@keyframes forge-pop { from { transform: scale(1.25); opacity: 0.3; } to { transform: none; opacity: 1; } }
+@keyframes forge-pulse { from { opacity: 0.4; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .forge-reveal, .forge-reveal.forging { animation: none; } }
