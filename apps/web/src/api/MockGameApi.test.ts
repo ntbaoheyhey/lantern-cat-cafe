@@ -1,7 +1,7 @@
-import { CONFIG, computeClaimGains, computeIdleGains, deriveSeed, gearStat, heroPower, starterGear } from '@taskbar-hero/game-rules';
-import { expect, it } from 'vitest';
+import { CONFIG, computeClaimGains, computeIdleGains, deriveSeed, gearStat, heroPower, rarityIndex, relicIdFor, starterGear } from '@taskbar-hero/game-rules';
+import { describe, expect, it } from 'vitest';
 import { GameApiError } from './GameApi';
-import { MockGameApi } from './MockGameApi';
+import { DEMO_SIGNATURE, MockGameApi } from './MockGameApi';
 
 const DAY_MS = 86_400_000;
 
@@ -74,4 +74,51 @@ it('fightBoss counts attempts, grants one key per day, and stops at the daily li
   const nextDay = await api.getState();
   expect(nextDay.boss.attemptsLeft).toBe(CONFIG.boss.maxAttemptsPerDay);
   expect(nextDay.boss.keyEarnedToday).toBe(false);
+});
+
+describe('forge', () => {
+  const rich = { shards: CONFIG.relic.shardCost, bossKeys: CONFIG.relic.bossKeyCost };
+
+  it('reports why forging is blocked', async () => {
+    const s = await new MockGameApi({ now: () => 0 }).getState();
+    expect(s.forge).toEqual({ blockedBy: 'no_boss_key', forgedToday: false, pending: null });
+    await expect(new MockGameApi({ now: () => 0 }).forgeRelic()).rejects.toEqual(
+      new GameApiError('forge_blocked', 'no_boss_key'),
+    );
+  });
+
+  it('spends the cost once and returns a voucher whose relicId matches its rarity', async () => {
+    const api = new MockGameApi({ now: () => 0, start: rich });
+    const { voucher, state } = await api.forgeRelic();
+    expect(state.shards).toBe(0);
+    expect(state.bossKeys).toBe(0);
+    expect(voucher.relicId).toBe(String(relicIdFor(voucher.rarityName)));
+    expect(voucher.rarity).toBe(rarityIndex(voucher.rarityName));
+    expect(voucher.signature).toBe(DEMO_SIGNATURE);
+    expect(state.forge).toEqual({ blockedBy: null, forgedToday: true, pending: voucher });
+    // Asking again returns the same voucher without charging.
+    const again = await api.forgeRelic();
+    expect(again.voucher).toEqual(voucher);
+  });
+
+  it('re-signs an expired voucher with the same relic, never re-rolling', async () => {
+    let t = 0;
+    const api = new MockGameApi({ now: () => t, start: rich });
+    const first = (await api.forgeRelic()).voucher;
+    t = (first.expiry + 1) * 1000;
+    const second = (await api.forgeRelic()).voucher;
+    expect(second.relicId).toBe(first.relicId);
+    expect(second.rarity).toBe(first.rarity);
+    expect(second.nonce).not.toBe(first.nonce);
+    expect(second.expiry).toBeGreaterThan(t / 1000);
+  });
+
+  it('reportMint clears the pending voucher and the daily limit applies', async () => {
+    const api = new MockGameApi({ now: () => 0, start: { shards: 2 * CONFIG.relic.shardCost, bossKeys: 2 } });
+    const { voucher } = await api.forgeRelic();
+    await expect(api.reportMint('999', '0x1')).rejects.toEqual(new GameApiError('not_found'));
+    const s = await api.reportMint(voucher.nonce, '0x1');
+    expect(s.forge).toEqual({ blockedBy: 'daily_limit', forgedToday: true, pending: null });
+    await expect(api.forgeRelic()).rejects.toEqual(new GameApiError('forge_blocked', 'daily_limit'));
+  });
 });

@@ -60,4 +60,19 @@ describe('SupabaseGameApi', () => {
       new GameApiError('no_attempts_left'),
     );
   });
+
+  it('forgeRelic and reportMint post to their functions and keep the block reason', async () => {
+    const { api, fetch } = setup({ body: {} });
+    await api.forgeRelic();
+    await api.reportMint('42', '0xabc');
+    expect(fetch.mock.calls.map(([url, init]) => [url, init?.body])).toEqual([
+      ['https://proj.supabase.co/functions/v1/relic-forge', '{}'],
+      ['https://proj.supabase.co/functions/v1/relic-mint-report', '{"nonce":"42","txHash":"0xabc"}'],
+    ]);
+    const err = await setup({ status: 409, body: { error: 'forge_blocked', reason: 'daily_limit' } })
+      .api.forgeRelic()
+      .catch((e: unknown) => e);
+    expect(err).toEqual(new GameApiError('forge_blocked', 'daily_limit'));
+    expect((err as GameApiError).message).toBe('daily_limit');
+  });
 });

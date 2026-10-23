@@ -165,6 +165,19 @@ export function rollRelicRarity(seed: Seed): Rarity {
   return rng.weighted(C.relic.rarityOddsBp, C.rarities);
 }
 
+/** On-chain rarity (uint8): the index of `rarity` in CONFIG.rarities. */
+export function rarityIndex(rarity: Rarity): number {
+  return C.rarities.indexOf(rarity);
+}
+
+/**
+ * The RelicNFT token id for a rarity tier. One relicId per tier (common = 1, ...) so a relicId's
+ * rarity never changes (docs/contracts.md, rule 1). Server and client must both use this.
+ */
+export function relicIdFor(rarity: Rarity): number {
+  return rarityIndex(rarity) + 1;
+}
+
 /** Day index (days reset at midnight UTC+7) for a unix time in seconds. */
 export function dayIndex(unixSeconds: number): number {
   return Math.floor((unixSeconds + C.time.dayOffsetSeconds) / C.time.secondsPerDay);
