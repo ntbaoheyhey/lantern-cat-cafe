@@ -30,6 +30,11 @@ The owner can rotate the signer with `setSigner(address)` (emits `SignerUpdated(
 vouchers signed by the old key stop working immediately. The owner also sets the metadata URI with
 `setURI(string)` (ERC-1155 `{id}` substitution applies).
 
+`cancelNonce(uint256 nonce)` (owner only) marks a single nonce as used and emits `NonceCancelled(nonce)`,
+killing that one voucher without rotating the signer. It reverts with `NonceAlreadyUsed()` if the nonce
+was already redeemed or cancelled. `renounceOwnership()` is disabled and always reverts with
+`RenounceDisabled()`, so the contract can never end up with no owner (and no way to rotate the signer).
+
 ### EIP-712 typed data (backend task B5 must match this exactly)
 
 Domain:
@@ -95,3 +100,18 @@ The client then calls `mint(voucher, signature)` from `player`'s wallet. Only st
 - Reentrancy: the nonce is marked used and rarity stored before `_mint`, so a contract wallet's
   `onERC1155Received` hook cannot redeem the same voucher twice (covered by a test).
 - Signer key compromise: owner rotates with `setSigner`. Outstanding vouchers from the old key die.
+
+### Backend rules
+
+The contract only enforces what is listed above; the backend must uphold these:
+
+1. **Rarity is a fixed function of `relicId`.** Each `relicId` is exactly one rarity tier (for example
+   `relicId` encodes the tier). Never roll rarity independently per voucher: the first mint fixes
+   `rarityOf(relicId)`, and any later voucher with a different rarity reverts with `RarityMismatch()`
+   and can never be redeemed.
+2. **Keep voucher expiry short.** 30 minutes planned, never over 24 hours. Otherwise players can hoard
+   vouchers and bypass the one-per-day rule.
+3. **Use `cancelNonce` to kill a single bad voucher** (owner only) instead of rotating the signer.
+4. **Check `relicExists(relicId)` before trusting `rarityOf(relicId)`.** For a relic that was never
+   minted, `rarityOf` returns 0, which is indistinguishable from a real rarity 0. Markets and clients
+   must check this first.

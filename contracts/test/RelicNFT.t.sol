@@ -9,6 +9,7 @@ import {RelicNFT} from "../src/RelicNFT.sol";
 contract RelicNFTTest is Test {
     event RelicForged(address indexed player, uint256 indexed relicId, uint8 rarity, uint256 nonce);
     event SignerUpdated(address indexed previousSigner, address indexed newSigner);
+    event NonceCancelled(uint256 indexed nonce);
 
     // secp256k1 curve order; private keys must be in [1, N-1].
     uint256 internal constant SECP256K1_N = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141;
@@ -216,6 +217,100 @@ contract RelicNFTTest is Test {
         vm.prank(owner);
         relic.setURI("ipfs://relics/{id}.json");
         assertEq(relic.uri(1), "ipfs://relics/{id}.json");
+    }
+
+    function test_ownerCancelsNonceThenVoucherReverts() public {
+        RelicNFT.Voucher memory v = _voucher(alice, 1);
+        bytes memory sig = _sign(signerKey, v);
+        vm.expectEmit(address(relic));
+        emit NonceCancelled(1);
+        vm.prank(owner);
+        relic.cancelNonce(1);
+        assertTrue(relic.usedNonces(1));
+
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.NonceAlreadyUsed.selector);
+        relic.mint(v, sig);
+    }
+
+    function test_nonOwnerCannotCancelNonce() public {
+        vm.prank(alice);
+        vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, alice));
+        relic.cancelNonce(1);
+    }
+
+    function test_cancelUsedNonceReverts() public {
+        RelicNFT.Voucher memory v = _voucher(alice, 1);
+        bytes memory sig = _sign(signerKey, v);
+        vm.prank(alice);
+        relic.mint(v, sig);
+
+        vm.prank(owner);
+        vm.expectRevert(RelicNFT.NonceAlreadyUsed.selector);
+        relic.cancelNonce(1);
+
+        vm.startPrank(owner);
+        relic.cancelNonce(2);
+        vm.expectRevert(RelicNFT.NonceAlreadyUsed.selector);
+        relic.cancelNonce(2);
+        vm.stopPrank();
+    }
+
+    function test_renounceOwnershipAlwaysReverts() public {
+        vm.prank(owner);
+        vm.expectRevert(RelicNFT.RenounceDisabled.selector);
+        relic.renounceOwnership();
+        assertEq(relic.owner(), owner);
+
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.RenounceDisabled.selector);
+        relic.renounceOwnership();
+    }
+
+    function test_highSSignatureRejected() public {
+        RelicNFT.Voucher memory v = _voucher(alice, 1);
+        (uint8 sv, bytes32 r, bytes32 s) = vm.sign(signerKey, relic.hashVoucher(v));
+        bytes memory sig = abi.encodePacked(r, bytes32(SECP256K1_N - uint256(s)), sv == 27 ? uint8(28) : uint8(27));
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.InvalidSignature.selector);
+        relic.mint(v, sig);
+    }
+
+    function test_compactSignatureRejected() public {
+        RelicNFT.Voucher memory v = _voucher(alice, 1);
+        (bytes32 r, bytes32 vs) = vm.signCompact(signerKey, relic.hashVoucher(v));
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.InvalidSignature.selector);
+        relic.mint(v, abi.encodePacked(r, vs));
+    }
+
+    function test_replayOnSecondInstanceRejected() public {
+        RelicNFT relic2 = new RelicNFT(owner, signer, "https://relics.example/{id}.json");
+        RelicNFT.Voucher memory v = _voucher(alice, 1);
+        bytes memory sig = _sign(signerKey, v); // signed for `relic`
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.InvalidSignature.selector);
+        relic2.mint(v, sig);
+    }
+
+    /// Documented behaviour: rarity is fixed by the first mint of a relicId. A second legitimately
+    /// signed voucher with a different rarity for the same relicId can never be redeemed. The backend
+    /// must therefore make rarity a fixed function of relicId (see docs/contracts.md, Backend rules).
+    function test_documented_rarityRaceBricksLaterVoucher() public {
+        RelicNFT.Voucher memory a = _voucher(alice, 1); // rarity 3
+        RelicNFT.Voucher memory b = _voucher(bob, 2);
+        b.rarity = 5;
+        bytes memory sigA = _sign(signerKey, a);
+        bytes memory sigB = _sign(signerKey, b);
+
+        vm.prank(bob);
+        relic.mint(b, sigB); // whichever mints first fixes the rarity
+        assertEq(relic.rarityOf(7), 5);
+
+        vm.prank(alice);
+        vm.expectRevert(RelicNFT.RarityMismatch.selector);
+        relic.mint(a, sigA);
+        assertFalse(relic.usedNonces(1)); // reverted tx leaves the nonce unspent, but it can never succeed
     }
 
     function test_receiverHookCannotReplayVoucher() public {

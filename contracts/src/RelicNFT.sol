@@ -39,6 +39,7 @@ contract RelicNFT is ERC1155, EIP712, Ownable {
 
     event RelicForged(address indexed player, uint256 indexed relicId, uint8 rarity, uint256 nonce);
     event SignerUpdated(address indexed previousSigner, address indexed newSigner);
+    event NonceCancelled(uint256 indexed nonce);
 
     error ZeroAddress();
     error NotVoucherPlayer();
@@ -46,6 +47,7 @@ contract RelicNFT is ERC1155, EIP712, Ownable {
     error NonceAlreadyUsed();
     error InvalidSignature();
     error RarityMismatch();
+    error RenounceDisabled();
 
     /// @param initialOwner Admin who can rotate the signer and set the metadata URI.
     /// @param initialSigner Server key that signs vouchers.
@@ -102,6 +104,20 @@ contract RelicNFT is ERC1155, EIP712, Ownable {
     /// @param newURI The new base URI.
     function setURI(string calldata newURI) external onlyOwner {
         _setURI(newURI);
+    }
+
+    /// @notice Invalidate a single voucher by burning its nonce.
+    /// @dev Reverts with {NonceAlreadyUsed} if the nonce was already redeemed or cancelled.
+    /// @param nonce The voucher nonce to cancel.
+    function cancelNonce(uint256 nonce) external onlyOwner {
+        if (usedNonces[nonce]) revert NonceAlreadyUsed();
+        usedNonces[nonce] = true;
+        emit NonceCancelled(nonce);
+    }
+
+    /// @notice Disabled: the owner must always exist so the signer can be rotated.
+    function renounceOwnership() public pure override {
+        revert RenounceDisabled();
     }
 
     function _setSigner(address newSigner) private {
