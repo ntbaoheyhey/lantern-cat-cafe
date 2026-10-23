@@ -7,6 +7,7 @@ import { blockText, capitalize, oddsRows } from './forgeText';
 import { MintPanel } from './MintPanel';
 import { loadUnreported, type UnreportedMint } from './mintStore';
 import { reportMint } from './report';
+import { TodayRelicCard, txUrl } from './TodayRelicCard';
 import './forge.css';
 
 export const REVEAL_MS = 1500;
@@ -18,8 +19,6 @@ export interface ForgeTabProps {
   demo?: boolean;
   revealMs?: number;
 }
-
-const txUrl = (hash: string) => `https://testnet.snowtrace.io/tx/${hash}`;
 
 /** Forge a Relic from shards and a Boss Key, reveal its rarity, and mint it to the wallet. */
 export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revealMs = REVEAL_MS }: ForgeTabProps) {
@@ -133,6 +132,8 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
         </ul>
       </div>
 
+      {forge.today && !revealing && !unreported && <TodayRelicCard today={forge.today} mintable={!!toMint} />}
+
       {revealing ? (
         <p className="forge-reveal forging" aria-live="polite">Forging…</p>
       ) : unreported ? (
@@ -158,7 +159,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
           )}
           <MintPanel voucher={toMint} api={api} loop={loop} onMinted={onMinted} />
         </div>
-      ) : (
+      ) : forge.today ? null : (
         <div className="forge-actions">
           <button
             type="button"

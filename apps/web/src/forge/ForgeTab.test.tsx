@@ -94,13 +94,52 @@ it('shows each blocked reason and disables Forge', async () => {
   }
 });
 
-it('shows the daily limit once today\'s Relic is forged and minted', async () => {
+it('shows today\'s minted Relic with a Snowtrace link instead of the Forge button', async () => {
   const { api, mock } = makeApi({ start: RICH });
   const { voucher } = await mock.forgeRelic();
   await mock.reportMint(voucher.nonce, HASH);
   await setup(api);
-  expect(screen.getByTestId('forge-blocked').textContent).toMatch(/already forged today's Relic/);
-  expect((screen.getByRole('button', { name: 'Forge' }) as HTMLButtonElement).disabled).toBe(true);
+  const card = screen.getByTestId('forge-today');
+  expect(card.textContent).toContain(`Today's Relic: ${voucher.rarityName[0]!.toUpperCase()}`);
+  expect(card.querySelector('img')!.getAttribute('src')).toBe(`/relics/${voucher.relicId}.svg`);
+  expect(screen.getByTestId('forge-today-status').textContent).toMatch(/^In your wallet/);
+  const link = screen.getByRole('link', { name: 'View on Snowtrace' });
+  expect(link.getAttribute('href')).toBe(`https://testnet.snowtrace.io/tx/${HASH}`);
+  expect(link.getAttribute('target')).toBe('_blank');
+  expect(link.getAttribute('rel')).toBe('noopener noreferrer');
+  expect(screen.queryByRole('button', { name: 'Forge' })).toBeNull();
+});
+
+it('shows no Today\'s Relic card before a forge', async () => {
+  await setup(makeApi({ start: RICH }).api);
+  expect(screen.queryByTestId('forge-today')).toBeNull();
+  expect(screen.getByRole('button', { name: 'Forge' })).toBeTruthy();
+});
+
+it('keeps the mint panel under the card while the voucher is pending', async () => {
+  const { api, mock } = makeApi({ start: RICH });
+  await mock.forgeRelic();
+  await setup(api);
+  expect(screen.getByTestId('forge-today-status').textContent).toBe('Mint it to your wallet');
+  expect(screen.getByRole('button', { name: 'Mint to wallet' })).toBeTruthy();
+  expect(screen.queryByRole('link', { name: 'View on Snowtrace' })).toBeNull();
+});
+
+it('says the voucher expired when today\'s Relic is unminted with no voucher', async () => {
+  const { api, mock } = makeApi({ start: RICH });
+  await mock.forgeRelic();
+  const noVoucher = <T extends ServerState>(st: T): T => ({ ...st, forge: { ...st.forge, pending: null } });
+  const expired: GameApi = {
+    ...api,
+    getState: async () => noVoucher(await api.getState()),
+    claim: async () => noVoucher(await api.claim()),
+  };
+  await setup(expired);
+  expect(screen.getByTestId('forge-today-status').textContent).toBe(
+    'Not minted yet. The voucher expired; forge again tomorrow.',
+  );
+  expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
+  expect(screen.queryByRole('button', { name: 'Forge' })).toBeNull();
 });
 
 it('forging reveals the rarity and updates shards and keys from the returned state', async () => {
@@ -115,6 +154,8 @@ it('a demo voucher hides the mint button', async () => {
   await setup(makeApi({ start: RICH }, true).api, true);
   await forge();
   expect(screen.getByTestId('forge-demo').textContent).toMatch(/Sign in to mint on Fuji/);
+  await waitFor(() => expect(screen.getByTestId('forge-today-status').textContent).toBe('Mint it to your wallet'));
+  expect(screen.queryByRole('link', { name: 'View on Snowtrace' })).toBeNull();
   expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
 });
 
