@@ -35,6 +35,16 @@ export interface RelicVoucher {
   signature: `0x${string}`;
 }
 
+/** The Relic forged (paid for) today, minted or not. */
+export interface TodayRelic {
+  relicId: string;
+  rarityName: Rarity;
+  /** True once the server has confirmed the mint on Fuji. */
+  minted: boolean;
+  /** The confirmed mint transaction, when known. */
+  txHash: `0x${string}` | null;
+}
+
 /** Today's forge status. "Today" resets at midnight UTC+7. */
 export interface ForgeStatus {
   /** Null when a forge is allowed now, otherwise why not (game-rules forgeBlock). */
@@ -46,6 +56,8 @@ export interface ForgeStatus {
    * re-signed with the same relicId and rarity, a new nonce and a new expiry.
    */
   pending: RelicVoucher | null;
+  /** Today's forged Relic, or null when none was forged today. */
+  today: TodayRelic | null;
 }
 
 /** Authoritative account snapshot. The server's numbers always win. */

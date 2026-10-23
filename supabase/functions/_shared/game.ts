@@ -30,6 +30,7 @@ import type {
   OwnedGear,
   RelicVoucher,
   ServerState,
+  TodayRelic,
 } from "../../../apps/web/src/api/GameApi.ts";
 import {
   REISSUE_GRACE_SECONDS,
@@ -101,6 +102,8 @@ export interface Snapshot {
   forgedToday?: boolean;
   /** The player's live (issued, not minted) voucher, if any. */
   pending?: VoucherRow | null;
+  /** Today's forged Relic and its mint state (filled by B7); absent = none. */
+  today?: TodayRelic | null;
 }
 
 /** A snapshot whose pending voucher is signed and in API form. */
@@ -257,7 +260,7 @@ function forgeStatus(s: Loaded, nowMs: number): ForgeStatus {
   const pending = s.pending;
   const forgedToday = s.forgedToday ?? false;
   const player = { ...newPlayer(), shards: Number(s.shards), bossKeys: Number(s.bossKeys), lastForgeDay: forgedToday ? today : -1 };
-  return { blockedBy: pending ? null : forgeBlock(player, today), forgedToday, pending };
+  return { blockedBy: pending ? null : forgeBlock(player, today), forgedToday, pending, today: s.today ?? null };
 }
 
 function toState(s: Loaded, nowMs: number): ServerState {

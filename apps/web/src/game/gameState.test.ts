@@ -10,7 +10,7 @@ const extra = {
   inventory: [],
   bossKeys: 0,
   boss: { level: 1, attemptsToday: 0, attemptsLeft: 5, keyEarnedToday: false },
-  forge: { blockedBy: null, forgedToday: false, pending: null },
+  forge: { blockedBy: null, forgedToday: false, pending: null, today: null },
 };
 
 function setVisibility(state: 'visible' | 'hidden') {

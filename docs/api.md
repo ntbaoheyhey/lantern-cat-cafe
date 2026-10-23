@@ -40,7 +40,7 @@ Errors return a non-2xx status with `{ "error": GameApiErrorCode }` (plus `"reas
 - **equip** unequips whatever is in the item's slot and equips the item, in one transaction.
 - **boss-fight** refuses at the daily attempt limit, otherwise records an attempt and runs `simulateBoss(power, bossLevel, serverSeed)`. A win raises `bossLevel` by 1 (up to `boss.maxLevel`) and, if no key was granted today, grants one Boss Key (`boss_keys` unique per player and day). A loss changes nothing but the attempt count. The client replays `result.log` and never re-simulates.
 - **bossKeys** counts unspent keys (`boss_keys.spent_at is null`). B5 spends them.
-- **ServerState.forge** is `{ blockedBy, forgedToday, pending }`. `blockedBy` is `forgeBlock(...)` from game-rules, or null when forging is allowed or a voucher is pending.
+- **ServerState.forge** is `{ blockedBy, forgedToday, pending, today }`. `today` is today's forged Relic (`relicId`, `rarityName`, `minted`, `txHash`) or null; it comes from `relic_forges` for today's UTC+7 day joined with its newest voucher (B7). `blockedBy` is `forgeBlock(...)` from game-rules, or null when forging is allowed or a voucher is pending.
 - **relic-forge** (one Relic per UTC+7 day):
   1. If a voucher is pending (issued, not minted), return it with no spend and no re-roll. If it has expired, re-sign the same `relicId` and `rarity` with a new nonce and expiry (~30 min), mark the old nonce expired, and return the new one.
   2. Otherwise refuse with `forge_blocked` if `forgeBlock` says so.

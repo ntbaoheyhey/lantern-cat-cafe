@@ -25,6 +25,7 @@ import {
   type OwnedGear,
   type RelicVoucher,
   type ServerState,
+  type TodayRelic,
 } from './GameApi';
 
 /** Demo vouchers carry this all-zero signature; RelicNFT rejects it, so demo mode never mints. */
@@ -56,6 +57,7 @@ export class MockGameApi implements GameApi {
   private attemptsToday = 0;
   private forges = 0;
   private pending: RelicVoucher | null = null;
+  private forgedRelic: TodayRelic | null = null;
 
   constructor(opts: MockGameApiOptions = {}) {
     this.seed = opts.seed ?? 12345;
@@ -106,6 +108,7 @@ export class MockGameApi implements GameApi {
         blockedBy: this.pending ? null : forgeBlock(this.player, this.today()),
         forgedToday: this.player.lastForgeDay === this.today(),
         pending: this.pending ? { ...this.pending } : null,
+        today: this.forgedRelic && this.player.lastForgeDay === this.today() ? { ...this.forgedRelic } : null,
       },
       power,
       goldPerSecond: goldPerSecond(power),
@@ -192,12 +195,14 @@ export class MockGameApi implements GameApi {
       expiry: nowS + VOUCHER_TTL_SECONDS,
       signature: DEMO_SIGNATURE,
     };
+    this.forgedRelic = { relicId: this.pending.relicId, rarityName: rarity, minted: false, txHash: null };
     return Promise.resolve({ voucher: { ...this.pending }, state: this.snapshot() });
   }
 
-  reportMint(nonce: string, _txHash: `0x${string}`): Promise<ServerState> {
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState> {
     if (!this.pending || this.pending.nonce !== nonce) return Promise.reject(new GameApiError('not_found'));
     this.pending = null;
+    if (this.forgedRelic) this.forgedRelic = { ...this.forgedRelic, minted: true, txHash };
     return Promise.resolve(this.snapshot());
   }
 }
