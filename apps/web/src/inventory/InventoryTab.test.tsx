@@ -45,7 +45,7 @@ it('equipping updates the power shown', async () => {
 
 it('shows a friendly empty state when nothing is unequipped', async () => {
   await setup([]);
-  expect(screen.getByTestId('inventory-empty').textContent).toMatch(/bag is empty/);
+  expect(screen.getByTestId('inventory-empty').textContent).toMatch(/No spare gear/);
   expect(screen.queryByRole('button', { name: /^Equip/ })).toBeNull();
   for (const slot of ['Weapon', 'Helm', 'Armor', 'Ring']) {
     expect(screen.getByRole('heading', { name: slot })).toBeTruthy();

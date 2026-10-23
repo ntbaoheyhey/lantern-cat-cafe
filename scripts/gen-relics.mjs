@@ -62,7 +62,7 @@ RELICS.forEach((r, i) => {
   writeFileSync(`${out}/${id}.svg`, svg(r, i));
   const meta = {
     name: `${r.name} Relic`,
-    description: `A ${r.rarity} Relic forged in Taskbar Hero, an idle RPG on the Avalanche Fuji testnet.`,
+    description: `${/^[aeiou]/.test(r.rarity) ? "An" : "A"} ${r.rarity} Relic forged in Taskbar Hero, an idle RPG on the Avalanche Fuji testnet.`,
     image: `${SITE}/relics/${id}.svg`,
     external_url: SITE,
     attributes: [{ trait_type: 'Rarity', value: r.name }],
