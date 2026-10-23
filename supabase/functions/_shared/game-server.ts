@@ -62,6 +62,18 @@ export function pgGameStore(): GameStore {
       if (error) throw new Error(`game_boss_fight: ${error.message}`);
       return data;
     },
+    async upgrade(a) {
+      const { data, error } = await db.rpc("game_upgrade", {
+        p_player: a.playerId,
+        p_gear_id: a.gearId,
+        p_expected_level: a.expectedLevel,
+        p_cost: a.cost,
+        p_max_level: a.maxLevel,
+        p_power: a.power,
+      });
+      if (error) throw new Error(`game_upgrade: ${error.message}`);
+      return data;
+    },
     async forge(a) {
       const { data, error } = await db.rpc("game_forge", {
         p_player: a.playerId,

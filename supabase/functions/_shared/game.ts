@@ -14,6 +14,7 @@ import {
   relicIdFor,
   rollRelicRarity,
   simulateBoss,
+  upgradeCost,
   starterGear,
   type ForgeBlock,
   type Gear,
@@ -130,6 +131,18 @@ export interface GameStore {
     maxAttempts: number;
     maxLevel: number;
   }): Promise<boolean | null>;
+  /**
+   * game_upgrade: raise an owned item from expectedLevel by one for `cost` gold, storing `power`.
+   * 'stale' when its level is no longer expectedLevel.
+   */
+  upgrade(args: {
+    playerId: string;
+    gearId: string;
+    expectedLevel: number;
+    cost: number;
+    maxLevel: number;
+    power: number;
+  }): Promise<"ok" | "not_owner" | "stale" | "max_level" | "not_enough_gold">;
   /** game_forge: pay for today's forge, or report the pending voucher or the block. */
   forge(args: {
     playerId: string;
@@ -315,16 +328,45 @@ export async function claim(deps: GameDeps, playerId: string): Promise<ClaimResu
   return { ...toState(await load(deps, playerId, nowMs), nowMs), drops: drops ?? [] };
 }
 
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 /** POST equip { gearId } */
 export async function equip(deps: GameDeps, playerId: string, gearId: unknown): Promise<ServerState> {
   // Anything that is not a uuid cannot be one of the player's items.
-  if (typeof gearId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(gearId)) {
-    throw new GameError("not_owner");
-  }
+  if (typeof gearId !== "string" || !UUID.test(gearId)) throw new GameError("not_owner");
   const nowMs = (deps.now ?? Date.now)();
   await load(deps, playerId, nowMs);
   if (!(await deps.store.equip(playerId, gearId))) throw new GameError("not_owner");
   return toState(await load(deps, playerId, nowMs), nowMs);
+}
+
+/**
+ * POST upgrade { gearId }: one level for upgradeCost(item) gold. The price is computed from the level
+ * read here; game_upgrade refuses if that level changed meanwhile, and we then price it again.
+ */
+export async function upgrade(deps: GameDeps, playerId: string, gearId: unknown): Promise<ServerState> {
+  if (typeof gearId !== "string" || !UUID.test(gearId)) throw new GameError("not_owner");
+  const nowMs = (deps.now ?? Date.now)();
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const s = await load(deps, playerId, nowMs);
+    const item = s.gear.find((g) => g.id === gearId);
+    if (!item) throw new GameError("not_owner");
+    const cost = upgradeCost(item);
+    if (cost === null) throw new GameError("max_level");
+    if (Number(s.gold) < cost) throw new GameError("not_enough_gold");
+    const out = await deps.store.upgrade({
+      playerId,
+      gearId,
+      expectedLevel: item.level,
+      cost,
+      maxLevel: CONFIG.gear.maxLevel,
+      power: toRow({ ...item, level: item.level + 1 }).power,
+    });
+    if (out === "ok") return toState(await load(deps, playerId, nowMs), nowMs);
+    if (out !== "stale") throw new GameError(out);
+  }
+  // Upgraded concurrently three times in a row; the client can simply retry.
+  throw new GameError("server_error");
 }
 
 /**
@@ -444,7 +486,7 @@ export interface HttpDeps {
 
 /**
  * Wrap a POST handler: CORS preflight, method check, JWT -> player id, GameError -> its status.
- * Only `fn` sees the body, and only equip (gearId) and relic-mint-report (nonce, txHash) read it;
+ * Only `fn` sees the body, and only equip and upgrade (gearId) and relic-mint-report (nonce, txHash) read it;
  * player, wallet and time come from the JWT, the database and the server clock.
  */
 export function gameHandler(
@@ -471,7 +513,7 @@ export function gameHandler(
 export function routes(
   deps: GameDeps,
 ): Record<
-  "game-state" | "idle-claim" | "equip" | "boss-fight" | "relic-forge" | "relic-mint-report",
+  "game-state" | "idle-claim" | "equip" | "boss-fight" | "upgrade" | "relic-forge" | "relic-mint-report",
   (playerId: string, body: Record<string, unknown>) => Promise<unknown>
 > {
   return {
@@ -479,6 +521,7 @@ export function routes(
     "idle-claim": (player) => claim(deps, player),
     equip: (player, body) => equip(deps, player, body.gearId),
     "boss-fight": (player) => fightBoss(deps, player),
+    upgrade: (player, body) => upgrade(deps, player, body.gearId),
     "relic-forge": (player) => forgeRelic(deps, player),
     "relic-mint-report": (player, body) => reportMint(deps, player, body.nonce, body.txHash),
   };
