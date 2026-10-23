@@ -1,0 +1,30 @@
+.inv-power { margin: 0 0 8px; }
+.inv-power strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.inv-empty { margin: 0 0 8px; }
+.tabpanel .inv-error { color: #ff8080; margin: 0 0 8px; }
+.inv-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.inv-slot { border: 1px solid var(--border); border-radius: 6px; padding: 8px; }
+.inv-slot h3 { margin: 0 0 6px; font-size: 0.9rem; color: var(--muted); }
+.inv-slot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.inv-item { display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 0.9rem; }
+.inv-name { flex: 1; min-width: 0; }
+.inv-meta { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.inv-tag { font-size: 0.75rem; color: var(--accent); }
+.inv-delta { font-size: 0.8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.inv-delta.up { color: #6fdc8c; }
+.inv-delta.down { color: #ff8080; }
+.inv-equip {
+  min-height: 32px;
+  padding: 0 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.inv-equip:disabled { opacity: 0.6; cursor: default; }
+.rarity-common { color: #c8c8d0; }
+.rarity-rare { color: #5b9dff; }
+.rarity-epic { color: #c07bff; }
+.rarity-legendary { color: #ffb341; }
