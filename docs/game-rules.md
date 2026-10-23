@@ -1,6 +1,6 @@
 # Game rules (`@taskbar-hero/game-rules`)
 
-> **DRAFT: numbers need team sign-off.**
+> **Signed off 2026-10-23.** Changed at sign-off: `boss.powerGrowth` 1.5 → 1.15, `relic.shardCost` 60 → 30 (see the balance table below). Any later change needs the user's sign-off again.
 
 Pure TypeScript, shared by client (prediction) and server (truth). No network, DB or `Date.now()`; time is passed in as seconds; every roll takes an explicit uint32 seed (mulberry32 PRNG in `src/rng.ts`). Every tunable number lives in `packages/game-rules/src/config.ts` (`CONFIG`).
 
@@ -48,14 +48,14 @@ A new player beats boss level 1 with probability >= 50% by 15 minutes of active 
 | `idle.maxDropsPerClaim` | 40 | Max gear items returned per claim (best kept). |
 | `idle.dropRarityWeights` | 70 / 22 / 7 / 1 | Relative gear drop rarity weights. |
 | `boss.basePower` | 62 | Boss level 1 power. |
-| `boss.powerGrowth` | 1.5 | Boss power multiplier per level. |
+| `boss.powerGrowth` | 1.15 | Boss power multiplier per level. |
 | `boss.hpPerPower` | 14 | Boss HP per boss power. |
 | `boss.damagePerPower` | 1 | Boss damage per second per boss power. |
 | `boss.damageSpread` | 0.2 | Boss damage varies +/- this fraction per round. |
 | `boss.maxRounds` | 60 | Fight is lost after this many rounds. |
 | `boss.maxLevel` | 50 | Highest boss level. |
 | `boss.maxAttemptsPerDay` | 5 | Boss fights per day (UTC+7). Draft, confirm at sign-off. |
-| `relic.shardCost` | 60 | Shards to forge a Relic. |
+| `relic.shardCost` | 30 | Shards to forge a Relic. |
 | `relic.bossKeyCost` | 1 | Boss Keys to forge a Relic. |
 | `relic.rarityOddsBp` | 6000 / 2800 / 1000 / 200 | Relic rarity odds in basis points (sum 10000): 60% / 28% / 10% / 2%. |
 | `time.secondsPerDay` | 86400 | Length of a forge / key day. |

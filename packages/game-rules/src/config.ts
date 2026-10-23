@@ -1,5 +1,6 @@
 /**
- * ALL tunable numbers for Taskbar Hero live here. DRAFT: needs team sign-off.
+ * ALL tunable numbers for Taskbar Hero live here. Signed off by the user on 2026-10-23
+ * (boss.powerGrowth 1.15 and relic.shardCost 30 changed at sign-off; the rest kept).
  * Time is always in seconds. Docs: docs/game-rules.md (keep in sync).
  */
 export const CONFIG = {
@@ -49,7 +50,7 @@ export const CONFIG = {
     offlineCapSeconds: 8 * 3600,
     /** Share of gold/shards/drops earned while offline (0..1). */
     offlineEfficiency: 0.5,
-    /** Seconds at the start of each claim paid at the full rate; the rest is offline. DRAFT. */
+    /** Seconds at the start of each claim paid at the full rate; the rest is offline. */
     onlineWindowSeconds: 5 * 60,
     /** Chance a kill drops a gear item. */
     gearDropChance: 0.05,
@@ -67,7 +68,7 @@ export const CONFIG = {
     /** Boss power at level 1. */
     basePower: 62,
     /** Boss power growth per level (multiplicative). */
-    powerGrowth: 1.5,
+    powerGrowth: 1.15,
     /** Boss hit points per point of boss power. */
     hpPerPower: 14,
     /** Boss damage per second per point of boss power. */
@@ -78,13 +79,13 @@ export const CONFIG = {
     maxRounds: 60,
     /** Highest boss level. */
     maxLevel: 50,
-    /** Boss fights allowed per day (UTC+7). DRAFT: confirm at sign-off. */
+    /** Boss fights allowed per day (UTC+7). */
     maxAttemptsPerDay: 5,
   },
 
   relic: {
     /** Shards needed to forge one Relic. */
-    shardCost: 60,
+    shardCost: 30,
     /** Boss Keys needed to forge one Relic. */
     bossKeyCost: 1,
     /** Rarity odds in basis points (1/100 of a percent); must sum to 10000. */

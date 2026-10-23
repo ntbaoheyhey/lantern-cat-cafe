@@ -136,7 +136,12 @@ describe("relic-forge", () => {
       { day: "2026-10-31", spent: false },
     ]);
     expect(r.state).toMatchObject({ shards: 5, bossKeys: 1 });
-    expect(r.state.forge).toEqual({ blockedBy: null, forgedToday: true, pending: r.voucher });
+    expect(r.state.forge).toEqual({
+      blockedBy: null,
+      forgedToday: true,
+      pending: r.voucher,
+      today: { relicId: String(relicIdFor(rarity)), rarityName: rarity, minted: false, txHash: null },
+    });
     expect(await vouchers(p.id)).toEqual([
       { nonce: r.voucher.nonce, status: "issued", relic_id: relicIdFor(rarity), rarity, tx_hash: null },
     ]);
@@ -207,15 +212,21 @@ describe("relic-forge", () => {
     clock = T0;
     const p = await player(COST * 2, ["2026-10-30", "2026-10-31"]);
     const v = (await forgeRelic(deps, p.id)).voucher;
-    await reportMint(deps, p.id, v.nonce, mintTx(v));
+    const tx = mintTx(v);
+    await reportMint(deps, p.id, v.nonce, tx);
 
     clock = T0 + 3600_000;
     const blocked = await getState(deps, p.id);
-    expect(blocked.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect(blocked.forge).toEqual({
+      blockedBy: "daily_limit",
+      forgedToday: true,
+      pending: null,
+      today: { relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
+    });
     await expect(forgeRelic(deps, p.id)).rejects.toMatchObject({ code: "forge_blocked", reason: "daily_limit" });
 
     clock = Date.UTC(2026, 10, 1, 17, 0, 1); // 00:00:01 UTC+7 on 2026-11-02
-    expect((await getState(deps, p.id)).forge).toEqual({ blockedBy: null, forgedToday: false, pending: null });
+    expect((await getState(deps, p.id)).forge).toEqual({ blockedBy: null, forgedToday: false, pending: null, today: null });
     const next = await forgeRelic(deps, p.id);
     expect(next.voucher.nonce).not.toBe(v.nonce);
     expect(await shards(p.id)).toBe(0);
@@ -234,7 +245,7 @@ describe("relic-forge", () => {
     expect(await shards(poor.id)).toBe(COST - 1);
     expect(await keys(poor.id)).toEqual([{ day: "2026-10-31", spent: false }]);
     expect(await vouchers(poor.id)).toEqual([]);
-    expect((await getState(deps, poor.id)).forge).toEqual({ blockedBy: "not_enough_shards", forgedToday: false, pending: null });
+    expect((await getState(deps, poor.id)).forge).toEqual({ blockedBy: "not_enough_shards", forgedToday: false, pending: null, today: null });
   });
 
   it("two concurrent forges spend once and both get the same voucher", async () => {
@@ -262,7 +273,12 @@ describe("relic-forge", () => {
     });
     expect(out.status).toBe("new");
     const noSigner: GameDeps = { ...deps, relic: { chain, nft: NFT } };
-    expect((await getState(noSigner, p.id)).forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect((await getState(noSigner, p.id)).forge).toEqual({
+      blockedBy: "daily_limit",
+      forgedToday: true,
+      pending: null,
+      today: { relicId: "1", rarityName: "common", minted: false, txHash: null },
+    });
     const pending = (await getState(deps, p.id)).forge.pending!;
     expect(await recover(pending)).toBe(SIGNER);
     expect((await getState(noSigner, p.id)).forge.pending).toEqual(pending);
@@ -273,6 +289,47 @@ describe("relic-forge", () => {
     const p = await player();
     await expect(forgeRelic({ ...deps, relic: { chain, nft: NFT } }, p.id)).rejects.toMatchObject({ code: "server_error" });
     expect(await shards(p.id)).toBe(COST);
+  });
+});
+
+describe("forge.today", () => {
+  it("null with no forge, then the unminted Relic, then minted with the reported tx hash", async () => {
+    clock = T0;
+    const p = await player();
+    expect((await getState(deps, p.id)).forge.today).toBeNull();
+
+    const v = (await forgeRelic(deps, p.id)).voucher;
+    const unminted = { relicId: v.relicId, rarityName: v.rarityName, minted: false, txHash: null };
+    expect((await getState(deps, p.id)).forge.today).toEqual(unminted);
+
+    // A re-signed voucher is still the same forge's Relic.
+    clock = (v.expiry + REISSUE_GRACE_SECONDS + 1) * 1000;
+    const v2 = (await forgeRelic(deps, p.id)).voucher;
+    expect(v2.nonce).not.toBe(v.nonce);
+    expect((await getState(deps, p.id)).forge.today).toEqual(unminted);
+
+    const tx = mintTx(v2);
+    await reportMint(deps, p.id, v2.nonce, tx);
+    expect((await getState(deps, p.id)).forge.today).toEqual({ ...unminted, minted: true, txHash: tx });
+    clock = T0;
+  });
+
+  it("yesterday's forge is not today's", async () => {
+    clock = T0;
+    const p = await player();
+    const v = (await forgeRelic(deps, p.id)).voucher;
+    await reportMint(deps, p.id, v.nonce, mintTx(v));
+    clock = Date.UTC(2026, 10, 1, 17, 0, 1); // 00:00:01 UTC+7 on 2026-11-02
+    expect((await getState(deps, p.id)).forge.today).toBeNull();
+    clock = T0;
+  });
+
+  it("is per player", async () => {
+    clock = T0;
+    const a = await player();
+    const b = await player();
+    await forgeRelic(deps, a.id);
+    expect((await getState(deps, b.id)).forge.today).toBeNull();
   });
 });
 
@@ -287,7 +344,12 @@ describe("relic-mint-report", () => {
     const { p, v } = await forged();
     const tx = mintTx(v);
     const s = await reportMint(deps, p.id, v.nonce, tx.toUpperCase().replace("0X", "0x"));
-    expect(s.forge).toEqual({ blockedBy: "daily_limit", forgedToday: true, pending: null });
+    expect(s.forge).toEqual({
+      blockedBy: "daily_limit",
+      forgedToday: true,
+      pending: null,
+      today: { relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
+    });
     expect(await vouchers(p.id)).toEqual([expect.objectContaining({ status: "minted", tx_hash: tx })]);
     const again = await reportMint(deps, p.id, v.nonce, tx);
     expect(again).toEqual(s);
@@ -361,6 +423,7 @@ describe("HTTP", () => {
           blockedBy: null,
           forgedToday: true,
           pending: { player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
+          today: { relicId: "1", rarityName: "common", minted: false, txHash: null },
         },
         power: 1,
         goldPerSecond: 1,

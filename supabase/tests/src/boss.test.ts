@@ -176,7 +176,7 @@ describe("boss-fight HTTP", () => {
         bossLevel: 1,
         bossKeys: 0,
         boss: { level: 1, attemptsToday: 0, attemptsLeft: 5, keyEarnedToday: false },
-        forge: { blockedBy: "no_boss_key", forgedToday: false, pending: null },
+        forge: { blockedBy: "no_boss_key", forgedToday: false, pending: null, today: null },
         power: 1,
         goldPerSecond: 1,
         serverTime: 1,
