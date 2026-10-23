@@ -9,6 +9,10 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+:where(button, a[href], [role='tab'], input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #ffd75e;
+  outline-offset: -2px;
+}
 html, body, #root { height: 100%; }
 body {
   margin: 0;
@@ -115,6 +119,17 @@ body {
   pointer-events: none;
 }
 .hud span + span { color: #9fd3ff; }
+@media (max-width: 560px) {
+  :root { --strip-h: 96px; }
+  .hud {
+    left: 12px; right: 12px; top: 12px;
+    transform: none;
+    flex-wrap: wrap;
+  }
+  .wallet, .toggle { top: auto; bottom: 8px; transform: none; }
+  .wallet-badge, .wallet-addr { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .wallet-btn { flex-shrink: 0; }
+}
 .stats { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
 .stats dt { color: var(--muted); }
 .stats dd { margin: 0; font-variant-numeric: tabular-nums; }
