@@ -1,4 +1,5 @@
 import { CONFIG } from './config';
+import { relicIdOf } from './content';
 import { Rng, deriveSeed, type Seed } from './rng';
 import type {
   BossEvent,
@@ -175,7 +176,7 @@ export function rarityIndex(rarity: Rarity): number {
  * rarity never changes (docs/contracts.md, rule 1). Server and client must both use this.
  */
 export function relicIdFor(rarity: Rarity): number {
-  return rarityIndex(rarity) + 1;
+  return relicIdOf(rarity);
 }
 
 /** Day index (days reset at midnight UTC+7) for a unix time in seconds. */

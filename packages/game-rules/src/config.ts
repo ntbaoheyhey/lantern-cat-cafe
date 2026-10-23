@@ -1,13 +1,15 @@
+import { RARITY_IDS, SLOT_IDS } from './content';
+
 /**
  * ALL tunable numbers for Taskbar Hero live here. Signed off by the user on 2026-10-23
  * (boss.powerGrowth 1.15 and relic.shardCost 30 changed at sign-off; the rest kept).
  * Time is always in seconds. Docs: docs/game-rules.md (keep in sync).
  */
 export const CONFIG = {
-  /** Gear slots, in display order. */
-  slots: ['weapon', 'helm', 'armor', 'ring'],
-  /** Rarity tiers, lowest to highest. */
-  rarities: ['common', 'rare', 'epic', 'legendary'],
+  /** Gear slots, in display order (content.ts). */
+  slots: SLOT_IDS,
+  /** Rarity tiers, lowest to highest (content.ts). */
+  rarities: RARITY_IDS,
 
   hero: {
     /** Power of a naked hero. */
