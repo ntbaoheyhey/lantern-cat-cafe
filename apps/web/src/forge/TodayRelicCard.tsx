@@ -5,7 +5,7 @@ import { capitalize } from './forgeText';
 export const txUrl = (hash: string) => `https://testnet.snowtrace.io/tx/${hash}`;
 
 /** Today's forged Relic: its art, rarity and whether it reached the wallet. */
-export function TodayRelicCard({ today, mintable }: { today: TodayRelic; mintable: boolean }) {
+export function TodayRelicCard({ today, mintable, canReissue }: { today: TodayRelic; mintable: boolean; canReissue: boolean }) {
   return (
     <div className="forge-today" data-testid="forge-today">
       <img src={relicImageUrl(BigInt(today.relicId))} alt="" width={48} height={48} />
@@ -26,6 +26,8 @@ export function TodayRelicCard({ today, mintable }: { today: TodayRelic; mintabl
             </>
           ) : mintable ? (
             'Mint it to your wallet'
+          ) : canReissue ? (
+            'Voucher expired. Get a new one to mint it.'
           ) : (
             'Not minted yet. The voucher expired; forge again tomorrow.'
           )}

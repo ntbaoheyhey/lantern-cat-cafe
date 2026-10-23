@@ -125,10 +125,34 @@ it('keeps the mint panel under the card while the voucher is pending', async () 
   expect(screen.queryByRole('link', { name: 'View on Snowtrace' })).toBeNull();
 });
 
+it('offers a new voucher when today\'s Relic is unminted, has no voucher and forging is allowed', async () => {
+  const { api, mock } = makeApi({ start: RICH });
+  await mock.forgeRelic();
+  let reissued = false;
+  const expired = <T extends ServerState>(st: T): T =>
+    reissued ? st : { ...st, forge: { ...st.forge, pending: null, blockedBy: null } };
+  const forgeRelic = vi.fn(async () => {
+    reissued = true;
+    return api.forgeRelic();
+  });
+  const reissue: GameApi = {
+    ...api,
+    getState: async () => expired(await api.getState()),
+    claim: async () => expired(await api.claim()),
+    forgeRelic,
+  };
+  await setup(reissue);
+  expect(screen.getByTestId('forge-today-status').textContent).toBe('Voucher expired. Get a new one to mint it.');
+  fireEvent.click(screen.getByRole('button', { name: 'Get a new voucher' }));
+  expect(await screen.findByRole('button', { name: 'Mint to wallet' })).toBeTruthy();
+  expect(forgeRelic).toHaveBeenCalledTimes(1);
+});
+
 it('says the voucher expired when today\'s Relic is unminted with no voucher', async () => {
   const { api, mock } = makeApi({ start: RICH });
   await mock.forgeRelic();
-  const noVoucher = <T extends ServerState>(st: T): T => ({ ...st, forge: { ...st.forge, pending: null } });
+  // As the server reports it: no voucher row to sign means forgeBlock applies, and today's forge counts.
+  const noVoucher = <T extends ServerState>(st: T): T => ({ ...st, forge: { ...st.forge, pending: null, blockedBy: 'daily_limit' } });
   const expired: GameApi = {
     ...api,
     getState: async () => noVoucher(await api.getState()),

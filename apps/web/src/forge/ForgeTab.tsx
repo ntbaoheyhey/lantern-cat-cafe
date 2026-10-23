@@ -132,7 +132,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
         </ul>
       </div>
 
-      {forge.today && !revealing && !unreported && <TodayRelicCard today={forge.today} mintable={!!toMint} />}
+      {forge.today && !revealing && !unreported && <TodayRelicCard today={forge.today} mintable={!!toMint} canReissue={forge.blockedBy === null} />}
 
       {revealing ? (
         <p className="forge-reveal forging" aria-live="polite">Forging…</p>
@@ -159,7 +159,14 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
           )}
           <MintPanel voucher={toMint} api={api} loop={loop} onMinted={onMinted} />
         </div>
-      ) : forge.today ? null : (
+      ) : forge.today && (forge.today.minted || forge.blockedBy !== null) ? null : forge.today ? (
+        // Unminted with no voucher but forging allowed: the server re-signs the same Relic.
+        <div className="forge-actions">
+          <button type="button" className="forge-btn" disabled={pendingForge} onClick={() => void doForge()}>
+            {pendingForge ? 'Getting a voucher…' : 'Get a new voucher'}
+          </button>
+        </div>
+      ) : (
         <div className="forge-actions">
           <button
             type="button"
