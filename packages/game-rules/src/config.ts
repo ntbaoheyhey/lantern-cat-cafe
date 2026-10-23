@@ -49,6 +49,8 @@ export const CONFIG = {
     offlineCapSeconds: 8 * 3600,
     /** Share of gold/shards/drops earned while offline (0..1). */
     offlineEfficiency: 0.5,
+    /** Seconds at the start of each claim paid at the full rate; the rest is offline. DRAFT. */
+    onlineWindowSeconds: 5 * 60,
     /** Chance a kill drops a gear item. */
     gearDropChance: 0.05,
     /** Chance a kill drops shards. */

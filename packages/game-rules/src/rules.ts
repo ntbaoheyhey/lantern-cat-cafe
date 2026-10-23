@@ -94,6 +94,30 @@ export function computeIdleGains(
   return { gold, shards, drops: drops.slice(0, C.idle.maxDropsPerClaim), countedSeconds: counted };
 }
 
+/**
+ * Gains for one server claim covering `elapsedSeconds` since the previous claim. The first
+ * `idle.onlineWindowSeconds` pay the full rate (an open game claims often); the rest pays
+ * `idle.offlineEfficiency`. Total time is capped at `idle.offlineCapSeconds`. The two parts roll
+ * with independent seeds derived from `seed`; drops are merged, best first, and capped.
+ */
+export function computeClaimGains(
+  state: Pick<PlayerState, 'gear' | 'bossLevel'>,
+  elapsedSeconds: number,
+  seed: Seed,
+): IdleGains {
+  const counted = Math.min(Math.max(0, Number.isFinite(elapsedSeconds) ? elapsedSeconds : 0), C.idle.offlineCapSeconds);
+  const online = Math.min(counted, C.idle.onlineWindowSeconds);
+  const a = computeIdleGains(state, online, deriveSeed(seed, 10));
+  const b = computeIdleGains(state, counted - online, deriveSeed(seed, 11), { offline: true });
+  const drops = [...a.drops, ...b.drops].sort((x, y) => gearStat(y) - gearStat(x));
+  return {
+    gold: a.gold + b.gold,
+    shards: a.shards + b.shards,
+    drops: drops.slice(0, C.idle.maxDropsPerClaim),
+    countedSeconds: counted,
+  };
+}
+
 export function bossPower(level: number): number {
   const l = Math.min(Math.max(1, Math.floor(level)), C.boss.maxLevel);
   return C.boss.basePower * Math.pow(C.boss.powerGrowth, l - 1);

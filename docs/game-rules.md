@@ -7,6 +7,7 @@ Pure TypeScript, shared by client (prediction) and server (truth). No network, D
 ## API
 
 - `computeIdleGains(state, elapsedSeconds, seed, {offline?})` -> `{gold, shards, drops[], countedSeconds}`; elapsed is clamped to the offline cap.
+- `computeClaimGains(state, elapsedSeconds, seed)` -> same shape; what the server credits per claim: the first `idle.onlineWindowSeconds` at the full rate, the rest at `idle.offlineEfficiency`, total capped at the offline cap.
 - `heroPower(gear[])`, `gearStat(gear)`, `goldPerSecond(power)`, `upgradeCost(gear)`
 - `simulateBoss(power, bossLevel, seed)` -> `{won, log[], bossMaxHp, heroMaxHp}` (1 round = 1 s; log events `hero_hit`, `boss_hit`, `end`)
 - `rollRelicRarity(seed)`, `relicOdds()`
@@ -40,6 +41,7 @@ A new player beats boss level 1 with probability >= 50% by 15 minutes of active 
 | `idle.secondsPerKill` | 4 | Seconds per enemy; drops roll once per kill. |
 | `idle.offlineCapSeconds` | 28800 (8 h) | Max seconds counted per claim. |
 | `idle.offlineEfficiency` | 0.5 | Share of rewards earned while offline. |
+| `idle.onlineWindowSeconds` | 300 (5 min) | Seconds at the start of each claim paid at the full rate; the rest of the gap counts as offline. |
 | `idle.gearDropChance` | 0.05 | Per-kill chance of a gear drop. |
 | `idle.shardDropChance` | 0.1 | Per-kill chance of shards. |
 | `idle.shardsPerDrop` | 1 | Shards per shard drop. |
