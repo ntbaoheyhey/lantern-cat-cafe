@@ -1,12 +1,13 @@
 import Phaser from 'phaser';
 import type { GameLoop } from './gameState';
 
-export const STRIP_HEIGHT = 64;
-const GROUND_HEIGHT = 14;
+export const STRIP_HEIGHT = 96;
+const GROUND_HEIGHT = 18;
 const HERO_X = 56;
 const GROUND_SPEED = 60; // px per second the world scrolls left
+const STAR_SPEED = 6; // the stars drift slowly
 const ENEMY_SPEED = 30; // extra px per second the enemy moves left
-const FIGHT_GAP = 26; // hero-to-enemy distance while fighting
+const FIGHT_GAP = 36; // cat-to-yarn distance while fighting
 const HIT_EVERY_MS = 320;
 const HITS_TO_KILL = 5;
 const DEATH_MS = 300;
@@ -34,41 +35,40 @@ function pixelTexture(
   g.destroy();
 }
 
-const HERO_PALETTE = { h: 0xf2c9a0, a: 0x3b6fd4, d: 0x24437f, s: 0xcfd6e4, k: 0x3a2a1a };
-const HERO_A = [
-  '..kkkk..',
-  '.khhhhk.',
-  '.hhhhhh.',
-  '..aaaa..',
-  '.saaaad.',
-  '.saaaad.',
-  '..dddd..',
-  '..d..d..',
-  '.dd..dd.',
+// Mochi, an orange tabby with a tiny sword. Two walk frames differ only in the legs (last two rows).
+const HERO_PALETTE = {
+  o: 0xf0a040, d: 0xc66a1a, w: 0xfff0d8, k: 0x2a1a10, n: 0xff8fb1, s: 0xdfe6f2, g: 0x7a5a3a,
+};
+const HERO_TOP = [
+  '.d....d...s.',
+  '.oooooo...s.',
+  '.okooko...s.',
+  '.owwnww...s.',
+  '..owwo...gg.',
+  '.ooooooogg..',
+  'doododoo.o..',
+  'doooooooo...',
 ];
-const HERO_B = [
-  '..kkkk..',
-  '.khhhhk.',
-  '.hhhhhh.',
-  '..aaaa..',
-  '.saaaad.',
-  '.saaaad.',
-  '..dddd..',
-  '...dd...',
-  '...dd...',
+const HERO_A = [...HERO_TOP, '.ow.wo.wo...', '.dd.dd.dd...'];
+const HERO_B = [...HERO_TOP, '..ow.wo.wo..', '..dd.dd.dd..'];
+
+// A pink ball of yarn with a loose thread.
+const YARN_PALETTE = { p: 0xd9578a, P: 0xff8fb1, q: 0xffc2d6 };
+const YARN = [
+  '...pppp...',
+  '..pPPPPp..',
+  '.pPqpPPPp.',
+  '.pPPPqPPp.',
+  '.pqPPPPqp.',
+  '.pPPqPPPp.',
+  '..pPPPPp..',
+  '...pppp...',
+  '.pPP......',
 ];
-const SLIME_PALETTE = { g: 0x5cc26b, d: 0x2f7d3b, w: 0xffffff, k: 0x111111 };
-const SLIME = [
-  '..........',
-  '...gggg...',
-  '..gggggg..',
-  '.ggwkggwkg',
-  '.gggggggg.',
-  'dgggggggggd',
-  '.dddddddd.',
-].map((r) => r.padEnd(10, '.').slice(0, 10));
 
 export class StripScene extends Phaser.Scene {
+  private sky!: Phaser.GameObjects.TileSprite;
+  private stars!: Phaser.GameObjects.TileSprite;
   private ground!: Phaser.GameObjects.TileSprite;
   private hero!: Phaser.GameObjects.Image;
   private enemy!: Phaser.GameObjects.Image;
@@ -89,21 +89,40 @@ export class StripScene extends Phaser.Scene {
     this.loop = (this.registry.get('loop') as GameLoop | undefined) ?? null;
     pixelTexture(this, 'hero-a', HERO_A, HERO_PALETTE);
     pixelTexture(this, 'hero-b', HERO_B, HERO_PALETTE);
-    pixelTexture(this, 'slime', SLIME, SLIME_PALETTE);
+    pixelTexture(this, 'yarn', YARN, YARN_PALETTE);
 
+    const groundTop = STRIP_HEIGHT - GROUND_HEIGHT;
+
+    // Dusk sky: horizontal bands from deep plum at the top to a warm glow at the horizon.
+    const sky = this.make.graphics({ x: 0, y: 0 }, false);
+    const bands = [0x1f1630, 0x2a1f40, 0x3a2a55, 0x55356a, 0x7a4478, 0xa85a7e, 0xd4747a];
+    const bandH = Math.ceil(groundTop / bands.length);
+    bands.forEach((c, i) => sky.fillStyle(c, 1).fillRect(0, i * bandH, 4, bandH));
+    sky.generateTexture('sky', 4, groundTop);
+    sky.destroy();
+
+    const stars = this.make.graphics({ x: 0, y: 0 }, false);
+    const dots: [number, number, number][] = [[10, 8, 2], [46, 22, 2], [78, 6, 2], [104, 30, 2], [124, 14, 2], [60, 40, 2], [20, 36, 2]];
+    dots.forEach(([x, y, r]) => stars.fillStyle(0xfff3c4, 1).fillRect(x, y, r, r));
+    stars.generateTexture('stars', 140, groundTop - 12);
+    stars.destroy();
+
+    // Warm brown ground with a grass-like top edge.
     const tile = this.make.graphics({ x: 0, y: 0 }, false);
-    tile.fillStyle(0x4a3b2a, 1).fillRect(0, 0, 32, GROUND_HEIGHT);
-    tile.fillStyle(0x5e9c4a, 1).fillRect(0, 0, 32, 4);
-    tile.fillStyle(0x3a2d20, 1).fillRect(6, 8, 4, 2).fillRect(20, 6, 4, 2);
+    tile.fillStyle(0x6b4a32, 1).fillRect(0, 0, 32, GROUND_HEIGHT);
+    tile.fillStyle(0x7bb661, 1).fillRect(0, 0, 32, 4);
+    tile.fillStyle(0x5c9a4a, 1).fillRect(4, 4, 3, 2).fillRect(14, 4, 3, 2).fillRect(25, 4, 3, 2);
+    tile.fillStyle(0x553a26, 1).fillRect(6, 10, 4, 2).fillRect(20, 13, 4, 2).fillRect(13, 8, 3, 2);
     tile.generateTexture('ground', 32, GROUND_HEIGHT);
     tile.destroy();
 
     const w = this.scale.width;
-    const groundTop = STRIP_HEIGHT - GROUND_HEIGHT;
-    this.cameras.main.setBackgroundColor(0x1d2433);
+    this.cameras.main.setBackgroundColor(0x1f1630);
+    this.sky = this.add.tileSprite(0, 0, w, groundTop, 'sky').setOrigin(0, 0);
+    this.stars = this.add.tileSprite(0, 0, w, groundTop - 12, 'stars').setOrigin(0, 0);
     this.ground = this.add.tileSprite(0, groundTop, w, GROUND_HEIGHT, 'ground').setOrigin(0, 0);
     this.hero = this.add.image(HERO_X, groundTop + 2, 'hero-a').setOrigin(0.5, 1);
-    this.enemy = this.add.image(this.spawnX(), groundTop + 2, 'slime').setOrigin(0.5, 1);
+    this.enemy = this.add.image(this.spawnX(), groundTop + 2, 'yarn').setOrigin(0.5, 1);
 
     this.scale.on(Phaser.Scale.Events.RESIZE, this.onResize, this);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
@@ -117,6 +136,8 @@ export class StripScene extends Phaser.Scene {
   }
 
   private onResize(size: Phaser.Structs.Size): void {
+    this.sky.width = size.width;
+    this.stars.width = size.width;
     this.ground.width = size.width;
     this.cameras.main.setSize(size.width, size.height);
   }
@@ -127,6 +148,7 @@ export class StripScene extends Phaser.Scene {
 
     if (this.mode === 'walk') {
       this.ground.tilePositionX += GROUND_SPEED * dt;
+      this.stars.tilePositionX += STAR_SPEED * dt;
       this.walkTimer += dtMs;
       if (this.walkTimer >= WALK_FRAME_MS) {
         this.walkTimer = 0;
@@ -170,7 +192,7 @@ export class StripScene extends Phaser.Scene {
     }
   }
 
-  /** One sword hit: hero lunges, enemy flashes red and recoils, damage floats up. */
+  /** One sword hit: Mochi lunges, the yarn flashes red and recoils, damage floats up. */
   private hitEnemy(): void {
     this.hero.x = HERO_X + 6;
     this.lungeTimer = 120;
@@ -183,7 +205,7 @@ export class StripScene extends Phaser.Scene {
     const power = Math.round(this.loop?.getSnapshot().power ?? 10);
     const txt = this.add
       .text(this.enemy.x, this.enemy.y - this.enemy.height, `-${power}`, {
-        fontFamily: 'monospace', fontSize: '12px', color: '#ffe066', stroke: '#000', strokeThickness: 3,
+        fontFamily: "'Pixelify Sans', monospace", fontSize: '14px', color: '#ffe066', stroke: '#000', strokeThickness: 3,
       })
       .setOrigin(0.5, 1);
     this.tweens.add({

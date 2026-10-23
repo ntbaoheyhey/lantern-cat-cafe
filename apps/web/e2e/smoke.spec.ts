@@ -15,8 +15,8 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
   await expect(canvas).toHaveCount(1);
   await expect(canvas).toBeVisible();
   const box = await canvas.boundingBox();
-  expect(box?.height).toBeGreaterThanOrEqual(62);
-  expect(box?.height).toBeLessThanOrEqual(64);
+  expect(box?.height).toBeGreaterThanOrEqual(94);
+  expect(box?.height).toBeLessThanOrEqual(96);
   expect(box?.width).toBe(1280);
 
   const gold = page.getByTestId('gold-counter');
