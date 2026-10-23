@@ -10,6 +10,7 @@ on:
       - packages/auth/**
       - packages/game-rules/**
       - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - packages/chain/deployments/43113.json # RelicNFT address imported by _shared/game-server.ts
       - .github/workflows/deploy-functions.yml
   pull_request:
     paths:
@@ -18,6 +19,7 @@ on:
       - packages/auth/**
       - packages/game-rules/**
       - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - packages/chain/deployments/43113.json # RelicNFT address imported by _shared/game-server.ts
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
 
@@ -30,7 +32,7 @@ permissions:
 
 env:
   PROJECT_REF: qoalewtxflagoprrxrgh
-  FUNCTIONS: auth-nonce auth-verify game-state idle-claim equip boss-fight
+  FUNCTIONS: auth-nonce auth-verify game-state idle-claim equip boss-fight relic-forge relic-mint-report
 
 jobs:
   deploy:

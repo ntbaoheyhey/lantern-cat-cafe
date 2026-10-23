@@ -3,7 +3,11 @@
 import { createClient } from "@supabase/supabase-js";
 import { verifySessionToken } from "../../../packages/auth/src/index.ts";
 import { json } from "./auth.ts";
-import { GameError, gameHandler, routes, type GameDeps, type GameStore } from "./game.ts";
+import { GameError, gameHandler, routes, type GameDeps, type GameStore, type RelicDeps } from "./game.ts";
+import { fujiReader, voucherSigner } from "./relic.ts";
+import fuji from "../../../packages/chain/deployments/43113.json" with { type: "json" };
+
+const DEFAULT_FUJI_RPC = "https://api.avax-test.network/ext/bc/C/rpc";
 
 function env(name: string): string {
   const v = Deno.env.get(name);
@@ -58,7 +62,64 @@ export function pgGameStore(): GameStore {
       if (error) throw new Error(`game_boss_fight: ${error.message}`);
       return data;
     },
+    async forge(a) {
+      const { data, error } = await db.rpc("game_forge", {
+        p_player: a.playerId,
+        p_day: a.day,
+        p_relic_id: a.relicId,
+        p_rarity: a.rarity,
+        p_shard_cost: a.shardCost,
+        p_key_cost: a.keyCost,
+        p_expires_at: a.expiresAt,
+      });
+      if (error) throw new Error(`game_forge: ${error.message}`);
+      return data;
+    },
+    async voucherSign(playerId, nonce, signature) {
+      const { data, error } = await db.rpc("game_voucher_sign", { p_player: playerId, p_nonce: nonce, p_signature: signature });
+      if (error) throw new Error(`game_voucher_sign: ${error.message}`);
+      return data === true;
+    },
+    async voucherReissue(playerId, nonce, now, expiresAt) {
+      const { data, error } = await db.rpc("game_voucher_reissue", {
+        p_player: playerId,
+        p_nonce: nonce,
+        p_now: now,
+        p_expires_at: expiresAt,
+      });
+      if (error) throw new Error(`game_voucher_reissue: ${error.message}`);
+      return data;
+    },
+    async voucher(playerId, nonce) {
+      const { data, error } = await db.rpc("game_voucher", { p_player: playerId, p_nonce: nonce });
+      if (error) throw new Error(`game_voucher: ${error.message}`);
+      return data;
+    },
+    async voucherMinted(playerId, nonce, txHash) {
+      const { data, error } = await db.rpc("game_voucher_minted", { p_player: playerId, p_nonce: nonce, p_tx_hash: txHash });
+      if (error) throw new Error(`game_voucher_minted: ${error.message}`);
+      return data === true;
+    },
   };
+}
+
+/**
+ * RelicNFT from packages/chain/deployments/43113.json; the signer only when
+ * VOUCHER_SIGNER_PRIVATE_KEY is set (relic-forge then answers server_error). The key is never
+ * logged: a malformed value is reported by name only.
+ */
+function relicDeps(): RelicDeps {
+  const nft = fuji.RelicNFT as `0x${string}`;
+  const key = Deno.env.get("VOUCHER_SIGNER_PRIVATE_KEY");
+  let signer: RelicDeps["signer"];
+  if (key) {
+    try {
+      signer = voucherSigner(key.trim(), nft);
+    } catch {
+      console.error("VOUCHER_SIGNER_PRIVATE_KEY is malformed; relic forge disabled");
+    }
+  }
+  return { nft, signer, chain: fujiReader(Deno.env.get("FUJI_RPC_URL") || DEFAULT_FUJI_RPC, nft) };
 }
 
 /**
@@ -66,7 +127,7 @@ export function pgGameStore(): GameStore {
  * so no extra secret is needed; set it separately to rotate one without the other.
  */
 export function gameDeps(): GameDeps {
-  return { store: pgGameStore(), seedSecret: Deno.env.get("GAME_SEED_SECRET") || jwtSecret() };
+  return { store: pgGameStore(), seedSecret: Deno.env.get("GAME_SEED_SECRET") || jwtSecret(), relic: relicDeps() };
 }
 
 /** Player id from `Authorization: Bearer <session JWT>`; the request body never names the player. */

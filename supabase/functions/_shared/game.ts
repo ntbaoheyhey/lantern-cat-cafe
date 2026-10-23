@@ -1,4 +1,4 @@
-// Server logic for the game-state, idle-claim, equip and boss-fight Edge Functions (docs/api.md).
+// Server logic for the game Edge Functions (docs/api.md).
 // Runtime-neutral (no Deno or Node globals besides WebCrypto) so supabase/tests can run it in
 // Node against PGlite. Deno wiring lives in game-server.ts.
 import {
@@ -10,20 +10,35 @@ import {
   goldPerSecond,
   heroPower,
   newPlayer,
+  rarityIndex,
+  relicIdFor,
+  rollRelicRarity,
   simulateBoss,
   starterGear,
+  type ForgeBlock,
   type Gear,
+  type Rarity,
   type Seed,
 } from "@taskbar-hero/game-rules";
 import type {
   BossFightResult,
   ClaimResult,
+  ForgeResult,
   GameApiErrorCode,
   ForgeStatus,
   OwnedGear,
   RelicVoucher,
   ServerState,
 } from "../../../apps/web/src/api/GameApi.ts";
+import {
+  REISSUE_GRACE_SECONDS,
+  VOUCHER_TTL_SECONDS,
+  checksumAddress,
+  receiptMintsVoucher,
+  type ChainReader,
+  type VoucherFields,
+  type VoucherSigner,
+} from "./relic.ts";
 
 /** Minimum seconds between two claims that count (docs/api.md). */
 export const MIN_CLAIM_INTERVAL_SECONDS = 10;
@@ -41,17 +56,34 @@ const STATUS: Record<GameApiErrorCode, number> = {
 
 export class GameError extends Error {
   readonly status: number;
-  constructor(readonly code: GameApiErrorCode, message: string = code) {
-    super(message);
+  /** Sent as `reason` next to `error` (forge_blocked: the ForgeBlock). */
+  readonly reason: string | undefined;
+  constructor(readonly code: GameApiErrorCode, reason?: string) {
+    super(reason ? `${code}: ${reason}` : code);
     this.name = "GameError";
     this.status = STATUS[code];
+    this.reason = reason;
   }
 }
 
 /** Gear as stored: a game-rules Gear plus its stored power. */
 export type GearRow = Gear & { power: number };
 
-/** What `game_snapshot` returns (supabase/migrations/20260104000000_game_api.sql). */
+/** A relic_vouchers row as `game_voucher_json` returns it (20260106000000_relic_forge.sql). */
+export interface VoucherRow {
+  /** players.wallet, lowercase. */
+  player: string;
+  relicId: string;
+  rarityName: Rarity;
+  nonce: string;
+  /** Unix seconds. */
+  expiry: number;
+  /** Null until the server signs it (right after the forge). */
+  signature: string | null;
+  status: "issued" | "minted" | "expired";
+}
+
+/** What `game_snapshot` returns (supabase/migrations/20260104000000_game_api.sql, 20260106000000_relic_forge.sql). */
 export interface Snapshot {
   gold: number;
   shards: number;
@@ -62,11 +94,18 @@ export interface Snapshot {
   attemptsToday: number;
   keyEarnedToday: boolean;
   gear: OwnedGear[];
-  /** True once a Relic was forged (paid) today. Filled by the forge SQL (B5); absent = false. */
+  /** True once a Relic was forged (paid) today. */
   forgedToday?: boolean;
-  /** The paid, unminted voucher, if any (B5). */
-  pending?: RelicVoucher | null;
+  /** The player's live (issued, not minted) voucher, if any. */
+  pending?: VoucherRow | null;
 }
+
+/** A snapshot whose pending voucher is signed and in API form. */
+type Loaded = Omit<Snapshot, "pending"> & { pending: RelicVoucher | null };
+
+export type ForgeOutcome =
+  | { status: "pending" | "new"; voucher: VoucherRow }
+  | { status: "blocked"; reason: ForgeBlock };
 
 /** The SQL functions, called as service_role. */
 export interface GameStore {
@@ -89,6 +128,33 @@ export interface GameStore {
     maxAttempts: number;
     maxLevel: number;
   }): Promise<boolean | null>;
+  /** game_forge: pay for today's forge, or report the pending voucher or the block. */
+  forge(args: {
+    playerId: string;
+    day: string;
+    relicId: number;
+    rarity: Rarity;
+    shardCost: number;
+    keyCost: number;
+    expiresAt: string;
+  }): Promise<ForgeOutcome>;
+  /** game_voucher_sign: store the signature of an issued voucher (kept if already set). */
+  voucherSign(playerId: string, nonce: string, signature: string): Promise<boolean>;
+  /** game_voucher_reissue: replace an issued voucher that expired before `now`; null if it did not. */
+  voucherReissue(playerId: string, nonce: string, now: string, expiresAt: string): Promise<VoucherRow | null>;
+  /** game_voucher: the player's voucher by nonce, any status; null if not theirs. */
+  voucher(playerId: string, nonce: string): Promise<VoucherRow | null>;
+  /** game_voucher_minted: mark minted; false if the voucher is not theirs. */
+  voucherMinted(playerId: string, nonce: string, txHash: string | null): Promise<boolean>;
+}
+
+/** Relic forge wiring. Absent parts make relic-forge / relic-mint-report answer server_error. */
+export interface RelicDeps {
+  /** Signs with VOUCHER_SIGNER_PRIVATE_KEY for the deployed RelicNFT. */
+  signer?: VoucherSigner;
+  chain?: ChainReader;
+  /** Deployed RelicNFT on Fuji. */
+  nft?: `0x${string}`;
 }
 
 export interface GameDeps {
@@ -97,6 +163,7 @@ export interface GameDeps {
   seedSecret: string;
   /** Server clock in milliseconds. */
   now?: () => number;
+  relic?: RelicDeps;
 }
 
 const toRow = (g: Gear): GearRow => ({ slot: g.slot, rarity: g.rarity, level: g.level, power: Math.round(gearStat(g)) });
@@ -132,15 +199,53 @@ export function bossSeed(secret: string, playerId: string, day: string, attempt:
   return hmacSeed(secret, `boss:${playerId}:${day}:${attempt}`);
 }
 
-function forgeStatus(s: Snapshot, nowMs: number): ForgeStatus {
+/**
+ * Seed for the day's Relic: hmacSeed(secret, "relic:<playerId>:<day>"). Fixed per player and day,
+ * so concurrent forges roll the same rarity and a retry cannot re-roll.
+ */
+export function relicSeed(secret: string, playerId: string, day: string): Promise<Seed> {
+  return hmacSeed(secret, `relic:${playerId}:${day}`);
+}
+
+function voucherFields(v: VoucherRow): VoucherFields {
+  return {
+    player: checksumAddress(v.player),
+    relicId: BigInt(v.relicId),
+    rarity: rarityIndex(v.rarityName),
+    nonce: BigInt(v.nonce),
+    expiry: BigInt(v.expiry),
+  };
+}
+
+/** The voucher in API form, signing (and storing the signature) first if needed. */
+async function signedVoucher(deps: GameDeps, signer: VoucherSigner | undefined, playerId: string, v: VoucherRow): Promise<RelicVoucher> {
+  const fields = voucherFields(v);
+  let signature = v.signature;
+  if (!signature) {
+    if (!signer) throw new GameError("server_error", "relic forge is not configured");
+    signature = (await signer.sign(fields)).toLowerCase();
+    await deps.store.voucherSign(playerId, v.nonce, signature);
+  }
+  return {
+    player: fields.player,
+    relicId: v.relicId,
+    rarity: fields.rarity,
+    rarityName: v.rarityName,
+    nonce: v.nonce,
+    expiry: Number(v.expiry),
+    signature: signature as `0x${string}`,
+  };
+}
+
+function forgeStatus(s: Loaded, nowMs: number): ForgeStatus {
   const today = dayIndex(nowMs / 1000);
-  const pending = s.pending ?? null;
+  const pending = s.pending;
   const forgedToday = s.forgedToday ?? false;
   const player = { ...newPlayer(), shards: Number(s.shards), bossKeys: Number(s.bossKeys), lastForgeDay: forgedToday ? today : -1 };
   return { blockedBy: pending ? null : forgeBlock(player, today), forgedToday, pending };
 }
 
-function toState(s: Snapshot, nowMs: number): ServerState {
+function toState(s: Loaded, nowMs: number): ServerState {
   const inventory = s.gear.map((g) => ({ ...g }));
   const gear: Gear[] = inventory.filter((g) => g.equipped).map(({ slot, rarity, level }) => ({ slot, rarity, level }));
   const power = heroPower(gear);
@@ -165,10 +270,15 @@ function toState(s: Snapshot, nowMs: number): ServerState {
   };
 }
 
-async function load(deps: GameDeps, playerId: string, nowMs: number): Promise<Snapshot> {
+async function load(deps: GameDeps, playerId: string, nowMs: number): Promise<Loaded> {
   const s = await deps.store.snapshot(playerId, dayDate(nowMs / 1000), starterGear().map(toRow));
   if (!s) throw new GameError("not_found");
-  return s;
+  const row = s.pending ?? null;
+  // A voucher is unsigned only between game_forge and game_voucher_sign; sign it if we can, else
+  // leave it out until relic-forge does.
+  const signer = deps.relic?.signer;
+  const pending = row && (row.signature || signer) ? await signedVoucher(deps, signer, playerId, row) : null;
+  return { ...s, pending };
 }
 
 /** POST game-state */
@@ -239,6 +349,90 @@ export async function fightBoss(deps: GameDeps, playerId: string): Promise<BossF
   return { result, keyGranted, state: toState(await load(deps, playerId, nowMs), nowMs) };
 }
 
+function relicParts<K extends keyof RelicDeps>(deps: GameDeps, ...keys: K[]): Required<Pick<RelicDeps, K>> {
+  const r = deps.relic ?? {};
+  for (const k of keys) {
+    if (!r[k]) {
+      console.error(`relic: ${k} not configured`);
+      throw new GameError("server_error", "relic forge is not configured");
+    }
+  }
+  return r as Required<Pick<RelicDeps, K>>;
+}
+
+/**
+ * POST relic-forge: return the pending voucher (re-signed with a new nonce and expiry if it
+ * expired), or pay for today's forge and return its new voucher. Rarity comes from relicSeed, so
+ * every voucher for a forge has the same relicId and rarity (docs/contracts.md rule 1).
+ */
+export async function forgeRelic(deps: GameDeps, playerId: string): Promise<ForgeResult> {
+  const { signer, chain } = relicParts(deps, "signer", "chain");
+  const nowMs = (deps.now ?? Date.now)();
+  const nowS = Math.floor(nowMs / 1000);
+  const day = dayDate(nowS);
+  const expiresAt = new Date((nowS + VOUCHER_TTL_SECONDS) * 1000).toISOString();
+  const done = async (voucher: RelicVoucher): Promise<ForgeResult> => ({ voucher, state: toState(await load(deps, playerId, nowMs), nowMs) });
+
+  const before = await load(deps, playerId, nowMs);
+  const pending = before.pending;
+  if (pending) {
+    if (nowS <= pending.expiry + REISSUE_GRACE_SECONDS) return done(pending);
+    // Expired. If it was minted anyway (never reported), record that instead of signing a second
+    // voucher for the same paid forge; the forge below then applies the daily limit.
+    if (await chain.nonceUsed(BigInt(pending.nonce))) {
+      await deps.store.voucherMinted(playerId, pending.nonce, null);
+    } else {
+      const fresh = await deps.store.voucherReissue(playerId, pending.nonce, new Date(nowMs).toISOString(), expiresAt);
+      if (fresh) return done(await signedVoucher(deps, signer, playerId, fresh));
+      // A concurrent call re-issued it first: fall through and pick that one up.
+    }
+  }
+
+  const rarity = rollRelicRarity(await relicSeed(deps.seedSecret, playerId, day));
+  const out = await deps.store.forge({
+    playerId,
+    day,
+    relicId: relicIdFor(rarity),
+    rarity,
+    shardCost: CONFIG.relic.shardCost,
+    keyCost: CONFIG.relic.bossKeyCost,
+    expiresAt,
+  });
+  if (out.status === "blocked") throw new GameError("forge_blocked", out.reason);
+  return done(await signedVoucher(deps, signer, playerId, out.voucher));
+}
+
+/** uint256 nonces we issue fit in a Postgres bigint. */
+const MAX_NONCE = 2n ** 63n - 1n;
+
+/**
+ * POST relic-mint-report { nonce, txHash }: mark the caller's voucher minted once its tx on Fuji is
+ * a successful RelicNFT call that emitted RelicForged for exactly this voucher.
+ */
+export async function reportMint(deps: GameDeps, playerId: string, nonce: unknown, txHash: unknown): Promise<ServerState> {
+  if (typeof nonce !== "string" || !/^[1-9][0-9]{0,18}$/.test(nonce) || BigInt(nonce) > MAX_NONCE) {
+    throw new GameError("not_found");
+  }
+  if (typeof txHash !== "string" || !/^0x[0-9a-fA-F]{64}$/.test(txHash)) throw new GameError("mint_not_confirmed");
+  const { chain, nft } = relicParts(deps, "chain", "nft");
+  const nowMs = (deps.now ?? Date.now)();
+
+  const v = await deps.store.voucher(playerId, nonce);
+  if (!v) throw new GameError("not_found");
+  if (v.status !== "minted") {
+    let ok = false;
+    try {
+      ok = receiptMintsVoucher(await chain.receipt(txHash as `0x${string}`), nft, voucherFields(v));
+    } catch (e) {
+      // RPC trouble: the client may retry.
+      console.error(e);
+    }
+    if (!ok) throw new GameError("mint_not_confirmed");
+    await deps.store.voucherMinted(playerId, nonce, txHash.toLowerCase());
+  }
+  return toState(await load(deps, playerId, nowMs), nowMs);
+}
+
 export interface HttpDeps {
   /** Player id from the request's session JWT; throws GameError("unauthenticated") otherwise. */
   authenticate(req: Request): Promise<string>;
@@ -248,8 +442,8 @@ export interface HttpDeps {
 
 /**
  * Wrap a POST handler: CORS preflight, method check, JWT -> player id, GameError -> its status.
- * Only `fn` sees the body, and only equip reads it (gearId); player, wallet and time come from
- * the JWT and the server clock.
+ * Only `fn` sees the body, and only equip (gearId) and relic-mint-report (nonce, txHash) read it;
+ * player, wallet and time come from the JWT, the database and the server clock.
  */
 export function gameHandler(
   http: HttpDeps,
@@ -264,7 +458,7 @@ export function gameHandler(
       const body: unknown = await req.json().catch(() => ({}));
       return http.json(req, await fn(player, body && typeof body === "object" ? (body as Record<string, unknown>) : {}));
     } catch (e) {
-      if (e instanceof GameError) return http.json(req, { error: e.code }, e.status);
+      if (e instanceof GameError) return http.json(req, e.reason && e.code !== "server_error" ? { error: e.code, reason: e.reason } : { error: e.code }, e.status);
       console.error(e);
       return http.json(req, { error: "server_error" }, 500);
     }
@@ -274,11 +468,16 @@ export function gameHandler(
 /** The game endpoints, keyed by Edge Function name. */
 export function routes(
   deps: GameDeps,
-): Record<"game-state" | "idle-claim" | "equip" | "boss-fight", (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
+): Record<
+  "game-state" | "idle-claim" | "equip" | "boss-fight" | "relic-forge" | "relic-mint-report",
+  (playerId: string, body: Record<string, unknown>) => Promise<unknown>
+> {
   return {
     "game-state": (player) => getState(deps, player),
     "idle-claim": (player) => claim(deps, player),
     equip: (player, body) => equip(deps, player, body.gearId),
     "boss-fight": (player) => fightBoss(deps, player),
+    "relic-forge": (player) => forgeRelic(deps, player),
+    "relic-mint-report": (player, body) => reportMint(deps, player, body.nonce, body.txHash),
   };
 }

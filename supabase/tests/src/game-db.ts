@@ -54,5 +54,19 @@ export function pgliteStore(getDb: () => PGlite): GameStore {
     equip: (p, g) => one(`select public.game_equip($1, $2) r`, [p, g]),
     bossFight: (a) =>
       one(`select public.game_boss_fight($1, $2, $3, $4, $5, $6) r`, [a.playerId, a.day, a.bossLevel, a.won, a.maxAttempts, a.maxLevel]),
+    forge: (a) =>
+      one(`select public.game_forge($1, $2, $3, $4, $5, $6, $7) r`, [
+        a.playerId,
+        a.day,
+        a.relicId,
+        a.rarity,
+        a.shardCost,
+        a.keyCost,
+        a.expiresAt,
+      ]),
+    voucherSign: (p, nonce, sig) => one(`select public.game_voucher_sign($1, $2, $3) r`, [p, nonce, sig]),
+    voucherReissue: (p, nonce, now, exp) => one(`select public.game_voucher_reissue($1, $2, $3, $4) r`, [p, nonce, now, exp]),
+    voucher: (p, nonce) => one(`select public.game_voucher($1, $2) r`, [p, nonce]),
+    voucherMinted: (p, nonce, tx) => one(`select public.game_voucher_minted($1, $2, $3) r`, [p, nonce, tx]),
   };
 }

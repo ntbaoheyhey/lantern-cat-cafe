@@ -3,9 +3,13 @@
   "compilerOptions": {
     "types": ["node"],
     // Lets tests import the Deno Edge Function code (which uses .ts specifiers and the same
-    // @taskbar-hero/game-rules alias as the functions' deno.json import maps).
+    // bare imports as the functions' deno.json import maps; vitest.config.ts has the aliases).
     "allowImportingTsExtensions": true,
-    "paths": { "@taskbar-hero/game-rules": ["../../packages/game-rules/src/index.ts"] }
+    "paths": {
+      "@taskbar-hero/game-rules": ["../../packages/game-rules/src/index.ts"],
+      "viem": ["./node_modules/viem/_types/index.d.ts"],
+      "viem/accounts": ["./node_modules/viem/_types/accounts/index.d.ts"]
+    }
   },
   "include": ["src", "vitest.config.ts"]
 }
