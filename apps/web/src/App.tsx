@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { GameCanvas } from './GameCanvas';
 import { getSessionStore } from './game/store';
+import { HowToPlay } from './onboarding/HowToPlay';
 import { Panel } from './Panel';
 import { WalletButton } from './wallet/WalletButton';
 import { WalletProvider } from './wallet/WalletProvider';
@@ -16,6 +17,7 @@ export function App() {
         <p>An idle RPG that lives in the strip at the bottom of this page. Your hero fights on its own.</p>
       </main>
       {open && <Panel id={PANEL_ID} />}
+      <HowToPlay />
       <div role="region" aria-label="Taskbar strip" className="strip">
         <GameCanvas />
         <WalletButton />
