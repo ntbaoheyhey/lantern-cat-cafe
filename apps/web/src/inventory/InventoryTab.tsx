@@ -81,7 +81,7 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
       {error && <p role="alert" className="inv-error">{error}</p>}
       {!hasSpare && (
         <p className="inv-empty" data-testid="inventory-empty">
-          Your bag is empty. Your hero picks up new gear while fighting, so check back soon.
+          No spare gear in your bag. Unequipped drops will appear here as your hero fights.
         </p>
       )}
       <div className="inv-slots">
