@@ -9,7 +9,8 @@
     "test": "vitest run",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "build": "tsc --noEmit"
+    "build": "tsc --noEmit",
+    "gen": "node scripts/gen-abi.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",
