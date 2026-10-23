@@ -19,7 +19,8 @@ export function pgStore(): AuthStore {
   });
   return {
     async createNonce(nonce) {
-      const { error } = await db.from("siwe_nonces").insert({ nonce });
+      // Also deletes used/expired rows (see supabase/migrations/20260103000000_auth_hardening.sql).
+      const { error } = await db.rpc("create_siwe_nonce", { p_nonce: nonce });
       if (error) throw new Error(`createNonce: ${error.message}`);
     },
     async consumeNonce(nonce) {
@@ -45,27 +46,39 @@ export function authConfig(): AuthConfig {
   return { domain: env("SIWE_DOMAIN"), jwtSecret };
 }
 
-const cors = {
-  "Access-Control-Allow-Origin": Deno.env.get("SIWE_ALLOWED_ORIGIN") ?? "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
+// SIWE_ALLOWED_ORIGIN: comma-separated list of exact origins. The request Origin is reflected
+// only if listed; when unset or not matching, no Access-Control-Allow-Origin is sent (fail closed).
+const allowedOrigins = (Deno.env.get("SIWE_ALLOWED_ORIGIN") ?? "")
+  .split(",")
+  .map((o) => o.trim())
+  .filter(Boolean);
 
-export function json(body: unknown, status = 200): Response {
-  return new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
+function corsHeaders(req: Request): Record<string, string> {
+  const headers: Record<string, string> = {
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    Vary: "Origin",
+  };
+  const origin = req.headers.get("Origin");
+  if (origin && allowedOrigins.includes(origin)) headers["Access-Control-Allow-Origin"] = origin;
+  return headers;
+}
+
+export function json(req: Request, body: unknown, status = 200): Response {
+  return new Response(JSON.stringify(body), { status, headers: { ...corsHeaders(req), "Content-Type": "application/json" } });
 }
 
 /** Wrap a POST handler: CORS preflight, method check, AuthError -> 4xx, anything else -> 500. */
 export function handler(fn: (req: Request) => Promise<Response>): (req: Request) => Promise<Response> {
   return async (req) => {
-    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
-    if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
+    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(req) });
+    if (req.method !== "POST") return json(req, { error: "method_not_allowed" }, 405);
     try {
       return await fn(req);
     } catch (e) {
-      if (e instanceof AuthError) return json({ error: e.code }, e.code === "invalid_request" ? 400 : 401);
+      if (e instanceof AuthError) return json(req, { error: e.code }, e.code === "invalid_request" ? 400 : 401);
       console.error(e);
-      return json({ error: "internal_error" }, 500);
+      return json(req, { error: "internal_error" }, 500);
     }
   };
 }

@@ -3,4 +3,4 @@ import { handler, issueNonce, json, pgStore } from "../_shared/auth.ts";
 
 const store = pgStore();
 
-Deno.serve(handler(async () => json(await issueNonce({ store }))));
+Deno.serve(handler(async (req) => json(req, await issueNonce({ store }))));

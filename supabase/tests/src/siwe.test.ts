@@ -42,7 +42,7 @@ describe("consume_siwe_nonce", () => {
     expect(r.rows[0]!.used_at).toBeInstanceOf(Date);
   });
 
-  it("only one of several concurrent calls wins", async () => {
+  it("issued concurrently, exactly one call wins", async () => {
     const results = await Promise.all([1, 2, 3, 4].map(() => consume("fresh0002")));
     expect(results.filter(Boolean).length).toBe(1);
   });
@@ -62,6 +62,50 @@ describe("consume_siwe_nonce", () => {
       await expect(as(role, () => db.query(`select public.upsert_player_by_wallet('${WALLET}')`))).rejects.toThrow(/permission denied/);
     }
     expect(await consume("fresh0003")).toBe(true);
+  });
+});
+
+describe("create_siwe_nonce", () => {
+  const create = (nonce: string) => as("service_role", () => db.query(`select public.create_siwe_nonce($1)`, [nonce]));
+  const exists = async (nonce: string) => (await db.query(`select 1 from siwe_nonces where nonce = $1`, [nonce])).rows.length === 1;
+
+  it("inserts the nonce and deletes used and stale rows, keeping fresh ones", async () => {
+    await db.exec(`
+      insert into siwe_nonces (nonce) values ('keepfresh1');
+      insert into siwe_nonces (nonce, used_at) values ('usedrow01', now());
+      insert into siwe_nonces (nonce, created_at) values ('staleold1', now() - interval '11 minutes');
+    `);
+    await create("newnonce01");
+    expect(await exists("newnonce01")).toBe(true);
+    expect(await exists("keepfresh1")).toBe(true);
+    expect(await exists("usedrow01")).toBe(false);
+    expect(await exists("staleold1")).toBe(false);
+  });
+
+  it("deletes at most 1000 rows per call", async () => {
+    await db.exec(`insert into siwe_nonces (nonce, used_at) select 'bulk' || g, now() from generate_series(1, 1500) g`);
+    await create("newnonce02");
+    const r = await db.query<{ n: number }>(`select count(*)::int as n from siwe_nonces where nonce like 'bulk%'`);
+    expect(r.rows[0]!.n).toBe(500);
+    await create("newnonce03");
+    expect((await db.query(`select 1 from siwe_nonces where nonce like 'bulk%'`)).rows.length).toBe(0);
+  });
+
+  it("is not callable by anon or authenticated", async () => {
+    for (const role of ["anon", "authenticated"] as const) {
+      await expect(as(role, () => db.query(`select public.create_siwe_nonce('denied0001')`))).rejects.toThrow(/permission denied/);
+    }
+  });
+});
+
+describe("default privileges", () => {
+  it("a table or function created after the migrations is not accessible to anon/authenticated", async () => {
+    await db.exec(`create table public.later_table (id int); insert into public.later_table values (1);`);
+    await db.exec(`create function public.later_fn() returns int language sql as 'select 1'`);
+    for (const role of ["anon", "authenticated"] as const) {
+      await expect(as(role, () => db.query(`select * from public.later_table`))).rejects.toThrow(/permission denied/);
+      await expect(as(role, () => db.query(`select public.later_fn()`))).rejects.toThrow(/permission denied/);
+    }
   });
 });
 

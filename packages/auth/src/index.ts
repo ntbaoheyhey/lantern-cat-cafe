@@ -111,12 +111,18 @@ function secretKey(secret: string): Uint8Array {
   return new TextEncoder().encode(secret);
 }
 
-function hostOf(uri: string): string | undefined {
+/** True if `uri` is https (or http on a loopback host), has no credentials, and its host is `domain`. */
+function uriMatchesDomain(uri: string, domain: string): boolean {
+  let url: URL;
   try {
-    return new URL(uri).host.toLowerCase();
+    url = new URL(uri);
   } catch {
-    return undefined;
+    return false;
   }
+  const loopback = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+  if (!(url.protocol === "https:" || (url.protocol === "http:" && loopback))) return false;
+  if (url.username || url.password) return false;
+  return url.host.toLowerCase() === domain;
 }
 
 /**
@@ -168,7 +174,7 @@ export async function verifySignIn(deps: AuthDeps, input: { message: unknown; si
 
   const domain = config.domain.toLowerCase();
   if (f.domain.toLowerCase() !== domain) throw new AuthError("wrong_domain");
-  if (hostOf(f.uri) !== domain) throw new AuthError("wrong_uri");
+  if (!uriMatchesDomain(f.uri, domain)) throw new AuthError("wrong_uri");
   if (f.chainId !== chainId) throw new AuthError("wrong_chain");
 
   const now = clock().getTime();

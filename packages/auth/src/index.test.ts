@@ -116,7 +116,7 @@ describe("verifySignIn", () => {
     await expectCode(verifySignIn(deps(), req), "invalid_nonce");
   });
 
-  it("refuses concurrent use of the same nonce (only one wins)", async () => {
+  it("lets exactly one of three concurrent verifications of the same nonce succeed", async () => {
     const req = await signIn();
     const results = await Promise.allSettled([1, 2, 3].map(() => verifySignIn(deps(), req)));
     expect(results.filter((r) => r.status === "fulfilled").length).toBe(1);
@@ -171,6 +171,30 @@ describe("verifySignIn", () => {
 
   it("refuses a uri on another host", async () => {
     await expectCode(verifySignIn(deps(), await signIn({ overrides: { uri: "https://evil.test/login" } })), "wrong_uri");
+  });
+
+  it("refuses uris with a bad scheme, credentials or insecure http", async () => {
+    for (const uri of [`javascript://${DOMAIN}/x`, `https://evil.test@${DOMAIN}/`, `http://${DOMAIN}`]) {
+      await expectCode(verifySignIn(deps(), await signIn({ overrides: { uri } })), "wrong_uri");
+    }
+  });
+
+  it("accepts http only for localhost", async () => {
+    const localDeps = { ...deps(), config: { domain: "localhost:5173", jwtSecret: SECRET } };
+    const req = await signIn({ overrides: { domain: "localhost:5173", uri: "http://localhost:5173" } });
+    expect((await verifySignIn(localDeps, req)).wallet).toBe(alice.address.toLowerCase());
+  });
+
+  it("refuses notBefore in the future beyond the skew", async () => {
+    const overrides = { notBefore: new Date(now + 120_000), expirationTime: new Date(now + 600_000) };
+    await expectCode(verifySignIn(deps(), await signIn({ overrides })), "not_yet_valid");
+    await verifySignIn(deps(), await signIn({ overrides: { notBefore: new Date(now + 30_000) } }));
+  });
+
+  it("refuses issuedAt older than the nonce window", async () => {
+    const req = await signIn({ overrides: { issuedAt: new Date(now - 12 * 60_000), expirationTime: new Date(now + 5 * 60_000) } });
+    await expectCode(verifySignIn(deps(), req), "expired");
+    expect(store.nonces.get(req.nonce)?.usedAt).toBeUndefined();
   });
 
   it("refuses non-canonical or malformed messages", async () => {

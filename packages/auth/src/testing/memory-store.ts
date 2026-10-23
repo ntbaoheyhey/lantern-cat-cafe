@@ -14,6 +14,10 @@ export class MemoryStore implements AuthStore {
   }
 
   async consumeNonce(nonce: string): Promise<boolean> {
+    // Yield to the event loop first so concurrent callers really interleave. The check and the
+    // write below then run in one synchronous step, which models the single atomic
+    // UPDATE ... WHERE used_at IS NULL RETURNING of the Postgres store.
+    await new Promise((resolve) => setTimeout(resolve, 0));
     const row = this.nonces.get(nonce);
     const now = this.clock().getTime();
     if (!row || row.usedAt !== undefined || row.createdAt <= now - NONCE_TTL_SECONDS * 1000) return false;
