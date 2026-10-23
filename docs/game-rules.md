@@ -52,6 +52,7 @@ A new player beats boss level 1 with probability >= 50% by 15 minutes of active 
 | `boss.damageSpread` | 0.2 | Boss damage varies +/- this fraction per round. |
 | `boss.maxRounds` | 60 | Fight is lost after this many rounds. |
 | `boss.maxLevel` | 50 | Highest boss level. |
+| `boss.maxAttemptsPerDay` | 5 | Boss fights per day (UTC+7). Draft, confirm at sign-off. |
 | `relic.shardCost` | 60 | Shards to forge a Relic. |
 | `relic.bossKeyCost` | 1 | Boss Keys to forge a Relic. |
 | `relic.rarityOddsBp` | 6000 / 2800 / 1000 / 200 | Relic rarity odds in basis points (sum 10000): 60% / 28% / 10% / 2%. |

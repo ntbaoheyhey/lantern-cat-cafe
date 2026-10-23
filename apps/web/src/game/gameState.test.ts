@@ -5,6 +5,11 @@ import { MockGameApi } from '../api/MockGameApi';
 import { GameLoop, reconcile, type Prediction } from './gameState';
 
 const gear = newPlayer().gear;
+const extra = {
+  inventory: [],
+  bossKeys: 0,
+  boss: { level: 1, attemptsToday: 0, attemptsLeft: 5, keyEarnedToday: false },
+};
 
 function setVisibility(state: 'visible' | 'hidden') {
   Object.defineProperty(document, 'visibilityState', { value: state, configurable: true });
@@ -22,7 +27,7 @@ it('reconcile replaces predicted values with server values and resets the baseli
     baseGold: 100, baseShards: 1, gear, power: 30, goldPerSecond: 4, elapsed: 12,
   };
   const next = reconcile(predicted, {
-    gold: 7, shards: 9, gear, bossLevel: 1, power: 31, goldPerSecond: 4.1, serverTime: 5,
+    gold: 7, shards: 9, gear, bossLevel: 1, power: 31, goldPerSecond: 4.1, serverTime: 5, ...extra,
   });
   expect(next).toEqual({
     baseGold: 7, baseShards: 9, gear, power: 31, goldPerSecond: 4.1, elapsed: 0,
@@ -48,7 +53,7 @@ it('server number wins on claim', async () => {
   await loop.start();
   await vi.advanceTimersByTimeAsync(10_000);
   const spy = vi.spyOn(api, 'claim').mockResolvedValue({
-    gold: 5, shards: 2, gear, bossLevel: 1, power: 30, goldPerSecond: 4, serverTime: 0, drops: [],
+    gold: 5, shards: 2, gear, bossLevel: 1, power: 30, goldPerSecond: 4, serverTime: 0, drops: [], ...extra,
   });
   await loop.claim();
   expect(spy).toHaveBeenCalled();
