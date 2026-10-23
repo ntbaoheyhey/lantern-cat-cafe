@@ -1,5 +1,5 @@
 import { PGlite } from "@electric-sql/pglite";
-import { CONFIG, computeIdleGains, gearStat, heroPower, starterGear } from "@taskbar-hero/game-rules";
+import { CONFIG, computeClaimGains, gearStat, goldPerSecond, heroPower, starterGear } from "@taskbar-hero/game-rules";
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -76,7 +76,7 @@ async function row(id: string) {
 /** What docs/api.md says a claim from lastMs to nowMs should credit. */
 async function expectedGains(id: string, state: ServerState, lastMs: number, nowMs: number) {
   const seed = await claimSeed(SECRET, id, lastMs * 1000);
-  return computeIdleGains({ gear: state.gear, bossLevel: state.bossLevel }, (nowMs - lastMs) / 1000, seed);
+  return computeClaimGains({ gear: state.gear, bossLevel: state.bossLevel }, (nowMs - lastMs) / 1000, seed);
 }
 
 beforeAll(async () => {
@@ -126,7 +126,7 @@ describe("game-state", () => {
 });
 
 describe("idle-claim", () => {
-  it("one hour after the last claim credits what computeIdleGains predicts", async () => {
+  it("one hour after the last claim credits what computeClaimGains predicts", async () => {
     await setLastClaim(A, T0);
     clock = T0;
     const before = await getState(deps, A);
@@ -163,11 +163,26 @@ describe("idle-claim", () => {
     clock = T0 + 3 * cap * 1000;
     const before = await getState(deps, A);
     const seed = await claimSeed(SECRET, A, T0 * 1000);
-    const atCap = computeIdleGains({ gear: before.gear, bossLevel: before.bossLevel }, cap, seed);
+    const atCap = computeClaimGains({ gear: before.gear, bossLevel: before.bossLevel }, cap, seed);
     const r = await claim(deps, A);
     expect(r.gold - before.gold).toBe(atCap.gold);
     expect(r.shards - before.shards).toBe(atCap.shards);
     expect(r.drops).toHaveLength(atCap.drops.length);
+  });
+
+  it("pays the full rate for the first 5 minutes and 50% after, capped at 8 hours", async () => {
+    const { onlineWindowSeconds: w, offlineCapSeconds: cap, offlineEfficiency: eff } = CONFIG.idle;
+    for (const [gap, want] of [
+      [120, (gps: number) => Math.floor(gps * 120)],
+      [7200, (gps: number) => Math.floor(gps * w) + Math.floor(gps * (7200 - w) * eff)],
+      [cap + 3600, (gps: number) => Math.floor(gps * w) + Math.floor(gps * (cap - w) * eff)],
+    ] as const) {
+      await setLastClaim(A, T0);
+      clock = T0 + gap * 1000;
+      const before = await getState(deps, A);
+      const r = await claim(deps, A);
+      expect(r.gold - before.gold, `gap ${gap}s`).toBe(want(goldPerSecond(before.power)));
+    }
   });
 
   it("a claim that lost a race to another claim changes nothing", async () => {

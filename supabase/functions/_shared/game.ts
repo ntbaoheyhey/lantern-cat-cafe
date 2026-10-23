@@ -3,7 +3,7 @@
 // Node against PGlite. Deno wiring lives in game-server.ts.
 import {
   CONFIG,
-  computeIdleGains,
+  computeClaimGains,
   dayIndex,
   gearStat,
   goldPerSecond,
@@ -135,8 +135,9 @@ export async function getState(deps: GameDeps, playerId: string): Promise<Server
 }
 
 /**
- * POST idle-claim: credit computeIdleGains(equipped gear, boss level, now - last_claim_at, seed)
- * (online rate, capped at CONFIG.idle.offlineCapSeconds). Within 10 s of the previous claim, or
+ * POST idle-claim: credit computeClaimGains(equipped gear, boss level, now - last_claim_at, seed):
+ * full rate for the first CONFIG.idle.onlineWindowSeconds, offline rate after, capped at
+ * CONFIG.idle.offlineCapSeconds. Within 10 s of the previous claim, or
  * when a concurrent claim wins, nothing is added and drops is empty.
  */
 export async function claim(deps: GameDeps, playerId: string): Promise<ClaimResult> {
@@ -147,7 +148,7 @@ export async function claim(deps: GameDeps, playerId: string): Promise<ClaimResu
 
   const { gear } = toState(before, nowMs);
   const seed = await claimSeed(deps.seedSecret, playerId, before.lastClaimMicros);
-  const gains = computeIdleGains({ gear, bossLevel: before.bossLevel }, elapsed, seed);
+  const gains = computeClaimGains({ gear, bossLevel: before.bossLevel }, elapsed, seed);
   const drops = await deps.store.claim({
     playerId,
     expectedLastMicros: before.lastClaimMicros,

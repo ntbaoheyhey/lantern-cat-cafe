@@ -6,8 +6,10 @@ import {
   GAME_VERSION,
   bossPower,
   canForge,
+  computeClaimGains,
   computeIdleGains,
   deriveSeed,
+  goldPerSecond,
   heroPower,
   newPlayer,
   powerAfter,
@@ -31,6 +33,24 @@ describe('game-rules', () => {
     const way = computeIdleGains(p, cap * 10, 7, { offline: true });
     expect(way).toEqual(at);
     expect(way.countedSeconds).toBe(cap);
+  });
+
+  it('claim gains: full rate inside the online window, offline rate after, capped', () => {
+    const p = newPlayer();
+    const { onlineWindowSeconds: w, offlineCapSeconds: cap, offlineEfficiency: eff } = CONFIG.idle;
+    const gps = goldPerSecond(heroPower(p.gear));
+    // Under 5 minutes: all at the full rate.
+    expect(computeClaimGains(p, 120, 1).gold).toBe(Math.floor(gps * 120));
+    expect(computeClaimGains(p, w, 1).gold).toBe(Math.floor(gps * w));
+    // 2 hours: 5 minutes full, the rest at the offline rate.
+    const two = computeClaimGains(p, 7200, 1);
+    expect(two.gold).toBe(Math.floor(gps * w) + Math.floor(gps * (7200 - w) * eff));
+    expect(two.countedSeconds).toBe(7200);
+    // Over 8 hours: same as exactly 8 hours.
+    const capped = computeClaimGains(p, cap * 3, 1);
+    expect(capped).toEqual(computeClaimGains(p, cap, 1));
+    expect(capped.gold).toBe(Math.floor(gps * w) + Math.floor(gps * (cap - w) * eff));
+    expect(capped.drops.length).toBeLessThanOrEqual(CONFIG.idle.maxDropsPerClaim);
   });
 
   it('same seed gives same loot, different seeds differ', () => {
