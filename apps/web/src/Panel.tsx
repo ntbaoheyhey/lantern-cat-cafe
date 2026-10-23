@@ -4,6 +4,7 @@ import { ForgeTab } from './forge/ForgeTab';
 import { DemoNote } from './game/DemoNote';
 import { HeroTab } from './HeroTab';
 import { InventoryTab } from './inventory/InventoryTab';
+import { MarketTab } from './market/MarketTab';
 
 export const TABS = ['Hero', 'Inventory', 'Boss', 'Forge', 'Market'] as const;
 export type TabName = (typeof TABS)[number];
@@ -30,7 +31,7 @@ export function Panel({ id }: { id: string }) {
       <div role="tabpanel" id="tabpanel" aria-labelledby={`tab-${tab}`} className="tabpanel">
         <h2>{tab}</h2>
         <DemoNote />
-        {tab === 'Hero' ? <HeroTab /> : tab === 'Inventory' ? <InventoryTab /> : tab === 'Boss' ? <BossTab /> : tab === 'Forge' ? <ForgeTab /> : <p>Coming soon.</p>}
+        {tab === 'Hero' ? <HeroTab /> : tab === 'Inventory' ? <InventoryTab /> : tab === 'Boss' ? <BossTab /> : tab === 'Forge' ? <ForgeTab /> : <MarketTab />}
       </div>
     </section>
   );

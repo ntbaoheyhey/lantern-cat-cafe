@@ -1,0 +1,49 @@
+import { CONFIG, relicIdFor, type Rarity } from '@taskbar-hero/game-rules';
+import { isUserRejection } from '../forge/forgeText';
+
+/** relicIds for every rarity, lowest first (one token id per tier). */
+export const RELIC_IDS: { rarity: Rarity; relicId: bigint }[] = CONFIG.rarities.map((rarity) => ({
+  rarity,
+  relicId: BigInt(relicIdFor(rarity)),
+}));
+
+export function rarityOf(relicId: bigint): Rarity | undefined {
+  return RELIC_IDS.find((r) => r.relicId === relicId)?.rarity;
+}
+
+export const shortAddress = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
+
+/** Walks an error's cause chain for a contract revert name (viem ContractFunctionRevertedError). */
+function revertName(e: unknown): string | undefined {
+  for (let cur: unknown = e, depth = 0; cur && depth < 6; depth++) {
+    const err = cur as { errorName?: string; data?: { errorName?: string }; cause?: unknown };
+    const name = err.errorName ?? err.data?.errorName;
+    if (name) return name;
+    cur = err.cause;
+  }
+  return undefined;
+}
+
+function isInsufficientFunds(e: unknown): boolean {
+  for (let cur: unknown = e, depth = 0; cur && depth < 6; depth++) {
+    const err = cur as { name?: string; message?: string; cause?: unknown };
+    if (err.name === 'InsufficientFundsError' || /insufficient funds/i.test(err.message ?? '')) return true;
+    cur = err.cause;
+  }
+  return false;
+}
+
+/** Friendly text for a failed market transaction. */
+export function txErrorText(e: unknown): string {
+  if (isUserRejection(e)) return 'Cancelled in your wallet.';
+  switch (revertName(e)) {
+    case 'ListingNotActive':
+      return 'That listing is gone (someone bought or cancelled it first). The list has been refreshed.';
+    case 'WrongPayment':
+      return 'The price changed. Refresh and try again.';
+    case 'NotSeller':
+      return 'Only the seller can cancel this listing.';
+  }
+  if (isInsufficientFunds(e)) return 'Not enough test AVAX for the price plus gas. Get more from the Fuji faucet.';
+  return 'Transaction failed. Please try again.';
+}
