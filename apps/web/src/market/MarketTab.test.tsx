@@ -71,6 +71,23 @@ it('shows My Relics counts per rarity', () => {
   expect(relics.textContent).not.toContain('Rare');
 });
 
+it('shows listed Relics as "× n listed" instead of the empty state', () => {
+  chain.listings = [[3n, { seller: ME, relicId: 1n, amount: 1n, price: parseEther('0.1') }]];
+  render(<MarketTab />);
+  expect(screen.queryByTestId('relics-empty')).toBeNull();
+  expect(screen.getByTestId('my-relics').textContent).toContain('Common × 1 listed');
+});
+
+it('renders Relic images with the right src and rarity alt text', () => {
+  chain.balances = [1n, 0n, 0n, 1n];
+  chain.listings = [[5n, { seller: OTHER, relicId: 3n, amount: 1n, price: 1n }]];
+  render(<MarketTab />);
+  const mine = within(screen.getByTestId('my-relics'));
+  expect(mine.getByAltText('Common').getAttribute('src')).toBe('/relics/1.svg');
+  expect(mine.getByAltText('Legendary').getAttribute('src')).toBe('/relics/4.svg');
+  expect(within(screen.getByTestId('listing-5')).getByAltText('Epic').getAttribute('src')).toBe('/relics/3.svg');
+});
+
 it('shows the empty state without Relics', () => {
   render(<MarketTab />);
   expect(screen.getByTestId('relics-empty').textContent).toContain('No Relics yet. Forge one in the Forge tab.');

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { formatEther, parseEther } from 'viem';
 import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
 import { capitalize } from '../forge/forgeText';
-import { RELIC_IDS, rarityOf, shortAddress, txErrorText } from './marketText';
+import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
 import '../forge/forge.css';
 import '../inventory/inventory.css';
 import './market.css';
@@ -102,7 +102,6 @@ export function MarketTab() {
   }
 
   const owned = RELIC_IDS.map((r, i) => ({ ...r, balance: balances.data?.[i] ?? 0n }));
-  const holdings = owned.filter((r) => r.balance > 0n);
 
   // Keyed by id: getListings order is not stable, so pages can overlap or shift between reads.
   const byId = new Map<bigint, Listing>();
@@ -116,6 +115,11 @@ export function MarketTab() {
   }
   const listings = [...byId.values()].sort((a, b) => (a.id < b.id ? -1 : 1));
   const isMine = (l: Listing) => l.seller.toLowerCase() === address.toLowerCase();
+  // Relics in escrow: the wallet balance no longer counts them, so show them as "listed".
+  const listedBy = (relicId: bigint) =>
+    listings.filter((l) => isMine(l) && l.relicId === relicId).reduce((sum, l) => sum + l.amount, 0n);
+  const holdings = owned.map((r) => ({ ...r, listed: listedBy(r.relicId) })).filter((r) => r.balance > 0n || r.listed > 0n);
+  const sellable = holdings.filter((r) => r.balance > 0n);
 
   const selected = owned.find((r) => r.relicId.toString() === listId);
   const amount = /^\d+$/.test(listAmount.trim()) ? BigInt(listAmount.trim()) : 0n;
@@ -192,7 +196,12 @@ export function MarketTab() {
           <ul className="market-relics" data-testid="my-relics">
             {holdings.map((r) => (
               <li key={r.rarity} className={`rarity-${r.rarity}`}>
-                {capitalize(r.rarity)} × {r.balance.toString()}
+                <img src={relicImageUrl(r.relicId)} alt={capitalize(r.rarity)} width={40} height={40} />
+                <span>
+                  {capitalize(r.rarity)}
+                  {r.balance > 0n && <> × {r.balance.toString()}</>}
+                  {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
+                </span>
               </li>
             ))}
           </ul>
@@ -210,7 +219,8 @@ export function MarketTab() {
               const rarity = rarityOf(l.relicId);
               return (
                 <li key={l.id.toString()} data-testid={`listing-${l.id}`}>
-                  <span className={rarity ? `rarity-${rarity}` : undefined}>
+                  <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
+                    {rarity && <img src={relicImageUrl(l.relicId)} alt={capitalize(rarity)} width={32} height={32} />}
                     {rarity ? capitalize(rarity) : `Relic #${l.relicId}`} × {l.amount.toString()}
                   </span>
                   <span>{formatEther(l.price)} AVAX</span>
@@ -238,7 +248,7 @@ export function MarketTab() {
             Relic
             <select value={listId} onChange={(e) => setListId(e.target.value)}>
               <option value="">Choose…</option>
-              {holdings.map((r) => (
+              {sellable.map((r) => (
                 <option key={r.rarity} value={r.relicId.toString()}>
                   {capitalize(r.rarity)} (you have {r.balance.toString()})
                 </option>
