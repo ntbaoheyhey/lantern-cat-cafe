@@ -1,7 +1,7 @@
-import type { CONFIG } from './config';
+import type { RarityId, SlotId } from './content';
 
-export type Slot = (typeof CONFIG.slots)[number];
-export type Rarity = (typeof CONFIG.rarities)[number];
+export type Slot = SlotId;
+export type Rarity = RarityId;
 
 export interface Gear {
   slot: Slot;
