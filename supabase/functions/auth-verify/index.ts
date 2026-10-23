@@ -9,6 +9,6 @@ Deno.serve(
     const body = await req.json().catch(() => null);
     if (!body || typeof body !== "object") throw new AuthError("invalid_request");
     const { message, signature } = body as Record<string, unknown>;
-    return json(await verifySignIn({ store, config }, { message, signature }));
+    return json(req, await verifySignIn({ store, config }, { message, signature }));
   }),
 );
