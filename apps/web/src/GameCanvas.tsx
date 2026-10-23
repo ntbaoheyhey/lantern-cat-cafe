@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type Phaser from 'phaser';
+import { Hud } from './game/Hud';
+import { getGameLoop } from './game/store';
 
 /**
  * Mounts the Phaser strip. The game is created in an effect and destroyed in
@@ -14,11 +16,13 @@ export function GameCanvas() {
     if (!host) return;
     let game: Phaser.Game | null = null;
     let cancelled = false;
+    const loop = getGameLoop();
+    void loop.start();
 
     // Dynamic import keeps Phaser out of the initial HTML parse and out of tests.
     void import('./game/createGame').then(({ createGame }) => {
       if (cancelled) return;
-      game = createGame(host);
+      game = createGame(host, loop);
       if (document.hidden) game.pause();
     });
 
@@ -31,6 +35,7 @@ export function GameCanvas() {
 
     return () => {
       cancelled = true;
+      loop.stop();
       document.removeEventListener('visibilitychange', onVisibility);
       game?.destroy(true);
       game = null;
@@ -38,5 +43,10 @@ export function GameCanvas() {
     };
   }, []);
 
-  return <div ref={hostRef} className="game-host" data-testid="game-host" />;
+  return (
+    <>
+      <div ref={hostRef} className="game-host" data-testid="game-host" />
+      <Hud />
+    </>
+  );
 }

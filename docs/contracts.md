@@ -115,3 +115,111 @@ The contract only enforces what is listed above; the backend must uphold these:
 4. **Check `relicExists(relicId)` before trusting `rarityOf(relicId)`.** For a relic that was never
    minted, `rarityOf` returns 0, which is indistinguishable from a real rarity 0. Markets and clients
    must check this first.
+
+## RelicMarket (`contracts/src/RelicMarket.sol`)
+
+Fixed-price escrow market for Relics, priced in AVAX (test AVAX on Fuji). No fees, no token, no owner:
+nobody but the seller can touch a listed Relic, and nobody but a buyer paying the exact price can take it.
+Constructor: `RelicMarket(address relicNFT)`; the address is immutable and readable as `relicNFT()`.
+
+### Model
+
+- **Escrow.** `list` moves the Relics from the seller into the market with `safeTransferFrom`. The seller
+  must first call `RelicNFT.setApprovalForAll(market, true)`. Relics stay in the market until bought or
+  cancelled.
+- **Listing** = `{ seller, relicId, amount, price }`. `amount >= 1` copies of one `relicId`; `price` is the
+  total in wei for all copies, `> 0`. Listing ids start at 1, increase by one and are never reused.
+- **Payment is pushed** to the seller inside `buy` with a low-level call. If the seller cannot receive AVAX
+  (e.g. a contract without `receive`), the whole `buy` reverts with `PaymentFailed()` and the buyer keeps
+  their AVAX; only that seller's own listing is affected and they can still `cancel` it.
+- **Only solicited deposits.** The market's ERC-1155 receiver hook accepts a single transfer only from the
+  configured RelicNFT, only when the market itself is the operator, inside its own `list` call. Direct
+  transfers (single or batch) and tokens from any other ERC-1155 revert with `UnsolicitedTransfer()`, so
+  Relics can't be stranded here. Plain AVAX transfers to the market also revert.
+- **Reentrancy.** `list`, `buy` and `cancel` are `nonReentrant`, and `buy`/`cancel` delete the listing
+  before any external call (checks-effects-interactions). Tests cover a seller whose `receive()` re-enters
+  `buy` and a buyer whose `onERC1155Received` re-enters `buy`.
+
+### Functions
+
+| Function | Who | Notes / reverts |
+| --- | --- | --- |
+| `list(uint256 relicId, uint256 amount, uint256 price) returns (uint256 listingId)` | anyone holding the Relic | `ZeroAmount()`, `ZeroPrice()`; ERC-1155 errors bubble up: `ERC1155MissingApprovalForAll(market, seller)` without approval, `ERC1155InsufficientBalance(...)` if the seller has too few copies |
+| `buy(uint256 listingId)` payable | anyone | `msg.value` must equal `price` exactly, else `WrongPayment()`; `ListingNotActive()` if never listed, bought or cancelled; `PaymentFailed()` if the seller rejects AVAX |
+| `cancel(uint256 listingId)` | seller only | returns the Relics to the seller; `NotSeller()`, `ListingNotActive()` |
+| `getListings(uint256 offset, uint256 limit) view returns (uint256[] ids, Listing[] items)` | view | pages over **active** listings only; empty arrays once `offset >= activeListingCount()` |
+| `activeListingCount() view returns (uint256)` | view | total active listings |
+| `getListing(uint256 listingId) view returns (Listing)` | view | all-zero struct (`seller == 0x0`) if not active |
+| `isActive(uint256 listingId) view returns (bool)` | view | |
+| `nextListingId() view returns (uint256)` | view | id the next `list` will return |
+
+`getListings` order is **not stable**: removing a listing moves the last active id into its slot. Page
+through all of `activeListingCount()` and key results by listing id; don't assume ascending order.
+
+### Events
+
+```solidity
+event Listed(uint256 indexed listingId, address indexed seller, uint256 indexed relicId, uint256 amount, uint256 price);
+event Bought(uint256 indexed listingId, address indexed buyer, address indexed seller, uint256 relicId, uint256 amount, uint256 price);
+event Cancelled(uint256 indexed listingId, address indexed seller);
+```
+
+### Client usage with viem
+
+```ts
+import { parseEther, parseEventLogs } from "viem";
+
+// 1. One-time approval so the market can pull the seller's Relics.
+const approved = await publicClient.readContract({
+  address: RELIC_NFT_ADDRESS, abi: relicNftAbi,
+  functionName: "isApprovedForAll", args: [account, RELIC_MARKET_ADDRESS],
+});
+if (!approved) {
+  const hash = await walletClient.writeContract({
+    address: RELIC_NFT_ADDRESS, abi: relicNftAbi,
+    functionName: "setApprovalForAll", args: [RELIC_MARKET_ADDRESS, true],
+  });
+  await publicClient.waitForTransactionReceipt({ hash });
+}
+
+// 2. List 1 copy of relicId for 0.5 AVAX (total price, in wei).
+const listHash = await walletClient.writeContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi,
+  functionName: "list", args: [relicId, 1n, parseEther("0.5")],
+});
+const receipt = await publicClient.waitForTransactionReceipt({ hash: listHash });
+const [listed] = parseEventLogs({ abi: relicMarketAbi, eventName: "Listed", logs: receipt.logs });
+const listingId = listed.args.listingId;
+
+// 3. Read active listings page by page (no indexer needed).
+const total = await publicClient.readContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi, functionName: "activeListingCount",
+});
+const [ids, items] = await publicClient.readContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi,
+  functionName: "getListings", args: [0n, 50n],
+}); // items[i] = { seller, relicId, amount, price }
+
+// 4. Buy: send exactly the listed price (re-read it right before buying).
+const listing = await publicClient.readContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi, functionName: "getListing", args: [listingId],
+});
+await walletClient.writeContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi,
+  functionName: "buy", args: [listingId], value: listing.price,
+});
+
+// 5. Cancel (seller only): the Relic comes back to the seller.
+await walletClient.writeContract({
+  address: RELIC_MARKET_ADDRESS, abi: relicMarketAbi, functionName: "cancel", args: [listingId],
+});
+```
+
+Listing ids, prices and amounts are `uint256`, so pass and expect `bigint`.
+
+### Notes
+
+- `list` does not check `relicExists`: holding a balance of `relicId` (required by the transfer) already
+  implies the Relic was minted.
+- Seller and buyer may be the same address (harmless; no fees).
+- A listing always sells as a whole lot; partial fills are not supported.
