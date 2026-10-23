@@ -74,8 +74,7 @@ export class SupabaseGameApi implements GameApi {
     return this.post('equip', { gearId });
   }
 
-  /** boss-fight is B4. */
   fightBoss(): Promise<BossFightResult> {
-    return Promise.reject(new GameApiError('server_error', 'not implemented'));
+    return this.post('boss-fight');
   }
 }

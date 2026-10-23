@@ -52,7 +52,12 @@ describe('SupabaseGameApi', () => {
     await expect(api.claim()).rejects.toMatchObject({ code: 'server_error', message: 'offline' });
   });
 
-  it('fightBoss is not implemented yet (B4)', async () => {
-    await expect(setup().api.fightBoss()).rejects.toEqual(new GameApiError('server_error', 'not implemented'));
+  it('fightBoss posts to boss-fight and maps no_attempts_left', async () => {
+    const { api, fetch } = setup({ body: { keyGranted: true } });
+    await expect(api.fightBoss()).resolves.toEqual({ keyGranted: true });
+    expect(fetch.mock.calls[0]![0]).toBe('https://proj.supabase.co/functions/v1/boss-fight');
+    await expect(setup({ status: 409, body: { error: 'no_attempts_left' } }).api.fightBoss()).rejects.toEqual(
+      new GameApiError('no_attempts_left'),
+    );
   });
 });
