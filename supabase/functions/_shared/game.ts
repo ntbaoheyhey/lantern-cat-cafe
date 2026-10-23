@@ -5,9 +5,11 @@ import {
   CONFIG,
   computeClaimGains,
   dayIndex,
+  forgeBlock,
   gearStat,
   goldPerSecond,
   heroPower,
+  newPlayer,
   simulateBoss,
   starterGear,
   type Gear,
@@ -17,7 +19,9 @@ import type {
   BossFightResult,
   ClaimResult,
   GameApiErrorCode,
+  ForgeStatus,
   OwnedGear,
+  RelicVoucher,
   ServerState,
 } from "../../../apps/web/src/api/GameApi.ts";
 
@@ -30,6 +34,8 @@ const STATUS: Record<GameApiErrorCode, number> = {
   not_found: 404,
   rate_limited: 429,
   no_attempts_left: 409,
+  forge_blocked: 409,
+  mint_not_confirmed: 409,
   server_error: 500,
 };
 
@@ -56,6 +62,10 @@ export interface Snapshot {
   attemptsToday: number;
   keyEarnedToday: boolean;
   gear: OwnedGear[];
+  /** True once a Relic was forged (paid) today. Filled by the forge SQL (B5); absent = false. */
+  forgedToday?: boolean;
+  /** The paid, unminted voucher, if any (B5). */
+  pending?: RelicVoucher | null;
 }
 
 /** The SQL functions, called as service_role. */
@@ -122,6 +132,14 @@ export function bossSeed(secret: string, playerId: string, day: string, attempt:
   return hmacSeed(secret, `boss:${playerId}:${day}:${attempt}`);
 }
 
+function forgeStatus(s: Snapshot, nowMs: number): ForgeStatus {
+  const today = dayIndex(nowMs / 1000);
+  const pending = s.pending ?? null;
+  const forgedToday = s.forgedToday ?? false;
+  const player = { ...newPlayer(), shards: Number(s.shards), bossKeys: Number(s.bossKeys), lastForgeDay: forgedToday ? today : -1 };
+  return { blockedBy: pending ? null : forgeBlock(player, today), forgedToday, pending };
+}
+
 function toState(s: Snapshot, nowMs: number): ServerState {
   const inventory = s.gear.map((g) => ({ ...g }));
   const gear: Gear[] = inventory.filter((g) => g.equipped).map(({ slot, rarity, level }) => ({ slot, rarity, level }));
@@ -140,6 +158,7 @@ function toState(s: Snapshot, nowMs: number): ServerState {
       attemptsLeft: Math.max(0, CONFIG.boss.maxAttemptsPerDay - attemptsToday),
       keyEarnedToday: s.keyEarnedToday,
     },
+    forge: forgeStatus(s, nowMs),
     power,
     goldPerSecond: goldPerSecond(power),
     serverTime: nowMs / 1000,

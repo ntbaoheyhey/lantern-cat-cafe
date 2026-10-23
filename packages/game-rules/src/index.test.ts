@@ -14,6 +14,8 @@ import {
   newPlayer,
   powerAfter,
   relicOdds,
+  relicIdFor,
+  rarityIndex,
   rollRelicRarity,
   simulateBoss,
   starterGear,
@@ -147,5 +149,16 @@ describe('day boundary', () => {
     const vnMidnight = Date.UTC(2026, 10, 20, 17, 0, 0) / 1000; // 2026-11-21 00:00 UTC+7
     expect(dayIndex(vnMidnight - 1)).toBe(dayIndex(vnMidnight) - 1);
     expect(dayIndex(vnMidnight + 23 * 3600)).toBe(dayIndex(vnMidnight));
+  });
+});
+
+describe('relic ids', () => {
+  it('maps each rarity to its own fixed relicId and uint8 index', () => {
+    const ids = CONFIG.rarities.map(relicIdFor);
+    expect(new Set(ids).size).toBe(CONFIG.rarities.length);
+    CONFIG.rarities.forEach((r, i) => {
+      expect(rarityIndex(r)).toBe(i);
+      expect(relicIdFor(r)).toBe(i + 1);
+    });
   });
 });

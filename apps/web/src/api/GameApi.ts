@@ -1,4 +1,4 @@
-import type { BossResult, Gear } from '@taskbar-hero/game-rules';
+import type { BossResult, ForgeBlock, Gear, Rarity } from '@taskbar-hero/game-rules';
 
 /** A gear item the player owns. `id` is the server's row id. */
 export interface OwnedGear extends Gear {
@@ -17,6 +17,37 @@ export interface BossStatus {
   keyEarnedToday: boolean;
 }
 
+/**
+ * A signed RelicNFT mint voucher (EIP-712, docs/contracts.md). Pass the fields to
+ * `RelicNFT.mint({player, relicId, rarity, nonce, expiry}, signature)` from the player's wallet.
+ * uint256 values are decimal strings so they survive JSON.
+ */
+export interface RelicVoucher {
+  player: `0x${string}`;
+  /** relicIdFor(rarity) from game-rules: one relicId per rarity tier. */
+  relicId: string;
+  /** Rarity index into CONFIG.rarities (uint8 on chain). */
+  rarity: number;
+  rarityName: Rarity;
+  nonce: string;
+  /** Unix seconds; the contract rejects the voucher after this. */
+  expiry: number;
+  signature: `0x${string}`;
+}
+
+/** Today's forge status. "Today" resets at midnight UTC+7. */
+export interface ForgeStatus {
+  /** Null when a forge is allowed now, otherwise why not (game-rules forgeBlock). */
+  blockedBy: ForgeBlock | null;
+  /** True once today's Relic has been forged (paid for), minted or not. */
+  forgedToday: boolean;
+  /**
+   * The paid, not yet minted voucher, if any. Re-fetching never re-rolls: an expired one is
+   * re-signed with the same relicId and rarity, a new nonce and a new expiry.
+   */
+  pending: RelicVoucher | null;
+}
+
 /** Authoritative account snapshot. The server's numbers always win. */
 export interface ServerState {
   gold: number;
@@ -29,6 +60,7 @@ export interface ServerState {
   /** Unspent Boss Keys. */
   bossKeys: number;
   boss: BossStatus;
+  forge: ForgeStatus;
   power: number;
   goldPerSecond: number;
   /** Unix seconds on the server clock. */
@@ -49,6 +81,13 @@ export interface BossFightResult {
   state: ServerState;
 }
 
+export interface ForgeResult {
+  /** The voucher to mint (new, or today's pending one). */
+  voucher: RelicVoucher;
+  /** State after paying (shards and one Boss Key spent on a new forge). */
+  state: ServerState;
+}
+
 /** Error codes a call can reject with (`GameApiError.code`). */
 export type GameApiErrorCode =
   | 'unauthenticated'
@@ -56,6 +95,8 @@ export type GameApiErrorCode =
   | 'not_found'
   | 'rate_limited'
   | 'no_attempts_left'
+  | 'forge_blocked'
+  | 'mint_not_confirmed'
   | 'server_error';
 
 export class GameApiError extends Error {
@@ -80,4 +121,17 @@ export interface GameApi {
   equip(gearId: string): Promise<ServerState>;
   /** Fight the current boss once. Rejects with `no_attempts_left` at the daily limit. */
   fightBoss(): Promise<BossFightResult>;
+  /**
+   * Forge today's Relic: spend CONFIG.relic.shardCost shards and one Boss Key, roll the rarity,
+   * return a signed voucher. If a paid voucher is still unminted, returns it instead (no new spend,
+   * no re-roll). Rejects with `forge_blocked` (message = the ForgeBlock reason). The demo mock
+   * returns a voucher with a dummy signature that the contract would reject: demo mode never mints.
+   */
+  forgeRelic(): Promise<ForgeResult>;
+  /**
+   * Report the mint transaction for the pending voucher. The server reads the receipt on Fuji and
+   * clears `forge.pending` once it sees RelicForged for that nonce. Rejects with `not_found` (unknown
+   * nonce) or `mint_not_confirmed` (tx missing, failed or for another voucher; safe to retry).
+   */
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState>;
 }

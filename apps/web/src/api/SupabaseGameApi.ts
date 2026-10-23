@@ -2,6 +2,7 @@ import {
   GameApiError,
   type BossFightResult,
   type ClaimResult,
+  type ForgeResult,
   type GameApi,
   type GameApiErrorCode,
   type ServerState,
@@ -24,6 +25,8 @@ const CODES: readonly GameApiErrorCode[] = [
   'not_found',
   'rate_limited',
   'no_attempts_left',
+  'forge_blocked',
+  'mint_not_confirmed',
   'server_error',
 ];
 
@@ -55,8 +58,10 @@ export class SupabaseGameApi implements GameApi {
     }
     const data: unknown = await res.json().catch(() => null);
     if (!res.ok) {
-      const code = (data as { error?: unknown } | null)?.error;
-      if (CODES.includes(code as GameApiErrorCode)) throw new GameApiError(code as GameApiErrorCode);
+      const { error: code, reason } = (data as { error?: unknown; reason?: unknown } | null) ?? {};
+      if (CODES.includes(code as GameApiErrorCode)) {
+        throw new GameApiError(code as GameApiErrorCode, typeof reason === 'string' ? reason : undefined);
+      }
       throw new GameApiError(res.status === 401 ? 'unauthenticated' : 'server_error', `${name} failed (${res.status})`);
     }
     return data as T;
@@ -76,5 +81,13 @@ export class SupabaseGameApi implements GameApi {
 
   fightBoss(): Promise<BossFightResult> {
     return this.post('boss-fight');
+  }
+
+  forgeRelic(): Promise<ForgeResult> {
+    return this.post('relic-forge');
+  }
+
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState> {
+    return this.post('relic-mint-report', { nonce, txHash });
   }
 }

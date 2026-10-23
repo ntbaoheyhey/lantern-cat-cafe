@@ -3,9 +3,13 @@ import {
   computeClaimGains,
   dayIndex,
   deriveSeed,
+  forgeBlock,
   goldPerSecond,
   heroPower,
   newPlayer,
+  rarityIndex,
+  relicIdFor,
+  rollRelicRarity,
   simulateBoss,
   type Gear,
   type PlayerState,
@@ -15,10 +19,17 @@ import {
   GameApiError,
   type BossFightResult,
   type ClaimResult,
+  type ForgeResult,
   type GameApi,
   type OwnedGear,
+  type RelicVoucher,
   type ServerState,
 } from './GameApi';
+
+/** Demo vouchers carry this all-zero signature; RelicNFT rejects it, so demo mode never mints. */
+export const DEMO_SIGNATURE = `0x${'00'.repeat(65)}` as const;
+const DEMO_PLAYER = '0x0000000000000000000000000000000000000000' as const;
+const VOUCHER_TTL_SECONDS = 30 * 60;
 
 export interface MockGameApiOptions {
   seed?: Seed;
@@ -26,6 +37,8 @@ export interface MockGameApiOptions {
   now?: () => number;
   /** Extra unequipped items to start with (for UI tests and demos). */
   inventory?: Gear[];
+  /** Starting balances (for UI tests and demos), e.g. enough to forge right away. */
+  start?: Partial<Pick<PlayerState, 'gold' | 'shards' | 'bossKeys'>>;
 }
 
 /** In-memory stand-in for the server, computing with game-rules. Same rules as docs/api.md. */
@@ -40,10 +53,13 @@ export class MockGameApi implements GameApi {
   private nextId = 1;
   private attemptsDay = -1;
   private attemptsToday = 0;
+  private forges = 0;
+  private pending: RelicVoucher | null = null;
 
   constructor(opts: MockGameApiOptions = {}) {
     this.seed = opts.seed ?? 12345;
     this.now = opts.now ?? Date.now;
+    Object.assign(this.player, opts.start);
     this.lastClaimMs = this.now();
     this.inventory = [
       ...this.player.gear.map((g) => this.own(g, true)),
@@ -84,6 +100,11 @@ export class MockGameApi implements GameApi {
         attemptsToday: this.attemptsToday,
         attemptsLeft: Math.max(0, CONFIG.boss.maxAttemptsPerDay - this.attemptsToday),
         keyEarnedToday: this.player.lastBossKeyDay === this.today(),
+      },
+      forge: {
+        blockedBy: this.pending ? null : forgeBlock(this.player, this.today()),
+        forgedToday: this.player.lastForgeDay === this.today(),
+        pending: this.pending ? { ...this.pending } : null,
       },
       power,
       goldPerSecond: goldPerSecond(power),
@@ -133,5 +154,38 @@ export class MockGameApi implements GameApi {
       }
     }
     return Promise.resolve({ result, keyGranted, state: this.snapshot() });
+  }
+
+  forgeRelic(): Promise<ForgeResult> {
+    const nowS = Math.floor(this.now() / 1000);
+    if (this.pending) {
+      // Same relic, fresh nonce and expiry once expired; never re-roll or charge again.
+      if (this.pending.expiry <= nowS) {
+        this.pending = { ...this.pending, nonce: String(++this.forges), expiry: nowS + VOUCHER_TTL_SECONDS };
+      }
+      return Promise.resolve({ voucher: { ...this.pending }, state: this.snapshot() });
+    }
+    const blocked = forgeBlock(this.player, this.today());
+    if (blocked) return Promise.reject(new GameApiError('forge_blocked', blocked));
+    this.player.shards -= CONFIG.relic.shardCost;
+    this.player.bossKeys -= CONFIG.relic.bossKeyCost;
+    this.player.lastForgeDay = this.today();
+    const rarity = rollRelicRarity(deriveSeed(this.seed, 2000 + ++this.forges));
+    this.pending = {
+      player: DEMO_PLAYER,
+      relicId: String(relicIdFor(rarity)),
+      rarity: rarityIndex(rarity),
+      rarityName: rarity,
+      nonce: String(this.forges),
+      expiry: nowS + VOUCHER_TTL_SECONDS,
+      signature: DEMO_SIGNATURE,
+    };
+    return Promise.resolve({ voucher: { ...this.pending }, state: this.snapshot() });
+  }
+
+  reportMint(nonce: string, _txHash: `0x${string}`): Promise<ServerState> {
+    if (!this.pending || this.pending.nonce !== nonce) return Promise.reject(new GameApiError('not_found'));
+    this.pending = null;
+    return Promise.resolve(this.snapshot());
   }
 }
