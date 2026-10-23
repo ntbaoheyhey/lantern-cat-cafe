@@ -5,6 +5,7 @@ import type { GameLoop } from '../game/gameState';
 import { getGameApi, getGameLoop, useGameMode, useGameSnapshot } from '../game/store';
 import { LABELS } from '../theme/labels';
 import { blockText, oddsRows, relicName } from './forgeText';
+import { ForgeReveal } from './ForgeReveal';
 import { MintPanel } from './MintPanel';
 import { loadUnreported, type UnreportedMint } from './mintStore';
 import { reportMint } from './report';
@@ -12,7 +13,7 @@ import { relicImageUrl } from '../market/marketText';
 import { TodayRelicCard, txUrl } from './TodayRelicCard';
 import './forge.css';
 
-export const REVEAL_MS = 1500;
+export const REVEAL_MS = 2500;
 
 export interface ForgeTabProps {
   api?: GameApi;
@@ -42,12 +43,14 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
     unapplied.current = null;
   };
 
+  const finishReveal = () => {
+    setRevealing(false);
+    apply();
+  };
+
   useEffect(() => {
     if (!revealing) return;
-    const t = setTimeout(() => {
-      setRevealing(false);
-      apply();
-    }, revealMs);
+    const t = setTimeout(finishReveal, revealMs);
     return () => clearTimeout(t);
   }, [revealing, revealMs]);
 
@@ -137,7 +140,11 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
       {forge.today && !revealing && !unreported && <TodayRelicCard today={forge.today} mintable={!!toMint} canReissue={forge.blockedBy === null} />}
 
       {revealing ? (
-        <p className="forge-reveal forging" aria-live="polite">Forging…</p>
+        voucher ? (
+          <ForgeReveal relicId={voucher.relicId} rarityName={voucher.rarityName} revealMs={revealMs} onSkip={finishReveal} />
+        ) : (
+          <p className="forge-reveal forging" aria-live="polite">Forging…</p>
+        )
       ) : unreported ? (
         <div className="forge-result">
           <p>

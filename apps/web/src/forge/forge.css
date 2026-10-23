@@ -70,3 +70,46 @@
 .forge-today { background: var(--surface); }
 .forge-top, .forge-result, .forge-today { min-width: 0; }
 .forge-today > div, .forge-result > p { overflow-wrap: anywhere; }
+
+/* Forge reveal (ForgeReveal.tsx): stages are set through data-stage on .forge-stage. */
+.forge-stage { position: relative; display: grid; justify-items: center; gap: 6px; padding: 8px 12px 10px; background: var(--surface); border: 2px solid var(--border); box-shadow: var(--pixel-shadow); overflow: hidden; }
+.forge-stage-art { --glow: var(--rarity-common); position: relative; display: grid; place-items: center; width: 160px; height: 120px; }
+.forge-stage-art.rarity-rare { --glow: var(--rarity-rare); }
+.forge-stage-art.rarity-epic { --glow: var(--rarity-epic); }
+.forge-stage-art.rarity-legendary { --glow: var(--rarity-legendary); }
+.forge-stage-art > * { grid-area: 1 / 1; }
+.fz-glow { width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(color-mix(in srgb, var(--glow) 55%, transparent), transparent 70%); opacity: 0; }
+.fz-core { opacity: 0; }
+.fz-flash { position: absolute; inset: -20px; background: #fff; opacity: 0; pointer-events: none; }
+.fz-banner { margin: 0; min-height: 1.6em; display: flex; align-items: center; gap: 6px; font-size: 1.05rem; transform: translateX(-30px); opacity: 0; }
+.forge-skip { justify-self: end; min-height: 28px; padding: 0 10px; font-size: 0.7rem; }
+.fz-spark { position: relative; width: 6px; height: 6px; background: var(--text); opacity: 0; justify-self: center; align-self: center; }
+.fz-spark.s1 { transform: translate(-52px, -34px); }
+.fz-spark.s2 { transform: translate(50px, -42px); }
+.fz-spark.s3 { transform: translate(42px, 32px); }
+.forge-stage[data-stage='charge'] .fz-glow { opacity: 1; animation: fz-glow var(--reveal-ms) ease-in 1 forwards; }
+.forge-stage[data-stage='charge'] .fz-core { opacity: 1; animation: fz-shake 0.12s linear infinite; }
+.forge-stage[data-stage='charge'] .fz-banner, .forge-stage[data-stage='flash'] .fz-banner, .forge-stage[data-stage='rise'] .fz-banner { opacity: 1; transform: none; }
+.forge-stage[data-stage='flash'] .fz-glow { opacity: 1; }
+.forge-stage[data-stage='flash'] .fz-flash { animation: fz-flash calc(var(--reveal-ms) * 0.08) ease-out 1 forwards; }
+.forge-stage[data-stage='rise'] .fz-relic, .forge-stage[data-stage='banner'] .fz-relic { animation: fz-rise calc(var(--reveal-ms) * 0.36) ease-out 1 both, relic-glow 1.6s ease-in-out infinite alternate; }
+.forge-stage[data-stage='rise'] .fz-spark, .forge-stage[data-stage='banner'] .fz-spark { animation: fz-spark calc(var(--reveal-ms) * 0.3) ease-out 1 both; }
+.forge-stage[data-stage='rise'] .fz-spark.s2 { animation-delay: 0.1s; }
+.forge-stage[data-stage='rise'] .fz-spark.s3 { animation-delay: 0.2s; }
+.forge-stage[data-stage='banner'] .fz-banner { animation: fz-banner calc(var(--reveal-ms) * 0.2) ease-out 1 both; }
+.forge-stage[data-stage='banner'] .fz-glow { opacity: 0.5; }
+@keyframes fz-glow { from { transform: scale(0.3); } to { transform: scale(1.2); } }
+@keyframes fz-shake { 0% { transform: translate(-1px, 0); } 25% { transform: translate(2px, 1px); } 50% { transform: translate(-2px, -1px); } 75% { transform: translate(1px, 1px); } 100% { transform: translate(0, 0); } }
+@keyframes fz-flash { 0% { opacity: 0.9; } 100% { opacity: 0; } }
+@keyframes fz-rise { from { opacity: 0; transform: translateY(26px) scale(0.6); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes fz-spark { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fz-banner { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
+/* Reduced motion: no shake, glow growth or flash; the Relic and banner just fade in. */
+@media (prefers-reduced-motion: reduce) {
+  .fz-core, .fz-glow, .fz-flash, .fz-spark { animation: none !important; }
+  .fz-flash, .fz-spark { display: none; }
+  .forge-stage[data-stage] .fz-relic { animation: fz-fade 0.4s ease-out 1 both; }
+  .forge-stage[data-stage] .fz-banner { animation: fz-fade 0.4s ease-out 1 both; transform: none; }
+  .forge-stage[data-stage='charge'] .fz-core { opacity: 1; }
+}
+@keyframes fz-fade { from { opacity: 0; } to { opacity: 1; } }
