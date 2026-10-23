@@ -6,6 +6,7 @@ import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { GameApiError, type GameApi, type RelicVoucher, type ServerState } from '../api/GameApi';
 import { MockGameApi, type MockGameApiOptions } from '../api/MockGameApi';
 import { GameLoop } from '../game/gameState';
+import { LABELS } from '../theme/labels';
 import { ForgeTab } from './ForgeTab';
 import { loadUnreported, saveUnreported } from './mintStore';
 
@@ -82,8 +83,8 @@ async function forge() {
 
 it('shows each blocked reason and disables Forge', async () => {
   const cases: [MockGameApiOptions['start'], RegExp][] = [
-    [{ shards: 100, bossKeys: 0 }, /need a Boss Key/],
-    [{ shards: 10, bossKeys: 1 }, new RegExp(`need ${CONFIG.relic.shardCost} shards \\(you have 10\\)`)],
+    [{ shards: 100, bossKeys: 0 }, /need a Cat Key/],
+    [{ shards: 10, bossKeys: 1 }, new RegExp(`need ${CONFIG.relic.shardCost} Yarn \\(you have 10\\)`)],
   ];
   for (const [start, text] of cases) {
     await setup(makeApi({ start }).api);
@@ -100,7 +101,7 @@ it('shows today\'s minted Relic with a Snowtrace link instead of the Forge butto
   await mock.reportMint(voucher.nonce, HASH);
   await setup(api);
   const card = screen.getByTestId('forge-today');
-  expect(card.textContent).toContain(`Today's Relic: ${voucher.rarityName[0]!.toUpperCase()}`);
+  expect(card.textContent).toContain(`Today's Relic: ${LABELS.relics[voucher.rarityName]}`);
   expect(card.querySelector('img')!.getAttribute('src')).toBe(`/relics/${voucher.relicId}.svg`);
   expect(screen.getByTestId('forge-today-status').textContent).toMatch(/^In your wallet/);
   const link = screen.getByRole('link', { name: 'View on Snowtrace' });
@@ -169,7 +170,7 @@ it('says the voucher expired when today\'s Relic is unminted with no voucher', a
 it('forging reveals the rarity and updates shards and keys from the returned state', async () => {
   await setup(makeApi({ start: RICH }).api);
   expect(screen.getByTestId('forge-shards').textContent).toBe('100');
-  expect((await forge()).textContent).toMatch(/You forged a (Common|Rare|Epic|Legendary) Relic!/);
+  expect((await forge()).textContent).toMatch(/You forged a (Paw Charm|Silver Bell|Moon Collar|Golden Maneki)!/);
   await waitFor(() => expect(screen.getByTestId('forge-shards').textContent).toBe(String(100 - CONFIG.relic.shardCost)));
   expect(screen.getByTestId('forge-keys').textContent).toBe('0');
 });
@@ -255,7 +256,7 @@ it('shows an unminted Relic from the server with the mint button', async () => {
   const { api, mock } = makeApi({ start: RICH });
   await mock.forgeRelic(); // paid earlier, never minted
   await setup(api);
-  expect(screen.getByTestId('forge-pending').textContent).toMatch(/You have an unminted .* Relic/);
+  expect(screen.getByTestId('forge-pending').textContent).toMatch(/You have an unminted (Paw Charm|Silver Bell|Moon Collar|Golden Maneki)\./);
   expect(screen.getByRole('button', { name: 'Mint to wallet' })).toBeTruthy();
 });
 

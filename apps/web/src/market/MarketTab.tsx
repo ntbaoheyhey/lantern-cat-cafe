@@ -3,7 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { formatEther, parseEther } from 'viem';
 import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
-import { capitalize } from '../forge/forgeText';
+import { relicName } from '../forge/forgeText';
 import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
 import '../forge/forge.css';
 import '../inventory/inventory.css';
@@ -195,10 +195,10 @@ export function MarketTab() {
         ) : (
           <ul className="market-relics" data-testid="my-relics">
             {holdings.map((r) => (
-              <li key={r.rarity} className={`rarity-${r.rarity}`}>
-                <img src={relicImageUrl(r.relicId)} alt={capitalize(r.rarity)} width={40} height={40} />
+              <li key={r.rarity} className={`pixel-card rarity-${r.rarity}`}>
+                <img src={relicImageUrl(r.relicId)} alt={relicName(r.rarity)} width={40} height={40} />
                 <span>
-                  {capitalize(r.rarity)}
+                  {relicName(r.rarity)}
                   {r.balance > 0n && <> × {r.balance.toString()}</>}
                   {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
                 </span>
@@ -218,10 +218,10 @@ export function MarketTab() {
             {listings.map((l) => {
               const rarity = rarityOf(l.relicId);
               return (
-                <li key={l.id.toString()} data-testid={`listing-${l.id}`}>
+                <li key={l.id.toString()} className="pixel-card" data-testid={`listing-${l.id}`}>
                   <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
-                    {rarity && <img src={relicImageUrl(l.relicId)} alt={capitalize(rarity)} width={32} height={32} />}
-                    {rarity ? capitalize(rarity) : `Relic #${l.relicId}`} × {l.amount.toString()}
+                    {rarity && <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={32} height={32} />}
+                    {rarity ? relicName(rarity) : `Relic #${l.relicId}`} × {l.amount.toString()}
                   </span>
                   <span>{formatEther(l.price)} AVAX</span>
                   <span>{isMine(l) ? 'You' : shortAddress(l.seller)}</span>
@@ -250,7 +250,7 @@ export function MarketTab() {
               <option value="">Choose…</option>
               {sellable.map((r) => (
                 <option key={r.rarity} value={r.relicId.toString()}>
-                  {capitalize(r.rarity)} (you have {r.balance.toString()})
+                  {relicName(r.rarity)} (you have {r.balance.toString()})
                 </option>
               ))}
             </select>

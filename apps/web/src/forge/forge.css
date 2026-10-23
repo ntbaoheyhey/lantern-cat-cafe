@@ -5,33 +5,68 @@
 .forge-stats dd { font-weight: 600; }
 .forge-odds { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--muted); align-self: center; }
 .forge-actions, .forge-mint { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.forge-result { display: grid; gap: 6px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; }
+.forge-result { display: grid; gap: 6px; padding: 8px 12px; background: var(--surface); border: 2px solid var(--border); border-radius: 0; justify-items: start; }
 .tabpanel .forge-result p { margin: 0; color: var(--text); }
 .forge-btn {
   min-height: 36px;
   padding: 0 16px;
-  font: inherit;
-  font-weight: 600;
-  color: var(--text);
+  font: 700 0.8rem var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--on-accent);
   background: var(--accent);
-  border: 0;
-  border-radius: 6px;
+  border: var(--pixel-border);
+  border-radius: 0;
+  box-shadow: 0 3px 0 #000;
   cursor: pointer;
   justify-self: start;
 }
-.forge-go { background: #7d3cc7; }
+.forge-go { background: var(--rarity-epic); }
 .forge-btn:disabled { opacity: 0.5; cursor: default; }
-.tabpanel .forge-note { color: #ffb86b; }
-.tabpanel .forge-error { color: #ff8080; }
-.tabpanel .forge-done { color: #6fdc8c; }
+.tabpanel .forge-note { color: var(--gold); }
+.tabpanel .forge-error { color: var(--bad); }
+.tabpanel .forge-done { color: var(--good); }
 .forge-done a, .forge-result a { color: var(--accent); }
 .forge-reveal { font-size: 1.05rem; animation: forge-pop 0.6s ease-out; }
 .forge-reveal.forging { color: var(--muted); animation: forge-pulse 0.8s ease-in-out infinite alternate; }
 @keyframes forge-pop { from { transform: scale(1.25); opacity: 0.3; } to { transform: none; opacity: 1; } }
 @keyframes forge-pulse { from { opacity: 0.4; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .forge-reveal, .forge-reveal.forging { animation: none; } }
-.forge-today { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; }
-.forge-today img { image-rendering: pixelated; border-radius: 4px; flex: none; }
+.forge-today { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 2px solid var(--border); border-radius: 0; }
+.forge-today img { image-rendering: pixelated; flex: none; }
 .tabpanel .forge-today p { margin: 0; color: var(--text); }
 .tabpanel .forge-today .forge-today-status { color: var(--muted); font-size: 0.9rem; }
 .forge-today a { color: var(--accent); }
+
+/* Relic reveal: a glowing tile with a conic-gradient border in the rarity colour. */
+.relic-tile {
+  --glow: var(--rarity-common);
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  padding: 4px;
+  background: conic-gradient(from 0deg, var(--glow), var(--surface-2), var(--glow), var(--surface-2), var(--glow));
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow), 0 0 14px var(--glow);
+}
+.relic-tile.rarity-rare { --glow: var(--rarity-rare); }
+.relic-tile.rarity-epic { --glow: var(--rarity-epic); }
+.relic-tile.rarity-legendary { --glow: var(--rarity-legendary); }
+.relic-tile img { image-rendering: pixelated; background: var(--surface); width: 100%; height: 100%; object-fit: contain; }
+.relic-tile.reveal { animation: relic-glow 1.6s ease-in-out infinite alternate; }
+@keyframes relic-glow { from { box-shadow: var(--pixel-shadow), 0 0 8px var(--glow); } to { box-shadow: var(--pixel-shadow), 0 0 22px var(--glow); } }
+@media (prefers-reduced-motion: reduce) { .relic-tile.reveal { animation: none; } }
+.forge-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  font: 700 0.7rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgb(0 0 0 / 0.55);
+  border: 1px solid currentColor;
+}
+.forge-today { background: var(--surface); }
+.forge-top, .forge-result, .forge-today { min-width: 0; }
+.forge-today > div, .forge-result > p { overflow-wrap: anywhere; }
