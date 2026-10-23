@@ -1,0 +1,76 @@
+/* Cat Café Quest theme tokens. Loaded last so it re-skins the older component CSS.
+   New UI should use these tokens and the shared classes below. */
+:root {
+  --bg: #1a1220;
+  --surface: #2a1f36;
+  --surface-2: #3a2c4a;
+  --border: #5b4572;
+  --text: #fff3e0;
+  --muted: #c3aed0;
+  --accent: #ffb86b;
+  --on-accent: #1a1200;
+  --gold: #ffb86b;
+  --shard: #8fd8ff;
+  --key: #ff8fb1;
+  --good: #6be08a;
+  --bad: #ff6b6b;
+  --focus: #ffd75e;
+  --rarity-common: #b9b6c9;
+  --rarity-rare: #4aa8ff;
+  --rarity-epic: #bb74ff;
+  --rarity-legendary: #ff9a3c;
+  --font-display: 'Pixelify Sans', ui-monospace, monospace;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-num: 'JetBrains Mono', ui-monospace, monospace;
+  --pixel-border: 2px solid #000;
+  --pixel-shadow: 3px 3px 0 #000;
+}
+body { font-family: var(--font-body); }
+h1, h2, .tab, .toggle { font-family: var(--font-display); }
+:where(button, a[href], [role='tab'], input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--focus);
+}
+.page h1 { color: var(--gold); text-shadow: 2px 2px 0 #000; font-size: 2rem; }
+
+/* Shared building blocks */
+.pixel-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: var(--pixel-shadow);
+  padding: 10px 12px;
+  min-width: 0;
+}
+.pixel-btn {
+  font: 700 0.8rem var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: var(--pixel-border);
+  box-shadow: 0 3px 0 #000;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.pixel-btn:disabled { opacity: 0.5; cursor: default; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  font: 700 0.8rem var(--font-num);
+  background: rgb(0 0 0 / 0.55);
+  border: var(--pixel-border);
+}
+.rarity-common { color: var(--rarity-common); }
+.rarity-rare { color: var(--rarity-rare); }
+.rarity-epic { color: var(--rarity-epic); }
+.rarity-legendary { color: var(--rarity-legendary); }
+
+/* Re-skin the existing shell without changing its layout */
+.strip, .panel { border-top: 3px solid #000; }
+.tab[aria-selected='true'] { color: var(--accent); }
+.toggle, .wallet-btn { border: var(--pixel-border); box-shadow: 0 3px 0 #000; border-radius: 0; }
+.toggle[aria-expanded='true'] { color: var(--on-accent); }
+.forge-btn:not(.forge-go), .help-start { color: var(--on-accent); border-radius: 0; border: var(--pixel-border); box-shadow: 0 3px 0 #000; }
+.inv-slot, .forge-result, .forge-today, .boss-outcome { border-radius: 0; border-width: 2px; box-shadow: var(--pixel-shadow); }
+.hud { color: var(--gold); font-family: var(--font-num); }
