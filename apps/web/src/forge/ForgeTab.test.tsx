@@ -291,3 +291,15 @@ it('does not report stored mints in demo mode', async () => {
   expect(api.reportMint).not.toHaveBeenCalled();
   expect(loadUnreported()).not.toBeNull();
 });
+
+it('Skip ends a long reveal at once and shows the result and the mint panel', async () => {
+  const { api } = makeApi({ start: RICH });
+  loop = new GameLoop({ api });
+  await loop.start(document);
+  render(<ForgeTab api={api} loop={loop} demo={false} revealMs={60_000} />);
+  fireEvent.click(screen.getByRole('button', { name: 'Forge' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Skip' }));
+  expect((await screen.findByTestId('forge-rarity')).textContent).toMatch(/You forged a/);
+  expect(screen.queryByTestId('forge-reveal')).toBeNull();
+  await waitFor(() => expect(screen.getByTestId('forge-shards').textContent).toBe(String(100 - CONFIG.relic.shardCost)));
+});
