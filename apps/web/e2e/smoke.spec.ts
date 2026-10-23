@@ -1,0 +1,35 @@
+import { expect, test } from '@playwright/test';
+
+test('strip renders a canvas and the panel opens and closes', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => {
+    if (m.type() === 'error') errors.push(m.text());
+  });
+  page.on('pageerror', (e) => errors.push(e.message));
+
+  await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'Taskbar Hero' })).toBeVisible();
+
+  const canvas = page.locator('.strip canvas');
+  await expect(canvas).toHaveCount(1);
+  await expect(canvas).toBeVisible();
+  const box = await canvas.boundingBox();
+  expect(box?.height).toBeGreaterThanOrEqual(62);
+  expect(box?.height).toBeLessThanOrEqual(64);
+  expect(box?.width).toBe(1280);
+
+  await page.setViewportSize({ width: 800, height: 400 });
+  await expect.poll(async () => (await canvas.boundingBox())?.width).toBe(800);
+
+  const panel = page.getByRole('region', { name: 'Game panel' });
+  await expect(panel).toHaveCount(0);
+  await page.getByRole('button', { name: 'Menu' }).click();
+  await expect(panel).toBeVisible();
+  for (const name of ['Hero', 'Inventory', 'Boss', 'Forge', 'Market']) {
+    await expect(page.getByRole('tab', { name })).toBeVisible();
+  }
+  await page.getByRole('button', { name: 'Close' }).click();
+  await expect(panel).toHaveCount(0);
+
+  expect(errors).toEqual([]);
+});
