@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { CONFIG, relicIdFor } from '@taskbar-hero/game-rules';
 import { describe, expect, it } from 'vitest';
+import { LABELS } from '../theme/labels';
 import { relicImageUrl } from './marketText';
 
 const PUBLIC = resolve(__dirname, '../../public');
@@ -18,7 +19,7 @@ describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rarity)] as co
   it('has the ERC-1155 metadata fields', () => {
     const name = rarity.charAt(0).toUpperCase() + rarity.slice(1);
     const meta = read(`${id}.json`);
-    expect(meta.name).toBe(`${name} Relic`);
+    expect(meta.name).toBe(LABELS.relics[rarity]);
     expect(meta.description).toMatch(/Taskbar Hero/);
     expect(meta.description).toMatch(/Fuji testnet/);
     expect(meta.image).toBe(`${SITE}${relicImageUrl(id)}`);
