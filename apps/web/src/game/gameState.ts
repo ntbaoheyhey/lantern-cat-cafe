@@ -22,6 +22,8 @@ export interface GameSnapshot {
   power: number;
   goldPerSecond: number;
   paused: boolean;
+  /** Last full server answer (inventory, boss status), or null before the first one. */
+  server: ServerState | null;
 }
 
 export const EMPTY_PREDICTION: Prediction = {
@@ -54,6 +56,7 @@ export interface GameLoopOptions {
 /** Predicts gold/shards between claims; claims every 30 s while the tab is visible. */
 export class GameLoop {
   private prediction = EMPTY_PREDICTION;
+  private server: ServerState | null = null;
   private lastTick = 0;
   private running = false;
   private tickTimer: ReturnType<typeof setInterval> | null = null;
@@ -84,6 +87,7 @@ export class GameLoop {
       power: this.prediction.power,
       goldPerSecond: this.prediction.goldPerSecond,
       paused: !this.running,
+      server: this.server,
     };
   }
 
@@ -92,7 +96,8 @@ export class GameLoop {
     const s = this.snap;
     if (
       next.gold === s.gold && next.shards === s.shards && next.power === s.power &&
-      next.goldPerSecond === s.goldPerSecond && next.paused === s.paused
+      next.goldPerSecond === s.goldPerSecond && next.paused === s.paused &&
+      next.server === s.server
     ) return;
     this.snap = next;
     this.listeners.forEach((fn) => fn());
@@ -110,7 +115,8 @@ export class GameLoop {
     this.doc = doc;
     doc.addEventListener('visibilitychange', this.onVisibility);
     try {
-      this.prediction = reconcile(this.prediction, await this.api.getState());
+      this.server = await this.api.getState();
+      this.prediction = reconcile(this.prediction, this.server);
     } catch {
       /* keep zeros; the next claim will fill in */
     }
@@ -152,13 +158,19 @@ export class GameLoop {
     this.publish();
   }
 
+  /** Take a fresher server answer (claim, equip, boss fight) as the new baseline. */
+  adopt(state: ServerState): void {
+    this.advance();
+    this.server = state;
+    this.prediction = reconcile(this.prediction, state);
+    this.publish();
+  }
+
   /** Claim now and replace the prediction with the server's numbers. */
   async claim(): Promise<ClaimResult | null> {
     try {
       const result = await this.api.claim();
-      this.advance();
-      this.prediction = reconcile(this.prediction, result);
-      this.publish();
+      this.adopt(result);
       return result;
     } catch {
       return null; // keep predicting; retry on the next interval
