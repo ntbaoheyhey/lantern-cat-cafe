@@ -13,8 +13,11 @@ describe('chain', () => {
     });
   });
 
-  it('has no Fuji addresses until C3b deploys', () => {
-    expect(getAddresses(FUJI_CHAIN_ID)).toEqual({ RelicNFT: undefined, RelicMarket: undefined });
+  it('has the Fuji deployment', () => {
+    expect(getAddresses(FUJI_CHAIN_ID)).toEqual({
+      RelicNFT: '0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D',
+      RelicMarket: '0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93',
+    });
   });
 
   it('returns undefined addresses for unknown chains', () => {

@@ -36,7 +36,7 @@ Run this on your own machine, not in CI or a shared sandbox.
    ```sh
    DEPLOYER_PRIVATE_KEY=0x...
    VOUCHER_SIGNER_ADDRESS=0x...
-   RELIC_BASE_URI=https://.../relics/{id}.json
+   RELIC_BASE_URI="https://.../relics/{id}.json"
    ```
 
 4. Deploy and verify:
