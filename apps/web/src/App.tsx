@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GameCanvas } from './GameCanvas';
+import { getSessionStore } from './game/store';
 import { Panel } from './Panel';
 import { WalletButton } from './wallet/WalletButton';
 import { WalletProvider } from './wallet/WalletProvider';
@@ -9,7 +10,7 @@ const PANEL_ID = 'game-panel';
 export function App() {
   const [open, setOpen] = useState(false);
   return (
-    <WalletProvider>
+    <WalletProvider store={getSessionStore()}>
       <main className="page">
         <h1>Taskbar Hero</h1>
         <p>An idle RPG that lives in the strip at the bottom of this page. Your hero fights on its own.</p>

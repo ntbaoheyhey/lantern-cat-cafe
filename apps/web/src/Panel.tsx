@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BossTab } from './boss/BossTab';
+import { DemoNote } from './game/DemoNote';
 import { HeroTab } from './HeroTab';
 import { InventoryTab } from './inventory/InventoryTab';
 
@@ -27,6 +28,7 @@ export function Panel({ id }: { id: string }) {
       </div>
       <div role="tabpanel" id="tabpanel" aria-labelledby={`tab-${tab}`} className="tabpanel">
         <h2>{tab}</h2>
+        <DemoNote />
         {tab === 'Hero' ? <HeroTab /> : tab === 'Inventory' ? <InventoryTab /> : tab === 'Boss' ? <BossTab /> : <p>Coming soon.</p>}
       </div>
     </section>

@@ -7,6 +7,7 @@ test('inventory tab equips a demo item and the power goes up', async ({ page }) 
   await page.goto('/?demo');
   await page.getByRole('button', { name: 'Menu' }).click();
   await page.getByRole('tab', { name: 'Inventory' }).click();
+  await expect(page.getByTestId('demo-note')).toHaveText('Demo mode, sign in to save progress.');
 
   const power = page.getByTestId('inventory-power');
   await expect(power).toBeVisible();
