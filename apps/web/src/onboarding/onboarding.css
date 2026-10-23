@@ -15,12 +15,13 @@
   overflow: auto;
   padding: 20px 20px 16px;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 2px solid var(--border);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
   text-align: left;
 }
-.help-dialog h2 { margin: 0 0 10px; font-size: 1.2rem; }
-.help-dialog ol { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; line-height: 1.4; }
+.help-dialog h2 { margin: 0 0 10px; font-size: 1.4rem; color: var(--gold); text-shadow: 2px 2px 0 #000; }
+.help-dialog ol { margin: 0 0 10px; padding-left: 24px; display: grid; gap: 6px; line-height: 1.4; }
 .help-note { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; }
 .help-x {
   position: absolute;
@@ -37,11 +38,12 @@
 .help-start {
   min-height: 40px;
   padding: 0 20px;
-  font-weight: 600;
-  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--on-accent);
   background: var(--accent);
-  border: 0;
-  border-radius: 6px;
+  border: var(--pixel-border);
+  border-radius: 0;
 }
 .help-btn {
   margin-left: auto;

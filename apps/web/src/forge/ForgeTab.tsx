@@ -3,10 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import { GameApiError, type ForgeResult, type GameApi, type RelicVoucher } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
 import { getGameApi, getGameLoop, useGameMode, useGameSnapshot } from '../game/store';
-import { blockText, capitalize, oddsRows } from './forgeText';
+import { LABELS } from '../theme/labels';
+import { blockText, oddsRows, relicName } from './forgeText';
 import { MintPanel } from './MintPanel';
 import { loadUnreported, type UnreportedMint } from './mintStore';
 import { reportMint } from './report';
+import { relicImageUrl } from '../market/marketText';
 import { TodayRelicCard, txUrl } from './TodayRelicCard';
 import './forge.css';
 
@@ -117,16 +119,16 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
       <div className="forge-top">
         <dl className="stats forge-stats">
           <dt>Cost</dt>
-          <dd>{CONFIG.relic.shardCost} shards + {CONFIG.relic.bossKeyCost} Boss Key</dd>
-          <dt>Shards</dt>
+          <dd>{CONFIG.relic.shardCost} {LABELS.shards} + {CONFIG.relic.bossKeyCost} {LABELS.bossKey}</dd>
+          <dt>{LABELS.shards}</dt>
           <dd data-testid="forge-shards">{shards.toLocaleString('en-US')}</dd>
-          <dt>Boss Keys</dt>
+          <dt>{LABELS.bossKey}s</dt>
           <dd data-testid="forge-keys">{bossKeys}</dd>
         </dl>
         <ul className="forge-odds" aria-label="Relic odds">
           {oddsRows().map(({ rarity, percent }) => (
             <li key={rarity}>
-              <span className={`rarity-${rarity}`}>{capitalize(rarity)}</span> {percent}
+              <span className={`rarity-${rarity}`}>{LABELS.rarities[rarity]}</span> {percent}
             </li>
           ))}
         </ul>
@@ -148,13 +150,18 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
         </div>
       ) : toMint ? (
         <div className="forge-result" aria-live="polite">
+          <div className={`relic-tile rarity-${toMint.rarityName}${voucher ? ' reveal' : ''}`}>
+            <img src={relicImageUrl(BigInt(toMint.relicId))} alt="" width={64} height={64} />
+          </div>
           {voucher ? (
             <p className="forge-reveal" data-testid="forge-rarity">
-              You forged a <strong className={`rarity-${toMint.rarityName}`}>{capitalize(toMint.rarityName)}</strong> Relic!
+              You forged a <strong className={`rarity-${toMint.rarityName}`}>{relicName(toMint.rarityName)}</strong>!{' '}
+              <span className={`forge-tag rarity-${toMint.rarityName}`}>{LABELS.rarities[toMint.rarityName]}</span>
             </p>
           ) : (
             <p data-testid="forge-pending">
-              You have an unminted <strong className={`rarity-${toMint.rarityName}`}>{capitalize(toMint.rarityName)}</strong> Relic.
+              You have an unminted <strong className={`rarity-${toMint.rarityName}`}>{relicName(toMint.rarityName)}</strong>.{' '}
+              <span className={`forge-tag rarity-${toMint.rarityName}`}>{LABELS.rarities[toMint.rarityName]}</span>
             </p>
           )}
           <MintPanel voucher={toMint} api={api} loop={loop} onMinted={onMinted} />
@@ -184,7 +191,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
 
       {minted && (
         <p className="forge-done" role="status" data-testid="forge-minted">
-          Relic minted to your wallet. <a href={txUrl(minted.hash)} target="_blank" rel="noreferrer">View on Snowtrace</a>
+          Relic minted. In your wallet! <a href={txUrl(minted.hash)} target="_blank" rel="noreferrer">View on Snowtrace</a>
         </p>
       )}
       {error && <p role="alert" className="forge-error">{error}</p>}
