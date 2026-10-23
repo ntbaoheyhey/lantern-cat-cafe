@@ -1,5 +1,5 @@
-// Deno wiring for the B3 Edge Functions: session JWT check, Postgres store (service role,
-// RPC to the B3 SQL functions), and error mapping to docs/api.md codes. Logic is in game.ts.
+// Deno wiring for the game Edge Functions: session JWT check, Postgres store (service role,
+// RPC to the game SQL functions), and error mapping to docs/api.md codes. Logic is in game.ts.
 import { createClient } from "@supabase/supabase-js";
 import { verifySessionToken } from "../../../packages/auth/src/index.ts";
 import { json } from "./auth.ts";
@@ -46,6 +46,18 @@ export function pgGameStore(): GameStore {
       if (error) throw new Error(`game_equip: ${error.message}`);
       return data === true;
     },
+    async bossFight(a) {
+      const { data, error } = await db.rpc("game_boss_fight", {
+        p_player: a.playerId,
+        p_day: a.day,
+        p_boss_level: a.bossLevel,
+        p_won: a.won,
+        p_max_attempts: a.maxAttempts,
+        p_max_level: a.maxLevel,
+      });
+      if (error) throw new Error(`game_boss_fight: ${error.message}`);
+      return data;
+    },
   };
 }
 
@@ -68,7 +80,7 @@ async function authenticate(req: Request): Promise<string> {
   }
 }
 
-/** Deno.serve handler for one B3 Edge Function. */
+/** Deno.serve handler for one game Edge Function. */
 export function serveGame(name: keyof ReturnType<typeof routes>): (req: Request) => Promise<Response> {
   return gameHandler({ authenticate, json }, routes(gameDeps())[name]);
 }
