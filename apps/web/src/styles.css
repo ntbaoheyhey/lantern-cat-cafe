@@ -1,0 +1,78 @@
+:root {
+  --strip-h: 64px;
+  --bg: #12151d;
+  --surface: #1b1b24;
+  --border: #323244;
+  --text: #f2f2f7;
+  --muted: #a6a8b8;
+  --accent: #5b8def;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+.page {
+  min-height: calc(100% - var(--strip-h));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 16px 16px;
+  text-align: center;
+}
+.page h1 { margin: 0 0 8px; }
+.page p { margin: 0; color: var(--muted); max-width: 40ch; }
+.strip {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--strip-h);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.game-host { position: absolute; inset: 0; }
+.game-host canvas { display: block; }
+.toggle {
+  position: absolute;
+  right: 8px; top: 50%;
+  transform: translateY(-50%);
+  min-height: 40px;
+  padding: 0 16px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.toggle[aria-expanded='true'] { background: var(--accent); border-color: var(--accent); }
+.panel {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: var(--strip-h);
+  height: min(320px, 55vh);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.tabs { display: flex; gap: 4px; padding: 8px 8px 0; overflow-x: auto; border-bottom: 1px solid var(--border); }
+.tab {
+  min-height: 36px;
+  padding: 0 14px;
+  font: inherit;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.tab[aria-selected='true'] { color: var(--text); border-bottom-color: var(--accent); }
+.tabpanel { flex: 1; overflow: auto; padding: 16px; }
+.tabpanel h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.tabpanel p { margin: 0; color: var(--muted); }

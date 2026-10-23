@@ -3,5 +3,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
-  test: { environment: 'jsdom' },
+  build: { chunkSizeWarningLimit: 1500 }, // Phaser is ~1.2 MB minified
+  test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
 });
