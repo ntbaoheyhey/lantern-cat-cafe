@@ -18,6 +18,12 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
   expect(box?.height).toBeLessThanOrEqual(64);
   expect(box?.width).toBe(1280);
 
+  const gold = page.getByTestId('gold-counter');
+  const readGold = async () => Number(((await gold.textContent()) ?? '').replace(/[^0-9]/g, ''));
+  const before = await readGold();
+  await page.waitForTimeout(3000);
+  expect(await readGold()).toBeGreaterThan(before);
+
   await page.setViewportSize({ width: 800, height: 400 });
   await expect.poll(async () => (await canvas.boundingBox())?.width).toBe(800);
 
