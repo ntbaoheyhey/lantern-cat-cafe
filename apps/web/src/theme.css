@@ -67,7 +67,8 @@ h1, h2, .tab, .toggle { font-family: var(--font-display); }
 .rarity-legendary { color: var(--rarity-legendary); }
 
 /* Re-skin the existing shell without changing its layout */
-.strip, .panel { border-top: 3px solid #000; }
+.strip { box-shadow: 0 -2px 0 #000; }
+.panel { border-top: 3px solid #000; }
 .tab[aria-selected='true'] { color: var(--accent); }
 .toggle, .wallet-btn { border: var(--pixel-border); box-shadow: 0 3px 0 #000; border-radius: 0; }
 .toggle[aria-expanded='true'] { color: var(--on-accent); }
