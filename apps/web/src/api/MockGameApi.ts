@@ -1,6 +1,6 @@
 import {
   CONFIG,
-  computeIdleGains,
+  computeClaimGains,
   dayIndex,
   deriveSeed,
   goldPerSecond,
@@ -99,7 +99,7 @@ export class MockGameApi implements GameApi {
     const nowMs = this.now();
     const elapsed = Math.max(0, (nowMs - this.lastClaimMs) / 1000);
     this.lastClaimMs = nowMs;
-    const gains = computeIdleGains(this.player, elapsed, deriveSeed(this.seed, ++this.claims));
+    const gains = computeClaimGains(this.player, elapsed, deriveSeed(this.seed, ++this.claims));
     this.player.gold += gains.gold;
     this.player.shards += gains.shards;
     const drops = gains.drops.map((g) => this.own(g, false));

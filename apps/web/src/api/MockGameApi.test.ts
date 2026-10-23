@@ -1,4 +1,4 @@
-import { CONFIG, gearStat, heroPower } from '@taskbar-hero/game-rules';
+import { CONFIG, computeClaimGains, computeIdleGains, deriveSeed, gearStat, heroPower, starterGear } from '@taskbar-hero/game-rules';
 import { expect, it } from 'vitest';
 import { GameApiError } from './GameApi';
 import { MockGameApi } from './MockGameApi';
@@ -36,6 +36,16 @@ it('claim adds drops to inventory, unequipped', async () => {
   const r = await api.claim();
   expect(r.drops.length).toBeGreaterThan(0);
   expect(r.drops.every((d) => !d.equipped && r.inventory.some((g) => g.id === d.id))).toBe(true);
+});
+
+it('claim pays like the server: online window at full rate, the rest offline', async () => {
+  let t = 0;
+  const api = new MockGameApi({ now: () => t, seed: 7 });
+  t = 3600_000;
+  const r = await api.claim();
+  const player = { gear: starterGear(), bossLevel: 1 };
+  expect(r.gold).toBe(computeClaimGains(player, 3600, deriveSeed(7, 1)).gold);
+  expect(r.gold).toBeLessThan(computeIdleGains(player, 3600, deriveSeed(7, 1)).gold);
 });
 
 it('fightBoss counts attempts, grants one key per day, and stops at the daily limit', async () => {
