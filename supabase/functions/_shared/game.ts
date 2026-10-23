@@ -1,4 +1,4 @@
-// Server logic for the game-state, idle-claim and equip Edge Functions (docs/api.md).
+// Server logic for the game-state, idle-claim, equip and boss-fight Edge Functions (docs/api.md).
 // Runtime-neutral (no Deno or Node globals besides WebCrypto) so supabase/tests can run it in
 // Node against PGlite. Deno wiring lives in game-server.ts.
 import {
@@ -8,11 +8,13 @@ import {
   gearStat,
   goldPerSecond,
   heroPower,
+  simulateBoss,
   starterGear,
   type Gear,
   type Seed,
 } from "@taskbar-hero/game-rules";
 import type {
+  BossFightResult,
   ClaimResult,
   GameApiErrorCode,
   OwnedGear,
@@ -68,6 +70,15 @@ export interface GameStore {
     drops: GearRow[];
   }): Promise<OwnedGear[] | null>;
   equip(playerId: string, gearId: string): Promise<boolean>;
+  /** game_boss_fight: null when the daily limit is reached, else whether a Boss Key was granted. */
+  bossFight(args: {
+    playerId: string;
+    day: string;
+    bossLevel: number;
+    won: boolean;
+    maxAttempts: number;
+    maxLevel: number;
+  }): Promise<boolean | null>;
 }
 
 export interface GameDeps {
@@ -85,17 +96,30 @@ export function dayDate(unixSeconds: number): string {
   return new Date(dayIndex(unixSeconds) * 86_400_000).toISOString().slice(0, 10);
 }
 
-/**
- * Seed for the claim that starts at `lastClaimMicros` (last_claim_at in microseconds): the first
- * 4 bytes, big-endian, of HMAC-SHA256(secret, "<playerId>:<lastClaimMicros>"). One seed per claim
- * window, and
- * unknown to the client, so it cannot pick a claim time with better drops.
- */
-export async function claimSeed(secret: string, playerId: string, lastClaimMicros: number): Promise<Seed> {
+/** First 4 bytes, big-endian, of HMAC-SHA256(secret, message), as a uint32 seed. */
+async function hmacSeed(secret: string, message: string): Promise<Seed> {
   const enc = new TextEncoder();
   const key = await crypto.subtle.importKey("raw", enc.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  const mac = new Uint8Array(await crypto.subtle.sign("HMAC", key, enc.encode(`${playerId}:${lastClaimMicros}`)));
+  const mac = new Uint8Array(await crypto.subtle.sign("HMAC", key, enc.encode(message)));
   return ((mac[0]! << 24) | (mac[1]! << 16) | (mac[2]! << 8) | mac[3]!) >>> 0;
+}
+
+/**
+ * Seed for the claim that starts at `lastClaimMicros` (last_claim_at in microseconds):
+ * hmacSeed(secret, "<playerId>:<lastClaimMicros>"). One seed per claim window, and unknown to the
+ * client, so it cannot pick a claim time with better drops.
+ */
+export function claimSeed(secret: string, playerId: string, lastClaimMicros: number): Promise<Seed> {
+  return hmacSeed(secret, `${playerId}:${lastClaimMicros}`);
+}
+
+/**
+ * Seed for a boss fight: hmacSeed(secret, "boss:<playerId>:<day>:<attempt>"), where attempt is the
+ * 1-based attempt number today. Each attempt has its own seed the client cannot know, and every
+ * attempt is recorded, so a fight cannot be retried with the same seed.
+ */
+export function bossSeed(secret: string, playerId: string, day: string, attempt: number): Promise<Seed> {
+  return hmacSeed(secret, `boss:${playerId}:${day}:${attempt}`);
 }
 
 function toState(s: Snapshot, nowMs: number): ServerState {
@@ -172,6 +196,30 @@ export async function equip(deps: GameDeps, playerId: string, gearId: unknown): 
   return toState(await load(deps, playerId, nowMs), nowMs);
 }
 
+/**
+ * POST boss-fight: simulateBoss(power, bossLevel, bossSeed) with the equipped gear, then record it.
+ * The daily limit is checked again in SQL, so parallel fights cannot pass it.
+ */
+export async function fightBoss(deps: GameDeps, playerId: string): Promise<BossFightResult> {
+  const nowMs = (deps.now ?? Date.now)();
+  const day = dayDate(nowMs / 1000);
+  const before = toState(await load(deps, playerId, nowMs), nowMs);
+  if (before.boss.attemptsLeft <= 0) throw new GameError("no_attempts_left");
+
+  const seed = await bossSeed(deps.seedSecret, playerId, day, before.boss.attemptsToday + 1);
+  const result = simulateBoss(before.power, before.bossLevel, seed);
+  const keyGranted = await deps.store.bossFight({
+    playerId,
+    day,
+    bossLevel: before.bossLevel,
+    won: result.won,
+    maxAttempts: CONFIG.boss.maxAttemptsPerDay,
+    maxLevel: CONFIG.boss.maxLevel,
+  });
+  if (keyGranted === null) throw new GameError("no_attempts_left");
+  return { result, keyGranted, state: toState(await load(deps, playerId, nowMs), nowMs) };
+}
+
 export interface HttpDeps {
   /** Player id from the request's session JWT; throws GameError("unauthenticated") otherwise. */
   authenticate(req: Request): Promise<string>;
@@ -204,11 +252,14 @@ export function gameHandler(
   };
 }
 
-/** The three B3 endpoints, keyed by Edge Function name. */
-export function routes(deps: GameDeps): Record<"game-state" | "idle-claim" | "equip", (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
+/** The game endpoints, keyed by Edge Function name. */
+export function routes(
+  deps: GameDeps,
+): Record<"game-state" | "idle-claim" | "equip" | "boss-fight", (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
   return {
     "game-state": (player) => getState(deps, player),
     "idle-claim": (player) => claim(deps, player),
     equip: (player, body) => equip(deps, player, body.gearId),
+    "boss-fight": (player) => fightBoss(deps, player),
   };
 }

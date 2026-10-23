@@ -1,8 +1,5 @@
-import { PGlite } from "@electric-sql/pglite";
+import type { PGlite } from "@electric-sql/pglite";
 import { CONFIG, computeClaimGains, gearStat, goldPerSecond, heroPower, starterGear } from "@taskbar-hero/game-rules";
-import { readdirSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { beforeAll, describe, expect, it } from "vitest";
 import type { ClaimResult, OwnedGear, ServerState } from "../../../apps/web/src/api/GameApi.ts";
 import {
@@ -15,11 +12,9 @@ import {
   getState,
   routes,
   type GameDeps,
-  type GameStore,
 } from "../../functions/_shared/game.ts";
+import { as as asRole, migratedDb, pgliteStore, type Role } from "./game-db.ts";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const migrationsDir = join(here, "../../migrations");
 const A = "00000000-0000-4000-8000-0000000000a1";
 const B = "00000000-0000-4000-8000-0000000000b1";
 const SECRET = "test-seed-secret";
@@ -27,35 +22,9 @@ const T0 = Date.UTC(2026, 10, 1, 0, 0, 0); // ms
 
 let db: PGlite;
 
-async function as<T>(role: "anon" | "authenticated" | "service_role", claims: object | null, fn: () => Promise<T>) {
-  await db.exec(`set role ${role}`);
-  await db.query(`select set_config('request.jwt.claims', $1, false)`, [claims ? JSON.stringify(claims) : ""]);
-  try {
-    return await fn();
-  } finally {
-    await db.exec("reset role");
-    await db.exec("reset request.jwt.claims");
-  }
-}
+const as = <T>(role: Role, claims: object | null, fn: () => Promise<T>) => asRole(db, role, claims, fn);
 const service = <T>(fn: () => Promise<T>) => as("service_role", null, fn);
-
-/** GameStore over PGlite, calling the SQL functions as service_role like the Edge Functions do. */
-const store: GameStore = {
-  snapshot: (p, day, starter) =>
-    service(async () => (await db.query<{ r: never }>(`select public.game_snapshot($1, $2, $3::jsonb) r`, [p, day, JSON.stringify(starter)])).rows[0]!.r),
-  claim: (a) =>
-    service(async () =>
-      (await db.query<{ r: never }>(`select public.game_claim($1, $2, $3, $4, $5, $6::jsonb) r`, [
-        a.playerId,
-        a.expectedLastMicros,
-        a.now,
-        a.gold,
-        a.shards,
-        JSON.stringify(a.drops),
-      ])).rows[0]!.r,
-    ),
-  equip: (p, g) => service(async () => (await db.query<{ r: boolean }>(`select public.game_equip($1, $2) r`, [p, g])).rows[0]!.r),
-};
+const store = pgliteStore(() => db);
 
 let clock = T0;
 const deps: GameDeps = { store, seedSecret: SECRET, now: () => clock };
@@ -80,11 +49,7 @@ async function expectedGains(id: string, state: ServerState, lastMs: number, now
 }
 
 beforeAll(async () => {
-  db = new PGlite();
-  await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
-  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql")).sort()) {
-    await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
-  }
+  db = await migratedDb();
   await newPlayer(A, "0x" + "1".repeat(40));
   await newPlayer(B, "0x" + "2".repeat(40));
 });
