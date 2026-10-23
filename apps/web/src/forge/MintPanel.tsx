@@ -4,11 +4,13 @@ import { useAccount, usePublicClient, useSwitchChain, useWriteContract } from 'w
 import type { GameApi, RelicVoucher } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
 import { isDemoVoucher, isUserRejection, mintArgs } from './forgeText';
-import { saveUnreported, type UnreportedMint } from './mintStore';
+import { clearUnreported, saveUnreported, type UnreportedMint } from './mintStore';
 import { reportMint } from './report';
 
 /** Refresh a voucher that expires within this many seconds before sending it to the wallet. */
 const EXPIRY_MARGIN_S = 120;
+
+const shortAddress = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
 
 type Status = 'idle' | 'preparing' | 'signing' | 'confirming' | 'reporting';
 
@@ -29,7 +31,7 @@ export interface MintPanelProps {
 
 /** Sends a server-signed voucher to RelicNFT.mint from the player's wallet, then reports the tx. */
 export function MintPanel({ voucher, api, loop, onMinted }: MintPanelProps) {
-  const { isConnected, chainId } = useAccount();
+  const { isConnected, chainId, address } = useAccount();
   const { switchChain, isPending: switching } = useSwitchChain();
   const { writeContractAsync } = useWriteContract();
   const client = usePublicClient({ chainId: FUJI_CHAIN_ID });
@@ -45,6 +47,14 @@ export function MintPanel({ voucher, api, loop, onMinted }: MintPanelProps) {
   }
   if (!isConnected) {
     return <p className="forge-note">Connect your wallet to mint this Relic.</p>;
+  }
+  if (address && address.toLowerCase() !== voucher.player.toLowerCase()) {
+    // RelicNFT reverts with NotVoucherPlayer unless the voucher's player sends the tx.
+    return (
+      <p className="forge-note" role="alert" data-testid="mint-wrong-account">
+        Switch your wallet to {shortAddress(voucher.player)} to mint this Relic.
+      </p>
+    );
   }
   if (chainId !== FUJI_CHAIN_ID) {
     return (
@@ -76,6 +86,7 @@ export function MintPanel({ voucher, api, loop, onMinted }: MintPanelProps) {
       if (!client) throw new Error('No Fuji connection');
       const receipt = await client.waitForTransactionReceipt({ hash });
       if (receipt.status !== 'success') {
+        clearUnreported(); // nothing to report: the voucher was not used
         setMessage('The mint transaction failed on chain. Your Relic is safe, you can try again.');
         return;
       }

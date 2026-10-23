@@ -11,6 +11,7 @@ import { loadUnreported, saveUnreported } from './mintStore';
 
 const wallet = vi.hoisted(() => ({
   isConnected: true,
+  address: `0x${'AB'.repeat(20)}` as string | undefined,
   chainId: 43113 as number,
   writeContractAsync: vi.fn(),
   waitForTransactionReceipt: vi.fn(),
@@ -18,7 +19,7 @@ const wallet = vi.hoisted(() => ({
 }));
 
 vi.mock('wagmi', () => ({
-  useAccount: () => ({ isConnected: wallet.isConnected, chainId: wallet.chainId }),
+  useAccount: () => ({ isConnected: wallet.isConnected, chainId: wallet.chainId, address: wallet.address }),
   useSwitchChain: () => ({ switchChain: wallet.switchChain, isPending: false }),
   useWriteContract: () => ({ writeContractAsync: wallet.writeContractAsync }),
   usePublicClient: () => ({ waitForTransactionReceipt: wallet.waitForTransactionReceipt }),
@@ -34,6 +35,7 @@ let loop: GameLoop | null = null;
 beforeEach(() => {
   localStorage.clear();
   wallet.isConnected = true;
+  wallet.address = `0x${'AB'.repeat(20)}`; // same as PLAYER, different case
   wallet.chainId = FUJI_CHAIN_ID;
   wallet.writeContractAsync.mockReset().mockResolvedValue(HASH);
   wallet.waitForTransactionReceipt.mockReset().mockResolvedValue({ status: 'success' });
@@ -150,6 +152,28 @@ it('a wallet rejection keeps the voucher and the mint button', async () => {
   expect(screen.getByRole('button', { name: 'Mint to wallet' })).toBeTruthy();
   expect(api.reportMint).not.toHaveBeenCalled();
   expect(loop!.getSnapshot().server?.forge.pending).not.toBeNull();
+});
+
+it('a reverted mint clears the stored hash and keeps the mint button', async () => {
+  wallet.waitForTransactionReceipt.mockResolvedValue({ status: 'reverted' });
+  const { api } = makeApi({ start: RICH });
+  await setup(api);
+  await forge();
+  fireEvent.click(await screen.findByRole('button', { name: 'Mint to wallet' }));
+  expect((await screen.findByTestId('mint-message')).textContent).toMatch(/failed on chain/);
+  expect(loadUnreported()).toBeNull();
+  expect(api.reportMint).not.toHaveBeenCalled();
+  expect(screen.getByRole('button', { name: 'Mint to wallet' })).toBeTruthy();
+});
+
+it('asks to switch accounts when the wallet is not the voucher player', async () => {
+  wallet.address = `0x${'12'.repeat(20)}`;
+  await setup(makeApi({ start: RICH }).api);
+  await forge();
+  expect((await screen.findByTestId('mint-wrong-account')).textContent).toBe(
+    'Switch your wallet to 0xabab…abab to mint this Relic.',
+  );
+  expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
 });
 
 it('asks to switch to Fuji on the wrong network', async () => {
