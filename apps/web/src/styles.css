@@ -26,11 +26,141 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 48px 16px 16px;
+  padding: 36px 16px 24px;
   text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-.page h1 { margin: 0 0 8px; }
-.page p { margin: 0; color: var(--muted); max-width: 40ch; }
+.page-header {
+  margin-bottom: 20px;
+}
+.page-title {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  color: var(--gold);
+  text-shadow: 2px 2px 0 #000;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+.page-copy {
+  margin: 0;
+  color: var(--muted);
+  max-width: 48ch;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* Mochi the cat card */
+.cat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 16px;
+  padding: 12px 16px;
+  text-align: left;
+}
+.cat-portrait-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #120b18;
+  border: var(--pixel-border);
+  box-shadow: 2px 2px 0 #000;
+  padding: 6px;
+}
+.cat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+.cat-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  text-shadow: 2px 2px 0 #000;
+  line-height: 1.1;
+}
+.cat-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cat-chip {
+  color: var(--text);
+  font-family: var(--font-num);
+  font-size: 0.8rem;
+  padding: 3px 8px;
+}
+.cat-stat-label {
+  color: var(--muted);
+  font-weight: 500;
+}
+.cat-stat-val {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (max-width: 390px) {
+  .page {
+    padding: 24px 12px 20px;
+  }
+  .page-title {
+    font-size: 1.8rem;
+  }
+  .page-copy {
+    font-size: 0.9rem;
+  }
+  .cat-card {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+  .cat-portrait-wrap {
+    padding: 4px;
+  }
+  .cat-portrait-wrap svg {
+    width: 60px;
+    height: 60px;
+  }
+  .cat-name {
+    font-size: 1.15rem;
+  }
+  .cat-chip {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 320px) {
+  .page {
+    padding: 16px 8px 16px;
+  }
+  .page-title {
+    font-size: 1.55rem;
+  }
+  .cat-card {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+  .cat-portrait-wrap svg {
+    width: 52px;
+    height: 52px;
+  }
+  .cat-name {
+    font-size: 1.05rem;
+  }
+  .cat-chip {
+    font-size: 0.72rem;
+    padding: 2px 5px;
+    gap: 4px;
+  }
+}
 .strip {
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -130,6 +260,6 @@ body {
   .wallet-badge, .wallet-addr { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
   .wallet-btn { flex-shrink: 0; }
 }
-.stats { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
-.stats dt { color: var(--muted); }
-.stats dd { margin: 0; font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0; align-items: baseline; }
+.stats dt { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+.stats dd { margin: 0; font-family: var(--font-num); font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }

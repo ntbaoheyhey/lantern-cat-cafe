@@ -53,12 +53,61 @@
   border: 1px solid var(--border);
   border-radius: 50%;
 }
-.next-hint { padding: 6px 12px 0; font-size: 0.85rem; color: var(--muted); }
-.next-hint-btn {
-  padding: 0;
-  color: #9fd3ff;
-  background: none;
-  border: 0;
+/* Highlighted next-step hint card */
+.next-hint.pixel-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 2px solid var(--accent);
+  box-shadow: var(--pixel-shadow);
   text-align: left;
 }
-.next-hint-btn:hover { text-decoration: underline; }
+.next-hint-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+.next-hint-lead {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.next-hint-text {
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.next-hint-btn.pixel-btn {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+@media (max-width: 390px) {
+  .next-hint.pixel-card {
+    padding: 8px 10px;
+  }
+  .next-hint-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    text-align: center;
+  }
+  .next-hint-btn.pixel-btn {
+    width: 100%;
+  }
+}
