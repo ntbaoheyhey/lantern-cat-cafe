@@ -23,7 +23,7 @@ Functions (B3, `20260104000000_game_api.sql`, `security definer`, `search_path =
 - `game_equip(player, gear_id) -> boolean`: false if the item is not the player's; otherwise unequips the slot, then equips the item, in one transaction.
 - All three lock the `players` row first, so claims and equips for one player run one at a time and `gear_one_equipped_per_slot` never fires. Internal helpers `game_insert_gear` and `game_epoch_micros` are not executable by any API role.
 
-Claim seed: the first 4 bytes (big-endian) of `HMAC-SHA256(GAME_SEED_SECRET, "<player id>:<last_claim_at in microseconds since the epoch>")`, so each claim window has one fixed seed the client cannot know or reroll. `GAME_SEED_SECRET` falls back to the JWT secret when unset. Claims use the online rate (`computeIdleGains` without `offline`), as `docs/api.md` specifies.
+Claim seed: the first 4 bytes (big-endian) of `HMAC-SHA256(GAME_SEED_SECRET, "<player id>:<last_claim_at in microseconds since the epoch>")`, so each claim window has one fixed seed the client cannot know or reroll. `GAME_SEED_SECRET` falls back to the JWT secret when unset. Claims credit `computeClaimGains` (5 minutes at the full rate, the rest at 50%, capped at 8 h), as `docs/api.md` specifies.
 
 Additions beyond the card: `gear.created_at`, the one-equipped-per-slot partial unique index, format checks on wallet/tx_hash, FK `on delete cascade`, and `power >= 0`.
 

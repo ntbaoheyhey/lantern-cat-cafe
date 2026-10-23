@@ -28,7 +28,7 @@ Errors return a non-2xx status with `{ "error": GameApiErrorCode }`:
 
 - **Time** is the server clock only. "Today" is `dayIndex(unixSeconds)` from game-rules: the day resets at midnight UTC+7.
 - **ServerState.gear** is the equipped items only (one per slot); **inventory** is every owned item, equipped included. Power is `heroPower(gear)`.
-- **idle-claim** credits `computeIdleGains(state, now - last_claim_at, seed)` with the offline cap from config, then sets `last_claim_at = now`. A claim less than 10 s after the previous one adds nothing and does not move `last_claim_at`. Drops are inserted as unequipped inventory and returned in `drops`.
+- **idle-claim** credits `computeClaimGains(state, now - last_claim_at, seed)`: the first `idle.onlineWindowSeconds` (5 min) pay the full rate, the rest pays `idle.offlineEfficiency` (50%), and the total is capped at `idle.offlineCapSeconds` (8 h). It then sets `last_claim_at = now`. A claim less than 10 s after the previous one adds nothing and does not move `last_claim_at`. Drops are inserted as unequipped inventory and returned in `drops`.
 - **equip** unequips whatever is in the item's slot and equips the item, in one transaction.
 - **boss-fight** refuses at the daily attempt limit, otherwise records an attempt and runs `simulateBoss(power, bossLevel, serverSeed)`. A win raises `bossLevel` by 1 (up to `boss.maxLevel`) and, if no key was granted today, grants one Boss Key (`boss_keys` unique per player and day). A loss changes nothing but the attempt count. The client replays `result.log` and never re-simulates.
 - **bossKeys** counts unspent keys (`boss_keys.spent_at is null`). B5 spends them.
