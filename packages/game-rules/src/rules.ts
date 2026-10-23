@@ -141,9 +141,9 @@ export function rollRelicRarity(seed: Seed): Rarity {
   return rng.weighted(C.relic.rarityOddsBp, C.rarities);
 }
 
-/** UTC day index for a unix time in seconds. */
+/** Day index (days reset at midnight UTC+7) for a unix time in seconds. */
 export function dayIndex(unixSeconds: number): number {
-  return Math.floor(unixSeconds / C.time.secondsPerDay);
+  return Math.floor((unixSeconds + C.time.dayOffsetSeconds) / C.time.secondsPerDay);
 }
 
 export function canClaimBossKey(state: PlayerState, today: number): boolean {

@@ -83,17 +83,15 @@ export const CONFIG = {
     shardCost: 60,
     /** Boss Keys needed to forge one Relic. */
     bossKeyCost: 1,
-    /** Max Relics forged per account per day. */
-    maxForgesPerDay: 1,
-    /** Max Boss Keys earned per account per day. */
-    maxBossKeysPerDay: 1,
     /** Rarity odds in basis points (1/100 of a percent); must sum to 10000. */
     rarityOddsBp: { common: 6000, rare: 2800, epic: 1000, legendary: 200 },
   },
 
   time: {
-    /** Seconds per forge/boss-key day (UTC day). */
+    /** Seconds per forge/boss-key day. */
     secondsPerDay: 86400,
+    /** The day resets at midnight Vietnam time (UTC+7). */
+    dayOffsetSeconds: 7 * 3600,
   },
 
   /** Tuning-target check used by tests: active play window in seconds. */

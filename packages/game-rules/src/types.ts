@@ -18,9 +18,9 @@ export interface PlayerState {
   bossKeys: number;
   /** Boss the player is currently facing (also drop item level). */
   bossLevel: number;
-  /** UTC day index of the last Boss Key earned, or -1. */
+  /** Day index (UTC+7) of the last Boss Key earned, or -1. */
   lastBossKeyDay: number;
-  /** UTC day index of the last Relic forged, or -1. */
+  /** Day index (UTC+7) of the last Relic forged, or -1. */
   lastForgeDay: number;
 }
 

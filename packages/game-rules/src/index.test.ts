@@ -1,6 +1,7 @@
 import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import {
+  dayIndex,
   CONFIG,
   GAME_VERSION,
   bossPower,
@@ -118,5 +119,13 @@ describe('game-rules', () => {
     expect(winRate(targetMaxSeconds)).toBeGreaterThanOrEqual(minWinProbability);
     // Should not be beatable well before the window opens.
     expect(winRate(targetMinSeconds / 2)).toBeLessThan(minWinProbability);
+  });
+});
+
+describe('day boundary', () => {
+  it('resets at midnight Vietnam time (UTC+7)', () => {
+    const vnMidnight = Date.UTC(2026, 10, 20, 17, 0, 0) / 1000; // 2026-11-21 00:00 UTC+7
+    expect(dayIndex(vnMidnight - 1)).toBe(dayIndex(vnMidnight) - 1);
+    expect(dayIndex(vnMidnight + 23 * 3600)).toBe(dayIndex(vnMidnight));
   });
 });

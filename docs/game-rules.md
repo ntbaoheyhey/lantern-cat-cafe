@@ -54,12 +54,11 @@ A new player beats boss level 1 with probability >= 50% by 15 minutes of active 
 | `boss.maxLevel` | 50 | Highest boss level. |
 | `relic.shardCost` | 60 | Shards to forge a Relic. |
 | `relic.bossKeyCost` | 1 | Boss Keys to forge a Relic. |
-| `relic.maxForgesPerDay` | 1 | Relics per account per UTC day. |
-| `relic.maxBossKeysPerDay` | 1 | Boss Keys per account per UTC day. |
 | `relic.rarityOddsBp` | 6000 / 2800 / 1000 / 200 | Relic rarity odds in basis points (sum 10000): 60% / 28% / 10% / 2%. |
-| `time.secondsPerDay` | 86400 | Length of a forge / key day (UTC). |
+| `time.secondsPerDay` | 86400 | Length of a forge / key day. |
+| `time.dayOffsetSeconds` | 25200 | Day resets at midnight Vietnam time (UTC+7). |
 | `tuning.targetMinSeconds` | 600 | Start of the tuning window (10 min). |
 | `tuning.targetMaxSeconds` | 900 | End of the tuning window (15 min). |
 | `tuning.minWinProbability` | 0.5 | Required boss 1 win chance by end of window. |
 
-Note: `maxForgesPerDay` and `maxBossKeysPerDay` are documented limits; the helpers enforce them as one per UTC day via `lastForgeDay` / `lastBossKeyDay`.
+Limits: one Boss Key and one Relic per account per day, enforced via `lastBossKeyDay` / `lastForgeDay`.
