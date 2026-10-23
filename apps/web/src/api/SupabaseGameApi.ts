@@ -27,6 +27,8 @@ const CODES: readonly GameApiErrorCode[] = [
   'no_attempts_left',
   'forge_blocked',
   'mint_not_confirmed',
+  'not_enough_gold',
+  'max_level',
   'server_error',
 ];
 
@@ -77,6 +79,10 @@ export class SupabaseGameApi implements GameApi {
 
   equip(gearId: string): Promise<ServerState> {
     return this.post('equip', { gearId });
+  }
+
+  upgrade(gearId: string): Promise<ServerState> {
+    return this.post('upgrade', { gearId });
   }
 
   fightBoss(): Promise<BossFightResult> {

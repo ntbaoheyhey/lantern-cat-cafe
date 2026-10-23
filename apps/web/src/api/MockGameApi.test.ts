@@ -1,4 +1,4 @@
-import { CONFIG, computeClaimGains, computeIdleGains, deriveSeed, gearStat, heroPower, rarityIndex, relicIdFor, starterGear } from '@taskbar-hero/game-rules';
+import { CONFIG, computeClaimGains, computeIdleGains, deriveSeed, gearStat, heroPower, rarityIndex, relicIdFor, starterGear, upgradeCost } from '@taskbar-hero/game-rules';
 import { describe, expect, it } from 'vitest';
 import { GameApiError } from './GameApi';
 import { DEMO_SIGNATURE, MockGameApi } from './MockGameApi';
@@ -120,5 +120,28 @@ describe('forge', () => {
     const s = await api.reportMint(voucher.nonce, '0x1');
     expect(s.forge).toEqual({ blockedBy: 'daily_limit', forgedToday: true, pending: null });
     await expect(api.forgeRelic()).rejects.toEqual(new GameApiError('forge_blocked', 'daily_limit'));
+  });
+});
+
+describe('upgrade', () => {
+  it('spends upgradeCost gold and raises the level by one', async () => {
+    const api = new MockGameApi({ now: () => 0, start: { gold: 1_000_000 } });
+    const before = await api.getState();
+    const item = before.inventory[0]!;
+    const after = await api.upgrade(item.id);
+    const up = after.inventory.find((g) => g.id === item.id)!;
+    expect(up.level).toBe(item.level + 1);
+    expect(after.gold).toBe(before.gold - upgradeCost(item)!);
+    expect(after.power).toBeGreaterThan(before.power);
+  });
+
+  it('refuses without enough gold, at max level, or for an item not owned', async () => {
+    const poor = new MockGameApi({ now: () => 0 });
+    const item = (await poor.getState()).inventory[0]!;
+    await expect(poor.upgrade(item.id)).rejects.toEqual(new GameApiError('not_enough_gold'));
+    await expect(poor.upgrade('nope')).rejects.toEqual(new GameApiError('not_owner'));
+    const maxed = new MockGameApi({ now: () => 0, start: { gold: 1e12 }, inventory: [{ slot: 'ring', rarity: 'common', level: CONFIG.gear.maxLevel }] });
+    const top = (await maxed.getState()).inventory.find((g) => g.level === CONFIG.gear.maxLevel)!;
+    await expect(maxed.upgrade(top.id)).rejects.toEqual(new GameApiError('max_level'));
   });
 });

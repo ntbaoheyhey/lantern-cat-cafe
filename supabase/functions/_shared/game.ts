@@ -51,6 +51,8 @@ const STATUS: Record<GameApiErrorCode, number> = {
   no_attempts_left: 409,
   forge_blocked: 409,
   mint_not_confirmed: 409,
+  not_enough_gold: 409,
+  max_level: 409,
   server_error: 500,
 };
 

@@ -12,6 +12,7 @@ Every call is `POST https://<project>.supabase.co/functions/v1/<name>` with `Aut
 | `idle-claim` | `{}` | `ClaimResult` | B3 |
 | `equip` | `{ "gearId": "<uuid>" }` | `ServerState` | B3 |
 | `boss-fight` | `{}` | `BossFightResult` | B4 |
+| `upgrade` | `{ "gearId": "<uuid>" }` | `ServerState` | B6 |
 | `relic-forge` | `{}` | `ForgeResult` | B5 |
 | `relic-mint-report` | `{ "nonce": "<decimal>", "txHash": "0x…" }` | `ServerState` | B5 |
 
@@ -26,6 +27,8 @@ Errors return a non-2xx status with `{ "error": GameApiErrorCode }` (plus `"reas
 | `no_attempts_left` | 409 | `boss-fight` after `CONFIG.boss.maxAttemptsPerDay` attempts today. |
 | `forge_blocked` | 409 | `relic-forge` with no pending voucher while forging is blocked; `reason` is the `ForgeBlock` (`daily_limit`, `no_boss_key`, `not_enough_shards`). |
 | `mint_not_confirmed` | 409 | `relic-mint-report` when the tx is missing, reverted, or has no `RelicForged` for that nonce. Safe to retry. |
+| `not_enough_gold` | 409 | `upgrade` when gold < `upgradeCost(item)`. |
+| `max_level` | 409 | `upgrade` on an item at `gear.maxLevel`. |
 | `server_error` | 500 | Anything else. |
 
 ## Rules
@@ -33,6 +36,7 @@ Errors return a non-2xx status with `{ "error": GameApiErrorCode }` (plus `"reas
 - **Time** is the server clock only. "Today" is `dayIndex(unixSeconds)` from game-rules: the day resets at midnight UTC+7.
 - **ServerState.gear** is the equipped items only (one per slot); **inventory** is every owned item, equipped included. Power is `heroPower(gear)`.
 - **idle-claim** credits `computeClaimGains(state, now - last_claim_at, seed)`: the first `idle.onlineWindowSeconds` (5 min) pay the full rate, the rest pays `idle.offlineEfficiency` (50%), and the total is capped at `idle.offlineCapSeconds` (8 h). It then sets `last_claim_at = now`. A claim less than 10 s after the previous one adds nothing and does not move `last_claim_at`. Drops are inserted as unequipped inventory and returned in `drops`.
+- **upgrade** raises one owned item (equipped or not) by one level and subtracts `upgradeCost(item)` gold (game-rules), in one transaction with the player row locked so two parallel upgrades cannot overspend. `not_owner` for another player's or an unknown item. Gold is the only thing spent on upgrades; the boss balance (`simulateActivePlay`) assumes players spend gold this way.
 - **equip** unequips whatever is in the item's slot and equips the item, in one transaction.
 - **boss-fight** refuses at the daily attempt limit, otherwise records an attempt and runs `simulateBoss(power, bossLevel, serverSeed)`. A win raises `bossLevel` by 1 (up to `boss.maxLevel`) and, if no key was granted today, grants one Boss Key (`boss_keys` unique per player and day). A loss changes nothing but the attempt count. The client replays `result.log` and never re-simulates.
 - **bossKeys** counts unspent keys (`boss_keys.spent_at is null`). B5 spends them.

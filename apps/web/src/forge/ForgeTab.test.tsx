@@ -58,6 +58,7 @@ function makeApi(opts: MockGameApiOptions, demoVouchers = false) {
     getState: async () => fix(await mock.getState()),
     claim: async () => fix(await mock.claim()),
     equip: async (id) => fix(await mock.equip(id)),
+    upgrade: async (id) => fix(await mock.upgrade(id)),
     fightBoss: () => mock.fightBoss(),
     forgeRelic: async () => {
       const r = await mock.forgeRelic();
