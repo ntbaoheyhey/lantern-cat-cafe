@@ -12,7 +12,7 @@ test('boss tab fights, replays the log and shows the outcome', async ({ page }) 
 
   await page.getByRole('button', { name: 'Fight', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Fighting…' })).toBeDisabled();
-  await expect(page.getByRole('progressbar', { name: 'Hero health' })).toBeVisible();
+  await expect(page.getByRole('progressbar', { name: 'Mochi health' })).toBeVisible();
   await page.getByRole('button', { name: 'Skip' }).click();
 
   await expect(page.getByTestId('boss-outcome')).toBeVisible();

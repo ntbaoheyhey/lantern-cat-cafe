@@ -34,20 +34,20 @@ it('equipping updates the power shown', async () => {
   expect(screen.getByTestId('inventory-power').textContent).toBe(formatPower(start));
   expect(screen.getByText(`${formatPower(start)} → ${formatPower(after)}`)).toBeTruthy();
 
-  fireEvent.click(screen.getByRole('button', { name: 'Equip epic weapon, level 5' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Equip Epic Feather Wand, level 5' }));
 
   await waitFor(() => expect(screen.getByTestId('inventory-power').textContent).toBe(formatPower(after)));
   expect(loop!.getSnapshot().power).toBeCloseTo(after); // HUD and Hero tab see it too
   // The old common weapon goes back in the bag and can be re-equipped.
-  expect(screen.getByRole('button', { name: 'Equip common weapon, level 1' })).toBeTruthy();
-  expect(screen.queryByRole('button', { name: 'Equip epic weapon, level 5' })).toBeNull();
+  expect(screen.getByRole('button', { name: 'Equip Common Feather Wand, level 1' })).toBeTruthy();
+  expect(screen.queryByRole('button', { name: 'Equip Epic Feather Wand, level 5' })).toBeNull();
 });
 
 it('shows a friendly empty state when nothing is unequipped', async () => {
   await setup([]);
   expect(screen.getByTestId('inventory-empty').textContent).toMatch(/No spare gear/);
   expect(screen.queryByRole('button', { name: /^Equip/ })).toBeNull();
-  for (const slot of ['Weapon', 'Helm', 'Armor', 'Ring']) {
+  for (const slot of ['Feather Wand', 'Cat Ears', 'Collar', 'Bell']) {
     expect(screen.getByRole('heading', { name: slot })).toBeTruthy();
   }
 });
@@ -77,25 +77,25 @@ it('demo items appear only in dev or with ?demo', () => {
   expect(demoInventory(false, '?demo')).toBe(DEMO_ITEMS);
 });
 
-const upgradeBtn = (label: string, item = 'common weapon, level 1') =>
+const upgradeBtn = (label: string, item = 'Common Feather Wand, level 1') =>
   screen.getByRole('button', { name: `${label}: ${item}` }) as HTMLButtonElement;
 
 it('upgrade buttons show the cost, or why they are disabled', async () => {
   await setup([{ slot: 'ring', rarity: 'epic', level: 30 }], 100);
   const cost = upgradeCost({ slot: 'weapon', rarity: 'common', level: 1 })!;
-  expect(upgradeBtn(`Upgrade (${cost} gold)`).disabled).toBe(false);
-  expect(upgradeBtn('Max level', 'epic ring, level 30').disabled).toBe(true);
+  expect(upgradeBtn(`Upgrade (${cost} Fish)`).disabled).toBe(false);
+  expect(upgradeBtn('Max level', 'Epic Bell, level 30').disabled).toBe(true);
   cleanup();
   loop!.stop();
   await setup([], cost - 1);
-  expect(upgradeBtn(`Need ${cost} gold`).disabled).toBe(true);
+  expect(upgradeBtn(`Need ${cost} Fish`).disabled).toBe(true);
 });
 
 it('upgrading raises the level, spends gold, raises power and shows the gain', async () => {
   const { api } = await setup([], 100);
   const before = (await api.getState()).power;
   const cost = upgradeCost({ slot: 'weapon', rarity: 'common', level: 1 })!;
-  fireEvent.click(upgradeBtn(`Upgrade (${cost} gold)`));
+  fireEvent.click(upgradeBtn(`Upgrade (${cost} Fish)`));
   expect((await screen.findByRole('status')).textContent).toMatch(/^\+[\d.]+ power$/);
   const s = loop!.getSnapshot().server!;
   expect(s.inventory.find((g) => g.slot === 'weapon')!.level).toBe(2);
@@ -107,18 +107,18 @@ it('upgrading raises the level, spends gold, raises power and shows the gain', a
 it('a spare item shows its own power gain', async () => {
   await setup([{ slot: 'helm', rarity: 'rare', level: 1 }], 1000);
   const cost = upgradeCost({ slot: 'helm', rarity: 'rare', level: 1 })!;
-  fireEvent.click(upgradeBtn(`Upgrade (${cost} gold)`, 'rare helm, level 1'));
+  fireEvent.click(upgradeBtn(`Upgrade (${cost} Fish)`, 'Rare Cat Ears, level 1'));
   expect((await screen.findByRole('status')).textContent).toMatch(/^\+[\d.]+ item power$/);
 });
 
 it.each([
-  ['not_enough_gold', 'Not enough gold for that upgrade yet.'],
+  ['not_enough_gold', 'Not enough Fish for that upgrade yet.'],
   ['max_level', 'That item is already at max level.'],
   ['server_error', 'Upgrade failed, try again.'],
 ] as const)('maps %s to friendly text', async (code, text) => {
   const { api } = await setup([], 100);
   vi.spyOn(api, 'upgrade').mockRejectedValueOnce(new GameApiError(code));
-  fireEvent.click(upgradeBtn('Upgrade (25 gold)'));
+  fireEvent.click(upgradeBtn('Upgrade (25 Fish)'));
   expect((await screen.findByRole('alert')).textContent).toBe(text);
 });
 
@@ -132,7 +132,7 @@ it('claims first when the predicted gold covers the cost but the server has not 
   expect(loop.getSnapshot().server!.gold).toBe(0);
   const claim = vi.spyOn(loop, 'claim');
   await act(async () => {
-    fireEvent.click(upgradeBtn('Upgrade (25 gold)'));
+    fireEvent.click(upgradeBtn('Upgrade (25 Fish)'));
     await vi.advanceTimersByTimeAsync(0);
   });
   expect(claim).toHaveBeenCalled();
