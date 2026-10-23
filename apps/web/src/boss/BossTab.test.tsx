@@ -81,18 +81,18 @@ it('shows boss level, attempts left and keys', async () => {
 it('a winning log shows the key once the replay ends', async () => {
   await setup({ result: WIN, keyGranted: true });
   fireEvent.click(screen.getByRole('button', { name: 'Fight' }));
-  await waitFor(() => expect(screen.getByTestId('boss-key').textContent).toBe('Boss Key earned!'));
+  await waitFor(() => expect(screen.getByTestId('boss-key').textContent).toBe('Cat Key earned!'));
   expect(screen.getByTestId('boss-outcome').textContent).toMatch(/Victory/);
   await waitFor(() => expect(screen.getByTestId('boss-keys').textContent).toBe('1')); // applied after the replay
   expect(screen.getByTestId('boss-level').textContent).toBe('2');
-  expect(screen.getByRole('progressbar', { name: 'Boss level 1 health' }).getAttribute('aria-valuenow')).toBe('0');
+  expect(screen.getByRole('progressbar', { name: 'Yarn Giant · Level 1 health' }).getAttribute('aria-valuenow')).toBe('0');
 });
 
 it('a losing log shows attempts left', async () => {
   await setup({ result: LOSS, attemptsLeft: 3 });
   fireEvent.click(screen.getByRole('button', { name: 'Fight' }));
   await waitFor(() => expect(screen.getByTestId('boss-outcome').textContent).toMatch(/^Defeated\. 2 attempts left today\./));
-  expect(screen.getByTestId('boss-tip').textContent).toBe('Tip: upgrade your gear in Inventory with gold.');
+  expect(screen.getByTestId('boss-tip').textContent).toBe('Tip: upgrade your gear in Inventory with Fish.');
   expect(screen.queryByTestId('boss-key')).toBeNull();
   await waitFor(() => expect(screen.getByTestId('boss-attempts').textContent).toBe('2'));
 });

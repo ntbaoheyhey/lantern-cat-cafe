@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { GameApiError, type BossFightResult, type GameApi } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
 import { getGameApi, getGameLoop, useGameSnapshot } from '../game/store';
+import { LABELS, bossName } from '../theme/labels';
 import { frameAt, stepMs, REPLAY_MS } from './replay';
 import './boss.css';
 
@@ -72,16 +73,17 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
 
   return (
     <div className="boss">
+      <h3 className="boss-title">{bossName(boss.level)}</h3>
       <div className="boss-top">
         <dl className="stats boss-stats">
-          <dt>Boss level</dt><dd data-testid="boss-level">{boss.level}</dd>
-          <dt>Attempts left today</dt><dd data-testid="boss-attempts">{boss.attemptsLeft}</dd>
-          <dt>Boss Keys</dt><dd data-testid="boss-keys">{bossKeys}</dd>
+          <div className="chip"><dt>Level</dt><dd data-testid="boss-level">{boss.level}</dd></div>
+          <div className="chip"><dt>Fights left today</dt><dd data-testid="boss-attempts">{boss.attemptsLeft}</dd></div>
+          <div className="chip"><dt>{LABELS.bossKey}</dt><dd data-testid="boss-keys">{bossKeys}</dd></div>
         </dl>
         <div className="boss-actions">
           <button
             type="button"
-            className="boss-fight"
+            className="boss-fight pixel-btn"
             disabled={pending || replaying || outOfAttempts}
             onClick={() => void start()}
           >
@@ -111,23 +113,23 @@ function Replay({ fight, shown, attemptsLeft }: { fight: Fight; shown: number; a
   const f = frameAt(result, shown);
   const hit = f.last && f.last.type !== 'end' ? f.last : null;
   return (
-    <div className="boss-arena" data-testid="boss-replay">
+    <div className="boss-arena pixel-card" data-testid="boss-replay">
       <div aria-live="polite">
         {f.done && (
           <div className={`boss-outcome ${result.won ? 'won' : 'lost'}`} data-testid="boss-outcome">
             {result.won ? (
-              <p>Victory! You beat the level {fight.level} boss.</p>
+              <p>Victory! You beat {bossName(fight.level)} (level {fight.level}).</p>
             ) : (
               <p>Defeated. {attemptsLeft} {attemptsLeft === 1 ? 'attempt' : 'attempts'} left today.</p>
             )}
-            {!result.won && <p className="boss-tip" data-testid="boss-tip">Tip: upgrade your gear in Inventory with gold.</p>}
-            {keyGranted && <p className="boss-key" data-testid="boss-key">Boss Key earned!</p>}
+            {!result.won && <p className="boss-tip" data-testid="boss-tip">Tip: upgrade your gear in Inventory with {LABELS.gold}.</p>}
+            {keyGranted && <p className="boss-key" data-testid="boss-key">{LABELS.bossKey} earned!</p>}
           </div>
         )}
       </div>
-      <HpBar label="Hero" hp={f.heroHp} max={result.heroMaxHp} side="hero"
+      <HpBar label={LABELS.hero} hp={f.heroHp} max={result.heroMaxHp} side="hero"
         hit={hit?.type === 'boss_hit' ? <HitNumber key={shown} damage={hit.damage} crit={false} /> : null} />
-      <HpBar label={`Boss level ${fight.level}`} hp={f.bossHp} max={result.bossMaxHp} side="boss"
+      <HpBar label={`${bossName(fight.level)} · Level ${fight.level}`} hp={f.bossHp} max={result.bossMaxHp} side="boss"
         hit={hit?.type === 'hero_hit' ? <HitNumber key={shown} damage={hit.damage} crit={hit.crit} /> : null} />
     </div>
   );

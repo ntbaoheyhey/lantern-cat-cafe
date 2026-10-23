@@ -3,7 +3,8 @@ import { gearStat } from '@taskbar-hero/game-rules';
 import type { GameApi, OwnedGear } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
 import { getGameApi, getGameLoop, useGameSnapshot } from '../game/store';
-import { capitalize, formatPower, groupBySlot, powerIfEquipped } from './gearView';
+import { LABELS } from '../theme/labels';
+import { formatPower, groupBySlot, powerIfEquipped } from './gearView';
 import { gainText, upgradeErrorText, upgradeLabel, upgradeView } from './upgrade';
 import './inventory.css';
 
@@ -48,7 +49,7 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
       loop.adopt(await api.upgrade(item.id));
       setGain({ id: item.id, text });
     } catch (e) {
-      setError(upgradeErrorText(e));
+      setError(upgradeErrorText(e).replaceAll('gold', LABELS.gold));
     } finally {
       setPending(null);
     }
@@ -58,15 +59,16 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
     const view = upgradeView(item, gold);
     return (
       <>
+        {view.kind !== 'max' && <span className="inv-preview">Next: {gainText(item, server.gear, item.equipped)}</span>}
         {gain?.id === item.id && <span className="inv-gain" role="status">{gain.text}</span>}
         <button
           type="button"
-          className="inv-upgrade"
+          className={`inv-upgrade${item.equipped ? ' pixel-btn' : ''}`}
           disabled={pending !== null || view.kind !== 'ready'}
-          aria-label={`${upgradeLabel(view)}: ${item.rarity} ${item.slot}, level ${item.level}`}
+          aria-label={`${upgradeLabel(view).replaceAll('gold', LABELS.gold)}: ${LABELS.rarities[item.rarity]} ${LABELS.slots[item.slot]}, level ${item.level}`}
           onClick={() => void upgrade(item)}
         >
-          {pending === item.id ? 'Working…' : upgradeLabel(view)}
+          {pending === item.id ? 'Working…' : upgradeLabel(view).replaceAll('gold', LABELS.gold)}
         </button>
       </>
     );
@@ -75,22 +77,22 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
   return (
     <div className="inv">
       <p className="inv-power">
-        Hero power <strong data-testid="inventory-power">{formatPower(server.power)}</strong>
-        {' · '}Gold <strong data-testid="inventory-gold">{gold.toLocaleString('en-US')}</strong>
+        {LABELS.power} <strong data-testid="inventory-power">{formatPower(server.power)}</strong>
+        {' · '}{LABELS.gold} <strong data-testid="inventory-gold">{gold.toLocaleString('en-US')}</strong>
       </p>
       {error && <p role="alert" className="inv-error">{error}</p>}
       {!hasSpare && (
         <p className="inv-empty" data-testid="inventory-empty">
-          No spare gear in your bag. Unequipped drops will appear here as your hero fights.
+          No spare gear in your bag. Unequipped drops will appear here as {LABELS.hero} fights.
         </p>
       )}
       <div className="inv-slots">
         {groups.map(({ slot, equipped, spare }) => (
           <section key={slot} className="inv-slot" aria-labelledby={`inv-${slot}`}>
-            <h3 id={`inv-${slot}`}>{capitalize(slot)}</h3>
+            <h3 id={`inv-${slot}`}>{LABELS.slots[slot]}</h3>
             <ul>
               {equipped && (
-                <li className="inv-item is-equipped">
+                <li className="inv-item is-equipped pixel-card">
                   <ItemLabel item={equipped} />
                   <span className="inv-tag">Equipped</span>
                   {upgradeButton(equipped)}
@@ -100,16 +102,16 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
                 const after = powerIfEquipped(server.gear, item);
                 const delta = after - server.power;
                 return (
-                  <li key={item.id} className="inv-item">
+                  <li key={item.id} className="inv-item pixel-card">
                     <ItemLabel item={item} />
                     <span className={`inv-delta ${delta >= 0 ? 'up' : 'down'}`}>
                       {formatPower(server.power)} → {formatPower(after)}
                     </span>
                     <button
                       type="button"
-                      className="inv-equip"
+                      className="inv-equip pixel-btn"
                       disabled={pending !== null}
-                      aria-label={`Equip ${item.rarity} ${item.slot}, level ${item.level}`}
+                      aria-label={`Equip ${LABELS.rarities[item.rarity]} ${LABELS.slots[item.slot]}, level ${item.level}`}
                       onClick={() => void equip(item)}
                     >
                       {pending === item.id ? 'Working…' : 'Equip'}
@@ -129,8 +131,11 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
 function ItemLabel({ item }: { item: OwnedGear }) {
   return (
     <span className="inv-name">
-      <span className={`rarity-${item.rarity}`}>{capitalize(item.rarity)}</span>{' '}
-      <span className="inv-meta">Lv {item.level} · Power {formatPower(gearStat(item))}</span>
+      <span className={`inv-icon inv-icon-${item.rarity}`} aria-hidden="true">{LABELS.slots[item.slot]?.[0]}</span>
+      <span className="inv-title">
+        <span className={`rarity-${item.rarity}`}>{LABELS.rarities[item.rarity]} {LABELS.slots[item.slot]}</span>
+        <span className="inv-meta">Lv {item.level} · Power {formatPower(gearStat(item))}</span>
+      </span>
     </span>
   );
 }
