@@ -1,0 +1,67 @@
+name: Deploy Edge Functions
+# Deploys the Supabase Edge Functions to the live project (docs/go-live.md) when code they bundle
+# changes on main, or by hand. Pull requests run the same gate and only report what would happen.
+on:
+  push:
+    branches: [main]
+    paths:
+      - supabase/functions/**
+      - supabase/config.toml
+      - packages/auth/**
+      - packages/game-rules/**
+      - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - .github/workflows/deploy-functions.yml
+  pull_request:
+    paths:
+      - supabase/functions/**
+      - supabase/config.toml
+      - packages/auth/**
+      - packages/game-rules/**
+      - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - .github/workflows/deploy-functions.yml
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-functions
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  PROJECT_REF: qoalewtxflagoprrxrgh
+  FUNCTIONS: auth-nonce auth-verify game-state idle-claim equip boss-fight
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decide whether to deploy
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN != '' }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = "pull_request" ]; then
+            echo "::notice title=Deploy skipped::Pull request run. Functions deploy when this merges to main."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          elif [ "$HAS_TOKEN" != "true" ]; then
+            echo "::notice title=Deploy skipped::SUPABASE_ACCESS_TOKEN repo secret is not set (see docs/go-live.md)."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: supabase/setup-cli@v1
+        if: steps.gate.outputs.deploy == 'true'
+        with:
+          version: 2.122.0
+      - name: Deploy
+        if: steps.gate.outputs.deploy == 'true'
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        # --use-api bundles on Supabase's side (no Docker); each function's deno.json maps the
+        # packages/* imports. Our functions check their own session JWT, hence --no-verify-jwt.
+        run: |
+          # shellcheck disable=SC2086 # FUNCTIONS is a space-separated list
+          supabase functions deploy $FUNCTIONS --project-ref "$PROJECT_REF" --use-api --no-verify-jwt

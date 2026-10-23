@@ -1,0 +1,23 @@
+# Supabase CLI config. Only the Edge Function settings are used: the live project is managed in
+# the dashboard and the database through supabase/migrations.
+project_id = "taskbar-hero"
+
+# Every function verifies our own HS256 session JWT (packages/auth verifySessionToken), or needs
+# no login (auth-nonce, auth-verify), so the platform gateway must not check the Authorization header.
+[functions.auth-nonce]
+verify_jwt = false
+
+[functions.auth-verify]
+verify_jwt = false
+
+[functions.game-state]
+verify_jwt = false
+
+[functions.idle-claim]
+verify_jwt = false
+
+[functions.equip]
+verify_jwt = false
+
+[functions.boss-fight]
+verify_jwt = false
