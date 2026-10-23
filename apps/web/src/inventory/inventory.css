@@ -6,8 +6,8 @@
 .inv-slot { border: 1px solid var(--border); border-radius: 6px; padding: 8px; }
 .inv-slot h3 { margin: 0 0 6px; font-size: 0.9rem; color: var(--muted); }
 .inv-slot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.inv-item { display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 0.9rem; }
-.inv-name { flex: 1; min-width: 0; }
+.inv-item { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-height: 32px; font-size: 0.9rem; }
+.inv-name { flex: 1 1 100%; min-width: 0; }
 .inv-meta { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .inv-tag { font-size: 0.75rem; color: var(--accent); }
 .inv-delta { font-size: 0.8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -28,3 +28,16 @@
 .rarity-rare { color: #5b9dff; }
 .rarity-epic { color: #c07bff; }
 .rarity-legendary { color: #ffb341; }
+.inv-upgrade {
+  min-height: 28px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.8rem;
+  color: #ffd75e;
+  background: transparent;
+  border: 1px solid #6b5a2a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.inv-upgrade:disabled { color: var(--muted); border-color: var(--border); cursor: default; }
+.inv-gain { font-size: 0.8rem; color: #6fdc8c; font-variant-numeric: tabular-nums; }

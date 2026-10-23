@@ -91,7 +91,8 @@ it('a winning log shows the key once the replay ends', async () => {
 it('a losing log shows attempts left', async () => {
   await setup({ result: LOSS, attemptsLeft: 3 });
   fireEvent.click(screen.getByRole('button', { name: 'Fight' }));
-  await waitFor(() => expect(screen.getByTestId('boss-outcome').textContent).toBe('Defeated. 2 attempts left today.'));
+  await waitFor(() => expect(screen.getByTestId('boss-outcome').textContent).toMatch(/^Defeated\. 2 attempts left today\./));
+  expect(screen.getByTestId('boss-tip').textContent).toBe('Tip: upgrade your gear in Inventory with gold.');
   expect(screen.queryByTestId('boss-key')).toBeNull();
   await waitFor(() => expect(screen.getByTestId('boss-attempts').textContent).toBe('2'));
 });

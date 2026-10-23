@@ -120,6 +120,7 @@ function Replay({ fight, shown, attemptsLeft }: { fight: Fight; shown: number; a
             ) : (
               <p>Defeated. {attemptsLeft} {attemptsLeft === 1 ? 'attempt' : 'attempts'} left today.</p>
             )}
+            {!result.won && <p className="boss-tip" data-testid="boss-tip">Tip: upgrade your gear in Inventory with gold.</p>}
             {keyGranted && <p className="boss-key" data-testid="boss-key">Boss Key earned!</p>}
           </div>
         )}
