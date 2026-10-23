@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { computeIdleGains, newPlayer } from '@taskbar-hero/game-rules';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import type { ClaimResult } from '../api/GameApi';
 import { MockGameApi } from '../api/MockGameApi';
 import { GameLoop, reconcile, type Prediction } from './gameState';
 
@@ -80,5 +81,25 @@ it('stops predicting while the tab is hidden and claims on return', async () => 
   expect(claim).toHaveBeenCalledTimes(1);
   expect(loop.getSnapshot().paused).toBe(false);
   expect(loop.getSnapshot().gold).toBeGreaterThan(frozen.gold); // server counted the time away
+  loop.stop();
+});
+
+it('switchApi restarts from the new API and drops late answers from the old one', async () => {
+  let release: (r: ClaimResult) => void = () => {};
+  const slow = new MockGameApi();
+  const late = new Promise<ClaimResult>((r) => (release = r));
+  const old = { ...slow, getState: () => slow.getState(), claim: () => late, equip: slow.equip, fightBoss: slow.fightBoss };
+  const loop = new GameLoop({ api: old });
+  await loop.start(document);
+  const pending = loop.claim();
+
+  const next = new MockGameApi({ inventory: [{ slot: 'ring', rarity: 'epic', level: 1 }] });
+  loop.switchApi(next);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(loop.getSnapshot().server?.inventory).toHaveLength(5);
+
+  release({ ...(await slow.getState()), gold: 999, drops: [] });
+  expect(await pending).toBeNull();
+  expect(loop.getSnapshot().server?.gold).toBe(0);
   loop.stop();
 });
