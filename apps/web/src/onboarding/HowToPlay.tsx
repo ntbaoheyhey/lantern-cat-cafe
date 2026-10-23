@@ -12,6 +12,12 @@ export const STEPS = [
   `Forge a Relic with ${CONFIG.relic.shardCost} shards and ${CONFIG.relic.bossKeyCost} Boss Key, mint it to your wallet on Avalanche Fuji, and trade it in Market.`,
 ];
 
+let lastOpener: HTMLElement | null = null;
+
+export function setOpener(el: HTMLElement | null): void {
+  lastOpener = el;
+}
+
 /** The How to play dialog. Opens on the first visit and from the "?" button. */
 export function HowToPlay() {
   const open = useSyncExternalStore(subscribeHelp, getHelpOpen);
@@ -20,7 +26,10 @@ export function HowToPlay() {
 
   useEffect(() => {
     if (!open) return;
-    const before = document.activeElement as HTMLElement | null;
+    const active = document.activeElement as HTMLElement | null;
+    const opener = lastOpener ?? (active && active !== document.body && document.contains(active) ? active : null);
+    lastOpener = null;
+
     start.current?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -44,7 +53,16 @@ export function HowToPlay() {
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('keydown', onKey);
-      before?.focus?.();
+      const focusTarget = () => {
+        if (opener && document.contains(opener) && opener !== document.body) {
+          opener.focus();
+        } else {
+          const toggle = document.querySelector<HTMLElement>('button.toggle, [aria-controls="game-panel"]');
+          toggle?.focus();
+        }
+      };
+      focusTarget();
+      queueMicrotask?.(focusTarget);
     };
   }, [open]);
 
@@ -64,9 +82,31 @@ export function HowToPlay() {
   );
 }
 
-/** The small "?" button that reopens the dialog. */
+/** The button that reopens the How to play dialog. */
 export function HelpButton() {
   return (
-    <button type="button" className="help-btn" aria-label="How to play" onClick={openHelp}>?</button>
+    <button
+      type="button"
+      className="help-btn"
+      aria-label="How to play"
+      title="How to play"
+      onClick={(e) => {
+        setOpener(e.currentTarget);
+        openHelp();
+      }}
+      style={{
+        width: 'auto',
+        height: '28px',
+        borderRadius: '6px',
+        padding: '0 8px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '4px',
+        fontSize: '0.85rem',
+      }}
+    >
+      <span aria-hidden="true">?</span>
+      <span>How to play</span>
+    </button>
   );
 }
