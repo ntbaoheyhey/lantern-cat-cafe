@@ -76,6 +76,8 @@ export const CONFIG = {
     maxRounds: 60,
     /** Highest boss level. */
     maxLevel: 50,
+    /** Boss fights allowed per day (UTC+7). DRAFT: confirm at sign-off. */
+    maxAttemptsPerDay: 5,
   },
 
   relic: {
