@@ -63,6 +63,7 @@ async function setup(opts: { result?: BossResult; keyGranted?: boolean; attempts
     fightBoss,
     forgeRelic: () => Promise.reject(new Error('unused')),
     reportMint: async () => state,
+    upgrade: async () => state,
   };
   loop = new GameLoop({ api });
   await loop.start(document);

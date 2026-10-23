@@ -11,6 +11,7 @@ import {
   relicIdFor,
   rollRelicRarity,
   simulateBoss,
+  upgradeCost,
   type Gear,
   type PlayerState,
   type Seed,
@@ -133,6 +134,17 @@ export class MockGameApi implements GameApi {
     if (!item) return Promise.reject(new GameApiError('not_owner'));
     for (const g of this.inventory) if (g.slot === item.slot) g.equipped = false;
     item.equipped = true;
+    return Promise.resolve(this.snapshot());
+  }
+
+  upgrade(gearId: string): Promise<ServerState> {
+    const item = this.inventory.find((g) => g.id === gearId);
+    if (!item) return Promise.reject(new GameApiError('not_owner'));
+    const cost = upgradeCost(item);
+    if (cost === null) return Promise.reject(new GameApiError('max_level'));
+    if (this.player.gold < cost) return Promise.reject(new GameApiError('not_enough_gold'));
+    this.player.gold -= cost;
+    item.level += 1;
     return Promise.resolve(this.snapshot());
   }
 

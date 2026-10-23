@@ -97,6 +97,8 @@ export type GameApiErrorCode =
   | 'no_attempts_left'
   | 'forge_blocked'
   | 'mint_not_confirmed'
+  | 'not_enough_gold'
+  | 'max_level'
   | 'server_error';
 
 export class GameApiError extends Error {
@@ -121,6 +123,11 @@ export interface GameApi {
   equip(gearId: string): Promise<ServerState>;
   /** Fight the current boss once. Rejects with `no_attempts_left` at the daily limit. */
   fightBoss(): Promise<BossFightResult>;
+  /**
+   * Raise one owned item (equipped or not) by one level for `upgradeCost(item)` gold (game-rules).
+   * Rejects with `not_owner`, `not_enough_gold` or `max_level`.
+   */
+  upgrade(gearId: string): Promise<ServerState>;
   /**
    * Forge today's Relic: spend CONFIG.relic.shardCost shards and one Boss Key, roll the rarity,
    * return a signed voucher. If a paid voucher is still unminted, returns it instead (no new spend,
