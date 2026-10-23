@@ -8,6 +8,7 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
   page.on('pageerror', (e) => errors.push(e.message));
 
   await page.goto('/');
+  await page.getByRole('button', { name: 'Start playing' }).click();
   await expect(page.getByRole('heading', { name: 'Taskbar Hero' })).toBeVisible();
 
   const canvas = page.locator('.strip canvas');

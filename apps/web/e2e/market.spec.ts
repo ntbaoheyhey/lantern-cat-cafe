@@ -5,6 +5,7 @@ test('market tab asks for a wallet when none is connected', async ({ page }) => 
   page.on('pageerror', (e) => errors.push(e.message));
 
   await page.goto('/');
+  await page.getByRole('button', { name: 'Start playing' }).click();
   await page.getByRole('button', { name: 'Menu' }).click();
   await page.getByRole('tab', { name: 'Market' }).click();
 

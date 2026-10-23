@@ -1,0 +1,64 @@
+.help-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.6);
+}
+.help-dialog {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: 20px 20px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+}
+.help-dialog h2 { margin: 0 0 10px; font-size: 1.2rem; }
+.help-dialog ol { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; line-height: 1.4; }
+.help-note { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; }
+.help-x {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 32px; height: 32px;
+  font-size: 1.2rem;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.help-start, .next-hint-btn, .help-btn { font: inherit; cursor: pointer; }
+.help-start {
+  min-height: 40px;
+  padding: 0 20px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+}
+.help-btn {
+  margin-left: auto;
+  align-self: center;
+  width: 28px; height: 28px;
+  flex: none;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.next-hint { padding: 6px 12px 0; font-size: 0.85rem; color: var(--muted); }
+.next-hint-btn {
+  padding: 0;
+  color: #9fd3ff;
+  background: none;
+  border: 0;
+  text-align: left;
+}
+.next-hint-btn:hover { text-decoration: underline; }

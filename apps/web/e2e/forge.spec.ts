@@ -5,6 +5,7 @@ test('forge tab shows the cost, odds and why forging is blocked in demo mode', a
   page.on('pageerror', (e) => errors.push(e.message));
 
   await page.goto('/');
+  await page.getByRole('button', { name: 'Start playing' }).click();
   await page.getByRole('button', { name: 'Menu' }).click();
   await page.getByRole('tab', { name: 'Forge' }).click();
 
