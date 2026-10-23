@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { HelpButton, HowToPlay } from './HowToPlay';
 import { resetHelpForTests } from './helpStore';
 
@@ -55,4 +55,165 @@ it('still closes when localStorage throws', () => {
   } finally {
     Storage.prototype.setItem = orig;
   }
+});
+
+describe('focus return on first auto-open', () => {
+  it('returns focus to the menu toggle when closed via Start playing', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HowToPlay />
+      </>,
+    );
+    expect(dialog()).not.toBeNull();
+    const startBtn = screen.getByRole('button', { name: 'Start playing' });
+    fireEvent.click(startBtn);
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Menu' }));
+  });
+
+  it('returns focus to the menu toggle when closed via the close (x) button', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HowToPlay />
+      </>,
+    );
+    expect(dialog()).not.toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Close help' }));
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Menu' }));
+  });
+
+  it('returns focus to the menu toggle when closed via Escape', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HowToPlay />
+      </>,
+    );
+    expect(dialog()).not.toBeNull();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Menu' }));
+  });
+
+  it('returns focus to the menu toggle when closed via backdrop click', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HowToPlay />
+      </>,
+    );
+    const backdrop = document.querySelector('.help-backdrop')!;
+    fireEvent.click(backdrop);
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Menu' }));
+  });
+});
+
+describe('focus return when reopened via HelpButton', () => {
+  beforeEach(() => {
+    localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+    act(() => resetHelpForTests());
+  });
+
+  it('returns focus to HelpButton when closed via Start playing', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HelpButton />
+        <HowToPlay />
+      </>,
+    );
+    const helpBtn = screen.getByRole('button', { name: 'How to play' });
+    fireEvent.click(helpBtn);
+    expect(dialog()).not.toBeNull();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Start playing' }));
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(helpBtn);
+  });
+
+  it('returns focus to HelpButton when closed via Close (x) button', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HelpButton />
+        <HowToPlay />
+      </>,
+    );
+    const helpBtn = screen.getByRole('button', { name: 'How to play' });
+    fireEvent.click(helpBtn);
+    expect(dialog()).not.toBeNull();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Close help' }));
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(helpBtn);
+  });
+
+  it('returns focus to HelpButton when closed via Escape key', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HelpButton />
+        <HowToPlay />
+      </>,
+    );
+    const helpBtn = screen.getByRole('button', { name: 'How to play' });
+    fireEvent.click(helpBtn);
+    expect(dialog()).not.toBeNull();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(helpBtn);
+  });
+
+  it('returns focus to HelpButton when closed via backdrop click', () => {
+    render(
+      <>
+        <button className="toggle" aria-controls="game-panel">Menu</button>
+        <HelpButton />
+        <HowToPlay />
+      </>,
+    );
+    const helpBtn = screen.getByRole('button', { name: 'How to play' });
+    fireEvent.click(helpBtn);
+    expect(dialog()).not.toBeNull();
+
+    const backdrop = document.querySelector('.help-backdrop')!;
+    fireEvent.click(backdrop);
+    expect(dialog()).toBeNull();
+    expect(document.activeElement).toBe(helpBtn);
+  });
+});
+
+describe('HelpButton accessible name and visible label', () => {
+  it('renders an accessible name and visible text "How to play"', () => {
+    render(<HelpButton />);
+    const btn = screen.getByRole('button', { name: 'How to play' });
+    expect(btn).toBeTruthy();
+    expect(btn.getAttribute('aria-label')).toBe('How to play');
+    expect(btn.textContent).toContain('How to play');
+    expect(btn.textContent).toContain('?');
+  });
+});
+
+describe('keyboard focus trapping inside dialog', () => {
+  it('traps focus between first and last button with Tab and Shift+Tab', () => {
+    render(<HowToPlay />);
+    const closeBtn = screen.getByRole('button', { name: 'Close help' });
+    const startBtn = screen.getByRole('button', { name: 'Start playing' });
+
+    // Initial focus on Start playing
+    expect(document.activeElement).toBe(startBtn);
+
+    // Tab from last element wraps to first
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: false });
+    expect(document.activeElement).toBe(closeBtn);
+
+    // Shift+Tab from first element wraps to last
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+    expect(document.activeElement).toBe(startBtn);
+  });
 });
