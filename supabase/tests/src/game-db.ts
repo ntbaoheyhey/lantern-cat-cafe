@@ -52,6 +52,8 @@ export function pgliteStore(getDb: () => PGlite): GameStore {
         JSON.stringify(a.drops),
       ]),
     equip: (p, g) => one(`select public.game_equip($1, $2) r`, [p, g]),
+    upgrade: (a) =>
+      one(`select public.game_upgrade($1, $2, $3, $4, $5, $6) r`, [a.playerId, a.gearId, a.expectedLevel, a.cost, a.maxLevel, a.power]),
     bossFight: (a) =>
       one(`select public.game_boss_fight($1, $2, $3, $4, $5, $6) r`, [a.playerId, a.day, a.bossLevel, a.won, a.maxAttempts, a.maxLevel]),
     forge: (a) =>
