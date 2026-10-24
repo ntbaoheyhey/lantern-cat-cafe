@@ -20,6 +20,12 @@ const BLINK_EVERY_MS = 2000;
 const BLINK_MS = 120;
 const TAIL_FRAME_MS = 500;
 const SQUASH_MS = 70;
+const LUNGE_PX = 12;
+const CRIT_HIT = 3; // the 3rd hit of each fight is the big one
+const MAX_FISH = 3;
+const FISH_MS = 600;
+/** Keep in sync with FISH_EVENT in Hud.tsx. */
+const FISH_EVENT = 'taskbar-hero:fish';
 
 const PX = 4; // one art pixel is 4 screen pixels
 
@@ -83,6 +89,10 @@ const YARN = [
   '...pppp...',
   '.pPP......',
 ];
+
+// A fish for the Fish chip.
+const FISH_PALETTE = { o: 0xffb86b, d: 0xe07a2a, w: 0xfff0d8, k: 0x2a1a10 };
+const FISH = ['..oooo.o', 'wkooooo.', '.woooo..', '..dddd.d'];
 
 // A crescent moon.
 const MOON_PALETTE = { y: 0xfff3c4, l: 0xffe08a };
@@ -161,6 +171,9 @@ export class StripScene extends Phaser.Scene {
   private hits = 0;
   private dieTimer = 0;
   private lungeTimer = 0;
+  private thread!: Phaser.GameObjects.Graphics;
+  private fish: Phaser.GameObjects.Image[] = [];
+  private fishBusy: boolean[] = [];
 
   constructor() {
     super('strip');
@@ -177,6 +190,7 @@ export class StripScene extends Phaser.Scene {
     }
     pixelTexture(this, 'yarn', YARN, YARN_PALETTE);
     pixelTexture(this, 'moon', MOON, MOON_PALETTE);
+    pixelTexture(this, 'fish', FISH, FISH_PALETTE);
 
     this.motionQuery = window.matchMedia?.('(prefers-reduced-motion: reduce)') ?? null;
     this.reducedMotion = this.motionQuery?.matches ?? false;
@@ -225,6 +239,11 @@ export class StripScene extends Phaser.Scene {
     this.heroKey = HERO_KEYS[0]!;
     this.hero = this.add.image(HERO_X, groundTop + 2, this.heroKey).setOrigin(0.5, 1);
     this.enemy = this.add.image(this.spawnX(), groundTop + 2, 'yarn').setOrigin(0.5, 1);
+    this.thread = this.add.graphics();
+    for (let i = 0; i < MAX_FISH; i++) {
+      this.fish.push(this.add.image(0, 0, 'fish').setOrigin(0.5, 0.5).setVisible(false));
+      this.fishBusy.push(false);
+    }
 
     this.scale.on(Phaser.Scale.Events.RESIZE, this.onResize, this);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
@@ -287,6 +306,7 @@ export class StripScene extends Phaser.Scene {
         if (this.hits >= HITS_TO_KILL) {
           this.mode = 'die';
           this.dieTimer = DEATH_MS;
+          this.spawnFish();
         }
       }
       return;
@@ -294,7 +314,9 @@ export class StripScene extends Phaser.Scene {
 
     this.dieTimer -= dtMs;
     this.enemy.setAlpha(Math.floor(this.dieTimer / 50) % 2 === 0 ? 0.3 : 1);
+    if (!this.reducedMotion) this.unravel(1 - Math.max(this.dieTimer, 0) / DEATH_MS);
     if (this.dieTimer <= 0) {
+      this.thread.clear();
       this.enemy.setAlpha(1).clearTint().setScale(1);
       this.enemy.x = this.spawnX();
       this.hero.x = HERO_X;
@@ -321,10 +343,67 @@ export class StripScene extends Phaser.Scene {
     }
   }
 
+  /** The ball shrinks as a loose thread runs out along the ground (t goes 0 to 1 over the defeat). */
+  private unravel(t: number): void {
+    const scale = 1 - 0.75 * t;
+    this.enemy.setScale(scale);
+    const groundY = this.enemy.y - 3;
+    const startX = this.enemy.x + 14 * scale;
+    const len = 36 * t;
+    this.thread.clear().lineStyle(2, 0xff8fb1, 1);
+    let px = startX;
+    let py = groundY;
+    for (let seg = 1; seg <= 4; seg++) {
+      const nx = startX + (len * seg) / 4;
+      const ny = groundY - (seg % 2 === 0 ? 0 : 3);
+      this.thread.lineBetween(px, py, nx, ny);
+      px = nx;
+      py = ny;
+    }
+  }
+
+  /** A fish arcs from the defeated yarn to the Fish chip, then the chip bumps. At most MAX_FISH at once. */
+  private spawnFish(): void {
+    if (this.reducedMotion) return;
+    const slot = this.fishBusy.indexOf(false);
+    if (slot < 0) return;
+    const fish = this.fish[slot]!;
+    const chip = document.querySelector<HTMLElement>('[data-testid="gold-counter"]');
+    const canvas = this.game.canvas.getBoundingClientRect();
+    let tx = 30;
+    let ty = 18;
+    if (chip) {
+      const r = chip.getBoundingClientRect();
+      tx = r.left + 14 - canvas.left;
+      ty = r.top + r.height / 2 - canvas.top;
+    }
+    const sx = this.enemy.x;
+    const sy = this.enemy.y - 24;
+    this.fishBusy[slot] = true;
+    fish.setPosition(sx, sy).setVisible(true);
+    this.tweens.addCounter({
+      from: 0,
+      to: 1,
+      duration: FISH_MS,
+      ease: 'Sine.easeIn',
+      onUpdate: (tween) => {
+        const t = tween.getValue() ?? 0;
+        fish.setPosition(sx + (tx - sx) * t, sy + (ty - sy) * t - Math.sin(Math.PI * t) * 26);
+      },
+      onComplete: () => {
+        fish.setVisible(false);
+        this.fishBusy[slot] = false;
+        window.dispatchEvent(new Event(FISH_EVENT));
+      },
+    });
+  }
+
   /** One sword hit: Mochi lunges, the yarn flashes red and recoils, damage floats up. */
   private hitEnemy(): void {
-    this.hero.x = HERO_X + 6;
-    this.lungeTimer = 120;
+    if (!this.reducedMotion) {
+      this.hero.x = HERO_X + LUNGE_PX;
+      this.lungeTimer = 120;
+    }
     this.enemy.setTintFill(0xff4040);
     this.tweens.add({ targets: this.enemy, scaleX: 1.2, scaleY: 0.75, duration: SQUASH_MS, yoyo: true });
     this.enemy.x += 3;
@@ -333,13 +412,22 @@ export class StripScene extends Phaser.Scene {
       this.enemy.x -= 3;
     });
     const power = Math.round(this.loop?.getSnapshot().power ?? 10);
+    const crit = this.hits === CRIT_HIT;
     const txt = this.add
       .text(this.enemy.x, this.enemy.y - this.enemy.height, `-${power}`, {
-        fontFamily: "'Pixelify Sans', monospace", fontSize: '14px', color: '#ffe066', stroke: '#000', strokeThickness: 3,
+        fontFamily: "'Pixelify Sans', monospace",
+        fontSize: crit ? '22px' : '14px',
+        color: crit ? '#ffd23f' : '#fff3e0',
+        stroke: '#000',
+        strokeThickness: crit ? 4 : 3,
       })
       .setOrigin(0.5, 1);
     this.tweens.add({
-      targets: txt, y: txt.y - 18, alpha: 0, duration: 500, onComplete: () => txt.destroy(),
+      targets: txt, y: txt.y - (crit ? 14 : 12), alpha: 0, duration: crit ? 700 : 500, onComplete: () => txt.destroy(),
     });
+    if (crit && !this.reducedMotion) {
+      const w = this.scale.width;
+      this.cameras.main.shake(120, new Phaser.Math.Vector2(2 / w, 2 / STRIP_HEIGHT));
+    }
   }
 }

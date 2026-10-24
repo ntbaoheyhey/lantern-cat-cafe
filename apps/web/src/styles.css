@@ -248,6 +248,9 @@ body {
 .chip-shard .chip-icon { background: var(--shard); }
 .chip-key .chip-icon { background: var(--key); }
 .chip-label { font: 500 0.7rem var(--font-body); color: var(--muted); }
+.chip-bump { animation: chip-bump 160ms ease-out; }
+@keyframes chip-bump { from { transform: translateY(2px); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .chip-bump { animation: none; } }
 @media (max-width: 560px) {
   .chip-label { display: none; }
   .hud { left: 8px; top: 8px; }
