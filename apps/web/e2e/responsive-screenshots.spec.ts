@@ -2,8 +2,10 @@ import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Screenshots overwrite committed images, so they are only written on request: SCREENSHOTS=1.
+const writeScreenshots = process.env.SCREENSHOTS === '1';
 const outDir = path.resolve(process.cwd(), '../../screenshots');
-if (!fs.existsSync(outDir)) {
+if (writeScreenshots && !fs.existsSync(outDir)) {
   fs.mkdirSync(outDir, { recursive: true });
 }
 
@@ -52,7 +54,7 @@ test.describe('Responsive visual verification & screenshots', () => {
       expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(overflow.bodyClientWidth);
 
       // Screenshot page initial view
-      await page.screenshot({ path: path.join(outDir, `${vp.filePrefix}-page.png`) });
+      if (writeScreenshots) await page.screenshot({ path: path.join(outDir, `${vp.filePrefix}-page.png`) });
 
       // Open panel
       await page.getByRole('button', { name: 'Menu' }).click();
@@ -68,7 +70,7 @@ test.describe('Responsive visual verification & screenshots', () => {
       await expect(panel.getByTestId('hero-power')).toBeVisible();
 
       // Screenshot with panel open
-      await page.screenshot({ path: path.join(outDir, `${vp.filePrefix}-panel.png`) });
+      if (writeScreenshots) await page.screenshot({ path: path.join(outDir, `${vp.filePrefix}-panel.png`) });
     });
   }
 });
