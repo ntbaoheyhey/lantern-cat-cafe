@@ -1,7 +1,10 @@
 import type { PGlite } from "@electric-sql/pglite";
-import { createHmac, randomUUID } from "node:crypto";
-import { generatePrivateKey } from "viem/accounts";
+import { createHmac } from "node:crypto";
+import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
+import { createSiweMessage } from "viem/siwe";
 import { beforeAll, describe, expect, it } from "vitest";
+import { FUJI_CHAIN_ID, issueNonce, verifySessionToken, verifySignIn } from "../../../packages/auth/src/index.ts";
+import { MemoryStore } from "../../../packages/auth/src/testing/memory-store.ts";
 import { GameError, gameHandler, getState, routes, type GameDeps } from "../../functions/_shared/game.ts";
 import { voucherSigner, type ChainReader } from "../../functions/_shared/relic.ts";
 import { migratedDb, pgliteStore } from "./game-db.ts";
@@ -9,11 +12,10 @@ import { migratedDb, pgliteStore } from "./game-db.ts";
 // Every game endpoint is driven through the real gameHandler. Garbage must come back as a documented
 // 4xx, never a 5xx or a thrown exception, and never change the database.
 //
-// authenticate() below stands in for the one in game-server.ts (Deno-only): same Bearer parsing, and
-// an HS256 check with exp done here with node:crypto. packages/auth cannot be imported by this test
-// package (the vitest alias for `viem` also captures `viem/siwe`, which that package imports), so
-// the real jose-based verifier is covered by packages/auth/src/index.test.ts, not here.
+// authenticate() below mirrors the one in game-server.ts (Deno-only): same Bearer parsing and the
+// real verifySessionToken from packages/auth. Sessions come from the real verifySignIn.
 
+const DOMAIN = "taskbarhero.test";
 const SECRET = "test-jwt-secret-that-is-at-least-32-chars-long";
 const NFT = "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D" as const;
 const T0 = Date.UTC(2026, 10, 1, 10, 0, 0);
@@ -47,14 +49,7 @@ const http = {
     const m = /^Bearer\s+(\S+)$/i.exec(req.headers.get("Authorization") ?? "");
     if (!m) throw new GameError("unauthenticated");
     try {
-      const [h, p, sig, extra] = m[1]!.split(".");
-      if (!h || !p || !sig || extra !== undefined) throw new Error("shape");
-      if (JSON.parse(Buffer.from(h, "base64url").toString()).alg !== "HS256") throw new Error("alg");
-      const want = createHmac("sha256", SECRET).update(`${h}.${p}`).digest("base64url");
-      if (sig !== want) throw new Error("signature");
-      const claims = JSON.parse(Buffer.from(p, "base64url").toString()) as { sub?: string; exp?: number };
-      if (!claims.sub || !claims.exp || claims.exp * 1000 <= authClock.getTime()) throw new Error("claims");
-      return claims.sub;
+      return (await verifySessionToken(m[1]!, { jwtSecret: SECRET }, () => authClock)).sub;
     } catch {
       throw new GameError("unauthenticated");
     }
@@ -62,6 +57,21 @@ const http = {
   json: (_req: Request, body: unknown, status = 200) => Response.json(body, { status }),
 };
 const handlers = routes(deps);
+
+/** A genuine session (real SIWE sign-in with a throwaway wallet, 1 hour long) at T0. */
+async function session(): Promise<{ token: string; playerId: string; wallet: string }> {
+  const store = new MemoryStore(() => new Date(T0));
+  const account = privateKeyToAccount(generatePrivateKey());
+  const { nonce } = await issueNonce({ store });
+  const message = createSiweMessage({
+    domain: DOMAIN, address: account.address, uri: `https://${DOMAIN}`, version: "1", chainId: FUJI_CHAIN_ID,
+    nonce, issuedAt: new Date(T0), expirationTime: new Date(T0 + 5 * 60_000),
+  });
+  return verifySignIn(
+    { store, clock: () => new Date(T0), config: { domain: DOMAIN, jwtSecret: SECRET, sessionTtlSeconds: 3600 } },
+    { message, signature: await account.signMessage({ message }) },
+  );
+}
 
 let token: string;
 let playerId: string;
@@ -92,12 +102,13 @@ async function expectClientError(res: Response, label: string) {
 
 beforeAll(async () => {
   db = await migratedDb();
-  playerId = randomUUID();
-  token = sign({ alg: "HS256", typ: "JWT" }, { sub: playerId, role: "authenticated", aud: "authenticated", iat: T0 / 1000, exp: T0 / 1000 + 3600 });
-  await db.query(`insert into players (id, wallet) values ($1, $2)`, [playerId, "0x" + "5".repeat(40)]);
+  const s = await session();
+  playerId = s.playerId;
+  token = s.token;
+  await db.query(`insert into players (id, wallet) values ($1, $2)`, [playerId, s.wallet]);
   await db.query(`insert into idle_state (player_id, gold, shards) values ($1, 100000, 100)`, [playerId]);
   weapon = (await getState(deps, playerId)).inventory.find((g) => g.slot === "weapon")!.id;
-});
+}, 60_000); // migrating PGlite plus a SIWE sign-in can pass the 10 s default when the whole suite runs at once
 
 describe.each(ENDPOINTS)("%s: wrong method", (endpoint) => {
   it("answers non-POST methods with 405 method_not_allowed and changes nothing", async () => {
@@ -130,6 +141,8 @@ describe.each(ENDPOINTS)("%s: authentication", (endpoint) => {
     ["alg none", () => `Bearer ${b64({ alg: "none", typ: "JWT" })}.${token.split(".")[1]}.`],
     ["tampered payload", () => `Bearer ${token.split(".")[0]}.${b64({ sub: playerId, exp: 9999999999 })}.${token.split(".")[2]}`],
     ["signed with another secret", () => `Bearer ${sign({ alg: "HS256", typ: "JWT" }, { sub: playerId, exp: T0 / 1000 + 3600 }, "another-secret-that-is-long-enough!!")}`],
+    ["right secret, valid claims, but no wallet claim", () => `Bearer ${sign({ alg: "HS256", typ: "JWT" }, { sub: playerId, role: "authenticated", aud: "authenticated", iat: T0 / 1000, exp: T0 / 1000 + 3600 })}`],
+    ["right secret, wrong audience", () => `Bearer ${sign({ alg: "HS256", typ: "JWT" }, { sub: playerId, role: "authenticated", aud: "other", wallet: "0x" + "5".repeat(40), iat: T0 / 1000, exp: T0 / 1000 + 3600 })}`],
     ["no sub claim", () => `Bearer ${sign({ alg: "HS256", typ: "JWT" }, { exp: T0 / 1000 + 3600 })}`],
     ["tampered signature", () => `Bearer ${token.slice(0, -4)}AAAA`],
     ["very long token", () => `Bearer ${"a".repeat(100_000)}`],
@@ -244,7 +257,7 @@ describe("endpoints that read the body", () => {
 
 describe("a valid token for a player that does not exist", () => {
   it.each(ENDPOINTS)("%s answers 404 not_found and writes nothing", async (endpoint) => {
-    const ghost = sign({ alg: "HS256", typ: "JWT" }, { sub: randomUUID(), exp: T0 / 1000 + 3600 });
+    const ghost = (await session()).token; // genuine token, but no row in this database
     const before = await dump();
     const body = JSON.stringify({ gearId: weapon, nonce: "1", txHash: `0x${"a".repeat(64)}` });
     const res = await call(endpoint, req(endpoint, { auth: `Bearer ${ghost}`, body }));
