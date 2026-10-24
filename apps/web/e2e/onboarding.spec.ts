@@ -7,7 +7,7 @@ test('first visit shows How to play; closing it reveals the game and it stays cl
   await page.goto('/');
   const dialog = page.getByRole('dialog', { name: 'How to play' });
   await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole('listitem')).toHaveCount(4);
+  await expect(dialog.getByRole('listitem')).toHaveCount(5);
   await page.getByRole('button', { name: 'Start playing' }).click();
   await expect(dialog).toHaveCount(0);
 

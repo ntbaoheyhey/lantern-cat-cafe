@@ -12,14 +12,26 @@ afterEach(cleanup);
 
 const dialog = () => screen.queryByRole('dialog', { name: 'How to play' });
 
-it('shows on first visit with four steps and focuses Start playing', () => {
+it('shows on first visit with five steps and focuses Start playing', () => {
   render(<HowToPlay />);
-  expect(dialog()).not.toBeNull();
-  expect(screen.getAllByRole('listitem')).toHaveLength(4);
+  const d = dialog();
+  expect(d).not.toBeNull();
+  expect(d?.classList.contains('fx-pop')).toBe(true);
+  expect(d?.classList.contains('pixel-card')).toBe(true);
+
+  const items = screen.getAllByRole('listitem');
+  expect(items).toHaveLength(5);
   expect(screen.getByText(/up to 8 h/)).toBeTruthy();
   expect(screen.getByText(/5 fights a day/)).toBeTruthy();
   expect(screen.getByText(/Demo mode works without a wallet/)).toBeTruthy();
   expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Start playing' }));
+
+  // Each of the 5 steps gets its PixelIcon and numbered badge
+  const icons = ['paw', 'sword', 'bag', 'flask', 'shop'];
+  icons.forEach((name, i) => {
+    expect(d?.querySelector(`svg[data-icon="${name}"]`)).not.toBeNull();
+    expect(items[i]?.textContent).toContain(String(i + 1));
+  });
 });
 
 it('stays closed after dismissal, even after a reload', () => {
