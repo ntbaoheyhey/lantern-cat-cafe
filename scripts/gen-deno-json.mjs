@@ -1,9 +1,36 @@
 // Generates Edge Function import maps. Edit these templates, then run `pnpm gen:deno`.
 import { existsSync, readdirSync, writeFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const functionsDir = resolve(dirname(fileURLToPath(import.meta.url)), '../supabase/functions');
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const functionsDir = join(root, 'supabase/functions');
+
+/**
+ * game-rules imports its own modules without extensions ('./rng', './v2'), which Deno does not
+ * resolve. Map every non-test module (and every folder with an index.ts) to its file, so new
+ * modules need no edit here.
+ */
+function gameRulesImports() {
+  const src = join(root, 'packages/game-rules/src');
+  const out = {};
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (entry.name.startsWith('__')) continue;
+        if (existsSync(join(full, 'index.ts'))) out[spec(full)] = `${spec(full)}/index.ts`;
+        walk(full);
+      } else if (entry.name.endsWith('.ts') && !entry.name.endsWith('.test.ts') && entry.name !== 'index.ts') {
+        out[spec(full.slice(0, -3))] = `${spec(full)}`;
+      }
+    }
+  };
+  // Specifier as seen from supabase/functions/<name>/.
+  const spec = (p) => `../../../${relative(root, p).split('\\').join('/')}`;
+  walk(src);
+  return out;
+}
 
 const auth = {
   imports: {
@@ -28,12 +55,7 @@ const game = {
     '@taskbar-hero/chain': '../../../packages/chain/src/constants.ts',
     '../../../packages/chain/src/abi': '../../../packages/chain/src/abi.ts',
     '@taskbar-hero/game-rules': '../../../packages/game-rules/src/index.ts',
-    '../../../packages/game-rules/src/config': '../../../packages/game-rules/src/config.ts',
-    '../../../packages/game-rules/src/content': '../../../packages/game-rules/src/content.ts',
-    '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts',
-    '../../../packages/game-rules/src/rules': '../../../packages/game-rules/src/rules.ts',
-    '../../../packages/game-rules/src/sim': '../../../packages/game-rules/src/sim.ts',
-    '../../../packages/game-rules/src/types': '../../../packages/game-rules/src/types.ts',
+    ...gameRulesImports(),
   },
 };
 
