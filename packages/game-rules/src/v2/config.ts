@@ -19,6 +19,28 @@ export const V2_CONFIG = {
     xpGrowth: 1.12,
   },
 
+  /** Idle-only tuning; v1 time windows/rates are imported by the claim engine. */
+  idle: {
+    walkTimeMs: 1000,
+    maxRoundsPerClaim: 4096,
+    /** Yarn per kill = base x growth^(stage-1) x monster.lootMul. */
+    yarnBase: 0.1,
+    yarnGrowth: 1.1,
+    dailyKeys: 1,
+    clearedChapterKeyChance: 1 / 150,
+    /** The current material registry has no monster sources; keep them here until it does. */
+    materialDrops: [
+      { id: 'fluffTuft', fromChapter: 1, eliteOnly: false, chance: 0.15 },
+      { id: 'shinyButton', fromChapter: 2, eliteOnly: false, chance: 0.04 },
+      { id: 'catnipCrystal', fromChapter: 1, eliteOnly: true, chance: 0.005 },
+    ],
+    gearDropChance: 0.02,
+    gearRarityWeights: { common: 70, uncommon: 20, rare: 8, epic: 1.8, legendary: 0.2 },
+    /** Used only for the UI estimate, by scaling HP/ATK/DEF until the round is winnable. */
+    powerSearchSteps: 20,
+    powerSearchMaxScale: 1024,
+  },
+
   /** Limits so stacked bonuses cannot break the formulas. */
   caps: {
     critChance: 0.75,
