@@ -3,6 +3,20 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
-  build: { chunkSizeWarningLimit: 1500 }, // Phaser is ~1.2 MB minified
+  build: {
+    chunkSizeWarningLimit: 1500, // Phaser is ~1.2 MB minified
+    rollupOptions: {
+      output: {
+        // Separate cacheable vendor chunks: an app-code change no longer re-downloads them.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (/[\\/]node_modules[\\/](\.pnpm[\\/][^\\/]+[\\/]node_modules[\\/])?phaser[\\/]/.test(id)) return 'phaser';
+          if (/[\\/]node_modules[\\/](\.pnpm[\\/][^\\/]+[\\/]node_modules[\\/])?(react|react-dom|scheduler)[\\/]/.test(id)) return 'react';
+          if (/[\\/]node_modules[\\/](\.pnpm[\\/][^\\/]+[\\/]node_modules[\\/])?(wagmi|viem|ox|abitype|@wagmi|@tanstack|@noble|@scure)[\\/]/.test(id)) return 'web3';
+          return undefined;
+        },
+      },
+    },
+  },
   test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
 });
