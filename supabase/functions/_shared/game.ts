@@ -23,6 +23,7 @@ import {
 } from "@taskbar-hero/game-rules";
 import {
   HTTP_STATUS,
+  buildServerState,
   type BossFightResult,
   type ClaimResult,
   type Endpoint,
@@ -244,37 +245,22 @@ async function signedVoucher(deps: GameDeps, signer: VoucherSigner | undefined, 
   };
 }
 
-function forgeStatus(s: Loaded, nowMs: number): ForgeStatus {
-  const today = dayIndex(nowMs / 1000);
-  const pending = s.pending;
-  const forgedToday = s.forgedToday ?? false;
-  const player = { ...newPlayer(), shards: Number(s.shards), bossKeys: Number(s.bossKeys), lastForgeDay: forgedToday ? today : -1 };
-  return { blockedBy: pending ? null : forgeBlock(player, today), forgedToday, pending, today: s.today ?? null };
-}
-
 function toState(s: Loaded, nowMs: number): ServerState {
-  const inventory = s.gear.map((g) => ({ ...g }));
-  const gear: Gear[] = inventory.filter((g) => g.equipped).map(({ slot, rarity, level }) => ({ slot, rarity, level }));
-  const power = heroPower(gear);
-  const attemptsToday = Number(s.attemptsToday);
-  return {
-    gold: Number(s.gold),
-    shards: Number(s.shards),
-    gear,
-    inventory,
-    bossLevel: s.bossLevel,
-    bossKeys: Number(s.bossKeys),
-    boss: {
-      level: s.bossLevel,
-      attemptsToday,
-      attemptsLeft: Math.max(0, CONFIG.boss.maxAttemptsPerDay - attemptsToday),
+  return buildServerState(
+    {
+      gold: Number(s.gold),
+      shards: Number(s.shards),
+      bossKeys: Number(s.bossKeys),
+      bossLevel: s.bossLevel,
+      inventory: s.gear,
+      attemptsToday: Number(s.attemptsToday),
       keyEarnedToday: s.keyEarnedToday,
+      forgedToday: s.forgedToday ?? false,
+      pending: s.pending,
+      today: s.today ?? null,
     },
-    forge: forgeStatus(s, nowMs),
-    power,
-    goldPerSecond: goldPerSecond(power),
-    serverTime: nowMs / 1000,
-  };
+    nowMs,
+  );
 }
 
 async function load(deps: GameDeps, playerId: string, nowMs: number): Promise<Loaded> {

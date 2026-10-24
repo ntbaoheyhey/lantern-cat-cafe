@@ -21,6 +21,7 @@ const game = {
     '@taskbar-hero/api-contract': '../../../packages/api-contract/src/index.ts',
     '../../../packages/api-contract/src/endpoints': '../../../packages/api-contract/src/endpoints.ts',
     '../../../packages/api-contract/src/errors': '../../../packages/api-contract/src/errors.ts',
+    '../../../packages/api-contract/src/state': '../../../packages/api-contract/src/state.ts',
     '../../../packages/api-contract/src/types': '../../../packages/api-contract/src/types.ts',
     // chain/src/index.ts reads deployment JSON, which Deno cannot import without import
     // attributes, so the functions get the JSON-free constants module instead.
