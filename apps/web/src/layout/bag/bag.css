@@ -1,0 +1,87 @@
+/* Bag panel: counter and sort row, item grid, item detail with compare and actions. */
+.bag { display: grid; gap: 12px; min-width: 0; text-align: left; }
+.bag-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+.bag-count { margin: 0; font: 700 0.9rem var(--font-num); color: var(--text); }
+.bag-count.warn { color: var(--bad); }
+.bag-status { margin: 0; font-size: 0.85rem; font-weight: 700; color: var(--bad); }
+.sort-select {
+  min-height: 40px;
+  padding: 0 8px;
+  font: 0.9rem var(--font-body);
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid var(--border);
+  max-width: 100%;
+}
+.bag-empty { margin: 0; color: var(--muted); }
+
+.bag-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 8px;
+}
+.bag-card {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid var(--border);
+  cursor: pointer;
+}
+.bag-card[aria-pressed='true'] { border-color: var(--focus); background: var(--surface); }
+.bag-art { position: relative; width: 32px; height: 32px; }
+.bag-icon { position: absolute; inset: 0; display: grid; place-items: center; }
+.bag-name { font-size: 0.75rem; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+.bag-level { font: 0.7rem var(--font-num); color: var(--muted); }
+.bag-lock { font: 700 0.65rem var(--font-display); text-transform: uppercase; color: var(--gold); }
+
+/* Item detail */
+.bag-detail { display: grid; min-width: 0; }
+.detail-body { display: grid; gap: 10px; min-width: 0; }
+.detail-head { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.detail-title { min-width: 0; }
+.detail-head h3 { margin: 0; font: 1rem var(--font-display); overflow-wrap: anywhere; }
+.detail-meta { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.detail-lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+  font: 0.85rem var(--font-num);
+}
+.detail-lines .bonus { color: var(--shard); }
+.compare h4 { margin: 0 0 4px; font: 0.95rem var(--font-display); }
+.deltas { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font: 700 0.9rem var(--font-num); }
+.delta-up { color: var(--good); }
+.delta-down { color: var(--bad); }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.detail-actions .pixel-btn,
+.bag-btn-secondary {
+  min-height: 44px;
+  padding: 6px 14px;
+  font: 700 0.8rem var(--font-display);
+  text-transform: uppercase;
+  border: var(--pixel-border);
+  box-shadow: 0 3px 0 #000;
+  cursor: pointer;
+}
+.bag-btn-secondary { color: var(--text); background: var(--surface-2); }
+.detail-note { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.bag-footer { display: flex; justify-content: flex-start; }
+.bag-footer .pixel-btn { min-height: 44px; }

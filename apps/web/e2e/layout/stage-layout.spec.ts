@@ -65,7 +65,7 @@ for (const vp of VIEWPORTS) {
       await expect(page.getByTestId('next-hint')).toBeVisible();
       await expect(page.getByRole('button', { name: 'Mini mode' })).toBeVisible();
       await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
-      await expect(page.getByTestId('hero-power')).toBeVisible();
+      await expect(page.getByTestId('character-power')).toBeVisible();
 
       const stage = page.getByRole('region', { name: 'Game stage' });
       await expect(stage).toBeVisible();
