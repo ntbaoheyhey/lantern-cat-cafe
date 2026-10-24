@@ -49,6 +49,195 @@ No GitHub Actions were dispatched and no pull request was created. The inspected
 - A debug console.log initially caused typecheck/lint failures because game-rules intentionally has no console type in its ES2022-only library. The log was removed; the assertion logic remains, and the final six checks pass. A test originally used exact floating-point equality for rarity fractions; it was corrected to a precision-aware comparison.
 - Concurrent forge edits appeared in the original shared checkout during the task. They were preserved. The original checkout was returned to its original ai/codex-v5-forge branch, and only lootcheck files/export were moved into the attached isolated checkout at /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero. Original import maps were regenerated after removing this task's export; final maps and all final checks were regenerated in isolation. Earlier shared-checkout results are superseded by the isolated results.
 
+## Report publication receipt
+
+The report was committed as e29a963 and pushed to the same branch. The remote hash was verified as e29a96346668c57d00e9035df634eb2b59ba2cfa. All twelve changed paths are permitted; content, dependency manifests/lockfile, and GitHub workflows have no diff from origin/main. All task commits have the required author and committer.
+
+The following commands ran after the initial report capture. Whitespace flags on the report-only check permit exact pasted console padding and diff context; the ordinary source diff check passed above. A final receipt-only commit and push publish this appendix after capture, so they cannot contain their own output.
+
+### Publication 1
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git add -- reports/v4b-lootcheck.md
+````
+
+Output (exit 0):
+
+````text
+(no output)
+````
+
+### Publication 2
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git -c core.whitespace=-blank-at-eol,-blank-at-eof diff --cached --check
+````
+
+Output (exit 0):
+
+````text
+(no output)
+````
+
+### Publication 3
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git diff --cached --stat
+````
+
+Output (exit 0):
+
+````text
+ reports/v4b-lootcheck.md | 3340 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 3340 insertions(+)
+````
+
+### Publication 4
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git commit -m 'docs: record V4b local verification and loot findings [skip ci]'
+````
+
+Output (exit 0):
+
+````text
+[ai/codex-v4b-lootcheck e29a963] docs: record V4b local verification and loot findings [skip ci]
+ 1 file changed, 3340 insertions(+)
+ create mode 100644 reports/v4b-lootcheck.md
+````
+
+### Publication 5
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git log origin/main..HEAD --format='%h %an <%ae> | %cn <%ce> | %s'
+````
+
+Output (exit 0):
+
+````text
+e29a963 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> | ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> | docs: record V4b local verification and loot findings [skip ci]
+1a5ab43 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> | ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> | feat(game-rules): publish v2 chest loot checks and drop rates [skip ci]
+````
+
+### Publication 6
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git push origin ai/codex-v4b-lootcheck
+````
+
+Output (exit 0):
+
+````text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+   1a5ab43..e29a963  ai/codex-v4b-lootcheck -> ai/codex-v4b-lootcheck
+````
+
+### Publication 7
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git status --short --branch
+````
+
+Output (exit 0):
+
+````text
+## ai/codex-v4b-lootcheck...origin/ai/codex-v4b-lootcheck
+````
+
+### Publication 8
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git ls-remote --heads origin ai/codex-v4b-lootcheck
+````
+
+Output (exit 0):
+
+````text
+e29a96346668c57d00e9035df634eb2b59ba2cfa	refs/heads/ai/codex-v4b-lootcheck
+````
+
+### Publication 9
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+git diff --exit-code origin/main -- packages/game-rules/src/v2/content package.json pnpm-lock.yaml .github
+````
+
+Output (exit 0):
+
+````text
+(no output)
+````
+
+### Publication 10
+
+Working directory: /Users/bao/.codex/worktrees/v4b-lootcheck/taskbar hero
+
+Command:
+
+````sh
+python3 <<'PY'
+import re
+import subprocess
+allowed = {
+    'packages/game-rules/src/v2/lootcheck/index.ts',
+    'packages/game-rules/src/v2/lootcheck/lootcheck.test.ts',
+    'packages/game-rules/src/v2/index.ts',
+    'docs/drop-rates-v2.md',
+    'reports/v4b-lootcheck.md',
+}
+paths = subprocess.check_output(['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True).splitlines()
+assert len(paths) == 12, paths
+assert all(path in allowed or re.fullmatch(r'supabase/functions/[^/]+/deno\.json', path) for path in paths)
+authors = subprocess.check_output(['git', 'log', 'origin/main..HEAD', '--format=%an <%ae>|%cn <%ce>'], text=True).splitlines()
+expected = 'ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>'
+assert all(author == expected + '|' + expected for author in authors), authors
+print('PASS: exactly 12 permitted changed paths; every task commit has the requested author and committer.')
+PY
+````
+
+Output (exit 0):
+
+````text
+PASS: exactly 12 permitted changed paths; every task commit has the requested author and committer.
+````
+
+
 ## Tool actions and transcript scope
 
 Git setup was the first operation: the two required git config reads. The terminal transcript below includes setup, inspections, initial failures, corrected runs, isolation, final verification, commit, and the first successful push plus remote hash verification. Source inspections were replayed verbatim for transcript capture; the AGENTS.md inventory is explicitly marked as a replay. Other AGENTS.md files belong to unrelated repositories and do not apply here.
