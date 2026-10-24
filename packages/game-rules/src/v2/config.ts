@@ -63,6 +63,12 @@ export const V2_CONFIG = {
     maxMs: 60000,
   },
 
+  /** Bag size (approved in docs/proposals/schema-v2.md) and the point where the UI warns it is nearly full. */
+  bag: {
+    limit: 200,
+    nearFullRatio: 0.9,
+  },
+
   /** Hit offsets of a volley's extra arrows after the first arrow's hit (Archer). */
   volleyStaggerMs: 60,
 } as const;
