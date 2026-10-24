@@ -5,11 +5,11 @@ import { parseSiweMessage } from 'viem/siwe';
 import { avalanche } from 'viem/chains';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { createConfig, http } from 'wagmi';
-import { mock } from 'wagmi/connectors';
+import { injected, mock } from 'wagmi/connectors';
 import { createMockAuthApi, type AuthApi } from './authApi';
 import { fuji, makeFujiChain } from './config';
 import { createSessionStore } from './session';
-import { WalletButton } from './WalletButton';
+import { CORE_INSTALL_URL, NO_WALLET_HINT, WalletButton } from './WalletButton';
 import { WalletProvider } from './WalletProvider';
 
 const ACCOUNT = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8' as const;
@@ -115,4 +115,19 @@ it('session store survives broken storage and drops expired sessions', () => {
   expect(s.get()?.token).toBe('t');
   s.clear();
   expect(s.get()).toBeNull();
+});
+
+it('without a browser wallet the button links to core.app and says which wallets work', () => {
+  window.sessionStorage.clear();
+  const config = createConfig({ chains: [fuji], connectors: [injected()], transports: { [fuji.id]: http() } });
+  render(
+    <WalletProvider config={config} api={createMockAuthApi()} store={createSessionStore()}>
+      <WalletButton />
+    </WalletProvider>,
+  );
+  const link = screen.getByRole('link', { name: 'Get a browser wallet' });
+  expect(link.getAttribute('href')).toBe(CORE_INSTALL_URL);
+  expect(link.getAttribute('title')).toBe(NO_WALLET_HINT);
+  expect(NO_WALLET_HINT).toMatch(/Core, MetaMask/);
+  expect(NO_WALLET_HINT).toMatch(/Chrome, Brave or Edge/);
 });
