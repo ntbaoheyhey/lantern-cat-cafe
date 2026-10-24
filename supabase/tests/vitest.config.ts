@@ -8,6 +8,7 @@ const here = (spec: string) => fileURLToPath(import.meta.resolve(spec));
 export default defineConfig({
   resolve: {
     alias: {
+      "@taskbar-hero/api-contract": fileURLToPath(new URL("../../packages/api-contract/src/index.ts", import.meta.url)),
       "@taskbar-hero/game-rules": fileURLToPath(new URL("../../packages/game-rules/src/index.ts", import.meta.url)),
       "viem/accounts": here("viem/accounts"),
       viem: here("viem"),

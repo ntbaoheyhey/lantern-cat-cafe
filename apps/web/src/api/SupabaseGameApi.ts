@@ -1,12 +1,13 @@
 import {
   GameApiError,
+  isGameApiErrorCode,
   type BossFightResult,
   type ClaimResult,
+  type Endpoint,
   type ForgeResult,
   type GameApi,
-  type GameApiErrorCode,
   type ServerState,
-} from './GameApi';
+} from '@taskbar-hero/api-contract';
 
 export interface SupabaseGameApiOptions {
   /** Session JWT from auth-verify; null or undefined when signed out. Read on every call. */
@@ -18,19 +19,6 @@ export interface SupabaseGameApiOptions {
   /** Inject a fake fetch in tests. */
   fetch?: typeof fetch;
 }
-
-const CODES: readonly GameApiErrorCode[] = [
-  'unauthenticated',
-  'not_owner',
-  'not_found',
-  'rate_limited',
-  'no_attempts_left',
-  'forge_blocked',
-  'mint_not_confirmed',
-  'not_enough_gold',
-  'max_level',
-  'server_error',
-];
 
 /** GameApi over the Supabase Edge Functions in docs/api.md. */
 export class SupabaseGameApi implements GameApi {
@@ -47,7 +35,7 @@ export class SupabaseGameApi implements GameApi {
     this.fetch = opts.fetch ?? ((input, init) => fetch(input, init));
   }
 
-  private async post<T>(name: string, body: object = {}): Promise<T> {
+  private async post<T>(name: Endpoint, body: object = {}): Promise<T> {
     const token = this.getToken();
     if (!token) throw new GameApiError('unauthenticated');
     const headers: Record<string, string> = { 'content-type': 'application/json', authorization: `Bearer ${token}` };
@@ -61,8 +49,8 @@ export class SupabaseGameApi implements GameApi {
     const data: unknown = await res.json().catch(() => null);
     if (!res.ok) {
       const { error: code, reason } = (data as { error?: unknown; reason?: unknown } | null) ?? {};
-      if (CODES.includes(code as GameApiErrorCode)) {
-        throw new GameApiError(code as GameApiErrorCode, typeof reason === 'string' ? reason : undefined);
+      if (isGameApiErrorCode(code)) {
+        throw new GameApiError(code, typeof reason === 'string' ? reason : undefined);
       }
       throw new GameApiError(res.status === 401 ? 'unauthenticated' : 'server_error', `${name} failed (${res.status})`);
     }

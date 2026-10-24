@@ -9,7 +9,7 @@ on:
       - supabase/config.toml
       - packages/auth/**
       - packages/game-rules/**
-      - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - packages/api-contract/** # types, error codes and statuses imported by _shared/game.ts
       - packages/chain/deployments/43113.json # RelicNFT address imported by _shared/game-server.ts
       - .github/workflows/deploy-functions.yml
   pull_request:
@@ -18,7 +18,7 @@ on:
       - supabase/config.toml
       - packages/auth/**
       - packages/game-rules/**
-      - apps/web/src/api/GameApi.ts # types imported by _shared/game.ts
+      - packages/api-contract/** # types, error codes and statuses imported by _shared/game.ts
       - packages/chain/deployments/43113.json # RelicNFT address imported by _shared/game-server.ts
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
