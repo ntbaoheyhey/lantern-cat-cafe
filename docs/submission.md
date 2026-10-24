@@ -72,7 +72,7 @@ Without a wallet you can still see the game, but claims, the Forge and the Marke
 - **Wallet support is narrow.** Injected wallets on desktop Chrome, Brave and Edge only. No Safari, no mobile wallet connection (WalletConnect is a possible later addition).
 - **Market needs a wallet.** Browsing the Relic market requires connecting one; there is no read-only view.
 - **Placeholder art.** The strip uses pixel art drawn at runtime; there is no commissioned art, music or sound.
-- **Small content set.** One boss line, four gear slots, four Relic rarities. Game numbers were tuned by simulation and signed off by the project owner, not by a large playtest.
+- **Small content set.** One boss (Yarn Giant) that scales by level, four gear slots, four Relic rarities. Game numbers were tuned by simulation and signed off by the project owner, not by a large playtest.
 - **Known browser QA findings.** The remaining open items from the Round 2 browser QA are listed in `docs/qa-report-2.md` (for example, the tab bar overflowing on very narrow phones).
 
 ## Team
