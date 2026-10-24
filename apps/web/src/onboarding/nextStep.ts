@@ -1,7 +1,8 @@
 import { upgradeCost } from '@taskbar-hero/game-rules';
+import type { TabName } from '../Panel';
 import type { ServerState } from '../api/GameApi';
 
-export type HintTab = 'Inventory' | 'Boss' | 'Forge';
+export type HintTab = Exclude<TabName, 'Hero' | 'Market'>;
 
 export interface NextStep {
   text: string;
