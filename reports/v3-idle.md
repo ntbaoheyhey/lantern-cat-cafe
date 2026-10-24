@@ -259,3 +259,33 @@ maximum (ms): 11.111
 ### Final scope and identity audit
 
 `git diff --check` exited 0 with no output. Only the task's allowlisted paths are staged. The new commit's author is checked before push; its output and the push result are recorded in the delivery section below.
+
+## Delivery
+
+Implementation commit: `dc60ce5` (`feat: add deterministic v2 idle progression`). A second report-only commit records this delivery evidence. No code changed after the final validation chain.
+
+```text
+$ git diff --cached --check
+(exit 0, no output; an initial report EOF blank-line warning was removed before committing)
+$ git commit -m "feat: add deterministic v2 idle progression"
+[ai/codex-v3-idle dc60ce5] feat: add deterministic v2 idle progression
+ 15 files changed, 850 insertions(+)
+$ git log origin/main..HEAD --format='%h %an <%ae>'
+dc60ce5 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+$ git push -u origin ai/codex-v3-idle
+remote:
+remote: Create a pull request for 'ai/codex-v3-idle' on GitHub by visiting:
+remote:      https://github.com/ntbaoheyhey/taskbar-hero/pull/new/ai/codex-v3-idle
+remote:
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-v3-idle -> ai/codex-v3-idle
+branch 'ai/codex-v3-idle' set up to track 'origin/ai/codex-v3-idle'.
+$ pnpm gen:deno && git diff --exit-code && git status --short --branch && git log origin/main..HEAD --format='%h %an <%ae>'
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/v3-idle/taskbar hero
+> node scripts/gen-deno-json.mjs
+wrote 9 Edge Function import maps
+## ai/codex-v3-idle...origin/ai/codex-v3-idle
+dc60ce5 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+The remote printed its generic PR creation link; it was not followed and no PR was created. Inspected workflows: CI is manual-only, and Edge Function deployment triggers only on main or manual dispatch. Pushing this feature branch does not trigger either. No Actions commands or dispatches were run.
