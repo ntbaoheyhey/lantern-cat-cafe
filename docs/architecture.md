@@ -8,6 +8,8 @@
 - `contracts`: Foundry project (RelicNFT, RelicMarket).
 - `supabase`: migrations and Edge Functions.
 
+See [extending](extending.md) for step-by-step checklists to add an endpoint, gear slot, rarity or Relic, boss, or tab.
+
 ## On-chain vs off-chain
 - Off-chain (Supabase, server decides): gold, gear, shards, Boss Key.
 - On-chain (Avalanche Fuji): Relic NFTs (ERC-1155) minted with a server-signed EIP-712 voucher, and the Relic market. There is no token.
