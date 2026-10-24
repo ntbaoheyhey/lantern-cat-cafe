@@ -1,4 +1,4 @@
-import { PGlite } from "@electric-sql/pglite";
+import type { PGlite } from "@electric-sql/pglite";
 import { ENDPOINTS, ERROR_CODES, HTTP_STATUS } from "@taskbar-hero/api-contract";
 import { CONFIG, relicIdFor } from "@taskbar-hero/game-rules";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
@@ -6,11 +6,10 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { beforeAll, describe, expect, it } from "vitest";
 import { routes } from "../../functions/_shared/game.ts";
+import { migratedDb } from "./game-db.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(here, "../../..");
-const migrationsDir = join(here, "../../migrations");
-const bootstrapSql = join(here, "../sql/bootstrap.sql");
 const deployWorkflowPath = join(repoRoot, ".github/workflows/deploy-functions.yml");
 const functionsDir = join(here, "../../functions");
 const publicRelicsDir = join(repoRoot, "apps/web/public/relics");
@@ -28,12 +27,7 @@ interface ConstraintRow {
 }
 
 beforeAll(async () => {
-  db = new PGlite();
-  await db.exec(readFileSync(bootstrapSql, "utf8"));
-  const files = readdirSync(migrationsDir).filter((f) => f.endsWith(".sql")).sort();
-  for (const f of files) {
-    await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
-  }
+  db = await migratedDb();
   // Base test player for check constraint enforcement tests
   await db.query(`insert into players (id, wallet) values ($1, $2)`, [TEST_PLAYER_ID, TEST_WALLET]);
   await db.query(`insert into idle_state (player_id, gold) values ($1, 0)`, [TEST_PLAYER_ID]);

@@ -1,11 +1,7 @@
-import { PGlite } from "@electric-sql/pglite";
-import { readdirSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import type { PGlite } from "@electric-sql/pglite";
 import { beforeAll, describe, expect, it } from "vitest";
+import { migratedDb } from "./game-db.ts";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const migrationsDir = join(here, "../../migrations");
 const A = "00000000-0000-4000-8000-00000000000a";
 const B = "00000000-0000-4000-8000-00000000000b";
 const WALLET_A = "0x" + "a".repeat(40);
@@ -27,11 +23,7 @@ async function as<T>(role: "anon" | "authenticated" | "service_role", claims: ob
 const jwt = (sub: string, wallet: string) => ({ sub, wallet, role: "authenticated" });
 
 beforeAll(async () => {
-  db = new PGlite();
-  await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
-  const files = readdirSync(migrationsDir).filter((f) => f.endsWith(".sql")).sort();
-  expect(files.length).toBeGreaterThan(0);
-  for (const f of files) await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
+  db = await migratedDb();
 
   await db.exec(`
     insert into players (id, wallet) values ('${A}', '${WALLET_A}'), ('${B}', '${WALLET_B}');

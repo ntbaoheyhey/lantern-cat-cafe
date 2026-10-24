@@ -6,6 +6,13 @@ import { defineConfig } from "vitest/config";
 const here = (spec: string) => fileURLToPath(import.meta.resolve(spec));
 
 export default defineConfig({
+  test: {
+    globalSetup: "./global-setup.ts",
+    // Under load (parallel build, 4 cores) starting a PGlite and the concurrency tests take much
+    // longer than vitest's 10 s hook / 5 s test defaults; a timeout there is noise, not a bug.
+    hookTimeout: 60_000,
+    testTimeout: 30_000,
+  },
   resolve: {
     // Exact matches for viem: a bare "viem" alias would also rewrite subpaths such as "viem/siwe".
     alias: [
