@@ -21,17 +21,19 @@ import {
   type Rarity,
   type Seed,
 } from "@taskbar-hero/game-rules";
-import type {
-  BossFightResult,
-  ClaimResult,
-  ForgeResult,
-  GameApiErrorCode,
-  ForgeStatus,
-  OwnedGear,
-  RelicVoucher,
-  ServerState,
-  TodayRelic,
-} from "../../../apps/web/src/api/GameApi.ts";
+import {
+  HTTP_STATUS,
+  type BossFightResult,
+  type ClaimResult,
+  type Endpoint,
+  type ForgeResult,
+  type GameApiErrorCode,
+  type ForgeStatus,
+  type OwnedGear,
+  type RelicVoucher,
+  type ServerState,
+  type TodayRelic,
+} from "@taskbar-hero/api-contract";
 import {
   REISSUE_GRACE_SECONDS,
   VOUCHER_TTL_SECONDS,
@@ -45,19 +47,6 @@ import {
 /** Minimum seconds between two claims that count (docs/api.md). */
 export const MIN_CLAIM_INTERVAL_SECONDS = 10;
 
-const STATUS: Record<GameApiErrorCode, number> = {
-  unauthenticated: 401,
-  not_owner: 403,
-  not_found: 404,
-  rate_limited: 429,
-  no_attempts_left: 409,
-  forge_blocked: 409,
-  mint_not_confirmed: 409,
-  not_enough_gold: 409,
-  max_level: 409,
-  server_error: 500,
-};
-
 export class GameError extends Error {
   readonly status: number;
   /** Sent as `reason` next to `error` (forge_blocked: the ForgeBlock). */
@@ -65,7 +54,7 @@ export class GameError extends Error {
   constructor(readonly code: GameApiErrorCode, reason?: string) {
     super(reason ? `${code}: ${reason}` : code);
     this.name = "GameError";
-    this.status = STATUS[code];
+    this.status = HTTP_STATUS[code];
     this.reason = reason;
   }
 }
@@ -515,10 +504,7 @@ export function gameHandler(
 /** The game endpoints, keyed by Edge Function name. */
 export function routes(
   deps: GameDeps,
-): Record<
-  "game-state" | "idle-claim" | "equip" | "boss-fight" | "upgrade" | "relic-forge" | "relic-mint-report",
-  (playerId: string, body: Record<string, unknown>) => Promise<unknown>
-> {
+): Record<Endpoint, (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
   return {
     "game-state": (player) => getState(deps, player),
     "idle-claim": (player) => claim(deps, player),

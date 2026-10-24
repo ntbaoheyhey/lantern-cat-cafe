@@ -1,9 +1,9 @@
 import { PGlite } from "@electric-sql/pglite";
+import { ENDPOINTS, ERROR_CODES, HTTP_STATUS } from "@taskbar-hero/api-contract";
 import { CONFIG, relicIdFor } from "@taskbar-hero/game-rules";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import ts from "typescript";
 import { beforeAll, describe, expect, it } from "vitest";
 import { routes } from "../../functions/_shared/game.ts";
 
@@ -14,7 +14,6 @@ const bootstrapSql = join(here, "../sql/bootstrap.sql");
 const deployWorkflowPath = join(repoRoot, ".github/workflows/deploy-functions.yml");
 const functionsDir = join(here, "../../functions");
 const publicRelicsDir = join(repoRoot, "apps/web/public/relics");
-const gameApiPath = join(repoRoot, "apps/web/src/api/GameApi.ts");
 const supabaseGameApiPath = join(repoRoot, "apps/web/src/api/SupabaseGameApi.ts");
 
 const TEST_PLAYER_ID = "00000000-0000-4000-8000-000000000001";
@@ -319,64 +318,25 @@ describe("R1 consistency: 5. routes() keys have folders", () => {
   });
 });
 
-describe("R1 consistency: 6. SupabaseGameApi CODES == GameApiErrorCode union", () => {
-  it("SupabaseGameApi CODES array exactly equals GameApiErrorCode union type", () => {
-    expect(existsSync(gameApiPath)).toBe(true);
+describe("R1 consistency: 6. error codes and endpoints are defined once in packages/api-contract", () => {
+  it("HTTP_STATUS covers exactly ERROR_CODES, with no duplicate codes", () => {
+    expect(ERROR_CODES.length).toBeGreaterThan(0);
+    expect(new Set(ERROR_CODES).size).toBe(ERROR_CODES.length);
+    expect(Object.keys(HTTP_STATUS)).toEqual([...ERROR_CODES]);
+  });
+
+  it("SupabaseGameApi takes its codes from the contract instead of keeping a copy", () => {
     expect(existsSync(supabaseGameApiPath)).toBe(true);
+    const src = readFileSync(supabaseGameApiPath, "utf8");
+    expect(src).toContain("isGameApiErrorCode");
+    expect(src).not.toMatch(/\bCODES\b/);
+    expect(src).not.toMatch(/'unauthenticated'\s*,\s*'not_owner'/);
+  });
 
-    // Extract union members from GameApi.ts
-    const gameApiSrc = readFileSync(gameApiPath, "utf8");
-    const sfGameApi = ts.createSourceFile("GameApi.ts", gameApiSrc, ts.ScriptTarget.Latest, true);
-
-    const unionMembers: string[] = [];
-    ts.forEachChild(sfGameApi, (node) => {
-      if (ts.isTypeAliasDeclaration(node) && node.name.text === "GameApiErrorCode") {
-        if (ts.isUnionTypeNode(node.type)) {
-          for (const member of node.type.types) {
-            if (ts.isLiteralTypeNode(member) && ts.isStringLiteral(member.literal)) {
-              unionMembers.push(member.literal.text);
-            }
-          }
-        }
-      }
-    });
-
-    // Extract CODES array elements from SupabaseGameApi.ts
-    const supabaseGameApiSrc = readFileSync(supabaseGameApiPath, "utf8");
-    const sfSupabaseGameApi = ts.createSourceFile("SupabaseGameApi.ts", supabaseGameApiSrc, ts.ScriptTarget.Latest, true);
-
-    const codes: string[] = [];
-    ts.forEachChild(sfSupabaseGameApi, (node) => {
-      if (ts.isVariableStatement(node)) {
-        for (const decl of node.declarationList.declarations) {
-          if (
-            ts.isIdentifier(decl.name) &&
-            decl.name.text === "CODES" &&
-            decl.initializer &&
-            ts.isArrayLiteralExpression(decl.initializer)
-          ) {
-            for (const elem of decl.initializer.elements) {
-              if (ts.isStringLiteral(elem)) {
-                codes.push(elem.text);
-              }
-            }
-          }
-        }
-      }
-    });
-
-    expect(unionMembers.length).toBeGreaterThan(0);
-    expect(codes.length).toBeGreaterThan(0);
-
-    // No duplicates
-    expect(new Set(unionMembers).size).toBe(unionMembers.length);
-    expect(new Set(codes).size).toBe(codes.length);
-
-    // Identical as sets and sorted lists
-    expect(new Set(codes)).toEqual(new Set(unionMembers));
-    expect([...codes].sort()).toEqual([...unionMembers].sort());
-
-    // Identical in declaration order
-    expect(codes).toEqual(unionMembers);
+  it("ENDPOINTS matches the routes() keys and the deployed function list", () => {
+    expect(Object.keys(routes({} as any)).sort()).toEqual([...ENDPOINTS].sort());
+    const deployContent = readFileSync(deployWorkflowPath, "utf8");
+    const deployed = (deployContent.match(/FUNCTIONS:\s*([^\n]+)/)?.[1] ?? "").trim().split(/\s+/);
+    for (const name of ENDPOINTS) expect(deployed, `${name} must be deployed`).toContain(name);
   });
 });

@@ -1,6 +1,6 @@
 # Game API
 
-The contract between the web client and the server. Types live in `apps/web/src/api/GameApi.ts`; `MockGameApi` implements the same rules in the browser. The Supabase implementation calls the Edge Functions below. All numbers come from `packages/game-rules`.
+The contract between the web client and the server. Types, error codes, HTTP statuses and endpoint names live in `packages/api-contract` (`apps/web/src/api/GameApi.ts` re-exports it); `MockGameApi` implements the same rules in the browser. The Supabase implementation calls the Edge Functions below. All numbers come from `packages/game-rules`.
 
 ## Calls
 
