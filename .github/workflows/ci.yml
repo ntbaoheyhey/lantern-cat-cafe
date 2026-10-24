@@ -13,6 +13,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm gen:deno
+      - run: git diff --exit-code -- supabase/functions
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
