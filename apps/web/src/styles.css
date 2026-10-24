@@ -196,6 +196,7 @@ body {
 }
 .tabs { display: flex; gap: 4px; padding: 8px 8px 0; overflow-x: auto; border-bottom: 1px solid var(--border); }
 .tab {
+  flex: none;
   min-height: 36px;
   padding: 0 14px;
   font: inherit;
@@ -211,8 +212,8 @@ body {
 .tabpanel p { margin: 0; color: var(--muted); }
 .wallet {
   position: absolute;
-  right: 76px; bottom: 8px;
-  max-width: calc(100% - 92px);
+  right: 84px; bottom: 8px;
+  max-width: calc(100% - 100px);
   display: flex; align-items: center; gap: 6px;
   font-size: 0.85rem;
   white-space: nowrap;
@@ -260,3 +261,15 @@ body {
 .stats { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0; align-items: baseline; }
 .stats dt { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
 .stats dd { margin: 0; font-family: var(--font-num); font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+
+/* Small screens: tighter tabs, a fade hinting at more tabs to the right, and a taller drawer. */
+@media (max-width: 600px) {
+  .panel { height: min(440px, 75vh); }
+  .tabs {
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 0 9px; }
+}
