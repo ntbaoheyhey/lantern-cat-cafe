@@ -1,21 +1,19 @@
 // Relic voucher signing (EIP-712, docs/contracts.md) and mint receipt checks for relic-forge and
 // relic-mint-report. Runtime-neutral like game.ts: Deno gets viem from deno.json, the Node tests
 // through the vitest alias.
+import { FUJI_CHAIN_ID, VOUCHER_TTL_SECONDS, relicForgedAbi, usedNoncesAbi } from "@taskbar-hero/chain";
 import {
   createPublicClient,
   decodeEventLog,
   getAddress,
   http,
   isAddressEqual,
-  parseAbi,
   type Address,
   type Hex,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
-export const FUJI_CHAIN_ID = 43113;
-/** Voucher lifetime (docs/contracts.md rule 2: short, never over 24 h). */
-export const VOUCHER_TTL_SECONDS = 30 * 60;
+export { FUJI_CHAIN_ID, VOUCHER_TTL_SECONDS };
 /**
  * An issued voucher is re-signed only this long after its expiry, so a mint that lands in a block
  * stamped just before the expiry is seen (via usedNonces) before a second voucher exists.
@@ -68,11 +66,6 @@ export function voucherSigner(privateKey: string, verifyingContract: Address): V
 export function checksumAddress(address: string): Address {
   return getAddress(address);
 }
-
-const relicForgedAbi = parseAbi([
-  "event RelicForged(address indexed player, uint256 indexed relicId, uint8 rarity, uint256 nonce)",
-]);
-const usedNoncesAbi = parseAbi(["function usedNonces(uint256 nonce) view returns (bool used)"]);
 
 export interface ReceiptLog {
   address: Address;
