@@ -6,6 +6,7 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
+    "test": "pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit"
