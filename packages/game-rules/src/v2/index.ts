@@ -6,3 +6,4 @@ export * from './config';
 export * from './combat';
 export * from './idle';
 export * from './bag';
+export * from './state';
