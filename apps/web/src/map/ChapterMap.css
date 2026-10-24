@@ -1,0 +1,390 @@
+/* ChapterMap.css - Retro pixel RPG World Map for Cat Café Quest v2 */
+
+.v2-chapter-map {
+  --map-bg: var(--bg, #1a1220);
+  --map-surface: var(--surface, #2a1f36);
+  --map-surface-2: var(--surface-2, #3a2c4a);
+  --map-border: var(--border, #5b4572);
+  --map-text: var(--text, #fff3e0);
+  --map-muted: var(--muted, #c3aed0);
+  --map-accent: var(--accent, #ffb86b);
+  --map-gold: var(--gold, #ffd34e);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  background: var(--map-surface);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: var(--map-text);
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+/* Light mode overrides for high contrast and pixel theme parity */
+:root[data-theme='light'] .v2-chapter-map,
+.light .v2-chapter-map,
+[data-theme='light'] .v2-chapter-map {
+  --map-bg: #fbf5ee;
+  --map-surface: #ffffff;
+  --map-surface-2: #f4eee6;
+  --map-border: #8c78a0;
+  --map-text: #2a1a30;
+  --map-muted: #6e587a;
+  --map-accent: #d86c12;
+  --map-gold: #c9701a;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) .v2-chapter-map {
+    --map-bg: #fbf5ee;
+    --map-surface: #ffffff;
+    --map-surface-2: #f4eee6;
+    --map-border: #8c78a0;
+    --map-text: #2a1a30;
+    --map-muted: #6e587a;
+  }
+}
+
+/* Map Header */
+.v2-map-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--map-border);
+}
+
+.v2-map-title {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--map-gold);
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 0.04em;
+}
+
+.v2-map-subtitle {
+  font-size: 0.85rem;
+  color: var(--map-muted);
+  font-family: var(--font-body);
+}
+
+/* Canvas & Desktop Winding Path */
+.v2-map-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  box-sizing: border-box;
+}
+
+.v2-map-path-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* List of Nodes */
+.v2-map-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  z-index: 2;
+}
+
+/* Desktop absolute positioning along the winding S-curve */
+.v2-map-item {
+  position: absolute;
+  width: clamp(210px, 26%, 280px);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
+.v2-map-item--ch1 { left: 18%; top: 90px; }
+.v2-map-item--ch2 { left: 82%; top: 90px; }
+.v2-map-item--ch3 { left: 82%; top: 250px; }
+.v2-map-item--ch4 { left: 18%; top: 250px; }
+.v2-map-item--ch5 { left: 50%; top: 430px; }
+
+/* Node Button */
+.v2-map-node {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: var(--map-surface-2);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  color: var(--map-text);
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  outline: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.v2-map-node:hover:not([aria-disabled='true']) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #000;
+}
+
+.v2-map-node:focus-visible {
+  outline: 2px solid var(--focus, #ffd75e);
+  outline-offset: 2px;
+}
+
+/* Theme accent bar on left edge */
+.v2-map-theme-bar {
+  width: 6px;
+  flex-shrink: 0;
+  background-color: var(--chapter-theme, var(--map-accent));
+}
+
+.v2-map-node-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  min-width: 0;
+}
+
+/* Top metadata row */
+.v2-map-node-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.v2-map-chapter-num {
+  font-family: var(--font-num, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--map-muted);
+  letter-spacing: 0.05em;
+}
+
+.v2-map-theme-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  flex-shrink: 0;
+}
+
+.v2-map-cleared-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.v2-map-check-svg {
+  display: block;
+}
+
+/* Chapter Title */
+.v2-map-chapter-name {
+  margin: 0;
+  font-family: var(--font-display, monospace);
+  font-size: 1.05rem;
+  line-height: 1.15;
+  color: var(--map-text);
+  letter-spacing: 0.02em;
+}
+
+/* Boss Row */
+.v2-map-boss-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--map-muted);
+}
+
+.v2-map-boss-marker-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.v2-map-boss-marker-svg {
+  display: block;
+}
+
+.v2-map-boss-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--map-muted);
+}
+
+.v2-map-boss-name {
+  font-weight: 700;
+  color: var(--map-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status Badges & Footer */
+.v2-map-status-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.v2-map-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #000;
+  letter-spacing: 0.02em;
+}
+
+.v2-map-badge--round {
+  background: var(--map-accent);
+  color: var(--on-accent, #1a1200);
+  font-family: var(--font-num, monospace);
+}
+
+.v2-map-badge--rematch {
+  background: var(--map-gold);
+  color: var(--on-accent, #1a1200);
+  font-family: var(--font-display, monospace);
+  text-transform: uppercase;
+}
+
+/* States */
+/* 1. Cleared Chapter: check & gold border */
+.v2-map-node--cleared {
+  border: 2px solid var(--map-gold) !important;
+  box-shadow: 0 0 0 1px #000, var(--pixel-shadow, 3px 3px 0 #000);
+}
+
+.v2-map-node--cleared:hover {
+  border-color: var(--focus, #ffd75e) !important;
+}
+
+/* 2. Current Chapter: pulse animation */
+.v2-map-node--current {
+  border: 2px solid var(--map-accent);
+}
+
+@keyframes v2-map-pulse-anim {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 2px var(--map-gold), 0 3px 0 #000;
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px var(--map-accent), 0 5px 0 #000;
+  }
+}
+
+.pulse {
+  animation: v2-map-pulse-anim 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none !important;
+  }
+}
+
+/* 3. Locked Chapter: padlock from v2Frames, not selectable */
+.v2-map-node--locked {
+  opacity: 0.72;
+  background: var(--map-bg);
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+
+.v2-map-node--locked:hover {
+  transform: none;
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+}
+
+.v2-map-lock-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.v2-map-padlock {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.v2-map-locked-text {
+  font-size: 0.72rem;
+  color: var(--map-muted);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* ========================================================= */
+/* Responsive: at <= 680px (including 390px phone viewport) */
+/* The winding path collapses into a vertical list.          */
+/* No horizontal scroll.                                     */
+/* ========================================================= */
+@media (max-width: 680px) {
+  .v2-chapter-map {
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .v2-map-canvas {
+    min-height: auto;
+    position: static;
+  }
+
+  .v2-map-path-svg {
+    display: none;
+  }
+
+  .v2-map-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: auto;
+    position: static;
+    width: 100%;
+  }
+
+  .v2-map-item {
+    position: static;
+    width: 100%;
+    transform: none;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .v2-map-node {
+    width: 100%;
+  }
+}
