@@ -27,11 +27,11 @@ import {
   type ServerState,
   type TodayRelic,
 } from './GameApi';
+import { VOUCHER_TTL_SECONDS } from '@taskbar-hero/chain';
 
 /** Demo vouchers carry this all-zero signature; RelicNFT rejects it, so demo mode never mints. */
 export const DEMO_SIGNATURE = `0x${'00'.repeat(65)}` as const;
 const DEMO_PLAYER = '0x0000000000000000000000000000000000000000' as const;
-const VOUCHER_TTL_SECONDS = 30 * 60;
 
 export interface MockGameApiOptions {
   seed?: Seed;

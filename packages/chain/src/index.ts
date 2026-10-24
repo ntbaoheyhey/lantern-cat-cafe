@@ -1,10 +1,10 @@
 import fuji from '../deployments/43113.json';
 import anvil from '../deployments/31337.json';
 
-export { relicMarketAbi, relicNftAbi } from './abi';
+import { ANVIL_CHAIN_ID, FUJI_CHAIN_ID } from './constants';
 
-export const FUJI_CHAIN_ID = 43113;
-export const ANVIL_CHAIN_ID = 31337;
+export { relicMarketAbi, relicNftAbi } from './abi';
+export * from './constants';
 
 export type Address = `0x${string}`;
 
