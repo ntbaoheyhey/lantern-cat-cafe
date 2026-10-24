@@ -1,10 +1,48 @@
 name: CI
+# Minutes matter on a private repo (2000 free per month). Pull requests are verified outside Actions
+# with scripts/verify-pr.sh (see docs/verify-pr.md). Here: a slim check after each push to main (a
+# newer push cancels an older run, docs-only changes skip everything) and a full manual run
+# (Actions > CI > Run workflow) that also runs Playwright.
 on:
   push:
-  pull_request:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  node:
+  changes:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      code: ${{ steps.f.outputs.code }}
+      web: ${{ steps.f.outputs.web }}
+      contracts: ${{ steps.f.outputs.contracts }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: f
+        env:
+          BASE: ${{ github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            files=$(git ls-files)
+          else
+            files=$(git diff --name-only "$BASE" HEAD)
+          fi
+          echo "$files"
+          flag() { if echo "$files" | grep -Eq "$1"; then echo true; else echo false; fi; }
+          # code: anything except docs, markdown and screenshots; web: what the app build/e2e depends on.
+          code=$(echo "$files" | grep -Ev '^(docs/|screenshots/)|\.md$' | grep -c . || true)
+          echo "code=$([ "$code" -gt 0 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "web=$(flag '^(apps/web/|packages/|pnpm-lock.yaml|package.json|\.github/)')" >> "$GITHUB_OUTPUT"
+          echo "contracts=$(flag '^(contracts/|packages/chain/|\.gitmodules|\.github/)')" >> "$GITHUB_OUTPUT"
+  node:
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -19,8 +57,12 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
+  # Playwright only on a manual run; scripts/verify-pr.sh runs it for every PR.
   e2e:
+    needs: changes
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -34,7 +76,10 @@ jobs:
       - run: pnpm --filter @taskbar-hero/web build
       - run: pnpm --filter @taskbar-hero/web test:e2e
   contracts:
+    needs: changes
+    if: needs.changes.outputs.contracts == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     defaults:
       run:
         working-directory: contracts
