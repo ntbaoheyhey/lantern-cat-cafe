@@ -1,11 +1,7 @@
-import { PGlite } from "@electric-sql/pglite";
-import { readdirSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import type { PGlite } from "@electric-sql/pglite";
 import { beforeAll, describe, expect, it } from "vitest";
+import { migratedDb } from "./game-db.ts";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const migrationsDir = join(here, "../../migrations");
 const WALLET = "0x" + "c".repeat(40);
 
 let db: PGlite;
@@ -22,11 +18,7 @@ const consume = (nonce: string) =>
   as("service_role", async () => (await db.query<{ ok: boolean }>(`select public.consume_siwe_nonce($1) as ok`, [nonce])).rows[0]!.ok);
 
 beforeAll(async () => {
-  db = new PGlite();
-  await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
-  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql")).sort()) {
-    await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
-  }
+  db = await migratedDb();
   await db.exec(`
     insert into siwe_nonces (nonce) values ('fresh0001'), ('fresh0002');
     insert into siwe_nonces (nonce, created_at) values ('stale0001', now() - interval '10 minutes 1 second');

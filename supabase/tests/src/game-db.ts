@@ -1,5 +1,6 @@
 import { PGlite } from "@electric-sql/pglite";
 import { readdirSync, readFileSync } from "node:fs";
+import { inject } from "vitest";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { GameStore } from "../../functions/_shared/game.ts";
@@ -9,13 +10,30 @@ const migrationsDir = join(here, "../../migrations");
 
 export type Role = "anon" | "authenticated" | "service_role";
 
-/** PGlite with the Supabase stubs and every migration applied. */
-export async function migratedDb(): Promise<PGlite> {
+/** A fresh PGlite with the Supabase stubs and every migration applied (slow: about 3 s). */
+export async function buildMigratedDb(): Promise<PGlite> {
   const db = new PGlite();
   await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
   for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql")).sort()) {
     await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
   }
+  return db;
+}
+
+/**
+ * PGlite with the Supabase stubs and every migration applied. Starts from the template that
+ * global-setup.ts dumped once per run, or migrates from scratch if there is none.
+ */
+export async function migratedDb(): Promise<PGlite> {
+  let template: string | undefined;
+  try {
+    template = inject("pgliteTemplate");
+  } catch {
+    // Not running under vitest's global setup.
+  }
+  if (!template) return buildMigratedDb();
+  const db = new PGlite({ loadDataDir: new Blob([readFileSync(template)]) });
+  await db.waitReady;
   return db;
 }
 
@@ -71,4 +89,11 @@ export function pgliteStore(getDb: () => PGlite): GameStore {
     voucher: (p, nonce) => one(`select public.game_voucher($1, $2) r`, [p, nonce]),
     voucherMinted: (p, nonce, tx) => one(`select public.game_voucher_minted($1, $2, $3) r`, [p, nonce, tx]),
   };
+}
+
+declare module "vitest" {
+  export interface ProvidedContext {
+    /** Path of the migrated data-directory dump made by global-setup.ts. */
+    pgliteTemplate: string;
+  }
 }
