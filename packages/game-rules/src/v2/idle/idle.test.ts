@@ -222,3 +222,24 @@ describe('bulk binomial sampler', () => {
     }
   });
 });
+
+// V12: read-only gate inspection must agree with the existing claim engine.
+describe('gateV2', () => {
+  it('agrees with one-second claims for 200 seeded frontiers', async () => {
+    const { gateV2 } = await import('./claim');
+    const rng = new Rng(123);
+    for (let n = 0; n < 200; n++) {
+      const chapter = CHAPTERS[rng.int(0, CHAPTERS.length - 1)]!;
+      const input = initial({ chapter: chapter.index, round: rng.int(1, chapter.roundsPerChapter), kills: rng.int(0, chapter.killsPerRound), level: rng.int(1, 60), equipped: rng.chance(0.5) ? geared() : [] });
+      const delta = computeClaimV2(input, 1, 1);
+      expect(gateV2(input)).toEqual({ gated: delta.gated, neededPower: delta.neededPower ?? 0 });
+    }
+  });
+  it('reports a weak gate and treats the completed last round as boss-ready', async () => {
+    const { gateV2 } = await import('./claim');
+    const input = initial({ chapter: 3, round: 5 });
+    expect(gateV2(input).gated).toBe(true);
+    expect(gateV2(input).neededPower).toBeGreaterThan(powerRating(deriveStats(input, [])));
+    expect(gateV2(initial({ round: 10, kills: CHAPTERS[0]!.killsPerRound }))).toEqual({ gated: false, neededPower: 0 });
+  });
+});

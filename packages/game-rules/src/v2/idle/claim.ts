@@ -172,3 +172,16 @@ export function computeClaimV2(input: ClaimInputV2, elapsedSeconds: number, seed
   rollDrops(delta, batches.values(), input.classId, input.keysHeld, new Rng(deriveSeed(seed, 1)));
   return delta;
 }
+
+/** Inspect the next frontier fight without rolling rewards or advancing state. */
+export function gateV2(input: ClaimInputV2): { gated: boolean; neededPower: number } {
+  const chapter = CHAPTERS.find(entry => entry.index === input.chapter);
+  if (!chapter) throw new Error(`Unknown chapter: ${input.chapter}`);
+  if (!Number.isInteger(input.round) || input.round < 1 || input.round > chapter.roundsPerChapter ||
+    !Number.isInteger(input.kills) || input.kills < 0 || input.kills > chapter.killsPerRound) throw new RangeError('Invalid idle frontier');
+  if (input.kills === chapter.killsPerRound && input.round === chapter.roundsPerChapter) return { gated: false, neededPower: 0 };
+  const round = input.kills === chapter.killsPerRound ? input.round + 1 : input.round;
+  const stats = deriveStats({ classId: input.classId, level: input.level }, input.equipped);
+  return roundProfile(stats, chapter, round).canWin ? { gated: false, neededPower: 0 }
+    : { gated: true, neededPower: neededPower(stats, chapter, round) };
+}
