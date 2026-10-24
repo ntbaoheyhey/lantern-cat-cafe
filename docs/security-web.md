@@ -79,7 +79,7 @@ Tested: this CSP was served on a local copy of the fresh build and loaded in Chr
 
 ## 4. Follow-ups (not done here)
 
-- Headers block in `vercel.json` (finding 1), then check live response headers.
+- Headers block in `vercel.json` (finding 1): done, see `apps/web/vercel.json`. Check live response headers after the deploy.
 - Run `check-bundle.mjs` in CI after the web build.
 - Findings 4, 5 and 6 as one small polish PR.
 - Findings 2 and the SIWE domain allowlist go to the owner as core auth items.
