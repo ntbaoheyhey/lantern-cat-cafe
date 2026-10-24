@@ -7,12 +7,13 @@ const here = (spec: string) => fileURLToPath(import.meta.resolve(spec));
 
 export default defineConfig({
   resolve: {
-    alias: {
-      "@taskbar-hero/api-contract": fileURLToPath(new URL("../../packages/api-contract/src/index.ts", import.meta.url)),
-      "@taskbar-hero/chain": fileURLToPath(new URL("../../packages/chain/src/index.ts", import.meta.url)),
-      "@taskbar-hero/game-rules": fileURLToPath(new URL("../../packages/game-rules/src/index.ts", import.meta.url)),
-      "viem/accounts": here("viem/accounts"),
-      viem: here("viem"),
-    },
+    // Exact matches for viem: a bare "viem" alias would also rewrite subpaths such as "viem/siwe".
+    alias: [
+      { find: "@taskbar-hero/api-contract", replacement: fileURLToPath(new URL("../../packages/api-contract/src/index.ts", import.meta.url)) },
+      { find: "@taskbar-hero/chain", replacement: fileURLToPath(new URL("../../packages/chain/src/index.ts", import.meta.url)) },
+      { find: "@taskbar-hero/game-rules", replacement: fileURLToPath(new URL("../../packages/game-rules/src/index.ts", import.meta.url)) },
+      { find: /^viem\/accounts$/, replacement: here("viem/accounts") },
+      { find: /^viem$/, replacement: here("viem") },
+    ],
   },
 });
