@@ -39,7 +39,9 @@ beforeAll(async () => {
 
 const playerTables = ["idle_state", "gear", "boss_attempts", "boss_keys", "relic_vouchers"];
 // relic_forges (B5) is covered in forge.test.ts.
-const allTables = ["players", ...playerTables, "relic_forges", "siwe_nonces"];
+// V8 adds the six v2 tables (covered in ../v2/schema.test.ts).
+const v2Tables = ["cat_state", "items", "player_stacks", "boss_clears", "boss_fights", "founder_grants"];
+const allTables = ["players", ...playerTables, "relic_forges", "siwe_nonces", ...v2Tables];
 
 describe("migrations", () => {
   it("applied: all tables exist with RLS enabled", async () => {
@@ -53,7 +55,7 @@ describe("migrations", () => {
 
   it("has no write policies at all", async () => {
     const r = await db.query<{ cmd: string }>(`select cmd from pg_policies where schemaname = 'public'`);
-    expect(r.rows.length).toBe(7);
+    expect(r.rows.length).toBe(7 + v2Tables.length);
     expect(r.rows.every((x) => x.cmd === "SELECT")).toBe(true);
   });
 });

@@ -90,10 +90,12 @@ describe("R1 consistency: 1. SQL CHECK rarity/slot lists == CONFIG", () => {
       order by table_name, column_name
     `);
 
-    // Expected tables with rarity: gear, relic_forges, relic_vouchers; slot: gear
+    // Expected tables with rarity: gear, items (v2), relic_forges, relic_vouchers; slot: gear, items (v2)
     expect(colRes.rows).toEqual([
       { table_name: "gear", column_name: "rarity" },
       { table_name: "gear", column_name: "slot" },
+      { table_name: "items", column_name: "rarity" },
+      { table_name: "items", column_name: "slot" },
       { table_name: "relic_forges", column_name: "rarity" },
       { table_name: "relic_vouchers", column_name: "rarity" },
     ]);
