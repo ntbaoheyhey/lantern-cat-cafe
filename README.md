@@ -86,6 +86,15 @@ Run all workspace unit tests, or either requested suite individually:
 pnpm test
 pnpm --filter @taskbar-hero/web test
 pnpm --filter @taskbar-hero/game-rules test
+pnpm --filter @taskbar-hero/supabase-tests test   # Edge Function tests (also run by pnpm test)
+```
+
+Browser tests (Playwright) need a one-time browser download and a production build first:
+
+```sh
+pnpm --filter @taskbar-hero/web exec playwright install chromium
+pnpm --filter @taskbar-hero/web build
+pnpm --filter @taskbar-hero/web test:e2e
 ```
 
 For Solidity tests, initialize the pinned dependencies, then run Foundry:
