@@ -11,9 +11,9 @@ import {
 
 const FRAME_COUNTS = { idle: 4, walk: 6, attack: 6, hurt: 2, defeat: 4, victory: 4 } as const;
 
-function gearFor(cls: (typeof CLASS_IDS)[number], armor: boolean, rarity: GearRarity): EquippedVisuals {
+function gearFor(cls: (typeof CLASS_IDS)[number], armor: boolean, rarity: GearRarity, armorSet = 'cozy'): EquippedVisuals {
   const weapon = { set: CLASS_LOOKS[cls].starterWeapon, rarity };
-  const piece = { set: 'cozy', rarity };
+  const piece = { set: armorSet, rarity };
   return armor ? { weapon, helmet: piece, armor: piece, gloves: piece, boots: piece } : { weapon };
 }
 
@@ -115,14 +115,16 @@ describe('composeFrame', () => {
   it('draws every class, armor set and rarity in every frame without clipping', () => {
     for (const cls of CLASS_IDS) {
       const look = CLASS_LOOKS[cls];
-      for (const armor of [false, true]) {
-        for (const rarity of GEAR_RARITIES) {
-          for (const name of ANIM_NAMES) {
-            animsFor(look.weaponType)[name].frames.forEach((_, i) => {
-              const f = composeFrame(look, gearFor(cls, armor, rarity), name, i);
-              expect(f.clipped, `${cls} ${armor} ${rarity} ${name} ${i}`).toBe(0);
-              expect(f.pixels.some((c) => c !== -1)).toBe(true);
-            });
+      for (const armorSet of Object.keys(ARMOR_SETS)) {
+        for (const armor of [false, true]) {
+          for (const rarity of GEAR_RARITIES) {
+            for (const name of ANIM_NAMES) {
+              animsFor(look.weaponType)[name].frames.forEach((_, i) => {
+                const f = composeFrame(look, gearFor(cls, armor, rarity, armorSet), name, i);
+                expect(f.clipped, `${cls} ${armorSet} ${armor} ${rarity} ${name} ${i}`).toBe(0);
+                expect(f.pixels.some((c) => c !== -1)).toBe(true);
+              });
+            }
           }
         }
       }
