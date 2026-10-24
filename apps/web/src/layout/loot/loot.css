@@ -1,0 +1,316 @@
+/* Cat Café Quest - Loot & Gains presentation styles (card V19a) */
+
+.loot-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loot-summary-heading {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-size: 1.15rem;
+  color: var(--gold, #ffd34e);
+  letter-spacing: 0.02em;
+}
+
+.loot-summary-empty {
+  margin: 0;
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.95rem;
+  color: var(--muted, #c3aed0);
+  font-style: italic;
+}
+
+/* Currency & material lines */
+.loot-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.loot-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.9rem;
+  color: var(--text, #fff3e0);
+  padding: 4px 8px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  border-radius: 0;
+  animation: loot-reveal-pop 150ms ease-out;
+}
+
+.loot-line-levelup {
+  background: rgba(255, 211, 78, 0.15);
+  border-color: var(--gold, #ffd34e);
+  color: var(--gold, #ffd34e);
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.loot-line-xp {
+  background: rgba(143, 216, 255, 0.12);
+  border-color: var(--shard, #8fd8ff);
+  color: var(--shard, #8fd8ff);
+}
+
+.loot-line-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.loot-line-badge {
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: 24px;
+  text-align: center;
+}
+
+.loot-line-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Item tiles */
+.loot-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 600px) {
+  .loot-items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.loot-item-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  border-radius: 0;
+  box-sizing: border-box;
+  animation: loot-reveal-pop 150ms ease-out;
+}
+
+.loot-item-art {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.loot-item-art-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.loot-item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.loot-item-name {
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-size: 0.85rem;
+  color: var(--text, #fff3e0);
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loot-item-meta {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: var(--muted, #c3aed0);
+  line-height: 1;
+}
+
+.loot-item-rarity-common { color: var(--rarity-common, #b9b6c9); }
+.loot-item-rarity-uncommon { color: var(--good, #6be08a); }
+.loot-item-rarity-rare { color: var(--rarity-rare, #4aa8ff); }
+.loot-item-rarity-epic { color: var(--rarity-epic, #bb74ff); }
+.loot-item-rarity-legendary { color: var(--rarity-legendary, #ff9a3c); }
+
+.loot-salvaged-note {
+  margin: 0;
+  padding: 8px 10px;
+  background: rgba(255, 184, 107, 0.1);
+  border-left: 3px solid var(--accent, #ffb86b);
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.85rem;
+  color: var(--muted, #c3aed0);
+  line-height: 1.35;
+}
+
+/* Dialog backdrops & modal containers */
+.loot-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.loot-dialog {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 20px 20px 16px;
+  background: var(--surface, #2a1f36);
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 0 4px 0 #000);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Chest reveal dialog specifics */
+.chest-reveal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.chest-reveal-title {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-size: 1.4rem;
+  color: var(--gold, #ffd34e);
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 0.02em;
+}
+
+.chest-reveal-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: var(--surface-2, #3a2c4a);
+  border: 2px solid var(--border, #5b4572);
+}
+
+.chest-reveal-actions,
+.welcome-back-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.chest-reveal-btn,
+.welcome-back-btn {
+  min-width: 90px;
+  padding: 8px 16px;
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chest-reveal-btn:focus-visible,
+.welcome-back-btn:focus-visible {
+  outline: 2px solid var(--focus, #ffd75e);
+  outline-offset: 2px;
+}
+
+/* Welcome back dialog specifics */
+.welcome-back-title {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-size: 1.4rem;
+  color: var(--gold, #ffd34e);
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 0.02em;
+}
+
+.welcome-back-duration {
+  margin: 0;
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.95rem;
+  color: var(--text, #fff3e0);
+  line-height: 1.4;
+}
+
+/* Reveal animation */
+@keyframes loot-reveal-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .loot-line,
+  .loot-item-tile,
+  .loot-backdrop,
+  .loot-dialog {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Light mode support */
+[data-theme='light'] .loot-dialog,
+:root:not([data-theme='dark']) .loot-dialog {
+  background: var(--surface, #ffffff);
+  border-color: var(--border, #806b5b);
+  color: var(--text, #2a1e17);
+}
+
+[data-theme='light'] .loot-line,
+:root:not([data-theme='dark']) .loot-line,
+[data-theme='light'] .loot-item-tile,
+:root:not([data-theme='dark']) .loot-item-tile {
+  background: var(--surface-2, #fff4e0);
+  border-color: var(--border, #806b5b);
+  color: var(--text, #2a1e17);
+}
+
+[data-theme='light'] .chest-reveal-icon-wrap,
+:root:not([data-theme='dark']) .chest-reveal-icon-wrap {
+  background: var(--surface-2, #fff4e0);
+  border-color: var(--border, #806b5b);
+}
