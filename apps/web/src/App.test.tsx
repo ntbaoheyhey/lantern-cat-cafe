@@ -51,6 +51,15 @@ it('renders the page above the strip with title, copy, Mochi card, and next-step
   // Highlighted next-step hint card
   const hintCard = screen.getByTestId('next-hint');
   expect(hintCard.classList.contains('pixel-card')).toBe(true);
+
+  // Cafe board regions and cards
+  expect(screen.getByRole('region', { name: 'Café board' })).toBeTruthy();
+  expect(screen.getByRole('region', { name: "Today's quest" })).toBeTruthy();
+  expect(screen.getByRole('heading', { level: 2, name: "Today's Quest" })).toBeTruthy();
+  expect(screen.getByTestId('cafe-boss-progress')).toBeTruthy();
+  expect(screen.getByRole('region', { name: 'Relic shelf' })).toBeTruthy();
+  expect(screen.getByRole('heading', { level: 2, name: 'Relic Shelf' })).toBeTruthy();
+  expect(screen.getByTestId('relic-shelf-slot')).toBeTruthy();
 });
 
 it('toggles the panel with the strip button', () => {
