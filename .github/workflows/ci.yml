@@ -1,11 +1,9 @@
 name: CI
 # Minutes matter on a private repo (2000 free per month). Pull requests are verified outside Actions
-# with scripts/verify-pr.sh (see docs/verify-pr.md). Here: a slim check after each push to main (a
-# newer push cancels an older run, docs-only changes skip everything) and a full manual run
-# (Actions > CI > Run workflow) that also runs Playwright.
+# with scripts/verify-pr.sh (see docs/verify-pr.md). Until the user says the monthly quota has reset
+# this workflow is manual only (Actions > CI > Run workflow); to restore the slim check after each
+# push to main, add `push: { branches: [main] }` under `on:`.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 concurrency:
   group: ci-${{ github.ref }}
