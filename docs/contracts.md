@@ -35,7 +35,16 @@ killing that one voucher without rotating the signer. It reverts with `NonceAlre
 was already redeemed or cancelled. `renounceOwnership()` is disabled and always reverts with
 `RenounceDisabled()`, so the contract can never end up with no owner (and no way to rotate the signer).
 
-### EIP-712 typed data (backend task B5 must match this exactly)
+### Deployed on Fuji (chain 43113)
+
+| Contract | Address |
+| --- | --- |
+| RelicNFT | `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D` |
+| RelicMarket | `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93` |
+
+The source of truth is `packages/chain/deployments/43113.json`. The metadata URI points at the site's `/relics/{id}.json` (see [deploy](deploy.md)).
+
+### EIP-712 typed data (the Edge Functions use this exactly)
 
 Domain:
 
@@ -64,7 +73,7 @@ Signing with viem:
 ```ts
 import { privateKeyToAccount } from "viem/accounts";
 
-const account = privateKeyToAccount(process.env.RELIC_SIGNER_PRIVATE_KEY as `0x${string}`);
+const account = privateKeyToAccount(process.env.VOUCHER_SIGNER_PRIVATE_KEY as `0x${string}`);
 
 const signature = await account.signTypedData({
   domain: {
@@ -105,11 +114,11 @@ The client then calls `mint(voucher, signature)` from `player`'s wallet. Only st
 
 The contract only enforces what is listed above; the backend must uphold these:
 
-1. **Rarity is a fixed function of `relicId`.** Each `relicId` is exactly one rarity tier (for example
-   `relicId` encodes the tier). Never roll rarity independently per voucher: the first mint fixes
+1. **Rarity is a fixed function of `relicId`.** Each `relicId` is exactly one rarity tier (the pinned ids are common 1, rare 2,
+   epic 3, legendary 4, from `packages/game-rules/src/content.ts`). Never roll rarity independently per voucher: the first mint fixes
    `rarityOf(relicId)`, and any later voucher with a different rarity reverts with `RarityMismatch()`
    and can never be redeemed.
-2. **Keep voucher expiry short.** 30 minutes planned, never over 24 hours. Otherwise players can hoard
+2. **Keep voucher expiry short.** 30 minutes (`VOUCHER_TTL_SECONDS` in `packages/chain`), never over 24 hours. Otherwise players can hoard
    vouchers and bypass the one-per-day rule.
 3. **Use `cancelNonce` to kill a single bad voucher** (owner only) instead of rotating the signer.
 4. **Check `relicExists(relicId)` before trusting `rarityOf(relicId)`.** For a relic that was never

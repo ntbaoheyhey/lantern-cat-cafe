@@ -17,7 +17,7 @@ Paths below are relative to `apps/web/src/`.
 | [inventory/](../apps/web/src/inventory), [boss/](../apps/web/src/boss), [forge/](../apps/web/src/forge), [market/](../apps/web/src/market) | Feature components, text helpers, styles and tests. |
 | [onboarding/](../apps/web/src/onboarding), [wallet/](../apps/web/src/wallet) | Help, next-step hints and wallet UI. |
 
-The planned motion foundation adds `motion/reducedMotion.ts`, `motion/useTickNumber.ts` and `motion.css`. These files are not on this guide's base revision; use the helpers only after the PR introducing them is merged.
+The motion foundation is `motion/reducedMotion.ts`, `motion/useTickNumber.ts` and `motion.css` (see below).
 
 ## Tokens and shared classes
 
@@ -72,7 +72,7 @@ To add an icon in a task that owns `art/`:
 
 ## Motion and reduced motion
 
-After the motion foundation is merged, its shared API is:
+The shared motion API is:
 
 | API | Purpose |
 | --- | --- |
@@ -80,7 +80,7 @@ After the motion foundation is merged, its shared API is:
 | `useTickNumber(value, ms = 400)` from `motion/useTickNumber.ts` | Animate a displayed number; keep the underlying game value unchanged. |
 | `.fx-press`, `.fx-float`, `.fx-pop` from `motion.css` | Button press, floating reward text and card entrance effects. |
 
-Do not add imports for these pending files before they exist on `main`. Once available, reuse the helpers and follow their integration in `main.tsx`.
+Reuse these helpers; `main.tsx` already loads `motion.css`.
 
 Every new animation must include a `@media (prefers-reduced-motion: reduce)` fallback. For JavaScript-driven effects, honor the preference in code too. Show the final state immediately and preserve all information and actions when motion is reduced. For example:
 
