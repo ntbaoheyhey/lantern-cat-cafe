@@ -7,7 +7,7 @@ Measured with `forge coverage --offline --report summary` in `contracts/` on `ma
 | `RelicNFT.sol` | 100% (32/32) / 100% (9/9) / 100% (8/8) | unchanged, 100% |
 | `RelicMarket.sol` | 95.92% (47/49) / 100% (10/10) / 90% (9/10) | 100% (49/49) / 100% (10/10) / 100% (10/10) |
 
-Branch coverage was already complete before this review. The only uncovered code was `RelicMarket.onERC1155BatchReceived`, which the ERC-1155 token never reaches in the existing batch test (the token's own check reverts first); the new test calls both receiver hooks directly. The rest of the work targets behaviour that line coverage cannot show, in `contracts/test/RelicEdges.t.sol`:
+Branch coverage was already complete before this review. The only uncovered code was `RelicMarket.onERC1155BatchReceived`, which the coverage tool reports as never executed (the existing batch-transfer test expects the revert, but its lines are not counted); the new test calls both receiver hooks directly. The rest of the work targets behaviour that line coverage cannot show, in `contracts/test/RelicEdges.t.sol`:
 
 | Area | Tests added |
 | --- | --- |
