@@ -1,16 +1,26 @@
-import { useEffect, useRef, useState, type ComponentType, type CSSProperties, type KeyboardEvent } from 'react';
-import { CatPortrait } from '../CatPortrait';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ComponentType,
+  type CSSProperties,
+  type KeyboardEvent,
+  type ReactNode,
+} from 'react';
+import type { ServerStateV2 } from '../api/GameApiV2';
 import { GameCanvas } from '../GameCanvas';
 import { DemoNote } from '../game/DemoNote';
 import { Hud } from '../game/Hud';
-import { HeroTab } from '../HeroTab';
 import { HowToPlay } from '../onboarding/HowToPlay';
 import type { HintTab } from '../onboarding/nextStep';
 import { TABS } from '../Panel';
 import { WalletButton } from '../wallet/WalletButton';
+import { BagPanel } from './bag/BagPanel';
+import { CharacterPanel } from './character/CharacterPanel';
 import { HelpTab } from './HelpTab';
 import { HintChip } from './HintChip';
 import { layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
+import { useSampleStateV2 } from './sampleState';
 import './layout.css';
 
 type StageTabName = 'Inventory' | 'Boss' | 'Forge' | 'Market' | 'Help';
@@ -74,7 +84,7 @@ function TabButtons({
   );
 }
 
-function ActivePanel({ tab, hidden }: { tab: StageTabName; hidden?: boolean }) {
+function ActivePanel({ tab, hidden, bag }: { tab: StageTabName; hidden?: boolean; bag: ReactNode }) {
   const active = STAGE_TABS.find((t) => t.id === tab)!;
   const Active = active.Component;
   return (
@@ -83,25 +93,15 @@ function ActivePanel({ tab, hidden }: { tab: StageTabName; hidden?: boolean }) {
         <div key={tab} className="tab-content">
           <h2>{active.label}</h2>
           <DemoNote />
-          <Active />
+          {tab === 'Inventory' ? bag : <Active />}
         </div>
       )}
     </div>
   );
 }
 
-function CharacterArea() {
-  return (
-    <section className="v2-character pixel-card" aria-label="Character">
-      <div className="v2-character-head">
-        <div className="cat-portrait-wrap">
-          <CatPortrait size={64} />
-        </div>
-        <h2 className="v2-character-name">Mochi the cat</h2>
-      </div>
-      <HeroTab />
-    </section>
-  );
+function CharacterArea({ state }: { state: ServerStateV2 }) {
+  return <CharacterPanel state={state} />;
 }
 
 /**
@@ -117,6 +117,8 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const phone = kind === 'phone';
   const navRef = useRef<HTMLDivElement>(null);
+  const sample = useSampleStateV2();
+  const bag = <BagPanel state={sample.state} onEquip={sample.equip} onToggleLock={sample.setLocked} />;
 
   const closeSheet = () => {
     setSheetOpen(false);
@@ -165,13 +167,13 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
         {phone ? (
           <>
             <div className="v2-lower">
-              <CharacterArea />
+              <CharacterArea state={sample.state} />
             </div>
             <div className={`v2-sheet${sheetOpen ? ' open' : ''}`} hidden={!sheetOpen}>
               <button type="button" className="v2-sheet-close" aria-label="Close panel" onClick={closeSheet}>
                 ×
               </button>
-              <ActivePanel tab={tab} hidden={!sheetOpen} />
+              <ActivePanel tab={tab} hidden={!sheetOpen} bag={bag} />
             </div>
             <nav className="v2-nav" aria-label="Game menu" ref={navRef}>
               <TabButtons active={sheetOpen ? tab : null} onSelect={selectPhoneTab} className="v2-nav-tabs" />
@@ -179,10 +181,10 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
           </>
         ) : (
           <div className="v2-lower">
-            <CharacterArea />
+            <CharacterArea state={sample.state} />
             <section className="v2-tabs-area pixel-card" aria-label="Game panel">
               <TabButtons active={tab} onSelect={setTab} className="v2-tabs" />
-              <ActivePanel tab={tab} />
+              <ActivePanel tab={tab} bag={bag} />
             </section>
           </div>
         )}

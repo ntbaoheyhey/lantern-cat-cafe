@@ -43,7 +43,7 @@ it('desktop: top bar, stage, character area and the five tabs', () => {
   expect(screen.getByRole('region', { name: 'Game stage' })).toBeTruthy();
   expect(screen.getByTestId('game-canvas')).toBeTruthy();
   expect(screen.getByRole('region', { name: 'Character' })).toBeTruthy();
-  expect(screen.getByTestId('hero-power')).toBeTruthy();
+  expect(screen.getByTestId('character-power')).toBeTruthy();
   expect(screen.getByTestId('gold-counter')).toBeTruthy();
   expect(screen.queryByRole('region', { name: 'Café board' })).toBeNull();
   expect(screen.getAllByRole('tab').map((t) => t.textContent)).toEqual([
