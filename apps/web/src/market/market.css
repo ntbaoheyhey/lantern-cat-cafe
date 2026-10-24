@@ -1,18 +1,36 @@
-.market { display: grid; gap: 12px; max-width: 640px; }
-.market h3 { margin: 0 0 4px; font-size: 0.95rem; }
-.market-relics, .market-listings { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.market-relics { display: flex; flex-wrap: wrap; gap: 4px 16px; font-weight: 600; }
-.market-listings li { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 4px 12px; }
-.market-listings, .market-relics { gap: 8px; }
-.market-relics { gap: 8px 12px; }
-.market-relics li { padding: 6px 10px; }
-.market h3 { font-family: var(--font-display); color: var(--gold); }
-.market-form input, .market-form select { color: var(--text); background: var(--surface-2); border: 2px solid var(--border); border-radius: 0; padding: 0 6px; }
-.market-form { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; }
-.market-form label { display: grid; gap: 2px; font-size: 0.85rem; }
-.market-form input, .market-form select { min-height: 32px; font: inherit; max-width: 140px; }
-.tabpanel .market-hint { font-size: 0.8rem; color: var(--muted); margin: 0; }
-@media (max-width: 480px) { .market-listings li { grid-template-columns: 1fr auto; } }
-.market-relics li, .market-relic { display: flex; align-items: center; gap: 8px; }
+.market { display: grid; gap: 20px; max-width: 640px; min-width: 0; }
+.market section { min-width: 0; }
+.market h3 { margin: 0 0 8px; font: 0.95rem var(--font-display); color: var(--gold); }
+.market-relics, .market-listings { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.market-relics { display: flex; flex-wrap: wrap; gap: 8px 12px; font-weight: 600; }
+.market-relics li { padding: 6px 10px; max-width: 100%; }
+.market-relics li, .market-relic { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .market-relics img, .market-relic img { image-rendering: pixelated; flex: none; }
+.market-relics li > span { min-width: 0; color: var(--text); overflow-wrap: anywhere; }
 .market-relics small { font-weight: 400; color: var(--muted); }
+
+/* Two shop cards per shelf, with a single column on narrow panels. */
+.market-listings { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 12px; }
+.market-listings li { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 12px; padding: 14px; transition: transform 160ms ease; }
+.market-relic { --market-glow: var(--rarity-common); }
+.market-relic.rarity-rare { --market-glow: var(--rarity-rare); }
+.market-relic.rarity-epic { --market-glow: var(--rarity-epic); }
+.market-relic.rarity-legendary { --market-glow: var(--rarity-legendary); }
+.market-art { display: grid; place-items: center; flex: none; width: 64px; height: 64px; background: var(--surface-2); border: 2px solid var(--market-glow); box-shadow: inset 0 0 12px color-mix(in srgb, var(--market-glow) 15%, transparent), 0 0 12px color-mix(in srgb, var(--market-glow) 25%, transparent); }
+.market-relic-info { display: grid; gap: 4px; min-width: 0; color: var(--text); overflow-wrap: anywhere; }
+.market-relic-info strong { font-family: var(--font-display); font-size: 1rem; }
+.market-relic-info small, .market-seller { color: var(--muted); font-size: 0.8rem; }
+.market-price { display: flex; align-items: center; gap: 8px; min-width: 0; color: var(--gold); font: 700 0.85rem var(--font-num); }
+.market-price svg { flex: none; }
+.market-price span { min-width: 0; overflow-wrap: anywhere; }
+.market-seller { overflow-wrap: anywhere; }
+.market-listing .forge-btn { width: 100%; justify-self: stretch; min-height: 40px; }
+.market-listing .forge-btn:not(.pixel-btn) { color: var(--text); background: var(--surface-2); border: 2px solid var(--border); }
+.market-form { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; }
+.market-form label { display: grid; gap: 4px; min-width: 0; max-width: 100%; font-size: 0.85rem; }
+.market-form input, .market-form select { box-sizing: border-box; min-width: 0; min-height: 36px; max-width: 140px; color: var(--text); background: var(--surface-2); border: 2px solid var(--border); border-radius: 0; padding: 0 6px; font: inherit; }
+.market-form input::placeholder { color: var(--muted); opacity: 1; }
+.tabpanel .market-hint { font-size: 0.8rem; color: var(--muted); margin: 0; }
+@media (max-width: 480px) { .market-listings { grid-template-columns: minmax(0, 1fr); } }
+@media (hover: hover) { .market-listing:hover { transform: translateY(-2px); } }
+@media (prefers-reduced-motion: reduce) { .market-listings .market-listing { transition: none; transform: none; } }

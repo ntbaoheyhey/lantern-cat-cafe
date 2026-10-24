@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { formatEther, parseEther } from 'viem';
 import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
+import { PixelIcon } from '../art/pixelIcons';
 import { relicName } from '../forge/forgeText';
 import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
 import '../forge/forge.css';
@@ -218,19 +219,31 @@ export function MarketTab() {
             {listings.map((l) => {
               const rarity = rarityOf(l.relicId);
               return (
-                <li key={l.id.toString()} className="pixel-card" data-testid={`listing-${l.id}`}>
+                <li key={l.id.toString()} className="pixel-card market-listing" data-testid={`listing-${l.id}`}>
                   <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
-                    {rarity && <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={32} height={32} />}
-                    {rarity ? relicName(rarity) : `Relic #${l.relicId}`} × {l.amount.toString()}
+                    <span className="market-art">
+                      {rarity ? (
+                        <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={56} height={56} />
+                      ) : (
+                        <PixelIcon name="bag" size={5} />
+                      )}
+                    </span>
+                    <span className="market-relic-info">
+                      <strong>{rarity ? relicName(rarity) : `Relic #${l.relicId}`}</strong>
+                      <small> × {l.amount.toString()} listed</small>
+                    </span>
                   </span>
-                  <span>{formatEther(l.price)} AVAX</span>
-                  <span>{isMine(l) ? 'You' : shortAddress(l.seller)}</span>
+                  <span className="market-price">
+                    <PixelIcon name="shop" size={2} />
+                    <span>{formatEther(l.price)} AVAX</span>
+                  </span>
+                  <span className="market-seller">Seller · {isMine(l) ? 'You' : shortAddress(l.seller)}</span>
                   {isMine(l) ? (
                     <button type="button" className="forge-btn" disabled={!!busy} onClick={() => void cancel(l)}>
                       Cancel
                     </button>
                   ) : (
-                    <button type="button" className="forge-btn" disabled={!!busy} onClick={() => void buy(l)}>
+                    <button type="button" className="forge-btn pixel-btn" disabled={!!busy} onClick={() => void buy(l)}>
                       Buy
                     </button>
                   )}
