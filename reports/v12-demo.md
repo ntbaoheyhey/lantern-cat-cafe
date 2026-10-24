@@ -155,7 +155,7 @@ Environment  jsdom was created 46 times · 57.59s total, 51% of tracked time
 
 The requested web test command runs the entire web suite in this Vitest configuration (46 files, 492 tests); this includes the new MockGameApiV2 tests.
 
-Remaining final validation results will be recorded after committing regenerated maps.
+Final validation completed successfully in the required order. The full workspace run passed 1,155 tests, with the two existing `it.fails.each` cases in `v2/lootcheck/lootcheck.test.ts` still reported as expected failures. No tests were skipped, weakened, or deleted.
 
 ## Files changed
 
@@ -182,3 +182,140 @@ Remaining final validation results will be recorded after committing regenerated
 - `supabase/functions/relic-forge/deno.json`
 - `supabase/functions/relic-mint-report/deno.json`
 - `supabase/functions/upgrade/deno.json`
+
+## Final pre-push validation
+
+### `pnpm gen:deno && git diff --exit-code -- supabase/functions` (after committing regenerated files)
+
+```text
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/v12-demo/taskbar hero
+> node scripts/gen-deno-json.mjs
+
+wrote 9 Edge Function import maps
+```
+
+Exit 0; the git diff portion emitted nothing.
+
+### `pnpm typecheck && pnpm lint && pnpm test && pnpm build`
+
+```text
+> taskbar-hero@0.0.0 typecheck /Users/bao/.codex/worktrees/v12-demo/taskbar hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/game-rules typecheck: Done
+packages/auth typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+> taskbar-hero@0.0.0 lint /Users/bao/.codex/worktrees/v12-demo/taskbar hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/v12-demo/taskbar hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/supabase/tests
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  01:21:14
+packages/chain test:    Duration  704ms (import 59%, transform 36%, worker 3%, tests 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  01:21:14
+packages/auth test:    Duration  1.49s (import 79%, tests 11%, transform 10%)
+packages/auth test: Done
+supabase/tests test:  Test Files  15 passed (15)
+supabase/tests test:       Tests  340 passed (340)
+supabase/tests test:    Start at  01:21:14
+supabase/tests test:    Duration  6.94s (tests 78%, import 11%, transform 10%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  15 passed (15)
+packages/game-rules test:       Tests  276 passed | 2 expected fail (278)
+packages/game-rules test:    Start at  01:21:14
+packages/game-rules test:    Duration  7.62s (tests 84%, import 8%, transform 6%, worker 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  01:21:22
+packages/api-contract test:    Duration  245ms (transform 78%, import 18%, tests 3%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/v12-demo/taskbar hero/apps/web
+apps/web test:  Test Files  46 passed (46)
+apps/web test:       Tests  492 passed (492)
+apps/web test:    Start at  01:21:23
+apps/web test:    Duration  4.93s (environment 54%, tests 28%, import 14%, transform 2%, worker 1%)
+apps/web test: Environment  jsdom was created 46 times · 22.89s total, 54% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+> taskbar-hero@0.0.0 build /Users/bao/.codex/worktrees/v12-demo/taskbar hero
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/game-rules build: Done
+packages/auth build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/v12-demo/taskbar hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1722 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.05 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/index-C0PSJB46.css               38.76 kB │ gzip:   7.94 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/index-Rjyucpee.js               126.75 kB │ gzip:  36.88 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 868ms
+apps/web build: Done
+```
+
+All four commands exited 0. The production build includes the existing transitive `ox` worker_threads browser-externalization warning and completes successfully.
+
+Additional review: GameApiErrorV2 matches the supplied content byte for byte; `git diff --check` is clean; changed paths are all within the allowlist; `pnpm-lock.yaml` is unchanged. GitHub CI is manual-only (`workflow_dispatch`), so the branch push does not trigger Actions.
