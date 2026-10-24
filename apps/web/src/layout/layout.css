@@ -1,0 +1,172 @@
+/* Stage-first layout (Cat RPG v2). Desktop >= 1024, tablet 601-1023, phone <= 600. */
+.v2-shell {
+  --nav-h: 56px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  max-width: 100%;
+}
+.v2-shell > main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+/* Top bar: title, currencies, next-step chip, wallet */
+.v2-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border-bottom: 3px solid #000;
+  min-width: 0;
+}
+.v2-title {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  color: var(--gold);
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 0.03em;
+}
+.v2-topbar .hud { position: static; pointer-events: auto; }
+.v2-topbar .wallet {
+  position: static;
+  max-width: 100%;
+  flex-wrap: wrap;
+  white-space: normal;
+  overflow: visible;
+  margin-left: auto;
+}
+.v2-topbar .wallet-msg { display: inline; }
+.v2-hint { max-width: 100%; min-width: 0; flex: 1 1 220px; flex-wrap: wrap; gap: 4px 8px; font-family: var(--font-body); }
+.v2-hint-lead { color: var(--muted); font-weight: 500; }
+.v2-hint-btn {
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.v2-hint-text { color: var(--text); }
+.v2-mini-toggle, .stage-toggle {
+  font: 700 0.8rem var(--font-display);
+  min-height: 32px;
+  padding: 0 12px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: var(--pixel-border);
+  box-shadow: 0 3px 0 #000;
+  cursor: pointer;
+}
+
+/* Stage: the Phaser canvas scaled up by a whole number so pixel art stays crisp. Spare room above it is night sky. */
+.v2-stage {
+  position: relative;
+  height: var(--stage-h);
+  background: #1f1630;
+  border-bottom: 3px solid #000;
+  overflow: hidden;
+}
+.v2-stage .game-host { display: flex; justify-content: center; align-items: flex-end; }
+
+/* Below the stage */
+.v2-lower {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px;
+  align-items: start;
+}
+.v2-shell[data-layout='tablet'] .v2-lower { grid-template-columns: minmax(0, 1fr); }
+.v2-character { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.v2-character-head { display: flex; align-items: center; gap: 12px; }
+.v2-character-name {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: var(--gold);
+  text-shadow: 2px 2px 0 #000;
+}
+.v2-tabs-area { padding: 0; display: flex; flex-direction: column; min-height: 300px; }
+.v2-tabs, .v2-nav-tabs { display: flex; }
+.v2-tabs { gap: 4px; padding: 8px 8px 0; border-bottom: 2px solid var(--border); overflow-x: auto; }
+.v2-tab {
+  flex: none;
+  min-height: 40px;
+  padding: 0 16px;
+  font: inherit;
+  font-family: var(--font-display);
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+.v2-tab[aria-selected='true'] { color: var(--accent); border-bottom-color: var(--accent); }
+.v2-tabpanel { flex: 1; overflow: auto; padding: 16px; min-width: 0; text-align: left; }
+
+/* Phone: bottom nav and a bottom sheet that covers at most 60% of the screen */
+.v2-shell[data-layout='phone'] { padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px)); }
+.v2-shell[data-layout='phone'] .v2-topbar { padding: 8px 12px; }
+.v2-shell[data-layout='phone'] .v2-title { font-size: 1.1rem; margin-right: auto; }
+.v2-shell[data-layout='phone'] .v2-lower { grid-template-columns: minmax(0, 1fr); padding: 12px; }
+.v2-shell[data-layout='phone'] .wallet { margin-left: 0; width: 100%; }
+.v2-shell[data-layout='phone'] .v2-hint { flex-basis: 100%; }
+.v2-nav {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--surface);
+  border-top: 3px solid #000;
+}
+.v2-nav-tabs { height: var(--nav-h); }
+.v2-nav .v2-tab {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 2px;
+  font-size: 0.8rem;
+  border-bottom: 0;
+  border-top: 3px solid transparent;
+}
+.v2-nav .v2-tab[aria-selected='true'] { border-top-color: var(--accent); background: var(--surface-2); }
+.v2-sheet {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 3px);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(60vh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
+  max-height: calc(60dvh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
+  background: var(--surface);
+  border-top: 3px solid #000;
+  box-shadow: 0 -4px 0 rgb(0 0 0 / 0.35);
+  animation: v2-sheet-up 160ms ease-out;
+}
+.v2-sheet[hidden] { display: none; }
+.v2-sheet .v2-tabpanel { padding-right: 52px; }
+.v2-sheet-close {
+  position: absolute;
+  top: 6px; right: 6px;
+  z-index: 1;
+  width: 40px; height: 40px;
+  font: 700 1.4rem var(--font-display);
+  color: var(--text);
+  background: var(--surface-2);
+  border: var(--pixel-border);
+  cursor: pointer;
+}
+@keyframes v2-sheet-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .v2-sheet { animation: none; } }
+
+@media (max-width: 360px) {
+  .v2-shell[data-layout='phone'] .v2-topbar { padding: 6px 8px; gap: 6px 8px; }
+  .v2-shell[data-layout='phone'] .v2-lower { padding: 8px; }
+}
