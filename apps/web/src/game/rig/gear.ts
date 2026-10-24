@@ -1,5 +1,15 @@
+import { SET_PALETTES } from './palettes';
 import { sprite } from './spriteMap';
-import type { SpriteMap, WeaponType } from './types';
+import type { Palette, SpriteMap, WeaponType } from './types';
+
+// Populate SET_PALETTES for ranger and moon without modifying palettes.ts directly:
+const palettes = SET_PALETTES as Record<string, Palette>;
+if (!palettes.ranger) {
+  palettes.ranger = { a: 0x4e6e3c, b: 0x6e482b };
+}
+if (!palettes.moon) {
+  palettes.moon = { a: 0x4a6584, b: 0xc0d0e0 };
+}
 
 /*
  * Gear drawings. Armor maps use a/b (set palette) and t/T/h (rarity palette); weapon maps use the
@@ -41,6 +51,70 @@ export const ARMOR_SETS: Readonly<Record<string, ArmorSet>> = {
     ], { x: 1, y: 0 }),
     gloves: sprite(['.aa.', 'aaaa', 'aaaa', 'tt..'], { x: 1, y: 1 }),
     boots: sprite(['tttt.', 'aaaa.', 'aaaaa'], { x: 0, y: 1 }),
+  },
+  // Ranger leather: hooded cap with a feather, leather vest with a belt and strap, fingerless gloves, tall boots.
+  ranger: {
+    helmet: sprite([
+      '...h.........',
+      '..hTt........',
+      '.Ttaaaaaaa...',
+      '..aaaaaaaaa..',
+      '..abbbbbbba..',
+      'bbbbbbbbbbbbb',
+      'btbbbaaabbttb',
+    ], { x: 6, y: 5 }),
+    armor: sprite([
+      '..tbb.bbt..',
+      'aabbaaaaaba',
+      'aaabbbaaaaa',
+      'aaaabtbaaaa',
+      'aaaaabbbaaa',
+      'bbbbthtbbbb',
+      '.atbbbbbta.',
+    ], { x: 1, y: 0 }),
+    gloves: sprite([
+      'b..b',
+      'baab',
+      'bbbb',
+      'tTTt',
+    ], { x: 1, y: 1 }),
+    boots: sprite([
+      'bb.t.',
+      'baab.',
+      'bbbbb',
+    ], { x: 0, y: 1 }),
+  },
+  // Moon knight: crescent-crest helm, plate chest with a moon emblem, gauntlets, greaves.
+  moon: {
+    helmet: sprite([
+      '....h...h....',
+      '.....bbb.....',
+      '...aaaaaaa...',
+      '..aabaaabaa..',
+      '.abaaaaaaaba.',
+      'bbbbbbbbbbbbb',
+      'bb..ttttt..bb',
+    ], { x: 6, y: 5 }),
+    armor: sprite([
+      '.t.bbbbb.t.',
+      'abbbbabbbba',
+      'aaaabhtaaaa',
+      'aaabhbaaaaa',
+      'aaaabhtaaaa',
+      'abbbbabbbba',
+      'bb.ttttt.bb',
+    ], { x: 1, y: 0 }),
+    gloves: sprite([
+      '.bb.',
+      'baab',
+      'aaaa',
+      'tttt',
+    ], { x: 1, y: 1 }),
+    boots: sprite([
+      'b.tt.',
+      'abaa.',
+      'bbaaa',
+    ], { x: 0, y: 1 }),
   },
 };
 
