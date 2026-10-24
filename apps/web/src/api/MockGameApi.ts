@@ -18,6 +18,7 @@ import {
 } from '@taskbar-hero/game-rules';
 import {
   GameApiError,
+  buildServerState,
   type BossFightResult,
   type ClaimResult,
   type ForgeResult,
@@ -90,30 +91,22 @@ export class MockGameApi implements GameApi {
     this.rollDay();
     const gear = this.inventory.filter((g) => g.equipped).map(({ slot, rarity, level }) => ({ slot, rarity, level }));
     this.player.gear = gear;
-    const power = heroPower(gear);
-    return {
-      gold: this.player.gold,
-      shards: this.player.shards,
-      gear,
-      inventory: this.inventory.map((g) => ({ ...g })),
-      bossLevel: this.player.bossLevel,
-      bossKeys: this.player.bossKeys,
-      boss: {
-        level: this.player.bossLevel,
+    const forgedToday = this.player.lastForgeDay === this.today();
+    return buildServerState(
+      {
+        gold: this.player.gold,
+        shards: this.player.shards,
+        bossKeys: this.player.bossKeys,
+        bossLevel: this.player.bossLevel,
+        inventory: this.inventory,
         attemptsToday: this.attemptsToday,
-        attemptsLeft: Math.max(0, CONFIG.boss.maxAttemptsPerDay - this.attemptsToday),
         keyEarnedToday: this.player.lastBossKeyDay === this.today(),
+        forgedToday,
+        pending: this.pending,
+        today: this.forgedRelic && forgedToday ? this.forgedRelic : null,
       },
-      forge: {
-        blockedBy: this.pending ? null : forgeBlock(this.player, this.today()),
-        forgedToday: this.player.lastForgeDay === this.today(),
-        pending: this.pending ? { ...this.pending } : null,
-        today: this.forgedRelic && this.player.lastForgeDay === this.today() ? { ...this.forgedRelic } : null,
-      },
-      power,
-      goldPerSecond: goldPerSecond(power),
-      serverTime: this.now() / 1000,
-    };
+      this.now(),
+    );
   }
 
   getState(): Promise<ServerState> {
