@@ -5,4 +5,5 @@ export { Rng, deriveSeed, type Seed } from './rng';
 export * from './types';
 export * from './rules';
 export { simulateActivePlay, powerAfter } from './sim';
+export * as v2 from './v2';
 export * from './loot';
