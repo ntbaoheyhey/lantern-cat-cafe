@@ -4,7 +4,9 @@ import { STRIP_HEIGHT, StripScene } from './StripScene';
 
 export function createGame(parent: HTMLElement, loop: GameLoop): Phaser.Game {
   const game = new Phaser.Game({
-    type: Phaser.AUTO,
+    // Canvas, not AUTO: the strip is flat 2D sprites, and Phaser's WebGL renderer uploads GPU-backed
+    // canvases (TileSprite, boot textures), which makes Chromium log "GPU stall due to ReadPixels".
+    type: Phaser.CANVAS,
     parent,
     width: Math.max(parent.clientWidth, 1),
     height: STRIP_HEIGHT,
