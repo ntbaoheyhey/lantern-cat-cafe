@@ -221,13 +221,30 @@ describe('CombatDirector cleanup', () => {
     const s = setup('witch', { tier: 'boss', hooks: { onLootArrive: () => loot++ } });
     const before = s.live.size;
     expect(before).toBeGreaterThan(0);
-    s.director.playBoss(boss('witch', 40));
+    s.director.play([
+      { t: 0, type: 'spawn', maxHp: 50 },
+      { t: 0, type: 'attackStart', attack: 0 },
+      { t: 100, type: 'release', kind: 'bolt', travelMs: 350 },
+      { t: 450, type: 'impact', source: 'hit', damage: 50, crit: true, hp: 0 },
+      { t: 450, type: 'defeat' },
+      { t: 460, type: 'end', won: true },
+    ]);
     runAll(s.director);
     expect(s.live.size).toBe(before);
     expect(s.director.busy).toBe(false);
     expect(s.director.activeCounts).toEqual({ particles: 0, shapes: 0, projectiles: 0, numbers: 0 });
     expect(loot).toBe(4);
     expect(s.monster.alpha).toBe(0);
+    s.director.destroy();
+    expect(s.live.size).toBe(0);
+  });
+
+  it('settles after a real boss log too (win or loss)', () => {
+    const s = setup('witch', { tier: 'boss' });
+    const before = s.live.size;
+    s.director.playBoss(boss('witch', 40));
+    runAll(s.director);
+    expect(s.live.size).toBe(before);
     s.director.destroy();
     expect(s.live.size).toBe(0);
   });
