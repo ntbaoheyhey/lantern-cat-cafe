@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { GameApiError, type BossFightResult, type GameApi } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
+import { ErrorNote, WaitingForServer, describeFailure } from '../game/LoadNotice';
 import { getGameApi, getGameLoop, useGameSnapshot } from '../game/store';
 import { LABELS, bossName } from '../theme/labels';
 import { frameAt, stepMs, REPLAY_MS } from './replay';
@@ -24,7 +25,7 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
   const [fight, setFight] = useState<Fight | null>(null);
   const [shown, setShown] = useState(0);
   const [pending, setPending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ text: string; retry?: () => void } | null>(null);
   // The fight's new state waits until the replay ends, so keys and level don't spoil the outcome.
   const unapplied = useRef<BossFightResult | null>(null);
 
@@ -48,7 +49,7 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
 
   useEffect(() => apply, []); // leaving the tab mid-replay still applies the result
 
-  if (!server) return <p>Loading the boss…</p>;
+  if (!server) return <WaitingForServer what="the boss" loop={loop} />;
   const { boss, bossKeys } = server;
   const outOfAttempts = boss.attemptsLeft === 0;
 
@@ -61,11 +62,12 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
       setFight({ level: boss.level, fight: result });
       setShown(0);
     } catch (e) {
-      setError(
-        e instanceof GameApiError && e.code === 'no_attempts_left'
-          ? 'No attempts left today.'
-          : 'The fight could not start. Please try again.',
-      );
+      if (e instanceof GameApiError && e.code === 'no_attempts_left') {
+        setError({ text: 'No attempts left today.' });
+      } else {
+        const failure = describeFailure(e);
+        setError({ text: failure.text, retry: failure.retryable ? () => void start() : undefined });
+      }
     } finally {
       setPending(false);
     }
@@ -101,7 +103,7 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
           No attempts left today. They reset at {LABELS.resetTime()}.
         </p>
       )}
-      {error && <p role="alert" className="boss-error">{error}</p>}
+      {error && <ErrorNote text={error.text} onRetry={error.retry} className="boss-error" />}
 
       {fight && <Replay fight={fight} shown={shown} attemptsLeft={fight.fight.state.boss.attemptsLeft} />}
     </div>

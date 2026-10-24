@@ -2,6 +2,7 @@ import { CONFIG } from '@taskbar-hero/game-rules';
 import { useEffect, useRef, useState } from 'react';
 import { GameApiError, type ForgeResult, type GameApi, type RelicVoucher } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
+import { ErrorNote, WaitingForServer, describeFailure } from '../game/LoadNotice';
 import { getGameApi, getGameLoop, useGameMode, useGameSnapshot } from '../game/store';
 import { LABELS } from '../theme/labels';
 import { blockText, oddsRows, relicName } from './forgeText';
@@ -31,7 +32,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
   const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
   const [revealing, setRevealing] = useState(false);
   const [pendingForge, setPendingForge] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ text: string; retry?: () => void } | null>(null);
   const [unreported, setUnreported] = useState<UnreportedMint | null>(() => (isDemo ? null : loadUnreported()));
   const [minted, setMinted] = useState<UnreportedMint | null>(null);
   const [checking, setChecking] = useState(false);
@@ -72,7 +73,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
     };
   }, [api, loop, isDemo]);
 
-  if (!server) return <p>Loading the forge…</p>;
+  if (!server) return <WaitingForServer what="the forge" loop={loop} />;
   const { shards, bossKeys, forge } = server;
   const toMint = voucher ?? forge.pending;
 
@@ -86,11 +87,12 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
       setVoucher(result.voucher);
       setRevealing(true);
     } catch (e) {
-      setError(
-        e instanceof GameApiError && e.code === 'forge_blocked'
-          ? 'You cannot forge right now.'
-          : 'The forge failed. Please try again.',
-      );
+      if (e instanceof GameApiError && e.code === 'forge_blocked') {
+        setError({ text: 'You cannot forge right now.' });
+      } else {
+        const failure = describeFailure(e);
+        setError({ text: failure.text, retry: failure.retryable ? () => void doForge() : undefined });
+      }
     } finally {
       setPendingForge(false);
     }
@@ -201,7 +203,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
           Relic minted. In your wallet! <a href={txUrl(minted.hash)} target="_blank" rel="noreferrer">View on Snowtrace</a>
         </p>
       )}
-      {error && <p role="alert" className="forge-error">{error}</p>}
+      {error && <ErrorNote text={error.text} onRetry={error.retry} className="forge-error" />}
     </div>
   );
 }

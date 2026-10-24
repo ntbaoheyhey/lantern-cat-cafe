@@ -114,7 +114,7 @@ it('a spare item shows its own power gain', async () => {
 it.each([
   ['not_enough_gold', 'Not enough Fish for that upgrade yet.'],
   ['max_level', 'That item is already at max level.'],
-  ['server_error', 'Upgrade failed, try again.'],
+  ['server_error', 'Something knocked the yarn over. Please try again in a moment.'],
 ] as const)('maps %s to friendly text', async (code, text) => {
   const { api } = await setup([], 100);
   vi.spyOn(api, 'upgrade').mockRejectedValueOnce(new GameApiError(code));

@@ -3,13 +3,14 @@ import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { useTickNumber } from '../motion/useTickNumber';
 import { LABELS } from '../theme/labels';
 import { useGameSnapshot } from './store';
+import './loadNotice.css';
 
 /** Fired on window when a fish from the strip reaches the Fish chip. Keep in sync with StripScene. */
 export const FISH_EVENT = 'taskbar-hero:fish';
 
 /** Fish, Yarn and Cat Key counters shown on the strip. */
 export function Hud() {
-  const { gold, shards, server } = useGameSnapshot();
+  const { gold, shards, server, loadFailed } = useGameSnapshot();
   const reduced = usePrefersReducedMotion();
   const fish = useTickNumber(gold);
   const yarn = useTickNumber(shards);
@@ -47,6 +48,11 @@ export function Hud() {
         {keys.toLocaleString('en-US')}
         <span className="chip-label">{LABELS.bossKey}</span>
       </span>
+      {loadFailed && (
+        <span className="chip chip-offline" data-testid="hud-offline" role="status">
+          Offline
+        </span>
+      )}
     </div>
   );
 }

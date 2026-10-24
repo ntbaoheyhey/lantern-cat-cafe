@@ -3,7 +3,7 @@ import { act, cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { FISH_EVENT, Hud } from './Hud';
 
-const snap = vi.hoisted(() => ({ value: { gold: 1234, shards: 56, server: { bossKeys: 2 } } }));
+const snap = vi.hoisted(() => ({ value: { gold: 1234, shards: 56, loadFailed: false, server: { bossKeys: 2 } as { bossKeys: number } | null } }));
 vi.mock('./store', () => ({ useGameSnapshot: () => snap.value }));
 
 function mockMotion(reduce: boolean) {
@@ -42,4 +42,13 @@ it('does not bump with reduced motion', () => {
     window.dispatchEvent(new Event(FISH_EVENT));
   });
   expect(screen.getByTestId('gold-counter').classList.contains('chip-bump')).toBe(false);
+});
+
+it('shows an Offline chip only while the first load has failed', () => {
+  const { rerender } = render(<Hud />);
+  expect(screen.queryByTestId('hud-offline')).toBeNull();
+  snap.value = { ...snap.value, loadFailed: true, server: null };
+  rerender(<Hud />);
+  expect(screen.getByTestId('hud-offline').textContent).toBe('Offline');
+  snap.value = { ...snap.value, loadFailed: false, server: { bossKeys: 2 } };
 });

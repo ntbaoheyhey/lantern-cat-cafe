@@ -6,6 +6,7 @@ import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwit
 import { PixelIcon } from '../art/pixelIcons';
 import { relicName } from '../forge/forgeText';
 import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
+import { ErrorNote } from '../game/LoadNotice';
 import '../forge/forge.css';
 import '../inventory/inventory.css';
 import './market.css';
@@ -78,6 +79,9 @@ export function MarketTab() {
     })),
     query: { enabled: ready && pages.length > 0 },
   });
+
+  const readFailed = balances.isError || count.isError || listingPages.isError;
+  const retryReads = () => void Promise.all([balances.refetch(), count.refetch(), listingPages.refetch()]);
 
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -187,11 +191,14 @@ export function MarketTab() {
 
   return (
     <div className="market">
+      {readFailed && (
+        <ErrorNote text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again." onRetry={retryReads} />
+      )}
       <section aria-labelledby="my-relics">
         <h3 id="my-relics">My Relics</h3>
         {balances.isLoading ? (
           <p>Loading…</p>
-        ) : holdings.length === 0 ? (
+        ) : balances.isError ? null : holdings.length === 0 ? (
           <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p>
         ) : (
           <ul className="market-relics" data-testid="my-relics">
@@ -212,7 +219,7 @@ export function MarketTab() {
       <section aria-labelledby="market-listings">
         <h3 id="market-listings">Market</h3>
         <p className="market-hint">Prices are in {TESTNET}.</p>
-        {listings.length === 0 ? (
+        {readFailed ? null : listings.length === 0 ? (
           <p data-testid="listings-empty">No Relics for sale right now.</p>
         ) : (
           <ul className="market-listings" data-testid="listings">

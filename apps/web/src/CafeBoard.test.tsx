@@ -49,6 +49,7 @@ const mockSnapshot: GameSnapshot = {
   power: 125,
   goldPerSecond: 10,
   paused: false,
+  loadFailed: false,
   server: mockServerState,
 };
 
@@ -169,6 +170,7 @@ describe('CafeBoard', () => {
       power: 0,
       goldPerSecond: 0,
       paused: true,
+      loadFailed: false,
       server: null,
     };
 
