@@ -108,7 +108,7 @@ beforeAll(async () => {
   await db.query(`insert into players (id, wallet) values ($1, $2)`, [playerId, s.wallet]);
   await db.query(`insert into idle_state (player_id, gold, shards) values ($1, 100000, 100)`, [playerId]);
   weapon = (await getState(deps, playerId)).inventory.find((g) => g.slot === "weapon")!.id;
-});
+}, 60_000); // migrating PGlite plus a SIWE sign-in can pass the 10 s default when the whole suite runs at once
 
 describe.each(ENDPOINTS)("%s: wrong method", (endpoint) => {
   it("answers non-POST methods with 405 method_not_allowed and changes nothing", async () => {
