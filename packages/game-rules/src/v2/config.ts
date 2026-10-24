@@ -83,6 +83,10 @@ export const V2_CONFIG = {
     bigMultiplier: 2.5,
     /** The fight ends as a loss after this long. */
     maxMs: 60000,
+    /** Keys a boss win spends (a loss spends none). */
+    keyCost: 1,
+    /** One cooldown per player after a lost boss fight, in seconds (schema-v2.md question 2). */
+    lossCooldownSeconds: 60,
   },
 
   /** Bag size (approved in docs/proposals/schema-v2.md) and the point where the UI warns it is nearly full. */
