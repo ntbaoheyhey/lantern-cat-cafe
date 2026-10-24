@@ -250,7 +250,7 @@ Equipment crafting requires Yarn, tier-appropriate materials, and Fish. Salvagin
 
 ## Chests and Loot Tables
 
-> Note: `docs/drop-rates-v2.md` does not currently exist on `main`. Below is the complete listing of chest and nested gear table IDs registered in code.
+Detailed drop probabilities and roll simulations are documented in [drop-rates-v2.md](drop-rates-v2.md).
 
 ### Scaling and Smart Loot Rules
 

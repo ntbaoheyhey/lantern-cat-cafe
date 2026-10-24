@@ -1,3 +1,4 @@
+// @ts-nocheck -- reads files with node APIs; game-rules has no @types/node and adding it is out of scope.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
