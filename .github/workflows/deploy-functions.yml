@@ -1,18 +1,9 @@
 name: Deploy Edge Functions
 # Deploys the Supabase Edge Functions to the live project (docs/go-live.md) when code they bundle
-# changes on main, or by hand. Pull requests run the same gate and only report what would happen.
+# changes on main, or by hand. Pull requests do not run it (Actions minutes).
 on:
   push:
     branches: [main]
-    paths:
-      - supabase/functions/**
-      - supabase/config.toml
-      - packages/auth/**
-      - packages/game-rules/**
-      - packages/api-contract/** # types, error codes and statuses imported by _shared/game.ts
-      - packages/chain/deployments/43113.json # RelicNFT address imported by _shared/game-server.ts
-      - .github/workflows/deploy-functions.yml
-  pull_request:
     paths:
       - supabase/functions/**
       - supabase/config.toml
