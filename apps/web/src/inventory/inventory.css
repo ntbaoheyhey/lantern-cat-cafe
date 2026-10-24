@@ -2,24 +2,30 @@
 .inv-power strong { color: var(--gold); font-family: var(--font-num); }
 .inv-empty { margin: 0 0 8px; }
 .tabpanel .inv-error { color: var(--bad); margin: 0 0 8px; }
-.inv-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
-.inv-slot { min-width: 0; border: 2px solid var(--border); padding: 8px; }
-.inv-slot h3 { margin: 0 0 8px; font: 600 1rem var(--font-display); color: var(--text); }
-.inv-slot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.inv-item { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 0.85rem; }
-.inv-name { display: flex; align-items: center; gap: 8px; flex: 1 1 100%; min-width: 0; }
-.inv-icon { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border: 2px solid var(--item-rarity); background: color-mix(in srgb, var(--item-rarity) 8%, var(--surface)); color: var(--item-rarity); font: 700 1.15rem var(--font-display); }
+.inv-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; margin-top: 12px; padding-bottom: 4px; }
+.inv-slot { min-width: 0; }
+.inv-slot h3 { margin: 0 0 12px; font: 600 1rem var(--font-display); color: var(--text); }
+.inv-slot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.inv-item { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.85rem; min-width: 0; }
+.inv-item + .inv-item { border-top: 1px solid var(--border); padding-top: 16px; }
+.inv-name { display: grid; grid-template-columns: 46px minmax(0, 1fr); align-items: center; gap: 8px 12px; flex: 1 1 100%; min-width: 0; }
+.inv-icon { display: grid; place-items: center; box-sizing: border-box; width: 46px; height: 46px; border: 2px solid var(--item-rarity); background: var(--bg); box-shadow: 0 0 10px color-mix(in srgb, var(--item-rarity) 20%, transparent); }
 .inv-icon-common { --item-rarity: var(--rarity-common); }
 .inv-icon-rare { --item-rarity: var(--rarity-rare); }
 .inv-icon-epic { --item-rarity: var(--rarity-epic); }
 .inv-icon-legendary { --item-rarity: var(--rarity-legendary); }
 .inv-title { min-width: 0; overflow-wrap: anywhere; }
+.inv-item-name { display: block; color: var(--text); font: 600 1rem var(--font-display); }
+.inv-rarity { display: block; font-size: 0.75rem; }
 .inv-meta { display: block; color: var(--muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.inv-power-bar { grid-column: 1 / -1; height: 6px; background: var(--bg); overflow: hidden; }
+.inv-power-bar > span { display: block; width: var(--power-fill); height: 100%; background: var(--item-rarity); }
 .inv-tag { font-size: 0.75rem; color: var(--accent); }
 .inv-delta { font-size: 0.8rem; font-variant-numeric: tabular-nums; }
 .inv-delta.up, .inv-preview, .inv-gain { color: var(--good); }
 .inv-delta.down { color: var(--bad); }
 .inv-equip, .inv-upgrade { min-height: 36px; max-width: 100%; overflow-wrap: anywhere; }
-.inv-upgrade:not(.pixel-btn) { padding: 6px 10px; font: inherit; font-size: 0.8rem; color: var(--gold); background: transparent; border: 2px solid var(--border); cursor: pointer; }
-.inv-upgrade:not(.pixel-btn):disabled { color: var(--muted); cursor: default; }
 .inv-preview, .inv-gain { flex: 1 1 100%; font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .inv-slots { grid-template-columns: minmax(0, 1fr); }
+}
