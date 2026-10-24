@@ -4,6 +4,23 @@
 
 Pure TypeScript, shared by client (prediction) and server (truth). No network, DB or `Date.now()`; time is passed in as seconds; every roll takes an explicit uint32 seed (mulberry32 PRNG in `src/rng.ts`). Every tunable number lives in `packages/game-rules/src/config.ts` (`CONFIG`).
 
+## Display names
+
+The Cat Café Quest UI uses the names below from [labels.ts](../apps/web/src/theme/labels.ts). These are display changes only: the technical terms used throughout these docs, game rules, numbers, API shapes, database fields and contract identifiers stay unchanged. See the [UI guide](ui-guide.md) for presentation conventions.
+
+| Technical term / internal id | Player-facing name |
+| --- | --- |
+| Gold (`gold`) | Fish |
+| Shards (`shards`) | Yarn |
+| Boss Key (`bossKey`) | Cat Key |
+| Hero (`hero`) | Mochi |
+| Common Relic | Paw Charm |
+| Rare Relic | Silver Bell |
+| Epic Relic | Moon Collar |
+| Legendary Relic | Golden Maneki |
+
+Relic display names are selected by rarity; `relicId` remains the existing Relic identifier. No internal id is renamed.
+
 ## API
 
 - `computeIdleGains(state, elapsedSeconds, seed, {offline?})` -> `{gold, shards, drops[], countedSeconds}`; elapsed is clamped to the offline cap.
