@@ -1,0 +1,145 @@
+/* Motion foundation classes and tab transitions.
+   Respects prefers-reduced-motion across all animations. */
+
+/* Button and interactive press feedback (down 3px on :active) */
+.fx-press:active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+.pixel-btn:active:not(:disabled),
+.toggle:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-press:active:not(:disabled),
+  .pixel-btn:active:not(:disabled),
+  .toggle:active:not(:disabled) {
+    transform: none;
+    box-shadow: 0 3px 0 #000;
+    opacity: 0.85;
+  }
+}
+
+/* Floating reward text: floats up and fades over 1s */
+@keyframes fx-float {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fx-float {
+  animation: fx-float 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-float {
+    animation: fx-float-reduced 1s ease-out forwards;
+    transform: none;
+  }
+}
+
+@keyframes fx-float-reduced {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Card entrance: 150ms pop */
+@keyframes fx-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fx-pop {
+  animation: fx-pop 150ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-pop {
+    animation: fx-pop-reduced 150ms ease-out forwards;
+    transform: none;
+  }
+}
+
+@keyframes fx-pop-reduced {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tab sliding underline (150ms) */
+.tabs {
+  position: relative;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: left 150ms ease, width 150ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tabs[data-has-indicator='true'] .tab[aria-selected='true'] {
+  border-bottom-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-indicator {
+    transition: none;
+  }
+}
+
+/* Tab panel content transition: fades and slides 8px (120ms) on tab change */
+@keyframes fx-tab-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-content {
+  animation: fx-tab-enter 120ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-content {
+    animation: fx-tab-enter-reduced 120ms ease-out forwards;
+    transform: none;
+  }
+}
+
+@keyframes fx-tab-enter-reduced {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
