@@ -5,8 +5,16 @@ import './styles.css';
 import './theme.css';
 import './motion.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+const root = createRoot(document.getElementById('root')!);
+
+// Dev sprite preview at /?dev=sprites, only in dev builds or with VITE_GAME_V2=1. In a normal
+// production build the condition is constant false, so the preview is left out of the bundle.
+if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'sprites') {
+  void import('./dev/SpritePreview').then(({ SpritePreview }) => root.render(<StrictMode><SpritePreview /></StrictMode>));
+} else {
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
+}
