@@ -243,3 +243,35 @@ $ git diff --exit-code
 [exit 0]
 
 ```
+
+## Commit and push evidence
+
+Implementation and validation report committed as `9489685`. Verified its author and regenerated Deno maps against the committed tree before the successful push below. This final report-only update is the second commit; it records the actual first push output. GitHub printed its standard PR suggestion; no PR was opened.
+
+```text
+$ git log origin/main..HEAD --format=%h%x20%an%x20%ae
+9489685 ntbaoheyhey 108352255+ntbaoheyhey@users.noreply.github.com
+[exit 0]
+
+$ pnpm gen:deno
+
+> taskbar-hero@0.0.0 gen:deno /private/tmp/taskbar-hero-s2-bag-r2
+> node scripts/gen-deno-json.mjs
+
+wrote 9 Edge Function import maps
+[exit 0]
+
+$ git diff --exit-code
+[exit 0]
+
+$ git push -u origin ai/codex-s2-bag-r2
+remote:
+remote: Create a pull request for 'ai/codex-s2-bag-r2' on GitHub by visiting:
+remote:      https://github.com/ntbaoheyhey/taskbar-hero/pull/new/ai/codex-s2-bag-r2
+remote:
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-s2-bag-r2 -> ai/codex-s2-bag-r2
+branch 'ai/codex-s2-bag-r2' set up to track 'origin/ai/codex-s2-bag-r2'.
+[exit 0]
+
+```
