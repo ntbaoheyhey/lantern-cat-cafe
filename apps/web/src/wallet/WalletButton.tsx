@@ -6,6 +6,8 @@ import { buildSiweMessage } from './siwe';
 import { useAuthContext, useSession } from './WalletProvider';
 
 export const CORE_INSTALL_URL = 'https://core.app';
+export const NO_WALLET_HINT =
+  'No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.';
 
 export function shortAddress(a: string) {
   return `${a.slice(0, 6)}…${a.slice(-4)}`;
@@ -68,8 +70,8 @@ export function WalletButton() {
   let body;
   if (!isConnected || !address) {
     body = noWallet ? (
-      <a className="wallet-btn" href={CORE_INSTALL_URL} target="_blank" rel="noreferrer">
-        Install Core Wallet
+      <a className="wallet-btn" href={CORE_INSTALL_URL} target="_blank" rel="noreferrer" title={NO_WALLET_HINT}>
+        Get a browser wallet
       </a>
     ) : (
       <button className="wallet-btn" disabled={connecting} onClick={() => connect({ connector })}>
