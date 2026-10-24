@@ -3,6 +3,7 @@
 ## Layout
 - `apps/web`: Vite + React + TS client; the game strip fixed to the bottom of the page.
 - `packages/game-rules`: pure TS game rules shared by client and server.
+- `packages/api-contract`: the client/server API types, error codes, HTTP statuses and endpoint names; see `docs/api.md`.
 - `packages/chain`: chain constants and contract addresses (Fuji, 43113).
 - `packages/auth`: wallet sign-in (SIWE) logic used by the auth Edge Functions; see `docs/auth.md`.
 - `contracts`: Foundry project (RelicNFT, RelicMarket).

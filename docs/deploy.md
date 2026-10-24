@@ -26,7 +26,7 @@ The key above is anvil's public default account #0. The result must equal the co
 
 ## Avalanche Fuji (chain 43113)
 
-Run this on your own machine, not in CI or a shared sandbox.
+The contracts are already deployed on Fuji; their addresses are in `packages/chain/deployments/43113.json` and [contracts](contracts.md). Redeploy only to replace them. Run this on your own machine, not in CI or a shared sandbox.
 
 1. Make a new wallet only for this: `cast wallet new`. Save the private key in a password manager.
 2. Fund it from the Fuji faucet: https://core.app/tools/testnet-faucet/?subnet=c&token=c

@@ -27,9 +27,13 @@ Relic display names are selected by rarity; `relicId` remains the existing Relic
 - `computeClaimGains(state, elapsedSeconds, seed)` -> same shape; what the server credits per claim: the first `idle.onlineWindowSeconds` at the full rate, the rest at `idle.offlineEfficiency`, total capped at the offline cap.
 - `heroPower(gear[])`, `gearStat(gear)`, `goldPerSecond(power)`, `upgradeCost(gear)`
 - `simulateBoss(power, bossLevel, seed)` -> `{won, log[], bossMaxHp, heroMaxHp}` (1 round = 1 s; log events `hero_hit`, `boss_hit`, `end`)
-- `rollRelicRarity(seed)`, `relicOdds()`
+- `rollRelicRarity(seed)`, `relicOdds()`, `rarityIndex(rarity)` (the on-chain `uint8`), `relicIdFor(rarity)` / `relicIdOf(rarity)` (the pinned RelicNFT token id)
 - `canForge(state, today)`, `forgeBlock(state, today)`, `canClaimBossKey(state, today)`, `dayIndex(unixSeconds)`
 - `simulateActivePlay(seed, seconds)`, `powerAfter(seed, seconds)`: reference starter policy used by the tuning test.
+
+## Content registry
+
+`src/content.ts` lists the gear slots and rarity tiers (`SLOTS`, `RARITIES`); `CONFIG.slots` and `CONFIG.rarities` are derived from it. It is append-only: a rarity's position is its on-chain `rarity` and its `relicId` is pinned (common 1, rare 2, epic 3, legendary 4), so existing Relics never change meaning. See [extending](extending.md).
 
 ## Tuning target
 
@@ -71,7 +75,7 @@ A new player beats boss level 1 with probability >= 50% by 15 minutes of active 
 | `boss.damageSpread` | 0.2 | Boss damage varies +/- this fraction per round. |
 | `boss.maxRounds` | 60 | Fight is lost after this many rounds. |
 | `boss.maxLevel` | 50 | Highest boss level. |
-| `boss.maxAttemptsPerDay` | 5 | Boss fights per day (UTC+7). Draft, confirm at sign-off. |
+| `boss.maxAttemptsPerDay` | 5 | Boss fights per day (UTC+7). |
 | `relic.shardCost` | 30 | Shards to forge a Relic. |
 | `relic.bossKeyCost` | 1 | Boss Keys to forge a Relic. |
 | `relic.rarityOddsBp` | 6000 / 2800 / 1000 / 200 | Relic rarity odds in basis points (sum 10000): 60% / 28% / 10% / 2%. |
