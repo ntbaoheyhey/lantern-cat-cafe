@@ -144,6 +144,17 @@ it('frameAt folds the log into health bars', () => {
   expect(frameAt(WIN, 99)).toMatchObject({ heroHp: 310, bossHp: 0, done: true });
 });
 
+it('keeps one name per health bar as consecutive replay hits update', async () => {
+  await setup({ result: WIN, replayMs: 60_000 });
+  vi.useFakeTimers();
+  await act(async () => fireEvent.click(screen.getByRole('button', { name: 'Fight' })));
+  for (let shown = 0; shown <= WIN.log.length; shown++) {
+    expect(screen.getAllByText('Mochi', { exact: true })).toHaveLength(1);
+    expect(screen.getAllByText('Yarn Giant · Level 1', { exact: true })).toHaveLength(1);
+    if (shown < WIN.log.length) await act(async () => vi.advanceTimersByTimeAsync(15_000));
+  }
+});
+
 it('replay lasts about 4.5 s whatever the log length', () => {
   expect(stepMs(WIN) * WIN.log.length).toBeCloseTo(4500);
   const long = { ...WIN, log: Array.from({ length: 121 }, () => WIN.log[0]!) };

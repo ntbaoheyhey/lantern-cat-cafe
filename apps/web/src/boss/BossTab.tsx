@@ -128,8 +128,10 @@ function Replay({ fight, shown, attemptsLeft }: { fight: Fight; shown: number; a
         )}
       </div>
       <HpBar label={LABELS.hero} hp={f.heroHp} max={result.heroMaxHp} side="hero"
+        hitKey={shown}
         hit={hit?.type === 'boss_hit' ? <HitNumber key={shown} damage={hit.damage} crit={false} /> : null} />
       <HpBar label={`${bossName(fight.level)} · Level ${fight.level}`} hp={f.bossHp} max={result.bossMaxHp} side="boss"
+        hitKey={shown}
         hit={hit?.type === 'hero_hit' ? <HitNumber key={shown} damage={hit.damage} crit={hit.crit} /> : null} />
     </div>
   );
@@ -150,14 +152,16 @@ interface HpBarProps {
   side: 'hero' | 'boss';
   /** Damage number for the hit this bar just took. */
   hit: ReactNode;
+  /** Remount only the impact decorations to restart CSS motion for each log hit. */
+  hitKey: number;
 }
 
-function HpBar({ label, hp, max, side, hit }: HpBarProps) {
+function HpBar({ label, hp, max, side, hit, hitKey }: HpBarProps) {
   const pct = max > 0 ? (hp / max) * 100 : 0;
   return (
     <div className={`hp hp-${side}`}>
       <div className="hp-label">
-        <span>{label} {hit}</span>
+        <span><span key={`name-${hitKey}`} className={`hp-name${side === 'boss' && hit ? ' hp-name-hit' : ''}`}>{label}</span> {hit}</span>
         <span>{hp.toLocaleString('en-US')} / {max.toLocaleString('en-US')}</span>
       </div>
       <div
@@ -169,6 +173,7 @@ function HpBar({ label, hp, max, side, hit }: HpBarProps) {
         aria-valuenow={hp}
       >
         <div className="hp-fill" style={{ width: `${pct}%` }} />
+        {hit && <span key={`flash-${hitKey}`} className="hp-flash" aria-hidden="true" />}
       </div>
     </div>
   );
