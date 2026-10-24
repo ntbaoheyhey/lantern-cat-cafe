@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { gearStat } from '@taskbar-hero/game-rules';
 import type { GameApi, OwnedGear } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
 import { getGameApi, getGameLoop, useGameSnapshot } from '../game/store';
+import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { LABELS } from '../theme/labels';
 import { formatPower, groupBySlot, powerIfEquipped } from './gearView';
 import { gainText, upgradeErrorText, upgradeLabel, upgradeView } from './upgrade';
@@ -23,6 +24,7 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
   if (!server) return <p>Loading your bag…</p>;
 
   const groups = groupBySlot(server.inventory);
+  const strongestPower = Math.max(1, ...server.inventory.map(gearStat));
   const hasSpare = groups.some((g) => g.spare.length > 0);
 
   const equip = async (item: OwnedGear) => {
@@ -63,7 +65,7 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
         {gain?.id === item.id && <span className="inv-gain" role="status">{gain.text}</span>}
         <button
           type="button"
-          className={`inv-upgrade${item.equipped ? ' pixel-btn' : ''}`}
+          className="inv-upgrade pixel-btn"
           disabled={pending !== null || view.kind !== 'ready'}
           aria-label={`${upgradeLabel(view).replaceAll('gold', LABELS.gold)}: ${LABELS.rarities[item.rarity]} ${LABELS.slots[item.slot]}, level ${item.level}`}
           onClick={() => void upgrade(item)}
@@ -88,12 +90,12 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
       )}
       <div className="inv-slots">
         {groups.map(({ slot, equipped, spare }) => (
-          <section key={slot} className="inv-slot" aria-labelledby={`inv-${slot}`}>
+          <section key={slot} className="inv-slot pixel-card" aria-labelledby={`inv-${slot}`}>
             <h3 id={`inv-${slot}`}>{LABELS.slots[slot]}</h3>
             <ul>
               {equipped && (
-                <li className="inv-item is-equipped pixel-card">
-                  <ItemLabel item={equipped} />
+                <li className={`inv-item is-equipped inv-icon-${equipped.rarity}`}>
+                  <ItemLabel item={equipped} strongestPower={strongestPower} />
                   <span className="inv-tag">Equipped</span>
                   {upgradeButton(equipped)}
                 </li>
@@ -102,8 +104,8 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
                 const after = powerIfEquipped(server.gear, item);
                 const delta = after - server.power;
                 return (
-                  <li key={item.id} className="inv-item pixel-card">
-                    <ItemLabel item={item} />
+                  <li key={item.id} className={`inv-item inv-icon-${item.rarity}`}>
+                    <ItemLabel item={item} strongestPower={strongestPower} />
                     <span className={`inv-delta ${delta >= 0 ? 'up' : 'down'}`}>
                       {formatPower(server.power)} → {formatPower(after)}
                     </span>
@@ -128,13 +130,29 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
   );
 }
 
-function ItemLabel({ item }: { item: OwnedGear }) {
+const SLOT_ICONS = { weapon: 'wand', helm: 'ears', armor: 'collar', ring: 'bell' } as const satisfies Record<OwnedGear['slot'], IconName>;
+
+function ItemLabel({ item, strongestPower }: { item: OwnedGear; strongestPower: number }) {
+  const power = gearStat(item);
   return (
     <span className="inv-name">
-      <span className={`inv-icon inv-icon-${item.rarity}`} aria-hidden="true">{LABELS.slots[item.slot]?.[0]}</span>
+      <span className={`inv-icon inv-icon-${item.rarity}`} aria-hidden="true"><PixelIcon name={SLOT_ICONS[item.slot]} size={3} /></span>
       <span className="inv-title">
-        <span className={`rarity-${item.rarity}`}>{LABELS.rarities[item.rarity]} {LABELS.slots[item.slot]}</span>
-        <span className="inv-meta">Lv {item.level} · Power {formatPower(gearStat(item))}</span>
+        <span className="inv-item-name">{LABELS.slots[item.slot]}</span>
+        <span className={`inv-rarity rarity-${item.rarity}`}>{LABELS.rarities[item.rarity]}</span>
+        <span className="inv-meta">Lv {item.level} · Power {formatPower(power)}</span>
+      </span>
+      <span
+        className="inv-power-bar"
+        role="meter"
+        aria-label={`${LABELS.rarities[item.rarity]} ${LABELS.slots[item.slot]} power compared with strongest owned item`}
+        aria-valuemin={0}
+        aria-valuemax={strongestPower}
+        aria-valuenow={power}
+        aria-valuetext={`${formatPower(power)} of ${formatPower(strongestPower)} power`}
+        style={{ '--power-fill': `${power / strongestPower * 100}%` } as CSSProperties}
+      >
+        <span />
       </span>
     </span>
   );
