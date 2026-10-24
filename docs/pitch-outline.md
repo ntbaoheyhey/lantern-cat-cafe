@@ -59,7 +59,7 @@ Fast-paced product walkthrough or split-screen sequence: Mochi defeating the Yar
 Avalanche Fuji powers our trustless item economy through EIP-712 server-mint vouchers and a zero-fee escrow marketplace.
 
 ### Key Points
-- **Fast, low-cost network**: Avalanche Fuji testnet (Chain ID 43113) provides sub-second finality and cheap gas, making minting and trading painless for players using test AVAX.
+- **Fast, low-cost network**: Avalanche Fuji testnet (Chain ID 43113) finalizes in about a second or two with cheap gas, making minting and trading painless for players using test AVAX.
 - **EIP-712 voucher gating**: The server signs typed vouchers `(player, relicId, rarity, nonce, expiry)`, allowing `RelicNFT` to verify caller address, unexpired timestamp, and global unused nonce before minting.
 - **Trustless RelicMarket**: A dedicated Solidity escrow contract for fixed-price sales in test AVAX featuring checks-effects-interactions, zero platform fees, and no contract owner.
 
@@ -71,12 +71,12 @@ Architecture flow diagram: Client -> Supabase Edge Functions (game logic & EIP-7
 ## Slide 5: What is Verifiably On-Chain (~25s)
 
 ### Headline
-Two deployed, immutable contracts on Avalanche Fuji govern all Relic token issuance, rarity enforcement, and peer-to-peer escrow sales.
+Two deployed contracts on Avalanche Fuji govern all Relic token issuance, rarity enforcement, and peer-to-peer escrow sales.
 
 ### Key Points
 - **RelicNFT (`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`)**: ERC-1155 enforcing ECDSA voucher validation, single-mint nonces, caller matching, and permanent rarity tiers per Relic ID.
 - **RelicMarket (`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`)**: Autonomous fixed-price escrow contract managing active listings, safe ERC-1155 deposits, and test-AVAX seller payouts.
-- **Reconciled truth**: All Relic ownership and marketplace trades are verifiable on Snowtrace and Routescan; the game backend reconciles balances directly from on-chain `RelicForged` event receipts.
+- **Reconciled truth**: All Relic ownership and marketplace trades are verifiable on Snowtrace and Routescan; the backend checks the mint receipt for the `RelicForged` event before it marks a Relic as minted. Be upfront that `RelicNFT` has an owner who can rotate the signer and change the metadata URI.
 
 ### Show on screen
 Snowtrace / Routescan block explorer tabs showing verified Solidity source code, contract ABIs, and recent `RelicForged` and listing transaction logs for both contract addresses on Fuji.
