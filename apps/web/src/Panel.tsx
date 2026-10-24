@@ -7,8 +7,14 @@ import { InventoryTab } from './inventory/InventoryTab';
 import { MarketTab } from './market/MarketTab';
 import { HelpButton } from './onboarding/HowToPlay';
 
-export const TABS = ['Hero', 'Inventory', 'Boss', 'Forge', 'Market'] as const;
-export type TabName = (typeof TABS)[number];
+export const TABS = [
+  { id: 'Hero', label: 'Hero', Component: HeroTab },
+  { id: 'Inventory', label: 'Inventory', Component: InventoryTab },
+  { id: 'Boss', label: 'Boss', Component: BossTab },
+  { id: 'Forge', label: 'Forge', Component: ForgeTab },
+  { id: 'Market', label: 'Market', Component: MarketTab },
+] as const;
+export type TabName = (typeof TABS)[number]['id'];
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
@@ -24,6 +30,8 @@ export function Panel({
   const [internalTab, setInternalTab] = useState<TabName>('Hero');
   const currentTab = tab ?? internalTab;
   const setTab = onTabChange ?? setInternalTab;
+  const activeTab = TABS.find(({ id }) => id === currentTab)!;
+  const ActiveTab = activeTab.Component;
 
   const tabsRef = useRef<HTMLDivElement>(null);
   const [indicator, setIndicator] = useState<{ left: number; width: number } | null>(null);
@@ -67,17 +75,17 @@ export function Panel({
         ref={tabsRef}
         data-has-indicator={indicator ? 'true' : undefined}
       >
-        {TABS.map((name) => (
+        {TABS.map(({ id, label }) => (
           <button
-            key={name}
+            key={id}
             role="tab"
-            id={`tab-${name}`}
-            aria-selected={currentTab === name}
+            id={`tab-${id}`}
+            aria-selected={currentTab === id}
             aria-controls="tabpanel"
             className="tab"
-            onClick={() => setTab(name)}
+            onClick={() => setTab(id)}
           >
-            {name}
+            {label}
           </button>
         ))}
         {indicator && (
@@ -91,9 +99,9 @@ export function Panel({
       </div>
       <div role="tabpanel" id="tabpanel" aria-labelledby={`tab-${currentTab}`} className="tabpanel">
         <div key={currentTab} className="tab-content">
-          <h2>{currentTab}</h2>
+          <h2>{activeTab.label}</h2>
           <DemoNote />
-          {currentTab === 'Hero' ? <HeroTab /> : currentTab === 'Inventory' ? <InventoryTab /> : currentTab === 'Boss' ? <BossTab /> : currentTab === 'Forge' ? <ForgeTab /> : <MarketTab />}
+          <ActiveTab />
         </div>
       </div>
     </section>

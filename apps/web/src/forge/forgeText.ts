@@ -1,13 +1,13 @@
 import { CONFIG, relicOdds, type ForgeBlock, type Rarity } from '@taskbar-hero/game-rules';
 import type { RelicVoucher } from '../api/GameApi';
 import { DEMO_SIGNATURE } from '../api/MockGameApi';
-import { LABELS } from '../theme/labels';
+import { capitalize, LABELS } from '../theme/labels';
 
 /** Friendly text for why forging is blocked. */
 export function blockText(block: ForgeBlock, shards: number): string {
   switch (block) {
     case 'daily_limit':
-      return "You already forged today's Relic. Come back after midnight Vietnam time (UTC+7).";
+      return `You already forged today's Relic. Come back after ${LABELS.resetTime()}.`;
     case 'no_boss_key':
       return `You need a ${LABELS.bossKey}. Win a boss fight to earn one.`;
     case 'not_enough_shards':
@@ -52,9 +52,7 @@ export function isUserRejection(e: unknown): boolean {
 
 /** Cat name of a Relic by rarity (Paw Charm, Silver Bell, ...). */
 export function relicName(rarity: string): string {
-  return LABELS.relics[rarity] ?? capitalize(rarity);
+  return LABELS.relics[rarity as Rarity] ?? capitalize(rarity);
 }
 
-export function capitalize(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
+export { capitalize } from '../theme/labels';

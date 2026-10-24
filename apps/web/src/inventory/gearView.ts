@@ -29,6 +29,4 @@ export function formatPower(p: number): string {
   return (Math.round(p * 10) / 10).toLocaleString('en-US');
 }
 
-export function capitalize(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
+export { capitalize } from '../theme/labels';

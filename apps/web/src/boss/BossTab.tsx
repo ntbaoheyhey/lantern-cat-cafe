@@ -98,7 +98,7 @@ export function BossTab({ api = getGameApi(), loop = getGameLoop(), replayMs = R
       </div>
       {outOfAttempts && !replaying && (
         <p className="boss-note" data-testid="boss-limit">
-          No attempts left today. They reset at midnight Vietnam time (UTC+7).
+          No attempts left today. They reset at {LABELS.resetTime()}.
         </p>
       )}
       {error && <p role="alert" className="boss-error">{error}</p>}
