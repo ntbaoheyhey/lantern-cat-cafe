@@ -1,7 +1,8 @@
 import { useState, type CSSProperties } from 'react';
 import { gearStat } from '@taskbar-hero/game-rules';
-import type { GameApi, OwnedGear } from '../api/GameApi';
+import { GameApiError, type GameApi, type OwnedGear } from '../api/GameApi';
 import type { GameLoop } from '../game/gameState';
+import { ErrorNote, WaitingForServer, describeFailure } from '../game/LoadNotice';
 import { getGameApi, getGameLoop, useGameSnapshot } from '../game/store';
 import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { LABELS } from '../theme/labels';
@@ -18,10 +19,10 @@ export interface InventoryTabProps {
 export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: InventoryTabProps) {
   const { server, gold } = useGameSnapshot(loop);
   const [pending, setPending] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ text: string; retry?: () => void } | null>(null);
   const [gain, setGain] = useState<{ id: string; text: string } | null>(null);
 
-  if (!server) return <p>Loading your bag…</p>;
+  if (!server) return <WaitingForServer what="your bag" loop={loop} />;
 
   const groups = groupBySlot(server.inventory);
   const strongestPower = Math.max(1, ...server.inventory.map(gearStat));
@@ -32,8 +33,9 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
     setError(null);
     try {
       loop.adopt(await api.equip(item.id));
-    } catch {
-      setError('Could not equip that item. Please try again.');
+    } catch (e) {
+      const failure = describeFailure(e);
+      setError({ text: failure.text, retry: failure.retryable ? () => void equip(item) : undefined });
     } finally {
       setPending(null);
     }
@@ -51,7 +53,13 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
       loop.adopt(await api.upgrade(item.id));
       setGain({ id: item.id, text });
     } catch (e) {
-      setError(upgradeErrorText(e).replaceAll('gold', LABELS.gold));
+      const known = e instanceof GameApiError && (e.code === 'not_enough_gold' || e.code === 'max_level');
+      if (known) {
+        setError({ text: upgradeErrorText(e).replaceAll('gold', LABELS.gold) });
+      } else {
+        const failure = describeFailure(e);
+        setError({ text: failure.text, retry: failure.retryable ? () => void upgrade(item) : undefined });
+      }
     } finally {
       setPending(null);
     }
@@ -82,7 +90,7 @@ export function InventoryTab({ api = getGameApi(), loop = getGameLoop() }: Inven
         {LABELS.power} <strong data-testid="inventory-power">{formatPower(server.power)}</strong>
         {' · '}{LABELS.gold} <strong data-testid="inventory-gold">{gold.toLocaleString('en-US')}</strong>
       </p>
-      {error && <p role="alert" className="inv-error">{error}</p>}
+      {error && <ErrorNote text={error.text} onRetry={error.retry} className="inv-error" />}
       {!hasSpare && (
         <p className="inv-empty" data-testid="inventory-empty">
           No spare gear in your bag. Unequipped drops will appear here as {LABELS.hero} fights.

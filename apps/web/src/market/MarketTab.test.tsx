@@ -22,6 +22,8 @@ const chain = vi.hoisted(() => ({
   waitForTransactionReceipt: vi.fn(),
   switchChain: vi.fn(),
   invalidateQueries: vi.fn(),
+  readFailed: false,
+  refetch: vi.fn(),
 }));
 
 vi.mock('wagmi', () => ({
@@ -34,9 +36,11 @@ vi.mock('wagmi', () => ({
       functionName === 'balanceOfBatch' ? chain.balances
       : functionName === 'isApprovedForAll' ? chain.approved
       : BigInt(chain.listings.length);
-    return { data, isLoading: false };
+    return { data, isLoading: false, isError: chain.readFailed, refetch: chain.refetch };
   },
   useReadContracts: ({ contracts }: { contracts: unknown[] }) => ({
+    isError: chain.readFailed,
+    refetch: chain.refetch,
     data: contracts.map(() => ({
       status: 'success',
       result: [chain.listings.map(([id]) => id), chain.listings.map(([, item]) => item)],
@@ -54,6 +58,8 @@ beforeEach(() => {
   chain.balances = [0n, 0n, 0n, 0n];
   chain.approved = false;
   chain.listings = [];
+  chain.readFailed = false;
+  chain.refetch.mockReset().mockResolvedValue(undefined);
   chain.writeContractAsync.mockReset().mockResolvedValue(HASH);
   chain.waitForTransactionReceipt.mockReset().mockResolvedValue({ status: 'success' });
   chain.switchChain.mockReset();
@@ -189,4 +195,15 @@ it('maps wallet and revert errors to friendly text', () => {
   expect(txErrorText({ cause: { data: { errorName: 'WrongPayment' } } })).toMatch(/price changed/);
   expect(txErrorText({ name: 'InsufficientFundsError' })).toMatch(/Not enough test AVAX/);
   expect(txErrorText(new Error('boom'))).toBe('Transaction failed. Please try again.');
+});
+
+it('a failed chain read shows a plain message and Retry, not an empty shelf', () => {
+  chain.readFailed = true;
+  render(<MarketTab />);
+  expect(screen.getByRole('alert').textContent).toContain("Mochi couldn't read the Relic shelf");
+  expect(screen.queryByTestId('relics-empty')).toBeNull();
+  expect(screen.queryByTestId('listings-empty')).toBeNull();
+
+  fireEvent.click(screen.getByRole('button', { name: 'Retry' }));
+  expect(chain.refetch).toHaveBeenCalledTimes(3);
 });

@@ -24,6 +24,8 @@ export interface GameSnapshot {
   paused: boolean;
   /** Last full server answer (inventory, boss status), or null before the first one. */
   server: ServerState | null;
+  /** True while the first server answer has not arrived because loading failed; `retry()` tries again. */
+  loadFailed: boolean;
 }
 
 export const EMPTY_PREDICTION: Prediction = {
@@ -57,6 +59,7 @@ export interface GameLoopOptions {
 export class GameLoop {
   private prediction = EMPTY_PREDICTION;
   private server: ServerState | null = null;
+  private loadFailed = false;
   private lastTick = 0;
   private running = false;
   private tickTimer: ReturnType<typeof setInterval> | null = null;
@@ -90,6 +93,7 @@ export class GameLoop {
       goldPerSecond: this.prediction.goldPerSecond,
       paused: !this.running,
       server: this.server,
+      loadFailed: this.loadFailed && this.server === null,
     };
   }
 
@@ -99,7 +103,7 @@ export class GameLoop {
     if (
       next.gold === s.gold && next.shards === s.shards && next.power === s.power &&
       next.goldPerSecond === s.goldPerSecond && next.paused === s.paused &&
-      next.server === s.server
+      next.server === s.server && next.loadFailed === s.loadFailed
     ) return;
     this.snap = next;
     this.listeners.forEach((fn) => fn());
@@ -123,7 +127,8 @@ export class GameLoop {
       this.server = state;
       this.prediction = reconcile(this.prediction, state);
     } catch {
-      /* keep zeros; the next claim will fill in */
+      // Keep zeros; the next claim fills in, and tabs show a Retry while `loadFailed`.
+      this.loadFailed = true;
     }
     if (gen !== this.gen) return;
     if (doc.visibilityState === 'hidden') this.publish();
@@ -171,6 +176,7 @@ export class GameLoop {
     this.api = api;
     this.prediction = EMPTY_PREDICTION;
     this.server = null;
+    this.loadFailed = false;
     this.publish();
     if (doc) void this.start(doc);
   }
@@ -179,8 +185,20 @@ export class GameLoop {
   adopt(state: ServerState): void {
     this.advance();
     this.server = state;
+    this.loadFailed = false;
     this.prediction = reconcile(this.prediction, state);
     this.publish();
+  }
+
+  /** Ask for the first server answer again after a failed load (the Retry button). */
+  async retry(): Promise<void> {
+    const gen = this.gen;
+    try {
+      const state = await this.api.getState();
+      if (gen === this.gen) this.adopt(state);
+    } catch {
+      /* still failing; loadFailed stays set */
+    }
   }
 
   /** Claim now and replace the prediction with the server's numbers. */
