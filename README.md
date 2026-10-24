@@ -10,6 +10,32 @@ Taskbar Hero is an idle RPG in a thin strip at the bottom of a web page: let you
 4. Equip better gear, spend gold on upgrades, and beat the boss to earn a Boss Key.
 5. In the Forge, spend 30 shards and 1 Boss Key to forge a Relic, then approve its mint transaction in your wallet. You need test AVAX for gas; forging is limited to one Relic per account per day.
 
+## Screenshots
+
+Captured from a local demo-mode build; the Market and the Forge reveal use sample data because they need a wallet and the Fuji contracts.
+
+![The idle strip](docs/screenshots/idle-strip.png)
+*Idle strip: Mochi the cat trots along the bottom of the page while fish, yarn and Cat Keys tick up.*
+
+![Inventory](docs/screenshots/inventory.png)
+*Inventory: equip gear and spend fish on upgrades.*
+
+![Boss fight](docs/screenshots/boss.png)
+*Boss: the server runs the fight, the client replays it.*
+
+![Forge](docs/screenshots/forge-tab.png)
+*Forge: the cost, the odds and why forging is blocked right now.*
+
+![Forge reveal](docs/screenshots/forge-reveal.png)
+*Forge reveal: the Relic rises with its rarity banner (sample Legendary).*
+
+![Market](docs/screenshots/market.png)
+*Market: your Relics and fixed-price listings in test AVAX (sample listings).*
+
+<img src="docs/screenshots/phone.png" alt="Phone view" width="260" />
+
+*Phone view at 390 px wide.*
+
 ## On-chain
 
 Network: **Avalanche Fuji testnet — chain ID 43113**. The market uses test AVAX.
