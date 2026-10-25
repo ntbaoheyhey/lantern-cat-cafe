@@ -173,9 +173,11 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 |---|---|---|---|---|
 | Q0 | DONE | ai/codex-v2-plan-doc | no | none |
 | Q1 | DONE | ai/codex-check-live-v2 | no | Live health not verified: environment network errors; rerun from reachable host. |
+| Q2 | DONE-ON-MAIN | - | yes | Hand-built chapter 5 fixture retained; regenerate only after D4/CL8. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
+- Q2: `337977751204b5ea59d8f0cabfb91fb4cd4a391f`, `reports/v19-cues.md` (DONE-ON-MAIN).
 
 ## User must decide on return
 
