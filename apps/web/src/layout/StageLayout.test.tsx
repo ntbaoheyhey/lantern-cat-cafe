@@ -4,6 +4,17 @@ import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
 vi.mock('../GameCanvas', () => ({ GameCanvas: () => <div data-testid="game-canvas" /> }));
 
+import type { ServerStateV2 } from '../api/GameApiV2';
+import { sampleServerStateV2 } from './a11y/fixtures';
+import { ARENA_FIXTURES } from '../game/arena/arenaFixtures';
+let stageState: ServerStateV2;
+const stageLoop = vi.hoisted(() => ({ start: vi.fn(async () => {}), stop: vi.fn(), onEvent: () => () => {}, retry: vi.fn(),
+  equip: vi.fn(), setLocked: vi.fn(), chooseClass: vi.fn(), craft: vi.fn(), salvage: vi.fn(), fightBoss: vi.fn() }));
+vi.mock('../game/v2/storeV2', () => ({ getGameLoopV2: () => stageLoop,
+  useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }), useGameModeV2: () => ({ demo: true, notice: null }) }));
+vi.mock('../game/stage/StageCanvas', () => ({ StageCanvas: () => <div data-testid="game-canvas" /> }));
+vi.mock('../game/arena/BossArena', () => ({ BossArena: ({ onDone }: { onDone: () => void }) => <button onClick={onDone}>Complete replay</button> }));
+
 import { App } from '../App';
 import { getGameLoop } from '../game/store';
 import { resetHelpForTests } from '../onboarding/helpStore';
@@ -15,6 +26,9 @@ function setViewport(width: number, height: number) {
 }
 
 beforeEach(() => {
+  stageState = sampleServerStateV2();
+  vi.clearAllMocks();
+  stageLoop.fightBoss.mockResolvedValue(ARENA_FIXTURES[0]!.result);
   vi.stubEnv('VITE_GAME_V2', '1');
   localStorage.clear();
   localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
@@ -44,7 +58,8 @@ it('desktop: top bar, stage, character area and the five tabs', () => {
   expect(screen.getByTestId('game-canvas')).toBeTruthy();
   expect(screen.getByRole('region', { name: 'Character' })).toBeTruthy();
   expect(screen.getByTestId('character-power')).toBeTruthy();
-  expect(screen.getByTestId('gold-counter')).toBeTruthy();
+  expect(screen.getByRole('region', { name: 'Cat status' })).toBeTruthy();
+  expect(screen.getByLabelText('Currencies and keys').textContent).toContain('Fish');
   expect(screen.queryByRole('region', { name: 'Café board' })).toBeNull();
   expect(screen.getAllByRole('tab').map((t) => t.textContent)).toEqual([
     'Inventory', 'Boss', 'Forge', 'Market', 'Help',
@@ -103,4 +118,36 @@ it('Mini mode still works when localStorage throws', () => {
     get.mockRestore();
     set.mockRestore();
   }
+});
+
+
+it('uses fixture HUD values and exposes the gated hint', () => {
+  stageState = sampleServerStateV2({ gated: true, neededPower: 99999, level: 20, keys: 2 });
+  render(<App />);
+  const hud = screen.getByRole('region', { name: 'Cat status' });
+  expect(hud.textContent).toContain('20');
+  expect(screen.getByLabelText('Cat Keys 2 of 5')).toBeTruthy();
+  expect(screen.getByTestId('next-hint').textContent).toContain('Equip better gear');
+});
+it('shows class selection only while the authoritative class is null', () => {
+  stageState = sampleServerStateV2({ classId: null });
+  const view = render(<App />);
+  expect(screen.getByTestId('class-picker')).toBeTruthy();
+  fireEvent.click(screen.getByTestId('class-picker-choose-button'));
+  fireEvent.click(screen.getByTestId('class-picker-confirm-button'));
+  expect(stageLoop.chooseClass).toHaveBeenCalledWith('warrior');
+  stageState = sampleServerStateV2(); view.rerender(<App />);
+  expect(screen.queryByTestId('class-picker')).toBeNull();
+  expect(screen.getByTestId('game-canvas')).toBeTruthy();
+});
+it('boss request opens the replay, then the victory chest', async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
+  const fight = screen.getByRole('button', { name: /^Fight/ });
+  await act(async () => { fireEvent.click(fight); });
+  expect(stageLoop.fightBoss).toHaveBeenCalledWith(1);
+  expect(screen.getByRole('button', { name: 'Complete replay' })).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Complete replay' }));
+  expect(screen.getByText('Victory!')).toBeTruthy();
+  expect(screen.getByRole('dialog')).toBeTruthy();
 });
