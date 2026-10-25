@@ -23,9 +23,12 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) test(`both act
     await expect(canvas).toHaveCount(1);
     const zoom = stageZoom(width!, stageHeight(width!, height!));
     const logicalWidth = Math.max(160, Math.floor(width! / zoom));
-    // Wait for the resized canvas, rather than accidentally inspecting its predecessor.
-    await expect(canvas).toHaveAttribute('width', String(logicalWidth));
-    await expect(canvas).toHaveAttribute('height', '96');
+    // Phaser removes the old canvas on its next frame. Check count and dimensions
+    // together so a handoff between two separate assertions cannot hit the old canvas.
+    await expect.poll(() => canvas.evaluateAll(elements => elements.map(element => {
+      const c = element as HTMLCanvasElement;
+      return [c.width, c.height];
+    })), { message: `one resized canvas at ${width}×${height}` }).toEqual([[logicalWidth, 96]]);
     // The HTML backdrop is outside this transparent canvas. Check each actor's half,
     // so one surviving sprite cannot conceal a missing cat or monster.
     await expect.poll(() => canvas.evaluate(element => {
