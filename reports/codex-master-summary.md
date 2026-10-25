@@ -1,6 +1,6 @@
 # Codex master summary
 
-Default mode: branches and reports only; no PRs, merges, live writes, or deployments. Started 2026-10-25 (UTC+7).
+Revised prompt: branches and reports only; D10 MADE; stacking on own DONE branches authorized; no PRs, merges, live writes, or deployments. Started 2026-10-25 (UTC+7).
 
 ## Start state
 
@@ -172,12 +172,14 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | card | status | branch | merged yes/no | what the user must decide |
 |---|---|---|---|---|
 | Q0 | DONE | ai/codex-v2-plan-doc | no | none |
+| Q1 | DONE | ai/codex-check-live-v2 | no | Live health not verified: environment network errors; rerun from reachable host. |
 
 - Q0: `09d11294a5c4bd8283af216f1af4528cc747cdde`, `reports/v2-plan-doc.md` (DONE).
+- Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
 
 ## User must decide on return
 
 1. D4: sign economy proposal only after reviewing Q3 evidence; production numbers unchanged.
 2. D8: Founder contents, eligibility cutoff and permission to apply the draft migration before any merge.
-3. D10: authorize V16/V19 work (switch absent).
+3. D10 MADE: V16/V19 authorized by replacement prompt; user reviews final screenshots.
 4. D6: cut-over day; flag flip requires V16 on main and the cut-over decision.
