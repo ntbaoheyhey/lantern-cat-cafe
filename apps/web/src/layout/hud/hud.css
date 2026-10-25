@@ -1,0 +1,239 @@
+/* Cat Café Quest - Presentational HUD styles (Card A20 / V16) */
+
+.hud-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  background: var(--surface, #2a1f36);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  color: var(--text, #fff3e0);
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  overflow-x: hidden;
+}
+
+/* Light mode support matching loot.css and boss.css */
+[data-theme='light'] .hud-bar,
+:root:not([data-theme='dark']) .hud-bar {
+  --surface: #fdfbf7;
+  --surface-2: #f0e9df;
+  --border: #8b7463;
+  --text: #2a1a08;
+  --muted: #6e5c4e;
+  --bg: #f5eee6;
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.hud-bar__primary,
+.hud-bar__secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 0;
+}
+
+@media (min-width: 600px) {
+  .hud-bar {
+    flex-wrap: nowrap;
+    padding: 6px 14px;
+  }
+  .hud-bar__primary,
+  .hud-bar__secondary {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Level & XP Bar */
+.hud-level-xp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.hud-level-badge {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold, #ffb86b);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+[data-theme='light'] .hud-level-badge,
+:root:not([data-theme='dark']) .hud-level-badge {
+  color: #a05600;
+}
+
+.hud-xp-track {
+  position: relative;
+  width: 90px;
+  height: 12px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+[data-theme='light'] .hud-xp-track,
+:root:not([data-theme='dark']) .hud-xp-track {
+  background: var(--surface-2, #f0e9df);
+  border-color: var(--border, #8b7463);
+}
+
+.hud-xp-fill {
+  height: 100%;
+  background: var(--shard, #8fd8ff);
+}
+
+[data-theme='light'] .hud-xp-fill,
+:root:not([data-theme='dark']) .hud-xp-fill {
+  background: #2b7ebb;
+}
+
+.hud-xp-fill--animated {
+  transition: width 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-xp-fill,
+  .hud-xp-fill--animated {
+    transition: none !important;
+  }
+}
+
+.hud-xp-text {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  color: var(--muted, #c3aed0);
+  white-space: nowrap;
+}
+
+[data-theme='light'] .hud-xp-text,
+:root:not([data-theme='dark']) .hud-xp-text {
+  color: var(--muted, #6e5c4e);
+}
+
+/* Generic hud chip */
+.hud-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  color: var(--text, #fff3e0);
+  white-space: nowrap;
+  min-width: 0;
+}
+
+[data-theme='light'] .hud-chip,
+:root:not([data-theme='dark']) .hud-chip {
+  background: var(--surface-2, #f0e9df);
+  border-color: var(--border, #8b7463);
+  color: var(--text, #2a1a08);
+}
+
+/* Progress chip */
+.hud-progress-chip {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  color: var(--text, #fff3e0);
+}
+
+.hud-progress-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Stacks Bar (Fish, Yarn, Keys) */
+.hud-stacks-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.hud-stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.82rem;
+  color: var(--text, #fff3e0);
+  white-space: nowrap;
+}
+
+[data-theme='light'] .hud-stack-item,
+:root:not([data-theme='dark']) .hud-stack-item {
+  color: var(--text, #2a1a08);
+}
+
+.hud-stack-label {
+  font-size: 0.75rem;
+  color: var(--muted, #c3aed0);
+}
+
+[data-theme='light'] .hud-stack-label,
+:root:not([data-theme='dark']) .hud-stack-label {
+  color: var(--muted, #6e5c4e);
+}
+
+.hud-stack-amount {
+  font-weight: 600;
+}
+
+/* Power Chip */
+.hud-power-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+@media (min-width: 600px) {
+  .hud-power-chip {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.hud-power-value {
+  font-weight: 700;
+  color: var(--gold, #ffb86b);
+}
+
+[data-theme='light'] .hud-power-value,
+:root:not([data-theme='dark']) .hud-power-value {
+  color: #a05600;
+}
+
+.hud-power-hint {
+  font-size: 0.75rem;
+  color: var(--key, #ff8fb1);
+  font-style: italic;
+  white-space: normal;
+}
+
+[data-theme='light'] .hud-power-hint,
+:root:not([data-theme='dark']) .hud-power-hint {
+  color: #b01a4a;
+}
