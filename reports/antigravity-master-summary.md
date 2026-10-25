@@ -165,7 +165,7 @@ docs/submission.md
 | G3b (CL7 prep) | DONE | ai/antigravity-v22-class-previews | no | Review & approve preview sheets in docs/class-looks/ (D3/D5) |
 | G4 (A29) | DONE | ai/antigravity-v28-qa-checklist | no | None (scripted procedure ready for QA1/V28) |
 | G5 (A27b) | DONE | ai/antigravity-submission-v2-draft | no | Decide D7 (repo visibility/timing) and D9 (confirm official deadline) |
-| G6 (A24b) | WAITING | ai/antigravity-v27h-guide-shots | no | Needs V16 stage wiring or Codex ai/codex-v16-stage |
+| G6 (A24b) | DONE | ai/antigravity-v27h-guide-shots | no | None (stacked on ai/codex-v16-stage; review screenshots in docs/screenshots/v2/) |
 | G7 (A25) | WAITING | ai/antigravity-v27i-a11y-stage | no | Needs V16 + V19 or Codex ai/codex-v16-stage |
 | G8 (QA1) | WAITING | ai/antigravity-qa-v2-1 | no | Needs V16 + V19 or Codex ai/codex-v16-stage |
 | G9 (Post-cutover) | WAITING | - | no | Waits for V29 cut-over |
@@ -177,6 +177,7 @@ docs/submission.md
 - **G3b**: Commit `633f20f` on `ai/antigravity-v22-class-previews` -> [reports/v22-class-previews.md](file:///Users/bao/taskbar-hero/reports/v22-class-previews.md) (`STATUS: DONE`)
 - **G4**: Commit `5349a42` on `ai/antigravity-v28-qa-checklist` -> [reports/v28-qa-checklist.md](file:///Users/bao/taskbar-hero/reports/v28-qa-checklist.md) (`STATUS: DONE`)
 - **G5**: Commit `ddcd56e` on `ai/antigravity-submission-v2-draft` -> [reports/submission-v2-draft.md](file:///Users/bao/taskbar-hero/reports/submission-v2-draft.md) (`STATUS: DONE`)
+- **G6**: Commit `63248cb` on `ai/antigravity-v27h-guide-shots` -> [reports/v27h-guide-shots.md](file:///Users/bao/taskbar-hero/reports/v27h-guide-shots.md) (`STATUS: DONE`, stacked on `ai/codex-v16-stage`)
 
 ---
 
@@ -186,12 +187,6 @@ docs/submission.md
 - Decision D3 / D5: Review and approve proposed static preview sheets in `docs/class-looks/` (1x and 4x idle and attack frames).
 - Decision D7: Repository public switch schedule (recommended 19 Nov 2026 after secrets scan) and assign submission lead.
 - Decision D9: Confirm official submission deadline (21 Nov vs 24/25 Nov 2026 23:59 UTC+7).
-- Merge order: `ai/antigravity-v22-class-previews` is stacked on `ai/antigravity-v22-class-looks`. Merge `ai/antigravity-v22-class-looks` first, or merge `ai/antigravity-v22-class-previews` which includes both.
-
----
-
-## User must decide on return
-- Finding A25a-1: Remove `title="Cat Key"` from `<PixelIcon name="key" size={2} title="Cat Key" />` in `BossGatePanel.tsx` line 186 to prevent duplicate accessible name announcement next to `<span>Keys: ...</span>`.
-- Decision D5: Review proposed written looks in `docs/class-looks-fallback.md` for any class without custom user reference by 5 Nov 2026.
-- Decision D3 / D5: Review and approve proposed static preview sheets in `docs/class-looks/` (1x and 4x idle and attack frames).
-- Merge order: `ai/antigravity-v22-class-previews` is stacked on `ai/antigravity-v22-class-looks`. Merge `ai/antigravity-v22-class-looks` first, or merge `ai/antigravity-v22-class-previews` which includes both.
+- Merge orders:
+  - `ai/antigravity-v22-class-previews` is stacked on `ai/antigravity-v22-class-looks`. Merge `ai/antigravity-v22-class-looks` first, or merge `ai/antigravity-v22-class-previews` which includes both.
+  - `ai/antigravity-v27h-guide-shots` is stacked on `ai/codex-v16-stage @ fd318c4910e50152fdb0522593762288e76efbda`. Merge `ai/codex-v16-stage` before `ai/antigravity-v27h-guide-shots`.
