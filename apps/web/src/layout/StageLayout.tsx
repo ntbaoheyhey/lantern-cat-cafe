@@ -140,6 +140,11 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const awayRef = useRef(0);
   const offset = useMemo(() => state ? state.serverTime - Date.now() / 1000 : 0, [state?.serverTime]);
   useEffect(() => {
+    try {
+      const lastVisit = Number(localStorage.getItem('taskbar-hero:v2-last-visit'));
+      if (lastVisit > 0 && lastVisit <= Date.now()) awayRef.current = (Date.now() - lastVisit) / 1000;
+    } catch { /* Browser storage can be unavailable. */ }
+    const saveVisit = () => { try { localStorage.setItem('taskbar-hero:v2-last-visit', String(Date.now())); } catch { /* Optional presentation metadata. */ } };
     const off = loop.onEvent(event => {
       if (event.type === 'claimed') {
         setGains(event.gains);
@@ -149,13 +154,13 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
       if (event.type === 'refused') setNotice(event.code.replaceAll('_', ' '));
     });
     const visibility = () => {
-      if (document.hidden) hiddenAt.current = Date.now();
+      if (document.hidden) { hiddenAt.current = Date.now(); saveVisit(); }
       else if (hiddenAt.current !== null) { awayRef.current = (Date.now() - hiddenAt.current) / 1000; hiddenAt.current = null; }
     };
     document.addEventListener('visibilitychange', visibility);
     void loop.start();
     const timer = setInterval(() => setNow(Date.now()), 1000);
-    return () => { off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
+    return () => { saveVisit(); off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
   }, [loop]);
   const classId = state?.cat.classId;
   const stats = state && classId ? v2.deriveStats({ classId, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus }))) : null;

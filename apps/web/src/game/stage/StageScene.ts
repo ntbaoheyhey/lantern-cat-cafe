@@ -4,7 +4,7 @@ import type { ServerStateV2 } from '../../api/GameApiV2';
 import { monsterArt } from '../../art/monsters';
 import { backdropFor } from '../../art/backdrops';
 import { bakeCat, CLASS_LOOKS } from '../rig';
-import { CombatDirector, asCombatScene, weaponOf, type CombatCue } from '../combat';
+import { CombatDirector, asCombatScene, weaponOf, buildIdleCues } from '../combat';
 import { bakeMonster, equippedVisuals } from '../arena/assets';
 
 import { claimedKills } from './progress';
@@ -39,16 +39,15 @@ export class StageScene extends Phaser.Scene {
     this.director = new CombatDirector({ scene: asCombatScene(this), cat: this.cat, monster: this.monster,
       weapon: weaponOf(cls), anims: { attack: sheet.anims.attack.key, idle: sheet.anims.idle.key, hurt: sheet.anims.hurt.key },
       lootTarget: { x: width / 2, y: 0 }, monsterHeight: art.size.h, reducedMotion,
+      hooks: { onImpact: () => this.monster?.play(anims.hit), onDefeat: () => this.monster?.play(anims.defeat), onMonsterHp: (hp, max) => { if (hp === max) this.monster?.play(anims.walk); } },
     });
     // Long claims are compressed to a short montage. The HUD retains every authoritative kill.
     const count = Math.min(8, claimedKills(before, state));
-    const cues: CombatCue[] = [];
-    for (let i = 0; i < count; i++) {
-      const t = i * 900;
-      cues.push({ t, type: 'spawn', maxHp: 1 }, { t: t + 100, type: 'attackStart', attack: i + 1 },
-        { t: t + 500, type: 'impact', source: 'hit', damage: 1, crit: false, hp: 0 }, { t: t + 500, type: 'defeat' });
+    if (count > 0) {
+      const stats = v2.deriveStats({ classId: cls, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus })));
+      const monster = v2.monsterAt(art.id, v2.stageOf(state.progress.chapter, state.progress.round));
+      this.director.play(buildIdleCues(stats, monster, { cycles: count }));
     }
-    if (cues.length) this.director.play(cues);
   }
   update(_time: number, delta: number) { this.director?.update(delta); }
 }

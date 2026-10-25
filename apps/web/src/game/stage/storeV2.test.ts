@@ -19,7 +19,7 @@ it('injects the session into server mode and applies the existing session guard'
   sessions.set({ token: 'test', playerId: 'p', wallet: 'w', expiresAt: Date.now() + 60000 });
   const api = new MockGameApiV2({ storage: null });
   vi.spyOn(api, 'getState').mockRejectedValue(new GameApiErrorV2('unauthenticated'));
-  const server = vi.fn(() => api), store = createStageStoreV2({ sessions, env: { supabaseUrl: 'https://test', anonKey: 'anon' }, server });
+  const server = vi.fn((_options: { getToken: () => string | null | undefined }) => api), store = createStageStoreV2({ sessions, env: { supabaseUrl: 'https://test', anonKey: 'anon' }, server });
   expect(store.getMode().demo).toBe(false);
   expect(server.mock.calls[0]![0].getToken()).toBe('test');
   await expect(store.api.getState()).rejects.toMatchObject({ code: 'unauthenticated' });
