@@ -1,0 +1,1319 @@
+diff --git a/apps/web/src/game/stage/relicWiring.test.ts b/apps/web/src/game/stage/relicWiring.test.ts
+new file mode 100644
+index 0000000..4717712
+--- /dev/null
++++ b/apps/web/src/game/stage/relicWiring.test.ts
+@@ -0,0 +1,41 @@
++import { expect, it, vi } from 'vitest';
++import type { RelicVoucher } from '@taskbar-hero/api-contract';
++import type { GameSnapshotV2 } from '../v2/loopV2';
++import { forgeRelicForWalletV2 } from '../v2/storeV2';
++import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
++export const voucher: RelicVoucher = { player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
++function setup(reason: 'not_enough_yarn' | 'no_moon_pearl' | 'daily_limit' | null = null) {
++  const state = sampleServerStateV2(); state.forge.blockedBy = reason;
++  const snapshot: GameSnapshotV2 = { state, paused: false, loadFailed: false, busy: null, eventSeq: 0, lastEvent: null };
++  const loop = { getSnapshot: () => snapshot, forgeRelic: vi.fn(async () => ({ voucher, state })), retry: vi.fn(async () => {}) };
++  const mint = vi.fn(async (_v: RelicVoucher) => {});
++  return { loop, mint, snapshot };
++}
++it('passes the unchanged voucher to the existing mint handoff once, including duplicate clicks', async () => {
++  const { loop, mint } = setup();
++  expect(await Promise.all([forgeRelicForWalletV2(loop, { connected: true, mint }), forgeRelicForWalletV2(loop, { connected: true, mint })])).toEqual([null, null]);
++  expect(loop.forgeRelic).toHaveBeenCalledOnce(); expect(mint).toHaveBeenCalledExactlyOnceWith(voucher);
++});
++for (const reason of ['not_enough_yarn', 'no_moon_pearl', 'daily_limit'] as const) it(`does not mint when ${reason}`, async () => {
++  const { loop, mint } = setup(reason);
++  expect(await forgeRelicForWalletV2(loop, { connected: true, mint })).toBeTruthy();
++  expect(mint).not.toHaveBeenCalled(); expect(loop.forgeRelic).not.toHaveBeenCalled();
++});
++it('requires a wallet without spending or invoking the mint flow', async () => {
++  const { loop, mint } = setup();
++  expect(await forgeRelicForWalletV2(loop, { connected: false, mint })).toContain('Connect your wallet');
++  expect(loop.forgeRelic).not.toHaveBeenCalled(); expect(mint).not.toHaveBeenCalled();
++});
++it('returns one mint-flow error and allows a later retry', async () => {
++  const { loop, mint } = setup(); mint.mockRejectedValueOnce(new Error('Wallet handoff failed'));
++  expect(await forgeRelicForWalletV2(loop, { connected: true, mint })).toBe('Wallet handoff failed');
++  expect(mint).toHaveBeenCalledOnce();
++  expect(await forgeRelicForWalletV2(loop, { connected: true, mint })).toBeNull();
++});
++it('reloads the reason after a server refusal race, then never invokes mint', async () => {
++  const { loop, mint, snapshot } = setup();
++  loop.forgeRelic.mockImplementationOnce(async () => null as never);
++  loop.retry.mockImplementationOnce(async () => { snapshot.state!.forge.blockedBy = 'daily_limit'; });
++  expect(await forgeRelicForWalletV2(loop, { connected: true, mint })).toContain('shared');
++  expect(mint).not.toHaveBeenCalled(); expect(loop.retry).toHaveBeenCalledOnce();
++});
+diff --git a/apps/web/src/game/stage/relicWiring.ui.test.tsx b/apps/web/src/game/stage/relicWiring.ui.test.tsx
+new file mode 100644
+index 0000000..554f338
+--- /dev/null
++++ b/apps/web/src/game/stage/relicWiring.ui.test.tsx
+@@ -0,0 +1,79 @@
++import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
++import { afterEach, beforeEach, expect, it, vi } from 'vitest';
++import type { RelicVoucher } from '@taskbar-hero/api-contract';
++import type { ServerStateV2 } from '../../api/GameApiV2';
++import type { UnreportedMint } from '../../forge/mintStore';
++const fake = vi.hoisted(() => ({ connected: true, state: null as unknown as ServerStateV2, demo: true,
++  start: vi.fn(async () => {}), stop: vi.fn(), retry: vi.fn(async () => {}), forge: vi.fn(),
++  mint: vi.fn(), callback: null as ((mint: UnreportedMint, confirmed: boolean) => void) | null,
++  report: vi.fn(async (_api: unknown, _loop: unknown, _mint: unknown): Promise<'ok' | 'retry' | 'gone'> => 'ok'),
++}));
++vi.mock('wagmi', async importOriginal => ({ ...await importOriginal<typeof import('wagmi')>(), useAccount: () => ({ isConnected: fake.connected, address: fake.connected ? '0x0000000000000000000000000000000000000001' : undefined }) }));
++vi.mock('../../wallet/WalletButton', () => ({ WalletButton: () => <button>Wallet</button> }));
++vi.mock('./StageCanvas', () => ({ StageCanvas: () => <div /> }));
++vi.mock('../../forge/MintPanel', () => ({ MintPanel: (props: { voucher: RelicVoucher; onMinted: (mint: UnreportedMint, confirmed: boolean) => void }) => {
++  fake.mint(props.voucher); fake.callback = props.onMinted;
++  return <p data-testid="mint-flow">Voucher {props.voucher.nonce}</p>;
++} }));
++vi.mock('../../forge/report', () => ({ reportMint: fake.report }));
++const loop = { subscribe: () => () => {}, start: fake.start, stop: fake.stop, retry: fake.retry, forgeRelic: fake.forge, onEvent: () => () => {},
++  getSnapshot: () => ({ state: fake.state, lastEvent: null, busy: null, loadFailed: false, paused: false, eventSeq: 0 }) };
++vi.mock('../v2/storeV2', async importOriginal => ({ ...await importOriginal<typeof import('../v2/storeV2')>(),
++  getGameLoopV2: () => loop, useGameSnapshotV2: () => loop.getSnapshot(), useGameModeV2: () => ({ demo: fake.demo, notice: null }) }));
++import { StageLayout } from '../../layout/StageLayout';
++import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
++import { clearUnreported, saveUnreported } from '../../forge/mintStore';
++const voucher: RelicVoucher = { player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
++beforeEach(() => {
++  vi.clearAllMocks(); localStorage.clear(); localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
++  fake.connected = true; fake.demo = true; fake.state = sampleServerStateV2(); fake.state.forge.blockedBy = null;
++  fake.forge.mockResolvedValue({ voucher, state: fake.state }); fake.report.mockImplementation(async () => { clearUnreported(); return 'ok'; });
++});
++afterEach(cleanup);
++function forgePanel() {
++  render(<StageLayout onMiniMode={() => {}} />);
++  fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
++  fireEvent.click(screen.getByTestId('tab-relic'));
++}
++async function forge() {
++  await act(async () => { fireEvent.click(screen.getByTestId('relic-forge-btn')); });
++  await act(async () => { fireEvent.click(screen.getByTestId('relic-confirm-btn')); });
++}
++it('hands the result to the existing MintPanel with the unchanged voucher', async () => {
++  forgePanel(); await forge();
++  expect(fake.forge).toHaveBeenCalledOnce(); expect(fake.mint).toHaveBeenCalledWith(voucher);
++  expect(screen.getByTestId('mint-flow').textContent).toContain('42');
++});
++it('shows connect-wallet once and does not forge or mint without a wallet', async () => {
++  fake.connected = false; forgePanel(); await forge();
++  expect(fake.forge).not.toHaveBeenCalled(); expect(fake.mint).not.toHaveBeenCalled();
++  expect(screen.getAllByText('Connect your wallet before forging a Relic.')).toHaveLength(1);
++});
++for (const [reason, text] of [['not_enough_yarn', /Not enough Yarn/], ['no_moon_pearl', /No Moon Pearl/], ['daily_limit', /already forged|daily limit/i]] as const) it(`renders ${reason} without a mint call`, () => {
++  fake.state.forge.blockedBy = reason; forgePanel();
++  expect(screen.getByTestId('relic-blocked-reason').textContent).toMatch(text);
++  expect(screen.getByTestId('relic-forge-btn')).toHaveProperty('disabled', true);
++  expect(fake.mint).not.toHaveBeenCalled();
++});
++it('surfaces a wallet handoff error once', async () => {
++  // The store handoff is synchronous UI setup; errors are returned as one status message.
++  fake.forge.mockRejectedValueOnce(new Error('Wallet handoff failed'));
++  forgePanel(); await forge();
++  expect(screen.getAllByText('Wallet handoff failed')).toHaveLength(1); expect(fake.mint).not.toHaveBeenCalled();
++});
++it('does not remount a consumed voucher while the v2 refresh is in flight', async () => {
++  forgePanel(); await forge(); fake.state.forge.pending = voucher;
++  const mint = { nonce: voucher.nonce, hash: ('0x' + '1'.repeat(64)) as `0x${string}` };
++  await act(async () => { fake.callback!(mint, true); });
++  expect(screen.queryByTestId('mint-flow')).toBeNull(); expect(fake.retry).toHaveBeenCalled();
++});
++it('reuses confirmation reporting after a confirmed chain mint, without another mint call', async () => {
++  fake.demo = false; forgePanel(); await forge();
++  const mint = { nonce: voucher.nonce, hash: ('0x' + '1'.repeat(64)) as `0x${string}` };
++  saveUnreported(mint);
++  await act(async () => { fake.callback!(mint, false); });
++  expect(screen.queryByTestId('mint-flow')).toBeNull(); const previous = fake.mint.mock.calls.length;
++  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retry saving mint confirmation' })); });
++  expect(fake.report).toHaveBeenCalledWith(expect.anything(), expect.anything(), mint);
++  expect(fake.mint).toHaveBeenCalledTimes(previous); expect(screen.queryByRole('button', { name: 'Retry saving mint confirmation' })).toBeNull();
++});
+diff --git a/apps/web/src/game/v2/storeV2.ts b/apps/web/src/game/v2/storeV2.ts
+index 31cb2c2..b1d36dd 100644
+--- a/apps/web/src/game/v2/storeV2.ts
++++ b/apps/web/src/game/v2/storeV2.ts
+@@ -23,6 +23,41 @@ export function useGameModeV2() {
+   return useSyncExternalStore(store.subscribe, store.getMode);
+ }
+ 
++export interface RelicWalletV2 {
++  connected: boolean;
++  /** Hand off to the existing wallet mint UI; this store never submits a transaction. */
++  mint(voucher: import('@taskbar-hero/api-contract').RelicVoucher): void | Promise<void>;
++}
++type RelicLoopV2 = Pick<GameLoopV2, 'getSnapshot' | 'forgeRelic' | 'retry'>;
++const relicFlights = new WeakMap<RelicLoopV2, Promise<string | null>>();
++const relicBlockMessage = (reason: string) => ({
++  not_enough_yarn: 'Not enough Yarn to forge a Relic.',
++  no_moon_pearl: 'A Moon Pearl is needed to forge a Relic.',
++  daily_limit: 'The Relic daily limit is shared across classic and v2.',
++} as Record<string, string>)[reason] ?? 'Could not forge a Relic. Try again.';
++/** One serialized forge -> voucher handoff. Returns one user-facing message on refusal/error. */
++export function forgeRelicForWalletV2(loop: RelicLoopV2, wallet: RelicWalletV2): Promise<string | null> {
++  if (!wallet.connected) return Promise.resolve('Connect your wallet before forging a Relic.');
++  const pending = relicFlights.get(loop);
++  if (pending) return pending;
++  const flight = (async () => {
++    const state = loop.getSnapshot().state;
++    if (!state) return 'Load your cat before forging a Relic.';
++    if (state.forge.blockedBy) return relicBlockMessage(state.forge.blockedBy);
++    const result = await loop.forgeRelic();
++    if (!result) {
++      await loop.retry();
++      const snapshot = loop.getSnapshot(), reason = snapshot.state?.forge.blockedBy;
++      if (reason) return relicBlockMessage(reason);
++      return snapshot.lastEvent?.type === 'error' ? snapshot.lastEvent.message : 'Could not forge a Relic. Try again.';
++    }
++    await wallet.mint(result.voucher);
++    return null;
++  })().catch((error: unknown) => error instanceof Error ? error.message : 'Could not open Relic minting. Try again.').finally(() => relicFlights.delete(loop));
++  relicFlights.set(loop, flight);
++  return flight;
++}
++
+ /** Serialize a bag's bulk equip callbacks without changing the loop's busy guard. */
+ export function createEquipQueueV2(loop: GameLoopV2) {
+   let tail = Promise.resolve();
+diff --git a/apps/web/src/layout/StageLayout.test.tsx b/apps/web/src/layout/StageLayout.test.tsx
+index b175a05..0ef88f3 100644
+--- a/apps/web/src/layout/StageLayout.test.tsx
++++ b/apps/web/src/layout/StageLayout.test.tsx
+@@ -151,3 +151,21 @@ it('boss request opens the replay, then the victory chest', async () => {
+   expect(screen.getByText('Victory!')).toBeTruthy();
+   expect(screen.getByRole('dialog')).toBeTruthy();
+ });
++
++
++it('phone: panel opening moves focus inside and closing returns it to the selected tab', () => {
++  setViewport(390, 844);
++  render(<App />);
++  const boss = screen.getByRole('tab', { name: 'Boss' });
++  boss.focus();
++  fireEvent.click(boss);
++  expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Close panel' }));
++  fireEvent.keyDown(document, { key: 'Escape' });
++  expect(document.activeElement).toBe(boss);
++  const market = screen.getByRole('tab', { name: 'Market' });
++  market.focus();
++  fireEvent.click(market);
++  expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Close panel' }));
++  fireEvent.click(screen.getByRole('button', { name: 'Close panel' }));
++  expect(document.activeElement).toBe(market);
++});
+diff --git a/apps/web/src/layout/StageLayout.tsx b/apps/web/src/layout/StageLayout.tsx
+index 7cc9ed4..50e717c 100644
+--- a/apps/web/src/layout/StageLayout.tsx
++++ b/apps/web/src/layout/StageLayout.tsx
+@@ -10,8 +10,14 @@ import {
+ } from 'react';
+ import type { ServerStateV2, BossFightResultV2, GainsV2 } from '../api/GameApiV2';
+ import { v2 } from '@taskbar-hero/game-rules';
++import { useAccount } from 'wagmi';
++import type { RelicVoucher } from '@taskbar-hero/api-contract';
++import { MintPanel } from '../forge/MintPanel';
++import { loadUnreported, type UnreportedMint } from '../forge/mintStore';
++import { reportMint } from '../forge/report';
++import { getGameApi, getGameLoop } from '../game/store';
+ import { StageCanvas } from '../game/stage/StageCanvas';
+-import { createEquipQueueV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
++import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
+ import { usePrefersReducedMotion } from '../motion/reducedMotion';
+ import { HudBar } from './hud/HudBar';
+ import { ClassPicker } from './classpicker/ClassPicker';
+@@ -125,8 +131,14 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
+   const [sheetOpen, setSheetOpen] = useState(false);
+   const phone = kind === 'phone';
+   const navRef = useRef<HTMLDivElement>(null);
++  const sheetCloseRef = useRef<HTMLButtonElement>(null);
+   const loop = getGameLoopV2();
+   const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
++  const wallet = useAccount();
++  const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
++  const [mintedNonce, setMintedNonce] = useState<string | null>(null);
++  const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
++  const [savingMint, setSavingMint] = useState(false);
+   const snapshot = useGameSnapshotV2(loop), mode = useGameModeV2();
+   const state = snapshot.state;
+   const reducedMotion = usePrefersReducedMotion();
+@@ -165,6 +177,16 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
+     const timer = setInterval(() => setNow(Date.now()), 1000);
+     return () => { queue.dispose(); if (equipQueue.current === queue) equipQueue.current = null; saveVisit(); off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
+   }, [loop]);
++  useEffect(() => { setVoucher(null); setMintedNonce(null); }, [mode.demo, wallet.address]);
++  const retryMintConfirmation = async () => {
++    if (!unreported || savingMint || mode.demo || !wallet.isConnected) return;
++    setSavingMint(true);
++    try {
++      const outcome = await reportMint(getGameApi(), getGameLoop(), unreported);
++      if (outcome === 'retry') setNotice('Could not save the mint confirmation. Try again.');
++      else { setUnreported(null); setVoucher(null); await loop.retry(); setNotice('Relic mint confirmation saved.'); }
++    } finally { setSavingMint(false); }
++  };
+   const classId = state?.cat.classId;
+   const stats = state && classId ? v2.deriveStats({ classId, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus }))) : null;
+   const fightBoss = async (selected: number) => {
+@@ -178,9 +200,21 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
+   const content = !state ? <p>Loading your cat…</p> : tab === 'Inventory' ? bag : tab === 'Boss' ? <>
+     <BossGatePanel state={state} chapter={chapter ?? state.progress.chapter} nowS={Math.floor(now / 1000 + offset)} busy={snapshot.busy === 'fightBoss' || fight !== null} onFight={selected => { void fightBoss(selected); }} onSelectChapter={setChapter} />
+     <ChapterMap currentChapter={state.progress.chapter} round={state.progress.round} clearedChapters={state.bosses.chapters.filter(c => c.cleared).map(c => c.chapter)} onSelect={setChapter} />
+-  </> : tab === 'Forge' ? classId ? <ForgePanel stacks={{ ...state.materials, fish: state.currencies.fish, yarn: state.currencies.yarn, catKey: state.currencies.keys }} items={state.inventory}
++  </> : tab === 'Forge' ? classId ? <><ForgePanel stacks={{ ...state.materials, fish: state.currencies.fish, yarn: state.currencies.yarn, catKey: state.currencies.keys }} items={state.inventory}
+     relic={{ today: state.forge.today, pending: state.forge.pending, blockedReason: state.forge.blockedBy }} classWeaponType={v2.CLASSES.find(c => c.id === classId)!.weaponType}
+-    onCraft={async (recipe, slot) => { await loop.craft(recipe, slot); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={() => { setNotice('Relic minting will be available after wallet wiring.'); }} /> : <p>Choose a class to use the forge.</p> : null;
++    onCraft={async (recipe, slot) => { await loop.craft(recipe, slot); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={async () => {
++      const message = await forgeRelicForWalletV2(loop, { connected: wallet.isConnected, mint: next => { setVoucher(next); } });
++      setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
++    }} />
++    <p className="forge-note">The Relic daily limit is shared across classic and v2.</p>
++    {unreported ? <div role="status"><p>{mode.demo ? 'Sign in to finish saving your minted Relic.' : 'Your Relic was minted. Finish saving its confirmation.'}</p>
++      <button disabled={savingMint || mode.demo || !wallet.isConnected} onClick={() => { void retryMintConfirmation(); }}>{savingMint ? 'Saving…' : 'Retry saving mint confirmation'}</button></div>
++      : (voucher ?? state.forge.pending) && (voucher ?? state.forge.pending)!.nonce !== mintedNonce && <MintPanel voucher={(voucher ?? state.forge.pending)!} api={getGameApi()} loop={getGameLoop()} onMinted={(mint, confirmed) => {
++        setVoucher(null); setMintedNonce(mint.nonce);
++        if (confirmed) { setUnreported(null); setNotice('Relic minted. In your wallet!'); void loop.retry(); }
++        else { setUnreported(mint); setNotice('Relic minted. Finish saving its confirmation below.'); }
++      }} />}
++    </> : <p>Choose a class to use the forge.</p> : null;
+ 
+   const closeSheet = () => {
+     setSheetOpen(false);
+@@ -189,6 +223,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
+ 
+   useEffect(() => {
+     if (!phone || !sheetOpen) return;
++    sheetCloseRef.current?.focus();
+     const onKey = (e: globalThis.KeyboardEvent) => {
+       if (e.key === 'Escape') closeSheet();
+     };
+@@ -242,7 +277,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
+               {state && <CharacterArea state={state} />}
+             </div>
+             <div className={`v2-sheet${sheetOpen ? ' open' : ''}`} hidden={!sheetOpen}>
+-              <button type="button" className="v2-sheet-close" aria-label="Close panel" onClick={closeSheet}>
++              <button type="button" className="v2-sheet-close" ref={sheetCloseRef} aria-label="Close panel" onClick={closeSheet}>
+                 ×
+               </button>
+               <ActivePanel tab={tab} hidden={!sheetOpen} content={content} />
+diff --git a/apps/web/src/layout/a11y/hudBossFixtures.ts b/apps/web/src/layout/a11y/hudBossFixtures.ts
+new file mode 100644
+index 0000000..e63fc42
+--- /dev/null
++++ b/apps/web/src/layout/a11y/hudBossFixtures.ts
+@@ -0,0 +1,223 @@
++import { vi } from 'vitest';
++import type { ServerStateV2 } from '../../api/GameApiV2';
++import type { BossGatePanelProps } from '../boss/BossGatePanel';
++import { bossGatePanelProps, sampleServerStateV2 } from './fixtures';
++
++// ---------------------------------------------------------------------------
++// ServerStateV2 fixtures for HUD cases
++// ---------------------------------------------------------------------------
++
++/** Normal progressing player with standard currencies and mid-round status */
++export const hudNormalState: ServerStateV2 = sampleServerStateV2({
++  level: 5,
++  chapter: 1,
++  round: 3,
++  kills: 4,
++  killsPerRound: 10,
++  gated: false,
++  neededPower: 0,
++  keys: 1,
++});
++
++/** Progression-gated player needing more power to advance */
++export const hudGatedState: ServerStateV2 = sampleServerStateV2({
++  level: 8,
++  chapter: 2,
++  round: 5,
++  kills: 2,
++  killsPerRound: 10,
++  gated: true,
++  neededPower: 1500,
++  keys: 1,
++});
++
++/** Player holding maximum key stack (5 keys) */
++export const hudMaxKeysState: ServerStateV2 = sampleServerStateV2({
++  level: 15,
++  chapter: 3,
++  round: 8,
++  kills: 7,
++  killsPerRound: 10,
++  gated: false,
++  neededPower: 0,
++  keys: 5,
++});
++
++/** Player with zero fish, yarn, and keys */
++export const hudZeroCurrenciesState: ServerStateV2 = {
++  ...sampleServerStateV2({
++    level: 1,
++    chapter: 1,
++    round: 1,
++    kills: 0,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 0,
++  }),
++  currencies: {
++    fish: 0,
++    yarn: 0,
++    keys: 0,
++  },
++};
++
++export function createHudServerState(
++  overrides?: Partial<Parameters<typeof sampleServerStateV2>[0]>,
++): ServerStateV2 {
++  return sampleServerStateV2(overrides);
++}
++
++// ---------------------------------------------------------------------------
++// BossGatePanel props fixtures per gate state
++// ---------------------------------------------------------------------------
++
++const BASE_NOW_S = 1000;
++
++/** State (a): Gated - Current chapter power too low to challenge boss */
++export const bossGateGatedProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 1,
++    round: 5,
++    kills: 3,
++    killsPerRound: 10,
++    gated: true,
++    neededPower: 1500,
++    keys: 1,
++    clearedChapters: [],
++    cooldownUntil: null,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++/** State (b): No Key - Reached boss but holding 0 Cat Keys */
++export const bossGateNoKeyProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 1,
++    round: 10,
++    kills: 10,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 0,
++    clearedChapters: [],
++    cooldownUntil: null,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++/** State (c): Cooldown - Boss loss catnap active (cooldownUntil = 1060s, nowS = 1000s -> 60s remaining) */
++export const bossGateCooldownProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 1,
++    round: 10,
++    kills: 10,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 1,
++    clearedChapters: [],
++    cooldownUntil: BASE_NOW_S + 60,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++/** State (d): Not Reached - Early in chapter before reaching round 10 / final kill */
++export const bossGateNotReachedProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 1,
++    round: 2,
++    kills: 1,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 1,
++    clearedChapters: [],
++    cooldownUntil: null,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++/** State (e): Rematch - Re-challenging a previously cleared chapter boss */
++export const bossGateRematchProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 2,
++    round: 1,
++    kills: 0,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 1,
++    clearedChapters: [1],
++    cooldownUntil: null,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++/** State (f): Ready (first clear) - Reached boss of uncleared chapter with key held */
++export const bossGateReadyProps: BossGatePanelProps = bossGatePanelProps({
++  state: sampleServerStateV2({
++    chapter: 1,
++    round: 10,
++    kills: 10,
++    killsPerRound: 10,
++    gated: false,
++    neededPower: 0,
++    keys: 1,
++    clearedChapters: [],
++    cooldownUntil: null,
++  }),
++  chapter: 1,
++  nowS: BASE_NOW_S,
++  busy: false,
++  onFight: vi.fn(),
++  onSelectChapter: vi.fn(),
++});
++
++export type BossGateFixtureStateKind =
++  | 'gated'
++  | 'no_key'
++  | 'cooldown'
++  | 'not_reached'
++  | 'rematch'
++  | 'ready';
++
++export function createBossGateProps(
++  kind: BossGateFixtureStateKind,
++  overrides?: Partial<BossGatePanelProps>,
++): BossGatePanelProps {
++  switch (kind) {
++    case 'gated':
++      return { ...bossGateGatedProps, ...overrides };
++    case 'no_key':
++      return { ...bossGateNoKeyProps, ...overrides };
++    case 'cooldown':
++      return { ...bossGateCooldownProps, ...overrides };
++    case 'not_reached':
++      return { ...bossGateNotReachedProps, ...overrides };
++    case 'rematch':
++      return { ...bossGateRematchProps, ...overrides };
++    case 'ready':
++      return { ...bossGateReadyProps, ...overrides };
++  }
++}
+diff --git a/apps/web/src/layout/a11y/v2-components.a11y.test.tsx b/apps/web/src/layout/a11y/v2-components.a11y.test.tsx
+index f80649a..74c1cd5 100644
+--- a/apps/web/src/layout/a11y/v2-components.a11y.test.tsx
++++ b/apps/web/src/layout/a11y/v2-components.a11y.test.tsx
+@@ -233,15 +233,16 @@ describe('v2 Interactive Panels accessibility & reduced-motion audit', () => {
+       expect(screen.getByText('Pick a class first.')).toBeTruthy();
+     });
+ 
+-    it('check 3: boss portrait and key icon have role img and label', () => {
++    it('check 3: boss portrait is labelled and adjacent key icon is decorative', () => {
+       const { container } = render(<BossGatePanel {...bossGatePanelProps()} />);
+       const portrait = container.querySelector('.boss-portrait-container svg');
+       expect(portrait?.getAttribute('role')).toBe('img');
+       expect(portrait?.getAttribute('aria-label')).toBe('Yarn Giant');
+ 
+       const keyIcon = container.querySelector('.boss-gate-keys svg');
+-      expect(keyIcon?.getAttribute('role')).toBe('img');
+-      expect(keyIcon?.getAttribute('aria-label')).toBe('Cat Key');
++      expect(keyIcon?.getAttribute('aria-hidden')).toBe('true');
++      expect(keyIcon?.hasAttribute('aria-label')).toBe(false);
++      expect(screen.getByText(/^Keys: /)).toBeTruthy();
+     });
+ 
+     it('check 4: single top h2 heading and no skipped levels', () => {
+diff --git a/apps/web/src/layout/a11y/v2-hud-boss.a11y.test.tsx b/apps/web/src/layout/a11y/v2-hud-boss.a11y.test.tsx
+new file mode 100644
+index 0000000..4dab993
+--- /dev/null
++++ b/apps/web/src/layout/a11y/v2-hud-boss.a11y.test.tsx
+@@ -0,0 +1,343 @@
++// @vitest-environment jsdom
++import { cleanup, render, screen } from '@testing-library/react';
++import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
++import { v2 } from '@taskbar-hero/game-rules';
++import * as reducedMotionModule from '../../motion/reducedMotion';
++import { HudBar } from '../hud/HudBar';
++import { ProgressChip } from '../hud/ProgressChip';
++import { StacksBar } from '../hud/StacksBar';
++import { BossGatePanel } from '../boss/BossGatePanel';
++import { bossGateStatus } from '../boss/bossGate';
++import { sampleServerStateV2 } from './fixtures';
++import {
++  bossGateCooldownProps,
++  bossGateGatedProps,
++  bossGateNoKeyProps,
++  bossGateNotReachedProps,
++  bossGateReadyProps,
++  bossGateRematchProps,
++  createBossGateProps,
++  createHudServerState,
++  hudGatedState,
++  hudMaxKeysState,
++  hudNormalState,
++  hudZeroCurrenciesState,
++} from './hudBossFixtures';
++
++describe('A25a / V27f Accessibility Prep: HUD + Boss Gate States', () => {
++  beforeEach(() => {
++    vi.spyOn(reducedMotionModule, 'usePrefersReducedMotion').mockReturnValue(false);
++  });
++
++  afterEach(() => {
++    cleanup();
++    vi.restoreAllMocks();
++  });
++
++  it('test 1: HudBar + BossGatePanel together - tab order reaches only real controls, no tabIndex > 0, icons aria-hidden, every button named', () => {
++    const { container } = render(
++      <div>
++        <HudBar state={hudNormalState} power={1200} />
++        <BossGatePanel {...bossGateReadyProps} />
++      </div>,
++    );
++
++    // Tab order reaches only real interactive controls
++    const focusable = container.querySelectorAll<HTMLElement>(
++      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
++    );
++    expect(focusable.length).toBeGreaterThan(0);
++    focusable.forEach((el) => {
++      expect(['button', 'input', 'select', 'textarea', 'a']).toContain(el.tagName.toLowerCase());
++    });
++
++    // No element has positive tabIndex
++    const elementsWithTabIndex = container.querySelectorAll<HTMLElement>('[tabindex]');
++    elementsWithTabIndex.forEach((el) => {
++      expect(el.tabIndex).toBeLessThanOrEqual(0);
++    });
++
++    // All decorative icons in HudBar are aria-hidden
++    const hudSvgs = container.querySelectorAll('.hud-bar svg');
++    expect(hudSvgs.length).toBeGreaterThan(0);
++    hudSvgs.forEach((svg) => {
++      expect(svg.getAttribute('aria-hidden')).toBe('true');
++    });
++
++    // Boss portrait has role="img" and accessible name
++    const portraitSvg = container.querySelector('.boss-portrait-svg');
++    if (portraitSvg) {
++      expect(portraitSvg.getAttribute('role')).toBe('img');
++      expect(portraitSvg.getAttribute('aria-label')).toBeTruthy();
++    }
++
++    // Every button has an accessible name
++    const buttons = container.querySelectorAll<HTMLButtonElement>('button');
++    expect(buttons.length).toBeGreaterThan(0);
++    buttons.forEach((btn) => {
++      const accessibleName = btn.getAttribute('aria-label') || btn.textContent?.trim();
++      expect(accessibleName).toBeTruthy();
++    });
++  });
++
++  it('test 2: per gate state (gated, no key, cooldown, not reached, rematch, ready) - disabled Fight has a non-empty reason via aria-describedby; ready = enabled, no stale describedby', () => {
++    const disabledStates = [
++      { name: 'gated', props: bossGateGatedProps, expectedSnippet: 'power' },
++      { name: 'no key', props: bossGateNoKeyProps, expectedSnippet: 'Cat Key' },
++      { name: 'cooldown', props: bossGateCooldownProps, expectedSnippet: 'Catnap:' },
++      { name: 'not reached', props: bossGateNotReachedProps, expectedSnippet: 'boss' },
++    ];
++
++    for (const { name, props, expectedSnippet } of disabledStates) {
++      const { unmount } = render(<BossGatePanel {...props} />);
++      const fightBtn = screen.getByRole('button', { name: /fight/i });
++
++      expect(fightBtn.hasAttribute('disabled'), `${name} button should be disabled`).toBe(true);
++
++      const describedById = fightBtn.getAttribute('aria-describedby');
++      expect(describedById, `${name} should have aria-describedby`).toBeTruthy();
++
++      const reasonEl = document.getElementById(describedById!);
++      expect(reasonEl, `${name} reason element should exist in DOM`).toBeTruthy();
++      expect(reasonEl?.textContent?.trim().length).toBeGreaterThan(0);
++      expect(reasonEl?.textContent).toContain(expectedSnippet);
++
++      unmount();
++    }
++
++    // Rematch ready state: enabled, button text Rematch, no stale describedby
++    {
++      const { unmount } = render(<BossGatePanel {...bossGateRematchProps} />);
++      const rematchBtn = screen.getByRole('button', { name: /rematch/i });
++      expect(rematchBtn.hasAttribute('disabled')).toBe(false);
++      expect(rematchBtn.getAttribute('aria-describedby')).toBeNull();
++      unmount();
++    }
++
++    // Ready (first clear) state: enabled, button text Fight, no stale describedby
++    {
++      const { unmount } = render(<BossGatePanel {...bossGateReadyProps} />);
++      const fightBtn = screen.getByRole('button', { name: /fight/i });
++      expect(fightBtn.hasAttribute('disabled')).toBe(false);
++      expect(fightBtn.getAttribute('aria-describedby')).toBeNull();
++      unmount();
++    }
++  });
++
++  it('test 3: cooldown at nowMs = cooldownUntil*1000 - 61000 and - 1000 announced through one polite live region/status per render (no duplicates across HUD + panel)', () => {
++    const cooldownUntil = 1000;
++    const cooldownState = sampleServerStateV2({
++      chapter: 1,
++      round: 10,
++      kills: 10,
++      keys: 1,
++      cooldownUntil,
++    });
++
++    // 1. Check at nowMs = cooldownUntil * 1000 - 61000 (nowS = 939 -> 61s remaining -> 1:01)
++    const nowMs61 = cooldownUntil * 1000 - 61000;
++    const nowS61 = nowMs61 / 1000;
++    {
++      const { container, unmount } = render(
++        <div>
++          <HudBar state={cooldownState} power={1200} />
++          <BossGatePanel
++            state={cooldownState}
++            chapter={1}
++            nowS={nowS61}
++            busy={false}
++            onFight={vi.fn()}
++            onSelectChapter={vi.fn()}
++          />
++        </div>,
++      );
++
++      // Verify visible countdown format m:ss (61s -> 1:01)
++      const countdownText = container.querySelector('.boss-gate-status-text');
++      expect(countdownText?.textContent).toBe('Catnap: 1:01');
++
++      // Exactly one polite live region or status announcement across HUD + panel
++      const politeLive = container.querySelectorAll('[aria-live="polite"], [role="status"]');
++      expect(politeLive.length).toBe(1);
++      expect(politeLive[0]?.textContent).toBe('Catnap cooldown');
++
++      unmount();
++    }
++
++    // 2. Check at nowMs = cooldownUntil * 1000 - 1000 (nowS = 999 -> 1s remaining -> 0:01)
++    const nowMs1 = cooldownUntil * 1000 - 1000;
++    const nowS1 = nowMs1 / 1000;
++    {
++      const { container, unmount } = render(
++        <div>
++          <HudBar state={cooldownState} power={1200} />
++          <BossGatePanel
++            state={cooldownState}
++            chapter={1}
++            nowS={nowS1}
++            busy={false}
++            onFight={vi.fn()}
++            onSelectChapter={vi.fn()}
++          />
++        </div>,
++      );
++
++      const countdownText = container.querySelector('.boss-gate-status-text');
++      expect(countdownText?.textContent).toBe('Catnap: 0:01');
++
++      const politeLive = container.querySelectorAll('[aria-live="polite"], [role="status"]');
++      expect(politeLive.length).toBe(1);
++      expect(politeLive[0]?.textContent).toBe('Catnap cooldown');
++
++      unmount();
++    }
++  });
++
++  it('test 4: PowerChip gated hint and panel gated reason do not use role="alert" (assert roles)', () => {
++    const { container } = render(
++      <div>
++        <HudBar state={hudGatedState} power={1200} />
++        <BossGatePanel {...bossGateGatedProps} />
++      </div>,
++    );
++
++    // Assert no role="alert" in either component
++    const alerts = container.querySelectorAll('[role="alert"]');
++    expect(alerts.length).toBe(0);
++    expect(screen.queryByRole('alert')).toBeNull();
++
++    // PowerChip uses role="status"
++    const powerHint = container.querySelector('.hud-power-hint');
++    expect(powerHint).toBeTruthy();
++    expect(powerHint?.getAttribute('role')).toBe('status');
++
++    // BossGatePanel uses polite aria-live, not assertive/alert
++    const bossLive = container.querySelector('.boss-gate-live');
++    expect(bossLive).toBeTruthy();
++    expect(bossLive?.getAttribute('aria-live')).toBe('polite');
++    expect(bossLive?.getAttribute('role')).toBeNull();
++  });
++
++  it('test 5: reduced motion (spy usePrefersReducedMotion -> true): no animation/transition class or inline transition', () => {
++    vi.spyOn(reducedMotionModule, 'usePrefersReducedMotion').mockReturnValue(true);
++
++    const { container } = render(
++      <div>
++        <HudBar state={hudNormalState} power={1200} />
++        <BossGatePanel {...bossGateReadyProps} />
++      </div>,
++    );
++
++    // LevelXpBar fill has reduced-motion class and inline transition: none
++    const fill = container.querySelector('.hud-xp-fill') as HTMLElement;
++    expect(fill).toBeTruthy();
++    expect(fill.classList.contains('hud-xp-fill--animated')).toBe(false);
++    expect(fill.classList.contains('hud-xp-fill--reduced-motion')).toBe(true);
++    expect(fill.style.transition).toBe('none');
++
++    // No element in either component has an active transition class or animated inline transition
++    const animatedElements = container.querySelectorAll<HTMLElement>('.hud-xp-fill--animated');
++    expect(animatedElements.length).toBe(0);
++  });
++
++  it('test 6: progress chip name contains "Chapter", "round", "of"; keys read "of 5" with 5 from v2.MATERIALS catKey maxStack (never the literal)', () => {
++    // 1. Progress chip accessible name
++    render(
++      <ProgressChip chapter={2} round={4} kills={3} killsPerRound={10} />,
++    );
++    const progressGroup = screen.getByRole('group');
++    const accessibleName = progressGroup.getAttribute('aria-label') ?? '';
++
++    expect(accessibleName).toContain('Chapter');
++    expect(accessibleName).toContain('round');
++    expect(accessibleName).toContain('of');
++
++    cleanup();
++
++    // 2. Keys read "of 5" from v2.MATERIALS catKey maxStack
++    const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
++    expect(catKeyDef).toBeDefined();
++    const dynamicMaxKeys = catKeyDef!.maxStack;
++    expect(dynamicMaxKeys).toBeGreaterThan(0);
++
++    render(<StacksBar fish={100} yarn={20} keys={3} />);
++    const keysItem = screen.getByRole('listitem', { name: new RegExp(`Cat Keys 3 of ${dynamicMaxKeys}`) });
++    expect(keysItem).toBeTruthy();
++    expect(keysItem.getAttribute('aria-label')).toBe(`Cat Keys 3 of ${dynamicMaxKeys}`);
++    expect(keysItem.textContent).toContain(`3/${dynamicMaxKeys}`);
++  });
++
++  it('test 7: every fixture builder type-checks against the props and differs in its defining field', () => {
++    // HUD fixtures test
++    expect(hudNormalState.progress.gated).toBe(false);
++    expect(hudNormalState.currencies.keys).toBe(1);
++
++    expect(hudGatedState.progress.gated).toBe(true);
++    expect(hudGatedState.progress.neededPower).toBe(1500);
++
++    expect(hudMaxKeysState.currencies.keys).toBe(5);
++
++    expect(hudZeroCurrenciesState.currencies.fish).toBe(0);
++    expect(hudZeroCurrenciesState.currencies.yarn).toBe(0);
++    expect(hudZeroCurrenciesState.currencies.keys).toBe(0);
++
++    const customHud = createHudServerState({ level: 99 });
++    expect(customHud.cat.level).toBe(99);
++
++    // BossGate fixtures status tests
++    const gatedStatus = bossGateStatus(
++      bossGateGatedProps.state,
++      bossGateGatedProps.chapter,
++      bossGateGatedProps.nowS,
++    );
++    expect(gatedStatus.kind).toBe('gated');
++
++    const noKeyStatus = bossGateStatus(
++      bossGateNoKeyProps.state,
++      bossGateNoKeyProps.chapter,
++      bossGateNoKeyProps.nowS,
++    );
++    expect(noKeyStatus.kind).toBe('no_key');
++
++    const cooldownStatus = bossGateStatus(
++      bossGateCooldownProps.state,
++      bossGateCooldownProps.chapter,
++      bossGateCooldownProps.nowS,
++    );
++    expect(cooldownStatus.kind).toBe('cooldown');
++
++    const notReachedStatus = bossGateStatus(
++      bossGateNotReachedProps.state,
++      bossGateNotReachedProps.chapter,
++      bossGateNotReachedProps.nowS,
++    );
++    expect(notReachedStatus.kind).toBe('not_reached');
++
++    const rematchStatus = bossGateStatus(
++      bossGateRematchProps.state,
++      bossGateRematchProps.chapter,
++      bossGateRematchProps.nowS,
++    );
++    expect(rematchStatus.kind).toBe('ready');
++    if (rematchStatus.kind === 'ready') {
++      expect(rematchStatus.rematch).toBe(true);
++    }
++
++    const readyStatus = bossGateStatus(
++      bossGateReadyProps.state,
++      bossGateReadyProps.chapter,
++      bossGateReadyProps.nowS,
++    );
++    expect(readyStatus.kind).toBe('ready');
++    if (readyStatus.kind === 'ready') {
++      expect(readyStatus.rematch).toBe(false);
++    }
++
++    // createBossGateProps builder test
++    const customGated = createBossGateProps('gated', { busy: true });
++    expect(customGated.busy).toBe(true);
++    expect(
++      bossGateStatus(customGated.state, customGated.chapter, customGated.nowS).kind,
++    ).toBe('gated');
++  });
++});
+diff --git a/apps/web/src/layout/a11y/v2-stage.a11y.test.tsx b/apps/web/src/layout/a11y/v2-stage.a11y.test.tsx
+new file mode 100644
+index 0000000..94c0570
+--- /dev/null
++++ b/apps/web/src/layout/a11y/v2-stage.a11y.test.tsx
+@@ -0,0 +1,388 @@
++// @vitest-environment jsdom
++import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
++import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
++import type { ServerStateV2 } from '../../api/GameApiV2';
++import { sampleServerStateV2 } from './fixtures';
++import { ARENA_FIXTURES } from '../../game/arena/arenaFixtures';
++import * as reducedMotionModule from '../../motion/reducedMotion';
++
++// Mock playBossFight so real BossArena JSX renders with accessible elements
++const arenaMock = vi.hoisted(() => ({
++  destroy: vi.fn(),
++  complete: null as (() => void) | null,
++}));
++
++vi.mock('../../game/arena/playBossFight', () => ({
++  playBossFight: (
++    _result: unknown,
++    options: {
++      signal: AbortSignal;
++      onHp: (cat: number, boss: number) => void;
++      onReady: (skip: () => void) => void;
++    },
++  ) =>
++    new Promise<void>((resolve) => {
++      arenaMock.complete = resolve;
++      options.onHp(100, 500);
++      options.onReady(resolve);
++      options.signal.addEventListener(
++        'abort',
++        () => {
++          arenaMock.destroy();
++          resolve();
++        },
++        { once: true },
++      );
++    }),
++}));
++
++let stageState: ServerStateV2 | null = null;
++const stageLoop = vi.hoisted(() => ({
++  start: vi.fn(async () => {}),
++  stop: vi.fn(),
++  onEvent: () => () => {},
++  retry: vi.fn(),
++  equip: vi.fn(),
++  setLocked: vi.fn(),
++  chooseClass: vi.fn(),
++  craft: vi.fn(),
++  salvage: vi.fn(),
++  fightBoss: vi.fn(),
++}));
++
++vi.mock('wagmi', async importOriginal => ({ ...await importOriginal<typeof import('wagmi')>(), useAccount: () => ({ isConnected: false, address: undefined }) }));
++
++vi.mock('../../game/v2/storeV2', () => ({
++  createEquipQueueV2: () => ({ equip: stageLoop.equip, dispose: vi.fn() }),
++  getGameLoopV2: () => stageLoop,
++  useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }),
++  useGameModeV2: () => ({ demo: true, notice: null }),
++}));
++
++vi.mock('../../game/stage/StageCanvas', () => ({
++  StageCanvas: () => <div data-testid="stage-canvas" role="img" aria-label="Adventure combat stage" />,
++}));
++
++vi.mock('../../wallet/WalletButton', () => ({
++  WalletButton: () => <button type="button" className="wallet-btn">Connect Wallet</button>,
++}));
++
++import { StageLayout } from '../StageLayout';
++import { BossArena } from '../../game/arena/BossArena';
++
++function setViewport(width: number, height: number) {
++  Object.defineProperty(window, 'innerWidth', { configurable: true, value: width });
++  Object.defineProperty(window, 'innerHeight', { configurable: true, value: height });
++  window.dispatchEvent(new Event('resize'));
++}
++
++describe('v2 Stage Layout, Flow & Boss Arena Accessibility Re-Audit (V16/V19)', () => {
++  let prefersReducedMotion = false;
++
++  beforeEach(() => {
++    prefersReducedMotion = false;
++    vi.spyOn(reducedMotionModule, 'usePrefersReducedMotion').mockImplementation(() => prefersReducedMotion);
++    stageState = sampleServerStateV2();
++    vi.clearAllMocks();
++    stageLoop.fightBoss.mockResolvedValue(ARENA_FIXTURES[0]!.result);
++    localStorage.clear();
++    localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
++    setViewport(1280, 800);
++  });
++
++  afterEach(() => {
++    cleanup();
++    vi.restoreAllMocks();
++  });
++
++  describe('1. Wired Stage Layout Landmarks and Controls', () => {
++    it('provides standard landmarks (banner, regions, navigation) without duplicate landmarks', () => {
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      expect(screen.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeTruthy();
++      expect(screen.getByRole('region', { name: 'Game stage' })).toBeTruthy();
++      expect(screen.getByRole('region', { name: 'Character' })).toBeTruthy();
++      expect(screen.getByRole('region', { name: 'Game panel' })).toBeTruthy();
++      expect(screen.getByRole('region', { name: 'Cat status' })).toBeTruthy();
++      expect(screen.getByRole('tablist', { name: 'Game panel tabs' })).toBeTruthy();
++    });
++
++    it('all interactive controls have accessible names and no positive tabIndex', () => {
++      const { container } = render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const controls = container.querySelectorAll<HTMLElement>('button, [role="button"], [role="tab"], a[href]');
++      expect(controls.length).toBeGreaterThan(0);
++      controls.forEach((control) => {
++        const name =
++          control.getAttribute('aria-label') ||
++          control.getAttribute('aria-labelledby') ||
++          control.textContent?.trim();
++        expect(name).toBeTruthy();
++      });
++
++      const elementsWithTabIndex = container.querySelectorAll<HTMLElement>('[tabindex]');
++      elementsWithTabIndex.forEach((el) => {
++        expect(el.tabIndex).toBeLessThanOrEqual(0);
++      });
++    });
++
++    it('currencies and keys are exposed with full accessible values', () => {
++      stageState = sampleServerStateV2({ keys: 3 });
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const currencies = screen.getByLabelText('Currencies and keys');
++      expect(currencies).toBeTruthy();
++      expect(screen.getByLabelText('Cat Keys 3 of 5')).toBeTruthy();
++      expect(screen.getByLabelText(/Fish/)).toBeTruthy();
++      expect(screen.getByLabelText(/Yarn/)).toBeTruthy();
++    });
++
++    it('next-hint button is an accessible button directing the player to the next action', () => {
++      render(<StageLayout onMiniMode={vi.fn()} />);
++      const hintBtn = screen.getByTestId('next-hint').querySelector('button');
++      expect(hintBtn).toBeTruthy();
++      expect(hintBtn?.textContent).toContain('Explore the chapter and challenge its boss');
++    });
++  });
++
++  describe('2. Desktop Tabs & Phone Bottom Sheet Keyboard Accessibility', () => {
++    it('desktop tabs use roving focus and arrow keys wrap around', () => {
++      render(<StageLayout onMiniMode={vi.fn()} />);
++      const tabs = screen.getAllByRole('tab');
++      expect(tabs).toHaveLength(5);
++      expect(tabs.map((t) => t.textContent?.trim())).toEqual(['Inventory', 'Boss', 'Forge', 'Market', 'Help']);
++
++      const firstTab = screen.getByRole('tab', { name: 'Inventory' });
++      firstTab.focus();
++
++      const tablist = screen.getByRole('tablist', { name: 'Game panel tabs' });
++      fireEvent.keyDown(tablist, { key: 'ArrowRight' });
++      expect(document.activeElement).toBe(screen.getByRole('tab', { name: 'Boss' }));
++
++      fireEvent.keyDown(tablist, { key: 'End' });
++      expect(document.activeElement).toBe(screen.getByRole('tab', { name: 'Help' }));
++
++      fireEvent.keyDown(tablist, { key: 'ArrowRight' });
++      expect(document.activeElement).toBe(firstTab);
++
++      fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
++      expect(document.activeElement).toBe(screen.getByRole('tab', { name: 'Help' }));
++
++      fireEvent.keyDown(tablist, { key: 'Home' });
++      expect(document.activeElement).toBe(firstTab);
++    });
++
++    it('phone navigation renders bottom nav and opens/closes the bottom sheet', () => {
++      setViewport(390, 844);
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const nav = screen.getByRole('navigation', { name: 'Game menu' });
++      expect(nav).toBeTruthy();
++
++      // Sheet is hidden initially
++      expect(screen.queryByRole('tabpanel')).toBeNull();
++
++      // Tap Inventory tab in nav to open sheet
++      const invTab = nav.querySelector('#tab-Inventory');
++      expect(invTab).toBeTruthy();
++      fireEvent.click(invTab!);
++
++      const panel = screen.getByRole('tabpanel', { name: 'Inventory' });
++      expect(panel).toBeTruthy();
++
++      // Close button exists with accessible name
++      const closeBtn = screen.getByRole('button', { name: 'Close panel' });
++      expect(closeBtn).toBeTruthy();
++      fireEvent.click(closeBtn);
++
++      expect(screen.queryByRole('tabpanel')).toBeNull();
++      // Focus returns to the initiating tab in nav
++      expect(document.activeElement?.id).toBe('tab-Inventory');
++    });
++
++    it('phone sheet closes on Escape and returns focus to the initiating nav tab', () => {
++      setViewport(390, 844);
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const nav = screen.getByRole('navigation', { name: 'Game menu' });
++      const bossTab = nav.querySelector<HTMLElement>('#tab-Boss')!;
++      bossTab.focus();
++      fireEvent.click(bossTab);
++
++      expect(screen.getByRole('tabpanel', { name: 'Boss' })).toBeTruthy();
++
++      // Press Escape
++      fireEvent.keyDown(document, { key: 'Escape' });
++
++      // Sheet is closed
++      expect(screen.queryByRole('tabpanel')).toBeNull();
++      // Focus returns to the Boss nav tab
++      expect(document.activeElement?.id).toBe('tab-Boss');
++    });
++
++    it('tapping the active phone tab a second time closes the sheet', () => {
++      setViewport(390, 844);
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const nav = screen.getByRole('navigation', { name: 'Game menu' });
++      const forgeTab = nav.querySelector<HTMLElement>('#tab-Forge')!;
++      fireEvent.click(forgeTab);
++      expect(screen.getByRole('tabpanel', { name: 'Forge' })).toBeTruthy();
++
++      // Tap again
++      fireEvent.click(forgeTab);
++      expect(screen.queryByRole('tabpanel')).toBeNull();
++    });
++  });
++
++  describe('3. Stage Canvas and First-Run State', () => {
++    it('renders accessible placeholder when cat class is unassigned', () => {
++      stageState = sampleServerStateV2({ classId: null });
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const stage = screen.getByRole('region', { name: 'Game stage' });
++      expect(stage).toBeTruthy();
++      expect(screen.getByText('Your adventure starts with a class.')).toBeTruthy();
++      expect(screen.queryByTestId('stage-canvas')).toBeNull();
++    });
++
++    it('renders stage canvas when cat class is chosen', () => {
++      stageState = sampleServerStateV2({ classId: 'warrior' });
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      const stage = screen.getByRole('region', { name: 'Game stage' });
++      expect(stage).toBeTruthy();
++      expect(screen.getByTestId('stage-canvas')).toBeTruthy();
++    });
++  });
++
++  describe('4. ClassPicker First-Run A11y', () => {
++    it('presents class picker dialog on first run and executes authoritative chooseClass', () => {
++      stageState = sampleServerStateV2({ classId: null });
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      expect(screen.getByTestId('class-picker')).toBeTruthy();
++      const chooseBtn = screen.getByTestId('class-picker-choose-button');
++      expect(chooseBtn).toBeTruthy();
++      fireEvent.click(chooseBtn);
++
++      const confirmBtn = screen.getByTestId('class-picker-confirm-button');
++      expect(confirmBtn).toBeTruthy();
++      fireEvent.click(confirmBtn);
++
++      expect(stageLoop.chooseClass).toHaveBeenCalledWith('warrior');
++    });
++  });
++
++  describe('5. Boss Fight Flow: Gate -> Arena -> Victory Chest', () => {
++    it('initiates boss fight, opens arena with accessible health & status, and displays chest on completion', async () => {
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      // Switch to Boss tab
++      fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
++      expect(screen.getByRole('tabpanel', { name: 'Boss' })).toBeTruthy();
++
++      // Fight button
++      const fightBtn = screen.getByRole('button', { name: /^Fight/ });
++      expect(fightBtn).toBeTruthy();
++      await act(async () => {
++        fireEvent.click(fightBtn);
++      });
++
++      expect(stageLoop.fightBoss).toHaveBeenCalledWith(1);
++
++      // Arena overlay mounts
++      const arena = screen.getByRole('region', { name: 'Boss arena' });
++      expect(arena).toBeTruthy();
++
++      // Health and live status
++      expect(screen.getByLabelText('Fight health').textContent).toContain('Cat HP 100 · Boss HP 500');
++      expect(screen.getByRole('status').textContent).toContain('Boss fight in progress');
++
++      // Skip fight button is accessible and enabled
++      const skipBtn = screen.getByRole('button', { name: 'Skip fight' });
++      expect(skipBtn).toBeTruthy();
++      expect(skipBtn.hasAttribute('disabled')).toBe(false);
++
++      // Click Skip fight
++      await act(async () => {
++        fireEvent.click(skipBtn);
++      });
++
++      // Victory status appears and ChestReveal modal opens
++      expect(screen.getByText('Victory!')).toBeTruthy();
++      const chestDialog = screen.getByRole('dialog');
++      expect(chestDialog).toBeTruthy();
++      expect(chestDialog.getAttribute('aria-modal')).toBe('true');
++      expect(chestDialog.getAttribute('aria-label') || chestDialog.getAttribute('aria-labelledby')).toBeTruthy();
++    });
++
++    it('defeat flow preserves Cat Key and provides accessible return button', async () => {
++      const defeatResult = {
++        ...ARENA_FIXTURES[0]!.result,
++        won: false,
++        chest: null,
++      };
++      stageLoop.fightBoss.mockResolvedValueOnce(defeatResult);
++
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      // Switch to Boss tab and fight
++      fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
++      const fightBtn = screen.getByRole('button', { name: /^Fight/ });
++      await act(async () => {
++        fireEvent.click(fightBtn);
++      });
++
++      // Complete replay via skip
++      const skipBtn = screen.getByRole('button', { name: 'Skip fight' });
++      await act(async () => {
++        fireEvent.click(skipBtn);
++      });
++
++      // Defeat status announcement
++      expect(screen.getByText(/Defeat\. Your key was kept\./i)).toBeTruthy();
++
++      // Return button is present and accessible
++      const returnBtn = screen.getByRole('button', { name: 'Back to exploring' });
++      expect(returnBtn).toBeTruthy();
++
++      fireEvent.click(returnBtn);
++      // Arena unmounts
++      expect(screen.queryByRole('region', { name: 'Boss arena' })).toBeNull();
++    });
++  });
++
++  describe('6. Skip Button Accessibility in BossArena', () => {
++    it('has explicit accessible name, is operable via keyboard, and disables when fight ends', async () => {
++      const onDone = vi.fn();
++      render(<BossArena {...ARENA_FIXTURES[0]!} reducedMotion={false} onDone={onDone} />);
++
++      const skipBtn = screen.getByRole('button', { name: 'Skip fight' });
++      expect(skipBtn).toBeTruthy();
++      expect(skipBtn.getAttribute('type')).toBe('button');
++      expect(skipBtn.hasAttribute('disabled')).toBe(false);
++
++      // Keyboard actuation
++      fireEvent.click(skipBtn);
++      await waitFor(() => expect(onDone).toHaveBeenCalledOnce());
++
++      // After fight completes, skip button is disabled
++      expect(skipBtn.hasAttribute('disabled')).toBe(true);
++    });
++  });
++
++  describe('7. Reduced Motion Audit', () => {
++    it('propagates reduced motion preference cleanly to child components', () => {
++      prefersReducedMotion = true;
++      render(<StageLayout onMiniMode={vi.fn()} />);
++
++      // Switch to Boss tab to verify ChapterMap reduced motion
++      fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
++      const activeChapterNode = document.querySelector('.v2-map-node-active');
++      if (activeChapterNode) {
++        expect(activeChapterNode.classList.contains('v2-map-pulse')).toBe(false);
++      }
++    });
++  });
++});
+diff --git a/apps/web/src/layout/boss/BossGatePanel.test.tsx b/apps/web/src/layout/boss/BossGatePanel.test.tsx
+index a3b842e..86c1692 100644
+--- a/apps/web/src/layout/boss/BossGatePanel.test.tsx
++++ b/apps/web/src/layout/boss/BossGatePanel.test.tsx
+@@ -115,6 +115,8 @@ describe('BossGatePanel', () => {
+     expect(screen.getByText('Yarn Giant')).toBeTruthy();
+     expect(screen.getByText('Chapter 1: Living Room')).toBeTruthy();
+     expect(screen.getByText('Keys: 1')).toBeTruthy();
++    expect(screen.queryByRole('img', { name: 'Cat Key' })).toBeNull();
++    expect(screen.getByText('Keys: 1').parentElement?.querySelector('svg')?.getAttribute('aria-hidden')).toBe('true');
+   });
+ 
+   it('renders rematch ready status with enabled Rematch button', () => {
+diff --git a/apps/web/src/layout/boss/BossGatePanel.tsx b/apps/web/src/layout/boss/BossGatePanel.tsx
+index d171a32..aaa252c 100644
+--- a/apps/web/src/layout/boss/BossGatePanel.tsx
++++ b/apps/web/src/layout/boss/BossGatePanel.tsx
+@@ -174,7 +174,7 @@ export function BossGatePanel({
+         </div>
+ 
+         <div className="boss-gate-keys">
+-          <PixelIcon name="key" size={2} title="Cat Key" />
++          <PixelIcon name="key" size={2} />
+           <span>Keys: {state.currencies?.keys ?? 0}</span>
+         </div>
+       </div>
