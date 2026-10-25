@@ -115,6 +115,8 @@ describe('BossGatePanel', () => {
     expect(screen.getByText('Yarn Giant')).toBeTruthy();
     expect(screen.getByText('Chapter 1: Living Room')).toBeTruthy();
     expect(screen.getByText('Keys: 1')).toBeTruthy();
+    expect(screen.queryByRole('img', { name: 'Cat Key' })).toBeNull();
+    expect(screen.getByText('Keys: 1').parentElement?.querySelector('svg')?.getAttribute('aria-hidden')).toBe('true');
   });
 
   it('renders rematch ready status with enabled Rematch button', () => {

@@ -174,7 +174,7 @@ export function BossGatePanel({
         </div>
 
         <div className="boss-gate-keys">
-          <PixelIcon name="key" size={2} title="Cat Key" />
+          <PixelIcon name="key" size={2} />
           <span>Keys: {state.currencies?.keys ?? 0}</span>
         </div>
       </div>

@@ -233,15 +233,16 @@ describe('v2 Interactive Panels accessibility & reduced-motion audit', () => {
       expect(screen.getByText('Pick a class first.')).toBeTruthy();
     });
 
-    it('check 3: boss portrait and key icon have role img and label', () => {
+    it('check 3: boss portrait is labelled and adjacent key icon is decorative', () => {
       const { container } = render(<BossGatePanel {...bossGatePanelProps()} />);
       const portrait = container.querySelector('.boss-portrait-container svg');
       expect(portrait?.getAttribute('role')).toBe('img');
       expect(portrait?.getAttribute('aria-label')).toBe('Yarn Giant');
 
       const keyIcon = container.querySelector('.boss-gate-keys svg');
-      expect(keyIcon?.getAttribute('role')).toBe('img');
-      expect(keyIcon?.getAttribute('aria-label')).toBe('Cat Key');
+      expect(keyIcon?.getAttribute('aria-hidden')).toBe('true');
+      expect(keyIcon?.hasAttribute('aria-label')).toBe(false);
+      expect(screen.getByText(/^Keys: /)).toBeTruthy();
     });
 
     it('check 4: single top h2 heading and no skipped levels', () => {
