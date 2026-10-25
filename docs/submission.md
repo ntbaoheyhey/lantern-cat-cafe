@@ -78,3 +78,28 @@ Without a wallet you can still see the game, but claims, the Forge and the Marke
 ## Team
 
 Built solo for the hackathon, with AI coding assistants. Third-party art and code are credited in the README; project code is MIT licensed.
+
+---
+
+## Cat RPG v2 submission (draft)
+
+> [!NOTE]
+> Draft submission package for Cat RPG v2 (Cat Café Quest). Asset links and final values will be substituted following the V29 cut-over.
+
+### Submission Links (Placeholders)
+
+| Asset | Link / Status |
+| :--- | :--- |
+| **Live Site** | [Live Demo](https://taskbar-hero.vercel.app) *(pending V29 cut-over flag flip)* |
+| **Repository** | [GitHub Repository](https://github.com/ntbaoheyhey/taskbar-hero) *(Repo visibility: user decision D7)* |
+| **Demo Video** | `https://youtu.be/...` *(placeholder, shot plan in docs/video-shotlist-v2.md)* |
+| **Pitch Slides** | `https://...` *(placeholder, outline in docs/pitch-outline.md)* |
+
+### Critical Information
+- **Deadline:** TO CONFIRM (D9: 21 Nov vs 24/25 Nov 2026 23:59 UTC+7; official date unconfirmed between team1vn.xyz and Builder Hub)
+- **Repo visibility:** User decision D7 (recommended public on 19 Nov 2026 after secrets scan; submission on 20 Nov 2026)
+
+### Pre-Submit Verification Checklist
+- [ ] **Private-window link check:** Verify live site, repository, demo video, and slides links resolve in an unauthenticated incognito window.
+- [ ] **Secrets scan:** Run automated secrets scan (git log, environment variables, API keys) prior to flipping repository visibility to public.
+- [ ] **Live health check green:** Verify `node scripts/check-live.mjs` exits 0 with all endpoint and smart contract checks passing.
