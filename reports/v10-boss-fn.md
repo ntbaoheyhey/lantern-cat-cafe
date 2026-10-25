@@ -681,3 +681,21 @@ Exit status 1
 C5d (ai/codex-v6e-levers) edits v2/view/chest.ts and adds boss.firstClearKeys; this card does not touch those files; if C5d merges first, rebase, run pnpm gen:deno and the suite again
 
 Deno is not installed in this environment (`command -v deno` returned no path), so the conditional deno check was not run. The extra TypeScript check above validates the handler and new test; the Deno-only server RPC addition follows the existing wiring pattern. The game-rules suite retains its existing skipped/expected-failure tests; this card adds no skips or expected failures and changes no timeouts. The out-of-scope ChapterMap test failure remains unresolved, and the build is unverified because the required command stopped at pnpm test. No other unresolved implementation questions.
+
+## Publication receipt
+
+PASS — the task branch `ai/codex-v10-boss-fn` was pushed successfully at `199e10f` with this BLOCKED report, as self-check steps 7–8 require. This final report-only commit records the successful push; implementation remains stopped at the outside-allowlist test failure. No report-only fallback branch was needed because implementation work existed and the task branch push succeeded. No PR was opened.
+
+### `git push -u origin ai/codex-v10-boss-fn`
+
+```text
+remote:
+remote: Create a pull request for 'ai/codex-v10-boss-fn' on GitHub by visiting:
+remote:      https://github.com/ntbaoheyhey/taskbar-hero/pull/new/ai/codex-v10-boss-fn
+remote:
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-v10-boss-fn -> ai/codex-v10-boss-fn
+branch 'ai/codex-v10-boss-fn' set up to track 'origin/ai/codex-v10-boss-fn'.
+```
+
+Exit status: 0. GitHub's automatic PR suggestion above was not followed. Status remains BLOCKED; publication does not mean validation passed.
