@@ -1,5 +1,7 @@
 import { useMemo, type CSSProperties, type KeyboardEvent } from 'react';
 import { v2 } from '@taskbar-hero/game-rules';
+import { backdropFor } from '../art/backdrops';
+import { BackdropView } from '../art/backdrops/BackdropView';
 import { V2PixelFrame } from '../art/v2Frames';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import './ChapterMap.css';
@@ -167,7 +169,7 @@ export function ChapterMap({
               isCurrent ? 'v2-map-node--current' : '',
               isCurrent && !prefersReducedMotion ? 'pulse' : '',
               isRematch ? 'v2-map-node--rematch' : '',
-              isLocked ? 'v2-map-node--locked' : '',
+              isLocked ? 'v2-map-node--locked dimmed' : '',
             ]
               .filter(Boolean)
               .join(' ');
@@ -196,6 +198,18 @@ export function ChapterMap({
                     style={{ backgroundColor: themeInfo.color }}
                     aria-hidden="true"
                   />
+
+                  {/* Room thumbnail */}
+                  <div
+                    className={`v2-map-thumb ${isLocked ? 'dimmed' : ''}`}
+                    aria-hidden="true"
+                  >
+                    <BackdropView
+                      art={backdropFor(c.index)}
+                      width={64}
+                      layers="both"
+                    />
+                  </div>
 
                   {/* Main node card content */}
                   <div className="v2-map-node-content">
