@@ -377,3 +377,48 @@ wrote 18 Edge Function import maps
 EXIT 0; runtime 0.33s
 
 ```
+
+## Follow-up: all seven classes recorded (2026-10-26, Asia/Saigon)
+
+User asked for a demo video/images and explicitly requested every character type. Completed: 60.64-second showcase, 7 individual class clips, desktop and mobile walkthroughs (10 H.264 MP4s total), 26 PNG screenshots, captions, offline gallery and an 8 MB ZIP. All 9 capture scenarios passed, with zero console/page errors; every MP4 fully decoded and the ZIP CRC verified. Source and main remain unchanged.
+
+- Media/report branch: ai/codex-demo-media @ 608a52e7007d0caeb67d788257096dfa2e4f797c
+- [Capture report for Claude](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-demo-media/reports/demo-media.md)
+- [All media assets](https://github.com/ntbaoheyhey/taskbar-hero/tree/ai/codex-demo-media/reports/demo-media)
+- Local ZIP: /workspace/taskbar-captures/taskbar-hero-demo-media.zip.
+- Every class is genuinely selected and recorded with current in-game art: Warrior, Guardian, Rogue, Hunter, Archer, Witch, Alchemist. Prepared saves and a 30-second claim advance are labelled; no proposed class art, economy edit or transaction is involved.
+- **Current Site access observation:** get_site reports access_mode=public and policy.access_mode=public. This supersedes the earlier owner-private audience assumption for current access. No sharing setting was changed by this task, and no new recordings were uploaded to that Site. Claude should verify the audience before claiming a future publication is private. Recordings are delivered separately on the review branch and as files.
+
+Full suite skipped for this report/media-only commit: docs only. Media capture, format/decode and archive checks are recorded in its report. Summary checks:
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 716ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.79s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.31s
+
+```
