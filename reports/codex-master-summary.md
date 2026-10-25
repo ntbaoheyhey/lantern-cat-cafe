@@ -177,6 +177,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q3 | DONE | ai/codex-v6f-rebalance | no | D4: NOT READY; growth and boss-check fail strict and relaxed; wait for pacing/classes follow-up. |
 | Q4 | DONE | ai/codex-v19-arena | no | Review viewport screenshots; merge before V16. |
 | Q5 | DONE | ai/codex-v16-stage | no | STACKED ON ai/codex-v19-arena @ 16911ac: merge that first; review screenshots. |
+| Q6 | DONE | ai/codex-v7c-client-contract | no | Manual real JWT/gateway/Fuji checks remain. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
@@ -184,6 +185,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q3: `9d820a0601526c0da515be7d33d43d15aeec77a6`, `reports/v6f-rebalance.md` (DONE).
 - Q4: `16911ac0932a4fdcdaaf811672e2dc3cc9e7a61e`, `reports/v19-arena.md` (DONE).
 - Q5: `fd318c4910e50152fdb0522593762288e76efbda`, `reports/v16-stage.md` (DONE).
+- Q6: `2cbbf7ff81beedb7495b9d638540039c62734907`, `reports/v7c-client-contract.md` (DONE).
 
 ## User must decide on return
 
