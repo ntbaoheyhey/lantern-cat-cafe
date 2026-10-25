@@ -162,7 +162,7 @@ docs/submission.md
 | G1 (A25a) | DONE | ai/antigravity-v27f-a11y-hud | no | Approve Finding A25a-1 fix for BossGatePanel decorative key icon |
 | G2 (A24a) | DONE | ai/antigravity-v27g-guide-text | no | None (docs reflect main) |
 | G3 (A28) | DONE | ai/antigravity-v22-class-looks | no | Review & approve D5 written-look fallbacks in docs/class-looks-fallback.md |
-| G3b (CL7 prep) | NOT STARTED | ai/antigravity-v22-class-previews | no | - |
+| G3b (CL7 prep) | DONE | ai/antigravity-v22-class-previews | no | Review & approve preview sheets in docs/class-looks/ (D3/D5) |
 | G4 (A29) | NOT STARTED | ai/antigravity-v28-qa-checklist | no | - |
 | G5 (A27b) | NOT STARTED | ai/antigravity-submission-v2-draft | no | - |
 | G6 (A24b) | WAITING | ai/antigravity-v27h-guide-shots | no | Needs V16 stage wiring or Codex ai/codex-v16-stage |
@@ -174,9 +174,12 @@ docs/submission.md
 - **G1**: Commit `8f32b45` on `ai/antigravity-v27f-a11y-hud` -> [reports/v27f-a11y-hud.md](file:///Users/bao/taskbar-hero/reports/v27f-a11y-hud.md) (`STATUS: DONE`)
 - **G2**: Commit `2c4a009` on `ai/antigravity-v27g-guide-text` -> [reports/v27g-guide-text.md](file:///Users/bao/taskbar-hero/reports/v27g-guide-text.md) (`STATUS: DONE`)
 - **G3**: Commit `342ac05` on `ai/antigravity-v22-class-looks` -> [reports/v22-class-looks.md](file:///Users/bao/taskbar-hero/reports/v22-class-looks.md) (`STATUS: DONE`)
+- **G3b**: Commit `633f20f` on `ai/antigravity-v22-class-previews` -> [reports/v22-class-previews.md](file:///Users/bao/taskbar-hero/reports/v22-class-previews.md) (`STATUS: DONE`)
 
 ---
 
 ## User must decide on return
 - Finding A25a-1: Remove `title="Cat Key"` from `<PixelIcon name="key" size={2} title="Cat Key" />` in `BossGatePanel.tsx` line 186 to prevent duplicate accessible name announcement next to `<span>Keys: ...</span>`.
 - Decision D5: Review proposed written looks in `docs/class-looks-fallback.md` for any class without custom user reference by 5 Nov 2026.
+- Decision D3 / D5: Review and approve proposed static preview sheets in `docs/class-looks/` (1x and 4x idle and attack frames).
+- Merge order: `ai/antigravity-v22-class-previews` is stacked on `ai/antigravity-v22-class-looks`. Merge `ai/antigravity-v22-class-looks` first, or merge `ai/antigravity-v22-class-previews` which includes both.
