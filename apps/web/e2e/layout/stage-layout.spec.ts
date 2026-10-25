@@ -2,7 +2,8 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
-import { MOCK_V2_STORAGE_KEY } from '../../src/api/MockGameApiV2';
+// Read the exported key without importing the browser adapter and its wallet/JSON dependencies.
+const MOCK_V2_STORAGE_KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 
 // These specs run against the VITE_GAME_V2=1 build (see playwright.config.ts).
 // Screenshots overwrite committed images, so they are only written on request: SCREENSHOTS=1 [SCREENSHOT_DIR=...].
@@ -17,10 +18,11 @@ const VIEWPORTS = [
   { name: '1280', width: 1280, height: 800 },
 ];
 
-test.beforeEach(async ({ page }) => {
-  const save = mockV2SaveJson('midGame', { nowMs: Date.now(), classId: 'warrior' });
+test.beforeEach(async ({ page }, testInfo) => {
+  const save = testInfo.title.startsWith('v2 class choice') ? null : mockV2SaveJson('midGame', { nowMs: Date.now(), classId: 'warrior' });
   await page.addInitScript(({ key, save }) => {
-    if (!window.localStorage.getItem(key)) window.localStorage.setItem(key, save);
+    if (save === null) window.localStorage.removeItem(key);
+    else if (!window.localStorage.getItem(key)) window.localStorage.setItem(key, save);
     window.localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
   }, { key: MOCK_V2_STORAGE_KEY, save });
 });
@@ -127,7 +129,7 @@ test.describe('desktop tabs', () => {
         await expect(tab).toBeFocused();
         await page.keyboard.press(key);
         await expect(tab).toHaveAttribute('aria-selected', 'true');
-        await expect(page.getByRole('tab', { selected: true })).toHaveCount(1);
+        await expect(page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { selected: true })).toHaveCount(1);
         await expect(page.getByRole('tabpanel', { name, exact: true })).toBeVisible();
       }
     }
@@ -160,7 +162,7 @@ test.describe('desktop tabs', () => {
     const chip = page.getByTestId('next-hint').getByRole('button');
     await expect(chip).toBeVisible();
     await chip.click();
-    await expect(page.getByRole('tab', { selected: true })).toHaveCount(1);
+    await expect(page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { selected: true })).toHaveCount(1);
   });
 });
 
@@ -270,9 +272,7 @@ for (const width of [390, 1280]) {
     page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
     await page.setViewportSize({ width, height: width === 390 ? 844 : 720 });
     const nowMs = Date.now();
-    const save = mockV2SaveJson('fresh', { nowMs });
     await page.clock.install({ time: nowMs });
-    await page.addInitScript(({ key, save }) => localStorage.setItem(key, save), { key: MOCK_V2_STORAGE_KEY, save });
     await page.goto('/');
     await expect(page.getByTestId('class-picker')).toBeVisible();
     await page.getByTestId('class-picker-choose-button').click();

@@ -1,4 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+import { sampleStateV2 } from '../../src/layout/sampleState';
+import { mockV2Save } from '../../src/api/mockV2Fixtures';
+const STORAGE_KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+
 
 // Runs in the stage-layout project against the VITE_GAME_V2=1 build (see playwright.config.ts).
 const VIEWPORTS = [
@@ -8,9 +14,16 @@ const VIEWPORTS = [
 ];
 
 test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => {
-    window.localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+  // Preserve the original account and every existing assertion while the UI now loads real saves.
+  const sample = sampleStateV2(), save = mockV2Save('midGame', { nowMs: Date.now(), classId: 'warrior' });
+  Object.assign(save.state, { classId: sample.cat.classId, level: sample.cat.level, xp: sample.cat.xp,
+    ...sample.progress, stacks: { ...sample.materials, fish: sample.currencies.fish, yarn: sample.currencies.yarn, catKey: sample.currencies.keys },
+    items: sample.inventory.map(i => ({ ...i, itemId: i.itemKey, bonusLines: i.bonus, source: 'drop' as const })),
   });
+  await page.addInitScript(({ key, save }) => {
+    window.localStorage.setItem(key, save);
+    window.localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+  }, { key: STORAGE_KEY, save: JSON.stringify(save) });
 });
 
 async function noHorizontalScroll(page: Page): Promise<void> {
