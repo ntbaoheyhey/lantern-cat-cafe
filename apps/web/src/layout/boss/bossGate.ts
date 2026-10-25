@@ -7,14 +7,15 @@ export type BossGateStatusV2 =
   | { kind: 'cooldown'; secondsLeft: number; until: number }
   | { kind: 'not_reached'; chapter: number; roundsLeft: number; killsLeft: number }
   | { kind: 'no_key' }
-  | { kind: 'ready'; rematch: boolean };
+  | { kind: 'ready'; rematch: boolean }
+  | { kind: 'gated'; chapter: number; neededPower: number; roundsLeft: number; killsLeft: number };
 
 /**
  * Calculates the boss gate status for a given chapter and current server time.
  * Mirrors the server's refusal check order exactly:
  * 1. no_class (cat.classId null)
  * 2. cooldown (bosses.cooldownUntil !== null && cooldownUntil > nowS)
- * 3. not_reached (not cleared before and not at the boss of the current chapter)
+ * 3. not_reached / gated (not cleared before and not at the boss of the current chapter; gated when state.progress.gated)
  * 4. no_key (currencies.keys < 1)
  * 5. ready
  */
@@ -51,11 +52,22 @@ export function bossGateStatus(
         state.progress.kills >= killsPerRound;
 
       if (!reached) {
+        const roundsLeft = roundsPerChapter - state.progress.round;
+        const killsLeft = killsPerRound - state.progress.kills;
+        if (state.progress.gated) {
+          return {
+            kind: 'gated',
+            chapter,
+            neededPower: state.progress.neededPower ?? 0,
+            roundsLeft,
+            killsLeft,
+          };
+        }
         return {
           kind: 'not_reached',
           chapter,
-          roundsLeft: roundsPerChapter - state.progress.round,
-          killsLeft: killsPerRound - state.progress.kills,
+          roundsLeft,
+          killsLeft,
         };
       }
     } else {
