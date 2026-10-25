@@ -186,9 +186,10 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q10b | DONE | ai/codex-v20b-relic-wiring | no | STACKED ON V16 fd318c4; USER must perform real Fuji mint/shared-limit/recovery test. |
 | Q11 | DONE | ai/codex-v29-rehearsal | no | STACKED ON Founder 235298d; D8/D6 and every live cut-over step remain USER-only. |
 | Q12 | DONE | ai/codex-v6g-apply-plan-report | no | D4 hard stop: 34 leaves, 26 changes; injected-suite impact documented; proposal NOT READY; no numbers applied; exact proposal path audited. |
-| Q13 | DONE | ai/codex-later-qa-report | no | Both named QA1 findings and the explicitly authorized bulk-equip follow-up DONE; later unnamed findings WAITING; hard stops unchanged. |
+| Q13 | DONE | ai/codex-later-qa-report | no | Three named QA1 findings and the explicitly authorized bulk-equip follow-up DONE; future unnamed findings WAITING; hard stops unchanged. |
 | Q13a | DONE | ai/codex-fix-decorative-key | no | QA1 finding 1 fixed; STACKED ON V16 fd318c4; full final tests and 53 browser tests pass. |
 | Q13b | DONE | ai/codex-fix-sheet-focus | no | QA1 finding 2 fixed; STACKED ON V16 fd318c4; full checks and 53 browser tests pass. |
+| Q13c / C-R2 | DONE | ai/codex-fix-stage-redraw | no | Finding A-R1-1 fixed after eligible Antigravity QA1 evidence; STACKED ON Q9; full checks and 70 browser tests pass. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, [reports/v2-plan-doc.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v2-plan-doc/reports/v2-plan-doc.md) (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, [reports/check-live-v2.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-check-live-v2/reports/check-live-v2.md) (DONE).
@@ -205,7 +206,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q10b: `fd1f75d85b654a3d556b8bd2cd2e44c96564c401`, [reports/v20b-relic-wiring.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v20b-relic-wiring/reports/v20b-relic-wiring.md) (DONE).
 - Q11: `0ca1264f15edf3422935b54340fc3fa5f16d8154`, [reports/v29-rehearsal.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v29-rehearsal/reports/v29-rehearsal.md) (DONE).
 - Q12: `0609f0823984e55bbb8c4a9d10b61e320ceaaade`, [reports/v6g-apply-plan.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v6g-apply-plan-report/reports/v6g-apply-plan.md) (DONE).
-- Q13: `7c26fdc3cf472332c64d6b41e5cfb7d6c79c892a`, [reports/later-qa.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-later-qa-report/reports/later-qa.md) (DONE).
+- Q13: `9169eeee856ec4a9e2aa3e59512980cc24bd3bcd`, [reports/later-qa.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-later-qa-report/reports/later-qa.md) (DONE).
 - Q13a: `096327b7c5f003013a6febabaa02125fce793a49`, [reports/fix-decorative-key.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-decorative-key/reports/fix-decorative-key.md) (DONE).
 - Q13b: `3cfcdb724b7f7d086d2059fba8f1b68bf7f72dd4`, [reports/fix-sheet-focus.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-sheet-focus/reports/fix-sheet-focus.md) (DONE).
 
@@ -518,5 +519,39 @@ $ pnpm gen:deno && git diff --exit-code -- supabase/functions
 wrote 18 Edge Function import maps
 
 EXIT 0; runtime 0.34s
+
+```
+
+Q13 ledger updated at 9169eeee856ec4a9e2aa3e59512980cc24bd3bcd: reports/later-qa.md records the eligible A-R1-1 source, dedicated fix 7760775cd2beae2f87efbcbeef6b849c5ae28a5c, honest first-run harness failure and final all-green checks. Earlier two-finding statements are historical. Its report-only frozen install/generated-map checks pass; full suite skipped: docs only. Responsive final verification remains in progress.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 942ms using pnpm v10.28.0
+
+EXIT 0; runtime 1.01s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.43s
 
 ```
