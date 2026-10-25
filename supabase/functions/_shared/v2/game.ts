@@ -1,3 +1,4 @@
+import { routesForgeV2 } from "./forge.ts";
 import { v2 } from "@taskbar-hero/game-rules";
 import type { TodayRelic } from "@taskbar-hero/api-contract";
 import { dayDate, MIN_CLAIM_INTERVAL_SECONDS } from "../game.ts";
@@ -41,6 +42,12 @@ export interface V2Store {
   chooseClass(playerId: string, classId: string, weaponType: string, starter: unknown[]): Promise<{ status: "ok" } | { error: string }>;
   claim(args: { playerId: string; expectedLastMicros: number; expectedRev: number; nowIso: string; progress: object; stackDeltas: object; caps: object; items: unknown[]; bagLimit: number; dailyKeyDay: string | null }): Promise<Record<string, unknown> | null>;
   equip(playerId: string, itemId: string | null, slot: string, expectedClass: string | null, weaponType: string | null, unlocked: string[]): Promise<{ status: "ok" } | { error: string }>;
+  craft(playerId: string, cost: Record<string, number>, item: object, bagLimit: number): Promise<{ status: "ok"; item: ItemV2Raw } | { error: string; stack?: string }>;
+  salvage(playerId: string, itemIds: string[], gains: Record<string, number>, caps: object): Promise<{ status: "ok"; added: Record<string, number> } | { error: string }>;
+  lock(playerId: string, itemId: string, locked: boolean): Promise<{ status: "ok" } | { error: string }>;
+  relicForge(args: { playerId: string; day: string; relicId: number; rarity: string; yarnCost: number; pearlCost: number; expiresAt: string }): Promise<{ status: "pending" | "new"; voucher: VoucherRowV2 } | { status: "blocked"; reason: string }>;
+  voucherReissue(playerId: string, nonce: string, nowIso: string, expiresAt: string): Promise<VoucherRowV2 | null>;
+  voucherMinted(playerId: string, nonce: string, txHash: string | null): Promise<void>;
   voucherSign(playerId: string, nonce: string, signature: string): Promise<void>;
 }
 export interface V2Deps { store: V2Store; seedSecret: string; now?: () => number; relic?: { signer?: VoucherSigner } }
@@ -130,7 +137,7 @@ export async function chooseClassV2(deps: V2Deps, playerId: string, body: Record
   return view(await load(deps, playerId, nowMs));
 }
 
-export function routesV2(deps: V2Deps): Record<"v2-state" | "v2-claim" | "v2-equip" | "v2-choose-class", (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
+export function routesV2(deps: V2Deps): Record<"v2-state" | "v2-claim" | "v2-equip" | "v2-choose-class" | keyof ReturnType<typeof routesForgeV2>, (playerId: string, body: Record<string, unknown>) => Promise<unknown>> {
   return { "v2-state": player => getStateV2(deps, player), "v2-claim": player => claimV2(deps, player),
-    "v2-equip": (player, body) => equipV2(deps, player, body), "v2-choose-class": (player, body) => chooseClassV2(deps, player, body) };
+    "v2-equip": (player, body) => equipV2(deps, player, body), "v2-choose-class": (player, body) => chooseClassV2(deps, player, body), ...routesForgeV2(deps) };
 }

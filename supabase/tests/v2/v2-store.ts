@@ -17,6 +17,12 @@ export function pgliteV2Store(getDb: () => PGlite): V2Store {
     claim: a => one(`public.v2_claim($1, $2, $3, $4, $5::jsonb, $6::jsonb, $7::jsonb, $8::jsonb, $9, $10)`,
       [a.playerId, a.expectedLastMicros, a.expectedRev, a.nowIso, j(a.progress), j(a.stackDeltas), j(a.caps), j(a.items), a.bagLimit, a.dailyKeyDay]),
     equip: (p, id, slot, cls, wt, unlocked) => one(`public.v2_equip($1, $2, $3, $4, $5, $6::jsonb)`, [p, id, slot, cls, wt, j(unlocked)]),
+    craft: (p, cost, item, bag) => one(`public.v2_craft($1, $2::jsonb, $3::jsonb, $4)`, [p, j(cost), j(item), bag]),
+    salvage: (p, ids, gains, caps) => one(`public.v2_salvage($1, $2::uuid[], $3::jsonb, $4::jsonb)`, [p, ids, j(gains), j(caps)]),
+    lock: (p, id, locked) => one(`public.v2_lock($1, $2, $3)`, [p, id, locked]),
+    relicForge: a => one(`public.v2_relic_forge($1, $2, $3, $4, $5, $6, $7)`, [a.playerId, a.day, a.relicId, a.rarity, a.yarnCost, a.pearlCost, a.expiresAt]),
+    voucherReissue: (p, nonce, now, expires) => one(`public.game_voucher_reissue($1, $2, $3, $4)`, [p, nonce, now, expires]),
+    async voucherMinted(p, nonce, hash) { await one(`public.game_voucher_minted($1, $2, $3)`, [p, nonce, hash]); },
     async voucherSign(p, nonce, signature) { await one(`public.game_voucher_sign($1, $2, $3)`, [p, nonce, signature]); },
   };
 }

@@ -4,7 +4,7 @@ import { verifySessionToken } from "../../../../packages/auth/src/index.ts";
 import fuji from "../../../../packages/chain/deployments/43113.json" with { type: "json" };
 import { json } from "../auth.ts";
 import { GameError } from "../game.ts";
-import { voucherSigner, type VoucherSigner } from "../relic.ts";
+import { fujiReader, voucherSigner, type VoucherSigner } from "../relic.ts";
 import { routesV2, type V2Deps, type V2Store } from "./game.ts";
 import { handlerV2 } from "./http.ts";
 
@@ -33,6 +33,12 @@ export function pgV2Store(): V2Store {
       p_now: a.nowIso, p_progress: a.progress, p_stack_deltas: a.stackDeltas, p_caps: a.caps, p_items: a.items, p_bag_limit: a.bagLimit, p_daily_key_day: a.dailyKeyDay }),
     equip: (playerId, itemId, slot, expectedClass, weaponType, unlocked) => rpc("v2_equip", { p_player: playerId, p_item_id: itemId, p_slot: slot,
       p_expected_class: expectedClass, p_weapon_type: weaponType, p_unlocked: unlocked }),
+    craft: (playerId, cost, item, bagLimit) => rpc("v2_craft", { p_player: playerId, p_cost: cost, p_item: item, p_bag_limit: bagLimit }),
+    salvage: (playerId, itemIds, gains, caps) => rpc("v2_salvage", { p_player: playerId, p_item_ids: itemIds, p_gains: gains, p_caps: caps }),
+    lock: (playerId, itemId, locked) => rpc("v2_lock", { p_player: playerId, p_item_id: itemId, p_locked: locked }),
+    relicForge: a => rpc("v2_relic_forge", { p_player: a.playerId, p_day: a.day, p_relic_id: a.relicId, p_rarity: a.rarity, p_yarn_cost: a.yarnCost, p_pearl_cost: a.pearlCost, p_expires_at: a.expiresAt }),
+    voucherReissue: (playerId, nonce, nowIso, expiresAt) => rpc("game_voucher_reissue", { p_player: playerId, p_nonce: nonce, p_now: nowIso, p_expires_at: expiresAt }),
+    async voucherMinted(playerId, nonce, txHash) { await rpc("game_voucher_minted", { p_player: playerId, p_nonce: nonce, p_tx_hash: txHash }); },
     async voucherSign(playerId, nonce, signature) {
       await rpc("game_voucher_sign", { p_player: playerId, p_nonce: nonce, p_signature: signature });
     },
@@ -46,7 +52,8 @@ export function v2Deps(): V2Deps {
     try { signer = voucherSigner(key.trim(), fuji.RelicNFT as `0x${string}`); }
     catch { console.error("VOUCHER_SIGNER_PRIVATE_KEY is malformed; relic forge disabled"); }
   }
-  return { store: pgV2Store(), seedSecret: Deno.env.get("GAME_SEED_SECRET") || jwtSecret(), relic: { signer } };
+  const relic = { signer, chain: fujiReader(Deno.env.get("FUJI_RPC_URL") || "https://api.avax-test.network/ext/bc/C/rpc", fuji.RelicNFT as `0x${string}`) };
+  return { store: pgV2Store(), seedSecret: Deno.env.get("GAME_SEED_SECRET") || jwtSecret(), relic };
 }
 
 async function authenticate(req: Request): Promise<string> {
