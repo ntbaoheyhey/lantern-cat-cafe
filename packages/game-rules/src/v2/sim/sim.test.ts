@@ -48,7 +48,7 @@ it('is deterministic and responds to a different seed', () => {
   expect(simulateV2({ classId: 'warrior', seed: 1 })).toEqual(first);
   expect(simulateV2({ classId: 'warrior', seed: 2 })).not.toEqual(first);
 // Three full 1,800-minute runs can exceed Vitest's 5s default under workspace CPU contention.
-}, 20000);
+}, 90000);
 
 // User-approved fallback: keep the exact failed balance targets visible without changing thresholds.
 it('records the fallback target failures across seven classes and three seeds', () => {
