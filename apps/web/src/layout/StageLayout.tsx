@@ -11,7 +11,7 @@ import {
 import type { ServerStateV2, BossFightResultV2, GainsV2 } from '../api/GameApiV2';
 import { v2 } from '@taskbar-hero/game-rules';
 import { StageCanvas } from '../game/stage/StageCanvas';
-import { getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
+import { createEquipQueueV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { HudBar } from './hud/HudBar';
 import { ClassPicker } from './classpicker/ClassPicker';
@@ -126,6 +126,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const phone = kind === 'phone';
   const navRef = useRef<HTMLDivElement>(null);
   const loop = getGameLoopV2();
+  const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
   const snapshot = useGameSnapshotV2(loop), mode = useGameModeV2();
   const state = snapshot.state;
   const reducedMotion = usePrefersReducedMotion();
@@ -140,6 +141,8 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const awayRef = useRef(0);
   const offset = useMemo(() => state ? state.serverTime - Date.now() / 1000 : 0, [state?.serverTime]);
   useEffect(() => {
+    const queue = createEquipQueueV2(loop);
+    equipQueue.current = queue;
     try {
       const lastVisit = Number(localStorage.getItem('taskbar-hero:v2-last-visit'));
       if (lastVisit > 0 && lastVisit <= Date.now()) awayRef.current = (Date.now() - lastVisit) / 1000;
@@ -160,7 +163,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
     document.addEventListener('visibilitychange', visibility);
     void loop.start();
     const timer = setInterval(() => setNow(Date.now()), 1000);
-    return () => { saveVisit(); off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
+    return () => { queue.dispose(); if (equipQueue.current === queue) equipQueue.current = null; saveVisit(); off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
   }, [loop]);
   const classId = state?.cat.classId;
   const stats = state && classId ? v2.deriveStats({ classId, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus }))) : null;
@@ -171,7 +174,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
     const result = await loop.fightBoss(selected);
     if (result) { setSheetOpen(false); setFight({ result, chapter: selected, maxHp: stats.hp, firstClear, complete: false }); }
   };
-  const bag = state ? <BagPanel state={state} onEquip={(id, slot) => { void loop.equip(id, slot); }} onToggleLock={(id, locked) => { void loop.setLocked(id, locked); }} /> : null;
+  const bag = state ? <BagPanel state={state} onEquip={(id, slot) => { void equipQueue.current?.equip(id, slot); }} onToggleLock={(id, locked) => { void loop.setLocked(id, locked); }} /> : null;
   const content = !state ? <p>Loading your cat…</p> : tab === 'Inventory' ? bag : tab === 'Boss' ? <>
     <BossGatePanel state={state} chapter={chapter ?? state.progress.chapter} nowS={Math.floor(now / 1000 + offset)} busy={snapshot.busy === 'fightBoss' || fight !== null} onFight={selected => { void fightBoss(selected); }} onSelectChapter={setChapter} />
     <ChapterMap currentChapter={state.progress.chapter} round={state.progress.round} clearedChapters={state.bosses.chapters.filter(c => c.cleared).map(c => c.chapter)} onSelect={setChapter} />

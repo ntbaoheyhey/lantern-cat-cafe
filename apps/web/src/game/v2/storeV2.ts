@@ -22,3 +22,25 @@ export function useGameModeV2() {
   const store = getStageStoreV2();
   return useSyncExternalStore(store.subscribe, store.getMode);
 }
+
+/** Serialize a bag's bulk equip callbacks without changing the loop's busy guard. */
+export function createEquipQueueV2(loop: GameLoopV2) {
+  let tail = Promise.resolve();
+  let generation = 0;
+  let disposed = false;
+  const unsubscribe = loop.subscribe(() => {
+    if (loop.getSnapshot().state === null) generation++;
+  });
+  return {
+    equip(itemId: string, slot: Parameters<GameLoopV2['equip']>[1]): Promise<void> {
+      const queuedGeneration = generation;
+      const next = tail.then(async () => {
+        if (!disposed && queuedGeneration === generation) await loop.equip(itemId, slot);
+      });
+      // A rejected caller still receives its error; later independent requests can recover.
+      tail = next.catch(() => {});
+      return next;
+    },
+    dispose() { disposed = true; unsubscribe(); },
+  };
+}

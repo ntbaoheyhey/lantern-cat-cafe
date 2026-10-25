@@ -10,7 +10,7 @@ import { ARENA_FIXTURES } from '../game/arena/arenaFixtures';
 let stageState: ServerStateV2;
 const stageLoop = vi.hoisted(() => ({ start: vi.fn(async () => {}), stop: vi.fn(), onEvent: () => () => {}, retry: vi.fn(),
   equip: vi.fn(), setLocked: vi.fn(), chooseClass: vi.fn(), craft: vi.fn(), salvage: vi.fn(), fightBoss: vi.fn() }));
-vi.mock('../game/v2/storeV2', () => ({ getGameLoopV2: () => stageLoop,
+vi.mock('../game/v2/storeV2', () => ({ createEquipQueueV2: () => ({ equip: stageLoop.equip, dispose: vi.fn() }), getGameLoopV2: () => stageLoop,
   useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }), useGameModeV2: () => ({ demo: true, notice: null }) }));
 vi.mock('../game/stage/StageCanvas', () => ({ StageCanvas: () => <div data-testid="game-canvas" /> }));
 vi.mock('../game/arena/BossArena', () => ({ BossArena: ({ onDone }: { onDone: () => void }) => <button onClick={onDone}>Complete replay</button> }));
