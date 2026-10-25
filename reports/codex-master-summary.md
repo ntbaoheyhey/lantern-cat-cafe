@@ -174,7 +174,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q0 | DONE | ai/codex-v2-plan-doc | no | none |
 | Q1 | DONE | ai/codex-check-live-v2 | no | Live health not verified: environment network errors; rerun from reachable host. |
 
-- Q0: `09d11294a5c4bd8283af216f1af4528cc747cdde`, `reports/v2-plan-doc.md` (DONE).
+- Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
 
 ## User must decide on return
