@@ -11,10 +11,17 @@ declare const process: { env: Record<string, string | undefined>; stdout: { writ
 declare const performance: { now(): number };
 it.runIf(process.env.V2_SIM_WRITE === '1')('writes docs/proposals/numbers-v2.md', () => {
   const start = performance.now();
-  const run = (overrides = {}) => CLASS_IDS.flatMap((classId) => Array.from({ length: 20 }, (_, index) => simulateV2({ classId, seed: index + 1, overrides })));
+  const run = (overrides = {}, stepMinutes = 2, seeds = 20) => CLASS_IDS.flatMap((classId) => {
+    const runs = Array.from({ length: seeds }, (_, index) => simulateV2({ classId, seed: index + 1, overrides, stepMinutes, maxActiveMinutes: 1800 }));
+    process.stdout.write(`Completed ${classId}, step ${stepMinutes}, ${seeds} seeds; elapsed ${((performance.now() - start) / 1000).toFixed(3)}s\n`);
+    return runs;
+  });
   const current = run();
   process.stdout.write(`Current 7 x 20 runtime: ${((performance.now() - start) / 1000).toFixed(3)}s\n`);
   const proposed = run(PROPOSED_V2_OVERRIDES);
-  writeFileSync(fileURLToPath(new URL('../../../../../docs/proposals/numbers-v2.md', (import.meta as unknown as { url: string }).url)), renderNumbersReportV2(current, proposed));
-  process.stdout.write(`Full 7 x 20 current + proposed runtime: ${((performance.now() - start) / 1000).toFixed(3)}s\n`);
-}, 600_000);
+  const diagnostic = run(PROPOSED_V2_OVERRIDES, 1, 5);
+  if (process.env.V2_SIM_DATA) writeFileSync(process.env.V2_SIM_DATA, JSON.stringify({ current, proposed, diagnostic }));
+  writeFileSync(fileURLToPath(new URL('../../../../../docs/proposals/numbers-v2.md', (import.meta as unknown as { url: string }).url)), renderNumbersReportV2(current, proposed, diagnostic));
+  process.stdout.write(`Full 7 x 20 current + proposed + diagnostic runtime: ${((performance.now() - start) / 1000).toFixed(3)}s\n`);
+  if (performance.now() - start > 600000) process.stdout.write('Report exceeded ten minutes.\n');
+}, 1_200_000);

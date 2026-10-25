@@ -7,6 +7,12 @@ import { checkTargetsV2, craftSalvageCheckV2, medianV2 } from './targets';
 import { PROPOSED_V2_OVERRIDES } from './proposal';
 import { renderNumbersReportV2 } from './report';
 
+// Share the same 21 deterministic runs between target and state assertions.
+let proposedRuns: ReturnType<typeof simulateWithStateForTest>[] | undefined;
+function proposedMatrix() {
+  return proposedRuns ??= CLASS_IDS.flatMap((classId) => [1, 2, 3].map((seed) => simulateWithStateForTest({ classId, seed, overrides: PROPOSED_V2_OVERRIDES })));
+}
+
 // Node provides this global at runtime; the game-rules tsconfig intentionally excludes DOM/Node types.
 declare function structuredClone<T>(value: T): T;
 
@@ -44,10 +50,13 @@ it('is deterministic and responds to a different seed', () => {
 // Three full 1,800-minute runs can exceed Vitest's 5s default under workspace CPU contention.
 }, 20000);
 
-it('meets every target with the proposed overrides, across seven classes and three seeds', () => {
-  const results = CLASS_IDS.flatMap((classId) => [1, 2, 3].map((seed) => simulateV2({ classId, seed, overrides: PROPOSED_V2_OVERRIDES })));
+// User-approved fallback: keep the exact failed balance targets visible without changing thresholds.
+it('records the fallback target failures across seven classes and three seeds', () => {
+  const results = proposedMatrix().map((run) => run.result);
   const checks = checkTargetsV2(results);
-  expect(checks.filter((check) => !check.ok)).toEqual([]);
+  expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["chapter-growth", "class-spread", "chapter-bounds", "boss-check"]);
+  expect(checks.find((check) => check.id === 'walk-share')?.ok).toBe(true);
+  expect(checks.find((check) => check.id === 'guardrails')?.ok).toBe(true);
 }, 60000);
 
 it('detects a six-hour stall with broken monster attack', () => {
@@ -62,8 +71,7 @@ it('crafting then salvaging loses weighted value under current and proposed numb
 });
 
 it('preserves stack and equipment invariants in the final state of every class and seed', () => {
-  for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
-    const { finalState } = simulateWithStateForTest({ classId, seed, overrides: PROPOSED_V2_OVERRIDES });
+  for (const { finalState } of proposedMatrix()) {
     expect(Object.values(finalState.stacks).every((value) => Number.isSafeInteger(value) && value >= 0)).toBe(true);
     for (const slot of GEAR_SLOT_IDS) expect(finalState.items.filter((item) => item.equipped && item.slot === slot).length).toBeLessThanOrEqual(1);
     expect(finalState.items.length).toBeLessThanOrEqual(V2_CONFIG.bag.limit);
@@ -72,7 +80,12 @@ it('preserves stack and equipment invariants in the final state of every class a
 
 it('treats missing milestones as failures and renders the same report twice', () => {
   expect(medianV2([10, null, null])).toBe(Infinity);
-  expect(checkTargetsV2([]).filter((check) => check.id !== 'craft-salvage-loss').every((check) => !check.ok)).toBe(true);
+  expect(checkTargetsV2([]).filter((check) => check.id !== 'craft-salvage-loss' && check.id !== 'guardrails').every((check) => !check.ok)).toBe(true);
   const current = [simulateV2({ classId: 'warrior', seed: 1, maxActiveMinutes: 10 })];
-  expect(renderNumbersReportV2(current, current)).toBe(renderNumbersReportV2(current, current));
+  const report = renderNumbersReportV2(current, current);
+  expect(report).toBe(renderNumbersReportV2(current, current));
+  expect(report).toContain('Proposal only. V2_CONFIG unchanged.');
+  expect(report).toContain('NOT READY FOR SIGN-OFF');
+  expect(report).toContain('User: ____ (approved / changes)');
+  expect(report).toContain('StepMinutes 1 diagnostic');
 });
