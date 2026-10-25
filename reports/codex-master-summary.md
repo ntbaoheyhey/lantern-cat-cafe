@@ -181,6 +181,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q7 | DONE | ai/codex-v10-followups | no | Deno check NOT VERIFIED: unavailable; workflow unchanged. |
 | Q8 | DONE | ai/codex-v29-founder-grant | no | D8: approve contents/cutoff/eligibility; apply_migration BEFORE merge; draft only. |
 | Q9 | BLOCKED | ai/codex-v26-e2e | no | STACKED ON V16 fd318c4. Equip best drops second upgrade; Q9 forbids required product fix; authorize fix card then rerun. |
+| Q10 | DONE | ai/codex-v29-flag-flip | no | STACKED ON V16 fd318c4. D6 hard gate; never merge before cut-over; Q9 bug unresolved; revert code commit 28a5469. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
@@ -192,6 +193,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q7: `a3eac4a46cfc625dec4910ff40b8b4c54611e6b4`, `reports/v10-followups.md` (DONE).
 - Q8: `235298d29595ee5c1851ff80cdb687a5fdcdb172`, `reports/v29-founder.md` (DONE).
 - Q9: `de1e4b64ce3b3d4d981ae13fb3f6f432a635355e`, `reports/v26-e2e.md` (BLOCKED).
+- Q10: `b82ccbaf7c2be588300014c539665f580bf030cb`, `reports/v29-flag-flip.md` (DONE).
 
 ## User must decide on return
 
