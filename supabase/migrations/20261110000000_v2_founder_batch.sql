@@ -14,6 +14,7 @@ declare
   v_entry record;
   v_player record;
   v_result jsonb;
+  v_contents jsonb := '{}'::jsonb;
   v_granted integer := 0;
   v_already bigint;
   v_remaining bigint;
@@ -32,6 +33,8 @@ begin
        or (v_entry.value #>> '{}')::numeric > 9223372036854775807 then
       return jsonb_build_object('error', 'invalid_request');
     end if;
+    -- Normalize whole numeric spellings (for example 1.0) for the existing bigint stack helper.
+    v_contents := v_contents || jsonb_build_object(v_entry.key, (v_entry.value #>> '{}')::numeric::bigint);
   end loop;
   select count(*) into v_already from public.players p
     where p.created_at < p_cutoff and exists (select 1 from public.founder_grants f where f.player_id = p.id);
@@ -42,7 +45,7 @@ begin
     limit greatest(1, least(5000, coalesce(p_limit, 500)))
     for update of p skip locked
   loop
-    select public.v2_grant_founder(v_player.id, p_contents, p_caps) into v_result;
+    select public.v2_grant_founder(v_player.id, v_contents, p_caps) into v_result;
     if v_result ->> 'status' = 'granted' then v_granted := v_granted + 1; end if;
   end loop;
   select count(*) into v_remaining from public.players p

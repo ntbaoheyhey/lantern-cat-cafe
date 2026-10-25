@@ -87,3 +87,9 @@ it('applies V8 plus the additive function and rollback leaves v1 data and routin
   expect((await d.query<{ shards: number }>('select shards from idle_state where player_id = $1', [id])).rows[0]!.shards).toBe(17);
   await d.close();
 });
+
+it('normalizes whole JSON numeric spellings without accepting fractional quantities', async () => {
+  const [id] = await players(1);
+  expect(await call(db, sql, [cutoff, '{"fish":1.0}', '{}', 500])).toMatchObject({ granted: 1 });
+  expect(await stack(db, id!, 'fish')).toBe(1);
+});
