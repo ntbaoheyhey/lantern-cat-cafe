@@ -160,7 +160,7 @@ docs/submission.md
 | card | DONE/PARTIAL/BLOCKED/FAILED/WAITING/DONE-ON-MAIN | branch | merged no | what the user must decide |
 | :--- | :--- | :--- | :--- | :--- |
 | G1 (A25a) | DONE | ai/antigravity-v27f-a11y-hud | no | Approve Finding A25a-1 fix for BossGatePanel decorative key icon |
-| G2 (A24a) | NOT STARTED | ai/antigravity-v27g-guide-text | no | - |
+| G2 (A24a) | DONE | ai/antigravity-v27g-guide-text | no | None (docs reflect main) |
 | G3 (A28) | NOT STARTED | ai/antigravity-v22-class-looks | no | - |
 | G3b (CL7 prep) | NOT STARTED | ai/antigravity-v22-class-previews | no | - |
 | G4 (A29) | NOT STARTED | ai/antigravity-v28-qa-checklist | no | - |
@@ -172,6 +172,7 @@ docs/submission.md
 
 ### Card Details
 - **G1**: Commit `8f32b45` on `ai/antigravity-v27f-a11y-hud` -> [reports/v27f-a11y-hud.md](file:///Users/bao/taskbar-hero/reports/v27f-a11y-hud.md) (`STATUS: DONE`)
+- **G2**: Commit `2c4a009` on `ai/antigravity-v27g-guide-text` -> [reports/v27g-guide-text.md](file:///Users/bao/taskbar-hero/reports/v27g-guide-text.md) (`STATUS: DONE`)
 
 ---
 
