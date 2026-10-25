@@ -1,10 +1,46 @@
-# V6e config levers (C5d)
+STATUS: DONE
 
-**STOPPED — not pushed.** Required workspace tests hit the out-of-scope timing assertion at `supabase/tests/v2/functions-state.test.ts:171`: `expect(elapsed).toBeLessThan(500)`, measured 539.06 ms. The user explicitly requires stopping on a blocking test outside the allowlist. The test is untouched; no timeout/threshold/snapshot was changed or retried. The already-running standalone game-rules suite subsequently also failed two existing 90-second simulator timeouts at `packages/game-rules/src/v2/sim/diagnosis.test.ts:38` and `:46`.
+# C5d / V6e levers — timing fix and completed validation
 
-Branch: `ai/codex-v6e-levers`, based on freshly fetched `origin/main` at `a42765ccd523fc4ceb9632d54b053778be798527`.
+Kept original commits `4d919ff` (golden first) and `b0faaec` (levers). Added only the two authorized timing-test edits and this report in the follow-up commit. All seven original game-rules implementation/test files are byte-identical to `b0faaec`; no lever, config default or golden digest changed in this follow-up.
 
-The new levers preserve production defaults. D1 S-B is supported but not applied: `boss.firstClearKeys` remains 0; `idle.dailyKeys` remains 1 and `idle.walkTimeMs` remains 1000. The numbers proposal remains unsigned. No dependencies, snapshots, content data, simulator files, apps, SQL, or generated import maps changed. No PR or GitHub Actions run was requested or started.
+Blocker: none. Validation round 1 passed after the explicitly authorized timing changes. No second fix round was needed. Branch: `ai/codex-v6e-levers`. No PR, merge, or GitHub Actions run was created. The final branch push follows the report commit.
+
+## Authorized timing changes
+
+| File / test | Old limit | New limit | Other change |
+| --- | --- | --- | --- |
+| `supabase/tests/v2/functions-state.test.ts` — completes an eight-hour claim in under 500 ms | 500 ms | 3000 ms | One comment explaining slow shared machines and runaway-work protection; the existing test title is unchanged as requested. |
+| `packages/game-rules/src/v2/sim/diagnosis.test.ts` — measures the C5b ch4 key wall and zero wait with five daily keys | 90000 ms | 240000 ms | None |
+| `packages/game-rules/src/v2/sim/diagnosis.test.ts` — cleared-chapter key chance is inert on the C5b frontier before ch5 wins | 90000 ms | 240000 ms | None |
+
+No other assertions, timeouts, snapshots or fixtures changed. No test was skipped, disabled, deleted or restricted. `sim.test.ts` and `search.test.ts` were not edited.
+
+The original attempt stopped on these three slow-machine failures: 539.0647439999993 ms against 500 ms at `functions-state.test.ts:171`, and the two named diagnosis tests taking 96108/104852 ms against 90000 ms at lines 38/46. The user then authorized precisely the limits above. The successful replacement runs are recorded in full below.
+
+## Acceptance self-check
+
+The original goal, gates, allowlist, forbidden files and six acceptance items were re-read together with both follow-up instructions. The timing edits above are the only new exceptions to the original file/test restrictions.
+
+| Acceptance item | Result | Evidence |
+| --- | --- | --- |
+| Initial gates on freshly fetched origin/main: unsigned/unapplied numbers, expected chapter/boss data, absent levers | PASS | Gate output below; final fetch still points to the same base `a42765ccd523fc4ceb9632d54b053778be798527`. |
+| 0/1. Golden test committed first on original production code; same digests after levers | PASS | Original 22-test baseline output below; current levers.test.ts passes 26 tests, including all unchanged golden fixtures. |
+| 2. Existing behavior, content snapshot and generated content docs remain identical | PASS, with authorized timing exceptions | Focused 140 tests and both full suites pass. Docs/snapshots have no diff. Existing skips/expected failures remain unchanged. |
+| 3. First-clear key only, same other rewards/RNG, rematch unchanged, spend-before-credit, 5-key cap and loot-view key | PASS | Levers tests passed for all chapters/classes/seeds; no logic changes in this follow-up. |
+| 4. Chapter-three 12-kill override is read at call time, claim progresses through kill 12, restores 10 | PASS | Levers tests passed. |
+| 5. Chapter-two HP/ATK overrides affect only that boss, with correct ratio/rounding and restoration | PASS | Levers tests passed. |
+| 6. Array lengths equal CHAPTERS.length; exact defaults and archetype agreement | PASS | config.test.ts and focused suite passed. |
+| No existing config value or content data changed; firstClearKeys stays 0 | PASS | Frozen-code check below; default golden/config tests pass. |
+| No dependency, lock/workspace, app, SQL, runtime sim or forbidden view edits | PASS | Final allowlist check and protected diffs. Only the explicitly authorized simulator/Supabase test files are added to scope. |
+| Real root install, deno drift, typecheck, lint, full pnpm test and build | PASS | Complete output and exit statuses below. |
+| Extra card checks: standalone game-rules and focused suites, original protected-file command | PASS, authorized exception documented | The original protected-file diff exits 1 only for the two allowed diagnosis timeout changes. Excluding that file exits 0 with no output. |
+| Conditional web Playwright e2e | PASS | Full `cd apps/web && pnpm test:e2e` output below, with unchanged config/test selection. |
+| Author, allowlist and task-only delivery | PASS | Final Git verification section; required Git identity; push only the task branch. |
+
+## NOT verified / continuation
+
+No live deployment, live Supabase service test or applied balance-number search/sign-off was performed. C5e search and CL8 application remain separate cards. Forge tests and chain ABI generation were not applicable: there are no contract or chain changes. Verification ran on this branch against the fetched main base; scripts/verify-pr.sh was read and its applicable checks executed directly, without a PR or merge worktree. All required applicable checks ran; none were omitted. No additional authorization is needed to continue this card.
 
 ## Gate and Git setup
 
@@ -110,80 +146,31 @@ Content before = `cb3a4b19`; after = `cb3a4b19`.
 
 To apply S-B set `boss.firstClearKeys: 1`; the server needs no SQL change because `v2_boss_fight` credits the first-clear chest stacks after spending the key. Read-only verification: `supabase/migrations/20261101000000_v2_cat_rpg.sql:489–491` selects first/rematch, debits catKey, then applies chest stacks with caps. Apply only separately signed chapter and boss values in CL8.
 
-Merge note: touches packages/game-rules only (v2/view/chest.ts among them); disjoint from C12's view files; merge in the same functions batch as C12, C5d first. The only file outside game-rules is this requested report.
+Original lever-only merge note: touches packages/game-rules only (v2/view/chest.ts among them); disjoint from C12's view files; merge in the same functions batch as C12, C5d first. That original implementation scope excluded other code; this follow-up also includes the explicitly authorized Supabase timing test.
 
-Uncertainties: the timing failure cause has not been established. The standalone game-rules suite overlapped the recursive workspace checks on this shared worker, so CPU contention may have contributed. There is no baseline timing comparison proving that explanation. The two simulator failures are the 90000 ms timeouts for “measures the C5b ch4 key wall and zero wait with five daily keys” (96108 ms) and “cleared-chapter key chance is inert on the C5b frontier before ch5 wins” (104852 ms). Full game-rules runtime: 302.85 s. No behavioral expectation changed; the threshold is unchanged. No out-of-scope edits or reruns were attempted after the stop. C5e search/guardrail decisions and CL8 signed values remain future work. The present defaults and content/docs equality are covered by unchanged tests and protected-file diff checks.
 
-## Command output
-
-Commands run from the repository root. Corepack resolves the pinned pnpm 10.28.0. The system shim directory was not writable, so `corepack enable --install-directory /tmp/v6e-bin` supplied shims and `/tmp/v6e-bin` was prepended to PATH. The first noninteractive install aborted before dependency removal; the retry uses `CI=true` and succeeds with the frozen lockfile. No dependencies or lock/workspace files changed.
+## Follow-up source and scope verification
 
 ```text
-$ pnpm install --frozen-lockfile (initial noninteractive attempt)
-Scope: all 7 workspace projects
- ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY  Aborted removal of modules directory due to no TTY
-
-If you are running pnpm in CI, set the CI environment variable to "true".
+PASS unchanged since b0faaec: packages/game-rules/src/v2/config.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/config.test.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/content/chapters.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/content/monsters.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/combat/stage.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/view/chest.ts
+PASS unchanged since b0faaec: packages/game-rules/src/v2/levers.test.ts
+PASS diagnosis.test.ts: exactly two timeout replacements, 90000 -> 240000
+PASS functions-state.test.ts: exactly the authorized 500 -> 3000 and one comment
 ```
 
-```text
-$ CI=true pnpm install --frozen-lockfile
-Scope: all 7 workspace projects
-Recreating /workspace/taskbar-hero/node_modules
-Lockfile is up to date, resolution step is skipped
-Progress: resolved 1, reused 0, downloaded 0, added 0
-Packages: +506
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Progress: resolved 506, reused 0, downloaded 0, added 0
-Progress: resolved 506, reused 0, downloaded 3, added 3
-Progress: resolved 506, reused 0, downloaded 4, added 3
-Progress: resolved 506, reused 0, downloaded 18, added 3
-Progress: resolved 506, reused 0, downloaded 19, added 3
-Progress: resolved 506, reused 0, downloaded 29, added 7
-Progress: resolved 506, reused 0, downloaded 47, added 55
-Progress: resolved 506, reused 0, downloaded 64, added 72
-Progress: resolved 506, reused 0, downloaded 77, added 85
-Progress: resolved 506, reused 0, downloaded 90, added 98
-Progress: resolved 506, reused 0, downloaded 107, added 115
-Progress: resolved 506, reused 0, downloaded 120, added 127
-Progress: resolved 506, reused 0, downloaded 135, added 142
-Progress: resolved 506, reused 0, downloaded 148, added 156
-Progress: resolved 506, reused 0, downloaded 163, added 171
-Progress: resolved 506, reused 0, downloaded 180, added 185
-Progress: resolved 506, reused 0, downloaded 203, added 211
-Progress: resolved 506, reused 0, downloaded 213, added 221
-Progress: resolved 506, reused 0, downloaded 225, added 234
-Progress: resolved 506, reused 0, downloaded 248, added 257
-Progress: resolved 506, reused 0, downloaded 265, added 274
-Progress: resolved 506, reused 0, downloaded 280, added 289
-Progress: resolved 506, reused 0, downloaded 299, added 308
-Progress: resolved 506, reused 0, downloaded 309, added 308
-Progress: resolved 506, reused 0, downloaded 335, added 344
-Progress: resolved 506, reused 0, downloaded 353, added 362
-Progress: resolved 506, reused 0, downloaded 373, added 381
-Progress: resolved 506, reused 0, downloaded 385, added 394
-Progress: resolved 506, reused 0, downloaded 400, added 409
-Progress: resolved 506, reused 0, downloaded 410, added 419
-Progress: resolved 506, reused 0, downloaded 430, added 439
-Progress: resolved 506, reused 0, downloaded 445, added 454
-Progress: resolved 506, reused 0, downloaded 463, added 472
-Progress: resolved 506, reused 0, downloaded 467, added 474
-Progress: resolved 506, reused 0, downloaded 481, added 476
-Progress: resolved 506, reused 0, downloaded 497, added 506, done
+## Actual command output — successful follow-up
 
-╭ Warning ─────────────────────────────────────────────────────────────────────╮
-│                                                                              │
-│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
-│   utf-8-validate@5.0.10.                                                     │
-│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
-│   to run scripts.                                                            │
-│                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
-Done in 46.7s using pnpm v10.28.0
-```
+All root checks ran from `/workspace/taskbar-hero`, sequentially (the repo's recursive commands retain their own normal package concurrency). Corepack used pnpm 10.28.0 through `/tmp/v6e-bin` with `CI=true`. The original standalone suite is not run concurrently with `pnpm test` in this follow-up. No dependencies were added. Browser setup used `pnpm exec playwright install chromium` and the ordinary writable user cache because `/opt/pw-browsers` was absent and `/opt` is not writable by this session. The unchanged Playwright config supports this default browser lookup.
+
+Original unmodified-production golden baseline (commit `4d919ff`):
 
 ```text
-$ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts (commit 1; original production code)
+$ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts
 
  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
 
@@ -196,6 +183,47 @@ $ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts (
 ```
 
 ```text
+$ pnpm --version
+10.28.0
+
+[exit 0; wall time 1.667 s]
+```
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 6.4s using pnpm v10.28.0
+
+[exit 0; wall time 6.702 s]
+```
+
+```text
+$ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts
+
+ RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
+
+
+ Test Files  1 passed (1)
+      Tests  26 passed (26)
+   Start at  06:48:24
+   Duration  2.40s (tests 59%, transform 28%, import 13%, worker 1%)
+
+
+[exit 0; wall time 5.445 s]
+```
+
+```text
 $ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts src/v2/config.test.ts src/v2/content src/v2/view src/v2/combat src/v2/idle src/v2/state
 
  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
@@ -203,14 +231,15 @@ $ pnpm --filter @taskbar-hero/game-rules exec vitest run src/v2/levers.test.ts s
 
  Test Files  8 passed (8)
       Tests  140 passed (140)
-   Start at  06:35:25
-   Duration  4.66s (tests 73%, import 17%, transform 8%, worker 2%)
+   Start at  06:48:29
+   Duration  16.53s (tests 73%, transform 14%, import 12%, worker 1%)
 
-    Isolate  8 workers spawned · ~206ms startup each (spawn + environment, per file)
-             at least ~1.44s faster with isolate: false — reuses workers across files instead of one per file
+    Isolate  8 workers spawned · ~593ms startup each (spawn + environment, per file)
+             at least ~4.15s faster with isolate: false — reuses workers across files instead of one per file
 
+
+[exit 0; wall time 19.034 s]
 ```
-
 
 ```text
 $ pnpm --filter @taskbar-hero/game-rules test
@@ -221,50 +250,15 @@ $ pnpm --filter @taskbar-hero/game-rules test
 
  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
 
- ❯ src/v2/sim/diagnosis.test.ts (5 tests | 2 failed) 207161ms
-   × measures the C5b ch4 key wall and zero wait with five daily keys 96108ms
-   × cleared-chapter key chance is inert on the C5b frontier before ch5 wins 104852ms
 
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
-
- FAIL  src/v2/sim/diagnosis.test.ts > measures the C5b ch4 key wall and zero wait with five daily keys
-Error: Test timed out in 90000ms.
-If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
- ❯ src/v2/sim/diagnosis.test.ts:38:1
-     36|   }
-     37| }, 60000);
-     38| it('measures the C5b ch4 key wall and zero wait with five daily keys',…
-       | ^
-     39|   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
-     40|     const baseline = c5b(classId, seed);
-
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
-
- FAIL  src/v2/sim/diagnosis.test.ts > cleared-chapter key chance is inert on the C5b frontier before ch5 wins
-Error: Test timed out in 90000ms.
-If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
- ❯ src/v2/sim/diagnosis.test.ts:46:1
-     44|   }
-     45| }, 90000);
-     46| it('cleared-chapter key chance is inert on the C5b frontier before ch5…
-       | ^
-     47|   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
-     48|     const run = (chance: number) => simulateV2({ classId, seed, overri…
-
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+ Test Files  19 passed | 2 skipped (21)
+      Tests  325 passed | 2 expected fail | 4 skipped (331)
+   Start at  06:48:48
+   Duration  194.22s (tests 99%, import 1%)
 
 
- Test Files  1 failed | 18 passed | 2 skipped (21)
-      Tests  2 failed | 323 passed | 2 expected fail | 4 skipped (331)
-   Start at  06:35:31
-   Duration  302.85s (tests 99%, import 1%)
-
-/workspace/taskbar-hero/packages/game-rules:
- ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
-Exit status 1
+[exit 0; wall time 196.659 s]
 ```
-
-Full game-rules suite exit 1: 18 files passed, 1 failed, 2 skipped; 323 tests passed, 2 timed out, 2 expected fail, 4 skipped. Runtime 302.85 seconds. Existing tests and timeouts were untouched.
 
 ```text
 $ pnpm gen:deno && git diff --exit-code -- supabase/functions
@@ -273,18 +267,46 @@ $ pnpm gen:deno && git diff --exit-code -- supabase/functions
 > node scripts/gen-deno-json.mjs
 
 wrote 17 Edge Function import maps
-```
 
-Exit 0; generated files have no diff.
+[exit 0; wall time 0.648 s]
+```
 
 ```text
 $ git diff --exit-code origin/main -- docs/content-v2.md packages/game-rules/src/v2/content/__snapshots__ packages/game-rules/src/v2/sim pnpm-lock.yaml
+diff --git a/packages/game-rules/src/v2/sim/diagnosis.test.ts b/packages/game-rules/src/v2/sim/diagnosis.test.ts
+index e51f9ea..49c4e3e 100644
+--- a/packages/game-rules/src/v2/sim/diagnosis.test.ts
++++ b/packages/game-rules/src/v2/sim/diagnosis.test.ts
+@@ -42,13 +42,13 @@ it('measures the C5b ch4 key wall and zero wait with five daily keys', () => {
+     const scenario = simulateV2({ classId, seed, overrides: C5B_V2_OVERRIDES, scenario: 'S-A' });
+     expect(Object.values(scenario.keyWaitMinutes)).toEqual([0, 0, 0, 0, 0]);
+   }
+-}, 90000);
++}, 240000);
+ it('cleared-chapter key chance is inert on the C5b frontier before ch5 wins', () => {
+   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
+     const run = (chance: number) => simulateV2({ classId, seed, overrides: { ...C5B_V2_OVERRIDES, idle: { ...C5B_V2_OVERRIDES.idle, clearedChapterKeyChance: chance } } });
+     expect(run(1 / 150)).toEqual(c5b(classId, seed));
+   }
+-}, 90000);
++}, 240000);
+ it('S-B refunds exactly one key on first clears and none on repeats', () => {
+   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
+     for (const chapter of [1, 2, 3, 4, 5]) {
+
+[exit 1; wall time 0.008 s]
 ```
 
-Exit 0; no output. `pnpm-workspace.yaml` is also unchanged.
+Expected exit 1: only the two newly authorized diagnosis.test.ts timeout edits. The next diff checks all other protected files and exits 0.
 
 ```text
-$ pnpm typecheck && pnpm lint && pnpm test && pnpm build
+$ git diff --exit-code origin/main -- docs/content-v2.md packages/game-rules/src/v2/content/__snapshots__ packages/game-rules/src/v2/sim pnpm-lock.yaml pnpm-workspace.yaml ':!packages/game-rules/src/v2/sim/diagnosis.test.ts'
+
+[exit 0; wall time 0.008 s]
+```
+
+```text
+$ pnpm typecheck
 
 > taskbar-hero@0.0.0 typecheck /workspace/taskbar-hero
 > pnpm -r typecheck
@@ -294,21 +316,27 @@ packages/auth typecheck$ tsc --noEmit
 packages/chain typecheck$ tsc --noEmit
 packages/chain typecheck: Done
 packages/game-rules typecheck$ tsc --noEmit
-packages/game-rules typecheck: Done
-supabase/tests typecheck$ tsc --noEmit
 packages/auth typecheck: Done
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck: Done
 supabase/tests typecheck: Done
 packages/api-contract typecheck$ tsc --noEmit
 packages/api-contract typecheck: Done
 apps/web typecheck$ tsc --noEmit
 apps/web typecheck: Done
 
+[exit 0; wall time 36.542 s]
+```
+
+```text
+$ pnpm lint
+
 > taskbar-hero@0.0.0 lint /workspace/taskbar-hero
 > pnpm -r lint
 
 Scope: 6 of 7 workspace projects
-packages/chain lint$ tsc --noEmit
 packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
 packages/chain lint: Done
 packages/game-rules lint$ tsc --noEmit
 packages/auth lint: Done
@@ -320,59 +348,237 @@ packages/api-contract lint: Done
 apps/web lint$ tsc --noEmit
 apps/web lint: Done
 
+[exit 0; wall time 47.216 s]
+```
+
+```text
+$ pnpm test
+
 > taskbar-hero@0.0.0 test /workspace/taskbar-hero
 > pnpm -r test
 
 Scope: 6 of 7 workspace projects
 packages/auth test$ vitest run
 packages/chain test$ vitest run
-packages/auth test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/auth
 packages/chain test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/chain
+packages/auth test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/auth
 packages/chain test:  Test Files  2 passed (2)
 packages/chain test:       Tests  7 passed (7)
-packages/chain test:    Start at  06:37:22
-packages/chain test:    Duration  980ms (import 73%, transform 12%, tests 8%, worker 7%)
-packages/chain test:     Isolate  2 workers spawned · ~335ms startup each (spawn + environment, per file)
-packages/chain test:              at least ~335ms faster with isolate: false — reuses workers across files instead of one per file
+packages/chain test:    Start at  06:53:29
+packages/chain test:    Duration  915ms (import 54%, tests 19%, transform 16%, worker 10%)
+packages/chain test:     Isolate  2 workers spawned · ~322ms startup each (spawn + environment, per file)
+packages/chain test:              at least ~322ms faster with isolate: false — reuses workers across files instead of one per file
 packages/chain test: Done
 packages/game-rules test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
 packages/auth test:  Test Files  1 passed (1)
 packages/auth test:       Tests  24 passed (24)
-packages/auth test:    Start at  06:37:22
-packages/auth test:    Duration  1.95s (import 68%, tests 27%, transform 5%)
+packages/auth test:    Start at  06:53:29
+packages/auth test:    Duration  1.91s (import 71%, tests 25%, transform 3%, worker 1%)
 packages/auth test: Done
 supabase/tests test$ vitest run
-packages/game-rules test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
 supabase/tests test:  RUN  v5.0.5 /workspace/taskbar-hero/supabase/tests
-supabase/tests test: stdout | v2/functions-state.test.ts > v2 Edge Function logic over migrated SQL > completes an eight-hour claim in under 500 ms
-supabase/tests test: V9 eight-hour claim: 539.06 ms
-supabase/tests test:  ❯ v2/functions-state.test.ts (15 tests | 1 failed) 7831ms
-supabase/tests test:    ❯ v2 Edge Function logic over migrated SQL (9)
-supabase/tests test:      × completes an eight-hour claim in under 500 ms 711ms
-supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
-supabase/tests test:  FAIL  v2/functions-state.test.ts > v2 Edge Function logic over migrated SQL > completes an eight-hour claim in under 500 ms
-supabase/tests test: AssertionError: expected 539.0647439999993 to be less than 500
-supabase/tests test:  ❯ v2/functions-state.test.ts:171:21
-supabase/tests test:     169|     const elapsed = performance.now() - start;
-supabase/tests test:     170|     console.log(`V9 eight-hour claim: ${elapsed.toFixed(2)} ms`);
-supabase/tests test:     171|     expect(elapsed).toBeLessThan(500);
-supabase/tests test:        |                     ^
-supabase/tests test:     172|   });
-supabase/tests test:     173| });
-supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
-supabase/tests test:  Test Files  1 failed | 16 passed (17)
-supabase/tests test:       Tests  1 failed | 371 passed (372)
-supabase/tests test:    Start at  06:37:25
-supabase/tests test:    Duration  177.92s (tests 88%, import 11%, transform 1%)
-supabase/tests test: Failed
-/workspace/taskbar-hero/supabase/tests:
- ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run`
-Exit status 1
- ELIFECYCLE  Test failed. See above for more details.
+supabase/tests test:  Test Files  17 passed (17)
+supabase/tests test:       Tests  372 passed (372)
+supabase/tests test:    Start at  06:53:32
+supabase/tests test:    Duration  122.25s (tests 91%, import 9%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  19 passed | 2 skipped (21)
+packages/game-rules test:       Tests  325 passed | 2 expected fail | 4 skipped (331)
+packages/game-rules test:    Start at  06:53:31
+packages/game-rules test:    Duration  217.81s (tests 99%, import 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  06:57:10
+packages/api-contract test:    Duration  878ms (transform 78%, import 17%, tests 4%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /workspace/taskbar-hero/apps/web
+apps/web test:  Test Files  66 passed (66)
+apps/web test:       Tests  965 passed (965)
+apps/web test:    Start at  06:57:11
+apps/web test:    Duration  158.89s (environment 57%, tests 30%, import 11%, transform 1%)
+apps/web test: Environment  jsdom was created 66 times · 80.83s total, 57% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+[exit 0; wall time 383.612 s]
 ```
 
-Exit 1: typecheck and lint passed. Recursive tests failed the protected Supabase timing assertion; the remaining package work was stopped by pnpm's recursive failure. The `&&` chain did not reach build. No separate build or retry was started after the mandatory stop. The complete emitted output is above, including the failing local suite.
+```text
+$ pnpm build
 
-## Delivery status
+> taskbar-hero@0.0.0 build /workspace/taskbar-hero
+> pnpm -r build
 
-The golden-only commit is `4d919ff` (its final baseline run is logged above). The second local commit contains the levers, appended tests and this report. All edits are within the eight-file allowlist. No push, PR, or Actions run: the mandatory all-checks-pass precondition for pushing is unmet. Work stops for the user to review the out-of-scope test blockers; no test changes are proposed here.
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/chain build: Done
+packages/game-rules build$ tsc --noEmit
+packages/auth build: Done
+supabase/tests build$ tsc --noEmit
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/workspace/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1724 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.05 kB │ gzip:   0.76 kB
+apps/web build: dist/assets/index-C0PSJB46.css               38.76 kB │ gzip:   7.94 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/index-3HvjOvZI.js               132.19 kB │ gzip:  38.61 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 1.58s
+apps/web build: Done
+
+[exit 0; wall time 37.453 s]
+```
+
+Browser setup (outside the repository; no package/lockfile changes):
+
+```text
+$ cd apps/web && pnpm exec playwright install chromium
+Downloading Chrome for Testing 156.0.8078.4 (playwright chromium v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-linux64.zip
+|                                                                                |   0% of 191.1 MiB
+|■■■■■■■■                                                                        |  10% of 191.1 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 191.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 191.1 MiB
+Chrome for Testing 156.0.8078.4 (playwright chromium v1248) downloaded to /home/agent/.cache/ms-playwright/chromium-1248
+Downloading FFmpeg (playwright ffmpeg v1013) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip
+|                                                                                |   0% of 2.2 MiB
+|■■■■■■■■                                                                        |  10% of 2.2 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+FFmpeg (playwright ffmpeg v1013) downloaded to /home/agent/.cache/ms-playwright/ffmpeg-1013
+Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+|                                                                                |   0% of 120 MiB
+|■■■■■■■■                                                                        |  10% of 120 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/agent/.cache/ms-playwright/chromium_headless_shell-1248
+
+[exit 0]
+```
+
+```text
+$ cd apps/web && pnpm test:e2e
+
+> @taskbar-hero/web@0.0.0 test:e2e /workspace/taskbar-hero/apps/web
+> playwright test
+
+[WebServer] (node:4503) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/workspace/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:4579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 47 tests using 1 worker
+(node:4615) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··························(node:5013) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·····················
+  47 passed (1.7m)
+
+[exit 0; wall time 103.930 s]
+```
+
+## Final Git verification
+
+The final fetch, committed-file allowlist/stat and author command output is recorded below before delivery.
+
+Recorded after committing all code/test changes, before appending this verification output to the report (so the report line count below is from that committed version):
+
+```text
+$ git fetch origin +main:refs/remotes/origin/main && git diff --name-only origin/main...HEAD
+packages/game-rules/src/v2/combat/stage.ts
+packages/game-rules/src/v2/config.test.ts
+packages/game-rules/src/v2/config.ts
+packages/game-rules/src/v2/content/chapters.ts
+packages/game-rules/src/v2/content/monsters.ts
+packages/game-rules/src/v2/levers.test.ts
+packages/game-rules/src/v2/sim/diagnosis.test.ts
+packages/game-rules/src/v2/view/chest.ts
+reports/v6e-levers.md
+supabase/tests/v2/functions-state.test.ts
+[exit 0]
+
+$ git rev-parse origin/main
+a42765ccd523fc4ceb9632d54b053778be798527
+[exit 0]
+
+$ git diff --stat origin/main...HEAD
+ packages/game-rules/src/v2/combat/stage.ts       |   4 +-
+ packages/game-rules/src/v2/config.test.ts        |  19 +
+ packages/game-rules/src/v2/config.ts             |  11 +
+ packages/game-rules/src/v2/content/chapters.ts   |   3 +-
+ packages/game-rules/src/v2/content/monsters.ts   |   2 +-
+ packages/game-rules/src/v2/levers.test.ts        | 247 +++++++++++
+ packages/game-rules/src/v2/sim/diagnosis.test.ts |   4 +-
+ packages/game-rules/src/v2/view/chest.ts         |   3 +
+ reports/v6e-levers.md                            | 530 +++++++++++++++++++++++
+ supabase/tests/v2/functions-state.test.ts        |   3 +-
+ 10 files changed, 820 insertions(+), 6 deletions(-)
+[exit 0]
+
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+[exit 0]
+
+$ git diff --exit-code -- docs/content-v2.md
+[exit 0]
+
+$ git diff --check origin/main...HEAD
+[exit 0]
+
+$ git status --short
+[exit 0]
+
+PASS: exactly the ten authorized files across the full branch.
+PASS: follow-up changes only the two timing-test files and report.
+PASS: all three commits have the required author.
+```
