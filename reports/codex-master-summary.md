@@ -422,3 +422,50 @@ wrote 18 Edge Function import maps
 EXIT 0; runtime 0.31s
 
 ```
+
+## Temporary responsive coordination (2026-10-26)
+
+The user authorized Codex to plan work for Codex and Antigravity while preserving Claude's rules, requested flexible window resizing, and explicitly required a Claude review report. Automatic new Codex chats are user-authorized; Antigravity is manual paste. Tool inventory exposes no create_thread, so no new chat was created or work falsely delegated.
+
+- C-R1: PARTIAL on ai/codex-responsive-window @ b2d52be, stacked on completed Q9 33481ce. HUD wrapping/geometry fix passes focused tests; all unit/build/type/lint checks pass. Final browser run: 68 passed, 2 failed on the stronger actor-redraw test. Do not merge as green or stack implementation on this PARTIAL branch.
+- [Claude report](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/reports/responsive-window.md)
+- [Coordination plan](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/responsive-coordination.md)
+- [Antigravity manual-paste prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/antigravity-responsive-qa.md)
+- [Future Codex review prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/codex-responsive-review.md)
+- Actor redraw blocker: StageScene.create calls show while Phaser status is CREATING; show refuses sys.isActive=false. Phaser only sets RUNNING and emits CREATE after create returns. Initial render can remain absent until state changes. Fix needs StageScene.ts and lifecycle/resize regression scope beyond C-R1's CSS-only source allowlist. S5 stop obeyed; failed test retained. Scoped user authorization requested for a separate renderer card, alternatively eligible Antigravity QA1 evidence can unlock a future fix. No renderer edit or unapproved implementation stacking occurred.
+- Antigravity can inspect PARTIAL source read-only and report named QA1 findings, physical-device/WebKit/zoom limits, without stacking or merging it. Independent reviews remain WAITING, not marked DONE.
+- New documents/report link check passed: 4 markdown files, 3 paths. Original approved plan and all D-gates remain unchanged. No deployment/main/PR/live mutation.
+
+Summary docs-only checks:
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 740ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.82s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.33s
+
+```
