@@ -33,16 +33,17 @@ Once running, navigate to `http://localhost:5173` in any desktop browser (Chrome
 | Step | Time | Screen / Feature | Exact Action / Clicks | What the Viewer Should Notice | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | 0:00 - 0:30 | **App Shell & Game Stage** | Open `http://localhost:5173`. Point out top bar, HUD, and the main stage. | Stage renders Chapter 1 (Living Room). HUD displays Fish, Yarn, and Cat Keys. Cat sprite animates ambiently on the large canvas. | Live on main |
-| **2** | 0:30 - 1:00 | **Class Selection** | Open ClassPicker. Select **Warrior** (or **Rogue**). Click **Choose Class** -> **Confirm**. | Class card displays weapon type, stat leanings, and passive (**Cleave** / **Twin Strike**). Starter weapon equips automatically. | *(pending V16/V19)* |
+| **2** | 0:30 - 1:00 | **Class Selection** | Open ClassPicker. Select **Warrior** (or **Rogue**). Click **Choose Class** -> **Confirm**. | Class card displays weapon type, stat leanings, and passive (**Cleave** / **Twin Strike**). Starter weapon equips automatically. | Verified (V16/V19 stack) |
 | **3** | 1:00 - 1:30 | **Ambient Idle Combat** | Watch combat on the main stage as rounds progress. | Cat engages regular monsters (Dust Bunny, Loose Yarn, Sock Puppet) and the Elite (Roomba Scout) at 6 kills per round. Attack cadence (1,000 ms) and passives animate cleanly. | Live on main |
 | **4** | 1:30 - 2:05 | **Inventory & Bag Panel** | Click **Inventory** tab. Select an item in the bag. Click **Equip best**. | Character panel shows 9 slots (5 main unlocked at Lv 1, accessories unlocking at Lv 5, 10, 20). Bag counter reads `Bag X / 200`. Item compare displays exact stat deltas (+HP, +ATK). **Equip best** equips optimal upgrades instantly. | Live on main |
-| **5** | 2:05 - 2:40 | **The Forge** | Click **Forge** tab. Select **Craft** -> Slot **Weapon** -> Rarity **Uncommon**. Click **Craft** -> **Confirm**. | Recipe cost displays 150 Fish, 25 Yarn, 8 Fluff Tuft, 1 Shiny Button. Crafted item gains guaranteed Uncommon rarity with item level from highest stage. Switch to **Salvage** to show ~25% material recovery. | *(pending V16/V19)* |
-| **6** | 2:40 - 3:15 | **Boss Battle** | Click **Boss** tab at Round 10. Check 1 Cat Key requirement. Click **Fight**. | Chapter 1 Boss **Yarn Giant** appears. Boss telegraphs attacks every 1,500 ms (400 ms windup) and big slams every 6,000 ms (1,000 ms windup, 2.5x damage). | *(pending V16/V19)* |
-| **7** | 3:15 - 3:50 | **Victory & Chest Opening** | Watch boss defeat animation. Open **First-Clear Chest**. | Exactly 1 Cat Key is consumed on victory. First-Clear Chest awards **1 Moon Pearl (100% drop)**, 400 Fish, 20 Yarn, materials, and guaranteed gear items. Frontier advances to Chapter 2. | *(pending V16/V19)* |
-| **8** | 3:50 - 4:20 | **World Chapter Map** | Open the **Chapter Map**. Point out chapter progression nodes. | Chapter 1 shows a green checkmark (cleared & available for rematch). Chapter 2 (Kitchen) pulses as active. Chapters 3–5 show padlock frames. | *(pending V16/V19)* |
+| **5** | 2:05 - 2:40 | **The Forge** | Click **Forge** tab. Select **Craft** -> Slot **Weapon** -> Rarity **Uncommon**. Click **Craft** -> **Confirm**. | Recipe cost displays 150 Fish, 25 Yarn, 8 Fluff Tuft, 1 Shiny Button. Crafted item gains guaranteed Uncommon rarity with item level from highest stage. Switch to **Salvage** to show ~25% material recovery. | Verified (V16/V19 stack) |
+| **6** | 2:40 - 3:15 | **Boss Battle** | Click **Boss** tab at Round 10. Check 1 Cat Key requirement. Click **Fight**. | Chapter 1 Boss **Yarn Giant** appears in the Phaser arena. Boss telegraphs attacks every 1,500 ms (400 ms windup) and big slams every 6,000 ms (1,000 ms windup, 2.5x damage). | Verified (V16/V19 stack) |
+| **7** | 3:15 - 3:50 | **Victory & Chest Opening** | Watch boss defeat animation. Open **First-Clear Chest**. | Exactly 1 Cat Key is consumed on victory. First-Clear Chest awards **1 Moon Pearl (100% drop)**, 400 Fish, 20 Yarn, materials, and guaranteed gear items. Frontier advances to Chapter 2. | Verified (V16/V19 stack) |
+| **8** | 3:50 - 4:20 | **World Chapter Map** | Open the **Chapter Map** inside the Boss tab. Point out chapter progression nodes. | Chapter 1 shows a green checkmark (cleared & available for rematch). Chapter 2 (Kitchen) pulses as active. Chapters 3–5 show padlock frames. | Verified (V16/V19 stack) |
 | **9** | 4:20 - 4:45 | **Session Persistence** | Press **Reload** (`Cmd+R` / `F5`) in the browser. | Game reloads instantly. Cat class, inventory items, currencies, and cleared chapter progress persist seamlessly from local storage. | Live on main |
 
-*(pending V16/V19)*: These steps feature components whose UI integration into `apps/web/src/layout/StageLayout.tsx` is pending the V16/V19 layout and boss integration tasks.
+> [!NOTE]
+> All steps (1–9) are fully verified on the V16/V19 integrated stack (`ai/codex-v16-stage`), exercising the real Phaser arena, stage canvas, class picker, inventory, forge, boss gate, and chest reveal.
 
 ---
 
@@ -53,7 +54,7 @@ Once running, navigate to `http://localhost:5173` in any desktop browser (Chrome
 - **Spoken Narration**:
   > *"Judges, Taskbar Hero v2 expands our zero-gas ambient RPG into a full-fledged chapter-based adventure called Cat Café Quest. Running comfortably in the browser while you work, your cat hero battles through 5 household chapters—from the Living Room to the Night Rooftops. Notice the top bar displaying our real-time HUD counters for Fish, Yarn, and Cat Keys, alongside the large pixel-art game stage."*
 
-### Scene 2: Picking a Class (0:30 - 1:00) — *(pending V16/V19)*
+### Scene 2: Picking a Class (0:30 - 1:00)
 - **Presenter Action**: Open the ClassPicker (`ClassPicker.tsx`). Highlight the Warrior and Rogue cards. Click **Choose Warrior**, then **Confirm**.
 - **Spoken Narration**:
   > *"We start by selecting our hero's class from 7 distinct archetypes. Each class brings unique base stat leanings, dedicated weapon families, and passive combat traits. For instance, the Warrior wields a Sword and splashes 50% damage every 3 attacks with Cleave, while the Rogue strikes twice per attack with high crit. When we choose a class, the game immediately equips our matching starter weapon—the Twig Sword."*
@@ -68,23 +69,23 @@ Once running, navigate to `http://localhost:5173` in any desktop browser (Chrome
 - **Spoken Narration**:
   > *"In the Inventory tab, our Character Panel displays 9 equipment slots. Five main slots show directly on our cat's sprite, while four accessory slots unlock as our cat levels up to Level 5, 10, and 20. The Bag holds up to 200 items. Clicking 'Equip best' evaluates all gear in our bag against our active class weapon, automatically equipping the combination that maximizes our overall power rating."*
 
-### Scene 5: The Forge & Smart Economy (2:05 - 2:40) — *(pending V16/V19)*
+### Scene 5: The Forge & Smart Economy (2:05 - 2:40)
 - **Presenter Action**: Switch to the **Forge** tab (`ForgePanel.tsx`). Select Craft, choose an Uncommon Armor piece, and confirm. Show the Salvage tab.
 - **Spoken Narration**:
   > *"The Forge gives players deterministic progression. Rather than relying solely on random drops, we can spend Fish, Yarn, and tier materials to forge guaranteed rarities with item levels scaled to our highest cleared stage. In the Salvage tab, unwanted items can be dismantled for crafting materials. Salvaging returns approximately 25% of the crafting material cost and zero Fish, ensuring craft-then-salvage always loses value and prevents infinite economy exploits."*
 
-### Scene 6: The Chapter Boss & Deterministic Combat (2:40 - 3:15) — *(pending V16/V19)*
+### Scene 6: The Chapter Boss & Deterministic Combat (2:40 - 3:15)
 - **Presenter Action**: Switch to the **Boss** tab at Round 10. Click **Fight**.
 - **Spoken Narration**:
   > *"At Round 10, we unlock the chapter climax: the Yarn Giant. Boss fights require 1 Cat Key, but keys are consumed only if we win. The combat simulation runs deterministically: normal boss attacks land every 1,500 ms, punctuated by a telegraphed heavy slam every 6,000 ms dealing 2.5x damage. If we lose, our key is preserved and a single 60-second cooldown protects server sanity across all chapters."*
 
-### Scene 7: Victory & First-Clear Chest Rewards (3:15 - 3:50) — *(pending V16/V19)*
+### Scene 7: Victory & First-Clear Chest Rewards (3:15 - 3:50)
 - **Presenter Action**: Show the victory banner and open the First-Clear Chest.
 - **Spoken Narration**:
   > *"Victory! Defeating the Yarn Giant consumes our Cat Key and opens the Chapter 1 First-Clear Chest. This guarantees 1 Moon Pearl—our prized daily Relic ingredient—along with 400 Fish, 20 Yarn, tier materials, and guaranteed gear drops. Even if our bag had been completely full at 200 items, the engine automatically salvages overflowing drops on the spot so rewards are never lost. Winning unlocks Chapter 2: The Kitchen."*
 
-### Scene 8: The World Chapter Map (3:50 - 4:20) — *(pending V16/V19)*
-- **Presenter Action**: Display the ChapterMap (`ChapterMap.tsx`).
+### Scene 8: The World Chapter Map (3:50 - 4:20)
+- **Presenter Action**: Display the ChapterMap (`ChapterMap.tsx`) inside the Boss tab.
 - **Spoken Narration**:
   > *"The Chapter Map visualizes our journey across the 5 quest environments. Chapter 1 now shows a green checkmark, indicating it is cleared and ready for repeat boss rematches for bonus materials. Chapter 2 is active and pulsing, while Chapters 3 through 5 remain locked behind future boss conquests."*
 
@@ -110,7 +111,7 @@ Once running, navigate to `http://localhost:5173` in any desktop browser (Chrome
 >      location.reload();
 >      ```
 > 2. **Demo Storage Key Name**:
->    Cat RPG v2 demo state storage key: `(see MockGameApiV2)` *(Note: MockGameApiV2 at apps/web/src/api/MockGameApiV2.ts is scheduled for implementation in V28; v1 demo mode uses in-memory defaults with `taskbar-hero.howToPlaySeen` in localStorage)*.
+>    Cat RPG v2 demo state storage key: `taskbar-hero:v2-demo:1` (defined as `MOCK_V2_STORAGE_KEY` in `apps/web/src/api/MockGameApiV2.ts`). Classic v1 mode uses in-memory defaults with `taskbar-hero.howToPlaySeen` in `localStorage`.
 > 3. **UI Layout Mode**:
 >    If the layout appears in compact strip mode instead of the full stage layout, click **Mini mode** in the top bar or verify that the window width is at least 1024px.
 > 4. **Flag Check**:
