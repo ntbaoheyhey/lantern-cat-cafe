@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
+import { stageHeight, stageZoom } from '../../src/layout/metrics';
 import fs from 'node:fs';
 import path from 'node:path';
 const KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
@@ -37,13 +38,16 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
     expect(await page.evaluate(() => performance.timeOrigin)).toBe(timeOrigin);
     const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
     await expect(canvas).toHaveCount(1);
-    await expect.poll(() => canvas.evaluate(element => {
-      const c = element as HTMLCanvasElement;
+    const logicalWidth = Math.max(160, Math.floor(width! / stageZoom(width!, stageHeight(width!, height!))));
+    await expect.poll(() => canvas.evaluateAll((elements, expectedWidth) => {
+      if (elements.length !== 1) return false;
+      const c = elements[0] as HTMLCanvasElement;
+      if (c.width !== expectedWidth || c.height !== 96) return false;
       const pixels = c.getContext('2d')?.getImageData(0, 0, c.width, c.height).data;
       if (!pixels) return false;
       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
       return false;
-    }), { message: 'stage actors redraw after resizing' }).toBe(true);
+    }, logicalWidth), { message: 'stage actors redraw after resizing' }).toBe(true);
     if (width! <= 600) {
       await page.getByRole('tab', { name: 'Forge', exact: true }).click();
       await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();

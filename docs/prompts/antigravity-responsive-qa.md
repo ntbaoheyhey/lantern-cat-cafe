@@ -1,3 +1,5 @@
+> A-R1 was completed at 9980b46c01f60dc41975975f6166e99cff16b918 with a PARTIAL verdict and named Finding A-R1-1. This original prompt is retained for history. For the fixed source, use [A-R2 retest](antigravity-responsive-retest.md).
+
 # Paste into Antigravity: A-R1 responsive QA
 
 You are doing independent responsive-window QA for ntbaoheyhey/taskbar-hero. The user made Codex temporary coordinator and will paste this prompt manually. Preserve your original Claude instructions; this is a bounded additional card, not permission to override them.
