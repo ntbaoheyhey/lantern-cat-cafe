@@ -1,3 +1,4 @@
+import { V2_CONFIG } from '../config';
 import { MONSTERS, type MonsterDef } from './monsters';
 
 export interface ChapterDef {
@@ -36,7 +37,7 @@ export const CHAPTERS: readonly ChapterDef[] = NAMES.map((name, i) => {
     elite: byKind(index, 'elite')[0] ?? '',
     boss: byKind(index, 'boss')[0] ?? '',
     // Chapter 1 is short so the first boss arrives in about 10 minutes.
-    killsPerRound: index === 1 ? 6 : 10,
+    get killsPerRound() { return V2_CONFIG.chapters.killsPerRound[index - 1]!; },
     roundsPerChapter: 10,
     chests: { firstClear: `chest.ch${index}.first`, repeat: `chest.ch${index}.repeat` },
   };

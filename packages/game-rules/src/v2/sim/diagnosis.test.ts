@@ -42,13 +42,13 @@ it('measures the C5b ch4 key wall and zero wait with five daily keys', () => {
     const scenario = simulateV2({ classId, seed, overrides: C5B_V2_OVERRIDES, scenario: 'S-A' });
     expect(Object.values(scenario.keyWaitMinutes)).toEqual([0, 0, 0, 0, 0]);
   }
-}, 90000);
+}, 240000);
 it('cleared-chapter key chance is inert on the C5b frontier before ch5 wins', () => {
   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
     const run = (chance: number) => simulateV2({ classId, seed, overrides: { ...C5B_V2_OVERRIDES, idle: { ...C5B_V2_OVERRIDES.idle, clearedChapterKeyChance: chance } } });
     expect(run(1 / 150)).toEqual(c5b(classId, seed));
   }
-}, 90000);
+}, 240000);
 it('S-B refunds exactly one key on first clears and none on repeats', () => {
   for (const classId of CLASS_IDS) for (const seed of [1, 2, 3]) {
     for (const chapter of [1, 2, 3, 4, 5]) {

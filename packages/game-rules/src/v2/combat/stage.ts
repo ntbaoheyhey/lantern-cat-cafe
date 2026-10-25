@@ -32,6 +32,8 @@ export function monsterAt(monster: MonsterDef | string, stage: number): MonsterS
 export function bossOfChapter(chapter: number): BossDef {
   const ch = CHAPTERS.find((c) => c.index === chapter);
   if (!ch) throw new Error(`Unknown chapter: ${chapter}`);
-  const s = monsterAt(ch.boss, stageOf(chapter, ch.roundsPerChapter));
+  const def = MONSTER_BY_ID.get(ch.boss)!;
+  const s = monsterAt({ ...def, hpMul: V2_CONFIG.boss.chapterHpMul[chapter - 1]!,
+    atkMul: V2_CONFIG.boss.chapterAtkMul[chapter - 1]! }, stageOf(chapter, ch.roundsPerChapter));
   return { id: ch.boss, hp: s.hp, atk: s.atk, def: s.def, attackIntervalMs: V2_CONFIG.boss.attackIntervalMs };
 }
