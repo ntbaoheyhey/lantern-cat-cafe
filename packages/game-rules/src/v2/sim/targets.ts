@@ -29,7 +29,7 @@ export function checkTargetsV2(results: SimResultV2[], overrides: ConfigOverride
   const checks: TargetCheckV2[] = [];
   const groups = CLASS_IDS.map((id) => ({ id, runs: results.filter((r) => r.classId === id) }));
   const first = groups.map(({ id, runs }) => ({ id, value: medianV2(runs.map((r) => r.minutesToFirstBossWin)) }));
-  checks.push({ id: 'first-boss', ok: first.every((r) => r.value >= 10 && r.value <= 15), detail: first.map((r) => `${r.id} ${format(r.value, 0, 'm')}`).join('; ') });
+  checks.push({ id: 'first-boss', ok: first.every((r) => r.value >= 10 && r.value <= 15), detail: first.map((r) => `${r.id} ${format(r.value, 1, 'm')}`).join('; ') });
   const growth = groups.flatMap(({ id, runs }) => CHAPTERS.slice(1).map((ch) => {
     const previous = medianV2(runs.map((r) => r.minutesPerChapter[ch.index - 1]!));
     const current = medianV2(runs.map((r) => r.minutesPerChapter[ch.index]!));
@@ -46,7 +46,7 @@ export function checkTargetsV2(results: SimResultV2[], overrides: ConfigOverride
   });
   checks.push({ id: 'class-spread', ok: ranges.every((r) => Number.isFinite(r.ratio) && r.ratio >= 0.03) && spread.every((r) => Number.isFinite(r.deviation) && Math.abs(r.deviation) <= 0.15 + 1e-10), detail: ranges.map((r) => `${r.id} range ${format(r.ratio * 100, 1, '%')}`).join('; ') + '; ' + spread.map((r) => `${r.id} ${format(r.deviation * 100, 1, '%')}`).join('; ') });
   const bounds = groups.flatMap(({ id, runs }) => CHAPTERS.map((ch) => ({ id: `${id} ch${ch.index}`, value: medianV2(runs.map((r) => r.minutesPerChapter[ch.index]!)) })));
-  checks.push({ id: 'chapter-bounds', ok: bounds.every((r) => r.value >= 10 && r.value <= 360), detail: bounds.map((r) => `${r.id} ${format(r.value, 0, 'm')}`).join('; ') });
+  checks.push({ id: 'chapter-bounds', ok: bounds.every((r) => r.value >= 10 && r.value <= 360), detail: bounds.map((r) => `${r.id} ${format(r.value, 1, 'm')}`).join('; ') });
   const stuck = results.filter((r) => r.stuck);
   checks.push({ id: 'never-stuck', ok: results.length > 0 && stuck.length === 0, detail: `${stuck.length}/${results.length} runs stuck` });
   checks.push(craftSalvageCheckV2());

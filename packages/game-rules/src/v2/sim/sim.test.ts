@@ -54,7 +54,7 @@ it('is deterministic and responds to a different seed', () => {
 it('records the fallback target failures across seven classes and three seeds', () => {
   const results = proposedMatrix().map((run) => run.result);
   const checks = checkTargetsV2(results);
-  expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["chapter-growth", "class-spread", "chapter-bounds", "boss-check"]);
+  expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["first-boss", "chapter-growth", "class-spread", "chapter-bounds", "boss-check"]);
   expect(checks.find((check) => check.id === 'walk-share')?.ok).toBe(true);
   expect(checks.find((check) => check.id === 'guardrails')?.ok).toBe(true);
 }, 60000);

@@ -1,9 +1,10 @@
 import { rollLoot } from '../../loot';
 import { Rng } from '../../rng';
-import { bestLoadout, compareItems } from '../bag';
+import { bestLoadout, deriveBagStats, type BagItem } from '../bag';
 import { CHESTS, CHAPTERS, GEAR_SLOTS, GEAR_RARITIES, ITEMS, SMART_LOOT, STATS, BONUS_LINE_RANGES, CLASSES, RECIPES, type ClassId } from '../content';
 import { V2_CONFIG } from '../config';
-import { salvage, craftBlock } from '../forge';
+import { powerRating } from '../combat';
+import { salvage, craftBlock, craft } from '../forge';
 import { emptyState, chooseClass, addItems, equip, applyCraft } from '../state';
 import type { PlayerStateV2, StateResultV2, OwnedItem, StacksV2 } from '../state/types';
 
@@ -25,26 +26,35 @@ export function equipBestV2(state: PlayerStateV2): PlayerStateV2 {
 }
 /** Preview the actual deterministic craft roll, without spending; choose the highest rarity then best slot. */
 export function craftBestV2(state: PlayerStateV2, seed: number, now: number): { state: PlayerStateV2; crafted: boolean } {
-  if (state.items.length >= V2_CONFIG.bag.limit) return { state, crafted: false };
+  if (state.items.length >= V2_CONFIG.bag.limit || !state.classId || !Number.isFinite(seed) || !Number.isFinite(now)) return { state, crafted: false };
+  const cat = { classId: state.classId, level: state.level };
+  const equipped = state.items.filter((item) => item.equipped);
+  const powerBefore = powerRating(deriveBagStats(cat, equipped));
+  const forgeState = { stacks: state.stacks, lastRelicDay: -1 };
+  const weapon = CLASSES.find((entry) => entry.id === state.classId)!.weaponType;
   for (const recipe of [...RECIPES].reverse()) {
-    let best: ReturnType<typeof applyCraft> | undefined;
+    let bestSlot: string | undefined;
     let gain = 0;
     for (const slot of GEAR_SLOTS.filter((entry) => entry.unlockLevel <= state.level)) {
-      if (craftBlock({ stacks: state.stacks, lastRelicDay: -1 }, recipe.id, slot.id)) continue;
-      const trial = applyCraft(state, recipe.id, slot.id, seed, now);
-      if (!trial.ok) continue;
-      const comparison = compareItems({ classId: state.classId!, level: state.level }, state.items.filter((item) => item.equipped), trial.item);
-      if (comparison.powerAfter - comparison.powerBefore > gain) {
-        gain = comparison.powerAfter - comparison.powerBefore;
-        best = trial;
+      if (craftBlock(forgeState, recipe.id, slot.id)) continue;
+      // The pure production roll avoids cloning the entire bag for rejected previews.
+      // Instance ids do not affect stats; the chosen craft still uses applyCraft's real id.
+      const rolled = craft(forgeState, recipe.id, slot.id, weapon, state.bestStage, seed).item;
+      const candidate: BagItem = { id: 'sim:craft-preview', itemKey: rolled.itemKey,
+        slot: rolled.slot, rarity: rolled.rarity, level: rolled.itemLevel, bonus: rolled.bonusLines,
+        ...(rolled.weaponType ? { weaponType: rolled.weaponType } : {}), locked: false, equipped: false };
+      const powerAfter = powerRating(deriveBagStats(cat, [...equipped.filter((item) => item.slot !== candidate.slot), candidate]));
+      if (powerAfter - powerBefore > gain) {
+        gain = powerAfter - powerBefore;
+        bestSlot = slot.id;
       }
     }
-    if (best?.ok) return { state: best.state, crafted: true };
+    if (bestSlot) return { state: accepted(applyCraft(state, recipe.id, bestSlot, seed, now)).state, crafted: true };
   }
   return { state, crafted: false };
 }
 /** No view helper exists on the base revision. Mirrors idle gearDrop with chest group restrictions. */
-export function rollSimChestV2(state: PlayerStateV2, seed: number): { stackDeltas: StacksV2; items: OwnedItem[] } {
+export function rollSimChestV2(state: PlayerStateV2, seed: number, options: { firstClearKeyRefund?: boolean } = {}): { stackDeltas: StacksV2; items: OwnedItem[] } {
   const chapter = CHAPTERS.find((entry) => entry.index === state.chapter)!;
   const rewards = rollLoot(CHESTS, state.bossClears[state.chapter] ? chapter.chests.repeat : chapter.chests.firstClear, seed);
   const rng = new Rng(seed);
@@ -77,5 +87,6 @@ export function rollSimChestV2(state: PlayerStateV2, seed: number): { stackDelta
       level: Math.max(1, Math.min(rarity.maxLevel, state.chapter * chapter.roundsPerChapter)), bonus, bonusLines: bonus,
       locked: false, equipped: false, source: 'chest' });
   }
+  if (options.firstClearKeyRefund && !state.bossClears[state.chapter]) stackDeltas.catKey = (stackDeltas.catKey ?? 0) + 1;
   return { stackDeltas, items };
 }
