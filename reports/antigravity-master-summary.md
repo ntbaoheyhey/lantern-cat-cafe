@@ -163,7 +163,7 @@ docs/submission.md
 | G2 (A24a) | DONE | ai/antigravity-v27g-guide-text | no | None (docs reflect main) |
 | G3 (A28) | DONE | ai/antigravity-v22-class-looks | no | Review & approve D5 written-look fallbacks in docs/class-looks-fallback.md |
 | G3b (CL7 prep) | DONE | ai/antigravity-v22-class-previews | no | Review & approve preview sheets in docs/class-looks/ (D3/D5) |
-| G4 (A29) | NOT STARTED | ai/antigravity-v28-qa-checklist | no | - |
+| G4 (A29) | DONE | ai/antigravity-v28-qa-checklist | no | None (scripted procedure ready for QA1/V28) |
 | G5 (A27b) | NOT STARTED | ai/antigravity-submission-v2-draft | no | - |
 | G6 (A24b) | WAITING | ai/antigravity-v27h-guide-shots | no | Needs V16 stage wiring or Codex ai/codex-v16-stage |
 | G7 (A25) | WAITING | ai/antigravity-v27i-a11y-stage | no | Needs V16 + V19 or Codex ai/codex-v16-stage |
@@ -175,6 +175,7 @@ docs/submission.md
 - **G2**: Commit `2c4a009` on `ai/antigravity-v27g-guide-text` -> [reports/v27g-guide-text.md](file:///Users/bao/taskbar-hero/reports/v27g-guide-text.md) (`STATUS: DONE`)
 - **G3**: Commit `342ac05` on `ai/antigravity-v22-class-looks` -> [reports/v22-class-looks.md](file:///Users/bao/taskbar-hero/reports/v22-class-looks.md) (`STATUS: DONE`)
 - **G3b**: Commit `633f20f` on `ai/antigravity-v22-class-previews` -> [reports/v22-class-previews.md](file:///Users/bao/taskbar-hero/reports/v22-class-previews.md) (`STATUS: DONE`)
+- **G4**: Commit `5349a42` on `ai/antigravity-v28-qa-checklist` -> [reports/v28-qa-checklist.md](file:///Users/bao/taskbar-hero/reports/v28-qa-checklist.md) (`STATUS: DONE`)
 
 ---
 
