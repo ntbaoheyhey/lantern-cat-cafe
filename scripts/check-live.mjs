@@ -2,10 +2,11 @@
 // Live health check for the deployed Taskbar Hero (docs/runbook.md). Dependency-free, Node 20+.
 // Read-only: GET requests, anonymous POSTs that must be refused, and eth_call on Fuji.
 // Usage: node scripts/check-live.mjs
-// Optional overrides (names only): SITE_URL, SUPABASE_URL, FUJI_RPC_URL.
+// Optional overrides (names only): SITE_URL, SUPABASE_URL, FUJI_RPC_URL, CHECK_LIVE_V2.
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { V2_MARKER, v2FunctionNames, classifyAnonPost, classifyPreflight, moduleScriptsFromHtml, bundleUsesRealApi, v2MarkerVerdict } from './check-live-v2.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = (process.env.SITE_URL || 'https://web-zeta-tan-13.vercel.app').replace(/\/$/, '');
@@ -24,6 +25,10 @@ const addressOf = (name) => {
 
 let failed = 0;
 function report(ok, name, detail = '') {
+  if (ok === 'skip') {
+    console.log(`SKIP ${name}${detail ? ` - ${detail}` : ''}`);
+    return;
+  }
   if (!ok) failed++;
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` - ${detail}` : ''}`);
 }
@@ -138,6 +143,65 @@ if (nft && market) {
     const a = addr(await call(market, '0x60c9c82b'));
     if (a !== nft.toLowerCase()) throw new Error(`points at ${a}`);
   });
+}
+
+// 5. v2 readiness before/after the cut-over. The v1 sections above stay unchanged.
+const v2Mode = process.env.CHECK_LIVE_V2 ?? 'pre';
+if (!['pre', 'post', 'off'].includes(v2Mode)) {
+  report(false, 'CHECK_LIVE_V2 mode', 'expected pre, post or off');
+} else if (v2Mode !== 'off') {
+  let functions = [];
+  await check('v2 function folders', async () => {
+    functions = v2FunctionNames(join(root, 'supabase/functions'));
+    if (!functions.length) throw new Error('no v2 function folders');
+    return `${functions.length} folders`;
+  });
+  for (const fn of functions) {
+    await check(`function ${fn} refuses anonymous POST`, async () => {
+      const res = await fetchT(`${SUPABASE}/functions/v1/${fn}`, {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}',
+      });
+      const verdict = classifyAnonPost(res.status, await res.json().catch(() => null));
+      if (!verdict.ok) throw new Error(verdict.detail);
+      return verdict.detail;
+    });
+    await check(`function ${fn} CORS preflight`, async () => {
+      const res = await fetchT(`${SUPABASE}/functions/v1/${fn}`, {
+        method: 'OPTIONS', headers: { Origin: SITE, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' },
+      });
+      const verdict = classifyPreflight(res.status, res.headers, SITE);
+      if (!verdict.ok) throw new Error(verdict.detail);
+      return verdict.detail;
+    });
+  }
+  let bundle;
+  await check('live bundle uses the real API', async () => {
+    const page = await fetchT(`${SITE}/`);
+    if (!page.ok) throw new Error(`HTML HTTP ${page.status}`);
+    const scripts = moduleScriptsFromHtml(await page.text(), SITE);
+    if (!scripts.length) throw new Error('no same-origin /assets/*.js module scripts');
+    const chunks = [];
+    for (const url of scripts) {
+      // Reject redirects to keep every fetched module on the validated origin/path.
+      const res = await fetchT(url, { redirect: 'error' });
+      if (!res.ok) throw new Error(`module HTTP ${res.status}`);
+      chunks.push(await res.text());
+    }
+    bundle = chunks.join('\n');
+    if (!bundleUsesRealApi(bundle, SUPABASE)) throw new Error('bundle has no Supabase URL: mock API?');
+    return `${scripts.length} module script(s)`;
+  });
+  if (!V2_MARKER) {
+    report('skip', 'live bundle v2 flag', 'no v2-only marker (see reports/check-live-v2.md)');
+  } else {
+    await check('live bundle v2 flag', async () => {
+      if (bundle === undefined) throw new Error('bundle unavailable');
+      if (v2MarkerVerdict(bundle, V2_MARKER, v2Mode) !== 'pass') {
+        throw new Error(`${v2Mode}: expected marker ${V2_MARKER} ${v2Mode === 'post' ? 'present' : 'absent'}`);
+      }
+      return `${v2Mode}: marker ${V2_MARKER} ${v2Mode === 'post' ? 'present' : 'absent'}`;
+    });
+  }
 }
 
 console.log(`\n${failed === 0 ? 'ALL CHECKS PASSED' : `${failed} CHECK(S) FAILED`}`);

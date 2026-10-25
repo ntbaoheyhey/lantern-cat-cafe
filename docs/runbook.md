@@ -12,6 +12,8 @@ Node 20 or newer, no install. It prints PASS or FAIL per check and exits non-zer
 
 Optional overrides: `SITE_URL`, `SUPABASE_URL`, `FUJI_RPC_URL`. If a run behind a proxy shows `fetch failed`, the machine cannot reach the host (on Node 22 try `NODE_USE_ENV_PROXY=1`).
 
+The v2 section discovers every `v2-*` function folder and requires anonymous POSTs to return 401 (reported as function or gateway), plus a successful CORS preflight for the site. It also checks the live module bundle for the configured Supabase host. `CHECK_LIVE_V2=pre` is the default before cut-over; `CHECK_LIVE_V2=post` checks after the flag flip; `CHECK_LIVE_V2=off` runs only the original checks. The flag check uses a marker verified against local flag-off/on builds, or prints SKIP if no unique marker exists (see [the check report](../reports/check-live-v2.md)). Run with `CHECK_LIVE_V2=post` after the cut-over flag flip. A v2 404 means "not deployed" and fails the check.
+
 Reading a failure:
 
 | Failing check | Likely cause | Go to |
