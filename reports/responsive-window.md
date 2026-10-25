@@ -174,3 +174,7 @@ EXIT 1; runtime 106.55s
  reports/responsive-window/light-390-844.png  | Bin 0 -> 32600 bytes
  13 files changed, 161 insertions(+), 1 deletion(-)
 ```
+
+## User decision after the blocker
+
+The user answered: “Keep scope; let Antigravity document it first.” C-R1 remains PARTIAL. Do not edit StageScene/StageCanvas or broaden this card. A-R1 is the next action: independent read-only reproduction and a named dated QA1 finding. A renderer fix remains WAITING on that eligible evidence under the original Q13 rules. No new renderer approval is pending, and no generic continuation should be treated as permission to bypass this decision.

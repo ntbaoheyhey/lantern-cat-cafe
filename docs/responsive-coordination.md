@@ -39,3 +39,7 @@ Review C-R1 diff/evidence, A-R1 independent findings and any separately authoriz
 ## C-R1 current blocker
 
 STATUS PARTIAL: HUD geometry fix passes initial focused checks; final suite finds missing actor redraw (68 passed, 2 failed). StageScene create-time isActive guard rejects initial show before Phaser becomes RUNNING. Renderer files are outside C-R1 CSS-only source scope; S5 stops this card. A separate renderer fix needs explicit scope or eligible named QA1 evidence. Antigravity can audit the PARTIAL source read-only and produce that evidence; no implementation may stack on it while PARTIAL.
+
+## User decision after the blocker
+
+The user answered: “Keep scope; let Antigravity document it first.” C-R1 remains PARTIAL. Do not edit StageScene/StageCanvas or broaden this card. A-R1 is the next action: independent read-only reproduction and a named dated QA1 finding. A renderer fix remains WAITING on that eligible evidence under the original Q13 rules. No new renderer approval is pending, and no generic continuation should be treated as permission to bypass this decision.

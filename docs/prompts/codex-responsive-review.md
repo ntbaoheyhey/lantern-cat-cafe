@@ -13,3 +13,7 @@ No PRs, merges, main push, workflow dispatch, deployment, live SQL/backend mutat
 Report PASS/FAIL/NOT VERIFIED with code references, source SHA and actual commands/results. Publish the report even if blocked, correct Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>, and push only your report branch. End with branch/commit/report/status. Existing Q13 requires a named eligible Antigravity QA1 finding or explicit user scope before later source fixes; your review report alone does not bypass that gate.
 
 Priority finding: reproduce the missing cat/monster after viewport resize, inspect StageScene.create()/show() vs Phaser CREATING/RUNNING timing, and record the named bug in eligible QA evidence. A PARTIAL branch may be read in a detached checkout; never stack new implementation on it.
+
+## User decision after the blocker
+
+The user answered: “Keep scope; let Antigravity document it first.” C-R1 remains PARTIAL. Do not edit StageScene/StageCanvas or broaden this card. A-R1 is the next action: independent read-only reproduction and a named dated QA1 finding. A renderer fix remains WAITING on that eligible evidence under the original Q13 rules. No new renderer approval is pending, and no generic continuation should be treated as permission to bypass this decision.
