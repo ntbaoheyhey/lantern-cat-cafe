@@ -17,7 +17,7 @@ export interface MonsterDef {
 }
 
 /** Archetypes: a balanced, a glass-cannon and a sturdy regular, then elite and boss. */
-const ARCHETYPE = {
+export const ARCHETYPE = {
   balanced: { hpMul: 1, atkMul: 1, xpMul: 1, lootMul: 1 },
   swift: { hpMul: 0.8, atkMul: 1.2, xpMul: 1, lootMul: 1 },
   sturdy: { hpMul: 1.2, atkMul: 0.8, xpMul: 1, lootMul: 1 },
