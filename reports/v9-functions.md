@@ -1,27 +1,31 @@
-# V9 functions — blocked by deployment workflow allowlist
+# V9 functions
 
 Branch: `ai/codex-v9-functions`, based on fetched `origin/main`.
 
-The four endpoints and their migrated-PGlite tests are implemented. No PR, push,
-GitHub Actions invocation, migration application to a remote database, or function
-deployment was performed. No dependency was added; lockfile unchanged.
+The four endpoints and their migrated-PGlite tests are implemented. The follow-up
+explicitly authorizes one additional file: `.github/workflows/deploy-functions.yml`.
+Only its single `FUNCTIONS` line changes; the four names come from the existing
+function folders and the prior failing consistency check. No dependency was added;
+the lockfile is unchanged. No workflow was run, no function was deployed, and no
+remote migration was applied by this session.
 
-## Scope blocker
+## Deployment allowlist resolved
 
-`supabase/tests/src/consistency.test.ts:295` requires the `FUNCTIONS` list in
-`.github/workflows/deploy-functions.yml:26` to equal all function folders. The
-workflow currently lists only the nine v1 functions. These four new folders make
-the existing test fail. Updating `.github/workflows/deploy-functions.yml` is
-necessary, but that file is outside the explicit edit allowlist. Work stops at
-this boundary; the test and workflow remain unchanged. The branch is held locally
-because the requested all-checks-pass condition for pushing cannot be met.
+The original workflow consistency failure is resolved by appending
+`v2-choose-class v2-claim v2-equip v2-state`, preserving the nine existing names
+and their order. All other workflow lines remain unchanged. The workflow deploys
+only on a push to `main` or manual invocation; feature branch pushes do not deploy.
+CI is manual-only. No PR is opened.
 
-Required scope extension: permit adding `v2-state`, `v2-claim`, `v2-equip` and
-`v2-choose-class` to the workflow's `FUNCTIONS` list. No such edit has been made.
-
-Orchestrator note requested by the task:
+Orchestrator note requested by the original task:
 "merge only after V8 is applied to Supabase; this merge deploys v2-* functions via deploy-functions.yml"
-This deployment expectation is currently blocked by the workflow list above.
+
+deploy-functions.yml FUNCTIONS list now includes v2-choose-class v2-claim v2-equip v2-state; orchestrator: merge only after V8 is applied (done) because this merge deploys them.
+
+The V8-applied status above is provided by the follow-up request; this session did
+not query or modify the remote database. Earlier failure transcripts below are
+retained as historical validation evidence; the follow-up transcripts record the
+fresh full-suite results after the authorized workflow change.
 
 ## Implementation
 
@@ -87,13 +91,13 @@ These are all the fields in v1 `ForgeStatus` / `buildServerState`; there are no 
 
 The installed global pnpm was 11.25.0, while this repository pins 10.28.0. Initial attempts required noninteractive CI mode, then v11 refused ignored native builds and automatically added `allowBuilds` to `pnpm-workspace.yaml`. That generated change was restored. Final validation uses `corepack pnpm` 10.28.0 via a temporary external PATH shim and `CI=true`, without changing repository configuration. Native optional build warnings are retained below.
 
-The supplied `pnpm ... test -- v2/functions-state` command runs the entire Supabase suite in this Vitest version; its only remaining failure is the forbidden workflow list. An additional direct Vitest invocation runs all 15 new tests and passes.
+The supplied `pnpm ... test -- v2/functions-state` command ran the entire Supabase suite in this Vitest version; its original failure was the workflow list, subsequently fixed by the authorized follow-up. An additional direct Vitest invocation runs all 15 new tests and passes.
 
 The existing supabase/tests tsconfig includes only `src`, so an additional temporary tsconfig outside the repository explicitly includes the new v2 test file and verifies `const s: ServerStateV2 = await getStateV2(...)`. This check passes. Deno is not installed, so `deno check` was unavailable.
 
 Eight-hour claim wall time, including SQL and snapshot reloads: **56.53 ms**, below 500 ms.
 
-Validation result: typecheck, lint, build, the extra v2 typecheck, and all 15 new tests pass. The requested suite command and full test command fail solely on the existing workflow consistency test. Existing skipped/expected-failure rule tests are unchanged.
+Original validation: typecheck, lint, build, the extra v2 typecheck, and all 15 new tests passed. The original suite commands failed solely on the workflow consistency test. See the follow-up validation below for the rerun after the authorized workflow update. Existing skipped/expected-failure rule tests are unchanged.
 
 ## Gate and Git setup output
 
@@ -131,6 +135,7 @@ Gate used `git cat-file -e "origin/main:$path"` for each listed file after fetch
 ## Files changed
 
 ```text
+.github/workflows/deploy-functions.yml
 reports/v9-functions.md
 supabase/functions/_shared/v2/game.ts
 supabase/functions/_shared/v2/http.ts
@@ -712,4 +717,222 @@ The final typecheck uses `/tmp/v9-tsconfig.json`, extending the existing tests t
 
 ## Outstanding / unsure
 
-The workflow allowlist is the only observed remaining failure. Deno server wiring could not be checked with Deno because it is unavailable; it is not included in the Node tests, matching the existing v1 architecture. No remote database or deployment was exercised. No push was attempted because all checks must pass before pushing.
+The workflow allowlist blocker was resolved within the explicit follow-up scope. Deno server wiring could not be checked with Deno because it is unavailable; it is not included in the Node tests, matching the existing v1 architecture. No remote database or deployment was exercised. The branch is pushed only after the full follow-up suite passes.
+
+## Follow-up: deployment list update and fresh full validation
+
+All six required commands pass with the pinned pnpm 10.28.0 through the existing external PATH shim and `CI=true`. No test was changed, skipped, weakened or deleted for this follow-up. The only changed files are the workflow (one line) and this report.
+
+Verified with `ls supabase/functions` and the prior failing check: `v2-choose-class`, `v2-claim`, `v2-equip`, `v2-state`. The existing names and order are preserved; these four names are appended on the same single line.
+
+```diff
+diff --git a/.github/workflows/deploy-functions.yml b/.github/workflows/deploy-functions.yml
+index 62dbea5..980462b 100644
+--- a/.github/workflows/deploy-functions.yml
++++ b/.github/workflows/deploy-functions.yml
+@@ -23,7 +23,7 @@ permissions:
+
+ env:
+   PROJECT_REF: qoalewtxflagoprrxrgh
+-  FUNCTIONS: auth-nonce auth-verify game-state idle-claim equip boss-fight upgrade relic-forge relic-mint-report
++  FUNCTIONS: auth-nonce auth-verify game-state idle-claim equip boss-fight upgrade relic-forge relic-mint-report v2-choose-class v2-claim v2-equip v2-state
+
+ jobs:
+   deploy:
+```
+
+Full stdout/stderr from every required command follows.
+
+### pnpm install --frozen-lockfile
+
+```text
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 1s using pnpm v10.28.0
+
+Exit status: 0
+```
+
+### pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+```text
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 13 Edge Function import maps
+
+Exit status: 0
+```
+
+### pnpm typecheck
+
+```text
+
+> taskbar-hero@0.0.0 typecheck /workspace/taskbar-hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/game-rules typecheck$ tsc --noEmit
+packages/auth typecheck: Done
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+Exit status: 0
+```
+
+### pnpm lint
+
+```text
+
+> taskbar-hero@0.0.0 lint /workspace/taskbar-hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/chain lint: Done
+packages/game-rules lint$ tsc --noEmit
+packages/auth lint: Done
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+Exit status: 0
+```
+
+### pnpm test
+
+```text
+
+> taskbar-hero@0.0.0 test /workspace/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/auth test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/chain
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  04:33:44
+packages/chain test:    Duration  265ms (import 38%, transform 37%, worker 13%, tests 12%)
+packages/chain test: Done
+packages/game-rules test$ vitest run
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  04:33:44
+packages/auth test:    Duration  620ms (import 61%, tests 30%, transform 8%, worker 1%)
+packages/auth test: Done
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /workspace/taskbar-hero/supabase/tests
+packages/game-rules test:  Test Files  16 passed | 1 skipped (17)
+packages/game-rules test:       Tests  285 passed | 2 expected fail | 1 skipped (288)
+packages/game-rules test:    Start at  04:33:45
+packages/game-rules test:    Duration  20.00s (tests 93%, import 5%, transform 1%)
+packages/game-rules test:     Isolate  17 workers spawned · ~154ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~2.47s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+supabase/tests test:  Test Files  16 passed (16)
+supabase/tests test:       Tests  355 passed (355)
+supabase/tests test:    Start at  04:33:45
+supabase/tests test:    Duration  32.23s (tests 89%, import 11%, transform 1%)
+supabase/tests test:     Isolate  16 workers spawned · ~114ms startup each (spawn + environment, per file)
+supabase/tests test:              at least ~1.72s faster with isolate: false — reuses workers across files instead of one per file
+supabase/tests test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  04:34:18
+packages/api-contract test:    Duration  252ms (transform 67%, import 25%, tests 5%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /workspace/taskbar-hero/apps/web
+apps/web test:  Test Files  61 passed (61)
+apps/web test:       Tests  717 passed (717)
+apps/web test:    Start at  04:34:18
+apps/web test:    Duration  51.85s (environment 65%, tests 21%, import 12%, transform 1%, worker 1%)
+apps/web test: Environment  jsdom was created 61 times · 30.06s total, 65% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+Exit status: 0
+```
+
+### pnpm build
+
+```text
+
+> taskbar-hero@0.0.0 build /workspace/taskbar-hero
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/chain build: Done
+packages/game-rules build$ tsc --noEmit
+packages/auth build: Done
+supabase/tests build$ tsc --noEmit
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/workspace/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1722 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.05 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/index-C0PSJB46.css               38.76 kB │ gzip:   7.94 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/index-Rjyucpee.js               126.75 kB │ gzip:  36.88 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 849ms
+apps/web build: Done
+
+Exit status: 0
+```
+
+### Git author verification
+
+```text
+$ git config user.email
+108352255+ntbaoheyhey@users.noreply.github.com
+$ git config user.name
+ntbaoheyhey
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+All commits use the requested author. No amend/reset-author is required. The follow-up commit uses this same configuration. The branch push is `git push -u origin ai/codex-v9-functions`; no PR or workflow invocation is authorized or performed.
