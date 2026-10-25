@@ -132,7 +132,7 @@ EXIT 0; runtime 0.75s
 - `apps/web/src/layout/boss/BossGatePanel.test.tsx` and `layout/a11y/v2-components.a11y.test.tsx`: update reached/not-reached setup for new kill goals and exact key/refund copy. Preserve accessibility assertions.
 - `apps/web/src/game/arena/arenaFixtures.ts`: UPDATE_ARENA_FIXTURES=1 passed and changed 12 lines (6 replacements). All three arena audit tests pass. The existing hand-built chapter-5 win remains present; the optional real-chapter-5-win audit did not skip, so this probe does NOT establish that the hand-built fixture can be replaced. Keep it until a real winning log is demonstrated.
 - Database retry: 1 failed / 384 passed in 32.09s; `supabase/tests/v2/functions-state.test.ts` daily-key credit expectation must be reviewed after approval. Retain state, idempotency and rollback invariants.
-- `docs/numbers-v2.md`: rerun the writer only with an explicit plan to preserve the signed approval. The existing writer writes a blank User signature; do not erase a user's sign-off. It is currently unsigned and untouched.
+- `docs/proposals/numbers-v2.md`: rerun the writer only with an explicit plan to preserve the signed approval. The existing writer writes a blank User signature; do not erase a user's sign-off. It is currently unsigned and untouched.
 - Static review of Q9: its first-clear expectation 1→0 would become 1→1 because the entry spend precedes refund 1. This is NOT a probe execution result. Rebase and recheck all future merged integration tests.
 
 Only generated arena/content artifacts changed in the disposable worktree; production config and every tracked test remained byte-identical. These probe artifacts are not committed.
@@ -202,3 +202,39 @@ wrote 18 Edge Function import maps
 ```
 
 Files touched: reports/v6g-apply-plan.md only. Probe removed after retaining evidence; no temporary artifacts included.
+
+## Final audit correction
+
+Corrected the proposal writer output path to docs/proposals/numbers-v2.md. Report-only change; no config, tests or sign-off edited. Full suite skipped: docs only.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 822ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.89s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.35s
+
+```
