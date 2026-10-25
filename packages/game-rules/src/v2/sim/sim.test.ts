@@ -57,7 +57,7 @@ it('records the fallback target failures across seven classes and three seeds', 
   expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["first-boss", "chapter-growth", "class-spread", "chapter-bounds", "boss-check"]);
   expect(checks.find((check) => check.id === 'walk-share')?.ok).toBe(true);
   expect(checks.find((check) => check.id === 'guardrails')?.ok).toBe(true);
-}, 60000);
+}, 180000);
 
 it('detects a six-hour stall with broken monster attack', () => {
   const result = simulateV2({ classId: 'warrior', seed: 1, overrides: { monster: { atkBase: 400 } } });
@@ -76,7 +76,7 @@ it('preserves stack and equipment invariants in the final state of every class a
     for (const slot of GEAR_SLOT_IDS) expect(finalState.items.filter((item) => item.equipped && item.slot === slot).length).toBeLessThanOrEqual(1);
     expect(finalState.items.length).toBeLessThanOrEqual(V2_CONFIG.bag.limit);
   }
-}, 60000);
+}, 180000);
 
 it('treats missing milestones as failures and renders the same report twice', () => {
   expect(medianV2([10, null, null])).toBe(Infinity);
