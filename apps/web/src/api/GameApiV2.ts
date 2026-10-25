@@ -151,6 +151,10 @@ export interface TimelineEventV2 {
   crit?: boolean;
   catHp?: number;
   bossHp?: number;
+  /** boss_windup and boss_impact: the telegraphed big attack. */
+  big?: boolean;
+  /** boss_impact: the cat dodged, taking zero damage. */
+  dodged?: boolean;
 }
 
 export interface ClaimResultV2 {
