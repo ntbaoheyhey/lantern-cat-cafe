@@ -92,6 +92,18 @@ describe('MockGameApiV2', () => {
     }
     expect(found).toBe(true);
   });
+  it('carries big and dodged flags through a mock fight timeline', async () => {
+    const api = new MockGameApiV2({ storage: memory(fixture(ready())), seed: 9, now: () => 0 });
+    const result = await api.fightBoss(1);
+    const expected = v2.simulateBossV2(v2.deriveStats({ classId: 'warrior', level: 1 }, []), 'warrior', v2.bossOfChapter(1), deriveSeed(9, 0));
+    expect(result.timeline).toEqual(v2.timelineViewV2(expected.log));
+    const windups = result.timeline.filter(event => event.type === 'boss_windup');
+    const impacts = result.timeline.filter(event => event.type === 'boss_impact');
+    expect(windups.length).toBeGreaterThan(0); expect(impacts.length).toBeGreaterThan(0);
+    for (const event of [...windups, ...impacts]) expect(typeof event.big).toBe('boolean');
+    for (const event of impacts) expect(typeof event.dodged).toBe('boolean');
+    expect(windups.some(event => event.big)).toBe(true);
+  });
   it('refuses unreached bosses and missing keys without changing persisted state or seeds', async () => {
     for (const [overrides, chapter, code] of [[{}, 2, 'not_reached'], [{ ...ready(), stacks: {} }, 1, 'no_key']] as const) {
       const storage = memory(fixture(overrides)); const api = new MockGameApiV2({ storage, now: () => 0 });

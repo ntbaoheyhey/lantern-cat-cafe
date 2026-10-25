@@ -17,6 +17,8 @@ function makeFixture(overrides: Partial<{
   keys: number;
   cooldownUntil: number | null;
   clearedChapters: number[];
+  gated: boolean;
+  neededPower: number;
 }> = {}): ServerStateV2 {
   const currentChapter = overrides.chapter ?? 1;
   const chDef = v2.CHAPTERS.find((c) => c.index === currentChapter);
@@ -40,8 +42,8 @@ function makeFixture(overrides: Partial<{
       round: overrides.round ?? 1,
       kills: overrides.kills ?? 0,
       killsPerRound,
-      gated: false,
-      neededPower: 0,
+      gated: overrides.gated ?? false,
+      neededPower: overrides.neededPower ?? 0,
     },
     currencies: {
       fish: 100,
@@ -212,5 +214,78 @@ describe('bossGate', () => {
     expect(label99.id).toBe('');
     expect(label99.name).toBe('Unknown Boss');
     expect(label99.chapterName).toBe('Chapter 99');
+  });
+
+  describe('gated state transitions', () => {
+    it('gated current chapter -> kind gated with neededPower, roundsLeft, killsLeft', () => {
+      const ch1 = v2.CHAPTERS.find((c) => c.index === 1)!;
+      const state = makeFixture({
+        chapter: 1,
+        round: 7,
+        kills: 2,
+        gated: true,
+        neededPower: 1500,
+      });
+      const status = bossGateStatus(state, 1, 1000);
+      expect(status).toEqual({
+        kind: 'gated',
+        chapter: 1,
+        neededPower: 1500,
+        roundsLeft: 3,
+        killsLeft: ch1.killsPerRound - 2,
+      });
+    });
+
+    it('gated but another chapter -> not_reached -1/-1', () => {
+      const state = makeFixture({
+        chapter: 1,
+        round: 7,
+        kills: 2,
+        gated: true,
+        neededPower: 1500,
+      });
+      const status = bossGateStatus(state, 2, 1000);
+      expect(status).toEqual({
+        kind: 'not_reached',
+        chapter: 2,
+        roundsLeft: -1,
+        killsLeft: -1,
+      });
+    });
+
+    it('gated during a cooldown -> cooldown', () => {
+      const state = makeFixture({
+        chapter: 1,
+        round: 7,
+        kills: 2,
+        gated: true,
+        neededPower: 1500,
+        cooldownUntil: 1042,
+      });
+      const status = bossGateStatus(state, 1, 1000);
+      expect(status).toEqual({
+        kind: 'cooldown',
+        secondsLeft: 42,
+        until: 1042,
+      });
+    });
+
+    it('gated false -> the old result (existing tests unchanged)', () => {
+      const ch1 = v2.CHAPTERS.find((c) => c.index === 1)!;
+      const state = makeFixture({
+        chapter: 1,
+        round: 7,
+        kills: 2,
+        gated: false,
+        neededPower: 1500,
+      });
+      const status = bossGateStatus(state, 1, 1000);
+      expect(status).toEqual({
+        kind: 'not_reached',
+        chapter: 1,
+        roundsLeft: 3,
+        killsLeft: ch1.killsPerRound - 2,
+      });
+    });
   });
 });

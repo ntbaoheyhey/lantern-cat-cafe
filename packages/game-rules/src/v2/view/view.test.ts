@@ -72,7 +72,16 @@ describe('v2 pure views', () => {
     const view = timelineViewV2(result.log);
     expect(view).toHaveLength(result.log.length);
     for (const event of view) expect(Object.values(event).every(v => v !== undefined)).toBe(true);
-    expect(timelineViewV2([{ t: 0, type: 'attack_start', attack: 1 }, { t: 1, type: 'boss_windup', big: true }, { t: 2, type: 'end', won: false }])).toEqual([{ t: 0, type: 'attack_start' }, { t: 1, type: 'boss_windup' }, { t: 2, type: 'end' }]);
+    expect(timelineViewV2([{ t: 0, type: 'attack_start', attack: 1 }, { t: 1, type: 'boss_windup', big: true }, { t: 2, type: 'end', won: false }])).toEqual([{ t: 0, type: 'attack_start' }, { t: 1, type: 'boss_windup', big: true }, { t: 2, type: 'end' }]);
+  });
+  it('preserves true and false boss impact flags without undefined fields', () => {
+    expect(timelineViewV2([
+      { t: 1, type: 'boss_impact', big: true, dodged: true, damage: 0, catHp: 100 },
+      { t: 2, type: 'boss_impact', big: false, dodged: false, damage: 5, catHp: 95 },
+    ])).toEqual([
+      { t: 1, type: 'boss_impact', big: true, dodged: true, damage: 0, catHp: 100 },
+      { t: 2, type: 'boss_impact', big: false, dodged: false, damage: 5, catHp: 95 },
+    ]);
   });
   it('rejects classless claims and maps keys and equipped bonuses', () => {
     const state = empty(); expect(() => claimInputV2(state, { today: '2026-10-25', offline: false })).toThrow('no_class');
