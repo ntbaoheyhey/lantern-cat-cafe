@@ -10,16 +10,17 @@ export const V2_MIGRATION = "20261101000000_v2_cat_rpg.sql";
 
 export type J = Record<string, any>;
 
-/** A fresh PGlite with the Supabase stubs and the v1 migrations only (everything except the v2 one). */
+/** A fresh PGlite with the Supabase stubs and the v1 migrations only (all migrations preceding the first v2 migration). */
 export async function v1OnlyDb(): Promise<PGlite> {
   const db = new PGlite();
   await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
-  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql") && f !== V2_MIGRATION).sort()) {
+  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql") && f < V2_MIGRATION).sort()) {
     await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
   }
   return db;
 }
-export const v2MigrationSql = () => readFileSync(join(migrationsDir, V2_MIGRATION), "utf8");
+/** Every additive v2 migration, in order, so rollback/reapply tests cover the complete schema. */
+export const v2MigrationSql = () => readdirSync(migrationsDir).filter(f => f.endsWith('.sql') && f >= V2_MIGRATION).sort().map(f => readFileSync(join(migrationsDir, f), 'utf8')).join('\n');
 export const rollbackSql = () => readFileSync(join(here, "rollback.sql"), "utf8");
 
 let n = 1;

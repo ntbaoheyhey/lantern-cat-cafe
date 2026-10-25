@@ -4,7 +4,7 @@ import { as, migratedDb } from "../src/game-db.ts";
 import { newPlayer, fn, rollbackSql, setStacks, v1OnlyDb, v2MigrationSql } from "./helpers.ts";
 
 const TABLES = ["cat_state", "items", "player_stacks", "boss_clears", "boss_fights", "founder_grants"];
-const API_FUNCS = ["v2_snapshot", "v2_choose_class", "v2_claim", "v2_equip", "v2_boss_fight", "v2_craft", "v2_salvage", "v2_lock", "v2_relic_forge", "v2_grant_founder"];
+const API_FUNCS = ["v2_snapshot", "v2_choose_class", "v2_claim", "v2_equip", "v2_boss_fight", "v2_craft", "v2_salvage", "v2_lock", "v2_relic_forge", "v2_grant_founder", "v2_grant_founder_batch"];
 const HELPERS = ["v2_apply_stacks", "v2_insert_items", "v2_items_json", "v2_item_json"];
 const DENIED = /permission denied|row-level security/;
 const jwt = (sub: string) => ({ sub, role: "authenticated" });
