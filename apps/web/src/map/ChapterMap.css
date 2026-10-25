@@ -157,6 +157,30 @@
   background-color: var(--chapter-theme, var(--map-accent));
 }
 
+/* Room thumbnail */
+.v2-map-thumb {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  background: #000000;
+  border-right: 2px solid #000000;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.v2-map-thumb svg {
+  display: block;
+}
+
+/* Dimmed thumbnail for locked chapters */
+.v2-map-node--locked .v2-map-thumb,
+.v2-map-thumb.dimmed {
+  opacity: 0.35;
+  filter: grayscale(0.8) brightness(0.6);
+}
+
 .v2-map-node-content {
   flex: 1;
   display: flex;
@@ -314,7 +338,8 @@
 }
 
 /* 3. Locked Chapter: padlock from v2Frames, not selectable */
-.v2-map-node--locked {
+.v2-map-node--locked,
+.v2-map-node.dimmed {
   opacity: 0.72;
   background: var(--map-bg);
   cursor: not-allowed;

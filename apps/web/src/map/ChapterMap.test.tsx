@@ -176,4 +176,69 @@ describe('ChapterMap Component', () => {
     fireEvent.click(ch2);
     expect(onSelect).toHaveBeenCalledWith(2);
   });
+
+  it('each of the five cards contains one svg with data-backdrop equal to that chapter\'s background id', () => {
+    render(<ChapterMap currentChapter={1} clearedChapters={[]} />);
+
+    const buttons = screen.getAllByRole('button');
+    expect(buttons).toHaveLength(5);
+
+    const expectedBackdrops = ['livingroom', 'kitchen', 'bathroom', 'basement', 'rooftops'];
+
+    buttons.forEach((btn, index) => {
+      const backdrops = btn.querySelectorAll('svg[data-backdrop]');
+      expect(backdrops).toHaveLength(1);
+      expect(backdrops[0]?.getAttribute('data-backdrop')).toBe(expectedBackdrops[index]);
+    });
+  });
+
+  it('locked cards carry the dimmed class', () => {
+    render(<ChapterMap currentChapter={2} clearedChapters={[1]} />);
+
+    const buttons = screen.getAllByRole('button');
+    // Button 0 (ch 1) is cleared -> not locked
+    expect(buttons[0]?.classList.contains('dimmed')).toBe(false);
+    expect(buttons[0]?.classList.contains('v2-map-node--locked')).toBe(false);
+
+    // Button 1 (ch 2) is current -> not locked
+    expect(buttons[1]?.classList.contains('dimmed')).toBe(false);
+    expect(buttons[1]?.classList.contains('v2-map-node--locked')).toBe(false);
+
+    // Buttons 2, 3, 4 (ch 3, 4, 5) are locked -> carry dimmed class
+    for (let i = 2; i < 5; i++) {
+      expect(buttons[i]?.classList.contains('dimmed')).toBe(true);
+      expect(buttons[i]?.classList.contains('v2-map-node--locked')).toBe(true);
+    }
+  });
+
+  it('no new accessible names appear (the thumbnail is aria-hidden)', () => {
+    const { container } = render(<ChapterMap currentChapter={1} clearedChapters={[]} />);
+
+    // All backdrop svgs are aria-hidden
+    const backdropSvgs = container.querySelectorAll('svg[data-backdrop]');
+    expect(backdropSvgs).toHaveLength(5);
+    backdropSvgs.forEach((svg) => {
+      expect(svg.getAttribute('aria-hidden')).toBe('true');
+      expect(svg.getAttribute('role')).toBeNull();
+      expect(svg.getAttribute('aria-label')).toBeNull();
+      expect(svg.querySelector('title')).toBeNull();
+    });
+
+    // The thumbnail wrapper is also aria-hidden
+    const thumbs = container.querySelectorAll('.v2-map-thumb');
+    expect(thumbs).toHaveLength(5);
+    thumbs.forEach((thumb) => {
+      expect(thumb.getAttribute('aria-hidden')).toBe('true');
+    });
+
+    // No img roles exist in the map
+    expect(screen.queryAllByRole('img')).toHaveLength(0);
+
+    // Accessible names of buttons remain intact and focused on chapter info
+    expect(screen.getByRole('button', { name: /living room/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /kitchen/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /bathroom/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /basement/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /night rooftops/i })).toBeTruthy();
+  });
 });
