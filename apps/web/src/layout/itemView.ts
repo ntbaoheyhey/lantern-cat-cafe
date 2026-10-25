@@ -1,5 +1,6 @@
 import { v2 } from '@taskbar-hero/game-rules';
 import type { GearRarityId, GearSlotId, ItemV2, StatId, WeaponType } from '../api/GameApiV2';
+import { itemIconKey, type ItemIconKey } from '../art/itemIcons';
 import type { V2FrameName } from '../art/v2Frames';
 import type { V2IconName } from '../art/v2Icons';
 
@@ -94,6 +95,17 @@ export function itemName(itemKey: string): string {
 export function itemIconName(item: Pick<ItemV2, 'slot' | 'weaponType'>): V2IconName {
   if (item.slot === 'weapon' && item.weaponType) return WEAPON_ICON[item.weaponType];
   return SLOT_ICON[item.slot];
+}
+
+/** Specific item icon (A11) when one exists (armor sets, accessories), else the fallback slot/weapon-type icon. */
+export function itemArtOf(
+  item: Pick<ItemV2, 'itemKey' | 'slot' | 'weaponType'>,
+): { kind: 'item'; key: ItemIconKey } | { kind: 'icon'; name: V2IconName } {
+  const key = itemIconKey(item.itemKey);
+  if (key !== null) {
+    return { kind: 'item', key };
+  }
+  return { kind: 'icon', name: itemIconName(item) };
 }
 
 export function frameFor(rarity: GearRarityId): V2FrameName {

@@ -80,4 +80,10 @@ describe('CharacterPanel', () => {
     expect(document.querySelector('dl.stats')).toBeNull();
     expect(within(screen.getByRole('region', { name: 'Character' })).getAllByRole('button')).toHaveLength(9);
   });
+
+  it('shows the set icon for an equipped helmet', () => {
+    render(<CharacterPanel state={sampleStateV2()} />);
+    const helmet = screen.getByRole('button', { name: /^Helmet:/ });
+    expect(helmet.querySelector('[data-icon="arm.cozy.helmet"]')).not.toBeNull();
+  });
 });

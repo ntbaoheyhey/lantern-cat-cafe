@@ -1,13 +1,12 @@
 import { useId, useState } from 'react';
 import type { GearSlotId, ItemV2, ServerStateV2 } from '../../api/GameApiV2';
 import { V2PixelFrame } from '../../art/v2Frames';
-import { V2PixelIcon } from '../../art/v2Icons';
+import { ItemIcon } from '../ItemIcon';
 import {
   RARITY_LABEL,
   SLOT_LABEL,
   formatStat,
   frameFor,
-  itemIconName,
   itemName,
   statLabel,
 } from '../itemView';
@@ -78,7 +77,7 @@ export function BagPanel({ state, onEquip, onToggleLock }: BagPanelProps) {
                 <span className="bag-art">
                   <V2PixelFrame name={frameFor(item.rarity)} size={2} />
                   <span className="bag-icon">
-                    <V2PixelIcon name={itemIconName(item)} size={2} />
+                    <ItemIcon item={item} size={2} />
                   </span>
                 </span>
                 <span className="bag-name">{itemName(item.itemKey)}</span>
@@ -134,7 +133,7 @@ function ItemDetail({
     <div className="detail-body">
       <div className="detail-head">
         <V2PixelFrame name={frameFor(item.rarity)} size={2} />
-        <V2PixelIcon name={itemIconName(item)} size={2} />
+        <ItemIcon item={item} size={2} />
         <div className="detail-title">
           <h3>{itemName(item.itemKey)}</h3>
           <p className="detail-meta">

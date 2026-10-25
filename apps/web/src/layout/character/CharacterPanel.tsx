@@ -2,14 +2,13 @@ import { v2 } from '@taskbar-hero/game-rules';
 import { CatPortrait } from '../../CatPortrait';
 import type { GearSlotId, ServerStateV2 } from '../../api/GameApiV2';
 import { V2PixelFrame, type V2FrameName } from '../../art/v2Frames';
-import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
+import { ItemIcon } from '../ItemIcon';
 import {
   EMPTY_FRAME,
   LOCKED_FRAME,
   SLOT_LABEL,
   formatStat,
   frameFor,
-  itemIconName,
   itemName,
   rarityLabel,
   statLabel,
@@ -44,13 +43,13 @@ function statRows(stats: v2.CatStats): [string, string][] {
   ];
 }
 
-function SlotArt({ frame, icon }: { frame: V2FrameName; icon?: V2IconName }) {
+function SlotArt({ frame, children }: { frame: V2FrameName; children?: React.ReactNode }) {
   return (
     <span className="slot-art">
       <V2PixelFrame name={frame} size={2} />
-      {icon && (
+      {children && (
         <span className="slot-icon">
-          <V2PixelIcon name={icon} size={2} />
+          {children}
         </span>
       )}
     </span>
@@ -96,7 +95,9 @@ function SlotButton({
       aria-label={`${label}: ${itemName(item.itemKey)}, ${rarityLabel(item.rarity)}`}
       onClick={() => onSelectSlot?.(slot.id)}
     >
-      <SlotArt frame={frameFor(item.rarity)} icon={itemIconName(item)} />
+      <SlotArt frame={frameFor(item.rarity)}>
+        <ItemIcon item={item} size={2} />
+      </SlotArt>
     </button>
   );
 }

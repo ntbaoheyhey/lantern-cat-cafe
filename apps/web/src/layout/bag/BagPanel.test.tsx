@@ -149,6 +149,27 @@ describe('BagPanel: keyboard', () => {
   });
 });
 
+describe('BagPanel: item icons', () => {
+  it('shows the specific set icon for a helmet in the bag and in detail', () => {
+    renderBag();
+    const moonHelmet = screen.getByRole('button', { name: /^Starforged Moon Helm/ });
+    expect(moonHelmet.querySelector('[data-icon="arm.moon.helmet"]')).not.toBeNull();
+    fireEvent.click(moonHelmet);
+    const detail = screen.getByRole('region', { name: 'Item detail' });
+    expect(detail.querySelector('[data-icon="arm.moon.helmet"]')).not.toBeNull();
+  });
+
+  it('shows the set icon for an equipped helmet when moved into the bag', () => {
+    const base = sampleStateV2();
+    renderBag({
+      ...base,
+      inventory: base.inventory.map((i) => (i.id === 'it-2' ? { ...i, equipped: false } : i)),
+    });
+    const cozyHelmet = screen.getByRole('button', { name: /^Snug Knit Beanie/ });
+    expect(cozyHelmet.querySelector('[data-icon="arm.cozy.helmet"]')).not.toBeNull();
+  });
+});
+
 describe('useSampleStateV2', () => {
   it('equip moves the equipped flag, refuses a slot mismatch and empties a slot for null', () => {
     const { result } = renderHook(() => useSampleStateV2());
