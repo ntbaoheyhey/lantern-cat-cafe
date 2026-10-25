@@ -180,6 +180,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q6 | DONE | ai/codex-v7c-client-contract | no | Manual real JWT/gateway/Fuji checks remain. |
 | Q7 | DONE | ai/codex-v10-followups | no | Deno check NOT VERIFIED: unavailable; workflow unchanged. |
 | Q8 | DONE | ai/codex-v29-founder-grant | no | D8: approve contents/cutoff/eligibility; apply_migration BEFORE merge; draft only. |
+| Q9 | BLOCKED | ai/codex-v26-e2e | no | STACKED ON V16 fd318c4. Equip best drops second upgrade; Q9 forbids required product fix; authorize fix card then rerun. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
@@ -190,6 +191,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q6: `2cbbf7ff81beedb7495b9d638540039c62734907`, `reports/v7c-client-contract.md` (DONE).
 - Q7: `a3eac4a46cfc625dec4910ff40b8b4c54611e6b4`, `reports/v10-followups.md` (DONE).
 - Q8: `235298d29595ee5c1851ff80cdb687a5fdcdb172`, `reports/v29-founder.md` (DONE).
+- Q9: `de1e4b64ce3b3d4d981ae13fb3f6f432a635355e`, `reports/v26-e2e.md` (BLOCKED).
 
 ## User must decide on return
 
@@ -197,3 +199,4 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 2. D8: Founder contents, eligibility cutoff and permission to apply the draft migration before any merge.
 3. D10 MADE: V16/V19 authorized by replacement prompt; user reviews final screenshots.
 4. D6: cut-over day; flag flip requires V16 on main and the cut-over decision.
+- Q9: STACKED ON V16 fd318c4. Equip best drops second upgrade; Q9 forbids required product fix; authorize fix card then rerun.
