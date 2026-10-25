@@ -63,6 +63,7 @@ Sets the class. A weapon of another type is unequipped; the class's Common start
 
 ### v2-boss-fight
 Runs the server fight for `chapter` (seed `v2boss:<player>:<fight_no>`). The client replays `timeline` and never re-simulates.
+Timeline events optionally carry `big` on `boss_windup` and `boss_impact` for the telegraphed big attack, and `dodged` on `boss_impact` when the cat dodges for zero damage.
 
 - Win: spends one key (`keySpent: true`), opens the chest in the same transaction (`chest`: fish, yarn, materials, keys, items, autoSalvaged, same shape as claim gains; bag overflow is auto-salvaged), records the clear, and on the first clear of the current chapter moves progress to the next chapter, round 1.
 - Loss: `keySpent: false`, no chest, and `bosses.cooldownUntil` is set (one cooldown for all chapters).
