@@ -104,4 +104,29 @@ describe('WelcomeBack', () => {
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(onCloseEscape).toHaveBeenCalledTimes(1);
   });
+
+  it('restores focus to trigger element on unmount and when Escape is pressed (A18 finding #1)', () => {
+    const trigger = document.createElement('button');
+    document.body.appendChild(trigger);
+    trigger.focus();
+    expect(document.activeElement).toBe(trigger);
+
+    // Test 1: focus restore on unmount
+    const { unmount } = render(
+      <WelcomeBack gains={VALID_GAINS} awaySeconds={3600} onClose={vi.fn()} />,
+    );
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
+    unmount();
+    expect(document.activeElement).toBe(trigger);
+
+    // Test 2: focus restore on Escape
+    const onClose = vi.fn();
+    render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600} onClose={onClose} />);
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).toBe(trigger);
+
+    document.body.removeChild(trigger);
+  });
 });

@@ -403,6 +403,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .class-picker__confirm-box {
+    animation: none;
+  }
+}
+
 /* Responsive queries */
 @media (max-width: 640px) {
   .class-picker {

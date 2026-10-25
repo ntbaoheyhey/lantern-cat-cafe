@@ -202,6 +202,49 @@
 }
 
 /* Chest reveal dialog specifics */
+.chest-reveal-dialog {
+  position: relative;
+  overflow: hidden;
+}
+
+.chest-reveal-backdrop-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.chest-reveal-backdrop-art {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+}
+
+.chest-reveal-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(42, 31, 54, 0.88) 0%,
+    rgba(42, 31, 54, 0.8) 50%,
+    rgba(42, 31, 54, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+.chest-reveal-header,
+.chest-reveal-dialog > .loot-summary,
+.chest-reveal-actions {
+  position: relative;
+  z-index: 1;
+}
+
 .chest-reveal-header {
   display: flex;
   flex-direction: column;
@@ -285,7 +328,10 @@
   .loot-line,
   .loot-item-tile,
   .loot-backdrop,
-  .loot-dialog {
+  .loot-dialog,
+  .chest-reveal-backdrop-frame,
+  .chest-reveal-backdrop-art,
+  .chest-reveal-scrim {
     animation: none !important;
     transition: none !important;
     transform: none !important;
@@ -293,6 +339,15 @@
 }
 
 /* Light mode support */
+[data-theme='light'] .chest-reveal-scrim,
+:root:not([data-theme='dark']) .chest-reveal-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.88) 100%
+  );
+}
 [data-theme='light'] .loot-dialog,
 :root:not([data-theme='dark']) .loot-dialog {
   background: var(--surface, #ffffff);

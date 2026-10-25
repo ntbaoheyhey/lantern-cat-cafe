@@ -2,6 +2,7 @@
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ItemV2, LootV2 } from '../../api/GameApiV2';
+import { backdropFor } from '../../art/backdrops';
 import * as reducedMotionModule from '../../motion/reducedMotion';
 import { ChestReveal } from './ChestReveal';
 
@@ -188,5 +189,73 @@ describe('ChestReveal', () => {
     // Press Tab
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: false });
     expect(document.activeElement).toBe(button);
+  });
+
+  describe('V19c: Chapter room backdrop', () => {
+    it('with chapter 3 dialog contains exactly one svg[data-backdrop="bathroom"] with aria-hidden="true" and accessible name unchanged', () => {
+      const { container } = render(
+        <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={3} />,
+      );
+
+      const backdrops = container.querySelectorAll('.chest-reveal-dialog svg[data-backdrop="bathroom"]');
+      expect(backdrops).toHaveLength(1);
+      const svg = backdrops[0];
+      expect(svg?.getAttribute('aria-hidden')).toBe('true');
+
+      // Accessible name of dialog is unchanged (still the heading "Boss chest")
+      const dialog = screen.getByRole('dialog');
+      expect(dialog).toBeTruthy();
+      expect(dialog.getAttribute('aria-labelledby')).toBe(
+        container.querySelector('.chest-reveal-title')?.id,
+      );
+      expect(screen.getByRole('heading', { level: 2, name: 'Boss chest' })).toBeTruthy();
+    });
+
+    it('without chapter there is no [data-backdrop]', () => {
+      const { container } = render(
+        <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} />,
+      );
+      expect(container.querySelector('[data-backdrop]')).toBeNull();
+    });
+
+    it('for chapters 1-5 the backdrop id matches backdropFor(n).id', () => {
+      for (let ch = 1; ch <= 5; ch++) {
+        const expectedId = backdropFor(ch).id;
+        const { container, unmount } = render(
+          <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={ch} />,
+        );
+        const svg = container.querySelector('.chest-reveal-dialog svg[data-backdrop]');
+        expect(svg?.getAttribute('data-backdrop')).toBe(expectedId);
+        expect(svg?.getAttribute('aria-hidden')).toBe('true');
+        unmount();
+      }
+    });
+  });
+
+  describe('V19c / A18 Finding #1: Focus restore', () => {
+    it('restores focus to trigger button after unmount and after pressing Escape', () => {
+      const trigger = document.createElement('button');
+      document.body.appendChild(trigger);
+      trigger.focus();
+      expect(document.activeElement).toBe(trigger);
+
+      // Part 1: focus restored on unmount
+      const { unmount } = render(
+        <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} />,
+      );
+      expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
+      unmount();
+      expect(document.activeElement).toBe(trigger);
+
+      // Part 2: focus restored after pressing Escape
+      const onDone = vi.fn();
+      render(<ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={onDone} />);
+      expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
+      fireEvent.keyDown(document, { key: 'Escape' });
+      expect(onDone).toHaveBeenCalledTimes(1);
+      expect(document.activeElement).toBe(trigger);
+
+      document.body.removeChild(trigger);
+    });
   });
 });

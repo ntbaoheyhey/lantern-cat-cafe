@@ -1,4 +1,6 @@
 // @vitest-environment jsdom
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ItemV2 } from '../../api/GameApiV2';
@@ -488,6 +490,73 @@ describe('ForgePanel', () => {
       fireEvent.click(screen.getByTestId('relic-forge-btn'));
       fireEvent.click(screen.getByTestId('relic-confirm-btn'));
       expect(onRelic).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('V19c: Item icons in salvage list and reduced-motion stylesheet audit', () => {
+    it('salvage row for specific armor shows specific icon, untyped weapon falls back to class weapon, and craft slot picker shows slot icons', () => {
+      const specificArmor: ItemV2 = {
+        id: 'salvage-armor-1',
+        itemKey: 'arm.ranger.armor.rare',
+        slot: 'armor',
+        rarity: 'rare',
+        level: 5,
+        bonus: [],
+        locked: false,
+        equipped: false,
+      };
+      const untypedWeapon: ItemV2 = {
+        id: 'salvage-untyped-weapon',
+        itemKey: 'wpn.untyped',
+        slot: 'weapon',
+        rarity: 'common',
+        level: 1,
+        bonus: [],
+        locked: false,
+        equipped: false,
+      };
+
+      const props = createDefaultProps({
+        items: [specificArmor, untypedWeapon],
+        classWeaponType: 'bow',
+      });
+
+      const { container } = render(<ForgePanel {...props} defaultTab="salvage" />);
+
+      // Salvage row for 'arm.ranger.armor.rare' shows data-icon "arm.ranger.armor"
+      const armorSvg = container.querySelector(
+        '[data-testid="salvage-item-salvage-armor-1"] svg[data-icon="arm.ranger.armor"]',
+      );
+      expect(armorSvg).toBeTruthy();
+      expect(armorSvg?.getAttribute('aria-hidden')).toBe('true');
+
+      // Weapon row without weaponType shows class weapon icon "bow"
+      const weaponSvg = container.querySelector(
+        '[data-testid="salvage-item-salvage-untyped-weapon"] svg[data-icon="bow"]',
+      );
+      expect(weaponSvg).toBeTruthy();
+      expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
+
+      // Checkbox labels unchanged
+      const armorCheck = screen.getByTestId('salvage-check-salvage-armor-1');
+      expect(armorCheck.getAttribute('aria-label')).toBe('Select Pathfinder Ranger Vest for salvage');
+
+      // Craft slot picker still shows slot icons
+      fireEvent.click(screen.getByTestId('tab-craft'));
+      const weaponSlotBtn = screen.getByTestId('slot-weapon');
+      expect(weaponSlotBtn.querySelector('svg[data-icon="bow"]')).toBeTruthy();
+      const helmetSlotBtn = screen.getByTestId('slot-helmet');
+      expect(helmetSlotBtn.querySelector('svg[data-icon="slotHelmet"]')).toBeTruthy();
+      const armorSlotBtn = screen.getByTestId('slot-armor');
+      expect(armorSlotBtn.querySelector('svg[data-icon="slotArmor"]')).toBeTruthy();
+    });
+
+    it('proves prefers-reduced-motion animation: none rules exist in ForgePanel.css and ClassPicker.css (A18 finding #3)', () => {
+      const forgeCss = readFileSync(resolve(__dirname, 'ForgePanel.css'), 'utf8');
+      expect(forgeCss).toMatch(/@media\s*\(prefers-reduced-motion:\s*reduce\)\s*\{[\s\S]*?\.forge-confirm-box\s*\{[\s\S]*?animation:\s*none;?[\s\S]*?\}\s*\}/);
+
+      const classPickerCss = readFileSync(resolve(__dirname, '../classpicker/ClassPicker.css'), 'utf8');
+      expect(classPickerCss).toMatch(/@media\s*\(prefers-reduced-motion:\s*reduce\)\s*\{[\s\S]*?\.class-picker__confirm-box\s*\{[\s\S]*?animation:\s*none;?[\s\S]*?\}\s*\}/);
     });
   });
 });
