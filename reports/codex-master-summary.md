@@ -1,6 +1,6 @@
 # Codex master summary
 
-Revised prompt: branches and reports only; D10 MADE; stacking on own DONE branches authorized; no PRs, merges, live writes, or deployments. Started 2026-10-25 (UTC+7).
+Revised prompt: branches and reports only; D10 MADE; stacking on own DONE branches authorized; no PRs, merges to main, live writes, or deployments. Started 2026-10-25 (UTC+7).
 
 ## Start state
 
@@ -182,7 +182,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q8 | DONE | ai/codex-v29-founder-grant | no | D8: approve contents/cutoff/eligibility; apply_migration BEFORE merge; draft only. |
 | Q9 | DONE | ai/codex-v26-e2e | no | STACKED ON bulk fix b82cddf; explicit user scope exception complete; original regression unchanged; 3x15 loop tests and full 68-test browser suite PASS. |
 | Q9fix | DONE | ai/codex-fix-bulk-equip | no | Explicit user scope exception; STACKED ON V16 fd318c4; serial bulk equipment with cancellation; full checks +53 browser tests pass. |
-| Q10 | DONE | ai/codex-v29-flag-flip | no | STACKED ON V16 fd318c4. D6 hard gate; never merge before cut-over; Q9 bug unresolved; revert code commit 28a5469. |
+| Q10 | DONE | ai/codex-v29-flag-flip | no | STACKED ON V16 fd318c4. D6 hard gate; never merge before cut-over; integrate completed bulk fix/Q9; revert code commit 28a5469. |
 | Q10b | DONE | ai/codex-v20b-relic-wiring | no | STACKED ON V16 fd318c4; USER must perform real Fuji mint/shared-limit/recovery test. |
 | Q11 | DONE | ai/codex-v29-rehearsal | no | STACKED ON Founder 235298d; D8/D6 and every live cut-over step remain USER-only. |
 | Q12 | DONE | ai/codex-v6g-apply-plan-report | no | D4 hard stop: 34 leaves, 26 changes; injected-suite impact documented; proposal NOT READY; no numbers applied; exact proposal path audited. |
@@ -190,28 +190,143 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q13a | DONE | ai/codex-fix-decorative-key | no | QA1 finding 1 fixed; STACKED ON V16 fd318c4; full final tests and 53 browser tests pass. |
 | Q13b | DONE | ai/codex-fix-sheet-focus | no | QA1 finding 2 fixed; STACKED ON V16 fd318c4; full checks and 53 browser tests pass. |
 
-- Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
-- Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
-- Q2: `67cd5ed522cd0b9ee680a7ad7fdcbb9bf109aff0`, `reports/v19-cues.md` (DONE-ON-MAIN).
-- Q3: `9d820a0601526c0da515be7d33d43d15aeec77a6`, `reports/v6f-rebalance.md` (DONE).
-- Q4: `16911ac0932a4fdcdaaf811672e2dc3cc9e7a61e`, `reports/v19-arena.md` (DONE).
-- Q5: `fd318c4910e50152fdb0522593762288e76efbda`, `reports/v16-stage.md` (DONE).
-- Q6: `2cbbf7ff81beedb7495b9d638540039c62734907`, `reports/v7c-client-contract.md` (DONE).
-- Q7: `a3eac4a46cfc625dec4910ff40b8b4c54611e6b4`, `reports/v10-followups.md` (DONE).
-- Q8: `235298d29595ee5c1851ff80cdb687a5fdcdb172`, `reports/v29-founder.md` (DONE).
-- Q9: `33481ce01933834876037127e2753773a9a204cc`, `reports/v26-e2e.md` (DONE).
-- Q9fix: `b82cddfb8f772a930642bb1b836698a84d688c8a`, `reports/fix-bulk-equip.md` (DONE).
-- Q10: `b82ccbaf7c2be588300014c539665f580bf030cb`, `reports/v29-flag-flip.md` (DONE).
-- Q10b: `fd1f75d85b654a3d556b8bd2cd2e44c96564c401`, `reports/v20b-relic-wiring.md` (DONE).
-- Q11: `0ca1264f15edf3422935b54340fc3fa5f16d8154`, `reports/v29-rehearsal.md` (DONE).
-- Q12: `0609f0823984e55bbb8c4a9d10b61e320ceaaade`, `reports/v6g-apply-plan.md` (DONE).
-- Q13: `7c26fdc3cf472332c64d6b41e5cfb7d6c79c892a`, `reports/later-qa.md` (DONE).
-- Q13a: `096327b7c5f003013a6febabaa02125fce793a49`, `reports/fix-decorative-key.md` (DONE).
-- Q13b: `3cfcdb724b7f7d086d2059fba8f1b68bf7f72dd4`, `reports/fix-sheet-focus.md` (DONE).
+- Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, [reports/v2-plan-doc.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v2-plan-doc/reports/v2-plan-doc.md) (DONE).
+- Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, [reports/check-live-v2.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-check-live-v2/reports/check-live-v2.md) (DONE).
+- Q2: `67cd5ed522cd0b9ee680a7ad7fdcbb9bf109aff0`, [reports/v19-cues.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/main/reports/v19-cues.md) (DONE-ON-MAIN).
+- Q3: `9d820a0601526c0da515be7d33d43d15aeec77a6`, [reports/v6f-rebalance.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v6f-rebalance/reports/v6f-rebalance.md) (DONE).
+- Q4: `16911ac0932a4fdcdaaf811672e2dc3cc9e7a61e`, [reports/v19-arena.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v19-arena/reports/v19-arena.md) (DONE).
+- Q5: `fd318c4910e50152fdb0522593762288e76efbda`, [reports/v16-stage.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v16-stage/reports/v16-stage.md) (DONE).
+- Q6: `2cbbf7ff81beedb7495b9d638540039c62734907`, [reports/v7c-client-contract.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v7c-client-contract/reports/v7c-client-contract.md) (DONE).
+- Q7: `a3eac4a46cfc625dec4910ff40b8b4c54611e6b4`, [reports/v10-followups.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v10-followups/reports/v10-followups.md) (DONE).
+- Q8: `235298d29595ee5c1851ff80cdb687a5fdcdb172`, [reports/v29-founder.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v29-founder-grant/reports/v29-founder.md) (DONE).
+- Q9: `33481ce01933834876037127e2753773a9a204cc`, [reports/v26-e2e.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v26-e2e/reports/v26-e2e.md) (DONE).
+- Q9fix: `b82cddfb8f772a930642bb1b836698a84d688c8a`, [reports/fix-bulk-equip.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-bulk-equip/reports/fix-bulk-equip.md) (DONE).
+- Q10: `b82ccbaf7c2be588300014c539665f580bf030cb`, [reports/v29-flag-flip.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v29-flag-flip/reports/v29-flag-flip.md) (DONE).
+- Q10b: `fd1f75d85b654a3d556b8bd2cd2e44c96564c401`, [reports/v20b-relic-wiring.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v20b-relic-wiring/reports/v20b-relic-wiring.md) (DONE).
+- Q11: `0ca1264f15edf3422935b54340fc3fa5f16d8154`, [reports/v29-rehearsal.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v29-rehearsal/reports/v29-rehearsal.md) (DONE).
+- Q12: `0609f0823984e55bbb8c4a9d10b61e320ceaaade`, [reports/v6g-apply-plan.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v6g-apply-plan-report/reports/v6g-apply-plan.md) (DONE).
+- Q13: `7c26fdc3cf472332c64d6b41e5cfb7d6c79c892a`, [reports/later-qa.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-later-qa-report/reports/later-qa.md) (DONE).
+- Q13a: `096327b7c5f003013a6febabaa02125fce793a49`, [reports/fix-decorative-key.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-decorative-key/reports/fix-decorative-key.md) (DONE).
+- Q13b: `3cfcdb724b7f7d086d2059fba8f1b68bf7f72dd4`, [reports/fix-sheet-focus.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-sheet-focus/reports/fix-sheet-focus.md) (DONE).
 
 ## User must decide on return
 
-1. D4: sign economy proposal only after reviewing Q3 evidence; production numbers unchanged.
-2. D8: Founder contents, eligibility cutoff and permission to apply the draft migration before any merge.
-3. D10 MADE: V16/V19 authorized by replacement prompt; user reviews final screenshots.
-4. D6: cut-over day; flag flip requires V16 on main and the cut-over decision.
+1. **D4:** Q3's proposal is NOT READY: 7 strict targets pass, chapter-growth and boss-check fail under strict and relaxed criteria. Recommend pacing/classes follow-up before signing. Q12 lists all 34 leaves (26 changes), injected-suite impact, goldens and commands. Production numbers and the unsigned signature line remain unchanged.
+2. **D8:** approve Founder contents, caps and strict `created_at < cutoff` eligibility. Q8 SQL is a draft; authorized live apply_migration is required BEFORE merging it. Q11 rehearsed batches, idempotency and rollback only in PGlite, never live.
+3. **D6:** choose cutover day and go/no-go only after release gates pass. Q10 must NEVER merge early. Revert code commit `28a5469f4d5d6d23d2bf1d0178b089fb75e5a835` if necessary. C16 must be merged before CHECK_LIVE_V2=post. Main remains v1.
+4. **Manual Fuji test (Q10b):** use a real signed-in wallet to verify first mint, pending receipt/reload, shared daily limit, failed reporting recovery and wrong-wallet refusal. Report gives exact steps. No transaction, signing key or live contract operation was performed here.
+5. **Q9 resolved:** the user explicitly authorized the dedicated bulk-equip product fix. Q9fix `b82cddf` queues both upgrades with account/unmount cancellation. Q9 `33481ce` passed all three repeat runs and full verification with the original regression unchanged. Review/merge the fix before Q9 and preserve it when integrating Relic wiring. Earlier reports describing Q9 as BLOCKED reflect their original verification time; the current Q9 report and this summary supersede that blocker.
+6. **D10 MADE:** V19/V16 were authorized by the replacement prompt. Review their screenshots and final viewport behavior. Q13 fixes await review; future findings remain WAITING.
+7. **D3/D5:** final class art waits for user references/previews. D7 public repo/submission and D9 deadline remain user decisions. No public submission performed.
+8. **Verification limits:** Q1 live health failed due environment network errors (NOT VERIFIED); Deno unavailable for Q7; real JWT/gateway/Fuji behavior and deployed UI remain manual. Q12 injected failures document expected application impact, not approved assertion changes.
+
+## Review and merge order (user only)
+
+- Independent: Q0 plan, Q1 C16 checks, Q3 simulator proposal, Q6 client contract tests, Q7 deployment-list checks. Q12 report only. Q2 C14 is already on main at `67cd5ed`.
+- UI: Q4 `16911ac` → Q5 `fd318c4` → bulk fix `b82cddf` → Q9 `33481ce`. Q10b `fd1f75d` and Q13 accessibility fixes each stack directly on Q5; integrate them after Q5, preserving both the bulk adapter and Relic handoff in shared StageLayout/store files. QA fixes may merge independently after Q5. Repeat relevant integration checks after merge conflict resolution.
+- Founder: Q8 `235298d` only after D8 and authorized live migration apply → Q11 `0ca1264` rehearsal test/report. SQL draft is not permission to execute.
+- Q10 `b82ccba` LAST, only on D6 cutover with all gates satisfied, latest-main rebase and manual smoke. Its stage snapshot must be reconciled with Relic/accessibility fixes. No main flag flip, deployment, merge or live execution occurred in this session.
+
+## Final state
+
+All task branches/reports pushed; no PRs created. main unchanged at `337977751204b5ea59d8f0cabfb91fb4cd4a391f`. No dependency, lock/workspace, auth, contract, signed-economy or live database change. Temporary number probe removed. Worktree clean at completion.
+
+## Final audit evidence after the authorized follow-up
+
+The user answered “Authorize the fix and finish Q9”. That scoped exception is complete; no exception was inferred for economy/signing, real transactions, live migrations, PR/main merge, deployment or art approval. No pending scope question remains.
+
+```text
+PASS: main unchanged at 337977751204b5ea59d8f0cabfb91fb4cd4a391f
+PASS: Q0 replacement approved-plan block copied verbatim
+PASS: Q0 report status matches summary
+PASS: Q0 protected contracts/auth/lock/workspace unchanged
+PASS: Q1 report status matches summary
+PASS: Q1 protected contracts/auth/lock/workspace unchanged
+PASS: Q4 report status matches summary
+PASS: Q4 protected contracts/auth/lock/workspace unchanged
+PASS: Q5 report status matches summary
+PASS: Q5 protected contracts/auth/lock/workspace unchanged
+PASS: Q5 completed parent is ancestor
+PASS: Q5 exact stack header present
+PASS: Q3 report status matches summary
+PASS: Q3 protected contracts/auth/lock/workspace unchanged
+PASS: Q3 production economy/content unchanged
+PASS: Q6 report status matches summary
+PASS: Q6 protected contracts/auth/lock/workspace unchanged
+PASS: Q7 report status matches summary
+PASS: Q7 protected contracts/auth/lock/workspace unchanged
+PASS: Q8 report status matches summary
+PASS: Q8 protected contracts/auth/lock/workspace unchanged
+PASS: Q8 only new draft migration
+PASS: Q9 report status matches summary
+PASS: Q9 protected contracts/auth/lock/workspace unchanged
+PASS: Q9 completed parent is ancestor
+PASS: Q9 exact stack header present
+PASS: Q10 report status matches summary
+PASS: Q10 protected contracts/auth/lock/workspace unchanged
+PASS: Q10 completed parent is ancestor
+PASS: Q10 exact stack header present
+PASS: Q10b report status matches summary
+PASS: Q10b protected contracts/auth/lock/workspace unchanged
+PASS: Q10b completed parent is ancestor
+PASS: Q10b exact stack header present
+PASS: Q11 report status matches summary
+PASS: Q11 protected contracts/auth/lock/workspace unchanged
+PASS: Q11 completed parent is ancestor
+PASS: Q11 exact stack header present
+PASS: Q12 report status matches summary
+PASS: Q12 protected contracts/auth/lock/workspace unchanged
+PASS: Q12 production economy/content unchanged
+PASS: Q13a report status matches summary
+PASS: Q13a protected contracts/auth/lock/workspace unchanged
+PASS: Q13a completed parent is ancestor
+PASS: Q13a exact stack header present
+PASS: Q13b report status matches summary
+PASS: Q13b protected contracts/auth/lock/workspace unchanged
+PASS: Q13b completed parent is ancestor
+PASS: Q13b exact stack header present
+PASS: Q13 report status matches summary
+PASS: Q13 protected contracts/auth/lock/workspace unchanged
+PASS: Q9fix report status matches summary
+PASS: Q9fix protected contracts/auth/lock/workspace unchanged
+PASS: Q9fix completed parent is ancestor
+PASS: Q9fix exact stack header present
+PASS: task worktree clean
+```
+
+Full suite skipped for summary: docs only. Actual docs-only checks:
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 787ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.86s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.33s
+
+```
+
+PASS: all recorded task commits match remote branch heads and use the required author.
+PASS: Q9 spec is byte-identical to its original failing version; 3×15 loop tests and 68/68 whole-browser tests pass.
