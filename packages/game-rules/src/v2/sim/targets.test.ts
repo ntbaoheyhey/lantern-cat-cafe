@@ -10,13 +10,13 @@ import { percentileV2 } from './report';
 
 function synthetic(spread: number): SimResultV2[] {
   return CLASS_IDS.flatMap((classId, index) => [1, 2, 3].map((seed) => ({
-    classId, seed, minutesToFirstBossWin: 12,
+    classId, seed, keyWaitMinutes: {}, calendarDaysToChapterBossWin: {}, maxLevelBeforeChapter5Win: false, minutesToFirstBossWin: 12,
     minutesToChapterBossWin: Object.fromEntries(CHAPTERS.map((ch) => [ch.index, 12 * 2 ** (ch.index - 1) * (1 + (index / 6 - 0.5) * spread)])),
     minutesPerChapter: Object.fromEntries(CHAPTERS.map((ch) => [ch.index, 12 * 1.5 ** (ch.index - 1)])),
     minutesToLevel: { 20: 20, 40: 40 }, keysUsed: 5, bossFights: 5, bossLosses: 0, crafted: 0, salvaged: 0,
     stuck: null, finalLevel: 40, finalPower: 100,
     roundSamples: Object.fromEntries(['1:1', '3:1', '3:5', '5:1'].map((key) => [key, { level: 10, timeToKillMs: 2000, walkTimeMs: 2000 / 3, walkShare: 0.25, timeToKillByLevelMs: Array(60).fill(2000) as number[] }])),
-    bosses: Object.fromEntries(CHAPTERS.map((ch) => [ch.index, { fights: 1, losses: Number(seed === 3), firstAttemptWon: seed !== 3, durationsMs: [120000] }])),
+    bosses: Object.fromEntries(CHAPTERS.map((ch) => [ch.index, { fights: 1, losses: Number(seed === 3), firstAttemptWon: seed !== 3, durationsMs: [120000], levels: [10] }])),
   })));
 }
 
@@ -33,6 +33,7 @@ it('enforces numeric ratios and each absolute guardrail on the override object',
   expect(guardrailsCheckV2({ idle: { walkTimeMs: 6000 } }).ok).toBe(false);
   expect(guardrailsCheckV2({ idle: { walkTimeMs: 2001 } }).ok).toBe(false);
   expect(guardrailsCheckV2({ idle: { dailyKeys: 4 } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ idle: { dailyKeys: 5 } }).ok).toBe(false);
   expect(guardrailsCheckV2({ boss: { maxMs: 180001 } }).ok).toBe(false);
   expect(guardrailsCheckV2({ cat: { levelGrowth: 0.019 } }).ok).toBe(false);
   expect(guardrailsCheckV2({ cat: { baseHp: NaN } }).ok).toBe(false);
@@ -83,6 +84,8 @@ it('records first attempts, durations and probe entry levels without changing fi
   expect(Object.values(result.bosses).reduce((n, b) => n + b.losses, 0)).toBe(result.bossLosses);
   for (const boss of Object.values(result.bosses)) {
     expect(boss.durationsMs).toHaveLength(boss.fights);
+    expect(boss.levels).toHaveLength(boss.fights);
+    expect(boss.levels.every((level) => level >= 1 && level <= V2_CONFIG.cat.maxLevel)).toBe(true);
     expect(boss.firstAttemptWon === null).toBe(boss.fights === 0);
   }
 });
