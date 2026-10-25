@@ -17,8 +17,13 @@ export class StageScene extends Phaser.Scene {
   private reduced = false;
   constructor() { super('v2-stage'); }
   create() {
-    this.events.once('shutdown', () => this.director?.destroy());
-    if (this.state0) this.show(this.state0, this.reduced);
+    // Phaser enters RUNNING after create() returns; show() must wait for CREATE.
+    const showQueuedState = () => { if (this.state0) this.show(this.state0, this.reduced); };
+    this.events.once(Phaser.Scenes.Events.CREATE, showQueuedState);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.events.off(Phaser.Scenes.Events.CREATE, showQueuedState);
+      this.director?.destroy();
+    });
   }
   show(state: ServerStateV2, reducedMotion: boolean) {
     const before = this.state0;
