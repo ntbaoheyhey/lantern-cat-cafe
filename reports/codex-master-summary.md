@@ -190,6 +190,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q13a | DONE | ai/codex-fix-decorative-key | no | QA1 finding 1 fixed; STACKED ON V16 fd318c4; full final tests and 53 browser tests pass. |
 | Q13b | DONE | ai/codex-fix-sheet-focus | no | QA1 finding 2 fixed; STACKED ON V16 fd318c4; full checks and 53 browser tests pass. |
 | Q13c / C-R2 | DONE | ai/codex-fix-stage-redraw | no | Finding A-R1-1 fixed after eligible Antigravity QA1 evidence; STACKED ON Q9; full checks and 70 browser tests pass. |
+| C-R1 | DONE | ai/codex-responsive-window | no | STACKED ON stage redraw 7760775; full checks and 72 browser tests pass; independent retest/Claude review open. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, [reports/v2-plan-doc.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-v2-plan-doc/reports/v2-plan-doc.md) (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, [reports/check-live-v2.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-check-live-v2/reports/check-live-v2.md) (DONE).
@@ -480,9 +481,9 @@ Antigravity published ai/antigravity-responsive-qa @ 9980b46c01f60dc41975975f616
 | card | status | branch | merged | review/dependency |
 |---|---|---|---|---|
 | C-R2 / Q13c | DONE | ai/codex-fix-stage-redraw | no | STACKED ON completed Q9 33481ce; merge parent first; Claude review |
-| C-R1 | PARTIAL, final verification next | ai/codex-responsive-window | no | Rebase own commits onto DONE C-R2, retain original regressions |
+| C-R1 | DONE | ai/codex-responsive-window | no | Rebased onto DONE C-R2; full checks and 72 browser tests pass; Claude review |
 | A-R1 | report published, old-source verdict PARTIAL | ai/antigravity-responsive-qa | no | Independent named finding preserved |
-| A-R2 | WAITING on final C-R1 DONE | manual Antigravity retest | no | No automatic dispatch or independent sign-off claimed |
+| A-R2 | READY for manual dispatch | manual Antigravity retest | no | Final source DONE; no independent retest/sign-off claimed |
 
 C-R2 pushed 7760775cd2beae2f87efbcbeef6b849c5ae28a5c: [reports/fix-stage-redraw.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-stage-redraw/reports/fix-stage-redraw.md). StageScene.ts now renders queued state on Phaser CREATE after RUNNING and cancels the pending callback on shutdown while retaining director cleanup. No StageCanvas or CSS change in this fix. New lifecycle tests reproduced two missing-sprite failures before the fix. Initial full browser run found a transient old/new canvas handoff in the new harness (69 passed/1 failed); second/final round atomically checks exactly one target-size canvas, without timeout/count/assertion relaxation. Repeated frozen install, drift, typecheck, lint, all root unit suites, build and all 70 browser tests PASS. Three new unretouched actor images show desktop/phone rendering.
 
@@ -553,5 +554,57 @@ $ pnpm gen:deno && git diff --exit-code -- supabase/functions
 wrote 18 Edge Function import maps
 
 EXIT 0; runtime 0.43s
+
+```
+
+## Responsive window: final implementation result (2026-10-26)
+
+This supersedes the historical PARTIAL C-R1/progress entries above. The user's “document it first” decision was honored: Antigravity independently named A-R1-1, Q13 fixed it separately from completed Q9, and only after that fix reached DONE did the coordinator rebase its own responsive branch. No implementation was stacked on PARTIAL work or another tool's branch.
+
+| card | status | branch / exact commit | report / next step |
+|---|---|---|---|
+| C-R2 / Q13c | DONE | ai/codex-fix-stage-redraw @ 7760775cd2beae2f87efbcbeef6b849c5ae28a5c | [fix report](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-stage-redraw/reports/fix-stage-redraw.md); 70 browser tests and all root checks PASS |
+| C-R1 | DONE | ai/codex-responsive-window @ 282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6 | [Claude report](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/reports/responsive-window.md); 72 browser tests and all root checks PASS |
+| A-R1 | published, old-source verdict PARTIAL | ai/antigravity-responsive-qa @ 9980b46c01f60dc41975975f6166e99cff16b918 | Old FAIL evidence retained, not overwritten or mistaken for fixed-source sign-off |
+| A-R2 | READY, manual dispatch | [retest prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/antigravity-responsive-retest.md) | Independent fixed-source report/screenshots only; not run by Codex |
+| Codex independent review | WAITING, chat-creation tool unavailable | [prepared prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/codex-responsive-review.md) | No new user chat or independent review claimed |
+
+C-R1's own product diff is still scoped layout.css plus its new resize regression. Shared HUD, metrics, StageLayout behavior and parent renderer code are unchanged relative to the completed fix. The actor guard now atomically verifies one target-size canvas before checking pixels; all original geometry/state/pixel assertions and timeouts remain. Eight dark/light desktop/phone screenshots were regenerated after passing the guard and visually inspected at 320 and 1280 widths. The initial PARTIAL report is archived byte-for-byte at reports/responsive-window/initial-partial-report.txt; historical Antigravity blank-actor screenshots remain on its report branch. Inherited screenshots generated by existing tests were restored, and both source worktrees are clean.
+
+Final C-R1 commands: frozen pnpm 10.28.0 install, gen:deno/no drift, typecheck, lint, all root unit suites, build and full Playwright 72/72 PASS. Five markdown files / 13 local links and paths verified. Correct author and own allowlist verified. Only own responsive history was rebased/pushed with a lease against d4fb8ec; all other pushes were own task/report branches. Main remains 337977751204b5ea59d8f0cabfb91fb4cd4a391f.
+
+Claude review/integration order: existing Q4/Q5 → bulk fix → Q9 → C-R2 @ 7760775 → C-R1 @ 282843d. Other completed Relic/accessibility branches retain their separate merge requirements. Nothing merged, no PR opened, no workflow/deployment/Site sharing/live write/transaction, and no user decision made. D4 stays NOT READY; D8/D6/D3/D5/D7/D9 and manual Fuji mint remain open. Physical iOS/Android, WebKit and deployed behavior NOT VERIFIED. Existing preview/media were not updated by this responsive work.
+
+Full suite skipped for this master-summary-only update: docs only. Actual summary checks follow.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 911ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.98s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.31s
 
 ```
