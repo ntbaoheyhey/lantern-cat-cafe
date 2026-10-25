@@ -186,7 +186,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q10b | DONE | ai/codex-v20b-relic-wiring | no | STACKED ON V16 fd318c4; USER must perform real Fuji mint/shared-limit/recovery test. |
 | Q11 | DONE | ai/codex-v29-rehearsal | no | STACKED ON Founder 235298d; D8/D6 and every live cut-over step remain USER-only. |
 | Q12 | DONE | ai/codex-v6g-apply-plan-report | no | D4 hard stop: 34 leaves, 26 changes; injected-suite impact documented; proposal NOT READY; no numbers applied; exact proposal path audited. |
-| Q13 | DONE | ai/codex-later-qa-report | no | Both named QA1 findings fixed in separate branches; later findings WAITING; Q9 bulk-equip needs eligible QA source or explicit scope. |
+| Q13 | DONE | ai/codex-later-qa-report | no | Both named QA1 findings and the explicitly authorized bulk-equip follow-up DONE; later unnamed findings WAITING; hard stops unchanged. |
 | Q13a | DONE | ai/codex-fix-decorative-key | no | QA1 finding 1 fixed; STACKED ON V16 fd318c4; full final tests and 53 browser tests pass. |
 | Q13b | DONE | ai/codex-fix-sheet-focus | no | QA1 finding 2 fixed; STACKED ON V16 fd318c4; full checks and 53 browser tests pass. |
 
@@ -205,7 +205,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q10b: `fd1f75d85b654a3d556b8bd2cd2e44c96564c401`, `reports/v20b-relic-wiring.md` (DONE).
 - Q11: `0ca1264f15edf3422935b54340fc3fa5f16d8154`, `reports/v29-rehearsal.md` (DONE).
 - Q12: `0609f0823984e55bbb8c4a9d10b61e320ceaaade`, `reports/v6g-apply-plan.md` (DONE).
-- Q13: `cf935a5ba8b8672fdd2feef7573b08398fb623d3`, `reports/later-qa.md` (DONE).
+- Q13: `7c26fdc3cf472332c64d6b41e5cfb7d6c79c892a`, `reports/later-qa.md` (DONE).
 - Q13a: `096327b7c5f003013a6febabaa02125fce793a49`, `reports/fix-decorative-key.md` (DONE).
 - Q13b: `3cfcdb724b7f7d086d2059fba8f1b68bf7f72dd4`, `reports/fix-sheet-focus.md` (DONE).
 
