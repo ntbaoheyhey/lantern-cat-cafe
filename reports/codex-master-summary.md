@@ -427,12 +427,12 @@ EXIT 0; runtime 0.31s
 
 The user authorized Codex to plan work for Codex and Antigravity while preserving Claude's rules, requested flexible window resizing, and explicitly required a Claude review report. Automatic new Codex chats are user-authorized; Antigravity is manual paste. Tool inventory exposes no create_thread, so no new chat was created or work falsely delegated.
 
-- C-R1: PARTIAL on ai/codex-responsive-window @ b2d52be, stacked on completed Q9 33481ce. HUD wrapping/geometry fix passes focused tests; all unit/build/type/lint checks pass. Final browser run: 68 passed, 2 failed on the stronger actor-redraw test. Do not merge as green or stack implementation on this PARTIAL branch.
+- C-R1: PARTIAL on ai/codex-responsive-window @ d4fb8ec745a92c1052a8250f57a4108b8ce59ac4, stacked on completed Q9 33481ce. HUD wrapping/geometry fix passes focused tests; all unit/build/type/lint checks pass. Final browser run: 68 passed, 2 failed on the stronger actor-redraw test. Do not merge as green or stack implementation on this PARTIAL branch.
 - [Claude report](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/reports/responsive-window.md)
 - [Coordination plan](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/responsive-coordination.md)
 - [Antigravity manual-paste prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/antigravity-responsive-qa.md)
 - [Future Codex review prompt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-responsive-window/docs/prompts/codex-responsive-review.md)
-- Actor redraw blocker: StageScene.create calls show while Phaser status is CREATING; show refuses sys.isActive=false. Phaser only sets RUNNING and emits CREATE after create returns. Initial render can remain absent until state changes. Fix needs StageScene.ts and lifecycle/resize regression scope beyond C-R1's CSS-only source allowlist. S5 stop obeyed; failed test retained. Scoped user authorization requested for a separate renderer card, alternatively eligible Antigravity QA1 evidence can unlock a future fix. No renderer edit or unapproved implementation stacking occurred.
+- Actor redraw blocker: StageScene.create calls show while Phaser status is CREATING; show refuses sys.isActive=false. Phaser only sets RUNNING and emits CREATE after create returns. Initial render can remain absent until state changes. Fix needs StageScene.ts and lifecycle/resize regression scope beyond C-R1's CSS-only source allowlist. S5 stop obeyed; failed test retained. The user explicitly chose “Keep scope; let Antigravity document it first.” No renderer approval is pending; wait for eligible Antigravity QA1 evidence before a separate fix. No renderer edit or unapproved implementation stacking occurred.
 - Antigravity can inspect PARTIAL source read-only and report named QA1 findings, physical-device/WebKit/zoom limits, without stacking or merging it. Independent reviews remain WAITING, not marked DONE.
 - New documents/report link check passed: 4 markdown files, 3 paths. Original approved plan and all D-gates remain unchanged. No deployment/main/PR/live mutation.
 
@@ -469,3 +469,5 @@ wrote 18 Edge Function import maps
 EXIT 0; runtime 0.33s
 
 ```
+
+Responsive follow-up decision: keep C-R1 scope, no renderer edits. A-R1 manual prompt now explicitly prioritizes the blank actors finding; Claude report remains PARTIAL. Current branch d4fb8ec745a92c1052a8250f57a4108b8ce59ac4. No new chat created (create_thread unavailable); Codex review prompt prepared.
