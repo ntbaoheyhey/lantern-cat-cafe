@@ -252,6 +252,22 @@
   color: var(--bad, #ff6b6b);
 }
 
+.boss-gate-panel[data-status='gated'] .boss-gate-status-text {
+  color: var(--accent, #ffb86b);
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: light) {
+  .boss-gate-panel[data-status='gated'] .boss-gate-status-text {
+    color: var(--text, #2a1a08);
+  }
+}
+
+.boss-gate-panel[data-theme='light'][data-status='gated'] .boss-gate-status-text,
+[data-theme='light'] .boss-gate-panel[data-status='gated'] .boss-gate-status-text {
+  color: var(--text, #2a1a08);
+}
+
 /* Accessible screen-reader-only utility */
 .sr-only {
   position: absolute;

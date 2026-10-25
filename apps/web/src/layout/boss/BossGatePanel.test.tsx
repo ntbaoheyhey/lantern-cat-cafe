@@ -1,8 +1,29 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
+import { sampleServerStateV2 } from '../a11y/fixtures';
 import { BossGatePanel } from './BossGatePanel';
+
+expect.extend({
+  toBeInTheDocument(received: HTMLElement | null) {
+    const pass = Boolean(received && document.body.contains(received));
+    return {
+      pass,
+      message: () =>
+        pass
+          ? 'expected element not to be in the document'
+          : 'expected element to be in the document',
+    };
+  },
+});
+
+declare module 'vitest' {
+  interface Assertion<R extends void | Promise<void> = void, T = unknown> {
+    toBeInTheDocument(): R;
+  }
+}
 
 function makeState(overrides: Partial<{
   classId: ServerStateV2['cat']['classId'];
@@ -12,6 +33,8 @@ function makeState(overrides: Partial<{
   keys: number;
   cooldownUntil: number | null;
   clearedChapters: number[];
+  gated: boolean;
+  neededPower: number;
 }> = {}): ServerStateV2 {
   const currentChapter = overrides.chapter ?? 1;
   const cleared = (overrides.clearedChapters ?? []).map((ch) => ({
@@ -32,8 +55,8 @@ function makeState(overrides: Partial<{
       round: overrides.round ?? 10,
       kills: overrides.kills ?? 6,
       killsPerRound: 6,
-      gated: false,
-      neededPower: 0,
+      gated: overrides.gated ?? false,
+      neededPower: overrides.neededPower ?? 0,
     },
     currencies: {
       fish: 100,
@@ -348,5 +371,192 @@ describe('BossGatePanel', () => {
     const textReady = liveRegion.textContent;
     // Live region text DOES change when kind changes
     expect(textReady).not.toBe(textSecond1);
+  });
+
+  it('state (a) gated: FINDING #2 verbatim assertion passes; Fight disabled in not-reached; reached + gated + key -> Fight enabled & hint shown', () => {
+    // 1. Verbatim assertion from reports/v27d-a11y.md lines 76-78
+    const state = sampleServerStateV2({ chapter: 1, round: 10, kills: 6, gated: true, neededPower: 1500 });
+    const { rerender } = render(<BossGatePanel state={state} chapter={1} nowS={1000} busy={false} onFight={vi.fn()} onSelectChapter={vi.fn()} />);
+    expect(screen.getByText(/1,?500/)).toBeInTheDocument();
+
+    // Reached + gated + key -> Fight enabled and hint shown
+    const reachedBtn = screen.getByRole('button', { name: 'Fight' });
+    expect(reachedBtn.hasAttribute('disabled')).toBe(false);
+    expect(
+      screen.getByText('Needs about 1,500 power: upgrade your weapon or armor to keep going.'),
+    ).toBeInTheDocument();
+
+    // Not-reached gated case: round 7, kills 2 -> Fight disabled and hint + remainder shown
+    const notReachedState = sampleServerStateV2({ chapter: 1, round: 7, kills: 2, gated: true, neededPower: 1500 });
+    rerender(<BossGatePanel state={notReachedState} chapter={1} nowS={1000} busy={false} onFight={vi.fn()} onSelectChapter={vi.fn()} />);
+    expect(screen.getByText(/1,?500/)).toBeInTheDocument();
+    const disabledBtn = screen.getByRole('button', { name: 'Fight' });
+    expect(disabledBtn.hasAttribute('disabled')).toBe(true);
+    expect(
+      screen.getByText(
+        'Needs about 1,500 power: upgrade your weapon or armor to keep going. Then clear 3 more rounds and 4 more monsters to reach the boss.',
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it('state (b) no_key: existing sentence matches; with firstClearKeys > 0 extra sentence appears', () => {
+    const state = makeState({ chapter: 1, round: 10, kills: 6, keys: 0 });
+    const { rerender } = render(
+      <BossGatePanel
+        state={state}
+        chapter={1}
+        nowS={1000}
+        busy={false}
+        onFight={vi.fn()}
+        onSelectChapter={vi.fn()}
+      />,
+    );
+
+    expect(
+      screen.getByText(
+        'You need a Cat Key. You get one each day from your first claim, and sometimes from monsters in cleared chapters.',
+      ),
+    ).toBeInTheDocument();
+
+    const bossConfig = v2.V2_CONFIG.boss as Record<string, unknown>;
+    bossConfig.firstClearKeys = 1;
+    try {
+      rerender(
+        <BossGatePanel
+          state={state}
+          chapter={1}
+          nowS={1000}
+          busy={false}
+          onFight={vi.fn()}
+          onSelectChapter={vi.fn()}
+        />,
+      );
+      expect(
+        screen.getByText(
+          'You need a Cat Key. You get one each day from your first claim, and sometimes from monsters in cleared chapters. A first boss clear also gives one.',
+        ),
+      ).toBeInTheDocument();
+    } finally {
+      delete bossConfig.firstClearKeys;
+    }
+  });
+
+  it('state (c) cooldown: nowS = cooldownUntil - 61 -> "Catnap: 1:01"; nowS = cooldownUntil - 1 -> "Catnap: 0:01"; Fight disabled', () => {
+    const cooldownUntil = 1000;
+    const state = makeState({ cooldownUntil });
+    const { rerender } = render(
+      <BossGatePanel
+        state={state}
+        chapter={1}
+        nowS={cooldownUntil - 61}
+        busy={false}
+        onFight={vi.fn()}
+        onSelectChapter={vi.fn()}
+      />,
+    );
+
+    const button = screen.getByRole('button', { name: 'Fight' });
+    expect(button.hasAttribute('disabled')).toBe(true);
+    expect(screen.getByText('Catnap: 1:01')).toBeInTheDocument();
+
+    rerender(
+      <BossGatePanel
+        state={state}
+        chapter={1}
+        nowS={cooldownUntil - 1}
+        busy={false}
+        onFight={vi.fn()}
+        onSelectChapter={vi.fn()}
+      />,
+    );
+
+    expect(button.hasAttribute('disabled')).toBe(true);
+    expect(screen.getByText('Catnap: 0:01')).toBeInTheDocument();
+  });
+
+  it('state (e) rematch: button "Rematch" enabled and the rematch line shown', () => {
+    const state = makeState({
+      chapter: 2,
+      round: 1,
+      kills: 0,
+      clearedChapters: [1],
+      keys: 2,
+    });
+    render(
+      <BossGatePanel
+        state={state}
+        chapter={1}
+        nowS={1000}
+        busy={false}
+        onFight={vi.fn()}
+        onSelectChapter={vi.fn()}
+      />,
+    );
+
+    const button = screen.getByRole('button', { name: 'Rematch' });
+    expect(button.hasAttribute('disabled')).toBe(false);
+    expect(
+      screen.getByText('Rematch: the chest is smaller than the first clear.'),
+    ).toBeInTheDocument();
+  });
+
+  it('for every disabled state: the button\'s aria-describedby resolves to the element holding the visible reason', () => {
+    const disabledStates: Array<{ name: string; state: ServerStateV2; nowS?: number; expectedPattern: RegExp | string }> = [
+      {
+        name: 'no_class',
+        state: makeState({ classId: null }),
+        expectedPattern: 'Pick a class first.',
+      },
+      {
+        name: 'cooldown',
+        state: makeState({ cooldownUntil: 1042 }),
+        nowS: 1000,
+        expectedPattern: 'Catnap: 0:42',
+      },
+      {
+        name: 'not_reached',
+        state: makeState({ chapter: 1, round: 7, kills: 2 }),
+        expectedPattern: 'Clear 3 more rounds and 4 more monsters to reach the boss.',
+      },
+      {
+        name: 'no_key',
+        state: makeState({ chapter: 1, round: 10, kills: 6, keys: 0 }),
+        expectedPattern: /You need a Cat Key/,
+      },
+      {
+        name: 'gated',
+        state: makeState({ chapter: 1, round: 7, kills: 2, gated: true, neededPower: 1500 }),
+        expectedPattern: /Needs about 1,500 power/,
+      },
+    ];
+
+    for (const s of disabledStates) {
+      const { unmount } = render(
+        <BossGatePanel
+          state={s.state}
+          chapter={1}
+          nowS={s.nowS ?? 1000}
+          busy={false}
+          onFight={vi.fn()}
+          onSelectChapter={vi.fn()}
+        />,
+      );
+
+      const button = screen.getByRole('button', { name: 'Fight' });
+      expect(button.hasAttribute('disabled'), `${s.name} button should be disabled`).toBe(true);
+
+      const descId = button.getAttribute('aria-describedby');
+      expect(descId, `${s.name} button should have aria-describedby`).toBeTruthy();
+
+      const descEl = document.getElementById(descId!);
+      expect(descEl, `${s.name} element referenced by aria-describedby should exist`).toBeTruthy();
+      if (typeof s.expectedPattern === 'string') {
+        expect(descEl?.textContent).toBe(s.expectedPattern);
+      } else {
+        expect(descEl?.textContent).toMatch(s.expectedPattern);
+      }
+
+      unmount();
+    }
   });
 });

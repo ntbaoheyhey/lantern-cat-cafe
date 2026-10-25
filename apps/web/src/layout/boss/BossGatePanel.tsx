@@ -1,7 +1,9 @@
-import type { CSSProperties } from 'react';
+import { useId, type CSSProperties } from 'react';
+import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
 import { PixelIcon } from '../../art/pixelIcons';
 import { CHAPTER_THEME_COLORS } from '../../map/ChapterMap';
+import { formatAmount } from '../loot/lootLines';
 import {
   bossGateStatus,
   bossLabel,
@@ -38,6 +40,24 @@ function formatNotReached(
   return `Clear ${roundsStr} and ${monstersStr} to reach the boss.`;
 }
 
+function formatGatedRemainder(roundsLeft: number, killsLeft: number): string {
+  if (roundsLeft <= 0 && killsLeft <= 0) {
+    return '';
+  }
+  const monstersStr = `${killsLeft} more monster${killsLeft === 1 ? '' : 's'}`;
+  if (roundsLeft <= 0) {
+    return `Then clear ${monstersStr} to reach the boss.`;
+  }
+  const roundsStr = `${roundsLeft} more round${roundsLeft === 1 ? '' : 's'}`;
+  return `Then clear ${roundsStr} and ${monstersStr} to reach the boss.`;
+}
+
+function formatGatedText(neededPower: number, roundsLeft: number, killsLeft: number): string {
+  const base = `Needs about ${formatAmount(neededPower)} power: upgrade your weapon or armor to keep going.`;
+  const remainder = formatGatedRemainder(roundsLeft, killsLeft);
+  return remainder ? `${base} ${remainder}` : base;
+}
+
 function getLiveAnnouncement(status: BossGateStatusV2): string {
   switch (status.kind) {
     case 'ready':
@@ -46,6 +66,8 @@ function getLiveAnnouncement(status: BossGateStatusV2): string {
       return 'Catnap cooldown';
     case 'not_reached':
       return 'Chapter not reached';
+    case 'gated':
+      return 'Power too low';
     case 'no_key':
       return 'Cat Key required';
     case 'no_class':
@@ -53,16 +75,34 @@ function getLiveAnnouncement(status: BossGateStatusV2): string {
   }
 }
 
-function getVisibleStatusText(status: BossGateStatusV2): string | null {
+function getVisibleStatusText(
+  status: BossGateStatusV2,
+  state: ServerStateV2,
+  chapter: number,
+): string | null {
   switch (status.kind) {
-    case 'ready':
+    case 'ready': {
+      if (status.rematch) {
+        return 'Rematch: the chest is smaller than the first clear.';
+      }
+      if (state.progress.chapter === chapter && state.progress.gated) {
+        return formatGatedText(state.progress.neededPower ?? 0, 0, 0);
+      }
       return null;
+    }
+    case 'gated':
+      return formatGatedText(status.neededPower, status.roundsLeft, status.killsLeft);
     case 'cooldown':
       return `Catnap: ${formatCountdown(status.secondsLeft)}`;
     case 'not_reached':
       return formatNotReached(status);
-    case 'no_key':
-      return 'You need a Cat Key. You get one each day from your first claim, and sometimes from monsters in cleared chapters.';
+    case 'no_key': {
+      const extra =
+        ((v2.V2_CONFIG.boss as { firstClearKeys?: number }).firstClearKeys ?? 0) > 0
+          ? ' A first boss clear also gives one.'
+          : '';
+      return `You need a Cat Key. You get one each day from your first claim, and sometimes from monsters in cleared chapters.${extra}`;
+    }
     case 'no_class':
       return 'Pick a class first.';
   }
@@ -84,6 +124,7 @@ export function BossGatePanel({
   onFight,
   onSelectChapter,
 }: BossGatePanelProps) {
+  const statusTextId = useId();
   const status = bossGateStatus(state, chapter, nowS);
   const label = bossLabel(chapter);
   const chapters = fightableChapters(state);
@@ -107,8 +148,11 @@ export function BossGatePanel({
       ? 'Rematch'
       : 'Fight';
 
-  const visibleStatusText = getVisibleStatusText(status);
+  const visibleStatusText = getVisibleStatusText(status, state, chapter);
   const liveRegionText = getLiveAnnouncement(status);
+
+  const isFightDisabled = busy || !isReady;
+  const ariaDescribedBy = isFightDisabled && visibleStatusText ? statusTextId : undefined;
 
   return (
     <section
@@ -153,8 +197,9 @@ export function BossGatePanel({
         <button
           type="button"
           className="boss-fight-btn"
-          disabled={busy || !isReady}
+          disabled={isFightDisabled}
           aria-busy={busy ? 'true' : 'false'}
+          aria-describedby={ariaDescribedBy}
           onClick={handleFight}
         >
           {buttonText}
@@ -165,7 +210,7 @@ export function BossGatePanel({
             {liveRegionText}
           </span>
           {visibleStatusText && (
-            <span className="boss-gate-status-text">
+            <span id={statusTextId} className="boss-gate-status-text">
               {visibleStatusText}
             </span>
           )}
