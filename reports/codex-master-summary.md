@@ -186,6 +186,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q11 | DONE | ai/codex-v29-rehearsal | no | STACKED ON Founder 235298d; D8/D6 and every live cut-over step remain USER-only. |
 | Q12 | DONE | ai/codex-v6g-apply-plan-report | no | D4 hard stop: 34 leaves, 26 changes, injected test impact documented; proposal NOT READY; no numbers applied. |
 | Q13a | DONE | ai/codex-fix-decorative-key | no | QA1 finding 1 fixed; STACKED ON V16 fd318c4; full final tests and 53 browser tests pass. |
+| Q13b | DONE | ai/codex-fix-sheet-focus | no | QA1 finding 2 fixed; STACKED ON V16 fd318c4; full checks and 53 browser tests pass. |
 
 - Q0: `15ad4b8f924e76012067dce59e4f9ff3a2e65e69`, `reports/v2-plan-doc.md` (DONE).
 - Q1: `c5aa2b53f7547108438603004f6f857b46c322bb`, `reports/check-live-v2.md` (DONE).
@@ -202,6 +203,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q11: `0ca1264f15edf3422935b54340fc3fa5f16d8154`, `reports/v29-rehearsal.md` (DONE).
 - Q12: `3b5a220ca2dfe8b557f3fb913e9d0f112c44e67d`, `reports/v6g-apply-plan.md` (DONE).
 - Q13a: `096327b7c5f003013a6febabaa02125fce793a49`, `reports/fix-decorative-key.md` (DONE).
+- Q13b: `3cfcdb724b7f7d086d2059fba8f1b68bf7f72dd4`, `reports/fix-sheet-focus.md` (DONE).
 
 ## User must decide on return
 
