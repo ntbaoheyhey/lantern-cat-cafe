@@ -1,6 +1,6 @@
 # Codex master summary
 
-Revised prompt: branches and reports only; D10 MADE; stacking on own DONE branches authorized; no PRs, merges to main, live writes, or deployments. Started 2026-10-25 (UTC+7).
+Original queue authorization (separate private-demo exception recorded below): branches and reports only; D10 MADE; stacking on own DONE branches authorized; no PRs, merges to main, live writes, or deployments. Started 2026-10-25 (UTC+7).
 
 ## Start state
 
@@ -225,7 +225,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Independent: Q0 plan, Q1 C16 checks, Q3 simulator proposal, Q6 client contract tests, Q7 deployment-list checks. Q12 report only. Q2 C14 is already on main at `67cd5ed`.
 - UI: Q4 `16911ac` → Q5 `fd318c4` → bulk fix `b82cddf` → Q9 `33481ce`. Q10b `fd1f75d` and Q13 accessibility fixes each stack directly on Q5; integrate them after Q5, preserving both the bulk adapter and Relic handoff in shared StageLayout/store files. QA fixes may merge independently after Q5. Repeat relevant integration checks after merge conflict resolution.
 - Founder: Q8 `235298d` only after D8 and authorized live migration apply → Q11 `0ca1264` rehearsal test/report. SQL draft is not permission to execute.
-- Q10 `b82ccba` LAST, only on D6 cutover with all gates satisfied, latest-main rebase and manual smoke. Its stage snapshot must be reconciled with Relic/accessibility fixes. No main flag flip, deployment, merge or live execution occurred in this session.
+- Q10 `b82ccba` LAST, only on D6 cutover with all gates satisfied, latest-main rebase and manual smoke. Its stage snapshot must be reconciled with Relic/accessibility fixes. No existing-game flag flip/deployment, main merge or live database execution occurred.
 
 ## Final state
 
@@ -330,3 +330,50 @@ EXIT 0; runtime 0.33s
 
 PASS: all recorded task commits match remote branch heads and use the required author.
 PASS: Q9 spec is byte-identical to its original failing version; 3×15 loop tests and 68/68 whole-browser tests pass.
+
+## Follow-up: private demo and Antigravity build (2026-10-26, Asia/Saigon)
+
+The user explicitly requested a demo run, Antigravity build, deployment if possible, and a report for Claude. A separate owner-private Sites demo is now deployed; the original game on Vercel, GitHub main, live backend and all existing source branches remain unchanged. This is a newly authorized private demo, not a cutover or flag-flip approval.
+
+- [Play demo](https://taskbar-hero-demo-oct26.equalvine12.chatgpt.site)
+- [Proposed Antigravity class gallery](https://taskbar-hero-demo-oct26.equalvine12.chatgpt.site/review/classes.html) — review only; game art is not replaced.
+- Report branch: ai/codex-demo-build-report @ 69a24c7e6328d7fb56b4fe4087f99a69750bc1e7
+- [Claude report](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-demo-build-report/reports/demo-build-antigravity.md) with locked sources, integration patch, build output, deployment/version IDs and limitations.
+- Untouched Antigravity stage branch root build PASS; combined demo root and explicit demo-only web builds PASS; 49 focused tests and 15 browser loop tests PASS. Patch replay matches all 11 changed/new source/test files byte for byte.
+- Sites deployment appgdep_6ade3ff368988191936b94ffd8a7e927 succeeded; source snapshot 7d3da052dc9754917ade195843d7108ddac876a8. Browser-local demo state; no production backend credentials.
+- Exact static packaging, missing-helper fallback and native private publication are documented. Credentials were kept in memory and passed over hidden stdin; none are in the report or artifact.
+- D4/D8/D6 and real Fuji/manual checks remain open. The existing-game production deployment remains untouched.
+
+Summary checks: full suite skipped: docs only.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 749ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.81s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.33s
+
+```
