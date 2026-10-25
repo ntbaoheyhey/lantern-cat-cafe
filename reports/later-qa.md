@@ -92,3 +92,47 @@ wrote 18 Edge Function import maps
 EXIT 0; runtime 0.32s
 
 ```
+
+## Finding A-R1-1: stage actors after resizing (2026-10-26)
+
+Gate PASS: Antigravity published reports/qa-v2-1.md with named MAJOR Finding A-R1-1 on ai/antigravity-responsive-qa @ 9980b46c01f60dc41975975f6166e99cff16b918. Its dated QA1 addendum documents StageScene.create-time isActive rejection dropping both actors on resize. The user had asked to keep C-R1 scope and let Antigravity document it first; that independent evidence is now present. Original Q13 permits the separate fix. The PARTIAL QA branch was read only, not merged or used as an implementation parent. Earlier “only remote branch” and two-finding summaries above describe the original inspection, before this addendum.
+
+DONE: ai/codex-fix-stage-redraw @ 7760775cd2beae2f87efbcbeef6b849c5ae28a5c, [reports/fix-stage-redraw.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/7760775cd2beae2f87efbcbeef6b849c5ae28a5c/reports/fix-stage-redraw.md). STACKED ON completed Q9 ai/codex-v26-e2e @ 33481ce01933834876037127e2753773a9a204cc; merge that first. This one-bug card changes StageScene.ts plus new lifecycle/browser regressions and report/images. The queued render runs on Phaser CREATE after RUNNING, with shutdown cancellation and director cleanup. No StageCanvas edit was needed.
+
+The new lifecycle tests failed before the fix; final frozen install, gen drift, typecheck, lint, root unit suites, build and 70/70 browser tests pass. A first full run exposed a transient old/new canvas locator race (69 pass / 1 fail); the second/final allowed round atomically checks exactly one target-size canvas, retaining both actor checks and the original timeout. Both runs are recorded in the per-fix report.
+
+C-R1 is being rebased/reverified on the completed fix separately; its CSS-only source scope is unchanged. Antigravity's original old-source FAIL report remains historical evidence. Independent fixed-source retest, physical phones/WebKit and Claude review/integration remain open. Future unnamed bugs WAITING; all production, economy/art, signing and D-gates remain unchanged. No PR, merge, main push, workflow, deployment or live write occurred.
+
+Acceptance PASS: eligible named source, separate branch/regressions, all required implementation checks, preserved scope/history. This addendum changes only reports/later-qa.md; full suite skipped: docs only. Actual docs-only checks follow.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 1s using pnpm v10.28.0
+
+EXIT 0; runtime 1.18s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.51s
+
+```
