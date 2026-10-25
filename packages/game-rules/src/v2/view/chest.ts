@@ -1,3 +1,4 @@
+import { V2_CONFIG } from '../config';
 import { rollLoot } from '../../loot';
 import { Rng, deriveSeed, type Seed } from '../../rng';
 import { BONUS_LINE_RANGES, CHAPTERS, CHESTS, FISH_UNIT, GEAR_RARITIES, GEAR_SLOTS, ITEMS, SMART_LOOT, STATS, type ClassId } from '../content';
@@ -39,5 +40,7 @@ export function rollChestV2(input: ChestRollInputV2, seed: Seed): { stackDeltas:
       level: Math.max(1, Math.min(rarity.maxLevel, stageOf(input.chapter, chapter.roundsPerChapter))),
       bonus, bonusLines: bonus.map(line => ({ ...line })), locked: false, equipped: false, source: 'chest' });
   }
+  if (input.firstClear && V2_CONFIG.boss.firstClearKeys > 0)
+    stackDeltas.catKey = (stackDeltas.catKey ?? 0) + V2_CONFIG.boss.firstClearKeys;
   return { stackDeltas, items };
 }

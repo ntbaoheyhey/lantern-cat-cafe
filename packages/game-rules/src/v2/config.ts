@@ -73,6 +73,11 @@ export const V2_CONFIG = {
     attackIntervalMs: 1500,
   },
 
+  chapters: {
+    /** Kills to finish a round, per chapter (index 0 = chapter 1). The last kill is the elite. */
+    killsPerRound: [6, 10, 10, 10, 10],
+  },
+
   boss: {
     /** Normal boss attack: telegraph, then impact. */
     attackIntervalMs: 1500,
@@ -87,6 +92,12 @@ export const V2_CONFIG = {
     keyCost: 1,
     /** One cooldown per player after a lost boss fight, in seconds (schema-v2.md question 2). */
     lossCooldownSeconds: 60,
+    /** Boss HP multiplier per chapter on top of the stage formula (was ARCHETYPE.boss 40 for all). */
+    chapterHpMul: [40, 40, 40, 40, 40],
+    /** Boss ATK multiplier per chapter on top of the stage formula (was ARCHETYPE.boss 2.5 for all). */
+    chapterAtkMul: [2.5, 2.5, 2.5, 2.5, 2.5],
+    /** Cat Keys added to the FIRST-clear chest of each boss (D1 = S-B). Rematch chests never get one. 0 = off. */
+    firstClearKeys: 0,
   },
 
   /** Bag size (approved in docs/proposals/schema-v2.md) and the point where the UI warns it is nearly full. */
