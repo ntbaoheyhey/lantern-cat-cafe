@@ -167,8 +167,8 @@ docs/submission.md
 | G5 (A27b) | DONE | ai/antigravity-submission-v2-draft | no | Decide D7 (repo visibility/timing) and D9 (confirm official deadline) |
 | G6 (A24b) | DONE | ai/antigravity-v27h-guide-shots | no | None (stacked on ai/codex-v16-stage; review screenshots in docs/screenshots/v2/) |
 | G7 (A25) | DONE | ai/antigravity-v27i-a11y-stage | no | Review Findings A25a-1 (key icon title) & A25i-1 (mobile sheet initial focus) |
-| G8 (QA1) | WAITING | ai/antigravity-qa-v2-1 | no | Needs V16 + V19 or Codex ai/codex-v16-stage |
-| G9 (Post-cutover) | WAITING | - | no | Waits for V29 cut-over |
+| G8 (QA1) | DONE | ai/antigravity-qa-v2-1 | no | Review QA1 milestone pass report in reports/qa-v2-1.md (all 13 steps PASS) |
+| G9 (Post-cutover) | WAITING | - | no | Waits for V29 cut-over flag flip on live production |
 
 ### Card Details
 - **G1**: Commit `8f32b45` on `ai/antigravity-v27f-a11y-hud` -> [reports/v27f-a11y-hud.md](file:///Users/bao/taskbar-hero/reports/v27f-a11y-hud.md) (`STATUS: DONE`)
@@ -179,6 +179,7 @@ docs/submission.md
 - **G5**: Commit `ddcd56e` on `ai/antigravity-submission-v2-draft` -> [reports/submission-v2-draft.md](file:///Users/bao/taskbar-hero/reports/submission-v2-draft.md) (`STATUS: DONE`)
 - **G6**: Commit `63248cb` on `ai/antigravity-v27h-guide-shots` -> [reports/v27h-guide-shots.md](file:///Users/bao/taskbar-hero/reports/v27h-guide-shots.md) (`STATUS: DONE`, stacked on `ai/codex-v16-stage`)
 - **G7**: Commit `3f5548f` on `ai/antigravity-v27i-a11y-stage` -> [reports/v27i-a11y-stage.md](file:///Users/bao/taskbar-hero/reports/v27i-a11y-stage.md) (`STATUS: DONE`, stacked on `ai/codex-v16-stage`)
+- **G8**: Commit `163127d` on `ai/antigravity-qa-v2-1` -> [reports/qa-v2-1.md](file:///Users/bao/taskbar-hero/reports/qa-v2-1.md) (`STATUS: DONE`, stacked on `ai/codex-v16-stage`)
 
 ---
 
@@ -193,3 +194,4 @@ docs/submission.md
   - `ai/antigravity-v22-class-previews` is stacked on `ai/antigravity-v22-class-looks`. Merge `ai/antigravity-v22-class-looks` first, or merge `ai/antigravity-v22-class-previews` which includes both.
   - `ai/antigravity-v27h-guide-shots` is stacked on `ai/codex-v16-stage @ fd318c4910e50152fdb0522593762288e76efbda`. Merge `ai/codex-v16-stage` before `ai/antigravity-v27h-guide-shots`.
   - `ai/antigravity-v27i-a11y-stage` is stacked on `ai/codex-v16-stage @ fd318c4910e50152fdb0522593762288e76efbda`. Merge `ai/codex-v16-stage` before `ai/antigravity-v27i-a11y-stage`.
+  - `ai/antigravity-qa-v2-1` is stacked on `ai/codex-v16-stage @ fd318c4910e50152fdb0522593762288e76efbda`. Merge `ai/codex-v16-stage` before `ai/antigravity-qa-v2-1`.
