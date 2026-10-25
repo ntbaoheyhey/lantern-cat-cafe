@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef } from 'react';
+import { useCallback, useEffect, useId, useRef } from 'react';
 import { CONFIG } from '@taskbar-hero/game-rules';
 import type { GainsV2 } from '../../api/GameApiV2';
 import { LootSummary } from './LootSummary';
@@ -32,21 +32,41 @@ export function formatAwayTime(awaySeconds: number, capSeconds = CONFIG.idle.off
 }
 
 export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
+  const isVisible = !isEmptyLoot(gains) && awaySeconds >= 300;
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const priorFocused = useRef<HTMLElement | null>(
+    typeof document !== 'undefined' ? (document.activeElement as HTMLElement | null) : null,
+  );
 
-  // Focus the OK button on open
-  useEffect(() => {
-    buttonRef.current?.focus();
+  const restoreFocus = useCallback(() => {
+    if (priorFocused.current && document.contains(priorFocused.current)) {
+      priorFocused.current.focus();
+    }
   }, []);
+
+  const handleClose = useCallback(() => {
+    restoreFocus();
+    onClose();
+  }, [onClose, restoreFocus]);
+
+  // Focus the OK button on open & restore focus on unmount
+  useEffect(() => {
+    if (!isVisible) return;
+    buttonRef.current?.focus();
+    return () => {
+      restoreFocus();
+    };
+  }, [isVisible, restoreFocus]);
 
   // Escape to close & Tab trap
   useEffect(() => {
+    if (!isVisible) return;
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
-        onClose();
+        handleClose();
         return;
       }
       if (e.key === 'Tab') {
@@ -69,9 +89,9 @@ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
 
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
+  }, [isVisible, handleClose]);
 
-  if (isEmptyLoot(gains) || awaySeconds < 300) {
+  if (!isVisible) {
     return null;
   }
 
@@ -98,7 +118,7 @@ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
             ref={buttonRef}
             type="button"
             className="pixel-btn welcome-back-btn"
-            onClick={onClose}
+            onClick={handleClose}
           >
             OK
           </button>

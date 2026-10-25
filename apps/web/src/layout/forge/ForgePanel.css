@@ -390,6 +390,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .forge-confirm-box {
+    animation: none;
+  }
+}
+
 .forge-confirm-text {
   margin: 0;
   font-size: 0.92rem;

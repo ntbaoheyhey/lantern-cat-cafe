@@ -143,4 +143,77 @@ describe('LootSummary', () => {
     expect(section).toBeTruthy();
     expect(section?.getAttribute('aria-labelledby')).toBe(heading.id);
   });
+
+  it('renders specific item icons for armor, accessory, and weapon with aria-hidden', () => {
+    const armorItem: ItemV2 = {
+      id: 'armor-1',
+      itemKey: 'arm.ranger.armor.rare',
+      slot: 'armor',
+      rarity: 'rare',
+      level: 5,
+      bonus: [],
+      locked: false,
+      equipped: false,
+    };
+    const accessoryItem: ItemV2 = {
+      id: 'acc-1',
+      itemKey: 'acc.charm.star.epic',
+      slot: 'charm',
+      rarity: 'epic',
+      level: 8,
+      bonus: [],
+      locked: false,
+      equipped: false,
+    };
+    const weaponItem: ItemV2 = {
+      id: 'weapon-1',
+      itemKey: 'wpn.sword.twig',
+      slot: 'weapon',
+      weaponType: 'sword',
+      rarity: 'common',
+      level: 3,
+      bonus: [],
+      locked: false,
+      equipped: false,
+    };
+
+    const loot: LootV2 = {
+      ...EMPTY_LOOT,
+      items: [armorItem, accessoryItem, weaponItem],
+    };
+
+    const { container } = render(<LootSummary loot={loot} heading="Specific Items" />);
+
+    // Armor-set item renders data-icon "arm.ranger.armor"
+    const armorSvg = container.querySelector('svg[data-icon="arm.ranger.armor"]');
+    expect(armorSvg).toBeTruthy();
+    expect(armorSvg?.getAttribute('aria-hidden')).toBe('true');
+
+    // Accessory renders data-icon "acc.star"
+    const accSvg = container.querySelector('svg[data-icon="acc.star"]');
+    expect(accSvg).toBeTruthy();
+    expect(accSvg?.getAttribute('aria-hidden')).toBe('true');
+
+    // Weapon renders data-icon "sword"
+    const weaponSvg = container.querySelector('svg[data-icon="sword"]');
+    expect(weaponSvg).toBeTruthy();
+    expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
+
+    // Every item icon is aria-hidden
+    const itemIcons = container.querySelectorAll('.loot-item-art-icon svg');
+    expect(itemIcons).toHaveLength(3);
+    itemIcons.forEach((svg) => {
+      expect(svg.getAttribute('aria-hidden')).toBe('true');
+    });
+
+    // Accessible names / text content of the list items are unchanged from before
+    const listItems = screen.getAllByRole('listitem');
+    expect(listItems).toHaveLength(3);
+    expect(listItems[0]?.textContent).toContain('Pathfinder Ranger Vest');
+    expect(listItems[0]?.textContent).toContain('Rare · Lv 5');
+    expect(listItems[1]?.textContent).toContain('Star Charm');
+    expect(listItems[1]?.textContent).toContain('Epic · Lv 8');
+    expect(listItems[2]?.textContent).toContain('Twig Sword');
+    expect(listItems[2]?.textContent).toContain('Common · Lv 3');
+  });
 });

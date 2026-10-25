@@ -3,7 +3,8 @@ import type { GainsV2, LootV2, ItemV2 } from '../../api/GameApiV2';
 import { PixelIcon } from '../../art/pixelIcons';
 import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
 import { V2PixelFrame } from '../../art/v2Frames';
-import { frameFor, itemIconName, itemName, rarityLabel } from '../itemView';
+import { ItemIcon } from '../ItemIcon';
+import { frameFor, itemName, rarityLabel } from '../itemView';
 import { formatAmount, isEmptyLoot, lootLines, type LootLineV2 } from './lootLines';
 import './loot.css';
 
@@ -89,7 +90,7 @@ export function LootSummary({ loot, heading, headingLevel = 2 }: LootSummaryProp
               <span className="loot-item-art">
                 <V2PixelFrame name={frameFor(item.rarity)} size={2} />
                 <span className="loot-item-art-icon">
-                  <V2PixelIcon name={itemIconName(item)} size={2} />
+                  <ItemIcon item={item} size={2} />
                 </span>
               </span>
               <div className="loot-item-info">

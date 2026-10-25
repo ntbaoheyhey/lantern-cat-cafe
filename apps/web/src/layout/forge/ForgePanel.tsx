@@ -11,6 +11,7 @@ import { v2 } from '@taskbar-hero/game-rules';
 import { PixelIcon } from '../../art/pixelIcons';
 import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
 import { V2PixelFrame, type V2FrameName } from '../../art/v2Frames';
+import { ItemIcon } from '../ItemIcon';
 import { TodayRelicCard } from '../../forge/TodayRelicCard';
 import { relicName, capitalize, oddsRows } from '../../forge/forgeText';
 import { relicImageUrl } from '../../market/marketText';
@@ -550,8 +551,8 @@ export function ForgePanel({
                     />
 
                     <div className="forge-item-icon-box">
-                      <V2PixelIcon
-                        name={getSlotIconName(item.slot, item.weaponType ?? classWeaponType)}
+                      <ItemIcon
+                        item={{ ...item, weaponType: item.weaponType ?? classWeaponType }}
                         size={2}
                       />
                       <V2PixelFrame
