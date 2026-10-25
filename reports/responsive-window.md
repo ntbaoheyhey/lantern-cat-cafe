@@ -1,109 +1,89 @@
-STATUS: PARTIAL
-STACKED ON ai/codex-v26-e2e @ 33481ce01933834876037127e2753773a9a204cc: merge that first
+STATUS: DONE
+STACKED ON ai/codex-fix-stage-redraw @ 7760775cd2beae2f87efbcbeef6b849c5ae28a5c: merge that first
 
-# Responsive window fix and temporary coordination handoff
+# Responsive window: final verification for Claude
 
-The user requested temporary coordination for Codex/Antigravity under Claude's existing rules, automatic layout adaptation as the browser/in-app window shrinks or stretches, and a Claude review report. Later the user authorized automatic new Codex chats and said Antigravity prompts would be pasted manually.
+Date: 2026-10-26, Asia/Saigon. Branch ai/codex-responsive-window now combines its original CSS-only source changes with the completed, separate renderer-fix parent. The window can shrink/stretch continuously with wrapped HUD values, persistent state/panels and both stage actors rendering after scene replacement. No deployment or merge was performed.
 
-## Outcome
+## Scope, gate and review order
 
-The existing window resize listener already switches between desktop, tablet and phone and resizes the pixel-art scene. The defect was inside the HUD: at >=600 px shared styles force nowrap and hide horizontal overflow. Consequently XP text crossed the chapter chip and currency items crossed the power chip, despite no document scrollbar. The added geometry regression reproduced this in both themes at 1600×900 before the fix.
+The user chose “Keep scope; let Antigravity document it first.” This was followed: original C-R1 stopped PARTIAL at d4fb8ec745a92c1052a8250f57a4108b8ce59ac4 with 68 browser passes / 2 actor failures. No renderer edit was added to C-R1. Antigravity independently published named Finding A-R1-1 in reports/qa-v2-1.md on ai/antigravity-responsive-qa @ 9980b46c01f60dc41975975f6166e99cff16b918. That meets original Q13; its QA-only PARTIAL branch was read, never merged or used as an implementation parent.
 
-The stage shell now gives the HUD its own full-width row and allows groups, XP elements, currency items and chapter text to wrap according to available space. Lower panel children can shrink within their grid cells, and phone sheet content can shrink/scroll. Existing viewport metrics, game rendering/lifecycle, UI components and classic layout code are unchanged. The new styles are scoped to v2 layout classes; no stat is removed and overflow is not hidden to pass the check.
+Codex fixed that one bug on ai/codex-fix-stage-redraw from completed Q9. Only after its report reached DONE with all real checks passing was C-R1 rebased onto it. Only the coordinator's own ai/codex-* history is rewritten, with force-with-lease. An exact copy of the initial PARTIAL report is preserved [in this branch](responsive-window/initial-partial-report.txt); its original commit is also [available here](https://github.com/ntbaoheyhey/taskbar-hero/blob/d4fb8ec745a92c1052a8250f57a4108b8ce59ac4/reports/responsive-window.md); no failing assertion was weakened or deleted.
 
-The continuous-resize test checks 1600×900 → 1280×720 → 1024×768 → 1023×600 → 768×600 → 601×480 → 600×600 → 390×844 → 320×568 → 844×390 → 1280×480 → 1600×900, in dark and light themes. It checks leaf rectangles stay inside the HUD and do not overlap, no page horizontal overflow, class/level/inventory IDs and active Forge tab survive, no page reload (timeOrigin unchanged), exactly one stage canvas, and actual nontransparent actor pixels after each redraw. Screenshots wait for actors rather than capturing a newly created empty canvas.
+Merge/review order for Claude: existing Q4/Q5 → bulk-equip fix → completed Q9 @ 33481ce01933834876037127e2753773a9a204cc → [stage-redraw fix](https://github.com/ntbaoheyhey/taskbar-hero/blob/7760775cd2beae2f87efbcbeef6b849c5ae28a5c/reports/fix-stage-redraw.md) → this responsive branch. Parent source/report is inherited; C-R1's own product allowlist remains layout/layout.css only, plus its new e2e/layout/resize.spec.ts, coordination/prompts and reports/screenshots. Shared HUD, metrics, StageLayout behavior, backend, auth/contracts, economy, final art, dependencies and lock/workspace files are unchanged by this card. StageScene.ts and its lifecycle/actor regressions belong to the separate Q13 parent.
 
-## Coordination and rules
+## Result and acceptance
 
-- [Plan](../docs/responsive-coordination.md): C-R1 Codex implementation; A-R1 independent Antigravity visual/phone QA; C-R2 WAITING on named eligible QA findings.
-- [Antigravity prompt](../docs/prompts/antigravity-responsive-qa.md): ready for the user to paste. Not dispatched. Report-only branch and dated QA1 findings; no product fixes or merging another tool's source.
-- [Codex independent-review prompt](../docs/prompts/codex-responsive-review.md): prepared, not dispatched. Tool discovery searched create_thread and new-chat capabilities; no callable create_thread is exposed in this session. No new user chat or substitute agent was created. User permission is recorded and need not be requested again if the tool becomes available.
-- Claude's original approved-plan copy is not edited. No PR, main push/merge, Antigravity branch merge, workflow, deployment, live SQL, real transaction, auth/contract, dependency/lock/workspace, signed number or final art change. D4 remains NOT READY; D8/D6/D3/D5/D7/D9 stay user-only. This plan does not elevate temporary coordination into production authority.
+- PASS: HUD has a full-width row and scoped .v2-shell wrapping overrides; XP/currencies/progress do not overlap or clip. Lower panel children can shrink, and phone sheet content can scroll. No stat is hidden to satisfy geometry checks.
+- PASS: original continuous-resize assertions, with an atomic target-dimension/one-canvas wait, both dark and light, through 1600×900 → 1280×720 → 1024×768 → 1023×600 → 768×600 → 601×480 → 600×600 → 390×844 → 320×568 → 844×390 → 1280×480 → 1600×900.
+- PASS: no page horizontal overflow, no HUD leaf overlap/out-of-bounds, class/level/inventory IDs preserved, active Forge panel preserved, no reload (performance.timeOrigin constant), exactly one canvas and nontransparent actor pixels after redraw.
+- PASS: separate parent browser regression waits for resized canvas dimensions and checks BOTH cat/monster halves in normal/reduced motion. Three parent lifecycle tests cover latest queued state, scene replacement and shutdown.
+- PASS: full frozen install, generated-map drift, typecheck, lint, root unit suites, build and complete browser suite on the final combined branch. All 72 browser tests pass.
+- PASS: eight unretouched screenshots regenerated by the original dark/light resize tests at 1600, 1280, 390 and 320 widths, now after the actor guard passes. They replace the limited geometry-only images from the PARTIAL commit.
+- PASS: Antigravity's original QA evidence retained at its immutable commit; report/prompts ready for independent retest and Claude review.
+- NOT VERIFIED by this Codex run: physical iOS/Android, WebKit, deployed behavior, actual browser zoom 200%, exhaustive overlays/long-number QA, real backend/mint. Antigravity reported its own broader simulated QA on the old source; those claims are not substituted for an independent retest of this fix.
+- WAITING: independent retest of the final commit and Claude review/merge. DONE means implementation and required checks complete, not release or user milestone sign-off.
 
-## Acceptance
+No PR, merge, main push, workflow, deployment, Site access change, live SQL/backend write, transaction/signing, contract/auth change, applied economy/sign-off, final art or D-decision. D4 NOT READY; D8/D6/D3/D5/D7/D9 remain user-only. Existing preview is unchanged and its last access observation was public. No new private-preview claim is made.
 
-- PASS: both focused resize tests reproduce the old overlap and pass after the CSS fix; assertions were retained. FAIL: final full Playwright run checks actor pixels and finds 2 redraw failures; 68 other browser tests pass.
-- PASS in initial geometry-only focused run: resize boundaries and state/tab persistence. NOT VERIFIED after a successful pixel guard: full sequence stops at the missing-actors failure.
-- PASS: full pinned install, gen:deno drift, typecheck, lint, unit suite and build. FAIL: whole browser suite (68 passed / 2 failed); output below.
-- PASS: new plan, two complete handoff prompts and this report; source/report branch only.
-- NOT VERIFIED: physical phone Safari/Android, WebKit, 200% browser zoom and exhaustive long-number/overlay QA. These are explicit A-R1 cases, not claimed as completed by desktop Chromium simulation.
-- BLOCKER: StageScene.ts skips initial rendering while Phaser create() is running; fixing it is outside this card's CSS-only source scope. S5 requires stopping without weakening the pixel check.
-- WAITING: independent Codex review (new-chat tool unavailable), Antigravity manual dispatch/QA and Claude review/merge. Nothing deployed; existing demo audience was last observed public, so no private-preview claim is made for new work.
+## Screenshots
 
-## Gate and scope
+| Viewport | Dark | Light |
+|---|---|---|
+| 1600×900 | [Desktop](responsive-window/dark-1600-900.png) | [Desktop](responsive-window/light-1600-900.png) |
+| 1280×720 | [Desktop](responsive-window/dark-1280-720.png) | [Desktop](responsive-window/light-1280-720.png) |
+| 390×844 | [Phone simulation](responsive-window/dark-390-844.png) | [Phone simulation](responsive-window/light-390-844.png) |
+| 320×568 | [Narrow phone simulation](responsive-window/dark-320-568.png) | [Narrow phone simulation](responsive-window/light-320-568.png) |
 
-Parent Q9 report STATUS: DONE; parent commit 33481ce01933834876037127e2753773a9a204cc. Own changes: layout/layout.css; new e2e/layout/resize.spec.ts; coordination plan and two prompt documents; report and representative screenshots. Shared hud/**, metrics.ts, StageLayout.tsx, API, wallet/auth, art, game rules and applied migrations are read-only and unchanged relative to parent. Incidental screenshots generated into older cards' report folders were restored; new evidence is exclusively reports/responsive-window/.
+## Handoffs
 
-Preliminary checkout/CLI invocation errors produced no test verdict and are not counted. Correct focused command: `pnpm --filter @taskbar-hero/web exec playwright test resize.spec.ts --project=stage-layout`. Before-fix assertions failed; one CSS fix round produced focused passes. The test was then strengthened to await actor pixels and exposed an existing renderer lifecycle failure in the final full browser suite. No timeout, skip, golden or existing assertion was altered.
+- [Current coordination plan](../docs/responsive-coordination.md)
+- [Antigravity retest prompt](../docs/prompts/antigravity-responsive-retest.md): manual paste, read-only QA; keep the original A-R1 FAIL as historical evidence.
+- [Codex independent-review prompt](../docs/prompts/codex-responsive-review.md): prepared. Tool inventory still exposes no callable create_thread, so no new user chat was created and no independent Codex sign-off is claimed.
 
-## Renderer blocker for Claude review
+## Actual final checks
 
-StageCanvas remounts the Phaser scene when logicalWidth changes and queues the current state through show(). StageScene.create() tries show() while Phaser is in CREATING; show() returns because sys.isActive() is false. Phaser 3.90 SceneManager.js sets RUNNING only after scene.create.call() returns, then emits CREATE. The cat/monster can therefore remain absent until a later state update. This is consistent with the pixel regression and initial phone screenshots; merely finding a canvas misses it.
+All commands use pinned pnpm 10.28.0 and CI=true. Playwright uses PLAYWRIGHT_BROWSERS_PATH=/home/agent/.cache/ms-playwright. No further CSS change was needed after rebasing onto the completed renderer fix. C-R1’s second/final allowed fix round strengthens its new actor guard to atomically require exactly one canvas at the target dimensions before reading pixels; this carries forward the transient Phaser handoff race observed in C-R2. Every original geometry/state/actor assertion and timeout remains in place. Incidental older-card screenshots from existing tests were restored; current evidence is under reports/responsive-window/ and the inherited parent folder.
 
-Needed separate scope: apps/web/src/game/stage/StageScene.ts and a focused lifecycle regression test (StageCanvas.tsx only if investigation proves necessary). A candidate minimal repair is to render the queued state on the Phaser CREATE event after RUNNING, preserving shutdown cleanup and authoritative state. No such renderer edit has been made. Continue only via explicit user scope or a named eligible Antigravity QA1 finding and a separate fix card. Initial geometry screenshots in reports/responsive-window/ are evidence of the limited CSS result and can show the existing blank actors; they are not a completed renderer PASS.
-
-## Actual checks
-
-### resize-before
-
-```text
-    Error: HUD at 1600×900
-    HUD at 1600×900
-    +   "hud-stack-item outside HUD",
-    +   "hud-xp-text overlaps hud-chip hud-progress-chip",
-    +   "hud-stack-item overlaps hud-chip hud-power-chip",
-    Error: HUD at 1600×900
-    HUD at 1600×900
-    +   "hud-stack-item outside HUD",
-    +   "hud-xp-text overlaps hud-chip hud-progress-chip",
-    +   "hud-stack-item overlaps hud-chip hud-power-chip",
-  2 failed
-```
-
-### resize-after
-
-```text
-  2 passed (10.4s)
-```
-
-### responsive-install
+### install
 
 ```text
 $ pnpm install --frozen-lockfile
 Lockfile is up to date, resolution step is skipped
 Already up to date
-Done in 930ms using pnpm v10.28.0
-EXIT 0; runtime 1.00s
+Done in 746ms using pnpm v10.28.0
+EXIT 0; runtime 0.81s
 ```
 
-### responsive-deno
+### deno
 
 ```text
 $ pnpm gen:deno && git diff --exit-code -- supabase/functions
 > taskbar-hero@0.0.0 gen:deno /workspace/taskbar-responsive
 > node scripts/gen-deno-json.mjs
-EXIT 0; runtime 0.44s
+EXIT 0; runtime 0.30s
 ```
 
-### responsive-typecheck
+### typecheck
 
 ```text
 $ pnpm typecheck
 > taskbar-hero@0.0.0 typecheck /workspace/taskbar-responsive
 > pnpm -r typecheck
-EXIT 0; runtime 14.83s
+EXIT 0; runtime 15.03s
 ```
 
-### responsive-lint
+### lint
 
 ```text
 $ pnpm lint
 > taskbar-hero@0.0.0 lint /workspace/taskbar-responsive
 > pnpm -r lint
-EXIT 0; runtime 14.18s
+EXIT 0; runtime 14.86s
 ```
 
-### responsive-test
+### test
 
 ```text
 $ pnpm test
@@ -111,26 +91,26 @@ $ pnpm test
 > pnpm -r test
 packages/chain test:  Test Files  2 passed (2)
 packages/chain test:       Tests  7 passed (7)
-packages/chain test:    Duration  406ms (transform 52%, import 33%, tests 8%, worker 7%)
+packages/chain test:    Duration  320ms (import 39%, transform 31%, tests 15%, worker 14%, environment 1%)
 packages/auth test:  Test Files  1 passed (1)
 packages/auth test:       Tests  24 passed (24)
-packages/auth test:    Duration  682ms (import 60%, tests 27%, transform 11%, worker 1%)
+packages/auth test:    Duration  636ms (import 63%, tests 33%, transform 3%, worker 1%)
 supabase/tests test:  Test Files  18 passed (18)
 supabase/tests test:       Tests  385 passed (385)
-supabase/tests test:    Duration  45.18s (tests 87%, import 10%, transform 2%)
+supabase/tests test:    Duration  44.13s (tests 89%, import 10%)
 packages/game-rules test:  Test Files  19 passed | 2 skipped (21)
 packages/game-rules test:       Tests  326 passed | 2 expected fail | 4 skipped (332)
-packages/game-rules test:    Duration  85.13s (tests 97%, import 1%, transform 1%)
+packages/game-rules test:    Duration  83.40s (tests 99%, import 1%)
 packages/api-contract test:  Test Files  1 passed (1)
 packages/api-contract test:       Tests  16 passed (16)
-packages/api-contract test:    Duration  423ms (transform 81%, import 15%, tests 3%, worker 1%)
-apps/web test:  Test Files  80 passed (80)
-apps/web test:       Tests  1063 passed (1063)
-apps/web test:    Duration  83.21s (environment 55%, tests 31%, import 11%, transform 3%)
-EXIT 0; runtime 171.41s
+packages/api-contract test:    Duration  201ms (import 46%, transform 43%, tests 8%, worker 3%)
+apps/web test:  Test Files  81 passed (81)
+apps/web test:       Tests  1066 passed (1066)
+apps/web test:    Duration  80.06s (environment 57%, tests 31%, import 10%, transform 1%)
+EXIT 0; runtime 166.22s
 ```
 
-### responsive-build
+### build
 
 ```text
 $ pnpm build
@@ -142,39 +122,128 @@ packages/game-rules build: Done
 supabase/tests build: Done
 packages/api-contract build: Done
 apps/web build: Done
-EXIT 0; runtime 16.56s
+EXIT 0; runtime 16.03s
 ```
 
-### responsive-e2e
+### e2e
 
 ```text
 $ cd apps/web && PLAYWRIGHT_BROWSERS_PATH=/home/agent/.cache/ms-playwright pnpm test:e2e
 > @taskbar-hero/web@0.0.0 test:e2e /workspace/taskbar-responsive/apps/web
 > playwright test
-  2 failed
-  68 passed (1.8m)
-EXIT 1; runtime 106.55s
+  72 passed (1.7m)
+EXIT 0; runtime 105.07s
 ```
 
-## Own diff from the completed Q9 parent
+## Diff and authors
+
+Own diff from completed renderer-fix parent (report updated separately):
 
 ```text
- apps/web/e2e/layout/resize.spec.ts           |  58 +++++++++++++++++++++++++++
- apps/web/src/layout/layout.css               |  29 +++++++++++++-
- docs/prompts/antigravity-responsive-qa.md    |  19 +++++++++
- docs/prompts/codex-responsive-review.md      |  15 +++++++
- docs/responsive-coordination.md              |  41 +++++++++++++++++++
- reports/responsive-window/dark-1280-720.png  | Bin 0 -> 32904 bytes
- reports/responsive-window/dark-1600-900.png  | Bin 0 -> 39528 bytes
- reports/responsive-window/dark-320-568.png   | Bin 0 -> 22854 bytes
- reports/responsive-window/dark-390-844.png   | Bin 0 -> 32459 bytes
- reports/responsive-window/light-1280-720.png | Bin 0 -> 32883 bytes
- reports/responsive-window/light-1600-900.png | Bin 0 -> 39492 bytes
- reports/responsive-window/light-320-568.png  | Bin 0 -> 22999 bytes
- reports/responsive-window/light-390-844.png  | Bin 0 -> 32600 bytes
- 13 files changed, 161 insertions(+), 1 deletion(-)
+apps/web/e2e/layout/resize.spec.ts                 |  62 +++++++
+ apps/web/src/layout/layout.css                     |  29 +++-
+ docs/prompts/antigravity-responsive-qa.md          |  23 +++
+ docs/prompts/antigravity-responsive-retest.md      |  17 ++
+ docs/prompts/codex-responsive-review.md            |  15 ++
+ docs/responsive-coordination.md                    |  38 +++++
+ reports/fix-stage-redraw/actors-1600-900.png       | Bin 10438 -> 10438 bytes
+ reports/fix-stage-redraw/actors-320-568.png        | Bin 3332 -> 3295 bytes
+ reports/responsive-window.md                       | 180 +++++++++++++++++++++
+ reports/responsive-window/dark-1280-720.png        | Bin 0 -> 34104 bytes
+ reports/responsive-window/dark-1600-900.png        | Bin 0 -> 40945 bytes
+ reports/responsive-window/dark-320-568.png         | Bin 0 -> 23818 bytes
+ reports/responsive-window/dark-390-844.png         | Bin 0 -> 33483 bytes
+ .../responsive-window/initial-partial-report.txt   | 180 +++++++++++++++++++++
+ reports/responsive-window/light-1280-720.png       | Bin 0 -> 34164 bytes
+ reports/responsive-window/light-1600-900.png       | Bin 0 -> 40898 bytes
+ reports/responsive-window/light-320-568.png        | Bin 0 -> 23955 bytes
+ reports/responsive-window/light-390-844.png        | Bin 0 -> 33624 bytes
+ 18 files changed, 543 insertions(+), 1 deletion(-)
 ```
 
-## User decision after the blocker
+```text
+$ git log --format='%an <%ae>' origin/main..HEAD | sort -u
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
 
-The user answered: “Keep scope; let Antigravity document it first.” C-R1 remains PARTIAL. Do not edit StageScene/StageCanvas or broaden this card. A-R1 is the next action: independent read-only reproduction and a named dated QA1 finding. A renderer fix remains WAITING on that eligible evidence under the original Q13 rules. No new renderer approval is pending, and no generic continuation should be treated as permission to bypass this decision.
+Full inherited stack diff requested by S3:
+
+```text
+apps/web/e2e/layout/arena.spec.ts                  |  22 ++
+ apps/web/e2e/layout/character-bag.spec.ts          |  17 +-
+ apps/web/e2e/layout/resize.spec.ts                 |  62 ++++
+ apps/web/e2e/layout/stage-layout.spec.ts           |  45 ++-
+ apps/web/e2e/layout/stage-redraw.spec.ts           |  48 +++
+ apps/web/e2e/v2/loop.spec.ts                       | 146 +++++++++
+ apps/web/playwright.config.ts                      |   7 +-
+ apps/web/src/dev/ArenaPreview.tsx                  |  13 +
+ apps/web/src/game/arena/ArenaScene.test.ts         |  39 +++
+ apps/web/src/game/arena/ArenaScene.ts              |  96 ++++++
+ apps/web/src/game/arena/BossArena.test.tsx         |  32 ++
+ apps/web/src/game/arena/BossArena.tsx              |  38 +++
+ apps/web/src/game/arena/arena.css                  |   8 +
+ apps/web/src/game/arena/assets.ts                  |  39 +++
+ apps/web/src/game/arena/index.ts                   |   2 +
+ apps/web/src/game/arena/playBossFight.ts           |  21 ++
+ apps/web/src/game/arena/playback.test.ts           |  39 +++
+ apps/web/src/game/arena/playback.ts                |  28 ++
+ apps/web/src/game/stage/StageCanvas.tsx            |  33 ++
+ apps/web/src/game/stage/StageScene.test.ts         |  59 ++++
+ apps/web/src/game/stage/StageScene.ts              |  58 ++++
+ apps/web/src/game/stage/bulkEquip.test.ts          |  57 ++++
+ apps/web/src/game/stage/progress.ts                |   8 +
+ apps/web/src/game/stage/storeV2.test.ts            |  33 ++
+ apps/web/src/game/v2/storeV2.ts                    |  46 +++
+ apps/web/src/layout/StageLayout.test.tsx           |  49 ++-
+ apps/web/src/layout/StageLayout.tsx                | 109 +++++--
+ apps/web/src/layout/layout.css                     |  38 +++
+ apps/web/src/main.tsx                              |   2 +
+ docs/prompts/antigravity-responsive-qa.md          |  23 ++
+ docs/prompts/antigravity-responsive-retest.md      |  17 ++
+ docs/prompts/codex-responsive-review.md            |  15 +
+ docs/responsive-coordination.md                    |  38 +++
+ reports/fix-bulk-equip.md                          | 136 +++++++++
+ reports/fix-stage-redraw.md                        | 306 +++++++++++++++++++
+ reports/fix-stage-redraw/actors-1600-900.png       | Bin 0 -> 10438 bytes
+ reports/fix-stage-redraw/actors-320-568.png        | Bin 0 -> 3332 bytes
+ reports/fix-stage-redraw/actors-390-844.png        | Bin 0 -> 2826 bytes
+ reports/responsive-window.md                       | 180 +++++++++++
+ reports/responsive-window/dark-1280-720.png        | Bin 0 -> 32904 bytes
+ reports/responsive-window/dark-1600-900.png        | Bin 0 -> 39528 bytes
+ reports/responsive-window/dark-320-568.png         | Bin 0 -> 22854 bytes
+ reports/responsive-window/dark-390-844.png         | Bin 0 -> 32459 bytes
+ .../responsive-window/initial-partial-report.txt   | 180 +++++++++++
+ reports/responsive-window/light-1280-720.png       | Bin 0 -> 32883 bytes
+ reports/responsive-window/light-1600-900.png       | Bin 0 -> 39492 bytes
+ reports/responsive-window/light-320-568.png        | Bin 0 -> 22999 bytes
+ reports/responsive-window/light-390-844.png        | Bin 0 -> 32600 bytes
+ reports/v16-stage.md                               | 333 +++++++++++++++++++++
+ reports/v16-stage/stage-1280.png                   | Bin 0 -> 36093 bytes
+ reports/v16-stage/stage-390.png                    | Bin 0 -> 31824 bytes
+ reports/v19-arena.md                               | 300 +++++++++++++++++++
+ reports/v19-arena/1280.png                         | Bin 0 -> 31112 bytes
+ reports/v19-arena/390-reduced.png                  | Bin 0 -> 21169 bytes
+ reports/v26-e2e.md                                 | 192 ++++++++++++
+ reports/v26-e2e/equip-1280.png                     | Bin 0 -> 36171 bytes
+ reports/v26-e2e/equip-390-reduced.png              | Bin 0 -> 33580 bytes
+ reports/v26-e2e/equip-390.png                      | Bin 0 -> 33575 bytes
+ reports/v26-e2e/forge-1280.png                     | Bin 0 -> 34251 bytes
+ reports/v26-e2e/forge-390-reduced.png              | Bin 0 -> 40646 bytes
+ reports/v26-e2e/forge-390.png                      | Bin 0 -> 40646 bytes
+ reports/v26-e2e/fresh-1280.png                     | Bin 0 -> 34894 bytes
+ reports/v26-e2e/fresh-390-reduced.png              | Bin 0 -> 29483 bytes
+ reports/v26-e2e/fresh-390.png                      | Bin 0 -> 29483 bytes
+ reports/v26-e2e/idle-1280.png                      | Bin 0 -> 36127 bytes
+ reports/v26-e2e/idle-390-reduced.png               | Bin 0 -> 31828 bytes
+ reports/v26-e2e/idle-390.png                       | Bin 0 -> 31824 bytes
+ reports/v26-e2e/loss-1280.png                      | Bin 0 -> 35852 bytes
+ reports/v26-e2e/loss-390-reduced.png               | Bin 0 -> 30999 bytes
+ reports/v26-e2e/loss-390.png                       | Bin 0 -> 42368 bytes
+ reports/v26-e2e/reload-1280.png                    | Bin 0 -> 35600 bytes
+ reports/v26-e2e/reload-390-reduced.png             | Bin 0 -> 32900 bytes
+ reports/v26-e2e/reload-390.png                     | Bin 0 -> 32900 bytes
+ reports/v26-e2e/win-1280.png                       | Bin 0 -> 36716 bytes
+ reports/v26-e2e/win-390-reduced.png                | Bin 0 -> 34531 bytes
+ reports/v26-e2e/win-390.png                        | Bin 0 -> 34471 bytes
+ 76 files changed, 2886 insertions(+), 28 deletions(-)
+```
