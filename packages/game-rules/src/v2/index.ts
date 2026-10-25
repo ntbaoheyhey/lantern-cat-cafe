@@ -7,3 +7,4 @@ export * from './combat';
 export * from './idle';
 export * from './bag';
 export * from './state';
+export * from './view';
