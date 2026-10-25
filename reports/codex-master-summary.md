@@ -423,7 +423,7 @@ EXIT 0; runtime 0.31s
 
 ```
 
-## Temporary responsive coordination (2026-10-26)
+## Temporary responsive coordination (2026-10-26, historical PARTIAL checkpoint)
 
 The user authorized Codex to plan work for Codex and Antigravity while preserving Claude's rules, requested flexible window resizing, and explicitly required a Claude review report. Automatic new Codex chats are user-authorized; Antigravity is manual paste. Tool inventory exposes no create_thread, so no new chat was created or work falsely delegated.
 
@@ -471,3 +471,52 @@ EXIT 0; runtime 0.33s
 ```
 
 Responsive follow-up decision: keep C-R1 scope, no renderer edits. A-R1 manual prompt now explicitly prioritizes the blank actors finding; Claude report remains PARTIAL. Current branch d4fb8ec745a92c1052a8250f57a4108b8ce59ac4. No new chat created (create_thread unavailable); Codex review prompt prepared.
+
+## C-R2 / Q13 actor redraw fix (2026-10-26)
+
+Antigravity published ai/antigravity-responsive-qa @ 9980b46c01f60dc41975975f6166e99cff16b918. Its QA1 addendum names MAJOR Finding A-R1-1, satisfying Q13 after the user's “Keep scope; let Antigravity document it first” decision. The report-only PARTIAL QA branch was read, never merged/stacked.
+
+| card | status | branch | merged | review/dependency |
+|---|---|---|---|---|
+| C-R2 / Q13c | DONE | ai/codex-fix-stage-redraw | no | STACKED ON completed Q9 33481ce; merge parent first; Claude review |
+| C-R1 | PARTIAL, final verification next | ai/codex-responsive-window | no | Rebase own commits onto DONE C-R2, retain original regressions |
+| A-R1 | report published, old-source verdict PARTIAL | ai/antigravity-responsive-qa | no | Independent named finding preserved |
+| A-R2 | WAITING on final C-R1 DONE | manual Antigravity retest | no | No automatic dispatch or independent sign-off claimed |
+
+C-R2 pushed 7760775cd2beae2f87efbcbeef6b849c5ae28a5c: [reports/fix-stage-redraw.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-fix-stage-redraw/reports/fix-stage-redraw.md). StageScene.ts now renders queued state on Phaser CREATE after RUNNING and cancels the pending callback on shutdown while retaining director cleanup. No StageCanvas or CSS change in this fix. New lifecycle tests reproduced two missing-sprite failures before the fix. Initial full browser run found a transient old/new canvas handoff in the new harness (69 passed/1 failed); second/final round atomically checks exactly one target-size canvas, without timeout/count/assertion relaxation. Repeated frozen install, drift, typecheck, lint, all root unit suites, build and all 70 browser tests PASS. Three new unretouched actor images show desktop/phone rendering.
+
+C-R1's CSS-only implementation scope remains unchanged. Rebase only after the C-R2 report is DONE; never on PARTIAL source. Next review order: Q4/Q5 → bulk fix → Q9 → C-R2 → C-R1. Original A-R1 failure remains at its immutable commit; A-R2 independently retests the fixed commit later. Physical phones/WebKit/deployed behavior NOT VERIFIED. No merge/PR/main push/workflow/deployment/live mutation/D-decision.
+
+Summary update: full suite skipped, docs only. Actual checks:
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 742ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.81s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /tmp/taskbar-summary
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.34s
+
+```
