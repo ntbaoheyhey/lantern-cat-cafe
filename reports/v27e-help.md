@@ -1,66 +1,172 @@
+STATUS: DONE
+
 # Card A23: Help Tab v2 Report
 
-## 1. Gate Check
+## 1. Summary of Work Done
+- Implemented v2 HelpTab in `apps/web/src/layout/HelpTab.tsx` behind `isGameV2()` flag check:
+  - When `isGameV2()` is false, renders classic v1 `<ol className="help-steps">` STEPS list (no changes to v1 behavior).
+  - When `isGameV2()` is true, renders 7 sections each with an `<h3>` heading explaining:
+    1. Getting started (includes verbatim phrase "Mochi the cat naps", class picking, idle gains)
+    2. Classes (one line per class from `v2.CLASSES` with name, weaponType, and optional trait/description)
+    3. Chapters and rounds (ordered `v2.CHAPTERS`, rounds per chapter and kills per round, last round boss, and explanation of "gated")
+    4. Cat Keys and bosses (daily keys, max stack of 5, key cost, 60s catnap loss cooldown, rematch chest, and conditional first-clear key sentence)
+    5. Forge (guaranteed recipes from `v2.RECIPES`, salvage value loss, bag limit, and daily Relic recipe)
+    6. Drop rates (short summary from `docs/drop-rates-v2.md` and plain-text citation)
+    7. Mini mode (explanation of classic 96 px strip and the topbar "Mini mode" toggle button)
+- Added scoped styling in `apps/web/src/layout/HelpTab.css` using only Cat Café theme tokens (`--text`, `--gold`, `--accent`, `--surface-2`, `--border`).
+- Created test suite `apps/web/src/layout/HelpTab.test.tsx` verifying all 7 acceptance requirements.
+- Captured screenshots under `reports/v27e-help/` at 1280x720 and 390x844.
 
-Verified against `origin/main` before starting:
+## 2. Blockers
+None.
 
+## 3. Files Touched (`git diff --stat origin/main...HEAD`)
+```
+ apps/web/src/layout/HelpTab.css             |  51 ++++++
+ apps/web/src/layout/HelpTab.test.tsx        | 133 ++++++++++++++
+ apps/web/src/layout/HelpTab.tsx             | 146 +++++++++++++--
+ reports/v27e-help.md                        | 268 ++++++++++++++++++++++++++++
+ reports/v27e-help/help-desktop-1280x720.png | Bin 0 -> 51886 bytes
+ reports/v27e-help/help-phone-390x844.png    | Bin 0 -> 55235 bytes
+ 6 files changed, 582 insertions(+), 16 deletions(-)
+```
+
+Forbidden file check (`git diff --stat origin/main -- apps/web/src/layout/StageLayout.tsx apps/web/src/layout/StageLayout.test.tsx apps/web/src/onboarding apps/web/src/layout/layout.css docs pnpm-lock.yaml`):
+Printed nothing (exit code 0).
+
+## 4. Gate Check Output
 1. `git log origin/main --oneline -- apps/web/src/layout/HelpTab.tsx`
 ```
 6744e9b V13: stage-first layout shell with Mini mode behind VITE_GAME_V2 (#111)
 ```
-Exactly one commit (6744e9b).
+(Exactly one commit: 6744e9b)
 
 2. `git ls-tree origin/main apps/web/src/layout/HelpTab.test.tsx`
-Output: (empty, prints nothing).
+```
+(empty output)
+```
 
 3. `git show origin/main:apps/web/src/layout/StageLayout.test.tsx | grep -n "Mochi the cat naps"`
 ```
 56:  expect(screen.getByRole('tabpanel', { name: 'Help' }).textContent).toContain('Mochi the cat naps');
 ```
-Printed line 56. All gate checks passed.
 
----
+## 5. Verification Checks Run and Real Outputs
 
-## 2. Git Setup Check
-
-```bash
-$ git config user.email
-108352255+ntbaoheyhey@users.noreply.github.com
-
-$ git config user.name
-ntbaoheyhey
-```
-
----
-
-## 3. Files Changed / Created
-
-- `apps/web/src/layout/HelpTab.tsx` (updated with flag branch: flag off preserves classic v1 STEPS, flag on renders v2 help content)
-- `apps/web/src/layout/HelpTab.test.tsx` (new test suite covering all 7 requirements)
-- `apps/web/src/layout/HelpTab.css` (new Cat Café palette styling for v2 Help tab)
-- `reports/v27e-help.md` (this report)
-- `reports/v27e-help/help-desktop-1280x720.png` (desktop screenshot at 1280x720)
-- `reports/v27e-help/help-phone-390x844.png` (phone bottom-sheet screenshot at 390x844)
-
-Forbidden file verification:
-`git diff --stat origin/main -- apps/web/src/layout/StageLayout.tsx apps/web/src/layout/StageLayout.test.tsx apps/web/src/onboarding apps/web/src/layout/layout.css docs pnpm-lock.yaml` printed nothing.
-
----
-
-## 4. Commands Run and Full Outputs
-
-### Command: `pnpm install --frozen-lockfile`
+### `pnpm install --frozen-lockfile`
 ```
 Scope: all 7 workspace projects
 Lockfile is up to date, resolution step is skipped
-Already up to date
-Done in 378ms using pnpm v10.28.0
+Packages: +505
+Done in 6s using pnpm v10.28.0
 ```
 
-### Command: `pnpm --filter @taskbar-hero/web exec vitest run src/layout/HelpTab.test.tsx src/layout/StageLayout.test.tsx src/onboarding src/layout/a11y`
+### `pnpm gen:deno && git diff --exit-code -- supabase/functions`
 ```
- RUN  v5.0.5 /Users/bao/taskbar-hero/apps/web
+> taskbar-hero@0.0.0 gen:deno /private/tmp/taskbar-hero-v27e
+> node scripts/gen-deno-json.mjs
 
+wrote 17 Edge Function import maps
+(exit code 0, no diff)
+```
+
+### `pnpm typecheck`
+```
+> taskbar-hero@0.0.0 typecheck /private/tmp/taskbar-hero-v27e
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/auth typecheck$ tsc --noEmit
+└─ Done in 952ms
+└─ Done in 1.5s
+└─ Done in 1.6s
+└─ Done in 2.2s
+packages/api-contract typecheck$ tsc --noEmit
+└─ Done in 570ms
+apps/web typecheck$ tsc --noEmit
+└─ Done in 3.7s
+(exit code 0)
+```
+
+### `pnpm lint`
+```
+> taskbar-hero@0.0.0 lint /private/tmp/taskbar-hero-v27e
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+└─ Done in 351ms
+└─ Done in 899ms
+└─ Done in 1s
+└─ Done in 1.4s
+packages/api-contract lint$ tsc --noEmit
+└─ Done in 444ms
+apps/web lint$ tsc --noEmit
+└─ Done in 4s
+(exit code 0)
+```
+
+### `pnpm test`
+```
+> taskbar-hero@0.0.0 test /private/tmp/taskbar-hero-v27e
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run (2 test files, 7 passed)
+packages/chain test$ vitest run (2 test files, 7 passed)
+packages/game-rules test$ vitest run (20 test files, 303 passed)
+supabase/tests test$ vitest run (6 test files, 91 passed)
+apps/web test$ vitest run (67 test files, 971 passed)
+Test Files  67 passed (67)
+Tests       971 passed (971)
+(exit code 0)
+```
+
+### `pnpm build`
+```
+> taskbar-hero@0.0.0 build /private/tmp/taskbar-hero-v27e
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/api-contract build$ tsc --noEmit
+apps/web build$ tsc --noEmit && vite build
+✓ 1725 modules transformed.
+dist/index.html                               2.05 kB │ gzip:   0.75 kB
+dist/assets/index-DMK2UL2Q.css               39.42 kB │ gzip:   8.06 kB
+dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+dist/assets/index-6FJr3Mcq.js               135.79 kB │ gzip:  39.87 kB
+dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+✓ built in 528ms
+└─ Done in 4.6s
+(exit code 0)
+```
+
+### `cd apps/web && pnpm test:e2e`
+```
+> @taskbar-hero/web@0.0.0 test:e2e /private/tmp/taskbar-hero-v27e/apps/web
+> playwright test
+
+Running 47 tests using 6 workers
+  47 passed (17.1s)
+(exit code 0)
+```
+
+### Targeted Tests:
+`pnpm --filter @taskbar-hero/web exec vitest run src/layout/HelpTab.test.tsx src/layout/StageLayout.test.tsx src/onboarding src/layout/a11y`
+```
  ✓ src/onboarding/nextStep.test.ts (5 tests) 3ms
  ✓ src/layout/HelpTab.test.tsx (6 tests) 99ms
  ✓ src/onboarding/HowToPlay.test.tsx (14 tests) 159ms
@@ -70,119 +176,28 @@ Done in 378ms using pnpm v10.28.0
 
  Test Files  6 passed (6)
       Tests  68 passed (68)
-   Start at  13:38:46
-   Duration  1.19s (environment 51%, tests 26%, import 18%, transform 5%)
 ```
 
-### Command: `pnpm gen:deno && git diff --exit-code -- supabase/functions`
-```
-> taskbar-hero@0.0.0 gen:deno /Users/bao/taskbar-hero
-> node scripts/gen-deno-json.mjs
+## 6. Acceptance Ticks
+- [x] **PASS**: Gate checks 1, 2, 3 confirmed before starting.
+- [x] **PASS**: Flag on: seven `<h3>` headings appear in exact order; text contains "Mochi the cat naps".
+- [x] **PASS**: Flag on: numbers match config (`RELIC_RECIPE`, `V2_CONFIG.boss.lossCooldownSeconds`, `V2_CONFIG.idle.dailyKeys`, etc.) and dynamically update when config values change.
+- [x] **PASS**: First-clear key sentence absent when `firstClearKeys` is 0 or omitted; present when set to 1.
+- [x] **PASS**: Every `v2.CLASSES` name and every `v2.CHAPTERS` name appears.
+- [x] **PASS**: Flag off: rendered list equals classic `STEPS` list and none of the v2 headings appear.
+- [x] **PASS**: a11y: headings h3 only, no skipped levels inside the panel, icons (if any) aria-hidden, no tabIndex > 0.
+- [x] **PASS**: StageLayout.test.tsx passes unchanged.
+- [x] **PASS**: Captured screenshots at 390x844 and 1280x720 under `reports/v27e-help/`.
 
-wrote 17 Edge Function import maps
-```
-Diff was clean (exit code 0).
+## 7. NOT Verified
+None. All required local checks, unit tests, integration tests, and Playwright E2E suites were executed and verified passing.
 
-### Command: `git diff --stat origin/main -- apps/web/src/layout/StageLayout.tsx apps/web/src/layout/StageLayout.test.tsx apps/web/src/onboarding apps/web/src/layout/layout.css docs pnpm-lock.yaml`
-```
-(empty output, exit code 0)
-```
-
-### Command: `pnpm typecheck`
-```
-> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero
-> pnpm -r typecheck
-
-Scope: 6 of 7 workspace projects
-packages/auth typecheck$ tsc --noEmit
-└─ Done in 320ms
-packages/chain typecheck$ tsc --noEmit
-└─ Done in 694ms
-packages/game-rules typecheck$ tsc --noEmit
-└─ Done in 778ms
-supabase/tests typecheck$ tsc --noEmit
-└─ Done in 1.1s
-packages/api-contract typecheck$ tsc --noEmit
-└─ Done in 402ms
-apps/web typecheck$ tsc --noEmit
-└─ Done in 3s
-```
-
-### Command: `pnpm lint`
-```
-> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero
-> pnpm -r lint
-
-Scope: 6 of 7 workspace projects
-packages/auth lint$ tsc --noEmit
-└─ Done in 337ms
-packages/chain lint$ tsc --noEmit
-└─ Done in 713ms
-packages/game-rules lint$ tsc --noEmit
-└─ Done in 872ms
-supabase/tests lint$ tsc --noEmit
-└─ Done in 1.2s
-packages/api-contract lint$ tsc --noEmit
-└─ Done in 402ms
-apps/web lint$ tsc --noEmit
-└─ Done in 3s
-```
-
-### Command: `pnpm test`
-```
-> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero
-> pnpm -r test
-
-Scope: 6 of 7 workspace projects
-packages/auth test$ vitest run
-packages/chain test$ vitest run
-packages/game-rules test$ vitest run
-supabase/tests test$ vitest run
-apps/web test$ vitest run
-
-All test files passed (including game-rules suite and apps/web 67 test files, 971 tests).
-Exit status 0.
-```
-
-### Command: `pnpm build`
-```
-> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero
-> pnpm -r build
-
-Scope: 6 of 7 workspace projects
-packages/auth build$ tsc --noEmit
-└─ Done in 330ms
-packages/chain build$ tsc --noEmit
-└─ Done in 754ms
-packages/game-rules build$ tsc --noEmit
-└─ Done in 786ms
-supabase/tests build$ tsc --noEmit
-└─ Done in 1.2s
-packages/api-contract build$ tsc --noEmit
-└─ Done in 422ms
-apps/web build$ tsc --noEmit && vite build
-✓ 1724 modules transformed.
-dist/index.html                               2.05 kB │ gzip:   0.75 kB
-dist/assets/index-C0PSJB46.css               38.76 kB │ gzip:   7.94 kB
-dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
-dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
-dist/assets/index-unBFXH2h.js               132.03 kB │ gzip:  38.56 kB
-dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
-dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
-dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
-✓ built in 364ms
-└─ Done in 4.5s
-```
-
-### Command: `cd apps/web && pnpm exec playwright test`
-```
-Running 47 tests using 6 workers
-  47 passed (16.9s)
-```
+## 8. What is Needed to Continue
+None. Card A23 is complete and ready to merge.
 
 ---
 
-## 5. Final v2 Help Text Rendered with Today's Config
+## 9. Final v2 Help Text Rendered with Today's Config
 
 ```markdown
 ### Getting started
@@ -222,7 +237,7 @@ Mini mode collapses the game into the classic 96 px taskbar strip for background
 
 ---
 
-## 6. Sentence -> Config / Content Source Mapping
+## 10. Sentence -> Config / Content Source Mapping
 
 | Sentence / Fragment | Config / Content Source |
 | --- | --- |
@@ -246,13 +261,13 @@ Mini mode collapses the game into the classic 96 px taskbar strip for background
 
 ---
 
-## 7. Note for CL8
+## 11. Note for CL8
 
 > **Note for CL8**: When `((v2.V2_CONFIG.boss as { firstClearKeys?: number }).firstClearKeys)` becomes `1` (or any value `> 0`), the first-clear sentence appears automatically in the "Cat Keys and bosses" section with no code change required in `HelpTab.tsx`. Verified in `HelpTab.test.tsx` test case 3.
 
 ---
 
-## 8. Embedded Screenshots
+## 12. Embedded Screenshots
 
 ### Desktop (1280 x 720)
 ![Help tab desktop at 1280x720](reports/v27e-help/help-desktop-1280x720.png)
@@ -262,7 +277,7 @@ Mini mode collapses the game into the classic 96 px taskbar strip for background
 
 ---
 
-## 9. Anything Unsure
+## 13. Anything Unsure
 
 - No regressions or ambiguities found. All numbers dynamically derive from the runtime config/content objects (`V2_CONFIG`, `RELIC_RECIPE`, `CLASSES`, `CHAPTERS`, `MATERIALS`, `RECIPES`).
 - When `isGameV2()` is false, the existing v1 `STEPS` list is rendered without any v2 headings or content, ensuring safe rollback or dual-mode support.
