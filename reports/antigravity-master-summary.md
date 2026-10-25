@@ -186,8 +186,8 @@ docs/submission.md
 ## User must decide on return
 - Finding A25a-1: Remove `title="Cat Key"` from `<PixelIcon name="key" size={2} title="Cat Key" />` in `BossGatePanel.tsx` line 186 to prevent duplicate accessible name announcement next to `<span>Keys: ...</span>`.
 - Finding A25i-1: On mobile (390px), consider auto-focusing the sheet close button on sheet open to improve assistive screen reader orientation.
-- Decision D5: Review proposed written looks in `docs/class-looks-fallback.md` for any class without custom user reference by 5 Nov 2026.
-- Decision D3 / D5: Review and approve proposed static preview sheets in `docs/class-looks/` (1x and 4x idle and attack frames).
+- Decision D5: Review proposed written looks in docs/class-looks-fallback.md (on branch ai/antigravity-v22-class-looks) for any class without custom user reference by 5 Nov 2026.
+- Decision D3 / D5: Review and approve proposed static preview sheets in docs/class-looks/ (on branch ai/antigravity-v22-class-previews, 1x and 4x idle and attack frames).
 - Decision D7: Repository public switch schedule (recommended 19 Nov 2026 after secrets scan) and assign submission lead.
 - Decision D9: Confirm official submission deadline (21 Nov vs 24/25 Nov 2026 23:59 UTC+7).
 - Merge orders:
