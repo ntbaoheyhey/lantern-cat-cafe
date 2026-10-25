@@ -35,7 +35,7 @@ The environment's default pnpm was 11.25.0, while package.json pins 10.28.0. The
 
 The requested targeted command ran all 17 Supabase test files (372 tests), all passing. An additional temporary TypeScript configuration includes the v2 tests, since the package's normal tsconfig include only lists src. It passed. Deno is not installed, so its conditional check is unavailable.
 
-Full required checks pending at the first implementation commit; results will be appended in the report commit. No other unresolved implementation issue identified.
+All required local checks passed in the prescribed order: frozen installation, Deno map regeneration with a clean functions diff after the implementation commit, typecheck, lint, full tests, and build. The full suite passed 1,668 ordinary tests plus 2 expected-failure cases; the game-rules suite also reports 2 existing skipped cases. No tests were skipped, weakened, or deleted by this change. The production build emitted a browser externalization warning for an existing dependency and exited successfully. No unresolved implementation issue identified beyond the documented craft-seed schema mismatch.
 
 ## Files changed
 
@@ -192,3 +192,212 @@ ntbaoheyhey
 ?? supabase/functions/v2-salvage/
 ?? supabase/tests/v2/functions-forge.test.ts
 ```
+
+### `git commit -m 'feat: add v2 crafting salvage lock and relic forge functions'`
+
+```text
+[ai/codex-v11-functions 02f497b] feat: add v2 crafting salvage lock and relic forge functions
+ 16 files changed, 870 insertions(+), 6 deletions(-)
+ create mode 100644 reports/v11-functions.md
+ create mode 100644 supabase/functions/_shared/v2/forge.ts
+ create mode 100644 supabase/functions/v2-craft/deno.json
+ create mode 100644 supabase/functions/v2-craft/index.ts
+ create mode 100644 supabase/functions/v2-lock/deno.json
+ create mode 100644 supabase/functions/v2-lock/index.ts
+ create mode 100644 supabase/functions/v2-relic-forge/deno.json
+ create mode 100644 supabase/functions/v2-relic-forge/index.ts
+ create mode 100644 supabase/functions/v2-salvage/deno.json
+ create mode 100644 supabase/functions/v2-salvage/index.ts
+ create mode 100644 supabase/tests/v2/functions-forge.test.ts
+```
+
+### `pnpm gen:deno && git diff --exit-code -- supabase/functions`
+
+```text
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 17 Edge Function import maps
+```
+
+### `pnpm typecheck`
+
+```text
+
+> taskbar-hero@0.0.0 typecheck /workspace/taskbar-hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/game-rules typecheck$ tsc --noEmit
+packages/auth typecheck: Done
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+```
+
+### `pnpm lint`
+
+```text
+
+> taskbar-hero@0.0.0 lint /workspace/taskbar-hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/chain lint: Done
+packages/game-rules lint$ tsc --noEmit
+packages/auth lint: Done
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+```
+
+### `pnpm test`
+
+```text
+
+> taskbar-hero@0.0.0 test /workspace/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/auth test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/chain
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  05:08:20
+packages/chain test:    Duration  294ms (import 36%, worker 33%, transform 19%, tests 12%)
+packages/chain test: Done
+packages/game-rules test$ vitest run
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  05:08:20
+packages/auth test:    Duration  533ms (import 63%, tests 29%, transform 7%, worker 1%)
+packages/auth test: Done
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /workspace/taskbar-hero/supabase/tests
+supabase/tests test:  Test Files  17 passed (17)
+supabase/tests test:       Tests  372 passed (372)
+supabase/tests test:    Start at  05:08:21
+supabase/tests test:    Duration  37.30s (tests 89%, import 10%, transform 1%)
+supabase/tests test:     Isolate  17 workers spawned · ~122ms startup each (spawn + environment, per file)
+supabase/tests test:              at least ~1.96s faster with isolate: false — reuses workers across files instead of one per file
+supabase/tests test: Done
+packages/game-rules test:  Test Files  17 passed | 2 skipped (19)
+packages/game-rules test:       Tests  292 passed | 2 expected fail | 2 skipped (296)
+packages/game-rules test:    Start at  05:08:20
+packages/game-rules test:    Duration  72.07s (tests 98%, import 1%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  05:09:33
+packages/api-contract test:    Duration  229ms (transform 66%, import 27%, tests 5%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /workspace/taskbar-hero/apps/web
+apps/web test:  Test Files  66 passed (66)
+apps/web test:       Tests  957 passed (957)
+apps/web test:    Start at  05:09:34
+apps/web test:    Duration  60.69s (environment 57%, tests 31%, import 11%, transform 1%)
+apps/web test: Environment  jsdom was created 66 times · 31.21s total, 57% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+```
+
+### `pnpm build`
+
+```text
+
+> taskbar-hero@0.0.0 build /workspace/taskbar-hero
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/chain build: Done
+packages/game-rules build$ tsc --noEmit
+packages/auth build: Done
+supabase/tests build$ tsc --noEmit
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/workspace/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1724 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.05 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/index-C0PSJB46.css               38.76 kB │ gzip:   7.94 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/index-unBFXH2h.js               132.03 kB │ gzip:  38.56 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 713ms
+apps/web build: Done
+```
+
+### `Scope audit: allowed files, exactly one authorized line in each extra file, four-line entrypoints`
+
+```text
+PASS exactly one authorized line changed: .github/workflows/deploy-functions.yml
+PASS exactly one authorized line changed: supabase/tests/v2/functions-state.test.ts
+PASS all four entrypoints have exactly four lines
+PASS all 16 changed files are allowed
+
+Files changed:
+.github/workflows/deploy-functions.yml
+reports/v11-functions.md
+supabase/functions/_shared/v2/forge.ts
+supabase/functions/_shared/v2/game.ts
+supabase/functions/_shared/v2/server.ts
+supabase/functions/v2-craft/deno.json
+supabase/functions/v2-craft/index.ts
+supabase/functions/v2-lock/deno.json
+supabase/functions/v2-lock/index.ts
+supabase/functions/v2-relic-forge/deno.json
+supabase/functions/v2-relic-forge/index.ts
+supabase/functions/v2-salvage/deno.json
+supabase/functions/v2-salvage/index.ts
+supabase/tests/v2/functions-forge.test.ts
+supabase/tests/v2/functions-state.test.ts
+supabase/tests/v2/v2-store.ts
+```
+
+### `git log --format='%an <%ae>' origin/main..HEAD; git diff --check; git status --short`
+
+```text
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+## Git and delivery
+
+Git identity is `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. No author correction was needed for the implementation commit. This validation report is the second commit, using the same local identity. The author list will be checked again immediately before `git push -u origin ai/codex-v11-functions`.
+
+The installed pnpm version was confirmed with `corepack pnpm --version`, output `10.28.0`; the default `pnpm --version` output was `11.25.0`. The temporary shim executes `corepack pnpm "$@"`; `CI=true` was set only for the noninteractive install. No tracked package or workspace configuration change remains.
+
+Workflow inspection (`rg -n -A 14 '^on:' .github/workflows/*.yml`) confirmed CI has only workflow_dispatch and function deployment accepts pushes only on main (or manual dispatch). Pushing this feature branch does not trigger either workflow. No PR will be opened.
+
+The optional check `deno check supabase/functions/v2-*/index.ts` was not run because `command -v deno` returned no path. The additional v2 TypeScript check used a temporary config extending supabase/tests/tsconfig.json and explicitly including functions-forge.test.ts, functions-state.test.ts, and v2-store.ts; this changed no repository file.
