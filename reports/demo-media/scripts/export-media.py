@@ -51,7 +51,7 @@ def timestamp(t):
 vtt='WEBVTT\n\n';timeline=[];at=0
 for i,(p,title,sub) in enumerate(segments,1):
  d=float(probe(p)['format']['duration']);vtt+=f'{i}\n{timestamp(at)} --> {timestamp(at+d)}\n{title}\n{sub}\n\n';timeline.append({'start':round(at,3),'end':round(at+d,3),'title':title,'subtitle':sub});at+=d
-(OUT/'captions/taskbar-hero-demo.vtt').write_text(vtt)
+(OUT/'captions/taskbar-hero-demo.vtt').write_text(vtt.rstrip()+'\n')
 shutil.copytree(R/'screenshots',OUT/'screenshots',dirs_exist_ok=True)
 (OUT/'README.md').write_text('''# Taskbar Hero demo recordings
 

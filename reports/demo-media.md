@@ -59,7 +59,7 @@ Use the previous [combined-build report](https://github.com/ntbaoheyhey/taskbar-
 ## Bundle identity
 
 - ZIP bytes: 8080690
-- ZIP SHA256: `7037b322931e5b17f25c997df387e65f8fe772442d3afc3bda33b181f8037719`
+- ZIP SHA256: `9d41102356190dd7e9444746ea8b7a27487ccd012971d63c64d1191f8474e045`
 - Showcase SHA256: `7349cc03e13426206bc874e5248ab9ecfd01289481404917aa26df38250184d6`
 
 ### demo-media-record
