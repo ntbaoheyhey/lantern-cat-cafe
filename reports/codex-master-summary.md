@@ -180,7 +180,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 | Q6 | DONE | ai/codex-v7c-client-contract | no | Manual real JWT/gateway/Fuji checks remain. |
 | Q7 | DONE | ai/codex-v10-followups | no | Deno check NOT VERIFIED: unavailable; workflow unchanged. |
 | Q8 | DONE | ai/codex-v29-founder-grant | no | D8: approve contents/cutoff/eligibility; apply_migration BEFORE merge; draft only. |
-| Q9 | BLOCKED | ai/codex-v26-e2e | no | STACKED ON V16 fd318c4. Equip best drops second upgrade; Q9 forbids required product fix; authorize fix card then rerun. |
+| Q9 | DONE | ai/codex-v26-e2e | no | STACKED ON bulk fix b82cddf; explicit user scope exception complete; original regression unchanged; 3x15 loop tests and full 68-test browser suite PASS. |
 | Q9fix | DONE | ai/codex-fix-bulk-equip | no | Explicit user scope exception; STACKED ON V16 fd318c4; serial bulk equipment with cancellation; full checks +53 browser tests pass. |
 | Q10 | DONE | ai/codex-v29-flag-flip | no | STACKED ON V16 fd318c4. D6 hard gate; never merge before cut-over; Q9 bug unresolved; revert code commit 28a5469. |
 | Q10b | DONE | ai/codex-v20b-relic-wiring | no | STACKED ON V16 fd318c4; USER must perform real Fuji mint/shared-limit/recovery test. |
@@ -199,7 +199,7 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 - Q6: `2cbbf7ff81beedb7495b9d638540039c62734907`, `reports/v7c-client-contract.md` (DONE).
 - Q7: `a3eac4a46cfc625dec4910ff40b8b4c54611e6b4`, `reports/v10-followups.md` (DONE).
 - Q8: `235298d29595ee5c1851ff80cdb687a5fdcdb172`, `reports/v29-founder.md` (DONE).
-- Q9: `de1e4b64ce3b3d4d981ae13fb3f6f432a635355e`, `reports/v26-e2e.md` (BLOCKED).
+- Q9: `33481ce01933834876037127e2753773a9a204cc`, `reports/v26-e2e.md` (DONE).
 - Q9fix: `b82cddfb8f772a930642bb1b836698a84d688c8a`, `reports/fix-bulk-equip.md` (DONE).
 - Q10: `b82ccbaf7c2be588300014c539665f580bf030cb`, `reports/v29-flag-flip.md` (DONE).
 - Q10b: `fd1f75d85b654a3d556b8bd2cd2e44c96564c401`, `reports/v20b-relic-wiring.md` (DONE).
@@ -215,4 +215,3 @@ $ git show origin/main:packages/game-rules/src/v2/config.ts | grep -nE "dailyKey
 2. D8: Founder contents, eligibility cutoff and permission to apply the draft migration before any merge.
 3. D10 MADE: V16/V19 authorized by replacement prompt; user reviews final screenshots.
 4. D6: cut-over day; flag flip requires V16 on main and the cut-over decision.
-- Q9: STACKED ON V16 fd318c4. Equip best drops second upgrade; Q9 forbids required product fix; authorize fix card then rerun.
