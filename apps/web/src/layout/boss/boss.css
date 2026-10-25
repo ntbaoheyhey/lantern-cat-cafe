@@ -1,0 +1,275 @@
+/* Cat Café Quest v2 - Boss Gate Panel styles */
+
+.boss-gate-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  color: var(--text, #fff3e0);
+  background: var(--surface, #2a1f36);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: 16px;
+  overflow-x: hidden;
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+  .boss-gate-panel {
+    --surface: #fdfbf7;
+    --surface-2: #f0e9df;
+    --border: #8b7463;
+    --text: #2a1a08;
+    --muted: #6e5c4e;
+    --bg: #f5eee6;
+  }
+}
+
+.boss-gate-panel[data-theme='light'],
+[data-theme='light'] .boss-gate-panel {
+  --surface: #fdfbf7;
+  --surface-2: #f0e9df;
+  --border: #8b7463;
+  --text: #2a1a08;
+  --muted: #6e5c4e;
+  --bg: #f5eee6;
+}
+
+/* Header */
+.boss-gate-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 2px solid var(--border, #5b4572);
+  padding-bottom: 12px;
+}
+
+.boss-gate-boss-name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: var(--font-display, monospace);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--chapter-theme-color, var(--accent, #ffb86b));
+  text-shadow: 1px 1px 0 #000;
+}
+
+.boss-gate-chapter-sub {
+  font-size: 0.9rem;
+  color: var(--muted, #c3aed0);
+  font-weight: 600;
+}
+
+/* Content layout: Portrait and info */
+.boss-gate-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 0;
+  background: var(--surface-2, #1c1424);
+  border: var(--pixel-border, 2px solid #000);
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .boss-gate-body {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 8px;
+  }
+}
+
+.boss-portrait-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  min-height: 96px;
+}
+
+.boss-portrait-svg {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  shape-rendering: crispEdges;
+  filter: drop-shadow(2px 2px 0 #000);
+}
+
+.boss-portrait-fallback {
+  background: var(--surface-2, #3a2c4a);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.boss-portrait-fallback::after {
+  content: '?';
+  font-family: var(--font-display, monospace);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--muted, #8b7463);
+}
+
+/* Keys badge */
+.boss-gate-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display, monospace);
+  font-size: 0.95rem;
+  font-weight: bold;
+  background: var(--surface, #2a1f36);
+  border: var(--pixel-border, 2px solid #000);
+  padding: 4px 10px;
+  box-shadow: 1px 1px 0 #000;
+}
+
+/* Chapter switcher */
+.boss-gate-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.boss-chapter-btn {
+  font: 700 0.85rem var(--font-display, monospace);
+  letter-spacing: 0.04em;
+  color: var(--muted, #c3aed0);
+  background: var(--surface-2, #3a2c4a);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: 0 2px 0 #000;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.boss-chapter-btn:hover {
+  color: var(--text, #fff3e0);
+  background: var(--surface, #4d3862);
+}
+
+.boss-chapter-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.boss-chapter-btn.is-active,
+.boss-chapter-btn[aria-current='true'] {
+  color: #000;
+  background: var(--chapter-theme-color, var(--accent, #ffb86b));
+  border-color: #000;
+  box-shadow: 0 2px 0 #000;
+  font-weight: 800;
+}
+
+/* Actions and status */
+.boss-gate-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.boss-fight-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-family: var(--font-display, monospace);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--good, #6be08a);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+
+.boss-fight-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.boss-fight-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.boss-fight-btn:disabled {
+  opacity: 0.55;
+  background: var(--surface-2, #4a3c5a);
+  color: var(--muted, #a29cb0);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 1px 1px 0 #000;
+}
+
+.boss-fight-btn[aria-busy='true'] {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+/* Status message */
+.boss-gate-status {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  min-height: 1.4em;
+  text-align: center;
+}
+
+.boss-gate-status-text {
+  color: var(--muted, #ffb86b);
+  font-weight: 500;
+}
+
+/* Specific status styling hooks */
+.boss-gate-panel[data-status='cooldown'] .boss-gate-status-text {
+  color: var(--focus, #ffd75e);
+  font-family: var(--font-display, monospace);
+  font-weight: 700;
+}
+
+.boss-gate-panel[data-status='no_key'] .boss-gate-status-text {
+  color: var(--bad, #ff7a9a);
+}
+
+.boss-gate-panel[data-status='not_reached'] .boss-gate-status-text {
+  color: var(--muted, #c3aed0);
+}
+
+.boss-gate-panel[data-status='no_class'] .boss-gate-status-text {
+  color: var(--bad, #ff6b6b);
+}
+
+/* Accessible screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .boss-chapter-btn,
+  .boss-fight-btn {
+    transition: none;
+    transform: none !important;
+  }
+}
