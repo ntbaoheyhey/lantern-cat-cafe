@@ -11,6 +11,8 @@ const root = createRoot(document.getElementById('root')!);
 // production build the condition is constant false, so the preview is left out of the bundle.
 if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'sprites') {
   void import('./dev/SpritePreview').then(({ SpritePreview }) => root.render(<StrictMode><SpritePreview /></StrictMode>));
+} else if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'arena') {
+  void import('./dev/ArenaPreview').then(({ ArenaPreview }) => root.render(<StrictMode><ArenaPreview /></StrictMode>));
 } else {
   root.render(
     <StrictMode>
