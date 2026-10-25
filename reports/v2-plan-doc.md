@@ -1,5 +1,7 @@
 STATUS: DONE
 
+Revised prompt received 2026-10-25: D10 is MADE, stacking on DONE branches is authorized, and Q10b/Q11/Q12/Q13 are included. Regenerated the approved block verbatim from that replacement; Q4/Q5 now precede Q3. Rechecked links (1 file, 0 links/paths); production files unchanged.
+
 Q0: copied the approved plan verbatim and recorded the queue, branches and gates. Gate: docs/v2-plan.md absent on origin/main. PASS: approved block exact; documentation only; pinned pnpm install; gen:deno and drift check; link check (1 file, 0 links/paths). Full suite skipped: docs only. NOT verified: no product or live checks apply. Files: docs/v2-plan.md records the plan, reports/v2-plan-doc.md records evidence. No decisions made.
 
 ### q0-install.txt
