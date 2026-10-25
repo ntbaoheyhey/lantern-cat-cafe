@@ -1,3 +1,291 @@
+STATUS: DONE
+
+## Fix round 3 (2026-10-25)
+
+Merged latest origin/main (3379777) into the existing branch; ran gen:deno with no drift. Corrected only the authorized missing local contracts/.env prose at runbook line 47. Existing implementation is retained; v1 checks and output are byte-identical to main (offline regression test passes). PASS: all seven helper categories, link check, install, generated maps, typecheck, lint, full suite (game-rules 326; Supabase 385; web 1037; other packages green), root build. idle timing test passed in the full suite; no retry needed. PASS: runbook says CHECK_LIVE_V2=post after the flag flip. No product, auth, contract, workflow, SQL or environment file edits.
+
+NOT VERIFIED: production health. One CHECK_LIVE_V2=off invocation completed: 21 failures caused by ECONNREFUSED / ETIMEDOUT in this environment, not deployment or v2-marker evidence. No second live invocation made. The off mode deliberately runs no v2 lines; no claim is made about deployed v2 functions or flag state. Continue by running CHECK_LIVE_V2=pre from a network-capable environment; post after cut-over. No blocker to implementation review.
+
+### q1-helpers.txt
+
+```text
+$ node --test scripts/check-live-v2.test.mjs
+✔ discovers only v2 directories, sorted, including a future boss function (2.477721ms)
+✔ anonymous POST requires exactly 401 and distinguishes function from gateway (0.295857ms)
+✔ CORS requires a 2xx and the matching or wildcard origin (25.671125ms)
+✔ HTML modules resolve against SITE and ignore external, classic and non-asset scripts (1.263288ms)
+✔ real API detection looks for the configured Supabase host (0.173291ms)
+✔ marker verdict covers pre/post with present/absent markers, and skip (0.13272ms)
+✔ fresh import makes no network request (0.855862ms)
+✔ real repository has v2-state and valid v2 directory names (0.567086ms)
+✔ live runner preserves v1 lines in off mode and counts v2 failures in its exit status (63.980402ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.939904
+
+EXIT 0; runtime 0.19s
+
+```
+
+### q1-links.txt
+
+```text
+$ node scripts/check-links.mjs docs/runbook.md
+Checked 1 markdown files and 7 links/paths.
+
+✓ All links, image paths, and backticked repo paths exist on disk.
+
+EXIT 0; runtime 0.03s
+
+```
+
+### q1-install.txt
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 659ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.72s
+
+```
+
+### q1-deno.txt
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.30s
+
+```
+
+### q1-typecheck.txt
+
+```text
+$ pnpm typecheck
+
+> taskbar-hero@0.0.0 typecheck /workspace/taskbar-hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/game-rules typecheck$ tsc --noEmit
+packages/auth typecheck: Done
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+EXIT 0; runtime 13.46s
+
+```
+
+### q1-lint.txt
+
+```text
+$ pnpm lint
+
+> taskbar-hero@0.0.0 lint /workspace/taskbar-hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/chain lint: Done
+packages/game-rules lint$ tsc --noEmit
+packages/auth lint: Done
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+EXIT 0; runtime 13.61s
+
+```
+
+### q1-test.txt
+
+```text
+$ pnpm test
+
+> taskbar-hero@0.0.0 test /workspace/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/auth test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/chain
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  11:20:25
+packages/chain test:    Duration  283ms (import 57%, transform 20%, tests 12%, worker 11%)
+packages/chain test: Done
+packages/game-rules test$ vitest run
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  11:20:25
+packages/auth test:    Duration  576ms (import 70%, tests 26%, transform 3%, worker 1%)
+packages/auth test: Done
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /workspace/taskbar-hero/supabase/tests
+supabase/tests test:  Test Files  18 passed (18)
+supabase/tests test:       Tests  385 passed (385)
+supabase/tests test:    Start at  11:20:26
+supabase/tests test:    Duration  41.98s (tests 89%, import 10%, transform 1%)
+supabase/tests test:     Isolate  18 workers spawned · ~127ms startup each (spawn + environment, per file)
+supabase/tests test:              at least ~2.16s faster with isolate: false — reuses workers across files instead of one per file
+supabase/tests test: Done
+packages/game-rules test:  Test Files  19 passed | 2 skipped (21)
+packages/game-rules test:       Tests  326 passed | 2 expected fail | 4 skipped (332)
+packages/game-rules test:    Start at  11:20:26
+packages/game-rules test:    Duration  80.05s (tests 98%, import 1%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /workspace/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  11:21:46
+packages/api-contract test:    Duration  258ms (transform 67%, import 26%, tests 4%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /workspace/taskbar-hero/apps/web
+apps/web test:  Test Files  75 passed (75)
+apps/web test:       Tests  1037 passed (1037)
+apps/web test:    Start at  11:21:47
+apps/web test:    Duration  70.46s (environment 56%, tests 30%, import 11%, transform 2%)
+apps/web test: Environment  jsdom was created 75 times · 35.65s total, 56% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+EXIT 0; runtime 153.10s
+
+```
+
+### q1-build.txt
+
+```text
+$ pnpm build
+
+> taskbar-hero@0.0.0 build /workspace/taskbar-hero
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/chain build: Done
+packages/game-rules build$ tsc --noEmit
+packages/auth build: Done
+supabase/tests build$ tsc --noEmit
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/workspace/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1725 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.05 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/index-DMK2UL2Q.css               39.42 kB │ gzip:   8.06 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/index-CR0-bjaD.js               135.95 kB │ gzip:  39.92 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 819ms
+apps/web build: Done
+
+EXIT 0; runtime 14.27s
+
+```
+
+### q1-live.txt
+
+```text
+$ CHECK_LIVE_V2=off node scripts/check-live.mjs
+Site https://web-zeta-tan-13.vercel.app
+Supabase https://qoalewtxflagoprrxrgh.supabase.co
+Fuji RPC https://api.avax-test.network/ext/bc/C/rpc
+
+FAIL  site loads - fetch failed (ECONNREFUSED)
+FAIL  function auth-nonce refuses anonymous POST - fetch failed (ECONNREFUSED)
+FAIL  function auth-verify refuses anonymous POST - fetch failed (ECONNREFUSED)
+FAIL  function game-state refuses anonymous POST - fetch failed (ECONNREFUSED)
+FAIL  function idle-claim refuses anonymous POST - fetch failed (ECONNREFUSED)
+FAIL  function equip refuses anonymous POST - fetch failed (ECONNREFUSED)
+FAIL  function boss-fight refuses anonymous POST - fetch failed (ETIMEDOUT)
+FAIL  function upgrade refuses anonymous POST - fetch failed (ETIMEDOUT)
+FAIL  function relic-forge refuses anonymous POST - fetch failed (ETIMEDOUT)
+FAIL  function relic-mint-report refuses anonymous POST - fetch failed (ETIMEDOUT)
+FAIL  relic 1 metadata and image - fetch failed (ETIMEDOUT)
+FAIL  relic 2 metadata and image - fetch failed (ETIMEDOUT)
+FAIL  relic 3 metadata and image - fetch failed (ETIMEDOUT)
+FAIL  relic 4 metadata and image - fetch failed (ETIMEDOUT)
+FAIL  relic 64-hex metadata path (what wallets request) - fetch failed (ETIMEDOUT)
+PASS  README has both contract addresses - 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D, 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93
+FAIL  Fuji RPC reports chain 43113 - fetch failed (ETIMEDOUT)
+FAIL  RelicNFT has code - fetch failed (ECONNREFUSED)
+FAIL  RelicNFT signer() is set - fetch failed (ETIMEDOUT)
+FAIL  RelicNFT owner() is set - fetch failed (ETIMEDOUT)
+FAIL  RelicNFT uri(1) points at the site - fetch failed (ETIMEDOUT)
+FAIL  RelicMarket relicNFT() is the RelicNFT - fetch failed (ETIMEDOUT)
+
+21 CHECK(S) FAILED
+
+EXIT 1; runtime 32.80s
+
+```
+
+## Files touched and reasons
+
+```text
+docs/runbook.md                |   4 +-
+ reports/check-live-v2.md       | 586 +++++++++++++++++++++++++++++++++++++++++
+ scripts/check-live-v2.mjs      |  57 ++++
+ scripts/check-live-v2.test.mjs | 106 ++++++++
+ scripts/check-live.mjs         |  66 ++++-
+ 5 files changed, 817 insertions(+), 2 deletions(-)
+```
+
+Report file records evidence and review gates.
+
+## Prior report (historical; superseded by round 3)
+
 STATUS: BLOCKED
 
 ## Fix round 2 (2026-10-25)

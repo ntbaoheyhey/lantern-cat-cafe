@@ -44,7 +44,7 @@ Function secrets (set in the Supabase dashboard, **Edge Functions > Secrets**; n
 
 ## Set the metadata URI
 
-Owner wallet only (the deployer wallet; its key lives in `contracts/.env` on the owner's machine as `DEPLOYER_PRIVATE_KEY`). The exact `cast send` and check commands are in [deploy](deploy.md#set-the-metadata-uri). Do this again if the site's URL changes; `check-live` then fails on `uri(1)` until it matches.
+Owner wallet only (the deployer wallet; its key lives in a local .env file in contracts/ (not committed) on the owner's machine as `DEPLOYER_PRIVATE_KEY`). The exact `cast send` and check commands are in [deploy](deploy.md#set-the-metadata-uri). Do this again if the site's URL changes; `check-live` then fails on `uri(1)` until it matches.
 
 ## Rotate the voucher signer
 
