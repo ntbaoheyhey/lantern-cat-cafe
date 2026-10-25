@@ -125,6 +125,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const phone = kind === 'phone';
   const navRef = useRef<HTMLDivElement>(null);
+  const sheetCloseRef = useRef<HTMLButtonElement>(null);
   const loop = getGameLoopV2();
   const snapshot = useGameSnapshotV2(loop), mode = useGameModeV2();
   const state = snapshot.state;
@@ -186,6 +187,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
 
   useEffect(() => {
     if (!phone || !sheetOpen) return;
+    sheetCloseRef.current?.focus();
     const onKey = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') closeSheet();
     };
@@ -239,7 +241,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
               {state && <CharacterArea state={state} />}
             </div>
             <div className={`v2-sheet${sheetOpen ? ' open' : ''}`} hidden={!sheetOpen}>
-              <button type="button" className="v2-sheet-close" aria-label="Close panel" onClick={closeSheet}>
+              <button type="button" className="v2-sheet-close" ref={sheetCloseRef} aria-label="Close panel" onClick={closeSheet}>
                 ×
               </button>
               <ActivePanel tab={tab} hidden={!sheetOpen} content={content} />

@@ -151,3 +151,21 @@ it('boss request opens the replay, then the victory chest', async () => {
   expect(screen.getByText('Victory!')).toBeTruthy();
   expect(screen.getByRole('dialog')).toBeTruthy();
 });
+
+
+it('phone: panel opening moves focus inside and closing returns it to the selected tab', () => {
+  setViewport(390, 844);
+  render(<App />);
+  const boss = screen.getByRole('tab', { name: 'Boss' });
+  boss.focus();
+  fireEvent.click(boss);
+  expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Close panel' }));
+  fireEvent.keyDown(document, { key: 'Escape' });
+  expect(document.activeElement).toBe(boss);
+  const market = screen.getByRole('tab', { name: 'Market' });
+  market.focus();
+  fireEvent.click(market);
+  expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Close panel' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Close panel' }));
+  expect(document.activeElement).toBe(market);
+});
