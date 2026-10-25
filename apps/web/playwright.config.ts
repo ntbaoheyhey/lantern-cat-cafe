@@ -6,13 +6,13 @@ const preinstalled = '/opt/pw-browsers/chromium';
 const executablePath = existsSync(preinstalled) ? preinstalled : undefined;
 const launchOptions = { executablePath, args: ['--no-sandbox'] };
 
-// The default build is the live game. The stage-first layout (Cat RPG v2) only exists in a build made with
-// VITE_GAME_V2=1, so e2e/layout/** runs against a second build (dist-v2) served on its own port.
+// Keep the classic rollback suite on an explicit VITE_GAME_V2=0 build after cut-over.
+// The stage suite uses VITE_GAME_V2=1 in its separate dist-v2 build.
 export default defineConfig({
   testDir: 'e2e',
   webServer: [
     {
-      command: 'pnpm exec vite preview --port 4173 --strictPort',
+      command: 'VITE_GAME_V2=0 pnpm exec vite build && pnpm exec vite preview --port 4173 --strictPort',
       url: 'http://localhost:4173',
       reuseExistingServer: false,
     },

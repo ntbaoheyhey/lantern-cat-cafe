@@ -9,6 +9,7 @@ import { getGameLoop } from './game/store';
 import { resetHelpForTests } from './onboarding/helpStore';
 
 beforeEach(() => {
+  vi.stubEnv('VITE_GAME_V2', '0');
   localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
   act(() => resetHelpForTests());
 });
@@ -16,6 +17,7 @@ beforeEach(() => {
 afterEach(() => {
   getGameLoop().stop();
   cleanup();
+  vi.unstubAllEnvs();
 });
 
 it('shows the strip with the game and no panel initially', () => {

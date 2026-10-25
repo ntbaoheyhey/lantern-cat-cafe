@@ -102,7 +102,7 @@ describe('HelpTab', () => {
   });
 
   it('5. Flag off: the rendered list equals today\'s (same number of li as STEPS, same texts in order) and none of the v2 headings appear', () => {
-    vi.stubEnv('VITE_GAME_V2', '');
+    vi.stubEnv('VITE_GAME_V2', '0');
     const { container } = render(<HelpTab />);
     const items = container.querySelectorAll('li.help-step-item');
     expect(items.length).toBe(STEPS.length);

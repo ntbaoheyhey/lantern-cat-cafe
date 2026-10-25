@@ -42,8 +42,8 @@ afterEach(() => {
   vi.unstubAllEnvs();
 });
 
-it('keeps the classic layout when VITE_GAME_V2 is not set', () => {
-  vi.stubEnv('VITE_GAME_V2', '');
+it('keeps the classic layout when VITE_GAME_V2 is 0', () => {
+  vi.stubEnv('VITE_GAME_V2', '0');
   render(<App />);
   expect(screen.getByRole('region', { name: 'Taskbar strip' })).toBeTruthy();
   expect(screen.queryByRole('region', { name: 'Game stage' })).toBeNull();
@@ -150,4 +150,11 @@ it('boss request opens the replay, then the victory chest', async () => {
   fireEvent.click(screen.getByRole('button', { name: 'Complete replay' }));
   expect(screen.getByText('Victory!')).toBeTruthy();
   expect(screen.getByRole('dialog')).toBeTruthy();
+});
+
+it('renders the v2 stage by default after the prepared cut-over', () => {
+  vi.stubEnv('VITE_GAME_V2', undefined);
+  render(<App />);
+  expect(screen.getByRole('region', { name: 'Game stage' })).toBeTruthy();
+  expect(screen.queryByRole('region', { name: 'Taskbar strip' })).toBeNull();
 });
