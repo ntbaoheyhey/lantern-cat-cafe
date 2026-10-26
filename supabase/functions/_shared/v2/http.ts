@@ -31,14 +31,41 @@ export class V2Error extends Error {
   }
 }
 
+/** Bound bytes while streaming; Content-Length is caller-controlled. */
+async function requestObject(req: Request): Promise<Record<string, unknown>> {
+  if (!req.body) throw new V2Error("invalid_request");
+  const reader = req.body.getReader();
+  const bytes = new Uint8Array(8192);
+  let size = 0;
+  try {
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (value.byteLength > bytes.length - size) {
+        await reader.cancel();
+        throw new V2Error("invalid_request");
+      }
+      bytes.set(value, size);
+      size += value.byteLength;
+    }
+    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, size)));
+    if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
+    return body as Record<string, unknown>;
+  } catch {
+    throw new V2Error("invalid_request");
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<string, unknown>) => Promise<unknown>): (req: Request) => Promise<Response> {
   return async (req) => {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: http.json(req, {}).headers });
     if (req.method !== "POST") return http.json(req, { error: "method_not_allowed" }, 405);
     try {
       const player = await http.authenticate(req);
-      const body: unknown = await req.json().catch(() => ({}));
-      return http.json(req, await fn(player, body !== null && typeof body === "object" && !Array.isArray(body) ? body as Record<string, unknown> : {}));
+      const body = await requestObject(req);
+      return http.json(req, await fn(player, body));
     } catch (e) {
       if (e instanceof V2Error) {
         const extra = Object.fromEntries(Object.entries(e.extra).filter(([, value]) => value !== undefined));
