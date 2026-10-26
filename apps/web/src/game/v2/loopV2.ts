@@ -155,8 +155,8 @@ export class GameLoopV2 {
     const gen = this.gen;
     const api = this.api;
     const flight = Promise.resolve().then(async () => {
-      // A timer may fire during a boss fight; wait for its authoritative result first.
-      while (gen === this.gen && this.snap.busy === 'fightBoss' && this.actionFlight) {
+      // A timer may fire during an action; wait for its authoritative result first.
+      while (gen === this.gen && this.snap.busy !== null && this.actionFlight) {
         await this.actionFlight;
       }
       if (gen !== this.gen || !this.snap.state?.cat.classId || this.doc?.visibilityState === 'hidden') return;

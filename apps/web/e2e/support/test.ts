@@ -7,7 +7,7 @@ export type { Locator, Page } from '@playwright/test';
 /** Import this test in specs so a misplaced file or baseURL override fails loudly. */
 export const test = base.extend<{ buildGuard: void }>({
   buildGuard: [async ({ page, baseURL }, use, testInfo) => {
-    const directory = testInfo.file.match(/[/\\]e2e[/\\](ui|layout|v2)[/\\]/)?.[1];
+    const directory = testInfo.file.match(/[/\\]e2e[/\\](ui|layout|v2|qa)[/\\]/)?.[1];
     const v2 = directory !== undefined;
     const expectedProject = v2 ? (directory === 'v2' ? 'v2-loop' : 'stage-layout') : 'classic';
     expect(testInfo.project.name, 'Spec is assigned to the wrong build project').toBe(expectedProject);

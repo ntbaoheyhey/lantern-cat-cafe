@@ -44,12 +44,12 @@ export default defineConfig({
     },
     {
       name: 'classic',
-      testIgnore: ['layout/**', 'v2/**', 'ui/**'],
+      testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**'],
       use: { baseURL: classicURL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
       name: 'stage-layout',
-      testMatch: ['layout/**/*.spec.ts', 'ui/**/*.spec.ts'],
+      testMatch: ['layout/**/*.spec.ts', 'ui/**/*.spec.ts', 'qa/**/*.spec.ts'],
       use: { baseURL: v2URL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
   ],
