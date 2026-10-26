@@ -122,10 +122,12 @@ const routeLimits = {
 } as const;
 async function reserve(db: { rpc(name: string, args: object): PromiseLike<{ data: any; error: unknown }> },
   budgets: { key: string; perMinute: number; burst: number }[]) {
-  const { data, error } = await db.rpc('v2_take_budgets', { p_budgets: budgets });
-  if (error || !data || typeof data.allowed !== 'boolean') return { status: 503, error: 'server_error', retryAfter: 5 };
-  if (!data.allowed) return { status: 429, error: 'rate_limited', retryAfter: data.retryAfter };
-  return null;
+  try {
+    const { data, error } = await db.rpc('v2_take_budgets', { p_budgets: budgets });
+    if (error || !data || typeof data.allowed !== 'boolean') return { status: 503, error: 'server_error', retryAfter: 5 };
+    if (!data.allowed) return { status: 429, error: 'rate_limited', retryAfter: data.retryAfter };
+    return null;
+  } catch { return { status: 503, error: 'server_error', retryAfter: 5 }; }
 }
 async function admitIp(db: Parameters<typeof reserve>[0], route: keyof typeof routeLimits, ipKey: string) {
   const [, , perMinute, burst] = routeLimits[route];
@@ -148,3 +150,84 @@ async function admitPlayer(db: Parameters<typeof reserve>[0], route: keyof typeo
 The migration also needs a private `proxy_requests(request_id uuid primary key, expires_at timestamptz)` replay table, with client grants revoked, RLS default deny, and an envelope-admission RPC doing `INSERT ... ON CONFLICT DO NOTHING RETURNING request_id` after signature verification. Charge valid replay attempts against the same IP; do not allow duplicate envelope IDs to run mutations. Retain IDs for at least the envelope validity plus clock skew (two minutes), clean in batches. The proxy uses a fresh envelope per HTTP retry; action idempotency uses a different stable client request id, described in [state integrity](v2-state-integrity.md).
 
 Apply in a later card: create/verify grants in a disposable DB, concurrency-test budgets and envelope replays, integrate wrappers/client proxy root, verify actual IP header spoofing fails on the deployed proxy, then enable limits with logs. Failure mode and honest residual risk must appear in the owner runbook. No live SQL, proxy or rate limiter was installed by S2.
+
+## Proxy envelope implementation sketch
+
+Place this shared WebCrypto code on the proxy and Edge side. It binds the *exact* buffered body bytes and bearer header; do not parse/re-encode JSON between sealing and verification. On the proxy, `boundedBytes` must use the same streaming-byte approach as S2's reader (8 KiB), and the route must come from the fixed route allowlist above. On Edge, verification precedes the IP budget; consume the envelope UUID atomically before gameplay. A missing or failed signature is an unauthenticated request, not permission to fall back to attacker headers.
+
+```ts
+const enc = new TextEncoder();
+const hex = (b: ArrayBuffer) => Array.from(new Uint8Array(b), n => n.toString(16).padStart(2, '0')).join('');
+const sha = async (bytes: Uint8Array) => hex(await crypto.subtle.digest('SHA-256', bytes));
+const macKey = (secret: string) => crypto.subtle.importKey('raw', enc.encode(secret),
+  { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
+async function envelopeMessage(req: Request, route: string, body: Uint8Array, ip: string, at: string, id: string) {
+  return enc.encode(JSON.stringify([at, id, ip, req.method, route,
+    await sha(enc.encode(req.headers.get('authorization') ?? '')), await sha(body)]));
+}
+async function sealEnvelope(req: Request, route: string, body: Uint8Array, ip: string, secret: string): Promise<Headers> {
+  const at = String(Math.floor(Date.now() / 1000));
+  const id = crypto.randomUUID();
+  const message = await envelopeMessage(req, route, body, ip, at, id);
+  const signature = hex(await crypto.subtle.sign('HMAC', await macKey(secret), message));
+  return new Headers({ 'x-budget-ip': ip, 'x-budget-at': at, 'x-budget-id': id, 'x-budget-mac': signature });
+}
+async function verifyEnvelope(req: Request, route: string, body: Uint8Array, secret: string) {
+  const ip = req.headers.get('x-budget-ip') ?? '';
+  const at = req.headers.get('x-budget-at') ?? '';
+  const id = req.headers.get('x-budget-id') ?? '';
+  const signature = req.headers.get('x-budget-mac') ?? '';
+  if (ip.length < 2 || ip.length > 45 || !/^\d{10}$/.test(at) ||
+      Math.abs(Date.now() / 1000 - Number(at)) > 30 ||
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(id) ||
+      !/^[0-9a-f]{64}$/.test(signature)) throw new Error('unauthenticated');
+  const bytes = Uint8Array.from(signature.match(/../g)!, pair => parseInt(pair, 16));
+  if (!await crypto.subtle.verify('HMAC', await macKey(secret), bytes,
+      await envelopeMessage(req, route, body, ip, at, id))) throw new Error('unauthenticated');
+  return { ip, requestId: id }; // Only this verified IP can enter HMAC pseudonymization.
+}
+// Proxy-only adapter (Node built-in; no dependency addition):
+// import { isIP } from 'node:net';
+// const ip = req.headers.get('x-forwarded-for') ?? '';
+// if (isIP(ip) === 0) return new Response(null, { status: 400 });
+// const signed = await sealEnvelope(req, route, boundedBytes, ip, proxySecret);
+// const headers = new Headers(signed); // Never copy incoming x-budget-* values.
+// headers.set('authorization', req.headers.get('authorization') ?? '');
+// headers.set('content-type', 'application/json');
+// headers.set('apikey', publicAnonKey);
+// return fetch(`${fixedSupabaseRoot}/functions/v1/${route}`, {
+//   method: 'POST', body: boundedBytes, headers, redirect: 'error',
+// });
+```
+
+Envelope replay migration addition (same private schema, security posture and cleanup discipline as counters):
+
+```sql
+create table private.v2_proxy_requests (
+  request_id uuid primary key,
+  expires_at timestamptz not null default now() + interval '2 minutes'
+);
+create index v2_proxy_requests_expiry on private.v2_proxy_requests(expires_at);
+alter table private.v2_proxy_requests enable row level security;
+revoke all on private.v2_proxy_requests from public, anon, authenticated;
+create function public.v2_admit_proxy_request(p_request_id uuid) returns boolean
+language sql volatile security definer set search_path = '' as $$
+  with inserted as (
+    insert into private.v2_proxy_requests(request_id) values(p_request_id)
+    on conflict do nothing returning request_id
+  ) select exists(select 1 from inserted);
+$$;
+revoke all on function public.v2_admit_proxy_request(uuid) from public, anon, authenticated;
+grant execute on function public.v2_admit_proxy_request(uuid) to service_role;
+create function public.v2_cleanup_proxy_requests() returns void
+language sql volatile security definer set search_path = '' as $$
+  delete from private.v2_proxy_requests where request_id in (
+    select request_id from private.v2_proxy_requests where expires_at < now()
+    order by expires_at limit 1000
+  );
+$$;
+revoke all on function public.v2_cleanup_proxy_requests() from public, anon, authenticated;
+grant execute on function public.v2_cleanup_proxy_requests() to service_role;
+```
+
+Tests before enabling: change body/token/route/IP/timestamp and verify MAC rejection; reject unknown routes and oversized streaming bodies; reject a duplicate envelope ID across two isolates; fresh envelope with same stable *action* id must replay the stored action result, not execute again. Monitor separate envelope, quota and database-unavailable counters. Do not log envelope MACs or the raw IP.

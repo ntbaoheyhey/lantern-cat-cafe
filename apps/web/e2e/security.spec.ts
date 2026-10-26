@@ -54,6 +54,7 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
     await page.waitForLoadState('networkidle');
     expect(violations).toEqual([]);
     expect(errors).toEqual([]);
+    await page.evaluate(() => window.scrollTo(0, 0));
     if (process.env.SCREENSHOTS === '1') await page.screenshot({ path: path.resolve(process.cwd(), `../../reports/s2-security/csp-${mode}-${width}-${colorScheme}.png`) });
     console.log(`CSP ${mode} ${width}x${height} ${colorScheme}: canvas painted; violations=${violations.length}; console/page errors=${errors.length}`);
   });

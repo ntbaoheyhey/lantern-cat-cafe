@@ -20,7 +20,7 @@ Tests: production + missing/empty URL throws before offering sign-in; production
 
 ## Server-side SIWE domain allowlisting
 
-NOT REPRODUCIBLE as a missing-domain-check vulnerability: [packages/auth/src/index.ts:175](../../packages/auth/src/index.ts#L175) already compares the signed domain with `config.domain`; line 177 checks the URI host, HTTPS (loopback HTTP exception), and absence of credentials. [supabase/functions/_shared/auth.ts:50](../../supabase/functions/_shared/auth.ts#L50) obtains that domain from required `SIWE_DOMAIN`, not a request header. Keep the single exact server domain for one deployment. Do not derive it from Origin, Host, the submitted message, or CORS.
+NOT REPRODUCIBLE as a missing-domain-check vulnerability: [packages/auth/src/index.ts:175](../../packages/auth/src/index.ts#L175) already compares the signed domain with `config.domain`; line 177 checks the URI host, HTTPS (loopback HTTP exception), and absence of credentials. [supabase/functions/_shared/auth.ts:46](../../supabase/functions/_shared/auth.ts#L46) obtains that domain from required `SIWE_DOMAIN`, not a request header. Keep the single exact server domain for one deployment. Do not derive it from Origin, Host, the submitted message, or CORS.
 
 If multiple production/preview domains are needed, use a server-owned exact set, never a suffix wildcard. Sketch for an approved replacement of the existing checks:
 

@@ -49,6 +49,11 @@ describe("S2 proposal SQL in a disposable database only", () => {
     for (const refusal of rs.filter(r => !r.allowed)) expect(refusal.retryAfter).toBeGreaterThan(0);
     expect(await call(db, "public.v2_take_budgets($1::jsonb)", [JSON.stringify([{ key: "ip:other:all", perMinute: 1, burst: 2 }])])).toEqual({ allowed: true });
   });
+  it("admits a signed-envelope request id once across parallel deliveries", async () => {
+    const id = "00000000-0000-4000-8000-000000000001";
+    const invoke = async () => (await db.query<{ r: boolean }>("select public.v2_admit_proxy_request($1) r", [id])).rows[0]!.r;
+    expect((await Promise.all([invoke(), invoke()])).filter(Boolean)).toHaveLength(1);
+  });
   it("denies anonymous budget RPC execution", async () => {
     await expect(as(db, "anon", null, () => db.query("select public.v2_take_budgets('[]'::jsonb)"))).rejects.toThrow(/permission denied/);
   });
