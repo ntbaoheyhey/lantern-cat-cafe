@@ -10,8 +10,14 @@ import {
 } from 'react';
 import type { ServerStateV2, BossFightResultV2, GainsV2 } from '../api/GameApiV2';
 import { v2 } from '@taskbar-hero/game-rules';
+import { useAccount } from 'wagmi';
+import type { RelicVoucher } from '@taskbar-hero/api-contract';
+import { MintPanel } from '../forge/MintPanel';
+import { loadUnreported, type UnreportedMint } from '../forge/mintStore';
+import { reportMint } from '../forge/report';
+import { getGameApi, getGameLoop } from '../game/store';
 import { StageCanvas } from '../game/stage/StageCanvas';
-import { createEquipQueueV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
+import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { HudBar } from './hud/HudBar';
 import { ClassPicker } from './classpicker/ClassPicker';
@@ -128,6 +134,11 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
   const loop = getGameLoopV2();
   const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
+  const wallet = useAccount();
+  const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
+  const [mintedNonce, setMintedNonce] = useState<string | null>(null);
+  const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
+  const [savingMint, setSavingMint] = useState(false);
   const snapshot = useGameSnapshotV2(loop), mode = useGameModeV2();
   const state = snapshot.state;
   const reducedMotion = usePrefersReducedMotion();
@@ -166,6 +177,16 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
     const timer = setInterval(() => setNow(Date.now()), 1000);
     return () => { queue.dispose(); if (equipQueue.current === queue) equipQueue.current = null; saveVisit(); off(); loop.stop(); clearInterval(timer); document.removeEventListener('visibilitychange', visibility); };
   }, [loop]);
+  useEffect(() => { setVoucher(null); setMintedNonce(null); }, [mode.demo, wallet.address]);
+  const retryMintConfirmation = async () => {
+    if (!unreported || savingMint || mode.demo || !wallet.isConnected) return;
+    setSavingMint(true);
+    try {
+      const outcome = await reportMint(getGameApi(), getGameLoop(), unreported);
+      if (outcome === 'retry') setNotice('Could not save the mint confirmation. Try again.');
+      else { setUnreported(null); setVoucher(null); await loop.retry(); setNotice('Relic mint confirmation saved.'); }
+    } finally { setSavingMint(false); }
+  };
   const classId = state?.cat.classId;
   const stats = state && classId ? v2.deriveStats({ classId, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus }))) : null;
   const fightBoss = async (selected: number) => {
@@ -179,9 +200,21 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const content = !state ? <p>Loading your cat…</p> : tab === 'Inventory' ? bag : tab === 'Boss' ? <>
     <BossGatePanel state={state} chapter={chapter ?? state.progress.chapter} nowS={Math.floor(now / 1000 + offset)} busy={snapshot.busy === 'fightBoss' || fight !== null} onFight={selected => { void fightBoss(selected); }} onSelectChapter={setChapter} />
     <ChapterMap currentChapter={state.progress.chapter} round={state.progress.round} clearedChapters={state.bosses.chapters.filter(c => c.cleared).map(c => c.chapter)} onSelect={setChapter} />
-  </> : tab === 'Forge' ? classId ? <ForgePanel stacks={{ ...state.materials, fish: state.currencies.fish, yarn: state.currencies.yarn, catKey: state.currencies.keys }} items={state.inventory}
+  </> : tab === 'Forge' ? classId ? <><ForgePanel stacks={{ ...state.materials, fish: state.currencies.fish, yarn: state.currencies.yarn, catKey: state.currencies.keys }} items={state.inventory}
     relic={{ today: state.forge.today, pending: state.forge.pending, blockedReason: state.forge.blockedBy }} classWeaponType={v2.CLASSES.find(c => c.id === classId)!.weaponType}
-    onCraft={async (recipe, slot) => { await loop.craft(recipe, slot); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={() => { setNotice('Relic minting will be available after wallet wiring.'); }} /> : <p>Choose a class to use the forge.</p> : null;
+    onCraft={async (recipe, slot) => { await loop.craft(recipe, slot); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={async () => {
+      const message = await forgeRelicForWalletV2(loop, { connected: wallet.isConnected, mint: next => { setVoucher(next); } });
+      setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
+    }} />
+    <p className="forge-note">The Relic daily limit is shared across classic and v2.</p>
+    {unreported ? <div role="status"><p>{mode.demo ? 'Sign in to finish saving your minted Relic.' : 'Your Relic was minted. Finish saving its confirmation.'}</p>
+      <button disabled={savingMint || mode.demo || !wallet.isConnected} onClick={() => { void retryMintConfirmation(); }}>{savingMint ? 'Saving…' : 'Retry saving mint confirmation'}</button></div>
+      : (voucher ?? state.forge.pending) && (voucher ?? state.forge.pending)!.nonce !== mintedNonce && <MintPanel voucher={(voucher ?? state.forge.pending)!} api={getGameApi()} loop={getGameLoop()} onMinted={(mint, confirmed) => {
+        setVoucher(null); setMintedNonce(mint.nonce);
+        if (confirmed) { setUnreported(null); setNotice('Relic minted. In your wallet!'); void loop.retry(); }
+        else { setUnreported(mint); setNotice('Relic minted. Finish saving its confirmation below.'); }
+      }} />}
+    </> : <p>Choose a class to use the forge.</p> : null;
 
   const closeSheet = () => {
     setSheetOpen(false);
