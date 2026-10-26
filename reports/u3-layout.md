@@ -398,3 +398,68 @@ Before and after use the same existing sample fixture/save conversion. ColorSche
 ## Files touched / final delivery checks
 
 The actual committed scope/stat, author and push output are recorded after the implementation commit below. Only U3 allowlisted files and evidence are included.
+
+PASS — `git fetch origin +main:refs/remotes/origin/main && git diff --name-only origin/main...HEAD` after implementation commit `589e087`; automated allowlist validation passed:
+
+```text
+apps/web/e2e/ui/u3-layout.spec.ts
+apps/web/src/layout/HintChip.tsx
+apps/web/src/layout/StageLayout.test.tsx
+apps/web/src/layout/StageLayout.tsx
+apps/web/src/layout/layout.css
+apps/web/src/layout/tabIcons.tsx
+reports/u3-layout.md
+reports/u3-layout/after-1280x720-dark.png
+reports/u3-layout/after-1280x720.png
+reports/u3-layout/after-1600x900.png
+reports/u3-layout/after-320x568.png
+reports/u3-layout/after-390x844-dark.png
+reports/u3-layout/after-390x844.png
+reports/u3-layout/before-1280x720-dark.png
+reports/u3-layout/before-1280x720.png
+reports/u3-layout/before-1600x900.png
+reports/u3-layout/before-320x568.png
+reports/u3-layout/before-390x844-dark.png
+reports/u3-layout/before-390x844.png
+```
+
+PASS — `git diff --stat origin/main...HEAD` at `589e087` (before adding this delivery evidence):
+
+```text
+ apps/web/e2e/ui/u3-layout.spec.ts          |  76 ++++++
+ apps/web/src/layout/HintChip.tsx           |   4 +-
+ apps/web/src/layout/StageLayout.test.tsx   |   5 +
+ apps/web/src/layout/StageLayout.tsx        |  29 ++-
+ apps/web/src/layout/layout.css             | 282 ++++++++++++--------
+ apps/web/src/layout/tabIcons.tsx           |   7 +
+ reports/u3-layout.md                       | 400 +++++++++++++++++++++++++++++
+ reports/u3-layout/after-1280x720-dark.png  | Bin 0 -> 56024 bytes
+ reports/u3-layout/after-1280x720.png       | Bin 0 -> 56024 bytes
+ reports/u3-layout/after-1600x900.png       | Bin 0 -> 90928 bytes
+ reports/u3-layout/after-320x568.png        | Bin 0 -> 31934 bytes
+ reports/u3-layout/after-390x844-dark.png   | Bin 0 -> 44829 bytes
+ reports/u3-layout/after-390x844.png        | Bin 0 -> 44829 bytes
+ reports/u3-layout/before-1280x720-dark.png | Bin 0 -> 47257 bytes
+ reports/u3-layout/before-1280x720.png      | Bin 0 -> 47257 bytes
+ reports/u3-layout/before-1600x900.png      | Bin 0 -> 57827 bytes
+ reports/u3-layout/before-320x568.png       | Bin 0 -> 33788 bytes
+ reports/u3-layout/before-390x844-dark.png  | Bin 0 -> 48452 bytes
+ reports/u3-layout/before-390x844.png       | Bin 0 -> 48452 bytes
+ 19 files changed, 683 insertions(+), 120 deletions(-)
+```
+
+PASS — `git log --format='%an <%ae>' origin/main..HEAD` at `589e087`:
+
+```text
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+PASS — `git push -u origin ai/codex-ui-u3-layout` after implementation commit `589e087` (exit 0):
+
+```text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-ui-u3-layout -> ai/codex-ui-u3-layout
+branch 'ai/codex-ui-u3-layout' set up to track 'origin/ai/codex-ui-u3-layout'.
+```
+
+This final delivery evidence is committed and pushed as a report-only follow-up on the same branch. STATUS remains BLOCKED; no green full-suite claim is made.
