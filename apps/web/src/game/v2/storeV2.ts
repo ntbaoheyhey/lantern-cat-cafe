@@ -32,7 +32,7 @@ export function createEquipQueueV2(loop: GameLoopV2) {
     if (loop.getSnapshot().state === null) generation++;
   });
   return {
-    equip(itemId: string, slot: Parameters<GameLoopV2['equip']>[1]): Promise<void> {
+    equip(itemId: string | null, slot: Parameters<GameLoopV2['equip']>[1]): Promise<void> {
       const queuedGeneration = generation;
       const next = tail.then(async () => {
         if (!disposed && queuedGeneration === generation) await loop.equip(itemId, slot);

@@ -55,3 +55,10 @@ it('cancels queued callbacks when the stage is disposed', async () => {
   await Promise.all(pending);
   expect(equip).not.toHaveBeenCalled();
 });
+it('allows unequipping with null through the queue', async () => {
+  const { api, loop, queue } = await setup();
+  const equip = vi.spyOn(api, 'equip');
+  await queue.equip(null, 'weapon');
+  expect(equip).toHaveBeenCalledWith(null, 'weapon');
+  expect(loop.getSnapshot().state!.equipped.weapon).toBeNull();
+});

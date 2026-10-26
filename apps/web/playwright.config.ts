@@ -32,12 +32,17 @@ export default defineConfig({
     },
     {
       name: 'classic',
-      testIgnore: ['layout/**', 'v2/**'],
+      testIgnore: ['layout/**', 'v2/**', 'qa/**'],
       use: { baseURL: 'http://localhost:4173', viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
       name: 'stage-layout',
       testMatch: 'layout/**/*.spec.ts',
+      use: { baseURL: 'http://localhost:4174', viewport: { width: 1280, height: 720 }, launchOptions },
+    },
+    {
+      name: 'qa',
+      testMatch: 'qa/**/*.spec.ts',
       use: { baseURL: 'http://localhost:4174', viewport: { width: 1280, height: 720 }, launchOptions },
     },
   ],

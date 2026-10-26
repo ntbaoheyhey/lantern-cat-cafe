@@ -216,6 +216,19 @@ it('waits for an in-flight boss fight before starting a timer claim', async () =
   expect(api.claim).toHaveBeenCalledTimes(1);
 });
 
+it('waits for an in-flight craft action before starting a timer claim', async () => {
+  await start();
+  const pending = deferred<Awaited<ReturnType<GameApiV2['craft']>>>();
+  api.craft.mockReturnValue(pending.promise);
+  const crafting = loop.craft('rcp.common', 'weapon');
+  await vi.advanceTimersByTimeAsync(60_000);
+  expect(api.claim).not.toHaveBeenCalled();
+  pending.resolve({ item, state: state() });
+  await crafting;
+  await vi.advanceTimersByTimeAsync(0);
+  expect(api.claim).toHaveBeenCalledTimes(1);
+});
+
 it('resets state on switch and ignores the old load, claim and action answers', async () => {
   await start();
   const claim = deferred<Awaited<ReturnType<GameApiV2['claim']>>>();
