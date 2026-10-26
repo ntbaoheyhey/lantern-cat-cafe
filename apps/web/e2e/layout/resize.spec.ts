@@ -3,6 +3,8 @@ import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 import { stageHeight, stageZoom } from '../../src/layout/metrics';
 import fs from 'node:fs';
 import path from 'node:path';
+const writeScreenshots = process.env.SCREENSHOTS === '1';
+const outDir = process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/responsive-window');
 const KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 async function geometry(page: Page) {
   return page.locator('.hud-bar').evaluate(hud => {
@@ -54,8 +56,8 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
       await page.getByRole('button', { name: 'Close panel' }).click();
     } else await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
-    if ([1600,1280,390,320].includes(width!) && height !== 480) {
-      await page.screenshot({ path: `../../reports/responsive-window/${theme}-${width}-${height}.png` });
+    if (writeScreenshots && [1600,1280,390,320].includes(width!) && height !== 480) {
+      await page.screenshot({ path: path.join(outDir, `${theme}-${width}-${height}.png`) });
     }
   }
   expect(errors).toEqual([]);

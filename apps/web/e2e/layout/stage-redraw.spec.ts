@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { join, resolve } from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 import { stageHeight, stageZoom } from '../../src/layout/metrics';
 
+const writeScreenshots = process.env.SCREENSHOTS === '1';
+const outDir = process.env.SCREENSHOT_DIR ?? resolve(process.cwd(), '../../reports/fix-stage-redraw');
 const KEY = readFileSync(resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 
 for (const reducedMotion of ['no-preference', 'reduce'] as const) test(`both actors survive scene recreation (${reducedMotion})`, async ({ page }) => {
@@ -42,7 +44,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) test(`both act
     }), { message: `cat and monster redraw at ${width}×${height}` }).toEqual([true, true]);
     expect(await page.evaluate(() => performance.timeOrigin)).toBe(timeOrigin);
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).state.classId, KEY)).toBe(identity);
-    if (reducedMotion === 'reduce' && [1600, 390, 320].includes(width!)) await canvas.screenshot({ path: `../../reports/fix-stage-redraw/actors-${width}-${height}.png` });
+    if (writeScreenshots && reducedMotion === 'reduce' && [1600, 390, 320].includes(width!)) await canvas.screenshot({ path: join(outDir, `actors-${width}-${height}.png`) });
   }
   expect(errors).toEqual([]);
 });
