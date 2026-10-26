@@ -201,10 +201,18 @@ describe('computeClaimV2', () => {
   it('handles an eight-hour claim under 50 ms with a generous 150 ms CI ceiling', () => {
     const input = initial({ level: 60, equipped: geared() });
     computeClaimV2(input, 8 * 3600, 1); // JIT warm-up
-    const start = Date.now();
-    const result = computeClaimV2(input, 8 * 3600, 2);
-    const elapsed = Date.now() - start;
-    expect(elapsed).toBeLessThan(150);
+    // Minimum of 5 timed runs: one run slowed by CI load cannot fail the test,
+    // while a real slowdown makes every run slow and still trips the ceiling.
+    // game-rules has no DOM or Node typings, so reach the global clock through a narrow type.
+    const now = () => (globalThis as unknown as { performance: { now(): number } }).performance.now();
+    let best = Infinity;
+    let result = computeClaimV2(input, 8 * 3600, 2);
+    for (let run = 0; run < 5; run++) {
+      const start = now();
+      result = computeClaimV2(input, 8 * 3600, 2);
+      best = Math.min(best, now() - start);
+    }
+    expect(best).toBeLessThan(150);
     expect(result.stackDeltas.fish).toBeGreaterThan(0);
   });
 });
