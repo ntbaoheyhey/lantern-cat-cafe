@@ -1,12 +1,10 @@
 import { useId, useState } from 'react';
 import type { GearSlotId, ItemV2, ServerStateV2 } from '../../api/GameApiV2';
-import { V2PixelFrame } from '../../art/v2Frames';
 import { ItemIcon } from '../ItemIcon';
 import {
   RARITY_LABEL,
   SLOT_LABEL,
   formatStat,
-  frameFor,
   itemName,
   statLabel,
 } from '../itemView';
@@ -69,20 +67,33 @@ export function BagPanel({ state, onEquip, onToggleLock }: BagPanelProps) {
             <li key={item.id}>
               <button
                 type="button"
-                className="bag-card"
+                className={`bag-card${item.id === selectedId ? ' selected' : ''}`}
+                data-rarity={item.rarity}
                 aria-label={cardLabel(item)}
                 aria-pressed={item.id === selectedId}
                 onClick={() => setSelectedId(item.id)}
               >
-                <span className="bag-art">
-                  <V2PixelFrame name={frameFor(item.rarity)} size={2} />
+                <span
+                  className="bag-tile"
+                  data-rarity={item.rarity}
+                  style={{ borderColor: `var(--rarity-${item.rarity}, #b9b6c9)` }}
+                >
                   <span className="bag-icon">
                     <ItemIcon item={item} size={2} />
                   </span>
+                  {item.locked && (
+                    <span className="bag-lock" title="Locked" aria-label="Locked">
+                      <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
+                        <path
+                          d="M2 5V3a3 3 0 0 1 6 0v2h1v7H1V5h1zm2 0h2V3a1 1 0 0 0-2 0v2z"
+                          fill="var(--gold, #ffb86b)"
+                        />
+                      </svg>
+                    </span>
+                  )}
+                  <span className="bag-level">Lv {item.level}</span>
                 </span>
                 <span className="bag-name">{itemName(item.itemKey)}</span>
-                <span className="bag-level">Lv {item.level}</span>
-                {item.locked && <span className="bag-lock">Locked</span>}
               </button>
             </li>
           ))}
@@ -100,7 +111,7 @@ export function BagPanel({ state, onEquip, onToggleLock }: BagPanelProps) {
       <div className="bag-footer">
         <button
           type="button"
-          className="pixel-btn"
+          className="pixel-btn bag-equip-best"
           disabled={upgrades.length === 0}
           title={upgrades.length === 0 ? 'Nothing in the bag is better than what you wear' : undefined}
           onClick={() => upgrades.forEach((u) => onEquip(u.itemId, u.slot))}
@@ -132,8 +143,13 @@ function ItemDetail({
   return (
     <div className="detail-body">
       <div className="detail-head">
-        <V2PixelFrame name={frameFor(item.rarity)} size={2} />
-        <ItemIcon item={item} size={2} />
+        <span
+          className="detail-art"
+          data-rarity={item.rarity}
+          style={{ borderColor: `var(--rarity-${item.rarity}, #b9b6c9)` }}
+        >
+          <ItemIcon item={item} size={2} />
+        </span>
         <div className="detail-title">
           <h3>{itemName(item.itemKey)}</h3>
           <p className="detail-meta">
@@ -157,6 +173,30 @@ function ItemDetail({
 
       <div className="compare">
         <h4>Compare with equipped</h4>
+        <div className="compare-cols">
+          <div className="compare-col current">
+            <span className="compare-col-heading">Current</span>
+            {worn ? (
+              <div className="compare-card">
+                <span className="compare-name">{itemName(worn.itemKey)}</span>
+                <span className="compare-sub">
+                  Lv {worn.level} · {RARITY_LABEL[worn.rarity]}
+                </span>
+              </div>
+            ) : (
+              <span className="compare-empty">Nothing worn</span>
+            )}
+          </div>
+          <div className="compare-col selected">
+            <span className="compare-col-heading">Selected</span>
+            <div className="compare-card">
+              <span className="compare-name">{itemName(item.itemKey)}</span>
+              <span className="compare-sub">
+                Lv {item.level} · {RARITY_LABEL[item.rarity]}
+              </span>
+            </div>
+          </div>
+        </div>
         <p className="detail-meta">
           {worn ? `Worn: ${itemName(worn.itemKey)}, Lv ${worn.level}` : 'Nothing worn in this slot.'}
         </p>
@@ -166,8 +206,9 @@ function ItemDetail({
           <ul className="deltas">
             {deltas.map(({ stat, delta }) => (
               <li key={stat} className={delta > 0 ? 'delta-up' : 'delta-down'}>
-                {delta > 0 ? '+' : '-'}
-                {formatStat(stat, Math.abs(delta))} {statLabel(stat)}
+                {delta > 0
+                  ? `+${formatStat(stat, Math.abs(delta))} ${statLabel(stat)} ▲`
+                  : `-${formatStat(stat, Math.abs(delta))} ${statLabel(stat)} ▼`}
               </li>
             ))}
           </ul>
@@ -185,7 +226,11 @@ function ItemDetail({
         >
           Equip
         </button>
-        <button type="button" className="bag-btn-secondary" onClick={() => onToggleLock(item.id, !item.locked)}>
+        <button
+          type="button"
+          className="bag-btn-secondary"
+          onClick={() => onToggleLock(item.id, !item.locked)}
+        >
           {item.locked ? 'Unlock' : 'Lock'}
         </button>
       </div>
