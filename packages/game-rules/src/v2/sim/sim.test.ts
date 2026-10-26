@@ -5,7 +5,7 @@ import { withConfigV2, type ConfigOverridesV2 } from './config';
 import { simulateV2, simulateWithStateForTest } from './simulate';
 import { checkTargetsV2, craftSalvageCheckV2, medianV2 } from './targets';
 import { PROPOSED_V2_OVERRIDES } from './proposal';
-import { renderNumbersReportV2 } from './report';
+import { renderNumbersReportV2, relaxedTargetsV2 } from './report';
 
 // Share the same 21 deterministic runs between target and state assertions.
 let proposedRuns: ReturnType<typeof simulateWithStateForTest>[] | undefined;
@@ -54,7 +54,7 @@ it('is deterministic and responds to a different seed', () => {
 it('records the fallback target failures across seven classes and three seeds', () => {
   const results = proposedMatrix().map((run) => run.result);
   const checks = checkTargetsV2(results);
-  expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["first-boss", "chapter-growth", "class-spread", "chapter-bounds", "boss-check"]);
+  expect(checks.filter((check) => !check.ok).map((check) => check.id)).toEqual(["chapter-growth", "boss-check"]);
   expect(checks.find((check) => check.id === 'walk-share')?.ok).toBe(true);
   expect(checks.find((check) => check.id === 'guardrails')?.ok).toBe(true);
 }, 180000);
@@ -89,3 +89,12 @@ it('treats missing milestones as failures and renders the same report twice', ()
   expect(report).toContain('User: ____ (approved / changes)');
   expect(report).toContain('StepMinutes 1 diagnostic');
 });
+
+// Q3 explicitly records the exact strict and relaxed pass/fail sets; thresholds are untouched.
+it('records the relaxed report-only three-seed failures', () => {
+  expect(relaxedTargetsV2(proposedMatrix().map(r => r.result)).filter(c => !c.ok).map(c => c.id)).toEqual(["chapter-growth", "boss-check"]);
+}, 180000);
+
+it('repeats every proposed class/seed result exactly', () => {
+  for (const run of proposedMatrix()) expect(simulateV2({ classId: run.result.classId, seed: run.result.seed, overrides: PROPOSED_V2_OVERRIDES })).toEqual(run.result);
+}, 180000);

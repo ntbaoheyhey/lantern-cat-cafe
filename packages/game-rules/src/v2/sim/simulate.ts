@@ -27,7 +27,7 @@ export interface SimResultV2 {
 }
 export function simulateV2(opts: SimOptionsV2): SimResultV2 { return simulateWithStateForTest(opts).result; }
 export function simulateWithStateForTest(opts: SimOptionsV2, initialState?: PlayerStateV2): { result: SimResultV2; finalState: PlayerStateV2 } {
-  const overrides = opts.scenario === 'S-A' ? { ...opts.overrides, idle: { ...opts.overrides?.idle, dailyKeys: 5 } } : opts.overrides ?? {};
+  const overrides = opts.scenario === 'S-A' ? { ...opts.overrides, idle: { ...opts.overrides?.idle, dailyKeys: 5 } } : opts.scenario === 'S-B' ? { ...opts.overrides, boss: { ...opts.overrides?.boss, firstClearKeys: 1 } } : opts.overrides ?? {};
   return withConfigV2(overrides, () => run(opts, initialState));
 }
 function run(opts: SimOptionsV2, initialState?: PlayerStateV2): { result: SimResultV2; finalState: PlayerStateV2 } {
@@ -115,7 +115,7 @@ function run(opts: SimOptionsV2, initialState?: PlayerStateV2): { result: SimRes
       const fightSeed = deriveSeed(opts.seed, 1_000_000 + state.fights);
       const fight = simulateBossV2(deriveBagStats({ classId: opts.classId, level: state.level }, state.items.filter((item) => item.equipped)), opts.classId, bossOfChapter(state.chapter), fightSeed);
       state = accepted(applyBossResult(state, { won: fight.won, chapter: chapter.index,
-        chest: fight.won ? rollSimChestV2(state, fightSeed, { firstClearKeyRefund: opts.scenario === 'S-B' }) : { stackDeltas: {}, items: [] },
+        chest: fight.won ? rollSimChestV2(state, fightSeed) : { stackDeltas: {}, items: [] },
         keyCost: V2_CONFIG.boss.keyCost, cooldownS: V2_CONFIG.boss.lossCooldownSeconds, now: nowSeconds })).state;
       const boss = result.bosses[chapter.index]!;
       boss.firstAttemptWon ??= fight.won;

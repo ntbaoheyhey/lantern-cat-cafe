@@ -1,6 +1,20 @@
 import type { ConfigOverridesV2 } from './config';
-/** Failing fallback from a bounded search. Proposal only; production V2_CONFIG is unchanged. */
-export const PROPOSED_V2_OVERRIDES: ConfigOverridesV2 = {
+export const C5C_SB_OVERRIDES: ConfigOverridesV2 = {
+  cat: { baseAtk: 14, baseHp: 300, baseDef: 5, levelGrowth: 0.06, xpGrowth: 1.12 },
+  monster: { hpBase: 90, hpGrowth: 1.06, atkBase: 8, atkGrowth: 1.06, xpBase: 18, xpGrowth: 1.11 },
+  idle: { dailyKeys: 3, walkTimeMs: 1000, gearDropChance: 0.0067 },
+  boss: { maxMs: 180000, attackIntervalMs: 4500, bigEveryMs: 6000, bigMultiplier: 1.5 },
+};
+/** Frozen previous proposal for causal diagnostics. */
+export const C5B_V2_OVERRIDES: ConfigOverridesV2 = {
+  cat: { baseAtk: 14, baseHp: 300, baseDef: 5, levelGrowth: 0.06 },
+  monster: { hpBase: 90, hpGrowth: 1.06, atkBase: 8, atkGrowth: 1.06, xpBase: 18 },
+  idle: { dailyKeys: 3, walkTimeMs: 1000, clearedChapterKeyChance: 0.02 },
+  boss: { maxMs: 180000, attackIntervalMs: 4500, bigEveryMs: 6000, bigMultiplier: 1.5 },
+};
+
+
+export const C5C_MAIN_OVERRIDES: ConfigOverridesV2 = {
   cat: {
     baseAtk: 18,
     baseHp: 300,
@@ -28,106 +42,239 @@ export const PROPOSED_V2_OVERRIDES: ConfigOverridesV2 = {
     bigMultiplier: 1.5
   }
 };
-export const PROPOSAL_REASONS_V2: Record<string, string> = {
-  'cat.baseAtk': 'The best candidate meeting the mandatory claim-size stability check in the searched family. Its first-boss target still fails; do not sign off.',
-  'cat.baseHp': 'Cap starting HP at three times current health, retaining meaningful early boss losses and class HP/DEF differences.',
-  'cat.baseDef': 'Keep the current base DEF of 5; class defensive multipliers remain content-defined.',
-  'cat.levelGrowth': 'Retain current 6% stat growth rather than the old 0.8% proposal so levels materially improve combat strength.',
-  'monster.hpBase': 'Use three times starting monster HP so attacking matters more than walking at the measured probes.',
-  'monster.hpGrowth': 'Use 6% stage HP growth to keep later monsters manageable within the three-minute boss cap; chapter growth still fails.',
-  'monster.atkBase': 'Double initial monster damage to retain survival pressure alongside the bounded HP increase.',
-  'monster.atkGrowth': 'Use 6% stage damage growth to avoid late survival walls; first-attempt success still needs content tuning.',
-  'idle.gearDropChance': 'Reduce gear drops to 0.67% (33.5% of current); the finite search uses this lower loot rate to change early equipment progression. This is a real balance cost, not a measurement-only adjustment.',
-  'boss.lossCooldownSeconds': 'Search shorter retry cooldowns while preserving the production boss application rule.',
-  'monster.xpBase': 'Triple initial XP per monster to make level progression meaningful before the first boss and reduce early farming waits.',
-  'idle.dailyKeys': 'Grant three daily keys, the allowed maximum; the remaining key budget gap is explicitly reported.',
-  'idle.walkTimeMs': 'Keep current one-second walking instead of six seconds; measured combat retains the larger share of each probe.',
-  'cat.xpGrowth': 'Search XP-to-next-level growth to reduce late over-leveling.',
-  'monster.xpGrowth': 'Search stage XP growth independently of monster HP.',
-  'boss.maxMs': 'Bound every boss attempt to three minutes instead of the old twenty-minute proposal.',
-  'boss.attackIntervalMs': 'Allow 4.5 seconds between normal boss attacks to keep bounded player HP viable; first-attempt rate failures remain visible.',
-  'boss.bigEveryMs': 'Keep the current six-second big-attack cadence so telegraphed attacks remain part of combat.',
-  'boss.bigMultiplier': 'Reduce big-hit damage to 1.5 times normal damage while retaining early survival losses.',
-};
 
-/** Scenario only, needs a user decision; never applied to production or the proposal. */
-export const SCENARIO_V2_OVERRIDES: Record<'S-A' | 'S-B', { scenario: 'S-A' | 'S-B'; overrides: ConfigOverridesV2 }> = {
-  'S-A': {
-    scenario: 'S-A',
-    overrides: {
-      cat: {
-        baseAtk: 14,
-        baseHp: 300,
-        baseDef: 5,
-        levelGrowth: 0.06,
-        xpGrowth: 1.12
-      },
-      monster: {
-        hpBase: 90,
-        hpGrowth: 1.06,
-        atkBase: 8,
-        atkGrowth: 1.06,
-        xpBase: 18,
-        xpGrowth: 1.11
-      },
-      idle: {
-        dailyKeys: 5,
-        walkTimeMs: 1000,
-        gearDropChance: 0.0067
-      },
-      boss: {
-        maxMs: 180000,
-        attackIntervalMs: 4500,
-        bigEveryMs: 6000,
-        bigMultiplier: 1.5
-      }
-    }
+/** D1 S-B is mandatory in every new candidate. Arrays are ordered ch1..ch5. */
+export function candidatesV2(): ConfigOverridesV2[] {
+  const rows: ConfigOverridesV2[] = [];
+  // Three directed pacing families x three boss pressure families x three XP/ATK families.
+  for (const kills of [[6, 12, 18, 25, 30], [12, 16, 22, 28, 30], [18, 22, 26, 30, 30]] as const)
+    for (const hp of [[14, 20, 30, 40, 50], [20, 25, 35, 50, 60], [28, 35, 40, 60, 70]] as const)
+      for (const [baseAtk, xpGrowth] of [[14, 1.11], [18, 1.15], [14, 1.06]]) rows.push({
+        ...C5C_SB_OVERRIDES,
+        cat: { ...C5C_SB_OVERRIDES.cat, baseAtk },
+        monster: { ...C5C_SB_OVERRIDES.monster, xpGrowth },
+        chapters: { killsPerRound: [...kills] },
+        boss: { ...C5C_SB_OVERRIDES.boss, firstClearKeys: 1, chapterHpMul: [...hp], chapterAtkMul: [0.85, 1.5, 2.5, 3, 3.5] },
+      });
+  return [{ ...C5C_SB_OVERRIDES, boss: { ...C5C_SB_OVERRIDES.boss, firstClearKeys: 1 } }, { ...C5C_MAIN_OVERRIDES, boss: { ...C5C_MAIN_OVERRIDES.boss, firstClearKeys: 1 } }, ...rows];
+}
+export const PROPOSED_V2_OVERRIDES: ConfigOverridesV2 = {
+  "cat": {
+    "baseAtk": 14,
+    "baseHp": 300,
+    "baseDef": 5,
+    "levelGrowth": 0.06,
+    "xpGrowth": 1.12
   },
-  'S-B': {
-    scenario: 'S-B',
-    overrides: {
-      cat: {
-        baseAtk: 14,
-        baseHp: 300,
-        baseDef: 5,
-        levelGrowth: 0.06,
-        xpGrowth: 1.12
-      },
-      monster: {
-        hpBase: 90,
-        hpGrowth: 1.06,
-        atkBase: 8,
-        atkGrowth: 1.06,
-        xpBase: 18,
-        xpGrowth: 1.11
-      },
-      idle: {
-        dailyKeys: 3,
-        walkTimeMs: 1000,
-        gearDropChance: 0.0067
-      },
-      boss: {
-        maxMs: 180000,
-        attackIntervalMs: 4500,
-        bigEveryMs: 6000,
-        bigMultiplier: 1.5
-      }
-    }
+  "monster": {
+    "hpBase": 90,
+    "hpGrowth": 1.06,
+    "atkBase": 8,
+    "atkGrowth": 1.06,
+    "xpBase": 18,
+    "xpGrowth": 1.11
+  },
+  "idle": {
+    "dailyKeys": 3,
+    "walkTimeMs": 1000,
+    "gearDropChance": 0.0067
+  },
+  "boss": {
+    "maxMs": 180000,
+    "attackIntervalMs": 4500,
+    "bigEveryMs": 6000,
+    "bigMultiplier": 1.5,
+    "firstClearKeys": 1,
+    "chapterHpMul": [
+      14,
+      20,
+      30,
+      40,
+      50
+    ],
+    "chapterAtkMul": [
+      0.85,
+      1.5,
+      2.5,
+      3,
+      3.5
+    ]
+  },
+  "chapters": {
+    "killsPerRound": [
+      18,
+      22,
+      26,
+      30,
+      30
+    ]
   }
 };
-
-/** Frozen previous proposal for causal diagnostics. */
-export const C5B_V2_OVERRIDES: ConfigOverridesV2 = {
-  cat: { baseAtk: 14, baseHp: 300, baseDef: 5, levelGrowth: 0.06 },
-  monster: { hpBase: 90, hpGrowth: 1.06, atkBase: 8, atkGrowth: 1.06, xpBase: 18 },
-  idle: { dailyKeys: 3, walkTimeMs: 1000, clearedChapterKeyChance: 0.02 },
-  boss: { maxMs: 180000, attackIntervalMs: 4500, bigEveryMs: 6000, bigMultiplier: 1.5 },
+export const PROPOSAL_REASONS_V2: Record<string, string> = {
+  'cat': 'Retain bounded class-neutral starting stats; ATK varies in the deterministic family.',
+  'monster': 'Retain C5c damage/HP leaves; search XP growth independently.',
+  'idle': 'D1: at most three daily keys, current one-second walking, C5c gear drop rate.',
+  'boss': 'D1: one first-clear key; reduce early pressure and increase late pressure within each leaf guardrail.',
+  'chapters': 'Increase later kill counts to counter later chapters becoming shorter; each count is integral and bounded.',
 };
+export const SCENARIO_V2_OVERRIDES = { 'S-B': { scenario: 'S-B' as const, overrides: PROPOSED_V2_OVERRIDES } };
+export const CONFIG_FIRST_BOSS_WITNESS_V2 = C5C_SB_OVERRIDES;
 
-/** A first-boss target witness, excluded from the main proposal by the timing diagnostic. */
-export const CONFIG_FIRST_BOSS_WITNESS_V2: ConfigOverridesV2 = {
-  cat: { baseAtk: 14, baseHp: 300, baseDef: 5, levelGrowth: 0.06, xpGrowth: 1.12 },
-  monster: { hpBase: 90, hpGrowth: 1.06, atkBase: 8, atkGrowth: 1.06, xpBase: 18, xpGrowth: 1.11 },
-  idle: { dailyKeys: 3, walkTimeMs: 1000, gearDropChance: 0.0067 },
-  boss: { maxMs: 180000, attackIntervalMs: 4500, bigEveryMs: 6000, bigMultiplier: 1.5 },
-};
+export const RANKED_V2_OVERRIDES: ConfigOverridesV2[] = [
+  {
+    "cat": {
+      "baseAtk": 14,
+      "baseHp": 300,
+      "baseDef": 5,
+      "levelGrowth": 0.06,
+      "xpGrowth": 1.12
+    },
+    "monster": {
+      "hpBase": 90,
+      "hpGrowth": 1.06,
+      "atkBase": 8,
+      "atkGrowth": 1.06,
+      "xpBase": 18,
+      "xpGrowth": 1.11
+    },
+    "idle": {
+      "dailyKeys": 3,
+      "walkTimeMs": 1000,
+      "gearDropChance": 0.0067
+    },
+    "boss": {
+      "maxMs": 180000,
+      "attackIntervalMs": 4500,
+      "bigEveryMs": 6000,
+      "bigMultiplier": 1.5,
+      "firstClearKeys": 1,
+      "chapterHpMul": [
+        14,
+        20,
+        30,
+        40,
+        50
+      ],
+      "chapterAtkMul": [
+        0.85,
+        1.5,
+        2.5,
+        3,
+        3.5
+      ]
+    },
+    "chapters": {
+      "killsPerRound": [
+        18,
+        22,
+        26,
+        30,
+        30
+      ]
+    }
+  },
+  {
+    "cat": {
+      "baseAtk": 14,
+      "baseHp": 300,
+      "baseDef": 5,
+      "levelGrowth": 0.06,
+      "xpGrowth": 1.12
+    },
+    "monster": {
+      "hpBase": 90,
+      "hpGrowth": 1.06,
+      "atkBase": 8,
+      "atkGrowth": 1.06,
+      "xpBase": 18,
+      "xpGrowth": 1.06
+    },
+    "idle": {
+      "dailyKeys": 3,
+      "walkTimeMs": 1000,
+      "gearDropChance": 0.0067
+    },
+    "boss": {
+      "maxMs": 180000,
+      "attackIntervalMs": 4500,
+      "bigEveryMs": 6000,
+      "bigMultiplier": 1.5,
+      "firstClearKeys": 1,
+      "chapterHpMul": [
+        14,
+        20,
+        30,
+        40,
+        50
+      ],
+      "chapterAtkMul": [
+        0.85,
+        1.5,
+        2.5,
+        3,
+        3.5
+      ]
+    },
+    "chapters": {
+      "killsPerRound": [
+        12,
+        16,
+        22,
+        28,
+        30
+      ]
+    }
+  },
+  {
+    "cat": {
+      "baseAtk": 14,
+      "baseHp": 300,
+      "baseDef": 5,
+      "levelGrowth": 0.06,
+      "xpGrowth": 1.12
+    },
+    "monster": {
+      "hpBase": 90,
+      "hpGrowth": 1.06,
+      "atkBase": 8,
+      "atkGrowth": 1.06,
+      "xpBase": 18,
+      "xpGrowth": 1.06
+    },
+    "idle": {
+      "dailyKeys": 3,
+      "walkTimeMs": 1000,
+      "gearDropChance": 0.0067
+    },
+    "boss": {
+      "maxMs": 180000,
+      "attackIntervalMs": 4500,
+      "bigEveryMs": 6000,
+      "bigMultiplier": 1.5,
+      "firstClearKeys": 1,
+      "chapterHpMul": [
+        28,
+        35,
+        40,
+        60,
+        70
+      ],
+      "chapterAtkMul": [
+        0.85,
+        1.5,
+        2.5,
+        3,
+        3.5
+      ]
+    },
+    "chapters": {
+      "killsPerRound": [
+        12,
+        16,
+        22,
+        28,
+        30
+      ]
+    }
+  }
+];
