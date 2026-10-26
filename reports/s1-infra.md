@@ -77,7 +77,312 @@ Acceptance mapping: 1 PASS (all required checks, counts below); 2 PASS (two cons
 
 ## 4. Diff against origin/main
 
-<!-- S1_DIFF -->
+Snapshot at implementation commit 5570e87; the final follow-up only records this audit in the report.
+
+`git diff --stat origin/main...HEAD`:
+
+```text
+ README.md                                    |   2 +-
+ apps/web/e2e/a11y.spec.ts                    |   8 +-
+ apps/web/e2e/boss.spec.ts                    |   2 +-
+ apps/web/e2e/demo-path.spec.ts               |   8 +-
+ apps/web/e2e/forge.spec.ts                   |   2 +-
+ apps/web/e2e/inventory.spec.ts               |   2 +-
+ apps/web/e2e/layout/arena.spec.ts            |   4 +-
+ apps/web/e2e/layout/character-bag.spec.ts    |   2 +-
+ apps/web/e2e/layout/resize-burst.spec.ts     |   2 +-
+ apps/web/e2e/layout/resize.spec.ts           |   2 +-
+ apps/web/e2e/layout/stage-layout.spec.ts     |  14 +-
+ apps/web/e2e/layout/stage-redraw.spec.ts     |   2 +-
+ apps/web/e2e/market.spec.ts                  |   2 +-
+ apps/web/e2e/onboarding.spec.ts              |   2 +-
+ apps/web/e2e/polish.spec.ts                  |   2 +-
+ apps/web/e2e/responsive-screenshots.spec.ts  |   2 +-
+ apps/web/e2e/smoke.spec.ts                   |   2 +-
+ apps/web/e2e/support/servers.ts              |  15 +
+ apps/web/e2e/support/test.ts                 |  32 +
+ apps/web/e2e/ui/kw2-key-hint.spec.ts         |   3 +-
+ apps/web/e2e/ui/s1-infra.spec.ts             |  55 ++
+ apps/web/e2e/ui/u1-tokens.spec.ts            |  66 +++
+ apps/web/e2e/ui/u2-hud.spec.ts               |   5 +-
+ apps/web/e2e/ui/u3-layout.spec.ts            |  75 +++
+ apps/web/e2e/ui/u4-character-bag.spec.ts     |  10 +-
+ apps/web/e2e/ui/u5-panels.spec.ts            |   3 +-
+ apps/web/e2e/ui/u7-stage-fx.spec.ts          |  75 +++
+ apps/web/e2e/ui/u8-backdrops.spec.ts         |  12 +-
+ apps/web/e2e/v2/loop.spec.ts                 |   2 +-
+ apps/web/playwright.config.ts                |  36 +-
+ apps/web/src/game/stage/StageScene.test.ts   |  51 +-
+ apps/web/src/game/stage/StageScene.ts        | 171 +++++-
+ apps/web/src/game/stage/stageFx.test.ts      |  68 +++
+ apps/web/src/game/stage/stageFx.ts           |  39 ++
+ apps/web/src/layout/HintChip.tsx             |   4 +-
+ apps/web/src/layout/StageLayout.test.tsx     |   5 +
+ apps/web/src/layout/StageLayout.tsx          |  29 +-
+ apps/web/src/layout/layout.css               | 282 +++++----
+ apps/web/src/layout/tabIcons.tsx             |   7 +
+ apps/web/src/motion.css                      |  17 +-
+ apps/web/src/theme.contrast.test.ts          |  38 ++
+ apps/web/src/theme.css                       |  81 ++-
+ docs/cutover-v2.md                           |   2 +-
+ docs/database.md                             |   2 +-
+ docs/demo-script.md                          |   2 +-
+ docs/deploy.md                               |   6 +-
+ docs/dry-run-report.md                       |  88 +--
+ docs/proposals/schema-v2.md                  |   2 +-
+ docs/runbook.md                              |   2 +-
+ docs/submission.md                           |   2 +-
+ docs/test-stability.md                       |  76 +++
+ docs/verify-pr.md                            |   2 +-
+ reports/s1-infra.md                          | 120 ++++
+ reports/s1-infra/after-1280x720-dark.png     | Bin 0 -> 100286 bytes
+ reports/s1-infra/after-1280x720-light.png    | Bin 0 -> 100485 bytes
+ reports/s1-infra/after-1600x900-light.png    | Bin 0 -> 133399 bytes
+ reports/s1-infra/after-320x568-light.png     | Bin 0 -> 65185 bytes
+ reports/s1-infra/after-390x844-dark.png      | Bin 0 -> 92037 bytes
+ reports/s1-infra/after-390x844-light.png     | Bin 0 -> 91861 bytes
+ reports/s1-infra/branch-audit.log            |  18 +
+ reports/s1-infra/browser-counts.log          |   3 +
+ reports/s1-infra/build-classic.log           |  23 +
+ reports/s1-infra/build-v2.log                |  27 +
+ reports/s1-infra/build.log                   |  35 ++
+ reports/s1-infra/e2e-back-to-back-1.log      | 218 +++++++
+ reports/s1-infra/e2e-back-to-back-2.log      | 218 +++++++
+ reports/s1-infra/e2e-fixed-override.log      | 212 +++++++
+ reports/s1-infra/e2e-fixed.log               |  28 +
+ reports/s1-infra/e2e-initial.log             | 851 +++++++++++++++++++++++++++
+ reports/s1-infra/e2e-override-final.log      | 218 +++++++
+ reports/s1-infra/evidence.log                |  63 ++
+ reports/s1-infra/gen-deno.log                |   5 +
+ reports/s1-infra/guard-negative-source.txt   |   4 +
+ reports/s1-infra/guard-negative.log          |  83 +++
+ reports/s1-infra/image-sizes.log             |   6 +
+ reports/s1-infra/install.log                 |  21 +
+ reports/s1-infra/invalid-port.log            |  12 +
+ reports/s1-infra/link-checker-cases.log      |   4 +
+ reports/s1-infra/links-after.log             |   3 +
+ reports/s1-infra/links-before.json           | 413 +++++++++++++
+ reports/s1-infra/lint.log                    |  17 +
+ reports/s1-infra/markers-classic.log         |   9 +
+ reports/s1-infra/markers-v2.log              |  12 +
+ reports/s1-infra/reports-status.log          |   1 +
+ reports/s1-infra/test.log                    |  50 ++
+ reports/s1-infra/throwaway-source.txt        |   6 +
+ reports/s1-infra/throwaway.log               |  58 ++
+ reports/s1-infra/typecheck.log               |  17 +
+ reports/u1-tokens.md                         | 644 ++++++++++++++++++++
+ reports/u1-tokens/after-1280x720-dark.png    | Bin 0 -> 47173 bytes
+ reports/u1-tokens/after-1280x720.png         | Bin 0 -> 47120 bytes
+ reports/u1-tokens/after-1600x900.png         | Bin 0 -> 57892 bytes
+ reports/u1-tokens/after-320x568.png          | Bin 0 -> 32315 bytes
+ reports/u1-tokens/after-390x844-dark.png     | Bin 0 -> 48230 bytes
+ reports/u1-tokens/after-390x844.png          | Bin 0 -> 48255 bytes
+ reports/u1-tokens/before-1280x720-dark.png   | Bin 0 -> 43507 bytes
+ reports/u1-tokens/before-1280x720.png        | Bin 0 -> 43507 bytes
+ reports/u1-tokens/before-1600x900.png        | Bin 0 -> 52490 bytes
+ reports/u1-tokens/before-320x568.png         | Bin 0 -> 30003 bytes
+ reports/u1-tokens/before-390x844-dark.png    | Bin 0 -> 40501 bytes
+ reports/u1-tokens/before-390x844.png         | Bin 0 -> 40501 bytes
+ reports/u1-tokens/before-build.log           |  35 ++
+ reports/u1-tokens/before-e2e.log             |  30 +
+ reports/u1-tokens/build.log                  |  35 ++
+ reports/u1-tokens/contrast-round1.log        |  13 +
+ reports/u1-tokens/contrast.log               |  30 +
+ reports/u1-tokens/e2e-round2.log             | 148 +++++
+ reports/u1-tokens/e2e.log                    |   7 +
+ reports/u1-tokens/fix1-build.log             |  35 ++
+ reports/u1-tokens/fix1-contrast.log          |  13 +
+ reports/u1-tokens/fix1-e2e.log               | 158 +++++
+ reports/u1-tokens/fix1-install.log           |  13 +
+ reports/u1-tokens/fix1-lint.log              |  17 +
+ reports/u1-tokens/fix1-test.log              |  50 ++
+ reports/u1-tokens/fix1-typecheck.log         |  17 +
+ reports/u1-tokens/lint.log                   |  17 +
+ reports/u1-tokens/test-round2.log            |  50 ++
+ reports/u1-tokens/test.log                   |  69 +++
+ reports/u1-tokens/typecheck.log              |  17 +
+ reports/u3-layout.md                         | 467 +++++++++++++++
+ reports/u3-layout/after-1280x720-dark.png    | Bin 0 -> 56024 bytes
+ reports/u3-layout/after-1280x720.png         | Bin 0 -> 56024 bytes
+ reports/u3-layout/after-1600x900.png         | Bin 0 -> 90928 bytes
+ reports/u3-layout/after-320x568.png          | Bin 0 -> 31934 bytes
+ reports/u3-layout/after-390x844-dark.png     | Bin 0 -> 44829 bytes
+ reports/u3-layout/after-390x844.png          | Bin 0 -> 44829 bytes
+ reports/u3-layout/before-1280x720-dark.png   | Bin 0 -> 47257 bytes
+ reports/u3-layout/before-1280x720.png        | Bin 0 -> 47257 bytes
+ reports/u3-layout/before-1600x900.png        | Bin 0 -> 57827 bytes
+ reports/u3-layout/before-320x568.png         | Bin 0 -> 33788 bytes
+ reports/u3-layout/before-390x844-dark.png    | Bin 0 -> 48452 bytes
+ reports/u3-layout/before-390x844.png         | Bin 0 -> 48452 bytes
+ reports/u7-stage-fx.md                       | 279 +++++++++
+ reports/u7-stage-fx/after-1280x720-dark.png  | Bin 0 -> 47416 bytes
+ reports/u7-stage-fx/after-1280x720.png       | Bin 0 -> 47416 bytes
+ reports/u7-stage-fx/after-1600x900.png       | Bin 0 -> 57462 bytes
+ reports/u7-stage-fx/after-320x568.png        | Bin 0 -> 34108 bytes
+ reports/u7-stage-fx/after-390x844-dark.png   | Bin 0 -> 48282 bytes
+ reports/u7-stage-fx/after-390x844.png        | Bin 0 -> 48282 bytes
+ reports/u7-stage-fx/after-damage-number.png  | Bin 0 -> 47485 bytes
+ reports/u7-stage-fx/before-1280x720-dark.png | Bin 0 -> 47117 bytes
+ reports/u7-stage-fx/before-1280x720.png      | Bin 0 -> 47117 bytes
+ reports/u7-stage-fx/before-1600x900.png      | Bin 0 -> 57208 bytes
+ reports/u7-stage-fx/before-320x568.png       | Bin 0 -> 33909 bytes
+ reports/u7-stage-fx/before-390x844-dark.png  | Bin 0 -> 48028 bytes
+ reports/u7-stage-fx/before-390x844.png       | Bin 0 -> 48028 bytes
+ scripts/check-links.mjs                      |   4 +
+ 147 files changed, 6056 insertions(+), 272 deletions(-)
+```
+
+`git diff --name-only origin/main...HEAD`:
+
+```text
+README.md
+apps/web/e2e/a11y.spec.ts
+apps/web/e2e/boss.spec.ts
+apps/web/e2e/demo-path.spec.ts
+apps/web/e2e/forge.spec.ts
+apps/web/e2e/inventory.spec.ts
+apps/web/e2e/layout/arena.spec.ts
+apps/web/e2e/layout/character-bag.spec.ts
+apps/web/e2e/layout/resize-burst.spec.ts
+apps/web/e2e/layout/resize.spec.ts
+apps/web/e2e/layout/stage-layout.spec.ts
+apps/web/e2e/layout/stage-redraw.spec.ts
+apps/web/e2e/market.spec.ts
+apps/web/e2e/onboarding.spec.ts
+apps/web/e2e/polish.spec.ts
+apps/web/e2e/responsive-screenshots.spec.ts
+apps/web/e2e/smoke.spec.ts
+apps/web/e2e/support/servers.ts
+apps/web/e2e/support/test.ts
+apps/web/e2e/ui/kw2-key-hint.spec.ts
+apps/web/e2e/ui/s1-infra.spec.ts
+apps/web/e2e/ui/u1-tokens.spec.ts
+apps/web/e2e/ui/u2-hud.spec.ts
+apps/web/e2e/ui/u3-layout.spec.ts
+apps/web/e2e/ui/u4-character-bag.spec.ts
+apps/web/e2e/ui/u5-panels.spec.ts
+apps/web/e2e/ui/u7-stage-fx.spec.ts
+apps/web/e2e/ui/u8-backdrops.spec.ts
+apps/web/e2e/v2/loop.spec.ts
+apps/web/playwright.config.ts
+apps/web/src/game/stage/StageScene.test.ts
+apps/web/src/game/stage/StageScene.ts
+apps/web/src/game/stage/stageFx.test.ts
+apps/web/src/game/stage/stageFx.ts
+apps/web/src/layout/HintChip.tsx
+apps/web/src/layout/StageLayout.test.tsx
+apps/web/src/layout/StageLayout.tsx
+apps/web/src/layout/layout.css
+apps/web/src/layout/tabIcons.tsx
+apps/web/src/motion.css
+apps/web/src/theme.contrast.test.ts
+apps/web/src/theme.css
+docs/cutover-v2.md
+docs/database.md
+docs/demo-script.md
+docs/deploy.md
+docs/dry-run-report.md
+docs/proposals/schema-v2.md
+docs/runbook.md
+docs/submission.md
+docs/test-stability.md
+docs/verify-pr.md
+reports/s1-infra.md
+reports/s1-infra/after-1280x720-dark.png
+reports/s1-infra/after-1280x720-light.png
+reports/s1-infra/after-1600x900-light.png
+reports/s1-infra/after-320x568-light.png
+reports/s1-infra/after-390x844-dark.png
+reports/s1-infra/after-390x844-light.png
+reports/s1-infra/branch-audit.log
+reports/s1-infra/browser-counts.log
+reports/s1-infra/build-classic.log
+reports/s1-infra/build-v2.log
+reports/s1-infra/build.log
+reports/s1-infra/e2e-back-to-back-1.log
+reports/s1-infra/e2e-back-to-back-2.log
+reports/s1-infra/e2e-fixed-override.log
+reports/s1-infra/e2e-fixed.log
+reports/s1-infra/e2e-initial.log
+reports/s1-infra/e2e-override-final.log
+reports/s1-infra/evidence.log
+reports/s1-infra/gen-deno.log
+reports/s1-infra/guard-negative-source.txt
+reports/s1-infra/guard-negative.log
+reports/s1-infra/image-sizes.log
+reports/s1-infra/install.log
+reports/s1-infra/invalid-port.log
+reports/s1-infra/link-checker-cases.log
+reports/s1-infra/links-after.log
+reports/s1-infra/links-before.json
+reports/s1-infra/lint.log
+reports/s1-infra/markers-classic.log
+reports/s1-infra/markers-v2.log
+reports/s1-infra/reports-status.log
+reports/s1-infra/test.log
+reports/s1-infra/throwaway-source.txt
+reports/s1-infra/throwaway.log
+reports/s1-infra/typecheck.log
+reports/u1-tokens.md
+reports/u1-tokens/after-1280x720-dark.png
+reports/u1-tokens/after-1280x720.png
+reports/u1-tokens/after-1600x900.png
+reports/u1-tokens/after-320x568.png
+reports/u1-tokens/after-390x844-dark.png
+reports/u1-tokens/after-390x844.png
+reports/u1-tokens/before-1280x720-dark.png
+reports/u1-tokens/before-1280x720.png
+reports/u1-tokens/before-1600x900.png
+reports/u1-tokens/before-320x568.png
+reports/u1-tokens/before-390x844-dark.png
+reports/u1-tokens/before-390x844.png
+reports/u1-tokens/before-build.log
+reports/u1-tokens/before-e2e.log
+reports/u1-tokens/build.log
+reports/u1-tokens/contrast-round1.log
+reports/u1-tokens/contrast.log
+reports/u1-tokens/e2e-round2.log
+reports/u1-tokens/e2e.log
+reports/u1-tokens/fix1-build.log
+reports/u1-tokens/fix1-contrast.log
+reports/u1-tokens/fix1-e2e.log
+reports/u1-tokens/fix1-install.log
+reports/u1-tokens/fix1-lint.log
+reports/u1-tokens/fix1-test.log
+reports/u1-tokens/fix1-typecheck.log
+reports/u1-tokens/lint.log
+reports/u1-tokens/test-round2.log
+reports/u1-tokens/test.log
+reports/u1-tokens/typecheck.log
+reports/u3-layout.md
+reports/u3-layout/after-1280x720-dark.png
+reports/u3-layout/after-1280x720.png
+reports/u3-layout/after-1600x900.png
+reports/u3-layout/after-320x568.png
+reports/u3-layout/after-390x844-dark.png
+reports/u3-layout/after-390x844.png
+reports/u3-layout/before-1280x720-dark.png
+reports/u3-layout/before-1280x720.png
+reports/u3-layout/before-1600x900.png
+reports/u3-layout/before-320x568.png
+reports/u3-layout/before-390x844-dark.png
+reports/u3-layout/before-390x844.png
+reports/u7-stage-fx.md
+reports/u7-stage-fx/after-1280x720-dark.png
+reports/u7-stage-fx/after-1280x720.png
+reports/u7-stage-fx/after-1600x900.png
+reports/u7-stage-fx/after-320x568.png
+reports/u7-stage-fx/after-390x844-dark.png
+reports/u7-stage-fx/after-390x844.png
+reports/u7-stage-fx/after-damage-number.png
+reports/u7-stage-fx/before-1280x720-dark.png
+reports/u7-stage-fx/before-1280x720.png
+reports/u7-stage-fx/before-1600x900.png
+reports/u7-stage-fx/before-320x568.png
+reports/u7-stage-fx/before-390x844-dark.png
+reports/u7-stage-fx/before-390x844.png
+scripts/check-links.mjs
+```
 
 ## 5. Checks actually run (real output summaries)
 
@@ -118,3 +423,5 @@ No decision is needed to review this branch. The unrelated preview on 4174 may n
 Branch: ai/codex-s1-infra. Base: origin/main 672bdeb. Merge commits: 367b14c (U1), e948712 (U3), 5cf4c4b (U7). Implementation/delivery commit audit follows below after recording the diff. All commits in origin/main..HEAD use ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>.
 
 Reproduce from a clean checkout using the exact pnpm fallback, install/build checks above, then run the evidence command and normal full-suite command with a free port pair. To prove concurrency, start the two final full-suite commands in separate terminals. The screenshots are generated by apps/web/e2e/ui/s1-infra.spec.ts with existing midGame demo fixtures, a fixed clock and reduced motion. The throwaway .spec.ts was removed; its source is available as a non-runnable .txt record. Report status after normal suites is recorded in reports-status.log. Only S1 evidence/report files were left changed.
+
+Implementation commit: 5570e87. Final scope/author audit PASS: no hard-stop or other mission product-zone paths in the diff; git status --short was empty after the implementation commit. All author lines matched the required identity. Delivery follow-up changes this report only; final branch/commit are returned with the delivery.
