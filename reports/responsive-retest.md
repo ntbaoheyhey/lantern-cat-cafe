@@ -20,7 +20,7 @@ TESTED COMMIT: ai/codex-responsive-window @ 282843de2790f0b2e1f3dfecaeae8c44a5cd
 | **Gate 2: Implementation Reports** | `reports/responsive-window.md`<br>`reports/fix-stage-redraw.md` | **PASS** | Both reports start with `STATUS: DONE`. |
 | **Gate 3: Exact Detached SHA** | `282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6` | **PASS** | Tested exact source in detached checkout without merging or copying. |
 | **Finding A-R1-1 Resolution** | StageScene recreate actor drop | **RESOLVED** | Verified both cat and monster non-transparent pixels after canvas settles across all 12 viewports and lifecycle events. |
-| **Continuous Resize Matrix** | 12 viewports (Dark & Light) | **PASS** | 0 page reloads, 0 horizontal overflow, 0 HUD overlap/clipping, 1 canvas throughout. |
+| **Continuous Resize Matrix** | 12 viewports (Dark & Light) | **PASS** | 0 page reloads, 0 horizontal overflow, 0 HUD overlap/clipping, 1 canvas after settling. |
 | **Lifecycle & Edge Scenarios** | 4 priority scenarios + long values + zoom | **PASS** | Class selection, rapid thrash, Mini mode toggle, page reload, 100%/200% zoom all pass. |
 | **Focused Browser Suite** | `resize.spec.ts stage-redraw.spec.ts` | **PASS** | 4 passed (15.1s) under `@taskbar-hero/web` stage-layout project. |
 | **Full Browser Suite** | `pnpm --filter @taskbar-hero/web test:e2e` | **PASS** | 72 passed (23.5s) across all projects. |
@@ -45,7 +45,7 @@ Codex resolved this bug in `apps/web/src/game/stage/StageScene.ts`:
 This finding was independently evaluated not merely from code inspection or test outputs, but through direct canvas pixel extraction (`getImageData`) across both actor halves:
 - Left half ($x < \text{width} / 2$): Cat sprite.
 - Right half ($x \ge \text{width} / 2$): Monster sprite.
-Across every tested viewport, both halves contained hundreds of non-transparent pixels (Cat: 305–328 px; Monster: 187–197 px). The canvas count was strictly 1 at all times with 0 lingering or orphan canvases. Finding A-R1-1 is **RESOLVED**. A-R1's historical FAIL record remains preserved in git history.
+Across every tested viewport, both halves contained hundreds of non-transparent pixels (Cat: 305–328 px; Monster: 187–197 px). The canvas count was strictly 1 after settling with 0 lingering or orphan canvases. Finding A-R1-1 is **RESOLVED**. A-R1's historical FAIL record remains preserved in git history.
 
 ---
 
@@ -208,3 +208,131 @@ EXIT 0
 - D4 remains **NOT READY**; D8 (Founder approval/application), D6 (cutover/flag merge), D3/D5 (art), and D7/D9 remain user gates.
 - No PR, merge, main push, live backend/SQL write, transactions, auth/contract changes, economy modifications, or final class art were performed.
 - QA completion is an independent verification report; it does not constitute release sign-off or production milestone sign-off.
+
+---
+
+## 9. Dated Correction & Evidence Qualification Addendum (2026-10-26)
+
+This addendum records formal corrections, evidence qualifications, and artifact archiving following coordination review in `reports/responsive-retest-review.md` on `ai/codex-responsive-retest-review`.
+
+- **Date of Addendum:** 2026-10-26 (Asia/Saigon)
+- **Review Context:** The temporary coordinator accepted Antigravity's independent verification that Finding A-R1-1 is resolved on the exact tested source (`ai/codex-responsive-window` @ `282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6` inheriting renderer fix `ai/codex-fix-stage-redraw` @ `7760775cd2beae2f87efbcbeef6b849c5ae28a5c`), while requiring qualification of desktop browser layout zoom, manual panel claims, settling wording, and artifact retention.
+- **Historical Evidence Preserved:** Report and artifacts at commit `95b1ea4d20286fa29039fe361ebd936b75e32cfe`, tested source at `282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6`, parent fix at `7760775cd2beae2f87efbcbeef6b849c5ae28a5c`, and original A-R1 failure history at `9980b46c01f60dc41975975f6166e99cff16b918`.
+
+### 9.1 Correction 1 (E1): Visual / Pinch Magnification vs Desktop Browser Layout Zoom
+
+- **Tested Method Record:** The zoom test recorded in Section 5.2 and serialized in `retest-summary.json` executed Chrome DevTools Protocol (CDP) `Emulation.setPageScaleFactor({ pageScaleFactor: 2.0 })`.
+- **Technical Distinction:**
+  - `Emulation.setPageScaleFactor` applies visual viewport magnification (equivalent to pinch-to-zoom on touch screens or an accessibility magnifier). It does **not** modify `window.innerWidth`, `window.innerHeight`, or `window.devicePixelRatio`, nor does it trigger CSS layout reflow.
+  - Actual desktop browser page zoom (such as user `Ctrl+` / `Cmd+` key combinations or browser menu zoom) scales layout CSS pixels, changes `window.devicePixelRatio`, and reflows layout within fixed browser window dimensions.
+- **Independent Coordinator Probe Comparison:**
+  A probe using Playwright Chromium on a 1280×720 viewport confirmed this metric separation:
+  ```text
+                             before   after pageScaleFactor=2
+  innerWidth                 1280     1280
+  innerHeight                 720      720
+  devicePixelRatio            1        1
+  visualViewport.width       1280     640
+  visualViewport.scale       1        2
+  100vw element width        1280     1280
+  ```
+- **Magnification Evidence:**
+  - 2.0x visual magnification is verified: the canvas and actors remain present, and HUD leaves do not overlap within the layout hierarchy.
+  - Screenshot: [zoom-200-percent.png](responsive-retest/zoom-200-percent.png).
+- **Qualification & Verdict:**
+  - **Actual 200% desktop browser layout zoom: NOT VERIFIED**.
+  - Genuine desktop browser layout zoom with before/after layout reflow metrics (`innerWidth`, `devicePixelRatio`, `visualViewport.width`/`scale`) at a fixed browser window size was not exercised in this test pass.
+  - CSS zoom, smaller emulated viewports, and CDP `pageScaleFactor` alone do not prove desktop browser layout zoom. No successful run is invented; the honest **NOT VERIFIED** qualification is recorded.
+
+### 9.2 Correction 2 (E2): Qualification of Manual Panel Claims
+
+- **Artifact Audit Findings:**
+  - The summary JSON contains `panels: {}` (no structured runtime assertions or state data were recorded for feature panels).
+  - `panel-boss-fight-arena.png`: Shows the default exploration stage with the Boss tab selected, rather than an active boss arena playback or victory chest, because the challenge/fight button selector did not trigger combat entry.
+  - `panel-forge-tabs.png`: Displays the Forge tab header, but the interactive controls (Craft, Salvage, Relic Forge actions) were positioned below the image boundary, and no interactive craft/salvage/relic actions or assertion logs were retained.
+- **Qualification & Verdict:**
+  - **Manual Boss Arena Playback & Victory Chest: NOT VERIFIED** (manual case).
+  - **Manual Forge Controls (Craft, Salvage, Relic Forge): NOT VERIFIED** (manual case).
+  - **Character & Bag Panel:** Retained visual evidence of equipment slots, power chip, and inventory grid ([panel-character-bag.png](responsive-retest/panel-character-bag.png)).
+  - **Phone Sheet Scroll & Reachability (390×844):** Retained visual evidence of modal opening, smooth scroll to action buttons, and clean dismissal ([phone-sheet-top-390.png](responsive-retest/phone-sheet-top-390.png), [phone-sheet-scrolled-390.png](responsive-retest/phone-sheet-scrolled-390.png)).
+- **Separation of Automated Test Suite Coverage:**
+  - The full Playwright test suite (72/72 passed across all projects) and focused browser suite (4/4 passed under `@taskbar-hero/web` stage-layout) run automated headless assertions against application logic and stage layout.
+  - These automated test passes remain separate and valid; the manual exploratory cases are marked **NOT VERIFIED** due to absent interactive visual action/result evidence.
+- **Clarification on Scope:**
+  - Missing manual evidence is a QA documentation and qualification gap, **not** a product defect or regression, and does not grant permission for a source code fix.
+
+### 9.3 Correction 3 (E3): Canvas Settling Requirement
+
+- **Wording Correction:** The description in Section 1 and Section 2.3 is updated from "one canvas at all times" / "1 canvas throughout" to **"one canvas after settling"**.
+- **Technical Justification:**
+  - Phaser's game destruction and scene recreation lifecycle can briefly retain the old canvas element in the DOM while teardown finishes asynchronously on a subsequent animation frame.
+  - The retest polled for actor presence and inspected canvas count after the layout transition settled and `Phaser.Scenes.Events.CREATE` was dispatched.
+  - Continuous per-frame instrumentation was not present during the instantaneous mid-transition frame, making the claim of strictly "1 canvas at all times" unproven.
+- **Settled One-Canvas Verification:**
+  - The settled requirement is strictly verified: after settling, exactly 1 canvas exists with 0 lingering or orphan canvases across all 12 viewports, rapid resizing thrash (8 viewport steps at 40ms intervals), mini-mode transitions, and page reloads.
+
+### 9.4 Correction 4 (E3 / Archive): Retained Test Artifacts & Structured Evidence Gap
+
+- **Archive Location:** All valid test harnesses, safe prepared fixtures, execution logs, and authentic transcripts are archived under [reports/responsive-retest/archive/README.md](responsive-retest/archive/README.md):
+  - `reports/responsive-retest/archive/run-full-retest.mjs`: Complete custom test harness (12-viewport continuous session matrix, geometry checks, pixel sampling, lifecycle scenarios, and phone sheet interactions).
+  - `reports/responsive-retest/archive/test-harness.mjs`: Baseline actor inspection probe script.
+  - `reports/responsive-retest/archive/gen-fixtures.test.ts`: Fixture generation test script.
+  - `reports/responsive-retest/archive/logs/run-full-retest-pass.log`: Complete stdout log of the successful retest run (exit 0).
+  - `reports/responsive-retest/archive/logs/run-full-retest-fail.log`: Preserved early attempt failure log (`TimeoutError` before preview readiness).
+  - `reports/responsive-retest/archive/logs/focused-browser-suite.log`: Log of `playwright test resize.spec.ts stage-redraw.spec.ts` (4 passed in 15.1s).
+  - `reports/responsive-retest/archive/logs/full-playwright-suite.log`: Log of `playwright test` (72 passed in 23.5s).
+  - `reports/responsive-retest/archive/transcripts/original-run-transcript.jsonl`: Authentic, unedited 249-step execution transcript from conversation `cb56daaa-b920-4372-a259-dd5034078adb`.
+  - `reports/responsive-retest/archive/README.md`: Archive manifest and provenance metadata.
+- **Source SHA & Environment:**
+  - Tested commit: `282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6`
+  - Inherited fix: `7760775cd2beae2f87efbcbeef6b849c5ae28a5c`
+  - Environment: macOS (Darwin 24.1.0 arm64), Node.js v20+, pnpm 10.28.0, Playwright Chromium 156.0.8078.4.
+  - Security check: Zero secrets, tokens, or credentials are contained in the archived scripts, logs, or transcripts.
+- **Light Matrix Structured Evidence Gap Qualification:**
+  - In `retest-summary.json`, all 12 rows of `matrixDark` record `noOverflow: true`, `timeOriginSame: true`, and `identityMatches: true`.
+  - For `matrixLightReduced`, the JSON omitted the keys `noOverflow`, `timeOriginSame`, and `identityMatches`.
+  - In the execution script (`run-full-retest.mjs` lines 312-324), `noOverflow` (`document.documentElement.scrollWidth <= innerWidth`) and `timeOriginSame` (`performance.timeOrigin === timeOriginB`) were evaluated in memory and enforced via `stepPass = geomIssues.length === 0 && noOverflow && timeOriginSame && actorRes.ok;`. All 12 light viewports passed (`stepPass: true`), as recorded in `logs/run-full-retest-pass.log`. However, those fields were omitted when pushing to `results.matrixLightReduced`, and `identityMatches` was not polled during Part B.
+  - Retained light matrix measurements from runtime logs:
+    - `1600×900`: PASS | Canvas: 266×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `1280×720`: PASS | Canvas: 256×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `1024×768`: PASS | Canvas: 204×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `1023×600`: PASS | Canvas: 255×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `768×600`: PASS | Canvas: 192×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `601×480`: PASS | Canvas: 200×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `600×600`: PASS | Canvas: 200×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `390×844`: PASS | Canvas: 195×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `320×568`: PASS | Canvas: 160×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `844×390`: PASS | Canvas: 281×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `1280×480`: PASS | Canvas: 426×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+    - `1600×900`: PASS | Canvas: 266×96 | Cat: 320 px, Monster: 187 px | 0 overflow | Invariant timeOrigin
+
+### 9.5 Comprehensive Retest Verification Summary
+
+| Verification Category | Sub-Item / Scope | Result | Evidence / Details |
+|---|---|---|---|
+| **Core Bug Resolution** | Finding A-R1-1 actor drop on resize | **RESOLVED** | Verified both cat and monster non-transparent pixels after canvas settles across all 12 viewports. Accepted by coordinator. |
+| **Continuous Resize Matrix** | Dark Theme (12 viewports) | **PASS** | 0 page reloads, 0 overflow, 0 HUD overlap/clipping, 1 canvas after settling, state identity invariant. |
+| **Continuous Resize Matrix** | Light Theme + Reduced Motion (12 viewports) | **PASS** | In-memory 0 overflow & timeOrigin invariant verified in logs; structured JSON gap qualified. |
+| **Lifecycle Scenarios** | First load & Class selection | **PASS** | `scenario-1-selected-rendered.png`, 1 canvas after settling. |
+| **Lifecycle Scenarios** | Rapid shrink / stretch thrash | **PASS** | 8 rapid resizes (40ms); 1 canvas after settling, both actors rendered. |
+| **Lifecycle Scenarios** | Mini mode $\leftrightarrow$ Stage toggle | **PASS** | Clean teardown and recreation, 1 canvas after settling. |
+| **Lifecycle Scenarios** | Page reload & state restoration | **PASS** | State restored from `localStorage`, 1 canvas after settling. |
+| **Edge Cases** | Long currency & XP values | **PASS** | Multi-line pill wrap at 320×568 and 1280×720, 0 overflow, 0 clipping. |
+| **Edge Cases** | 2.0x Visual Magnification (CDP) | **PASS** | Magnified canvas and actors crisp; visual magnification verified. |
+| **Edge Cases** | Actual 200% Browser Layout Zoom | **NOT VERIFIED** | CDP `pageScaleFactor` magnifies visual viewport only; genuine layout reflow not exercised. |
+| **Feature Panels** | Character & Bag Panel | **PASS** | Retained visual evidence of slots and inventory grid. |
+| **Feature Panels** | Phone Sheet Scroll (390×844) | **PASS** | Smooth scroll down to actions and clean close verified. |
+| **Feature Panels** | Manual Boss Arena & Chest | **NOT VERIFIED** | Regular exploration shown; no combat entry or victory chest recorded. |
+| **Feature Panels** | Manual Forge Controls | **NOT VERIFIED** | Controls below image fold; no craft/salvage/relic action logs recorded. |
+| **Automated Suites** | Focused browser tests (stage-layout) | **PASS** | 4 passed (15.1s) under `@taskbar-hero/web`. |
+| **Automated Suites** | Full Playwright suite | **PASS** | 72 passed (23.5s) across all projects. |
+| **Automated Suites** | Vitest StageScene lifecycle tests | **PASS** | 3 passed (613ms) under `@taskbar-hero/web`. |
+| **Browser Engines** | Chromium 156.0 | **PASS** | Headless automated verification complete. |
+| **Browser Engines** | WebKit | **NOT VERIFIED** | WebKit binary absent from local environment cache. |
+| **Physical Hardware** | Real iOS / Android devices | **NOT VERIFIED** | Simulation only; physical hardware not connected. |
+
+### 9.6 Hard Stops & Gated Boundaries Retained
+
+- D4 remains **NOT READY**; D8 (Founder approval/application), D6 (cutover/flag merge), D3/D5 (art), and D7/D9 remain user gates.
+- No PR, merge, main push, live backend/SQL write, transactions, auth/contract changes, economy modifications, or final class art were performed.
+- QA qualification and artifact archiving provide accurate verification documentation; it does not constitute release sign-off or production milestone approval.

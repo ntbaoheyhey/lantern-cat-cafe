@@ -1,0 +1,54 @@
+--- STARTING COMPREHENSIVE INDEPENDENT RETEST ---
+
+[Part A] Continuous Session Matrix (Dark Theme, Normal Motion)...
+  1600×900 (desktop): PASS | Canvas: 266x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  1280×720 (desktop): PASS | Canvas: 256x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  1024×768 (desktop): PASS | Canvas: 204x96 | Cat: 305px, Monster: 187px | Overflows: false | Geom: 0 issues
+  1023×600 (tablet): PASS | Canvas: 255x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  768×600 (tablet): PASS | Canvas: 192x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  601×480 (tablet): PASS | Canvas: 200x96 | Cat: 305px, Monster: 187px | Overflows: false | Geom: 0 issues
+  600×600 (phone): PASS | Canvas: 200x96 | Cat: 305px, Monster: 194px | Overflows: false | Geom: 0 issues
+  390×844 (phone): PASS | Canvas: 195x96 | Cat: 305px, Monster: 187px | Overflows: false | Geom: 0 issues
+  320×568 (phone): PASS | Canvas: 160x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  844×390 (tablet): PASS | Canvas: 281x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  1280×480 (desktop): PASS | Canvas: 426x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+  1600×900 (desktop): PASS | Canvas: 266x96 | Cat: 311px, Monster: 187px | Overflows: false | Geom: 0 issues
+
+[Part B] Continuous Session Matrix (Light Theme, Reduced Motion)...
+  1600×900 (light+reduced): PASS | Canvas: 266x96 | Cat: 320px, Monster: 187px
+  1280×720 (light+reduced): PASS | Canvas: 256x96 | Cat: 320px, Monster: 187px
+  1024×768 (light+reduced): PASS | Canvas: 204x96 | Cat: 320px, Monster: 187px
+  1023×600 (light+reduced): PASS | Canvas: 255x96 | Cat: 320px, Monster: 187px
+  768×600 (light+reduced): PASS | Canvas: 192x96 | Cat: 320px, Monster: 187px
+  601×480 (light+reduced): PASS | Canvas: 200x96 | Cat: 320px, Monster: 187px
+  600×600 (light+reduced): PASS | Canvas: 200x96 | Cat: 320px, Monster: 187px
+  390×844 (light+reduced): PASS | Canvas: 195x96 | Cat: 320px, Monster: 187px
+  320×568 (light+reduced): PASS | Canvas: 160x96 | Cat: 320px, Monster: 187px
+  844×390 (light+reduced): PASS | Canvas: 281x96 | Cat: 320px, Monster: 187px
+  1280×480 (light+reduced): PASS | Canvas: 426x96 | Cat: 320px, Monster: 187px
+  1600×900 (light+reduced): PASS | Canvas: 266x96 | Cat: 320px, Monster: 187px
+
+[Part C-1] Priority Scenario 1: First Load & Class Selection...
+  Class Selection Result: Actor OK: true (Cat: 328px, Monster: 197px), Canvas count: 1
+
+[Part C-2] Priority Scenario 2: Rapid Shrink / Stretch...
+  Rapid Resize Result: Actor OK: true (Cat: 311px, Monster: 187px), Canvas count: 1, Errors: 0
+
+[Part C-3] Priority Scenario 3: Mini Mode -> Stage Layout...
+  Mini -> Stage Result: Actor OK: true (Cat: 311px, Monster: 187px), Canvas count: 1
+
+[Part C-4] Priority Scenario 4: Page Reload & State Restoration...
+  Reload Result: Actor OK: true (Cat: 311px, Monster: 187px), Canvas count: 1
+
+[Part D] Long Currency & XP Values...
+  Long Values 1280x720: Geom issues: 0, No overflow: true
+  Long Values 320x568: Geom issues: 0, No overflow: true
+
+[Part E] Actual Browser Zoom (100% and 200% via CDP Emulation.setPageScaleFactor)...
+  Zoom 100%: Geom issues: 0, Actors OK: true
+  Zoom 200%: Geom issues: 0, Actors OK: true
+
+[Part F] Feature Panels, Boss Fight, Phone Sheet...
+  Panels and Phone Sheet verified.
+
+--- COMPREHENSIVE INDEPENDENT RETEST COMPLETE ---
