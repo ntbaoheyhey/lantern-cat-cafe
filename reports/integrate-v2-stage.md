@@ -544,3 +544,30 @@ NOT VERIFIED — real wallet connection/signature, actual Fuji mint, or live con
 NOT VERIFIED — deployed demo behavior. No deployment or sharing setting change was performed.
 
 No integration blocker remains. Only the user-only real-wallet/Fuji check remains manual. Delivery is the task branch only: `git push -u origin ai/codex-integrate-v2-stage`. No PR, merge to main, GitHub Actions invocation, Vercel/deploy, contest submission, repository visibility change, Supabase migration, or live database write was performed.
+
+## Final audit and delivery evidence
+
+FAIL, then PASS — the first post-browser clean-tree assertion failed because the existing e2e screenshot calls rewrote 21 tracked PNGs in reports/fix-stage-redraw, reports/responsive-window, reports/v16-stage and reports/v26-e2e. No screenshot assertion failed. Restored these generated artifacts to HEAD; none was committed or used to hide a test failure. No product change or test rerun was needed for restoring generated output. The initial audit stopped at `assert not git('status', '--porcelain')` with `AssertionError`.
+
+PASS — first branch push (exit 0), before this report-only audit appendix:
+
+```text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-integrate-v2-stage -> ai/codex-integrate-v2-stage
+branch 'ai/codex-integrate-v2-stage' set up to track 'origin/ai/codex-integrate-v2-stage'.
+```
+
+PASS — repeated final audit after restoring generated PNGs, before appending this evidence:
+
+```text
+PASS final ancestry: all 4 required refs are ancestors
+PASS flag-flip remains unmerged
+PASS final integration file allowlist: 12 files, no unexpected paths
+PASS final main-relative audit: 85 files, all inherited baseline or authorized integration/report
+PASS final author audit: 25 commits, all ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+PASS protected files unchanged; exit 0
+PASS git diff --check; exit 0
+PASS clean working tree after report commit 8537d7c
+```
+
+This appendix changes only this report. The final delivery commit is shown by the pushed task branch. No PR was created.
