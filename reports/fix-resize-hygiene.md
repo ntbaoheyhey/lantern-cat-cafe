@@ -138,5 +138,64 @@ dependency changes.
 
 ## Files touched and final repository checks
 
-Only `reports/fix-resize-hygiene.md` is included. Final diff-stat, author,
-allowlist, and push results are recorded below after verification.
+PASS — only the allowed report is included. Final verification commands and
+output (the diff-stat summary line is retained):
+
+```text
+$ git fetch origin +main:refs/remotes/origin/main
+[no output; exit 0]
+
+$ git diff --stat origin/main...HEAD
+ 1 file changed, 201 insertions(+)
+
+$ git diff --name-only origin/main...HEAD
+reports/fix-resize-hygiene.md
+
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+
+$ git status --short
+[no output; exit 0]
+```
+
+PASS — report branch push, actual output (remote PR suggestion omitted; no PR
+was created):
+
+```text
+$ git push -u origin ai/codex-fix-resize-hygiene-report
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-fix-resize-hygiene-report -> ai/codex-fix-resize-hygiene-report
+branch 'ai/codex-fix-resize-hygiene-report' set up to track 'origin/ai/codex-fix-resize-hygiene-report'.
+[exit 0]
+```
+
+The final report update is committed and pushed to the same task branch.
+
+FAIL — two intermediate pushes were rejected by the ordinary push because
+the initial report commit was already remote (same output on each attempt):
+
+```text
+$ git push -u origin ai/codex-fix-resize-hygiene-report
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ ! [rejected]        ai/codex-fix-resize-hygiene-report -> ai/codex-fix-resize-hygiene-report (non-fast-forward)
+error: failed to push some refs to 'https://github.com/ntbaoheyhey/taskbar-hero.git'
+[exit 1]
+```
+
+The first local attempt to restore that parent used an absent remote-tracking
+ref and failed:
+
+```text
+$ git reset --soft origin/ai/codex-fix-resize-hygiene-report
+fatal: ambiguous argument 'origin/ai/codex-fix-resize-hygiene-report': unknown revision or path not in the working tree.
+[exit 128]
+```
+
+Verified the published commit using `git ls-remote --heads origin
+ai/codex-fix-resize-hygiene-report`, which returned
+`a98fcccf86492f693609e2da0af7a3a9abd2b3f0`. Restored that exact commit as the
+local parent with `git reset --soft a98fcccf86492f693609e2da0af7a3a9abd2b3f0`
+(exit 0), keeping the report contents. Committed the report update as a second
+commit. The final ordinary push passed without rewriting
+remote history. Both commits have the required author.
