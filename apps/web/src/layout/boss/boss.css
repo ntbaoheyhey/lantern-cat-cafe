@@ -3,85 +3,63 @@
 .boss-gate-panel {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--sp-4, 16px);
   width: 100%;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
   color: var(--text, #fff3e0);
-  background: var(--surface, #2a1f36);
-  border: var(--pixel-border, 2px solid #000);
-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
-  padding: 16px;
+  background: transparent;
+  padding: 0;
   overflow-x: hidden;
-  font-family: var(--font-body, system-ui, sans-serif);
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
 }
 
-/* Light mode overrides */
-@media (prefers-color-scheme: light) {
-  .boss-gate-panel {
-    --surface: #fdfbf7;
-    --surface-2: #f0e9df;
-    --border: #8b7463;
-    --text: #2a1a08;
-    --muted: #6e5c4e;
-    --bg: #f5eee6;
-  }
-}
-
-.boss-gate-panel[data-theme='light'],
-[data-theme='light'] .boss-gate-panel {
-  --surface: #fdfbf7;
-  --surface-2: #f0e9df;
-  --border: #8b7463;
-  --text: #2a1a08;
-  --muted: #6e5c4e;
-  --bg: #f5eee6;
-}
-
-/* Header */
+/* Panel Header */
 .boss-gate-header {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  border-bottom: 2px solid var(--border, #5b4572);
-  padding-bottom: 12px;
+  gap: var(--sp-1, 4px);
+  margin-bottom: var(--sp-2, 8px);
 }
 
 .boss-gate-boss-name {
   margin: 0;
-  font-size: 1.4rem;
-  font-family: var(--font-display, monospace);
+  font-size: var(--fs-lg, 1.25rem);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--chapter-theme-color, var(--accent, #ffb86b));
-  text-shadow: 1px 1px 0 #000;
+  line-height: 1.2;
 }
 
 .boss-gate-chapter-sub {
-  font-size: 0.9rem;
+  margin: 0;
+  font-size: var(--fs-sm, .875rem);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
   color: var(--muted, #c3aed0);
-  font-weight: 600;
+  line-height: 1.4;
 }
 
-/* Content layout: Portrait and info */
-.boss-gate-body {
+/* Boss Card - Framed sub-area sits on --surface-2 with 1px --border */
+.boss-gate-card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 12px 0;
-  background: var(--surface-2, #1c1424);
-  border: var(--pixel-border, 2px solid #000);
-  border-radius: 4px;
+  gap: var(--sp-4, 16px);
+  padding: var(--sp-4, 16px);
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
-@media (max-width: 480px) {
-  .boss-gate-body {
+@media (max-width: 540px) {
+  .boss-gate-card {
     flex-direction: column;
-    gap: 16px;
-    padding: 16px 8px;
+    align-items: stretch;
+    gap: var(--sp-3, 12px);
+    padding: var(--sp-3, 12px);
   }
 }
 
@@ -89,8 +67,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 96px;
-  min-height: 96px;
+  min-width: 100px;
+  min-height: 100px;
+  background: var(--bg, #1a1220);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: var(--sp-2, 8px);
+  flex-shrink: 0;
 }
 
 .boss-portrait-svg {
@@ -98,13 +81,11 @@
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   shape-rendering: crispEdges;
-  filter: drop-shadow(2px 2px 0 #000);
 }
 
 .boss-portrait-fallback {
-  background: var(--surface-2, #3a2c4a);
+  background: var(--surface, #2a1f36);
   border: var(--pixel-border, 2px solid #000);
-  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,62 +94,160 @@
 
 .boss-portrait-fallback::after {
   content: '?';
-  font-family: var(--font-display, monospace);
-  font-size: 2rem;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xl, 1.5rem);
   font-weight: bold;
-  color: var(--muted, #8b7463);
+  color: var(--muted, #c3aed0);
 }
 
-/* Keys badge */
-.boss-gate-keys {
+.boss-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 12px);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Chips row (held keys & cost) */
+.boss-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+}
+
+.boss-gate-keys,
+.boss-key-cost {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-display, monospace);
-  font-size: 0.95rem;
-  font-weight: bold;
+  gap: var(--sp-1, 4px);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, .75rem);
+  font-weight: 700;
   background: var(--surface, #2a1f36);
-  border: var(--pixel-border, 2px solid #000);
-  padding: 4px 10px;
-  box-shadow: 1px 1px 0 #000;
+  border: 1px solid var(--border, #5b4572);
+  padding: 3px var(--sp-2, 8px);
+  color: var(--text, #fff3e0);
+}
+
+/* Comparison bar: two bars on one scale */
+.boss-power-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  background: var(--surface, #2a1f36);
+  border: 1px solid var(--border, #5b4572);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  min-width: 0;
+}
+
+.boss-power-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2, 8px);
+  font-size: var(--fs-xs, .75rem);
+}
+
+.boss-power-label {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-weight: 700;
+  color: var(--text, #fff3e0);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.boss-power-numbers {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-weight: 700;
+}
+
+.boss-power-player {
+  color: var(--shard, #8fd8ff);
+}
+
+.boss-power-divider {
+  color: var(--muted, #c3aed0);
+}
+
+.boss-power-target {
+  color: var(--gold, #ffb86b);
+}
+
+.boss-power-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.boss-bar-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: var(--sp-1, 4px);
+}
+
+.boss-bar-name {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  color: var(--muted, #c3aed0);
+}
+
+.boss-bar-track {
+  height: 6px;
+  background: var(--bg, #1a1220);
+  border: 1px solid var(--border, #5b4572);
+  overflow: hidden;
+  position: relative;
+}
+
+.boss-bar-fill {
+  height: 100%;
+  transition: width 150ms ease;
+}
+
+.boss-bar-fill.you {
+  background: var(--shard, #8fd8ff);
+}
+
+.boss-bar-fill.boss {
+  background: var(--gold, #ffb86b);
 }
 
 /* Chapter switcher */
 .boss-gate-chapters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
+  gap: var(--sp-2, 8px);
+  margin-top: var(--sp-1, 4px);
 }
 
 .boss-chapter-btn {
-  font: 700 0.85rem var(--font-display, monospace);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, .75rem);
+  font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--muted, #c3aed0);
   background: var(--surface-2, #3a2c4a);
-  border: var(--pixel-border, 2px solid #000);
-  box-shadow: 0 2px 0 #000;
-  padding: 6px 12px;
+  border: 1px solid var(--border, #5b4572);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
   cursor: pointer;
-  transition: transform 0.05s ease, background 0.15s ease, color 0.15s ease;
+  min-height: 36px;
+  box-sizing: border-box;
+  transition: background 120ms ease, color 120ms ease;
 }
 
 .boss-chapter-btn:hover {
   color: var(--text, #fff3e0);
-  background: var(--surface, #4d3862);
-}
-
-.boss-chapter-btn:active {
-  transform: translateY(2px);
-  box-shadow: none;
+  background: var(--surface-3, #4a3a5e);
 }
 
 .boss-chapter-btn.is-active,
 .boss-chapter-btn[aria-current='true'] {
-  color: #000;
-  background: var(--chapter-theme-color, var(--accent, #ffb86b));
-  border-color: #000;
-  box-shadow: 0 2px 0 #000;
+  color: var(--gold, #ffb86b);
+  background: var(--surface-3, #4a3a5e);
+  border: 2px solid var(--gold, #ffb86b);
   font-weight: 800;
 }
 
@@ -176,28 +255,31 @@
 .boss-gate-actions {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 8px;
+  gap: var(--sp-2, 8px);
+  margin-top: var(--sp-2, 8px);
 }
 
+/* Fight is the ONE primary button */
 .boss-fight-btn {
   width: 100%;
-  padding: 12px 20px;
-  font-family: var(--font-display, monospace);
-  font-size: 1.15rem;
+  padding: var(--sp-2, 8px) var(--sp-4, 16px);
+  min-height: var(--tap, 44px);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-md, 1rem);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #000;
-  background: var(--good, #6be08a);
+  color: var(--on-accent, #1a1200);
+  background: var(--accent, #ffb86b);
   border: var(--pixel-border, 2px solid #000);
   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
   cursor: pointer;
-  transition: transform 0.05s ease, background 0.15s ease;
+  box-sizing: border-box;
+  transition: transform 80ms ease, filter 80ms ease;
 }
 
 .boss-fight-btn:hover:not(:disabled) {
-  filter: brightness(1.1);
+  filter: brightness(1.08);
   transform: translateY(-1px);
 }
 
@@ -208,11 +290,12 @@
 
 .boss-fight-btn:disabled {
   opacity: 0.55;
-  background: var(--surface-2, #4a3c5a);
-  color: var(--muted, #a29cb0);
+  background: var(--surface-2, #3a2c4a) !important;
+  color: var(--muted, #c3aed0) !important;
+  border: 1px solid var(--border, #5b4572) !important;
+  box-shadow: none !important;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: 1px 1px 0 #000;
+  transform: none !important;
 }
 
 .boss-fight-btn[aria-busy='true'] {
@@ -222,21 +305,21 @@
 
 /* Status message */
 .boss-gate-status {
-  font-size: 0.9rem;
+  font-size: var(--fs-sm, .875rem);
   line-height: 1.4;
   min-height: 1.4em;
   text-align: center;
 }
 
 .boss-gate-status-text {
-  color: var(--muted, #ffb86b);
+  color: var(--muted, #c3aed0);
   font-weight: 500;
 }
 
-/* Specific status styling hooks */
+/* Specific status styling hooks - cooldown text in --font-num */
 .boss-gate-panel[data-status='cooldown'] .boss-gate-status-text {
   color: var(--focus, #ffd75e);
-  font-family: var(--font-display, monospace);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
   font-weight: 700;
 }
 
@@ -257,17 +340,6 @@
   font-weight: 600;
 }
 
-@media (prefers-color-scheme: light) {
-  .boss-gate-panel[data-status='gated'] .boss-gate-status-text {
-    color: var(--text, #2a1a08);
-  }
-}
-
-.boss-gate-panel[data-theme='light'][data-status='gated'] .boss-gate-status-text,
-[data-theme='light'] .boss-gate-panel[data-status='gated'] .boss-gate-status-text {
-  color: var(--text, #2a1a08);
-}
-
 /* Accessible screen-reader-only utility */
 .sr-only {
   position: absolute;
@@ -284,8 +356,9 @@
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .boss-chapter-btn,
-  .boss-fight-btn {
-    transition: none;
+  .boss-fight-btn,
+  .boss-bar-fill {
+    transition: none !important;
     transform: none !important;
   }
 }

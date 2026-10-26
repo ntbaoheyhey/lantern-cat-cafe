@@ -209,6 +209,12 @@ export function ForgePanel({
 
   return (
     <div className="forge-panel" data-testid="forge-panel">
+      {/* Panel Header */}
+      <header className="forge-panel-header">
+        <div className="forge-panel-title">Forge Workshop</div>
+        <p className="forge-panel-desc">Craft custom gear, salvage materials, or forge daily Relics.</p>
+      </header>
+
       {/* Tab Navigation */}
       <nav className="forge-nav" role="tablist" aria-label="Forge sections">
         <button
@@ -428,7 +434,7 @@ export function ForgePanel({
                 <div className="forge-confirm-actions">
                   <button
                     type="button"
-                    className="forge-btn forge-btn-confirm"
+                    className="forge-btn forge-btn-confirm pixel-btn"
                     onClick={() => void handleCraftConfirm()}
                     data-testid="craft-confirm-btn"
                   >
@@ -447,7 +453,7 @@ export function ForgePanel({
             ) : (
               <button
                 type="button"
-                className="forge-btn"
+                className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
                 onClick={() => setConfirmCraft(true)}
                 data-testid="craft-btn"
               >
@@ -516,7 +522,19 @@ export function ForgePanel({
 
           {/* Items List */}
           {items.length === 0 ? (
-            <p className="forge-empty-note">No items in inventory.</p>
+            <div className="forge-empty-state" data-testid="salvage-empty-state">
+              <div className="forge-empty-icon" aria-hidden="true">
+                <PixelIcon name="bag" size={4} />
+              </div>
+              <p className="forge-empty-note">No items in inventory.</p>
+              <button
+                type="button"
+                className="forge-mini-btn forge-empty-action"
+                onClick={() => setActiveTab('craft')}
+              >
+                Go to Craft
+              </button>
+            </div>
           ) : (
             <ul className="forge-items-list" aria-label="Owned items">
               {items.map((item) => {
@@ -605,7 +623,7 @@ export function ForgePanel({
                 <div className="forge-confirm-actions">
                   <button
                     type="button"
-                    className="forge-btn forge-btn-confirm"
+                    className="forge-btn forge-btn-confirm pixel-btn"
                     onClick={() => void handleSalvageConfirm()}
                     data-testid="salvage-confirm-btn"
                   >
@@ -624,7 +642,7 @@ export function ForgePanel({
             ) : (
               <button
                 type="button"
-                className="forge-btn"
+                className={`forge-btn ${selectedItemIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
                 disabled={selectedItemIds.size === 0}
                 onClick={() => setConfirmSalvage(true)}
                 data-testid="salvage-btn"
@@ -678,7 +696,14 @@ export function ForgePanel({
               mintable={false}
               canReissue={relicBlockedReason === null}
             />
-          ) : null}
+          ) : (
+            <div className="forge-empty-state" data-testid="relic-empty-state">
+              <div className="forge-empty-icon" aria-hidden="true">
+                <MaterialOrCurrencyIcon id="moonPearl" size={4} />
+              </div>
+              <p className="forge-empty-note">No Relic voucher forged today yet.</p>
+            </div>
+          )}
 
           {/* Relic Forge Card */}
           <div className="forge-relic-card">
@@ -754,7 +779,7 @@ export function ForgePanel({
                 <div className="forge-confirm-actions">
                   <button
                     type="button"
-                    className="forge-btn forge-btn-confirm"
+                    className="forge-btn forge-btn-confirm pixel-btn"
                     onClick={() => void handleRelicConfirm()}
                     data-testid="relic-confirm-btn"
                   >
@@ -773,7 +798,7 @@ export function ForgePanel({
             ) : (
               <button
                 type="button"
-                className="forge-btn"
+                className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
                 onClick={() => setConfirmRelic(true)}
                 data-testid="relic-forge-btn"
               >
