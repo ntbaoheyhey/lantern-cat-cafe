@@ -1,4 +1,4 @@
-/* Stage-first layout (Cat RPG v2). Desktop >= 1024, tablet 601-1023, phone <= 600. */
+/* Stage shell; the HUD owns its internal layout and container breakpoints. */
 .v2-shell {
   --nav-h: 56px;
   min-height: 100vh;
@@ -8,203 +8,267 @@
   background: var(--bg);
   max-width: 100%;
 }
-.v2-shell > main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-
-/* Top bar: title, currencies, next-step chip, wallet */
-.v2-topbar {
+.v2-shell > main {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 56px;
+}
+.v2-topbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'brand hud actions';
   align-items: center;
-  gap: 8px 14px;
-  padding: 8px 16px;
+  gap: var(--sp-2, 8px) var(--sp-4, 16px);
+  padding: var(--sp-2, 8px) var(--sp-4, 16px);
   background: var(--surface);
-  border-bottom: 3px solid #000;
+  border-bottom: 1px solid var(--border);
   min-width: 0;
 }
 .v2-title {
+  grid-area: brand;
   margin: 0;
-  font-size: 1.3rem;
-  line-height: 1.1;
-  color: var(--gold);
-  text-shadow: 2px 2px 0 #000;
-  letter-spacing: 0.03em;
+  font: 700 var(--fs-lg, 1.25rem)/1.1 var(--font-display);
+  color: var(--text);
 }
-.v2-topbar .hud { position: static; pointer-events: auto; }
+.v2-topbar > .hud-bar { grid-area: hud; min-width: 0; }
+.v2-header-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+  min-width: 0;
+}
+.v2-wallet { position: relative; min-width: 0; }
 .v2-topbar .wallet {
   position: static;
   max-width: 100%;
   flex-wrap: wrap;
   white-space: normal;
   overflow: visible;
-  margin-left: auto;
+  margin: 0;
 }
 .v2-topbar .wallet-msg { display: inline; }
-.v2-hint { max-width: 100%; min-width: 0; flex: 1 1 220px; flex-wrap: wrap; gap: 4px 8px; font-family: var(--font-body); }
-.v2-hint-lead { color: var(--muted); font-weight: 500; }
-.v2-hint-btn {
-  font: inherit;
-  font-weight: 700;
-  color: var(--accent);
+.v2-wallet .wallet-btn {
+  min-height: var(--tap, 44px);
+  box-sizing: border-box;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  font: var(--fs-sm, .875rem)/1.2 var(--font-display);
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  border-radius: 0;
+}
+.v2-wallet-icon { display: none; }
+.v2-mode-note {
+  margin: var(--sp-1, 4px) 0 0;
+  color: var(--muted);
+  font: var(--fs-xs, .75rem)/1.2 var(--font-body);
+}
+.v2-mode-full {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* Keep the original Mini -> hint -> wallet tab order. The pill sits below the
+   header, with reserved space in main, without adding to the header/HUD height. */
+.v2-hint {
+  position: absolute;
+  top: calc(100% + var(--sp-2, 8px));
+  left: var(--sp-4, 16px);
+  right: var(--sp-4, 16px);
+  width: fit-content;
+  max-width: calc(100% - var(--sp-6, 32px));
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-family: var(--font-body);
+}
+.v2-hint-lead {
+  flex: none;
+  font: var(--fs-xs, .75rem)/1.2 var(--font-display);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.v2-hint-btn, .v2-hint-text {
+  min-width: 0;
+  font: var(--fs-sm, .875rem)/1.25 var(--font-body);
+  color: var(--text);
   background: none;
   border: 0;
   padding: 0;
   text-align: left;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  white-space: normal;
 }
-.v2-hint-text { color: var(--text); }
+.v2-hint-btn { cursor: pointer; }
 .v2-mini-toggle, .stage-toggle {
-  font: 700 0.8rem var(--font-display);
-  min-height: 32px;
-  padding: 0 12px;
+  flex: none;
+  font: 700 var(--fs-xs, .75rem)/1.2 var(--font-display);
+  min-height: var(--tap, 44px);
+  padding: 0 var(--sp-3, 12px);
   color: var(--text);
   background: var(--surface-2);
-  border: var(--pixel-border);
-  box-shadow: 0 3px 0 #000;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
   cursor: pointer;
 }
-
-/* Stage: the Phaser canvas scaled up by a whole number so pixel art stays crisp. Spare room above it is night sky. */
 .v2-stage {
   position: relative;
-  height: var(--stage-h);
-  background: #1f1630;
-  border-bottom: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-shrink: 0;
+  height: clamp(200px, 40vh, 360px);
+  width: 100%;
+  max-width: 1440px;
+  align-self: center;
+  background: var(--surface);
   overflow: hidden;
 }
 .v2-stage .game-host { display: flex; justify-content: center; align-items: flex-end; }
-
-/* Below the stage */
+.v2-stage-art { position: relative; flex-shrink: 0; }
+.v2-stage-canvas { position: absolute; inset: 0; }
+.v2-stage-canvas canvas { display: block; width: 100% !important; height: 100% !important; image-rendering: pixelated; }
+.v2-stage-placeholder { align-self: center; text-align: center; padding: var(--sp-4, 16px); }
 .v2-lower {
   display: grid;
   grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
-  gap: 16px;
-  padding: 16px;
+  gap: var(--sp-4, 16px);
+  padding: var(--sp-4, 16px);
   align-items: start;
 }
 .v2-shell[data-layout='tablet'] .v2-lower { grid-template-columns: minmax(0, 1fr); }
-.v2-character { display: flex; flex-direction: column; gap: 12px; text-align: left; }
-.v2-character-head { display: flex; align-items: center; gap: 12px; }
+.v2-lower > * { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.v2-character { display: flex; flex-direction: column; gap: var(--sp-3, 12px); text-align: left; }
+.v2-character-head { display: flex; align-items: center; gap: var(--sp-3, 12px); }
 .v2-character-name {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: var(--fs-lg, 1.25rem);
   line-height: 1.1;
   color: var(--gold);
   text-shadow: 2px 2px 0 #000;
 }
 .v2-tabs-area { padding: 0; display: flex; flex-direction: column; min-height: 300px; }
 .v2-tabs, .v2-nav-tabs { display: flex; }
-.v2-tabs { gap: 4px; padding: 8px 8px 0; border-bottom: 2px solid var(--border); overflow-x: auto; }
+.v2-tabs { gap: var(--sp-1, 4px); border-bottom: 1px solid var(--border); overflow-x: auto; }
 .v2-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2, 8px);
   flex: none;
   min-height: 40px;
-  padding: 0 16px;
-  font: inherit;
-  font-family: var(--font-display);
+  box-sizing: border-box;
+  padding: 0 var(--sp-4, 16px);
+  font: var(--fs-sm, .875rem)/1.2 var(--font-display);
   color: var(--muted);
   background: transparent;
   border: 0;
   border-bottom: 3px solid transparent;
   cursor: pointer;
 }
+.v2-tab-icon, .v2-tab-icon svg { width: 16px; height: 16px; flex: none; }
+.v2-tab:hover { background: var(--surface-2); }
 .v2-tab[aria-selected='true'] { color: var(--accent); border-bottom-color: var(--accent); }
-.v2-tabpanel { flex: 1; overflow: auto; padding: 16px; min-width: 0; text-align: left; }
-
-/* Phone: bottom nav and a bottom sheet that covers at most 60% of the screen */
-.v2-shell[data-layout='phone'] { padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px)); }
-.v2-shell[data-layout='phone'] .v2-topbar { padding: 8px 12px; }
-.v2-shell[data-layout='phone'] .v2-title { font-size: 1.1rem; margin-right: auto; }
-.v2-shell[data-layout='phone'] .v2-lower { grid-template-columns: minmax(0, 1fr); padding: 12px; }
-.v2-shell[data-layout='phone'] .wallet { margin-left: 0; width: 100%; }
-.v2-shell[data-layout='phone'] .v2-hint { flex-basis: 100%; }
+.v2-tabpanel { flex: 1; overflow: auto; padding: var(--sp-4, 16px); min-width: 0; text-align: left; }
 .v2-nav {
   position: fixed;
   left: 0; right: 0; bottom: 0;
   z-index: 10;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding: 0 max(8px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(8px, env(safe-area-inset-left, 0px));
   background: var(--surface);
-  border-top: 3px solid #000;
+  border-top: 1px solid var(--border);
 }
 .v2-nav-tabs { height: var(--nav-h); }
 .v2-nav .v2-tab {
   flex: 1 1 0;
-  min-width: 0;
-  padding: 0 2px;
-  font-size: 0.8rem;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  min-width: var(--tap, 44px);
+  min-height: var(--tap, 44px);
+  padding: 0;
+  font-size: var(--fs-xs, .75rem);
   border-bottom: 0;
   border-top: 3px solid transparent;
 }
-.v2-nav .v2-tab[aria-selected='true'] { border-top-color: var(--accent); background: var(--surface-2); }
+.v2-nav .v2-tab[aria-selected='true'] { border-top-color: var(--accent); }
 .v2-sheet {
   position: fixed;
   left: 0; right: 0;
-  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 3px);
+  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 1px);
   z-index: 9;
   display: flex;
   flex-direction: column;
   max-height: calc(60vh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
   max-height: calc(60dvh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
   background: var(--surface);
-  border-top: 3px solid #000;
-  box-shadow: 0 -4px 0 rgb(0 0 0 / 0.35);
+  border-top: 2px solid #000;
+  box-shadow: 0 -3px 0 #000;
   animation: v2-sheet-up 160ms ease-out;
 }
 .v2-sheet[hidden] { display: none; }
-.v2-sheet .v2-tabpanel { padding-right: 52px; }
+.v2-sheet .v2-tabpanel { padding-right: 52px; min-height: 0; }
 .v2-sheet-close {
   position: absolute;
   top: 6px; right: 6px;
   z-index: 1;
   width: 40px; height: 40px;
-  font: 700 1.4rem var(--font-display);
+  font: 700 var(--fs-xl, 1.5rem) var(--font-display);
   color: var(--text);
   background: var(--surface-2);
-  border: var(--pixel-border);
+  border: 2px solid #000;
   cursor: pointer;
+}
+.v2-action-notice { margin: var(--sp-2, 8px) var(--sp-4, 16px); font-size: var(--fs-sm, .875rem); color: var(--muted); }
+.v2-fight-result, .v2-recent-loot { padding: var(--sp-4, 16px); min-width: 0; }
+.v2-shell .class-picker { max-width: 100%; box-sizing: border-box; }
+@media (max-width: 1399px) {
+  .v2-topbar { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'brand actions' 'hud hud'; }
+}
+@media (max-width: 600px) {
+  .v2-shell[data-layout='phone'] { padding-bottom: calc(var(--nav-h) + var(--sp-4, 16px) + env(safe-area-inset-bottom, 0px)); }
+  .v2-shell > main { padding-top: 64px; }
+  .v2-topbar { padding: var(--sp-1, 4px) var(--sp-3, 12px); row-gap: var(--sp-1, 4px); }
+  .v2-title { font-size: var(--fs-md, 1rem); }
+  .v2-topbar > .hud-bar { margin-top: 14px; }
+  .v2-wallet { width: var(--tap, 44px); flex: none; }
+  .v2-wallet:has(.wallet-btn[href]) .wallet-btn {
+    width: var(--tap, 44px);
+    height: var(--tap, 44px);
+    padding: 0;
+    font-size: 0;
+  }
+  .v2-wallet:has(.wallet-btn[href]) .v2-wallet-icon {
+    display: block;
+    position: absolute;
+    top: 14px; right: 14px;
+    pointer-events: none;
+  }
+  .v2-wallet-icon svg { width: 16px; height: 16px; }
+  .v2-mode-note { position: absolute; right: 0; top: 44px; width: max-content; max-width: calc(100vw - 24px); }
+  .v2-hint { left: var(--sp-3, 12px); right: var(--sp-3, 12px); max-width: calc(100% - 24px); }
+  .v2-stage { height: var(--stage-h); }
+  .v2-shell[data-layout='phone'] .v2-lower { grid-template-columns: minmax(0, 1fr); padding: var(--sp-3, 12px); }
+  .v2-shell[data-layout='phone'] .v2-recent-loot { padding-bottom: calc(var(--nav-h) + var(--sp-4, 16px)); }
+}
+@media (max-width: 360px) {
+  .v2-topbar { padding-inline: var(--sp-2, 8px); column-gap: var(--sp-2, 8px); }
+  .v2-shell[data-layout='phone'] .v2-lower { padding: var(--sp-2, 8px); }
 }
 @keyframes v2-sheet-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .v2-sheet { animation: none; } }
-
-@media (max-width: 360px) {
-  .v2-shell[data-layout='phone'] .v2-topbar { padding: 6px 8px; gap: 6px 8px; }
-  .v2-shell[data-layout='phone'] .v2-lower { padding: 8px; }
-}
-
-.v2-topbar .hud-bar { flex: 1 1 100%; min-width: 0; }
-.v2-mode-note, .v2-action-notice { margin: .4rem 1rem; font-size: .85rem; color: var(--muted); }
-.v2-stage { display: flex; justify-content: center; align-items: flex-end; flex-shrink: 0; }
-.v2-stage-art { position: relative; flex-shrink: 0; }
-.v2-stage-canvas { position: absolute; inset: 0; }
-.v2-stage-canvas canvas { display: block; width: 100% !important; height: 100% !important; image-rendering: pixelated; }
-.v2-stage-placeholder { align-self: center; text-align: center; padding: 1rem; }
-.v2-fight-result, .v2-recent-loot { padding: 1rem; min-width: 0; }
-.v2-shell .class-picker { max-width: 100%; box-sizing: border-box; }
-.v2-shell[data-layout='phone'] .v2-recent-loot { padding-bottom: calc(var(--nav-h) + 1rem); }
-
-/* Let the HUD respond to its actual space, including narrow desktop windows.
-   The shared HUD remains unchanged; these overrides belong to the stage shell. */
-.v2-shell .hud-bar {
-  flex-wrap: wrap;
-  overflow: visible;
-}
-.v2-shell .hud-bar__primary,
-.v2-shell .hud-bar__secondary {
-  flex: 1 1 24rem;
-  flex-wrap: wrap;
-  max-width: 100%;
-}
-.v2-shell .hud-bar__secondary { justify-content: space-between; }
-.v2-shell .hud-level-xp,
-.v2-shell .hud-stacks-list {
-  flex-wrap: wrap;
-  max-width: 100%;
-}
-.v2-shell .hud-progress-chip { max-width: 100%; }
-.v2-shell .hud-progress-text {
-  white-space: normal;
-  overflow: visible;
-  overflow-wrap: anywhere;
-}
-.v2-lower > * { min-width: 0; max-width: 100%; box-sizing: border-box; }
-.v2-sheet .v2-tabpanel { min-height: 0; }

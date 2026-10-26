@@ -1,0 +1,6 @@
+import { test, expect } from '@playwright/test';
+test('new UI spec inherits v2 without a baseURL line', async ({ page }, info) => {
+  expect(info.project.name).toBe('stage-layout');
+  await page.goto('/');
+  await expect(page.locator('[data-game-v2="stage-v2-enabled"]')).toHaveCount(1);
+});

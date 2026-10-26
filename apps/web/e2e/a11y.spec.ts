@@ -1,4 +1,4 @@
-import { expect, test, type Locator, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from './support/test';
 
 const TAB_NAMES = ['Hero', 'Inventory', 'Boss', 'Forge', 'Market'];
 
@@ -133,8 +133,10 @@ for (const width of [390, 1280]) {
         })));
       await expect.poll(runningAnimations).toEqual([]);
       const path = testInfo.outputPath(`a11y-forge-${width}.png`);
-      await page.screenshot({ path, fullPage: true });
-      await testInfo.attach(`Forge at ${width}px with reduced motion`, { path, contentType: 'image/png' });
+      if (process.env.SCREENSHOTS === '1') {
+        await page.screenshot({ path, fullPage: true });
+        await testInfo.attach(`Forge at ${width}px with reduced motion`, { path, contentType: 'image/png' });
+      }
     });
   });
 }

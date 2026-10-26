@@ -212,7 +212,7 @@ From [Edge Functions limits](https://supabase.com/docs/guides/functions/limits),
 | Database size | 500 MB | `boss_fights` is the only table without a hard cap per player; at a few hundred bytes a row it is not a risk for test traffic. |
 | Inactivity | Paused after 1 week | Keep the demo project active before judging. |
 
-## Tests V8 will add (`supabase/tests/v2/**`)
+## Tests V8 will add (the v2 test files in `supabase/tests/`)
 
 Migrations apply on top of v1; v1 tests still pass unchanged; RLS and grants on every new table and function; every refusal code above; bag limit and auto-salvage; key cap 5; stacks never negative; first clear exactly once under two parallel wins; claim compare-and-set against a parallel boss win and class change; Relic forge v2 shares the daily limit with v1 (`game_forge` then `v2_relic_forge` on one day is `daily_limit`); Founder grant only once; rollback script leaves the v1 schema unchanged.
 

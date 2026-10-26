@@ -36,18 +36,18 @@ The live production deployment of **Taskbar Hero (Cat Café Quest)** was audited
 
 ### Step-by-Step Timing Table
 
-| Step # | User Action / Flow | Target Component | Observed Duration | > 5s? | Result / Status | Screenshot Reference |
+| Step # | User Action / Flow | Target Component | Observed Duration | > 5s? | Result / Status | Original screenshot name (not committed) |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
-| **1** | Navigate to live site URL | `https://web-zeta-tan-13.vercel.app` | **3,955 ms** | No | 200 OK, Onboarding dialog open | `01-desktop-initial-load-onboarding.png` |
-| **2** | Dismiss "How to play" modal | `button:has-text("Start playing")` | **331 ms** | No | Modal closed, ambient strip active | `02-desktop-ambient-strip-main.png` |
-| **3** | Click "Connect wallet" button | `apps/web/src/wallet/WalletButton.tsx` | **527 ms** | No | Connected, address & Sign In shown | `03-desktop-wallet-connected-await-signin.png` |
-| **4** | Click "Sign in" (SIWE flow) | `auth-nonce` + `personal_sign` + `auth-verify` | **4,091 ms** | No | 200 OK, JWT stored, HUD reset to 0 | `04-desktop-signed-in-strip.png` |
-| **5** | Click "Menu" button | Game drawer toggle | **31 ms** | No | Drawer opened, Café Board visible | `05-desktop-cafe-board-hero.png` |
-| **6** | Switch to "Inventory" tab | `role=tab[name="Inventory"]` | **431 ms** | No | Gear slots & Upgrade button visible | `06-desktop-tab-inventory.png` |
-| **7** | Switch to "Boss" tab | `role=tab[name="Boss"]` | **435 ms** | No | Level 1 Yarn Giant ready (5 fights) | `07-desktop-tab-boss-ready.png` |
-| **8** | Challenge Boss ("Fight") | Deterministic combat replay simulation | **8,372 ms** | **YES** | Replay ran, outcome: "Defeated." | `08-desktop-tab-boss-fighting.png`, `09-desktop-tab-boss-outcome.png` |
-| **9** | Switch to "Forge" tab | `role=tab[name="Forge"]` | **443 ms** | No | Odds banner displayed; button disabled | `10-desktop-tab-forge.png` |
-| **10** | Switch to "Market" tab | Query Fuji `RelicNFT` & `RelicMarket` | **2,046 ms** | No | On-chain balances & listings loaded | `11-desktop-tab-market.png` |
+| **1** | Navigate to live site URL | `https://web-zeta-tan-13.vercel.app` | **3,955 ms** | No | 200 OK, Onboarding dialog open | 01-desktop-initial-load-onboarding.png |
+| **2** | Dismiss "How to play" modal | `button:has-text("Start playing")` | **331 ms** | No | Modal closed, ambient strip active | 02-desktop-ambient-strip-main.png |
+| **3** | Click "Connect wallet" button | `apps/web/src/wallet/WalletButton.tsx` | **527 ms** | No | Connected, address & Sign In shown | 03-desktop-wallet-connected-await-signin.png |
+| **4** | Click "Sign in" (SIWE flow) | `auth-nonce` + `personal_sign` + `auth-verify` | **4,091 ms** | No | 200 OK, JWT stored, HUD reset to 0 | 04-desktop-signed-in-strip.png |
+| **5** | Click "Menu" button | Game drawer toggle | **31 ms** | No | Drawer opened, Café Board visible | 05-desktop-cafe-board-hero.png |
+| **6** | Switch to "Inventory" tab | `role=tab[name="Inventory"]` | **431 ms** | No | Gear slots & Upgrade button visible | 06-desktop-tab-inventory.png |
+| **7** | Switch to "Boss" tab | `role=tab[name="Boss"]` | **435 ms** | No | Level 1 Yarn Giant ready (5 fights) | 07-desktop-tab-boss-ready.png |
+| **8** | Challenge Boss ("Fight") | Deterministic combat replay simulation | **8,372 ms** | **YES** | Replay ran, outcome: "Defeated." | 08-desktop-tab-boss-fighting.png, 09-desktop-tab-boss-outcome.png |
+| **9** | Switch to "Forge" tab | `role=tab[name="Forge"]` | **443 ms** | No | Odds banner displayed; button disabled | 10-desktop-tab-forge.png |
+| **10** | Switch to "Market" tab | Query Fuji `RelicNFT` & `RelicMarket` | **2,046 ms** | No | On-chain balances & listings loaded | 11-desktop-tab-market.png |
 
 ### Step Observations & First-Time Judge Experience
 
@@ -84,17 +84,17 @@ The live production deployment of **Taskbar Hero (Cat Café Quest)** was audited
 
 ### Step-by-Step Timing Table
 
-| Step # | Mobile Action / Flow | Target Component | Observed Duration | > 5s? | Result / Status | Screenshot Reference |
+| Step # | Mobile Action / Flow | Target Component | Observed Duration | > 5s? | Result / Status | Original screenshot name (not committed) |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
-| **1** | Navigate to live site (390px) | Clean context (no wallet extension) | **1,201 ms** | No | 200 OK, Onboarding dialog open | `12-mobile-initial-load-onboarding.png` |
-| **2** | Dismiss "How to play" dialog | `button:has-text("Start playing")` | **328 ms** | No | Dialog closed, mobile strip visible | `13-mobile-ambient-strip-main.png` |
-| **3** | Inspect strip HUD & Wallet | Taskbar strip layout check | **18 ms** | No | 0px overflow, labels collapsed | `13-mobile-ambient-strip-main.png` |
-| **4** | Open Menu drawer | Drawer expand toggle | **31 ms** | No | Height: `min(440px, 75vh)` | `14-mobile-cafe-board-hero.png` |
-| **5** | Switch to "Inventory" tab | `role=tab[name="Inventory"]` | **433 ms** | No | Demo note visible; 0px overflow | `15-mobile-tab-inventory.png` |
-| **6** | Switch to "Boss" tab | `role=tab[name="Boss"]` | **431 ms** | No | Yarn Giant ready | `16-mobile-tab-boss-ready.png` |
-| **7** | Fight Boss with Skip | Fight + instant `Skip` button | **597 ms** | No | Combat skipped, outcome rendered | `17-mobile-tab-boss-fighting.png`, `18-mobile-tab-boss-outcome.png` |
-| **8** | Switch to "Forge" tab | `role=tab[name="Forge"]` | **428 ms** | No | 4 odds items stacked; 0px overflow | `19-mobile-tab-forge.png` |
-| **9** | Switch to "Market" tab | Wallet gate screen | **433 ms** | No | Wallet requirement message shown | `20-mobile-tab-market-gate.png` |
+| **1** | Navigate to live site (390px) | Clean context (no wallet extension) | **1,201 ms** | No | 200 OK, Onboarding dialog open | 12-mobile-initial-load-onboarding.png |
+| **2** | Dismiss "How to play" dialog | `button:has-text("Start playing")` | **328 ms** | No | Dialog closed, mobile strip visible | 13-mobile-ambient-strip-main.png |
+| **3** | Inspect strip HUD & Wallet | Taskbar strip layout check | **18 ms** | No | 0px overflow, labels collapsed | 13-mobile-ambient-strip-main.png |
+| **4** | Open Menu drawer | Drawer expand toggle | **31 ms** | No | Height: `min(440px, 75vh)` | 14-mobile-cafe-board-hero.png |
+| **5** | Switch to "Inventory" tab | `role=tab[name="Inventory"]` | **433 ms** | No | Demo note visible; 0px overflow | 15-mobile-tab-inventory.png |
+| **6** | Switch to "Boss" tab | `role=tab[name="Boss"]` | **431 ms** | No | Yarn Giant ready | 16-mobile-tab-boss-ready.png |
+| **7** | Fight Boss with Skip | Fight + instant `Skip` button | **597 ms** | No | Combat skipped, outcome rendered | 17-mobile-tab-boss-fighting.png, 18-mobile-tab-boss-outcome.png |
+| **8** | Switch to "Forge" tab | `role=tab[name="Forge"]` | **428 ms** | No | 4 odds items stacked; 0px overflow | 19-mobile-tab-forge.png |
+| **9** | Switch to "Market" tab | Wallet gate screen | **433 ms** | No | Wallet requirement message shown | 20-mobile-tab-market-gate.png |
 
 ### Step Observations & Mobile Judge Experience
 
@@ -222,27 +222,29 @@ ADDITION:
 
 ## 6. Screenshots Evidence Index
 
-All screenshots captured during this dry run are stored in `docs/dry-run-screenshots/`:
+The original report named the screenshots below, but these images were not committed.
+The `docs/dry-run-screenshots/` directory contains no corresponding PNGs. The names
+are retained as historical capture labels, not as links or available evidence.
 
-| File Name | Resolution | Description / Significant UI Elements |
+| Original file name (not committed) | Resolution | Description / Significant UI Elements |
 | :--- | :---: | :--- |
-| `01-desktop-initial-load-onboarding.png` | 1280 × 800 | First-time visit: "How to play" dialog overlay covering the page |
-| `02-desktop-ambient-strip-main.png` | 1280 × 800 | Clean ambient desktop strip: Mochi cat sprite, HUD chips, "Connect wallet" button |
-| `03-desktop-wallet-connected-await-signin.png` | 1280 × 800 | Injected wallet connected: address `0xf39F…2266`, "Sign in" button, "Disconnect" |
-| `04-desktop-signed-in-strip.png` | 1280 × 800 | Completed SIWE session: "Signed in · 0xf39F…2266" badge in strip |
-| `05-desktop-cafe-board-hero.png` | 1280 × 800 | Drawer open: Café Board overview, Mochi Cat Power 7, Today's Quest, Relic Shelf |
-| `06-desktop-tab-inventory.png` | 1280 × 800 | Inventory tab: 4 gear slots, power display, "Upgrade (25 Fish)" button |
-| `07-desktop-tab-boss-ready.png` | 1280 × 800 | Boss tab: Level 1 Yarn Giant, 5 attempts remaining, "Fight" button |
-| `08-desktop-tab-boss-fighting.png` | 1280 × 800 | Boss fight simulation: health progress bars, damage badges, "Skip" button |
-| `09-desktop-tab-boss-outcome.png` | 1280 × 800 | Boss combat resolution: outcome card, attempts remaining, retry advice |
-| `10-desktop-tab-forge.png` | 1280 × 800 | Forge tab: transparent odds banner (60/28/10/2%), 1/day limit, Forge button |
-| `11-desktop-tab-market.png` | 1280 × 800 | Market tab: queries `RelicNFT` & `RelicMarket` on Fuji, "My Relics", order book |
-| `12-mobile-initial-load-onboarding.png` | 390 × 844 | Mobile 390px first visit: "How to play" modal dialog scaled responsively |
-| `13-mobile-ambient-strip-main.png` | 390 × 844 | Mobile 390px strip: collapsed icon HUD chips, "Get a browser wallet" button |
-| `14-mobile-cafe-board-hero.png` | 390px × 844 | Mobile 390px drawer: vertically stacked Café Board cards, 0px overflow |
-| `15-mobile-tab-inventory.png` | 390 × 844 | Mobile 390px inventory: gear slots and stats scaled cleanly |
-| `16-mobile-tab-boss-ready.png` | 390 × 844 | Mobile 390px boss: Yarn Giant portrait and fight challenge action |
-| `17-mobile-tab-boss-fighting.png` | 390 × 844 | Mobile 390px fight: active combat replay animation |
-| `18-mobile-tab-boss-outcome.png` | 390 × 844 | Mobile 390px outcome: defeat card with scrollable container |
-| `19-mobile-tab-forge.png` | 390 × 844 | Mobile 390px forge: odds cards stacked with clean margin |
-| `20-mobile-tab-market-gate.png` | 390 × 844 | Mobile 390px market: "Connect your wallet to see your Relics and the market." |
+| 01-desktop-initial-load-onboarding.png | 1280 × 800 | First-time visit: "How to play" dialog overlay covering the page |
+| 02-desktop-ambient-strip-main.png | 1280 × 800 | Clean ambient desktop strip: Mochi cat sprite, HUD chips, "Connect wallet" button |
+| 03-desktop-wallet-connected-await-signin.png | 1280 × 800 | Injected wallet connected: address `0xf39F…2266`, "Sign in" button, "Disconnect" |
+| 04-desktop-signed-in-strip.png | 1280 × 800 | Completed SIWE session: "Signed in · 0xf39F…2266" badge in strip |
+| 05-desktop-cafe-board-hero.png | 1280 × 800 | Drawer open: Café Board overview, Mochi Cat Power 7, Today's Quest, Relic Shelf |
+| 06-desktop-tab-inventory.png | 1280 × 800 | Inventory tab: 4 gear slots, power display, "Upgrade (25 Fish)" button |
+| 07-desktop-tab-boss-ready.png | 1280 × 800 | Boss tab: Level 1 Yarn Giant, 5 attempts remaining, "Fight" button |
+| 08-desktop-tab-boss-fighting.png | 1280 × 800 | Boss fight simulation: health progress bars, damage badges, "Skip" button |
+| 09-desktop-tab-boss-outcome.png | 1280 × 800 | Boss combat resolution: outcome card, attempts remaining, retry advice |
+| 10-desktop-tab-forge.png | 1280 × 800 | Forge tab: transparent odds banner (60/28/10/2%), 1/day limit, Forge button |
+| 11-desktop-tab-market.png | 1280 × 800 | Market tab: queries `RelicNFT` & `RelicMarket` on Fuji, "My Relics", order book |
+| 12-mobile-initial-load-onboarding.png | 390 × 844 | Mobile 390px first visit: "How to play" modal dialog scaled responsively |
+| 13-mobile-ambient-strip-main.png | 390 × 844 | Mobile 390px strip: collapsed icon HUD chips, "Get a browser wallet" button |
+| 14-mobile-cafe-board-hero.png | 390px × 844 | Mobile 390px drawer: vertically stacked Café Board cards, 0px overflow |
+| 15-mobile-tab-inventory.png | 390 × 844 | Mobile 390px inventory: gear slots and stats scaled cleanly |
+| 16-mobile-tab-boss-ready.png | 390 × 844 | Mobile 390px boss: Yarn Giant portrait and fight challenge action |
+| 17-mobile-tab-boss-fighting.png | 390 × 844 | Mobile 390px fight: active combat replay animation |
+| 18-mobile-tab-boss-outcome.png | 390 × 844 | Mobile 390px outcome: defeat card with scrollable container |
+| 19-mobile-tab-forge.png | 390 × 844 | Mobile 390px forge: odds cards stacked with clean margin |
+| 20-mobile-tab-market-gate.png | 390 × 844 | Mobile 390px market: "Connect your wallet to see your Relics and the market." |

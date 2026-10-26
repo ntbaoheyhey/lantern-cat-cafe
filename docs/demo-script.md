@@ -100,7 +100,7 @@ TIMECODE SUMMARY:
 *Pacing: 5 minutes total + 2-3 minutes Q&A.*
 
 ### Stage 1: The Ambient Gaming Philosophy (0:00 - 1:00)
-- **Action**: Share desktop screen with your browser window displaying a normal desktop page and Taskbar Hero anchored along the bottom strip (`apps/web/src/game/GameCanvas.tsx`).
+- **Action**: Share desktop screen with your browser window displaying a normal desktop page and Taskbar Hero anchored along the bottom strip (`apps/web/src/GameCanvas.tsx`).
 - **Narrative**:
   - *"Judges, modern gamers spend hours at their desks working or studying, but full-screen Web3 games demand constant attention, heavy gas expenditure, and repetitive wallet popups."*
   - *"Taskbar Hero solves this by bringing the idle RPG genre to a native browser strip. Notice Mochi the cat running smoothly across the bottom. The game loop uses Phaser graphics drawn at runtime, quietly gathering Fish (our gold currency) and Yarn (shards) while consuming minimal CPU and zero gas."*

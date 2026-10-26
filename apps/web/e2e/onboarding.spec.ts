@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('first visit shows How to play; closing it reveals the game and it stays closed', async ({ page }) => {
   const errors: string[] = [];

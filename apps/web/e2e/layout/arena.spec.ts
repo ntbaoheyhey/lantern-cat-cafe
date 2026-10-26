@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/test';
 for (const width of [390, 1280]) for (const reducedMotion of ['reduce', 'no-preference'] as const) {
   test(`boss arena ${width}px ${reducedMotion}`, async ({ page }, testInfo) => {
     const errors: string[] = [];
@@ -17,6 +17,6 @@ for (const width of [390, 1280]) for (const reducedMotion of ['reduce', 'no-pref
     await expect(page.getByRole('status')).toContainText('Victory');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     expect(errors).toEqual([]);
-    await page.screenshot({ path: testInfo.outputPath(`arena-${width}-${reducedMotion}.png`) });
+    if (process.env.SCREENSHOTS === '1') await page.screenshot({ path: testInfo.outputPath(`arena-${width}-${reducedMotion}.png`) });
   });
 }

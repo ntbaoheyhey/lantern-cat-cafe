@@ -1,9 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { readFileSync, statSync, mkdirSync } from 'node:fs';
+import { test, expect } from '../support/test';
+import { readFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 
-test.use({ baseURL: 'http://localhost:4174' });
 
 const KEY = readFileSync(resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(
   /export const MOCK_V2_STORAGE_KEY = '([^']+)'/,
@@ -27,7 +26,7 @@ for (const { room, chapter } of ROOMS) {
     test(`${room} (chapter ${chapter}) at ${width}x${height} renders with vignette and no errors`, async ({
       page,
     }) => {
-      mkdirSync('../../reports/u8-backdrops', { recursive: true });
+      if (process.env.SCREENSHOTS === '1') mkdirSync('../../reports/u8-backdrops', { recursive: true });
 
       const errors: string[] = [];
       page.on('pageerror', (e) => errors.push(e.message));
@@ -58,11 +57,10 @@ for (const { room, chapter } of ROOMS) {
       await expect(backdropSvg).toHaveAttribute('data-backdrop', room);
 
       const shotPath = `../../reports/u8-backdrops/after-${room}-${width}.png`;
-      const buffer = await stage.screenshot({ path: shotPath });
+      const buffer = await stage.screenshot(process.env.SCREENSHOTS === '1' ? { path: shotPath } : {});
 
       // Check screenshot file size < 200 KB
-      const stat = statSync(shotPath);
-      expect(stat.size).toBeLessThan(200 * 1024);
+      expect(buffer.length).toBeLessThan(200 * 1024);
 
       // Measure luminance of outer 10% strips vs center strip
       const dataUrl = `data:image/png;base64,${buffer.toString('base64')}`;
