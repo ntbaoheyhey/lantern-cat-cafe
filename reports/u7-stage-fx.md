@@ -193,3 +193,31 @@ ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
 ## Report branch verification
 
 Report-only branch: `codex/u7-stage-fx-report`, based on origin/main. The main-relative diff must contain only `reports/u7-stage-fx.md`. The required base-relative comparison is retained as evidence rather than claimed as an implemented U7 diff. Final diff stat, author and push results follow.
+
+PASS — initial report commit scope/author verification (before this evidence appendix):
+
+```text
+$ git diff --stat origin/main...HEAD
+ reports/u7-stage-fx.md | 195 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 195 insertions(+)
+$ git diff --name-only origin/main...HEAD
+reports/u7-stage-fx.md
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+$ git diff --name-only 577faae...HEAD
+reports/u7-stage-fx.md
+$ git status --short
+(empty)
+```
+
+PASS — `git push -u origin codex/u7-stage-fx-report`, exit 0:
+
+```text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      codex/u7-stage-fx-report -> codex/u7-stage-fx-report
+branch 'codex/u7-stage-fx-report' set up to track 'origin/codex/u7-stage-fx-report'.
+```
+
+Only the task branch was pushed; no PR was created. This evidence appendix is committed and pushed on the same branch.
+
+Push history note: amending the initial report caused a normal push rejection (`non-fast-forward`). The initial pushed commit was preserved with `git reset --soft origin/codex/u7-stage-fx-report`; this appendix is a follow-up commit, allowing a normal fast-forward push. No force push was used.
