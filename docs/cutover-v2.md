@@ -97,33 +97,29 @@ Execute following the numbered sequence below. Each step lists the operational a
 * **Expected Result:** Clean commit log; HEAD hash confirmed with USER.
 * **Stop Point:** If unexpected commits appear on `origin/main`, stop immediately. Triage commits before continuing.
 
-### Step 2: USER: Approve and apply Founder migration / grant (Card C15) (Estimated time: 5-10 min)
-* **Action:** USER reviews and applies the Founder grant migration or batch function call via Supabase MCP `apply_migration` or Supabase dashboard SQL editor.
-  *(to verify: `public.v2_grant_founder(p_player, p_contents, p_caps)` was deployed in `supabase/migrations/20261101000000_v2_cat_rpg.sql` near line 654. Card C15 may only need to execute the grant batch query or apply migration file supabase/migrations/20261113000000_founder.sql (created by C15)).*
-  If C15 includes wiping pre-cut-over test records from v2 tables, USER approves clearing:
-  ```sql
-  DELETE FROM public.cat_state;
-  DELETE FROM public.items;
-  DELETE FROM public.player_stacks;
-  DELETE FROM public.boss_clears;
-  DELETE FROM public.boss_fights;
-  DELETE FROM public.founder_grants;
-  ```
-  *(Confirmed: this touches only v2 tables; v1 tables are untouched).*
-* **Expected Result:** SQL applies successfully with exit code 0; `founder_grants` table is initialized.
-* **Stop Point:** If SQL execution fails, stop. Do not proceed to flag flip. v1 remains untouched.
+### Step 2: USER: Approve D8 and apply Founder batch migration (Card C15) (Estimated time: 5-10 min)
+* **Approval gate:** D8 must approve `<D8 contents>` (stack amounts), `<D8 caps>` (the existing `STACK_CAPS_V2` cap object), and `<D8 cutoff>` (an exact timestamp with timezone). Explicitly confirm the strict eligibility boundary `created_at < p_cutoff`; accounts created exactly at the cutoff are excluded. No contents, cutoff, or cut-over date is selected here.
+* **Draft source — not on main yet:** `supabase/migrations/20261110000000_v2_founder_batch.sql` is on `ai/codex-v29-founder-grant` at `235298d`. Read the draft with `git show 235298d:supabase/migrations/20261110000000_v2_founder_batch.sql`; do not assume the file exists on `main`.
+* **Action:** After D8 approval and the pre-cut-over backup, USER applies that reviewed migration to the live project via Supabase MCP `apply_migration` or the Supabase dashboard SQL editor. The migration file must be applied live **BEFORE it is merged to main** (C15 merge gate).
+* **Expected Result:** The migration succeeds and creates `public.v2_grant_founder_batch(p_cutoff timestamptz, p_contents jsonb, p_caps jsonb default '{}', p_limit integer default 500)`, callable by `service_role`; it delegates stack credit and idempotency to the existing per-player helper. Applying the migration alone does not grant any stacks.
+* **Dashboard count:** The manual dashboard guide currently expects 14 v2 functions and will expect 15 once the batch function is applied.
+* **Stop Point:** If D8 is unapproved or live application fails, stop before granting, merging C15, or flipping the flag. Any deletion of pre-cut-over v2 test records requires separate USER approval; this step does not authorize a wipe.
 
-### Step 3: Run Founder grant for all existing players (Estimated time: 5-10 min)
-* **Action:** USER / Orchestrator runs the idempotent grant script or SQL batch against qualifying player accounts created before the cut-over timestamp `T_cutover`:
+### Step 3: Run Founder batches until remaining = 0 (Estimated time: 5-10 min)
+* **Action:** After Step 2, USER runs the following template in the privileged SQL editor (or binds equivalent parameters using `service_role`). Replace every angle-bracket placeholder with its approved value before execution; the placeholders are not executable values.
   ```sql
-  -- Iterates through players created prior to cut-over timestamp
-  -- v2_grant_founder locks the players row and applies stacks idempotently
-  SELECT public.v2_grant_founder(id, :founder_contents, :caps)
-  FROM public.players
-  WHERE created_at <= :T_cutover;
+  SELECT public.v2_grant_founder_batch(
+    p_cutoff   => '<D8 cutoff>'::timestamptz,
+    p_contents => '<D8 contents>'::jsonb,
+    p_caps     => '<D8 caps>'::jsonb,
+    p_limit    => <batch limit>::integer
+  );
   ```
-* **Expected Result:** All pre-existing accounts receive `{"status":"granted"}`. Re-running the command returns `{"status":"already"}` for all rows with no duplicate stack credit.
-* **Stop Point:** If unhandled database errors occur, investigate logs. Because `v2_grant_founder` is idempotent, the batch may be safely resumed once corrected.
+  Always pass the D8-approved cap object. `p_limit` controls batch size (default 500 if omitted, clamped to 1..5000); it does not change eligibility. The batch selects only players with `created_at < p_cutoff` and no `founder_grants` row, ordered by `created_at, id`, locking rows with `FOR UPDATE SKIP LOCKED`.
+* **Loop:** Inspect each returned JSON object `{granted, already, remaining}` and repeat the same call with unchanged approved cutoff, contents and caps until `remaining = 0`. `granted` counts new grants in this call; `already` counts qualifying players granted before this call; `remaining` counts qualifying players still without a grant. Do not stop merely because `granted = 0`: another batch may have locked eligible rows.
+* **Expected Result:** `remaining = 0` confirms all qualifying players have a recorded grant. Re-running is a no-op: `granted = 0`, `remaining = 0`, and `already` counts qualifying players without duplicate stack credit. Players created exactly at or after the cutoff receive no grant.
+* **Stop Point:** If the result contains `error` or SQL fails, stop before the flag flip and investigate. Resume with the same approved parameters after correction; do not treat an error response as completion.
+* **Rollback:** Follow Section 5 with USER approval and the backup process. Its flag rollback retains v2 data and `founder_grants`, so resuming the batch is idempotent; the rehearsal's full SQL rollback (dropping all `public.v2_%` functions, including this batch) is separate and is not authorization to delete production data.
 
 ### Step 4: Merge the flag-flip PR (Card C17) as its own batch (Estimated time: 2-5 min)
 * **Action:** USER approves and merges the card C17 flag-flip PR to `main` as an isolated batch (setting v2 active in `apps/web/src/layout/flag.ts` or production environment).
@@ -199,7 +195,7 @@ Rollback is triggered if Step 6 (`scripts/check-live.mjs`) or Step 7 (manual smo
    * The web application returns immediately to the classic v1 layout (`<ClassicLayout />` in `apps/web/src/App.tsx`).
    * v1 Edge Functions were never modified or undeployed, so v1 gameplay resumes with zero loss of functionality.
    * v2 database rows in `cat_state`, `items`, `player_stacks`, `boss_clears`, `boss_fights` remain in PostgreSQL (no destructive SQL or table drops).
-   * `founder_grants` rows remain recorded. Because `public.v2_grant_founder` is idempotent, re-granting later is a safe no-op (`{"status":"already"}`).
+   * `founder_grants` rows remain recorded. Because `public.v2_grant_founder_batch` delegates to the idempotent per-player helper, repeating the completed batch later is a safe no-op (`granted = 0`, `remaining = 0`).
    * Relics minted on Avalanche Fuji during cut-over testing remain valid on-chain ERC-1155 tokens.
 
 ### When NOT to Roll Back
@@ -210,7 +206,7 @@ Do not roll back for minor cosmetic glitches, CSS misalignments, copy typos, or 
 ## 6. Founder Chest Specification (Proposal for Card C15 & Decision D8)
 
 ### Qualifying Players
-* **Criteria:** Any player account whose account record exists in `public.players` prior to the cut-over timestamp `T_cutover`.
+* **Criteria:** Any player account whose account record exists in `public.players` strictly before `<D8 cutoff>` (not necessarily the cut-over timestamp; D8 must approve it).
 * **Database Definition:** Verified against `supabase/migrations/20260101000000_init_schema.sql` line 12:
   ```sql
   create table public.players (
@@ -221,7 +217,8 @@ Do not roll back for minor cosmetic glitches, CSS misalignments, copy typos, or 
   ```
 * **Selection Query:**
   ```sql
-  SELECT id FROM public.players WHERE created_at <= :T_cutover;
+  -- Bind :D8_cutoff to the exact D8-approved timestamp; equality is excluded.
+  SELECT id FROM public.players WHERE created_at < :D8_cutoff;
   ```
 
 ### Contents Specification
