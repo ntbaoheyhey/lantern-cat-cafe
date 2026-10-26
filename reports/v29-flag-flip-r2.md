@@ -90,7 +90,35 @@ NOT VERIFIED: `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm build`, `cd apps
 
 ## Final repository gates and files touched
 
-Final gate output and report-only push result are recorded below after committing the report.
+PASS: repository gates after the initial report commit (all commands exit 0):
+
+```text
+$ git fetch origin '+main:refs/remotes/origin/main'
+[no output]
+$ git diff --name-only origin/main...HEAD
+reports/v29-flag-flip-r2.md
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+$ git diff --stat origin/main...HEAD
+ reports/v29-flag-flip-r2.md | 99 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 99 insertions(+)
+$ git diff --check origin/main...HEAD
+[no output]
+$ git status --short
+[no output]
+```
+
+The stat above is real output before this gate section was appended; the final diff still contains this report only.
+
+PASS: initial report-only push, `git push -u origin ai/codex-v29-flag-flip-r2-report` (exit 0):
+
+```text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-v29-flag-flip-r2-report -> ai/codex-v29-flag-flip-r2-report
+branch 'ai/codex-v29-flag-flip-r2-report' set up to track 'origin/ai/codex-v29-flag-flip-r2-report'.
+```
+
+This gate output is added in a follow-up report-only commit so the successful initial push remains in history and no force push is needed.
 
 ## What is needed to continue
 
