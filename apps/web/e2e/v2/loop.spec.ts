@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { mockV2SaveJson, type MockV2FixtureKind } from '../../src/api/mockV2Fixtures';
 
+const writeScreenshots = process.env.SCREENSHOTS === '1';
+const outDir = process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/v26-e2e');
 const KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 type Save = ReturnType<typeof JSON.parse>;
 const raw = (page: Page): Promise<Save> => page.evaluate(key => JSON.parse(localStorage.getItem(key)!), KEY);
@@ -30,7 +32,7 @@ async function tab(page: Page, name: string) {
 async function check(page: Page, name: string, width: number, reduced: boolean) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path: path.resolve(process.cwd(), `../../reports/v26-e2e/${name}-${width}${reduced ? '-reduced' : ''}.png`) });
+  if (writeScreenshots) await page.screenshot({ path: path.join(outDir, `${name}-${width}${reduced ? '-reduced' : ''}.png`) });
 }
 const scenarios = {
   async fresh(page: Page) {

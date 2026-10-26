@@ -287,6 +287,6 @@ for (const width of [390, 1280]) {
     await noHorizontalScroll(page);
     expect(errors).toEqual([]);
     await page.evaluate(() => window.scrollTo(0, 0));
-    await page.screenshot({ path: path.resolve(process.cwd(), `../../reports/v16-stage/stage-${width}.png`) });
+    if (writeScreenshots) await page.screenshot({ path: path.join(process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/v16-stage'), `stage-${width}.png`) });
   });
 }

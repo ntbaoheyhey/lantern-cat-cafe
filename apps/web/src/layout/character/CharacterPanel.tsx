@@ -8,7 +8,6 @@ import {
   LOCKED_FRAME,
   SLOT_LABEL,
   formatStat,
-  frameFor,
   itemName,
   rarityLabel,
   statLabel,
@@ -47,11 +46,7 @@ function SlotArt({ frame, children }: { frame: V2FrameName; children?: React.Rea
   return (
     <span className="slot-art">
       <V2PixelFrame name={frame} size={2} />
-      {children && (
-        <span className="slot-icon">
-          {children}
-        </span>
-      )}
+      {children && <span className="slot-icon">{children}</span>}
     </span>
   );
 }
@@ -73,6 +68,7 @@ function SlotButton({
         className="slot-btn locked"
         disabled
         aria-label={`${label}: locked until level ${slot.unlockLevel}`}
+        title={`${label}: locked until level ${slot.unlockLevel}`}
       >
         <SlotArt frame={LOCKED_FRAME} />
         <span className="slot-level">Lv {slot.unlockLevel}</span>
@@ -83,7 +79,13 @@ function SlotButton({
   const item = state.inventory.find((i) => i.id === wornId);
   if (!item) {
     return (
-      <button type="button" className="slot-btn" aria-label={`${label}: empty`} onClick={() => onSelectSlot?.(slot.id)}>
+      <button
+        type="button"
+        className="slot-btn empty"
+        aria-label={`${label}: empty`}
+        title={label}
+        onClick={() => onSelectSlot?.(slot.id)}
+      >
         <SlotArt frame={EMPTY_FRAME[slot.id]} />
       </button>
     );
@@ -91,35 +93,36 @@ function SlotButton({
   return (
     <button
       type="button"
-      className="slot-btn"
+      className="slot-btn equipped"
+      data-rarity={item.rarity}
       aria-label={`${label}: ${itemName(item.itemKey)}, ${rarityLabel(item.rarity)}`}
+      title={`${label}: ${itemName(item.itemKey)}`}
       onClick={() => onSelectSlot?.(slot.id)}
+      style={{
+        borderColor: `var(--rarity-${item.rarity}, #b9b6c9)`,
+      }}
     >
-      <SlotArt frame={frameFor(item.rarity)}>
-        <ItemIcon item={item} size={2} />
-      </SlotArt>
+      <ItemIcon item={item} size={2} />
     </button>
   );
 }
 
-function SlotGroup({
-  label,
-  group,
-  slots,
+function SlotCell({
+  slot,
   state,
   onSelectSlot,
 }: {
-  label: string;
-  group: 'main' | 'accessory';
-  slots: readonly v2.GearSlotDef[];
+  slot: v2.GearSlotDef;
   state: ServerStateV2;
   onSelectSlot?: (slot: GearSlotId) => void;
 }) {
+  const label = SLOT_LABEL[slot.id];
   return (
-    <div role="group" aria-label={label} className={`slot-row slot-row-${group}`}>
-      {slots.map((slot) => (
-        <SlotButton key={slot.id} slot={slot} state={state} onSelectSlot={onSelectSlot} />
-      ))}
+    <div className="slot-cell">
+      <SlotButton slot={slot} state={state} onSelectSlot={onSelectSlot} />
+      <span className="slot-name" aria-hidden="true">
+        {label}
+      </span>
     </div>
   );
 }
@@ -141,57 +144,50 @@ export function CharacterPanel({ state, onSelectSlot }: CharacterPanelProps) {
           <h2 className="v2-character-name">Mochi the cat</h2>
           <p className="character-meta">
             <span>{cls ? cls.name : 'No class yet'}</span>
-            <span>Lv {cat.level}</span>
+            {cls ? ' · ' : ''}
+            {cls && <span>Lv {cat.level}</span>}
           </p>
+          <div className="xp">
+            <div
+              className="xp-bar"
+              role="progressbar"
+              aria-label="Experience"
+              aria-valuemin={0}
+              aria-valuemax={xpMax}
+              aria-valuenow={cat.xp}
+              aria-valuetext={`${cat.xp} of ${xpMax} XP`}
+            >
+              <span className="xp-fill" style={{ width: `${xpPct}%` }} />
+            </div>
+            <p className="xp-text">
+              {cat.xp} / {xpMax} XP
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="xp">
-        <div
-          className="xp-bar"
-          role="progressbar"
-          aria-label="Experience"
-          aria-valuemin={0}
-          aria-valuemax={xpMax}
-          aria-valuenow={cat.xp}
-          aria-valuetext={`${cat.xp} of ${xpMax} XP`}
-        >
-          <span className="xp-fill" style={{ width: `${xpPct}%` }} />
+      <div className="slot-grid" role="group" aria-label="Gear slots">
+        {v2.GEAR_SLOTS.map((slot) => (
+          <SlotCell key={slot.id} slot={slot} state={state} onSelectSlot={onSelectSlot} />
+        ))}
+        <div className="slot-cell slot-cell-empty" aria-hidden="true">
+          <div className="slot-btn empty placeholder" />
+          <span className="slot-name">—</span>
         </div>
-        <p className="xp-text">
-          {cat.xp} / {xpMax} XP
-        </p>
-      </div>
-
-      <div className="slot-grid">
-        <SlotGroup
-          label="Main gear"
-          group="main"
-          slots={v2.GEAR_SLOTS.filter((s) => s.group === 'main')}
-          state={state}
-          onSelectSlot={onSelectSlot}
-        />
-        <SlotGroup
-          label="Accessories"
-          group="accessory"
-          slots={v2.GEAR_SLOTS.filter((s) => s.group === 'accessory')}
-          state={state}
-          onSelectSlot={onSelectSlot}
-        />
       </div>
 
       {derived ? (
         <dl className="stats">
+          <div className="power">
+            <dt>Power</dt>
+            <dd data-testid="character-power">{derived.power}</dd>
+          </div>
           {statRows(derived.stats).map(([term, value]) => (
             <div key={term}>
               <dt>{term}</dt>
               <dd>{value}</dd>
             </div>
           ))}
-          <div className="power">
-            <dt>Power</dt>
-            <dd data-testid="character-power">{derived.power}</dd>
-          </div>
         </dl>
       ) : (
         <p className="stats-hint">Choose a class to see stats.</p>
