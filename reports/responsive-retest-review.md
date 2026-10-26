@@ -2,6 +2,8 @@ STATUS: DONE
 
 # A-R2 evidence review and Claude handoff
 
+Current disposition: Antigravity’s correction at 7106c4d6a32a421967f51ffbbf761251a60d2eb5 has been reviewed and accepted. The report-correction follow-up is complete; the explicit coverage limits remain. See the closing addendum below. The initial review of 95b1ea4 is retained as history.
+
 Date: 2026-10-26, Asia/Saigon. This is a report-only coordination review, based on main 337977751204b5ea59d8f0cabfb91fb4cd4a391f. No implementation or Antigravity branch was merged or used as an implementation parent.
 
 ## Decision
@@ -127,6 +129,81 @@ $ pnpm gen:deno && git diff --exit-code -- supabase/functions
 wrote 18 Edge Function import maps
 
 EXIT 0; runtime 0.37s
+
+```
+
+```text
+$ node scripts/check-links.mjs reports/responsive-retest-review.md docs/prompts/antigravity-responsive-evidence-correction.md
+Checked 2 markdown files and 1 links/paths.
+All links, image paths, and backticked repo paths exist on disk.
+```
+
+## Closing addendum: correction reviewed and accepted (2026-10-26)
+
+Antigravity continued its own report branch to [7106c4d6a32a421967f51ffbbf761251a60d2eb5](https://github.com/ntbaoheyhey/taskbar-hero/blob/7106c4d6a32a421967f51ffbbf761251a60d2eb5/reports/responsive-retest.md). This descends from the original 95b1ea4 report. No tested-source commit moved: responsive source remains 282843de2790f0b2e1f3dfecaeae8c44a5cdd3b6, renderer fix remains 7760775cd2beae2f87efbcbeef6b849c5ae28a5c, and main remains 337977751204b5ea59d8f0cabfb91fb4cd4a391f.
+
+| Review item | Disposition | Remaining limit |
+|---|---|---|
+| E1 zoom classification | ADDRESSED: dated correction distinguishes visual magnification from desktop browser layout zoom | Actual 200% desktop browser layout zoom remains NOT VERIFIED |
+| E2 manual panel claims | ADDRESSED: manual Boss arena/chest and Forge interactions explicitly NOT VERIFIED | Do not infer those manual actions from tab screenshots; reported automated-suite coverage remains separate |
+| E3 canvas wording | ADDRESSED: corrected to one canvas after settling | No claim of continuous per-frame single-canvas instrumentation |
+| E3 retained artifacts | ADDRESSED: archive contains harness/probe/fixture helper, original success/failure logs and provided transcript | Historical archive is evidence, not a portable test runner or independently authenticated transcript |
+| Light/reduced JSON gap | QUALIFIED: archived code computes overflow and timeOrigin flags and incorporates them into stepPass, matching all-PASS log rows | Those values are absent from serialized light rows; light identity was not measured |
+
+The new [archive manifest](https://github.com/ntbaoheyhey/taskbar-hero/blob/7106c4d6a32a421967f51ffbbf761251a60d2eb5/reports/responsive-retest/archive/README.md), [harness](https://github.com/ntbaoheyhey/taskbar-hero/blob/7106c4d6a32a421967f51ffbbf761251a60d2eb5/reports/responsive-retest/archive/run-full-retest.mjs) and [logs](https://github.com/ntbaoheyhey/taskbar-hero/tree/7106c4d6a32a421967f51ffbbf761251a60d2eb5/reports/responsive-retest/archive/logs) were inspected read-only, not executed against the application.
+
+Important interpretation: the custom harness computes/logs stepPass; it does not throw for every false measurement. Its process exit code alone is not a regression-test gate. The retained rows/logs report PASS for all 24 matrix samples, while the separate canonical focused 4-test and complete 72-test Playwright logs provide the reported assertion-suite results. The helper also contains original machine-specific paths and inline prepared save data. Preserve this historical evidence without presenting it as a new hardened CI test, newly validated fixture, or a run performed by this coordinator.
+
+Actual verification in this closing review:
+
+```text
+PASS: correction descends from original; 10 report/archive-only files; original screenshots/JSON unchanged
+PASS: reports/responsive-retest.md 36 local links resolve
+PASS: reports/responsive-retest/archive/README.md 0 local links resolve
+PASS: original success and failure logs retained
+PASS: transcript parses as 249 JSON records (provenance not independently authenticated)
+PASS: required zoom/manual-panel NOT VERIFIED qualifications present
+$ node --check reports/responsive-retest/archive/run-full-retest.mjs
+EXIT 0
+$ node --check reports/responsive-retest/archive/test-harness.mjs
+EXIT 0
+```
+
+The 39 original PNGs and original summary JSON are unchanged between 95b1ea4 and 7106c4d. The correction adds nine archive files and changes only its report, with the required author. No source, dependency, test/config, lockfile, schema or applied migration change occurred. The archived JavaScript was syntax-checked only; no custom harness, transcript command or application suite was rerun. Transcript authenticity and the archive's blanket “zero secrets” claim were not independently certified by this review.
+
+Disposition: report-correction work COMPLETE. Core Finding A-R1-1 remains independently RESOLVED, C-R1/C-R2 remain implementation-DONE, and the responsive package is ready for Claude’s review with explicit limitations. No further automatic product card or repeated Antigravity correction is required for the completed reporting items. If actual browser zoom, physical phones, WebKit or manual panel verification is pursued later, record it as new verification evidence under its own bounded scope; do not silently change NOT VERIFIED to PASS.
+
+Claude's review/integration order and all original D-gates remain unchanged. No PR, merge, main push, workflow, deployment, sharing change, live SQL/backend write, transaction, economy/art decision or production sign-off. Full application suite skipped: docs only. Updated docs-only check output follows.
+
+```text
+$ pnpm install --frozen-lockfile
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 776ms using pnpm v10.28.0
+
+EXIT 0; runtime 0.85s
+
+```
+
+```text
+$ pnpm gen:deno && git diff --exit-code -- supabase/functions
+
+> taskbar-hero@0.0.0 gen:deno /workspace/taskbar-retest-review
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT 0; runtime 0.33s
 
 ```
 

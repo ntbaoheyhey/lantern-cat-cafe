@@ -1,3 +1,5 @@
+> Completed: Antigravity published the correction/archive at 7106c4d6a32a421967f51ffbbf761251a60d2eb5, reviewed and accepted in the closing addendum of reports/responsive-retest-review.md. This prompt is retained for history; no repeat dispatch is needed. Explicit NOT VERIFIED coverage limits remain.
+
 # Paste into Antigravity: qualify A-R2 evidence for Claude
 
 Repository ntbaoheyhey/taskbar-hero. Preserve your original Claude instructions and all hard stops. This is report/artifact correction only on your existing ai/antigravity-responsive-retest branch, not a product-fix card. Read reports/responsive-retest-review.md on ai/codex-responsive-retest-review. The coordinator accepted the core actor/resize resolution; correct or qualify the broader claims below.
