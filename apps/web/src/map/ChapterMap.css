@@ -8,7 +8,7 @@
   --map-text: var(--text, #fff3e0);
   --map-muted: var(--muted, #c3aed0);
   --map-accent: var(--accent, #ffb86b);
-  --map-gold: var(--gold, #ffd34e);
+  --map-gold: var(--gold, #ffb86b);
 
   display: flex;
   flex-direction: column;
@@ -17,35 +17,37 @@
   background: var(--map-surface);
   border: var(--pixel-border, 2px solid #000);
   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
-  padding: 16px;
+  padding: var(--sp-4, 16px);
   box-sizing: border-box;
   overflow-x: hidden;
   color: var(--map-text);
-  font-family: var(--font-body, system-ui, sans-serif);
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
 }
 
-/* Light mode overrides for high contrast and pixel theme parity */
+/* Light mode overrides: preserve cozy cat café dark plum surfaces and high contrast */
 :root[data-theme='light'] .v2-chapter-map,
 .light .v2-chapter-map,
 [data-theme='light'] .v2-chapter-map {
-  --map-bg: #fbf5ee;
-  --map-surface: #ffffff;
-  --map-surface-2: #f4eee6;
-  --map-border: #8c78a0;
-  --map-text: #2a1a30;
-  --map-muted: #6e587a;
-  --map-accent: #d86c12;
-  --map-gold: #c9701a;
+  --map-bg: var(--bg, #1a1220);
+  --map-surface: var(--surface, #2a1f36);
+  --map-surface-2: var(--surface-2, #3a2c4a);
+  --map-border: var(--border, #5b4572);
+  --map-text: var(--text, #fff3e0);
+  --map-muted: var(--muted, #c3aed0);
+  --map-accent: var(--accent, #ffb86b);
+  --map-gold: var(--gold, #ffb86b);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']) .v2-chapter-map {
-    --map-bg: #fbf5ee;
-    --map-surface: #ffffff;
-    --map-surface-2: #f4eee6;
-    --map-border: #8c78a0;
-    --map-text: #2a1a30;
-    --map-muted: #6e587a;
+    --map-bg: var(--bg, #1a1220);
+    --map-surface: var(--surface, #2a1f36);
+    --map-surface-2: var(--surface-2, #3a2c4a);
+    --map-border: var(--border, #5b4572);
+    --map-text: var(--text, #fff3e0);
+    --map-muted: var(--muted, #c3aed0);
+    --map-accent: var(--accent, #ffb86b);
+    --map-gold: var(--gold, #ffb86b);
   }
 }
 
@@ -55,9 +57,9 @@
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
+  gap: var(--sp-2, 8px);
+  margin-bottom: var(--sp-4, 16px);
+  padding-bottom: var(--sp-2, 8px);
   border-bottom: 2px solid var(--map-border);
 }
 
@@ -72,9 +74,9 @@
 }
 
 .v2-map-subtitle {
-  font-size: 0.85rem;
+  font-size: var(--fs-sm, 0.875rem);
   color: var(--map-muted);
-  font-family: var(--font-body);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
 }
 
 /* Canvas & Desktop Winding Path */
@@ -130,6 +132,7 @@
   background: var(--map-surface-2);
   border: var(--pixel-border, 2px solid #000);
   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  border-radius: 0;
   color: var(--map-text);
   padding: 0;
   text-align: left;
@@ -185,8 +188,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 8px 10px;
+  gap: var(--sp-1, 4px);
+  padding: var(--sp-2, 8px) var(--sp-2, 8px);
   min-width: 0;
 }
 
@@ -194,23 +197,25 @@
 .v2-map-node-top {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--sp-1, 4px);
 }
 
 .v2-map-chapter-num {
-  font-family: var(--font-num, monospace);
-  font-size: 0.75rem;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, 0.75rem);
   font-weight: 700;
   color: var(--map-muted);
   letter-spacing: 0.05em;
 }
 
+/* Crisp pixel theme dot: strictly 0 radius */
 .v2-map-theme-dot {
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1px solid #000;
+  box-shadow: 1px 1px 0 #000;
   flex-shrink: 0;
 }
 
@@ -227,7 +232,7 @@
 /* Chapter Title */
 .v2-map-chapter-name {
   margin: 0;
-  font-family: var(--font-display, monospace);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 1.05rem;
   line-height: 1.15;
   color: var(--map-text);
@@ -238,8 +243,8 @@
 .v2-map-boss-row {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
+  gap: var(--sp-1, 4px);
+  font-size: var(--fs-xs, 0.75rem);
   color: var(--map-muted);
 }
 
@@ -254,12 +259,15 @@
 }
 
 .v2-map-boss-label {
-  font-size: 0.75rem;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, 0.75rem);
   font-weight: 700;
   color: var(--map-muted);
+  text-transform: uppercase;
 }
 
 .v2-map-boss-name {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
   font-weight: 700;
   color: var(--map-text);
   white-space: nowrap;
@@ -272,31 +280,32 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: var(--sp-1, 4px);
   margin-top: 2px;
 }
 
 .v2-map-badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 6px;
+  padding: 2px var(--sp-1, 4px);
   font-size: 0.72rem;
   font-weight: 700;
   border: 1px solid #000;
   box-shadow: 1px 1px 0 #000;
+  border-radius: 0;
   letter-spacing: 0.02em;
 }
 
 .v2-map-badge--round {
   background: var(--map-accent);
   color: var(--on-accent, #1a1200);
-  font-family: var(--font-num, monospace);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
 }
 
 .v2-map-badge--rematch {
   background: var(--map-gold);
   color: var(--on-accent, #1a1200);
-  font-family: var(--font-display, monospace);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   text-transform: uppercase;
 }
 
@@ -335,6 +344,9 @@
   .pulse {
     animation: none !important;
   }
+  .v2-map-node {
+    transition: none !important;
+  }
 }
 
 /* 3. Locked Chapter: padlock from v2Frames, not selectable */
@@ -354,7 +366,7 @@
 .v2-map-lock-display {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--sp-1, 4px);
   width: 100%;
   margin-top: 2px;
 }
@@ -366,6 +378,7 @@
 }
 
 .v2-map-locked-text {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
   font-size: 0.72rem;
   color: var(--map-muted);
   font-style: italic;
@@ -379,7 +392,7 @@
 /* ========================================================= */
 @media (max-width: 680px) {
   .v2-chapter-map {
-    padding: 12px;
+    padding: var(--sp-3, 12px);
     overflow-x: hidden;
   }
 
@@ -395,7 +408,7 @@
   .v2-map-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--sp-3, 12px);
     min-height: auto;
     position: static;
     width: 100%;

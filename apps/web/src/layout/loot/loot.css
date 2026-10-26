@@ -3,25 +3,29 @@
 .loot-summary {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--sp-3, 12px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .loot-summary-heading {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
-  font-size: 1.15rem;
-  color: var(--gold, #ffd34e);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-md, 1.15rem);
+  color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
 }
 
 .loot-summary-empty {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
-  font-size: 0.95rem;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-sm, 0.875rem);
   color: var(--muted, #c3aed0);
   font-style: italic;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  background: var(--surface-2, #3a2c4a);
+  border: 1px dashed var(--border, #5b4572);
+  border-radius: 0;
 }
 
 /* Currency & material lines */
@@ -31,17 +35,17 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--sp-1, 4px);
 }
 
 .loot-line {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--sp-2, 8px);
   font-family: var(--font-num, 'JetBrains Mono', monospace);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm, 0.875rem);
   color: var(--text, #fff3e0);
-  padding: 4px 8px;
+  padding: var(--sp-1, 4px) var(--sp-2, 8px);
   background: var(--surface-2, #3a2c4a);
   border: 1px solid var(--border, #5b4572);
   border-radius: 0;
@@ -49,12 +53,12 @@
 }
 
 .loot-line-levelup {
-  background: rgba(255, 211, 78, 0.15);
-  border-color: var(--gold, #ffd34e);
-  color: var(--gold, #ffd34e);
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  background: rgba(255, 184, 107, 0.15);
+  border-color: var(--gold, #ffb86b);
+  color: var(--gold, #ffb86b);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--fs-md, 1rem);
 }
 
 .loot-line-xp {
@@ -73,9 +77,9 @@
 }
 
 .loot-line-badge {
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-xs, 0.75rem);
   width: 24px;
   text-align: center;
 }
@@ -95,7 +99,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 8px;
+  gap: var(--sp-2, 8px);
 }
 
 @media (min-width: 600px) {
@@ -107,8 +111,8 @@
 .loot-item-tile {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-1, 4px) var(--sp-2, 8px);
   background: var(--surface-2, #3a2c4a);
   border: 1px solid var(--border, #5b4572);
   border-radius: 0;
@@ -138,8 +142,8 @@
 }
 
 .loot-item-name {
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
-  font-size: 0.85rem;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-sm, 0.85rem);
   color: var(--text, #fff3e0);
   line-height: 1.15;
   overflow: hidden;
@@ -149,7 +153,7 @@
 
 .loot-item-meta {
   font-family: var(--font-num, 'JetBrains Mono', monospace);
-  font-size: 0.72rem;
+  font-size: var(--fs-xs, 0.72rem);
   color: var(--muted, #c3aed0);
   line-height: 1;
 }
@@ -162,16 +166,17 @@
 
 .loot-salvaged-note {
   margin: 0;
-  padding: 8px 10px;
+  padding: var(--sp-2, 8px) var(--sp-2, 8px);
   background: rgba(255, 184, 107, 0.1);
   border-left: 3px solid var(--accent, #ffb86b);
-  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
-  font-size: 0.85rem;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-sm, 0.85rem);
   color: var(--muted, #c3aed0);
   line-height: 1.35;
+  border-radius: 0;
 }
 
-/* Dialog backdrops & modal containers */
+/* Dialog backdrops & modal containers (cream dialogs permitted) */
 .loot-backdrop {
   position: fixed;
   inset: 0;
@@ -179,8 +184,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.7);
+  padding: var(--sp-4, 16px);
+  background: rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
 }
 
@@ -189,14 +194,14 @@
   width: min(460px, 100%);
   max-height: calc(100dvh - 32px);
   overflow-y: auto;
-  padding: 20px 20px 16px;
+  padding: var(--sp-4, 16px) var(--sp-4, 16px) var(--sp-3, 12px);
   background: var(--surface, #2a1f36);
   border: 2px solid var(--border, #5b4572);
-  box-shadow: var(--pixel-shadow, 0 4px 0 #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
   border-radius: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--sp-4, 16px);
   box-sizing: border-box;
   text-align: left;
 }
@@ -249,15 +254,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: var(--sp-2, 8px);
   text-align: center;
 }
 
 .chest-reveal-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 1.4rem;
-  color: var(--gold, #ffd34e);
+  color: var(--gold, #ffb86b);
   text-shadow: 2px 2px 0 #000;
   letter-spacing: 0.02em;
 }
@@ -266,16 +271,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: var(--sp-3, 12px);
   background: var(--surface-2, #3a2c4a);
   border: 2px solid var(--border, #5b4572);
+  border-radius: 0;
 }
 
 .chest-reveal-actions,
 .welcome-back-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 4px;
+  margin-top: var(--sp-1, 4px);
 }
 
 .chest-reveal-btn,
@@ -283,7 +289,7 @@
   min-width: 90px;
   min-height: var(--tap, 44px);
   padding: var(--sp-2, 8px) var(--sp-4, 16px);
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: var(--fs-sm, .875rem);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -292,6 +298,7 @@
   background: var(--accent, #ffb86b);
   border: var(--pixel-border, 2px solid #000);
   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  border-radius: 0;
   cursor: pointer;
   box-sizing: border-box;
   transition: filter 80ms ease, transform 80ms ease;
@@ -318,9 +325,9 @@
 /* Welcome back dialog specifics */
 .welcome-back-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', system-ui, sans-serif);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 1.4rem;
-  color: var(--gold, #ffd34e);
+  color: var(--gold, #ffb86b);
   text-shadow: 2px 2px 0 #000;
   letter-spacing: 0.02em;
 }
@@ -360,34 +367,88 @@
   }
 }
 
-/* Light mode support */
+/* Light mode support: cream dialog cards with guaranteed high contrast text (WCAG AA) */
 [data-theme='light'] .chest-reveal-scrim,
 :root:not([data-theme='dark']) .chest-reveal-scrim {
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0.88) 100%
+    rgba(251, 245, 238, 0.92) 0%,
+    rgba(251, 245, 238, 0.85) 50%,
+    rgba(251, 245, 238, 0.92) 100%
   );
 }
+
 [data-theme='light'] .loot-dialog,
 :root:not([data-theme='dark']) .loot-dialog {
-  background: var(--surface, #ffffff);
-  border-color: var(--border, #806b5b);
-  color: var(--text, #2a1e17);
+  background: #ffffff;
+  border-color: #8c78a0;
+  color: #2a1a30;
+}
+
+[data-theme='light'] .loot-summary-heading,
+:root:not([data-theme='dark']) .loot-summary-heading {
+  color: #8c4a00;
+}
+
+[data-theme='light'] .chest-reveal-title,
+:root:not([data-theme='dark']) .chest-reveal-title,
+[data-theme='light'] .welcome-back-title,
+:root:not([data-theme='dark']) .welcome-back-title {
+  color: #8c4a00;
+  text-shadow: none;
+}
+
+[data-theme='light'] .welcome-back-duration,
+:root:not([data-theme='dark']) .welcome-back-duration {
+  color: #2a1a30;
 }
 
 [data-theme='light'] .loot-line,
 :root:not([data-theme='dark']) .loot-line,
 [data-theme='light'] .loot-item-tile,
 :root:not([data-theme='dark']) .loot-item-tile {
-  background: var(--surface-2, #fff4e0);
-  border-color: var(--border, #806b5b);
-  color: var(--text, #2a1e17);
+  background: #f4eee6;
+  border-color: #8c78a0;
+  color: #2a1a30;
+}
+
+[data-theme='light'] .loot-item-name,
+:root:not([data-theme='dark']) .loot-item-name {
+  color: #2a1a30;
+}
+
+[data-theme='light'] .loot-item-meta,
+:root:not([data-theme='dark']) .loot-item-meta {
+  color: #5b4572;
+}
+
+[data-theme='light'] .loot-item-rarity-common,
+:root:not([data-theme='dark']) .loot-item-rarity-common {
+  color: #4d4a57;
+}
+
+[data-theme='light'] .loot-item-rarity-uncommon,
+:root:not([data-theme='dark']) .loot-item-rarity-uncommon {
+  color: #1e7033;
+}
+
+[data-theme='light'] .loot-item-rarity-rare,
+:root:not([data-theme='dark']) .loot-item-rarity-rare {
+  color: #0b5cb5;
+}
+
+[data-theme='light'] .loot-item-rarity-epic,
+:root:not([data-theme='dark']) .loot-item-rarity-epic {
+  color: #6820a3;
+}
+
+[data-theme='light'] .loot-item-rarity-legendary,
+:root:not([data-theme='dark']) .loot-item-rarity-legendary {
+  color: #a34c00;
 }
 
 [data-theme='light'] .chest-reveal-icon-wrap,
 :root:not([data-theme='dark']) .chest-reveal-icon-wrap {
-  background: var(--surface-2, #fff4e0);
-  border-color: var(--border, #806b5b);
+  background: #f4eee6;
+  border-color: #8c78a0;
 }

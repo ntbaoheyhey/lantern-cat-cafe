@@ -58,7 +58,7 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 6px;
+  gap: var(--sp-1, 4px) var(--sp-2, 8px);
   font-family: var(--font-body, 'DM Sans', sans-serif);
   font-size: var(--fs-sm, 0.875rem);
   color: var(--muted, #c3aed0);
@@ -70,7 +70,7 @@
   flex-direction: column;
   gap: var(--sp-1, 4px);
   min-width: 0;
-  margin-top: 2px;
+  margin-top: var(--sp-1, 4px);
 }
 
 .xp-bar {
