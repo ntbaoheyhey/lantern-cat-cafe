@@ -3,10 +3,10 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, expect, it } from 'vitest';
 import { TodayRelicCard, txUrl } from './TodayRelicCard';
 
-const hash = `0x${'aB'.repeat(32)}`;
+const hash = `0x${'aB'.repeat(32)}` as const;
 afterEach(cleanup);
 it.each(['', '0x12', `0x${'z'.repeat(64)}`, `${hash}/other`, `${hash}?query`, 'javascript:alert(1)'])('does not link a malformed transaction hash %s', txHash => {
-  render(<TodayRelicCard today={{ relicId: '1', rarityName: 'common', minted: true, txHash }} mintable={false} canReissue={false} />);
+  render(<TodayRelicCard today={{ relicId: '1', rarityName: 'common', minted: true, txHash: txHash as `0x${string}` }} mintable={false} canReissue={false} />);
   expect(screen.queryByRole('link')).toBeNull();
   expect(screen.getByTestId('forge-today-status').textContent).toBe('In your wallet');
   expect(txUrl(txHash)).toBeUndefined();
