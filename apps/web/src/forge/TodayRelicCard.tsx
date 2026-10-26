@@ -3,10 +3,11 @@ import { relicImageUrl } from '../market/marketText';
 import { LABELS } from '../theme/labels';
 import { relicName } from './forgeText';
 
-export const txUrl = (hash: string) => `https://testnet.snowtrace.io/tx/${hash}`;
+export const txUrl = (hash: string) => /^0x[0-9a-fA-F]{64}$/.test(hash) ? `https://testnet.snowtrace.io/tx/${hash}` : undefined;
 
 /** Today's forged Relic: its art, rarity and whether it reached the wallet. */
 export function TodayRelicCard({ today, mintable, canReissue }: { today: TodayRelic; mintable: boolean; canReissue: boolean }) {
+  const url = today.txHash ? txUrl(today.txHash) : undefined;
   return (
     <div className="forge-today" data-testid="forge-today">
       <img src={relicImageUrl(BigInt(today.relicId))} alt="" width={48} height={48} />
@@ -19,10 +20,10 @@ export function TodayRelicCard({ today, mintable, canReissue }: { today: TodayRe
           {today.minted ? (
             <>
               In your wallet
-              {today.txHash && (
+              {url && (
                 <>
                   {' · '}
-                  <a href={txUrl(today.txHash)} target="_blank" rel="noopener noreferrer">View on Snowtrace</a>
+                  <a href={url} target="_blank" rel="noopener noreferrer">View on Snowtrace</a>
                 </>
               )}
             </>

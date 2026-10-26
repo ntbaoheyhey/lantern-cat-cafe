@@ -70,7 +70,7 @@ export function WalletButton() {
   let body;
   if (!isConnected || !address) {
     body = noWallet ? (
-      <a className="wallet-btn" href={CORE_INSTALL_URL} target="_blank" rel="noreferrer" title={NO_WALLET_HINT}>
+      <a className="wallet-btn" href={CORE_INSTALL_URL} target="_blank" rel="noopener noreferrer" title={NO_WALLET_HINT}>
         Get a browser wallet
       </a>
     ) : (
