@@ -291,7 +291,7 @@ Full-suite failure evidence and summary:
 
     Error Context: ../../../../../../../tmp/u3-playwright-results/layout-stage-layout-stage-layout-at-1280px-stage-layout/error-context.md
 
-  5) [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px with reduced motion 
+  5) [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px with reduced motion
 
     Error: expect(received).toBeLessThanOrEqual(expected)
 
@@ -314,7 +314,7 @@ Full-suite failure evidence and summary:
     [classic] › e2e/ui/u2-hud.spec.ts:38:3 › HUD readable at 1280x720 ──────────────────────────────
     [classic] › e2e/ui/u2-hud.spec.ts:38:3 › HUD readable at 390x844 ───────────────────────────────
     [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px ─────────────────
-    [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px with reduced motion 
+    [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px with reduced motion
   1 skipped
   96 passed (1.1m)
  ELIFECYCLE  Command failed with exit code 1.
@@ -463,3 +463,5 @@ branch 'ai/codex-ui-u3-layout' set up to track 'origin/ai/codex-ui-u3-layout'.
 ```
 
 This final delivery evidence is committed and pushed as a report-only follow-up on the same branch. STATUS remains BLOCKED; no green full-suite claim is made.
+
+Final report formatting check found two trailing spaces copied from Playwright test titles; those spaces were removed. The final `git diff --check origin/main...HEAD` was rerun after this report-only correction. No product or assertion changed.
