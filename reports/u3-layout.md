@@ -183,3 +183,28 @@ NOT VERIFIED — v2 demo mode with empty Supabase env (not launched).
 ## Files touched and delivery
 
 Only `reports/u3-layout.md` belongs to this report-only branch. Final committed scope, author, stat and push checks are appended below after execution. The implementation scope failure above is distinct from the report-only scope check.
+
+PASS — report-only scope, `git diff --name-only origin/main...HEAD`:
+```text
+reports/u3-layout.md
+```
+
+PASS — `git diff --stat origin/main...HEAD` at first report commit `e8e616a` (before appending this delivery evidence):
+```text
+ reports/u3-layout.md | 185 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 185 insertions(+)
+```
+
+PASS — `git log --format='%an <%ae>' origin/main..HEAD` at first report commit:
+```text
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+PASS — `git push -u origin codex/u3-layout-report` (exit 0):
+```text
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      codex/u3-layout-report -> codex/u3-layout-report
+branch 'codex/u3-layout-report' set up to track 'origin/codex/u3-layout-report'.
+```
+
+Only this report was pushed; no PR was created. This appended delivery evidence is committed and pushed as a follow-up on the same task branch.
