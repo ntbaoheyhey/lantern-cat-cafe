@@ -1,5 +1,7 @@
 # Abuse-controls assessment
 
+Status update (2026-10-26, S2): historical v1 assessment retained; new v2 concurrency tests confirm several atomic boundaries and expose gated retry/equipment/starter gaps; bounded v2 JSON parsing is fixed, request budgets remain proposal-only. See [current review](security-review-2026-10.md).
+
 Assessed on 2026-10-24 against `main` commit `e64934d`, for B3-CX3. This is a source review, not a live penetration test or a deployment/configuration audit. No application, database, contract or game-rule changes are proposed by this patch.
 
 The main exposure is availability: valid and invalid requests can consume Edge Function, database and Fuji RPC resources without an application request budget. Existing checks substantially constrain forged rewards, ownership violations and replay, but gameplay caps do not throttle HTTP requests. Wallet sign-in also does not establish one human per account.
