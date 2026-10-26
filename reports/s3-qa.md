@@ -9,6 +9,32 @@
 
 ---
 
+### Fix round 1 (2026-10-26)
+
+- **Previous Status**: BLOCKED on merge conflict with latest `origin/main` (PR #181 rebase failure).
+- **What Failed**:
+  - Merge conflict in `apps/web/playwright.config.ts` after S1 merged PR #179 (overhauling e2e infrastructure with port isolation, shared guard fixtures, and strict project validation).
+  - S1's shared fixture `apps/web/e2e/support/test.ts` only recognized directories `(ui|layout|v2)` and rejected custom projects or `baseURL` overrides.
+- **What Was Changed**:
+  - `apps/web/playwright.config.ts`: Resolved conflict strictly against `origin/main`'s port-isolated version:
+    - Added `'qa/**'` to the `classic` project's `testIgnore` array.
+    - Added `'qa/**/*.spec.ts'` to the `stage-layout` project's `testMatch` array (folding QA walkthrough specs into `stage-layout` alongside `ui/**` and `layout/**`).
+    - Removed standalone `qa` project and preserved all of S1's port logic, strict URL validation, and server commands.
+  - `apps/web/e2e/support/test.ts`: Added `qa` to directory matcher regex on line 10 (`(ui|layout|v2|qa)`), enabling `apps/web/e2e/qa/s3-walkthrough.spec.ts` to automatically resolve to `v2 = true` and `expectedProject = 'stage-layout'`.
+  - `apps/web/e2e/qa/s3-walkthrough.spec.ts`: Switched imports from `@playwright/test` to shared fixture `../support/test` with no `baseURL` override.
+- **Commands Re-run & Real Output**:
+  - `pnpm install --frozen-lockfile`: Exit 0 (Done in 445ms using pnpm v10.28.0).
+  - `pnpm gen:deno && git diff --exit-code -- supabase/functions`: Exit 0 (wrote 18 Edge Function import maps; clean git diff).
+  - `pnpm typecheck`: Exit 0 (all 6 projects clean).
+  - `pnpm lint`: Exit 0 (all 6 projects clean).
+  - `pnpm test`: Exit 0 (chain 7, auth 24, supabase 385, game-rules 330, api-contract 16, web 87 files / 1110 tests passed).
+  - `pnpm build`: Exit 0 (all packages built).
+  - `cd apps/web && pnpm test:e2e`: Exit 0 (138 passed in 39.5s; classic 26, stage-layout 97 including 6 S3 walkthrough tests, v2-loop 15; 0 failed, 0 skipped).
+  - `node scripts/check-links.mjs`: Exit 0 (44 files, 542 links; 0 broken).
+- **New STATUS**: STATUS: DONE  
+
+---
+
 ## 1. The Player Walkthrough (All 13 Steps)
 
 ### Step 1: Fresh Start with Empty LocalStorage
