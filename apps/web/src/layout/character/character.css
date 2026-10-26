@@ -1,72 +1,317 @@
-/* Character panel: portrait, class and level, XP bar, nine gear slots and derived stats. */
-.character-title { display: grid; gap: 4px; min-width: 0; }
+/* Character panel: portrait, class/level, XP bar, 10 gear slots grid, derived stats */
+:root {
+  --rarity-uncommon: var(--good, #6be08a);
+}
+
+.v2-character {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 12px);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 1. Header */
+.v2-character-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3, 12px);
+  min-width: 0;
+}
+
+.cat-portrait-wrap {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2, #3a2c4a);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  box-sizing: border-box;
+}
+
+.cat-portrait-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.character-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.v2-character-name {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-lg, 1.25rem);
+  line-height: 1.2;
+  color: var(--text, #fff3e0);
+  overflow-wrap: anywhere;
+}
+
 .character-meta {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 10px;
-  font: 700 0.85rem var(--font-num);
-  color: var(--muted);
+  gap: 2px 6px;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--muted, #c3aed0);
+  line-height: 1.2;
 }
 
-.xp { display: grid; gap: 4px; }
+.xp {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  min-width: 0;
+  margin-top: 2px;
+}
+
 .xp-bar {
   position: relative;
-  height: 12px;
-  background: var(--bg);
-  border: 2px solid #000;
+  height: 4px;
+  background: var(--bg, #1a1220);
+  border: 1px solid #000;
   overflow: hidden;
+  box-sizing: border-box;
 }
+
 .xp-fill {
   position: absolute;
   inset: 0 auto 0 0;
-  background: var(--shard);
+  background: var(--shard, #8fd8ff);
   transition: width 300ms ease-out;
 }
-.xp-text { margin: 0; font: 0.75rem var(--font-num); color: var(--muted); }
-@media (prefers-reduced-motion: reduce) { .xp-fill { transition: none; } }
 
-/* Nine slots: five main gear on one row, four accessories on the next. Each button is at least 44 px. */
-.slot-grid { display: grid; gap: 6px; }
-.slot-row { display: grid; gap: 6px; }
-.slot-row-main { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.slot-row-accessory { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.slot-btn {
+.xp-text {
+  margin: 0;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #c3aed0);
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-fill {
+    transition: none;
+  }
+}
+
+/* 2. Gear slots grid (10 slots: 5 per row desktop, 5 per row phone) */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--sp-2, 8px);
+  justify-content: center;
+  align-items: start;
+}
+
+.slot-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 4px 2px;
-  font: 700 0.7rem var(--font-num);
-  color: var(--text);
-  background: var(--surface-2);
-  border: 2px solid var(--border);
-  cursor: pointer;
+  min-width: 0;
 }
-.slot-btn.locked { color: var(--muted); background: var(--bg); cursor: default; }
-.slot-art { position: relative; width: 32px; height: 32px; }
-.slot-icon { position: absolute; inset: 0; display: grid; place-items: center; }
-.slot-level { line-height: 1; }
 
-/* Derived stats */
+.slot-btn {
+  width: 48px;
+  height: 48px;
+  min-width: var(--tap, 44px);
+  min-height: var(--tap, 44px);
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--text, #fff3e0);
+  background: var(--surface-2, #3a2c4a);
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+
+.slot-btn.equipped {
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+}
+
+.slot-btn.empty {
+  border: 2px dashed var(--border, #5b4572);
+  background: var(--surface-2, #3a2c4a);
+  box-shadow: none;
+}
+
+.slot-btn.empty .slot-art {
+  opacity: 0.3;
+}
+
+.slot-btn.locked {
+  border: 2px solid var(--border, #5b4572);
+  background: var(--bg, #1a1220);
+  box-shadow: none;
+  color: var(--muted, #c3aed0);
+  cursor: default;
+}
+
+.slot-art {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+}
+
+.slot-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.slot-level {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  background: var(--bg, #1a1220);
+  border: 1px solid #000;
+  padding: 1px 2px;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  line-height: 1;
+  color: var(--muted, #c3aed0);
+}
+
+.slot-btn[data-rarity='common'] {
+  border-color: var(--rarity-common, #b9b6c9);
+}
+.slot-btn[data-rarity='uncommon'] {
+  border-color: var(--rarity-uncommon, #6be08a);
+}
+.slot-btn[data-rarity='rare'] {
+  border-color: var(--rarity-rare, #4aa8ff);
+}
+.slot-btn[data-rarity='epic'] {
+  border-color: var(--rarity-epic, #bb74ff);
+}
+.slot-btn[data-rarity='legendary'] {
+  border-color: var(--rarity-legendary, #ff9a3c);
+}
+
+.slot-name {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #c3aed0);
+  line-height: 1.2;
+  text-align: center;
+  max-width: 56px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 899px) {
+  .slot-name {
+    display: none;
+  }
+}
+
+.slot-cell-empty .placeholder {
+  border: 2px dashed var(--border, #5b4572);
+  background: transparent;
+  opacity: 0.25;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* 3. Stats */
 .stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px 12px;
+  gap: var(--sp-1, 4px) var(--sp-3, 12px);
   margin: 0;
-  font: 0.85rem var(--font-num);
+  padding: 0;
 }
+
 .stats > div {
   display: flex;
-  flex-wrap: wrap;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 0 8px;
+  gap: var(--sp-2, 8px);
   min-width: 0;
 }
-.stats dt { color: var(--muted); }
-.stats dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
-.stats .power dd { color: var(--gold); }
-.stats-hint { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.stats dt {
+  margin: 0;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, 0.75rem);
+  text-transform: uppercase;
+  color: var(--muted, #c3aed0);
+  overflow-wrap: anywhere;
+}
+
+.stats dd {
+  margin: 0;
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-sm, 0.875rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: right;
+  color: var(--text, #fff3e0);
+  white-space: nowrap;
+}
+
+.stats .power {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: var(--sp-1, 4px);
+  border-bottom: 1px solid var(--border, #5b4572);
+  margin-bottom: var(--sp-1, 4px);
+}
+
+.stats .power dt {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-md, 1rem);
+  text-transform: uppercase;
+  color: var(--muted, #c3aed0);
+}
+
+.stats .power dd {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-lg, 1.25rem);
+  font-weight: 700;
+  color: var(--accent, #ffb86b);
+}
+
+.stats-hint {
+  margin: 0;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  color: var(--muted, #c3aed0);
+  font-size: var(--fs-sm, 0.875rem);
+}
+
+/* Phone adjustments */
+@media (max-width: 600px) {
+  .cat-portrait-wrap {
+    width: 56px;
+    height: 56px;
+  }
+  .slot-grid {
+    gap: var(--sp-1, 4px);
+  }
+  .slot-btn {
+    width: 100%;
+    max-width: 48px;
+    height: auto;
+    aspect-ratio: 1;
+    min-width: var(--tap, 44px);
+    min-height: var(--tap, 44px);
+  }
+}

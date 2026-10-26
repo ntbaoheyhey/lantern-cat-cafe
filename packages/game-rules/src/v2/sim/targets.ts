@@ -75,7 +75,10 @@ export function guardrailsCheckV2(overrides: ConfigOverridesV2): TargetCheckV2 {
         if (!before || typeof before !== 'object') failures.push(`${path}: unknown config object`);
         visit(value, before && typeof before === 'object' ? before : {}, path);
       }
-      else if (typeof value === 'number' && (typeof before !== 'number' || !Number.isFinite(value) || value < before * 0.33 || value > before * 3)) failures.push(`${path}: ${value} outside 0.33–3x current ${before}`);
+      else if (path === 'boss.firstClearKeys') {
+        if (value !== 0 && value !== 1) failures.push(`${path}: must be 0 or 1`);
+      } else if (typeof value !== typeof before || typeof value !== 'number' || !Number.isFinite(value) || value < (before as number) * 0.33 || value > (before as number) * 3) failures.push(`${path}: ${value} outside 0.33–3x current ${before}`);
+      if (path.startsWith('chapters.killsPerRound.') && (!Number.isInteger(value) || Number(value) < 1)) failures.push(`${path}: must be an integer >= 1`);
     }
   };
   visit(overrides, V2_CONFIG);
@@ -84,7 +87,7 @@ export function guardrailsCheckV2(overrides: ConfigOverridesV2): TargetCheckV2 {
     ['boss.maxMs', overrides.boss?.maxMs ?? V2_CONFIG.boss.maxMs, 180000],
     ['idle.dailyKeys', overrides.idle?.dailyKeys ?? V2_CONFIG.idle.dailyKeys, 3],
   ] as const) if (value > cap) failures.push(`${path}: ${value} > ${cap}`);
-  return { id: 'guardrails', ok: failures.length === 0, detail: failures.join('; ') || 'All numeric leaves within 0.33–3x; walking ≤2000ms, boss timeout ≤180000ms, daily keys ≤3' };
+  return { id: 'guardrails', ok: failures.length === 0, detail: failures.join('; ') || 'All numeric leaves within 0.33–3x except firstClearKeys=0/1; walking ≤2000ms, boss timeout ≤180000ms, daily keys ≤3' };
 }
 
 export function walkShareCheckV2(results: SimResultV2[]): TargetCheckV2 {

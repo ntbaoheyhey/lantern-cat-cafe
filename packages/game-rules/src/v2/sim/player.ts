@@ -1,3 +1,4 @@
+import { withConfigV2 } from './config';
 import { rollLoot } from '../../loot';
 import { Rng } from '../../rng';
 import { bestLoadout, deriveBagStats, type BagItem } from '../bag';
@@ -55,6 +56,7 @@ export function craftBestV2(state: PlayerStateV2, seed: number, now: number): { 
 }
 /** No view helper exists on the base revision. Mirrors idle gearDrop with chest group restrictions. */
 export function rollSimChestV2(state: PlayerStateV2, seed: number, options: { firstClearKeyRefund?: boolean } = {}): { stackDeltas: StacksV2; items: OwnedItem[] } {
+  if (options.firstClearKeyRefund !== undefined) return withConfigV2({ boss: { firstClearKeys: Number(options.firstClearKeyRefund) } }, () => rollSimChestV2(state, seed));
   const chapter = CHAPTERS.find((entry) => entry.index === state.chapter)!;
   const rewards = rollLoot(CHESTS, state.bossClears[state.chapter] ? chapter.chests.repeat : chapter.chests.firstClear, seed);
   const rng = new Rng(seed);
@@ -87,6 +89,6 @@ export function rollSimChestV2(state: PlayerStateV2, seed: number, options: { fi
       level: Math.max(1, Math.min(rarity.maxLevel, state.chapter * chapter.roundsPerChapter)), bonus, bonusLines: bonus,
       locked: false, equipped: false, source: 'chest' });
   }
-  if (options.firstClearKeyRefund && !state.bossClears[state.chapter]) stackDeltas.catKey = (stackDeltas.catKey ?? 0) + 1;
+  if (!state.bossClears[state.chapter] && V2_CONFIG.boss.firstClearKeys > 0) stackDeltas.catKey = (stackDeltas.catKey ?? 0) + V2_CONFIG.boss.firstClearKeys;
   return { stackDeltas, items };
 }

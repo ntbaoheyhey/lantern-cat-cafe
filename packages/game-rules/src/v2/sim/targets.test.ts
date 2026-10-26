@@ -101,3 +101,13 @@ it('evaluates all entry equipment at the median level rather than selecting a le
   for (const row of rows) for (const sample of Object.values(row.roundSamples)) sample.timeToKillByLevelMs[1] = 2000;
   expect(walkShareCheckV2(rows).ok).toBe(true);
 });
+
+it('guards each chapter array leaf, integral pacing and the D1 refund exemption', () => {
+  expect(guardrailsCheckV2({ boss: { firstClearKeys: 2 } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ boss: { firstClearKeys: 1 } }).ok).toBe(true);
+  expect(guardrailsCheckV2({ chapters: { killsPerRound: [6, 10, 10, 10, 40] } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ chapters: { killsPerRound: [6, 10.5, 10, 10, 10] } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ boss: { chapterHpMul: [40, 40, 40, 40, 121] } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ boss: { chapterAtkMul: [2.5, 2.5, 2.5, 2.5, 0.8] } }).ok).toBe(false);
+  expect(guardrailsCheckV2({ idle: { dailyKeys: 5 } }).ok).toBe(false);
+});
