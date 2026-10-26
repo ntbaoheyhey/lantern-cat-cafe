@@ -124,3 +124,10 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
+/* Key sources list: --muted #c3aed0 on --surface-2 #3a2c4a >= 4.5:1. */
+.help-key-sources {
+  margin: 0;
+  padding-left: var(--sp-4, 16px);
+  color: var(--muted, #c3aed0);
+}

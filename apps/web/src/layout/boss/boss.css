@@ -362,3 +362,34 @@
     transform: none !important;
   }
 }
+
+/* Key wall hint (no_key only). Pairs: --text #fff3e0 / --muted #c3aed0 / --key #ff8fb1 on --surface-2 #3a2c4a, all >= 4.5:1. */
+.boss-key-hint {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  margin-top: var(--sp-3, 12px);
+  padding: var(--sp-3, 12px);
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.boss-key-hint-count {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-weight: 700;
+  color: var(--key, #ff8fb1);
+}
+
+.boss-key-hint-title {
+  color: var(--text, #fff3e0);
+  font-weight: 600;
+}
+
+.boss-key-hint-list {
+  margin: 0;
+  padding-left: var(--sp-4, 16px);
+  color: var(--muted, #c3aed0);
+  overflow-wrap: anywhere;
+}
