@@ -1,0 +1,39 @@
+=== 1. Check CX2 source: ai/codex-fix-resize-hygiene ===
+[exit 2: ref not found on origin]
+
+=== 2. Check CX2 report branch: ai/codex-fix-resize-hygiene-report ===
+2e64383ad5ab55447f49ec5e400c79a64785868b	refs/heads/ai/codex-fix-resize-hygiene-report
+
+=== 3. Inspect CX2 status in fix-resize-hygiene.md ===
+STATUS: BLOCKED
+
+## What was done
+
+Stopped at the required CX1 baseline gate. Created report-only branch
+`ai/codex-fix-resize-hygiene-report` from `origin/main` at
+`337977751204b5ea59d8f0cabfb91fb4cd4a391f`. No product fixes or regression test
+were made. No existing assertions were changed. Product fix rounds used: zero.
+
+## Gate: FAIL
+
+The required branch `ai/codex-integrate-v2-stage` is absent from the remote.
+CX1's DONE report and baseline commit could not be verified. This does not
+establish CX1's status elsewhere; it means the prerequisite supplied in the card
+cannot be satisfied from this repository. Per the card, implementation stopped.
+
+Actual command and output:
+
+```text
+$ git fetch origin +main:refs/remotes/origin/main +ai/codex-integrate-v2-stage:refs/remotes/origin/ai/codex-integrate-v2-stage
+fatal: couldn't find remote ref ai/codex-integrate-v2-stage
+[exit 128]
+
+$ git ls-remote --exit-code --heads origin ai/codex-integrate-v2-stage
+[no output; exit 2: no matching ref]
+
+=== 4. Check fallback source: ai/codex-integrate-v2-stage ===
+[exit 2: ref not found on origin]
+
+=== 5. Local verification of fallback source ===
+fatal: Needed a single revision
+[not found in local refs]
