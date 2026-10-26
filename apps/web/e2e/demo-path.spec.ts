@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 import { LABELS } from '../src/theme/labels';
 
 for (const width of [390, 1280]) {
@@ -20,8 +20,10 @@ for (const width of [390, 1280]) {
         expect(overflow.document).toBeLessThanOrEqual(0);
         expect(overflow.body).toBeLessThanOrEqual(0);
         const path = testInfo.outputPath(`demo-${width}-${step}.png`);
-        await page.screenshot({ path, fullPage: true, animations: 'disabled' });
-        await testInfo.attach(`${width}px: ${step}`, { path, contentType: 'image/png' });
+        if (process.env.SCREENSHOTS === '1') {
+          await page.screenshot({ path, fullPage: true, animations: 'disabled' });
+          await testInfo.attach(`${width}px: ${step}`, { path, contentType: 'image/png' });
+        }
       };
 
       await page.clock.install();

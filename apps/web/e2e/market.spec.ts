@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('market tab asks for a wallet when none is connected', async ({ page }) => {
   const errors: string[] = [];

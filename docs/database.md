@@ -1,6 +1,6 @@
 # Database (Supabase Postgres)
 
-Migrations: `supabase/migrations/*.sql`, applied in filename order. Off-chain state is server-decided; only the service role (Edge Functions) writes.
+Migrations: SQL files in `supabase/migrations/`, applied in filename order. Off-chain state is server-decided; only the service role (Edge Functions) writes.
 
 ## Tables (all in `public`, RLS enabled on every one)
 

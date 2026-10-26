@@ -1,5 +1,6 @@
-import { expect, test, type Locator, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '../support/test';
 import fs from 'node:fs';
+import { stageHeight, stageZoom } from '../../src/layout/metrics';
 import path from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 // Read the exported key without importing the browser adapter and its wallet/JSON dependencies.
@@ -78,9 +79,9 @@ for (const vp of VIEWPORTS) {
       await expect(stage.locator('canvas')).toHaveCount(1);
       const s = await box(stage);
       if (vp.width >= 1024) {
-        // Desktop: about 60% of the viewport height, never under 320 px.
-        expect(s.height).toBeGreaterThanOrEqual(320);
-        expect(Math.abs(s.height - vp.height * 0.6)).toBeLessThanOrEqual(2);
+        // U3 reserves room for the panel: clamp(200px, 40vh, 360px).
+        expect(Math.abs(s.height - Math.min(360, Math.max(200, vp.height * 0.4)))).toBeLessThanOrEqual(1);
+        expect(s.width).toBe(Math.min(vp.width, 1440));
       } else {
         // Phone: 16:9.
         expect(Math.abs(s.height / s.width - 9 / 16)).toBeLessThan(0.01);
@@ -88,7 +89,10 @@ for (const vp of VIEWPORTS) {
       // The scene is zoomed by a whole number, not stretched: canvas height is a multiple of 96.
       const c = await box(stage.locator('canvas'));
       expect(c.height % 96).toBeLessThan(0.5);
-      expect(Math.abs(c.height - s.height)).toBeLessThanOrEqual(48);
+      // Renderer zoom remains based on the logical 60vh scene; the U3 container
+      // deliberately crops sky above it. Feet must stay on the container floor.
+      expect(c.height).toBe(96 * stageZoom(vp.width, stageHeight(vp.width, vp.height)));
+      expect(Math.abs(c.y + c.height - (s.y + s.height))).toBeLessThanOrEqual(1);
       expect(c.width).toBeLessThanOrEqual(s.width);
 
       await noHorizontalScroll(page);

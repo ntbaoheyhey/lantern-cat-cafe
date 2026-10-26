@@ -31,7 +31,7 @@ The contracts are already deployed on Fuji; their addresses are in `packages/cha
 1. Make a new wallet only for this: `cast wallet new`. Save the private key in a password manager.
 2. Fund it from the Fuji faucet: https://core.app/tools/testnet-faucet/?subnet=c&token=c
    (deploying both contracts costs well under 1 test AVAX).
-3. Put the values in `contracts/.env` (git-ignored, never commit it):
+3. Put the values in a local .env file in the contracts directory (git-ignored and not committed):
 
    ```sh
    DEPLOYER_PRIVATE_KEY=0x...
@@ -65,12 +65,12 @@ The contracts are already deployed on Fuji; their addresses are in `packages/cha
    Both contracts should show "Verified" on https://testnet.snowtrace.io/address/<address>.
 
 6. Commit `packages/chain/deployments/43113.json` (only addresses, no secrets) and open a PR.
-   Do not commit `contracts/broadcast/` or `contracts/cache/`.
+   Do not commit the generated broadcast or cache directories inside `contracts/`; they are not committed.
 
 ## Regenerating ABIs
 
 After changing a contract: `cd contracts && forge build`, then `pnpm --filter @taskbar-hero/chain gen`.
-CI fails if `packages/chain/src/abi.ts` does not match `contracts/out`.
+CI fails if `packages/chain/src/abi.ts` does not match the locally generated out directory in `contracts/` (not committed).
 
 ## Set the metadata URI
 

@@ -1,10 +1,9 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/test';
 import { mkdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 
-// ui/** is discovered by classic; explicitly use the existing v2 server.
-test.use({ baseURL: 'http://localhost:4174', viewport: { width: 1280, height: 720 } });
+test.use({ viewport: { width: 1280, height: 720 } });
 const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(({ key, save }) => {

@@ -1,11 +1,10 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/test';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { sampleStateV2 } from '../../src/layout/sampleState';
 import { mockV2Save } from '../../src/api/mockV2Fixtures';
 
-// The existing classic project discovers ui/**; use its v2 server for this card.
-test.use({ baseURL: process.env.U3_V2_BASE_URL ?? 'http://localhost:4174', reducedMotion: 'reduce' });
+test.use({ reducedMotion: 'reduce' });
 const key = readFileSync(path.resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 const sizes = [[1600, 900], [1280, 720], [390, 844], [320, 568]] as const;
 

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { sampleStateV2 } from '../../src/layout/sampleState';

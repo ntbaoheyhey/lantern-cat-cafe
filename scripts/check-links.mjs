@@ -118,6 +118,10 @@ function classifyBacktickToken(token) {
   if (/^(?:POST|GET|PUT|DELETE|PATCH)\s+/i.test(trimmed)) return null;
   if (trimmed.startsWith('@')) return null; // Scoped npm package (@taskbar-hero/...)
 
+  // Angle-bracket segments describe a template, not a literal committed file.
+  // Only backticked examples are exempt; real Markdown/HTML links still resolve.
+  if (/<[^<>/]+>/.test(trimmed)) return null;
+
   // Relative paths starting with ./ or ../
   if (trimmed.startsWith('./') || trimmed.startsWith('../')) {
     return 'repo-path';

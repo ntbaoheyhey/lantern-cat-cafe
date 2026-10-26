@@ -256,7 +256,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
             Mini mode
           </button>
           <div className="v2-hint" data-testid="next-hint"><span className="v2-hint-lead" aria-hidden="true">Next</span><button className="v2-hint-btn" onClick={() => handleGo(state?.progress.gated ? 'Inventory' : 'Boss')}>{state?.progress.gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}</button></div>
-          <div className="v2-wallet pixel-btn--secondary">
+          <div className="v2-wallet">
             <WalletButton />
             <span className="v2-wallet-icon" aria-hidden="true"><PixelIcon name="bag" /></span>
             <p className="v2-mode-note" title={mode.demo ? 'Demo mode — progress is saved in this browser.' : 'Signed in — progress is saved to your account.'}>

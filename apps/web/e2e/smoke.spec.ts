@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('strip renders a canvas and the panel opens and closes', async ({ page }) => {
   const errors: string[] = [];
