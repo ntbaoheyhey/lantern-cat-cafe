@@ -169,3 +169,8 @@ it('phone: panel opening moves focus inside and closing returns it to the select
   fireEvent.click(screen.getByRole('button', { name: 'Close panel' }));
   expect(document.activeElement).toBe(market);
 });
+
+it('marks the production stage root when VITE_GAME_V2 is enabled', () => {
+  render(<App />);
+  expect(screen.getByRole('region', { name: 'Game stage' }).closest('.v2-shell')?.getAttribute('data-game-v2')).toBe('stage-v2-enabled');
+});

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/test';
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';

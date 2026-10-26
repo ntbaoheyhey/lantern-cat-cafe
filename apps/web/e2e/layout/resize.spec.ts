@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../support/test';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
 import { stageHeight, stageZoom } from '../../src/layout/metrics';
 import fs from 'node:fs';

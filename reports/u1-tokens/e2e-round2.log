@@ -1,0 +1,148 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/Documents/ChatGPT/taskbar-hero-u1/apps/web
+> playwright test
+
+[WebServer] (node:7861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7867) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7895) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/Documents/ChatGPT/taskbar-hero-u1/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:7940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 80 tests using 6 workers
+
+(node:7951) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7949) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7947) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7950) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [classic] › e2e/a11y.spec.ts:32:5 › Accessibility at 390px › How to play traps Tab in both directions and Escape returns focus to Menu (631ms)
+  ✓   2 [classic] › e2e/forge.spec.ts:3:1 › forge tab shows the cost, odds and why forging is blocked in demo mode (776ms)
+  ✓   5 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › fresh (957ms)
+  ✓   3 [classic] › e2e/boss.spec.ts:3:1 › boss tab fights, replays the log and shows the outcome (1.2s)
+  ✓   7 [classic] › e2e/a11y.spec.ts:57:5 › Accessibility at 390px › every tab is reachable with Tab and activates with Enter and Space (739ms)
+  ✓   8 [classic] › e2e/market.spec.ts:3:1 › market tab asks for a wallet when none is connected (716ms)
+  ✓   9 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › idle (760ms)
+  ✓  10 [classic] › e2e/onboarding.spec.ts:3:1 › first visit shows How to play; closing it reveals the game and it stays closed (796ms)
+  ✓  12 [classic] › e2e/polish.spec.ts:35:3 › 320px: no horizontal scroll and no overlap between the HUD, wallet and Menu (463ms)
+  ✓   4 [classic] › e2e/demo-path.spec.ts:8:5 › Judge demo path at 390px › plays from onboarding through upgrading, a boss fight, Forge and Market (2.0s)
+  ✓  11 [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 390px › buttons and links have accessible names on onboarding and every tab (987ms)
+  ✓  13 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › equip (668ms)
+  ✓  15 [classic] › e2e/polish.spec.ts:35:3 › 390px: no horizontal scroll and no overlap between the HUD, wallet and Menu (451ms)
+  ✓  14 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 1280px with no horizontal scroll and valid layout (744ms)
+  ✓  19 [classic] › e2e/polish.spec.ts:35:3 › 1280px: no horizontal scroll and no overlap between the HUD, wallet and Menu (425ms)
+  ✓  17 [classic] › e2e/a11y.spec.ts:94:5 › Accessibility at 390px › primary Forge text and background have at least 4.5:1 contrast (596ms)
+  ✓  20 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 390px with no horizontal scroll and valid layout (727ms)
+  ✓  22 [classic] › e2e/a11y.spec.ts:121:5 › Accessibility at 390px › reduced motion leaves no running CSS animations on the Forge tab (704ms)
+  ✓  24 [classic] › e2e/a11y.spec.ts:32:5 › Accessibility at 1280px › How to play traps Tab in both directions and Escape returns focus to Menu (459ms)
+  ✓  23 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 320px with no horizontal scroll and valid layout (704ms)
+  ✓  18 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › win (1.8s)
+  ✓  16 [classic] › e2e/demo-path.spec.ts:8:5 › Judge demo path at 1280px › plays from onboarding through upgrading, a boss fight, Forge and Market (2.2s)
+  ✓  28 [classic] › e2e/ui/u1-tokens.spec.ts:40:3 › 1280px tokens › computed tokens, real button target and no overflow (674ms)
+  ✓  25 [classic] › e2e/a11y.spec.ts:57:5 › Accessibility at 1280px › every tab is reachable with Tab and activates with Enter and Space (841ms)
+  ✓  27 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › loss (990ms)
+  ✓  29 [classic] › e2e/ui/u1-tokens.spec.ts:40:3 › 390px tokens › computed tokens, real button target and no overflow (688ms)
+  ✓  30 [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 1280px › buttons and links have accessible names on onboarding and every tab (906ms)
+  ✓  31 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › forge (1.0s)
+  ✓  32 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 1600x900 light › stage screenshot (669ms)
+  ✓  33 [classic] › e2e/a11y.spec.ts:94:5 › Accessibility at 1280px › primary Forge text and background have at least 4.5:1 contrast (550ms)
+  ✓   1 [classic] › e2e/inventory.spec.ts:3:1 › inventory tab equips a demo item and the power goes up (6.5s)
+  ✓  34 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 1280px › reload (691ms)
+  ✓  35 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 1280x720 light › stage screenshot (678ms)
+  ✘  21 [classic] › e2e/polish.spec.ts:101:3 › reduced motion › the forge reveal shows the Relic without motion (4.1s)
+(node:8107) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  36 [classic] › e2e/a11y.spec.ts:121:5 › Accessibility at 1280px › reduced motion leaves no running CSS animations on the Forge tab (721ms)
+(node:8110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  38 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 390x844 light › stage screenshot (807ms)
+  ✓  37 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › fresh (931ms)
+(node:8112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [classic] › e2e/smoke.spec.ts:3:1 › strip renders a canvas and the panel opens and closes (4.0s)
+  ✓  42 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › idle (779ms)
+  ✓  41 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 320x568 light › stage screenshot (819ms)
+(node:8137) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  40 [classic] › e2e/polish.spec.ts:127:1 › tabs switch with the keyboard (Tab and Enter) (751ms)
+  ✓  43 [stage-layout] › e2e/layout/character-bag.spec.ts:47:3 › character panel and bag are visible without horizontal scroll at 320px (715ms)
+  ✓  39 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 390px reduce (1.7s)
+  ✓  45 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 1280x720 dark › stage screenshot (773ms)
+  ✓  44 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › equip (938ms)
+(node:8142) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  46 [stage-layout] › e2e/layout/character-bag.spec.ts:65:3 › equipping from the bag updates the slot name and locked slots show their level at 320px (885ms)
+  ✓  49 [classic] › e2e/ui/u1-tokens.spec.ts:59:3 › evidence 390x844 dark › stage screenshot (768ms)
+  ✓  51 [stage-layout] › e2e/layout/character-bag.spec.ts:47:3 › character panel and bag are visible without horizontal scroll at 390px (580ms)
+(node:8214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  48 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 390px no-preference (1.6s)
+  ✓  53 [stage-layout] › e2e/layout/character-bag.spec.ts:65:3 › equipping from the bag updates the slot name and locked slots show their level at 390px (672ms)
+  ✓  56 [stage-layout] › e2e/layout/character-bag.spec.ts:47:3 › character panel and bag are visible without horizontal scroll at 1280px (415ms)
+  ✓  52 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 320px (1.5s)
+  ✓  50 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › win (2.0s)
+  ✓  47 [stage-layout] › e2e/layout/resize.spec.ts:20:40 › continuous resize preserves state and readable HUD (dark) (2.7s)
+  ✓  57 [stage-layout] › e2e/layout/character-bag.spec.ts:65:3 › equipping from the bag updates the slot name and locked slots show their level at 1280px (743ms)
+  ✓  55 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px reduce (1.5s)
+  ✓  54 [stage-layout] › e2e/layout/stage-redraw.spec.ts:9:67 › both actors survive scene recreation (no-preference) (1.8s)
+  ✓  59 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › loss (1.3s)
+  ✓  58 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 320px with reduced motion (1.5s)
+  ✓  61 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px no-preference (1.6s)
+  ✓  63 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › forge (1.4s)
+  ✓  64 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 390px (1.3s)
+  ✓  60 [stage-layout] › e2e/layout/resize.spec.ts:20:40 › continuous resize preserves state and readable HUD (light) (2.5s)
+  ✓  62 [stage-layout] › e2e/layout/stage-redraw.spec.ts:9:67 › both actors survive scene recreation (reduce) (2.6s)
+  ✓  65 [v2-loop] › e2e/v2/loop.spec.ts:129:63 › 390px › reload (1.1s)
+  ✓  66 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 390px with reduced motion (1.7s)
+  ✓  68 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px (1.3s)
+  ✓  69 [stage-layout] › e2e/layout/stage-layout.spec.ts:64:5 › stage layout at 1280px with reduced motion (1.2s)
+  ✓  67 [v2-loop] › e2e/v2/loop.spec.ts:138:1 › full loop at 390px with reduced motion (4.1s)
+  ✓  70 [stage-layout] › e2e/layout/stage-layout.spec.ts:120:3 › desktop tabs › shows Inventory, Boss, Forge, Market and Help; every tab is reachable by keyboard (1.3s)
+  ✓  71 [stage-layout] › e2e/layout/stage-layout.spec.ts:138:3 › desktop tabs › arrow keys move focus along the tabs (441ms)
+  ✓  72 [stage-layout] › e2e/layout/stage-layout.spec.ts:150:3 › desktop tabs › buttons and links have accessible names on every tab (1.7s)
+  ✓  73 [stage-layout] › e2e/layout/stage-layout.spec.ts:160:3 › desktop tabs › the next-step chip opens the tab it points to (556ms)
+  ✓  74 [stage-layout] › e2e/layout/stage-layout.spec.ts:172:3 › phone bottom sheet › opens from the bottom nav, covers at most 60% of the screen and closes again (1.1s)
+  ✓  75 [stage-layout] › e2e/layout/stage-layout.spec.ts:204:3 › phone bottom sheet › every nav tab is reachable by keyboard (679ms)
+  ✓  76 [stage-layout] › e2e/layout/stage-layout.spec.ts:216:3 › phone bottom sheet › the sheet does not hide the stage (576ms)
+  ✓  77 [stage-layout] › e2e/layout/stage-layout.spec.ts:230:3 › Mini mode › switches to the classic 96 px strip, is remembered, and switches back (829ms)
+  ✓  78 [stage-layout] › e2e/layout/stage-layout.spec.ts:250:3 › Mini mode › works when localStorage throws (771ms)
+  ✓  79 [stage-layout] › e2e/layout/stage-layout.spec.ts:269:3 › v2 class choice and timed claim at 390px (844ms)
+  ✓  80 [stage-layout] › e2e/layout/stage-layout.spec.ts:269:3 › v2 class choice and timed claim at 1280px (759ms)
+
+
+  1) [classic] › e2e/polish.spec.ts:101:3 › reduced motion › the forge reveal shows the Relic without motion 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "fz-fade"
+    Received: "none"
+
+      117 |     await expect(relic).toBeVisible();
+      118 |     const relicAnimation = await relic.evaluate((el) => getComputedStyle(el).animationName);
+    > 119 |     expect(relicAnimation).toBe('fz-fade');
+          |                            ^
+      120 |
+      121 |     // The reveal ends and the result is on screen.
+      122 |     await page.clock.runFor(1000);
+        at /Users/bao/Documents/ChatGPT/taskbar-hero-u1/apps/web/e2e/polish.spec.ts:119:28
+
+    Error Context: test-results/polish-reduced-motion-the--ec0ad-ws-the-Relic-without-motion-classic/error-context.md
+
+  1 failed
+    [classic] › e2e/polish.spec.ts:101:3 › reduced motion › the forge reveal shows the Relic without motion 
+  79 passed (31.9s)
+ ELIFECYCLE  Command failed with exit code 1.

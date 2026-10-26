@@ -1,10 +1,9 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { mockV2Save } from '../../src/api/mockV2Fixtures';
 
-// The existing classic project discovers ui/**; target its v2 preview server explicitly.
-test.use({ baseURL: 'http://localhost:4174', reducedMotion: 'reduce' });
+test.use({ reducedMotion: 'reduce' });
 const key = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8')
   .match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 const sizes = [

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../support/test';
 import { mockV2SaveJson, type MockV2FixtureKind } from '../../src/api/mockV2Fixtures';
 
 const KEY = 'taskbar-hero:v2-demo:1';

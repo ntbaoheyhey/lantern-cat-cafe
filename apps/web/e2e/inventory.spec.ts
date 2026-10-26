@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('inventory tab equips a demo item and the power goes up', async ({ page }) => {
   const errors: string[] = [];

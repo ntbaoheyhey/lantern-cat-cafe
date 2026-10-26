@@ -1,10 +1,9 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { sampleStateV2 } from '../../src/layout/sampleState';
 import { mockV2Save } from '../../src/api/mockV2Fixtures';
 
-test.use({ baseURL: 'http://localhost:4174' });
 
 const STORAGE_KEY = fs
   .readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8')
@@ -193,8 +192,7 @@ for (const vp of CHECK_VIEWPORTS) {
 }
 
 test('capture screenshots', async ({ page }) => {
-  test.skip(!writeScreenshots, 'Screenshots requested only when SCREENSHOTS=1');
-  fs.mkdirSync(reportsDir, { recursive: true });
+  if (writeScreenshots) fs.mkdirSync(reportsDir, { recursive: true });
 
   const viewports = [
     { w: 1600, h: 900, dark: false },
@@ -214,7 +212,7 @@ test('capture screenshots', async ({ page }) => {
       await expect(page.getByRole('tabpanel', { name: 'Inventory', exact: true })).toBeVisible();
     }
     const name = `${screenshotPrefix}-${vp.w}x${vp.h}${vp.dark ? '-dark' : ''}.png`;
-    await page.screenshot({ path: path.join(reportsDir, name) });
+    if (writeScreenshots) await page.screenshot({ path: path.join(reportsDir, name) });
   }
 
   // Bag sheet open on phone (390x844)
@@ -222,5 +220,5 @@ test('capture screenshots', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await openInventory(page, 390);
-  await page.screenshot({ path: path.join(reportsDir, `${screenshotPrefix}-390x844-sheet.png`) });
+  if (writeScreenshots) await page.screenshot({ path: path.join(reportsDir, `${screenshotPrefix}-390x844-sheet.png`) });
 });

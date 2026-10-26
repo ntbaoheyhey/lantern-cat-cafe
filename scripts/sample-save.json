@@ -1,0 +1,449 @@
+{
+  "v": 1,
+  "state": {
+    "classId": "warrior",
+    "level": 12,
+    "xp": 84,
+    "chapter": 2,
+    "round": 3,
+    "kills": 4,
+    "bestStage": 14,
+    "stacks": {
+      "fish": 120,
+      "yarn": 35,
+      "catKey": 1
+    },
+    "items": [
+      {
+        "id": "it-1",
+        "itemKey": "wpn.sword.twig",
+        "slot": "weapon",
+        "weaponType": "sword",
+        "rarity": "common",
+        "level": 4,
+        "bonus": [],
+        "locked": false,
+        "equipped": true,
+        "itemId": "wpn.sword.twig",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-2",
+        "itemKey": "arm.cozy.helmet.uncommon",
+        "slot": "helmet",
+        "rarity": "uncommon",
+        "level": 6,
+        "bonus": [
+          {
+            "stat": "dodge",
+            "value": 0.01
+          }
+        ],
+        "locked": false,
+        "equipped": true,
+        "itemId": "arm.cozy.helmet.uncommon",
+        "bonusLines": [
+          {
+            "stat": "dodge",
+            "value": 0.01
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-3",
+        "itemKey": "arm.cozy.armor.common",
+        "slot": "armor",
+        "rarity": "common",
+        "level": 3,
+        "bonus": [],
+        "locked": false,
+        "equipped": true,
+        "itemId": "arm.cozy.armor.common",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-4",
+        "itemKey": "arm.ranger.gloves.rare",
+        "slot": "gloves",
+        "rarity": "rare",
+        "level": 8,
+        "bonus": [
+          {
+            "stat": "critChance",
+            "value": 0.03
+          },
+          {
+            "stat": "attackSpeed",
+            "value": 0.03
+          }
+        ],
+        "locked": false,
+        "equipped": true,
+        "itemId": "arm.ranger.gloves.rare",
+        "bonusLines": [
+          {
+            "stat": "critChance",
+            "value": 0.03
+          },
+          {
+            "stat": "attackSpeed",
+            "value": 0.03
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-5",
+        "itemKey": "arm.cozy.boots.common",
+        "slot": "boots",
+        "rarity": "common",
+        "level": 2,
+        "bonus": [],
+        "locked": false,
+        "equipped": true,
+        "itemId": "arm.cozy.boots.common",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-6",
+        "itemKey": "acc.collar.studded.uncommon",
+        "slot": "collar",
+        "rarity": "uncommon",
+        "level": 5,
+        "bonus": [
+          {
+            "stat": "xpBonus",
+            "value": 0.03
+          }
+        ],
+        "locked": false,
+        "equipped": true,
+        "itemId": "acc.collar.studded.uncommon",
+        "bonusLines": [
+          {
+            "stat": "xpBonus",
+            "value": 0.03
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-7",
+        "itemKey": "acc.earring.fishhook.uncommon",
+        "slot": "earring",
+        "rarity": "uncommon",
+        "level": 5,
+        "bonus": [
+          {
+            "stat": "materialFind",
+            "value": 0.03
+          }
+        ],
+        "locked": false,
+        "equipped": true,
+        "itemId": "acc.earring.fishhook.uncommon",
+        "bonusLines": [
+          {
+            "stat": "materialFind",
+            "value": 0.03
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-8",
+        "itemKey": "wpn.sword.silver",
+        "slot": "weapon",
+        "weaponType": "sword",
+        "rarity": "rare",
+        "level": 7,
+        "bonus": [
+          {
+            "stat": "critDamage",
+            "value": 0.1
+          }
+        ],
+        "locked": false,
+        "equipped": false,
+        "itemId": "wpn.sword.silver",
+        "bonusLines": [
+          {
+            "stat": "critDamage",
+            "value": 0.1
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-9",
+        "itemKey": "wpn.hammer.cork",
+        "slot": "weapon",
+        "weaponType": "hammer",
+        "rarity": "uncommon",
+        "level": 5,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "wpn.hammer.cork",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-10",
+        "itemKey": "wpn.sword.sunfang",
+        "slot": "weapon",
+        "weaponType": "sword",
+        "rarity": "epic",
+        "level": 10,
+        "bonus": [
+          {
+            "stat": "attackSpeed",
+            "value": 0.04
+          }
+        ],
+        "locked": true,
+        "equipped": false,
+        "itemId": "wpn.sword.sunfang",
+        "bonusLines": [
+          {
+            "stat": "attackSpeed",
+            "value": 0.04
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-11",
+        "itemKey": "arm.moon.helmet.epic",
+        "slot": "helmet",
+        "rarity": "epic",
+        "level": 10,
+        "bonus": [
+          {
+            "stat": "dodge",
+            "value": 0.02
+          }
+        ],
+        "locked": false,
+        "equipped": false,
+        "itemId": "arm.moon.helmet.epic",
+        "bonusLines": [
+          {
+            "stat": "dodge",
+            "value": 0.02
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-12",
+        "itemKey": "arm.cozy.armor.uncommon",
+        "slot": "armor",
+        "rarity": "uncommon",
+        "level": 6,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "arm.cozy.armor.uncommon",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-13",
+        "itemKey": "arm.ranger.gloves.common",
+        "slot": "gloves",
+        "rarity": "common",
+        "level": 3,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "arm.ranger.gloves.common",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-14",
+        "itemKey": "arm.moon.boots.legendary",
+        "slot": "boots",
+        "rarity": "legendary",
+        "level": 14,
+        "bonus": [
+          {
+            "stat": "attackSpeed",
+            "value": 0.07
+          },
+          {
+            "stat": "fishBonus",
+            "value": 0.12
+          }
+        ],
+        "locked": false,
+        "equipped": false,
+        "itemId": "arm.moon.boots.legendary",
+        "bonusLines": [
+          {
+            "stat": "attackSpeed",
+            "value": 0.07
+          },
+          {
+            "stat": "fishBonus",
+            "value": 0.12
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-15",
+        "itemKey": "acc.collar.bell.common",
+        "slot": "collar",
+        "rarity": "common",
+        "level": 4,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "acc.collar.bell.common",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-16",
+        "itemKey": "acc.earring.feather.common",
+        "slot": "earring",
+        "rarity": "common",
+        "level": 2,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "acc.earring.feather.common",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-17",
+        "itemKey": "acc.ring.paw.epic",
+        "slot": "ring",
+        "rarity": "epic",
+        "level": 9,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "acc.ring.paw.epic",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-18",
+        "itemKey": "acc.charm.catnip.legendary",
+        "slot": "charm",
+        "rarity": "legendary",
+        "level": 20,
+        "bonus": [
+          {
+            "stat": "hpRegen",
+            "value": 0.006
+          }
+        ],
+        "locked": true,
+        "equipped": false,
+        "itemId": "acc.charm.catnip.legendary",
+        "bonusLines": [
+          {
+            "stat": "hpRegen",
+            "value": 0.006
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-19",
+        "itemKey": "arm.ranger.helmet.rare",
+        "slot": "helmet",
+        "rarity": "rare",
+        "level": 11,
+        "bonus": [
+          {
+            "stat": "dodge",
+            "value": 0.015
+          }
+        ],
+        "locked": false,
+        "equipped": false,
+        "itemId": "arm.ranger.helmet.rare",
+        "bonusLines": [
+          {
+            "stat": "dodge",
+            "value": 0.015
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-20",
+        "itemKey": "wpn.daggers.thorns",
+        "slot": "weapon",
+        "weaponType": "daggers",
+        "rarity": "uncommon",
+        "level": 8,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "wpn.daggers.thorns",
+        "bonusLines": [],
+        "source": "drop"
+      },
+      {
+        "id": "it-21",
+        "itemKey": "arm.cozy.gloves.epic",
+        "slot": "gloves",
+        "rarity": "epic",
+        "level": 12,
+        "bonus": [
+          {
+            "stat": "bossDamage",
+            "value": 0.07
+          }
+        ],
+        "locked": true,
+        "equipped": false,
+        "itemId": "arm.cozy.gloves.epic",
+        "bonusLines": [
+          {
+            "stat": "bossDamage",
+            "value": 0.07
+          }
+        ],
+        "source": "drop"
+      },
+      {
+        "id": "it-22",
+        "itemKey": "acc.ring.lucky.uncommon",
+        "slot": "ring",
+        "rarity": "uncommon",
+        "level": 4,
+        "bonus": [],
+        "locked": false,
+        "equipped": false,
+        "itemId": "acc.ring.lucky.uncommon",
+        "bonusLines": [],
+        "source": "drop"
+      }
+    ],
+    "bossClears": {},
+    "bossCooldownUntil": null,
+    "fights": 0,
+    "lastDailyKeyDay": null,
+    "lastRelicDay": null,
+    "progressRev": 1,
+    "killsPerRound": 10,
+    "gated": false,
+    "neededPower": 0
+  },
+  "lastClaimMs": 1793032896904,
+  "counter": 0,
+  "voucherNonce": 0,
+  "founder": false
+}

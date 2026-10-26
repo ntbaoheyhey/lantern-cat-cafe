@@ -1,9 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { mockV2Save } from '../../src/api/mockV2Fixtures';
 
-test.use({ baseURL: 'http://localhost:4174' });
 
 const STORAGE_KEY = fs
   .readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8')

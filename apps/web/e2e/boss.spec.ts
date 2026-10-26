@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('boss tab fights, replays the log and shows the outcome', async ({ page }) => {
   const errors: string[] = [];

@@ -1,6 +1,6 @@
 # Contest submission kit
 
-Ready-to-paste text for the Avalanche Team1 Vietnam UniHack 2026 submission. Every claim below comes from `README.md`, `docs/*` or the confirmed Fuji deployment, and is true on `main`.
+Ready-to-paste text for the Avalanche Team1 Vietnam UniHack 2026 submission. Every claim below comes from `README.md`, the files in `docs/` or the confirmed Fuji deployment, and is true on `main`.
 
 > **Before submitting**
 > - **Deadline and platform: TBD, confirm with organizers.** Do not paste a date from here.

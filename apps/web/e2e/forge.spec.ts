@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/test';
 
 test('forge tab shows the cost, odds and why forging is blocked in demo mode', async ({ page }) => {
   const errors: string[] = [];
