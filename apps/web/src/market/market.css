@@ -1,36 +1,327 @@
-.market { display: grid; gap: 20px; max-width: 640px; min-width: 0; }
-.market section { min-width: 0; }
-.market h3 { margin: 0 0 8px; font: 0.95rem var(--font-display); color: var(--gold); }
-.market-relics, .market-listings { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
-.market-relics { display: flex; flex-wrap: wrap; gap: 8px 12px; font-weight: 600; }
-.market-relics li { padding: 6px 10px; max-width: 100%; }
-.market-relics li, .market-relic { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.market-relics img, .market-relic img { image-rendering: pixelated; flex: none; }
-.market-relics li > span { min-width: 0; color: var(--text); overflow-wrap: anywhere; }
-.market-relics small { font-weight: 400; color: var(--muted); }
+/* Cat Café Quest - Relic Market styles */
 
-/* Two shop cards per shelf, with a single column on narrow panels. */
-.market-listings { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 12px; }
-.market-listings li { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 12px; padding: 14px; transition: transform 160ms ease; }
-.market-relic { --market-glow: var(--rarity-common); }
-.market-relic.rarity-rare { --market-glow: var(--rarity-rare); }
-.market-relic.rarity-epic { --market-glow: var(--rarity-epic); }
-.market-relic.rarity-legendary { --market-glow: var(--rarity-legendary); }
-.market-art { display: grid; place-items: center; flex: none; width: 64px; height: 64px; background: var(--surface-2); border: 2px solid var(--market-glow); box-shadow: inset 0 0 12px color-mix(in srgb, var(--market-glow) 15%, transparent), 0 0 12px color-mix(in srgb, var(--market-glow) 25%, transparent); }
-.market-relic-info { display: grid; gap: 4px; min-width: 0; color: var(--text); overflow-wrap: anywhere; }
-.market-relic-info strong { font-family: var(--font-display); font-size: 1rem; }
-.market-relic-info small, .market-seller { color: var(--muted); font-size: 0.8rem; }
-.market-price { display: flex; align-items: center; gap: 8px; min-width: 0; color: var(--gold); font: 700 0.85rem var(--font-num); }
-.market-price svg { flex: none; }
-.market-price span { min-width: 0; overflow-wrap: anywhere; }
-.market-seller { overflow-wrap: anywhere; }
-.market-listing .forge-btn { width: 100%; justify-self: stretch; min-height: 40px; }
-.market-listing .forge-btn:not(.pixel-btn) { color: var(--text); background: var(--surface-2); border: 2px solid var(--border); }
-.market-form { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; }
-.market-form label { display: grid; gap: 4px; min-width: 0; max-width: 100%; font-size: 0.85rem; }
-.market-form input, .market-form select { box-sizing: border-box; min-width: 0; min-height: 36px; max-width: 140px; color: var(--text); background: var(--surface-2); border: 2px solid var(--border); border-radius: 0; padding: 0 6px; font: inherit; }
-.market-form input::placeholder { color: var(--muted); opacity: 1; }
-.tabpanel .market-hint { font-size: 0.8rem; color: var(--muted); margin: 0; }
-@media (max-width: 480px) { .market-listings { grid-template-columns: minmax(0, 1fr); } }
-@media (hover: hover) { .market-listing:hover { transform: translateY(-2px); } }
-@media (prefers-reduced-motion: reduce) { .market-listings .market-listing { transition: none; transform: none; } }
+.market {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4, 16px);
+  max-width: 65ch;
+  min-width: 0;
+  color: var(--text, #fff3e0);
+  box-sizing: border-box;
+}
+
+.market section {
+  min-width: 0;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  padding: var(--sp-3, 12px) var(--sp-4, 16px);
+  box-sizing: border-box;
+}
+
+.market h3 {
+  margin: 0 0 var(--sp-1, 4px) 0;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-md, 1rem);
+  color: var(--gold, #ffb86b);
+  letter-spacing: 0.02em;
+}
+
+.market-hint {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-xs, .75rem);
+  color: var(--muted, #c3aed0);
+  margin: 0 0 var(--sp-2, 8px) 0;
+}
+
+/* My Relics list */
+.market-relics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2, 8px);
+  margin: var(--sp-2, 8px) 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.market-relics li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-1, 4px) var(--sp-2, 8px);
+  background: var(--surface, #2a1f36);
+  border: 1px solid var(--border, #5b4572);
+  box-shadow: none;
+  font-size: var(--fs-xs, .75rem);
+}
+
+.market-relics img {
+  image-rendering: pixelated;
+  flex: none;
+}
+
+.market-relics li > span {
+  min-width: 0;
+  color: var(--text, #fff3e0);
+  overflow-wrap: anywhere;
+}
+
+.market-relics small {
+  color: var(--muted, #c3aed0);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+}
+
+/* Market listings: list rows */
+.market-listings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+  margin: var(--sp-2, 8px) 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.market-listings li.market-listing {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--sp-3, 12px);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  background: var(--surface, #2a1f36);
+  border: 1px solid var(--border, #5b4572);
+  box-shadow: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 520px) {
+  .market-listings li.market-listing {
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-2, 8px);
+  }
+  .market-price {
+    grid-column: 1 / -1;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+  }
+  .market-seller {
+    grid-column: 1 / 2;
+  }
+  .market-listing .forge-btn {
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+}
+
+.market-relic {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+  min-width: 0;
+  --market-glow: var(--rarity-common, #b9b6c9);
+}
+
+.market-relic.rarity-rare {
+  --market-glow: var(--rarity-rare, #4aa8ff);
+}
+
+.market-relic.rarity-epic {
+  --market-glow: var(--rarity-epic, #bb74ff);
+}
+
+.market-relic.rarity-legendary {
+  --market-glow: var(--rarity-legendary, #ff9a3c);
+}
+
+.market-art {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  background: var(--bg, #1a1220);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+}
+
+.market-art img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.market-relic-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  color: var(--text, #fff3e0);
+  overflow-wrap: anywhere;
+}
+
+.market-relic-info strong {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-sm, .875rem);
+}
+
+.market-relic-info small {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, .75rem);
+  color: var(--muted, #c3aed0);
+}
+
+.market-seller {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-xs, .75rem);
+  color: var(--muted, #c3aed0);
+  white-space: nowrap;
+}
+
+/* Price in --font-num right aligned */
+.market-price {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1, 4px);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-sm, .875rem);
+  font-weight: 700;
+  color: var(--gold, #ffb86b);
+  margin-left: auto;
+  text-align: right;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.market-price svg {
+  flex: none;
+}
+
+/* Actions: Secondary View/Cancel, Primary Buy */
+.market-listing .forge-btn {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, .75rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  min-height: 36px;
+  padding: var(--sp-1, 4px) var(--sp-3, 12px);
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.market-listing .forge-btn:not(.pixel-btn) {
+  color: var(--text, #fff3e0);
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  box-shadow: none;
+}
+
+.market-listing .forge-btn.pixel-btn {
+  color: var(--on-accent, #1a1200);
+  background: var(--accent, #ffb86b);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  font-weight: 800;
+}
+
+.market-listing .forge-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Sell Form */
+.market-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--sp-2, 8px) var(--sp-3, 12px);
+  margin-top: var(--sp-2, 8px);
+}
+
+.market-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, 4px);
+  min-width: 0;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-xs, .75rem);
+  color: var(--muted, #c3aed0);
+}
+
+.market-form input,
+.market-form select {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 36px;
+  max-width: 140px;
+  color: var(--text, #fff3e0);
+  background: var(--surface, #2a1f36);
+  border: 1px solid var(--border, #5b4572);
+  padding: 0 var(--sp-2, 8px);
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-size: var(--fs-xs, .75rem);
+}
+
+.market-form input::placeholder {
+  color: var(--muted, #c3aed0);
+  opacity: 0.7;
+}
+
+.market-form .forge-btn {
+  min-height: 36px;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-xs, .75rem);
+  font-weight: 700;
+  padding: 0 var(--sp-3, 12px);
+  background: var(--surface, #2a1f36);
+  border: 1px solid var(--border, #5b4572);
+  color: var(--text, #fff3e0);
+  cursor: pointer;
+}
+
+.market-form .forge-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Empty states: 32px muted icon + one sentence */
+[data-testid='relics-empty'],
+[data-testid='listings-empty'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-4, 16px);
+  background: var(--surface, #2a1f36);
+  border: 1px dashed var(--border, #5b4572);
+  color: var(--muted, #c3aed0);
+  text-align: center;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: var(--fs-sm, .875rem);
+  margin: var(--sp-2, 8px) 0 0 0;
+}
+
+[data-testid='relics-empty']::before,
+[data-testid='listings-empty']::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: var(--muted, #c3aed0);
+  opacity: 0.6;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-listings li.market-listing {
+    transition: none !important;
+    transform: none !important;
+  }
+}

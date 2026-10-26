@@ -55,6 +55,11 @@ export function HelpTab() {
 
   return (
     <div className="help-v2-container">
+      <header className="help-panel-header">
+        <div className="help-panel-title">Cat Café Guide</div>
+        <p className="help-panel-desc">Learn how Mochi explores, levels up, and finds treasures while you work.</p>
+      </header>
+
       <section className="help-v2-section">
         <h3>Getting started</h3>
         <p>
@@ -91,7 +96,10 @@ export function HelpTab() {
             </li>
           ))}
         </ol>
-        <p>Being &quot;gated&quot; means the cat needs more power (upgrade gear).</p>
+        <dl className="help-v2-terms">
+          <dt className="help-v2-term">Gated</dt>
+          <dd className="help-v2-def">Being &quot;gated&quot; means the cat needs more power (upgrade gear).</dd>
+        </dl>
       </section>
 
       <section className="help-v2-section">
@@ -132,6 +140,18 @@ export function HelpTab() {
           Mini mode collapses the game into the classic 96 px taskbar strip for background play. Toggle it anytime using the Mini mode button in the top bar.
         </p>
       </section>
+
+      <div className="help-v2-action">
+        <button
+          type="button"
+          className="pixel-btn help-v2-btn"
+          onClick={() => {
+            document.querySelector<HTMLElement>('.v2-stage')?.focus();
+          }}
+        >
+          Start Exploring
+        </button>
+      </div>
     </div>
   );
 }

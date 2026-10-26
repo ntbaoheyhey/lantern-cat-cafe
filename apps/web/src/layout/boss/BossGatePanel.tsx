@@ -154,6 +154,30 @@ export function BossGatePanel({
   const isFightDisabled = busy || !isReady;
   const ariaDescribedBy = isFightDisabled && visibleStatusText ? statusTextId : undefined;
 
+  const playerStats = state.cat.classId
+    ? v2.deriveStats(
+        { classId: state.cat.classId, level: state.cat.level },
+        state.inventory
+          .filter((i) => i.equipped)
+          .map((i) => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus })),
+      )
+    : null;
+  const playerPower = playerStats ? Math.round(v2.powerRating(playerStats)) : 0;
+  const neededPower =
+    status.kind === 'gated'
+      ? status.neededPower
+      : state.progress.chapter === chapter
+        ? (state.progress.neededPower ?? 0)
+        : 0;
+  const maxScale = Math.max(playerPower, neededPower, 1);
+  const playerPct = Math.min(100, Math.round((playerPower / maxScale) * 100));
+  const bossPct =
+    neededPower > 0
+      ? Math.min(100, Math.round((neededPower / maxScale) * 100))
+      : playerPower > 0
+        ? 100
+        : 0;
+
   return (
     <section
       className="boss-gate-panel"
@@ -168,14 +192,42 @@ export function BossGatePanel({
         </div>
       </header>
 
-      <div className="boss-gate-body">
+      <div className="boss-gate-body boss-gate-card">
         <div className="boss-portrait-container">
-          <BossPortrait chapter={chapter} />
+          <BossPortrait chapter={chapter} zoom={2.5} />
         </div>
 
-        <div className="boss-gate-keys">
-          <PixelIcon name="key" size={2} />
-          <span>Keys: {state.currencies?.keys ?? 0}</span>
+        <div className="boss-card-info">
+          <div className="boss-card-chips">
+            <div className="boss-gate-keys chip">
+              <PixelIcon name="key" size={2} />
+              <span>Keys: {state.currencies?.keys ?? 0}</span>
+            </div>
+            <div className="boss-key-cost chip">
+              <PixelIcon name="key" size={2} />
+              <span>Cost: {v2.V2_CONFIG.boss.keyCost}</span>
+            </div>
+          </div>
+
+          <div className="boss-power-comparison" aria-label="Your power vs boss">
+            <div className="boss-power-header">
+              <span className="boss-power-label">Your power vs boss</span>
+            </div>
+            <div className="boss-power-bars" aria-hidden="true">
+              <div className="boss-bar-row">
+                <span className="boss-bar-name">You</span>
+                <div className="boss-bar-track" title={`Your power: ${playerPower}`}>
+                  <div className="boss-bar-fill you" style={{ width: `${playerPct}%` }} />
+                </div>
+              </div>
+              <div className="boss-bar-row">
+                <span className="boss-bar-name">Boss</span>
+                <div className="boss-bar-track" title={`Boss: ${neededPower > 0 ? neededPower : 'Ready'}`}>
+                  <div className="boss-bar-fill boss" style={{ width: `${bossPct}%` }} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -196,7 +248,7 @@ export function BossGatePanel({
       <div className="boss-gate-actions">
         <button
           type="button"
-          className="boss-fight-btn"
+          className="boss-fight-btn pixel-btn"
           disabled={isFightDisabled}
           aria-busy={busy ? 'true' : 'false'}
           aria-describedby={ariaDescribedBy}
