@@ -137,9 +137,9 @@ export function renderNumbersReportV2(current: SimResultV2[], proposed: SimResul
       'class-spread': 'classes.ts stats.atk / attackIntervalMs / passive damage, and guardian HP/DEF/bonk delay',
       'boss-check': 'classes.ts guardian HP/DEF/bonk and per-class survival multipliers; per-chapter boss HP/ATK alone did not satisfy every class',
     };
-    return `- ${f.id}: ${witness ? `reachable with config (set found: ranked candidate ${ranked.indexOf(witness) + 1})` : `needs content change: ${lever[f.id] ?? 'content-specific tuning'}`} — sim evidence: ${f.detail}.`;
+    return `- ${f.id}: ${witness ? `reachable with config (set found: ranked candidate ${ranked.indexOf(witness) + 1})` : `no satisfying config found in the measured family: ${lever[f.id] ?? 'content-specific tuning'}`} — sim evidence: ${f.detail}.`;
   });
-  return `# Cat RPG v2 numbers proposal (V6f)
+  return `# Cat RPG v2 numbers proposal (V6h)
 
 Proposal only. V2_CONFIG unchanged.
 
@@ -216,7 +216,7 @@ ${CLASSES.map(cls => {
 
 ${timesV2(diagnostic, true)}
 
-## Ranked top three best available (strict targets only)
+## Inherited V6f ranked controls (strict targets only; V6h search in the task report)
 
 ${ranked.map((r, i) => `### Candidate ${i + 1}
 
@@ -238,11 +238,13 @@ ${timesV2(current, true)}
 
 ## Method and limits
 
-29 deterministic final-family candidates: frozen C5c S-B and C5c main controls plus 3 pacing families × 3 boss-HP families (all with chapter ATK 0.85/1.5/2.5/3/3.5) × 3 ATK/XP families. Every candidate has firstClearKeys=1 and dailyKeys=3. Screen: seed 1, every class, 120 active minutes. Top five plus both controls refined on seeds 1–3; final top three shown on seeds 1–3, every class, 1,800 active minutes. Selected proposal: seeds 1–20. Strict target count dominates ranking, followed by chapter-5 completeness and first-boss-window frequency; the retained claim-size stability diagnostic is an eligibility preference. Relaxed checks are report-only. Simulation rewards and timing otherwise retain C5c behavior; full-result digests prove the old S-B refund equals its config-leaf replacement on seeds 1–3. Missing milestones remain Infinity; no failures are dropped. V2_CONFIG and classes.ts are unchanged.
+Inherited V6f search (retained as a control): 29 deterministic final-family candidates: frozen C5c S-B and C5c main controls plus 3 pacing families × 3 boss-HP families (all with chapter ATK 0.85/1.5/2.5/3/3.5) × 3 ATK/XP families. Every candidate has firstClearKeys=1 and dailyKeys=3. Screen: seed 1, every class, 120 active minutes. Top five plus both controls refined on seeds 1–3; final top three shown on seeds 1–3, every class, 1,800 active minutes. Selected proposal: seeds 1–20. Strict target count dominates ranking, followed by chapter-5 completeness and first-boss-window frequency; the retained claim-size stability diagnostic is an eligibility preference. Relaxed checks are report-only. Simulation rewards and timing otherwise retain C5c behavior; full-result digests prove the old S-B refund equals its config-leaf replacement on seeds 1–3. Missing milestones remain Infinity; no failures are dropped. V2_CONFIG and classes.ts are unchanged.
 
 ## Not overridable
 
 ${NOT_OVERRIDABLE_V2.map(x => `- ${x}`).join('\n')}
+
+Numbers sign-off belongs to the user (D4, planning date 30 Oct). V6h pacing measurements and search coverage are recorded in reports/v6h-pacing.md. Class multipliers are content, not overridable config leaves; none were applied or simulated through an unguarded override.
 
 ## Sign-off
 

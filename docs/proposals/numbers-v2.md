@@ -1,4 +1,4 @@
-# Cat RPG v2 numbers proposal (V6f)
+# Cat RPG v2 numbers proposal (V6h)
 
 Proposal only. V2_CONFIG unchanged.
 
@@ -226,7 +226,7 @@ Illustrative content levers to investigate, NEVER applied or approved: estimate 
 | witch | 13.9 / 14.0 / 14.1 | 27.3 / 27.4 / 27.4 | 41.3 / 41.9 / 42.3 | 56.0 / 56.1 / 57.3 | 71.3 / 71.8 / 73.9 | 11 | 33 |
 | alchemist | 14.0 / 14.2 / 14.2 | 26.4 / 27.3 / 27.3 | 39.5 / 40.5 / 40.8 | 54.4 / 55.3 / 55.5 | 68.8 / 69.3 / 70.6 | 11 | 32 |
 
-## Ranked top three best available (strict targets only)
+## Inherited V6f ranked controls (strict targets only; V6h search in the task report)
 
 ### Candidate 1
 
@@ -437,8 +437,8 @@ Illustrative content levers to investigate, NEVER applied or approved: estimate 
 
 ## Config witnesses / content questions
 
-- chapter-growth: needs content change: per-chapter pacing remains configurable; further search or chapter-specific XP/drop content — sim evidence: warrior ch2 0.88x; warrior ch3 1.04x; warrior ch4 0.99x; warrior ch5 1.05x; guardian ch2 0.95x; guardian ch3 0.98x; guardian ch4 1.07x; guardian ch5 1.02x; rogue ch2 0.91x; rogue ch3 0.95x; rogue ch4 1.00x; rogue ch5 1.04x; hunter ch2 0.89x; hunter ch3 1.01x; hunter ch4 1.04x; hunter ch5 1.02x; archer ch2 0.96x; archer ch3 0.98x; archer ch4 1.06x; archer ch5 1.04x; witch ch2 0.94x; witch ch3 1.07x; witch ch4 1.00x; witch ch5 1.07x; alchemist ch2 0.95x; alchemist ch3 1.02x; alchemist ch4 1.07x; alchemist ch5 1.03x.
-- boss-check: needs content change: classes.ts guardian HP/DEF/bonk and per-class survival multipliers; per-chapter boss HP/ATK alone did not satisfy every class — sim evidence: warrior ch1 first win 100.0%, median 33.86s; warrior ch2 first win 100.0%, median 36.68s; warrior ch3 first win 100.0%, median 39.78s; warrior ch4 first win 100.0%, median 46.11s; warrior ch5 first win 100.0%, median 85.96s; guardian ch1 first win 100.0%, median 34.12s; guardian ch2 first win 100.0%, median 38.46s; guardian ch3 first win 100.0%, median 45.47s; guardian ch4 first win 100.0%, median 48.11s; guardian ch5 first win 100.0%, median 86.81s; rogue ch1 first win 100.0%, median 32.94s; rogue ch2 first win 100.0%, median 34.50s; rogue ch3 first win 100.0%, median 35.75s; rogue ch4 first win 100.0%, median 37.62s; rogue ch5 first win 100.0%, median 68.97s; hunter ch1 first win 100.0%, median 33.30s; hunter ch2 first win 100.0%, median 38.30s; hunter ch3 first win 100.0%, median 44.07s; hunter ch4 first win 100.0%, median 47.40s; hunter ch5 first win 100.0%, median 82.79s; archer ch1 first win 100.0%, median 33.40s; archer ch2 first win 100.0%, median 36.71s; archer ch3 first win 100.0%, median 42.16s; archer ch4 first win 100.0%, median 51.30s; archer ch5 first win 95.0%, median 93.82s; witch ch1 first win 100.0%, median 32.85s; witch ch2 first win 100.0%, median 37.61s; witch ch3 first win 100.0%, median 42.08s; witch ch4 first win 100.0%, median 50.04s; witch ch5 first win 90.0%, median 87.78s; alchemist ch1 first win 100.0%, median 35.21s; alchemist ch2 first win 100.0%, median 39.05s; alchemist ch3 first win 100.0%, median 45.43s; alchemist ch4 first win 100.0%, median 51.32s; alchemist ch5 first win 100.0%, median 87.03s.
+- chapter-growth: no satisfying config found in the measured family: per-chapter pacing remains configurable; further search or chapter-specific XP/drop content — sim evidence: warrior ch2 0.88x; warrior ch3 1.04x; warrior ch4 0.99x; warrior ch5 1.05x; guardian ch2 0.95x; guardian ch3 0.98x; guardian ch4 1.07x; guardian ch5 1.02x; rogue ch2 0.91x; rogue ch3 0.95x; rogue ch4 1.00x; rogue ch5 1.04x; hunter ch2 0.89x; hunter ch3 1.01x; hunter ch4 1.04x; hunter ch5 1.02x; archer ch2 0.96x; archer ch3 0.98x; archer ch4 1.06x; archer ch5 1.04x; witch ch2 0.94x; witch ch3 1.07x; witch ch4 1.00x; witch ch5 1.07x; alchemist ch2 0.95x; alchemist ch3 1.02x; alchemist ch4 1.07x; alchemist ch5 1.03x.
+- boss-check: no satisfying config found in the measured family: classes.ts guardian HP/DEF/bonk and per-class survival multipliers; per-chapter boss HP/ATK alone did not satisfy every class — sim evidence: warrior ch1 first win 100.0%, median 33.86s; warrior ch2 first win 100.0%, median 36.68s; warrior ch3 first win 100.0%, median 39.78s; warrior ch4 first win 100.0%, median 46.11s; warrior ch5 first win 100.0%, median 85.96s; guardian ch1 first win 100.0%, median 34.12s; guardian ch2 first win 100.0%, median 38.46s; guardian ch3 first win 100.0%, median 45.47s; guardian ch4 first win 100.0%, median 48.11s; guardian ch5 first win 100.0%, median 86.81s; rogue ch1 first win 100.0%, median 32.94s; rogue ch2 first win 100.0%, median 34.50s; rogue ch3 first win 100.0%, median 35.75s; rogue ch4 first win 100.0%, median 37.62s; rogue ch5 first win 100.0%, median 68.97s; hunter ch1 first win 100.0%, median 33.30s; hunter ch2 first win 100.0%, median 38.30s; hunter ch3 first win 100.0%, median 44.07s; hunter ch4 first win 100.0%, median 47.40s; hunter ch5 first win 100.0%, median 82.79s; archer ch1 first win 100.0%, median 33.40s; archer ch2 first win 100.0%, median 36.71s; archer ch3 first win 100.0%, median 42.16s; archer ch4 first win 100.0%, median 51.30s; archer ch5 first win 95.0%, median 93.82s; witch ch1 first win 100.0%, median 32.85s; witch ch2 first win 100.0%, median 37.61s; witch ch3 first win 100.0%, median 42.08s; witch ch4 first win 100.0%, median 50.04s; witch ch5 first win 90.0%, median 87.78s; alchemist ch1 first win 100.0%, median 35.21s; alchemist ch2 first win 100.0%, median 39.05s; alchemist ch3 first win 100.0%, median 45.43s; alchemist ch4 first win 100.0%, median 51.32s; alchemist ch5 first win 100.0%, median 87.03s.
 
 These labels describe this finite search, not proof that the full config space is exhausted. Per-chapter pacing and boss HP/ATK remain available config levers; no class-content values are approved. A separate classes.ts card is needed before applying any content recommendation.
 
@@ -456,13 +456,15 @@ These labels describe this finite search, not proof that the full config space i
 
 ## Method and limits
 
-29 deterministic final-family candidates: frozen C5c S-B and C5c main controls plus 3 pacing families × 3 boss-HP families (all with chapter ATK 0.85/1.5/2.5/3/3.5) × 3 ATK/XP families. Every candidate has firstClearKeys=1 and dailyKeys=3. Screen: seed 1, every class, 120 active minutes. Top five plus both controls refined on seeds 1–3; final top three shown on seeds 1–3, every class, 1,800 active minutes. Selected proposal: seeds 1–20. Strict target count dominates ranking, followed by chapter-5 completeness and first-boss-window frequency; the retained claim-size stability diagnostic is an eligibility preference. Relaxed checks are report-only. Simulation rewards and timing otherwise retain C5c behavior; full-result digests prove the old S-B refund equals its config-leaf replacement on seeds 1–3. Missing milestones remain Infinity; no failures are dropped. V2_CONFIG and classes.ts are unchanged.
+Inherited V6f search (retained as a control): 29 deterministic final-family candidates: frozen C5c S-B and C5c main controls plus 3 pacing families × 3 boss-HP families (all with chapter ATK 0.85/1.5/2.5/3/3.5) × 3 ATK/XP families. Every candidate has firstClearKeys=1 and dailyKeys=3. Screen: seed 1, every class, 120 active minutes. Top five plus both controls refined on seeds 1–3; final top three shown on seeds 1–3, every class, 1,800 active minutes. Selected proposal: seeds 1–20. Strict target count dominates ranking, followed by chapter-5 completeness and first-boss-window frequency; the retained claim-size stability diagnostic is an eligibility preference. Relaxed checks are report-only. Simulation rewards and timing otherwise retain C5c behavior; full-result digests prove the old S-B refund equals its config-leaf replacement on seeds 1–3. Missing milestones remain Infinity; no failures are dropped. V2_CONFIG and classes.ts are unchanged.
 
 ## Not overridable
 
 - MATERIALS.*.maxStack (STACK_CAPS_V2 and CAT_KEY_CAP)
 - CHEST_SCALING.* (CHESTS)
 - content registries (combat/bag/idle lookup maps)
+
+Numbers sign-off belongs to the user (D4, planning date 30 Oct). V6h pacing measurements and search coverage are recorded in reports/v6h-pacing.md. Class multipliers are content, not overridable config leaves; none were applied or simulated through an unguarded override.
 
 ## Sign-off
 
