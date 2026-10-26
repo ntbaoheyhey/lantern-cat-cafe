@@ -36,7 +36,7 @@ for (const vp of VIEWPORTS) {
         { key: STORAGE_KEY, save },
       );
       await page.goto('/');
-      await page.waitForLoadState('networkidle');
+      await page.locator('.v2-shell').waitFor();
     });
 
     for (const panelName of PANELS) {
