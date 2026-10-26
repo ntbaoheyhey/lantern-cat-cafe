@@ -50,32 +50,54 @@ export function backdropRects(art: BackdropArt, layer: LayerKey): BackdropRect[]
     const row = rows[r];
     if (!row) continue;
     const y = top + r;
-    const len = row.length;
-    let x = 0;
 
-    while (x < len) {
-      const ch = row[x];
-      if (!ch || ch === '.' || !(ch in paletteHex)) {
-        x++;
-        continue;
-      }
+    let startX = -1;
+    let currentColor: string | null = null;
 
-      const fill = paletteHex[ch];
-      if (!fill) {
-        x++;
-        continue;
-      }
-      const startX = x;
-      x++;
-      while (x < len) {
-        const nextCh = row[x];
-        if (!nextCh || nextCh === '.' || paletteHex[nextCh] !== fill) {
-          break;
+    for (let x = 0; x < row.length; x++) {
+      const char = row[x]!;
+      if (char === '.') {
+        if (currentColor !== null && startX !== -1) {
+          rects.push({
+            x: startX,
+            y,
+            w: x - startX,
+            fill: currentColor,
+          });
+          currentColor = null;
+          startX = -1;
         }
-        x++;
+      } else {
+        const hex = paletteHex[char];
+        if (!hex) {
+          throw new Error(
+            `Backdrop '${art.id}' layer '${layer}' row ${r} col ${x} uses undefined palette key '${char}'`,
+          );
+        }
+
+        if (currentColor === null) {
+          currentColor = hex;
+          startX = x;
+        } else if (currentColor !== hex) {
+          rects.push({
+            x: startX,
+            y,
+            w: x - startX,
+            fill: currentColor,
+          });
+          currentColor = hex;
+          startX = x;
+        }
       }
-      const w = x - startX;
-      rects.push({ x: startX, y, w, fill });
+    }
+
+    if (currentColor !== null && startX !== -1) {
+      rects.push({
+        x: startX,
+        y,
+        w: row.length - startX,
+        fill: currentColor,
+      });
     }
   }
 
@@ -85,9 +107,9 @@ export function backdropRects(art: BackdropArt, layer: LayerKey): BackdropRect[]
 
 export interface BackdropViewProps {
   art: BackdropArt;
-  /** Art pixels to show, default art.width; tiles horizontally. */
+  /** Visible width in art pixels (default art.width). */
   width?: number;
-  /** Art pixels offset, default 0. */
+  /** Horizontal scroll offset in art pixels, default 0. */
   offsetX?: number;
   /** CSS px per art pixel, default 1. */
   scale?: number;
@@ -99,8 +121,9 @@ export interface BackdropViewProps {
 
 /**
  * BackdropView renders a pixel-art chapter backdrop as a crisp SVG.
- * Run rects are drawn once inside a <symbol> and repeated with <use>
- * for horizontal tiling.
+ * Run rects for the wall and floor are drawn once inside a <symbol> and repeated
+ * with <use> for horizontal tiling. Hero props are centered in the room without
+ * repeating outside the room bounds, flanked by a soft warm light pool and vignette.
  */
 export function BackdropView({
   art,
@@ -120,6 +143,19 @@ export function BackdropView({
 
   const tileWidth = art.width;
   const tileCount = Math.max(1, Math.ceil((width + offsetX) / tileWidth));
+
+  // Hero props are centered in the stage when width exceeds tileWidth.
+  // Beyond that room width, only the calm wall and floor tile repeat,
+  // preventing hero props from repeating unnaturally across wide screens.
+  const heroX = width > tileWidth ? Math.round((width - tileWidth) / 2) - offsetX : -offsetX;
+
+  // Floor position for light pool center
+  const floorY = art.floorY ?? 84;
+  const lightY = Math.round(floorY * 0.45);
+  const lightRadiusX = Math.min(Math.round(width * 0.38), 160);
+
+  // Vignette band width (4% of total width each)
+  const bandW = Math.max(2, Math.round(width * 0.04));
 
   return (
     <svg
@@ -145,19 +181,10 @@ export function BackdropView({
               fill={r.fill}
             />
           ))}
-          {layers === 'both' &&
-            nearRects.map((r, i) => (
-              <rect
-                key={`near-${i}`}
-                x={r.x}
-                y={r.y}
-                width={r.w}
-                height={1}
-                fill={r.fill}
-              />
-            ))}
         </symbol>
       </defs>
+
+      {/* Repeating far wall and floor tiles */}
       {Array.from({ length: tileCount }, (_, k) => (
         <use
           key={k}
@@ -169,6 +196,62 @@ export function BackdropView({
           data-tile={k}
         />
       ))}
+
+      {/* Warm ambient light pool illuminating the wall behind actors (discrete pixel-art ellipses) */}
+      <ellipse
+        cx={width / 2}
+        cy={lightY}
+        rx={lightRadiusX}
+        ry={30}
+        fill="#ffd488"
+        opacity={0.12}
+        style={{ pointerEvents: 'none' }}
+      />
+      <ellipse
+        cx={width / 2}
+        cy={lightY}
+        rx={Math.round(lightRadiusX * 0.65)}
+        ry={20}
+        fill="#ffd488"
+        opacity={0.12}
+        style={{ pointerEvents: 'none' }}
+      />
+      <ellipse
+        cx={width / 2}
+        cy={lightY}
+        rx={Math.round(lightRadiusX * 0.35)}
+        ry={10}
+        fill="#ffe099"
+        opacity={0.12}
+        style={{ pointerEvents: 'none' }}
+      />
+
+      {/* Hero props centered in the room without repeating beyond room width */}
+      {layers === 'both' && nearRects.length > 0 && (
+        <g className="backdrop-near" transform={`translate(${heroX}, 0)`}>
+          {nearRects.map((r, i) => (
+            <rect
+              key={`near-${i}`}
+              x={r.x}
+              y={r.y}
+              width={r.w}
+              height={1}
+              fill={r.fill}
+            />
+          ))}
+        </g>
+      )}
+
+      {/* Edge vignette darkening outer 12% strips on left and right */}
+      {/* Outer 4% */}
+      <rect x={0} y={0} width={bandW} height={96} fill="#040206" opacity={0.65} style={{ pointerEvents: 'none' }} />
+      <rect x={width - bandW} y={0} width={bandW} height={96} fill="#040206" opacity={0.65} style={{ pointerEvents: 'none' }} />
+      {/* 4% - 8% */}
+      <rect x={bandW} y={0} width={bandW} height={96} fill="#040206" opacity={0.45} style={{ pointerEvents: 'none' }} />
+      <rect x={width - bandW * 2} y={0} width={bandW} height={96} fill="#040206" opacity={0.45} style={{ pointerEvents: 'none' }} />
+      {/* 8% - 12% */}
+      <rect x={bandW * 2} y={0} width={bandW} height={96} fill="#040206" opacity={0.25} style={{ pointerEvents: 'none' }} />
+      <rect x={width - bandW * 3} y={0} width={bandW} height={96} fill="#040206" opacity={0.25} style={{ pointerEvents: 'none' }} />
     </svg>
   );
 }
