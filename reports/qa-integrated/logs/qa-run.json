@@ -1,0 +1,689 @@
+{
+  "timestamp": "2026-10-26T13:30:08.725Z",
+  "sourceCommit": "c87012d32c04cabe81b5d2cd1461e97cb9bbe569",
+  "environment": {
+    "node": "v26.11.1",
+    "pnpm": "10.28.0",
+    "baseUrl": "http://localhost:4174"
+  },
+  "items": {
+    "item1_boss": {
+      "1a_strong": {
+        "pass": true,
+        "hudBefore": "Lv 600 / 48,086 XPChapter 1 · Round 10 · 6/6Fish0Yarn0Cat Keys1/5Power 10,429",
+        "hudAfter": "Lv 600 / 48,086 XPChapter 2 · Round 1 · 0/10Fish4,600Yarn25Cat Keys0/5Power 10,429",
+        "keyDropped": true
+      },
+      "1b_weak": {
+        "pass": true,
+        "keyKept": true,
+        "cooldownStatus": "Catnap: 1:01",
+        "isDisabledDuringCooldown": true,
+        "isEnabledAfterCooldown": true
+      },
+      "1c_zero_key": {
+        "pass": true,
+        "statusKind": "no_key",
+        "statusText": "You need a Cat Key. You get one each day from your first claim, and sometimes from monsters in cleared chapters.",
+        "isDisabled": true,
+        "ariaDescribedBy": "_r_1_",
+        "ariaMatches": true
+      }
+    },
+    "item2_forge": {
+      "pass": true,
+      "initialCount": 5,
+      "countAfterCraft": 6,
+      "lockedDisabled": true,
+      "countAfterSalvage": 5,
+      "relicAreaVisible": true
+    },
+    "item3_relic_no_wallet": {
+      "pass": true,
+      "noticeText": "Connect your wallet before forging a Relic.×",
+      "pendingVoucher": null,
+      "voucherCreated": false
+    },
+    "item4_zoom_chromium": [
+      {
+        "label": "1280x720@1",
+        "innerWidth": 1280,
+        "innerHeight": 720,
+        "devicePixelRatio": 1,
+        "dataLayout": "desktop",
+        "scrollWidth": 1280,
+        "hasHorizontalOverflow": false,
+        "hudOverlapsCount": 0,
+        "hudOverlaps": [],
+        "tabsReachable": true,
+        "bossReachable": true,
+        "forgeReachable": true
+      },
+      {
+        "label": "640x360@2",
+        "innerWidth": 640,
+        "innerHeight": 360,
+        "devicePixelRatio": 2,
+        "dataLayout": "tablet",
+        "scrollWidth": 640,
+        "hasHorizontalOverflow": false,
+        "hudOverlapsCount": 0,
+        "hudOverlaps": [],
+        "tabsReachable": true,
+        "bossReachable": true,
+        "forgeReachable": true
+      },
+      {
+        "label": "320x180@4",
+        "innerWidth": 320,
+        "innerHeight": 180,
+        "devicePixelRatio": 4,
+        "dataLayout": "phone",
+        "scrollWidth": 320,
+        "hasHorizontalOverflow": false,
+        "hudOverlapsCount": 0,
+        "hudOverlaps": [],
+        "tabsReachable": true,
+        "bossReachable": true,
+        "forgeReachable": true
+      }
+    ],
+    "item5_resize_burst_chromium": {
+      "canvasCount": 1,
+      "hasStageCanvas": true,
+      "stageWidth": 210,
+      "stageHeight": 96,
+      "actorsDrawn": {
+        "cat": true,
+        "monster": true
+      },
+      "insertedCanvases": 2,
+      "errorsCount": 0,
+      "burstErrors": [],
+      "videoPath": "/Users/bao/taskbar-hero/reports/qa-integrated/videos/page@b856f6d41e2bd0f3036cc2cef0bb9107.webm"
+    },
+    "item6_phone_sheet_chromium": [
+      {
+        "viewport": "320x568",
+        "tab": "Inventory",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 274,
+          "clientHeight": 274,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Inventory"
+      },
+      {
+        "viewport": "320x568",
+        "tab": "Boss",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 274,
+          "clientHeight": 274,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": false
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Boss"
+      },
+      {
+        "viewport": "320x568",
+        "tab": "Forge",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 274,
+          "clientHeight": 274,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": false
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Forge"
+      },
+      {
+        "viewport": "320x568",
+        "tab": "Market",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 96,
+          "clientHeight": 96,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Market"
+      },
+      {
+        "viewport": "320x568",
+        "tab": "Help",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 274,
+          "clientHeight": 274,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Help"
+      },
+      {
+        "viewport": "390x844",
+        "tab": "Inventory",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 281,
+          "clientHeight": 281,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Inventory"
+      },
+      {
+        "viewport": "390x844",
+        "tab": "Boss",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 439,
+          "clientHeight": 439,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": false
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Boss"
+      },
+      {
+        "viewport": "390x844",
+        "tab": "Forge",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 439,
+          "clientHeight": 439,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": false
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Forge"
+      },
+      {
+        "viewport": "390x844",
+        "tab": "Market",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 96,
+          "clientHeight": 96,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Market"
+      },
+      {
+        "viewport": "390x844",
+        "tab": "Help",
+        "sheetOpened": true,
+        "scrollInfo": {
+          "scrollHeight": 439,
+          "clientHeight": 439,
+          "isScrollable": false,
+          "scrollTopAfter": 0,
+          "lastBtnPresent": true,
+          "lastBtnVisible": true
+        },
+        "sheetHidden": true,
+        "focusRestored": true,
+        "focusedId": "tab-Help"
+      }
+    ],
+    "item7_webkit": {
+      "zoom": [
+        {
+          "label": "1280x720@1",
+          "innerWidth": 1280,
+          "innerHeight": 720,
+          "devicePixelRatio": 1,
+          "dataLayout": "desktop",
+          "scrollWidth": 1280,
+          "hasHorizontalOverflow": false,
+          "hudOverlapsCount": 0,
+          "hudOverlaps": [],
+          "tabsReachable": true,
+          "bossReachable": true,
+          "forgeReachable": true
+        },
+        {
+          "label": "640x360@2",
+          "innerWidth": 640,
+          "innerHeight": 360,
+          "devicePixelRatio": 2,
+          "dataLayout": "tablet",
+          "scrollWidth": 640,
+          "hasHorizontalOverflow": false,
+          "hudOverlapsCount": 0,
+          "hudOverlaps": [],
+          "tabsReachable": true,
+          "bossReachable": true,
+          "forgeReachable": true
+        },
+        {
+          "label": "320x180@4",
+          "innerWidth": 320,
+          "innerHeight": 180,
+          "devicePixelRatio": 4,
+          "dataLayout": "phone",
+          "scrollWidth": 320,
+          "hasHorizontalOverflow": false,
+          "hudOverlapsCount": 0,
+          "hudOverlaps": [],
+          "tabsReachable": true,
+          "bossReachable": true,
+          "forgeReachable": true
+        }
+      ],
+      "burst": {
+        "canvasCount": 1,
+        "hasStageCanvas": true,
+        "stageWidth": 210,
+        "stageHeight": 96,
+        "actorsDrawn": {
+          "cat": true,
+          "monster": true
+        },
+        "insertedCanvases": 1,
+        "errorsCount": 0,
+        "burstErrors": [],
+        "videoPath": "/Users/bao/taskbar-hero/reports/qa-integrated/videos/page@d1aa216e0d57020de278200c005f66f5.webm"
+      },
+      "sheet": [
+        {
+          "viewport": "320x568",
+          "tab": "Inventory",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 274,
+            "clientHeight": 274,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Inventory"
+        },
+        {
+          "viewport": "320x568",
+          "tab": "Boss",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 274,
+            "clientHeight": 274,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": false
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Boss"
+        },
+        {
+          "viewport": "320x568",
+          "tab": "Forge",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 274,
+            "clientHeight": 274,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": false
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Forge"
+        },
+        {
+          "viewport": "320x568",
+          "tab": "Market",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 96,
+            "clientHeight": 96,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Market"
+        },
+        {
+          "viewport": "320x568",
+          "tab": "Help",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 274,
+            "clientHeight": 274,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Help"
+        },
+        {
+          "viewport": "390x844",
+          "tab": "Inventory",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 282,
+            "clientHeight": 282,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Inventory"
+        },
+        {
+          "viewport": "390x844",
+          "tab": "Boss",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 439,
+            "clientHeight": 439,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": false
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Boss"
+        },
+        {
+          "viewport": "390x844",
+          "tab": "Forge",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 439,
+            "clientHeight": 439,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": false
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Forge"
+        },
+        {
+          "viewport": "390x844",
+          "tab": "Market",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 96,
+            "clientHeight": 96,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Market"
+        },
+        {
+          "viewport": "390x844",
+          "tab": "Help",
+          "sheetOpened": true,
+          "scrollInfo": {
+            "scrollHeight": 439,
+            "clientHeight": 439,
+            "isScrollable": false,
+            "scrollTopAfter": 0,
+            "lastBtnPresent": true,
+            "lastBtnVisible": true
+          },
+          "sheetHidden": true,
+          "focusRestored": true,
+          "focusedId": "tab-Help"
+        }
+      ]
+    },
+    "item8_reduced_motion": {
+      "boss_no-preference": {
+        "pass": true
+      },
+      "burst_no-preference": {
+        "canvasCount": 1,
+        "hasStageCanvas": true,
+        "stageWidth": 210,
+        "stageHeight": 96,
+        "actorsDrawn": {
+          "cat": true,
+          "monster": true
+        },
+        "insertedCanvases": 2,
+        "errorsCount": 0,
+        "burstErrors": [],
+        "videoPath": "/Users/bao/taskbar-hero/reports/qa-integrated/videos/page@62ad64b6d56cd4afa95e4a8ab7e9af6b.webm"
+      },
+      "boss_reduce": {
+        "pass": true
+      },
+      "burst_reduce": {
+        "canvasCount": 1,
+        "hasStageCanvas": true,
+        "stageWidth": 210,
+        "stageHeight": 96,
+        "actorsDrawn": {
+          "cat": true,
+          "monster": true
+        },
+        "insertedCanvases": 2,
+        "errorsCount": 0,
+        "burstErrors": [],
+        "videoPath": "/Users/bao/taskbar-hero/reports/qa-integrated/videos/page@753bef514438a07b4d3f3da3c1d0ddf8.webm"
+      }
+    },
+    "item9_console": {
+      "totalLogs": 12,
+      "warningsCount": 0,
+      "errorsCount": 0,
+      "allEntries": [
+        {
+          "context": "zoom-1280x720@1",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:55.933Z"
+        },
+        {
+          "context": "zoom-1280x720@1",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:55.933Z"
+        },
+        {
+          "context": "zoom-640x360@2",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:56.694Z"
+        },
+        {
+          "context": "zoom-640x360@2",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:56.758Z"
+        },
+        {
+          "context": "zoom-320x180@4",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:57.476Z"
+        },
+        {
+          "context": "zoom-320x180@4",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:57.484Z"
+        },
+        {
+          "context": "resize-burst-WebKit",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:58.125Z"
+        },
+        {
+          "context": "resize-burst-WebKit",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:30:58.142Z"
+        },
+        {
+          "context": "sheet-320x568",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:31:03.276Z"
+        },
+        {
+          "context": "sheet-320x568",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:31:03.276Z"
+        },
+        {
+          "context": "sheet-390x844",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.gstatic.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:31:06.176Z"
+        },
+        {
+          "context": "sheet-390x844",
+          "type": "info",
+          "text": "Successfully preconnected to https://fonts.googleapis.com/",
+          "location": {
+            "url": "",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          },
+          "timestamp": "2026-10-26T13:31:06.180Z"
+        }
+      ]
+    }
+  }
+}

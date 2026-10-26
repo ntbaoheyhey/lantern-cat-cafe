@@ -1,0 +1,9 @@
+=== Command: pnpm --filter @taskbar-hero/web exec playwright install webkit ===
+Result: PASS (exit 0)
+Output:
+Downloading WebKit 27.2 (playwright webkit v2370) from https://cdn.playwright.dev/dbazure/download/playwright/builds/webkit/2370/webkit-mac-26-arm64.zip
+78.9 MiB [====================] 100% 0.0s
+WebKit 27.2 (playwright webkit v2370) downloaded to /Users/bao/Library/Caches/ms-playwright/webkit-2370
+
+=== Verification of installed WebKit binary ===
+-rwxr-xr-x@ 1 bao  staff  3049 Oct 26 15:36 /Users/bao/Library/Caches/ms-playwright/webkit-2370/pw_run.sh
