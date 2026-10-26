@@ -25,7 +25,7 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
       localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
     });
     // Vite preview does not implement vercel.json. Inject the exact production response headers
-    // on the built HTML response so Chromium really evaluates Report-Only (a meta tag cannot).
+    // on the built HTML response so Chromium really enforces the header policy (frame-ancestors needs a header).
     await page.route('http://localhost:**/*', async route => {
       if (route.request().resourceType() !== 'document') return route.continue();
       const response = await route.fetch();
@@ -34,7 +34,7 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ colorScheme });
     const response = await page.goto(`http://localhost:${mode === 'classic' ? 4173 : 4174}/`);
-    expect(response?.headers()['content-security-policy-report-only']).toBe(headers['Content-Security-Policy-Report-Only']);
+    expect(response?.headers()['content-security-policy']).toBe(headers['Content-Security-Policy']);
     if (mode === 'v2') {
       await page.getByTestId('class-picker-choose-button').click();
       await page.getByTestId('class-picker-confirm-button').click();
