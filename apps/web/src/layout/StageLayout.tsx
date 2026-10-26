@@ -31,6 +31,8 @@ import { BossArena } from '../game/arena/BossArena';
 import { HowToPlay } from '../onboarding/HowToPlay';
 import type { HintTab } from '../onboarding/nextStep';
 import { TABS } from '../Panel';
+import { PixelIcon, type IconName } from '../art/pixelIcons';
+import { TabIcon } from './tabIcons';
 import { WalletButton } from '../wallet/WalletButton';
 import { BagPanel } from './bag/BagPanel';
 import { CharacterPanel } from './character/CharacterPanel';
@@ -52,6 +54,7 @@ const STAGE_TABS: StageTab[] = [
 ];
 
 const PANEL_ID = 'tabpanel';
+const TAB_ICONS: Partial<Record<StageTabName, IconName>> = { Inventory: 'bag', Boss: 'sword', Forge: 'flask', Market: 'shop' };
 
 function TabButtons({
   active,
@@ -92,7 +95,7 @@ function TabButtons({
           className="v2-tab"
           onClick={() => onSelect(id)}
         >
-          {label}
+          <span className="v2-tab-icon">{TAB_ICONS[id] ? <PixelIcon name={TAB_ICONS[id]!} /> : <TabIcon />}</span><span className="v2-tab-label">{label}</span>
         </button>
       ))}
     </div>
@@ -245,19 +248,27 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   };
 
   return (
-    <div className="v2-shell" data-layout={kind} style={{ '--stage-h': `${stageH}px` } as CSSProperties}>
+    <div className="v2-shell" data-game-v2={import.meta.env.VITE_GAME_V2 === '1' ? 'stage-v2-enabled' : undefined} data-layout={kind} style={{ '--stage-h': `${stageH}px` } as CSSProperties}>
       <header className="v2-topbar">
         <h1 className="v2-title">Taskbar Hero</h1>
-        <button type="button" className="v2-mini-toggle" onClick={onMiniMode}>
-          Mini mode
-        </button>
+        <div className="v2-header-actions">
+          <button type="button" className="v2-mini-toggle" onClick={onMiniMode}>
+            Mini mode
+          </button>
+          <div className="v2-hint" data-testid="next-hint"><span className="v2-hint-lead" aria-hidden="true">Next</span><button className="v2-hint-btn" onClick={() => handleGo(state?.progress.gated ? 'Inventory' : 'Boss')}>{state?.progress.gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}</button></div>
+          <div className="v2-wallet pixel-btn--secondary">
+            <WalletButton />
+            <span className="v2-wallet-icon" aria-hidden="true"><PixelIcon name="bag" /></span>
+            <p className="v2-mode-note" title={mode.demo ? 'Demo mode — progress is saved in this browser.' : 'Signed in — progress is saved to your account.'}>
+              <span className="v2-mode-full">{mode.demo ? 'Demo mode — progress is saved in this browser.' : 'Signed in — progress is saved to your account.'}</span>
+              <span aria-hidden="true">{mode.demo ? 'Demo · saved in this browser' : 'Signed in · saved to your account'}</span> {mode.notice}
+            </p>
+          </div>
+        </div>
         {state && <HudBar state={state} power={stats ? Math.round(v2.powerRating(stats)) : 0} />}
-        <div className="v2-hint" data-testid="next-hint"><button className="v2-hint-btn" onClick={() => handleGo(state?.progress.gated ? 'Inventory' : 'Boss')}>{state?.progress.gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}</button></div>
-        <WalletButton />
       </header>
 
       <main>
-        <p className="v2-mode-note">{mode.demo ? 'Demo mode — progress is saved in this browser.' : 'Signed in — progress is saved to your account.'} {mode.notice}</p>
         {snapshot.loadFailed && <p role="alert">Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button></p>}
         {notice && <p role="status" className="v2-action-notice">{notice}<button aria-label="Dismiss message" onClick={() => setNotice('')}>×</button></p>}
         {state && !classId && <ClassPicker locked={snapshot.busy !== null} onChoose={id => { void loop.chooseClass(id); }} />}
@@ -289,7 +300,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
         ) : (
           <div className="v2-lower">
             {state && <CharacterArea state={state} />}
-            <section className="v2-tabs-area pixel-card" aria-label="Game panel">
+            <section className="v2-tabs-area" aria-label="Game panel">
               <TabButtons active={tab} onSelect={setTab} className="v2-tabs" />
               <ActivePanel tab={tab} content={content} />
             </section>
