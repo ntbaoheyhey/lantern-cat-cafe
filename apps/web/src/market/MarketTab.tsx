@@ -288,6 +288,7 @@ export function MarketTab() {
           </button>
         </div>
         <p className="market-hint">{TESTNET}. The total price covers all copies in the listing.</p>
+        <p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
       </section>
 
       {busy && <p role="status">{busy}</p>}

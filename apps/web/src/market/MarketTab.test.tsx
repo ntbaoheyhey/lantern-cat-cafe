@@ -146,6 +146,8 @@ function fillList(relicId: string, amount: string, price: string) {
 it('approves the market first when needed, then lists with parseEther(price)', async () => {
   chain.balances = [0n, 2n, 0n, 0n];
   render(<MarketTab />);
+  expect(screen.getByText('Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.')).toBeTruthy();
+  expect(chain.writeContractAsync).not.toHaveBeenCalled();
   fillList('2', '2', '0.5');
   fireEvent.click(screen.getByRole('button', { name: 'List' }));
   await screen.findByText('Listed!');
