@@ -127,6 +127,8 @@ it('without a browser wallet the button links to core.app and says which wallets
   );
   const link = screen.getByRole('link', { name: 'Get a browser wallet' });
   expect(link.getAttribute('href')).toBe(CORE_INSTALL_URL);
+  expect(link.getAttribute('target')).toBe('_blank');
+  expect(link.getAttribute('rel')).toBe('noopener noreferrer');
   expect(link.getAttribute('title')).toBe(NO_WALLET_HINT);
   expect(NO_WALLET_HINT).toMatch(/Core, MetaMask/);
   expect(NO_WALLET_HINT).toMatch(/Chrome, Brave or Edge/);
