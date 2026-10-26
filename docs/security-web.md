@@ -1,6 +1,6 @@
 # Web app security and secrets check
 
-Status update (2026-10-26, S2): historical review retained; hash/link/approval fixes and Report-Only headers are implemented and tested; mock-auth remains proposal-only. See [current security review](security-review-2026-10.md) and [S2 evidence](../reports/s2-security.md).
+Status update (2026-10-26, S2): historical review retained; hash/link/approval fixes and the tightened blocking CSP are implemented and tested; mock-auth remains proposal-only. See [current security review](security-review-2026-10.md) and [S2 evidence](../reports/s2-security.md).
 
 Scope: `apps/web` as built and served from Vercel, plus the browser side of the wallet and sign-in flow. Reviewed against main at the time of writing. This is a read-only review: no app code changed. Auth fixes are a core change and need the owner's review; the others are small follow-ups.
 
