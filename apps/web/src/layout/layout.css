@@ -170,3 +170,41 @@
   .v2-shell[data-layout='phone'] .v2-topbar { padding: 6px 8px; gap: 6px 8px; }
   .v2-shell[data-layout='phone'] .v2-lower { padding: 8px; }
 }
+
+.v2-topbar .hud-bar { flex: 1 1 100%; min-width: 0; }
+.v2-mode-note, .v2-action-notice { margin: .4rem 1rem; font-size: .85rem; color: var(--muted); }
+.v2-stage { display: flex; justify-content: center; align-items: flex-end; flex-shrink: 0; }
+.v2-stage-art { position: relative; flex-shrink: 0; }
+.v2-stage-canvas { position: absolute; inset: 0; }
+.v2-stage-canvas canvas { display: block; width: 100% !important; height: 100% !important; image-rendering: pixelated; }
+.v2-stage-placeholder { align-self: center; text-align: center; padding: 1rem; }
+.v2-fight-result, .v2-recent-loot { padding: 1rem; min-width: 0; }
+.v2-shell .class-picker { max-width: 100%; box-sizing: border-box; }
+.v2-shell[data-layout='phone'] .v2-recent-loot { padding-bottom: calc(var(--nav-h) + 1rem); }
+
+/* Let the HUD respond to its actual space, including narrow desktop windows.
+   The shared HUD remains unchanged; these overrides belong to the stage shell. */
+.v2-shell .hud-bar {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.v2-shell .hud-bar__primary,
+.v2-shell .hud-bar__secondary {
+  flex: 1 1 24rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.v2-shell .hud-bar__secondary { justify-content: space-between; }
+.v2-shell .hud-level-xp,
+.v2-shell .hud-stacks-list {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.v2-shell .hud-progress-chip { max-width: 100%; }
+.v2-shell .hud-progress-text {
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+.v2-lower > * { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.v2-sheet .v2-tabpanel { min-height: 0; }

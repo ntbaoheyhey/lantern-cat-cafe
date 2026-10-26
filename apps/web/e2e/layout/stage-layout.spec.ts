@@ -1,6 +1,9 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
+// Read the exported key without importing the browser adapter and its wallet/JSON dependencies.
+const MOCK_V2_STORAGE_KEY = fs.readFileSync(path.resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 
 // These specs run against the VITE_GAME_V2=1 build (see playwright.config.ts).
 // Screenshots overwrite committed images, so they are only written on request: SCREENSHOTS=1 [SCREENSHOT_DIR=...].
@@ -15,10 +18,13 @@ const VIEWPORTS = [
   { name: '1280', width: 1280, height: 800 },
 ];
 
-test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => {
+test.beforeEach(async ({ page }, testInfo) => {
+  const save = testInfo.title.startsWith('v2 class choice') ? null : mockV2SaveJson('midGame', { nowMs: Date.now(), classId: 'warrior' });
+  await page.addInitScript(({ key, save }) => {
+    if (save === null) window.localStorage.removeItem(key);
+    else if (!window.localStorage.getItem(key)) window.localStorage.setItem(key, save);
     window.localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
-  });
+  }, { key: MOCK_V2_STORAGE_KEY, save });
 });
 
 async function noHorizontalScroll(page: Page): Promise<void> {
@@ -61,7 +67,7 @@ for (const vp of VIEWPORTS) {
       await page.goto('/');
 
       await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
-      await expect(page.getByTestId('gold-counter')).toBeVisible();
+      await expect(page.getByLabel('Currencies and keys')).toBeVisible();
       await expect(page.getByTestId('next-hint')).toBeVisible();
       await expect(page.getByRole('button', { name: 'Mini mode' })).toBeVisible();
       await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
@@ -123,7 +129,7 @@ test.describe('desktop tabs', () => {
         await expect(tab).toBeFocused();
         await page.keyboard.press(key);
         await expect(tab).toHaveAttribute('aria-selected', 'true');
-        await expect(page.getByRole('tab', { selected: true })).toHaveCount(1);
+        await expect(page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { selected: true })).toHaveCount(1);
         await expect(page.getByRole('tabpanel', { name, exact: true })).toBeVisible();
       }
     }
@@ -156,7 +162,7 @@ test.describe('desktop tabs', () => {
     const chip = page.getByTestId('next-hint').getByRole('button');
     await expect(chip).toBeVisible();
     await chip.click();
-    await expect(page.getByRole('tab', { selected: true })).toHaveCount(1);
+    await expect(page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { selected: true })).toHaveCount(1);
   });
 });
 
@@ -257,3 +263,30 @@ test.describe('Mini mode', () => {
     await expect(page.getByRole('region', { name: 'Taskbar strip' })).toBeVisible();
   });
 });
+
+
+for (const width of [390, 1280]) {
+  test(`v2 class choice and timed claim at ${width}px`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', e => errors.push(e.message));
+    page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 720 });
+    const nowMs = Date.now();
+    await page.clock.install({ time: nowMs });
+    await page.goto('/');
+    await expect(page.getByTestId('class-picker')).toBeVisible();
+    await page.getByTestId('class-picker-choose-button').click();
+    await page.getByTestId('class-picker-confirm-button').click();
+    await expect(page.getByTestId('class-picker')).toHaveCount(0);
+    await expect(page.getByRole('region', { name: 'Game stage' }).locator('canvas')).toBeVisible();
+    const progress = page.getByRole('group', { name: /^Chapter / });
+    const before = await progress.textContent();
+    await page.clock.fastForward(10 * 60 * 1000);
+    await expect(progress).not.toHaveText(before!);
+    await expect(page.getByLabel('Currencies and keys')).toContainText('Fish');
+    await noHorizontalScroll(page);
+    expect(errors).toEqual([]);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    if (writeScreenshots) await page.screenshot({ path: path.join(process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/v16-stage'), `stage-${width}.png`) });
+  });
+}

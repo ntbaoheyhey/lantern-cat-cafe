@@ -26,8 +26,13 @@ export default defineConfig({
   ],
   projects: [
     {
+      name: 'v2-loop',
+      testMatch: 'v2/**/*.spec.ts',
+      use: { baseURL: 'http://localhost:4174', viewport: { width: 1280, height: 720 }, launchOptions },
+    },
+    {
       name: 'classic',
-      testIgnore: 'layout/**',
+      testIgnore: ['layout/**', 'v2/**'],
       use: { baseURL: 'http://localhost:4173', viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
