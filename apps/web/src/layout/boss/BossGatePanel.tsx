@@ -11,6 +11,7 @@ import {
   formatCountdown,
   type BossGateStatusV2,
 } from './bossGate';
+import { BossKeyHint } from './BossKeyHint';
 import { BossPortrait } from './BossPortrait';
 import './boss.css';
 
@@ -268,6 +269,8 @@ export function BossGatePanel({
           )}
         </div>
       </div>
+
+      {status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
     </section>
   );
 }

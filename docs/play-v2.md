@@ -69,6 +69,7 @@ Round 10 hosts the chapter boss: Yarn Giant (Ch1), Cucumber Scare (Ch2), Bathtub
 
 - **Cat Keys**: Fighting costs 1 key, spent only on a win. Losing keeps your key.
 - **Key Sources & Cap**: 1 free key on your first claim each day; cleared chapter kills have a 1 in 150 (~0.67%) key drop chance. Key cap is 5.
+- **Key wall hint**: When a boss is blocked only by a missing key, the Boss panel shows "Cat Keys: n / max" and lists where keys come from (daily claim key, the rare drop in cleared chapters, and the first-clear chest line only when the first clear gives keys). The Help tab lists the same sources. All values are read from the game config, not typed.
 - **Loss Cooldown**: A loss triggers a single 60-second cooldown across all chapters for your cat.
 - **First-Clear Chests**: Awards 1 Moon Pearl (100%), scaled Fish (400 to 6,400), Yarn (20 to 320), materials, and gear (100% main, 50% accessory), unlocking the next chapter.
 - **Rematches**: Cleared bosses can be refought anytime with a key. Repeat chests grant scaled rewards with a 30% Moon Pearl chance, 70% main gear chance, and 25% accessory gear chance.

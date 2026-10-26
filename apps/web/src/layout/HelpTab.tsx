@@ -2,6 +2,7 @@ import { v2 } from '@taskbar-hero/game-rules';
 import { PixelIcon } from '../art/pixelIcons';
 import { STEPS } from '../onboarding/HowToPlay';
 import { isGameV2 } from './flag';
+import { keySources } from './boss/BossKeyHint';
 import './HelpTab.css';
 
 /**
@@ -46,6 +47,8 @@ export function HelpTab() {
   const lossCooldownSeconds = v2.V2_CONFIG.boss.lossCooldownSeconds;
   const bagLimit = v2.V2_CONFIG.bag.limit;
   const firstClearKeys = ((v2.V2_CONFIG.boss as { firstClearKeys?: number }).firstClearKeys ?? 0);
+
+  const keyLines = keySources().lines;
 
   const relicYarn = v2.RELIC_RECIPE.materials.yarn ?? 0;
   const relicMoonPearl = v2.RELIC_RECIPE.materials.moonPearl ?? 0;
@@ -112,6 +115,13 @@ export function HelpTab() {
             First-clear boss chests also award {firstClearKeys} {catKeyName}{firstClearKeys === 1 ? '' : 's'}.
           </p>
         )}
+        <ul className="help-key-sources" data-testid="help-key-sources">
+          {keyLines
+            .filter((line) => line.id !== 'firstClear')
+            .map((line) => (
+              <li key={line.id} data-source={line.id}>{line.text}</li>
+            ))}
+        </ul>
       </section>
 
       <section className="help-v2-section">
