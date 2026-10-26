@@ -6,7 +6,6 @@
   transform: translateY(3px);
 }
 
-.pixel-btn:active:not(:disabled),
 .toggle:active:not(:disabled) {
   transform: translateY(3px);
   box-shadow: 0 0 0 #000;
@@ -14,7 +13,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .fx-press:active:not(:disabled),
-  .pixel-btn:active:not(:disabled),
   .toggle:active:not(:disabled) {
     transform: none;
     box-shadow: 0 3px 0 #000;
@@ -141,5 +139,20 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Suppress movement on controls that do not have component-level overrides.
+   Existing reduced keyframes above and the forge's fz-fade change only opacity. */
+@media (prefers-reduced-motion: reduce) {
+  .v2-map-node,
+  .forge-tab-btn,
+  .forge-slot-btn,
+  .forge-rarity-btn,
+  .forge-btn,
+  .class-card,
+  .class-card__stat-fill {
+    transition: none !important;
+    transform: none !important;
   }
 }
