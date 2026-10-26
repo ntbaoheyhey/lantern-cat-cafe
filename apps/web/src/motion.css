@@ -142,11 +142,17 @@
   }
 }
 
-/* Instant state changes for all components, including pseudo-elements. */
+/* Suppress movement on controls that do not have component-level overrides.
+   Existing reduced keyframes above and the forge's fz-fade change only opacity. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
+  .v2-map-node,
+  .forge-tab-btn,
+  .forge-slot-btn,
+  .forge-rarity-btn,
+  .forge-btn,
+  .class-card,
+  .class-card__stat-fill {
     transition: none !important;
-    scroll-behavior: auto !important;
+    transform: none !important;
   }
 }

@@ -1,3 +1,140 @@
+STATUS: DONE
+
+## Fix round 1 (2026-10-26)
+
+Status: DONE. The supplied fix note clarifies that reduced motion must suppress movement and may retain opacity-only fades. This supersedes the original blanket-animation interpretation and clears the earlier blocker. No second follow-up fix round was needed.
+
+Changed only `apps/web/src/motion.css` for product behavior: removed the universal animation/transition override, retained the existing opacity-only `fx-*-reduced` and forge `fz-fade` animations, and added a narrow reduced-motion rule for map, forge and class controls with movement transitions. Their transform changes are suppressed; existing component-specific rules still disable shake, slide, scale and position/width transitions. Shared button press transforms remain disabled by theme.css. No animation-name exception or test change was introduced.
+
+PASS: theme.css (including every token value) and theme.contrast.test.ts are byte-for-byte unchanged from the previous U1 result. PASS: polish.spec.ts is byte-for-byte identical to origin/main; its `fz-fade` assertion passed unchanged. No tests were skipped, weakened, deleted, disabled, or given longer timeouts.
+
+PASS: stayed on codex/u1-tokens and merged origin/main with no conflict. Main had advanced beyond the fix note's 5f19f9b to c87012d; the requested fetch/merge used the actual current main. Gate output:
+
+```text
+$ git fetch origin +main:refs/remotes/origin/main
+From https://github.com/ntbaoheyhey/taskbar-hero
+   3379777..c87012d  main -> origin/main
+$ git merge --no-edit origin/main
+Merge made by the 'ort' strategy.
+$ git rev-parse origin/main
+c87012d32c04cabe81b5d2cd1461e97cb9bbe569
+$ npx -y pnpm@10.28.0 --version
+10.28.0
+```
+
+Corepack was unavailable in the original run, so all pnpm commands continued using the prescribed exact-version fallback. No dependency/workspace/lock changes.
+
+### Self-check commands and real output
+
+PASS: `npx -y pnpm@10.28.0 install --frozen-lockfile`:
+
+```text
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Done in 364ms using pnpm v10.28.0
+```
+
+The same optional native build-script warning remains; no approval or dependency change was made.
+
+PASS: `npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions`:
+
+```text
+> node scripts/gen-deno-json.mjs
+wrote 18 Edge Function import maps
+# exit 0; no diff
+```
+
+PASS: `npx -y pnpm@10.28.0 typecheck`:
+
+```text
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck: Done
+apps/web typecheck: Done
+```
+
+PASS: `npx -y pnpm@10.28.0 lint`:
+
+```text
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint: Done
+apps/web lint: Done
+```
+
+PASS: `npx -y pnpm@10.28.0 test`:
+
+```text
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+supabase/tests test:  Test Files  18 passed (18)
+supabase/tests test:       Tests  385 passed (385)
+packages/game-rules test:  Test Files  20 passed | 3 skipped (23)
+packages/game-rules test:       Tests  330 passed | 2 expected fail | 11 skipped (343)
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+apps/web test:  Test Files  84 passed (84)
+apps/web test:       Tests  1090 passed (1090)
+```
+
+The reported skipped/expected-failure cases are inherited from merged main. U1 added no skips or expected failures.
+
+PASS: explicit classic build `VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build`:
+
+```text
+apps/web build: dist/assets/index-Ci6vHJhD.css 90.51 kB │ gzip: 15.85 kB
+apps/web build: ✓ built in 381ms
+apps/web build: Done
+```
+
+PASS: `npx -y pnpm@10.28.0 --dir apps/web test src/theme.contrast.test.ts`:
+
+```text
+Test Files 1 passed (1)
+Tests 8 passed (8)
+```
+
+PASS: full browser suite from apps/web:
+
+```text
+$ SCREENSHOTS=1 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 test:e2e
+✓ [classic] e2e/polish.spec.ts:101:3 reduced motion › the forge reveal shows the Relic without motion (5.0s)
+105 passed (35.2s)
+```
+
+The existing config built v2 with VITE_GAME_V2=1 and ran classic, stage-layout and v2-loop projects. All eight U1 cases passed in the classic project's existing discovery, explicitly using the v2 demo preview at 4174. Complete fresh logs: `reports/u1-tokens/fix1-{install,typecheck,lint,test,build,contrast,e2e}.log`.
+
+### Updated acceptance and evidence
+
+- PASS: shared spacing/type/surface/tap tokens and all prior token values preserved; uses retain fallbacks.
+- PASS: typography, number font, uppercase-label utility, primary/secondary/ghost button rules, focus and links retained. Reduced-motion button presses do not move.
+- PASS: movement suppression uses component-specific overrides and targeted control rules; opacity-only fades remain allowed, including the unchanged fz-fade contract.
+- PASS: all eight contrast pairs and thresholds; computed ratios and the sole original border color adjustment remain documented in the original report below, since theme.css is unchanged by this fix.
+- PASS: computed tokens at 1280x720 and touch/mobile 390x844; shared button min-height >= 44 mobile; no horizontal overflow.
+- PASS: install, generated import-map drift check, typecheck, lint, full unit suite, classic build, contrast test, and full browser suite.
+- PASS: original six BEFORE screenshots retained; six AFTER screenshots refreshed from the merged result with SCREENSHOTS=1. Light: 1600x900, 1280x720, 390x844, 320x568; dark: 1280x720, 390x844. Twelve PNGs total, largest 57,892 bytes, dimensions checked from PNG headers.
+- PASS: inspected the refreshed phone screenshot. The new dark HUD, character/bag treatment and backdrop are inherited U2/U4/U8 changes from main; this fix changes reduced-motion behavior only. The original BEFORE set remains the mandated 577faae baseline.
+- PASS: after the browser run, inspected git status for reports, restored all tracked non-U1 report and screenshot rewrites, and removed only the suite-generated untracked screenshots/v13 directory. No outside-allowlist changes remain.
+- PASS: no existing test edits, game logic/content/number changes, dependency edits, migrations/live database writes, PR, merge into main, Actions, deploy or sharing changes.
+- NOT VERIFIED: deployment/live services and manual assistive-device testing, outside this card. Existing skipped/expected-failure unit cases were not forced to run.
+
+No blocker remains. No additional scope permission or work is needed for U1.
+
+### Final scope and author audit
+
+Audit output is appended at the end of this report. Current scope is checked against origin/main as requested by the fix note; the old base-only audit below is historical.
+
+---
+
+## Original report retained (superseded by fix round 1 above)
+
 STATUS: BLOCKED
 
 U1 implementation and evidence are committed, but the full browser suite conflicts with the card's reduced-motion requirement. Stopped after two fix/verification rounds. No existing assertion, test timeout, snapshot, game logic, dependency, or forbidden file was changed.
@@ -412,3 +549,96 @@ ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
 All 27 authors match the required identity.
 
 PASS: `git diff --check` (exit 0, no output). No worktree changes remain outside the report while recording this audit.
+
+## Fix round 1 final audit (2026-10-26)
+
+PASS: `git diff --name-only origin/main...HEAD` (every path in U1 allowlist):
+
+```text
+apps/web/e2e/ui/u1-tokens.spec.ts
+apps/web/src/motion.css
+apps/web/src/theme.contrast.test.ts
+apps/web/src/theme.css
+reports/u1-tokens.md
+reports/u1-tokens/after-1280x720-dark.png
+reports/u1-tokens/after-1280x720.png
+reports/u1-tokens/after-1600x900.png
+reports/u1-tokens/after-320x568.png
+reports/u1-tokens/after-390x844-dark.png
+reports/u1-tokens/after-390x844.png
+reports/u1-tokens/before-1280x720-dark.png
+reports/u1-tokens/before-1280x720.png
+reports/u1-tokens/before-1600x900.png
+reports/u1-tokens/before-320x568.png
+reports/u1-tokens/before-390x844-dark.png
+reports/u1-tokens/before-390x844.png
+reports/u1-tokens/before-build.log
+reports/u1-tokens/before-e2e.log
+reports/u1-tokens/build.log
+reports/u1-tokens/contrast-round1.log
+reports/u1-tokens/contrast.log
+reports/u1-tokens/e2e-round2.log
+reports/u1-tokens/e2e.log
+reports/u1-tokens/fix1-build.log
+reports/u1-tokens/fix1-contrast.log
+reports/u1-tokens/fix1-e2e.log
+reports/u1-tokens/fix1-install.log
+reports/u1-tokens/fix1-lint.log
+reports/u1-tokens/fix1-test.log
+reports/u1-tokens/fix1-typecheck.log
+reports/u1-tokens/lint.log
+reports/u1-tokens/test-round2.log
+reports/u1-tokens/test.log
+reports/u1-tokens/typecheck.log
+```
+
+PASS: `git diff --stat origin/main...HEAD` (snapshot before appending this audit):
+
+```text
+ apps/web/e2e/ui/u1-tokens.spec.ts          |  68 ++++
+ apps/web/src/motion.css                    |  17 +-
+ apps/web/src/theme.contrast.test.ts        |  38 ++
+ apps/web/src/theme.css                     |  81 ++++-
+ reports/u1-tokens.md                       | 551 +++++++++++++++++++++++++++++
+ reports/u1-tokens/after-1280x720-dark.png  | Bin 0 -> 47173 bytes
+ reports/u1-tokens/after-1280x720.png       | Bin 0 -> 47120 bytes
+ reports/u1-tokens/after-1600x900.png       | Bin 0 -> 57892 bytes
+ reports/u1-tokens/after-320x568.png        | Bin 0 -> 32315 bytes
+ reports/u1-tokens/after-390x844-dark.png   | Bin 0 -> 48230 bytes
+ reports/u1-tokens/after-390x844.png        | Bin 0 -> 48255 bytes
+ reports/u1-tokens/before-1280x720-dark.png | Bin 0 -> 43507 bytes
+ reports/u1-tokens/before-1280x720.png      | Bin 0 -> 43507 bytes
+ reports/u1-tokens/before-1600x900.png      | Bin 0 -> 52490 bytes
+ reports/u1-tokens/before-320x568.png       | Bin 0 -> 30003 bytes
+ reports/u1-tokens/before-390x844-dark.png  | Bin 0 -> 40501 bytes
+ reports/u1-tokens/before-390x844.png       | Bin 0 -> 40501 bytes
+ reports/u1-tokens/before-build.log         |  35 ++
+ reports/u1-tokens/before-e2e.log           |  30 ++
+ reports/u1-tokens/build.log                |  35 ++
+ reports/u1-tokens/contrast-round1.log      |  13 +
+ reports/u1-tokens/contrast.log             |  30 ++
+ reports/u1-tokens/e2e-round2.log           | 148 ++++++++
+ reports/u1-tokens/e2e.log                  |   7 +
+ reports/u1-tokens/fix1-build.log           |  35 ++
+ reports/u1-tokens/fix1-contrast.log        |  13 +
+ reports/u1-tokens/fix1-e2e.log             | 158 +++++++++
+ reports/u1-tokens/fix1-install.log         |  13 +
+ reports/u1-tokens/fix1-lint.log            |  17 +
+ reports/u1-tokens/fix1-test.log            |  50 +++
+ reports/u1-tokens/fix1-typecheck.log       |  17 +
+ reports/u1-tokens/lint.log                 |  17 +
+ reports/u1-tokens/test-round2.log          |  50 +++
+ reports/u1-tokens/test.log                 |  69 ++++
+ reports/u1-tokens/typecheck.log            |  17 +
+ 35 files changed, 1495 insertions(+), 14 deletions(-)
+```
+
+PASS: `git log --format='%an <%ae>' origin/main..HEAD`:
+
+```text
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+PASS: `git diff 2b378a0 -- apps/web/src/theme.css apps/web/src/theme.contrast.test.ts`, `git diff origin/main -- apps/web/e2e/polish.spec.ts`, `git diff --check`, and `git status --short`: all empty, exit 0 before appending this audit. Main remains c87012d32c04cabe81b5d2cd1461e97cb9bbe569 after the final required fetch.
