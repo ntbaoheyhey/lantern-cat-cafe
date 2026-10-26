@@ -204,6 +204,7 @@ it('mints with the voucher fields converted, waits for the receipt, then reports
 
   expect(wallet.waitForTransactionReceipt).toHaveBeenCalledWith({ hash: HASH });
   expect(api.reportMint).toHaveBeenCalledWith(String(v.nonce), HASH);
+  for (const link of screen.getAllByRole('link', { name: /View on Snowtrace/i })) expect(link.getAttribute('rel')).toBe('noopener noreferrer');
   expect(loop!.getSnapshot().server?.forge.pending).toBeNull();
   expect(loadUnreported()).toBeNull();
   expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
@@ -278,6 +279,7 @@ it('keeps an unconfirmed mint and lets the player check again', async () => {
   vi.mocked(api.reportMint).mockRejectedValueOnce(new GameApiError('mint_not_confirmed'));
   await setup(api);
   const check = await screen.findByRole('button', { name: 'Check again' });
+  expect(screen.getByRole('link', { name: 'view on Snowtrace' }).getAttribute('rel')).toBe('noopener noreferrer');
   expect(loadUnreported()).toEqual({ nonce: voucher.nonce, hash: HASH });
   fireEvent.click(check);
   await screen.findByTestId('forge-minted');

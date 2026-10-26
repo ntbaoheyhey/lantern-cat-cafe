@@ -150,7 +150,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
       ) : unreported ? (
         <div className="forge-result">
           <p>
-            Your Relic is minted (<a href={txUrl(unreported.hash)} target="_blank" rel="noreferrer">view on Snowtrace</a>).
+            Your Relic is minted (<a href={txUrl(unreported.hash)} target="_blank" rel="noopener noreferrer">view on Snowtrace</a>).
             Waiting for the game to confirm it.
           </p>
           <button type="button" className="forge-btn" disabled={checking} onClick={() => void checkAgain()}>
@@ -200,7 +200,7 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
 
       {minted && (
         <p className="forge-done" role="status" data-testid="forge-minted">
-          Relic minted. In your wallet! <a href={txUrl(minted.hash)} target="_blank" rel="noreferrer">View on Snowtrace</a>
+          Relic minted. In your wallet! <a href={txUrl(minted.hash)} target="_blank" rel="noopener noreferrer">View on Snowtrace</a>
         </p>
       )}
       {error && <ErrorNote text={error.text} onRetry={error.retry} className="forge-error" />}
