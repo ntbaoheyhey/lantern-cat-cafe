@@ -81,7 +81,7 @@ owner (deployer wallet A) points the contract at it. Run on your own machine; ne
 
 ```sh
 cast send 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D "setURI(string)" \
-  "https://web-zeta-tan-13.vercel.app/relics/{id}.json" \
+  "https://taskbarhero-eight.vercel.app/relics/{id}.json" \
   --rpc-url https://api.avax-test.network/ext/bc/C/rpc --private-key $OWNER_KEY
 ```
 
@@ -92,7 +92,7 @@ Verify:
 ```sh
 cast call 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D "uri(uint256)(string)" 1 \
   --rpc-url https://api.avax-test.network/ext/bc/C/rpc
-curl -s https://web-zeta-tan-13.vercel.app/relics/0000000000000000000000000000000000000000000000000000000000000001.json
+curl -s https://taskbarhero-eight.vercel.app/relics/0000000000000000000000000000000000000000000000000000000000000001.json
 ```
 
 The first prints the URI with `{id}`, the second the Common Relic metadata.
