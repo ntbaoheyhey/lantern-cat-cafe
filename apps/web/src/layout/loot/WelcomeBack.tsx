@@ -32,7 +32,7 @@ export function formatAwayTime(awaySeconds: number, capSeconds = CONFIG.idle.off
 }
 
 export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
-  const isVisible = !isEmptyLoot(gains) && awaySeconds >= 300;
+  const isVisible = !isEmptyLoot(gains) && awaySeconds >= CONFIG.idle.onlineWindowSeconds;
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -111,7 +111,10 @@ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
           Your cat kept going for {formatAwayTime(awaySeconds)}.
         </p>
 
-        <LootSummary loot={gains} heading="Offline gains" headingLevel={3} />
+        <p className="welcome-back-rule">
+          The first {CONFIG.idle.onlineWindowSeconds / 60} minutes count in full; after that the cat earns at {CONFIG.idle.offlineEfficiency === 0.5 ? 'half speed' : `${CONFIG.idle.offlineEfficiency * 100}% speed`}, up to {CONFIG.idle.offlineCapSeconds / 3600} hours.
+        </p>
+        <LootSummary loot={gains} heading="While you were away" headingLevel={3} />
 
         <div className="welcome-back-actions">
           <button

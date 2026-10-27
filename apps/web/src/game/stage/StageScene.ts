@@ -13,6 +13,9 @@ type Actor = Phaser.GameObjects.Sprite;
 interface Hit { target: Actor; age: number; x: number; y: number; text: Phaser.GameObjects.Text; flash: Phaser.GameObjects.Image | null; missed: boolean }
 
 export class StageScene extends Phaser.Scene {
+  private visualKey = '';
+  private montage: ((count: number) => void) | null = null;
+  private applyMotion: (() => void) | null = null;
   private state0: ServerStateV2 | null = null;
   private cat: Actor | null = null;
   private monster: Actor | null = null;
@@ -49,12 +52,26 @@ export class StageScene extends Phaser.Scene {
       (x, y) => (this.textures.getPixelAlpha(x, y, sprite.texture.key, sprite.frame.name) ?? 0) > 0);
   }
   show(state: ServerStateV2, reducedMotion: boolean) {
-    const before = this.state0;
+    const before = this.state0, motionChanged = this.reduced !== reducedMotion;
     this.state0 = state; this.reduced = reducedMotion;
     if (!this.sys.isActive() || !state.cat.classId) return;
+    const visuals = equippedVisuals(state);
+    const key = JSON.stringify([state.cat.classId, state.progress.chapter, state.progress.round,
+      Object.entries(visuals).sort(([a], [b]) => a.localeCompare(b))]);
+    const count = Math.min(8, claimedKills(before, state));
+    if (key === this.visualKey && this.cat && this.monster) {
+      if (motionChanged) this.applyMotion?.();
+      if (count > 0) this.montage?.(count);
+      return;
+    }
+    this.visualKey = key;
     this.director?.destroy(); this.clearFeedback(); this.cat?.destroy(); this.monster?.destroy();
+    if (import.meta.env.DEV || import.meta.env.MODE === 'g1-perf') {
+      const canvas = this.game.canvas;
+      canvas.dataset.stageRebuilds = String(Number(canvas.dataset.stageRebuilds ?? 0) + 1);
+    }
     const cls = state.cat.classId;
-    const sheet = bakeCat(this, CLASS_LOOKS[cls], equippedVisuals(state));
+    const sheet = bakeCat(this, CLASS_LOOKS[cls], visuals);
     this.floor = computeFloorY(this.scale.height, backdropFor(state.progress.chapter).floorY);
     const width = this.scale.width;
     this.homes = [Math.round(width * .3), Math.round(width * .7)];
@@ -75,8 +92,12 @@ export class StageScene extends Phaser.Scene {
       actor.play(key);
       if (this.reduced) actor.stop().setFrame(frame);
     };
-    pose(this.monster, anims.walk, '0');
-    pose(this.cat, sheet.anims[reducedMotion || state.progress.gated ? 'idle' : 'walk'].key, reducedMotion ? 'idle:0' : 'walk:0');
+    this.applyMotion = () => {
+      pose(this.monster!, anims.walk, '0');
+      const idle = this.reduced || this.state0!.progress.gated;
+      pose(this.cat!, sheet.anims[idle ? 'idle' : 'walk'].key, idle ? 'idle:0' : 'walk:0');
+    };
+    this.applyMotion();
 
     // Reuse the existing combat timeline; stage-only rendering avoids the arena director's
     // knockback, defeat hops and pooled numbers, which have different motion/timing rules.
@@ -108,21 +129,38 @@ export class StageScene extends Phaser.Scene {
           break;
       }
     };
-    const stats = v2.deriveStats({ classId: cls, level: state.cat.level }, state.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus })));
     const monster = v2.monsterAt(art.id, v2.stageOf(state.progress.chapter, state.progress.round));
-    // Claims retain the existing compressed montage; an ungated stage continues the
-    // existing predicted idle timeline visually, without writing kills or game state.
-    const count = Math.min(8, claimedKills(before, state));
-    const cues = buildIdleCues(stats, monster, { cycles: Math.max(1, count) });
-    let player = new CuePlayer(cues, handle), alive = true;
+    const cuesFor = (cycles: number) => {
+      const current = this.state0!;
+      const stats = v2.deriveStats({ classId: cls, level: current.cat.level }, current.inventory.filter(i => i.equipped).map(i => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus })));
+      return buildIdleCues(stats, monster, { cycles });
+    };
+    let player = new CuePlayer(cuesFor(Math.max(1, count)), handle), alive = true;
+    let montage = count > 0;
+    // A credited claim replaces only the compressed timeline; sprites and feedback stay alive.
+    this.montage = cycles => { player = new CuePlayer(cuesFor(cycles), handle); montage = true; };
     this.director = {
       update: delta => {
-        if (!alive || (state.progress.gated && count === 0)) return;
+        if (!alive || (this.state0!.progress.gated && !montage)) return;
         player.advance(delta);
-        if (player.done && !state.progress.gated) player = new CuePlayer(cues, handle);
+        if (player.done) {
+          montage = false;
+          if (!this.state0!.progress.gated) player = new CuePlayer(cuesFor(1), handle);
+        }
       },
       destroy: () => { alive = false; },
     };
+    this.drawGround();
+  }
+  relayout() {
+    this.floor = computeFloorY(this.scale.height, backdropFor(this.state0?.progress.chapter ?? 1).floorY);
+    this.homes = [Math.round(this.scale.width * .3), Math.round(this.scale.width * .7)];
+    this.cat?.setPosition(this.homes[0], this.floor);
+    this.monster?.setPosition(this.homes[1], this.floor);
+    for (const hit of this.hits) {
+      const nextX = hit.target === this.cat ? this.homes[0] : this.homes[1];
+      hit.x = nextX;
+    }
     this.drawGround();
   }
   private hit(target: Actor, damage: number, big: boolean, missed: boolean) {

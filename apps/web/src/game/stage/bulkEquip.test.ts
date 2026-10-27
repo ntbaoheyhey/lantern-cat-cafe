@@ -57,8 +57,59 @@ it('cancels queued callbacks when the stage is disposed', async () => {
 });
 it('allows unequipping with null through the queue', async () => {
   const { api, loop, queue } = await setup();
+  const weapon = loop.getSnapshot().state!.inventory.find(i => i.slot === 'weapon')!;
+  await queue.equip(weapon.id, 'weapon');
   const equip = vi.spyOn(api, 'equip');
   await queue.equip(null, 'weapon');
   expect(equip).toHaveBeenCalledWith(null, 'weapon');
   expect(loop.getSnapshot().state!.equipped.weapon).toBeNull();
+});
+it('deduplicates a double Equip best click, reports two intents immediately and skips confirmed equips', async () => {
+  const { api, loop, queue, upgrades } = await setup();
+  let release!: () => void;
+  const original = api.equip.bind(api);
+  const equip = vi.spyOn(api, 'equip').mockImplementationOnce(async (...args) => {
+    await new Promise<void>(yes => { release = yes; });
+    return original(...args);
+  });
+  const first = upgrades.map(i => queue.equip(i.id, i.slot));
+  expect(loop.getSnapshot().queued).toBe(2);
+  const second = upgrades.map(i => queue.equip(i.id, i.slot));
+  expect(second[0]).toBe(first[0]);
+  expect(second[1]).toBe(first[1]);
+  expect(loop.getSnapshot().queued).toBe(2);
+  await vi.waitFor(() => expect(equip).toHaveBeenCalledOnce());
+  expect(loop.getSnapshot().pending).toEqual({ action: 'equip', itemId: upgrades[0]!.id, slot: upgrades[0]!.slot });
+  release();
+  await Promise.all([...first, ...second]);
+  expect(equip).toHaveBeenCalledTimes(2);
+  expect(loop.getSnapshot().queued).toBe(0);
+  await Promise.all(upgrades.map(i => queue.equip(i.id, i.slot)));
+  expect(equip).toHaveBeenCalledTimes(2);
+});
+it('skips an already empty slot', async () => {
+  const { api, queue } = await setup();
+  const equip = vi.spyOn(api, 'equip');
+  await queue.equip(null, 'weapon');
+  expect(equip).not.toHaveBeenCalled();
+});
+it('waits behind another action and continues after a refused equip without inventing success', async () => {
+  const { api, loop, queue, upgrades } = await setup();
+  let release!: () => void;
+  const original = api.setLocked.bind(api);
+  vi.spyOn(api, 'setLocked').mockImplementationOnce(async (...args) => {
+    await new Promise<void>(yes => { release = yes; });
+    return original(...args);
+  });
+  const locking = loop.setLocked(upgrades[0]!.id, true);
+  await vi.waitFor(() => expect(release).toBeTypeOf('function'));
+  const equip = vi.spyOn(api, 'equip').mockRejectedValueOnce({ code: 'stale' });
+  const pending = upgrades.map(i => queue.equip(i.id, i.slot));
+  await Promise.resolve();
+  expect(equip).not.toHaveBeenCalled();
+  release(); await locking; await Promise.all(pending);
+  expect(equip).toHaveBeenCalledTimes(2);
+  expect(loop.getSnapshot().state!.equipped[upgrades[0]!.slot]).toBeNull();
+  expect(loop.getSnapshot().state!.equipped[upgrades[1]!.slot]).toBe(upgrades[1]!.id);
+  expect(loop.getSnapshot().queued).toBe(0);
 });
