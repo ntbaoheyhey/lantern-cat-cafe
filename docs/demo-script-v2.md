@@ -1,134 +1,88 @@
-# Taskbar Hero — Cat RPG v2 Demo Script & Judge Walkthrough
+# Taskbar Hero (Cat RPG v2) — 2.5-Minute Demo Video Script & Shot List
 
-> [!NOTE]
-> Draft until the v2 cut-over (V29).
-
-A comprehensive presentation guide for hackathon judges and code reviewers evaluating **Cat RPG v2** (Cat Café Quest). This walkthrough runs entirely in **demo mode** (no crypto wallet connection required, zero testnet gas needed, and zero configuration).
+A synchronized shot list and presentation script for hackathon judges evaluating **Taskbar Hero (Cat RPG v2: Cat Café Quest)**. Designed for a 2:30–2:45 video walkthrough. Every timing, screen action, and spoken sentence directly matches the media kit captures in `reports/t3-demo-media/` and reflects the live code on `main`.
 
 ---
 
-## 1. Quick Reference & Local Setup
+## 1. Timing & Shot List Overview
 
-### Local Run Command
-
-During development prior to the v2 cut-over (V29), the v2 stage layout is enabled via the `VITE_GAME_V2` environment flag:
-
-```bash
-VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web dev
-```
-
-Once running, navigate to `http://localhost:5173` in any desktop browser (Chrome, Brave, Edge, or Firefox).
-
-### Walkthrough Summary
-
-- **Target Duration**: 3–5 minutes.
-- **Audience**: Hackathon judges, protocol reviewers, and community testers.
-- **Operating Mode**: Demo mode (`MockGameApi`, client-side local simulation).
-- **Core Narrative**: Cat RPG v2 transforms the ambient taskbar idle game into a rich, chapter-based dungeon crawler with 7 feline hero classes, 9 equipment slots, deterministic combat simulations, deep crafting and auto-salvage economies, and daily Relic milestone minting on Avalanche Fuji.
+| Shot # | Time | Screen / Asset | Visual & Presenter Action | Spoken Narration (Exact Words) |
+| :---: | :---: | :--- | :--- | :--- |
+| **01** | **0:00 - 0:18** | **App Shell & Onboarding**<br>([01-title.png](../reports/t3-demo-media/01-title.png)) | Open app at `1600x900`. Point out the dark cozy palette, the top HUD, and the "How to play" overview dialog. Click **Start playing**. | *"Judges, this is Taskbar Hero—a cozy ambient idle RPG designed to live quietly at the bottom of your screen while you work. Everyday progress is 100% gas-free, while major accomplishments forge genuine digital collectibles on Avalanche Fuji."* |
+| **02** | **0:18 - 0:38** | **Class Selection**<br>([02-class-pick.png](../reports/t3-demo-media/02-class-pick.png)) | ClassPicker modal displays 7 archetypes. Highlight Warrior and Rogue. Click **Choose Warrior** -> **Confirm**. | *"We begin by choosing our hero from seven feline classes—ranging from the high-defense Guardian to the poison-brewing Alchemist. We pick the Warrior, wielding swords and splashing 50% damage every third swing with Cleave. The game immediately equips our starter blade."* |
+| **03** | **0:38 - 1:00** | **Ambient Combat & Stage**<br>([03-idle-loop.png](../reports/t3-demo-media/03-idle-loop.png), [13-idle-loop.mp4](../reports/t3-demo-media/13-idle-loop.mp4)) | Watch Mochi battle monsters in Chapter 1 (Living Room). Point out floating damage numbers and real-time HUD counters (Level, XP, Fish, Yarn, Cat Keys, Power). | *"On the main stage, combat hums along automatically without frantic clicking. Mochi battles through 10 rounds of household pests. Every 30 seconds, the engine auto-claims Fish and Yarn. If our cat meets a monster it cannot beat, the server safely farms the highest cleared stage without punishing deaths."* |
+| **04** | **1:00 - 1:22** | **Inventory & Equip Best**<br>([04-bag.png](../reports/t3-demo-media/04-bag.png)) | Switch to **Inventory** tab. Point out 9 equipment slots, 200-slot bag, rarity borders, and item comparison deltas. Click **Equip best**. | *"In the Inventory tab, our cat equips nine gear slots—five main pieces and four unlocking accessories. The bag holds up to 200 items. Clicking 'Equip best' evaluates all gear against our class proficiencies, instantly equipping the optimal loadout to maximize our power rating."* |
+| **05** | **1:22 - 1:44** | **The Forge Workshop**<br>([05-forge-reveal.png](../reports/t3-demo-media/05-forge-reveal.png)) | Switch to **Forge** tab. Select Weapon slot, click Uncommon rarity, show transparent recipe costs. Show Salvage and Relic subtabs. | *"The Forge provides deterministic progression rather than gambling. We can craft guaranteed rarities using Fish, Yarn, and tier materials. Salvaging unwanted items recovers 25% of crafting materials. The Relic tab reveals our daily milestone recipe: 30 Yarn and 1 rare Moon Pearl."* |
+| **06** | **1:44 - 2:02** | **World Chapter Map**<br>([06-chapter-map.png](../reports/t3-demo-media/06-chapter-map.png)) | Switch to **Boss** tab. Scroll through the 5-chapter winding World Map. Point out Ch1 cleared badge, Ch2 active pulse, and Boss Gate requirements. | *"The Boss tab reveals our World Map across five quest environments—from the Living Room to Night Rooftops. The Boss Gate compares our power against Chapter 1's Yarn Giant. Entering requires one Cat Key, but keys are strictly consumed only if we win."* |
+| **07** | **2:02 - 2:22** | **Boss Arena Combat**<br>([07-boss-arena.png](../reports/t3-demo-media/07-boss-arena.png), [14-boss-fight.mp4](../reports/t3-demo-media/14-boss-fight.mp4)) | Click **Fight**. Real-time Boss Arena launches. Watch attack exchanges, health bars, and telegraphed boss slams. Click **Skip fight**. | *"We launch the boss battle! The Yarn Giant attacks every 1,500 milliseconds and charges heavy slams. Combat simulates deterministically in real time. We click Skip fight to resolve the encounter—and secure victory!"* |
+| **08** | **2:22 - 2:38** | **Victory & Chest Reveal**<br>([08-result.png](../reports/t3-demo-media/08-result.png)) | "First clear chest!" modal pops up with Living Room backdrop. Click **Skip** to reveal all rewards: 1 Moon Pearl, Fish, Yarn, materials, and gear. Click **Collect**. | *"Victory opens the Chapter 1 First-Clear Chest! We receive 4,600 Fish, 25 Yarn, crafting materials, gear drops, and our prize: one Moon Pearl—the essential ingredient for today's on-chain Relic forge."* |
+| **09** | **2:38 - 2:50** | **Mobile Layout & Closing**<br>([09-phone-stage.png](../reports/t3-demo-media/09-phone-stage.png) to [12-phone-forge.png](../reports/t3-demo-media/12-phone-forge.png)) | Showcase mobile viewports (`390x844`) with bottom sheet tabs, and summarize the Avalanche Fuji contracts. | *"The interface is fully responsive, adapting seamlessly to mobile phone sheets. When connected to Avalanche Fuji, our server issues an EIP-712 voucher, letting players mint collectible ERC-1155 Relics and trade them peer-to-peer on RelicMarket. Thank you!"* |
 
 ---
 
-## 2. Interactive Walkthrough: Step-by-Step
+## 2. Presenter Script (Word-for-Word Narration)
 
-| Step | Time | Screen / Feature | Exact Action / Clicks | What the Viewer Should Notice | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | 0:00 - 0:30 | **App Shell & Game Stage** | Open `http://localhost:5173`. Point out top bar, HUD, and the main stage. | Stage renders Chapter 1 (Living Room). HUD displays Fish, Yarn, and Cat Keys. Cat sprite animates ambiently on the large canvas. | Live on main |
-| **2** | 0:30 - 1:00 | **Class Selection** | Open ClassPicker. Select **Warrior** (or **Rogue**). Click **Choose Class** -> **Confirm**. | Class card displays weapon type, stat leanings, and passive (**Cleave** / **Twin Strike**). Starter weapon equips automatically. | *(pending V16/V19)* |
-| **3** | 1:00 - 1:30 | **Ambient Idle Combat** | Watch combat on the main stage as rounds progress. | Cat engages regular monsters (Dust Bunny, Loose Yarn, Sock Puppet) and the Elite (Roomba Scout) at 6 kills per round. Attack cadence (1,000 ms) and passives animate cleanly. | Live on main |
-| **4** | 1:30 - 2:05 | **Inventory & Bag Panel** | Click **Inventory** tab. Select an item in the bag. Click **Equip best**. | Character panel shows 9 slots (5 main unlocked at Lv 1, accessories unlocking at Lv 5, 10, 20). Bag counter reads `Bag X / 200`. Item compare displays exact stat deltas (+HP, +ATK). **Equip best** equips optimal upgrades instantly. | Live on main |
-| **5** | 2:05 - 2:40 | **The Forge** | Click **Forge** tab. Select **Craft** -> Slot **Weapon** -> Rarity **Uncommon**. Click **Craft** -> **Confirm**. | Recipe cost displays 150 Fish, 25 Yarn, 8 Fluff Tuft, 1 Shiny Button. Crafted item gains guaranteed Uncommon rarity with item level from highest stage. Switch to **Salvage** to show ~25% material recovery. | *(pending V16/V19)* |
-| **6** | 2:40 - 3:15 | **Boss Battle** | Click **Boss** tab at Round 10. Check 1 Cat Key requirement. Click **Fight**. | Chapter 1 Boss **Yarn Giant** appears. Boss telegraphs attacks every 1,500 ms (400 ms windup) and big slams every 6,000 ms (1,000 ms windup, 2.5x damage). | *(pending V16/V19)* |
-| **7** | 3:15 - 3:50 | **Victory & Chest Opening** | Watch boss defeat animation. Open **First-Clear Chest**. | Exactly 1 Cat Key is consumed on victory. First-Clear Chest awards **1 Moon Pearl (100% drop)**, 400 Fish, 20 Yarn, materials, and guaranteed gear items. Frontier advances to Chapter 2. | *(pending V16/V19)* |
-| **8** | 3:50 - 4:20 | **World Chapter Map** | Open the **Chapter Map**. Point out chapter progression nodes. | Chapter 1 shows a green checkmark (cleared & available for rematch). Chapter 2 (Kitchen) pulses as active. Chapters 3–5 show padlock frames. | *(pending V16/V19)* |
-| **9** | 4:20 - 4:45 | **Session Persistence** | Press **Reload** (`Cmd+R` / `F5`) in the browser. | Game reloads instantly. Cat class, inventory items, currencies, and cleared chapter progress persist seamlessly from local storage. | Live on main |
+### Scene 1: The Ambient Vision (0:00 - 0:18)
+- **Visual**: [01-title.png](../reports/t3-demo-media/01-title.png) — Desktop browser at `1600x900`, dark theme, "How to play" dialog displayed over the Living Room stage.
+- **Presenter Action**: Open the app, highlight the clean dark palette and HUD counters, click **Start playing**.
+- **Spoken Narration**:
+  > *"Judges, this is Taskbar Hero—a cozy ambient idle RPG designed to live quietly at the bottom of your screen while you work. Everyday progress is 100% gas-free, while major accomplishments forge genuine digital collectibles on Avalanche Fuji."*
 
-*(pending V16/V19)*: These steps feature components whose UI integration into `apps/web/src/layout/StageLayout.tsx` is pending the V16/V19 layout and boss integration tasks.
+### Scene 2: Picking a Hero Class (0:18 - 0:38)
+- **Visual**: [02-class-pick.png](../reports/t3-demo-media/02-class-pick.png) — ClassPicker interface showing all 7 classes, weapon proficiencies, stat multipliers, and passive descriptions.
+- **Presenter Action**: Hover over Warrior and Rogue, click **Choose Warrior**, and click **Confirm**.
+- **Spoken Narration**:
+  > *"We begin by choosing our hero from seven feline classes—ranging from the high-defense Guardian to the poison-brewing Alchemist. We pick the Warrior, wielding swords and splashing 50% damage every third swing with Cleave. The game immediately equips our starter blade."*
+
+### Scene 3: Ambient Stage & Idle Combat (0:38 - 1:00)
+- **Visual**: [03-idle-loop.png](../reports/t3-demo-media/03-idle-loop.png) & [13-idle-loop.mp4](../reports/t3-demo-media/13-idle-loop.mp4) — Active stage canvas in Chapter 1 with Mochi battling monsters, floating combat numbers, and live HUD updates.
+- **Presenter Action**: Point out the automated monster kills, progress counter (`Chapter 1 · Round 1`), and Fish/Yarn accumulation.
+- **Spoken Narration**:
+  > *"On the main stage, combat hums along automatically without frantic clicking. Mochi battles through 10 rounds of household pests. Every 30 seconds, the engine auto-claims Fish and Yarn. If our cat meets a monster it cannot beat, the server safely farms the highest cleared stage without punishing deaths."*
+
+### Scene 4: Inventory, Bag & Equip Best (1:00 - 1:22)
+- **Visual**: [04-bag.png](../reports/t3-demo-media/04-bag.png) — Character area with 9 equipment slots and active stats; Bag panel populated with diverse rarity items and stat comparison card.
+- **Presenter Action**: Click **Inventory** tab, select a Rare item to show comparison deltas (+HP, +DEF), then click **Equip best**.
+- **Spoken Narration**:
+  > *"In the Inventory tab, our cat equips nine gear slots—five main pieces and four unlocking accessories. The bag holds up to 200 items. Clicking 'Equip best' evaluates all gear against our class proficiencies, instantly equipping the optimal loadout to maximize our power rating."*
+
+### Scene 5: The Forge & Economy (1:22 - 1:44)
+- **Visual**: [05-forge-reveal.png](../reports/t3-demo-media/05-forge-reveal.png) — Forge Workshop showing slot picker, rarity selector, material balances, and craft confirmation box.
+- **Presenter Action**: Click **Forge** tab, click **Weapon**, select **Uncommon**, show recipe requirements, and switch briefly to the **Relic** subtab.
+- **Spoken Narration**:
+  > *"The Forge provides deterministic progression rather than gambling. We can craft guaranteed rarities using Fish, Yarn, and tier materials. Salvaging unwanted items recovers 25% of crafting materials. The Relic tab reveals our daily milestone recipe: 30 Yarn and 1 rare Moon Pearl."*
+
+### Scene 6: World Map & Chapter Boss Gate (1:44 - 2:02)
+- **Visual**: [06-chapter-map.png](../reports/t3-demo-media/06-chapter-map.png) — Boss tab displaying the winding 5-chapter World Map and the Boss Gate card.
+- **Presenter Action**: Click **Boss** tab, scroll to the World Map, point out Chapter 1 cleared badge and Chapter 2 active node, and show Yarn Giant details.
+- **Spoken Narration**:
+  > *"The Boss tab reveals our World Map across five quest environments—from the Living Room to Night Rooftops. The Boss Gate compares our power against Chapter 1's Yarn Giant. Entering requires one Cat Key, but keys are strictly consumed only if we win."*
+
+### Scene 7: Boss Arena Battle (2:02 - 2:22)
+- **Visual**: [07-boss-arena.png](../reports/t3-demo-media/07-boss-arena.png) & [14-boss-fight.mp4](../reports/t3-demo-media/14-boss-fight.mp4) — Boss Arena canvas with Mochi fighting Yarn Giant, boss telegraph glow, HP bars, and combat log.
+- **Presenter Action**: Click **Fight**, watch battle animations, point out boss attack cadence, then click **Skip fight**.
+- **Spoken Narration**:
+  > *"We launch the boss battle! The Yarn Giant attacks every 1,500 milliseconds and charges heavy slams. Combat simulates deterministically in real time. We click Skip fight to resolve the encounter—and secure victory!"*
+
+### Scene 8: Victory & First-Clear Chest Reveal (2:22 - 2:38)
+- **Visual**: [08-result.png](../reports/t3-demo-media/08-result.png) — "First clear chest!" dialog displaying rewards with Chapter 1 backdrop and chest sprite.
+- **Presenter Action**: Click **Skip** to reveal all loot units, highlight the Moon Pearl drop, and click **Collect**.
+- **Spoken Narration**:
+  > *"Victory opens the Chapter 1 First-Clear Chest! We receive 4,600 Fish, 25 Yarn, crafting materials, gear drops, and our prize: one Moon Pearl—the essential ingredient for today's on-chain Relic forge."*
+
+### Scene 9: Mobile Experience & On-Chain Closing (2:38 - 2:50)
+- **Visual**: [09-phone-stage.png](../reports/t3-demo-media/09-phone-stage.png) to [12-phone-forge.png](../reports/t3-demo-media/12-phone-forge.png) — Phone viewports (`390x844`) demonstrating responsive stage and bottom-sheet navigation.
+- **Presenter Action**: Show the mobile layout, mention Avalanche Fuji contracts (`RelicNFT` and `RelicMarket`), and conclude.
+- **Spoken Narration**:
+  > *"The interface is fully responsive, adapting seamlessly to mobile phone sheets. When connected to Avalanche Fuji, our server issues an EIP-712 voucher, letting players mint collectible ERC-1155 Relics and trade them peer-to-peer on RelicMarket. Thank you!"*
 
 ---
 
-## 3. Presenter Narration Script
+## 3. Production & Recording Checklist
 
-### Scene 1: The Ambient RPG Vision (0:00 - 0:30)
-- **Presenter Action**: Open the site running locally with `VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web dev`. Maximize the window.
-- **Spoken Narration**:
-  > *"Judges, Taskbar Hero v2 expands our zero-gas ambient RPG into a full-fledged chapter-based adventure called Cat Café Quest. Running comfortably in the browser while you work, your cat hero battles through 5 household chapters—from the Living Room to the Night Rooftops. Notice the top bar displaying our real-time HUD counters for Fish, Yarn, and Cat Keys, alongside the large pixel-art game stage."*
-
-### Scene 2: Picking a Class (0:30 - 1:00) — *(pending V16/V19)*
-- **Presenter Action**: Open the ClassPicker (`ClassPicker.tsx`). Highlight the Warrior and Rogue cards. Click **Choose Warrior**, then **Confirm**.
-- **Spoken Narration**:
-  > *"We start by selecting our hero's class from 7 distinct archetypes. Each class brings unique base stat leanings, dedicated weapon families, and passive combat traits. For instance, the Warrior wields a Sword and splashes 50% damage every 3 attacks with Cleave, while the Rogue strikes twice per attack with high crit. When we choose a class, the game immediately equips our matching starter weapon—the Twig Sword."*
-
-### Scene 3: Ambient Idle Progress (1:00 - 1:30)
-- **Presenter Action**: Direct attention to the active combat on the stage canvas.
-- **Spoken Narration**:
-  > *"On the stage, combat proceeds automatically without tedious clicking. Chapter 1 features 10 rounds of 6 monster kills each—cycling through Dust Bunnies, Loose Yarn, and Sock Puppets, before challenging the Roomba Scout Elite at the end of each round. If our cat encounters a monster it cannot defeat, the system marks us as 'gated' and safely farms the highest cleared round for Fish and Yarn without frustrating player deaths."*
-
-### Scene 4: Inventory, Gearing, and Equip Best (1:30 - 2:05)
-- **Presenter Action**: Click the **Inventory** tab. Show the Character Panel and Bag Panel (`BagPanel.tsx`). Select an item to show comparison deltas. Click **Equip best**.
-- **Spoken Narration**:
-  > *"In the Inventory tab, our Character Panel displays 9 equipment slots. Five main slots show directly on our cat's sprite, while four accessory slots unlock as our cat levels up to Level 5, 10, and 20. The Bag holds up to 200 items. Clicking 'Equip best' evaluates all gear in our bag against our active class weapon, automatically equipping the combination that maximizes our overall power rating."*
-
-### Scene 5: The Forge & Smart Economy (2:05 - 2:40) — *(pending V16/V19)*
-- **Presenter Action**: Switch to the **Forge** tab (`ForgePanel.tsx`). Select Craft, choose an Uncommon Armor piece, and confirm. Show the Salvage tab.
-- **Spoken Narration**:
-  > *"The Forge gives players deterministic progression. Rather than relying solely on random drops, we can spend Fish, Yarn, and tier materials to forge guaranteed rarities with item levels scaled to our highest cleared stage. In the Salvage tab, unwanted items can be dismantled for crafting materials. Salvaging returns approximately 25% of the crafting material cost and zero Fish, ensuring craft-then-salvage always loses value and prevents infinite economy exploits."*
-
-### Scene 6: The Chapter Boss & Deterministic Combat (2:40 - 3:15) — *(pending V16/V19)*
-- **Presenter Action**: Switch to the **Boss** tab at Round 10. Click **Fight**.
-- **Spoken Narration**:
-  > *"At Round 10, we unlock the chapter climax: the Yarn Giant. Boss fights require 1 Cat Key, but keys are consumed only if we win. The combat simulation runs deterministically: normal boss attacks land every 1,500 ms, punctuated by a telegraphed heavy slam every 6,000 ms dealing 2.5x damage. If we lose, our key is preserved and a single 60-second cooldown protects server sanity across all chapters."*
-
-### Scene 7: Victory & First-Clear Chest Rewards (3:15 - 3:50) — *(pending V16/V19)*
-- **Presenter Action**: Show the victory banner and open the First-Clear Chest.
-- **Spoken Narration**:
-  > *"Victory! Defeating the Yarn Giant consumes our Cat Key and opens the Chapter 1 First-Clear Chest. This guarantees 1 Moon Pearl—our prized daily Relic ingredient—along with 400 Fish, 20 Yarn, tier materials, and guaranteed gear drops. Even if our bag had been completely full at 200 items, the engine automatically salvages overflowing drops on the spot so rewards are never lost. Winning unlocks Chapter 2: The Kitchen."*
-
-### Scene 8: The World Chapter Map (3:50 - 4:20) — *(pending V16/V19)*
-- **Presenter Action**: Display the ChapterMap (`ChapterMap.tsx`).
-- **Spoken Narration**:
-  > *"The Chapter Map visualizes our journey across the 5 quest environments. Chapter 1 now shows a green checkmark, indicating it is cleared and ready for repeat boss rematches for bonus materials. Chapter 2 is active and pulsing, while Chapters 3 through 5 remain locked behind future boss conquests."*
-
-### Scene 9: Session Persistence & Closing (4:20 - 4:45)
-- **Presenter Action**: Reload the browser page (`F5` / `Cmd+R`).
-- **Spoken Narration**:
-  > *"Finally, we reload the browser page. Notice that all our earned levels, unlocked chapters, bag items, and currencies persist seamlessly in demo mode storage. In production, connecting an Avalanche wallet upgrades this profile to verified on-chain ownership, letting players forge and trade daily Relic NFTs on Avalanche Fuji. Thank you!"*
-
----
-
-## 4. "If Something Goes Wrong" (Troubleshooting & Reset)
-
-> [!WARNING]
-> ### If Something Goes Wrong During Your Demo
->
-> 1. **Resetting Demo Progress**:
->    If your local demo state gets into an unexpected state or you want to demonstrate a fresh first-time player experience:
->    - Open Developer Tools (`F12` or `Cmd+Option+I`).
->    - Open the **Application** (or **Storage**) tab -> select **Storage** in the sidebar -> click **Clear site data**.
->    - Alternatively, execute the following command in the DevTools Console:
->      ```javascript
->      localStorage.clear();
->      location.reload();
->      ```
-> 2. **Demo Storage Key Name**:
->    Cat RPG v2 demo state storage key: `(see MockGameApiV2)` *(Note: MockGameApiV2 at apps/web/src/api/MockGameApiV2.ts is scheduled for implementation in V28; v1 demo mode uses in-memory defaults with `taskbar-hero.howToPlaySeen` in localStorage)*.
-> 3. **UI Layout Mode**:
->    If the layout appears in compact strip mode instead of the full stage layout, click **Mini mode** in the top bar or verify that the window width is at least 1024px.
-> 4. **Flag Check**:
->    If the v2 layout does not render, verify the dev server was started with `VITE_GAME_V2=1`.
-
----
-
-## 5. Sources & References
-
-Every number, timer, cost, cap, and label in this script is verified directly against the codebase:
-
-1. **Classes and Weapon Profiles**: `packages/game-rules/src/v2/content/classes.ts`, `docs/content-v2.md`
-2. **Equipment Slots and Unlock Levels**: `packages/game-rules/src/v2/content/slots.ts`
-3. **Gear Rarities, Bag Limit (200), Warning (180)**: `packages/game-rules/src/v2/content/rarities.ts`, `packages/game-rules/src/v2/config.ts` (`V2_CONFIG.bag`)
-4. **Chapters, Rounds, and Monsters**: `packages/game-rules/src/v2/content/chapters.ts`, `packages/game-rules/src/v2/content/monsters.ts`
-5. **Idle Progression and Pacing**: `packages/game-rules/src/v2/config.ts` (`V2_CONFIG.idle`), `packages/game-rules/src/config.ts` (`CONFIG.idle`), `packages/game-rules/src/v2/idle/claim.ts`
-6. **Boss Mechanics and Timers**: `packages/game-rules/src/v2/config.ts` (`V2_CONFIG.boss`), `packages/game-rules/src/v2/state/apply.ts`, `docs/proposals/schema-v2.md`
-7. **Forge Recipes and Salvage Rates**: `packages/game-rules/src/v2/content/recipes.ts`
-8. **Chest Drop Rates and Scaling**: `packages/game-rules/src/v2/content/chests.ts`, `docs/drop-rates-v2.md`
-9. **UI Components and Layout**: `apps/web/src/layout/StageLayout.tsx`, `apps/web/src/layout/bag/BagPanel.tsx`, `apps/web/src/layout/forge/ForgePanel.tsx`, `apps/web/src/layout/classpicker/ClassPicker.tsx`, `apps/web/src/map/ChapterMap.tsx`
-10. **API Specifications**: `docs/api-v2.md`, `apps/web/src/api/GameApiV2.ts`
+- [x] **Browser Environment**: Chromium or Brave desktop, dark mode, zero dev console errors, zoom at 100%.
+- [x] **Desktop Resolution**: `1600x900` for primary slides and demo footage.
+- [x] **Mobile Resolution**: `390x844` for phone responsiveness validation.
+- [x] **No Empty States**: Bag stocked with diverse equipment, materials in Forge, active combat on stage.
+- [x] **Audio Target**: Crisp voiceover, steady pacing (~135-145 words per minute), no background hum.
+- [x] **Total Run Time**: Exactly 2 minutes and 45 seconds.
