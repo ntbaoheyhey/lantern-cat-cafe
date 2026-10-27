@@ -1,4 +1,4 @@
-import { useId, type CSSProperties } from 'react';
+import { useEffect, useId, useState, type CSSProperties } from 'react';
 import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
 import { PixelIcon } from '../../art/pixelIcons';
@@ -19,8 +19,8 @@ export interface BossGatePanelProps {
   state: ServerStateV2;
   /** Chapter shown; the parent keeps it. */
   chapter: number;
-  /** Server-clock seconds; the parent re-renders every second while a cooldown runs. */
-  nowS: number;
+  /** Server-clock seconds; optional if self-updating. */
+  nowS?: number;
   /** True while a fight request is in flight. */
   busy: boolean;
   onFight: (chapter: number) => void;
@@ -125,8 +125,19 @@ export function BossGatePanel({
   onFight,
   onSelectChapter,
 }: BossGatePanelProps) {
+  const [internalNow, setInternalNow] = useState(() => Math.floor(Date.now() / 1000));
+  useEffect(() => {
+    if (nowS !== undefined) return;
+    const timer = setInterval(() => {
+      setInternalNow(Math.floor(Date.now() / 1000));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [nowS]);
+
+  const offset = Math.floor(state.serverTime - Date.now() / 1000);
+  const effectiveNowS = nowS !== undefined ? nowS : internalNow + offset;
   const statusTextId = useId();
-  const status = bossGateStatus(state, chapter, nowS);
+  const status = bossGateStatus(state, chapter, effectiveNowS);
   const label = bossLabel(chapter);
   const chapters = fightableChapters(state);
 
@@ -186,65 +197,69 @@ export function BossGatePanel({
       style={themeStyle}
       aria-label="Boss Gate"
     >
-      <header className="boss-gate-header">
-        <h2 className="boss-gate-boss-name">{label.name}</h2>
-        <div className="boss-gate-chapter-sub">
-          Chapter {chapter}: {label.chapterName}
-        </div>
-      </header>
+      <div className="boss-gate-scroll">
+        <header className="boss-gate-header">
+          <h2 className="boss-gate-boss-name">{label.name}</h2>
+          <div className="boss-gate-chapter-sub">
+            Chapter {chapter}: {label.chapterName}
+          </div>
+        </header>
 
-      <div className="boss-gate-body boss-gate-card">
-        <div className="boss-portrait-container">
-          <BossPortrait chapter={chapter} zoom={2.5} />
-        </div>
-
-        <div className="boss-card-info">
-          <div className="boss-card-chips">
-            <div className="boss-gate-keys chip">
-              <PixelIcon name="key" size={2} />
-              <span>Keys: {state.currencies?.keys ?? 0}</span>
-            </div>
-            <div className="boss-key-cost chip">
-              <PixelIcon name="key" size={2} />
-              <span>Cost: {v2.V2_CONFIG.boss.keyCost}</span>
-            </div>
+        <div className="boss-gate-body boss-gate-card">
+          <div className="boss-portrait-container">
+            <BossPortrait chapter={chapter} zoom={2.5} />
           </div>
 
-          <div className="boss-power-comparison" aria-label="Your power vs boss">
-            <div className="boss-power-header">
-              <span className="boss-power-label">Your power vs boss</span>
-            </div>
-            <div className="boss-power-bars" aria-hidden="true">
-              <div className="boss-bar-row">
-                <span className="boss-bar-name">You</span>
-                <div className="boss-bar-track" title={`Your power: ${playerPower}`}>
-                  <div className="boss-bar-fill you" style={{ width: `${playerPct}%` }} />
-                </div>
+          <div className="boss-card-info">
+            <div className="boss-card-chips">
+              <div className="boss-gate-keys chip">
+                <PixelIcon name="key" size={2} />
+                <span>Keys: {state.currencies?.keys ?? 0}</span>
               </div>
-              <div className="boss-bar-row">
-                <span className="boss-bar-name">Boss</span>
-                <div className="boss-bar-track" title={`Boss: ${neededPower > 0 ? neededPower : 'Ready'}`}>
-                  <div className="boss-bar-fill boss" style={{ width: `${bossPct}%` }} />
+              <div className="boss-key-cost chip">
+                <PixelIcon name="key" size={2} />
+                <span>Cost: {v2.V2_CONFIG.boss.keyCost}</span>
+              </div>
+            </div>
+
+            <div className="boss-power-comparison" aria-label="Your power vs boss">
+              <div className="boss-power-header">
+                <span className="boss-power-label">Your power vs boss</span>
+              </div>
+              <div className="boss-power-bars" aria-hidden="true">
+                <div className="boss-bar-row">
+                  <span className="boss-bar-name">You</span>
+                  <div className="boss-bar-track" title={`Your power: ${playerPower}`}>
+                    <div className="boss-bar-fill you" style={{ width: `${playerPct}%` }} />
+                  </div>
+                </div>
+                <div className="boss-bar-row">
+                  <span className="boss-bar-name">Boss</span>
+                  <div className="boss-bar-track" title={`Boss: ${neededPower > 0 ? neededPower : 'Ready'}`}>
+                    <div className="boss-bar-fill boss" style={{ width: `${bossPct}%` }} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <nav className="boss-gate-chapters" aria-label="Chapter selection">
+          {chapters.map((ch) => (
+            <button
+              key={ch}
+              type="button"
+              className={`boss-chapter-btn ${ch === chapter ? 'is-active' : ''}`}
+              aria-current={ch === chapter ? 'true' : undefined}
+              onClick={() => onSelectChapter(ch)}
+            >
+              Chapter {ch}
+            </button>
+          ))}
+        </nav>
+
+        {status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
       </div>
-
-      <nav className="boss-gate-chapters" aria-label="Chapter selection">
-        {chapters.map((ch) => (
-          <button
-            key={ch}
-            type="button"
-            className={`boss-chapter-btn ${ch === chapter ? 'is-active' : ''}`}
-            aria-current={ch === chapter ? 'true' : undefined}
-            onClick={() => onSelectChapter(ch)}
-          >
-            Chapter {ch}
-          </button>
-        ))}
-      </nav>
 
       <div className="boss-gate-actions">
         <button
@@ -269,8 +284,6 @@ export function BossGatePanel({
           )}
         </div>
       </div>
-
-      {status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
     </section>
   );
 }

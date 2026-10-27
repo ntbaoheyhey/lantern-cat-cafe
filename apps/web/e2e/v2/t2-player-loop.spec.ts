@@ -27,8 +27,9 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   await page.clock.fastForward(10 * 60_000);
   await expect(page.getByRole('heading', { name: 'Recent finds', exact: true })).toBeVisible();
   await expect(progress).not.toContainText('Round 1 ·');
-  const inventory = await tab(page, 'Inventory');
+  const inventory = await tab(page, 'Bag');
   await inventory.getByRole('button', { name: 'Equip best', exact: true }).click();
+  await tab(page, 'Character');
   await expect(character.getByRole('button', { name: /^Helmet: .*Legendary$/ })).toBeVisible();
   const equipped = await character.getByRole('button', { name: /^Weapon:/ }).getAttribute('aria-label');
 

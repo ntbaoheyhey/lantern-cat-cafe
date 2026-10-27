@@ -17,8 +17,7 @@ export const test = base.extend<{ buildGuard: void }>({
     page.goto = async (...args) => {
       const response = await goto(...args);
       // The arena developer preview intentionally renders outside StageLayout.
-      // Its project and origin are still checked above. Check the first normal page
-      // only: later navigations may legitimately restore Mini mode without a shell.
+      // Its project and origin are still checked above. Check the first normal page.
       if (!checked && new URL(page.url()).searchParams.get('dev') !== 'arena') {
         await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),

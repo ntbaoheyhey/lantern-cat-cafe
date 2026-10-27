@@ -3,7 +3,8 @@
 .forge-panel {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4, 16px);
+  height: 100%;
+  min-height: 0;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -11,7 +12,29 @@
   color: var(--text, #fff3e0);
   background: transparent;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.forge-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.forge-craft-scroll,
+.forge-salvage-scroll,
+.forge-relic-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 12px);
+  padding: var(--sp-3, 12px);
+  box-sizing: border-box;
 }
 
 /* Panel Header */
@@ -350,12 +373,19 @@
   background: var(--surface-2, #3a2c4a);
   border: 1px solid var(--border, #5b4572);
   padding: var(--sp-2, 8px) var(--sp-4, 16px);
-  min-height: var(--tap, 44px);
+  min-height: 44px !important;
   cursor: pointer;
   transition: transform 80ms ease, filter 80ms ease;
   overflow-wrap: anywhere;
   text-align: center;
   box-sizing: border-box;
+}
+
+.forge-btn.pixel-btn,
+.forge-btn-craft,
+.forge-btn-salvage,
+.forge-btn-relic {
+  min-height: 44px !important;
 }
 
 /* Primary Button in view */

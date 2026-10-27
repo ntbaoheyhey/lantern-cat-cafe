@@ -23,8 +23,9 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) test(`both act
     await page.setViewportSize({ width: width!, height: height! });
     const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
     await expect(canvas).toHaveCount(1);
-    const zoom = stageZoom(width!, stageHeight(width!, height!));
-    const logicalWidth = Math.max(160, Math.floor(width! / zoom));
+    const stageW = width! <= 600 ? width! : (width! >= 1024 && height! >= 640 ? Math.floor(width! - Math.min(460, Math.max(380, width! * 0.32))) : Math.floor(width! * 0.55));
+    const zoom = stageZoom(stageW, stageHeight(width!, height!));
+    const logicalWidth = Math.max(160, Math.floor(stageW / zoom));
     // Phaser removes the old canvas on its next frame. Check count and dimensions
     // together so a handoff between two separate assertions cannot hit the old canvas.
     await expect.poll(() => canvas.evaluateAll(elements => elements.map(element => {

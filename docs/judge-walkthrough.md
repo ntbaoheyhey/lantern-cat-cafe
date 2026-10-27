@@ -44,9 +44,6 @@ Follow these numbered steps to experience the complete core RPG loop entirely of
    - Regular monsters (Dust Bunny, Loose Yarn, Sock Puppet) cycle automatically with attack cadence.
    - Damage numbers float upward on hit, and defeated monsters award Fish, Yarn, and crafting materials.
    - Progress auto-claims every 30 seconds without requiring tedious manual clicks.
-3. Click the **Mini mode** button in the header:
-   - Notice how the layout instantly collapses into a classic compact taskbar strip, fitting at the bottom of your workspace.
-   - Click **Full mode** to return to the rich stage view.
 
 ### Step 4: Manage Inventory & Optimize Equipment
 1. Click the **Inventory** tab below the stage.

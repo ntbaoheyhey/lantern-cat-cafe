@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CafeBoard } from './CafeBoard';
 import { GameCanvas } from './GameCanvas';
 import { getSessionStore } from './game/store';
 import { isGameV2 } from './layout/flag';
 import { StageLayout } from './layout/StageLayout';
-import { useMiniMode } from './layout/useMiniMode';
 import { HowToPlay } from './onboarding/HowToPlay';
 import type { HintTab } from './onboarding/nextStep';
 import { Panel, type TabName } from './Panel';
@@ -13,8 +12,15 @@ import { WalletProvider } from './wallet/WalletProvider';
 
 const PANEL_ID = 'game-panel';
 
-/** The classic page: café board above a 96 px strip with a drawer. Also the v2 "Mini mode". */
-function ClassicLayout({ onStageMode }: { onStageMode?: () => void }) {
+// Clean up legacy mini mode key on load so saved choice never persists.
+try {
+  localStorage.removeItem('taskbar-hero.miniMode');
+} catch {
+  // Browser storage can be unavailable.
+}
+
+/** The classic page: café board above a 96 px strip with a drawer. */
+function ClassicLayout() {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<TabName>('Hero');
 
@@ -40,11 +46,6 @@ function ClassicLayout({ onStageMode }: { onStageMode?: () => void }) {
       <HowToPlay />
       <div role="region" aria-label="Taskbar strip" className="strip">
         <GameCanvas />
-        {onStageMode && (
-          <button className="stage-toggle" onClick={onStageMode}>
-            Stage
-          </button>
-        )}
         <WalletButton />
         <button
           className="toggle"
@@ -59,20 +60,18 @@ function ClassicLayout({ onStageMode }: { onStageMode?: () => void }) {
   );
 }
 
-/** Cat RPG v2 (VITE_GAME_V2=1): stage-first layout, or the classic strip when the player chose Mini mode. */
-function StageApp() {
-  const [mini, setMini] = useMiniMode();
-  return mini ? (
-    <ClassicLayout onStageMode={() => setMini(false)} />
-  ) : (
-    <StageLayout onMiniMode={() => setMini(true)} />
-  );
-}
-
 export function App() {
+  useEffect(() => {
+    try {
+      localStorage.removeItem('taskbar-hero.miniMode');
+    } catch {
+      // Browser storage can be unavailable.
+    }
+  }, []);
+
   return (
     <WalletProvider store={getSessionStore()}>
-      {isGameV2() ? <StageApp /> : <ClassicLayout />}
+      {isGameV2() ? <StageLayout /> : <ClassicLayout />}
     </WalletProvider>
   );
 }

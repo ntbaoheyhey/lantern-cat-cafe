@@ -52,14 +52,10 @@ async function noHorizontalScroll(page: Page): Promise<void> {
   expect(o.body[0]).toBeLessThanOrEqual(o.body[1]! + 1);
 }
 
-async function openInventory(page: Page, width: number): Promise<void> {
-  if (width <= 600) {
-    const tab = page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab', { name: 'Inventory', exact: true });
-    if (await tab.isVisible()) {
-      await tab.click();
-    }
-  }
-  await expect(page.getByRole('tabpanel', { name: 'Inventory', exact: true })).toBeVisible();
+async function openInventory(page: Page, _width: number): Promise<void> {
+  const tab = page.getByRole('tab', { name: 'Bag', exact: true });
+  await tab.click();
+  await expect(page.getByRole('tabpanel', { name: 'Bag', exact: true })).toBeVisible();
 }
 
 const CHECK_VIEWPORTS = [
@@ -72,31 +68,16 @@ for (const vp of CHECK_VIEWPORTS) {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.goto('/');
 
-    const character = page.getByRole('region', { name: 'Character' });
+    const character = page.getByRole('region', { name: 'Character', exact: true });
     await expect(character).toBeVisible();
 
-    // Open bag
-    await openInventory(page, vp.width);
-    const bag = page.getByRole('tabpanel', { name: 'Inventory', exact: true });
-    await expect(bag).toBeVisible();
-
-    // (a) every gear slot and bag tile is >= 44x44 on the phone
+    // (a) every gear slot is >= 44x44 on the phone
     if (vp.width <= 600) {
       const slotButtons = character.getByRole('button');
       const slotCount = await slotButtons.count();
       expect(slotCount).toBe(9);
       for (let i = 0; i < slotCount; i++) {
         const box = await slotButtons.nth(i).boundingBox();
-        expect(box).not.toBeNull();
-        expect(box!.width).toBeGreaterThanOrEqual(44);
-        expect(box!.height).toBeGreaterThanOrEqual(44);
-      }
-
-      const bagTiles = bag.locator('.bag-tile');
-      const bagTileCount = await bagTiles.count();
-      expect(bagTileCount).toBeGreaterThan(0);
-      for (let i = 0; i < bagTileCount; i++) {
-        const box = await bagTiles.nth(i).boundingBox();
         expect(box).not.toBeNull();
         expect(box!.width).toBeGreaterThanOrEqual(44);
         expect(box!.height).toBeGreaterThanOrEqual(44);
@@ -121,6 +102,23 @@ for (const vp of CHECK_VIEWPORTS) {
         return { borderColor: style.borderTopColor, expectedRarityColor: expected };
       }, rarity);
       expect(borderColor).toBe(expectedRarityColor);
+    }
+
+    // Open bag
+    await openInventory(page, vp.width);
+    const bag = page.getByRole('tabpanel', { name: 'Bag', exact: true });
+    await expect(bag).toBeVisible();
+
+    if (vp.width <= 600) {
+      const bagTiles = bag.locator('.bag-tile');
+      const bagTileCount = await bagTiles.count();
+      expect(bagTileCount).toBeGreaterThan(0);
+      for (let i = 0; i < bagTileCount; i++) {
+        const box = await bagTiles.nth(i).boundingBox();
+        expect(box).not.toBeNull();
+        expect(box!.width).toBeGreaterThanOrEqual(44);
+        expect(box!.height).toBeGreaterThanOrEqual(44);
+      }
     }
 
     // (c) "Equip best" button background equals --accent and its text contrast >= 4.5
@@ -207,9 +205,9 @@ test('capture screenshots', async ({ page }) => {
     await page.emulateMedia({ colorScheme: vp.dark ? 'dark' : 'light' });
     await page.setViewportSize({ width: vp.w, height: vp.h });
     await page.goto('/');
-    await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
     if (vp.w > 600) {
-      await expect(page.getByRole('tabpanel', { name: 'Inventory', exact: true })).toBeVisible();
+      await expect(page.getByRole('tabpanel', { name: 'Character', exact: true })).toBeVisible();
     }
     const name = `${screenshotPrefix}-${vp.w}x${vp.h}${vp.dark ? '-dark' : ''}.png`;
     if (writeScreenshots) await page.screenshot({ path: path.join(reportsDir, name) });

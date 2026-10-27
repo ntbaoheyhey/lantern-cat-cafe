@@ -11,6 +11,8 @@ export interface ClassPickerProps {
   selected?: v2.ClassId | null;
   /** Whether changing class is locked (e.g. during a boss fight). */
   locked?: boolean;
+  /** True while class switch action is in flight. */
+  busy?: boolean;
   /** Callback fired with the chosen classId after confirmation. */
   onChoose?: (classId: v2.ClassId) => void;
 }
@@ -70,6 +72,7 @@ export function ClassPicker({
   classes = v2.CLASSES,
   selected = null,
   locked = false,
+  busy = false,
   onChoose,
 }: ClassPickerProps) {
   const [highlightId, setHighlightId] = useState<v2.ClassId | null>(() => selected ?? classes[0]?.id ?? null);
@@ -318,14 +321,18 @@ export function ClassPicker({
             <button
               type="button"
               className="pixel-btn class-picker__confirm-btn"
+              disabled={busy}
+              aria-busy={busy ? 'true' : 'false'}
               onClick={handleConfirm}
               data-testid="class-picker-confirm-button"
             >
-              Confirm
+              {busy && <span className="btn-spinner" aria-hidden="true" />}
+              {busy ? 'Choosing...' : 'Confirm'}
             </button>
             <button
               type="button"
               className="pixel-btn class-picker__cancel-btn"
+              disabled={busy}
               onClick={handleCancel}
               data-testid="class-picker-cancel-button"
             >
@@ -339,13 +346,17 @@ export function ClassPicker({
       <div className="class-picker__footer">
         <button
           type="button"
-          disabled={locked || !activeClass}
-          aria-disabled={locked || !activeClass}
+          disabled={locked || !activeClass || busy}
+          aria-disabled={locked || !activeClass || busy}
+          aria-busy={busy ? 'true' : 'false'}
           className="pixel-btn class-picker__choose-btn"
           onClick={handleChooseClick}
           data-testid="class-picker-choose-button"
         >
-          {locked
+          {busy && <span className="btn-spinner" aria-hidden="true" />}
+          {busy
+            ? 'Choosing...'
+            : locked
             ? 'Locked During Boss Fight'
             : activeClass
             ? `Choose ${activeClass.name}`
