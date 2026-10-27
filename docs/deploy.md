@@ -96,3 +96,46 @@ curl -s https://web-zeta-tan-13.vercel.app/relics/000000000000000000000000000000
 ```
 
 The first prints the URI with `{id}`, the second the Common Relic metadata.
+
+## Existing Fuji source verification (reference only)
+
+Both contracts were **owner-confirmed on 2026-10-26** as “Contract Source Code Verified (Exact Match)”
+on their Routescan Contract tabs: [RelicNFT](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract)
+and [RelicMarket](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract).
+A read-only Routescan `getsourcecode` API re-check on 2026-10-27 returned both sources with compiler
+`v0.8.24+commit.e11b9ed9`, optimization off and EVM `cancun`; their main source files matched this repo.
+The API does not separately attest the UI's “Exact Match” label. See [evidence](avalanche-integration.md).
+
+The following commands are a reference for an owner who needs to re-submit verification. **They were
+not run for the judge pack.** They submit source to the explorer, do not deploy, and need no private key.
+Use the original constructor URI below, not the mutable current `uri(1)` value. Public constructor
+arguments were read from the explorer API; optimization stays off (do not enable optimization).
+
+```sh
+cd contracts
+forge verify-contract 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D src/RelicNFT.sol:RelicNFT \
+  --chain 43113 --compiler-version v0.8.24+commit.e11b9ed9 --evm-version cancun \
+  --verifier etherscan \
+  --verifier-url 'https://api.routescan.io/v2/network/testnet/evm/43113/etherscan' \
+  --etherscan-api-key verifyContract \
+  --constructor-args "$(cast abi-encode 'constructor(address,address,string)' \
+    0x2Bba9a48F7F79d99154108A28d32f1a21d17055c \
+    0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000 \
+    'https://example.com/relics/{id}.json')"
+forge verify-contract 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93 src/RelicMarket.sol:RelicMarket \
+  --chain 43113 --compiler-version v0.8.24+commit.e11b9ed9 --evm-version cancun \
+  --verifier etherscan \
+  --verifier-url 'https://api.routescan.io/v2/network/testnet/evm/43113/etherscan' \
+  --etherscan-api-key verifyContract \
+  --constructor-args "$(cast abi-encode 'constructor(address)' 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D)"
+```
+
+For a safe local check without submitting verification or using a wallet, install dependencies at
+repo root and run `pnpm onchain-proof`. It reads the existing deployments, generated ABIs and public
+Fuji RPC used by the web config; optional `VITE_FUJI_RPC_URL` selects the same override. No `.env` is
+loaded and no signing key is read. It prints a pinned block/hash, contract code presence, NFT
+owner/signer/URI/existence for IDs found in committed metadata, and active/lifetime listing counts.
+There is no NFT supply getter or market fee getter: supply is labelled **NOT VERIFIED**, while the
+zero-platform-fee behavior is attributed to source. Metadata IDs are not exhaustive chain discovery.
+Exit 1 means missing code, wrong chain/market binding, RPC failure or a failed supported read;
+unsupported supply alone is labelled in output and does not fail code-presence proof.

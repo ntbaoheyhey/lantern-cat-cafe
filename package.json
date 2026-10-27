@@ -8,6 +8,7 @@
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "onchain-proof": "node scripts/onchain-proof.mjs"
   }
 }
