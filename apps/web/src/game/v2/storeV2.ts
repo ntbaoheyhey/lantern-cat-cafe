@@ -14,7 +14,13 @@ let stageStore: ApiSwitchV2 | null = null;
 export function getStageStoreV2() {
   return stageStore ??= createStageStoreV2({ sessions: getSessionStore(), env: { supabaseUrl: import.meta.env.VITE_SUPABASE_URL, anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY } });
 }
-export const getGameLoopV2 = () => getStageStoreV2().loop;
+export const getGameLoopV2 = () => {
+  const loop = getStageStoreV2().loop;
+  if (import.meta.env.DEV || import.meta.env.MODE === 'g1-perf') {
+    (window as unknown as { __g1Loop: GameLoopV2 }).__g1Loop = loop;
+  }
+  return loop;
+};
 export function useGameSnapshotV2(loop: GameLoopV2 = getGameLoopV2()) {
   return useSyncExternalStore(loop.subscribe, loop.getSnapshot);
 }
@@ -23,25 +29,40 @@ export function useGameModeV2() {
   return useSyncExternalStore(store.subscribe, store.getMode);
 }
 
-/** Serialize a bag's bulk equip callbacks without changing the loop's busy guard. */
+/** Sequential, deduplicated equip intents. The running intent stays in the map. */
 export function createEquipQueueV2(loop: GameLoopV2) {
-  let tail = Promise.resolve();
-  let generation = 0;
-  let disposed = false;
+  let tail = Promise.resolve(), generation = 0, disposed = false;
+  let hadState = loop.getSnapshot().state !== null;
+  const intents = new Map<string, Promise<void>>();
   const unsubscribe = loop.subscribe(() => {
-    if (loop.getSnapshot().state === null) generation++;
+    const hasState = loop.getSnapshot().state !== null;
+    if (hadState && !hasState) {
+      hadState = false;
+      generation++; intents.clear(); tail = Promise.resolve(); loop.setEquipQueued(0);
+    } else hadState = hasState;
   });
   return {
     equip(itemId: string | null, slot: Parameters<GameLoopV2['equip']>[1]): Promise<void> {
+      if (disposed) return Promise.resolve();
+      const key = JSON.stringify([slot, itemId]);
+      const duplicate = intents.get(key);
+      if (duplicate) return duplicate;
+      if (loop.getSnapshot().state?.equipped[slot] === itemId) return Promise.resolve();
       const queuedGeneration = generation;
       const next = tail.then(async () => {
-        if (!disposed && queuedGeneration === generation) await loop.equip(itemId, slot);
+        await loop.whenIdle();
+        if (disposed || queuedGeneration !== generation) return;
+        if (loop.getSnapshot().state?.equipped[slot] === itemId) return;
+        await loop.equip(itemId, slot);
+      }).finally(() => {
+        if (queuedGeneration !== generation || disposed) return;
+        intents.delete(key); loop.setEquipQueued(intents.size);
       });
-      // A rejected caller still receives its error; later independent requests can recover.
+      intents.set(key, next); loop.setEquipQueued(intents.size);
       tail = next.catch(() => {});
       return next;
     },
-    dispose() { disposed = true; unsubscribe(); },
+    dispose() { disposed = true; intents.clear(); loop.setEquipQueued(0); unsubscribe(); },
   };
 }
 

@@ -130,3 +130,11 @@ describe('WelcomeBack', () => {
     document.body.removeChild(trigger);
   });
 });
+
+it('describes absence and the configured earnings rule without calling a hidden tab offline', () => {
+  render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600} onClose={vi.fn()} />);
+  expect(screen.getByRole('heading', { name: 'While you were away' })).toBeTruthy();
+  expect(screen.queryByText('Offline gains')).toBeNull();
+  expect(screen.getByText(`The first ${CONFIG.idle.onlineWindowSeconds / 60} minutes count in full; after that the cat earns at half speed, up to ${CONFIG.idle.offlineCapSeconds / 3600} hours.`)).toBeTruthy();
+  cleanup();
+});

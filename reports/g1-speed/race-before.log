@@ -1,0 +1,38 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/g1-speed/taskbar hero/apps/web
+> vitest run src/game/v2/loopV2.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/apps/web
+
+ ❯ src/game/v2/loopV2.test.ts (26 tests | 1 failed) 13ms
+   × keeps a completed equip when an older in-flight claim resolves second 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/v2/loopV2.test.ts > keeps a completed equip when an older in-flight claim resolves second
+AssertionError: expected null to be 'new-weapon' // Object.is equality
+
+- Expected:
+"new-weapon"
+
++ Received:
+null
+
+ ❯ src/game/v2/loopV2.test.ts:418:53
+    416|   claim.resolve({ state: stale, gains: { ...zero(), fish: 2 } });
+    417|   await claiming;
+    418|   expect(loop.getSnapshot().state!.equipped.weapon).toBe('new-weapon');
+       |                                                     ^
+    419|   expect(seen).not.toContain(null);
+    420|   expect(events.filter(e => e.type === 'claimed')).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 25 passed (26)
+   Start at  19:41:01
+   Duration  504ms (environment 88%, transform 6%, tests 3%, import 2%, worker 1%)
+
+ ELIFECYCLE  Test failed. See above for more details.

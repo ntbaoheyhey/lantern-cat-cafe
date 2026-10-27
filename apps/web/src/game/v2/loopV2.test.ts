@@ -182,7 +182,7 @@ it('refuses a second action while crafting is busy', async () => {
   pending.resolve({ item, state: state() });
   await crafting;
   expect(loop.getSnapshot().busy).toBeNull();
-  expect(events.map((e) => e.type)).toEqual(['crafted']);
+  expect(events.map((e) => e.type)).toEqual(['refused', 'crafted']);
 });
 
 it('turns cooldown into a refusal and clears busy', async () => {
@@ -271,7 +271,7 @@ it('keeps snapshot identity stable when no fields change', async () => {
   expect(loop.getSnapshot()).toBe(snapshot);
   api.claim.mockResolvedValue({ gains: zero(), state: snapshot.state! });
   await loop.claimNow();
-  expect(loop.getSnapshot()).toBe(snapshot);
+  expect(loop.getSnapshot()).toEqual(snapshot);
 });
 
 it('reports initial failure and retries successfully', async () => {
@@ -388,7 +388,7 @@ it('drops late claim/action rejections after stop and removes event subscription
   expect(loop.getSnapshot().busy).toBeNull();
 });
 
-it('silently reloads a stale boss response without a refused/error toast and releases busy', async () => {
+it('reports one refusal for a stale boss response, reloads and releases busy', async () => {
   await start();
   const fresh = { ...state(), serverTime: 88 }; api.getState.mockResolvedValue(fresh);
   api.fightBoss.mockRejectedValue({ code: 'stale' });
@@ -396,5 +396,81 @@ it('silently reloads a stale boss response without a refused/error toast and rel
   expect(loop.getSnapshot().state).toBe(fresh);
   expect(loop.getSnapshot().busy).toBeNull();
   expect(api.getState).toHaveBeenCalledTimes(2);
-  expect(events.filter(event => event.type === 'refused' || event.type === 'error')).toEqual([]);
+  expect(events.filter(event => event.type === 'refused' || event.type === 'error')).toEqual([{ type: 'refused', action: 'fightBoss', code: 'stale', at: 1234 }]);
+});
+
+it('keeps a completed equip when an older in-flight claim resolves second', async () => {
+  await start();
+  const stale = state(), equipped = state();
+  equipped.equipped.weapon = 'new-weapon';
+  // Same second: serverTime cannot order these two snapshots.
+  const claim = deferred<Awaited<ReturnType<GameApiV2['claim']>>>();
+  api.claim.mockReturnValueOnce(claim.promise);
+  const claiming = loop.claimNow();
+  await vi.advanceTimersByTimeAsync(0);
+  api.equip.mockResolvedValueOnce(equipped);
+  api.getState.mockResolvedValue(equipped);
+  await loop.equip('new-weapon', 'weapon');
+  const seen: (string | null)[] = [];
+  loop.subscribe(() => seen.push(loop.getSnapshot().state?.equipped.weapon ?? null));
+  claim.resolve({ state: stale, gains: { ...zero(), fish: 2 } });
+  await claiming;
+  expect(loop.getSnapshot().state!.equipped.weapon).toBe('new-weapon');
+  expect(seen).not.toContain(null);
+  expect(events.filter(e => e.type === 'claimed')).toHaveLength(1);
+});
+
+it('publishes slot/recipe pending details synchronously and retains confirmed state on failure', async () => {
+  await start();
+  const confirmed = loop.getSnapshot().state;
+  api.craft.mockRejectedValueOnce(new Error('connection lost'));
+  const crafting = loop.craft('rcp.common', 'helmet');
+  expect(loop.getSnapshot().pending).toEqual({ action: 'craft', recipeId: 'rcp.common', slot: 'helmet' });
+  await crafting;
+  expect(loop.getSnapshot()).toMatchObject({ state: confirmed, busy: null, pending: null, lastError: 'connection lost' });
+  expect(events).toEqual([{ type: 'error', action: 'craft', message: 'connection lost', at: 1234 }]);
+});
+
+it('shows cached state on return, shares one claim and clears syncing after failure and recovery', async () => {
+  await start();
+  const cached = loop.getSnapshot().state;
+  const pending = deferred<Awaited<ReturnType<GameApiV2['claim']>>>();
+  api.claim.mockReturnValueOnce(pending.promise);
+  doc.setVisibility('hidden');
+  await vi.advanceTimersByTimeAsync(90_000);
+  expect(api.claim).not.toHaveBeenCalled();
+  doc.setVisibility('visible');
+  expect(loop.getSnapshot()).toMatchObject({ state: cached, claimInFlight: true });
+  const claiming = loop.claimNow();
+  await vi.advanceTimersByTimeAsync(0);
+  doc.setVisibility('hidden'); doc.setVisibility('visible');
+  expect(api.claim).toHaveBeenCalledOnce();
+  pending.reject(new Error('offline request'));
+  await claiming;
+  expect(loop.getSnapshot()).toMatchObject({ state: cached, claimInFlight: false, lastError: 'offline request' });
+  await loop.claimNow();
+  expect(loop.getSnapshot()).toMatchObject({ claimInFlight: false, lastError: null });
+});
+
+it('waits for an action still in flight when an old claim finishes, then refreshes without overlap', async () => {
+  await start();
+  const claim = deferred<Awaited<ReturnType<GameApiV2['claim']>>>();
+  const equip = deferred<ServerStateV2>();
+  api.claim.mockReturnValueOnce(claim.promise);
+  const claiming = loop.claimNow();
+  await vi.advanceTimersByTimeAsync(0);
+  api.equip.mockReturnValueOnce(equip.promise);
+  const equipping = loop.equip('new-weapon', 'weapon');
+  await vi.advanceTimersByTimeAsync(0);
+  claim.resolve({ state: state(), gains: { ...zero(), fish: 2 } });
+  await vi.advanceTimersByTimeAsync(0);
+  expect(api.getState).toHaveBeenCalledOnce();
+  expect(loop.claimNow()).toBe(claiming);
+  const fresh = state(); fresh.equipped.weapon = 'new-weapon';
+  api.getState.mockResolvedValueOnce(fresh);
+  equip.resolve(fresh);
+  await equipping; await claiming;
+  expect(loop.getSnapshot().state).toBe(fresh);
+  expect(api.claim).toHaveBeenCalledOnce();
+  expect(events.filter(e => e.type === 'claimed')).toHaveLength(1);
 });
