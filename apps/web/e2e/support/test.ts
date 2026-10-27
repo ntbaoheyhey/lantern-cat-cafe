@@ -16,9 +16,10 @@ export const test = base.extend<{ buildGuard: void }>({
     let checked = false;
     page.goto = async (...args) => {
       const response = await goto(...args);
-      // The arena developer preview intentionally renders outside StageLayout.
+      // The arena and art-pilot developer previews intentionally render outside StageLayout.
       // Its project and origin are still checked above. Check the first normal page.
-      if (!checked && new URL(page.url()).searchParams.get('dev') !== 'arena') {
+      const devParam = new URL(page.url()).searchParams.get('dev');
+      if (!checked && devParam !== 'arena' && devParam !== 'art-pilot') {
         await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);

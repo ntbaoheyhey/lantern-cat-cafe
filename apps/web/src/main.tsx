@@ -13,6 +13,8 @@ if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSear
   void import('./dev/SpritePreview').then(({ SpritePreview }) => root.render(<StrictMode><SpritePreview /></StrictMode>));
 } else if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'arena') {
   void import('./dev/ArenaPreview').then(({ ArenaPreview }) => root.render(<StrictMode><ArenaPreview /></StrictMode>));
+} else if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'art-pilot') {
+  void import('./dev/ArtPilot').then(({ ArtPilot }) => root.render(<StrictMode><ArtPilot /></StrictMode>));
 } else {
   root.render(
     <StrictMode>
