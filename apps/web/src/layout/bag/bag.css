@@ -6,9 +6,24 @@
 .bag {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3, 12px);
+  height: 100%;
+  min-height: 0;
+  width: 100%;
   min-width: 0;
   text-align: left;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bag-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 12px);
+  padding: var(--sp-3, 12px);
   box-sizing: border-box;
 }
 

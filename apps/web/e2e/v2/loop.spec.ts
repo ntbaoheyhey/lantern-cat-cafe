@@ -65,7 +65,7 @@ const scenarios = {
       }
       save.state.items.push(starter);
     });
-    const panel = await tab(page, 'Inventory');
+    const panel = await tab(page, 'Bag');
     await expect(panel.getByRole('button', { name: 'Equip best' })).toBeEnabled();
     await panel.getByRole('button', { name: 'Equip best' }).click();
     await expect.poll(async () => (await raw(page)).state.items.filter((i: { equipped: boolean }) => i.equipped).map((i: { id: string }) => i.id).filter((id: string) => id === weapon || id === helmet).sort(), { message: 'Equip best must apply both guaranteed upgrades in one action' }).toEqual([weapon, helmet].sort());

@@ -77,9 +77,9 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
       }
     });
 
-    const invTab = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: 'Inventory' });
+    const invTab = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: 'Bag' });
     await invTab.click();
-    const panel = page.getByRole('tabpanel', { name: 'Inventory' });
+    const panel = page.getByRole('tabpanel', { name: 'Bag' });
     await expect(panel).toBeVisible();
 
     // Equip best
@@ -140,22 +140,17 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
     await expect(page.getByRole('group', { name: /^Chapter 2 / })).toBeVisible();
   });
 
-  test('responsive mobile bottom sheet navigation at 390x844', async ({ page }) => {
+  test('responsive mobile bottom navigation at 390x844', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await load(page, 'fresh');
 
     const nav = page.getByRole('navigation', { name: 'Game menu' });
     await expect(nav).toBeVisible();
 
-    const invButton = nav.getByRole('tab', { name: 'Inventory' });
-    await invButton.click();
+    const bagButton = nav.getByRole('tab', { name: 'Bag' });
+    await bagButton.click();
 
-    const sheet = page.locator('.v2-sheet.open');
-    await expect(sheet).toBeVisible();
-
-    // Close sheet via close button
-    const closeBtn = page.getByRole('button', { name: 'Close panel' });
-    await closeBtn.click();
-    await expect(page.locator('.v2-sheet.open')).toHaveCount(0);
+    const panel = page.getByRole('tabpanel', { name: 'Bag' });
+    await expect(panel).toBeVisible();
   });
 });

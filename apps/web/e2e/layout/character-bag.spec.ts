@@ -35,12 +35,16 @@ async function noHorizontalScroll(page: Page): Promise<void> {
   expect(o.body[0]).toBeLessThanOrEqual(o.body[1]!);
 }
 
-/** Phones keep the tabs in a bottom sheet; wider screens show the Inventory tab already. */
-async function openInventory(page: Page, width: number): Promise<void> {
-  if (width <= 600) {
-    await page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab', { name: 'Inventory', exact: true }).click();
-  }
-  await expect(page.getByRole('tabpanel', { name: 'Inventory', exact: true })).toBeVisible();
+/** Switch to Bag tab. */
+async function openInventory(page: Page, _width: number): Promise<void> {
+  await page.getByRole('tab', { name: 'Bag', exact: true }).click();
+  await expect(page.getByRole('tabpanel', { name: 'Bag', exact: true })).toBeVisible();
+}
+
+/** Switch to Character tab. */
+async function openCharacter(page: Page): Promise<void> {
+  await page.getByRole('tab', { name: 'Character', exact: true }).click();
+  await expect(page.getByRole('tabpanel', { name: 'Character', exact: true })).toBeVisible();
 }
 
 for (const vp of VIEWPORTS) {
@@ -56,7 +60,7 @@ for (const vp of VIEWPORTS) {
     await noHorizontalScroll(page);
 
     await openInventory(page, vp.width);
-    const bag = page.getByRole('tabpanel', { name: 'Inventory', exact: true });
+    const bag = page.getByRole('tabpanel', { name: 'Bag', exact: true });
     await expect(bag.getByTestId('bag-count')).toHaveText('Bag 15 / 200');
     await expect(bag.getByRole('list', { name: 'Bag items' })).toBeVisible();
     await noHorizontalScroll(page);
@@ -74,11 +78,12 @@ for (const vp of VIEWPORTS) {
     await expect(charm).toContainText('Lv 20');
 
     await openInventory(page, vp.width);
-    const bag = page.getByRole('tabpanel', { name: 'Inventory', exact: true });
+    const bag = page.getByRole('tabpanel', { name: 'Bag', exact: true });
     await bag.getByRole('button', { name: /^Silverclaw Saber, / }).click();
     const detail = bag.getByRole('region', { name: 'Item detail' });
     await detail.getByRole('button', { name: 'Equip', exact: true }).click();
 
+    await openCharacter(page);
     await expect(character.getByRole('button', { name: 'Weapon: Silverclaw Saber, Rare' })).toBeVisible();
     await expect(character.getByRole('button', { name: 'Weapon: Twig Sword, Common' })).toHaveCount(0);
     await noHorizontalScroll(page);

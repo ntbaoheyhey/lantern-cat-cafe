@@ -1,73 +1,176 @@
-/* Stage shell; the HUD owns its internal layout and container breakpoints. */
+/* ==========================================================================
+   Cat RPG v2 Game Shell Layout (Mission G2)
+   Cozy cat cafe at night theme. One screen that fits the window (100dvh).
+   ========================================================================== */
+
+/* 1. Shell Root (CSS Grid sizing to 100dvh) */
 .v2-shell {
   --nav-h: 56px;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-  max-width: 100%;
-}
-.v2-shell > main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding-top: 56px;
-}
-.v2-topbar {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-areas: 'brand hud actions';
-  align-items: center;
-  gap: var(--sp-2, 8px) var(--sp-4, 16px);
-  padding: var(--sp-2, 8px) var(--sp-4, 16px);
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  min-width: 0;
-}
-.v2-title {
-  grid-area: brand;
-  margin: 0;
-  font: 700 var(--fs-lg, 1.25rem)/1.1 var(--font-display);
-  color: var(--text);
-}
-.v2-topbar > .hud-bar { grid-area: hud; min-width: 0; }
-.v2-header-actions {
-  grid-area: actions;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2, 8px);
-  min-width: 0;
-}
-.v2-wallet { position: relative; min-width: 0; }
-.v2-topbar .wallet {
-  position: static;
-  max-width: 100%;
-  flex-wrap: wrap;
-  white-space: normal;
-  overflow: visible;
-  margin: 0;
-}
-.v2-topbar .wallet-msg { display: inline; }
-.v2-wallet .wallet-btn {
-  min-height: var(--tap, 44px);
+  --topbar-h: 52px;
+  height: 100dvh;
+  min-height: 0;
+  max-height: 100dvh;
   box-sizing: border-box;
-  padding: var(--sp-2, 8px) var(--sp-3, 12px);
-  font: var(--fs-sm, .875rem)/1.2 var(--font-display);
-  color: var(--text);
-  background: var(--surface-2);
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 #000;
-  border-radius: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 100%;
+  background: var(--bg, #1a1222);
+  color: var(--text, #fff3e0);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  overflow: hidden;
 }
-.v2-wallet-icon { display: none; }
+
+/* Allow document scrolling on tiny screens (< 320x360) rather than hiding content */
+@media (max-width: 319px), (max-height: 359px) {
+  .v2-shell {
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* 2. Status Bar: One row 48-56 px */
+.v2-topbar {
+  height: var(--topbar-h);
+  min-height: 48px;
+  max-height: 56px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--sp-2, 8px);
+  padding: 0 var(--sp-3, 12px);
+  background: var(--surface, #21182b);
+  border-bottom: 1px solid var(--border, #3d2f4d);
+  flex: 0 0 auto;
+  z-index: 20;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.v2-title {
+  margin: 0;
+  font: 700 var(--fs-md, 1rem)/1.1 var(--font-display, 'Pixelify Sans', monospace);
+  color: var(--gold, #ffd34e);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 600px) {
+  .v2-topbar .hud-bar {
+    container-type: normal;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .v2-topbar .hud-bar__layout {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--sp-1, 4px) var(--sp-2, 8px);
+    width: auto;
+  }
+
+  .v2-topbar .hud-level-xp {
+    flex: 0 0 auto;
+    min-width: max-content;
+  }
+
+  .v2-topbar .hud-progress-chip,
+  .v2-topbar .hud-stacks-list,
+  .v2-topbar .hud-power-chip {
+    flex: 0 0 auto;
+  }
+}
+
+/* Merged Next hint chip */
+.v2-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: var(--surface-2, #30243d);
+  border: 1px solid var(--border, #3d2f4d);
+  border-radius: 999px;
+  font-size: var(--fs-xs, 0.75rem);
+  white-space: nowrap;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 260px;
+}
+
+.v2-hint-lead {
+  font-weight: 700;
+  color: var(--accent, #ffb86b);
+  text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+.v2-hint-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--text, #fff3e0);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.v2-hint-btn:hover {
+  color: var(--accent, #ffb86b);
+}
+
+/* Wallet button wrapper */
+.v2-wallet {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.v2-wallet .wallet {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.v2-wallet .wallet-btn {
+  min-height: 32px;
+  padding: 4px 10px;
+  font-size: var(--fs-xs, 0.75rem);
+  border: 1px solid var(--border, #3d2f4d);
+  background: var(--surface-2, #30243d);
+  color: var(--text, #fff3e0);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.v2-wallet-icon {
+  display: none;
+}
+
 .v2-mode-note {
-  margin: var(--sp-1, 4px) 0 0;
-  color: var(--muted);
-  font: var(--fs-xs, .75rem)/1.2 var(--font-body);
+  margin: 0;
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #b9b6c9);
+  white-space: nowrap;
 }
+
 .v2-mode-full {
   position: absolute;
   width: 1px;
@@ -78,197 +181,608 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
-/* Keep the original Mini -> hint -> wallet tab order. The pill sits below the
-   header, with reserved space in main, without adding to the header/HUD height. */
-.v2-hint {
-  position: absolute;
-  top: calc(100% + var(--sp-2, 8px));
-  left: var(--sp-4, 16px);
-  right: var(--sp-4, 16px);
-  width: fit-content;
-  max-width: calc(100% - var(--sp-6, 32px));
+
+/* Collapse wallet to icon/menu when width < 1100 px */
+@media (max-width: 1099px) {
+  .v2-mode-note {
+    display: none;
+  }
+}
+
+/* Reserved empty slot for Claude Codex SyncStatus */
+.v2-sync-status-slot {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+/* 3. Main Area */
+.v2-main {
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  height: 100%;
   box-sizing: border-box;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2, 8px);
-  padding: var(--sp-2, 8px) var(--sp-3, 12px);
-  border: 0;
-  border-radius: 999px;
-  background: var(--surface-2);
-  font-family: var(--font-body);
+  overflow: hidden;
 }
-.v2-hint-lead {
-  flex: none;
-  font: var(--fs-xs, .75rem)/1.2 var(--font-display);
-  text-transform: uppercase;
-  color: var(--muted);
+
+/* Two-column layout on Desktop and Laptop (width >= 1024, height >= 640) */
+@media (min-width: 1024px) and (min-height: 640px) {
+  .v2-main {
+    grid-template-columns: 1fr clamp(380px, 32vw, 460px);
+    grid-template-rows: 100%;
+  }
 }
-.v2-hint-btn, .v2-hint-text {
-  min-width: 0;
-  font: var(--fs-sm, .875rem)/1.25 var(--font-body);
-  color: var(--text);
-  background: none;
-  border: 0;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
-  white-space: normal;
+
+/* Two-column layout on Short desktop / tablet (600 <= width < 1024, or height < 640) */
+@media (min-width: 600px) and (max-width: 1023px), (min-width: 600px) and (max-height: 639px) {
+  .v2-main {
+    grid-template-columns: 55fr 45fr;
+    grid-template-rows: 100%;
+  }
 }
-.v2-hint-btn { cursor: pointer; }
-.v2-mini-toggle, .stage-toggle {
-  flex: none;
-  font: 700 var(--fs-xs, .75rem)/1.2 var(--font-display);
-  min-height: var(--tap, 44px);
-  padding: 0 var(--sp-3, 12px);
-  color: var(--text);
-  background: var(--surface-2);
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 #000;
-  cursor: pointer;
-}
+
+/* Stage: Left column */
 .v2-stage {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  flex-shrink: 0;
-  height: clamp(200px, 40vh, 360px);
+  align-items: center;
+  background: var(--bg-canvas, #150f1d);
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
   width: 100%;
-  max-width: 1440px;
-  align-self: center;
-  background: var(--surface);
+}
+
+.v2-stage-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.v2-stage-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.v2-stage-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  image-rendering: pixelated;
+}
+
+.v2-stage-placeholder {
+  color: var(--muted, #b9b6c9);
+  text-align: center;
+  padding: var(--sp-4, 16px);
+}
+
+/* 4. Management Panel: Right column */
+.v2-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  background: var(--surface, #21182b);
+  border-left: 1px solid var(--border, #3d2f4d);
+  box-sizing: border-box;
   overflow: hidden;
 }
-.v2-stage .game-host { display: flex; justify-content: center; align-items: flex-end; }
-.v2-stage-art { position: relative; flex-shrink: 0; }
-.v2-stage-canvas { position: absolute; inset: 0; }
-.v2-stage-canvas canvas { display: block; width: 100% !important; height: 100% !important; image-rendering: pixelated; }
-.v2-stage-placeholder { align-self: center; text-align: center; padding: var(--sp-4, 16px); }
-.v2-lower {
-  display: grid;
-  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
-  gap: var(--sp-4, 16px);
-  padding: var(--sp-4, 16px);
-  align-items: start;
+
+/* Compact character strip above tabs on heights >= 820 and widths >= 1024 */
+.v2-character-compact-strip {
+  flex: 0 0 auto;
+  border-bottom: 1px solid var(--border, #3d2f4d);
+  background: var(--surface-2, #2a1f36);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
 }
-.v2-shell[data-layout='tablet'] .v2-lower { grid-template-columns: minmax(0, 1fr); }
-.v2-lower > * { min-width: 0; max-width: 100%; box-sizing: border-box; }
-.v2-character { display: flex; flex-direction: column; gap: var(--sp-3, 12px); text-align: left; }
-.v2-character-head { display: flex; align-items: center; gap: var(--sp-3, 12px); }
-.v2-character-name {
-  margin: 0;
-  font-size: var(--fs-lg, 1.25rem);
-  line-height: 1.1;
-  color: var(--gold);
-  text-shadow: 2px 2px 0 #000;
-}
-.v2-tabs-area { padding: 0; display: flex; flex-direction: column; min-height: 300px; }
-.v2-tabs, .v2-nav-tabs { display: flex; }
-.v2-tabs { gap: var(--sp-1, 4px); border-bottom: 1px solid var(--border); overflow-x: auto; }
-.v2-tab {
+
+.v2-character-compact-row {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--sp-2, 8px);
-  flex: none;
+}
+
+.v2-character-compact .slot-grid.compact {
+  display: grid;
+  grid-template-columns: repeat(9, 28px);
+  gap: 4px;
+}
+
+.v2-character-compact .slot-grid.compact .slot-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0;
+}
+
+.v2-character-compact-info {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-xs, 0.75rem);
+  white-space: nowrap;
+}
+
+.v2-character-compact-name {
+  font-weight: 700;
+  color: var(--gold, #ffd34e);
+}
+
+.v2-character-compact-meta {
+  color: var(--muted, #b9b6c9);
+}
+
+.v2-character-compact-power {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-xs, 0.75rem);
+  margin-right: auto;
+}
+
+/* Tab row */
+.v2-tabs {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  background: var(--surface, #21182b);
+  border-bottom: 1px solid var(--border, #3d2f4d);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.v2-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.v2-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1 0 auto;
   min-height: 40px;
-  box-sizing: border-box;
-  padding: 0 var(--sp-4, 16px);
-  font: var(--fs-sm, .875rem)/1.2 var(--font-display);
-  color: var(--muted);
+  padding: 6px 12px;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 700;
+  color: var(--muted, #b9b6c9);
   background: transparent;
   border: 0;
   border-bottom: 3px solid transparent;
   cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
-.v2-tab-icon, .v2-tab-icon svg { width: 16px; height: 16px; flex: none; }
-.v2-tab:hover { background: var(--surface-2); }
-.v2-tab[aria-selected='true'] { color: var(--accent); border-bottom-color: var(--accent); }
-.v2-tabpanel { flex: 1; overflow: auto; padding: var(--sp-4, 16px); min-width: 0; text-align: left; }
-.v2-nav {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 10;
-  padding: 0 max(8px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(8px, env(safe-area-inset-left, 0px));
-  background: var(--surface);
-  border-top: 1px solid var(--border);
+
+.v2-tab:hover {
+  color: var(--text, #fff3e0);
+  background: var(--surface-2, #30243d);
 }
-.v2-nav-tabs { height: var(--nav-h); }
-.v2-nav .v2-tab {
-  flex: 1 1 0;
-  flex-direction: column;
-  gap: var(--sp-1, 4px);
-  min-width: var(--tap, 44px);
-  min-height: var(--tap, 44px);
-  padding: 0;
-  font-size: var(--fs-xs, .75rem);
-  border-bottom: 0;
-  border-top: 3px solid transparent;
+
+.v2-tab[aria-selected='true'] {
+  color: var(--accent, #ffb86b);
+  border-bottom-color: var(--accent, #ffb86b);
 }
-.v2-nav .v2-tab[aria-selected='true'] { border-top-color: var(--accent); }
-.v2-sheet {
-  position: fixed;
-  left: 0; right: 0;
-  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 1px);
-  z-index: 9;
+
+.v2-tab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+/* Panel Body & Tabpanels */
+.v2-panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  max-height: calc(60vh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
-  max-height: calc(60dvh - var(--nav-h) - 8px - env(safe-area-inset-bottom, 0px));
-  background: var(--surface);
-  border-top: 2px solid #000;
-  box-shadow: 0 -3px 0 #000;
-  animation: v2-sheet-up 160ms ease-out;
 }
-.v2-sheet[hidden] { display: none; }
-.v2-sheet .v2-tabpanel { padding-right: 52px; min-height: 0; }
-.v2-sheet-close {
-  position: absolute;
-  top: 6px; right: 6px;
-  z-index: 1;
-  width: 40px; height: 40px;
-  font: 700 var(--fs-xl, 1.5rem) var(--font-display);
-  color: var(--text);
-  background: var(--surface-2);
+
+.v2-tabpanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.v2-tabpanel[hidden] {
+  display: none !important;
+}
+
+.v2-tabpanel-title {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px) 0;
+  font: 700 var(--fs-md, 1.125rem)/1.2 var(--font-display, 'Pixelify Sans', monospace);
+  color: var(--gold, #ffd34e);
+}
+
+.v2-panel-body-inner {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  box-sizing: border-box;
+}
+
+.v2-tabpanel:has(.bag) .v2-panel-body-inner,
+.v2-tabpanel:has(.boss-gate-panel) .v2-panel-body-inner,
+.v2-tabpanel:has(.forge-panel) .v2-panel-body-inner {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 5. Sticky Action Footer inside panel */
+.bag-footer,
+.boss-gate-actions,
+.forge-action-area {
+  flex: 0 0 auto;
+  background: var(--surface, #21182b);
+  border-top: 1px solid var(--border, #3d2f4d);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  z-index: 10;
+}
+
+/* Primary buttons styling */
+.bag-equip-best,
+.boss-fight-btn,
+.forge-btn-craft,
+.forge-btn-salvage,
+.forge-btn-relic {
+  width: 100%;
+  min-height: 44px !important;
+  padding: 8px 16px;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-accent, #1a1200);
+  background: var(--accent, #ffb86b);
   border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  box-sizing: border-box;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
-.v2-action-notice { margin: var(--sp-2, 8px) var(--sp-4, 16px); font-size: var(--fs-sm, .875rem); color: var(--muted); }
-.v2-fight-result, .v2-recent-loot { padding: var(--sp-4, 16px); min-width: 0; }
-.v2-shell .class-picker { max-width: 100%; box-sizing: border-box; }
-@media (max-width: 1399px) {
-  .v2-topbar { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'brand actions' 'hud hud'; }
+
+.bag-equip-best:disabled,
+.boss-fight-btn:disabled,
+.forge-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
 }
-@media (max-width: 600px) {
-  .v2-shell[data-layout='phone'] { padding-bottom: calc(var(--nav-h) + var(--sp-4, 16px) + env(safe-area-inset-bottom, 0px)); }
-  .v2-shell > main { padding-top: 64px; }
-  .v2-topbar { padding: var(--sp-1, 4px) var(--sp-3, 12px); row-gap: var(--sp-1, 4px); }
-  .v2-title { font-size: var(--fs-md, 1rem); }
-  .v2-topbar > .hud-bar { margin-top: 14px; }
-  .v2-wallet { width: var(--tap, 44px); flex: none; }
-  .v2-wallet:has(.wallet-btn[href]) .wallet-btn {
-    width: var(--tap, 44px);
-    height: var(--tap, 44px);
+
+/* 6. Phone Portrait (width < 600 px) */
+@media (max-width: 599px) {
+  .v2-shell {
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .v2-topbar {
+    height: 70px;
+    min-height: 48px;
+    max-height: 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    gap: 2px 8px;
+    padding: 2px 8px;
+    box-sizing: border-box;
+  }
+
+  .v2-title {
+    font-size: var(--fs-sm, 0.875rem);
+  }
+
+  .v2-topbar .hud-bar {
+    padding: 4px 6px;
+  }
+
+  .v2-topbar .hud-xp-text {
+    font-size: 8.5px;
+  }
+
+  .v2-topbar .hud-level-badge {
+    font-size: 8.5px;
+  }
+
+  .v2-topbar .hud-level-xp {
+    gap: 1px;
+  }
+
+  .v2-topbar .hud-power-chip {
+    padding-inline: 2px;
+  }
+
+  .v2-wallet {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .v2-wallet .wallet {
+    position: static;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .v2-wallet .wallet-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 0;
     font-size: 0;
+    display: inline-grid;
+    place-items: center;
+    position: relative;
   }
-  .v2-wallet:has(.wallet-btn[href]) .v2-wallet-icon {
-    display: block;
+
+  .v2-wallet .v2-wallet-icon {
+    display: grid;
+    place-items: center;
     position: absolute;
-    top: 14px; right: 14px;
+    inset: 0;
     pointer-events: none;
   }
-  .v2-wallet-icon svg { width: 16px; height: 16px; }
-  .v2-mode-note { position: absolute; right: 0; top: 44px; width: max-content; max-width: calc(100vw - 24px); }
-  .v2-hint { left: var(--sp-3, 12px); right: var(--sp-3, 12px); max-width: calc(100% - 24px); }
-  .v2-stage { height: var(--stage-h); }
-  .v2-shell[data-layout='phone'] .v2-lower { grid-template-columns: minmax(0, 1fr); padding: var(--sp-3, 12px); }
-  .v2-shell[data-layout='phone'] .v2-recent-loot { padding-bottom: calc(var(--nav-h) + var(--sp-4, 16px)); }
+
+  .v2-hint {
+    grid-column: 1;
+    grid-row: 2;
+    height: 44px;
+    min-height: 44px;
+    max-width: none;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .v2-hint-btn {
+    height: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .v2-main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .v2-stage {
+    height: var(--stage-h, 180px);
+    min-height: 160px;
+    width: 100%;
+    flex: 0 0 auto;
+    align-self: flex-start;
+  }
+
+  .v2-panel {
+    border-left: 0;
+    border-top: 1px solid var(--border, #3d2f4d);
+    height: 100%;
+    min-height: 0;
+  }
+
+  /* Bottom Nav (56px) */
+  .v2-nav {
+    flex: 0 0 56px;
+    height: 56px;
+    background: var(--surface, #21182b);
+    border-top: 1px solid var(--border, #3d2f4d);
+    z-index: 15;
+  }
+
+  .v2-nav-tabs {
+    display: flex;
+    height: 56px;
+    width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .v2-nav .v2-tab {
+    flex: 1 1 0;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 4px 1px;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 10px;
+    border-bottom: 0;
+    border-top: 3px solid transparent;
+    overflow: hidden;
+  }
+
+  .v2-nav .v2-tab .v2-tab-label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .v2-nav .v2-tab[aria-selected='true'] {
+    border-top-color: var(--accent, #ffb86b);
+  }
+
+  /* Touch targets must be >= 44x44 on phone sizes */
+  button,
+  [role='button'],
+  [role='tab'],
+  .v2-tab,
+  .pixel-btn,
+  .slot-btn,
+  .wallet-btn,
+  .v2-hint-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
-@media (max-width: 360px) {
-  .v2-topbar { padding-inline: var(--sp-2, 8px); column-gap: var(--sp-2, 8px); }
-  .v2-shell[data-layout='phone'] .v2-lower { padding: var(--sp-2, 8px); }
+
+/* 7. Short Landscape (height < 480 px, width > height) */
+@media (max-height: 479px) and (orientation: landscape) {
+  .v2-shell {
+    grid-template-rows: 40px 1fr;
+  }
+
+  .v2-topbar {
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0 var(--sp-2, 8px);
+  }
+
+  .v2-topbar .hud-stack-label {
+    display: none;
+  }
+
+  .v2-main {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    grid-template-rows: 100%;
+  }
+
+  .v2-panel {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .v2-tabs {
+    flex-direction: column;
+    width: 48px;
+    border-bottom: 0;
+    border-right: 1px solid var(--border, #3d2f4d);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .v2-tabs .v2-tab {
+    min-height: 44px;
+    width: 48px;
+    padding: 6px 0;
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+  }
+
+  .v2-tabs .v2-tab[aria-selected='true'] {
+    border-left-color: var(--accent, #ffb86b);
+    border-bottom-color: transparent;
+  }
+
+  .v2-tabs .v2-tab-label {
+    display: none;
+  }
 }
-@keyframes v2-sheet-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .v2-sheet { animation: none; } }
+
+/* 8. Spinner animation & accessibility */
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.75s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-spinner {
+    animation: none !important;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* 9. Alerts and notifications */
+.v2-alert,
+.v2-action-notice {
+  margin: var(--sp-1, 4px) var(--sp-2, 8px);
+  padding: var(--sp-2, 8px);
+  background: var(--surface-2, #30243d);
+  border: 1px solid var(--border, #3d2f4d);
+  font-size: var(--fs-xs, 0.75rem);
+}
+
+.v2-fight-result {
+  padding: var(--sp-2, 8px);
+}
+
+.v2-stage .v2-recent-loot {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  max-height: 40%;
+  overflow-y: auto;
+  background: rgba(33, 24, 43, 0.95);
+  border: 1px solid var(--border, #3d2f4d);
+  padding: var(--sp-2, 8px);
+  z-index: 5;
+  box-sizing: border-box;
+}

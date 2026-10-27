@@ -36,12 +36,12 @@ for (const [width, height] of sizes) {
     if (width === 1280) {
       const tabs = await page.getByRole('tablist').boundingBox();
       expect(tabs!.y + tabs!.height).toBeLessThanOrEqual(720);
-      await expect(page.getByRole('tabpanel').getByRole('heading', { name: 'Inventory', exact: true })).toBeInViewport({ ratio: 1 });
-      expect((await stage.boundingBox())!.height).toBe(288);
+      await expect(page.getByRole('tabpanel').getByRole('heading', { name: 'Character', exact: true })).toBeInViewport({ ratio: 1 });
+      expect((await stage.boundingBox())!.height).toBeGreaterThanOrEqual(600);
     }
     if (width < 600) {
-      expect((await stage.boundingBox())!.height).toBeGreaterThanOrEqual(width === 390 ? 200 : 170);
-      if (width === 390) expect((await page.locator('.v2-topbar').boundingBox())!.height).toBeLessThanOrEqual(140);
+      expect((await stage.boundingBox())!.height).toBeGreaterThanOrEqual(width === 390 ? 200 : 160);
+      if (width === 390) expect((await page.locator('.v2-topbar').boundingBox())!.height).toBeLessThanOrEqual(72);
       for (const tab of await page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab').all()) {
         const bounds = (await tab.boundingBox())!;
         expect(bounds.width).toBeGreaterThanOrEqual(44);

@@ -41,7 +41,7 @@ for (const width of [1280, 390]) test.describe(`${width}px tokens`, () => {
       getComputedStyle(document.documentElement).getPropertyValue(name).trim(),
     ])), Object.keys(tokens))).toEqual(tokens);
     // Inventory exposes a real shared button on both desktop and phone.
-    await page.getByRole('tab', { name: 'Inventory', exact: true }).click();
+    await page.getByRole('tab', { name: 'Bag', exact: true }).click();
     const button = page.locator('.pixel-btn:visible').first();
     await expect(button).toBeVisible();
     expect(await button.evaluate(element => parseFloat(getComputedStyle(element).minHeight))).toBeGreaterThanOrEqual(width === 390 ? 44 : 36);

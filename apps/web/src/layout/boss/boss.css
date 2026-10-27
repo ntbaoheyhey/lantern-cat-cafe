@@ -3,7 +3,8 @@
 .boss-gate-panel {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4, 16px);
+  height: 100%;
+  min-height: 0;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -11,8 +12,31 @@
   color: var(--text, #fff3e0);
   background: transparent;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+}
+
+.boss-gate-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4, 16px);
+  padding: var(--sp-3, 12px);
+  box-sizing: border-box;
+}
+
+.boss-gate-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  background: var(--surface, #21182b);
+  border-top: 1px solid var(--border, #5b4572);
+  z-index: 5;
 }
 
 /* Panel Header */
@@ -263,7 +287,8 @@
 .boss-fight-btn {
   width: 100%;
   padding: var(--sp-2, 8px) var(--sp-4, 16px);
-  min-height: var(--tap, 44px);
+  min-height: 44px !important;
+  height: auto;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: var(--fs-md, 1rem);
   font-weight: 800;

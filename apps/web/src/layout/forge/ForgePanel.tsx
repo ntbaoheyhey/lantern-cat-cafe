@@ -29,6 +29,7 @@ export interface ForgePanelProps {
   items: ItemV2[];
   relic: ForgePanelRelic;
   classWeaponType: WeaponType;
+  busy?: string | null;
   onCraft: (recipeId: RecipeId, slot: GearSlotId) => void | Promise<void>;
   onSalvage: (itemIds: string[]) => void | Promise<void>;
   onRelic: () => void | Promise<void>;
@@ -90,6 +91,7 @@ export function ForgePanel({
   items,
   relic,
   classWeaponType,
+  busy,
   onCraft,
   onSalvage,
   onRelic,
@@ -141,6 +143,14 @@ export function ForgePanel({
     selectedSlot === 'weapon'
       ? `Weapon (${capitalize(classWeaponType)})`
       : capitalize(selectedSlot);
+
+  const isBusyCraft = busy === 'craft';
+  const isBusySalvage = busy === 'salvage';
+  const isBusyRelic = busy === 'forgeRelic';
+  const isLoopBusy = Boolean(busy);
+  const anyRecipeAffordable = MAIN_SLOTS.some((s) =>
+    GEAR_RARITIES.some((r) => !v2.craftBlock({ stacks, lastRelicDay: 0 }, `rcp.${r}`, s))
+  );
 
   // Salvage calculations
   const eligibleItems = items.filter((item) => !item.equipped && !item.locked && item.source !== 'starter');
@@ -274,7 +284,8 @@ export function ForgePanel({
           className="forge-content forge-craft-tab"
           data-testid="craft-panel"
         >
-          <div className="forge-selector-group">
+          <div className="forge-craft-scroll">
+            <div className="forge-selector-group">
             <span className="forge-selector-label" id={`${panelId}-slot-label`}>
               Choose Slot
             </span>
@@ -409,6 +420,7 @@ export function ForgePanel({
               </ul>
             </div>
           </div>
+        </div>
 
           {/* Action & Confirm Area */}
           <div className="forge-action-area">
@@ -426,6 +438,11 @@ export function ForgePanel({
                 <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
                   {disabledCraftReason}
                 </p>
+                {!anyRecipeAffordable && (
+                  <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
+                    No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
+                  </p>
+                )}
               </>
             ) : confirmCraft ? (
               <div className="forge-confirm-box" data-testid="craft-confirm-box" role="alert">
@@ -436,14 +453,18 @@ export function ForgePanel({
                   <button
                     type="button"
                     className="forge-btn forge-btn-confirm pixel-btn"
+                    disabled={isLoopBusy}
+                    aria-busy={isBusyCraft ? 'true' : 'false'}
                     onClick={() => void handleCraftConfirm()}
                     data-testid="craft-confirm-btn"
                   >
-                    Confirm Craft
+                    {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+                    {isBusyCraft ? 'Crafting...' : 'Confirm Craft'}
                   </button>
                   <button
                     type="button"
                     className="forge-btn forge-btn-cancel"
+                    disabled={isLoopBusy}
                     onClick={() => setConfirmCraft(false)}
                     data-testid="craft-cancel-btn"
                   >
@@ -455,10 +476,13 @@ export function ForgePanel({
               <button
                 type="button"
                 className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
+                disabled={isLoopBusy}
+                aria-busy={isBusyCraft ? 'true' : 'false'}
                 onClick={() => setConfirmCraft(true)}
                 data-testid="craft-btn"
               >
-                Craft {capitalize(selectedRarity)} {slotLabel}
+                {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+                {isBusyCraft ? 'Crafting...' : `Craft ${capitalize(selectedRarity)} ${slotLabel}`}
               </button>
             )}
           </div>
@@ -628,13 +652,16 @@ export function ForgePanel({
                     className="forge-btn forge-btn-confirm pixel-btn"
                     onClick={() => void handleSalvageConfirm()}
                     data-testid="salvage-confirm-btn"
-                    disabled={salvageIds.size === 0}
+                    disabled={salvageIds.size === 0 || isLoopBusy}
+                    aria-busy={isBusySalvage ? 'true' : 'false'}
                   >
-                    Confirm Salvage
+                    {isBusySalvage && <span className="btn-spinner" aria-hidden="true" />}
+                    {isBusySalvage ? 'Salvaging...' : 'Confirm Salvage'}
                   </button>
                   <button
                     type="button"
                     className="forge-btn forge-btn-cancel"
+                    disabled={isLoopBusy}
                     onClick={() => setConfirmSalvage(false)}
                     data-testid="salvage-cancel-btn"
                   >
@@ -646,11 +673,15 @@ export function ForgePanel({
               <button
                 type="button"
                 className={`forge-btn ${salvageIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
-                disabled={salvageIds.size === 0}
+                disabled={salvageIds.size === 0 || isLoopBusy}
+                aria-busy={isBusySalvage ? 'true' : 'false'}
                 onClick={() => setConfirmSalvage(true)}
                 data-testid="salvage-btn"
               >
-                {salvageIds.size === 0
+                {isBusySalvage && <span className="btn-spinner" aria-hidden="true" />}
+                {isBusySalvage
+                  ? 'Salvaging...'
+                  : salvageIds.size === 0
                   ? 'Select items to salvage'
                   : `Salvage (${salvageIds.size})`}
               </button>
@@ -783,14 +814,18 @@ export function ForgePanel({
                   <button
                     type="button"
                     className="forge-btn forge-btn-confirm pixel-btn"
+                    disabled={isLoopBusy}
+                    aria-busy={isBusyRelic ? 'true' : 'false'}
                     onClick={() => void handleRelicConfirm()}
                     data-testid="relic-confirm-btn"
                   >
-                    Confirm Forge
+                    {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+                    {isBusyRelic ? 'Forging...' : 'Confirm Forge'}
                   </button>
                   <button
                     type="button"
                     className="forge-btn forge-btn-cancel"
+                    disabled={isLoopBusy}
                     onClick={() => setConfirmRelic(false)}
                     data-testid="relic-cancel-btn"
                   >
@@ -802,10 +837,13 @@ export function ForgePanel({
               <button
                 type="button"
                 className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
+                disabled={Boolean(relicBlockedReason || relic.pending || isLoopBusy)}
+                aria-busy={isBusyRelic ? 'true' : 'false'}
                 onClick={() => setConfirmRelic(true)}
                 data-testid="relic-forge-btn"
               >
-                Forge Relic
+                {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+                {isBusyRelic ? 'Forging...' : 'Forge Relic'}
               </button>
             )}
           </div>

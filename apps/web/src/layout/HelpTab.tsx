@@ -8,7 +8,7 @@ import './HelpTab.css';
 /**
  * Help tab:
  * - Flag off: classic v1 steps list
- * - Flag on: v2 game explanation (classes, keys, chapters, forge, drop rates, Mini mode)
+ * - Flag on: v2 game explanation (classes, keys, chapters, forge, drop rates)
  *   with numbers read from game rules / content config.
  */
 export function HelpTab() {
@@ -144,12 +144,7 @@ export function HelpTab() {
         </p>
       </section>
 
-      <section className="help-v2-section">
-        <h3>Mini mode</h3>
-        <p>
-          Mini mode collapses the game into the classic 96 px taskbar strip for background play. Toggle it anytime using the Mini mode button in the top bar.
-        </p>
-      </section>
+
 
       <div className="help-v2-action">
         <button

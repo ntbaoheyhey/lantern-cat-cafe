@@ -16,6 +16,7 @@ import './character.css';
 
 export interface CharacterPanelProps {
   state: ServerStateV2;
+  compact?: boolean;
   onSelectSlot?: (slot: GearSlotId) => void;
 }
 
@@ -127,12 +128,39 @@ function SlotCell({
   );
 }
 
-export function CharacterPanel({ state, onSelectSlot }: CharacterPanelProps) {
+export function CharacterPanel({ state, compact, onSelectSlot }: CharacterPanelProps) {
   const { cat } = state;
   const cls = v2.CLASSES.find((c) => c.id === cat.classId) ?? null;
   const derived = cls ? deriveFor(state, cls.id) : null;
   const xpMax = Math.max(1, cat.xpToNext);
   const xpPct = Math.min(100, Math.max(0, (cat.xp / xpMax) * 100));
+
+  if (compact) {
+    return (
+      <section aria-label="Character compact" className="v2-character-compact pixel-card">
+        <div className="v2-character-compact-row">
+          <div className="cat-portrait-wrap compact">
+            <CatPortrait size={36} />
+          </div>
+          <div className="compact-info">
+            <span className="compact-name">Mochi</span>
+            <span className="compact-meta">{cls ? cls.name : 'No class'} · Lv {cat.level}</span>
+          </div>
+          {derived && (
+            <div className="compact-power" data-testid="character-power-compact">
+              <span className="compact-power-label">Power</span>
+              <span className="compact-power-val">{derived.power}</span>
+            </div>
+          )}
+          <div className="slot-grid compact" role="group" aria-label="Gear slots">
+            {v2.GEAR_SLOTS.map((slot) => (
+              <SlotCell key={slot.id} slot={slot} state={state} onSelectSlot={onSelectSlot} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section aria-label="Character" className="v2-character pixel-card">
