@@ -37,3 +37,12 @@ export function feedbackAt(age: number, reduced: boolean) {
     done: age >= 600,
   };
 }
+
+/** Opaque horizontal edges in world coordinates relative to the sprite's origin. */
+export function horizontalBounds(width: number, height: number, origin: number, scale: number, opaque: (x: number, y: number) => boolean) {
+  let left = width, right = 0;
+  for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) if (opaque(x, y)) {
+    left = Math.min(left, x); right = Math.max(right, x + 1);
+  }
+  return { left: (left - width * origin) * scale, right: (right - width * origin) * scale };
+}

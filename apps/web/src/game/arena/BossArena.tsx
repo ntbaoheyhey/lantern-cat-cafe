@@ -13,6 +13,8 @@ export type { PlayBossOptions } from './playBossFight';
 export interface BossArenaProps extends ArenaCueOptions { result: BossFightResultV2; onDone(): void }
 export function BossArena({ result, onDone, chapter, classId, catMaxHp, reducedMotion = prefersReducedMotion() }: BossArenaProps) {
   const host = useRef<HTMLDivElement>(null);
+  const skipButton = useRef<HTMLButtonElement>(null);
+  const skipRequested = useRef(false);
   const skip = useRef<(() => void) | null>(null);
   const callback = useRef(onDone); callback.current = onDone;
   const [hp, setHp] = useState({ cat: catMaxHp, boss: 0 });
@@ -20,9 +22,10 @@ export function BossArena({ result, onDone, chapter, classId, catMaxHp, reducedM
   const [error, setError] = useState('');
   useEffect(() => {
     const controller = new AbortController();
-    setEnded(false); setError(''); skip.current = null;
+    setEnded(false); setError(''); skip.current = null; skipRequested.current = false;
+    skipButton.current?.focus();
     void playBossFight(result, { parent: host.current!, signal: controller.signal, chapter, classId, catMaxHp, reducedMotion,
-      onReady: action => { skip.current = action; }, onHp: (cat, boss) => setHp({ cat, boss }),
+      onReady: action => { skip.current = action; if (skipRequested.current) action(); }, onHp: (cat, boss) => setHp({ cat, boss }),
     }).then(() => { if (!controller.signal.aborted) { setEnded(true); callback.current(); } }).catch(() => {
       if (!controller.signal.aborted) setError('The arena could not load. Show the fight result to continue.');
     });
@@ -33,6 +36,6 @@ export function BossArena({ result, onDone, chapter, classId, catMaxHp, reducedM
     <p aria-label="Fight health">Cat HP {Math.round(hp.cat)} · Boss HP {Math.round(hp.boss)}</p>
     <p role="status">{ended ? result.won ? 'Victory — boss defeated' : 'Defeat — rest and try again' : 'Boss fight in progress'}</p>
     {error && <p role="alert">{error}</p>}
-    <button type="button" disabled={ended} onClick={() => error ? (setEnded(true), callback.current()) : skip.current?.()}>{error ? 'Show fight result' : 'Skip fight'}</button>
+    <button ref={skipButton} type="button" aria-disabled={ended} onClick={() => { if (ended) return; if (error) { setEnded(true); callback.current(); } else { skipRequested.current = true; skip.current?.(); } }}>{error ? 'Show fight result' : 'Skip fight'}</button>
   </section>;
 }

@@ -161,17 +161,22 @@ export function projectileAt(kind: ProjectileKind, from: Point, to: Point, p: nu
 
 export function drawProjectile(g: FxGraphics, pr: Projectile): void {
   const p = Math.min(1, Math.max(0, pr.age / pr.dur));
-  const { x, y, angle } = projectileAt(pr.kind, pr.from, pr.to, p);
-  const dx = Math.cos(angle);
-  const dy = Math.sin(angle);
+  const x = pr.from.x + (pr.to.x - pr.from.x) * p;
+  const baseY = pr.from.y + (pr.to.y - pr.from.y) * p;
+  const y = baseY - (pr.kind === 'flask' ? 4 * p * (1 - p) * 50 : pr.kind === 'bolt' ? Math.sin(Math.PI * p) * 8 : 0);
+  const slope = pr.to.y - pr.from.y - (pr.kind === 'flask' ? 200 * (1 - 2 * p) : pr.kind === 'bolt' ? Math.PI * Math.cos(Math.PI * p) * 8 : 0);
+  const angle = Math.atan2(slope, pr.to.x - pr.from.x);
+  const dx = Math.cos(angle), dy = Math.sin(angle);
   if (pr.kind === 'arrow') {
     g.lineStyle(1, COLORS.white, 0.35).lineBetween(x - dx * 24, y - dy * 24, x - dx * 8, y - dy * 8);
     g.lineStyle(2, COLORS.wood, 1).lineBetween(x - dx * 8, y - dy * 8, x, y);
     g.fillStyle(COLORS.steel, 1).fillRect(x - 1, y - 1, 2, 2);
   } else if (pr.kind === 'bolt') {
     for (let k = 3; k >= 1; k--) {
-      const t = projectileAt('bolt', pr.from, pr.to, Math.max(0, p - k * 0.05));
-      g.fillStyle(COLORS.bolt, 0.5 - k * 0.1).fillCircle(t.x, t.y, 3 - k * 0.5);
+      const tail = Math.max(0, p - k * 0.05);
+      const tx = pr.from.x + (pr.to.x - pr.from.x) * tail;
+      const ty = pr.from.y + (pr.to.y - pr.from.y) * tail - Math.sin(Math.PI * tail) * 8;
+      g.fillStyle(COLORS.bolt, 0.5 - k * 0.1).fillCircle(tx, ty, 3 - k * 0.5);
     }
     g.fillStyle(COLORS.bolt, 1).fillCircle(x, y, 3);
     g.fillStyle(COLORS.white, 1).fillCircle(x, y, 1.5);

@@ -15,7 +15,13 @@ export async function playBossFight(result: BossFightResultV2, opts: PlayBossOpt
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
     const game = new Phaser.Game({ type: Phaser.CANVAS, parent: opts.parent, width: 512, height: 192, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
-    opts.signal?.addEventListener('abort', () => { game.destroy(true); finish(); }, { once: true });
+    opts.signal?.addEventListener('abort', () => {
+      game.destroy(true);
+      // Consume pendingDestroy even if Phaser's hidden-tab loop is asleep.
+      if (game.isBooted) game.step(performance.now(), 0);
+      else game.events.once('ready', () => queueMicrotask(() => game.step(performance.now(), 0)));
+      finish();
+    }, { once: true });
     game.scene.add('boss-arena', ArenaScene, true, { ...opts, result, ready: opts.onReady ?? (() => {}), hp: opts.onHp ?? (() => {}), done: finish });
   });
 }

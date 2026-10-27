@@ -2,10 +2,10 @@ import { EventEmitter } from 'node:events';
 import { beforeEach, expect, it, vi } from 'vitest';
 vi.mock('phaser', () => ({ default: { Scene: class {}, Scenes: { Events: { CREATE: 'create', SHUTDOWN: 'shutdown' } } } }));
 vi.mock('../rig', () => ({ CLASS_LOOKS: { warrior: { name: 'warrior' }, witch: { name: 'witch' } }, bakeCat: vi.fn(() => ({
-  key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle' }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack' }, hurt: { key: 'cat-hurt' } },
+  key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle', frames: ['idle:0'] }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack', frames: ['attack:0'], frameMs: [240], hitFrames: [0] }, hurt: { key: 'cat-hurt' } },
 })) }));
-vi.mock('../arena/assets', () => ({ equippedVisuals: vi.fn(() => ({})), bakeMonster: () => ({ walk: 'monster-walk' }) }));
-vi.mock('../combat', async () => await vi.importActual('../combat/timeline'));
+vi.mock('../arena/assets', () => ({ equippedVisuals: vi.fn(() => ({})), bakeMonster: () => ({ walk: 'monster-walk', hit: 'monster-hit', defeat: 'monster-defeat' }) }));
+vi.mock('../combat', async () => ({ ...await vi.importActual('../combat/timeline'), ...await vi.importActual('../combat/pool') }));
 import { StageScene } from './StageScene';
 import { equippedVisuals } from '../arena/assets';
 import { bakeCat, CLASS_LOOKS } from '../rig';
@@ -17,8 +17,11 @@ function sceneHarness() {
   const scene = new StageScene(), events = new EventEmitter();
   let active = false;
   const sprite = () => {
-    const s = { x: 0, y: 84, frame: { width: 24, height: 24, name: '0' }, texture: { key: 'test' }, setOrigin: vi.fn(), play: vi.fn(), stop: vi.fn(), setFrame: vi.fn(), setScale: vi.fn(), setPosition: vi.fn(), clearTint: vi.fn(), destroy: vi.fn() };
-    for (const key of ['setOrigin', 'play', 'stop', 'setFrame', 'setScale', 'setPosition', 'clearTint'] as const) s[key].mockReturnValue(s);
+    const s = { x: 0, y: 84, alpha: 1, originX: .5, originY: 1, scaleX: 1, scaleY: 1, frame: { width: 24, height: 24, name: '0' }, texture: { key: 'test' }, setOrigin: vi.fn(), play: vi.fn(), stop: vi.fn(), setFrame: vi.fn(), setScale: vi.fn(), setPosition: vi.fn(), clearTint: vi.fn(), setTexture: vi.fn(), setAlpha: vi.fn(), destroy: vi.fn() };
+    for (const key of ['setOrigin', 'play', 'stop', 'setFrame', 'setScale', 'setPosition', 'clearTint', 'setTexture', 'setAlpha'] as const) s[key].mockReturnValue(s);
+    s.setPosition.mockImplementation((x, y) => { s.x = x; s.y = y; return s; });
+    s.setFrame.mockImplementation(name => { s.frame.name = name; return s; });
+    s.setScale.mockImplementation(scale => { s.scaleX = scale; s.scaleY = scale; return s; });
     return s;
   };
   const cat = sprite(), monster = sprite();
@@ -29,8 +32,8 @@ function sceneHarness() {
     return g;
   };
   const effects = () => {
-    const fx = { setOrigin: vi.fn(), setDepth: vi.fn(), setScale: vi.fn(), setPosition: vi.fn(), setVisible: vi.fn(), setAlpha: vi.fn(), destroy: vi.fn() };
-    for (const key of ['setOrigin', 'setDepth', 'setScale', 'setPosition', 'setVisible', 'setAlpha'] as const) fx[key].mockReturnValue(fx);
+    const fx = { setOrigin: vi.fn(), setDepth: vi.fn(), setScale: vi.fn(), setPosition: vi.fn(), setVisible: vi.fn(), setAlpha: vi.fn(), setTexture: vi.fn(), setText: vi.fn(), setColor: vi.fn(), destroy: vi.fn() };
+    for (const key of ['setOrigin', 'setDepth', 'setScale', 'setPosition', 'setVisible', 'setAlpha', 'setTexture', 'setText', 'setColor'] as const) fx[key].mockReturnValue(fx);
     return fx;
   };
   const text = vi.fn(effects), image = vi.fn(effects);
@@ -48,8 +51,8 @@ it('renders the latest queued state after Phaser enters RUNNING, without another
   start();
   expect(add).toHaveBeenCalledTimes(2);
   expect(bakeCat).toHaveBeenCalledWith(scene, CLASS_LOOKS.witch, {});
-  expect(cat.play).toHaveBeenCalledWith('cat-idle');
-  expect(monster.play).toHaveBeenCalledWith('monster-walk');
+  expect(cat.stop).toHaveBeenCalled();
+  expect(monster.stop).toHaveBeenCalled();
 });
 
 it('draws a newly created replacement scene even when its state object is unchanged', () => {
@@ -58,7 +61,7 @@ it('draws a newly created replacement scene even when its state object is unchan
     const { scene, add, cat, start } = sceneHarness();
     scene.show(state, false); start();
     expect(add).toHaveBeenCalledTimes(2);
-    expect(cat.play).toHaveBeenCalledWith('cat-walk');
+    expect(cat.play).toHaveBeenCalledWith('cat-idle', true);
     const destroy = vi.spyOn(scene['director']!, 'destroy');
     scene['events'].emit('shutdown');
     expect(destroy).toHaveBeenCalledOnce();
@@ -76,17 +79,17 @@ it('cancels a queued startup render when the scene shuts down before CREATE', ()
 
 for (const reduced of [false, true]) it(`renders the existing impact cue and cleans effects on shutdown (reduced=${reduced})`, () => {
   const { scene, start, text, image, monster, events } = sceneHarness();
-  scene.show(sampleServerStateV2(), reduced); start();
+  scene.show(sampleServerStateV2({ round: 1, kills: 0, level: 60 }), reduced); start();
   // Advance the real existing timeline until its first registered impact.
-  for (let i = 0; i < 200 && text.mock.calls.length === 0; i++) scene.update(i * 20, 20);
+  for (let i = 0; i < 200 && !text.mock.results.some(r => r.value.setText.mock.calls.length > 0); i++) scene.update(i * 20, 20);
   expect(text).toHaveBeenCalled();
   expect(image).toHaveBeenCalled();
-  const number = text.mock.results[0]!.value;
-  const flash = image.mock.results[0]!.value;
+  const number = text.mock.results.find(r => r.value.setText.mock.calls.length > 0)!.value;
+  const flash = image.mock.results.find(r => r.value.setTexture.mock.calls.length > 0)!.value;
   expect(number.setAlpha).toHaveBeenCalledWith(1);
   expect(flash.setVisible).toHaveBeenCalledWith(true);
-  if (reduced) expect(monster.x).toBe(scene['homes'][1]);
-  else expect(Math.abs(monster.x - scene['homes'][1])).toBe(2);
+  if (reduced) expect(monster.x).toBeLessThan(scene['homes'][1]);
+  else expect(Number(scene['game'].canvas.dataset.stageContactGap)).toBe(2);
   expect(scene['hp']!.value).toBeLessThan(scene['hp']!.max);
   events.emit('shutdown');
   expect(number.destroy).toHaveBeenCalledOnce();
@@ -98,8 +101,10 @@ it('shows a muted Miss without flashing or shaking a dodging target', () => {
   scene.show(sampleServerStateV2({ gated: true }), true); start();
   scene['hit'](cat as never, 0, false, true);
   scene.update(0, 20);
-  expect(text.mock.calls[0]!.slice(2, 4)).toEqual(['Miss', expect.objectContaining({ color: '#b8a9c9' })]);
-  expect(image).not.toHaveBeenCalled();
+  const number = text.mock.results.find(r => r.value.setText.mock.calls.some(([label]: string[]) => label === 'Miss'))!.value;
+  expect(number.setText).toHaveBeenCalledWith('Miss');
+  expect(number.setColor).toHaveBeenCalledWith('#b8a9c9');
+  expect(image.mock.results.every(r => !r.value.setVisible.mock.calls.some(([visible]: boolean[]) => visible))).toBe(true);
 });
 
 it('preserves actors and the cue loop for plain claims and locks; mounts one pair for changed visuals', () => {
@@ -132,9 +137,37 @@ it('relayouts existing actors on resize and applies reduced motion without a reb
   Object.assign(scene.scale, { width: 500 });
   scene.relayout();
   expect(cat.setPosition).toHaveBeenCalledWith(150, expect.any(Number));
-  expect(monster.setPosition).toHaveBeenCalledWith(350, expect.any(Number));
+  expect(monster.setPosition).toHaveBeenCalledWith(expect.any(Number), expect.any(Number));
+  expect(monster.x).toBeGreaterThan(500); // New arrival starts beyond the resized right edge.
   scene.show(state, true);
   expect(cat.stop).toHaveBeenCalled();
   expect(monster.stop).toHaveBeenCalled();
   expect(add).toHaveBeenCalledTimes(2);
+});
+
+it('never attacks or invents a defeat at a gate, and keeps the number pool capped', () => {
+  const { scene, start, cat, text } = sceneHarness();
+  scene.show(sampleServerStateV2({ gated: true, level: 1, round: 10, kills: 0 }), false); start();
+  for (let i = 0; i < 1000; i++) scene.update(i * 16, 16);
+  expect(cat.play).not.toHaveBeenCalledWith('cat-attack', true);
+  expect(scene['hp']!.value).toBe(scene['hp']!.max);
+  expect(scene['defeatedAt']).toBe(-1);
+  expect(text).toHaveBeenCalledTimes(12);
+  expect(scene['hits']!.size).toBe(12);
+});
+
+it('discards a pending montage after a long hidden period, without consuming each kill', () => {
+  const { scene, start } = sceneHarness();
+  const before = sampleServerStateV2({ round: 1, kills: 0, level: 60 });
+  scene.show(before, false); start();
+  scene.show({ ...before, progress: { ...before.progress, kills: 3 } }, false);
+  expect(scene['plans']).toHaveLength(3);
+  const hidden = vi.spyOn(document, 'hidden', 'get').mockReturnValue(true);
+  const now = vi.spyOn(Date, 'now').mockReturnValue(1000);
+  document.dispatchEvent(new Event('visibilitychange'));
+  now.mockReturnValue(32000); hidden.mockReturnValue(false);
+  document.dispatchEvent(new Event('visibilitychange'));
+  expect(scene['plans']).toHaveLength(0);
+  expect(scene['plan'].credited).toBe(false);
+  scene['events'].emit('shutdown'); hidden.mockRestore(); now.mockRestore();
 });

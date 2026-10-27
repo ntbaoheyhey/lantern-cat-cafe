@@ -40,13 +40,15 @@ export class Pool<T> {
   release(item: T): void {
     const i = this.used.indexOf(item);
     if (i < 0) return;
-    this.used.splice(i, 1);
+    for (let next = i + 1; next < this.used.length; next++) this.used[next - 1] = this.used[next]!;
+    this.used.pop();
     this.reset(item);
     this.free.push(item);
   }
 
   releaseAll(): void {
-    for (const item of this.used.splice(0)) {
+    while (this.used.length) {
+      const item = this.used.pop()!;
       this.reset(item);
       this.free.push(item);
     }

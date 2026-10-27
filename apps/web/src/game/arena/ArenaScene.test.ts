@@ -16,7 +16,7 @@ it('maps every cue into scene actions, clamps HP and honors reduced motion', () 
     Object.assign(scene, { input0: { ...fixture, reducedMotion, hp, done }, cat, boss, bars,
       sheet: { anims: Object.fromEntries(['attack', 'hurt', 'defeat', 'victory'].map(a => [a, { key: a }])) },
       bossAnims: { hit: 'hit', windup: 'windup', attack: 'attack', defeat: 'defeat' },
-      add: { text: vi.fn(() => label), circle: vi.fn(() => label) }, tweens: { add: tween }, cameras: { main: { shake } }, time: { delayedCall: (_t: number, fn: () => void) => fn() },
+      add: { text: vi.fn(() => label), circle: vi.fn(() => label) }, tweens: { add: tween, killTweensOf: vi.fn() }, cameras: { main: { shake } }, time: { delayedCall: (_t: number, fn: () => void) => fn() },
     });
     const cues: ArenaCue[] = [
       { t: 0, type: 'spawn', maxHp: 100 }, { t: 0, type: 'attackStart', attack: 1 },
@@ -28,12 +28,16 @@ it('maps every cue into scene actions, clamps HP and honors reduced motion', () 
       { t: 0, type: 'defeat' }, { t: 0, type: 'bossDefeat' }, { t: 0, type: 'catDefeat' }, { t: 0, type: 'end', won: true }, { t: 0, type: 'cycleEnd' },
     ];
     for (const cue of cues) scene['applyCue'](cue);
-    expect(cat.play).toHaveBeenCalledWith('attack'); expect(cat.play).toHaveBeenCalledWith('hurt');
-    expect(boss.play).toHaveBeenCalledWith('windup'); expect(boss.play).toHaveBeenCalledWith('attack');
+    if (reducedMotion) { expect(cat.play).not.toHaveBeenCalled(); expect(boss.play).not.toHaveBeenCalled(); }
+    else {
+      expect(cat.play).toHaveBeenCalledWith('attack'); expect(cat.play).toHaveBeenCalledWith('hurt');
+      expect(boss.play).toHaveBeenCalledWith('windup'); expect(boss.play).toHaveBeenCalledWith('attack');
+    }
     expect(hp.mock.calls.every(([catHp, bossHp]) => catHp >= 0 && bossHp >= 0)).toBe(true);
     expect(shake).toHaveBeenCalledTimes(reducedMotion ? 0 : 1);
     expect(cat.setTintFill).toHaveBeenCalledTimes(reducedMotion ? 0 : 1);
     scene['finish']({ catHp: 0, bossHp: 5, won: false }); scene['finish']({ catHp: 0, bossHp: 5, won: false });
-    expect(done).toHaveBeenCalledOnce(); expect(cat.play).toHaveBeenCalledWith('defeat');
+    expect(done).toHaveBeenCalledOnce();
+    if (!reducedMotion) expect(cat.play).toHaveBeenCalledWith('defeat');
   }
 });
