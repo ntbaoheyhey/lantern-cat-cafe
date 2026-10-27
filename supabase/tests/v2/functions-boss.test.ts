@@ -24,11 +24,7 @@ beforeAll(async () => { db = await migratedDb(); });
 afterAll(async () => { await db.close(); });
 // SQL cooldowns use now(), so the injected clock follows wall time for each test.
 beforeEach(() => { clock = Date.now(); });
-// serverTime is wall-clock seconds, so drop it or equality checks flake across a second boundary.
-async function raw(p: string) {
-  const { serverTime: _serverTime, ...snapshot } = (await store.snapshot(p, dayDate(Math.floor(clock / 1000))))!;
-  return snapshot;
-}
+async function raw(p: string) { return (await store.snapshot(p, dayDate(Math.floor(clock / 1000))))!; }
 async function fresh(chosen = true) {
   const p = await newPlayer(db);
   await getStateV2(deps, p);
@@ -284,7 +280,8 @@ describe("key-wall lever through HTTP and migrated SQL", () => {
     expect(response.status).toBe(409);
     expect(await response.json()).toEqual({ error: "no_key" });
     expect(bossFight).not.toHaveBeenCalled();
-    expect(await raw(p)).toEqual(before);
+    // serverTime is wall-clock seconds and can tick between the two snapshots.
+    expect({ ...(await raw(p)), serverTime: 0 }).toEqual({ ...before, serverTime: 0 });
     expect(await audit(p)).toEqual([]);
     expect(await wins(p)).toEqual([]);
   });
