@@ -70,6 +70,39 @@ Timeline events optionally carry `big` on `boss_windup` and `boss_impact` for th
 
 Refusals: `no_class`, `cooldown` (body carries `cooldownUntil`), `not_reached` (chapter not at its boss yet and not cleared before), `no_key`, `stale` (a parallel fight or progress change).
 
+#### Key wall and first-clear lever
+
+The route requires `boss.keyCost` Cat Keys **before** combat, including on a first
+clear that would refund a key. A reached boss with zero keys returns HTTP 409
+`{ "error": "no_key" }`; it does not increment the fight counter, roll a chest,
+set a cooldown, record a clear, or change progress/stacks. Refusals are checked in
+this order: missing player, class, cooldown, chapter reach, then keys (request
+validation happens before loading the player). A cleared chapter may be rematched,
+but still requires a key. A loss keeps the key and grants no first-clear reward.
+
+`boss.firstClearKeys` defaults to **0** (off). The unsigned numbers proposal asks
+for **1**. With the lever on, a winning first-clear chest adds one Cat Key; a
+rematch adds zero. SQL selects the first-clear chest under the player lock, spends
+the entry key first, then credits capped rewards. With the current entry cost of
+one and a five-key cap:
+
+| Before | Lever | Result | `keySpent` | `chest.keys` | `state.currencies.keys` |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 0 | 0 or 1 | 409 `no_key` | absent | absent | unchanged (0) |
+| 1 | 0 | first-clear win | true | 0 | 0 |
+| 1 | 1 | first-clear win | true | 1 | 1 |
+| 5 | 1 | first-clear win | true | 1 | 5 |
+| 1 | 1 | rematch win | true | 0 | 0 |
+| 1 | 0 or 1 | loss | false | absent | 1 |
+
+`chest.keys` reports actual credited rewards, before subtracting the entry spend;
+it is not the net change to the wallet. First-clear refunds change no other chest
+reward or RNG draw. Key sources are the first qualifying claim each day (current
+`idle.dailyKeys = 1`), rare drops in **cleared chapters** (current chance 1/150 per
+monster), and first-clear chests only if the lever is enabled. The browser must
+explain the wall and these active sources; an expected refund is never entry
+credit. No production default is changed by this documentation or these tests.
+
 ### v2-craft
 Pays the recipe (Fish, Yarn and materials) and adds one item of the recipe's guaranteed rarity for `slot` (weapon type follows the class), with random bonus lines and a level from the best cleared stage. Refusals: `no_class`, `invalid_request` (unknown recipe or slot), `not_enough` (body `stack` = the first missing stack, nothing is spent), `bag_full` (crafting is never auto-salvaged).
 

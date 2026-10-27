@@ -27,12 +27,23 @@ export function withConfigV2<T>(overrides: ConfigOverridesV2, fn: () => T): T {
     }
   };
   visit(V2_CONFIG as unknown as Record<string, unknown>, overrides);
+  const restore = () => {
+    for (const edit of [...edits].reverse()) edit.target[edit.key] = edit.before;
+    active = false;
+  };
   active = true;
   try {
     for (const edit of edits) edit.target[edit.key] = edit.after;
-    return fn();
-  } finally {
-    for (const edit of edits.reverse()) edit.target[edit.key] = edit.before;
-    active = false;
+    const result = fn();
+    // Keep the transaction locked across awaits, including PromiseLike callbacks.
+    if (result !== null && (typeof result === 'object' || typeof result === 'function') &&
+      typeof (result as { then?: unknown }).then === 'function') {
+      return Promise.resolve(result).finally(restore) as T;
+    }
+    restore();
+    return result;
+  } catch (error) {
+    restore();
+    throw error;
   }
 }
