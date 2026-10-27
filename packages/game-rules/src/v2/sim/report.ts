@@ -1,6 +1,6 @@
 import { CLASS_IDS, CHAPTERS, CLASSES } from '../content';
 import { V2_CONFIG } from '../config';
-import { NOT_OVERRIDABLE_V2 } from './config';
+import { NOT_OVERRIDABLE_V2, type ConfigOverridesV2 } from './config';
 import { PROPOSED_V2_OVERRIDES, PROPOSAL_REASONS_V2, SCENARIO_V2_OVERRIDES, CONFIG_FIRST_BOSS_WITNESS_V2, C5C_MAIN_OVERRIDES, C5C_SB_OVERRIDES } from './proposal';
 import { checkTargetsV2, medianV2 } from './targets';
 import type { SimResultV2 } from './simulate';
@@ -250,4 +250,57 @@ Numbers sign-off belongs to the user (D4, planning date 30 Oct). V6h pacing meas
 
 User: ____ (approved / changes)
 `;
+}
+
+export function bandV2(values: (number | null)[]): [number, number, number] {
+  const complete = values.map(value => value ?? Infinity);
+  return [complete.length ? Math.min(...complete) : Infinity, medianV2(values), complete.length ? Math.max(...complete) : Infinity];
+}
+const fmt = (n: number) => Number.isFinite(n) ? n.toFixed(3) : 'not reached';
+export const formatBandV2 = (values: (number | null)[]) => bandV2(values).map(fmt).join(' / ');
+const inside = (values: (number | null)[], low: number, high: number) => values.length > 0 && values.every(n => n !== null && Number.isFinite(n) && n >= low && n <= high);
+
+/** Seed bands supplement, never replace or loosen, the historical median-based targets. */
+export function renderBandsV2(runs: SimResultV2[], overrides: ConfigOverridesV2): string {
+  const out = [
+    '| class | ch | duration min (min / median / max) | cumulative min | growth per seed | duration 10–360 | growth 1.3–2 | first wins (40–90%) | fight sec band (≤180) | key wait min |',
+    '| --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- |',
+  ];
+  for (const classId of CLASS_IDS) {
+    const samples = runs.filter(r => r.classId === classId);
+    for (const ch of CHAPTERS) {
+      const durations = samples.map(r => r.minutesPerChapter[ch.index]!);
+      const growth = samples.map(r => {
+        const previous = r.minutesPerChapter[ch.index - 1], current = r.minutesPerChapter[ch.index];
+        return previous && current !== null ? current! / previous : null;
+      });
+      const fights = samples.flatMap(r => r.bosses[ch.index]!.durationsMs.map(ms => ms / 1000));
+      const complete = samples.length > 0 && samples.every(r => r.bosses[ch.index]!.firstAttemptWon !== null);
+      const wins = samples.filter(r => r.bosses[ch.index]!.firstAttemptWon === true).length;
+      const rate = wins / samples.length;
+      out.push(`| ${classId} | ${ch.index} | ${formatBandV2(durations)} | ${formatBandV2(samples.map(r => r.minutesToChapterBossWin[ch.index]!))} | ${ch.index === 1 ? '—' : formatBandV2(growth)} | ${inside(durations, 10, 360) ? 'PASS' : 'FAIL'} | ${ch.index === 1 ? '—' : inside(growth, 1.3, 2) ? 'PASS' : 'FAIL'} | ${wins}/${samples.length} ${complete && rate >= .4 && rate <= .9 ? 'PASS' : 'FAIL'} | ${formatBandV2(fights)} ${complete && inside(fights, 0, 180) ? 'PASS' : 'FAIL'} | ${formatBandV2(samples.map(r => r.keyWaitMinutes[ch.index]!))} |`);
+    }
+  }
+  out.push('', '| guardrail | whole-band verdict | evidence |', '| --- | --- | --- |');
+  const checks = checkTargetsV2(runs, overrides);
+  for (const check of checks) {
+    let pass = check.ok;
+    if (check.id === 'first-boss') pass = CLASS_IDS.every(id => inside(runs.filter(r => r.classId === id).map(r => r.minutesToFirstBossWin), 10, 15));
+    if (check.id === 'chapter-bounds') pass = runs.length > 0 && runs.every(r => inside(Object.values(r.minutesPerChapter), 10, 360));
+    if (check.id === 'chapter-growth') pass = runs.length > 0 && runs.every(r => CHAPTERS.slice(1).every(ch => {
+      const previous = r.minutesPerChapter[ch.index - 1], current = r.minutesPerChapter[ch.index];
+      return previous !== null && current !== null && inside([current! / previous!], 1.3, 2);
+    }));
+    if (check.id === 'walk-share') pass = runs.length > 0 && runs.every(r => ['1:1', '3:5'].every(key => inside([r.roundSamples[key]?.walkShare ?? null], 0, .5)));
+    if (check.id === 'boss-check') pass = check.ok && runs.every(r => CHAPTERS.every(ch => inside(r.bosses[ch.index]!.durationsMs, 0, 180000)));
+    if (check.id === 'class-spread') {
+      pass = runs.length > 0 && [...new Set(runs.map(r => r.seed))].every(seed => CHAPTERS.every(ch => {
+        const values = CLASS_IDS.map(id => runs.find(r => r.seed === seed && r.classId === id)?.minutesToChapterBossWin[ch.index] ?? null);
+        const center = medianV2(values), range = bandV2(values);
+        return values.every(n => n !== null && Number.isFinite(n) && Math.abs(n / center - 1) <= .15 + 1e-10) && (range[2] - range[0]) / center >= .03;
+      }));
+    }
+    out.push(`| ${check.id} | ${pass ? 'PASS' : 'FAIL'} | Historical median/cohort verdict: ${check.ok ? 'PASS' : 'FAIL'}. ${check.detail} |`);
+  }
+  return out.join('\n');
 }

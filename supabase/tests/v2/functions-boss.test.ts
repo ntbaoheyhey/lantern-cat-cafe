@@ -1,3 +1,4 @@
+import { withConfigV2 } from "../../../packages/game-rules/src/v2/sim/config.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import { deriveSeed, v2 } from "@taskbar-hero/game-rules";
 import type { BossFightResultV2 } from "../../../apps/web/src/api/GameApiV2.ts";
@@ -262,5 +263,70 @@ describe("v2 boss Edge Function over migrated SQL", () => {
       expect(response.status).toBe(400); expect(await response.json()).toEqual({ error: "invalid_request" });
     }
     expect((await raw(p)).fights).toBe(0);
+  });
+});
+
+
+describe("key-wall lever through HTTP and migrated SQL", () => {
+  it.each([0, 1])("keeps the no-key wall with firstClearKeys=%i and writes nothing", async (firstClearKeys) => {
+    const p = await ready(true, 0);
+    const before = await raw(p);
+    const bossFight = vi.fn(store.bossFight);
+    const response = await withConfigV2({ boss: { firstClearKeys } }, async () => {
+      const response = await endpoint(p, { ...deps, store: { ...store, bossFight } })(request());
+      expect(v2.V2_CONFIG.boss.firstClearKeys).toBe(firstClearKeys);
+      return response;
+    });
+    expect(response.status).toBe(409);
+    expect(await response.json()).toEqual({ error: "no_key" });
+    expect(bossFight).not.toHaveBeenCalled();
+    expect(await raw(p)).toEqual(before);
+    expect(await audit(p)).toEqual([]);
+    expect(await wins(p)).toEqual([]);
+  });
+
+  it.each([0, 1])("grants %i first-clear key, spends before credit, and never refunds rematches", async (firstClearKeys) => {
+    const original = v2.V2_CONFIG.boss.firstClearKeys;
+    const p = await ready(true, 1);
+    await withConfigV2({ boss: { firstClearKeys } }, async () => {
+      const before = await simulation(p);
+      expect(before.result.won).toBe(true);
+      const base = v2.rollChestV2({ chapter: 1, firstClear: true, classId: "warrior", level: before.before.level }, deriveSeed(before.seed, 1));
+      const response = await endpoint(p)(request());
+      expect(response.status).toBe(200);
+      const result = await response.json() as BossFightResultV2;
+      expect(result).toMatchObject({ won: true, keySpent: true, chest: { keys: firstClearKeys },
+        state: { currencies: { keys: firstClearKeys }, progress: { chapter: 2, round: 1, kills: 0 } } });
+      expect(result.chest).toEqual({ ...v2.lootViewV2(base.stackDeltas, base.items, []),
+        items: base.items.map(item => ({ ...v2.itemViewV2(item), source: "chest", id: expect.any(String) })) });
+      expect(await stack(db, p, "catKey")).toBe(firstClearKeys);
+      expect((await audit(p))[0]!.chest.added.catKey ?? 0).toBe(firstClearKeys);
+      expect(await wins(p)).toEqual([{ chapter: 1, wins: 1 }]);
+      // A previously claimed daily grant cannot bypass the wall after spending the last key.
+      if (firstClearKeys === 0) {
+        const denied = await endpoint(p)(request());
+        expect(denied.status).toBe(409);
+        expect(await denied.json()).toEqual({ error: "no_key" });
+      }
+      await setStacks(db, p, { catKey: 1 });
+      const rematch = await endpoint(p)(request());
+      expect(rematch.status).toBe(200);
+      expect(await rematch.json()).toMatchObject({ won: true, keySpent: true, chest: { keys: 0 }, state: { currencies: { keys: 0 } } });
+      expect(await stack(db, p, "catKey")).toBe(0);
+      expect(await wins(p)).toEqual([{ chapter: 1, wins: 2 }]);
+      expect((await audit(p))[1]!.chest.added.catKey ?? 0).toBe(0);
+      expect(v2.V2_CONFIG.boss.firstClearKeys).toBe(firstClearKeys);
+    });
+    expect(v2.V2_CONFIG.boss.firstClearKeys).toBe(original);
+  });
+
+  it("credits a first-clear refund after spending at the five-key cap", async () => {
+    const p = await ready(true, v2.CAT_KEY_CAP);
+    await withConfigV2({ boss: { firstClearKeys: 1 } }, async () => {
+      const response = await endpoint(p)(request());
+      expect(response.status).toBe(200);
+      expect(await response.json()).toMatchObject({ keySpent: true, chest: { keys: 1 }, state: { currencies: { keys: v2.CAT_KEY_CAP } } });
+      expect(await stack(db, p, "catKey")).toBe(v2.CAT_KEY_CAP);
+    });
   });
 });
