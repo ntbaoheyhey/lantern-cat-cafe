@@ -31,7 +31,7 @@ beforeEach(() => {
 });
 afterEach(cleanup);
 function forgePanel() {
-  render(<StageLayout onMiniMode={() => {}} />);
+  render(<StageLayout />);
   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
   fireEvent.click(screen.getByTestId('tab-relic'));
 }

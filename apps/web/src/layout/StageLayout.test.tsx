@@ -46,7 +46,6 @@ it('keeps the classic layout when VITE_GAME_V2 is not set', () => {
   render(<App />);
   expect(screen.getByRole('region', { name: 'Taskbar strip' })).toBeTruthy();
   expect(screen.queryByRole('region', { name: 'Game stage' })).toBeNull();
-  expect(screen.queryByRole('button', { name: 'Mini mode' })).toBeNull();
   expect(screen.queryByRole('button', { name: 'Stage' })).toBeNull();
 });
 

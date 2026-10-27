@@ -143,11 +143,7 @@ function computeStageWidth(width: number, height: number): number {
   return Math.floor(width * 0.55);
 }
 
-export interface StageLayoutProps {
-  onMiniMode?: () => void;
-}
-
-export function StageLayout(_props: StageLayoutProps = {}) {
+export function StageLayout() {
   const { width, height } = useViewport();
   const kind = layoutKind(width);
   const stageW = computeStageWidth(width, height);

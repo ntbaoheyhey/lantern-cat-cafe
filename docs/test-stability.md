@@ -16,8 +16,7 @@ Put new UI specs in `apps/web/e2e/ui/` and import test/expect from
 the shared `apps/web/e2e/support/test.ts` fixture. No baseURL override is needed. Directory-based discovery also
 routes plain Playwright imports to v2. The shared fixture checks file/project
 assignment and the shared expected URL before each test, then checks the first
-normal page for the v2 marker (or its absence in classic). Subsequent navigation
-can legitimately restore Mini mode. The arena developer preview renders outside
+normal page for the v2 marker (or its absence in classic). The arena developer preview renders outside
 StageLayout, so its project and URL are checked but it has no shell-marker check.
 
 ## Ports and concurrent runs

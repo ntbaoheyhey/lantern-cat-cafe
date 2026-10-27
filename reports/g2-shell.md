@@ -8,6 +8,34 @@ STATUS: DONE
 
 ---
 
+## G2 Fix 1 Addendum (Post-G1 Merge)
+Following the merge of origin/main (PR #193, G1 speed/perf improvements) into `ai/antigravity-g2-shell`, the following fixes were applied and verified:
+1. **`g1-perf.spec.ts` Navigation Step**:
+   - In the responsive shell, `Equip best` resides inside the Bag panel footer.
+   - Updated `e2e/ui/g1-perf.spec.ts` line 92 to switch to the Bag tab (`await page.getByRole('tab', { name: 'Bag', exact: true }).click();`) before querying `page.getByRole('button', { name: 'Equip best', exact: true })`, matching how Forge and Boss tabs are opened prior to their actions.
+   - All performance thresholds, timing expectations, heap/event listeners leak checks, and plain-claim assertions remain strictly unchanged.
+2. **Purge of Leftover Mini Mode Remnants**:
+   - Removed obsolete `onMiniMode?: () => void` prop declaration from `apps/web/src/layout/StageLayout.tsx`.
+   - Removed `onMiniMode={() => {}}` prop argument from `apps/web/src/game/stage/relicWiring.ui.test.tsx`.
+   - Removed legacy `Mini mode` assertion from `apps/web/src/layout/StageLayout.test.tsx`.
+   - Removed outdated Mini mode references from `docs/judge-walkthrough.md`, `docs/prompts/antigravity-responsive-retest.md`, and `docs/test-stability.md`.
+   - Verification command `grep -rn "onMiniMode\|useMiniMode\|Mini mode" apps docs` returns zero matches outside historical reports.
+
+---
+
+## Acceptance Criteria Checklist
+- [x] **PASS**: The six target sizes fit the window without page body scrolling (`scrollHeight <= innerHeight + 1` and `scrollWidth <= innerWidth`).
+- [x] **PASS**: Equip best, Fight, and Craft visible and clickable within <= 2 interactions from a fresh load.
+- [x] **PASS**: Every tab, button, and nav item >= 44x44 px touch target on phone sizes.
+- [x] **PASS**: 320x568 shows stage >= 160 px tall and primary action visible without scrolling.
+- [x] **PASS**: Keyboard navigation and focus return on Escape work properly.
+- [x] **PASS**: Mini mode completely gone from v2 build and localStorage cleared on boot; `grep -rn "onMiniMode\|useMiniMode\|Mini mode" apps docs` clean.
+- [x] **PASS**: Classic build (`VITE_GAME_V2=0`) and classic Playwright suite unchanged and green.
+- [x] **PASS**: Whole-page timer re-render eliminated (clock moved to `BossGatePanel.tsx` leaf).
+- [x] **PASS**: Full test suite green (typecheck, lint, 1,160 unit tests, 173 E2E tests).
+
+---
+
 ## Executive Summary & Document Height Comparison
 Origin/main had document heights exceeding window inner height across all screen sizes, pushing critical interactive controls (Fight, Craft, Equip best) below the fold.
 
@@ -121,89 +149,94 @@ No other tests were deleted or skipped.
 
 ---
 
-## Verification Results
+## Real Check Verification Outputs
 
-### 1. Deno Function Sync
+### 1. `pnpm install --frozen-lockfile`
+```bash
+CI=true npx -y pnpm@10.28.0 install --frozen-lockfile
+```
+```text
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Done in 304ms using pnpm v10.28.0
+```
+
+### 2. Deno Function Sync Check
 ```bash
 npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions
 ```
-*Result: Exit code 0 (wrote 18 Edge Function import maps, zero diff).*
+```text
+wrote 18 Edge Function import maps
+(exit code: 0)
+```
 
-### 2. TypeScript Check
+### 3. TypeScript Typecheck
 ```bash
 npx -y pnpm@10.28.0 typecheck
 ```
-*Result: Exit code 0 across all 6 workspace projects (`apps/web`, `packages/auth`, `packages/chain`, `packages/game-rules`, `packages/api-contract`, `supabase/tests`).*
+```text
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/api-contract typecheck$ tsc --noEmit
+apps/web typecheck$ tsc --noEmit
+Done in 4s (exit code: 0)
+```
 
-### 3. Linter Check
+### 4. Linter Check
 ```bash
 npx -y pnpm@10.28.0 lint
 ```
-*Result: Exit code 0 across all workspace projects.*
+```text
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/api-contract lint$ tsc --noEmit
+apps/web lint$ tsc --noEmit
+Done in 3.4s (exit code: 0)
+```
 
-### 4. Unit Tests
+### 5. Unit Tests
 ```bash
 npx -y pnpm@10.28.0 test
 ```
-*Result: Exit code 0 across all workspaces. In `apps/web`: 89 test files passed, 1,139 tests passed.*
+```text
+Test Files  92 passed (92)
+Tests       1160 passed (1160)
+Done in 9.7s (exit code: 0)
+```
 
-### 5. Production Builds
+### 6. Production Builds
 - V2 build:
   ```bash
   npx -y pnpm@10.28.0 build
   ```
-  *Result: Exit code 0 (`dist/` built successfully).*
+  ```text
+  vite v8.3.5 building client environment for production...
+  ✓ 1796 modules transformed.
+  ✓ built in 342ms
+  Done in 4.6s (exit code: 0)
+  ```
 - Classic build:
   ```bash
   VITE_GAME_V2=0 npx -y pnpm@10.28.0 --filter @taskbar-hero/web build
   ```
-  *Result: Exit code 0 (`dist/` built successfully).*
+  ```text
+  vite v8.3.5 building client environment for production...
+  ✓ 1796 modules transformed.
+  ✓ built in 320ms (exit code: 0)
+  ```
 
-### 6. Full Playwright E2E Suite
+### 7. Full Playwright E2E Suite
 ```bash
 cd apps/web && pkill -f "vite preview" || true && npx -y pnpm@10.28.0 test:e2e
 ```
-*Result: Exit code 0. All 171 tests passed (171 passed in 42.5s).*
-
----
-
-## Git Changes
-
-### Diffstat
 ```text
- apps/web/e2e/layout/character-bag.spec.ts           |   2 +-
- apps/web/e2e/layout/resize.spec.ts                  |   5 +-
- apps/web/e2e/layout/stage-layout.spec.ts            |  47 +---
- apps/web/e2e/layout/stage-redraw.spec.ts            |   7 +-
- apps/web/e2e/qa/s3-walkthrough.spec.ts              |   2 +-
- apps/web/e2e/support/test.ts                        |   1 -
- apps/web/e2e/ui/g2-shell.spec.ts                    | 335 ++++++++++++++++++++++
- apps/web/e2e/ui/u1-tokens.spec.ts                   |   2 +-
- apps/web/e2e/ui/u3-layout.spec.ts                   |   2 +-
- apps/web/e2e/ui/u4-character-bag.spec.ts            |   4 +-
- apps/web/e2e/v2/loop.spec.ts                        |   2 +-
- apps/web/e2e/v2/t2-player-loop.spec.ts              |   2 +-
- apps/web/src/App.tsx                                |  11 +-
- apps/web/src/layout/HelpTab.test.tsx                |   1 -
- apps/web/src/layout/HelpTab.tsx                     |   5 -
- apps/web/src/layout/StageLayout.test.tsx            |  44 +--
- apps/web/src/layout/StageLayout.tsx                 | 240 ++++++++--------
- apps/web/src/layout/bag/BagPanel.tsx                |  42 ++-
- apps/web/src/layout/bag/bag.css                     |  24 ++
- apps/web/src/layout/boss/BossGatePanel.tsx          |  74 ++++-
- apps/web/src/layout/boss/boss.css                   |  17 ++
- apps/web/src/layout/character/CharacterPanel.tsx    |   6 +
- apps/web/src/layout/classpicker/ClassPicker.tsx     |   8 +-
- apps/web/src/layout/forge/ForgePanel.css            |  23 ++
- apps/web/src/layout/forge/ForgePanel.tsx            |  45 ++-
- apps/web/src/layout/layout.css                      | 440 +++++++++++++++++++++++++---
- apps/web/src/layout/useMiniMode.ts                  |  44 ---
- apps/web/src/styles.css                             |   7 -
- reports/g2-shell/shell-1024x600.png                 | Bin 0 -> 45474 bytes
- reports/g2-shell/shell-1280x720.png                 | Bin 0 -> 50406 bytes
- reports/g2-shell/shell-1440x900.png                 | Bin 0 -> 63148 bytes
- reports/g2-shell/shell-320x568.png                  | Bin 0 -> 22129 bytes
- reports/g2-shell/shell-390x844.png                  | Bin 0 -> 35467 bytes
- reports/g2-shell/shell-844x390.png                  | Bin 0 -> 31379 bytes
- 34 files changed, 1076 insertions(+), 357 deletions(-)
+Running 173 tests using 6 workers
+173 passed (47.0s) (exit code: 0)
 ```

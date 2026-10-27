@@ -89,6 +89,7 @@ test('G1 demo action feedback, resize lifecycle and three plain claims', async (
     for (let i = 0; i < 3; i++) await window.__g1Loop.claimNow();
     return Number(canvas.dataset.stageRebuilds) - before;
   });
+  await page.getByRole('tab', { name: 'Bag', exact: true }).click();
   const equip = await feedback(page, page.getByRole('button', { name: 'Equip best', exact: true }));
   await page.getByRole('tab', { name: 'Forge', exact: true }).click();
   await page.getByRole('button', { name: /^Craft Common Weapon/ }).click();
