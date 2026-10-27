@@ -387,3 +387,14 @@ it('drops late claim/action rejections after stop and removes event subscription
   expect(api.getState).toHaveBeenCalledTimes(1);
   expect(loop.getSnapshot().busy).toBeNull();
 });
+
+it('silently reloads a stale boss response without a refused/error toast and releases busy', async () => {
+  await start();
+  const fresh = { ...state(), serverTime: 88 }; api.getState.mockResolvedValue(fresh);
+  api.fightBoss.mockRejectedValue({ code: 'stale' });
+  expect(await loop.fightBoss(1)).toBeNull();
+  expect(loop.getSnapshot().state).toBe(fresh);
+  expect(loop.getSnapshot().busy).toBeNull();
+  expect(api.getState).toHaveBeenCalledTimes(2);
+  expect(events.filter(event => event.type === 'refused' || event.type === 'error')).toEqual([]);
+});

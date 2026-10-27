@@ -200,7 +200,7 @@ export class GameLoopV2 {
         if (gen !== this.gen) return null;
         const code = errorCode(error);
         if (typeof code === 'string' && ERROR_CODES_V2.some((known) => known === code)) {
-          this.emit({ type: 'refused', action, code, at: this.now() });
+          if (code !== 'stale' || action !== 'fightBoss') this.emit({ type: 'refused', action, code, at: this.now() });
           if (code === 'stale' && gen === this.gen) await this.load(api, gen);
         } else this.emit({ type: 'error', action, message: message(error), at: this.now() });
         return null;

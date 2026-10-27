@@ -101,13 +101,13 @@ export function mockV2Save(kind: MockV2FixtureKind, opts: MockV2FixtureOptions):
     const recipes = v2.RECIPES.filter(entry => entry.id === 'rcp.common' || entry.id === 'rcp.uncommon');
     state.stacks = recipeStacks(recipes, 2);
     for (let i = 0; i < 4; i++) {
-      const id = insert(chosen.starterWeapon!);
+      const id = insert({ ...chosen.starterWeapon!, source: 'drop' });
       if (i === 3) state = accept(v2.lockItem(state, id, true)).state;
     }
   }
   if (kind === 'bagNearFull') {
     const count = Math.ceil(v2.V2_CONFIG.bag.limit * v2.V2_CONFIG.bag.nearFullRatio);
-    while (state.items.length < count) insert(chosen.starterWeapon!);
+    while (state.items.length < count) insert({ ...chosen.starterWeapon!, source: 'drop' });
   }
   return { v: 1, state, lastClaimMs: opts.nowMs, counter: 0, voucherNonce: 0, founder: false };
 }

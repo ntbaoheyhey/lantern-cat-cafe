@@ -560,3 +560,17 @@ describe('ForgePanel', () => {
     });
   });
 });
+
+it('disables starter salvage, shows the hint and keeps ordinary items salvageable even if preselected', async () => {
+  const starter = { ...SAMPLE_ITEMS[0]!, id: 'free-starter', source: 'starter' as const, equipped: false };
+  const ordinary = { ...SAMPLE_ITEMS[3]!, source: 'craft' as const };
+  const props = createDefaultProps({ items: [starter, ordinary], defaultTab: 'salvage', defaultSelectedItems: [starter.id, ordinary.id] });
+  render(<ForgePanel {...props} />);
+  expect(screen.getByText("Starter gear can't be salvaged")).toBeTruthy();
+  expect((screen.getByTestId(`salvage-check-${starter.id}`) as HTMLInputElement).disabled).toBe(true);
+  expect((screen.getByTestId(`salvage-check-${starter.id}`) as HTMLInputElement).checked).toBe(false);
+  expect((screen.getByTestId(`salvage-check-${ordinary.id}`) as HTMLInputElement).disabled).toBe(false);
+  fireEvent.click(screen.getByTestId('salvage-btn'));
+  fireEvent.click(screen.getByTestId('salvage-confirm-btn'));
+  expect(props.onSalvage).toHaveBeenCalledExactlyOnceWith([ordinary.id]);
+});
