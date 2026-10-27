@@ -4,7 +4,7 @@ A 7-slide outline for a 3-minute pitch to the **Avalanche Team1 Vietnam UniHack 
 
 - **Pacing**: ~25 seconds per slide (Demo: ~45s).
 - **Core Theme**: Cat Café Quest — cozy dusk pixel art, off-chain ambient idle RPG, gas-free gameplay, and true digital collectibles on Avalanche Fuji without speculative fungible tokens.
-- **Live Demo**: [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app)
+- **Live Demo**: [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app)
 
 ---
 
@@ -119,7 +119,7 @@ A 7-slide outline for a 3-minute pitch updating Taskbar Hero to Cat RPG v2 (Cat 
 
 - **Pacing**: ~25 seconds per slide (Demo: ~45s; total <= 3 min).
 - **Core Theme**: Ambient browser dungeon crawler — 7 feline hero classes, 9 equipment slots, 5 chapters and bosses, deterministic crafting and salvage, zero gas for core gameplay, and daily Relic milestone NFTs on Avalanche Fuji.
-- **Live Demo**: [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app) (fallback: local preview via `VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web dev`).
+- **Live Demo**: [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app) (fallback: local preview via `VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web dev`).
 - **Deadline and Platform**: TBD, confirm with organizers.
 
 ---
@@ -280,7 +280,7 @@ Checklist for submission week (18–19 Nov 2026, Card A27):
 
 1. **Submission deadline & platform**: "TBD, confirm with organizers" (verify official UniHack 2026 channels before submitting; do not guess).
 2. **Repository visibility**: Ensure `https://github.com/ntbaoheyhey/taskbar-hero` is made public (or organizers added as collaborators) and accessible while signed out.
-3. **Live demo availability**: Test [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app) in an incognito desktop browser window.
+3. **Live demo availability**: Test [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app) in an incognito desktop browser window.
 4. **Fuji contract addresses & explorer links**: Re-verify `RelicNFT` (`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`) and `RelicMarket` (`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`) on Routescan and Snowtrace.
 5. **Signed numbers substitution**: Check `docs/proposals/numbers-v2.md` for user sign-off (Card CL8); replace `<from signed numbers>` placeholders with finalized metrics.
 6. **Real screenshot assets**: Confirm all screenshot placeholders in the shot list are captured and committed under docs/screenshots/v2/ (Card A24).

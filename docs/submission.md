@@ -47,7 +47,7 @@ Details: `docs/contracts.md`, `docs/api.md`.
 
 | What | Link |
 | --- | --- |
-| Live demo | https://web-zeta-tan-13.vercel.app |
+| Live demo | https://taskbarhero-eight.vercel.app |
 | Repository | https://github.com/ntbaoheyhey/taskbar-hero (**private now; must be made public before submitting**) |
 | RelicNFT (ERC-1155) | [`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
 | RelicMarket | [`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |

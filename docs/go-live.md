@@ -20,8 +20,8 @@ Supabase dashboard > your project > **Edge Functions > Secrets** (or `supabase s
 | --- | --- | --- |
 | `AUTH_JWT_SECRET` | Random, at least 32 bytes: `openssl rand -base64 48`. Signs and checks the session JWT. Changing it signs everyone out. | all nine |
 | `GAME_SEED_SECRET` | Random: `openssl rand -base64 48`. Keys the idle-drop, boss-fight and Relic rarity seeds. Optional (falls back to `AUTH_JWT_SECRET`), but set it so the two can change independently. | the seven game functions |
-| `SIWE_DOMAIN` | The production host, no scheme or path, e.g. `web-zeta-tan-13.vercel.app` (the live site). Must equal `window.location.host` of the site players sign in on. | auth-nonce, auth-verify |
-| `SIWE_ALLOWED_ORIGIN` | Comma list of exact origins allowed by CORS, e.g. `https://web-zeta-tan-13.vercel.app,http://localhost:5173`. Unset means browsers are blocked. | all nine |
+| `SIWE_DOMAIN` | The production host, no scheme or path, e.g. `taskbarhero-eight.vercel.app` (the live site). Must equal `window.location.host` of the site players sign in on. | auth-nonce, auth-verify |
+| `SIWE_ALLOWED_ORIGIN` | Comma list of exact origins allowed by CORS, e.g. `https://taskbarhero-eight.vercel.app,http://localhost:5173`. Unset means browsers are blocked. | all nine |
 | `VOUCHER_SIGNER_PRIVATE_KEY` | The voucher signer's private key (`0x` + 64 hex). Its address must equal `signer()` on the deployed RelicNFT. Use a dedicated key that holds no funds; never reuse the deployer key. Unset or malformed: `relic-forge` answers 500 `server_error` and spends nothing. | the seven game functions (relic-forge and game-state sign) |
 | `FUJI_RPC_URL` | Optional. Fuji C-Chain RPC used to check mint receipts and `usedNonces`. Defaults to `https://api.avax-test.network/ext/bc/C/rpc`. | the seven game functions |
 
@@ -43,7 +43,7 @@ Vercel project **web** > Settings > Environment Variables (Production), then red
 Replace the origin with your production origin.
 
 ```sh
-ORIGIN=https://web-zeta-tan-13.vercel.app
+ORIGIN=https://taskbarhero-eight.vercel.app
 FN=https://qoalewtxflagoprrxrgh.supabase.co/functions/v1
 
 # A nonce, and the CORS header echoing your origin.
