@@ -18,6 +18,7 @@ import { StageCanvas } from '../game/stage/StageCanvas';
 import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { HudBar } from './hud/HudBar';
+import { SyncStatus } from './hud/SyncStatus';
 import { ClassPicker } from './classpicker/ClassPicker';
 import { BossGatePanel } from './boss/BossGatePanel';
 import { bossGateStatus } from './boss/bossGate';
@@ -388,7 +389,7 @@ export function StageLayout() {
           </p>
         </div>
 
-        <div data-slot="sync-status" className="v2-sync-status-slot" aria-hidden="true" />
+        <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus loop={loop} /></div>
       </header>
 
       <main className="v2-main">
