@@ -107,13 +107,13 @@ credit. No production default is changed by this documentation or these tests.
 Pays the recipe (Fish, Yarn and materials) and adds one item of the recipe's guaranteed rarity for `slot` (weapon type follows the class), with random bonus lines and a level from the best cleared stage. Refusals: `no_class`, `invalid_request` (unknown recipe or slot), `not_enough` (body `stack` = the first missing stack, nothing is spent), `bag_full` (crafting is never auto-salvaged).
 
 ### v2-salvage
-All or nothing: every id must be the caller's, unequipped and unlocked. Returns the Fish, Yarn and materials returned (`gains`). Refusals: `not_owner`, `equipped`, `locked`. An empty list is `invalid_request`.
+All or nothing: every id must be the caller's, unequipped and unlocked. Returns the Yarn and materials returned (`gains`; Fish is always 0 as salvage refunds no currency). Refusals: `not_owner`, `equipped`, `locked`. An empty list is `invalid_request`.
 
 ### v2-lock
 Sets the `locked` flag; locked items cannot be salvaged. Refusal: `not_owner`.
 
 ### v2-relic-forge
-Same voucher shape and rules as v1 `relic-forge` (pending voucher returned without a new spend, expired one re-signed, one Relic per UTC+7 day), but a new forge costs 30 Yarn and 1 Moon Pearl. The daily limit is shared with v1: forging in either version blocks the other that day. Refusal: `forge_blocked`, body `reason` in check order `daily_limit`, `not_enough_yarn`, `no_moon_pearl`.
+Same voucher shape and rules as v1 `relic-forge` (pending voucher returned without a new spend, expired one re-signed, one Relic per UTC+7 day), but a new forge costs 30 Yarn and 1 Moon Pearl. Minting targets the Avalanche Fuji testnet (free testnet, costs no real money). The daily limit is shared with v1: forging in either version blocks the other that day. Refusal: `forge_blocked`, body `reason` in check order `daily_limit`, `not_enough_yarn`, `no_moon_pearl`.
 
 ## Errors
 

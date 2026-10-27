@@ -40,7 +40,7 @@ export function MintPanel({ voucher, api, loop, onMinted }: MintPanelProps) {
   const relicNft = getAddresses(FUJI_CHAIN_ID).RelicNFT;
 
   if (isDemoVoucher(voucher)) {
-    return <p className="forge-note" data-testid="forge-demo">This is a demo Relic. Sign in to mint on Fuji.</p>;
+    return <p className="forge-note" data-testid="forge-demo">This is a demo Relic. Sign in to mint on Fuji testnet (free testnet, costs no real money).</p>;
   }
   if (!relicNft) {
     return <p className="forge-note">The Relic contract is not deployed on Fuji yet, so minting is not available.</p>;

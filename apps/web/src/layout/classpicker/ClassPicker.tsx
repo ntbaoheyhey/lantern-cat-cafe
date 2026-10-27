@@ -148,7 +148,7 @@ export function ClassPicker({
       <div className="class-picker__header">
         <h2 className="class-picker__title">Choose Your Class</h2>
         <p className="class-picker__subtitle">
-          Select a feline combat specialization. You can switch your class any time outside boss fights.
+          Pick your cat's class! You can switch anytime outside boss fights.
         </p>
       </div>
 

@@ -14,6 +14,12 @@ Migrations: SQL files in `supabase/migrations/`, applied in filename order. Off-
 | `relic_vouchers` | `nonce` bigint identity pk, `player_id`, `relic_id`, `rarity`, `status` in (`issued`,`minted`,`expired`), `tx_hash` (nullable, 0x + 64 hex), `created_at`, `expires_at` > `created_at`; B5 adds `forge_id` fk, `signature` (nullable, 0x + 130 hex) and at most one `issued` voucher per forge |
 | `relic_forges` | `id`, `player_id`, `day` date, `relic_id`, `rarity`, `created_at`; `unique (player_id, day)` (B5: one paid forge per game day) |
 | `siwe_nonces` | `nonce` text pk, `created_at`, `used_at` (for B2); server-only |
+| `cat_state` | `player_id` pk/fk, `class_id` text, `level` 1..100, `xp` bigint >= 0, `chapter` >= 1, `round` >= 1, `kills` >= 0, `best_stage` >= 0, `last_claim_at`, `progress_rev`, `last_daily_key_day` date, `boss_cooldown_until`, `fights` (v2, V8) |
+| `items` | `id` uuid pk, `player_id` fk, `item_key`, `slot`, `weapon_type`, `rarity`, `level`, `bonus` jsonb (<= 4 lines), `locked` bool, `equipped` bool, `source`, `created_at`; partial unique index on `(player_id, slot)` where `equipped` (v2, V8) |
+| `player_stacks` | `(player_id, stack_id)` pk, `qty` bigint >= 0; holds currencies and crafting materials (v2, V8) |
+| `boss_clears` | `(player_id, chapter)` pk, `first_cleared_at`, `wins` >= 1 (v2, V8) |
+| `boss_history` | `id` uuid pk, `player_id` fk, `chapter`, `won` bool, `key_spent` bool, `created_at` (v2, V8) |
+| `forge_history` | `id` uuid pk, `player_id` fk, `recipe_id`, `slot`, `item_id` fk, `created_at` (v2, V8) |
 
 Functions (B2, `20260102000000_siwe_auth.sql`, execute granted to `service_role` only): `consume_siwe_nonce(text) -> boolean` (atomic single-use, 10 minute window) and `upsert_player_by_wallet(text) -> uuid` (creates `players` + `idle_state` on first sign-in). See [auth.md](auth.md).
 
@@ -32,6 +38,16 @@ B5 (`20260106000000_relic_forge.sql`, same rules): `game_snapshot` also returns 
 B6 (`20260107000000_gear_upgrade.sql`, same rules): `game_upgrade(player, gear_id, expected_level, cost, max_level, power) -> text` raises one owned item by one level for `cost` gold and stores its new `power`. With the player and item rows locked it returns `not_owner`, `stale` (the level is no longer `expected_level`, so the `upgrade` Edge Function prices it again), `max_level` or `not_enough_gold` without changing anything, else spends the gold and returns `ok`.
 
 B7 (`20260108000000_forge_today.sql`): `game_snapshot` also returns `today`, the `relic_forges` row for the game day with `relicId`, `rarityName`, `minted` (any voucher of that forge is `minted`) and `txHash` (the minted voucher's `tx_hash`), or null when nothing was forged that day.
+
+V8 (`20261101000000_v2_cat_rpg.sql` and `20261102000000_v2_integrity.sql`, same security rules): introduces the Cat RPG v2 database engine. Every function locks the `players` row first, executes as `security definer` with `search_path = ''`, and returns `jsonb`:
+- `v2_snapshot(p_player uuid) -> jsonb`: returns full v2 player snapshot (`cat_state`, `items`, `player_stacks`, `boss_clears`, `forgedToday`, `pending` voucher). Initializes starting `cat_state` if missing.
+- `v2_claim(p_player uuid, p_progress_rev bigint, p_now timestamptz, p_cat_patch jsonb, p_gains jsonb, p_items jsonb, p_stacks jsonb, p_caps jsonb) -> jsonb`: credits offline and idle gains (XP, cat state, items, material stacks), validating progress revision and minimum claim interval.
+- `v2_equip(p_player uuid, p_item_id uuid, p_slot text) -> jsonb`: equips `p_item_id` in `p_slot` (or unequips if null), verifying player ownership, unlocked slot, and weapon type compatibility.
+- `v2_lock_item(p_player uuid, p_item_id uuid, p_locked boolean) -> jsonb`: toggles item lock status to protect against accidental salvage.
+- `v2_boss_fight(p_player uuid, p_chapter integer, p_won boolean, p_cooldown_until timestamptz, p_chest jsonb, p_caps jsonb) -> jsonb`: processes boss fight outcomes, records boss clears and history, decrements Cat Keys on win, and applies loss cooldowns.
+- `v2_craft(p_player uuid, p_recipe_id text, p_slot text, p_cost jsonb, p_item jsonb, p_bag_limit integer) -> jsonb`: deducts recipe costs (Fish, Yarn, materials) and inserts crafted item if bag limit has room.
+- `v2_salvage(p_player uuid, p_item_ids uuid[], p_gains jsonb, p_caps jsonb) -> jsonb`: deletes unequipped, unlocked, non-starter items and credits returned Yarn and material stacks.
+- `v2_relic_forge(p_player uuid, p_day date, p_relic_id bigint, p_rarity text, p_cost jsonb, p_expires_at timestamptz) -> jsonb`: checks daily limit across v1 and v2, spends 30 Yarn and 1 Moon Pearl, creates the forge row, and issues an unsigned voucher.
 Claim seed: the first 4 bytes (big-endian) of `HMAC-SHA256(GAME_SEED_SECRET, "<player id>:<last_claim_at in microseconds since the epoch>")`, so each claim window has one fixed seed the client cannot know or reroll. `GAME_SEED_SECRET` falls back to the JWT secret when unset. Claims credit `computeClaimGains` (5 minutes at the full rate, the rest at 50%, capped at 8 h), as `docs/api.md` specifies. Boss seed: the same HMAC over `"boss:<player id>:<game day>:<attempt number today>"`; every attempt is recorded, so a known seed can never be fought twice. Relic seed: the same HMAC over `"relic:<player id>:<game day>"`, so the rarity is fixed for the day and parallel forges agree.
 
 Additions beyond the card: `gear.created_at`, the one-equipped-per-slot partial unique index, format checks on wallet/tx_hash, FK `on delete cascade`, and `power >= 0`.

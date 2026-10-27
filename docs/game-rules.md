@@ -1,5 +1,8 @@
 # Game rules (`@taskbar-hero/game-rules`)
 
+> [!NOTE]
+> This document specifies the classic v1 game rules engine and its configuration (`packages/game-rules/src/config.ts`). For Cat RPG v2 game rules, class mechanics, and stage progression, see [play-v2.md](play-v2.md) and [content-v2.md](content-v2.md).
+
 > **Signed off 2026-10-23.** Changed at sign-off: `boss.powerGrowth` 1.5 → 1.15, `relic.shardCost` 60 → 30 (see the balance table below). Any later change needs the user's sign-off again.
 
 Pure TypeScript, shared by client (prediction) and server (truth). No network, DB or `Date.now()`; time is passed in as seconds; every roll takes an explicit uint32 seed (mulberry32 PRNG in `src/rng.ts`). Every tunable number lives in `packages/game-rules/src/config.ts` (`CONFIG`).

@@ -71,7 +71,7 @@ Round 10 hosts the chapter boss: Yarn Giant (Ch1), Cucumber Scare (Ch2), Bathtub
 - **Key Sources & Cap**: 1 free key on your first claim each day; cleared chapter kills have a 1 in 150 (~0.67%) key drop chance. Key cap is 5.
 - **Key wall hint**: When a boss is blocked only by a missing key, the Boss panel shows "Cat Keys: n / max" and lists where keys come from (daily claim key, the rare drop in cleared chapters, and the first-clear chest line only when the first clear gives keys). The Help tab lists the same sources. All values are read from the game config, not typed.
 - **Loss Cooldown**: A loss triggers a single 60-second cooldown across all chapters for your cat.
-- **First-Clear Chests**: Awards 1 Moon Pearl (100%), scaled Fish (400 to 6,400), Yarn (20 to 320), materials, and gear (100% main, 50% accessory), unlocking the next chapter.
+- **First-Clear Chests**: Awards 1 Moon Pearl (100%), scaled Fish (300–500 in Ch1 up to 4,800–8,000 in Ch5; mean 400 to 6,400), Yarn (15–25 in Ch1 up to 240–400 in Ch5; mean 20 to 320), materials, and gear (100% main, 50% accessory), unlocking the next chapter.
 - **Rematches**: Cleared bosses can be refought anytime with a key. Repeat chests grant scaled rewards with a 30% Moon Pearl chance, 70% main gear chance, and 25% accessory gear chance.
 
 ---
@@ -94,7 +94,7 @@ Click an item in your bag and press **Lock** to protect it from salvage. Locked 
 
 ## 7. The Daily Relic: Forging on Avalanche Fuji
 
-Every day, forge a daily Relic using **30 Yarn + 1 Moon Pearl**. Limit: 1 Relic per account per day (midnight UTC+7 reset), shared between v2 and classic v1. Forging produces an EIP-712 voucher to mint an ERC-1155 NFT on Avalanche Fuji (Chain ID 43113). For wallet details, see the in-game Help tab and [auth.md](auth.md).
+Every day, forge a daily Relic using **30 Yarn + 1 Moon Pearl**. Limit: 1 Relic per account per day (midnight UTC+7 reset), shared between v2 and classic v1. Forging produces an EIP-712 voucher to mint an ERC-1155 NFT on Avalanche Fuji (Chain ID 43113). Avalanche Fuji is a test network (testnet); minting uses free testnet AVAX and costs no real money. For wallet details, see the in-game Help tab and [auth.md](auth.md).
 
 ---
 
@@ -102,7 +102,7 @@ Every day, forge a daily Relic using **30 Yarn + 1 Moon Pearl**. Limit: 1 Relic 
 
 Taskbar Hero supports two play modes:
 - **Demo Mode**: Play immediately in your browser without a wallet. Progress and items are saved locally (`localStorage`). Demo vouchers cannot mint on-chain.
-- **Signed-In Mode**: Sign in with an Ethereum wallet via SIWE. Progress syncs to the server database, persists across devices, and enables minting real Relic NFTs on Avalanche Fuji.
+- **Signed-In Mode**: Sign in with an Ethereum-compatible wallet via SIWE. Progress syncs to the server database, persists across devices, and enables minting Relic NFTs on the Avalanche Fuji testnet (free testnet, costs no real money).
 
 ---
 

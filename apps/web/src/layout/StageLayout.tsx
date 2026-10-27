@@ -209,7 +209,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
       const message = await forgeRelicForWalletV2(loop, { connected: wallet.isConnected, mint: next => { setVoucher(next); } });
       setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
     }} />
-    <p className="forge-note">The Relic daily limit is shared across classic and v2.</p>
+    <p className="forge-note">Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free test AVAX and costs no real money.</p>
     {unreported ? <div role="status"><p>{mode.demo ? 'Sign in to finish saving your minted Relic.' : 'Your Relic was minted. Finish saving its confirmation.'}</p>
       <button disabled={savingMint || mode.demo || !wallet.isConnected} onClick={() => { void retryMintConfirmation(); }}>{savingMint ? 'Saving…' : 'Retry saving mint confirmation'}</button></div>
       : (voucher ?? state.forge.pending) && (voucher ?? state.forge.pending)!.nonce !== mintedNonce && <MintPanel voucher={(voucher ?? state.forge.pending)!} api={getGameApi()} loop={getGameLoop()} onMinted={(mint, confirmed) => {
