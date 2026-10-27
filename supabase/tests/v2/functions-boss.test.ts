@@ -280,7 +280,8 @@ describe("key-wall lever through HTTP and migrated SQL", () => {
     expect(response.status).toBe(409);
     expect(await response.json()).toEqual({ error: "no_key" });
     expect(bossFight).not.toHaveBeenCalled();
-    expect(await raw(p)).toEqual(before);
+    // serverTime is wall-clock seconds and can tick between the two snapshots.
+    expect({ ...(await raw(p)), serverTime: 0 }).toEqual({ ...before, serverTime: 0 });
     expect(await audit(p)).toEqual([]);
     expect(await wins(p)).toEqual([]);
   });
