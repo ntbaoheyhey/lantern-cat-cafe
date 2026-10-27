@@ -8,7 +8,9 @@ import type { ServerStateV2 } from '../api/GameApiV2';
 import { sampleServerStateV2 } from './a11y/fixtures';
 import { ARENA_FIXTURES } from '../game/arena/arenaFixtures';
 let stageState: ServerStateV2;
+const syncSnapshot = vi.hoisted(() => ({ claimInFlight: false, lastError: null }));
 const stageLoop = vi.hoisted(() => ({ start: vi.fn(async () => {}), stop: vi.fn(), onEvent: () => () => {}, retry: vi.fn(),
+  subscribe: () => () => {}, getSnapshot: () => syncSnapshot,
   equip: vi.fn(), setLocked: vi.fn(), chooseClass: vi.fn(), craft: vi.fn(), salvage: vi.fn(), fightBoss: vi.fn() }));
 vi.mock('../game/v2/storeV2', () => ({ createEquipQueueV2: () => ({ equip: stageLoop.equip, dispose: vi.fn() }), getGameLoopV2: () => stageLoop,
   useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }), useGameModeV2: () => ({ demo: true, notice: null }) }));
@@ -156,4 +158,10 @@ it('StageLayout does not re-render on a timer', () => {
 it('marks the production stage root when VITE_GAME_V2 is enabled', () => {
   render(<App />);
   expect(screen.getByRole('region', { name: 'Game stage' }).closest('.v2-shell')?.getAttribute('data-game-v2')).toBe('stage-v2-enabled');
+});
+
+it('renders SyncStatus inside the header sync-status slot', () => {
+  render(<App />);
+  const slot = document.querySelector('[data-slot="sync-status"]');
+  expect(slot?.querySelector('[data-sync-status]')).toBeTruthy();
 });
