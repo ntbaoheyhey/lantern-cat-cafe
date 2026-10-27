@@ -8,7 +8,7 @@
 
 ## 1. Purpose and Scope
 
-On cut-over day, Cat RPG v2 replaces the classic layout as the default live user interface at `https://web-zeta-tan-13.vercel.app`, rendering the stage-first game experience with class selection, real-time stage combat, new equipment slots, crafting, salvaging, and chapter bosses. Off-chain v1 Edge Functions (`auth-nonce`, `auth-verify`, `game-state`, `idle-claim`, `equip`, `boss-fight`, `upgrade`, `relic-forge`, `relic-mint-report`) remain deployed and untouched alongside the v2 functions, ensuring that zero v1 endpoints are broken or removed during cut-over. All v1 database rows (`idle_state`, `gear`, `boss_attempts`, `boss_keys`) are retained unmodified in PostgreSQL as historical records (no destructive SQL drops or resets), while shared player accounts (`players`), Relic mint records (`relic_forges`, `relic_vouchers`), and Avalanche Fuji on-chain contracts (`RelicNFT`, `RelicMarket`) remain fully active and continuous across versions.
+On cut-over day, Cat RPG v2 replaces the classic layout as the default live user interface at `https://taskbarhero-eight.vercel.app`, rendering the stage-first game experience with class selection, real-time stage combat, new equipment slots, crafting, salvaging, and chapter bosses. Off-chain v1 Edge Functions (`auth-nonce`, `auth-verify`, `game-state`, `idle-claim`, `equip`, `boss-fight`, `upgrade`, `relic-forge`, `relic-mint-report`) remain deployed and untouched alongside the v2 functions, ensuring that zero v1 endpoints are broken or removed during cut-over. All v1 database rows (`idle_state`, `gear`, `boss_attempts`, `boss_keys`) are retained unmodified in PostgreSQL as historical records (no destructive SQL drops or resets), while shared player accounts (`players`), Relic mint records (`relic_forges`, `relic_vouchers`), and Avalanche Fuji on-chain contracts (`RelicNFT`, `RelicMarket`) remain fully active and continuous across versions.
 
 ---
 
@@ -128,7 +128,7 @@ Execute following the numbered sequence below. Each step lists the operational a
 
 ### Step 5: Wait for Vercel production deployment (Estimated time: 3-5 min)
 * **Action:** USER / Orchestrator monitors the deployment in Vercel dashboard > Project **web** > **Deployments**.
-* **Expected Result:** Deployment completes with status "Ready" on `https://web-zeta-tan-13.vercel.app`. Inspecting response headers confirms successful build.
+* **Expected Result:** Deployment completes with status "Ready" on `https://taskbarhero-eight.vercel.app`. Inspecting response headers confirms successful build.
 * **Stop Point:** If Vercel build fails or deployment stalls, evaluate Rollback (Section 5) or promote the previous good deployment in the Vercel dashboard.
 
 ### Step 6: Execute live health check (Estimated time: 2 min)

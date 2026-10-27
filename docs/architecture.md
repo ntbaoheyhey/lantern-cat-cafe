@@ -20,3 +20,58 @@ See [extending](extending.md) and [extending-v2](extending-v2.md) for step-by-st
 `apps/web/src/wallet/` holds wallet connect and sign-in. It uses wagmi v2 with viem and TanStack Query, with only the injected connector (Core Wallet or MetaMask), on Avalanche Fuji (`avalancheFuji` from `viem/chains`, chain id 43113). The RPC comes from `VITE_FUJI_RPC_URL` and falls back to the public one. `WalletProvider` wraps the app and `WalletButton` sits on the strip: "Connect wallet", then short address + "Sign in", then a signed-in badge. On the wrong network it shows a message and a "Switch to Fuji" button. With no injected wallet it links to https://core.app.
 
 Sign-in goes through the `AuthApi` interface (`getNonce`, `verify`). `createHttpAuthApi` calls `{VITE_SUPABASE_URL}/functions/v1/auth-nonce` and `auth-verify`; `createMockAuthApi` works offline and is used when `VITE_SUPABASE_URL` is unset. The client builds an EIP-4361 message (`siwe.ts`: domain = `window.location.host`, uri = origin, chain 43113, 10 minute expiry), signs it with the wallet and sends `{message, signature}` to verify. The returned `{token, playerId, wallet}` becomes the session (`session.ts`), kept in memory and mirrored to `sessionStorage` (storage errors are ignored). Expiry is read from the JWT `exp` claim, or defaults to 1 hour. Disconnecting, or switching to a different account, clears the session.
+
+## Server-authoritative boundary and Avalanche flow
+
+SIWE is an off-chain EIP-4361 wallet signature: `auth-nonce` issues a single-use challenge and
+`auth-verify` verifies it before issuing a session. Connecting a wallet alone does not authenticate
+API calls. The signature costs no gas and does not mint or transfer anything.
+
+In connected play, Edge Functions authenticate the player and the database serializes progression
+writes. The server chooses rewards/rarity and enforces resource costs and the daily forge limit;
+the client displays results and replays combat. Browser state and request-supplied rewards are not
+authoritative. The shared rules module is computation, not a security boundary by itself.
+Without Supabase configuration, mock APIs and browser-local demo saves prove UI behavior only.
+The v2 workshop's gear crafting is off-chain; it is separate from the daily ERC-1155 Relic flow.
+
+```mermaid
+sequenceDiagram
+  actor Player
+  participant UI as Browser + wallet
+  participant API as Supabase Edge Functions
+  participant DB as Supabase database
+  participant NFT as Fuji RelicNFT
+  participant Market as Fuji RelicMarket
+  Player->>UI: Connect and sign SIWE message
+  UI->>API: auth-nonce / auth-verify
+  API-->>UI: Authenticated session
+  UI->>API: POST relic-forge (session)
+  API->>DB: Lock player, enforce costs/day, persist forge + nonce
+  API-->>UI: EIP-712 Voucher + signature (30-minute expiry)
+  UI->>NFT: mint(voucher, signature)
+  NFT-->>UI: RelicForged + TransferSingle receipt
+  UI->>API: POST relic-mint-report (nonce, txHash)
+  API->>NFT: Read successful receipt and matching RelicForged
+  API->>DB: Record minted status + tx hash
+  UI->>NFT: setApprovalForAll(market, true)
+  UI->>Market: list(relicId, amount, price)
+  Market->>NFT: safeTransferFrom(seller, market, ...)
+  Player->>Market: Buyer wallet: buy(listingId), exact test AVAX
+  Market->>NFT: safeTransferFrom(market, buyer, ...)
+  Market-->>Player: Pay full price to seller atomically
+```
+
+The EIP-712 domain binds chain 43113 and the NFT address. `RelicNFT.mint` checks the caller,
+signature, expiry, unused nonce and consistent rarity, then mints one copy. It does **not** enforce
+game resource costs or a daily cap; those depend on the trusted server signer. The owner can rotate
+the signer, invalidate a nonce and change metadata. Chain state is authoritative for NFT ownership.
+Receipt reconciliation verifies the event rather than trusting the browser's claimed mint.
+
+Trading goes directly from wallets to the fixed-price escrow contract: `list` requires approval,
+`buy` requires exact payment and atomically transfers the lot and pays the seller, and `cancel`
+returns escrow to the seller. There is no market owner, platform fee or fungible token. Gas still
+applies to minting, approval, listing, buying and cancellation; ordinary game actions stay gas-free.
+
+See the [judge integration page](avalanche-integration.md) for deployed addresses, live evidence
+and reproduction, and the [contract](security-contracts.md) / [web](security-web.md) security reviews
+for findings and limits. Repository behavior and mock tests do not establish live backend health.

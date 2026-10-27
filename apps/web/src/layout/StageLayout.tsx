@@ -8,7 +8,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
-import type { ServerStateV2, BossFightResultV2, GainsV2 } from '../api/GameApiV2';
+import type { ServerStateV2, BossFightResultV2, GainsV2, ItemV2 } from '../api/GameApiV2';
 import { v2 } from '@taskbar-hero/game-rules';
 import { useAccount } from 'wagmi';
 import type { RelicVoucher } from '@taskbar-hero/api-contract';
@@ -38,6 +38,7 @@ import { BagPanel } from './bag/BagPanel';
 import { CharacterPanel } from './character/CharacterPanel';
 import { HelpTab } from './HelpTab';
 import { layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
+import { itemName, rarityLabel } from './itemView';
 import './layout.css';
 
 type StageTabName = 'Inventory' | 'Boss' | 'Forge' | 'Market' | 'Help';
@@ -152,6 +153,7 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
   const [away, setAway] = useState(0);
   const [welcome, setWelcome] = useState(false);
   const [notice, setNotice] = useState('');
+  const [crafted, setCrafted] = useState<ItemV2 | null>(null);
   const hiddenAt = useRef<number | null>(null);
   const awayRef = useRef(0);
   const offset = useMemo(() => state ? state.serverTime - Date.now() / 1000 : 0, [state?.serverTime]);
@@ -205,10 +207,11 @@ export function StageLayout({ onMiniMode }: { onMiniMode: () => void }) {
     <ChapterMap currentChapter={state.progress.chapter} round={state.progress.round} clearedChapters={state.bosses.chapters.filter(c => c.cleared).map(c => c.chapter)} onSelect={setChapter} />
   </> : tab === 'Forge' ? classId ? <><ForgePanel stacks={{ ...state.materials, fish: state.currencies.fish, yarn: state.currencies.yarn, catKey: state.currencies.keys }} items={state.inventory}
     relic={{ today: state.forge.today, pending: state.forge.pending, blockedReason: state.forge.blockedBy }} classWeaponType={v2.CLASSES.find(c => c.id === classId)!.weaponType}
-    onCraft={async (recipe, slot) => { await loop.craft(recipe, slot); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={async () => {
+    onCraft={async (recipe, slot) => { setCrafted(null); const result = await loop.craft(recipe, slot); if (result) setCrafted(result.item); }} onSalvage={async ids => { await loop.salvage(ids); }} onRelic={async () => {
       const message = await forgeRelicForWalletV2(loop, { connected: wallet.isConnected, mint: next => { setVoucher(next); } });
       setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
     }} />
+    {crafted && <div className="forge-reveal" role="status" data-testid="craft-result"><strong>Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}</strong> (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic tab can be listed in the Market.</div>}
     <p className="forge-note">Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free test AVAX and costs no real money.</p>
     {unreported ? <div role="status"><p>{mode.demo ? 'Sign in to finish saving your minted Relic.' : 'Your Relic was minted. Finish saving its confirmation.'}</p>
       <button disabled={savingMint || mode.demo || !wallet.isConnected} onClick={() => { void retryMintConfirmation(); }}>{savingMint ? 'Saving…' : 'Retry saving mint confirmation'}</button></div>

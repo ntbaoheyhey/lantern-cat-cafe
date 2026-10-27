@@ -6,7 +6,7 @@ import { LABELS } from '../theme/labels';
 import { relicImageUrl } from './marketText';
 
 const PUBLIC = resolve(__dirname, '../../public');
-const SITE = 'https://web-zeta-tan-13.vercel.app';
+const SITE = 'https://taskbarhero-eight.vercel.app';
 
 describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rarity)] as const))('%s relic (id %i)', (rarity, id) => {
   const hexName = `${id.toString(16).padStart(64, '0')}.json`;

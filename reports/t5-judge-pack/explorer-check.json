@@ -1,0 +1,33 @@
+{
+  "checkedDate": "2026-10-27",
+  "method": "read-only Routescan getsourcecode; no verification submission",
+  "exactMatchLabel": "owner-confirmed 2026-10-26; not independently attested by API",
+  "contracts": [
+    {
+      "name": "RelicNFT",
+      "address": "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "api": "https://api.routescan.io/v2/network/testnet/evm/43113/etherscan?module=contract&action=getsourcecode&address=0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "httpStatus": 200,
+      "compiler": "v0.8.24+commit.e11b9ed9",
+      "optimizationUsed": "0",
+      "evmVersion": "cancun",
+      "mainFile": "src/RelicNFT.sol",
+      "repoMainFileMatches": true,
+      "mainSourceSha256": "7930f92a17f56167a39eac556882300aa790b1e985a343d4b40b5544da49a1f4",
+      "constructorArguments": "0x0000000000000000000000002bba9a48f7f79d99154108a28d32f1a21d17055c0000000000000000000000005ec838eccc4ec6b6707b6479394e9e6ceea0b0000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000002468747470733a2f2f6578616d706c652e636f6d2f72656c6963732f7b69647d2e6a736f6e00000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "RelicMarket",
+      "address": "0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93",
+      "api": "https://api.routescan.io/v2/network/testnet/evm/43113/etherscan?module=contract&action=getsourcecode&address=0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93",
+      "httpStatus": 200,
+      "compiler": "v0.8.24+commit.e11b9ed9",
+      "optimizationUsed": "0",
+      "evmVersion": "cancun",
+      "mainFile": "src/RelicMarket.sol",
+      "repoMainFileMatches": true,
+      "mainSourceSha256": "e4b81bf52cad1988e0f372afd083cf912fc4e94220ed0fb033fb816d4fe2fc8a",
+      "constructorArguments": "0x000000000000000000000000b1a1edb7a75db6e7067e747ddee32b39c2296f2d"
+    }
+  ]
+}

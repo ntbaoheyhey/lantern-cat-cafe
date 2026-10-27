@@ -1,5 +1,17 @@
 # Taskbar Hero
 
+## For judges
+Live: [Taskbar Hero](https://web-zeta-tan-13.vercel.app) — NOT VERIFIED: returned HTTP 404 on 2026-10-27; owner must restore/check it.
+60-second tour: inspect the two contracts below → follow the [voucher → mint → list → buy flow](docs/avalanche-integration.md) → run the read-only proof.
+[Five-minute reproduction, verification status, transaction evidence and test results](docs/avalanche-integration.md).
+| Contract (Avalanche Fuji, 43113) | Address | Explorers |
+| --- | --- | --- |
+| RelicNFT (ERC-1155) | `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D` | [Routescan Contract](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) · [Snowtrace](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
+| RelicMarket (fixed-price escrow) | `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93` | [Routescan Contract](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) · [Snowtrace](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |
+Setup: `CI=true pnpm install --frozen-lockfile`; proof: `pnpm onchain-proof`; TypeScript tests: `pnpm test`.
+Contract tests: `git submodule update --init --recursive`, then `cd contracts && forge test`.
+Security reviews: [contracts](docs/security-contracts.md), [web](docs/security-web.md). [Architecture and trust boundary](docs/architecture.md).
+
 Taskbar Hero is an idle RPG in a thin strip at the bottom of a web page: let your hero fight, claim loot, upgrade gear, beat bosses, and forge collectible Relics. Everyday progression stays off-chain, while ERC-1155 Relic NFTs can be minted and traded on Avalanche Fuji testnet (free testnet, costs no real money). There is no fungible token. **[Play the live demo](https://web-zeta-tan-13.vercel.app)**.
 
 In **Cat RPG v2** (`VITE_GAME_V2=1`), the game expands into a full stage layout featuring 7 cat hero classes, 5 chapters of monsters, procedural cat paperdoll animations, a multi-tab Forge workshop, and daily Moon Pearl Relics. See [docs/play-v2.md](docs/play-v2.md) for full v2 details.

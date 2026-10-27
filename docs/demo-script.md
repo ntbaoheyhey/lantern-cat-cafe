@@ -16,7 +16,7 @@ A comprehensive presentation guide for the **Avalanche Team1 Vietnam UniHack 202
 
 | Resource | Value / Link | Notes |
 | :--- | :--- | :--- |
-| **Live Game Site** | [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app) | Production build on Vercel |
+| **Live Game Site** | [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app) | Production build on Vercel |
 | **RelicNFT (ERC-1155)** | [`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) | EIP-712 voucher-gated mint, fixed rarity per ID |
 | **RelicMarket** | [`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) | Zero-fee autonomous escrow, test-AVAX settlement |
 | **Alternative Explorer** | [Routescan Fuji](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) | Backup explorer if Snowtrace is unreachable |
@@ -44,11 +44,11 @@ The Cat Café Quest UI uses cozy, thematic names for player-facing elements whil
 1. **Browser**: Use desktop **Chrome**, **Brave**, or **Edge** with **Core Wallet** or **MetaMask** installed. *(Do not use Safari; extensions do not inject).*
 2. **Network**: Ensure the wallet is connected to **Avalanche Fuji Testnet** (`43113`) with at least **0.2 test AVAX** for gas and market tests.
 3. **Session Check**:
-   - Open [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app).
+   - Open [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app).
    - If signed in, verify the strip shows Mochi trotting and HUD counters ticking up.
    - If preparing a fresh demo, verify that the wallet can sign in smoothly via SIWE.
 4. **Tabs Pre-opened**:
-   - Tab 1: Live site at [https://web-zeta-tan-13.vercel.app](https://web-zeta-tan-13.vercel.app).
+   - Tab 1: Live site at [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app).
    - Tab 2: [Snowtrace RelicNFT](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D).
    - Tab 3: [Snowtrace RelicMarket](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93).
 
@@ -300,7 +300,7 @@ Print or keep this card open during presentation:
 ========================================================================
 TASKBAR HERO — PRESENTER CHEAT SHEET
 ========================================================================
-Live Demo URL : https://web-zeta-tan-13.vercel.app
+Live Demo URL : https://taskbarhero-eight.vercel.app
 Chain ID      : 43113 (Avalanche Fuji Testnet)
 RelicNFT      : 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D
 RelicMarket   : 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93
