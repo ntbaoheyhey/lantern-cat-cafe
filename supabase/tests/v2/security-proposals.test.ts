@@ -79,6 +79,7 @@ describe("S2 proposal SQL in a disposable database only", () => {
     await expect(salvageV2(deps, p, { itemIds: [starter.id, crafted.item.id] })).rejects.toMatchObject({ code: "invalid_request" });
     expect((await raw(p))!.stacks).toEqual(before.stacks);
     expect((await raw(p))!.inventory).toHaveLength(2);
+    expect((await raw(p))!.inventory).toEqual(before.inventory);
     await expect(salvageV2(deps, p, { itemIds: [starter.id] })).rejects.toMatchObject({ code: "invalid_request" });
     await salvageV2(deps, p, { itemIds: [crafted.item.id] });
     expect(await stack(db, p, "yarn")).toBe(v2.salvage(crafted.item).yarn);

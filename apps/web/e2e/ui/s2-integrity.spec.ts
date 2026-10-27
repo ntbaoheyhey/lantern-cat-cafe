@@ -28,6 +28,8 @@ for (const [width, height, colorScheme] of [
     await expect(panel.getByText("Starter gear can't be salvaged")).toBeVisible();
     await expect(panel.getByTestId('salvage-check-s2-paid')).toBeEnabled();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await panel.getByText("Starter gear can't be salvaged").scrollIntoViewIfNeeded();
+    await expect(panel.getByText("Starter gear can't be salvaged")).toBeInViewport();
     if (process.env.SCREENSHOTS === '1') await page.screenshot({ path: path.resolve(process.cwd(), `../../reports/s2-fix1-integrity/salvage-${width}-${colorScheme}.png`) });
     await panel.getByTestId('salvage-check-s2-paid').check();
     await panel.getByTestId('salvage-btn').click(); await panel.getByTestId('salvage-confirm-btn').click();
