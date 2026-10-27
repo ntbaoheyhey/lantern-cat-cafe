@@ -333,7 +333,7 @@ apps/web build: ✓ built in 322ms
 apps/web build: Done
 [all workspace builds Done; exit 0]
 $ VITE_GAME_V2=0 npx -y pnpm@10.28.0 --filter @taskbar-hero/web build
-✓ built in 320ms
+✓ built in 317ms
 [exit 0]
 $ cd apps/web && npx -y pnpm@10.28.0 test:e2e
 160 passed (43.1s)
@@ -353,7 +353,7 @@ VITE_GAME_V2=1 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' ... exec vite buil
 Classic production hooks: rg exit 1; 0 files matched
 V2 production hooks: rg exit 1; 0 files matched
 node scripts/check-links.mjs --json, clean origin/main archive: 0 broken / 740 links
-node scripts/check-links.mjs --json, G1: 0 broken / 743 links
+node scripts/check-links.mjs --json, G1: 0 broken / 744 links
 ```
 
 The initial full test attempt failed 9 tests due to the old a11y assertion and missing
