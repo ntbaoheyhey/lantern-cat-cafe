@@ -96,7 +96,7 @@ describe("v2 boss Edge Function over migrated SQL", () => {
     expect(await stack(db, p, "catKey")).toBe(r.chest!.keys);
     const rolled = v2.rollChestV2({ chapter: chapter.index, firstClear: true, classId: "warrior", level: expected.before.level }, deriveSeed(expected.seed, 1));
     expect(r.chest).toEqual({ ...v2.lootViewV2(rolled.stackDeltas, rolled.items, []),
-      items: rolled.items.map(item => ({ ...v2.itemViewV2(item), id: expect.any(String) })) });
+      items: rolled.items.map(item => ({ ...v2.itemViewV2(item), source: "chest", id: expect.any(String) })) });
     expect(await wins(p)).toEqual([{ chapter: chapter.index, wins: 1 }]);
     expect(await audit(p)).toEqual([expect.objectContaining({ won: true, key_spent: true })]);
     expect(r.state.progress).toMatchObject({ chapter: chapter.index + 1, round: 1, kills: 0 });
@@ -208,7 +208,7 @@ describe("v2 boss Edge Function over migrated SQL", () => {
     const rows = await audit(p);
     expect(rows).toHaveLength(2);
     expect(rows[1]!.chest).toEqual({ added: rolled.stackDeltas, salvaged: {}, autoSalvaged: [],
-      items: rolled.items.map(item => ({ ...v2.itemViewV2(item), id: expect.any(String) })) });
+      items: rolled.items.map(item => ({ ...v2.itemViewV2(item), source: "chest", id: expect.any(String) })) });
     expect(r.chest).toEqual({ ...v2.lootViewV2(rolled.stackDeltas, rolled.items, []), items: rows[1]!.chest.items });
   });
 

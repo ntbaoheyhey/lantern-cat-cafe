@@ -1,7 +1,8 @@
+import { actionRequestId, priorAction } from "./actions.ts";
 import { relicIdFor, rollRelicRarity, v2 } from "@taskbar-hero/game-rules";
 import { dayDate, relicSeed } from "../game.ts";
 import { REISSUE_GRACE_SECONDS, VOUCHER_TTL_SECONDS, type ChainReader } from "../relic.ts";
-import { getStateV2, type V2Deps } from "./game.ts";
+import { getStateV2, type V2Deps, type ItemV2Raw } from "./game.ts";
 import { HTTP_STATUS_V2, V2Error, type GameApiErrorCodeV2Like } from "./http.ts";
 import { toPlayerStateV2 } from "./snapshot.ts";
 import { v2CraftSeed } from "./seeds.ts";
@@ -24,19 +25,29 @@ async function snapshot(deps: V2Deps, player: string, nowMs: number) {
 export async function craftV2(deps: V2Deps, player: string, body: Record<string, unknown>) {
   const { recipeId, slot } = body;
   if (typeof recipeId !== "string" || !v2.RECIPES.some(recipe => recipe.id === recipeId) || !v2.GEAR_SLOT_IDS.some(id => id === slot)) throw new V2Error("invalid_request");
+  const requestId = actionRequestId(body);
+  const intent = { recipeId, slot };
+  const finish = async (result: Record<string, unknown>) => ({ item: result.item as ItemV2Raw, state: await getStateV2(deps, player) });
+  const prior = await priorAction(deps.store, player, "v2-craft", requestId, intent);
+  if (prior) return finish(prior);
   const nowMs = (deps.now ?? Date.now)();
   const nowS = Math.floor(nowMs / 1000);
   const raw = await snapshot(deps, player, nowMs);
   const state = toPlayerStateV2(raw, dayDate(nowS));
   const seed = await v2CraftSeed(deps.seedSecret, player, `${raw.progressRev}:${raw.inventory.length}:${nowS}`);
   const preview = v2.applyCraft(state, recipeId, slot as string, seed, nowS);
-  if (!preview.ok) refusal(preview.code, preview.stack);
+  if (!preview.ok) {
+    // A concurrent winner may have spent resources between the first lookup and snapshot.
+    const raced = await priorAction(deps.store, player, "v2-craft", requestId, intent);
+    if (raced) return finish(raced);
+    refusal(preview.code, preview.stack);
+  }
   const { item } = preview;
   const cost = Object.fromEntries(Object.entries(preview.spent).filter(([, amount]) => amount > 0));
   const result = await deps.store.craft(player, cost, { itemKey: item.itemKey, slot: item.slot,
-    ...(item.weaponType === undefined ? {} : { weaponType: item.weaponType }), rarity: item.rarity, level: item.level, bonus: item.bonus }, v2.V2_CONFIG.bag.limit);
+    ...(item.weaponType === undefined ? {} : { weaponType: item.weaponType }), rarity: item.rarity, level: item.level, bonus: item.bonus }, v2.V2_CONFIG.bag.limit, requestId, intent);
   if ("error" in result) refusal(result.error, result.stack);
-  return { item: result.item, state: await getStateV2(deps, player) };
+  return finish(result);
 }
 
 export async function salvageV2(deps: V2Deps, player: string, body: Record<string, unknown>) {

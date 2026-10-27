@@ -39,7 +39,7 @@ describe("v2_choose_class", () => {
     expect(await f.choose(p, "warrior", "sword")).toMatchObject({ status: "ok" });
     let s = (await f.snapshot(p))!;
     expect(s.classId).toBe("warrior");
-    expect(s.progressRev).toBe(1);
+    expect(s.progressRev).toBe(2); // class selection plus starter equip
     expect(s.inventory).toHaveLength(1);
     expect(s.inventory[0]).toMatchObject({ slot: "weapon", weaponType: "sword", equipped: true, rarity: "common" });
     expect(s.inventory[0].salvage).toBeUndefined();

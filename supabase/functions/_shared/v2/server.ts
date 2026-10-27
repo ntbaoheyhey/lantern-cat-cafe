@@ -27,16 +27,23 @@ export function pgV2Store(): V2Store {
     return data;
   };
   return {
+    actionResult: (player, route, requestId, intent) => rpc("v2_action_result", { p_player: player, p_route: route, p_request_id: requestId, p_intent: intent }),
     snapshot: (playerId, day) => rpc("v2_snapshot", { p_player: playerId, p_day: day }),
     chooseClass: (playerId, classId, weaponType, starter) => rpc("v2_choose_class", { p_player: playerId, p_class_id: classId, p_weapon_type: weaponType, p_starter: starter }),
     claim: a => rpc("v2_claim", { p_player: a.playerId, p_expected_last_micros: a.expectedLastMicros, p_expected_rev: a.expectedRev,
       p_now: a.nowIso, p_progress: a.progress, p_stack_deltas: a.stackDeltas, p_caps: a.caps, p_items: a.items, p_bag_limit: a.bagLimit, p_daily_key_day: a.dailyKeyDay }),
-    bossFight: a => rpc("v2_boss_fight", { p_player: a.playerId, p_chapter: a.chapter, p_expected_rev: a.expectedRev,
-      p_won: a.won, p_fight_no: a.fightNo, p_key_cost: a.keyCost, p_cooldown_s: a.cooldownS, p_chest: a.chest,
-      p_bag_limit: a.bagLimit, p_caps: a.caps, p_boss_round: a.bossRound }),
+    bossFight: a => a.requestId
+      ? rpc("v2_boss_fight_once", { p_player: a.playerId, p_request_id: a.requestId, p_intent: a.intent,
+        p_args: { chapter: a.chapter, expectedRev: a.expectedRev, won: a.won, fightNo: a.fightNo,
+          keyCost: a.keyCost, cooldownS: a.cooldownS, chest: a.chest, bagLimit: a.bagLimit, caps: a.caps, bossRound: a.bossRound }, p_timeline: a.timeline })
+      : rpc("v2_boss_fight", { p_player: a.playerId, p_chapter: a.chapter, p_expected_rev: a.expectedRev,
+        p_won: a.won, p_fight_no: a.fightNo, p_key_cost: a.keyCost, p_cooldown_s: a.cooldownS, p_chest: a.chest,
+        p_bag_limit: a.bagLimit, p_caps: a.caps, p_boss_round: a.bossRound }),
     equip: (playerId, itemId, slot, expectedClass, weaponType, unlocked) => rpc("v2_equip", { p_player: playerId, p_item_id: itemId, p_slot: slot,
       p_expected_class: expectedClass, p_weapon_type: weaponType, p_unlocked: unlocked }),
-    craft: (playerId, cost, item, bagLimit) => rpc("v2_craft", { p_player: playerId, p_cost: cost, p_item: item, p_bag_limit: bagLimit }),
+    craft: (playerId, cost, item, bagLimit, requestId, intent) => requestId
+      ? rpc("v2_craft_once", { p_player: playerId, p_request_id: requestId, p_intent: intent, p_cost: cost, p_item: item, p_bag_limit: bagLimit })
+      : rpc("v2_craft", { p_player: playerId, p_cost: cost, p_item: item, p_bag_limit: bagLimit }),
     salvage: (playerId, itemIds, gains, caps) => rpc("v2_salvage", { p_player: playerId, p_item_ids: itemIds, p_gains: gains, p_caps: caps }),
     lock: (playerId, itemId, locked) => rpc("v2_lock", { p_player: playerId, p_item_id: itemId, p_locked: locked }),
     relicForge: a => rpc("v2_relic_forge", { p_player: a.playerId, p_day: a.day, p_relic_id: a.relicId, p_rarity: a.rarity, p_yarn_cost: a.yarnCost, p_pearl_cost: a.pearlCost, p_expires_at: a.expiresAt }),

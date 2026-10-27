@@ -1,7 +1,7 @@
 import { routesBossV2 } from "./boss.ts";
 import { routesForgeV2 } from "./forge.ts";
 import { v2 } from "@taskbar-hero/game-rules";
-import type { TodayRelic } from "@taskbar-hero/api-contract";
+import type { TodayRelic, ItemViewV2 } from "@taskbar-hero/api-contract";
 import { dayDate, MIN_CLAIM_INTERVAL_SECONDS } from "../game.ts";
 import type { VoucherSigner } from "../relic.ts";
 import { HTTP_STATUS_V2 as HTTP_CODES, V2Error, type GameApiErrorCodeV2Like } from "./http.ts";
@@ -11,7 +11,7 @@ import { v2ClaimSeed } from "./seeds.ts";
 
 export type { ServerStateV2Like } from "./snapshot.ts";
 export type { VoucherRowV2 } from "./voucher.ts";
-export type ItemV2Raw = v2.ItemViewV2;
+export type ItemV2Raw = ItemViewV2;
 
 /** Exact keys emitted by v2_snapshot; item and voucher rows use their SQL JSON helpers. */
 export interface RawSnapshotV2 {
@@ -39,14 +39,15 @@ export interface RawSnapshotV2 {
 }
 
 export interface V2Store {
+  actionResult(playerId: string, route: "v2-craft" | "v2-boss-fight", requestId: string, intent: object): Promise<Record<string, unknown> | null>;
   snapshot(playerId: string, day: string): Promise<RawSnapshotV2 | null>;
   chooseClass(playerId: string, classId: string, weaponType: string, starter: unknown[]): Promise<{ status: "ok" } | { error: string }>;
   claim(args: { playerId: string; expectedLastMicros: number; expectedRev: number; nowIso: string; progress: object; stackDeltas: object; caps: object; items: unknown[]; bagLimit: number; dailyKeyDay: string | null }): Promise<Record<string, unknown> | null>;
   bossFight(args: { playerId: string; chapter: number; expectedRev: number; won: boolean; fightNo: number; keyCost: number; cooldownS: number;
     chest: { first: { stacks: Record<string, number>; items: unknown[] }; rematch: { stacks: Record<string, number>; items: unknown[] } };
-    bagLimit: number; caps: object; bossRound: number }): Promise<Record<string, unknown>>;
+    bagLimit: number; caps: object; bossRound: number; requestId?: string; intent?: object; timeline?: unknown[] }): Promise<Record<string, unknown>>;
   equip(playerId: string, itemId: string | null, slot: string, expectedClass: string | null, weaponType: string | null, unlocked: string[]): Promise<{ status: "ok" } | { error: string }>;
-  craft(playerId: string, cost: Record<string, number>, item: object, bagLimit: number): Promise<{ status: "ok"; item: ItemV2Raw } | { error: string; stack?: string }>;
+  craft(playerId: string, cost: Record<string, number>, item: object, bagLimit: number, requestId?: string, intent?: object): Promise<{ status: "ok"; item: ItemV2Raw } | { error: string; stack?: string }>;
   salvage(playerId: string, itemIds: string[], gains: Record<string, number>, caps: object): Promise<{ status: "ok"; added: Record<string, number> } | { error: string }>;
   lock(playerId: string, itemId: string, locked: boolean): Promise<{ status: "ok" } | { error: string }>;
   relicForge(args: { playerId: string; day: string; relicId: number; rarity: string; yarnCost: number; pearlCost: number; expiresAt: string }): Promise<{ status: "pending" | "new"; voucher: VoucherRowV2 } | { status: "blocked"; reason: string }>;
