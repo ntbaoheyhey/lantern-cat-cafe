@@ -24,7 +24,11 @@ beforeAll(async () => { db = await migratedDb(); });
 afterAll(async () => { await db.close(); });
 // SQL cooldowns use now(), so the injected clock follows wall time for each test.
 beforeEach(() => { clock = Date.now(); });
-async function raw(p: string) { return (await store.snapshot(p, dayDate(Math.floor(clock / 1000))))!; }
+// serverTime is wall-clock seconds, so drop it or equality checks flake across a second boundary.
+async function raw(p: string) {
+  const { serverTime: _serverTime, ...snapshot } = (await store.snapshot(p, dayDate(Math.floor(clock / 1000))))!;
+  return snapshot;
+}
 async function fresh(chosen = true) {
   const p = await newPlayer(db);
   await getStateV2(deps, p);
