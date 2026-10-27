@@ -11,10 +11,15 @@ Paths below are relative to `apps/web/src/`.
 | [theme.css](../apps/web/src/theme.css) | Theme tokens and shared presentation classes. |
 | [theme/labels.ts](../apps/web/src/theme/labels.ts) | `LABELS` and `bossName(level)` for display text. |
 | [art/pixelIcons.tsx](../apps/web/src/art/pixelIcons.tsx) | String-map pixel icons rendered as SVG. |
+| [art/v2Icons.tsx](../apps/web/src/art/v2Icons.tsx), [art/v2Frames.tsx](../apps/web/src/art/v2Frames.tsx) | v2 character-matrix pixel icons and equipment frames. |
 | [main.tsx](../apps/web/src/main.tsx) | App entry point; loads `styles.css`, then `theme.css`. |
 | [App.tsx](../apps/web/src/App.tsx), [Panel.tsx](../apps/web/src/Panel.tsx), [styles.css](../apps/web/src/styles.css) | Page shell, tabs and shared layout. |
-| [game/](../apps/web/src/game), [GameCanvas.tsx](../apps/web/src/GameCanvas.tsx) | Phaser strip, HUD and client game state. |
-| [inventory/](../apps/web/src/inventory), [boss/](../apps/web/src/boss), [forge/](../apps/web/src/forge), [market/](../apps/web/src/market) | Feature components, text helpers, styles and tests. |
+| [layout/StageLayout.tsx](../apps/web/src/layout/StageLayout.tsx) | v2 stage layout: top bar, Phaser canvas, character stats, navigation tabs. |
+| [layout/bag/BagPanel.tsx](../apps/web/src/layout/bag/BagPanel.tsx) | v2 bag panel: grid, sorting, item comparisons, equip best, locking. |
+| [layout/forge/ForgePanel.tsx](../apps/web/src/layout/forge/ForgePanel.tsx) | v2 forge workshop: craft guaranteed rarities, salvage materials, daily Relic. |
+| [layout/classpicker/ClassPicker.tsx](../apps/web/src/layout/classpicker/ClassPicker.tsx) | v2 class picker: card radio group, stat leanings, passives. |
+| [game/](../apps/web/src/game), [GameCanvas.tsx](../apps/web/src/GameCanvas.tsx) | Phaser strip, HUD, stage scenes, cat paperdoll rig, and client game state. |
+| [inventory/](../apps/web/src/inventory), [boss/](../apps/web/src/boss), [forge/](../apps/web/src/forge), [market/](../apps/web/src/market) | Classic feature components, text helpers, styles and tests. |
 | [onboarding/](../apps/web/src/onboarding), [wallet/](../apps/web/src/wallet) | Help, next-step hints and wallet UI. |
 
 The motion foundation is `motion/reducedMotion.ts`, `motion/useTickNumber.ts` and `motion.css` (see below).

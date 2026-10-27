@@ -690,7 +690,7 @@ export function ForgePanel({
                 </span>
               </p>
               <p className="forge-note">
-                Your daily Relic voucher is forged and ready to be minted to your wallet.
+                Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).
               </p>
             </div>
           ) : relic.today ? (
@@ -717,7 +717,7 @@ export function ForgePanel({
               <div className="forge-relic-info">
                 <h3 className="forge-section-title">Daily Relic Forge</h3>
                 <p className="forge-section-desc">
-                  Forge a unique on-chain Relic NFT with randomized rarity. Strictly 1 craft per day across v1 and v2.
+                  Forge a collectible Relic NFT on the Avalanche Fuji testnet (free testnet, costs no real money). Limit: 1 per day across v1 and v2.
                 </p>
               </div>
             </div>

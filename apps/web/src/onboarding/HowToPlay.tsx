@@ -28,7 +28,7 @@ export const STEPS: StepItem[] = [
   },
   {
     icon: 'flask',
-    text: `Forge a Relic with ${CONFIG.relic.shardCost} ${LABELS.shards} and ${CONFIG.relic.bossKeyCost} ${LABELS.bossKey}, and mint it to your wallet on Avalanche Fuji.`,
+    text: `Forge a Relic with ${CONFIG.relic.shardCost} ${LABELS.shards} and ${CONFIG.relic.bossKeyCost} ${LABELS.bossKey}, and mint it to your wallet on Avalanche Fuji (free testnet, costs no real money).`,
   },
   {
     icon: 'shop',
@@ -120,7 +120,7 @@ export function HowToPlay() {
           ))}
         </ol>
         <p className="help-note">
-          Demo mode works without a wallet; sign in with Core to save progress and mint. Wallet sign-in needs Chrome,
+          Demo mode works without a wallet; sign in to save progress and mint Relics on the Avalanche Fuji testnet (free testnet, costs no real money). Wallet sign-in needs Chrome,
           Brave or Edge.
         </p>
         <button ref={start} type="button" className="help-start pixel-btn" onClick={closeHelp}>
