@@ -49,7 +49,7 @@ In under two minutes, a player moves seamlessly from zero-gas background progres
 - **Fuji mint & marketplace**: Approve a single wallet transaction on Avalanche Fuji to mint the ERC-1155 Relic, view its custom pixel art, and list it in the escrow market for test AVAX.
 
 ### Show on screen
-Fast-paced product walkthrough or split-screen sequence: Mochi defeating the Yarn Giant -> Forge reveal animation of a rising pixel-art Relic (`docs/screenshots/forge-reveal.png`) -> Relic listed in the market (`docs/screenshots/market.png`).
+Fast-paced product walkthrough or split-screen sequence: Mochi defeating the Yarn Giant -> Forge reveal animation of a rising pixel-art Relic (`docs/screenshots/forge-reveal.png`) -> Relic listed in the market (`docs/screenshots/market.png`). For full presenter timing and narration, see [Demo Script v2](demo-script-v2.md).
 
 ---
 
@@ -166,7 +166,7 @@ Cat RPG v2 transforms our ambient browser game into a complete dungeon crawler f
 In 45 seconds, a player selects a cat class, equips optimal gear, defeats the chapter boss, and unlocks daily Relic crafting in demo mode (after cut-over).
 
 #### Key Points
-- **Fast demo click path**: (1) Open demo mode on the main stage, (2) select Warrior in ClassPicker and confirm, (3) open Inventory and click "Equip best" to optimize 9 slots, (4) launch the Round 10 Boss fight to fell the Yarn Giant, and (5) open the First-Clear Chest for guaranteed Moon Pearl and gear drops (exact path from `docs/demo-script-v2.md`).
+- **Fast demo click path**: (1) Open demo mode on the main stage, (2) select Warrior in ClassPicker and confirm, (3) open Inventory and click "Equip best" to optimize 9 slots, (4) launch the Round 10 Boss fight to fell the Yarn Giant, and (5) open the First-Clear Chest for guaranteed Moon Pearl and gear drops (exact path from [docs/demo-script-v2.md](demo-script-v2.md); see also [docs/judge-walkthrough.md](judge-walkthrough.md)).
 - **Deterministic combat & auto-salvage**: Experience deterministic combat simulation where Cat Keys are consumed only on victory, 60-second cooldowns throttle losses, and full 200-slot bags auto-salvage overflow rewards safely on the spot.
 - **Local preview fallback**: Demonstrated live in demo mode with zero wallet popups; if the live hosted demo is down or unreachable, seamlessly fallback to local preview via `VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web dev`.
 
@@ -271,6 +271,31 @@ Placeholder screenshot references to capture during submission asset week (Card 
 | docs/screenshots/v2/limitations-scorecard.png | Scope boundaries: Delivered on Fuji vs. Production roadmap | Graphic asset (scorecard) | 1280 |
 | docs/screenshots/v2/phone-stage.png | Mobile viewport: responsive stage and HUD layout | fresh | 390 |
 | docs/screenshots/v2/phone-inventory.png | Mobile viewport: responsive inventory and character panel | midGame | 390 |
+
+---
+
+### Verified Media Kit & Recorded Evidence Index (Mission T3)
+
+The verified media files captured from the static v2 build are stored in [`reports/t3-demo-media/`](../reports/t3-demo-media/):
+
+| File Name | Screen Description | Resolution | File Size |
+| :--- | :--- | :---: | :---: |
+| [01-title.png](../reports/t3-demo-media/01-title.png) | Onboarding modal ("How to play") over dark stage | 1600x900 | 40 KB |
+| [02-class-pick.png](../reports/t3-demo-media/02-class-pick.png) | Class selection modal: 7 cat hero classes and passives | 1600x900 | 30 KB |
+| [03-idle-loop.png](../reports/t3-demo-media/03-idle-loop.png) | Main stage: Chapter 1 Living Room, HUD counters, combat | 1600x900 | 38 KB |
+| [04-bag.png](../reports/t3-demo-media/04-bag.png) | Inventory: 9 equipment slots, character stats, "Equip best" | 1600x900 | 36 KB |
+| [05-forge-reveal.png](../reports/t3-demo-media/05-forge-reveal.png) | Forge tab: guaranteed recipes, material costs, confirm box | 1600x900 | 30 KB |
+| [06-chapter-map.png](../reports/t3-demo-media/06-chapter-map.png) | Chapter map: unlocked Ch 2, locked Ch 3–5, Boss Gate | 1600x900 | 30 KB |
+| [07-boss-arena.png](../reports/t3-demo-media/07-boss-arena.png) | Boss battle: Yarn Giant combat, telegraphs, and health bars | 1600x900 | 38 KB |
+| [08-result.png](../reports/t3-demo-media/08-result.png) | Victory modal: First-Clear Chest reward with Moon Pearl | 1600x900 | 60 KB |
+| [09-phone-stage.png](../reports/t3-demo-media/09-phone-stage.png) | Mobile viewport: responsive stage and HUD layout | 390x844 | 16 KB |
+| [10-phone-bag.png](../reports/t3-demo-media/10-phone-bag.png) | Mobile viewport: responsive inventory and character panel | 390x844 | 14 KB |
+| [11-phone-boss.png](../reports/t3-demo-media/11-phone-boss.png) | Mobile viewport: responsive boss gate and chapter map | 390x844 | 12 KB |
+| [12-phone-forge.png](../reports/t3-demo-media/12-phone-forge.png) | Mobile viewport: responsive forge workshop and recipes | 390x844 | 13 KB |
+| [13-idle-loop.mp4](../reports/t3-demo-media/13-idle-loop.mp4) | Animated idle combat loop with moving damage numbers | 1280x720 | 184 KB |
+| [13-idle-loop.gif](../reports/t3-demo-media/13-idle-loop.gif) | Animated GIF of idle combat loop | 640x360 | 1.0 MB |
+| [14-boss-fight.mp4](../reports/t3-demo-media/14-boss-fight.mp4) | Animated boss battle from gate to victory chest reveal | 1280x720 | 275 KB |
+| [14-boss-fight.gif](../reports/t3-demo-media/14-boss-fight.gif) | Animated GIF of boss battle from gate to victory chest | 640x360 | 1.3 MB |
 
 ---
 

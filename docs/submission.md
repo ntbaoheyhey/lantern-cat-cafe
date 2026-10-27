@@ -45,12 +45,14 @@ Details: `docs/contracts.md`, `docs/api.md`.
 
 ## Links
 
-| What | Link |
-| --- | --- |
-| Live demo | https://taskbarhero-eight.vercel.app |
-| Repository | https://github.com/ntbaoheyhey/taskbar-hero (**private now; must be made public before submitting**) |
-| RelicNFT (ERC-1155) | [`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
-| RelicMarket | [`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |
+| What | Link | Notes |
+| --- | --- | --- |
+| Live demo | https://taskbarhero-eight.vercel.app | Open in Chrome, Brave, or Edge |
+| Pitch video | TODO: [Owner to insert 2-3 minute YouTube/Loom demo video URL] | Walkthrough matching demo script |
+| Repository | https://github.com/ntbaoheyhey/taskbar-hero | **private now; must be made public before submitting** |
+| RelicNFT (ERC-1155) | [`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) | Verified on Avalanche Fuji (43113) |
+| RelicMarket | [`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) | Zero-fee escrow market on Fuji |
+| Demo media kit | [reports/t3-demo-media/](../reports/t3-demo-media/) | 12 screenshots, 2 GIFs, 2 MP4s from verified v2 build |
 
 Both contracts are on Fuji (43113). The Routescan links are used because Snowtrace is not reachable from our build environment; Snowtrace links for the same addresses are in the README.
 
@@ -62,6 +64,8 @@ Both contracts are on Fuji (43113). The Routescan links are used because Snowtra
 4. To play for real, connect an injected wallet such as Core or MetaMask, switch to Avalanche Fuji, and sign in. You need a little Fuji test AVAX for gas (from a public faucet).
 5. Claim, upgrade, win the boss for a Cat Key, then Forge (30 Yarn + 1 Cat Key, once per day) and approve the mint in your wallet.
 6. Open Market to see your Relic and list it for test AVAX.
+
+For an in-depth 5-minute numbered guide (with and without a wallet), see [Judge Walkthrough](judge-walkthrough.md). For the timed presentation shot list with spoken dialogue, see [Demo Script v2](demo-script-v2.md).
 
 Without a wallet you can still see the game, but claims, the Forge and the Market need sign-in. Running locally without Supabase config uses a mock backend that does not mint (see the README).
 
