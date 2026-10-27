@@ -14,7 +14,7 @@ A structured, step-by-step evaluation guide for contest judges testing **Taskbar
 Follow these numbered steps to experience the complete core RPG loop entirely offline in demo mode:
 
 ### Step 1: Open the Application & Onboarding
-1. Navigate to the live demo URL (or local `http://localhost:4174`).
+1. Navigate to the live demo URL ([https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app) or local `http://localhost:4174`).
 2. Observe the dark plum "cozy cat cafe at night" aesthetic (`--bg`, `--surface`, pixel frames).
 3. The **"How to play"** modal appears automatically on first visit, introducing Mochi the cat, currency loops (Fish, Yarn, Cat Keys), and the daily Relic milestone.
 4. Click **Start playing** (or press `Escape`) to dismiss the onboarding modal.

@@ -8,7 +8,22 @@ STATUS: DONE
 | :--- | :--- | :---: | :--- |
 | **Piece 1** | Rebuild static v2 demo from today's main & smoke test | **PASS** | Base commit: `6d493b0a9a7ef811df215c980603a94d8b94116b`. Build composite hash: `8585fa1a5792cbe3d7ef4732bccb6818dcbb6dbceb895bf0cb745d725cdb3b0b`. Smoke-tested locally in headless Chromium: first-run onboarding, class selection, idle combat loop, bag/inventory, forge, boss gate/arena, and victory loot reveal. |
 | **Piece 2** | Media kit in `reports/t3-demo-media/` | **PASS** | 12 screenshots (8 desktop at 1600x900, 4 mobile at 390x844), all dark theme, no debug overlays, no empty states. PNG sizes: 12 KB to 60 KB (compressed with `pngquant`, well under 200 KB/300 KB limits). 2 animated GIFs (1.0 MB and 1.3 MB) + 2 MP4 clips (184 KB and 275 KB) generated via `ffmpeg` (well under 5 MB limit). |
-| **Piece 3** | Written pieces (`submission.md`, `demo-script-v2.md`, `judge-walkthrough.md`, `pitch-outline.md`) | **PASS** | Updated with exact v2 mechanics (7 classes, 5 chapters, Relic 30 Yarn + 1 Moon Pearl recipe, EIP-712 vouchers on Avalanche Fuji testnet). `node scripts/check-links.mjs` exits 0 (0 broken links across 51 markdown files and 718 checked links). |
+| **Piece 3** | Written pieces (`submission.md`, `demo-script-v2.md`, `judge-walkthrough.md`, `pitch-outline.md`) | **PASS** | Updated with exact v2 mechanics (7 classes, 5 chapters, Relic 30 Yarn + 1 Moon Pearl recipe, EIP-712 vouchers on Avalanche Fuji testnet). `node scripts/check-links.mjs` exits 0 (0 broken links across 52 markdown files and 740 checked links). |
+| **T3 FIX 1** | Merge resolution with `origin/main` | **PASS** | Clean merge from `origin/main` (containing T4 #186, #187, #188, T5 #190). Kept all T4 additions. Live demo URL updated to `https://taskbarhero-eight.vercel.app` everywhere. Zero conflict markers. |
+
+### T3 FIX 1: Merge Details & Changed Files
+- **Branch**: `ai/antigravity-t3-demo-media`
+- **Action**: Merged `origin/main` (commit `3b82d52`) into branch without rebase or force-push.
+- **Merge Conflict Resolution**:
+  - `docs/submission.md`: Started from main's version, preserved all T4 content and owner TODOs (`Deadline and platform: TBD, confirm with organizers.`), verified live URL `https://taskbarhero-eight.vercel.app`, re-applied pitch video TODO and links to T3 media kit & judge walkthrough.
+  - `docs/pitch-outline.md`: Started from main's version, preserved complete T4 Cat RPG v2 draft section (all 7 slides, speaker notes, screenshot list), verified live URL `https://taskbarhero-eight.vercel.app`, re-applied T3 Verified Media Kit index table and demo script / judge walkthrough links.
+  - `docs/judge-walkthrough.md`: Updated live URL reference to `https://taskbarhero-eight.vercel.app`.
+  - `reports/t3-demo-media.md`: Documented merge resolution and updated diffs/check logs.
+- **Files Changed in Merge Resolution**:
+  1. `docs/pitch-outline.md`
+  2. `docs/submission.md`
+  3. `docs/judge-walkthrough.md`
+  4. `reports/t3-demo-media.md`
 
 ---
 
@@ -47,11 +62,11 @@ STATUS: DONE
 
 ### `git diff --stat origin/main...HEAD`
 ```text
- docs/demo-script-v2.md                    | 162 ++++++-----------
- docs/judge-walkthrough.md                 | 137 +++++++++++++++
- docs/pitch-outline.md                     | 281 +++++++++---------------------
- docs/submission.md                        | 107 +++++++-----
- reports/t3-demo-media.md                  | 269 ++++++++++++++++++++++++++++
+ docs/demo-script-v2.md                    | 162 +++++---------
+ docs/judge-walkthrough.md                 | 137 ++++++++++++
+ docs/pitch-outline.md                     |  29 ++-
+ docs/submission.md                        |  16 +-
+ reports/t3-demo-media.md                  | 356 ++++++++++++++++++++++++++++++
  reports/t3-demo-media/01-title.png        | Bin 0 -> 40789 bytes
  reports/t3-demo-media/02-class-pick.png   | Bin 0 -> 30593 bytes
  reports/t3-demo-media/03-idle-loop.png    | Bin 0 -> 39105 bytes
@@ -68,7 +83,7 @@ STATUS: DONE
  reports/t3-demo-media/13-idle-loop.mp4    | Bin 0 -> 188091 bytes
  reports/t3-demo-media/14-boss-fight.gif   | Bin 0 -> 1337269 bytes
  reports/t3-demo-media/14-boss-fight.mp4   | Bin 0 -> 281278 bytes
- 21 files changed, 610 insertions(+), 346 deletions(-)
+ 21 files changed, 588 insertions(+), 112 deletions(-)
 ```
 
 ### `git diff --name-only origin/main...HEAD`
@@ -122,12 +137,84 @@ Already up to date
 │   to run scripts.                                                            │
 │                                                                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
-Done in 381ms using pnpm v10.28.0
+Done in 459ms using pnpm v10.28.0
 ```
 
 ### Deno Generation Drift Check
 ```text
 $ pnpm gen:deno && git diff --exit-code -- supabase/functions
+> taskbar-hero@0.0.0 gen:deno /Users/bao/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+(exit code: 0, zero drift)
+```
+
+### TypeScript Typecheck (`pnpm typecheck`)
+```text
+$ pnpm typecheck
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/api-contract typecheck$ tsc --noEmit
+apps/web typecheck$ tsc --noEmit
+(exit code: 0, all 6 projects passed)
+```
+
+### Linter (`pnpm lint`)
+```text
+$ pnpm lint
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/api-contract lint$ tsc --noEmit
+apps/web lint$ tsc --noEmit
+(exit code: 0, all 6 projects passed)
+```
+
+### Unit Tests (`pnpm test`)
+```text
+$ pnpm test
+Scope: 6 of 7 workspace projects
+packages/auth: 2 passed (7 tests)
+packages/chain: 2 passed (7 tests)
+packages/game-rules: 22 passed | 3 skipped (339 passed, 2 expected fail)
+supabase/tests: 18 passed (277 tests)
+packages/api-contract: 1 passed (16 tests)
+apps/web: 89 passed (1140 tests)
+(exit code: 0, all unit test suites passed)
+```
+
+### Project Build (`pnpm build`)
+```text
+$ pnpm build
+Scope: 6 of 7 workspace projects
+dist/index.html                               2.06 kB │ gzip:   0.75 kB
+dist/assets/index-DlCFLBQp.css              109.45 kB │ gzip:  17.48 kB
+dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+dist/assets/index-BpfPtMNC.js               720.90 kB │ gzip: 109.27 kB
+✓ built in 346ms
+(exit code: 0)
+```
+
+### Merge Conflict Markers Check (`grep -rn '<<<<<<<' docs`)
+```text
+$ grep -rn '<<<<<<<' docs
+(exit code: 1, zero conflict markers in docs)
+```
+
+### Link and Path Check (`node scripts/check-links.mjs`)
+```text
+$ node scripts/check-links.mjs
+Checked 52 markdown files and 740 links/paths.
+
+✓ All links, image paths, and backticked repo paths exist on disk.
+(exit code: 0)
+```
 > taskbar-hero@0.0.0 gen:deno /Users/bao/taskbar-hero
 > node scripts/gen-deno-json.mjs
 
