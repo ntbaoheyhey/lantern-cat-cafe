@@ -364,3 +364,5 @@ $ git diff --check
 ```
 
 README preservation/package scope assertion: `PASS: judge block is 11 lines; existing README exactly preserved; only package scripts changed`. All final changed files are inside the allowed list. The remote printed its standard PR suggestion during push; no PR was created or opened. The final report-only commit is pushed to the same branch.
+
+Final committed-diff review found an extra trailing blank line in the HTTP evidence; removed it. `git diff --check origin/main...HEAD` passes after this report-artifact cleanup.
