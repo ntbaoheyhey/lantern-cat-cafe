@@ -182,7 +182,7 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
       const h2 = screen.getByRole('heading', { level: 2 });
       expect(h2.textContent).toBe('Welcome back!');
       const h3 = screen.getByRole('heading', { level: 3 });
-      expect(h3.textContent).toBe('Offline gains');
+      expect(h3.textContent).toBe('While you were away');
     });
 
     it('check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap', () => {

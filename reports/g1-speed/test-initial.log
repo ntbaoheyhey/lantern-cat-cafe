@@ -1,0 +1,106 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/g1-speed/taskbar hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/supabase/tests
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  19:47:33
+packages/chain test:    Duration  290ms (transform 70%, import 21%, worker 5%, tests 4%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  19:47:33
+packages/auth test:    Duration  811ms (import 52%, tests 39%, transform 8%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  21 passed (21)
+supabase/tests test:       Tests  442 passed (442)
+supabase/tests test:    Start at  19:47:33
+supabase/tests test:    Duration  6.83s (tests 78%, import 15%, transform 7%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  22 passed | 3 skipped (25)
+packages/game-rules test:       Tests  339 passed | 2 expected fail | 11 skipped (352)
+packages/game-rules test:    Start at  19:47:33
+packages/game-rules test:    Duration  26.07s (tests 94%, transform 4%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  19:48:00
+packages/api-contract test:    Duration  237ms (transform 78%, import 17%, tests 3%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/g1-speed/taskbar hero/apps/web
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx (18 tests | 1 failed) 422ms
+apps/web test:    ❯ v2 Loot accessibility & reduced-motion audit (18)
+apps/web test:      ❯ WelcomeBack (6)
+apps/web test:        × check 4: heading hierarchy has single top h2 and sub-heading h3 27ms
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx (8 tests | 8 failed) 897ms
+apps/web test:    × hands the result to the existing MintPanel with the unchanged voucher 286ms
+apps/web test:    × shows connect-wallet once and does not forge or mint without a wallet 102ms
+apps/web test:    × renders not_enough_yarn without a mint call 91ms
+apps/web test:    × renders no_moon_pearl without a mint call 59ms
+apps/web test:    × renders daily_limit without a mint call 85ms
+apps/web test:    × surfaces a wallet handoff error once 80ms
+apps/web test:    × does not remount a consumed voucher while the v2 refresh is in flight 75ms
+apps/web test:    × reuses confirmation reporting after a confirmed chain mint, without another mint call 117ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > hands the result to the existing MintPanel with the unchanged voucher
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > shows connect-wallet once and does not forge or mint without a wallet
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders not_enough_yarn without a mint call
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders no_moon_pearl without a mint call
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders daily_limit without a mint call
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > surfaces a wallet handoff error once
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > does not remount a consumed voucher while the v2 refresh is in flight
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > reuses confirmation reporting after a confirmed chain mint, without another mint call
+apps/web test: TypeError: loop.setEquipQueued is not a function
+apps/web test:  ❯ Object.dispose src/game/v2/storeV2.ts:65:56
+apps/web test:      63|       return next;
+apps/web test:      64|     },
+apps/web test:      65|     dispose() { disposed = true; intents.clear(); loop.setEquipQueued(…
+apps/web test:        |                                                        ^
+apps/web test:      66|   };
+apps/web test:      67| }
+apps/web test:  ❯ src/layout/StageLayout.tsx:183:26
+apps/web test:  ❯ Object.react_stack_bottom_frame ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28668:13
+apps/web test:  ❯ runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+apps/web test:  ❯ commitHookEffectListUnmount ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:13815:17
+apps/web test:  ❯ commitHookPassiveUnmountEffects ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:13846:11
+apps/web test:  ❯ commitPassiveUnmountEffectsInsideOfDeletedTree_begin ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:17754:13
+apps/web test:  ❯ recursivelyTraversePassiveUnmountEffects ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:17575:13
+apps/web test:  ❯ commitPassiveUnmountOnFiber ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:17617:11
+apps/web test:  ❯ flushPassiveEffects ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:20130:9
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+apps/web test:  FAIL  src/layout/a11y/v2-loot.a11y.test.tsx > v2 Loot accessibility & reduced-motion audit > WelcomeBack > check 4: heading hierarchy has single top h2 and sub-heading h3
+apps/web test: AssertionError: expected 'While you were away' to be 'Offline gains' // Object.is equality
+apps/web test: Expected: "Offline gains"
+apps/web test: Received: "While you were away"
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx:185:30
+apps/web test:     183|       expect(h2.textContent).toBe('Welcome back!');
+apps/web test:     184|       const h3 = screen.getByRole('heading', { level: 3 });
+apps/web test:     185|       expect(h3.textContent).toBe('Offline gains');
+apps/web test:        |                              ^
+apps/web test:     186|     });
+apps/web test:     187|
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+apps/web test:  Test Files  2 failed | 90 passed (92)
+apps/web test:       Tests  9 failed | 1152 passed (1161)
+apps/web test:    Start at  19:48:00
+apps/web test:    Duration  8.27s (environment 53%, tests 31%, import 11%, transform 4%)
+apps/web test: Environment  jsdom was created 92 times · 38.19s total, 53% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/.codex/worktrees/g1-speed/taskbar hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

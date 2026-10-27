@@ -4,9 +4,10 @@ vi.mock('phaser', () => ({ default: { Scene: class {}, Scenes: { Events: { CREAT
 vi.mock('../rig', () => ({ CLASS_LOOKS: { warrior: { name: 'warrior' }, witch: { name: 'witch' } }, bakeCat: vi.fn(() => ({
   key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle' }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack' }, hurt: { key: 'cat-hurt' } },
 })) }));
-vi.mock('../arena/assets', () => ({ equippedVisuals: () => ({}), bakeMonster: () => ({ walk: 'monster-walk' }) }));
+vi.mock('../arena/assets', () => ({ equippedVisuals: vi.fn(() => ({})), bakeMonster: () => ({ walk: 'monster-walk' }) }));
 vi.mock('../combat', async () => await vi.importActual('../combat/timeline'));
 import { StageScene } from './StageScene';
+import { equippedVisuals } from '../arena/assets';
 import { bakeCat, CLASS_LOOKS } from '../rig';
 import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
 
@@ -99,4 +100,41 @@ it('shows a muted Miss without flashing or shaking a dodging target', () => {
   scene.update(0, 20);
   expect(text.mock.calls[0]!.slice(2, 4)).toEqual(['Miss', expect.objectContaining({ color: '#b8a9c9' })]);
   expect(image).not.toHaveBeenCalled();
+});
+
+it('preserves actors and the cue loop for plain claims and locks; mounts one pair for changed visuals', () => {
+  const { scene, start, add, cat, monster } = sceneHarness();
+  const initial = sampleServerStateV2({ kills: 0, round: 1 });
+  scene.show(initial, false); start();
+  const director = scene['director'];
+  const destroy = vi.spyOn(director!, 'destroy');
+  scene.show({ ...initial, serverTime: 1001 }, false);
+  scene.show({ ...initial, inventory: initial.inventory.map(i => ({ ...i, locked: !i.locked })) }, false);
+  scene.show({ ...initial, progress: { ...initial.progress, kills: 2 } }, false);
+  expect(add).toHaveBeenCalledTimes(2);
+  expect(scene['director']).toBe(director);
+  expect(destroy).not.toHaveBeenCalled();
+  expect(cat.destroy).not.toHaveBeenCalled();
+  expect(monster.destroy).not.toHaveBeenCalled();
+  // Each rebuild creates a fresh pair. Only the visual identity changes here.
+  add.mockReturnValueOnce(cat).mockReturnValueOnce(monster);
+  vi.mocked(equippedVisuals).mockReturnValueOnce({ weapon: { set: 'tin', rarity: 'uncommon' } });
+  scene.show({ ...initial, equipped: { ...initial.equipped, weapon: initial.inventory[1]!.id } }, false);
+  expect(add).toHaveBeenCalledTimes(4);
+  expect(destroy).toHaveBeenCalledOnce();
+  expect(cat.destroy).toHaveBeenCalledOnce();
+});
+
+it('relayouts existing actors on resize and applies reduced motion without a rebuild', () => {
+  const { scene, start, add, cat, monster } = sceneHarness();
+  const state = sampleServerStateV2();
+  scene.show(state, false); start();
+  Object.assign(scene.scale, { width: 500 });
+  scene.relayout();
+  expect(cat.setPosition).toHaveBeenCalledWith(150, expect.any(Number));
+  expect(monster.setPosition).toHaveBeenCalledWith(350, expect.any(Number));
+  scene.show(state, true);
+  expect(cat.stop).toHaveBeenCalled();
+  expect(monster.stop).toHaveBeenCalled();
+  expect(add).toHaveBeenCalledTimes(2);
 });

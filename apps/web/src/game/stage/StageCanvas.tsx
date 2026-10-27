@@ -7,29 +7,37 @@ import type { StageScene } from './StageScene';
 
 export function StageCanvas({ state, zoom, width, reducedMotion }: { state: ServerStateV2; zoom: number; width: number; reducedMotion: boolean }) {
   const host = useRef<HTMLDivElement>(null), scene = useRef<StageScene | null>(null);
-  const latest = useRef({ state, reducedMotion }); latest.current = { state, reducedMotion };
+  const latest = useRef({ state, reducedMotion, logicalWidth: Math.max(160, Math.floor(width / zoom)) });
+  latest.current = { state, reducedMotion, logicalWidth: Math.max(160, Math.floor(width / zoom)) };
+  const gameRef = useRef<Phaser.Game | null>(null);
   const [error, setError] = useState(false);
   const logicalWidth = Math.max(160, Math.floor(width / zoom));
-  // Mount immediately, then recreate Phaser only after a resize burst settles.
-  const [gameWidth, setGameWidth] = useState(logicalWidth);
-  useEffect(() => {
-    const timer = window.setTimeout(() => setGameWidth(logicalWidth), 150);
-    return () => window.clearTimeout(timer);
-  }, [logicalWidth]);
+  // Keep one game for this mount. Phaser already pauses its render loop on visibilitychange.
   useEffect(() => {
     let cancelled = false, game: Phaser.Game | null = null;
-    const onVisibility = () => { if (document.hidden) game?.pause(); else game?.resume(); };
-    document.addEventListener('visibilitychange', onVisibility);
     void Promise.all([import('phaser'), import('./StageScene')]).then(([{ default: Phaser }, { StageScene }]) => {
       if (cancelled) return;
       const stage = new StageScene(); scene.current = stage;
-      game = new Phaser.Game({ type: Phaser.CANVAS, parent: host.current!, width: gameWidth, height: 96, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
+      game = new Phaser.Game({ type: Phaser.CANVAS, parent: host.current!, width: latest.current.logicalWidth, height: 96, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
+      gameRef.current = game;
       game.scene.add('v2-stage', stage, true);
       stage.show(latest.current.state, latest.current.reducedMotion);
-      onVisibility();
     }).catch(() => { if (!cancelled) setError(true); });
-    return () => { cancelled = true; scene.current = null; document.removeEventListener('visibilitychange', onVisibility); game?.destroy(true); };
-  }, [gameWidth]);
+    return () => {
+      cancelled = true; scene.current = null; gameRef.current = null;
+      if (!game) return;
+      const retiring = game;
+      retiring.destroy(true);
+      // destroy() only sets pendingDestroy; a hidden/paused loop may never step again.
+      // The public step consumes pendingDestroy before updating or rendering anything.
+      if (retiring.isBooted) retiring.step(performance.now(), 0);
+      else retiring.events.once('ready', () => queueMicrotask(() => retiring.step(performance.now(), 0)));
+    };
+  }, []);
+  useEffect(() => {
+    gameRef.current?.scale.resize(logicalWidth, 96);
+    scene.current?.relayout();
+  }, [logicalWidth]);
   useEffect(() => { scene.current?.show(state, reducedMotion); }, [state, reducedMotion]);
   return <div className="v2-stage-art" style={{ width: logicalWidth * zoom, height: 96 * zoom }}>
     <BackdropView art={backdropFor(state.progress.chapter)} width={logicalWidth} scale={zoom} />

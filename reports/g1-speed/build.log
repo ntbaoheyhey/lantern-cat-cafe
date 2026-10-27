@@ -1,0 +1,35 @@
+
+> taskbar-hero@0.0.0 build /Users/bao/.codex/worktrees/g1-speed/taskbar hero
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/g1-speed/taskbar hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1797 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.06 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/index-DlCFLBQp.css              109.45 kB │ gzip:  17.48 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/assets-D6-EPYEY.js                0.97 kB │ gzip:   0.58 kB
+apps/web build: dist/assets/ArenaScene-BpxSNaIm.js            5.90 kB │ gzip:   2.31 kB
+apps/web build: dist/assets/StageScene-s8WtypQh.js            7.14 kB │ gzip:   2.88 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/index-CBIiXMcs.js               722.96 kB │ gzip: 109.86 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 322ms
+apps/web build: Done

@@ -16,7 +16,7 @@ vi.mock('../../forge/MintPanel', () => ({ MintPanel: (props: { voucher: RelicVou
   return <p data-testid="mint-flow">Voucher {props.voucher.nonce}</p>;
 } }));
 vi.mock('../../forge/report', () => ({ reportMint: fake.report }));
-const loop = { start: fake.start, stop: fake.stop, retry: fake.retry, forgeRelic: fake.forge, onEvent: () => () => {}, subscribe: () => () => {},
+const loop = { setEquipQueued: vi.fn(), whenIdle: vi.fn(async () => {}), start: fake.start, stop: fake.stop, retry: fake.retry, forgeRelic: fake.forge, onEvent: () => () => {}, subscribe: () => () => {},
   getSnapshot: () => ({ state: fake.state, lastEvent: null, busy: null, loadFailed: false, paused: false, eventSeq: 0 }) };
 vi.mock('../v2/storeV2', async importOriginal => ({ ...await importOriginal<typeof import('../v2/storeV2')>(),
   getGameLoopV2: () => loop, useGameSnapshotV2: () => loop.getSnapshot(), useGameModeV2: () => ({ demo: fake.demo, notice: null }) }));
