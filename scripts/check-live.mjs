@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = (process.env.SITE_URL || 'https://web-zeta-tan-13.vercel.app').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || 'https://taskbarhero-eight.vercel.app').replace(/\/$/, '');
 const SUPABASE = (process.env.SUPABASE_URL || 'https://qoalewtxflagoprrxrgh.supabase.co').replace(/\/$/, '');
 const RPC = process.env.FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/rpc';
 const FUNCTIONS = ['auth-nonce', 'auth-verify', 'game-state', 'idle-claim', 'equip', 'boss-fight', 'upgrade', 'relic-forge', 'relic-mint-report'];
