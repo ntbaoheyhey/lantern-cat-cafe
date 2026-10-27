@@ -8,8 +8,8 @@ import { as, migratedDb } from "../src/game-db.ts";
 import { call, newPlayer, setStacks, stack } from "./helpers.ts";
 import { pgliteV2Store } from "./v2-store.ts";
 
-// Apply proposal text ONLY to this disposable in-memory clone. These are not migrations,
-// and the unmodified-schema expected failures in security-races.test.ts must remain visible.
+// Only rate/nonce proposals are applied to this disposable clone. Integrity assertions
+// now run against the approved migration, without reapplying its historical doc blocks.
 let db: PGlite;
 const store = pgliteV2Store(() => db);
 const deps = { store, seedSecret: "proposal-test-only" };
@@ -19,7 +19,7 @@ function sqlBlocks(file: string) {
 }
 beforeAll(async () => {
   db = await migratedDb();
-  for (const file of ["rate-limit-v2.md", "v2-state-integrity.md"]) for (const sql of sqlBlocks(file)) await db.exec(sql);
+  for (const file of ["rate-limit-v2.md"]) for (const sql of sqlBlocks(file)) await db.exec(sql);
   await db.exec(readFileSync(new URL("../../../docs/proposals/sql/siwe-nonces-rls.sql", import.meta.url), "utf8"));
 });
 afterAll(async () => { await db.close(); });
@@ -74,10 +74,12 @@ describe("S2 proposal SQL in a disposable database only", () => {
     const recipe = v2.RECIPES.find(r => r.id === "rcp.common")!;
     await setStacks(db, p, { ...recipe.materials, fish: recipe.fish });
     const crafted = await craftV2(deps, p, { recipeId: recipe.id, slot: "weapon" });
+    expect(crafted.item.itemKey).toBe(starter.itemKey);
     const before = (await raw(p))!;
     await expect(salvageV2(deps, p, { itemIds: [starter.id, crafted.item.id] })).rejects.toMatchObject({ code: "invalid_request" });
     expect((await raw(p))!.stacks).toEqual(before.stacks);
     expect((await raw(p))!.inventory).toHaveLength(2);
+    expect((await raw(p))!.inventory).toEqual(before.inventory);
     await expect(salvageV2(deps, p, { itemIds: [starter.id] })).rejects.toMatchObject({ code: "invalid_request" });
     await salvageV2(deps, p, { itemIds: [crafted.item.id] });
     expect(await stack(db, p, "yarn")).toBe(v2.salvage(crafted.item).yarn);

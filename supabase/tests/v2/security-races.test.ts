@@ -131,28 +131,34 @@ describe("S2 route concurrency and replay over migrated SQL", () => {
     expect((await raw(p))!.inventory.find(i => i.id === a!.id)?.locked).toBe(true);
     await expect(salvageV2(deps, p, { itemIds: [a!.id] })).rejects.toMatchObject({ code: "locked" });
   });
-  // Explicit expected failures retain the desired invariants. Fixing these durably needs an
-  // approved SQL migration, outside S2. A future fix makes Vitest fail until .fails is removed.
-  it.fails("PROPOSAL: replaying a funded craft must reuse the original result rather than charge again", async () => {
+  it("replaying a funded craft must reuse the original result rather than charge again", async () => {
     const p = await fresh(); await setStacks(db, p, Object.fromEntries(Object.entries(cost).map(([id, qty]) => [id, qty * 2])));
-    const first = await craftV2(deps, p, craftBody);
-    const retry = await craftV2(deps, p, craftBody);
+    const body = { ...craftBody, requestId: crypto.randomUUID() };
+    const first = await craftV2(deps, p, body);
+    const retry = await craftV2(deps, p, body);
     expect(retry.item.id).toBe(first.item.id);
+    for (const [id, qty] of Object.entries(cost)) expect(await stack(db, p, id)).toBe(qty);
   });
-  it.fails("PROPOSAL: a lost boss response replay must not spend another key on a rematch", async () => {
+  it("a lost boss response replay must not spend another key on a rematch", async () => {
     const p = await readyBoss(); await setStacks(db, p, { catKey: v2.V2_CONFIG.boss.keyCost * 2 });
-    await fightBossV2(deps, p, { chapter: 1 });
-    await fightBossV2(deps, p, { chapter: 1 });
+    const body = { chapter: 1, requestId: crypto.randomUUID() };
+    const first = await fightBossV2(deps, p, body);
+    const retry = await fightBossV2(deps, p, body);
+    expect(retry.timeline).toEqual(first.timeline);
+    expect(retry.chest).toEqual(first.chest);
+    expect(await stack(db, p, "catKey")).toBe(v2.V2_CONFIG.boss.keyCost + (first.chest?.keys ?? 0));
     expect((await raw(p))!.fights).toBe(1);
   });
-  it.fails("PROPOSAL: an equip after combat snapshot must invalidate that boss result", async () => {
+  it("an equip after combat snapshot must invalidate that boss result", async () => {
     const p = await readyBoss(); const before = (await raw(p))!;
     await equipV2(deps, p, { itemId: null, slot: "weapon" });
+    const keys = await stack(db, p, "catKey");
     expect(await store.bossFight({ playerId: p, chapter: 1, expectedRev: before.progressRev, fightNo: before.fights, won: true,
       keyCost: v2.V2_CONFIG.boss.keyCost, cooldownS: v2.V2_CONFIG.boss.lossCooldownSeconds, chest: { first: { stacks: {}, items: [] }, rematch: { stacks: {}, items: [] } },
       bagLimit: v2.V2_CONFIG.bag.limit, caps: v2.STACK_CAPS_V2, bossRound: chapter.roundsPerChapter })).toMatchObject({ error: "stale" });
+    expect(await stack(db, p, "catKey")).toBe(keys);
   });
-  it.fails("PROPOSAL: reject salvage of an unequipped starter so class switching cannot farm free materials", async () => {
+  it("reject salvage of an unequipped starter so class switching cannot farm free materials", async () => {
     const p = await fresh();
     const starter = (await raw(p))!.inventory[0]!;
     await chooseClassV2(deps, p, { classId: "archer" });
@@ -162,4 +168,113 @@ describe("S2 route concurrency and replay over migrated SQL", () => {
     await chooseClassV2(deps, p, { classId: "warrior" });
     expect((await raw(p))!.inventory.filter(i => i.weaponType === "sword")).toHaveLength(1);
   });
+  it.each(["craft", "boss"] as const)("parallel %s with the same requestId stores one result and spends once", async route => {
+    const p = route === "boss" ? await readyBoss() : await fresh();
+    if (route === "craft") await setStacks(db, p, cost);
+    const requestId = crypto.randomUUID(); const using = racing();
+    if (route === "craft") {
+      const body = { ...craftBody, requestId };
+      const [a, b] = await Promise.all([craftV2(using, p, body), craftV2(using, p, body)]);
+      expect(a.item).toEqual(b.item); expect(await stack(db, p, "fish")).toBe(0);
+    } else {
+      const body = { chapter: 1, requestId };
+      const [a, b] = await Promise.all([fightBossV2(using, p, body), fightBossV2(using, p, body)]);
+      expect(a.timeline).toEqual(b.timeline); expect(a.chest).toEqual(b.chest);
+      expect((await raw(p))!.fights).toBe(1);
+    }
+    expect(await count(db, "select 1 from v2_action_results where player_id = $1", p)).toBe(1);
+  });
+  it("binds a requestId to its intent, permits a new id and scopes ids to each player", async () => {
+    const p = await fresh(); const q = await fresh(); const requestId = crypto.randomUUID();
+    for (const player of [p, q]) await setStacks(db, player, Object.fromEntries(Object.entries(cost).map(([id, qty]) => [id, qty * 2])));
+    const first = await craftV2(deps, p, { ...craftBody, requestId });
+    const before = (await raw(p))!;
+    await expect(craftV2(deps, p, { ...craftBody, slot: "helmet", requestId })).rejects.toMatchObject({ code: "invalid_request" });
+    expect((await raw(p))!.stacks).toEqual(before.stacks);
+    const repeat = await craftV2(deps, p, { ...craftBody, requestId: crypto.randomUUID() });
+    expect(repeat.item.id).not.toBe(first.item.id); expect(await stack(db, p, "fish")).toBe(0);
+    const other = await craftV2(deps, q, { ...craftBody, requestId });
+    expect(other.item.id).not.toBe(first.item.id); expect(await stack(db, q, "fish")).toBe(recipe.fish);
+  });
+  it("boss retries preserve timeline before key/cooldown previews, while a fresh id is a rematch", async () => {
+    const p = await readyBoss(); await setStacks(db, p, { catKey: v2.V2_CONFIG.boss.keyCost * 2 });
+    const requestId = crypto.randomUUID(); const first = await fightBossV2(deps, p, { chapter: 1, requestId });
+    const before = (await raw(p))!;
+    await expect(fightBossV2(deps, p, { chapter: 2, requestId })).rejects.toMatchObject({ code: "invalid_request" });
+    expect((await raw(p))!.stacks).toEqual(before.stacks);
+    await fightBossV2(deps, p, { chapter: 1, requestId: crypto.randomUUID() });
+    const last = (await raw(p))!; expect(last.fights).toBe(2);
+    const retry = await fightBossV2(deps, p, { chapter: 1, requestId });
+    expect(retry.timeline).toEqual(first.timeline); expect(retry.state.currencies.keys).toBe(last.stacks.catKey);
+    expect((await raw(p))!.fights).toBe(2);
+  });
+  it("replays a loss without a new simulation despite its active cooldown", async () => {
+    const p = await fresh(); await db.query("update cat_state set round=$2,kills=$3 where player_id=$1", [p, chapter.roundsPerChapter, chapter.killsPerRound]);
+    await setStacks(db, p, { catKey: 1 }); const body = { chapter: 1, requestId: crypto.randomUUID() };
+    const first = await fightBossV2(deps, p, body); expect(first.won).toBe(false);
+    expect((await fightBossV2(deps, p, body)).timeline).toEqual(first.timeline);
+    expect((await raw(p))!.fights).toBe(1);
+  });
+  it("looks up a craft retry before last-material shortage and returns a fresh snapshot", async () => {
+    const p = await fresh(); await setStacks(db, p, cost); const body = { ...craftBody, requestId: crypto.randomUUID() };
+    const first = await craftV2(deps, p, body); expect(await stack(db, p, "fish")).toBe(0);
+    await setStacks(db, p, { fish: 7 });
+    const retry = await craftV2(deps, p, body); expect(retry.item.id).toBe(first.item.id);
+    expect(retry.state.currencies.fish).toBe(7);
+  });
+  it("rechecks a prior miss when the winner commits before the retry's preview", async () => {
+    const p = await fresh(); await setStacks(db, p, cost); const body = { ...craftBody, requestId: crypto.randomUUID() };
+    let missed = false;
+    const using = { ...deps, store: { ...store, actionResult: async (...args: Parameters<typeof store.actionResult>) => {
+      if (!missed) { missed = true; await craftV2(deps, p, body); return null; }
+      return store.actionResult(...args);
+    } } };
+    expect((await craftV2(using, p, body)).item.id).toBe((await craftV2(deps, p, body)).item.id);
+    expect(await stack(db, p, "fish")).toBe(0);
+  });
+  it("does not cache failed mutations and rolls back SQL exceptions with their spend", async () => {
+    const p = await fresh(); const requestId = crypto.randomUUID();
+    expect(await store.craft(p, cost, item(), 200, requestId, { ...craftBody })).toMatchObject({ error: "not_enough" });
+    expect(await count(db, "select 1 from v2_action_results where player_id = $1", p)).toBe(0);
+    await setStacks(db, p, cost);
+    await expect(store.craft(p, cost, item("invalid-slot"), 200, requestId, { ...craftBody })).rejects.toThrow();
+    expect((await raw(p))!.stacks).toEqual(cost);
+    expect(await count(db, "select 1 from v2_action_results where player_id = $1", p)).toBe(0);
+    const first = await craftV2(deps, p, { ...craftBody, requestId });
+    expect((await craftV2(deps, p, { ...craftBody, requestId })).item.id).toBe(first.item.id);
+  });
+  it.each([null, "bad", 1, "00000000-0000-1000-8000-000000000001"])("rejects malformed requestId %s before mutating either route", async requestId => {
+    const p = await fresh();
+    await expect(craftV2(deps, p, { ...craftBody, requestId })).rejects.toMatchObject({ code: "invalid_request" });
+    await expect(fightBossV2(deps, p, { chapter: 1, requestId })).rejects.toMatchObject({ code: "invalid_request" });
+    expect(await count(db, "select 1 from v2_action_results where player_id = $1", p)).toBe(0);
+  });
+  it("a claim snapshot invalidated by equip credits nothing; a fresh claim credits normally", async () => {
+    const p = await fresh(); const before = (await raw(p))!;
+    clock = before.lastClaimMicros / 1000 + 3600_000;
+    await equipV2(deps, p, { itemId: null, slot: "weapon" });
+    expect(await store.claim({ playerId: p, expectedLastMicros: before.lastClaimMicros, expectedRev: before.progressRev,
+      nowIso: new Date(clock).toISOString(), progress: {}, stackDeltas: { fish: 999 }, caps: {}, items: [], bagLimit: 200, dailyKeyDay: null })).toBeNull();
+    expect(await stack(db, p, "fish")).toBe(0);
+    await equipV2(deps, p, { itemId: before.inventory[0]!.id, slot: "weapon" });
+    expect((await claimV2(deps, p)).gains.fish).toBeGreaterThan(0);
+  });
+  it("same-item equip and empty-slot unequip do not bump revision; class swap does", async () => {
+    const p = await fresh(); const before = (await raw(p))!;
+    await equipV2(deps, p, { itemId: before.inventory[0]!.id, slot: "weapon" });
+    await equipV2(deps, p, { itemId: null, slot: "helmet" });
+    expect((await raw(p))!.progressRev).toBe(before.progressRev);
+    await chooseClassV2(deps, p, { classId: "archer" });
+    expect((await raw(p))!.progressRev).toBe(before.progressRev + 3); // class + sword off + bow on
+  });
+
+});
+
+it("scopes the same boss requestId to different players and keeps the stored timeline stable", async () => {
+  const p = await readyBoss(); const q = await readyBoss(); const requestId = crypto.randomUUID();
+  const first = await fightBossV2(deps, p, { chapter: 1, requestId });
+  const other = await fightBossV2(deps, q, { chapter: 1, requestId });
+  expect(first.won).toBe(true); expect(other.won).toBe(true);
+  expect((await raw(p))!.fights).toBe(1); expect((await raw(q))!.fights).toBe(1);
+  expect((await fightBossV2(deps, p, { chapter: 1, requestId })).timeline).toEqual(first.timeline);
 });

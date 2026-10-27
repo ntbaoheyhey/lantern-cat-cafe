@@ -190,3 +190,72 @@ describe('MockGameApiV2', () => {
     expect((await final.claim()).state.progress).toMatchObject({ chapter: 5, round: 10, kills: v2.CHAPTERS[4]!.killsPerRound });
   });
 });
+
+it.each(v2.CLASSES)('protects the $id starter but allows a paid item with the same catalog key', async cls => {
+  const storage = memory(); const recipe = v2.RECIPES.find(r => r.id === 'rcp.common')!;
+  const api = new MockGameApiV2({ storage, start: { ...recipe.materials, fish: recipe.fish } });
+  const chosen = await api.chooseClass(cls.id); const starter = chosen.inventory[0]!;
+  expect(starter.source).toBe('starter'); await api.equip(null, 'weapon');
+  const crafted = await api.craft('rcp.common', 'weapon'); expect(crafted.item.source).toBe('craft');
+  expect(crafted.item.itemKey).toBe(starter.itemKey);
+  const before = await api.getState();
+  await expect(api.salvage([starter.id, crafted.item.id])).rejects.toMatchObject({ code: 'invalid_request' });
+  expect(await api.getState()).toEqual(before);
+  await expect(api.salvage([starter.id])).rejects.toMatchObject({ code: 'invalid_request' });
+  await api.salvage([crafted.item.id]);
+  expect((await api.chooseClass(cls.id)).inventory).toHaveLength(1);
+  const saved = JSON.parse(storage.getItem(MOCK_V2_STORAGE_KEY)!);
+  expect(saved.state.stacks.yarn).toBe(v2.salvage(crafted.item).yarn);
+});
+it('bumps equipment revision only for actual changes, including class selection', async () => {
+  const storage = memory(); const api = new MockGameApiV2({ storage });
+  const rev = () => JSON.parse(storage.getItem(MOCK_V2_STORAGE_KEY)!).state.progressRev as number;
+  const chosen = await api.chooseClass('warrior'); expect(rev()).toBe(2);
+  await api.equip(chosen.inventory[0]!.id, 'weapon'); expect(rev()).toBe(2);
+  await api.equip(null, 'helmet'); expect(rev()).toBe(2);
+  await api.equip(null, 'weapon'); expect(rev()).toBe(3);
+  await api.equip(null, 'weapon'); expect(rev()).toBe(3);
+  await api.chooseClass('archer'); expect(rev()).toBe(5); // class change and bow equip
+});
+it('persists craft retry identity, rejects changed intent, and returns a fresh state', async () => {
+  const storage = memory(); const recipe = v2.RECIPES.find(r => r.id === 'rcp.common')!;
+  const api = new MockGameApiV2({ storage, start: { ...recipe.materials, fish: recipe.fish } });
+  await api.chooseClass('warrior'); const requestId = crypto.randomUUID();
+  const first = await api.craft('rcp.common', 'weapon', requestId);
+  const retry = await new MockGameApiV2({ storage }).craft('rcp.common', 'weapon', requestId);
+  expect(retry.item).toEqual(first.item); expect(retry.state.currencies.fish).toBe(0);
+  await expect(api.craft('rcp.common', 'helmet', requestId)).rejects.toMatchObject({ code: 'invalid_request' });
+  expect((await api.getState()).inventory).toHaveLength(2);
+});
+it('keeps failed mock request IDs retryable after a top-up and treats a new ID as a new craft', async () => {
+  const storage = memory(); const api = new MockGameApiV2({ storage }); await api.chooseClass('warrior');
+  const requestId = crypto.randomUUID(); await expect(api.craft('rcp.common', 'weapon', requestId)).rejects.toMatchObject({ code: 'not_enough' });
+  const saved = JSON.parse(storage.getItem(MOCK_V2_STORAGE_KEY)!); const recipe = v2.RECIPES.find(r => r.id === 'rcp.common')!;
+  saved.state.stacks = Object.fromEntries(Object.entries({ ...recipe.materials, fish: recipe.fish }).map(([id, qty]) => [id, qty * 2]));
+  storage.setItem(MOCK_V2_STORAGE_KEY, JSON.stringify(saved)); const funded = new MockGameApiV2({ storage });
+  const first = await funded.craft('rcp.common', 'weapon', requestId);
+  const second = await funded.craft('rcp.common', 'weapon', crypto.randomUUID());
+  expect(first.item.id).not.toBe(second.item.id); expect(second.state.currencies.fish).toBe(0);
+});
+it('replays the original boss timeline across a save reload without another key or cooldown check', async () => {
+  const storage = memory(fixture(ready(true))); const requestId = crypto.randomUUID();
+  const api = new MockGameApiV2({ storage, now: () => 0 }); const first = await api.fightBoss(1, requestId);
+  const retry = await new MockGameApiV2({ storage, now: () => 1000 }).fightBoss(1, requestId);
+  expect(retry.timeline).toEqual(first.timeline); expect(retry.chest).toEqual(first.chest);
+  expect(retry.state.serverTime).toBe(1);
+  expect(JSON.parse(storage.getItem(MOCK_V2_STORAGE_KEY)!).state.fights).toBe(1);
+  await expect(api.fightBoss(2, requestId)).rejects.toMatchObject({ code: 'invalid_request' });
+});
+it('loads a legacy save without source as drop without erasing progress', async () => {
+  const storage = memory(); const api = new MockGameApiV2({ storage }); const chosen = await api.chooseClass('warrior');
+  const saved = JSON.parse(storage.getItem(MOCK_V2_STORAGE_KEY)!); delete saved.state.items[0].source;
+  storage.setItem(MOCK_V2_STORAGE_KEY, JSON.stringify(saved)); const restored = await new MockGameApiV2({ storage }).getState();
+  expect(restored.inventory[0]!.id).toBe(chosen.inventory[0]!.id); expect(restored.inventory[0]!.source).toBe('drop');
+});
+it('never auto-salvages a starter grant from a full bag', async () => {
+  const items = Array.from({ length: v2.V2_CONFIG.bag.limit }, (_, i) => ({ ...gear(true)[1]!, id: `bag:${i}`, equipped: false }));
+  const storage = memory(fixture({ items, stacks: {} })); const api = new MockGameApiV2({ storage });
+  await api.chooseClass('archer'); await api.chooseClass('archer');
+  const state = await api.getState(); expect(state.inventory).toHaveLength(items.length + 1); expect(state.currencies.yarn).toBe(0);
+  expect(state.inventory.filter(item => item.source === 'starter')).toHaveLength(1);
+});

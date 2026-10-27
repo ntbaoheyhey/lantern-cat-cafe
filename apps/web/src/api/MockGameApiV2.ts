@@ -16,8 +16,9 @@ export interface MockGameApiV2Options {
   start?: Partial<Record<StackId, number>>;
 }
 export const MOCK_V2_STORAGE_KEY = 'taskbar-hero:v2-demo:1';
+type ActionRecord = { intent: string; result: object };
 type StoredV2 = { v: 1; state: v2.PlayerStateV2; lastClaimMs: number; counter: number; voucherNonce: number; founder: false;
-  pending?: RelicVoucher | null; todayRelic?: TodayRelic | null };
+  actions?: Record<string, ActionRecord>; pending?: RelicVoucher | null; todayRelic?: TodayRelic | null };
 const copy = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 const object = (value: unknown): value is Record<string, unknown> => value !== null && typeof value === 'object' && !Array.isArray(value);
 const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value);
@@ -43,10 +44,13 @@ function validSave(value: unknown): value is StoredV2 {
     ids.add(item.id);
     const def = v2.ITEMS.find(entry => entry.id === item.itemKey);
     if (!def || item.itemId !== def.id || item.slot !== def.slot || item.rarity !== def.rarity || item.weaponType !== def.weaponType || !count(item.level) || item.level < 1 || typeof item.locked !== 'boolean' || typeof item.equipped !== 'boolean') return false;
+    if (item.source === undefined) item.source = 'drop';
     if (!['starter', 'drop', 'chest', 'craft', 'founder'].includes(String(item.source))) return false;
     const lines = (x: unknown) => Array.isArray(x) && x.every(line => object(line) && v2.STATS.some(stat => stat.id === line.stat) && finite(line.value));
     if (!lines(item.bonus) || (item.bonusLines !== undefined && !lines(item.bonusLines))) return false;
   }
+  if (value.actions !== undefined && (!object(value.actions) || !Object.values(value.actions).every(record =>
+    object(record) && typeof record.intent === 'string' && object(record.result)))) return false;
   if (value.pending != null) {
     const p = value.pending;
     if (!object(p) || p.signature !== DEMO_SIGNATURE || p.player !== '0x0000000000000000000000000000000000000000' || typeof p.relicId !== 'string' || typeof p.nonce !== 'string' || !count(p.rarity) || !finite(p.expiry) || !CONFIG.rarities.some(rarity => rarity === p.rarityName)) return false;
@@ -98,17 +102,35 @@ export class MockGameApiV2 implements GameApiV2 {
       forgedToday, pending: this.data.pending ?? null, today: forgedToday ? this.data.todayRelic ?? null : null };
   }
   private snapshot(gate = v2.gateOfV2(this.data.state, this.today())): ServerStateV2 {
-    return copy(v2.stateViewV2(this.data.state, { nowS: Math.floor(this.now() / 1000), forge: this.forgeStatus(), founder: false, gate }));
+    const view = v2.stateViewV2(this.data.state, { nowS: Math.floor(this.now() / 1000), forge: this.forgeStatus(), founder: false, gate });
+    return copy({ ...view, inventory: view.inventory.map(item => ({ ...item, source: this.data.state.items.find(owned => owned.id === item.id)!.source })) });
+  }
+  private replay<T>(route: string, requestId: string | undefined, intent: object): T | null {
+    if (requestId === undefined) return null;
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)) throw new GameApiErrorV2('invalid_request');
+    const stored = this.data.actions?.[`${route}:${requestId.toLowerCase()}`];
+    if (!stored) return null;
+    if (stored.intent !== JSON.stringify(intent)) throw new GameApiErrorV2('invalid_request');
+    return copy(stored.result) as T;
+  }
+  private remember(route: string, requestId: string | undefined, intent: object, result: object): void {
+    if (requestId === undefined) return;
+    this.data.actions ??= {};
+    this.data.actions[`${route}:${requestId.toLowerCase()}`] = { intent: JSON.stringify(intent), result: copy(result) };
+  }
+  private equipmentRevision(before: v2.PlayerStateV2, after: v2.PlayerStateV2): void {
+    after.progressRev += after.items.filter(item => item.equipped !== (before.items.find(old => old.id === item.id)?.equipped ?? false)).length;
   }
   async getState(): Promise<ServerStateV2> { return this.snapshot(); }
   async chooseClass(classId: ClassId): Promise<ServerStateV2> {
     const chosen = this.accept(v2.chooseClass(this.data.state, classId));
     let state = chosen.state;
     if (chosen.starterWeapon) {
-      state = this.accept(v2.addItems(state, [chosen.starterWeapon], v2.V2_CONFIG.bag.limit, v2.salvage)).state;
-      // A full bag auto-salvages the starter just like any insertion.
+      state = this.accept(v2.addItems(state, [chosen.starterWeapon], Math.max(v2.V2_CONFIG.bag.limit, state.items.length + 1), v2.salvage)).state;
+      // SQL grants the starter beyond the bag cap; never auto-salvage a free grant.
       if (state.items.some(item => item.id === chosen.starterWeapon!.id)) state = this.accept(v2.equip(state, chosen.starterWeapon.id, 'weapon')).state;
     }
+    this.equipmentRevision(this.data.state, state);
     this.data.state = state; this.save(); return this.snapshot();
   }
   async claim(): Promise<ClaimResultV2> {
@@ -124,10 +146,15 @@ export class MockGameApiV2 implements GameApiV2 {
   }
   async equip(itemId: string | null, slot: GearSlotId): Promise<ServerStateV2> {
     if (!v2.GEAR_SLOT_IDS.some(id => id === slot)) throw new GameApiErrorV2('invalid_request');
-    this.data.state = this.accept(v2.equip(this.data.state, itemId, slot)).state;
+    const next = this.accept(v2.equip(this.data.state, itemId, slot)).state;
+    this.equipmentRevision(this.data.state, next);
+    this.data.state = next;
     this.save(); return this.snapshot();
   }
-  async fightBoss(chapter: number): Promise<BossFightResultV2> {
+  async fightBoss(chapter: number, requestId?: string): Promise<BossFightResultV2> {
+    const intent = { chapter };
+    const replay = this.replay<Omit<BossFightResultV2, 'state'>>('v2-boss-fight', requestId, intent);
+    if (replay) return { ...replay, state: this.snapshot() };
     const state = this.data.state;
     if (!state.classId) throw new GameApiErrorV2('no_class');
     const nowS = Math.floor(this.now() / 1000);
@@ -145,16 +172,24 @@ export class MockGameApiV2 implements GameApiV2 {
       const delta = qty - (state.stacks[id] ?? 0) + (id === 'catKey' && r.keySpent ? v2.V2_CONFIG.boss.keyCost : 0);
       if (delta > 0) added[id] = delta;
     }
-    this.data.state = r.state; this.data.counter += result.won ? 2 : 1; this.save();
-    return { won: result.won, timeline: v2.timelineViewV2(result.log), ...(result.won ? { chest: v2.lootViewV2(added, r.items, r.autoSalvaged) } : {}), keySpent: r.keySpent, state: this.snapshot() };
+    this.data.state = r.state; this.data.counter += result.won ? 2 : 1;
+    const payload = { won: result.won, timeline: v2.timelineViewV2(result.log), ...(result.won ? { chest: v2.lootViewV2(added, r.items, r.autoSalvaged) } : {}), keySpent: r.keySpent };
+    this.remember('v2-boss-fight', requestId, intent, payload); this.save();
+    return { ...payload, state: this.snapshot() };
   }
-  async craft(recipeId: RecipeId, slot: GearSlotId): Promise<CraftResultV2> {
+  async craft(recipeId: RecipeId, slot: GearSlotId, requestId?: string): Promise<CraftResultV2> {
+    const intent = { recipeId, slot };
+    const replay = this.replay<Omit<CraftResultV2, 'state'>>('v2-craft', requestId, intent);
+    if (replay) return { ...replay, state: this.snapshot() };
     const r = this.accept(v2.applyCraft(this.data.state, recipeId, slot, this.seed(), Math.floor(this.now() / 1000)));
-    this.data.state = r.state; this.data.counter++; this.save();
-    return { item: v2.itemViewV2(r.item), state: this.snapshot() };
+    this.data.state = r.state; this.data.counter++;
+    const payload = { item: { ...v2.itemViewV2(r.item), source: r.item.source } };
+    this.remember('v2-craft', requestId, intent, payload); this.save();
+    return { ...payload, state: this.snapshot() };
   }
   async salvage(itemIds: string[]): Promise<SalvageResultV2> {
     const r = this.accept(v2.applySalvage(this.data.state, itemIds));
+    if (this.data.state.items.some(item => itemIds.includes(item.id) && item.source === 'starter')) throw new GameApiErrorV2('invalid_request');
     this.data.state = r.state; this.save();
     const loot = v2.lootViewV2(r.gains, [], []);
     return { gains: { fish: loot.fish, yarn: loot.yarn, materials: loot.materials }, state: this.snapshot() };

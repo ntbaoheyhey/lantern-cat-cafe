@@ -4,8 +4,9 @@ import { as, migratedDb } from "../src/game-db.ts";
 import { newPlayer, fn, rollbackSql, setStacks, v1OnlyDb, v2MigrationSql } from "./helpers.ts";
 
 const TABLES = ["cat_state", "items", "player_stacks", "boss_clears", "boss_fights", "founder_grants"];
+const INTEGRITY_FUNCS = ["v2_action_result", "v2_craft_once", "v2_boss_fight_once"];
 const API_FUNCS = ["v2_snapshot", "v2_choose_class", "v2_claim", "v2_equip", "v2_boss_fight", "v2_craft", "v2_salvage", "v2_lock", "v2_relic_forge", "v2_grant_founder"];
-const HELPERS = ["v2_apply_stacks", "v2_insert_items", "v2_items_json", "v2_item_json"];
+const HELPERS = ["v2_equipment_revision","v2_apply_stacks", "v2_insert_items", "v2_items_json", "v2_item_json"];
 const DENIED = /permission denied|row-level security/;
 const jwt = (sub: string) => ({ sub, role: "authenticated" });
 
@@ -70,8 +71,8 @@ describe("function privileges", () => {
     (await db.query<{ ok: boolean }>(`select has_function_privilege($1, $2::oid, 'EXECUTE') ok`, [role, oid])).rows[0]!.ok;
 
   it("API functions are executable by service_role only", async () => {
-    const fs = await oids(API_FUNCS);
-    expect(fs.length).toBe(API_FUNCS.length);
+    const fs = await oids([...API_FUNCS, ...INTEGRITY_FUNCS]);
+    expect(fs.length).toBe(API_FUNCS.length + INTEGRITY_FUNCS.length);
     for (const f of fs) {
       expect(await can("service_role", f.oid), f.sig).toBe(true);
       expect(await can("anon", f.oid), f.sig).toBe(false);
@@ -91,7 +92,7 @@ describe("function privileges", () => {
     const r = await db.query<{ proname: string; prosecdef: boolean; proconfig: string[] | null }>(
       `select proname, prosecdef, proconfig from pg_proc where pronamespace = 'public'::regnamespace and proname like 'v2\\_%'`,
     );
-    expect(r.rows.length).toBe(API_FUNCS.length + HELPERS.length);
+    expect(r.rows.length).toBe(API_FUNCS.length + INTEGRITY_FUNCS.length + HELPERS.length);
     for (const f of r.rows) {
       expect(f.prosecdef, f.proname).toBe(true);
       expect(f.proconfig ?? [], f.proname).toContain('search_path=""');
@@ -143,7 +144,7 @@ describe("migration and rollback", () => {
     await d.exec(v2MigrationSql());
     const during = await listing(d);
     expect(during.tables.map((t: any) => t.table_name)).toEqual(expect.arrayContaining(TABLES));
-    expect(during.procs.map((p: any) => p.proname)).toEqual(expect.arrayContaining([...API_FUNCS, ...HELPERS]));
+    expect(during.procs.map((p: any) => p.proname)).toEqual(expect.arrayContaining([...API_FUNCS, ...HELPERS.filter(name => name !== "v2_equipment_revision")]));
     await d.exec(rollbackSql());
     expect(await listing(d)).toEqual(before);
     // Shared data is untouched and the migration can be applied again.
@@ -163,3 +164,36 @@ describe("migration and rollback", () => {
   }, 60_000);
 });
 
+
+it("action results have RLS, no client policies or privileges and service-role access", async () => {
+  const rows = await db.query<{ relrowsecurity: boolean }>("select relrowsecurity from pg_class where oid='public.v2_action_results'::regclass");
+  expect(rows.rows[0]!.relrowsecurity).toBe(true);
+  expect((await db.query("select 1 from pg_policies where tablename='v2_action_results'")).rows).toEqual([]);
+  for (const role of ["anon", "authenticated"] as const) {
+    for (const privilege of ["SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE", "REFERENCES", "TRIGGER"]) {
+      expect((await db.query<{ ok: boolean }>("select has_table_privilege($1, 'public.v2_action_results', $2) ok", [role, privilege])).rows[0]!.ok).toBe(false);
+    }
+    await expect(as(db, role, null, () => db.query("select * from public.v2_action_results"))).rejects.toThrow(DENIED);
+  }
+  expect((await as(db, "service_role", null, () => db.query("select * from public.v2_action_results"))).rows).toEqual([]);
+});
+
+it("integrity migration and manual rollback preserve the original function bodies/grants and can reapply", async () => {
+  const { readFileSync } = await import("node:fs");
+  const d = await v1OnlyDb();
+  try {
+    await d.exec(v2MigrationSql());
+    const original = async () => (await d.query(`select proname, pg_get_functiondef(oid) body, proacl::text
+      from pg_proc where pronamespace='public'::regnamespace and proname in ('v2_salvage','v2_item_json') order by proname`)).rows;
+    const before = await original();
+    const migration = readFileSync(new URL("../../migrations/20261102000000_v2_integrity.sql", import.meta.url), "utf8");
+    await d.exec(migration);
+    expect((await original())).not.toEqual(before);
+    await d.exec(readFileSync(new URL("../../../docs/proposals/sql/v2-integrity-rollback.sql", import.meta.url), "utf8"));
+    expect(await original()).toEqual(before);
+    expect((await d.query("select to_regclass('public.v2_action_results') t")).rows).toEqual([{ t: null }]);
+    expect((await d.query("select 1 from pg_proc where proname=any($1)", [[...INTEGRITY_FUNCS, "v2_equipment_revision"]])).rows).toEqual([]);
+    await d.exec(migration);
+    expect((await d.query("select to_regclass('public.v2_action_results')::text t")).rows).toEqual([{ t: "v2_action_results" }]);
+  } finally { await d.close(); }
+});

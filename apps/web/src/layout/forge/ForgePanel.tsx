@@ -143,11 +143,12 @@ export function ForgePanel({
       : capitalize(selectedSlot);
 
   // Salvage calculations
-  const eligibleItems = items.filter((item) => !item.equipped && !item.locked);
+  const eligibleItems = items.filter((item) => !item.equipped && !item.locked && item.source !== 'starter');
+  const salvageIds = new Set(eligibleItems.filter(item => selectedItemIds.has(item.id)).map(item => item.id));
   const salvageYieldTotals: v2.MaterialCost = {};
-  for (const id of selectedItemIds) {
+  for (const id of salvageIds) {
     const item = items.find((i) => i.id === id);
-    if (item && !item.equipped && !item.locked) {
+    if (item && !item.equipped && !item.locked && item.source !== 'starter') {
       const y = v2.salvage(item);
       for (const [matKey, amt] of Object.entries(y) as [v2.MaterialId, number][]) {
         salvageYieldTotals[matKey] = (salvageYieldTotals[matKey] ?? 0) + amt;
@@ -196,7 +197,7 @@ export function ForgePanel({
   };
 
   const handleSalvageConfirm = async () => {
-    const ids = Array.from(selectedItemIds);
+    const ids = Array.from(salvageIds);
     await onSalvage(ids);
     setSelectedItemIds(new Set());
     setConfirmSalvage(false);
@@ -476,10 +477,10 @@ export function ForgePanel({
           <div className="forge-salvage-summary">
             <div className="forge-salvage-yield-wrap">
               <span className="forge-salvage-yield-lead">
-                Yield ({selectedItemIds.size} selected):
+                Yield ({salvageIds.size} selected):
               </span>
               <div className="forge-salvage-yield-tokens" data-testid="salvage-yield-summary">
-                {selectedItemIds.size === 0 ? (
+                {salvageIds.size === 0 ? (
                   <span className="forge-note">Select items below to preview salvage returns</span>
                 ) : (
                   COST_ORDER.map((id) => {
@@ -512,7 +513,7 @@ export function ForgePanel({
                 type="button"
                 className="forge-mini-btn"
                 onClick={deselectAll}
-                disabled={selectedItemIds.size === 0}
+                disabled={salvageIds.size === 0}
                 data-testid="salvage-deselect-all"
               >
                 Deselect All
@@ -540,9 +541,9 @@ export function ForgePanel({
               {items.map((item) => {
                 const isEquipped = !!item.equipped;
                 const isLocked = !!item.locked;
-                const isEligible = !isEquipped && !isLocked;
-                const disabledReason = isEquipped ? 'Equipped' : isLocked ? 'Locked' : null;
-                const isSelected = selectedItemIds.has(item.id);
+                const isEligible = !isEquipped && !isLocked && item.source !== 'starter';
+                const disabledReason = isEquipped ? 'Equipped' : isLocked ? 'Locked' : item.source === 'starter' ? 'Starter' : null;
+                const isSelected = salvageIds.has(item.id);
 
                 const itemDef = v2.ITEMS.find((c) => c.id === item.itemKey);
                 const itemName = itemDef ? itemDef.name : item.itemKey;
@@ -584,6 +585,7 @@ export function ForgePanel({
                       <label htmlFor={`check-${item.id}`} className="forge-item-name">
                         {itemName}
                       </label>
+                      {item.source === 'starter' && <p className="forge-note">Starter gear can't be salvaged</p>}
                       <div className="forge-item-meta">
                         <span className={`rarity-${item.rarity}`}>{capitalize(item.rarity)}</span>
                         <span>Lv. {item.level}</span>
@@ -615,7 +617,7 @@ export function ForgePanel({
             {confirmSalvage ? (
               <div className="forge-confirm-box" data-testid="salvage-confirm-box" role="alert">
                 <p className="forge-confirm-text">
-                  Permanently dismantle <strong>{selectedItemIds.size} item{selectedItemIds.size > 1 ? 's' : ''}</strong>?
+                  Permanently dismantle <strong>{salvageIds.size} item{salvageIds.size > 1 ? 's' : ''}</strong>?
                 </p>
                 <div className="forge-confirm-yield">
                   Returns: {formatYieldSummary(salvageYieldTotals)}
@@ -626,6 +628,7 @@ export function ForgePanel({
                     className="forge-btn forge-btn-confirm pixel-btn"
                     onClick={() => void handleSalvageConfirm()}
                     data-testid="salvage-confirm-btn"
+                    disabled={salvageIds.size === 0}
                   >
                     Confirm Salvage
                   </button>
@@ -642,14 +645,14 @@ export function ForgePanel({
             ) : (
               <button
                 type="button"
-                className={`forge-btn ${selectedItemIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
-                disabled={selectedItemIds.size === 0}
+                className={`forge-btn ${salvageIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
+                disabled={salvageIds.size === 0}
                 onClick={() => setConfirmSalvage(true)}
                 data-testid="salvage-btn"
               >
-                {selectedItemIds.size === 0
+                {salvageIds.size === 0
                   ? 'Select items to salvage'
-                  : `Salvage (${selectedItemIds.size})`}
+                  : `Salvage (${salvageIds.size})`}
               </button>
             )}
           </div>

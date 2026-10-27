@@ -10,11 +10,11 @@ export const V2_MIGRATION = "20261101000000_v2_cat_rpg.sql";
 
 export type J = Record<string, any>;
 
-/** A fresh PGlite with the Supabase stubs and the v1 migrations only (everything except the v2 one). */
+/** A fresh PGlite with the Supabase stubs and the v1 migrations only (before v2 and subsequent integrity migrations). */
 export async function v1OnlyDb(): Promise<PGlite> {
   const db = new PGlite();
   await db.exec(readFileSync(join(here, "../sql/bootstrap.sql"), "utf8"));
-  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql") && f !== V2_MIGRATION).sort()) {
+  for (const f of readdirSync(migrationsDir).filter((f) => f.endsWith(".sql") && f < V2_MIGRATION).sort()) {
     await db.exec(readFileSync(join(migrationsDir, f), "utf8"));
   }
   return db;

@@ -30,10 +30,13 @@ describe('SupabaseGameApiV2', () => {
   it.each(calls)('posts the exact request to %s', async (name, call, body) => {
     const { api, fetch } = setup();
     await call(api);
+    const expected = name === 'v2-craft' || name === 'v2-boss-fight'
+      ? { ...body, requestId: JSON.parse(String(fetch.mock.calls[0]![1]!.body)).requestId } : body;
+    if ('requestId' in expected) expect(expected.requestId).toMatch(/^[0-9a-f-]{36}$/i);
     expect(fetch).toHaveBeenCalledExactlyOnceWith(`${BASE}functions/v1/${name}`, {
       method: 'POST',
       headers: { authorization: 'Bearer t', apikey: 'anon', 'content-type': 'application/json' },
-      body: JSON.stringify(body),
+      body: JSON.stringify(expected),
     });
   });
 
@@ -160,4 +163,30 @@ describe('SupabaseGameApiV2', () => {
     expect(() => new SupabaseGameApiV2({ getToken: () => 't' })).toThrow('VITE_SUPABASE_URL is not set');
     expect(() => new SupabaseGameApiV2({ baseUrl: '', getToken: () => 't' })).toThrow('VITE_SUPABASE_URL is not set');
   });
+});
+
+it.each(['craft', 'boss'] as const)('%s retries one transport failure with the same requestId and exact bytes', async route => {
+  const fetch = vi.fn<typeof globalThis.fetch>().mockRejectedValueOnce(new TypeError('lost response')).mockResolvedValue(new Response('{}'));
+  const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+  if (route === 'craft') await api.craft('rcp.common', 'weapon'); else await api.fightBoss(1);
+  expect(fetch).toHaveBeenCalledTimes(2);
+  expect(fetch.mock.calls[0]).toEqual(fetch.mock.calls[1]);
+  const body = JSON.parse(String(fetch.mock.calls[0]![1]!.body));
+  expect(body.requestId).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
+});
+it.each([400, 409, 500, 503])('never retries HTTP %i or a received response that fails parsing', async status => {
+  const fetch = vi.fn(async () => new Response('{}', { status }));
+  const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+  await expect(api.craft('rcp.common', 'weapon')).rejects.toMatchObject({ code: 'server_error' });
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
+it('generates fresh action IDs, bounds a repeated transport failure to two fetches, and does not retry corrupt successes', async () => {
+  const fetch = vi.fn<typeof globalThis.fetch>().mockResolvedValueOnce(new Response('{}')).mockResolvedValueOnce(new Response('{}'));
+  const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+  await api.fightBoss(1); await api.fightBoss(1);
+  expect(JSON.parse(String(fetch.mock.calls[0]![1]!.body)).requestId).not.toBe(JSON.parse(String(fetch.mock.calls[1]![1]!.body)).requestId);
+  fetch.mockClear().mockRejectedValue(new TypeError('offline'));
+  await expect(api.fightBoss(1)).rejects.toMatchObject({ code: 'server_error' }); expect(fetch).toHaveBeenCalledTimes(2);
+  fetch.mockClear().mockResolvedValue(new Response('invalid'));
+  await expect(api.fightBoss(1)).rejects.toMatchObject({ code: 'server_error' }); expect(fetch).toHaveBeenCalledTimes(1);
 });

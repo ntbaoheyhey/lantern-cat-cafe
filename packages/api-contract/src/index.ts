@@ -4,3 +4,5 @@ export * from './endpoints';
 export * from './errors';
 export * from './types';
 export * from './state';
+
+export * from './v2';

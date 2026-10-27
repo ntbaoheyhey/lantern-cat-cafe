@@ -31,14 +31,19 @@ export class SupabaseGameApiV2 implements GameApiV2 {
     this.fetch = opts.fetch ?? ((input, init) => fetch(input, init));
   }
 
-  private async post<T>(name: EndpointV2, body: object = {}): Promise<T> {
+  private async post<T>(name: EndpointV2, body: object = {}, retryTransport = false): Promise<T> {
     const token = this.getToken();
     if (!token) throw new GameApiErrorV2('unauthenticated');
     const headers: Record<string, string> = { 'content-type': 'application/json', authorization: `Bearer ${token}` };
     if (this.anonKey) headers.apikey = this.anonKey;
+    const init = { method: 'POST', headers, body: JSON.stringify(body) };
     let res: Response;
     try {
-      res = await this.fetch(`${this.root}/functions/v1/${name}`, { method: 'POST', headers, body: JSON.stringify(body) });
+      try { res = await this.fetch(`${this.root}/functions/v1/${name}`, init); }
+      catch (error) {
+        if (!retryTransport) throw error;
+        res = await this.fetch(`${this.root}/functions/v1/${name}`, init);
+      }
     } catch (e) {
       throw new GameApiErrorV2('server_error', {}, e instanceof Error ? e.message : String(e));
     }
@@ -68,8 +73,8 @@ export class SupabaseGameApiV2 implements GameApiV2 {
   claim(): Promise<ClaimResultV2> { return this.post('v2-claim'); }
   equip(itemId: string | null, slot: GearSlotId): Promise<ServerStateV2> { return this.post('v2-equip', { itemId, slot }); }
   chooseClass(classId: ClassId): Promise<ServerStateV2> { return this.post('v2-choose-class', { classId }); }
-  fightBoss(chapter: number): Promise<BossFightResultV2> { return this.post('v2-boss-fight', { chapter }); }
-  craft(recipeId: RecipeId, slot: GearSlotId): Promise<CraftResultV2> { return this.post('v2-craft', { recipeId, slot }); }
+  fightBoss(chapter: number, requestId = crypto.randomUUID()): Promise<BossFightResultV2> { return this.post('v2-boss-fight', { chapter, requestId }, true); }
+  craft(recipeId: RecipeId, slot: GearSlotId, requestId = crypto.randomUUID()): Promise<CraftResultV2> { return this.post('v2-craft', { recipeId, slot, requestId }, true); }
   salvage(itemIds: string[]): Promise<SalvageResultV2> { return this.post('v2-salvage', { itemIds }); }
   setLocked(itemId: string, locked: boolean): Promise<ServerStateV2> { return this.post('v2-lock', { itemId, locked }); }
   forgeRelic(): Promise<ForgeResultV2> { return this.post('v2-relic-forge'); }

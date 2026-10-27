@@ -2,7 +2,7 @@
 // MockGameApiV2 (browser) and SupabaseGameApiV2 (Edge Functions `v2-*`) must both satisfy
 // `GameApiV2`. Written out in docs/api-v2.md. v1 (GameApi.ts, docs/api.md) is unchanged until
 // the cut-over (V29).
-import type { ForgeStatus, GameApiErrorCode, RelicVoucher, TodayRelic } from '@taskbar-hero/api-contract';
+import type { ForgeStatus, GameApiErrorCode, RelicVoucher, TodayRelic, ItemViewV2 } from '@taskbar-hero/api-contract';
 import type { v2 } from '@taskbar-hero/game-rules';
 
 export type ClassId = v2.ClassId;
@@ -29,19 +29,7 @@ export interface BonusLineV2 {
 }
 
 /** A gear item the player owns. `id` is the server's row id (uuid). */
-export interface ItemV2 {
-  id: string;
-  /** Catalog id from the content registry, e.g. `wpn.bow.willow`. */
-  itemKey: string;
-  slot: GearSlotId;
-  /** Set only when slot is `weapon`. */
-  weaponType?: WeaponType;
-  rarity: GearRarityId;
-  level: number;
-  bonus: BonusLineV2[];
-  locked: boolean;
-  equipped: boolean;
-}
+export interface ItemV2 extends ItemViewV2 {}
 
 /** An item the bag had no room for. It was salvaged at once; its yield is inside the loot totals. */
 export interface AutoSalvagedV2 {
@@ -269,9 +257,9 @@ export interface GameApiV2 {
   /** v2-choose-class: pick or change the class. Rejects `invalid_request` for an unknown class. */
   chooseClass(classId: ClassId): Promise<ServerStateV2>;
   /** v2-boss-fight: fight a chapter boss. Rejects `no_class`, `cooldown`, `not_reached`, `no_key`, `stale`. */
-  fightBoss(chapter: number): Promise<BossFightResultV2>;
+  fightBoss(chapter: number, requestId?: string): Promise<BossFightResultV2>;
   /** v2-craft: craft a guaranteed-rarity item for `slot`. Rejects `no_class`, `not_enough`, `bag_full`. */
-  craft(recipeId: RecipeId, slot: GearSlotId): Promise<CraftResultV2>;
+  craft(recipeId: RecipeId, slot: GearSlotId, requestId?: string): Promise<CraftResultV2>;
   /** v2-salvage: all or nothing. Rejects `not_owner`, `equipped`, `locked`. */
   salvage(itemIds: string[]): Promise<SalvageResultV2>;
   /** v2-lock: set the locked flag. Rejects `not_owner`. */

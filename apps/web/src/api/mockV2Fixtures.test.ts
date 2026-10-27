@@ -30,7 +30,7 @@ for (const kind of MOCK_V2_FIXTURE_KINDS) {
       expect(actual.currencies.keys).toBe(expected.state.stacks.catKey ?? 0);
       const weapon = expected.state.items.find(item => item.equipped && item.slot === 'weapon')!;
       expect(actual.inventory.find(item => item.id === actual.equipped.weapon)?.itemKey).toBe(weapon.itemKey);
-      expect(actual.inventory).toEqual(expected.state.items.map(v2.itemViewV2));
+      expect(actual.inventory).toEqual(expected.state.items.map(item => ({ ...v2.itemViewV2(item), source: item.source })));
       expect(storage.getItem(MOCK_V2_STORAGE_KEY)).toBe(json);
       expect(expected.lastClaimMs).toBe(nowMs);
       expect(mockV2SaveJson(kind, opts)).toBe(mockV2SaveJson(kind, opts));

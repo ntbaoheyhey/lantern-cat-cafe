@@ -84,7 +84,7 @@ describe("parallel calls", () => {
     // Whichever order PGlite ran them in, the claim and the class change cannot both have used rev N.
     const after = (await f.snapshot(p))!;
     expect(after.classId).toBe("archer");
-    expect(after.progressRev).toBe(s.progressRev + (claim ? 2 : 1));
+    expect(after.progressRev).toBe(s.progressRev + (claim ? 4 : 3));
     // Replaying the stale claim now fails.
     expect(await f.claim(p, { micros: s.lastClaimMicros, rev: s.progressRev, now: new Date(Date.now() + 7200_000), stacks: { fish: 9 } })).toBeNull();
   });
