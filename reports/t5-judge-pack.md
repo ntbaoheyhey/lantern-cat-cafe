@@ -299,3 +299,68 @@ workspace commands above. On hosts without corepack, prefix every pnpm command w
 `npx -y pnpm@10.28.0`. RPC state/counts will change; the saved proof pins block 60097612 and its hash.
 Explorer API URLs and source SHA-256 values are retained in the evidence JSON. Network checks use
 public read-only endpoints and need no wallet, secrets or live database write.
+
+## Committed snapshot and final checks
+
+Implementation/evidence snapshot: `329fe7955698ee8d2052b39920bcfdce700a3f82`. The following real diff output was captured at that commit; the report metadata follow-up changes only this report.
+
+```text
+$ git diff --stat origin/main...HEAD
+ README.md                                     |  12 +
+ docs/architecture.md                          |  55 +++++
+ docs/avalanche-integration.md                 | 107 +++++++++
+ docs/deploy.md                                |  43 ++++
+ package.json                                  |   3 +-
+ reports/t5-judge-pack.md                      | 301 ++++++++++++++++++++++++++
+ reports/t5-judge-pack/explorer-check.json     |  33 +++
+ reports/t5-judge-pack/live-check.txt          |   9 +
+ reports/t5-judge-pack/onchain-proof.log       |  14 ++
+ reports/t5-judge-pack/proof-failure-check.log |   3 +
+ reports/t5-judge-pack/proof-failure-check.mjs |  34 +++
+ scripts/onchain-proof.mjs                     | 101 +++++++++
+ 12 files changed, 714 insertions(+), 1 deletion(-)
+
+$ git diff --name-only origin/main...HEAD
+README.md
+docs/architecture.md
+docs/avalanche-integration.md
+docs/deploy.md
+package.json
+reports/t5-judge-pack.md
+reports/t5-judge-pack/explorer-check.json
+reports/t5-judge-pack/live-check.txt
+reports/t5-judge-pack/onchain-proof.log
+reports/t5-judge-pack/proof-failure-check.log
+reports/t5-judge-pack/proof-failure-check.mjs
+scripts/onchain-proof.mjs
+```
+
+Author check — **PASS**:
+
+```text
+$ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
+```
+
+Push — **PASS**, initial implementation/evidence branch was pushed:
+
+```text
+$ git push -u origin ai/codex-t5-judge-pack
+To https://github.com/ntbaoheyhey/taskbar-hero.git
+ * [new branch]      ai/codex-t5-judge-pack -> ai/codex-t5-judge-pack
+```
+
+Final verification before the report metadata commit:
+
+```text
+$ node scripts/check-links.mjs README.md docs/avalanche-integration.md docs/architecture.md docs/deploy.md reports/t5-judge-pack.md
+Checked 5 markdown files and 76 links/paths.
+✓ All links, image paths, and backticked repo paths exist on disk.
+$ node scripts/check-links.mjs --json
+{ "totalFilesChecked": 51, "totalLinksChecked": 716, "brokenCount": 0 }
+Baseline: 50 files, 692 links/paths, 0 broken; added broken links: 0.
+$ git diff --check
+(exit 0, no output)
+```
+
+README preservation/package scope assertion: `PASS: judge block is 11 lines; existing README exactly preserved; only package scripts changed`. All final changed files are inside the allowed list. The remote printed its standard PR suggestion during push; no PR was created or opened. The final report-only commit is pushed to the same branch.
