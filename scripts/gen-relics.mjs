@@ -5,7 +5,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const SITE = 'https://web-zeta-tan-13.vercel.app';
+const SITE = 'https://taskbarhero-eight.vercel.app';
 const out = resolve(dirname(fileURLToPath(import.meta.url)), '../apps/web/public/relics');
 
 // Order matches CONFIG.rarities, so relicId = index + 1 (relicIdFor). `base` is the --rarity-* token
