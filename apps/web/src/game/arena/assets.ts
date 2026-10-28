@@ -29,7 +29,7 @@ function getBakedMonsterCanvas(activeArt: MonsterArt, anim: MonsterAnim, frames:
   if (!canvas.getContext) return canvas;
   canvas.width = totalW;
   canvas.height = totalH;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
   if (!ctx) return canvas;
 
   const imgData = ctx.createImageData(totalW, totalH);
@@ -61,16 +61,69 @@ function getBakedMonsterCanvas(activeArt: MonsterArt, anim: MonsterAnim, frames:
   return canvas;
 }
 
-/** Preload and pre-bake monster animations ahead of time into offscreen canvas cache. */
-export function preloadMonsterArt(art: MonsterArt): void {
-  const activeArt = monsterPilotArt(art.id) ?? art;
-  for (const anim of ['idle', 'walk', 'windup', 'attack', 'hit', 'defeat'] as const) {
-    const frames = activeArt.frames[anim] ?? activeArt.frames.idle ?? activeArt.frames.walk!;
-    getBakedMonsterCanvas(activeArt, anim, frames);
+interface BakeTask {
+  art: MonsterArt;
+  anim: MonsterAnim;
+  frames: readonly (readonly string[])[];
+}
+
+const bakeQueue: BakeTask[] = [];
+let isProcessingQueue = false;
+
+function scheduleNextBake(): void {
+  if (bakeQueue.length === 0) {
+    isProcessingQueue = false;
+    return;
+  }
+  isProcessingQueue = true;
+  const runner = (deadline?: IdleDeadline) => {
+    const startTime = performance.now();
+    while (bakeQueue.length > 0) {
+      if (deadline && deadline.timeRemaining() <= 1 && performance.now() - startTime >= 4) break;
+      if (performance.now() - startTime >= 8) break;
+      const task = bakeQueue.shift()!;
+      getBakedMonsterCanvas(task.art, task.anim, task.frames);
+    }
+    if (bakeQueue.length > 0) {
+      if (typeof requestIdleCallback !== 'undefined') {
+        requestIdleCallback(runner, { timeout: 250 });
+      } else if (typeof requestAnimationFrame !== 'undefined') {
+        requestAnimationFrame(() => runner());
+      } else {
+        setTimeout(runner, 16);
+      }
+    } else {
+      isProcessingQueue = false;
+    }
+  };
+
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(runner, { timeout: 250 });
+  } else if (typeof requestAnimationFrame !== 'undefined') {
+    requestAnimationFrame(() => runner());
+  } else {
+    setTimeout(runner, 16);
   }
 }
 
-/** Bake the existing authored monster frames; no art is generated or modified. */
+/** Preload and pre-bake monster animations ahead of time into offscreen canvas cache using time slicing. */
+export function queuePreloadMonsterArt(art: MonsterArt): void {
+  const activeArt = monsterPilotArt(art.id) ?? art;
+  for (const anim of ['idle', 'walk', 'windup', 'attack', 'hit', 'defeat'] as const) {
+    const frames = activeArt.frames[anim] ?? activeArt.frames.idle ?? activeArt.frames.walk!;
+    const cacheKey = `${activeArt.id}:${anim}`;
+    if (!bakedMonsterCanvases.has(cacheKey)) {
+      bakeQueue.push({ art: activeArt, anim, frames });
+    }
+  }
+  if (!isProcessingQueue) scheduleNextBake();
+}
+
+export function preloadMonsterArt(art: MonsterArt): void {
+  queuePreloadMonsterArt(art);
+}
+
+/** Bake the existing authored monster frames; zero duplicate canvas allocations when addCanvas is available. */
 export function bakeMonster(scene: Phaser.Scene, art: MonsterArt): Record<MonsterAnim, string> {
   const activeArt = monsterPilotArt(art.id) ?? art;
   const keys = {} as Record<MonsterAnim, string>;
@@ -80,14 +133,16 @@ export function bakeMonster(scene: Phaser.Scene, art: MonsterArt): Record<Monste
     keys[anim] = key;
     if (!scene.textures.exists(key)) {
       const cached = getBakedMonsterCanvas(activeArt, anim, frames);
-      const texture = scene.textures.createCanvas(key, activeArt.size.w * frames.length, activeArt.size.h)!;
-      if (cached && cached.width && texture.context) {
-        texture.context.drawImage(cached, 0, 0);
+      const texture = scene.textures.addCanvas ? scene.textures.addCanvas(key, cached) : scene.textures.createCanvas(key, activeArt.size.w * frames.length, activeArt.size.h);
+      if (texture) {
+        if (!scene.textures.addCanvas && cached && cached.width && texture.context) {
+          texture.context.drawImage(cached, 0, 0);
+        }
+        frames.forEach((_, frame) => {
+          texture.add(String(frame), 0, frame * activeArt.size.w, 0, activeArt.size.w, activeArt.size.h);
+        });
+        texture.refresh();
       }
-      frames.forEach((_, frame) => {
-        texture.add(String(frame), 0, frame * activeArt.size.w, 0, activeArt.size.w, activeArt.size.h);
-      });
-      texture.refresh();
     }
     if (!scene.anims.exists(key)) {
       scene.anims.create({
