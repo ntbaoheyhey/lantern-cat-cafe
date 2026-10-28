@@ -1,0 +1,12 @@
+// Isolated flag-on build with an explicit local URL and dummy public key.
+import { build, preview } from 'vite';
+const port = Number(process.env.E2E_PORT_SERVER ?? 4175);
+const apiPort = Number(process.env.E2E_PORT_API ?? 4176);
+const outDir = `dist/v2-server/e2e-${port}`;
+process.env.VITE_GAME_V2 = '1';
+process.env.VITE_SUPABASE_URL = `http://127.0.0.1:${apiPort}`;
+process.env.VITE_SUPABASE_ANON_KEY = 'local-test-public-key';
+if (!process.argv.includes('--preview-only')) await build({ envDir: false, build: { outDir } });
+if (process.argv.includes('--build-only')) process.exit(0);
+const server = await preview({ envDir: false, build: { outDir }, preview: { port, strictPort: true } });
+for (const signal of ['SIGINT', 'SIGTERM']) process.once(signal, () => server.httpServer.close(() => process.exit(0)));

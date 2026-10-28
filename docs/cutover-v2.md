@@ -306,3 +306,71 @@ Immediately following cut-over announcement, execute the comprehensive live QA t
 * Starting **Tuesday 17 Nov 2026**, an absolute production code freeze is established across the repository.
 * Zero feature merges, refactors, or documentation-only commits to `main`.
 * The only permitted modifications are emergency blocker fixes directly approved by USER. Each fix must pass `scripts/verify-pr.sh` and deploy within the daily 3-group budget.
+
+## Rehearsal (local only, F2)
+
+This section exercises the migration, browser server path and SQL rollback entirely in
+throwaway PGlite memory. It does not change the live steps above. From the repository root,
+after the frozen install with pnpm 10.28.0, run either command:
+
+```sh
+# Server journeys alone; Playwright owns the local API, build and previews.
+npx -y pnpm@10.28.0 --filter @taskbar-hero/web test:e2e --project=v2-server --workers=1
+# Complete cut-over rehearsal, including those same journeys:
+node scripts/rehearse-cutover.mjs
+```
+
+The rehearsal prints START, result and elapsed seconds for each step, followed by a timing
+table and total. Any failed migration, journey or rollback assertion makes the command fail.
+It attempts local rollback after a browser/build failure and closes its own resources.
+
+1. Load the local harness without reading .env files or connecting to a remote database.
+2. Create a v1-only database using the existing bootstrap and all migrations before v2.
+   Seed one synthetic player with 123 Gold and 50 Shards; dump the PGlite data directory
+   to an in-memory Blob and restore it into another instance. Record the v1 schema.
+3. Apply every checked-in v2 migration in filename order, timing each separately.
+4. If the Founder batch migration is present, dry-run the batch in a transaction with
+   synthetic local parameters, check repeat-call idempotency and cutoff equality exclusion,
+   then roll back the transaction. On this base the batch migration is absent: print
+   **NOT AVAILABLE**, without importing the draft or selecting live D8 values.
+5. Start the loopback HTTP adapter over that same migrated database. A random test secret
+   is generated in memory at startup. Test session JWTs use the existing HS256 format and
+   real verifier. No authentication source changes or wallet provider are needed.
+6. Build the web app separately with VITE_GAME_V2=1, the loopback API URL, and a dummy public
+   key. Output is isolated under apps/web/dist/v2-server/; .env files are disabled.
+7. Run the v2-server browser journeys against that build and database: class choice, timed
+   claim, Equip best request counts, craft/salvage, boss victory/defeat after Skip, walletless
+   Relic refusal, hide/return, overlapping two-tab claims, and retry after a committed craft's
+   response is lost. Browser requests to non-loopback hosts are blocked by the fixture.
+8. Close the HTTP server and apply the SQL rollback locally. Verify the v1 tables, columns,
+   constraints, indexes, triggers, functions, grants and policies match the saved listing,
+   and verify the sentinel balance through both SQL and the v1 snapshot RPC.
+
+**Rollback source gap:** the requested file named supabase-manual/v2-rollback.sql does not
+exist on this main. The script prefers that file if later supplied; otherwise it explicitly
+prints the gap and uses [the tracked integrity rollback](proposals/sql/v2-integrity-rollback.sql)
+followed by [the tracked v2 test rollback](../supabase/tests/v2/rollback.sql). Both run only in
+PGlite. The older test rollback alone leaves the integrity receipt table and revision trigger
+behind. This fallback is a local rehearsal result; the requested manual file remains unverified.
+
+Measured on the F2 base (25fd114, 28 Oct 2026; local machine, not production estimates):
+
+| Step | Seconds |
+| --- | ---: |
+| Load harness | 0.654 |
+| Create and restore v1 snapshot | 0.798 |
+| Apply v2_cat_rpg | 0.012 |
+| Apply v2_integrity | 0.002 |
+| Founder migration availability check | 0.001 (unavailable) |
+| Start HTTP | 0.016 |
+| Local flag-on build | 0.517 |
+| Browser journeys | 18.710 |
+| SQL rollback and v1 verification | 0.020 |
+| Total | 20.733 |
+
+These final timings are a local sample; the F2 report includes the full rerun output. They do
+not replace production estimates. PGlite has one PostgreSQL connection, so overlapping
+handlers exercise the real SQL revision checks but do not reproduce production row-lock
+scheduling. Headless visibility tests synthesize document visibility events because native
+OS tab switching is not reliable in headless Chromium. SIWE wallet signing, hosted Edge
+wiring, live latency, chain reads and minting remain outside this rehearsal.

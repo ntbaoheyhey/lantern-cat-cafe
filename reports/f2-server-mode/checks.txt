@@ -1,0 +1,82 @@
+== install ==
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Done in 5.9s using pnpm v10.28.0
+
+== typecheck ==
+Scope: 6 of 7 workspace projects
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck: Done
+apps/web typecheck: Done
+
+== lint ==
+Scope: 6 of 7 workspace projects
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint: Done
+apps/web lint: Done
+
+== unit ==
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test: Done
+supabase/tests test:  Test Files  21 passed (21)
+supabase/tests test:       Tests  442 passed (442)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  22 passed | 3 skipped (25)
+packages/game-rules test:       Tests  339 passed | 2 expected fail | 11 skipped (352)
+packages/game-rules test: Done
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test: Done
+apps/web test:  Test Files  97 passed (97)
+apps/web test:       Tests  1206 passed (1206)
+apps/web test: Done
+
+== build ==
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build: Done
+apps/web build: ✓ built in 315ms
+apps/web build: Done
+
+== classic-build ==
+✓ built in 328ms
+
+== e2e-full ==
+Running 217 tests using 6 workers
+  217 passed (54.3s)
+
+== links-baseline ==
+Checked 55 markdown files and 751 links/paths.
+✓ All links, image paths, and backticked repo paths exist on disk.
+
+== links ==
+Checked 55 markdown files and 754 links/paths.
+✓ All links, image paths, and backticked repo paths exist on disk.
+
+== final Deno generation and drift ==
+
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/f2-server-mode/taskbar hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+git diff --exit-code -- supabase/functions: exit 0, empty output
+
+== final doc links ==
+Checked 55 markdown files and 754 links/paths.
+
+✓ All links, image paths, and backticked repo paths exist on disk.
+Checked 1 markdown files and 9 links/paths.
+
+✓ All links, image paths, and backticked repo paths exist on disk.

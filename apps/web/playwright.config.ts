@@ -1,5 +1,6 @@
 import { defineConfig } from '@playwright/test';
 import { existsSync } from 'node:fs';
+import { serverPort, apiPort, serverURL, apiURL } from './e2e/support/server-ports';
 import { classicPort, v2Port, classicURL, v2URL } from './e2e/support/servers';
 
 // Use the preinstalled Chromium when present (sandbox); CI installs its own.
@@ -15,12 +16,19 @@ const launchOptions = { executablePath, args: ['--no-sandbox'] };
 // can use E2E_PORT_CLASSIC/E2E_PORT_V2; builds and test outputs are port-isolated.
 const classicDist = `dist/e2e-${classicPort}`;
 const v2Dist = `dist-v2/e2e-${v2Port}`;
+if (new Set([classicPort, v2Port, serverPort, apiPort]).size !== 4) throw new Error('All four E2E ports must differ');
+const externalServer = process.env.F2_EXTERNAL_SERVER === '1';
 const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' };
 
 export default defineConfig({
   testDir: 'e2e',
   outputDir: `test-results/${classicPort}-${v2Port}`,
   webServer: [
+    ...(externalServer ? [] : [{
+      command: 'node ../../scripts/local-server.mjs',
+      url: `${apiURL}/health`, reuseExistingServer: false, timeout: 120_000,
+    }]),
+    { command: `node e2e/support/server-build.mjs${process.env.F2_SERVER_PREBUILT === '1' ? ' --preview-only' : ''}`, url: serverURL, reuseExistingServer: false, timeout: 120_000 },
     {
       command: `npx -y pnpm@10.28.0 exec vite build --outDir ${classicDist} && node e2e/support/serve.mjs ${classicDist} ${classicPort}`,
       env: { ...demoEnv, VITE_GAME_V2: '0' },
@@ -38,13 +46,19 @@ export default defineConfig({
   ],
   projects: [
     {
+      name: 'v2-server',
+      testMatch: 'server/**/*.spec.ts',
+      fullyParallel: false,
+      use: { baseURL: serverURL, viewport: { width: 1280, height: 720 }, launchOptions },
+    },
+    {
       name: 'v2-loop',
       testMatch: 'v2/**/*.spec.ts',
       use: { baseURL: v2URL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
       name: 'classic',
-      testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**'],
+      testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**', 'server/**'],
       use: { baseURL: classicURL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
