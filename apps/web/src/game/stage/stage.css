@@ -1,9 +1,9 @@
 .stage-progress { position: absolute; inset: var(--sp-2, 8px) var(--sp-3, 12px) auto; display: flex; flex-wrap: wrap; gap: 4px 12px; justify-content: space-between; align-items: center; color: var(--text, #eee4f5); font: 12px var(--font-display, monospace); text-shadow: 0 1px 2px #17101f; pointer-events: none; }
 .stage-progress > span { background: var(--surface, #291d35); border-radius: 4px; padding: 3px 6px; }
 .stage-kills { display: flex; gap: 4px; align-items: center; font-family: var(--font-num, monospace); }
-.stage-pip { color: var(--muted, #a998b7); opacity: .55; font-size: 10px; }
+.stage-pip { color: var(--muted, #a998b7); opacity: .55; font-size: 12px; }
 .stage-pip.is-cleared { color: #8edb9b; opacity: 1; }
 .stage-pip.is-elite { outline: 1px solid var(--border, #70547f); outline-offset: 1px; }
 .stage-moment { position: absolute; top: 28%; left: 50%; transform: translateX(-50%); max-width: 95%; width: max-content; box-sizing: border-box; padding: 4px 8px; border-radius: 4px; background: var(--surface-2, #3b2947); color: var(--text, #eee4f5); font: 12px var(--font-display, monospace); text-align: center; pointer-events: none; }
 .stage-moment:empty { display: none; }
-.stage-preview { position: absolute; bottom: 4px; left: 8px; font: 10px var(--font-body, sans-serif); color: var(--text, #eee4f5); background: var(--surface, #291d35); border-radius: 3px; padding: 2px 4px; pointer-events: none; }
+.stage-preview { position: absolute; bottom: 4px; left: 8px; font: 12px/1.2 var(--font-body, sans-serif); color: var(--text, #eee4f5); background: var(--surface, #291d35); border-radius: 3px; padding: 2px 4px; pointer-events: none; }
