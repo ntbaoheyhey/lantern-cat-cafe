@@ -29,6 +29,7 @@ function setViewport(width: number, height: number) {
 beforeEach(() => {
   stageState = sampleServerStateV2();
   vi.clearAllMocks();
+  syncSnapshot.claimInFlight = false;
   stageLoop.fightBoss.mockResolvedValue(ARENA_FIXTURES[0]!.result);
   vi.stubEnv('VITE_GAME_V2', '1');
   localStorage.clear();
@@ -164,4 +165,43 @@ it('renders SyncStatus inside the header sync-status slot', () => {
   render(<App />);
   const slot = document.querySelector('[data-slot="sync-status"]');
   expect(slot?.querySelector('[data-sync-status]')).toBeTruthy();
+});
+
+
+it('holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner', async () => {
+  const before = stageState;
+  const result = ARENA_FIXTURES[0]!.result;
+  let resolve!: (result: typeof ARENA_FIXTURES[0]['result']) => void;
+  stageLoop.fightBoss.mockImplementationOnce(() => new Promise(done => { resolve = done; }));
+  const view = render(<App />);
+  fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
+  const hud = screen.getByRole('region', { name: 'Cat status' });
+  const beforeHud = hud.textContent;
+  const beforeBag = screen.getByTestId('bag-count').textContent;
+  const beforeForge = document.querySelector('#panel-Forge')!.textContent;
+  const beforeCharacter = document.querySelector('#panel-Character')!.textContent;
+  const sync = document.querySelector('[data-slot="sync-status"]')!;
+  fireEvent.click(screen.getByRole('button', { name: /^Fight/ }));
+  // Store publishes before the request promise resolves. This must never leak a frame.
+  stageState = result.state;
+  syncSnapshot.claimInFlight = true;
+  view.rerender(<App />);
+  expect(hud.textContent).toBe(beforeHud);
+  expect(sync.textContent).toContain('Live');
+  await act(async () => { resolve(result); });
+  expect(hud.textContent).toBe(beforeHud);
+  expect(screen.getByTestId('bag-count').textContent).toBe(beforeBag);
+  expect(document.querySelector('#panel-Forge')!.textContent).toBe(beforeForge);
+  expect(document.querySelector('#panel-Character')!.textContent).toBe(beforeCharacter);
+  expect(document.querySelector('.v2-chapter-map [data-chapter="2"]')!.getAttribute('data-state')).toBe('locked');
+  expect(screen.queryByText('Victory!')).toBeNull();
+  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(before.progress.chapter).toBe(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Complete replay' }));
+  expect(screen.getByText('Victory!')).toBeTruthy();
+  expect(hud.textContent).not.toBe(beforeHud);
+  expect(screen.getByLabelText('Cat Keys 0 of 5')).toBeTruthy();
+  expect(document.querySelector('.v2-chapter-map [data-chapter="2"]')!.getAttribute('data-state')).toBe('current');
+  expect(screen.getByTestId('bag-count').textContent).not.toBe(beforeBag);
+  expect(sync.textContent).toContain('Syncing');
 });

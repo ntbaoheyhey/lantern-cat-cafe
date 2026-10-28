@@ -36,3 +36,13 @@ it('unmount during a replay never reports completion to the owner', async () => 
   await act(async () => { fake.complete?.(); });
   expect(onDone).not.toHaveBeenCalled();
 });
+
+it('controlled completion announces immediately and an extra Skip cannot notify twice', async () => {
+  const onDone = vi.fn();
+  render(<BossArena {...ARENA_FIXTURES[0]!} reducedMotion complete onDone={onDone} />);
+  expect(screen.getByRole('status').textContent).toBe('Victory — boss defeated');
+  await waitFor(() => expect(onDone).toHaveBeenCalledOnce());
+  const skip = screen.getByRole('button', { name: 'Skip fight' });
+  fireEvent.click(skip); fireEvent.click(skip);
+  expect(onDone).toHaveBeenCalledOnce();
+});
