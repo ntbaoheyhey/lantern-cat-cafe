@@ -1,9 +1,8 @@
 name: CI
-# Minutes matter on a private repo (2000 free per month). Pull requests are verified outside Actions
-# with scripts/verify-pr.sh (see docs/verify-pr.md). Until the user says the monthly quota has reset
-# this workflow is manual only (Actions > CI > Run workflow); to restore the slim check after each
-# push to main, add `push: { branches: [main] }` under `on:`.
+# Actions minutes are allowed again (user, 2026-10-28), so CI runs on every pull request and can still be
+# started by hand (Actions > CI > Run workflow). scripts/verify-pr.sh stays as the fallback.
 on:
+  pull_request:
   workflow_dispatch:
 concurrency:
   group: ci-${{ github.ref }}
@@ -22,7 +21,7 @@ jobs:
           fetch-depth: 0
       - id: f
         env:
-          BASE: ${{ github.event.before }}
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
             files=$(git ls-files)
@@ -55,10 +54,10 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
-  # Playwright only on a manual run; scripts/verify-pr.sh runs it for every PR.
+  # Playwright runs on every PR and on manual runs.
   e2e:
     needs: changes
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
