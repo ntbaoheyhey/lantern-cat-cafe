@@ -94,7 +94,9 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 2px 8px;
+  padding: 0 10px;
+  min-height: 44px;
+  box-sizing: border-box;
   background: var(--surface-2, #30243d);
   border: 1px solid var(--border, #3d2f4d);
   border-radius: 999px;
@@ -125,6 +127,9 @@
   white-space: nowrap;
   flex: 1 1 auto;
   min-width: 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .v2-hint-btn:hover {
@@ -150,8 +155,12 @@
 }
 
 .v2-wallet .wallet-btn {
-  min-height: 32px;
-  padding: 4px 10px;
+  min-height: 44px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   font-size: var(--fs-xs, 0.75rem);
   border: 1px solid var(--border, #3d2f4d);
   background: var(--surface-2, #30243d);
@@ -347,7 +356,7 @@
   justify-content: center;
   gap: 6px;
   flex: 1 0 auto;
-  min-height: 40px;
+  min-height: 44px;
   padding: 6px 12px;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: var(--fs-sm, 0.875rem);
@@ -495,8 +504,8 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr;
     align-items: center;
-    gap: 2px 8px;
-    padding: 2px 8px;
+    gap: 2px 4px;
+    padding: 2px 4px;
     box-sizing: border-box;
   }
 
@@ -505,23 +514,38 @@
   }
 
   .v2-topbar .hud-bar {
-    padding: 4px 6px;
+    padding: 2px 4px;
+    border-width: 1px;
+  }
+
+  .v2-topbar .hud-bar__layout {
+    grid-template-columns: minmax(122px, 1fr) auto;
+    gap: 2px 4px;
   }
 
   .v2-topbar .hud-xp-text {
-    font-size: 8.5px;
+    font-size: 12px;
   }
 
   .v2-topbar .hud-level-badge {
-    font-size: 8.5px;
+    font-size: 12px;
   }
 
   .v2-topbar .hud-level-xp {
-    gap: 1px;
+    gap: 2px;
   }
 
   .v2-topbar .hud-power-chip {
-    padding-inline: 2px;
+    padding-inline: 4px;
+  }
+
+  .v2-topbar .hud-stacks-list {
+    gap: 2px;
+  }
+
+  .v2-topbar .hud-stack-item {
+    gap: 2px;
+    padding: 1px 2px;
   }
 
   .v2-wallet {
@@ -605,6 +629,11 @@
     align-self: flex-start;
   }
 
+  .stage-preview,
+  .stage-pip {
+    font-size: 12px;
+  }
+
   .v2-panel {
     border-left: 0;
     border-top: 1px solid var(--border, #3d2f4d);
@@ -638,7 +667,7 @@
     padding: 4px 1px;
     flex-direction: column;
     gap: 2px;
-    font-size: 10px;
+    font-size: 12px;
     border-bottom: 0;
     border-top: 3px solid transparent;
     overflow: hidden;
@@ -681,6 +710,18 @@
     min-height: 40px;
     max-height: 40px;
     padding: 0 var(--sp-2, 8px);
+  }
+
+  .v2-topbar .v2-hint,
+  .v2-topbar .v2-hint-btn {
+    min-height: 34px;
+    height: 34px;
+  }
+
+  .v2-wallet .wallet-btn {
+    min-height: 34px;
+    height: 34px;
+    padding: 2px 8px;
   }
 
   .v2-topbar .hud-stack-label {
