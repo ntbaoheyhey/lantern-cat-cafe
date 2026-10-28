@@ -15,8 +15,14 @@ it('StrictMode, Skip and repeated completion notify the owner once; unmount rele
   const onDone = vi.fn();
   const view = render(<StrictMode><BossArena {...ARENA_FIXTURES[0]!} reducedMotion onDone={onDone} /></StrictMode>);
   await waitFor(() => expect(screen.getByLabelText('Fight health').textContent).toContain('100'));
-  fireEvent.click(screen.getByRole('button', { name: 'Skip fight' }));
+  const skip = screen.getByRole('button', { name: 'Skip fight' });
+  expect(document.activeElement).toBe(skip);
+  expect(screen.getByRole('status').textContent).toBe('Boss fight in progress');
+  fireEvent.click(skip);
   await waitFor(() => expect(onDone).toHaveBeenCalledOnce());
+  expect(screen.getByRole('status').textContent).toBe('Victory — boss defeated');
+  expect(document.activeElement).toBe(skip);
+  expect(skip.getAttribute('aria-disabled')).toBe('true');
   await act(async () => { fake.complete?.(); });
   expect(onDone).toHaveBeenCalledOnce();
   view.unmount();

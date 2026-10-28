@@ -9,7 +9,9 @@ describe('arena replay', () => {
       const options = { ...fixture, reducedMotion };
       const seen: ArenaCue[] = [], finish = vi.fn();
       const replay = new ArenaPlayback(fixture.result, options, { cue: c => seen.push(c), finish });
-      const expected = buildArenaCues(fixture.result, options);
+      const source = buildArenaCues(fixture.result, options);
+      const speed = Math.max(1, Math.max(...source.map(c => c.t)) / 12000);
+      const expected = source.map(c => c.type === 'release' ? { ...c, t: c.t / speed, travelMs: c.travelMs / speed } : { ...c, t: c.t / speed });
       replay.advance(0);
       replay.advance(1e9);
       replay.advance(1e9); replay.skip();
@@ -36,4 +38,26 @@ describe('arena replay', () => {
     new ArenaPlayback(result, { ...f, reducedMotion: false }, { cue: vi.fn(), finish }).skip();
     expect(finish).toHaveBeenCalledWith({ catHp: 0, bossHp: 0, won: true });
   });
+});
+
+it('scales a 60 second replay to 12 seconds, preserving event order and projectile arrival', () => {
+  const fixture = ARENA_FIXTURES[0]!;
+  const result = { ...fixture.result, timeline: [{ type: 'attack_start' as const, t: 0 }, { type: 'impact' as const, t: 850, damage: 10, bossHp: 10 }, { type: 'end' as const, t: 60000 }] };
+  const finish = vi.fn();
+  const replay = new ArenaPlayback(result, { ...fixture, classId: 'witch', reducedMotion: false }, { cue: vi.fn(), finish });
+  expect(replay.speed).toBe(5);
+  const release = replay.cues.find(c => c.type === 'release')!;
+  const impact = replay.cues.find(c => c.type === 'impact')!;
+  expect(impact.t - release.t).toBe(release.type === 'release' ? release.travelMs : -1);
+  replay.advance(11999); expect(finish).not.toHaveBeenCalled();
+  replay.advance(1); expect(finish).toHaveBeenCalledOnce();
+});
+
+it('pauses while hidden and returns straight to the confirmed result without a cue burst', () => {
+  const f = ARENA_FIXTURES[0]!, cue = vi.fn(), finish = vi.fn();
+  const replay = new ArenaPlayback(f.result, { ...f, reducedMotion: false }, { cue, finish });
+  replay.visibility(true); replay.advance(60000);
+  expect(cue).not.toHaveBeenCalled(); expect(finish).not.toHaveBeenCalled();
+  replay.visibility(false); replay.visibility(false);
+  expect(cue).not.toHaveBeenCalled(); expect(finish).toHaveBeenCalledExactlyOnceWith(finalState(f.result, f));
 });

@@ -110,6 +110,7 @@ export function buildIdleCues(
   const { startMs = 0, cycles = 1, respawnMs = 600 } = options;
   const weapon = v2.weaponProfileOf(stats.classId);
   const fight = v2.monsterFight(stats, monster);
+  if (!fight.canWin) return [];
   const travel = weapon.projectile?.travelMs ?? 0;
   const interval = Math.max(1, stats.attackIntervalMs);
   const maxHp = Math.max(1, Math.round(monster.hp));
@@ -163,9 +164,13 @@ export class CuePlayer {
   private time = 0;
 
   constructor(
-    private readonly cues: readonly CombatCue[],
+    private cues: readonly CombatCue[],
     private readonly onCue: (cue: CombatCue) => void,
   ) {}
+
+  reset(cues: readonly CombatCue[] = this.cues): void {
+    this.cues = cues; this.index = 0; this.time = 0;
+  }
 
   get now(): number {
     return this.time;
