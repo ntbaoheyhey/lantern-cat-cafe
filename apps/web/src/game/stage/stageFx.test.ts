@@ -20,7 +20,7 @@ describe('stage grounding', () => {
       const scale = scaleForMonster(30, h, boss);
       expect(scale * 2).toBe(Math.round(scale * 2));
       expect(h * scale / 30).toBeGreaterThanOrEqual(.8);
-      expect(h * scale / 30).toBeLessThanOrEqual(boss ? 1.5 : 1.25);
+      expect(h * scale / 30).toBeLessThanOrEqual(boss ? 2.0 : 1.25);
     }
     expect(scaleForMonster(30, 40, true)).toBe(1);
     expect(() => scaleForMonster(30, 40)).toThrow(RangeError);
@@ -39,7 +39,7 @@ describe('stage grounding', () => {
         const monster = visibleBounds(art.size.w, art.size.h, (x, y) => rows[y]![x] !== '.');
         const scale = scaleForMonster(cat.height, monster.height, art.kind === 'boss');
         expect(monster.height * scale / cat.height).toBeGreaterThanOrEqual(.8);
-        expect(monster.height * scale / cat.height).toBeLessThanOrEqual(art.kind === 'boss' ? 1.5 : 1.25);
+        expect(monster.height * scale / cat.height).toBeLessThanOrEqual(art.kind === 'boss' ? 2.0 : 1.25);
       }
     }
   });

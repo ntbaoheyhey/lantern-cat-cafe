@@ -1,3 +1,5 @@
+PILOT APPROVED
+
 # Art Direction Guide — Cat Café Quest v2
 
 This document defines the resolution, silhouette, palette, lighting, and readability standards for Cat Café Quest v2 pixel art assets. It serves as the canonical style foundation for all chapter rosters, elite variations, bosses, and hero characters following Owner Decision D-G3 (Option A).

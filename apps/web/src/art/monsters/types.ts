@@ -44,7 +44,7 @@ export const MONSTER_PILOT_LIMITS: Readonly<Record<MonsterKind, { targetSize: nu
 /** Problems with one monster's art; an empty list means it follows the format. */
 export function monsterArtProblems(
   art: MonsterArt,
-  customLimits: Readonly<Record<MonsterKind, { maxSize: number; anims: Readonly<Partial<Record<MonsterAnim, readonly [number, number]>>> }>> = MONSTER_LIMITS,
+  customLimits: Readonly<Record<MonsterKind, { maxSize: number; anims: Readonly<Partial<Record<MonsterAnim, readonly [number, number]>>> }>> = art.isPilot ? MONSTER_PILOT_LIMITS : MONSTER_LIMITS,
 ): string[] {
   const out: string[] = [];
   const at = art.id;
