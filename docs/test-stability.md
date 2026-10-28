@@ -116,3 +116,50 @@ Most of the web package's time is the jsdom environment starting for each of its
 
 - Under load the suite takes 54 to 58 s versus 38 s plain. That slowdown is real CPU contention and is expected.
 - Nothing in these runs needed a retry. If a hook timeout ever appears again, check whether the machine is out of memory first: the template dump is about 40 MB and each worker holds its own PGlite copy.
+
+## F2: local server mode
+
+Run the real server transport journeys from the repository root with one command:
+
+```sh
+npx -y pnpm@10.28.0 --filter @taskbar-hero/web test:e2e --project=v2-server --workers=1
+```
+
+For migration → flag-on build → the same journeys → SQL rollback, use:
+
+```sh
+node scripts/rehearse-cutover.mjs
+```
+
+The v2-server project adds ports 4175 (web) and 4176 (API); existing classic/demo ports
+remain 4173/4174. E2E_PORT_SERVER and E2E_PORT_API override the new ports. All four must
+differ; unknown listeners are refused, and no existing server is reused. Only one browser
+suite should run at a time per port set. Inspect listener PIDs and cwd before terminating
+owned leftovers. The server build is isolated under apps/web/dist/v2-server/ and ignores
+.env files. No dependency or real secret is needed beyond the frozen workspace install.
+
+The browser stores a short-lived test session in sessionStorage, never a demo save.
+Fixtures seed catalog-based preconditions into real migrated SQL; all tested actions use
+SupabaseGameApiV2 → HTTP → handlerV2/routesV2 → pgliteV2Store → SQL. The Node adapter uses
+the existing token verifier with a fresh in-memory signing secret and ephemeral voucher
+key. It does not instantiate the hosted Supabase client or a remote chain reader. The local
+controls have no CORS, reject browser Origin headers, and bind only to 127.0.0.1.
+
+Each journey owns a distinct SQL player. Browser timers are controlled separately from a
+per-player server clock so claims do not depend on wall-clock sleeps. Two-tab claims wait
+at a network barrier until both have been sent, then overlap real handlers; assertions
+check one progress revision and the exact credited reward. Retry testing drops the response
+after SQL commit, then checks equal request IDs, one action receipt, one UUID in the UI and
+one recipe charge. Equip best counts each changed slot's mutation and asserts no redundant
+state reads. Boss tests assert concealment, press Skip fight, then inspect the result.
+
+Visibility events are synthetic in headless Chromium; they exercise real listeners and the
+header SyncStatus. PGlite serializes SQL on one connection, so production lock scheduling
+is not measured. The session entry point is test-only; real SIWE browser signing and hosted
+Deno/REST wiring are not covered. The walletless Relic journey verifies the existing UI
+refusal and zero request/spend. See [cut-over rehearsal](cutover-v2.md#rehearsal-local-only-f2)
+for the missing manual-rollback file and conditional Founder batch step.
+
+F2_EXTERNAL_SERVER=1 and F2_SERVER_PREBUILT=1 are internal rehearsal handoff flags: the
+script starts the API on the restored snapshot and supplies the just-built web output.
+Ordinary runs should leave both unset so Playwright owns all startup and cleanup.

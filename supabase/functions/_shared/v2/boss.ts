@@ -65,7 +65,7 @@ export async function fightBossV2(deps: V2Deps, playerId: string, body: Record<s
     keyCost, cooldownS, chest: { first: roll(true, deriveSeed(seed, 1)), rematch: roll(false, deriveSeed(seed, 2)) },
     bagLimit: v2.V2_CONFIG.bag.limit, caps: v2.STACK_CAPS_V2, bossRound: v2.CHAPTERS.find(ch => ch.index === chapter)!.roundsPerChapter,
     requestId, intent, timeline: v2.timelineViewV2(result.log) });
-  const saved = { ...committed, timeline: committed.timeline ?? v2.timelineViewV2(result.log) };
+  const saved: Record<string, unknown> = { ...committed, timeline: committed.timeline ?? v2.timelineViewV2(result.log) };
   // Never retry stale fights: the new fight counter would select a different seed.
   if (typeof saved.error === "string") refusal(saved.error, typeof saved.cooldownUntil === "number" ? saved.cooldownUntil : undefined);
   return finish(saved);

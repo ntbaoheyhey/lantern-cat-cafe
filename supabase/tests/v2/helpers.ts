@@ -2,7 +2,7 @@ import { PGlite } from "@electric-sql/pglite";
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { as } from "../src/game-db.ts";
+import { as } from "../src/standalone-db.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const migrationsDir = join(here, "../../migrations");

@@ -1,0 +1,109 @@
+START Load local harness
+PASS Load local harness: 0.654s
+START Create and restore a v1-only PGlite snapshot
+PASS Create and restore a v1-only PGlite snapshot: 0.798s
+START Apply 20261101000000_v2_cat_rpg.sql
+PASS Apply 20261101000000_v2_cat_rpg.sql: 0.012s
+START Apply 20261102000000_v2_integrity.sql
+PASS Apply 20261102000000_v2_integrity.sql: 0.002s
+START Founder grant dry run when its batch migration exists
+NOT AVAILABLE: Founder batch migration is not on this main; no draft is imported or applied.
+N/A Founder grant dry run when its batch migration exists: 0.001s
+START Start loopback HTTP on the migrated snapshot
+Local PGlite v2 API: http://127.0.0.1:4176 (test secret generated in memory)
+PASS Start loopback HTTP on the migrated snapshot: 0.016s
+START Flip VITE_GAME_V2=1 in an isolated local server build
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 1813 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/v2-server/e2e-4175/index.html                               2.21 kB │ gzip:   0.78 kB
+dist/v2-server/e2e-4175/assets/SpritePreview-DrGwRUam.css        0.69 kB │ gzip:   0.34 kB
+dist/v2-server/e2e-4175/assets/ArtPilot-eVSJTpvn.css             6.45 kB │ gzip:   1.38 kB
+dist/v2-server/e2e-4175/assets/index-DuEXSmNJ.css              117.54 kB │ gzip:  18.76 kB
+dist/v2-server/e2e-4175/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+dist/v2-server/e2e-4175/assets/assets-ck-J0ZeU.js                0.97 kB │ gzip:   0.58 kB
+dist/v2-server/e2e-4175/assets/ArenaScene-CYqDf_tb.js            7.07 kB │ gzip:   2.73 kB
+dist/v2-server/e2e-4175/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+dist/v2-server/e2e-4175/assets/SpritePreview-kiwNolUk.js         8.65 kB │ gzip:   3.06 kB
+dist/v2-server/e2e-4175/assets/StageScene-C8qsgEan.js           14.13 kB │ gzip:   5.21 kB
+dist/v2-server/e2e-4175/assets/ArenaPreview-DOggAvnv.js         23.33 kB │ gzip:   3.15 kB
+dist/v2-server/e2e-4175/assets/ArtPilot-D56HtBWZ.js             25.39 kB │ gzip:   4.78 kB
+dist/v2-server/e2e-4175/assets/ch1-Dcr1kpPd.js                 144.79 kB │ gzip:  12.46 kB
+dist/v2-server/e2e-4175/assets/combat-COPl1OEP.js              189.17 kB │ gzip:  20.37 kB
+dist/v2-server/e2e-4175/assets/web3-GR-fTfZ-.js                366.57 kB │ gzip: 109.07 kB
+dist/v2-server/e2e-4175/assets/react-B_xwc9n3.js               431.26 kB │ gzip: 129.65 kB
+dist/v2-server/e2e-4175/assets/index-Czqij3J1.js               547.97 kB │ gzip:  95.47 kB
+dist/v2-server/e2e-4175/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+
+✓ built in 336ms
+PASS Flip VITE_GAME_V2=1 in an isolated local server build: 0.517s
+START Run v2-server browser journeys on that snapshot
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/f2-server-mode/taskbar hero/apps/web
+> playwright test --project=v2-server --workers=1
+
+[WebServer] (node:27921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:27923) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:27956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27957) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27963) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:27965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:28000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:28001) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:28007) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 11 tests using 1 worker
+
+(node:28018) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [v2-server] › e2e/server/journeys.spec.ts:7:1 › choose class and claim through the HTTP transport and migrated SQL (1.2s)
+Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+  ✓   2 [v2-server] › e2e/server/journeys.spec.ts:29:1 › Equip best makes one mutation per changed slot and no extra reads (2.3s)
+  ✓   3 [v2-server] › e2e/server/journeys.spec.ts:44:1 › craft and salvage persist the same UUIDs and balances shown in the UI (1.2s)
+  ✓   4 [v2-server] › e2e/server/journeys.spec.ts:65:40 › boss win is concealed until Skip ends replay (1.2s)
+  ✓   5 [v2-server] › e2e/server/journeys.spec.ts:65:40 › boss loss is concealed until Skip ends replay (1.1s)
+  ✓   6 [v2-server] › e2e/server/journeys.spec.ts:93:1 › Relic forge without a wallet refuses before spending or HTTP mutation (779ms)
+  ✓   7 [v2-server] › e2e/server/journeys.spec.ts:106:1 › hide/return makes one claim and keeps SyncStatus in the header (742ms)
+  ✓   8 [v2-server] › e2e/server/journeys.spec.ts:121:1 › two tabs claim the same interval at once with no double reward (1.1s)
+  ✓   9 [v2-server] › e2e/server/journeys.spec.ts:145:1 › lost craft response retries the same request id and shows one result (973ms)
+  ✓  10 [v2-server] › e2e/server/journeys.spec.ts:173:1 › local HTTP boundary rejects missing and forged session tokens (42ms)
+  ✓  11 [v2-server] › e2e/server/journeys.spec.ts:180:1 › local controls reject browser origins and game routes retain CORS and JSON validation (39ms)
+
+  11 passed (17.4s)
+PASS Run v2-server browser journeys on that snapshot: 18.710s
+START Rollback local v2 and verify v1 schema plus preserved balance
+Requested supabase-manual/v2-rollback.sql is absent on main; using tracked integrity + v2 test rollback fixtures.
+PASS Rollback local v2 and verify v1 schema plus preserved balance: 0.020s
+┌─────────┬─────────────────────────────────────────────────────────────────┬─────────┬────────┐
+│ (index) │ step                                                            │ seconds │ status │
+├─────────┼─────────────────────────────────────────────────────────────────┼─────────┼────────┤
+│ 0       │ 'Load local harness'                                            │ 0.654   │ 'PASS' │
+│ 1       │ 'Create and restore a v1-only PGlite snapshot'                  │ 0.798   │ 'PASS' │
+│ 2       │ 'Apply 20261101000000_v2_cat_rpg.sql'                           │ 0.012   │ 'PASS' │
+│ 3       │ 'Apply 20261102000000_v2_integrity.sql'                         │ 0.002   │ 'PASS' │
+│ 4       │ 'Founder grant dry run when its batch migration exists'         │ 0.001   │ 'N/A'  │
+│ 5       │ 'Start loopback HTTP on the migrated snapshot'                  │ 0.016   │ 'PASS' │
+│ 6       │ 'Flip VITE_GAME_V2=1 in an isolated local server build'         │ 0.517   │ 'PASS' │
+│ 7       │ 'Run v2-server browser journeys on that snapshot'               │ 18.71   │ 'PASS' │
+│ 8       │ 'Rollback local v2 and verify v1 schema plus preserved balance' │ 0.02    │ 'PASS' │
+└─────────┴─────────────────────────────────────────────────────────────────┴─────────┴────────┘
+TOTAL 20.733s; PASS (local only)
