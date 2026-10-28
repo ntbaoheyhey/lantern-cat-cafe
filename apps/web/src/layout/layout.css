@@ -167,6 +167,19 @@
   color: var(--text, #fff3e0);
   border-radius: 4px;
   white-space: nowrap;
+  position: relative;
+}
+
+.v2-wallet .wallet-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 44px;
+  min-width: 44px;
+  width: 100%;
+  height: 44px;
 }
 
 .v2-wallet-icon {
@@ -196,12 +209,70 @@
   .v2-mode-note {
     display: none;
   }
+
+  .v2-wallet {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .v2-wallet .wallet {
+    position: static;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .v2-wallet .wallet-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    font-size: 12px;
+    color: transparent;
+    overflow: hidden;
+    display: inline-grid;
+    place-items: center;
+    position: relative;
+  }
+
+  .v2-wallet .v2-wallet-icon {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
 }
 
 /* Slot for SyncStatus */
 .v2-sync-status-slot {
   flex: 0 0 auto;
   min-width: 0;
+}
+
+/* Compact sync status and topbar refinement on compact desktop / tablet / landscape phone (width <= 1024px) */
+@media (max-width: 1024px) {
+  .v2-topbar {
+    padding: 0 var(--sp-2, 8px);
+    gap: 6px;
+  }
+  .v2-topbar .hud-bar__layout {
+    gap: 4px;
+  }
+  .v2-sync-status-slot [data-sync-status] span:not([aria-hidden]) {
+    display: none;
+  }
 }
 
 /* 3. Main Area */
@@ -309,6 +380,19 @@
   min-width: 28px;
   min-height: 28px;
   padding: 0;
+  position: relative;
+}
+
+.v2-character-compact .slot-grid.compact .slot-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .v2-character-compact-info {
@@ -578,7 +662,9 @@
     min-width: 44px;
     min-height: 44px;
     padding: 0;
-    font-size: 0;
+    font-size: 12px;
+    color: transparent;
+    overflow: hidden;
     display: inline-grid;
     place-items: center;
     position: relative;
@@ -709,7 +795,12 @@
     height: 40px;
     min-height: 40px;
     max-height: 40px;
-    padding: 0 var(--sp-2, 8px);
+    padding: 0 6px;
+    gap: 4px;
+  }
+
+  .v2-title {
+    font-size: var(--fs-xs, 0.75rem);
   }
 
   .v2-topbar .v2-hint,
@@ -718,10 +809,46 @@
     height: 34px;
   }
 
+  .v2-topbar .v2-hint {
+    padding: 0 8px;
+    max-width: 220px;
+  }
+
+  .v2-wallet,
+  .v2-wallet .wallet {
+    height: 34px;
+    min-height: 34px;
+  }
+
   .v2-wallet .wallet-btn {
     min-height: 34px;
     height: 34px;
     padding: 2px 8px;
+  }
+
+  .v2-topbar .hud-bar__layout {
+    gap: 3px;
+  }
+
+  .v2-topbar .hud-stacks-list {
+    gap: 2px;
+  }
+
+  .v2-topbar .hud-stack-item {
+    gap: 2px;
+    padding: 1px 3px;
+  }
+
+  .v2-topbar .hud-progress-chip {
+    padding: 1px 4px;
+  }
+
+  .v2-topbar .hud-power-chip {
+    padding: 1px 4px;
+  }
+
+  .v2-topbar .hud-power-value {
+    font-size: var(--fs-xs, 0.75rem);
   }
 
   .v2-topbar .hud-stack-label {
