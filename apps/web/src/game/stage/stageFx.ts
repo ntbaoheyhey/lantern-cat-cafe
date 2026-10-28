@@ -7,7 +7,7 @@ export function computeFloorY(height: number, backdropFloor?: number): number {
 export function scaleForMonster(catHeight: number, monsterHeight: number, boss = false): number {
   if (catHeight <= 0 || monsterHeight <= 0) throw new RangeError('Visible heights must be positive');
   const min = Math.max(1, Math.ceil(.8 * catHeight / monsterHeight * 2));
-  const max = Math.floor((boss ? 1.5 : 1.25) * catHeight / monsterHeight * 2);
+  const max = Math.floor((boss ? 2.0 : 1.25) * catHeight / monsterHeight * 2);
   if (min > max) throw new RangeError('No crisp scale fits these visible heights');
   return Math.max(min, Math.min(max, Math.round(catHeight / monsterHeight * 2))) / 2;
 }
