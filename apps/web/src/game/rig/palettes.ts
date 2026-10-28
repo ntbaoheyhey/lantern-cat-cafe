@@ -32,23 +32,22 @@ const fur = (o: Color, d: Color, w: Color, e: Color, n: Color = 0xff8fb1): BodyP
 });
 
 /**
- * Placeholder class looks: fur colours and a starter weapon silhouette, enough to test the rig.
- * The real looks come from the user's references in V22.
+ * Approved class palettes and starter weapons from docs/class-looks/README.md.
  */
 export const CLASS_LOOKS: Readonly<Record<ClassId, ClassLook>> = {
   warrior: { id: 'warrior', name: 'Warrior', weaponType: 'sword', markings: 'tabby', starterWeapon: 'sword.basic',
     fur: fur(0xf0a040, 0xc66a1a, 0xfff0d8, 0x3f9e5a) },
   guardian: { id: 'guardian', name: 'Guardian', weaponType: 'hammer', markings: 'plain', starterWeapon: 'hammer.basic',
-    fur: fur(0x9aa0b4, 0x666c80, 0xe8eaf0, 0xd9a520) },
+    fur: fur(0x9aa0b4, 0x666c80, 0xe8eaf0, 0xffd75e) },
   rogue: { id: 'rogue', name: 'Rogue', weaponType: 'daggers', markings: 'plain', starterWeapon: 'daggers.basic',
-    fur: fur(0x4a4258, 0x2e2838, 0xd8d8e8, 0xe8c840, 0xd07890) },
+    fur: fur(0x4a4258, 0x2e2838, 0xd8d8e8, 0xffd75e, 0xd07890) },
   hunter: { id: 'hunter', name: 'Hunter', weaponType: 'spear', markings: 'tabby', starterWeapon: 'spear.basic',
-    fur: fur(0xa0703f, 0x6e4a26, 0xe8d2b0, 0x3a8ac0) },
+    fur: fur(0xa0703f, 0x6e4a26, 0xe8d2b0, 0x4aa8ff) },
   archer: { id: 'archer', name: 'Archer', weaponType: 'bow', markings: 'points', starterWeapon: 'bow.basic',
     fur: fur(0xf3e2c4, 0x8a6a52, 0xfffaf0, 0x3a7ad0) },
   witch: { id: 'witch', name: 'Witch', weaponType: 'staff', markings: 'plain', starterWeapon: 'staff.basic',
-    fur: fur(0xf2eefc, 0xb8b0d4, 0xffffff, 0x9a5ae0) },
+    fur: fur(0xf2eefc, 0xb8b0d4, 0xffffff, 0xbb74ff) },
   alchemist: { id: 'alchemist', name: 'Alchemist', weaponType: 'flasks', markings: 'patches', starterWeapon: 'flasks.basic',
-    fur: fur(0xfff3e0, 0xe08a3a, 0xffffff, 0x3f9e5a) },
+    fur: fur(0xfff3e0, 0xe08a3a, 0xffffff, 0x6be08a) },
 };
 

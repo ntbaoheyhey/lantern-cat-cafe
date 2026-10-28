@@ -1,6 +1,6 @@
 import { EventEmitter } from 'node:events';
 import { beforeEach, expect, it, vi } from 'vitest';
-vi.mock('phaser', () => ({ default: { Scene: class {}, Scenes: { Events: { CREATE: 'create', SHUTDOWN: 'shutdown' } } } }));
+vi.mock('phaser', () => ({ default: { Scene: class {}, Scenes: { Events: { CREATE: 'create', SHUTDOWN: 'shutdown', DESTROY: 'destroy' } } } }));
 vi.mock('../rig', () => ({ CLASS_LOOKS: { warrior: { name: 'warrior' }, witch: { name: 'witch' } }, bakeCat: vi.fn(() => ({
   key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle', frames: ['idle:0'] }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack', frames: ['attack:0'], frameMs: [240], hitFrames: [0] }, hurt: { key: 'cat-hurt' } },
 })) }));
@@ -170,4 +170,18 @@ it('discards a pending montage after a long hidden period, without consuming eac
   expect(scene['plans']).toHaveLength(0);
   expect(scene['plan'].credited).toBe(false);
   scene['events'].emit('shutdown'); hidden.mockRestore(); now.mockRestore();
+});
+
+
+it('releases its visibility closure and effects on full destruction without a shutdown event', () => {
+  const remove = vi.spyOn(document, 'removeEventListener');
+  const { scene, start, events } = sceneHarness();
+  scene.show(sampleServerStateV2(), false); start();
+  const director = vi.spyOn(scene['director']!, 'destroy');
+  events.emit('destroy');
+  expect(remove).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
+  expect(director).toHaveBeenCalledOnce();
+  events.emit('shutdown');
+  expect(director).toHaveBeenCalledOnce();
+  remove.mockRestore();
 });

@@ -1,5 +1,5 @@
 import { sprite } from './spriteMap';
-import type { Markings, Point, SpriteMap } from './types';
+import type { ClassId, Markings, Point, SpriteMap } from './types';
 
 /*
  * Body parts of the shared chibi cat, facing right. Characters come from the class's BodyPalette:
@@ -136,3 +136,56 @@ export const MARKINGS: Readonly<Record<Markings, { head: readonly [SpriteMap, Po
     torso: [],
   },
 };
+
+/** Class silhouettes share the same attachment coordinates and HEAD, including helmet fit.
+ * Only fur extends outside the standard torso; equipment and feet keep their anchors.
+ */
+const BROAD_TORSO = sprite([
+  'ooooooooooo', 'ooooooooooo', 'ooooowwwooo', 'oooowwwwwoo',
+  'oooowwwwwoo', 'oooowwwwwoo', 'ooooowwwooo', '.ooooooooo.',
+], { x: 1, y: 0 });
+const SLIM_TORSO = sprite([
+  '..ooooo..', '..oooooo.', '..ooowoo.', '..ooowoo.',
+  '..ooowoo.', '..ooowoo.', '..oooooo.', '..ooooo..',
+]);
+const RUFF_TORSO = sprite([
+  'w.wwwww.w', 'wwwwwwwww', '.wwwwwww.', 'oowwwwwoo',
+  'ooowwwwwo', 'ooowwwwwo', 'oooowwwoo', '.ooooooo.',
+]);
+const PLUME = sprite([
+  '.ww....', 'woow...', 'woow...', 'woow...',
+  '.woow..', '..woow.', '...woow',
+], { x: 6, y: 6 });
+const BOBTAIL = sprite(['.ww.', 'woow', '.oo.'], { x: 3, y: 2 });
+const RINGED_TAIL = sprite([
+  '.dd...', 'ooo...', 'dd....', 'oo....',
+  'dd....', 'ooo...', '.dddd.', '..oooo',
+], { x: 5, y: 7 });
+const FINE_TAIL = sprite(['..dooo', 'ddd...'], { x: 5, y: 0 });
+const THICK_TAIL = sprite([
+  'ddd...', 'oooo..', '.ooo..', '.oooo.', '..oooo', '...ooo',
+], { x: 5, y: 5 });
+
+export function classTorso(id: ClassId, shape: TorsoShape): SpriteMap {
+  if (shape !== 'stand') return TORSO[shape];
+  if (id === 'guardian') return BROAD_TORSO;
+  if (id === 'rogue' || id === 'archer') return SLIM_TORSO;
+  if (id === 'witch') return RUFF_TORSO;
+  return TORSO[shape];
+}
+
+/** Tail roots stay fixed through every pose, including recoil and defeat. */
+export function classTail(id: ClassId, tail: TailPose): SpriteMap {
+  if (id === 'alchemist') return BOBTAIL;
+  if (tail === 'down' || tail === 'flat') return TAILS[tail];
+  if (id === 'witch') return PLUME;
+  if (id === 'guardian') return THICK_TAIL;
+  if (id === 'rogue') return FINE_TAIL;
+  if (id === 'hunter') return RINGED_TAIL;
+  if (id === 'archer') return TAILS.mid;
+  return TAILS[tail];
+}
+
+/** Colourpoints reach all four paws and the whole tail, not just the face mask. */
+export const POINT_PAW = sprite(['ddd', 'ddd', 'ddd'], { x: 1, y: 1 });
+export const POINT_FOOT = sprite(['ddd.', 'dddd']);

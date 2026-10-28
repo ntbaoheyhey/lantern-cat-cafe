@@ -1,3 +1,4 @@
+import { createManagedGame } from '../managedGame';
 import { useEffect, useRef, useState } from 'react';
 import type Phaser from 'phaser';
 import type { ServerStateV2 } from '../../api/GameApiV2';
@@ -40,7 +41,7 @@ export function StageCanvas({ state, zoom, width, reducedMotion }: { state: Serv
     void Promise.all([import('phaser'), import('./StageScene')]).then(([{ default: Phaser }, { StageScene }]) => {
       if (cancelled) return;
       const stage = new StageScene(); scene.current = stage;
-      game = new Phaser.Game({ type: Phaser.CANVAS, parent: host.current!, width: latest.current.logicalWidth, height: 96, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
+      game = createManagedGame(Phaser, { type: Phaser.CANVAS, parent: host.current!, width: latest.current.logicalWidth, height: 96, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
       gameRef.current = game;
       game.scene.add('v2-stage', stage, true);
       stage.show(latest.current.state, latest.current.reducedMotion);

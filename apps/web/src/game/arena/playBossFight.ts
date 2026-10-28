@@ -1,3 +1,4 @@
+import { createManagedGame } from '../managedGame';
 import type { BossFightResultV2 } from '../../api/GameApiV2';
 import type { ArenaCueOptions } from './cues';
 
@@ -14,7 +15,7 @@ export async function playBossFight(result: BossFightResultV2, opts: PlayBossOpt
   return new Promise<void>(resolve => {
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
-    const game = new Phaser.Game({ type: Phaser.CANVAS, parent: opts.parent, width: 512, height: 192, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
+    const game = createManagedGame(Phaser, { type: Phaser.CANVAS, parent: opts.parent, width: 512, height: 192, transparent: true, pixelArt: true, banner: false, audio: { noAudio: true }, scene: [] });
     opts.signal?.addEventListener('abort', () => {
       game.destroy(true);
       // Consume pendingDestroy even if Phaser's hidden-tab loop is asleep.

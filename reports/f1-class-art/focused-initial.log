@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/f1-class-art/taskbar hero/apps/web
+> vitest run -- src/game/rig src/game/managedGame.test.ts src/game/stage/StageCanvas.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/f1-class-art/taskbar hero/apps/web
+
+
+ Test Files  96 passed (96)
+      Tests  1199 passed (1199)
+   Start at  08:52:40
+   Duration  12.43s (environment 47%, tests 38%, import 10%, transform 5%)
+
+Environment  jsdom was created 96 times · 49.88s total, 47% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

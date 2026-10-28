@@ -1,7 +1,7 @@
 import { ARMOR_SETS, diagonalOf, weaponFor, type WeaponDef } from './gear';
 import {
-  ANKLE, EYE_SPOTS, EYES, FOOT, HEAD, HEAD_TOP, HIP_BACK, HIP_FRONT, MARKINGS, PAW, PAW_RING, SHOULDER_BACK,
-  SHOULDER_FRONT, TAIL_ROOT, TAILS, TORSO,
+  classTail, classTorso, POINT_PAW, POINT_FOOT, ANKLE, EYE_SPOTS, EYES, FOOT, HEAD, HEAD_TOP, HIP_BACK, HIP_FRONT, MARKINGS, PAW, PAW_RING, SHOULDER_BACK,
+  SHOULDER_FRONT, TAIL_ROOT,
 } from './parts';
 import { RARITY_PALETTES, SET_PALETTES, WEAPON_PALETTE } from './palettes';
 import { animsFor, CELL, type Pose } from './poses';
@@ -139,17 +139,20 @@ export function composeFrame(look: ClassLook, gear: EquippedVisuals, animName: A
     const off = weaponMap(weapon, p.weaponPose, p.offAngle ?? anchors.gripAngle);
     if (off) c.draw(off, anchors.pawBack, weaponPalette);
   }
-  c.draw(TAILS[p.tail], add(p.body, TAIL_ROOT), fur);
+  const points = look.markings === 'points';
+  const paw = points ? POINT_PAW : PAW;
+  const foot = points ? POINT_FOOT : FOOT;
+  c.draw(classTail(look.id, p.tail), add(p.body, TAIL_ROOT), points ? { ...fur, o: look.fur.d } : fur);
   c.limb(add(p.body, SHOULDER_BACK), p.pawBack, look.fur.d);
-  c.draw(PAW, p.pawBack, fur);
+  c.draw(paw, p.pawBack, fur);
   armor('gloves', p.pawBack);
   c.limb(add(p.body, HIP_BACK), add(p.footBack, ANKLE), look.fur.d);
-  c.draw(FOOT, p.footBack, fur);
+  c.draw(foot, p.footBack, fur);
   armor('boots', p.footBack);
   c.limb(add(p.body, HIP_FRONT), add(p.footFront, ANKLE), look.fur.o);
-  c.draw(FOOT, p.footFront, fur);
+  c.draw(foot, p.footFront, fur);
   armor('boots', p.footFront);
-  c.draw(TORSO[p.torso], p.body, fur);
+  c.draw(classTorso(look.id, p.torso), p.body, fur);
   for (const [map, off] of MARKINGS[look.markings].torso) c.draw(map, add(p.body, off), fur);
   armor('armor', p.body);
   c.draw(HEAD, p.head, fur);
@@ -161,7 +164,7 @@ export function composeFrame(look: ClassLook, gear: EquippedVisuals, animName: A
   if (!p.weaponBehind) drawMain();
   c.limb(add(p.body, SHOULDER_FRONT), p.pawFront, look.fur.o);
   c.draw(PAW_RING, p.pawFront, fur);
-  c.draw(PAW, p.pawFront, fur);
+  c.draw(paw, p.pawFront, fur);
   armor('gloves', p.pawFront);
   c.outline(look.fur.k);
 
