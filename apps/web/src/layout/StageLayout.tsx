@@ -467,11 +467,6 @@ export function StageLayout() {
           ) : (
             <p className="v2-stage-placeholder">Your adventure starts with a class.</p>
           )}
-          {gains && !welcome && (
-            <div className="v2-recent-loot">
-              <LootSummary loot={gains} heading="Recent finds" />
-            </div>
-          )}
         </div>
 
         <section className="v2-panel" aria-label="Game panel">
@@ -484,6 +479,11 @@ export function StageLayout() {
           {!phone && <TabButtons active={tab} onSelect={handleSelectTab} className="v2-tabs" />}
 
           <div className="v2-panel-body">
+            {gains && !welcome && (
+              <div className="v2-recent-loot">
+                <LootSummary loot={gains} heading="Recent finds" />
+              </div>
+            )}
             {/* Character tab */}
             <ActivePanel tab="Character" label="Character" hidden={tab !== 'Character'}>
               {state ? (

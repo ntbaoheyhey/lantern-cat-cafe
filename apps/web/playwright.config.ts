@@ -22,14 +22,14 @@ export default defineConfig({
   outputDir: `test-results/${classicPort}-${v2Port}`,
   webServer: [
     {
-      command: `npx -y pnpm@10.28.0 exec vite build --outDir ${classicDist} && npx -y pnpm@10.28.0 exec vite preview --outDir ${classicDist} --port ${classicPort} --strictPort`,
+      command: `npx -y pnpm@10.28.0 exec vite build --outDir ${classicDist} && node e2e/support/serve.mjs ${classicDist} ${classicPort}`,
       env: { ...demoEnv, VITE_GAME_V2: '0' },
       url: classicURL,
       reuseExistingServer: false,
       timeout: 120_000,
     },
     {
-      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && npx -y pnpm@10.28.0 exec vite preview --outDir ${v2Dist} --port ${v2Port} --strictPort`,
+      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
       env: { ...demoEnv, VITE_GAME_V2: '1' },
       url: v2URL,
       reuseExistingServer: false,

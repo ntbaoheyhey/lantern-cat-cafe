@@ -52,7 +52,15 @@ export class ArenaScene extends Phaser.Scene {
     this.anims.globalTimeScale = this.replay.speed;
     const visibility = () => this.replay.visibility(document.hidden);
     document.addEventListener('visibilitychange', visibility);
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { document.removeEventListener('visibilitychange', visibility); this.clearFx(); });
+    let disposed = false;
+    const dispose = () => {
+      if (disposed) return;
+      disposed = true;
+      document.removeEventListener('visibilitychange', visibility);
+      this.clearFx();
+    };
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, dispose);
+    this.events.once(Phaser.Scenes.Events.DESTROY, dispose);
     visibility();
     this.replay.advance(0);
   }

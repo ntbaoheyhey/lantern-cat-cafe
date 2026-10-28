@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import { classicURL, v2URL } from './support/servers';
 
 const config = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
 const headers = Object.fromEntries(config.headers[0].headers.map((h: { key: string; value: string }) => [h.key, h.value]));
@@ -33,7 +34,7 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
     });
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ colorScheme });
-    const response = await page.goto(`http://localhost:${mode === 'classic' ? 4173 : 4174}/`);
+    const response = await page.goto(`${mode === 'classic' ? classicURL : v2URL}/`);
     expect(response?.headers()['content-security-policy']).toBe(headers['Content-Security-Policy']);
     if (mode === 'v2') {
       await page.getByTestId('class-picker-choose-button').click();

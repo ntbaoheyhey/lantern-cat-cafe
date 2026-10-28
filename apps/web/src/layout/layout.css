@@ -941,16 +941,13 @@
   padding: var(--sp-2, 8px);
 }
 
-.v2-stage .v2-recent-loot {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  right: 8px;
+.v2-recent-loot {
   max-height: 40%;
   overflow-y: auto;
-  background: rgba(33, 24, 43, 0.95);
+  flex-shrink: 0;
+  background: var(--surface, #21182b);
   border: 1px solid var(--border, #3d2f4d);
   padding: var(--sp-2, 8px);
-  z-index: 5;
+  margin-bottom: var(--sp-2, 8px);
   box-sizing: border-box;
 }

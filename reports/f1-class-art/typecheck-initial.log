@@ -1,0 +1,15 @@
+
+> @taskbar-hero/web@0.0.0 typecheck /Users/bao/.codex/worktrees/f1-class-art/taskbar hero/apps/web
+> tsc --noEmit
+
+src/game/managedGame.ts(12,41): error TS7006: Parameter 'type' implicitly has an 'any' type.
+src/game/managedGame.ts(12,47): error TS7006: Parameter 'listener' implicitly has an 'any' type.
+src/game/managedGame.ts(12,57): error TS7006: Parameter 'options' implicitly has an 'any' type.
+src/game/rig/compose.ts(145,62): error TS2345: Argument of type 'Readonly<Record<string, number>> | { o: number | undefined; }' is not assignable to parameter of type 'Readonly<Record<string, number>>'.
+  Type '{ o: number | undefined; }' is not assignable to type 'Readonly<Record<string, number>>'.
+    Property 'o' is incompatible with index signature.
+      Type 'number | undefined' is not assignable to type 'number'.
+        Type 'undefined' is not assignable to type 'number'.
+/Users/bao/.codex/worktrees/f1-class-art/taskbar hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

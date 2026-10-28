@@ -68,11 +68,16 @@ export class StageScene extends Phaser.Scene {
       this.hiddenAt = null;
     };
     document.addEventListener('visibilitychange', visibility);
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+    let disposed = false;
+    const dispose = () => {
+      if (disposed) return;
+      disposed = true;
       document.removeEventListener('visibilitychange', visibility);
       this.events.off(Phaser.Scenes.Events.CREATE, showQueuedState);
       this.director?.destroy(); this.clearFeedback();
-    });
+    };
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, dispose);
+    this.events.once(Phaser.Scenes.Events.DESTROY, dispose);
   }
   private clearFeedback() {
     for (const hit of this.hits?.all() ?? []) { hit.text.destroy(); hit.flash.destroy(); }
