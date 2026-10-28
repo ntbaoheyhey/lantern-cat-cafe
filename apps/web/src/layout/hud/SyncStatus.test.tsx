@@ -39,3 +39,10 @@ it('announces visibility, connectivity, claim progress and failure; cleans up on
   expect(removeWindow).toHaveBeenCalledWith('offline', expect.any(Function));
   loop.stop();
 });
+
+it('renders the display status supplied by the layout without an independent live subscription', () => {
+  const view = render(<SyncStatus status="live" />);
+  expect(screen.getByRole('status').textContent).toContain('Live');
+  view.rerender(<SyncStatus status="syncing" />);
+  expect(screen.getByRole('status').textContent).toContain('Syncing');
+});

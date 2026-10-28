@@ -1,12 +1,13 @@
 import {
   useEffect,
   useRef,
+  useReducer,
   useState,
   type CSSProperties,
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
-import type { ServerStateV2, BossFightResultV2, GainsV2, ItemV2, GearSlotId } from '../api/GameApiV2';
+import type { GainsV2, ItemV2, GearSlotId } from '../api/GameApiV2';
 import { v2 } from '@taskbar-hero/game-rules';
 import { useAccount } from 'wagmi';
 import type { RelicVoucher } from '@taskbar-hero/api-contract';
@@ -16,6 +17,8 @@ import { reportMint } from '../forge/report';
 import { getGameApi, getGameLoop } from '../game/store';
 import { StageCanvas } from '../game/stage/StageCanvas';
 import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapshotV2, useGameModeV2 } from '../game/v2/storeV2';
+import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
+import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { HudBar } from './hud/HudBar';
 import { SyncStatus } from './hud/SyncStatus';
@@ -170,18 +173,23 @@ export function StageLayout() {
   const [mintedNonce, setMintedNonce] = useState<string | null>(null);
   const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
   const [savingMint, setSavingMint] = useState(false);
-  const snapshot = useGameSnapshotV2(loop);
+  const liveSnapshot = useGameSnapshotV2(loop);
+  const liveSyncStatus = useSyncStatusV2(loop);
+  const [presentation, presentBoss] = useReducer(bossPresentation, INITIAL_BOSS_PRESENTATION);
+  const snapshot = presentation.hold?.snapshot ?? liveSnapshot;
+  const syncStatus = presentation.hold?.syncStatus ?? liveSyncStatus;
+  const bossRequest = useRef(false);
   const mode = useGameModeV2();
   const state = snapshot.state;
   const reducedMotion = usePrefersReducedMotion();
   const [chapter, setChapter] = useState<number | null>(null);
-  const [fight, setFight] = useState<{
-    result: BossFightResultV2;
-    chapter: number;
-    maxHp: number;
-    firstClear: boolean;
-    complete: boolean;
-  } | null>(null);
+  const fight = presentation.fight;
+  // Input guards use live request state; displayed values use the held snapshot.
+  const actionBusy = presentation.hold ? 'fightBoss' : liveSnapshot.busy;
+  const motion = useRef(reducedMotion); motion.current = reducedMotion;
+  useEffect(() => {
+    if (reducedMotion && presentation.hold) presentBoss({ type: 'release' });
+  }, [reducedMotion, presentation.hold]);
   const [gains, setGains] = useState<GainsV2 | null>(null);
   const [away, setAway] = useState(0);
   const [welcome, setWelcome] = useState(false);
@@ -225,6 +233,7 @@ export function StageLayout() {
       } else if (hiddenAt.current !== null) {
         awayRef.current = (Date.now() - hiddenAt.current) / 1000;
         hiddenAt.current = null;
+        presentBoss({ type: 'release' });
       }
     };
     document.addEventListener('visibilitychange', visibility);
@@ -301,13 +310,19 @@ export function StageLayout() {
       : null;
 
   const fightBoss = async (selected: number) => {
-    if (!state || !stats) return;
+    if (!state || !stats || bossRequest.current || presentation.hold || (fight && !fight.complete)) return;
+    bossRequest.current = true;
     setNotice('');
     const firstClear = !state.bosses.chapters.find((c) => c.chapter === selected)?.cleared;
-    const result = await loop.fightBoss(selected);
-    if (result) {
-      setFight({ result, chapter: selected, maxHp: stats.hp, firstClear, complete: false });
-    }
+    presentBoss({ type: 'begin', snapshot: liveSnapshot, syncStatus: liveSyncStatus, chapter: selected, maxHp: stats.hp, firstClear });
+    try {
+      const result = await loop.fightBoss(selected);
+      if (result) presentBoss({ type: 'resolved', result, immediate: motion.current });
+      else presentBoss({ type: 'close' });
+    } catch {
+      presentBoss({ type: 'close' });
+      setNotice('The boss request failed. Try again.');
+    } finally { bossRequest.current = false; }
   };
 
   const upgrades = state ? equipBest(state) : [];
@@ -323,6 +338,7 @@ export function StageLayout() {
       : `Equip best (+${upgrades.length})`;
     handleHintAction = () => {
       handleSelectTab('Bag');
+      if (presentation.hold) return;
       upgrades.forEach((u) => equipQueue.current?.equip(u.itemId, u.slot));
     };
   } else if (isBossReady) {
@@ -389,7 +405,7 @@ export function StageLayout() {
           </p>
         </div>
 
-        <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus loop={loop} /></div>
+        <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus status={syncStatus} /></div>
       </header>
 
       <main className="v2-main">
@@ -423,7 +439,8 @@ export function StageLayout() {
               classId={classId}
               catMaxHp={fight.maxHp}
               reducedMotion={reducedMotion}
-              onDone={() => setFight((current) => (current ? { ...current, complete: true } : null))}
+              complete={fight.complete}
+              onDone={() => presentBoss({ type: 'release' })}
             />
             {fight.complete && (
               <>
@@ -433,10 +450,10 @@ export function StageLayout() {
                     chest={fight.result.chest}
                     firstClear={fight.firstClear}
                     chapter={fight.chapter}
-                    onDone={() => setFight(null)}
+                    onDone={() => presentBoss({ type: 'close' })}
                   />
                 ) : (
-                  <button onClick={() => setFight(null)}>Back to exploring</button>
+                  <button onClick={() => presentBoss({ type: 'close' })}>Back to exploring</button>
                 )}
               </>
             )}
@@ -481,12 +498,12 @@ export function StageLayout() {
               {state ? (
                 <BagPanel
                   state={state}
-                  busy={snapshot.busy}
+                  busy={actionBusy}
                   onEquip={(id, slot: GearSlotId) => {
-                    void equipQueue.current?.equip(id, slot);
+                    if (!presentation.hold) void equipQueue.current?.equip(id, slot);
                   }}
                   onToggleLock={(id, locked) => {
-                    void loop.setLocked(id, locked);
+                    if (!presentation.hold) void loop.setLocked(id, locked);
                   }}
                 />
               ) : (
@@ -501,7 +518,7 @@ export function StageLayout() {
                   <BossGatePanel
                     state={state}
                     chapter={chapter ?? state.progress.chapter}
-                    busy={snapshot.busy === 'fightBoss' || fight !== null}
+                    busy={actionBusy === 'fightBoss' || fight !== null}
                     onFight={(selected) => {
                       void fightBoss(selected);
                     }}
@@ -538,7 +555,7 @@ export function StageLayout() {
                         blockedReason: state.forge.blockedBy,
                       }}
                       classWeaponType={v2.CLASSES.find((c) => c.id === classId)!.weaponType}
-                      busy={snapshot.busy}
+                      busy={actionBusy}
                       onCraft={async (recipe, slot) => {
                         setCrafted(null);
                         const result = await loop.craft(recipe, slot);
