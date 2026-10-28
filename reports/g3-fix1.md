@@ -105,8 +105,8 @@ apps/web/e2e/ui/g3-conceal.spec.ts           |  99 ++++++++
  apps/web/src/layout/bossPresentation.ts      |  52 ++++
  apps/web/src/layout/hud/SyncStatus.test.tsx  |   7 +
  apps/web/src/layout/hud/SyncStatus.tsx       |  10 +-
- reports/g3-fix1.md                           | 344 +++++++++++++++++++++++++++
- 10 files changed, 665 insertions(+), 30 deletions(-)
+ reports/g3-fix1.md                           | 345 +++++++++++++++++++++++++++
+ 10 files changed, 666 insertions(+), 30 deletions(-)
 ```
 
 `git diff --name-only origin/main...HEAD`:
@@ -133,6 +133,7 @@ all files are in the scopes described above. No forbidden file was reverted or e
 $ git fetch origin +main:refs/remotes/origin/main
 (no output; exit 0)
 $ git log --format='%an <%ae>' origin/main..HEAD
+ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>
 ```
@@ -279,7 +280,7 @@ Running 193 tests using 6 workers
 G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
   ✓  133 [stage-layout] › e2e/ui/g3-combat.spec.ts:67:1 › G3 stage frame p95 stays within 20ms in the demo build (4.6s)
   6 failed
-    [classic] › e2e/security.spec.ts:12:3 › CSP classic 1600x900 light: painted canvas, zero violations 
+    [classic] › e2e/security.spec.ts:12:3 › CSP classic 1600x900 light: painted canvas, zero violations
     [classic] › e2e/security.spec.ts:12:3 › CSP v2 1280x720 light: painted canvas, zero violations ─
     [classic] › e2e/security.spec.ts:12:3 › CSP v2 390x844 light: painted canvas, zero violations ──
     [classic] › e2e/security.spec.ts:12:3 › CSP v2 320x568 light: painted canvas, zero violations ──
