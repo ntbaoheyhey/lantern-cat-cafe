@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
-import { monsterArt } from '../../art/monsters';
+import { monsterArt, monsterPilotArt, type MonsterArt } from '../../art/monsters';
 import { backdropFor } from '../../art/backdrops';
 import { bakeCat, CLASS_LOOKS, type CatSheet } from '../rig';
 import { buildIdleCues, CuePlayer, Pool, type CombatCue } from '../combat';
@@ -13,6 +13,43 @@ import { APPROACH_MS, DEFEAT_MS, HIDDEN_RESULT_MS, claimMontage, contactX, expec
 type Actor = Phaser.GameObjects.Sprite;
 interface Hit { target: Actor; age: number; x: number; y: number; text: Phaser.GameObjects.Text; flash: Phaser.GameObjects.Image; missed: boolean }
 interface Plan { id: string; anims: ReturnType<typeof bakeMonster>; scale: number; width: number; height: number; enemyInterval: number; left: number; hitLeft: number; flash: string; fight: v2.MonsterFight; cues: CombatCue[]; hp: number; credited: boolean }
+
+interface MonsterMetrics {
+  b: ReturnType<typeof visibleBounds>;
+  scale: number;
+  left: number;
+  hitLeft: number;
+}
+const globalMonsterMetrics = new Map<string, MonsterMetrics>();
+const globalCatBoundsCache = new Map<string, { width: number; height: number; edges: Map<string, { left: number; right: number }> }>();
+const globalAlphaCache = new Map<string, Uint8ClampedArray>();
+
+function computeMonsterMetrics(art: MonsterArt, catHeight: number): MonsterMetrics {
+  const activeArt = monsterPilotArt(art.id) ?? art;
+  const walkFrames = activeArt.frames.walk ?? activeArt.frames.idle!;
+  const walk0 = walkFrames[0]!;
+  const w = activeArt.size.w;
+  const h = activeArt.size.h;
+
+  const isWalkOpaque = (x: number, y: number): boolean => {
+    const row = walk0[y];
+    return row !== undefined && x < row.length && row[x] !== '.';
+  };
+
+  const b = visibleBounds(w, h, isWalkOpaque);
+  const scale = scaleForMonster(catHeight, b.height, activeArt.kind === 'boss');
+  const left = horizontalBounds(w, h, 0.5, scale, isWalkOpaque).left;
+
+  const hitFrames = activeArt.frames.hit ?? activeArt.frames.idle ?? activeArt.frames.walk!;
+  const hit0 = hitFrames[0]!;
+  const isHitOpaque = (x: number, y: number): boolean => {
+    const row = hit0[y];
+    return row !== undefined && x < row.length && row[x] !== '.';
+  };
+  const hitLeft = horizontalBounds(w, h, 0.5, scale, isHitOpaque).left;
+
+  return { b, scale, left, hitLeft };
+}
 
 /** A preview of the analytic idle fight. Only acknowledged claims update the kill track. */
 export class StageScene extends Phaser.Scene {
@@ -28,9 +65,6 @@ export class StageScene extends Phaser.Scene {
   private hits: Pool<Hit> | null = null;
   private shots = new Pool<Projectile>(8, () => ({ kind: 'arrow', age: 0, dur: 1, from: { x: 0, y: 0 }, to: { x: 0, y: 0 } }));
   private floor = 84;
-  private alphaCache = new Map<string, Uint8ClampedArray>();
-  private catBoundsCache = new Map<string, { width: number; height: number; edges: Map<string, { left: number; right: number }> }>();
-  private monsterMetrics = new Map<string, { b: ReturnType<typeof visibleBounds>; scale: number; left: number; hitLeft: number; flash: string }>();
   private preloadedBosses = false;
   private catWidth = 0;
   private catHeight = 0;
@@ -79,7 +113,6 @@ export class StageScene extends Phaser.Scene {
       document.removeEventListener('visibilitychange', visibility);
       this.events.off(Phaser.Scenes.Events.CREATE, showQueuedState);
       this.director?.destroy(); this.clearFeedback();
-      this.alphaCache.clear(); this.catBoundsCache.clear(); this.monsterMetrics.clear();
     };
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, dispose);
     this.events.once(Phaser.Scenes.Events.DESTROY, dispose);
@@ -95,7 +128,7 @@ export class StageScene extends Phaser.Scene {
     if (typeof this.textures.get !== 'function') {
       return (this.textures.getPixelAlpha(x, y, key, sprite.frame.name) ?? 0) > 0;
     }
-    let alpha = this.alphaCache.get(key);
+    let alpha = globalAlphaCache.get(key);
     if (!alpha) {
       if (!this.textures.exists(key)) return false;
       const texture = this.textures.get(key);
@@ -106,10 +139,23 @@ export class StageScene extends Phaser.Scene {
       if (!canvas || !canvas.getContext) {
         return (this.textures.getPixelAlpha(x, y, key, sprite.frame.name) ?? 0) > 0;
       }
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return false;
-      alpha = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-      this.alphaCache.set(key, alpha);
+      const readback = typeof document !== 'undefined' ? document.createElement('canvas') : null;
+      if (readback && readback.getContext) {
+        readback.width = canvas.width;
+        readback.height = canvas.height;
+        const readCtx = readback.getContext('2d', { willReadFrequently: true });
+        if (readCtx) {
+          readCtx.drawImage(canvas, 0, 0);
+          alpha = readCtx.getImageData(0, 0, readback.width, readback.height).data;
+          globalAlphaCache.set(key, alpha);
+        }
+      }
+      if (!alpha) {
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        if (!ctx) return false;
+        alpha = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        globalAlphaCache.set(key, alpha);
+      }
     }
     const frame = sprite.frame;
     const src = sprite.texture.getSourceImage?.() as HTMLCanvasElement;
@@ -135,6 +181,26 @@ export class StageScene extends Phaser.Scene {
     }
     return key;
   }
+  private monsterFlash(hitKey: string): string {
+    const key = `stage-flash:${hitKey}:0`;
+    if (!this.textures.exists(key)) {
+      if (this.textures.exists(hitKey)) {
+        const tex = this.textures.get(hitKey);
+        const frame = tex?.has?.('0') ? tex.get('0') : null;
+        if (frame) {
+          const t = this.textures.createCanvas(key, frame.width, frame.height);
+          if (t && t.context) {
+            t.context.drawImage(frame.source.image as HTMLCanvasElement, frame.cutX, frame.cutY, frame.cutWidth, frame.cutHeight, 0, 0, frame.width, frame.height);
+            t.context.globalCompositeOperation = 'source-in';
+            t.context.fillStyle = '#ffffff';
+            t.context.fillRect(0, 0, frame.width, frame.height);
+            t.refresh();
+          }
+        }
+      }
+    }
+    return key;
+  }
   private pose(actor: Actor, key: string, _frame: string) {
     if (this.reduced) actor.stop();
     else actor.play(key, true);
@@ -151,8 +217,8 @@ export class StageScene extends Phaser.Scene {
           if (art && typeof preloadMonsterArt === 'function') preloadMonsterArt(art);
         }
       };
-      if (typeof requestIdleCallback !== 'undefined') requestIdleCallback(preload);
-      else setTimeout(preload, 100);
+      if (typeof requestIdleCallback !== 'undefined') requestIdleCallback(preload, { timeout: 500 });
+      else setTimeout(preload, 50);
     }
     const visuals = equippedVisuals(state);
     const key = JSON.stringify([state.cat.classId, state.progress.chapter,
@@ -172,7 +238,7 @@ export class StageScene extends Phaser.Scene {
       }
       this.sheet = bakeCat(this, CLASS_LOOKS[cls], visuals);
       this.cat = this.add.sprite(0, 0, this.sheet.key, 'idle:0').setOrigin(this.sheet.origin.x, this.sheet.origin.y);
-      const cachedCat = this.catBoundsCache.get(this.sheet.key);
+      const cachedCat = globalCatBoundsCache.get(this.sheet.key);
       if (cachedCat) {
         this.catWidth = cachedCat.width; this.catHeight = cachedCat.height;
         this.catEdges = new Map(cachedCat.edges);
@@ -182,7 +248,7 @@ export class StageScene extends Phaser.Scene {
         for (const name of ['idle', 'attack'] as const) for (const frame of this.sheet.anims[name].frames) {
           this.cat.setFrame(frame); this.catEdges.set(frame, this.edge(this.cat));
         }
-        this.catBoundsCache.set(this.sheet.key, { width: this.catWidth, height: this.catHeight, edges: new Map(this.catEdges) });
+        globalCatBoundsCache.set(this.sheet.key, { width: this.catWidth, height: this.catHeight, edges: new Map(this.catEdges) });
       }
       this.cat.setFrame('idle:0');
       this.catFlash = this.flashTexture(this.cat);
@@ -211,19 +277,13 @@ export class StageScene extends Phaser.Scene {
     const prepare = (id: string, round: number, credited: boolean): Plan => {
       const art = monsterArt(id)!, anims = bakeMonster(this, art);
       const metricsKey = `${id}:${this.catHeight}`;
-      let m = this.monsterMetrics.get(metricsKey);
+      let m = globalMonsterMetrics.get(metricsKey);
       if (!m) {
-        this.monster!.setTexture(anims.walk, '0').setScale(1);
-        const b = this.bounds(this.monster!);
-        const scale = scaleForMonster(this.catHeight, b.height, art.kind === 'boss');
-        this.monster!.setScale(scale);
-        const left = this.edge(this.monster!).left;
-        this.monster!.setTexture(anims.hit, '0');
-        const hitLeft = this.edge(this.monster!).left, flash = this.flashTexture(this.monster!);
-        m = { b, scale, left, hitLeft, flash };
-        this.monsterMetrics.set(metricsKey, m);
+        m = computeMonsterMetrics(art, this.catHeight);
+        globalMonsterMetrics.set(metricsKey, m);
       }
-      const { b, scale, left, hitLeft, flash } = m;
+      const { b, scale, left, hitLeft } = m;
+      const flash = this.monsterFlash(anims.hit);
       const monster = v2.monsterAt(id, v2.stageOf(state.progress.chapter, round));
       const fight = v2.monsterFight(stats, monster);
       const passive = v2.classOf(cls).passive;
