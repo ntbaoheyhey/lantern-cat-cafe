@@ -49,7 +49,19 @@ export function createMockAuthApi(): AuthApi {
   };
 }
 
-/** HTTP when VITE_SUPABASE_URL is set, mock otherwise. */
+/** Fails closed: every call rejects, so a production build never mints a mock session. */
+export function createBlockedAuthApi(): AuthApi {
+  const fail = () => Promise.reject(new Error('Sign-in is unavailable: this build has no backend configured'));
+  return { getNonce: fail, verify: fail };
+}
+
+/**
+ * HTTP when VITE_SUPABASE_URL is set. Without it, mock sign-in is allowed only in
+ * development or in a build that opts in with VITE_ALLOW_MOCK_AUTH=1 (demo/e2e);
+ * any other production build refuses to sign in.
+ */
 export function defaultAuthApi(): AuthApi {
-  return import.meta.env.VITE_SUPABASE_URL ? createHttpAuthApi() : createMockAuthApi();
+  if (import.meta.env.VITE_SUPABASE_URL) return createHttpAuthApi();
+  if (!import.meta.env.PROD || import.meta.env.VITE_ALLOW_MOCK_AUTH === '1') return createMockAuthApi();
+  return createBlockedAuthApi();
 }
