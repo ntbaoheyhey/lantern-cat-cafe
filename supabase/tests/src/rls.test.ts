@@ -99,7 +99,7 @@ describe("every public table", () => {
 
   it("authenticated cannot read the server-only tables, and sees only own rows in the others", async () => {
     // Tables with a SELECT policy keyed on the caller; the rest must be unreadable.
-    const policies = (await db.query<{ tablename: string }>(`select tablename from pg_policies where schemaname = 'public'`)).rows.map((r) => r.tablename);
+    const policies = (await db.query<{ tablename: string }>(`select tablename from pg_policies where schemaname = 'public' and policyname <> 'siwe_nonces_server_only'`)).rows.map((r) => r.tablename);
     for (const t of tables) {
       const read = as(db, "authenticated", jwt(A), () => db.query<Record<string, unknown>>(`select * from public.${t}`));
       if (!policies.includes(t)) {

@@ -58,7 +58,7 @@ A row is visible to the caller when its `player_id` (`players.id` for `players`)
 
 - Only `SELECT` policies exist, for role `authenticated`. No INSERT/UPDATE/DELETE policies.
 - Migration also revokes all table privileges from `anon`/`authenticated` and grants back only `SELECT` (player tables, `authenticated`), so writes fail with "permission denied" even if a policy were added by mistake.
-- `siwe_nonces` has RLS on, no policies, no grants: only `service_role` (BYPASSRLS) can use it.
+- `siwe_nonces` has RLS on, no grants for client roles, and (migration `20261103000000_siwe_nonces_server_only.sql`, applied by hand) a restrictive deny-all policy for `anon` and `authenticated`, so a future permissive policy cannot expose it. Only `service_role` (BYPASSRLS) can use it.
 
 ## Tests
 
