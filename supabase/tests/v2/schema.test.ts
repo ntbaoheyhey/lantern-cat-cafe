@@ -5,6 +5,7 @@ import { newPlayer, fn, rollbackSql, setStacks, v1OnlyDb, v2MigrationSql } from 
 
 const TABLES = ["cat_state", "items", "player_stacks", "boss_clears", "boss_fights", "founder_grants"];
 const INTEGRITY_FUNCS = ["v2_action_result", "v2_craft_once", "v2_boss_fight_once"];
+const BUDGET_FUNCS = ["v2_take_budgets", "v2_cleanup_budgets"];
 const API_FUNCS = ["v2_snapshot", "v2_choose_class", "v2_claim", "v2_equip", "v2_boss_fight", "v2_craft", "v2_salvage", "v2_lock", "v2_relic_forge", "v2_grant_founder"];
 const HELPERS = ["v2_equipment_revision","v2_apply_stacks", "v2_insert_items", "v2_items_json", "v2_item_json"];
 const DENIED = /permission denied|row-level security/;
@@ -92,7 +93,7 @@ describe("function privileges", () => {
     const r = await db.query<{ proname: string; prosecdef: boolean; proconfig: string[] | null }>(
       `select proname, prosecdef, proconfig from pg_proc where pronamespace = 'public'::regnamespace and proname like 'v2\\_%'`,
     );
-    expect(r.rows.length).toBe(API_FUNCS.length + INTEGRITY_FUNCS.length + HELPERS.length);
+    expect(r.rows.length).toBe(API_FUNCS.length + INTEGRITY_FUNCS.length + BUDGET_FUNCS.length + HELPERS.length);
     for (const f of r.rows) {
       expect(f.prosecdef, f.proname).toBe(true);
       expect(f.proconfig ?? [], f.proname).toContain('search_path=""');

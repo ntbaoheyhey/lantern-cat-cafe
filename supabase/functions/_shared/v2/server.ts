@@ -6,6 +6,7 @@ import { json } from "../auth.ts";
 import { GameError } from "../game.ts";
 import { fujiReader, voucherSigner, type VoucherSigner } from "../relic.ts";
 import { routesV2, type V2Deps, type V2Store } from "./game.ts";
+import { admitPlayer, type V2Route } from "./budgets.ts";
 import { handlerV2 } from "./http.ts";
 
 function env(name: string): string {
@@ -77,5 +78,7 @@ async function authenticate(req: Request): Promise<string> {
 }
 
 export function serveV2(name: keyof ReturnType<typeof routesV2>): (req: Request) => Promise<Response> {
-  return handlerV2({ authenticate, json }, routesV2(v2Deps())[name]);
+  const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), { auth: { persistSession: false, autoRefreshToken: false } });
+  const admit = (player: string) => admitPlayer((fn, args) => db.rpc(fn, args), name as V2Route, player);
+  return handlerV2({ authenticate, json }, routesV2(v2Deps())[name], admit);
 }
