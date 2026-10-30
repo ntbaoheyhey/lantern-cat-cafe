@@ -60,6 +60,7 @@ export function pgliteStore(getDb: () => PGlite): GameStore {
       ]),
     voucherSign: (p, nonce, sig) => one(`select public.game_voucher_sign($1, $2, $3) r`, [p, nonce, sig]),
     voucherReissue: (p, nonce, now, exp) => one(`select public.game_voucher_reissue($1, $2, $3, $4) r`, [p, nonce, now, exp]),
+    voucherCancelReissue: (p, nonce, exp) => one(`select public.game_voucher_cancel_reissue($1, $2, $3) r`, [p, nonce, exp]),
     voucher: (p, nonce) => one(`select public.game_voucher($1, $2) r`, [p, nonce]),
     voucherMinted: (p, nonce, tx) => one(`select public.game_voucher_minted($1, $2, $3) r`, [p, nonce, tx]),
   };

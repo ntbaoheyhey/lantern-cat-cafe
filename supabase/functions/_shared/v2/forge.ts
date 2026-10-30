@@ -1,7 +1,7 @@
 import { actionRequestId, priorAction } from "./actions.ts";
 import { relicIdFor, rollRelicRarity, v2 } from "@taskbar-hero/game-rules";
 import { dayDate, relicSeed } from "../game.ts";
-import { REISSUE_GRACE_SECONDS, VOUCHER_TTL_SECONDS, type ChainReader } from "../relic.ts";
+import { REISSUE_GRACE_SECONDS, VOUCHER_TTL_SECONDS, checksumAddress, type ChainReader } from "../relic.ts";
 import { getStateV2, type V2Deps, type ItemV2Raw } from "./game.ts";
 import { HTTP_STATUS_V2, V2Error, type GameApiErrorCodeV2Like } from "./http.ts";
 import { toPlayerStateV2 } from "./snapshot.ts";
@@ -89,7 +89,13 @@ export async function forgeRelicV2(deps: ForgeDepsV2, player: string) {
   if (pending) {
     if (nowS <= Number(pending.expiry) + REISSUE_GRACE_SECONDS) return done(pending);
     if (await chain.nonceUsed(BigInt(pending.nonce))) {
-      await deps.store.voucherMinted(player, pending.nonce, null);
+      // Used is not minted: RelicNFT.cancelNonce also burns a nonce. Without a RelicForged log, re-issue.
+      if (!chain.nonceMinted || (await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), Number(pending.expiry) - VOUCHER_TTL_SECONDS))) {
+        await deps.store.voucherMinted(player, pending.nonce, null);
+      } else {
+        const fresh = await deps.store.voucherCancelReissue(player, pending.nonce, expiresAt);
+        if (fresh) return done(fresh);
+      }
     } else {
       const fresh = await deps.store.voucherReissue(player, pending.nonce, new Date(nowMs).toISOString(), expiresAt);
       if (fresh) return done(fresh);

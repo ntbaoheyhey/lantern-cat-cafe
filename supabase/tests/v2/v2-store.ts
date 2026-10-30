@@ -30,6 +30,7 @@ export function pgliteV2Store(getDb: () => PGlite): V2Store {
     relicForge: a => one(`public.v2_relic_forge($1, $2, $3, $4, $5, $6, $7)`, [a.playerId, a.day, a.relicId, a.rarity, a.yarnCost, a.pearlCost, a.expiresAt]),
     voucherReissue: (p, nonce, now, expires) => one(`public.game_voucher_reissue($1, $2, $3, $4)`, [p, nonce, now, expires]),
     async voucherMinted(p, nonce, hash) { await one(`public.game_voucher_minted($1, $2, $3)`, [p, nonce, hash]); },
+    voucherCancelReissue: (p, nonce, expires) => one(`public.game_voucher_cancel_reissue($1, $2, $3)`, [p, nonce, expires]),
     async voucherSign(p, nonce, signature) { await one(`public.game_voucher_sign($1, $2, $3)`, [p, nonce, signature]); },
   };
 }

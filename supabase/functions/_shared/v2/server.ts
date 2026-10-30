@@ -49,6 +49,7 @@ export function pgV2Store(): V2Store {
     relicForge: a => rpc("v2_relic_forge", { p_player: a.playerId, p_day: a.day, p_relic_id: a.relicId, p_rarity: a.rarity, p_yarn_cost: a.yarnCost, p_pearl_cost: a.pearlCost, p_expires_at: a.expiresAt }),
     voucherReissue: (playerId, nonce, nowIso, expiresAt) => rpc("game_voucher_reissue", { p_player: playerId, p_nonce: nonce, p_now: nowIso, p_expires_at: expiresAt }),
     async voucherMinted(playerId, nonce, txHash) { await rpc("game_voucher_minted", { p_player: playerId, p_nonce: nonce, p_tx_hash: txHash }); },
+    voucherCancelReissue: (playerId, nonce, expiresAt) => rpc("game_voucher_cancel_reissue", { p_player: playerId, p_nonce: nonce, p_expires_at: expiresAt }),
     async voucherSign(playerId, nonce, signature) {
       await rpc("game_voucher_sign", { p_player: playerId, p_nonce: nonce, p_signature: signature });
     },

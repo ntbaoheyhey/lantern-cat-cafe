@@ -53,6 +53,7 @@ export interface V2Store {
   relicForge(args: { playerId: string; day: string; relicId: number; rarity: string; yarnCost: number; pearlCost: number; expiresAt: string }): Promise<{ status: "pending" | "new"; voucher: VoucherRowV2 } | { status: "blocked"; reason: string }>;
   voucherReissue(playerId: string, nonce: string, nowIso: string, expiresAt: string): Promise<VoucherRowV2 | null>;
   voucherMinted(playerId: string, nonce: string, txHash: string | null): Promise<void>;
+  voucherCancelReissue(playerId: string, nonce: string, expiresAt: string): Promise<VoucherRowV2 | null>;
   voucherSign(playerId: string, nonce: string, signature: string): Promise<void>;
 }
 export interface V2Deps { store: V2Store; seedSecret: string; now?: () => number; relic?: { signer?: VoucherSigner } }

@@ -83,7 +83,20 @@ export interface ChainReader {
   receipt(txHash: Hex): Promise<MintReceipt | null>;
   /** RelicNFT.usedNonces(nonce): true once the voucher was minted (or cancelled). */
   nonceUsed(nonce: bigint): Promise<boolean>;
+  /**
+   * True when a RelicForged log for this player, relicId and nonce exists, i.e. the used nonce was a
+   * real mint and not RelicNFT.cancelNonce. `sinceS` is the voucher's creation time (unix seconds);
+   * implementations must throw, never answer false, if they could not search back that far.
+   * Optional: without it a used nonce is treated as minted (the old behaviour).
+   */
+  nonceMinted?(player: Address, relicId: bigint, nonce: bigint, sinceS: number): Promise<boolean>;
 }
+
+/** Fuji getLogs window and the most windows one lookup scans (about 2.3 days at 2 s blocks, newest first). */
+const LOG_WINDOW = 10_000n;
+const LOG_MAX_WINDOWS = 30;
+/** Voucher creation is inferred from its expiry; look back this much further than that. */
+export const LOG_LOOKBACK_SLACK_SECONDS = 3600;
 
 export function fujiReader(rpcUrl: string, relicNft: Address): ChainReader {
   const client = createPublicClient({ transport: http(rpcUrl, { timeout: 10_000, retryCount: 1 }) });
@@ -98,6 +111,19 @@ export function fujiReader(rpcUrl: string, relicNft: Address): ChainReader {
       }
     },
     nonceUsed: (nonce) => client.readContract({ address: relicNft, abi: usedNoncesAbi, functionName: "usedNonces", args: [nonce] }),
+    async nonceMinted(player, relicId, nonce, sinceS) {
+      const latest = await client.getBlockNumber();
+      for (let i = 0n; i < BigInt(LOG_MAX_WINDOWS); i++) {
+        const to = latest - i * LOG_WINDOW;
+        const from = to >= LOG_WINDOW ? to - LOG_WINDOW + 1n : 0n;
+        const logs = await client.getLogs({ address: relicNft, event: relicForgedAbi[0], args: { player, relicId }, fromBlock: from, toBlock: to });
+        if (logs.some((l) => l.args.nonce === nonce)) return true;
+        if (from === 0n) return false;
+        const start = await client.getBlock({ blockNumber: from });
+        if (Number(start.timestamp) <= sinceS - LOG_LOOKBACK_SLACK_SECONDS) return false;
+      }
+      throw new Error("RelicForged log search did not reach the voucher's creation time");
+    },
   };
 }
 

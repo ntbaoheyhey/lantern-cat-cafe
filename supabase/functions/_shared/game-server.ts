@@ -102,6 +102,11 @@ export function pgGameStore(): GameStore {
       if (error) throw new Error(`game_voucher_reissue: ${error.message}`);
       return data;
     },
+    async voucherCancelReissue(playerId, nonce, expiresAt) {
+      const { data, error } = await db.rpc("game_voucher_cancel_reissue", { p_player: playerId, p_nonce: nonce, p_expires_at: expiresAt });
+      if (error) throw new Error(`game_voucher_cancel_reissue: ${error.message}`);
+      return data;
+    },
     async voucher(playerId, nonce) {
       const { data, error } = await db.rpc("game_voucher", { p_player: playerId, p_nonce: nonce });
       if (error) throw new Error(`game_voucher: ${error.message}`);
