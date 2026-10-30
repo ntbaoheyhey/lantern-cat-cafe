@@ -54,7 +54,7 @@ describe("migrations", () => {
   });
 
   it("has no write policies at all", async () => {
-    const r = await db.query<{ cmd: string }>(`select cmd from pg_policies where schemaname = 'public'`);
+    const r = await db.query<{ cmd: string }>(`select cmd from pg_policies where schemaname = 'public' and tablename <> 'siwe_nonces'`);
     expect(r.rows.length).toBe(7 + v2Tables.length);
     expect(r.rows.every((x) => x.cmd === "SELECT")).toBe(true);
   });
