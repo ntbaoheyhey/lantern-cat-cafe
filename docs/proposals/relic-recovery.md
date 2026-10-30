@@ -1,6 +1,8 @@
 # Proposal: recovering a paid but unminted Relic
 
-Status: **proposal, not approved.** This changes the Relic economy path (database and Edge Functions), so it is only implemented after the user approves. No code changes in this PR.
+Status: **fix 1 implemented (C7), migration not applied.** Fix 1 (tell minted from cancelled) is in `20261106000000_voucher_cancel_reissue.sql`, `relic.ts` (`nonceMinted`) and the v1/v2 forge flows; tests in `supabase/tests/src/voucher-cancel.test.ts`. The user applies the migration by hand BEFORE the Edge Functions deploy. Fixes 2 and 3, the reissue race guard and the client wallet message are still proposals.
+
+Original status: proposal, not approved; it changes the Relic economy path.
 
 ## The gap
 

@@ -470,6 +470,7 @@ describe("grants and RLS", () => {
     `select public.game_voucher('00000000-0000-4000-8000-000000000001', 1)`,
     `select public.game_voucher_minted('00000000-0000-4000-8000-000000000001', 1, null)`,
     `select public.game_voucher_json(v) from relic_vouchers v limit 1`,
+    `select public.game_voucher_cancel_reissue('00000000-0000-4000-8000-000000000001', 1, now() + interval '1 hour')`,
   ];
 
   it("anon and authenticated cannot execute the new functions", async () => {

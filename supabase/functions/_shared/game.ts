@@ -154,6 +154,8 @@ export interface GameStore {
   voucher(playerId: string, nonce: string): Promise<VoucherRow | null>;
   /** game_voucher_minted: mark minted; false if the voucher is not theirs. */
   voucherMinted(playerId: string, nonce: string, txHash: string | null): Promise<boolean>;
+  /** game_voucher_cancel_reissue: mark an issued voucher 'cancelled' (nonce used without a mint) and issue a new one for the same forge, no expiry condition; null if it is not the player's issued voucher. */
+  voucherCancelReissue(playerId: string, nonce: string, expiresAt: string): Promise<VoucherRow | null>;
 }
 
 /** Relic forge wiring. Absent parts make relic-forge / relic-mint-report answer server_error. */
@@ -402,7 +404,14 @@ export async function forgeRelic(deps: GameDeps, playerId: string): Promise<Forg
     // Expired. If it was minted anyway (never reported), record that instead of signing a second
     // voucher for the same paid forge; the forge below then applies the daily limit.
     if (await chain.nonceUsed(BigInt(pending.nonce))) {
-      await deps.store.voucherMinted(playerId, pending.nonce, null);
+      // A used nonce is not always a mint: RelicNFT.cancelNonce burns it too. Only a RelicForged log
+      // proves the Relic exists; otherwise the same forge gets a fresh voucher (docs/proposals/relic-recovery.md).
+      if (!chain.nonceMinted || (await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), pending.expiry - VOUCHER_TTL_SECONDS))) {
+        await deps.store.voucherMinted(playerId, pending.nonce, null);
+      } else {
+        const fresh = await deps.store.voucherCancelReissue(playerId, pending.nonce, expiresAt);
+        if (fresh) return done(await signedVoucher(deps, signer, playerId, fresh));
+      }
     } else {
       const fresh = await deps.store.voucherReissue(playerId, pending.nonce, new Date(nowMs).toISOString(), expiresAt);
       if (fresh) return done(await signedVoucher(deps, signer, playerId, fresh));
