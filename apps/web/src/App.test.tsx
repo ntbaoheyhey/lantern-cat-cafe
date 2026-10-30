@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
 vi.mock('./GameCanvas', () => ({ GameCanvas: () => <div data-testid="game-canvas" /> }));
+vi.mock('./layout/flag', () => ({ isGameV2: () => false }));
 
 import { App } from './App';
 import { getGameLoop } from './game/store';

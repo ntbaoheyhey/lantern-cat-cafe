@@ -6,6 +6,7 @@ A structured, step-by-step evaluation guide for contest judges testing **Taskbar
 - **Environment:** Any modern desktop browser (Chrome, Brave, or Edge recommended)
 - **Prerequisites for Part 1:** Zero. Runs locally in browser demo mode (`MockGameApiV2`) with zero crypto configuration, zero gas, and zero wallet extensions needed.
 - **Prerequisites for Part 2:** Core or MetaMask browser extension connected to Avalanche Fuji testnet (Chain ID 43113) with a small amount of test AVAX from a public faucet.
+- **Mechanics Reference:** For technical formulas, stat pipeline, server authority, and bounds, see [docs/mechanics-v2.md](mechanics-v2.md).
 
 ---
 

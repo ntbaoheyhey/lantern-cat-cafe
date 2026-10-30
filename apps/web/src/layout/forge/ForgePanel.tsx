@@ -16,6 +16,11 @@ import { TodayRelicCard } from '../../forge/TodayRelicCard';
 import { relicName, capitalize, oddsRows } from '../../forge/forgeText';
 import { relicImageUrl } from '../../market/marketText';
 import { LABELS } from '../../theme/labels';
+import {
+  getCraftBlockReason,
+  getRelicBlockReason,
+  getSalvageBlockReason,
+} from '../../v2text/blockReasons';
 import './ForgePanel.css';
 
 export interface ForgePanelRelic {
@@ -131,12 +136,12 @@ export function ForgePanel({
       const diff = Math.max(0, required - current);
       const matDef = v2.MATERIALS.find((m) => m.id === missingId);
       const matName = matDef ? matDef.name : (missingId === 'fish' ? 'Fish' : missingId);
-      disabledCraftReason = `Needs ${diff} more ${matName}`;
-    } else if (craftBlockReason === 'unknown_slot') {
-      disabledCraftReason = 'Unknown slot';
-    } else if (craftBlockReason === 'unknown_recipe') {
-      disabledCraftReason = 'Unknown recipe';
+      disabledCraftReason = getCraftBlockReason(craftBlockReason, { diff, matName });
+    } else {
+      disabledCraftReason = getCraftBlockReason(craftBlockReason);
     }
+  } else if (items.length >= v2.V2_CONFIG.bag.limit) {
+    disabledCraftReason = getCraftBlockReason(null, { bagFull: true });
   }
 
   const slotLabel =
@@ -191,15 +196,21 @@ export function ForgePanel({
   let relicBlockedText: string | null = null;
   let relicButtonText = 'Forge Relic';
   if (relicBlockedReason === 'daily_limit') {
-    relicBlockedText = "Daily limit reached: you already forged today's Relic. Come back tomorrow.";
+    relicBlockedText = getRelicBlockReason('daily_limit');
     relicButtonText = 'Daily limit reached';
   } else if (relicBlockedReason === 'not_enough_yarn') {
-    relicBlockedText = `Not enough Yarn (needs 30 Yarn, you have ${stacks.yarn ?? 0}).`;
+    relicBlockedText = getRelicBlockReason('not_enough_yarn', { yarnHeld: stacks.yarn ?? 0 });
     relicButtonText = 'Not enough Yarn';
   } else if (relicBlockedReason === 'no_moon_pearl') {
-    relicBlockedText = `No Moon Pearl (needs 1 Moon Pearl, you have ${stacks.moonPearl ?? 0}).`;
+    relicBlockedText = getRelicBlockReason('no_moon_pearl', { pearlsHeld: stacks.moonPearl ?? 0 });
     relicButtonText = 'No Moon Pearl';
   }
+
+  const salvageBlockReason = getSalvageBlockReason({
+    selectedCount: salvageIds.size,
+    eligibleCount: eligibleItems.length,
+    isBusy: isBusySalvage,
+  });
 
   const handleCraftConfirm = async () => {
     await onCraft(recipeId, selectedSlot);
@@ -436,7 +447,7 @@ export function ForgePanel({
                   {disabledCraftReason}
                 </button>
                 <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
-                  {disabledCraftReason}
+                  <span data-testid="block-reason-craft">{disabledCraftReason}</span>
                 </p>
                 {!anyRecipeAffordable && (
                   <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
@@ -670,21 +681,28 @@ export function ForgePanel({
                 </div>
               </div>
             ) : (
-              <button
-                type="button"
-                className={`forge-btn ${salvageIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
-                disabled={salvageIds.size === 0 || isLoopBusy}
-                aria-busy={isBusySalvage ? 'true' : 'false'}
-                onClick={() => setConfirmSalvage(true)}
-                data-testid="salvage-btn"
-              >
-                {isBusySalvage && <span className="btn-spinner" aria-hidden="true" />}
-                {isBusySalvage
-                  ? 'Salvaging...'
-                  : salvageIds.size === 0
-                  ? 'Select items to salvage'
-                  : `Salvage (${salvageIds.size})`}
-              </button>
+              <div className="forge-salvage-actions">
+                <button
+                  type="button"
+                  className={`forge-btn ${salvageIds.size === 0 ? '' : 'forge-btn-salvage forge-btn-primary pixel-btn'}`}
+                  disabled={salvageIds.size === 0 || isLoopBusy}
+                  aria-busy={isBusySalvage ? 'true' : 'false'}
+                  onClick={() => setConfirmSalvage(true)}
+                  data-testid="salvage-btn"
+                >
+                  {isBusySalvage && <span className="btn-spinner" aria-hidden="true" />}
+                  {isBusySalvage
+                    ? 'Salvaging...'
+                    : salvageIds.size === 0
+                    ? 'Select items to salvage'
+                    : `Salvage (${salvageIds.size})`}
+                </button>
+                {salvageBlockReason && (
+                  <p className="forge-note forge-block-reason" data-testid="block-reason-salvage">
+                    {salvageBlockReason}
+                  </p>
+                )}
+              </div>
             )}
           </div>
         </section>
@@ -792,19 +810,24 @@ export function ForgePanel({
                   {relicButtonText}
                 </button>
                 <p className="forge-note forge-block-reason" data-testid="relic-blocked-reason">
-                  {relicBlockedText}
+                  <span data-testid="block-reason-relic">{relicBlockedText}</span>
                 </p>
               </>
             ) : relic.pending ? (
-              <button
-                type="button"
-                className="forge-btn"
-                disabled
-                aria-disabled="true"
-                data-testid="relic-forge-btn"
-              >
-                Voucher Pending Mint
-              </button>
+              <>
+                <button
+                  type="button"
+                  className="forge-btn"
+                  disabled
+                  aria-disabled="true"
+                  data-testid="relic-forge-btn"
+                >
+                  Voucher Pending Mint
+                </button>
+                <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
+                  Finish saving your minted Relic before forging another.
+                </p>
+              </>
             ) : confirmRelic ? (
               <div className="forge-confirm-box" data-testid="relic-confirm-box" role="alert">
                 <p className="forge-confirm-text">

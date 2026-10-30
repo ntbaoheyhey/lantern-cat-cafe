@@ -159,6 +159,7 @@ describe('BossGatePanel', () => {
     const button = screen.getByRole('button', { name: 'Fight' });
     expect(button.hasAttribute('disabled')).toBe(true);
     expect(screen.getByText('Catnap: 0:42')).toBeTruthy();
+    expect(screen.getByTestId('block-reason-boss').textContent).toBe('Catnap: 0:42');
   });
 
   it('renders not_reached status for current chapter with rounds and monsters remaining', () => {

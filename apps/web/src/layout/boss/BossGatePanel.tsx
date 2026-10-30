@@ -278,7 +278,7 @@ export function BossGatePanel({
             {liveRegionText}
           </span>
           {visibleStatusText && (
-            <span id={statusTextId} className="boss-gate-status-text">
+            <span id={statusTextId} className="boss-gate-status-text" data-testid="block-reason-boss">
               {visibleStatusText}
             </span>
           )}

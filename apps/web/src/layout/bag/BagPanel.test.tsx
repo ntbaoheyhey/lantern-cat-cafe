@@ -53,6 +53,7 @@ describe('BagPanel: detail and actions', () => {
     const equip = screen.getByRole('button', { name: 'Equip' }) as HTMLButtonElement;
     expect(equip.disabled).toBe(true);
     expect(screen.getByText('Needs a sword weapon')).toBeTruthy();
+    expect(screen.getByTestId('block-reason-equip').textContent).toBe('Needs a sword weapon');
   });
 
   it('disables Equip for a slot the cat level has not unlocked', () => {
@@ -61,6 +62,7 @@ describe('BagPanel: detail and actions', () => {
     const equip = screen.getByRole('button', { name: 'Equip' }) as HTMLButtonElement;
     expect(equip.disabled).toBe(true);
     expect(screen.getByText('Unlocks at level 20')).toBeTruthy();
+    expect(screen.getByTestId('block-reason-equip').textContent).toBe('Unlocks at level 20');
   });
 
   it('Lock and Unlock call onToggleLock with the new lock state', () => {
@@ -93,6 +95,7 @@ describe('BagPanel: Equip best', () => {
     renderBag({ ...base, inventory: base.inventory.filter((i) => i.equipped) });
     const best = screen.getByRole('button', { name: 'Equip best' }) as HTMLButtonElement;
     expect(best.disabled).toBe(true);
+    expect(screen.getByTestId('block-reason-equip-best').textContent).toBe('Best gear already equipped');
   });
 });
 
