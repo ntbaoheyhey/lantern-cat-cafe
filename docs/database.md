@@ -59,6 +59,7 @@ A row is visible to the caller when its `player_id` (`players.id` for `players`)
 - Only `SELECT` policies exist, for role `authenticated`. No INSERT/UPDATE/DELETE policies.
 - Migration also revokes all table privileges from `anon`/`authenticated` and grants back only `SELECT` (player tables, `authenticated`), so writes fail with "permission denied" even if a policy were added by mistake.
 - `siwe_nonces` has RLS on, no grants for client roles, and (migration `20261103000000_siwe_nonces_server_only.sql`, applied by hand) a restrictive deny-all policy for `anon` and `authenticated`, so a future permissive policy cannot expose it. Only `service_role` (BYPASSRLS) can use it.
+- `private.v2_request_budgets` (migration `20261104000000_v2_request_budgets.sql`, applied by hand) holds per-player request counters; only `service_role` can call `v2_take_budgets` / `v2_cleanup_budgets`. Apply before redeploying v2 functions (limiter fails closed). See `docs/proposals/rate-limit-v2.md`.
 
 ## Tests
 

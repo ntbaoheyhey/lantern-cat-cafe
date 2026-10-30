@@ -58,12 +58,22 @@ async function requestObject(req: Request): Promise<Record<string, unknown>> {
   }
 }
 
-export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<string, unknown>) => Promise<unknown>): (req: Request) => Promise<Response> {
+/** Called after authentication and before the body is read; a non-null refusal stops all game work. */
+export type Admit = (player: string) => Promise<{ status: number; error: string; retryAfter: number } | null>;
+
+export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<string, unknown>) => Promise<unknown>, admit?: Admit): (req: Request) => Promise<Response> {
   return async (req) => {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: http.json(req, {}).headers });
     if (req.method !== "POST") return http.json(req, { error: "method_not_allowed" }, 405);
     try {
       const player = await http.authenticate(req);
+      const refusal = await admit?.(player);
+      if (refusal) {
+        const res = http.json(req, { error: refusal.error, retryAfter: refusal.retryAfter }, refusal.status);
+        res.headers.set("Retry-After", String(refusal.retryAfter));
+        res.headers.append("Access-Control-Expose-Headers", "Retry-After");
+        return res;
+      }
       const body = await requestObject(req);
       return http.json(req, await fn(player, body));
     } catch (e) {

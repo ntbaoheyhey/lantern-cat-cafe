@@ -8,6 +8,7 @@ import { as, migratedDb } from "../src/game-db.ts";
 import { call, newPlayer, setStacks, stack } from "./helpers.ts";
 import { pgliteV2Store } from "./v2-store.ts";
 
+// Budget counters now come from migration 20261104000000; only the still-unapproved proxy replay block is applied here.
 // Only rate/nonce proposals are applied to this disposable clone. Integrity assertions
 // now run against the approved migration, without reapplying its historical doc blocks.
 let db: PGlite;
@@ -15,7 +16,7 @@ const store = pgliteV2Store(() => db);
 const deps = { store, seedSecret: "proposal-test-only" };
 function sqlBlocks(file: string) {
   const doc = readFileSync(new URL(`../../../docs/proposals/${file}`, import.meta.url), "utf8");
-  return [...doc.matchAll(/```sql\n([\s\S]*?)```/g)].map(m => m[1]!).filter(sql => /^create /m.test(sql));
+  return [...doc.matchAll(/```sql\n([\s\S]*?)```/g)].map(m => m[1]!).filter(sql => /^create /m.test(sql) && !sql.includes("v2_request_budgets"));
 }
 beforeAll(async () => {
   db = await migratedDb();

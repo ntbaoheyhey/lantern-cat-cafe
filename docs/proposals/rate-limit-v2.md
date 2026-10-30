@@ -1,5 +1,7 @@
 # Shared request budgets for v2 — proposal only
 
+> **Status (2026-10-30):** per-player budgets are implemented: migration `supabase/migrations/20261104000000_v2_request_budgets.sql` (apply by hand), `supabase/functions/_shared/v2/budgets.ts`, wired into every v2 route through `handlerV2`. Per-IP budgets and the proxy envelope are still NOT implemented (no verified trusted IP header). **Order matters: apply the migration BEFORE redeploying the v2 Edge Functions**, because the limiter fails closed (503) when `v2_take_budgets` is missing. No client change yet: the web app should show `retryAfter` from HTTP 429.
+
 Do not apply this sketch in S2. It requires an approved SQL migration, shared wrapper integration and a frontend API-root change. No paid add-on, Redis account or new npm dependency is required: keep counters in the existing Supabase Postgres database. This is an engineering design for the existing free project, not a guarantee that unbounded hostile traffic fits its quota. Supabase currently lists a free shared database with 500 MB storage; Edge Functions also have CPU/invocation limits. The counter RPC itself costs database work and cannot refund an invocation that already reached Supabase. [Free plan](https://supabase.com/pricing), [function limits](https://supabase.com/docs/guides/functions/limits). Supabase's [Redis example](https://supabase.com/docs/guides/functions/examples/rate-limiting) illustrates shared atomic counters; the sketch below uses Postgres instead.
 
 ## Identity, limits and behavior
