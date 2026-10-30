@@ -107,7 +107,19 @@ Follow these numbered steps to experience the complete core RPG loop entirely of
 
 ## Part 2: Avalanche Fuji Wallet Integration (Extra 3 Steps)
 
-To verify the real on-chain contracts and digital ownership on the Avalanche Fuji testnet:
+### On-chain in 3 minutes (Zero-wallet instant verification)
+
+If you do not have a Web3 browser extension or testnet AVAX on hand, you can independently verify our entire Avalanche Fuji integration in under 5 seconds with a single terminal command:
+
+```bash
+node scripts/fuji-proof.mjs
+```
+
+This read-only script queries the public Fuji RPC (`https://api.avax-test.network/ext/bc/C/rpc`) to inspect our verified `RelicNFT` and `RelicMarket` contracts, query ERC-1155 metadata and token supplies, and fetch real `RelicForged`, `Listed`, and `Bought` transaction receipts with direct Routescan explorer links. For full step-by-step verification, sample output, contract source links, and the EIP-712 voucher architecture diagram, see [docs/avalanche-integration.md](avalanche-integration.md#verify-it-yourself-in-3-minutes).
+
+---
+
+To verify the real on-chain contracts and digital ownership interactively inside the web app:
 
 ### Extra Step 1: Connect Injected Browser Wallet
 1. Ensure your browser has the **Core** or **MetaMask** extension installed and set to **Avalanche Fuji Testnet** (Chain ID: `43113`, RPC: `https://api.avax-test.network/ext/bc/C/rpc`).
