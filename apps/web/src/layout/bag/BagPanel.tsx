@@ -128,6 +128,11 @@ export function BagPanel({ state, busy, onEquip, onToggleLock }: BagPanelProps) 
           {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
           {isBusyEquip ? 'Equipping...' : 'Equip best'}
         </button>
+        {upgrades.length === 0 && (
+          <span className="bag-equip-best-note" data-testid="block-reason-equip-best">
+            Best gear already equipped
+          </span>
+        )}
       </div>
     </div>
   );
@@ -255,7 +260,7 @@ function ItemDetail({
         </button>
       </div>
       {block && (
-        <p id={noteId} className="detail-note">
+        <p id={noteId} className="detail-note" data-testid="block-reason-equip">
           {block}
         </p>
       )}

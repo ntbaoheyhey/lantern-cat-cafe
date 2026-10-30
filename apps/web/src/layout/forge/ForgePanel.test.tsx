@@ -106,6 +106,7 @@ describe('ForgePanel', () => {
 
       const blockReason = screen.getByTestId('craft-block-reason');
       expect(blockReason.textContent).toContain('Needs 7 more Yarn');
+      expect(screen.getByTestId('block-reason-craft').textContent).toContain('Needs 7 more Yarn');
     });
 
     it('shows exact missing amount for Fluff Tuft (rcp.common needs 4 Fluff Tuft)', () => {
@@ -321,6 +322,7 @@ describe('ForgePanel', () => {
       const salvageBtn = screen.getByTestId('salvage-btn') as HTMLButtonElement;
       expect(salvageBtn.disabled).toBe(true);
       expect(salvageBtn.textContent).toContain('Select items to salvage');
+      expect(screen.getByTestId('block-reason-salvage').textContent).toBe('Select at least one item to salvage.');
     });
 
     it('shows empty message when no items are present', () => {
@@ -344,6 +346,7 @@ describe('ForgePanel', () => {
       fireEvent.click(screen.getByTestId('tab-relic'));
 
       expect(screen.getByTestId('relic-blocked-reason').textContent).toMatch(/daily limit/i);
+      expect(screen.getByTestId('block-reason-relic').textContent).toMatch(/daily limit/i);
       const relicBtn = screen.getByTestId('relic-forge-btn') as HTMLButtonElement;
       expect(relicBtn.disabled).toBe(true);
       expect(relicBtn.textContent).toMatch(/daily limit/i);
