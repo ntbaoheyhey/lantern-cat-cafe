@@ -374,3 +374,11 @@ handlers exercise the real SQL revision checks but do not reproduce production r
 scheduling. Headless visibility tests synthesize document visibility events because native
 OS tab switching is not reliable in headless Chromium. SIWE wallet signing, hosted Edge
 wiring, live latency, chain reads and minting remain outside this rehearsal.
+
+## Rehearsal findings (C3, 30 Oct 2026)
+
+The local rehearsal passed (82 s, 11 journeys). It also showed this runbook is stale in places:
+the v2 SQL is already live, the Founder migration branch no longer exists on the remote, and the
+switch is the `VITE_GAME_V2` build variable (see `apps/web/src/layout/flag.ts`), not a code
+change. Read [reports/C3.md](../reports/C3.md) for the corrections and the go/no-go checklist
+before using Steps 2, 4 and Section 5.
