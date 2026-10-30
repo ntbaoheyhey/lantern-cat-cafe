@@ -4,6 +4,8 @@ S2 does not change authentication, sign-in, secrets or deployments. These sketch
 
 ## Missing backend must fail closed in production
 
+IMPLEMENTED (U-1): `defaultAuthApi` returns a blocked API (every call rejects) for a production build with no `VITE_SUPABASE_URL`, unless the build sets `VITE_ALLOW_MOCK_AUTH=1` (used by the e2e demo builds). Tests: `apps/web/src/wallet/authApi.test.ts`. The sketch below threw instead; a blocked API was chosen so the app still renders.
+
 CONFIRMED: [apps/web/src/wallet/authApi.ts:35](../../apps/web/src/wallet/authApi.ts#L35) accepts mock verification, and [apps/web/src/wallet/authApi.ts:53](../../apps/web/src/wallet/authApi.ts#L53) selects it whenever the public backend URL is missing. A user can otherwise mistake a production mock session for server authentication. This does **not** make a mock token valid at the real Edge Functions.
 
 Replace only the selector when approved:

@@ -18,7 +18,7 @@ const classicDist = `dist/e2e-${classicPort}`;
 const v2Dist = `dist-v2/e2e-${v2Port}`;
 if (new Set([classicPort, v2Port, serverPort, apiPort]).size !== 4) throw new Error('All four E2E ports must differ');
 const externalServer = process.env.F2_EXTERNAL_SERVER === '1';
-const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' };
+const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_ALLOW_MOCK_AUTH: '1' };
 
 export default defineConfig({
   testDir: 'e2e',
