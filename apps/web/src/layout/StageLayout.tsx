@@ -42,6 +42,7 @@ import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
 import { layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
 import { itemName, rarityLabel } from './itemView';
+import { getBlockReason } from '../v2text/blockReasons';
 import './layout.css';
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
@@ -224,7 +225,7 @@ export function StageLayout() {
         }
       }
       if (event.type === 'error') setNotice(event.message);
-      if (event.type === 'refused') setNotice(event.code.replaceAll('_', ' '));
+      if (event.type === 'refused') setNotice(getBlockReason(event.code));
     });
     const visibility = () => {
       if (document.hidden) {

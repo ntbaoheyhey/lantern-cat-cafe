@@ -90,3 +90,10 @@ describe('blockReasons v2 mapping & formatters', () => {
     expect(getBlockReason('custom_error_code')).toBe('custom error code');
   });
 });
+
+describe('refused action notice text', () => {
+  it('turns a server refusal code into a readable sentence', () => {
+    expect(getBlockReason('no_key')).toContain('Cat Key');
+    expect(getBlockReason('some_new_code')).toBe('some new code');
+  });
+});
