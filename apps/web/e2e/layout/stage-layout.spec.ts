@@ -184,6 +184,10 @@ test.describe('phone layout and navigation', () => {
 
     // Escape returns focus to the active tab in nav.
     await nav.getByRole('tab', { name: 'Boss', exact: true }).click();
+    // Opening a panel moves focus on the next animation frame. Observe that transition before
+    // exercising Escape, rather than racing the pending panel-focus callback.
+    await expect.poll(() => page.getByRole('tabpanel', { name: 'Boss', exact: true })
+      .evaluate(panel => panel.contains(document.activeElement))).toBe(true);
     await page.keyboard.press('Escape');
     await expect(nav.getByRole('tab', { name: 'Boss', exact: true })).toBeFocused();
   });
