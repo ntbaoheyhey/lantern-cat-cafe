@@ -3,6 +3,7 @@
 Status: draft for the user's review. Nothing here is final. Game rules, contracts, auth, schema (Tier 3) are untouched. Desktop first, no mobile work yet.
 
 ## 1. Goals
+- **Art rule (user, 31 Oct):** Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. The mockup's simple placeholder cats and icons are stand-ins only; the real build uses the current art folders.
 - A full-screen web app that feels like one cozy cat cafe at night, not a strip of tabs.
 - Judges (Technical + Avalanche Integration) see on-chain proof fast: Fuji badge, Relic id, contract link, Routescan.
 - Every screen has one primary action and one place to look first.

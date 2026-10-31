@@ -131,6 +131,7 @@ tr.hl td{background:var(--surface-2)}
 <p>Status: draft for the user&#x27;s review. Nothing here is final. Game rules, contracts, auth, schema (Tier 3) are untouched. Desktop first, no mobile work yet.</p>
 <h3>1. Goals</h3>
 <ul>
+<li><b>Art rule (user, 31 Oct):</b> Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. The mockup's simple placeholder cats and icons are stand-ins only; the real build uses the current art folders.</li>
 <li>A full-screen web app that feels like one cozy cat cafe at night, not a strip of tabs.</li>
 <li>Judges (Technical + Avalanche Integration) see on-chain proof fast: Fuji badge, Relic id, contract link, Routescan.</li>
 <li>Every screen has one primary action and one place to look first.</li>
@@ -175,7 +176,7 @@ tr.hl td{background:var(--surface-2)}
 <li>Is the left rail OK, or prefer top tabs like today?</li>
 <li>Should Home also show a mini boss progress, or keep it only on Map?</li>
 </ul></template><template id="t-plan"><h2>Implementation plan (living draft)</h2>
-<p>Rule for every phase: branch from latest <code>main</code>, one draft PR, do not touch Tier 3 (contracts, auth, supabase, <code>packages/game-rules</code>, economy numbers). Keep existing tests green. No new dependencies. Git author must be <code>ntbaoheyhey</code> noreply email.</p>
+<p>Rule for every phase: keep all existing art assets untouched (see the art rule in the prompt header); branch from latest <code>main</code>, one draft PR, do not touch Tier 3 (contracts, auth, supabase, <code>packages/game-rules</code>, economy numbers). Keep existing tests green. No new dependencies. Git author must be <code>ntbaoheyhey</code> noreply email.</p>
 <p>Files owned by other open UI threads (Boss panel scroll fix, landing audit) are skipped until those PRs merge.</p>
 <h3>Dependency graph</h3>
 <p>P0 tokens+shell -&gt; (P1 Home, P2 Bag, P3 Map, P4 Forge, P5 Market, P6 Hero+Help) in parallel -&gt; P7 polish, states, art, QA.</p>
@@ -194,7 +195,7 @@ tr.hl td{background:var(--surface-2)}
 <h4>P0 (Claude lane, not pasted)</h4>
 <p>Tokens plus app shell only; I do this after you approve the direction.</p>
 <h4>Common header (put at top of every prompt below)</h4>
-<div class="cb"><button class="cp" type="button">Copy</button><pre>Repo ntbaoheyhey/taskbar-hero. Git setup first: git config user.email must be 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Base on latest origin/main after the P0 shell PR is merged. Design source of truth: reports/ui-redesign/index.html (open it, flip through screens) and reports/ui-redesign/BRIEF.md. Rebuild only your zone to match the mockup at 1280x720 and 1600x900 (desktop only). Use tokens from apps/web/src/theme.css; no new dependencies; do not change game rules, contracts, auth, schema, economy numbers, or files outside your zone (a one-line note is fine for adjacent test/helper updates). Keep existing tests passing, add tests for new components, run pnpm build and the web tests. Take before/after screenshots at both sizes into reports/ui-redesign/&lt;phase&gt;/. Open a draft PR to main, do not merge, then report: what changed, what is not verified, screenshots.</pre></div>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>Repo ntbaoheyhey/taskbar-hero. Git setup first: git config user.email must be 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Base on latest origin/main after the P0 shell PR is merged. Design source of truth: reports/ui-redesign/index.html (open it, flip through screens) and reports/ui-redesign/BRIEF.md. Rebuild only your zone to match the mockup at 1280x720 and 1600x900 (desktop only). Use tokens from apps/web/src/theme.css; no new dependencies; do not change game rules, contracts, auth, schema, economy numbers, or files outside your zone (a one-line note is fine for adjacent test/helper updates). ART RULE: Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. Keep existing tests passing, add tests for new components, run pnpm build and the web tests. Take before/after screenshots at both sizes into reports/ui-redesign/&lt;phase&gt;/. Open a draft PR to main, do not merge, then report: what changed, what is not verified, screenshots.</pre></div>
 <h4>P1 Antigravity: landing, class picker, Home</h4>
 <div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P1. Zone: the landing page, apps/web/src/layout/classpicker/, and the Home stage layout. Build the Landing, Class picker and Home screens as in the mockup: hero scene + Play as guest + Connect wallet (secondary) + proof strip; three class cards with one primary Start button; Home with scene centre, hero card, next goal, recent loot and event log. Keep all existing behaviour (guest play, wallet connect, class save).</pre></div>
 <h4>P2 Codex: Bag</h4>

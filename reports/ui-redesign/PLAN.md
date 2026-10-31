@@ -1,6 +1,6 @@
 # Implementation plan (living draft)
 
-Rule for every phase: branch from latest `main`, one draft PR, do not touch Tier 3 (contracts, auth, supabase, `packages/game-rules`, economy numbers). Keep existing tests green. No new dependencies. Git author must be `ntbaoheyhey` noreply email.
+Rule for every phase: keep all existing art assets untouched (see the art rule in the prompt header); branch from latest `main`, one draft PR, do not touch Tier 3 (contracts, auth, supabase, `packages/game-rules`, economy numbers). Keep existing tests green. No new dependencies. Git author must be `ntbaoheyhey` noreply email.
 Files owned by other open UI threads (Boss panel scroll fix, landing audit) are skipped until those PRs merge.
 
 ## Dependency graph
@@ -24,7 +24,7 @@ Tokens plus app shell only; I do this after you approve the direction.
 
 ### Common header (put at top of every prompt below)
 ```
-Repo ntbaoheyhey/taskbar-hero. Git setup first: git config user.email must be 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Base on latest origin/main after the P0 shell PR is merged. Design source of truth: reports/ui-redesign/index.html (open it, flip through screens) and reports/ui-redesign/BRIEF.md. Rebuild only your zone to match the mockup at 1280x720 and 1600x900 (desktop only). Use tokens from apps/web/src/theme.css; no new dependencies; do not change game rules, contracts, auth, schema, economy numbers, or files outside your zone (a one-line note is fine for adjacent test/helper updates). Keep existing tests passing, add tests for new components, run pnpm build and the web tests. Take before/after screenshots at both sizes into reports/ui-redesign/<phase>/. Open a draft PR to main, do not merge, then report: what changed, what is not verified, screenshots.
+Repo ntbaoheyhey/taskbar-hero. Git setup first: git config user.email must be 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Base on latest origin/main after the P0 shell PR is merged. Design source of truth: reports/ui-redesign/index.html (open it, flip through screens) and reports/ui-redesign/BRIEF.md. Rebuild only your zone to match the mockup at 1280x720 and 1600x900 (desktop only). Use tokens from apps/web/src/theme.css; no new dependencies; do not change game rules, contracts, auth, schema, economy numbers, or files outside your zone (a one-line note is fine for adjacent test/helper updates). ART RULE: Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. Keep existing tests passing, add tests for new components, run pnpm build and the web tests. Take before/after screenshots at both sizes into reports/ui-redesign/<phase>/. Open a draft PR to main, do not merge, then report: what changed, what is not verified, screenshots.
 ```
 
 ### P1 Antigravity: landing, class picker, Home
