@@ -80,7 +80,14 @@ export class MockGameApiV2 implements GameApiV2 {
     if (opts.start) this.data.state.stacks = { ...opts.start };
     try {
       const raw = this.storage?.getItem(MOCK_V2_STORAGE_KEY);
-      if (raw) { const parsed: unknown = JSON.parse(raw); if (validSave(parsed)) { this.data = parsed; return; } }
+      if (raw) { const parsed: unknown = JSON.parse(raw); if (validSave(parsed)) {
+        this.data = parsed;
+        // Preserve old demo saves while adding the same stable id to their pending/today views.
+        const claimId = this.data.pending?.claimId ?? this.data.todayRelic?.claimId ?? crypto.randomUUID();
+        if (this.data.pending) this.data.pending.claimId = claimId;
+        if (this.data.todayRelic) this.data.todayRelic.claimId = claimId;
+        this.save(); return;
+      } }
     } catch { /* Private windows and corrupt JSON both fall back to memory. */ }
     this.save();
   }
@@ -204,14 +211,14 @@ export class MockGameApiV2 implements GameApiV2 {
       if (this.data.pending.expiry <= nowS) {
         this.data.pending = { ...this.data.pending, nonce: String(this.data.voucherNonce++), expiry: nowS + VOUCHER_TTL_SECONDS }; this.save();
       }
-      return { voucher: copy(this.data.pending), state: this.snapshot() };
+      return { claimId: this.data.pending.claimId, voucher: copy(this.data.pending), state: this.snapshot() };
     }
     const r = this.accept(v2.applyRelicForge(this.data.state, this.today()));
     const rarity = rollRelicRarity(this.seed());
-    this.data.pending = { player: '0x0000000000000000000000000000000000000000', relicId: String(relicIdFor(rarity)), rarity: rarityIndex(rarity), rarityName: rarity,
+    this.data.pending = { claimId: crypto.randomUUID(), player: '0x0000000000000000000000000000000000000000', relicId: String(relicIdFor(rarity)), rarity: rarityIndex(rarity), rarityName: rarity,
       nonce: String(this.data.voucherNonce++), expiry: nowS + VOUCHER_TTL_SECONDS, signature: DEMO_SIGNATURE };
-    this.data.todayRelic = { relicId: this.data.pending.relicId, rarityName: rarity, minted: false, txHash: null };
+    this.data.todayRelic = { claimId: this.data.pending.claimId, relicId: this.data.pending.relicId, rarityName: rarity, minted: false, txHash: null };
     this.data.state = r.state; this.data.counter++; this.save();
-    return { voucher: copy(this.data.pending), state: this.snapshot() };
+    return { claimId: this.data.pending.claimId, voucher: copy(this.data.pending), state: this.snapshot() };
   }
 }

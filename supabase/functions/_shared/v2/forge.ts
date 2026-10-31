@@ -1,6 +1,6 @@
 import { actionRequestId, priorAction } from "./actions.ts";
 import { relicIdFor, rollRelicRarity, v2 } from "@taskbar-hero/game-rules";
-import { dayDate, relicSeed } from "../game.ts";
+import { dayDate, relicSeed, resolveReissuedVoucher } from "../game.ts";
 import { REISSUE_GRACE_SECONDS, VOUCHER_TTL_SECONDS, checksumAddress, type ChainReader } from "../relic.ts";
 import { getStateV2, type V2Deps, type ItemV2Raw } from "./game.ts";
 import { HTTP_STATUS_V2, V2Error, type GameApiErrorCodeV2Like } from "./http.ts";
@@ -84,14 +84,19 @@ export async function forgeRelicV2(deps: ForgeDepsV2, player: string) {
   const nowS = Math.floor(nowMs / 1000);
   const day = dayDate(nowS);
   const expiresAt = new Date((nowS + VOUCHER_TTL_SECONDS) * 1000).toISOString();
-  const done = async (row: VoucherRowV2) => ({ voucher: await signedVoucherV2(deps.store, signer, player, row), state: await getStateV2(deps, player) });
+  const done = async (row: VoucherRowV2) => {
+    const checked = await resolveReissuedVoucher(deps.store, chain, player, row, nowMs);
+    return { claimId: checked.claimId, voucher: await signedVoucherV2(deps.store, signer, player, checked), state: await getStateV2(deps, player) };
+  };
   const pending = (await snapshot(deps, player, nowMs)).pending;
   if (pending) {
+    if (pending.reissuePending) return done(pending);
     if (nowS <= Number(pending.expiry) + REISSUE_GRACE_SECONDS) return done(pending);
     if (await chain.nonceUsed(BigInt(pending.nonce))) {
       // Used is not minted: RelicNFT.cancelNonce also burns a nonce. Without a RelicForged log, re-issue.
-      if (!chain.nonceMinted || (await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), Number(pending.expiry) - VOUCHER_TTL_SECONDS))) {
-        await deps.store.voucherMinted(player, pending.nonce, null);
+      const mint = chain.nonceMinted ? await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), Number(pending.expiry) - VOUCHER_TTL_SECONDS) : true;
+      if (mint) {
+        await deps.store.voucherMinted(player, pending.nonce, typeof mint === "string" ? mint.toLowerCase() : null);
       } else {
         const fresh = await deps.store.voucherCancelReissue(player, pending.nonce, expiresAt);
         if (fresh) return done(fresh);

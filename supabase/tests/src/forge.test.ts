@@ -140,7 +140,7 @@ describe("relic-forge", () => {
       blockedBy: null,
       forgedToday: true,
       pending: r.voucher,
-      today: { relicId: String(relicIdFor(rarity)), rarityName: rarity, minted: false, txHash: null },
+      today: { claimId: r.claimId, relicId: String(relicIdFor(rarity)), rarityName: rarity, minted: false, txHash: null },
     });
     expect(await vouchers(p.id)).toEqual([
       { nonce: r.voucher.nonce, status: "issued", relic_id: relicIdFor(rarity), rarity, tx_hash: null },
@@ -221,7 +221,7 @@ describe("relic-forge", () => {
       blockedBy: "daily_limit",
       forgedToday: true,
       pending: null,
-      today: { relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
+      today: { claimId: v.claimId, relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
     });
     await expect(forgeRelic(deps, p.id)).rejects.toMatchObject({ code: "forge_blocked", reason: "daily_limit" });
 
@@ -259,7 +259,7 @@ describe("relic-forge", () => {
     expect(Number((await db.query<{ n: string }>(`select count(*) n from relic_forges where player_id = $1`, [p.id])).rows[0]!.n)).toBe(1);
   });
 
-  it("game-state signs a voucher left unsigned by an interrupted forge, or hides it without a signer", async () => {
+  it("game-state signs an interrupted forge or keeps its voucher recoverable without a signer", async () => {
     clock = T0;
     const p = await player();
     const out = await store.forge({
@@ -273,13 +273,16 @@ describe("relic-forge", () => {
     });
     expect(out.status).toBe("new");
     const noSigner: GameDeps = { ...deps, relic: { chain, nft: NFT } };
-    expect((await getState(noSigner, p.id)).forge).toEqual({
-      blockedBy: "daily_limit",
+    if (out.status === "blocked") throw new Error("expected a paid forge");
+    expect((await getState(noSigner, p.id)).forge).toMatchObject({
+      blockedBy: null,
       forgedToday: true,
-      pending: null,
-      today: { relicId: "1", rarityName: "common", minted: false, txHash: null },
+      pending: { claimId: out.voucher.claimId, signature: null, recoverable: true },
+      recoverable: true,
+      today: { claimId: out.voucher.claimId, relicId: "1", rarityName: "common", minted: false, txHash: null, recoverable: true },
     });
     const pending = (await getState(deps, p.id)).forge.pending!;
+    if (pending.signature === null) throw new Error("expected a signed voucher");
     expect(await recover(pending)).toBe(SIGNER);
     expect((await getState(noSigner, p.id)).forge.pending).toEqual(pending);
   });
@@ -299,7 +302,7 @@ describe("forge.today", () => {
     expect((await getState(deps, p.id)).forge.today).toBeNull();
 
     const v = (await forgeRelic(deps, p.id)).voucher;
-    const unminted = { relicId: v.relicId, rarityName: v.rarityName, minted: false, txHash: null };
+    const unminted = { claimId: v.claimId, relicId: v.relicId, rarityName: v.rarityName, minted: false, txHash: null };
     expect((await getState(deps, p.id)).forge.today).toEqual(unminted);
 
     // A re-signed voucher is still the same forge's Relic.
@@ -348,7 +351,7 @@ describe("relic-mint-report", () => {
       blockedBy: "daily_limit",
       forgedToday: true,
       pending: null,
-      today: { relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
+      today: { claimId: v.claimId, relicId: v.relicId, rarityName: v.rarityName, minted: true, txHash: tx },
     });
     expect(await vouchers(p.id)).toEqual([expect.objectContaining({ status: "minted", tx_hash: tx })]);
     const again = await reportMint(deps, p.id, v.nonce, tx);
@@ -410,7 +413,8 @@ describe("HTTP", () => {
     expect(res.status).toBe(200);
     const body = (await res.json()) as ForgeResult;
     const fixture: ForgeResult = {
-      voucher: { player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
+      claimId: "00000000-0000-4000-8000-000000000001",
+      voucher: { claimId: "00000000-0000-4000-8000-000000000001", player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
       state: {
         gold: 0,
         shards: 0,
@@ -422,8 +426,8 @@ describe("HTTP", () => {
         forge: {
           blockedBy: null,
           forgedToday: true,
-          pending: { player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
-          today: { relicId: "1", rarityName: "common", minted: false, txHash: null },
+          pending: { claimId: "00000000-0000-4000-8000-000000000001", player: OTHER, relicId: "1", rarity: 0, rarityName: "common", nonce: "1", expiry: 1, signature: "0x" },
+          today: { claimId: "00000000-0000-4000-8000-000000000001", relicId: "1", rarityName: "common", minted: false, txHash: null },
         },
         power: 1,
         goldPerSecond: 1,

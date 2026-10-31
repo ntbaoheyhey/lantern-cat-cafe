@@ -28,9 +28,14 @@ export async function migratedDb(): Promise<PGlite> {
  * Takes a getter so tests can build it before beforeAll creates the database.
  */
 export function pgliteStore(getDb: () => PGlite): GameStore {
-  const one = <T>(sql: string, params: unknown[]) => {
-    const db = getDb();
-    return as(db, "service_role", null, async () => (await db.query<{ r: T }>(sql, params)).rows[0]!.r);
+  let tail: Promise<unknown> = Promise.resolve();
+  const one = <T>(sql: string, params: unknown[]): Promise<T> => {
+    const result = tail.then(() => {
+      const db = getDb();
+      return as(db, "service_role", null, async () => (await db.query<{ r: T }>(sql, params)).rows[0]!.r);
+    });
+    tail = result.catch(() => undefined);
+    return result;
   };
   return {
     snapshot: (p, day, starter) => one(`select public.game_snapshot($1, $2, $3::jsonb) r`, [p, day, JSON.stringify(starter)]),
@@ -60,6 +65,7 @@ export function pgliteStore(getDb: () => PGlite): GameStore {
       ]),
     voucherSign: (p, nonce, sig) => one(`select public.game_voucher_sign($1, $2, $3) r`, [p, nonce, sig]),
     voucherReissue: (p, nonce, now, exp) => one(`select public.game_voucher_reissue($1, $2, $3, $4) r`, [p, nonce, now, exp]),
+    voucherResolveReissue: (p, nonce, token, used) => one(`select public.game_voucher_reissue_resolve($1, $2, $3, $4) r`, [p, nonce, token, used]),
     voucherCancelReissue: (p, nonce, exp) => one(`select public.game_voucher_cancel_reissue($1, $2, $3) r`, [p, nonce, exp]),
     voucher: (p, nonce) => one(`select public.game_voucher($1, $2) r`, [p, nonce]),
     voucherMinted: (p, nonce, tx) => one(`select public.game_voucher_minted($1, $2, $3) r`, [p, nonce, tx]),

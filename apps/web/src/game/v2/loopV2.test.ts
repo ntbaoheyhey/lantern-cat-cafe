@@ -310,7 +310,8 @@ it('wires void actions, salvage and forge to the contract and publishes action e
   await loop.salvage(['i1']);
   expect(api.salvage).toHaveBeenCalledWith(['i1']);
   const forged: Awaited<ReturnType<GameApiV2['forgeRelic']>> = {
-    voucher: { player: '0x1', relicId: '1', rarity: 0, rarityName: 'common', nonce: '1', expiry: 1, signature: '0x' },
+    claimId: '00000000-0000-4000-8000-000000000042',
+    voucher: { claimId: '00000000-0000-4000-8000-000000000042', player: '0x1', relicId: '1', rarity: 0, rarityName: 'common', nonce: '1', expiry: 1, signature: '0x' },
     state: state(),
   };
   api.forgeRelic.mockResolvedValue(forged);

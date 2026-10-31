@@ -143,7 +143,7 @@ describe("v2 Edge Function logic over migrated SQL", () => {
     expect((await getStateV2(deps, p)).forge.blockedBy).toBeNull();
     const day = dayDate(clock / 1000);
     await call(db, `public.v2_relic_forge($1, $2, 7, 'rare', $3, $4, $5)`, [p, day, v2.RELIC_RECIPE.materials.yarn, v2.RELIC_RECIPE.materials.moonPearl, new Date(clock + 3600_000).toISOString()]);
-    expect((await getStateV2(deps, p)).forge).toMatchObject({ pending: null, forgedToday: true, blockedBy: null });
+    expect((await getStateV2(deps, p)).forge).toMatchObject({ pending: { signature: null, recoverable: true }, recoverable: true, forgedToday: true, blockedBy: null });
     const signature = `0x${"AB".repeat(65)}`;
     const sign = vi.fn().mockResolvedValue(signature);
     const signedDeps = { ...deps, relic: { signer: { sign, verifyingContract: "0x0000000000000000000000000000000000000000" as const } } };

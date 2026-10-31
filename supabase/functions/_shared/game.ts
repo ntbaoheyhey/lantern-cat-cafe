@@ -28,6 +28,9 @@ import {
   type ClaimResult,
   type Endpoint,
   type ForgeResult,
+  type MintReportResult,
+  type PendingRelicVoucher,
+  type RecoverableRelicVoucher,
   type GameApiErrorCode,
   type ForgeStatus,
   type OwnedGear,
@@ -65,6 +68,7 @@ export type GearRow = Gear & { power: number };
 
 /** A relic_vouchers row as `game_voucher_json` returns it (20260106000000_relic_forge.sql). */
 export interface VoucherRow {
+  claimId: string;
   /** players.wallet, lowercase. */
   player: string;
   relicId: string;
@@ -74,7 +78,14 @@ export interface VoucherRow {
   expiry: number;
   /** Null until the server signs it (right after the forge). */
   signature: string | null;
-  status: "issued" | "minted" | "expired";
+  status: "issued" | "minted" | "expired" | "cancelled";
+  txHash: string | null;
+  /** Internal recovery metadata; never included in the public voucher. */
+  reissueNonce?: string | null;
+  reissuePending?: boolean;
+  reissueCheckAfter?: number | null;
+  /** Only the reissue caller receives this token, never a snapshot. */
+  reissueCheckToken?: string;
 }
 
 /** What `game_snapshot` returns (supabase/migrations/20260104000000_game_api.sql, 20260106000000_relic_forge.sql). */
@@ -97,7 +108,7 @@ export interface Snapshot {
 }
 
 /** A snapshot whose pending voucher is signed and in API form. */
-type Loaded = Omit<Snapshot, "pending"> & { pending: RelicVoucher | null };
+type Loaded = Omit<Snapshot, "pending"> & { pending: PendingRelicVoucher | null; pendingRow: VoucherRow | null };
 
 export type ForgeOutcome =
   | { status: "pending" | "new"; voucher: VoucherRow }
@@ -150,6 +161,8 @@ export interface GameStore {
   voucherSign(playerId: string, nonce: string, signature: string): Promise<boolean>;
   /** game_voucher_reissue: replace an issued voucher that expired before `now`; null if it did not. */
   voucherReissue(playerId: string, nonce: string, now: string, expiresAt: string): Promise<VoucherRow | null>;
+  /** Complete the exclusive post-reissue chain check; a used old nonce cancels the replacement. */
+  voucherResolveReissue(playerId: string, nonce: string, token: string, used: boolean): Promise<VoucherRow | null>;
   /** game_voucher: the player's voucher by nonce, any status; null if not theirs. */
   voucher(playerId: string, nonce: string): Promise<VoucherRow | null>;
   /** game_voucher_minted: mark minted; false if the voucher is not theirs. */
@@ -229,14 +242,16 @@ function voucherFields(v: VoucherRow): VoucherFields {
 
 /** The voucher in API form, signing (and storing the signature) first if needed. */
 async function signedVoucher(deps: GameDeps, signer: VoucherSigner | undefined, playerId: string, v: VoucherRow): Promise<RelicVoucher> {
+  if (v.reissuePending) throw new GameError("server_error");
   const fields = voucherFields(v);
   let signature = v.signature;
   if (!signature) {
     if (!signer) throw new GameError("server_error", "relic forge is not configured");
     signature = (await signer.sign(fields)).toLowerCase();
-    await deps.store.voucherSign(playerId, v.nonce, signature);
+    if (v.status !== "issued" || !(await deps.store.voucherSign(playerId, v.nonce, signature))) throw new GameError("server_error");
   }
   return {
+    claimId: v.claimId,
     player: fields.player,
     relicId: v.relicId,
     rarity: fields.rarity,
@@ -245,6 +260,34 @@ async function signedVoucher(deps: GameDeps, signer: VoucherSigner | undefined, 
     expiry: Number(v.expiry),
     signature: signature as `0x${string}`,
   };
+}
+
+export function recoverableVoucher(v: VoucherRow): RecoverableRelicVoucher {
+  return { claimId: v.claimId, player: checksumAddress(v.player), relicId: v.relicId,
+    rarity: rarityIndex(v.rarityName), rarityName: v.rarityName, nonce: v.nonce,
+    expiry: Number(v.expiry), signature: null, recoverable: true };
+}
+
+/** Only the lease owner can release a replacement. Interrupted checks can be retried after grace. */
+export async function resolveReissuedVoucher(
+  store: Pick<GameStore, "voucherReissue" | "voucherResolveReissue">,
+  chain: ChainReader, player: string, row: VoucherRow, nowMs: number,
+): Promise<VoucherRow> {
+  if (!row.reissuePending) return row;
+  let owned = row;
+  if (!owned.reissueCheckToken) {
+    if (Math.floor(nowMs / 1000) <= Number(row.reissueCheckAfter)) throw new GameError("server_error");
+    const resumed = await store.voucherReissue(player, row.nonce, new Date(nowMs).toISOString(),
+      new Date(nowMs + VOUCHER_TTL_SECONDS * 1000).toISOString());
+    if (!resumed) throw new GameError("server_error");
+    owned = resumed;
+  }
+  if (!owned.reissueNonce || !owned.reissueCheckToken) throw new GameError("server_error");
+  // This read is deliberately AFTER voucherReissue, and before any signature can be stored.
+  const used = await chain.nonceUsed(BigInt(owned.reissueNonce));
+  const resolved = await store.voucherResolveReissue(player, owned.nonce, owned.reissueCheckToken, used);
+  if (!resolved) throw new GameError("server_error");
+  return resolved;
 }
 
 function toState(s: Loaded, nowMs: number): ServerState {
@@ -269,11 +312,14 @@ async function load(deps: GameDeps, playerId: string, nowMs: number): Promise<Lo
   const s = await deps.store.snapshot(playerId, dayDate(nowMs / 1000), starterGear().map(toRow));
   if (!s) throw new GameError("not_found");
   const row = s.pending ?? null;
-  // A voucher is unsigned only between game_forge and game_voucher_sign; sign it if we can, else
-  // leave it out until relic-forge does.
+  // Missing/malformed signers and unfinished race checks must never hide a paid voucher.
   const signer = deps.relic?.signer;
-  const pending = row && (row.signature || signer) ? await signedVoucher(deps, signer, playerId, row) : null;
-  return { ...s, pending };
+  let pending: PendingRelicVoucher | null = row ? recoverableVoucher(row) : null;
+  if (row && !row.reissuePending) {
+    try { pending = await signedVoucher(deps, signer, playerId, row); }
+    catch { /* State stays available and exposes the recoverable voucher. Forge answers server_error. */ }
+  }
+  return { ...s, pending, pendingRow: row && pending?.signature ? { ...row, signature: pending.signature } : row };
 }
 
 /** POST game-state */
@@ -395,26 +441,33 @@ export async function forgeRelic(deps: GameDeps, playerId: string): Promise<Forg
   const nowS = Math.floor(nowMs / 1000);
   const day = dayDate(nowS);
   const expiresAt = new Date((nowS + VOUCHER_TTL_SECONDS) * 1000).toISOString();
-  const done = async (voucher: RelicVoucher): Promise<ForgeResult> => ({ voucher, state: toState(await load(deps, playerId, nowMs), nowMs) });
+  const done = async (row: VoucherRow): Promise<ForgeResult> => {
+    const checked = await resolveReissuedVoucher(deps.store, chain, playerId, row, nowMs);
+    const voucher = await signedVoucher(deps, signer, playerId, checked);
+    return { claimId: checked.claimId, voucher, state: toState(await load(deps, playerId, nowMs), nowMs) };
+  };
 
   const before = await load(deps, playerId, nowMs);
   const pending = before.pending;
   if (pending) {
-    if (nowS <= pending.expiry + REISSUE_GRACE_SECONDS) return done(pending);
+    if (before.pendingRow!.reissuePending) return done(before.pendingRow!);
+    if (pending.signature === null) throw new GameError("server_error");
+    if (nowS <= pending.expiry + REISSUE_GRACE_SECONDS) return done(before.pendingRow!);
     // Expired. If it was minted anyway (never reported), record that instead of signing a second
     // voucher for the same paid forge; the forge below then applies the daily limit.
     if (await chain.nonceUsed(BigInt(pending.nonce))) {
       // A used nonce is not always a mint: RelicNFT.cancelNonce burns it too. Only a RelicForged log
       // proves the Relic exists; otherwise the same forge gets a fresh voucher (docs/proposals/relic-recovery.md).
-      if (!chain.nonceMinted || (await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), pending.expiry - VOUCHER_TTL_SECONDS))) {
-        await deps.store.voucherMinted(playerId, pending.nonce, null);
+      const mint = chain.nonceMinted ? await chain.nonceMinted(checksumAddress(pending.player), BigInt(pending.relicId), BigInt(pending.nonce), pending.expiry - VOUCHER_TTL_SECONDS) : true;
+      if (mint) {
+        await deps.store.voucherMinted(playerId, pending.nonce, typeof mint === "string" ? mint.toLowerCase() : null);
       } else {
         const fresh = await deps.store.voucherCancelReissue(playerId, pending.nonce, expiresAt);
-        if (fresh) return done(await signedVoucher(deps, signer, playerId, fresh));
+        if (fresh) return done(fresh);
       }
     } else {
       const fresh = await deps.store.voucherReissue(playerId, pending.nonce, new Date(nowMs).toISOString(), expiresAt);
-      if (fresh) return done(await signedVoucher(deps, signer, playerId, fresh));
+      if (fresh) return done(fresh);
       // A concurrent call re-issued it first: fall through and pick that one up.
     }
   }
@@ -430,7 +483,7 @@ export async function forgeRelic(deps: GameDeps, playerId: string): Promise<Forg
     expiresAt,
   });
   if (out.status === "blocked") throw new GameError("forge_blocked", out.reason);
-  return done(await signedVoucher(deps, signer, playerId, out.voucher));
+  return done(out.voucher);
 }
 
 /** uint256 nonces we issue fit in a Postgres bigint. */
@@ -440,7 +493,7 @@ const MAX_NONCE = 2n ** 63n - 1n;
  * POST relic-mint-report { nonce, txHash }: mark the caller's voucher minted once its tx on Fuji is
  * a successful RelicNFT call that emitted RelicForged for exactly this voucher.
  */
-export async function reportMint(deps: GameDeps, playerId: string, nonce: unknown, txHash: unknown): Promise<ServerState> {
+export async function reportMint(deps: GameDeps, playerId: string, nonce: unknown, txHash: unknown): Promise<MintReportResult> {
   if (typeof nonce !== "string" || !/^[1-9][0-9]{0,18}$/.test(nonce) || BigInt(nonce) > MAX_NONCE) {
     throw new GameError("not_found");
   }
@@ -450,7 +503,7 @@ export async function reportMint(deps: GameDeps, playerId: string, nonce: unknow
 
   const v = await deps.store.voucher(playerId, nonce);
   if (!v) throw new GameError("not_found");
-  if (v.status !== "minted") {
+  if (v.status !== "minted" || !v.txHash) {
     let ok = false;
     try {
       ok = receiptMintsVoucher(await chain.receipt(txHash as `0x${string}`), nft, voucherFields(v));
@@ -459,9 +512,9 @@ export async function reportMint(deps: GameDeps, playerId: string, nonce: unknow
       console.error(e);
     }
     if (!ok) throw new GameError("mint_not_confirmed");
-    await deps.store.voucherMinted(playerId, nonce, txHash.toLowerCase());
+    if (!(await deps.store.voucherMinted(playerId, nonce, txHash.toLowerCase()))) throw new GameError("server_error");
   }
-  return toState(await load(deps, playerId, nowMs), nowMs);
+  return { ...toState(await load(deps, playerId, nowMs), nowMs), claimId: v.claimId };
 }
 
 export interface HttpDeps {

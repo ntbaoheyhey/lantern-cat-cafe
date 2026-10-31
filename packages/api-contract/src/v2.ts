@@ -1,4 +1,12 @@
 import type { v2 } from '@taskbar-hero/game-rules';
+import type { RelicVoucher } from './types';
+
+/** Same stable claim and signed voucher as v1, with the v2 state. */
+export interface ForgeResultV2<State = unknown> {
+  claimId: string;
+  voucher: RelicVoucher;
+  state: State;
+}
 
 /** Optional for old servers/saves. Source, not catalog id, identifies free starter gear. */
 export interface ItemViewV2 extends v2.ItemViewV2 {

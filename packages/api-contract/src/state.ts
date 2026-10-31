@@ -1,5 +1,5 @@
 import { CONFIG, dayIndex, forgeBlock, goldPerSecond, heroPower, newPlayer, type Gear } from '@taskbar-hero/game-rules';
-import type { OwnedGear, RelicVoucher, ServerState, TodayRelic } from './types';
+import type { OwnedGear, PendingRelicVoucher, ServerState, TodayRelic } from './types';
 
 /**
  * The stored numbers a ServerState is derived from. The Edge Functions fill it from Postgres
@@ -17,7 +17,7 @@ export interface StoredState {
   keyEarnedToday: boolean;
   /** True once today's Relic has been forged (paid for), minted or not. */
   forgedToday: boolean;
-  pending: RelicVoucher | null;
+  pending: PendingRelicVoucher | null;
   /** Today's forged Relic, or null. */
   today: TodayRelic | null;
 }
@@ -51,7 +51,10 @@ export function buildServerState(stored: StoredState, nowMs: number): ServerStat
       blockedBy: stored.pending ? null : forgeBlock(player, day),
       forgedToday: stored.forgedToday,
       pending: stored.pending ? { ...stored.pending } : null,
-      today: stored.today ? { ...stored.today } : null,
+      ...(stored.pending?.signature === null ? { recoverable: true as const } : {}),
+      today: stored.today ? { ...stored.today,
+        ...(stored.pending?.signature === null && stored.pending.claimId === stored.today.claimId ? { recoverable: true as const } : {}),
+      } : null,
     },
     power,
     goldPerSecond: goldPerSecond(power),

@@ -202,13 +202,16 @@ describe("v2 Relic forge shares the v1 voucher lifecycle", () => {
     await expect(forge(p)).rejects.toMatchObject(blocked("daily_limit"));
     expect((await db.query<{ status: string; tx_hash: string | null }>(`select status, tx_hash from relic_vouchers where nonce = $1`, [first.nonce])).rows[0]).toEqual({ status: "minted", tx_hash: null });
   });
-  it("reloads the pending voucher when a parallel caller reissued it first", async () => {
+  it("keeps a competing unsigned replacement recoverable until its interrupted check can resume", async () => {
     const p = await fresh(); await setStacks(db, p, relicCost);
     const first = (await forge(p)).voucher;
     clock = (first.expiry + REISSUE_GRACE_SECONDS + 1) * 1000;
     const competing = vi.fn(async (...args: Parameters<typeof store.voucherReissue>) => { await store.voucherReissue(...args); return null; });
     const relicForge = vi.fn(store.relicForge);
-    const next = await forgeRelicV2({ ...deps, store: { ...store, voucherReissue: competing, relicForge } }, p);
+    await expect(forgeRelicV2({ ...deps, store: { ...store, voucherReissue: competing, relicForge } }, p)).rejects.toMatchObject({ code: "server_error" });
+    expect((await getStateV2(deps, p)).forge.pending).toMatchObject({ signature: null, recoverable: true });
+    clock += (REISSUE_GRACE_SECONDS + 1) * 1000;
+    const next = await forgeRelicV2(deps, p);
     expect(next.voucher.nonce).not.toBe(first.nonce);
     expect(next.voucher.relicId).toBe(first.relicId);
     expect(competing).toHaveBeenCalledOnce(); expect(relicForge).not.toHaveBeenCalled();

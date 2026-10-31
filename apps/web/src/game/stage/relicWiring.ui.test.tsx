@@ -28,7 +28,7 @@ vi.mock('../v2/storeV2', async importOriginal => ({ ...await importOriginal<type
 import { StageLayout } from '../../layout/StageLayout';
 import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
 import { clearUnreported, saveUnreported } from '../../forge/mintStore';
-const voucher: RelicVoucher = { player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
+const voucher: RelicVoucher = { claimId: '00000000-0000-4000-8000-000000000042', player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
 beforeEach(() => {
   vi.clearAllMocks(); localStorage.clear(); localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
   fake.connected = true; fake.demo = true; fake.state = sampleServerStateV2(); fake.state.forge.blockedBy = null;

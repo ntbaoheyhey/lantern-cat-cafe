@@ -6,14 +6,14 @@ import type {
   WeaponType,
   ForgeBlockV2,
 } from '../../api/GameApiV2';
-import type { RelicVoucher, TodayRelic } from '@taskbar-hero/api-contract';
+import type { PendingRelicVoucher, TodayRelic } from '@taskbar-hero/api-contract';
 import { v2 } from '@taskbar-hero/game-rules';
 import { PixelIcon } from '../../art/pixelIcons';
 import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
 import { V2PixelFrame, type V2FrameName } from '../../art/v2Frames';
 import { ItemIcon } from '../ItemIcon';
 import { TodayRelicCard } from '../../forge/TodayRelicCard';
-import { relicName, capitalize, oddsRows } from '../../forge/forgeText';
+import { relicName, capitalize, oddsRows, RELIC_WAITING_TEXT } from '../../forge/forgeText';
 import { relicImageUrl } from '../../market/marketText';
 import { LABELS } from '../../theme/labels';
 import {
@@ -25,7 +25,7 @@ import './ForgePanel.css';
 
 export interface ForgePanelRelic {
   today: TodayRelic | null;
-  pending: RelicVoucher | null;
+  pending: PendingRelicVoucher | null;
   blockedReason: ForgeBlockV2 | null;
 }
 
@@ -192,7 +192,7 @@ export function ForgePanel({
   };
 
   // Relic calculations
-  const relicBlockedReason = relic.blockedReason;
+  const relicBlockedReason = relic.pending ? null : relic.blockedReason;
   let relicBlockedText: string | null = null;
   let relicButtonText = 'Forge Relic';
   if (relicBlockedReason === 'daily_limit') {
@@ -739,7 +739,9 @@ export function ForgePanel({
                 </span>
               </p>
               <p className="forge-note">
-                Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).
+                {relic.pending.signature === null
+                  ? 'Your paid Relic can be recovered when the server is ready.'
+                  : 'Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).'}
               </p>
             </div>
           ) : relic.today ? (
@@ -825,7 +827,7 @@ export function ForgePanel({
                   Voucher Pending Mint
                 </button>
                 <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
-                  Finish saving your minted Relic before forging another.
+                  {RELIC_WAITING_TEXT}
                 </p>
               </>
             ) : confirmRelic ? (

@@ -5,7 +5,7 @@ import type { GameLoop } from '../game/gameState';
 import { ErrorNote, WaitingForServer, describeFailure } from '../game/LoadNotice';
 import { getGameApi, getGameLoop, useGameMode, useGameSnapshot } from '../game/store';
 import { LABELS } from '../theme/labels';
-import { blockText, oddsRows, relicName } from './forgeText';
+import { blockText, oddsRows, relicName, RELIC_WAITING_TEXT } from './forgeText';
 import { ForgeReveal } from './ForgeReveal';
 import { MintPanel } from './MintPanel';
 import { loadUnreported, type UnreportedMint } from './mintStore';
@@ -83,6 +83,11 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
     setMinted(null);
     try {
       const result = await api.forgeRelic();
+      if (result.state.forge.pending?.nonce !== result.voucher.nonce) {
+        loop.adopt(result.state);
+        setVoucher(null);
+        return;
+      }
       unapplied.current = result;
       setVoucher(result.voucher);
       setRevealing(true);
@@ -173,7 +178,10 @@ export function ForgeTab({ api = getGameApi(), loop = getGameLoop(), demo, revea
               <span className={`forge-tag rarity-${toMint.rarityName}`}>{LABELS.rarities[toMint.rarityName]}</span>
             </p>
           )}
-          <MintPanel voucher={toMint} api={api} loop={loop} onMinted={onMinted} />
+          {toMint.signature === null ? (
+            !forge.today?.recoverable && <p className="forge-note">{RELIC_WAITING_TEXT}</p>
+          ) : <MintPanel voucher={toMint} api={api} loop={loop} onMinted={onMinted} />}
+          {toMint.signature !== null && forge.blockedBy === 'daily_limit' && <p className="forge-note">{RELIC_WAITING_TEXT}</p>}
         </div>
       ) : forge.today && (forge.today.minted || forge.blockedBy !== null) ? null : forge.today ? (
         // Unminted with no voucher but forging allowed: the server re-signs the same Relic.

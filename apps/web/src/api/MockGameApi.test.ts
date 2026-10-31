@@ -99,7 +99,7 @@ describe('forge', () => {
       blockedBy: null,
       forgedToday: true,
       pending: voucher,
-      today: { relicId: voucher.relicId, rarityName: voucher.rarityName, minted: false, txHash: null },
+      today: { claimId: voucher.claimId, relicId: voucher.relicId, rarityName: voucher.rarityName, minted: false, txHash: null },
     });
     // Asking again returns the same voucher without charging.
     const again = await api.forgeRelic();
@@ -127,7 +127,7 @@ describe('forge', () => {
       blockedBy: 'daily_limit',
       forgedToday: true,
       pending: null,
-      today: { relicId: voucher.relicId, rarityName: voucher.rarityName, minted: true, txHash: '0x1' },
+      today: { claimId: voucher.claimId, relicId: voucher.relicId, rarityName: voucher.rarityName, minted: true, txHash: '0x1' },
     });
     await expect(api.forgeRelic()).rejects.toEqual(new GameApiError('forge_blocked', 'daily_limit'));
   });

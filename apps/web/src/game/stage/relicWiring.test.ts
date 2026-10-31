@@ -3,11 +3,11 @@ import type { RelicVoucher } from '@taskbar-hero/api-contract';
 import type { GameSnapshotV2 } from '../v2/loopV2';
 import { forgeRelicForWalletV2 } from '../v2/storeV2';
 import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
-export const voucher: RelicVoucher = { player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
+export const voucher: RelicVoucher = { claimId: '00000000-0000-4000-8000-000000000042', player: '0x0000000000000000000000000000000000000001', relicId: '7', rarity: 1, rarityName: 'rare', nonce: '42', expiry: 2000000000, signature: '0x00' };
 function setup(reason: 'not_enough_yarn' | 'no_moon_pearl' | 'daily_limit' | null = null) {
   const state = sampleServerStateV2(); state.forge.blockedBy = reason;
   const snapshot: GameSnapshotV2 = { state, paused: false, loadFailed: false, busy: null, pending: null, queued: 0, claimInFlight: false, lastError: null, eventSeq: 0, lastEvent: null };
-  const loop = { getSnapshot: () => snapshot, forgeRelic: vi.fn(async () => ({ voucher, state })), retry: vi.fn(async () => {}) };
+  const loop = { getSnapshot: () => snapshot, forgeRelic: vi.fn(async () => ({ claimId: voucher.claimId, voucher, state })), retry: vi.fn(async () => {}) };
   const mint = vi.fn(async (_v: RelicVoucher) => {});
   return { loop, mint, snapshot };
 }

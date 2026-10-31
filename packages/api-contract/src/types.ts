@@ -23,6 +23,8 @@ export interface BossStatus {
  * uint256 values are decimal strings so they survive JSON.
  */
 export interface RelicVoucher {
+  /** Existing relic_forges.id. Public, stable across voucher replacements. */
+  claimId: string;
   player: `0x${string}`;
   /** relicIdFor(rarity) from game-rules: one relicId per rarity tier. */
   relicId: string;
@@ -35,8 +37,17 @@ export interface RelicVoucher {
   signature: `0x${string}`;
 }
 
+/** A paid voucher that cannot be signed yet. It must remain visible to the player. */
+export interface RecoverableRelicVoucher extends Omit<RelicVoucher, 'signature'> {
+  signature: null;
+  recoverable: true;
+}
+export type PendingRelicVoucher = RelicVoucher | RecoverableRelicVoucher;
+
 /** The Relic forged (paid for) today, minted or not. */
 export interface TodayRelic {
+  claimId: string;
+  recoverable?: true;
   relicId: string;
   rarityName: Rarity;
   /** True once the server has confirmed the mint on Fuji. */
@@ -55,7 +66,8 @@ export interface ForgeStatus {
    * The paid, not yet minted voucher, if any. Re-fetching never re-rolls: an expired one is
    * re-signed with the same relicId and rarity, a new nonce and a new expiry.
    */
-  pending: RelicVoucher | null;
+  pending: PendingRelicVoucher | null;
+  recoverable?: true;
   /** Today's forged Relic, or null when none was forged today. */
   today: TodayRelic | null;
 }
@@ -94,10 +106,16 @@ export interface BossFightResult {
 }
 
 export interface ForgeResult {
+  claimId: string;
   /** The voucher to mint (new, or today's pending one). */
   voucher: RelicVoucher;
   /** State after paying (shards and one Boss Key spent on a new forge). */
   state: ServerState;
+}
+
+/** Mint reports identify their claim even when it was forged on an earlier day. */
+export interface MintReportResult extends ServerState {
+  claimId: string;
 }
 
 /**
@@ -129,5 +147,5 @@ export interface GameApi {
    * clears `forge.pending` once it sees RelicForged for that nonce. Rejects with `not_found` (unknown
    * nonce) or `mint_not_confirmed` (tx missing, failed or for another voucher; safe to retry).
    */
-  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState>;
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<MintReportResult>;
 }

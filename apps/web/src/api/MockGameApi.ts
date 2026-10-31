@@ -23,6 +23,7 @@ import {
   type ClaimResult,
   type ForgeResult,
   type GameApi,
+  type MintReportResult,
   type OwnedGear,
   type RelicVoucher,
   type ServerState,
@@ -171,7 +172,7 @@ export class MockGameApi implements GameApi {
       if (this.pending.expiry <= nowS) {
         this.pending = { ...this.pending, nonce: String(++this.forges), expiry: nowS + VOUCHER_TTL_SECONDS };
       }
-      return Promise.resolve({ voucher: { ...this.pending }, state: this.snapshot() });
+      return Promise.resolve({ claimId: this.pending.claimId, voucher: { ...this.pending }, state: this.snapshot() });
     }
     const blocked = forgeBlock(this.player, this.today());
     if (blocked) return Promise.reject(new GameApiError('forge_blocked', blocked));
@@ -180,6 +181,7 @@ export class MockGameApi implements GameApi {
     this.player.lastForgeDay = this.today();
     const rarity = rollRelicRarity(deriveSeed(this.seed, 2000 + ++this.forges));
     this.pending = {
+      claimId: crypto.randomUUID(),
       player: DEMO_PLAYER,
       relicId: String(relicIdFor(rarity)),
       rarity: rarityIndex(rarity),
@@ -188,14 +190,15 @@ export class MockGameApi implements GameApi {
       expiry: nowS + VOUCHER_TTL_SECONDS,
       signature: DEMO_SIGNATURE,
     };
-    this.forgedRelic = { relicId: this.pending.relicId, rarityName: rarity, minted: false, txHash: null };
-    return Promise.resolve({ voucher: { ...this.pending }, state: this.snapshot() });
+    this.forgedRelic = { claimId: this.pending.claimId, relicId: this.pending.relicId, rarityName: rarity, minted: false, txHash: null };
+    return Promise.resolve({ claimId: this.pending.claimId, voucher: { ...this.pending }, state: this.snapshot() });
   }
 
-  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState> {
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<MintReportResult> {
     if (!this.pending || this.pending.nonce !== nonce) return Promise.reject(new GameApiError('not_found'));
+    const claimId = this.pending.claimId;
     this.pending = null;
     if (this.forgedRelic) this.forgedRelic = { ...this.forgedRelic, minted: true, txHash };
-    return Promise.resolve(this.snapshot());
+    return Promise.resolve({ ...this.snapshot(), claimId });
   }
 }
