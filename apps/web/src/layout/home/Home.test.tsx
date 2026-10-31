@@ -52,14 +52,22 @@ describe('Home and Landing Components (AGR1)', () => {
   });
 
   describe('RecentLootCard', () => {
-    it('renders heading "Recent finds" and currency totals', () => {
+    it('renders heading "Recent loot" and currency totals', () => {
       const state = sampleServerStateV2();
       render(<RecentLootCard state={state} />);
 
-      expect(screen.getByRole('heading', { name: 'Recent finds' })).toBeTruthy();
+      expect(screen.getByRole('heading', { name: 'Recent loot' })).toBeTruthy();
       expect(screen.getByText('Fish')).toBeTruthy();
       expect(screen.getByText('Yarn')).toBeTruthy();
       expect(screen.getByText('Keys')).toBeTruthy();
+    });
+
+    it('renders "Recent finds" heading when gains are present', () => {
+      const state = sampleServerStateV2();
+      const gains = { fish: 10, yarn: 5, keys: 0, materials: {}, items: [], autoSalvaged: [], xp: 20, levelsGained: 0 };
+      render(<RecentLootCard state={state} gains={gains} />);
+
+      expect(screen.getByRole('heading', { name: 'Recent finds' })).toBeTruthy();
     });
   });
 
@@ -103,8 +111,9 @@ describe('Home and Landing Components (AGR1)', () => {
 
       expect(screen.getByTestId('landing-hero')).toBeTruthy();
       expect(screen.getByTestId('landing-network-pill').textContent).toContain('Live on Avalanche Fuji');
-      expect(screen.getByRole('heading', { name: 'A cat RPG that plays itself' })).toBeTruthy();
-      expect(screen.getByText(/Your cat lives in a thin strip/i)).toBeTruthy();
+      expect(screen.getByText(/Taskbar/i)).toBeTruthy();
+      expect(screen.getByText(/A cozy idle RPG that lives in a strip of your browser/i)).toBeTruthy();
+      expect(screen.getByText(/No token\. No fees to play/i)).toBeTruthy();
 
       // Primary CTA
       const guestBtn = screen.getByTestId('landing-start');

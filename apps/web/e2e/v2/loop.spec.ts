@@ -11,7 +11,8 @@ const raw = (page: Page): Promise<Save> => page.evaluate(key => JSON.parse(local
 const initialNow = Date.UTC(2026, 9, 25, 12);
 async function load(page: Page, kind?: MockV2FixtureKind, change?: (save: Save) => void) {
   await page.goto('/');
-  await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
+  // AGR1 redesign: HUD hidden on onboarding class picker before class choice.
+  await expect(page.getByRole('region', { name: 'Cat status' }).or(page.getByTestId('class-picker'))).toBeVisible();
   const nowMs = await page.evaluate(() => Date.now());
   const save = kind ? JSON.parse(mockV2SaveJson(kind, { nowMs, classId: 'warrior', chapter: 1 })) : null;
   if (save && change) change(save);
@@ -20,7 +21,7 @@ async function load(page: Page, kind?: MockV2FixtureKind, change?: (save: Save) 
     localStorage.removeItem('taskbar-hero:v2-last-visit');
   }, { key: KEY, save });
   await page.reload();
-  await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Cat status' }).or(page.getByTestId('class-picker'))).toBeVisible();
   return save;
 }
 async function tab(page: Page, name: string) {

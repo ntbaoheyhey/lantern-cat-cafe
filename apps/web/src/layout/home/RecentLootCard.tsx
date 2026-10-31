@@ -11,12 +11,12 @@ export interface RecentLootCardProps {
 }
 
 export function RecentLootCard({ state, gains }: RecentLootCardProps) {
-  const recentItems = state.inventory.slice(-4).reverse();
+  const recentItems = state.inventory.slice(-6).reverse();
 
   return (
-    <div className="home-card home-card--loot" data-testid="home-recent-loot-card">
+    <div className="home-card home-card--loot v2-recent-loot" data-testid="home-recent-loot-card">
       <div className="home-card__header">
-        <h2 className="home-card__title">Recent finds</h2>
+        <h2 className="home-card__title">Recent loot</h2>
       </div>
 
       <div className="home-card__body">

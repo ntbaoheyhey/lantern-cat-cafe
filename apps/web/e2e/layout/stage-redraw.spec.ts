@@ -2,7 +2,7 @@ import { expect, test } from '../support/test';
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
-import { stageHeight, stageZoom } from '../../src/layout/metrics';
+import { desktopStageMetrics, stageHeight, stageZoom } from '../../src/layout/metrics';
 
 const writeScreenshots = process.env.SCREENSHOTS === '1';
 const outDir = process.env.SCREENSHOT_DIR ?? resolve(process.cwd(), '../../reports/fix-stage-redraw');
@@ -23,9 +23,12 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) test(`both act
     await page.setViewportSize({ width: width!, height: height! });
     const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
     await expect(canvas).toHaveCount(1);
-    const stageW = width! <= 600 ? width! : (width! >= 1024 && height! >= 640 ? Math.floor(width! - Math.min(460, Math.max(380, width! * 0.32))) : Math.floor(width! * 0.55));
+    const isDesktop = width! > 600;
+    const stageW = width! <= 600 ? width! : Math.floor(width! * 0.55);
     const zoom = stageZoom(stageW, stageHeight(width!, height!));
-    const logicalWidth = Math.max(160, Math.floor(stageW / zoom));
+    const logicalWidth = isDesktop
+      ? desktopStageMetrics(width!, height!).logicalWidth
+      : Math.max(160, Math.floor(stageW / zoom));
     // Phaser removes the old canvas on its next frame. Check count and dimensions
     // together so a handoff between two separate assertions cannot hit the old canvas.
     await expect.poll(() => canvas.evaluateAll(elements => elements.map(element => {

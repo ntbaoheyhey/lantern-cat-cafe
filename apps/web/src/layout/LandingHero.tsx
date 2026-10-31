@@ -16,46 +16,61 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
 
   return (
     <section className="landing" aria-labelledby="landing-title" data-testid="landing-hero">
-      {/* Network pill */}
-      <div className="landing__network-pill" data-testid="landing-network-pill">
-        <span className="landing__network-dot" aria-hidden="true" />
-        <span>Live on Avalanche Fuji</span>
-      </div>
-
-      {/* Hero Visual Scene */}
+      {/* Full-bleed background scene */}
       <div className="landing__scene" aria-hidden="true">
-        <BackdropView art={backdropFor(1)} className="landing__backdrop" />
-        <div className="landing__cat-wrap">
-          <CatPortrait size={96} />
-        </div>
+        <BackdropView art={backdropFor(1)} width={640} className="landing__backdrop" />
       </div>
 
-      {/* Copy block */}
-      <div className="landing__content">
-        <h1 id="landing-title" className="landing__title">
-          A cat RPG that plays itself
-        </h1>
-        <p className="landing__promise">
-          Your cat lives in a thin strip above your taskbar. Collect fish, upgrade gear and beat the bosses.
-        </p>
+      {/* Hero content grid */}
+      <div className="landing__hero">
+        <div className="landing__hero-left">
+          {/* Network pill */}
+          <div className="landing__network-pill" data-testid="landing-network-pill">
+            <span className="landing__network-dot" aria-hidden="true" />
+            <span>Live on Avalanche Fuji</span>
+          </div>
 
-        {/* CTA buttons */}
-        <div className="landing__actions">
-          <button
-            type="button"
-            className="pixel-btn landing__guest-btn"
-            onClick={handleGuest}
-            data-testid="landing-start"
-          >
-            Play as guest
-          </button>
-          <div className="landing__wallet-btn-wrap" data-testid="landing-wallet">
-            <WalletButton />
+          {/* Title */}
+          <div id="landing-title" className="landing__title" aria-hidden="true">
+            Taskbar<br />Hero
+          </div>
+
+          {/* Promise copy */}
+          <p className="landing__promise">
+            A cozy idle RPG that lives in a strip of your browser. Your cat fights while you work. Rare gear can become a Relic you truly own.
+          </p>
+
+          {/* CTA buttons */}
+          <div className="landing__actions">
+            <button
+              type="button"
+              className="landing__guest-btn"
+              onClick={handleGuest}
+              data-testid="landing-start"
+            >
+              Play as guest
+            </button>
+            <div className="landing__wallet-btn-wrap" data-testid="landing-wallet">
+              <WalletButton />
+            </div>
+          </div>
+
+          {/* Footnote */}
+          <p className="landing__footnote">
+            No token. No fees to play. Wallet only needed to mint or trade Relics.
+          </p>
+        </div>
+
+        <div className="landing__hero-right" aria-hidden="true">
+          <div className="landing__cats-group">
+            <div className="landing__cat-item landing__cat-item--primary">
+              <CatPortrait size={160} />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Proof strip */}
+      {/* Proof strip pinned to bottom */}
       <div className="landing__proof-strip" role="region" aria-label="Game guarantees and proof">
         <div className="landing__proof-item">
           <span className="landing__proof-pill">ERC-721</span>
@@ -98,7 +113,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
         {onHelp && (
           <>
             <div className="landing__proof-divider" aria-hidden="true">·</div>
-            <div className="landing__proof-item">
+            <div className="landing__proof-item landing__proof-item--help">
               <button
                 type="button"
                 className="landing__proof-btn"
