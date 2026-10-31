@@ -5,6 +5,8 @@ APPLY BEFORE DEPLOY: 20261107000000_voucher_race_guard.sql
 
 Date: 31 October 2026 (UTC+7). Base: origin/main at a913b052387f666b58d706281b51c926177b6e62, including deploy import-map fix #217. The user confirmed Claude's merge notice. Work used a separate clean worktree because the original checkout contained another mission's unfinished edits. Read-first period: 07:51:49–08:22:04 UTC+7 (30 minutes 15 seconds); no implementation edits during that period.
 
+Latest update: origin/main at 70d8c7948940c59b167963253fa8874ab5353190 was merged into this branch at the user's explicit request. See section 9 for the conflict resolution and latest verification; earlier check logs remain historical evidence.
+
 ## 1. Pieces and acceptance
 
 - Piece 1 — PASS: expose the existing relic_forges.id as claimId in v1/v2 forge replies, pending vouchers, forge.today and mint-report replies. Shared contract types, SQL JSON helpers, both store adapters, demo APIs and docs carry it. No claim-id column was added. Replacement vouchers retain the same claim, Relic and rarity.
@@ -59,8 +61,10 @@ Additional passing cases: state/competing forge cannot sign during a paused reis
 - apps/web/src/forge/ForgeTab.test.tsx — API helper preserves the added field/unsigned type and adds T11.
 - apps/web/src/layout/forge/ForgePanel.test.tsx — fixture ids and signed/unsigned pending-voucher precedence tests.
 - apps/web/src/game/stage/relicWiring.test.ts — voucher/result fixture ids for the expanded contract.
-- apps/web/src/game/stage/relicWiring.ui.test.tsx — required voucher fixture id.
+- apps/web/src/game/stage/relicWiring.ui.test.tsx — required voucher fixture id and a merge regression covering unsigned recovery in the relocated Relic footer.
 - apps/web/src/game/v2/loopV2.test.ts — forge result/voucher fixture ids.
+- apps/web/src/forge/MintPanel.test.tsx — add the required claimId to the new AGN1 test fixture after merging main; production MintPanel is unchanged relative to main.
+- apps/web/e2e/layout/stage-layout.spec.ts — await the observed panel-focus transition before Escape; retains the original focus assertion and timeout and avoids racing the next-frame callback.
 - apps/web/e2e/server/n1-relic-recovery.spec.ts — six viewport checks and opt-in screenshots for the connected forge view.
 
 Deliberately updated old assertions: v1 no-signer state changed from pending=null/daily_limit to a visible unsigned recoverable voucher; v2 no-signer state changed from pending=null to the same visible recovery. The competing-v2-reissue test now expects server_error while another request's unsigned check is held, then verifies successful lease recovery, the same Relic, a new nonce and no fresh forge call. No tests were deleted, disabled, skipped or weakened to hide failures. Existing game-rules skips/expected failures were left unchanged.
@@ -71,6 +75,7 @@ Deliberately updated old assertions: v1 no-signer state changed from pending=nul
 Command: git diff --stat origin/main...HEAD
 
 ```text
+ apps/web/e2e/layout/stage-layout.spec.ts           |   4 +
  apps/web/e2e/server/n1-relic-recovery.spec.ts      |  46 +++
  apps/web/src/CafeBoard.test.tsx                    |   2 +
  apps/web/src/api/GameApiV2.ts                      |  10 +-
@@ -81,14 +86,15 @@ Command: git diff --stat origin/main...HEAD
  apps/web/src/boss/BossTab.test.tsx                 |   2 +-
  apps/web/src/forge/ForgeTab.test.tsx               |  18 +-
  apps/web/src/forge/ForgeTab.tsx                    |  12 +-
+ apps/web/src/forge/MintPanel.test.tsx              |   1 +
  apps/web/src/forge/TodayRelicCard.test.tsx         |   4 +-
  apps/web/src/forge/TodayRelicCard.tsx              |   4 +-
  apps/web/src/forge/forgeText.ts                    |   2 +
  apps/web/src/game/stage/relicWiring.test.ts        |   4 +-
- apps/web/src/game/stage/relicWiring.ui.test.tsx    |   2 +-
+ apps/web/src/game/stage/relicWiring.ui.test.tsx    |  15 +-
  apps/web/src/game/v2/loopV2.test.ts                |   3 +-
  apps/web/src/layout/StageLayout.tsx                |   3 +-
- apps/web/src/layout/forge/ForgePanel.test.tsx      |  17 ++
+ apps/web/src/layout/forge/ForgePanel.test.tsx      |  17 +
  apps/web/src/layout/forge/ForgePanel.tsx           |  14 +-
  docs/api-v2.md                                     |  12 +-
  docs/api.md                                        |  10 +-
@@ -97,29 +103,29 @@ Command: git diff --stat origin/main...HEAD
  packages/api-contract/src/state.ts                 |   9 +-
  packages/api-contract/src/types.ts                 |  22 +-
  packages/api-contract/src/v2.ts                    |   8 +
- reports/n1-relic-recovery.md                       | 310 +++++++++++++++++++++
- .../n1-relic-recovery/pending-1280x720-dark.png    | Bin 0 -> 96757 bytes
- .../n1-relic-recovery/pending-1280x720-light.png   | Bin 0 -> 96757 bytes
- .../n1-relic-recovery/pending-1600x900-light.png   | Bin 0 -> 122027 bytes
- .../n1-relic-recovery/pending-320x568-light.png    | Bin 0 -> 48545 bytes
- reports/n1-relic-recovery/pending-390x844-dark.png | Bin 0 -> 64330 bytes
- .../n1-relic-recovery/pending-390x844-light.png    | Bin 0 -> 64330 bytes
+ reports/n1-relic-recovery.md                       | 397 +++++++++++++++++++++
+ .../n1-relic-recovery/pending-1280x720-dark.png    | Bin 0 -> 103114 bytes
+ .../n1-relic-recovery/pending-1280x720-light.png   | Bin 0 -> 103114 bytes
+ .../n1-relic-recovery/pending-1600x900-light.png   | Bin 0 -> 114875 bytes
+ .../n1-relic-recovery/pending-320x568-light.png    | Bin 0 -> 45396 bytes
+ reports/n1-relic-recovery/pending-390x844-dark.png | Bin 0 -> 57904 bytes
+ .../n1-relic-recovery/pending-390x844-light.png    | Bin 0 -> 57904 bytes
  supabase/functions/_shared/game-server.ts          |   5 +
- supabase/functions/_shared/game.ts                 |  89 ++++--
+ supabase/functions/_shared/game.ts                 |  89 ++++-
  supabase/functions/_shared/relic.ts                |   7 +-
  supabase/functions/_shared/v2/forge.ts             |  13 +-
  supabase/functions/_shared/v2/game.ts              |  23 +-
  supabase/functions/_shared/v2/server.ts            |   3 +-
  supabase/functions/_shared/v2/voucher.ts           |   5 +-
- .../20261107000000_voucher_race_guard.sql          | 271 ++++++++++++++++++
+ .../20261107000000_voucher_race_guard.sql          | 271 ++++++++++++++
  supabase/tests/src/forge.test.ts                   |  28 +-
  supabase/tests/src/game-db.ts                      |  12 +-
- supabase/tests/src/relic-reader.test.ts            |  16 ++
- supabase/tests/src/relic-recovery.test.ts          | 262 +++++++++++++++++
+ supabase/tests/src/relic-reader.test.ts            |  16 +
+ supabase/tests/src/relic-recovery.test.ts          | 262 ++++++++++++++
  supabase/tests/v2/functions-forge.test.ts          |   7 +-
  supabase/tests/v2/functions-state.test.ts          |   2 +-
  supabase/tests/v2/v2-store.ts                      |   3 +-
- 48 files changed, 1193 insertions(+), 109 deletions(-)
+ 50 files changed, 1298 insertions(+), 109 deletions(-)
 ```
 <!-- STAT_END -->
 
@@ -127,6 +133,7 @@ Command: git diff --stat origin/main...HEAD
 Command: git diff --name-only origin/main...HEAD
 
 ```text
+apps/web/e2e/layout/stage-layout.spec.ts
 apps/web/e2e/server/n1-relic-recovery.spec.ts
 apps/web/src/CafeBoard.test.tsx
 apps/web/src/api/GameApiV2.ts
@@ -137,6 +144,7 @@ apps/web/src/api/SupabaseGameApi.ts
 apps/web/src/boss/BossTab.test.tsx
 apps/web/src/forge/ForgeTab.test.tsx
 apps/web/src/forge/ForgeTab.tsx
+apps/web/src/forge/MintPanel.test.tsx
 apps/web/src/forge/TodayRelicCard.test.tsx
 apps/web/src/forge/TodayRelicCard.tsx
 apps/web/src/forge/forgeText.ts
@@ -178,7 +186,7 @@ supabase/tests/v2/v2-store.ts
 ```
 <!-- NAMES_END -->
 
-## 5. Checks and real output
+## 5. Initial implementation checks and real output
 
 Toolchain:
 
@@ -254,7 +262,7 @@ SCREENSHOTS=1 pnpm test:e2e e2e/server/n1-relic-recovery.spec.ts --project=v2-se
 6 passed (11.8s)
 ```
 
-The six PNGs are in reports/n1-relic-recovery, at 1600x900, 1280x720, 390x844 and 320x568 light, and 1280x720/390x844 dark. Sizes: 122027, 96757, 64330, 48545, 96757 and 64330 bytes respectively; all below 200 KB. All six were visually inspected. Browser evidence replaces only the local state reply's forge payload with an unavailable-signer fixture; surrounding state/session comes from the real local PGlite transport. Real server payload behavior is tested independently in the backend tests.
+The initial six PNG captures were in reports/n1-relic-recovery (refreshed captures are listed in section 9), at 1600x900, 1280x720, 390x844 and 320x568 light, and 1280x720/390x844 dark. Sizes: 122027, 96757, 64330, 48545, 96757 and 64330 bytes respectively; all below 200 KB. All six were visually inspected. Browser evidence replaces only the local state reply's forge payload with an unavailable-signer fixture; surrounding state/session comes from the real local PGlite transport. Real server payload behavior is tested independently in the backend tests.
 
 Full browser suite — PASS on the full isolated-port rerun, exit 0:
 
@@ -307,4 +315,83 @@ Git author: ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>.
 
 Reproduce with the frozen install and checks above. The focused recovery tests cover both API versions. Run the six-case screenshot command for the committed PNGs. Run the full browser suite with the isolated four-port environment above if the default ports are in use. Report metrics generated for other missions are restored after browser runs.
 
-No PR, merge, workflow dispatch, deploy command, live database write or on-chain transaction was performed. Only this mission branch is pushed.
+The initial implementation created no merge. The follow-up explicitly authorized the main-to-mission merge described below. No PR, workflow dispatch, deploy command, live database write or on-chain transaction was performed. Only this mission branch is pushed.
+
+
+## 9. Main merge follow-up — 31 October 2026
+
+Merged origin/main at 70d8c7948940c59b167963253fa8874ab5353190, including AGU1 UI changes (#223) and AGN1 error screens (#224), into ai/codex-n1-relic-recovery. Merge commit: a4b76b9468c804154ffdcb12dd37b258ed1cfcee; its parents are the prior CXN1 report tip 795a14953e74a1dcbd57c771c193ffe2451f594e and that main commit. No rebase or force push. A separate test synchronization commit, 05acadb, waits for actual panel focus before the existing Escape assertion.
+
+Conflict resolution — PASS:
+
+- StageLayout now keeps AGU1's craftResult and relicFooter slots, craft result notice, relocated Boss map and surrounding UI structure, with no duplicate legacy craft/mint block.
+- The CXN1 signature-null guard moved into the new relicFooter. Only a signed voucher reaches MintPanel; the existing mintedNonce and confirmation/retry handling remain intact.
+- AGN1's ActionNotice, API error mapping, wrong-wallet message and store error behavior are preserved. Checked upstream source paths (MintPanel, storeV2, v2text, layout/notice, GameApiErrorV2, SupabaseGameApiV2, StageCanvas/StageScene, Bag, Boss and map) match origin/main exactly.
+- The new integration regression verifies the waiting message, no daily-limit refusal, no MintPanel call for an unsigned voucher, one Relic footer, and no leaked Relic footer when switching to Craft. Existing signed-mint, reporting, layout and notice tests pass.
+- Initial merged typecheck found the newly imported MintPanel test fixture missing CXN1's required claimId. Adding that field was the only change to that upstream test. No production MintPanel changes were made by CXN1.
+
+The first full merged browser run had 245 passes and one focus failure in the phone navigation case. Its isolated rerun passed unchanged (1 passed, 7.8s). Inspection found that the test sent Escape while the next-animation-frame panel-focus callback could still be pending. The test now asserts that focus has entered the Boss panel before Escape; the original return-focus assertion and timeout remain unchanged. No application focus code was changed. The final full rerun is recorded below.
+
+Latest actual checks:
+
+```text
+pnpm --version
+10.28.0
+CI=true pnpm install --frozen-lockfile
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Done in 352ms using pnpm v10.28.0
+
+pnpm gen:deno && git diff --exit-code -- supabase/functions
+wrote 18 Edge Function import maps
+exit 0
+
+pnpm typecheck
+all six package checks: Done; exit 0
+pnpm lint
+all six package checks: Done; exit 0
+
+pnpm test
+packages/chain: 2 files passed; 7 tests passed
+packages/auth: 1 file passed; 24 tests passed
+supabase/tests: 27 files passed; 517 tests passed
+packages/game-rules: 24 files passed | 3 skipped; 366 passed | 2 expected fail | 11 skipped
+packages/api-contract: 1 file passed; 16 tests passed
+apps/web: 107 files passed; 1274 tests passed
+exit 0
+
+pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/relicWiring.ui.test.tsx src/layout/StageLayout.test.tsx src/forge/MintPanel.test.tsx src/layout/notice/ActionNotice.test.tsx src/layout/forge/ForgePanel.test.tsx
+Test Files 5 passed (5); Tests 55 passed (55)
+
+pnpm build
+apps/web build: built in 382ms; Done; exit 0
+VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build
+built in 327ms; exit 0
+
+E2E_PORT_CLASSIC=4273 E2E_PORT_V2=4274 E2E_PORT_SERVER=4275 E2E_PORT_API=4276 pnpm test:e2e --workers=2
+246 passed (2.2m); exit 0
+
+node scripts/check-links.mjs
+Checked 61 markdown files and 795 links/paths.
+Found 1 broken link: unchanged docs/security-test-matrix.md:15 -> ../../packages/auth/src/index.test.ts
+```
+
+Merged UI evidence — PASS, exit 0:
+
+```text
+SCREENSHOTS=1 E2E_PORT_CLASSIC=4273 E2E_PORT_V2=4274 E2E_PORT_SERVER=4275 E2E_PORT_API=4276 pnpm test:e2e e2e/server/n1-relic-recovery.spec.ts --project=v2-server --workers=1
+6 passed (9.7s)
+```
+
+All six committed captures were refreshed for the merged UI and visually inspected. Current byte counts:
+
+- pending-1280x720-dark.png: 103114 bytes.
+- pending-1280x720-light.png: 103114 bytes.
+- pending-1600x900-light.png: 114875 bytes.
+- pending-320x568-light.png: 45396 bytes.
+- pending-390x844-dark.png: 57904 bytes.
+- pending-390x844-light.png: 57904 bytes.
+
+All are below 200 KB. The 21 report artifacts rewritten by unrelated browser cases were restored; only CXN1 evidence/report changes remain. The full workspace suite, all 246 browser cases (including classic, AGN1 error notices and CXN1 recovery), and Deno drift checks pass. The unchanged link-check baseline remains the one known exception.
+
+The checks use local builds and PGlite only. All T1–T13 backend/unit cases were rerun in the full unit suite; production migration application, real wallets and the previously documented chain/RPC limits remain unverified. The migration is still unapplied and still required before deploy. No Actions, PR, deployment or live write was triggered.
