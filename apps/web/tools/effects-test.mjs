@@ -1,22 +1,28 @@
 // Wallet-free EFFECTS test: records video, grabs timed frame sequences, asserts animation behaviour.
 // Screenshots cannot show motion, so this samples the running app over time. Demo mode on the Vite DEV
 // server only (dev builds expose canvas data-stage-release/impact); nothing touches live services.
-// Usage: node tools/effects-test.mjs [outDir]      Exit code 1 when a hard check fails.
-import { spawn } from 'node:child_process';
+// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames]
+// One summary PNG by default; --frames opts into extra PNG sequences. Exit 1 on hard failures.
+import { createServer } from 'vite';
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
 const { chromium } = createRequire(import.meta.url)('@playwright/test');
 
-const out = resolve(process.argv[2] ?? '../../reports/effects');
+const out = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? '../../reports/effects');
+const writeScreenshots = process.env.SCREENSHOTS === '1';
+const writeFrames = writeScreenshots && process.argv.includes('--frames');
 const port = 5198, base = `http://localhost:${port}`;
 const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
 mkdirSync(out, { recursive: true });
-const vite = spawn('npx', ['-y', 'pnpm@10.28.0', 'exec', 'vite', '--port', String(port), '--strictPort'],
-  { env: { ...process.env, VITE_GAME_V2: '1', VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' }, stdio: 'ignore' });
-process.on('exit', () => vite.kill('SIGTERM'));
-for (let i = 0; i < 120; i++) { try { if ((await fetch(base)).ok) break; } catch {} await new Promise(r => setTimeout(r, 500)); }
+process.env.VITE_GAME_V2 = '1';
+process.env.VITE_SUPABASE_URL = '';
+process.env.VITE_SUPABASE_ANON_KEY = '';
+const vite = await createServer({ envDir: false, server: { port, strictPort: true } });
+let browser;
+try {
+await vite.listen();
 
 const results = [];
 const check = (scenario, name, ok, detail, known = false) => {
@@ -24,7 +30,8 @@ const check = (scenario, name, ok, detail, known = false) => {
   console.log(`${ok ? 'PASS' : known ? 'KNOWN' : 'FAIL'}  [${scenario}] ${name} - ${detail}`);
 };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH ?? '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
+const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
 
 async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
@@ -58,7 +65,7 @@ async function sample(page, canvas, seconds, dir) {
     const buf = await canvas.screenshot({ type: 'png' });
     const d = await canvas.evaluate(c => ({ release: c.dataset.stageRelease ?? null, impact: c.dataset.stageImpact ?? null, monster: c.dataset.stageMonster ?? null }));
     frames.push({ t, hash: createHash('md5').update(buf).digest('hex'), ...d });
-    if (frames.length % 5 === 0 && frames.length <= 60) writeFileSync(`${out}/${dir}/f${String(frames.length).padStart(3, '0')}-${t}ms.png`, buf);
+    if (writeFrames && frames.length % 5 === 0 && frames.length <= 60) writeFileSync(`${out}/${dir}/f${String(frames.length).padStart(3, '0')}-${t}ms.png`, buf);
     await sleep(60);
   }
   return frames;
@@ -86,7 +93,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   check('combat', 'hit flash/damage number changes pixels at each impact', impacts.length > 0 && flashVisible === impacts.length, `${flashVisible}/${impacts.length} impacts changed the frame`);
   check('combat', 'frame rate (headless software GL, relative)', avgFps >= 8, `avg ${avgFps.toFixed(1)} fps, p95 frame ${p95.toFixed(0)} ms`);
   check('combat', 'no long-frame stalls over 250 ms', dts.filter(d => d > 250).length <= 2, `${dts.filter(d => d > 250).length} frames over 250 ms`);
-  await page.screenshot({ path: `${out}/combat-end.png` });
+  if (writeScreenshots) await page.screenshot({ path: `${out}/combat-end.png` });
   await ctx.close();
 }
 
@@ -125,8 +132,12 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   await red.ctx.close();
 }
 
-await browser.close(); vite.kill('SIGTERM');
+await browser.close();
 writeFileSync(`${out}/summary.json`, JSON.stringify(results, null, 2));
 const fail = results.filter(r => r.status === 'FAIL').length;
 console.log(`\n${results.length} checks, ${fail} FAIL. Videos + frames in ${out}`);
-process.exit(fail ? 1 : 0);
+process.exitCode = fail ? 1 : 0;
+} finally {
+  await browser?.close();
+  await vite.close();
+}

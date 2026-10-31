@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "status": "Living draft: seven rail destinations, with Forge expanded into three screens. Routes remain app state at /; no URL router is assumed.",
+  "viewports": [{ "width": 1280, "height": 720 }, { "width": 1600, "height": 900 }],
+  "shell": {
+    "railTestId": "rail",
+    "hudTestId": "hud",
+    "screenTestId": "screen",
+    "navTestIds": ["nav-home", "nav-bag", "nav-map", "nav-forge", "nav-market", "nav-hero", "nav-help"],
+    "hudTestIds": ["hud-gold", "hud-shards", "hud-keys", "hud-level", "hud-power", "hud-wallet"]
+  },
+  "screens": [
+    { "id": "home", "label": "Home", "route": "/", "navTestId": "nav-home", "screenTestId": "screen", "required": ["canvas"], "legacyTab": null, "screenshot": true },
+    { "id": "bag", "label": "Bag", "route": "/", "navTestId": "nav-bag", "screenTestId": "screen", "required": ["[data-testid='bag-count']"], "legacyTab": "Bag", "screenshot": true },
+    { "id": "map", "label": "Map", "route": "/", "navTestId": "nav-map", "screenTestId": "screen", "required": ["[aria-label='Chapter Map']"], "legacyTab": "Boss", "screenshot": true },
+    { "id": "forge-craft", "label": "Forge / Craft", "route": "/", "navTestId": "nav-forge", "subnavTestId": "tab-craft", "screenTestId": "screen", "required": ["[data-testid='craft-panel']", "[data-testid='craft-btn']"], "legacyTab": "Forge", "screenshot": true },
+    { "id": "forge-salvage", "label": "Forge / Salvage", "route": "/", "navTestId": "nav-forge", "subnavTestId": "tab-salvage", "screenTestId": "screen", "required": ["[data-testid='salvage-panel']"], "legacyTab": "Forge", "screenshot": false },
+    { "id": "forge-relic", "label": "Forge / Relic", "route": "/", "navTestId": "nav-forge", "subnavTestId": "tab-relic", "screenTestId": "screen", "required": ["[data-testid='relic-panel']", "[data-testid='relic-forge-btn']"], "legacyTab": "Forge", "screenshot": false },
+    { "id": "market", "label": "Market", "route": "/", "navTestId": "nav-market", "screenTestId": "screen", "required": [".market, .forge-note"], "legacyTab": "Market", "screenshot": true },
+    { "id": "hero", "label": "Hero", "route": "/", "navTestId": "nav-hero", "screenTestId": "screen", "required": ["[data-testid='character-power']"], "legacyTab": "Character", "screenshot": true },
+    { "id": "help", "label": "Help", "route": "/", "navTestId": "nav-help", "screenTestId": "screen", "required": ["[data-testid='help-key-sources']"], "legacyTab": "Help", "screenshot": true }
+  ]
+}

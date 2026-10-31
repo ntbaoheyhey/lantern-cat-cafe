@@ -1,93 +1,125 @@
-// Wallet-free UI audit. Runs the Vite DEV server (never a production build) in demo mode:
-// no Supabase env, so the app uses MockGameApiV2 backed by localStorage. Nothing leaves the browser.
-// Usage: node tools/ui-audit.mjs [outDir] [fixture] [--signed-in]
-//   demo fixture: fresh|bossReadyStrong|bossReadyWeak|forgeRich|bagNearFull|midGame
-//   --signed-in : starts scripts/local-server.mjs (loopback PGlite running the real Edge Function logic) and a
-//                 flag-on build pointed at it, then injects a locally minted session. fixture: fresh|stocked|strong|weak|equip.
-import { spawn } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { createRequire } from 'node:module';
-const { chromium } = createRequire(import.meta.url)('@playwright/test');
+// Wallet-free audit. Run from apps/web (paths also work from other directories).
+// Usage: SCREENSHOTS=1 node tools/ui-audit.mjs [outDir] [fixture] [--signed-in] [--mobile] [--strict]
+// Desktop: 1280x720 + 1600x900. --mobile adds 390x844 measurements only.
+// Demo fixtures: fresh|bossReadyStrong|bossReadyWeak|forgeRich|bagNearFull|midGame.
+// --signed-in uses loopback-only PGlite, never a live account. Fixtures: fresh|stocked|strong|weak|equip.
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createServer as createNetServer } from 'node:net';
+import { chromium } from '@playwright/test';
+import { createServer, build, preview } from 'vite';
+import { layoutFindings } from './layout-findings.mjs';
 
-const out = resolve(process.argv[2] ?? '../../reports/ui-audit');
-const signedIn = process.argv.includes('--signed-in');
-const kind = process.argv[3] && !process.argv[3].startsWith('--') ? process.argv[3] : signedIn ? 'stocked' : 'bossReadyStrong';
-const apiBase = 'http://127.0.0.1:4176';
-const port = signedIn ? 4175 : 5199, base = `http://localhost:${port}`;
-const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
+const webRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const args = process.argv.slice(2);
+const flags = new Set(['--signed-in', '--mobile', '--strict']);
+for (const arg of args) if (arg.startsWith('--') && !flags.has(arg)) throw new Error(`Unknown option: ${arg}`);
+const positional = args.filter(arg => !arg.startsWith('--'));
+const out = resolve(positional[0] ?? resolve(webRoot, '../../reports/ui-audit'));
+const signedIn = args.includes('--signed-in');
+const kind = positional[1] ?? (signedIn ? 'stocked' : 'bossReadyStrong');
+const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
+const sizes = [...manifest.viewports, ...(args.includes('--mobile') ? [{ width: 390, height: 844 }] : [])];
+const port = signedIn ? 4175 : 5199, apiPort = 4176;
+const base = `http://localhost:${port}`;
+const key = readFileSync(resolve(webRoot, 'src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
 mkdirSync(out, { recursive: true });
 
-const procs = [];
-const run = (cmd, args, env) => procs.push(spawn(cmd, args, { env: { ...process.env, ...env }, stdio: 'ignore' }));
-if (signedIn) {
-  run('node', ['../../scripts/local-server.mjs']);
-  run('node', ['e2e/support/server-build.mjs']);
-} else {
-  run('npx', ['-y', 'pnpm@10.28.0', 'exec', 'vite', '--port', String(port), '--strictPort'],
-    { VITE_GAME_V2: '1', VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' });
+// Refuse stale/foreign servers; close only resources this invocation owns.
+async function requireFreePort(port) {
+  const socket = createNetServer();
+  await new Promise((ok, fail) => { socket.once('error', fail); socket.listen(port, ok); });
+  await new Promise(ok => socket.close(ok));
 }
-const stop = () => procs.forEach(p => p.kill('SIGTERM'));
-process.on('exit', stop);
-const waitFor = async url => { for (let i = 0; i < 240; i++) { try { if ((await fetch(url)).ok) return; } catch {} await new Promise(r => setTimeout(r, 500)); } throw new Error(`timeout ${url}`); };
-if (signedIn) await waitFor(`${apiBase}/health`);
-await waitFor(base);
-let session = null;
-if (signedIn) {
-  const res = await fetch(`${apiBase}/__test/session`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ kind }) });
-  session = await res.json();
-}
-
-// Save JSON is built in the page-free way: the fixture builder is TS, so ask Vite to serve it.
-const execPath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
-const browser = await chromium.launch({ ...(execPath ? { executablePath: execPath } : {}), args: ['--no-sandbox'] });
-const sizes = [[1280, 720], [390, 844], [320, 568], [844, 390]];
-const tabs = ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help'];
-const report = [];
-for (const [w, h] of sizes) {
-  const page = await (await browser.newContext({ viewport: { width: w, height: h } })).newPage();
-  const errors = [];
-  page.on('pageerror', e => errors.push(e.message));
-  page.on('console', m => m.type() === 'error' && errors.push(m.text()));
-  await page.addInitScript(([sess]) => {
-    localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
-    if (sess) sessionStorage.setItem('taskbar-hero.session', JSON.stringify(sess));
-  }, [session]);
-  await page.goto(`${base}/`);
-  // Seed fixture through the dev server so TypeScript fixtures work without a build step.
-  if (!signedIn) {
-  const save = await page.evaluate(async ({ kind }) => {
-    const m = await import('/src/api/mockV2Fixtures.ts');
-    return m.mockV2SaveJson(kind, { nowMs: Date.now(), classId: 'warrior' });
-  }, { kind });
-  await page.evaluate(([k, s]) => localStorage.setItem(k, s), [key, save]);
-  await page.reload();
+let server, local, browser;
+const report = { fixture: kind, signedIn, viewports: sizes, screens: [] };
+let closing;
+const close = () => closing ??= (async () => {
+  await browser?.close();
+  if (server?.close) await server.close();
+  else if (server?.httpServer) await new Promise(ok => server.httpServer.close(ok));
+  await local?.close();
+})();
+for (const signal of ['SIGINT', 'SIGTERM']) process.once(signal, () => { void close().finally(() => process.exit(1)); });
+try {
+  await requireFreePort(port);
+  let session = null;
+  if (signedIn) {
+    await requireFreePort(apiPort);
+    const { startLocalServer } = await import('../../../scripts/local-server.mjs');
+    local = await startLocalServer({ port: apiPort, webPort: port });
+    process.env.VITE_GAME_V2 = '1';
+    process.env.VITE_SUPABASE_URL = `http://127.0.0.1:${apiPort}`;
+    process.env.VITE_SUPABASE_ANON_KEY = 'local-test-public-key';
+    const outDir = 'dist/ui-audit-signed-in';
+    await build({ root: webRoot, envDir: false, build: { outDir } });
+    server = await preview({ root: webRoot, envDir: false, build: { outDir }, preview: { port, strictPort: true } });
+    const res = await fetch(`http://127.0.0.1:${apiPort}/__test/session`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ kind }) });
+    if (!res.ok) throw new Error(`Local fixture ${kind}: HTTP ${res.status}`);
+    session = await res.json();
+  } else {
+    process.env.VITE_GAME_V2 = '1';
+    process.env.VITE_SUPABASE_URL = '';
+    process.env.VITE_SUPABASE_ANON_KEY = '';
+    server = await createServer({ root: webRoot, envDir: false, server: { port, strictPort: true } });
+    await server.listen();
   }
-  await page.waitForTimeout(2500);
-  if (w === 1280 || (w === 390 && h === 844)) {
-    await page.screenshot({ path: `${out}/home-${w}x${h}.png` });
-  }
-  for (const t of tabs) {
-    const tab = page.getByRole('tab', { name: t, exact: true }).first();
-    if (!(await tab.count())) { report.push(`${w}x${h} missing tab ${t}`); continue; }
-    await tab.click(); await page.waitForTimeout(600);
-    const shouldScreenshot = (w === 1280 && t !== 'Forge') || (w === 390 && h === 844 && ['Character', 'Bag', 'Boss'].includes(t));
-    if (shouldScreenshot) {
-      await page.screenshot({ path: `${out}/${t.toLowerCase()}-${w}x${h}.png` });
-    }
-    if (t === 'Forge') for (const sub of ['craft', 'salvage', 'relic']) {
-      const s = page.getByTestId(`tab-${sub}`);
-      if (await s.count()) {
-        await s.click(); await page.waitForTimeout(400);
-        if (w === 1280 || (w === 390 && h === 844 && (sub === 'relic' || sub === 'craft'))) {
-          await page.screenshot({ path: `${out}/forge-${sub}-${w}x${h}.png` });
-        }
+  const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+  browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
+  for (const size of sizes) {
+    const context = await browser.newContext({ viewport: size });
+    try {
+      const page = await context.newPage();
+      const errors = [];
+      page.on('pageerror', e => errors.push(e.message));
+      page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+      await page.addInitScript(sess => {
+        localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+        if (sess) sessionStorage.setItem('taskbar-hero.session', JSON.stringify(sess));
+      }, session);
+      await page.goto(base);
+      if (!signedIn) {
+        const save = await page.evaluate(async kind => {
+          const fixtures = await import('/src/api/mockV2Fixtures.ts');
+          return fixtures.mockV2SaveJson(kind, { nowMs: Date.now(), classId: 'warrior' });
+        }, kind);
+        await page.evaluate(([k, s]) => localStorage.setItem(k, s), [key, save]);
+        await page.reload();
       }
-    }
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight);
-    if (overflow) report.push(`${w}x${h} ${t}: document scrolls`);
+      await page.locator('[data-testid="rail"], [data-game-v2="stage-v2-enabled"]').first().waitFor();
+      await page.locator('[data-testid="hud"], [aria-label="Cat status"]').first().waitFor();
+      await page.waitForTimeout(600);
+      const contract = await page.getByTestId(manifest.shell.railTestId).count() > 0;
+      for (const screen of manifest.screens) {
+        const missing = [];
+        if (contract) {
+          const nav = page.getByTestId(manifest.shell.railTestId).getByTestId(screen.navTestId);
+          if (await nav.count()) await nav.click(); else missing.push(screen.navTestId);
+        } else if (screen.legacyTab) {
+          const tab = page.getByRole('tab', { name: screen.legacyTab, exact: true }).first();
+          if (await tab.count()) await tab.click(); else missing.push(`legacy tab: ${screen.legacyTab}`);
+        }
+        if (screen.subnavTestId) {
+          const sub = page.getByTestId(screen.subnavTestId);
+          if (await sub.count()) await sub.click(); else missing.push(screen.subnavTestId);
+        }
+        await page.waitForTimeout(600);
+        const root = contract ? page.getByTestId(screen.screenTestId) : page.locator('body');
+        for (const selector of screen.required) if (!await root.locator(selector).filter({ visible: true }).first().isVisible()) missing.push(selector);
+        const findings = await page.evaluate(layoutFindings);
+        const item = { viewport: `${size.width}x${size.height}`, screen: screen.id, navigation: contract ? 'rail' : 'legacy baseline', ...findings, missingRequired: missing, consoleErrors: [...new Set(errors.splice(0))] };
+        if (process.env.SCREENSHOTS === '1' && screen.screenshot && size.width >= 1280) {
+          item.screenshot = `${screen.id}-${size.width}x${size.height}.png`;
+          await page.screenshot({ path: resolve(out, item.screenshot) });
+        }
+        report.screens.push(item);
+        console.log(`${item.viewport} ${screen.id} (${item.navigation}): document-scroll=${findings.documentScroll ? 'document scrolls' : '[]'}; horizontal-overflow=${JSON.stringify(findings.horizontalOverflow)}; element-overlap=${JSON.stringify(findings.elementOverlap)}; missing=${JSON.stringify(missing)}; console-errors=${JSON.stringify(item.consoleErrors)}`);
+      }
+    } finally { await context.close(); }
   }
-  if (errors.length) report.push(`${w}x${h} console errors: ${[...new Set(errors)].slice(0, 5).join(' | ')}`);
-}
-await browser.close(); stop();
-console.log(report.length ? report.join('\n') : 'no automatic findings');
+  writeFileSync(resolve(out, 'findings.json'), `${JSON.stringify(report, null, 2)}\n`);
+  const count = report.screens.filter(s => s.documentScroll || s.horizontalOverflow.length || s.elementOverlap.length || s.missingRequired.length || s.consoleErrors.length).length;
+  console.log(`${report.screens.length} screens audited; ${count} with findings. JSON: ${resolve(out, 'findings.json')}`);
+  if (args.includes('--strict') && count) process.exitCode = 1;
+} finally { await close(); }

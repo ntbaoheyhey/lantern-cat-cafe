@@ -1,0 +1,68 @@
+{
+  "stats": {
+    "startTime": "2026-10-31T08:04:03.162Z",
+    "duration": 17084.27,
+    "expected": 4,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1280x720 / live rail route smoke (auto-gated until AGR0)",
+      "project": "stage-layout",
+      "status": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "AGR0 shell contract is not implemented on this build: data-testid=\"rail\" is absent. Re-run this same test after the shell lands; partial shells fail.",
+          "location": {
+            "file": "/Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/apps/web/e2e/ui/redesign-shell.spec.ts",
+            "line": 37,
+            "column": 12
+          }
+        }
+      ]
+    },
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1280x720 / the same route smoke passes an independent local contract stub",
+      "project": "stage-layout",
+      "status": "expected",
+      "annotations": []
+    },
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1280x720 / geometry detects page scroll, overflow and sibling overlap without flagging containers",
+      "project": "stage-layout",
+      "status": "expected",
+      "annotations": []
+    },
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1600x900 / live rail route smoke (auto-gated until AGR0)",
+      "project": "stage-layout",
+      "status": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "AGR0 shell contract is not implemented on this build: data-testid=\"rail\" is absent. Re-run this same test after the shell lands; partial shells fail.",
+          "location": {
+            "file": "/Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/apps/web/e2e/ui/redesign-shell.spec.ts",
+            "line": 37,
+            "column": 12
+          }
+        }
+      ]
+    },
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1600x900 / the same route smoke passes an independent local contract stub",
+      "project": "stage-layout",
+      "status": "expected",
+      "annotations": []
+    },
+    {
+      "title": "ui/redesign-shell.spec.ts / redesign shell 1600x900 / geometry detects page scroll, overflow and sibling overlap without flagging containers",
+      "project": "stage-layout",
+      "status": "expected",
+      "annotations": []
+    }
+  ]
+}

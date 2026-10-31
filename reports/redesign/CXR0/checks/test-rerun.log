@@ -1,0 +1,50 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  15:05:21
+packages/chain test:    Duration  312ms (import 42%, transform 30%, worker 19%, tests 8%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  15:05:21
+packages/auth test:    Duration  1.43s (import 74%, tests 20%, transform 4%, worker 2%)
+packages/auth test: Done
+supabase/tests test:  Test Files  27 passed (27)
+supabase/tests test:       Tests  517 passed (517)
+supabase/tests test:    Start at  15:05:21
+supabase/tests test:    Duration  18.12s (tests 86%, import 12%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  15:05:21
+packages/game-rules test:    Duration  43.31s (tests 96%, import 2%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  15:06:05
+packages/api-contract test:    Duration  148ms (transform 52%, import 38%, tests 6%, worker 4%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/apps/web
+apps/web test:  Test Files  107 passed (107)
+apps/web test:       Tests  1274 passed (1274)
+apps/web test:    Start at  15:06:05
+apps/web test:    Duration  22.58s (tests 44%, environment 44%, import 10%, transform 2%)
+apps/web test: Environment  jsdom was created 107 times · 100.15s total, 44% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
