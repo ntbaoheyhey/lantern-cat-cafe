@@ -1,7 +1,9 @@
-# Wave N: every remaining Codex and Antigravity mission, in paste order (written 31 Oct 2026)
+# Wave N: Codex and Antigravity missions, in paste order (draft, 31 Oct 2026)
 
-This is the only queue from now to submission. It replaces the Codex/Antigravity rows of
-`wave-s/plan.md` sections 12-14 (that text is not edited; rows done there stay done). Claude
+Living draft: order and scope will change as UI work continues.
+
+This is the current queue. It takes over the open Codex/Antigravity rows of `wave-s/plan.md`
+sections 12-14 (that text is not edited; rows done there stay done). More UI work will be added. Claude
 verifies and merges each report; the user pastes the next prompt on a tool the moment the previous
 one on that tool has pushed its report AND its "Needs" line is true. Never two missions at once on
 one tool.
@@ -31,8 +33,8 @@ Open problems:
 | 3 | **CXN3** Cut-over truth: runbook rewrite, read-only live checks, schema check SQL | CXN2 merged | (wait) | - |
 | 4 | **CXN4** Forge great success (optional) | CXN3 merged AND M-D1 numbers signed | (wait) | - |
 | 5 | **CXN5** Stepped bonus lines (optional) | CXN4 merged or skipped AND M-D2 numbers signed | (wait) | - |
-| 6 | (wait) | - | **AGN3** Live play-through like a judge + final media | live gate L (below) |
-| 7 | **CXN6** Fix live findings, final regression, freeze kit | AGN3 report pushed | **AGN4** Submission pack: README, slides text, video script, Builder Pass | AGN3 report pushed (final pass after CXN6 merged) |
+| 6 | (wait) | - | **AGN3** Live play-through like a judge + media refresh | live gate L (below) |
+| 7 | **CXN6** Next fixes pass: live findings, regression, secret scan (draft, may change) | AGN3 report pushed | **AGN4** Submission pack: README, slides text, video script, Builder Pass | AGN3 report pushed (another pass after CXN6 merged) |
 
 Live gate L (for AGN3): (a) deploy fix merged and all functions deployed; (b) the three migrations
 applied before that deploy; (c) CXN1, CXN2, CXN3, AGN1 merged and deployed (plus CXN4/CXN5 if
@@ -55,10 +57,10 @@ graph LR
   CXN3 --> L[live gate L + D6 go]
   CXN5 --> L
   AGN1 --> L
-  L --> AGN3 --> CXN6 --> FREEZE[freeze]
+  L --> AGN3 --> CXN6 --> MORE[more UI work, to be planned]
   AGN3 --> AGN4
   CXN6 --> AGN4
-  FREEZE --> SUB[CL-SUB scan, video, repo public, submit]
+  MORE --> SUB[CL-SUB scan, video, repo public, submit]
   AGN4 --> SUB
 ```
 
@@ -106,7 +108,7 @@ graph LR
 - V-N: after each report, Sonnet medium verifies with `scripts/verify-pr.sh` (CI minutes return on
   1 Nov, local verify stays the default), merges green, tells the user which prompt is next.
 - CL-SLIDES: build the slide deck as an Artifact from AGN4's `docs/pitch-slides.md` (Sonnet medium).
-- CL-SUB: secret scan of the whole history + submission text check (Haiku medium), after freeze.
+- CL-SUB: secret scan of the whole history + submission text check (Haiku medium), when the user decides the build is ready.
 
 ## 7. Files in this folder
 
@@ -118,7 +120,7 @@ graph LR
 | 4 | PASTE-CXN4-forge-great-success.txt (optional) | - |
 | 5 | PASTE-CXN5-stepped-lines.txt (optional) | - |
 | 6 | - | PASTE-AGN3-live-playthrough.txt |
-| 7 | PASTE-CXN6-final-fixes-freeze.txt | PASTE-AGN4-submission-pack.txt |
+| 7 | PASTE-CXN6-fixes-pass.txt | PASTE-AGN4-submission-pack.txt |
 
 Each PASTE file = the mission card + `wave-n-rules.txt` + the unchanged wave S shared rules. The
 mission files without the PASTE prefix are the same cards without the appended rules, for reading.
