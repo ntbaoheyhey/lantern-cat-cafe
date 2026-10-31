@@ -1,9 +1,9 @@
 import { routesBossV2 } from "./boss.ts";
 import { routesForgeV2 } from "./forge.ts";
 import { v2 } from "@taskbar-hero/game-rules";
-import type { TodayRelic, ItemViewV2 } from "@taskbar-hero/api-contract";
-import { dayDate, MIN_CLAIM_INTERVAL_SECONDS } from "../game.ts";
-import type { VoucherSigner } from "../relic.ts";
+import type { TodayRelic, ItemViewV2, PendingRelicVoucher } from "@taskbar-hero/api-contract";
+import { dayDate, MIN_CLAIM_INTERVAL_SECONDS, recoverableVoucher } from "../game.ts";
+import type { VoucherSigner, ChainReader } from "../relic.ts";
 import { HTTP_STATUS_V2 as HTTP_CODES, V2Error, type GameApiErrorCodeV2Like } from "./http.ts";
 import { toPlayerStateV2, viewOf, ownedItemV2, type ServerStateV2Like } from "./snapshot.ts";
 import { signedVoucherV2, type VoucherRowV2 } from "./voucher.ts";
@@ -52,11 +52,12 @@ export interface V2Store {
   lock(playerId: string, itemId: string, locked: boolean): Promise<{ status: "ok" } | { error: string }>;
   relicForge(args: { playerId: string; day: string; relicId: number; rarity: string; yarnCost: number; pearlCost: number; expiresAt: string }): Promise<{ status: "pending" | "new"; voucher: VoucherRowV2 } | { status: "blocked"; reason: string }>;
   voucherReissue(playerId: string, nonce: string, nowIso: string, expiresAt: string): Promise<VoucherRowV2 | null>;
+  voucherResolveReissue(playerId: string, nonce: string, token: string, used: boolean): Promise<VoucherRowV2 | null>;
   voucherMinted(playerId: string, nonce: string, txHash: string | null): Promise<void>;
   voucherCancelReissue(playerId: string, nonce: string, expiresAt: string): Promise<VoucherRowV2 | null>;
-  voucherSign(playerId: string, nonce: string, signature: string): Promise<void>;
+  voucherSign(playerId: string, nonce: string, signature: string): Promise<boolean>;
 }
-export interface V2Deps { store: V2Store; seedSecret: string; now?: () => number; relic?: { signer?: VoucherSigner } }
+export interface V2Deps { store: V2Store; seedSecret: string; now?: () => number; relic?: { signer?: VoucherSigner; chain?: ChainReader } }
 
 async function load(deps: V2Deps, playerId: string, nowMs: number) {
   const nowS = Math.floor(nowMs / 1000);
@@ -66,10 +67,18 @@ async function load(deps: V2Deps, playerId: string, nowMs: number) {
   const state = toPlayerStateV2(raw, day);
   const row = raw.pending;
   const signer = deps.relic?.signer;
-  const pending = row && (row.signature || signer) ? await signedVoucherV2(deps.store, signer, playerId, row) : null;
+  let pending: PendingRelicVoucher | null = row ? recoverableVoucher(row) : null;
+  if (row && !row.reissuePending) {
+    try { pending = await signedVoucherV2(deps.store, signer, playerId, row); }
+    catch { /* Keep the paid voucher visible even while signing is unavailable. */ }
+  }
   const dayIndex = Date.parse(`${day}T00:00:00Z`) / 86_400_000;
   const forge = { blockedBy: row ? null : v2.relicForgeBlockV2({ stacks: state.stacks, lastRelicDay: raw.forgedToday ? dayIndex : -1 }, dayIndex),
-    forgedToday: raw.forgedToday, pending, today: raw.today ? { ...raw.today } : null };
+    forgedToday: raw.forgedToday, pending,
+    ...(pending?.signature === null ? { recoverable: true as const } : {}),
+    today: raw.today ? { ...raw.today,
+      ...(pending?.signature === null && pending.claimId === raw.today.claimId ? { recoverable: true as const } : {}),
+    } : null };
   return { raw, state, forge, nowS, day };
 }
 function view(loaded: Awaited<ReturnType<typeof load>>, gate?: v2.GateV2): ServerStateV2Like {

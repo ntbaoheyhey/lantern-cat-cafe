@@ -1,6 +1,6 @@
 # Proposal: recovering a paid but unminted Relic
 
-Status: **fix 1 implemented (C7), migration not applied.** Fix 1 (tell minted from cancelled) is in `20261106000000_voucher_cancel_reissue.sql`, `relic.ts` (`nonceMinted`) and the v1/v2 forge flows; tests in `supabase/tests/src/voucher-cancel.test.ts`. The user applies the migration by hand BEFORE the Edge Functions deploy. Fixes 2 and 3, the reissue race guard and the client wallet message are still proposals.
+Status: **fixes 2, 3 and the reissue race guard implemented (CXN1); migration not applied, apply before deploy.** Apply `20261107000000_voucher_race_guard.sql` after the fix 1 migration `20261106000000_voucher_cancel_reissue.sql`, before deploying the Edge Functions. Fix 1 remains implemented (C7); the stable claim id, visible recoverable pending vouchers, exclusive post-reissue check and waiting message are now implemented in both v1/v2, with local SQL and handler tests. The separate wrong-wallet message remains outside CXN1.
 
 Original status: proposal, not approved; it changes the Relic economy path.
 

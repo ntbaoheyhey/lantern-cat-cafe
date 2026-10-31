@@ -2,7 +2,7 @@
 // MockGameApiV2 (browser) and SupabaseGameApiV2 (Edge Functions `v2-*`) must both satisfy
 // `GameApiV2`. Written out in docs/api-v2.md. v1 (GameApi.ts, docs/api.md) is unchanged until
 // the cut-over (V29).
-import type { ForgeStatus, GameApiErrorCode, RelicVoucher, TodayRelic, ItemViewV2 } from '@taskbar-hero/api-contract';
+import type { ForgeStatus, GameApiErrorCode, TodayRelic, ItemViewV2, ForgeResultV2 as SharedForgeResultV2 } from '@taskbar-hero/api-contract';
 import type { v2 } from '@taskbar-hero/game-rules';
 
 export type ClassId = v2.ClassId;
@@ -105,7 +105,7 @@ export type ForgeBlockV2 = 'daily_limit' | 'not_enough_yarn' | 'no_moon_pearl';
 export interface ForgeStatusV2 extends Omit<ForgeStatus, 'blockedBy' | 'pending' | 'today'> {
   blockedBy: ForgeBlockV2 | null;
   forgedToday: boolean;
-  pending: RelicVoucher | null;
+  pending: ForgeStatus['pending'];
   today: TodayRelic | null;
 }
 
@@ -171,11 +171,7 @@ export interface SalvageResultV2 {
   state: ServerStateV2;
 }
 
-export interface ForgeResultV2 {
-  /** The voucher to mint (new, or today's pending one). Same shape as v1. */
-  voucher: RelicVoucher;
-  state: ServerStateV2;
-}
+export interface ForgeResultV2 extends SharedForgeResultV2<ServerStateV2> {}
 
 /** v2 refusals. v1 codes that still apply keep their names and statuses. */
 export const ERROR_CODES_V2 = [

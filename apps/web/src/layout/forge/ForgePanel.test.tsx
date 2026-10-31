@@ -390,6 +390,7 @@ describe('ForgePanel', () => {
 
     it('shows today relic card when today is present and not pending', () => {
       const today: TodayRelic = {
+        claimId: '00000000-0000-4000-8000-000000000042',
         relicId: '101',
         rarityName: 'common',
         minted: false,
@@ -411,6 +412,7 @@ describe('ForgePanel', () => {
 
     it('shows pending voucher state when unminted voucher exists', () => {
       const pendingVoucher: RelicVoucher = {
+        claimId: '00000000-0000-4000-8000-000000000042',
         player: '0x1234567890123456789012345678901234567890',
         relicId: '42',
         rarity: 2,
@@ -434,6 +436,21 @@ describe('ForgePanel', () => {
       expect(pendingBox.textContent).toMatch(/unminted/i);
       expect(pendingBox.textContent).toMatch(/rare/i);
     });
+  });
+
+  it.each([true, false])('T11 pending voucher overrides daily-limit text (unsigned=%s)', unsigned => {
+    const props = createDefaultProps({ relic: { today: null, blockedReason: 'daily_limit', pending: {
+      claimId: '00000000-0000-4000-8000-000000000042',
+      player: '0x0000000000000000000000000000000000000001', relicId: '1', rarity: 0,
+      rarityName: 'common', nonce: '1', expiry: 2_000_000_000,
+      ...(unsigned ? { signature: null, recoverable: true as const } : { signature: '0xabc' as const }),
+    } } });
+    render(<ForgePanel {...props} />);
+    fireEvent.click(screen.getByTestId('tab-relic'));
+    expect(screen.getByText('Your Relic is waiting. Try again in a moment.')).toBeTruthy();
+    expect(screen.queryByText(/daily limit reached|already forged/i)).toBeNull();
+    expect(screen.getByTestId('relic-forge-btn')).toHaveProperty('disabled', true);
+    expect(props.onRelic).not.toHaveBeenCalled();
   });
 
   describe('Confirm step required before any callback', () => {

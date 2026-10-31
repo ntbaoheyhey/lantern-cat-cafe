@@ -6,6 +6,7 @@ import {
   type Endpoint,
   type ForgeResult,
   type GameApi,
+  type MintReportResult,
   type ServerState,
 } from '@taskbar-hero/api-contract';
 
@@ -81,7 +82,7 @@ export class SupabaseGameApi implements GameApi {
     return this.post('relic-forge');
   }
 
-  reportMint(nonce: string, txHash: `0x${string}`): Promise<ServerState> {
+  reportMint(nonce: string, txHash: `0x${string}`): Promise<MintReportResult> {
     return this.post('relic-mint-report', { nonce, txHash });
   }
 }

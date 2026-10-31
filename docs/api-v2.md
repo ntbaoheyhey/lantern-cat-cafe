@@ -2,7 +2,7 @@
 
 The contract for Cat RPG v2. Types and the `GameApiV2` interface live in `apps/web/src/api/GameApiV2.ts`; the database behind it is in [proposals/schema-v2.md](proposals/schema-v2.md). Same conventions as [api.md](api.md): `POST https://<project>.supabase.co/functions/v1/<name>` with `Authorization: Bearer <session JWT>` and a JSON body; the player comes from the JWT `sub` claim only, and any player id, wallet or timestamp in the body is ignored. All numbers (costs, caps, cooldown, bag limit) come from `packages/game-rules` config, never from the client.
 
-**Coexistence.** The v1 endpoints in api.md are unchanged and stay live until the cut-over (V29). v2 functions are new, prefixed `v2-`, use their own tables and are only called by the client when `VITE_GAME_V2=1`. Shared with v1 on purpose: accounts, the Relic tables (one Relic a day across both versions) and `relic-mint-report`, which v2 reuses as is (body `{ nonce, txHash }`; it returns the v1 `ServerState`, so a v2 client calls `v2-state` afterwards).
+**Coexistence.** The v1 endpoints in api.md stay live until the cut-over (V29). v2 functions are prefixed `v2-`, use their own tables and are only called by the client when `VITE_GAME_V2=1`. Shared with v1 on purpose: accounts, the Relic tables (one Relic a day across both versions) and `relic-mint-report` (body `{ nonce, txHash }`; it returns the v1 `ServerState` plus the reported `claimId`, so a v2 client calls `v2-state` afterwards).
 
 **Every v2 response carries the new `ServerStateV2`**, either as the whole body or in `state`.
 
@@ -18,7 +18,7 @@ The contract for Cat RPG v2. Types and the `GameApiV2` interface live in `apps/w
 | `v2-craft` | `{ "recipeId": "rcp.<rarity>", "slot": SlotId }` | `{ item, state }` |
 | `v2-salvage` | `{ "itemIds": ["<uuid>", ...] }` | `{ gains, state }` |
 | `v2-lock` | `{ "itemId": "<uuid>", "locked": boolean }` | `ServerStateV2` |
-| `v2-relic-forge` | `{}` | `{ voucher, state }` |
+| `v2-relic-forge` | `{}` | `{ claimId, voucher, state }` |
 
 Ids come from the game-rules v2 content registry: `ClassId` (`warrior`, `guardian`, `rogue`, `hunter`, `archer`, `witch`, `alchemist`), `SlotId` (`weapon`, `helmet`, `armor`, `gloves`, `boots`, `collar`, `earring`, `ring`, `charm`), gear rarity (`common` ... `legendary`), `StatId`, material ids, recipe ids (`rcp.common` ... `rcp.legendary`). Times are unix seconds on the server clock, except timeline `t` (milliseconds).
 
@@ -34,12 +34,12 @@ bagLimit    number
 equipped    Record<SlotId, itemId | null>     // all 9 slots
 unlockedSlots SlotId[]
 bosses      { chapters: { chapter, cleared, wins }[], cooldownUntil: number | null }   // one cooldown per player
-forge       { blockedBy: 'daily_limit' | 'not_enough_yarn' | 'no_moon_pearl' | null, forgedToday, pending: RelicVoucher | null, today: TodayRelic | null }
+forge       { blockedBy: 'daily_limit' | 'not_enough_yarn' | 'no_moon_pearl' | null, forgedToday, pending: PendingRelicVoucher | null, today: TodayRelic | null, recoverable?: true }
 founder     boolean
 serverTime  number
 ```
 
-`RelicVoucher` and `TodayRelic` are the v1 shapes (api-contract). Stats are not sent; the client derives them with game-rules `deriveStats` from `itemKey`, `rarity`, `level` and `bonus`.
+`RelicVoucher`, `PendingRelicVoucher` and `TodayRelic` are the v1 shapes (api-contract), including `claimId`. One claim id = one Relic (`relicId`, rarity) and at most one minted voucher; not secret. It is the existing `relic_forges.id`, shared across v1/v2 and preserved by reissue. Stats are not sent; the client derives them with game-rules `deriveStats` from `itemKey`, `rarity`, `level` and `bonus`.
 
 ## Endpoints
 
@@ -114,6 +114,10 @@ Sets the `locked` flag; locked items cannot be salvaged. Refusal: `not_owner`.
 
 ### v2-relic-forge
 Same voucher shape and rules as v1 `relic-forge` (pending voucher returned without a new spend, expired one re-signed, one Relic per UTC+7 day), but a new forge costs 30 Yarn and 1 Moon Pearl. Minting targets the Avalanche Fuji testnet (free testnet, costs no real money). The daily limit is shared with v1: forging in either version blocks the other that day. Refusal: `forge_blocked`, body `reason` in check order `daily_limit`, `not_enough_yarn`, `no_moon_pearl`.
+
+When a signer is missing/malformed or an expiry replacement is awaiting its exclusive chain check, `v2-state` retains `forge.pending` with `signature: null`, `recoverable: true`, and no block reason. The matching `forge.today` and forge also carry `recoverable: true`. The view prefers "Your Relic is waiting. Try again in a moment." over daily-limit text. `v2-relic-forge` returns `server_error` until signing/checking can finish. An interrupted check can resume after its 120-second lease without another payment.
+
+Expiry reissue requires `nowS > expiry + 120` seconds and checks the old nonce again after the store reissue, before releasing any replacement signature. A newly used old nonce is marked minted (tx hash null), and the new voucher is cancelled. The reply contains the stable `claimId`, old expired voucher and minted state, with no new signature; clients must use the returned state instead of minting again. A late `relic-mint-report` can fill the tx hash and atomically cancels issued replacements, as in v1.
 
 ## Errors
 

@@ -1,7 +1,7 @@
 import type { TodayRelic } from '../api/GameApi';
 import { relicImageUrl } from '../market/marketText';
 import { LABELS } from '../theme/labels';
-import { relicName } from './forgeText';
+import { relicName, RELIC_WAITING_TEXT } from './forgeText';
 
 export const txUrl = (hash: string) => /^0x[0-9a-fA-F]{64}$/.test(hash) ? `https://testnet.snowtrace.io/tx/${hash}` : undefined;
 
@@ -17,7 +17,7 @@ export function TodayRelicCard({ today, mintable, canReissue }: { today: TodayRe
           <span className={`forge-tag rarity-${today.rarityName}`}>{LABELS.rarities[today.rarityName] ?? today.rarityName}</span>
         </p>
         <p className="forge-today-status" data-testid="forge-today-status">
-          {today.minted ? (
+          {today.recoverable ? RELIC_WAITING_TEXT : today.minted ? (
             <>
               In your wallet
               {url && (

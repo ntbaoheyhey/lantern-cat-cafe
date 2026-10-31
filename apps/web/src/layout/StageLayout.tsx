@@ -621,9 +621,10 @@ export function StageLayout() {
                             </div>
                           ) : (
                             (voucher ?? state.forge.pending) &&
+                            (voucher ?? state.forge.pending)!.signature !== null &&
                             (voucher ?? state.forge.pending)!.nonce !== mintedNonce && (
                               <MintPanel
-                                voucher={(voucher ?? state.forge.pending)!}
+                                voucher={(voucher ?? state.forge.pending)! as RelicVoucher}
                                 api={getGameApi()}
                                 loop={getGameLoop()}
                                 onMinted={(mint, confirmed) => {

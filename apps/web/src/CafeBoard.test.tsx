@@ -111,6 +111,7 @@ describe('CafeBoard', () => {
           forgedToday: true,
           pending: null,
           today: {
+            claimId: '00000000-0000-4000-8000-000000000042',
             relicId: '1',
             rarityName: 'rare',
             minted: true,
@@ -140,6 +141,7 @@ describe('CafeBoard', () => {
           forgedToday: true,
           pending: {
             player: '0x1234567890123456789012345678901234567890',
+            claimId: '00000000-0000-4000-8000-000000000042',
             relicId: '2',
             rarity: 2,
             rarityName: 'epic',

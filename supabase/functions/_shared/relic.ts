@@ -84,12 +84,12 @@ export interface ChainReader {
   /** RelicNFT.usedNonces(nonce): true once the voucher was minted (or cancelled). */
   nonceUsed(nonce: bigint): Promise<boolean>;
   /**
-   * True when a RelicForged log for this player, relicId and nonce exists, i.e. the used nonce was a
+   * The transaction hash (or true for legacy readers) when a RelicForged log exists, i.e. the used nonce was a
    * real mint and not RelicNFT.cancelNonce. `sinceS` is the voucher's creation time (unix seconds);
    * implementations must throw, never answer false, if they could not search back that far.
    * Optional: without it a used nonce is treated as minted (the old behaviour).
    */
-  nonceMinted?(player: Address, relicId: bigint, nonce: bigint, sinceS: number): Promise<boolean>;
+  nonceMinted?(player: Address, relicId: bigint, nonce: bigint, sinceS: number): Promise<boolean | Hex>;
 }
 
 /** Fuji getLogs window and the most windows one lookup scans (about 2.3 days at 2 s blocks, newest first). */
@@ -117,7 +117,8 @@ export function fujiReader(rpcUrl: string, relicNft: Address): ChainReader {
         const to = latest - i * LOG_WINDOW;
         const from = to >= LOG_WINDOW ? to - LOG_WINDOW + 1n : 0n;
         const logs = await client.getLogs({ address: relicNft, event: relicForgedAbi[0], args: { player, relicId }, fromBlock: from, toBlock: to });
-        if (logs.some((l) => l.args.nonce === nonce)) return true;
+        const mint = logs.find((l) => l.args.nonce === nonce);
+        if (mint) return mint.transactionHash ?? true;
         if (from === 0n) return false;
         const start = await client.getBlock({ blockNumber: from });
         if (Number(start.timestamp) <= sinceS - LOG_LOOKBACK_SLACK_SECONDS) return false;

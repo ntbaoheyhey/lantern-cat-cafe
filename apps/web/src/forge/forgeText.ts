@@ -3,6 +3,8 @@ import type { RelicVoucher } from '../api/GameApi';
 import { DEMO_SIGNATURE } from '../api/MockGameApi';
 import { capitalize, LABELS } from '../theme/labels';
 
+export const RELIC_WAITING_TEXT = 'Your Relic is waiting. Try again in a moment.';
+
 /** Friendly text for why forging is blocked. */
 export function blockText(block: ForgeBlock, shards: number): string {
   switch (block) {

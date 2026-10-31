@@ -39,6 +39,7 @@ const mockLoop = {} as GameLoop;
 const onMinted = vi.fn();
 
 const baseVoucher: RelicVoucher = {
+  claimId: '00000000-0000-4000-8000-000000000042',
   relicId: '1',
   rarity: 0,
   rarityName: 'common',

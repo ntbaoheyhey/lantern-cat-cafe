@@ -54,7 +54,7 @@ function makeApi(opts: MockGameApiOptions, demoVouchers = false) {
   const mock = new MockGameApi(opts);
   const real = (v: RelicVoucher): RelicVoucher => (demoVouchers ? v : { ...v, player: PLAYER, signature: SIG });
   const fix = <T extends ServerState>(s: T): T =>
-    s.forge.pending ? { ...s, forge: { ...s.forge, pending: real(s.forge.pending) } } : s;
+    s.forge.pending ? { ...s, forge: { ...s.forge, pending: s.forge.pending.signature === null ? s.forge.pending : real(s.forge.pending) } } : s;
   const api: GameApi = {
     getState: async () => fix(await mock.getState()),
     claim: async () => fix(await mock.claim()),
@@ -63,7 +63,7 @@ function makeApi(opts: MockGameApiOptions, demoVouchers = false) {
     fightBoss: () => mock.fightBoss(),
     forgeRelic: async () => {
       const r = await mock.forgeRelic();
-      return { voucher: real(r.voucher), state: fix(r.state) };
+      return { claimId: r.claimId, voucher: real(r.voucher), state: fix(r.state) };
     },
     reportMint: vi.fn(async (nonce: string, hash: `0x${string}`) => fix(await mock.reportMint(nonce, hash))),
   };
@@ -93,6 +93,20 @@ it('shows each blocked reason and disables Forge', async () => {
     loop!.stop();
     cleanup();
   }
+});
+
+it('T11 an unsigned pending voucher shows Your Relic is waiting instead of the daily limit', async () => {
+  const { api, mock } = makeApi({ start: RICH });
+  const result = await mock.forgeRelic();
+  const snapshot = result.state;
+  const waiting: ServerState = { ...snapshot, forge: { ...snapshot.forge, blockedBy: 'daily_limit',
+    pending: { ...result.voucher, signature: null, recoverable: true },
+    today: { ...snapshot.forge.today!, recoverable: true }, recoverable: true } };
+  await setup({ ...api, getState: async () => waiting });
+  expect(screen.getByText('Your Relic is waiting. Try again in a moment.')).toBeTruthy();
+  expect(screen.queryByText(/already forged|forge again tomorrow|daily limit/i)).toBeNull();
+  expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
+  expect(wallet.writeContractAsync).not.toHaveBeenCalled();
 });
 
 it('shows today\'s minted Relic with a Snowtrace link instead of the Forge button', async () => {

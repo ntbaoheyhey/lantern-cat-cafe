@@ -65,6 +65,7 @@ function storedState(overrides: Partial<StoredState> = {}): StoredState {
 
 function voucher(): RelicVoucher {
   return {
+    claimId: '00000000-0000-4000-8000-000000000042',
     player: '0x0000000000000000000000000000000000000001',
     relicId: '2',
     rarity: 1,
@@ -147,7 +148,7 @@ describe('buildServerState', () => {
   it('does not mutate or alias input items, vouchers or today relics', () => {
     const stored = storedState({
       pending: voucher(),
-      today: { relicId: '2', rarityName: 'rare', minted: false, txHash: null },
+      today: { claimId: '00000000-0000-4000-8000-000000000042', relicId: '2', rarityName: 'rare', minted: false, txHash: null },
     });
     const before: StoredState = JSON.parse(JSON.stringify(stored));
     const state = buildServerState(stored, nowMs);
