@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rune and Skill Lab</title>
+<meta name="color-scheme" content="dark">
+<style>
+/* Tokens extend apps/web/src/theme.css and the redesign draft. One dark world: cozy cat cafe at night. */
+:root{--bg:#120b19;--bg-2:#1a1220;--surface:#2a1f36;--surface-2:#3a2c4a;--surface-3:#4a3a5e;--border:#72578d;--line:#4b3862;--text:#fff3e0;--muted:#c3aed0;--accent:#ffb86b;--on-accent:#1a1200;--shard:#8fd8ff;--key:#ff8fb1;--good:#6be08a;--bad:#ff6b6b;--focus:#ffd75e;
+--r-common:#b9b6c9;--r-uncommon:#6be08a;--r-rare:#4aa8ff;--r-epic:#bb74ff;--r-legend:#ff9a3c;
+--f-display:'Pixelify Sans',ui-monospace,monospace;--f-body:'DM Sans',system-ui,sans-serif;--f-num:'JetBrains Mono',ui-monospace,monospace;--shadow:3px 3px 0 #000;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:400 14px/1.45 var(--f-body)}
+body{padding:12px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}.disp{font-family:var(--f-display)}
+.lbl{font:700 11px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:8px}
+.top h1{font:700 18px var(--f-display);margin:0;color:var(--accent);letter-spacing:.03em}
+.top .sp{flex:1}
+.seg{display:flex;gap:4px}
+.seg button,.chipb{background:var(--surface);border:2px solid var(--line);padding:4px 10px;font:700 12px var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.seg button[aria-pressed=true],.chipb[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:#000}
+.note{color:var(--muted);margin:0 0 10px;font-size:13px;max-width:1200px}.note b{color:var(--text)}
+.vp{width:100%;overflow:hidden;border:2px solid var(--line);background:#000;position:relative}
+.app{position:absolute;left:0;top:0;transform-origin:0 0;display:grid;grid-template-columns:92px 1fr;grid-template-rows:56px 1fr;background:var(--bg-2);overflow:hidden}
+.rail{grid-row:1/3;background:var(--bg);border-right:2px solid #000;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px;overflow:hidden}
+.logo{font:700 12px/1.1 var(--f-display);color:var(--accent);text-align:center;margin-bottom:6px;text-shadow:2px 2px 0 #000}
+.nav{width:82px;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0 3px;border:2px solid transparent;background:none;color:var(--muted);font:700 10px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
+.nav svg{width:22px;height:22px}.nav[aria-current=page]{background:var(--surface);border-color:var(--border);box-shadow:var(--shadow);color:var(--accent)}.nav:hover{color:var(--text)}
+.hud{display:flex;align-items:center;gap:10px;padding:0 16px;background:var(--surface);border-bottom:2px solid #000}
+.chip{display:flex;align-items:center;gap:6px;background:var(--bg);border:2px solid var(--line);padding:2px 9px;font:500 12px var(--f-num);white-space:nowrap}.chip i{width:9px;height:9px;display:inline-block}
+.demo{background:var(--bad);color:#2a0606;border:2px solid #000;font:700 10px var(--f-display);letter-spacing:.08em;padding:3px 8px;text-transform:uppercase}
+.main{position:relative;padding:14px 16px;overflow:hidden;min-height:0}
+.cols{display:grid;gap:12px;height:100%;min-height:0}.cols>*{min-height:0;min-width:0}
+.card{background:var(--surface);border:2px solid var(--border);box-shadow:var(--shadow);padding:10px 12px;min-width:0;min-height:0;overflow:hidden}
+.card.scroll{overflow:auto}
+.card h2,.card h3{margin:0 0 6px;font:700 15px var(--f-display);color:var(--accent);letter-spacing:.03em}
+.btn{background:var(--accent);color:var(--on-accent);border:2px solid #000;box-shadow:var(--shadow);padding:5px 12px;font:700 12px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+.btn.sec{background:var(--surface-3);color:var(--text)}.btn.ghost{background:none;box-shadow:none;border-color:var(--border);color:var(--text)}.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn.sm{padding:2px 8px;font-size:11px}
+.pill{display:inline-block;padding:0 7px;border:2px solid #000;font:700 10px/16px var(--f-display);letter-spacing:.06em;text-transform:uppercase;background:var(--surface-3);white-space:nowrap}
+.pill.common{background:var(--r-common);color:#17151f}.pill.uncommon{background:var(--r-uncommon);color:#06240f}.pill.rare{background:var(--r-rare);color:#021a33}.pill.epic{background:var(--r-epic);color:#1a0630}.pill.legendary{background:var(--r-legend);color:#2a1200}
+.pill.good{background:var(--good);color:#06240f}.pill.bad{background:var(--bad);color:#2a0606}.pill.tag{background:var(--bg);color:var(--muted);border-color:var(--line)}
+.row{display:flex;gap:8px;align-items:center}.wrap{flex-wrap:wrap}.grow{flex:1;min-width:0}.muted{color:var(--muted)}.sm{font-size:12px}.xs{font-size:11px}
+.stat{display:flex;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed var(--line);font-size:13px}.stat span:last-child{font-family:var(--f-num)}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th{text-align:left;font:700 10px var(--f-display);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:4px 6px;border-bottom:2px solid var(--line);position:sticky;top:0;background:var(--surface)}td{padding:4px 6px;border-bottom:1px dashed var(--line);vertical-align:middle}tr.sel td{background:var(--surface-2)}tr[data-act]{cursor:pointer}tr[data-act]:hover td{background:var(--surface-2)}
+.bar-t{height:10px;background:var(--bg);border:2px solid #000;position:relative}.bar-t b{position:absolute;inset:0 auto 0 0;background:var(--good)}
+.item{display:flex;gap:8px;align-items:center;padding:5px 6px;border:2px solid transparent;background:none;width:100%;text-align:left}
+.item:hover{background:var(--surface-2)}.item[aria-pressed=true]{background:var(--surface-2);border-color:var(--accent)}
+.slot{background:var(--bg);border:2px solid var(--line);display:grid;place-items:center;position:relative;flex:none}
+.slot.empty{border-style:dashed;opacity:.7}.slot.sel{outline:3px solid var(--focus);outline-offset:1px}
+.slot .q{position:absolute;right:2px;bottom:0;font:700 10px var(--f-num);text-shadow:1px 1px 0 #000}
+.stage{background:linear-gradient(#1c1030 0%,#3a2150 60%,#5a3560 100%);border:2px solid #000;position:relative}
+.stage svg{width:100%;height:auto;display:block}
+.hist{display:grid;gap:5px}.hist .r{display:grid;grid-template-columns:78px 1fr 92px;gap:8px;align-items:center;font-size:12px}
+.hist .t{position:relative;height:16px;background:var(--bg);border:2px solid #000}.hist .t b{position:absolute;inset:0 auto 0 0}.hist .t u{position:absolute;top:-3px;bottom:-3px;width:3px;background:#fff;text-decoration:none}
+.tip{position:absolute;z-index:20;pointer-events:none;background:#0c0712;border:2px solid var(--accent);box-shadow:var(--shadow);padding:6px 9px;max-width:260px;font-size:12px;line-height:1.35}
+.tip b{color:var(--accent)}
+input[type=text],input[type=search],input[type=number],select{background:var(--bg);border:2px solid var(--line);padding:4px 8px;color:var(--text)}
+input[type=range]{accent-color:var(--accent);width:100%}
+.node{position:relative;background:var(--bg);border:2px solid var(--line);padding:5px 7px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;min-width:0}.node .nb{flex-basis:100%;display:flex;gap:4px;justify-content:flex-end}
+.node.on{border-color:var(--accent)}.node.lock{opacity:.45}.node.max{border-color:var(--good)}
+.glow{filter:drop-shadow(0 0 4px currentColor)}
+.paused *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.fxsvg *{animation:none!important}}
+.kf{transform-box:fill-box;transform-origin:center}
+@keyframes sl{0%{stroke-dashoffset:1;opacity:1}45%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes shake{0%,40%{transform:translateX(0)}50%{transform:translateX(5px)}60%{transform:translateX(-5px)}70%,100%{transform:translateX(0)}}
+@keyframes dashx{0%{transform:translateX(0);opacity:1}45%{transform:translateX(150px);opacity:1}60%{transform:translateX(150px);opacity:0}100%{transform:translateX(0);opacity:0}}
+@keyframes proj{0%{transform:translateX(0);opacity:0}10%{opacity:1}70%{transform:translateX(150px);opacity:1}71%,100%{transform:translateX(150px);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ring{0%{transform:scale(.1);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-60px);opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(.8);opacity:.35}50%{transform:scale(1.15);opacity:.7}}
+@keyframes fall{0%{transform:translateY(-120px);opacity:0}15%{opacity:1}60%{transform:translateY(0);opacity:1}61%,100%{transform:translateY(0);opacity:0}}
+@keyframes flick{0%,100%{opacity:0}10%,35%{opacity:1}45%{opacity:0}60%,80%{opacity:1}}
+@keyframes lock{0%{transform:scale(3);opacity:0}30%{transform:scale(1);opacity:1}100%{transform:scale(.9);opacity:1}}
+@keyframes domein{0%{transform:scale(.2);opacity:0}30%,100%{transform:scale(1);opacity:.85}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+</style></head><body>
+<div class="top"><h1>Rune and Skill Lab</h1><span class="demo">Demo numbers, not game rules</span><span class="sp"></span>
+<label class="sm muted"><input type="checkbox" id="pause"> Pause animation</label>
+<div class="seg" id="size"><button data-w="1280" aria-pressed="true">1280×720</button><button data-w="1600" aria-pressed="false">1600×900</button></div></div>
+<p class="note" id="note"></p>
+<div class="vp" id="vp"><div class="app" id="app"></div></div>
+<script>
+/* ===== DEMO DATA: all names/numbers are original placeholders, NOT game rules ===== */
+const $=(s,r=document)=>r.querySelector(s);
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const pct=(x,d=1)=>(x*100).toFixed(d)+'%';
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let t=Math.imul(a^a>>>15,1|a);t=(t+Math.imul(t^t>>>7,61|t))^t;return((t^t>>>14)>>>0)/4294967296}}
+function pick(r,w){const s=w.reduce((a,b)=>a+b,0);let x=r()*s;for(let i=0;i<w.length;i++){x-=w[i];if(x<0)return i}return w.length-1}
+const COL={claw:'#ffb86b',ember:'#ff6b4a',frost:'#8fd8ff',spark:'#ffd75e',cozy:'#6be08a',arc:'#bb74ff',luck:'#ff8fb1',grey:'#b9b6c9'};
+const RAR=[{id:'common',n:'Common',c:'#b9b6c9',m:1,l:0,sock:0,max:10,sym:'●'},{id:'uncommon',n:'Uncommon',c:'#6be08a',m:1.3,l:1,sock:1,max:20,sym:'◆'},{id:'rare',n:'Rare',c:'#4aa8ff',m:1.7,l:2,sock:1,max:30,sym:'▲'},{id:'epic',n:'Epic',c:'#bb74ff',m:2.3,l:3,sock:2,max:40,sym:'★'},{id:'legendary',n:'Legendary',c:'#ff9a3c',m:3.2,l:4,sock:3,max:50,sym:'✦'}];
+const rpill=i=>`<span class="pill ${RAR[i].id}">${RAR[i].sym} ${RAR[i].n}</span>`;
+const TAGHELP={DAMAGE:'Plain damage bonuses.',HASTE:'Attack speed.',CRIT:'Crit chance and crit damage.',BURN:'Burn and poison damage over time.',BOSS:'Bonus damage against elites and bosses.',CDR:'Cooldown reduction (capped at 75%).',LUCK:'Drop and material find.',SKILL:'Bonus to active skill damage only.',RUNE:'Rune strength and rune drops.',GUARD:'Max HP, dodge, shields.',COZY:'Healing, regen and shield power.',MELEE:'Skill hits at close range.',RANGED:'Skill fires projectiles.',AREA:'Skill hits several targets.',DOT:'Damage over time.',POISON:'Poison damage.',MULTI:'Several hits per cast.',STUN:'Delays enemy attacks.',CHAIN:'Jumps between targets.',SPARK:'Lightning flavoured.',MARK:'Marks enemies for extra damage.',DEBUFF:'Weakens enemies.',HEAL:'Restores HP.'};
+/* ---- classes (stat leanings from docs/content-v2.md; the rest is demo) ---- */
+const CLASSES=[
+ {id:'warrior',n:'Warrior',hp:1,atk:1,int:1000,crit:.05,hits:1,role:'melee'},{id:'guardian',n:'Guardian',hp:1.3,atk:1.35,int:1400,crit:.05,hits:1,role:'melee'},
+ {id:'rogue',n:'Rogue',hp:.85,atk:.3,int:800,crit:.25,hits:2,role:'melee'},{id:'hunter',n:'Hunter',hp:1,atk:.9,int:1100,crit:.05,hits:1,role:'reach'},
+ {id:'archer',n:'Archer',hp:.85,atk:.75,int:900,crit:.05,hits:1,role:'ranged'},{id:'witch',n:'Witch',hp:.85,atk:1.2,int:1600,crit:.05,hits:1,role:'ranged'},
+ {id:'alchemist',n:'Alchemist',hp:1,atk:.85,int:1300,crit:.05,hits:1,role:'ranged'}];
+/* ---- active skills ---- */
+const SK=[
+ {id:'tail',n:'Tail Whip',cls:'Warrior',cat:'Strike',lv:1,cd:6,dmg:1.6,hits:1,tags:['MELEE','AREA'],g:'claw',c:COL.claw,fx:'slash',d:'A wide spin that clips everything in front of the cat.'},
+ {id:'pounce',n:'Midnight Pounce',cls:'Rogue',cat:'Strike',lv:5,cd:5,dmg:2.2,hits:1,tags:['MELEE','CRIT'],g:'moon',c:COL.arc,fx:'dash',d:'A shadow dash that ends in one very rude bite.'},
+ {id:'bonk',n:'Cushion Bonk',cls:'Guardian',cat:'Control',lv:6,cd:9,dmg:1.8,hits:1,tags:['MELEE','STUN'],g:'shield',c:COL.frost,fx:'slam',d:'Drops a sofa cushion on one foe and delays its next attack.'},
+ {id:'volley',n:'Fur Volley',cls:'Archer',cat:'Strike',lv:8,cd:7,dmg:.8,hits:3,tags:['RANGED','MULTI'],g:'wind',c:COL.luck,fx:'volley',d:'Three clumps of shed fur whistle toward the target.'},
+ {id:'orbit',n:'Yarn Orbit',cls:'Witch',cat:'Zone',lv:10,cd:10,dmg:.4,hits:6,tags:['AREA','DOT'],g:'yarn',c:COL.ember,fx:'orbit',d:'Three yarn balls circle the foe and keep nibbling.'},
+ {id:'cloud',n:'Catnip Cloud',cls:'Alchemist',cat:'Zone',lv:12,cd:10,dmg:.5,hits:4,tags:['AREA','POISON','DOT'],g:'drop',c:COL.cozy,fx:'cloud',d:'A sweet green fog; enemies inside lose focus and health.'},
+ {id:'blanket',n:'Warm Blanket',cls:'Any',cat:'Support',lv:14,cd:14,dmg:0,hits:0,tags:['GUARD','COZY'],g:'heart',c:COL.cozy,fx:'dome',d:'A soft shield dome that soaks 20% of max HP.'},
+ {id:'bolt',n:'Whisker Bolt',cls:'Archer, Witch',cat:'Strike',lv:16,cd:8,dmg:1.4,hits:1,tags:['RANGED','SPARK','CHAIN'],g:'bolt',c:COL.spark,fx:'chain',d:'Static from the whiskers hops across three enemies.'},
+ {id:'zoom',n:'Ember Zoomies',cls:'Witch',cat:'Burst',lv:15,cd:12,dmg:3,hits:1,tags:['AREA','BURN'],g:'flame',c:COL.ember,fx:'burst',d:'A midnight sprint that leaves a ring of sparks and scorch.'},
+ {id:'purr',n:'Purr Pulse',cls:'Any',cat:'Support',lv:18,cd:16,dmg:0,hits:0,tags:['COZY','HEAL'],g:'heart',c:COL.luck,fx:'heal',d:'A deep purr that restores a little HP every second.'},
+ {id:'laser',n:'Laser Chase',cls:'Hunter',cat:'Control',lv:20,cd:11,dmg:.6,hits:1,tags:['MARK','DEBUFF'],g:'eye',c:COL.bad||'#ff6b6b',fx:'mark',d:'A red dot the whole room wants to catch: marked foes take +25%.'},
+ {id:'fishfall',n:'Starfall Fish',cls:'Hunter',cat:'Burst',lv:22,cd:18,dmg:1.2,hits:6,tags:['AREA','RANGED'],g:'fish',c:COL.frost,fx:'rain',d:'Six silver fish drop from the night sky.'}];
+const SKR=r=>({dm:1+.2*(r-1),cd:r})
+/* ---- passives: [id,branch,tier,name,glyph,max,key,per,tags,flavour] ---- */
+const BR=[{id:'claw',n:'Claw path',c:COL.claw,b:'Hit harder, hit faster'},{id:'whisker',n:'Whisker path',c:COL.luck,b:'Crits, luck, cooldowns'},{id:'paw',n:'Paw path',c:COL.cozy,b:'Guard and cozy sustain'}];
+const GATE=[0,4,8,12];
+const KEYL={dmg:'damage',haste:'attack speed',critdmg:'crit damage',crit:'crit chance',burn:'burn and poison damage',boss:'damage vs elites and bosses',cdr:'cooldown reduction',find:'material find',rune:'rune drop chance',skill:'skill damage',hp:'max HP',dodge:'dodge',regen:'HP regen per second',shield:'opening shield (of max HP)',cozy:'shield and heal power',runepow:'rune strength'};
+const PN=[
+ ['sharp','claw',0,'Sharp Nails','claw',5,'dmg',.03,['DAMAGE']],['quick','claw',0,'Quick Paws','paw',5,'haste',.02,['HASTE']],
+ ['pounceI','claw',1,'Pounce Instinct','moon',5,'critdmg',.04,['CRIT']],['emberw','claw',1,'Ember Whiskers','flame',3,'burn',.08,['BURN']],
+ ['patience','claw',2,'Hunter\'s Patience','eye',3,'boss',.05,['BOSS']],['echo','claw',3,'Echoing Crits','bolt',1,'cdr',.04,['CRIT','CDR'],'Capstone: crits shave time off cooldowns (modelled as +4% CDR here).'],
+ ['keen','whisker',0,'Keen Eyes','eye',5,'crit',.01,['CRIT']],['clover','whisker',0,'Lucky Clover','clover',5,'rune',.02,['LUCK','RUNE']],
+ ['sleek','whisker',1,'Sleek Reflexes','wind',4,'cdr',.015,['CDR']],['nose','whisker',1,'Treasure Nose','fish',4,'find',.03,['LUCK']],
+ ['focus','whisker',2,'Mouser\'s Focus','star',3,'skill',.04,['SKILL']],['moonw','whisker',3,'Moonlit Whiskers','moon',1,'runepow',.10,['RUNE'],'Capstone: every socketed rune is 10% stronger.'],
+ ['fur','paw',0,'Thick Fur','shield',5,'hp',.04,['GUARD']],['soft','paw',0,'Soft Landing','paw',5,'dodge',.02,['GUARD']],
+ ['wpurr','paw',1,'Warm Purr','heart',4,'regen',.004,['COZY']],['nap','paw',1,'Nap Shield','bell',3,'shield',.03,['GUARD','COZY']],
+ ['aura','paw',2,'Cozy Aura','star',3,'cozy',.06,['COZY']],['catnap','paw',3,'Cat Nap','moon',1,'regen',.006,['COZY'],'Capstone: below 30% HP, rest and heal (modelled as +0.6% regen).']].map(a=>({id:a[0],br:a[1],tier:a[2],n:a[3],g:a[4],max:a[5],key:a[6],per:a[7],tags:a[8],cap:a[9]||null}));
+/* ---- runes ---- */
+const TN=['Dim','Glow','Bright','Radiant'];
+const RT=[{id:'purr',n:'Purr',c:'#6be08a',sh:'circle',key:'regen',v:[.002,.004,.007,.011],tags:['COZY']},{id:'hiss',n:'Hiss',c:'#ff6b6b',sh:'tri',key:'crit',v:[.02,.04,.07,.11],tags:['CRIT']},
+ {id:'mew',n:'Mew',c:'#ff8fb1',sh:'dia',key:'find',v:[.03,.06,.10,.15],tags:['LUCK']},{id:'chirp',n:'Chirp',c:'#ffd75e',sh:'hex',key:'haste',v:[.02,.04,.06,.09],tags:['HASTE']},
+ {id:'trill',n:'Trill',c:'#8fd8ff',sh:'star',key:'cdr',v:[.02,.03,.05,.07],tags:['CDR']},{id:'yowl',n:'Yowl',c:'#ffb86b',sh:'sq',key:'dmg',v:[.03,.06,.10,.15],tags:['DAMAGE']}];
+const UP=[{ok:.88,dbl:.09,dust:10},{ok:.84,dbl:.05,dust:30},{ok:.70,dbl:0,dust:90}]; // tier index 0..2, rest of probability = fail with mercy (1 rune back)
+const GEAR=[{id:'mallet',n:'Cedar Mallet',slot:'Weapon',r:1,g:'hammer'},{id:'claw',n:'Ember Claw',slot:'Weapon',r:3,g:'sword'},{id:'fang',n:'Moonlit Fang',slot:'Weapon',r:4,g:'moon'}];
+/* ---- chapters / monsters (names from docs/content-v2.md) ---- */
+const CH=[{id:'ch1',n:'Living Room',mons:['Dust Bunny','Loose Yarn','Sock Puppet'],elite:'Roomba Scout',boss:'Yarn Giant',c:'#ffb86b'},{id:'ch2',n:'Kitchen',mons:['Pickle Imp','Toast Mimic','Spoon Bug'],elite:'Blender Brute',boss:'Cucumber Scare',c:'#6be08a'},
+ {id:'ch3',n:'Bathroom',mons:['Soap Slime','Rubber Duck','Sponge Crab'],elite:'Hair Dryer Wisp',boss:'Bathtub Tyrant',c:'#8fd8ff'},{id:'ch4',n:'Basement',mons:['Mouse Trap','Dust Moth','Wind-up Robot'],elite:'Box Fort Knight',boss:'Vacuum Beast',c:'#bb74ff'},
+ {id:'ch5',n:'Night Rooftops',mons:['Shadow Crow','Moth Swarm','Neon Dot'],elite:'Chimney Ghost',boss:'Laser Dot Phantom',c:'#ff8fb1'}];
+/* ---- drop model (demo numbers) ---- */
+const SRC=[{id:'mon',n:'Regular kill',gear:.12,w:[78,16,5,.9,.1],mats:{yarn:[.5,1,3],fluff:[.1,1,2],button:[.02,1,1]},dust:.06,rune:.04},
+ {id:'elite',n:'Elite kill',gear:.35,w:[60,25,11,3.4,.6],mats:{yarn:[1,2,5],fluff:[.4,1,3],button:[.1,1,2]},dust:.2,rune:.12},
+ {id:'first',n:'Boss chest, first clear',gear:1,w:[30,34,24,9,3],mats:{yarn:[1,15,25],fluff:[1,4,8],button:[.8,2,4],crystal:[.6,1,3],scale:[.3,1,2],pearl:[1,1,1]},dust:1,rune:.8},
+ {id:'rep',n:'Boss chest, repeat',gear:.95,w:[50,30,14,5,1],mats:{yarn:[1,8,14],fluff:[.8,2,5],button:[.5,1,3],crystal:[.3,1,2],scale:[.12,1,1],pearl:[.3,1,1]},dust:.7,rune:.5}];
+const MATN={yarn:'Yarn',fluff:'Fluff Tuft',button:'Shiny Button',crystal:'Catnip Crystal',scale:'Starlight Scale',pearl:'Moon Pearl',dust:'Rune Dust',ink:'Etch Ink'};
+const MATG={yarn:'yarn',fluff:'fluff',button:'button',crystal:'gem',scale:'scale',pearl:'pearl',dust:'dust',ink:'ink'};
+const MATC={yarn:'#ff8fb1',fluff:'#c3aed0',button:'#ffd75e',crystal:'#6be08a',scale:'#8fd8ff',pearl:'#fff3e0',dust:'#bb74ff',ink:'#6b5a8a'};
+function weights(src,ch){const s=SRC.find(x=>x.id===src);const k=1+.18*ch;let w=s.w.map((x,i)=>i>=2?x*Math.pow(k,i-1):x);const t=w.reduce((a,b)=>a+b,0);return w.map(x=>x/t)}
+function runeTierW(ch){return [[90,10,0,0],[75,23,2,0],[58,36,6,0],[40,44,14,2],[25,46,24,5]][ch].map(x=>x/100)}
+/* ---- stepped offline/clear reward table (idea 4) vs smooth growth ---- */
+const STEP=(()=>{const a=[];let v=10;for(let l=1;l<=50;l++){if(l%7===1&&l>1)v=Math.round(v*1.9);else if(l%3===0)v=Math.round(v*1.08);a.push(v)}return a})();
+const SMOOTH=l=>Math.round(10*Math.pow(1.115,l-1));
+/* ---- companions ---- */
+const PETS=[{id:'biscuit',n:'Biscuit the Tabby',g:'paw',c:'#ffb86b',goal:'Defeat 300 Dust Bunny',tgt:300,key:'mon0',bonus:'+4% gold-equivalent Yarn per kill',lv:[.04,.06,.08,.1]},
+ {id:'noodle',n:'Noodle the Kitten',g:'yarn',c:'#ff8fb1',goal:'Defeat 250 Loose Yarn',tgt:250,key:'mon1',bonus:'+3% XP',lv:[.03,.05,.07,.09]},
+ {id:'pickle',n:'Pickle the Grump',g:'clover',c:'#6be08a',goal:'Defeat 250 Pickle Imp',tgt:250,key:'mon2',bonus:'+2% rune drop chance',lv:[.02,.03,.04,.06]},
+ {id:'bubbles',n:'Bubbles the Duck',g:'drop',c:'#8fd8ff',goal:'Defeat 300 Rubber Duck',tgt:300,key:'mon3',bonus:'+3% heal power',lv:[.03,.05,.07,.09]},
+ {id:'moth',n:'Mothra Jr.',g:'moon',c:'#bb74ff',goal:'Defeat 400 Moth Swarm',tgt:400,key:'mon4',bonus:'+1% crit chance',lv:[.01,.015,.02,.03]},
+ {id:'ember',n:'Ember Moth',g:'flame',c:'#ff6b4a',goal:'Clear any boss 25 times',tgt:25,key:'boss',bonus:'+5% boss chest rare+ odds (display only)',lv:[.05,.07,.1,.13]}];
+/* ---- quests / achievements / events ---- */
+const QUESTS=[{id:'q1',n:'Tidy up',d:'Defeat 40 monsters',t:40,r:'12 Rune Dust'},{id:'q2',n:'Snack run',d:'Collect 25 Yarn',t:25,r:'1 Etch Ink'},{id:'q3',n:'Mind your manners',d:'Use any active skill 20 times',t:20,r:'30 Yarn'}];
+const ACH=[{id:'a1',n:'First Hairball',d:'Cast any active skill',t:1,rate:94,r:'5 Rune Dust'},{id:'a2',n:'Rune Hoarder',d:'Own 10 runes',t:10,rate:41,r:'1 Dim Purr rune'},{id:'a3',n:'Careful Shopper',d:'Open the Codex 5 times',t:5,rate:63,r:'10 Yarn'},{id:'a4',n:'Mercy Is Real',d:'Get a rune back from a failed upgrade',t:1,rate:22,r:'1 Etch Ink'},{id:'a5',n:'Lucky Streak',d:'Pull Epic or better 3 times in a row (simulator)',t:3,rate:6,r:'Title: Clover Whiskers'},{id:'a6',n:'Full Cupboard',d:'Fill all rune sockets on one weapon',t:3,rate:12,r:'20 Rune Dust'}];
+const EVENTS=[{id:'e1',n:'Moonlit Market Week',when:'Starts in 2 days, lasts 7 days',fx:'Rune Dust drops +25%; Mew runes appear one tier higher in boss chests.',c:'#bb74ff'},{id:'e2',n:'Yarn Festival',when:'Active now, 3 days left',fx:'Salvage returns +1 Yarn. Companions get double treat credit.',c:'#ff8fb1'},{id:'e3',n:'Rainy-Day Nap',when:'Next week',fx:'Offline claim cap +2 hours, efficiency unchanged.',c:'#8fd8ff'}];
+/* ---- crafting hub ---- */
+const HUB=[{n:'Salvage',lv:1,fee:0,d:'Break gear into Yarn, Fluff and Rune Dust.'},{n:'Stitch (craft)',lv:3,fee:100,d:'Pick a slot, pay materials, get a random piece of that tier.'},{n:'Blend (9 to 1)',lv:1,fee:0,d:'Merge nine same-rarity pieces into one of the next rarity. Odds below.'},{n:'Socketing',lv:5,fee:300,d:'Open gear sockets for runes.'},{n:'Rune upgrade',lv:7,fee:600,d:'Combine three runes into a better one.'},{n:'Rune fusing',lv:10,fee:1500,d:'Fuse two different runes into a twin rune.'},{n:'Re-roll one line',lv:14,fee:2500,d:'Re-roll one bonus line on a piece of gear.'},{n:'Relic forge',lv:18,fee:0,d:'Existing daily Relic recipe; this demo does not change it.'}];
+const HUBXP=[300,900,1800,3000,4500,6300,8400,11000,14000,17500,21000,25000,29500,34500,40000,46000,52500,59500,67000];
+const BLEND=[{up:.9524,dbl:.0476},{up:.9615,dbl:.0385},{up:.9756,dbl:.0244},{up:.9901,dbl:.0099}]; // demo; rarity 0..3 -> next
+/* ---- currencies ---- */
+const CUR=[{n:'Fish',src:'Kills, chests',sink:'Gear recipes',cap:'Soft: none'},{n:'Yarn',src:'Kills, chests, salvage',sink:'Recipes, rune sockets',cap:'999,999'},{n:'Fluff Tuft',src:'Chests 1-5, salvage',sink:'Uncommon recipes',cap:'99,999'},{n:'Shiny Button',src:'Chests 1-5, salvage',sink:'Rare recipes',cap:'99,999'},{n:'Catnip Crystal',src:'Chests 2-5',sink:'Epic recipes',cap:'9,999'},{n:'Starlight Scale',src:'Chests 3-5',sink:'Legendary recipes',cap:'9,999'},{n:'Rune Dust (new)',src:'Salvage, kills, quests',sink:'Rune upgrades, fusing',cap:'99,999'},{n:'Etch Ink (new)',src:'Elites, bosses, quests',sink:'Socketing, line re-roll',cap:'999'},{n:'Moon Pearl',src:'Boss chests',sink:'Daily Relic recipe',cap:'999'},{n:'Cat Key',src:'Daily login',sink:'Boss attempts',cap:'5'}];
+/* ---- gear stat lines (ranges per rarity, demo) ---- */
+const LINES=[['atk%','Attack',.02,.06],['crit','Crit chance',.01,.03],['critdmg','Crit damage',.03,.08],['haste','Attack speed',.01,.04],['hp%','Max HP',.02,.06],['dodge','Dodge',.01,.03],['find','Material find',.02,.05],['cdr','Cooldown reduction',.01,.03]];
+const CAPS=[['Cooldown reduction','additive','75%'],['Dodge','additive','75%'],['Crit chance','additive','100%'],['Attack speed','multiplicative layer','none'],['Skill damage','own layer','none'],['Rune strength','additive','+50%'],['Material find','additive','+200%']];
+/* ===== PLACEHOLDER ART: hand-made 8x8 pixel glyphs, drawn for this demo (not from the reference). Real art: art/MANIFEST.md ===== */
+const GL={
+claw:['.o..o..o','oao.oa.oa','oao.oa.oa','oao.oa.oa','oaaooaaoa','.oaaaaao.','..oooooo.','........'],
+paw:['o..oo..o','oaooaooa','.oo..oo.','..oaao..','.oaaaao.','.oaaaao.','..oooo..','........'],
+heart:['.oo..oo.','oaaooaao','oaaaaaco','oaaaaaao','.oaaaao.','..oaao..','...oo...','........'],
+star:['...oo...','..oaao..','ooaccaoo','oaaaaaao','.oaaaao.','.oaooao.','.oo..oo.','........'],
+bolt:['....ooo.','...oaao.','..oaao..','.oaaaao.','..ooaao.','...oao..','...oo...','........'],
+flame:['...o....','..oao...','..oaao..','.oabaao.','.oabbao.','.oabbao.','..oaao..','...oo...'],
+drop:['...oo...','..oao...','..oaao..','.oacaao.','.oaaaao.','.oaaaao.','..oaao..','...oo...'],
+fish:['........','..oooo.o','.oaaaaoo','oacaaboa','.oaaaaoo','..oooo.o','........','........'],
+shield:['oooooooo','oaaaabbo','oaaaabbo','oaaaabbo','.oaaabo.','..oaabo.','...oao..','....o...'],
+eye:['........','..oooo..','.oaaaao.','oacooaao','oaoooaao','.oaaaao.','..oooo..','........'],
+clock:['..oooo..','.oaaaao.','oaaoaaao','oaaoaaao','oaaooaao','oaaaaaao','.oaaaao.','..oooo..'],
+clover:['.oo..oo.','oaaooaao','oaaaaaao','.oaaaao.','.oaaaao.','oaaooaao','.oo..oo.','...oo...'],
+yarn:['..oooo..','.oaabao.','oaabaaao','oabaaabo','oaabaabo','oaaabaao','.oaaaao.','..oooo..'],
+moon:['..ooo...','.oaaao..','oaaoo...','oaao....','oaao....','oaaaoo..','.oaaaao.','..oooo..'],
+bell:['...oo...','..oaao..','.oaaaao.','.oaaabo.','.oaaabo.','oaaaaabo','oooooooo','...oo...'],
+wind:['........','.oooo...','oaaaaoo.','.oooaaao','...ooaao','.oooaao.','oaaaao..','.oooo...'],
+sword:['......oo','.....oao','....oao.','...oao..','o.oao...','oaao....','.oo.....','........'],
+hammer:['.oooooo.','oaaaabbo','oaaaabbo','.oooooo.','...oa...','...oa...','...oa...','...oo...'],
+hat:['..oooo..','.oaaaao.','.oaaaao.','oooooooo','oaaaaabo','.oooooo.','........','........'],
+boots:['..oooo..','..oaao..','..oaao..','.oaaaooo','oaaaaaao','oooooooo','........','........'],
+ring:['..oooo..','.oaccao.','.oaaaao.','oa.oo.ao','oa....ao','.oa..ao.','..oooo..','........'],
+scale:['..oooo..','.oaaaao.','oacaaabo','oaaabaao','.oaaaao.','..oooo..','........','........'],
+pearl:['..oooo..','.occaao.','occaaaao','oaaaaabo','oaaaabbo','.oabbbo.','..oooo..','........'],
+dust:['........','..o..o..','.oao.oao','..o.oao.','.oao.o..','oao..oao','.o...oo.','........'],
+ink:['...oo...','..oaao..','..oaao..','.oaaaao.','.oabbao.','.obbbbo.','..oooo..','........'],
+fluff:['..o.o...','.oaoao..','oaaaaao.','.oaaaaoo','oaaaaaao','.oaaaao.','..oooo..','........'],
+button:['.oooooo.','oaaaaaao','oa.aa.ao','oaaaaaao','oa.aa.ao','oaaaaaao','.oooooo.','........'],
+mon:['.oooooo.','oaaaaaao','oaoaaoao','oaaaaaao','oabbbbao','.oaaaao.','.o.oo.o.','........'],
+chest:['.oooooo.','oaaaaaao','oabbbbao','oooccooo','oaabbaao','oaaaaaao','.oooooo.','........'],
+key:['.ooo....','oaaao...','oa.ao...','oaaaoooo','.ooaaaao','...o.o.o','........','........'],
+book:['.ooooooo','oaaaabbo','oa.aabbo','oaaaabbo','oa.aabbo','oaaaabbo','.ooooooo','........'],
+trophy:['oooooooo','oaaaaaao','.oaaaao.','..oaao..','...oo...','..oaao..','.oaaaao.','........'],
+sun:['o..oo..o','.o.aa.o.','..oaao..','oaaaaaao','oaaaaaao','..oaao..','.o.aa.o.','o..oo..o']};
+function shadeHex(h,f){const n=parseInt(h.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const t=f<0?0:255,p=Math.abs(f);r=Math.round((t-r)*p+r);g=Math.round((t-g)*p+g);b=Math.round((t-b)*p+b);return'#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1)}
+function glyph(name,col='#ffb86b',size=32,cls=''){const rows=GL[name]||GL.paw;const m={o:'#0d0812',a:col,b:shadeHex(col,-.35),c:shadeHex(col,.55)};let s='';rows.forEach((row,y)=>{for(let x=0;x<8;x++){const ch=row[x];if(ch&&m[ch])s+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${m[ch]}"/>`}});return`<svg class="${cls}" width="${size}" height="${size}" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${s}</svg>`}
+const SHAPE={circle:'<circle cx="16" cy="16" r="11"/>',tri:'<path d="M16 4L28 26H4Z"/>',dia:'<path d="M16 3L28 16L16 29L4 16Z"/>',hex:'<path d="M9 5H23L29 16L23 27H9L3 16Z"/>',star:'<path d="M16 3L19.5 12L29 12.5L21.5 18.5L24 28L16 22.5L8 28L10.5 18.5L3 12.5L12.5 12Z"/>',sq:'<path d="M6 6H26V26H6Z"/>'};
+function runeSvg(t,tier,size=40,hy){ // t: rune type id or 'a+b'; tier 0..3
+ const ids=String(t).split('+'),a=RT.find(x=>x.id===ids[0]),b=ids[1]&&RT.find(x=>x.id===ids[1]);
+ const c=a.c,st=['#0d0812','#0d0812',shadeHex(c,.5),'#fff3e0'][tier];
+ let g=`<g fill="${c}" stroke="${st}" stroke-width="${tier>=2?2.5:2}" stroke-linejoin="round">${SHAPE[a.sh]}</g>`;
+ if(b)g=`<g fill="${b.c}" stroke="#0d0812" stroke-width="2" transform="translate(5 3) scale(.65)">${SHAPE[b.sh]}</g><g fill="${c}" stroke="#0d0812" stroke-width="2" transform="translate(-1 6) scale(.7)">${SHAPE[a.sh]}</g>`;
+ const pips=Array.from({length:tier+1},(_,i)=>`<rect x="${16-(tier+1)*2.5+i*5}" y="30" width="3" height="2" fill="#fff3e0" stroke="#000" stroke-width=".6"/>`).join('');
+ const sp=tier===3?'<path d="M27 3v6M24 6h6" stroke="#fff3e0" stroke-width="1.5"/>':'';
+ return`<svg width="${size}" height="${size}" viewBox="0 0 32 33" style="color:${c}" class="${tier>=2?'glow':''}" role="img" aria-label="${a.n}${b?' + '+b.n:''} rune, ${TN[tier]}">${g}<path d="M12 13l3-3" stroke="#fff8" stroke-width="2"/>${pips}${sp}</svg>`}
+const CATSVG=(c='#ffb86b',w=64)=>`<svg width="${w}" height="${w}" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="${c}" d="M2 2h2v2h1v1h6V4h1V2h2v6h1v5h-1v1H3v-1H2V8H1V3z"/><path fill="${c}" d="M3 5h10v8H3z"/><path fill="#000" d="M5 7h2v2H5zM9 7h2v2H9zM7 10h2v1H7z"/><path fill="#fff" d="M5 7h1v1H5zM9 7h1v1H9z"/><path fill="#ff8fb1" d="M7 10h2v1H7z"/></svg>`;
+const BLOB=(x,y,c='#8b6bd6',cls='')=>`<g class="${cls} kf" transform="translate(${x} ${y})"><path fill="#0d0812" d="M-16 -2h32v18h-32z"/><path fill="${c}" d="M-14 -6h28v20h-28z"/><path fill="${shadeHex(c,-.3)}" d="M-14 8h28v6h-28z"/><path fill="#000" d="M-8 0h4v5h-4zM4 0h4v5H4z"/><path fill="#fff" d="M-8 0h2v2h-2zM4 0h2v2H4z"/></g>`;
+/* animated skill effects: 420x200 stage */
+function fx(a,col){
+ const cat=`<g transform="translate(50 100)"><g style="animation:bob 1.2s steps(2) infinite" class="kf">${CATSVG('#ffb86b',64).replace('<svg','<svg x="0" y="0"').replace(/ width="64" height="64"/,' width="64" height="64"')}</g></g>`;
+ const E=[[250,128],[310,100],[350,140]];
+ const en=(shake)=>E.map((p,i)=>BLOB(p[0],p[1],['#8b6bd6','#6b8bd6','#8b6bd6'][i],shake?'shk':'')).join('');
+ let body='';const T=2.2;
+ if(a==='slash')body=`<path d="M110 70Q180 20 250 110" fill="none" stroke="${col}" stroke-width="12" stroke-linecap="square" pathLength="1" stroke-dasharray="1" style="animation:sl ${T}s linear infinite"/><path d="M118 80Q180 40 244 112" fill="none" stroke="#fff" stroke-width="3" pathLength="1" stroke-dasharray="1" style="animation:sl ${T}s linear infinite"/>`;
+ if(a==='dash')body=`<g style="animation:dashx ${T}s ease-in infinite"><rect x="70" y="118" width="60" height="6" fill="${col}" opacity=".8"/><rect x="60" y="130" width="40" height="4" fill="${col}" opacity=".5"/></g><g class="kf" style="animation:ring ${T}s linear infinite;animation-delay:.9s"><circle cx="250" cy="125" r="40" fill="none" stroke="${col}" stroke-width="4"/></g>`;
+ if(a==='volley')body=[0,.15,.3].map((d,i)=>`<g style="animation:proj ${T}s linear infinite;animation-delay:${d}s"><circle cx="${110+i*0}" cy="${95+i*18}" r="6" fill="${col}" stroke="#000" stroke-width="2"/><rect x="${92}" y="${93+i*18}" width="12" height="3" fill="${col}" opacity=".6"/></g>`).join('');
+ if(a==='orbit')body=`<g class="kf" style="transform-origin:300px 118px;animation:spin 2.2s linear infinite">${[0,120,240].map(d=>`<g transform="rotate(${d} 300 118)"><circle cx="300" cy="68" r="9" fill="${col}" stroke="#000" stroke-width="2"/><path d="M293 66l14 4M294 71l12-6" stroke="#0d0812" stroke-width="1.2"/></g>`).join('')}</g>`;
+ if(a==='burst')body=[0,.3,.6].map(d=>`<g class="kf" style="animation:ring ${T}s ease-out infinite;animation-delay:${d}s;transform-origin:300px 125px"><circle cx="300" cy="125" r="70" fill="none" stroke="${col}" stroke-width="${6-d*4}"/></g>`).join('')+[0,1,2,3,4,5].map(i=>`<rect class="kf" x="${270+i*12}" y="130" width="5" height="5" fill="${i%2?'#ffd75e':col}" style="animation:rise ${T}s linear infinite;animation-delay:${i*.15}s"/>`).join('');
+ if(a==='cloud')body=[[260,125,40],[310,105,34],[345,138,36],[290,145,30]].map((c,i)=>`<circle class="kf" cx="${c[0]}" cy="${c[1]}" r="${c[2]}" fill="${col}" style="animation:pulse 2s ease-in-out infinite;animation-delay:${i*.3}s"/>`).join('')+[0,1,2,3].map(i=>`<rect class="kf" x="${255+i*25}" y="145" width="5" height="5" fill="#fff3e0" style="animation:rise ${T}s linear infinite;animation-delay:${i*.4}s"/>`).join('');
+ if(a==='slam')body=`<g style="animation:fall ${T}s ease-in infinite"><rect x="226" y="30" width="48" height="30" fill="${col}" stroke="#000" stroke-width="3"/><rect x="232" y="36" width="36" height="6" fill="#fff4"/></g><g class="kf" style="animation:ring ${T}s ease-out infinite;animation-delay:.9s;transform-origin:250px 150px"><ellipse cx="250" cy="150" rx="70" ry="14" fill="none" stroke="${col}" stroke-width="4"/></g>`;
+ if(a==='dome')body=`<g class="kf" style="animation:domein ${T}s ease-out infinite;transform-origin:82px 135px"><path d="M20 135a62 62 0 0 1 124 0z" fill="${col}" fill-opacity=".25" stroke="${col}" stroke-width="4"/></g>`;
+ if(a==='heal')body=[0,1,2,3,4].map(i=>`<path class="kf" d="M${55+i*14} 100h6v-6h4v6h6v4h-6v6h-4v-6h-6z" fill="${col}" stroke="#000" stroke-width="1" style="animation:rise ${T}s linear infinite;animation-delay:${i*.35}s"/>`).join('')+`<g class="kf" style="animation:ring ${T}s linear infinite;transform-origin:82px 132px"><circle cx="82" cy="132" r="50" fill="none" stroke="${col}" stroke-width="3"/></g>`;
+ if(a==='rain')body=[[236,100],[262,125],[296,92],[318,128],[346,100],[352,140]].map((p,i)=>`<g style="animation:fall ${T}s ease-in infinite;animation-delay:${i*.18}s"><path d="M${p[0]-9} ${p[1]}l9-6 9 6-9 6z" fill="${col}" stroke="#000" stroke-width="2"/><rect x="${p[0]-3}" y="${p[1]-34}" width="3" height="26" fill="${col}" opacity=".5"/></g>`).join('');
+ if(a==='chain')body=`<g style="animation:flick ${T}s steps(1) infinite"><polyline points="110,100 180,70 230,125 250,128 292,100 310,100 340,145 350,140" fill="none" stroke="${col}" stroke-width="5" stroke-linejoin="bevel"/><polyline points="110,100 180,70 230,125 250,128 292,100 310,100 340,145 350,140" fill="none" stroke="#fff" stroke-width="1.5"/></g>`;
+ if(a==='mark')body=`<g class="kf" style="animation:lock ${T}s ease-out infinite;transform-origin:250px 125px"><circle cx="250" cy="125" r="26" fill="none" stroke="${col}" stroke-width="3"/><path d="M250 90v16M250 144v16M215 125h16M269 125h16" stroke="${col}" stroke-width="3"/></g><circle class="kf" cx="250" cy="125" r="4" fill="${col}" style="animation:pulse 1s linear infinite"/>`;
+ return`<svg class="fxsvg" viewBox="0 0 420 200" role="img" aria-label="Animated preview of the skill effect"><rect y="150" width="420" height="50" fill="#43294f"/><rect y="148" width="420" height="4" fill="#000"/>${[30,90,300,380].map(x=>`<rect x="${x}" y="${20+x%40}" width="2" height="2" fill="#fff8"/>`).join('')}${cat}${en(['slash','slam','cloud'].includes(a))}${body}</svg>`}
+/* nav icons (24x24 simple) */
+const NAVI={skills:'bolt',passives:'star',runes:'dust',drops:'chest',stages:'sun',gear:'sword',pets:'paw',hub:'yarn',quests:'trophy',codex:'book',planner:'clock',notes:'bell'};
+/* ===== STATE + helpers ===== */
+const S={scr:'skills',lvl:20,W:1280,
+ sk:{tail:2,pounce:1,volley:1},selSk:'tail',viewRank:1,skCat:'All',cdr:0,
+ ps:{sharp:3,quick:2,keen:2,fur:1},
+ inv:{'purr:0':6,'hiss:0':5,'mew:0':4,'chirp:0':7,'trill:0':3,'yowl:0':9,'hiss:1':2,'yowl:1':1,'chirp:1':1,'purr:1':1,'yowl:2':1},
+ dust:140,ink:3,gearSel:'claw',socks:{mallet:[null],claw:['hiss:1',null],fang:[null,null,null]},selRune:'yowl:0',fusePartner:'',msg:'Pick a rune on the bench, then a socket. Unsocketing is free and never destroys a rune.',
+ drop:{ch:0,src:'mon',n:1000,seed:7,pity:false,res:null},
+ stage:{ch:0,diff:1},
+ gear:{slot:'Weapon',r:3,lvl:20,seed:3,lines:null},
+ pets:{kills:{mon0:320,mon1:90,mon2:260,mon3:40,mon4:10,boss:3},lv:{biscuit:1,pickle:0},eq:['biscuit','pickle'],yarn:600},
+ hub:{xp:1400,blendR:0,blendN:100,res:null},
+ q:{tab:'today',prog:{q1:22,q2:25,q3:5,a1:1,a2:6,a3:2,a4:0,a5:0,a6:2},claimed:{}},
+ cx:{q:'',kind:'all',rar:'all',sel:'skill:tail',opened:0},
+ pl:{cls:'hunter',A:{act:['tail','volley','bolt'],run:[['hiss',1],['yowl',1],['chirp',1]]},B:{act:['zoom','bolt','fishfall'],run:[['yowl',2],['yowl',1],['trill',1]]}}};
+const spentA=()=>Object.values(S.sk).reduce((a,b)=>a+b,0),spentP=()=>Object.values(S.ps).reduce((a,b)=>a+b,0);
+const pts=()=>S.lvl-spentA()-spentP();
+const spentBr=b=>PN.filter(n=>n.br===b).reduce((a,n)=>a+(S.ps[n.id]||0),0);
+function treeStats(){const o={};PN.forEach(n=>{const r=S.ps[n.id]||0;if(r)o[n.key]=(o[n.key]||0)+r*n.per});return o}
+const effVal=(rt,tier)=>rt.v[tier];
+function runeStats(list,mult=1){const o={};list.forEach(([t,tier])=>{const ids=String(t).split('+');ids.forEach(id=>{const rt=RT.find(x=>x.id===id);if(!rt)return;const f=ids.length>1?.6:1;o[rt.key]=(o[rt.key]||0)+rt.v[tier]*f*mult})});return o}
+const sockList=gid=>(S.socks[gid]||[]).filter(Boolean).map(k=>{const [t,tier]=k.split(':');return[t,+tier]});
+const invAdd=(k,n)=>{S.inv[k]=(S.inv[k]||0)+n;if(S.inv[k]<=0)delete S.inv[k]};
+function sumStats(...os){const o={};os.forEach(x=>Object.entries(x).forEach(([k,v])=>o[k]=(o[k]||0)+v));return o}
+const statLine=(k,v)=>`<div class="stat"><span>${KEYL[k]||k}</span><span>${k==='regen'?(v*100).toFixed(2)+'%/s':'+'+(v*100).toFixed(1)+'%'}</span></div>`;
+const tagPills=a=>a.map(t=>`<span class="pill tag" data-tip="<b>${t}</b><br>${TAGHELP[t]||''}" tabindex="0">${t}</span>`).join(' ');
+function setNote(){ $('#note').innerHTML={skills:'<b>Active skills.</b> Browse, preview the effect, spend points. Odds, cooldowns and ranks are always visible; tags show what boosts what.',passives:'<b>Passive skill grid.</b> Three paths, four tiers. A tier opens when you spend enough points on that path. + adds a rank, − refunds it for free (no respec fee in this demo).',runes:'<b>Runes and sockets.</b> Socket, upgrade (3 to 1), and fuse two types into a twin rune. Failures give a rune back (mercy). All odds are shown before you click.',drops:'<b>Drops and simulator.</b> Per-chapter loot tables with exact odds, "1 in N" values, pity counter option and a seeded simulator with histogram.',stages:'<b>Chapters and difficulty.</b> Monsters, elites, boss, and a stepped reward table next to the smooth curve it would replace.',gear:'<b>Gear, stats and caps.</b> Rarity ladder, bonus lines with roll ranges, and one stat-stacking formula written down.',pets:'<b>Companions.</b> Unlock by hunting, feed treats to level, equip two. Passive bonuses only.',hub:'<b>Cozy Workshop.</b> One shared level fed by salvaging, crafting and fusing. Unlocks the crafting ladder; blend odds are public.',quests:'<b>Quests, achievements, events.</b> Small rewards in Rune Dust and Etch Ink. Global unlock rates are fake demo values.',codex:'<b>Codex.</b> Search every skill, rune, item, monster, material and companion. Links jump between entries.',planner:'<b>Build planner.</b> Compare two builds side by side with the same published formula.',notes:'<b>Coverage and decisions.</b> What we learned from the reference, what we changed, and what needs your sign-off.'}[S.scr]||''}
+/* ===== SHELL ===== */
+const NAVL=[['skills','Skills'],['passives','Passives'],['runes','Runes'],['drops','Drops'],['stages','Stages'],['gear','Gear'],['pets','Pets'],['hub','Workshop'],['quests','Quests'],['codex','Codex'],['planner','Planner'],['notes','Notes']];
+const chip=(c,l,v)=>`<span class="chip"><i style="background:${c}"></i><span class="muted">${l}</span> ${v}</span>`;
+function shell(body){return`<nav class="rail" aria-label="Screens"><div class="logo">TASK<br>BAR<br>HERO</div>${NAVL.map(([k,l])=>`<button class="nav" data-act="go" data-k="${k}" ${k===S.scr?'aria-current="page"':''}>${glyph(NAVI[k],k===S.scr?'#ffb86b':'#c3aed0',22)}${l}</button>`).join('')}</nav>
+<header class="hud"><span class="chip"><span class="muted">LV</span> <button class="btn sm sec" data-act="lvl" data-d="-1" aria-label="Lower level">−</button> ${S.lvl} <button class="btn sm sec" data-act="lvl" data-d="1" aria-label="Raise level">+</button></span>
+${chip('#ffd75e','Points left',`<b style="color:${pts()<0?'var(--bad)':'var(--good)'}">${pts()}</b>`)}${chip(MATC.dust,'Rune Dust',fmt(S.dust))}${chip(MATC.ink,'Etch Ink',S.ink)}${chip(MATC.yarn,'Yarn',fmt(S.pets.yarn))}<span class="grow"></span><span class="xs muted">Desktop first · keyboard: Tab, Enter</span></header>
+<main class="main">${body}</main><div class="tip" id="tip" style="display:none"></div>`}
+const V={};
+/* ---------- SKILLS ---------- */
+function skillBoost(sk){const t=treeStats(),rs=runeStats(sockList(S.gearSel),1+(t.runepow||0));const rows=[];
+ PN.forEach(n=>{const r=S.ps[n.id]||0;if(!r)return;const hit=n.tags.some(x=>sk.tags.includes(x))||['DAMAGE','CRIT','CDR','SKILL'].some(x=>n.tags.includes(x))&&sk.dmg>0||(n.tags.includes('COZY')&&sk.tags.includes('COZY'))||(n.tags.includes('BURN')&&sk.tags.some(x=>['BURN','DOT','POISON'].includes(x)));if(hit)rows.push(`<div class="stat"><span class="row">${glyph(n.g,BR.find(b=>b.id===n.br).c,18)} ${n.n} ${r}/${n.max}</span><span>+${(n.per*r*100).toFixed(1)}% ${n.key}</span></div>`)});
+ Object.entries(rs).forEach(([k,v])=>rows.push(`<div class="stat"><span class="row">${glyph('dust','#bb74ff',18)} Runes on ${GEAR.find(g=>g.id===S.gearSel).n}</span><span>+${(v*100).toFixed(1)}% ${k}</span></div>`));
+ return rows.join('')||'<div class="muted sm">Nothing yet. Spend points on the Passives screen or socket runes.</div>'}
+V.skills=()=>{const cats=['All',...new Set(SK.map(s=>s.cat))];const list=SK.filter(s=>S.skCat==='All'||s.cat===S.skCat);const s=SK.find(x=>x.id===S.selSk);const rk=S.sk[s.id]||0;const vr=S.viewRank;
+ const locked=S.lvl<s.lv,cdEff=r=>Math.max(s.cd*.4,s.cd-.3*(r-1))*(1-S.cdr/100);
+ const rows=[1,2,3,4,5].map(r=>{const dm=s.dmg*SKR(r).dm,tot=dm*s.hits;return`<tr class="${r===vr?'sel':''}" data-act="vr" data-r="${r}"><td>Rank ${r}${r===rk?' <span class="pill good">yours</span>':''}</td><td class="num">${s.dmg?pct(dm,0):'effect +'+(r*8)+'%'}</td><td class="num">${s.hits||'-'}</td><td class="num">${s.dmg?pct(tot,0):'-'}</td><td class="num">${cdEff(r).toFixed(1)}s</td><td class="num">${s.dmg?(tot/cdEff(r)*100).toFixed(0):'-'}</td></tr>`}).join('');
+ const same=SK.filter(o=>o.id!==s.id&&o.tags.some(t=>s.tags.includes(t))).slice(0,4);
+ return`<div class="cols" style="grid-template-columns:290px 1fr 290px">
+<div class="card scroll"><div class="row wrap" style="margin-bottom:6px">${cats.map(c=>`<button class="chipb" data-act="skcat" data-c="${c}" aria-pressed="${c===S.skCat}">${c}</button>`).join('')}</div>
+${list.map(k=>{const r=S.sk[k.id]||0,lk=S.lvl<k.lv;return`<button class="item" data-act="selsk" data-id="${k.id}" aria-pressed="${k.id===S.selSk}">${glyph(k.g,k.c,34)}<span class="grow"><b>${k.n}</b><br><span class="xs muted">${k.cat} · ${k.cd}s · ${lk?'unlocks Lv '+k.lv:'Rank '+r+'/5'}</span></span></button>`}).join('')}</div>
+<div class="card" style="display:flex;flex-direction:column;gap:8px"><div class="row">${glyph(s.g,s.c,44)}<div class="grow"><h2 style="margin:0;font-size:20px">${s.n}</h2><span class="pill">${s.cat}</span> ${tagPills(s.tags)} <span class="xs muted">${s.cls}</span></div>
+<div><button class="btn" data-act="skup" ${locked||pts()<=0||rk>=5?'disabled':''}>${rk?'Level up':'Learn'} (1 pt)</button> <button class="btn ghost" data-act="skdown" ${rk<1?'disabled':''}>Refund</button></div></div>
+<div class="muted sm">${s.d} ${locked?'<b style="color:var(--bad)">Locked until level '+s.lv+'.</b>':''}</div>
+<div class="stage">${fx(s.fx,s.c)}</div>
+<div class="row sm"><label class="grow">Cooldown reduction preview <span class="num">${S.cdr}%</span><input type="range" min="0" max="75" value="${S.cdr}" data-act="cdr" aria-label="Cooldown reduction"></label><span class="muted xs">cap 75%</span></div>
+<div class="grow" style="overflow:auto"><table><tr><th>Rank</th><th>Per hit</th><th>Hits</th><th>Total</th><th>Cooldown</th><th>Dmg / s</th></tr>${rows}</table></div></div>
+<div style="display:grid;gap:12px;align-content:start;grid-template-rows:auto 1fr"><div class="card"><h3>Boosted by</h3>${skillBoost(s)}</div>
+<div class="card scroll"><h3>Synergy</h3><div class="muted sm" style="margin-bottom:6px">Skills sharing tags with <b>${s.n}</b>:</div>${same.map(o=>`<button class="item" data-act="selsk" data-id="${o.id}">${glyph(o.g,o.c,26)}<span class="grow"><b class="sm">${o.n}</b><br>${tagPills(o.tags.filter(t=>s.tags.includes(t)))}</span></button>`).join('')||'<div class="muted sm">No overlap.</div>'}<div class="xs muted" style="margin-top:8px">Improvement: the reference hides how cooldown and cast speed combine. Here the slider and the table show it, and the formula is on the Planner screen.</div></div></div></div>`};
+/* ---------- PASSIVES ---------- */
+V.passives=()=>{const t=treeStats();return`<div class="cols" style="grid-template-columns:repeat(3,1fr) 230px">${BR.map(b=>{const sp=spentBr(b.id);return`<div class="card scroll"><div class="row"><h3 style="margin:0;color:${b.c}">${b.n}</h3><span class="grow"></span><span class="pill">${sp} pts</span></div><div class="xs muted" style="margin-bottom:6px">${b.b}</div>
+${[0,1,2,3].map(tier=>{const ns=PN.filter(n=>n.br===b.id&&n.tier===tier),open=sp>=GATE[tier];return`<div class="lbl" style="margin:6px 0 3px">${tier===3?'Capstone':'Tier '+(tier+1)} · ${open?'<span style="color:var(--good)">open</span>':'needs '+GATE[tier]+' pts on this path'}</div><div style="display:grid;grid-template-columns:${ns.length>1?'1fr 1fr':'1fr'};gap:6px">${ns.map(n=>{const r=S.ps[n.id]||0;return`<div class="node ${!open?'lock':''} ${r?'on':''} ${r>=n.max?'max':''}" data-tip="<b>${n.n}</b><br>${n.cap||'+'+(n.per*100).toFixed(n.per<.01?1:0)+'% '+KEYL[n.key]+' per rank'}<br>Tags: ${n.tags.join(', ')}" tabindex="0">${glyph(n.g,b.c,30)}<span class="grow" style="line-height:1.2"><b class="xs">${n.n}</b><br><span class="num xs muted">${r}/${n.max}</span></span><span class="nb"><button class="btn sm" data-act="padd" data-id="${n.id}" ${!open||r>=n.max||pts()<=0?'disabled':''} aria-label="Add rank to ${n.n}">+</button> <button class="btn sm ghost" data-act="psub" data-id="${n.id}" ${r<1?'disabled':''} aria-label="Remove rank from ${n.n}">−</button></span></div>`}).join('')}</div>`}).join('')}</div>`}).join('')}
+<div class="card scroll"><h3>Your totals</h3>${Object.entries(t).map(([k,v])=>statLine(k,v)).join('')||'<div class="muted sm">Spend points to see totals.</div>'}<div class="row" style="margin-top:10px"><button class="btn sec" data-act="preset" data-p="claw">Claw build</button><button class="btn sec" data-act="preset" data-p="paw">Paw build</button></div><button class="btn ghost" style="margin-top:6px;width:100%" data-act="preset" data-p="reset">Reset all</button><div class="xs muted" style="margin-top:8px">Improvement: no hidden respec fee, presets, and each path shows exactly what unlocks it.</div></div></div>`};
+/* ---------- RUNES ---------- */
+function benchCell(t,tier){const k=t+':'+tier,n=S.inv[k]||0,rt=RT.find(x=>x.id===t);return`<button class="slot ${S.selRune===k?'sel':''} ${n?'':'empty'}" style="width:62px;height:58px" data-act="selrune" data-k="${k}" data-tip="<b>${rt.n} · ${TN[tier]}</b><br>+${rt.key==='regen'?(rt.v[tier]*100).toFixed(1)+'%/s':(rt.v[tier]*100).toFixed(0)+'%'} ${KEYL[rt.key]}<br>You own ${n}" aria-label="${rt.n} rune ${TN[tier]}, you own ${n}" aria-pressed="${S.selRune===k}">${runeSvg(t,tier,40)}<span class="q">${n}</span></button>`}
+V.runes=()=>{const g=GEAR.find(x=>x.id===S.gearSel),R=RAR[g.r],ss=S.socks[g.id],t=treeStats(),rs=runeStats(sockList(g.id),1+(t.runepow||0));const sel=S.selRune,[st,sti]=sel?sel.split(':'):['',0],rt=RT.find(x=>x.id===st.split('+')[0]),tier=+sti,cnt=S.inv[sel]||0;
+ const isHy=st.includes('+'),u=UP[tier],partners=RT.filter(x=>x.id!==st&&!isHy&&(S.inv[x.id+':'+tier]||0)>0);
+ const hyb=Object.keys(S.inv).filter(k=>k.includes('+'));
+ return`<div class="cols" style="grid-template-columns:300px 1fr 330px">
+<div class="card scroll"><div class="row wrap" style="margin-bottom:8px">${GEAR.map(x=>`<button class="chipb" data-act="gearsel" data-id="${x.id}" aria-pressed="${x.id===S.gearSel}">${x.n}</button>`).join('')}</div>
+<div class="row" style="margin-bottom:8px">${glyph(g.g,R.c,48)}<div><b>${g.n}</b><br>${rpill(g.r)} <span class="pill">${R.sock} sockets</span></div></div>
+<div class="lbl" style="margin-bottom:4px">Sockets (click to place or remove)</div><div class="row">${ss.map((k,i)=>{const [a,b]=k?k.split(':'):[];return`<button class="slot ${k?'':'empty'}" style="width:64px;height:64px" data-act="socket" data-i="${i}" aria-label="Socket ${i+1}: ${k?'filled':'empty'}">${k?runeSvg(a,+b,44):'<span class="muted xs">empty</span>'}</button>`}).join('')||'<span class="muted sm">Common gear has no sockets.</span>'}</div>
+<h3 style="margin-top:12px">Rune bonuses here</h3>${Object.entries(rs).map(([k,v])=>statLine(k,v)).join('')||'<div class="muted sm">No runes socketed.</div>'}
+${t.runepow?`<div class="xs muted">Includes +${(t.runepow*100).toFixed(0)}% rune strength from your passives.</div>`:''}
+<div class="xs muted" style="margin-top:8px">Socket count by rarity: Common 0, Uncommon 1, Rare 1, Epic 2, Legendary 3 (demo).</div></div>
+<div class="card scroll"><div class="row"><h3 style="margin:0">Rune bench</h3><span class="grow"></span><span class="xs muted">Shape + colour + pips tell tier; never colour alone.</span></div>
+<table style="margin-top:6px"><tr><th>Rune</th>${TN.map(n=>`<th style="text-align:center">${n}</th>`).join('')}</tr>${RT.map(r=>`<tr><td><b style="color:${r.c}">${r.n}</b><br><span class="xs muted">${KEYL[r.key]}</span></td>${[0,1,2,3].map(i=>`<td style="text-align:center">${benchCell(r.id,i)}</td>`).join('')}</tr>`).join('')}</table>
+<div class="lbl" style="margin:8px 0 4px">Twin runes (fused)</div><div class="row wrap">${hyb.map(k=>{const [a,b]=k.split(':');return`<button class="slot ${S.selRune===k?'sel':''}" style="width:62px;height:58px" data-act="selrune" data-k="${k}" aria-label="Twin rune ${a}">${runeSvg(a,+b,40)}<span class="q">${S.inv[k]}</span></button>`}).join('')||'<span class="muted sm">None yet. Fuse two different runes of the same tier on the right.</span>'}</div>
+<div class="logbox" style="margin-top:8px;background:var(--bg);border:2px solid #000;padding:6px 8px;font:500 12px var(--f-num)" role="status">${S.msg}</div></div>
+<div style="display:grid;gap:12px;align-content:start;grid-template-rows:auto auto 1fr;min-height:0"><div class="card"><h3>${sel?`${runeSvg(st.split(':')[0],tier,20)} ${isHy?'Twin ':''}${rt.n} · ${TN[tier]}`:'Select a rune'}</h3>
+${sel?`<div class="stat"><span>Effect</span><span>+${rt.key==='regen'?(rt.v[tier]*(isHy?.6:1)*100).toFixed(2)+'%/s':(rt.v[tier]*(isHy?.6:1)*100).toFixed(1)+'%'} ${KEYL[rt.key]}</span></div>
+<div class="stat"><span>Owned</span><span>${cnt}</span></div>
+<div class="lbl" style="margin-top:6px">Upgrade 3 to 1${isHy?' (twin runes cannot upgrade)':''}</div>${tier<3&&!isHy?`<table><tr><th>Outcome</th><th>Chance</th></tr><tr><td>One tier up</td><td class="num">${pct(u.ok,0)}</td></tr>${u.dbl?`<tr><td>Two tiers up (great)</td><td class="num">${pct(u.dbl,0)}</td></tr>`:''}<tr><td>Fail, 1 rune back (mercy)</td><td class="num">${pct(1-u.ok-u.dbl,0)}</td></tr></table><div class="xs muted">Cost: 3 runes + ${u.dust} Rune Dust.</div><button class="btn" style="margin-top:6px;width:100%" data-act="upgrade" ${cnt<3||S.dust<u.dust?'disabled':''}>Upgrade</button>`:'<div class="muted sm">Radiant is the top tier.</div>'}
+<div class="lbl" style="margin-top:8px">Fuse into a twin rune</div>${!isHy?`<div class="row"><select id="fp" data-act="fp" aria-label="Partner rune">${partners.map(p=>`<option value="${p.id}" ${S.fusePartner===p.id?'selected':''}>${p.n} (${S.inv[p.id+':'+tier]})</option>`).join('')||'<option value="">no partner at this tier</option>'}</select><button class="btn" data-act="fuse" ${!partners.length||cnt<1||S.dust<20||S.ink<1?'disabled':''}>Fuse</button></div><div class="xs muted">Cost: 1 + 1 rune, 20 Rune Dust, 1 Etch Ink. A twin gives both effects at 60% each in one socket.</div>`:''}`:'<div class="muted sm">Pick any rune on the bench.</div>'}</div>
+<div class="card scroll"><h3>Where materials come from</h3><table><tr><th>Material</th><th>Sources</th></tr><tr><td>${glyph('dust',MATC.dust,18)} Rune Dust</td><td class="xs">Salvage gear, regular kills (6%), elites (20%), boss chests, quests</td></tr><tr><td>${glyph('ink',MATC.ink,18)} Etch Ink</td><td class="xs">Elites, boss chests, quests, achievements</td></tr><tr><td>${glyph('pearl',MATC.pearl,18)} Moon Pearl</td><td class="xs">Boss chests only (existing)</td></tr></table><div class="row" style="margin-top:8px"><button class="btn sec sm" data-act="salv">Salvage 5 Common gear (+15 Dust)</button></div><div class="xs muted" style="margin-top:6px">Rune drop tiers rise by chapter. See Drops.</div></div><div></div></div></div>`};
+/* ---------- DROPS ---------- */
+function simulate(){const d=S.drop,src=SRC.find(x=>x.id===d.src),w=weights(d.src,d.ch),r=rng(d.seed),N=d.n,rt=runeTierW(d.ch);
+ const out={n:N,rar:[0,0,0,0,0],gear:0,dry:0,maxDry:0,gaps:[],last:-1,runes:[0,0,0,0],mats:{},feed:[],pityHits:0};let since=0;const pityK={mon:20,elite:12,first:8,rep:8}[d.src];
+ for(let i=0;i<N;i++){if(r()<src.gear){let ri=pick(r,w);since++;if(d.pity&&ri<2&&since>=pityK){ri=2;out.pityHits++}out.gear++;out.rar[ri]++;if(ri>=2){out.gaps.push(since);since=0}out.maxDry=Math.max(out.maxDry,since);if(out.feed.length<400)out.feed.push({i,t:'g',ri})}
+  Object.entries(src.mats).forEach(([k,[p,a,b]])=>{if(r()<p){const q=a+Math.floor(r()*(b-a+1));out.mats[k]=(out.mats[k]||0)+q}});
+  if(r()<src.dust){out.mats.dust=(out.mats.dust||0)+1+Math.floor(r()*4)}
+  if(r()<src.rune){const ti=pick(r,rt),ty=Math.floor(r()*6);out.runes[ti]++;if(out.feed.length<400)out.feed.push({i,t:'r',ti,ty})}}
+ out.w=w;out.src=src;return out}
+V.drops=()=>{const d=S.drop,src=SRC.find(x=>x.id===d.src),w=weights(d.src,d.ch),rt=runeTierW(d.ch),res=d.res,ch=CH[d.ch];
+ const oddsRows=RAR.map((R,i)=>`<tr><td>${rpill(i)}</td><td class="num">${pct(w[i],w[i]<.01?2:1)}</td><td class="num">${pct(w[i]*src.gear,w[i]*src.gear<.01?3:1)}</td><td class="num">1 in ${fmt(1/(w[i]*src.gear))}</td><td style="width:90px"><div class="bar-t"><b style="width:${Math.min(100,w[i]*100)}%;background:${R.c}"></b></div></td></tr>`).join('');
+ const matRows=Object.entries(src.mats).map(([k,[p,a,b]])=>`<tr><td>${glyph(MATG[k],MATC[k],20)} ${MATN[k]}</td><td class="num">${pct(p,0)}</td><td class="num">${a===b?a:a+'–'+b}</td></tr>`).join('')+`<tr><td>${glyph('dust',MATC.dust,20)} Rune Dust (new)</td><td class="num">${pct(src.dust,0)}</td><td class="num">1–4</td></tr>`;
+ const hist=res?`<div class="hist">${RAR.map((R,i)=>{const exp=res.gear*res.w[i],sd=Math.sqrt(res.gear*res.w[i]*(1-res.w[i]));return`<div class="r"><span>${rpill(i)}</span><div class="t"><b style="width:${res.gear?res.rar[i]/res.gear*100:0}%;background:${R.c}"></b><u style="left:${res.w[i]*100}%" title="expected"></u></div><span class="num xs">${res.rar[i]} <span class="muted">(exp ${exp.toFixed(1)}±${(2*sd).toFixed(1)})</span></span></div>`}).join('')}</div><div class="xs muted" style="margin-top:3px">White tick = expected share. ± is a 95% band: results outside it are rare, not rigged.</div>
+ <div class="row wrap sm" style="margin-top:8px"><span class="chip">Kills <b>${fmt(res.n)}</b></span><span class="chip">Gear drops <b>${res.gear}</b></span><span class="chip">Rare+ <b>${res.rar[2]+res.rar[3]+res.rar[4]}</b></span><span class="chip">Longest dry streak <b>${res.maxDry}</b> gear drops</span>${res.pityHits?`<span class="chip">Pity fired <b>${res.pityHits}</b>×</span>`:''}</div>
+ <div class="row wrap sm" style="margin-top:6px">${[0,1,2,3].map(i=>`<span class="chip">${runeSvg('yowl',i,16)} ${TN[i]} runes <b>${res.runes[i]}</b></span>`).join('')}${Object.entries(res.mats).map(([k,v])=>`<span class="chip">${glyph(MATG[k],MATC[k],14)} ${MATN[k]} <b>${fmt(v)}</b></span>`).join('')}</div>
+ <div class="lbl" style="margin:8px 0 3px">Drop feed (first 10 items)</div><div class="row wrap">${res.feed.slice(0,10).map(f=>f.t==='g'?`<span class="pill ${RAR[f.ri].id}">#${f.i+1} ${RAR[f.ri].sym} ${RAR[f.ri].n}</span>`:`<span class="pill" style="background:${RT[f.ty].c};color:#000">#${f.i+1} ${RT[f.ty].n} rune ${TN[f.ti]}</span>`).join('')}</div>`:'<div class="muted">Press Roll to simulate. Same seed gives the same result, so you can share a run.</div>';
+ return`<div class="cols" style="grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr">
+<div class="card" style="grid-column:1/3"><div class="row wrap"><span class="lbl">Chapter</span>${CH.map((c,i)=>`<button class="chipb" data-act="dch" data-i="${i}" aria-pressed="${i===d.ch}">${i+1} ${c.n}</button>`).join('')}<span class="lbl" style="margin-left:10px">Source</span>${SRC.map(s=>`<button class="chipb" data-act="dsrc" data-id="${s.id}" aria-pressed="${s.id===d.src}">${s.n}</button>`).join('')}</div></div>
+<div class="card scroll"><h3>${ch.n}: ${src.id==='mon'?ch.mons.join(', '):src.id==='elite'?ch.elite:ch.boss+' chest'}</h3><div class="sm muted">Chance a gear piece drops: <b class="num">${pct(src.gear,0)}</b>. Then rarity is rolled from the table. Chapter shifts weight to higher rarities (demo formula: tiers ≥ Rare × (1 + 0.18 × chapter)^(tier−1), then normalised).</div>
+<table style="margin-top:6px"><tr><th>Rarity</th><th>Of gear drops</th><th>Per kill</th><th>Odds</th><th></th></tr>${oddsRows}</table>
+<h3 style="margin-top:10px">Materials and runes</h3><table><tr><th>Item</th><th>Chance</th><th>Amount</th></tr>${matRows}<tr><td>${runeSvg('hiss',0,20)} Any rune</td><td class="num">${pct(src.rune,0)}</td><td class="num">1</td></tr></table>
+<div class="row sm" style="margin-top:6px">Rune tier when one drops: ${rt.map((x,i)=>x?`<span class="chip">${TN[i]} ${pct(x,0)}</span>`:'').join(' ')}</div></div>
+<div class="card scroll"><div class="row wrap"><h3 style="margin:0">Simulator</h3><span class="grow"></span><select data-act="dn" aria-label="Rolls">${[100,1000,10000].map(n=>`<option ${n===d.n?'selected':''} value="${n}">${fmt(n)} kills</option>`).join('')}</select><label class="sm">Seed <input type="number" value="${d.seed}" data-act="dseed" style="width:70px"></label></div>
+<label class="sm row" style="margin:6px 0"><input type="checkbox" data-act="dpity" ${d.pity?'checked':''}> Pity: guarantee Rare+ after ${({mon:20,elite:12,first:8,rep:8})[d.src]} dry gear drops <span class="pill bad">proposal · economy change, needs sign-off</span></label>
+<div class="row" style="margin-bottom:8px"><button class="btn" data-act="roll">Roll</button><button class="btn ghost" data-act="rollreset">Clear</button></div>${hist}</div></div>`};
+/* ---------- STAGES ---------- */
+const DIFF=[{n:'Cozy',m:1},{n:'Spicy',m:1.8},{n:'Feral',m:3.2}];
+V.stages=()=>{const st=S.stage,ch=CH[st.ch],df=DIFF[st.diff];const hp=k=>Math.round(40*Math.pow(1.5,st.ch)*k*df.m);
+ const mons=[...ch.mons.map((n,i)=>({n,k:'regular',hpm:[1,.8,1.2][i],el:['Plain','Fire','Plain'][i%3]})),{n:ch.elite,k:'elite',hpm:3,el:'Spark'},{n:ch.boss,k:'boss',hpm:40,el:'Shadow'}];
+ const W=560,H=150,mx=Math.max(...STEP,SMOOTH(50)),bw=W/50;const bars=STEP.map((v,i)=>`<rect x="${i*bw+1}" y="${H-v/mx*H}" width="${bw-2}" height="${v/mx*H}" fill="#ffb86b"/>`).join('');const line=STEP.map((_,i)=>`${i*bw+bw/2},${H-SMOOTH(i+1)/mx*H}`).join(' ');
+ return`<div class="cols" style="grid-template-columns:230px 1fr 300px">
+<div class="card scroll"><h3>Chapters</h3>${CH.map((c,i)=>`<button class="item" data-act="stch" data-i="${i}" aria-pressed="${i===st.ch}">${glyph('mon',c.c,32)}<span class="grow"><b>${i+1}. ${c.n}</b><br><span class="xs muted">10 rounds · boss ${c.boss}</span></span></button>`).join('')}<div class="lbl" style="margin:10px 0 4px">Difficulty (demo)</div><div class="row wrap">${DIFF.map((d,i)=>`<button class="chipb" data-act="stdf" data-i="${i}" aria-pressed="${i===st.diff}">${d.n} ×${d.m}</button>`).join('')}</div><div class="xs muted" style="margin-top:6px">Reference has 4 difficulty tiers. We keep 3 and label the rewards on the card, so players know what they are choosing.</div></div>
+<div class="card scroll"><h3>${ch.n} roster</h3><table><tr><th></th><th>Monster</th><th>Kind</th><th>Element</th><th>HP</th><th>Reward ×</th></tr>${mons.map(m=>`<tr data-act="cxopen" data-k="monster:${m.n}"><td>${glyph('mon',m.k==='boss'?'#ff6b6b':m.k==='elite'?'#ffd75e':ch.c,24)}</td><td><b>${m.n}</b></td><td><span class="pill ${m.k==='boss'?'bad':m.k==='elite'?'legendary':''}">${m.k}</span></td><td>${m.el}</td><td class="num">${fmt(hp(m.hpm))}</td><td class="num">${m.k==='boss'?'chest':m.k==='elite'?'×3':'×1'}</td></tr>`).join('')}</table>
+<h3 style="margin-top:10px">Reward per clear by stage level: stepped table vs smooth curve</h3><svg viewBox="0 0 ${W} ${H+16}" width="100%" role="img" aria-label="Bar chart of stepped rewards with a smooth growth line"><rect width="${W}" height="${H}" fill="#120b19"/>${bars}<polyline points="${line}" fill="none" stroke="#8fd8ff" stroke-width="2"/><text x="4" y="${H+13}" fill="#c3aed0" font-size="10" font-family="monospace">level 1</text><text x="${W-48}" y="${H+13}" fill="#c3aed0" font-size="10" font-family="monospace">level 50</text></svg>
+<div class="xs muted">Bars: hand-tuned plateaus and jumps (readable pacing). Line: a single growth exponent (what a formula-only design gives). Idea 4 from the research. Demo numbers.</div></div>
+<div style="display:grid;gap:12px;align-content:start"><div class="card"><span class="pill bad">Boss</span><h2 style="margin:6px 0">${ch.boss}</h2><div class="stat"><span>Recommended power</span><span>${fmt(900*Math.pow(1.6,st.ch)*df.m)}</span></div><div class="stat"><span>Daily attempts</span><span>5</span></div><div class="stat"><span>Difficulty</span><span>${df.n}</span></div><div class="stat"><span>Chest</span><span>${CH[st.ch].n} boss chest</span></div><button class="btn" style="width:100%;margin-top:8px" data-act="godrop" data-i="${st.ch}">See exact chest odds</button></div>
+<div class="card"><h3>Offline claim</h3><div class="sm muted">Existing rule (8 h cap, 50% efficiency) is untouched. The stepped table above would only change the amounts, and only after sign-off.</div></div></div></div>`};
+/* ---------- GEAR ---------- */
+const SLOTS=['Weapon','Helmet','Armor','Gloves','Boots','Collar','Earring','Ring','Charm'],SLG={Weapon:'sword',Helmet:'hat',Armor:'shield',Gloves:'paw',Boots:'boots',Collar:'bell',Earring:'star',Ring:'ring',Charm:'clover'};
+function rollLines(){const g=S.gear,R=RAR[g.r],r=rng(g.seed*97+g.r);const idx=LINES.map((_,i)=>i).sort(()=>r()-.5).slice(0,R.l);return idx.map(i=>{const L=LINES[i],sc=1+g.r*.35,lo=L[2]*sc,hi=L[3]*sc,v=lo+r()*(hi-lo);return{n:L[1],lo,hi,v,q:(v-lo)/(hi-lo)}})}
+V.gear=()=>{const g=S.gear,R=RAR[g.r],lines=rollLines(),lvl=Math.min(g.lvl,R.max),base=Math.round(30*R.m*Math.pow(1.12,lvl-1)*(g.slot==='Weapon'?1:.5)),t=treeStats();
+ return`<div class="cols" style="grid-template-columns:1fr 1fr 290px">
+<div class="card scroll"><h3>Rarity ladder</h3><table><tr><th>Rarity</th><th>Stat ×</th><th>Lines</th><th>Sockets</th><th>Max lvl</th></tr>${RAR.map((r,i)=>`<tr><td>${rpill(i)}</td><td class="num">${r.m}×</td><td class="num">${r.l}</td><td class="num">${r.sock}</td><td class="num">${r.max}</td></tr>`).join('')}</table><div class="xs muted">Multipliers and lines match docs/content-v2.md. Sockets and max levels past the first four columns of that doc are demo values.</div>
+<h3 style="margin-top:12px">Stat stacking, in one line</h3><div class="logbox" style="background:var(--bg);border:2px solid #000;padding:8px;font:500 12px var(--f-num)">final = (base + flat) × (1 + sum of ADDITIVE %) × product of each MULTIPLICATIVE layer</div>
+<table style="margin-top:8px"><tr><th>Stat</th><th>Layer</th><th>Cap</th></tr>${CAPS.map(c=>`<tr><td>${c[0]}</td><td>${c[1]}</td><td class="num">${c[2]}</td></tr>`).join('')}</table>
+<div class="xs muted">Improvement: the cap and the layer are printed next to every stat in the game, not buried in a wiki.</div></div>
+<div class="card scroll"><div class="row wrap">${SLOTS.map(s=>`<button class="chipb" data-act="gslot" data-s="${s}" aria-pressed="${s===g.slot}">${s}</button>`).join('')}</div><div class="row wrap" style="margin:6px 0">${RAR.map((r,i)=>`<button class="chipb" data-act="grar" data-i="${i}" aria-pressed="${i===g.r}" style="border-color:${r.c}">${r.sym} ${r.n}</button>`).join('')}</div>
+<div class="row"><div class="slot" style="width:72px;height:72px;border-color:${R.c}">${glyph(SLG[g.slot],R.c,52)}</div><div class="grow"><h2 style="margin:0">Demo ${g.slot}</h2>${rpill(g.r)} <span class="pill">Lv ${lvl}</span></div></div>
+<label class="sm">Item level <span class="num">${lvl}/${R.max}</span><input type="range" min="1" max="${R.max}" value="${lvl}" data-act="glvl"></label>
+<div class="stat"><span>Base ${g.slot==='Weapon'?'attack':'defence'}</span><span>${base}</span></div><div class="xs muted">30 × rarity × 1.12^(level−1) (12% per level is the existing growth).</div>
+<h3 style="margin-top:8px">Bonus lines</h3>${lines.map(l=>`<div class="stat"><span>${l.n}</span><span>+${pct(l.v)} <span class="muted xs">(${pct(l.lo)}–${pct(l.hi)})</span></span></div><div class="bar-t" style="height:6px;margin-bottom:3px" title="roll quality"><b style="width:${l.q*100}%;background:${R.c}"></b></div>`).join('')||'<div class="muted sm">Common gear has no bonus lines.</div>'}
+<div class="row" style="margin-top:8px"><button class="btn" data-act="greroll">Roll another</button><span class="xs muted">Each line shows its range and where your roll sits.</span></div><div class="row" style="margin-top:8px">${Array.from({length:R.sock},()=>'<span class="slot empty" style="width:34px;height:34px"></span>').join('')||'<span class="xs muted">No sockets.</span>'}<span class="xs muted">${R.sock} socket${R.sock===1?'':'s'}</span></div></div>
+<div class="card scroll"><h3>Class stat identity</h3>${CLASSES.map(c=>`<div style="margin-bottom:6px"><div class="xs"><b>${c.n}</b> <span class="muted">${c.role} · ${c.int}ms · ${pct(c.crit,0)} crit</span></div>${[['HP',c.hp/1.3],['ATK',c.atk/1.35],['SPD',1000/c.int/1.25]].map(([k,v])=>`<div class="row"><span class="xs num" style="width:28px">${k}</span><div class="bar-t grow" style="height:7px"><b style="width:${clamp(v,.05,1)*100}%;background:var(--accent)"></b></div></div>`).join('')}</div>`).join('')}<div class="xs muted">Presentation only; reads the same class table the game uses.</div></div></div>`};
+/* ---------- PETS ---------- */
+V.pets=()=>{const P=S.pets;return`<div class="cols" style="grid-template-columns:1fr 280px"><div class="card scroll"><div class="row"><h3 style="margin:0">Companions</h3><span class="grow"></span><span class="xs muted">Equip up to 2 · passive bonuses only · no combat AI</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">${PETS.map(p=>{const k=P.kills[p.key]||0,un=k>=p.tgt,lv=P.lv[p.id],has=lv!==undefined,eq=P.eq.includes(p.id),cost=40*Math.pow(2,(lv||0));return`<div class="node ${eq?'on':''}" style="display:block;padding:8px" data-tip="<b>${p.n}</b><br>${p.bonus}<br>Levels: ${p.lv.map(x=>pct(x,0)).join(' / ')}">
+<div class="row">${glyph(p.g,p.c,40)}<div class="grow"><b>${p.n}</b><br><span class="xs muted">${p.bonus}</span></div>${has?`<span class="pill good">Lv ${lv+1}</span>`:un?'<span class="pill">Ready</span>':'<span class="pill bad">Locked</span>'}</div>
+<div class="xs muted" style="margin-top:4px">${p.goal}: <span class="num">${Math.min(k,p.tgt)}/${p.tgt}</span></div><div class="bar-t" style="margin:3px 0"><b style="width:${Math.min(1,k/p.tgt)*100}%;background:${p.c}"></b></div>
+<div class="row wrap" style="margin-top:4px">${!has?`<button class="btn sm" data-act="adopt" data-id="${p.id}" ${un?'':'disabled'}>Adopt</button>`:`<button class="btn sm" data-act="feed" data-id="${p.id}" ${lv>=3||P.yarn<cost?'disabled':''}>Treat (${lv>=3?'max':cost+' Yarn'})</button><button class="btn sm sec" data-act="peq" data-id="${p.id}">${eq?'Unequip':'Equip'}</button>`}<button class="btn sm ghost" data-act="cxopen" data-k="pet:${p.id}">Codex</button></div></div>`}).join('')}</div></div>
+<div style="display:grid;gap:12px;align-content:start"><div class="card"><h3>Hunt simulator</h3><div class="sm muted">Pretend you played for a while.</div><button class="btn" style="width:100%;margin-top:6px" data-act="hunt">+100 kills of every target</button><button class="btn sec" style="width:100%;margin-top:6px" data-act="boss25">+5 boss clears</button></div>
+<div class="card"><h3>Equipped bonuses</h3>${P.eq.map(id=>{const p=PETS.find(x=>x.id===id);return`<div class="stat"><span class="row">${glyph(p.g,p.c,18)} ${p.n.split(' ')[0]}</span><span>+${pct(p.lv[P.lv[id]||0],0)}</span></div><div class="xs muted">${p.bonus}</div>`}).join('')||'<div class="muted sm">None equipped.</div>'}<div class="xs muted" style="margin-top:6px">Improvement: unlock goals show a progress bar and the target monster's Codex entry, instead of a wiki lookup.</div></div></div></div>`};
+/* ---------- WORKSHOP ---------- */
+const hubLv=()=>{let l=1;while(l<=HUBXP.length&&S.hub.xp>=HUBXP[l-1])l++;return l};
+V.hub=()=>{const h=S.hub,L=hubLv(),prev=HUBXP[L-2]||0,nxt=HUBXP[L-1]||prev+1,bl=BLEND[h.blendR];
+ const res=h.res?`<div class="row wrap sm" style="margin-top:6px"><span class="chip">Blends <b>${h.res.n}</b></span><span class="chip">${RAR[h.blendR+1].n} <b>${h.res.up}</b></span><span class="chip">Great: ${RAR[Math.min(4,h.blendR+2)].n} <b>${h.res.dbl}</b></span><span class="chip">Expected great ≈ <b>${(h.res.n*bl.dbl).toFixed(1)}</b></span></div>`:'';
+ return`<div class="cols" style="grid-template-columns:1fr 1fr"><div class="card scroll"><div class="row"><h3 style="margin:0">Workshop level ${L}</h3><span class="grow"></span><span class="num xs">${fmt(h.xp)} XP</span></div><div class="bar-t" style="margin:6px 0"><b style="width:${(h.xp-prev)/(nxt-prev)*100}%;background:var(--accent)"></b></div>
+<div class="row wrap">${[['Salvage 10 Common',20,'Salvage'],['Craft a piece',60,'Stitch'],['Blend nine',90,'Blend'],['Upgrade a rune',40,'Upgrade'],['Fuse twin',80,'Fuse']].map(([n,x])=>`<button class="btn sm sec" data-act="hubxp" data-x="${x}">${n} +${x}</button>`).join('')}</div>
+<table style="margin-top:8px"><tr><th>Operation</th><th>Level</th><th>One-time fee</th><th></th></tr>${HUB.map(o=>`<tr><td><b>${o.n}</b><br><span class="xs muted">${o.d}</span></td><td class="num">${o.lv}</td><td class="num">${o.fee||'free'}</td><td>${L>=o.lv?'<span class="pill good">open</span>':'<span class="pill bad">locked</span>'}</td></tr>`).join('')}</table>
+<div class="xs muted">Idea 5: one shared level gives the forge a progression spine. Existing Relic recipe is not changed.</div></div>
+<div style="display:grid;gap:12px;align-content:start;grid-template-rows:auto 1fr;min-height:0"><div class="card"><h3>Blend nine into one</h3><div class="row wrap">${RAR.slice(0,4).map((r,i)=>`<button class="chipb" data-act="blr" data-i="${i}" aria-pressed="${i===h.blendR}">${r.n}</button>`).join('')}</div>
+<table style="margin-top:6px"><tr><th>Outcome</th><th>Chance</th></tr><tr><td>${RAR[h.blendR+1].n} (normal)</td><td class="num">${pct(bl.up,2)}</td></tr><tr><td>${RAR[Math.min(4,h.blendR+2)].n} (great success)</td><td class="num">${pct(bl.dbl,2)}</td></tr></table>
+<div class="row" style="margin-top:6px"><select data-act="bln">${[10,100,1000].map(n=>`<option ${n===h.blendN?'selected':''}>${n}</option>`).join('')}</select><button class="btn" data-act="blend">Simulate blends</button></div>${res}<div class="xs muted">Draft: matches the "great success" proposal (forge-great-success.md); not live.</div></div>
+<div class="card scroll"><h3>Currencies at a glance</h3><table><tr><th>Currency</th><th>Earn</th><th>Spend</th><th>Cap</th></tr>${CUR.map(c=>`<tr><td><b>${c.n}</b></td><td class="xs">${c.src}</td><td class="xs">${c.sink}</td><td class="num xs">${c.cap}</td></tr>`).join('')}</table><div class="xs muted">No on-chain fungible token: every currency here is off-chain. Only Relic NFTs live on Fuji.</div></div></div></div>`};
+/* ---------- QUESTS ---------- */
+V.quests=()=>{const q=S.q;const list=q.tab==='today'?QUESTS:ACH;
+ const body=q.tab==='events'?`<div style="display:grid;gap:10px">${EVENTS.map(e=>`<div class="card" style="border-color:${e.c}"><div class="row"><span style="color:${e.c}" class="glow">${glyph('star',e.c,34)}</span><div class="grow"><h3 style="margin:0">${e.n}</h3><span class="xs muted">${e.when}</span></div></div><div class="sm" style="margin-top:4px">${e.fx}</div></div>`).join('')}<div class="xs muted">Event bonuses are shown with the exact rule and the dates, in your local time.</div></div>`:
+ `<table><tr><th>${q.tab==='today'?'Quest':'Achievement'}</th><th>Progress</th>${q.tab==='ach'?'<th>Cats with it</th>':''}<th>Reward</th><th></th></tr>${list.map(a=>{const p=Math.min(a.t,q.prog[a.id]||0),done=p>=a.t,cl=q.claimed[a.id];return`<tr><td><b>${a.n}</b><br><span class="xs muted">${a.d}</span></td><td style="width:170px"><div class="bar-t"><b style="width:${p/a.t*100}%"></b></div><span class="num xs">${p}/${a.t}</span> ${q.tab==='today'&&!done?`<button class="btn sm ghost" data-act="qprog" data-id="${a.id}">+5</button>`:''}</td>${q.tab==='ach'?`<td class="num">${a.rate}% <span class="xs muted">(fake)</span></td>`:''}<td class="xs">${a.r}</td><td><button class="btn sm" data-act="qclaim" data-id="${a.id}" ${!done||cl?'disabled':''}>${cl?'Claimed':'Claim'}</button></td></tr>`}).join('')}</table>`;
+ return`<div class="card scroll" style="height:100%"><div class="row" style="margin-bottom:8px">${[['today','Today'],['ach','Achievements'],['events','Events']].map(([k,l])=>`<button class="chipb" data-act="qtab" data-k="${k}" aria-pressed="${q.tab===k}">${l}</button>`).join('')}<span class="grow"></span><span class="xs muted">Rewards are small and use only off-chain materials.</span></div>${body}</div>`};
+/* ---------- CODEX ---------- */
+function codexEntries(){const E=[];
+ SK.forEach(s=>E.push({k:'skill',id:s.id,n:s.n,sub:s.cat+' active · '+s.cd+'s',g:s.g,c:s.c,tags:s.tags,d:s.d,lines:[['Cooldown',s.cd+'s'],['Damage',s.dmg?pct(s.dmg,0)+' × '+s.hits:'effect'],['Unlock','Lv '+s.lv],['Class',s.cls]],links:PN.filter(n=>n.tags.some(t=>s.tags.includes(t))||false).slice(0,3).map(n=>['passive',n.id,'boosted by'])}));
+ PN.forEach(n=>E.push({k:'passive',id:n.id,n:n.n,sub:BR.find(b=>b.id===n.br).n+' · tier '+(n.tier+1),g:n.g,c:BR.find(b=>b.id===n.br).c,tags:n.tags,d:n.cap||'+'+(n.per*100).toFixed(1)+'% '+KEYL[n.key]+' per rank, up to rank '+n.max+'.',lines:[['Max rank',n.max],['Per rank',(n.per*100).toFixed(1)+'%'],['Unlocks at',GATE[n.tier]+' pts on path']],links:SK.filter(s=>s.tags.some(t=>n.tags.includes(t))).slice(0,3).map(s=>['skill',s.id,'boosts'])}));
+ RT.forEach(r=>E.push({k:'rune',id:r.id,n:r.n+' Rune',sub:KEYL[r.key],g:null,rune:r,c:r.c,tags:r.tags,d:'A '+r.sh+'-shaped rune. Four tiers; socket it into gear, upgrade three into one, or fuse with another type.',lines:TN.map((t,i)=>[t,'+'+(r.key==='regen'?(r.v[i]*100).toFixed(1)+'%/s':(r.v[i]*100).toFixed(0)+'%')]),links:[['material','dust','upgrade cost'],['material','ink','fusing cost']]}));
+ GEAR.forEach(g=>E.push({k:'item',id:g.id,n:g.n,sub:g.slot+' · '+RAR[g.r].n,g:g.g,c:RAR[g.r].c,r:g.r,tags:[],d:'Demo gear piece with '+RAR[g.r].sock+' rune sockets.',lines:[['Rarity',RAR[g.r].n],['Sockets',RAR[g.r].sock],['Stat ×',RAR[g.r].m]],links:[['monster',CH[Math.min(g.r,4)].boss,'drops from']]}));
+ CH.forEach((c,i)=>[...c.mons,c.elite,c.boss].forEach((m,j)=>E.push({k:'monster',id:m,n:m,sub:c.n+' · '+(j<3?'regular':j===3?'elite':'boss'),g:'mon',c:j===5?'#ff6b6b':j===4?'#ffd75e':c.c,tags:[],d:'Found in '+c.n+'.',lines:[['Chapter',i+1],['Kind',j<3?'regular':j===3?'elite':'boss'],['Rare+ chance',pct(weights(j<3?'mon':j===3?'elite':'first',i).slice(2).reduce((a,b)=>a+b,0),1)]],links:[['material','yarn','drops'],['material','dust','drops']]})));
+ Object.keys(MATN).forEach(k=>E.push({k:'material',id:k,n:MATN[k],sub:'Material',g:MATG[k],c:MATC[k],tags:[],d:CUR.find(c=>c.n.startsWith(MATN[k]))?'Earn: '+CUR.find(c=>c.n.startsWith(MATN[k])).src+'. Spend: '+CUR.find(c=>c.n.startsWith(MATN[k])).sink+'.':'Crafting material.',lines:[['Colour',MATC[k]]],links:[]}));
+ PETS.forEach(p=>E.push({k:'pet',id:p.id,n:p.n,sub:'Companion',g:p.g,c:p.c,tags:[],d:p.bonus+'. Unlock: '+p.goal+'.',lines:p.lv.map((x,i)=>['Level '+(i+1),'+'+pct(x,1)]),links:[]}));
+ return E}
+let CXE=null;
+function cxFiltered(){CXE=CXE||codexEntries();const c=S.cx,q=c.q.toLowerCase();return CXE.filter(e=>(c.kind==='all'||e.k===c.kind)&&(c.rar==='all'||e.r===+c.rar)&&(!q||(e.n+' '+e.sub+' '+(e.tags||[]).join(' ')).toLowerCase().includes(q)))}
+const cxIcon=(e,sz)=>e.rune?runeSvg(e.rune.id,2,sz):glyph(e.g,e.c,sz);
+function cxList(){return cxFiltered().map(e=>`<button class="item" data-act="cxsel" data-k="${e.k}:${e.id}" aria-pressed="${S.cx.sel===e.k+':'+e.id}">${cxIcon(e,30)}<span class="grow"><b class="sm">${e.n}</b><br><span class="xs muted">${e.sub}</span></span></button>`).join('')||'<div class="muted sm" style="padding:10px">Nothing matches. Try fewer words.</div>'}
+function cxDetail(){CXE=CXE||codexEntries();const [k,...r]=S.cx.sel.split(':'),id=r.join(':'),e=CXE.find(x=>x.k===k&&x.id===id)||CXE[0];
+ return`<div class="row">${cxIcon(e,56)}<div class="grow"><h2 style="margin:0;font-size:20px">${e.n}</h2><span class="pill">${e.k}</span> ${e.r!==undefined?rpill(e.r):''} ${tagPills(e.tags||[])}<br><span class="xs muted">${e.sub}</span></div></div><p class="sm">${e.d}</p>${e.lines.map(([a,b])=>`<div class="stat"><span>${a}</span><span>${b}</span></div>`).join('')}
+<h3 style="margin-top:10px">Linked entries</h3><div class="row wrap">${e.links.map(([lk,lid,rel])=>{const t=CXE.find(x=>x.k===lk&&x.id===lid);return t?`<button class="btn sm sec" data-act="cxsel" data-k="${lk}:${lid}">${rel}: ${t.n}</button>`:''}).join('')||'<span class="muted sm">No links.</span>'}</div>
+<div class="xs muted" style="margin-top:10px">Generated from the same registries the game reads (see design.md), so the Codex cannot drift from the rules.</div>`}
+V.codex=()=>`<div class="cols" style="grid-template-columns:380px 1fr"><div class="card" style="display:flex;flex-direction:column;gap:6px"><input type="search" id="cxq" placeholder="Search name, tag, chapter" value="${S.cx.q.replace(/"/g,'')}" aria-label="Search the Codex" data-act="cxq"><div class="row wrap">${['all','skill','passive','rune','item','monster','material','pet'].map(k=>`<button class="chipb" data-act="cxkind" data-k="${k}" aria-pressed="${S.cx.kind===k}" style="padding:2px 7px;font-size:11px">${k}</button>`).join('')}</div>
+<div class="row sm"><span class="muted">Rarity</span><select data-act="cxrar" aria-label="Rarity filter"><option value="all">any</option>${RAR.map((r,i)=>`<option value="${i}" ${S.cx.rar==i?'selected':''}>${r.n}</option>`).join('')}</select><span class="grow"></span><span class="xs muted" id="cxn"></span></div><div class="grow" style="overflow:auto" id="cxl">${cxList()}</div></div><div class="card scroll" id="cxd">${cxDetail()}</div></div>`;
+/* ---------- PLANNER ---------- */
+function build(b,cls){const t=treeStats(),rs=runeStats(b.run.filter(x=>x[0]).map(([a,tier])=>[a,tier]),1+(t.runepow||0)),st=sumStats(t,rs);const C=CLASSES.find(c=>c.id===cls),atk=40*C.atk*(1+.1*(S.lvl-1)),hp=300*C.hp*(1+.1*(S.lvl-1))*(1+(st.hp||0));
+ const crit=Math.min(1,C.crit+(st.crit||0)),cd=1.5+(st.critdmg||0),as=(1000/C.int)*(1+(st.haste||0)),cdr=Math.min(.75,st.cdr||0),dm=1+(st.dmg||0),cf=1+crit*(cd-1);
+ const auto=atk*C.hits*as*cf*dm;let sk=0;b.act.forEach(id=>{const s=SK.find(x=>x.id===id);if(!s||!s.dmg)return;const rk=Math.max(1,S.sk[id]||1);sk+=atk*s.dmg*SKR(rk).dm*s.hits*cf*(dm+(st.skill||0))/(Math.max(s.cd*.4,s.cd-.3*(rk-1))*(1-cdr))});
+ const dodge=Math.min(.75,st.dodge||0);return{atk,hp,crit,cd,as,cdr,dm,auto,sk,tot:auto+sk,ehp:hp/(1-dodge),dodge,st}}
+const sel=(id,opts,cur,act,extra='')=>`<select data-act="${act}" ${extra} aria-label="${id}">${opts.map(o=>`<option value="${o[0]}" ${o[0]===cur?'selected':''}>${o[1]}</option>`).join('')}</select>`;
+V.planner=()=>{const cls=S.pl.cls,A=build(S.pl.A,cls),B=build(S.pl.B,cls),d=(a,b)=>{const x=(b-a)/a*100;return`<span style="color:${x>=0?'var(--good)':'var(--bad)'}">${x>=0?'+':''}${x.toFixed(1)}%</span>`};
+ const panel=(k,b)=>`<div class="card scroll"><h3>Build ${k}</h3><div class="lbl">Active skills</div>${[0,1,2].map(i=>sel('skill',[['','(none)'],...SK.filter(s=>S.lvl>=s.lv).map(s=>[s.id,s.n+' · '+s.cat])],S.pl[k].act[i],'plact','data-k="'+k+'" data-i="'+i+'"')).join('<div style="height:4px"></div>')}
+ <div class="lbl" style="margin-top:8px">Runes</div>${[0,1,2].map(i=>`<div class="row" style="margin-bottom:4px">${sel('rune',[['','(none)'],...RT.map(r=>[r.id,r.n])],S.pl[k].run[i][0],'plrune','data-k="'+k+'" data-i="'+i+'"')}${sel('tier',TN.map((t,j)=>[String(j),t]),String(S.pl[k].run[i][1]),'pltier','data-k="'+k+'" data-i="'+i+'"')}<span>${S.pl[k].run[i][0]?runeSvg(S.pl[k].run[i][0],S.pl[k].run[i][1],26):''}</span></div>`).join('')}
+ <div class="xs muted" style="margin-top:6px">Passives are shared; edit them on the Passives screen. Runes here are free picks to compare ideas, not owned items.</div></div>`;
+ return`<div class="cols" style="grid-template-columns:300px 1fr 300px">${panel('A',S.pl.A)}<div class="card scroll"><div class="row"><h3 style="margin:0">Compare</h3><span class="grow"></span>${sel('class',CLASSES.map(c=>[c.id,c.n]),cls,'plcls')}</div>
+ <table style="margin-top:6px"><tr><th>Stat</th><th>A</th><th>B</th><th>B vs A</th></tr>${[['Total DPS',A.tot,B.tot],['Auto-attack DPS',A.auto,B.auto],['Skill DPS',A.sk,B.sk],['Effective HP',A.ehp,B.ehp]].map(([n,a,b])=>`<tr><td><b>${n}</b></td><td class="num">${fmt(a)}</td><td class="num">${fmt(b)}</td><td class="num">${d(a||1,b)}</td></tr>`).join('')}${[['Crit chance',A.crit,B.crit],['Crit damage',A.cd,B.cd],['Attack speed',A.as,B.as],['Cooldown reduction',A.cdr,B.cdr]].map(([n,a,b])=>`<tr><td>${n}</td><td class="num">${n==='Attack speed'?a.toFixed(2)+'/s':n==='Crit damage'?(a*100).toFixed(0)+'%':pct(a)}</td><td class="num">${n==='Attack speed'?b.toFixed(2)+'/s':n==='Crit damage'?(b*100).toFixed(0)+'%':pct(b)}</td><td></td></tr>`).join('')}</table>
+ <h3 style="margin-top:10px">Published formulas</h3><div class="logbox" style="background:var(--bg);border:2px solid #000;padding:8px;font:500 11.5px/1.6 var(--f-num)">auto DPS = ATK × hits × atk/s × (1 + crit × (critDmg − 1)) × (1 + Σ dmg%)<br>skill DPS = ATK × skill% × rank × hits × crit factor × (1 + Σ dmg% + skill%) ÷ (CD × (1 − CDR))<br>CDR capped at 75%. Everything is additive inside one pool, then multiplied once.</div>
+ <div class="xs muted" style="margin-top:6px">Level ${S.lvl}, ATK/HP use demo scaling. Use this to settle build arguments, not to predict the real game.</div></div>${panel('B',S.pl.B)}</div>`};
+/* ---------- NOTES ---------- */
+const COV=[['Active skills (6/hero, cooldown, ranks)','Skills: 12 cat skills, category, cooldown, 5 ranks, live synergy tags','Skills','Phase 2'],['Passive tree (point-gated columns)','Passive grid: 3 paths x 4 tiers, free respec, presets','Passives','Phase 2'],['Skill effect videos','Animated SVG previews we draw ourselves, pausable','Skills','Phase 2 (real sprites later)'],['Account rune tree (197 nodes)','Skipped. Replaced by 6 socketable runes + passive grid (smaller, readable)','Runes','M-D3 sign-off'],['Relics / reliquary sockets / resonance','Rune sockets on gear; resonance kept as a concept only (needs contract thinking)','Runes','Post-contest'],['Chests and drop weights','Per-source tables with exact odds, "1 in N", pity option, simulator','Drops','Phase 1 (read-only)'],['Chest cooldown, rolls since last Rare+','Dry-streak counter and optional pity (proposal)','Drops','Needs sign-off'],['Stages, acts, 4 difficulties','5 chapters, 3 difficulty labels, roster and boss card','Stages','Phase 1'],['Stepped offline reward table','Stepped table shown beside the smooth curve','Stages','Needs C9 numbers'],['10 grades, 1,500+ items','Stay at 5 rarities; Codex lists every item we do have','Codex, Gear','Phase 1'],['Stat stacking and caps (UI_Status)','One formula and a caps table printed in-game','Gear, Planner','Phase 1'],['Class base stats','Class stat identity bars','Gear','Phase 1'],['Cube (shared craft level)','Workshop level, unlock ladder, fees','Workshop','Post-cut-over'],['Synthesis with great success','Blend nine, odds table, simulator','Workshop','M-D1'],['Materials, currencies','Currency table with earn/spend/cap; new Rune Dust, Etch Ink','Workshop','Phase 1'],['Pets (kill-count unlocks)','Companions with progress bars, 4 levels, equip 2','Pets','Phase 3'],['Achievements with global rates','Achievements with (fake) unlock rates, rewards','Quests','Phase 3'],['Events, seasonal','Event cards with exact rule and dates','Quests','Phase 3'],['Mailbox, trade ship, market prices','Skipped: Market tab already trades Relics only','-','Out of scope'],['Calculators, compare, BiS finder','Build planner with A/B compare','Planner','Phase 2'],['Index site search','Codex search, filters, linked entries','Codex','Phase 1']];
+V.notes=()=>`<div class="cols" style="grid-template-columns:1fr 340px"><div class="card scroll"><h3>Coverage: reference feature to our version</h3><table><tr><th>Reference feature</th><th>Our improved original version</th><th>Screen</th><th>Status</th></tr>${COV.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="xs">${r[3]}</td></tr>`).join('')}</table></div>
+<div style="display:grid;gap:12px;align-content:start"><div class="card"><h3>Rules of this demo</h3><ul class="sm" style="margin:0;padding-left:18px"><li>No art, names, text or tables copied. Glyphs here are placeholders we drew.</li><li>All numbers are demo-only and not read by the game.</li><li>No rule, contract, auth or schema change.</li><li>Works before real art lands: each image has an id in the manifest.</li></ul></div>
+<div class="card"><h3>What we improve</h3><ul class="sm" style="margin:0;padding-left:18px"><li>Odds shown as % and "1 in N", with 95% bands in the simulator.</li><li>Failed upgrades give a rune back; unsocketing is free.</li><li>One printed formula; caps beside each stat.</li><li>Build compare, tooltips on every tag, keyboard focus, pause for motion.</li><li>Colour never alone: shape, pips and text for rarity and tier.</li></ul></div>
+<div class="card"><h3>Decisions for you</h3><ul class="sm" style="margin:0;padding-left:18px"><li>Rune sockets: before or after the 21 Nov numbers sign-off?</li><li>Pity: allow or never?</li><li>Which of Pets, Quests, Events are worth the time?</li></ul></div></div></div>`;
+/* ===== ACTIONS ===== */
+const app=$('#app'),vp=$('#vp');
+function render(){app.innerHTML=shell(V[S.scr]());setNote();fit();try{history.replaceState(null,'','#'+S.scr)}catch(e){}}
+function fit(){const W=S.W,H=W*9/16,sc=vp.clientWidth/W;app.style.width=W+'px';app.style.height=H+'px';app.style.transform=`scale(${sc})`;vp.style.height=H*sc+'px';app.dataset.sc=sc}
+const msg=m=>{S.msg=m};
+const A={
+ go:d=>{S.scr=d.k},lvl:d=>{S.lvl=clamp(S.lvl+(+d.d),1,60)},
+ skcat:d=>{S.skCat=d.c},selsk:d=>{S.selSk=d.id;S.viewRank=Math.max(1,S.sk[d.id]||1)},vr:d=>{S.viewRank=+d.r},
+ skup:()=>{const s=S.selSk;if(pts()>0&&(S.sk[s]||0)<5)S.sk[s]=(S.sk[s]||0)+1},skdown:()=>{const s=S.selSk;if(S.sk[s]>1)S.sk[s]--;else delete S.sk[s]},
+ padd:d=>{const n=PN.find(x=>x.id===d.id);if(pts()>0&&(S.ps[d.id]||0)<n.max&&spentBr(n.br)>=GATE[n.tier])S.ps[d.id]=(S.ps[d.id]||0)+1},
+ psub:d=>{const n=PN.find(x=>x.id===d.id);S.ps[d.id]--;if(!S.ps[d.id])delete S.ps[d.id];
+   // keep gates valid: remove ranks from higher tiers on this path that are no longer open
+   PN.filter(x=>x.br===n.br).sort((a,b)=>b.tier-a.tier).forEach(x=>{if(S.ps[x.id]&&spentBr(x.br)<GATE[x.tier])delete S.ps[x.id]})},
+ preset:d=>{S.ps={};const m={claw:{sharp:5,quick:5,pounceI:3,emberw:1},paw:{fur:5,soft:3,wpurr:4,nap:1},reset:{}}[d.p];Object.assign(S.ps,m);while(pts()<0){const k=Object.keys(S.ps).pop();S.ps[k]--;if(!S.ps[k])delete S.ps[k]}},
+ gearsel:d=>{S.gearSel=d.id},selrune:d=>{S.selRune=d.k;S.fusePartner=''},
+ socket:d=>{const ss=S.socks[S.gearSel],i=+d.i;if(ss[i]){invAdd(ss[i],1);msg('Removed for free. The rune is back on the bench.');ss[i]=null}else if(S.selRune&&(S.inv[S.selRune]||0)>0){ss[i]=S.selRune;invAdd(S.selRune,-1);msg('Socketed.')}else msg('Pick a rune you own first.')},
+ upgrade:()=>{const [t,ti]=S.selRune.split(':'),tier=+ti,u=UP[tier];if((S.inv[S.selRune]||0)<3||S.dust<u.dust)return;S.dust-=u.dust;invAdd(S.selRune,-3);const x=Math.random();
+   if(x<u.ok){invAdd(t+':'+(tier+1),1);msg('Success: one tier up.')}else if(x<u.ok+u.dbl){invAdd(t+':'+Math.min(3,tier+2),1);msg('Great success: two tiers up!')}else{invAdd(S.selRune,1);msg('Failed, but mercy returned 1 rune. You lost only 2.');S.q.prog.a4=1}},
+ fp:()=>{S.fusePartner=$('#fp').value},
+ fuse:()=>{const [t,ti]=S.selRune.split(':'),p=S.fusePartner||$('#fp').value;if(!p||S.dust<20||S.ink<1)return;const ids=[t,p].sort((a,b)=>RT.findIndex(x=>x.id===a)-RT.findIndex(x=>x.id===b));invAdd(S.selRune,-1);invAdd(p+':'+ti,-1);S.dust-=20;S.ink--;invAdd(ids.join('+')+':'+ti,1);msg('Fused a twin rune: both effects at 60% each in one socket.')},
+ salv:()=>{S.dust+=15;msg('Salvaged 5 Common gear: +15 Rune Dust.')},
+ dch:d=>{S.drop.ch=+d.i;S.drop.res=null},dsrc:d=>{S.drop.src=d.id;S.drop.res=null},dn:(d,e)=>{S.drop.n=+e.value},dseed:(d,e)=>{S.drop.seed=+e.value||1},dpity:(d,e)=>{S.drop.pity=e.checked},
+ roll:()=>{S.drop.res=simulate()},rollreset:()=>{S.drop.res=null},
+ stch:d=>{S.stage.ch=+d.i},stdf:d=>{S.stage.diff=+d.i},godrop:d=>{S.scr='drops';S.drop.ch=+d.i;S.drop.src='first';S.drop.res=null},
+ gslot:d=>{S.gear.slot=d.s},grar:d=>{S.gear.r=+d.i},glvl:(d,e)=>{S.gear.lvl=+e.value},greroll:()=>{S.gear.seed++},
+ adopt:d=>{S.pets.lv[d.id]=0},feed:d=>{const p=S.pets,c=40*Math.pow(2,p.lv[d.id]);if(p.yarn>=c&&p.lv[d.id]<3){p.yarn-=c;p.lv[d.id]++}},peq:d=>{const e=S.pets.eq,i=e.indexOf(d.id);if(i>=0)e.splice(i,1);else{e.push(d.id);if(e.length>2)e.shift()}},
+ hunt:()=>{Object.keys(S.pets.kills).filter(k=>k!=='boss').forEach(k=>S.pets.kills[k]+=100)},boss25:()=>{S.pets.kills.boss+=5},
+ hubxp:d=>{S.hub.xp+=+d.x},blr:d=>{S.hub.blendR=+d.i;S.hub.res=null},bln:(d,e)=>{S.hub.blendN=+e.value},
+ blend:()=>{const h=S.hub,b=BLEND[h.blendR],r=rng(Date.now()&0xffff),o={n:h.blendN,up:0,dbl:0};for(let i=0;i<o.n;i++){const x=r();if(x<b.dbl)o.dbl++;else o.up++}h.res=o},
+ qtab:d=>{S.q.tab=d.k},qprog:d=>{S.q.prog[d.id]=(S.q.prog[d.id]||0)+5},
+ qclaim:d=>{S.q.claimed[d.id]=1;const r=[...QUESTS,...ACH].find(x=>x.id===d.id).r;const m=r.match(/(\d+) Rune Dust/);if(m)S.dust+=+m[1];if(/Etch Ink/.test(r))S.ink++;const y=r.match(/(\d+) Yarn/);if(y)S.pets.yarn+=+y[1]},
+ cxkind:d=>{S.cx.kind=d.k},cxrar:(d,e)=>{S.cx.rar=e.value},
+ cxsel:d=>{S.cx.sel=d.k;S.cx.opened++;S.q.prog.a3=S.cx.opened},cxopen:d=>{S.scr='codex';S.cx.sel=d.k;S.cx.kind='all';S.cx.q=''},
+ plcls:(d,e)=>{S.pl.cls=e.value},plact:(d,e)=>{S.pl[d.k].act[+d.i]=e.value},plrune:(d,e)=>{S.pl[d.k].run[+d.i][0]=e.value},pltier:(d,e)=>{S.pl[d.k].run[+d.i][1]=+e.value},
+ cdr:(d,e)=>{S.cdr=+e.value}};
+const LIVE=new Set(['cdr','glvl']); // sliders re-render after release (change) to keep dragging smooth
+document.addEventListener('click',ev=>{const t=ev.target.closest('[data-act]');if(!t||!app.contains(t))return;const a=t.dataset.act;if(['SELECT','INPUT'].includes(t.tagName)&&t.type!=='checkbox'&&a!=='cxq')return;if(!A[a])return;
+ if(t.type==='checkbox'||a==='cxq')return;A[a](t.dataset,t);render();const f=app.querySelector(`[data-act="${a}"][data-id="${t.dataset.id}"]`);});
+app.addEventListener('change',ev=>{const t=ev.target.closest('[data-act]');if(!t)return;if(['SELECT','INPUT'].includes(t.tagName)&&A[t.dataset.act]){A[t.dataset.act](t.dataset,t);render()}});
+app.addEventListener('input',ev=>{const t=ev.target;if(t.id==='cxq'){S.cx.q=t.value;$('#cxl').innerHTML=cxList();$('#cxn').textContent=cxFiltered().length+' entries'}
+ if(t.type==='range'&&t.dataset.act==='cdr'){S.cdr=+t.value}});
+/* tooltips (also on keyboard focus) */
+function tipShow(el){const tip=$('#tip');if(!el||!tip)return;tip.innerHTML=el.dataset.tip;tip.style.display='block';const sc=+app.dataset.sc||1,a=app.getBoundingClientRect(),r=el.getBoundingClientRect();let x=(r.left-a.left)/sc,y=(r.bottom-a.top)/sc+6;const w=tip.offsetWidth,h=tip.offsetHeight;x=clamp(x,4,S.W-w-4);if(y+h>S.W*9/16-4)y=(r.top-a.top)/sc-h-6;tip.style.left=x+'px';tip.style.top=y+'px'}
+const tipHide=()=>{const t=$('#tip');if(t)t.style.display='none'};
+app.addEventListener('mouseover',e=>{const t=e.target.closest('[data-tip]');t?tipShow(t):tipHide()});app.addEventListener('mouseleave',tipHide);
+app.addEventListener('focusin',e=>{const t=e.target.closest('[data-tip]');t?tipShow(t):tipHide()});app.addEventListener('focusout',tipHide);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')tipHide()});
+$('#size').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.W=+b.dataset.w;[...$('#size').children].forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+$('#pause').addEventListener('change',e=>app.classList.toggle('paused',e.target.checked));
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){$('#pause').checked=true;app.classList.add('paused')}
+addEventListener('resize',fit);
+const h0=(location.hash||'').slice(1);if(V[h0])S.scr=h0;
+render();
+</script></body></html>
