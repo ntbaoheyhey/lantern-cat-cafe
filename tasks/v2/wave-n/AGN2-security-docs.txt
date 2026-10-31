@@ -1,0 +1,51 @@
+MISSION AGN2 - Security section for judges + security docs refresh (docs only)
+Tool: Antigravity | Model: strongest, medium reasoning | Branch: ai/antigravity-n2-security-docs
+Base: origin/main AFTER Claude says CXN1 and CXN2 are merged
+Report: reports/n2-security-docs.md | No PR, no merge, no Actions, no deploy, no live writes.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+A judge has ~5 minutes per repo. They should find, in one place, what we protect, how, and the test that proves
+it, plus the honest gaps. Today this is spread over 6 files, and several still say "GAP" for things now built.
+
+READ FIRST
+docs/security-test-matrix.md (updated by CXN2: this is the source of truth for test names), docs/security-review-2026-10.md,
+docs/auth.md, docs/abuse-controls.md, docs/security-contracts.md, docs/security-web.md, docs/judge-walkthrough.md,
+docs/avalanche-integration.md, docs/proposals/{auth-hardening-v2,rate-limit-v2,relic-recovery}.md, reports/n1-*.md,
+reports/n2-*.md (Codex), and the git log since 28 Oct (`git log --oneline -30`).
+
+PIECE 1 - New docs/security-overview.md (max ~2 pages)
+1. Threat table: threat -> control -> where in code (file link) -> test that proves it (file link + test name) -> status.
+   Cover at least: wallet sign-in (SIWE single-use nonce, domain/chain binding, prod refuses mock sign-in #212),
+   server authority (all gold/gear/shards server side), RLS default deny + siwe_nonces policy (#213), request
+   budgets per player (#215, 429 + Retry-After, fails closed 503), idempotent actions (requestId), voucher signing
+   (EIP-712, nonce, expiry, signer), contract checks (NotVoucherPlayer, used nonce, cancelNonce), paid-but-unminted
+   recovery (#216 + CXN1 claim id and race guard), no secrets in the bundle (check-bundle.mjs), Deno import guard.
+2. "Honest gaps" section: per-IP limits not built (decision U-5, why: needs a trusted proxy + secret); live
+   Supabase policies are applied by hand (cannot be proven by repo tests; the user runs
+   docs/proposals/sql/check-live-schema.sql after CXN3); testnet only.
+3. "Run it yourself": the exact commands (pnpm test in supabase/tests, forge test, check-bundle, check-deno-imports).
+4. Every claim must point at a file or test that exists on main. If you cannot find the proof, write
+   "NOT VERIFIED" in the status column. Never invent a test name.
+
+PIECE 2 - Refresh the old docs (small edits, no rewrites)
+docs/auth.md (remove "no rate limiter"; link per-player budgets), docs/abuse-controls.md (same), the results
+section of docs/security-review-2026-10.md (what changed since: #212, #213, #215, #216, CXN1, CXN2). Each file gets a
+one-line link to security-overview.md at the top.
+
+PIECE 3 - docs/judge-walkthrough.md
+Add one block "Security in 2 minutes" (5 bullet lines max) linking security-overview.md. Keep the M2 and AGM3 blocks
+as they are.
+
+YOUR ZONE: docs/security-overview.md (new), docs/auth.md, docs/abuse-controls.md, docs/security-review-2026-10.md
+(results section), docs/judge-walkthrough.md (one block), reports/n2-security-docs.md.
+OTHER ZONES: docs/security-test-matrix.md is Codex's (read only). No code files.
+
+TEST CASES
+T1 every link in your files resolves (node scripts/check-links.mjs: no new failures vs main; paste both counts).
+T2 every test name you cite exists: for each, paste `grep -rn "<name>" supabase/tests contracts/test apps/web/src` hit.
+T3 no file still says rate limiting / U-1 / U-2 / U-4 is a GAP (grep "GAP" in your files; only per-IP may remain).
+T4 security-overview.md readable in 5 minutes: under 1,200 words (paste `wc -w`).
+T5 docs-only diff: install + gen:deno drift + check-links run ("full suite skipped: docs only").
+
+ACCEPTANCE: T1-T5.

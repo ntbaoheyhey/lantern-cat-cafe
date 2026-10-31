@@ -1,0 +1,68 @@
+MISSION AGN1 - Clear, calm error screens: rate limit wait, server busy, offline, wrong wallet
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-n1-error-screens
+Base: origin/main (paste now; no wait)
+Report: reports/n1-error-screens.md + reports/n1-error-screens/ (screenshots) | No PR, no merge, no Actions, no deploy, no live writes, no transaction.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+The server now refuses too-fast requests with HTTP 429 + Retry-After (per-player budgets, #215) and fails
+closed with 503 if the limiter is unavailable. A Relic voucher only mints from the wallet it was issued to.
+Today the player sees a generic error or nothing. Judges will click fast; the game must explain itself.
+
+READ FIRST
+supabase/functions/_shared/v2/http.ts (refusal JSON: { error, retryAfter }, header Retry-After),
+apps/web/src/api/GameApiV2.ts (error codes list, status map), apps/web/src/api/SupabaseGameApiV2.ts,
+apps/web/src/game/v2/storeV2.ts (how errors reach the UI), apps/web/src/v2text/blockReasons.ts (M2/C8 style),
+apps/web/src/forge/MintPanel.tsx (line ~52: NotVoucherPlayer comment), apps/web/e2e/v2/block-reasons.spec.ts,
+apps/web/e2e/server/** (the v2-server Playwright project runs against a local server).
+
+PIECE 1 - Typed errors from the API layer
+1. In SupabaseGameApiV2.ts, when a response is 429: read retryAfter from the JSON body, else from the
+   Retry-After header, clamp to 1..300 s, and throw/return an error object { code: 'rate_limited',
+   retryAfterS }. 503: { code: 'server_busy' }. fetch TypeError / navigator.onLine false: { code: 'offline' }.
+   Keep every existing code and behaviour; add only these.
+2. Do not add fields to packages/api-contract (Codex CXN1 owns that file this round).
+
+PIECE 2 - One notice component
+1. New apps/web/src/layout/notice/ActionNotice.tsx (+ css): a small bar inside the current panel, plum surface,
+   role="status", aria-live="polite", data-testid="action-notice".
+2. rate_limited: "Easy, hero! Try again in N s." with a live countdown; the action button is disabled until 0,
+   then re-enabled automatically. No automatic retry of the request (spending actions must be clicked again).
+3. server_busy: "The cafe kitchen is busy. Nothing was spent. Try again in a minute."
+4. offline: "You are offline. Your cat keeps working; we will sync when you are back." Re-check on the
+   'online' event.
+5. Texts go in apps/web/src/v2text/ (one file, like blockReasons.ts) so tests read them from one place.
+6. Reduced motion: no movement. Keyboard: notice does not steal focus.
+
+PIECE 3 - Wrong wallet before mint (client only, no server change)
+In MintPanel.tsx, if the connected address (case-insensitive) differs from voucher.player: hide/disable the
+Mint button and show "This Relic belongs to 0x1234...abcd. Switch to that wallet to mint it." with
+data-testid="mint-wrong-wallet". If no wallet is connected keep today's connect flow. Never call the contract
+in that state.
+
+PIECE 4 - Tests and evidence
+Unit (Vitest): the 429 parser (body, header, both missing -> 5 s default, clamp), countdown re-enables the
+button, wrong-wallet compare (checksummed vs lowercase same address = OK).
+E2E (new apps/web/e2e/v2/errors-notice.spec.ts, in the v2-server project if that is the only one with real
+HTTP; otherwise intercept with page.route): fake a 429 with Retry-After 3 on v2-claim -> notice with
+countdown -> button back after ~3 s; fake 503 -> busy text and no state change; context.setOffline(true) ->
+offline text; wrong wallet via the existing wallet mock -> mint-wrong-wallet visible, no contract call.
+Screenshots at 1280x720 and 390x844 (light + dark) for 429, 503, offline, wrong wallet: max 8 PNG.
+
+YOUR ZONE: apps/web/src/api/SupabaseGameApiV2.ts and GameApiV2.ts (error mapping only), apps/web/src/game/v2/storeV2.ts
+(error state only), apps/web/src/layout/notice/** (new), apps/web/src/v2text/**, apps/web/src/forge/MintPanel.tsx,
+the panels that render the notice (one import + one element each), their tests, apps/web/e2e/v2/errors-notice.spec.ts,
+reports/n1-*.
+OTHER ZONES: Codex CXN1 adds claimId/recoverable fields to GameApiV2.ts types and edits forgeText.ts: do not edit
+those lines or forgeText.ts. If you both touch GameApiV2.ts, whoever merges second rebases (Claude handles it).
+HARD STOPS: shared rules Tier 3 (authApi.ts, siwe.ts are auth: do not touch).
+
+TEST CASES
+T1 429 with body retryAfter 7 -> notice says 7 s and counts down. T2 header only -> uses header. T3 neither ->
+5 s. T4 retryAfter 9999 -> clamped to 300. T5 button disabled during countdown, enabled at 0, no auto request.
+T6 503 -> busy text, store state unchanged (snapshot equal). T7 offline -> offline text; online event clears it.
+T8 wrong wallet -> mint-wrong-wallet visible, Mint button absent or disabled, zero contract calls.
+T9 same address different case -> normal Mint button. T10 axe/a11y spec still passes; notice has role=status.
+T11 classic build and classic Playwright project pass. T12 full shared-rules suite incl. e2e green.
+
+ACCEPTANCE: T1-T12; screenshots in reports/n1-error-screens/ (<=8, each <200 KB).

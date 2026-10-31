@@ -1,0 +1,37 @@
+MISSION CXN5 (OPTIONAL) - Stepped bonus-line values
+Tool: Codex | Model: strongest, medium reasoning | Branch: ai/codex-n5-stepped-lines
+Base: origin/main AFTER Claude says CXN4 is merged or skipped AND the user has signed decision M-D2
+Paste ONLY if docs/proposals/stepped-bonus-lines.md has a filled "Signed:" line. Otherwise SKIP.
+Report: reports/n5-stepped-lines.md | No PR, no merge, no Actions, no deploy, no live database writes.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+"+3.5% crit" reads better than "+3.74129% crit". Same average, cleaner numbers.
+
+READ FIRST
+docs/proposals/stepped-bonus-lines.md (signed section wins), packages/game-rules/src/v2/content/stats.ts,
+packages/game-rules/src/v2/forge/craft.ts, every other place that rolls a bonus line (grep the roll helper:
+drops, chests), the item display formatter in apps/web (read only).
+
+PIECES
+1. In stats.ts add the signed step per stat (this edit of content numbers is allowed for this mission only;
+   min and max stay exactly as on main).
+2. Replace the continuous roll with the signed method (Option A: k = rng.int(0, K), value = min + k * step,
+   with K = round((max - min) / step)). Use ONE shared helper so craft, drops and chests all step.
+3. "Preserve existing" policy: stored items are never rewritten; display code must still format old float
+   values correctly.
+4. Edge Functions use the same helper (pnpm gen:deno). Update docs/mechanics-v2.md and the drift test.
+
+YOUR ZONE: packages/game-rules/src/v2/content/stats.ts, packages/game-rules/src/v2/forge/craft.ts, the shared
+roll helper and its callers inside packages/game-rules/src/v2/**, their tests, docs/mechanics-v2.md,
+mechanics-doc.test.ts, generated deno.json, reports/n5-*.
+Tier 2 with a note: golden/fixture files that encode old rolled values (regenerate with the repo's documented
+UPDATE_* flag, show old -> new counts, never hand-edit numbers).
+
+TEST CASES
+T1 every rolled value over 100,000 seeds per stat equals min + k*step exactly (integer k, 0..K), within
+   floating tolerance 1e-9. T2 mean of rolled values within 1% of main's mean per stat. T3 min and max both
+   reachable. T4 an old float item still renders and compares correctly. T5 server and client agree for the
+   same seed. T6 sim 2-week power within 1% of main. T7 drift test passes. T8 full suite incl. e2e green.
+
+ACCEPTANCE: T1-T8; min/max unchanged (paste the stats.ts diff).

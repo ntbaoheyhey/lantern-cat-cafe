@@ -1,0 +1,205 @@
+MISSION AGN1 - Clear, calm error screens: rate limit wait, server busy, offline, wrong wallet
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-n1-error-screens
+Base: origin/main (paste now; no wait)
+Report: reports/n1-error-screens.md + reports/n1-error-screens/ (screenshots) | No PR, no merge, no Actions, no deploy, no live writes, no transaction.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+The server now refuses too-fast requests with HTTP 429 + Retry-After (per-player budgets, #215) and fails
+closed with 503 if the limiter is unavailable. A Relic voucher only mints from the wallet it was issued to.
+Today the player sees a generic error or nothing. Judges will click fast; the game must explain itself.
+
+READ FIRST
+supabase/functions/_shared/v2/http.ts (refusal JSON: { error, retryAfter }, header Retry-After),
+apps/web/src/api/GameApiV2.ts (error codes list, status map), apps/web/src/api/SupabaseGameApiV2.ts,
+apps/web/src/game/v2/storeV2.ts (how errors reach the UI), apps/web/src/v2text/blockReasons.ts (M2/C8 style),
+apps/web/src/forge/MintPanel.tsx (line ~52: NotVoucherPlayer comment), apps/web/e2e/v2/block-reasons.spec.ts,
+apps/web/e2e/server/** (the v2-server Playwright project runs against a local server).
+
+PIECE 1 - Typed errors from the API layer
+1. In SupabaseGameApiV2.ts, when a response is 429: read retryAfter from the JSON body, else from the
+   Retry-After header, clamp to 1..300 s, and throw/return an error object { code: 'rate_limited',
+   retryAfterS }. 503: { code: 'server_busy' }. fetch TypeError / navigator.onLine false: { code: 'offline' }.
+   Keep every existing code and behaviour; add only these.
+2. Do not add fields to packages/api-contract (Codex CXN1 owns that file this round).
+
+PIECE 2 - One notice component
+1. New apps/web/src/layout/notice/ActionNotice.tsx (+ css): a small bar inside the current panel, plum surface,
+   role="status", aria-live="polite", data-testid="action-notice".
+2. rate_limited: "Easy, hero! Try again in N s." with a live countdown; the action button is disabled until 0,
+   then re-enabled automatically. No automatic retry of the request (spending actions must be clicked again).
+3. server_busy: "The cafe kitchen is busy. Nothing was spent. Try again in a minute."
+4. offline: "You are offline. Your cat keeps working; we will sync when you are back." Re-check on the
+   'online' event.
+5. Texts go in apps/web/src/v2text/ (one file, like blockReasons.ts) so tests read them from one place.
+6. Reduced motion: no movement. Keyboard: notice does not steal focus.
+
+PIECE 3 - Wrong wallet before mint (client only, no server change)
+In MintPanel.tsx, if the connected address (case-insensitive) differs from voucher.player: hide/disable the
+Mint button and show "This Relic belongs to 0x1234...abcd. Switch to that wallet to mint it." with
+data-testid="mint-wrong-wallet". If no wallet is connected keep today's connect flow. Never call the contract
+in that state.
+
+PIECE 4 - Tests and evidence
+Unit (Vitest): the 429 parser (body, header, both missing -> 5 s default, clamp), countdown re-enables the
+button, wrong-wallet compare (checksummed vs lowercase same address = OK).
+E2E (new apps/web/e2e/v2/errors-notice.spec.ts, in the v2-server project if that is the only one with real
+HTTP; otherwise intercept with page.route): fake a 429 with Retry-After 3 on v2-claim -> notice with
+countdown -> button back after ~3 s; fake 503 -> busy text and no state change; context.setOffline(true) ->
+offline text; wrong wallet via the existing wallet mock -> mint-wrong-wallet visible, no contract call.
+Screenshots at 1280x720 and 390x844 (light + dark) for 429, 503, offline, wrong wallet: max 8 PNG.
+
+YOUR ZONE: apps/web/src/api/SupabaseGameApiV2.ts and GameApiV2.ts (error mapping only), apps/web/src/game/v2/storeV2.ts
+(error state only), apps/web/src/layout/notice/** (new), apps/web/src/v2text/**, apps/web/src/forge/MintPanel.tsx,
+the panels that render the notice (one import + one element each), their tests, apps/web/e2e/v2/errors-notice.spec.ts,
+reports/n1-*.
+OTHER ZONES: Codex CXN1 adds claimId/recoverable fields to GameApiV2.ts types and edits forgeText.ts: do not edit
+those lines or forgeText.ts. If you both touch GameApiV2.ts, whoever merges second rebases (Claude handles it).
+HARD STOPS: shared rules Tier 3 (authApi.ts, siwe.ts are auth: do not touch).
+
+TEST CASES
+T1 429 with body retryAfter 7 -> notice says 7 s and counts down. T2 header only -> uses header. T3 neither ->
+5 s. T4 retryAfter 9999 -> clamped to 300. T5 button disabled during countdown, enabled at 0, no auto request.
+T6 503 -> busy text, store state unchanged (snapshot equal). T7 offline -> offline text; online event clears it.
+T8 wrong wallet -> mint-wrong-wallet visible, Mint button absent or disabled, zero contract calls.
+T9 same address different case -> normal Mint button. T10 axe/a11y spec still passes; notice has role=status.
+T11 classic build and classic Playwright project pass. T12 full shared-rules suite incl. e2e green.
+
+ACCEPTANCE: T1-T12; screenshots in reports/n1-error-screens/ (<=8, each <200 KB).
+
+=== WAVE N ADDITIONS (31 Oct 2026). Read these first; the wave S shared rules below still apply. ===
+
+1. Mission overrides win. If your mission card says a Tier 3 file is in YOUR ZONE (for example one
+   new migration file, or a signed config number), that one item is allowed for this mission only.
+   Everything else in Tier 3 stays a hard stop.
+2. Migrations: a new migration file goes in supabase/migrations/ ONLY if your card allows it. Name
+   it with the next free timestamp after the newest file there. It must be additive, idempotent,
+   wrapped in begin/commit, revoke from public/anon/authenticated and grant to service_role. Never
+   apply it to any live database. Put "APPLY BEFORE DEPLOY: <file>" as the second line of your report.
+3. Deno import map: every Edge Function has supabase/functions/<fn>/deno.json generated by
+   `pnpm gen:deno`. If you add or rename a file under packages/** that an Edge Function imports,
+   run `pnpm gen:deno` and commit the deno.json changes. `git diff --exit-code -- supabase/functions`
+   after gen:deno must be clean. (A missing map entry broke the live deploy on 30 Oct.)
+4. GitHub Actions: do not run or trigger workflows. Verify locally. If `scripts/verify-pr.sh` is
+   available, run it without --comment and paste its summary.
+5. Secrets: never paste, log, commit or echo a database URL, password, service-role key, private key
+   or JWT. If you meet one in a file or log, write "SECRET FOUND: <file>:<line>, masked" in the report
+   and do not copy it. Never ask the user for one.
+6. Live systems: read-only. You may read https://taskbarhero-eight.vercel.app and the public Fuji
+   RPC. You may not call Supabase admin APIs, deploy, change Vercel, or send a transaction, unless
+   the card says so (only AGN3 plays live with its own throwaway test wallet).
+7. Language: write code, docs and reports in plain English. Keep existing Vietnamese text as is.
+8. Before you finish, re-read your card's TEST CASES list and mark each one PASS / FAIL / NOT
+   VERIFIED in the report. A test case you did not run is NOT VERIFIED, never PASS.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.

@@ -1,0 +1,84 @@
+MISSION CXN1 - Relic recovery: stable claim id, never hide a pending voucher, close the re-issue race
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-n1-relic-recovery
+Base: origin/main AFTER Claude says "deploy fix merged" (the api-contract import-map fix from another thread)
+Report: reports/n1-relic-recovery.md | No PR, no merge, no Actions, no deploy, no live database writes, no transaction.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+A player pays 30 shards + 1 Boss Key to forge a Relic, then mints it on Avalanche Fuji with a voucher the
+server signs. Fix 1 (cancelled nonce -> fresh voucher) is merged (#216). Three gaps remain, all described in
+docs/proposals/relic-recovery.md ("Smallest safe fix" items 2 and 3, and "Duplicate guard"). Judges score
+security and on-chain depth: "a paid Relic can never be lost or minted twice" must be true and tested.
+
+READ FIRST (30 minutes, no code yet)
+- docs/proposals/relic-recovery.md (whole file).
+- supabase/functions/_shared/game.ts: load() around line 270 (the hidden pending voucher) and forgeRelic
+  around line 390 (expiry, nonceUsed, nonceMinted, voucherCancelReissue, voucherReissue).
+- supabase/functions/_shared/relic.ts (ChainReader, REISSUE_GRACE_SECONDS, nonceMinted).
+- supabase/functions/_shared/v2/forge.ts and v2/game.ts (the v2 forge path calls the same helpers).
+- supabase/migrations/20261106000000_voucher_cancel_reissue.sql (fix 1, the pattern to copy).
+- supabase/tests/src/voucher-cancel.test.ts and forge.test.ts (the in-memory store and fake chain).
+
+PIECE 1 - Stable claim id (proposal fix 2)
+1. The claim id is the existing relic_forges.id (uuid). Do not create a new column.
+2. Add `claimId: string` to ForgeResult (packages/api-contract/src/types.ts), to TodayRelic / forge.today in
+   state.ts, and to the v2 forge result type in packages/api-contract/src/v2.ts. Add it to the
+   relic-mint-report reply. Document it in docs/api.md and docs/api-v2.md: "one claim id = one Relic
+   (relicId, rarity) and at most one minted voucher; not secret".
+3. Thread it through the store rows and the in-memory test store (supabase/tests/src/game-db.ts,
+   supabase/tests/v2/v2-store.ts). If an SQL function must return forge_id, change it ONLY in your new
+   migration (Piece 3), never edit an old migration.
+4. Run `pnpm gen:deno` if any import changed; commit deno.json changes.
+
+PIECE 2 - Never hide a pending voucher (proposal fix 3)
+1. In load(): when a pending voucher row exists but cannot be signed (signer missing or malformed), keep it
+   as pending with `signature: null` and `recoverable: true` instead of dropping it.
+2. relic-forge (v1 and v2) answers `server_error` in that case, never `forge_blocked`/`daily_limit`.
+3. game-state / v2-state report forge.today with the pending voucher and recoverable=true.
+4. Client text only: in apps/web/src/forge/forgeText.ts add the message "Your Relic is waiting. Try again in a
+   moment." and make the forge view prefer it over the daily-limit text whenever a pending voucher exists.
+   Do NOT edit apps/web/src/forge/MintPanel.tsx (Antigravity AGN1 owns it).
+
+PIECE 3 - Re-issue race guard (proposal "Duplicate guard")
+Problem: a mint is mined just before expiry, the RPC is behind, the server re-issues, both vouchers can mint.
+1. Before re-signing an expired voucher, require nowS > expiry + REISSUE_GRACE_SECONDS (exists) AND read
+   nonceUsed again AFTER the voucherReissue store call. If the old nonce is now used: mark the forge's old
+   voucher minted (tx hash null), mark the NEW voucher cancelled on the server, and return the minted state.
+   The new voucher must never reach the client in that case.
+2. If this needs a new SQL function (for example game_voucher_void(p_player, p_nonce)), add ONE migration
+   file supabase/migrations/20261107000000_voucher_race_guard.sql (additive, idempotent, service_role only,
+   same style as 20261106). This file is allowed for this mission only. Never apply it.
+3. Update docs/proposals/relic-recovery.md status line: fixes 2, 3 and the race guard implemented, migration
+   not applied, apply before deploy.
+
+YOUR ZONE (Tier 1)
+supabase/functions/_shared/{relic,game,game-server}.ts, supabase/functions/_shared/v2/{forge,game,server}.ts,
+supabase/functions/relic-forge/**, supabase/functions/relic-mint-report/**, supabase/functions/v2-relic-forge/**,
+generated supabase/functions/*/deno.json, packages/api-contract/src/{types,state,v2}.ts (add fields only),
+apps/web/src/api/GameApiV2.ts and SupabaseGameApi*.ts (pass new fields through only, no error-mapping change),
+apps/web/src/forge/forgeText.ts and the forge view that chooses the block text, supabase/tests/**,
+supabase/migrations/20261107000000_voucher_race_guard.sql (new, optional), docs/api.md, docs/api-v2.md,
+docs/proposals/relic-recovery.md (status line), reports/n1-*.
+OTHER ZONES (do not touch): AGN1 owns error mapping in GameApiV2.ts/SupabaseGameApiV2.ts, storeV2.ts error
+state, apps/web/src/v2text/**, MintPanel.tsx. Auth files, contracts/**, config numbers stay Tier 3.
+
+TEST CASES (Vitest, supabase/tests; one test per line, names should say the case)
+T1 used nonce + matching RelicForged log -> voucher minted, tx stored, no new voucher (regression of #216).
+T2 used nonce + no log -> cancelled + fresh voucher, same relicId and rarity, shards and keys unchanged.
+T3 forge result, game-state and relic-mint-report reply all carry the same claimId for one forge.
+T4 claimId of day 1 != claimId of day 2 for the same player; two players never share a claimId.
+T5 pending voucher + no signer -> game-state shows pending with signature null, recoverable true.
+T6 pending voucher + no signer -> relic-forge answers server_error (v1 and v2), never forge_blocked.
+T7 race: fake chain returns nonceUsed=false on the first read and true on the read after reissue ->
+   forge ends minted, the new voucher is cancelled, the response contains no new signature.
+T8 race guard does not fire on the normal path: nonce unused on both reads -> exactly one issued voucher.
+T9 two concurrent relic-forge calls after expiry -> at most one issued voucher (unique index holds).
+T10 regression: rejected wallet prompt, plain expiry re-issue, late mint report, double click all still pass.
+T11 web unit test: forge view with a pending voucher shows "Your Relic is waiting" and never the daily-limit text.
+T12 if you added the migration: a PGlite test applies all migrations in order and calls the new function as
+    service_role; anon and authenticated get permission denied.
+T13 `pnpm gen:deno && git diff --exit-code -- supabase/functions` is clean.
+
+ACCEPTANCE
+All T1-T13 PASS (or NOT VERIFIED with a reason); full shared-rules suite green; report line 2 is
+"APPLY BEFORE DEPLOY: 20261107000000_voucher_race_guard.sql" or "APPLY BEFORE DEPLOY: none".
