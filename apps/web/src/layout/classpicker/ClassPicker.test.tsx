@@ -2,7 +2,7 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { v2 } from '@taskbar-hero/game-rules';
-import { ClassPicker, formatClassPassive, formatRole } from './ClassPicker';
+import { ClassPicker, formatClassPassive, formatRole, STARTER_CLASSES } from './ClassPicker';
 
 describe('ClassPicker', () => {
   afterEach(() => {
@@ -212,5 +212,26 @@ describe('ClassPicker', () => {
     const archerCard = screen.getByTestId('class-card-archer');
     fireEvent.keyDown(archerCard, { key: 'Enter' });
     expect(archerCard.getAttribute('aria-checked')).toBe('true');
+  });
+
+  it('renders exactly three starter cards when STARTER_CLASSES is provided', () => {
+    const onChoose = vi.fn();
+    render(<ClassPicker classes={STARTER_CLASSES} directStart onChoose={onChoose} />);
+
+    const radioCards = screen.getAllByRole('radio');
+    expect(radioCards).toHaveLength(3);
+    expect(screen.getByTestId('class-card-warrior')).toBeTruthy();
+    expect(screen.getByTestId('class-card-guardian')).toBeTruthy();
+    expect(screen.getByTestId('class-card-rogue')).toBeTruthy();
+
+    // Button says Start Adventure
+    const startBtn = screen.getByTestId('class-picker-choose-button');
+    expect(startBtn.textContent).toContain('Start Adventure as Warrior');
+
+    // Clicking Rogue then Start immediately calls onChoose when directStart is true
+    fireEvent.click(screen.getByTestId('class-card-rogue'));
+    expect(startBtn.textContent).toContain('Start Adventure as Rogue');
+    fireEvent.click(startBtn);
+    expect(onChoose).toHaveBeenCalledWith('rogue');
   });
 });

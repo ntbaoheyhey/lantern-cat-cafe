@@ -1,0 +1,411 @@
+/* Home Screen (Stage layout) Redesign Styles */
+
+.screen-home {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - var(--hud-height, 56px));
+  box-sizing: border-box;
+  padding: var(--sp-4, 16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-dashboard {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 280px;
+  gap: var(--sp-4, 16px);
+  width: 100%;
+  height: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Columns */
+.home-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 12px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-col--left {
+  justify-content: flex-start;
+}
+
+.home-col--center {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.home-col--right {
+  justify-content: flex-start;
+}
+
+/* Generic Home Card */
+.home-card {
+  background: var(--surface, #2a1f36);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  border-radius: 6px;
+  padding: var(--sp-3, 12px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+}
+
+.home-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border, #72578d);
+  padding-bottom: var(--sp-2, 8px);
+}
+
+.home-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-md, 1rem);
+  color: var(--text, #fff3e0);
+  letter-spacing: 0.02em;
+}
+
+.home-card__subtitle {
+  margin: 0 0 var(--sp-2, 8px) 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--muted, #c3aed0);
+}
+
+.home-card__tag {
+  font-family: var(--font-num);
+  font-size: var(--fs-xs, 0.75rem);
+  background: var(--surface-2, #3a2c4a);
+  color: var(--accent, #ffb86b);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.home-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+  min-height: 0;
+}
+
+/* Hero Card */
+.home-hero-card__avatar {
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #72578d);
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-card__meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-hero-card__badges {
+  display: flex;
+  gap: 6px;
+}
+
+.home-hero-badge {
+  font-family: var(--font-num);
+  font-size: var(--fs-xs, 0.75rem);
+  padding: 1px 6px;
+  border-radius: 3px;
+  line-height: 1.3;
+}
+
+.home-hero-badge--class {
+  background: var(--surface-3, #4a3a5e);
+  color: var(--text, #fff3e0);
+}
+
+.home-hero-badge--level {
+  background: var(--accent, #ffb86b);
+  color: var(--on-accent, #1a1200);
+  font-weight: bold;
+}
+
+.home-hero-card__power {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--gold, #ffd75e);
+  font-family: var(--font-num);
+}
+
+.home-hero-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.home-hero-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-xs, 0.75rem);
+}
+
+.home-hero-stat-row dt {
+  color: var(--muted, #c3aed0);
+}
+
+.home-hero-stat-row dd {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: bold;
+  color: var(--text, #fff3e0);
+}
+
+/* Next Goal Card */
+.home-goal-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-goal-progress__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs, 0.75rem);
+}
+
+.home-goal-progress__title {
+  color: var(--text, #fff3e0);
+  font-weight: bold;
+}
+
+.home-goal-progress__count {
+  font-family: var(--font-num);
+  color: var(--muted, #c3aed0);
+}
+
+.home-goal-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #72578d);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.home-goal-bar__fill {
+  height: 100%;
+  background: var(--accent, #ffb86b);
+  transition: width 0.3s ease;
+}
+
+.home-goal-bar__fill--ready {
+  background: var(--good, #6be08a);
+}
+
+.home-goal-desc {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #c3aed0);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.home-goal-action-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-size: var(--fs-xs, 0.75rem);
+  padding: 6px 14px;
+}
+
+/* Stage Canvas Wrapper */
+.home-stage-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 320px;
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Event Log */
+.home-event-log {
+  width: 100%;
+  height: 130px;
+  background: var(--surface, #2a1f36);
+  border: var(--pixel-border, 2px solid #000);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  border-radius: 6px;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.home-event-log__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--surface-2, #3a2c4a);
+  padding-bottom: 4px;
+}
+
+.home-event-log__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #c3aed0);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.home-event-log__live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--good, #6be08a);
+  box-shadow: 0 0 6px var(--good, #6be08a);
+}
+
+.home-event-log__list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 4px;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs, 0.75rem);
+}
+
+.home-event-log__entry {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1.3;
+}
+
+.home-event-log__bullet {
+  color: var(--accent, #ffb86b);
+  font-family: monospace;
+}
+
+.home-event-log__text {
+  color: var(--text, #fff3e0);
+}
+
+/* Recent Loot Card */
+.home-loot-currencies {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.home-loot-curr-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface-2, #3a2c4a);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: var(--fs-xs, 0.75rem);
+}
+
+.home-loot-curr-val {
+  font-family: var(--font-num);
+  font-weight: bold;
+  color: var(--text, #fff3e0);
+}
+
+.home-loot-curr-name {
+  color: var(--muted, #c3aed0);
+  font-size: 0.7rem;
+}
+
+.home-loot-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.home-loot-empty {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #c3aed0);
+  margin: 4px 0;
+}
+
+.home-loot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-loot-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #72578d);
+  border-radius: 4px;
+}
+
+.home-loot-item__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-loot-item__info {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-xs, 0.75rem);
+  overflow: hidden;
+}
+
+.home-loot-item__name {
+  color: var(--text, #fff3e0);
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-loot-item__rarity {
+  font-size: 0.7rem;
+}
+
+.rarity-common { color: var(--rarity-common, #b9b6c9); }
+.rarity-rare { color: var(--rarity-rare, #4aa8ff); }
+.rarity-epic { color: var(--rarity-epic, #bb74ff); }
+.rarity-legendary { color: var(--rarity-legendary, #ff9a3c); }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-goal-bar__fill {
+    transition: none;
+  }
+}
