@@ -49,6 +49,19 @@ it('hands the result to the existing MintPanel with the unchanged voucher', asyn
   expect(fake.forge).toHaveBeenCalledOnce(); expect(fake.mint).toHaveBeenCalledWith(voucher);
   expect(screen.getByTestId('mint-flow').textContent).toContain('42');
 });
+it('keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge', () => {
+  fake.state.forge.pending = { ...voucher, signature: null, recoverable: true };
+  fake.state.forge.blockedBy = 'daily_limit';
+  forgePanel();
+  expect(screen.getByText('Your Relic is waiting. Try again in a moment.')).toBeTruthy();
+  expect(screen.queryByText(/daily limit reached|already forged/i)).toBeNull();
+  expect(screen.queryByTestId('mint-flow')).toBeNull();
+  expect(fake.mint).not.toHaveBeenCalled();
+  expect(screen.getAllByText(/Daily Relic limit \(1 per day\)/)).toHaveLength(1);
+  fireEvent.click(screen.getByTestId('tab-craft'));
+  expect(screen.queryByText('Your Relic is waiting. Try again in a moment.')).toBeNull();
+  expect(screen.queryByText(/Daily Relic limit \(1 per day\)/)).toBeNull();
+});
 it('shows connect-wallet once and does not forge or mint without a wallet', async () => {
   fake.connected = false; forgePanel(); await forge();
   expect(fake.forge).not.toHaveBeenCalled(); expect(fake.mint).not.toHaveBeenCalled();

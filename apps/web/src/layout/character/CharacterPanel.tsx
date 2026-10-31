@@ -12,6 +12,7 @@ import {
   rarityLabel,
   statLabel,
 } from '../itemView';
+import { ActionNotice } from '../notice/ActionNotice';
 import './character.css';
 
 export interface CharacterPanelProps {
@@ -164,12 +165,13 @@ export function CharacterPanel({ state, compact, onSelectSlot }: CharacterPanelP
 
   return (
     <section aria-label="Character" className="v2-character pixel-card">
+      <ActionNotice />
       <div className="v2-character-head">
         <div className="cat-portrait-wrap">
           <CatPortrait size={64} />
         </div>
         <div className="character-title">
-          <h2 className="v2-character-name">Mochi the cat</h2>
+          <div className="v2-character-name">Mochi the cat</div>
           <p className="character-meta">
             <span>{cls ? cls.name : 'No class yet'}</span>
             {cls ? ' · ' : ''}

@@ -11,6 +11,7 @@ import {
 import { compareItems, itemLines } from './compare';
 import { BAG_SORTS, sortBag, type BagSort } from './bagSort';
 import { equipBest, equipBlock } from './equipRules';
+import { ActionNotice } from '../notice/ActionNotice';
 import './bag.css';
 
 /** The counter turns into a warning from this share of the bag limit. */
@@ -41,6 +42,7 @@ export function BagPanel({ state, busy, onEquip, onToggleLock }: BagPanelProps) 
 
   return (
     <div className="bag">
+      <ActionNotice />
       <div className="bag-scroll">
         <div className="bag-toolbar">
           <p className={`bag-count${warn ? ' warn' : ''}`} data-testid="bag-count">

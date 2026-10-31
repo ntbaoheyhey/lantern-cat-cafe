@@ -1,14 +1,117 @@
 import { useSyncExternalStore } from 'react';
 import { MockGameApiV2 } from '../../api/MockGameApiV2';
 import { SupabaseGameApiV2 } from '../../api/SupabaseGameApiV2';
+import type { GameApiV2 } from '../../api/GameApiV2';
 import { withSessionGuardV2 } from '../../api/sessionGuardV2';
 import { getSessionStore } from '../store';
 import { ApiSwitchV2, type ApiSwitchV2Options } from './apiSwitchV2';
 import type { GameLoopV2 } from './loopV2';
 
+export type ActionNoticeErrorCode = 'rate_limited' | 'server_busy' | 'offline';
+
+export interface ActionNoticeState {
+  code: ActionNoticeErrorCode;
+  retryAfterS?: number;
+  until?: number;
+}
+
+let currentNotice: ActionNoticeState | null = null;
+const noticeListeners = new Set<() => void>();
+
+export function getActionNoticeState(): ActionNoticeState | null {
+  return currentNotice;
+}
+
+export function setActionNoticeState(state: ActionNoticeState | null): void {
+  currentNotice = state;
+  noticeListeners.forEach((fn) => fn());
+}
+
+export function subscribeActionNotice(fn: () => void): () => void {
+  noticeListeners.add(fn);
+  return () => {
+    noticeListeners.delete(fn);
+  };
+}
+
+export function useActionNoticeState(): ActionNoticeState | null {
+  return useSyncExternalStore(subscribeActionNotice, getActionNoticeState, () => null);
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('online', () => {
+    if (currentNotice?.code === 'offline') {
+      setActionNoticeState(null);
+    }
+  });
+  window.addEventListener('offline', () => {
+    setActionNoticeState({ code: 'offline' });
+  });
+}
+
+export function withNoticeGuardV2(api: GameApiV2, onUnauthenticated: () => void): GameApiV2 {
+  const base = withSessionGuardV2(api, onUnauthenticated);
+  const wrap = <T>(p: Promise<T>): Promise<T> =>
+    p.then(
+      (res) => {
+        if (currentNotice?.code === 'server_busy') {
+          setActionNoticeState(null);
+        }
+        return res;
+      },
+      (err: unknown) => {
+        if (typeof err === 'object' && err !== null && 'code' in err) {
+          const code = (err as { code: unknown }).code;
+          if (code === 'rate_limited') {
+            const retryAfterS = (err as { retryAfterS?: number }).retryAfterS ?? 5;
+            setActionNoticeState({
+              code: 'rate_limited',
+              retryAfterS,
+              until: Date.now() + retryAfterS * 1000,
+            });
+          } else if (code === 'server_busy') {
+            setActionNoticeState({ code: 'server_busy' });
+          } else if (code === 'offline') {
+            setActionNoticeState({ code: 'offline' });
+          }
+        }
+        throw err;
+      }
+    );
+  return {
+    getState: () => wrap(base.getState()),
+    claim: () => wrap(base.claim()),
+    equip: (itemId, slot) => wrap(base.equip(itemId, slot)),
+    chooseClass: (classId) => wrap(base.chooseClass(classId)),
+    fightBoss: (chapter, reqId) => wrap(base.fightBoss(chapter, reqId)),
+    craft: (recipeId, slot, reqId) => wrap(base.craft(recipeId, slot, reqId)),
+    salvage: (itemIds) => wrap(base.salvage(itemIds)),
+    setLocked: (itemId, locked) => wrap(base.setLocked(itemId, locked)),
+    forgeRelic: () => wrap(base.forgeRelic()),
+  };
+}
+
 export function createStageStoreV2(options: Pick<ApiSwitchV2Options, 'sessions' | 'env'> & Partial<Pick<ApiSwitchV2Options, 'demo' | 'server'>>) {
-  return new ApiSwitchV2({ ...options, demo: options.demo ?? (() => new MockGameApiV2()),
-    server: options.server ?? (opts => new SupabaseGameApiV2(opts)), guard: withSessionGuardV2 });
+  const store = new ApiSwitchV2({
+    ...options,
+    demo: () => withNoticeGuardV2(options.demo ? options.demo() : new MockGameApiV2(), () => {}),
+    server: (opts) => withNoticeGuardV2(options.server ? options.server(opts) : new SupabaseGameApiV2(opts), () => {}),
+    guard: withNoticeGuardV2,
+  });
+  store.loop.onEvent((event) => {
+    if (event.type === 'refused' && event.code === 'rate_limited') {
+      if (!currentNotice || currentNotice.code !== 'rate_limited') {
+        setActionNoticeState({ code: 'rate_limited', retryAfterS: 5, until: Date.now() + 5000 });
+      }
+    } else if (event.type === 'error') {
+      if (event.message === 'server_busy' || event.message.includes('503')) {
+        setActionNoticeState({ code: 'server_busy' });
+      } else if (event.message === 'offline') {
+        setActionNoticeState({ code: 'offline' });
+      }
+    }
+  });
+  return store;
 }
 let stageStore: ApiSwitchV2 | null = null;
 export function getStageStoreV2() {

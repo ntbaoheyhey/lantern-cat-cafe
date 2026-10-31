@@ -9,7 +9,19 @@ import './stage.css';
 import { v2 } from '@taskbar-hero/game-rules';
 import { bossReady } from './choreography';
 
-export function StageCanvas({ state, zoom, width, reducedMotion }: { state: ServerStateV2; zoom: number; width: number; reducedMotion: boolean }) {
+export function StageCanvas({
+  state,
+  zoom,
+  width,
+  reducedMotion,
+  onSelectTab,
+}: {
+  state: ServerStateV2;
+  zoom: number;
+  width: number;
+  reducedMotion: boolean;
+  onSelectTab?: (tab: 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help') => void;
+}) {
   const host = useRef<HTMLDivElement>(null), scene = useRef<StageScene | null>(null);
   const latest = useRef({ state, reducedMotion, logicalWidth: Math.max(160, Math.floor(width / zoom)) });
   latest.current = { state, reducedMotion, logicalWidth: Math.max(160, Math.floor(width / zoom)) };
@@ -33,7 +45,6 @@ export function StageCanvas({ state, zoom, width, reducedMotion }: { state: Serv
     return () => clearTimeout(end);
   }, [state.progress.chapter, state.progress.round, complete]);
   const progress = state.progress;
-  const banner = progress.gated ? 'Too strong — equip better gear' : bossReady(state) ? 'Boss ready — open Boss' : moment;
   const logicalWidth = Math.max(160, Math.floor(width / zoom));
   // Keep one game for this mount. Phaser already pauses its render loop on visibilitychange.
   useEffect(() => {
@@ -72,8 +83,32 @@ export function StageCanvas({ state, zoom, width, reducedMotion }: { state: Serv
         <span>{progress.kills} / {progress.killsPerRound}</span>
       </span>
     </div>
-    <div className="stage-moment" role="status">{banner}</div>
-    <span className="stage-preview">{progress.gated ? 'Frontier blocked' : bossReady(state) ? 'Chapter complete' : 'Fight preview · rewards on claim'}</span>
+    <div className={`stage-moment${progress.gated || bossReady(state) ? ' is-actionable' : ''}`} role="status">
+      {progress.gated ? (
+        <>
+          <span className="stage-banner-text">Too strong — equip better gear</span>
+          <button
+            type="button"
+            className="stage-banner-btn pixel-btn"
+            onClick={() => onSelectTab?.('Bag')}
+            aria-label="Open Bag"
+          >
+            Open Bag
+          </button>
+        </>
+      ) : bossReady(state) ? (
+        <button
+          type="button"
+          className="stage-banner-btn pixel-btn"
+          onClick={() => onSelectTab?.('Boss')}
+        >
+          Fight the boss
+        </button>
+      ) : (
+        moment
+      )}
+    </div>
+    <span className="stage-preview">{progress.gated ? 'Frontier blocked' : bossReady(state) ? 'Boss ready' : 'Fight preview · rewards on claim'}</span>
     {error && <p role="status">The stage could not load. Your progress is still available below.</p>}
   </div>;
 }

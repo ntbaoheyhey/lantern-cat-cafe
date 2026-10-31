@@ -37,6 +37,15 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+  .forge-craft-scroll,
+  .forge-salvage-scroll,
+  .forge-relic-scroll,
+  .forge-items-list {
+    padding-bottom: calc(var(--nav-h, 56px) + env(safe-area-inset-bottom, 0px) + var(--sp-4, 16px));
+  }
+}
+
 /* Panel Header */
 .forge-panel-header {
   display: flex;
@@ -700,8 +709,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--sp-2, 8px);
-  padding: var(--sp-5, 24px) var(--sp-4, 16px);
+  gap: var(--sp-1, 4px);
+  padding: var(--sp-3, 12px) var(--sp-3, 12px);
   background: var(--surface-2, #3a2c4a);
   border: 1px dashed var(--border, #5b4572);
   text-align: center;
@@ -736,10 +745,10 @@
 .forge-relic-card {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4, 16px);
+  gap: var(--sp-2, 8px);
   background: var(--surface-2, #3a2c4a);
   border: 1px solid var(--border, #5b4572);
-  padding: var(--sp-4, 16px);
+  padding: var(--sp-3, 12px);
   min-width: 0;
   box-sizing: border-box;
 }
@@ -747,14 +756,14 @@
 .forge-relic-header {
   display: flex;
   align-items: center;
-  gap: var(--sp-3, 12px);
+  gap: var(--sp-2, 8px);
   min-width: 0;
 }
 
 .forge-relic-icon-wrap {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   background: var(--bg, #1a1220);
@@ -786,11 +795,17 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 110px), 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-2, 8px);
   font-size: var(--fs-xs, .75rem);
   font-family: var(--font-num, 'JetBrains Mono', monospace);
   min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .forge-odds-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .forge-odds-item {

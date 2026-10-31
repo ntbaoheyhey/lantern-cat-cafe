@@ -4,6 +4,7 @@
  * Cat-café tone: cozy, encouraging, and clear about player requirements.
  */
 import { ERROR_CODES_V2, type GameApiErrorCodeV2 } from '../api/GameApiV2';
+import { SERVER_BUSY_NOTICE, OFFLINE_NOTICE } from './errorNotices';
 
 /** Base static message mapping for every GameApiErrorCodeV2 code. */
 export const BLOCK_REASONS: Record<GameApiErrorCodeV2, string> = {
@@ -12,6 +13,8 @@ export const BLOCK_REASONS: Record<GameApiErrorCodeV2, string> = {
   not_found: 'Item or recipe not found in the café records.',
   rate_limited: 'Hold your paws! You are taking actions a bit too fast.',
   server_error: 'The café kitchen encountered a server error. Please try again.',
+  server_busy: SERVER_BUSY_NOTICE,
+  offline: OFFLINE_NOTICE,
   no_class: 'Pick a class first to start exploring.',
   not_owner: 'This gear belongs to another cat.',
   wrong_slot: 'This gear cannot be equipped in this slot.',

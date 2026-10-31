@@ -10,9 +10,10 @@ export const test = base.extend<{ buildGuard: void }>({
   buildGuard: [async ({ page, baseURL }, use, testInfo) => {
     const directory = testInfo.file.match(/[/\\]e2e[/\\](ui|layout|v2|qa|server)[/\\]/)?.[1];
     const v2 = directory !== undefined;
-    const expectedProject = directory === 'server' ? 'v2-server' : v2 ? (directory === 'v2' ? 'v2-loop' : 'stage-layout') : 'classic';
+    const isErrorsNotice = testInfo.file.includes('errors-notice.spec.ts');
+    const expectedProject = (directory === 'server' || isErrorsNotice) ? 'v2-server' : v2 ? (directory === 'v2' ? 'v2-loop' : 'stage-layout') : 'classic';
     expect(testInfo.project.name, 'Spec is assigned to the wrong build project').toBe(expectedProject);
-    expect(baseURL, 'Use the project baseURL; do not override it in a spec').toBe(directory === 'server' ? serverURL : v2 ? v2URL : classicURL);
+    expect(baseURL, 'Use the project baseURL; do not override it in a spec').toBe((directory === 'server' || isErrorsNotice) ? serverURL : v2 ? v2URL : classicURL);
     const goto = page.goto.bind(page);
     let checked = false;
     page.goto = async (...args) => {

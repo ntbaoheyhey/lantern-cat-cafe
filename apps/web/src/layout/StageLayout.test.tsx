@@ -13,7 +13,8 @@ const stageLoop = vi.hoisted(() => ({ start: vi.fn(async () => {}), stop: vi.fn(
   subscribe: () => () => {}, getSnapshot: () => syncSnapshot,
   equip: vi.fn(), setLocked: vi.fn(), chooseClass: vi.fn(), craft: vi.fn(), salvage: vi.fn(), fightBoss: vi.fn() }));
 vi.mock('../game/v2/storeV2', () => ({ createEquipQueueV2: () => ({ equip: stageLoop.equip, dispose: vi.fn() }), getGameLoopV2: () => stageLoop,
-  useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }), useGameModeV2: () => ({ demo: true, notice: null }) }));
+  useGameSnapshotV2: () => ({ state: stageState, busy: null, loadFailed: false }), useGameModeV2: () => ({ demo: true, notice: null }),
+  useActionNoticeState: () => null, getActionNoticeState: () => null, setActionNoticeState: vi.fn(), subscribeActionNotice: () => () => {} }));
 vi.mock('../game/stage/StageCanvas', () => ({ StageCanvas: () => <div data-testid="game-canvas" /> }));
 vi.mock('../game/arena/BossArena', () => ({ BossArena: ({ onDone }: { onDone: () => void }) => <button onClick={onDone}>Complete replay</button> }));
 

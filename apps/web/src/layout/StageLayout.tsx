@@ -224,8 +224,16 @@ export function StageLayout() {
           awayRef.current = 0;
         }
       }
-      if (event.type === 'error') setNotice(event.message);
-      if (event.type === 'refused') setNotice(getBlockReason(event.code));
+      if (event.type === 'error') {
+        if (event.message !== 'server_busy' && event.message !== 'offline') {
+          setNotice(event.message);
+        }
+      }
+      if (event.type === 'refused') {
+        if (event.code !== 'rate_limited' && event.code !== 'server_busy' && event.code !== 'offline') {
+          setNotice(getBlockReason(event.code));
+        }
+      }
     });
     const visibility = () => {
       if (document.hidden) {
@@ -262,7 +270,7 @@ export function StageLayout() {
       const panel = document.getElementById(`panel-${newTab}`);
       if (panel) {
         const focusable = panel.querySelector<HTMLElement>(
-          'button:not([disabled]), [href], input, select, textarea, [tabindex="0"]'
+          'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
         );
         if (focusable) focusable.focus();
         else {
@@ -386,6 +394,9 @@ export function StageLayout() {
           <span className="v2-wallet-icon" aria-hidden="true">
             <PixelIcon name="bag" />
           </span>
+        </div>
+
+        <div className="v2-topbar-status">
           <p
             className="v2-mode-note"
             title={
@@ -404,23 +415,14 @@ export function StageLayout() {
             </span>{' '}
             {mode.notice}
           </p>
+          <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus status={syncStatus} /></div>
         </div>
-
-        <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus status={syncStatus} /></div>
       </header>
 
       <main className="v2-main">
         {snapshot.loadFailed && (
           <p role="alert" className="v2-alert">
             Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button>
-          </p>
-        )}
-        {notice && (
-          <p role="status" className="v2-action-notice">
-            {notice}
-            <button aria-label="Dismiss message" onClick={() => setNotice('')}>
-              ×
-            </button>
           </p>
         )}
         {state && !classId && (
@@ -464,13 +466,21 @@ export function StageLayout() {
 
         <div role="region" aria-label="Game stage" className="v2-stage">
           {state && classId ? (
-            <StageCanvas state={state} zoom={zoom} width={stageW} reducedMotion={reducedMotion} />
+            <StageCanvas state={state} zoom={zoom} width={stageW} reducedMotion={reducedMotion} onSelectTab={handleSelectTab} />
           ) : (
             <p className="v2-stage-placeholder">Your adventure starts with a class.</p>
           )}
         </div>
 
         <section className="v2-panel" aria-label="Game panel">
+          {notice && (
+            <p role="status" className="v2-action-notice">
+              {notice}
+              <button aria-label="Dismiss message" onClick={() => setNotice('')}>
+                ×
+              </button>
+            </p>
+          )}
           {isTall && state && (
             <div className="v2-character-compact-strip" role="region" aria-label="Character compact">
               <CharacterPanel state={state} compact={true} onSelectSlot={() => handleSelectTab('Bag')} />
@@ -515,23 +525,22 @@ export function StageLayout() {
             {/* Boss tab */}
             <ActivePanel tab="Boss" label="Boss" hidden={tab !== 'Boss'}>
               {state ? (
-                <>
-                  <BossGatePanel
-                    state={state}
-                    chapter={chapter ?? state.progress.chapter}
-                    busy={actionBusy === 'fightBoss' || fight !== null}
-                    onFight={(selected) => {
-                      void fightBoss(selected);
-                    }}
-                    onSelectChapter={setChapter}
-                  />
+                <BossGatePanel
+                  state={state}
+                  chapter={chapter ?? state.progress.chapter}
+                  busy={actionBusy === 'fightBoss' || fight !== null}
+                  onFight={(selected) => {
+                    void fightBoss(selected);
+                  }}
+                  onSelectChapter={setChapter}
+                >
                   <ChapterMap
                     currentChapter={state.progress.chapter}
                     round={state.progress.round}
                     clearedChapters={state.bosses.chapters.filter((c) => c.cleared).map((c) => c.chapter)}
                     onSelect={setChapter}
                   />
-                </>
+                </BossGatePanel>
               ) : (
                 <p>Loading your cat…</p>
               )}
@@ -560,7 +569,10 @@ export function StageLayout() {
                       onCraft={async (recipe, slot) => {
                         setCrafted(null);
                         const result = await loop.craft(recipe, slot);
-                        if (result) setCrafted(result.item);
+                        if (result) {
+                          setCrafted(result.item);
+                          setNotice(`Crafted: ${rarityLabel(result.item.rarity)} ${itemName(result.item.itemKey)}`);
+                        }
                       }}
                       onSalvage={async (ids) => {
                         await loop.salvage(ids);
@@ -574,59 +586,65 @@ export function StageLayout() {
                         });
                         setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
                       }}
+                      craftResult={
+                        crafted ? (
+                          <div className="forge-reveal" role="status" data-testid="craft-result">
+                            <strong>
+                              Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
+                            </strong>{' '}
+                            (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
+                            tab can be listed in the Market.
+                          </div>
+                        ) : null
+                      }
+                      relicFooter={
+                        <>
+                          <p className="forge-note">
+                            Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free
+                            test AVAX and costs no real money.
+                          </p>
+                          {unreported ? (
+                            <div role="status">
+                              <p>
+                                {mode.demo
+                                  ? 'Sign in to finish saving your minted Relic.'
+                                  : 'Your Relic was minted. Finish saving its confirmation.'}
+                              </p>
+                              <button
+                                disabled={savingMint || mode.demo || !wallet.isConnected}
+                                onClick={() => {
+                                  void retryMintConfirmation();
+                                }}
+                              >
+                                {savingMint ? 'Saving…' : 'Retry saving mint confirmation'}
+                              </button>
+                            </div>
+                          ) : (
+                            (voucher ?? state.forge.pending) &&
+                            (voucher ?? state.forge.pending)!.signature !== null &&
+                            (voucher ?? state.forge.pending)!.nonce !== mintedNonce && (
+                              <MintPanel
+                                voucher={(voucher ?? state.forge.pending)! as RelicVoucher}
+                                api={getGameApi()}
+                                loop={getGameLoop()}
+                                onMinted={(mint, confirmed) => {
+                                  setVoucher(null);
+                                  setMintedNonce(mint.nonce);
+                                  if (confirmed) {
+                                    setUnreported(null);
+                                    setNotice('Relic minted. In your wallet!');
+                                    void loop.retry();
+                                  } else {
+                                    setUnreported(mint);
+                                    setNotice('Relic minted. Finish saving its confirmation below.');
+                                  }
+                                }}
+                              />
+                            )
+                          )}
+                        </>
+                      }
                     />
-                    {crafted && (
-                      <div className="forge-reveal" role="status" data-testid="craft-result">
-                        <strong>
-                          Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
-                        </strong>{' '}
-                        (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
-                        tab can be listed in the Market.
-                      </div>
-                    )}
-                    <p className="forge-note">
-                      Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free
-                      test AVAX and costs no real money.
-                    </p>
-                    {unreported ? (
-                      <div role="status">
-                        <p>
-                          {mode.demo
-                            ? 'Sign in to finish saving your minted Relic.'
-                            : 'Your Relic was minted. Finish saving its confirmation.'}
-                        </p>
-                        <button
-                          disabled={savingMint || mode.demo || !wallet.isConnected}
-                          onClick={() => {
-                            void retryMintConfirmation();
-                          }}
-                        >
-                          {savingMint ? 'Saving…' : 'Retry saving mint confirmation'}
-                        </button>
-                      </div>
-                    ) : (
-                      (voucher ?? state.forge.pending) &&
-                      (voucher ?? state.forge.pending)!.signature !== null &&
-                      (voucher ?? state.forge.pending)!.nonce !== mintedNonce && (
-                        <MintPanel
-                          voucher={(voucher ?? state.forge.pending)! as RelicVoucher}
-                          api={getGameApi()}
-                          loop={getGameLoop()}
-                          onMinted={(mint, confirmed) => {
-                            setVoucher(null);
-                            setMintedNonce(mint.nonce);
-                            if (confirmed) {
-                              setUnreported(null);
-                              setNotice('Relic minted. In your wallet!');
-                              void loop.retry();
-                            } else {
-                              setUnreported(mint);
-                              setNotice('Relic minted. Finish saving its confirmation below.');
-                            }
-                          }}
-                        />
-                      )
-                    )}
                   </>
                 ) : (
                   <p>Choose a class to use the forge.</p>

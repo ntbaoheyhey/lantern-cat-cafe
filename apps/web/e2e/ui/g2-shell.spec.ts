@@ -129,7 +129,7 @@ test.describe('G2 Shell: Primary Actions Visibility & Reachability', () => {
     interactions++;
 
     // Primary action: Fight button
-    const fightBtn = page.getByRole('button', { name: /Fight|Rematch/i });
+    const fightBtn = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
     await expect(fightBtn).toBeVisible();
     await expect(fightBtn).toBeEnabled();
     const visibleAtInteractions = interactions;
@@ -215,7 +215,7 @@ test.describe('G2 Shell: Touch Targets on Phone Sizes', () => {
 
       // Open Boss and verify action button
       await page.getByRole('tab', { name: 'Boss' }).click();
-      const bossAction = page.getByRole('button', { name: /Fight|Rematch/i });
+      const bossAction = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
       await expect(bossAction).toBeVisible();
       const bossActionBox = await bossAction.boundingBox();
       expect(bossActionBox!.width).toBeGreaterThanOrEqual(44 - 0.5);
@@ -254,7 +254,7 @@ test.describe('G2 Shell: 320x568 Layout Guarantee', () => {
 
     // Boss: Fight is visible in viewport without scrolling
     await page.getByRole('tab', { name: 'Boss' }).click();
-    const fightBtn = page.getByRole('button', { name: /Fight|Rematch/i });
+    const fightBtn = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
     await expect(fightBtn).toBeInViewport();
 
     // Forge: Craft is visible in viewport without scrolling
@@ -305,7 +305,7 @@ test.describe('G2 Shell: Focus Management & Keyboard Navigation', () => {
     await page.keyboard.press('Enter');
 
     // Tab into the panel to reach Fight button
-    const fightBtn = page.getByRole('button', { name: /Fight|Rematch/i });
+    const fightBtn = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
     for (let step = 0; step < 20; step++) {
       if (await fightBtn.evaluate((el) => el === document.activeElement)) break;
       await page.keyboard.press('Tab');

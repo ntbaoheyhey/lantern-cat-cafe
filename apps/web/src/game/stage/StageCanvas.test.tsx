@@ -62,7 +62,7 @@ it('keeps the current authoritative label during cleared/start moments and subse
 
 it('announces the gate and boss readiness from progress', () => {
   const view = render(<StageCanvas state={sampleServerStateV2({ gated: true })} zoom={2} width={800} reducedMotion />);
-  expect(view.getByRole('status').textContent).toBe('Too strong — equip better gear');
+  expect(view.getByRole('status').textContent).toContain('Too strong — equip better gear');
   view.rerender(<StageCanvas state={sampleServerStateV2()} zoom={2} width={800} reducedMotion />);
-  expect(view.getByRole('status').textContent).toBe('Boss ready — open Boss');
+  expect(view.getByRole('status').textContent).toBe('Fight the boss');
 });
