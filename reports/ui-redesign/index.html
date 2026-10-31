@@ -127,7 +127,7 @@ tr.hl td{background:var(--surface-2)}
 <p class="note" id="note"></p>
 <div class="vp" id="vp"></div>
 <article class="doc" id="doc" hidden></article>
-<template id="t-brief"><h2>Taskbar Hero UI redesign: design brief (living draft v0)</h2>
+<template id="t-prompts"><h2>Prompts (living draft)</h2><p>Design approved 31 Oct. Codex and Antigravity code first; Claude CLI is not available yet. All copy-ready prompts are in one file in the project folder: <code>PASTE-ALL-redesign.txt</code> (index: <code>PASTE-INDEX-redesign.md</code>). Repo copy: <code>tasks/v2/redesign/</code>. Art rule: all existing images are kept.</p><h3>Order</h3><div class="tw"><table><tr><th>Step</th><th>Mission</th><th>Tool</th><th>When</th></tr><tr><td>1</td><td>AGR0 tokens + shell (left rail, top HUD)</td><td>Antigravity</td><td>Paste first. Blocks all UI phases.</td></tr><tr><td>1</td><td>CXR0 test harness (1600x900 audit, e2e smoke)</td><td>Codex</td><td>Paste now, parallel with AGR0.</td></tr><tr><td>2</td><td>AGR1 Landing, class picker, Home</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR2 Bag</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR3 Forge + Market</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR4 Hero, Help, shared states</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR5 Map (boss)</td><td>Antigravity</td><td>After AGR0 and the boss scroll PR merge.</td></tr><tr><td>3</td><td>CXR1 tests for new screens</td><td>Codex</td><td>After AGR1-AGR4 merge.</td></tr><tr><td>4</td><td>CXR2 polish pass</td><td>Codex</td><td>After the above, repeatable.</td></tr></table></div><p>Antigravity has two accounts, so at most two of AGR1-AGR5 run at once.</p></template><template id="t-brief"><h2>Taskbar Hero UI redesign: design brief (living draft v0)</h2>
 <p>Status: draft for the user&#x27;s review. Nothing here is final. Game rules, contracts, auth, schema (Tier 3) are untouched. Desktop first, no mobile work yet.</p>
 <h3>1. Goals</h3>
 <ul>
@@ -305,12 +305,12 @@ V.states=()=>shell('help',`<div class="cols" style="grid-template-columns:1fr 1f
 <div class="card" style="display:grid;place-items:center;text-align:center;gap:6px">${cat('#c3aed0',90)}<h2>Your bag is empty</h2><div class="muted">Win a few fights and the loot lands here.</div><button class="btn" data-go="stage">Back to the strip</button></div>
 <div class="card"><h3>Toast examples</h3><div class="row" style="flex-direction:column;align-items:stretch;gap:8px"><div class="card row" style="border-color:var(--good)"><span class="pill good">Saved</span>Equipped Moonlit Fang.</div><div class="card row" style="border-color:var(--accent)"><span class="pill">Heads up</span>Wallet on the wrong network. Switch to Fuji.</div><div class="card row" style="border-color:var(--bad)"><span class="pill bad">Failed</span>Forge did not go through. Nothing was spent.</div></div></div></div>`,`<div class="scrim"><div class="modal"><h2>List this Relic?</h2><p>Moonlit Fang #1042 will be listed for <b class="num">0.40 AVAX</b>. You can cancel the listing any time. Your wallet will ask you to sign.</p><div class="row" style="justify-content:flex-end"><button class="btn ghost">Cancel</button><button class="btn">Confirm listing</button></div></div></div>`);
 
-SCREENS.push(['brief','Design brief','Goals, navigation model, screen list, tokens, components. Text version: reports/ui-redesign/BRIEF.md.'],['plan','Plan + prompts','Phases split between Claude, Codex and Antigravity with ready paste prompts, plus optional connectors. Text version: reports/ui-redesign/PLAN.md.']);
+SCREENS.push(['prompts','Prompts','Order to paste and which tool runs each mission. Text: tasks/v2/redesign/ and PASTE-ALL-redesign.txt.'],['brief','Design brief','Goals, navigation model, screen list, tokens, components. Text version: reports/ui-redesign/BRIEF.md.'],['plan','Plan + prompts','Phases split between Claude, Codex and Antigravity with ready paste prompts, plus optional connectors. Text version: reports/ui-redesign/PLAN.md.']);
 const tabs=document.getElementById('tabs'),vp=document.getElementById('vp'),note=document.getElementById('note');
 let W=1280,cur='landing';
 SCREENS.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;b.setAttribute('role','tab');b.dataset.k=k;tabs.appendChild(b)});
 function render(){
-  const doc=document.getElementById('doc'),isDoc=cur==='brief'||cur==='plan';
+  const doc=document.getElementById('doc'),isDoc=['brief','plan','prompts'].includes(cur);
   document.getElementById('size').style.visibility=isDoc?'hidden':'visible';
   doc.hidden=!isDoc;vp.hidden=isDoc;
   if(isDoc){doc.innerHTML=document.getElementById('t-'+cur).innerHTML;doc.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{const t=b.nextElementSibling.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>b.textContent='Copied',()=>{const r=document.createRange();r.selectNodeContents(b.nextElementSibling);const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected'})});
@@ -328,7 +328,7 @@ tabs.onclick=e=>{const k=e.target.dataset.k;if(k){cur=k;render()}};
 vp.onclick=e=>{const g=e.target.closest('[data-go]');if(g&&V[g.dataset.go]){cur=g.dataset.go;render()}};
 document.getElementById('size').onclick=e=>{const w=e.target.dataset.w;if(w){W=+w;[...e.currentTarget.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.w===w));render()}};
 addEventListener('resize',fit);
-const h=location.hash.slice(1);if(V[h]||h==='brief'||h==='plan')cur=h;
+const h=location.hash.slice(1);if(V[h]||['brief','plan','prompts'].includes(h))cur=h;
 document.fonts&&document.fonts.ready.then(fit);
 render();
 </script>

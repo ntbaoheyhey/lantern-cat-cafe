@@ -1,0 +1,1321 @@
+REDESIGN: TẤT CẢ PROMPT TRONG MỘT FILE (31/10/2026, BẢN NHÁP)
+Living draft: scope and order may change as you review the UI. Hướng thiết kế đã được duyệt (thanh trái + HUD trên).
+Copy từng khối giữa ===== BEGIN và ===== END. Mỗi công cụ chạy 1 nhiệm vụ một lúc (Antigravity có 2 tài khoản nên chạy tối đa 2 cùng lúc).
+
+THỨ TỰ DÁN
+1. AGR0 (Antigravity): P0 Tokens + app shell: left nav rail and top HUD. Paste FIRST. Nothing else in the UI phases starts until this is merged. Runs in parallel only with CXR0 (disjoint files).
+2. CXR0 (Codex): P0b Test harness: 1600x900 audit, route smoke e2e, shell selectors. Paste NOW, in parallel with AGR0. Needs no merge. Parallel with AGR0: disjoint zone.
+3. AGR1 (Antigravity): P1 Landing + Class picker + Home (stage). After AGR0 is merged. Parallel with AGR2, AGR3, AGR4 (disjoint zones). Max two Antigravity missions at once (two accounts).
+4. AGR2 (Antigravity): P2 Bag. After AGR0 is merged. Parallel with AGR1, AGR3, AGR4.
+5. AGR3 (Antigravity): P3 Forge + Market. After AGR0 is merged. Parallel with AGR1, AGR2, AGR4.
+6. AGR4 (Antigravity): P4 Hero sheet + Help + shared states. After AGR0 is merged. Parallel with AGR1, AGR2, AGR3.
+7. AGR5 (Antigravity): P5 Map (boss). After AGR0 is merged AND the "Fix Boss panel nested scroll UI" PR is merged. Parallel with CXR1 only; zone is exclusive (boss/ and map/).
+8. CXR1 (Codex): P6 Tests for new screens + data/registry checks. After AGR1, AGR2, AGR3 and AGR4 are merged (AGR5 optional). Single Codex mission; zone is tests only.
+9. CXR2 (Codex): P7 Polish pass: bugs from screenshots, perf, a11y (living draft). After all AGR missions and CXR1 are merged, and after you review the live look. Single Codex mission.
+
+
+
+########## AGR0 (Antigravity) ##########
+Paste FIRST. Nothing else in the UI phases starts until this is merged.
+===== BEGIN AGR0 =====
+MISSION AGR0 - P0 Tokens + app shell: left nav rail and top HUD
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr0
+Base: latest origin/main (Paste FIRST. Nothing else in the UI phases starts until this is merged.)
+Report: reports/redesign/AGR0.md + reports/redesign/AGR0/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/theme.css (additive tokens), apps/web/src/App.tsx, apps/web/src/Panel.tsx, apps/web/src/layout/hud/, apps/web/src/layout/layout.css, a NEW apps/web/src/shell/ folder (Rail, Hud, ScreenFrame), apps/web/src/nav/screens.ts (screen registry). Do not edit screen contents (Bag, Forge, Market, Boss, Hero tab bodies): mount them unchanged inside the new shell.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: replace the top tab bar with the approved shell: a 92px left rail (logo, Home, Bag, Map, Forge, Market, Hero, Help, Fuji badge at the bottom), a 56px top HUD (Gold, Shards, Cat Keys, level + XP bar, Power, wallet button), and a content area that flexes. Landing and Class picker render WITHOUT the rail. Mapping from today's tabs: Hero tab -> Home (stage) and Hero (sheet); Inventory -> Bag; Boss -> Map; Forge; Market; Help is a screen instead of a modal.
+1. Add the new tokens from BRIEF.md section 5 to theme.css (additive; do not remove old ones).
+2. Create apps/web/src/nav/screens.ts: a typed registry { id, label, icon, Component, rail: boolean } for landing, class, home, bag, map, forge, market, hero, help. Keep the existing TabName values working (TABS stays exported or is re-exported) so the HintTab onboarding (onboarding/nextStep.ts) keeps working.
+3. Build the shell in apps/web/src/shell/. TEST ID CONTRACT (other missions rely on it): rail root data-testid="rail"; each item data-testid="nav-<id>" with aria-current="page" on the active one; HUD root data-testid="hud"; chips data-testid="hud-gold|hud-shards|hud-keys|hud-level|hud-power|hud-wallet"; content root data-testid="screen".
+4. Keep every existing behaviour: wallet connect, onboarding hint chip, HowToPlay, keyboard focus order (rail first, then HUD, then screen), visible focus ring, prefers-reduced-motion.
+5. Existing screens must still work inside the shell even if they look old; later missions restyle them.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 All nine screens reachable from the rail/landing; each renders without console errors. T2 Rail item has aria-current on the active screen and a visible focus ring (keyboard Tab/Enter). T3 HUD shows live values from existing state (no hard-coded numbers). T4 Landing and Class picker have no rail. T5 1280x720 and 1600x900: no page scroll, no overlap (ui-audit). T6 Existing tests green; HintTab onboarding still navigates. T7 Existing art still referenced (grep: no deleted or renamed files under the art folders).
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR0/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR0/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR0.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR0 =====
+
+
+########## CXR0 (Codex) ##########
+Paste NOW, in parallel with AGR0. Needs no merge.
+===== BEGIN CXR0 =====
+MISSION CXR0 - P0b Test harness: 1600x900 audit, route smoke e2e, shell selectors
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-redesign-cxr0
+Base: latest origin/main (Paste NOW, in parallel with AGR0. Needs no merge.)
+Report: reports/redesign/CXR0.md + reports/redesign/CXR0/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/tools/ (ui-audit.mjs, effects-test.mjs, helpers), apps/web/e2e/ (new spec files only), reports/redesign/. Do NOT edit apps/web/src/ at all.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: make the redesign testable before it exists. The shell (AGR0) will expose this TEST ID CONTRACT: rail data-testid="rail"; items "nav-home|nav-bag|nav-map|nav-forge|nav-market|nav-hero|nav-help" with aria-current="page" on the active one; HUD "hud" with chips "hud-gold|hud-shards|hud-keys|hud-level|hud-power|hud-wallet"; content root "screen".
+1. Extend tools/ui-audit.mjs (or its helper) to run at 1280x720 AND 1600x900 (keep 390x844 as an optional flag, default off), and to print document-scroll, horizontal-overflow and element-overlap findings per screen.
+2. Add an e2e smoke spec (skipped automatically while the contract selectors do not exist, so main stays green) that visits every rail item, checks aria-current, HUD chips present, no console errors, no page scroll, at both sizes.
+3. Add a "screen manifest" JSON in tools/ listing the nine screens, their route/test ids and required key elements, so later missions can extend it.
+4. A script reports/redesign/compare.mjs that, given two screenshot folders, writes an HTML before/after page.
+5. Do not touch Tier 3. If tools/ui-audit.mjs is not on main yet (PR #220), base on that PR's head and say so.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 ui-audit runs at both sizes on current main and reports findings (list the pre-existing ones as baseline, do not fix them). T2 e2e smoke is skipped-with-reason on current main and passes against a local stub page that implements the contract (include the stub under e2e/fixtures). T3 compare.mjs produces an HTML page from two folders. T4 pnpm build and existing tests unchanged and green.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/CXR0/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/CXR0/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/CXR0.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END CXR0 =====
+
+
+########## AGR1 (Antigravity) ##########
+After AGR0 is merged.
+===== BEGIN AGR1 =====
+MISSION AGR1 - P1 Landing + Class picker + Home (stage)
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr1
+Base: latest origin/main (After AGR0 is merged.)
+Report: reports/redesign/AGR1.md + reports/redesign/AGR1/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): the landing page component(s) and CSS, apps/web/src/layout/classpicker/, the Home/stage layout (apps/web/src/HeroTab.tsx stage part, StageLayout, GameCanvas wrapper only: do not change Phaser game logic), apps/web/src/layout/hud/ only for Home-specific chips. Do not touch shell/ (owned by AGR0).
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: build three screens from the mockup. Landing: full-width scene, title, promise, "Play as guest" primary, "Connect wallet" secondary, proof strip (Relic NFT ERC-721, contract verified on Routescan, server-checked fights, open source, Help link), "Live on Avalanche Fuji" pill. Class picker: three class cards (real classes and stats from the repo, not the mockup's invented stats), one selected, one primary Start button. Home: scene in the centre (existing Phaser canvas and real art), hero card (name, class, level, HP/ATK/Crit from state), next-goal card with progress and "Go to map", recent loot card, event log under the scene. Keep guest play, wallet connect and class save working.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 Guest start works with no wallet. T2 Wallet connect button still opens the existing flow (do not complete a transaction). T3 Class choice persists after reload. T4 Home shows real state (hero, goal, loot, log). T5 Next-goal button navigates to Map. T6 both sizes: no scroll or overlap (ui-audit); effects-test passes. T7 Existing art used; none removed.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR1/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR1/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR1.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR1 =====
+
+
+########## AGR2 (Antigravity) ##########
+After AGR0 is merged.
+===== BEGIN AGR2 =====
+MISSION AGR2 - P2 Bag
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr2
+Base: latest origin/main (After AGR0 is merged.)
+Report: reports/redesign/AGR2.md + reports/redesign/AGR2/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/inventory/, apps/web/src/layout/bag/, apps/web/src/layout/ItemIcon.tsx and itemView.ts only for Bag needs.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: Bag screen: 8-column slot grid (real item icons), visible empty slots up to capacity, filter chips (All, Weapons, Armor, Materials, Relics), count "12 / 40", right detail panel (name, rarity pill + frame colour, stats, Equip / Forge / List actions) and a compare block (attack/crit vs equipped). Rarity is shown by frame colour AND a text pill. Bulk-equip and every existing action keep working. Empty state when the bag is empty.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 Select item -> detail panel updates. T2 Filters change the grid and keep the count. T3 Equip, bulk equip, Forge and List buttons call the same handlers as before. T4 Empty bag shows the empty state. T5 Rarity visible without colour (pill text). T6 Keyboard: arrow/Tab through slots, Enter selects, focus ring visible. T7 both sizes clean (ui-audit, effects-test). T8 Existing art unchanged.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR2/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR2/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR2.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR2 =====
+
+
+########## AGR3 (Antigravity) ##########
+After AGR0 is merged.
+===== BEGIN AGR3 =====
+MISSION AGR3 - P3 Forge + Market
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr3
+Base: latest origin/main (After AGR0 is merged.)
+Report: reports/redesign/AGR3.md + reports/redesign/AGR3/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/forge/, apps/web/src/market/. Odds, costs, listing logic and ABI usage unchanged.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: Forge: left gear picker, centre preview with the result reveal in place (short flash, no modal), right materials and a plain chances table read from game-rules (do not hard-code). Market: filter chips, sortable Relic table (Relic, rarity pill, power, seller, price in AVAX), right panel with token id, contract, price, Buy and "View on Routescan", plus Your listings with an empty state. Relics only. Confirmation modals use the shared modal style.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 Forge shows chances from game-rules and the same costs as before. T2 Forge result reveal plays and respects prefers-reduced-motion. T3 Market sort and filter work on sample data. T4 Buy and List open the existing wallet flow (do not complete a transaction). T5 Empty listings state. T6 both sizes clean; effects-test passes. T7 Existing art unchanged. T8 Existing forge/market tests green.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR3/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR3/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR3.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR3 =====
+
+
+########## AGR4 (Antigravity) ##########
+After AGR0 is merged.
+===== BEGIN AGR4 =====
+MISSION AGR4 - P4 Hero sheet + Help + shared states
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr4
+Base: latest origin/main (After AGR0 is merged.)
+Report: reports/redesign/AGR4.md + reports/redesign/AGR4/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/layout/character/, apps/web/src/layout/HelpTab.*, apps/web/src/onboarding/HowToPlay*, apps/web/src/layout/notice/, shared Modal/Toast/Banner/EmptyState components (new apps/web/src/ui/ folder).
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: Hero sheet: paper-doll equipment slots around the cat (real art), stats, power breakdown (gear/level/bonus from real state), progress bar, Change class. Help: topic list + search + answer pane as a screen (reuse existing help text; no new claims). Shared states: confirm modal, toasts (success, warning, failure), offline/error banner, empty state, all with the wording rule: say what happened and what to do, no apologies.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 Paper-doll shows equipped items and updates after equip. T2 Help search filters topics; existing help content kept. T3 Modal traps focus, Esc closes, returns focus. T4 Toasts appear and auto-dismiss; failure toast stays until closed. T5 Offline banner appears when the API is unreachable (simulate). T6 both sizes clean; effects-test passes. T7 Existing art unchanged.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR4/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR4/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR4.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR4 =====
+
+
+########## AGR5 (Antigravity) ##########
+After AGR0 is merged AND the "Fix Boss panel nested scroll UI" PR is merged.
+===== BEGIN AGR5 =====
+MISSION AGR5 - P5 Map (boss)
+Tool: Antigravity | Model: strongest, high reasoning | Branch: ai/antigravity-redesign-agr5
+Base: latest origin/main (After AGR0 is merged AND the "Fix Boss panel nested scroll UI" PR is merged.)
+Report: reports/redesign/AGR5.md + reports/redesign/AGR5/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/map/, apps/web/src/boss/, apps/web/src/layout/boss/, bossPresentation.ts.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: Map screen: chapter path with done / current / locked / boss nodes (real chapter art and names), right fight card (boss name, recommended power vs your power, daily attempts, rewards, Fight), past runs list. No nested scrolling anywhere. Boss replay/result screens keep their behaviour and look consistent with the shell. Fight limits and rules unchanged.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 Select node -> fight card updates. T2 Locked nodes cannot start a fight. T3 Daily limit shown and enforced as before. T4 Replay and result screens still work. T5 No nested scroll at both sizes (ui-audit). T6 effects-test passes. T7 Existing art unchanged.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/AGR5/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/AGR5/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/AGR5.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END AGR5 =====
+
+
+########## CXR1 (Codex) ##########
+After AGR1, AGR2, AGR3 and AGR4 are merged (AGR5 optional).
+===== BEGIN CXR1 =====
+MISSION CXR1 - P6 Tests for new screens + data/registry checks
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-redesign-cxr1
+Base: latest origin/main (After AGR1, AGR2, AGR3 and AGR4 are merged (AGR5 optional).)
+Report: reports/redesign/CXR1.md + reports/redesign/CXR1/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): apps/web/src/**/*.test.tsx and apps/web/e2e/ (new/updated test files), apps/web/tools/screen manifest, reports/redesign/. Do NOT change component code except a one-line data-testid addition (tier 2 note).
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: lock the redesign in with tests. 1. Component tests for Rail, Hud, ScreenFrame, Bag grid/filter/detail, Forge chances table, Market table sort, Hero sheet, Help search, Modal/Toast. 2. Activate the e2e smoke from CXR0 against the real shell and add one flow per screen (guest start -> class -> home -> bag equip -> map select -> forge preview -> market filter -> hero -> help search). 3. Registry test: every screen in nav/screens.ts has a rail item or is landing/class, and every TabName used by onboarding still resolves. 4. Contrast test: extend theme.contrast.test.ts for the new tokens (WCAG AA for text on every surface). 5. Report any bug found as a list with file:line; fix only cosmetic one-liners.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 All new component tests pass. T2 e2e flow passes at 1280x720 and 1600x900. T3 Registry test passes. T4 Contrast test passes for all new token pairs (list failures if any). T5 Whole existing suite green. T6 Bug list delivered (may be empty).
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/CXR1/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/CXR1/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/CXR1.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END CXR1 =====
+
+
+########## CXR2 (Codex) ##########
+After all AGR missions and CXR1 are merged, and after you review the live look.
+===== BEGIN CXR2 =====
+MISSION CXR2 - P7 Polish pass: bugs from screenshots, perf, a11y (living draft)
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-redesign-cxr2
+Base: latest origin/main (After all AGR missions and CXR1 are merged, and after you review the live look.)
+Report: reports/redesign/CXR2.md + reports/redesign/CXR2/ (screenshots) | Draft PR only: no merge, no Actions changes, no deploy, no live writes, no transaction.
+LIVING DRAFT: scope may change as the user reviews the UI; never treat this as final.
+
+ZONE (tier 1): files named by the bug list in reports/redesign/ plus apps/web/src/**/*.css. No Tier 3.
+TIER 2 (one-line note in report): adjacent files, tests that assert old markup, helpers, configs.
+
+GOAL: a repeatable pass, not the end of the redesign. Read the reports from AGR0-AGR5 and CXR1, run ui-audit and effects-test at both sizes for every screen, list each visual bug, and fix the cosmetic ones (spacing, overflow, focus ring, contrast, wrong token). Check bundle size with scripts/check-bundle.mjs and note any increase. Do not add screens or features; anything bigger goes in the report as a proposal.
+
+TEST CASES (mark PASS / FAIL / NOT VERIFIED with evidence):
+T1 ui-audit findings empty at both sizes for all nine screens. T2 check-bundle within budget (state the numbers). T3 Keyboard-only walk through every screen works. T4 Existing suite green. T5 Proposal list for anything not fixed.
+
+DESIGN SOURCE (living draft, approved direction 31 Oct 2026): reports/ui-redesign/index.html (open in a browser, flip through screens, switch 1280x720 / 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md. Artifact: https://claude.ai/artifact/BkBtGZbDayJHUmEht47Dri . The mockup uses placeholder cats/icons: match LAYOUT, TOKENS and BEHAVIOUR, but use the REAL art already in the repo.
+ART RULE (user): keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse as is. Never replace, rename or delete any. New art only as additions and only if the user asks.
+DESKTOP ONLY: design and test at 1280x720 and 1600x900. No mobile work now (do not delete existing responsive CSS; just do not spend time on it).
+TOKENS: use apps/web/src/theme.css tokens (add the new ones from BRIEF.md section 5 only if P0 has not already). No new dependencies.
+HARD STOPS (Tier 3, alone may cause BLOCKED): contracts/, supabase/ (migrations, functions), auth/SIWE files, packages/game-rules (config.ts numbers, economy), .github/, dependency changes, repo visibility, secrets, live DB or chain writes. Game rules and economy numbers do NOT change. Existing behaviour, props and API calls stay; this is a re-skin and re-layout.
+OTHER OPEN UI THREADS: PRs "Fix Boss panel nested scroll UI" and "Audit full UI and redesign landing page" edit live UI. Base on latest origin/main; if your zone files changed there, merge and keep their fixes.
+TESTS: keep every existing test green (update a test only when it asserts old markup, with a one-line note). Add tests for new components. Run from the repo root: pnpm build, and the web tests. Mark every T-test PASS, FAIL or NOT VERIFIED with evidence. NOT VERIFIED is an accepted outcome.
+UI CHECK: from apps/web run `node tools/ui-audit.mjs ../../reports/redesign/CXR2/audit bossReadyStrong` (add --signed-in where useful) and `node tools/effects-test.mjs ../../reports/redesign/CXR2/effects`. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900. If ui-audit.mjs is not on main yet (PR #220), say so and take Playwright screenshots instead.
+GIT: author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> (check git config first). Branch from latest origin/main. Open a DRAFT PR to main, do not merge.
+REPORT: reports/redesign/CXR2.md, ALWAYS pushed: what changed, T-test table, screenshots at both sizes, what is NOT VERIFIED, files touched outside the zone (tier 2 notes). Strongest model, high effort. Living draft: nothing here is final.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.
+
+===== END CXR2 =====
