@@ -44,5 +44,5 @@ Caveats: star counts are popularity, not quality. I opened READMEs for #1, #2, #
 
 1. Approve replacing the current 7-line `CLAUDE.md` with `CLAUDE.proposed.md` after you have tried the bootstrap prompt once.
 2. Add `AGENTS.md` for Codex from `AGENTS.proposed.md`.
-3. Whether the CLI Claude may open and merge PRs itself, or only push branches and let the coordinator verify (the proposal says: open PR, run verify script, merge green in-scope PRs, stop at hard stops).
+3. Roles (decided by you): CLI Claude orchestrates and also codes important builds on `cli/*` branches in its own worktree; the cloud coordinator does no coding, only verifies and merges. The proposal follows this.
 4. Whether to add hooks later (path guard for hard stops). Needs a `.claude/settings.json` change, which this PR does not make.

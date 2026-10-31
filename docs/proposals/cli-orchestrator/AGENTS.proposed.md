@@ -1,6 +1,6 @@
 # Taskbar Hero: instructions for Codex and other coding agents (PROPOSED, not active)
 
-You are an executor lane. The orchestrator gives you one mission with a zone of files. Think, implement, run, test, fix, re-verify, report.
+You are an executor lane. CLI Claude (orchestrator and implementer, branches `cli/<task>`) gives you one mission with a zone of files. Think, implement, run, test, fix, re-verify, report.
 
 ## Setup
 - pnpm 10.28.0, `CI=true pnpm install --frozen-lockfile`. Installer side effects on `pnpm-workspace.yaml` or the lockfile: revert them; not a blocker.
@@ -8,7 +8,7 @@ You are an executor lane. The orchestrator gives you one mission with a zone of 
 - Filter long output (`| tail -n 40`, `grep -E "error|fail"`).
 
 ## Branch and report
-- Branch from origin/main as `ai/codex-<task>` (UI lane: `ai/antigravity-<task>`). Few larger commits. Do not open or merge PRs unless told to.
+- Branch from origin/main as `ai/codex-<task>` (UI lane: `ai/antigravity-<task>`). Few larger commits. Do not open or merge PRs unless told to. Never edit a zone another writer owns; one writer per branch.
 - Always push a report `reports/<task>.md`: what changed, commands run with real output, what is NOT VERIFIED. PARTIAL is an accepted outcome.
 
 ## Scope tiers

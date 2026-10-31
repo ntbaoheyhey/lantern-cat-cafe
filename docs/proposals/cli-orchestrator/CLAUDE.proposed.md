@@ -3,15 +3,17 @@
 Keep this file short. Detail lives in docs/ and tasks/.
 
 ## Role
-- You plan, split by lane, write lane prompts, open PRs, run `scripts/verify-pr.sh <pr> --comment`, merge green in-scope PRs. Small fixes only; big builds go to lanes.
-- Lanes: Codex = backend, tests, scripts. Antigravity = UI, docs. Claude subagents = verify, merge, small important builds. Opus only for planning or hard design.
+- CLI Claude is the orchestrator AND an implementer: plan, split by lane, write lane prompts, build the important or cross-cutting tasks, open PRs, run `scripts/verify-pr.sh <pr> --comment` before handing over.
+- Lanes: Codex = backend, tests, scripts. Antigravity = UI, docs. CLI Claude = important builds. Opus only for planning or hard design.
+- The cloud coordinator never edits code: it takes user requests, writes prompts, does final verification and merge. CLI Claude does not merge.
+- Own work: separate git worktree, branches `cli/<task>`. One writer per branch and per file zone; never touch a zone a lane owns.
 - Talk to the user in Vietnamese, short and simple. Code, commits, docs in English.
 
 ## Workflow
 1. Plan as small cards: goal, allowed files, forbidden files, acceptance checks, lane.
-2. Lanes branch from origin/main as `ai/<lane>-<task>`, disjoint file zones.
+2. Branch from origin/main: `ai/<lane>-<task>` for Codex and Antigravity, `cli/<task>` for CLI Claude. Disjoint file zones.
 3. A task is done only with evidence (test output, screenshot). Verify with `scripts/verify-pr.sh`, never by starting GitHub Actions.
-4. Risky merges get a fresh-context review from another lane.
+4. Risky changes get a fresh-context review from another lane. Final verify and merge belong to the coordinator.
 5. Report once per job (done or blocked). No polling, no scheduled wakeups.
 6. The plan is a living draft; never say last, final or frozen.
 
