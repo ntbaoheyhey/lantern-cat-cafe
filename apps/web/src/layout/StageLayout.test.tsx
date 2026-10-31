@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
 vi.mock('../GameCanvas', () => ({ GameCanvas: () => <div data-testid="game-canvas" /> }));
@@ -53,20 +53,22 @@ it('keeps the classic layout when VITE_GAME_V2 is not set', () => {
   expect(screen.queryByRole('button', { name: 'Stage' })).toBeNull();
 });
 
-it('desktop: top bar, stage, character area and the six tabs', () => {
+it('desktop: rail, top HUD, stage, character area and the seven tabs', () => {
   render(<App />);
-  expect(screen.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeTruthy();
+  expect(screen.getByTestId('rail')).toBeTruthy();
+  expect(screen.getByTestId('hud')).toBeTruthy();
   expect(screen.getByRole('region', { name: 'Game stage' })).toBeTruthy();
   expect(screen.getByTestId('game-canvas')).toBeTruthy();
-  expect(screen.getByRole('region', { name: 'Character' })).toBeTruthy();
-  expect(screen.getByTestId('character-power')).toBeTruthy();
+  expect(screen.getByTestId('hud-power')).toBeTruthy();
   expect(screen.getByRole('region', { name: 'Cat status' })).toBeTruthy();
   expect(screen.getByLabelText('Currencies and keys').textContent).toContain('Fish');
   expect(screen.queryByRole('region', { name: 'Café board' })).toBeNull();
   expect(screen.getAllByRole('tab').map((t) => t.textContent)).toEqual([
-    'Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help',
+    'Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help',
   ]);
-  expect(screen.getByRole('tab', { name: 'Character' }).getAttribute('aria-selected')).toBe('true');
+  expect(screen.getByRole('tab', { name: 'Home' }).getAttribute('aria-selected')).toBe('true');
+  fireEvent.click(screen.getByRole('tab', { name: 'Hero' }));
+  expect(screen.getByRole('region', { name: 'Character' })).toBeTruthy();
   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
   expect(screen.getByRole('heading', { name: 'Forge' })).toBeTruthy();
   fireEvent.click(screen.getByRole('tab', { name: 'Help' }));
@@ -78,12 +80,12 @@ it('phone: bottom nav switches panels, Escape returns focus to tab', () => {
   render(<App />);
   const nav = screen.getByRole('navigation', { name: 'Game menu' });
   expect(nav).toBeTruthy();
-  const boss = screen.getByRole('tab', { name: 'Boss' });
-  boss.focus();
-  fireEvent.click(boss);
-  expect(screen.getByRole('tabpanel', { name: 'Boss' })).toBeTruthy();
+  const map = within(nav).getByRole('tab', { name: 'Map' });
+  map.focus();
+  fireEvent.click(map);
+  expect(screen.getByRole('tabpanel', { name: 'Map' })).toBeTruthy();
   fireEvent.keyDown(document, { key: 'Escape' });
-  expect(document.activeElement).toBe(boss);
+  expect(document.activeElement).toBe(map);
 });
 
 
@@ -110,7 +112,7 @@ it('shows class selection only while the authoritative class is null', () => {
 });
 it('boss request opens the replay, then the victory chest', async () => {
   render(<App />);
-  fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
+  fireEvent.click(screen.getByRole('tab', { name: 'Map' }));
   const fight = screen.getByRole('button', { name: /^Fight/ });
   await act(async () => { fireEvent.click(fight); });
   expect(stageLoop.fightBoss).toHaveBeenCalledWith(1);
@@ -124,13 +126,14 @@ it('boss request opens the replay, then the victory chest', async () => {
 it('phone: panel opening moves focus inside and closing returns it to the selected tab', () => {
   setViewport(390, 844);
   render(<App />);
-  const boss = screen.getByRole('tab', { name: 'Boss' });
-  boss.focus();
-  fireEvent.click(boss);
-  expect(screen.getByRole('tabpanel', { name: 'Boss' })).toBeTruthy();
+  const nav = screen.getByRole('navigation', { name: 'Game menu' });
+  const map = within(nav).getByRole('tab', { name: 'Map' });
+  map.focus();
+  fireEvent.click(map);
+  expect(screen.getByRole('tabpanel', { name: 'Map' })).toBeTruthy();
   fireEvent.keyDown(document, { key: 'Escape' });
-  expect(document.activeElement).toBe(boss);
-  const market = screen.getByRole('tab', { name: 'Market' });
+  expect(document.activeElement).toBe(map);
+  const market = within(nav).getByRole('tab', { name: 'Market' });
   market.focus();
   fireEvent.click(market);
   expect(screen.getByRole('tabpanel', { name: 'Market' })).toBeTruthy();
@@ -175,7 +178,7 @@ it('holds every boss-sensitive panel at the pre-request state, then releases wit
   let resolve!: (result: typeof ARENA_FIXTURES[0]['result']) => void;
   stageLoop.fightBoss.mockImplementationOnce(() => new Promise(done => { resolve = done; }));
   const view = render(<App />);
-  fireEvent.click(screen.getByRole('tab', { name: 'Boss' }));
+  fireEvent.click(screen.getByRole('tab', { name: 'Map' }));
   const hud = screen.getByRole('region', { name: 'Cat status' });
   const beforeHud = hud.textContent;
   const beforeBag = screen.getByTestId('bag-count').textContent;

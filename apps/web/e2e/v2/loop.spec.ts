@@ -24,10 +24,23 @@ async function load(page: Page, kind?: MockV2FixtureKind, change?: (save: Save) 
   return save;
 }
 async function tab(page: Page, name: string) {
-  const button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
-  if (await button.getAttribute('aria-selected') !== 'true') await button.click();
-  const panel = page.getByRole('tabpanel', { name, exact: true });
-  await expect(panel).toBeVisible(); return panel;
+  const aliases: Record<string, string> = {
+    Boss: 'Map',
+    Character: 'Hero',
+    Inventory: 'Bag',
+  };
+  const target = aliases[name] ?? name;
+  let button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
+  if ((await button.count()) === 0) {
+    button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
+  }
+  if ((await button.getAttribute('aria-selected')) !== 'true') await button.click();
+  let panel = page.getByRole('tabpanel', { name: target, exact: true });
+  if ((await panel.count()) === 0) {
+    panel = page.getByRole('tabpanel', { name, exact: true });
+  }
+  await expect(panel).toBeVisible();
+  return panel;
 }
 async function check(page: Page, name: string, width: number, reduced: boolean) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -41,6 +54,7 @@ const scenarios = {
     await page.getByTestId('class-picker-choose-button').click();
     await page.getByTestId('class-picker-confirm-button').click();
     await expect(page.getByTestId('class-picker')).toHaveCount(0);
+    await tab(page, 'Character');
     await expect(page.getByRole('region', { name: 'Character' }).getByRole('button', { name: 'Weapon: Twig Sword, Common' })).toBeVisible();
   },
   async idle(page: Page) {
@@ -122,6 +136,7 @@ const scenarios = {
     await page.reload(); await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
     const after = (await raw(page)).state;
     expect([after.level, after.stacks.catKey, after.items.length]).toEqual([before.level, before.stacks.catKey, before.items.length]);
+    await tab(page, 'Character');
     await expect(page.getByRole('region', { name: 'Character' })).toContainText(`Lv ${before.level}`);
   },
 };

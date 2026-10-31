@@ -26,8 +26,10 @@ for (const [width, height, colorScheme] of views) test(`S1 main, Forge and Boss 
   const captures: { label: string; png: string }[] = [];
   for (const label of ['Main', 'Forge', 'Boss']) {
     if (label !== 'Main') {
-      await page.getByRole('tab', { name: label, exact: true }).click();
-      await expect(page.getByRole('tabpanel', { name: label, exact: true })).toBeVisible();
+      const tabTarget = label === 'Boss' ? 'Map' : label;
+      const tab = page.getByRole('tab', { name: tabTarget, exact: true }).or(page.getByRole('tab', { name: label, exact: true }));
+      await tab.click();
+      await expect(page.getByRole('tabpanel', { name: tabTarget, exact: true })).toBeVisible();
     }
     await page.evaluate(() => window.scrollTo(0, 0));
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);

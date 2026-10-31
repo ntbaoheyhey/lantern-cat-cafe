@@ -41,10 +41,23 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
   return session;
 }
 export async function tab(page: Page, name: string) {
-  const button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
-  if (await button.getAttribute('aria-selected') !== 'true') await button.click();
-  const panel = page.getByRole('tabpanel', { name, exact: true });
-  await expect(panel).toBeVisible(); return panel;
+  const aliases: Record<string, string> = {
+    Boss: 'Map',
+    Character: 'Hero',
+    Inventory: 'Bag',
+  };
+  const target = aliases[name] ?? name;
+  let button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
+  if ((await button.count()) === 0) {
+    button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
+  }
+  if ((await button.getAttribute('aria-selected')) !== 'true') await button.click();
+  let panel = page.getByRole('tabpanel', { name: target, exact: true });
+  if ((await panel.count()) === 0) {
+    panel = page.getByRole('tabpanel', { name, exact: true });
+  }
+  await expect(panel).toBeVisible();
+  return panel;
 }
 export async function visibility(page: Page, value: 'visible' | 'hidden') {
   // Headless bringToFront does not reliably hide tabs. Exercise real visibility listeners.

@@ -123,8 +123,8 @@ test.describe('G2 Shell: Primary Actions Visibility & Reachability', () => {
     await page.goto('/');
 
     let interactions = 0;
-    // Interaction 1: Click Boss tab
-    const bossTab = page.getByRole('tab', { name: 'Boss' });
+    // Interaction 1: Click Boss tab (or Map in redesigned rail)
+    const bossTab = page.getByRole('tab', { name: 'Map' }).or(page.getByRole('tab', { name: 'Boss' }));
     await bossTab.click();
     interactions++;
 
@@ -185,7 +185,7 @@ test.describe('G2 Shell: Touch Targets on Phone Sizes', () => {
       // Check bottom nav items
       const navTabs = page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab');
       const count = await navTabs.count();
-      expect(count).toBe(6);
+      expect(count).toBe(7);
 
       for (let i = 0; i < count; i++) {
         const b = await navTabs.nth(i).boundingBox();
@@ -214,7 +214,7 @@ test.describe('G2 Shell: Touch Targets on Phone Sizes', () => {
       expect(bagActionBox!.height).toBeGreaterThanOrEqual(44 - 0.5);
 
       // Open Boss and verify action button
-      await page.getByRole('tab', { name: 'Boss' }).click();
+      await page.getByRole('tab', { name: 'Map' }).or(page.getByRole('tab', { name: 'Boss' })).click();
       const bossAction = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
       await expect(bossAction).toBeVisible();
       const bossActionBox = await bossAction.boundingBox();
@@ -253,7 +253,7 @@ test.describe('G2 Shell: 320x568 Layout Guarantee', () => {
     await expect(equipBest).toBeInViewport();
 
     // Boss: Fight is visible in viewport without scrolling
-    await page.getByRole('tab', { name: 'Boss' }).click();
+    await page.getByRole('tab', { name: 'Map' }).or(page.getByRole('tab', { name: 'Boss' })).click();
     const fightBtn = page.getByRole('button', { name: /^(Fight|Rematch)$/i });
     await expect(fightBtn).toBeInViewport();
 
@@ -295,13 +295,13 @@ test.describe('G2 Shell: Focus Management & Keyboard Navigation', () => {
     await page.goto('/');
 
     // Focus the first tab
-    const charTab = page.getByRole('tab', { name: 'Character' });
-    await charTab.focus();
+    const firstTab = page.getByRole('tab', { name: 'Home' }).or(page.getByRole('tab', { name: 'Character' }));
+    await firstTab.focus();
 
-    // Navigate with ArrowRight to Boss tab
-    await page.keyboard.press('ArrowRight'); // Bag
-    await page.keyboard.press('ArrowRight'); // Boss
-    await expect(page.getByRole('tab', { name: 'Boss' })).toBeFocused();
+    // Navigate with ArrowDown / ArrowRight to Map / Boss tab
+    await page.keyboard.press('ArrowDown'); // Bag
+    await page.keyboard.press('ArrowDown'); // Map
+    await expect(page.getByRole('tab', { name: 'Map' }).or(page.getByRole('tab', { name: 'Boss' }))).toBeFocused();
     await page.keyboard.press('Enter');
 
     // Tab into the panel to reach Fight button
@@ -315,7 +315,7 @@ test.describe('G2 Shell: Focus Management & Keyboard Navigation', () => {
     // Press Enter to activate Fight
     await page.keyboard.press('Enter');
     // Action triggers: fight starts or stage/arena renders
-    await expect(page.getByRole('region', { name: 'Game stage' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Game stage' }).or(page.getByRole('region', { name: 'Boss arena' }))).toBeVisible();
   });
 });
 

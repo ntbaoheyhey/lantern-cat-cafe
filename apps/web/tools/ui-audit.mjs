@@ -41,8 +41,8 @@ if (signedIn) {
 // Save JSON is built in the page-free way: the fixture builder is TS, so ask Vite to serve it.
 const execPath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
 const browser = await chromium.launch({ ...(execPath ? { executablePath: execPath } : {}), args: ['--no-sandbox'] });
-const sizes = [[1280, 720], [390, 844], [320, 568], [844, 390]];
-const tabs = ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help'];
+const sizes = [[1280, 720], [1600, 900], [390, 844], [320, 568], [844, 390]];
+const tabs = ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help'];
 const report = [];
 for (const [w, h] of sizes) {
   const page = await (await browser.newContext({ viewport: { width: w, height: h } })).newPage();
@@ -64,14 +64,18 @@ for (const [w, h] of sizes) {
   await page.reload();
   }
   await page.waitForTimeout(2500);
-  if (w === 1280 || (w === 390 && h === 844)) {
+  if (w === 1280 || w === 1600 || (w === 390 && h === 844)) {
     await page.screenshot({ path: `${out}/home-${w}x${h}.png` });
   }
   for (const t of tabs) {
-    const tab = page.getByRole('tab', { name: t, exact: true }).first();
+    let tab = page.getByRole('tab', { name: t, exact: true }).first();
+    if (!(await tab.count())) {
+      const alias = t === 'Hero' ? 'Character' : t === 'Map' ? 'Boss' : t;
+      tab = page.getByRole('tab', { name: alias, exact: true }).first();
+    }
     if (!(await tab.count())) { report.push(`${w}x${h} missing tab ${t}`); continue; }
     await tab.click(); await page.waitForTimeout(600);
-    const shouldScreenshot = (w === 1280 && t !== 'Forge') || (w === 390 && h === 844 && ['Character', 'Bag', 'Boss'].includes(t));
+    const shouldScreenshot = ((w === 1280 || w === 1600) && t !== 'Forge') || (w === 390 && h === 844 && ['Home', 'Bag', 'Map', 'Hero'].includes(t));
     if (shouldScreenshot) {
       await page.screenshot({ path: `${out}/${t.toLowerCase()}-${w}x${h}.png` });
     }
@@ -79,7 +83,7 @@ for (const [w, h] of sizes) {
       const s = page.getByTestId(`tab-${sub}`);
       if (await s.count()) {
         await s.click(); await page.waitForTimeout(400);
-        if (w === 1280 || (w === 390 && h === 844 && (sub === 'relic' || sub === 'craft'))) {
+        if (w === 1280 || w === 1600 || (w === 390 && h === 844 && (sub === 'relic' || sub === 'craft'))) {
           await page.screenshot({ path: `${out}/forge-${sub}-${w}x${h}.png` });
         }
       }

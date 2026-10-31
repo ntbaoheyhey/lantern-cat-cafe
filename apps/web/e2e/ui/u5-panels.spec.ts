@@ -15,11 +15,12 @@ const VIEWPORTS = [
 const PANELS = ['Forge', 'Boss', 'Help', 'Market'] as const;
 
 async function openPanel(page: Page, tabName: string, width: number): Promise<void> {
+  const label = tabName === 'Boss' ? 'Map' : tabName;
   if (width <= 600) {
     const nav = page.getByRole('navigation', { name: 'Game menu' });
-    await nav.getByRole('tab', { name: tabName, exact: true }).click();
+    await nav.getByRole('tab', { name: label, exact: true }).click();
   } else {
-    await page.getByRole('tab', { name: tabName, exact: true }).click();
+    await page.getByRole('tab', { name: label, exact: true }).click();
   }
   await page.waitForTimeout(300);
 }

@@ -32,10 +32,7 @@ for (const vp of VIEWPORTS) {
       );
       await page.goto('/');
       await page.locator('.v2-shell').waitFor();
-      const tab =
-        vp.width <= 600
-          ? page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab', { name: 'Boss', exact: true })
-          : page.getByRole('tab', { name: 'Boss', exact: true });
+      const tab = page.getByRole('tab', { name: 'Map', exact: true }).or(page.getByRole('tab', { name: 'Boss', exact: true }));
       await tab.click();
       const panel = page.locator('.boss-gate-panel');
       await expect(panel).toBeVisible();

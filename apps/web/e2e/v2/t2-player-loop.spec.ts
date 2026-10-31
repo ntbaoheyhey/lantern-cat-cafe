@@ -2,8 +2,21 @@ import { expect, test, type Page } from '../support/test';
 import { installT2LoopFixture } from '../support/t2-loop-fixture';
 
 async function tab(page: Page, name: string) {
-  await page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true }).click();
-  const panel = page.getByRole('tabpanel', { name, exact: true });
+  const aliases: Record<string, string> = {
+    Boss: 'Map',
+    Character: 'Hero',
+    Inventory: 'Bag',
+  };
+  const target = aliases[name] ?? name;
+  let button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
+  if ((await button.count()) === 0) {
+    button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
+  }
+  if ((await button.getAttribute('aria-selected')) !== 'true') await button.click();
+  let panel = page.getByRole('tabpanel', { name: target, exact: true });
+  if ((await panel.count()) === 0) {
+    panel = page.getByRole('tabpanel', { name, exact: true });
+  }
   await expect(panel).toBeVisible();
   return panel;
 }
@@ -18,8 +31,10 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   await page.getByTestId('class-picker-choose-button').click();
   await page.getByTestId('class-picker-confirm-button').click();
   await expect(page.getByTestId('class-picker')).toHaveCount(0);
+  await tab(page, 'Character');
   const character = page.getByRole('region', { name: 'Character', exact: true });
   await expect(character.getByRole('button', { name: 'Weapon: Nine Lives Edge, Legendary' })).toBeVisible();
+  await tab(page, 'Home');
   const progress = page.getByRole('group', { name: /^Chapter 1 / });
   await expect(progress).toContainText('Round 1');
 
@@ -36,6 +51,7 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   // Reload between equip and craft, retaining the selected class, equipment and materials.
   await page.reload();
   await expect(page.getByTestId('class-picker')).toHaveCount(0);
+  await tab(page, 'Character');
   await expect(character.getByRole('button', { name: equipped!, exact: true })).toBeVisible();
   let forge = await tab(page, 'Forge');
   await forge.getByTestId('tab-salvage').click();

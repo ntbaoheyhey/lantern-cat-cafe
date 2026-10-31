@@ -68,6 +68,12 @@ for (const vp of CHECK_VIEWPORTS) {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.goto('/');
 
+    const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
+    if ((await heroTab.count()) > 0) {
+      await heroTab.click();
+    } else {
+      await page.getByRole('tab', { name: 'Character', exact: true }).click();
+    }
     const character = page.getByRole('region', { name: 'Character', exact: true });
     await expect(character).toBeVisible();
 
@@ -205,9 +211,15 @@ test('capture screenshots', async ({ page }) => {
     await page.emulateMedia({ colorScheme: vp.dark ? 'dark' : 'light' });
     await page.setViewportSize({ width: vp.w, height: vp.h });
     await page.goto('/');
+    const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
+    if ((await heroTab.count()) > 0) {
+      await heroTab.click();
+    } else {
+      await page.getByRole('tab', { name: 'Character', exact: true }).click();
+    }
     await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
     if (vp.w > 600) {
-      await expect(page.getByRole('tabpanel', { name: 'Character', exact: true })).toBeVisible();
+      await expect(page.getByRole('tabpanel', { name: 'Hero', exact: true }).or(page.getByRole('tabpanel', { name: 'Character', exact: true }))).toBeVisible();
     }
     const name = `${screenshotPrefix}-${vp.w}x${vp.h}${vp.dark ? '-dark' : ''}.png`;
     if (writeScreenshots) await page.screenshot({ path: path.join(reportsDir, name) });
