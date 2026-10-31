@@ -210,7 +210,7 @@ Full effects videos were recorded, but retained outside the patch at `/tmp/cxr0-
 
 Branch: `ai/codex-redesign-cxr0`. Clean worktree: `/Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero`. Base: `origin/main` at `d9299af90c653b0eae876b5fc67cf633d874a8cb` (#227, including the earlier Boss panel and audit fixes). Audit tools already exist on main; PR #220 fallback was **not used**. Author checked: `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`.
 
-Commit: see the implementation hash recorded after local verification below. Draft PR will be opened against main after push, with all checks performed locally.
+Implementation commit: `7dce87abce4284114a1dcd3634f5063af50af5f6`. [Draft PR #230](https://github.com/ntbaoheyhey/taskbar-hero/pull/230) targets main; the subsequent report-only commit records this link and hash. All checks were performed locally.
 
 From the repo root:
 
