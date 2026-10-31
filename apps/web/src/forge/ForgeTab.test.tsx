@@ -238,8 +238,8 @@ it('asks to switch accounts when the wallet is not the voucher player', async ()
   wallet.address = `0x${'12'.repeat(20)}`;
   await setup(makeApi({ start: RICH }).api);
   await forge();
-  expect((await screen.findByTestId('mint-wrong-account')).textContent).toBe(
-    'Switch your wallet to 0xabab…abab to mint this Relic.',
+  expect((await screen.findByTestId('mint-wrong-wallet')).textContent).toBe(
+    'This Relic belongs to 0xabab...abab. Switch to that wallet to mint it.',
   );
   expect(screen.queryByRole('button', { name: 'Mint to wallet' })).toBeNull();
 });

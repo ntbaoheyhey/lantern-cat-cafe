@@ -16,6 +16,25 @@ export interface SupabaseGameApiV2Options {
   fetch?: typeof fetch;
 }
 
+/** Parses Retry-After from JSON body or response header, defaulting to 5 s and clamped to 1..300 s. */
+export function parseRetryAfter(bodyVal?: unknown, headerVal?: string | null): number {
+  let val: number | undefined;
+  if (typeof bodyVal === 'number' && Number.isFinite(bodyVal)) {
+    val = bodyVal;
+  } else if (typeof bodyVal === 'string' && bodyVal.trim() !== '') {
+    const n = Number(bodyVal);
+    if (Number.isFinite(n)) val = n;
+  }
+  if (val === undefined && headerVal != null && headerVal.trim() !== '') {
+    const n = Number(headerVal);
+    if (Number.isFinite(n)) val = n;
+  }
+  if (val === undefined) {
+    return 5;
+  }
+  return Math.min(300, Math.max(1, Math.round(val)));
+}
+
 /** Browser transport for the v2 Edge Functions in docs/api-v2.md. */
 export class SupabaseGameApiV2 implements GameApiV2 {
   private readonly root: string;
@@ -32,6 +51,9 @@ export class SupabaseGameApiV2 implements GameApiV2 {
   }
 
   private async post<T>(name: EndpointV2, body: object = {}, retryTransport = false): Promise<T> {
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      throw new GameApiErrorV2('offline', {}, 'offline');
+    }
     const token = this.getToken();
     if (!token) throw new GameApiErrorV2('unauthenticated');
     const headers: Record<string, string> = { 'content-type': 'application/json', authorization: `Bearer ${token}` };
@@ -45,6 +67,9 @@ export class SupabaseGameApiV2 implements GameApiV2 {
         res = await this.fetch(`${this.root}/functions/v1/${name}`, init);
       }
     } catch (e) {
+      if ((typeof navigator !== 'undefined' && !navigator.onLine) || e instanceof TypeError) {
+        throw new GameApiErrorV2('offline', {}, 'offline');
+      }
       throw new GameApiErrorV2('server_error', {}, e instanceof Error ? e.message : String(e));
     }
     let data: unknown;
@@ -55,6 +80,14 @@ export class SupabaseGameApiV2 implements GameApiV2 {
     }
     if (!res.ok) {
       const fields = typeof data === 'object' && data !== null ? data as Record<string, unknown> : {};
+      if (res.status === 429 || (fields.error === 'rate_limited' && (fields.retryAfter !== undefined || res.headers?.has?.('retry-after')))) {
+        const headerVal = res.headers?.get ? (res.headers.get('retry-after') ?? res.headers.get('Retry-After')) : null;
+        const retryAfterS = parseRetryAfter(fields.retryAfter, headerVal);
+        throw new GameApiErrorV2('rate_limited', { retryAfterS }, 'rate_limited');
+      }
+      if (res.status === 503 || fields.error === 'server_busy') {
+        throw new GameApiErrorV2('server_busy', {}, 'server_busy');
+      }
       if (isGameApiErrorCodeV2(fields.error)) {
         throw new GameApiErrorV2(fields.error, {
           reason: fields.reason === 'daily_limit' || fields.reason === 'not_enough_yarn' || fields.reason === 'no_moon_pearl'

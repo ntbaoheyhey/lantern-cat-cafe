@@ -224,8 +224,16 @@ export function StageLayout() {
           awayRef.current = 0;
         }
       }
-      if (event.type === 'error') setNotice(event.message);
-      if (event.type === 'refused') setNotice(getBlockReason(event.code));
+      if (event.type === 'error') {
+        if (event.message !== 'server_busy' && event.message !== 'offline') {
+          setNotice(event.message);
+        }
+      }
+      if (event.type === 'refused') {
+        if (event.code !== 'rate_limited' && event.code !== 'server_busy' && event.code !== 'offline') {
+          setNotice(getBlockReason(event.code));
+        }
+      }
     });
     const visibility = () => {
       if (document.hidden) {
