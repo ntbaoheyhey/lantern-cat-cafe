@@ -40,6 +40,10 @@ Caveats: star counts are popularity, not quality. I opened READMEs for #1, #2, #
 - Output-compression proxies (rtk and similar): our three token rules already cover it; hidden output risks missing errors.
 - Copying any AGPL code (myclaude).
 
+## Wake-up mechanisms in Claude Code (from the official docs, 2026-10-31)
+
+`/loop` (self-paced or fixed), tools CronCreate/CronList/CronDelete and ScheduleWakeup, the Monitor tool, `/goal`; `claude --continue`, `--resume`, `--name`, `--worktree`. Session-scoped: they fire only while the CLI is open and idle; recurring tasks expire after 7 days; a self-paced loop is not restored on resume. Durable options (cloud routines, Desktop scheduled tasks) exist but are not used here. Source: code.claude.com/docs/en/scheduled-tasks and cli-reference.
+
 ## Decisions for the owner
 
 1. Approve replacing the current 7-line `CLAUDE.md` with `CLAUDE.proposed.md` after you have tried the bootstrap prompt once.

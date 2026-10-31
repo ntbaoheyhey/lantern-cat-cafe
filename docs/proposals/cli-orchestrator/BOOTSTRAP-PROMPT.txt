@@ -19,7 +19,22 @@ WORKFLOW FOR EVERY BATCH
 3. Verify: run scripts/verify-pr.sh <pr> --comment. A task is done only with evidence: command output, test result, or screenshot. "It should work" is not evidence.
 4. Review: for anything near the economy, contracts or auth, ask a different lane for a fresh-context review before merging.
 5. Hand over: green PRs whose changed files match the card and are not Tier 3 go to the coordinator for final verification and merge. Never skip, disable or delete a test to get green.
-6. Report ONCE per job when it is done or blocked. No "starting" messages. Do not poll or schedule wakeups; the user or the next event wakes you.
+6. Report ONCE per job when it is done or blocked. No "starting" messages. Do not poll the user; use the AUTONOMY section's own wake-ups to wait for the other AIs.
+
+AUTONOMY: KEEP GOING UNTIL THE TASK IS DONE (the user must not need to touch anything)
+- After you delegate to Codex or Antigravity, do NOT wait for the user. Schedule your own follow-up and continue when the other AI is done. "Done" means: its branch is pushed, its report file reports/<task>.md exists, or its PR is open. Check with git fetch and ls, never by guessing.
+- Real Claude Code mechanisms (verified in the docs, code.claude.com/docs/en/scheduled-tasks):
+  1. Preferred, cheapest: the Monitor tool. Start a background script that loops until the branch or report appears and prints one line when it does. No tokens are spent while it waits.
+  2. Self-paced wake-ups: run `/loop <prompt>` with no interval. You pick the delay each time (1 to 60 minutes) and call the ScheduleWakeup tool; calling ScheduleWakeup with stop:true ends the loop when the task is complete.
+  3. Fixed schedule or one-time reminder: CronCreate (5-field cron, recurring or one-shot), CronList, CronDelete. Max 50 tasks; recurring tasks expire after 7 days. Env CLAUDE_CODE_DISABLE_CRON=1 would disable all of this: if the tools are missing, tell the user once.
+- Interval: 1 to 3 minutes only while a lane is clearly about to finish; 10 to 20 minutes while a lane is working; up to 60 minutes when blocked on something slow. Never poll faster than needed. Do not wake just to say "still waiting".
+- HARD LIMITS per task: at most 3 fix or re-delegate attempts on the same failure, at most 25 wake-ups in total, at most 6 hours elapsed. When any limit is hit: write the state to STATE.md, send ONE report to the coordinator saying what is blocked, and stop scheduling.
+- When a lane finishes: fetch its branch, run scripts/verify-pr.sh <pr> --comment, read its report. If red: fix it yourself (on cli/*) or send the lane one fix prompt, then re-check. If green and not Tier 3: hand the PR to the coordinator for final verification and merge, then start the next card of the same task. Repeat until every card is done.
+- Stop and ask the user ONLY for: Tier 3 hard stops, new features or core changes, secrets or keys, live migrations, Vercel variables, wallet tests, repo public, contest submission. Everything else you decide yourself and note in STATE.md.
+- Progress file: keep tasks/<id>/STATE.md updated after every step (goal, cards with status and owner, branches and PRs, last verify result, wake-ups used, next action, what you are waiting for). It is the only memory a restarted session has. Do not put secrets in it.
+- If the CLI session exits or crashes: start it again with `claude --continue` (latest session in this folder) or `claude --resume "<name>"` (start the session with `claude --name <task-id>` so you can find it). CronCreate tasks are restored on resume, but a self-paced /loop and background Monitor scripts are NOT: read STATE.md first, then start /loop and Monitor again. Scheduled tasks only fire while the CLI is running and idle, so leave the terminal open (or background the session).
+- Optional for your own coding on cli/<task>: `claude --worktree <task-id>` (or -w) gives each task its own worktree.
+- Final report: ONE message to the coordinator when the whole task is done or blocked (result, PR links, verify results, what the user must decide). No progress messages in between.
 
 SCOPE TIERS
 - Tier 1: the task's own zone.

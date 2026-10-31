@@ -14,8 +14,15 @@ Keep this file short. Detail lives in docs/ and tasks/.
 2. Branch from origin/main: `ai/<lane>-<task>` for Codex and Antigravity, `cli/<task>` for CLI Claude. Disjoint file zones.
 3. A task is done only with evidence (test output, screenshot). Verify with `scripts/verify-pr.sh`, never by starting GitHub Actions.
 4. Risky changes get a fresh-context review from another lane. Final verify and merge belong to the coordinator.
-5. Report once per job (done or blocked). No polling, no scheduled wakeups.
+5. Report once per job (done or blocked), to the coordinator.
 6. The plan is a living draft; never say last, final or frozen.
+
+## Autonomy: finish the task without the user
+- After delegating, schedule your own follow-up and continue when the other AI is done (branch pushed, `reports/<task>.md` present, PR open). Tools: Monitor (cheapest; background script, no tokens while waiting), `/loop <prompt>` with no interval (self-paced, ScheduleWakeup, `stop: true` to end), CronCreate/CronList/CronDelete (fixed or one-shot).
+- Interval: 1-3 min only when a lane is about to finish, 10-20 min while it works, up to 60 min when blocked. Never wake just to say "still waiting".
+- Limits per task: 3 fix attempts on one failure, 25 wake-ups, 6 hours. Then write STATE.md, send one report, stop.
+- Keep `tasks/<id>/STATE.md` current (cards, owners, PRs, last verify, wake-ups used, next action). After a crash: `claude --continue` or `claude --resume "<name>"`, read STATE.md, restart `/loop` and Monitor (they are not restored; CronCreate tasks are). Scheduled tasks fire only while the CLI is running and idle.
+- Ask the user only at the hard stops below. Send ONE final report to the coordinator.
 
 ## Hard stops (Tier 3): ask the user first
 contracts/, auth and SIWE, secrets and keys, supabase/migrations and live DB writes, numbers in `packages/game-rules/src/config.ts`, `.github/`, dependency changes, repo public, contest submission, Vercel variables, wallet tests, flipping `VITE_GAME_V2`. New features and core changes (economy, contracts, auth, schema) also need the user's go.
