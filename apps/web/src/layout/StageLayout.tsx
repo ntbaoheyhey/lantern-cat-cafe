@@ -23,6 +23,7 @@ import { usePrefersReducedMotion } from '../motion/reducedMotion';
 import { HudBar } from './hud/HudBar';
 import { SyncStatus } from './hud/SyncStatus';
 import { ClassPicker } from './classpicker/ClassPicker';
+import { LandingHero } from './LandingHero';
 import { BossGatePanel } from './boss/BossGatePanel';
 import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
@@ -468,7 +469,13 @@ export function StageLayout() {
           {state && classId ? (
             <StageCanvas state={state} zoom={zoom} width={stageW} reducedMotion={reducedMotion} onSelectTab={handleSelectTab} />
           ) : (
-            <p className="v2-stage-placeholder">Your adventure starts with a class.</p>
+            <LandingHero
+              onStart={() => {
+                const cta = document.querySelector<HTMLElement>('[data-testid="class-picker-choose-button"]');
+                cta?.scrollIntoView({ block: 'center' });
+                cta?.focus();
+              }}
+            />
           )}
         </div>
 

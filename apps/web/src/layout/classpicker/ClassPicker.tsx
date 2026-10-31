@@ -149,6 +149,7 @@ export function ClassPicker({
   return (
     <div className="class-picker" data-testid="class-picker">
       <div className="class-picker__header">
+        <p className="class-picker__eyebrow">Step 1 of 1 · New game</p>
         <h2 className="class-picker__title">Choose Your Class</h2>
         <p className="class-picker__subtitle">
           Pick your cat's class! You can switch anytime outside boss fights.
