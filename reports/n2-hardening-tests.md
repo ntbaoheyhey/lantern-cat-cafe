@@ -119,6 +119,23 @@ supabase/tests/src/new-migration-security.test.ts
 supabase/tests/src/request-budgets-hardening.test.ts
 ```
 
+Combined implementation/report scope snapshot at evidence commit `f1702f4` (later edits only refine this report):
+
+```text
+$ git diff --stat origin/main...HEAD
+ contracts/test/VoucherReplay.t.sol                 | 105 +++++++++++
+ docs/security-test-matrix.md                       |  28 +--
+ reports/n2-hardening-tests.md                      | 195 +++++++++++++++++++++
+ scripts/check-deno-imports.mjs                     |  79 +++++++++
+ supabase/tests/src/concurrency-hardening.test.ts   | 122 +++++++++++++
+ supabase/tests/src/deno-imports.test.ts            |  64 +++++++
+ supabase/tests/src/new-migration-security.test.ts  |  93 ++++++++++
+ .../tests/src/request-budgets-hardening.test.ts    |  68 +++++++
+ 8 files changed, 742 insertions(+), 12 deletions(-)
+```
+
+The combined `git diff --name-only origin/main...HEAD` is exactly the seven paths above plus `reports/n2-hardening-tests.md`. No product file is changed.
+
 ## 5. Actual local verification
 
 ```text
@@ -162,8 +179,8 @@ cd contracts && forge test: exit 0
   Ran 8 test suites: 96 tests passed, 0 failed, 0 skipped (96 total tests)
 
 node scripts/check-links.mjs --json, baseline: exit 1; 67 files / 809 links / 2 broken
-node scripts/check-links.mjs docs/security-test-matrix.md: exit 0; zero broken
-node scripts/check-links.mjs --json, final: exit 1; 1 existing broken path, no new failures
+node scripts/check-links.mjs docs/security-test-matrix.md: exit 0; 1 file / 19 links / zero broken
+node scripts/check-links.mjs --json, final: exit 1; 67 files / 820 links / 1 existing broken path, no new failures
 git diff --check: exit 0
 git diff --exit-code -- pnpm-workspace.yaml pnpm-lock.yaml: exit 0
 ```
