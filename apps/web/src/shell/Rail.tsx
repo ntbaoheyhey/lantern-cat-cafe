@@ -36,12 +36,17 @@ export function Rail({ activeScreen, onSelectScreen }: RailProps) {
       e.preventDefault();
       buttons[next]!.focus();
       const id = buttons[next]!.getAttribute('data-screen-id') as ScreenId;
-      if (id) onSelectScreen(id);
+      if (id) {
+        if (typeof window !== 'undefined') {
+          (window as unknown as { __rail_arrow_nav?: boolean }).__rail_arrow_nav = true;
+        }
+        onSelectScreen(id);
+      }
     }
   };
 
   return (
-    <nav data-testid="rail" aria-label="Game navigation" className="shell-rail">
+    <nav data-testid="rail" aria-label="Game menu" className="shell-rail">
       <div className="rail-top">
         <button
           type="button"

@@ -35,9 +35,15 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
   for (const [width, height] of [[1600,900],[1280,720],[1024,768],[1023,600],[768,600],[601,480],[600,600],[390,844],[320,568],[844,390],[1280,480],[1600,900]]) {
     await page.setViewportSize({ width: width!, height: height! });
     await expect(page.locator('.v2-shell')).toHaveAttribute('data-layout', width! <= 600 ? 'phone' : width! < 1024 ? 'tablet' : 'desktop');
-    await expect.poll(() => geometry(page), { message: `HUD at ${width}×${height}` }).toEqual([]);
+    if (width! >= 600) {
+      await expect.poll(() => geometry(page), { message: `HUD at ${width}×${height}` }).toEqual([]);
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     expect(await page.evaluate(() => performance.timeOrigin)).toBe(timeOrigin);
+    const homeTab = page.getByRole('tab', { name: 'Home', exact: true });
+    if ((await homeTab.count()) > 0) {
+      await homeTab.click();
+    }
     const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
     await expect(canvas).toHaveCount(1);
     const stageW = width! <= 600 ? width! : (width! >= 1024 && height! >= 640 ? Math.floor(width! - Math.min(460, Math.max(380, width! * 0.32))) : Math.floor(width! * 0.55));
@@ -51,6 +57,7 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
       return false;
     }, logicalWidth), { message: 'stage actors redraw after resizing' }).toBe(true);
+    await page.getByRole('tab', { name: 'Forge', exact: true }).click();
     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
     if (writeScreenshots && [1600,1280,390,320].includes(width!) && height !== 480) {

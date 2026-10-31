@@ -18,7 +18,15 @@ test('G1 stage evidence at the six requested viewports', async ({ page }) => {
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' });
     await page.goto('/');
     await expect(page.locator('.v2-stage-canvas canvas')).toHaveCount(1);
-    await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
+    const heroTab = page.getByRole('tab', { name: 'Hero', exact: true }).or(page.getByRole('tab', { name: 'Character', exact: true }));
+    if ((await heroTab.count()) > 0) {
+      await heroTab.click();
+      await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
+      const homeTab = page.getByRole('tab', { name: 'Home', exact: true });
+      if ((await homeTab.count()) > 0) await homeTab.click();
+    } else {
+      await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
+    }
     if (process.env.SCREENSHOTS === '1') {
       const file = path.join(folder, `${width}x${height}-${scheme}.png`);
       await page.screenshot({ path: file, animations: 'disabled' });

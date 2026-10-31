@@ -29,7 +29,7 @@ export function ScreenFrame({
 }: ScreenFrameProps) {
   const currentDef = SCREEN_REGISTRY.find((s) => s.id === activeScreen);
   const showRail = showRailProp !== undefined ? showRailProp && (currentDef?.rail ?? true) : (currentDef ? currentDef.rail : true);
-  const showHud = Boolean(hudProps && (currentDef ? currentDef.rail : true));
+  const showHud = Boolean(hudProps);
 
   return (
     <div
@@ -50,8 +50,10 @@ export function ScreenFrame({
       )}
 
       <div className="shell-body">
-        {showHud && hudProps && (
+        {showHud && hudProps ? (
           <Hud {...hudProps} />
+        ) : (
+          <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
         )}
 
         <main data-testid="screen" className="shell-screen" tabIndex={-1}>

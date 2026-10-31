@@ -26,9 +26,21 @@ async function loadSave(page: Page, kind: MockV2FixtureKind = 'fresh', change?: 
 }
 
 async function tab(page: Page, name: string) {
-  const button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
+  const aliases: Record<string, string> = {
+    Boss: 'Map',
+    Character: 'Hero',
+    Inventory: 'Bag',
+  };
+  const target = aliases[name] ?? name;
+  let button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
+  if ((await button.count()) === 0) {
+    button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
+  }
   if ((await button.getAttribute('aria-selected')) !== 'true') await button.click();
-  const panel = page.getByRole('tabpanel', { name, exact: true });
+  let panel = page.getByRole('tabpanel', { name: target, exact: true });
+  if ((await panel.count()) === 0) {
+    panel = page.getByRole('tabpanel', { name, exact: true });
+  }
   await expect(panel).toBeVisible();
   return panel;
 }

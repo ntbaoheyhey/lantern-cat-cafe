@@ -32,7 +32,8 @@ export function Hud({
 
   return (
     <header data-testid="hud" className="shell-hud v2-topbar">
-      <div className="hud-left" role="region" aria-label="Cat status">
+      <h1 className="v2-title">Taskbar Hero</h1>
+      <div className="hud-left hud-bar" role="region" aria-label="Cat status">
         <div className="hud-chip-wrap" data-testid="hud-level">
           <LevelXpBar
             level={state.cat.level}

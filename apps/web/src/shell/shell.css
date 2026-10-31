@@ -263,9 +263,82 @@
 }
 
 /* Reduced motion hygiene */
+/* Narrow viewport fallback */
 @media (max-width: 600px) {
+  .app-shell {
+    flex-direction: column-reverse;
+  }
+
+  .shell-hud {
+    height: auto;
+    min-height: 48px;
+    max-height: 88px;
+    padding: 2px 4px;
+    flex-wrap: wrap;
+  }
+
+  .hud-left {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
   .shell-rail {
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    border-right: none;
+    border-top: 1px solid var(--border, #72578d);
+    padding: 0 4px;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    order: 2;
+  }
+
+  .rail-top {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .rail-logo-btn,
+  .rail-fuji {
     display: none;
+  }
+
+  .rail-nav-list {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .rail-item {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 44px;
+    min-height: 44px;
+    height: 48px;
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .rail-item-label {
+    font-size: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+
+  .shell-body {
+    flex: 1;
+    height: calc(100% - 56px);
+    min-height: 0;
+    order: 1;
   }
 }
 

@@ -1028,6 +1028,27 @@
   box-sizing: border-box;
 }
 
+.shell-panel-view.screen-bag,
+.shell-panel-view.screen-map,
+.shell-panel-view.screen-forge,
+.shell-panel-view.screen-hero,
+.shell-panel-view.screen-market,
+.shell-panel-view.screen-help {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-panel-view .v2-tabpanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 .shell-panel-view.screen-home {
   padding: 0;
   display: flex;

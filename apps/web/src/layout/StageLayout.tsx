@@ -62,6 +62,15 @@ export const STAGE_TABS: readonly StageTabDef[] = [
   { id: 'Help', label: 'Help', icon: 'help' },
 ];
 
+function computeStageWidth(width: number, height: number): number {
+  if (width <= 600) return width;
+  if (width >= 1024 && height >= 640) {
+    const panelWidth = Math.min(460, Math.max(380, width * 0.32));
+    return Math.floor(width - panelWidth);
+  }
+  return Math.floor(width * 0.55);
+}
+
 export interface StageLayoutProps {
   initialScreen?: ScreenId;
 }
@@ -183,6 +192,10 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   }, [mode.demo, wallet.address]);
 
   const handleSelectScreen = (newScreen: ScreenId) => {
+    const fromArrowNav = typeof window !== 'undefined' && Boolean((window as unknown as { __rail_arrow_nav?: boolean }).__rail_arrow_nav);
+    if (typeof window !== 'undefined') {
+      (window as unknown as { __rail_arrow_nav?: boolean }).__rail_arrow_nav = false;
+    }
     setScreen(newScreen);
     setVisited((prev) => {
       if (prev.has(newScreen)) return prev;
@@ -190,19 +203,21 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       next.add(newScreen);
       return next;
     });
-    requestAnimationFrame(() => {
-      const panel = document.getElementById(`panel-${newScreen}`);
-      if (panel) {
-        const focusable = panel.querySelector<HTMLElement>(
-          'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
-        );
-        if (focusable) focusable.focus();
-        else {
-          panel.setAttribute('tabindex', '-1');
-          panel.focus();
+    if (!fromArrowNav) {
+      requestAnimationFrame(() => {
+        const panel = document.getElementById(`panel-${newScreen}`);
+        if (panel) {
+          const focusable = panel.querySelector<HTMLElement>(
+            'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
+          );
+          if (focusable) focusable.focus();
+          else {
+            panel.setAttribute('tabindex', '-1');
+            panel.focus();
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   useEffect(() => {
@@ -287,8 +302,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   }
 
   const showRail = !['landing', 'class'].includes(screen);
-  const stageW = width - (showRail ? 92 : 0);
-  const stageH = kind === 'phone' ? stageHeight(width, height) : Math.max(320, height - 56);
+  const stageW = computeStageWidth(width, height);
+  const stageH = stageHeight(width, height);
   const zoom = stageZoom(stageW, stageH);
   const isTall = height >= 820 && width >= 1024;
   const isShortLandscape = height < 480 && width > height;
@@ -363,8 +378,6 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
-      <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
-
       {snapshot.loadFailed && (
         <p role="alert" className="v2-alert">
           Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button>
@@ -477,9 +490,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Hero"
           className="shell-panel-view screen-hero"
-          style={{ display: screen === 'hero' ? 'block' : 'none' }}
+          style={{ display: screen === 'hero' ? 'flex' : 'none' }}
         >
-          <div id="panel-Character">
+          <div id="panel-Character" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Hero</h2>
             <div className="v2-panel-body-inner">
               {state ? (
@@ -497,9 +510,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Bag"
           className="shell-panel-view screen-bag"
-          style={{ display: screen === 'bag' ? 'block' : 'none' }}
+          style={{ display: screen === 'bag' ? 'flex' : 'none' }}
         >
-          <div id="panel-Bag">
+          <div id="panel-Bag" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Bag</h2>
             <div className="v2-panel-body-inner">
               {state ? (
@@ -526,9 +539,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Map"
           className="shell-panel-view screen-map"
-          style={{ display: screen === 'map' ? 'block' : 'none' }}
+          style={{ display: screen === 'map' ? 'flex' : 'none' }}
         >
-          <div id="panel-Boss" role="tabpanel" aria-label="Boss">
+          <div id="panel-Boss" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Map</h2>
             <div className="v2-panel-body-inner">
               {state ? (
@@ -562,9 +575,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Forge"
           className="shell-panel-view screen-forge"
-          style={{ display: screen === 'forge' ? 'block' : 'none' }}
+          style={{ display: screen === 'forge' ? 'flex' : 'none' }}
         >
-          <div id="panel-Forge">
+          <div id="panel-Forge" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Forge</h2>
             <div className="v2-panel-body-inner">
               {state ? (
@@ -633,9 +646,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Market"
           className="shell-panel-view screen-market"
-          style={{ display: screen === 'market' ? 'block' : 'none' }}
+          style={{ display: screen === 'market' ? 'flex' : 'none' }}
         >
-          <div id="panel-Market">
+          <div id="panel-Market" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Market</h2>
             <div className="v2-panel-body-inner">
               {visited.has('market') ? <MarketTab /> : null}
@@ -649,9 +662,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           role="tabpanel"
           aria-label="Help"
           className="shell-panel-view screen-help"
-          style={{ display: screen === 'help' ? 'block' : 'none' }}
+          style={{ display: screen === 'help' ? 'flex' : 'none' }}
         >
-          <div id="panel-Help">
+          <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
               <HelpTab />

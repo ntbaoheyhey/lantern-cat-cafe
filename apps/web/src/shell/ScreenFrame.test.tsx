@@ -52,7 +52,6 @@ describe('ScreenFrame component', () => {
     );
 
     expect(screen.queryByTestId('rail')).toBeNull();
-    expect(screen.queryByTestId('hud')).toBeNull();
 
     rerender(
       <ScreenFrame
@@ -65,7 +64,6 @@ describe('ScreenFrame component', () => {
     );
 
     expect(screen.queryByTestId('rail')).toBeNull();
-    expect(screen.queryByTestId('hud')).toBeNull();
   });
 
   it('supports showRail override', () => {
