@@ -1,0 +1,28 @@
+.action-notice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--sp-2, 8px);
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  margin: var(--sp-2, 8px) 0;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #4a3b5c);
+  border-radius: 4px;
+  color: var(--text, #eee4f5);
+  font-family: var(--font-body, inherit);
+  font-size: 13px;
+  line-height: 1.4;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.action-notice-text {
+  flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action-notice {
+    animation: none;
+    transition: none;
+  }
+}

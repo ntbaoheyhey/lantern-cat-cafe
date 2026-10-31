@@ -13,6 +13,7 @@ import {
 } from './bossGate';
 import { BossKeyHint } from './BossKeyHint';
 import { BossPortrait } from './BossPortrait';
+import { ActionNotice } from '../notice/ActionNotice';
 import './boss.css';
 
 export interface BossGatePanelProps {
@@ -262,6 +263,7 @@ export function BossGatePanel({
       </div>
 
       <div className="boss-gate-actions">
+        <ActionNotice />
         <button
           type="button"
           className="boss-fight-btn pixel-btn"

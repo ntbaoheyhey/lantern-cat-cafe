@@ -21,6 +21,7 @@ import {
   getRelicBlockReason,
   getSalvageBlockReason,
 } from '../../v2text/blockReasons';
+import { ActionNotice } from '../notice/ActionNotice';
 import './ForgePanel.css';
 
 export interface ForgePanelRelic {
@@ -236,6 +237,7 @@ export function ForgePanel({
         <div className="forge-panel-title">Forge Workshop</div>
         <p className="forge-panel-desc">Craft custom gear, salvage materials, or forge daily Relics.</p>
       </header>
+      <ActionNotice />
 
       {/* Tab Navigation */}
       <nav className="forge-nav" role="tablist" aria-label="Forge sections">

@@ -6,6 +6,7 @@ import type { GameLoop } from '../game/gameState';
 import { isDemoVoucher, isUserRejection, mintArgs } from './forgeText';
 import { clearUnreported, saveUnreported, type UnreportedMint } from './mintStore';
 import { reportMint } from './report';
+import { wrongWalletNotice } from '../v2text/errorNotices';
 
 /** Refresh a voucher that expires within this many seconds before sending it to the wallet. */
 const EXPIRY_MARGIN_S = 120;
@@ -51,8 +52,8 @@ export function MintPanel({ voucher, api, loop, onMinted }: MintPanelProps) {
   if (address && address.toLowerCase() !== voucher.player.toLowerCase()) {
     // RelicNFT reverts with NotVoucherPlayer unless the voucher's player sends the tx.
     return (
-      <p className="forge-note" role="alert" data-testid="mint-wrong-account">
-        Switch your wallet to {shortAddress(voucher.player)} to mint this Relic.
+      <p className="forge-note" role="alert" data-testid="mint-wrong-wallet">
+        {wrongWalletNotice(voucher.player)}
       </p>
     );
   }

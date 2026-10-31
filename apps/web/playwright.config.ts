@@ -47,13 +47,14 @@ export default defineConfig({
   projects: [
     {
       name: 'v2-server',
-      testMatch: 'server/**/*.spec.ts',
+      testMatch: ['server/**/*.spec.ts', 'v2/errors-notice.spec.ts'],
       fullyParallel: false,
       use: { baseURL: serverURL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {
       name: 'v2-loop',
       testMatch: 'v2/**/*.spec.ts',
+      testIgnore: ['v2/errors-notice.spec.ts'],
       use: { baseURL: v2URL, viewport: { width: 1280, height: 720 }, launchOptions },
     },
     {

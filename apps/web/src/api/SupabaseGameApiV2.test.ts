@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GameApiErrorV2 } from './GameApiErrorV2';
 import { ERROR_CODES_V2, type BossFightResultV2, type GameApiV2 } from './GameApiV2';
-import { SupabaseGameApiV2 } from './SupabaseGameApiV2';
+import { parseRetryAfter, SupabaseGameApiV2 } from './SupabaseGameApiV2';
 
 const BASE = 'https://example.supabase.co/';
 function setup(response: { status?: number; body?: unknown; raw?: string } = {}, token: string | null | undefined = 't') {
@@ -106,7 +106,7 @@ describe('SupabaseGameApiV2', () => {
 
   it('maps network failures and keeps their message', async () => {
     const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch: () => Promise.reject(new TypeError('offline')) });
-    await expect(api.claim()).rejects.toMatchObject({ code: 'server_error', message: 'offline' });
+    await expect(api.claim()).rejects.toMatchObject({ code: 'offline', message: 'offline' });
   });
 
   it('returns the parsed boss fight and timeline unchanged', async () => {
@@ -174,10 +174,16 @@ it.each(['craft', 'boss'] as const)('%s retries one transport failure with the s
   const body = JSON.parse(String(fetch.mock.calls[0]![1]!.body));
   expect(body.requestId).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
 });
-it.each([400, 409, 500, 503])('never retries HTTP %i or a received response that fails parsing', async status => {
+it.each([400, 409, 500])('never retries HTTP %i or a received response that fails parsing', async status => {
   const fetch = vi.fn(async () => new Response('{}', { status }));
   const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
   await expect(api.craft('rcp.common', 'weapon')).rejects.toMatchObject({ code: 'server_error' });
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
+it('never retries HTTP 503 and rejects with server_busy', async () => {
+  const fetch = vi.fn(async () => new Response('{}', { status: 503 }));
+  const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+  await expect(api.craft('rcp.common', 'weapon')).rejects.toMatchObject({ code: 'server_busy' });
   expect(fetch).toHaveBeenCalledTimes(1);
 });
 it('generates fresh action IDs, bounds a repeated transport failure to two fetches, and does not retry corrupt successes', async () => {
@@ -186,7 +192,58 @@ it('generates fresh action IDs, bounds a repeated transport failure to two fetch
   await api.fightBoss(1); await api.fightBoss(1);
   expect(JSON.parse(String(fetch.mock.calls[0]![1]!.body)).requestId).not.toBe(JSON.parse(String(fetch.mock.calls[1]![1]!.body)).requestId);
   fetch.mockClear().mockRejectedValue(new TypeError('offline'));
-  await expect(api.fightBoss(1)).rejects.toMatchObject({ code: 'server_error' }); expect(fetch).toHaveBeenCalledTimes(2);
+  await expect(api.fightBoss(1)).rejects.toMatchObject({ code: 'offline' }); expect(fetch).toHaveBeenCalledTimes(2);
   fetch.mockClear().mockResolvedValue(new Response('invalid'));
   await expect(api.fightBoss(1)).rejects.toMatchObject({ code: 'server_error' }); expect(fetch).toHaveBeenCalledTimes(1);
+});
+
+describe('parseRetryAfter', () => {
+  it('reads retryAfter from body when present', () => {
+    expect(parseRetryAfter(7, '10')).toBe(7);
+    expect(parseRetryAfter('7', '10')).toBe(7);
+  });
+
+  it('reads retryAfter from header when body is missing', () => {
+    expect(parseRetryAfter(undefined, '12')).toBe(12);
+    expect(parseRetryAfter(null, '15')).toBe(15);
+  });
+
+  it('defaults to 5 s when neither is present or valid', () => {
+    expect(parseRetryAfter(undefined, null)).toBe(5);
+    expect(parseRetryAfter(null, undefined)).toBe(5);
+    expect(parseRetryAfter('invalid', 'bogus')).toBe(5);
+  });
+
+  it('clamps values to 1..300 s', () => {
+    expect(parseRetryAfter(9999)).toBe(300);
+    expect(parseRetryAfter(0)).toBe(1);
+    expect(parseRetryAfter(-10)).toBe(1);
+    expect(parseRetryAfter(150)).toBe(150);
+  });
+});
+
+describe('429 HTTP handling', () => {
+  it('parses 429 with body retryAfter and sets retryAfterS', async () => {
+    const fetch = vi.fn(async () => new Response(JSON.stringify({ error: 'rate_limited', retryAfter: 7 }), { status: 429 }));
+    const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+    await expect(api.claim()).rejects.toMatchObject({ code: 'rate_limited', retryAfterS: 7 });
+  });
+
+  it('parses 429 with header only', async () => {
+    const fetch = vi.fn(async () => new Response(JSON.stringify({ error: 'rate_limited' }), { status: 429, headers: { 'Retry-After': '14' } }));
+    const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+    await expect(api.claim()).rejects.toMatchObject({ code: 'rate_limited', retryAfterS: 14 });
+  });
+
+  it('parses 429 with neither and defaults to 5 s', async () => {
+    const fetch = vi.fn(async () => new Response('{}', { status: 429 }));
+    const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+    await expect(api.claim()).rejects.toMatchObject({ code: 'rate_limited', retryAfterS: 5 });
+  });
+
+  it('clamps 429 retryAfter 9999 to 300 s', async () => {
+    const fetch = vi.fn(async () => new Response(JSON.stringify({ error: 'rate_limited', retryAfter: 9999 }), { status: 429 }));
+    const api = new SupabaseGameApiV2({ baseUrl: BASE, getToken: () => 't', fetch });
+    await expect(api.claim()).rejects.toMatchObject({ code: 'rate_limited', retryAfterS: 300 });
+  });
 });

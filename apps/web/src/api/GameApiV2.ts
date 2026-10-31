@@ -200,10 +200,11 @@ export const ERROR_CODES_V2 = [
   'forge_blocked',
 ] as const;
 
-export type GameApiErrorCodeV2 = (typeof ERROR_CODES_V2)[number];
+export type GameServerErrorCodeV2 = (typeof ERROR_CODES_V2)[number];
+export type GameApiErrorCodeV2 = GameServerErrorCodeV2 | 'server_busy' | 'offline';
 
 /** HTTP status per code (docs/api-v2.md). Refusals of a valid request in the wrong game state are 409. */
-export const HTTP_STATUS_V2: Record<GameApiErrorCodeV2, number> = {
+export const HTTP_STATUS_V2: Record<GameServerErrorCodeV2, number> = {
   unauthenticated: 401,
   invalid_request: 400,
   not_found: 404,
@@ -234,6 +235,8 @@ export interface GameApiErrorBodyV2 {
   stack?: StackId;
   /** `cooldown` only: unix seconds when the fight is possible again. */
   cooldownUntil?: number;
+  /** `rate_limited` only: seconds until retry allowed. */
+  retryAfter?: number;
 }
 
 /** Every v1 code a v2 call can still raise is also a v1 code (compile-time check). */

@@ -7,17 +7,26 @@ export class GameApiErrorV2 extends Error {
   /** `not_enough` only: the first missing stack (body field `stack`; Error.stack is the trace). */
   readonly stackId: StackId | undefined;
   readonly cooldownUntil: number | undefined;
+  readonly retryAfterS: number | undefined;
 
-  constructor(code: GameApiErrorCodeV2, extra: Omit<GameApiErrorBodyV2, 'error'> = {}, message: string = code) {
+  constructor(
+    code: GameApiErrorCodeV2,
+    extra: Omit<GameApiErrorBodyV2, 'error'> & { retryAfterS?: number } = {},
+    message: string = code
+  ) {
     super(message);
     this.name = 'GameApiErrorV2';
     this.code = code;
     this.reason = extra.reason;
     this.stackId = extra.stack;
     this.cooldownUntil = extra.cooldownUntil;
+    this.retryAfterS = extra.retryAfterS ?? extra.retryAfter;
   }
 }
 
 export function isGameApiErrorCodeV2(value: unknown): value is GameApiErrorCodeV2 {
-  return typeof value === 'string' && (ERROR_CODES_V2 as readonly string[]).includes(value);
+  return (
+    typeof value === 'string' &&
+    ((ERROR_CODES_V2 as readonly string[]).includes(value) || value === 'server_busy' || value === 'offline')
+  );
 }
