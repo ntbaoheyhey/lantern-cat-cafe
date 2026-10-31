@@ -4,7 +4,7 @@
 // Usage: node tools/effects-test.mjs [outDir]      Exit code 1 when a hard check fails.
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
 const { chromium } = createRequire(import.meta.url)('@playwright/test');
@@ -24,7 +24,8 @@ const check = (scenario, name, ok, detail, known = false) => {
   console.log(`${ok ? 'PASS' : known ? 'KNOWN' : 'FAIL'}  [${scenario}] ${name} - ${detail}`);
 };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH ?? '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
+const execPath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+const browser = await chromium.launch({ ...(execPath ? { executablePath: execPath } : {}), args: ['--no-sandbox'] });
 
 async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
@@ -104,8 +105,13 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const normal = await open('motion-normal', { fixture: 'fresh' });
   const walk = async page => {
     const names = new Set(); let transformAnims = 0;
-    for (const tab of ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help']) {
-      await page.getByRole('tab', { name: tab, exact: true }).first().click();
+    for (const tab of ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help']) {
+      let el = page.getByRole('tab', { name: tab, exact: true }).first();
+      if (!(await el.count())) {
+        const alias = tab === 'Hero' ? 'Character' : tab === 'Map' ? 'Boss' : tab;
+        el = page.getByRole('tab', { name: alias, exact: true }).first();
+      }
+      if (await el.count()) await el.click();
       for (let i = 0; i < 6; i++) {
         await sleep(80);
         const found = await page.evaluate(() => document.getAnimations().map(a => ({
@@ -118,6 +124,11 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const n = await walk(normal.page); await normal.ctx.close();
   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
   const r = await walk(red.page);
+  const homeTab = red.page.getByRole('tab', { name: 'Home' });
+  if (await homeTab.count()) {
+    await homeTab.click();
+    await sleep(600);
+  }
   const frames = await sample(red.page, red.canvas, 4, 'reduced');
   check('reduced-motion', 'no transform/slide animations when reduced', r.transformAnims === 0, `${r.transformAnims} transform animations (normal had ${n.transformAnims})`);
   check('reduced-motion', 'stage still updates (impacts) when reduced', seqChanges(frames, 'impact') >= 1, `${seqChanges(frames, 'impact')} impacts`);

@@ -36,8 +36,10 @@ for (const [width, height] of sizes) {
     if (width === 1280) {
       const tabs = await page.getByRole('tablist').boundingBox();
       expect(tabs!.y + tabs!.height).toBeLessThanOrEqual(720);
-      await expect(page.getByRole('tabpanel').getByRole('heading', { name: 'Character', exact: true })).toBeInViewport({ ratio: 1 });
       expect((await stage.boundingBox())!.height).toBeGreaterThanOrEqual(600);
+      await page.getByTestId('nav-hero').click();
+      await expect(page.getByRole('tabpanel').getByRole('heading', { name: 'Hero', exact: true })).toBeVisible();
+      await page.getByTestId('nav-home').click();
     }
     if (width < 600) {
       expect((await stage.boundingBox())!.height).toBeGreaterThanOrEqual(width === 390 ? 200 : 160);

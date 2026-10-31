@@ -1004,3 +1004,42 @@
   margin-bottom: var(--sp-2, 8px);
   box-sizing: border-box;
 }
+
+/* 10. Redesign Shell Panels (AGR0) */
+.shell-panel-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.shell-panel-view {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--sp-4, 16px);
+  box-sizing: border-box;
+}
+
+.shell-panel-view.screen-home {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.shell-panel-view.screen-landing,
+.shell-panel-view.screen-class {
+  padding: var(--sp-4, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
