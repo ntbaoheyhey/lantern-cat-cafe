@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Independent shell contract fixture</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px system-ui; background: #211927; color: #f1e7da; }
+  .fixture-shell { display: grid; grid-template: 72px calc(100dvh - 72px) / 140px minmax(0, 1fr); }
+  nav[data-testid="rail"] { grid-row: 1 / -1; padding: 12px; display: flex; flex-direction: column; gap: 12px; background: #302239; }
+  nav a, button { color: inherit; background: #493451; padding: 10px; border: 1px solid #826187; font: inherit; }
+  a[aria-current="page"], button[aria-selected="true"] { background: #775039; }
+  header { display: flex; align-items: center; gap: 16px; padding: 12px; }
+  main { padding: 24px; min-width: 0; overflow: auto; }
+  h1 { font-size: 20px; }
+  [hidden] { display: none !important; }
+  canvas { width: 360px; height: 180px; background: #45314d; }
+</style>
+<div class="fixture-shell" data-game-v2="stage-v2-enabled">
+  <nav data-testid="rail" aria-label="Game navigation">
+    <a data-testid="nav-home" href="#home" aria-current="page">Home</a>
+    <a data-testid="nav-bag" href="#bag">Bag</a>
+    <a data-testid="nav-map" href="#map">Map</a>
+    <a data-testid="nav-forge" href="#forge">Forge</a>
+    <a data-testid="nav-market" href="#market">Market</a>
+    <a data-testid="nav-hero" href="#hero">Hero</a>
+    <a data-testid="nav-help" href="#help">Help</a>
+  </nav>
+  <header data-testid="hud">
+    <span data-testid="hud-gold">Gold 100</span>
+    <span data-testid="hud-shards">Shards 50</span>
+    <span data-testid="hud-keys">Keys 1</span>
+    <span data-testid="hud-level">Level 5</span>
+    <span data-testid="hud-power">Power 100</span>
+    <button data-testid="hud-wallet">Wallet</button>
+  </header>
+  <main data-testid="screen">
+    <h1>Taskbar Hero</h1>
+    <section data-panel="home"><h2>Home</h2><canvas aria-label="Local stage fixture"></canvas></section>
+    <section data-panel="bag" hidden><h2>Bag</h2><p data-testid="bag-count">Bag 1 / 200</p></section>
+    <section data-panel="map" hidden><h2>Map</h2><div aria-label="Chapter Map">Chapter 1</div></section>
+    <section data-panel="forge" hidden><h2>Forge</h2>
+      <div role="tablist" aria-label="Forge options">
+        <button role="tab" data-testid="tab-craft" aria-selected="true">Craft</button>
+        <button role="tab" data-testid="tab-salvage" aria-selected="false">Salvage</button>
+        <button role="tab" data-testid="tab-relic" aria-selected="false">Relic</button>
+      </div>
+      <div data-testid="craft-panel" data-forge="craft"><h3>Craft</h3><button data-testid="craft-btn">Craft item</button></div>
+      <div data-testid="salvage-panel" data-forge="salvage" hidden><h3>Salvage</h3></div>
+      <div data-testid="relic-panel" data-forge="relic" hidden><h3>Relic</h3><button data-testid="relic-forge-btn">Forge Relic</button></div>
+    </section>
+    <section data-panel="market" hidden><h2>Market</h2><div class="market">No local listings</div></section>
+    <section data-panel="hero" hidden><h2>Hero</h2><p data-testid="character-power">Power 100</p></section>
+    <section data-panel="help" hidden><h2>Help</h2><ul data-testid="help-key-sources"><li>Chapter chests</li></ul></section>
+  </main>
+</div>
+<script>
+  // Deliberately does not import the manifest or shared assertion code.
+  document.querySelectorAll('[data-testid^="nav-"]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const panel = link.dataset.testid.slice(4);
+    document.querySelectorAll('[data-testid^="nav-"]').forEach(other => other.removeAttribute('aria-current'));
+    link.setAttribute('aria-current', 'page');
+    document.querySelectorAll('[data-panel]').forEach(section => section.hidden = section.dataset.panel !== panel);
+    history.replaceState(null, '', `#${panel}`);
+  }));
+  document.querySelectorAll('[data-testid^="tab-"]').forEach(tab => tab.addEventListener('click', () => {
+    const name = tab.dataset.testid.slice(4);
+    document.querySelectorAll('[data-testid^="tab-"]').forEach(other => other.setAttribute('aria-selected', String(other === tab)));
+    document.querySelectorAll('[data-forge]').forEach(panel => panel.hidden = panel.dataset.forge !== name);
+  }));
+</script>
+</html>

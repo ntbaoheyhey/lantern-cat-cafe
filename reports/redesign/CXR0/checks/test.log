@@ -1,0 +1,69 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  2 passed (2)
+packages/chain test:       Tests  7 passed (7)
+packages/chain test:    Start at  15:03:27
+packages/chain test:    Duration  444ms (transform 65%, import 19%, worker 12%, tests 3%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  15:03:27
+packages/auth test:    Duration  1.18s (import 53%, tests 34%, transform 12%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  27 passed (27)
+supabase/tests test:       Tests  517 passed (517)
+supabase/tests test:    Start at  15:03:27
+supabase/tests test:    Duration  17.09s (tests 80%, import 13%, transform 7%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  15:03:27
+packages/game-rules test:    Duration  44.32s (tests 93%, transform 5%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  15:04:11
+packages/api-contract test:    Duration  311ms (transform 79%, import 17%, tests 3%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/apps/web
+apps/web test:  ❯ src/map/ChapterMap.test.tsx (10 tests | 1 failed) 13206ms
+apps/web test:    ❯ ChapterMap Component (10)
+apps/web test:      × renders five chapters 5105ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/map/ChapterMap.test.tsx > ChapterMap Component > renders five chapters
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/map/ChapterMap.test.tsx:26:3
+apps/web test:      24|   });
+apps/web test:      25|
+apps/web test:      26|   it('renders five chapters', () => {
+apps/web test:        |   ^
+apps/web test:      27|     render(<ChapterMap currentChapter={1} clearedChapters={[]} />);
+apps/web test:      28|
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+apps/web test:  Test Files  1 failed | 106 passed (107)
+apps/web test:       Tests  1 failed | 1273 passed (1274)
+apps/web test:    Start at  15:04:12
+apps/web test:    Duration  27.55s (environment 48%, tests 35%, import 9%, transform 7%)
+apps/web test: Environment  jsdom was created 107 times · 120.30s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/.codex/worktrees/redesign-cxr0/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
