@@ -94,7 +94,7 @@ test('G1 demo action feedback, resize lifecycle and three plain claims', async (
   await page.getByRole('tab', { name: 'Forge', exact: true }).click();
   await page.getByRole('button', { name: /^Craft Common Weapon/ }).click();
   const craft = await feedback(page, page.getByRole('button', { name: 'Confirm Craft', exact: true }));
-  await page.getByRole('tab', { name: 'Boss', exact: true }).click();
+  await page.getByRole('tab', { name: 'Map', exact: true }).or(page.getByRole('tab', { name: 'Boss', exact: true })).click();
   const fight = await feedback(page, page.getByRole('button', { name: 'Fight', exact: true }));
   const entry = { before, after, plainClaimRebuilds: rebuilds, feedback: { equip, craft, fight }, visibility: 'synthetic hidden/visible events, including resize while paused' };
   fs.mkdirSync(path.dirname(report), { recursive: true });

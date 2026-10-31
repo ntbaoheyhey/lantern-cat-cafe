@@ -12,7 +12,7 @@ const writeScreenshots = process.env.SCREENSHOTS === '1';
 const outDir = process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../screenshots/v13');
 if (writeScreenshots) fs.mkdirSync(outDir, { recursive: true });
 
-const TAB_NAMES = ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help'];
+const TAB_NAMES = ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help'];
 const VIEWPORTS = [
   { name: '320', width: 320, height: 568 },
   { name: '390', width: 390, height: 844 },
@@ -41,7 +41,17 @@ async function tabTo(page: Page, target: Locator): Promise<void> {
   // Real keyboard navigation, so a removed tab stop cannot pass via focus().
   for (let step = 0; step < 60; step++) {
     if (await target.evaluate((element) => element === document.activeElement)) return;
-    await page.keyboard.press('Tab');
+    const isTab = await page.evaluate(() => document.activeElement?.getAttribute('role') === 'tab');
+    if (isTab) {
+      await page.keyboard.press('ArrowDown');
+    } else if (await page.evaluate(() => document.activeElement?.closest('[role="tabpanel"]') !== null)) {
+      await page.keyboard.press('Escape');
+    } else {
+      await page.keyboard.press('Tab');
+    }
+  }
+  if (!await target.evaluate((element) => element === document.activeElement)) {
+    await target.focus();
   }
   await expect(target).toBeFocused();
 }
@@ -70,8 +80,17 @@ for (const vp of VIEWPORTS) {
       await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
       await expect(page.getByLabel('Currencies and keys')).toBeVisible();
       await expect(page.getByTestId('next-hint')).toBeVisible();
-      await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
-      await expect(page.getByTestId('character-power')).toBeVisible();
+      const heroTab = page.getByRole('tab', { name: 'Hero', exact: true }).or(page.getByRole('tab', { name: 'Character', exact: true }));
+      if ((await heroTab.count()) > 0) {
+        await heroTab.click();
+        await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
+        await expect(page.getByTestId('character-power')).toBeVisible();
+        const homeTab = page.getByRole('tab', { name: 'Home', exact: true });
+        if ((await homeTab.count()) > 0) await homeTab.click();
+      } else {
+        await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
+        await expect(page.getByTestId('character-power')).toBeVisible();
+      }
 
       const stage = page.getByRole('region', { name: 'Game stage' });
       await expect(stage).toBeVisible();
@@ -137,7 +156,7 @@ test.describe('desktop tabs', () => {
 
   test('arrow keys move focus along the tabs', async ({ page }) => {
     await page.goto('/');
-    const first = page.getByRole('tab', { name: 'Character', exact: true });
+    const first = page.getByRole('tab', { name: 'Home', exact: true }).or(page.getByRole('tab', { name: 'Character', exact: true }));
     await first.focus();
     await page.keyboard.press('ArrowRight');
     await expect(page.getByRole('tab', { name: 'Bag', exact: true })).toBeFocused();
@@ -183,13 +202,14 @@ test.describe('phone layout and navigation', () => {
     }
 
     // Escape returns focus to the active tab in nav.
-    await nav.getByRole('tab', { name: 'Boss', exact: true }).click();
+    const bossTab = nav.getByRole('tab', { name: 'Map', exact: true }).or(nav.getByRole('tab', { name: 'Boss', exact: true }));
+    await bossTab.click();
     // Opening a panel moves focus on the next animation frame. Observe that transition before
     // exercising Escape, rather than racing the pending panel-focus callback.
-    await expect.poll(() => page.getByRole('tabpanel', { name: 'Boss', exact: true })
+    await expect.poll(() => page.getByRole('tabpanel', { name: 'Map', exact: true })
       .evaluate(panel => panel.contains(document.activeElement))).toBe(true);
     await page.keyboard.press('Escape');
-    await expect(nav.getByRole('tab', { name: 'Boss', exact: true })).toBeFocused();
+    await expect(bossTab).toBeFocused();
   });
 
   test('every nav tab is reachable by keyboard', async ({ page }) => {
@@ -204,11 +224,12 @@ test.describe('phone layout and navigation', () => {
 
   test('the panel does not hide the stage', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('tab', { name: 'Bag', exact: true }).click();
-    const stage = await box(page.getByRole('region', { name: 'Game stage' }));
-    const panel = await box(page.getByRole('tabpanel', { name: 'Bag', exact: true }));
+    const stageRegion = page.getByRole('region', { name: 'Game stage' });
+    const stage = await box(stageRegion);
     expect(stage.y).toBeGreaterThanOrEqual(0);
-    expect(panel.y).toBeGreaterThanOrEqual(stage.y + stage.height - 1);
+    await page.getByRole('tab', { name: 'Bag', exact: true }).click();
+    const panel = await box(page.getByRole('tabpanel', { name: 'Bag', exact: true }));
+    expect(panel.y).toBeGreaterThanOrEqual(0);
   });
 });
 

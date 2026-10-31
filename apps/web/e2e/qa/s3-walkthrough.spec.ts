@@ -116,9 +116,12 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
     await load(page, 'bossReadyStrong');
     expect((await raw(page)).state.stacks.catKey).toBe(1);
 
-    const bossTab = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: 'Boss' });
+    const bossTab = page
+      .getByRole('tablist', { name: 'Game panel tabs' })
+      .getByRole('tab', { name: 'Map' })
+      .or(page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: 'Boss' }));
     await bossTab.click();
-    const panel = page.getByRole('tabpanel', { name: 'Boss' });
+    const panel = page.getByRole('tabpanel', { name: 'Map' }).or(page.getByRole('tabpanel', { name: 'Boss' }));
     await panel.getByRole('button', { name: 'Fight', exact: true }).click();
 
     // Arena canvas shows

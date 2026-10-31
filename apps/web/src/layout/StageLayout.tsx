@@ -20,8 +20,6 @@ import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapsh
 import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
 import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
-import { HudBar } from './hud/HudBar';
-import { SyncStatus } from './hud/SyncStatus';
 import { ClassPicker } from './classpicker/ClassPicker';
 import { LandingHero } from './LandingHero';
 import { BossGatePanel } from './boss/BossGatePanel';
@@ -35,7 +33,6 @@ import { BossArena } from '../game/arena/BossArena';
 import { HowToPlay } from '../onboarding/HowToPlay';
 import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { TabIcon } from './tabIcons';
-import { WalletButton } from '../wallet/WalletButton';
 import { BagPanel } from './bag/BagPanel';
 import { equipBest } from './bag/equipRules';
 import { CharacterPanel } from './character/CharacterPanel';
@@ -44,6 +41,8 @@ import { HelpTab } from './HelpTab';
 import { layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
 import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
+import { ScreenFrame } from '../shell/ScreenFrame';
+import { RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
 import './layout.css';
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
@@ -63,83 +62,6 @@ export const STAGE_TABS: readonly StageTabDef[] = [
   { id: 'Help', label: 'Help', icon: 'help' },
 ];
 
-function TabButtons({
-  active,
-  onSelect,
-  className,
-}: {
-  active: StageTabName;
-  onSelect: (tab: StageTabName) => void;
-  className: string;
-}) {
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    const keys: Record<string, number> = { ArrowRight: 1, ArrowLeft: -1 };
-    const buttons = [...(listRef.current?.querySelectorAll<HTMLElement>('[role="tab"]') ?? [])];
-    const at = buttons.indexOf(document.activeElement as HTMLElement);
-    if (at < 0) return;
-    let next: number | null = null;
-    if (e.key in keys) next = (at + keys[e.key]! + buttons.length) % buttons.length;
-    else if (e.key === 'Home') next = 0;
-    else if (e.key === 'End') next = buttons.length - 1;
-    if (next === null) return;
-    e.preventDefault();
-    buttons[next]!.focus();
-  };
-
-  return (
-    <div role="tablist" aria-label="Game panel tabs" className={className} ref={listRef} onKeyDown={onKeyDown}>
-      {STAGE_TABS.map(({ id, label, icon }) => (
-        <button
-          key={id}
-          role="tab"
-          id={`tab-${id}`}
-          aria-label={label}
-          aria-selected={active === id}
-          aria-controls={`panel-${id}`}
-          className="v2-tab"
-          onClick={() => onSelect(id)}
-        >
-          <span className="v2-tab-icon">
-            {icon === 'help' ? <TabIcon /> : <PixelIcon name={icon} />}
-          </span>
-          <span className="v2-tab-label">{label}</span>
-        </button>
-      ))}
-    </div>
-  );
-}
-
-function ActivePanel({
-  tab,
-  label,
-  hidden,
-  children,
-}: {
-  tab: StageTabName;
-  label: string;
-  hidden: boolean;
-  children: ReactNode;
-}) {
-  return (
-    <div
-      role="tabpanel"
-      id={`panel-${tab}`}
-      aria-label={label}
-      className="v2-tabpanel"
-      hidden={hidden}
-    >
-      <h2 className="v2-tabpanel-title">{label}</h2>
-      <div className="v2-panel-body-inner">{children}</div>
-    </div>
-  );
-}
-
-/**
- * Stage-first layout for Cat RPG v2.
- * Single CSS grid fitted to the window (100dvh). No whole-page re-render on a timer.
- */
 function computeStageWidth(width: number, height: number): number {
   if (width <= 600) return width;
   if (width >= 1024 && height >= 640) {
@@ -149,25 +71,13 @@ function computeStageWidth(width: number, height: number): number {
   return Math.floor(width * 0.55);
 }
 
-export function StageLayout() {
+export interface StageLayoutProps {
+  initialScreen?: ScreenId;
+}
+
+export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const { width, height } = useViewport();
   const kind = layoutKind(width);
-  const stageW = computeStageWidth(width, height);
-  const stageH = stageHeight(width, height);
-  const zoom = stageZoom(stageW, stageH);
-  const [tab, setTab] = useState<StageTabName>('Character');
-  const [visited, setVisited] = useState<Set<StageTabName>>(() => new Set<StageTabName>(['Character']));
-
-  useEffect(() => {
-    setVisited((prev) => {
-      if (prev.has(tab)) return prev;
-      const next = new Set(prev);
-      next.add(tab);
-      return next;
-    });
-  }, [tab]);
-  const phone = kind === 'phone';
-  const navRef = useRef<HTMLElement>(null);
   const loop = getGameLoopV2();
   const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
   const wallet = useAccount();
@@ -183,15 +93,33 @@ export function StageLayout() {
   const bossRequest = useRef(false);
   const mode = useGameModeV2();
   const state = snapshot.state;
+  const classId = state?.cat.classId;
+
+  const [screen, setScreen] = useState<ScreenId>(() => initialScreen ?? (state && !classId ? 'class' : 'home'));
+  const [visited, setVisited] = useState<Set<ScreenId>>(() => new Set<ScreenId>(['home', 'hero']));
+
+  useEffect(() => {
+    if (initialScreen) {
+      setScreen(initialScreen);
+    } else if (state && !state.cat.classId) {
+      setScreen('class');
+    } else if (state && state.cat.classId && (screen === 'class' || screen === 'landing')) {
+      setScreen('home');
+    }
+  }, [state?.cat.classId, initialScreen]);
+
+  const phone = kind === 'phone';
+  const navRef = useRef<HTMLElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const [chapter, setChapter] = useState<number | null>(null);
   const fight = presentation.fight;
-  // Input guards use live request state; displayed values use the held snapshot.
   const actionBusy = presentation.hold ? 'fightBoss' : liveSnapshot.busy;
   const motion = useRef(reducedMotion); motion.current = reducedMotion;
+
   useEffect(() => {
     if (reducedMotion && presentation.hold) presentBoss({ type: 'release' });
   }, [reducedMotion, presentation.hold]);
+
   const [gains, setGains] = useState<GainsV2 | null>(null);
   const [away, setAway] = useState(0);
   const [welcome, setWelcome] = useState(false);
@@ -248,7 +176,6 @@ export function StageLayout() {
     };
     document.addEventListener('visibilitychange', visibility);
     void loop.start();
-    // No timer interval here! PIECE 4 satisfied.
     return () => {
       queue.dispose();
       if (equipQueue.current === queue) equipQueue.current = null;
@@ -264,34 +191,45 @@ export function StageLayout() {
     setMintedNonce(null);
   }, [mode.demo, wallet.address]);
 
-  // Focus moves into newly opened panel and back to its tab on Escape
-  const handleSelectTab = (newTab: StageTabName) => {
-    setTab(newTab);
-    requestAnimationFrame(() => {
-      const panel = document.getElementById(`panel-${newTab}`);
-      if (panel) {
-        const focusable = panel.querySelector<HTMLElement>(
-          'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
-        );
-        if (focusable) focusable.focus();
-        else {
-          panel.setAttribute('tabindex', '-1');
-          panel.focus();
-        }
-      }
+  const handleSelectScreen = (newScreen: ScreenId) => {
+    const fromArrowNav = typeof window !== 'undefined' && Boolean((window as unknown as { __rail_arrow_nav?: boolean }).__rail_arrow_nav);
+    if (typeof window !== 'undefined') {
+      (window as unknown as { __rail_arrow_nav?: boolean }).__rail_arrow_nav = false;
+    }
+    setScreen(newScreen);
+    setVisited((prev) => {
+      if (prev.has(newScreen)) return prev;
+      const next = new Set(prev);
+      next.add(newScreen);
+      return next;
     });
+    if (!fromArrowNav) {
+      requestAnimationFrame(() => {
+        const panel = document.getElementById(`panel-${newScreen}`);
+        if (panel) {
+          const focusable = panel.querySelector<HTMLElement>(
+            'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
+          );
+          if (focusable) focusable.focus();
+          else {
+            panel.setAttribute('tabindex', '-1');
+            panel.focus();
+          }
+        }
+      });
+    }
   };
 
   useEffect(() => {
     const onKey = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') {
-        const activeTabEl = document.getElementById(`tab-${tab}`);
+        const activeTabEl = document.getElementById(`tab-${screen}`);
         activeTabEl?.focus();
       }
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [tab]);
+  }, [screen]);
 
   const retryMintConfirmation = async () => {
     if (!unreported || savingMint || mode.demo || !wallet.isConnected) return;
@@ -310,7 +248,6 @@ export function StageLayout() {
     }
   };
 
-  const classId = state?.cat.classId;
   const stats =
     state && classId
       ? v2.deriveStats(
@@ -347,172 +284,237 @@ export function StageLayout() {
       ? `Equip best (+${upgrades.length}) · Equip better gear`
       : `Equip best (+${upgrades.length})`;
     handleHintAction = () => {
-      handleSelectTab('Bag');
+      handleSelectScreen('bag');
       if (presentation.hold) return;
       upgrades.forEach((u) => equipQueue.current?.equip(u.itemId, u.slot));
     };
   } else if (isBossReady) {
     hintText = 'Boss ready';
     handleHintAction = () => {
-      handleSelectTab('Boss');
+      handleSelectScreen('map');
     };
   } else {
     const gated = state?.progress.gated;
     hintText = `Next: ${gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}`;
     handleHintAction = () => {
-      handleSelectTab(gated ? 'Bag' : 'Boss');
+      handleSelectScreen(gated ? 'bag' : 'map');
     };
   }
 
+  const showRail = !['landing', 'class'].includes(screen);
+  const stageW = computeStageWidth(width, height);
+  const stageH = stageHeight(width, height);
+  const zoom = stageZoom(stageW, stageH);
   const isTall = height >= 820 && width >= 1024;
   const isShortLandscape = height < 480 && width > height;
 
-  return (
-    <div
-      className="v2-shell"
-      data-game-v2={import.meta.env.VITE_GAME_V2 === '1' ? 'stage-v2-enabled' : undefined}
-      data-layout={kind}
-      data-tall={isTall ? 'true' : undefined}
-      data-short-landscape={isShortLandscape ? 'true' : undefined}
-      style={{ '--stage-h': `${stageH}px` } as CSSProperties}
-    >
-      <header className="v2-topbar">
-        <h1 className="v2-title">Taskbar Hero</h1>
-
-        {state && <HudBar state={state} power={stats ? Math.round(v2.powerRating(stats)) : 0} />}
-
-        <div className="v2-hint" data-testid="next-hint">
-          <span className="v2-hint-lead" aria-hidden="true">
-            Next
-          </span>
-          <button type="button" className="v2-hint-btn" onClick={handleHintAction}>
-            {hintText}
+  const relicFooter = (
+    <>
+      <p className="forge-note">
+        Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free
+        test AVAX and costs no real money.
+      </p>
+      {unreported ? (
+        <div role="status">
+          <p>
+            {mode.demo
+              ? 'Sign in to finish saving your minted Relic.'
+              : 'Your Relic was minted. Finish saving its confirmation.'}
+          </p>
+          <button
+            disabled={savingMint || mode.demo || !wallet.isConnected}
+            onClick={() => {
+              void retryMintConfirmation();
+            }}
+          >
+            {savingMint ? 'Saving…' : 'Retry saving mint confirmation'}
           </button>
         </div>
-
-        <div className="v2-wallet">
-          <WalletButton />
-          <span className="v2-wallet-icon" aria-hidden="true">
-            <PixelIcon name="bag" />
-          </span>
-        </div>
-
-        <div className="v2-topbar-status">
-          <p
-            className="v2-mode-note"
-            title={
-              mode.demo
-                ? 'Demo mode — progress is saved in this browser.'
-                : 'Signed in — progress is saved to your account.'
-            }
-          >
-            <span className="v2-mode-full">
-              {mode.demo
-                ? 'Demo mode — progress is saved in this browser.'
-                : 'Signed in — progress is saved to your account.'}
-            </span>
-            <span aria-hidden="true">
-              {mode.demo ? 'Demo · saved in this browser' : 'Signed in · saved to your account'}
-            </span>{' '}
-            {mode.notice}
-          </p>
-          <div data-slot="sync-status" className="v2-sync-status-slot"><SyncStatus status={syncStatus} /></div>
-        </div>
-      </header>
-
-      <main className="v2-main">
-        {snapshot.loadFailed && (
-          <p role="alert" className="v2-alert">
-            Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button>
-          </p>
-        )}
-        {state && !classId && (
-          <ClassPicker
-            locked={snapshot.busy !== null}
-            busy={snapshot.busy === 'chooseClass'}
-            onChoose={(id) => {
-              void loop.chooseClass(id);
+      ) : (
+        (voucher ?? state?.forge.pending) &&
+        (voucher ?? state?.forge.pending)!.signature !== null &&
+        (voucher ?? state?.forge.pending)!.nonce !== mintedNonce && (
+          <MintPanel
+            voucher={(voucher ?? state!.forge.pending)! as RelicVoucher}
+            api={getGameApi()}
+            loop={getGameLoop()}
+            onMinted={(mint, confirmed) => {
+              setVoucher(null);
+              setMintedNonce(mint.nonce);
+              if (confirmed) {
+                setUnreported(null);
+                setNotice('Relic minted. In your wallet!');
+                void loop.retry();
+              } else {
+                setUnreported(mint);
+                setNotice('Relic minted. Finish saving its confirmation below.');
+              }
             }}
           />
-        )}
-        {fight && classId && (
-          <div className="v2-fight-result">
-            <BossArena
-              result={fight.result}
-              chapter={fight.chapter}
-              classId={classId}
-              catMaxHp={fight.maxHp}
-              reducedMotion={reducedMotion}
-              complete={fight.complete}
-              onDone={() => presentBoss({ type: 'release' })}
-            />
-            {fight.complete && (
-              <>
-                <p role="status">{fight.result.won ? 'Victory!' : 'Defeat. Your key was kept.'}</p>
-                {fight.result.chest ? (
-                  <ChestReveal
-                    chest={fight.result.chest}
-                    firstClear={fight.firstClear}
-                    chapter={fight.chapter}
-                    onDone={() => presentBoss({ type: 'close' })}
-                  />
-                ) : (
-                  <button onClick={() => presentBoss({ type: 'close' })}>Back to exploring</button>
-                )}
-              </>
-            )}
-          </div>
-        )}
-        {welcome && gains && <WelcomeBack gains={gains} awaySeconds={away} onClose={() => setWelcome(false)} />}
+        )
+      )}
+    </>
+  );
 
-        <div role="region" aria-label="Game stage" className="v2-stage">
-          {state && classId ? (
-            <StageCanvas state={state} zoom={zoom} width={stageW} reducedMotion={reducedMotion} onSelectTab={handleSelectTab} />
-          ) : (
-            <LandingHero
-              onStart={() => {
-                const cta = document.querySelector<HTMLElement>('[data-testid="class-picker-choose-button"]');
-                cta?.scrollIntoView({ block: 'center' });
-                cta?.focus();
+  return (
+    <ScreenFrame
+      activeScreen={screen}
+      onSelectScreen={handleSelectScreen}
+      showRail={!phone}
+      dataLayout={kind}
+      dataTall={isTall ? 'true' : undefined}
+      dataShortLandscape={isShortLandscape ? 'true' : undefined}
+      style={{ '--stage-h': `${stageH}px` } as CSSProperties}
+      hudProps={
+        state
+          ? {
+              state,
+              power: stats ? Math.round(v2.powerRating(stats)) : 0,
+              syncStatus,
+              hintText,
+              onHintAction: handleHintAction,
+              mode,
+            }
+          : null
+      }
+    >
+      {snapshot.loadFailed && (
+        <p role="alert" className="v2-alert">
+          Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button>
+        </p>
+      )}
+
+      {notice && (
+        <p role="status" className="v2-action-notice">
+          {notice}
+          <button aria-label="Dismiss message" onClick={() => setNotice('')}>
+            ×
+          </button>
+        </p>
+      )}
+
+      {fight && classId && (
+        <div className="v2-fight-result">
+          <BossArena
+            result={fight.result}
+            chapter={fight.chapter}
+            classId={classId}
+            catMaxHp={fight.maxHp}
+            reducedMotion={reducedMotion}
+            complete={fight.complete}
+            onDone={() => presentBoss({ type: 'release' })}
+          />
+          {fight.complete && (
+            <>
+              <p role="status">{fight.result.won ? 'Victory!' : 'Defeat. Your key was kept.'}</p>
+              {fight.result.chest ? (
+                <ChestReveal
+                  chest={fight.result.chest}
+                  firstClear={fight.firstClear}
+                  chapter={fight.chapter}
+                  onDone={() => presentBoss({ type: 'close' })}
+                />
+              ) : (
+                <button onClick={() => presentBoss({ type: 'close' })}>Back to exploring</button>
+              )}
+            </>
+          )}
+        </div>
+      )}
+
+      {welcome && gains && <WelcomeBack gains={gains} awaySeconds={away} onClose={() => setWelcome(false)} />}
+
+      <div className="shell-panel-container">
+        {/* Landing screen */}
+        <div
+          id="panel-landing"
+          role="tabpanel"
+          aria-label="Landing"
+          className="shell-panel-view screen-landing"
+          style={{ display: screen === 'landing' ? 'flex' : 'none' }}
+        >
+          <LandingHero onStart={() => handleSelectScreen('class')} />
+        </div>
+
+        {/* Class picker screen */}
+        <div
+          id="panel-class"
+          role="tabpanel"
+          aria-label="Class"
+          className="shell-panel-view screen-class"
+          style={{ display: screen === 'class' ? 'flex' : 'none' }}
+        >
+          {state && !classId ? (
+            <ClassPicker
+              locked={snapshot.busy !== null}
+              busy={snapshot.busy === 'chooseClass'}
+              onChoose={(id) => {
+                void loop.chooseClass(id);
+                handleSelectScreen('home');
               }}
             />
+          ) : null}
+        </div>
+
+        {/* Home screen (stage) */}
+        <div
+          id="panel-home"
+          role="tabpanel"
+          aria-label="Home"
+          className="shell-panel-view screen-home"
+          style={{ display: screen === 'home' ? 'flex' : 'none' }}
+        >
+          <div role="region" aria-label="Game stage" className="v2-stage">
+            {state && classId ? (
+              <StageCanvas
+                state={state}
+                zoom={zoom}
+                width={stageW}
+                reducedMotion={reducedMotion}
+                onSelectTab={(tabName) => handleSelectScreen(tabNameToScreenId(tabName))}
+              />
+            ) : (
+              <LandingHero onStart={() => handleSelectScreen('class')} />
+            )}
+          </div>
+          {gains && !welcome && (
+            <div className="v2-recent-loot">
+              <LootSummary loot={gains} heading="Recent finds" />
+            </div>
           )}
         </div>
 
-        <section className="v2-panel" aria-label="Game panel">
-          {notice && (
-            <p role="status" className="v2-action-notice">
-              {notice}
-              <button aria-label="Dismiss message" onClick={() => setNotice('')}>
-                ×
-              </button>
-            </p>
-          )}
-          {isTall && state && (
-            <div className="v2-character-compact-strip" role="region" aria-label="Character compact">
-              <CharacterPanel state={state} compact={true} onSelectSlot={() => handleSelectTab('Bag')} />
-            </div>
-          )}
-
-          {!phone && <TabButtons active={tab} onSelect={handleSelectTab} className="v2-tabs" />}
-
-          <div className="v2-panel-body">
-            {gains && !welcome && (
-              <div className="v2-recent-loot">
-                <LootSummary loot={gains} heading="Recent finds" />
-              </div>
-            )}
-            {/* Character tab */}
-            <ActivePanel tab="Character" label="Character" hidden={tab !== 'Character'}>
+        {/* Hero tab (character sheet) */}
+        <div
+          id="panel-hero"
+          role="tabpanel"
+          aria-label="Hero"
+          className="shell-panel-view screen-hero"
+          style={{ display: screen === 'hero' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Character" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Hero</h2>
+            <div className="v2-panel-body-inner">
               {state ? (
-                <CharacterPanel state={state} onSelectSlot={() => handleSelectTab('Bag')} />
+                <CharacterPanel state={state} onSelectSlot={() => handleSelectScreen('bag')} />
               ) : (
                 <p>Loading your cat…</p>
               )}
-            </ActivePanel>
+            </div>
+          </div>
+        </div>
 
-            {/* Bag tab */}
-            <ActivePanel tab="Bag" label="Bag" hidden={tab !== 'Bag'}>
+        {/* Bag tab */}
+        <div
+          id="panel-bag"
+          role="tabpanel"
+          aria-label="Bag"
+          className="shell-panel-view screen-bag"
+          style={{ display: screen === 'bag' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Bag" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Bag</h2>
+            <div className="v2-panel-body-inner">
               {state ? (
                 <BagPanel
                   state={state}
@@ -527,10 +529,21 @@ export function StageLayout() {
               ) : (
                 <p>Loading your cat…</p>
               )}
-            </ActivePanel>
+            </div>
+          </div>
+        </div>
 
-            {/* Boss tab */}
-            <ActivePanel tab="Boss" label="Boss" hidden={tab !== 'Boss'}>
+        {/* Map tab */}
+        <div
+          id="panel-map"
+          role="tabpanel"
+          aria-label="Map"
+          className="shell-panel-view screen-map"
+          style={{ display: screen === 'map' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Boss" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Map</h2>
+            <div className="v2-panel-body-inner">
               {state ? (
                 <BossGatePanel
                   state={state}
@@ -552,136 +565,139 @@ export function StageLayout() {
               ) : (
                 <p>Loading your cat…</p>
               )}
-            </ActivePanel>
+            </div>
+          </div>
+        </div>
 
-            {/* Forge tab */}
-            <ActivePanel tab="Forge" label="Forge" hidden={tab !== 'Forge'}>
+        {/* Forge tab */}
+        <div
+          id="panel-forge"
+          role="tabpanel"
+          aria-label="Forge"
+          className="shell-panel-view screen-forge"
+          style={{ display: screen === 'forge' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Forge" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Forge</h2>
+            <div className="v2-panel-body-inner">
               {state ? (
                 classId ? (
-                  <>
-                    <ForgePanel
-                      stacks={{
-                        ...state.materials,
-                        fish: state.currencies.fish,
-                        yarn: state.currencies.yarn,
-                        catKey: state.currencies.keys,
-                      }}
-                      items={state.inventory}
-                      relic={{
-                        today: state.forge.today,
-                        pending: state.forge.pending,
-                        blockedReason: state.forge.blockedBy,
-                      }}
-                      classWeaponType={v2.CLASSES.find((c) => c.id === classId)!.weaponType}
-                      busy={actionBusy}
-                      onCraft={async (recipe, slot) => {
-                        setCrafted(null);
-                        const result = await loop.craft(recipe, slot);
-                        if (result) {
-                          setCrafted(result.item);
-                          setNotice(`Crafted: ${rarityLabel(result.item.rarity)} ${itemName(result.item.itemKey)}`);
-                        }
-                      }}
-                      onSalvage={async (ids) => {
-                        await loop.salvage(ids);
-                      }}
-                      onRelic={async () => {
-                        const message = await forgeRelicForWalletV2(loop, {
-                          connected: wallet.isConnected,
-                          mint: (next) => {
-                            setVoucher(next);
-                          },
-                        });
-                        setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
-                      }}
-                      craftResult={
-                        crafted ? (
-                          <div className="forge-reveal" role="status" data-testid="craft-result">
-                            <strong>
-                              Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
-                            </strong>{' '}
-                            (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
-                            tab can be listed in the Market.
-                          </div>
-                        ) : null
+                  <ForgePanel
+                    stacks={{
+                      ...state.materials,
+                      fish: state.currencies.fish,
+                      yarn: state.currencies.yarn,
+                      catKey: state.currencies.keys,
+                    }}
+                    items={state.inventory}
+                    relic={{
+                      today: state.forge.today,
+                      pending: state.forge.pending,
+                      blockedReason: state.forge.blockedBy,
+                    }}
+                    classWeaponType={v2.CLASSES.find((c) => c.id === classId)!.weaponType}
+                    busy={actionBusy}
+                    onCraft={async (recipe, slot) => {
+                      setCrafted(null);
+                      const result = await loop.craft(recipe, slot);
+                      if (result) {
+                        setCrafted(result.item);
+                        setNotice(`Crafted: ${rarityLabel(result.item.rarity)} ${itemName(result.item.itemKey)}`);
                       }
-                      relicFooter={
-                        <>
-                          <p className="forge-note">
-                            Daily Relic limit (1 per day) is shared across classic and v2. Minting on Fuji testnet uses free
-                            test AVAX and costs no real money.
-                          </p>
-                          {unreported ? (
-                            <div role="status">
-                              <p>
-                                {mode.demo
-                                  ? 'Sign in to finish saving your minted Relic.'
-                                  : 'Your Relic was minted. Finish saving its confirmation.'}
-                              </p>
-                              <button
-                                disabled={savingMint || mode.demo || !wallet.isConnected}
-                                onClick={() => {
-                                  void retryMintConfirmation();
-                                }}
-                              >
-                                {savingMint ? 'Saving…' : 'Retry saving mint confirmation'}
-                              </button>
-                            </div>
-                          ) : (
-                            (voucher ?? state.forge.pending) &&
-                            (voucher ?? state.forge.pending)!.signature !== null &&
-                            (voucher ?? state.forge.pending)!.nonce !== mintedNonce && (
-                              <MintPanel
-                                voucher={(voucher ?? state.forge.pending)! as RelicVoucher}
-                                api={getGameApi()}
-                                loop={getGameLoop()}
-                                onMinted={(mint, confirmed) => {
-                                  setVoucher(null);
-                                  setMintedNonce(mint.nonce);
-                                  if (confirmed) {
-                                    setUnreported(null);
-                                    setNotice('Relic minted. In your wallet!');
-                                    void loop.retry();
-                                  } else {
-                                    setUnreported(mint);
-                                    setNotice('Relic minted. Finish saving its confirmation below.');
-                                  }
-                                }}
-                              />
-                            )
-                          )}
-                        </>
-                      }
-                    />
-                  </>
+                    }}
+                    onSalvage={async (ids) => {
+                      await loop.salvage(ids);
+                    }}
+                    onRelic={async () => {
+                      const message = await forgeRelicForWalletV2(loop, {
+                        connected: wallet.isConnected,
+                        mint: (next) => {
+                          setVoucher(next);
+                        },
+                      });
+                      setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
+                    }}
+                    craftResult={
+                      crafted ? (
+                        <div className="forge-reveal" role="status" data-testid="craft-result">
+                          <strong>
+                            Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
+                          </strong>{' '}
+                          (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
+                          tab can be listed in the Market.
+                        </div>
+                      ) : null
+                    }
+                    relicFooter={relicFooter}
+                  />
                 ) : (
                   <p>Choose a class to use the forge.</p>
                 )
               ) : (
                 <p>Loading your cat…</p>
               )}
-            </ActivePanel>
-
-            {/* Market tab */}
-            <ActivePanel tab="Market" label="Market" hidden={tab !== 'Market'}>
-              {visited.has('Market') ? <MarketTab /> : null}
-            </ActivePanel>
-
-            {/* Help tab */}
-            <ActivePanel tab="Help" label="Help" hidden={tab !== 'Help'}>
-              <HelpTab />
-            </ActivePanel>
+            </div>
           </div>
-        </section>
+        </div>
 
-        {phone && (
-          <nav className="v2-nav" aria-label="Game menu" ref={navRef}>
-            <TabButtons active={tab} onSelect={handleSelectTab} className="v2-nav-tabs" />
-          </nav>
-        )}
-      </main>
+        {/* Market tab */}
+        <div
+          id="panel-market"
+          role="tabpanel"
+          aria-label="Market"
+          className="shell-panel-view screen-market"
+          style={{ display: screen === 'market' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Market" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Market</h2>
+            <div className="v2-panel-body-inner">
+              {visited.has('market') ? <MarketTab /> : null}
+            </div>
+          </div>
+        </div>
+
+        {/* Help tab */}
+        <div
+          id="panel-help"
+          role="tabpanel"
+          aria-label="Help"
+          className="shell-panel-view screen-help"
+          style={{ display: screen === 'help' ? 'flex' : 'none' }}
+        >
+          <div id="panel-Help" className="v2-tabpanel">
+            <h2 className="v2-tabpanel-title">Help</h2>
+            <div className="v2-panel-body-inner">
+              <HelpTab />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {phone && (
+        <nav className="v2-nav" aria-label="Game menu" ref={navRef}>
+          <div role="tablist" aria-label="Game panel tabs" className="v2-nav-tabs">
+            {RAIL_SCREENS.map(({ id, label, icon }) => (
+              <button
+                key={id}
+                role="tab"
+                id={`tab-${id}`}
+                aria-label={label}
+                aria-selected={screen === id}
+                aria-controls={`panel-${id}`}
+                className="v2-tab"
+                onClick={() => handleSelectScreen(id)}
+              >
+                <span className="v2-tab-icon">
+                  {icon === 'help' ? <TabIcon /> : <PixelIcon name={icon as IconName} />}
+                </span>
+                <span className="v2-tab-label">{label}</span>
+              </button>
+            ))}
+          </div>
+        </nav>
+      )}
 
       <HowToPlay />
-    </div>
+    </ScreenFrame>
   );
 }

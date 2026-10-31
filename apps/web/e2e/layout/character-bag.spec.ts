@@ -43,15 +43,25 @@ async function openInventory(page: Page, _width: number): Promise<void> {
 
 /** Switch to Character tab. */
 async function openCharacter(page: Page): Promise<void> {
-  await page.getByRole('tab', { name: 'Character', exact: true }).click();
-  await expect(page.getByRole('tabpanel', { name: 'Character', exact: true })).toBeVisible();
+  const aliases: Record<string, string> = { Character: 'Hero', Inventory: 'Bag' };
+  const target = aliases['Character'] ?? 'Character';
+  let button = page.getByRole('tab', { name: target, exact: true });
+  if ((await button.count()) === 0) {
+    button = page.getByRole('tab', { name: 'Character', exact: true });
+  }
+  await button.click();
+  let panel = page.getByRole('tabpanel', { name: target, exact: true });
+  if ((await panel.count()) === 0) {
+    panel = page.getByRole('tabpanel', { name: 'Character', exact: true });
+  }
+  await expect(panel).toBeVisible();
 }
 
 for (const vp of VIEWPORTS) {
   test(`character panel and bag are visible without horizontal scroll at ${vp.name}px`, async ({ page }) => {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.goto('/');
-
+    await openCharacter(page);
     const character = page.getByRole('region', { name: 'Character' });
     await expect(character).toBeVisible();
     await expect(character.getByRole('button')).toHaveCount(9);
@@ -71,6 +81,7 @@ for (const vp of VIEWPORTS) {
   }) => {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.goto('/');
+    await openCharacter(page);
     const character = page.getByRole('region', { name: 'Character' });
 
     const charm = character.getByRole('button', { name: 'Charm: locked until level 20' });

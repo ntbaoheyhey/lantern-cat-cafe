@@ -30,7 +30,7 @@ for (const finish of ['natural', 'skip', 'hidden return', 'reduced motion', 'red
     }, { key: KEY, save: JSON.stringify(save) });
     await page.goto('/');
     await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
-    await page.getByRole('tab', { name: 'Boss', exact: true }).click();
+    await page.getByRole('tab', { name: 'Map', exact: true }).or(page.getByRole('tab', { name: 'Boss', exact: true })).click();
     await page.clock.pauseAt((await page.evaluate(() => Date.now())) + 50);
     const before = await display(page);
     await expect(page.getByLabel('Cat Keys 1 of 5', { exact: true })).toBeVisible();

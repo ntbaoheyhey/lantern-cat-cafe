@@ -111,8 +111,13 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const normal = await open('motion-normal', { fixture: 'fresh' });
   const walk = async page => {
     const names = new Set(); let transformAnims = 0;
-    for (const tab of ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help']) {
-      await page.getByRole('tab', { name: tab, exact: true }).first().click();
+    for (const tab of ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help']) {
+      let el = page.getByRole('tab', { name: tab, exact: true }).first();
+      if (!(await el.count())) {
+        const alias = tab === 'Hero' ? 'Character' : tab === 'Map' ? 'Boss' : tab;
+        el = page.getByRole('tab', { name: alias, exact: true }).first();
+      }
+      if (await el.count()) await el.click();
       for (let i = 0; i < 6; i++) {
         await sleep(80);
         const found = await page.evaluate(() => document.getAnimations().map(a => ({
@@ -125,6 +130,11 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const n = await walk(normal.page); await normal.ctx.close();
   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
   const r = await walk(red.page);
+  const homeTab = red.page.getByRole('tab', { name: 'Home' });
+  if (await homeTab.count()) {
+    await homeTab.click();
+    await sleep(600);
+  }
   const frames = await sample(red.page, red.canvas, 4, 'reduced');
   check('reduced-motion', 'no transform/slide animations when reduced', r.transformAnims === 0, `${r.transformAnims} transform animations (normal had ${n.transformAnims})`);
   check('reduced-motion', 'stage still updates (impacts) when reduced', seqChanges(frames, 'impact') >= 1, `${seqChanges(frames, 'impact')} impacts`);

@@ -1,0 +1,51 @@
+PASTE-ALL-batch-next.txt (living draft, 31 Oct 2026). NEW blocks only; older blocks are referenced by id, not repeated.
+Where each older block lives (all in /mnt/project-files/taskbar-hero/): AGR1-AGR5, CXR1-CXR2 in PASTE-ALL-redesign.txt; CXN2, CXN3, AGN2, AGN3, AGN4 as PASTE-<id>-*.txt; AGL2, CXL2 in PASTE-ALL-runes.txt.
+Order and gates: see PASTE-INDEX-batch-next.md. Each tool runs ONE mission at a time (Antigravity max 2 accounts, Codex max 2). Draft PR only, do not merge. ALWAYS push reports/<id>.md (DONE/PARTIAL/BLOCKED/FAILED), even when blocked.
+
+===== COMMON HEADER (put at top of every block) =====
+Repo ntbaoheyhey/taskbar-hero. First: git config user.email 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Branch from latest origin/main. Use the strongest model at high effort. pnpm 10.28.0, CI=true pnpm install --frozen-lockfile (installer side effects on pnpm-workspace.yaml/lockfile get reverted, not a blocker).
+Scope tiers. Tier 1: your zone below. Tier 2: adjacent files with a one-line note in the report (a test that encodes old behaviour, test helpers, one export or mount line). Tier 3 = hard stop, only these may cause BLOCKED: contracts, auth/SIWE, secrets, supabase/migrations or any live DB write, packages/game-rules config.ts numbers, economy/odds/forge numbers, .github, dependency changes, making the repo public, submission.
+Rules: keep ALL existing art untouched; no new art (art lane is separate and not started); original content only (no names, art, text, tables from any third-party game); numbers in docs/proposals/rune-skill-system are DEMO numbers, never copy them into game rules; desktop only (1280x720 and 1600x900); no Actions runs (commits carry [skip ci], verify locally). NOT VERIFIED is an accepted outcome, never a blocker. Pre-existing lint/link debt is never an acceptance line.
+Report once, at the end: what changed, what is NOT verified, commands + tail of output, screenshots at 1280x720 and 1600x900 for UI.
+
+===== BEGIN CXC1 (Codex): Avalanche proof script + evidence =====
+[Common header] Why: Avalanche Integration is 25 of the online score. Judges must be able to see, in one minute, that the Relic NFT and market really live on Fuji and that the game uses them.
+Zone (Tier 1): new scripts/chain-proof.mjs, new packages/chain/src/proof/ (read-only helpers + tests), new reports/chain-proof.md (generated sample), new docs/avalanche-integration.md. Forbidden: any contract, ABI edit, deploy, wallet key, write transaction.
+Goal: a READ-ONLY viem script that, with only the public Fuji RPC already used by the repo, checks and prints: chain id 43113; code exists at RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D and RelicMarket 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93; contract name/symbol/totalSupply, owner or minter role as the ABI exposes it; the last 20 Transfer / Listed / Sold events (block, tx hash, token id, explorer link); that the ABI in packages/chain matches the selectors on chain. Output JSON (stdout and optional --out) plus a human table. Exit code 1 when any check fails; network failure = clear message, not a stack trace.
+docs/avalanche-integration.md (max 120 lines, judge-facing, plain English): what lives on-chain (Relic NFTs, market), what stays off-chain and why (server-checked forge/claims), how a Relic travels (forge -> claim voucher -> mint -> list -> buy) with the contract function names read from the code, the explorer links, and the exact command to re-run the proof. Say only what the repo proves; mark anything unverified.
+Tests (offline, mocked client): all checks pass on a fixture; fail on wrong chain id, no code, selector mismatch, RPC timeout; event formatting; CLI exit codes.
+Definition of done: pnpm test green, node scripts/chain-proof.mjs run once live and its output pasted in the report (if the RPC is unreachable say NOT VERIFIED).
+===== END CXC1 =====
+
+===== BEGIN AGC1 (Antigravity): "On-chain proof" panel in the app =====
+[Common header] Gate: PR for AGR0 (shell) is merged; CXC1 merged is helpful but NOT required (use the same public RPC through existing wagmi/viem config).
+Zone (Tier 1): new folder apps/web/src/chainproof/ (component, hook, css, tests) and ONE mount line in the Help screen or the Hero screen, whichever the AGR0 registry (apps/web/src/nav/screens.ts) shows as the better home. Forbidden: Tier 3, wallet connect flow, signing.
+Goal: a compact, read-only panel titled "On-chain proof": network badge (Avalanche Fuji, chain id 43113), RelicNFT and RelicMarket addresses (copy button + explorer link), total Relics minted, market listings count, the connected wallet's Relic count when a wallet is connected, and the last 5 events with tx links. States: loading, offline, RPC error, wrong network (one clear line, no crash), demo/wallet-free mode (shows the public data only). No polling faster than 30 s; one batched read; cache in memory.
+Use existing tokens and fonts from AGR0, existing icons only. Do not block the game loop; panel is lazy-loaded.
+Tests: component tests for each state with a mocked client; no scroll and no overlap at 1280x720 and 1600x900 (tools/ui-audit.mjs); keyboard focus order; contrast tests still green.
+Definition of done: pnpm build + web tests green, screenshots of all five states.
+===== END AGC1 =====
+
+===== BEGIN CXP1 (Codex): Pets (companions) logic, preview-only =====
+[Common header] Decision: pets are IN; they are the only meta system promised now. Numbers are NOT signed, so pets must not change power, drops, forge, or any server state in this mission.
+Zone (Tier 1): new packages/game-rules/src/v2/meta/pets/ (additive; only one export line in v2/index.ts allowed), new apps/web/src/pets/state.ts + tests (local storage persistence with a versioned key, safe parse). Read docs/proposals/rune-skill-system/design.md (CompanionDef, "Companions with progress bars, equip 2").
+Goal: typed PetDef registry of 12 ORIGINAL pets (cat-world theme, our own names; id, name, unlock {target, count}, bonusKey, perLevel[], flavour line), a pure function petProgress(killCounts, defs) -> per pet {unlocked, level, nextAt, pct}, equip rules (max 2, no duplicates), and a PetsState store reading kill counts ONLY from data the client already tracks (find it; if no kill counter exists, add a local counter fed by the existing kill event, nothing else). bonusKey values are labels for the preview; mark every number as DEMO_PREVIEW in code and docs.
+Tests: unlock at exact threshold, level steps, equip limit and duplicate rejection, corrupt storage falls back to empty, state migration from version 0, registry ids unique, no import of the registry from anything that touches power calculation (add a lint-style test that greps for it).
+Definition of done: pnpm test green; report lists the 12 pets and the single file where the kill counter is read.
+===== END CXP1 =====
+
+===== BEGIN AGP1 (Antigravity): Pets screen on the CXP1 state =====
+[Common header] Gate: AGR0 merged AND CXP1 merged (otherwise build against a mock with the same interface and say so).
+Zone (Tier 1): new apps/web/src/pets/ui/ (PetsScreen, PetCard, EquipSlots, css, tests) and a registry entry in apps/web/src/nav/screens.ts (additive). Fold into the existing nav; do not add an eighth rail item: put Pets as a tab inside the Hero screen unless the AGR0 registry already has a better slot, and explain the choice in the report. Forbidden: Tier 3, new art.
+Goal: grid of pet cards (silhouette + lock state, name, progress bar to unlock, level pips), two equip slots at the top (click to equip/unequip, no drag needed), a short "what it will do" line marked "preview, not active yet". Use existing cat/avatar art and a neutral placeholder tile for pets (no generated art, no third-party art). Show the cat on Home with the equipped pet name as text only.
+States: empty (no kills), partial, all unlocked, corrupt state recovered. Keyboard navigable, aria labels, reduced-motion respected.
+Tests: component tests for equip limit, locked card cannot be equipped, persisted equip survives reload; ui-audit zero scroll/overlap at both sizes.
+Definition of done: build + web tests green; screenshots of empty, partial, full.
+===== END AGP1 =====
+
+===== LATER (not written yet, order = importance) =====
+1. AGL2 (planner/skill/passive previews on MOCK data) and CXL2 (content registries + balance sims): existing blocks, CXL2 waits for signed numbers (design.md section 6).
+2. Phase 4 gameplay wiring + server claims (skills, drops) = Tier 3, needs user sign-off: Claude-CLI-ready bundle B1.
+3. Rune sockets + upgrade tree (complex, user wants it for score, planned AFTER 1-2): Claude-CLI-ready bundle B2.
+4. Quests / events (only if time): bundle B3.
+5. Art lane prompts (AGA/CXA): only when the user asks.

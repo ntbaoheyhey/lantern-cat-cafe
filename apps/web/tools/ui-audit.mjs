@@ -97,8 +97,9 @@ try {
           const nav = page.getByTestId(manifest.shell.railTestId).getByTestId(screen.navTestId);
           if (await nav.count()) await nav.click(); else missing.push(screen.navTestId);
         } else if (screen.legacyTab) {
-          const tab = page.getByRole('tab', { name: screen.legacyTab, exact: true }).first();
-          if (await tab.count()) await tab.click(); else missing.push(`legacy tab: ${screen.legacyTab}`);
+          let tab = page.getByRole('tab', { name: screen.label.split(' / ')[0], exact: true }).first();
+          if (!(await tab.count())) tab = page.getByRole('tab', { name: screen.legacyTab, exact: true }).first();
+          if (await tab.count()) await tab.click(); else missing.push(`tab: ${screen.label} / ${screen.legacyTab}`);
         }
         if (screen.subnavTestId) {
           const sub = page.getByTestId(screen.subnavTestId);
