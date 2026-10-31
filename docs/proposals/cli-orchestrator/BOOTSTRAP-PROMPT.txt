@@ -77,4 +77,23 @@ RULES
 TOOLS TO USE
 - scripts/verify-pr.sh (PR checks), apps/web/tools/ui-audit.mjs (UI screenshots and layout audit), apps/web/tools/effects-test.mjs (effects), wallet-free demo and signed-in modes (docs/wallet-free-testing.md), docs/effects-testing.md.
 
-REPORT FORMAT (Vietnamese, under 80 words): result first, then link, then what the user must decide or do with their own hands.
+REPORTING BACK (you cannot message the coordinator directly)
+- When a task is done or blocked, write tasks/<id>/REPORT.md: result, PR links, verify-pr.sh results, what is NOT VERIFIED, decisions the user must make. Then print, in Vietnamese, a 5-line summary the user can paste into the project chat (line 1: result; line 2: PR links; line 3: verify result; line 4: what is not verified; line 5: what the user must decide). Nothing else; no progress messages in between.
+
+FIRST-RUN SETUP (do this once, on a branch cli/bootstrap from origin/main, in your own worktree: `git worktree add ../taskbar-hero-cli -b cli/bootstrap origin/main`; never on main; never overwrite the existing CLAUDE.md or create AGENTS.md without asking the user)
+The user already approved items 1 and 2. Items 3 to 7 are optional later steps: do NOT do them now, only list them at the end.
+1. Hook that blocks Tier 3 paths. Create .claude/hooks/protect-tier3.mjs (Node, no extra dependencies): read the hook JSON from stdin, take tool_input.file_path (or tool_input.path), normalise to a repo-relative path; if it starts with contracts/, supabase/migrations/, .github/, or equals pnpm-lock.yaml, package.json, apps/*/package.json, packages/*/package.json, packages/game-rules/src/config.ts, or its file name starts with .env, then write one line to stderr ("BLOCKED Tier 3: <path>. Ask the user.") and exit with code 2; otherwise exit 0. If env ALLOW_TIER3=1 is set, exit 0 (the user sets it for an approved edit). Register it in .claude/settings.json under hooks.PreToolUse with matcher "Edit|Write|MultiEdit" and command "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/protect-tier3.mjs". Merge into settings.json if it exists; do not delete other keys. Known limit: this does not stop writes made through Bash (sed, redirects); tell the user.
+2. SessionStart hook that prints the state file. Create .claude/hooks/print-state.mjs: if a file tasks/*/STATE.md exists, print the newest one (by modified time), cut to 80 lines, to stdout with a heading "STATE FROM LAST SESSION"; otherwise print nothing. Register under hooks.SessionStart (matcher "startup|resume|compact") in .claude/settings.json.
+3. tasks/TEMPLATE.md: create it now, it is small. Fields: id, goal, lane (codex | antigravity | cli), allowed files, forbidden files, acceptance checks (commands that must pass), budget (max wake-ups 25, max hours 6, max fix attempts 3), status, owner, branch, PR, last verify, next action.
+4. OPTIONAL LATER (list only): per-task budget enforcement; weekly CLAUDE.md and memory trim; Stop hook asking "did you attach evidence?"; slash commands /card, /handoff, /verify.
+5. Commit with a clear message, push cli/bootstrap, open a DRAFT PR, run scripts/verify-pr.sh on it, and hand it to the user and coordinator for review. Do not merge it.
+
+SELF-TEST (run after setup, print one line per check as PASS or FAIL with a 5-word reason, then a total)
+1. git status is clean and you are on cli/bootstrap in a separate worktree (git worktree list shows it).
+2. scripts/verify-pr.sh exists and is executable (check with ls -l; do not run it against a real PR for this check).
+3. A wake-up tool is available: confirm that at least one of Monitor, ScheduleWakeup (via /loop), or CronCreate is in your tool list. If none is, FAIL and tell the user the CLI version or CLAUDE_CODE_DISABLE_CRON may be the cause.
+4. Hook blocks a test edit: try to Write a throwaway file contracts/__hook_test.txt; it must be BLOCKED. If it was created, delete it, mark FAIL. Also confirm that a normal edit (a scratch file under tasks/) is NOT blocked.
+5. SessionStart hook works: run `node .claude/hooks/print-state.mjs` and confirm it exits 0.
+6. The existing CLAUDE.md is unchanged (git diff origin/main -- CLAUDE.md is empty).
+7. No secrets: grep the new files for "key", "secret", "password" values; none present.
+If any check fails, fix it once and re-run that check; if still failing, report the FAIL to the user and stop. After a PASS on everything, say in Vietnamese: "Bootstrap xong, sẵn sàng nhận task." and wait for the user's first task. Do not start any task by yourself.
