@@ -116,6 +116,21 @@ export function rarityLabel(rarity: GearRarityId): string {
   return RARITY_LABEL[rarity];
 }
 
+export function rarityColor(rarity: GearRarityId): string {
+  switch (rarity) {
+    case 'common':
+      return 'var(--rarity-common, #b9b6c9)';
+    case 'uncommon':
+      return 'var(--rarity-uncommon, #6be08a)';
+    case 'rare':
+      return 'var(--rarity-rare, #4aa8ff)';
+    case 'epic':
+      return 'var(--rarity-epic, #bb74ff)';
+    case 'legendary':
+      return 'var(--rarity-legendary, #ff9a3c)';
+  }
+}
+
 export function statLabel(stat: StatId): string {
   return STAT_LABEL[stat];
 }

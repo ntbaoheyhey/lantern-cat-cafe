@@ -10,8 +10,20 @@ afterEach(cleanup);
 function renderBag(state: ServerStateV2 = sampleStateV2()) {
   const onEquip = vi.fn();
   const onToggleLock = vi.fn();
-  const view = render(<BagPanel state={state} onEquip={onEquip} onToggleLock={onToggleLock} />);
-  return { ...view, onEquip, onToggleLock };
+  const onForge = vi.fn();
+  const onList = vi.fn();
+  const onNavigate = vi.fn();
+  const view = render(
+    <BagPanel
+      state={state}
+      onEquip={onEquip}
+      onToggleLock={onToggleLock}
+      onForge={onForge}
+      onList={onList}
+      onNavigate={onNavigate}
+    />,
+  );
+  return { ...view, onEquip, onToggleLock, onForge, onList, onNavigate };
 }
 
 function pick(name: RegExp | string) {
@@ -74,6 +86,20 @@ describe('BagPanel: detail and actions', () => {
     pick('Unlock');
     expect(onToggleLock).toHaveBeenLastCalledWith('it-10', false);
   });
+
+  it('Forge button calls onForge with the selected item', () => {
+    const { onForge } = renderBag();
+    pick(/Silverclaw Saber/);
+    pick('Forge');
+    expect(onForge).toHaveBeenCalledWith(expect.objectContaining({ id: 'it-8' }));
+  });
+
+  it('List button calls onList with the selected item', () => {
+    const { onList } = renderBag();
+    pick(/Silverclaw Saber/);
+    pick('List');
+    expect(onList).toHaveBeenCalledWith(expect.objectContaining({ id: 'it-8' }));
+  });
 });
 
 describe('BagPanel: Equip best', () => {
@@ -99,7 +125,7 @@ describe('BagPanel: Equip best', () => {
   });
 });
 
-describe('BagPanel: counter and sorting', () => {
+describe('BagPanel: counter, filters and sorting', () => {
   it('turns the counter into a warning at 90 percent of the bag limit', () => {
     const base = sampleStateV2();
     const equipped = base.inventory.filter((i) => i.equipped);
@@ -130,25 +156,133 @@ describe('BagPanel: counter and sorting', () => {
     fireEvent.change(sort, { target: { value: 'level' } });
     expect(cardNames()[0]).toBe('Radiant Catnip Charm');
   });
+
+  it('T1: Select item updates the right detail panel', () => {
+    renderBag();
+    pick(/Silverclaw Saber/);
+    const detail = screen.getByRole('region', { name: 'Item detail' });
+    expect(within(detail).getByRole('heading', { level: 3 }).textContent).toBe('Silverclaw Saber');
+    expect(within(detail).getByText('Rare')).toBeTruthy();
+    expect(within(detail).getAllByText(/Lv 7/).length).toBeGreaterThan(0);
+    expect(within(detail).getByRole('button', { name: 'Equip' })).toBeTruthy();
+    expect(within(detail).getByRole('button', { name: 'Forge' })).toBeTruthy();
+    expect(within(detail).getByRole('button', { name: 'List' })).toBeTruthy();
+
+    pick(/Sunfang/);
+    expect(within(detail).getByRole('heading', { level: 3 }).textContent).toBe('Sunfang');
+    expect(within(detail).getByText('Epic')).toBeTruthy();
+    expect(within(detail).getAllByText(/Lv 10/).length).toBeGreaterThan(0);
+  });
+
+  it('T2: Filters change the grid and keep the count', () => {
+    renderBag();
+    const initialCount = screen.getByTestId('bag-count').textContent;
+    expect(initialCount).toBe('Bag 15 / 200');
+
+    // Weapons filter
+    fireEvent.click(screen.getByRole('button', { name: 'Weapons' }));
+    const weapons = cardNames();
+    expect(weapons.length).toBe(4);
+    expect(weapons.every((n) => ['Silverclaw Saber', 'Cork Knocker', 'Sunfang', 'Rose Thorns'].includes(n))).toBe(true);
+    expect(screen.getByTestId('bag-count').textContent).toBe(initialCount);
+
+    // Armor filter
+    fireEvent.click(screen.getByRole('button', { name: 'Armor' }));
+    const armors = cardNames();
+    expect(armors.some((n) => n === 'Silverclaw Saber')).toBe(false);
+    expect(armors.some((n) => n.includes('Helm') || n.includes('Armor') || n.includes('Gloves'))).toBe(true);
+    expect(screen.getByTestId('bag-count').textContent).toBe(initialCount);
+
+    // All filter
+    fireEvent.click(screen.getByRole('button', { name: 'All' }));
+    expect(cardNames().length).toBe(15);
+    expect(screen.getByTestId('bag-count').textContent).toBe(initialCount);
+  });
+
+  it('T4: Empty bag shows the empty state', () => {
+    const base = sampleStateV2();
+    renderBag({ ...base, inventory: base.inventory.filter((i) => i.equipped) });
+    expect(screen.getByTestId('bag-empty')).toBeTruthy();
+    expect(screen.getByText('Your bag is empty.')).toBeTruthy();
+  });
+
+  it('T5: Rarity is visible without colour (text pill)', () => {
+    renderBag();
+    pick(/Silverclaw Saber/);
+    const detail = screen.getByRole('region', { name: 'Item detail' });
+    const pill = detail.querySelector('.rarity-pill');
+    expect(pill).not.toBeNull();
+    expect(pill?.textContent).toBe('Rare');
+
+    pick(/Sunfang/);
+    const epicPill = detail.querySelector('.rarity-pill');
+    expect(epicPill?.textContent).toBe('Epic');
+  });
 });
 
 describe('BagPanel: keyboard', () => {
-  it('reaches the sort select, then the item cards, then the Equip and Lock buttons', () => {
+  it('reaches toolbar controls, item cards, then action buttons in order', () => {
     const { container } = renderBag();
     pick(/Silverclaw Saber/);
     const focusable = [...container.querySelectorAll<HTMLElement>('select, button:not(:disabled)')];
+    const filterAll = screen.getByRole('button', { name: 'All' });
     const sort = screen.getByRole('combobox', { name: 'Sort bag' });
+    const equipBest = screen.getByRole('button', { name: 'Equip best' });
     const cards = within(screen.getByRole('list', { name: 'Bag items' })).getAllByRole('button');
     const equip = screen.getByRole('button', { name: 'Equip' });
+    const forge = screen.getByRole('button', { name: 'Forge' });
+    const list = screen.getByRole('button', { name: 'List' });
     const lock = screen.getByRole('button', { name: 'Lock' });
 
-    expect(focusable[0]).toBe(sort);
-    expect(focusable.indexOf(cards[0]!)).toBe(1);
-    for (const card of cards) expect(focusable.indexOf(card)).toBeLessThan(focusable.indexOf(equip));
-    expect(focusable.indexOf(equip)).toBeLessThan(focusable.indexOf(lock));
+    // Toolbar controls precede item cards
+    expect(focusable.indexOf(filterAll)).toBeLessThan(focusable.indexOf(cards[0]!));
+    expect(focusable.indexOf(sort)).toBeLessThan(focusable.indexOf(cards[0]!));
+    expect(focusable.indexOf(equipBest)).toBeLessThan(focusable.indexOf(cards[0]!));
 
-    sort.focus();
-    expect(document.activeElement).toBe(sort);
+    // Cards precede detail actions
+    for (const card of cards) {
+      expect(focusable.indexOf(card)).toBeLessThan(focusable.indexOf(equip));
+    }
+
+    // Detail actions in order
+    expect(focusable.indexOf(equip)).toBeLessThan(focusable.indexOf(forge));
+    expect(focusable.indexOf(forge)).toBeLessThan(focusable.indexOf(list));
+    expect(focusable.indexOf(list)).toBeLessThan(focusable.indexOf(lock));
+  });
+
+  it('T6: supports arrow keys through 8-column slot grid and Enter to select', () => {
+    renderBag();
+    const list = screen.getByRole('list', { name: 'Bag items' });
+    const cards = within(list).getAllByRole('button');
+    expect(cards.length).toBeGreaterThanOrEqual(15);
+
+    // Initial focus on first card
+    const firstCard = cards[0]!;
+    const secondCard = cards[1]!;
+    const tenthCard = cards[9]!;
+
+    firstCard.focus();
+    expect(document.activeElement).toBe(firstCard);
+
+    // ArrowRight moves to next (+1)
+    fireEvent.keyDown(firstCard, { key: 'ArrowRight' });
+    expect(document.activeElement).toBe(secondCard);
+
+    // ArrowDown moves down 8 columns (+8)
+    fireEvent.keyDown(secondCard, { key: 'ArrowDown' });
+    expect(document.activeElement).toBe(tenthCard);
+
+    // ArrowUp moves up 8 columns (-8)
+    fireEvent.keyDown(tenthCard, { key: 'ArrowUp' });
+    expect(document.activeElement).toBe(secondCard);
+
+    // ArrowLeft moves back (-1)
+    fireEvent.keyDown(secondCard, { key: 'ArrowLeft' });
+    expect(document.activeElement).toBe(firstCard);
+
+    // Enter selects the card
+    fireEvent.keyDown(firstCard, { key: 'Enter' });
+    expect(firstCard.getAttribute('aria-pressed')).toBe('true');
   });
 });
 
