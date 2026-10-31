@@ -1,4 +1,4 @@
-import { useState, useId } from 'react';
+import { useState, useId, type ReactNode } from 'react';
 import type {
   GearSlotId,
   ItemV2,
@@ -43,6 +43,8 @@ export interface ForgePanelProps {
   defaultRarity?: v2.GearRarityId;
   defaultSelectedItems?: string[];
   defaultConfirm?: boolean;
+  craftResult?: ReactNode;
+  relicFooter?: ReactNode;
 }
 
 export type ForgeTabId = 'craft' | 'salvage' | 'relic';
@@ -105,6 +107,8 @@ export function ForgePanel({
   defaultRarity = 'common',
   defaultSelectedItems = [],
   defaultConfirm = false,
+  craftResult,
+  relicFooter,
 }: ForgePanelProps) {
   const panelId = useId();
   const [activeTab, setActiveTab] = useState<ForgeTabId>(defaultTab);
@@ -233,7 +237,6 @@ export function ForgePanel({
     <div className="forge-panel" data-testid="forge-panel">
       {/* Panel Header */}
       <header className="forge-panel-header">
-        <div className="forge-panel-title">Forge Workshop</div>
         <p className="forge-panel-desc">Craft custom gear, salvage materials, or forge daily Relics.</p>
       </header>
 
@@ -497,6 +500,7 @@ export function ForgePanel({
               </button>
             )}
           </div>
+          {craftResult}
         </section>
       )}
 
@@ -717,7 +721,8 @@ export function ForgePanel({
           className="forge-content forge-relic-tab"
           data-testid="relic-panel"
         >
-          {/* Pending voucher state if unminted */}
+          <div className="forge-relic-scroll">
+            {/* Pending voucher state if unminted */}
           {relic.pending ? (
             <div className="forge-pending-voucher" data-testid="forge-pending" aria-live="polite">
               <div className={`relic-tile rarity-${relic.pending.rarityName}`}>
@@ -870,8 +875,10 @@ export function ForgePanel({
               </button>
             )}
           </div>
-        </section>
-      )}
+          {relicFooter}
+        </div>
+      </section>
+    )}
     </div>
   );
 }

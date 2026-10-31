@@ -169,7 +169,7 @@ export function CharacterPanel({ state, compact, onSelectSlot }: CharacterPanelP
           <CatPortrait size={64} />
         </div>
         <div className="character-title">
-          <h2 className="v2-character-name">Mochi the cat</h2>
+          <div className="v2-character-name">Mochi the cat</div>
           <p className="character-meta">
             <span>{cls ? cls.name : 'No class yet'}</span>
             {cls ? ' · ' : ''}
