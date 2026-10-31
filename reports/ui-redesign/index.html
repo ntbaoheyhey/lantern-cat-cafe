@@ -1,0 +1,337 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Taskbar Hero UI Draft</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap">
+<style>
+/* Layout: one dark world (cozy cat cafe at night). Toolbar on top, a scaled 1280x720 / 1600x900 app frame below.
+   App frame = left rail + HUD + stage + right context panel. Tokens extend apps/web/src/theme.css. */
+:root{
+  --bg:#120b19; --bg-2:#1a1220; --surface:#2a1f36; --surface-2:#3a2c4a; --surface-3:#4a3a5e;
+  --border:#72578d; --line:#4b3862; --text:#fff3e0; --muted:#c3aed0; --accent:#ffb86b; --on-accent:#1a1200;
+  --shard:#8fd8ff; --key:#ff8fb1; --good:#6be08a; --bad:#ff6b6b; --focus:#ffd75e;
+  --r-common:#b9b6c9; --r-rare:#4aa8ff; --r-epic:#bb74ff; --r-legend:#ff9a3c;
+  --f-display:'Pixelify Sans',ui-monospace,monospace; --f-body:'DM Sans',system-ui,sans-serif; --f-num:'JetBrains Mono',ui-monospace,monospace;
+  --px:2px solid #000; --shadow:3px 3px 0 #000; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 14px/1.45 var(--f-body);padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.disp{font-family:var(--f-display)}
+.lbl{font:700 11px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* toolbar */
+.bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:10px}
+.bar h1{font:700 18px var(--f-display);margin:0;color:var(--accent);letter-spacing:.03em}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;flex:1;min-width:0}
+.tabs button,.size button{background:var(--surface);border:2px solid var(--line);padding:4px 10px;font:700 12px var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tabs button[aria-selected=true],.size button[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:#000}
+.size{display:flex;gap:4px}
+.note{max-width:1100px;color:var(--muted);margin:0 0 10px;font-size:13px}
+.note b{color:var(--text)}
+
+/* frame */
+.vp{width:100%;overflow:hidden;border:2px solid var(--line);background:#000;position:relative}
+.app{position:absolute;left:0;top:0;transform-origin:0 0;display:grid;grid-template-columns:92px 1fr;grid-template-rows:56px 1fr;background:var(--bg-2);overflow:hidden}
+.app[hidden]{display:none}
+.rail{grid-row:1/3;background:var(--bg);border-right:2px solid #000;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px}
+.logo{font:700 13px/1.1 var(--f-display);color:var(--accent);text-align:center;margin-bottom:8px;text-shadow:2px 2px 0 #000}
+.nav{width:76px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 0 6px;border:2px solid transparent;background:none;color:var(--muted);font:700 11px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
+.nav svg{width:26px;height:26px}
+.nav[aria-current=page]{background:var(--surface);border-color:var(--border);box-shadow:var(--shadow);color:var(--accent)}
+.nav:hover{color:var(--text)}
+.rail .sp{flex:1}
+.hud{display:flex;align-items:center;gap:12px;padding:0 18px;background:var(--surface);border-bottom:2px solid #000}
+.chip{display:flex;align-items:center;gap:6px;background:var(--bg);border:2px solid var(--line);padding:3px 10px;font:500 13px var(--f-num)}
+.chip i{width:10px;height:10px;display:inline-block;box-shadow:inset -2px -2px 0 rgba(0,0,0,.35)}
+.xp{flex:1;max-width:260px}
+.bar-t{height:10px;background:var(--bg);border:2px solid #000;position:relative}
+.bar-t b{position:absolute;inset:0 auto 0 0;background:var(--good)}
+.wallet{margin-left:auto;display:flex;gap:8px;align-items:center}
+.main{position:relative;padding:16px 18px;overflow:hidden;min-height:0}
+.cols{display:grid;gap:14px;height:100%;min-height:0}
+.card{background:var(--surface);border:2px solid var(--border);box-shadow:var(--shadow);padding:12px 14px;min-width:0;min-height:0}
+.card h2,.card h3{margin:0 0 8px;font:700 15px var(--f-display);color:var(--accent);letter-spacing:.03em}
+.btn{background:var(--accent);color:var(--on-accent);border:2px solid #000;box-shadow:var(--shadow);padding:7px 16px;font:700 13px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+.btn.sec{background:var(--surface-3);color:var(--text);border-color:#000}
+.btn.ghost{background:none;box-shadow:none;border-color:var(--border);color:var(--text)}
+.btn.lg{padding:11px 24px;font-size:15px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.pill{display:inline-block;padding:1px 8px;border:2px solid #000;font:700 10px var(--f-display);letter-spacing:.06em;text-transform:uppercase;background:var(--surface-3)}
+.pill.good{background:var(--good);color:#06240f}.pill.bad{background:var(--bad);color:#2a0606}.pill.epic{background:var(--r-epic);color:#1a0630}.pill.rare{background:var(--r-rare);color:#021a33}.pill.leg{background:var(--r-legend);color:#2a1200}.pill.com{background:var(--r-common);color:#17151f}
+.row{display:flex;gap:10px;align-items:center}
+.grow{flex:1;min-width:0}
+.muted{color:var(--muted)}
+.stat{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.stat span:last-child{font-family:var(--f-num)}
+.cat{width:64px;height:64px;image-rendering:pixelated}
+svg.px{shape-rendering:crispEdges}
+
+/* scene */
+.scene{position:relative;border:2px solid #000;overflow:hidden;background:linear-gradient(#1c1030 0%,#3a2150 55%,#5a3560 100%);min-height:0}
+.scene::before{content:"";position:absolute;inset:0;background:radial-gradient(1.5px 1.5px at 10% 14%,#fff8 50%,transparent),radial-gradient(1.5px 1.5px at 32% 26%,#fff8 50%,transparent),radial-gradient(1.5px 1.5px at 58% 10%,#fff8 50%,transparent),radial-gradient(1.5px 1.5px at 82% 22%,#fff8 50%,transparent),radial-gradient(1.5px 1.5px at 92% 8%,#fff8 50%,transparent)}
+.moon{position:absolute;right:9%;top:12%;width:46px;height:46px;border-radius:50%;background:#ffe7b0;box-shadow:-10px 4px 0 0 #3a2150 inset}
+.roofs{position:absolute;left:0;right:0;bottom:30%;height:90px;background:repeating-linear-gradient(90deg,#2a1840 0 60px,#241437 60px 100px);clip-path:polygon(0 60%,8% 60%,8% 30%,16% 30%,16% 55%,30% 55%,30% 20%,42% 20%,42% 50%,60% 50%,60% 35%,72% 35%,72% 55%,100% 55%,100% 100%,0 100%)}
+.ground{position:absolute;left:0;right:0;bottom:0;height:30%;background:repeating-linear-gradient(90deg,#4b2f5e 0 32px,#43294f 32px 64px);border-top:3px solid #000}
+.actor{position:absolute;bottom:26%}
+.hpbar{width:70px;height:8px;background:#000;border:2px solid #000;position:absolute;top:-16px;left:-3px}
+.hpbar b{display:block;height:100%;background:var(--bad)}
+.float{position:absolute;font:700 16px var(--f-num);color:var(--focus);text-shadow:2px 2px 0 #000}
+.logbox{font:500 12px/1.6 var(--f-num);color:var(--muted);background:var(--bg);border:2px solid #000;padding:8px 10px}
+.logbox em{color:var(--accent);font-style:normal}
+
+/* grids */
+.slots{display:grid;gap:6px}
+.slot{aspect-ratio:1;background:var(--bg);border:2px solid var(--line);display:grid;place-items:center;position:relative}
+.slot.r1{border-color:var(--r-rare)}.slot.r2{border-color:var(--r-epic);box-shadow:0 0 0 1px var(--r-epic) inset}.slot.r3{border-color:var(--r-legend);box-shadow:0 0 12px #ff9a3c55,0 0 0 1px var(--r-legend) inset}
+.slot.sel{outline:3px solid var(--focus);outline-offset:1px}
+.slot .q{position:absolute;right:3px;bottom:1px;font:700 10px var(--f-num)}
+.slot.empty{border-style:dashed;opacity:.55}
+.ico{width:34px;height:34px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{text-align:left;font:700 11px var(--f-display);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:2px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px dashed var(--line)}
+tr.hl td{background:var(--surface-2)}
+.toast{position:absolute;right:20px;bottom:20px;background:var(--surface-2);border:2px solid var(--good);box-shadow:var(--shadow);padding:10px 14px;display:flex;gap:10px;align-items:center;z-index:6}
+.scrim{position:absolute;inset:0;background:#0009;display:grid;place-items:center;z-index:5}
+.modal{width:460px;background:var(--surface);border:3px solid var(--accent);box-shadow:6px 6px 0 #000;padding:18px 20px}
+.modal h2{margin:0 0 6px;font:700 20px var(--f-display);color:var(--accent)}
+.node{position:absolute;width:76px;text-align:center;font:700 11px var(--f-display);text-transform:uppercase;letter-spacing:.04em}
+.node i{display:block;width:36px;height:36px;margin:0 auto 4px;border:3px solid #000;background:var(--surface-3);transform:rotate(45deg)}
+.node.done i{background:var(--good)}.node.cur i{background:var(--accent);box-shadow:0 0 0 3px var(--focus)}.node.lock i{background:#2a2433;opacity:.7}.node.boss i{background:var(--bad);width:44px;height:44px}
+.hero{height:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:0 40px}
+.hero h1{font:700 62px/1 var(--f-display);margin:0 0 14px;color:var(--accent);text-shadow:4px 4px 0 #000}
+.hero p{font-size:17px;max-width:480px;color:var(--text)}
+.mini{display:grid;gap:14px}
+
+.doc{max-width:860px;margin:0 auto;padding:8px 0 40px;font-size:15px;line-height:1.6}
+.doc h2{font:700 26px var(--f-display);color:var(--accent);margin:8px 0 10px;text-wrap:balance}
+.doc h3{font:700 19px var(--f-display);color:var(--accent);margin:26px 0 8px}
+.doc h4{font:700 15px var(--f-display);margin:20px 0 6px}
+.doc code{font:500 13px var(--f-num);background:var(--surface);padding:1px 5px}
+.doc ul{padding-left:20px}.doc li{margin:3px 0}
+.cb{position:relative;margin:8px 0}.cb pre{margin:0;background:var(--bg-2);border:2px solid var(--line);padding:12px 14px;font:500 12.5px/1.55 var(--f-num);white-space:pre-wrap;overflow-wrap:anywhere}
+.cp{position:absolute;right:8px;top:8px;background:var(--accent);color:var(--on-accent);border:2px solid #000;font:700 11px var(--f-display);padding:2px 10px}
+.tw{overflow-x:auto;margin:10px 0}
+</style>
+
+<div class="bar">
+  <h1>Taskbar Hero · UI draft v0</h1>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="size" id="size"><button data-w="1280" aria-pressed="true">1280×720</button><button data-w="1600" aria-pressed="false">1600×900</button></div>
+</div>
+<p class="note" id="note"></p>
+<div class="vp" id="vp"></div>
+<article class="doc" id="doc" hidden></article>
+<template id="t-prompts"><h2>Prompts (living draft)</h2><p>Design approved 31 Oct. Codex and Antigravity code first; Claude CLI is not available yet. All copy-ready prompts are in one file in the project folder: <code>PASTE-ALL-redesign.txt</code> (index: <code>PASTE-INDEX-redesign.md</code>). Repo copy: <code>tasks/v2/redesign/</code>. Art rule: all existing images are kept.</p><h3>Order</h3><div class="tw"><table><tr><th>Step</th><th>Mission</th><th>Tool</th><th>When</th></tr><tr><td>1</td><td>AGR0 tokens + shell (left rail, top HUD)</td><td>Antigravity</td><td>Paste first. Blocks all UI phases.</td></tr><tr><td>1</td><td>CXR0 test harness (1600x900 audit, e2e smoke)</td><td>Codex</td><td>Paste now, parallel with AGR0.</td></tr><tr><td>2</td><td>AGR1 Landing, class picker, Home</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR2 Bag</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR3 Forge + Market</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR4 Hero, Help, shared states</td><td>Antigravity</td><td>After AGR0 merges.</td></tr><tr><td>2</td><td>AGR5 Map (boss)</td><td>Antigravity</td><td>After AGR0 and the boss scroll PR merge.</td></tr><tr><td>3</td><td>CXR1 tests for new screens</td><td>Codex</td><td>After AGR1-AGR4 merge.</td></tr><tr><td>4</td><td>CXR2 polish pass</td><td>Codex</td><td>After the above, repeatable.</td></tr></table></div><p>Antigravity has two accounts, so at most two of AGR1-AGR5 run at once.</p></template><template id="t-brief"><h2>Taskbar Hero UI redesign: design brief (living draft v0)</h2>
+<p>Status: draft for the user&#x27;s review. Nothing here is final. Game rules, contracts, auth, schema (Tier 3) are untouched. Desktop first, no mobile work yet.</p>
+<h3>1. Goals</h3>
+<ul>
+<li><b>Art rule (user, 31 Oct):</b> Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. The mockup's simple placeholder cats and icons are stand-ins only; the real build uses the current art folders.</li>
+<li>A full-screen web app that feels like one cozy cat cafe at night, not a strip of tabs.</li>
+<li>Judges (Technical + Avalanche Integration) see on-chain proof fast: Fuji badge, Relic id, contract link, Routescan.</li>
+<li>Every screen has one primary action and one place to look first.</li>
+<li>Keep pixel-art identity and the existing tokens in <code>apps/web/src/theme.css</code>.</li>
+</ul>
+<h3>2. Reference (inspiration only, no copied assets, text or code)</h3>
+<p>tbhindex.com blocked automated access from our environment (Cloudflare), so the structure below comes from the user&#x27;s description of it: a persistent left navigation, data-dense list/detail screens, and a clear split between a data index and the game. The user should confirm which parts of that site they like (see decision list in the report).</p>
+<h3>3. Information architecture and navigation</h3>
+<p>Model: persistent left rail (7 entries) + top HUD + content + optional right context panel.</p>
+<ul>
+<li>Landing (before play, no rail) -&gt; Class picker (first run only) -&gt; Home.</li>
+<li>Rail: Home, Bag, Map, Forge, Market, Hero, Help. Fuji status badge at the bottom.</li>
+<li>HUD (always): Gold, Shards, Cat Keys, level + XP bar, Power, wallet button.</li>
+<li>Mapping from today&#x27;s tabs: Hero tab -&gt; Home (stage) + Hero (sheet); Inventory -&gt; Bag; Boss -&gt; Map; Forge -&gt; Forge; Market -&gt; Market. Help becomes a screen, not a modal.</li>
+<li>Right panel pattern: list/grid on the left, detail + actions on the right. Actions never live inside the list.</li>
+</ul>
+<h3>4. Screens</h3>
+<p>1. Landing: hero scene, promise, Play as guest, Connect wallet (secondary), proof strip.</p>
+<p>2. Class picker: three cards, one selected, one primary button.</p>
+<p>3. Home (stage): living scene, hero card, next goal, recent loot, event log.</p>
+<p>4. Bag: 8-column grid with visible empty slots, filters, detail + compare panel.</p>
+<p>5. Map (boss): winding path with nodes, fight card (recommended power, daily attempts, rewards, past runs).</p>
+<p>6. Forge: pick gear, materials, chances table, reveal in the centre pane.</p>
+<p>7. Market: Relics only, sortable table, on-chain facts + Routescan link, your listings.</p>
+<p>8. Hero: paper-doll equipment, stats, power breakdown, change class.</p>
+<p>9. Help: topic list + answer, search.</p>
+<p>10. Shared states: confirm modal, toasts (success, warning, failure), offline banner, empty bag.</p>
+<h3>5. Design tokens (extends theme.css)</h3>
+<ul>
+<li>Colour: bg #120b19 (new, rail/page) over #1a1220, surfaces #2a1f36 / #3a2c4a / #4a3a5e, border #72578d, text #fff3e0, muted #c3aed0, accent #ffb86b. Semantic: good #6be08a, bad #ff6b6b, shard #8fd8ff, key #ff8fb1. Rarity: common #b9b6c9, rare #4aa8ff, epic #bb74ff, legendary #ff9a3c.</li>
+<li>Type: Pixelify Sans (headings, buttons, labels), DM Sans (body, 14px base), JetBrains Mono (all numbers, tabular).</li>
+<li>Spacing: 4 / 8 / 12 / 16 / 24 / 32. Screen padding 16-18px, card gap 14px.</li>
+<li>Frames: 2px border + 3px hard black shadow on cards and buttons; buttons press down 2px. Rarity = frame colour AND a text pill.</li>
+<li>Frame sizes: design at 1280x720 and 1600x900. Rail 92px, HUD 56px, right panel 320-340px. Content flexes.</li>
+<li>Motion: only hit numbers, loot pop, forge flash. All respect prefers-reduced-motion.</li>
+</ul>
+<h3>6. Components</h3>
+<p>Rail nav item, HUD chip, XP bar, Card, Button (primary/secondary/ghost/large), Pill, Item slot (+ empty, selected, rarity), Item icon set, Stat row, Data table, Scene canvas wrapper, Event log, Map node, Modal, Toast, Banner, Empty state, Search field, Filter chips, Progress bar.</p>
+<h3>7. Open questions for the user</h3>
+<ul>
+<li>Keep Pixelify Sans, or try a more readable pixel face for long text?</li>
+<li>Is the left rail OK, or prefer top tabs like today?</li>
+<li>Should Home also show a mini boss progress, or keep it only on Map?</li>
+</ul></template><template id="t-plan"><h2>Implementation plan (living draft)</h2>
+<p>Rule for every phase: keep all existing art assets untouched (see the art rule in the prompt header); branch from latest <code>main</code>, one draft PR, do not touch Tier 3 (contracts, auth, supabase, <code>packages/game-rules</code>, economy numbers). Keep existing tests green. No new dependencies. Git author must be <code>ntbaoheyhey</code> noreply email.</p>
+<p>Files owned by other open UI threads (Boss panel scroll fix, landing audit) are skipped until those PRs merge.</p>
+<h3>Dependency graph</h3>
+<p>P0 tokens+shell -&gt; (P1 Home, P2 Bag, P3 Map, P4 Forge, P5 Market, P6 Hero+Help) in parallel -&gt; P7 polish, states, art, QA.</p>
+<div class="tw"><table>
+<tr><th>Phase</th><th>Owner</th><th>Depends on</th><th>Zone</th></tr>
+<tr><td>P0 Tokens and shell (rail, HUD, routing)</td><td>Claude (Sonnet, medium)</td><td>none</td><td><code>apps/web/src/theme.css</code>, <code>App.tsx</code>, <code>Panel.tsx</code>, <code>layout/</code> shell</td></tr>
+<tr><td>P1 Landing + class picker + Home</td><td>Antigravity</td><td>P0</td><td>landing, <code>classpicker/</code>, stage</td></tr>
+<tr><td>P2 Bag</td><td>Codex</td><td>P0</td><td><code>inventory/</code>, <code>layout/bag/</code></td></tr>
+<tr><td>P3 Map (boss)</td><td>Antigravity</td><td>P0 + boss scroll PR merged</td><td><code>map/</code>, <code>boss/</code></td></tr>
+<tr><td>P4 Forge</td><td>Codex</td><td>P0</td><td><code>forge/</code></td></tr>
+<tr><td>P5 Market</td><td>Codex</td><td>P0</td><td><code>market/</code></td></tr>
+<tr><td>P6 Hero sheet + Help</td><td>Antigravity</td><td>P0</td><td><code>layout/character/</code>, <code>HelpTab</code></td></tr>
+<tr><td>P7 Shared states, icons, QA at 1280/1600</td><td>Claude verifies; Antigravity screenshots</td><td>P1-P6</td><td><code>notice/</code>, <code>art/</code></td></tr>
+</table></div>
+<h3>Paste prompts</h3>
+<h4>P0 (Claude lane, not pasted)</h4>
+<p>Tokens plus app shell only; I do this after you approve the direction.</p>
+<h4>Common header (put at top of every prompt below)</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>Repo ntbaoheyhey/taskbar-hero. Git setup first: git config user.email must be 108352255+ntbaoheyhey@users.noreply.github.com and user.name ntbaoheyhey. Base on latest origin/main after the P0 shell PR is merged. Design source of truth: reports/ui-redesign/index.html (open it, flip through screens) and reports/ui-redesign/BRIEF.md. Rebuild only your zone to match the mockup at 1280x720 and 1600x900 (desktop only). Use tokens from apps/web/src/theme.css; no new dependencies; do not change game rules, contracts, auth, schema, economy numbers, or files outside your zone (a one-line note is fine for adjacent test/helper updates). ART RULE: Keep ALL existing images and art assets (sprites, backgrounds, icons, cat art, Relic art). Reuse them as they are; never replace or delete any. New art only as additions, and only if the user asks. Keep existing tests passing, add tests for new components, run pnpm build and the web tests. Take before/after screenshots at both sizes into reports/ui-redesign/&lt;phase&gt;/. Open a draft PR to main, do not merge, then report: what changed, what is not verified, screenshots.</pre></div>
+<h4>P1 Antigravity: landing, class picker, Home</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P1. Zone: the landing page, apps/web/src/layout/classpicker/, and the Home stage layout. Build the Landing, Class picker and Home screens as in the mockup: hero scene + Play as guest + Connect wallet (secondary) + proof strip; three class cards with one primary Start button; Home with scene centre, hero card, next goal, recent loot and event log. Keep all existing behaviour (guest play, wallet connect, class save).</pre></div>
+<h4>P2 Codex: Bag</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P2. Zone: apps/web/src/inventory/ and apps/web/src/layout/bag/. Build the Bag screen: 8-column slot grid with visible empty slots, filter chips (All, Weapons, Armor, Materials, Relics), right detail panel with Equip / Forge / List actions and a compare block. Rarity shown by frame colour AND a text pill. Keep bulk-equip and every existing action working; update tests that assert old markup.</pre></div>
+<h4>P3 Antigravity: Map (boss)</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P3. Start only after the &quot;Fix Boss panel nested scroll UI&quot; PR is merged. Zone: apps/web/src/map/ and apps/web/src/boss/. Build the Map screen: chapter path with done/current/locked/boss nodes and a right fight card (recommended power, your power, daily attempts, rewards, past runs, Fight). No nested scrolling.</pre></div>
+<h4>P4 Codex: Forge</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P4. Zone: apps/web/src/forge/. Build the Forge screen: left gear picker, centre preview + result reveal (flash, no modal), right materials and a plain chances table. Do not change forge odds or costs (read them from game-rules). Keep reduced-motion support.</pre></div>
+<h4>P5 Codex: Market</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P5. Zone: apps/web/src/market/. Build the Market screen: filter chips, sortable Relic table, right panel with token id, contract, price, Buy and a Routescan link, plus Your listings with an empty state. Relics only. No contract or ABI changes.</pre></div>
+<h4>P6 Antigravity: Hero sheet + Help</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P6. Zone: apps/web/src/layout/character/ and the Help tab (apps/web/src/layout/HelpTab.*). Build the Hero sheet (paper-doll slots, stats, power breakdown, change class) and the Help screen (topic list, search, answer pane) as a screen instead of a modal.</pre></div>
+<h4>P7 Antigravity: shared states and QA</h4>
+<div class="cb"><button class="cp" type="button">Copy</button><pre>[Common header] Phase P7. After P1-P6 merge. Zone: apps/web/src/layout/notice/ and shared components. Build modal, toast, offline banner and empty states as in the mockup; then screenshot every screen at 1280x720 and 1600x900 and list visual bugs. Fix only cosmetic ones.</pre></div>
+<h3>Optional connectors / MCP</h3>
+<ul>
+<li>Figma: only if you want to edit the design visually and hand frames to Codex/Antigravity. Not required; HTML mockups already work as the spec.</li>
+<li>Image generation tool (any): for pixel sprites, backgrounds, a Relic banner. Needs your licence check (original content only) and a 16-colour palette rule. Optional.</li>
+<li>tbhindex.com is behind Cloudflare, so I cannot read it. If you want it used as reference, paste 2-3 screenshots into the project folder.</li>
+</ul></template>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="cat" viewBox="0 0 16 16"><g class="px" shape-rendering="crispEdges">
+   <path fill="currentColor" d="M2 2h2v2h1v1h6V4h1V2h2v6h1v5h-1v1H3v-1H2V8H1V3z"/><path fill="currentColor" d="M3 5h10v8H3z"/>
+   <path fill="#000" d="M5 7h2v2H5zM9 7h2v2H9zM7 10h2v1H7z"/><path fill="#fff" d="M5 7h1v1H5zM9 7h1v1H9z"/><path fill="#ff8fb1" d="M7 10h2v1H7z"/>
+  </g></symbol>
+  <symbol id="i-sword" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#cfe4ff" d="M11 1h4v4l-7 7-2-2z"/><path shape-rendering="crispEdges" fill="#ffb86b" d="M4 9l3 3-2 2H3v-2z M2 13l1 1-1 1-1-1z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#4aa8ff" d="M3 2h10v7l-5 5-5-5z"/><path shape-rendering="crispEdges" fill="#fff3" d="M3 2h5v12L3 9z"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#8fd8ff" d="M1 5l3 3-3 3zM4 5h6l3 3-3 3H4z"/><path shape-rendering="crispEdges" fill="#000" d="M10 7h1v1h-1z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#ff8fb1" d="M2 3h5v5H2zM7 5h7v2h-1v2h-2V7H7z"/><path shape-rendering="crispEdges" fill="#1a1220" d="M4 5h1v1H4z"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#bb74ff" d="M4 2h8l3 4-7 9-7-9z"/><path shape-rendering="crispEdges" fill="#fff4" d="M4 2h4v13L1 6z"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 16 16"><path shape-rendering="crispEdges" fill="#ff9a3c" d="M2 11h12v2H2zM4 4h8v7H4z"/><path shape-rendering="crispEdges" fill="#000" d="M4 9h8v1H4z"/></symbol>
+  <symbol id="n-home" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M12 3l10 9h-3v9h-5v-6h-4v6H5v-9H2z"/></symbol>
+  <symbol id="n-bag" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M8 3h8v3h4v15H4V6h4zM10 5v1h4V5z"/></symbol>
+  <symbol id="n-map" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M2 5l6-2 8 2 6-2v16l-6 2-8-2-6 2zM9 6v12M15 7v12" /></symbol>
+  <symbol id="n-forge" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M3 8h13l3-3 2 2-3 3v3h-4l-2 3v3H6v-3L3 14z"/></symbol>
+  <symbol id="n-market" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M2 8l2-5h16l2 5v2H2zM4 12h16v9H4z"/></symbol>
+  <symbol id="n-cat" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M3 3h4v3h10V3h4v10l-2 2v4H5v-4l-2-2z"/></symbol>
+  <symbol id="n-help" viewBox="0 0 24 24"><path shape-rendering="crispEdges" fill="currentColor" d="M5 3h14v14h-6l-4 4v-4H5zM11 6v2h2V6zM11 9v3h2V9z" fill-rule="evenodd"/></symbol>
+ </defs>
+</svg>
+
+<script>
+const SCREENS=[
+ ['landing','Landing','First impression. One hero scene, one promise, one button. Connect-wallet is optional and sits secondary: you can play as guest first. Judges see Avalanche Fuji + Relic NFT proof in the footer strip.'],
+ ['class','Class picker','Pick a cat class. Three big cards with role, starter stat line and one-sentence playstyle. Preview cat idles at the bottom. Confirm is the only primary action.'],
+ ['stage','Stage (home)','The idle loop, now the home screen. Big living scene in the middle, hero card on the right, event log under the scene. Left rail is the permanent navigation, HUD on top carries currencies and level.'],
+ ['bag','Bag','Grid of items left, detail panel right. Rarity by frame colour plus text pill (never colour alone). Empty slots are visible so players see capacity. Actions live in the detail panel only.'],
+ ['map','Boss / World map','The chapter map becomes a real path. Current node is highlighted, locked nodes are dim. Selecting a node opens the fight card on the right with the daily limit and recommended power.'],
+ ['forge','Forge','Three steps in one column: choose gear, choose materials, forge. Result chances shown as a plain table. Reveal happens in the centre pane with a short flash, never a modal.'],
+ ['market','Market','Relics only (as agreed). Filter chips + a sortable table. The selected Relic shows its on-chain facts (token id, contract, owner) in the right panel with a link to Routescan.'],
+ ['char','Character','Hero sheet: paper-doll equipment slots around the cat, stats and derived power on the right. Class and level progress live here, not in the HUD.'],
+ ['help','Help','Short, searchable how-to. Left list of topics, right the answer with a small picture. Replaces the long modal.'],
+ ['states','Modals, toasts, empty, error','Shared states: confirm modal, success toast, offline/error banner, empty bag. Same frames and the same wording rules everywhere.']
+];
+const NAV=[['stage','Home','n-home'],['bag','Bag','n-bag'],['map','Map','n-map'],['forge','Forge','n-forge'],['market','Market','n-market'],['char','Hero','n-cat'],['help','Help','n-help']];
+const ico=(id,c='')=>`<svg class="ico px ${c}" viewBox="0 0 16 16"><use href="#${id}"/></svg>`;
+const cat=(col,s=64)=>`<svg class="cat px" style="width:${s}px;height:${s}px;color:${col}" viewBox="0 0 16 16"><use href="#cat"/></svg>`;
+const chip=(c,l,v)=>`<span class="chip"><i style="background:${c}"></i><span class="muted">${l}</span> ${v}</span>`;
+const shell=(key,body,extra='')=>`<div class="rail"><div class="logo">TASK<br>BAR<br>HERO</div>${NAV.map(([k,l,i])=>`<button class="nav" data-go="${k}" ${k===key?'aria-current="page"':''}><svg viewBox="0 0 24 24"><use href="#${i}"/></svg>${l}</button>`).join('')}<div class="sp"></div><span class="pill good">Fuji</span></div>
+<header class="hud">${chip('#ffb86b','Gold','12,480')}${chip('#8fd8ff','Shards','86')}${chip('#ff8fb1','Cat Keys','3')}<div class="xp row grow"><span class="disp" style="font-size:12px">LV 14</span><div class="bar-t grow"><b style="width:62%"></b></div><span class="num muted" style="font-size:11px">620/1000</span></div><div class="wallet"><span class="chip"><span class="muted">Power</span> 1,842</span><button class="btn sec" style="padding:4px 12px">0x7a…c19f</button></div></header>
+<main class="main">${body}${extra}</main>`;
+const bare=b=>`<div style="grid-column:1/3;grid-row:1/3;position:relative">${b}</div>`;
+const scene=(w='100%',h='100%')=>`<div class="scene" style="width:${w};height:${h}"><div class="moon"></div><div class="roofs"></div><div class="ground"></div>
+<div class="actor" style="left:18%"><div class="hpbar"><b style="width:100%;background:var(--good)"></b></div>${cat('#ffb86b',96)}</div>
+<div class="actor" style="left:62%"><div class="hpbar"><b style="width:55%"></b></div>${cat('#8b6bd6',84)}</div>
+<div class="float" style="left:60%;bottom:58%">-148</div><div class="float" style="left:22%;bottom:62%;color:var(--good)">+12 gold</div></div>`;
+const slots=(n,cols,sel)=>{const it=['i-sword','i-shield','i-hat','i-gem','i-fish','i-key','i-sword','i-shield','i-gem','i-hat','i-fish','i-sword'];const rc=['','r1','r2','r3','','r1','r2','','r1','r3','','r2'];
+ return `<div class="slots" style="grid-template-columns:repeat(${cols},1fr)">`+Array.from({length:n},(_,i)=>i<it.length?`<div class="slot ${rc[i]} ${i===sel?'sel':''}">${ico(it[i])}<span class="q">${i%3?'':'x'+(i+2)}</span></div>`:`<div class="slot empty"></div>`).join('')+'</div>'};
+const detail=`<div class="card"><div class="row"><div class="slot r3" style="width:64px">${ico('i-gem')}</div><div class="grow"><h3 style="margin:0">Moonlit Fang</h3><span class="pill leg">Legendary</span> <span class="pill">Weapon</span></div></div>
+<div style="margin-top:10px"><div class="stat"><span>Attack</span><span>+148</span></div><div class="stat"><span>Crit</span><span>+6%</span></div><div class="stat"><span>Level req.</span><span>12</span></div><div class="stat"><span>Relic</span><span>#1042 · minted</span></div></div>
+<div class="row" style="margin-top:12px"><button class="btn grow">Equip</button><button class="btn sec">Forge</button><button class="btn ghost">List</button></div></div>`;
+
+const V={};
+V.landing=()=>bare(`<div class="scene" style="position:absolute;inset:0;border:0"><div class="moon" style="right:12%;top:10%;width:80px;height:80px"></div><div class="roofs" style="height:160px;bottom:26%"></div><div class="ground"></div></div>
+<div class="hero" style="position:relative"><div><span class="pill good">Live on Avalanche Fuji</span><h1 style="margin-top:12px">Taskbar<br>Hero</h1><p>A cozy idle RPG that lives in a strip of your browser. Your cat fights while you work. Rare gear can become a Relic you truly own.</p>
+<div class="row" style="margin-top:20px"><button class="btn lg" data-go="class">Play as guest</button><button class="btn sec lg">Connect wallet</button></div><p class="muted" style="font-size:13px;margin-top:14px">No token. No fees to play. Wallet only needed to mint or trade Relics.</p></div>
+<div style="display:flex;justify-content:center;gap:10px;align-items:end;padding-bottom:70px">${cat('#ffb86b',150)}${cat('#8b6bd6',120)}${cat('#6be08a',100)}</div></div>
+<div style="position:absolute;left:0;right:0;bottom:0;background:#000a;border-top:2px solid #000;padding:10px 40px;display:flex;gap:30px;font-size:13px" class="muted"><span>Relic NFT · ERC-721</span><span>Contract verified on Routescan</span><span>Server-checked fights</span><span>Open source</span><span style="margin-left:auto"><a style="color:var(--accent)" href="#">Help</a></span></div>`);
+V.class=()=>bare(`<div style="padding:28px 40px;height:100%;background:var(--bg-2);display:flex;flex-direction:column;gap:16px"><div><span class="lbl">Step 1 of 1</span><h1 class="disp" style="margin:2px 0;font-size:34px;color:var(--accent)">Choose your cat</h1><div class="muted">You can retrain later at the Character screen.</div></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;flex:1;min-height:0">${[['Guardian','#6be08a','Tanky, protects the strip.','HP ★★★★★ · ATK ★★ · Crit ★'],['Hunter','#ffb86b','Balanced, steady loot.','HP ★★★ · ATK ★★★ · Crit ★★★'],['Mystic','#bb74ff','Glass cannon with big crits.','HP ★★ · ATK ★★★★★ · Crit ★★★★']].map(([n,c,d,s],i)=>`<div class="card" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;${i===1?'border-color:var(--accent);box-shadow:0 0 0 3px var(--accent),var(--shadow)':''}">${cat(c,128)}<h2 style="font-size:22px">${n}</h2><div>${d}</div><div class="num muted" style="font-size:12px">${s}</div><div class="grow"></div><button class="btn ${i===1?'':'sec'}" style="width:100%">${i===1?'Selected':'Select'}</button></div>`).join('')}</div>
+<div class="row"><span class="muted grow">Hunter: best for first-time players.</span><button class="btn lg" data-go="stage">Start adventure</button></div></div>`);
+V.stage=()=>shell('stage',`<div class="cols" style="grid-template-columns:1fr 330px;grid-template-rows:1fr auto"><div style="min-height:0;display:flex;grid-column:1;grid-row:1">${scene()}</div>
+<div class="mini" style="grid-column:2;grid-row:1/3;align-content:start"><div class="card"><div class="row">${cat('#ffb86b',56)}<div class="grow"><h3 style="margin:0">Mochi</h3><span class="pill">Hunter · LV 14</span></div></div><div style="margin-top:8px"><div class="stat"><span>HP</span><span>1,920</span></div><div class="stat"><span>Attack</span><span>412</span></div><div class="stat"><span>Crit</span><span>18%</span></div></div></div>
+<div class="card"><h3>Next goal</h3><div class="muted" style="font-size:13px">Defeat the Vacuum Boss in Chapter 2.</div><div class="bar-t" style="margin:8px 0"><b style="width:70%;background:var(--accent)"></b></div><button class="btn" data-go="map" style="width:100%">Go to map</button></div>
+<div class="card"><h3>Recent loot</h3><div class="row">${[['i-sword','r2'],['i-fish',''],['i-gem','r3']].map(([i,r])=>`<div class="slot ${r}" style="width:52px">${ico(i)}</div>`).join('')}</div></div></div>
+<div class="logbox" style="grid-column:1;grid-row:2"><div><em>12:04</em> Mochi hits Dust Bunny for 148</div><div><em>12:04</em> Dust Bunny defeated. +12 gold, +1 fish</div><div><em>12:03</em> Level progress 62%</div></div></div>`,`<div class="toast" style="display:none"></div>`);
+V.bag=()=>shell('bag',`<div class="cols" style="grid-template-columns:1fr 340px"><div class="card" style="display:flex;flex-direction:column"><div class="row" style="margin-bottom:10px"><h2 style="margin:0">Bag</h2><span class="num muted">12 / 40</span><div class="grow"></div>${['All','Weapons','Armor','Materials','Relics'].map((f,i)=>`<button class="btn ${i?'ghost':'sec'}" style="padding:3px 10px;font-size:11px">${f}</button>`).join('')}</div>${slots(40,8,3)}</div><div style="display:grid;gap:14px;align-content:start">${detail}<div class="card"><h3>Compare</h3><div class="stat"><span>Attack vs equipped</span><span style="color:var(--good)">+34</span></div><div class="stat"><span>Crit vs equipped</span><span style="color:var(--bad)">-2%</span></div></div></div></div>`);
+V.map=()=>shell('map',`<div class="cols" style="grid-template-columns:1fr 330px"><div class="scene" style="position:relative"><div class="moon"></div><div class="ground" style="height:100%;opacity:.5;border:0"></div>
+<svg style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="none" viewBox="0 0 100 100"><path d="M8 78 C22 60,26 90,40 66 S58 40,66 58 S84 22,92 30" fill="none" stroke="#fff3e0" stroke-width=".7" stroke-dasharray="2 1.6"/></svg>
+<div class="node done" style="left:3%;top:68%"><i></i>Alley</div><div class="node done" style="left:30%;top:56%"><i></i>Kitchen</div><div class="node cur" style="left:52%;top:30%"><i></i>Vacuum</div><div class="node lock" style="left:62%;top:55%"><i></i>Attic</div><div class="node boss lock" style="left:84%;top:12%"><i></i>Big Dog</div>
+<div style="position:absolute;left:14px;top:12px" class="row"><span class="lbl">Chapter 2</span><span class="pill">Household</span></div></div>
+<div style="display:grid;gap:14px;align-content:start"><div class="card"><span class="pill bad">Boss</span><h2 style="margin-top:6px;font-size:20px">The Vacuum</h2><div class="stat"><span>Recommended power</span><span>1,700</span></div><div class="stat"><span>Your power</span><span style="color:var(--good)">1,842</span></div><div class="stat"><span>Daily attempts</span><span>2 / 3</span></div><button class="btn lg" style="width:100%;margin-top:12px">Fight</button></div><div class="card"><h3>Rewards</h3><div class="row">${[['i-gem','r2'],['i-key',''],['i-fish','']].map(([i,r])=>`<div class="slot ${r}" style="width:48px">${ico(i)}</div>`).join('')}</div></div><div class="card"><h3>Past runs</h3><div class="muted" style="font-size:13px">Win · 12 Oct · 4m<br>Loss · 11 Oct · 2m</div></div></div></div>`);
+V.forge=()=>shell('forge',`<div class="cols" style="grid-template-columns:300px 1fr 320px"><div class="card"><h3>1 · Pick gear</h3>${slots(12,3,0)}</div>
+<div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:radial-gradient(circle at 50% 45%,#5a3560,var(--surface) 70%)"><div class="slot r2" style="width:130px"><svg class="px" style="width:80px;height:80px" viewBox="0 0 16 16"><use href="#i-sword"/></svg></div><div class="disp" style="font-size:20px">Ember Claw +3 → +4</div><div class="num muted">Success 62% · Break 0% · Cost 240 gold, 6 shards</div><button class="btn lg">Forge</button></div>
+<div style="display:grid;gap:14px;align-content:start"><div class="card"><h3>2 · Materials</h3><div class="stat"><span>Shards</span><span>86 / 6</span></div><div class="stat"><span>Gold</span><span>12,480 / 240</span></div></div><div class="card"><h3>Chances</h3><table><tr><th>Outcome</th><th>%</th></tr><tr><td>Success</td><td class="num">62</td></tr><tr><td>No change</td><td class="num">34</td></tr><tr><td>Great success</td><td class="num">4</td></tr></table><div class="muted" style="font-size:11px;margin-top:6px">Great success is a draft, not live (needs sign-off).</div></div></div></div>`);
+V.market=()=>shell('market',`<div class="cols" style="grid-template-columns:1fr 330px"><div class="card" style="display:flex;flex-direction:column"><div class="row" style="margin-bottom:10px"><h2 style="margin:0">Relic market</h2><div class="grow"></div>${['All','Weapon','Armor','Cheapest'].map((f,i)=>`<button class="btn ${i?'ghost':'sec'}" style="padding:3px 10px;font-size:11px">${f}</button>`).join('')}</div>
+<table><tr><th></th><th>Relic</th><th>Rarity</th><th>Power</th><th>Seller</th><th style="text-align:right">Price (AVAX)</th></tr>${[['i-gem','Moonlit Fang #1042','leg','Legendary',148,'0x7a…c19f','0.40'],['i-sword','Ember Claw #0877','epic','Epic',112,'0x31…02be','0.12'],['i-shield','Tea Kettle #0630','rare','Rare',74,'0xa8…9d41','0.05'],['i-hat','Night Hat #0412','rare','Rare',66,'0x90…e1c2','0.04'],['i-sword','Mouse Poker #0101','com','Common',31,'0x5c…77fa','0.01']].map((r,i)=>`<tr class="${i===0?'hl':''}"><td>${ico(r[0])}</td><td>${r[1]}</td><td><span class="pill ${r[2]}">${r[3]}</span></td><td class="num">${r[4]}</td><td class="num muted">${r[5]}</td><td class="num" style="text-align:right">${r[6]}</td></tr>`).join('')}</table></div>
+<div style="display:grid;gap:14px;align-content:start"><div class="card"><div class="row"><div class="slot r3" style="width:64px">${ico('i-gem')}</div><div><h3 style="margin:0">Moonlit Fang</h3><span class="pill leg">Legendary</span></div></div><div style="margin-top:8px"><div class="stat"><span>Token</span><span>#1042</span></div><div class="stat"><span>Contract</span><span>0x10fc…ff93</span></div><div class="stat"><span>Price</span><span>0.40 AVAX</span></div></div><button class="btn lg" style="width:100%;margin-top:10px">Buy Relic</button><a href="#" style="display:block;margin-top:8px;font-size:12px;color:var(--accent)">View on Routescan ↗</a></div><div class="card"><h3>Your listings</h3><div class="muted" style="font-size:13px">Nothing listed. Open the Bag and choose List on a Relic.</div></div></div></div>`);
+V.char=()=>shell('char',`<div class="cols" style="grid-template-columns:1fr 1fr 320px"><div class="card" style="display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 50%,#4b2f5e,var(--surface) 70%)">${cat('#ffb86b',200)}${[['Head',50,6,'i-hat'],['Weapon',6,45,'i-sword'],['Shield',94,45,'i-shield'],['Charm',50,88,'i-gem']].map(([n,x,y,i])=>`<div style="position:absolute;left:${x}%;top:${y}%;transform:translate(-50%,-50%);text-align:center"><div class="slot r2" style="width:60px">${ico(i)}</div><span class="lbl" style="font-size:9px">${n}</span></div>`).join('')}</div>
+<div style="display:grid;gap:14px;align-content:start"><div class="card"><h2>Mochi · Hunter</h2><div class="stat"><span>Level</span><span>14</span></div><div class="stat"><span>HP</span><span>1,920</span></div><div class="stat"><span>Attack</span><span>412</span></div><div class="stat"><span>Defense</span><span>96</span></div><div class="stat"><span>Crit</span><span>18%</span></div></div></div>
+<div class="card"><h3>Power</h3><div class="num" style="font-size:36px;color:var(--accent)">1,842</div><div class="muted" style="font-size:12px">Gear 1,240 · Level 420 · Bonuses 182</div><h3 style="margin-top:14px">Progress</h3><div class="bar-t"><b style="width:62%"></b></div><div class="muted" style="font-size:12px;margin-top:4px">380 XP to level 15</div><button class="btn sec" style="width:100%;margin-top:14px">Change class</button></div></div>`);
+V.help=()=>shell('help',`<div class="cols" style="grid-template-columns:260px 1fr"><div class="card"><input id="hs" placeholder="Search help" style="width:100%;background:var(--bg);border:2px solid var(--line);color:var(--text);padding:6px 8px;font:inherit;margin-bottom:8px">${['Getting started','Fighting','Gear and rarity','Forge','Relics and wallet','Market','Fixing problems'].map((t,i)=>`<div class="stat" style="${i===3?'color:var(--accent);font-weight:700':''}"><span>${t}</span><span>›</span></div>`).join('')}</div>
+<div class="card"><h2 style="font-size:22px">How the forge works</h2><p style="max-width:62ch">Pick a piece of gear, check the chances, then press Forge. Gold and shards are only spent when you confirm. A failed forge never destroys your gear.</p><div class="row" style="margin:12px 0">${['Pick','Check','Forge'].map((s,i)=>`<div class="card" style="flex:1;text-align:center"><div class="num" style="color:var(--accent);font-size:22px">${i+1}</div>${s}</div>`).join('')}</div><p class="muted">Tip: shards drop from bosses. Keep a few spare for your next upgrade.</p></div></div>`);
+V.states=()=>shell('help',`<div class="cols" style="grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;align-content:start"><div class="card" style="border-color:var(--bad);grid-column:1/3"><div class="row"><span class="pill bad">Offline</span><span class="grow">The server did not answer. Your cat keeps fighting; progress will sync when the connection returns.</span><button class="btn sec">Retry</button></div></div>
+<div class="card" style="display:grid;place-items:center;text-align:center;gap:6px">${cat('#c3aed0',90)}<h2>Your bag is empty</h2><div class="muted">Win a few fights and the loot lands here.</div><button class="btn" data-go="stage">Back to the strip</button></div>
+<div class="card"><h3>Toast examples</h3><div class="row" style="flex-direction:column;align-items:stretch;gap:8px"><div class="card row" style="border-color:var(--good)"><span class="pill good">Saved</span>Equipped Moonlit Fang.</div><div class="card row" style="border-color:var(--accent)"><span class="pill">Heads up</span>Wallet on the wrong network. Switch to Fuji.</div><div class="card row" style="border-color:var(--bad)"><span class="pill bad">Failed</span>Forge did not go through. Nothing was spent.</div></div></div></div>`,`<div class="scrim"><div class="modal"><h2>List this Relic?</h2><p>Moonlit Fang #1042 will be listed for <b class="num">0.40 AVAX</b>. You can cancel the listing any time. Your wallet will ask you to sign.</p><div class="row" style="justify-content:flex-end"><button class="btn ghost">Cancel</button><button class="btn">Confirm listing</button></div></div></div>`);
+
+SCREENS.push(['prompts','Prompts','Order to paste and which tool runs each mission. Text: tasks/v2/redesign/ and PASTE-ALL-redesign.txt.'],['brief','Design brief','Goals, navigation model, screen list, tokens, components. Text version: reports/ui-redesign/BRIEF.md.'],['plan','Plan + prompts','Phases split between Claude, Codex and Antigravity with ready paste prompts, plus optional connectors. Text version: reports/ui-redesign/PLAN.md.']);
+const tabs=document.getElementById('tabs'),vp=document.getElementById('vp'),note=document.getElementById('note');
+let W=1280,cur='landing';
+SCREENS.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;b.setAttribute('role','tab');b.dataset.k=k;tabs.appendChild(b)});
+function render(){
+  const doc=document.getElementById('doc'),isDoc=['brief','plan','prompts'].includes(cur);
+  document.getElementById('size').style.visibility=isDoc?'hidden':'visible';
+  doc.hidden=!isDoc;vp.hidden=isDoc;
+  if(isDoc){doc.innerHTML=document.getElementById('t-'+cur).innerHTML;doc.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{const t=b.nextElementSibling.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>b.textContent='Copied',()=>{const r=document.createRange();r.selectNodeContents(b.nextElementSibling);const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected'})});
+    [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.k===cur));const s=SCREENS.find(x=>x[0]===cur);note.innerHTML=`<b>${s[1]}.</b> ${s[2]}`;try{history.replaceState(null,'','#'+cur)}catch(e){};return}
+
+  const H=W*9/16;const app=document.createElement('div');app.className='app';app.style.cssText=`width:${W}px;height:${H}px`;
+  app.innerHTML=V[cur]();if(cur==='landing'||cur==='class')app.style.gridTemplateColumns='1fr';
+  vp.innerHTML='';vp.appendChild(app);fit();
+  [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.k===cur));
+  const s=SCREENS.find(x=>x[0]===cur);note.innerHTML=`<b>${s[1]}.</b> ${s[2]}`;
+  try{history.replaceState(null,'','#'+cur)}catch(e){}
+}
+function fit(){const a=vp.firstChild;if(!a)return;const sc=vp.clientWidth/W;a.style.transform=`scale(${sc})`;vp.style.height=(W*9/16*sc)+'px'}
+tabs.onclick=e=>{const k=e.target.dataset.k;if(k){cur=k;render()}};
+vp.onclick=e=>{const g=e.target.closest('[data-go]');if(g&&V[g.dataset.go]){cur=g.dataset.go;render()}};
+document.getElementById('size').onclick=e=>{const w=e.target.dataset.w;if(w){W=+w;[...e.currentTarget.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.w===w));render()}};
+addEventListener('resize',fit);
+const h=location.hash.slice(1);if(V[h]||['brief','plan','prompts'].includes(h))cur=h;
+document.fonts&&document.fonts.ready.then(fit);
+render();
+</script>
+
+</body></html>
