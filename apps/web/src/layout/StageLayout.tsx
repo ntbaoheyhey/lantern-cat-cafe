@@ -536,6 +536,7 @@ export function StageLayout() {
                 >
                   <ChapterMap
                     currentChapter={state.progress.chapter}
+                    selectedChapter={chapter ?? state.progress.chapter}
                     round={state.progress.round}
                     clearedChapters={state.bosses.chapters.filter((c) => c.cleared).map((c) => c.chapter)}
                     onSelect={setChapter}
