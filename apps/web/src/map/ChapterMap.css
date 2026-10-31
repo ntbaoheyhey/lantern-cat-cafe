@@ -403,3 +403,18 @@
     overflow-x: hidden;
   }
 }
+
+/* Desktop only (mobile layout untouched): single selected-chapter card under the chapter tabs, no frame, no inner scroll. */
+@media (min-width: 681px) {
+  .v2-chapter-map--compact {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .v2-chapter-map--compact .v2-map-header,
+  .v2-chapter-map--compact .v2-map-item:not(.v2-map-item--selected) {
+    display: none;
+  }
+}

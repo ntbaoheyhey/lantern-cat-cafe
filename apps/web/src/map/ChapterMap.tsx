@@ -12,6 +12,8 @@ export interface ChapterMapProps {
   clearedChapters?: readonly number[] | Set<number>;
   round?: number;
   onSelect?: (chapterNumber: number) => void;
+  /** Compact mode: only this chapter's card, no header or path (used under the chapter tabs). */
+  selectedChapter?: number;
 }
 
 export const CHAPTER_THEME_COLORS: Record<number, { color: string; label: string }> = {
@@ -81,7 +83,10 @@ export function ChapterMap({
   clearedChapters = [],
   round = 1,
   onSelect,
+  selectedChapter,
 }: ChapterMapProps) {
+  const compact = selectedChapter !== undefined;
+  const shown = chapters;
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const clearedSet = useMemo(() => {
@@ -90,11 +95,13 @@ export function ChapterMap({
   }, [clearedChapters]);
 
   return (
-    <nav className="v2-chapter-map" aria-label="Chapter Map">
+    <nav className={`v2-chapter-map${compact ? ' v2-chapter-map--compact' : ''}`} aria-label="Chapter Map">
+      {(
       <div className="v2-map-header">
         <h2 className="v2-map-title">World Map</h2>
         <span className="v2-map-subtitle">Cat Café Quest Chapters</span>
       </div>
+      )}
 
       <div className="v2-map-canvas">
         {/* Winding pixel path background for desktop layout */}
@@ -134,7 +141,7 @@ export function ChapterMap({
         </svg>
 
         <ol className="v2-map-list" role="list">
-          {chapters.map((c) => {
+          {shown.map((c) => {
             const isCleared = clearedSet.has(c.index);
             const isCurrent = c.index === currentChapter;
             const isLocked = !isCleared && !isCurrent;
@@ -175,7 +182,7 @@ export function ChapterMap({
               .join(' ');
 
             return (
-              <li key={c.id || c.index} className={`v2-map-item v2-map-item--ch${c.index}`}>
+              <li key={c.id || c.index} className={`v2-map-item v2-map-item--ch${c.index}${compact && c.index === selectedChapter ? ' v2-map-item--selected' : ''}`}>
                 <button
                   type="button"
                   className={classNames}
