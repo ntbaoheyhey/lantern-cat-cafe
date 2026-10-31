@@ -42,4 +42,5 @@ Heroes (6: Knight, Ranger, Sorcerer, Priest, Hunter, Slayer) with base stats and
 
 - `systems.md`: game systems in our own words, as tables.
 - `adoption-ideas.md`: comparison with our config and ranked ideas.
+- `coverage.md`: every reference system mapped to our original version and a demo screen.
 - `licence-risk.md`: what is safe as inspiration, what is not, and what proof we need.
