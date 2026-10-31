@@ -255,10 +255,31 @@
   }
 }
 
+/* Status grouping for mode note and sync status */
+.v2-topbar-status {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, 8px);
+  padding: 4px 8px;
+  background: var(--surface-2, #30243d);
+  border: 1px solid var(--border, #3d2f4d);
+  border-radius: 4px;
+  flex: 0 0 auto;
+}
+
+.v2-topbar-status .v2-mode-note {
+  margin: 0;
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--muted, #b9b6c9);
+  white-space: nowrap;
+}
+
 /* Slot for SyncStatus */
 .v2-sync-status-slot {
   flex: 0 0 auto;
   min-width: 0;
+  display: flex;
+  align-items: center;
 }
 
 /* Compact sync status and topbar refinement on compact desktop / tablet / landscape phone (width <= 1024px) */
@@ -307,7 +328,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg-canvas, #150f1d);
+  background: var(--bg, #1a1220);
   overflow: hidden;
   min-height: 0;
   min-width: 0;
@@ -425,9 +446,10 @@
   flex: 0 0 auto;
   background: var(--surface, #21182b);
   border-bottom: 1px solid var(--border, #3d2f4d);
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   scrollbar-width: none;
+  width: 100%;
 }
 
 .v2-tabs::-webkit-scrollbar {
@@ -436,14 +458,16 @@
 
 .v2-tab {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  flex: 1 0 auto;
+  gap: 2px;
+  flex: 1 1 0;
+  min-width: 0;
   min-height: 44px;
-  padding: 6px 12px;
+  padding: 4px 2px;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
-  font-size: var(--fs-sm, 0.875rem);
+  font-size: 11px;
   font-weight: 700;
   color: var(--muted, #b9b6c9);
   background: transparent;
@@ -473,6 +497,17 @@
   flex: 0 0 16px;
 }
 
+.v2-tab-label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1.1;
+  text-align: center;
+}
+
 /* Panel Body & Tabpanels */
 .v2-panel-body {
   flex: 1 1 auto;
@@ -500,11 +535,17 @@
 }
 
 .v2-tabpanel-title {
-  flex: 0 0 auto;
   margin: 0;
+  font-size: var(--fs-md, 1rem);
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-weight: 700;
+  color: var(--accent, #ffb86b);
+  letter-spacing: 0.04em;
   padding: var(--sp-2, 8px) var(--sp-3, 12px) 0;
-  font: 700 var(--fs-md, 1.125rem)/1.2 var(--font-display, 'Pixelify Sans', monospace);
-  color: var(--gold, #ffd34e);
+}
+
+.v2-tabpanel:has(.boss-gate-panel) .v2-tabpanel-title {
+  display: none;
 }
 
 .v2-panel-body-inner {
@@ -632,6 +673,15 @@
     padding: 1px 2px;
   }
 
+  .v2-topbar-status {
+    position: absolute;
+    right: 56px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
   .v2-wallet {
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -748,12 +798,12 @@
 
   .v2-nav .v2-tab {
     flex: 1 1 0;
-    min-width: 44px;
+    min-width: 0;
     min-height: 44px;
     padding: 4px 1px;
     flex-direction: column;
     gap: 2px;
-    font-size: 12px;
+    font-size: 11px;
     border-bottom: 0;
     border-top: 3px solid transparent;
     overflow: hidden;
@@ -763,8 +813,11 @@
     display: block;
     max-width: 100%;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: -0.3px;
+    text-align: center;
   }
 
   .v2-nav .v2-tab[aria-selected='true'] {

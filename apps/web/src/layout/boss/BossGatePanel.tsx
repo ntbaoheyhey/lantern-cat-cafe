@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type CSSProperties } from 'react';
+import { useEffect, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
 import { PixelIcon } from '../../art/pixelIcons';
@@ -25,6 +25,7 @@ export interface BossGatePanelProps {
   busy: boolean;
   onFight: (chapter: number) => void;
   onSelectChapter: (chapter: number) => void;
+  children?: ReactNode;
 }
 
 function formatNotReached(
@@ -124,6 +125,7 @@ export function BossGatePanel({
   busy,
   onFight,
   onSelectChapter,
+  children,
 }: BossGatePanelProps) {
   const [internalNow, setInternalNow] = useState(() => Math.floor(Date.now() / 1000));
   useEffect(() => {
@@ -259,6 +261,8 @@ export function BossGatePanel({
         </nav>
 
         {status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
+
+        {children}
       </div>
 
       <div className="boss-gate-actions">

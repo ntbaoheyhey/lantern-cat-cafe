@@ -330,7 +330,7 @@ export class StageScene extends Phaser.Scene {
     const ranged = !!this.weapon.projectile;
     const edge = this.catEdges.get(String(this.cat.frame.name)) ?? this.catEdges.get('idle:0')!;
     const contact = contactX(this.homes[0], edge.right, this.monsterLeft);
-    const destination = ranged && !this.stopped() ? this.homes[1] : contact;
+    const destination = this.stopped() ? this.homes[1] : (ranged ? this.homes[1] : contact);
     const p = this.reduced ? 1 : Math.min(1, this.age / APPROACH_MS);
     const from = this.scale.width + this.plan.width;
     this.monster.setPosition(this.reduced ? destination : from + (destination - from) * p, this.floor);
@@ -421,7 +421,7 @@ export class StageScene extends Phaser.Scene {
     if (!this.cat || !this.monster || !this.plan) return;
     this.ground?.clear().fillStyle(0x000000, .35).fillEllipse(this.cat.x, this.floor, this.catWidth * .7, 4)
       .fillEllipse(this.monster.x, this.floor, this.plan.width * .7, 4);
-    const bar = this.hpBar?.clear(); if (!bar || !this.hp) return;
+    const bar = this.hpBar?.clear(); if (!bar || !this.hp || this.stopped()) return;
     const mw = Math.round(this.plan.width), mx = Math.round(this.monster.x - mw / 2), my = Math.round(this.floor - this.plan.height - 4);
     bar.fillStyle(0x241b30).fillRect(mx, my, mw, 3).fillStyle(0xd64f59).fillRect(mx, my, Math.round(mw * Math.max(0, this.hp.value) / this.hp.max), 3);
     const cw = Math.max(24, this.catWidth), cx = Math.round(this.cat.x - cw / 2), cy = Math.round(this.floor - this.catHeight - 5);

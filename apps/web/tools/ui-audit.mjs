@@ -5,7 +5,7 @@
 //   --signed-in : starts scripts/local-server.mjs (loopback PGlite running the real Edge Function logic) and a
 //                 flag-on build pointed at it, then injects a locally minted session. fixture: fresh|stocked|strong|weak|equip.
 import { spawn } from 'node:child_process';
-import { mkdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
 const { chromium } = createRequire(import.meta.url)('@playwright/test');
@@ -39,8 +39,9 @@ if (signedIn) {
 }
 
 // Save JSON is built in the page-free way: the fixture builder is TS, so ask Vite to serve it.
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH ?? '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
-const sizes = [[1280, 720], [390, 844]];
+const execPath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+const browser = await chromium.launch({ ...(execPath ? { executablePath: execPath } : {}), args: ['--no-sandbox'] });
+const sizes = [[1280, 720], [390, 844], [320, 568], [844, 390]];
 const tabs = ['Character', 'Bag', 'Boss', 'Forge', 'Market', 'Help'];
 const report = [];
 for (const [w, h] of sizes) {
@@ -63,15 +64,25 @@ for (const [w, h] of sizes) {
   await page.reload();
   }
   await page.waitForTimeout(2500);
-  await page.screenshot({ path: `${out}/home-${w}x${h}.png` });
+  if (w === 1280 || (w === 390 && h === 844)) {
+    await page.screenshot({ path: `${out}/home-${w}x${h}.png` });
+  }
   for (const t of tabs) {
     const tab = page.getByRole('tab', { name: t, exact: true }).first();
     if (!(await tab.count())) { report.push(`${w}x${h} missing tab ${t}`); continue; }
     await tab.click(); await page.waitForTimeout(600);
-    await page.screenshot({ path: `${out}/${t.toLowerCase()}-${w}x${h}.png` });
+    const shouldScreenshot = (w === 1280 && t !== 'Forge') || (w === 390 && h === 844 && ['Character', 'Bag', 'Boss'].includes(t));
+    if (shouldScreenshot) {
+      await page.screenshot({ path: `${out}/${t.toLowerCase()}-${w}x${h}.png` });
+    }
     if (t === 'Forge') for (const sub of ['craft', 'salvage', 'relic']) {
       const s = page.getByTestId(`tab-${sub}`);
-      if (await s.count()) { await s.click(); await page.waitForTimeout(400); await page.screenshot({ path: `${out}/forge-${sub}-${w}x${h}.png` }); }
+      if (await s.count()) {
+        await s.click(); await page.waitForTimeout(400);
+        if (w === 1280 || (w === 390 && h === 844 && (sub === 'relic' || sub === 'craft'))) {
+          await page.screenshot({ path: `${out}/forge-${sub}-${w}x${h}.png` });
+        }
+      }
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight);
     if (overflow) report.push(`${w}x${h} ${t}: document scrolls`);
