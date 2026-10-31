@@ -44,6 +44,16 @@ Caveats: star counts are popularity, not quality. I opened READMEs for #1, #2, #
 
 `/loop` (self-paced or fixed), tools CronCreate/CronList/CronDelete and ScheduleWakeup, the Monitor tool, `/goal`; `claude --continue`, `--resume`, `--name`, `--worktree`. Session-scoped: they fire only while the CLI is open and idle; recurring tasks expire after 7 days; a self-paced loop is not restored on resume. Durable options (cloud routines, Desktop scheduled tasks) exist but are not used here. Source: code.claude.com/docs/en/scheduled-tasks and cli-reference.
 
+## Further optimisations recommended (not done in this PR)
+
+1. **Hook that blocks Tier 3 paths** (PreToolUse on Edit/Write for contracts/, supabase/migrations, .github/, lockfile, config.ts, any .env). A rule enforced by a hook cannot be forgotten. Needs `.claude/settings.json`: owner's decision.
+2. **Per-task budget** written in the card (max wake-ups, max hours, max fix attempts); the bootstrap already has defaults.
+3. **SessionStart hook** that prints `tasks/<id>/STATE.md` so a restarted session resumes by itself.
+4. **Short task-card template** (goal, allowed files, forbidden files, acceptance checks, lane, budget) in `tasks/TEMPLATE.md`.
+5. **Periodic trim**: once a week shrink CLAUDE.md and the memory files to what is still true; move old waves to an archive folder.
+6. **Stop hook** that asks "did you attach evidence?" before the turn ends (best-practice repo idea).
+7. **Slash commands** `/card`, `/handoff`, `/verify` for the three repeated steps, once the bootstrap proves itself.
+
 ## Decisions for the owner
 
 1. Approve replacing the current 7-line `CLAUDE.md` with `CLAUDE.proposed.md` after you have tried the bootstrap prompt once.

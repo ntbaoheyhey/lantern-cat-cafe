@@ -36,6 +36,28 @@ AUTONOMY: KEEP GOING UNTIL THE TASK IS DONE (the user must not need to touch any
 - Optional for your own coding on cli/<task>: `claude --worktree <task-id>` (or -w) gives each task its own worktree.
 - Final report: ONE message to the coordinator when the whole task is done or blocked (result, PR links, verify results, what the user must decide). No progress messages in between.
 
+LEARN MORE (links are for you to read when you need them; the workflow above is the rule)
+- Read ONLY the page you need for the step in front of you. Never paste a whole page into the conversation: read it with offset/limit or WebFetch with a narrow question, then write 5 lines of notes to tasks/<id>/NOTES.md and use the notes afterwards.
+- Official Claude Code docs (verified to exist on 2026-10-31):
+  - Wake-ups, /loop, CronCreate, ScheduleWakeup, Monitor: https://code.claude.com/docs/en/scheduled-tasks
+  - Tool names (Monitor, ScheduleWakeup...): https://code.claude.com/docs/en/tools-reference
+  - Flags (--continue, --resume, --name, --worktree, -p): https://code.claude.com/docs/en/cli-reference
+  - Worktrees: https://code.claude.com/docs/en/worktrees
+  - Subagents and parallel work: https://code.claude.com/docs/en/sub-agents and https://code.claude.com/docs/en/agents
+  - Hooks (blocking paths, SessionStart): https://code.claude.com/docs/en/hooks-guide
+  - Skills and slash commands: https://code.claude.com/docs/en/skills
+  - Memory, CLAUDE.md and AGENTS.md: https://code.claude.com/docs/en/memory
+  - Best practices and context window: https://code.claude.com/docs/en/best-practices and https://code.claude.com/docs/en/context-window
+  - Keeping the session working toward a condition: https://code.claude.com/docs/en/goal
+  - Whole index: https://code.claude.com/docs/llms.txt
+- Public repos with ideas (read only a README or one file; licences differ, never copy text or code, AGPL for myclaude):
+  - https://github.com/addyosmani/agent-skills (lifecycle: spec, plan, build, verify, review, ship)
+  - https://github.com/Fission-AI/OpenSpec (one folder per change, spec before code)
+  - https://github.com/shanraisshan/claude-code-best-practice (short CLAUDE.md, hooks, context habits)
+  - https://github.com/VoltAgent/awesome-claude-code-subagents (how to write subagent files)
+  - https://github.com/stellarlinkco/myclaude (Claude orchestrates, Codex or Gemini executes; ideas only)
+  - Ranked list with notes: docs/proposals/cli-orchestrator/research.md
+
 SCOPE TIERS
 - Tier 1: the task's own zone.
 - Tier 2: adjacent files, allowed with a one-line note (includes updating a test that encoded old behaviour, test helpers, configs).
