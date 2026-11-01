@@ -28,8 +28,8 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
     await load(page);
     await expect(page.getByTestId('class-picker')).toBeVisible();
 
-    // Verify all 7 classes are readable
-    const classes = ['warrior', 'guardian', 'rogue', 'hunter', 'archer', 'witch', 'alchemist'];
+    // Verify starter classes are readable
+    const classes = ['warrior', 'guardian', 'rogue'];
     for (const c of classes) {
       await expect(page.getByTestId(`class-card-${c}`)).toBeVisible();
     }

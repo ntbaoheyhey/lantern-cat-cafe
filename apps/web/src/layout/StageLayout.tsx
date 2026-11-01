@@ -20,8 +20,14 @@ import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapsh
 import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
 import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
-import { ClassPicker } from './classpicker/ClassPicker';
+import { ClassPicker, STARTER_CLASSES } from './classpicker/ClassPicker';
 import { LandingHero } from './LandingHero';
+import { HeroCard } from './home/HeroCard';
+import { NextGoalCard } from './home/NextGoalCard';
+import { RecentLootCard } from './home/RecentLootCard';
+import { EventLog } from './home/EventLog';
+import type { LoopEventV2 } from '../game/v2/events';
+import './home/home.css';
 import { BossGatePanel } from './boss/BossGatePanel';
 import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
@@ -38,11 +44,11 @@ import { equipBest } from './bag/equipRules';
 import { CharacterPanel } from './character/CharacterPanel';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
-import { layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
+import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
 import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
-import { RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
+import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
 import './layout.css';
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
@@ -95,18 +101,37 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const state = snapshot.state;
   const classId = state?.cat.classId;
 
-  const [screen, setScreen] = useState<ScreenId>(() => initialScreen ?? (state && !classId ? 'class' : 'home'));
+  const [screen, setScreen] = useState<ScreenId>(() => {
+    if (initialScreen) return initialScreen;
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.replace('#', '') as ScreenId;
+      if (SCREEN_REGISTRY.some((s) => s.id === hash)) return hash;
+    }
+    return state && !classId ? 'class' : 'home';
+  });
   const [visited, setVisited] = useState<Set<ScreenId>>(() => new Set<ScreenId>(['home', 'hero']));
 
   useEffect(() => {
     if (initialScreen) {
       setScreen(initialScreen);
     } else if (state && !state.cat.classId) {
-      setScreen('class');
+      setScreen((prev) => (prev === 'landing' ? 'landing' : 'class'));
     } else if (state && state.cat.classId && (screen === 'class' || screen === 'landing')) {
       setScreen('home');
     }
   }, [state?.cat.classId, initialScreen]);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      if (typeof window === 'undefined') return;
+      const hash = window.location.hash.replace('#', '') as ScreenId;
+      if (SCREEN_REGISTRY.some((s) => s.id === hash)) {
+        setScreen(hash);
+      }
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const phone = kind === 'phone';
   const navRef = useRef<HTMLElement>(null);
@@ -125,6 +150,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const [welcome, setWelcome] = useState(false);
   const [notice, setNotice] = useState('');
   const [crafted, setCrafted] = useState<ItemV2 | null>(null);
+  const [recentEvents, setRecentEvents] = useState<LoopEventV2[]>([]);
   const hiddenAt = useRef<number | null>(null);
   const awayRef = useRef(0);
 
@@ -145,6 +171,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       }
     };
     const off = loop.onEvent((event) => {
+      setRecentEvents((prev) => [...prev.slice(-19), event]);
       if (event.type === 'claimed') {
         setGains(event.gains);
         if (awayRef.current >= 60) {
@@ -302,11 +329,16 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   }
 
   const showRail = !['landing', 'class'].includes(screen);
+  const showChrome = screen !== 'landing' && screen !== 'class';
   const stageW = computeStageWidth(width, height);
   const stageH = stageHeight(width, height);
   const zoom = stageZoom(stageW, stageH);
   const isTall = height >= 820 && width >= 1024;
   const isShortLandscape = height < 480 && width > height;
+
+  const desktopMetrics = desktopStageMetrics(width, height);
+  const desktopZoom = desktopMetrics.zoom;
+  const centerStageW = desktopMetrics.width;
 
   const relicFooter = (
     <>
@@ -360,13 +392,13 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     <ScreenFrame
       activeScreen={screen}
       onSelectScreen={handleSelectScreen}
-      showRail={!phone}
+      showRail={!phone && showChrome}
       dataLayout={kind}
       dataTall={isTall ? 'true' : undefined}
       dataShortLandscape={isShortLandscape ? 'true' : undefined}
       style={{ '--stage-h': `${stageH}px` } as CSSProperties}
       hudProps={
-        state
+        showChrome && state
           ? {
               state,
               power: stats ? Math.round(v2.powerRating(stats)) : 0,
@@ -433,7 +465,13 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           className="shell-panel-view screen-landing"
           style={{ display: screen === 'landing' ? 'flex' : 'none' }}
         >
-          <LandingHero onStart={() => handleSelectScreen('class')} />
+          {screen === 'landing' && (
+            <LandingHero
+              onStart={() => handleSelectScreen('class')}
+              onStartGuest={() => handleSelectScreen('class')}
+              onHelp={() => handleSelectScreen('help')}
+            />
+          )}
         </div>
 
         {/* Class picker screen */}
@@ -446,6 +484,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         >
           {state && !classId ? (
             <ClassPicker
+              classes={STARTER_CLASSES}
               locked={snapshot.busy !== null}
               busy={snapshot.busy === 'chooseClass'}
               onChoose={(id) => {
@@ -464,22 +503,52 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           className="shell-panel-view screen-home"
           style={{ display: screen === 'home' ? 'flex' : 'none' }}
         >
-          <div role="region" aria-label="Game stage" className="v2-stage">
-            {state && classId ? (
-              <StageCanvas
-                state={state}
-                zoom={zoom}
-                width={stageW}
-                reducedMotion={reducedMotion}
-                onSelectTab={(tabName) => handleSelectScreen(tabNameToScreenId(tabName))}
-              />
+          {state && classId ? (
+            phone ? (
+              <>
+                <div role="region" aria-label="Game stage" className="v2-stage">
+                  <StageCanvas
+                    state={state}
+                    zoom={zoom}
+                    width={stageW}
+                    reducedMotion={reducedMotion}
+                    onSelectTab={(tabName) => handleSelectScreen(tabNameToScreenId(tabName))}
+                  />
+                </div>
+                {gains && !welcome && (
+                  <div className="v2-recent-loot">
+                    <LootSummary loot={gains} heading="Recent finds" />
+                  </div>
+                )}
+              </>
             ) : (
-              <LandingHero onStart={() => handleSelectScreen('class')} />
-            )}
-          </div>
-          {gains && !welcome && (
-            <div className="v2-recent-loot">
-              <LootSummary loot={gains} heading="Recent finds" />
+              <div className="home-dashboard" data-testid="home-dashboard">
+                <div className="home-col home-col--left">
+                  <HeroCard state={state} />
+                  <NextGoalCard state={state} onNavigate={handleSelectScreen} />
+                </div>
+
+                <div className="home-col home-col--center">
+                  <div role="region" aria-label="Game stage" className="v2-stage home-stage-wrap">
+                    <StageCanvas
+                      state={state}
+                      zoom={desktopZoom}
+                      width={centerStageW}
+                      reducedMotion={reducedMotion}
+                      onSelectTab={(tabName) => handleSelectScreen(tabNameToScreenId(tabName))}
+                    />
+                  </div>
+                  <EventLog state={state} events={recentEvents} />
+                </div>
+
+                <div className="home-col home-col--right">
+                  <RecentLootCard state={state} gains={gains && !welcome ? gains : null} />
+                </div>
+              </div>
+            )
+          ) : (
+            <div role="region" aria-label="Game stage" className="v2-stage">
+              <p>Loading your cat…</p>
             </div>
           )}
         </div>

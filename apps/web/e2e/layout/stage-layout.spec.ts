@@ -97,8 +97,8 @@ for (const vp of VIEWPORTS) {
       await expect(stage.locator('canvas')).toHaveCount(1);
       const s = await box(stage);
       if (vp.width >= 1024) {
-        // G2 desktop/laptop two-column layout: stage fills height left after topbar.
-        expect(s.height).toBeGreaterThanOrEqual(vp.height - 64);
+        // AGR1 redesign: stage shares center column with EventLog (min-height 320px).
+        expect(s.height).toBeGreaterThanOrEqual(320);
         expect(s.width).toBeLessThan(vp.width);
       } else {
         // Phone: 16:9.

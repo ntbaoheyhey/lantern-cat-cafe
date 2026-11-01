@@ -13,9 +13,14 @@ export interface ClassPickerProps {
   locked?: boolean;
   /** True while class switch action is in flight. */
   busy?: boolean;
+  /** When true, clicking start immediately triggers onChoose without asking for confirmation. */
+  directStart?: boolean;
   /** Callback fired with the chosen classId after confirmation. */
   onChoose?: (classId: v2.ClassId) => void;
 }
+
+/** Starter three classes for new game onboarding. */
+export const STARTER_CLASSES: readonly v2.ClassDef[] = v2.CLASSES.slice(0, 3);
 
 /** Returns an ordinal string (e.g. 1st, 2nd, 3rd, 5th). */
 function formatOrdinal(n: number): string {
@@ -73,6 +78,7 @@ export function ClassPicker({
   selected = null,
   locked = false,
   busy = false,
+  directStart = false,
   onChoose,
 }: ClassPickerProps) {
   const [highlightId, setHighlightId] = useState<v2.ClassId | null>(() => selected ?? classes[0]?.id ?? null);
@@ -133,6 +139,10 @@ export function ClassPicker({
 
   const handleChooseClick = () => {
     if (locked || !activeClass) return;
+    if (directStart) {
+      onChoose?.(activeClass.id);
+      return;
+    }
     setIsConfirming(true);
   };
 
@@ -360,7 +370,9 @@ export function ClassPicker({
             : locked
             ? 'Locked During Boss Fight'
             : activeClass
-            ? `Choose ${activeClass.name}`
+            ? selected
+              ? `Choose ${activeClass.name}`
+              : `Start Adventure as ${activeClass.name}`
             : 'Select a Class'}
         </button>
       </div>

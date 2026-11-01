@@ -11,7 +11,8 @@ type Save = ReturnType<typeof JSON.parse>;
 
 async function loadSave(page: Page, kind: MockV2FixtureKind = 'fresh', change?: (save: Save) => void) {
   await page.goto('/');
-  await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
+  // AGR1 redesign: HUD hidden on onboarding class picker before class choice.
+  await expect(page.getByRole('region', { name: 'Cat status' }).or(page.getByTestId('class-picker'))).toBeVisible();
   const nowMs = await page.evaluate(() => Date.now());
   const save = JSON.parse(mockV2SaveJson(kind, { nowMs, classId: 'warrior', chapter: 1 }));
   if (change) change(save);
