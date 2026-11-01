@@ -5,7 +5,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
-| 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | TODO | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
+| 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
 | 5 | CXL1 | main | ai/codex-cxl1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -37,3 +37,5 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 - Reuse #240/#243/#244; no duplicate PRs. #241 remains the log/delivery PR and becomes eligible for a docs-only gated merge at mission completion (the newer explicit delivery instruction takes precedence over the older never-merge-log sentence).
 - Existing dirty primary and unrelated worktrees remain untouched; the clean-worktree completion requirement applies to worktrees created/modified for this run. Never discard user edits to manufacture cleanliness.
 - Baseline checks running in a fresh detached worktree. No score or merge recorded.
+
+- Added DENO0 before merge queue: main import guard fails on missing explicit-index aliases; implementation and full gates required. Branch ai/codex-mega-deno0, state IN-PROGRESS, round 0, no score/PR/merge yet. FXRB and CXN3 independent builders are running in isolated worktrees with Astra Ultra, priority service; no graders have run.

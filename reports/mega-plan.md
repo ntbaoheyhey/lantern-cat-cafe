@@ -410,3 +410,9 @@ Card-specific done condition: all acceptance lines above and mission section 11 
 ## Already merged verification cards
 
 AGR0 #233, AGR1 #237, AGR2 #236, CXR0 #230, CXN1 #225, CXN2 #238, CXC1 #235, AGN1 #224 each get the full verification and independent scoring cards. Historical merge status is not a current PASS. Rebuild only observed failures, with a separately gated prerequisite PR.
+
+## Added prerequisite DENO0: complete explicit-index import maps
+
+Reason: fresh main guard reproduces unresolved `./index` edges in forge and bag. This blocks G3 for every item. Run before FXRB's merge; preserve runtime behavior and auth mappings. Branch ai/codex-mega-deno0. Owner: coordinator builder; separate fresh GA/GB graders, Astra Ultra. Paths: scripts/gen-deno-json.mjs, scripts/gen-deno-json.test.mjs, generated supabase/functions/*/deno.json, reports/scorecard/deno0/, reports/deno0.md. Adjacent package.json only if necessary to execute script tests in the normal test command. No auth source, dependency version or deployment changes.
+
+P/B: reproduce missing explicit index edges; generate exact aliases for every non-test module including index while retaining directory aliases. Add fixture tests for root/nested index, ordinary modules, test exclusions and deterministic generation. Verify actual repository guard and no gen drift; mutation-test at least five behaviors in scratch copies. Full V/GA/GB/M cards apply, no exception. Done: all Deno edges resolve and outputs are stable, complete unchanged suite passes, two grades >=92, serial gated PR and post-merge main/live proof.
