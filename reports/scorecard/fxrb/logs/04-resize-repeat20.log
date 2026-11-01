@@ -1,0 +1,126 @@
+$ env CI=true SCREENSHOTS=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= E2E_PORT_CLASSIC=4310 E2E_PORT_V2=4311 E2E_PORT_SERVER=4312 E2E_PORT_API=4313 pnpm test:e2e e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --repeat-each=20
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+started: 2026-11-01T07:58:54.025695+00:00
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+> playwright test e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --repeat-each=20
+
+[WebServer] (node:46367) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:46368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:46378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:46422) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:46423) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:46468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:46475) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:46497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:46499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:46505) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 120 tests using 1 worker
+(node:46506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:46737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:46953) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47074) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47326) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·
+····(node:47784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:47970) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:48010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····(node:48082) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+·Phaser canvas instances inserted during 100-step drag: 2
+·····
+  120 passed (3.9m)
+
+exit_code: 0
+elapsed_seconds: 234.0
