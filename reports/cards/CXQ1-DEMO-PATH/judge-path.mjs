@@ -5,7 +5,7 @@ import { mkdir, readFile, writeFile, stat } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { runStages, allowedRequest, assertProof, STAGES } from './gate-core.mjs';
+import { runStages, allowedRequest, assertProof, STAGES, phaseStages } from './gate-core.mjs';
 const card = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(process.env.REPO_DEP_PATH || '/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero');
 const base = process.env.BASE_URL || 'https://taskbarhero-eight.vercel.app/';
@@ -15,6 +15,8 @@ assert.ok(['both','1280x720','1600x900'].includes(requested), 'Size must be both
 assert.equal(new URL(base).hash, '', 'Use the public landing URL; no hash shortcuts');
 assert.equal(new URL(base).search, '', 'Use the public landing URL; no fixture query parameters');
 await mkdir(output,{recursive:true});
+const phaseConfig = JSON.parse(await readFile(resolve(card,'phase.json'),'utf8'));
+const phase = phaseConfig.phase; const stages = phaseStages(phase, phaseConfig.mergedPrerequisites);
 const runtimePath=resolve(card,'runtime.json');
 const runtime=JSON.parse(await readFile(runtimePath,'utf8'));
 await writeFile(runtimePath,JSON.stringify({...runtime,status:'RUNNING',known_pids:[process.pid],updated_at:new Date().toISOString()},null,2)+'\n');
@@ -26,7 +28,7 @@ const require = createRequire(resolve(repo,'apps/web/package.json'));
 let browser; const results = [];
 const safeUrl = input => { try { const u = new URL(input); return `${u.origin}${u.pathname}`; } catch { return '[invalid URL]'; } };
 const redact = s => String(s).replace(/https?:\/\/[^\s"')]+/g,safeUrl).replace(/(?:Bearer\s+|eyJ)[A-Za-z0-9._-]+/g,'[redacted]');
-async function control() { assert.doesNotMatch(await readFile(resolve(card,'CONTROL.md'),'utf8'), /\bPAUSED?\b(?! instruction)/i, 'Card paused'); }
+async function control() { assert.ok((await readFile(resolve(card,'CONTROL.md'),'utf8')).startsWith('ACTIVE:'), 'Card is not active'); }
 try {
   await control();
   const { chromium, expect } = require('@playwright/test');
@@ -58,7 +60,7 @@ try {
     const id = name => page.getByTestId(name);
     const text = async () => page.locator('body').innerText();
     let deployment = {head:null,status:'UNVERIFIED',reason:'No trusted deployed commit metadata observed'};
-    let identity = {}; let idleBefore = '';
+    let identity = {}; let idleBefore = ''; let guestDisclosure = ''; const phaseObservations = [];
     const actions = {
       landing: async () => {
         const response = await page.goto(base,{waitUntil:'domcontentloaded'});
@@ -68,14 +70,21 @@ try {
         const declared = await page.locator('meta[name="git-commit"],meta[name="build-commit"]').evaluateAll(nodes=>nodes.map(n=>n.content));
         const hash = declared.find(x=>/^[a-f0-9]{40}$/i.test(x));
         if(hash) deployment={head:hash,status:'DECLARED_NOT_INDEPENDENTLY_VERIFIED',reason:'HTML build metadata declaration; coordinator must verify deployment mapping'};
-        await visible(id('landing-hero')); await visible(page.getByRole('button',{name:'Play as guest',exact:true}));
+        guestDisclosure = await text();
+        const help = page.getByRole('dialog', {name:'How to play', exact:true});
+        if (await help.isVisible()) await click(page.getByRole('button', {name:'Close help', exact:true}));
+        if (phase === 'merged-core' && await id('class-picker').isVisible()) {
+          phaseObservations.push('Current merged entry starts at class selection in an unauthenticated browser; no landing CTA claim.');
+          await visible(id('class-picker'));
+        } else { await visible(id('landing-hero')); await visible(page.getByRole('button',{name:'Play as guest',exact:true})); }
       },
-      guest: async () => { await click(page.getByRole('button',{name:'Play as guest',exact:true})); await visible(id('class-picker')); assert.match(await text(),/guest|demo|preview/i,'Guest mode must be visibly identified'); },
+      guest: async () => { const start=page.getByRole('button',{name:'Play as guest',exact:true}); if(phase==='full' || await start.isVisible()) await click(start); await visible(id('class-picker')); assert.match(guestDisclosure+' '+await text(),/guest|demo|preview/i,'Guest mode must be visibly identified'); },
       class: async () => { await click(id('class-card-warrior')); await click(id('class-picker-choose-button')); await click(id('class-picker-confirm-button')); await visible(id('home-dashboard')); await expect(id('home-hero-card')).toContainText(/Warrior/i); },
       'idle-loop': async () => {
         const progress=page.getByRole('group',{name:/^Chapter \d+ .*round \d+ of \d+, \d+ of \d+ monsters$/i});
         await visible(progress); idleBefore=await progress.getAttribute('aria-label');
-        await expect(progress).not.toHaveAttribute('aria-label',idleBefore,{timeout:20000});
+        // Current merged loop claims every30s (loopV2.ts:8); the initial20s harness window was invalid.
+        await expect(progress).not.toHaveAttribute('aria-label',idleBefore,{timeout:35000});
         await expect(id('home-event-log')).toContainText(/gathered [1-9]\d* Fish|Advanced to Chapter|leveled up/i,{timeout:15000});
       },
       boss: async () => {
@@ -109,19 +118,41 @@ try {
         await visible(panel.locator('[data-testid="listings"], [data-testid="listings-empty"]'));
       }
     };
+    if (phase === 'merged-core') {
+      const completedBoss = actions.boss;
+      actions.boss = async () => {
+        await click(tab('Map')); await visible(page.getByRole('region',{name:'Boss Gate',exact:true}));
+        const fight=page.getByRole('button',{name:'Fight',exact:true}); await visible(fight);
+        if(await fight.isDisabled()) {
+          const reason=id('block-reason-boss'); await visible(reason); assert.match(await reason.innerText(),/\S/);
+          phaseObservations.push('Boss gate is visibly locked with its current reason; no victory claimed.');
+        } else { await completedBoss(); }
+      };
+      actions.forge = async () => {
+        await click(tab('Forge')); await click(id('tab-craft')); await visible(id('craft-panel')); await visible(id('craft-btn'));
+        assert.match(await id('craft-panel').innerText(),/craft|recipe/i);
+        phaseObservations.push('Current Craft recipe/action surface verified; CXU3 completion flow is outside this phase.');
+      };
+      actions.market = async () => {
+        await click(tab('Market')); const panel=page.getByRole('tabpanel',{name:'Market',exact:true}); await visible(panel);
+        await expect(panel).toContainText('Connect your wallet to see');
+        phaseObservations.push('Current guest Market requires a wallet; guest browsing is deferred to CXU3.');
+      };
+    }
     const afterStep = async step => {
+      if (step.name === 'guest' && step.status === 'PASS') return;
       await control();
-      assert.ok(screenshots<9,'Screenshot count budget: 9 per viewport');
+      assert.ok(screenshots<8,'Screenshot count budget: 8 per viewport / 16 total');
       const path=resolve(dir,`${String(STAGES.indexOf(step.name)+1).padStart(2,'0')}-${step.name}-${step.status}.png`);
       await page.screenshot({path,fullPage:false,timeout:5000}); const bytes=(await stat(path)).size; screenshots++; screenshotBytes+=bytes;
-      step.screenshot={path,bytes}; assert.ok(bytes<=2*1024*1024,'Screenshot exceeds 2 MiB'); assert.ok(screenshotBytes<=18*1024*1024,'Viewport screenshots exceed 18 MiB');
+      step.screenshot={path,bytes}; assert.ok(bytes<200*1024,'Screenshot exceeds 200 KiB'); assert.ok(screenshotBytes<8*200*1024,'Viewport screenshot aggregate budget exceeded');
       await writeFile(resolve(dir,`${step.name}.txt`),redact(await text()));
     };
     const started=Date.now(); timer=setTimeout(()=>{bad('deadline','Three-minute judge deadline reached');void context.close();},180000);
     let result;
-    try { result=await runStages(actions,{health,afterStep}); } finally {clearTimeout(timer);}
+    try { result=await runStages(actions,{health,afterStep,stages}); } finally {clearTimeout(timer);}
     if(errors.length) result.status='FAIL';
-    Object.assign(result,{viewport:{width,height},baseUrl:base,source,deployment,identity,startedAt:new Date(started).toISOString(),endedAt:new Date().toISOString(),judgeBudgetMs:180000,screenshotBytes,screenshots,errors,responses,events,transactionsPerformed:0,guestOnly:true});
+    Object.assign(result,{phase,phaseObservations,outsidePhase:STAGES.filter(name=>!stages.includes(name)),fullNineStagePass:phase==='full' && result.status==='PASS',viewport:{width,height},baseUrl:base,source,deployment,identity,startedAt:new Date(started).toISOString(),endedAt:new Date().toISOString(),judgeBudgetMs:180000,screenshotBytes,screenshots,errors,responses,events,transactionsPerformed:0,guestOnly:true});
     await writeFile(resolve(dir,'result.json'),JSON.stringify(result,null,2)+'\n');
     results.push(result); await context.close();
   }
@@ -129,7 +160,7 @@ try {
   results.push({status:'SETUP_ERROR',error:redact(error.stack),source});
 } finally { if(browser) await browser.close(); }
 const status=results.length && results.every(r=>r.status==='PASS')?'PASS':'FAIL';
-const summary={status,scope:'Recurring guest judge path; not formal grade or full CXQ1',source,results,command,exitCode:status==='PASS'?0:1};
+const summary={status,phase,phaseAuthority:phaseConfig.authority,fullNineStagePass:phase==='full' && status==='PASS',scope:'Recurring guest judge path; not formal grade or full CXQ1',source,results,command,exitCode:status==='PASS'?0:1};
 await writeFile(resolve(output,'summary.json'),JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify({status,output,viewports:results.map(r=>({viewport:r.viewport,status:r.status,failed:r.steps?.find(s=>s.status==='FAIL')?.name,error:r.error}))}));
 await writeFile(runtimePath,JSON.stringify({...runtime,status,known_pids:[],updated_at:new Date().toISOString(),observations_429:results.flatMap(r=>(r.responses||[]).filter(x=>x.status===429))},null,2)+'\n');

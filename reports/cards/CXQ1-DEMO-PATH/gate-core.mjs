@@ -1,5 +1,11 @@
 import assert from 'node:assert/strict';
 export const STAGES = ['landing','guest','class','idle-loop','boss','forge','bag','on-chain-proof','market'];
+/** User-authorized phase: full path becomes mandatory after both UI prerequisites merge. */
+export function phaseStages(phase, merged = []) {
+  assert.ok(['full', 'merged-core'].includes(phase), 'Unknown judge gate phase');
+  assert.ok(phase === 'full' || !['CXU3', 'CXC2'].every(id => merged.includes(id)), 'Both prerequisites merged: full nine-stage gate required');
+  return phase === 'full' ? STAGES : STAGES.filter(name => name !== 'on-chain-proof');
+}
 export const NFT = '0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D';
 export const MARKET = '0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93';
 export const READ_RPC = new Set(['eth_chainId','eth_blockNumber','eth_call','eth_getCode','eth_getBalance','eth_getLogs','eth_getBlockByNumber','eth_getTransactionReceipt','eth_getTransactionByHash','net_version']);
@@ -18,9 +24,10 @@ export function assertProof(text, links) {
     assert.ok(links.some(link => { try { const u = new URL(link); return u.protocol === 'https:' && (u.hostname === 'testnet.snowtrace.io' || u.hostname === 'testnet.routescan.io') && u.pathname.toLowerCase().includes(address.toLowerCase()); } catch { return false; } }), `Fuji explorer contract link missing: ${address}`);
   }
 }
-export async function runStages(actions, { now = Date.now, budgetMs = 180000, health = () => {}, afterStep = async () => {} } = {}) {
+export async function runStages(actions, { now = Date.now, budgetMs = 180000, health = () => {}, afterStep = async () => {}, stages = STAGES } = {}) {
   const started = now(); const steps = []; let blockedBy = null;
-  for (const name of STAGES) {
+  assert.ok(stages.length && stages.every(name => STAGES.includes(name)), "Invalid stage sequence");
+  for (const name of stages) {
     if (blockedBy) { steps.push({name,status:'BLOCKED',blockedBy}); continue; }
     const t = now(); let captureAttempted = false;
     try {

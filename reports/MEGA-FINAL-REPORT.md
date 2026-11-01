@@ -35,3 +35,7 @@ User priority decision: P1 evaluates all mergedcore and adds QA/materials as opt
 Coordinator takeover: both workers stopped. BASE0 successor07d219b repairs19forge cases, but fresh complete unit run exposes63 failures in six other historical-clock suites; still FAIL. Demo harness is prepared with an honest RED full-path baseline; user approved merged-step gating untilCXU3/CXC2, then allnine mandatory. No formal grade/merge.
 
 Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullrootunits exit0 on working source. Shared test-only clock fixes all six additional failuresuites without productionchanges. Successor source commit and fresh exact-head gate follow; no formalgrade/merge yet.
+
+Exact5db4949: install/Deno/typecheck/lint/unit/default+classic+v2build/bundle/link checks and1280browser264/264pass.1600/repeats/review remain underway. Phased demo timing correction is documented against existing30s claim cadence; no product timing/assertion changes.
+
+Exact5db4949completebrowser suites:264/264at1280 and264/264at1600, exit0each. All earlier interruption records remainhistorical. Currentrepeat10 andremainingG1-G7evidence stillpending; no grades/merge.

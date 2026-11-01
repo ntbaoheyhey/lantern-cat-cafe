@@ -1,2 +1,1 @@
-STOP ASSIGNMENT — NEW USER STEERING
-The user has replaced thin-coordinator delegation with coordinator-does-the-work/few-subagents. Stop this worker assignment now: do not start another build/test/edit/commit/push. Preserve all existing and new work; stop only your own running servers/test processes safely. Write RESULT.md (max15lines) describing exact HEAD, edits/results, remaining running PIDs if any, then DONE and return ONLY RESULT path. Parent will take over after your ownership-release confirmation. This is NOT a pause of the mission, only the end of this delegated assignment. Do not continue to finish the whole brief.
+ACTIVE: coordinator runs the existing phased QA gate; no worker delegation.

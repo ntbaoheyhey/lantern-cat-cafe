@@ -1,3 +1,13 @@
+# Timing correction with evidence
+
+The first phased run observed no claim at20seconds. Source `apps/web/src/game/v2/loopV2.ts:8` defines the existing claim cadence as30seconds and lines145/191 schedule it; its unit tests explicitly advance30seconds. The preparatory harness had incorrectly allowed only20seconds. Old -> new: the progression observation now allows35seconds (one existing30second cadence plus5seconds for UI), retaining the real-progress assertion, reward assertion and180second total budget. No product timeout, retry or assertion changed. The earlier phased failure is preserved as a harness timing finding, not relabeled PASS.
+
+# Current user-approved phase
+
+The user explicitly approved checking merged functionality until CXU3 and CXC2 have both merged, then requiring all nine steps. `phase.json` records this authority and merged prerequisites. The coordinator must update it after each merge; the harness refuses `merged-core` once both are recorded. Current-phase PASS is explicitly **not** a full nine-stage PASS. Entry may be the current class picker; a visibly explained locked boss gate, current craft surface and guest Market wallet requirement are recorded with scoped observations. On-chain proof remains outside this phase. Historical strict RED baseline below remains unchanged.
+
+Delivered screenshots are now limited to fewer than200KiB each and at most16 for both sizes; the guest screenshot is omitted because the class screen is captured immediately afterward. The initial worker's larger screenshot limits below were incorrect and are superseded; existing two baseline captures already meet the required budget.
+
 # Recurring three-minute guest judge gate
 
 This is a strict postmerge P0/P1 gate, not a formal grade, full CXQ1, or transaction validation. Run once per viewport after **every** P0/P1 merge and deployment. Any FAIL, BLOCKED, SETUP_ERROR, incomplete viewport, or unverified deployment mapping stops further merges. Do not replace an unavailable stage with a weaker assertion, hash shortcut, injected fixture, saved state, sign-in, wallet connection, transaction, or source-code claim.

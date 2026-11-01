@@ -21,3 +21,9 @@ Demo-path baseline: strictfuturepath RED atlanding, downstreamBLOCKED. User auth
 Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullrootunits exit0 on working source. Shared test-only clock fixes all six additional failuresuites without productionchanges. Successor source commit and fresh exact-head gate follow; no formalgrade/merge yet.
 
 ACTIVE CHECKS: BASE0 source5db4949 pushed onPR246. Fresh verifier /Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero. Detached pipeline PID in reports/cards/BASE0-COORDINATOR/pipeline.pid, status runtime.json; ports4380–4383locked. Fullgate -> repeat10both -> effects/audits/keyboard/reference/G5/wrapper. Inspect PIPELINE-DONE/results before any retry. No agents active.
+
+Parallel background check, same BASE0 item: isolated scratch mega-base0-finish-mutants at5db4949, PID in BASE0-COORDINATOR/mutations.pid, ports4400–4404locked. Fresh behavior mutants plus clock regressions; corrected interruption classification; sources restored in finally. No agent delegation.
+
+Current UI gate note: full1280e2e264/264PASS at5db4949; full1600inflight. Freshmutation runner has no issues so far. Phasedlive harness initially used20s below the existing30s claim cadence; corrected to35s observation with unchanged180s overall budget and documentedold->new. live-phased-r2 inprogress; no livegatePASS claimed.
+
+Milestone2026-11-01T18:15:02+07:00: exact5db4949completebrowser264/264bothsizesPASS; repeat10currently1280. Viewport mutant now verifiedkilled; remainingfreshmutationbatch stillrunning. Nativeagents0; detachedpipeline9716 andmutations10919. Next: finishchecks, packagehonestexactheadreport, dispatchtwofreshgraders.
