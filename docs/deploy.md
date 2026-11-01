@@ -143,4 +143,4 @@ unsupported supply alone is labelled in output and does not fail code-presence p
 ## Edge Functions
 
 For the schema prerequisites, import guard and exact manual Edge Function deployment command,
-see the [v2 cut-over deployment step](cutover-v2.md#3-deploy-the-verified-functions-user-only).
+see the [v2 cut-over deployment step](cutover-v2.md#3-deploy-the-verified-functions-optional-section-7).

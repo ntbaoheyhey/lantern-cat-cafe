@@ -1,0 +1,82 @@
+UTC 2026-11-01T08:04:23.025220+00:00
+scratch cwd: .cxn3-mutant-9zhtnm3i/supabase/tests
+$ pnpm exec vitest run src/live-schema.test.ts --reporter verbose --silent=false
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero/.cxn3-mutant-9zhtnm3i/supabase/tests
+
+stdout | src/live-schema.test.ts > all 17 expected objects are present with all migrations
+live-schema all migrations: 17/17 true
+constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled: true
+function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz): true
+function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean): true
+function public.v2_action_result(uuid,text,uuid,jsonb): true
+function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb): true
+function public.v2_cleanup_budgets(): true
+function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer): true
+function public.v2_take_budgets(jsonb): true
+policy public.siwe_nonces.siwe_nonces_server_only: true
+table private.v2_request_budgets: true
+table public.boss_clears: true
+table public.boss_fights: true
+table public.cat_state: true
+table public.founder_grants: true
+table public.items: true
+table public.player_stacks: true
+table public.v2_action_results: true
+
+stdout | src/live-schema.test.ts > only the seven newer objects are false through 20261102
+live-schema through 20261102: 10 true, 7 false
+constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled: false
+function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz): false
+function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean): false
+function public.v2_action_result(uuid,text,uuid,jsonb): true
+function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb): true
+function public.v2_cleanup_budgets(): false
+function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer): true
+function public.v2_take_budgets(jsonb): false
+policy public.siwe_nonces.siwe_nonces_server_only: false
+table private.v2_request_budgets: false
+table public.boss_clears: true
+table public.boss_fights: true
+table public.cat_state: true
+table public.founder_grants: true
+table public.items: true
+table public.player_stacks: true
+table public.v2_action_results: true
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261107000000_voucher_race_guard.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261107000000_voucher_race_guard.sql
+
+ ✓ src/live-schema.test.ts > is one catalog-only inventory with no write keywords, even in comments 2ms
+ ✓ src/live-schema.test.ts > all 17 expected objects are present with all migrations 6ms
+ ✓ src/live-schema.test.ts > only the seven newer objects are false through 20261102 3ms
+ ✓ src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally 127ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  15:04:20
+   Duration  2.09s (tests 97%, import 2%, transform 1%)
+
+
+EXIT_CODE=0

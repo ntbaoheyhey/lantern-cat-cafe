@@ -1,0 +1,25 @@
+$ node scripts/check-links.mjs --json
+UTC 2026-11-01T08:03:26.155492+00:00
+{
+  "totalFilesChecked": 67,
+  "totalLinksChecked": 796,
+  "brokenCount": 2,
+  "brokenItems": [
+    {
+      "file": "docs/cutover-v2.md",
+      "line": 101,
+      "type": "backticked repo path",
+      "raw": "./index",
+      "resolved": "index"
+    },
+    {
+      "file": "docs/proposals/rune-skill-system/README.md",
+      "line": 4,
+      "type": "backticked repo path",
+      "raw": "docs/proposals/tbh-index-research/",
+      "resolved": "docs/proposals/tbh-index-research"
+    }
+  ]
+}
+
+EXIT_CODE=1

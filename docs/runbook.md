@@ -4,6 +4,10 @@ Operating the live Taskbar Hero. Values (keys, tokens) are never written here; o
 
 Release order and rollback: [v2 cut-over checklist](cutover-v2.md). The v2 switch is Vercel
 Production `VITE_GAME_V2=1` plus redeploy; rollback uses `0` plus redeploy or Promote. Keep v2 rows.
+Optional release operations follow **user-approved mission section 7**, using existing CLI access
+only after local score/merge gates and live prerequisites pass. Keep backend-dependent features
+default-OFF; missing access uses local PGlite/demo proof and optional steps. CXN3 P/B permits only
+read-only live probes, with no deployment or live setting changes.
 
 ## Live check
 
@@ -18,7 +22,7 @@ The default run also includes all nine v2 routes. For only the 27 unsigned v2 pr
 No key or session is sent. The existing script reads no anon key. Current handlers authenticate
 before body parsing, so oversized unsigned requests can fail this strict check with 401. Missing
 budget SQL affects authenticated requests; an unsigned 401 cannot confirm that SQL is installed.
-User: run the [read-only catalog query](proposals/sql/check-live-schema.sql) in the SQL editor,
+With authorized catalog access, run the [read-only catalog query](proposals/sql/check-live-schema.sql) in the SQL editor,
 then follow the [migration order](cutover-v2.md#2-check-the-live-schema-then-apply-pending-migrations).
 The default legacy `auth-nonce` probe issues a challenge; `--v2` avoids it.
 
@@ -49,8 +53,12 @@ Do this the day before, then again 30 minutes before.
 
 ## Redeploy the Edge Functions
 
-User only: confirm pending migrations first, run `node scripts/check-deno-imports.mjs`, then use
-the exact [manual deployment command](cutover-v2.md#3-deploy-the-verified-functions-user-only).
+Under section 7, confirm the local score/merge gates and additive/reversible migration prerequisites
+first, run `node scripts/check-deno-imports.mjs`, then use the exact
+[optional deployment command](cutover-v2.md#3-deploy-the-verified-functions-optional-section-7).
+No existing CLI credentials means keep the deployment optional and verification local. The current
+missing `index` import-map aliases and missing manual rollback files are explicit no-go conditions
+in that checklist; generation without drift does not prove import resolution.
 The existing automatic workflow can deploy changed bundles on `main` when its repo secret is
 configured, but do not dispatch Actions for this release. Afterwards run the live checks.
 

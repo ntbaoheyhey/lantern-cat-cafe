@@ -1,303 +1,114 @@
 STATUS: PARTIAL
 
-# CXN3 — cut-over truth (living draft)
+# CXN3 — cut-over truth, card P/B
 
-1 November 2026 (Asia/Ho_Chi_Minh). The documentation, catalog query and unsigned checker are implemented. **Live readiness remains NO-GO**: the strict oversized probes fail, and the pre-existing Deno import guard is not green. No deployment, SQL application to a live database, auth change, wallet operation, transaction or workflow was performed.
+1 Nov 2026. Detached continuation from `458eebd`, based on `origin/main` `1fb25ed`.
+Reuse [PR #244](https://github.com/ntbaoheyhey/taskbar-hero/pull/244); no push or PR edit in this card.
+The local branch checked out elsewhere remains untouched. No deployment, live SQL, sign-in,
+transaction, workflow, auth/function implementation change or additional agent was used.
 
-## Pieces and acceptance
+Current build evidence: [build-status](scorecard/cxn3/build-status.md), with raw command outputs in
+[logs](scorecard/cxn3/logs/). This is builder evidence, not an independent grade or merge approval.
 
-| Test | Result | Evidence |
+## Acceptance against sections 10 and 11
+
+| Line | Observed result | Evidence |
 | --- | --- | --- |
-| T1: current cut-over procedure | PASS | Recorded Oct 26/27 owner confirmations, Vercel environment switch, D8 dropped, owner-only release steps, rollback retaining all v2 rows. Retired code-switch procedure only in History. Eight Node tests include the retired-reference check. |
-| T2: exact pending migration table | PASS | Automated filename comparison: Nov 3, 4, 6 and 7, including CXN1; each is newer than 20261102000000. Pending means awaiting owner confirmation, not evidence of absence. |
-| T3: read-only SQL and both migration states | PASS | [Three PGlite tests](n3-cutover-truth/checks/schema.log): all migrations 17/17 true; through Nov 2, 10 true and exactly seven newer objects false. One statement, catalog-only reads, no write keyword including comments. |
-| T4: classifier with fake responses | PASS | [Eight Node tests](n3-cutover-truth/checks/classifier.log): strict 401, 503 hint, 500/network failures, CORS, strict 400/413, all nine routes without credentials, documentation consistency. No network in tests. |
-| T5: execute unsigned live check | PASS execution; FAIL health | [Actual live output](n3-cutover-truth/checks/live-v2.log): 18 pass, 9 fail. Eight oversized requests returned 401; v2-boss-fight oversized timed out. |
-| T6: no new broken links | PASS comparison | Main and this branch both have the same one broken path. The four edited operational docs pass all 41 path/link checks. The global checker is not falsely reported green. |
-| T7: local install/drift/typecheck/lint/test/build | PASS | Fresh full run plus classic build all pass; output tails below. Existing expected failures/skips are inherited unchanged. |
-| Additional Deno deployment import guard | FAIL, pre-existing | [80 unresolved edges](n3-cutover-truth/checks/deno-imports.log); current and untouched-main outputs compare byte-for-byte equal. Generated-map drift is a separate check and passes. |
-| PR verification wrapper | PASS applicable checks | Second clean checkout: install, drift, typecheck, lint, unit tests and build pass. Browser/contracts checks correctly omitted for this docs/scripts/test-only diff. |
+| T1: actual switch, retired steps only in History | PASS | Nine [Node tests](scorecard/cxn3/logs/classifier.log), including the authority regression. Vercel env plus redeploy is the switch; D8 is dropped; rollback keeps rows. |
+| T2: exact pending migration table | PASS | The same test compares sorted filenames newer than 20261102000000 to the table, including CXN1. Four files, listed below. |
+| T3: one catalog query, every expected identity, all/current-old states | PASS locally | Four [PGlite tests](scorecard/cxn3/logs/schema.log): all 17 true; through Nov 2 ten true/seven false; upgrade and second application of all four pending migrations pass. Query also executes inside a read-only transaction. |
+| T3: no SQL write keyword | PASS | [rg output](scorecard/cxn3/logs/sql-no-writes.log): exit 1 means no matches; the static test also enforces one statement and catalog-only relations. |
+| T4: strict response classifier, no network in tests | PASS | [Node output](scorecard/cxn3/logs/classifier.log): 9 passed, 0 failed/skipped. Exact 401; 503 hint; 500 and network errors fail; wrong CORS rejects; oversized requires 400/413. Every repository v2 route gets all three probes without credentials. |
+| T5: execute read-only live probe | EXECUTED; health FAIL | [Raw live output](scorecard/cxn3/logs/live-v2.log): 17 PASS, 10 FAIL, exit 1. Nine OPTIONS 204; eight unsigned 401; eight oversized 401; boss anonymous and oversized probes time out at the existing 15-second limit. |
+| T6: no new broken links | PASS comparison | [Main](scorecard/cxn3/logs/links-main.log) and [current](scorecard/cxn3/logs/links-current.log) each have one identical broken path. [Touched docs](scorecard/cxn3/logs/links-touched.log) exit 0. |
+| T7: full verify suite | NOT VERIFIED in P/B | Install and generated-map drift pass; affected Supabase typecheck passes. Full baseline checks belong to the separate coordinator run. Full e2e is explicitly deferred. Older reports do not satisfy this card. |
+| Mutation strength | PASS experiment | [11 mutants](scorecard/cxn3/logs/mutations.json) each exit 1 with the intended assertion failing; both unmutated scratch controls exit 0. All scratch directories removed. |
+| Flags OFF / local rendering | PASS component scope only | Existing [StageLayout tests](scorecard/cxn3/logs/flag-defaults.log): 11 passed, including unset flag => classic and enabled => stage. No flag implementation changed. Production preview/live G5 remains unverified here. |
+| Deno deployment guard | FAIL; cause isolated | [Guard](scorecard/cxn3/logs/deno-imports.log): 80 unresolved edges. [Scratch diagnostic](scorecard/cxn3/logs/import-diagnostic.log) fixes only the generator exclusion in a copy; all 18 functions then resolve. Product files remain identical to main. |
+| Top-to-bottom cut-over acceptance | PARTIAL / NO-GO for release | Authority wording and exact procedures are corrected; import guard, rollback prerequisites, full gate and live findings remain open. |
 
-## What changed
-
-- Replaced the stale cut-over checklist and kept go-live/runbook consistent. deploy.md receives only the authorized link to the function deployment step.
-- The 17-row catalog inventory covers six v2 tables, integrity table/RPCs, restrictive false nonce policy, budget table/RPCs, cancel/reissue RPC, cancelled status and CXN1's exact reissue-resolve signature. It does not execute application functions or claim to compare their bodies.
-- All nine v2 routes get OPTIONS, unsigned empty POST and oversized POST probes. `--v2` avoids the legacy nonce-issuance check. The existing script had no anon key; no key-reading capability was added.
-- Continued existing implementation commit `d5755ad` and report commit `139abbe`, both based on current main `1fb25ed`. Preserved the unfinished documentation corrections from the older worktree in a separate checkout: verify-pr now shows its required PR-number argument; obsolete Founder-gate prose is removed. The original worktree and its edits are untouched.
-
-## Problems found and fixed
-
-- Fixed stale operational instructions: a committed code change is not the v2 switch; Vercel's build-time environment value and the resulting deployment are. Historical owner confirmations are distinguished from current observations.
-- Fixed incomplete function-health coverage with strict, credential-free v2 probes and offline classifier tests.
-- Fixed the incomplete verify-pr invocation by documenting its required PR number.
-- Found auth-before-body ordering in `supabase/functions/_shared/v2/http.ts`: unsigned oversized bodies are rejected with 401 before size parsing. An unsigned 401 also cannot prove that budget SQL exists because admission follows authentication. The requested 400/413 gate remains strict and fails visibly. No auth/server fix is attempted in this mission.
-- Found the deployment import guard's 80 unresolved `./index` edges across five game-rules files and sixteen function maps, identical on main. This is outside this mission; the runbook tells the owner to stop if that guard fails.
-- Found no manual Edge Function command in the original deploy.md, only contract commands. The checklist expands the existing workflow's public function list/options instead; a test compares all 18 functions and flags to that source. No workflow file was edited.
-- The single live timeout's cause is NOT VERIFIED. No network retries or increased timeout were added.
-
-## Tier 2 changes
-
-None. All work remains in the explicit CXN3 docs/scripts/tests/report zone. No function, migration, auth, economy, dependency, art or workflow changes.
-
-## Additional checks
+The pending filenames are exactly:
 
 ```text
-$ node --test scripts/check-live.test.mjs
-8 tests; 8 pass; 0 fail; 0 skipped
-$ pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/live-schema.test.ts --reporter verbose --silent=false
-live-schema all migrations: 17/17 true
-live-schema through 20261102: 10 true, 7 false
-Test Files 1 passed; Tests 3 passed
-$ node --check scripts/check-live.mjs
-exit 0
-$ rg -ni '\b(INSERT|UPDATE|DELETE|ALTER|CREATE|DROP|GRANT)\b' docs/proposals/sql/check-live-schema.sql
-no output; rg exit 1 (the required no-match result)
-$ node scripts/check-links.mjs docs/cutover-v2.md docs/go-live.md docs/runbook.md docs/deploy.md
-Checked 4 markdown files and 41 links/paths. All exist.
-$ cmp <current-import-guard-output> <untouched-main-import-guard-output>
-exit 0; both contain 80 unresolved imports
-$ env -u SITE_URL -u SUPABASE_URL -u FUJI_RPC_URL node scripts/check-live.mjs --v2
-18 PASS; 9 FAIL; exit 1
+20261103000000_siwe_nonces_server_only.sql
+20261104000000_v2_request_budgets.sql
+20261106000000_voucher_cancel_reissue.sql
+20261107000000_voucher_race_guard.sql
 ```
 
-The live invocation explicitly unsets optional URL overrides and uses only the public defaults. No .env file, JWT, API key or wallet was read or sent. SQL was applied only to disposable PGlite instances. The default checker (which issues an auth nonce) was not run.
+The 17 SQL rows cover six base v2 tables, the integrity table and three RPC signatures, one
+restrictive false nonce policy, the implemented budget table plus two RPCs, cancel/reissue and
+CXN1 resolve RPCs, and the validated cancelled-status constraint. Every exact row and boolean is
+printed in schema.log. The proposed per-IP proxy table is not implemented and is correctly absent.
+No SQL inventory or migration implementation needed editing.
 
-## NOT verified and outside-scope findings
+## Corrections and causes
 
-- Live catalog, migration application history, Vercel settings and signed-in gameplay need the owner's separate checks. No secrets/admin access was used.
-- Successful-authentication oversized-body behavior and real budget enforcement are not proved by unsigned probes.
-- The local file supabase-manual/v2-rollback.sql is absent from the repository and was not found under the project workspace; it was not executed. The committed rollback proposal remains a reference only.
-- Release rehearsal and browser gameplay are not exercised by this docs/scripts-only continuation. There is no UI change requiring screenshots; the affected-area integration checks are PGlite and the HTTP probes above.
-- Existing proposal text still contains historical Founder or not-yet-live descriptions; the operational checklist now distinguishes these from current owner confirmations.
-- SECRET FOUND: docs/deploy.md:18, masked. The document identifies this as Anvil's public default local account example; no key bytes were copied into this report or tool output. The authorized deploy.md change is only a link.
-- One broken path remains in docs/proposals/rune-skill-system/README.md, pointing at the unmerged tbh-index-research proposal.
+**CORRECTED (P/B):** the inherited report called owner-only release steps a PASS. Operational docs
+now use user-approved mission section 7: existing credentials only, local score/merge gates first,
+additive/idempotent/reversible migrations before functions, rollback prerequisites, default-OFF flags,
+and local fallback without credentials. This card's narrower read-only authority is explicit.
 
-## Delivery and reproduction
+**CORRECTED (P/B):** inherited full-suite/wrapper PASS tables were results of earlier work, not
+reruns by this builder. They are preserved in git history and old checks, but replaced here with
+current targeted evidence and explicit full-gate gaps. The earlier eight-test/three-test counts and
+18/9 live result are historical; the current counts are in the acceptance table. No live success is claimed.
 
-Delivery branch: `ai/codex-n3-cutover-truth`; baseline `1fb25ed` includes CXN2 #238. Current isolated checkout: `/Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero` (detached continuation to preserve the older checked-out branch and its edits). Push targets the existing named remote branch without force.
+The Deno cause is [gen-deno-json.mjs line 24](../scripts/gen-deno-json.mjs#L24), which excludes `index.ts` file aliases while line 22
+only maps directory aliases. Five type imports of './index' occur in game-rules forge/craft:8,
+forge/relic:2, bag/compare:4, bag/best:6 and bag/salvage:3; each is walked in sixteen game-function
+maps, yielding 80 errors. A separate repair must generate explicit extensionless forge/index and
+bag/index keys, regenerate all maps, pass the unchanged guard and no-drift check, and turn the
+known-defect `it.fails` in [deno-imports.test.ts line 15](../supabase/tests/src/deno-imports.test.ts#L15) into a normal regression.
+Otherwise a repaired guard makes that expected-failure test unexpectedly pass and the suite fail.
+No auth, function, map or generator repair is included here.
 
-Use Node 20+ and pnpm 10.28.0. Run frozen install, Deno drift, typecheck, lint, tests and build; then the explicit commands above. Every commit uses `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>` and ends with [skip ci]. Draft PR only; do not merge.
+Unsigned oversized 401 is a real live finding. Source ordering in
+[v2/http.ts line 69](../supabase/functions/_shared/v2/http.ts#L69) authenticates first, admits budgets at line 70 and reads
+the body at line 77; the unauthenticated catch returns 401 at line 84. This explains the source
+behavior and is consistent with eight observed routes; deployed source identity is not proved.
+The two boss timeouts have no confirmed cause. Neither finding is hidden by retries, extra
+credentials, a larger timeout or a looser classifier. A 401 does not establish budget SQL presence.
 
-<!-- MEGA verification evidence -->
+The first diagnostic scratch copy omitted auth source and deployment JSON dependencies, so its
+80-edge count assertion failed; [initial output](scorecard/cxn3/logs/import-diagnostic-initial.log)
+is retained. Copying those existing read-only inputs fixed the experiment. An initial runbook
+backticked import specifier was treated as a missing path; the wording was corrected and the link
+check rerun (initial logs retained). These were local audit fixes, not live fixes.
 
-## Executed checks
+## References and scope
 
-| Check | Exit | Result |
-| --- | --- | --- |
-| `pnpm install --frozen-lockfile` | 0 | PASS |
-| `pnpm gen:deno` | 0 | PASS |
-| `git diff --exit-code -- supabase/functions` | 0 | PASS |
-| `pnpm typecheck` | 0 | PASS |
-| `pnpm lint` | 0 | PASS |
-| `pnpm test` | 0 | PASS |
-| `pnpm build` | 0 | PASS |
-| `pnpm --filter @taskbar-hero/web build` | 0 | PASS |
-| `node scripts/check-links.mjs --json` | 1 | BASELINE DEBT — compare count below |
+Read the CXN3 required references: C3 gaps/go-no-go, cutover-v2, go-live, runbook, deploy,
+check-live, flag.ts, all migration filenames and the four pending migration bodies, and v2/http.ts.
+Cross-checked the security/cut-over proposals (numbers, recovery, auth hardening, budgets and state
+integrity), chain-proof/Avalanche docs, generator/import guard and test harness, verify-pr,
+check-links/check-bundle, rehearsal and browser tooling. The requested manual rollback file and
+supabase-manual directory are absent here; no claim to have read an unavailable file or located it
+outside this checkout. UI visual comparisons are not applicable to this docs/scripts/test card.
 
-```text
-$ pnpm install --frozen-lockfile
-# exit 0; 0.8 seconds
-Scope: all 7 workspace projects
-Lockfile is up to date, resolution step is skipped
-Already up to date
+All changed files are Tier 1: operational docs (deploy.md link only), checker/schema tests and CXN3
+reports/reproduction evidence. [Scope and integrity inventory](scorecard/cxn3/logs/integrity.log)
+lists files and test-output console statements. No dependencies, migrations, functions, auth,
+.env, credentials, assets, contracts or .github files were changed. The checker itself remains
+unchanged from 458eebd, including the strict oversized classifier and timeout.
 
-╭ Warning ─────────────────────────────────────────────────────────────────────╮
-│                                                                              │
-│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
-│   utf-8-validate@5.0.10.                                                     │
-│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
-│   to run scripts.                                                            │
-│                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
-Done in 720ms using pnpm v10.28.0
-```
+**CORRECTED (P/B):** the old “SECRET FOUND ... masked” note referred to an existing public Anvil
+example in deploy.md; it did not mean the source fixture had been removed. This card changes only
+the allowed link there and copies no key bytes into evidence. [Secret scan](scorecard/cxn3/logs/secret-scan.log)
+checks the added diff and CXN3 evidence without printing candidate values.
 
-```text
-$ pnpm gen:deno
-# exit 0; 0.4 seconds
+## Open acceptance gaps / handoff
 
-> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero
-> node scripts/gen-deno-json.mjs
+- Full exact-commit suite, builds, wrapper, e2e/repeats, bundle and production-config preview proof;
+  coordinator owns the separate baseline and scheduling. P/B ran no full e2e or rehearsal.
+  Reserve E2E_PORT_CLASSIC=4320, E2E_PORT_V2=4321, E2E_PORT_SERVER=4322, E2E_PORT_API=4323,
+  with empty VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY when browser work is authorized.
+- Strict live health and Deno guard are red. An out-of-scope import-map repair and any HTTP/auth
+  ordering repair require their own tested cards. No deployment is permitted from this evidence.
+- Live schema/history, Vercel flag/deploy state, signed-in play, tested Vercel rollback and matching
+  manual migration rollback files are not proved by this unsigned probe. Local SQL proof is complete
+  for the inventory; optional section 7 release prerequisites remain.
+- Two independent graders and coordinator review; no grade, merge, push or post-merge claim here.
 
-wrote 18 Edge Function import maps
-```
-
-```text
-$ git diff --exit-code -- supabase/functions
-# exit 0; 0.0 seconds
-```
-
-```text
-$ pnpm typecheck
-# exit 0; 14.9 seconds
-
-> taskbar-hero@0.0.0 typecheck /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero
-> pnpm -r typecheck
-
-Scope: 6 of 7 workspace projects
-packages/game-rules typecheck$ tsc --noEmit
-supabase/tests typecheck$ tsc --noEmit
-packages/auth typecheck$ tsc --noEmit
-packages/chain typecheck$ tsc --noEmit
-packages/chain typecheck: Done
-packages/auth typecheck: Done
-packages/game-rules typecheck: Done
-supabase/tests typecheck: Done
-packages/api-contract typecheck$ tsc --noEmit
-packages/api-contract typecheck: Done
-apps/web typecheck$ tsc --noEmit
-apps/web typecheck: Done
-```
-
-```text
-$ pnpm lint
-# exit 0; 11.4 seconds
-
-> taskbar-hero@0.0.0 lint /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero
-> pnpm -r lint
-
-Scope: 6 of 7 workspace projects
-packages/auth lint$ tsc --noEmit
-packages/chain lint$ tsc --noEmit
-packages/game-rules lint$ tsc --noEmit
-supabase/tests lint$ tsc --noEmit
-packages/chain lint: Done
-packages/auth lint: Done
-packages/game-rules lint: Done
-supabase/tests lint: Done
-packages/api-contract lint$ tsc --noEmit
-packages/api-contract lint: Done
-apps/web lint$ tsc --noEmit
-apps/web lint: Done
-```
-
-```text
-$ pnpm test
-# exit 0; 71.4 seconds
-packages/chain test:  Test Files  3 passed (3)
-packages/chain test:       Tests  32 passed (32)
-packages/auth test:  Test Files  1 passed (1)
-packages/auth test:       Tests  24 passed (24)
-supabase/tests test:  Test Files  32 passed (32)
-supabase/tests test:       Tests  544 passed | 1 expected fail (545)
-packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
-packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
-packages/api-contract test:  Test Files  1 passed (1)
-packages/api-contract test:       Tests  16 passed (16)
-apps/web test:  Test Files  111 passed (111)
-apps/web test:       Tests  1303 passed (1303)
-apps/web test:    Duration  25.03s (environment 48%, tests 38%, import 9%, transform 5%)
-apps/web test: Environment  jsdom was created 111 times · 101.58s total, 48% of tracked time
-apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
-apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
-apps/web test: Done
-```
-
-```text
-$ pnpm build
-# exit 0; 9.8 seconds
-apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
-apps/web build: ✓ 1817 modules transformed.
-apps/web build: rendering chunks...
-apps/web build: computing gzip size...
-apps/web build: dist/index.html                               2.13 kB │ gzip:   0.77 kB
-apps/web build: dist/assets/index-BmB6Vb4r.css              142.10 kB │ gzip:  22.27 kB
-apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
-apps/web build: dist/assets/assets-CpytQ_XT.js                2.39 kB │ gzip:   1.17 kB
-apps/web build: dist/assets/ArenaScene-LfTBtbQn.js            7.04 kB │ gzip:   2.71 kB
-apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
-apps/web build: dist/assets/StageScene-EiK_cC7z.js           15.73 kB │ gzip:   5.79 kB
-apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
-apps/web build: dist/assets/index-Dg86klCB.js               239.71 kB │ gzip:  67.18 kB
-apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
-apps/web build: dist/assets/combat-BSGSpOB2.js              900.61 kB │ gzip:  77.42 kB
-apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
-apps/web build: ✓ built in 400ms
-apps/web build: Done
-```
-
-```text
-$ pnpm --filter @taskbar-hero/web build
-# exit 0; 7.0 seconds
-[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
-✓ 1817 modules transformed.
-rendering chunks...
-computing gzip size...
-dist/index.html                               2.13 kB │ gzip:   0.77 kB
-dist/assets/index-BmB6Vb4r.css              142.10 kB │ gzip:  22.27 kB
-dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
-dist/assets/assets-CpytQ_XT.js                2.39 kB │ gzip:   1.17 kB
-dist/assets/ArenaScene-LfTBtbQn.js            7.04 kB │ gzip:   2.71 kB
-dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
-dist/assets/StageScene-EiK_cC7z.js           15.73 kB │ gzip:   5.79 kB
-dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
-dist/assets/index-Dg86klCB.js               239.71 kB │ gzip:  67.18 kB
-dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
-dist/assets/combat-BSGSpOB2.js              900.61 kB │ gzip:  77.42 kB
-dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
-
-✓ built in 472ms
-```
-
-```text
-$ node scripts/check-links.mjs --json
-# exit 1; 0.1 seconds
-Checked 67 files, 795 paths; broken count 1.
-```
-
-## Diff snapshot
-
-Recorded from the complete worktree before the report-only commit.
-
-```text
-$ git diff --stat origin/main
- docs/cutover-v2.md                               | 486 ++++++-----------------
- docs/deploy.md                                   |   5 +
- docs/go-live.md                                  |  30 +-
- docs/proposals/sql/check-live-schema.sql         |  43 ++
- docs/runbook.md                                  |  22 +-
- reports/n3-cutover-truth.md                      |  79 ++++
- reports/n3-cutover-truth/checks/classifier.log   |  43 ++
- reports/n3-cutover-truth/checks/deno-imports.log |  80 ++++
- reports/n3-cutover-truth/checks/live-v2.log      |  33 ++
- reports/n3-cutover-truth/checks/schema.log       |  18 +
- scripts/check-live.mjs                           |  49 ++-
- scripts/check-live.test.mjs                      |  79 ++++
- supabase/tests/src/live-schema.test.ts           |  47 +++
- 13 files changed, 627 insertions(+), 387 deletions(-)
-$ git diff --name-only origin/main
-docs/cutover-v2.md
-docs/deploy.md
-docs/go-live.md
-docs/proposals/sql/check-live-schema.sql
-docs/runbook.md
-reports/n3-cutover-truth.md
-reports/n3-cutover-truth/checks/classifier.log
-reports/n3-cutover-truth/checks/deno-imports.log
-reports/n3-cutover-truth/checks/live-v2.log
-reports/n3-cutover-truth/checks/schema.log
-scripts/check-live.mjs
-scripts/check-live.test.mjs
-supabase/tests/src/live-schema.test.ts
-```
-
-## Draft PR verification
-
-Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/244. Continuation commit: `7bb7d23`. Two full local verification rounds are recorded.
-
-```text
-$ CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 244
-Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 1fb25ed):
-PASS  merge with latest main
-PASS  pnpm install
-PASS  generated deno.json has no drift
-PASS  typecheck
-PASS  lint
-PASS  unit tests
-PASS  build
-skip  playwright e2e (no web changes)
-skip  forge test (no contract changes)
-log: /var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T//verify-pr-244.log
-```
-
-No --comment flag was used. The wrapper removed its temporary checkout. The live findings and pre-existing deployment import errors remain PARTIAL; the applicable local wrapper PASS does not mean live health is green.
+Delivery: detached HEAD for ai/codex-n3-cutover-truth; no merge commit; PR #244;
+report reports/n3-cutover-truth.md; STATUS PARTIAL, ready for coordinator review of card P/B.

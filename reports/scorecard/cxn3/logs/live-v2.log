@@ -1,0 +1,37 @@
+$ env -u SITE_URL -u SUPABASE_URL -u FUJI_RPC_URL node scripts/check-live.mjs --v2
+UTC 2026-11-01T08:02:01.666431+00:00
+Site https://taskbarhero-eight.vercel.app
+Supabase https://qoalewtxflagoprrxrgh.supabase.co
+Fuji RPC https://api.avax-test.network/ext/bc/C/rpc
+
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+FAIL  function v2-boss-fight anonymous - The operation was aborted due to timeout
+FAIL  function v2-boss-fight oversized - The operation was aborted due to timeout
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+FAIL  function v2-choose-class oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+FAIL  function v2-claim oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+FAIL  function v2-craft oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+FAIL  function v2-equip oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+FAIL  function v2-lock oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+FAIL  function v2-relic-forge oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+FAIL  function v2-salvage oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+FAIL  function v2-state oversized - HTTP 401; expected 413 or 400 (authentication may run before body validation)
+
+10 CHECK(S) FAILED
+
+EXIT_CODE=1

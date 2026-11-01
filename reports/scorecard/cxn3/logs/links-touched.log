@@ -1,0 +1,8 @@
+UTC 2026-11-01T08:07:10.096209+00:00
+base=1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
+$ node scripts/check-links.mjs docs/cutover-v2.md docs/go-live.md docs/runbook.md docs/deploy.md
+Checked 4 markdown files and 42 links/paths.
+
+✓ All links, image paths, and backticked repo paths exist on disk.
+
+EXIT_CODE=0
