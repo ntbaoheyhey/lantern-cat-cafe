@@ -28,7 +28,6 @@ export function Hud({
   hintText,
   onHintAction,
   mode,
-  compact = false,
 }: HudProps) {
   const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
   const maxKeys = catKeyDef ? catKeyDef.maxStack : 5;
@@ -49,26 +48,8 @@ export function Hud({
   return (
     <>
       <header data-testid="hud" className="shell-hud v2-topbar">
-        {!compact && title}
         <div className="hud-left hud-bar" role="region" aria-label="Cat status">
           <div className="hud-bar__layout">
-            <div className="hud-chip-wrap hud-bar__primary" data-testid="hud-level">
-              <LevelXpBar
-                level={state.cat.level}
-                xp={state.cat.xp}
-                xpToNext={state.cat.xpToNext}
-              />
-            </div>
-
-            <div className="hud-progress-wrap hud-bar__primary" data-testid="hud-progress">
-              <ProgressChip
-                chapter={state.progress.chapter}
-                round={state.progress.round}
-                kills={state.progress.kills}
-                killsPerRound={state.progress.killsPerRound}
-              />
-            </div>
-
             <div className="hud-currencies hud-stacks-list" role="list" aria-label="Currencies and keys">
               <div
                 className="hud-chip hud-stack-item hud-gold"
@@ -104,6 +85,23 @@ export function Hud({
               </div>
             </div>
 
+            <div className="hud-chip-wrap hud-bar__primary" data-testid="hud-level">
+              <LevelXpBar
+                level={state.cat.level}
+                xp={state.cat.xp}
+                xpToNext={state.cat.xpToNext}
+              />
+            </div>
+
+            <div className="hud-progress-wrap hud-bar__primary" data-testid="hud-progress">
+              <ProgressChip
+                chapter={state.progress.chapter}
+                round={state.progress.round}
+                kills={state.progress.kills}
+                killsPerRound={state.progress.killsPerRound}
+              />
+            </div>
+
             <div className="hud-chip-wrap hud-bar__secondary" data-testid="hud-power">
               <PowerChip
                 power={power}
@@ -113,8 +111,6 @@ export function Hud({
             </div>
           </div>
         </div>
-
-        {!compact && guidance}
 
         <div className="hud-right">
           {syncStatus && (
@@ -128,7 +124,7 @@ export function Hud({
           </div>
         </div>
       </header>
-      {compact && <div className="shell-context">{title}{guidance}</div>}
+      <div className="shell-context">{title}{guidance}</div>
     </>
   );
 }
