@@ -51,7 +51,7 @@ export function ScreenFrame({
 
       <div className="shell-body">
         {showHud && hudProps ? (
-          <Hud {...hudProps} />
+          <Hud {...hudProps} compact={dataLayout === 'phone'} />
         ) : (
           <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
         )}

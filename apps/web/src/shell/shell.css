@@ -276,24 +276,39 @@
     padding: 2px 4px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
   }
 
-  .shell-hud > .v2-title { grid-area: 1 / 1; }
-  .shell-hud > .hud-center { grid-area: 2 / 1; }
-  .shell-hud > .hud-right { grid-area: 1 / 2 / 3; }
+  .shell-context {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-2, 8px);
+    padding: 0 var(--sp-1, 4px);
+    background: var(--surface, #2a1f36);
+    flex: none;
+  }
+  .shell-context .v2-hint { min-width: 0; }
+  .shell-context .hud-center { min-width: 0; }
+  .shell-hud > .hud-right {
+    grid-area: 1 / 2;
+    flex-direction: column;
+    gap: 0;
+  }
+  .shell-hud .v2-sync-status-slot { line-height: 1; }
   .shell-hud.v2-topbar > .hud-left {
-    grid-area: 3 / 1 / 4 / -1;
+    grid-area: 1 / 1;
     width: 100%;
     max-width: 100%;
     container-type: inline-size;
+    padding: 0 var(--sp-1, 4px);
   }
 
   /* Keep the existing HUD grid at the shared 600px layout boundary too. */
   .shell-hud.v2-topbar .hud-bar__layout {
     display: grid;
     grid-template-columns: minmax(122px, 1fr) auto;
-    grid-template-areas: 'level power' 'progress stacks';
+    grid-template-areas: 'level power' 'progress progress' 'stacks stacks';
     width: 100%;
     gap: calc(var(--sp-1, 4px) / 2) var(--sp-1, 4px);
   }
@@ -304,6 +319,8 @@
     clip-path: inset(50%);
     white-space: nowrap;
   }
+
+  .shell-hud .hud-chip { height: 20px; }
 
   .shell-rail {
     width: 100%;

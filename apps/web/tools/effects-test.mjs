@@ -1,7 +1,7 @@
 // Wallet-free EFFECTS test: records video, grabs timed frame sequences, asserts animation behaviour.
 // Screenshots cannot show motion, so this samples the running app over time. Demo mode on the Vite DEV
 // server only (dev builds expose canvas data-stage-release/impact); nothing touches live services.
-// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames]
+// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames] [--viewport=1600x900]
 // One summary PNG by default; --frames opts into extra PNG sequences. Exit 1 on hard failures.
 import { createServer } from 'vite';
 import { createHash } from 'node:crypto';
@@ -13,6 +13,11 @@ const { chromium } = createRequire(import.meta.url)('@playwright/test');
 const out = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? '../../reports/effects');
 const writeScreenshots = process.env.SCREENSHOTS === '1';
 const writeFrames = writeScreenshots && process.argv.includes('--frames');
+const viewportArg = process.argv.find(arg => arg.startsWith('--viewport='))?.slice('--viewport='.length) ?? '1280x720';
+if (!['1280x720', '1600x900'].includes(viewportArg)) throw new Error('--viewport must be 1280x720 or 1600x900');
+const [viewportWidth, viewportHeight] = viewportArg.split('x').map(Number);
+const viewport = { width: viewportWidth, height: viewportHeight };
+const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
 const port = 5198, base = `http://localhost:${port}`;
 const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
 mkdirSync(out, { recursive: true });
@@ -33,7 +38,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
 browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
 
-async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
+async function open(name, { fixture, reduced = false, size = viewport }) {
   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
   let ctx = await browser.newContext({ ...opts, recordVideo: { dir: `${out}/video-${name}`, size } });
   let page;
@@ -111,13 +116,9 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const normal = await open('motion-normal', { fixture: 'fresh' });
   const walk = async page => {
     const names = new Set(); let transformAnims = 0;
-    for (const tab of ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help']) {
-      let el = page.getByRole('tab', { name: tab, exact: true }).first();
-      if (!(await el.count())) {
-        const alias = tab === 'Hero' ? 'Character' : tab === 'Map' ? 'Boss' : tab;
-        el = page.getByRole('tab', { name: alias, exact: true }).first();
-      }
-      if (await el.count()) await el.click();
+    for (const screen of manifest.screens) {
+      await page.getByTestId(screen.navTestId).click();
+      if (screen.subnavTestId) await page.getByTestId(screen.subnavTestId).click();
       for (let i = 0; i < 6; i++) {
         await sleep(80);
         const found = await page.evaluate(() => document.getAnimations().map(a => ({
@@ -125,7 +126,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
         for (const f of found) { names.add(f.name); if (f.props.some(p => /transform|translate|scale|rotate/.test(p))) transformAnims++; }
       }
     }
-    return { names: [...names], transformAnims };
+    return { screens: manifest.screens.map(screen => screen.id), names: [...names], transformAnims };
   };
   const n = await walk(normal.page); await normal.ctx.close();
   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
@@ -145,7 +146,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
 await browser.close();
 writeFileSync(`${out}/summary.json`, JSON.stringify(results, null, 2));
 const fail = results.filter(r => r.status === 'FAIL').length;
-console.log(`\n${results.length} checks, ${fail} FAIL. Videos + frames in ${out}`);
+console.log(`\n${results.length} checks, ${fail} FAIL at ${viewportArg}. Videos + frames in ${out}`);
 process.exitCode = fail ? 1 : 0;
 } finally {
   await browser?.close();
