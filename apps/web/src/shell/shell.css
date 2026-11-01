@@ -269,17 +269,40 @@
     flex-direction: column-reverse;
   }
 
-  .shell-hud {
+  .shell-hud.v2-topbar {
     height: auto;
     min-height: 48px;
-    max-height: 88px;
+    max-height: none;
     padding: 2px 4px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto;
   }
 
-  .hud-left {
-    flex-wrap: wrap;
-    height: auto;
+  .shell-hud > .v2-title { grid-area: 1 / 1; }
+  .shell-hud > .hud-center { grid-area: 2 / 1; }
+  .shell-hud > .hud-right { grid-area: 1 / 2 / 3; }
+  .shell-hud.v2-topbar > .hud-left {
+    grid-area: 3 / 1 / 4 / -1;
+    width: 100%;
+    max-width: 100%;
+    container-type: inline-size;
+  }
+
+  /* Keep the existing HUD grid at the shared 600px layout boundary too. */
+  .shell-hud.v2-topbar .hud-bar__layout {
+    display: grid;
+    grid-template-columns: minmax(122px, 1fr) auto;
+    grid-template-areas: 'level power' 'progress stacks';
+    width: 100%;
+    gap: calc(var(--sp-1, 4px) / 2) var(--sp-1, 4px);
+  }
+
+  .shell-hud .hud-chip-label {
+    position: absolute;
+    inset-inline-end: 0;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .shell-rail {

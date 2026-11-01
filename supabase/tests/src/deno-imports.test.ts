@@ -8,10 +8,9 @@ import { expect, it } from "vitest";
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const run = (dir: string) => spawnSync(process.execPath, [join(dir, "scripts/check-deno-imports.mjs")], { encoding: "utf8" });
 
-// KNOWN DEFECT: gen-deno-json excludes index.ts file keys. Five ./index imports in
-// v2/forge and v2/bag therefore fail Deno resolution in all sixteen game functions.
-// Product/map changes belong to a separate fix card; this guard must remain strict.
-it.fails("every Edge Function resolves its transitive local imports using its own Deno map", () => {
+// BASE0 fixes the explicit-index map defect. Keep the original assertions active
+// so an unresolved local edge now fails the normal suite rather than being expected.
+it("every Edge Function resolves its transitive local imports using its own Deno map", () => {
   const result = run(root);
   expect(result.stderr).toBe("");
   expect(result.status).toBe(0);
@@ -34,10 +33,9 @@ it("a scratch copy missing the api-contract v2 map key fails and names the exact
   } finally { rmSync(scratch, { recursive: true, force: true }); }
 });
 
-it("does not hide additional unresolved imports behind the known ./index defect", () => {
+it("does not exempt formerly unresolved explicit-index imports", () => {
   const result = run(root);
-  const known = /^[-\w]+: packages\/game-rules\/src\/v2\/(?:forge\/(?:craft|relic)|bag\/(?:compare|best|salvage))\.ts -> \.\/index$/;
-  expect(result.stderr.trim().split("\n").filter(line => line && !known.test(line))).toEqual([]);
+  expect(result.stderr.trim().split("\n").filter(Boolean)).toEqual([]);
 });
 
 it("walks aliases, type exports, dynamic imports and cycles without guessing extensions", () => {

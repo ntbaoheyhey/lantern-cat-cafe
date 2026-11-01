@@ -1,0 +1,17 @@
+Command: node --test scripts/gen-deno-json.test.mjs
+Cwd: /Users/bao/.codex/worktrees/mega-deno0/taskbar-hero
+✔ explicit root and nested index imports resolve to their exact files (9.994917ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.765583ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.863625ms)
+✔ output order is stable regardless of file creation order (3.538875ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.887916ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.825958
+
+EXIT_CODE=0
