@@ -1,0 +1,230 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web
+> playwright test e2e/server/request-body-limits.spec.ts --project=v2-server --workers=1
+
+[WebServer] (node:65772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:65776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:65780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:65802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:65803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:65809) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:65811) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:65835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:65836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:65842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+(node:65843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65855) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65867) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65879) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65885) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:65891) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F
+
+  1) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-boss-fight: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-4deb0-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  2) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-choose-class: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-55a21-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  3) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-claim: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-753fb-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  4) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-craft: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-7c06f-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  5) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-equip: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-66af9-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  6) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-lock: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-46f6b-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  7) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-relic-forge: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-cf08f-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  8) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-salvage: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-ff758-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  9) [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-state: CORS and unsigned body-size refusals over HTTP 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 413
+
+      33 |       headers: { Origin: origin, 'Content-Type': 'application/json' },
+      34 |     });
+    > 35 |     expect(large.status()).toBe(400);
+         |                            ^
+      36 |     expect(await large.json()).toEqual({ error: 'invalid_request' });
+      37 |     expect(large.headers()['access-control-allow-origin']).toBe(origin);
+      38 |   });
+        at /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/apps/web/e2e/server/request-body-limits.spec.ts:35:28
+
+    Error Context: test-results/4400-4401/server-request-body-limits-b15d2-ody-size-refusals-over-HTTP-v2-server/error-context.md
+
+  9 failed
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-boss-fight: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-choose-class: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-claim: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-craft: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-equip: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-lock: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-relic-forge: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-salvage: CORS and unsigned body-size refusals over HTTP 
+    [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-state: CORS and unsigned body-size refusals over HTTP 
+ ELIFECYCLE  Command failed with exit code 1.

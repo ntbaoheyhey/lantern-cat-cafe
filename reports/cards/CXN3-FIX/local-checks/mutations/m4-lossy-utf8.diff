@@ -1,0 +1,13 @@
+diff --git a/supabase/functions/_shared/v2/http.ts b/supabase/functions/_shared/v2/http.ts
+index 7df5ade..670cf0c 100644
+--- a/supabase/functions/_shared/v2/http.ts
++++ b/supabase/functions/_shared/v2/http.ts
+@@ -83,7 +83,7 @@ async function requestBytes(req: Request): Promise<Uint8Array> {
+ 
+ function requestObject(bytes: Uint8Array): Record<string, unknown> {
+   try {
+-    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
++    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: false }).decode(bytes));
+     if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
+     return body as Record<string, unknown>;
+   } catch {

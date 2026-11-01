@@ -33,7 +33,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 
-| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | — | LOCAL VERIFY | 0 | eb3786f; exact-head root tests PASS;27regressions/type PASS | Direct coordinator only;mutants/remaining full gates/review/push/release pending; after ART1 |
+| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | — | LOCAL VERIFY | 0 | a9b804;fresh root test/type/lint PASS;wire9PASS before commit | Prior eb3786f6/6mutants retained; current remaining gates/review/push/release pending |
 | 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
 
 ## Corrections and scheduling decisions

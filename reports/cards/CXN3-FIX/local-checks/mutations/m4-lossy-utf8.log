@@ -1,0 +1,41 @@
+eb3786f3a38d446fb2d08dbf195e44f8480220ab
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 1 failed) 23ms
+   × rejects invalid UTF-8 inside otherwise valid JSON instead of accepting a replacement character 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > rejects invalid UTF-8 inside otherwise valid JSON instead of accepting a replacement character
+AssertionError: expected 200 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 200
+
+ ❯ src/v2-body-limits.test.ts:115:49
+    113|   const stream = new ReadableStream<Uint8Array>({ start(c) { c.enqueue…
+    114|   const r = route();
+    115|   expect((await r.handle(post(stream))).status).toBe(400);
+       |                                                 ^
+    116|   expect(r.game).not.toHaveBeenCalled();
+    117| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 26 passed (27)
+   Start at  01:40:21
+   Duration  1000ms (import 66%, transform 19%, tests 13%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1

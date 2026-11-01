@@ -1,0 +1,13 @@
+diff --git a/supabase/functions/_shared/v2/http.ts b/supabase/functions/_shared/v2/http.ts
+index 7df5ade..19afd86 100644
+--- a/supabase/functions/_shared/v2/http.ts
++++ b/supabase/functions/_shared/v2/http.ts
+@@ -72,7 +72,7 @@ async function requestBytes(req: Request): Promise<Uint8Array> {
+     }
+     return bytes.subarray(0, size);
+   } catch {
+-    if (!stopped.signal.aborted) void reader.cancel().catch(() => {});
++    if (!stopped.signal.aborted) await reader.cancel().catch(() => {});
+     throw new V2Error("invalid_request");
+   } finally {
+     clearTimeout(timer);
