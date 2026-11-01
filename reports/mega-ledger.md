@@ -1,5 +1,7 @@
 # Mega ledger — living draft
 
+**PAUSED at user request, 2026-11-01.** Workers/tests stopped. Resume from [the handoff](MEGA-HANDOFF-2026-11-01.md); no automatic continuation.
+
 Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |

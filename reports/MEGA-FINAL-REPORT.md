@@ -1,5 +1,7 @@
 # Mega mission progress — living draft
 
+**PAUSED at user request, 2026-11-01.** Workers/tests stopped. Resume from [the handoff](MEGA-HANDOFF-2026-11-01.md); no automatic continuation.
+
 STATUS: IN-PROGRESS
 
 No item has passed the two-grader merge gate, and no mission PR has merged. Main remains at the observed 1fb25ed baseline. The complete queue and dependency cards remain active.
