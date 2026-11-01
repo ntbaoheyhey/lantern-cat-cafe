@@ -9,7 +9,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | GRADING | 2 | 280ff4b full265/265 and repeats700/700 eachsize; 25mutants killed | A97.642857PASS; original B interrupted429/ungraded; recovery B running; deployment quota hold |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
-| 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | Preliminary9d012ce:34units/80browser repeats | Actual-main full gates and grades pending |
 | 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
 | 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -93,3 +93,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T23:00:20+07:00: CXP1 prospective integration9d012ce passed34units,80browser repeat10 cases,webtypecheck,Deno/drift. Resolved16generatedmap+1decisionindexconflicts without moving productbranches. Actualremote64cf350; localbranch6b06574stale. Clean temporarycheckout and4440–4444free. Fullgates/grades after actualmain remain pending.
 
 - 2026-11-01T23:04:57+07:00: CXL1 prospectiveintegration7731a65passed402rules pluspetisolation1,type/Deno/v2build.2expectedfail/11skipped are unchanged fromBASE0; no newskip.16maps regenerated with6Codexaliases each. No branchmovement/fullgate/grade/merge/live claim.
+
+- 2026-11-01T23:13:04+07:00: checkpoint/ART1preflight21fc7ddpassed36tests,catalogdrift,51spriteaudit,links;71sourcefiles byte-identical to4df594a. No art/runtime/branchchange. BASE0recoveryB1280repeat700/700exit0;1600running. A97.642857PASS, Vercelquota hold unchanged; no missionmerge.

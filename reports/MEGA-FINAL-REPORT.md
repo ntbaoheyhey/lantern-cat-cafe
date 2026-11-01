@@ -2,11 +2,11 @@
 
 STATUS: IN-PROGRESS
 
-## Current checkpoint — 2026-11-01T22:50:31+07:00
-Candidate PR246 is280ff4b; main1fb25ed; no mission merge. Independent A passed97.64285714285714 with every required floor and zero auto-fails. Its27/28mutants include one honestly retained survivor;10greencontrols. Original B errored with model-provider429 before grading; its pipelines are now stopped and partial evidence preserved. Fresh independent recovery B is running in its own worktree/ports. Final item score remains pending.
-Completed coordinator checks remain full265/265 andexpandedrepeat700/700 at each size,25mutantkills/16controls plus core/build/Deno/UI/a11y/G5/wrapper.244rawmanifestfiles match2088154; the later living-report revision is reconciled at37d4b03 with immutable receipt2e04f83. The original245-file snapshot receipt is historical, not proof of later report bytes.
-Vercel reports deployment quota failure, so PR246 stays draft even if local grading passes. No reset time or broken-live claim is inferred. FXRB temporary integration7023a2d has24unit/120resize preliminaryPASS; actual-main fullgates/grades remain pending.
-Coordinator publishes the A evidence and current runtime personally, with30minute/milestone checkpoints. No backend release, live write, wallet transaction or submission. Full mission scope and all score/merge safety rules remain active.
+## Current checkpoint — 2026-11-01T23:13:04+07:00
+PR246 remains draft on280ff4b; main1fb25ed; no mission merge, deployment, backend release or live write. Independent A passed97.64285714285714, every floor and zero auto-fails;140deliveryfiles published72c0b0b with immutable receipt. Original B interrupted/ungraded; fresh recoveryB personally passed core checks and700/700repeats at1280, now running1600. No B score or final item score yet.
+Vercel candidate statuses still have the recorded deployment-quota hold; exact reset unverified. FullBASE0 coordinator verification remains complete; no duplicate rerun. Publication correction37d4b03 and receipt2e04f83 distinguish244originalrawfiles from later report revisions.
+Coordinator completed preliminary temporary integrations while grading continued: FXRB7023a2d(24units/120resize);CXP19d012ce(34units/80browser);CXL17731a65(402rules,2expectedfail/11skips inherited,1isolation,type/Deno/v2build);ART121fc7dd(36tests,catalog,51spriteaudit,links,71sourcefiles preserved). These are not independent grades or actual-main/full/live gates. Product branches are unchanged; temporary checkouts clean and coordinator ports4440–4444free.
+All full mission gates, serial merge order, original content/defaultOFF/safety and checkpoint rules remain active. Coordinator writes checkpoints personally; no additional worker launched. Latest full handoff and per-card runtime remain authoritative.
 
 ## Historical progress (older candidates and running states)
 
@@ -53,3 +53,5 @@ Provider interruption 2026-11-01T22:32:35+07:00: repaired-head graderB native tu
 CXP1 preflight 2026-11-01T23:00:20+07:00: temporary integration9d012ce combines prospectiveBASE0/FXRB with publishedCXP164cf350.34units/80browser repeat10 cases/webtype/Deno allpassed.17integration conflicts resolved through regeneratedmaps preservingbothparents and combineddecisionindex; no gameplay/sourcebranch change. Fullactualmain gates/independentgrades/live remain pending. A grade and140filemanifest are now published at72c0b0b.
 
 CXL1 preflight 2026-11-01T23:04:57+07:00: detached7731a65 merges publishedCompendium178f379 into prospectiveBASE0/FXRB/CXP1 without conflicts.402rules pass,2expectedfail/11skipped inherited;petisolation/type/Deno/v2build pass. Includes offlinegenerator,sourceprovenance and exactodds tests.16generatedmaps gain6Codexaliases each; no newbalance/art. Fullactualmain gates/grades/live remain pending.
+
+ART1 preflight 2026-11-01T23:13:04+07:00: temporary21fc7dd resolves only decisionindexconflict;36Python tests,catalogdrift,51spriteaudit,links pass.71inventoriedsourcefiles remain byte-identical to publishedART1; no newmedia or assetrewrite. Actual-main/fullgate/grades/live pending.
