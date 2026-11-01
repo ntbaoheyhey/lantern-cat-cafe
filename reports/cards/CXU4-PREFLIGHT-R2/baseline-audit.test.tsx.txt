@@ -1,0 +1,21 @@
+// @vitest-environment jsdom
+import { readFileSync } from 'node:fs';
+import { render, cleanup } from '@testing-library/react';
+import { afterEach, expect, it, vi } from 'vitest';
+import { withConfigV2 } from '../../../../packages/game-rules/src/v2/sim/config';
+import { HelpTab } from './cxu4-baseline-HelpTab';
+const inventory = JSON.parse(readFileSync('../../reports/redesign/CXU4/help-strings.json','utf8'));
+afterEach(() => { cleanup(); vi.unstubAllEnvs(); });
+it('saved oracle equals baseline1fb25ed rendering for both key configs and classic', () => {
+ for (const [value,key] of [[0,'base'],[1,'firstClear']] as const) {
+  vi.stubEnv('VITE_GAME_V2','1');
+  withConfigV2({boss:{firstClearKeys:value}},() => {
+   const {container,unmount}=render(<HelpTab />);
+   expect(Array.from(container.querySelectorAll('.help-v2-section')).map(n=>n.textContent!.replace(/\s+/g,' ').trim())).toEqual(inventory[key]);
+   unmount();
+  });
+ }
+ vi.stubEnv('VITE_GAME_V2','0');
+ const {container}=render(<HelpTab />);
+ expect(Array.from(container.querySelectorAll('.help-step-item')).map(n=>n.textContent!.replace(/\s+/g,' ').trim())).toEqual(inventory.classic);
+});

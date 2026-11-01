@@ -62,3 +62,5 @@ Publication receipt 2026-11-01T23:35:00+07:00: B150deliveryfiles match immutable
 CXN3 local preflight 2026-11-01T23:40:09+07:00: cd274abpasses9classifier/docs+4PGlite/type/Deno/links. No liveprobe/release. Historical10livefailures remain open inCXN3-FIX; mandatory --v2postmerge gate must be resolved before CXN3 can complete. No sourcebranch/queue/gate exception.
 
 CXU5 preflight 2026-11-01T23:45:29+07:00: detached6bf7b13passed80Map/Boss browser repeats andfocusedunits(["72 passed (72)"])/typecheck. OriginaldirtyCXU5evidence preserved; application source merged clean. All actual-main/fullgate/grade/live requirements remain pending.
+
+CXU4 preparation correction 2026-11-01T23:56:57+07:00: the29-file coordinator snapshotbb39ba5 omitted the savedHelpfixture used by a test. Exact3a34e8c recorded55unitpass and onefailedsuite before laterchecks; failure preserved. Successorb06a68d adds the unchanged3809-byte fixture, independently verified against baselineHelp rendering for bothkeyconfigs/classic, and is runningnewfocusedverification. Originalworkingfiles preserved, no testassertion/sourcebehavior changed.

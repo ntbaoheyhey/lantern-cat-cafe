@@ -12,7 +12,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | Preliminary9d012ce:34units/80browser repeats | Actual-main full gates and grades pending |
 | 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
-| 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | PreflightR1 setupFAIL;R2b06a68d running | WIPsnapshotbb39ba5 + originalHelpfixture preserved; no formal grade |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 8 | CXU5 | main | ai/codex-cxu5 | https://github.com/ntbaoheyhey/taskbar-hero/pull/249 | IN-PROGRESS | 0 | Preliminary6bf7b13:80browser repeats;focused units/webtype | Original dirty evidence preserved; full actual-main gates/grades pending |
 | 9 | CXC2 | main | ai/codex-cxc2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -101,3 +101,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T23:40:09+07:00: CXN3 temporarycd274ablocalpreflight passes;10historical live findings remain unresolved. Mandatory --v2postmerge gate requires source/release readiness before scheduling merge; no exception/reorder. Next safe preparationCXU5,dirtyoriginalevidence preserved.
 
 - 2026-11-01T23:45:29+07:00: CXU5 preliminary6bf7b13passed80browser repeats andfocusedunits/type. Appmergeclean,one decisionindexconflict resolved. Originaldirtyreports untouched,temporarycheckoutclean. No fullgate/grade/merge/live claim. Next inspect savedCXU4source.
+
+- 2026-11-01T23:56:57+07:00: CXU4 saved29files snapshotbb39ba5,temporaryintegration3a34e8c source-mergeclean; firstunitpreflight failed because coordinator omitted existingHelpfixture. R2b06a68d adds exactfixture after independent baseline-render verification; rerunactive PID43392. Originalcode/reports preserved; no testweakening/score/merge.

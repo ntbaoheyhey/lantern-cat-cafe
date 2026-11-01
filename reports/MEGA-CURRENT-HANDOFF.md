@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T23:45:29+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
+Updated 2026-11-01T23:56:57+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
 Authoritative worktree /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Old Documents checkout and historical dirty evidence must be preserved.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; immutable candidate PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 BASE0 source repairs SceneManager readiness destruction race, deterministic browser-fixture clock origin, unused compact prop/duplicate CSS, inherited Deno/HUD/harness failures. Completed coordinator report: cards/BASE0-VERIFY-R2/REPORT.md.
@@ -27,6 +27,7 @@ CXL1 preliminary integration7731a65/tree0de38c5:402rules passed,2expectedfails/1
 ART1 preliminary integration21fc7dd/tree5be152a:36Python tests,catalogdrift,51spriteaudit,links pass;71inventoriedfiles byte-identicaltoART1. One decisionindexconflict resolved; no art/runtime changes. Cleancheckout/4440–4444free. Card ART1-PREFLIGHT-R1.
 CXN3 preliminarycd274ab/tree4c50c56:9classifier/docs+4PGlite/type/Deno/links pass;nocontentconflict,cleancheckout,4440–4444free. Historical10livefindings unresolved; --v2postmerge will require CXN3-FIX/source-release readiness. No gateexception/reorder. Card CXN3-PREFLIGHT-R1.
 CXU5 preliminary6bf7b13/treeba3df92:Map/Bossunits72 passed (72);80browser repeat10/webtype pass. Cleancheckout,runner40541stopped,4440–4444free. OriginaldirtyCXU5reports preserved; sourcec5b846eunchanged. Card CXU5-PREFLIGHT-R1.
+CXU4 R1 setupFAIL3a34e8c:55unitpass,one suite missing saved Helpfixture omittedbycoordinator;no type/browser/effectsrun. PreservedR1card. Successorb06a68d adds exact3809byte fixture, independently matches baseline1fb25ed rendering forbase/firstClear/classic. R2RUNNING PID43392,sameworktree mega-cxu4-preflight-280ff4b,4440–4444;cardruntime authoritative. OriginalWIP29files snapshotbb39ba5 andoriginaldirtycheckout preserved.
 Next3actions:
 1. B150filedelivery+aggregation publishedbeb4a99,immutable receipt verified;PR246 body updated and stilldraft. A72c0b0b;CXP13a059c6;CXL1ac4e284;ART1789f6c5 published. Save snapshot and continue next prepareditem.
 2. Scoregate passes; no worker needed. Continue saved CXU4 preparation locally while external deploymenthold persists; keep productBASE0 immutable and serialmerge order.
