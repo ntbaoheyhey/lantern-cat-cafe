@@ -7,7 +7,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 | FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PARTIAL | 2 | Burst 40/40; continuous 80/80; core checks pass twice; full e2e fails known excluded mobile HUD cases | Canvas race fixed; isolated resource error cause NOT VERIFIED; reports/fxrb.md; full-suite gate not falsely called green |
 | CXN3 | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | PARTIAL | 2 | All applicable local checks pass twice; classifier 8/8; PGlite 3/3; live 18 pass/9 fail | Deno import guard 80 failures identical on main; reports/n3-cutover-truth.md; no live/auth changes |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | PARTIAL | 2 | Unit 2310 pass; desktop persistence 6/6; full e2e twice 256 pass/2 excluded mobile failures; committed map drift clean | Fixed refresh backfill/cleanup; generated map metadata only; preview isolation preserved; reports/cxp1.md |
-| CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
+| CXR1 | ai/codex-redesign-cxr1 | — | IN-PROGRESS | 1 | Latest main 1fb25ed has AGR1/AGR2; no AGR3/AGR4 merge | Test merged shell/Landing/Class/Home/Bag; defer redesigned Forge/Market/Hero/Help/shared states and recheck at queue end |
 | CXR2 | ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Follow CXR1 findings; same AGR gate |
 | CXL2 | ai/codex-cxl2 | — | TODO | 0 | Signature not checked | Skip unless dated user SIGNED line exists in design section 6 |
 | Re-check | ai/codex-redesign-cxr1 / ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Refresh main and repeat CXR1; extend if AGR3/AGR4 land |
@@ -33,3 +33,10 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 3. Verify storage parsing/migration, exact progress boundaries, lifecycle deduplication and runtime isolation; add desktop browser coverage of local persistence.
 4. Run install, Deno drift, typecheck, lint, unit tests, build and affected e2e at both desktop sizes, then the existing suite; capture required evidence without changing art.
 5. Refresh reports/cxp1.md, push the existing draft branch, run the PR wrapper and update this ledger with exact results and limitations.
+
+## CXR1 plan
+1. Confirm the AGR merge gate and read existing tests, shell/navigation, merged screen code and approved mockup at both desktop sizes.
+2. Activate the real-shell smoke with no missing-contract skip; add registry/onboarding, merged component and guest-to-Bag flow coverage without changing product behavior.
+3. Extend contrast coverage for the new text tokens and report any failing pairs or other bugs with file/line evidence.
+4. Run the full local verification order, desktop UI/effects audits, screenshots and side-by-side mockup review; record every difference and route cosmetic fixes to CXR2.
+5. Publish reports/redesign/CXR1.md and a draft PR as PARTIAL if AGR3/AGR4 remain absent; recheck after the queue.
