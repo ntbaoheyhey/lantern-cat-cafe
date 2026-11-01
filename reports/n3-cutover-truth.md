@@ -16,7 +16,7 @@ STATUS: PARTIAL
 | T6: no new broken links | PASS comparison | Main and this branch both have the same one broken path. The four edited operational docs pass all 41 path/link checks. The global checker is not falsely reported green. |
 | T7: local install/drift/typecheck/lint/test/build | PASS | Fresh full run plus classic build all pass; output tails below. Existing expected failures/skips are inherited unchanged. |
 | Additional Deno deployment import guard | FAIL, pre-existing | [80 unresolved edges](n3-cutover-truth/checks/deno-imports.log); current and untouched-main outputs compare byte-for-byte equal. Generated-map drift is a separate check and passes. |
-| PR verification wrapper | NOT VERIFIED yet | Run with the draft PR number, without --comment, after delivery. |
+| PR verification wrapper | PASS applicable checks | Second clean checkout: install, drift, typecheck, lint, unit tests and build pass. Browser/contracts checks correctly omitted for this docs/scripts/test-only diff. |
 
 ## What changed
 
@@ -280,3 +280,24 @@ scripts/check-live.mjs
 scripts/check-live.test.mjs
 supabase/tests/src/live-schema.test.ts
 ```
+
+## Draft PR verification
+
+Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/244. Continuation commit: `7bb7d23`. Two full local verification rounds are recorded.
+
+```text
+$ CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 244
+Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 1fb25ed):
+PASS  merge with latest main
+PASS  pnpm install
+PASS  generated deno.json has no drift
+PASS  typecheck
+PASS  lint
+PASS  unit tests
+PASS  build
+skip  playwright e2e (no web changes)
+skip  forge test (no contract changes)
+log: /var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T//verify-pr-244.log
+```
+
+No --comment flag was used. The wrapper removed its temporary checkout. The live findings and pre-existing deployment import errors remain PARTIAL; the applicable local wrapper PASS does not mean live health is green.
