@@ -79,3 +79,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T19:08:17+07:00: independent BASE0 A round1 FAIL, final0/100(A7), raw72.9167; repeat1280 469pass/1fail at errors-notice.ts81, repeat1600 470pass. Quality findings: unusedcompact prop, duplicated narrow context CSS. B still independent/running. Coordinator reproduces unmodified source in mega-base0-repair-r2, PID31494,ports4380–4384; candidate branch stays5db4949.
 
 - 2026-11-01T19:17:45+07:00: GB-R1 completed97PASS; GA-R1 remains0FAIL. Difference>5 invokes freshindependentGC-R1 (briefpushed10d2f68), candidateunchanged. Coordinator reproduced a distinct stale-pauseAt setup race and fixed clockorigin in isolated WIP; original craft locator failure stillreproduces4/100 withouttrace. No merge.
+
+- 2026-11-01T19:34:39+07:00: successor280ff4b committed detached after100/100originalcase and meaningful clock/lifecycle negativecontrols. Fresh full verifierPID45517 starts atsameSHA, expanded12spec repeats. PR246 stays5db4949 whileCgrades. No merge; oldproof not reused fornewhead.

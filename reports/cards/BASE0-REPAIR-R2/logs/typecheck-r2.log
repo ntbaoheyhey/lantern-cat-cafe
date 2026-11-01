@@ -1,0 +1,20 @@
+{"base": "5db4949", "workingRepair": true, "command": ["pnpm", "typecheck"], "cwd": "/Users/bao/.codex/worktrees/mega-base0-repair-r2/taskbar-hero"}
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/.codex/worktrees/mega-base0-repair-r2/taskbar-hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+EXIT_CODE=0

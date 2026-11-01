@@ -1,0 +1,22 @@
+[
+  {
+    "step": "typecheck-r2",
+    "exit": 0
+  },
+  {
+    "step": "lint-r2",
+    "exit": 0
+  },
+  {
+    "step": "clock-regression-old-origin-r2",
+    "exit": 1
+  },
+  {
+    "step": "repair-original-repeat100-r2",
+    "exit": 0
+  },
+  {
+    "step": "repair-clock-regression-r2",
+    "exit": 0
+  }
+]
