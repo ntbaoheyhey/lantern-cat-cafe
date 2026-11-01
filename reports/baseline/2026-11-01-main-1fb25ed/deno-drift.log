@@ -1,0 +1,9 @@
+Command: pnpm gen:deno && git diff --exit-code -- supabase/functions
+Cwd: /Users/bao/.codex/worktrees/mega-20261101-baseline/taskbar-hero
+
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/mega-20261101-baseline/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+
+EXIT_CODE=0
