@@ -1,0 +1,47 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "node --test scripts/check-live.test.mjs", "cwd": "/Users/bao/.codex/worktrees/mega-cxn3-preflight-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "cd274ab9b95d355e08c61452694cc09052f17bb8", "name": "classifier-docs", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-01T23:35:51+07:00", "starting_git_status": "", "viewport": "1280x720"}
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-boss-fight anonymous - HTTP 401
+PASS  function v2-boss-fight oversized - HTTP 413
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+PASS  function v2-choose-class oversized - HTTP 413
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+PASS  function v2-claim oversized - HTTP 413
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+PASS  function v2-craft oversized - HTTP 413
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+PASS  function v2-equip oversized - HTTP 413
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+PASS  function v2-lock oversized - HTTP 413
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+PASS  function v2-relic-forge oversized - HTTP 413
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+PASS  function v2-salvage oversized - HTTP 413
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+PASS  function v2-state oversized - HTTP 413
+✔ unsigned POST requires exactly 401 (11.269ms)
+✔ 503 fails with a budget migration hint for every probe (0.135334ms)
+✔ network errors fail (0.372125ms)
+✔ preflight requires 2xx and usable CORS headers (0.494209ms)
+✔ oversized body requires 400 or 413, and reports auth-before-body behavior (0.070458ms)
+✔ all nine routes get three probes without credentials; oversized JSON exceeds 8192 bytes (1.814542ms)
+✔ cut-over History contains the retired procedure; migration table matches the branch exactly (0.313833ms)
+✔ manual deploy lists the same 18 functions and options as the existing workflow (0.173667ms)
+✔ optional release follows section 7 with local proof and default-OFF flags (0.298917ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.435667
+
+EXIT_CODE=0

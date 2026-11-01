@@ -1,0 +1,41 @@
+{
+  "owner": "coordinator",
+  "pid": 39764,
+  "status": "DONE_PRELIMINARY_PASS",
+  "head": "cd274ab9b95d355e08c61452694cc09052f17bb8",
+  "worktree": "/Users/bao/.codex/worktrees/mega-cxn3-preflight-280ff4b/taskbar-hero",
+  "ports": [
+    4440,
+    4441,
+    4442,
+    4443,
+    4444
+  ],
+  "updated_at": "2026-11-01T23:40:09+07:00",
+  "checks": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "classifier-docs",
+      "exit": 0
+    },
+    {
+      "name": "schema-local",
+      "exit": 0
+    },
+    {
+      "name": "supabase-typecheck",
+      "exit": 0
+    },
+    {
+      "name": "deno-resolution",
+      "exit": 0
+    },
+    {
+      "name": "links",
+      "exit": 0
+    }
+  ]
+}

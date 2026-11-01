@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T23:33:01+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
+Updated 2026-11-01T23:40:09+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
 Authoritative worktree /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Old Documents checkout and historical dirty evidence must be preserved.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; immutable candidate PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 BASE0 source repairs SceneManager readiness destruction race, deterministic browser-fixture clock origin, unused compact prop/duplicate CSS, inherited Deno/HUD/harness failures. Completed coordinator report: cards/BASE0-VERIFY-R2/REPORT.md.
@@ -25,7 +25,8 @@ Auto-compact64000/total configured; effective runtime threshold unverified. Hand
 CXP1 preliminary integration9d012ce/treea22f271:34units/80petbrowser repeats,webtype/Deno pass.17merge conflicts resolved in temporary checkout only(16generatedmaps+decisionindex). ActualpublishedCXP1head64cf350; localbranch6b06574is stale. No productbranch moved; clean checkout/4440–4444free. Card CXP1-PREFLIGHT-R1.
 CXL1 preliminary integration7731a65/tree0de38c5:402rules passed,2expectedfails/11skips unchangedfromBASE0;1petisolation;webtype/Deno/v2build passed. Zero mergeconflicts;16maps gain6Codexaliases each preservingparents. Cleanworktree/4440–4444free. Card CXL1-PREFLIGHT-R1.
 ART1 preliminary integration21fc7dd/tree5be152a:36Python tests,catalogdrift,51spriteaudit,links pass;71inventoriedfiles byte-identicaltoART1. One decisionindexconflict resolved; no art/runtime changes. Cleancheckout/4440–4444free. Card ART1-PREFLIGHT-R1.
+CXN3 preliminarycd274ab/tree4c50c56:9classifier/docs+4PGlite/type/Deno/links pass;nocontentconflict,cleancheckout,4440–4444free. Historical10livefindings unresolved; --v2postmerge will require CXN3-FIX/source-release readiness. No gateexception/reorder. Card CXN3-PREFLIGHT-R1.
 Next3actions:
 1. B150filedelivery+aggregation publishedbeb4a99,immutable receipt verified;PR246 body updated and stilldraft. A72c0b0b;CXP13a059c6;CXL1ac4e284;ART1789f6c5 published. Save snapshot and continue next prepareditem.
-2. Scoregate passes; no worker needed. Continue queued CXN3 preparation locally while external deploymenthold persists; keep productBASE0 immutable and serialmerge order.
+2. Scoregate passes; no worker needed. Continue queued CXU5 preparation locally while external deploymenthold persists; keep productBASE0 immutable and serialmerge order.
 3. Once deploymentcapacity is demonstrably available,recheckcurrentrefs,G1–G7/publication; onlythen ready/merge246 and freshmain/live before any latermerge.
