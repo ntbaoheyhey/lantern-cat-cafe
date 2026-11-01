@@ -1,16 +1,8 @@
 # Runtime — ACTIVE mission
-Updated 2026-11-01T23:33:01+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission PR merged.
-- No active native workers. Coordinator CXU4-PREFLIGHT-R2 running,PID43392,worktree mega-cxu4-preflight-280ff4b,4440–4444. Original CXU4/CXU5 dirty evidence preserved;4450–4454free.
-- BASE0 A DONE/PASS97.64285714285714; B recovery DONE/PASS98. Both satisfy everyfloor,zeroautofails; difference0.357143,no thirdgrader required. A published72c0b0b; B150filedelivery publishedbeb4a99 and byte-verified;PR246body updated,stilldraft.
-- Original B interrupted429/ungraded; its partial evidence remains distinct. Last model42922:32:35UTC+7; one-worker window expired. New429 resets cap1for30min; same-model2/4/8backoff,no downgrade.
-- Vercel rechecked23:29UTC+7: bothcandidatecontexts failure/build-rate-limit; originalprovider timestamp19:53:20UTC+7,retry24h,exactresetunknown. PR246draft; no deploymentretry/capbypass/merge.
-- FXRB7023a2d:preliminary24unit/120resizePASS;CXP19d012ce:34unit/80browserPASS;CXL17731a65:402rules plus1isolation/type/Deno/v2buildPASS,2expectedfail/11skips inherited;ART121fc7dd:36tests/catalog/51sprites/linksPASS and71artfiles preserved. Alltemporarycheckouts clean,coordinator ports4440–4444free. Not fullgates/grades/actualmain/live.
-- Next coordinator work: Bgrade/aggregate/PRbody are published; prepare CXN3 locally; keep merge blocked on known deploymentquota until fresh evidence permits.
-
-- CXN3-PREFLIGHT-R1 DONE_LOCAL_PRELIMINARY_PASS cd274ab;9classifier+4PGlite/type/Deno/links pass. Cleancheckout,runner39764stopped,4440–4444free. No liveprobe. Historical10livefindings unresolved; strict --v2postmerge cannot be claimed passing.
-
-- CXU5 temporary6bf7b13 integrates prospectivequeue throughCXN3 with publishedc5b846e. One designindexconflict resolved; application source merged clean. Original dirty CXU5 reports preserved.
-
-- CXU5-PREFLIGHT-R1 DONE_PRELIMINARY_PASS6bf7b13;focusedunits72 passed (72);80browser repeats/webtype pass. Sourcecheckoutclean,portsfree. CXU4 savedWIP integration nowunder successor R2; no nativeagent needed.
-
-- CXU4 R1 failed setup on3a34e8c because coordinator omitted savedHelpfixture:55unitpass/oneunloadedsuite, no later checks. R2b06a68d includes exactfixture,baseline-renderoracle PASS. Original WIP/code unchanged; no failedresult erased. R2runtime owns currentstep/PIDs.
+Updated 2026-11-02T00:07:07+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
+- No nativeworker or coordinatorpipeline active. CXU4 runner43392finished;temporarycheckoutclean;4440–4454released. Original CXU4/CXU5 historical dirty evidence preserved.
+- BASE0 independentA97.64285714285714/B98 pass everyfloor,zeroautofails,no thirdneeded. PublishedA72c0b0b,Bbeb4a99,receiptb500246. PR246bodyupdated,staysdraft because Vercelquota statusesfailureatlastread-onlycheck2026-11-01T23:29UTC+7. Exactresetunknown; no deploymentattempt/bypass.
+- Preliminaryqueue integration heads:FXRB7023a2d,CXP19d012ce,CXL17731a65,ART121fc7dd,CXN3cd274ab,CXU56bf7b13,CXU4b06a68d. EachcardREPORT states limitedchecks and cleanup; never substitutes for actual-main/fullgate/independentgrade/live proof.
+- CXU4R1 missingfixture failure retained. R2b06a68d:baselineoracle1,component58,browser200,effects10eachsize,webtypePASS. Local productbranchai/codex-cxu4 nowd408ada(30sourcefiles,bytespreserved),notpushed/PRpending. R2 testedintegratedb06a68d,notd408ada. Two recoverybundles verified; see handoff.
+- CXN3 historical10livefindings remain open; strict --v2postmerge requires source/release readiness. Nextsafe work:read-only rootcause/dependency diagnosis; keep serialmerge and source/release gates.
+- Lastmodel4292026-11-01T22:32:35+07:00; one-worker window expired. Fewagents,max2or1for30min afternew429,same-model2/4/8backoff,no downgrade. No grader needed now.

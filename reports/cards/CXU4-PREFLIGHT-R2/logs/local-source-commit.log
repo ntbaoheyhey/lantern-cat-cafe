@@ -1,0 +1,20 @@
+[ai/codex-cxu4 d408ada] feat: add Hero and Help screens with shared UI primitives [skip ci]
+ 30 files changed, 855 insertions(+), 208 deletions(-)
+ create mode 100644 apps/web/e2e/server/cxu4-offline.spec.ts
+ create mode 100644 apps/web/e2e/ui/cxu4-hero-help.spec.ts
+ create mode 100644 apps/web/src/layout/HelpTab.content.tsx
+ create mode 100644 apps/web/src/layout/HelpTab.search.test.tsx
+ create mode 100644 apps/web/src/layout/character/HeroScreen.test.tsx
+ create mode 100644 apps/web/src/layout/character/HeroScreen.tsx
+ create mode 100644 apps/web/src/ui/Banner.tsx
+ create mode 100644 apps/web/src/ui/ConfirmModal.tsx
+ create mode 100644 apps/web/src/ui/EmptyState.tsx
+ create mode 100644 apps/web/src/ui/Modal.tsx
+ create mode 100644 apps/web/src/ui/Tabs.tsx
+ create mode 100644 apps/web/src/ui/Toast.tsx
+ create mode 100644 apps/web/src/ui/index.ts
+ create mode 100644 apps/web/src/ui/ui.css
+ create mode 100644 apps/web/src/ui/ui.test.tsx
+ create mode 100644 docs/decisions/cxu4-hero-help.md
+ create mode 100644 docs/design/decisions.md
+ create mode 100644 reports/redesign/CXU4/help-strings.json

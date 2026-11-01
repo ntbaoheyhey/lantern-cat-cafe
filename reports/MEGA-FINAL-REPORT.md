@@ -2,10 +2,10 @@
 
 STATUS: IN-PROGRESS
 
-## Current checkpoint — 2026-11-01T23:33:01+07:00
-BASE0 exact280ff4b now passes the independent score gate: A97.64285714285714 and B98, allfloors,zeroautofails. Difference0.357143 does not require a third grader. B personally passed700/700repeats at each size and22/22mutants with20controls; its150deliveryfiles are verified and included in this checkpoint. Both B checkouts are clean, allownedports released, no activeworker.
-PR246 remains draft/open/unmerged. Main1fb25ed and candidate280ff4b are unchanged; both Vercelcontexts stillreport failure/build-rate-limit. Exactresetunverified. No retry/bypass or deploymentattempt. Full postmerge main/live gates remain pending; premerge scores do not certify deployment.
-Coordinator temporary preflights remain FXRB7023a2d,CXP19d012ce,CXL17731a65,ART121fc7dd, with their limited scoped checks passed and cleanup recorded. Product branches unchanged. Next safe work is queued CXN3 preparation while deploymentcapacity is unavailable. Allmission scope/serialmerge rules remain active.
+## Current checkpoint — 2026-11-02T00:07:07+07:00
+BASE0 remains score-PASS on280ff4b: independentA97.64285714285714/B98, allfloors/zeroautofails,no thirdrequired. Both immutable grade deliveries are published and PR246body links them. Main1fb25ed is unchanged; PR246draft/unmerged. Vercel's recorded quota hold remains unresolved; no deploymentattempt,backendrelease orlivewrite.
+Coordinator completed scoped prospectiveintegration checks forFXRB,CXP1,CXL1,ART1,CXN3,CXU5,CXU4. These do not replace any full actual-main/independentgrade/postmerge/livegate. CXU4 successor b06a68dpassed58units,200browser repeats,10effects eachdesktopsize,typecheck andan independentHelp-oracle check. Its firstmissingfixture setupfailure is retained; no test/expectedstring was weakened.
+CXU4's30savedsourcefiles are now committed locally onai/codex-cxu4 asd408ada,notpushed/PRpending. Originalsourcebytes anddirtyhistoricalreports are preserved. Two verifiedlocal recoverybundles pluscheckpoint snapshots protect the work. Allownedpipelines/workers are stopped andports released. Nextsafe work isread-only diagnosis ofCXN3's knownlivefindings andsource/release dependency, whileBASE0deploymentavailability remains unresolved.
 
 ## Historical progress (older candidates and running states)
 
@@ -64,3 +64,5 @@ CXN3 local preflight 2026-11-01T23:40:09+07:00: cd274abpasses9classifier/docs+4P
 CXU5 preflight 2026-11-01T23:45:29+07:00: detached6bf7b13passed80Map/Boss browser repeats andfocusedunits(["72 passed (72)"])/typecheck. OriginaldirtyCXU5evidence preserved; application source merged clean. All actual-main/fullgate/grade/live requirements remain pending.
 
 CXU4 preparation correction 2026-11-01T23:56:57+07:00: the29-file coordinator snapshotbb39ba5 omitted the savedHelpfixture used by a test. Exact3a34e8c recorded55unitpass and onefailedsuite before laterchecks; failure preserved. Successorb06a68d adds the unchanged3809-byte fixture, independently verified against baselineHelp rendering for bothkeyconfigs/classic, and is runningnewfocusedverification. Originalworkingfiles preserved, no testassertion/sourcebehavior changed.
+
+CXU4 recovery milestone 2026-11-02T00:07:07+07:00: b06a68dpreflight passes after addingtheunchangedmissingHelpfixture; R1failure remains. Local product sourced408ada contains30files,notpushed. Verifiedbundles and source-byteproof recorded. No fullgate/grade/merge/liveclaim.
