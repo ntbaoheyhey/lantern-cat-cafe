@@ -139,3 +139,8 @@ There is no NFT supply getter or market fee getter: supply is labelled **NOT VER
 zero-platform-fee behavior is attributed to source. Metadata IDs are not exhaustive chain discovery.
 Exit 1 means missing code, wrong chain/market binding, RPC failure or a failed supported read;
 unsupported supply alone is labelled in output and does not fail code-presence proof.
+
+## Edge Functions
+
+For the schema prerequisites, import guard and exact manual Edge Function deployment command,
+see the [v2 cut-over deployment step](cutover-v2.md#3-deploy-the-verified-functions-user-only).
