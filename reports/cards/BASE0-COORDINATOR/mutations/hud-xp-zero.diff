@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/Hud.tsx b/apps/web/src/shell/Hud.tsx
+index 8ad8fc7..2abf57e 100644
+--- a/apps/web/src/shell/Hud.tsx
++++ b/apps/web/src/shell/Hud.tsx
+@@ -88,7 +88,7 @@ export function Hud({
+             <div className="hud-chip-wrap hud-bar__primary" data-testid="hud-level">
+               <LevelXpBar
+                 level={state.cat.level}
+-                xp={state.cat.xp}
++                xp={0}
+                 xpToNext={state.cat.xpToNext}
+               />
+             </div>

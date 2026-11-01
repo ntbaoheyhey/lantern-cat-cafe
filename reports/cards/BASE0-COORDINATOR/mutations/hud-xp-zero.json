@@ -1,0 +1,37 @@
+{
+  "name": "hud-xp-zero",
+  "kind": "mutant",
+  "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "cwd": "/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web",
+  "args": [
+    "pnpm",
+    "test:e2e",
+    "--workers=1",
+    "e2e/ui/baseline-hud.spec.ts",
+    "--project=stage-layout",
+    "--grep",
+    "shared HUD"
+  ],
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4400",
+    "E2E_PORT_V2": "4401",
+    "E2E_PORT_SERVER": "4402",
+    "E2E_PORT_API": "4403",
+    "E2E_VIEWPORT": "1280x720"
+  },
+  "start": "2026-11-01T11:10:57.541Z",
+  "portFreeCheckExit": 1,
+  "end": "2026-11-01T11:11:29.018Z",
+  "testExit": 1,
+  "contractExit": null,
+  "combinedExit": 1,
+  "status": "killed",
+  "reason": "",
+  "expectedFailurePattern": "Error: expect\\([\\s\\S]*baseline-hud.spec.ts",
+  "signal": null,
+  "error": null
+}

@@ -1,0 +1,171 @@
+COMMAND ["pnpm","test:e2e","--workers=1","e2e/ui/baseline-hud.spec.ts","--project=stage-layout","--grep","shared HUD"]
+CWD /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 5db4949096e93eedeb98dff94ef1ec7019485f96
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web
+> playwright test --workers=1 e2e/ui/baseline-hud.spec.ts --project=stage-layout --grep 'shared HUD'
+
+
+Running 4 tests using 1 worker
+FFFF
+
+  1) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+    Expected: "129"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+        14 × locator resolved to <div aria-valuemin="0" aria-valuenow="0" role="progressbar" aria-valuemax="517" class="hud-xp-track" aria-label="Experience" aria-valuetext="0 / 517 XP">…</div>
+           - unexpected value "0"
+
+
+      123 |       const hud = page.getByRole('region', { name: 'Cat status' });
+      124 |       const experience = hud.getByRole('progressbar', { name: 'Experience' });
+    > 125 |       await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+          |                                ^
+      126 |       const before = await expectReadableChrome(page);
+      127 |       expect(before.xp.fill).toBeGreaterThan(0);
+      128 |       if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');
+        at /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:125:32
+
+    Error Context: test-results/4400-4401/ui-baseline-hud-shared-HUD-5920d-us-chip-visible-at-1280x720-stage-layout/error-context.md
+
+  2) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+    Expected: "15"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+        14 × locator resolved to <div aria-valuemin="0" aria-valuenow="0" role="progressbar" aria-valuemax="60" class="hud-xp-track" aria-label="Experience" aria-valuetext="0 / 60 XP">…</div>
+           - unexpected value "0"
+
+
+      123 |       const hud = page.getByRole('region', { name: 'Cat status' });
+      124 |       const experience = hud.getByRole('progressbar', { name: 'Experience' });
+    > 125 |       await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+          |                                ^
+      126 |       const before = await expectReadableChrome(page);
+      127 |       expect(before.xp.fill).toBeGreaterThan(0);
+      128 |       if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');
+        at /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:125:32
+
+    Error Context: test-results/4400-4401/ui-baseline-hud-shared-HUD-0b549-ible-at-1280x720-when-gated-stage-layout/error-context.md
+
+  3) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+    Expected: "129"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+        14 × locator resolved to <div aria-valuemin="0" aria-valuenow="0" role="progressbar" aria-valuemax="517" class="hud-xp-track" aria-label="Experience" aria-valuetext="0 / 517 XP">…</div>
+           - unexpected value "0"
+
+
+      123 |       const hud = page.getByRole('region', { name: 'Cat status' });
+      124 |       const experience = hud.getByRole('progressbar', { name: 'Experience' });
+    > 125 |       await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+          |                                ^
+      126 |       const before = await expectReadableChrome(page);
+      127 |       expect(before.xp.fill).toBeGreaterThan(0);
+      128 |       if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');
+        at /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:125:32
+
+    Error Context: test-results/4400-4401/ui-baseline-hud-shared-HUD-38c95-us-chip-visible-at-1600x900-stage-layout/error-context.md
+
+  4) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 when gated 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+    Expected: "15"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Cat status' }).getByRole('progressbar', { name: 'Experience' })
+        14 × locator resolved to <div aria-valuemin="0" aria-valuenow="0" role="progressbar" aria-valuemax="60" class="hud-xp-track" aria-label="Experience" aria-valuetext="0 / 60 XP">…</div>
+           - unexpected value "0"
+
+
+      123 |       const hud = page.getByRole('region', { name: 'Cat status' });
+      124 |       const experience = hud.getByRole('progressbar', { name: 'Experience' });
+    > 125 |       await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+          |                                ^
+      126 |       const before = await expectReadableChrome(page);
+      127 |       expect(before.xp.fill).toBeGreaterThan(0);
+      128 |       if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');
+        at /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:125:32
+
+    Error Context: test-results/4400-4401/ui-baseline-hud-shared-HUD-43002-ible-at-1600x900-when-gated-stage-layout/error-context.md
+
+  4 failed
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 when gated 
+ ELIFECYCLE  Command failed with exit code 1.
+[WebServer] (node:12177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:12184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:12189) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:12214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:12223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:12225) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:12251) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:12260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:12261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

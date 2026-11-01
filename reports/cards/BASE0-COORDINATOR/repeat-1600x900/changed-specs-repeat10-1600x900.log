@@ -1,0 +1,2487 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm test:e2e e2e/smoke.spec.ts e2e/ui/baseline-hud.spec.ts e2e/ui/f3-art.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts e2e/v2/errors-notice.spec.ts --repeat-each=10 --workers=2", "cwd": "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/apps/web", "empty_backend_env": true, "head": "5db4949096e93eedeb98dff94ef1ec7019485f96", "name": "changed-specs-repeat10-1600x900", "ports": {"E2E_PORT_API": "4383", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_SERVER": "4382", "E2E_PORT_V2": "4381"}, "screenshots": false, "started": "2026-11-01T18:18:30+07:00", "starting_git_status": "?? apps/web/tools/.base0-r4-audit.mjs\n?? apps/web/tools/.base0-r4-effects.mjs\n", "viewport": "1600x900"}
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/apps/web
+> playwright test e2e/smoke.spec.ts e2e/ui/baseline-hud.spec.ts e2e/ui/f3-art.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts e2e/v2/errors-notice.spec.ts --repeat-each=10 --workers=2
+
+[WebServer] (node:15368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15370) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:15372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:15394) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:15401) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:15403) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:15425) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:15432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 470 tests using 2 workers
+(node:15433) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15434) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········(node:15454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15455) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········(node:15478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15479) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········(node:15500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15501) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········(node:15520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15521) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········(node:15609) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15610) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··(node:15622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15623) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··(node:15637) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··(node:15648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15649) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··(node:15658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··(node:15671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch1.png (75.8 KB)
+·{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·Measured screenshot roster-ch4.png (75.5 KB)
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot roster-ch5.png (76.5 KB)
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot stage-ch3-390x844.png (33.2 KB)
+·Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+·Measured screenshot stage-ch4-390x844.png (33.7 KB)
+·Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+·Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.3,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":14798392},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16039264},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6.200000002980232,"nextFrameMs":52.29999999701977,"eventTiming":[{"name":"click","duration":56,"inputDelay":0.8999999985098839}]},"craft":{"clickToPendingMs":0.6000000014901161,"nextFrameMs":18,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.3999999985098839}]},"fight":{"clickToPendingMs":1.1000000014901161,"nextFrameMs":29.200000002980232,"eventTiming":[{"name":"click","duration":32,"inputDelay":1}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+··(node:15719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+···{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+··(node:15768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+·Measured screenshot stage-ch3-390x844.png (33.2 KB)
+·Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+·Measured screenshot stage-ch4-390x844.png (33.7 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":14806116},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16039500},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6,"nextFrameMs":47.19999999552965,"eventTiming":[{"name":"click","duration":48,"inputDelay":1}]},"craft":{"clickToPendingMs":0.6000000014901161,"nextFrameMs":19.700000002980232,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.5}]},"fight":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":25.5,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7999999970197678}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+··Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.7,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:15786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+···{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·G3 stage frame metrics { p95: 16.700000000000273, frames: 180 }
+·Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+··(node:15829) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot stage-ch1-390x844.png (32.5 KB)
+
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+·Measured screenshot stage-ch3-390x844.png (33.2 KB)
+·Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":14767188},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":15979100},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":5.399999998509884,"nextFrameMs":45.899999998509884,"eventTiming":[{"name":"click","duration":48,"inputDelay":0.8000000044703484}]},"craft":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":21.399999998509884,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.7000000029802322}]},"fight":{"clickToPendingMs":1.1000000014901161,"nextFrameMs":27.80000000447035,"eventTiming":[{"name":"click","duration":32,"inputDelay":1}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch4-390x844.png (33.7 KB)
+···Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.3,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:15850) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+···{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+··(node:15890) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18535,"JSHeapUsedSize":14855228},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16044384},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":7.200000002980232,"nextFrameMs":56.899999998509884,"eventTiming":[{"name":"click","duration":64,"inputDelay":1.5}]},"craft":{"clickToPendingMs":0.8000000044703484,"nextFrameMs":20.30000000447035,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.7000000029802322}]},"fight":{"clickToPendingMs":1.6000000014901161,"nextFrameMs":34.29999999701977,"eventTiming":[{"name":"click","duration":40,"inputDelay":1.3999999985098839}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+···Measured screenshot stage-ch4-390x844.png (33.7 KB)
+··Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+··Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.3,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.3,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:15915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·G3 stage frame metrics { p95: 16.700000000000273, frames: 180 }
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+··(node:15951) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18542,"JSHeapUsedSize":15118228},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16025752},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":5.399999998509884,"nextFrameMs":44.399999998509884,"eventTiming":[{"name":"click","duration":48,"inputDelay":0.8999999985098839}]},"craft":{"clickToPendingMs":1,"nextFrameMs":27.299999997019768,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7999999970197678}]},"fight":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":24.5,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.8000000044703484}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+··Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+···Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+··Measured screenshot stage-ch4-390x844.png (33.7 KB)
+··Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+··Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.7,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.3,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.2,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:15982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··(node:16012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":14861216},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16053584},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":5.899999998509884,"nextFrameMs":49.399999998509884,"eventTiming":[{"name":"click","duration":56,"inputDelay":0.8999999985098839}]},"craft":{"clickToPendingMs":1.1999999955296516,"nextFrameMs":26.5,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.8999999985098839}]},"fight":{"clickToPendingMs":1.5999999940395355,"nextFrameMs":36.79999999701977,"eventTiming":[{"name":"click","duration":40,"inputDelay":1.3999999985098839}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+··Measured screenshot stage-ch2-390x844.png (33.2 KB)
+···Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+··Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+··Measured screenshot stage-ch4-390x844.png (33.7 KB)
+···Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+··Measured screenshot stage-ch5-390x844.png (36.5 KB)
+··Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.4,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.2,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:16046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·G3 stage frame metrics { p95: 16.700000000000728, frames: 180 }
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··(node:16076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":15095016},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16106824},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6.399999998509884,"nextFrameMs":45.79999999701977,"eventTiming":[{"name":"click","duration":48,"inputDelay":1.1000000014901161}]},"craft":{"clickToPendingMs":0.6999999955296516,"nextFrameMs":23.099999994039536,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.5999999940395355}]},"fight":{"clickToPendingMs":1,"nextFrameMs":25.600000001490116,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.8999999985098839}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+···Measured screenshot stage-ch2-390x844.png (33.2 KB)
+··Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+···Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+···Measured screenshot stage-ch4-390x844.png (33.7 KB)
+··Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+··Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.3,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.3,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.2,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:16112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··(node:16136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":15098180},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16041496},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":5.299999997019768,"nextFrameMs":45.399999998509884,"eventTiming":[{"name":"click","duration":48,"inputDelay":0.8999999985098839}]},"craft":{"clickToPendingMs":1,"nextFrameMs":23.200000002980232,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.9000000059604645}]},"fight":{"clickToPendingMs":1.6999999955296516,"nextFrameMs":33.79999999701977,"eventTiming":[{"name":"click","duration":40,"inputDelay":1.3999999985098839}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+···Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+··Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+···Measured screenshot stage-ch4-390x844.png (33.7 KB)
+··Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.7,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:16175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·G3 stage frame metrics { p95: 16.700000000000273, frames: 180 }
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··(node:16205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch1.png (75.8 KB)
+
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":14949092},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16046340},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":5.899999998509884,"nextFrameMs":49.899999998509884,"eventTiming":[{"name":"click","duration":56,"inputDelay":1.0999999940395355}]},"craft":{"clickToPendingMs":0.5,"nextFrameMs":18.700000002980232,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.3999999985098839}]},"fight":{"clickToPendingMs":1,"nextFrameMs":27.899999998509884,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.8999999985098839}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+··Measured screenshot stage-ch2-390x844.png (33.2 KB)
+···Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+··Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+···Measured screenshot stage-ch4-390x844.png (33.7 KB)
+···Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+··Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 1.4,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.9,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·(node:16399) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··(node:16471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18533,"JSHeapUsedSize":14819144},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18563,"JSHeapUsedSize":16048412},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6.299999997019768,"nextFrameMs":50.5,"eventTiming":[{"name":"click","duration":56,"inputDelay":1.2999999970197678}]},"craft":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":24,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7999999970197678}]},"fight":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":25.80000000447035,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7000000029802322}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+···Measured screenshot stage-ch2-390x844.png (33.2 KB)
+··Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+··Measured screenshot stage-ch3-390x844.png (33.2 KB)
+···Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+··Measured screenshot stage-ch4-390x844.png (33.7 KB)
+···Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+··Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.7,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.2,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·G3 stage frame metrics { p95: 16.700000000000728, frames: 180 }
+··
+  470 passed (4.6m)
+
+EXIT_CODE=0

@@ -1,0 +1,40 @@
+COMMAND ["pnpm","--filter","@taskbar-hero/supabase-tests","exec","vitest","run","src/fixture-clock.test.ts","src/forge.test.ts","v2/functions-forge.test.ts"]
+CWD /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 5db4949096e93eedeb98dff94ef1ec7019485f96
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/supabase/tests
+
+ ❯ v2/functions-forge.test.ts (19 tests | 1 failed) 1550ms
+   ❯ v2 craft, salvage and lock over migrated SQL (11)
+     × seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards 47ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 43 passed (44)
+   Start at  18:26:23
+   Duration  4.58s (tests 76%, import 15%, transform 9%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/fixture-clock.test.ts src/forge.test.ts v2/functions-forge.test.ts
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards
+TypeError: Cannot read properties of null (reading 'items')
+ ❯ insert v2/functions-forge.test.ts:48:18
+     46|   clock = Math.max(clock, Math.floor(before.lastClaimMicros / 1000) + …
+     47|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+     48|   return result!.items as v2.ItemViewV2[];
+       |                  ^
+     49| }
+     50| async function http(fn: (p: string, body: Record<string, unknown>) => …
+ ❯ v2/functions-forge.test.ts:65:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

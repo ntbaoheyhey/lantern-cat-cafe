@@ -31,3 +31,14 @@ The research report separates 120 ordinary chest selections from nine synthetic 
 Skill clips capture the website simulator at baseline inputs using timestamped screenshots reconstructed into videos. Some selections share animations. The clips do not establish installed-game frame cadence. The crawl's speed formula interprets UI observations; it is not verified engine source.
 
 The crawl distinguishes complete category captures from incomplete per-item detail coverage. Keep source URLs and capture dates and mark uncertainty. The implementation remains a living draft; backend-dependent changes remain default-OFF until release gates pass.
+
+
+## Latest user direction: parameters, cast effects and rich equipment
+
+The user explicitly asked again on2026-11-01 to use both the crawl and tbhindex.com to choose parameters and skill-cast effects, and expressed a preference for the reference game's feature/equipment depth and graphics. This is a design requirement for the existing mission, with the accepted P0/P1 priority order retained.
+
+Current source reading: cast-skill-timing.csv has36 skill observations distinguishing speed type, baseline animation duration, optional cycle and shared animation; cast-speed-tests.json supplies24 input cases; the skill pack has36 indexed clips plus per-clip timing and capture metadata. Aggregate observations are in reference-cast-observations-2026-11-01.json. The live homepage was reread2026-11-01 and identifies the source as an unofficial fan database. Its coverage/patch claims are dated statements, not independently proven native-engine behavior.
+
+Each adopted parameter must have a decision row: original project ability/item ID, source URL and archive member/capture date, observed quantity, confidence, chosen project value/rule, reasoning, reversal, and a test/simulation result. Distinguish attack-count triggers from timed casts; attack speed from cast speed; wind-up, release, impact and recovery; cooldown/cycle from animation duration. The clip's total video duration is NOT a skill cooldown. Missing cycle measurements stay unknown until measured; do not invent confidence from a screenshot or shared animation.
+
+CXL2/CXG1 must derive original skill/equipment diversity from reference mechanics and then validate damage, proc rates, cooldown/speed scaling, range/target selection and progression with the project's own balance simulations. ART2/ART3 must create original silhouettes, anticipation, projectile/trail, impact, recovery and rarity readability with provenance, reduced-motion alternatives and measured frame timing. CXLU2 previews must read the same typed registry that gameplay and VFX consume. Record intended vs observed cast/impact timestamps and enforce hit/visual synchronization. Preserve all original-content rules: no copying names/art/text/tables or giving third-party art to a generator.

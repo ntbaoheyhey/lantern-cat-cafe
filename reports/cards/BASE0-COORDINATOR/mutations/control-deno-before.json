@@ -1,0 +1,34 @@
+{
+  "name": "control-deno-before",
+  "kind": "control",
+  "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "cwd": "/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero",
+  "args": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "scripts/gen-deno-json.test.mjs"
+  ],
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4400",
+    "E2E_PORT_V2": "4401",
+    "E2E_PORT_SERVER": "4402",
+    "E2E_PORT_API": "4403",
+    "E2E_VIEWPORT": "1280x720"
+  },
+  "start": "2026-11-01T11:09:18.206Z",
+  "portFreeCheckExit": 1,
+  "end": "2026-11-01T11:09:18.351Z",
+  "testExit": 0,
+  "contractExit": null,
+  "combinedExit": 0,
+  "status": "passed",
+  "reason": "",
+  "expectedFailurePattern": null,
+  "signal": null,
+  "error": null
+}

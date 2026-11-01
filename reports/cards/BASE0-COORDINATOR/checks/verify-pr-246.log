@@ -1,0 +1,14 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "TMPDIR=/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/wrapper-tmp VITE_ALLOW_MOCK_AUTH=0 bash scripts/verify-pr.sh 246", "cwd": "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero", "empty_backend_env": true, "head": "5db4949096e93eedeb98dff94ef1ec7019485f96", "name": "verify-pr-246", "ports": {"E2E_PORT_API": "4383", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_SERVER": "4382", "E2E_PORT_V2": "4381"}, "screenshots": false, "started": "2026-11-01T18:25:22+07:00", "starting_git_status": "?? apps/web/tools/.base0-r4-audit.mjs\n?? apps/web/tools/.base0-r4-effects.mjs\n", "viewport": "1280x720"}
+Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 1fb25ed):
+PASS  merge with latest main
+PASS  pnpm install
+PASS  generated deno.json has no drift
+PASS  typecheck
+PASS  lint
+PASS  unit tests
+PASS  build
+PASS  playwright e2e
+skip  forge test (no contract changes)
+log: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/wrapper-tmp/verify-pr-246.log
+
+EXIT_CODE=0

@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/ui/f3-art.spec.ts b/apps/web/e2e/ui/f3-art.spec.ts
+index f3bb7a0..d4d087f 100644
+--- a/apps/web/e2e/ui/f3-art.spec.ts
++++ b/apps/web/e2e/ui/f3-art.spec.ts
+@@ -10,7 +10,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+ import { resolve } from 'node:path';
+ 
+ const output = resolve(process.env.SCREENSHOT_DIR ?? '../../reports/f3-art');
+-const writeScreenshots = process.env.SCREENSHOTS === '1';
++const writeScreenshots = true;
+ const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+ 
+ const CHAPTER_ROSTERS: Record<number, { name: string; theme: string; art: Record<string, MonsterArt> }> = {
