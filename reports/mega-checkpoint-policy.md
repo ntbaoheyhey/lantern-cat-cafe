@@ -11,3 +11,7 @@ User accepted this workflow and explicitly resumed the mission on 2026-11-01.
 - Retain the complete mission queue, full verification, two independent graders and serial merge/post-merge gates. This policy changes recovery and orchestration, not the quality bar.
 
 Official references: [configuration](https://learn.chatgpt.com/docs/config-file/config-reference), [long-running chats](https://learn.chatgpt.com/docs/learn/best-practices).
+
+## Latest delegation preference
+
+The user subsequently requested fewer subagent calls: start one only when necessary. Let the three already running cards finish; the coordinator handles routine follow-ups directly. Fresh independent graders remain necessary under the original two-grader merge gate. Do not fan out merely to fill concurrency slots.
