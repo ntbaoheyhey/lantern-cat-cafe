@@ -1,16 +1,40 @@
-MISSION MEGA v2 - CODEX-ONLY AUTONOMOUS RUN: all remaining non-art work, self-testing, until each item is green
-Tool: Codex (Astra 6 Ultra, full access) | Model: strongest available | Reasoning: HIGH by default; switch to the HIGHEST setting your tool offers (xhigh if available) wherever an item or step says [EFFORT: HIGHEST]. Docs-only items may run at MEDIUM.
-Repo ntbaoheyhey/taskbar-hero (private). Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. One branch + one DRAFT PR per item. NEVER merge, never mark ready, never push to main. Every commit message ends with " [skip ci]".
-FINISH EVERYTHING YOURSELF. You have full access: install, run the app, run every test, take screenshots, fix, re-test. Complete each item END TO END (implement -> verify -> compare -> fix until green -> push -> draft PR) before starting the next. Do not stop after planning, do not hand back half-done work, do not ask questions. NO ROUND LIMIT: keep fixing and re-testing each item until it is fully green, however many rounds it takes. The only reason to stop an item is a HARD STOP (section 4: mark BLOCKED, continue with the next item). Run until the whole queue and FINAL are done.
+MISSION MEGA v3 - CODEX WITH FULL AUTHORITY: design, build, art, test, merge. Finish everything yourself.
+Tool: Codex (Astra 6 Ultra, full access) | Model: the BEST model available, for the orchestrator AND every subagent and verifier | Reasoning effort: the HIGHEST setting everywhere (xhigh or max if offered), no exceptions | Speed: 1.5x / fast mode wherever the tool offers it | Token cost does not matter: never pick a cheaper model or lower effort to save tokens.
+Repo ntbaoheyhey/taskbar-hero (private). Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. One branch + one PR per item. You MAY merge your own PRs into main, but ONLY through the MERGE GATE (section 6). Never push directly to main; main changes only by merging a PR that passed the gate. Every commit message ends with " [skip ci]" (GitHub Actions minutes are used up; you test locally).
+FINISH EVERYTHING YOURSELF. You have full access: install, run the app, run every test, take screenshots, fix, re-test. Complete each item END TO END (design note -> implement -> verify -> compare -> fix until green -> push -> PR -> MERGE GATE -> merge -> re-test main) before starting the next. Do not stop after planning, do not hand back half-done work, do not ask questions. NO ROUND LIMIT: keep fixing and re-testing each item until it is fully green, however many rounds it takes. Nothing stops an item except a USER-HANDS step (section 4): write it into reports/NEEDS-USER.md, finish every other part of the item, and continue. Run until the whole queue and FINAL are done.
 LIVING DRAFT: the user still has a lot of UI work planned. Never call any item, screen or run "final", "last" or "frozen". Scope can change after the user reviews.
 
-Codex is now the ONLY builder. Every item that used to say "Antigravity" (AGR3, AGR4, AGR5, AGC1, AGP1, AGL1, AGL2, AGN2, AGN3, AGN4) is yours, rewritten below as a CX item. Image generation is NOT part of this run (section 8 lists parked art).
+Codex is now the ONLY builder. Every item that used to say "Antigravity" (AGR3, AGR4, AGR5, AGC1, AGP1, AGL1, AGL2, AGN2, AGN3, AGN4) is yours, rewritten below as a CX item. Art is yours too: the ART items generate or draw ALL new art (section 7, ART1-ART3).
 Name clash warning: "Codex" in the rune/skill design (docs/proposals/rune-skill-system/) is an in-game encyclopedia screen. In this prompt that screen is called "Compendium" (code ids may keep `codex` if the demo uses it). "Codex" alone always means you, the tool.
+
+====================================================================================================
+00. ORCHESTRATION (the user's words, 1 Nov 2026)
+====================================================================================================
+"Plan, break down into small tasks that junior agents (assign suitable subagent with corresponding effort levels) can follow: clear goals, constraints, test cases, etc. Make a dependency graph so that we can operate parallelized. According to the plan, orchestrate subagents, only escalate when necessary."
+How to apply it here:
+ 1. You are the ORCHESTRATOR. Before any code, write docs/plan/mega-plan.md (merged through the gate as its own small PR): every item in section 3 broken into small task cards. Each card: id, goal (one sentence), files/zone, constraints (the rules of sections 0, 4, 5 that apply), step list, test cases with the exact commands, definition of done, the subagent role that runs it, model (best available) and effort (HIGHEST; the user overrides "corresponding effort levels" with highest effort everywhere).
+ 2. Draw the dependency graph of the cards (mermaid in mega-plan.md + a plain list "card -> needs"). Cards with no open dependency and disjoint file zones run IN PARALLEL as separate subagents, each in its own git worktree and branch.
+ 3. Subagent roles: builder (implements a card), tester (writes/extends tests first from the card's test cases), verifier (runs the full verify list + screenshot compare independently and reports PASS/FAIL with evidence; never the same agent that built the card), artist (ART cards), docs writer. Every subagent gets the full card text, the relevant sections of this prompt, and the REFERENCE paths.
+ 4. The orchestrator alone: owns the ledger, merges (one PR at a time through the MERGE GATE), resolves conflicts between parallel branches, re-plans when a card fails, and re-tests main after every merge.
+ 5. Escalate only when necessary: a subagent that is stuck after its own fix rounds returns its evidence; the orchestrator re-plans the card (split it, change approach, or take it over). Escalation to the USER happens only for section 4 user-hands steps, by writing them into reports/NEEDS-USER.md; never stop the run to ask.
+ 6. Keep the plan alive: when a card reveals new work, add cards and update the graph and ledger before starting them.
+
+====================================================================================================
+0. AUTHORITY (the user, 1 Nov 2026: "give Codex full authority, may merge, test very carefully first, may tear down and rebuild, Codex decides the features, Codex does all the art")
+====================================================================================================
+You are the lead developer, designer and artist of this game now. You may:
+ - Rebuild or rewrite any part of the code (UI, game rules, server code, contracts code, tests, tooling) when that gives a clearly better result. Prefer incremental, reviewable steps; a rewrite still has to pass the MERGE GATE and keep the game playable on main at every merge.
+ - Decide features, game design and economy numbers yourself (including forge odds, drops, runes, skills, pets, quests/events, balance). Every such decision gets a short design note in docs/design/decisions.md (date, decision, why, numbers, what it replaces) before the code that uses it. Old "needs user signature" gates (M-D1, M-D2, rune numbers) are now yours to decide the same way.
+ - Change contract SOURCE, Edge Function SOURCE and write new supabase/migrations files (additive, idempotent, begin/commit, least privilege). APPLYING / DEPLOYING them is user-hands (section 4).
+ - Merge your PRs after the MERGE GATE.
+ - Create, replace and improve art (ART items), original only.
+Judging goals to optimise (UniHack, Avalanche Fuji, demo day 30 Nov): online round = Technical Implementation 25 + Avalanche Integration 25; final = Creativity 15, Impact 15, Pitch 10, UI/UX+Demo 10. The live site must always work for a judge who opens it.
+Constraints that remain: Avalanche Fuji only (no mainnet, no fungible token, no custom L1); original content only (no names, art, text, numbers or tables from any third-party game; the tbhindex reference data and zips are NEVER opened, copied or fed to any tool); desktop first (1280x720 and 1600x900; mobile only if everything else is green).
 
 ====================================================================================================
 1. THE LOOP (apply to EVERY item)
 ====================================================================================================
- 0. Resume check: open the ledger (git fetch origin; git show origin/ai/codex-mega-ledger:reports/mega-ledger.md). If it exists, resume at the first row that is not DONE / SKIPPED / BLOCKED. Never redo a DONE item. Before starting a PARTIAL item again, read its report.
+ 0. Resume check: open the ledger (git fetch origin; git show origin/ai/codex-mega-ledger:reports/mega-ledger.md). If it exists, resume at the first row that is not MERGED / WAITING-USER / SKIPPED-merged. Never redo a merged item. Before resuming an IN-PROGRESS or IN-GATE item, read its report and branch.
  1. Prepare: git fetch origin. Choose the base by the STACKING RULE. git checkout -B <item branch> <base>. Read the item block, every REFERENCE path it names, the reports it names, and the code in its zone. Write a plan of at most 6 lines into the ledger row (state IN-PROGRESS) and push the ledger.
  2. Implement the smallest change that meets the item's GOAL. Reuse existing components, tokens, stores and helpers before writing new ones.
  3. Verify, from the repo root, in this order (paste real tails into the report):
@@ -36,71 +60,76 @@ Name clash warning: "Codex" in the rune/skill design (docs/proposals/rune-skill-
       Compress committed PNGs (aim < 200 KB each); no count limit. After every e2e/screenshot run, `git status --short reports/` must show only your item's files; revert anything else.
  5. If any check fails or any OPEN/unexplained diff remains: find the ROOT CAUSE (write it in one sentence), fix it, then run the WHOLE verify list again (steps 3 and 4), not only the failing command. Repeat with NO round limit until everything is green. Record "round n: what failed -> root cause -> fix" in the report.
     Never skip, .only, delete, quarantine or loosen a test; never raise a timeout, add retries or edit a snapshot/golden number to hide a failure. A test whose assertion encodes OLD behaviour that this item deliberately changes may be updated (Tier 2 note, old -> new).
- 6. Green (or honestly NOT VERIFIED lines only): write the report, commit, push, open the draft PR (section 6), set the ledger row DONE with the PR URL, push the ledger. Start the next item.
- 7. No round limit. Never give up on an item because it takes many rounds. If the SAME root cause keeps coming back, step back, re-read the code and the reference, and change approach instead of repeating the same fix. Only a HARD STOP ends an item early (BLOCKED, push branch + report + draft PR, continue).
+ 6. Green: write the report, commit, push, open the PR (section 6), run the MERGE GATE, merge, re-test main (section 6), set the ledger row MERGED with the PR URL, push the ledger. Start the next item from the new origin/main.
+ 7. No round limit. Never give up on an item because it takes many rounds. If the SAME root cause keeps coming back, step back, re-read the code and the reference, and change approach instead of repeating the same fix. A USER-HANDS step never blocks the rest of the item: write it into reports/NEEDS-USER.md, ship everything else behind the PRODUCTION SAFETY rule, continue.
  8. Every 3 items, and at the end: re-read sections 4 and 5 of this prompt (rules drift over long runs).
 
 ====================================================================================================
-2. STACKING RULE (dependencies when nothing gets merged during the run)
+2. DEPENDENCIES
 ====================================================================================================
-For an item with dependency D:
- - D is merged on origin/main  -> base on origin/main.
- - D is not merged but its branch exists and its ledger state is DONE or PARTIAL -> base on origin/<D branch>. PR title "<ID> (stacked on <D>): ...", PR body first line "Merge <D> PR first: <url>". Do NOT copy D's files by hand.
- - D does not exist (BLOCKED or FAILED) -> base on origin/main and code against the interface D will provide (a small local adapter or fixture with the SAME shape, in your zone, marked "TODO(<D>): replace with real module"). Say so in the report and ledger. If D is BLOCKED and no interface is specified, mark the item BLOCKED-dep.
- - Two items whose zones overlap never share a branch. If you change a file another open item branch also changes, note "possible conflict with <ID>: <file>" in both reports.
+Because you merge each item after its gate, a dependency is normally already on main when the next item starts: always base on the latest origin/main.
+If a dependency could not be merged (waiting on a NEEDS-USER step), base on its branch, title the PR "<ID> (stacked on <D>): ...", and merge in order once <D> merges. If <D> is not available at all, code against the interface it will provide (local adapter with the SAME shape, "TODO(<D>)") and say so.
 
 ====================================================================================================
 3. QUEUE (dependency order; effort in brackets; run top to bottom)
 ====================================================================================================
 Already merged on main (do not redo): AGR0 shell #233, AGR1 Landing/Class/Home #237, AGR2 Bag #236, CXR0 #230, CXN1 #225, CXN2 #238, CXC1 #235, AGN1 error screens #224, mockup reports/ui-redesign #239, rune demo #232.
-Check with `git log origin/main --oneline -60` before you start; if an item below is already merged, mark it SKIPPED-merged.
+Check with `git log origin/main --oneline -60` before you start; if an item below is already merged, mark it SKIPPED-merged. You may add, split or reorder items when you find a better plan: record the change and why in the ledger first.
 
 Dependency graph (-> means "needs"):
-  FXRB, CXN3, CXP1, CXL1, CXU4, CXU5 : no open deps (start points)
-  CXU3 -> CXU4 (shared modal/toast)        CXC2 -> CXU4 (mounts in Help)
-  CXP2 -> CXP1 + CXU4 (tab in Hero)         CXLU1 -> CXL1 (+ CXU4 for the Help tab host)
-  CXLU2 -> CXLU1                            CXR1 -> CXU3, CXU4, CXU5 (+ CXC2, CXP2, CXLU1 if done)
-  CXQ1 -> CXR1                               CXR2 -> CXR1 + CXQ1
-  CXS1 -> CXN3                               CXS2 -> CXS1 + CXQ1 (screenshots; may use older ones and mark TODO)
-  CXL2 -> user signature (normally SKIPPED)  FINAL -> everything above
+  FXRB, CXN3, CXP1, CXL1, CXU4, CXU5, ART1 : start points
+  CXU3 -> CXU4      CXC2 -> CXU4      CXP2 -> CXP1 + CXU4      CXLU1 -> CXL1 + CXU4      CXLU2 -> CXLU1
+  ART2 -> ART1 + CXP2 + CXLU1 + CXLU2 (slots exist)            CXR1 -> all CXU*, CXC2, CXP2, CXLU1
+  CXQ1 -> CXR1      CXR2 -> CXR1 + CXQ1      CXN4, CXN5 -> CXU3 (forge UI)      CXL2 -> CXL1      CXG1 -> CXL2 + CXLU2
+  CXG2 -> CXG1      ART3 -> ART2 + CXG1     CXS1 -> CXN3      CXS2 -> everything else      FINAL -> everything
 
-  #  ID     Was     What                                               Effort
- 1  FXRB    -       Fix the flaky resize-burst e2e                       [EFFORT: HIGHEST] (race/root-cause hunt; later loops trust e2e)
- 2  CXN3    -       Cut-over truth: runbook + read-only live checks      [HIGH] (HIGHEST for the SQL check and the classifier)
- 3  CXP1    -       Pets logic, preview-only                             [HIGH]
- 4  CXL1    -       Compendium data adapter + exact odds (read-only)     [HIGH]
- 5  CXU4    AGR4    Hero sheet + Help screen + shared modal/toast/banner [EFFORT: HIGHEST] (shared API others reuse; focus trap; a11y)
- 6  CXU3    AGR3    Forge + Market re-layout                             [EFFORT: HIGHEST] (wallet/odds paths must stay byte-for-byte in behaviour)
- 7  CXU5    AGR5    Map (boss) screen                                    [HIGH]
- 8  CXC2    AGC1    On-chain proof panel (read-only)                     [EFFORT: HIGHEST] (RPC batching, caching, error states)
- 9  CXP2    AGP1    Pets tab in Hero on CXP1 state                       [HIGH]
-10  CXLU1   AGL1    Compendium + Odds tabs in Help                       [HIGH]
-11  CXLU2   AGL2    Lab previews behind ?dev=lab (mock data)             [MEDIUM-HIGH]
-12  CXR1    -       Tests that lock the redesign in                      [EFFORT: HIGHEST] (cross-screen e2e, contrast, registry)
-13  CXQ1    AGN3*   Judge play-through, wallet-free -> findings.json     [HIGH]  (*the live-wallet part is parked for the user)
-14  CXR2    -       Fixes + polish pass from CXR1 and CXQ1 findings      [HIGH]
-15  CXS1    AGN2    Security overview + security docs refresh (docs)     [MEDIUM]
-16  CXS2    AGN4    Submission pack text: README top, slides, video script, submission.md, licenses (docs) [MEDIUM] (HIGHEST for fact-checking every number)
-17  CXL2    -       Content registries + balance sims                    SKIP unless signed (see block)
-18  FINAL   -       Integration run over all open item branches          [EFFORT: HIGHEST]
-
-NOT in this run (never start): CXN4 (needs M-D1 signed), CXN5 (needs M-D2 signed), any image/sprite/audio/font generation or editing, Phase 4 gameplay wiring or server claims for skills/runes/drops, rune sockets / upgrade tree (M-D3 after 21 Nov), quests/events, mobile layouts, adding an 8th rail item.
+ #  ID      Was     What                                                         Effort
+ 1  FXRB    -       Fix the flaky resize-burst e2e                                [EFFORT: HIGHEST] (later gates trust e2e)
+ 2  CXN3    -       Cut-over truth: runbook + read-only live checks               [EFFORT: HIGHEST]
+ 3  ART1    new     Art pipeline + style bible + provenance (no wiring yet)       [EFFORT: HIGHEST] (sets the look of everything after)
+ 4  CXP1    -       Pets logic                                                    [EFFORT: HIGHEST]
+ 5  CXL1    -       Compendium data adapter + exact odds                          [EFFORT: HIGHEST]
+ 6  CXU4    AGR4    Hero sheet + Help screen + shared modal/toast/banner          [EFFORT: HIGHEST]
+ 7  CXU3    AGR3    Forge + Market re-layout                                      [EFFORT: HIGHEST]
+ 8  CXU5    AGR5    Map (boss) screen                                             [EFFORT: HIGHEST]
+ 9  CXC2    AGC1    On-chain proof panel (read-only)                              [EFFORT: HIGHEST]
+10  CXP2    AGP1    Pets tab in Hero                                              [EFFORT: HIGHEST]
+11  CXLU1   AGL1    Compendium + Odds tabs in Help                                [EFFORT: HIGHEST]
+12  CXLU2   AGL2    Skills / Passives / Runes / Planner screens (lab first)       [EFFORT: HIGHEST]
+13  ART2    new     Generate + wire art for pets, compendium, skills, runes, map  [EFFORT: HIGHEST]
+14  CXR1    -       Tests that lock the redesign in                               [EFFORT: HIGHEST]
+15  CXQ1    AGN3*   Judge play-through, wallet-free -> findings.json              [EFFORT: HIGHEST]
+16  CXR2    -       Fixes + polish from CXR1 and CXQ1                             [EFFORT: HIGHEST]
+17  CXN4    -       Forge "Great craft!" (you decide the numbers)                 [EFFORT: HIGHEST] (server authority + deploy split)
+18  CXN5    -       Stepped bonus lines (you decide the steps)                    [EFFORT: HIGHEST] (same)
+19  CXL2    -       Rune / skill / passive registries + balance sims              [EFFORT: HIGHEST]
+20  CXG1    new     Wire runes / skills / pets into real gameplay (server-authoritative) [EFFORT: HIGHEST]
+21  CXG2    new     Quests / daily events (only if 1-20 are merged and green)     [EFFORT: HIGHEST]
+22  ART3    new     Art upgrade pass: replace weak existing art only where clearly better [EFFORT: HIGHEST]
+23  CXS1    AGN2    Security overview + docs refresh                              [EFFORT: HIGHEST]
+24  CXS2    AGN4    Submission pack text                                          [EFFORT: HIGHEST]
+25  FINAL   -       Full regression on main + live read-only smoke + handover     [EFFORT: HIGHEST]
 
 ====================================================================================================
-4. HARD STOPS (Tier 3). Only these may cause BLOCKED. Do not work around them.
+4. USER-HANDS STEPS AND SAFETY RULES (the only things you never do yourself)
 ====================================================================================================
- - New features or core changes beyond the item: economy numbers, odds, drop rates, forge numbers, packages/game-rules config.ts (v1 or v2) numbers and content numbers, the signature line of docs/proposals/numbers-v2.md.
- - contracts/** and anything Solidity; auth / SIWE (supabase/functions/auth-*, supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts); DB schema, supabase/migrations/**, Edge Function deploys.
- - User's hands only: applying live migrations, secrets, Vercel variables (incl. VITE_GAME_V2), wallet tests, signing, sending any transaction, writing to the live DB, Supabase admin APIs, Vercel dashboard.
- - Making the repo public; the contest submission itself; .github/**; adding/removing dependencies in any package.json.
- - Art: never create, edit, rename, move or delete images, sprites, audio or fonts. Reuse existing art as is. Where art is missing, use a neutral CSS placeholder tile and add the slot to the PARKED ART list in your report.
- - Secrets: never paste, log, commit or echo a DB URL, password, service-role key, private key, seed phrase or JWT (the DB password leaked earlier: never search for it, never print it). If you meet one: "SECRET FOUND: <file>:<line>, masked" in the report.
- - Original content only: no names, art, text, numbers or tables from any third-party game (the tbhindex data/zips are structure reference only; copy nothing). Numbers in docs/proposals/rune-skill-system are DEMO numbers: never copy them into game rules.
- If you must PROPOSE something in a hard-stop area, write it as a new file under docs/proposals/ (SQL under docs/proposals/sql/), never apply it.
- Unsure whether a step is Tier 3? Treat it as Tier 3 for that step, finish the rest of the item, say so in the report.
- Live systems are READ-ONLY: you may GET https://taskbarhero-eight.vercel.app and call the public Fuji RPC read methods. Nothing else.
+USER-HANDS (you prepare everything, the user executes): for each, append to reports/NEEDS-USER.md (committed via your item PR) a block: id, why, exact commands or clicks in order, how to verify, how to roll back, which flag to turn on afterwards. Then keep working.
+ - Secrets and keys: never create, store, print, commit or log any key, password, service-role key, private key, seed phrase, DB URL or JWT (the DB password leaked earlier: never search for it). If you meet one: "SECRET FOUND: <file>:<line>, masked" in the report.
+ - Live production changes: applying migrations to the live Supabase DB, deploying Edge Functions (supabase functions deploy --project-ref qoalewtxflagoprrxrgh), deploying or upgrading contracts on Fuji (needs a funded key), Supabase admin APIs/dashboard.
+ - Vercel: environment variables (including the VITE_GAME_V2 cut-over), dashboard settings, promotions/rollbacks.
+ - Wallet-signed tests with real funds or the owner's wallet; any transaction from a wallet you do not control in a local test chain.
+ - Making the repo public; the contest submission itself; mainnet; any token.
+ - .github/** workflow changes (Actions minutes are used up; do not trigger runs).
+PRODUCTION SAFETY (main auto-deploys the frontend to https://taskbarhero-eight.vercel.app; the backend and contracts do NOT redeploy):
+ - Every merge must work with the CURRENTLY deployed Edge Functions, DB schema and contract addresses. Anything that needs a new migration, a function redeploy or a new contract ships behind a build-time or runtime flag that defaults OFF (or is strictly backward compatible), with its NEEDS-USER entry naming the flag to flip after the user deploys.
+ - packages/game-rules is shared by the client and the Edge Functions. A rule or number change that the server also enforces must not reach the live client before the server: version it (rules version constant + flag) so client and server agree, and test both versions.
+ - Contracts: keep the deployed addresses (RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D, RelicMarket 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) in use until the user deploys new ones; new contract code gets full Foundry tests and a deploy script for the user.
+ - Vercel free plan: max 100 deploys/day. Merge at most ~20 PRs per day; group tiny docs changes.
+ - Never rewrite main's history, never force-push main, never delete others' branches.
+CONTENT: original only. Never open, copy, paraphrase or feed to any tool the tbhindex reference data/zips or any third-party game's art, names, text or numbers.
+If unsure whether something is user-hands: treat it as user-hands, write the NEEDS-USER entry, ship the rest.
 
-Scope tiers. Tier 1 = the item's ZONE. Tier 2 = the smallest change in an adjacent non-Tier-3 file (a test that asserts old markup, a helper, fixture, mock, config, barrel export, one mount/registry line), each listed in the report with one line of why. Tier 2 is never a redesign, a reformat, or another item's zone.
+Scope: no zone is forbidden any more except the user-hands list. Still keep each PR focused on its item; unrelated fixes go in their own small PR (same gate).
 
 ====================================================================================================
 5. REFERENCES (exact repo paths; you cannot open claude.ai artifacts, use these files)
@@ -118,27 +147,38 @@ LOOK AND FEEL (every UI item): "cozy cat cafe at night". Dark plum surfaces from
 ====================================================================================================
 6. GIT DELIVERY + REPORT + DEFINITION OF DONE (every item)
 ====================================================================================================
-Git: git config user.name ntbaoheyhey && git config user.email 108352255+ntbaoheyhey@users.noreply.github.com (check; fix wrong authors with git commit --amend --reset-author --no-edit). Branch ai/codex-<id lowercase> unless the block says otherwise. Commits end with " [skip ci]" (GitHub Actions minutes are used up; never trigger workflows). git push -u origin <branch>, retry on network errors, never force-push a branch you did not create. Draft PR to main (gh pr create --draft or the GitHub UI), title "<ID>: <summary>", body links the report and lists REFERENCE paths used. Never merge, never mark ready. If the branch cannot be pushed, push <branch>-report with only the report.
-Report: reports/<id lowercase>.md (+ reports/<id lowercase>/ for evidence) unless the block says otherwise. ALWAYS pushed, even when blocked. First line exactly: STATUS: DONE / PARTIAL / BLOCKED / FAILED. Then:
+Git: git config user.name ntbaoheyhey && git config user.email 108352255+ntbaoheyhey@users.noreply.github.com (check; fix wrong authors with git commit --amend --reset-author --no-edit). Branch ai/codex-<id lowercase> unless the block says otherwise. Commits end with " [skip ci]" (GitHub Actions minutes are used up; never trigger workflows). git push -u origin <branch>, retry on network errors, never force-push a branch you did not create. PR to main (gh pr create), title "<ID>: <summary>", body links the report, lists REFERENCE paths used, design-note links, NEEDS-USER entries and flags. If the branch cannot be pushed, push <branch>-report with only the report.
+MERGE GATE (all must be true; test very carefully; never merge red):
+ G1 Branch is up to date with the latest origin/main (git merge origin/main into the branch, no rebase of pushed history), and the FULL verify list (section 1 step 3) passes on that exact commit, including the complete e2e suite at 1280x720 AND 1600x900 and the classic build.
+ G2 UI items: ui-audit + effects-test gates met for EVERY screen in screen-manifest.json (not only the changed ones), DIFF TABLE has no OPEN row.
+ G3 node scripts/check-bundle.mjs within budget; node scripts/check-links.mjs not worse than main; node scripts/check-deno-imports.mjs clean; git diff --exit-code -- supabase/functions after pnpm gen:deno.
+ G4 Contracts touched: forge test green (full suite). Migrations touched: they apply cleanly on PGlite/local from zero AND on top of the current main set; rollback note written.
+ G5 PRODUCTION SAFETY (section 4) holds: with all new flags OFF, the built app against the current live backend behaves as before (prove with a production build + preview served with the live public config, read-only, no sign-in: landing, guest/demo path, no console errors).
+ G6 Self-review: read your full diff once as a strict reviewer (bugs, leftover debug code, secrets, dead code, missing tests); fix findings, then re-run G1.
+ G7 Report pushed with every gate line PASS and its evidence.
+MERGE: gh pr merge <n> --squash --delete-branch (or the GitHub UI). ONE PR at a time.
+AFTER EACH MERGE: git checkout main && git pull; run typecheck, lint, test, build and the e2e smoke at both sizes on main. Wait for the Vercel deploy of that commit, then read-only check https://taskbarhero-eight.vercel.app (loads, no console errors, guest path works; node scripts/check-live.mjs --v2 once CXN3 is merged). If main or the live site is broken: fix forward immediately with a hotfix PR through the same gate, or git revert the merge commit via a PR, before ANY other work. Never leave main or the live site broken.
+Report: reports/<id lowercase>.md (+ reports/<id lowercase>/ for evidence) unless the block says otherwise. ALWAYS pushed. First line exactly: STATUS: MERGED / WAITING-USER (merged with flags off) / IN-PROGRESS. Then:
   1. Per piece and per test case: PASS / FAIL / NOT VERIFIED with evidence (a case you did not run is NOT VERIFIED, never PASS).
   2. Rounds log: "round n: failed -> root cause -> fix".
   3. DIFF TABLE (UI items, section 1 step 4d).
   4. Tier 2 changes, one line of why each.
   5. git diff --stat origin/main...HEAD (or ...<base> when stacked).
   6. Every command with the real tail of its output. Never claim a check you did not run.
-  7. NOT VERIFIED list and why. PARKED ART slots found (if any).
+  7. NOT VERIFIED list (user-hands only) and NEEDS-USER entries added.
   8. For the humans: decisions they should take, suspicious things outside your zone (list, do not fix).
-  9. Last line: branch, commit hash, draft PR URL, report path, status.
-DEFINITION OF DONE (all must hold, or the item is PARTIAL):
+  9. Last line: branch, merge commit hash, PR URL, report path, status.
+DEFINITION OF DONE (all must hold; the item is not done until it is MERGED and main is green):
  [ ] verify list (section 1 step 3) green, tails in the report
  [ ] UI items: ui-audit/effects gates met at 1280x720 AND 1600x900; DIFF TABLE has no OPEN row (or the item is PARTIAL)
  [ ] every T-case of the item marked with evidence; no skipped/deleted/loosened tests
  [ ] check-links count not worse than origin/main (pre-existing ~58 broken links are a baseline, not a target); check-bundle not over budget
- [ ] git status clean; origin/<branch> has your last commit; report on the branch; draft PR open; ledger row updated and pushed
-NOT VERIFIED is an accepted outcome. A false PASS is not.
+ [ ] design note written for every new decision; NEEDS-USER entries + flags for anything user-hands
+ [ ] MERGE GATE G1-G7 PASS; merged; post-merge checks on main and the live site green; ledger row MERGED and pushed
+A NOT VERIFIED line is allowed only for things that need user hands (wallet, live deploy); everything else must be PASS before merge. A false PASS is never acceptable.
 
-LEDGER: reports/mega-ledger.md on branch ai/codex-mega-ledger, with a draft PR "MEGA ledger:" opened once. Columns: # | item | base (main or stacked on X) | branch | PR URL | state (TODO / IN-PROGRESS / DONE / PARTIAL / BLOCKED / BLOCKED-dep / FAILED / SKIPPED / SKIPPED-merged) | rounds | last verify | notes. Commit "ledger: <item> <state> [skip ci]" and push after EVERY state change.
-Final answer of the run: the ledger table, then one line per item (PR URL, status, one-line result), then the PARKED list (art + user actions) you collected.
+LEDGER: reports/mega-ledger.md on branch ai/codex-mega-ledger, (a log branch, never merged; push after every change). Columns: # | item | base (main or stacked on X) | branch | PR URL | state (TODO / IN-PROGRESS / IN-GATE / MERGED / WAITING-USER (merged with flag off, NEEDS-USER entry) / SKIPPED-merged) | rounds | last verify | notes. Commit "ledger: <item> <state> [skip ci]" and push after EVERY state change.
+Final answer of the run: the ledger table, one line per item (PR URL, status, one-line result), and the full reports/NEEDS-USER.md in order of urgency.
 
 ====================================================================================================
 7. ITEM BLOCKS
@@ -153,7 +193,7 @@ TESTS: T1 layout/resize specs pass --repeat-each=20 at 1280x720 and 20 at 1600x9
 Why first: every later item's loop trusts e2e; a flaky suite wastes rounds.
 ===== END FXRB =====
 
-===== BEGIN CXN3 [HIGH; HIGHEST for pieces 2-3] =====
+===== BEGIN CXN3 [EFFORT: HIGHEST] =====
 Cut-over truth: make the runbook match reality, add read-only live checks. Branch ai/codex-n3-cutover-truth. Report reports/n3-cutover-truth.md.
 WHY: reports/C3.md found docs/cutover-v2.md stale: v2 SQL already live, the switch is the Vercel env var VITE_GAME_V2 (not a code flag), the Founder batch draft no longer exists, check-live.mjs does not check v2 routes. The user needs one short, true checklist and a script that says "live is healthy" without any secret.
 READ FIRST: reports/C3.md ("Gaps found", "Go / no-go"), docs/cutover-v2.md, docs/go-live.md, docs/runbook.md, docs/deploy.md, scripts/check-live.mjs, apps/web/src/layout/flag.ts, supabase/migrations/ (list), supabase/functions/_shared/v2/http.ts.
@@ -165,7 +205,7 @@ TESTS: T1 cutover-v2.md mentions no code-flag flip or ai/codex-v29-founder-grant
 ACCEPTANCE: the user can follow cutover-v2.md top to bottom without asking a question.
 ===== END CXN3 =====
 
-===== BEGIN CXP1 [HIGH] =====
+===== BEGIN CXP1 [EFFORT: HIGHEST] =====
 Pets (companions) logic, preview-only. Report reports/cxp1.md. REFERENCE: REF-RUNE (demo "Companions" screen; design.md CompanionDef, "Companions with progress bars, equip 2"). Copy no numbers, no art.
 Decision (user): pets are IN. Numbers are NOT signed, so pets must not change power, drops, forge, or any server state.
 ZONE: new packages/game-rules/src/v2/meta/pets/ (additive; one export line in packages/game-rules/src/v2/index.ts allowed; run pnpm gen:deno if an Edge Function import map is affected), new apps/web/src/pets/state.ts + tests (localStorage with a versioned key, safe parse).
@@ -174,7 +214,7 @@ TESTS: unlock at exact threshold; level steps; equip limit and duplicate rejecti
 DONE: pnpm test green; report lists the 12 pets and the single file where kill counts are read.
 ===== END CXP1 =====
 
-===== BEGIN CXL1 [HIGH] =====
+===== BEGIN CXL1 [EFFORT: HIGHEST] =====
 Compendium data adapter + exact odds (read-only). Report reports/cxl1.md. REFERENCE: REF-RUNE (demo "Codex" screen = our Compendium; odds panel). Before starting: if packages/game-rules/src/v2/codex/ already exists on main, mark SKIPPED-merged.
 ZONE: new packages/game-rules/src/v2/codex/ (read-only adapter; only one export line in packages/game-rules/src/v2/index.ts), new scripts/gen-codex-json.mjs.
 GOAL: typed CompendiumEntry objects (kind: class | monster | boss | gear | material | recipe | relic | chapter; id, name, summary, iconKey, rarity, stats, tags, sources[{kind, ref, chancePct}], unlock, links[{kind, id, rel}]) built FROM existing registries (v2 content, loot, forge). Export odds per chest id with exact percent and oneIn = 1/p. No new content, no new numbers; anything missing is reported, not invented.
@@ -199,7 +239,7 @@ Risk notes (think before editing): the wallet/market hooks are the riskiest code
 TESTS: T1 chances come from game-rules and costs equal today's (test reads both). T2 reveal plays and respects prefers-reduced-motion. T3 Market sort and filter on sample data. T4 Buy and List open the existing wallet flow with a mocked connector; NO transaction is ever sent. T5 empty listings state. T6 gates at both sizes + DIFF TABLE. T7 art unchanged. T8 existing forge/market tests green. T9 wagmi/viem call list identical before/after.
 ===== END CXU3 =====
 
-===== BEGIN CXU5 [HIGH] (was AGR5) =====
+===== BEGIN CXU5 [EFFORT: HIGHEST] (was AGR5) =====
 Map (boss) screen. Report reports/redesign/CXU5.md + reports/redesign/CXU5/. REFERENCE: REF-UI screen "Map"; REF-SHELL; reports of #226 (Boss compact) in git log.
 ZONE: apps/web/src/map/, apps/web/src/boss/, apps/web/src/layout/boss/, bossPresentation.ts.
 GOAL: chapter path with done / current / locked / boss nodes (real chapter art and names), right fight card (boss name, recommended power vs your power, daily attempts, rewards, Fight), past runs list. No nested scrolling anywhere. Boss replay/result screens keep their behaviour and match the shell. Fight limits and rules unchanged. Keep the #226 compact-panel fix.
@@ -214,24 +254,24 @@ Risk notes: RPC log queries can hit range limits; bound the block range and hand
 TESTS: component test per state with a mocked client; keyboard focus order; contrast tests green; ui-audit no scroll/overlap at both sizes; screenshots of all five states; optional live read against public Fuji RPC (read-only) pasted, else NOT VERIFIED.
 ===== END CXC2 =====
 
-===== BEGIN CXP2 [HIGH] (was AGP1) =====
+===== BEGIN CXP2 [EFFORT: HIGHEST] (was AGP1) =====
 Pets tab in Hero on the CXP1 state. Depends on CXP1 + CXU4 -> STACKING RULE (if CXP1 missing: local adapter with the SAME interface, TODO(CXP1)). Report reports/cxp2.md + reports/cxp2/. REFERENCE: REF-RUNE demo "Companions" screen; REF-UI "Character".
 ZONE: new apps/web/src/pets/ui/ (PetsScreen, PetCard, EquipSlots, css, tests) + one tab entry in the Hero screen tab strip. No eighth rail item.
-GOAL: grid of pet cards (neutral CSS placeholder tile + lock state, name, progress bar to unlock, level pips), two equip slots on top (click to equip/unequip), a short "what it will do" line marked "Preview, not active yet". Home shows the equipped pet names as text only. States: empty (no kills), partial, all unlocked, corrupt state recovered. Keyboard navigable, aria labels, reduced motion respected. Pet art = PARKED ART (list 12 slots in the report).
+GOAL: grid of pet cards (neutral CSS placeholder tile + lock state, name, progress bar to unlock, level pips), two equip slots on top (click to equip/unequip), a short "what it will do" line marked "Preview, not active yet". Home shows the equipped pet names as text only. States: empty (no kills), partial, all unlocked, corrupt state recovered. Keyboard navigable, aria labels, reduced motion respected. Pet art slots go into docs/art/MANIFEST.md (ART2 fills them).
 TESTS: equip limit; locked card cannot be equipped; persisted equip survives reload; ui-audit zero scroll/overlap at both sizes; screenshots empty / partial / full; DIFF TABLE vs REF-RUNE.
 ===== END CXP2 =====
 
-===== BEGIN CXLU1 [HIGH] (was AGL1) =====
+===== BEGIN CXLU1 [EFFORT: HIGHEST] (was AGL1) =====
 Compendium + Odds tabs in Help. Depends on CXL1 (data) and CXU4 (tab host) -> STACKING RULE. Report reports/cxlu1.md + reports/cxlu1/. REFERENCE: REF-RUNE demo "Codex" screen (= Compendium) and its odds panel; REF-UI tokens.
 ZONE: new apps/web/src/layout/compendium/ + tab entries in the Help screen tab strip. No eighth rail item.
-GOAL: Compendium: search box, kind chips, rarity filter, list left, detail right, linked-entry buttons, entry count. Odds panel: exact % and "1 in N" per rarity for the selected chest (from CXL1, never hard-coded). "Stats and caps" page reading existing constants. Accessibility: focus rings, keyboard navigation, rarity = frame colour + shape marker + text pill, tooltips on tags also on focus, reduced motion. Existing item icons from apps/web/src/art; neutral placeholder where no art exists (PARKED ART list).
+GOAL: Compendium: search box, kind chips, rarity filter, list left, detail right, linked-entry buttons, entry count. Odds panel: exact % and "1 in N" per rarity for the selected chest (from CXL1, never hard-coded). "Stats and caps" page reading existing constants. Accessibility: focus rings, keyboard navigation, rarity = frame colour + shape marker + text pill, tooltips on tags also on focus, reduced motion. Existing item icons from apps/web/src/art; neutral placeholder where no art exists until ART2 (add the slots to docs/art/MANIFEST.md).
 TESTS: search + filters; link buttons navigate; odds shown equal CXL1 values; keyboard-only walk; gates at both sizes + DIFF TABLE vs REF-RUNE.
 ===== END CXLU1 =====
 
-===== BEGIN CXLU2 [MEDIUM-HIGH] (was AGL2) =====
+===== BEGIN CXLU2 [EFFORT: HIGHEST] (was AGL2) =====
 Lab previews on MOCK data, dev-only. Depends on CXLU1 -> STACKING RULE. Report reports/cxlu2.md + reports/cxlu2/. REFERENCE: REF-RUNE demo screens Skills, Passives, Runes, Planner + design.md.
 ZONE: new apps/web/src/layout/lab/, visible only with ?dev=lab (prove with a production-bundle test that the lab code path is unreachable without the flag; reuse the guard pattern from PR #220's bundle test).
-GOAL: port the demo screens Skills, Passives, Runes, Planner using apps/web/src/layout/lab/demo-numbers.ts with a visible banner "Demo numbers, not game rules". No server calls; only local component state. Skill effect previews reuse the demo's SVG effects as placeholders; leave image slots keyed by the ids in docs/proposals/rune-skill-system/art/MANIFEST.md (if the file is missing, list ids in the report) = PARKED ART.
+GOAL: port the demo screens Skills, Passives, Runes, Planner using apps/web/src/layout/lab/demo-numbers.ts with a visible banner "Demo numbers, not game rules". No server calls; only local component state. Skill effect previews reuse the demo's SVG effects as placeholders; leave image slots keyed by ids in docs/art/MANIFEST.md (ART2 fills them).
 TESTS: tier gating and refund keep gates valid; upgrade odds sum to 1; planner DPS equals the printed formula for 3 hand-calculated cases; flag-off test; gates at both sizes with ?dev=lab.
 ===== END CXLU2 =====
 
@@ -243,26 +283,26 @@ GOAL: 1. Component tests: Rail, Hud, ScreenFrame, Bag grid/filter/detail, Forge 
 TESTS: T1 new component tests pass. T2 e2e flow passes at 1280x720 and 1600x900. T3 registry test. T4 contrast for all new token pairs (list failures). T5 whole suite green. T6 bug list delivered (may be empty) in reports/redesign/CXR1-bugs.json (fields: id, screen, severity blocker/major/minor/cosmetic, what, expected, file guess, screenshot).
 ===== END CXR1 =====
 
-===== BEGIN CXQ1 [HIGH] (was AGN3, wallet-free part) =====
+===== BEGIN CXQ1 [EFFORT: HIGHEST] (was AGN3, wallet-free part) =====
 Judge play-through without a wallet. Report reports/p1-live-qa.md + reports/p1-live-qa/ (same path CXR2 and CXS2 read). REFERENCE: docs/judge-walkthrough.md, docs/demo-script-v2.md, reports/t3-demo-media.md, reports/s3-qa (findings format).
-NO wallet, NO sign-in, NO transaction, NO test wallet: the live-wallet walkthrough (mint, list, buy, wrong-wallet guard, 429 burst on live) is PARKED for the user.
+NO wallet, NO sign-in, NO transaction, NO test wallet: the live-wallet walkthrough (mint, list, buy, wrong-wallet guard, 429 burst on live) is a user-hands step: write it into reports/NEEDS-USER.md.
 ZONE: reports/p1-live-qa*, docs/demo-script-v2.md (timings only). No source changes: list bugs, do not fix them.
-PIECE 1 - Local, on latest origin/main plus (throwaway, not pushed) merge of all DONE UI branches: play 20 minutes like a stranger in wallet-free demo mode with Playwright: landing, choose class, idle, hide tab 6 minutes (or fake timers) and return, claim, equip best, craft, salvage, lock, boss (win and lose), forge preview, market browse/filter, hero, pets, help search, compendium, on-chain proof panel, error screens (simulate offline, 429 and 503 with route mocks). Per step: result line, time click->result, console errors verbatim, screenshot.
+PIECE 1 - Local, on latest origin/main plus (throwaway, not pushed) checkout of latest main (all UI items merged): play 20 minutes like a stranger in wallet-free demo mode with Playwright: landing, choose class, idle, hide tab 6 minutes (or fake timers) and return, claim, equip best, craft, salvage, lock, boss (win and lose), forge preview, market browse/filter, hero, pets, help search, compendium, on-chain proof panel, error screens (simulate offline, 429 and 503 with route mocks). Per step: result line, time click->result, console errors verbatim, screenshot.
 PIECE 2 - Live site read-only: open https://taskbarhero-eight.vercel.app WITHOUT connecting a wallet; landing, demo/guest paths that need no sign-in, console errors, load timings, screenshot. Anything requiring sign-in = "NOT VERIFIED - user wallet test".
 PIECE 3 - Sizes 1280x720, 1600x900 (and 1440x900 for the judge laptop): no page scroll in normal play, every action reachable, nothing clipped.
 PIECE 4 - reports/p1-live-qa/findings.json in the reports/s3-qa format (id, step, severity, what happened, expected, screenshot, file guess); validate with node -e "JSON.parse(require('fs').readFileSync('reports/p1-live-qa/findings.json','utf8'))".
 TESTS: T1 every step has a result line and a time. T2 console errors verbatim (or "none"). T3 size table filled. T4 findings.json parses, every finding has all fields. T5 no key, seed phrase or full JWT in any file (say you checked with grep).
 ===== END CXQ1 =====
 
-===== BEGIN CXR2 [HIGH] =====
+===== BEGIN CXR2 [EFFORT: HIGHEST] =====
 Fixes + polish pass. Branch ai/codex-redesign-cxr2. Report reports/redesign/CXR2.md + reports/redesign/CXR2/. Depends on CXR1 + CXQ1 (bug lists) -> STACKING RULE. A repeatable pass, not the end of the redesign.
 REFERENCE: REF-UI, REF-RUNE, reports/redesign/CXR1-bugs.json, reports/p1-live-qa/findings.json, all CXU*/CXC2/CXP2/CXLU* reports.
-ZONE: files named by the bug lists plus apps/web/src/**/*.css. No Tier 3, no new screens or features (bigger things = proposals in the report).
-GOAL: fix every blocker/major/minor/cosmetic finding that is inside a non-Tier-3 file; migrate remaining ad-hoc modals to apps/web/src/ui/ConfirmModal where CXU4 listed them; run ui-audit + effects-test for every screen at both sizes; check-bundle (state numbers, note increases).
+ZONE: files named by the bug lists plus apps/web/src/**/*.css. No user-hands steps, no new screens or features (bigger things = proposals in the report).
+GOAL: fix every blocker/major/minor/cosmetic finding that is that needs no user-hands step; migrate remaining ad-hoc modals to apps/web/src/ui/ConfirmModal where CXU4 listed them; run ui-audit + effects-test for every screen at both sizes; check-bundle (state numbers, note increases).
 TESTS: T1 ui-audit findings empty at both sizes for every screen in screen-manifest.json. T2 check-bundle within budget. T3 keyboard-only walk through every screen. T4 whole suite green. T5 table: finding id -> FIXED (commit) / PROPOSAL / NOT A BUG (why). T6 DIFF TABLE re-run for all screens vs REF-UI.
 ===== END CXR2 =====
 
-===== BEGIN CXS1 [MEDIUM] (was AGN2) =====
+===== BEGIN CXS1 [EFFORT: HIGHEST] (was AGN2) =====
 Security overview for judges + security docs refresh (docs only). Branch ai/codex-s1-security-docs. Report reports/n2-security-docs.md. Depends on CXN3 (check-live-schema.sql path) -> if not DONE, reference the path and mark it "after CXN3".
 WHY: a judge has ~5 minutes per repo; they should find in one place what we protect, how, the test that proves it, and the honest gaps.
 READ FIRST: docs/security-test-matrix.md (source of truth for test names; read only), docs/security-review-2026-10.md, docs/auth.md, docs/abuse-controls.md, docs/security-contracts.md, docs/security-web.md, docs/judge-walkthrough.md, docs/avalanche-integration.md, docs/proposals/{auth-hardening-v2,rate-limit-v2,relic-recovery}.md, reports/n1-*.md, reports/n2-*.md, git log --oneline -40.
@@ -273,9 +313,9 @@ ZONE: those files + reports/n2-*. No code.
 TESTS: T1 check-links no new failures (both counts). T2 every cited test name has a grep hit (paste). T3 no file still calls rate limiting / U-1 / U-2 / U-4 a GAP (only per-IP may remain). T4 wc -w under 1,200. T5 docs-only checks.
 ===== END CXS1 =====
 
-===== BEGIN CXS2 [MEDIUM; HIGHEST for fact-checking] (was AGN4) =====
+===== BEGIN CXS2 [EFFORT: HIGHEST] (was AGN4) =====
 Submission pack TEXT (docs only). Branch ai/codex-s2-submission. Report reports/n4-submission.md. You prepare words; the USER records the video and submits. Never submit, never change repo visibility.
-Depends on CXS1 (+ CXQ1 screenshots if DONE; else use existing screenshots and add "TODO: refresh after CXQ1").
+Depends on CXS1 (+ CXQ1 screenshots if merged; else use existing screenshots and add "TODO: refresh after CXQ1").
 CONTEST: UniHack, Avalanche Fuji. Submission = GitHub repo + slides + 2-3 min demo video. Online round: Technical Implementation 25 + Avalanche Integration 25. Final: Creativity 15, Impact 15, Pitch 10, UI/UX+Demo 10.
 READ FIRST: README.md, docs/submission.md, docs/judge-walkthrough.md, docs/avalanche-integration.md, docs/security-overview.md, docs/mechanics-v2.md, docs/pitch-outline.md, reports/pitch-v2.md, docs/demo-script-v2.md, reports/p1-live-qa.md, docs/release-notes.md, docs/licenses-v2.md.
 PIECE 1 - README.md top: one-line pitch; live link; 3 screenshots (existing repo PNGs only); "For judges" box (judge walkthrough, Avalanche proof `node scripts/fuji-proof.mjs`, security overview, release notes); stack line; Fuji addresses with Routescan links; run locally in 4 commands. Keep the rest, trim stale text.
@@ -288,31 +328,60 @@ TESTS: T1 every number (tests, contracts, addresses) has a source line in the re
 Never claim a feature, number or test count that the repo or a report does not show. Nothing copied from the commercial game this project was inspired by.
 ===== END CXS2 =====
 
-===== BEGIN CXL2 (gated) =====
-Content registries + balance sims. Start ONLY if docs/proposals/rune-skill-system/design.md section 6 contains a line "SIGNED" with a date written by the user. Otherwise mark SKIPPED-needs-signature and move on.
-If signed: ZONE packages/game-rules/src/v2/skills, runes, workshop, meta (new). Typed tables from design.md section 3 using the SIGNED numbers; tests (weights positive, caps respected, costs non-negative, gates monotonic); docs generator output under docs/; sim script rolling 100k kills per drop source, compared to published odds within 2*sqrt(n p (1-p)). Do not wire into combat or loot. Report reports/cxl2.md.
+===== BEGIN CXN4 [EFFORT: HIGHEST] =====
+Forge "Great craft!" moment. Report reports/cxn4.md. READ: docs/proposals/forge-great-success.md, packages/game-rules/src/v2/forge/craft.ts, packages/game-rules/src/v2/config.ts, packages/game-rules/src/v2/content/stats.ts, supabase/functions/_shared/v2/**, apps/web/src/forge/ForgeReveal.tsx, docs/mechanics-v2.md + packages/game-rules/src/v2/content/mechanics-doc.test.ts.
+DECIDE the chances per rarity and the extra-line rule yourself (design note in docs/design/decisions.md; keep it rare and fair, cap 4 lines).
+Rules: draw the great-success trial from the SAME seeded RNG AFTER all existing draws, so every existing roll for a seed is unchanged; store greatSuccess inside the existing item JSON (a new column = migration + NEEDS-USER + flag). Server uses the rules function (no client trust), pnpm gen:deno. ForgeReveal shows "Great craft! Extra bonus line"; reduced motion = no movement. Docs + drift test match config. PRODUCTION SAFETY: behind a rules version + flag OFF until the user redeploys functions (NEEDS-USER entry).
+TESTS: same seed -> identical old rolls; great-success frequency over 100k seeded crafts within 2*sqrt(n p (1-p)); server and client agree for both rules versions; UI states; full gate.
+===== END CXN4 =====
+
+===== BEGIN CXN5 [EFFORT: HIGHEST] =====
+Stepped bonus lines ("+3.5% crit", not "+3.74129%"). Report reports/cxn5.md. READ: docs/proposals/stepped-bonus-lines.md, packages/game-rules/src/v2/content/stats.ts, packages/game-rules/src/v2/forge/craft.ts, every roll site (grep the roll helper: drops, chests), the web item formatter.
+DECIDE the step per stat (design note). Min and max stay as on main. One shared helper: k = rng.int(0, K), value = min + k*step, K = round((max-min)/step), used by craft, drops and chests. Stored items are never rewritten; old floats still display correctly. Edge Functions use the same helper (pnpm gen:deno). Fixtures that encode old rolls are regenerated with the repo's documented UPDATE_* flag (old -> new counts in report). Same PRODUCTION SAFETY versioning as CXN4.
+TESTS: every rolled value is on a step; averages within tolerance of before; old items render; client/server agree per version; full gate.
+===== END CXN5 =====
+
+===== BEGIN CXL2 [EFFORT: HIGHEST] =====
+Rune / skill / passive / workshop registries + balance sims. Report reports/cxl2.md. REFERENCE: REF-RUNE (design.md section 3 structure; demo screens). The demo numbers are a STARTING POINT only: DECIDE the real numbers yourself with a balance rationale (design note), original names only.
+ZONE: packages/game-rules/src/v2/skills, runes, workshop, meta (new). Typed tables; tests (weights positive, caps respected, costs non-negative, gates monotonic); docs generator output under docs/; sim script rolling 100k kills per drop source compared to published odds within 2*sqrt(n p (1-p)); a power-curve sim showing time-to-chapter before/after stays within your stated target. Not wired into combat yet (CXG1 does that). Replace the lab's demo-numbers.ts with these registries.
 ===== END CXL2 =====
 
+===== BEGIN CXG1 [EFFORT: HIGHEST] =====
+Make runes, skills, passives and pets real gameplay, server-authoritative. Report reports/cxg1.md. REFERENCE: REF-RUNE demo + design.md + plan.md (Phase 4), CXL2 registries, docs/proposals/v2-state-integrity.md.
+GOAL: equip/socket/upgrade actions validated server-side (Edge Function source + rules), drops of runes/materials from the loot tables you defined, pets' bonuses applied in the power calculation, skills/passives in combat sim; client shows real state; lab screens graduate into the real nav (Hero tabs or Forge sub-tabs; keep 7 rail items unless you document a better nav in a design note). Any new tables = new migration file(s) + NEEDS-USER apply steps; everything behind a flag OFF until the user applies migrations and deploys functions; the guest/demo mode can run it locally with the flag ON for testing and screenshots.
+TESTS: rules unit tests, server action tests (local Supabase tests / PGlite as the repo does), idempotency (requestId), anti-cheat (client cannot grant itself runes), e2e flow with flag ON in demo mode at both sizes, flag OFF = old behaviour; full gate.
+===== END CXG1 =====
+
+===== BEGIN CXG2 [EFFORT: HIGHEST] =====
+Quests / daily events, only if items 1-20 are merged and main is green. Report reports/cxg2.md. Design it yourself (design note): small daily goals that drive the core loop and the on-chain Relic moment, rewards inside the existing economy limits, server-authoritative, flag OFF until NEEDS-USER deploy done. Tests + full gate.
+===== END CXG2 =====
+
+===== BEGIN ART1 [EFFORT: HIGHEST] =====
+Art pipeline, style bible and provenance. Report reports/art1.md.
+READ: existing art under apps/web/src/art and apps/web/public (inventory it: path, size, palette, pixel scale), reports/ui-redesign/BRIEF.md (look), docs/proposals/rune-skill-system/art/ (manifest notes if present).
+GOAL: 1. docs/art/STYLE.md: one style that matches the existing art (palette hex list locked to it, pixel scale, outline rule, lighting direction, sizes per asset type: icon 32/48, portrait 96, card 128, background). 2. tools/art/: scripts to pixel-snap (nearest-neighbour downscale to the grid), palette-lock (quantise to the STYLE palette), trim/pad, build sprite sheets + JSON atlases, optimise PNG; deterministic, with tests on small fixtures. 3. docs/art/PROVENANCE.md: one row per asset (path, tool, model/version, full prompt or script, seed, date, post-processing steps, licence "original, made for this project"). Backfill rows for existing art as "existing, provenance from git log <hash>". 4. docs/art/MANIFEST.md: every slot the game needs (pets x12, compendium entries without art, skills, passives, runes, materials, map nodes/decor, UI frames), with id, size, status (existing / placeholder / new).
+How to make art: use your image-generation tool if you have one; otherwise draw it procedurally (code that writes pixels, SVG rendered to PNG at the target grid, then snapped). Never use or feed any third-party or reference-game art, screenshots or names as input. Every generated image goes through snap + palette-lock.
+===== END ART1 =====
+
+===== BEGIN ART2 [EFFORT: HIGHEST] =====
+Generate and wire the missing art. Report reports/art2.md + reports/art2/ (contact sheets). Uses ART1 pipeline and MANIFEST.
+GOAL: produce every MANIFEST slot with status placeholder: 12 pet portraits (+ locked silhouettes), compendium icons, skill/passive/rune icons and effect sprites (replace the demo SVG placeholders), materials, map nodes/decor. Wire them in place of CSS placeholders. Keep existing art unless the new one is in the same slot AND clearly better (then keep the old file in git history only and note old -> new in PROVENANCE).
+CHECKS: a test that every MANIFEST id resolves to a file; all new PNGs on palette (script check) and on the pixel grid; contact sheet per category in reports/art2/; screenshots of every screen at both sizes; bundle budget respected (atlas where it helps); full gate.
+===== END ART2 =====
+
+===== BEGIN ART3 [EFFORT: HIGHEST] =====
+Art upgrade pass. Report reports/art3.md. After CXG1, review all screens at both sizes as a judge would (UI/UX+Demo is scored). Replace or add art only where it clearly improves the look (landing poster, class portraits, chapter backgrounds, Relic cards, effects); same pipeline, provenance and checks as ART2. List what you changed with before/after screenshots.
+===== END ART3 =====
+
 ===== BEGIN FINAL [EFFORT: HIGHEST] =====
-Integration run. No new branch is pushed except the report branch ai/codex-mega-final (report reports/mega-final.md).
-1. Create a throwaway local branch from origin/main and merge every DONE/PARTIAL item branch in queue order (stacked ones once). Record each conflict (files, which items).
-2. Run the whole verify list (section 1 step 3) + ui-audit + effects-test at both sizes for every screen in screen-manifest.json.
-3. Every failure: find which item owns it, fix it ON THAT ITEM'S BRANCH (new commit, re-run that item's verify list), update its report and the ledger, then redo steps 1-2. No round limit: repeat until the integrated suite is green.
-4. reports/mega-final.md: suggested MERGE ORDER for the user (respecting stacks), conflicts and how they were resolved, final suite tails, the full PARKED list (art + user actions), and open questions for the user.
-Never push the throwaway merge branch. Never merge any PR.
+Full regression and handover. Branch ai/codex-mega-final, report reports/mega-final.md (merged through the gate like any item).
+1. On the latest main: full verify list, complete e2e at both sizes, ui-audit + effects-test for every screen, check-bundle, check-links, forge tests, and a 20-minute scripted wallet-free play-through in demo mode with every flag ON and again with every flag OFF.
+2. Read-only live check of https://taskbarhero-eight.vercel.app after the last deploy.
+3. Fix every failure with a gated PR (no round limit) until all green.
+4. reports/mega-final.md: what shipped (per item, PR links), design decisions index, flags and their state, final suite tails, before/after screenshots of every screen, and reports/NEEDS-USER.md sorted by urgency (what to apply/deploy/flip first, exact commands, how to verify, how to roll back).
 ===== END FINAL =====
 
 ====================================================================================================
-8. PARKED - NOT FOR THIS RUN (collect new ones in reports; the user schedules them later)
+8. NEEDS-USER.md (keep it current; it is the user's whole to-do list)
 ====================================================================================================
-ART (no generation now; existing art only; placeholders are CSS tiles):
- - 12 pet portraits + equip-slot frames (CXP2)
- - Compendium icons for entries without art: materials, recipes, chapters (CXLU1)
- - Skill / passive / rune effect art for the lab slots listed in docs/proposals/rune-skill-system/art/MANIFEST.md (CXLU2)
- - Any Map path node or decoration that the mockup shows and the repo has no art for (CXU5)
- - Submission slide images beyond screenshots (CXS2)
-USER'S HANDS ONLY:
- - Live wallet walkthrough with throwaway Fuji wallets (sign-in, mint, list, buy, wrong-wallet guard, 429 burst on live) and refreshing the demo clips; the video recording itself.
- - Applying pending live migrations, deploying functions, flipping VITE_GAME_V2 on Vercel, resetting the leaked DB password, discarding the test wallet.
- - Signing M-D1 (CXN4), M-D2 (CXN5) and the rune numbers (CXL2); the nav question (7 rail items or fold Help into the HUD).
- - Merging PRs (use the merge order in reports/mega-final.md), repo visibility, the submission.
+Start it with the steps already known: apply pending live migrations in order (list from CXN3) then deploy functions; reset the leaked DB password; discard the old test wallet; flip VITE_GAME_V2 on Vercel when ready; live wallet walkthrough (sign-in, mint, list, buy, wrong-wallet guard, 429 burst) with throwaway Fuji wallets and refresh demo clips; record the video; submit. Add every new flag, migration, function deploy and contract deploy your items create, each with exact commands, verify and rollback.
