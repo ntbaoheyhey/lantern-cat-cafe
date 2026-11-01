@@ -11,10 +11,10 @@ The candidate repairs explicit-index Deno maps, preboot scene resize, readable H
 | G1 | PASS: frozen install, Deno drift, typecheck, lint, root units, default/classic/v2builds; completebrowser264/264at eachsize; changed specs470/470repeat10at eachsize. | full/results.jsonl and repeat-1280x720/,repeat-1600x900/ |
 | G2 | PASS for BASE0 compatibility scope: guest18 and local-signed18visits, zero findings; effects10/10eachsize; keyboard7destinations eachsize; contrast;18correctly framed reference comparisons with explicit dispositions. | audit-guest/,audit-signed-in/,effects-*/,accessibility/,reference-r2/,ui-diff.md |
 | G3 | PASS: bundle scan, links, Deno imports, generation drift; gzip growth under5% versus same-day main. | full/ and review/bundle-comparison.json |
-| G4 | NOT APPLICABLE: no contracts or migrations changed. Full SQL unit suite passes. | review/integrity-findings.json and full/test.log |
+| G4 | PASS (not applicable): no contracts or migrations changed. Full SQL unit suite passes. | review/integrity-findings.json and full/test.log |
 | G5 | PASS: production classic+v2 previews from observed live public configuration, bothsizes; no sign-in, backend writes or unexpectederrors; values withheld. | public-config/ and checks/public-config.log |
 | G6 | PASS:79files classified,12integrity flags justified, zero matching secret patterns;11branch commits have correct author/suffix; source review and scoped differences recorded. | review/ |
-| G7 | Publication pending coordinator push; no merge readiness until pushed and two formal grades pass. | This report and current handoff |
+| G7 | PASS: evidence/report publication confirmed at ledger commit c388d57974e777378797add0889a7eceb69a0978; formal grades are still required. | This report and current handoff |
 
 Required PR wrapper: bash scripts/verify-pr.sh246 without comments, isolated TMPDIR/ports, exit0. The wrapper appropriately skips contract tests because contracts did not change. See checks/verify-pr-246.log and wrapper-tmp/verify-pr-246.log.
 

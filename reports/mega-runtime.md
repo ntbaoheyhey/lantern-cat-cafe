@@ -1,3 +1,3 @@
-# Runtime — ACTIVE, coordinator owns BASE0
+# Runtime — ACTIVE
 
-Both BASE0-FINISH and CXQ1-DEMO-PATH native workers ended and released ownership. lsof confirmed no prior worker processes or4380–4393listeners. Coordinator source mega-deno0 at07d219b; reusable clean verifier mega-base0-finish-verify. No active agents; future agents primarily two independent graders(max2,or1afterrecent429). Heartbeat30minutesACTIVE.
+Coordinator BASE0checks completed on5db4949; source and scratch trackedcode clean. Report/rawtext/selectedfigures publishedc388d57. Two independent graders prepared: BASE0-GA-R1ports4420–4424, BASE0-GB-R1ports4430–4434, separate freshdetachedworktrees. No ordinarybuilderagents authorized. Theircardruntime.json will record PIDs. Coordinator may prepare nextitem whilegrading, but merges remainserial andallgatesbinding.
