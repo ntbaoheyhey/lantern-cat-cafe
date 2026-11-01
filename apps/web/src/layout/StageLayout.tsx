@@ -594,6 +594,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                   onToggleLock={(id, locked) => {
                     if (!presentation.hold) void loop.setLocked(id, locked);
                   }}
+                  onForge={(_item) => handleSelectScreen('forge')}
+                  onList={(_item) => handleSelectScreen('market')}
+                  onNavigate={handleSelectScreen}
                 />
               ) : (
                 <p>Loading your cat…</p>
