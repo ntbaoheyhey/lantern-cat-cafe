@@ -1,0 +1,9 @@
+# Safe preparation and retention for the existing PR verifier
+
+The existing project verifier deleted its target directory and log before checking ownership, then force-removed the worktree after testing. A separate direct launch cleanup had already been rejected for rm-f style deletion. This change removes the unsafe operations rather than hiding or rerouting them.
+
+The verifier now validates the PR number, refuses any existing target path/log (including dangling symlinks), creates a new log without clobbering, records verifier/PR/base/tested heads, and retains its worktree and evidence. It reports a changed verification checkout as a failure. Temporary merge messages carry the required skip-CI suffix. All existing install/generation/type/lint/unit/build/browser/conditional-contract commands remain unchanged. Command output masks token-shaped JWTs, and pipefail preserves failing exit statuses. No comment is posted unless the existing explicit comment option is supplied; it will not be used for this mission.
+
+Direct validation: bash syntax and diff checks passed. Invalid PR input, an existing directory, an existing log and a dangling log symlink each exit2 before fetch or worktree creation. Sentinel bytes and links remain unchanged, and a missing link target is not created. See results.txt and the four refusal logs. No forced deletion, helper runner or subagent was used. The script remains the repository's standard verification command, invoked directly by the coordinator.
+
+The change is confined to the ledger branch's verification tool and evidence. It does not change BASE0280ff4b or CXN3-FIXa9b804. Real-PR execution is still pending; the guard checks are not a substitute for the source checks. Final ledger delivery includes infrastructure changes and must not be classified as a docs-only change.

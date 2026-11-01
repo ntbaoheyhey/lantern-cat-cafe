@@ -1,6 +1,7 @@
 # Taskbar Hero mission progress — living draft
 
 STATUS: IN-PROGRESS
+Verifier safety milestone2026-11-02: the standard project verifier on the ledger no longer force-deletes a target or log. Invalid input/existing paths/dangling links are refused;4guard checks preserve sentinel data. Source checks remain intact, worktrees are retained and actual heads recorded. Real-PR execution is pending; no source gate is inferred from guard tests. Final ledger delivery now includes infrastructure changes and is not docs-only.
 Latest user instruction2026-11-02: no subagents or helpers. The coordinator will work directly, including checkpoint snapshots; the existing30minute same-chat automation was updated accordingly. Prior independent BASE0 scores remain valid; no future independent-grade or merge requirement is silently waived. No worker/test pipeline is currently active.
 
 ## Current checkpoint — 2026-11-02T01:02:46+07:00
