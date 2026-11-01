@@ -4,7 +4,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 
 | item | branch | PR URL | state | rounds used | last verify result | notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 2 | Draft pushed; burst 40/40, continuous 80/80; full e2e 253 pass/2 excluded mobile failures; verify-pr running | Canvas race fixed; isolated resource error cause NOT VERIFIED; strict status will remain PARTIAL |
+| FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PARTIAL | 2 | Burst 40/40; continuous 80/80; core checks pass twice; full e2e fails known excluded mobile HUD cases | Canvas race fixed; isolated resource error cause NOT VERIFIED; reports/fxrb.md; full-suite gate not falsely called green |
 | CXN3 | ai/codex-n3-cutover-truth | — | TODO | 0 | Not run | Inspect existing branch and report before resuming |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | Not run in this mission | Existing draft; inspect and complete missing verification |
 | CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
