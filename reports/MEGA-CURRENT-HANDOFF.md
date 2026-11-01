@@ -17,9 +17,9 @@ The user explicitly paused on 2026-11-01 around16:56 Asia/Ho_Chi_Minh to sleep t
 
 No two formal grades, merge or deployment. Changed-spec repeat10 runs and effects/mutation verification were running when pause arrived; inspect logs and completion markers, never infer PASS from partial output. verify-pr246 and complete current reference/integrity/report packaging remain pending.
 
-CXU4 recovery /root/cxu4_resume_r2 has substantial uncommitted Hero/Help/shared-state implementation in mega-cxu4. The original worker hit429; recovery resumed preserved WIP. CXU5 /root/cxu5_resume_build has uncommitted Map/Boss implementation in mega-cxu5. Each worktree contains its builder evidence and resume-handoff.md.
+CXU4 recovery /root/cxu4_resume_r2 has substantial uncommitted Hero/Help/shared-state implementation in mega-cxu4. The original worker hit429; recovery resumed preserved WIP. CXU5 /root/cxu5_resume_build has pushed Map/Boss implementation a49906e and evidence c5b846e in mega-cxu5, draft PR249; additional local evidence is dirty. Both full browser suites completed257pass/3fail (exit1), so its full gate is NOT PASS. Earlier interrupted runs remain historical. Each worktree contains its builder evidence and resume-handoff.md.
 
-Mutation scratch mega-base0-resume-mutants may contain an interrupted deliberate mutant. It is not a delivery source. Preserve its diff/evidence and inspect before restoring anything.
+Mutation worker acknowledged pause and restored tracked scratch source clean. Reviewed outcome:20 verified kills, nine passing controls; viewport interrupted and supplemental wrong-token mutant stopped without a verified outcome. Use reviewed-results.json and paused-summary.json, not automatic misclassified results. The scratch tree is not a delivery source.
 
 ## Evidence and runtime
 
@@ -41,3 +41,5 @@ Mutation scratch mega-base0-resume-mutants may contain an interrupted deliberate
 Full mission and queue remain in mega-mission.md, mega-plan.md and mega-ledger.md. All previous safety, author/[skip ci], original-content, default-OFF and no-Actions constraints continue. No direct main push or unsafe live write occurred.
 
 Complete consolidated state/rules/original-spec file: [MEGA-STATE-AND-RULES-2026-11-01.md](MEGA-STATE-AND-RULES-2026-11-01.md). CXU4 and mutation workers acknowledged pause; latest mutation reviewed index has20 verified kills,9 controls, viewport interrupted, tracked source clean. CXU5 cessation still needs confirmation; coordinator sent explicit stop notices and re-terminated owned tests.
+
+Latest pause supplement: CXU5 native thread still reports active; shutdown is unconfirmed. No native interrupt is exposed, direct app-server messaging rejects multi-agent-v2 children, and Codex computer control was denied. User must use the app Stop control before sleep if it remains active. Supplemental stable-during-capture backup: /Users/bao/.codex/handoffs/taskbar-hero/2026-11-01-pause-supplement-170537/ (40 changed/untracked files). This does not establish worker cessation. No implementation resumed by the coordinator.

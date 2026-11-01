@@ -143,15 +143,16 @@ Evidence: `reports/scorecard/cxu4/`; current checkpoint `reports/scorecard/cxu4/
 
 ### CXU5 — Map and Boss
 
-Worktree `/Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero`, branch `ai/codex-cxu5`. Implementation commit `a49906e70befa6409127ca3832a3e714fc8a5858` was observed, followed by report commit `c5b846e`. The generated snapshot below is authoritative for the latest HEAD and dirty state; do not infer push/PR status from a local commit.
+Worktree `/Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero`, branch `ai/codex-cxu5`. Implementation commit `a49906e70befa6409127ca3832a3e714fc8a5858` and evidence commit `c5b846ec030be5a0bf6a89c515fe4ecd85514fc3` are pushed. Draft [PR249](https://github.com/ntbaoheyhey/taskbar-hero/pull/249) was independently confirmed OPEN/draft. Additional local evidence remains dirty; the dated snapshots preserve it.
 
 - Chapter path and selected fight details use existing chapter/boss names and real repository art.
 - Source-backed power guidance and chest preview, key-limited daily information, session-only completed encounter history.
 - History releases atomically with the outcome, resets on account/mode change, and preserves existing compact ChapterMap support.
 - Main paths: `map/ChapterMap.tsx`, `layout/boss/BossGatePanel.tsx`, `BossMapScreen.tsx`, its CSS, `mapDetails.ts`, `layout/bossPresentation.ts`, and StageLayout wiring/tests.
 - Worker recorded61 focused unit cases,80 current browser repeat cases, seven detected mutants with green controls and140 unit repeats. Earlier74/80 browser repeats remain failures; a short-height sidebar overflow and font-readiness issue were corrected with assertions retained.
-- The older audit/effects tools were exercised with their explicitly limited coverage. Complete suites and some processes were interrupted during coordinator shutdown; do not accept or rerun them blindly while paused.
-- Old baseline artifact writers modified historical F3/performance/error screenshots in this worktree. These are visible dirty report files, not automatically intended feature changes. Preserve them in backup and inspect the diff before selective restoration after resumption.
+- The older audit/effects tools were exercised with their explicitly limited coverage. Both complete browser suites subsequently finished with **257 passed / 3 failed**, exit1. At1280 the failures are resize-burst and two narrow HUD cases; at1600 they are the classic hardcoded1280 expectation and two narrow HUD cases. These inherited baseline failures still block a full PASS. Preserve the earlier interrupted1600 run and exit143 as historical evidence; it is a different run.
+- Worker later recorded six keyboard-only capture visits across ready/no-key/chapter5 and both sizes. This is worker-reported evidence, not independent formal grading.
+- Old baseline artifact writers modified historical F3/performance/error screenshots. The worker subsequently restored initially-clean generated report outputs; earlier backup preserves that state. Current CXU5 reports, capture helpers and refreshed logs remain dirty. Inspect their diff before further changes.
 - The inherited Deno/import/link baseline and full formal gates remain pending. No merge/deploy was authorized by targeted checks. Worker shutdown acknowledgement must be confirmed before claiming all activity stopped.
 
 Evidence: `reports/scorecard/cxu5/`, `reports/redesign/CXU5.md`; checkpoint `reports/scorecard/cxu5/resume-handoff.md`.
@@ -293,7 +294,9 @@ Do not use pause-time session IDs as active processes. After a transport failure
 
 ## Latest shutdown observation
 
-As of 2026-11-01T17:03:50+07:00, CXU4 and the BASE0 mutation worker have acknowledged pause. Mutation tracked source is clean. CXU5 had not yet acknowledged the pause and restarted checks after process termination; its latest reported delivery is draftPR249, headc5b846e over implementationa49906e, with full1280 browser result257pass/3fail and1600 interrupted. Do not claim its complete gate green. Parent has issued stop notices and terminated its owned tests again. Native-agent interruption is not exposed in the current collaboration tool set; direct app-server input rejects multi-agent-v2 children, and computer control of Codex is denied by the tool. The mission goal and heartbeat remain PAUSED. Confirm CXU5 cessation before resuming or claiming all workers stopped.
+As of 2026-11-01T17:05:55+07:00, CXU4 and the BASE0 mutation worker have acknowledged pause. Mutation tracked source is clean. CXU5 still reports an active/in-progress native thread and has not acknowledged pause; it continued checks after process termination. Its delivery is draftPR249, headc5b846e over implementationa49906e, with full browser results257pass/3fail at BOTH sizes. The complete gate is not green. Parent issued stop notices and terminated owned tests earlier. Native-agent interruption is not exposed in the current collaboration tool set; direct app-server input rejects multi-agent-v2 children, and computer control of Codex was denied for safety reasons. Do not bypass that restriction or claim all workers stopped. The user must use the app's Stop control for the CXU5 worker before sleep if it remains active. The mission goal and heartbeat remain PAUSED.
+
+A supplemental CXU5 backup is saved at `/Users/bao/.codex/handoffs/taskbar-hero/2026-11-01-pause-supplement-170537/`: binary tracked patch, untracked archive, status and hashes for40 local changed/untracked files. Hashes and git status were stable during that brief capture, but shutdown was NOT confirmed. Refresh after actual cessation; do not treat a stable capture as proof that the agent stopped. Earlier1700 and1600 snapshots remain untouched.
 
 ## 12. Appendices and interpretation
 
