@@ -2,11 +2,11 @@
 
 STATUS: IN-PROGRESS
 
-## Current checkpoint — 2026-11-01T22:00:20+07:00
-
-User explicitly resumed. Candidate PR246 is280ff4b, main1fb25ed; no mission merge. Completed repaired-head checks: fullbrowser265/265 andexpandedrepeat700/700 at each size,25mutants/16controls, fullroot/build/Deno/link/bundle, UI/a11y/G5 andPRwrapper green. Report/evidence published2088154 and245manifest files verified byte-identical. G7 bookkeeping is now complete. Two fresh independent graders are prepared; no repaired-head score yet. Historical entries below record earlier stages and do not override this checkpoint.
-
-The30minute checkpoint heartbeat is active. Coordinator personally handles handoffs and implementation; graders are the only planned workers. Full mission scope, safety and merge thresholds are unchanged.
+## Current checkpoint — 2026-11-01T22:50:31+07:00
+Candidate PR246 is280ff4b; main1fb25ed; no mission merge. Independent A passed97.64285714285714 with every required floor and zero auto-fails. Its27/28mutants include one honestly retained survivor;10greencontrols. Original B errored with model-provider429 before grading; its pipelines are now stopped and partial evidence preserved. Fresh independent recovery B is running in its own worktree/ports. Final item score remains pending.
+Completed coordinator checks remain full265/265 andexpandedrepeat700/700 at each size,25mutantkills/16controls plus core/build/Deno/UI/a11y/G5/wrapper.244rawmanifestfiles match2088154; the later living-report revision is reconciled at37d4b03 with immutable receipt2e04f83. The original245-file snapshot receipt is historical, not proof of later report bytes.
+Vercel reports deployment quota failure, so PR246 stays draft even if local grading passes. No reset time or broken-live claim is inferred. FXRB temporary integration7023a2d has24unit/120resize preliminaryPASS; actual-main fullgates/grades remain pending.
+Coordinator publishes the A evidence and current runtime personally, with30minute/milestone checkpoints. No backend release, live write, wallet transaction or submission. Full mission scope and all score/merge safety rules remain active.
 
 ## Historical progress (older candidates and running states)
 

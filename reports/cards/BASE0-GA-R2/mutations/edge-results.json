@@ -1,0 +1,14 @@
+{
+  "control": {
+    "name": "control-deno-real-edges",
+    "command": "node scripts/check-deno-imports.mjs",
+    "exit": 0,
+    "signal": null
+  },
+  "mutant": {
+    "name": "deno-real-explicit-edges",
+    "command": "node --check scripts/gen-deno-json.mjs && node scripts/gen-deno-json.mjs && node scripts/check-deno-imports.mjs",
+    "exit": 1,
+    "signal": null
+  }
+}

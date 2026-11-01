@@ -1,0 +1,43 @@
+{"name":"test-exclusion","command":"node --test scripts/gen-deno-json.test.mjs","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero","started":"2026-11-01T15:08:38.519Z"}
+✔ explicit root and nested index imports resolve to their exact files (7.763084ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.520917ms)
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.616958ms)
+✔ output order is stable regardless of file creation order (3.345292ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.123209ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.428125
+
+✖ failing tests:
+
+test at scripts/gen-deno-json.test.mjs:38:1
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.616958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts',
+  +   '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/scripts/gen-deno-json.test.mjs:43:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts', '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT=1 SIGNAL=null

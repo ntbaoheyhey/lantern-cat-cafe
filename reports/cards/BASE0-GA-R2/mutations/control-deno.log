@@ -1,0 +1,16 @@
+{"name":"control-deno","command":"node --test scripts/gen-deno-json.test.mjs","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero","started":"2026-11-01T15:08:30.019Z"}
+✔ explicit root and nested index imports resolve to their exact files (9.106292ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.714166ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.985ms)
+✔ output order is stable regardless of file creation order (3.229041ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.365041ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.690292
+
+EXIT=0 SIGNAL=null

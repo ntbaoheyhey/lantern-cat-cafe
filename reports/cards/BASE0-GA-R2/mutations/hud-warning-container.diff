@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 182bd94..670420a 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -197,7 +197,7 @@
+ }
+ 
+ /* The power warning adds a real text row to the shared HUD layout. */
+-.shell-hud.v2-topbar:has(.hud-power-hint) {
++.shell-hud.v2-topbar:has(.missing-power-hint) {
+   height: auto;
+   min-height: calc(var(--hud-h, 56px) + var(--sp-5, 24px));
+   max-height: none;

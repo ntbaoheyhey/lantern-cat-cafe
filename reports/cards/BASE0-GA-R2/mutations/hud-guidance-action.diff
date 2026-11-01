@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/Hud.tsx b/apps/web/src/shell/Hud.tsx
+index 064ca29..4d505fe 100644
+--- a/apps/web/src/shell/Hud.tsx
++++ b/apps/web/src/shell/Hud.tsx
+@@ -36,7 +36,7 @@ export function Hud({
+       {hintText && (
+         <div className="v2-hint" data-testid="next-hint">
+           <span className="v2-hint-lead" aria-hidden="true">Next</span>
+-          <button type="button" className="v2-hint-btn" onClick={onHintAction ?? undefined}>
++          <button type="button" className="v2-hint-btn" onClick={undefined}>
+             {hintText}
+           </button>
+         </div>

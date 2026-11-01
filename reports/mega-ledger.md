@@ -6,7 +6,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | GRADING | 2 | 280ff4b full265/265 and repeats700/700 eachsize; 25mutants killed | A running; B interrupted429, no score; historical A0/B97/Cinterrupted retained; deployment quota hold |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | GRADING | 2 | 280ff4b full265/265 and repeats700/700 eachsize; 25mutants killed | A97.642857PASS; original B interrupted429/ungraded; recovery B running; deployment quota hold |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -87,3 +87,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T19:51:33+07:00: latest userauthorizes coordinatorfallback when subagents unavailable and requests contextdiscipline. No furtherC recovery scheduled; interruptedC evidence preserved, no score invented. Local280ff4b verification continues withPID45517; sourcePRstill5db4949; no merge.
 
 - 2026-11-01T22:00:20+07:00: user resumed. PR246280ff4b/main1fb25ed/publishedledger2088154 confirmed unchanged. Full repaired-head evidence complete; G7 publication confirmed. Two fresh independent round2 grades prepared; historical round1 failure/Cinterruption retained. No merge. Heartbeat reactivated30minutes.
+
+- 2026-11-01T22:50:31+07:00: BASE0 repaired-head A PASS97.64285714285714, allfloors/zeroautofails;140deliveryfiles verified. Original B interrupted/ungraded and allpipelines stopped; freshrecoveryB active on4450–4454. Deploymentquota hold persists; no merge. FXRB preliminary7023a2d24units/120repeats passed; actualmain gates pending.

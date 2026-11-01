@@ -1,0 +1,20 @@
+{"name":"lint","command":"pnpm lint","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started_at":"2026-11-01T15:05:04.034Z","size":null,"ports":[4420,4421,4422,4423],"workers":1}
+
+> taskbar-hero@0.0.0 lint /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+{"name":"lint","command":"pnpm lint","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started_at":"2026-11-01T15:05:04.034Z","size":null,"ports":[4420,4421,4422,4423],"workers":1,"exit":0,"signal":null,"ended_at":"2026-11-01T15:05:10.443Z"}

@@ -1,0 +1,217 @@
+[
+  {
+    "name": "control-browser",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts e2e/server/fixture-clock.spec.ts e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720|server fixture freezes|F3 chapter 1 roster sheet|F3 canvas bake time|T1-T5|G1 demo action feedback|G3 stage frame p95'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:34:27.944Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:34:53.851Z",
+    "contractExit": 0
+  },
+  {
+    "name": "hud-shared-style",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:34:53.862Z",
+    "browserExit": 1,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:35:02.455Z",
+    "contractExit": 0
+  },
+  {
+    "name": "hud-green-xp",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:02.463Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:35:11.495Z",
+    "contractExit": 0
+  },
+  {
+    "name": "hud-guidance-action",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:11.504Z",
+    "browserExit": 1,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:35:24.970Z",
+    "contractExit": 0
+  },
+  {
+    "name": "hud-warning-container",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720 when gated'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:24.979Z",
+    "browserExit": 1,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:35:33.535Z",
+    "contractExit": 0
+  },
+  {
+    "name": "clock-interleaving",
+    "command": "pnpm test:e2e e2e/server/fixture-clock.spec.ts --workers=1 -g 'server fixture freezes'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:33.544Z",
+    "browserExit": 1,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:35:41.119Z",
+    "contractExit": 0
+  },
+  {
+    "name": "f3-opt-in",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 -g 'F3 chapter 1 roster sheet'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:41.128Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "roster-ch1.png",
+        "bytes": 77657
+      }
+    ],
+    "finished": "2026-11-01T15:35:49.904Z",
+    "contractExit": 1
+  },
+  {
+    "name": "error-opt-in",
+    "command": "pnpm test:e2e e2e/v2/errors-notice.spec.ts --workers=1 -g 'T1-T5'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:49.914Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "429-1280x720-dark.png",
+        "bytes": 75744
+      },
+      {
+        "name": "429-390x844-light.png",
+        "bytes": 48994
+      }
+    ],
+    "finished": "2026-11-01T15:35:59.956Z",
+    "contractExit": 1
+  },
+  {
+    "name": "f3-metrics-routing",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 -g 'F3 canvas bake time'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:35:59.965Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "bake-metrics.json",
+        "bytes": 4124
+      }
+    ],
+    "finished": "2026-11-01T15:36:09.547Z",
+    "contractExit": 1
+  },
+  {
+    "name": "g1-metrics-routing",
+    "command": "pnpm test:e2e e2e/ui/g1-perf.spec.ts --workers=1 -g 'G1 demo action feedback'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:36:09.557Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "metrics.json",
+        "bytes": 1256
+      }
+    ],
+    "finished": "2026-11-01T15:36:24.066Z",
+    "contractExit": 1
+  },
+  {
+    "name": "g3-metrics-routing",
+    "command": "pnpm test:e2e e2e/ui/g3-combat.spec.ts --workers=1 -g 'G3 stage frame p95'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:36:24.078Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "frame-metrics.json",
+        "bytes": 49
+      }
+    ],
+    "finished": "2026-11-01T15:36:37.363Z",
+    "contractExit": 1
+  },
+  {
+    "name": "control-explicit-artifacts",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts e2e/server/fixture-clock.spec.ts e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --workers=1 -g 'F3 chapter 1 roster sheet|F3 canvas bake time|T1-T5|G1 demo action feedback|G3 stage frame p95'",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:36:37.364Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [
+      {
+        "name": "429-1280x720-dark.png",
+        "bytes": 75744
+      },
+      {
+        "name": "429-390x844-light.png",
+        "bytes": 48994
+      },
+      {
+        "name": "roster-ch1.png",
+        "bytes": 77657
+      }
+    ],
+    "finished": "2026-11-01T15:36:58.230Z",
+    "contractExit": 0,
+    "metrics": [
+      "bake-metrics.json",
+      "frame-metrics.json",
+      "metrics.json"
+    ]
+  },
+  {
+    "name": "control-effects",
+    "command": "node tools/.ga-r2-effects.mjs /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/.grade-local/effect-control --viewport=1280x720",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:36:58.231Z",
+    "browserExit": 0,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:37:38.138Z",
+    "contractExit": 0
+  },
+  {
+    "name": "effects-reached-screen",
+    "command": "node tools/.ga-r2-effects.mjs /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/.grade-local/effect-mutant --viewport=1280x720",
+    "cwd": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "started": "2026-11-01T15:37:38.147Z",
+    "browserExit": 1,
+    "signal": null,
+    "artifacts": [],
+    "finished": "2026-11-01T15:38:09.012Z",
+    "contractExit": 0
+  }
+]

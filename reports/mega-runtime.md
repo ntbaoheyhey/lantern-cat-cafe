@@ -1,8 +1,10 @@
 # Runtime — ACTIVE mission
-Updated 2026-11-01T22:07:43+07:00. Two mandatory independent graders running on immutable280ff4b; no merge.
-BASE0-GA-R2: /root/base0_grade_a_r2, runnerPID5258, ports4420–4424; repeat-1280x720.
-BASE0-GB-R2: /root/base0_grade_b_r2, ports4430–4434; Read brief and worker contract; preparing isolated worktree.
-Worker-owned card runtime.json files are authoritative for subsequent steps/PIDs/cleanup. No duplicate launches. Coordinator owns FXRB preparation and ledger/checkpoints.
-Historical A0/B97/Cinterrupted are not current grades. Current scores pending; see handoff for exact hashes and completed checks.
-Deployment hold 2026-11-01T22:16:35+07:00: both candidate Vercel statuses report deployment rate limit, retry in24hours; exact reset unverified. Local graders continue. No merge or deployment attempt.
-Provider429 2026-11-01T22:32:35+07:00: nativeB errored, backgroundPIDs[7879, 12708, 14120] remain observed. A is sole nativeworker. Max1 until2026-11-01T23:02:35+07:00. No B grade; no duplicate commands or immediate relaunch.
+Updated 2026-11-01T22:50:31+07:00. Candidate280ff4b/main1fb25ed; no mission PR merged.
+- A /root/base0_grade_a_r2: DONE/PASS97.64285714285714, allfloors,zeroautofails. Owned worktrees clean,4420–4424free. See BASE0-GA-R2/RESULT.md and runtime.json.
+- Original B /root/base0_grade_b_r2: ERRORED_PROVIDER429,UNGRADED (no score); every recorded localPID stopped,4430–4434free,tracked checkout clean. See coordinator-cleanup.json; partial successful repeats are not a grade.
+- Recovery B /root/base0_grade_b_r2_recovery: RUNNING since22:48:16UTC+7, isolated mega-base0-grade-b-recovery-280ff4b,4450–4454. Read its runtime.json for currentstep/PIDs; no duplicate launch and no other worker active.
+- Worker cap1 until2026-11-01T23:02:35+07:00 after lastmodel429; same-model2/4/8min backoff, no downgrade.
+- FXRB-PREFLIGHT-R2: temporary7023a2d,24unit/120resize preliminaryPASS; cleanworktree,runner15776stopped,4440–4444free. Not fullgates/grades/actualmain.
+- Vercel candidate quota hold: both contexts failure/retry24hours recorded19:53:20UTC+7; exactreset unknown. PR246 draft; no retry/capbypass/merge.
+- Publication correction37d4b03 and immutable receipt2e04f83 preserve244rawfiles at2088154 and later reportrevision.140Agrade deliveryfiles hashchecked; publication next.
+Coordinator owns implementation/checkpoints/publication and never substitutes self-review for mandatory independent grades.

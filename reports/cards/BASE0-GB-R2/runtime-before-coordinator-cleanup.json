@@ -1,0 +1,37 @@
+{
+  "status": "running",
+  "agent_id": "/root/base0_grade_b_r2",
+  "worktree": "/Users/bao/.codex/worktrees/mega-base0-grade-b-280ff4b/taskbar-hero",
+  "pids": [
+    7879,
+    10986,
+    12690,
+    12708,
+    14120
+  ],
+  "portblock": [
+    4430,
+    4431,
+    4432,
+    4433,
+    4434
+  ],
+  "step": "1280 repeat10 complete700/700 exit0; 1600 repeat10 running;12ownmutants killed; browser mutant + signed audit + legacy HUD supervisors pending",
+  "started_at": "2026-11-01T15:06:40.806964+00:00",
+  "updated_at": "2026-11-01T15:28:43.045542+00:00",
+  "provider_429_observations": [],
+  "findings": [
+    {
+      "id": "publication-report-mismatch",
+      "status": "OPEN",
+      "evidence": "review/reuse-validation.json and review/publication-report-delta.txt",
+      "detail": "244/245 published manifest files match; current verifier REPORT.md changes G7 PENDING to PASS and next steps."
+    }
+  ],
+  "listener_pids": [
+    15313,
+    15373,
+    15405,
+    15341
+  ]
+}

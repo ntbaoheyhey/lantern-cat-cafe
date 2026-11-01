@@ -1,0 +1,66 @@
+{"name":"unit","command":"pnpm test","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started_at":"2026-11-01T15:05:10.450Z","size":null,"ports":[4420,4421,4422,4423],"workers":1}
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.930834ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.711333ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.93875ms)
+✔ output order is stable regardless of file creation order (3.182333ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.933708ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67.519583
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  22:05:12
+packages/chain test:    Duration  646ms (import 41%, tests 33%, transform 24%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  22:05:12
+packages/auth test:    Duration  919ms (import 62%, tests 31%, transform 6%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  22:05:12
+supabase/tests test:    Duration  12.37s (tests 79%, import 15%, transform 5%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  22:05:12
+packages/game-rules test:    Duration  32.06s (tests 93%, transform 5%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  22:05:44
+packages/api-contract test:    Duration  208ms (transform 78%, import 18%, tests 3%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web
+apps/web test:  Test Files  111 passed (111)
+apps/web test:       Tests  1308 passed (1308)
+apps/web test:    Start at  22:05:45
+apps/web test:    Duration  14.94s (environment 45%, tests 39%, import 10%, transform 6%)
+apps/web test: Environment  jsdom was created 111 times · 52.65s total, 45% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+{"name":"unit","command":"pnpm test","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started_at":"2026-11-01T15:05:10.450Z","size":null,"ports":[4420,4421,4422,4423],"workers":1,"exit":0,"signal":null,"ended_at":"2026-11-01T15:05:59.974Z"}

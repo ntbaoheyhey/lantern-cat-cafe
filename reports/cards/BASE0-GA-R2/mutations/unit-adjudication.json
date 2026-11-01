@@ -1,0 +1,194 @@
+[
+  {
+    "name": "index-alias",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:"
+      },
+      {
+        "line": 41,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/index-alias.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "directory-alias",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 46,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/directory-alias.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "test-exclusion",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/test-exclusion.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "fixture-exclusion",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/fixture-exclusion.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "stable-order",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/stable-order.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "auth-separation",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 20,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/auth-separation.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-deno.log"
+  },
+  {
+    "name": "preboot-relayout",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 10,
+        "text": " FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives"
+      },
+      {
+        "line": 11,
+        "text": "AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of \u2026' was thrown"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/preboot-relayout.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-scene.log"
+  },
+  {
+    "name": "premature-destruction",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 10,
+        "text": " FAIL  src/game/stage/StageCanvas.test.tsx > waits for scene-manager readiness before destruction when game.isBooted=true"
+      },
+      {
+        "line": 11,
+        "text": "AssertionError: expected [Function] to not throw an error but 'Error: Scene manager is not ready' was thrown"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/premature-destruction.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-canvas.log"
+  },
+  {
+    "name": "pending-destruction",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 10,
+        "text": " FAIL  src/game/stage/StageCanvas.test.tsx > resizes one game and consumes deferred destruction even with the tab hidden"
+      },
+      {
+        "line": 11,
+        "text": "AssertionError: expected \"vi.fn()\" to be called with arguments: [ Any<Number>, +0 ]"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/pending-destruction.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-canvas.log"
+  },
+  {
+    "name": "next-db-day",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 14,
+        "text": " FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z"
+      },
+      {
+        "line": 15,
+        "text": "AssertionError: expected '2020-02-28T10:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/next-db-day.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-date.log"
+  },
+  {
+    "name": "db-anchor-hour",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 14,
+        "text": " FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z"
+      },
+      {
+        "line": 15,
+        "text": "AssertionError: expected '2020-02-29T09:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/db-anchor-hour.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-date.log"
+  },
+  {
+    "name": "claim-micros-rounding",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 11,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards"
+      },
+      {
+        "line": 12,
+        "text": "TypeError: Cannot read properties of null (reading 'items')"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/claim-micros-rounding.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-insert.log"
+  },
+  {
+    "name": "claim-clock-max",
+    "verdict": "KILLED",
+    "reason": [
+      {
+        "line": 11,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards"
+      },
+      {
+        "line": 12,
+        "text": "TypeError: Cannot read properties of null (reading 'items')"
+      }
+    ],
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/claim-clock-max.log",
+    "control": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/control-insert.log"
+  }
+]

@@ -1,0 +1,61 @@
+{"name":"effects-reached-screen","command":"node tools/.ga-r2-effects.mjs /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/.grade-local/effect-mutant --viewport=1280x720","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:37:38.147Z"}
+PASS  [combat] hits land on the monster repeatedly (hero swing reaches contact) - 7 impact cues in 8 s
+PASS  [combat] canvas is animating (not frozen) - 59 of 59 frame pairs differ
+PASS  [combat] hit flash/damage number changes pixels at each impact - 7/7 impacts changed the frame
+PASS  [combat] frame rate (headless software GL, relative) - avg 60.0 fps, p95 frame 17 ms
+PASS  [combat] no long-frame stalls over 250 ms - 0 frames over 250 ms
+PASS  [boss-ready] no attack swings while halted (by design) - 0 impacts
+PASS  [boss-ready] hero idle loop keeps animating while halted - 29 frame changes in 4 s
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator:  getByTestId('nav-help')
+Expected: "true"
+Received: "false"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveAttribute" getByTestId('nav-help') with timeout 5000ms
+  - waiting for getByTestId('nav-help')
+    14 × locator resolved to <button role="tab" id="tab-help" tabindex="-1" aria-label="Help" class="rail-item " data-screen-id="help" aria-selected="false" data-testid="nav-help" aria-controls="panel-help">…</button>
+       - unexpected value "false"
+
+    at captureRawStack (/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toHaveAttribute (/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at walk (/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web/tools/.ga-r2-effects.mjs:123:25)
+    at async file:///Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web/tools/.ga-r2-effects.mjs:142:13 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'true',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      "Locator:  getByTestId('nav-help')\n" +
+      'Expected: "true"\n' +
+      'Received: "false"\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" getByTestId('nav-help') with timeout 5000ms\n` +
+      "  - waiting for getByTestId('nav-help')\n" +
+      '    14 × locator resolved to <button role="tab" id="tab-help" tabindex="-1" aria-label="Help" class="rail-item " data-screen-id="help" aria-selected="false" data-testid="nav-help" aria-controls="panel-help">…</button>\n' +
+      '       - unexpected value "false"\n',
+    pass: false,
+    actual: 'false',
+    log: [
+      `  - Expect "toHaveAttribute" getByTestId('nav-help') with timeout 5000ms`,
+      "  - waiting for getByTestId('nav-help')",
+      '    14 × locator resolved to <button role="tab" id="tab-help" tabindex="-1" aria-label="Help" class="rail-item " data-screen-id="help" aria-selected="false" data-testid="nav-help" aria-controls="panel-help">…</button>',
+      '       - unexpected value "false"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- tab "Help"'
+  }
+}
+
+Node.js v24.22.2
+
+{"name":"effects-reached-screen","command":"node tools/.ga-r2-effects.mjs /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/.grade-local/effect-mutant --viewport=1280x720","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:37:38.147Z","browserExit":1,"signal":null,"artifacts":[],"finished":"2026-11-01T15:38:09.012Z","contractExit":0}

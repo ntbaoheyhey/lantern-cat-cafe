@@ -1,0 +1,13 @@
+diff --git a/scripts/gen-deno-json.mjs b/scripts/gen-deno-json.mjs
+index 38aa0db..1ca38f4 100644
+--- a/scripts/gen-deno-json.mjs
++++ b/scripts/gen-deno-json.mjs
+@@ -73,7 +73,7 @@ export function generateImportMaps(projectRoot = root) {
+     .sort();
+ 
+   for (const name of functions) {
+-    const template = name.startsWith('auth-') ? auth : game;
++    const template = false ? auth : game;
+     writeFileSync(join(functionsDir, name, 'deno.json'), `${JSON.stringify(template, null, 2)}\n`);
+   }
+ 

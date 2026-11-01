@@ -1,0 +1,493 @@
+{
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "tried": 28,
+  "killed": 27,
+  "survived": 1,
+  "greenControlRuns": 10,
+  "score": 9.642857142857142,
+  "rows": [
+    {
+      "name": "index-alias",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/index-alias.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:"
+        },
+        {
+          "line": 41,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        },
+        {
+          "line": 67,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "directory-alias",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/directory-alias.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        },
+        {
+          "line": 46,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "test-exclusion",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/test-exclusion.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "fixture-exclusion",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/fixture-exclusion.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "stable-order",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/stable-order.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "auth-separation",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/auth-separation.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 20,
+          "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "preboot-relayout",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-scene",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/preboot-relayout.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 11,
+          "text": "AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of …' was thrown"
+        },
+        {
+          "line": 13,
+          "text": "- Expected:"
+        },
+        {
+          "line": 16,
+          "text": "+ Received:"
+        }
+      ]
+    },
+    {
+      "name": "premature-destruction",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-canvas",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/premature-destruction.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 11,
+          "text": "AssertionError: expected [Function] to not throw an error but 'Error: Scene manager is not ready' was thrown"
+        },
+        {
+          "line": 13,
+          "text": "- Expected:"
+        },
+        {
+          "line": 16,
+          "text": "+ Received:"
+        }
+      ]
+    },
+    {
+      "name": "pending-destruction",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-canvas",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/pending-destruction.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 11,
+          "text": "AssertionError: expected \"vi.fn()\" to be called with arguments: [ Any<Number>, +0 ]"
+        }
+      ]
+    },
+    {
+      "name": "next-db-day",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-date",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/next-db-day.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 15,
+          "text": "AssertionError: expected '2020-02-28T10:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality"
+        },
+        {
+          "line": 17,
+          "text": "Expected: \"2020-02-29T10:00:00.000Z\""
+        },
+        {
+          "line": 18,
+          "text": "Received: \"2020-02-28T10:00:00.000Z\""
+        }
+      ]
+    },
+    {
+      "name": "db-anchor-hour",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-date",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/db-anchor-hour.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 15,
+          "text": "AssertionError: expected '2020-02-29T09:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality"
+        },
+        {
+          "line": 17,
+          "text": "Expected: \"2020-02-29T10:00:00.000Z\""
+        },
+        {
+          "line": 18,
+          "text": "Received: \"2020-02-29T09:00:00.000Z\""
+        }
+      ]
+    },
+    {
+      "name": "claim-micros-rounding",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-insert",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/claim-micros-rounding.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 12,
+          "text": "TypeError: Cannot read properties of null (reading 'items')"
+        }
+      ]
+    },
+    {
+      "name": "claim-clock-max",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-insert",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/claim-clock-max.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 12,
+          "text": "TypeError: Cannot read properties of null (reading 'items')"
+        }
+      ]
+    },
+    {
+      "name": "hud-shared-style",
+      "testExit": 1,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/hud-shared-style.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(received).toBeGreaterThanOrEqual(expected)"
+        },
+        {
+          "line": 47,
+          "text": "    Expected: >= 150"
+        },
+        {
+          "line": 48,
+          "text": "    Received:    85.375"
+        }
+      ]
+    },
+    {
+      "name": "hud-green-xp",
+      "testExit": 0,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/hud-green-xp.log",
+      "verdict": "SURVIVED",
+      "failureEvidence": [],
+      "explanation": "Retained survivor: generic selector mutated unchanged rail status dot, not XP; actual XP separately tested by exact selector. Conservatively included in denominator."
+    },
+    {
+      "name": "hud-guidance-action",
+      "testExit": 1,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/hud-guidance-action.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(locator).toHaveAttribute(expected) failed"
+        },
+        {
+          "line": 48,
+          "text": "    Expected: \"map\""
+        },
+        {
+          "line": 49,
+          "text": "    Received: \"home\""
+        }
+      ]
+    },
+    {
+      "name": "hud-warning-container",
+      "testExit": 1,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/hud-warning-container.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(received).toEqual(expected) // deep equality"
+        }
+      ]
+    },
+    {
+      "name": "clock-interleaving",
+      "testExit": 1,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/clock-interleaving.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: clock.pauseAt: Error: Cannot fast-forward to the past"
+        }
+      ]
+    },
+    {
+      "name": "f3-opt-in",
+      "testExit": 0,
+      "contractExit": 1,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/f3-opt-in.log",
+      "verdict": "KILLED",
+      "failureEvidence": []
+    },
+    {
+      "name": "error-opt-in",
+      "testExit": 0,
+      "contractExit": 1,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/error-opt-in.log",
+      "verdict": "KILLED",
+      "failureEvidence": []
+    },
+    {
+      "name": "f3-metrics-routing",
+      "testExit": 0,
+      "contractExit": 1,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/f3-metrics-routing.log",
+      "verdict": "KILLED",
+      "failureEvidence": []
+    },
+    {
+      "name": "g1-metrics-routing",
+      "testExit": 0,
+      "contractExit": 1,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/g1-metrics-routing.log",
+      "verdict": "KILLED",
+      "failureEvidence": []
+    },
+    {
+      "name": "g3-metrics-routing",
+      "testExit": 0,
+      "contractExit": 1,
+      "signal": null,
+      "control": "control-browser",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/g3-metrics-routing.log",
+      "verdict": "KILLED",
+      "failureEvidence": []
+    },
+    {
+      "name": "effects-reached-screen",
+      "testExit": 1,
+      "contractExit": 0,
+      "signal": null,
+      "control": "control-effects",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/effects-reached-screen.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 13,
+          "text": "ExpectError: expect(locator).toHaveAttribute(expected) failed"
+        },
+        {
+          "line": 16,
+          "text": "Expected: \"true\""
+        },
+        {
+          "line": 17,
+          "text": "Received: \"false\""
+        }
+      ]
+    },
+    {
+      "name": "hud-xp-color-exact-selector",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-extra",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/hud-xp-color-exact-selector.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(received).toBe(expected) // Object.is equality"
+        },
+        {
+          "line": 47,
+          "text": "    Expected: \"rgb(107, 224, 138)\""
+        },
+        {
+          "line": 48,
+          "text": "    Received: \"rgb(255, 184, 107)\""
+        }
+      ]
+    },
+    {
+      "name": "smoke-hardcoded-width",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-extra",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/smoke-hardcoded-width.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(received).toBe(expected) // Object.is equality"
+        },
+        {
+          "line": 47,
+          "text": "    Expected: 1280"
+        },
+        {
+          "line": 48,
+          "text": "    Received: 1600"
+        }
+      ]
+    },
+    {
+      "name": "configured-viewport-ignored",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-extra",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/configured-viewport-ignored.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 45,
+          "text": "    Error: expect(received).toEqual(expected) // deep equality"
+        }
+      ]
+    },
+    {
+      "name": "deno-real-explicit-edges",
+      "testExit": 1,
+      "contractExit": null,
+      "signal": null,
+      "control": "control-deno-real-edges",
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/mutations/deno-real-explicit-edges.log",
+      "verdict": "KILLED",
+      "failureEvidence": [
+        {
+          "line": 3,
+          "text": "boss-fight: packages/game-rules/src/v2/forge/craft.ts -> ./index"
+        },
+        {
+          "line": 4,
+          "text": "boss-fight: packages/game-rules/src/v2/forge/relic.ts -> ./index"
+        },
+        {
+          "line": 5,
+          "text": "boss-fight: packages/game-rules/src/v2/bag/compare.ts -> ./index"
+        }
+      ]
+    }
+  ]
+}

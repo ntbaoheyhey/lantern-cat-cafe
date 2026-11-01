@@ -1,6 +1,6 @@
 # BASE0 merge readiness — not eligible yet
 
-Observed 2026-11-01T22:16:35+07:00. Exact source candidate280ff4b and remote main1fb25ed are unchanged. GitHub reports MERGEABLE but UNSTABLE. Repaired-head independent A/B grades remain in progress.
+Provider observation 2026-11-01T22:16:35+07:00; grading checkpoint 2026-11-01T22:48:16+07:00. Exact source candidate280ff4b and remote main1fb25ed were unchanged at the provider observation. GitHub reported MERGEABLE but UNSTABLE. Repaired-head independent A passed97.64285714285714 with all floors and no auto-fails; original B was interrupted/ungraded, and fresh recovery B is running. Recheck current refs and deployment capacity before any merge decision.
 
 Both GitHub Vercel status contexts for candidate280ff4b report FAILURE with the description "Deployment rate limited — retry in 24 hours." The provider recorded both at2026-11-01T12:53:20Z (19:53:20UTC+7). This is a deployment-quota observation, not a source build failure, a native-agent429, proof the live site is broken, or proof of the exact quota-reset time. Raw sanitized public status fields: preview-status.json.
 

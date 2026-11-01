@@ -1,0 +1,384 @@
+[
+  {
+    "check": "install",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/install.log",
+    "command": "pnpm install --frozen-lockfile",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "2b86e6eb4746372ceafccfe01c68ac0d7cdad20664dd5fd679391c0a9b785704",
+    "terminal_summary": [
+      "\u2502                                                                              \u2502",
+      "\u2502   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     \u2502",
+      "\u2502   utf-8-validate@5.0.10.                                                     \u2502",
+      "\u2502   Run \"pnpm approve-builds\" to pick which dependencies should be allowed     \u2502",
+      "\u2502   to run scripts.                                                            \u2502",
+      "\u2502                                                                              \u2502",
+      "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+      "Done in 6.3s using pnpm v10.28.0",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "deno-drift",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/deno-drift.log",
+    "command": "pnpm gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "54be29b27dc804b4681abb88f2c56b3c4eb758bbd6db3e1260941e2e898954d1",
+    "terminal_summary": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"pnpm gen:deno && git diff --exit-code -- supabase/functions\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0\", \"name\": \"deno-drift\", \"ports\": {\"E2E_PORT_API\": \"4383\", \"E2E_PORT_CLASSIC\": \"4380\", \"E2E_PORT_SERVER\": \"4382\", \"E2E_PORT_V2\": \"4381\"}, \"screenshots\": false, \"started\": \"2026-11-01T19:33:10+07:00\", \"starting_git_status\": \"?? apps/web/tools/.base0-r2-audit.mjs\\n?? apps/web/tools/.base0-r2-effects.mjs\\n\", \"viewport\": \"1280x720\"}",
+      "",
+      "> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero",
+      "> node scripts/gen-deno-json.mjs",
+      "",
+      "wrote 18 Edge Function import maps",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "typecheck",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/typecheck.log",
+    "command": "pnpm typecheck",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "b49d26cec7574e21297cb81b64f92b464bfde9bbf3f45c019eae19b42aeabdbb",
+    "terminal_summary": [
+      "packages/chain typecheck: Done",
+      "packages/game-rules typecheck: Done",
+      "packages/auth typecheck: Done",
+      "supabase/tests typecheck: Done",
+      "packages/api-contract typecheck$ tsc --noEmit",
+      "packages/api-contract typecheck: Done",
+      "apps/web typecheck$ tsc --noEmit",
+      "apps/web typecheck: Done",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "lint",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/lint.log",
+    "command": "pnpm lint",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "ad5bffffb8236bc583dc48e783b2f93eeed9308a89c4da087270c1e8ae3cf8a8",
+    "terminal_summary": [
+      "packages/chain lint: Done",
+      "packages/auth lint: Done",
+      "packages/game-rules lint: Done",
+      "supabase/tests lint: Done",
+      "packages/api-contract lint$ tsc --noEmit",
+      "packages/api-contract lint: Done",
+      "apps/web lint$ tsc --noEmit",
+      "apps/web lint: Done",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "test",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/test.log",
+    "command": "pnpm test",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "1b0af08a1f4d9c0e167033ec9f28f18595f787866ea36450bdf364a01d36eafa",
+    "terminal_summary": [
+      "apps/web test:  Test Files  111 passed (111)",
+      "apps/web test:       Tests  1308 passed (1308)",
+      "apps/web test:    Start at  19:34:09",
+      "apps/web test:    Duration  25.47s (environment 48%, tests 37%, import 9%, transform 6%)",
+      "apps/web test: Environment  jsdom was created 111 times \u00b7 105.02s total, 48% of tracked time",
+      "apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)",
+      "apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments",
+      "apps/web test: Done",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "build",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/build.log",
+    "command": "pnpm build",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "c806663b247b0d1d1051509ccfde997a63849eb8c5102c8d4433a2ac6fb37f0f",
+    "terminal_summary": [
+      "apps/web build: dist/assets/StageScene-DiXgbZQw.js           15.76 kB \u2502 gzip:   5.79 kB",
+      "apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB \u2502 gzip:  68.27 kB",
+      "apps/web build: dist/assets/index-PmB9FI_D.js               239.94 kB \u2502 gzip:  67.23 kB",
+      "apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB \u2502 gzip: 108.14 kB",
+      "apps/web build: dist/assets/combat-BSGSpOB2.js              900.61 kB \u2502 gzip:  77.42 kB",
+      "apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB \u2502 gzip: 318.49 kB",
+      "apps/web build: \u2713 built in 349ms",
+      "apps/web build: Done",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "bundle-scan",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/bundle-scan.log",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "ef30c2e8eb44b856ae7c352d7a10bfb616d168456537df9e8608c9eec09bef50",
+    "terminal_summary": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"node scripts/check-bundle.mjs\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0\", \"name\": \"bundle-scan\", \"ports\": {\"E2E_PORT_API\": \"4383\", \"E2E_PORT_CLASSIC\": \"4380\", \"E2E_PORT_SERVER\": \"4382\", \"E2E_PORT_V2\": \"4381\"}, \"screenshots\": false, \"started\": \"2026-11-01T19:34:42+07:00\", \"starting_git_status\": \"?? apps/web/tools/.base0-r2-audit.mjs\\n?? apps/web/tools/.base0-r2-effects.mjs\\n\", \"viewport\": \"1280x720\"}",
+      "check-bundle: scanned 25 text files in apps/web/dist",
+      "check-bundle: no secret-looking strings found.",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "classic-build",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/classic-build.log",
+    "command": "VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "adfddd7c5d44dc52ab8849105e49a7d6ddb588a5cdc7ea1dc99130e6b760fe30",
+    "terminal_summary": [
+      "dist/assets/StageScene-DiXgbZQw.js           15.76 kB \u2502 gzip:   5.79 kB",
+      "dist/assets/react-KPuNr9iS.js               218.74 kB \u2502 gzip:  68.27 kB",
+      "dist/assets/index-PmB9FI_D.js               239.94 kB \u2502 gzip:  67.23 kB",
+      "dist/assets/web3-BKxr0A5j.js                363.83 kB \u2502 gzip: 108.14 kB",
+      "dist/assets/combat-BSGSpOB2.js              900.61 kB \u2502 gzip:  77.42 kB",
+      "dist/assets/phaser-CS_hOpYn.js            1,194.43 kB \u2502 gzip: 318.49 kB",
+      "",
+      "\u2713 built in 368ms",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "v2-budget-build",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/v2-budget-build.log",
+    "command": "VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web exec vite build --outDir dist/v2-budget",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "3401e00e2a585e56ec014e5d4b6ed25d9b3c26c3fbf74903656e02c46f33ad0d",
+    "terminal_summary": [
+      "dist/v2-budget/assets/ch1-Dcr1kpPd.js                 144.79 kB \u2502 gzip:  12.46 kB",
+      "dist/v2-budget/assets/combat-COPl1OEP.js              189.17 kB \u2502 gzip:  20.37 kB",
+      "dist/v2-budget/assets/react-KPuNr9iS.js               218.74 kB \u2502 gzip:  68.27 kB",
+      "dist/v2-budget/assets/web3-BKxr0A5j.js                363.83 kB \u2502 gzip: 108.14 kB",
+      "dist/v2-budget/assets/index-jTveT4UU.js               823.18 kB \u2502 gzip: 114.53 kB",
+      "dist/v2-budget/assets/phaser-CS_hOpYn.js            1,194.43 kB \u2502 gzip: 318.49 kB",
+      "",
+      "\u2713 built in 379ms",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "links",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/links.log",
+    "command": "node scripts/check-links.mjs",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "5faf032dab0be134cefcf95e748d56e82e66f9aeb415fd103072c948bbd91442",
+    "terminal_summary": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"node scripts/check-links.mjs\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0\", \"name\": \"links\", \"ports\": {\"E2E_PORT_API\": \"4383\", \"E2E_PORT_CLASSIC\": \"4380\", \"E2E_PORT_SERVER\": \"4382\", \"E2E_PORT_V2\": \"4381\"}, \"screenshots\": false, \"started\": \"2026-11-01T19:34:48+07:00\", \"starting_git_status\": \"?? apps/web/tools/.base0-r2-audit.mjs\\n?? apps/web/tools/.base0-r2-effects.mjs\\n\", \"viewport\": \"1280x720\"}",
+      "Checked 70 markdown files and 811 links/paths.",
+      "",
+      "\u2713 All links, image paths, and backticked repo paths exist on disk.",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "deno-imports",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/deno-imports.log",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "fbc7d756fa1119c47affae775716749720667d11c3bc80a0e7f408af34ac40fc",
+    "terminal_summary": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"node scripts/check-deno-imports.mjs\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0\", \"name\": \"deno-imports\", \"ports\": {\"E2E_PORT_API\": \"4383\", \"E2E_PORT_CLASSIC\": \"4380\", \"E2E_PORT_SERVER\": \"4382\", \"E2E_PORT_V2\": \"4381\"}, \"screenshots\": false, \"started\": \"2026-11-01T19:34:48+07:00\", \"starting_git_status\": \"?? apps/web/tools/.base0-r2-audit.mjs\\n?? apps/web/tools/.base0-r2-effects.mjs\\n\", \"viewport\": \"1280x720\"}",
+      "Deno import guard: 18 functions clean",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "e2e-1280x720",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/e2e-1280x720.log",
+    "command": "pnpm test:e2e --workers=2",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "bdd6fda8dd61c96c7b5f74bd60b3a17cbb1ed12b86230560283cb3cb1f2074fd",
+    "terminal_summary": [
+      "\u00b7[bathroom 1600x900] outer: 20.43, center: 50.56",
+      "\u00b7[bathroom 390x844] outer: 28.98, center: 62.29",
+      "\u00b7[basement 1600x900] outer: 24.86, center: 49.64",
+      "\u00b7[basement 390x844] outer: 29.23, center: 61.00",
+      "\u00b7[rooftops 1600x900] outer: 14.72, center: 41.73",
+      "\u00b7[rooftops 390x844] outer: 18.92, center: 53.55",
+      "\u00b7",
+      "  265 passed (2.3m)",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "check": "e2e-1600x900",
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/full/e2e-1600x900.log",
+    "command": "pnpm test:e2e --workers=2",
+    "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "exit": 0,
+    "sha256": "b317a39dc04b8ccbe033d03d414fcc661422b47f7bc542066521d421e7b932c6",
+    "terminal_summary": [
+      "\u00b7[bathroom 1600x900] outer: 25.46, center: 50.56",
+      "\u00b7[bathroom 390x844] outer: 25.45, center: 62.29",
+      "\u00b7[basement 1600x900] outer: 19.57, center: 49.64",
+      "\u00b7[basement 390x844] outer: 27.19, center: 61.00",
+      "\u00b7[rooftops 1600x900] outer: 14.96, center: 41.73",
+      "\u00b7[rooftops 390x844] outer: 16.21, center: 53.55",
+      "\u00b7",
+      "  265 passed (2.4m)",
+      "",
+      "EXIT_CODE=0"
+    ]
+  },
+  {
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/wrapper-result.json",
+    "sha256": "a966f5a9c91827b81b2c3cb782f16faf84c971f55a7f721faad75c905c0a2665",
+    "data": {
+      "expectedHead": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+      "exit": 0,
+      "finishedAt": "2026-11-01T20:07:52.448638+07:00",
+      "log": "checks/verify-pr-246.log"
+    }
+  },
+  {
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/public-config/flag-0/results.json",
+    "sha256": "d0c2ccbc3a8e808edb8ab947c37587dbb86126aa9c64cd2c18cc73cd54ff899b",
+    "data": [
+      {
+        "target": "http://localhost:4380",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "loadAndGuestMs": 1080,
+        "version": "classic",
+        "visibleCanvases": 1,
+        "headings": [
+          "Taskbar Hero",
+          "Mochi the cat",
+          "Today's Quest",
+          "Relic Shelf"
+        ],
+        "errors": [],
+        "blockedWrites": [],
+        "failure": null
+      },
+      {
+        "target": "http://localhost:4380",
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "loadAndGuestMs": 1235,
+        "version": "classic",
+        "visibleCanvases": 1,
+        "headings": [
+          "Taskbar Hero",
+          "Mochi the cat",
+          "Today's Quest",
+          "Relic Shelf"
+        ],
+        "errors": [],
+        "blockedWrites": [],
+        "failure": null
+      }
+    ]
+  },
+  {
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/public-config/flag-1/results.json",
+    "sha256": "783b857d5b1cc97de75cac107192c6fb77f7487345ba4ebbf439e2721657d9bf",
+    "data": [
+      {
+        "target": "http://localhost:4380",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "loadAndGuestMs": 1402,
+        "version": "v2",
+        "visibleCanvases": 1,
+        "headings": [
+          "Taskbar Hero",
+          "Mochi",
+          "Core Stats",
+          "Next Goal",
+          "Recent loot",
+          "Latest Drops"
+        ],
+        "errors": [],
+        "blockedWrites": [],
+        "failure": null
+      },
+      {
+        "target": "http://localhost:4380",
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "loadAndGuestMs": 1433,
+        "version": "v2",
+        "visibleCanvases": 1,
+        "headings": [
+          "Taskbar Hero",
+          "Mochi",
+          "Core Stats",
+          "Next Goal",
+          "Recent loot",
+          "Latest Drops"
+        ],
+        "errors": [],
+        "blockedWrites": [],
+        "failure": null
+      }
+    ]
+  },
+  {
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/publication-confirmed.json",
+    "sha256": "e427bfa572e1cd2a8cff6f583daf062e254b836bc29850cd055bf9edeeb59749",
+    "data": {
+      "confirmedAt": "2026-11-01T22:00:20+07:00",
+      "commit": "20881542d3d2a1e7625c8e1b53d27a315812d97c",
+      "candidate": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+      "manifestFiles": 245,
+      "filesMatchPublished": true,
+      "remoteLedgerHead": "20881542d3d2a1e7625c8e1b53d27a315812d97c",
+      "method": "git ls-remote and git show commit:path byte comparison",
+      "gradeClaim": false
+    }
+  },
+  {
+    "source": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/review/bundle-comparison.json",
+    "sha256": "5b7bb9f371a7a21e7bfee0ac2a0eebd853a4d11eb9554d2c05fdd91e2b7c2526",
+    "data": {
+      "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+      "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+      "mainEvidence": "Same-day unchanged-main measurements in BASE0-COORDINATOR/review/bundle-comparison.json; source unchanged. Candidate rebuilt freshly.",
+      "budgets": [
+        {
+          "mode": "classic",
+          "main_gzip_bytes": 663477,
+          "candidate_gzip_bytes": 664434,
+          "growth_percent": 0.14424011683901627
+        },
+        {
+          "mode": "v2",
+          "main_gzip_bytes": 678033,
+          "candidate_gzip_bytes": 678986,
+          "growth_percent": 0.14055363087047384
+        }
+      ]
+    }
+  }
+]
