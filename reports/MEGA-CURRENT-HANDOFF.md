@@ -24,3 +24,9 @@ Full brief: [mega-mission.md](mega-mission.md); task cards: [mega-plan.md](mega-
 ## Recovery essentials
 
 Keep original checkout and unrelated dirty worktrees untouched. Correct author and every commit suffix ` [skip ci]`; no Actions, direct-main push, copied reference art or unsafe live writes. Backend-dependent features default-OFF. Preserve NOT VERIFIED. Before retrying after disconnect, inspect current files/HEADs/processes/PR state; never duplicate external actions. Full logs stay on disk.
+
+## Latest checkpoint 2026-11-01T16:42:11+07:00
+
+- User supplied fresh reference paths. The valid research archive was recovered from its -2.zip duplicate; both archives pass CRC and all36 indexed video hashes match. Read [source map](reference-usage-2026-11-01.md) before future UI/skills/art cards.
+- Same-day clean main build/bundle baseline runs in mega-main-reference-r2 at1fb25ed; runner session85003. Evidence: reports/baseline/2026-11-01-resume-main-1fb25ed. Preserve actual main link failures.
+- UPDATE: CXU4 native agent stopped with429 Too Many Requests. Inspect preserved WIP and processes before a spaced restart. HUD and Map workers remain active.
