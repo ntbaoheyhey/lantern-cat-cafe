@@ -196,6 +196,13 @@
   flex-shrink: 0;
 }
 
+/* The power warning adds a real text row to the shared HUD layout. */
+.shell-hud.v2-topbar:has(.hud-power-hint) {
+  height: auto;
+  min-height: calc(var(--hud-h, 56px) + var(--sp-5, 24px));
+  max-height: none;
+}
+
 .hud-center {
   display: flex;
   align-items: center;
