@@ -1,6 +1,7 @@
 # Taskbar Hero mission progress — living draft
 
 STATUS: IN-PROGRESS
+Latest user instruction2026-11-02: no subagents or helpers. The coordinator will work directly, including checkpoint snapshots; the existing30minute same-chat automation was updated accordingly. Prior independent BASE0 scores remain valid; no future independent-grade or merge requirement is silently waived. No worker/test pipeline is currently active.
 
 ## Current checkpoint — 2026-11-02T01:02:46+07:00
 BASE0 remains on280ff4b with independent scores97.64285714285714 and98; every floor passes and no third grader is required. Both grades are published. Main1fb25ed is unchanged, PR246 remains draft, and the last provider recheck still shows the deployment quota hold. No mission PR has merged.

@@ -1,4 +1,5 @@
 # Runtime — ACTIVE mission
+Latest user override2026-11-02: no subagents or helpers. No new worker or auxiliary orchestration process may be launched. The same-chat30minute heartbeat now requires direct file/Git snapshots and explicitly forbids checkpoint.py. Existing completed grader evidence is preserved; self-review is not independent grading.
 Updated 2026-11-02T01:02:46+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
 - No nativeworker or coordinatorpipeline active. CXU4 runner43392finished;temporarycheckoutclean;4440–4454released. Original CXU4/CXU5 historical dirty evidence preserved.
 - BASE0 independentA97.64285714285714/B98 pass everyfloor,zeroautofails,no thirdneeded. PublishedA72c0b0b,Bbeb4a99,receiptb500246. PR246bodyupdated,staysdraft because Vercelquota statusesfailureatlastread-onlycheck2026-11-01T23:29UTC+7. Exactresetunknown; no deploymentattempt/bypass.

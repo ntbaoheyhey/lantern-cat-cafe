@@ -10,6 +10,7 @@ Historical BASE0 round1 failed on5db4949 and C was interrupted/ungraded. Repaire
 | BASE0 | ai/codex-mega-deno0 | #246 | 1 | A22.9167/B25 | A0/B20 | A10/B10 | A14/B14 | A6/B8 | A5/B5 | A10/B10 | A5/B5 | A0(final)/B97 | cards/BASE0-GA-R1/grade.md | cards/BASE0-GB-R1/grade.md | INTERRUPTED; no score | A7 | FAIL; superseded candidate | NONE | NOT RUN | baseline only |
 
 Scores will be entered only from independently observed, cited evidence. NOT VERIFIED is not PASS.
+Latest user instruction2026-11-02 forbids further subagents/helpers. Existing BASE0 grades remain valid. Other items remain ungraded until their independent-review requirement is actually satisfied or explicitly changed; coordinator self-review will not be labeled independent.
 
 | BASE0 | ai/codex-mega-deno0 | #246 | 2 (280ff4b) | A25/B25 | A20/B20 | A9.642857/B10 | A13/B13 | A10/B10 | A5/B5 | A10/B10 | A5/B5 | A97.64285714285714/B98 | cards/BASE0-GA-R2/grade.md | cards/BASE0-GB-R2-RECOVERY/grade.md | NOT REQUIRED; difference0.357143 | NONE | SCORE PASS; DEPLOYMENT HOLD | NONE | NOT RUN | baseline only |
 
