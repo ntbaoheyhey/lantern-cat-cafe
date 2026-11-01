@@ -1,0 +1,65 @@
+a9b804cec74c866b0b06ca69142d10db3b642a75
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 4 failed) 22ms
+   × rejects unsigned oversized bytes with Content-Length undefined before auth or game work 14ms
+   × rejects unsigned oversized bytes with Content-Length 2 before auth or game work 1ms
+   × rejects unsigned oversized bytes with Content-Length 8193 before auth or game work 1ms
+   × does not wait for an oversized producer's cancellation promise 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length undefined before auth or game work
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length 2 before auth or game work
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length 8193 before auth or game work
+AssertionError: expected 401 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 401
+
+ ❯ src/v2-body-limits.test.ts:44:27
+     42|   const headers: HeadersInit = contentLength === undefined ? {} : { "C…
+     43|   const response = await r.handle(post(objectOfSize(8193), headers));
+     44|   expect(response.status).toBe(400);
+       |                           ^
+     45|   expect(await response.json()).toEqual({ error: "invalid_request" });
+     46|   expect(response.headers.get("Access-Control-Allow-Origin")).toBe("ht…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/v2-body-limits.test.ts > does not wait for an oversized producer's cancellation promise
+AssertionError: expected undefined to be 400 // Object.is equality
+
+- Expected:
+400
+
++ Received:
+undefined
+
+ ❯ src/v2-body-limits.test.ts:162:28
+    160|   void r.handle(post(stream)).then(value => { response = value; });
+    161|   await vi.advanceTimersByTimeAsync(0);
+    162|   expect(response?.status).toBe(400);
+       |                            ^
+    163|   expect(cancel).toHaveBeenCalledOnce();
+    164|   expect(r.game).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 23 passed (27)
+   Start at  02:12:58
+   Duration  1.01s (import 70%, transform 15%, tests 14%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1

@@ -1,4 +1,5 @@
 STATUS: LOCAL WORKING-TREE CHECKS PASSED — not a full gate or grade.
+Current candidate is a9b804cec74c866b0b06ca69142d10db3b642a75 in a fresh verifier worktree. Root tests/type/lint/default/classic/v2builds,Deno generation/drift/imports,links and bundle secret scans passed. Six deliberate mutants were executed afresh on this head and detected, with two27-test green controls; scratch restored clean. Full browser1280 passed274/274, exit0; full1600 is running. Remaining gates/review/release are not certified. Earlier eb3786f results below are historical.
 
 Coordinator worktree: /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero; branch ai/codex-cxn3-fix; parent280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 Frozen install passed. Baseline24regressions:8failed/16passed. First fixed run:24passed. Expanded suite:27passed. Typecheck-r1 caught a test HeadersInit inference error; explicit typing fixed it, typecheck-r2 passed. Complete Supabase suite:575passed/33files. Initial failures are preserved.

@@ -1,0 +1,61 @@
+a9b804cec74c866b0b06ca69142d10db3b642a75
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 2 failed) 23ms
+   × bounds total body-read time to ten seconds even when the producer never finishes 2ms
+   × does not restart the total deadline when a slow producer sends another chunk 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > bounds total body-read time to ten seconds even when the producer never finishes
+AssertionError: expected undefined to be 400 // Object.is equality
+
+- Expected:
+400
+
++ Received:
+undefined
+
+ ❯ src/v2-body-limits.test.ts:147:28
+    145|   expect(response).toBeUndefined();
+    146|   await vi.advanceTimersByTimeAsync(1);
+    147|   expect(response?.status).toBe(400);
+       |                            ^
+    148|   expect(cancel).toHaveBeenCalledOnce();
+    149|   expect(r.authenticate).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/v2-body-limits.test.ts > does not restart the total deadline when a slow producer sends another chunk
+AssertionError: expected undefined to be 400 // Object.is equality
+
+- Expected:
+400
+
++ Received:
+undefined
+
+ ❯ src/v2-body-limits.test.ts:184:28
+    182|   void r.handle(post(stream)).then(value => { response = value; });
+    183|   await vi.advanceTimersByTimeAsync(10_000);
+    184|   expect(response?.status).toBe(400);
+       |                            ^
+    185|   expect(cancel).toHaveBeenCalledOnce();
+    186|   expect(r.game).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 25 passed (27)
+   Start at  02:20:34
+   Duration  1.02s (import 70%, transform 16%, tests 13%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1
