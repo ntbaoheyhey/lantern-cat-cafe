@@ -39,3 +39,5 @@ Mutation scratch mega-base0-resume-mutants may contain an interrupted deliberate
 4. User's latest preferences: limit subagent calls to necessary work; never spawn one solely to write handoff. Coordinator writes mission checkpoints. Keep model/effort mandate.
 
 Full mission and queue remain in mega-mission.md, mega-plan.md and mega-ledger.md. All previous safety, author/[skip ci], original-content, default-OFF and no-Actions constraints continue. No direct main push or unsafe live write occurred.
+
+Complete consolidated state/rules/original-spec file: [MEGA-STATE-AND-RULES-2026-11-01.md](MEGA-STATE-AND-RULES-2026-11-01.md). CXU4 and mutation workers acknowledged pause; latest mutation reviewed index has20 verified kills,9 controls, viewport interrupted, tracked source clean. CXU5 cessation still needs confirmation; coordinator sent explicit stop notices and re-terminated owned tests.
