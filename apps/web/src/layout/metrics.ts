@@ -32,6 +32,17 @@ export function stageZoom(width: number, stageH: number): number {
   return Math.max(MIN_ZOOM, Math.min(zoom, Math.floor(width / MIN_LOGICAL_WIDTH)));
 }
 
+/** Stage dimensions for the 3-column redesign desktop dashboard. */
+export function desktopStageMetrics(width: number, height: number): { zoom: number; width: number; logicalWidth: number } {
+  const centerColW = Math.max(320, width - 92 - 32 - 280 - 280 - 32);
+  const centerAvailH = Math.max(280, height - 56 - 32 - 140 - 12);
+  const maxZoomW = Math.floor(centerColW / 160);
+  const maxZoomH = Math.floor(centerAvailH / 96);
+  const zoom = Math.max(2, Math.min(maxZoomW, maxZoomH));
+  const logicalWidth = Math.max(160, Math.floor(centerColW / zoom));
+  return { zoom, width: logicalWidth * zoom, logicalWidth };
+}
+
 export interface Viewport {
   width: number;
   height: number;

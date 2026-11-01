@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '../support/test';
 import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
-import { stageHeight, stageZoom } from '../../src/layout/metrics';
+import { desktopStageMetrics, stageHeight, stageZoom } from '../../src/layout/metrics';
 import fs from 'node:fs';
 import path from 'node:path';
 const writeScreenshots = process.env.SCREENSHOTS === '1';
@@ -46,8 +46,11 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
     }
     const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
     await expect(canvas).toHaveCount(1);
-    const stageW = width! <= 600 ? width! : (width! >= 1024 && height! >= 640 ? Math.floor(width! - Math.min(460, Math.max(380, width! * 0.32))) : Math.floor(width! * 0.55));
-    const logicalWidth = Math.max(160, Math.floor(stageW / stageZoom(stageW, stageHeight(width!, height!))));
+    const isDesktop = width! > 600;
+    const stageW = width! <= 600 ? width! : Math.floor(width! * 0.55);
+    const logicalWidth = isDesktop
+      ? desktopStageMetrics(width!, height!).logicalWidth
+      : Math.max(160, Math.floor(stageW / stageZoom(stageW, stageHeight(width!, height!))));
     await expect.poll(() => canvas.evaluateAll((elements, expectedWidth) => {
       if (elements.length !== 1) return false;
       const c = elements[0] as HTMLCanvasElement;
@@ -56,7 +59,7 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
       if (!pixels) return false;
       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
       return false;
-    }, logicalWidth), { message: 'stage actors redraw after resizing' }).toBe(true);
+    }, logicalWidth), { message: `stage actors redraw at ${width}×${height} (expected logicalWidth=${logicalWidth})` }).toBe(true);
     await page.getByRole('tab', { name: 'Forge', exact: true }).click();
     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);

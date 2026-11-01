@@ -33,8 +33,13 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
   await page.clock.install();
   await page.clock.pauseAt(await page.evaluate(() => Date.now()));
   await page.goto('/');
-  await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
-  await expect(page.locator('header [data-sync-status="live"]')).toBeVisible();
+  // In AGR1 redesign, HUD/rail is hidden on onboarding class-picker (fresh session) until class is chosen.
+  if (kind === 'fresh') {
+    await expect(page.getByTestId('class-picker')).toBeVisible();
+  } else {
+    await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
+    await expect(page.locator('header [data-sync-status="live"]')).toBeVisible();
+  }
   const state = await inspect(request, session);
   expect(state.requests.some(r => r.name === 'v2-state' && r.status === 200)).toBe(true);
   expect(await page.evaluate(() => localStorage.getItem('taskbar-hero:v2-demo:1'))).toBeNull();
