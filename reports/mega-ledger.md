@@ -9,10 +9,10 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
-| 5 | CXL1 | main | ai/codex-cxl1 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
-| 6 | CXU4 | main | ai/codex-cxu4 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
-| 8 | CXU5 | main | ai/codex-cxu5 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 8 | CXU5 | main | ai/codex-cxu5 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 9 | CXC2 | main | ai/codex-cxc2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 10 | CXP2 | main | ai/codex-cxp2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 11 | CXLU1 | main | ai/codex-cxlu1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -52,3 +52,5 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 - ART1 targeted suite re-run by coordinator: 36/36 pass; branch 4df594a pushed and draft PR #247 opened. Independent/full gates remain pending.
 
 - Independent BASE0 preflight completed with five findings: classic1600 expectation and gated clipping are repaired; action-text/XP readability are assigned to an isolated HUD repair builder, and actual effects navigation verification is assigned to coordinator. No score was issued; all findings remain tracked until reverified.
+
+- CXP1 64cf350 and CXL1 178f379 pushed after builder handoff; CXL1 draft #248. CXU4 and CXU5 independent UI builders started in isolated worktrees. BASE0 HUD repair runs separately; coordinator owns effects navigation verification. No formal grade or merge.
