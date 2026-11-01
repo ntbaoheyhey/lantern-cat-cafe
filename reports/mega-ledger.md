@@ -5,7 +5,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 | item | branch | PR URL | state | rounds used | last verify result | notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PARTIAL | 2 | Burst 40/40; continuous 80/80; core checks pass twice; full e2e fails known excluded mobile HUD cases | Canvas race fixed; isolated resource error cause NOT VERIFIED; reports/fxrb.md; full-suite gate not falsely called green |
-| CXN3 | ai/codex-n3-cutover-truth | — | IN-PROGRESS | 1 | Existing implementation inspected; independent verification starting | Separate checkout preserves two unfinished documentation edits in the older worktree |
+| CXN3 | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 2 | Core checks, classifier and PGlite pass; live 18 pass/9 fail; verify-pr running | Deno import guard 80 failures identical on main; no live or auth fixes attempted |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | Not run in this mission | Existing draft; inspect and complete missing verification |
 | CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
 | CXR2 | ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Follow CXR1 findings; same AGR gate |
