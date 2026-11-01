@@ -1,3 +1,10 @@
-# Runtime — PAUSED by user
+# Runtime — ACTIVE
 
-The user is sleeping the machine. Goal and heartbeat taskbar-hero-checkpoint-10-ph-t are PAUSED. Do not resume automatically. See MEGA-CURRENT-HANDOFF.md and MEGA-STATE-AND-RULES-2026-11-01.md. CXU4 and mutation worker acknowledged pause; CXU5 native worker remains active/unconfirmed. Native interrupt is not exposed; app-server messaging rejects this child type and Codex computer control was denied. User Stop control is required if CXU5 remains active. Do not claim all work stopped. Supplemental backup170537 was stable during capture, not proof of cessation.
+User explicitly resumed; priorworkers stopped. Heartbeat30minutesACTIVE.
+
+| Card | Native worker | Product worktree | Ports | OS PID |
+| --- | --- | --- | --- | --- |
+| BASE0-FINISH | /root/base0_finish_r3 | mega-deno0/taskbar-hero + isolated verifier |4380–4383| Native runtime; spawned processes in cardruntime.json |
+| CXQ1-DEMO-PATH | /root/demo_path_gate | ledgercard subtree only; optional isolated inspection tree |4390–4393| Native runtime; spawned processes in cardruntime.json |
+
+2activeworkers. No new429observed during this resume; ifone appears cap2 andbackoff2/4/8minutes. Current handoff and each reports/cards/<card>/runtime.json are authoritative.

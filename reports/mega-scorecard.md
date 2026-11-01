@@ -1,6 +1,6 @@
 # Mega scorecard — living draft
 
-**PAUSED again at the user’s request to sleep the machine, 2026-11-01.** Resume only after explicit instruction. Read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**ACTIVE: explicitly resumed2026-11-01.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 No item has been graded in this mission yet. Previous PASS claims are not imported.
 

@@ -1,6 +1,6 @@
 # Taskbar Hero — complete state, remaining work and operating rules
 
-**STATUS: PAUSED BY USER. Living draft, 2026-11-01.**
+**HISTORICAL PAUSE SNAPSHOT — user explicitly RESUMED2026-11-01.** Current authority: [resume](mega-resume-2026-11-01.md) and [current handoff](MEGA-CURRENT-HANDOFF.md). The historical pause/worker/shutdown text below no longer controls. CXU5 shutdown is now confirmed; latest backup is in current handoff. Sections1–6 of the resume supersede conflicting scheduling/context instructions; section9 safety/quality rules remain.
 
 This is the coordinator's consolidated handoff, written personally at the user's request before sleeping the machine. It explains what was completed, what remains incomplete, what to do next, and the currently applicable mission rules. It includes the original complete mission and task-card plan as appendices, so a future session need not reconstruct them from chat history.
 

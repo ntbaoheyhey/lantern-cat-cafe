@@ -1,12 +1,12 @@
 # Mega ledger — living draft
 
-**PAUSED again at the user’s request to sleep the machine, 2026-11-01.** Resume only after explicit instruction. Read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**ACTIVE: explicitly resumed2026-11-01.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | Current exact-head full gate pending HUD integration | Added baseline prerequisite; no grade or merge |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | e68eee0 historical264/264both; successor required for SQL fixture-clock finding | Added baseline prerequisite; no grade or merge |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -14,7 +14,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
-| 8 | CXU5 | main | ai/codex-cxu5 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 8 | CXU5 | main | ai/codex-cxu5 | https://github.com/ntbaoheyhey/taskbar-hero/pull/249 | IN-PROGRESS | 0 | a49906e/c5b846e;257pass/3fail eachsize | Worker stopped; evidence dirty, backed up |
 | 9 | CXC2 | main | ai/codex-cxc2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 10 | CXP2 | main | ai/codex-cxp2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 11 | CXLU1 | main | ai/codex-cxlu1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -32,6 +32,9 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 23 | CXS1 | main | ai/codex-s1-security-docs | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+
+| 26 | CXN3-FIX (P0) | CXN3/BASE0 | ai/codex-cxn3-fix | — | TODO | 0 | NOT VERIFIED | Ten live findings; reports/cards/CXN3-FIX/brief.md |
+| 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
 
 ## Corrections and scheduling decisions
 
@@ -58,3 +61,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 - CXP1 64cf350 and CXL1 178f379 pushed after builder handoff; CXL1 draft #248. CXU4 and CXU5 independent UI builders started in isolated worktrees. BASE0 HUD repair runs separately; coordinator owns effects navigation verification. No formal grade or merge.
 
 - User explicitly resumed after reliability setup. Three isolated native subagents (Astra Ultra) own BASE0 HUD, CXU4 and CXU5. Current source checks and two formal grades remain pending; no merge or release is authorized merely by resumption. See MEGA-CURRENT-HANDOFF.md.
+
+- Resume2026-11-01T17:55:39+07:00: BASE0 first; prepared-item merge order FXRB, CXP1, CXL1, ART1, CXN3, CXU5, CXU4, with every full gate and fresh grades. After that P0 core, P1 judging/QA/security/submission, P2 optional UI/game rules, P3 expansions. Complete scope retained. See priority plan; dependency ambiguities do not block BASE0 verification.
+
+- User decision2026-11-01T17:57:12+07:00: initialP1 covers all mergedcore; QA/security/submission evidence is extended afterP2/P3. OldoptionalUI/allitems dependency cycle is removed for initialP1, implementation dependencies retained. BASE0-FINISH andCXQ1-DEMO-PATH native workers active; see runtime.
