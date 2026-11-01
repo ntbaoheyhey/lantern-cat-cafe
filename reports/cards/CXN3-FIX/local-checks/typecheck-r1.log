@@ -1,0 +1,12 @@
+
+> @taskbar-hero/supabase-tests@0.0.0 typecheck /Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/supabase/tests
+> tsc --noEmit
+
+src/v2-body-limits.test.ts(43,60): error TS2345: Argument of type '{ "Content-Length"?: undefined; } | { "Content-Length": string; }' is not assignable to parameter of type 'HeadersInit | undefined'.
+  Type '{ "Content-Length"?: undefined; }' is not assignable to type 'HeadersInit | undefined'.
+    Type '{ "Content-Length"?: undefined; }' is not assignable to type 'Record<string, string>'.
+      Property '"Content-Length"' is incompatible with index signature.
+        Type 'undefined' is not assignable to type 'string'.
+/Users/bao/.codex/worktrees/mega-cxn3-fix/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

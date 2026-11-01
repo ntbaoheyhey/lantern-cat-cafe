@@ -1,4 +1,5 @@
 # Runtime — ACTIVE mission
+Current direct work2026-11-02T01:36:05+07:00: CXN3-FIX eb3786f root pnpm test passed(exit0); session37513finished. No active test process or browser port. Scratch mega-cxn3-fix-mutants is clean/idle and not installed yet. Direct mutations and remaining exact-head gates follow. No helper/orchestration runner/subagent is used. This entry supersedes older snapshots below.
 Latest user override2026-11-02: no subagents or helpers. No new worker or auxiliary orchestration process may be launched. The same-chat30minute heartbeat now requires direct file/Git snapshots and explicitly forbids checkpoint.py. Existing completed grader evidence is preserved; self-review is not independent grading.
 Updated 2026-11-02T01:02:46+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
 - No nativeworker or coordinatorpipeline active. CXU4 runner43392finished;temporarycheckoutclean;4440–4454released. Original CXU4/CXU5 historical dirty evidence preserved.
