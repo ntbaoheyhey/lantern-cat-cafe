@@ -15,6 +15,7 @@ import { BossKeyHint } from './BossKeyHint';
 import { BossPortrait } from './BossPortrait';
 import { ActionNotice } from '../notice/ActionNotice';
 import './boss.css';
+import { recommendedBossPower } from './mapDetails';
 
 export interface BossGatePanelProps {
   state: ServerStateV2;
@@ -27,6 +28,7 @@ export interface BossGatePanelProps {
   onFight: (chapter: number) => void;
   onSelectChapter: (chapter: number) => void;
   children?: ReactNode;
+  mapView?: boolean;
 }
 
 function formatNotReached(
@@ -127,6 +129,7 @@ export function BossGatePanel({
   onFight,
   onSelectChapter,
   children,
+  mapView = false,
 }: BossGatePanelProps) {
   const [internalNow, setInternalNow] = useState(() => Math.floor(Date.now() / 1000));
   useEffect(() => {
@@ -178,12 +181,8 @@ export function BossGatePanel({
       )
     : null;
   const playerPower = playerStats ? Math.round(v2.powerRating(playerStats)) : 0;
-  const neededPower =
-    status.kind === 'gated'
-      ? status.neededPower
-      : state.progress.chapter === chapter
-        ? (state.progress.neededPower ?? 0)
-        : 0;
+  const recommendation = playerStats ? recommendedBossPower(playerStats, chapter) : null;
+  const neededPower = recommendation ?? 0;
   const maxScale = Math.max(playerPower, neededPower, 1);
   const playerPct = Math.min(100, Math.round((playerPower / maxScale) * 100));
   const bossPct =
@@ -195,7 +194,7 @@ export function BossGatePanel({
 
   return (
     <section
-      className="boss-gate-panel"
+      className={`boss-gate-panel${mapView ? ' boss-gate-panel--map' : ''}`}
       data-status={status.kind}
       style={themeStyle}
       aria-label="Boss Gate"
@@ -229,6 +228,11 @@ export function BossGatePanel({
               <div className="boss-power-header">
                 <span className="boss-power-label">Your power vs boss</span>
               </div>
+              <div className="boss-map-power-values">
+                <span>Recommended power <strong>{recommendation === null ? 'Unavailable' : formatAmount(recommendation)}</strong></span>
+                <span>Your power <strong>{formatAmount(playerPower)}</strong></span>
+              </div>
+              <span className="boss-map-advice">Estimate for this build; boss attacks can change the outcome.</span>
               <div className="boss-power-bars" aria-hidden="true">
                 <div className="boss-bar-row">
                   <span className="boss-bar-name">You</span>
@@ -247,6 +251,9 @@ export function BossGatePanel({
           </div>
         </div>
 
+        <p className="boss-map-attempts"><strong>Daily attempts: Key-limited</strong><br />
+          {v2.V2_CONFIG.idle.dailyKeys} daily key from your first claim · {v2.V2_CONFIG.boss.keyCost} key per win. Losses keep the key and start a catnap.
+        </p>
         <nav className="boss-gate-chapters" aria-label="Chapter selection">
           {chapters.map((ch) => (
             <button
@@ -261,7 +268,7 @@ export function BossGatePanel({
           ))}
         </nav>
 
-        {status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
+        {!mapView && status.kind === 'no_key' && <BossKeyHint keys={state.currencies?.keys ?? 0} />}
 
         {children}
       </div>
