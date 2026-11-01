@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T22:00:20+07:00. User explicitly resumed after native compaction/pause. Goal active; checkpoint heartbeat reactivated at30minutes. Coordinator writes checkpoints personally; no handoff-only agent.
+Updated 2026-11-01T22:07:43+07:00. User explicitly resumed after native compaction/pause. Goal active; checkpoint heartbeat reactivated at30minutes. Coordinator writes checkpoints personally; no handoff-only agent.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; product PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0; ledger publication 20881542d3d2a1e7625c8e1b53d27a315812d97c. No mission merge, release, live write, wallet transaction or submission.
 Source worktree /Users/bao/.codex/worktrees/mega-deno0/taskbar-hero retains historical dirty reports/scorecard/base0/logs/results.jsonl; preserve it and untracked evidence.
 Current verifier /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero. All prior verifier processes45517/47426/57737/40484/41436 absent at resume;4420–4444 have no listeners. Do not rerun completed pipelines.
@@ -7,7 +7,7 @@ BASE0 repaired Game/SceneManager readiness destruction race and deterministic br
 Exact-head checks completed: fullbrowser265/265 per size, expanded12spec repeats700/700 per size, rootunits/typecheck/lint/default/classic/v2/Deno/link/bundle pass, audits18guest+18localsigned, effects10per size, keyboard7per size, contrast/reference/G5 and PRwrapperexit0.25mutantkills/16controls/41runs, zero survivors, scratchclean.
 Evidence publication confirmed at2088154:245manifest files byte-identical to published commit. G7 row now corrected;15unique deliveredPNG<200KiB. Artifact-contract mutants browserexit0+contractexit1 are not browser failures.
 Original5db4949 grades A0(A7/raw72.9167),B97 remain historical. C interrupted by provider429 and has no score. New280ff4b has no independent grade yet. Never label coordinator review independent or erase original failures.
-Two fresh independent assignments PREPARED: BASE0-GA-R2 (ports4420–4424; mega-base0-grade-a-280ff4b), BASE0-GB-R2 (4430–4434; mega-base0-grade-b-280ff4b). No workers launched at this checkpoint; each runtime.json will hold actual state. Candidate immutable during grading.
+Two fresh independent graders RUNNING: /root/base0_grade_a_r2 (ports4420–4424; mega-base0-grade-a-280ff4b; runnerPID5258), /root/base0_grade_b_r2 (4430–4434; mega-base0-grade-b-280ff4b; Read brief and worker contract; preparing isolated worktree). Each card runtime.json owns live state; do not relaunch either. Candidate immutable during grading.
 Retain full score floors and G1–G7. Coordinator fallback permits execution but does not remove the explicit independent-score gate. Only valid grades permit serial merge; no merge scheduled.
 Prepared queue: BASE0 -> FXRB#243 -> CXP1#240 -> CXL1#248 -> ART1#247 -> CXN3#244 -> CXU5#249 -> CXU4(commit/PRpending). Existing WIP preserved; fullP0–P3 scope retained.
 User decisions: initialP1 verifies mergedcore, extends afterP2/P3. Phasedlivejudgepath untilCXU3+CXC2bothmerge; then fullnine mandatory. Priorbaseline31s is not postmerge proof.
@@ -17,6 +17,6 @@ Rules: few agents(max2;1for30min afterprovider429), AstraUltra/priority as reque
 Compact helper /Users/bao/.codex/skills/context-compact/SKILL.md; config64000/total. Historical native compactions observed; effective threshold unverified. Do not bypass denied CodexUI control or edittranscripts. Do not rehydrate180KB state.
 Backup /Users/bao/.codex/handoffs/taskbar-hero/reliability/repair-280ff4b.bundle requires pushedparent5db4949. Checkpoint.py saves working state.
 Next3actions:
-1. Publish resumed handoff/report/gradebriefs; update PR246 body to current report, preserving draft and pending scores.
-2. Launch two mandatory fresh graders with isolated ports; inspect concise results, handle actual failures personally. Prepare FXRB only while grades wait, without changing BASE0.
+1. Inspect concise grader runtime/results; PR246 body already links current report and correctly keeps pending scores/draft. Do not repeat completed BASE0 verification.
+2. Prepare FXRB integration/verification plan while A/B run. Do not change BASE0 or merge FXRB until BASE0 passes all gates and postmerge checks.
 3. Evaluate actual grades/G1–G7/currentrefs; only then merge246 and perform fresh main/liveproof before any latermerge.
