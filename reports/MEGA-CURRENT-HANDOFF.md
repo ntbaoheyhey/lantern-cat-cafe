@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T22:31:47+07:00. User resumed; goal active. Coordinator owns checkpoints; no handoff-only agents.
+Updated 2026-11-01T22:32:35+07:00. Goal active; coordinator owns checkpoints.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; product PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0; ledger publication 20881542d3d2a1e7625c8e1b53d27a315812d97c. No mission merge, release, live write, wallet transaction or submission.
 Source worktree /Users/bao/.codex/worktrees/mega-deno0/taskbar-hero retains historical dirty reports/scorecard/base0/logs/results.jsonl; preserve it and untracked evidence.
 Current verifier /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero. All prior verifier processes45517/47426/57737/40484/41436 absent at resume;4420–4444 have no listeners. Do not rerun completed pipelines.
@@ -7,7 +7,7 @@ BASE0 repaired Game/SceneManager readiness destruction race and deterministic br
 Exact-head checks completed: fullbrowser265/265 per size, expanded12spec repeats700/700 per size, rootunits/typecheck/lint/default/classic/v2/Deno/link/bundle pass, audits18guest+18localsigned, effects10per size, keyboard7per size, contrast/reference/G5 and PRwrapperexit0.25mutantkills/16controls/41runs, zero survivors, scratchclean.
 Publication reconciliation:244raw/evidence manifest files match2088154; REPORT.md was revised and published at6e2376e. Original245-file receipt is historical, not current-byte proof. G7 wording corrected; see BASE0-VERIFY-R2/publication-reconciliation.json.15unique deliveredPNG<200KiB. Artifact-contract mutants browserexit0+contractexit1 are not browser failures.
 Original5db4949 grades A0(A7/raw72.9167),B97 remain historical. C interrupted by provider429 and has no score. New280ff4b has no independent grade yet. Never label coordinator review independent or erase original failures.
-Two fresh independent graders RUNNING: /root/base0_grade_a_r2 (ports4420–4424; mega-base0-grade-a-280ff4b; runnerPID5258), /root/base0_grade_b_r2 (4430–4434; mega-base0-grade-b-280ff4b; Read brief and worker contract; preparing isolated worktree). Each card runtime.json owns live state; do not relaunch either. Candidate immutable during grading.
+Independent A /root/base0_grade_a_r2 RUNNING, runnerPID5258, worktree mega-base0-grade-a-280ff4b, ports4420–4424; both700-case repeats passed, audits running. B /root/base0_grade_b_r2 ERRORED(provider429), no score; backgroundPIDs7879/12708/14120 observed alive on4430–4434. Card runtimes plus B/provider-interruption.json are authoritative; no duplicate launch.
 External deployment hold: both candidate Vercel statuses FAILURE, "Deployment rate limited — retry in24hours" recorded19:53:20UTC+7; exact reset unverified. PR stays draft; no cap bypass/repeated deploys. See cards/BASE0-MERGE-GATE/STATUS.md.
 Retain full score floors and G1–G7. Coordinator fallback permits execution but does not remove the explicit independent-score gate. Only valid grades permit serial merge; no merge scheduled.
 Coordinator FXRB focused preflight PASS: temporary detached7023a2d (BASE0280ff4b+FXRBb5fd48e),24units and120resize repeats passed; worktree mega-fxrb-preflight-280ff4b clean; PID15776 stopped,4440–4444 free. Card FXRB-PREFLIGHT-R2; no product branch moved. Not a full gate/grade/current-main proof.
@@ -19,6 +19,7 @@ Rules: few agents(max2;1for30min afterprovider429), AstraUltra/priority as reque
 Compact helper /Users/bao/.codex/skills/context-compact/SKILL.md; config64000/total. Historical native compactions observed; effective threshold unverified. Do not bypass denied CodexUI control or edittranscripts. Do not rehydrate180KB state.
 Backup /Users/bao/.codex/handoffs/taskbar-hero/reliability/repair-280ff4b.bundle requires pushedparent5db4949. Checkpoint.py saves working state.
 Next3actions:
-1. Inspect concise grader runtime/results; PR246 body already links current report and correctly keeps pending scores/draft. Do not repeat completed BASE0 verification.
-2. Prepare FXRB integration/verification plan while A/B run. Do not change BASE0 or merge FXRB until BASE0 passes all gates and postmerge checks.
+1. Let A finish independently; observe existing B pipelines without duplicating them. B model errored429; cap1worker until23:02:35UTC+7, same-model2/4/8backoff. Recover B only when capacity/rate-limit rules permit.
+2. FXRB temporary integration7023a2d has24unit/120resize preliminaryPASS and released ports. Actual-main fullgates/grades remain pending; do not merge or change BASE0 while A grades.
 3. Evaluate actual grades/G1–G7/currentrefs AND deployment capacity; only then merge246 and perform prepared BASE0-POSTMERGE checks before any latermerge.
+Provider429 2026-11-01T22:32:35+07:00: B nativeagent errored before grading. Its existing local pipelines may continue; inspect provider-interruption.json/runtime and PIDs, never duplicate. Max1worker until2026-11-01T23:02:35+07:00; A continues. No B score. Same-model2/4/8min backoff; earliest retry alone does not override active-worker cap.

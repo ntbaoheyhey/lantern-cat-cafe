@@ -2,7 +2,7 @@
 
 **ACTIVE: explicitly resumed2026-11-01.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
-Historical BASE0 round1 failed on5db4949; C was interrupted and never scored. Repaired280ff4b is coordinator-verified; fresh round2 A/B graders running. No current independent PASS or merge exists.
+Historical BASE0 round1 failed on5db4949; C was interrupted and never scored. Repaired280ff4b is coordinator-verified; round2 A runs; B model-provider429 interrupted grading, no score. No current independent PASS or merge exists.
 
 | item | branch | PR | round | C1/25 | C2/20 | C3/10 | C4/15 | C5/10 | C6/5 | C7/10 | C8/5 | total | grader A | grader B | grader C | auto-fails | result | merged commit | main re-test | live check |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -11,4 +11,4 @@ Historical BASE0 round1 failed on5db4949; C was interrupted and never scored. Re
 
 Scores will be entered only from independently observed, cited evidence. NOT VERIFIED is not PASS.
 
-| BASE0 | ai/codex-mega-deno0 | #246 | 2 (280ff4b) | — | — | — | — | — | — | — | — | NOT GRADED | cards/BASE0-GA-R2 | cards/BASE0-GB-R2 | not required yet | not assessed | RUNNING | NONE | NOT RUN | baseline only |
+| BASE0 | ai/codex-mega-deno0 | #246 | 2 (280ff4b) | — | — | — | — | — | — | — | — | NOT GRADED | cards/BASE0-GA-R2 | cards/BASE0-GB-R2 | not required yet | not assessed | A RUNNING; B INTERRUPTED429 | NONE | NOT RUN | baseline only |
