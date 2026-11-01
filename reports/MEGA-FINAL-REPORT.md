@@ -2,6 +2,14 @@
 
 STATUS: IN-PROGRESS
 
+## Current checkpoint — 2026-11-01T22:00:20+07:00
+
+User explicitly resumed. Candidate PR246 is280ff4b, main1fb25ed; no mission merge. Completed repaired-head checks: fullbrowser265/265 andexpandedrepeat700/700 at each size,25mutants/16controls, fullroot/build/Deno/link/bundle, UI/a11y/G5 andPRwrapper green. Report/evidence published2088154 and245manifest files verified byte-identical. G7 bookkeeping is now complete. Two fresh independent graders are prepared; no repaired-head score yet. Historical entries below record earlier stages and do not override this checkpoint.
+
+The30minute checkpoint heartbeat is active. Coordinator personally handles handoffs and implementation; graders are the only planned workers. Full mission scope, safety and merge thresholds are unchanged.
+
+## Historical progress (older candidates and running states)
+
 The coordinator directly owns build, fixes, verification, reporting and merges. No mission item has yet received two formal passing grades or merged; main remains1fb25ed. Latest authority is mega-resume-2026-11-01.md.
 
 BASE0#246 candidate5db4949 now has complete exact-head verification:264/264browser cases at each desktop size,470/470changed-spec repeats at each size, full unit/type/lint/build/Deno/bundle/link checks,18guest+18local-signedaudits,10effectschecks per size,7keyboarddestinations per size, production-previewG5 andPRwrapper. Freshmutations23/23kills with13controls; scratch clean. Exact report and caveats: cards/BASE0-COORDINATOR/REPORT.md. G7 publication is confirmed at c388d57; independent graders A and B are now active. No formal score or merge yet.

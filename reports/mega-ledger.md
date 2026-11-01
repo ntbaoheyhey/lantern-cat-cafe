@@ -85,3 +85,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - Provider429 interrupted C and recovery; mandatory C stillnotgraded, PRhead stays5db4949. Local280ff4b fullsuitesgreen,700expandedrepeats at1280green,25mutants/16controls/clean. Currenthandoff/runtime contain recovery deadlines and workerlimit.
 
 - 2026-11-01T19:51:33+07:00: latest userauthorizes coordinatorfallback when subagents unavailable and requests contextdiscipline. No furtherC recovery scheduled; interruptedC evidence preserved, no score invented. Local280ff4b verification continues withPID45517; sourcePRstill5db4949; no merge.
+
+- 2026-11-01T22:00:20+07:00: user resumed. PR246280ff4b/main1fb25ed/publishedledger2088154 confirmed unchanged. Full repaired-head evidence complete; G7 publication confirmed. Two fresh independent round2 grades prepared; historical round1 failure/Cinterruption retained. No merge. Heartbeat reactivated30minutes.

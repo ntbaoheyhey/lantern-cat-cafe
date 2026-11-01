@@ -1,4 +1,4 @@
-# Runtime — ACTIVE mission, no check process active
-Updated 2026-11-01T20:28:42+07:00. Latest user authorizes coordinator fallback and requests a compact tool. AllBASE0 local verification on280ff4b and PRwrapper completedexit0. PIDs45517/47426/57737 exited; theirportblocksfree; stale4380lockreleased. No nativeagent active; no retryloop scheduled.
-PR246drafthead280ff4b,main1fb25ed,no merge. Original A0/B97/Cinterrupted remain historical. Currenthead has coordinatorverification, no fabricatedindependentgrade. Finishmanualreview/report andhonestmergegate reconciliation beforemerge.
-Personalcontext-compact skill installed; configured64000/total andvalidated. Nativecompaction still requiressupportedclient action; CodexCUAaccessdenied. See currenthandoff andcontext-compact-report.
+# Runtime — ACTIVE mission
+Updated 2026-11-01T22:00:20+07:00; user explicitly resumed. Goal active,30minute heartbeat active. No old verification process remains active; current candidate280ff4b is immutable during grading.
+BASE0-GA-R2 / BASE0-GB-R2 prepared, not yet launched. Their card runtime.json files are authoritative for subsequent agent/PID/ports. Coordinator owns ledger publication and PR246 metadata.
+No mission merge. Two repaired-head grades required; historical A0/B97/Cinterrupted are not current grades. See MEGA-CURRENT-HANDOFF.md for exact hashes, finished checks and next actions.
