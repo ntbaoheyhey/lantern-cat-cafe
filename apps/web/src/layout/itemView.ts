@@ -7,16 +7,18 @@ import type { V2IconName } from '../art/v2Icons';
 /** Display helpers shared by the Character and Bag panels. Ids and numbers come from game-rules. */
 
 const ITEM_NAME = new Map(v2.ITEMS.map((item) => [item.id, item.name]));
+const MATERIAL_NAME = new Map(v2.MATERIALS.map((m) => [m.id, m.name]));
 
-export const RARITY_LABEL: Record<GearRarityId, string> = {
+export const RARITY_LABEL: Record<string, string> = {
   common: 'Common',
   uncommon: 'Uncommon',
   rare: 'Rare',
   epic: 'Epic',
   legendary: 'Legendary',
+  relic: 'Relic',
 };
 
-export const SLOT_LABEL: Record<GearSlotId, string> = {
+export const SLOT_LABEL: Record<string, string> = {
   weapon: 'Weapon',
   helmet: 'Helmet',
   armor: 'Armor',
@@ -26,6 +28,8 @@ export const SLOT_LABEL: Record<GearSlotId, string> = {
   earring: 'Earring',
   ring: 'Ring',
   charm: 'Charm',
+  material: 'Material',
+  relic: 'Relic',
 };
 
 const STAT_LABEL: Record<StatId, string> = {
@@ -53,7 +57,7 @@ const WEAPON_ICON: Record<WeaponType, V2IconName> = {
   flasks: 'flasks',
 };
 
-const SLOT_ICON: Record<GearSlotId, V2IconName> = {
+const SLOT_ICON: Record<string, V2IconName> = {
   weapon: 'slotWeapon',
   helmet: 'slotHelmet',
   armor: 'slotArmor',
@@ -63,6 +67,8 @@ const SLOT_ICON: Record<GearSlotId, V2IconName> = {
   earring: 'slotEarring',
   ring: 'slotRing',
   charm: 'slotCharm',
+  material: 'fluffTuft',
+  relic: 'moonPearl',
 };
 
 const RARITY_FRAME: Record<GearRarityId, V2FrameName> = {
@@ -88,13 +94,33 @@ export const EMPTY_FRAME: Record<GearSlotId, V2FrameName> = {
 export const LOCKED_FRAME: V2FrameName = 'lockedSlot';
 
 export function itemName(itemKey: string): string {
-  return ITEM_NAME.get(itemKey) ?? itemKey;
+  const fromItems = ITEM_NAME.get(itemKey);
+  if (fromItems) return fromItems;
+  if (itemKey.startsWith('mat.')) {
+    const id = itemKey.slice(4);
+    const mName = MATERIAL_NAME.get(id as any);
+    if (mName) return mName;
+  }
+  if (itemKey.startsWith('relic.')) {
+    const id = itemKey.slice(6);
+    const mName = MATERIAL_NAME.get(id as any);
+    if (mName) return `${mName} Relic`;
+    return 'Ancient Relic';
+  }
+  return itemKey;
 }
 
-/** Weapons show their weapon type; every other slot shows its slot icon. */
-export function itemIconName(item: Pick<ItemV2, 'slot' | 'weaponType'>): V2IconName {
+/** Weapons show their weapon type; materials and accessories show their respective icons. */
+export function itemIconName(item: Pick<ItemV2, 'slot' | 'weaponType'> & { itemKey?: string }): V2IconName {
   if (item.slot === 'weapon' && item.weaponType) return WEAPON_ICON[item.weaponType];
-  return SLOT_ICON[item.slot];
+  if (item.itemKey) {
+    if (item.itemKey.includes('moonPearl') || item.itemKey.includes('relic')) return 'moonPearl';
+    if (item.itemKey.includes('catnipCrystal')) return 'catnipCrystal';
+    if (item.itemKey.includes('starlightScale')) return 'starlightScale';
+    if (item.itemKey.includes('shinyButton')) return 'shinyButton';
+    if (item.itemKey.includes('fluffTuft')) return 'fluffTuft';
+  }
+  return SLOT_ICON[item.slot] ?? 'slotCharm';
 }
 
 /** Specific item icon (A11) when one exists (armor sets, accessories), else the fallback slot/weapon-type icon. */
@@ -112,11 +138,11 @@ export function frameFor(rarity: GearRarityId): V2FrameName {
   return RARITY_FRAME[rarity];
 }
 
-export function rarityLabel(rarity: GearRarityId): string {
-  return RARITY_LABEL[rarity];
+export function rarityLabel(rarity: GearRarityId | string): string {
+  return RARITY_LABEL[rarity] ?? rarity;
 }
 
-export function rarityColor(rarity: GearRarityId): string {
+export function rarityColor(rarity: GearRarityId | string): string {
   switch (rarity) {
     case 'common':
       return 'var(--rarity-common, #b9b6c9)';
@@ -127,7 +153,10 @@ export function rarityColor(rarity: GearRarityId): string {
     case 'epic':
       return 'var(--rarity-epic, #bb74ff)';
     case 'legendary':
+    case 'relic':
       return 'var(--rarity-legendary, #ff9a3c)';
+    default:
+      return 'var(--rarity-common, #b9b6c9)';
   }
 }
 

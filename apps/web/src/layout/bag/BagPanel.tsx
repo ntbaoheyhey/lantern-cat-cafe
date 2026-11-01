@@ -39,7 +39,9 @@ export function matchesFilter(item: ItemV2, filter: BagFilter): boolean {
       return (
         item.slot !== 'weapon' &&
         (item.slot as string) !== 'material' &&
-        (item.slot as string) !== 'relic'
+        (item.slot as string) !== 'relic' &&
+        !item.itemKey.startsWith('mat.') &&
+        !item.itemKey.startsWith('relic.')
       );
     case 'materials':
       return (
@@ -68,7 +70,7 @@ export interface BagPanelProps {
 }
 
 function cardLabel(item: ItemV2): string {
-  return `${itemName(item.itemKey)}, ${RARITY_LABEL[item.rarity]}, level ${item.level}${item.locked ? ', locked' : ''}`;
+  return `${itemName(item.itemKey)}, ${RARITY_LABEL[item.rarity] ?? item.rarity}, level ${item.level}${item.locked ? ', locked' : ''}`;
 }
 
 export function BagPanel({
@@ -217,65 +219,69 @@ export function BagPanel({
 
           {/* Grid Area */}
           <div className="bag-grid-container">
-            {bag.length === 0 ? (
+            {bag.length === 0 && (
               <div className="bag-empty" data-testid="bag-empty">
                 <p>Your bag is empty.</p>
-                <p className="bag-empty-hint">Explore chapters to find loot from monster drops.</p>
+                <p className="bag-empty-hint">Defeat monsters or visit the Forge to obtain gear.</p>
               </div>
-            ) : (
-              <ul className="bag-grid" aria-label="Bag items">
-                {filteredItems.map((item, index) => (
-                  <li key={item.id} className="bag-slot filled">
-                    <button
-                      type="button"
-                      className={`bag-card${item.id === selected?.id ? ' selected' : ''}`}
-                      data-rarity={item.rarity}
-                      aria-label={cardLabel(item)}
-                      aria-pressed={item.id === selected?.id}
-                      onClick={() => setSelectedId(item.id)}
-                      onKeyDown={(e) => handleSlotKeyDown(e, index)}
-                      ref={(el) => {
-                        slotRefs.current[index] = el;
-                      }}
-                      title={cardLabel(item)}
-                    >
-                      <span
-                        className="bag-tile"
-                        data-rarity={item.rarity}
-                        style={{ borderColor: rarityColor(item.rarity) }}
-                      >
-                        <span className="bag-icon">
-                          <ItemIcon item={item} size={2} />
-                        </span>
-                        {item.locked && (
-                          <span className="bag-lock" title="Locked" aria-label="Locked">
-                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
-                              <path
-                                d="M2 5V3a3 3 0 0 1 6 0v2h1v7H1V5h1zm2 0h2V3a1 1 0 0 0-2 0v2z"
-                                fill="var(--gold, #ffb86b)"
-                              />
-                            </svg>
-                          </span>
-                        )}
-                        <span className="bag-level">Lv {item.level}</span>
-                      </span>
-                    </button>
-                  </li>
-                ))}
-                {/* Visible empty slots up to capacity */}
-                {Array.from({ length: emptySlotsCount }).map((_, i) => (
-                  <li key={`empty-${i}`} className="bag-slot empty" aria-hidden="true">
-                    <span className="bag-tile empty-tile" />
-                  </li>
-                ))}
-              </ul>
             )}
+            {bag.length > 0 && filteredItems.length === 0 && (
+              <div className="bag-empty bag-filter-empty" data-testid="bag-filter-empty">
+                <p>No items matching this filter.</p>
+              </div>
+            )}
+            <ul className="bag-grid" aria-label="Bag items">
+              {filteredItems.map((item, index) => (
+                <li key={item.id} className="bag-slot filled">
+                  <button
+                    type="button"
+                    className={`bag-card${item.id === selected?.id ? ' selected' : ''}`}
+                    data-rarity={item.rarity}
+                    aria-label={cardLabel(item)}
+                    aria-pressed={item.id === selected?.id}
+                    onClick={() => setSelectedId(item.id)}
+                    onKeyDown={(e) => handleSlotKeyDown(e, index)}
+                    ref={(el) => {
+                      slotRefs.current[index] = el;
+                    }}
+                    title={cardLabel(item)}
+                  >
+                    <span
+                      className="bag-tile"
+                      data-rarity={item.rarity}
+                      style={{ borderColor: rarityColor(item.rarity) }}
+                    >
+                      <span className="bag-icon">
+                        <ItemIcon item={item} size={2} />
+                      </span>
+                      {item.locked && (
+                        <span className="bag-lock" title="Locked" aria-label="Locked">
+                          <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
+                            <path
+                              d="M2 5V3a3 3 0 0 1 6 0v2h1v7H1V5h1zm2 0h2V3a1 1 0 0 0-2 0v2z"
+                              fill="var(--gold, #ffb86b)"
+                            />
+                          </svg>
+                        </span>
+                      )}
+                      <span className="bag-level">Lv {item.level}</span>
+                    </span>
+                  </button>
+                </li>
+              ))}
+              {/* Visible empty slots up to capacity */}
+              {Array.from({ length: emptySlotsCount }).map((_, i) => (
+                <li key={`empty-${i}`} className="bag-slot empty" aria-hidden="true">
+                  <span className="bag-tile empty-tile" />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Right Detail Panel */}
         <aside className="bag-sidebar">
-          <section aria-label="Item detail" className="bag-detail pixel-card">
+          <section aria-label="Item detail" className={`bag-detail pixel-card${selected ? '' : ' is-empty'}`}>
             {selected ? (
               <ItemDetail
                 item={selected}
@@ -288,8 +294,22 @@ export function BagPanel({
                 onNavigate={onNavigate}
               />
             ) : (
-              <div className="detail-empty">
-                <p className="detail-note">Select an item to compare it with what you wear.</p>
+              <div className="detail-hint-body">
+                <div className="detail-hint-card">
+                  <h3 className="detail-hint-title">Item Details</h3>
+                  <p className="detail-note">Select an item to compare it with what you wear.</p>
+                </div>
+                <div className="compare-skeleton" aria-hidden="true">
+                  <h4 className="compare-skeleton-heading">Compare</h4>
+                  <div className="compare-skeleton-row">
+                    <span>Attack vs equipped</span>
+                    <span className="skeleton-placeholder">--</span>
+                  </div>
+                  <div className="compare-skeleton-row">
+                    <span>Crit vs equipped</span>
+                    <span className="skeleton-placeholder">--</span>
+                  </div>
+                </div>
               </div>
             )}
           </section>
@@ -345,10 +365,10 @@ function ItemDetail({
               data-rarity={item.rarity}
               style={{ borderColor: rarityColor(item.rarity) }}
             >
-              {RARITY_LABEL[item.rarity]}
+              {RARITY_LABEL[item.rarity] ?? item.rarity}
             </span>
             <span className="detail-meta">
-              Lv {item.level} · {SLOT_LABEL[item.slot]}
+              Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
             </span>
           </div>
         </div>
@@ -369,6 +389,12 @@ function ItemDetail({
               <span className="stat-value">+{formatStat(line.stat, line.value)} (bonus)</span>
             </li>
           ))}
+          {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
+            <li className="detail-stat-row relic-stat">
+              <span className="stat-label">Relic</span>
+              <span className="stat-value">#1042 · minted</span>
+            </li>
+          )}
         </ul>
       </div>
 

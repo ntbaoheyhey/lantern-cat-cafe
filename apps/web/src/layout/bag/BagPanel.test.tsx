@@ -332,3 +332,63 @@ describe('useSampleStateV2', () => {
     expect(result.current.state.inventory.find((i) => i.id === 'it-8')?.locked).toBe(true);
   });
 });
+
+describe('Mission AGR2-FIX: Empty slots and right detail hint', () => {
+  it('draws empty slots up to capacity even when bag is empty and shows detail hint card', () => {
+    const base = sampleStateV2();
+    renderBag({ ...base, bagLimit: 40, inventory: base.inventory.filter((i) => i.equipped) });
+
+    expect(screen.getByTestId('bag-empty')).toBeTruthy();
+    expect(screen.getByText('Your bag is empty.')).toBeTruthy();
+
+    // 8-column slot grid still renders empty slots up to capacity (40)
+    const list = screen.getByRole('list', { name: 'Bag items' });
+    const emptySlots = list.querySelectorAll('.bag-slot.empty');
+    expect(emptySlots.length).toBe(40);
+
+    // Right detail panel shows short hint card and compare skeleton
+    const detail = screen.getByRole('region', { name: 'Item detail' });
+    expect(detail.classList.contains('is-empty')).toBe(true);
+    expect(within(detail).getByText('Item Details')).toBeTruthy();
+    expect(within(detail).getByText(/Select an item to compare it with what you wear/)).toBeTruthy();
+    expect(within(detail).getByText('Compare')).toBeTruthy();
+  });
+
+  it('filters and displays materials and relic items with rarity text pill', () => {
+    const base = sampleStateV2();
+    const relicItem: ItemV2 = {
+      id: 'relic-1',
+      itemKey: 'relic.moonPearl',
+      slot: 'charm',
+      rarity: 'legendary',
+      level: 15,
+      bonus: [],
+      locked: true,
+      equipped: false,
+    };
+    renderBag({
+      ...base,
+      inventory: [...base.inventory, relicItem],
+    });
+
+    // Relics filter
+    fireEvent.click(screen.getByRole('button', { name: 'Relics' }));
+    const relicBtn = screen.getByRole('button', { name: /Moon Pearl Relic/ });
+    expect(relicBtn).toBeTruthy();
+    fireEvent.click(relicBtn);
+
+    const detail = screen.getByRole('region', { name: 'Item detail' });
+    expect(within(detail).getAllByText('Moon Pearl Relic').length).toBeGreaterThan(0);
+    expect(within(detail).getByText('#1042 · minted')).toBeTruthy();
+  });
+
+  it('shows filter empty notice when a category has 0 items and keeps capacity slots', () => {
+    const base = sampleStateV2();
+    // Default sampleState has no materials
+    renderBag(base);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Materials' }));
+    expect(screen.getByTestId('bag-filter-empty')).toBeTruthy();
+    expect(screen.getByText('No items matching this filter.')).toBeTruthy();
+  });
+});
