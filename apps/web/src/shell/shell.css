@@ -328,13 +328,8 @@
   }
 
   .shell-context {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: var(--sp-2, 8px);
     padding: 0 var(--sp-1, 4px);
-    background: var(--surface, #2a1f36);
-    flex: none;
   }
   .shell-context .v2-hint { min-width: 0; }
   .shell-context .hud-center { min-width: 0; }

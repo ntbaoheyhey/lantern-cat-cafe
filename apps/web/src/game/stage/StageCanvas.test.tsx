@@ -1,12 +1,21 @@
 import { act, cleanup, render, waitFor } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
-const fake = vi.hoisted(() => ({ games: [] as { scale: { resize: ReturnType<typeof vi.fn> }; destroy: ReturnType<typeof vi.fn>; step: ReturnType<typeof vi.fn> }[],
+interface TestGame {
+  isBooted: boolean;
+  scene: { isBooted: boolean };
+  events: { once: ReturnType<typeof vi.fn> };
+  scale: { resize: ReturnType<typeof vi.fn> };
+  destroy: ReturnType<typeof vi.fn>;
+  step: ReturnType<typeof vi.fn>;
+}
+const fake = vi.hoisted(() => ({ games: new Array<TestGame>(),
   show: vi.fn(), relayout: vi.fn() }));
 vi.mock('phaser', () => ({ default: { CANVAS: 1, Game: class {
   isBooted = true;
   scale = { resize: vi.fn() };
-  scene = { add: vi.fn() };
+  scene = { isBooted: true, add: vi.fn() };
+  events = { once: vi.fn() };
   destroy = vi.fn();
   step = vi.fn();
   constructor() { fake.games.push(this); }
@@ -38,6 +47,28 @@ it('does not create a game if unmounted before the lazy imports resolve', async 
   view.unmount();
   await act(async () => { await Promise.resolve(); });
   expect(fake.games).toHaveLength(0);
+});
+
+it.each([false, true])('waits for scene-manager readiness before destruction when game.isBooted=%s', async (gameBooted) => {
+  const view = render(<StageCanvas state={sampleServerStateV2()} zoom={3} width={1000} reducedMotion={false} />);
+  await waitFor(() => expect(fake.games).toHaveLength(1));
+  const game = fake.games[0]!;
+  // Game.boot sets isBooted before textures finish and SceneManager.bootQueue
+  // creates systemScene. Destroying in this interval throws inside Phaser.
+  game.isBooted = gameBooted;
+  game.scene.isBooted = false;
+  game.step.mockImplementation(() => {
+    if (!game.scene.isBooted) throw new Error('Scene manager is not ready');
+  });
+  expect(() => view.unmount()).not.toThrow();
+  expect(game.destroy).toHaveBeenCalledExactlyOnceWith(true);
+  expect(game.step).not.toHaveBeenCalled();
+  expect(game.events.once).toHaveBeenCalledWith('ready', expect.any(Function));
+  game.isBooted = true;
+  game.scene.isBooted = true;
+  const ready = game.events.once.mock.calls[0]![1] as () => void;
+  await act(async () => { ready(); await Promise.resolve(); });
+  expect(game.step).toHaveBeenCalledExactlyOnceWith(expect.any(Number), 0);
 });
 
 it('keeps the current authoritative label during cleared/start moments and subsequent kills', async () => {

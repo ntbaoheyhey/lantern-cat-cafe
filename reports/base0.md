@@ -2,7 +2,7 @@ STATUS: IN-PROGRESS
 
 # BASE0 — restore the existing verification baseline
 
-Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). No score, merge, deployment or full-suite PASS is claimed here.
+Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). Round1 candidate5db4949 received A0/100(A7 repeat failure) and B97/100; mandatory grader C is still running on that unchanged candidate. No merge or deployment. The isolated successor repairs below require complete fresh exact-head verification and fresh graders.
 
 ## Changes and causality
 
@@ -57,3 +57,13 @@ Tier 2 decision: this isolated test-fixture repair is required for the current r
 ## Additional baseline fixture repair
 
 The successor full unit gate at07d219b found63 failures in six more inherited voucher/concurrency suites after SQL NOW() passed their fixed voucher expiry. The shared test-only databaseFixtureClock now chooses10:00UTC on the following database day. Those six suites and the v2 forge fixture use it; the two UTC+7 day-rollover cases retain their exact midnight+1second relationship relative to T0. Four leap-day/year-boundary cases cover clocks before and after the former fixed date. Production defaults, SQL guards, voucher TTL, assertions, retries and timeouts are unchanged. These test/helper files are Tier2 baseline prerequisites; previous full-unit evidence is historical. Complete verification on the new source remains pending.
+
+## Round1 independent-grade repair
+
+The original429 countdown/resize case failed once in grader A's required1280repeat run; B's repeats passed but do not erase that failure. Coordinator reproduction established a Phaser lifecycle crash: Game.isBooted becomes true before texture readiness and SceneManager.bootQueue creates systemScene. StageCanvas cleanup forced Game.step too early, so SceneManager.destroy dereferenced undefined systemScene.sys and React lost its entire shell. Cleanup now waits for SceneManager.isBooted, otherwise using the existing READY/microtask path. It still consumes pending destruction in a hidden tab. New unit cases cover both pre-Game-boot and Game-booted/SceneManager-not-ready teardown; the old guard fails the latter, the repaired guard passes.
+
+Diagnostic trace runs also exposed an independent browser-fixture clock race. Reading a running clock then sending pauseAt can target the past if time advances between protocol commands. The fixture installs at epoch origin before application navigation, then pauses at current wall time. A new browser regression deterministically advances one tick between target selection and pause, verifies authoritative state and frozen time, and verifies explicit advancement still works. The old-clock control fails as intended and the repaired control passes. An earlier25ms host-delay control was insufficiently deterministic; its unexpected pass is preserved and not counted as a kill.
+
+The original error-notice spec is unchanged after removal of temporary diagnostic observers. Its targeted100-run repetition without traces passes with the lifecycle repair. Typecheck/lint and StageCanvas/StageScene units pass on the working repair. These focused checks precede the successor commit and do not claim the full exact-head gate. Evidence and all earlier failures: [repair investigation](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-mega-ledger/reports/cards/BASE0-REPAIR-R2/INVESTIGATION.md).
+
+Quality cleanup removes the unused HudProps.compact API/caller and duplicate common CSS declarations from the narrow context override. The approved readable title/guidance row remains an explicit reference difference. Tier2 justification: StageCanvas and its tests fix the independently reproduced prerequisite failure; server-fixture and its new regression repair a real baseline clock-setup race. No claim interval, gameplay rule, assertion, retry, timeout, flag, dependency, backend/auth source, migration or contract changes. Every fixture consumer and the resize/redraw browser cases are included in the expanded fresh repeat gate.

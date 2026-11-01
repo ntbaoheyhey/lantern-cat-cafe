@@ -18,7 +18,6 @@ export interface HudProps {
   hintText?: string;
   onHintAction?: () => void;
   mode?: { demo: boolean; notice: string | null };
-  compact?: boolean;
 }
 
 export function Hud({
