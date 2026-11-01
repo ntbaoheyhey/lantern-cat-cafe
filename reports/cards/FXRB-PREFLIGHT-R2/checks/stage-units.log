@@ -1,0 +1,16 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm --filter @taskbar-hero/web test src/game/stage/StageScene.test.ts src/game/stage/StageCanvas.test.tsx src/layout/metrics.test.ts", "cwd": "/Users/bao/.codex/worktrees/mega-fxrb-preflight-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "7023a2dbe2a03ea1302c3e2cbce24d444a511f41", "name": "stage-units", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-01T22:26:31+07:00", "starting_git_status": "", "viewport": "1280x720"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-fxrb-preflight-280ff4b/taskbar-hero/apps/web
+> vitest run src/game/stage/StageScene.test.ts src/game/stage/StageCanvas.test.tsx src/layout/metrics.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-fxrb-preflight-280ff4b/taskbar-hero/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  24 passed (24)
+   Start at  22:26:33
+   Duration  1.10s (environment 61%, transform 18%, tests 14%, import 7%)
+
+
+EXIT_CODE=0

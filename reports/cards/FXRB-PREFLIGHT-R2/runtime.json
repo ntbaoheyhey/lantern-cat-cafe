@@ -1,0 +1,31 @@
+{
+  "owner": "coordinator",
+  "pid": 15776,
+  "status": "PRELIMINARY_PASS",
+  "head": "7023a2dbe2a03ea1302c3e2cbce24d444a511f41",
+  "worktree": "/Users/bao/.codex/worktrees/mega-fxrb-preflight-280ff4b/taskbar-hero",
+  "ports": [
+    4440,
+    4441,
+    4442,
+    4443,
+    4444
+  ],
+  "updated_at": "2026-11-01T22:31:47+07:00",
+  "checks": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "stage-units",
+      "exit": 0
+    },
+    {
+      "name": "resize-repeat20",
+      "exit": 0
+    }
+  ],
+  "cleanup": "cleanup.json",
+  "limitation": "Focused temporary integration; no grade/current-main/full-gate claim."
+}

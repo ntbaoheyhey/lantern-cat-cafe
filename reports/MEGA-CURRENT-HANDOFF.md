@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T22:16:35+07:00. User resumed; goal active. Coordinator owns checkpoints; no handoff-only agents.
+Updated 2026-11-01T22:31:47+07:00. User resumed; goal active. Coordinator owns checkpoints; no handoff-only agents.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; product PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0; ledger publication 20881542d3d2a1e7625c8e1b53d27a315812d97c. No mission merge, release, live write, wallet transaction or submission.
 Source worktree /Users/bao/.codex/worktrees/mega-deno0/taskbar-hero retains historical dirty reports/scorecard/base0/logs/results.jsonl; preserve it and untracked evidence.
 Current verifier /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero. All prior verifier processes45517/47426/57737/40484/41436 absent at resume;4420–4444 have no listeners. Do not rerun completed pipelines.
@@ -10,6 +10,7 @@ Original5db4949 grades A0(A7/raw72.9167),B97 remain historical. C interrupted by
 Two fresh independent graders RUNNING: /root/base0_grade_a_r2 (ports4420–4424; mega-base0-grade-a-280ff4b; runnerPID5258), /root/base0_grade_b_r2 (4430–4434; mega-base0-grade-b-280ff4b; Read brief and worker contract; preparing isolated worktree). Each card runtime.json owns live state; do not relaunch either. Candidate immutable during grading.
 External deployment hold: both candidate Vercel statuses FAILURE, "Deployment rate limited — retry in24hours" recorded19:53:20UTC+7; exact reset unverified. PR stays draft; no cap bypass/repeated deploys. See cards/BASE0-MERGE-GATE/STATUS.md.
 Retain full score floors and G1–G7. Coordinator fallback permits execution but does not remove the explicit independent-score gate. Only valid grades permit serial merge; no merge scheduled.
+Coordinator FXRB focused preflight PASS: temporary detached7023a2d (BASE0280ff4b+FXRBb5fd48e),24units and120resize repeats passed; worktree mega-fxrb-preflight-280ff4b clean; PID15776 stopped,4440–4444 free. Card FXRB-PREFLIGHT-R2; no product branch moved. Not a full gate/grade/current-main proof.
 Prepared queue: BASE0 -> FXRB#243 -> CXP1#240 -> CXL1#248 -> ART1#247 -> CXN3#244 -> CXU5#249 -> CXU4(commit/PRpending). Existing WIP preserved; fullP0–P3 scope retained.
 User decisions: initialP1 verifies mergedcore, extends afterP2/P3. Phasedlivejudgepath untilCXU3+CXC2bothmerge; then fullnine mandatory. Priorbaseline31s is not postmerge proof.
 After permittedmerge: freshcleanmain full/repeats; expectedSHA Vercelstatus+publicartifactequality+phasedlivepath. Providerprivatecommitmetadata unobserved; disclose identical-content ambiguity. See DEPLOYMENT-IDENTITY/REPORT.md.
