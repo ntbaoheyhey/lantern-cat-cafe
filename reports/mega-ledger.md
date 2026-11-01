@@ -6,7 +6,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 | --- | --- | --- | --- | --- | --- | --- |
 | FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PARTIAL | 2 | Burst 40/40; continuous 80/80; core checks pass twice; full e2e fails known excluded mobile HUD cases | Canvas race fixed; isolated resource error cause NOT VERIFIED; reports/fxrb.md; full-suite gate not falsely called green |
 | CXN3 | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | PARTIAL | 2 | All applicable local checks pass twice; classifier 8/8; PGlite 3/3; live 18 pass/9 fail | Deno import guard 80 failures identical on main; reports/n3-cutover-truth.md; no live/auth changes |
-| CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | Not run in this mission | Existing draft; inspect and complete missing verification |
+| CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 1 | Existing registry/store inspected; reproduce pending refresh regression | Preserve older worktree; keep all preview data isolated from gameplay |
 | CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
 | CXR2 | ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Follow CXR1 findings; same AGR gate |
 | CXL2 | ai/codex-cxl2 | — | TODO | 0 | Signature not checked | Skip unless dated user SIGNED line exists in design section 6 |
@@ -26,3 +26,10 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 3. Run the catalog-only SQL against both PGlite migration sets and test the strict unsigned result classifier without network.
 4. Run the full local checks in order, compare link debt, and execute only the authorized unsigned live probes; retain live failures as findings.
 5. Push the report to ai/codex-n3-cutover-truth, open a draft PR, run verify-pr without comments and record honest status in this ledger.
+
+## CXP1 plan
+1. Read the design/demo and existing registry, store, observer, tests and report; inspect the demo in a browser.
+2. Reproduce the unfinished refresh regression and fix only the local observer; retain twelve original DEMO_PREVIEW pets and equip-two rules.
+3. Verify storage parsing/migration, exact progress boundaries, lifecycle deduplication and runtime isolation; add desktop browser coverage of local persistence.
+4. Run install, Deno drift, typecheck, lint, unit tests, build and affected e2e at both desktop sizes, then the existing suite; capture required evidence without changing art.
+5. Refresh reports/cxp1.md, push the existing draft branch, run the PR wrapper and update this ledger with exact results and limitations.
