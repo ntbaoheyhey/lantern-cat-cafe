@@ -65,3 +65,5 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 - Resume2026-11-01T17:55:39+07:00: BASE0 first; prepared-item merge order FXRB, CXP1, CXL1, ART1, CXN3, CXU5, CXU4, with every full gate and fresh grades. After that P0 core, P1 judging/QA/security/submission, P2 optional UI/game rules, P3 expansions. Complete scope retained. See priority plan; dependency ambiguities do not block BASE0 verification.
 
 - User decision2026-11-01T17:57:12+07:00: initialP1 covers all mergedcore; QA/security/submission evidence is extended afterP2/P3. OldoptionalUI/allitems dependency cycle is removed for initialP1, implementation dependencies retained. BASE0-FINISH andCXQ1-DEMO-PATH native workers active; see runtime.
+
+- Latest user steering2026-11-01T18:00:43+07:00: coordinator now directly builds/fixes/verifies/reports. Two just-launched builder/QA agents have STOP controls and must release ownership before takeover. Future workers primarily mandatory independent graders, max2(or1afterrecent429); grouped grading up to3readyitems allowed under unchanged exact-head gates. P1 merged-core decision preserved.

@@ -29,3 +29,5 @@ Complete every task card, both independent grades and serial merge/post-merge ga
 Explicitly resumed2026-11-01T17:55:39+07:00. CXU5 shutdown independently confirmed; fresh stable backup saved. New priority plan, CXN3-FIX and recurring CXQ1 judge-path cards prepared. Current gate outcomes remain historical until reverified on exact candidates. Checkpoint cadence30minutes, short handoff, samechat, substantive workers only. No P0/P1 milestone declared merged.
 
 User priority decision: P1 evaluates all mergedcore and adds QA/materials as optionalP2/P3 merge. Two nativeAstraUltra workers started forBASE0completion andjudge-path preparation; no grades/merges claimed.
+
+- Latest user steering2026-11-01T18:00:43+07:00: coordinator now directly builds/fixes/verifies/reports. Two just-launched builder/QA agents have STOP controls and must release ownership before takeover. Future workers primarily mandatory independent graders, max2(or1afterrecent429); grouped grading up to3readyitems allowed under unchanged exact-head gates. P1 merged-core decision preserved.

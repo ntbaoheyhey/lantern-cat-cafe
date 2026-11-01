@@ -1,4 +1,4 @@
-TASKBAR HERO MEGA MISSION - RESUME (balanced: one long session, small context, ship by priority)
+TASKBAR HERO MEGA MISSION - RESUME (balanced: one long session, coordinator does the work, few subagents, small context, ship by priority)
 The user RESUMES the mission now. This message is the explicit resume the pause note asks for. The pause, the heartbeat pause and "do not resume" lines in the state file are lifted by this message.
 Model: best available (the one in the state file, gpt-6-astra / ultra / priority; never downgrade) | Effort: highest | Speed: priority / 1.5x | Tokens do not matter; context size does.
 Repo ntbaoheyhey/taskbar-hero (private). Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. Every commit ends " [skip ci]". No direct push to main, no Actions, no .github changes.
@@ -11,12 +11,17 @@ All rules in the state file section 9 stay in force (authority, two independent 
 
 === 1. CONTEXT WITHOUT NEW SESSIONS (replaces any "start a new session per batch" rule) ===
 Stay in THIS session for the whole mission. Do not open new sessions on purpose. Keep it alive like this:
- - You are a THIN COORDINATOR. Build, verify, grade and fix work runs in workers (native subagents, or detached `codex exec` processes if native ones are not exposed). You do merges, ledger/scorecard updates and decisions. Small coordinator-side commands (git status | wc -l, tail -n 30, grep) are fine.
- - Workers: at most 3 at once (2 if any HTTP 429 appeared in the last 30 minutes; back off 2, 4, 8 minutes on 429, same model, never downgrade). Each worker gets a self-contained brief file (reports/cards/<card>/brief.md: spec excerpt, paths, ports, tests, done-definition) and returns ONLY reports/cards/<card>/RESULT.md (max 15 lines). Full logs stay in files. Never use the CLI -o option on a file a worker writes itself (it overwrote result.md before); point -o at logs/last-message.txt.
+ - The user's latest preference (1 Nov 10:35): FEW SUBAGENTS. You, the coordinator, do most of the work yourself: build, fix, verify, write reports, merge. Spawn a worker ONLY when it is truly needed:
+     a. the two independent graders per item (mandatory: a grader may never be you or the builder), and a third grader when the two differ by more than 5;
+     b. a long-running check that would otherwise block you for a long time (e.g. a full e2e repeat suite) - run it as a detached background process that writes to a log file, not as an agent, whenever possible;
+     c. at most one parallel builder, only when two P0 items are independent and waiting would cost more than a day.
+   Never more than 2 workers at once (1 if any HTTP 429 appeared in the last 30 minutes; back off 2, 4, 8 minutes, same model, never downgrade). Never spawn a worker just to write a handoff, a report or a summary.
+ - Each worker you do spawn gets a self-contained brief file (reports/cards/<card>/brief.md: spec excerpt, paths, ports, tests, done-definition) and returns ONLY reports/cards/<card>/RESULT.md (max 15 lines). Full logs stay in files. Never use the CLI -o option on a file a worker writes itself (it overwrote result.md before); point -o at logs/last-message.txt.
+ - Because you do the work yourself, protect your own context: run every build/test with output redirected to a log file (cmd > reports/<id>/logs/<step>.log 2>&1; echo exit=$?) and read only the exit code plus tail -n 30 or grep -E "error|fail|FAIL". Read source with line ranges or grep first. Work on ONE item at a time and finish its checkpoint before starting the next.
  - Never cat long files or logs; never paste diffs or test output into your context; read RESULT.md and tail -n 20 only.
  - CHECKPOINT after every milestone (card done, grade recorded, merge, failure) and at least every 30 minutes: rewrite reports/MEGA-CURRENT-HANDOFF.md as a SHORT file (max ~80 lines: true state per item, cards in flight with PID/worktree/ports, last merged commit, next 3 actions) and push the ledger branch. Run your existing checkpoint.py for the backup snapshot.
  - Rely on the auto-compaction you already configured (model_auto_compact_token_limit = 64000). After every compaction, or whenever you are unsure what you were doing, re-read MEGA-CURRENT-HANDOFF.md and the ledger table before acting. Files are memory; your recollection is not.
- - Waiting: poll workers with sleep 120 + test -f DONE; do not stream worker output.
+ - Waiting on a background process or worker: poll with sleep 120 + test -f DONE (or check the PID); do not stream its output.
  - Fallback only if this session truly dies (no response, transport error that does not recover): the user opens a new session with this same prompt; section 0 + MEGA-CURRENT-HANDOFF.md are enough to continue. Do not plan for that; just keep the handoff current so it is possible.
  - A transport error or 429 is not context overflow: retry the same step after a back-off, check PID/cwd/ports and persisted results first, never duplicate a commit, PR, merge or release.
 
@@ -32,13 +37,13 @@ Contest: UniHack, Demo Day 30 Nov 2026; planning deadline 21 Nov (UTC+7). Screen
  P2 (merged by 21 Nov if green, behind default-OFF flags) - CXP1 UI (CXP2), CXL1 UI (CXLU1), ART2, CXN4, CXN5.
  P3 (only after P0-P2 are merged and main is green; never block P0-P1 for them) - CXLU2, CXL2, CXG1, CXG2, ART3. After 25 Nov: no new server-side behaviour turned ON, bug fixes and polish only.
  Re-check already-merged AGR0, AGR1, AGR2, CXR0, CXN1, CXN2, CXC1, AGN1 inside CXR1's verify, not as separate graded items, unless CXR1 finds a failure.
-If a lower-priority card is ready and a worker slot is free while a P0 card waits on a gate, you may run it, but merges always go P0 first.
+While a P0 item waits on its graders, you may work on the next item yourself, but merges always go P0 first.
 
 === 4. EFFICIENCY WITHOUT LOWERING THE BAR ===
- - Keep two independent graders and every threshold. A grader may score up to 3 small docs-only or test-only items in one card (e.g. CXS1 + CXN3 docs), each scored separately.
+ - Keep two independent graders and every threshold. To spawn fewer graders, one grader may score up to 3 items in one card (each scored separately, the grader built none of them); group items that are ready at the same time.
  - Reuse one fresh-worktree full-suite run per exact head for verifier AND graders' raw evidence only if the grader re-runs at least: typecheck, lint, unit tests, the item's changed specs with repeats at both sizes, and its own mutants. Any head change = new evidence.
  - Fix inherited baseline failures once (BASE0), not inside every item.
- - Shared resources: one e2e lock per port block, distinct ports per worker, kill only processes you own.
+ - Shared resources: one e2e lock per port block, distinct ports for graders, kill only processes you own.
 
 === 5. ADDITIONS TO THE PLAN ===
  - Add CXN3-FIX (section 3 P0) to the ledger and task cards.
