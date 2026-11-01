@@ -56,3 +56,5 @@ CXL1 preflight 2026-11-01T23:04:57+07:00: detached7731a65 merges publishedCompen
 ART1 preflight 2026-11-01T23:13:04+07:00: temporary21fc7dd resolves only decisionindexconflict;36Python tests,catalogdrift,51spriteaudit,links pass.71inventoriedsourcefiles remain byte-identical to publishedART1; no newmedia or assetrewrite. Actual-main/fullgate/grades/live pending.
 
 Independent grade milestone 2026-11-01T23:33:01+07:00: A97.642857/B98 accepted with everyfloor and zeroautofails; no third required. B rawgrade unmodified and150manifestfiles verified. Providerread-only recheck stillfailure; no merge/deploymentcertification.
+
+Publication receipt 2026-11-01T23:35:00+07:00: B150deliveryfiles match immutablebeb4a99 on remoteledger. PR246body links independentA/B and scoreaggregation; remainsdraft/open on280ff4b. No merge or deployment attempt.
