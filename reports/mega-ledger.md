@@ -81,3 +81,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T19:17:45+07:00: GB-R1 completed97PASS; GA-R1 remains0FAIL. Difference>5 invokes freshindependentGC-R1 (briefpushed10d2f68), candidateunchanged. Coordinator reproduced a distinct stale-pauseAt setup race and fixed clockorigin in isolated WIP; original craft locator failure stillreproduces4/100 withouttrace. No merge.
 
 - 2026-11-01T19:34:39+07:00: successor280ff4b committed detached after100/100originalcase and meaningful clock/lifecycle negativecontrols. Fresh full verifierPID45517 starts atsameSHA, expanded12spec repeats. PR246 stays5db4949 whileCgrades. No merge; oldproof not reused fornewhead.
+
+- Provider429 interrupted C and recovery; mandatory C stillnotgraded, PRhead stays5db4949. Local280ff4b fullsuitesgreen,700expandedrepeats at1280green,25mutants/16controls/clean. Currenthandoff/runtime contain recovery deadlines and workerlimit.

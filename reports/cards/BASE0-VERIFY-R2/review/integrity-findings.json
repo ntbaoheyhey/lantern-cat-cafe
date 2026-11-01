@@ -1,0 +1,778 @@
+{
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "files": [
+    {
+      "path": "apps/web/e2e/server/fixture-clock.spec.ts",
+      "tier": 2,
+      "reason": "New deterministic browser-fixture clock interleaving regression; old setup fails and corrected setup preserves authoritative state and explicit advancement.",
+      "sha256": "65e93290997a5d80ae504a632bc45c079a0dab59423be4a8b5371f8174c07cbf",
+      "bytes": 928,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/e2e/smoke.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "24ed5c354c3e7b8abdb2ad385f750993039bb5c959908db15cbf93574739602e",
+      "bytes": 1777,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/e2e/support/server-fixture.ts",
+      "tier": 2,
+      "reason": "Epoch-origin installation prevents pauseAt targeting past time; test-only setup before navigation; all original consumer assertions retained.",
+      "sha256": "edb582042f6a7280bc78f513ccb7b73fd2ea5ef545215f2873ae9ca167ddf09a",
+      "bytes": 4298,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "c695b42600334bf8be1bc108da51f077d96d380eb5f7f4b734078fc1be920984",
+      "bytes": 13813,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/e2e/ui/f3-art.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "b1425bc0009b867a67332d331298f349a35f82bbc41b8c7c5d3d60b5709513ce",
+      "bytes": 10926,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/e2e/ui/g1-perf.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "f1d55bcc8d9d082ed44dcfd8e484648f51e92bda33e4e5d9199951453492ca10",
+      "bytes": 6890,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/e2e/ui/g3-combat.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "e124477b319c5a69872a3636531ab006adca015687b7ae318521446006e7bfe0",
+      "bytes": 5914,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/e2e/v2/errors-notice.spec.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "2e7a7f9339efbb014a7e0e05b300f6539806d45d57feb926d3c7b9992d49efbd",
+      "bytes": 12233,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "71a10262fc44464fcb465e41cc06f664742c4737992c6b9f8dca6837dbfb9d98",
+      "bytes": 3521,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/src/game/stage/StageCanvas.test.tsx",
+      "tier": 2,
+      "reason": "Preserve existing lifecycle/resize assertions and add deterministic Game-booted/SceneManager-not-ready teardown regressions.",
+      "sha256": "3431a61e81c01e9526e4283cd085cf429d92aad96efe074d2831d2c13b3dd137",
+      "bytes": 5173,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/src/game/stage/StageCanvas.tsx",
+      "tier": 2,
+      "reason": "Independent required-repeat failure traced to destroying Phaser before SceneManager boot; wait for scene readiness without catching/suppressing the exception.",
+      "sha256": "70a5fc85d9d401a7e237b387c33f008db6460cd962de3ca2490ed26bcf7a3b65",
+      "bytes": 5814,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/src/game/stage/StageScene.test.ts",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "8180c438c6973f9d74a0be08b923c63844a32162cf58aaff748963e99a55eac5",
+      "bytes": 11303,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/src/game/stage/StageScene.ts",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "6ae3e0e220c8fee23beb656fa9288e8f14da5c982a2def364069ca4b03877e5b",
+      "bytes": 23978,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/src/shell/Hud.tsx",
+      "tier": 1,
+      "reason": "Remove unused compact API after CSS took responsive ownership; no behavior change.",
+      "sha256": "37d83b8b7b4ec06017dd8454e65b30f357a4fcdddb83359f9e58b864c2e57fdd",
+      "bytes": 4729,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/src/shell/shell.css",
+      "tier": 1,
+      "reason": "Remove duplicate unchanged narrow context declarations; retain common declarations and actual gap/padding overrides.",
+      "sha256": "588292e09b1a7d1aed6c266983a7184273ecb6f2357867f602099b7cef0a0b2b",
+      "bytes": 9500,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "apps/web/src/theme.contrast.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "b20ca21b3c9302d08d40f892a50a172846f3b2afd7fdff6da9f794cd2f203597",
+      "bytes": 1755,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "apps/web/tools/effects-test.mjs",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "b80a2783cd03767db31dffb69227c47d74fcdb784972a158ce458003c89239f3",
+      "bytes": 10459,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "docs/decisions/baseline-hud-layout.md",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "9761612a0ac3a7ccf638e45b68b0b8b5532b0424fe4500c3296a74645f7f1fad",
+      "bytes": 2515,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "docs/decisions/mission-baseline-compatibility.md",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "ef33b4852a831b26822772cb1d25f88461a798485ed4ea8047c0d9af46dd081a",
+      "bytes": 1526,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "docs/design/decisions.md",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "b7ed1ca7b05cf2fbb4c5fbf283bb612a4e76edf0d8f5f9028c0f91d9eb63a6e4",
+      "bytes": 434,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "docs/proposals/rune-skill-system/README.md",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "aa512cb40505f804e1a7c327c18d4b62698424534c0cc040bc5549a043b690f1",
+      "bytes": 1148,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "docs/test-stability.md",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "cbad6ddd3dfb960cf72eb8756da0711972c819c06d91d057d3c3f8e06182715f",
+      "bytes": 9868,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "package.json",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "7546c6b4e472b81e6240d13846ccb5fcc0ddfa1fd88bfeeab24c0d18f9b9c033",
+      "bytes": 388,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/base0.md",
+      "tier": 2,
+      "reason": "Record original-grade failure, root causes, targeted evidence limits and full fresh verification requirement.",
+      "sha256": "81e6b39be7bbb7456ac57b609d207301fb072600366e0be26cdc1a39ec179451",
+      "bytes": 12042,
+      "unchanged_from_prior_review": false
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-focused-1280.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "cfe26a2d4f4281d077708703230e2c58eb158859e220ec8c3cc88be070abaaa0",
+      "bytes": 17279,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-focused-1600.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "10116e100899564bd4e333ffe50e740888a60d0119e6515b60bf4f4f52b93c81",
+      "bytes": 17310,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-lint.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "5dc2e00ded445dd00e8726e06c1010022ffe37917896c128a09723d2aabc17f6",
+      "bytes": 898,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1280.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "9cf2bfa5b6e640da8bd4d7332db4c4ad6879924d9e42f9d8be48529047e9ae73",
+      "bytes": 97678,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1600.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "9fd90d3942c783ea77c5650a8533051c3cc91bd58cbff952dae8cc22c78e73ce",
+      "bytes": 97742,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-screens.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "a795961e9b6d40d21439e28a642709ef5f5da4828d66c5ee69f58ea55b6b29de",
+      "bytes": 8453,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-typecheck.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "986feefb2409a25ee4c65688b4c598e7f2538aeaf9ba6aaff89b7a7b8d32af77",
+      "bytes": 978,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/logs/resume-units.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "1bb53bfce8aeedb9300491a34e28ce034dedf92d18ea7a4eeda1020bd2d4af13",
+      "bytes": 1057,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/resume-commands.jsonl",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "686ffb6d2830a0275d0c4dee6e514e48346b6a9002afed894d76a56f000dde03",
+      "bytes": 4515,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/resume-integrity.json",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "8f42ce1199e1f64720b6c30e3808a89f1cef7dfca7aab744ab7b0cb6a3bcfdcc",
+      "bytes": 963,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/resume-secret-scan.json",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "c753af6cb9cc76374da369af89b4ae385ff8ba55a700cce3f0ab75f43228d63b",
+      "bytes": 1274,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/resume-source.json",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "98a53daa3910c89060152dbe53db51801950016062f6b8d669f5614d878c9a31",
+      "bytes": 1157,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/run-check.py",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "9f2d8c3e53ada069904a367369c66674f788b7b82460fbbb66ef28114cbf3106",
+      "bytes": 1880,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/screens/repaired-1280.png",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "8130d950a73c80f233ee44b279994cd9b369f0397841b6575f0b8956ad7e1880",
+      "bytes": 89643,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-repair/screens/repaired-1600.png",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "fb0a2c3cdff0cafbc453b0411f79623bb9a230e5df8dbefeebeb20ea319efa3c",
+      "bytes": 95013,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/hud-resume-handoff.md",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "aec17d2b08b6d1069d8f15ceb1243a858ca77018d70689bed5b2d364492c95d1",
+      "bytes": 8176,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs-before-geometry.json",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "ea96ee56d9f180819b4c2b774038c1e5e2659d6bf4d1c297384ff5ee054ee989",
+      "bytes": 5987,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs/focused-browser-r2.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "ab7447947ad41436b65c2b07b49d7d989308f1015e11b54aec960fef6d8af70f",
+      "bytes": 11989,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs/focused-browser-r3.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "9de7def0106433431b9f5de68c09a176ea58a46e8fcd5c4340a0fb6f6ab7cc58",
+      "bytes": 8435,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs/focused-browser-r4.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "3264233a880e99612bc99f3280ca9c88077fc432ff042d0f6c9610547a2a487d",
+      "bytes": 5231,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs/focused-browser.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "daa8b4e6a68ead3228977800e8fc25b987be27f7b4367f57abc874b1909d0f28",
+      "bytes": 9717,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/logs/results.jsonl",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "761994aba08c99edda5f218f404a177b1787f35a8ed8e7bc4aa3ee18b34567c5",
+      "bytes": 706,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/screens/after-1280.png",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "f3004c026d6e66b368e4c6b4e84429bf389ab744eec7aa098ecadf5fca422b77",
+      "bytes": 92154,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/screens/before-1280.png",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "61a0c898553040bec4438fbe54da748ea2d8b9589e674df8bc90a623f59a8774",
+      "bytes": 92421,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/base0/screens/before-1600.png",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "ddc7a6a79ca66d2e77b1abee0b3099c8259bfbbafb29719e9f235ace4bfc86e2",
+      "bytes": 101827,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/deno0/logs/generator-tests.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "7bec170ad5d0b29425d06080447400a8fea81f8cfc35f708c5e9e9ecf91395e6",
+      "bytes": 680,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/deno0/logs/import-guard.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "17efc6a5fcd1b2ef3d81a31bbc9860287dcf833649f3bf681f426f9c29138189",
+      "bytes": 153,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/deno0/logs/mutations.json",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "7cfa69817f4b14523da37192dfb55acaa27905bc970299083bc609b87feb09c8",
+      "bytes": 546,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/deno0/logs/mutations.log",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "423a91cd614e39980b848485521e2c1f06f8db83b0ed510c3fe29e52b8399009",
+      "bytes": 23936,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "reports/scorecard/deno0/logs/results.jsonl",
+      "tier": 2,
+      "reason": "Exact-source evidence and historical findings",
+      "sha256": "6dfda9a2f8e636396abe56d1ce8bf57bbb52772386c572dc026c98e248f13a58",
+      "bytes": 336,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "scripts/gen-deno-json.mjs",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "5f229be72f7a8c56fefdbee9dd9383de441d78c38f596d1ac80c171c486145d8",
+      "bytes": 3826,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "scripts/gen-deno-json.test.mjs",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "cb29fbf3269802cc01220eb4b80f67f962ec63dcdd77ed67d8bd3de52ac5b265",
+      "bytes": 3526,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/boss-fight/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/equip/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/game-state/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/idle-claim/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/relic-forge/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/relic-mint-report/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/upgrade/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-boss-fight/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-choose-class/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-claim/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-craft/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-equip/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-lock/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-relic-forge/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-salvage/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/functions/v2-state/deno.json",
+      "tier": 1,
+      "reason": "Deno aliases, scene readiness or shared HUD baseline repair",
+      "sha256": "a55c8eea5d719cddbb817bb986e1250c125fc1556913b122e8765069c30ffc45",
+      "bytes": 8606,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/concurrency-hardening.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "4495b9d3a47740aa34c2e4aaba274cad05d108f3fc14f9c6fbb60195c544c566",
+      "bytes": 7967,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/concurrency.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "5bd962b120678c3854bf7adb54b21d0df8fee675a15557614e97104973789937",
+      "bytes": 11886,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/deno-imports.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "8d601258c92e8287b45bce220e3d8ca861669fd3743d7b9a8f7fb46149380365",
+      "bytes": 3294,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/fixture-clock.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "59e8bf598c084daf20ab8b77dd1aa83b41a8526be64300c5d9fc2240e4c1c81e",
+      "bytes": 696,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/fixture-clock.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "1b3cbdb54d30e91df19236a7e4fe914d8fcffa25ee352ec35cf0e46a59c8df48",
+      "bytes": 666,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/forge.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "700b0c71a9a631786523535470c0fc845edf4983451bfdf731dc15c4ebccf7ea",
+      "bytes": 22734,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/relic-recovery.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "5269c83e789ecc16506715a38c154396f966c608b43ac2bf02bc865f16763e4a",
+      "bytes": 17291,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/voucher-cancel.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "cfedac57f02f4952d73a73177f07e9f028b6dc4e66323c0066f58fb2aad21a92",
+      "bytes": 6145,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/src/voucher-security.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "5ecee93d72a833bc8e55ec9e8578b3c5ed6fe46e839e9d3b1ff52fd73fd71b52",
+      "bytes": 10713,
+      "unchanged_from_prior_review": true
+    },
+    {
+      "path": "supabase/tests/v2/functions-forge.test.ts",
+      "tier": 2,
+      "reason": "Existing verification harness, fixture or documentation repaired for the baseline gate",
+      "sha256": "261b55c8ee6e05cc724d6a913336a028033e4b50555937952cf7cbff9c44812d",
+      "bytes": 16931,
+      "unchanged_from_prior_review": true
+    }
+  ],
+  "prior_source_review": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "unchanged_file_hashes": 75,
+  "reviewed_repair_paths": [
+    "apps/web/e2e/server/fixture-clock.spec.ts",
+    "apps/web/e2e/support/server-fixture.ts",
+    "apps/web/src/game/stage/StageCanvas.tsx",
+    "apps/web/src/game/stage/StageCanvas.test.tsx",
+    "apps/web/src/shell/Hud.tsx",
+    "apps/web/src/shell/ScreenFrame.tsx",
+    "apps/web/src/shell/shell.css",
+    "reports/base0.md"
+  ],
+  "flags": [
+    {
+      "path": "apps/web/e2e/smoke.spec.ts",
+      "line": 20,
+      "kind": "removed_assertion_or_old_test_marker",
+      "direction": "removed",
+      "review": "JUSTIFIED",
+      "reason": "Exact hardcoded1280 initial width replaced by exact configured viewport width; exact800 resize assertion retained. Supports requested1600 run, no tolerance change."
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "line": 23,
+      "kind": "matcher",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "New geometry/text bounds for readable HUD and gated hint, not replacement of any exact previous assertion; complementary exact height/fill/color/text/7nav checks retained."
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "line": 78,
+      "kind": "matcher",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "New geometry/text bounds for readable HUD and gated hint, not replacement of any exact previous assertion; complementary exact height/fill/color/text/7nav checks retained."
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "line": 128,
+      "kind": "matcher",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "New geometry/text bounds for readable HUD and gated hint, not replacement of any exact previous assertion; complementary exact height/fill/color/text/7nav checks retained."
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "line": 145,
+      "kind": "debug",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "Opt-in diagnostic output in test/tool/CLI, not application src; records geometry, artifact byte counts or generated-map count without secrets."
+    },
+    {
+      "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+      "line": 204,
+      "kind": "debug",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "Opt-in diagnostic output in test/tool/CLI, not application src; records geometry, artifact byte counts or generated-map count without secrets."
+    },
+    {
+      "path": "apps/web/e2e/ui/f3-art.spec.ts",
+      "line": 42,
+      "kind": "debug",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "Opt-in diagnostic output in test/tool/CLI, not application src; records geometry, artifact byte counts or generated-map count without secrets."
+    },
+    {
+      "path": "apps/web/tools/effects-test.mjs",
+      "line": 164,
+      "kind": "debug",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "Opt-in diagnostic output in test/tool/CLI, not application src; records geometry, artifact byte counts or generated-map count without secrets."
+    },
+    {
+      "path": "scripts/gen-deno-json.mjs",
+      "line": 84,
+      "kind": "debug",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "Opt-in diagnostic output in test/tool/CLI, not application src; records geometry, artifact byte counts or generated-map count without secrets."
+    },
+    {
+      "path": "supabase/tests/src/deno-imports.test.ts",
+      "line": 14,
+      "kind": "removed_assertion_or_old_test_marker",
+      "direction": "removed",
+      "review": "JUSTIFIED",
+      "reason": "Known expected-failure marker promoted to mandatory passing test; old unresolved-edge baseline assertion now requires an empty unresolved set. Restores strict guard after Deno repair."
+    },
+    {
+      "path": "supabase/tests/src/deno-imports.test.ts",
+      "line": 40,
+      "kind": "removed_assertion_or_old_test_marker",
+      "direction": "removed",
+      "review": "JUSTIFIED",
+      "reason": "Known expected-failure marker promoted to mandatory passing test; old unresolved-edge baseline assertion now requires an empty unresolved set. Restores strict guard after Deno repair."
+    },
+    {
+      "path": "supabase/tests/v2/functions-forge.test.ts",
+      "line": 68,
+      "kind": "matcher",
+      "direction": "added",
+      "review": "JUSTIFIED",
+      "reason": "New inserted-item membership assertion complements exact length and stale/early-claim rejection; no previous assertion removed."
+    }
+  ],
+  "new_suppression_or_skip_flags": [],
+  "secret_findings": [],
+  "forbidden_paths": [],
+  "g4": "No contracts or migrations in full candidate diff; complete SQL tests executed in fresh root-unit gate.",
+  "status": "SOURCE_REVIEW_COMPLETE; dynamic gates/grade still pending",
+  "unjustified_flags": []
+}
