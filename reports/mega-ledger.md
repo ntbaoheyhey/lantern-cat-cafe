@@ -4,7 +4,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 
 | item | branch | PR URL | state | rounds used | last verify result | notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| FXRB | ai/codex-fxrb | — | IN-PROGRESS | 1 | Baseline reproduced: 1/3 and 2/10 burst failures; round 1 starting | Resize calls StageScene.relayout before Phaser injects scale; Tier 2 stage-sizing guard and regression |
+| FXRB | ai/codex-fxrb | — | IN-PROGRESS | 1 | Round 1: unit/build green; 119/120 resize; full e2e 253 pass, 2 known mobile failures | Canvas race fixed; investigating one third-party resource error before repeat acceptance |
 | CXN3 | ai/codex-n3-cutover-truth | — | TODO | 0 | Not run | Inspect existing branch and report before resuming |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | Not run in this mission | Existing draft; inspect and complete missing verification |
 | CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
