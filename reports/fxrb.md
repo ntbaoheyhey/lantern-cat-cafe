@@ -33,7 +33,7 @@ Live services, wallets, and production state are not exercised. No visual redesi
 
 ## Delivery
 
-Branch: `ai/codex-fxrb`; draft PR pending; no merge or deploy. All changes use the requested author and [skip ci] suffix.
+Branch: `ai/codex-fxrb`; [draft PR #243](https://github.com/ntbaoheyhey/taskbar-hero/pull/243); no merge or deploy. All changes use the requested author and [skip ci] suffix.
 
 ## Scope review
 
@@ -53,7 +53,7 @@ The stage insertion count is two because the existing desktop/phone layout switc
 | Link debt unchanged | PASS comparison, checker itself FAIL | Main and branch both have exactly one broken path |
 | Visual changes | Not applicable | No layout, tokens or art changed; only premature sizing is prevented |
 
-One corrective full round was used. The two narrow HUD failures are explicitly outside this mission, so repeating the same failures six times would not establish a fix. The isolated resource error was not reproducible in the 40-case diagnostic run; its cause remains NOT VERIFIED. No false full-suite PASS is claimed.
+Two full verification rounds were used (the second via the repository PR wrapper). The two narrow HUD failures are explicitly outside this mission, so repeating the same failures six times would not establish a fix. The isolated resource error was not reproducible in the 40-case diagnostic run; its cause remains NOT VERIFIED. No false full-suite PASS is claimed.
 
 <!-- MEGA verification evidence -->
 
@@ -299,3 +299,9 @@ reports/fxrb/checks/burst-20-each.log
 reports/fxrb/checks/round1-e2e.log
 reports/fxrb/checks/round1-resize-20.log
 ```
+
+## PR verification follow-up
+
+Implementation commit: `26945fa`. Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/243.
+
+`CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 243` ran without --comment. Install, Deno drift, typecheck, lint, unit tests and build pass again. Full browser suite remains FAIL; see [wrapper summary and browser failure tail](fxrb/checks/verify-pr.log). Its throwaway worktree was removed by the script. No workflow was invoked. Report-only changes after this run do not alter tested source.
