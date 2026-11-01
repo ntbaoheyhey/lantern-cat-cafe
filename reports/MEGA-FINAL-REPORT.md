@@ -15,3 +15,5 @@ User-supplied crawl/liveTBHIndex now explicitly informs skill/equipment paramete
 No main push, Actions, contract/backend release, live SQL write, wallet transaction, public-repo change or contest submission occurred. Current handoff records active state and next3actions. Optional user steps remain separate; noP0/P1 mergedmilestone is claimed.
 
 Public deployment content now matches the current main build across all31 emitted resources, paired with successful GitHub Vercel status for that SHA. Five controls and the actual unmerged-candidate negative control passed. Provider commit metadata remains unobserved; no postmerge result is claimed. Method/evidence: cards/DEPLOYMENT-IDENTITY/REPORT.md.
+
+Independent BASE0 round1 graderA failed the repeat gate: one missing Craft-button assertion among470 runs at1280;1600 had470passes. A7 gives final0/100(raw72.9167). Two quality deductions also need cleanup. GraderB is still running. Coordinator is reproducing this failure on an isolated unchanged checkout; no source-head change or merge. Builder green evidence remains historical and does not override the grade.
