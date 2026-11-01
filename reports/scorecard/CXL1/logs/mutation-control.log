@@ -1,0 +1,16 @@
+MUTANT: control
+FILE: unchanged scratch control
+OLD: <empty>
+NEW: <empty>
+$ pnpm exec vitest run src/v2/codex/entries.test.ts src/v2/codex/odds.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/mutant-iijw9oyy/packages/game-rules
+
+
+ Test Files  2 passed (2)
+      Tests  16 passed (16)
+   Start at  15:38:20
+   Duration  383ms (tests 61%, transform 29%, import 10%, worker 1%)
+
+
+EXIT: 0
