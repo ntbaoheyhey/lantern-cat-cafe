@@ -1,6 +1,6 @@
 # Mega scorecard — living draft
 
-**PAUSED at user request, 2026-11-01.** Workers/tests stopped. Resume from [the handoff](MEGA-HANDOFF-2026-11-01.md); no automatic continuation.
+**ACTIVE — resumed explicitly by the user on 2026-11-01.** Current state: [resumption handoff](MEGA-CURRENT-HANDOFF.md). The earlier pause handoff is historical.
 
 No item has been graded in this mission yet. Previous PASS claims are not imported.
 
