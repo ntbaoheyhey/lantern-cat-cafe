@@ -60,3 +60,5 @@ Independent grade milestone 2026-11-01T23:33:01+07:00: A97.642857/B98 accepted w
 Publication receipt 2026-11-01T23:35:00+07:00: B150deliveryfiles match immutablebeb4a99 on remoteledger. PR246body links independentA/B and scoreaggregation; remainsdraft/open on280ff4b. No merge or deployment attempt.
 
 CXN3 local preflight 2026-11-01T23:40:09+07:00: cd274abpasses9classifier/docs+4PGlite/type/Deno/links. No liveprobe/release. Historical10livefailures remain open inCXN3-FIX; mandatory --v2postmerge gate must be resolved before CXN3 can complete. No sourcebranch/queue/gate exception.
+
+CXU5 preflight 2026-11-01T23:45:29+07:00: detached6bf7b13passed80Map/Boss browser repeats andfocusedunits(["72 passed (72)"])/typecheck. OriginaldirtyCXU5evidence preserved; application source merged clean. All actual-main/fullgate/grade/live requirements remain pending.
