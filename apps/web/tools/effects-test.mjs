@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
-const { chromium } = createRequire(import.meta.url)('@playwright/test');
+const { chromium, expect } = createRequire(import.meta.url)('@playwright/test');
 
 const out = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? '../../reports/effects');
 const writeScreenshots = process.env.SCREENSHOTS === '1';
@@ -118,8 +118,17 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
     const names = new Set(); let transformAnims = 0;
     const visited = [];
     for (const screen of manifest.screens) {
-      await page.getByTestId(screen.navTestId).click();
-      if (screen.subnavTestId) await page.getByTestId(screen.subnavTestId).click();
+      const nav = page.getByTestId(screen.navTestId);
+      await nav.click();
+      await expect(nav).toHaveAttribute('aria-selected', 'true');
+      await expect(page.locator('.app-shell')).toHaveAttribute('data-active-screen', screen.navTestId.replace(/^nav-/, ''));
+      if (screen.subnavTestId) {
+        const subnav = page.getByTestId(screen.subnavTestId);
+        await subnav.click();
+        await expect(subnav).toHaveAttribute('aria-selected', 'true');
+      }
+      const content = page.getByTestId(screen.screenTestId);
+      for (const selector of screen.required) await expect(content.locator(selector).filter({ visible: true }).first()).toBeVisible();
       visited.push(screen.id);
       for (let i = 0; i < 6; i++) {
         await sleep(80);

@@ -9,6 +9,8 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
  * game-rules imports its own modules without extensions ('./rng', './v2'), which Deno does not
  * resolve. Map every non-test module (and every folder with an index.ts) to its file, so new
  * modules need no edit here.
+ * @param {string} projectRoot
+ * @returns {Record<string, string>}
  */
 export function gameRulesImports(projectRoot = root) {
   const src = join(projectRoot, 'packages/game-rules/src');
@@ -42,6 +44,7 @@ const auth = {
   },
 };
 
+/** @param {string} projectRoot @returns {number} Number of generated maps. */
 export function generateImportMaps(projectRoot = root) {
   const functionsDir = join(projectRoot, 'supabase/functions');
   const game = {
