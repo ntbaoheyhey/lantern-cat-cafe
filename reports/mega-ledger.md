@@ -8,7 +8,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 | CXN3 | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | PARTIAL | 2 | All applicable local checks pass twice; classifier 8/8; PGlite 3/3; live 18 pass/9 fail | Deno import guard 80 failures identical on main; reports/n3-cutover-truth.md; no live/auth changes |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | PARTIAL | 2 | Unit 2310 pass; desktop persistence 6/6; full e2e twice 256 pass/2 excluded mobile failures; committed map drift clean | Fixed refresh backfill/cleanup; generated map metadata only; preview isolation preserved; reports/cxp1.md |
 | CXR1 | ai/codex-redesign-cxr1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/245 | PARTIAL | 3 | Compile/build pass; unit 2318 pass/1 active AA failure; e2e 252 pass/2 excluded mobile; audit 18/18 clear | 16 PNGs + comparison + 12 findings; AGR3/AGR4 deferred; CXR2 owns cosmetic fixes; recheck at queue end |
-| CXR2 | ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Follow CXR1 findings; same AGR gate |
+| CXR2 | ai/codex-redesign-cxr2 | — | IN-PROGRESS | 1 | Latest main remains 1fb25ed; CXR1 findings reviewed | Fix merged-screen cosmetic/copy findings; AGR3/AGR4 redesign scope stays deferred |
 | CXL2 | ai/codex-cxl2 | — | TODO | 0 | Signature not checked | Skip unless dated user SIGNED line exists in design section 6 |
 | Re-check | ai/codex-redesign-cxr1 / ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Refresh main and repeat CXR1; extend if AGR3/AGR4 land |
 | Integration | local throwaway branch (never pushed) | — | TODO | 0 | Not run | Merge mission branches locally; publish reports/mega-final.md here |
@@ -40,3 +40,10 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 3. Extend contrast coverage for the new text tokens and report any failing pairs or other bugs with file/line evidence.
 4. Run the full local verification order, desktop UI/effects audits, screenshots and side-by-side mockup review; record every difference and route cosmetic fixes to CXR2.
 5. Publish reports/redesign/CXR1.md and a draft PR as PARTIAL if AGR3/AGR4 remain absent; recheck after the queue.
+
+## CXR2 plan
+1. Read CXR1 findings, AGR reports and current CSS/component code; retain the same missing-AGR3/AGR4 gate.
+2. Correct warning contrast, approved surface/type tokens, desktop Home/Class/Landing/Bag layout, HUD clipping and false display-copy claims while preserving art, handlers and game rules.
+3. Add targeted desktop geometry/copy/keyboard checks; extend audit capture selection and effects viewport input without changing assertions or thresholds.
+4. Run the full verification order, all nine-state audits and motion checks at both sizes; compare updated screens with the approved mockup and measure bundle changes.
+5. Publish a small draft PR and reports/redesign/CXR2.md with real results and larger-feature proposals; verify against CXR1 during the requested integration pass.
