@@ -16,7 +16,7 @@ describe('HelpTab key sources', () => {
 
   it('lists daily and rare-drop sources from config', () => {
     render(<HelpTab />);
-    const items = within(screen.getByTestId('help-key-sources')).getAllByRole('listitem');
+    const items = within(screen.getByTestId('help-key-sources')).getAllByRole('listitem', { hidden: true });
     expect(items.map((li) => li.getAttribute('data-source'))).toEqual(['daily', 'drop']);
     expect(items[0]!.textContent).toContain(`${v2.V2_CONFIG.idle.dailyKeys} Cat Key`);
     expect(items[1]!.textContent).toContain(`1 in ${Math.round(1 / v2.V2_CONFIG.idle.clearedChapterKeyChance)}`);

@@ -15,9 +15,9 @@ describe('HelpTab', () => {
     vi.unstubAllEnvs();
   });
 
-  it('1. Flag on: the six h3 headings appear in this order; the text contains "Mochi the cat naps"', () => {
+  it('1. Flag on: the preserved six h3 headings (including inactive answers) appear in this order; the text contains "Mochi the cat naps"', () => {
     const { container } = render(<HelpTab />);
-    const headings = screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent?.trim());
+    const headings = screen.getAllByRole('heading', { level: 3, hidden: true }).map((h) => h.textContent?.trim());
     expect(headings).toEqual([
       'Getting started',
       'Classes',
@@ -113,7 +113,7 @@ describe('HelpTab', () => {
 
   it('6. a11y: headings h3 only, no skipped levels inside the panel, icons (if any) aria-hidden, no tabIndex > 0', () => {
     const { container } = render(<HelpTab />);
-    const headings = screen.getAllByRole('heading');
+    const headings = screen.getAllByRole('heading', { hidden: true });
     expect(headings.length).toBe(6);
     headings.forEach((h) => {
       expect(h.tagName.toLowerCase()).toBe('h3');

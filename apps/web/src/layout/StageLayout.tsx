@@ -41,7 +41,7 @@ import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { TabIcon } from './tabIcons';
 import { BagPanel } from './bag/BagPanel';
 import { equipBest } from './bag/equipRules';
-import { CharacterPanel } from './character/CharacterPanel';
+import { HeroScreen } from './character/HeroScreen';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
 import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
@@ -565,7 +565,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             <h2 className="v2-tabpanel-title">Hero</h2>
             <div className="v2-panel-body-inner">
               {state ? (
-                <CharacterPanel state={state} onSelectSlot={() => handleSelectScreen('bag')} />
+                <HeroScreen state={state} onSelectSlot={() => handleSelectScreen('bag')} classBusy={actionBusy !== null}
+                  onChooseClass={async (id) => { await loop.chooseClass(id); return loop.getSnapshot().state?.cat.classId === id; }} />
               ) : (
                 <p>Loading your cat…</p>
               )}

@@ -18,6 +18,6 @@
     { "id": "forge-relic", "label": "Forge / Relic", "route": "/", "navTestId": "nav-forge", "subnavTestId": "tab-relic", "screenTestId": "screen", "required": ["[data-testid='relic-panel']", "[data-testid='relic-forge-btn']"], "legacyTab": "Forge", "screenshot": false },
     { "id": "market", "label": "Market", "route": "/", "navTestId": "nav-market", "screenTestId": "screen", "required": [".market, .forge-note"], "legacyTab": "Market", "screenshot": true },
     { "id": "hero", "label": "Hero", "route": "/", "navTestId": "nav-hero", "screenTestId": "screen", "required": ["[data-testid='character-power']"], "legacyTab": "Character", "screenshot": true },
-    { "id": "help", "label": "Help", "route": "/", "navTestId": "nav-help", "screenTestId": "screen", "required": ["[data-testid='help-key-sources']"], "legacyTab": "Help", "screenshot": true }
+    { "id": "help", "label": "Help", "route": "/", "navTestId": "nav-help", "screenTestId": "screen", "required": [".help-topic-list", "input[type='search']", ".help-v2-section:not([hidden])"], "legacyTab": "Help", "screenshot": true }
   ]
 }

@@ -21,6 +21,9 @@ const pairs: [string, string, number][] = [
   ['--text', '--surface-2', 4.5], ['--text', '--surface-3', 4.5],
   ['--muted', '--bg', 4.5], ['--muted', '--surface', 4.5],
   ['--on-accent', '--accent', 4.5], ['--border', '--bg', 3],
+  // CXU4: selected Help topic, toast text and modal/button focus outlines.
+  ['--accent', '--surface', 4.5], ['--muted', '--surface-2', 4.5],
+  ['--focus', '--surface', 3], ['--focus', '--surface-2', 3],
 ];
 
 describe('theme WCAG contrast', () => {
