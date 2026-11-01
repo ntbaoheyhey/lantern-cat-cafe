@@ -4,6 +4,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | Fresh complete gate running on 1eb7d58 | Added baseline prerequisite; no grade or merge |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
