@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "../src/fixture-clock.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import { CONFIG, relicIdFor, rollRelicRarity, v2 } from "@taskbar-hero/game-rules";
 import { verifyTypedData, type Address } from "viem";
@@ -29,8 +30,7 @@ beforeAll(async () => { db = await migratedDb(); });
 afterAll(async () => { await db.close(); });
 beforeEach(async () => {
   // Keep voucher expiry ahead of SQL NOW() and lifecycle tests away from midnight.
-  const { rows } = await db.query<{ millis: number }>(`select extract(epoch from (date_trunc('day', now() at time zone 'UTC') at time zone 'UTC' + interval '1 day 10 hours')) * 1000 as millis`);
-  clock = Number(rows[0]!.millis);
+  clock = await databaseFixtureClock(db);
   used.clear(); vi.mocked(chain.nonceUsed).mockClear();
 });
 async function fresh(chosen = true) {
