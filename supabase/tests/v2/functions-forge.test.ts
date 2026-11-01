@@ -13,7 +13,7 @@ import { call, fn, item, manyItems, newPlayer, setStacks, stack } from "./helper
 import { pgliteV2Store } from "./v2-store.ts";
 
 let db: PGlite;
-let clock = Date.UTC(2026, 10, 1, 10);
+let clock = 0;
 const key = generatePrivateKey();
 const nft: Address = "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D";
 const used = new Set<bigint>();
@@ -27,7 +27,12 @@ const craftBody = { recipeId: recipe.id, slot: "weapon" };
 const unknown = "00000000-0000-4000-8000-0000000000ff";
 beforeAll(async () => { db = await migratedDb(); });
 afterAll(async () => { await db.close(); });
-beforeEach(() => { clock = Date.UTC(2026, 10, 1, 10); used.clear(); vi.mocked(chain.nonceUsed).mockClear(); });
+beforeEach(async () => {
+  // Keep voucher expiry ahead of SQL NOW() and lifecycle tests away from midnight.
+  const { rows } = await db.query<{ millis: number }>(`select extract(epoch from (date_trunc('day', now() at time zone 'UTC') at time zone 'UTC' + interval '1 day 10 hours')) * 1000 as millis`);
+  clock = Number(rows[0]!.millis);
+  used.clear(); vi.mocked(chain.nonceUsed).mockClear();
+});
 async function fresh(chosen = true) {
   const p = await newPlayer(db);
   await getStateV2(deps, p);
@@ -37,6 +42,8 @@ async function fresh(chosen = true) {
 async function raw(p: string) { return (await store.snapshot(p, dayDate(clock / 1000)))!; }
 async function insert(p: string, items = [item()]) {
   const before = await raw(p);
+  // SQL initializes last_claim_at with database time; honor its unchanged 10s guard.
+  clock = Math.max(clock, Math.ceil(before.lastClaimMicros / 1000) + 10_000);
   const result = await fn(db).claim(p, { micros: before.lastClaimMicros, rev: before.progressRev, now: new Date(clock), items, bag: v2.V2_CONFIG.bag.limit });
   return result!.items as v2.ItemViewV2[];
 }
@@ -47,6 +54,22 @@ const forge = (p: string) => forgeRelicV2(deps, p);
 const blocked = (reason: string) => ({ code: "forge_blocked", extra: { reason } });
 
 describe("v2 craft, salvage and lock over migrated SQL", () => {
+  it.each(["2020-01-01T00:00:00.123456Z", "2040-01-01T00:00:00.123456Z"])("seeds inventory across database clock %s while preserving claim guards", async timestamp => {
+    const p = await fresh();
+    await db.query(`update cat_state set last_claim_at = $2::timestamptz where player_id = $1`, [p, timestamp]);
+    const before = await raw(p);
+    const claim = { micros: before.lastClaimMicros, rev: before.progressRev, items: [item()] };
+    const initialClock = clock;
+    expect(await fn(db).claim(p, { ...claim, now: new Date(Math.floor(before.lastClaimMicros / 1000) + 9_999) })).toBeNull();
+    expect((await raw(p)).inventory).toEqual(before.inventory);
+    const inserted = await insert(p);
+    expect(clock).toBe(Math.max(initialClock, Math.ceil(before.lastClaimMicros / 1000) + 10_000));
+    expect(inserted).toHaveLength(1);
+    expect((await raw(p)).inventory).toContainEqual(inserted[0]);
+    // A later timestamp must not let a stale claim snapshot mint the same loot twice.
+    expect(await fn(db).claim(p, { ...claim, now: new Date(clock + 10_000) })).toBeNull();
+    expect((await raw(p)).inventory).toHaveLength(before.inventory.length + 1);
+  });
   it("returns the first recipe shortage as HTTP 409 and spends nothing", async () => {
     const p = await fresh();
     const before = await raw(p);
