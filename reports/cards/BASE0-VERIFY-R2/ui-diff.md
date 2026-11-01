@@ -1,0 +1,17 @@
+# BASE0 UI differences and dispositions — living draft
+
+Candidate280ff4b versus main1fb25ed; exact-size reference comparison uses reference/comparison.json (18pairs). The first capture retained reference-document chrome and is explicitly invalid as viewport proof; reference-r1-note.md records the correction. R2 asserts the reference app bounds equal the requested viewport at0,0. All current product audits cover9manifest screens at both sizes, guest and local signed-in; no scroll, overlap, missing-content or browser-error finding.
+
+| Area | Observation | Disposition and evidence |
+| --- | --- | --- |
+| HUD XP | Candidate uses the intended160x10track and good-color fill; actual fixture XP may be0 while mockup XP is nonzero. | RESOLVED BASE0: nonzero25%/75% and proportional-fill browser regressions, exactheight/color, mutation evidence. |
+| HUD title/guidance and status | Candidate retains chapter/round, sync and real gated warning; title/action occupy an additional row compared with the simplified reference. | ACCEPTED DESIGN: docs/decisions/baseline-hud-layout.md; full text, focus/callback and ancestor-containment checks pass. This is a documented difference, not a pixel-identical claim. |
+| Currency labels, values, artwork | Repository Fish/Yarn/current item data and original art differ from static mockup labels, numbers and placeholder art. | SOURCE DATA: preserve authoritative registries and original art; no copied reference assets. |
+| Home grid and stage/loot arrangement | Main and candidate use a three-column home with hero/goal left and loot right; the approved mockup places a larger stage left and context right. | UNCHANGED BASELINE: Home/StageLayout source unchanged; user directs review of already-merged UI inside CXR1. This future review is not claimed fixed by BASE0. |
+| Bag controls, grid sizing and detail state | Current empty fixture shows real0/200inventory, compact empty slots and inactive detail; static reference has populated12/40inventory and larger cells. Filters, detail and selected-state styling also differ. | UNCHANGED BASELINE / FIXTURE DIFFERENCE: Bag source unchanged; all required surfaces, keyboard and empty states remain checked. Populated-state design review belongs to CXR1; no claim that mockup content/state is reproduced. |
+| Map, Forge, Market, Hero and Help | Current main implementations retain their pre-feature layouts/content; future CXU5,CXU3,CXC2,CXU4 work is outside this prerequisite. | SCOPED TO EXISTING CARDS: all18manifest screen-size visits verified; no BASE0 regression observed. Later cards and CXR1 own their specified redesign acceptance. |
+| Rail and shared shell | Seven destinations, active-screen state, focus and Escape behavior retained at both sizes. | RESOLVED BASE0: keyboard7destinations eachsize; effects verifies actual selected/visible content. |
+
+There is no unresolved BASE0 repair row. Inherited reference differences remain explicitly recorded for their assigned cards; this does not certify the complete redesign. This is coordinator review; no independent successor grade is claimed.
+
+Current manual inspection: all8Home/Bag product/reference captures examined at both sizes. Six figures match prior published bytes; two Home captures are new animated frames. Minor wording polish: decorative NEXT and the authoritative hint's Next prefix repeat visually; logged for CXR1, not claimed fixed. This does not change the required visible action or its accessible name.

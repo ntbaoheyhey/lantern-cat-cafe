@@ -1,0 +1,13 @@
+diff --git a/apps/web/tools/effects-test.mjs b/apps/web/tools/effects-test.mjs
+index 748f4ce..e314166 100644
+--- a/apps/web/tools/effects-test.mjs
++++ b/apps/web/tools/effects-test.mjs
+@@ -119,7 +119,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+     const visited = [];
+     for (const screen of manifest.screens) {
+       const nav = page.getByTestId(screen.navTestId);
+-      await nav.click();
++      if (screen.id !== 'help') await nav.click();
+       await expect(nav).toHaveAttribute('aria-selected', 'true');
+       await expect(page.locator('.app-shell')).toHaveAttribute('data-active-screen', screen.navTestId.replace(/^nav-/, ''));
+       if (screen.subnavTestId) {

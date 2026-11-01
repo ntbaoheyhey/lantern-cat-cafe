@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/v2/errors-notice.spec.ts b/apps/web/e2e/v2/errors-notice.spec.ts
+index b366bab..ddad4a8 100644
+--- a/apps/web/e2e/v2/errors-notice.spec.ts
++++ b/apps/web/e2e/v2/errors-notice.spec.ts
+@@ -22,7 +22,7 @@ async function setThemeAndScreenshot(
+     document.documentElement.setAttribute('data-theme', t);
+   }, theme);
+   await page.emulateMedia({ colorScheme: theme });
+-  if (process.env.SCREENSHOTS === '1') {
++  if (true) {
+     ensureDir();
+     const filename = `${name}-${width}x${height}-${theme}.png`;
+     await page.screenshot({ path: path.join(outDir, filename) });

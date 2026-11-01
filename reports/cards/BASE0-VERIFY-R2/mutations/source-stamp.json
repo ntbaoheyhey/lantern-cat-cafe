@@ -1,0 +1,27 @@
+{
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "root": "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero",
+  "pnpm": "10.28.0",
+  "node": "v24.22.2",
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4400",
+    "E2E_PORT_V2": "4401",
+    "E2E_PORT_SERVER": "4402",
+    "E2E_PORT_API": "4403",
+    "E2E_VIEWPORT": "1280x720"
+  },
+  "initialStatus": "",
+  "base": "1fb25ed",
+  "ports": [
+    4400,
+    4401,
+    4402,
+    4403,
+    4404
+  ],
+  "adaptations": "effects exact-source temporary sibling copy changes only const port 5198 to 4404; no import-resolution changes, retries, assertions or timeouts changed. Mutant source restored in finally. Frozen pnpm install used; no tracked dependency changes."
+}

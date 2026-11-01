@@ -1,0 +1,26 @@
+START install
+DONE install exit=0 seconds=6.49
+START deno-drift
+DONE deno-drift exit=0 seconds=0.27
+START typecheck
+DONE typecheck exit=0 seconds=8.54
+START lint
+DONE lint exit=0 seconds=10.74
+START test
+DONE test exit=0 seconds=64.13
+START build
+DONE build exit=0 seconds=7.65
+START bundle-scan
+DONE bundle-scan exit=0 seconds=0.06
+START classic-build
+DONE classic-build exit=0 seconds=5.27
+START v2-budget-build
+DONE v2-budget-build exit=0 seconds=0.72
+START links
+DONE links exit=0 seconds=0.09
+START deno-imports
+DONE deno-imports exit=0 seconds=0.19
+START e2e-1280x720
+DONE e2e-1280x720 exit=0 seconds=138.81
+START e2e-1600x900
+DONE e2e-1600x900 exit=0 seconds=144.78

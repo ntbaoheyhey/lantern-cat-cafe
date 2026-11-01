@@ -1,0 +1,185 @@
+diff --git a/apps/web/e2e/server/fixture-clock.spec.ts b/apps/web/e2e/server/fixture-clock.spec.ts
+new file mode 100644
+index 0000000..943b836
+--- /dev/null
++++ b/apps/web/e2e/server/fixture-clock.spec.ts
+@@ -0,0 +1,19 @@
++import { test, expect, load, inspect } from '../support/server-fixture';
++
++test('server fixture freezes at wall time when its clock advances before the pause command', async ({ page, request }) => {
++  const pauseAt = page.clock.pauseAt.bind(page.clock);
++  // Deterministic protocol interleaving, not a settling wait or retry. Time
++  // passes after the caller chooses its target but before pauseAt receives it.
++  page.clock.pauseAt = async (time) => {
++    await page.clock.fastForward(1);
++    await pauseAt(time);
++  };
++  const session = await load(page, request, 'stocked');
++  page.clock.pauseAt = pauseAt;
++  const frozen = await page.evaluate(() => Date.now());
++  const state = await inspect(request, session);
++  expect(state.raw.classId).not.toBeNull();
++  expect(await page.evaluate(() => Date.now())).toBe(frozen);
++  await page.clock.fastForward(1000);
++  expect(await page.evaluate(() => Date.now())).toBe(frozen + 1000);
++});
+diff --git a/apps/web/e2e/support/server-fixture.ts b/apps/web/e2e/support/server-fixture.ts
+index a61d576..2c51c4a 100644
+--- a/apps/web/e2e/support/server-fixture.ts
++++ b/apps/web/e2e/support/server-fixture.ts
+@@ -30,8 +30,11 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
+   const session = await control<Session>(request, 'session', { kind });
+   await install(page.context(), session);
+   // Freeze only the browser scheduler. Server time advances through a per-player local control.
+-  await page.clock.install();
+-  await page.clock.pauseAt(await page.evaluate(() => Date.now()));
++  // Install before navigation with an epoch origin, then pause at wall time.
++  // Reading the advancing browser clock and pausing at that reading races the
++  // next protocol command: transport latency can make the target already past.
++  await page.clock.install({ time: new Date(0) });
++  await page.clock.pauseAt(new Date());
+   await page.goto('/');
+   // In AGR1 redesign, HUD/rail is hidden on onboarding class-picker (fresh session) until class is chosen.
+   if (kind === 'fresh') {
+diff --git a/apps/web/src/game/stage/StageCanvas.test.tsx b/apps/web/src/game/stage/StageCanvas.test.tsx
+index 5a5afa9..034fa24 100644
+--- a/apps/web/src/game/stage/StageCanvas.test.tsx
++++ b/apps/web/src/game/stage/StageCanvas.test.tsx
+@@ -1,12 +1,21 @@
+ import { act, cleanup, render, waitFor } from '@testing-library/react';
+ import { afterEach, expect, it, vi } from 'vitest';
+ import { sampleServerStateV2 } from '../../layout/a11y/fixtures';
+-const fake = vi.hoisted(() => ({ games: [] as { scale: { resize: ReturnType<typeof vi.fn> }; destroy: ReturnType<typeof vi.fn>; step: ReturnType<typeof vi.fn> }[],
++interface TestGame {
++  isBooted: boolean;
++  scene: { isBooted: boolean };
++  events: { once: ReturnType<typeof vi.fn> };
++  scale: { resize: ReturnType<typeof vi.fn> };
++  destroy: ReturnType<typeof vi.fn>;
++  step: ReturnType<typeof vi.fn>;
++}
++const fake = vi.hoisted(() => ({ games: new Array<TestGame>(),
+   show: vi.fn(), relayout: vi.fn() }));
+ vi.mock('phaser', () => ({ default: { CANVAS: 1, Game: class {
+   isBooted = true;
+   scale = { resize: vi.fn() };
+-  scene = { add: vi.fn() };
++  scene = { isBooted: true, add: vi.fn() };
++  events = { once: vi.fn() };
+   destroy = vi.fn();
+   step = vi.fn();
+   constructor() { fake.games.push(this); }
+@@ -40,6 +49,28 @@ it('does not create a game if unmounted before the lazy imports resolve', async
+   expect(fake.games).toHaveLength(0);
+ });
+ 
++it.each([false, true])('waits for scene-manager readiness before destruction when game.isBooted=%s', async (gameBooted) => {
++  const view = render(<StageCanvas state={sampleServerStateV2()} zoom={3} width={1000} reducedMotion={false} />);
++  await waitFor(() => expect(fake.games).toHaveLength(1));
++  const game = fake.games[0]!;
++  // Game.boot sets isBooted before textures finish and SceneManager.bootQueue
++  // creates systemScene. Destroying in this interval throws inside Phaser.
++  game.isBooted = gameBooted;
++  game.scene.isBooted = false;
++  game.step.mockImplementation(() => {
++    if (!game.scene.isBooted) throw new Error('Scene manager is not ready');
++  });
++  expect(() => view.unmount()).not.toThrow();
++  expect(game.destroy).toHaveBeenCalledExactlyOnceWith(true);
++  expect(game.step).not.toHaveBeenCalled();
++  expect(game.events.once).toHaveBeenCalledWith('ready', expect.any(Function));
++  game.isBooted = true;
++  game.scene.isBooted = true;
++  const ready = game.events.once.mock.calls[0]![1] as () => void;
++  await act(async () => { ready(); await Promise.resolve(); });
++  expect(game.step).toHaveBeenCalledExactlyOnceWith(expect.any(Number), 0);
++});
++
+ it('keeps the current authoritative label during cleared/start moments and subsequent kills', async () => {
+   vi.useFakeTimers();
+   try {
+diff --git a/apps/web/src/game/stage/StageCanvas.tsx b/apps/web/src/game/stage/StageCanvas.tsx
+index 6ae01dd..a3f3169 100644
+--- a/apps/web/src/game/stage/StageCanvas.tsx
++++ b/apps/web/src/game/stage/StageCanvas.tsx
+@@ -64,7 +64,9 @@ export function StageCanvas({
+       retiring.destroy(true);
+       // destroy() only sets pendingDestroy; a hidden/paused loop may never step again.
+       // The public step consumes pendingDestroy before updating or rendering anything.
+-      if (retiring.isBooted) retiring.step(performance.now(), 0);
++      // Game.isBooted becomes true before textures and SceneManager are ready.
++      // runDestroy needs SceneManager's systemScene, created during READY.
++      if (retiring.scene.isBooted) retiring.step(performance.now(), 0);
+       else retiring.events.once('ready', () => queueMicrotask(() => retiring.step(performance.now(), 0)));
+     };
+   }, []);
+diff --git a/apps/web/src/shell/Hud.tsx b/apps/web/src/shell/Hud.tsx
+index 8ad8fc7..064ca29 100644
+--- a/apps/web/src/shell/Hud.tsx
++++ b/apps/web/src/shell/Hud.tsx
+@@ -18,7 +18,6 @@ export interface HudProps {
+   hintText?: string;
+   onHintAction?: () => void;
+   mode?: { demo: boolean; notice: string | null };
+-  compact?: boolean;
+ }
+ 
+ export function Hud({
+diff --git a/apps/web/src/shell/ScreenFrame.tsx b/apps/web/src/shell/ScreenFrame.tsx
+index c4b07c1..549eb57 100644
+--- a/apps/web/src/shell/ScreenFrame.tsx
++++ b/apps/web/src/shell/ScreenFrame.tsx
+@@ -51,7 +51,7 @@ export function ScreenFrame({
+ 
+       <div className="shell-body">
+         {showHud && hudProps ? (
+-          <Hud {...hudProps} compact={dataLayout === 'phone'} />
++          <Hud {...hudProps} />
+         ) : (
+           <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
+         )}
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index b6ec8b3..182bd94 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -328,13 +328,8 @@
+   }
+ 
+   .shell-context {
+-    display: flex;
+-    align-items: center;
+-    justify-content: space-between;
+     gap: var(--sp-2, 8px);
+     padding: 0 var(--sp-1, 4px);
+-    background: var(--surface, #2a1f36);
+-    flex: none;
+   }
+   .shell-context .v2-hint { min-width: 0; }
+   .shell-context .hud-center { min-width: 0; }
+diff --git a/reports/base0.md b/reports/base0.md
+index 2236968..cded980 100644
+--- a/reports/base0.md
++++ b/reports/base0.md
+@@ -2,7 +2,7 @@ STATUS: IN-PROGRESS
+ 
+ # BASE0 — restore the existing verification baseline
+ 
+-Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). No score, merge, deployment or full-suite PASS is claimed here.
++Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). Round1 candidate5db4949 received A0/100(A7 repeat failure) and B97/100; mandatory grader C is still running on that unchanged candidate. No merge or deployment. The isolated successor repairs below require complete fresh exact-head verification and fresh graders.
+ 
+ ## Changes and causality
+ 
+@@ -57,3 +57,13 @@ Tier 2 decision: this isolated test-fixture repair is required for the current r
+ ## Additional baseline fixture repair
+ 
+ The successor full unit gate at07d219b found63 failures in six more inherited voucher/concurrency suites after SQL NOW() passed their fixed voucher expiry. The shared test-only databaseFixtureClock now chooses10:00UTC on the following database day. Those six suites and the v2 forge fixture use it; the two UTC+7 day-rollover cases retain their exact midnight+1second relationship relative to T0. Four leap-day/year-boundary cases cover clocks before and after the former fixed date. Production defaults, SQL guards, voucher TTL, assertions, retries and timeouts are unchanged. These test/helper files are Tier2 baseline prerequisites; previous full-unit evidence is historical. Complete verification on the new source remains pending.
++
++## Round1 independent-grade repair
++
++The original429 countdown/resize case failed once in grader A's required1280repeat run; B's repeats passed but do not erase that failure. Coordinator reproduction established a Phaser lifecycle crash: Game.isBooted becomes true before texture readiness and SceneManager.bootQueue creates systemScene. StageCanvas cleanup forced Game.step too early, so SceneManager.destroy dereferenced undefined systemScene.sys and React lost its entire shell. Cleanup now waits for SceneManager.isBooted, otherwise using the existing READY/microtask path. It still consumes pending destruction in a hidden tab. New unit cases cover both pre-Game-boot and Game-booted/SceneManager-not-ready teardown; the old guard fails the latter, the repaired guard passes.
++
++Diagnostic trace runs also exposed an independent browser-fixture clock race. Reading a running clock then sending pauseAt can target the past if time advances between protocol commands. The fixture installs at epoch origin before application navigation, then pauses at current wall time. A new browser regression deterministically advances one tick between target selection and pause, verifies authoritative state and frozen time, and verifies explicit advancement still works. The old-clock control fails as intended and the repaired control passes. An earlier25ms host-delay control was insufficiently deterministic; its unexpected pass is preserved and not counted as a kill.
++
++The original error-notice spec is unchanged after removal of temporary diagnostic observers. Its targeted100-run repetition without traces passes with the lifecycle repair. Typecheck/lint and StageCanvas/StageScene units pass on the working repair. These focused checks precede the successor commit and do not claim the full exact-head gate. Evidence and all earlier failures: [repair investigation](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-mega-ledger/reports/cards/BASE0-REPAIR-R2/INVESTIGATION.md).
++
++Quality cleanup removes the unused HudProps.compact API/caller and duplicate common CSS declarations from the narrow context override. The approved readable title/guidance row remains an explicit reference difference. Tier2 justification: StageCanvas and its tests fix the independently reproduced prerequisite failure; server-fixture and its new regression repair a real baseline clock-setup race. No claim interval, gameplay rule, assertion, retry, timeout, flag, dependency, backend/auth source, migration or contract changes. Every fixture consumer and the resize/redraw browser cases are included in the expanded fresh repeat gate.
