@@ -1,0 +1,46 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/reports/scorecard/cxu5/.mutants-z03ieZ/apps/web
+
+ ❯ src/layout/bossPresentation.test.ts (7 tests | 1 failed) 64ms
+   × records history only on release, once; close preserves it, reset clears it 59ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  16:50:53
+   Duration  3.05s (environment 81%, transform 13%, import 4%, tests 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/bossPresentation.test.ts > records history only on release, once; close preserves it, reset clears it
+AssertionError: expected { hold: null, fight: null, …(1) } to be { Object (hold, fight, ...) } // Object.is equality
+
+- Expected
++ Received
+
+  {
+    "fight": null,
+-   "history": [],
++   "history": [
++     {
++       "chapter": 1,
++       "durationMs": 740,
++       "firstClear": true,
++       "won": true,
++     },
++   ],
+    "hold": null,
+  }
+
+ ❯ src/layout/bossPresentation.test.ts:66:55
+     64|   const closed = bossPresentation(released, { type: 'close' });
+     65|   expect(closed.history).toBe(released.history);
+     66|   expect(bossPresentation(closed, { type: 'reset' })).toBe(INITIAL_BOS…
+       |                                                       ^
+     67|   const failed = bossPresentation(bossPresentation(closed, begin), { t…
+     68|   expect(failed.history).toBe(released.history);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1
