@@ -80,7 +80,7 @@ Use Node 20+ and pnpm 10.28.0; run the shared suite from the root and the focuse
 
 All 28 pet tests pass (17 registry, 10 store, one isolation). Full browser result: 256 passed, two known narrow HUD height failures (138/214px versus 88px). The six new cases pass in that full run too. [Full e2e output](cxp1/checks/round1-e2e.log). Main and branch retain exactly one broken proposal link; no new debt.
 
-The first full run correctly exposed unstaged generated-map additions. After including those additions, `pnpm gen:deno && git diff --exit-code -- supabase/functions` passes with no unstaged drift. The following table preserves the initial failure rather than rewriting history; the clean committed PR checkout will verify the corrected maps again.
+The first full run correctly exposed unstaged generated-map additions. After including those additions, `pnpm gen:deno && git diff --exit-code -- supabase/functions` passes with no unstaged drift. The following table preserves the initial failure rather than rewriting history; the second clean committed PR checkout verifies the corrected maps with no drift.
 
 <!-- MEGA verification evidence -->
 
@@ -366,3 +366,9 @@ supabase/functions/v2-relic-forge/deno.json
 supabase/functions/v2-salvage/deno.json
 supabase/functions/v2-state/deno.json
 ```
+
+## Independent PR verification
+
+Continuation commit: `954604f`. `CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 240` ran without --comment. The clean committed checkout passes install, generated-map drift, typecheck, lint, unit tests and build. E2E again reports 256 passed and the same two excluded mobile HUD failures. [Summary and failure tail](cxp1/checks/verify-pr.log). Two full rounds are recorded; status remains PARTIAL, not a false whole-suite PASS.
+
+The separate Deno deployment import guard still emits the same 80 unresolved edges as main; its output compares byte-for-byte equal. Generated metadata does not add an unresolved import. No art/public assets or dependency manifests differ from main. The PR remains a draft, and the wrapper removed its temporary checkout.
