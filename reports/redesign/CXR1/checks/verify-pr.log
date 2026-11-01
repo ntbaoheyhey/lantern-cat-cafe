@@ -1,0 +1,23 @@
+Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 1fb25ed):
+PASS  merge with latest main
+PASS  pnpm install
+PASS  generated deno.json has no drift
+PASS  typecheck
+PASS  lint
+FAIL  unit tests
+PASS  build
+FAIL  playwright e2e
+skip  forge test (no contract changes)
+log: /var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T//verify-pr-245.log
+
+Test summaries:
+packages/chain test:       Tests  32 passed (32)
+packages/auth test:       Tests  24 passed (24)
+supabase/tests test:       Tests  541 passed | 1 expected fail (542)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/api-contract test:       Tests  16 passed (16)
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/theme.contrast.test.ts > theme WCAG contrast > --bad on --surface-3 >= 4.5:1
+apps/web test:       Tests  1 failed | 1339 passed (1340)
+  2 failed
+  252 passed (1.2m)

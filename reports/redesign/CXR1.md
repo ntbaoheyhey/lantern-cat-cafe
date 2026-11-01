@@ -65,9 +65,9 @@ The reference HTML was opened, all ten visual tabs were visited at both sizes, a
 4. apps/web/src/layout/home/home.css:16 and apps/web/src/layout/metrics.ts:37 — three-column layout and sizing formula differ from the two-column reference; fix both together to retain integer pixel scaling.
 5. apps/web/src/layout/home/home.css:49 — card frame/radius and contextual loot/log styling differ; the screenshot's loot card is capped while large blank space remains.
 6. apps/web/src/layout/classpicker/classpicker.css:3, :111 and :126 — centred short-card layout does not fill the intended desktop frame.
-7. apps/web/src/layout/landing.css — inspect the scene/hero/cat positioning and full-bleed container against the paired captures.
+7. apps/web/src/layout/landing.css:26, :48 and :234 — inspect the scene/hero/cat positioning and full-bleed container against the paired captures.
 8. apps/web/src/layout/LandingHero.tsx:76 and :109 — incorrect NFT standard and misleading public-source wording. Contract evidence is read-only: contracts/src/RelicNFT.sol:14 extends ERC1155.
-9. apps/web/src/shell/shell.css and apps/web/src/layout/layout.css (v2-hint rules) — 1280px next-action label clips.
+9. apps/web/src/shell/shell.css:174 and :199 plus apps/web/src/layout/layout.css (v2-hint rules) — 1280px next-action label clips.
 10. apps/web/src/layout/bag/bag.css:237, :247, :253 and :276 — fixed slot/card/tile widths waste the desktop pane.
 11. apps/web/src/layout/bag/bag.css:50, :88 and :714 plus apps/web/src/layout/bag/BagPanel.tsx — toolbar/detail/compare presentation and action priority differ from the reference.
 12. apps/web/src/layout/bag/BagPanel.tsx:395 — hardcoded token/mint proof. The existing test in BagPanel.test.tsx also asserts that placeholder and needs a documented old-to-new correction if fixed.
@@ -86,11 +86,11 @@ The explicitly requested theme.contrast.test.ts extension is a test-only additio
 
 ## NOT verified
 
-AGR3/AGR4 redesign components and flows; real wallet or live server state; 1600px effects; the missing local rollback file (outside this UI item). Main's two mobile HUD failures remain outside the desktop scope. No contrast failure, missing feature or visual discrepancy is relabelled PASS.
+AGR3/AGR4 redesign components and flows; real wallet or live server state; 1600px effects. Main's two mobile HUD failures remain outside the desktop scope. No contrast failure, missing feature or visual discrepancy is relabelled PASS.
 
 ## Delivery
 
-Branch: ai/codex-redesign-cxr1; worktree: /Users/bao/.codex/worktrees/mega-cxr1/taskbar-hero. Draft PR pending. Report and verification tails will be pushed even while the gate/finding keeps the item PARTIAL. Recheck latest main after the queue; never merge the draft from this run.
+Branch: ai/codex-redesign-cxr1; worktree: /Users/bao/.codex/worktrees/mega-cxr1/taskbar-hero. Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/245. Report and verification tails will be pushed even while the gate/finding keeps the item PARTIAL. Recheck latest main after the queue; never merge the draft from this run.
 
 ## Verification rounds
 
@@ -366,3 +366,9 @@ reports/redesign/CXR1/screens/home-1600x900.png
 reports/redesign/CXR1/screens/landing-1280x720.png
 reports/redesign/CXR1/screens/landing-1600x900.png
 ```
+
+## Independent draft verification
+
+Implementation/evidence commit: `9d6bc77`. Third full local verification round: `CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 245`, without --comment. Install, Deno drift, typecheck, lint and build pass. The unit AA failure and two excluded mobile e2e failures reproduce; no new category of failure appears. [Wrapper summary and test counts](CXR1/checks/verify-pr.log). The temporary verification checkout was removed.
+
+Status remains PARTIAL because AGR3/AGR4 are absent and the active contrast finding awaits the following CXR2 fix. No tests are loosened or retried to conceal these results.
