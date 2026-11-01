@@ -31,34 +31,67 @@ export class V2Error extends Error {
   }
 }
 
-/** Bound bytes while streaming; Content-Length is caller-controlled. */
-async function requestObject(req: Request): Promise<Record<string, unknown>> {
-  if (!req.body) throw new V2Error("invalid_request");
+const MAX_BODY_BYTES = 8192;
+// Bound the entire upload, not each chunk, below the existing 15-second probe deadline.
+const BODY_READ_TIMEOUT_MS = 10_000;
+
+/** Bound raw input before auth; JSON parsing and game admission remain separate. */
+async function requestBytes(req: Request): Promise<Uint8Array> {
+  const declared = req.headers.get("Content-Length");
+  if (req.signal.aborted || (declared !== null && /^\d+$/.test(declared) && Number(declared) > MAX_BODY_BYTES)) {
+    // Cancellation is cleanup, not a dependency of the refusal response.
+    void req.body?.cancel().catch(() => {});
+    throw new V2Error("invalid_request");
+  }
+  if (!req.body) return new Uint8Array();
   const reader = req.body.getReader();
-  const bytes = new Uint8Array(8192);
+  const bytes = new Uint8Array(MAX_BODY_BYTES);
+  const stopped = new AbortController();
+  const abort = () => stopped.abort();
+  const timer = setTimeout(abort, BODY_READ_TIMEOUT_MS);
+  const stop = new Promise<never>((_resolve, reject) => {
+    stopped.signal.addEventListener("abort", () => {
+      void reader.cancel().catch(() => {});
+      reject(new V2Error("invalid_request"));
+    }, { once: true });
+  });
+  req.signal.addEventListener("abort", abort, { once: true });
   let size = 0;
   try {
+    if (req.signal.aborted) abort();
     for (;;) {
-      const { done, value } = await reader.read();
+      const { done, value } = await Promise.race([reader.read(), stop]);
+      // cancel() can resolve the pending read before the rejection microtask runs.
+      if (stopped.signal.aborted) throw new V2Error("invalid_request");
       if (done) break;
       if (value.byteLength > bytes.length - size) {
-        await reader.cancel();
         throw new V2Error("invalid_request");
       }
       bytes.set(value, size);
       size += value.byteLength;
     }
-    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, size)));
-    if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
-    return body as Record<string, unknown>;
+    return bytes.subarray(0, size);
   } catch {
+    if (!stopped.signal.aborted) void reader.cancel().catch(() => {});
     throw new V2Error("invalid_request");
   } finally {
+    clearTimeout(timer);
+    req.signal.removeEventListener("abort", abort);
     reader.releaseLock();
   }
 }
 
-/** Called after authentication and before the body is read; a non-null refusal stops all game work. */
+function requestObject(bytes: Uint8Array): Record<string, unknown> {
+  try {
+    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
+    if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
+    return body as Record<string, unknown>;
+  } catch {
+    throw new V2Error("invalid_request");
+  }
+}
+
+/** After byte limits and auth, but before JSON parsing; a refusal stops all game work. */
 export type Admit = (player: string) => Promise<{ status: number; error: string; retryAfter: number } | null>;
 
 export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<string, unknown>) => Promise<unknown>, admit?: Admit): (req: Request) => Promise<Response> {
@@ -66,6 +99,7 @@ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<st
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: http.json(req, {}).headers });
     if (req.method !== "POST") return http.json(req, { error: "method_not_allowed" }, 405);
     try {
+      const bytes = await requestBytes(req);
       const player = await http.authenticate(req);
       const refusal = await admit?.(player);
       if (refusal) {
@@ -74,7 +108,7 @@ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<st
         res.headers.append("Access-Control-Expose-Headers", "Retry-After");
         return res;
       }
-      const body = await requestObject(req);
+      const body = requestObject(bytes);
       return http.json(req, await fn(player, body));
     } catch (e) {
       if (e instanceof V2Error) {
