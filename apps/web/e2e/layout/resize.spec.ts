@@ -19,7 +19,9 @@ async function geometry(page: Page) {
     return issues;
   });
 }
-for (const theme of ['dark', 'light']) test(`continuous resize preserves state and readable HUD (${theme})`, async ({ page }) => {
+for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
+for (const theme of ['dark', 'light']) test(`continuous resize preserves state and readable HUD (${theme}, ${viewport.width}x${viewport.height})`, async ({ page }) => {
+  await page.setViewportSize(viewport);
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
@@ -69,3 +71,4 @@ for (const theme of ['dark', 'light']) test(`continuous resize preserves state a
   }
   expect(errors).toEqual([]);
 });
+}
