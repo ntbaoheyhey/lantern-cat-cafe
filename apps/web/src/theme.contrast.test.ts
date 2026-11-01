@@ -23,6 +23,16 @@ const pairs: [string, string, number][] = [
   ['--on-accent', '--accent', 4.5], ['--border', '--bg', 3],
 ];
 
+// Redesign semantic labels are text, including warnings and currency values.
+// Keep the existing AA threshold and cover every plum surface, not just page bg.
+for (const foreground of ['--text', '--muted', '--accent', '--good', '--bad', '--shard', '--key']) {
+  for (const background of ['--bg', '--surface', '--surface-2', '--surface-3']) {
+    if (!pairs.some(([fg, bg]) => fg === foreground && bg === background)) {
+      pairs.push([foreground, background, 4.5]);
+    }
+  }
+}
+
 describe('theme WCAG contrast', () => {
   for (const [foreground, background, minimum] of pairs) {
     it(`${foreground} on ${background} >= ${minimum}:1`, () => {
