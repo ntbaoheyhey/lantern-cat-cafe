@@ -15,3 +15,5 @@ Official references: [configuration](https://learn.chatgpt.com/docs/config-file/
 ## Latest delegation preference
 
 The user subsequently requested fewer subagent calls: start one only when necessary. Let the three already running cards finish; the coordinator handles routine follow-ups directly. Fresh independent graders remain necessary under the original two-grader merge gate. Do not fan out merely to fill concurrency slots.
+
+The user explicitly requires the coordinator to write the session handoff personally. Never spawn an agent solely to write a handoff or checkpoint. Worker evidence notes are part of their substantive build/verification cards; the coordinator consolidates the authoritative mission handoff.

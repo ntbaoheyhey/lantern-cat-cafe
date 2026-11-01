@@ -1,6 +1,6 @@
 # Mega mission progress — living draft
 
-**ACTIVE — resumed explicitly by the user on 2026-11-01.** Current state: [resumption handoff](MEGA-CURRENT-HANDOFF.md). The earlier pause handoff is historical.
+**PAUSED again at the user’s request to sleep the machine, 2026-11-01.** Resume only after explicit instruction. Read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 STATUS: IN-PROGRESS
 

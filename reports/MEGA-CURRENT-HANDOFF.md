@@ -1,50 +1,41 @@
-# Taskbar Hero current handoff — active, living draft
+# Taskbar Hero current handoff — PAUSED
 
-Updated 2026-11-01T16:32:56+07:00. The user explicitly approved reliability setup and resumed the entire mission. Read this file before the historical pause handoff.
+The user explicitly paused on 2026-11-01 around16:56 Asia/Ho_Chi_Minh to sleep the machine. Do not resume implementation, tests, workers, merges or deployments until explicit user resumption. Coordinator writes the handoff personally.
 
-## Authority and scope
+## Completed during resumption
 
-Full brief: [mega-mission.md](mega-mission.md); task cards: [mega-plan.md](mega-plan.md); current [ledger](mega-ledger.md), [scorecard](mega-scorecard.md), [runtime](mega-runtime.md). Preserve the complete queue. Existing backups and historical evidence remain described by [2026-11-01 pause handoff](MEGA-HANDOFF-2026-11-01.md).
+- Local Codex auto-compaction threshold set to64000 tokens; configuration parsed successfully. Active-chat reload/provider compaction not verified.
+- Ten-minute checkpoint heartbeat created, then PAUSED at this user request. Do not reactivate until resumed.
+- HUD repair committed895b9fc and integrated/pushed as e68eee0be82a085999f565800bf50925046acf18 on ai/codex-mega-deno0, existing draft PR246.
+- Fresh integrated complete gate at e68eee0 passed install, Deno drift, typecheck, lint, unit tests, default/classic/v2 builds, bundle scan, links and Deno imports. Complete browser suites passed264/264 at each1280x720 and1600x900.
+- Exact-source keyboard walk passed all7 destinations at both sizes. Guest and local signed-in audits each18 screen-size combinations, zero findings.
+- Local production previews built from observed live public configuration passed classic andv2 guest paths at both sizes, no errors or backend writes. No secret values printed.
+- Bundle gzip growth vs fresh main is approximately0.147% classic and0.143%v2. Main still1fb25ed; its one broken reference path is fixed in candidate.
+- User supplied TBH Index archives. The first named Downloads research ZIP is a26-byte error; valid -2.zip and repo-local duplicate match. Both usable archives pass CRC and all36 indexed video hashes match. See reference-usage-2026-11-01.md and validation JSON.
 
-## Current work
+## Incomplete / interrupted
 
-- Reliability setup: app heartbeat created for approximately10-minute checkpoint updates. Configured local `model_auto_compact_token_limit = 64000`; effective reload in this active chat/provider is NOT VERIFIED. Details and limits: [policy](mega-checkpoint-policy.md). No compaction success is claimed.
-- BASE0 PR246 source HEAD63853ec, preserved logs modified; detached HUD worktree42028ad has saved actionable-guidance/160px-XP repair. Agent `/root/base0_hud_finish` is completing and retesting it before returning a commit for integration. Coordinator has not yet integrated it.
-- Agent `/root/cxu4_resume_build` continues preserved Hero/Help/modal work in mega-cxu4. Agent `/root/cxu5_resume_build` continues preserved Map/Boss work in mega-cxu5. Each uses its own worktree/ports and writes a local resume-handoff.md.
-- No mission PR has yet received two formal grades or merged. Existing full/repeat passes are historical and version-specific, not current exact-head gate proof.
-- `git fetch --all --prune` completed successfully on resumption. Verify origin/main before integration/scoring.
+No two formal grades, merge or deployment. Changed-spec repeat10 runs and effects/mutation verification were running when pause arrived; inspect logs and completion markers, never infer PASS from partial output. verify-pr246 and complete current reference/integrity/report packaging remain pending.
 
-## Next concrete actions
+CXU4 recovery /root/cxu4_resume_r2 has substantial uncommitted Hero/Help/shared-state implementation in mega-cxu4. The original worker hit429; recovery resumed preserved WIP. CXU5 /root/cxu5_resume_build has uncommitted Map/Boss implementation in mega-cxu5. Each worktree contains its builder evidence and resume-handoff.md.
 
-1. Review/integrate the returned BASE0 HUD repair into ai/codex-mega-deno0, preserving current effects-navigation checks and decision-index entries.
-2. Run fresh-worktree complete exact-head BASE0 checks, both desktop sizes, changed-spec repeats, mutations, UI/reference/keyboard/contrast, bundle comparison, integrity/tier/secret review, live-public-config preview and verify-pr246 without comments.
-3. Prepare honest pushed evidence, obtain two independent formal graders, and only then evaluate serial merge gates.
-4. Continue original queue and other builder cards without weakening dependencies or safety constraints.
+Mutation scratch mega-base0-resume-mutants may contain an interrupted deliberate mutant. It is not a delivery source. Preserve its diff/evidence and inspect before restoring anything.
 
-## Recovery essentials
+## Evidence and runtime
 
-Keep original checkout and unrelated dirty worktrees untouched. Correct author and every commit suffix ` [skip ci]`; no Actions, direct-main push, copied reference art or unsafe live writes. Backend-dependent features default-OFF. Preserve NOT VERIFIED. Before retrying after disconnect, inspect current files/HEADs/processes/PR state; never duplicate external actions. Full logs stay on disk.
+- Main source worktree: /Users/bao/.codex/worktrees/mega-deno0/taskbar-hero.
+- Fresh verification: /Users/bao/.codex/worktrees/mega-base0-resume-verify/taskbar-hero ate68eee0.
+- Evidence in main source worktree reports/scorecard/base0/: resume-gate-e68eee0, resume-repeats-e68eee0, resume-ui-e68eee0, resume-accessibility-e68eee0, resume-public-e68eee0, resume-live-guest, resume-effects-e68eee0, resume-mutations-e68eee0.
+- Coordinator helper scripts and repeated snapshots: /Users/bao/.codex/handoffs/taskbar-hero/reliability/.
+- Historical pause backup: /Users/bao/.codex/handoffs/taskbar-hero/2026-11-01-1600/.
+- Old session IDs69885(full gate),67405(public proof),54867(signed-in audit),70774(keyboard) completed. Pause-time IDs94539(repeats),95180(live guest),96906(effects) require completion/interruption audit; do not restart blindly.
+- Pause markers were placed in the four active worktrees. Coordinator terminated owned testing/browser processes; process inventory is saved in reliability/pause-processes-20261101-1656.json. Native-agent termination confirmation remains pending, not claimed.
 
-## Latest checkpoint 2026-11-01T16:42:11+07:00
+## Next steps only after explicit resumption
 
-- User supplied fresh reference paths. The valid research archive was recovered from its -2.zip duplicate; both archives pass CRC and all36 indexed video hashes match. Read [source map](reference-usage-2026-11-01.md) before future UI/skills/art cards.
-- Same-day clean main build/bundle baseline runs in mega-main-reference-r2 at1fb25ed; runner session85003. Evidence: reports/baseline/2026-11-01-resume-main-1fb25ed. Preserve actual main link failures.
-- UPDATE: CXU4 native agent stopped with429 Too Many Requests. Inspect preserved WIP and processes before a spaced restart. HUD and Map workers remain active.
+1. Inspect this handoff, paused runtime, backups, current HEADs/diffs and process state. Preserve all unrelated edits.
+2. Review interrupted native work and scratch mutation state; complete exact-source repeats/mutations/effects/reference/integrity and PR wrapper. Re-run interrupted checks rather than claiming their partial results.
+3. Package honest evidence and report, obtain two independent formal graders, then evaluate original serial merge/post-merge gates. Continue entire original queue.
+4. User's latest preferences: limit subagent calls to necessary work; never spawn one solely to write handoff. Coordinator writes mission checkpoints. Keep model/effort mandate.
 
-## Runtime update 2026-11-01T16:45:40+07:00
-
-- CXU4 recovery worker /root/cxu4_resume_r2 started after spaced backoff. Prior cwd-process inventory was empty; WIP and local handoff were retained. No model downgrade.
-- Main baseline completed: install/build/classic/bundle scan and explicit v2 build succeed. Main links still exits1 with one missing path. Bundle aggregate JS+CSS: classic/default3093807 raw /663477 gzip bytes; v2 3163759 raw /678033 gzip bytes. Candidate comparison pending integration.
-- HUD changed-spec repeats now120/120 for each initial desktop viewport; source still uncommitted at42028ad plus saved repair, not yet integrated/full-gated. Root reviewed patch and prepared corrected keyboard helper outside repo.
-
-## Integration checkpoint 2026-11-01T16:47:28+07:00
-
-- HUD builder returned895b9fca25bfbf8a13c1bfe9f4b9f5f41b9d4d79. Coordinator inspected source and1280/1600 screenshots and cherry-picked it successfully as e68eee0 on ai/codex-mega-deno0. No conflict; prior logs/WIP preserved.
-- Fresh detached worktree mega-base0-resume-verify at e68eee0 now runs complete checks using external helper reliability/run-gates.py, ports4600–4603. Evidence directory: mega-deno0/taskbar-hero/reports/scorecard/base0/resume-gate-e68eee0. Results remain pending, not PASS.
-- HUD agent complete and assigned ports free. CXU4 recovery and CXU5 remain active.
-
-## User steering 2026-11-01T16:53:47+07:00
-
-The user asks to limit subagent calls and use them only when necessary. Existing CXU4 recovery, CXU5 and BASE0 mutation verification may finish. Coordinator should perform ordinary follow-ups; no automatic replacement/fan-out. Two independent graders remain required before any merge. Mission remains ACTIVE.
-
-Runtime: full integrated gate session69885 (1280 complete exit0;1600 running), public-config proof session67405, signed-in audit session54867 completed exit0. Keyboard: all7 rail screens at both sizes, zero errors. Guest/signed-in audits each18 screen-size combinations, zero findings. No formal grades or merge.
+Full mission and queue remain in mega-mission.md, mega-plan.md and mega-ledger.md. All previous safety, author/[skip ci], original-content, default-OFF and no-Actions constraints continue. No direct main push or unsafe live write occurred.
