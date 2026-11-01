@@ -6,3 +6,5 @@ These steps do not substitute for local implementation or verification.
 2. Repo visibility and contest submission remain unchanged. A later submission pack will document optional publication/submission steps; neither action is authorized for execution by this mission.
 
 Exact optional deployment commands will be added after corresponding local checks prove the changes. No live migration, deployment or flag change is claimed.
+
+Runtime inventory (2026-11-01): the existing Supabase CLI can list the specified project; no credential value was printed or stored. No Vercel CLI executable was found. No release action follows from inventory alone: local score/merge gates, additive-only migration checks and the live go/no-go checklist still apply.
