@@ -6,7 +6,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
-| 3 | ART1 | main | ai/codex-art1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 3 | ART1 | main | ai/codex-art1 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
 | 5 | CXL1 | main | ai/codex-cxl1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 6 | CXU4 | main | ai/codex-cxu4 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
