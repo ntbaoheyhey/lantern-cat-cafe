@@ -7,7 +7,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | Fresh complete gate running on 1eb7d58 | Added baseline prerequisite; no grade or merge |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
-| 3 | ART1 | main | ai/codex-art1 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
 | 5 | CXL1 | main | ai/codex-cxl1 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 6 | CXU4 | main | ai/codex-cxu4 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -48,3 +48,5 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 - BASE0 complete exploratory run: 253 passed/1 failed; narrow topbar height must remain <=72 (assertion preserved). GUI audits: 18 guest and 18 local signed-in states have zero findings; initial effects pass 9/9. Harness writes to historical reports were restored only in this run-owned worktree; opt-in output repair added to BASE0 before editing. No merge or score.
 
 - ART1 builder 4df594a: pipeline/docs/434-slot manifest committed; 36 targeted tests, ten repeat runs and 8/8 mutants detected. Eight contact sheets cover 44 reference views. Unpushed pending coordinator inspection; no score. CXP1 and CXL1 independent P/B cards started while BASE0 repeat/full-size verification continues.
+
+- ART1 targeted suite re-run by coordinator: 36/36 pass; branch 4df594a pushed and draft PR #247 opened. Independent/full gates remain pending.
