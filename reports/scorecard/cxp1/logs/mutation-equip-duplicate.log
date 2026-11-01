@@ -1,0 +1,44 @@
+CWD: /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/packages/game-rules
+$ pnpm exec vitest run src/v2/meta/pets/pets.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/packages/game-rules
+
+ ❯ src/v2/meta/pets/pets.test.ts (17 tests | 1 failed) 7ms
+   × rejects duplicates, locked/unknown pets and a third companion 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2/meta/pets/pets.test.ts > rejects duplicates, locked/unknown pets and a third companion
+AssertionError: expected { ok: true, equipped: [ …(2) ] } to deeply equal { ok: false, reason: 'duplicate' }
+
+- Expected
++ Received
+
+  {
+-   "ok": false,
+-   "reason": "duplicate",
++   "equipped": [
++     "pet.hemwhisk",
++     "pet.hemwhisk",
++   ],
++   "ok": true,
+  }
+
+ ❯ src/v2/meta/pets/pets.test.ts:56:33
+     54|   expect(equipPet([], a, all)).toEqual({ ok: true, equipped: [a] });
+     55|   expect(equipPet([a], b, all)).toEqual({ ok: true, equipped: [a, b] }…
+     56|   expect(equipPet([a], a, all)).toEqual({ ok: false, reason: 'duplicat…
+       |                                 ^
+     57|   expect(equipPet([a, b], c, all)).toEqual({ ok: false, reason: 'limit…
+     58| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  15:34:22
+   Duration  106ms (transform 44%, tests 27%, import 22%, worker 7%)
+
+
+EXIT: 1

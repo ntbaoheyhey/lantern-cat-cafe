@@ -1,7 +1,8 @@
 import { expect, test, type Page } from '../support/test';
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
+import { mockV2SaveJson, type MockV2Save } from '../../src/api/mockV2Fixtures';
+import { v2 } from '@taskbar-hero/game-rules';
 import type { PetsState } from '../../src/pets/state';
 import { PET_DEFS, PET_KILL_TARGET } from '../../../../packages/game-rules/src/v2/meta/pets/index';
 
@@ -42,6 +43,14 @@ async function start(page: Page, preview: string | null = null, legacy = false) 
 for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
   test.describe(`local pet preview ${viewport.width}x${viewport.height}`, () => {
     test.use({ viewport });
+    const diagnostics = new WeakMap<Page, string[]>();
+    test.beforeEach(({ page }) => {
+      const errors: string[] = [];
+      diagnostics.set(page, errors);
+      page.on('pageerror', error => errors.push(error.message));
+      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    });
+    test.afterEach(({ page }) => { expect(diagnostics.get(page)).toEqual([]); });
 
     test('counts acknowledged idle claims and persists through reload', async ({ page }) => {
       const errors: string[] = [];
@@ -49,10 +58,17 @@ for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900
       await start(page);
       await expect.poll(() => readPreview(page)).toEqual(empty);
       await expect(page.getByRole('region', { name: 'Game stage' }).locator('canvas')).toBeVisible();
+      const before: MockV2Save = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), MOCK_V2_STORAGE_KEY);
       // Advance the existing 30-second claim timer; no test-only gameplay API.
       await page.clock.fastForward(10 * 60_000);
       await expect.poll(async () => (await readPreview(page))?.killCounts[PET_KILL_TARGET] ?? 0).toBeGreaterThan(0);
       const credited = await readPreview(page);
+      const after: MockV2Save = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), MOCK_V2_STORAGE_KEY);
+      const chapter = v2.CHAPTERS.find(entry => entry.index === before.state.chapter)!;
+      expect(after.state.chapter).toBe(before.state.chapter);
+      expect(credited?.killCounts[PET_KILL_TARGET]).toBe(
+        (after.state.round - before.state.round) * chapter.killsPerRound + after.state.kills - before.state.kills,
+      );
       await page.reload();
       await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
       await expect.poll(() => readPreview(page)).toEqual(credited);
@@ -66,6 +82,9 @@ for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900
     test('corrupt local preview falls back to empty without breaking Home', async ({ page }) => {
       await start(page, '{');
       await expect.poll(() => readPreview(page)).toEqual(empty);
+      await page.reload();
+      await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
+      await expect.poll(() => readPreview(page)).toEqual(empty);
     });
 
     test('migrates v0 progress and two equipped previews into the versioned key', async ({ page }) => {
@@ -75,6 +94,21 @@ for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900
       const legacy = JSON.stringify({ version: 0, kills, equipped });
       await start(page, legacy, true);
       await expect.poll(() => readPreview(page)).toEqual({ version: 1, killCounts: { [PET_KILL_TARGET]: kills }, equipped });
+      expect(await page.evaluate(key => localStorage.getItem(key), PETS_LEGACY_STORAGE_KEY)).toBe(legacy);
+      await page.reload();
+      await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
+      await expect.poll(() => readPreview(page)).toEqual({ version: 1, killCounts: { [PET_KILL_TARGET]: kills }, equipped });
+      expect(await page.evaluate(key => localStorage.getItem(key), PETS_LEGACY_STORAGE_KEY)).toBe(legacy);
+    });
+
+    test('recovers corrupt current data without resurrecting the legacy selection', async ({ page }) => {
+      const legacy = JSON.stringify({ version: 0, kills: PET_DEFS[1]!.unlock.count, equipped: PET_DEFS.slice(0, 2).map(pet => pet.id) });
+      await page.addInitScript(({ key, legacy }) => localStorage.setItem(key, legacy), { key: PETS_LEGACY_STORAGE_KEY, legacy });
+      await start(page, '{');
+      await expect.poll(() => readPreview(page)).toEqual(empty);
+      await page.reload();
+      await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
+      await expect.poll(() => readPreview(page)).toEqual(empty);
       expect(await page.evaluate(key => localStorage.getItem(key), PETS_LEGACY_STORAGE_KEY)).toBe(legacy);
     });
   });

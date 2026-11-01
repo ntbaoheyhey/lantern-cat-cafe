@@ -1,5 +1,235 @@
 STATUS: PARTIAL
 
+# CXP1 — scoped builder continuation
+
+2026-11-01. Reused detached checkout `7a66b14f4e1bb9816235ee3195a2f15745180031`
+and PR [#240](https://github.com/ntbaoheyhey/taskbar-hero/pull/240). Builder work
+and targeted evidence are ready for coordinator inspection. No full gate,
+self-score, push, merge, deploy or live check is claimed. BASE0 #246 owns shared
+repairs; this continuation does not change its files or the older local branch.
+The earlier report below is explicitly historical, including its whole-suite
+PASS claims. The current source and commands are the evidence for this handoff.
+
+## P/B cards and changes
+
+[Cards](scorecard/cxp1/cards.md): P1 audited every sections 10/11 CXP1 acceptance
+line; P2 reviewed the rune demo; B1 documented the public store and added its
+React hook; B2 ran targeted checks plus ten scratch mutants; B3 reviewed scope,
+assertion retention and secrets and prepared this detached commit.
+
+The registry, original rule/isolation tests, observer logic and two-line mount
+are unchanged from the assigned head. Added `usePetsState(store?)` using
+`useSyncExternalStore`, explicit type re-exports and top-of-file API docs.
+Added six store tests and strengthened all existing persistence cases without
+removing assertions. The browser suite now compares credited kills with exact
+saved-game progress, verifies reload after recovery/migration, rejects legacy
+resurrection after corrupt current data, and checks console/page errors in
+every case. No existing timeout, retry, snapshot or golden was changed.
+
+[Preview-number decision](../docs/decisions/pets-preview.md) is SIGNED by Codex
+under full user authority, 2026-11-01, and indexed in
+[design decisions](../docs/design/decisions.md). This approves DEMO_PREVIEW
+numbers only; no live balance or server behavior is activated.
+
+## Sections 10/11 acceptance audit
+
+| Acceptance line | Current result | Evidence |
+| --- | --- | --- |
+| Twelve ORIGINAL typed definitions: id, name, unlock target/count, bonusKey, perLevel, flavour | PASS targeted | `pets/index.ts` unchanged; 17 rule tests; registry table below |
+| Pure petProgress(killCounts, defs): unlocked, level, nextAt, pct | PASS targeted | Rule tests check all unlock boundaries, custom definitions, invalid counts, cap/interval percentage |
+| Unlock exactly at threshold | PASS targeted | All twelve per-ID boundary cases; unlock-round-up mutant fails assertions |
+| Level steps | PASS targeted | Zero, threshold-minus-one, exact step, nextAt, percentage and cap assertions retained |
+| Equip at most two; no duplicates; locked/unknown rejected | PASS targeted | Rule/store exact result assertions; third-slot and duplicate mutants fail |
+| Versioned localStorage and corrupt parse recovery | PASS targeted | Parser/store tests; two desktop recovery cases with reload; corrupt-grants-selection mutant fails |
+| Migration from v0 | PASS targeted | Current/legacy v0 formats, valid selections, legacy retention/current precedence; migration-disabled mutant fails |
+| Unique registry IDs | PASS targeted | Exactly twelve unique IDs/names and preview labels; original assertions unchanged |
+| Read only already tracked kill data / existing event | PASS targeted | Single adapter in `apps/web/src/pets/state.ts`; actual GameLoopV2 tests and exact browser saved-progress assertion |
+| Refresh and concurrency deduplication | PASS targeted | Same-reference and cloned replay, concurrent claim requests, refresh overtaking claim, only post-refresh delta, old response rejection, retired disposal; refresh/cleanup mutants fail |
+| Nothing computing power consumes the preview registry | PASS targeted | Existing runtime grep isolation test; actual scratch power-consumer mutant detected in combat/stats.ts |
+| No power, drop, forge or server effects before CXG1 | PASS targeted source boundary | Registry is absent from v2 barrel; `preview.*` labels; runtime isolation guard; no new API calls/server code |
+| Stable types + store hooks documented at top of state.ts | PASS targeted | Public API section below; hook update/identity/unsubscribe test and subscription mutant |
+| Every preview number marked DEMO_PREVIEW and decision recorded | PASS audit | Registry module-level marker plus field comments, signed decision and README |
+| Reference demo reviewed at both desktop sizes | PASS mechanics review | Six current PNGs, all opened; [review/differences](scorecard/cxp1/ui-diff.md) |
+| Report lists twelve pets and single count-read file | PASS document audit | Registry and source sections below |
+| DONE: root pnpm test green; complete verify/merge gates | NOT VERIFIED here | Explicitly reserved to coordinator; prior full-suite evidence is historical |
+
+## Stable API for CXP2
+
+Import from `apps/web/src/pets/state.ts`:
+
+- Types: `PetsState`, `PetDef`, `PetKillCounts`, `PetProgress`, `PetEquipResult`.
+- `getPetsStore(): PetsStore`; `usePetsState(store?: PetsStore): PetsState`.
+- Store: `subscribe(listener): unsubscribe`, `getSnapshot(): PetsState`,
+  `equip(id): PetEquipResult`, `unequip(id): void`. Immutable snapshots retain
+  identity on rejected selection changes. React receives updates and unsubscribes.
+- `new PetsStore(storage | null)` for isolated consumers/tests; storage needs
+  getItem/setItem. Default storage is localStorage, with memory fallback.
+- `parsePetsState(raw)`, `PETS_STORAGE_KEY`, `PETS_LEGACY_STORAGE_KEY` for recovery.
+- Integration-only: `bindPetsToLoop(loop, store?)` and
+  `store.recordClaimedKills(delta)`. UI consumers never infer/grant kills.
+- Read `PET_DEFS`, `petProgress`, and the pure equip helper directly from
+  `@taskbar-hero/game-rules/src/v2/meta/pets`, not the shared v2 barrel.
+
+## Twelve stable original pets
+
+All values below are DEMO_PREVIEW, with target `claimed-idle-kills`.
+
+| ID | Name | Unlock |
+| --- | --- | ---: |
+| pet.hemwhisk | Hemwhisk | 7 |
+| pet.sillskip | Sillskip | 13 |
+| pet.thimblepurr | Thimblepurr | 19 |
+| pet.kettlepaw | Kettlepaw | 31 |
+| pet.crumbcurl | Crumbcurl | 43 |
+| pet.bristletoe | Bristletoe | 61 |
+| pet.puddleplume | Puddleplume | 79 |
+| pet.latchlynx | Latchlynx | 103 |
+| pet.pocketmew | Pocketmew | 137 |
+| pet.hushspool | Hushspool | 173 |
+| pet.eavetuft | Eavetuft | 227 |
+| pet.dawnknead | Dawnknead | 283 |
+
+DEMO_PREVIEW: each level requires another unlock-sized step, capped at three;
+per-level labels are [0.7, 1.3, 2.1] with no units/game effect. Equip limit is two.
+No art, names or numbers were imported from the six-pet demo.
+
+## Exact kill-count source and runtime gaps
+
+The only pet adapter reading client progress is `apps/web/src/pets/state.ts`, line 121
+(`bindPetsToLoop`). Existing `storeV2.ts:115` mounts it. It observes GameLoopV2's
+state adoption and synchronous `claimed` event (`loopV2.ts:207–213`). It calls
+existing `claimedKills` in `apps/web/src/game/stage/progress.ts`, line 4:
+
+`max(0, (after.round - before.round) * after.killsPerRound + after.kills - before.kills)`.
+
+Missing previous state or changed chapter returns zero. The adapter keeps one
+pending delta and consumes it only on that adoption's acknowledged event; other
+deltas expire at the microtask boundary. WeakMap binding and idempotent cleanup
+prevent duplicate observers. Loop state/action epochs and claim serialization
+remain unchanged. The tests use the actual loop, including overlapping refresh.
+
+Runtime limitations: counts are local to this browser/device, shared across
+account/demo switches, with no cross-tab merge, cloud sync, species/boss totals
+or historical backfill. A chapter-changing claim is omitted; rewardless progress
+is not credited because the loop emits `claimed` only for positive gains.
+Simultaneous tabs may overwrite local preview data. No treats, adoption action,
+active bonus, UI tab, pet art or server persistence exists in CXP1. CXP2 owns
+presentation and CXG1 owns authoritative runtime integration. Storage data is
+untrusted preview data and must never become a reward authority.
+
+## Current targeted commands
+
+Every command/exit and raw output is under [logs](scorecard/cxp1/logs/).
+
+| Check | Exit and observed result | Evidence |
+| --- | --- | --- |
+| Node / pnpm / Playwright | 0; v24.22.2 / 10.28.0 / 1.64.1 | [versions](scorecard/cxp1/logs/versions.log) |
+| CI=true pnpm install --frozen-lockfile | 0; no lock/workspace edits | [install](scorecard/cxp1/logs/install.log) |
+| Focused rules | 0; 17 passed | [rules](scorecard/cxp1/logs/rules-targeted.log) |
+| Focused store/isolation | 0; 17 passed (16 store + 1 isolation) | [store](scorecard/cxp1/logs/store-targeted.log) |
+| Rules and web typecheck | 0 each | [rules](scorecard/cxp1/logs/rules-typecheck.log), [web](scorecard/cxp1/logs/web-typecheck.log) |
+| Focused persistence at both sizes | 0; 8 passed; VITE_GAME_V2=1, empty public backend config, ports 4340–4343 | [browser](scorecard/cxp1/logs/persistence-e2e.log) |
+| Same spec --repeat-each=10 | 0; 80 passed; no retries/failures | [repeat](scorecard/cxp1/logs/persistence-repeat.log) |
+| Classic/v2 builds | 0 within focused Playwright webServer setup; both local builds produced, not full root build gate | Browser logs above |
+| Built classic/v2 secret scans | 0 each; 25 / 31 text files | [classic](scorecard/cxp1/logs/bundle-classic.log), [v2](scorecard/cxp1/logs/bundle-v2.log) |
+| pnpm gen:deno + generated diff | 0 each; no new map changes | [generator](scorecard/cxp1/logs/gen-deno.log), [drift](scorecard/cxp1/logs/deno-drift.log) |
+| check-deno-imports | 1; 80 inherited unresolved ./index imports in five forge/bag modules across 16 functions | [shared failure](scorecard/cxp1/logs/deno-imports.log); BASE0 owns repair |
+| check-links current and cached origin/main 1fb25ed | 1 each; same one pre-existing missing proposal path | [current](scorecard/cxp1/logs/links-corrected.log), [cached baseline](scorecard/cxp1/logs/links-baseline-complete-mirror.log) |
+| check-links touched docs | 0; six checked links, none broken | [touched](scorecard/cxp1/logs/links-touched.log) |
+| Demo review | 0 after harness correction; both sizes, no console/page errors | [review](scorecard/cxp1/logs/demo-review-corrected.log) |
+| Integrity/scope/secrets | 0; original assertion lines retained; no secret-pattern findings | [audit](scorecard/cxp1/logs/integrity-scope-secrets.log) |
+| git diff --check | 0 | [diff](scorecard/cxp1/logs/diff-check.log) |
+
+`check-bundle.mjs` reports secret scan counts, not bundle byte budgets; a current
+main byte comparison remains a coordinator gate. The cached-main link comparison
+is not a claim that origin/main was freshly fetched or that BASE0 is already
+merged. Port preflight lsof exit 1 means none of the four assigned ports listened.
+
+## Behavioral mutations
+
+[Reproducible runner](scorecard/cxp1/tools/mutate.py) creates disposable scratch
+copies inside this worktree and checks source hashes afterwards. Original
+sources were never mutated. Scratch baseline and restored copies both passed
+17 rules plus 17 store/isolation tests. Each of ten mutants exited 1 with an
+assertion failure; none was counted on a compile/setup failure. These are test
+observations, not a builder score.
+
+| Mutation | Assertion evidence |
+| --- | --- |
+| Round unlock count up | [boundary failures](scorecard/cxp1/logs/mutation-unlock-round-up.log) |
+| Permit third equipped pet | [limit failure](scorecard/cxp1/logs/mutation-equip-third.log) |
+| Allow duplicate equipped ID | [duplicate failure](scorecard/cxp1/logs/mutation-equip-duplicate.log) |
+| Disable v0 migration | [migration failures](scorecard/cxp1/logs/mutation-migration-disabled.log) |
+| Corrupt parse grants an equipped pet | [empty recovery failure](scorecard/cxp1/logs/mutation-corrupt-grants-selection.log) |
+| Drop persistence on publish | [reload equality failure](scorecard/cxp1/logs/mutation-persistence-dropped.log) |
+| Retain refresh delta past microtask | [false credit failure](scorecard/cxp1/logs/mutation-refresh-delta-retained.log) |
+| Repeat retired cleanup | [binding identity failure](scorecard/cxp1/logs/mutation-retired-cleanup-repeats.log) |
+| Hook never subscribes | [reactive snapshot failure](scorecard/cxp1/logs/mutation-hook-never-subscribes.log) |
+| Import/use pet preview value in real power calculation | [runtime isolation failure](scorecard/cxp1/logs/mutation-preview-changes-power.log) |
+
+[Machine-readable changes/results](scorecard/cxp1/logs/mutation-summary.json),
+[aggregate run](scorecard/cxp1/logs/mutations-with-isolation.log).
+
+## Scope, integrity and corrections
+
+Every changed path vs cached origin/main is classified in
+[scope.tsv](scorecard/cxp1/scope.tsv). Tier 2: decision/index (explicit authority),
+focused e2e (built persistence), inherited storeV2 two-line mount (read-only event
+binding), and sixteen inherited generated game import-map aliases (one preview
+directory alias each). No auth map/source, .github, credentials, environment,
+dependency, contract, migration, CSS or asset changes in this continuation.
+
+Diff statistics: [complete CXP1 branch](scorecard/cxp1/logs/diff-stat-branch.log)
+and [this continuation](scorecard/cxp1/logs/diff-stat-continuation.log). Raw
+command/exit inventory: [log index](scorecard/cxp1/logs/README.md).
+
+Self-review read the full source/test diff and original adapter/loop/helper.
+All 31 original store assertion lines, 24 rule assertion lines, 11 browser
+assertion lines and the isolation assertion remain. No skips, only/fixme/todo,
+new timeouts/retries, suppression comments, any casts or source debug logs.
+
+Current correction log (no grading round implied):
+
+1. Historical report treated unsigned numbers and broad earlier checks as current;
+   current decision is signed for preview and old claims are labelled historical.
+2. An added backticked helper reference included `::claimedKills`, creating one
+   broken path. Split file and symbol; touched docs now have zero broken links.
+   The optional report check also caught two backticked file:line references;
+   those now separate file and line as well.
+3. Demo harness assumed one hunt would unlock adoption; actual thresholds needed
+   two. It now continues through visible hunt controls without changing demo code.
+4. Baseline mirror first used a Python tar API unavailable on this machine, then
+   omitted referenced script/.github paths. The corrected read-only mirror yields
+   the same one missing proposal path as current. Both failed attempts remain in
+   logs and are not used as baseline findings.
+5. Deno import guard is red on inherited forge/bag imports. No repair duplicated;
+   generated maps stayed unchanged. This is an acceptance gap for BASE0/coordinator.
+
+## Remaining acceptance gaps / handoff
+
+Coordinator must inspect this detached HEAD, integrate BASE0/latest main, push
+HEAD to existing remote ai/codex-cxp1 / PR #240, and run complete fresh-worktree
+root typecheck/lint/test/build/classic build, complete e2e, all required audits,
+verify-pr, current-main bundle/link comparisons and independent grading before
+any merge. No full app e2e was run in this assignment. Post-merge/live checks are
+not run or claimed. There is no user permission or credential dependency for
+this preview. CXP2 and CXG1 boundaries above remain intentional runtime gaps.
+
+Delivery: detached continuation for ai/codex-cxp1; PR #240; reports/cxp1.md;
+status PARTIAL (targeted builder evidence only). Exact new commit is supplied in
+the handoff message after committing. No local branch ref is moved.
+
+---
+
+<details>
+<summary>Historical report from assigned head 7a66b14 — not current verification</summary>
+
+All claims and PASS labels below describe an earlier attempt. They are preserved
+for audit and are not asserted as rerun evidence by this builder continuation.
+Current results and remaining acceptance gaps are listed above.
+
+STATUS: PARTIAL
+
 # CXP1 — local companion preview (living draft)
 
 1 November 2026 (Asia/Ho_Chi_Minh). Continues draft PR #240 from main `1fb25ed`. Twelve original pets, progress and equip-two selection remain preview-only. No pet value affects power, rewards, drops, forge or server state. All 2,310 unit tests and six focused desktop browser cases pass. The strict overall status remains PARTIAL: the complete browser suite has the two excluded mobile HUD failures.
@@ -372,3 +602,5 @@ supabase/functions/v2-state/deno.json
 Continuation commit: `954604f`. `CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' bash scripts/verify-pr.sh 240` ran without --comment. The clean committed checkout passes install, generated-map drift, typecheck, lint, unit tests and build. E2E again reports 256 passed and the same two excluded mobile HUD failures. [Summary and failure tail](cxp1/checks/verify-pr.log). Two full rounds are recorded; status remains PARTIAL, not a false whole-suite PASS.
 
 The separate Deno deployment import guard still emits the same 80 unresolved edges as main; its output compares byte-for-byte equal. Generated metadata does not add an unresolved import. No art/public assets or dependency manifests differ from main. The PR remains a draft, and the wrapper removed its temporary checkout.
+
+</details>

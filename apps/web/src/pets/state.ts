@@ -1,6 +1,24 @@
+/**
+ * CXP2 public API (DEMO_PREVIEW, browser/device-local, no gameplay effects):
+ * - usePetsState(store?) subscribes React to the immutable PetsState snapshot.
+ * - getPetsStore() returns the stable singleton; new PetsStore(storage | null)
+ *   provides an isolated store for tests. subscribe/getSnapshot are bound hooks
+ *   for useSyncExternalStore; unchanged state retains snapshot identity.
+ * - store.equip(id) returns PetEquipResult (unknown/locked/duplicate/limit);
+ *   store.unequip(id) is an idempotent removal. At most two pets are equipped.
+ * - PetDef/PetKillCounts/PetProgress/PetEquipResult types are re-exported here;
+ *   import PET_DEFS and petProgress directly from the preview rules module.
+ * - bindPetsToLoop is mounted once by storeV2.ts. Only that adapter supplies
+ *   recordClaimedKills deltas; UI consumers must never infer or grant kills.
+ * - parsePetsState and the versioned keys support recovery and v0 migration.
+ * No account partition, cross-tab/cloud sync, species history or active bonuses.
+ * Number choices: docs/decisions/pets-preview.md. Gameplay waits for CXG1.
+ */
+import { useSyncExternalStore } from 'react';
 import * as petsRules from '@taskbar-hero/game-rules/src/v2/meta/pets';
 import type { GameLoopV2 } from '../game/v2/loopV2';
 import { claimedKills } from '../game/stage/progress';
+export type { PetDef, PetKillCounts, PetProgress, PetEquipResult } from '@taskbar-hero/game-rules/src/v2/meta/pets';
 
 /** DEMO_PREVIEW: browser-local companion progress; never sent to any API. */
 export const PETS_STORAGE_KEY = 'taskbar-hero.pets.DEMO_PREVIEW.v1';
@@ -85,6 +103,12 @@ export class PetsStore {
 
 let pets: PetsStore | undefined;
 export const getPetsStore = (): PetsStore => pets ??= new PetsStore();
+
+/** Reactive preview snapshot; actions are exposed by the same store instance. */
+export function usePetsState(store: PetsStore = getPetsStore()): PetsState {
+  return useSyncExternalStore(store.subscribe, store.getSnapshot, store.getSnapshot);
+}
+
 type ClaimSource = Pick<GameLoopV2, 'getSnapshot' | 'subscribe' | 'onEvent'>;
 const bindings = new WeakMap<ClaimSource, () => void>();
 

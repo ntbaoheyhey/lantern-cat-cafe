@@ -1,7 +1,9 @@
 # Companion preview rules
 
 DEMO_PREVIEW: this module is a local preview. Every unlock threshold, level
-step, per-level display value and selection limit is an unsigned placeholder.
+step, per-level display value and selection limit is a preview placeholder,
+approved only for this local preview in
+[the CXP1 decision](../../../../../../docs/decisions/pets-preview.md).
 The thresholds and all companion names/flavour were authored for this mission;
 no proposal-demo table or third-party content was copied. No art is included.
 
@@ -42,3 +44,9 @@ also migrates. Invalid JSON, schema, counts or future versions produce empty
 state; invalid selections are sanitized. Storage access failures leave an
 in-memory store. Progress is device/browser-local, shared across demo/account
 switches on that browser, with no server synchronization or rewards.
+
+The CXP2-facing API is documented at the top of `apps/web/src/pets/state.ts`:
+`usePetsState(store?)` subscribes React; `getPetsStore()` exposes the singleton's
+`equip`, `unequip`, `getSnapshot` and `subscribe`. An injected `PetsStore` makes
+isolated tests possible. Types are re-exported there; read `PET_DEFS` and
+`petProgress` directly from this rules module. UI never grants counts.

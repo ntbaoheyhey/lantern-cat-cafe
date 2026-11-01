@@ -1,9 +1,10 @@
 import { afterEach, expect, it, vi } from 'vitest';
+import { act, renderHook } from '@testing-library/react';
 import * as petsRules from '@taskbar-hero/game-rules/src/v2/meta/pets';
 import { MockGameApiV2 } from '../api/MockGameApiV2';
 import { GameLoopV2 } from '../game/v2/loopV2';
-import { sampleGainsV2, sampleServerStateV2 } from '../layout/a11y/fixtures';
-import { bindPetsToLoop, parsePetsState, PETS_LEGACY_STORAGE_KEY, PETS_STORAGE_KEY, PetsStore } from './state';
+import { emptyGainsV2, sampleGainsV2, sampleServerStateV2 } from '../layout/a11y/fixtures';
+import { bindPetsToLoop, getPetsStore, parsePetsState, PETS_LEGACY_STORAGE_KEY, PETS_STORAGE_KEY, PetsStore, usePetsState } from './state';
 
 // DEMO_PREVIEW: fixture kill counts and selections are unsigned preview data.
 // Storage versions and test call counts describe the format/test, not balance.
@@ -159,4 +160,114 @@ it('retired cleanup cannot remove the guard for a replacement binding', () => {
   retired();
   const repeated = bindPetsToLoop(loop, store);
   try { expect(repeated).toBe(current); } finally { current(); repeated(); }
+});
+
+it('exposes a stable singleton and a reactive immutable hook that unsubscribes', () => {
+  expect(getPetsStore()).toBe(getPetsStore());
+  const store = new PetsStore(null);
+  const off = vi.fn(), subscribe = store.subscribe;
+  vi.spyOn(store, 'subscribe').mockImplementation(listener => {
+    const unsubscribe = subscribe(listener);
+    return () => { off(); unsubscribe(); };
+  });
+  const { result, unmount } = renderHook(() => usePetsState(store));
+  const initial = result.current;
+  expect(initial).toBe(store.getSnapshot());
+  expect(Object.isFrozen(initial)).toBe(true);
+  expect(Object.isFrozen(initial.equipped)).toBe(true);
+  act(() => { store.equip(first); }); // Locked: no publication.
+  expect(result.current).toBe(initial);
+  act(() => { store.recordClaimedKills(petsRules.PET_DEFS[0]!.unlock.count); });
+  expect(result.current.killCounts).toEqual(kills(petsRules.PET_DEFS[0]!.unlock.count));
+  act(() => { store.equip(first); });
+  expect(result.current.equipped).toEqual([first]);
+  expect(initial.killCounts).toEqual({});
+  unmount();
+  expect(off).toHaveBeenCalledOnce();
+});
+
+it('keeps valid current data over legacy and discards unsupported kill targets', () => {
+  const storage = memory();
+  storage.setItem(PETS_LEGACY_STORAGE_KEY, JSON.stringify({ version: 0, kills: 99, equipped: [first] }));
+  storage.setItem(PETS_STORAGE_KEY, JSON.stringify({ version: 1, killCounts: { ...kills(7), boss: 999 }, equipped: [] }));
+  expect(new PetsStore(storage).getSnapshot()).toEqual({ version: 1, killCounts: kills(7), equipped: [] });
+  expect(JSON.parse(storage.getItem(PETS_STORAGE_KEY)!)).toEqual({ version: 1, killCounts: kills(7), equipped: [] });
+  expect(parsePetsState(JSON.stringify({ version: 1, killCounts: kills(Number.MAX_SAFE_INTEGER + 1), equipped: [] })).killCounts).toEqual({});
+});
+
+it('keeps the store selection unchanged on locked, unknown, duplicate and overflow requests', () => {
+  const store = new PetsStore(null), [a, b, c] = petsRules.PET_DEFS.map(pet => pet.id);
+  const initial = store.getSnapshot();
+  expect(store.equip(a!)).toEqual({ ok: false, reason: 'locked' });
+  expect(store.equip('pet.unknown')).toEqual({ ok: false, reason: 'unknown' });
+  store.unequip(a!);
+  expect(store.getSnapshot()).toBe(initial);
+  store.recordClaimedKills(petsRules.PET_DEFS[2]!.unlock.count);
+  expect(store.equip(a!)).toEqual({ ok: true, equipped: [a] });
+  expect(store.equip(b!)).toEqual({ ok: true, equipped: [a, b] });
+  const equipped = store.getSnapshot();
+  expect(store.equip(a!)).toEqual({ ok: false, reason: 'duplicate' });
+  expect(store.equip(c!)).toEqual({ ok: false, reason: 'limit' });
+  expect(store.getSnapshot()).toBe(equipped);
+  store.unequip(a!);
+  expect(store.equip(c!)).toEqual({ ok: true, equipped: [b, c] });
+});
+
+it('deduplicates concurrent claims and equal cloned snapshots across round rollover', async () => {
+  const api = new MockGameApiV2({ storage: null });
+  const loaded = sampleServerStateV2({ round: 2, kills: 5 });
+  const advanced = sampleServerStateV2({ round: 4, kills: 2 });
+  vi.spyOn(api, 'getState').mockResolvedValue(loaded);
+  const claim = vi.spyOn(api, 'claim').mockImplementation(async () => ({ gains: sampleGainsV2(), state: structuredClone(advanced) }));
+  const loop = new GameLoopV2({ api }), store = new PetsStore(null), dispose = bindPetsToLoop(loop, store);
+  try {
+    await loop.start(document);
+    await Promise.all([loop.claimNow(), loop.claimNow(), loop.claimNow()]);
+    expect(claim).toHaveBeenCalledOnce();
+    expect(store.getSnapshot().killCounts).toEqual(kills(9)); // (4 - 2) * 6 + 2 - 5
+    await loop.claimNow();
+    expect(claim).toHaveBeenCalledTimes(2);
+    expect(store.getSnapshot().killCounts).toEqual(kills(9));
+  } finally { dispose(); loop.stop(); }
+});
+
+it('credits only the post-refresh delta when a refresh overtakes a claim with fresh cloned state', async () => {
+  const api = new MockGameApiV2({ storage: null });
+  const getState = vi.spyOn(api, 'getState').mockResolvedValue(sampleServerStateV2({ kills: 0 }));
+  let finish!: (result: Awaited<ReturnType<typeof api.claim>>) => void;
+  const claim = vi.spyOn(api, 'claim').mockImplementation(() => new Promise(resolve => { finish = resolve; }));
+  const loop = new GameLoopV2({ api }), store = new PetsStore(null), dispose = bindPetsToLoop(loop, store);
+  try {
+    await loop.start(document);
+    const flight = loop.claimNow();
+    await vi.waitFor(() => expect(claim).toHaveBeenCalledOnce());
+    getState.mockResolvedValue(sampleServerStateV2({ kills: 4 }));
+    await loop.retry();
+    expect(store.getSnapshot().killCounts).toEqual({});
+    getState.mockImplementation(async () => sampleServerStateV2({ kills: 6 }));
+    finish({ gains: sampleGainsV2(), state: sampleServerStateV2({ kills: 4 }) });
+    await flight;
+    expect(store.getSnapshot().killCounts).toEqual(kills(2));
+    claim.mockResolvedValue({ gains: sampleGainsV2(), state: sampleServerStateV2({ kills: 6 }) });
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual(kills(2));
+  } finally { dispose(); loop.stop(); }
+});
+
+it('ignores progress without a claimed event and rejects an older claim response', async () => {
+  const api = new MockGameApiV2({ storage: null });
+  vi.spyOn(api, 'getState').mockResolvedValue(sampleServerStateV2({ kills: 0 }));
+  const claim = vi.spyOn(api, 'claim').mockResolvedValue({ gains: emptyGainsV2(), state: sampleServerStateV2({ kills: 4 }) });
+  const loop = new GameLoopV2({ api }), store = new PetsStore(null), dispose = bindPetsToLoop(loop, store);
+  try {
+    await loop.start(document);
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual({});
+    claim.mockResolvedValue({ gains: sampleGainsV2(), state: { ...sampleServerStateV2({ kills: 6 }), serverTime: 999 } });
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual({});
+    claim.mockResolvedValue({ gains: sampleGainsV2(), state: sampleServerStateV2({ kills: 6 }) });
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual(kills(2));
+  } finally { dispose(); loop.stop(); }
 });
