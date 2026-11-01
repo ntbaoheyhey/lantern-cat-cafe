@@ -1,7 +1,7 @@
 MISSION MEGA v2 - CODEX-ONLY AUTONOMOUS RUN: all remaining non-art work, self-testing, until each item is green
 Tool: Codex (Astra 6 Ultra, full access) | Model: strongest available | Reasoning: HIGH by default; switch to the HIGHEST setting your tool offers (xhigh if available) wherever an item or step says [EFFORT: HIGHEST]. Docs-only items may run at MEDIUM.
 Repo ntbaoheyhey/taskbar-hero (private). Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. One branch + one DRAFT PR per item. NEVER merge, never mark ready, never push to main. Every commit message ends with " [skip ci]".
-FINISH EVERYTHING YOURSELF. You have full access: install, run the app, run every test, take screenshots, fix, re-test. Complete each item END TO END (implement -> verify -> compare -> fix until green -> push -> draft PR) before starting the next. Do not stop after planning, do not hand back half-done work, do not ask questions. The only reasons to stop an item are a HARD STOP (section 4: mark BLOCKED, continue with the next item) or 6 failed full rounds (mark PARTIAL/FAILED with evidence, continue). Run until the whole queue and FINAL are done.
+FINISH EVERYTHING YOURSELF. You have full access: install, run the app, run every test, take screenshots, fix, re-test. Complete each item END TO END (implement -> verify -> compare -> fix until green -> push -> draft PR) before starting the next. Do not stop after planning, do not hand back half-done work, do not ask questions. NO ROUND LIMIT: keep fixing and re-testing each item until it is fully green, however many rounds it takes. The only reason to stop an item is a HARD STOP (section 4: mark BLOCKED, continue with the next item). Run until the whole queue and FINAL are done.
 LIVING DRAFT: the user still has a lot of UI work planned. Never call any item, screen or run "final", "last" or "frozen". Scope can change after the user reviews.
 
 Codex is now the ONLY builder. Every item that used to say "Antigravity" (AGR3, AGR4, AGR5, AGC1, AGP1, AGL1, AGL2, AGN2, AGN3, AGN4) is yours, rewritten below as a CX item. Image generation is NOT part of this run (section 8 lists parked art).
@@ -33,11 +33,11 @@ Name clash warning: "Codex" in the rune/skill design (docs/proposals/rune-skill-
       c. Run node reports/redesign/compare.mjs (same usage as reports/redesign/CXR0; see apps/web/tools/compare.test.mjs) to build reports/<id>/compare.html.
       d. Write a DIFF TABLE in the report: screen | size | region | reference | ours | verdict. Verdict is exactly one of: FIXED (round n) / ART-PLACEHOLDER (mockup placeholder vs our real art, allowed) / INTENTIONAL (one-line reason, e.g. behaviour or test contract) / OPEN (could not fix, why).
       e. Gates: ui-audit "document scrolls", nested-scroll and overlap findings EMPTY at both sizes; effects-test passes; prefers-reduced-motion means no movement.
-      PNG < 200 KB each, at most 16 committed per item (keep the rest out of git). After every e2e/screenshot run, `git status --short reports/` must show only your item's files; revert anything else.
- 5. If any check fails or any OPEN/unexplained diff remains: find the ROOT CAUSE (write it in one sentence), fix it, then run the WHOLE verify list again (steps 3 and 4), not only the failing command. Repeat up to 6 full rounds. Record "round n: what failed -> root cause -> fix" in the report.
+      Compress committed PNGs (aim < 200 KB each); no count limit. After every e2e/screenshot run, `git status --short reports/` must show only your item's files; revert anything else.
+ 5. If any check fails or any OPEN/unexplained diff remains: find the ROOT CAUSE (write it in one sentence), fix it, then run the WHOLE verify list again (steps 3 and 4), not only the failing command. Repeat with NO round limit until everything is green. Record "round n: what failed -> root cause -> fix" in the report.
     Never skip, .only, delete, quarantine or loosen a test; never raise a timeout, add retries or edit a snapshot/golden number to hide a failure. A test whose assertion encodes OLD behaviour that this item deliberately changes may be updated (Tier 2 note, old -> new).
  6. Green (or honestly NOT VERIFIED lines only): write the report, commit, push, open the draft PR (section 6), set the ledger row DONE with the PR URL, push the ledger. Start the next item.
- 7. Still red after 6 rounds: mark PARTIAL (some pieces done) or FAILED, push branch + report + draft PR anyway, ledger row with evidence, move on. Never stall the queue on one item.
+ 7. No round limit. Never give up on an item because it takes many rounds. If the SAME root cause keeps coming back, step back, re-read the code and the reference, and change approach instead of repeating the same fix. Only a HARD STOP ends an item early (BLOCKED, push branch + report + draft PR, continue).
  8. Every 3 items, and at the end: re-read sections 4 and 5 of this prompt (rules drift over long runs).
 
 ====================================================================================================
@@ -297,7 +297,7 @@ If signed: ZONE packages/game-rules/src/v2/skills, runes, workshop, meta (new). 
 Integration run. No new branch is pushed except the report branch ai/codex-mega-final (report reports/mega-final.md).
 1. Create a throwaway local branch from origin/main and merge every DONE/PARTIAL item branch in queue order (stacked ones once). Record each conflict (files, which items).
 2. Run the whole verify list (section 1 step 3) + ui-audit + effects-test at both sizes for every screen in screen-manifest.json.
-3. Every failure: find which item owns it, fix it ON THAT ITEM'S BRANCH (new commit, re-run that item's verify list), update its report and the ledger, then redo step 1-2. Up to 3 integration rounds.
+3. Every failure: find which item owns it, fix it ON THAT ITEM'S BRANCH (new commit, re-run that item's verify list), update its report and the ledger, then redo steps 1-2. No round limit: repeat until the integrated suite is green.
 4. reports/mega-final.md: suggested MERGE ORDER for the user (respecting stacks), conflicts and how they were resolved, final suite tails, the full PARKED list (art + user actions), and open questions for the user.
 Never push the throwaway merge branch. Never merge any PR.
 ===== END FINAL =====
