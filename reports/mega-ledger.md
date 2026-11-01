@@ -83,3 +83,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T19:34:39+07:00: successor280ff4b committed detached after100/100originalcase and meaningful clock/lifecycle negativecontrols. Fresh full verifierPID45517 starts atsameSHA, expanded12spec repeats. PR246 stays5db4949 whileCgrades. No merge; oldproof not reused fornewhead.
 
 - Provider429 interrupted C and recovery; mandatory C stillnotgraded, PRhead stays5db4949. Local280ff4b fullsuitesgreen,700expandedrepeats at1280green,25mutants/16controls/clean. Currenthandoff/runtime contain recovery deadlines and workerlimit.
+
+- 2026-11-01T19:51:33+07:00: latest userauthorizes coordinatorfallback when subagents unavailable and requests contextdiscipline. No furtherC recovery scheduled; interruptedC evidence preserved, no score invented. Local280ff4b verification continues withPID45517; sourcePRstill5db4949; no merge.
