@@ -1,0 +1,105 @@
+{
+  "conflicts": [
+    "docs/design/decisions.md",
+    "supabase/functions/boss-fight/deno.json",
+    "supabase/functions/equip/deno.json",
+    "supabase/functions/game-state/deno.json",
+    "supabase/functions/idle-claim/deno.json",
+    "supabase/functions/relic-forge/deno.json",
+    "supabase/functions/relic-mint-report/deno.json",
+    "supabase/functions/upgrade/deno.json",
+    "supabase/functions/v2-boss-fight/deno.json",
+    "supabase/functions/v2-choose-class/deno.json",
+    "supabase/functions/v2-claim/deno.json",
+    "supabase/functions/v2-craft/deno.json",
+    "supabase/functions/v2-equip/deno.json",
+    "supabase/functions/v2-lock/deno.json",
+    "supabase/functions/v2-relic-forge/deno.json",
+    "supabase/functions/v2-salvage/deno.json",
+    "supabase/functions/v2-state/deno.json"
+  ],
+  "resolution": "Regenerate 16 maps from repaired BASE0 generator, preserving both parent key/value sets and adding explicit pets/index; retain all three design decisions. No runtime rule change.",
+  "proof": [
+    {
+      "path": "supabase/functions/boss-fight/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/equip/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/game-state/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/idle-claim/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/relic-forge/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/relic-mint-report/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/upgrade/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-boss-fight/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-choose-class/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-claim/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-craft/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-equip/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-lock/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-relic-forge/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-salvage/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    },
+    {
+      "path": "supabase/functions/v2-state/deno.json",
+      "preservesBothParentMaps": true,
+      "explicitPetsIndex": true
+    }
+  ],
+  "candidate": "9d012cebf7300c60c3087cff5be632805ce75052"
+}

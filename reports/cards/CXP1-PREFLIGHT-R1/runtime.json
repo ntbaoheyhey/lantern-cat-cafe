@@ -1,0 +1,42 @@
+{
+  "owner": "coordinator",
+  "pid": 29519,
+  "status": "DONE_PRELIMINARY_PASS",
+  "head": "9d012cebf7300c60c3087cff5be632805ce75052",
+  "worktree": "/Users/bao/.codex/worktrees/mega-cxp1-preflight-280ff4b/taskbar-hero",
+  "ports": [
+    4440,
+    4441,
+    4442,
+    4443,
+    4444
+  ],
+  "updated_at": "2026-11-01T22:59:51+07:00",
+  "checks": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "pets-rules",
+      "exit": 0
+    },
+    {
+      "name": "pets-store",
+      "exit": 0
+    },
+    {
+      "name": "web-typecheck",
+      "exit": 0
+    },
+    {
+      "name": "deno-resolution",
+      "exit": 0
+    },
+    {
+      "name": "pets-repeat10",
+      "exit": 0
+    }
+  ],
+  "cleanup": "cleanup.json"
+}

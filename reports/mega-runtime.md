@@ -6,5 +6,7 @@ Updated 2026-11-01T22:50:31+07:00. Candidate280ff4b/main1fb25ed; no mission PR m
 - Worker cap1 until2026-11-01T23:02:35+07:00 after lastmodel429; same-model2/4/8min backoff, no downgrade.
 - FXRB-PREFLIGHT-R2: temporary7023a2d,24unit/120resize preliminaryPASS; cleanworktree,runner15776stopped,4440–4444free. Not fullgates/grades/actualmain.
 - Vercel candidate quota hold: both contexts failure/retry24hours recorded19:53:20UTC+7; exactreset unknown. PR246 draft; no retry/capbypass/merge.
-- Publication correction37d4b03 and immutable receipt2e04f83 preserve244rawfiles at2088154 and later reportrevision.140Agrade deliveryfiles hashchecked; publication next.
+- Publication correction37d4b03 and immutable receipt2e04f83 preserve244rawfiles at2088154 and later reportrevision.140Agrade deliveryfiles verified at published72c0b0b; immutable receipt recorded.
 Coordinator owns implementation/checkpoints/publication and never substitutes self-review for mandatory independent grades.
+
+- CXP1-PREFLIGHT-R1: DONE_PRELIMINARY_PASS on9d012ce;34units/80browser repeats/webtype/Deno; runner29519 stopped and4440–4444free. Temporary conflict resolution only; actual-main fullgates/grades pending.
