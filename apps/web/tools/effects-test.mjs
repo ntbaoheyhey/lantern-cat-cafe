@@ -116,9 +116,11 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
   const normal = await open('motion-normal', { fixture: 'fresh' });
   const walk = async page => {
     const names = new Set(); let transformAnims = 0;
+    const visited = [];
     for (const screen of manifest.screens) {
       await page.getByTestId(screen.navTestId).click();
       if (screen.subnavTestId) await page.getByTestId(screen.subnavTestId).click();
+      visited.push(screen.id);
       for (let i = 0; i < 6; i++) {
         await sleep(80);
         const found = await page.evaluate(() => document.getAnimations().map(a => ({
@@ -126,11 +128,15 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
         for (const f of found) { names.add(f.name); if (f.props.some(p => /transform|translate|scale|rotate/.test(p))) transformAnims++; }
       }
     }
-    return { screens: manifest.screens.map(screen => screen.id), names: [...names], transformAnims };
+    return { screens: visited, names: [...names], transformAnims };
   };
   const n = await walk(normal.page); await normal.ctx.close();
   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
   const r = await walk(red.page);
+  const expectedScreens = JSON.stringify(manifest.screens.map(screen => screen.id));
+  check('coverage', 'every manifest screen visited in both motion modes',
+    JSON.stringify(n.screens) === expectedScreens && JSON.stringify(r.screens) === expectedScreens,
+    `normal=${n.screens.join(',')}; reduced=${r.screens.join(',')}`);
   const homeTab = red.page.getByRole('tab', { name: 'Home' });
   if (await homeTab.count()) {
     await homeTab.click();
