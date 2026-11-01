@@ -1,0 +1,8 @@
+UTC: 2026-11-01T08:32:38.391903+00:00
+CWD: .
+$ node -e 'const cp=require("node:child_process"); console.log("node",process.version); for (const args of [["--version"],["--filter","@taskbar-hero/web","exec","playwright","--version"]]) { const r=cp.spawnSync("pnpm",args,{encoding:"utf8"}); console.log(r.stdout.trim()); if(r.status) process.exit(r.status); }'
+node v24.22.2
+10.28.0
+Version 1.64.1
+
+EXIT: 0

@@ -1,0 +1,103 @@
+UTC: 2026-11-01T08:32:12.340688+00:00
+CWD: .
+$ env SCREENSHOTS=1 node reports/scorecard/cxp1/tools/review-demo.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: locator('[data-act="adopt"]:enabled').first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" locator('[data-act="adopt"]:enabled').first() with timeout 5000ms
+  - waiting for locator('[data-act="adopt"]:enabled').first()
+
+    at captureRawStack (/Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toBeVisible (/Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/reports/scorecard/cxp1/tools/review-demo.mjs:59:25 {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      `Locator: locator('[data-act="adopt"]:enabled').first()\n` +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeVisible" locator('[data-act="adopt"]:enabled').first() with timeout 5000ms\n` +
+      `  - waiting for locator('[data-act="adopt"]:enabled').first()\n`,
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      `  - Expect "toBeVisible" locator('[data-act="adopt"]:enabled').first() with timeout 5000ms`,
+      `  - waiting for locator('[data-act="adopt"]:enabled').first()`
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- heading "Rune and Skill Lab" [level=1]\n' +
+      '- text: Demo numbers, not game rules\n' +
+      '- checkbox "Pause animation" [checked]\n' +
+      '- text: Pause animation\n' +
+      '- button "1280×720" [pressed]\n' +
+      '- button "1600×900"\n' +
+      '- paragraph: Companions. Unlock by hunting, feed treats to level, equip two. Passive bonuses only.\n' +
+      '- navigation "Screens":\n' +
+      '  - text: TASK BAR HERO\n' +
+      '  - button "Skills"\n' +
+      '  - button "Passives"\n' +
+      '  - button "Runes"\n' +
+      '  - button "Drops"\n' +
+      '  - button "Stages"\n' +
+      '  - button "Gear"\n' +
+      '  - button "Pets"\n' +
+      '  - button "Workshop"\n' +
+      '  - button "Quests"\n' +
+      '  - button "Codex"\n' +
+      '  - button "Planner"\n' +
+      '  - button "Notes"\n' +
+      '- banner:\n' +
+      '  - text: LV\n' +
+      '  - button "Lower level": −\n' +
+      '  - text: "20"\n' +
+      '  - button "Raise level": +\n' +
+      '  - text: "Points left 8 Rune Dust 140 Etch Ink 3 Yarn 520 Desktop first · keyboard: Tab, Enter"\n' +
+      '- main:\n' +
+      '  - heading "Companions" [level=3]\n' +
+      '  - text: "Equip up to 2 · passive bonuses only · no combat AI Biscuit the Tabby +4% gold-equivalent Yarn per kill Lv 3 Defeat 300 Dust Bunny: 300/300"\n' +
+      '  - button "Treat (160 Yarn)"\n' +
+      '  - button "Unequip"\n' +
+      '  - button "Codex"\n' +
+      '  - text: "Noodle the Kitten +3% XP Locked Defeat 250 Loose Yarn: 190/250"\n' +
+      '  - button "Adopt" [disabled]\n' +
+      '  - button "Codex"\n' +
+      '  - text: "Pickle the Grump +2% rune drop chance Lv 1 Defeat 250 Pickle Imp: 250/250"\n' +
+      '  - button "Treat (40 Yarn)"\n' +
+      '  - button "Unequip"\n' +
+      '  - button "Codex"\n' +
+      '  - text: "Bubbles the Duck +3% heal power Locked Defeat 300 Rubber Duck: 140/300"\n' +
+      '  - button "Adopt" [disabled]\n' +
+      '  - button "Codex"\n' +
+      '  - text: "Mothra Jr. +1% crit chance Locked Defeat 400 Moth Swarm: 110/400"\n' +
+      '  - button "Adopt" [disabled]\n' +
+      '  - button "Codex"\n' +
+      '  - text: "Ember Moth +5% boss chest rare+ odds (display only) Locked Clear any boss 25 times: 3/25"\n' +
+      '  - button "Adopt" [disabled]\n' +
+      '  - button "Codex"\n' +
+      '  - heading "Hunt simulator" [level=3]\n' +
+      '  - text: Pretend you played for a while.\n' +
+      '  - button "+100 kills of every target"\n' +
+      '  - button "+5 boss clears"\n' +
+      '  - heading "Equipped bonuses" [level=3]\n' +
+      `  - text: "Pickle +2% +2% rune drop chance Biscuit +8% +4% gold-equivalent Yarn per kill Improvement: unlock goals show a progress bar and the target monster's Codex entry, instead of a wiki lookup."`
+  }
+}
+
+Node.js v24.22.2
+
+EXIT: 1
