@@ -5,7 +5,7 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 | item | branch | PR URL | state | rounds used | last verify result | notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | FXRB | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PARTIAL | 2 | Burst 40/40; continuous 80/80; core checks pass twice; full e2e fails known excluded mobile HUD cases | Canvas race fixed; isolated resource error cause NOT VERIFIED; reports/fxrb.md; full-suite gate not falsely called green |
-| CXN3 | ai/codex-n3-cutover-truth | — | TODO | 0 | Not run | Inspect existing branch and report before resuming |
+| CXN3 | ai/codex-n3-cutover-truth | — | IN-PROGRESS | 1 | Existing implementation inspected; independent verification starting | Separate checkout preserves two unfinished documentation edits in the older worktree |
 | CXP1 | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | TODO | 0 | Not run in this mission | Existing draft; inspect and complete missing verification |
 | CXR1 | ai/codex-redesign-cxr1 | — | TODO | 0 | Not run | Check merged AGR3/AGR4 gate |
 | CXR2 | ai/codex-redesign-cxr2 | — | TODO | 0 | Not run | Follow CXR1 findings; same AGR gate |
@@ -19,3 +19,10 @@ Updated 2026-11-01 (Asia/Ho_Chi_Minh). Baseline: `1fb25ed` (`origin/main`). Work
 3. Install pnpm 10.28.0 dependencies; check Deno drift; run typecheck, lint, unit tests and build in order.
 4. Run resize specs with repeat-each=20 at both desktop starts and the complete existing e2e suite; retain every failure as evidence.
 5. Write reports/fxrb.md, commit with [skip ci], push only ai/codex-fxrb, open a draft PR and update this ledger.
+
+## CXN3 plan
+1. Read the existing implementation, C3 findings, operational runbooks, migration inventory and shared HTTP handler; confirm CXN2 is merged.
+2. Preserve and review the two unfinished documentation corrections in an isolated checkout; fix any in-zone issues discovered.
+3. Run the catalog-only SQL against both PGlite migration sets and test the strict unsigned result classifier without network.
+4. Run the full local checks in order, compare link debt, and execute only the authorized unsigned live probes; retain live failures as findings.
+5. Push the report to ai/codex-n3-cutover-truth, open a draft PR, run verify-pr without comments and record honest status in this ledger.
