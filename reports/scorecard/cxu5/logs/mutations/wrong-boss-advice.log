@@ -1,0 +1,29 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/reports/scorecard/cxu5/.mutants-z03ieZ/apps/web
+
+ ❯ src/layout/boss/mapDetails.test.ts (4 tests | 1 failed) 23ms
+   ❯ boss Map advice and rewards (4)
+     × uses the selected boss, equipped build and normal-attack estimate rather than the idle gate 7ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:50:31
+   Duration  2.26s (environment 80%, transform 14%, import 5%, tests 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/boss/mapDetails.test.ts > boss Map advice and rewards > uses the selected boss, equipped build and normal-attack estimate rather than the idle gate
+AssertionError: expected 263 to be greater than 263
+ ❯ src/layout/boss/mapDetails.test.ts:11:18
+      9|     const last = recommendedBossPower(stats, 5)!;
+     10|     expect(first).toBeGreaterThan(0);
+     11|     expect(last).toBeGreaterThan(first);
+       |                  ^
+     12|     const scale = first / v2.powerRating(stats);
+     13|     const scaled = { ...stats, hp: stats.hp * scale, atk: stats.atk * …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1
