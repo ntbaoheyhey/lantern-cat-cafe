@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-01T10:59:47.800619+00:00",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/logs/inspection-0.log",
+      "bytes": 41
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/logs/inspection-1.log",
+      "bytes": 41
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "Connect your wallet to see|not available",
+        "/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/apps/web/src/market/MarketTab.tsx"
+      ],
+      "exit": 0,
+      "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/logs/inspection-2.log",
+      "bytes": 227
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "return state && !classId|onStartGuest|screen === 'landing'",
+        "/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/apps/web/src/layout/StageLayout.tsx"
+      ],
+      "exit": 0,
+      "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/logs/inspection-3.log",
+      "bytes": 332
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "CXC2|CXU3|BASE0",
+        "reports/mega-resume-2026-11-01.md"
+      ],
+      "exit": 0,
+      "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/logs/inspection-4.log",
+      "bytes": 990
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "pid": 6994,
+    "ppid": 93279,
+    "command": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-FINISH/run-gates.py /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-FINISH/full full --port 4380",
+    "cwd": "p6994\nfcwd\nn/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero"
+  },
+  {
+    "pid": 7834,
+    "ppid": 6994,
+    "command": "node /opt/homebrew/opt/node@24/bin/pnpm test:e2e --workers=2",
+    "cwd": "p7834\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7845,
+    "ppid": 7834,
+    "command": "node /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web/node_modules/.bin/../@playwright/test/cli.js test --workers=2",
+    "cwd": "p7845\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7854,
+    "ppid": 7845,
+    "command": "node ../../scripts/local-server.mjs",
+    "cwd": "p7854\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7858,
+    "ppid": 7845,
+    "command": "node e2e/support/server-build.mjs",
+    "cwd": "p7858\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7859,
+    "ppid": 7845,
+    "command": "/bin/sh -c npx -y pnpm@10.28.0 exec vite build --outDir dist/e2e-4380 && node e2e/support/serve.mjs dist/e2e-4380 4380",
+    "cwd": "p7859\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7893,
+    "ppid": 7859,
+    "command": "taskbar-hero-e2e-4380",
+    "cwd": "p7893\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7919,
+    "ppid": 7845,
+    "command": "/bin/sh -c npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir dist-v2/e2e-4381 && node e2e/support/serve.mjs dist-v2/e2e-4381 4381",
+    "cwd": "p7919\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 7950,
+    "ppid": 7919,
+    "command": "taskbar-hero-e2e-4381",
+    "cwd": "p7950\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8131,
+    "ppid": 7845,
+    "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/worker/workerProcessEntry.js",
+    "cwd": "p8131\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8132,
+    "ppid": 8131,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --user-data-dir=/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/playwright_chromiumdev_profile-L3uQz9 --remote-debugging-pipe --no-startup-window",
+    "cwd": "p8132\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8133,
+    "ppid": 8132,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --gpu-recent-crash-count=0 --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAADAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,14051979342273150093,12498262139703630273,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,18297233738956748220,12260560606064954298,4 --trace-process-track-uuid=3190708988185955192",
+    "cwd": "p8133\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8134,
+    "ppid": 8132,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=angle --mute-audio --headless=old --shared-files --field-trial-handle=1718379636,r,14051979342273150093,12498262139703630273,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,18297233738956748220,12260560606064954298,4 --trace-process-track-uuid=3190708989122997041",
+    "cwd": "p8134\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8154,
+    "ppid": 7845,
+    "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/worker/workerProcessEntry.js",
+    "cwd": "p8154\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8158,
+    "ppid": 8154,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --user-data-dir=/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/playwright_chromiumdev_profile-zcMYWs --remote-debugging-pipe --no-startup-window",
+    "cwd": "p8158\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8159,
+    "ppid": 8158,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --gpu-recent-crash-count=0 --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAADAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,16545852092379161434,1524324415678007622,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,11335519088728484833,2740929113448417055,4 --trace-process-track-uuid=3190708988185955192",
+    "cwd": "p8159\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8160,
+    "ppid": 8158,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=angle --mute-audio --headless=old --shared-files --field-trial-handle=1718379636,r,16545852092379161434,1524324415678007622,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,11335519088728484833,2740929113448417055,4 --trace-process-track-uuid=3190708989122997041",
+    "cwd": "p8160\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8307,
+    "ppid": 8158,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --allow-pre-commit-input --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=53 --launch-time-ticks=56212594575 --shared-files --field-trial-handle=1718379636,r,16545852092379161434,1524324415678007622,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,11335519088728484833,2740929113448417055,4 --trace-process-track-uuid=3190709035975089491",
+    "cwd": "p8307\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8308,
+    "ppid": 8132,
+    "command": "/Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --allow-pre-commit-input --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=74 --launch-time-ticks=56212799693 --shared-files --field-trial-handle=1718379636,r,14051979342273150093,12498262139703630273,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AimEnabled,AutoDeElevate,AvoidCorsURLLoaderRestartOnRedirect,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,NetworkTimeServiceQuerying,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,18297233738956748220,12260560606064954298,4 --trace-process-track-uuid=3190709055652968320",
+    "cwd": "p8308\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/apps/web"
+  },
+  {
+    "pid": 8309,
+    "ppid": 93279,
+    "command": "/bin/zsh -c python3 - <<'PY'\\012import subprocess,json\\012from pathlib import Path\\012card=Path('/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-FINISH')\\012lines=subprocess.check_output(['ps','-Ao','pid=,ppid=,command='],text=True).splitlines()\\012rows=[]\\012for line in lines:\\012 fields=line.strip().split(None,2)\\012 if len(fields)==3: rows.append({'pid':int(fields[0]),'ppid':int(fields[1]),'command':fields[2]})\\012roots=[r['pid'] for r in rows if 'BASE0-FINISH/run-gates.py' in r['command'] and 'Python.app' in r['command']]\\012owned=set(roots)\\012while True:\\012 new={r['pid'] for r in rows if r['ppid'] in owned}-owned\\012 if not new: break\\012 owned |= new\\012inventory=[]\\012for row in rows:\\012 if row['pid'] in owned:\\012  cwd=subprocess.run(['lsof','-a','-p',str(row['pid']),'-d','cwd','-Fn'],capture_output=True,text=True).stdout.strip()\\012  inventory.append(dict(row,cwd=cwd))\\012(card/'stop-process-inventory.json').write_text(json.dumps(inventory,indent=2)+'\\n')\\012print(json.dumps(inventory,indent=2))\\012PY\\012lsof -nP -iTCP:4380-4383 -sTCP:LISTEN",
+    "cwd": "p8309\nfcwd\nn/Users/bao/Documents/ChatGPT/taskbar hero"
+  },
+  {
+    "pid": 8310,
+    "ppid": 8309,
+    "command": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -",
+    "cwd": "p8310\nfcwd\nn/Users/bao/Documents/ChatGPT/taskbar hero"
+  },
+  {
+    "pid": 8311,
+    "ppid": 8310,
+    "command": "ps -Ao pid=,ppid=,command=",
+    "cwd": ""
+  }
+]

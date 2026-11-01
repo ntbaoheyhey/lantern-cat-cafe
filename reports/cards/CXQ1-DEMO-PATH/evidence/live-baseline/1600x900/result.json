@@ -1,0 +1,139 @@
+{
+  "status": "FAIL",
+  "durationMs": 5466,
+  "steps": [
+    {
+      "name": "landing",
+      "status": "FAIL",
+      "elapsedMs": 5430,
+      "error": "expect(locator).toBeVisible() failed\n\nLocator: getByTestId('landing-hero')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByTestId('landing-hero') with timeout 5000ms\n  - waiting for getByTestId('landing-hero')\n",
+      "screenshot": {
+        "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-baseline/1600x900/01-landing-FAIL.png",
+        "bytes": 83233
+      }
+    },
+    {
+      "name": "guest",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "class",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "idle-loop",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "boss",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "forge",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "bag",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "on-chain-proof",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    },
+    {
+      "name": "market",
+      "status": "BLOCKED",
+      "blockedBy": "landing"
+    }
+  ],
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "baseUrl": "https://taskbarhero-eight.vercel.app/",
+  "source": {
+    "head": "e68eee0be82a085999f565800bf50925046acf18",
+    "dirty": "M reports/scorecard/base0/logs/results.jsonl\n?? reports/scorecard/base0/audit-signed-in/\n?? reports/scorecard/base0/audit/\n?? reports/scorecard/base0/effects-1280/\n?? reports/scorecard/base0/effects-1600/\n?? reports/scorecard/base0/effects-control-1280/\n?? reports/scorecard/base0/effects-reached-control/\n?? reports/scorecard/base0/live-baseline-diagnostic.json\n?? reports/scorecard/base0/live-smoke.mjs\n?? reports/scorecard/base0/live/\n?? reports/scorecard/base0/logs/changed-specs-repeat10-1600.log\n?? reports/scorecard/base0/logs/changed-specs-repeat10.log\n?? reports/scorecard/base0/logs/compact-browser-r5.log\n?? reports/scorecard/base0/logs/compact-browser-r6.log\n?? reports/scorecard/base0/logs/compact-browser-r7.log\n?? reports/scorecard/base0/logs/effects-1280.log\n?? reports/scorecard/base0/logs/effects-1600.log\n?? reports/scorecard/base0/logs/effects-control-1280.log\n?? reports/scorecard/base0/logs/effects-reached-control.log\n?? reports/scorecard/base0/logs/full-e2e-1600-r3.log\n?? reports/scorecard/base0/logs/full-e2e-1600.log\n?? reports/scorecard/base0/logs/full-r1/\n?? reports/scorecard/base0/logs/full-r2/\n?? reports/scorecard/base0/logs/full-r3/\n?? reports/scorecard/base0/logs/full-r4/\n?? reports/scorecard/base0/logs/full-r5/\n?? reports/scorecard/base0/logs/gated-hud-regression.log\n?? reports/scorecard/base0/logs/gated-hud-repeat10.log\n?? reports/scorecard/base0/logs/hud-contrast.log\n?? reports/scorecard/base0/logs/keyboard.log\n?? reports/scorecard/base0/logs/links-corrected.log\n?? reports/scorecard/base0/logs/live-baseline.log\n?? reports/scorecard/base0/logs/mutations/\n?? reports/scorecard/base0/logs/new-hud-browser.log\n?? reports/scorecard/base0/logs/public-config-build.log\n?? reports/scorecard/base0/logs/public-config-classic-smoke.log\n?? reports/scorecard/base0/logs/repeat-hud-10.log\n?? reports/scorecard/base0/logs/ui-audit-signed-in.log\n?? reports/scorecard/base0/logs/ui-audit.log\n?? reports/scorecard/base0/mutation-plan.md\n?? reports/scorecard/base0/preflight-review.md\n?? reports/scorecard/base0/public-config/\n?? reports/scorecard/base0/resume-accessibility-e68eee0/\n?? reports/scorecard/base0/resume-effects-e68eee0/\n?? reports/scorecard/base0/resume-gate-e68eee0/\n?? reports/scorecard/base0/resume-live-guest/\n?? reports/scorecard/base0/resume-mutations-e68eee0/\n?? reports/scorecard/base0/resume-public-e68eee0/\n?? reports/scorecard/base0/resume-repeats-e68eee0/\n?? reports/scorecard/base0/resume-ui-e68eee0/\n?? reports/scorecard/base0/screens/hud-1280.png\n?? reports/scorecard/base0/screens/hud-1600.png\n?? reports/scorecard/base0/screens/reference-home-1280.png\n?? reports/scorecard/base0/screens/reference-home-1600.png",
+    "role": "Inspection/dependency source only; NOT claimed deployed head"
+  },
+  "deployment": {
+    "head": null,
+    "status": "UNVERIFIED",
+    "reason": "No trusted deployed commit metadata observed"
+  },
+  "identity": {
+    "finalUrl": "https://taskbarhero-eight.vercel.app/",
+    "htmlSha256": "c4251101040ea5114656ab33f7fd14b512d27f982865f10c6fc707a517792aa7",
+    "etag": "W/\"27128b1a12da3af6631f80d20015b3a5\"",
+    "vercelRequestId": "sin1::vjdmq-1793530719785-2fce4ccab7e6",
+    "assets": [
+      "/assets/index-DKnyrYRP.js"
+    ]
+  },
+  "startedAt": "2026-11-01T10:58:39.724Z",
+  "endedAt": "2026-11-01T10:58:45.190Z",
+  "judgeBudgetMs": 180000,
+  "screenshotBytes": 83233,
+  "screenshots": 1,
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://taskbarhero-eight.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-BmB6Vb4r.css",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/combat-COPl1OEP.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-DKnyrYRP.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+      "status": 200
+    }
+  ],
+  "events": [],
+  "transactionsPerformed": 0,
+  "guestOnly": true
+}

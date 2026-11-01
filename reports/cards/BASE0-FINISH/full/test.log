@@ -1,0 +1,844 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm test", "cwd": "/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero", "empty_backend_env": true, "head": "07d219b2fcb8c36fed3cf72a9f640e18c5156beb", "name": "test", "ports": {"E2E_PORT_API": "4383", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_SERVER": "4382", "E2E_PORT_V2": "4381"}, "screenshots": false, "started": "2026-11-01T18:01:01+07:00", "starting_git_status": "", "viewport": "1280x720"}
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.208792ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.111709ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.21425ms)
+✔ output order is stable regardless of file creation order (3.4505ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.747083ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.029041
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  18:01:03
+packages/chain test:    Duration  746ms (import 41%, tests 30%, transform 27%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  18:01:03
+packages/auth test:    Duration  921ms (import 65%, tests 25%, transform 10%, worker 1%)
+packages/auth test: Done
+supabase/tests test: stderr | src/forge.test.ts > HTTP > relic-forge returns the ForgeResult shape and ignores body fields
+supabase/tests test: error: new row for relation "relic_vouchers" violates check constraint "relic_vouchers_check"
+supabase/tests test:     at pe.Oe (file:///Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:18162)
+supabase/tests test:     at pe.tt (file:///Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:15548)
+supabase/tests test:     at pe.parse (file:///Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:14222)
+supabase/tests test:     at D.Ne (file:///Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/index.js:5:1763)
+supabase/tests test:     at file:///Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/index.js:5:1155
+supabase/tests test:     at wasm://wasm/0269dffe:wasm-function[10979]:0x5ad04f
+supabase/tests test:     at wasm://wasm/0269dffe:wasm-function[3598]:0x281dd2
+supabase/tests test:     at wasm://wasm/0269dffe:wasm-function[3640]:0x289ccf
+supabase/tests test:     at wasm://wasm/0269dffe:wasm-function[3650]:0x289f2b
+supabase/tests test:     at wasm://wasm/0269dffe:wasm-function[9956]:0x55697c {
+supabase/tests test:   length: 706,
+supabase/tests test:   severity: 'ERROR',
+supabase/tests test:   code: '23514',
+supabase/tests test:   detail: 'Failing row contains (16, 00000000-0000-4000-8000-000000000019, 2, rare, issued, null, 2026-11-01 18:01:09.388+07, 2026-11-01 17:30:00+07, d16c415d-abc7-4dbc-9cd9-7a4d090afa4e, null, null, null, null).',
+supabase/tests test:   hint: undefined,
+supabase/tests test:   position: undefined,
+supabase/tests test:   internalPosition: undefined,
+supabase/tests test:   internalQuery: undefined,
+supabase/tests test:   where: 'SQL statement "insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)\n' +
+supabase/tests test:     '  values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)\n' +
+supabase/tests test:     '  returning *"\n' +
+supabase/tests test:     'PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement',
+supabase/tests test:   schema: 'public',
+supabase/tests test:   table: 'relic_vouchers',
+supabase/tests test:   column: undefined,
+supabase/tests test:   dataType: undefined,
+supabase/tests test:   constraint: 'relic_vouchers_check',
+supabase/tests test:   file: 'execMain.c',
+supabase/tests test:   line: '2081',
+supabase/tests test:   routine: 'ExecConstraints',
+supabase/tests test:   query: 'select public.game_forge($1, $2, $3, $4, $5, $6, $7) r',
+supabase/tests test:   params: [
+supabase/tests test:     '00000000-0000-4000-8000-000000000019',
+supabase/tests test:     '2026-11-01',
+supabase/tests test:     2,
+supabase/tests test:     'rare',
+supabase/tests test:     30,
+supabase/tests test:     1,
+supabase/tests test:     '2026-11-01T10:30:00.000Z'
+supabase/tests test:   ],
+supabase/tests test:   queryOptions: undefined
+supabase/tests test: }
+supabase/tests test:  ❯ src/relic-recovery.test.ts (28 tests | 28 failed) 2477ms
+supabase/tests test:    ❯ v1 paid Relic recovery (13)
+supabase/tests test:      × T1 used nonce with a matching RelicForged log stores its tx and never issues another voucher 466ms
+supabase/tests test:      × T2 used nonce without a mint log cancels and replaces the same Relic without spending 103ms
+supabase/tests test:      × T3 forge, game-state and relic-mint-report carry the same existing forge claimId 151ms
+supabase/tests test:      × T4 claimIds differ on day two and between players 19ms
+supabase/tests test:      × T5 pending voucher without a signer stays visible with null signature and recoverable=true 187ms
+supabase/tests test:      × T6 pending voucher without a signer returns HTTP server_error, never forge_blocked or daily_limit 21ms
+supabase/tests test:      × T7 nonce becomes used after reissue: old voucher minted, new cancelled, no new signature in response 44ms
+supabase/tests test:      × T8 nonce unused on both reads issues exactly one signed replacement 56ms
+supabase/tests test:      × T9 concurrent expiry calls leave at most one issued voucher and all retries recover it 59ms
+supabase/tests test:      × T10 late mint report cancels the replacement and preserves the original claim 71ms
+supabase/tests test:      × state and a concurrent forge cannot sign a replacement before the creator's second chain read 27ms
+supabase/tests test:      × an interrupted reissue is recoverable after its lease without another voucher or payment 28ms
+supabase/tests test:      × a failing signer keeps state recoverable and forge fails without a daily-limit refusal 12ms
+supabase/tests test:    ❯ v2 paid Relic recovery (13)
+supabase/tests test:      × T1 used nonce with a matching RelicForged log stores its tx and never issues another voucher 61ms
+supabase/tests test:      × T2 used nonce without a mint log cancels and replaces the same Relic without spending 32ms
+supabase/tests test:      × T3 forge, game-state and relic-mint-report carry the same existing forge claimId 9ms
+supabase/tests test:      × T4 claimIds differ on day two and between players 68ms
+supabase/tests test:      × T5 pending voucher without a signer stays visible with null signature and recoverable=true 34ms
+supabase/tests test:      × T6 pending voucher without a signer returns HTTP server_error, never forge_blocked or daily_limit 47ms
+supabase/tests test:      × T7 nonce becomes used after reissue: old voucher minted, new cancelled, no new signature in response 50ms
+supabase/tests test:      × T8 nonce unused on both reads issues exactly one signed replacement 8ms
+supabase/tests test:      × T9 concurrent expiry calls leave at most one issued voucher and all retries recover it 27ms
+supabase/tests test:      × T10 late mint report cancels the replacement and preserves the original claim 10ms
+supabase/tests test:      × state and a concurrent forge cannot sign a replacement before the creator's second chain read 5ms
+supabase/tests test:      × an interrupted reissue is recoverable after its lease without another voucher or payment 4ms
+supabase/tests test:      × a failing signer keeps state recoverable and forge fails without a daily-limit refusal 4ms
+supabase/tests test:    × T12 all migrations apply in order; the new resolver is service_role only and the migration is idempotent 25ms
+supabase/tests test:    × a foreign player, incorrect token and expired lease owner cannot release a held replacement 34ms
+supabase/tests test:  ❯ src/forge.test.ts (21 tests | 16 failed) 2506ms
+supabase/tests test:    ❯ relic-forge (10)
+supabase/tests test:      × spends shards and the oldest Boss Key and returns a voucher signed by the server key 343ms
+supabase/tests test:      × a second call the same day returns the same voucher and spends nothing 156ms
+supabase/tests test:      × after expiry re-signs the same Relic with a new nonce and expiry; the old voucher becomes expired 13ms
+supabase/tests test:      × an expired voucher that was minted anyway is recorded, not re-signed 17ms
+supabase/tests test:      × does not re-sign when the chain cannot be read 100ms
+supabase/tests test:      × after a mint: blocked for the rest of the day, allowed again the next day 12ms
+supabase/tests test:      × two concurrent forges spend once and both get the same voucher 24ms
+supabase/tests test:      × game-state signs an interrupted forge or keeps its voucher recoverable without a signer 7ms
+supabase/tests test:    ❯ forge.today (3)
+supabase/tests test:      × null with no forge, then the unminted Relic, then minted with the reported tx hash 95ms
+supabase/tests test:      × yesterday's forge is not today's 4ms
+supabase/tests test:      × is per player 7ms
+supabase/tests test:    ❯ relic-mint-report (3)
+supabase/tests test:      × a valid receipt marks the voucher minted and clears forge.pending; a repeat is unchanged 91ms
+supabase/tests test:      × refuses receipts that do not mint exactly this voucher 40ms
+supabase/tests test:      × another player's or an unknown nonce is not_found 27ms
+supabase/tests test:    ❯ HTTP (3)
+supabase/tests test:      × relic-forge returns the ForgeResult shape and ignores body fields 51ms
+supabase/tests test:    ❯ grants and RLS (2)
+supabase/tests test:      × players read only their own forges and vouchers, and cannot write them 9ms
+supabase/tests test:  ❯ src/voucher-security.test.ts (21 tests | 3 failed) 1881ms
+supabase/tests test:    ❯ replay of a used nonce or a reused mint transaction (3)
+supabase/tests test:      × one player's mint transaction cannot mark another player's voucher minted 553ms
+supabase/tests test:      × a second report for an already minted nonce keeps the first transaction hash 20ms
+supabase/tests test:      × a minted voucher is not issued again the same day: the forge returns the same nonce, spends nothing 109ms
+supabase/tests test:  ❯ src/concurrency-hardening.test.ts (4 tests | 2 failed) 2179ms
+supabase/tests test:    × parallel mint reports using one tx from two players credit only the voucher owner 94ms
+supabase/tests test:    × five concurrent expiry forges leave one issued replacement and invoke its signer only once 105ms
+supabase/tests test:  ❯ src/concurrency.test.ts (11 tests | 8 failed) 2965ms
+supabase/tests test:    ❯ relic-forge (3)
+supabase/tests test:      × parallel forges pay once and every caller gets the same voucher 193ms
+supabase/tests test:      × parallel forges with shards for exactly one never go negative 145ms
+supabase/tests test:      × parallel calls after expiry re-sign once: one live voucher, the old one expired 15ms
+supabase/tests test:    ❯ mint voucher nonce replay (5)
+supabase/tests test:      × reporting the same mint in parallel, or again with another tx, keeps the first tx hash 47ms
+supabase/tests test:      × a minted nonce cannot be re-issued or re-signed 32ms
+supabase/tests test:      × another player cannot report a nonce they do not own, even with a matching receipt 11ms
+supabase/tests test:      × an expired voucher whose nonce was used on chain is never re-signed, even in parallel 8ms
+supabase/tests test:      × re-issued vouchers get strictly new nonces 6ms
+supabase/tests test:  ❯ src/voucher-cancel.test.ts (6 tests | 6 failed) 1183ms
+supabase/tests test:    ❯ cancelled nonce recovery (6)
+supabase/tests test:      × nonce used with a RelicForged log: recorded as minted, daily limit applies 262ms
+supabase/tests test:      × nonce used without a log (cancelNonce): cancelled and re-issued for the same forge, nothing re-charged 25ms
+supabase/tests test:      × a cancelled voucher can be cancelled again if the replacement is burned too 36ms
+supabase/tests test:      × if the log search cannot be completed nothing changes and the call fails 86ms
+supabase/tests test:      × a live, unused voucher is never cancelled (chain says unused: normal expiry re-issue) 23ms
+supabase/tests test:      × game_voucher_cancel_reissue refuses a nonce that is not the player's issued voucher 71ms
+supabase/tests test: ⎯⎯⎯⎯⎯⎯ Failed Tests 63 ⎯⎯⎯⎯⎯⎯⎯
+supabase/tests test:  FAIL  src/concurrency-hardening.test.ts > parallel mint reports using one tx from two players credit only the voucher owner
+supabase/tests test:  FAIL  src/concurrency-hardening.test.ts > five concurrent expiry forges leave one issued replacement and invoke its signer only once
+supabase/tests test:  FAIL  src/concurrency.test.ts > relic-forge > parallel calls after expiry re-sign once: one live voucher, the old one expired
+supabase/tests test:  FAIL  src/concurrency.test.ts > mint voucher nonce replay > reporting the same mint in parallel, or again with another tx, keeps the first tx hash
+supabase/tests test:  FAIL  src/concurrency.test.ts > mint voucher nonce replay > a minted nonce cannot be re-issued or re-signed
+supabase/tests test:  FAIL  src/concurrency.test.ts > mint voucher nonce replay > another player cannot report a nonce they do not own, even with a matching receipt
+supabase/tests test:  FAIL  src/concurrency.test.ts > mint voucher nonce replay > an expired voucher whose nonce was used on chain is never re-signed, even in parallel
+supabase/tests test:  FAIL  src/concurrency.test.ts > mint voucher nonce replay > re-issued vouchers get strictly new nonces
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > spends shards and the oldest Boss Key and returns a voucher signed by the server key
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > a second call the same day returns the same voucher and spends nothing
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > after expiry re-signs the same Relic with a new nonce and expiry; the old voucher becomes expired
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > an expired voucher that was minted anyway is recorded, not re-signed
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > does not re-sign when the chain cannot be read
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > after a mint: blocked for the rest of the day, allowed again the next day
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > two concurrent forges spend once and both get the same voucher
+supabase/tests test:  FAIL  src/forge.test.ts > relic-forge > game-state signs an interrupted forge or keeps its voucher recoverable without a signer
+supabase/tests test:  FAIL  src/forge.test.ts > forge.today > null with no forge, then the unminted Relic, then minted with the reported tx hash
+supabase/tests test:  FAIL  src/forge.test.ts > forge.today > yesterday's forge is not today's
+supabase/tests test:  FAIL  src/forge.test.ts > forge.today > is per player
+supabase/tests test:  FAIL  src/forge.test.ts > relic-mint-report > a valid receipt marks the voucher minted and clears forge.pending; a repeat is unchanged
+supabase/tests test:  FAIL  src/forge.test.ts > relic-mint-report > refuses receipts that do not mint exactly this voucher
+supabase/tests test:  FAIL  src/forge.test.ts > relic-mint-report > another player's or an unknown nonce is not_found
+supabase/tests test:  FAIL  src/forge.test.ts > grants and RLS > players read only their own forges and vouchers, and cannot write them
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T1 used nonce with a matching RelicForged log stores its tx and never issues another voucher
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T2 used nonce without a mint log cancels and replaces the same Relic without spending
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T3 forge, game-state and relic-mint-report carry the same existing forge claimId
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T4 claimIds differ on day two and between players
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T5 pending voucher without a signer stays visible with null signature and recoverable=true
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T6 pending voucher without a signer returns HTTP server_error, never forge_blocked or daily_limit
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T7 nonce becomes used after reissue: old voucher minted, new cancelled, no new signature in response
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T8 nonce unused on both reads issues exactly one signed replacement
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T9 concurrent expiry calls leave at most one issued voucher and all retries recover it
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > T10 late mint report cancels the replacement and preserves the original claim
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > state and a concurrent forge cannot sign a replacement before the creator's second chain read
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > an interrupted reissue is recoverable after its lease without another voucher or payment
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v1 paid Relic recovery > a failing signer keeps state recoverable and forge fails without a daily-limit refusal
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T1 used nonce with a matching RelicForged log stores its tx and never issues another voucher
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T2 used nonce without a mint log cancels and replaces the same Relic without spending
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T3 forge, game-state and relic-mint-report carry the same existing forge claimId
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T4 claimIds differ on day two and between players
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T5 pending voucher without a signer stays visible with null signature and recoverable=true
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T6 pending voucher without a signer returns HTTP server_error, never forge_blocked or daily_limit
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T7 nonce becomes used after reissue: old voucher minted, new cancelled, no new signature in response
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T8 nonce unused on both reads issues exactly one signed replacement
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T9 concurrent expiry calls leave at most one issued voucher and all retries recover it
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > T10 late mint report cancels the replacement and preserves the original claim
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > state and a concurrent forge cannot sign a replacement before the creator's second chain read
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > an interrupted reissue is recoverable after its lease without another voucher or payment
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > v2 paid Relic recovery > a failing signer keeps state recoverable and forge fails without a daily-limit refusal
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > T12 all migrations apply in order; the new resolver is service_role only and the migration is idempotent
+supabase/tests test:  FAIL  src/relic-recovery.test.ts > a foreign player, incorrect token and expired lease owner cannot release a held replacement
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > nonce used with a RelicForged log: recorded as minted, daily limit applies
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > nonce used without a log (cancelNonce): cancelled and re-issued for the same forge, nothing re-charged
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > a cancelled voucher can be cancelled again if the replacement is burned too
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > if the log search cannot be completed nothing changes and the call fails
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > a live, unused voucher is never cancelled (chain says unused: normal expiry re-issue)
+supabase/tests test:  FAIL  src/voucher-cancel.test.ts > cancelled nonce recovery > game_voucher_cancel_reissue refuses a nonce that is not the player's issued voucher
+supabase/tests test:  FAIL  src/voucher-security.test.ts > replay of a used nonce or a reused mint transaction > one player's mint transaction cannot mark another player's voucher minted
+supabase/tests test:  FAIL  src/voucher-security.test.ts > replay of a used nonce or a reused mint transaction > a second report for an already minted nonce keeps the first transaction hash
+supabase/tests test:  FAIL  src/voucher-security.test.ts > replay of a used nonce or a reused mint transaction > a minted voucher is not issued again the same day: the forge returns the same nonce, spends nothing
+supabase/tests test: error: new row for relation "relic_vouchers" violates check constraint "relic_vouchers_check"
+supabase/tests test:  ❯ pe.Oe ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:442:11
+supabase/tests test:  ❯ pe.tt ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:220:16
+supabase/tests test:  ❯ pe.parse ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:104:21
+supabase/tests test:  ❯ D.Ne ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:763:26
+supabase/tests test:  ❯ ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:716:14
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/63]⎯
+supabase/tests test:  FAIL  src/concurrency.test.ts > relic-forge > parallel forges pay once and every caller gets the same voucher
+supabase/tests test: AssertionError: expected [ …(8) ] to deeply equal []
+supabase/tests test: - Expected
+supabase/tests test: + Received
+supabase/tests test: - []
+supabase/tests test: + [
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (1, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.139+07, 2026-11-01 17:30:00+07, 2bfba062-3c11-4eac-8433-f6ef7998c60b, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 704,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (2, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.15+07, 2026-11-01 17:30:00+07, eaaa26ef-646b-4228-bc13-330c7b8fcfb4, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (3, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.153+07, 2026-11-01 17:30:00+07, 94d67883-0384-45d4-9507-725d08758ba1, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (4, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.156+07, 2026-11-01 17:30:00+07, 701f7d10-7043-4fc3-88cc-e61d39290f62, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (5, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.166+07, 2026-11-01 17:30:00+07, 1a288f01-ec73-4883-afa3-61c56e1eee9c, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (6, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.176+07, 2026-11-01 17:30:00+07, 9e525723-900b-4cb7-8aa5-c12383ee1ca7, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (7, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.186+07, 2026-11-01 17:30:00+07, 7e453af0-ac9a-41cb-8e51-c4fc3f10b2c6, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (8, 00000000-0000-4000-8000-000000000004, 2, rare, issued, null, 2026-11-01 18:01:13.192+07, 2026-11-01 17:30:00+07, d470d959-9220-4260-9cc6-22d17752fc48, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000004",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       2,
+supabase/tests test: +       "rare",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: + ]
+supabase/tests test:  ❯ src/concurrency.test.ts:164:31
+supabase/tests test:     162|     const p = await player({ shards: cost * 3, keyDays: ["2026-10-29",…
+supabase/tests test:     163|     const results = await settle(Array.from({ length: PARALLEL }, () =…
+supabase/tests test:     164|     expect(rejected(results)).toEqual([]);
+supabase/tests test:        |                               ^
+supabase/tests test:     165|     const nonces = new Set(fulfilled(results).map((r) => r.value.vouch…
+supabase/tests test:     166|     expect(nonces.size).toBe(1);
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/63]⎯
+supabase/tests test:  FAIL  src/concurrency.test.ts > relic-forge > parallel forges with shards for exactly one never go negative
+supabase/tests test: AssertionError: expected [ …(8) ] to deeply equal []
+supabase/tests test: - Expected
+supabase/tests test: + Received
+supabase/tests test: - []
+supabase/tests test: + [
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 705,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (9, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.302+07, 2026-11-01 17:30:00+07, 928877df-0c7e-4812-a690-bdbe5e3400f5, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (10, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.314+07, 2026-11-01 17:30:00+07, ec99bced-24fb-4e7c-904a-bac86898ffaa, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (11, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.316+07, 2026-11-01 17:30:00+07, ebdee0dc-ad26-4778-9635-3010caad7233, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (12, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.352+07, 2026-11-01 17:30:00+07, 08a81edb-834d-4082-8573-48fd1fb7882b, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (13, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.365+07, 2026-11-01 17:30:00+07, 531b113d-4a69-4edd-9d04-12dee2032075, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (14, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.373+07, 2026-11-01 17:30:00+07, 409d3029-0baf-4cc9-b57f-f90b3f4eba78, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (15, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.386+07, 2026-11-01 17:30:00+07, a00d28e2-ccd0-40db-8b76-520fb45cd01e, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: +   error {
+supabase/tests test: +     "message": "new row for relation \"relic_vouchers\" violates check constraint \"relic_vouchers_check\"",
+supabase/tests test: +     "length": 706,
+supabase/tests test: +     "name": "error",
+supabase/tests test: +     "severity": "ERROR",
+supabase/tests test: +     "code": "23514",
+supabase/tests test: +     "detail": "Failing row contains (16, 00000000-0000-4000-8000-000000000005, 3, epic, issued, null, 2026-11-01 18:01:13.388+07, 2026-11-01 17:30:00+07, 59c7b406-4e24-4949-bc39-edc90b7c66f0, null, null, null, null).",
+supabase/tests test: +     "hint": undefined,
+supabase/tests test: +     "position": undefined,
+supabase/tests test: +     "internalPosition": undefined,
+supabase/tests test: +     "internalQuery": undefined,
+supabase/tests test: +     "where": "SQL statement \"insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)
+supabase/tests test: +   values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)
+supabase/tests test: +   returning *\"
+supabase/tests test: + PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement",
+supabase/tests test: +     "schema": "public",
+supabase/tests test: +     "table": "relic_vouchers",
+supabase/tests test: +     "column": undefined,
+supabase/tests test: +     "dataType": undefined,
+supabase/tests test: +     "constraint": "relic_vouchers_check",
+supabase/tests test: +     "file": "execMain.c",
+supabase/tests test: +     "line": "2081",
+supabase/tests test: +     "routine": "ExecConstraints",
+supabase/tests test: +     "query": "select public.game_forge($1, $2, $3, $4, $5, $6, $7) r",
+supabase/tests test: +     "params": [
+supabase/tests test: +       "00000000-0000-4000-8000-000000000005",
+supabase/tests test: +       "2026-11-01",
+supabase/tests test: +       3,
+supabase/tests test: +       "epic",
+supabase/tests test: +       30,
+supabase/tests test: +       1,
+supabase/tests test: +       "2026-11-01T10:30:00.000Z",
+supabase/tests test: +     ],
+supabase/tests test: +     "queryOptions": undefined,
+supabase/tests test: +   },
+supabase/tests test: + ]
+supabase/tests test:  ❯ src/concurrency.test.ts:176:31
+supabase/tests test:     174|     const p = await player({ shards: CONFIG.relic.shardCost, keyDays: …
+supabase/tests test:     175|     const results = await settle(Array.from({ length: PARALLEL }, () =…
+supabase/tests test:     176|     expect(rejected(results)).toEqual([]);
+supabase/tests test:        |                               ^
+supabase/tests test:     177|     expect((await idle(p.id)).shards).toBe(0);
+supabase/tests test:     178|     expect(await vouchers(p.id)).toHaveLength(1);
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/63]⎯
+supabase/tests test:  FAIL  src/forge.test.ts > HTTP > relic-forge returns the ForgeResult shape and ignores body fields
+supabase/tests test: AssertionError: expected 500 to be 200 // Object.is equality
+supabase/tests test: - Expected
+supabase/tests test: + Received
+supabase/tests test: - 200
+supabase/tests test: + 500
+supabase/tests test:  ❯ src/forge.test.ts:413:24
+supabase/tests test:     411|     const p = await player();
+supabase/tests test:     412|     const res = await call("relic-forge", p.id, { rarity: "legendary",…
+supabase/tests test:     413|     expect(res.status).toBe(200);
+supabase/tests test:        |                        ^
+supabase/tests test:     414|     const body = (await res.json()) as ForgeResult;
+supabase/tests test:     415|     const fixture: ForgeResult = {
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/63]⎯
+supabase/tests test:  Test Files  6 failed | 25 passed (31)
+supabase/tests test:       Tests  63 failed | 481 passed (544)
+supabase/tests test:    Start at  18:01:03
+supabase/tests test:    Duration  11.59s (tests 80%, import 14%, transform 6%)
+supabase/tests test: Failed
+/Users/bao/.codex/worktrees/mega-base0-finish-verify/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
+
+EXIT_CODE=1

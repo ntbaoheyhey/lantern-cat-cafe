@@ -31,3 +31,7 @@ Explicitly resumed2026-11-01T17:55:39+07:00. CXU5 shutdown independently confirm
 User priority decision: P1 evaluates all mergedcore and adds QA/materials as optionalP2/P3 merge. Two nativeAstraUltra workers started forBASE0completion andjudge-path preparation; no grades/merges claimed.
 
 - Latest user steering2026-11-01T18:00:43+07:00: coordinator now directly builds/fixes/verifies/reports. Two just-launched builder/QA agents have STOP controls and must release ownership before takeover. Future workers primarily mandatory independent graders, max2(or1afterrecent429); grouped grading up to3readyitems allowed under unchanged exact-head gates. P1 merged-core decision preserved.
+
+Coordinator takeover: both workers stopped. BASE0 successor07d219b repairs19forge cases, but fresh complete unit run exposes63 failures in six other historical-clock suites; still FAIL. Demo harness is prepared with an honest RED full-path baseline; user approved merged-step gating untilCXU3/CXC2, then allnine mandatory. No formal grade/merge.
+
+Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullrootunits exit0 on working source. Shared test-only clock fixes all six additional failuresuites without productionchanges. Successor source commit and fresh exact-head gate follow; no formalgrade/merge yet.
