@@ -7,3 +7,5 @@ Coordinator exact-head checks completed; report/evidence published c388d57 and g
 2026-11-01T19:08:17+07:00: GA-R1 completed FAIL and released all4420–4424listeners; B remainsactive. Coordinator unmodified reproduction in mega-base0-repair-r2 runs PID31494 on4380–4384, cardBASE0-REPAIR-R2/runtime.json. Candidate branch unchanged.
 
 2026-11-01T19:17:45+07:00: A/B bothdone and cleaned. B97PASS; A0FAIL. Mandatory third nativegrader /root/base0_grade_c_r1 now owns4440–4444 and mega-base0-grade-c-5db4949. Coordinator repair WIP atmega-base0-repair-r2, current PID36874 ports4380–4383; candidatebranch remains5db4949. Temporary afterEach failure observer must be removed after diagnostic completion.
+
+2026-11-01T19:26:29+07:00: root targeted repair PID41884,ports4380–4383; diagnostic observers removed. See BASE0-REPAIR-R2/runtime.json. GC-R1 still grades original5db4949,ports4440–4444.
