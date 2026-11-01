@@ -7,7 +7,15 @@
   "historicalReportPath": "reports/cards/BASE0-VERIFY-R2/REPORT.md",
   "publishedReportRevisionBeforeCorrection": "6e2376ecef1f5cd196df2a5322fddb7a098d41e9",
   "publishedReportRevisionBeforeCorrectionMatches": true,
-  "currentCorrectionPublication": "PENDING receipt after commit/push",
+  "currentCorrectionPublication": {
+    "status": "VERIFIED",
+    "commit": "37d4b03c8c61c2af428623fa22336f05e7e795bd",
+    "remoteLedgerHeadObserved": "37d4b03c8c61c2af428623fa22336f05e7e795bd",
+    "verifiedAt": "2026-11-01T22:22:28+07:00",
+    "manifestFilesVerified": 245,
+    "reportSha256": "d072cd940a2a298038cea30e4f8e61304e9cc4f38aedd2c96549638dbf6270a1",
+    "scope": "Exact snapshot at this commit; future report edits require a separate receipt."
+  },
   "comparisonBeforeCorrection": [
     {
       "path": "reports/cards/BASE0-VERIFY-R2/CONTROL.md",
