@@ -1,9 +1,7 @@
-# BASE0 merge readiness — not eligible yet
+# BASE0 — score gate passed; deployment hold
 
-Provider observation 2026-11-01T22:16:35+07:00; grading checkpoint 2026-11-01T22:48:16+07:00. Exact source candidate280ff4b and remote main1fb25ed were unchanged at the provider observation. GitHub reported MERGEABLE but UNSTABLE. Repaired-head independent A passed97.64285714285714 with all floors and no auto-fails; original B was interrupted/ungraded, and fresh recovery B is running. Recheck current refs and deployment capacity before any merge decision.
+Checked 2026-11-01T23:33:01+07:00. Candidate280ff4b and main1fb25ed remain unchanged, PR246 open/draft/unmerged. Independent A97.64285714285714 and B98 each satisfy all score floors with zero auto-fails. Difference0.35714285714286 is below5; no third grader required. Preserve both scores separately. Aggregation: score-aggregation-r2.json. A publication72c0b0b is verified; B150manifestfiles are included in this ledger checkpoint, with a remote receipt to follow.
 
-Both GitHub Vercel status contexts for candidate280ff4b report FAILURE with the description "Deployment rate limited — retry in 24 hours." The provider recorded both at2026-11-01T12:53:20Z (19:53:20UTC+7). This is a deployment-quota observation, not a source build failure, a native-agent429, proof the live site is broken, or proof of the exact quota-reset time. Raw sanitized public status fields: preview-status.json.
+Read-only GitHub recheck still returns failure for both Vercel contexts, with build-rate-limit targets. Original provider message is "Deployment rate limited — retry in24hours" at2026-11-01T12:53:20Z. Current recheck is provider-recheck-2330.json; exact reset remains unverified. This is not a source-build failure or proof of broken live.
 
-Keep PR246 draft and make no merge/deployment attempt while deployment capacity is known unavailable. Continue independent local grading and FXRB preparation. Do not upgrade the account, change provider settings, trigger repeated deployments, or bypass the cap. Before a later merge, recheck provider availability and actual grades/current refs; then follow ../BASE0-POSTMERGE/PLAN.md. A pending deployment is never a passing postmerge gate.
-
-No source change, merge, release or live write was performed by this observation.
+No worker remains active. Both B checkouts are clean and4450–4454free; no new PNG delivered. No source edit/merge/release/deployment attempt. Keep PR draft, do not bypass quota, change hosting settings or repeatedly deploy. Recheck capacity/currentrefs and complete grade publication before a permitted serial merge, then follow ../BASE0-POSTMERGE/PLAN.md. Full postmerge main/live gates remain mandatory and are not certified by these premerge scores.

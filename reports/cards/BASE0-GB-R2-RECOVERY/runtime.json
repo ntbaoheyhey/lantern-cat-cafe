@@ -1,5 +1,5 @@
 {
-  "status": "RUNNING",
+  "status": "DONE_PASS_LOCAL_TECHNICAL",
   "created_at": "2026-11-01T22:35:21+07:00",
   "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
   "worktree": "/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero",
@@ -11,35 +11,25 @@
     4454
   ],
   "agent": "/root/base0_grade_b_r2_recovery",
-  "pid": 25764,
+  "pid": null,
   "native_agent_id": "/root/base0_grade_b_r2_recovery",
   "started_at": "2026-11-01T22:48:16.052445+07:00",
-  "updated_at": "2026-11-01T23:06:05.731990+07:00",
-  "step": "repeat-1600x900",
-  "pids": [
-    25764,
-    31852
-  ],
+  "updated_at": "2026-11-01T23:26:00.167957+07:00",
+  "step": "complete; evidence ready for coordinator publication",
+  "pids": [],
   "provider429": [],
-  "mutation_pids": [
-    "27272"
-  ],
+  "mutation_pids": [],
   "scratch": "/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero",
-  "known_owned_processes": [
-    "25764   891 node reports/cards/BASE0-GB-R2-RECOVERY/runner.mjs",
-    "28537   891 node reports/cards/BASE0-GB-R2-RECOVERY/browser-work.mjs",
-    "28790   891 node reports/cards/BASE0-GB-R2-RECOVERY/ui-work.mjs"
-  ],
-  "known_script_pids": [
-    25764,
-    28537,
-    29947,
-    32555
-  ],
-  "listener_pids": [
-    31869,
-    31870,
-    31941,
-    31972
-  ]
+  "known_owned_processes": [],
+  "known_script_pids": [],
+  "listener_pids": [],
+  "browser_pid": null,
+  "browser_child": null,
+  "ui_pid": null,
+  "extra_pid": null,
+  "extra_child": null,
+  "completed_at": "2026-11-01T23:26:00.167969+07:00",
+  "raw_score": 98,
+  "final_score": 98,
+  "result": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/RESULT.md"
 }

@@ -2,11 +2,10 @@
 
 STATUS: IN-PROGRESS
 
-## Current checkpoint — 2026-11-01T23:13:04+07:00
-PR246 remains draft on280ff4b; main1fb25ed; no mission merge, deployment, backend release or live write. Independent A passed97.64285714285714, every floor and zero auto-fails;140deliveryfiles published72c0b0b with immutable receipt. Original B interrupted/ungraded; fresh recoveryB personally passed core checks and700/700repeats at1280, now running1600. No B score or final item score yet.
-Vercel candidate statuses still have the recorded deployment-quota hold; exact reset unverified. FullBASE0 coordinator verification remains complete; no duplicate rerun. Publication correction37d4b03 and receipt2e04f83 distinguish244originalrawfiles from later report revisions.
-Coordinator completed preliminary temporary integrations while grading continued: FXRB7023a2d(24units/120resize);CXP19d012ce(34units/80browser);CXL17731a65(402rules,2expectedfail/11skips inherited,1isolation,type/Deno/v2build);ART121fc7dd(36tests,catalog,51spriteaudit,links,71sourcefiles preserved). These are not independent grades or actual-main/full/live gates. Product branches are unchanged; temporary checkouts clean and coordinator ports4440–4444free.
-All full mission gates, serial merge order, original content/defaultOFF/safety and checkpoint rules remain active. Coordinator writes checkpoints personally; no additional worker launched. Latest full handoff and per-card runtime remain authoritative.
+## Current checkpoint — 2026-11-01T23:33:01+07:00
+BASE0 exact280ff4b now passes the independent score gate: A97.64285714285714 and B98, allfloors,zeroautofails. Difference0.357143 does not require a third grader. B personally passed700/700repeats at each size and22/22mutants with20controls; its150deliveryfiles are verified and included in this checkpoint. Both B checkouts are clean, allownedports released, no activeworker.
+PR246 remains draft/open/unmerged. Main1fb25ed and candidate280ff4b are unchanged; both Vercelcontexts stillreport failure/build-rate-limit. Exactresetunverified. No retry/bypass or deploymentattempt. Full postmerge main/live gates remain pending; premerge scores do not certify deployment.
+Coordinator temporary preflights remain FXRB7023a2d,CXP19d012ce,CXL17731a65,ART121fc7dd, with their limited scoped checks passed and cleanup recorded. Product branches unchanged. Next safe work is queued CXN3 preparation while deploymentcapacity is unavailable. Allmission scope/serialmerge rules remain active.
 
 ## Historical progress (older candidates and running states)
 
@@ -55,3 +54,5 @@ CXP1 preflight 2026-11-01T23:00:20+07:00: temporary integration9d012ce combines 
 CXL1 preflight 2026-11-01T23:04:57+07:00: detached7731a65 merges publishedCompendium178f379 into prospectiveBASE0/FXRB/CXP1 without conflicts.402rules pass,2expectedfail/11skipped inherited;petisolation/type/Deno/v2build pass. Includes offlinegenerator,sourceprovenance and exactodds tests.16generatedmaps gain6Codexaliases each; no newbalance/art. Fullactualmain gates/grades/live remain pending.
 
 ART1 preflight 2026-11-01T23:13:04+07:00: temporary21fc7dd resolves only decisionindexconflict;36Python tests,catalogdrift,51spriteaudit,links pass.71inventoriedsourcefiles remain byte-identical to publishedART1; no newmedia or assetrewrite. Actual-main/fullgate/grades/live pending.
+
+Independent grade milestone 2026-11-01T23:33:01+07:00: A97.642857/B98 accepted with everyfloor and zeroautofails; no third required. B rawgrade unmodified and150manifestfiles verified. Providerread-only recheck stillfailure; no merge/deploymentcertification.

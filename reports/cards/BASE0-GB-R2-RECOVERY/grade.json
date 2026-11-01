@@ -1,0 +1,335 @@
+{
+  "item": "BASE0",
+  "grader": "B recovery /root/base0_grade_b_r2_recovery",
+  "status": "PASS_LOCAL_TECHNICAL",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "branch": "ai/codex-mega-deno0",
+  "pr": 246,
+  "raw_total": 98,
+  "final_total": 98,
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "weight": 25,
+      "basis": "25 \u00d718/18 technical acceptance lines. Every line has own observed evidence; T16 uses the specifically permitted exact-head raw full/build reuse. External workflow DONE lines remain separately pending, not certified.",
+      "evidence": [
+        "logs/unit.log:6; mutations/deno-root-index-control.log:1; mutations/deno-nested-index-control.log:1; mutation-summary.json",
+        "logs/unit.log:8; mutations/deno-test-exclusion-control.log:1; mutations/deno-stable-order-control.log:1; mutations/deno-auth-distinction-control.log:1",
+        "logs/deno.log:9; scripts/gen-deno-json.mjs:76",
+        "mutations/scene-preboot-control.log:1; mutations/scene-preboot.log; apps/web/src/game/stage/StageScene.ts:322",
+        "mutations/lifecycle-old-game-guard-control.log:1; mutations/lifecycle-old-game-guard.log; apps/web/src/game/stage/StageCanvas.tsx:69",
+        "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; runner.mjs:9",
+        "logs/optin-existing-hud-1280x720.log:280; logs/optin-existing-hud-1600x900.log:280; apps/web/e2e/ui/u2-hud.spec.ts:64; apps/web/e2e/ui/u3-layout.spec.ts:46",
+        "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; mutations/hud-control.log:1; apps/web/e2e/ui/baseline-hud.spec.ts:23",
+        "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; apps/web/e2e/ui/baseline-hud.spec.ts:158",
+        "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; mutations/clock-control.log:1; mutations/viewport-smoke-control.log:1; viewport-mutant.json",
+        "logs/unit.log:38; mutations/sql-next-day-control.log:1; mutations/sql-claim-rounding-control.log:1",
+        "browser-mutants.json; optin-results.json; logs/optin-existing-hud-1280x720.log:280; logs/optin-existing-hud-1600x900.log:280",
+        "mutations/f3-metrics-control.log:1; mutations/g1-metrics-control.log:1; mutations/g3-metrics-control.log:1; browser-mutants.json; optin-results.json",
+        "effects-1280x720/summary.json; effects-1600x900/summary.json; audit-guest/findings.json; audit-signed-in/findings.json; mutations/effects-inert-help.log",
+        "reference-observations.json; keyboard.json; ui-diff.md; logs/contrast.log:12",
+        "reuse.json (explicit exact-head full/build reuse); baseline-comparison.json; logs/unit.log:66; logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488",
+        "mutation-summary.json: 22/22 kills with20 unique green controls; unit-mutants.json; browser-mutants.json; viewport-mutant.json",
+        "source-review.md; scope.json; integrity-hits.json; final-secret-scan.json; reuse-extra.json (explicit G5 reuse); cleanup.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "weight": 20,
+      "basis": "All required checks green,1400 independent repeats with zero failures, classic/full build/browser evidence verified at the identical head; no omitted required check.",
+      "evidence": [
+        "results.jsonl",
+        "logs/repeat-1280x720.log:2488",
+        "logs/repeat-1600x900.log:2488",
+        "logs/optin-existing-hud-1280x720.log:280",
+        "logs/optin-existing-hud-1600x900.log:280",
+        "reuse.json",
+        "reuse-extra.json",
+        "ui-results.jsonl"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "weight": 10,
+      "basis": "10 \u00d722/22 meaningful mutants killed,20 unique green controls. Five artifact mutants have browserexit0/contractexit1; these are explicitly not browser-test failures.",
+      "evidence": [
+        "mutation-summary.json",
+        "unit-mutants.json",
+        "browser-mutants.json",
+        "viewport-mutant.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "weight": 15,
+      "basis": "15\u22121 documented extra guidance/context row\u22121 explained retained NEXT/Next wording. Home/Bag structural redesign debt is unchanged, explicitly assigned to CXR1 by the user; no full-redesign fidelity claim.",
+      "evidence": [
+        "ui-diff.md",
+        "reference-observations.json",
+        "local-capture-inventory.json",
+        "keyboard.json",
+        "apps/web/src/shell/Hud.tsx:38",
+        "apps/web/src/shell/shell.css:225"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 10,
+      "weight": 10,
+      "basis": "No new duplicated logic, dead API, unjustified suppression/config, missing export type, lint warning or unjustified>5%growth found. Classic gzip+0.14424%,v2+0.14055%.",
+      "evidence": [
+        "source-review.md",
+        "scope.json",
+        "baseline-comparison.json",
+        "logs/lint.log:20",
+        "scripts/gen-deno-json.mjs:15",
+        "supabase/tests/src/fixture-clock.ts:4"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "weight": 5,
+      "basis": "No unjustified test-integrity change; seven textual hits explained. Existing game-rules skips/expected failures unchanged and disclosed.",
+      "evidence": [
+        "integrity-hits.json",
+        "source-review.md",
+        "full.diff",
+        "logs/unit.log:43"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "weight": 10,
+      "basis": "No current technical claim mismatch or false PASS found. Publication correction independently verified against git objects and remote ancestry; raw files and report revisions are distinguished. Historical failures and baseline exclusions are preserved.",
+      "evidence": [
+        "publication-validation.json",
+        "remote-final-observation.json",
+        "source-review.md",
+        "reuse.json",
+        "final-secret-scan.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "weight": 5,
+      "basis": "All82 changed paths inventoried; every Tier2 prerequisite has a concrete report/decision justification; zero Tier3 changes.",
+      "evidence": [
+        "scope.json",
+        "source-review.md",
+        "full.diff",
+        "reports/base0.md"
+      ]
+    }
+  ],
+  "auto_fails": [],
+  "technical_acceptance_pass": 18,
+  "technical_acceptance_total": 18,
+  "acceptance": [
+    {
+      "id": "T1",
+      "line": "Exact root/nested index and ordinary-module aliases; directory aliases retained",
+      "status": "PASS",
+      "evidence": "logs/unit.log:6; mutations/deno-root-index-control.log:1; mutations/deno-nested-index-control.log:1; mutation-summary.json"
+    },
+    {
+      "id": "T2",
+      "line": "Test/fixture exclusions, deterministic generation, auth/game distinction",
+      "status": "PASS",
+      "evidence": "logs/unit.log:8; mutations/deno-test-exclusion-control.log:1; mutations/deno-stable-order-control.log:1; mutations/deno-auth-distinction-control.log:1"
+    },
+    {
+      "id": "T3",
+      "line": "Actual Deno import guard and stable generation without drift",
+      "status": "PASS",
+      "evidence": "logs/deno.log:9; scripts/gen-deno-json.mjs:76"
+    },
+    {
+      "id": "T4",
+      "line": "Preboot StageScene relayout defers and applies latest size",
+      "status": "PASS",
+      "evidence": "mutations/scene-preboot-control.log:1; mutations/scene-preboot.log; apps/web/src/game/stage/StageScene.ts:322"
+    },
+    {
+      "id": "T5",
+      "line": "Lifecycle teardown waits for SceneManager readiness",
+      "status": "PASS",
+      "evidence": "mutations/lifecycle-old-game-guard-control.log:1; mutations/lifecycle-old-game-guard.log; apps/web/src/game/stage/StageCanvas.tsx:69"
+    },
+    {
+      "id": "T6",
+      "line": "Original redraw both motion modes and exact-size resize cases",
+      "status": "PASS",
+      "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; runner.mjs:9"
+    },
+    {
+      "id": "T7",
+      "line": "Unchanged HUD/topbar/wallet limits at all existing narrow/desktop sizes",
+      "status": "PASS",
+      "evidence": "logs/optin-existing-hud-1280x720.log:280; logs/optin-existing-hud-1600x900.log:280; apps/web/e2e/ui/u2-hud.spec.ts:64; apps/web/e2e/ui/u3-layout.spec.ts:46"
+    },
+    {
+      "id": "T8",
+      "line": "Desktop status containment,160\u00d710XP track, nonzero proportional fill and semantic color",
+      "status": "PASS",
+      "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; mutations/hud-control.log:1; apps/web/e2e/ui/baseline-hud.spec.ts:23"
+    },
+    {
+      "id": "T9",
+      "line": "Readable actionable guidance with fallback fonts and normal/offline/mock429/mock503 states; keyboard callback",
+      "status": "PASS",
+      "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; apps/web/e2e/ui/baseline-hud.spec.ts:158"
+    },
+    {
+      "id": "T10",
+      "line": "Browser clock interleaving plus shared consumers, classic viewport-aware smoke",
+      "status": "PASS",
+      "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; mutations/clock-control.log:1; mutations/viewport-smoke-control.log:1; viewport-mutant.json"
+    },
+    {
+      "id": "T11",
+      "line": "Database-relative day boundaries and microsecond-safe unchanged claim guards",
+      "status": "PASS",
+      "evidence": "logs/unit.log:38; mutations/sql-next-day-control.log:1; mutations/sql-claim-rounding-control.log:1"
+    },
+    {
+      "id": "T12",
+      "line": "PNG writers opt-in and honor requested destination; byte budgets preserved",
+      "status": "PASS",
+      "evidence": "browser-mutants.json; optin-results.json; logs/optin-existing-hud-1280x720.log:280; logs/optin-existing-hud-1600x900.log:280"
+    },
+    {
+      "id": "T13",
+      "line": "F3/G1/G3 metrics default to Playwright output and honor explicit report requests",
+      "status": "PASS",
+      "evidence": "mutations/f3-metrics-control.log:1; mutations/g1-metrics-control.log:1; mutations/g3-metrics-control.log:1; browser-mutants.json; optin-results.json"
+    },
+    {
+      "id": "T14",
+      "line": "Actual reached-screen effects coverage and all-manifest guest/local-signed audits",
+      "status": "PASS",
+      "evidence": "effects-1280x720/summary.json; effects-1600x900/summary.json; audit-guest/findings.json; audit-signed-in/findings.json; mutations/effects-inert-help.log"
+    },
+    {
+      "id": "T15",
+      "line": "Matching reference sizes/screens, keyboard, focus, reduced motion and contrast",
+      "status": "PASS",
+      "evidence": "reference-observations.json; keyboard.json; ui-diff.md; logs/contrast.log:12"
+    },
+    {
+      "id": "T16",
+      "line": "Full original suite, default/classic builds, links and bundle baseline",
+      "status": "PASS",
+      "evidence": "reuse.json (explicit exact-head full/build reuse); baseline-comparison.json; logs/unit.log:66; logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488"
+    },
+    {
+      "id": "T17",
+      "line": "At least5 meaningful independent mutations, including6 Deno behaviors, lifecycle and clock",
+      "status": "PASS",
+      "evidence": "mutation-summary.json: 22/22 kills with20 unique green controls; unit-mutants.json; browser-mutants.json; viewport-mutant.json"
+    },
+    {
+      "id": "T18",
+      "line": "Decisions, scope/integrity, default-off safety and source preservation",
+      "status": "PASS",
+      "evidence": "source-review.md; scope.json; integrity-hits.json; final-secret-scan.json; reuse-extra.json (explicit G5 reuse); cleanup.json"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G1",
+      "status": "PASS_TECHNICAL",
+      "evidence": "results.jsonl; reuse.json; remote-final-observation.json; base remains ancestor; exact head unchanged"
+    },
+    {
+      "id": "G2",
+      "status": "PASS_BASE0_SCOPE",
+      "evidence": "audit-guest/findings.json; audit-signed-in/findings.json; effects-*/summary.json; keyboard.json; ui-diff.md (zero OPEN BASE0 rows)"
+    },
+    {
+      "id": "G3",
+      "status": "PASS",
+      "evidence": "logs/deno.log; reuse.json; baseline-comparison.json: links0 versus main1; budgets below5%growth"
+    },
+    {
+      "id": "G4",
+      "status": "NOT_APPLICABLE_CONTRACTS_MIGRATIONS",
+      "evidence": "full.diff; scope.json: neither changed; SQL suite548 passed in logs/unit.log:39"
+    },
+    {
+      "id": "G5",
+      "status": "PASS_REUSED_EXACT_HEAD",
+      "evidence": "reuse-extra.json; ../BASE0-VERIFY-R2/checks/public-config.log; four guest-only previews at both flags/sizes, no writes/sign-in/errors"
+    },
+    {
+      "id": "G6",
+      "status": "PASS",
+      "evidence": "source-review.md; full.diff; scope.json; integrity-hits.json; final-secret-scan.json; cleanup.json"
+    },
+    {
+      "id": "G7",
+      "status": "EXISTING_REPORT_PUBLICATION_VERIFIED_RECOVERY_GRADE_PENDING_PUBLICATION",
+      "evidence": "publication-validation.json; remote-final-observation.json; coordinator must publish this new grade and reconcile independent results before merge"
+    }
+  ],
+  "external_done_lines": [
+    {
+      "line": "Two independent repaired-head grades\u226592 and all floors; third grader if discrepancy requires",
+      "status": "NOT VERIFIED BY THIS INDEPENDENT GRADER",
+      "reason": "Other grader scores deliberately not consulted. Coordinator aggregation remains mandatory."
+    },
+    {
+      "line": "Serial gated PR merge after current-main/eligibility checks",
+      "status": "NOT DONE",
+      "reason": "PR246 is OPEN/DRAFT on the exact candidate; no merge authorized/performed in this assignment."
+    },
+    {
+      "line": "Post-merge clean-main verification/repeats and live deployment proof",
+      "status": "NOT DONE",
+      "reason": "Candidate is unmerged. Local score is not live deployment certification. Preview deployment quota was reported in the brief; not independently retried or treated as a technical pass."
+    },
+    {
+      "line": "Recovery grade/report publication and current workflow-status reconciliation",
+      "status": "PENDING COORDINATOR",
+      "reason": "This worker may not commit/push. Prior report snapshot is published, but this newly authored independent grade must still be published."
+    }
+  ],
+  "merge_ready": false,
+  "deployment_certified": false,
+  "reuse": [
+    "Identical-head coordinator full265/265 browser suite at each size",
+    "Identical-head default/classic/v2 builds, bundle scan and links; same-day unchanged-main raw baseline",
+    "Identical-head verify-pr246 wrapper and production-public-config guest previews, explicitly permitted by the card"
+  ],
+  "not_reused": [
+    "No predecessor grader execution is represented as my run",
+    "No other grader score or grade file informed this score",
+    "Own typecheck/lint/root-unit/repeats/mutants/UI/audit/effects/accessibility/opt-in checks"
+  ],
+  "independent_repeats": {
+    "1280x720": 700,
+    "1600x900": 700,
+    "failures": 0,
+    "workers": 1
+  },
+  "mutants": {
+    "tried": 22,
+    "killed": 22,
+    "green_controls": 20,
+    "artifact_contract_kills": 5
+  },
+  "extra_browser": {
+    "1280x720": 62,
+    "1600x900": 62
+  },
+  "provider429_observed": [],
+  "new_delivered_pngs": 0,
+  "scored_at": "2026-11-01T23:25:31.842919+07:00"
+}

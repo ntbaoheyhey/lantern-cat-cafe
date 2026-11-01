@@ -1,0 +1,67 @@
+{"command":"node --test scripts/gen-deno-json.test.mjs","root":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","start":"2026-11-01T15:51:29.035Z","pid":27272}
+✖ explicit root and nested index imports resolve to their exact files (12.8955ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.132584ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.095166ms)
+✖ output order is stable regardless of file creation order (5.983208ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (5.161125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.862917
+
+✖ failing tests:
+
+test at scripts/gen-deno-json.test.mjs:22:1
+✖ explicit root and nested index imports resolve to their exact files (12.8955ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - '../../../packages/game-rules/src/index.ts'
+  
+      at TestContext.<anonymous> (file:///Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/scripts/gen-deno-json.test.mjs:25:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '../../../packages/game-rules/src/index.ts',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/gen-deno-json.test.mjs:46:1
+✖ output order is stable regardless of file creation order (5.983208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '../../../packages/game-rules/src/a',
+      '../../../packages/game-rules/src/a/b',
+      '../../../packages/game-rules/src/a/index',
+  -   '../../../packages/game-rules/src/index',
+      '../../../packages/game-rules/src/z'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/scripts/gen-deno-json.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/z' ],
+    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1

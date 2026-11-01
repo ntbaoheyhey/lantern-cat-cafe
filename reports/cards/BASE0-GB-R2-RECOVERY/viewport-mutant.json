@@ -1,0 +1,13 @@
+{
+  "name": "viewport-smoke-fixed-width",
+  "file": "apps/web/e2e/smoke.spec.ts",
+  "command": "pnpm test:e2e e2e/smoke.spec.ts --workers=1",
+  "control": {
+    "exit": 0,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/viewport-smoke-control.log"
+  },
+  "mutant": {
+    "exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/viewport-smoke-fixed-width.log"
+  }
+}

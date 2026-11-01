@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-11-01T23:33:01+07:00",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "scores": {
+    "A": 97.64285714285714,
+    "B": 98
+  },
+  "criteria": {
+    "A": {
+      "C1": 25,
+      "C2": 20,
+      "C3": 9.642857142857142,
+      "C4": 13,
+      "C5": 10,
+      "C6": 5,
+      "C7": 10,
+      "C8": 5
+    },
+    "B": {
+      "C1": 25,
+      "C2": 20,
+      "C3": 10,
+      "C4": 13,
+      "C5": 10,
+      "C6": 5,
+      "C7": 10,
+      "C8": 5
+    }
+  },
+  "eachGraderMeetsEveryFloor": true,
+  "autoFails": {
+    "A": [],
+    "B": []
+  },
+  "difference": 0.3571428571428612,
+  "thirdGraderRequired": false,
+  "scoreGate": "PASS",
+  "gradeBManifestFilesVerified": 150,
+  "gradeBManifestSha256": "54cd35fb0a20529cf83b0ba7c97f4fc7c610bdad5aa703e865ffb75b9d6c9723",
+  "gradeAImmutablePublication": "72c0b0b2b15447c858f7b2ccae4195a63e4abc72",
+  "mergeReady": false,
+  "reason": "Both GitHub Vercel contexts remain failure with previously recorded build-rate-limit; deployment capacity not demonstrated. No grade average or invented independent review. B delivery included in this checkpoint; remote publication receipt follows."
+}

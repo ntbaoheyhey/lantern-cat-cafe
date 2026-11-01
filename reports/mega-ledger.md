@@ -6,7 +6,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | GRADING | 2 | 280ff4b full265/265 and repeats700/700 eachsize; 25mutants killed | A97.642857PASS; original B interrupted429/ungraded; recovery B running; deployment quota hold |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | SCORE-PASS / DEPLOYMENT-HOLD | 2 | 280ff4b full265/265 and repeats700/700 eachsize; 25mutants killed | A97.642857/B98; all floors; no third needed; Vercel quota hold |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
@@ -95,3 +95,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T23:04:57+07:00: CXL1 prospectiveintegration7731a65passed402rules pluspetisolation1,type/Deno/v2build.2expectedfail/11skipped are unchanged fromBASE0; no newskip.16maps regenerated with6Codexaliases each. No branchmovement/fullgate/grade/merge/live claim.
 
 - 2026-11-01T23:13:04+07:00: checkpoint/ART1preflight21fc7ddpassed36tests,catalogdrift,51spriteaudit,links;71sourcefiles byte-identical to4df594a. No art/runtime/branchchange. BASE0recoveryB1280repeat700/700exit0;1600running. A97.642857PASS, Vercelquota hold unchanged; no missionmerge.
+
+- 2026-11-01T23:33:01+07:00: recovery B DONE/PASS98, allfloors/zeroautofails,700repeats eachsize and22/22mutants with20controls. A97.642857/B98 satisfy scoregate; difference<5,no third. B150manifestfiles verified for publication; bothownedcheckouts clean,4450–4454free. Currentremote refs unchanged, Vercelstatus stillfailure; PR246draft,no merge.

@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 182bd94..8f2b85f 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -223,7 +223,7 @@
+ 
+ /* Title and actionable guidance have their own row at every viewport width. */
+ .shell-context {
+-  display: flex;
++  display: none;
+   align-items: center;
+   justify-content: space-between;
+   gap: var(--sp-3, 12px);
