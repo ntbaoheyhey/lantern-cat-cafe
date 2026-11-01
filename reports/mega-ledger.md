@@ -6,7 +6,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | 5db4949builder green; GA-R1FAIL(A7); GB-R1running | Added prerequisite; A0/100 final; repair investigation; no merge |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | IN-PROGRESS | 0 | 5db4949builder green; GA0FAIL(A7)/GB97PASS; mandatoryGC running | Added prerequisite; A0/100 final; repair investigation; no merge |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -77,3 +77,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T18:51:49+07:00: read-only public artifact baseline matches current main across31files; candidate5db4949 differs as expected. Provider commit metadata unobserved. Both independent graders remain active; no merge.
 
 - 2026-11-01T19:08:17+07:00: independent BASE0 A round1 FAIL, final0/100(A7), raw72.9167; repeat1280 469pass/1fail at errors-notice.ts81, repeat1600 470pass. Quality findings: unusedcompact prop, duplicated narrow context CSS. B still independent/running. Coordinator reproduces unmodified source in mega-base0-repair-r2, PID31494,ports4380–4384; candidate branch stays5db4949.
+
+- 2026-11-01T19:17:45+07:00: GB-R1 completed97PASS; GA-R1 remains0FAIL. Difference>5 invokes freshindependentGC-R1 (briefpushed10d2f68), candidateunchanged. Coordinator reproduced a distinct stale-pauseAt setup race and fixed clockorigin in isolated WIP; original craft locator failure stillreproduces4/100 withouttrace. No merge.

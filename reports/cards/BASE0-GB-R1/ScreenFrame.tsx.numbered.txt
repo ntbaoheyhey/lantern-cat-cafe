@@ -1,0 +1,65 @@
+1: import React, { type CSSProperties, type ReactNode } from 'react';
+2: import { Rail } from './Rail';
+3: import { Hud, type HudProps } from './Hud';
+4: import { SCREEN_REGISTRY, type ScreenId } from '../nav/screens';
+5: import './shell.css';
+6: 
+7: export interface ScreenFrameProps {
+8:   activeScreen: ScreenId;
+9:   onSelectScreen: (screenId: ScreenId) => void;
+10:   showRail?: boolean;
+11:   hudProps?: HudProps | null;
+12:   style?: CSSProperties;
+13:   dataLayout?: string;
+14:   dataTall?: string;
+15:   dataShortLandscape?: string;
+16:   children: ReactNode;
+17: }
+18: 
+19: export function ScreenFrame({
+20:   activeScreen,
+21:   onSelectScreen,
+22:   showRail: showRailProp,
+23:   hudProps,
+24:   style,
+25:   dataLayout,
+26:   dataTall,
+27:   dataShortLandscape,
+28:   children,
+29: }: ScreenFrameProps) {
+30:   const currentDef = SCREEN_REGISTRY.find((s) => s.id === activeScreen);
+31:   const showRail = showRailProp !== undefined ? showRailProp && (currentDef?.rail ?? true) : (currentDef ? currentDef.rail : true);
+32:   const showHud = Boolean(hudProps);
+33: 
+34:   return (
+35:     <div
+36:       className="app-shell v2-shell"
+37:       data-game-v2="stage-v2-enabled"
+38:       data-active-screen={activeScreen}
+39:       data-has-rail={showRail ? 'true' : 'false'}
+40:       data-layout={dataLayout}
+41:       data-tall={dataTall}
+42:       data-short-landscape={dataShortLandscape}
+43:       style={style}
+44:     >
+45:       {showRail && (
+46:         <Rail
+47:           activeScreen={activeScreen}
+48:           onSelectScreen={onSelectScreen}
+49:         />
+50:       )}
+51: 
+52:       <div className="shell-body">
+53:         {showHud && hudProps ? (
+54:           <Hud {...hudProps} compact={dataLayout === 'phone'} />
+55:         ) : (
+56:           <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
+57:         )}
+58: 
+59:         <main data-testid="screen" className="shell-screen" tabIndex={-1}>
+60:           {children}
+61:         </main>
+62:       </div>
+63:     </div>
+64:   );
+65: }

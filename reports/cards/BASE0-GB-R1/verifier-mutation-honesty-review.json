@@ -1,0 +1,496 @@
+[
+  {
+    "name": "control-deno-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-deno-before.log",
+      "control-deno-before.json"
+    ]
+  },
+  {
+    "name": "deno-omit-explicit-index",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-omit-explicit-index.diff",
+      "deno-omit-explicit-index-restored-status.txt",
+      "deno-omit-explicit-index.json",
+      "deno-omit-explicit-index.log"
+    ]
+  },
+  {
+    "name": "deno-omit-directory",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-omit-directory.diff",
+      "deno-omit-directory-restored-status.txt",
+      "deno-omit-directory.log",
+      "deno-omit-directory.json"
+    ]
+  },
+  {
+    "name": "deno-include-test",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-include-test-restored-status.txt",
+      "deno-include-test.diff",
+      "deno-include-test.log",
+      "deno-include-test.json"
+    ]
+  },
+  {
+    "name": "deno-include-fixture",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-include-fixture.json",
+      "deno-include-fixture-restored-status.txt",
+      "deno-include-fixture.log",
+      "deno-include-fixture.diff"
+    ]
+  },
+  {
+    "name": "deno-omit-ordinary",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-omit-ordinary.log",
+      "deno-omit-ordinary.diff",
+      "deno-omit-ordinary.json",
+      "deno-omit-ordinary-restored-status.txt"
+    ]
+  },
+  {
+    "name": "deno-auth-game",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-auth-game.diff",
+      "deno-auth-game-restored-status.txt",
+      "deno-auth-game.json",
+      "deno-auth-game.log"
+    ]
+  },
+  {
+    "name": "deno-include-shared",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-include-shared-restored-status.txt",
+      "deno-include-shared.diff",
+      "deno-include-shared.log",
+      "deno-include-shared.json"
+    ]
+  },
+  {
+    "name": "deno-include-nonfunction",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "deno-include-nonfunction.log",
+      "deno-include-nonfunction-restored-status.txt",
+      "deno-include-nonfunction.json",
+      "deno-include-nonfunction.diff"
+    ]
+  },
+  {
+    "name": "control-deno-after",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-deno-after.log",
+      "control-deno-after.json"
+    ]
+  },
+  {
+    "name": "control-scene-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-scene-before.json",
+      "control-scene-before.log"
+    ]
+  },
+  {
+    "name": "scene-before-ready",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "scene-before-ready-restored-status.txt",
+      "scene-before-ready.json",
+      "scene-before-ready.log",
+      "scene-before-ready.diff"
+    ]
+  },
+  {
+    "name": "control-scene-after",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-scene-after.json",
+      "control-scene-after.log"
+    ]
+  },
+  {
+    "name": "control-hud-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-hud-before.log",
+      "control-hud-before.json"
+    ]
+  },
+  {
+    "name": "hud-missing-styles",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-missing-styles.json",
+      "hud-missing-styles-restored-status.txt",
+      "hud-missing-styles.log",
+      "hud-missing-styles.diff"
+    ]
+  },
+  {
+    "name": "hud-action-unreadable",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-action-unreadable-restored-status.txt",
+      "hud-action-unreadable.json",
+      "hud-action-unreadable.log",
+      "hud-action-unreadable.diff"
+    ]
+  },
+  {
+    "name": "hud-action-inert",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-action-inert.diff",
+      "hud-action-inert-restored-status.txt",
+      "hud-action-inert.json",
+      "hud-action-inert.log"
+    ]
+  },
+  {
+    "name": "hud-xp-too-narrow",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-xp-too-narrow.diff",
+      "hud-xp-too-narrow.log",
+      "hud-xp-too-narrow-restored-status.txt",
+      "hud-xp-too-narrow.json"
+    ]
+  },
+  {
+    "name": "hud-xp-zero",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-xp-zero-restored-status.txt",
+      "hud-xp-zero.diff",
+      "hud-xp-zero.log",
+      "hud-xp-zero.json"
+    ]
+  },
+  {
+    "name": "hud-gated-ancestor-clipping",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "hud-gated-ancestor-clipping-restored-status.txt",
+      "hud-gated-ancestor-clipping.diff",
+      "hud-gated-ancestor-clipping.json",
+      "hud-gated-ancestor-clipping.log"
+    ]
+  },
+  {
+    "name": "control-hud-after",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-hud-after.log",
+      "control-hud-after.json"
+    ]
+  },
+  {
+    "name": "control-f3-writes-without-optin",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": 0,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-f3-writes-without-optin.json",
+      "control-f3-writes-without-optin.log"
+    ]
+  },
+  {
+    "name": "f3-writes-without-optin",
+    "kind": "mutant",
+    "testExit": 0,
+    "contractExit": 1,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "f3-writes-without-optin.diff",
+      "f3-writes-without-optin-artifacts",
+      "f3-writes-without-optin-restored-status.txt",
+      "f3-writes-without-optin.log",
+      "f3-writes-without-optin.json"
+    ]
+  },
+  {
+    "name": "control-errors-writes-without-optin",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": 0,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-errors-writes-without-optin.log",
+      "control-errors-writes-without-optin.json"
+    ]
+  },
+  {
+    "name": "errors-writes-without-optin",
+    "kind": "mutant",
+    "testExit": 0,
+    "contractExit": 1,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "errors-writes-without-optin.log",
+      "errors-writes-without-optin-artifacts",
+      "errors-writes-without-optin.diff",
+      "errors-writes-without-optin-restored-status.txt",
+      "errors-writes-without-optin.json"
+    ]
+  },
+  {
+    "name": "control-effects-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": 0,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-effects-before.log",
+      "control-effects-before.json",
+      "control-effects-before.diff",
+      "control-effects-before-artifacts",
+      "control-effects-before-restored-status.txt",
+      "control-effects-before-syntax.log"
+    ]
+  },
+  {
+    "name": "effects-ignores-viewport",
+    "kind": "mutant",
+    "testExit": 0,
+    "contractExit": 1,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "effects-ignores-viewport-artifacts",
+      "effects-ignores-viewport.diff",
+      "effects-ignores-viewport-restored-status.txt",
+      "effects-ignores-viewport.log",
+      "effects-ignores-viewport-syntax.log",
+      "effects-ignores-viewport.json"
+    ]
+  },
+  {
+    "name": "effects-omits-help",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": 0,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "effects-omits-help.json",
+      "effects-omits-help-syntax.log",
+      "effects-omits-help-restored-status.txt",
+      "effects-omits-help.log",
+      "effects-omits-help-artifacts",
+      "effects-omits-help.diff"
+    ]
+  },
+  {
+    "name": "effects-help-inert",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": 0,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "effects-help-inert.json",
+      "effects-help-inert-restored-status.txt",
+      "effects-help-inert-artifacts",
+      "effects-help-inert-syntax.log",
+      "effects-help-inert.log",
+      "effects-help-inert.diff"
+    ]
+  },
+  {
+    "name": "control-effects-after",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": 0,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-effects-after.diff",
+      "control-effects-after.log",
+      "control-effects-after-syntax.log",
+      "control-effects-after-artifacts",
+      "control-effects-after.json",
+      "control-effects-after-restored-status.txt"
+    ]
+  },
+  {
+    "name": "control-clock-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-clock-before.json",
+      "control-clock-before.log"
+    ]
+  },
+  {
+    "name": "clock-fixed-expired-date",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "clock-fixed-expired-date.json",
+      "clock-fixed-expired-date.diff",
+      "clock-fixed-expired-date.log",
+      "clock-fixed-expired-date-restored-status.txt"
+    ]
+  },
+  {
+    "name": "clock-no-next-day",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "clock-no-next-day.log",
+      "clock-no-next-day.json",
+      "clock-no-next-day-restored-status.txt",
+      "clock-no-next-day.diff"
+    ]
+  },
+  {
+    "name": "control-clock-recovery-before",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-clock-recovery-before.json",
+      "control-clock-recovery-before.log"
+    ]
+  },
+  {
+    "name": "claim-fixture-too-early",
+    "kind": "mutant",
+    "testExit": 1,
+    "contractExit": null,
+    "combinedExit": 1,
+    "status": "killed",
+    "evidence_files": [
+      "claim-fixture-too-early-restored-status.txt",
+      "claim-fixture-too-early.diff",
+      "claim-fixture-too-early.json",
+      "claim-fixture-too-early.log"
+    ]
+  },
+  {
+    "name": "control-clock-recovery-after",
+    "kind": "control",
+    "testExit": 0,
+    "contractExit": null,
+    "combinedExit": 0,
+    "status": "passed",
+    "evidence_files": [
+      "control-clock-recovery-after.json",
+      "control-clock-recovery-after.log"
+    ]
+  }
+]

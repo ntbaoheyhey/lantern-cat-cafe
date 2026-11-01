@@ -1,4 +1,4 @@
-STATUS: FAILED — grader A complete; grader B pending.
+STATUS: FAILED — grader A complete; grader B PASS97; mandatory grader C running.
 
 Candidate `5db4949096e93eedeb98dff94ef1ec7019485f96`, base `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba`, PR246. No merge.
 
@@ -12,3 +12,5 @@ Grader A final0/100 due to A7; raw72.91666667. C1–C8:22.91666667/0/10/14/6/5/1
 | C5−2 | Narrow shell-context repeats common declarations. | Responsive override duplicates unchanged display/alignment/background/flex properties. Retain only actual gap/padding overrides and verify both desktop and original narrow cases. |
 
 Builder full and repeat passes remain valid historical observations on the exact head; they do not override the new independent failure. Grader B continues on the unchanged source. Apply any third-grader requirement after both results exist. A repaired source requires complete fresh exact-head verification and fresh independent graders.
+
+B criterion scores:25/20/10/14/8/5/10/5;97total,zeroautofails. Own repeats470/470bothsizes;19kills/16validcontrols. The A/B final and raw score gaps both exceed5, so freshgraderC is mandatory. Neither B passes nor future C passes erase A's preserved required repeat failure.

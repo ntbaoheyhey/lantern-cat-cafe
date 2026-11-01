@@ -1,0 +1,33 @@
+{
+  "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "1",
+    "SCREENSHOT_DIR": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/opt-in",
+    "REPORT_DIR": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/opt-in",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4430",
+    "E2E_PORT_V2": "4431",
+    "E2E_PORT_SERVER": "4432",
+    "E2E_PORT_API": "4433",
+    "E2E_VIEWPORT": "1280x720"
+  },
+  "start": "2026-11-01T12:12:31.019Z",
+  "end": "2026-11-01T12:12:53.830Z",
+  "exit": 0,
+  "files": [
+    "429-1280x720-dark.png",
+    "429-390x844-light.png",
+    "bake-metrics.json",
+    "frame-metrics.json",
+    "metrics.json",
+    "roster-ch1.png",
+    "roster-ch2.png",
+    "roster-ch3.png",
+    "roster-ch4.png",
+    "roster-ch5.png"
+  ],
+  "pass": true,
+  "metadata_note": "Environment narrowed to explicit test configuration; inherited machine metadata omitted."
+}

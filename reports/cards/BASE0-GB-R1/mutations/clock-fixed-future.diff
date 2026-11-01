@@ -1,0 +1,11 @@
+diff --git a/supabase/tests/src/fixture-clock.ts b/supabase/tests/src/fixture-clock.ts
+index eb58e20..b3eab56 100644
+--- a/supabase/tests/src/fixture-clock.ts
++++ b/supabase/tests/src/fixture-clock.ts
+@@ -9,5 +9,5 @@ export function nextFixtureDayUtc(databaseMillis: number): number {
+ /** Anchor injected test time to the database without changing its defaults or guards. */
+ export async function databaseFixtureClock(db: PGlite): Promise<number> {
+   const { rows } = await db.query<{ millis: number }>("select extract(epoch from now()) * 1000 as millis");
+-  return nextFixtureDayUtc(Number(rows[0]!.millis));
++  return Date.UTC(2026, 10, 1, 10);
+ }

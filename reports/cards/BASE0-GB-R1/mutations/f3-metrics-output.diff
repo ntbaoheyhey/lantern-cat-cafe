@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/ui/f3-art.spec.ts b/apps/web/e2e/ui/f3-art.spec.ts
+index f3bb7a0..8b5797e 100644
+--- a/apps/web/e2e/ui/f3-art.spec.ts
++++ b/apps/web/e2e/ui/f3-art.spec.ts
+@@ -260,7 +260,7 @@ test('F3 canvas bake time benchmark for chapters 1-5', async ({ page }) => {
+   }, { allChapters });
+ 
+   const metricsPath = process.env.REPORT_DIR
+-    ? resolve(process.env.REPORT_DIR, 'bake-metrics.json') : test.info().outputPath('bake-metrics.json');
++    ? resolve(process.env.REPORT_DIR, 'bake-metrics.json') : resolve('../../reports/f3-art/bake-metrics.json');
+   mkdirSync(resolve(metricsPath, '..'), { recursive: true });
+   writeFileSync(metricsPath, JSON.stringify(results, null, 2) + '\n');
+   console.log('Bake benchmark results:', JSON.stringify(results, null, 2));

@@ -1,0 +1,71 @@
+{
+  "native_agent": "/root/base0_grade_b_r1",
+  "model_requested": "gpt-6-astra",
+  "effort_requested": "ultra",
+  "priority": "inherited, not introspectable",
+  "status": "DONE_PASS_UNMERGED",
+  "worktree": "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero",
+  "pids": [
+    22126,
+    23504,
+    25017,
+    25790,
+    27780,
+    30101,
+    30222,
+    34977,
+    35383
+  ],
+  "ports": [
+    4430,
+    4431,
+    4432,
+    4433,
+    4434
+  ],
+  "started_at": "2026-11-01T18:43:47.907548+07:00",
+  "provider429": [],
+  "scratch": "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch",
+  "main_baseline": "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/main-baseline",
+  "observed_servers": [
+    {
+      "pid": 27585,
+      "ps": "  PID  PPID COMMAND\n27585 27577 node ../../scripts/local-server.mjs\n",
+      "cwd": "p27585\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero/apps/web\n"
+    },
+    {
+      "pid": 27592,
+      "ps": "  PID  PPID COMMAND\n27592 27577 node e2e/support/server-build.mjs\n",
+      "cwd": "p27592\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero/apps/web\n"
+    },
+    {
+      "pid": 27630,
+      "ps": "  PID  PPID COMMAND\n27630 27593 taskbar-hero-e2e-4430   \n",
+      "cwd": "p27630\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero/apps/web\n"
+    },
+    {
+      "pid": 27664,
+      "ps": "  PID  PPID COMMAND\n27664 27631 taskbar-hero-e2e-4431   \n",
+      "cwd": "p27664\nfcwd\nn/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero/apps/web\n"
+    }
+  ],
+  "updated_at": "2026-11-01T19:15:19.389597+07:00",
+  "helper_restart": {
+    "old_pid": 25017,
+    "new_pid": 30222,
+    "reason": "Before any follow check began, strengthened artifact contract to detect identical-content overwrites via mtime too. PID and cwd verified."
+  },
+  "grader_harness_issue": "artifact-cleanup-issue.json",
+  "cleanup": {
+    "listeners": [],
+    "worktree_status": {
+      "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/taskbar-hero": "",
+      "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch": "?? apps/web/e2e/grader-viewport.spec.ts\n?? apps/web/tools/.grade-audit.mjs\n?? apps/web/tools/.grade-effects.mjs\n?? apps/web/tools/.grade-keyboard.mjs\n",
+      "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/main-baseline": ""
+    },
+    "remote_refs": "5db4949096e93eedeb98dff94ef1ec7019485f96\trefs/heads/ai/codex-mega-deno0\n1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\trefs/heads/main\n",
+    "tracked_scratch_changes": [],
+    "untracked_scratch_files": "Only4 grader-owned evidence helpers/specs; no product edits."
+  },
+  "running_recorded_pids": []
+}

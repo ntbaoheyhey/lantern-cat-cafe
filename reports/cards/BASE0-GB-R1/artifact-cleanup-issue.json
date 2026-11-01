@@ -1,0 +1,8 @@
+{
+  "classification": "grader helper cleanup error; post-control invalid precondition, not candidate failure",
+  "cause": "changes.trim() removed leading porcelain space from first modified line; line.slice(3) dropped first character of path, so git restore targeted wrong path.",
+  "evidence": "logs/artifact-control-after-contract.json has leftover F3 status but touchedHistoricalFiles=[]; G1/G3 mutants independently have expected touchedHistoricalFiles entries.",
+  "cleanup_path": "reports/f3-art/bake-metrics.json",
+  "original_status": " M reports/f3-art/bake-metrics.json\n",
+  "recovery": "Restore exact owned scratch artifact; rerun clean control after other owned checks finish. Preserve all raw earlier results."
+}

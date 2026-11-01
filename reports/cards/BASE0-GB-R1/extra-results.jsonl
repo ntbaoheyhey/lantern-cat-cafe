@@ -1,0 +1,4 @@
+{"name":"keyboard","command":"node tools/.grade-keyboard.mjs","exit":0,"end":"2026-11-01T12:12:03.379Z"}
+{"name":"viewport-control-before","command":"pnpm test:e2e e2e/grader-viewport.spec.ts --workers=1","exit":0,"end":"2026-11-01T12:12:11.826Z"}
+{"name":"viewport-mutant","command":"pnpm test:e2e e2e/grader-viewport.spec.ts --workers=1","exit":1,"end":"2026-11-01T12:12:20.322Z"}
+{"name":"viewport-control-after","command":"pnpm test:e2e e2e/grader-viewport.spec.ts --workers=1","exit":0,"end":"2026-11-01T12:12:27.742Z"}

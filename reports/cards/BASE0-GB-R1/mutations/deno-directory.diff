@@ -1,0 +1,13 @@
+diff --git a/scripts/gen-deno-json.mjs b/scripts/gen-deno-json.mjs
+index 38aa0db..ade730a 100644
+--- a/scripts/gen-deno-json.mjs
++++ b/scripts/gen-deno-json.mjs
+@@ -20,7 +20,7 @@ export function gameRulesImports(projectRoot = root) {
+       const full = join(dir, entry.name);
+       if (entry.isDirectory()) {
+         if (entry.name.startsWith('__')) continue;
+-        if (existsSync(join(full, 'index.ts'))) out[spec(full)] = `${spec(full)}/index.ts`;
++        if (false) out[spec(full)] = `${spec(full)}/index.ts`;
+         walk(full);
+       } else if (entry.name.endsWith('.ts') && !entry.name.endsWith('.test.ts')) {
+         // A directory import ('./forge') and an explicit index import

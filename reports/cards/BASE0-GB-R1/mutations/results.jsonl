@@ -1,0 +1,19 @@
+{"name":"install","command":"pnpm install --frozen-lockfile","exit":0,"signal":null,"start":"2026-11-01T11:45:13.119Z","end":"2026-11-01T11:45:20.902Z"}
+{"name":"gen-control-before","command":"node --test scripts/gen-deno-json.test.mjs","exit":0,"signal":null,"start":"2026-11-01T11:45:20.902Z","end":"2026-11-01T11:45:21.026Z"}
+{"name":"stage-control-before","command":"pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts","exit":0,"signal":null,"start":"2026-11-01T11:45:21.027Z","end":"2026-11-01T11:45:23.484Z"}
+{"name":"clock-control-before","command":"pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts","exit":0,"signal":null,"start":"2026-11-01T11:45:23.484Z","end":"2026-11-01T11:45:26.330Z"}
+{"name":"deno-index","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:26.339Z","end":"2026-11-01T11:45:26.482Z"}
+{"name":"deno-directory","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:26.491Z","end":"2026-11-01T11:45:26.612Z"}
+{"name":"deno-test-exclusion","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:26.622Z","end":"2026-11-01T11:45:26.767Z"}
+{"name":"deno-fixture-exclusion","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:26.777Z","end":"2026-11-01T11:45:26.895Z"}
+{"name":"deno-order","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:26.903Z","end":"2026-11-01T11:45:27.027Z"}
+{"name":"deno-auth","command":"node --test scripts/gen-deno-json.test.mjs","exit":1,"signal":null,"start":"2026-11-01T11:45:27.035Z","end":"2026-11-01T11:45:27.151Z"}
+{"name":"stage-preboot","command":"pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts","exit":1,"signal":null,"start":"2026-11-01T11:45:27.160Z","end":"2026-11-01T11:45:28.223Z"}
+{"name":"clock-next-day","command":"pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts","exit":1,"signal":null,"start":"2026-11-01T11:45:28.231Z","end":"2026-11-01T11:45:30.826Z"}
+{"name":"clock-fixed-future","command":"pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts","exit":1,"signal":null,"start":"2026-11-01T11:45:30.835Z","end":"2026-11-01T11:45:33.580Z"}
+{"name":"claim-rounding","setup_error":"selector count 2"}
+{"name":"gen-control-after","command":"node --test scripts/gen-deno-json.test.mjs","exit":0,"signal":null,"start":"2026-11-01T11:45:33.581Z","end":"2026-11-01T11:45:33.740Z"}
+{"name":"stage-control-after","command":"pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts","exit":0,"signal":null,"start":"2026-11-01T11:45:33.740Z","end":"2026-11-01T11:45:35.134Z"}
+{"name":"clock-control-after","command":"pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts","exit":0,"signal":null,"start":"2026-11-01T11:45:35.134Z","end":"2026-11-01T11:45:37.950Z"}
+{"name": "claim-rounding-recovered", "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run v2/functions-forge.test.ts", "exit": 1}
+{"name": "claim-rounding-control-after", "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run v2/functions-forge.test.ts", "exit": 0}

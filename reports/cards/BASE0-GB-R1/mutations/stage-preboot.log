@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web
+
+ ❯ src/game/stage/StageScene.test.ts (12 tests | 1 failed) 102ms
+   × defers a resize before scene boot and uses the latest scale when CREATE arrives 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives
+AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of …' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"TypeError: Cannot read properties of undefined (reading 'height')"
+
+ ❯ src/game/stage/StageScene.test.ts:51:38
+     49|   Object.assign(scene, { scale: undefined });
+     50|   scene.show(sampleServerStateV2(), false);
+     51|   expect(() => scene.relayout()).not.toThrow();
+       |                                      ^
+     52|   Object.assign(scene, { scale: { width: 453, height: 96 } });
+     53|   start();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  18:45:27
+   Duration  649ms (environment 52%, transform 18%, tests 18%, import 12%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/stage/StageScene.test.ts

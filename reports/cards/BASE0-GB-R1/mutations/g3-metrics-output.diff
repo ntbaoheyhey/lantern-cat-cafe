@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/ui/g3-combat.spec.ts b/apps/web/e2e/ui/g3-combat.spec.ts
+index a1b60b9..4d99396 100644
+--- a/apps/web/e2e/ui/g3-combat.spec.ts
++++ b/apps/web/e2e/ui/g3-combat.spec.ts
+@@ -78,7 +78,7 @@ test('G3 stage frame p95 stays within 20ms in the demo build', async ({ page })
+     requestAnimationFrame(frame);
+   }));
+   const metricsPath = process.env.REPORT_DIR
+-    ? resolve(process.env.REPORT_DIR, 'frame-metrics.json') : test.info().outputPath('frame-metrics.json');
++    ? resolve(process.env.REPORT_DIR, 'frame-metrics.json') : resolve('../../reports/g3-combat/frame-metrics.json');
+   mkdirSync(resolve(metricsPath, '..'), { recursive: true });
+   writeFileSync(metricsPath, JSON.stringify(metrics, null, 2) + '\n');
+   console.log('G3 stage frame metrics', metrics);

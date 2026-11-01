@@ -1,0 +1,130 @@
+{
+  "grader": "BASE0 independent B round1",
+  "native_agent": "/root/base0_grade_b_r1",
+  "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "branch": "ai/codex-mega-deno0",
+  "pr": 246,
+  "criterion_scores": {
+    "C1": 25,
+    "C2": 20,
+    "C3": 10,
+    "C4": 14,
+    "C5": 8,
+    "C6": 5,
+    "C7": 10,
+    "C8": 5
+  },
+  "total": 97,
+  "autofails": [],
+  "pass_boolean": true,
+  "status": "PASS_UNMERGED",
+  "blockers": [],
+  "deductions": [
+    {
+      "criterion": "C4",
+      "points": 1,
+      "finding": "Explained retained HUD context/status difference from reference, docs/decisions/baseline-hud-layout.md:16-20."
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "finding": "Unused compact prop: Hud.tsx:21 and ScreenFrame.tsx:54."
+    }
+  ],
+  "t_cases": {
+    "passed": 26,
+    "total": 26
+  },
+  "mutations": {
+    "tried": 19,
+    "killed": 19,
+    "survivors": 0,
+    "valid_green_controls": 16,
+    "excluded_setup": "Ambiguous selector; dirty artifact post-control from grader cleanup bug; invalid early/wrong-class screenshots. Preserved with recovered evidence."
+  },
+  "browser_repeats": {
+    "1280x720": 470,
+    "1600x900": 470
+  },
+  "full_browser_reuse": {
+    "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+    "1280x720": 264,
+    "1600x900": 264,
+    "authority": "brief latest efficiency rule; all personal prerequisites met"
+  },
+  "gates": {
+    "G1": "PASS",
+    "G2": "PASS for BASE0 scope",
+    "G3": "PASS",
+    "G4": "NOT_APPLICABLE: no contract/migration source changes",
+    "G5": "PASS: explicitly reused exactHEAD production-config guest evidence",
+    "G6": "PASS",
+    "G7": "PASS: verifier publication confirmed; parent publishes this grade"
+  },
+  "remaining_delivery_steps": [
+    "Other independent grade and coordinator merge decision",
+    "Publish grade; serial merge if all mission gates agree",
+    "Postmerge main and deployed-live verification; no such proof claimed here"
+  ],
+  "evidence": {
+    "C1": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/t-cases.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/follow-results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/artifact-control-recovered.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/reused-evidence.json"
+    ],
+    "C2": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/build-results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/repeat-1280.log",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/repeat-1600.log",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/reused-evidence.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/artifact-control-recovered.json"
+    ],
+    "C3": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutation-assertion-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/follow-results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/extra-results.jsonl",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/artifact-control-recovered.json"
+    ],
+    "C4": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/ui-review.md",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/delivered-figures.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/audit-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/effects-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/keyboard.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/contrast.log"
+    ],
+    "C5": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/source-review.md",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/Hud.tsx.numbered.txt",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/ScreenFrame.tsx.numbered.txt",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/bundle-comparison.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/lint.log"
+    ],
+    "C6": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/integrity-hits.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/removed-assertions.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/source-review.md",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/generated-map-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/runtime-secret-scan.json"
+    ],
+    "C7": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/historical-report-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/publication-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/verifier-mutation-honesty-review.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/reused-evidence.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/artifact-cleanup-issue.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/capture-readiness-note.md"
+    ],
+    "C8": [
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/scope.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/unchanged-scope.json",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/source-review.md"
+    ]
+  },
+  "finished_at": "2026-11-01T19:15:19.386633+07:00"
+}
