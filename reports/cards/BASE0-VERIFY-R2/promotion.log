@@ -1,0 +1,12 @@
+Updating 5db4949..280ff4b
+Fast-forward
+ apps/web/e2e/server/fixture-clock.spec.ts    | 19 +++++++++++++++
+ apps/web/e2e/support/server-fixture.ts       |  7 ++++--
+ apps/web/src/game/stage/StageCanvas.test.tsx | 35 ++++++++++++++++++++++++++--
+ apps/web/src/game/stage/StageCanvas.tsx      |  4 +++-
+ apps/web/src/shell/Hud.tsx                   |  1 -
+ apps/web/src/shell/ScreenFrame.tsx           |  2 +-
+ apps/web/src/shell/shell.css                 |  5 ----
+ reports/base0.md                             | 12 +++++++++-
+ 8 files changed, 72 insertions(+), 13 deletions(-)
+ create mode 100644 apps/web/e2e/server/fixture-clock.spec.ts
