@@ -30,6 +30,9 @@ and the existing `claimed` event and delegates the count delta to the existing
 Loads do not backfill progress; chapter transitions and backwards resets are
 ignored. No animation, timer estimate, boss result or currency value awards pet
 progress. This deliberately undercounts history rather than inventing it.
+Only the acknowledged claim emitted synchronously with a state adoption consumes
+that adoption's delta. An unclaimed refresh delta expires at the microtask boundary,
+so a later claim cannot reuse it, including when a refresh overtakes a claim.
 
 Storage uses `taskbar-hero.pets.DEMO_PREVIEW.v1` with
 `{version: 1, killCounts, equipped}`. A legacy

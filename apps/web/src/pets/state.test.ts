@@ -109,3 +109,54 @@ it('observes acknowledged claims once across rounds; ignores loads, errors, rese
     expect(store.getSnapshot().killCounts).toEqual(kills(expected));
   } finally { dispose(); loop.stop(); }
 });
+
+it('does not credit a same-round refresh when a later claim reuses its snapshot', async () => {
+  const api = new MockGameApiV2({ storage: null });
+  const loaded = sampleServerStateV2({ kills: 0 });
+  const refreshed = sampleServerStateV2({ kills: 4 });
+  const getState = vi.spyOn(api, 'getState').mockResolvedValue(loaded);
+  const claim = vi.spyOn(api, 'claim').mockResolvedValue({ gains: sampleGainsV2(), state: refreshed });
+  const loop = new GameLoopV2({ api });
+  const store = new PetsStore(null), dispose = bindPetsToLoop(loop, store);
+  try {
+    await loop.start(document);
+    getState.mockResolvedValue(refreshed);
+    await loop.retry();
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual({});
+    claim.mockResolvedValue({ gains: sampleGainsV2(), state: sampleServerStateV2({ kills: 6 }) });
+    await loop.claimNow();
+    expect(store.getSnapshot().killCounts).toEqual(kills(2));
+  } finally { dispose(); loop.stop(); }
+});
+
+it('does not backfill a refresh that overtakes an in-flight claim', async () => {
+  const api = new MockGameApiV2({ storage: null });
+  const loaded = sampleServerStateV2({ kills: 0 });
+  const refreshed = sampleServerStateV2({ kills: 4 });
+  const getState = vi.spyOn(api, 'getState').mockResolvedValue(loaded);
+  let finish!: (result: Awaited<ReturnType<typeof api.claim>>) => void;
+  const claim = vi.spyOn(api, 'claim').mockImplementation(() => new Promise(resolve => { finish = resolve; }));
+  const loop = new GameLoopV2({ api });
+  const store = new PetsStore(null), dispose = bindPetsToLoop(loop, store);
+  try {
+    await loop.start(document);
+    const flight = loop.claimNow();
+    await vi.waitFor(() => expect(claim).toHaveBeenCalledOnce());
+    getState.mockResolvedValue(refreshed);
+    await loop.retry();
+    finish({ gains: sampleGainsV2(), state: refreshed });
+    await flight;
+    expect(store.getSnapshot().killCounts).toEqual({});
+  } finally { dispose(); loop.stop(); }
+});
+
+it('retired cleanup cannot remove the guard for a replacement binding', () => {
+  const loop = new GameLoopV2({ api: new MockGameApiV2({ storage: null }) });
+  const store = new PetsStore(null), retired = bindPetsToLoop(loop, store);
+  retired();
+  const current = bindPetsToLoop(loop, store);
+  retired();
+  const repeated = bindPetsToLoop(loop, store);
+  try { expect(repeated).toBe(current); } finally { current(); repeated(); }
+});

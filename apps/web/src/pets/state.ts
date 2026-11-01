@@ -99,17 +99,28 @@ export function bindPetsToLoop(loop: ClaimSource, store: PetsStore = getPetsStor
   if (bound) return bound;
   let previous = loop.getSnapshot().state;
   let pending = 0;
+  let revision = 0;
   const unsubscribe = loop.subscribe(() => {
     const next = loop.getSnapshot().state;
     if (next === previous) return;
     pending = next ? claimedKills(previous, next) : 0;
     previous = next;
+    // GameLoop emits the acknowledged claim synchronously after adopting its
+    // state. A load has no such event: expire its delta before any later claim,
+    // including one that reuses the same state object after a refresh race.
+    const adopted = ++revision;
+    queueMicrotask(() => { if (revision === adopted) pending = 0; });
   });
   const offEvent = loop.onEvent(event => {
     if (event.type === 'claimed') store.recordClaimedKills(pending);
     pending = 0;
   });
-  const dispose = () => { unsubscribe(); offEvent(); bindings.delete(loop); };
+  let disposed = false;
+  const dispose = () => {
+    if (disposed) return;
+    disposed = true; pending = 0; revision++;
+    unsubscribe(); offEvent(); bindings.delete(loop);
+  };
   bindings.set(loop, dispose);
   return dispose;
 }
