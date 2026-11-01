@@ -1,0 +1,91 @@
+{
+  "observedAt": "2026-11-01T17:09:43.868Z",
+  "sourceHead": "cd274ab9b95d355e08c61452694cc09052f17bb8",
+  "scope": "Five read-only OPTIONS/unsigned refusal probes only. No auth, API key, session, nonce, wallet, SQL or game action. No retries. Not a full v2/live certificate.",
+  "results": [
+    {
+      "route": "v2-boss-fight",
+      "kind": "options",
+      "startedAt": "2026-11-01T17:09:24.901Z",
+      "timeoutMs": 15000,
+      "requestBytes": 0,
+      "credentialsSent": false,
+      "retryCount": 0,
+      "status": 204,
+      "classification": {
+        "ok": true,
+        "detail": "HTTP 204, CORS allows origin, POST and content-type"
+      },
+      "allowOrigin": "https://taskbarhero-eight.vercel.app",
+      "contentType": null,
+      "elapsedMs": 1373
+    },
+    {
+      "route": "v2-boss-fight",
+      "kind": "anonymous",
+      "startedAt": "2026-11-01T17:09:26.274Z",
+      "timeoutMs": 15000,
+      "requestBytes": 2,
+      "credentialsSent": false,
+      "retryCount": 0,
+      "status": 401,
+      "classification": {
+        "ok": true,
+        "detail": "HTTP 401"
+      },
+      "allowOrigin": "https://taskbarhero-eight.vercel.app",
+      "contentType": "application/json",
+      "elapsedMs": 1252
+    },
+    {
+      "route": "v2-boss-fight",
+      "kind": "oversized",
+      "startedAt": "2026-11-01T17:09:27.527Z",
+      "timeoutMs": 15000,
+      "requestBytes": 8207,
+      "credentialsSent": false,
+      "retryCount": 0,
+      "status": 401,
+      "classification": {
+        "ok": false,
+        "detail": "HTTP 401; expected 413 or 400 (authentication may run before body validation)"
+      },
+      "allowOrigin": "https://taskbarhero-eight.vercel.app",
+      "contentType": "application/json",
+      "elapsedMs": 275
+    },
+    {
+      "route": "v2-state",
+      "kind": "anonymous",
+      "startedAt": "2026-11-01T17:09:27.802Z",
+      "timeoutMs": 15000,
+      "requestBytes": 2,
+      "credentialsSent": false,
+      "retryCount": 0,
+      "status": 401,
+      "classification": {
+        "ok": true,
+        "detail": "HTTP 401"
+      },
+      "allowOrigin": "https://taskbarhero-eight.vercel.app",
+      "contentType": "application/json",
+      "elapsedMs": 1062
+    },
+    {
+      "route": "v2-state",
+      "kind": "oversized",
+      "startedAt": "2026-11-01T17:09:28.864Z",
+      "timeoutMs": 15000,
+      "requestBytes": 8207,
+      "credentialsSent": false,
+      "retryCount": 0,
+      "status": null,
+      "errorName": "TimeoutError",
+      "classification": {
+        "ok": false,
+        "detail": "network error"
+      },
+      "elapsedMs": 15003
+    }
+  ]
+}

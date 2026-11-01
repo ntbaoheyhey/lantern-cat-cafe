@@ -27,7 +27,8 @@ Baseline worktree: /Users/bao/.codex/worktrees/mega-20261101-baseline/taskbar-he
 ```mermaid
 flowchart TD
   START --> FXRB
-  START --> CXN3
+  START --> CXN3_FIX[CXN3-FIX]
+  CXN3_FIX --> CXN3
   START --> ART1
   START --> CXP1
   START --> CXL1

@@ -6,3 +6,5 @@ Updated 2026-11-02T00:07:07+07:00. Main1fb25ed/candidate280ff4b unchanged; no mi
 - CXU4R1 missingfixture failure retained. R2b06a68d:baselineoracle1,component58,browser200,effects10eachsize,webtypePASS. Local productbranchai/codex-cxu4 nowd408ada(30sourcefiles,bytespreserved),notpushed/PRpending. R2 testedintegratedb06a68d,notd408ada. Two recoverybundles verified; see handoff.
 - CXN3 historical10livefindings remain open; strict --v2postmerge requires source/release readiness. Nextsafe work:read-only rootcause/dependency diagnosis; keep serialmerge and source/release gates.
 - Lastmodel4292026-11-01T22:32:35+07:00; one-worker window expired. Fewagents,max2or1for30min afternew429,same-model2/4/8backoff,no downgrade. No grader needed now.
+
+- CXN3-FIX read-only diagnosis finished:5probes3PASS/2FAIL;no runningprocess. FunctionsACTIVE is not health proof. Partial CLI export refused unsafe monorepo paths; no bypass. New dependency insertsFIXbetweenART1/CXN3 without changing preparedrelativeorder. No implementation/release yet. Legacy postmerge checker nonce side effect now explicitly documented.

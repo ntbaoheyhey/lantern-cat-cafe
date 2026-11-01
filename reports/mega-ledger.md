@@ -33,7 +33,7 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 
-| 26 | CXN3-FIX (P0) | CXN3/BASE0 | ai/codex-cxn3-fix | — | TODO | 0 | NOT VERIFIED | Ten live findings; reports/cards/CXN3-FIX/brief.md |
+| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | — | DIAGNOSING | 0 | Fresh subset3PASS/2FAIL; source limits recorded | Implementation/grades/release pending; inserted after ART1 |
 | 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
 
 ## Corrections and scheduling decisions
@@ -105,3 +105,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T23:56:57+07:00: CXU4 saved29files snapshotbb39ba5,temporaryintegration3a34e8c source-mergeclean; firstunitpreflight failed because coordinator omitted existingHelpfixture. R2b06a68d adds exactfixture after independent baseline-render verification; rerunactive PID43392. Originalcode/reports preserved; no testweakening/score/merge.
 
 - 2026-11-02T00:07:07+07:00: CXU4 successorpreflightb06a68dpassed58units,200browser repeats,10effects eachsize,webtype andbaselineoracle. R1omittedfixture failure preserved. Original30sourcefiles committed locallyd408ada,notpushed;dirtyhistoricalreports preserved. Verifiedsource/integrationbundles. Allownedpipelines stopped,portsreleased; BASE0deploymenthold andfullmissiongates unchanged.
+
+- 2026-11-02T00:20:19+07:00: CXN3-FIX read-only diagnosis found oversized401 and a fresh state timeout; boss timeout not reproduced. MetadataACTIVE and partialsourcehashes do not prove full health/identity. CLI unsafe-extraction refusal respected. InsertFIXafterART1beforeCXN3 to satisfy mandatorylivegate; preserves preparedrelativeorder and everygate. No productionchanges.
