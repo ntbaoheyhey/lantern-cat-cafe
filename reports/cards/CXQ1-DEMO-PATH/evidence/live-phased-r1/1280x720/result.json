@@ -1,0 +1,162 @@
+{
+  "status": "FAIL",
+  "durationMs": 21388,
+  "steps": [
+    {
+      "name": "landing",
+      "status": "PASS",
+      "elapsedMs": 856,
+      "screenshot": {
+        "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r1/1280x720/01-landing-PASS.png",
+        "bytes": 50774
+      }
+    },
+    {
+      "name": "guest",
+      "status": "PASS",
+      "elapsedMs": 23
+    },
+    {
+      "name": "class",
+      "status": "PASS",
+      "elapsedMs": 403,
+      "screenshot": {
+        "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r1/1280x720/03-class-PASS.png",
+        "bytes": 79651
+      }
+    },
+    {
+      "name": "idle-loop",
+      "status": "FAIL",
+      "elapsedMs": 20026,
+      "error": "expect(locator).not.toHaveAttribute(expected) failed\n\nLocator:  getByRole('group', { name: /^Chapter \\d+ .*round \\d+ of \\d+, \\d+ of \\d+ monsters$/i })\nExpected: not \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\nReceived: \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\nTimeout:  20000ms\n\nCall log:\n  - Expect \"not toHaveAttribute\" getByRole('group', { name: /^Chapter \\d+ .*round \\d+ of \\d+, \\d+ of \\d+ monsters$/i }) with timeout 20000ms\n  - waiting for getByRole('group', { name: /^Chapter \\d+ .*round \\d+ of \\d+, \\d+ of \\d+ monsters$/i })\n    43 × locator resolved to <div role=\"group\" title=\"Living Room\" class=\"hud-chip hud-progress-chip\" aria-label=\"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\">…</div>\n       - unexpected value \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\n",
+      "screenshot": {
+        "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r1/1280x720/04-idle-loop-FAIL.png",
+        "bytes": 79789
+      }
+    },
+    {
+      "name": "boss",
+      "status": "BLOCKED",
+      "blockedBy": "idle-loop"
+    },
+    {
+      "name": "forge",
+      "status": "BLOCKED",
+      "blockedBy": "idle-loop"
+    },
+    {
+      "name": "bag",
+      "status": "BLOCKED",
+      "blockedBy": "idle-loop"
+    },
+    {
+      "name": "market",
+      "status": "BLOCKED",
+      "blockedBy": "idle-loop"
+    }
+  ],
+  "phase": "merged-core",
+  "phaseObservations": [
+    "Current merged entry starts at class selection in an unauthenticated browser; no landing CTA claim."
+  ],
+  "outsidePhase": [
+    "on-chain-proof"
+  ],
+  "fullNineStagePass": false,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "baseUrl": "https://taskbarhero-eight.vercel.app/",
+  "source": {
+    "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+    "dirty": "M reports/scorecard/base0/logs/results.jsonl\n?? reports/scorecard/base0/audit-signed-in/\n?? reports/scorecard/base0/audit/\n?? reports/scorecard/base0/coordinator-clock-r4/\n?? reports/scorecard/base0/effects-1280/\n?? reports/scorecard/base0/effects-1600/\n?? reports/scorecard/base0/effects-control-1280/\n?? reports/scorecard/base0/effects-reached-control/\n?? reports/scorecard/base0/live-baseline-diagnostic.json\n?? reports/scorecard/base0/live-smoke.mjs\n?? reports/scorecard/base0/live/\n?? reports/scorecard/base0/logs/changed-specs-repeat10-1600.log\n?? reports/scorecard/base0/logs/changed-specs-repeat10.log\n?? reports/scorecard/base0/logs/compact-browser-r5.log\n?? reports/scorecard/base0/logs/compact-browser-r6.log\n?? reports/scorecard/base0/logs/compact-browser-r7.log\n?? reports/scorecard/base0/logs/effects-1280.log\n?? reports/scorecard/base0/logs/effects-1600.log\n?? reports/scorecard/base0/logs/effects-control-1280.log\n?? reports/scorecard/base0/logs/effects-reached-control.log\n?? reports/scorecard/base0/logs/full-e2e-1600-r3.log\n?? reports/scorecard/base0/logs/full-e2e-1600.log\n?? reports/scorecard/base0/logs/full-r1/\n?? reports/scorecard/base0/logs/full-r2/\n?? reports/scorecard/base0/logs/full-r3/\n?? reports/scorecard/base0/logs/full-r4/\n?? reports/scorecard/base0/logs/full-r5/\n?? reports/scorecard/base0/logs/gated-hud-regression.log\n?? reports/scorecard/base0/logs/gated-hud-repeat10.log\n?? reports/scorecard/base0/logs/hud-contrast.log\n?? reports/scorecard/base0/logs/keyboard.log\n?? reports/scorecard/base0/logs/links-corrected.log\n?? reports/scorecard/base0/logs/live-baseline.log\n?? reports/scorecard/base0/logs/mutations/\n?? reports/scorecard/base0/logs/new-hud-browser.log\n?? reports/scorecard/base0/logs/public-config-build.log\n?? reports/scorecard/base0/logs/public-config-classic-smoke.log\n?? reports/scorecard/base0/logs/repeat-hud-10.log\n?? reports/scorecard/base0/logs/ui-audit-signed-in.log\n?? reports/scorecard/base0/logs/ui-audit.log\n?? reports/scorecard/base0/mutation-plan.md\n?? reports/scorecard/base0/preflight-review.md\n?? reports/scorecard/base0/public-config/\n?? reports/scorecard/base0/resume-accessibility-e68eee0/\n?? reports/scorecard/base0/resume-effects-e68eee0/\n?? reports/scorecard/base0/resume-gate-e68eee0/\n?? reports/scorecard/base0/resume-live-guest/\n?? reports/scorecard/base0/resume-mutations-e68eee0/\n?? reports/scorecard/base0/resume-public-e68eee0/\n?? reports/scorecard/base0/resume-repeats-e68eee0/\n?? reports/scorecard/base0/resume-ui-e68eee0/\n?? reports/scorecard/base0/screens/hud-1280.png\n?? reports/scorecard/base0/screens/hud-1600.png\n?? reports/scorecard/base0/screens/reference-home-1280.png\n?? reports/scorecard/base0/screens/reference-home-1600.png",
+    "role": "Inspection/dependency source only; NOT claimed deployed head"
+  },
+  "deployment": {
+    "head": null,
+    "status": "UNVERIFIED",
+    "reason": "No trusted deployed commit metadata observed"
+  },
+  "identity": {
+    "finalUrl": "https://taskbarhero-eight.vercel.app/",
+    "htmlSha256": "c4251101040ea5114656ab33f7fd14b512d27f982865f10c6fc707a517792aa7",
+    "etag": "W/\"27128b1a12da3af6631f80d20015b3a5\"",
+    "vercelRequestId": "sin1::pv5x7-1793531477127-aa678081efba",
+    "assets": [
+      "/assets/index-DKnyrYRP.js"
+    ]
+  },
+  "startedAt": "2026-11-01T11:11:17.035Z",
+  "endedAt": "2026-11-01T11:11:38.423Z",
+  "judgeBudgetMs": 180000,
+  "screenshotBytes": 210214,
+  "screenshots": 3,
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://taskbarhero-eight.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-BmB6Vb4r.css",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-DKnyrYRP.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/combat-COPl1OEP.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/assets-Db_kdfqd.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/StageScene-BFB-85Ky.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/phaser-CS_hOpYn.js",
+      "status": 200
+    }
+  ],
+  "events": [],
+  "transactionsPerformed": 0,
+  "guestOnly": true
+}

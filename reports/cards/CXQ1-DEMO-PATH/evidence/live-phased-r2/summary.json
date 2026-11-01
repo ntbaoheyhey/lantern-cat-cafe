@@ -1,0 +1,388 @@
+{
+  "status": "PASS",
+  "phase": "merged-core",
+  "phaseAuthority": "User explicitly approved checking merged functionality until both CXU3 and CXC2 merge; then all nine stages are mandatory. 2026-11-01 UTC+7.",
+  "fullNineStagePass": false,
+  "scope": "Recurring guest judge path; not formal grade or full CXQ1",
+  "source": {
+    "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+    "dirty": "M reports/scorecard/base0/logs/results.jsonl\n?? reports/scorecard/base0/audit-signed-in/\n?? reports/scorecard/base0/audit/\n?? reports/scorecard/base0/coordinator-clock-r4/\n?? reports/scorecard/base0/effects-1280/\n?? reports/scorecard/base0/effects-1600/\n?? reports/scorecard/base0/effects-control-1280/\n?? reports/scorecard/base0/effects-reached-control/\n?? reports/scorecard/base0/live-baseline-diagnostic.json\n?? reports/scorecard/base0/live-smoke.mjs\n?? reports/scorecard/base0/live/\n?? reports/scorecard/base0/logs/changed-specs-repeat10-1600.log\n?? reports/scorecard/base0/logs/changed-specs-repeat10.log\n?? reports/scorecard/base0/logs/compact-browser-r5.log\n?? reports/scorecard/base0/logs/compact-browser-r6.log\n?? reports/scorecard/base0/logs/compact-browser-r7.log\n?? reports/scorecard/base0/logs/effects-1280.log\n?? reports/scorecard/base0/logs/effects-1600.log\n?? reports/scorecard/base0/logs/effects-control-1280.log\n?? reports/scorecard/base0/logs/effects-reached-control.log\n?? reports/scorecard/base0/logs/full-e2e-1600-r3.log\n?? reports/scorecard/base0/logs/full-e2e-1600.log\n?? reports/scorecard/base0/logs/full-r1/\n?? reports/scorecard/base0/logs/full-r2/\n?? reports/scorecard/base0/logs/full-r3/\n?? reports/scorecard/base0/logs/full-r4/\n?? reports/scorecard/base0/logs/full-r5/\n?? reports/scorecard/base0/logs/gated-hud-regression.log\n?? reports/scorecard/base0/logs/gated-hud-repeat10.log\n?? reports/scorecard/base0/logs/hud-contrast.log\n?? reports/scorecard/base0/logs/keyboard.log\n?? reports/scorecard/base0/logs/links-corrected.log\n?? reports/scorecard/base0/logs/live-baseline.log\n?? reports/scorecard/base0/logs/mutations/\n?? reports/scorecard/base0/logs/new-hud-browser.log\n?? reports/scorecard/base0/logs/public-config-build.log\n?? reports/scorecard/base0/logs/public-config-classic-smoke.log\n?? reports/scorecard/base0/logs/repeat-hud-10.log\n?? reports/scorecard/base0/logs/ui-audit-signed-in.log\n?? reports/scorecard/base0/logs/ui-audit.log\n?? reports/scorecard/base0/mutation-plan.md\n?? reports/scorecard/base0/preflight-review.md\n?? reports/scorecard/base0/public-config/\n?? reports/scorecard/base0/resume-accessibility-e68eee0/\n?? reports/scorecard/base0/resume-effects-e68eee0/\n?? reports/scorecard/base0/resume-gate-e68eee0/\n?? reports/scorecard/base0/resume-live-guest/\n?? reports/scorecard/base0/resume-mutations-e68eee0/\n?? reports/scorecard/base0/resume-public-e68eee0/\n?? reports/scorecard/base0/resume-repeats-e68eee0/\n?? reports/scorecard/base0/resume-ui-e68eee0/\n?? reports/scorecard/base0/screens/hud-1280.png\n?? reports/scorecard/base0/screens/hud-1600.png\n?? reports/scorecard/base0/screens/reference-home-1280.png\n?? reports/scorecard/base0/screens/reference-home-1600.png",
+    "role": "Inspection/dependency source only; NOT claimed deployed head"
+  },
+  "results": [
+    {
+      "status": "PASS",
+      "durationMs": 31429,
+      "steps": [
+        {
+          "name": "landing",
+          "status": "PASS",
+          "elapsedMs": 886,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/01-landing-PASS.png",
+            "bytes": 50774
+          }
+        },
+        {
+          "name": "guest",
+          "status": "PASS",
+          "elapsedMs": 22
+        },
+        {
+          "name": "class",
+          "status": "PASS",
+          "elapsedMs": 415,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/03-class-PASS.png",
+            "bytes": 79651
+          }
+        },
+        {
+          "name": "idle-loop",
+          "status": "PASS",
+          "elapsedMs": 29260,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/04-idle-loop-PASS.png",
+            "bytes": 89513
+          }
+        },
+        {
+          "name": "boss",
+          "status": "PASS",
+          "elapsedMs": 119,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/05-boss-PASS.png",
+            "bytes": 51158
+          }
+        },
+        {
+          "name": "forge",
+          "status": "PASS",
+          "elapsedMs": 140,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/06-forge-PASS.png",
+            "bytes": 66698
+          }
+        },
+        {
+          "name": "bag",
+          "status": "PASS",
+          "elapsedMs": 201,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/07-bag-PASS.png",
+            "bytes": 66706
+          }
+        },
+        {
+          "name": "market",
+          "status": "PASS",
+          "elapsedMs": 91,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1280x720/09-market-PASS.png",
+            "bytes": 33283
+          }
+        }
+      ],
+      "phase": "merged-core",
+      "phaseObservations": [
+        "Current merged entry starts at class selection in an unauthenticated browser; no landing CTA claim.",
+        "Boss gate is visibly locked with its current reason; no victory claimed.",
+        "Current Craft recipe/action surface verified; CXU3 completion flow is outside this phase.",
+        "Current guest Market requires a wallet; guest browsing is deferred to CXU3."
+      ],
+      "outsidePhase": [
+        "on-chain-proof"
+      ],
+      "fullNineStagePass": false,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "baseUrl": "https://taskbarhero-eight.vercel.app/",
+      "source": {
+        "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+        "dirty": "M reports/scorecard/base0/logs/results.jsonl\n?? reports/scorecard/base0/audit-signed-in/\n?? reports/scorecard/base0/audit/\n?? reports/scorecard/base0/coordinator-clock-r4/\n?? reports/scorecard/base0/effects-1280/\n?? reports/scorecard/base0/effects-1600/\n?? reports/scorecard/base0/effects-control-1280/\n?? reports/scorecard/base0/effects-reached-control/\n?? reports/scorecard/base0/live-baseline-diagnostic.json\n?? reports/scorecard/base0/live-smoke.mjs\n?? reports/scorecard/base0/live/\n?? reports/scorecard/base0/logs/changed-specs-repeat10-1600.log\n?? reports/scorecard/base0/logs/changed-specs-repeat10.log\n?? reports/scorecard/base0/logs/compact-browser-r5.log\n?? reports/scorecard/base0/logs/compact-browser-r6.log\n?? reports/scorecard/base0/logs/compact-browser-r7.log\n?? reports/scorecard/base0/logs/effects-1280.log\n?? reports/scorecard/base0/logs/effects-1600.log\n?? reports/scorecard/base0/logs/effects-control-1280.log\n?? reports/scorecard/base0/logs/effects-reached-control.log\n?? reports/scorecard/base0/logs/full-e2e-1600-r3.log\n?? reports/scorecard/base0/logs/full-e2e-1600.log\n?? reports/scorecard/base0/logs/full-r1/\n?? reports/scorecard/base0/logs/full-r2/\n?? reports/scorecard/base0/logs/full-r3/\n?? reports/scorecard/base0/logs/full-r4/\n?? reports/scorecard/base0/logs/full-r5/\n?? reports/scorecard/base0/logs/gated-hud-regression.log\n?? reports/scorecard/base0/logs/gated-hud-repeat10.log\n?? reports/scorecard/base0/logs/hud-contrast.log\n?? reports/scorecard/base0/logs/keyboard.log\n?? reports/scorecard/base0/logs/links-corrected.log\n?? reports/scorecard/base0/logs/live-baseline.log\n?? reports/scorecard/base0/logs/mutations/\n?? reports/scorecard/base0/logs/new-hud-browser.log\n?? reports/scorecard/base0/logs/public-config-build.log\n?? reports/scorecard/base0/logs/public-config-classic-smoke.log\n?? reports/scorecard/base0/logs/repeat-hud-10.log\n?? reports/scorecard/base0/logs/ui-audit-signed-in.log\n?? reports/scorecard/base0/logs/ui-audit.log\n?? reports/scorecard/base0/mutation-plan.md\n?? reports/scorecard/base0/preflight-review.md\n?? reports/scorecard/base0/public-config/\n?? reports/scorecard/base0/resume-accessibility-e68eee0/\n?? reports/scorecard/base0/resume-effects-e68eee0/\n?? reports/scorecard/base0/resume-gate-e68eee0/\n?? reports/scorecard/base0/resume-live-guest/\n?? reports/scorecard/base0/resume-mutations-e68eee0/\n?? reports/scorecard/base0/resume-public-e68eee0/\n?? reports/scorecard/base0/resume-repeats-e68eee0/\n?? reports/scorecard/base0/resume-ui-e68eee0/\n?? reports/scorecard/base0/screens/hud-1280.png\n?? reports/scorecard/base0/screens/hud-1600.png\n?? reports/scorecard/base0/screens/reference-home-1280.png\n?? reports/scorecard/base0/screens/reference-home-1600.png",
+        "role": "Inspection/dependency source only; NOT claimed deployed head"
+      },
+      "deployment": {
+        "head": null,
+        "status": "UNVERIFIED",
+        "reason": "No trusted deployed commit metadata observed"
+      },
+      "identity": {
+        "finalUrl": "https://taskbarhero-eight.vercel.app/",
+        "htmlSha256": "c4251101040ea5114656ab33f7fd14b512d27f982865f10c6fc707a517792aa7",
+        "etag": "W/\"27128b1a12da3af6631f80d20015b3a5\"",
+        "vercelRequestId": "sin1::5b5pp-1793531639043-19d943e1521b",
+        "assets": [
+          "/assets/index-DKnyrYRP.js"
+        ]
+      },
+      "startedAt": "2026-11-01T11:13:58.917Z",
+      "endedAt": "2026-11-01T11:14:30.346Z",
+      "judgeBudgetMs": 180000,
+      "screenshotBytes": 437783,
+      "screenshots": 7,
+      "errors": [],
+      "responses": [
+        {
+          "url": "https://taskbarhero-eight.vercel.app/",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/index-BmB6Vb4r.css",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/combat-COPl1OEP.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/index-DKnyrYRP.js",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/StageScene-BFB-85Ky.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/assets-Db_kdfqd.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/phaser-CS_hOpYn.js",
+          "status": 200
+        }
+      ],
+      "events": [],
+      "transactionsPerformed": 0,
+      "guestOnly": true
+    },
+    {
+      "status": "PASS",
+      "durationMs": 31263,
+      "steps": [
+        {
+          "name": "landing",
+          "status": "PASS",
+          "elapsedMs": 688,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/01-landing-PASS.png",
+            "bytes": 54154
+          }
+        },
+        {
+          "name": "guest",
+          "status": "PASS",
+          "elapsedMs": 19
+        },
+        {
+          "name": "class",
+          "status": "PASS",
+          "elapsedMs": 418,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/03-class-PASS.png",
+            "bytes": 84595
+          }
+        },
+        {
+          "name": "idle-loop",
+          "status": "PASS",
+          "elapsedMs": 29225,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/04-idle-loop-PASS.png",
+            "bytes": 97913
+          }
+        },
+        {
+          "name": "boss",
+          "status": "PASS",
+          "elapsedMs": 115,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/05-boss-PASS.png",
+            "bytes": 53937
+          }
+        },
+        {
+          "name": "forge",
+          "status": "PASS",
+          "elapsedMs": 135,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/06-forge-PASS.png",
+            "bytes": 70404
+          }
+        },
+        {
+          "name": "bag",
+          "status": "PASS",
+          "elapsedMs": 153,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/07-bag-PASS.png",
+            "bytes": 73232
+          }
+        },
+        {
+          "name": "market",
+          "status": "PASS",
+          "elapsedMs": 86,
+          "screenshot": {
+            "path": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2/1600x900/09-market-PASS.png",
+            "bytes": 35746
+          }
+        }
+      ],
+      "phase": "merged-core",
+      "phaseObservations": [
+        "Current merged entry starts at class selection in an unauthenticated browser; no landing CTA claim.",
+        "Boss gate is visibly locked with its current reason; no victory claimed.",
+        "Current Craft recipe/action surface verified; CXU3 completion flow is outside this phase.",
+        "Current guest Market requires a wallet; guest browsing is deferred to CXU3."
+      ],
+      "outsidePhase": [
+        "on-chain-proof"
+      ],
+      "fullNineStagePass": false,
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "baseUrl": "https://taskbarhero-eight.vercel.app/",
+      "source": {
+        "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+        "dirty": "M reports/scorecard/base0/logs/results.jsonl\n?? reports/scorecard/base0/audit-signed-in/\n?? reports/scorecard/base0/audit/\n?? reports/scorecard/base0/coordinator-clock-r4/\n?? reports/scorecard/base0/effects-1280/\n?? reports/scorecard/base0/effects-1600/\n?? reports/scorecard/base0/effects-control-1280/\n?? reports/scorecard/base0/effects-reached-control/\n?? reports/scorecard/base0/live-baseline-diagnostic.json\n?? reports/scorecard/base0/live-smoke.mjs\n?? reports/scorecard/base0/live/\n?? reports/scorecard/base0/logs/changed-specs-repeat10-1600.log\n?? reports/scorecard/base0/logs/changed-specs-repeat10.log\n?? reports/scorecard/base0/logs/compact-browser-r5.log\n?? reports/scorecard/base0/logs/compact-browser-r6.log\n?? reports/scorecard/base0/logs/compact-browser-r7.log\n?? reports/scorecard/base0/logs/effects-1280.log\n?? reports/scorecard/base0/logs/effects-1600.log\n?? reports/scorecard/base0/logs/effects-control-1280.log\n?? reports/scorecard/base0/logs/effects-reached-control.log\n?? reports/scorecard/base0/logs/full-e2e-1600-r3.log\n?? reports/scorecard/base0/logs/full-e2e-1600.log\n?? reports/scorecard/base0/logs/full-r1/\n?? reports/scorecard/base0/logs/full-r2/\n?? reports/scorecard/base0/logs/full-r3/\n?? reports/scorecard/base0/logs/full-r4/\n?? reports/scorecard/base0/logs/full-r5/\n?? reports/scorecard/base0/logs/gated-hud-regression.log\n?? reports/scorecard/base0/logs/gated-hud-repeat10.log\n?? reports/scorecard/base0/logs/hud-contrast.log\n?? reports/scorecard/base0/logs/keyboard.log\n?? reports/scorecard/base0/logs/links-corrected.log\n?? reports/scorecard/base0/logs/live-baseline.log\n?? reports/scorecard/base0/logs/mutations/\n?? reports/scorecard/base0/logs/new-hud-browser.log\n?? reports/scorecard/base0/logs/public-config-build.log\n?? reports/scorecard/base0/logs/public-config-classic-smoke.log\n?? reports/scorecard/base0/logs/repeat-hud-10.log\n?? reports/scorecard/base0/logs/ui-audit-signed-in.log\n?? reports/scorecard/base0/logs/ui-audit.log\n?? reports/scorecard/base0/mutation-plan.md\n?? reports/scorecard/base0/preflight-review.md\n?? reports/scorecard/base0/public-config/\n?? reports/scorecard/base0/resume-accessibility-e68eee0/\n?? reports/scorecard/base0/resume-effects-e68eee0/\n?? reports/scorecard/base0/resume-gate-e68eee0/\n?? reports/scorecard/base0/resume-live-guest/\n?? reports/scorecard/base0/resume-mutations-e68eee0/\n?? reports/scorecard/base0/resume-public-e68eee0/\n?? reports/scorecard/base0/resume-repeats-e68eee0/\n?? reports/scorecard/base0/resume-ui-e68eee0/\n?? reports/scorecard/base0/screens/hud-1280.png\n?? reports/scorecard/base0/screens/hud-1600.png\n?? reports/scorecard/base0/screens/reference-home-1280.png\n?? reports/scorecard/base0/screens/reference-home-1600.png",
+        "role": "Inspection/dependency source only; NOT claimed deployed head"
+      },
+      "deployment": {
+        "head": null,
+        "status": "UNVERIFIED",
+        "reason": "No trusted deployed commit metadata observed"
+      },
+      "identity": {
+        "finalUrl": "https://taskbarhero-eight.vercel.app/",
+        "htmlSha256": "c4251101040ea5114656ab33f7fd14b512d27f982865f10c6fc707a517792aa7",
+        "etag": "W/\"27128b1a12da3af6631f80d20015b3a5\"",
+        "vercelRequestId": "sin1::zwjhs-1793531670462-2b2b4113f28d",
+        "assets": [
+          "/assets/index-DKnyrYRP.js"
+        ]
+      },
+      "startedAt": "2026-11-01T11:14:30.394Z",
+      "endedAt": "2026-11-01T11:15:01.657Z",
+      "judgeBudgetMs": 180000,
+      "screenshotBytes": 469981,
+      "screenshots": 7,
+      "errors": [],
+      "responses": [
+        {
+          "url": "https://taskbarhero-eight.vercel.app/",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/index-BmB6Vb4r.css",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/combat-COPl1OEP.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/index-DKnyrYRP.js",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/assets-Db_kdfqd.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/StageScene-BFB-85Ky.js",
+          "status": 200
+        },
+        {
+          "url": "https://taskbarhero-eight.vercel.app/assets/phaser-CS_hOpYn.js",
+          "status": 200
+        }
+      ],
+      "events": [],
+      "transactionsPerformed": 0,
+      "guestOnly": true
+    }
+  ],
+  "command": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/judge-path.mjs",
+      "both"
+    ],
+    "env": {
+      "REPO_DEP_PATH": "/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero",
+      "BASE_URL": "https://taskbarhero-eight.vercel.app/",
+      "EVIDENCE_DIR": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXQ1-DEMO-PATH/evidence/live-phased-r2"
+    },
+    "startedAt": "2026-11-01T11:13:58.500Z"
+  },
+  "exitCode": 0
+}

@@ -73,3 +73,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - BASE0currentproof publishedc388d57; exacthead5db4949. G1-G7builderchecks complete; two independent grades stillrequired. Latest research directive captured inreference-usage andcast-observations.
 
 - 2026-11-01T18:43:31+07:00: BASE0 independent graders A/B launched on unchanged 5db4949, isolated ports 4420–4424 / 4430–4434. Candidate remains immutable while grading; no formal score or merge. Latest research requirement remains in source usage and priority cards.
+
+- 2026-11-01T18:51:49+07:00: read-only public artifact baseline matches current main across31files; candidate5db4949 differs as expected. Provider commit metadata unobserved. Both independent graders remain active; no merge.

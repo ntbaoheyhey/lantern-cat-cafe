@@ -13,3 +13,5 @@ The user approved P1coverage of mergedcore followed by QA/material updates for l
 User-supplied crawl/liveTBHIndex now explicitly informs skill/equipment parameters and castVFX decisions. Source observations and provenance/confidence rules are in reference-usage-2026-11-01.md and reference-cast-observations-2026-11-01.json. Preserve originalcontent and derive projectbalance with tests; screenshot-reconstructedclip duration is not native skill timing.
 
 No main push, Actions, contract/backend release, live SQL write, wallet transaction, public-repo change or contest submission occurred. Current handoff records active state and next3actions. Optional user steps remain separate; noP0/P1 mergedmilestone is claimed.
+
+Public deployment content now matches the current main build across all31 emitted resources, paired with successful GitHub Vercel status for that SHA. Five controls and the actual unmerged-candidate negative control passed. Provider commit metadata remains unobserved; no postmerge result is claimed. Method/evidence: cards/DEPLOYMENT-IDENTITY/REPORT.md.

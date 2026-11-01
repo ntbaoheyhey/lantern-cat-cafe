@@ -10,6 +10,8 @@ Delivered screenshots are now limited to fewer than200KiB each and at most16 for
 
 # Recurring three-minute guest judge gate
 
+Deployment evidence update (2026-11-01): `../DEPLOYMENT-IDENTITY/REPORT.md` documents a clean-commit build comparison against every emitted public artifact, paired with successful GitHub Vercel status on the expected SHA. This supplements the metadata-only approach below. Report artifact equivalence separately from provider commit metadata; identical-content commits remain indistinguishable without provider metadata. A request ID or local checkout alone remains insufficient. Current baseline matches main artifacts but is not a postmerge certification.
+
 This is a strict postmerge P0/P1 gate, not a formal grade, full CXQ1, or transaction validation. Run once per viewport after **every** P0/P1 merge and deployment. Any FAIL, BLOCKED, SETUP_ERROR, incomplete viewport, or unverified deployment mapping stops further merges. Do not replace an unavailable stage with a weaker assertion, hash shortcut, injected fixture, saved state, sign-in, wallet connection, transaction, or source-code claim.
 
 ## Invocation
