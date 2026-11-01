@@ -1,0 +1,72 @@
+MUTANT: M2-starter-link
+FILE: entries.ts
+OLD: connect(cls.id, cls.starterWeaponId, 'starter weapon', 'starter for');
+NEW: <empty>
+$ pnpm exec vitest run src/v2/codex/entries.test.ts src/v2/codex/odds.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/mutant-tl5m1zaz/packages/game-rules
+
+ ❯ src/v2/codex/entries.test.ts (10 tests | 1 failed) 225ms
+   ❯ Compendium registry adapter (10)
+     × maps starter weapons, class families, chapter rosters and drop eligibility exactly 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2/codex/entries.test.ts > Compendium registry adapter > maps starter weapons, class families, chapter rosters and drop eligibility exactly
+AssertionError: expected [ { kind: 'gear', …(2) }, …(4) ] to deep equally contain { id: 'wpn.sword.twig', …(2) }
+
+- Expected:
+{
+  "id": "wpn.sword.twig",
+  "kind": "gear",
+  "rel": "starter weapon",
+}
+
++ Received:
+[
+  {
+    "id": "wpn.sword.twig",
+    "kind": "gear",
+    "rel": "class weapon",
+  },
+  {
+    "id": "wpn.sword.tin",
+    "kind": "gear",
+    "rel": "class weapon",
+  },
+  {
+    "id": "wpn.sword.silver",
+    "kind": "gear",
+    "rel": "class weapon",
+  },
+  {
+    "id": "wpn.sword.sunfang",
+    "kind": "gear",
+    "rel": "class weapon",
+  },
+  {
+    "id": "wpn.sword.ninelives",
+    "kind": "gear",
+    "rel": "class weapon",
+  },
+]
+
+ ❯ link src/v2/codex/entries.test.ts:16:29
+     14| }
+     15| const link = (from: string, to: string, rel: string) => {
+     16|   expect(entry(from).links).toContainEqual({ id: to, kind: entry(to).k…
+       |                             ^
+     17| };
+     18|
+ ❯ src/v2/codex/entries.test.ts:68:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 15 passed (16)
+   Start at  15:38:22
+   Duration  378ms (tests 62%, transform 28%, import 9%, worker 1%)
+
+
+EXIT: 1

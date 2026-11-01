@@ -1,0 +1,17 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero/supabase/tests
+
+stdout | src/live-schema.test.ts > all 17 expected objects are present with all migrations
+live-schema all migrations: 17/17 true
+
+stdout | src/live-schema.test.ts > only the seven newer objects are false through 20261102
+live-schema through 20261102: 10 true, 7 false
+
+ ✓ src/live-schema.test.ts > is one catalog-only inventory with no write keywords, even in comments 2ms
+ ✓ src/live-schema.test.ts > all 17 expected objects are present with all migrations 7ms
+ ✓ src/live-schema.test.ts > only the seven newer objects are false through 20261102 3ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  12:25:50
+   Duration  2.98s (tests 97%, import 1%, transform 1%)

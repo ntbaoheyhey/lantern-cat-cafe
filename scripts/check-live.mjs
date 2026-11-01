@@ -1,18 +1,52 @@
 #!/usr/bin/env node
 // Live health check for the deployed Taskbar Hero (docs/runbook.md). Dependency-free, Node 20+.
-// Read-only: GET requests, anonymous POSTs that must be refused, and eth_call on Fuji.
-// Usage: node scripts/check-live.mjs
+// --v2 is read-only: preflights and unsigned refusals. The default also issues a legacy auth nonce.
+// Usage: node scripts/check-live.mjs [--v2]
 // Optional overrides (names only): SITE_URL, SUPABASE_URL, FUJI_RPC_URL.
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = (process.env.SITE_URL || 'https://taskbarhero-eight.vercel.app').replace(/\/$/, '');
 const SUPABASE = (process.env.SUPABASE_URL || 'https://qoalewtxflagoprrxrgh.supabase.co').replace(/\/$/, '');
 const RPC = process.env.FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/rpc';
 const FUNCTIONS = ['auth-nonce', 'auth-verify', 'game-state', 'idle-claim', 'equip', 'boss-fight', 'upgrade', 'relic-forge', 'relic-mint-report'];
+export const V2_FUNCTIONS = ['v2-boss-fight', 'v2-choose-class', 'v2-claim', 'v2-craft', 'v2-equip', 'v2-lock', 'v2-relic-forge', 'v2-salvage', 'v2-state'];
 const TIMEOUT_MS = 15000;
+
+// Pure classifier: importing this module never starts a network check.
+export function classifyV2Response(kind, response, origin = SITE) {
+  if (response instanceof Error || !response) return { ok: false, detail: 'network error' };
+  const { status } = response;
+  if (status === 503) return { ok: false, detail: 'HTTP 503; budgets migration missing? Check 20261104000000_v2_request_budgets.sql and function logs.' };
+  if (kind === 'options') {
+    const allowedOrigin = response.headers.get('access-control-allow-origin');
+    const methods = (response.headers.get('access-control-allow-methods') || '').split(',').map(s => s.trim().toUpperCase());
+    const headers = (response.headers.get('access-control-allow-headers') || '').split(',').map(s => s.trim().toLowerCase());
+    const ok = status >= 200 && status < 300 && allowedOrigin === origin && methods.includes('POST') && headers.includes('content-type');
+    return { ok, detail: `HTTP ${status}${ok ? ', CORS allows origin, POST and content-type' : '; expected 2xx with CORS allowing origin, POST and content-type'}` };
+  }
+  const ok = kind === 'anonymous' ? status === 401 : [400, 413].includes(status);
+  return { ok, detail: `HTTP ${status}${ok ? '' : kind === 'anonymous' ? '; expected 401' : '; expected 413 or 400 (authentication may run before body validation)'}` };
+}
+
+export async function checkV2(fetcher = fetchT) {
+  for (const fn of V2_FUNCTIONS) {
+    for (const kind of ['options', 'anonymous', 'oversized']) {
+      await check(`function ${fn} ${kind}`, async () => {
+        const headers = { Origin: SITE };
+        const init = kind === 'options'
+          ? { method: 'OPTIONS', headers: { ...headers, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' } }
+          : { method: 'POST', headers: { ...headers, 'content-type': 'application/json' }, body: kind === 'oversized' ? JSON.stringify({ padding: 'x'.repeat(8193) }) : '{}' };
+        // No Authorization, apikey, session, .env or credential is read or sent.
+        const result = classifyV2Response(kind, await fetcher(`${SUPABASE}/functions/v1/${fn}`, init));
+        if (!result.ok) throw new Error(result.detail);
+        return result.detail;
+      });
+    }
+  }
+}
 
 // Contract addresses come from README.md (the "On-chain" table), the public record of the deployment.
 const readme = readFileSync(join(root, 'README.md'), 'utf8');
@@ -57,8 +91,11 @@ const decodeString = (hex) => {
   return Buffer.from(hex.slice(2 + 128, 2 + 128 + len * 2), 'hex').toString('utf8');
 };
 
+async function main() {
 console.log(`Site ${SITE}\nSupabase ${SUPABASE}\nFuji RPC ${RPC}\n`);
 
+await checkV2();
+if (!process.argv.includes('--v2')) {
 // 1. Web app
 await check('site loads', async () => {
   const res = await fetchT(`${SITE}/`);
@@ -140,5 +177,9 @@ if (nft && market) {
   });
 }
 
+}
 console.log(`\n${failed === 0 ? 'ALL CHECKS PASSED' : `${failed} CHECK(S) FAILED`}`);
-process.exit(failed === 0 ? 0 : 1);
+process.exitCode = failed === 0 ? 0 : 1;
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

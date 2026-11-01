@@ -20,6 +20,9 @@ const pairs: [string, string, number][] = [
   ['--text', '--bg', 4.5], ['--text', '--surface', 4.5],
   ['--text', '--surface-2', 4.5], ['--text', '--surface-3', 4.5],
   ['--muted', '--bg', 4.5], ['--muted', '--surface', 4.5],
+  ['--muted', '--surface-2', 4.5],
+  // XP fill is a graphical indicator, so WCAG non-text contrast is 3:1.
+  ['--good', '--surface-2', 3],
   ['--on-accent', '--accent', 4.5], ['--border', '--bg', 3],
   // CXU4: selected Help topic, toast text and modal/button focus outlines.
   ['--accent', '--surface', 4.5], ['--muted', '--surface-2', 4.5],

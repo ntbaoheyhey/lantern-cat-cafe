@@ -6,7 +6,6 @@ import path from 'node:path';
 
 declare global { interface Window { __g1Loop: GameLoopV2; __g1Timing: { start: number; pending: number | null; paint: number | null; events: { name: string; duration: number; inputDelay: number }[] } } }
 const MOCK_V2_STORAGE_KEY = fs.readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
-const report = path.resolve('../../reports/g1-speed/metrics.json');
 
 async function feedback(page: Page, button: Locator) {
   await page.evaluate(() => {
@@ -97,6 +96,8 @@ test('G1 demo action feedback, resize lifecycle and three plain claims', async (
   await page.getByRole('tab', { name: 'Map', exact: true }).or(page.getByRole('tab', { name: 'Boss', exact: true })).click();
   const fight = await feedback(page, page.getByRole('button', { name: 'Fight', exact: true }));
   const entry = { before, after, plainClaimRebuilds: rebuilds, feedback: { equip, craft, fight }, visibility: 'synthetic hidden/visible events, including resize while paused' };
+  const report = process.env.REPORT_DIR
+    ? path.resolve(process.env.REPORT_DIR, 'metrics.json') : test.info().outputPath('metrics.json');
   fs.mkdirSync(path.dirname(report), { recursive: true });
   const existing = fs.existsSync(report) ? JSON.parse(fs.readFileSync(report, 'utf8')) : {};
   const phase = process.env.G1_BASELINE === '1' ? 'baseline' : 'after';

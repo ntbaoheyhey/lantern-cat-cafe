@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/apps/web
+> vitest run -- src/layout/boss src/layout/bossPresentation.test.ts src/map/ChapterMap.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/apps/web
+
+
+ Test Files  111 passed (111)
+      Tests  1303 passed (1303)
+   Start at  16:41:30
+   Duration  15.11s (environment 45%, tests 39%, import 10%, transform 6%)
+
+Environment  jsdom was created 111 times · 54.45s total, 45% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

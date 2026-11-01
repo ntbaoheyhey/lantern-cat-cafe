@@ -1,0 +1,19 @@
+UTC 2026-11-01T08:07:09.896776+00:00
+base=1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
+$ node scripts/check-links.mjs --json
+{
+  "totalFilesChecked": 67,
+  "totalLinksChecked": 807,
+  "brokenCount": 1,
+  "brokenItems": [
+    {
+      "file": "docs/proposals/rune-skill-system/README.md",
+      "line": 4,
+      "type": "backticked repo path",
+      "raw": "docs/proposals/tbh-index-research/",
+      "resolved": "docs/proposals/tbh-index-research"
+    }
+  ]
+}
+
+EXIT_CODE=1
