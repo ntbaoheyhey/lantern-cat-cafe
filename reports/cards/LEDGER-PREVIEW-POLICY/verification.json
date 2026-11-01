@@ -1,0 +1,43 @@
+{
+  "observedAt": "2026-11-02T01:01:08+07:00",
+  "branch": "ai/codex-mega-ledger",
+  "config": "apps/web/vercel.json",
+  "rule": {
+    "deploymentEnabled": {
+      "ai/codex-mega-ledger": false
+    }
+  },
+  "beforeSha256": "cfcaca6806f912f491fb24ca0678499022eaca4c784fb36d0fb42039179c0b38",
+  "afterSha256": "91931e54fef55cef30d1825687418bec391bf75ac7187558997f3987d40faacc",
+  "otherConfigBytesPreserved": true,
+  "base0ConfigUnchanged": true,
+  "base0Head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "mainUntouched": true,
+  "accountSettingsChanged": false,
+  "liveHeaderChecks": [
+    {
+      "url": "https://taskbarhero-eight.vercel.app",
+      "status": 200,
+      "expectedHeaderMatches": {
+        "Content-Security-Policy": true,
+        "X-Content-Type-Options": true,
+        "Referrer-Policy": true,
+        "Permissions-Policy": true,
+        "X-Frame-Options": true
+      }
+    },
+    {
+      "url": "https://taskbar-hero-six.vercel.app",
+      "status": 200,
+      "expectedHeaderMatches": {
+        "Content-Security-Policy": true,
+        "X-Content-Type-Options": true,
+        "Referrer-Policy": true,
+        "Permissions-Policy": true,
+        "X-Frame-Options": true
+      }
+    }
+  ],
+  "providerEnforcement": "NOT_YET_OBSERVED; existing quota is not cleared by this policy",
+  "documentation": "https://vercel.com/docs/project-configuration/git-configuration"
+}

@@ -2,7 +2,7 @@
 
 **ACTIVE: explicitly resumed2026-11-01.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
-Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
+Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -107,3 +107,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-02T00:07:07+07:00: CXU4 successorpreflightb06a68dpassed58units,200browser repeats,10effects eachsize,webtype andbaselineoracle. R1omittedfixture failure preserved. Original30sourcefiles committed locallyd408ada,notpushed;dirtyhistoricalreports preserved. Verifiedsource/integrationbundles. Allownedpipelines stopped,portsreleased; BASE0deploymenthold andfullmissiongates unchanged.
 
 - 2026-11-02T00:20:19+07:00: CXN3-FIX read-only diagnosis found oversized401 and a fresh state timeout; boss timeout not reproduced. MetadataACTIVE and partialsourcehashes do not prove full health/identity. CLI unsafe-extraction refusal respected. InsertFIXafterART1beforeCXN3 to satisfy mandatorylivegate; preserves preparedrelativeorder and everygate. No productionchanges.
+
+- 2026-11-02T01:02:46+07:00: ledger maintenance adds exact-branch git.deploymentEnabled=false to avoid unnecessary checkpoint preview requests. All other config/security headers and gradedBASE0source unchanged. JSON/structural checks pass; bothlive HEAD headers match existingconfig. This does not reset quota or waive merge gates; source rule remains scoped to ledger. No independent game-item score is claimed.

@@ -2,10 +2,10 @@
 
 STATUS: IN-PROGRESS
 
-## Current checkpoint — 2026-11-02T00:07:07+07:00
-BASE0 remains score-PASS on280ff4b: independentA97.64285714285714/B98, allfloors/zeroautofails,no thirdrequired. Both immutable grade deliveries are published and PR246body links them. Main1fb25ed is unchanged; PR246draft/unmerged. Vercel's recorded quota hold remains unresolved; no deploymentattempt,backendrelease orlivewrite.
-Coordinator completed scoped prospectiveintegration checks forFXRB,CXP1,CXL1,ART1,CXN3,CXU5,CXU4. These do not replace any full actual-main/independentgrade/postmerge/livegate. CXU4 successor b06a68dpassed58units,200browser repeats,10effects eachdesktopsize,typecheck andan independentHelp-oracle check. Its firstmissingfixture setupfailure is retained; no test/expectedstring was weakened.
-CXU4's30savedsourcefiles are now committed locally onai/codex-cxu4 asd408ada,notpushed/PRpending. Originalsourcebytes anddirtyhistoricalreports are preserved. Two verifiedlocal recoverybundles pluscheckpoint snapshots protect the work. Allownedpipelines/workers are stopped andports released. Nextsafe work isread-only diagnosis ofCXN3's knownlivefindings andsource/release dependency, whileBASE0deploymentavailability remains unresolved.
+## Current checkpoint — 2026-11-02T01:02:46+07:00
+BASE0 remains on280ff4b with independent scores97.64285714285714 and98; every floor passes and no third grader is required. Both grades are published. Main1fb25ed is unchanged, PR246 remains draft, and the last provider recheck still shows the deployment quota hold. No mission PR has merged.
+All seven prepared items have scoped integration evidence. CXU4 source is saved locally asd408ada and has verified recovery bundles; full actual-main gates, independent grades and PR publication remain pending. CXN3-FIX has bounded read-only diagnosis and now precedes CXN3 to satisfy the latter's mandatory live gate; no repair or backend release has been performed.
+The checkpoint schedule is ACTIVE every30minutes per the latest user request, with immediate milestone saves. Helpers and agents are limited; none is currently running. A ledger-only deploymentEnabled rule now avoids unnecessary preview requests for the report branch according to Vercel's documented configuration. Other config and the graded BASE0 commit remain unchanged. This rule does not reset the existing quota or certify provider enforcement before observation.
 
 ## Historical progress (older candidates and running states)
 
@@ -70,3 +70,5 @@ CXU4 recovery milestone 2026-11-02T00:07:07+07:00: b06a68dpreflight passes after
 CXN3-FIX diagnosis 2026-11-02T00:20:19+07:00: bounded5request sample3PASS/2FAIL, no credentials/session/nonce/game action. Boss small401 nowresponds; oversized401 persists; stateoversize timedout. Allv2functionsACTIVE; export stopped at CLI unsafe-path guard, with onlyentrypoint/server byte-matches available. Full sourceidentity/timeoutcause unresolved. Scheduling insertsFIXbeforeCXN3 as necessarylivegate dependency, retaining preparedrelativeorder; implementation/release remains pending.
 
 Checkpoint 2026-11-02T00:58:42+07:00: user restored the schedule to30minutes after a temporary15minute change; existing ACTIVE automation updated in place and persisted settings verified. Helpers/subagents remain limited. Read-only Vercel UI confirms authenticated access and two connected Taskbar projects; monthly build figures do not establish quota reset. Both status contexts remain failure at00:40UTC+7. No deploy, merge or configuration change. Ledger-only preview suppression is being evaluated, not claimed implemented.
+
+Ledger preview maintenance 2026-11-02T01:02:46+07:00: added only the exact ledger branch rule, preserved all existing configuration, and checked public security-header equivalence on both Taskbar hosts. No source build rerun was needed for this configuration-only maintenance; no product grade, deployment success or quota reset is claimed.

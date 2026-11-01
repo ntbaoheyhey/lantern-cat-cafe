@@ -1,5 +1,5 @@
 # Runtime — ACTIVE mission
-Updated 2026-11-02T00:58:42+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
+Updated 2026-11-02T01:02:46+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
 - No nativeworker or coordinatorpipeline active. CXU4 runner43392finished;temporarycheckoutclean;4440–4454released. Original CXU4/CXU5 historical dirty evidence preserved.
 - BASE0 independentA97.64285714285714/B98 pass everyfloor,zeroautofails,no thirdneeded. PublishedA72c0b0b,Bbeb4a99,receiptb500246. PR246bodyupdated,staysdraft because Vercelquota statusesfailureatlastread-onlycheck2026-11-01T23:29UTC+7. Exactresetunknown; no deploymentattempt/bypass.
 - Preliminaryqueue integration heads:FXRB7023a2d,CXP19d012ce,CXL17731a65,ART121fc7dd,CXN3cd274ab,CXU56bf7b13,CXU4b06a68d. EachcardREPORT states limitedchecks and cleanup; never substitutes for actual-main/fullgate/independentgrade/live proof.
@@ -11,3 +11,5 @@ Updated 2026-11-02T00:58:42+07:00. Main1fb25ed/candidate280ff4b unchanged; no mi
 
 - Latest user scheduling preference: existing heartbeat restored to ACTIVE30minutes, with immediate milestone checkpoints. Limit helpers as well as agents. No extra helper process created.
 - Read-only Vercel dashboard access is available; monthly usage is not current daily quota proof. Both GitHub contexts still fail at00:40UTC+7. Ledger-only deploymentEnabled policy researched but NOT applied; graded source and provider settings unchanged.
+
+- Ledger-only preview policy added in apps/web/vercel.json: exact ai/codex-mega-ledger=false, all other config preserved. Public HEAD requests to both Taskbar sites return200 and match all five existing security headers. No product source/account/env change. Provider enforcement and current quota reset are not certified; BASE0 hold remains.

@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-02T00:58:42+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, game-state write, wallet transaction or submission.
+Updated 2026-11-02T01:02:46+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, game-state write, wallet transaction or submission.
 Authoritative worktree /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Old Documents checkout and historical dirty evidence must be preserved.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; immutable candidate PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 BASE0 source repairs SceneManager readiness destruction race, deterministic browser-fixture clock origin, unused compact prop/duplicate CSS, inherited Deno/HUD/harness failures. Completed coordinator report: cards/BASE0-VERIFY-R2/REPORT.md.
@@ -32,6 +32,6 @@ CXU4 recoverybundles: /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxu4-i
 CXN3-FIX read-onlydiagnosis:5freshprobes3PASS/2FAIL;boss now401small/401oversize,bossOPTIONS204;state small401/oversize15stimeout. All9functionsACTIVE;nothealthproof. CLIexportsrefusedUnsafeFunctionDownloadPathError atmonorepopackagepath,no bypass;onlyentrypoint/server partialhashmatches,HTTPdeployedsourceunknown. Decision insertsFIXbeforeCXN3,retains preparedrelativeorder. See CXN3-FIX/DIAGNOSIS.md.
 Vercel read-only UI: authenticated Hobby dashboard accessible; two Taskbar projects and ledger PR241 preview entries visible. Last30day BuildTime4h/100h and667completed/3errored builds do not establish currentdaily allowance/reset. GitHub recheck2026-11-02T00:40 stillbothfailure. Exactreset unknown; no deploy/settings change. Old temporary browser tabs may have expired.
 Next3actions:
-1. CXU4 R2 proof published5599dff; CXN3-FIX diagnosis/decision47cebd2. Bdeliverybeb4a99/receiptb500246; PR246bodycurrent/stilldraft. Scheduler is ACTIVE30minutes again by latestuserrequest, milestones immediate. Limit helpers and agents; no active worker/test pipeline.
-2. Investigate a ledger-only Vercel git.deploymentEnabled rule using official Git Configuration docs and existing apps/web/vercel.json. It has ignoreCommand but no deploymentEnabled rule. No config change applied yet. Preserve BASE0 SHA and all headers/main behavior; no account upgrade or quota bypass.
+1. Publish the ledger preview-policy maintenance and save snapshot. CXU4proof5599dff, CXN3-FIXdiagnosis47cebd2, Bdeliverybeb4a99/receiptb500246 are published. SchedulerACTIVE30minutes, milestone saves immediate. Limit helpers/agents; no active worker or test pipeline.
+2. Ledger-only apps/web/vercel.json now adds git.deploymentEnabled[ai/codex-mega-ledger]=false. Other config and BASE0 bytes are unchanged; primary/secondary live HEAD headers match existing config. Rule is included in this checkpoint; provider enforcement pending, quota NOT reset. See LEDGER-PREVIEW-POLICY/REPORT.md, including CXN3 doc follow-ups.
 3. Once deploymentcapacity is demonstrably available,recheckcurrentrefs,G1–G7/publication; onlythen ready/merge246 and freshmain/live before any latermerge.
