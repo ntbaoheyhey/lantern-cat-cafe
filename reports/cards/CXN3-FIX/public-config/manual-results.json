@@ -1,0 +1,31 @@
+{
+  "head": "a9b804cec74c866b0b06ca69142d10db3b642a75",
+  "recordedAt": "2026-11-02T03:37:13+07:00",
+  "method": "Coordinator directly built observed public configuration and operated the loopback previews through CUA. No helper runner or subagent.",
+  "cases": [
+    { "flag": 0, "target": "http://127.0.0.1:4490/", "viewport": [1280,720], "steps": ["fresh How to play", "Start playing", "guest home"], "visibleCanvases": 1, "v2Marker": 0, "consoleErrorsObserved": [], "result": "PASS_MANUAL_GUEST_UI" },
+    { "flag": 0, "target": "http://localhost:4491/", "viewport": [1600,900], "steps": ["fresh How to play", "Start playing", "guest home"], "visibleCanvases": 1, "v2Marker": 0, "consoleErrorsObserved": [], "result": "PASS_MANUAL_GUEST_UI" },
+    { "flag": 1, "target": "http://127.0.0.1:4492/", "viewport": [1280,720], "steps": ["fresh How to play", "Start playing", "Start Adventure as Warrior", "Confirm class switch", "Home"], "visibleCanvases": 1, "v2Marker": 1, "consoleErrorsObserved": [], "result": "PASS_MANUAL_GUEST_UI" },
+    { "flag": 1, "target": "http://127.0.0.1:4493/", "viewport": [1600,900], "steps": ["fresh How to play", "Start playing", "Start Adventure as Warrior", "Confirm class switch", "Home"], "visibleCanvases": 1, "v2Marker": 1, "consoleErrorsObserved": [], "result": "PASS_MANUAL_GUEST_UI" }
+  ],
+  "keyboard": {
+    "viewports": [[1280,720],[1600,900]],
+    "key": "ArrowRight",
+    "visited": ["Bag","Map","Forge","Market","Hero","Help","Home"],
+    "eachSelectedTabFocusAndVisiblePanelVerified": true,
+    "consoleErrorsObserved": []
+  },
+  "readOnlyBasis": [
+    "Fresh tabs/origins; no wallet or sign-in action performed.",
+    "wallet/session.ts uses tab-scoped sessionStorage; ApiSwitch and ApiSwitchV2 choose cached demo APIs when no session token exists, even with public backend configuration present.",
+    "VITE_ALLOW_MOCK_AUTH=0 in both production builds; no authenticated session was created."
+  ],
+  "networkInterceptionUsed": false,
+  "networkWriteCountMeasured": false,
+  "limitations": "Manual UI/console observation and reviewed guest-mode routing, not a new instrumented network trace or proof that the HTTP repair is deployed. No backend release, wallet transaction or sign-in.",
+  "setupCorrections": [
+    "A requested1600 override set before creating one tab left its actual viewport1280x720. That observation was excluded from1600 certification; a fresh origin was used and1600x900 measured before actions.",
+    "One stale accessibility index after modal removal was rejected before action; a fresh state and current control were used. No app assertion was bypassed."
+  ],
+  "cleanup": { "ownedTabsClosed": true, "viewportOverrideReset": true, "previewPorts4490to4493Free": true }
+}
