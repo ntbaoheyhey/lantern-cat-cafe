@@ -23,12 +23,12 @@ Adapted from [C3's checklist](../reports/C3.md#go--no-go-checklist):
 
 - [ ] Freeze merges and record the release commit from `origin/main`; no open blocker PRs.
 - [ ] Local checks green at that commit: install, Deno drift/import guard, typecheck, lint, unit
-  tests, build, classic and v2 browser tests. For an existing PR use `scripts/verify-pr.sh`
-  without `--comment`; do not spend Actions minutes for verification. Create and push an RC tag
+  tests, build, classic and v2 browser tests. For an existing PR run
+  `bash scripts/verify-pr.sh <release-pr-number>` without `--comment`; do not spend Actions
+  minutes for verification. Create and push an RC tag
   for that verified commit, using `git tag -a rc-v29-YYYYMMDD -m "v2 release candidate" <commit>`
   then `git push origin rc-v29-YYYYMMDD` (replace date and commit).
 - [ ] `node scripts/rehearse-cutover.mjs` passes locally on the release commit, without secrets.
-  Its historical Founder-unavailable result is expected; it is not a missing launch step.
 - [ ] User confirms the approved balance sign-off in [numbers-v2.md](proposals/numbers-v2.md).
 - [ ] User takes a backup (`supabase db dump --data-only -f <outside-repo-backup.sql>`) and stores
   it securely outside the repository; include classic, v2, integrity and shared Relic tables.
@@ -62,9 +62,9 @@ this order, then run the catalog query again. Do not replay an already-recorded 
 
 Run `node scripts/check-deno-imports.mjs` first, from the release checkout. Stop if it fails.
 Use the existing Supabase CLI login on the user's machine; never paste a token into a command log.
-The [deployment reference](deploy.md#edge-functions) links here. `deploy.md` previously contained
-only contract commands; this is the existing function workflow command with its public variables
-expanded, preserving `--use-api --no-verify-jwt` and all 18 function names:
+The [deployment reference](deploy.md#edge-functions) links here. This is the existing function
+workflow command with its public variables expanded, preserving `--use-api --no-verify-jwt`
+and all 18 function names:
 
 ```sh
 node scripts/check-deno-imports.mjs
