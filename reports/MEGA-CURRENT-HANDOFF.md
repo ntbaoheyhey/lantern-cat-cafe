@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-01T23:00:20+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
+Updated 2026-11-01T23:04:57+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, live write, wallet transaction or submission.
 Authoritative worktree /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Old Documents checkout and historical dirty evidence must be preserved.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; immutable candidate PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 BASE0 source repairs SceneManager readiness destruction race, deterministic browser-fixture clock origin, unused compact prop/duplicate CSS, inherited Deno/HUD/harness failures. Completed coordinator report: cards/BASE0-VERIFY-R2/REPORT.md.
@@ -23,7 +23,8 @@ Rules: coordinator does work/handoffs; fewagents,max2or1after429; AstraUltra/pri
 Checkpoint after milestones and at least30minutes; handoff<=80lines; publish ledger and run /Users/bao/.codex/handoffs/taskbar-hero/reliability/checkpoint.py. Never delegate handoff.
 Auto-compact64000/total configured; effective runtime threshold unverified. Handoff saving is not compact. No CodexUI bypass/transcript edits/newchat. Do not rehydrate180KBstate.
 CXP1 preliminary integration9d012ce/treea22f271:34units/80petbrowser repeats,webtype/Deno pass.17merge conflicts resolved in temporary checkout only(16generatedmaps+decisionindex). ActualpublishedCXP1head64cf350; localbranch6b06574is stale. No productbranch moved; clean checkout/4440–4444free. Card CXP1-PREFLIGHT-R1.
+CXL1 preliminary integration7731a65/tree0de38c5:402rules passed,2expectedfails/11skips unchangedfromBASE0;1petisolation;webtype/Deno/v2build passed. Zero mergeconflicts;16maps gain6Codexaliases each preservingparents. Cleanworktree/4440–4444free. Card CXL1-PREFLIGHT-R1.
 Next3actions:
-1. A grade published72c0b0b; immutable140file receipt in BASE0-MERGE-GATE/grade-a-publication.json. Publish CXP1preflight/checkpoint and snapshot.
-2. Let recoveryB finish independently; coordinator can prepare CXL1 next, preserving serialgates and unchangedBASE0. Inspect runtime before any retry.
+1. A grade published72c0b0b; immutable140file receipt in BASE0-MERGE-GATE/grade-a-publication.json. CXP1preflight published3a059c6; publish CXL1preflight/checkpoint and snapshot.
+2. Let recoveryB finish independently; coordinator can prepare ART1 next, preserving serialgates and unchangedBASE0. Inspect runtime before any retry.
 3. Evaluate actual B grade/allfloors/disagreement, currentrefs and deploymentavailability; only then ready/merge246 and freshmain/live before latermerge.

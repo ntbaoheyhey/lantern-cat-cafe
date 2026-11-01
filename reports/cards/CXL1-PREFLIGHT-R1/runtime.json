@@ -1,0 +1,41 @@
+{
+  "owner": "coordinator",
+  "pid": 31329,
+  "status": "DONE_PRELIMINARY_PASS",
+  "head": "7731a65ca35ee2b3b388dca1c266c688f06a84c0",
+  "worktree": "/Users/bao/.codex/worktrees/mega-cxl1-preflight-280ff4b/taskbar-hero",
+  "ports": [
+    4440,
+    4441,
+    4442,
+    4443,
+    4444
+  ],
+  "updated_at": "2026-11-01T23:04:24+07:00",
+  "checks": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "rules-all",
+      "exit": 0
+    },
+    {
+      "name": "pets-isolation",
+      "exit": 0
+    },
+    {
+      "name": "web-typecheck",
+      "exit": 0
+    },
+    {
+      "name": "deno-resolution",
+      "exit": 0
+    },
+    {
+      "name": "v2-build",
+      "exit": 0
+    }
+  ]
+}

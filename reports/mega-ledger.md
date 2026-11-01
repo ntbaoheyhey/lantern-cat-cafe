@@ -10,8 +10,8 @@ Updated 2026-11-01. Current authority: [mission](mega-mission.md); [task cards](
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Targeted build evidence complete; full gates pending | Reuse existing branch/PR; fresh gates required |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
-| 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
-| 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | Preliminary9d012ce:34units/80browser repeats | Actual-main full gates and grades pending |
+| 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
 | 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 8 | CXU5 | main | ai/codex-cxu5 | https://github.com/ntbaoheyhey/taskbar-hero/pull/249 | IN-PROGRESS | 0 | a49906e/c5b846e;257pass/3fail eachsize | Worker stopped; evidence dirty, backed up |
@@ -91,3 +91,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - 2026-11-01T22:50:31+07:00: BASE0 repaired-head A PASS97.64285714285714, allfloors/zeroautofails;140deliveryfiles verified. Original B interrupted/ungraded and allpipelines stopped; freshrecoveryB active on4450–4454. Deploymentquota hold persists; no merge. FXRB preliminary7023a2d24units/120repeats passed; actualmain gates pending.
 
 - 2026-11-01T23:00:20+07:00: CXP1 prospective integration9d012ce passed34units,80browser repeat10 cases,webtypecheck,Deno/drift. Resolved16generatedmap+1decisionindexconflicts without moving productbranches. Actualremote64cf350; localbranch6b06574stale. Clean temporarycheckout and4440–4444free. Fullgates/grades after actualmain remain pending.
+
+- 2026-11-01T23:04:57+07:00: CXL1 prospectiveintegration7731a65passed402rules pluspetisolation1,type/Deno/v2build.2expectedfail/11skipped are unchanged fromBASE0; no newskip.16maps regenerated with6Codexaliases each. No branchmovement/fullgate/grade/merge/live claim.
