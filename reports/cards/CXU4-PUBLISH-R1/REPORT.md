@@ -2,7 +2,7 @@ STATUS: IN-PROGRESS
 
 # CXU4 source publication verification
 
-Observed 2026-11-02T08:00:52+07:00. Source/head d408ada368a05c078dcd97bbd61f4e4b1dbc238b; branch ai/codex-cxu4; base1fb25ed. The branch was absent remotely and no existing CXU4 PR was found before publication. A normal non-force push succeeded, and git ls-remote returned the exact source head. Required author/suffix and30-file diff were checked. Historical untracked reports/media in the original checkout were preserved; no blanket stage or cleanup.
+Observed 2026-11-02T08:00:52+07:00. Source/head d408ada368a05c078dcd97bbd61f4e4b1dbc238b; branch ai/codex-cxu4; base1fb25ed. The branch was absent remotely and no existing CXU4 PR was found before publication. DraftPR251 was created2026-11-02T08:01:18+07:00 and a later read confirms open/draft/mergeable on main1fb25ed. A normal non-force push succeeded, and git ls-remote returned the exact source head. Required author/suffix and30-file diff were checked. Historical untracked reports/media in the original checkout were preserved; no blanket stage or cleanup.
 
 Fresh direct verification checkout: /Users/bao/.codex/worktrees/mega-cxu4-verify-d408ada/taskbar-hero, retained clean. Frozen install exit0. Focused units exit0:9files/56tests. Onboarding exit0:2files/19tests. All commands, exact head and raw-log SHA256 values are in result.json. No browser/preview ports were started, no helper or subagent used, and no process remains active.
 

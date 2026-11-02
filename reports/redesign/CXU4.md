@@ -2,7 +2,7 @@ STATUS: IN-PROGRESS
 
 # CXU4 — Hero, Help and shared UI states
 
-Source d408ada368a05c078dcd97bbd61f4e4b1dbc238b is now published on ai/codex-cxu4, based on main1fb25ed. Its30-file scope is unchanged from the saved implementation; the original untracked reports and media remain preserved. Draft publication is preparation, not a merge or grade.
+Source d408ada368a05c078dcd97bbd61f4e4b1dbc238b is now published on ai/codex-cxu4, based on main1fb25ed. Its30-file scope is unchanged from the saved implementation; the original untracked reports and media remain preserved. Draft [PR #251](https://github.com/ntbaoheyhey/taskbar-hero/pull/251) is open and mergeable on a fresh metadata read; this is preparation, not a merge or grade.
 
 Hero uses the existing cat art, nine equipment slots, state-derived stats, an additive level/gear/bonus power breakdown, XP and the existing class action. Help keeps the six-topic answer inventory and classic content while adding search and one active answer pane. Typed additional-tab hosts prepare Hero/Help for later cards without adding rail items. Shared UI exports controlled modals, confirmation, toasts, banners, empty states and tabs. Other dialog migrations remain assigned to CXR2. No gameplay, backend, dependency, contract, flag or asset changes.
 
@@ -39,4 +39,4 @@ Tier2 changes connect the Hero host and existing class callback in StageLayout, 
 
 No score is assigned. Actual-main integration after preceding queued items, full G1–G7, current mutations, independent reviews, merge, deployment identity and live path remain incomplete. The latest user instruction prohibits new subagents/helpers; coordinator checks are not independent grading. No optional user action is required merely to publish this draft.
 
-Branch ai/codex-cxu4; merge NONE; PR pending; report reports/redesign/CXU4.md on the ledger branch; STATUS: IN-PROGRESS.
+Branch ai/codex-cxu4; merge NONE; PR https://github.com/ntbaoheyhey/taskbar-hero/pull/251; report reports/redesign/CXU4.md on the ledger branch; STATUS: IN-PROGRESS.

@@ -12,7 +12,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | Preliminary9d012ce:34units/80browser repeats | Actual-main full gates and grades pending |
 | 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
-| 6 | CXU4 | main | ai/codex-cxu4 | — | IN-PROGRESS | 0 | Preliminaryb06a68d:58unit/200browser/effects20/type | Publishedd408ada:56focused+19onboarding PASS;draftPR/fullgates/grades pending;R1failure retained |
+| 6 | CXU4 | main | ai/codex-cxu4 | https://github.com/ntbaoheyhey/taskbar-hero/pull/251 | DRAFT / SCOPED SOURCE CHECKS | 0 | Preliminaryb06a68d:58unit/200browser/effects20/type | Publishedd408ada:56focused+19onboarding PASS;draftPR251created;fullgates/grades pending;R1failure retained |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 8 | CXU5 | main | ai/codex-cxu5 | https://github.com/ntbaoheyhey/taskbar-hero/pull/249 | IN-PROGRESS | 0 | Preliminary6bf7b13:80browser repeats;focused units/webtype | Original dirty evidence preserved; full actual-main gates/grades pending |
 | 9 | CXC2 | main | ai/codex-cxc2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
@@ -33,7 +33,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 
-| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | https://github.com/ntbaoheyhey/taskbar-hero/pull/250 | DRAFT / LOCAL GATES PASSED | 0 | a9b804:core/build/G3,6mutants,full274each,repeats90each,audits/effects/manualG5/keyboard/contrast PASS | Wrapper exit0 incl274browser; published unchanged; never merge into BASE0; review,actualmain/release/live pending; no independent score |
+| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | https://github.com/ntbaoheyhey/taskbar-hero/pull/250 | DRAFT / VERIFIER PASS | 0 | a9b804:core/build/G3,6mutants,full274each,repeats90each,audits/effects/manualG5/keyboard/contrast PASS | Wrapper exit0 incl274browser; published unchanged; never merge into BASE0; review,actualmain/release/live pending; no independent score |
 | 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
 
 ## Corrections and scheduling decisions
