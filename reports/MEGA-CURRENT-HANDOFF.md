@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE
-Updated 2026-11-02T08:28:53+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, game-state write, wallet transaction or submission.
+Updated 2026-11-02T08:29:24+07:00. Goal active; coordinator owns checkpoints. No mission PR merged, backend release, game-state write, wallet transaction or submission.
 Authoritative worktree /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Old Documents checkout and historical dirty evidence must be preserved.
 Main 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; immutable candidate PR246 draft 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0.
 BASE0 source repairs SceneManager readiness destruction race, deterministic browser-fixture clock origin, unused compact prop/duplicate CSS, inherited Deno/HUD/harness failures. Completed coordinator report: cards/BASE0-VERIFY-R2/REPORT.md.
@@ -43,6 +43,6 @@ FXRB current repair verification COMPLETE (scoped): owned mega-fxrb-actor-oracle
 FXRB oracle finding: old6resizecases passed withbothspriteshidden. Newstationarybodycases excludeground/HPbars and preserveeveryactivecombatcheck. Combined/cat-only/monster-only variants each rejected4/4; restoredcontrol10/10. Integratedabd64fa repeat20PASS200/200, webtype/linksPASS; source26e7de8 ownwebtypePASS. Working-treemutationbytes matchnewtestcommit; not mislabeledpostcommit runs. Full272/272bothsizes afterrepeat20passed; no independentgrade/fullactualmain/live proof.
 FXRB recovery bundles verified: /Users/bao/.codex/handoffs/taskbar-hero/reliability/fxrb-sprite-oracle-abd64fa.bundle (requires280ff4b) andfxrb-sprite-oracle-source-26e7de8.bundle (requires1fb25ed). Source26e7de8 nowpublished; bundles remain valid.
 Next3actions:
-1. Update existingdraftPR243 title/body with source26e7de8 and immutable ledger proof for integratedabd64fa; no duplicatePR or merge. Keep source/fullprospective/actualmain evidence separate.
+1. FXRB repair and currentPR243title/body published: source26e7de8, ledger evidencea88be22, prospectiveabd64fa. Currentcardcomplete aspreparation, notitemmerged. Next inspect CXP1#240 acceptance/coverage on published64cf350 before new execution; no repeated checks without new evidence gap.
 2. BASE0 firstmerge remains onhold until a meaningful capacity signal/reset check; old failures and newlyignored builds do not prove present quota. Reconfirmrefs/scores/G1–G7 before any merge; use revised direct postmerge plan.
 3. Continue direct acceptance review of already-builtCXP1#240 while the hold persists; do not repeat completed tests without a new gap/failure or start a new build ahead ofBASE0. Preserve allqueuedP0–P3 scope, independentreview requirement and30minute/milestone snapshots; no subagent/helper/newchat.
