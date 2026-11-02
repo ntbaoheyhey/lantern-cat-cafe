@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-11-02T13:32:43.683654+07:00",
+  "status": "FAIL: tooling invocation",
+  "exit": 1,
+  "heads": {
+    "VERIFIER_HEAD": "032da94234faa3a41af180a222212d513cf232cc",
+    "PR_HEAD": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "BASE_HEAD": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+    "TESTED_HEAD": "9f5687ade34e9faf280cea28937de7050010f7d4"
+  },
+  "testedTree": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+  "actualMainTree": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+  "treeEquality": true,
+  "failure": "forge --offline test rejected: --offline belongs after test",
+  "otherWrapperChecks": "PASS; browser 265/265",
+  "artifactEquality": "PASS: 32 emitted/public files, entry HTML stable",
+  "legacyCheckLive": "PASS, exit 0",
+  "browserJourney": "PENDING",
+  "runningMissionProcesses": [],
+  "ports": "Required and defaults free",
+  "automation": "Only unrelated LifeMate/SC203 local automation definitions; no crontab; no mission routine",
+  "helpersOrAgentsStarted": false
+}

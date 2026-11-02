@@ -1,9 +1,9 @@
 # Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T13:21:34.240952+07:00; user explicitly resumed in this session. Older pause lines are superseded.
+Updated 2026-11-02T13:32:43.683654+07:00; user explicitly resumed in this session. Older pause lines are superseded.
 Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
 Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
 BASE0: MERGED / POSTMERGE INCOMPLETE. Historical independent A97.64285714285714/B98, floors passed. Actual-main full265/265 and12spec repeat700/700 at each1280x720/1600x900 passed. Do not rerun completed suites without changed code/new failure.
-Remaining BASE0: safe ledger FORCE_ALL verifier246; complete deployed asset equality; legacy check-live; user-approved phased live browser path bothsizes. No next merge until allgreen.
+Remaining BASE0: repair safe verifier Forge argument order and verify; phased live browser path bothsizes. Artifact equality32/32 and legacy checker PASS; no nextmerge until allgreen.
 Verified source queue: FXRB#243 26e7de8 -> CXP1#240 2b7ceeb -> CXL1#248 178f379 -> ART1#247 4df594a -> CXN3-FIX#250 a9b804c -> CXN3#244 6257c0e -> CXU5#249 c5b846e -> CXU4#251 d408ada. All unmerged/draft and need exact current-main gates.
 PR250 was closed on deleted BASE0base. Restored historicalbase280ff4b, reopened samePR, retargetedmain; sourceunchanged, CONFLICTING. Historicalbase remains. Do not duplicate PR or merge now.
 Full verified table and caveat re stale APIbaseSHA/UNKNOWN: cards/CLI-RESUME-20261102/verified-refs.json and REPORT.md; current ledger table is authoritative.
@@ -17,8 +17,10 @@ Evidence: cards/BASE0-POSTMERGE/74d60da/REPORT.md and pause-result.json; prior e
 Checkpoint after each milestone/grade/merge/failure: <=80linehandoff, livingfinalreport, selectedcommit/pushledger, directsnapshot. Auto-compact64000 configured; aftercompaction rereadthis+ledgertable.
 Verifier attempt after6529cf6: launcher59362absent, no retainedworktree, onlyVERIFIER_HEAD recorded in55byte rawlog; noexit/suites. INTERRUPTED/NOTVERIFIED. Evidence cards/BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json. Nothingkilled; required+default4173–4176portsfree.
 CLI launch correction: use E2E_PORT_SERVER=4442/E2E_PORT_API=4443; priorF2_WEB_PORT/F2_API_PORTnames incorrect but browser setup neverreached. Keep priorTMPDIR base0-pr246-jrzyXSs8.
+Retained CLI verifier exit1: tool032da94/PR280ff4b/base74d60da/tested9f5687a; tested tree equals actualmain58b9abb. All except Forge invocation PASS incl265browser. Failure: forge --offline test must be forge test --offline. Preserve original failure.
+CLI evidence reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102: artifact32/32, stable HTML, legacy exit0. Phased browser pending. New recheck table cards/CLI-RESUME-20261102/recheck.
+No ownedtestprocess, required/default ports free. No helper/subagent/schedule. Actualmain and queue heads unchanged after fetch.
 Next3actions:
-1. Recheckrefs/PIDs/ports. Run safeledger FORCE_ALL verifier246 on NEWprivateTMPDIR using reliable direct process logging and correct E2Eports; retainlog/worktree, record4heads andcompare synthetic tree to actualmain.
-2. Observepublicconfig in memory; verify deployedassets againstactualmain; runlegacycheck-live (boundednonce, nosigning/SQL), phasedlivepath bothsizes. No--v2untilCXN3merge; no oldhelpers.
-3. PublishBASE0results/checkpoint; only ifgreen integrate origin/main intoFXRB#243 and startfullgate+freshA/B. No othermergefirst.
-CLI initial state: ledger642a4f1 matched remote; all source heads unchanged. Conflicts: PR240/247/249/250/251. Private repo, ports free, no mission automation. Initial verification pushed before substantive work.
+1. Correct ledger safe verifier Forge CLI order; validate actual pinned contract suite; fresh privateTMPDIR full wrapper if needed. Preserve all failures and four-head receipts.
+2. Directly verify approved phased live path at1280x720/1600x900 with read-only guest requests; link byte identity evidence. No --v2 until CXN3 merges.
+3. Publish/checkpoint BASE0; only if fully green integrate origin/main into FXRB#243 and run full gates plus separate fresh self-graded A/B.

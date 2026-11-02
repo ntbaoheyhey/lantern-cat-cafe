@@ -1,8 +1,10 @@
 # Taskbar Hero — active CLI mission
 
-Updated 2026-11-02T13:21:34.240952+07:00. User explicitly resumed; mission incomplete. Verified main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`, all nine PR states/heads, private repository, free required/default ports, and no mission automation. No process needed termination. Historical files and ChatGPT/CUA services preserved.
+Updated 2026-11-02T13:32:43.683654+07:00. Mission incomplete; coordinator works alone. Private repository, main74d60da and all nine PR states/heads reverified; no mission automation or active test process.
 
-BASE0 remains merged with original A97.64285714285714/B98; actual-main full265/repeat700 at both desktop sizes remain valid. Safe verifier, complete deployed-artifact equality, legacy checker and phased live journey are pending. No next merge until those gates pass. Remaining queue and full P0–P3 scope unchanged. [Verified table](cards/CLI-RESUME-20261102/REPORT.md).
+BASE0 #246 remains merged with historical independent A97.64285714285714/B98. Actual-main full265/repeat700 at both desktop sizes remain valid. Retained safe verifier exit1: all checks except Forge passed, including265 browser cases; failure is incorrect `forge --offline test` option placement. Synthetic tested tree equals actual main. All32 deployed public files match the clean build and legacy live checks pass. Phased live journey remains pending. No later merge until the verifier and live gate pass.
+
+Full P0–P3 scope remains active. [Rechecked refs](cards/CLI-RESUME-20261102/recheck/REPORT.md) · [Retained results](cards/BASE0-POSTMERGE/74d60da/cli-20261102/reconciled-result.json).
 
 ## Historical reports
 

@@ -1,0 +1,607 @@
+VERIFIER_HEAD=032da94234faa3a41af180a222212d513cf232cc
+PR_HEAD=280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+BASE_HEAD=74d60dab2cef8c31a3f2729d18719ff3021a9eda
+TESTED_HEAD=9f5687ade34e9faf280cea28937de7050010f7d4
+== pnpm install
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +505
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 505, reused 496, downloaded 0, added 181
+Progress: resolved 505, reused 496, downloaded 0, added 412
+Progress: resolved 505, reused 496, downloaded 0, added 499
+Progress: resolved 505, reused 496, downloaded 0, added 500
+Progress: resolved 505, reused 496, downloaded 0, added 504
+Progress: resolved 505, reused 496, downloaded 0, added 505, done
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 6.1s using pnpm v10.28.0
+== generated deno.json has no drift
+
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+== typecheck
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+== lint
+
+> taskbar-hero@0.0.0 lint /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+== unit tests
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (9.158167ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.991459ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.513666ms)
+✔ output order is stable regardless of file creation order (3.946666ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.611ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.096
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  13:23:38
+packages/chain test:    Duration  660ms (import 48%, tests 28%, transform 21%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  13:23:38
+packages/auth test:    Duration  968ms (import 53%, tests 35%, transform 12%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  13:23:38
+supabase/tests test:    Duration  12.04s (tests 78%, import 15%, transform 7%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  13:23:38
+packages/game-rules test:    Duration  32.64s (tests 92%, transform 6%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  13:24:11
+packages/api-contract test:    Duration  202ms (transform 79%, import 18%, tests 3%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/apps/web
+apps/web test:  Test Files  111 passed (111)
+apps/web test:       Tests  1308 passed (1308)
+apps/web test:    Start at  13:24:11
+apps/web test:    Duration  15.53s (environment 46%, tests 37%, import 10%, transform 6%, worker 1%)
+apps/web test: Environment  jsdom was created 111 times · 56.39s total, 46% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+== build
+
+> taskbar-hero@0.0.0 build /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1818 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.13 kB │ gzip:   0.77 kB
+apps/web build: dist/assets/index-p4gCWqSt.css              147.43 kB │ gzip:  23.18 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/assets-CpytQ_XT.js                2.39 kB │ gzip:   1.17 kB
+apps/web build: dist/assets/ArenaScene-LfTBtbQn.js            7.04 kB │ gzip:   2.71 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/StageScene-DiXgbZQw.js           15.76 kB │ gzip:   5.79 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/index-PmB9FI_D.js               239.94 kB │ gzip:  67.23 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/combat-BSGSpOB2.js              900.61 kB │ gzip:  77.42 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 327ms
+apps/web build: Done
+== playwright e2e
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/apps/web
+> playwright test
+
+[WebServer] (node:71302) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:71306) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:71331) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:71338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:71340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:71391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:71398) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 265 tests using 6 workers
+(node:71415) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71411) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71414) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+····(node:71450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+········Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+···(node:71517) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+······(node:71533) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71534) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+························(node:71569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···(node:71572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·········CSP classic 1600x900 light: canvas painted; violations=0; console/page errors=0
+···(node:71593) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·CSP classic 1280x720 light: canvas painted; violations=0; console/page errors=0
+···CSP classic 390x844 light: canvas painted; violations=0; console/page errors=0
+····CSP classic 320x568 light: canvas painted; violations=0; console/page errors=0
+··(node:71604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·CSP classic 1280x720 dark: canvas painted; violations=0; console/page errors=0
+··(node:71612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··Phaser canvas instances inserted during 100-step drag: 2
+·CSP classic 390x844 dark: canvas painted; violations=0; console/page errors=0
+····
+··CSP v2 1600x900 light: canvas painted; violations=0; console/page errors=0
+·(node:71651) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···(node:71662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··CSP v2 1280x720 light: canvas painted; violations=0; console/page errors=0
+······CSP v2 390x844 light: canvas painted; violations=0; console/page errors=0
+······CSP v2 320x568 light: canvas painted; violations=0; console/page errors=0
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·······{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·CSP v2 1280x720 dark: canvas painted; violations=0; console/page errors=0
+·Measured screenshot roster-ch1.png (75.8 KB)
+···{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot roster-ch2.png (75.4 KB)
+··CSP v2 390x844 dark: canvas painted; violations=0; console/page errors=0
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot roster-ch3.png (75.0 KB)
+(node:71711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4443/functions/v1/v2-claim"}]}
+·Measured screenshot roster-ch4.png (75.5 KB)
+····Measured screenshot roster-ch5.png (76.5 KB)
+···{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4443/functions/v1/v2-claim"}]}
+··Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+···{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+····Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·····{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+····{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+···G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18563,"JSHeapUsedSize":14898584},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18563,"JSHeapUsedSize":16047540},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":8.299999997019768,"nextFrameMs":55,"eventTiming":[{"name":"click","duration":64,"inputDelay":2.6999999955296516}]},"craft":{"clickToPendingMs":0.6999999955296516,"nextFrameMs":19.69999999552965,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.5}]},"fight":{"clickToPendingMs":0.8999999985098839,"nextFrameMs":28.600000001490116,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7999999970197678}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+Measured screenshot stage-ch2-390x844.png (33.2 KB)
+··{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4443/functions/v1/v2-claim"}]}
+······Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4443/functions/v1/v2-claim"}]}
+·
+····Measured screenshot stage-ch3-390x844.png (33.2 KB)
+·······Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+·······Measured screenshot stage-ch4-390x844.png (33.7 KB)
+····Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+·······Measured screenshot stage-ch5-390x844.png (36.5 KB)
+···Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.3,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.3,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+········································G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+········
+·[livingroom 1600x900] outer: 19.76, center: 47.02
+····[livingroom 390x844] outer: 22.17, center: 58.19
+··[kitchen 1600x900] outer: 21.19, center: 51.72
+··[kitchen 390x844] outer: 26.10, center: 63.40
+···[bathroom 1600x900] outer: 22.12, center: 50.56
+·[bathroom 390x844] outer: 26.84, center: 62.29
+···[basement 1600x900] outer: 20.78, center: 49.64
+···[basement 390x844] outer: 30.11, center: 61.00
+··[rooftops 1600x900] outer: 17.50, center: 41.73
+··[rooftops 390x844] outer: 19.66, center: 53.55
+··
+  265 passed (58.5s)
+== pinned contract submodules
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/forge-std'...
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/openzeppelin-contracts'...
+Submodule path 'contracts/lib/forge-std': checked out '8987040ede9553cea20c95ad40d0455930f9c8e0'
+Submodule path 'contracts/lib/openzeppelin-contracts': checked out '69c8def5f222ff96f2b5beff05dfba996368aa79'
+Submodule 'lib/erc4626-tests' (https://github.com/a16z/erc4626-tests.git) registered for path 'contracts/lib/openzeppelin-contracts/lib/erc4626-tests'
+Submodule 'lib/forge-std' (https://github.com/foundry-rs/forge-std) registered for path 'contracts/lib/openzeppelin-contracts/lib/forge-std'
+Submodule 'lib/halmos-cheatcodes' (https://github.com/a16z/halmos-cheatcodes) registered for path 'contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes'
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/openzeppelin-contracts/lib/erc4626-tests'...
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/openzeppelin-contracts/lib/forge-std'...
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes'...
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/erc4626-tests': checked out '8b1d7c2ac248c33c3506b1bff8321758943c5e11'
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/forge-std': checked out 'ae570fec082bfe1c1f45b0acca4a2b4f84d345ce'
+Submodule 'lib/ds-test' (https://github.com/dapphub/ds-test) registered for path 'contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test'
+Cloning into '/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246/contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test'...
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test': checked out 'e282159d5170298eb2455a6c05280ab5a73a4ef0'
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes': checked out 'c0d865508c0fee0a11b97732c5e90f9cad6b65a5'
+== prepare pinned Solidity compiler
+Compiling 58 files with Solc 0.8.24
+Solc 0.8.24 finished in 946.11ms
+Compiler run successful!
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:82:9
+   │
+82 │         relicNFT.safeTransferFrom(msg.sender, address(this), relicId, amount, "");
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ src/RelicNFT.sol:72:13
+   │
+72 │         if (block.timestamp > v.expiry) revert VoucherExpired();
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/block-timestamp
+
+warning[arbitrary-send-eth]: ETH is sent to a user-controlled destination; restrict the destination or the caller
+   ╭▸ src/RelicMarket.sol:97:22
+   │
+97 │         (bool ok,) = payable(l.seller).call{value: l.price}("");
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/arbitrary-send-eth
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+   ╭▸ src/RelicNFT.sol:86:9
+   │
+86 │         emit RelicForged(v.player, v.relicId, v.rarity, v.nonce);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:96:9
+   │
+96 │         relicNFT.safeTransferFrom(address(this), msg.sender, l.relicId, l.amount, "");
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-eth]: uncapped ETH transfer can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:97:22
+   │
+97 │         (bool ok,) = payable(l.seller).call{value: l.price}("");
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-eth
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/RelicMarket.sol:111:9
+    │
+111 │         relicNFT.safeTransferFrom(address(this), l.seller, l.relicId, l.amount, "");
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[environment-read-across-mutation]: `block.timestamp` may be reused across `vm.warp`
+    ╭▸ test/RelicNFT.t.sol:35:92
+    │
+ 35 │             RelicNFT.Voucher({player: player, relicId: 7, rarity: 3, nonce: nonce, expiry: block.timestamp + 1 hours});
+    │                                                                                            ━━━━━━━━━━━━━━━
+    ‡
+111 │         vm.warp(v.expiry); // still valid at exactly expiry
+    │         ───────────────── `vm.warp` changes this environment here
+    │
+    ├ help: capture it with `vm.getBlockTimestamp()` instead
+    ╰ help: https://getfoundry.sh/forge/linting/environment-read-across-mutation
+
+== forge test
+error: unexpected argument '--offline' found
+
+  tip: a similar argument exists: '--profile'
+
+Usage: forge --profile <PROFILE> <COMMAND>
+
+For more information, try '--help'.
+== chain ABI has no drift
+wrote src/abi.ts

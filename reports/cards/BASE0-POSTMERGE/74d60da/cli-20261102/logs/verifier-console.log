@@ -1,0 +1,16 @@
+Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 74d60da):
+PASS  merge with latest main
+PASS  pnpm install
+PASS  generated deno.json has no drift
+PASS  typecheck
+PASS  lint
+PASS  unit tests
+PASS  build
+PASS  playwright e2e
+PASS  pinned contract submodules
+PASS  prepare pinned Solidity compiler
+FAIL  forge test
+PASS  chain ABI has no drift
+PASS  verification worktree remains clean
+log: /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246.log
+worktree retained for inspection: /Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246
