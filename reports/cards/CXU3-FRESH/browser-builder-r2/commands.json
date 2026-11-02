@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:20:53.455630+00:00",
+    "endedAt": "2026-11-02T21:21:01.037250+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/layout/forge/ForgePanel.test.tsx src/market/MarketTab.test.tsx src/market/marketViewModel.test.ts",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:21:01.045164+00:00",
+    "endedAt": "2026-11-02T21:21:03.254367+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "CXU3_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXU3-FRESH/browser-builder-r2/screenshots E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-market.spec.ts e2e/ui/cxu3-forge.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 1,
+    "startedAt": "2026-11-02T21:21:03.261509+00:00",
+    "endedAt": "2026-11-02T21:21:20.159596+00:00"
+  }
+]

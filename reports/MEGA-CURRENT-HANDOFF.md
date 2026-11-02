@@ -28,11 +28,12 @@ AGR3 saved layout is structural only: invented power/categories and unsafe trans
 Forge canonical calculations/validation/Salvage restored; deterministic recipe rarity/cost, no Great Success activation.
 Craft animation keyed by result ID to avoid restart from unrelated parent rerenders.
 Corrected builder typecheck +97 focused tests across8 files PASS (builder-r3).
-Latest PID47133 FINISHED: typecheck PASS;2 new Market browser cases FAIL at exact Relic form-label locator.
+Market exact-label failure repaired with explicit accessible association; both desktop browser cases PASS.
+New Forge geometry test exposed tab nav flex-shrink clipping; fixed by reserving header/nav height.
 Failure/logs preserved in reports/cards/CXU3-FRESH/browser-builder; diagnose before rerun, no assertions removed.
 Test-only Market fixture uses actual components and mock callbacks, never claims real wallet proof.
 Production fixture exclusion and full Forge browser coverage remain to verify.
-No mission test PIDs/listeners active;4900–4903 free. Do not kill unrelated18457 or OS listeners.
+In-flight PID49596: builder-r3 type/unit/browser at CXU3 worktree;4900–4903 reserved. Do not duplicate.
 Preserved CXU4/CXU5 source/reviewer/main worktrees listed by git worktree list; no duplicate jobs.
 Read-ahead: reports/cards/NEXT-FRONTEND-NOTES.md. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
 Tooling: reports/fresh-session-tools/run-checks.py; isolated UI harness; parameterized live proof scripts.
@@ -41,4 +42,4 @@ Max3 formal repair rounds/item; failed controls invalidate grade. Re-test main/l
 Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007; #244 stays draft/unmerged.
 Safety: no secrets, destructive live DB writes, migrations/function deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, repo publicity or contest submission.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: fix Market browser accessible form names and rerun; cover Forge browser/rules invariants; freeze head then fresh A/B gate.
+Next3: inspect browser-builder-r3; finish Forge layout/reveal validation and review; freeze head then fresh A/B gate.

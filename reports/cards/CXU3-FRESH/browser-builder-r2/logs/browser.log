@@ -1,0 +1,195 @@
+[WebServer] (node:49235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:49243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu3-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:49287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:49322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:49323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu3-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:49329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:49331) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:49358) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:49359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu3-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:49366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu3-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:49367) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 6 tests using 1 worker
+
+(node:49368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/6] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference
+  1) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Craft",
+    +   "Salvage",
+    +   "Relic",
+    + ]
+
+      17 |     return false;
+      18 |   }).map(element => element.textContent || element.getAttribute('aria-label')));
+    > 19 |   expect(clipped).toEqual([]);
+         |                   ^
+      20 | }
+      21 | async function screenshot(page: Page, name: string) {
+      22 |   if (!process.env.CXU3_SCREENSHOTS) return;
+        at geometry (/private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:19:19)
+        at /private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:40:108
+
+    Error Context: test-results/4900-4901/ui-cxu3-forge-CXU3-Forge-c-70fcb-and-tabs-1280-no-preference-stage-layout/error-context.md
+
+
+(node:49423) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/6] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce
+  2) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Craft",
+    +   "Salvage",
+    +   "Relic",
+    + ]
+
+      17 |     return false;
+      18 |   }).map(element => element.textContent || element.getAttribute('aria-label')));
+    > 19 |   expect(clipped).toEqual([]);
+         |                   ^
+      20 | }
+      21 | async function screenshot(page: Page, name: string) {
+      22 |   if (!process.env.CXU3_SCREENSHOTS) return;
+        at geometry (/private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:19:19)
+        at /private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:40:108
+
+    Error Context: test-results/4900-4901/ui-cxu3-forge-CXU3-Forge-c-3b98a-reveal-and-tabs-1280-reduce-stage-layout/error-context.md
+
+
+(node:49428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/6] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference
+  3) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Craft",
+    +   "Salvage",
+    +   "Relic",
+    + ]
+
+      17 |     return false;
+      18 |   }).map(element => element.textContent || element.getAttribute('aria-label')));
+    > 19 |   expect(clipped).toEqual([]);
+         |                   ^
+      20 | }
+      21 | async function screenshot(page: Page, name: string) {
+      22 |   if (!process.env.CXU3_SCREENSHOTS) return;
+        at geometry (/private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:19:19)
+        at /private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:40:108
+
+    Error Context: test-results/4900-4901/ui-cxu3-forge-CXU3-Forge-c-5adae-and-tabs-1600-no-preference-stage-layout/error-context.md
+
+
+(node:49433) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/6] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce
+  4) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Craft",
+    +   "Salvage",
+    +   "Relic",
+    + ]
+
+      17 |     return false;
+      18 |   }).map(element => element.textContent || element.getAttribute('aria-label')));
+    > 19 |   expect(clipped).toEqual([]);
+         |                   ^
+      20 | }
+      21 | async function screenshot(page: Page, name: string) {
+      22 |   if (!process.env.CXU3_SCREENSHOTS) return;
+        at geometry (/private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:19:19)
+        at /private/tmp/tbh-cxu3-active/apps/web/e2e/ui/cxu3-forge.spec.ts:40:108
+
+    Error Context: test-results/4900-4901/ui-cxu3-forge-CXU3-Forge-c-76dab-reveal-and-tabs-1600-reduce-stage-layout/error-context.md
+
+
+(node:49438) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/6] [stage-layout] › e2e/ui/cxu3-market.spec.ts:17:3 › CXU3 real MarketView with mocked wallet callbacks 1280
+[6/6] [stage-layout] › e2e/ui/cxu3-market.spec.ts:17:3 › CXU3 real MarketView with mocked wallet callbacks 1600
+  4 failed
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:28:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+  2 passed (16.0s)
+undefined
+/private/tmp/tbh-cxu3-active/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test e2e/ui/cxu3-market.spec.ts e2e/ui/cxu3-forge.spec.ts --workers=1 --retries=0 --reporter=line
