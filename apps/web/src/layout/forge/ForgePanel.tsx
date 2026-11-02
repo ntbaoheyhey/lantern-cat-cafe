@@ -477,7 +477,7 @@ export function ForgePanel({
               {/* Right Column: 2 · Materials & Chances Table */}
               <div className="forge-col-right">
                 <div className="forge-card" data-testid="forge-materials-card">
-                  <h4 className="forge-section-title">Recipe cost</h4>
+                  <h4 className="forge-section-title">Recipe Cost &amp; Balance</h4>
                   <ul className="forge-cost-list" aria-label="Required materials" style={{ padding: 0, margin: '8px 0 0', listStyle: 'none' }}>
                     {COST_ORDER.map((matId) => {
                       const req = recipe.materials[matId];
