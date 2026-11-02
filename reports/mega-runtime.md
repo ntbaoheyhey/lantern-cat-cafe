@@ -1,3 +1,9 @@
+# Runtime — ACTIVE SESSION
+
+2026-11-02T14:28:16.266172+07:00: saved refs/privacy/install/bundle verified. No mission test process or required/default listener. No mission schedule, helper or agent. Historical artifacts preserved. Direct FXRB builder gates next; ports4310–4313 selected, not started.
+
+## Historical runtime
+
 # Runtime — USER PAUSED
 
 2026-11-02T07:10:23.066771+00:00: user paused. Install session77542 finished exit0; no owned process in FXRB verifier or required/default port listener. Nothing killed. No further tests/productpush/merge/release; no helpers/agents/schedules. LocalFXRB7f00ef5 preserved. See cards/FXRB-CURRENT-R1/pause-result.json.

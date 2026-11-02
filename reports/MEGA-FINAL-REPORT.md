@@ -1,3 +1,13 @@
+# Taskbar Hero — active mission
+
+Updated 2026-11-02T14:28:16.266172+07:00. Latest explicit user resume lifts the pause. Verified-state checkpoint: [session verification](cards/RESUME-20261102-SESSION2/REPORT.md). Full P0–P3 mission and regression remain active.
+
+Fetched refs and repository privacy match the saved state. BASE0 remains merged/main and phased-live PASS at74d60da; historical independent scores unchanged. Local FXRB7f00ef5 is clean in its verifier, installation passed, bundle verified; remote26e7de8 remains draft. Builder gates and separate fresh A/B self-grades are pending. No new grade, product push, merge or release.
+
+Required/default ports are free, no mission tests or schedules, historical dirty artifacts preserved. Direct work continues on FXRB in this session only.
+
+## Historical reports
+
 # Taskbar Hero — USER PAUSED
 
 Updated 2026-11-02T07:10:23.066771+00:00. Paused at the user's request; mission incomplete. No work resumes without a new explicit instruction.

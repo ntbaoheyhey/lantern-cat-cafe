@@ -1,8 +1,8 @@
 # Mega ledger — living draft
 
-**USER PAUSED — 2026-11-02T07:10:23.066771+00:00.** No work until new explicit resume; full scope and quality gates retained.
+**ACTIVE SESSION — 2026-11-02T14:28:16.266172+07:00.** Explicit resume verified; full scope and quality gates retained.
 
-## Verified remote state at CLI resumption
+## Verified remote state at session resumption
 
 | Item / PR | State | Base branch | API base SHA | Head SHA | Mergeability |
 | --- | --- | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 | CXU5 #249 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `c5b846ec030be5a0bf6a89c515fe4ecd85514fc3` | CONFLICTING |
 | CXU4 #251 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `d408ada368a05c078dcd97bbd61f4e4b1dbc238b` | CONFLICTING |
 
-Actual remote main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; stale API base SHAs are not current-main proof. [Verification](cards/CLI-RESUME-20261102/continuation-fxrb/REPORT.md).
+Actual remote main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; stale API base SHAs are not current-main proof. [Verification](cards/RESUME-20261102-SESSION2/REPORT.md).
 
 
 Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
@@ -24,7 +24,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / MAIN + PHASED LIVE PASS | 2 | 74d60da core/build/full265each/repeat700each; safe FORCE_ALL265browser+96Forge PASS | A97.642857/B98;artifact32/32, legacy/phased live PASS; full future nine-stage path pendingCXU3+CXC2 |
-| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PAUSED / LOCAL INTEGRATION | 0 | 7f00ef5 frozeninstallPASS only; other exactheadgates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
+| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | ACTIVE / BUILDER GATES PENDING | 0 | 7f00ef5 frozeninstallPASS only; other exactheadgates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 7393dc3:core/build/G3,full280eachsize,repeat80,fourmutantsPASS | Source2b7ceebpublished;own18unit/typePASS;old1/17capfailure retained;actualmain/UI/G5/wrapper/grades pending |
