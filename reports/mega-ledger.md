@@ -168,3 +168,9 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - Recovered active state 2026-11-02T07:38:31.614876+00:00: checkpoint6cca81c and refs verified; ongoing resize test preserved, exact receipts hashed. No new score/push/merge. See cards/FXRB-CURRENT-R1/recovered-state-20261102.
 
 - User pause 2026-11-02T07:51:12.287587+00:00: recovered repeats200eachsize, audits/effects/contrast receipts; reference-keyboard exit1 unresolved. No missiontest/preview/listeners; verify+mutants trackedclean. No substantive execution started in this continuation; no productpush/grade/merge/release. Private repository/main/queue refs verified.
+
+T007 (2 Nov 2026): CXN3 #244 remains BLOCKED / draft at db0f9d6 after current-main integration
+and correction of stale BASE0 runbook warnings. Local preflight and fresh existing main/live
+checks pass, but complete live function rollback source is unavailable: authenticated export
+refuses unsafe extraction. No release/merge or live --v2 check; no final self-review scores.
+Owner recovery step is recorded in OPTIONAL-USER-STEPS.md. [T007 evidence](cards/T007-CXN3-GATE/REPORT.md).

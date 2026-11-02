@@ -1,0 +1,129 @@
+UTC 2026-11-02T12:39:54.699347+00:00
+scratch cwd: .cxn3-mutant-gcetz8ja/supabase/tests
+$ pnpm exec vitest run src/live-schema.test.ts --reporter verbose --silent=false
+mutation: docs/proposals/sql/check-live-schema.sql
+BEFORE: public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)
+AFTER: public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)
+expected failing test: all 17 expected objects are present
+
+ RUN  v5.0.5 /private/tmp/tbh-t007-cxn3/.cxn3-mutant-gcetz8ja/supabase/tests
+
+ ✓ src/live-schema.test.ts > is one catalog-only inventory with no write keywords, even in comments 2ms
+ × src/live-schema.test.ts > all 17 expected objects are present with all migrations 34ms
+   → expected [ …(17) ] to deeply equal [ …(17) ]
+ × src/live-schema.test.ts > only the seven newer objects are false through 20261102 11ms
+   → expected [ …(17) ] to deeply equal [ …(17) ]
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261107000000_voucher_race_guard.sql
+
+ × src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally 286ms
+   → expected [ { …(2) }, { …(2) }, { …(2) }, …(14) ] to deeply equal [ { …(2) }, { …(2) }, { …(2) }, …(14) ]
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  19:39:49
+   Duration  4.90s (tests 96%, transform 2%, import 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/live-schema.test.ts > all 17 expected objects are present with all migrations
+AssertionError: expected [ …(17) ] to deeply equal [ …(17) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  [
+    "constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled",
+    "function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz)",
+-   "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)",
++   "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)",
+    "function public.v2_action_result(uuid,text,uuid,jsonb)",
+    "function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb)",
+    "function public.v2_cleanup_budgets()",
+    "function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer)",
+    "function public.v2_take_budgets(jsonb)",
+
+ ❯ src/live-schema.test.ts:54:35
+     52|   expect(rows).toHaveLength(17);
+     53|   expect(new Set(rows.map(r => r.object)).size).toBe(17);
+     54|   expect(rows.map(r => r.object)).toEqual(expectedObjects);
+       |                                   ^
+     55|   expect(rows.filter(r => !r.present)).toEqual([]);
+     56|   console.log(`live-schema all migrations: ${rows.length}/${rows.lengt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/live-schema.test.ts > only the seven newer objects are false through 20261102
+AssertionError: expected [ …(17) ] to deeply equal [ …(17) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  [
+    "constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled",
+    "function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz)",
+-   "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)",
++   "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)",
+    "function public.v2_action_result(uuid,text,uuid,jsonb)",
+    "function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb)",
+    "function public.v2_cleanup_budgets()",
+    "function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer)",
+    "function public.v2_take_budgets(jsonb)",
+
+ ❯ src/live-schema.test.ts:62:35
+     60|   const { rows } = await old.query<{ object: string; present: boolean …
+     61|   expect(rows).toHaveLength(17);
+     62|   expect(rows.map(r => r.object)).toEqual(expectedObjects);
+       |                                   ^
+     63|   expect(rows.filter(r => !r.present).map(r => r.object)).toEqual([
+     64|     "constraint public.relic_vouchers.relic_vouchers_status_check allo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+AssertionError: expected [ { …(2) }, { …(2) }, { …(2) }, …(14) ] to deeply equal [ { …(2) }, { …(2) }, { …(2) }, …(14) ]
+
+- Expected
++ Received
+
+@@ -6,12 +6,12 @@
+    {
+      "object": "function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz)",
+      "present": true,
+    },
+    {
+-     "object": "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)",
+-     "present": true,
++     "object": "function public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)",
++     "present": false,
+    },
+    {
+      "object": "function public.v2_action_result(uuid,text,uuid,jsonb)",
+      "present": true,
+    },
+
+ ❯ src/live-schema.test.ts:84:47
+     82|         console.log(`local upgrade pass ${pass}: ${file}`);
+     83|       }
+     84|       expect((await upgrade.query(sql)).rows).toEqual(expectedObjects.…
+       |                                               ^
+     85|     }
+     86|   } finally { await upgrade.close(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+EXIT_CODE=1
+KILLED=True

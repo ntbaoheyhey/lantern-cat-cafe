@@ -1,0 +1,787 @@
+VERIFIER_HEAD=c68b53e82248d83fa1cb7eb60d10319ba91800c0
+PR_HEAD=db0f9d64c408825a832d808bc31cfd88f1c3a014
+BASE_HEAD=9c457a3e56b7c5813fa40e6aa20b0c14242ef26a
+TESTED_HEAD=db0f9d64c408825a832d808bc31cfd88f1c3a014
+== pnpm install
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +505
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 505, reused 496, downloaded 0, added 186
+Progress: resolved 505, reused 496, downloaded 0, added 333
+Progress: resolved 505, reused 496, downloaded 0, added 386
+Progress: resolved 505, reused 496, downloaded 0, added 501
+Progress: resolved 505, reused 496, downloaded 0, added 503
+Progress: resolved 505, reused 496, downloaded 0, added 505, done
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 5.8s using pnpm v10.28.0
+== generated deno.json has no drift
+
+> taskbar-hero@0.0.0 gen:deno /private/tmp/tbh-t007-safe-verifier/verify-pr-244
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+== typecheck
+
+> taskbar-hero@0.0.0 typecheck /private/tmp/tbh-t007-safe-verifier/verify-pr-244
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+== lint
+
+> taskbar-hero@0.0.0 lint /private/tmp/tbh-t007-safe-verifier/verify-pr-244
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+== unit tests
+
+> taskbar-hero@0.0.0 test /private/tmp/tbh-t007-safe-verifier/verify-pr-244
+> node --test scripts/*.test.mjs && pnpm -r test
+
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-boss-fight anonymous - HTTP 401
+PASS  function v2-boss-fight oversized - HTTP 413
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+PASS  function v2-choose-class oversized - HTTP 413
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+PASS  function v2-claim oversized - HTTP 413
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+PASS  function v2-craft oversized - HTTP 413
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+PASS  function v2-equip oversized - HTTP 413
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+PASS  function v2-lock oversized - HTTP 413
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+PASS  function v2-relic-forge oversized - HTTP 413
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+PASS  function v2-salvage oversized - HTTP 413
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+PASS  function v2-state oversized - HTTP 413
+✔ unsigned POST requires exactly 401 (12.39025ms)
+✔ 503 fails with a budget migration hint for every probe (0.309666ms)
+✔ network errors fail (0.523791ms)
+✔ preflight requires 2xx and usable CORS headers (0.600833ms)
+✔ oversized body requires 400 or 413, and reports auth-before-body behavior (0.093375ms)
+✔ all nine routes get three probes without credentials; oversized JSON exceeds 8192 bytes (1.846292ms)
+✔ cut-over History contains the retired procedure; migration table matches the branch exactly (0.299459ms)
+✔ manual deploy lists the same 18 functions and options as the existing workflow (0.173166ms)
+✔ optional release follows section 7 with local proof and default-OFF flags (0.284708ms)
+✔ explicit root and nested index imports resolve to their exact files (9.09725ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.691417ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.487791ms)
+✔ output order is stable regardless of file creation order (3.410125ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.249542ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.694292
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/packages/chain
+packages/auth test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  19:36:39
+packages/chain test:    Duration  842ms (import 47%, tests 34%, transform 17%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  19:36:39
+packages/auth test:    Duration  1.14s (import 56%, tests 35%, transform 9%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  579 passed (579)
+supabase/tests test:    Start at  19:36:39
+supabase/tests test:    Duration  13.42s (tests 79%, import 15%, transform 6%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  28 passed | 3 skipped (31)
+packages/game-rules test:       Tests  402 passed | 2 expected fail | 11 skipped (415)
+packages/game-rules test:    Start at  19:36:39
+packages/game-rules test:    Duration  43.96s (tests 92%, transform 6%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  19:37:24
+packages/api-contract test:    Duration  229ms (transform 79%, import 18%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /private/tmp/tbh-t007-safe-verifier/verify-pr-244/apps/web
+apps/web test:  Test Files  113 passed (113)
+apps/web test:       Tests  1326 passed (1326)
+apps/web test:    Start at  19:37:24
+apps/web test:    Duration  19.04s (environment 46%, tests 40%, import 9%, transform 4%)
+apps/web test: Environment  jsdom was created 113 times · 72.39s total, 46% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+== build
+
+> taskbar-hero@0.0.0 build /private/tmp/tbh-t007-safe-verifier/verify-pr-244
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-t007-safe-verifier/verify-pr-244/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1825 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.13 kB │ gzip:   0.77 kB
+apps/web build: dist/assets/index-p4gCWqSt.css              147.43 kB │ gzip:  23.18 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/assets-CpytQ_XT.js                2.39 kB │ gzip:   1.17 kB
+apps/web build: dist/assets/ArenaScene-LfTBtbQn.js            7.04 kB │ gzip:   2.71 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/StageScene-DgWrMupo.js           15.76 kB │ gzip:   5.79 kB
+apps/web build: dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/index-B-zCQ5mE.js               244.45 kB │ gzip:  69.00 kB
+apps/web build: dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/combat-BSGSpOB2.js              900.61 kB │ gzip:  77.42 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 755ms
+apps/web build: Done
+== playwright e2e
+
+> @taskbar-hero/web@0.0.0 test:e2e /private/tmp/tbh-t007-safe-verifier/verify-pr-244/apps/web
+> playwright test
+
+[WebServer] (node:44181) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:44203) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-t007-safe-verifier/verify-pr-244/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:44207) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:44229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-t007-safe-verifier/verify-pr-244/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:44236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:44239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:44260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-t007-safe-verifier/verify-pr-244/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:44268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 289 tests using 6 workers
+(node:44276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44275) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···········(node:44312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+····(node:44322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+····Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+·············(node:44351) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+····················(node:44384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···(node:44389) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+········(node:44426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··········CSP classic 1600x900 light: canvas painted; violations=0; console/page errors=0
+····CSP classic 1280x720 light: canvas painted; violations=0; console/page errors=0
+··(node:44452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·CSP classic 390x844 light: canvas painted; violations=0; console/page errors=0
+
+·····(node:44468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+CSP classic 320x568 light: canvas painted; violations=0; console/page errors=0
+····CSP classic 1280x720 dark: canvas painted; violations=0; console/page errors=0
+·Phaser canvas instances inserted during 100-step drag: 2
+·····CSP classic 390x844 dark: canvas painted; violations=0; console/page errors=0
+··Phaser canvas instances inserted during 100-step drag: 2
+·(node:44497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···CSP v2 1600x900 light: canvas painted; violations=0; console/page errors=0
+····(node:44512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+CSP v2 1280x720 light: canvas painted; violations=0; console/page errors=0
+·······CSP v2 390x844 light: canvas painted; violations=0; console/page errors=0
+·······CSP v2 320x568 light: canvas painted; violations=0; console/page errors=0
+····CSP v2 1280x720 dark: canvas painted; violations=0; console/page errors=0
+·{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·····CSP v2 390x844 dark: canvas painted; violations=0; console/page errors=0
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·Measured screenshot roster-ch1.png (75.8 KB)
+·(node:44697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot roster-ch2.png (75.4 KB)
+··{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+····Measured screenshot roster-ch3.png (75.0 KB)
+···Measured screenshot roster-ch4.png (75.5 KB)
+{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4693/functions/v1/v2-claim"}]}
+····Measured screenshot roster-ch5.png (76.5 KB)
+·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4693/functions/v1/v2-claim"}]}
+····Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+···Measured screenshot stage-ch1-390x844.png (32.5 KB)
+··G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18540,"JSHeapUsedSize":15145984},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16127800},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":7,"nextFrameMs":59.099999994039536,"eventTiming":[{"name":"click","duration":64,"inputDelay":1.2000000029802322}]},"craft":{"clickToPendingMs":0.9000000059604645,"nextFrameMs":22.5,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.7000000029802322}]},"fight":{"clickToPendingMs":1,"nextFrameMs":30.5,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.800000011920929}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+··{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+····{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+···{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+····Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+··{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4693/functions/v1/v2-claim"}]}
+·····Measured screenshot stage-ch3-390x844.png (33.2 KB)
+·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4693/functions/v1/v2-claim"}]}
+····Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+·····Measured screenshot stage-ch4-390x844.png (33.7 KB)
+·······Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+······Measured screenshot stage-ch5-390x844.png (36.5 KB)
+··Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.8,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.3,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+···································
+····················G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+·········[livingroom 1600x900] outer: 18.61, center: 47.02
+····[livingroom 390x844] outer: 26.11, center: 58.19
+···[kitchen 1600x900] outer: 22.02, center: 51.72
+···[kitchen 390x844] outer: 27.37, center: 63.40
+··[bathroom 1600x900] outer: 19.59, center: 50.56
+···[bathroom 390x844] outer: 22.31, center: 62.29
+·[basement 1600x900] outer: 18.55, center: 49.64
+·[basement 390x844] outer: 21.83, center: 61.00
+·[rooftops 1600x900] outer: 14.67, center: 41.73
+·[rooftops 390x844] outer: 17.41, center: 53.55
+·
+  289 passed (1.3m)
+== pinned contract submodules
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/forge-std'...
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/openzeppelin-contracts'...
+Submodule path 'contracts/lib/forge-std': checked out '8987040ede9553cea20c95ad40d0455930f9c8e0'
+Submodule path 'contracts/lib/openzeppelin-contracts': checked out '69c8def5f222ff96f2b5beff05dfba996368aa79'
+Submodule 'lib/erc4626-tests' (https://github.com/a16z/erc4626-tests.git) registered for path 'contracts/lib/openzeppelin-contracts/lib/erc4626-tests'
+Submodule 'lib/forge-std' (https://github.com/foundry-rs/forge-std) registered for path 'contracts/lib/openzeppelin-contracts/lib/forge-std'
+Submodule 'lib/halmos-cheatcodes' (https://github.com/a16z/halmos-cheatcodes) registered for path 'contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes'
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/openzeppelin-contracts/lib/erc4626-tests'...
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/openzeppelin-contracts/lib/forge-std'...
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes'...
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/erc4626-tests': checked out '8b1d7c2ac248c33c3506b1bff8321758943c5e11'
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/forge-std': checked out 'ae570fec082bfe1c1f45b0acca4a2b4f84d345ce'
+Submodule 'lib/ds-test' (https://github.com/dapphub/ds-test) registered for path 'contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test'
+Cloning into '/private/tmp/tbh-t007-safe-verifier/verify-pr-244/contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test'...
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/forge-std/lib/ds-test': checked out 'e282159d5170298eb2455a6c05280ab5a73a4ef0'
+Submodule path 'contracts/lib/openzeppelin-contracts/lib/halmos-cheatcodes': checked out 'c0d865508c0fee0a11b97732c5e90f9cad6b65a5'
+== prepare pinned Solidity compiler
+Compiling 58 files with Solc 0.8.24
+Solc 0.8.24 finished in 981.24ms
+Compiler run successful!
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:82:9
+   │
+82 │         relicNFT.safeTransferFrom(msg.sender, address(this), relicId, amount, "");
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ src/RelicNFT.sol:72:13
+   │
+72 │         if (block.timestamp > v.expiry) revert VoucherExpired();
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/block-timestamp
+
+warning[arbitrary-send-eth]: ETH is sent to a user-controlled destination; restrict the destination or the caller
+   ╭▸ src/RelicMarket.sol:97:22
+   │
+97 │         (bool ok,) = payable(l.seller).call{value: l.price}("");
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/arbitrary-send-eth
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+   ╭▸ src/RelicNFT.sol:86:9
+   │
+86 │         emit RelicForged(v.player, v.relicId, v.rarity, v.nonce);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:96:9
+   │
+96 │         relicNFT.safeTransferFrom(address(this), msg.sender, l.relicId, l.amount, "");
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-eth]: uncapped ETH transfer can be reentered before `_status` is updated
+   ╭▸ src/RelicMarket.sol:97:22
+   │
+97 │         (bool ok,) = payable(l.seller).call{value: l.price}("");
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-eth
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/RelicMarket.sol:111:9
+    │
+111 │         relicNFT.safeTransferFrom(address(this), l.seller, l.relicId, l.amount, "");
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[environment-read-across-mutation]: `block.timestamp` may be reused across `vm.warp`
+    ╭▸ test/RelicNFT.t.sol:35:92
+    │
+ 35 │             RelicNFT.Voucher({player: player, relicId: 7, rarity: 3, nonce: nonce, expiry: block.timestamp + 1 hours});
+    │                                                                                            ━━━━━━━━━━━━━━━
+    ‡
+111 │         vm.warp(v.expiry); // still valid at exactly expiry
+    │         ───────────────── `vm.warp` changes this environment here
+    │
+    ├ help: capture it with `vm.getBlockTimestamp()` instead
+    ╰ help: https://getfoundry.sh/forge/linting/environment-read-across-mutation
+
+== forge test
+No files changed, compilation skipped
+
+Ran 7 tests for test/VoucherReplay.t.sol:VoucherReplayTest
+[PASS] test_expiredVoucherReverts() (gas: 55915)
+[PASS] test_identicalVoucherReplayReverts() (gas: 190309)
+[PASS] test_nonSignerVoucherReverts() (gas: 68414)
+[PASS] test_ownerCancelledNonceReverts() (gas: 119077)
+[PASS] test_playerASentByPlayerBReverts() (gas: 55271)
+[PASS] test_sameNonceWithAnotherSignedRelicIdReverts() (gas: 207391)
+[PASS] test_validVoucherMintsOnce() (gas: 169188)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 15.75ms (7.97ms CPU time)
+
+Ran 1 test for test/Deploy.t.sol:DeployTest
+[PASS] test_deployScript_wiresContractsAndWritesAddresses() (gas: 11217291)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 17.77ms (11.48ms CPU time)
+
+Ran 26 tests for test/RelicNFT.t.sol:RelicNFTTest
+[PASS] testFuzz_nonSignerVoucherNeverMints(uint256,address,uint256,uint8,uint256,uint256) (runs: 256, μ: 75957, ~: 75744)
+[PASS] test_cancelUsedNonceReverts() (gas: 263477)
+[PASS] test_cannotSetZeroSigner() (gas: 35185)
+[PASS] test_compactSignatureRejected() (gas: 55309)
+[PASS] test_documented_rarityRaceBricksLaterVoucher() (gas: 253749)
+[PASS] test_expiredVoucherReverts() (gas: 202594)
+[PASS] test_hashVoucherMatchesManualEip712() (gas: 19233)
+[PASS] test_highSSignatureRejected() (gas: 56400)
+[PASS] test_malformedSignatureReverts() (gas: 40410)
+[PASS] test_nonOwnerCannotCancelNonce() (gas: 36234)
+[PASS] test_nonOwnerCannotChangeSigner() (gas: 64023)
+[PASS] test_nonceIsGlobalAcrossPlayers() (gas: 205636)
+[PASS] test_otherChainReplayReverts() (gas: 63408)
+[PASS] test_ownerCanSetURI() (gas: 51349)
+[PASS] test_ownerCancelsNonceThenVoucherReverts() (gas: 117439)
+[PASS] test_ownerRotatesSignerAndOldVouchersFail() (gas: 265053)
+[PASS] test_rarityMismatchReverts() (gas: 239045)
+[PASS] test_receiverHookCannotReplayVoucher() (gas: 1394954)
+[PASS] test_renounceOwnershipAlwaysReverts() (gas: 32171)
+[PASS] test_replayOnSecondInstanceRejected() (gas: 69221)
+[PASS] test_reusedNonceReverts() (gas: 186072)
+[PASS] test_tamperedVoucherReverts() (gas: 62046)
+[PASS] test_typehashMatchesDocumentedString() (gas: 5859)
+[PASS] test_validVoucherMints() (gas: 205265)
+[PASS] test_voucherForXSentByYReverts() (gas: 51536)
+[PASS] test_wrongSignerReverts() (gas: 64746)
+Suite result: ok. 26 passed; 0 failed; 0 skipped; finished in 75.99ms (70.30ms CPU time)
+
+Ran 5 tests for test/Fuzz.t.sol:RelicFuzzTest
+[PASS] testFuzz_eachVoucherFieldIsSigned(address,uint256,uint8,uint256,uint256,uint8) (runs: 256, μ: 80155, ~: 80005)
+[PASS] testFuzz_listBuyCancel(uint256,uint8,uint256,uint256,bool) (runs: 256, μ: 1180602, ~: 1190924)
+[PASS] testFuzz_voucherValidation(address,uint256,uint8,uint256,uint256) (runs: 256, μ: 161225, ~: 209962)
+[PASS] testFuzz_wrongPlayerAndSigner(address,uint256,uint8,uint256,uint256,uint256) (runs: 256, μ: 274067, ~: 275800)
+[PASS] testFuzz_zeroListingInputs(uint256,uint256) (runs: 256, μ: 79298, ~: 79283)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 311.11ms (459.24ms CPU time)
+
+Ran 27 tests for test/RelicMarket.t.sol:RelicMarketTest
+[PASS] testFuzz_priceExactPaymentOnly(uint256,uint8) (runs: 256, μ: 808849, ~: 755769)
+[PASS] test_buyAlreadyBoughtReverts() (gas: 605240)
+[PASS] test_buyCancelledReverts() (gas: 589678)
+[PASS] test_buyNonexistentListingReverts() (gas: 53257)
+[PASS] test_buyOverpayReverts() (gas: 504350)
+[PASS] test_buyPaysSellerExactlyAndMovesRelic() (gas: 709178)
+[PASS] test_buyUnderpayReverts() (gas: 504349)
+[PASS] test_cancelAfterBuyReverts() (gas: 598603)
+[PASS] test_cancelReturnsRelicToSeller() (gas: 669776)
+[PASS] test_cancelTwiceReverts() (gas: 580666)
+[PASS] test_constructorRejectsZeroAddress() (gas: 4421)
+[PASS] test_directBatchTransferToMarketReverts() (gas: 248593)
+[PASS] test_directTransferToMarketReverts() (gas: 249811)
+[PASS] test_getListingsPaging() (gas: 2453563)
+[PASS] test_listMoreThanOwnedReverts() (gas: 437958)
+[PASS] test_listMovesRelicIntoMarket() (gas: 706101)
+[PASS] test_listWithoutApprovalReverts() (gas: 386071)
+[PASS] test_listZeroAmountReverts() (gas: 261508)
+[PASS] test_listZeroPriceReverts() (gas: 261492)
+[PASS] test_listingIdsIncrement() (gas: 1214647)
+[PASS] test_maliciousBuyerReentryIsBlocked() (gas: 1911828)
+[PASS] test_maliciousSellerBubblingReentryRevertsWholeBuy() (gas: 2092070)
+[PASS] test_maliciousSellerReentryIsBlocked() (gas: 2080658)
+[PASS] test_marketRejectsPlainAvax() (gas: 38177)
+[PASS] test_onlySellerCanCancel() (gas: 548738)
+[PASS] test_sellerThatRejectsAvaxCannotBeBought() (gas: 1503494)
+[PASS] test_transferFromOtherErc1155Reverts() (gas: 224848)
+Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 311.26ms (174.16ms CPU time)
+
+Ran 19 tests for test/RelicEdges.t.sol:RelicEdgesTest
+[PASS] test_approvedOperatorCannotPushRelicIntoMarket() (gas: 302759)
+[PASS] test_buyWithZeroValueWrongPaymentReverts() (gas: 512295)
+[PASS] test_buyerThatCannotReceiveRevertsAndRefundsEverything() (gas: 795985)
+[PASS] test_cancelByNonSellerLeavesListingIntact() (gas: 519542)
+[PASS] test_cancelUnissuedNonceBlocksItLater() (gas: 144113)
+[PASS] test_cancelledNonceLeavesNoRelic() (gas: 139672)
+[PASS] test_expiredVoucherDoesNotBurnItsNonce() (gas: 76550)
+[PASS] test_failedMintDoesNotUseNonceOrCreateRelic() (gas: 231874)
+[PASS] test_getListingsEdgePaging() (gas: 927477)
+[PASS] test_listingAfterBuyUsesNewId() (gas: 848835)
+[PASS] test_marketSupportsReceiverInterface() (gas: 6239)
+[PASS] test_ownershipTransferMovesAdminRights() (gas: 121621)
+[PASS] test_receiverHooksRevertWhenCalledDirectly() (gas: 29972)
+[PASS] test_removingMiddleListingKeepsOthersBuyable() (gas: 1537984)
+[PASS] test_sameRelicMintsTwiceWithDifferentNonces() (gas: 284282)
+[PASS] test_sellerCanBuyOwnListing() (gas: 575626)
+[PASS] test_supportsErc1155Interface() (gas: 19004)
+[PASS] test_voucherExpiredLongAgoReverts() (gas: 73516)
+[PASS] test_wrongPriceKeepsListingAndEscrow() (gas: 660023)
+Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 331.18ms (13.33ms CPU time)
+
+Ran 10 tests for test/RelicMarketFuzz.t.sol:RelicMarketFuzzTest
+[PASS] testFuzz_cancelledAndNonexistentListingsKeepBuyerFunds(uint256,uint256,uint256) (runs: 256, μ: 1549193, ~: 1552120)
+[PASS] testFuzz_cancelledNonceCannotMint(uint256,uint256) (runs: 256, μ: 128882, ~: 128648)
+[PASS] testFuzz_expiredVoucherDoesNotConsumeNonce(uint256,uint256) (runs: 256, μ: 75869, ~: 76383)
+[PASS] testFuzz_nonReceiverBuyerRollsBack(uint256) (runs: 256, μ: 633115, ~: 632572)
+[PASS] testFuzz_rejectedSellerPaymentRollsBackAndCanRetry(uint256,uint256) (runs: 256, μ: 2271649, ~: 2292495)
+[PASS] testFuzz_replayedVoucherCannotMintAgain(uint256,uint256) (runs: 256, μ: 208523, ~: 208269)
+[PASS] testFuzz_revokedApprovalAndEmptySellerBalanceCannotInvalidateEscrow(uint256,uint256) (runs: 256, μ: 1613798, ~: 1633916)
+[PASS] testFuzz_voucherValidAtExpiryButNotOneSecondLater(uint256,uint256) (runs: 256, μ: 214474, ~: 214219)
+[PASS] testFuzz_wrongPaymentsRollbackThenExactPaymentSettlesOnce(uint256,uint256,uint256) (runs: 256, μ: 2350493, ~: 2354414)
+[PASS] test_exactPaymentAtUint256Max() (gas: 592063)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 331.19ms (1.72s CPU time)
+
+Ran 1 test for test/Invariants.t.sol:RelicInvariantsTest
+[PASS]
+RelicInvariantsTest invariants:
+[PASS] invariant_escrowEqualsActiveListings
+[PASS] invariant_nonceNeverUsedTwice
+[PASS] invariant_rarityNeverChanges
+ RelicInvariantsTest invariants (runs: 32, calls: 1536, reverts: 0)
+
+╭-----------------------+---------------------------+-------+---------+----------╮
+| Contract              | Selector                  | Calls | Reverts | Discards |
++================================================================================+
+| RelicInvariantHandler | buy                       | 236   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | cancel                    | 218   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | cancelNonce               | 216   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | list                      | 208   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | mint                      | 221   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | mintSameOrDifferentRarity | 220   | 0       | 0        |
+|-----------------------+---------------------------+-------+---------+----------|
+| RelicInvariantHandler | replay                    | 217   | 0       | 0        |
+╰-----------------------+---------------------------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.11s (1.09s CPU time)
+
+Ran 8 test suites in 1.11s (2.50s CPU time): 96 tests passed, 0 failed, 0 skipped (96 total tests)
+== chain ABI has no drift
+wrote src/abi.ts

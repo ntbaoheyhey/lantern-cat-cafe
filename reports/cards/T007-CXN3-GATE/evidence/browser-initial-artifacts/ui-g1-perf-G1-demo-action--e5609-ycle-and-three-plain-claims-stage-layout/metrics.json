@@ -1,0 +1,53 @@
+{
+  "after": {
+    "before": {
+      "visibilityListeners": 5,
+      "JSEventListeners": 259,
+      "Nodes": 18535,
+      "JSHeapUsedSize": 14872972
+    },
+    "after": {
+      "visibilityListeners": 5,
+      "JSEventListeners": 259,
+      "Nodes": 18564,
+      "JSHeapUsedSize": 16047156
+    },
+    "plainClaimRebuilds": 0,
+    "feedback": {
+      "equip": {
+        "clickToPendingMs": 6,
+        "nextFrameMs": 49.5,
+        "eventTiming": [
+          {
+            "name": "click",
+            "duration": 56,
+            "inputDelay": 1.1000000089406967
+          }
+        ]
+      },
+      "craft": {
+        "clickToPendingMs": 0.7000000029802322,
+        "nextFrameMs": 18.900000005960464,
+        "eventTiming": [
+          {
+            "name": "click",
+            "duration": 24,
+            "inputDelay": 0.5
+          }
+        ]
+      },
+      "fight": {
+        "clickToPendingMs": 0.8999999910593033,
+        "nextFrameMs": 26.200000002980232,
+        "eventTiming": [
+          {
+            "name": "click",
+            "duration": 32,
+            "inputDelay": 0.7000000029802322
+          }
+        ]
+      }
+    },
+    "visibility": "synthetic hidden/visible events, including resize while paused"
+  }
+}

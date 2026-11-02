@@ -1,0 +1,30 @@
+import { defineConfig } from '@playwright/test';
+import { existsSync } from 'node:fs';
+import { serverPort, apiPort, serverURL, apiURL } from './e2e/support/server-ports';
+import { classicPort, v2Port, classicURL, v2URL } from './e2e/support/servers';
+
+// Use the preinstalled Chromium when present (sandbox); CI installs its own.
+const preinstalled = '/opt/pw-browsers/chromium';
+const executablePath = existsSync(preinstalled) ? preinstalled : undefined;
+const launchOptions = { executablePath, args: ['--no-sandbox'] };
+
+// ui/** joins stage-layout: both describe the same v2 stage-first UI. A new UI
+// spec inherits v2 automatically; v2-loop keeps its separate gameplay counts.
+// Never reuse an unknown preview (it may serve a stale build). After a cancelled
+// run, find listeners with `lsof -nP -iTCP:4173 -iTCP:4174 -sTCP:LISTEN`, inspect
+// their PID/cwd, then `kill <owned-pid>`. See docs/test-stability.md. Another run
+// can use E2E_PORT_CLASSIC/E2E_PORT_V2; builds and test outputs are port-isolated.
+const classicDist = `dist/e2e-${classicPort}`;
+const v2Dist = `dist-v2/e2e-${v2Port}`;
+if (new Set([classicPort, v2Port, serverPort, apiPort]).size !== 4) throw new Error('All four E2E ports must differ');
+const externalServer = process.env.F2_EXTERNAL_SERVER === '1';
+const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_ALLOW_MOCK_AUTH: '1' };
+const viewportName = process.env.E2E_VIEWPORT ?? '1280x720';
+if (!['1280x720', '1600x900'].includes(viewportName)) {
+  throw new Error('E2E_VIEWPORT must be 1280x720 or 1600x900');
+}
+const desktopViewport = viewportName === '1600x900'
+  ? { width: 1600, height: 900 } : { width: 1280, height: 720 };
+
+export default defineConfig({
+  testDir: 'e2e',

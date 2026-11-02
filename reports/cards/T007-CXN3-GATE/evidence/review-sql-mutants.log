@@ -1,0 +1,28 @@
+    and pg_catalog.pg_get_expr(p.polqual, p.polrelid) = 'false'
+    and pg_catalog.pg_get_expr(p.polwithcheck, p.polrelid) = 'false'
+)
+union all
+select 'constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled', exists (
+  select 1 from pg_catalog.pg_constraint c
+  join pg_catalog.pg_class t on t.oid = c.conrelid
+  join pg_catalog.pg_namespace n on n.oid = t.relnamespace
+  where n.nspname = 'public' and t.relname = 'relic_vouchers'
+    and c.conname = 'relic_vouchers_status_check' and c.contype = 'c' and c.convalidated
+    and pg_catalog.pg_get_constraintdef(c.oid) like '%''cancelled''%'
+)
+order by object;
+         "supabase/migrations", "supabase/functions"]
+MUTANTS = [
+    ("anonymous-500", SCRIPT, "status === 401 :", "[401, 500].includes(status) :", "unsigned POST requires exactly 401"),
+    ("oversized-401", SCRIPT, "[400, 413].includes(status)", "[400, 401, 413].includes(status)", "oversized body requires 400 or 413"),
+    ("cors-origin", SCRIPT, "allowedOrigin === origin", "Boolean(allowedOrigin)", "preflight requires 2xx"),
+    ("budget-hint", SCRIPT, "budgets migration missing?", "service unavailable", "503 fails with a budget migration hint"),
+    ("network-pass", SCRIPT, "{ ok: false, detail: 'network error' }", "{ ok: true, detail: 'network error' }", "network errors fail"),
+    ("missing-route", SCRIPT, "['v2-boss-fight', 'v2-choose-class'", "['v2-choose-class'", "all nine routes get three probes"),
+    ("small-body", SCRIPT, "'x'.repeat(8193)", "'x'.repeat(8000)", "all nine routes get three probes"),
+    ("missing-migration", DOC, "| [20261107000000_voucher_race_guard.sql]", "REMOVED [20261107000000_voucher_race_guard.sql]", "migration table matches the branch exactly"),
+    ("user-only-authority", DOC, "user-approved mission section 7", "user-only deployment", "optional release follows section 7"),
+    ("wrong-existing-table", SQL, "('public.cat_state')", "('public.players')", "all 17 expected objects are present"),
+    ("missing-cxn1-signature", SQL, "public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)", "public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)", "all 17 expected objects are present"),
+]
+

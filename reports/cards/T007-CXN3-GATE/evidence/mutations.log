@@ -1,0 +1,14 @@
+control-node: exit 0; killed=None
+control-schema: exit 0; killed=None
+anonymous-500: exit 1; killed=True
+oversized-401: exit 1; killed=True
+cors-origin: exit 1; killed=True
+budget-hint: exit 1; killed=True
+network-pass: exit 1; killed=True
+missing-route: exit 1; killed=True
+small-body: exit 1; killed=True
+missing-migration: exit 1; killed=True
+user-only-authority: exit 1; killed=True
+wrong-existing-table: exit 1; killed=True
+missing-cxn1-signature: exit 1; killed=True
+11 mutants killed; scratch copies removed.

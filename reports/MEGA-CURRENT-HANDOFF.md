@@ -1,34 +1,22 @@
-# Taskbar Hero current handoff — T001 retry 2 closure
-Updated 2026-11-02 after auditing T014 and freshly rechecking all 32 production assets.
-T001 retry 2 only: STEP 1 a–d, under T014's approved current-main target; no suites rerun.
-Fresh live identity window: 11:12:13.885Z–11:12:17.918Z; all assets/HTML/entry match exact main.
-Evidence: reports/cards/T001-BASE0-CLOSURE-R2/REPORT.md; final commit in results/T001.json.
-All four historical heads, 66 original receipt files and 120 T014 checkpoint files verified.
-T001 status is DONE with the explicit target reconciliation; historical 74d60da is not current live.
-Earlier object-store lookup failure retained; corrected lookup resolves TESTED_HEAD in verifier repo.
+# Taskbar Hero current handoff — T007 BLOCKED
 
-The following T014 results are adopted from its audited committed checkpoint, not rerun here.
-Ledger: ai/codex-mega-ledger; worktree /tmp/tbh-t001-ledger.
-Approved target/current main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
-Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
-Target authority: orchestrator corrective-of-T001 task T014; recorded dispatch in release-target.json.
-GOAL.md and queue.json unchanged. No rollback, product commit, PR, merge or deployment.
-T001 remains historical BASE0 proof at 74d60da, original checkpoint 89664d7 preserved.
-Its stale present-tense target is superseded by this explicitly assigned current-main gate.
-Successors already merged: FXRB #243, CXP1 #240, CXL1 #248, ART1 #247, CXN3-FIX #250.
-Fresh typecheck/lint/build/unit PASS; 2,380 passing unit/script cases, inherited 2 expected-fail/11 skip.
-Full browser: 289/289 at each 1280x720 and 1600x900, retries=0. Forge: 96/96.
-Production: 32/32 files match two fresh builds; HTML/manifest/all hashes stable 334.824 seconds.
-Live entry index-N5_1FrYv.js; window 10:34:33.965Z–10:40:08.789Z on 2026-11-02.
-Legacy live PASS; merged-core eight stages PASS at both sizes, zero browser/network errors.
-Current phase does not claim full nine-stage, boss victory, funded crafting or on-chain transactions.
-No Edge Function deployment identity is claimed; no --v2 live check before CXN3 merge.
-First new live harness disclosure-order failure retained; corrected observation matches prior harness.
-Historical verifier asset mismatch/unit timeout and passing unchanged unit rerun retained.
-Evidence: reports/cards/T014-CURRENT-MAIN-LIVE/REPORT.md and acceptance-prepublication.json.
-Publication and final all-five-criteria audit: .codex-orchestrator/verification/T014; result names commit.
-All task test sessions completed; ports 4670–4673 free. No helpers, agents, timers or schedules.
-Original dirty checkout untouched. Repo private; no keys stored, main push, Actions or .github edits.
-No destructive database operation, migration, release, real funds or contest submission.
-No user step or duplicate follow-up for T014. Return control to orchestrator.
-Next: return to orchestrator; reconcile existing successor task states before further work.
+PR #244 stays draft/open on ai/codex-n3-cutover-truth at db0f9d64c408825a832d808bc31cfd88f1c3a014.
+T006 handoff absent; #250 independently confirmed merged as current main 9c457a3.
+Integrated current main via cd3b1a5; corrected stale BASE0 import warning via db0f9d6; both pushed.
+No merge, function deployment, migration, Vercel setting change or deployed --v2 check.
+Owner must recover complete current-live function source/maps and tested restore procedure.
+Supabase source export exit1 UnsafeFunctionDownloadPathError; only two partial files, not rollback proof.
+Catalog-only SELECT17/17 objects present. All v2 metadata updated Oct 31; current backend source unproven.
+See reports/OPTIONAL-USER-STEPS.md T007. Do not bypass unsafe extraction or deploy without rollback.
+Candidate: type/lint/2393 unit + script cases/build/classic/links/import/audit pass; mutants11/11.
+Safe FORCE_ALL verifier: exact db0f9d6, browser 1280=289, Forge 96, retained clean checkout.
+Final 1600 browser 289. Two fresh self-review passes NOT completed; no >=92 score or merge gate claim.
+Fresh main 9c457a3: type/lint/2380 unit + script cases/build and browser 289 at both sizes pass.
+Inherited 2 expected fails / 11 skips unchanged. Initial setup failures and artifacts retained.
+Live legacy 22/22; eight-stage merged-core journey both sizes, zero errors; not full nine/on-chain.
+Production 32/32 assets match two fresh main builds; stable 254.294s, 12:37:10.900–12:41:25.194UTC 2 Nov.
+Frontend equivalence does not prove Edge Function deployment identity. No live --v2 before merge.
+Report: reports/cards/T007-CXN3-GATE/REPORT.md; evidence/command-receipts.json and manifest.json.
+Original dirty source preserved; ports 4670–4673/4680–4683/4690–4693 free. No helpers/timers.
+Final ledger commit/publication and results are in .codex-orchestrator/results/T007.json.
+Resume the same T007 after owner recovery; no duplicate follow-up task. Return control to orchestrator.

@@ -1,0 +1,31 @@
+7. NOTHING WAITS FOR THE USER - INTERIM SOLUTIONS
+====================================================================================================
+For every step that used to need the user, do the interim version yourself and finish the item:
+ - Opinion / decision / signature -> decide it yourself, docs/decisions/<id>.md, sign as in the AUTHORITY UPDATE.
+ - Live migrations / Edge Function changes -> prove them on a LOCAL stack (supabase start, or PGlite with all migrations applied) with tests; the frontend side ships behind a default-OFF flag. Additive, idempotent, reversible migrations only, each with a matching rollback file under supabase-manual/. If Supabase CLI credentials are ALREADY configured on this machine, you may apply ADDITIVE migrations and deploy functions to the live project (ref qoalewtxflagoprrxrgh) after the item passed sections 3 and 5 locally: timestamp order, migrations BEFORE functions (the limiter fails closed with 503 otherwise), node scripts/check-deno-imports.mjs first, node scripts/check-live.mjs --v2 after. If no credentials are configured, stay local and list the exact commands in the optional steps.
+ - Vercel env (incl. the VITE_GAME_V2 cut-over) -> keep the flag default-OFF on main and prove the ON path with a local VITE_GAME_V2=1 build and e2e. If the Vercel CLI is ALREADY logged in on this machine, you may flip it only after CXN3's go/no-go checklist is fully green on live, with the rollback (env to 0 + redeploy, or Promote the previous deployment) written and tested first.
+ - Wallet / chain tests -> create a THROWAWAY Fuji testnet wallet locally, fund it only from a public Fuji faucet if reachable (else use anvil or a Fuji fork). Never reuse it; never write its key into the repo, a report or a log (untracked temp file only, deleted at the end).
+ - Submission -> prepare EVERYTHING in submission/ (description, pitch outline, demo script, screenshots, Avalanche integration proof, judging-criteria mapping) but do not submit.
+ - Repo visibility -> prepare a public-readiness checklist (secret scan of full git history, licence, README) but do not change visibility.
+
+7a. SAFETY GUARDRAILS - ABSOLUTE (irreversible or unsafe; not about approval)
+ - Never print, commit, log or store any secret (keys, JWTs, DB URLs, passwords, private keys, the leaked DB password). Mask any you meet.
+ - Never make a destructive or non-reversible write to the live Supabase database (it has NO backups): no DROP, TRUNCATE, DELETE of player rows, destructive ALTER or data rewrite. Additive and reversible only; anything else stays local.
+ - Never use mainnet, real funds or a real-funds wallet; never create or deploy a token.
+ - Never make the repo public. Never actually submit to the contest.
+ - No .github/** changes, no GitHub Actions runs (commits carry " [skip ci]").
+
+reports/OPTIONAL-USER-STEPS.md (replaces NEEDS-USER.md; nothing in it blocks anything): steps the user MAY take later, e.g. reset the leaked DB password, discard the old test wallet, apply/deploy what you proved locally if you had no credentials, flip VITE_GAME_V2, make the repo public, submit. For each: what, why, exact command or click path, what to check afterwards, how to roll back. Short, ordered, deduplicated.
+
+9. GIT DELIVERY, REPORT, DEFINITION OF DONE, MERGE GATE G1-G7 (every item; these add to sections 3-5, both must pass)
+====================================================================================================
+How to read this section inside THIS prompt: "section 1 step 3" = the verify list of section 2c; "section 4" / "NEEDS-USER" / "user-hands" / "WAITING-USER" = section 7 here (interim solution; reports/OPTIONAL-USER-STEPS.md); "PRODUCTION SAFETY" = the default-OFF flag rule in AUTHORITY plus 7a.
+Git: git config user.name ntbaoheyhey && git config user.email 108352255+ntbaoheyhey@users.noreply.github.com (check; fix wrong authors with git commit --amend --reset-author --no-edit). Branch ai/codex-<id lowercase> unless the block says otherwise. Commits end with " [skip ci]" (GitHub Actions minutes are used up; never trigger workflows). git push -u origin <branch>, retry on network errors, never force-push a branch you did not create. PR to main (gh pr create), title "<ID>: <summary>", body links the report, lists REFERENCE paths used, design-note links, NEEDS-USER entries and flags. If the branch cannot be pushed, push <branch>-report with only the report.
+MERGE GATE (all must be true; test very carefully; never merge red):
+ G1 Branch is up to date with the latest origin/main (git merge origin/main into the branch, no rebase of pushed history), and the FULL verify list (section 1 step 3) passes on that exact commit, including the complete e2e suite at 1280x720 AND 1600x900 and the classic build.
+ G2 UI items: ui-audit + effects-test gates met for EVERY screen in screen-manifest.json (not only the changed ones), DIFF TABLE has no OPEN row.
+ G3 node scripts/check-bundle.mjs within budget; node scripts/check-links.mjs not worse than main; node scripts/check-deno-imports.mjs clean; git diff --exit-code -- supabase/functions after pnpm gen:deno.
+ G4 Contracts touched: forge test green (full suite). Migrations touched: they apply cleanly on PGlite/local from zero AND on top of the current main set; rollback note written.
+ G5 PRODUCTION SAFETY (section 4) holds: with all new flags OFF, the built app against the current live backend behaves as before (prove with a production build + preview served with the live public config, read-only, no sign-in: landing, guest/demo path, no console errors).
+ G6 Self-review: read your full diff once as a strict reviewer (bugs, leftover debug code, secrets, dead code, missing tests); fix findings, then re-run G1.
+ G7 Report pushed with every gate line PASS and its evidence.

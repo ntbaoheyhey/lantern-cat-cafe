@@ -1,0 +1,50 @@
+142:supabase/tests test:  Test Files  34 passed (34)
+143:supabase/tests test:       Tests  579 passed (579)
+147:packages/game-rules test:  Test Files  28 passed | 3 skipped (31)
+148:packages/game-rules test:       Tests  402 passed | 2 expected fail | 11 skipped (415)
+154:packages/api-contract test:  Test Files  1 passed (1)
+155:packages/api-contract test:       Tests  16 passed (16)
+161:apps/web test:  Test Files  113 passed (113)
+162:apps/web test:       Tests  1326 passed (1326)
+222:[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+235:[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+548:  289 passed (1.3m)
+649:Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 15.75ms (7.97ms CPU time)
+653:Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 17.77ms (11.48ms CPU time)
+682:Suite result: ok. 26 passed; 0 failed; 0 skipped; finished in 75.99ms (70.30ms CPU time)
+690:Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 311.11ms (459.24ms CPU time)
+720:Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 311.26ms (174.16ms CPU time)
+742:Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 331.18ms (13.33ms CPU time)
+755:Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 331.19ms (1.72s CPU time)
+783:Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.11s (1.09s CPU time)
+785:Ran 8 test suites in 1.11s (2.50s CPU time): 96 tests passed, 0 failed, 0 skipped (96 total tests)
+{
+  "status": "PASS",
+  "method": "Direct Playwright, fresh guest contexts and real UI actions; no state injection or write requests",
+  "source": {
+    "head": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "tree": "3c662e8e7e9e28c9bb0be25045ac984c2f10fa43",
+    "role": "Exact clean main tree independently rebuilt; production artifact equality verified in ../artifact-before.json"
+  },
+  "deploymentProof": "../artifact-before.json",
+  "phaseAuthority": "T014 and resume STEP 1c; CXU3 and CXC2 not merged (phase-prerequisites.json)",
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "source": {
+        "head": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+        "tree": "3c662e8e7e9e28c9bb0be25045ac984c2f10fa43",
+        "role": "Exact clean main tree independently rebuilt; production artifact equality verified in ../artifact-before.json"
+      },
+      "deployment": {
+        "head": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+        "identityMethod": "Production artifact byte equality plus exact-SHA provider statuses",
+        "artifactProof": "../artifact-before.json"
+      },
+      "phase": "merged-core",
+      "fullNineStagePass": false,
+      "startedAt": "2026-11-02T12:38:35.991Z",
+      "steps": [

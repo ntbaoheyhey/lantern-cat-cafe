@@ -1,0 +1,28 @@
+Site https://taskbarhero-eight.vercel.app
+Supabase https://qoalewtxflagoprrxrgh.supabase.co
+Fuji RPC https://api.avax-test.network/ext/bc/C/rpc
+
+PASS  site loads - HTTP 200
+PASS  function auth-nonce refuses anonymous POST - HTTP 200
+PASS  function auth-verify refuses anonymous POST - HTTP 400
+PASS  function game-state refuses anonymous POST - HTTP 401
+PASS  function idle-claim refuses anonymous POST - HTTP 401
+PASS  function equip refuses anonymous POST - HTTP 401
+PASS  function boss-fight refuses anonymous POST - HTTP 401
+PASS  function upgrade refuses anonymous POST - HTTP 401
+PASS  function relic-forge refuses anonymous POST - HTTP 401
+PASS  function relic-mint-report refuses anonymous POST - HTTP 401
+PASS  relic 1 metadata and image - Paw Charm, image/svg+xml
+PASS  relic 2 metadata and image - Silver Bell, image/svg+xml
+PASS  relic 3 metadata and image - Moon Collar, image/svg+xml
+PASS  relic 4 metadata and image - Golden Maneki, image/svg+xml
+PASS  relic 64-hex metadata path (what wallets request) - HTTP 200
+PASS  README has both contract addresses - 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D, 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93
+PASS  Fuji RPC reports chain 43113
+PASS  RelicNFT has code
+PASS  RelicNFT signer() is set - 0x5ec838eccc4ec6b6707b6479394e9e6ceea0b000
+PASS  RelicNFT owner() is set - 0x2bba9a48f7f79d99154108a28d32f1a21d17055c
+PASS  RelicNFT uri(1) points at the site - https://taskbarhero-eight.vercel.app/relics/{id}.json
+PASS  RelicMarket relicNFT() is the RelicNFT
+
+ALL CHECKS PASSED

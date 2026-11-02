@@ -236,3 +236,9 @@ CXN3-FIX diagnosis 2026-11-02T00:20:19+07:00: bounded5request sample3PASS/2FAIL,
 Checkpoint 2026-11-02T00:58:42+07:00: user restored the schedule to30minutes after a temporary15minute change; existing ACTIVE automation updated in place and persisted settings verified. Helpers/subagents remain limited. Read-only Vercel UI confirms authenticated access and two connected Taskbar projects; monthly build figures do not establish quota reset. Both status contexts remain failure at00:40UTC+7. No deploy, merge or configuration change. Ledger-only preview suppression is being evaluated, not claimed implemented.
 
 Ledger preview maintenance 2026-11-02T01:02:46+07:00: added only the exact ledger branch rule, preserved all existing configuration, and checked public security-header equivalence on both Taskbar hosts. No source build rerun was needed for this configuration-only maintenance; no product grade, deployment success or quota reset is claimed.
+
+T007 (2 Nov 2026): CXN3 #244 remains BLOCKED / draft at db0f9d6 after current-main integration
+and correction of stale BASE0 runbook warnings. Local preflight and fresh existing main/live
+checks pass, but complete live function rollback source is unavailable: authenticated export
+refuses unsafe extraction. No release/merge or live --v2 check; no final self-review scores.
+Owner recovery step is recorded in OPTIONAL-USER-STEPS.md. [T007 evidence](cards/T007-CXN3-GATE/REPORT.md).

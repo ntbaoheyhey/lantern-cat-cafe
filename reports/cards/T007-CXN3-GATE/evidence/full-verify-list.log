@@ -1,0 +1,31 @@
+0. ORCHESTRATION (the user's words, 1 Nov 2026)
+====================================================================================================
+Before touching code, plan this mission as small TASK CARDS that a junior subagent can follow: clear goal, exact file paths, constraints, the test cases that prove it, and the definition of done. Give every card a suitable subagent and an effort level (use the best model and the highest effort for every card, including graders; tokens do not matter). Draw a DEPENDENCY GRAPH (text or mermaid) so that independent cards run IN PARALLEL. Write the plan to reports/mega-plan.md and push it as a heads-up, then orchestrate the whole run yourself and never escalate to the user: solve it (section 7).
+Parallel rules:
+ - Build and verify cards for independent items run in parallel, each in its OWN git worktree (git worktree add) with its OWN Playwright ports. Never run two `pnpm test:e2e` on the same ports at once: give each worktree distinct ports or serialise e2e through one lock file (flock /tmp/tbh-e2e.lock). Kill `vite preview` orphans before each e2e run.
+ - GRADER INDEPENDENCE: the subagent that grades an item must NOT be the subagent that built or fixed it. Graders get only the repo, the item spec, this rubric and the raw command output; they never see the builder's self-assessment until after scoring.
+ - Merges are strictly SERIAL (section 5).
+
+====================================================================================================
+1. START
+====================================================================================================
+Step 1. git fetch --all --prune. Check origin for existing ai/codex-* branches and open or closed PRs from earlier attempts (git branch -r | grep ai/codex-, gh pr list --state all --search "head:ai/codex-"). For each one: reuse it (merge latest origin/main into it) or close it with a one-line comment, instead of duplicating work. Treat any reused code exactly like new work: it gets the full verify (section 2), scoring and merge gate. Never trust an earlier report, ledger or PR body; a file existing is not proof it works.
+Step 2. git config user.name ntbaoheyhey && git config user.email 108352255+ntbaoheyhey@users.noreply.github.com (check with git config user.email).
+Step 3. Tooling: corepack enable && corepack prepare pnpm@10.28.0 --activate (pnpm --version must print 10.28.0; else prefix every pnpm command with npx -y pnpm@10.28.0). Node 20+. CI=true pnpm install --frozen-lockfile from the repo root; installer side effects on pnpm-workspace.yaml / pnpm-lock.yaml: git checkout -- them (not a blocker). Playwright: if browsers are missing use PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers or npx playwright install chromium. The browser suite runs from apps/web: pnpm test:e2e (builds classic on port 4173 and v2 with VITE_GAME_V2=1 on 4174).
+Step 4. Baselines on origin/main, saved under reports/baseline/: node scripts/check-links.mjs count (about 58 broken links pre-exist, mostly docs/dry-run-report.md; never add any), node scripts/check-bundle.mjs numbers, full suite result.
+Step 5. Write the plan (section 0), the ledger and the scorecard (section 6), then start the queue.
+
+REFERENCE (exact repo paths; open them, you cannot open claude.ai links):
+ - UI redesign, approved direction: reports/ui-redesign/index.html (flip through every screen at 1280x720 and 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md, reports/ui-redesign/README.md. Match LAYOUT, TOKENS, BEHAVIOUR; real repo art replacing a mockup placeholder is not a difference.
+ - Rune / skill / pets: docs/proposals/rune-skill-system/demo/index.html, docs/proposals/rune-skill-system/demo/README.md, docs/proposals/rune-skill-system/design.md, docs/proposals/rune-skill-system/plan.md. Demo numbers are not game numbers; any number you adopt is your decision in docs/decisions/.
+ - Cut-over / security: docs/cutover-v2.md, docs/proposals/numbers-v2.md, docs/proposals/relic-recovery.md, docs/proposals/auth-hardening-v2.md, docs/proposals/rate-limit-v2.md, docs/proposals/v2-state-integrity.md, supabase-manual/v2-rollback.sql (read only), reports/chain-proof.md, docs/avalanche-integration.md, reports/C3.md.
+ - Tools: scripts/verify-pr.sh (run WITHOUT --comment), scripts/check-links.mjs, scripts/check-bundle.mjs, scripts/check-deno-imports.mjs, scripts/check-live.mjs, apps/web/tools/ui-audit.mjs, apps/web/tools/effects-test.mjs.
+ - Item specs: section 10 (all items) and section 11 (extra detail for FXRB, CXN3, CXP1, CXR1, CXR2, CXL2; the stricter of 10 and 11 wins). Every T-test, TESTS and DONE line there is an acceptance line.
+
+====================================================================================================
+2. VERIFY - PER ITEM, IN A FRESH WORKTREE (run this on every item after you build it, and on any reused earlier code)
+====================================================================================================
+For each item:
+ a. Check out the item branch in its own worktree. Rebase or merge onto latest origin/main first (never rewrite a branch you did not create; these are yours). Record the base commit.
+ b. Tooling: corepack enable && corepack prepare pnpm@10.28.0 --activate (pnpm --version must print 10.28.0; else prefix with npx -y pnpm@10.28.0). CI=true pnpm install --frozen-lockfile. Installer side effects on pnpm-workspace.yaml / pnpm-lock.yaml: git checkout -- them (not a blocker).
+ c. Re-run the FULL verify list yourself and save raw output under reports/scorecard/<id>/logs/:

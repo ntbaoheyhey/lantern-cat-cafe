@@ -1,0 +1,35 @@
+| Full browser, 1600×900 | 289/289 PASS; workers=2, retries=0 | logs/browser-1600.* |
+| Contract unit/fuzz/invariant suite | 96/96 PASS, no failures/skips | logs/forge.* |
+| Deno map generation/drift | generator=0, drift=0 | logs/deno-drift.* |
+| Final source/ref/port audit | exact HEAD/tree, clean checkout, remote main unchanged, four test ports free | source-final.json, logs/final-source-state.* |
+
+## Production identity and live checks
+
+Two **fresh** Vite production builds used `write:false`; all emitted files and public files
+were compared in memory, including exact index.html bytes. Observed public configuration was
+held only in memory: no keys or production bundle bytes were printed, stored or committed.
+No Vercel settings or VITE_GAME_V2 value was changed.
+
+[Before](artifact-before.json) and [after](artifact-after.json) each match **32/32** files by
+HTTP status, byte length and SHA256. HTML, the full JS/CSS entry manifest and every asset hash
+remain identical from **2026-11-02T10:34:33.965Z through 10:40:08.789Z** (334.824 seconds).
+Entry: `/assets/index-N5_1FrYv.js`. HTML SHA256:
+`6079e15e79a402c21e69a513b96ac8110cb38a7915c2ef0e85b01983725e9edf`.
+[Stable window](stable-window.json); [exact-SHA Vercel statuses](deployment-status.json).
+Both provider contexts succeeded. GitHub's deployment-list API returned no additional records;
+no hidden provider commit metadata is claimed. Identical frontend builds cannot distinguish
+different source commits that change only server code or documentation. This gate proves frontend
+artifact equivalence to approved main, not an Edge Function deployment or backend source identity.
+
+The legacy checker passed all 22 checks (logs/legacy-check-live.*), including bounded existing
+auth-nonce behavior, anonymous rejection, relic assets and read-only Fuji calls; no wallet signing.
+The corrected [merged-core live journey](live-phased-r2/summary.json) passed all eight stages at
+1280×720 and 1600×900 within this identity window, using new guest contexts and real UI actions.
+It checked current class-picker entry/help disclosure, class selection, visible canvas and genuine
+idle reward, locked boss reason, Craft recipe/shortage action, earned Bag item/detail and wallet-required
+Market. Both runs had zero browser/network errors, zero HTTP >=400 and no horizontal overflow.
+/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/commands/artifact-before.sh
+/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/commands/artifact-after.sh
+/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/commands/live-phased.sh
+/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/commands/live-phased-r2.sh
+/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/commands.json

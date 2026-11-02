@@ -1,0 +1,77 @@
+UTC 2026-11-02T12:29:17.399989+00:00
+scratch cwd: .cxn3-mutant-8qzckk0u
+$ node --test scripts/check-live.test.mjs
+mutation: scripts/check-live.mjs
+BEFORE: allowedOrigin === origin
+AFTER: Boolean(allowedOrigin)
+expected failing test: preflight requires 2xx
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-boss-fight anonymous - HTTP 401
+PASS  function v2-boss-fight oversized - HTTP 413
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+PASS  function v2-choose-class oversized - HTTP 413
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+PASS  function v2-claim oversized - HTTP 413
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+PASS  function v2-craft oversized - HTTP 413
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+PASS  function v2-equip oversized - HTTP 413
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+PASS  function v2-lock oversized - HTTP 413
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+PASS  function v2-relic-forge oversized - HTTP 413
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+PASS  function v2-salvage oversized - HTTP 413
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+PASS  function v2-state oversized - HTTP 413
+✔ unsigned POST requires exactly 401 (11.15275ms)
+✔ 503 fails with a budget migration hint for every probe (0.138375ms)
+✔ network errors fail (0.359041ms)
+✖ preflight requires 2xx and usable CORS headers (0.787042ms)
+✔ oversized body requires 400 or 413, and reports auth-before-body behavior (0.071875ms)
+✔ all nine routes get three probes without credentials; oversized JSON exceeds 8192 bytes (1.6985ms)
+✔ cut-over History contains the retired procedure; migration table matches the branch exactly (0.300959ms)
+✔ manual deploy lists the same 18 functions and options as the existing workflow (0.168ms)
+✔ optional release follows section 7 with local proof and default-OFF flags (0.254209ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.708375
+
+✖ failing tests:
+
+test at scripts/check-live.test.mjs:33:1
+✖ preflight requires 2xx and usable CORS headers (0.787042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///private/tmp/tbh-t007-cxn3/.cxn3-mutant-8qzckk0u/scripts/check-live.test.mjs:39:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+KILLED=True

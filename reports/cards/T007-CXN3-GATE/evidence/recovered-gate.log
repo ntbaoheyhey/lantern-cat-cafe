@@ -1,0 +1,270 @@
+# Taskbar Hero — resume the full mission in Codex CLI
+
+Run the mission now. This is my explicit instruction to resume in this Codex CLI session. It lifts the desktop session's latest pause for CLI transfer and all older “wait for explicit resume” lines. Do not stop at a plan or ask me to confirm routine authorized work. Continue until the full mission is handled, subject to its quality and safety gates. The desktop session is stopped; you are the sole coordinator.
+
+Use the strongest available model and highest effort (requested gpt-6-astra / ultra / priority); never downgrade. Do not claim a model or priority setting you cannot verify. Reply to me briefly in English; code and docs in English. Context discipline matters more than token savings.
+
+Authoritative ledger worktree:
+`/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero`
+Branch: `ai/codex-mega-ledger`
+Private repository: `ntbaoheyhey/taskbar-hero`
+Original checkout, with historical dirty work to preserve:
+`/Users/bao/Documents/ChatGPT/taskbar hero`
+
+The complete mission is saved in `reports/mega-resume-2026-11-02.md`. This prompt updates its start state; it does not reduce its scope. Read that mission fully in bounded ranges. No need to reconstruct earlier chats.
+
+Start with these small reads in order:
+1. Top current section of `reports/MEGA-FINAL-REPORT.md`.
+2. `reports/MEGA-CURRENT-HANDOFF.md` (under80 lines).
+3. Current table in `reports/mega-ledger.md`, then `mega-priority-plan.md`, `mega-scorecard.md`, `mega-runtime.md`, `mega-checkpoint-policy.md`.
+4. `reports/mega-resume-2026-11-02.md` in bounded ranges; sections1–11 of `reports/MEGA-STATE-AND-RULES-2026-11-01.md`. Read appendices only for the active item. Never dump the whole180KB state file.
+5. `reports/cards/RESUME-20261102/REPORT.md`, its `verified-refs.json`, and `reports/cards/BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json`.
+
+Latest verified facts, to recheck rather than assume:
+- The scheduled routine “Taskbar Hero — checkpoint30phút”, id `taskbar-hero-checkpoint-10-ph-t`, was deleted. The remaining automation list contained only unrelated LifeMate/SC203 jobs; user cron had no mission entry. **No timer, heartbeat, cron, scheduled checkpoint or new automation is allowed.** If a mission routine has reappeared, delete only that routine and verify absence. Do not modify unrelated routines. Checkpoint only at milestones.
+- Main is `74d60dab2cef8c31a3f2729d18719ff3021a9eda`, BASE0 PR246 already merged. Historical valid grades A97.64285714285714/B98 remain attributed to their original reviewers. Actual-main full browser265/265 and12-spec repeat700/700 passed at each1280×720 and1600×900, with core/build checks. Do not rerun those completed suites unless code changed or a new failure warrants it.
+- Verified-state ledger checkpoint `6529cf6b11e66a1a77b84a93eb14e2500f654668` was pushed; a later CLI-transfer checkpoint contains this prompt. Fetch and inspect latest ledger before editing; preserve historical dirty runtime files and untracked captures.
+- PR250 was CLOSED/unmerged because its BASE0 base branch was deleted. GitHub rejected retargeting a closed PR and reopening with a deleted base. The coordinator restored `ai/codex-mega-deno0` at exact historical `280ff4bed495fd28bd489eb5f2dcfd1910f21fc0`, reopened the SAME draftPR250, then retargeted it to main. Source `a9b804cec74c866b0b06ca69142d10db3b642a75` is unchanged. Current mergeability was CONFLICTING. Do not create a replacement PR or assume it still targets BASE0. The restored historical branch remains preserved.
+- Other source heads: FXRB#243 `26e7de8`; CXP1#240 `2b7ceeb`; CXL1#248 `178f379`; ART1#247 `4df594a`; CXN3#244 `6257c0e`; CXU5#249 `c5b846e`; CXU4#251 `d408ada`. All remain unmerged drafts requiring actual-main gates. Some GitHub PR base SHA fields still returned old1fb25ed despite the actual main ref being74d60da; record both honestly. UNKNOWN mergeability is not PASS.
+- The last verifier launch, PID59362, did NOT persist. At stop: PID/descendants absent, no process in its private directory, no verifier worktree, no final exit receipt. Only `VERIFIER_HEAD=6529cf6...` was written (55bytes). Status **INTERRUPTED / NOT VERIFIED**; no test result. Retain `/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-jrzyXSs8` and recorded logs. Do not reuse that TMPDIR.
+- All required ports4310–4313,4340–4343,4420–4454,4510–4513 and defaults4173–4176 were free. Nothing needed killing. ChatGPT/CUA service processes in the original checkout were preserved.
+
+Before substantive work, `git fetch origin`; verify repository privacy, actual main and every PR#240/#243/#244/#246/#247/#248/#249/#250/#251 (state/base/head/mergeability). Inspect processes and ports; kill only identified mission-owned processes after checking PID/cwd. Write and push the verified table on the ledger. Use available connectors or authenticated `gh`/Git CLI; do not depend on desktop-only tools or request credentials already available. Never print secrets.
+
+Finish BASE0 first; no later merge before it is green:
+1. Run the SAFE `scripts/verify-pr.sh` from the ledger, with `FORCE_ALL=1`, a fresh private TMPDIR, no `--comment`, retained checkout/log and reliable direct process logging. Record VERIFIER_HEAD, PR_HEAD, BASE_HEAD, TESTED_HEAD; compare the synthetic tested tree against actual main. Use actual environment names `E2E_PORT_CLASSIC=4440 E2E_PORT_V2=4441 E2E_PORT_SERVER=4442 E2E_PORT_API=4443`, `CI=true`, `SCREENSHOTS=0`, `E2E_VIEWPORT=1280x720`, empty Supabase variables for local tests. The previous launch mistakenly used F2_WEB_PORT/F2_API_PORT; those are not the config's server-port names. Do not invoke the unsafe verifier from main. The ledger verifier initializes pinned contract submodules/compiler for FORCE_ALL.
+2. Complete public-artifact equality against the clean actual-main build at `https://taskbarhero-eight.vercel.app`, using observed public configuration only in memory. Never print/store keys. Match every emitted public asset, status and SHA256; verify entry manifest stays stable. Existing artifact helpers are reference material, not authorized orchestration to run.
+3. Run legacy `node scripts/check-live.mjs` on actual main (bounded ephemeral auth nonce explicitly authorized; no wallet signing or SQL edits). No `--v2` until CXN3 merges. Directly verify the user-approved phased live browser journey at both desktop sizes. Before CXU3+CXC2 both merge, check current merged functionality; after both merge, all nine steps are mandatory. Retain failures; do not retry them away.
+4. Publish exact results, living report and checkpoint. Only green BASE0 main+live unlocks the built queue.
+
+Serial queue: FXRB#243 → CXP1#240 → CXL1#248 → ART1#247 → CXN3-FIX#250 → CXN3#244 → CXU5#249 → CXU4#251. Merge current origin/main into each source branch without rewriting history, resolve conflicts, then run full gates on the exact head. Preflight heads and recovery bundles are hints, never proof for another SHA. Product branches remain `ai/codex-*`, draft PRs until eligible. Main/live retest after every merge; a failure stops later merges.
+
+Then complete every remaining priority from the saved mission: P0 CXU3/CXC2 and other core by12Nov; P1 CXR1/CXR2/CXQ1/CXS1/CXS2 by18Nov; P2 CXP2/CXLU1/ART2/CXN4/CXN5 by21Nov if green/defaultOFF; P3 CXLU2/CXL2/CXG1/CXG2/ART3 only after P0–P2; REGRESSION and living final report when mergeable work is done or28Nov latest. UniHack DemoDay30Nov2026; planning deadline21Nov UTC+7. Prepare submission only. Do not silently drop optional scope. After25Nov no new server behavior turned ON.
+
+Absolute working rules:
+- **One CLI session. NO agents, subagents, workers, graders-as-agents, helper sessions, new chats, checkpoint.py or auxiliary orchestration runners.** Work personally with direct project commands and file/Git operations. Long tests may be detached ordinary processes with log files; verify they actually survive and record completion. On429 back off2/4/8minutes, same model; inspect existing effects before retry.
+- Two SEPARATE **self-graded (fresh pass)** reviews replace future independent graders. Builder pass implements/fixes. A rereads full diff from scratch and reruns typecheck/lint/unit/changed specs with repeats at both sizes/own mutants. B does the same on a clean exact-head checkout, different ports, tests-first then diff. Write separate grade-a.json/grade-b.json. Never call these independent. Both≥92; C1≥23,C2=20,C6=5,C7≥8, every criterion≥60%, zero auto-fails, G1–G7/current refs/deployment capacity. Difference>5 requires third fresh pass, lowest score counts. No changed-head evidence reuse.
+- Full verification, UI/reference/a11y/effects, mutants, exact-SHA evidence and serial main/live gates remain as specified in the mission. No weakened/skipped/retried-away tests; inherited game-rules2expectedfails/11skips stay explicitly disclosed, add none. One browser lock per port block. Reuse an exact-head full-suite result only as expressly allowed; every fresh grading pass still reruns its required checks.
+- Read applicable demos before implementation: `reports/ui-redesign/index.html` plus BRIEF/PLAN/README; `docs/proposals/rune-skill-system/demo/index.html` and design docs; relevant server proposals. UI cards name the exact demo. TBHIndex/valid user ZIPs inform structure/mechanics only; original names/art/text/balance, provenance in reference-usage. Never copy third-party assets/tables or send third-party art to generation.
+- Author `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`; every commit ends ` [skip ci]`. No direct main push, Actions runs or `.github` changes. Reports/ledger on ai/codex-mega-ledger; product work on its own branch. No force cleanup of historical files.
+- No secrets printed/stored/committed; no destructive live DB changes; no live migration/function deployment except the saved mission's explicitly additive, rollback-documented authorized path. Otherwise record optional steps and continue safe work. No mainnet/real funds; throwaway Fuji only. Repository stays private. No actual contest submission. **Vercel settings and VITE_GAME_V2 stay untouched.** New backend behavior defaultOFF; respect100deploys/day and batch pushes.
+- Keep context thin: every build/test logs to `reports/<card>/logs/<step>.log`, retain exit; inspect exit plus tail30/error summaries only. One item at a time. At every milestone/grade/merge/failure rewrite handoff≤80lines, update living final report/ledger/scorecard/runtime, save timestamped snapshot with direct file commands, selected-file commit/pushledger. No scheduled cadence. After compaction/uncertainty reread handoff+ledger. Saved files are memory; no unsupported compaction hacks.
+
+Begin with the reads and real-state verification now. The intended result is completed, gated, merged, live-verified work, not a proposal. Keep `reports/MEGA-FINAL-REPORT.md` honest and current. Final delivery: one row per item with PR, separate scores, merged SHA, live state, and the report path.
+T001 retry 2 closure — 2026-11-02. Adopted T014's explicitly approved current-main target
+9c457a3e56b7c5813fa40e6aa20b0c14242ef26a; historical 74d60da is not current production.
+Fresh live GETs matched all 32 exact-main build hashes at 11:12:13.885Z–11:12:17.918Z.
+All four verifier commits, 66 historical receipt files, and 120 T014 checkpoint files audited.
+Legacy live and phased paths at both sizes adopted from the verified T014 window; no suites rerun.
+Historical failures and this retry's corrected object-store lookup failure retained.
+[T001 retry evidence](cards/T001-BASE0-CLOSURE-R2/REPORT.md). No product change or deployment.
+
+T014 current-main gate — 2026-11-02. Approved target/tested main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+Fresh typecheck/lint/unit/build PASS; 289 browser tests PASS at each desktop size; 96 Forge PASS.
+Two fresh production builds match all 32 deployed files and entry manifest over 334.824 seconds;
+legacy and eight-stage merged-core live paths PASS at both sizes. First harness failure retained.
+T001 is historical 74d60da proof only; its obsolete current-deployment target is explicitly
+superseded by orchestrator corrective task T014, without reverting merged product work.
+[T014 evidence and target authority](cards/T014-CURRENT-MAIN-LIVE/REPORT.md).
+No product, PR, merge, release, settings, flag, database or .github change. One task only.
+
+Earlier entries below are historical snapshots, not current remote status.
+
+T001 reconciliation — 2026-11-02T10:15:04.155386+00:00. BASE0 STEP 1 a–d was already complete in ledger 89664d7.
+Revalidated all four verifier heads, matching PR/base/tested trees, 55 original evidence files,
+32/32 historical deployed assets, legacy check-live and phased live at both desktop sizes.
+No suites rerun. Main has advanced to 9ee71d4 and the live entry changed; current-main/live
+equality is NOT established by this historical BASE0 proof. Existing T002–T005 need Git
+reconciliation before any work. [T001 evidence](cards/T001-BASE0-RECONCILE/REPORT.md).
+
+Earlier entries below are historical snapshots, not current remote status.
+
+**ACTIVE — 2026-11-02T08:05:14.050734+00:00.** Saved effects recovered: FXRB7f00ef5 full1280 272/272 and corrected keyboard/reference gates pass; original setup failure retained. No new score/product push/merge. [Verified state](cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md).
+
+# Mega ledger — living draft
+
+**ACTIVE — 2026-11-02T07:54:16.606884+00:00.** Explicit resume verified; all refs and29receipts unchanged. See cards/FXRB-CURRENT-R1/resume-20261102-2/REPORT.md.
+
+## Verified remote state at session resumption
+
+| Item / PR | State | Base branch | API base SHA | Head SHA | Mergeability |
+| --- | --- | --- | --- | --- | --- |
+| BASE0 #246 | MERGED | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `280ff4bed495fd28bd489eb5f2dcfd1910f21fc0` | UNKNOWN |
+| FXRB #243 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `26e7de846e82c58523eaa8c45984c635accb5357` | MERGEABLE |
+| CXP1 #240 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `2b7ceeb62a187a1064f2f307f1508326dff8ba0a` | CONFLICTING |
+| CXL1 #248 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `178f379a173f3d5af68f0364ffe24da9adfedaa4` | MERGEABLE |
+| ART1 #247 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `4df594a63785fe239fee2fb7cea673c14451dc0e` | CONFLICTING |
+| CXN3-FIX #250 | OPEN / draft | main | `74d60dab2cef8c31a3f2729d18719ff3021a9eda` | `a9b804cec74c866b0b06ca69142d10db3b642a75` | CONFLICTING |
+| CXN3 #244 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `6257c0e80b255f88ac67808d5d07eb00f1fb25b6` | MERGEABLE |
+| CXU5 #249 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `c5b846ec030be5a0bf6a89c515fe4ecd85514fc3` | CONFLICTING |
+| CXU4 #251 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `d408ada368a05c078dcd97bbd61f4e4b1dbc238b` | CONFLICTING |
+
+Actual remote main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; stale API base SHAs are not current-main proof. [Verification](cards/RESUME-20261102-SESSION2/REPORT.md).
+
+
+Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
+
+| # | item | base | branch | PR URL | state | rounds | last verify | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / MAIN + PHASED LIVE PASS | 2 | 74d60da core/build/full265each/repeat700each; safe FORCE_ALL265browser+96Forge PASS | A97.642857/B98;artifact32/32, legacy/phased live PASS; full future nine-stage path pendingCXU3+CXC2 |
+| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | ACTIVE / BUILDER GATES INCOMPLETE | 0 | 7f00ef5 core/build+repeat200eachsize receipts PASS;reference-keyboard FAIL;full gates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
+| 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
+| 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
+| 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 7393dc3:core/build/G3,full280eachsize,repeat80,fourmutantsPASS | Source2b7ceebpublished;own18unit/typePASS;old1/17capfailure retained;actualmain/UI/G5/wrapper/grades pending |
+| 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
+| 6 | CXU4 | main | ai/codex-cxu4 | https://github.com/ntbaoheyhey/taskbar-hero/pull/251 | DRAFT / SCOPED SOURCE CHECKS | 0 | Preliminaryb06a68d:58unit/200browser/effects20/type | Publishedd408ada:56focused+19onboarding PASS;draftPR251created;fullgates/grades pending;R1failure retained |
+| 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 8 | CXU5 | main | ai/codex-cxu5 | https://github.com/ntbaoheyhey/taskbar-hero/pull/249 | IN-PROGRESS | 0 | Preliminary6bf7b13:80browser repeats;focused units/webtype | Original dirty evidence preserved; full actual-main gates/grades pending |
+| 9 | CXC2 | main | ai/codex-cxc2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 10 | CXP2 | main | ai/codex-cxp2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 11 | CXLU1 | main | ai/codex-cxlu1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 12 | CXLU2 | main | ai/codex-cxlu2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 13 | ART2 | main | ai/codex-art2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 14 | CXR1 | main | ai/codex-redesign-cxr1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/245 | TODO | 0 | NOT VERIFIED in this mission | Reuse existing branch/PR; fresh gates required |
+| 15 | CXQ1 | main | ai/codex-cxq1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 16 | CXR2 | main | ai/codex-redesign-cxr2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 17 | CXN4 | main | ai/codex-cxn4 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 18 | CXN5 | main | ai/codex-cxn5 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 19 | CXL2 | main | ai/codex-cxl2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 20 | CXG1 | main | ai/codex-cxg1 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 21 | CXG2 | main | ai/codex-cxg2 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 22 | ART3 | main | ai/codex-art3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 23 | CXS1 | main | ai/codex-s1-security-docs | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+| 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
+
+| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | https://github.com/ntbaoheyhey/taskbar-hero/pull/250 | DRAFT / VERIFIER PASS | 0 | a9b804:core/build/G3,6mutants,full274each,repeats90each,audits/effects/manualG5/keyboard/contrast PASS | Wrapper exit0 incl274browser; published unchanged; never merge into BASE0; review,actualmain/release/live pending; no independent score |
+| 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
+
+## Corrections and scheduling decisions
+
+- CORRECTED (mission round 0): previous ledger forbade merges/art/live changes; current brief authorizes specified actions behind strict gates. Previous verification results remain historical and untrusted until re-run.
+- Preserve CXR1 #245 and dirty CXR2 work, but defer execution until all UI prerequisites merge.
+- Reuse #240/#243/#244; no duplicate PRs. #241 remains the log/delivery PR and becomes eligible for a docs-only gated merge at mission completion (the newer explicit delivery instruction takes precedence over the older never-merge-log sentence).
+- Existing dirty primary and unrelated worktrees remain untouched; the clean-worktree completion requirement applies to worktrees created/modified for this run. Never discard user edits to manufacture cleanliness.
+- Baseline completed in a fresh detached worktree: unit/typecheck/lint/build/classic/bundle green; e2e 249 pass/3 fail; Deno import guard 80 unresolved edges; one baseline broken link. No score or merge recorded.
+
+- Added DENO0 before merge queue: main import guard fails on missing explicit-index aliases; implementation and full gates required. Branch ai/codex-mega-deno0, state IN-PROGRESS, round 0, no score/PR/merge yet. FXRB and CXN3 independent builders are running in isolated worktrees with Astra Ultra, priority service; no graders have run.
+
+- Baseline gate repair plan update: DENO0 is a build card folded into the added BASE0 prerequisite PR. Fresh complete e2e also found a stage-recreation failure and two pre-existing shell HUD height regressions, so separate merges cannot satisfy the required green-main gate. BASE0 will carry the smallest combined repairs; FXRB retains its own existing PR for the stronger resize-repeat evidence. No assertions are removed or weakened. The shell work restores existing responsive compatibility and does not add a mobile redesign. This interpretation follows the stricter complete-suite requirement plus the explicit instruction to rebuild already-merged work when it fails. DENO0 branch is reused as BASE0 delivery branch to avoid duplication.
+
+- FXRB builder b5fd48e: 120 resize repeats pass; 3/3 mutants detected; code unchanged from reused fix; full gate still pending BASE0. CXN3 builder 6257c0e: classifier 9/9, PGlite 4/4, mutations 11/11; live probes 17 pass/10 fail (oversized 401 plus boss timeouts). Both pushed to existing branches; neither scored or merged.
+
+- BASE0 complete exploratory run: 253 passed/1 failed; narrow topbar height must remain <=72 (assertion preserved). GUI audits: 18 guest and 18 local signed-in states have zero findings; initial effects pass 9/9. Harness writes to historical reports were restored only in this run-owned worktree; opt-in output repair added to BASE0 before editing. No merge or score.
+
+- ART1 builder 4df594a: pipeline/docs/434-slot manifest committed; 36 targeted tests, ten repeat runs and 8/8 mutants detected. Eight contact sheets cover 44 reference views. Unpushed pending coordinator inspection; no score. CXP1 and CXL1 independent P/B cards started while BASE0 repeat/full-size verification continues.
+
+- ART1 targeted suite re-run by coordinator: 36/36 pass; branch 4df594a pushed and draft PR #247 opened. Independent/full gates remain pending.
+
+- Independent BASE0 preflight completed with five findings: classic1600 expectation and gated clipping are repaired; action-text/XP readability are assigned to an isolated HUD repair builder, and actual effects navigation verification is assigned to coordinator. No score was issued; all findings remain tracked until reverified.
+
+- CXP1 64cf350 and CXL1 178f379 pushed after builder handoff; CXL1 draft #248. CXU4 and CXU5 independent UI builders started in isolated worktrees. BASE0 HUD repair runs separately; coordinator owns effects navigation verification. No formal grade or merge.
+
+- User explicitly resumed after reliability setup. Three isolated native subagents (Astra Ultra) own BASE0 HUD, CXU4 and CXU5. Current source checks and two formal grades remain pending; no merge or release is authorized merely by resumption. See MEGA-CURRENT-HANDOFF.md.
+
+- Resume2026-11-01T17:55:39+07:00: BASE0 first; prepared-item merge order FXRB, CXP1, CXL1, ART1, CXN3, CXU5, CXU4, with every full gate and fresh grades. After that P0 core, P1 judging/QA/security/submission, P2 optional UI/game rules, P3 expansions. Complete scope retained. See priority plan; dependency ambiguities do not block BASE0 verification.
+
+- User decision2026-11-01T17:57:12+07:00: initialP1 covers all mergedcore; QA/security/submission evidence is extended afterP2/P3. OldoptionalUI/allitems dependency cycle is removed for initialP1, implementation dependencies retained. BASE0-FINISH andCXQ1-DEMO-PATH native workers active; see runtime.
+
+# T014 — current main and production gate
+
+Verified target: `9c457a3e56b7c5813fa40e6aa20b0c14242ef26a`.
+Tested HEAD is the same commit; tree `3c662e8e7e9e28c9bb0be25045ac984c2f10fa43`.
+This fresh worker performed T014 only. No product commit, PR, merge, rollback or deployment was needed.
+
+## Release-target reconciliation and T001 closure
+
+The orchestrator explicitly dispatched corrective task T014 (`source: corrective-of-T001`),
+naming current main 9c457a3 and requiring its exact-tree release gate without rolling back successors.
+[release-target.json](release-target.json) records that dispatch, target, read-only queue/GOAL hashes
+and historical checkpoint. This is the existing user/orchestrator authorization, not a new approval
+invented by the worker; GOAL.md and queue.json were not edited.
+
+T001's historical proof remains valid for BASE0 `74d60dab2cef8c31a3f2729d18719ff3021a9eda`
+at its historical observation time, preserved in checkpoint `89664d7057df9a3f6720162538014d4da3e70e1a`.
+Its stale present-tense equality assertion was rejected by the T001 verifier and is superseded by
+the approved current-main target above. **Current production is not asserted to equal 74d60da.**
+The T001 report now links this successor gate; original BASE0 receipts are unchanged.
+Git confirms intervening FXRB #243, CXP1 #240, CXL1 #248, ART1 #247 and CXN3-FIX #250
+in [successor history](logs/successor-history.log); no duplicate work was merged.
+
+## Fresh exact-tree checks
+
+All commands ran directly on a clean detached checkout at `/tmp/tbh-t014-current-main`.
+Frozen-lockfile install, source identities and versions are retained under logs/ and source-final.json.
+This is fresh verification by one worker, not a new independent grading score.
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Typecheck / lint / normal build | PASS; all exit 0 | logs/typecheck.*, logs/lint.*, logs/build.* |
+| Repository unit tests | PASS: 2,380 passing cases including 5 script tests; web 1,326, server 575 | logs/unit.* |
+| Existing expected-fail/skipped cases | 2 expected failures, 11 skips / 3 skipped rule files; unchanged source, no new skips | logs/unit.log |
+| Full browser, 1280×720 | 289/289 PASS; workers=2, retries=0 | logs/browser-1280.* |
+| Full browser, 1600×900 | 289/289 PASS; workers=2, retries=0 | logs/browser-1600.* |
+| Contract unit/fuzz/invariant suite | 96/96 PASS, no failures/skips | logs/forge.* |
+| Deno map generation/drift | generator=0, drift=0 | logs/deno-drift.* |
+| Final source/ref/port audit | exact HEAD/tree, clean checkout, remote main unchanged, four test ports free | source-final.json, logs/final-source-state.* |
+
+## Production identity and live checks
+
+Two **fresh** Vite production builds used `write:false`; all emitted files and public files
+were compared in memory, including exact index.html bytes. Observed public configuration was
+held only in memory: no keys or production bundle bytes were printed, stored or committed.
+No Vercel settings or VITE_GAME_V2 value was changed.
+
+[Before](artifact-before.json) and [after](artifact-after.json) each match **32/32** files by
+HTTP status, byte length and SHA256. HTML, the full JS/CSS entry manifest and every asset hash
+remain identical from **2026-11-02T10:34:33.965Z through 10:40:08.789Z** (334.824 seconds).
+Entry: `/assets/index-N5_1FrYv.js`. HTML SHA256:
+`6079e15e79a402c21e69a513b96ac8110cb38a7915c2ef0e85b01983725e9edf`.
+[Stable window](stable-window.json); [exact-SHA Vercel statuses](deployment-status.json).
+Both provider contexts succeeded. GitHub's deployment-list API returned no additional records;
+no hidden provider commit metadata is claimed. Identical frontend builds cannot distinguish
+different source commits that change only server code or documentation. This gate proves frontend
+artifact equivalence to approved main, not an Edge Function deployment or backend source identity.
+
+The legacy checker passed all 22 checks (logs/legacy-check-live.*), including bounded existing
+auth-nonce behavior, anonymous rejection, relic assets and read-only Fuji calls; no wallet signing.
+The corrected [merged-core live journey](live-phased-r2/summary.json) passed all eight stages at
+1280×720 and 1600×900 within this identity window, using new guest contexts and real UI actions.
+It checked current class-picker entry/help disclosure, class selection, visible canvas and genuine
+idle reward, locked boss reason, Craft recipe/shortage action, earned Bag item/detail and wallet-required
+Market. Both runs had zero browser/network errors, zero HTTP >=400 and no horizontal overflow.
+Home/Forge/Bag screenshots were sampled visually; the 1280 Forge shortage button remains accessible.
+No state/clock injection, signing, trading or live writes occurred during the browser journey.
+CXU3/CXC2 are not merged (phase-prerequisites.json); no full nine-stage completion is claimed.
+
+## Failures retained, not retried away
+
+The first T014 live harness incorrectly searched for the guest disclosure only after dismissing
+the initial help dialog. Both sizes failed that added check. The unchanged established
+CXQ1-DEMO-PATH harness reads disclosure before dismissing help. R2 restores that observation order,
+still requires visible disclosure, and retains it in the result. No product code or semantic
+assertion was removed. Original logs, both failure screenshots/results, and both exact commands
+remain in live-phased/, logs/live-phased.* and commands/; R2 results are separate.
+
+The T001 verifier's failed current-production comparison and initial unit timeout are preserved
+with the unchanged passing unit rerun and original paths/hashes in historical-failures/.
+They remain historical failures, never relabeled as current-main results.
+No current-main source suite needed a retry.
+The initial staged whitespace check flagged one extra blank line at the end of this report;
+it was corrected in a second docs-only commit. Its failed check log is retained in logs/.
+
+## Publication and limits
+
+Evidence is checkpointed on `ai/codex-mega-ledger` with a subject ending ` [skip ci]`.
+Final commit, push/remote comparison and all-five-criteria audit are recorded under
+`.codex-orchestrator/verification/T014/` and `.codex-orchestrator/results/T014.json`.
+The committed acceptance-prepublication.json intentionally records publication as pending
+at the time of its audit; the final local acceptance.json supersedes only that pending status.
+
+Only reports/ changes are included. The original dirty checkout is untouched.
+No direct main push, Actions run, .github edit, database-destructive write, migration,
+edge deployment, real funds, external message, reference-asset reuse or contest submission occurred.
+Repository remains private; no new user step or follow-up task is required for T014.
+This finite window does not certify future deployments or the remaining mission queue.
+.codex-orchestrator/verification/T014/final-acceptance.log:1:{"acceptance": "PASS", "criteria": 5, "publication": {"status": "PASS", "checkedAt": "2026-11-02T10:48:14.016893+00:00", "branch": "ai/codex-mega-ledger", "checkpointCommit": "4b895739a69cca13b9e331d224e5e834cf8bf39d", "evidenceCommit": "54b3543b696841d9d1d29a12baf692c9cec3a9a9", "baseLedgerCommit": "cac61419a16348308ea50aa9f508841eb7478265", "remoteLedger": "4b895739a69cca13b9e331d224e5e834cf8bf39d", "remoteMain": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a", "subjects": ["docs: finalize T014 evidence formatting [skip ci]", "docs: verify T014 current main and live release gate [skip ci]"], "changedFiles": 125, "reportsOnly": true, "privateRepository": true, "manifestVerifiedFiles": 120, "cleanLedger": true, "goalAndQueueUnchanged": true, "historicalBASE0ReceiptsUnchanged": true, "commands": ["git push origin HEAD:refs/heads/ai/codex-mega-ledger", "git ls-remote origin refs/heads/main refs/heads/ai/codex-mega-ledger", "gh repo view ntbaoheyhey/taskbar-hero --json isPrivate,nameWithOwner", "git show HEAD:<each-manifest-path> (SHA256 and byte-length comparison)"]}}
+.codex-orchestrator/verification/T014/commit.log:1:[ai/codex-mega-ledger 54b3543] docs: verify T014 current main and live release gate [skip ci]
+.codex-orchestrator/verification/T014/publication.json:6:  "evidenceCommit": "54b3543b696841d9d1d29a12baf692c9cec3a9a9",
+.codex-orchestrator/verification/T014/publication.json:12:    "docs: verify T014 current main and live release gate [skip ci]"
+/tmp/tbh-t001-ledger/reports/OPTIONAL-USER-STEPS.md:10:Runtime inventory (2026-11-01): the existing Supabase CLI can list the specified project; no credential value was printed or stored. No Vercel CLI executable was found. No release action follows from inventory alone: local score/merge gates, additive-only migration checks and the live go/no-go checklist still apply.

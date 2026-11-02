@@ -1,0 +1,38 @@
+====================================================================================================
+Score each item 0-100. Each criterion is scored on its own anchors; partial credit only where the anchor says so. When unsure between two scores, give the LOWER one. Graders must cite evidence (command + output line, file:line, screenshot path) for every point awarded; a point without cited evidence is 0.
+
+ C1 Correctness vs spec ............................................ 25
+    Every T-test and DONE line of the item spec re-run by you. Points = 25 x (PASS lines / all lines). NOT VERIFIED counts as 0. A line that would need the user must be verified through its interim solution (section 7: local Supabase/PGlite, demo mode, throwaway Fuji wallet); only a line blocked by a SAFETY GUARDRAIL (7a) is excluded, max 2 per item, each listed in reports/OPTIONAL-USER-STEPS.md.
+ C2 Test evidence re-run, green and stable ......................... 20
+    20 only if: the whole verify list in 2c is green on YOUR run, the flake check in 2e has zero failures, and the classic build + classic project pass. Any red check = 0. Green but a check could not run for a non-user reason = max 8.
+ C3 Test strength (new tests actually prove the behaviour) ......... 10
+    Mutation check: for each new/changed behaviour, break the code on purpose (invert a condition, off-by-one, remove a call) in a scratch copy; the tests must go red. Points = 10 x (mutants killed / mutants tried), minimum 5 mutants per item (FXRB: 3). Revert the mutants.
+ C4 Design match (UI: reports/ui-redesign/index.html; pets/runes: docs/proposals/rune-skill-system/demo/index.html; non-UI items: docs and runbook accuracy vs real code and real migrations) .. 15
+    Start at 15, minus 3 per unexplained visible difference or wrong fact, minus 1 per explained-but-unfixed difference. Floor 0.
+ C5 Code quality ................................................... 10
+    Start at 10. Minus 2 each: duplicated logic, dead code, any/ts-ignore without reason, hard-coded value where a token/config exists, missing types on exported API, unclear naming, new lint warning, bundle growth > 5% without a decisions.md reason. Floor 0.
+ C6 Integrity of tests (2f) ........................................ 5
+    5 if zero unjustified hits, else 0 (and see auto-fail A2).
+ C7 Report honesty (2i) ............................................ 10
+    Start at 10, minus 3 per claim that does not match your observation. A false PASS is auto-fail A1, not a deduction.
+ C8 Scope discipline (2g) .......................................... 5
+    5 if every out-of-zone file has a Tier 2 note with a valid reason; minus 1 per missing note; 0 if any unexplained file.
+
+PASS BAR - ALL of these, no rounding up:
+ - Total >= 92 / 100, AND
+ - C1 >= 23, C2 = 20, C6 = 5, C7 >= 8, AND
+ - no criterion below 60% of its weight, AND
+ - zero auto-fail conditions, AND
+ - TWO independent graders (different subagents, neither the builder) both score >= 92 separately. If they differ by more than 5 points, a third grader scores and the LOWEST of the three counts.
+
+AUTO-FAIL (score forced to 0 for this round, item must be redone):
+ A1 A false PASS anywhere: in any report, in the ledger or a PR body (a check claimed green that is red or was never run).
+ A2 Any skipped, deleted, quarantined, .only'd, retried or loosened test, raised timeout or edited golden number without a justified old -> new note.
+ A3 Any Tier 3 breach (section 2g), any SAFETY GUARDRAIL breach (section 7a), any secret in a file/log/commit/report.
+ A4 Backend-dependent behaviour reachable on main with flags at default (i.e. not behind a default-OFF flag).
+ A5 Third-party content copied (names, art, text, tables) or art without a provenance entry.
+ A6 A required check not run at all (typecheck, lint, test, build, classic build, e2e for touched apps/web or packages).
+ A7 Flake: any red in the repeat runs of 2e.
+ A8 Broken git hygiene: wrong author on any commit, missing " [skip ci]", push to main, force-push to a branch you did not create.
+ A9 check-links count above main's, or a new console error / page error in any e2e run of the touched screens.
+
