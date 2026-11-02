@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T01:14:11+07:00. ACTIVE; one session, no agents/helpers/schedulers.
+Updated: 2026-11-03T01:14:11+07:00. ACTIVE; one session, no agents/helpers; hourly reminder explicitly authorized Nov3.
 Authority: user's 2026-11-02 evening prompt; old dependency/orchestration rules superseded.
 STOP intact: /Users/bao/taskbar-hero/.codex-orchestrator/STOP. Never run orchestrator.py.
 Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; all new commits end [skip ci].
@@ -8,7 +8,7 @@ Last merged/main: 1b299c40513ff9f5330a91ad040791bbd4065df9 (#249), exact reviewe
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249 / merged1b299c4 | A94/B94 PASS; DONE: A94/B94; main302×2, live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251 / local577e0e2 | Builder modal repair verified49 units/20 browser; final disabled-tabindex check running |
+| CXU4 | #251 / local577e0e2 | Builder50 units green; fresh A active on577e0e2; modal stack/disabled-focus fixes included |
 | CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
 | T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
 | CXR1 + CXR2 + CXQ1 | #245/e99e497 + pending | Refresh screens, preserve AA threshold; full live demo + throwaway Fuji |
@@ -37,5 +37,6 @@ Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS
 Safety: no secrets, live DB mutation/migration/function deploy, provider/VITE_GAME_V2 changes, real funds/mainnet/submission.
 Current main evidence: CXU5-FRESH/post-main; live helper scripts: reports/fresh-session-tools/{verify-live-assets,live-phased}.mjs.
 Next3: inspect builder result/fix any issue; freeze head and fresh A/B gates on4800/4810 blocks; merge then main/live.
-In-flight PID14422: CXU4 builder-final focused units at /private/tmp/tbh-cxu4-active.
 CXU4 tree clean at577e0e26aab1b88c11a4d0453f6d1a84481ff783; current main1b299c4 integrated. Formal A/B still pending.
+In-flight PID19642: CXU4 grade-a at /private/tmp/tbh-cxu4-active, ports4800–4803.
+Hourly native heartbeat ACTIVE: taskbar-hero-hourly-handoff, same chat; sole timer exception. Never restart old orchestrator.

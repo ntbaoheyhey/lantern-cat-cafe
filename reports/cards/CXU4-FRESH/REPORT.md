@@ -7,3 +7,5 @@ Builder is inspecting Hero/Help/shared primitives against the reference. Existin
 Scope: Hero/Character, Help, notices, shared UI and associated tests. No dependency on #244; no backend activation, art replacement, provider change or new rail entry.
 
 Builder found a real shared-modal defect: older-dialog cleanup unlocked the page under a newer dialog (47 existing focused tests passed, new regression failed). Repair9c7adc8 makes background restoration stack-wide and restores the original opener;49 focused units and20 browser cases pass. A final native-disabled/tabindex guard and regression are included before freezing the formal review head. No prior assertion changed.
+
+Builder final50 focused units pass at577e0e2. Formal fresh A now runs core, changed-spec repeat10 and full browser matrix on4800–4803, PID19642. No score/merge claim. User explicitly authorized a same-chat hourly handoff heartbeat; recorded in SESSION-HOURLY-CHECKPOINT.md.
