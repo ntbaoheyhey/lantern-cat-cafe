@@ -1,0 +1,50 @@
+[
+  {
+    "name": "browser-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:24:50.422967+00:00",
+    "endedAt": "2026-11-02T23:27:37.419735+00:00"
+  },
+  {
+    "name": "browser-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:27:37.427958+00:00",
+    "endedAt": "2026-11-02T23:30:23.924184+00:00"
+  },
+  {
+    "name": "live-asset-before",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-before.json",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:30:23.931074+00:00",
+    "endedAt": "2026-11-02T23:30:40.513764+00:00"
+  },
+  {
+    "name": "live-health",
+    "command": "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:30:40.520924+00:00",
+    "endedAt": "2026-11-02T23:30:52.341541+00:00"
+  },
+  {
+    "name": "live-phased-proof",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-phased-proof-100.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/phased",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:30:52.348747+00:00",
+    "endedAt": "2026-11-02T23:31:58.503324+00:00"
+  },
+  {
+    "name": "live-asset-after",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-after.json",
+    "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:31:58.511141+00:00",
+    "endedAt": "2026-11-02T23:32:01.690231+00:00"
+  }
+]

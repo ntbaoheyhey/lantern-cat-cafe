@@ -1,28 +1,36 @@
 {
   "card": "CXC2",
-  "pr": 253,
-  "status": "RELEASE_FIX_REQUIRED",
-  "featureHead": "e54f0750644322dbdc40dffe389130a1f6fc736f",
-  "mergeHead": "39e74d834aa246b8182b72bac1b610e4c985f574",
-  "tree": "85267f5fb3c7c6808a50331743a6746ddb1ed2dc",
-  "label": "self-graded (fresh pass)",
-  "grades": {
-    "A": 95,
-    "B": 96,
-    "lowest": 95
+  "status": "DONE",
+  "prs": [
+    253,
+    254
+  ],
+  "mergeHead": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+  "testedFixHead": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+  "tree": "755ca0eaf87a576314174085cfb7c0b492a97884",
+  "treeEqualsReviewed": true,
+  "selfGrades": {
+    "label": "self-graded (fresh pass)",
+    "feature": {
+      "A": 95,
+      "B": 96
+    },
+    "rangeFix": {
+      "A": 96,
+      "B": 96
+    }
   },
   "main": {
-    "typeLintUnitBuild": "PASS",
-    "unitScriptPassed": 2423,
-    "expectedFailures": 2,
-    "skippedInherited": 11,
+    "corePassed": 2423,
+    "inheritedExpectedFailures": 2,
+    "inheritedSkips": 11,
     "browser1280": 317,
     "browser1600": 317
   },
   "live": {
     "assetsBefore": "32/32 MATCH",
     "assetsAfter": "32/32 MATCH",
-    "healthPassed": 22,
+    "legacyHealthPassed": 22,
     "phasedStepsPerSize": 11,
     "viewports": [
       [
@@ -35,16 +43,19 @@
       ]
     ],
     "unexpectedErrors": 0,
+    "recentEventsReadAvailable": true,
+    "eventWindowMaxBlocks": 100,
     "transactionsPerformed": 0,
-    "limitedEventWindow": true,
-    "fullFundedDemoClaim": false,
-    "recentEventsAvailable": false
+    "fullFundedDemoClaim": false
   },
   "actionsRuns": {
-    "e54f0750644322dbdc40dffe389130a1f6fc736f": 0,
-    "39e74d834aa246b8182b72bac1b610e4c985f574": 0
+    "df83851f5f653f25072f116c6bfa9f3ad02c7936": 0,
+    "666088ce06ce0c03485f46371b8fd7c22a99e386": 0
   },
-  "originalFailureRetained": "live/phased/summary.json: guard rejected read-only Multicall; corrected guard canonical-decodes only the two Market getters,22 controls PASS",
-  "nextMergeAllowed": false,
-  "discovery": "Core live proof passes, but recent events always unavailable: public RPC rejects500-block request with-32602 maximum100. Positive100-block public probe passes. Current acceptance candidate is superseded; frontend range repair requires fresh gates."
+  "failuresRetained": [
+    "live/phased/summary.json: original direct-only guard",
+    "live-r2/event-availability.json:500-block publicRPC limit",
+    "range-port-failure.json: invalid test SIP ports"
+  ],
+  "nextMergeAllowed": true
 }

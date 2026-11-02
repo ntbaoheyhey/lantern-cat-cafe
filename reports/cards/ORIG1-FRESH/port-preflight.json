@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "port": 5100,
+      "browserBlocked": false,
+      "expectedNoListener": true
+    },
+    {
+      "port": 5101,
+      "browserBlocked": false,
+      "expectedNoListener": true
+    },
+    {
+      "port": 5102,
+      "browserBlocked": false,
+      "expectedNoListener": true
+    },
+    {
+      "port": 5103,
+      "browserBlocked": false,
+      "expectedNoListener": true
+    },
+    {
+      "port": 5060,
+      "browserBlocked": true,
+      "expectedNoListener": false
+    },
+    {
+      "port": 5061,
+      "browserBlocked": true,
+      "expectedNoListener": false
+    }
+  ]
+}

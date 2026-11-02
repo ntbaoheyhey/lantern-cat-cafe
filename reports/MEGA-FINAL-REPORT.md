@@ -1,17 +1,20 @@
-# Active fresh-session report — 2026-11-03T06:16:45+07:00
+# Active fresh-session report — 2026-11-03T06:58:20+07:00
 
-Living report, not a completion claim. Main is666088c; its strict release validation is active; repository private.
-CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
+Living report, not a completion claim. Current main is666088c; repository remains private.
 
-CXU4 #251 DONE, merged2847e9a with A95/B95. Actual main313/313 per desktop size,32/32 live asset hashes,22 health probes and10-stage live paths per size (including Hero/Help) pass with zero errors. Zero Actions runs. Lossless evidence compression preserved pixels and the200KiB cap. [Evidence](cards/CXU4-FRESH/REPORT.md).
+CXU5 #249 DONE, merged1b299c4, self-graded fresh A94/B94. CXU4 #251 DONE, merged2847e9a, A95/B95. Their acceptance receipts remain in their FRESH cards; current main/live regression is included in the CXC2 release checks.
 
-CXU3 is PARTIAL at the three-round limit, preserved in draftPR252/head4da5104. Final A failed a5000ms StageLayout boss-state unit timeout (1374 other web cases pass); B/current-head full browser matrix not run.11 mutants and UI36/effects20 passed, with no retry/threshold relaxation. It stays unmerged; CXU3 stays unmerged. CXC2 builder proceeds independently in /private/tmp/tbh-cxc2-active: bounded readonly reader,30-second failure-aware cache and lazy Help tab implemented; type/lint/26 focused cases pass. Browser harness JSON-import/wire/clock issues are corrected and all4 cases pass. Frozen heade54f075 passes fresh A95, core2423,317 browser cases at each size,140 repeats,12 mutants and UI/effects. Clean B passes96 after tests-first full diff review. A95/B96 meet all floors with zero auto-fails. PR253 merged as39e74d834aa246b8182b72bac1b610e4c985f574, exact tree/author/suffix verified; Actual main core/317×2 and live32 assets/22 health passed. The first live proof path failed because the guard rejected viem’s read-only Multicall3 batch. A canonical nested-call guard passes22 controls and the unchanged11-stage path now passes at both sizes. Recent events remained unavailable; a public diagnostic proved a100-block RPC maximum. Release repair round2 tightens the500-block window to100; df83851 passes fresh A96 (core2423,317×2,40 repeats,12 mutants), with clean fresh B96 complete. FixPR254 merged as666088ce06ce0c03485f46371b8fd7c22a99e386; PID82005 now validates actual main then live, requiring recent events to be available. CXC2 remains release-incomplete; unrelated merges stay stopped. Public read-ahead verified Fuji/code/linkage at block60421787 without a wallet or writes.
+CXU3 #252 is PARTIAL at4da5104 after the three-round limit. Final A hit the unchanged5000ms StageLayout boss-state unit timeout;1374 other web cases passed. No retry, weakened assertion, current-head full matrix or B grade is claimed. It stays unmerged.
 
-T011/T012 are locally rebased onto current main666088c as2f7c0b3 in /private/tmp/tbh-original-content. Original branches are preserved; author/suffix and default-OFF shared flag verified. No content PR, runtime consumer or new art yet.
+CXC2 is DONE via #253/39e74d8 and public-RPC range repair #254/666088c. Initial feature A95/B96; range fix A96/B96, all self-graded fresh passes. Exact reviewed trees/author/suffix verified. Actual main core2423 and317/317 browsers per desktop size pass; live32/32 asset hashes before/after,22 health checks and11-stage fresh guest paths at both sizes pass with zero unexpected errors/transactions. Real contract code/linkage and an available100-block event read are verified. Source/merge Actions counts0. Initial Multicall guard,500-block API-limit and unsafe-port harness failures remain retained. [Acceptance](cards/CXC2-FRESH/acceptance.json).
 
-The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
-owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
-Single session only, STOP preserved. [Current state](MEGA-CURRENT-HANDOFF.md).
+T011/T012 are rebased onto666088c as2f7c0b3 in /private/tmp/tbh-original-content. Shared default-OFF flag, nine unchanged active config properties,29 focused cases and fresh offline originality checks pass. Original branches remain preserved. Formal A PID89352 runs on5100–5103; no content PR or runtime consumer yet. Preview surfaces and original ART/T013 remain required P1 work. [Plan](cards/ORIG1-FRESH/NEXT-CONSUMER.md).
+
+CXR1/CXR2/CXQ1 and CXS1/CXS2 remain pending. No funded mint/list/buy or full future nine-stage demo completion is claimed. CXS2 stays a submission DRAFT only. P2/P3 remain conditional on A–F green/merged; P0/P1 are not complete.
+
+CXN3 #244 alone requires the owner's complete deployed-source backup and tested restore path. No guard bypass, function deploy, migration, provider/production-flag change, real funds, public-repo change or contest submission. Exact owner action: [OPTIONAL-USER-STEPS.md](OPTIONAL-USER-STEPS.md). Frontend work proceeds independently.
+
+Single session/agent, old STOP preserved; native hourly same-chat reminder remains active. [Current handoff](MEGA-CURRENT-HANDOFF.md).
 
 ---
 Historical reports below retain their original dates and do not override current authority.

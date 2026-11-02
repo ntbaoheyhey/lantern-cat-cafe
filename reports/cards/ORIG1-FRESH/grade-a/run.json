@@ -1,0 +1,64 @@
+{
+  "root": "/private/tmp/tbh-original-content",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/grade-a",
+  "head": "2f7c0b307123695a8244813604d540334e5fb8c0",
+  "originalityReceipt": "originality-current/commands.json: exact head already passed; no source changes since",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "active-config",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/check-active-config.mjs /private/tmp/tbh-original-content /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/grade-a/active-config.json"
+    ],
+    [
+      "mutants",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/mutants-a.mjs"
+    ],
+    [
+      "repeat-default-ui",
+      "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5100 E2E_PORT_V2=5101 E2E_PORT_SERVER=5102 E2E_PORT_API=5103 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/redesign-shell.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1280x720",
+      "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5100 E2E_PORT_V2=5101 E2E_PORT_SERVER=5102 E2E_PORT_API=5103 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600x900",
+      "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5100 E2E_PORT_V2=5101 E2E_PORT_SERVER=5102 E2E_PORT_API=5103 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}
