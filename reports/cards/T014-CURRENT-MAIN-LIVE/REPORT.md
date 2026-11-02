@@ -79,6 +79,8 @@ The T001 verifier's failed current-production comparison and initial unit timeou
 with the unchanged passing unit rerun and original paths/hashes in historical-failures/.
 They remain historical failures, never relabeled as current-main results.
 No current-main source suite needed a retry.
+The initial staged whitespace check flagged one extra blank line at the end of this report;
+it was corrected in a second docs-only commit. Its failed check log is retained in logs/.
 
 ## Publication and limits
 
@@ -93,4 +95,3 @@ No direct main push, Actions run, .github edit, database-destructive write, migr
 edge deployment, real funds, external message, reference-asset reuse or contest submission occurred.
 Repository remains private; no new user step or follow-up task is required for T014.
 This finite window does not certify future deployments or the remaining mission queue.
-
