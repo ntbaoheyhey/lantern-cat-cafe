@@ -4,7 +4,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
-const evidence = resolve('../../reports/g3-combat');
+const evidence = resolve(process.env.SCREENSHOT_DIR ?? '../../reports/g3-combat');
 type Scenario = 'melee' | 'ranged' | 'elite' | 'gated' | 'round-cleared';
 async function install(page: Page, scenario: Scenario, clock = true) {
   if (clock) await page.clock.install({ time: Date.now() });
@@ -77,8 +77,10 @@ test('G3 stage frame p95 stays within 20ms in the demo build', async ({ page }) 
     };
     requestAnimationFrame(frame);
   }));
-  mkdirSync(evidence, { recursive: true });
-  writeFileSync(resolve(evidence, 'frame-metrics.json'), JSON.stringify(metrics, null, 2) + '\n');
+  const metricsPath = process.env.REPORT_DIR
+    ? resolve(process.env.REPORT_DIR, 'frame-metrics.json') : test.info().outputPath('frame-metrics.json');
+  mkdirSync(resolve(metricsPath, '..'), { recursive: true });
+  writeFileSync(metricsPath, JSON.stringify(metrics, null, 2) + '\n');
   console.log('G3 stage frame metrics', metrics);
   expect(metrics.p95).toBeLessThanOrEqual(20);
 });

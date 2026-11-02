@@ -1,0 +1,10 @@
+--- apps/web/src/game/stage/StageScene.ts
++++ apps/web/src/game/stage/StageScene.ts
+@@ -321,7 +321,6 @@
+   relayout() {
+     // A resize can arrive while SceneManager is still waiting for game READY.
+     // show() lays out the latest dimensions when CREATE makes this scene active.
+-    if (!this.sys.isActive()) return;
+     this.floor = computeFloorY(this.scale.height, backdropFor(this.state0?.progress.chapter ?? 1).floorY);
+     this.homes[0] = Math.round(this.scale.width * .3);
+     this.homes[1] = Math.round(this.scale.width * .7);

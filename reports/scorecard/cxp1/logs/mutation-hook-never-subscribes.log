@@ -1,0 +1,39 @@
+CWD: /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+$ pnpm exec vitest run src/pets/state.test.ts src/pets/isolation.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+
+ ❯ src/pets/state.test.ts (16 tests | 1 failed) 122ms
+   × exposes a stable singleton and a reactive immutable hook that unsubscribes 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/state.test.ts > exposes a stable singleton and a reactive immutable hook that unsubscribes
+AssertionError: expected {} to deeply equal { 'claimed-idle-kills': 7 }
+
+- Expected
++ Received
+
+- {
+-   "claimed-idle-kills": 7,
+- }
++ {}
+
+ ❯ src/pets/state.test.ts:181:37
+    179|   expect(result.current).toBe(initial);
+    180|   act(() => { store.recordClaimedKills(petsRules.PET_DEFS[0]!.unlock.c…
+    181|   expect(result.current.killCounts).toEqual(kills(petsRules.PET_DEFS[0…
+       |                                     ^
+    182|   act(() => { store.equip(first); });
+    183|   expect(result.current.equipped).toEqual([first]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 16 passed (17)
+   Start at  15:34:27
+   Duration  573ms (environment 68%, tests 17%, import 8%, transform 5%, worker 1%)
+
+
+EXIT: 1

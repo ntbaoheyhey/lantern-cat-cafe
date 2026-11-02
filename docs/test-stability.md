@@ -163,3 +163,17 @@ for the missing manual-rollback file and conditional Founder batch step.
 F2_EXTERNAL_SERVER=1 and F2_SERVER_PREBUILT=1 are internal rehearsal handoff flags: the
 script starts the API on the restored snapshot and supplies the just-built web output.
 Ordinary runs should leave both unset so Playwright owns all startup and cleanup.
+
+## Both mission desktop sizes
+
+`E2E_VIEWPORT=1280x720 pnpm test:e2e` and `E2E_VIEWPORT=1600x900 pnpm test:e2e`
+(from apps/web) run the same complete project set with each requested default
+viewport. The default remains 1280x720. Explicit per-test responsive-size cases
+remain intact. Any other E2E_VIEWPORT value fails before servers start. Use the
+existing four E2E_PORT variables when runs overlap; output directories stay
+port-isolated. Run one worker for repeated performance-sensitive cases.
+
+Ordinary tests keep screenshots in memory when measuring encoded byte budgets;
+PNG report writes require SCREENSHOTS=1. The F3 and error-notice writers honor
+SCREENSHOT_DIR. F3/G1/G3 metrics go into Playwright output unless REPORT_DIR is
+explicitly set, so reruns do not rewrite historical tracked reports.

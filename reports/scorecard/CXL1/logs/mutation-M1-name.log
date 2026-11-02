@@ -1,0 +1,38 @@
+MUTANT: M1-name
+FILE: entries.ts
+OLD: base(item.id, item.name,
+NEW: base(item.id, item.id,
+$ pnpm exec vitest run src/v2/codex/entries.test.ts src/v2/codex/odds.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/mutant-iv_mifmf/packages/game-rules
+
+ ❯ src/v2/codex/entries.test.ts (10 tests | 1 failed) 234ms
+   ❯ Compendium registry adapter (10)
+     × retains every original name and uses IDs only where recipe names are absent 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2/codex/entries.test.ts > Compendium registry adapter > retains every original name and uses IDs only where recipe names are absent
+AssertionError: expected 'wpn.sword.twig' to be 'Twig Sword' // Object.is equality
+
+Expected: "Twig Sword"
+Received: "wpn.sword.twig"
+
+ ❯ src/v2/codex/entries.test.ts:42:114
+     40|
+     41|   it('retains every original name and uses IDs only where recipe names…
+     42|     for (const def of [...CLASSES, ...MONSTERS, ...ITEMS, ...MATERIALS…
+       |                                                                                                                  ^
+     43|     for (const recipe of [...RECIPES, RELIC_RECIPE]) {
+     44|       expect(entry(recipe.id).name).toBe(recipe.id);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 15 passed (16)
+   Start at  15:38:21
+   Duration  406ms (tests 59%, transform 30%, import 10%, worker 1%)
+
+
+EXIT: 1

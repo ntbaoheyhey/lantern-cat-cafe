@@ -1,0 +1,20 @@
+$ node scripts/check-links.mjs --json
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero
+started: 2026-11-01T08:01:09.958674+00:00
+{
+  "totalFilesChecked": 67,
+  "totalLinksChecked": 807,
+  "brokenCount": 1,
+  "brokenItems": [
+    {
+      "file": "docs/proposals/rune-skill-system/README.md",
+      "line": 4,
+      "type": "backticked repo path",
+      "raw": "docs/proposals/tbh-index-research/",
+      "resolved": "docs/proposals/tbh-index-research"
+    }
+  ]
+}
+
+exit_code: 1
+elapsed_seconds: 0.09

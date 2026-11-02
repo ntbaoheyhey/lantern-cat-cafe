@@ -1,0 +1,55 @@
+{"name": "resume-screens", "cwd": "/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero", "head": "42028adc2b1a5728a1f2896c47e7ca347c319c8b", "command": "pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --grep 'shared HUD' --workers=2", "environment": {"VITE_SUPABASE_URL": "", "VITE_SUPABASE_ANON_KEY": "", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_V2": "4381", "E2E_PORT_SERVER": "4382", "E2E_PORT_API": "4383", "E2E_VIEWPORT": "1600x900", "SCREENSHOTS": "1"}, "started": "2026-11-01T09:42:49.464959+00:00"}
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/apps/web
+> playwright test e2e/ui/baseline-hud.spec.ts --grep 'shared HUD' --workers=2
+
+[WebServer] (node:84036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:84037) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:84039) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:84061) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:84062) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:84069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:84071) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:84095) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:84096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:84102) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:84105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+  ✓  1 [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 (3.1s)
+{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+  ✓  2 [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated (1.2s)
+{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+  ✓  3 [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 (1.1s)
+{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+  ✓  4 [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1600x900 when gated (1.3s)
+
+  4 passed (13.8s)
+
+EXIT: 0

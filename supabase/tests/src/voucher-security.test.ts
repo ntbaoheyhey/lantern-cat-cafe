@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "./fixture-clock.ts";
 // Relic voucher security (docs/security-test-matrix.md): EIP-712 tampering, mint receipt matching and
 // replay of used nonces. Complements forge.test.ts, which covers the happy paths and re-issue rules.
 import type { PGlite } from "@electric-sql/pglite";
@@ -27,7 +28,7 @@ const OTHER_PLAYER: Address = "0x00000000000000000000000000000000000abc02";
 const KEY = generatePrivateKey();
 const SIGNER = privateKeyToAccount(KEY).address;
 const ATTACKER_KEY = generatePrivateKey();
-const T0 = Date.UTC(2026, 10, 1, 10, 0, 0);
+let T0 = 0;
 
 const FIELDS: VoucherFields = { player: PLAYER, relicId: 7n, rarity: 2, nonce: 424242n, expiry: 1_800_000_000n };
 
@@ -185,7 +186,7 @@ describe("replay of a used nonce or a reused mint transaction", () => {
     receipts.set(hash, success(forgedLog({ player: v.player, relicId: BigInt(v.relicId), rarity: v.rarity, nonce: BigInt(v.nonce), expiry: BigInt(v.expiry) })));
 
   beforeAll(async () => {
-    db = await migratedDb();
+    db = await migratedDb(); T0 = await databaseFixtureClock(db);
   });
 
   it("one player's mint transaction cannot mark another player's voucher minted", async () => {

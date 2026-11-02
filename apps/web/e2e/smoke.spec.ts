@@ -1,6 +1,8 @@
 import { expect, test } from './support/test';
 
 test('strip renders a canvas and the panel opens and closes', async ({ page }) => {
+  const initialViewport = page.viewportSize();
+  expect(initialViewport).not.toBeNull();
   const errors: string[] = [];
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(m.text());
@@ -17,7 +19,7 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
   const box = await canvas.boundingBox();
   expect(box?.height).toBeGreaterThanOrEqual(94);
   expect(box?.height).toBeLessThanOrEqual(96);
-  expect(box?.width).toBe(1280);
+  expect(box?.width).toBe(initialViewport!.width);
 
   const gold = page.getByTestId('gold-counter');
   const readGold = async () => Number(((await gold.textContent()) ?? '').replace(/[^0-9]/g, ''));

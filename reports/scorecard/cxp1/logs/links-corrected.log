@@ -1,0 +1,19 @@
+UTC: 2026-11-01T08:33:52.336482+00:00
+CWD: .
+$ node scripts/check-links.mjs --json
+{
+  "totalFilesChecked": 69,
+  "totalLinksChecked": 810,
+  "brokenCount": 1,
+  "brokenItems": [
+    {
+      "file": "docs/proposals/rune-skill-system/README.md",
+      "line": 4,
+      "type": "backticked repo path",
+      "raw": "docs/proposals/tbh-index-research/",
+      "resolved": "docs/proposals/tbh-index-research"
+    }
+  ]
+}
+
+EXIT: 1

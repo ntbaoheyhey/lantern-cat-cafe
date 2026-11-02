@@ -1,4 +1,5 @@
 /// <reference lib="dom" />
+import { databaseFixtureClock } from "./fixture-clock.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import { CONFIG, v2 } from "@taskbar-hero/game-rules";
 import { encodeAbiParameters, encodeEventTopics, parseAbi, type Hex } from "viem";
@@ -18,7 +19,7 @@ afterAll(async () => { await db.close(); });
 
 it("five v2 claims forced to read the same snapshot pay exactly one window in PGlite", async () => {
   const store = pgliteV2Store(() => db);
-  let clock = Date.UTC(2026, 10, 1, 10);
+  let clock = await databaseFixtureClock(db);
   const deps: V2Deps = { store, seedSecret: "n2-races", now: () => clock };
   const p = await newPlayer(db);
   await chooseClassV2(deps, p, { classId: "warrior" });
@@ -61,7 +62,7 @@ it("the in-memory demo store also pays one of five claims and spends once for a 
 it("parallel mint reports using one tx from two players credit only the voucher owner", async () => {
   const nft = "0x1111111111111111111111111111111111111111";
   const store = pgliteStore(() => db);
-  const clock = Date.UTC(2026, 10, 1, 10);
+  const clock = await databaseFixtureClock(db);
   const deps: GameDeps = { store, seedSecret: "n2-mint", now: () => clock,
     relic: { signer: voucherSigner(generatePrivateKey(), nft), nft, chain: { nonceUsed: async () => false, receipt: async () => null } } };
   const [owner, other] = await Promise.all([newPlayer(db), newPlayer(db)]);
@@ -94,7 +95,7 @@ it("five concurrent expiry forges leave one issued replacement and invoke its si
   const nft = "0x1111111111111111111111111111111111111111";
   const signer = voucherSigner(generatePrivateKey(), nft);
   const sign = vi.fn(signer.sign.bind(signer));
-  let clock = Date.UTC(2026, 10, 1, 10);
+  let clock = await databaseFixtureClock(db);
   const deps: GameDeps = { store, seedSecret: "n2-reissue", now: () => clock,
     relic: { signer: { ...signer, sign }, nft, chain: { nonceUsed: async () => false, receipt: async () => null } } };
   const p = await newPlayer(db);
