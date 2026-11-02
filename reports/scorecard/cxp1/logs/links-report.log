@@ -1,0 +1,26 @@
+UTC: 2026-11-01T08:38:34.692131+00:00
+CWD: .
+$ node scripts/check-links.mjs --json reports/cxp1.md reports/scorecard/cxp1/ui-diff.md
+{
+  "totalFilesChecked": 2,
+  "totalLinksChecked": 58,
+  "brokenCount": 2,
+  "brokenItems": [
+    {
+      "file": "reports/cxp1.md",
+      "line": 98,
+      "type": "backticked repo path",
+      "raw": "apps/web/src/pets/state.ts:121",
+      "resolved": "apps/web/src/pets/state.ts:121"
+    },
+    {
+      "file": "reports/cxp1.md",
+      "line": 101,
+      "type": "backticked repo path",
+      "raw": "apps/web/src/game/stage/progress.ts:4",
+      "resolved": "apps/web/src/game/stage/progress.ts:4"
+    }
+  ]
+}
+
+EXIT: 1
