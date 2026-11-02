@@ -77,6 +77,29 @@ it('handles unavailable storage and rejects invalid deltas without breaking play
   expect(store.equip(first).ok).toBe(true);
 });
 
+it('publishes the transition to the count cap once and keeps later no-op claims stable', () => {
+  const storage = memory(), store = new PetsStore(storage);
+  store.recordClaimedKills(Number.MAX_SAFE_INTEGER - 1);
+  const beforeCap = store.getSnapshot();
+  const listener = vi.fn(), write = vi.spyOn(storage, 'setItem');
+  const off = store.subscribe(listener);
+  try {
+    store.recordClaimedKills(2);
+    const capped = store.getSnapshot();
+    expect(capped).not.toBe(beforeCap);
+    expect(capped.killCounts).toEqual(kills(Number.MAX_SAFE_INTEGER));
+    expect(listener).toHaveBeenCalledOnce();
+    expect(write).toHaveBeenCalledOnce();
+
+    store.recordClaimedKills(1);
+    store.recordClaimedKills(Number.MAX_SAFE_INTEGER);
+    expect(store.getSnapshot()).toBe(capped);
+    expect(listener).toHaveBeenCalledOnce();
+    expect(write).toHaveBeenCalledOnce();
+    expect(new PetsStore(storage).getSnapshot()).toEqual(capped);
+  } finally { off(); }
+});
+
 it('observes acknowledged claims once across rounds; ignores loads, errors, resets and disposal', async () => {
   const api = new MockGameApiV2({ storage: null });
   const loaded = sampleServerStateV2({ round: 1, kills: 0 });
