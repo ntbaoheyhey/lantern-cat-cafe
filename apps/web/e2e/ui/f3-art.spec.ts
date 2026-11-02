@@ -6,10 +6,11 @@ import { CH3_PILOT_ART } from '../../src/art/monsters/ch3';
 import { CH4_PILOT_ART } from '../../src/art/monsters/ch4';
 import { CH5_PILOT_ART } from '../../src/art/monsters/ch5';
 import type { MonsterArt } from '../../src/art/monsters/types';
-import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const output = resolve('../../reports/f3-art');
+const output = resolve(process.env.SCREENSHOT_DIR ?? '../../reports/f3-art');
+const writeScreenshots = process.env.SCREENSHOTS === '1';
 const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 
 const CHAPTER_ROSTERS: Record<number, { name: string; theme: string; art: Record<string, MonsterArt> }> = {
@@ -33,13 +34,12 @@ async function seedChapter(page: Page, chapter: number, kills = 0) {
 }
 
 async function captureShot(page: Page, name: string, selector?: string) {
-  mkdirSync(output, { recursive: true });
-  const path = resolve(output, `${name}.png`);
-  if (selector) await page.locator(selector).screenshot({ path });
-  else await page.screenshot({ path });
-  const size = statSync(path).size;
+  if (writeScreenshots) mkdirSync(output, { recursive: true });
+  const options = writeScreenshots ? { path: resolve(output, `${name}.png`) } : {};
+  const png = selector ? await page.locator(selector).screenshot(options) : await page.screenshot(options);
+  const size = png.byteLength;
   expect(size).toBeLessThan(200 * 1024);
-  console.log(`Saved screenshot ${name}.png (${(size / 1024).toFixed(1)} KB)`);
+  console.log(`${writeScreenshots ? 'Saved' : 'Measured'} screenshot ${name}.png (${(size / 1024).toFixed(1)} KB)`);
 }
 
 // 1. Roster sheet per chapter (1 through 5) at 3x scale + 1x solid black silhouettes
@@ -259,8 +259,10 @@ test('F3 canvas bake time benchmark for chapters 1-5', async ({ page }) => {
     return report;
   }, { allChapters });
 
-  mkdirSync(output, { recursive: true });
-  writeFileSync(resolve(output, 'bake-metrics.json'), JSON.stringify(results, null, 2) + '\n');
+  const metricsPath = process.env.REPORT_DIR
+    ? resolve(process.env.REPORT_DIR, 'bake-metrics.json') : test.info().outputPath('bake-metrics.json');
+  mkdirSync(resolve(metricsPath, '..'), { recursive: true });
+  writeFileSync(metricsPath, JSON.stringify(results, null, 2) + '\n');
   console.log('Bake benchmark results:', JSON.stringify(results, null, 2));
 
   // Assert all chapters bake under 25ms

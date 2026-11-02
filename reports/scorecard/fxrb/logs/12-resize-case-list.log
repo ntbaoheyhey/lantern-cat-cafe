@@ -1,0 +1,18 @@
+$ env CI=true SCREENSHOTS=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= E2E_PORT_CLASSIC=4310 E2E_PORT_V2=4311 E2E_PORT_SERVER=4312 E2E_PORT_API=4313 pnpm test:e2e e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --list
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+started: 2026-11-01T08:02:05.649047+00:00
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+> playwright test e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --list
+
+Listing tests:
+  [stage-layout] › layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1280x720)
+  [stage-layout] › layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1600x900)
+  [stage-layout] › layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1280x720)
+  [stage-layout] › layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1280x720)
+  [stage-layout] › layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1600x900)
+  [stage-layout] › layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1600x900)
+Total: 6 tests in 2 files
+
+exit_code: 0
+elapsed_seconds: 0.53

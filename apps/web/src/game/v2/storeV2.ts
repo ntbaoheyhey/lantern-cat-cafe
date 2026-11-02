@@ -6,6 +6,7 @@ import { withSessionGuardV2 } from '../../api/sessionGuardV2';
 import { getSessionStore } from '../store';
 import { ApiSwitchV2, type ApiSwitchV2Options } from './apiSwitchV2';
 import type { GameLoopV2 } from './loopV2';
+import { bindPetsToLoop } from '../../pets/state';
 
 export type ActionNoticeErrorCode = 'rate_limited' | 'server_busy' | 'offline';
 
@@ -111,6 +112,7 @@ export function createStageStoreV2(options: Pick<ApiSwitchV2Options, 'sessions' 
       }
     }
   });
+  bindPetsToLoop(store.loop);
   return store;
 }
 let stageStore: ApiSwitchV2 | null = null;

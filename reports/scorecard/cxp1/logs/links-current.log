@@ -1,0 +1,26 @@
+UTC: 2026-11-01T08:32:38.391955+00:00
+CWD: .
+$ node scripts/check-links.mjs --json
+{
+  "totalFilesChecked": 69,
+  "totalLinksChecked": 810,
+  "brokenCount": 2,
+  "brokenItems": [
+    {
+      "file": "docs/decisions/pets-preview.md",
+      "line": 49,
+      "type": "backticked repo path",
+      "raw": "apps/web/src/game/stage/progress.ts::claimedKills",
+      "resolved": "apps/web/src/game/stage/progress.ts::claimedKills"
+    },
+    {
+      "file": "docs/proposals/rune-skill-system/README.md",
+      "line": 4,
+      "type": "backticked repo path",
+      "raw": "docs/proposals/tbh-index-research/",
+      "resolved": "docs/proposals/tbh-index-research"
+    }
+  ]
+}
+
+EXIT: 1

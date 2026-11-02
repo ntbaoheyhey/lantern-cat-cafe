@@ -1,0 +1,16 @@
+{"name": "resume-units", "cwd": "/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero", "head": "42028adc2b1a5728a1f2896c47e7ca347c319c8b", "command": "pnpm --filter @taskbar-hero/web test src/shell/Hud.test.tsx src/shell/ScreenFrame.test.tsx src/layout/hud/HudBar.test.tsx src/layout/hud/hud.a11y.test.tsx src/theme.contrast.test.ts", "environment": {"VITE_SUPABASE_URL": "", "VITE_SUPABASE_ANON_KEY": "", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_V2": "4381", "E2E_PORT_SERVER": "4382", "E2E_PORT_API": "4383"}, "started": "2026-11-01T09:34:29.995312+00:00"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/apps/web
+> vitest run src/shell/Hud.test.tsx src/shell/ScreenFrame.test.tsx src/layout/hud/HudBar.test.tsx src/layout/hud/hud.a11y.test.tsx src/theme.contrast.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero/apps/web
+
+
+ Test Files  5 passed (5)
+      Tests  21 passed (21)
+   Start at  16:34:30
+   Duration  1.56s (environment 65%, import 16%, tests 15%, transform 4%)
+
+
+EXIT: 0

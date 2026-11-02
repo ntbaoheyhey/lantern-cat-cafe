@@ -1,0 +1,121 @@
+$ env CI=true SCREENSHOTS=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= E2E_PORT_CLASSIC=4310 E2E_PORT_V2=4311 E2E_PORT_SERVER=4312 E2E_PORT_API=4313 pnpm test:e2e e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts e2e/layout/stage-redraw.spec.ts e2e/ui/u2-hud.spec.ts e2e/smoke.spec.ts --project=stage-layout --project=classic --workers=1 --reporter=list
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web
+started: 2026-11-01T08:05:20.665699+00:00
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web
+> playwright test e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts e2e/layout/stage-redraw.spec.ts e2e/ui/u2-hud.spec.ts e2e/smoke.spec.ts --project=stage-layout --project=classic --workers=1 --reporter=list
+
+[WebServer] (node:49138) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49139) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:49141) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:49166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:49173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:49175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:49199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:49206) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:49211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [classic] › e2e/smoke.spec.ts:3:1 › strip renders a canvas and the panel opens and closes (3.8s)
+(node:49217) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Phaser canvas instances inserted during 100-step drag: 2
+  ✓   2 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1280x720) (781ms)
+Phaser canvas instances inserted during 100-step drag: 2
+  ✓   3 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1600x900) (716ms)
+  ✓   4 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1280x720) (2.1s)
+  ✓   5 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1280x720) (2.1s)
+  ✓   6 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1600x900) (2.2s)
+  ✓   7 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1600x900) (2.2s)
+  ✓   8 [stage-layout] › e2e/layout/stage-redraw.spec.ts:11:67 › both actors survive scene recreation (no-preference) (2.6s)
+  ✓   9 [stage-layout] › e2e/layout/stage-redraw.spec.ts:11:67 › both actors survive scene recreation (reduce) (1.3s)
+HUD diagnostic {"viewport":[1600,900],"legacyGridCount":0,"elements":[{"className":"shell-hud v2-topbar","x":92,"y":0,"width":1508,"height":52,"display":"flex","flexWrap":"nowrap","maxHeight":"56px","overflow":"hidden"},{"className":"hud-left hud-bar","x":224.65625,"y":1.5,"width":691.53125,"height":48,"display":"flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":224.65625,"y":1.5,"width":72.21875,"height":48,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-progress-wrap","x":304.875,"y":8.5,"width":205.25,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-currencies","x":518.125,"y":7.5,"width":307.25,"height":36,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":833.375,"y":8.5,"width":82.8125,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-gold","x":518.125,"y":9.5,"width":100.015625,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-shards","x":618.140625,"y":7.5,"width":86.8125,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-keys","x":704.953125,"y":7.5,"width":120.421875,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"}]}
+  ✓  10 [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 1600x900 (982ms)
+HUD diagnostic {"viewport":[1280,720],"legacyGridCount":0,"elements":[{"className":"shell-hud v2-topbar","x":92,"y":0,"width":1188,"height":52,"display":"flex","flexWrap":"nowrap","maxHeight":"56px","overflow":"hidden"},{"className":"hud-left hud-bar","x":224.65625,"y":1.5,"width":691.53125,"height":48,"display":"flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":224.65625,"y":1.5,"width":72.21875,"height":48,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-progress-wrap","x":304.875,"y":8.5,"width":205.25,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-currencies","x":518.125,"y":7.5,"width":307.25,"height":36,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":833.375,"y":8.5,"width":82.8125,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-gold","x":518.125,"y":9.5,"width":100.015625,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-shards","x":618.140625,"y":7.5,"width":86.8125,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-keys","x":704.953125,"y":7.5,"width":120.421875,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"}]}
+  ✓  11 [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 1280x720 (996ms)
+HUD diagnostic {"viewport":[390,844],"legacyGridCount":0,"elements":[{"className":"shell-hud v2-topbar","x":0,"y":0,"width":390,"height":70,"display":"grid","flexWrap":"wrap","maxHeight":"72px","overflow":"hidden"},{"className":"hud-left hud-bar","x":106.578125,"y":2,"width":279.421875,"height":138,"display":"flex","flexWrap":"wrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":110.578125,"y":4,"width":54.15625,"height":48,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-progress-wrap","x":172.734375,"y":11,"width":205.25,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-currencies","x":110.578125,"y":60,"width":247.25,"height":36,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":110.578125,"y":104,"width":74.8125,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-gold","x":110.578125,"y":62,"width":80.015625,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-shards","x":190.59375,"y":60,"width":66.8125,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-keys","x":257.40625,"y":60,"width":100.421875,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"}]}
+  ✘  12 [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 390x844 (840ms)
+(node:49323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+HUD diagnostic {"viewport":[320,568],"legacyGridCount":0,"elements":[{"className":"shell-hud v2-topbar","x":0,"y":0,"width":320,"height":70,"display":"grid","flexWrap":"wrap","maxHeight":"72px","overflow":"hidden"},{"className":"hud-left hud-bar","x":106.578125,"y":2,"width":209.421875,"height":214,"display":"flex","flexWrap":"wrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":110.578125,"y":4,"width":54.15625,"height":48,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-progress-wrap","x":110.578125,"y":60,"width":205.25,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-currencies","x":110.578125,"y":102,"width":201.421875,"height":70,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip-wrap","x":110.578125,"y":180,"width":74.8125,"height":34,"display":"block","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-gold","x":110.578125,"y":104,"width":80.015625,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-shards","x":190.59375,"y":102,"width":66.8125,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"},{"className":"hud-chip hud-stack-item hud-keys","x":110.578125,"y":138,"width":100.421875,"height":34,"display":"inline-flex","flexWrap":"nowrap","maxHeight":"none","overflow":"visible"}]}
+  ✘  13 [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 320x568 (1.1s)
+(node:49328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 1600x900 (707ms)
+  ✓  15 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 1280x720 (777ms)
+  ✓  16 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 390x844 (807ms)
+  ✓  17 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 320x568 (975ms)
+  ✓  18 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 1280x720 dark (763ms)
+  ✓  19 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 390x844 dark (600ms)
+  ✓  20 [stage-layout] › e2e/ui/u2-hud.spec.ts:82:3 › HUD evidence 390x844 gated (774ms)
+
+
+  1) [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 390x844 ─────────────────────────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 88
+    Received:    138
+
+      69 |     expect(measures.intersections).toBe(0);
+      70 |     expect(measures.luminance).toBeLessThan(.2);
+    > 71 |     if (size.width <= 390) expect(measures.height).toBeLessThanOrEqual(88);
+         |                                                    ^
+      72 |     if (size.width === 1600) expect(measures.height).toBeLessThanOrEqual(64);
+      73 |   });
+      74 | }
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web/e2e/ui/u2-hud.spec.ts:71:52
+
+    Error Context: test-results/4310-4311/ui-u2-hud-HUD-readable-at-390x844-stage-layout/error-context.md
+
+  2) [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 320x568 ─────────────────────────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 88
+    Received:    214
+
+      69 |     expect(measures.intersections).toBe(0);
+      70 |     expect(measures.luminance).toBeLessThan(.2);
+    > 71 |     if (size.width <= 390) expect(measures.height).toBeLessThanOrEqual(88);
+         |                                                    ^
+      72 |     if (size.width === 1600) expect(measures.height).toBeLessThanOrEqual(64);
+      73 |   });
+      74 | }
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web/e2e/ui/u2-hud.spec.ts:71:52
+
+    Error Context: test-results/4310-4311/ui-u2-hud-HUD-readable-at-320x568-stage-layout/error-context.md
+
+  2 failed
+    [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 390x844 ──────────────────────────
+    [stage-layout] › e2e/ui/u2-hud.spec.ts:37:3 › HUD readable at 320x568 ──────────────────────────
+  18 passed (36.2s)
+ ELIFECYCLE  Command failed with exit code 1.
+
+exit_code: 1
+elapsed_seconds: 36.75

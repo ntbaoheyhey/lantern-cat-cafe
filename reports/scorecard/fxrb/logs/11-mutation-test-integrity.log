@@ -1,0 +1,18 @@
+Scratch assertions and configuration compared byte-for-byte with the reused branch
+m1-before-ready apps/web/src/game/stage/StageScene.test.ts SHA256 8180c438c6973f9d74a0be08b923c63844a32162cf58aaff748963e99a55eac5 identical
+m1-before-ready apps/web/src/game/stage/StageCanvas.test.tsx SHA256 8e758e43761edfcba8479e0df25ec58ded8a8fdfcef73872196e81b7b605f800 identical
+m1-before-ready apps/web/e2e/layout/resize-burst.spec.ts SHA256 51c093bb39470eabf250448abbe91be90bf38c89d4877b8f46bab3568be82d4a identical
+m1-before-ready apps/web/e2e/layout/resize.spec.ts SHA256 277d3cdb5c89ebf666e4c52f665d29a7d62da8a33b0e323379a82637c9b8a019 identical
+m1-before-ready apps/web/playwright.config.ts SHA256 08c16ccf8f1d4360c94b7dae515798edb600af6664f1c633dcc6096fad807462 identical
+m2-missing-create-layout apps/web/src/game/stage/StageScene.test.ts SHA256 8180c438c6973f9d74a0be08b923c63844a32162cf58aaff748963e99a55eac5 identical
+m2-missing-create-layout apps/web/src/game/stage/StageCanvas.test.tsx SHA256 8e758e43761edfcba8479e0df25ec58ded8a8fdfcef73872196e81b7b605f800 identical
+m2-missing-create-layout apps/web/e2e/layout/resize-burst.spec.ts SHA256 51c093bb39470eabf250448abbe91be90bf38c89d4877b8f46bab3568be82d4a identical
+m2-missing-create-layout apps/web/e2e/layout/resize.spec.ts SHA256 277d3cdb5c89ebf666e4c52f665d29a7d62da8a33b0e323379a82637c9b8a019 identical
+m2-missing-create-layout apps/web/playwright.config.ts SHA256 08c16ccf8f1d4360c94b7dae515798edb600af6664f1c633dcc6096fad807462 identical
+m3-wrong-logical-width apps/web/src/game/stage/StageScene.test.ts SHA256 8180c438c6973f9d74a0be08b923c63844a32162cf58aaff748963e99a55eac5 identical
+m3-wrong-logical-width apps/web/src/game/stage/StageCanvas.test.tsx SHA256 8e758e43761edfcba8479e0df25ec58ded8a8fdfcef73872196e81b7b605f800 identical
+m3-wrong-logical-width apps/web/e2e/layout/resize-burst.spec.ts SHA256 51c093bb39470eabf250448abbe91be90bf38c89d4877b8f46bab3568be82d4a identical
+m3-wrong-logical-width apps/web/e2e/layout/resize.spec.ts SHA256 277d3cdb5c89ebf666e4c52f665d29a7d62da8a33b0e323379a82637c9b8a019 identical
+m3-wrong-logical-width apps/web/playwright.config.ts SHA256 08c16ccf8f1d4360c94b7dae515798edb600af6664f1c633dcc6096fad807462 identical
+All mutants alter production source only. No test skips, retries, timeouts or assertion changes.
+exit_code: 0

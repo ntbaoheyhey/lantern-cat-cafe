@@ -1,7 +1,7 @@
 # Rune and skill system proposal (docs and demo only)
 
 Status: DRAFT. No game rule, contract, auth, schema, number or app code changed (Tier 3 untouched).
-Date: 2026-10-31. Source of inspiration: the research in `docs/proposals/tbh-index-research/` (structure only).
+Date: 2026-10-31. Inspiration came from separate structure-only research; this directory contains the original proposal and runnable demo.
 
 | File | What |
 |---|---|
@@ -12,4 +12,4 @@ Date: 2026-10-31. Source of inspiration: the research in `docs/proposals/tbh-ind
 | `art/STYLE-BIBLE.md` | Palette, grid, outline and shading rules, frame counts, checklist, provenance rules. |
 
 Originality rule: nothing here copies the reference game's art, names, flavour text or exact tables. The demo's pixel glyphs are placeholders drawn for this demo.
-Ready-to-paste Codex/Antigravity logic prompts: `/mnt/project-files/taskbar-hero/PASTE-ALL-runes.txt` (art prompts intentionally not written yet; the user will ask).
+Implementation phases, dependencies and test requirements are in [the plan](plan.md). Asset requirements are in [the art manifest](art/MANIFEST.md).

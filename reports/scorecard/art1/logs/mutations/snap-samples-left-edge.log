@@ -1,0 +1,20 @@
+SCRATCH COPY MUTATION: snap-samples-left-edge
+REPLACE: (2 * x + 1) * image.width // (2 * width)
+WITH: x * image.width // width
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.PixelTests.test_nearest_centres_not_top_left
+test_nearest_centres_not_top_left (test_pipeline.PixelTests) ... FAIL
+
+======================================================================
+FAIL: test_nearest_centres_not_top_left (test_pipeline.PixelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/.codex/worktrees/mega-art1/taskbar-hero/tools/art/mutation-1ju0ffrb/test_pipeline.py", line 32, in test_nearest_centres_not_top_left
+    self.assertEqual(snap(image, 2, 1).pixels, RED + BLUE)
+AssertionError: b'\x00\x00\xff\xff\x00\xff\x00\xff' != b'\xff\x00\x00\xff\x00\x00\xff\xff'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+
+EXIT: 1
