@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, type ReactNode, type RefObject } from 'react';
+import { useLayoutEffect, useId, useRef, type ReactNode, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface ModalProps {
@@ -51,7 +51,7 @@ export function Modal({ open, title, description, children, onClose, initialFocu
   const backdrop = useRef<HTMLDivElement>(null);
   const close = useRef(onClose);
   close.current = onClose;
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open || !dialog.current || !backdrop.current) return;
     const node = dialog.current;
     const opener = returnFocusRef?.current ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);

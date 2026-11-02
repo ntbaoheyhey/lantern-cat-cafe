@@ -68,7 +68,22 @@ for (const size of sizes) {
     await screenshot(page, `modal-${size.width}`);
     await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(change).toBeFocused();
     await page.keyboard.press('Enter'); await page.getByLabel('Cat class').selectOption('archer');
+    const release = await page.evaluateHandle(() => {
+      const usable: boolean[] = [];
+      const observer = new MutationObserver(() => {
+        if (!document.querySelector('[role="dialog"]')) {
+          const root = document.getElementById('root')!;
+          usable.push(!root.hasAttribute('inert') && root.getAttribute('aria-hidden') !== 'true');
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      return { usable, observer };
+    });
     await page.getByRole('button', { name: 'Confirm class', exact: true }).click(); await expect(dialog).toHaveCount(0);
+    const released = await release.evaluate(({ usable, observer }) => { observer.disconnect(); return usable; });
+    await release.dispose();
+    expect(released.length).toBeGreaterThan(0);
+    expect(released).not.toContain(false);
     await expect(hero.locator('.character-meta')).toContainText('Archer');
     await expect(page.getByRole('status').filter({ hasText: 'Class changed to Archer.' })).toBeVisible();
     await expect(change).toBeFocused();
