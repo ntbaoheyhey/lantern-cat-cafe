@@ -1,0 +1,63 @@
+
+> taskbar-hero@0.0.0 test /private/tmp/tbh-cxu4-fresh-b
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.948959ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.618042ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.753875ms)
+✔ output order is stable regardless of file creation order (2.969041ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.65675ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.629875
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/packages/auth
+packages/chain test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/packages/chain
+supabase/tests test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  02:26:00
+packages/chain test:    Duration  615ms (import 45%, tests 29%, transform 25%, worker 1%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  02:26:00
+packages/auth test:    Duration  834ms (import 51%, tests 38%, transform 10%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  33 passed (33)
+supabase/tests test:       Tests  575 passed (575)
+supabase/tests test:    Start at  02:26:00
+supabase/tests test:    Duration  11.04s (tests 76%, import 14%, transform 10%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  28 passed | 3 skipped (31)
+packages/game-rules test:       Tests  402 passed | 2 expected fail | 11 skipped (415)
+packages/game-rules test:    Start at  02:26:00
+packages/game-rules test:    Duration  30.87s (tests 91%, transform 7%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  02:26:31
+packages/api-contract test:    Duration  205ms (transform 78%, import 18%, tests 3%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-b/apps/web
+apps/web test:  Test Files  118 passed (118)
+apps/web test:       Tests  1358 passed (1358)
+apps/web test:    Start at  02:26:32
+apps/web test:    Duration  16.56s (environment 42%, tests 41%, import 9%, transform 7%, worker 1%)
+apps/web test: Environment  jsdom was created 118 times · 55.57s total, 42% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

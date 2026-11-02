@@ -17,3 +17,8 @@ Repair3ed0633 restores Start Exploring as primary, updates the independent hand-
 
 ## Fresh grader A complete
 Self-graded (fresh pass)95/100 at3ed0633, zero auto-fails. Core2412 cases; full313/313 both sizes;360 repeats;11 mutants;36 UI/20 effects checks and modal captures green. Exact old Help text independently matches actual main in all3 configurations. Minor design departures and one duplicated contrast pair are deducted explicitly. B tests-first starts in clean /private/tmp/tbh-cxu4-fresh-b on4810–4813, PID29718.
+
+## Grader B control failure; third fix round
+B core,360 repeats,38 classic cases,96 Forge tests and UI/effects passed on3ed0633, but its unmodified mutation control failed: dialog already absent, root still inert/aria-hidden, success status inaccessible (50 pass/1 fail). No mutants were run or credited. This is a real passive-effect cleanup timing defect, not a setup failure or a retry candidate. Grader B fails and3ed0633 is not mergeable under the gate, despite A95.
+
+Third repair d969f16 changes Modal to a layout effect so restoration completes before paint/DOM-removal observation. Original immediate status/focus assertions remain. A browser observer now checks accessible background at dialog removal. Targeted checks running, PID32491. Fresh A/B must be rerun on this head; if the third repair cannot clear the gate, record PARTIAL and move on per the user's limit.

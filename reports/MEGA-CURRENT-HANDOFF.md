@@ -8,7 +8,7 @@ Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249 / main1b299c4 | DONE A94/B94; actual main302×2, live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251 / local3ed0633 | A95 PASS; B tests-first active; no merge |
+| CXU4 | #251 / locald969f16 | Third fix round: B caught modal cleanup timing; no passing current grades |
 | CXU3 + CXC2 | pending | After CXU4; frontend independent of #244 |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix without lower threshold; full live path + throwaway Fuji |
@@ -31,7 +31,6 @@ Repair typecheck/51 units/22 browser pass, including Home return. No existing as
 Current card reports/cards/CXU4-FRESH/REPORT.md; full new A/B still required; no score/merge claim.
 
 Active worktree /private/tmp/tbh-cxu4-active, branch ai/codex-cxu4, clean3ed0633.
-In-flight PID29718: clean CXU4 grade-b runner, cwd /private/tmp/tbh-cxu4-fresh-b, ports4810–4813.
 B /private/tmp/tbh-cxu4-fresh-b is clean3ed0633; tests first, then full diff review.
 Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; preserve historical dirty files, stage selected paths only.
 CXU5 worktrees retained; all their PIDs finished. Never kill unrelated18457/49986 or OS listeners.
@@ -40,3 +39,5 @@ Tools: reports/fresh-session-tools/run-checks.py; parameterized live assets/path
 Owner step remains exact in reports/OPTIONAL-USER-STEPS.md T007; this blocks no frontend work.
 Safety: no secrets, destructive live DB writes, migrations/functions deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, public repo or submission.
 Next3: finish current A + mutations/UI; clean B tests then diff; merge if both>=92/zero auto-fails then main/live.
+In-flight PID32491: CXU4 repair-r3, active worktree /private/tmp/tbh-cxu4-active, ports4800–4803.
+Current headd969f1662a4c159023c19b320825e04c91e5814e; B clone still3ed0633. Re-run A/B if targeted repair passes; otherwise PARTIAL after3 rounds.
