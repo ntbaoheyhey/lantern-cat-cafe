@@ -1,0 +1,18 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:31:38.729228+00:00",
+    "endedAt": "2026-11-02T17:31:48.770015+00:00"
+  },
+  {
+    "name": "regression",
+    "command": "E2E_PORT_CLASSIC=4780 E2E_PORT_V2=4781 E2E_PORT_SERVER=4782 E2E_PORT_API=4783 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/baseline-hud.spec.ts e2e/ui/cxu5-map.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:31:48.777536+00:00",
+    "endedAt": "2026-11-02T17:32:40.624998+00:00"
+  }
+]
