@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-02T10:53:42+07:00",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "requests_submitted": 2,
+  "per_project": {
+    "taskbarhero": {
+      "deployment": "AYTeh7ssNrKMi74xYWTKd1SrsCLi",
+      "status": "CANCELED",
+      "environment": "Preview",
+      "created_status_at": "2026-11-02T03:36:19Z"
+    },
+    "taskbar-hero": {
+      "deployment": "4TF5W6BG7sTgmBHZQREZyi1ZCKXf",
+      "status": "CANCELED",
+      "environment": "Preview",
+      "created_status_at": "2026-11-02T03:48:53Z"
+    }
+  },
+  "one_request_per_project": true,
+  "same_immutable_graded_source": true,
+  "ignore_command_overridden": false,
+  "hosting_settings_changed": false,
+  "quota_bypass_or_upgrade": false,
+  "rate_rejections_on_these_requests": 0,
+  "production_promoted": false,
+  "source_build_or_live_success_claimed": false,
+  "exact_quota_reset_or_remaining_count_known": false,
+  "github_combined_status": "success",
+  "reason": "Ordinary Preview requests were admitted by both configured projects and canceled by the existing non-main ignore policy. Stale failure statuses are resolved; completed source builds and postmerge live proof remain separate gates."
+}

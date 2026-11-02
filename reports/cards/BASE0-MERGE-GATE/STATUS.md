@@ -1,3 +1,11 @@
+# BASE0 — score/technical gates passed; provider statuses refreshed
+
+Current 2026-11-02T10:53:42+07:00: exact candidate280ff4b/main1fb25ed unchanged. Two independent scores97.64285714285714/98 and all floors revalidated; grade bytes match immutable publications. One ordinary Preview request per configured project was admitted, and each ended CANCELED by the existing Ignored Build Step. Both GitHub contexts nowSUCCESS; no configuration override, retry loop, quota bypass, upgrade or production promotion. This proves recent admission and resolves stale red contexts; it does not prove a source build, a fixed quota-reset time or a live deployment. Records: provider-current-20261102.json and preview-recheck-result-20261102.json.
+
+Original userG1–G7 require exact-head technical checks and postmerge live verification. They do not specify an exact remaining-quota counter. The earlier blanket capacity hold is superseded by observed provider admission/status results; final premerge reconciliation and every postmerge check still apply. No mission merge has happened.
+
+## Historical observations
+
 # BASE0 — score gate passed; deployment hold
 
 Checked 2026-11-01T23:33:01+07:00. Candidate280ff4b and main1fb25ed remain unchanged, PR246 open/draft/unmerged. Independent A97.64285714285714 and B98 each satisfy all score floors with zero auto-fails. Difference0.35714285714286 is below5; no third grader required. Preserve both scores separately. Aggregation: score-aggregation-r2.json. A publication72c0b0b is verified; B150manifestfiles are published atbeb4a99 and byte-verified; see grade-b-publication.json. PR246 body links both immutable grades and the aggregation.
