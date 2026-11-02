@@ -1,0 +1,69 @@
+STATUS: IN-PROGRESS
+
+# BASE0 — restore the existing verification baseline
+
+Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). Round1 candidate5db4949 received A0/100(A7 repeat failure) and B97/100; mandatory grader C is still running on that unchanged candidate. No merge or deployment. The isolated successor repairs below require complete fresh exact-head verification and fresh graders.
+
+## Changes and causality
+
+1. The Deno generator omitted explicit index-module aliases while generating directory aliases. Five imports across sixteen function maps therefore failed resolution. Include index modules, retain directory aliases, test generation in isolated fixtures, and run script tests through the root test command. The focused guard now reports 18 functions clean.
+2. Reuse FXRB's active-scene guard and regression: resize can reach Phaser before the scale plugin is injected; CREATE applies the latest layout. The original main browser suite lost its canvas during reduced-motion resize. The FXRB branch has separate repeated evidence; BASE0 still needs its own complete verification.
+3. The new shell imported HUD primitives without their shared stylesheet or grid wrapper. Narrow content grew to 138px/214px inside a clipped 70px header. Restore the primitive stylesheet/grid classes. On the existing phone layout, keep status and wallet in the 72px topbar and move the title/next-goal guidance into a visible context row below it; neither control is hidden or disabled. Preserve visible values, accessible names, all test identifiers, handlers, and all existing assertions. At the 600px boundary, both legacy and shell rules apply; the shell grid now has explicit specificity. Currency labels remain in accessible names and use the existing compact visual treatment at narrow widths.
+
+Decision: [baseline compatibility](../docs/decisions/mission-baseline-compatibility.md).
+
+## Test integrity: deliberate old → new behavior
+
+- supabase/tests/src/deno-imports.test.ts: the existing expected-failure case becomes a normal test with identical success assertions because explicit-index resolution is repaired. The companion test no longer filters out known index failures: every stderr edge now fails. This strengthens the gate.
+- Existing resize, redraw and HUD browser tests are unchanged. No retries, timeout increases, skips, removed assertions or changed snapshots.
+- New generator fixtures cover root/nested index keys, ordinary modules, directory aliases, test/fixture exclusions, deterministic output and untouched auth mappings. Six scratch mutants all fail these tests; no mutant remains in the source tree.
+
+## Targeted evidence
+
+[Generator tests and mutations](scorecard/deno0/logs/) and [browser iteration logs](scorecard/base0/logs/) preserve actual commands and exit codes. Earlier failed iterations remain failures; later checks do not relabel them.
+
+- Generator tests: 5 pass, exit 0.
+- Deno guard: 18 functions clean, exit 0.
+- Scratch mutations: 6/6 detected, each mutant exits 1.
+- Focused Deno regression suite: 4 pass; StageScene/Hud units: 15 pass. These were run locally before the complete gate and will be re-run with saved output.
+- Full verification, all-screen audits/effects, repeat checks, independent grading, PR-wrapper, production-config/live smoke and post-merge checks: NOT VERIFIED at this commit.
+
+## Scope notes
+
+Tier 1: scripts/gen-deno-json.mjs and its fixture test; generated game-function maps; StageScene readiness fix/test; shell Hud.tsx and shell.css; BASE0/DENO0 evidence.
+
+Tier 2: apps/web/tools/effects-test.mjs reuses the existing uncommitted CXR2 viewport/manifest extension without changing any motion thresholds, so the required tool can actually audit every screen at 1600x900 as well as 1280x720; the CXR2 worktree remains untouched. The four legacy F3/error/performance specs now keep ordinary artifacts in memory or Playwright output; SCREENSHOTS=1 and optional SCREENSHOT_DIR opt into report PNGs, REPORT_DIR opts into metric reports. Image byte-budget, timing, scenario and functional assertions are unchanged. ScreenFrame forwards its existing phone-layout state to Hud to preserve the compact topbar contract. New e2e/ui/baseline-hud.spec.ts proves real XP geometry and status containment at both desktop sizes. Root package.json adds the script-test runner without dependency changes; supabase/tests/src/deno-imports.test.ts promotes the repaired known defect to a mandatory normal regression; docs/decisions and docs/design record the authorized compatibility interpretation. Every change exists to repair an observed complete-gate blocker. No auth function source, workflow, contract, credentials, migration or art is changed.
+
+Branch ai/codex-mega-deno0; merge commit none; PR #246; report reports/base0.md; status IN-PROGRESS.
+
+## Verification iteration findings
+
+The complete exploratory run at the first BASE0 commit finished 253 passed / 1 failed: the legacy 390px topbar must remain <=72px. Its assertion was retained, and compact guidance/status separation plus the inherited sync-label line height were corrected. Earlier focused logs record all intermediate failures. The two new desktop HUD cases passed ten repeats each. Guest and local signed-in UI audits each measured 18 screen/size combinations with zero findings. Initial 1280 effects: 9 checks pass. These results precede the current compact-layout/harness edits and do not claim an exact-current-commit merge gate. A fresh complete verification is required.
+
+The native 1600x900 complete run found one test assumption: classic smoke asserted exactly 1280px regardless of its configured viewport (253 passed, 1 failed). Old -> new: exact width 1280 becomes exact configured initial width (1280 or 1600); the later exact 800px resize assertion is unchanged. The expected width comes from the harness viewport, never from the canvas. No tolerance, count or timing assertion was relaxed. This verification-context correction adds smoke.spec.ts to the repeat list.
+
+## Independent preflight finding
+
+The independent reviewer observed ancestor clipping in the low-power HUD state at both desktop sizes, which the strong-fixture audit did not cover. The shared HUD reserves a warning row; the fixed-height shell did not. The header now grows only while that real warning is present. The browser regression covers normal and gated fixtures at both sizes and checks every clipping ancestor, not just each chip's own scroll width. This was a real missing case; earlier strong-fixture PASS claims remain scoped to that fixture.
+
+Additional preflight repairs: effects coverage now requires selected navigation, the actual active screen and visible required content before recording a visit; the independent inert-Help mutation is repeated against that stronger check. The baseline's one broken documentation path was a reference to an untracked research directory; the README now points readers to the existing local plan/manifest instead of missing research and mount-specific prompt paths. This makes the links command itself green without relaxing its checks. Exported generator helpers now have JSDoc API types. These are Tier2 verification/documentation changes.
+
+## Resumed fixture-clock prerequisite (2026-11-01)
+
+The inherited forge SQL fixture expired when database NOW() passed its fixed 10:00 UTC clock: five of seventeen existing cases failed. The same expired clock also violates the voucher expiry/creation constraint after its TTL elapses. Each case now derives 10:00 UTC on the following database day, keeping voucher lifecycle cases clear of midnight and ahead of SQL NOW(). The inventory insertion helper now advances its injected clock to at least the snapshot timestamp plus the unchanged ten-second claim interval, rounding microseconds upward. No backend source, migration, guard or existing assertion changes. Two regression cases seed database timestamps before and after the injected clock, prove early claims remain rejected, and prove stale-snapshot replay remains rejected after a successful insertion.
+
+Tier 2 decision: this isolated test-fixture repair is required for the current root-unit baseline; advancing the test clock preserves the production contract and avoids a calendar-dependent future cutoff. Reversal would restore the observed time-dependent failures. Existing evidence directories and interrupted results remain historical. Status remains IN-PROGRESS; final exact-head gates and evidence are recorded outside the frozen source in the BASE0-FINISH ledger card. No formal grade or merge readiness is claimed.
+
+## Additional baseline fixture repair
+
+The successor full unit gate at07d219b found63 failures in six more inherited voucher/concurrency suites after SQL NOW() passed their fixed voucher expiry. The shared test-only databaseFixtureClock now chooses10:00UTC on the following database day. Those six suites and the v2 forge fixture use it; the two UTC+7 day-rollover cases retain their exact midnight+1second relationship relative to T0. Four leap-day/year-boundary cases cover clocks before and after the former fixed date. Production defaults, SQL guards, voucher TTL, assertions, retries and timeouts are unchanged. These test/helper files are Tier2 baseline prerequisites; previous full-unit evidence is historical. Complete verification on the new source remains pending.
+
+## Round1 independent-grade repair
+
+The original429 countdown/resize case failed once in grader A's required1280repeat run; B's repeats passed but do not erase that failure. Coordinator reproduction established a Phaser lifecycle crash: Game.isBooted becomes true before texture readiness and SceneManager.bootQueue creates systemScene. StageCanvas cleanup forced Game.step too early, so SceneManager.destroy dereferenced undefined systemScene.sys and React lost its entire shell. Cleanup now waits for SceneManager.isBooted, otherwise using the existing READY/microtask path. It still consumes pending destruction in a hidden tab. New unit cases cover both pre-Game-boot and Game-booted/SceneManager-not-ready teardown; the old guard fails the latter, the repaired guard passes.
+
+Diagnostic trace runs also exposed an independent browser-fixture clock race. Reading a running clock then sending pauseAt can target the past if time advances between protocol commands. The fixture installs at epoch origin before application navigation, then pauses at current wall time. A new browser regression deterministically advances one tick between target selection and pause, verifies authoritative state and frozen time, and verifies explicit advancement still works. The old-clock control fails as intended and the repaired control passes. An earlier25ms host-delay control was insufficiently deterministic; its unexpected pass is preserved and not counted as a kill.
+
+The original error-notice spec is unchanged after removal of temporary diagnostic observers. Its targeted100-run repetition without traces passes with the lifecycle repair. Typecheck/lint and StageCanvas/StageScene units pass on the working repair. These focused checks precede the successor commit and do not claim the full exact-head gate. Evidence and all earlier failures: [repair investigation](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-mega-ledger/reports/cards/BASE0-REPAIR-R2/INVESTIGATION.md).
+
+Quality cleanup removes the unused HudProps.compact API/caller and duplicate common CSS declarations from the narrow context override. The approved readable title/guidance row remains an explicit reference difference. Tier2 justification: StageCanvas and its tests fix the independently reproduced prerequisite failure; server-fixture and its new regression repair a real baseline clock-setup race. No claim interval, gameplay rule, assertion, retry, timeout, flag, dependency, backend/auth source, migration or contract changes. Every fixture consumer and the resize/redraw browser cases are included in the expanded fresh repeat gate.

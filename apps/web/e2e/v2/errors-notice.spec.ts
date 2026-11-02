@@ -2,7 +2,7 @@ import { test, expect, load, tab, inspect, advance } from '../support/server-fix
 import fs from 'node:fs';
 import path from 'node:path';
 
-const outDir = path.resolve(process.cwd(), '../../reports/n1-error-screens');
+const outDir = path.resolve(process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/n1-error-screens'));
 
 function ensureDir() {
   if (!fs.existsSync(outDir)) {
@@ -17,14 +17,16 @@ async function setThemeAndScreenshot(
   height: number,
   theme: 'dark' | 'light'
 ) {
-  ensureDir();
   await page.setViewportSize({ width, height });
   await page.evaluate((t) => {
     document.documentElement.setAttribute('data-theme', t);
   }, theme);
   await page.emulateMedia({ colorScheme: theme });
-  const filename = `${name}-${width}x${height}-${theme}.png`;
-  await page.screenshot({ path: path.join(outDir, filename) });
+  if (process.env.SCREENSHOTS === '1') {
+    ensureDir();
+    const filename = `${name}-${width}x${height}-${theme}.png`;
+    await page.screenshot({ path: path.join(outDir, filename) });
+  }
 }
 
 test('T1-T5: 429 on v2-claim shows countdown notice, disables action button, and re-enables at 0', async ({
