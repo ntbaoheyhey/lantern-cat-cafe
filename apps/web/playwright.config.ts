@@ -43,7 +43,7 @@ export default defineConfig({
       timeout: 120_000,
     },
     {
-      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
+      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/market-build.mjs ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
       env: { ...demoEnv, VITE_GAME_V2: '1' },
       url: v2URL,
       reuseExistingServer: false,

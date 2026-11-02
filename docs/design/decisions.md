@@ -12,3 +12,5 @@
 
 - [CXU4 Hero, Help and shared states](../decisions/cxu4-hero-help.md)
 - [CXU5 Map data and presentation](../decisions/cxu5-map-data.md): real limits, advisory boss power, session-scoped history, preserved compact map.
+
+- [CXU3 Forge and Relic Market](../decisions/cxu3-forge-market.md): truthful recipe/chain data, preserved controllers, desktop list/detail layout and isolated browser fixtures.
