@@ -1,0 +1,16 @@
+[
+  {
+    "name": "focused-units",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/layout/boss src/layout/bossPresentation.test.ts",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:54:42.062962+00:00",
+    "endedAt": "2026-11-02T16:54:44.912151+00:00"
+  },
+  {
+    "name": "focused-browser",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts --workers=1 --retries=0 --reporter=line",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:54:44.912371+00:00",
+    "endedAt": "2026-11-02T16:55:20.304587+00:00"
+  }
+]
