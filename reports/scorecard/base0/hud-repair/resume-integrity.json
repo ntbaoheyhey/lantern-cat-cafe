@@ -1,0 +1,12 @@
+{
+  "scope": "HUD repair diff against starting HEAD only",
+  "bypass_suppression_retry_timeout_hits": {
+    "test bypass": [],
+    "suppression": [],
+    "retry or timeout": []
+  },
+  "source_console_additions": [],
+  "original_assertions": "Visible XP; six exact chip containment/unclipped results; gated status text; clipping ancestry; reduced-motion 0s; exactly one stage canvas; no demo console/page errors all remain. XP minimum changes 8 -> 150 with new maximum 170 and exact height 10, strengthening readability. Broader clipping helper includes every original selector and additional shell/guidance controls.",
+  "new_expected_console_filter": "Only additional local server cases allow exact blocked-font and deliberately injected 429/503 resource errors; original demo error equality unchanged.",
+  "screenshot_change": "Opt-in remains SCREENSHOTS=1; two gated images instead of four redundant images; adds <200KB assertion; no golden/snapshot edits."
+}

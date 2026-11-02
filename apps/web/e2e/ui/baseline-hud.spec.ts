@@ -1,0 +1,210 @@
+import { expect, test, type Page } from '../support/test';
+import { readFileSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { v2 } from '@taskbar-hero/game-rules';
+import { mockV2Save } from '../../src/api/mockV2Fixtures';
+import { load, advance, tab } from '../support/server-fixture';
+import { serverURL } from '../support/server-ports';
+
+const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8')
+  .match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+const sizes = [{ width: 1280, height: 720 }, { width: 1600, height: 900 }];
+
+async function expectReadableChrome(page: Page) {
+  const hud = page.getByRole('region', { name: 'Cat status' });
+  const experience = hud.getByRole('progressbar', { name: 'Experience' });
+  await expect(experience).toBeVisible();
+  const xp = await experience.evaluate(element => {
+    const track = element.getBoundingClientRect();
+    const fill = element.firstElementChild!.getBoundingClientRect();
+    return { width: track.width, height: track.height, fill: fill.width, inner: element.clientWidth,
+      now: Number(element.getAttribute('aria-valuenow')), max: Number(element.getAttribute('aria-valuemax')) };
+  });
+  expect(xp.width).toBeGreaterThanOrEqual(150);
+  expect(xp.width).toBeLessThanOrEqual(170);
+  expect(xp.height).toBe(10);
+  expect(xp.fill).toBeCloseTo(xp.inner * xp.now / xp.max, 1);
+  const geometry = await hud.evaluate(root => {
+    const outer = root.getBoundingClientRect();
+    return [...root.querySelectorAll('.hud-level-xp,.hud-progress-chip,.hud-stack-item,.hud-power-chip')].map(node => {
+      const rect = node.getBoundingClientRect();
+      return {
+        inside: rect.left >= outer.left && rect.right <= outer.right && rect.top >= outer.top && rect.bottom <= outer.bottom,
+        unclipped: node.scrollWidth <= node.clientWidth + 1,
+      };
+    });
+  });
+  expect(geometry).toEqual(Array.from({ length: 6 }, () => ({ inside: true, unclipped: true })));
+  const clipped = await page.locator('.shell-body').evaluate(root => {
+    const problems: string[] = [];
+    const header = root.querySelector('header')!.getBoundingClientRect();
+    const context = root.querySelector('.shell-context')!.getBoundingClientRect();
+    const screen = root.querySelector('main')!.getBoundingClientRect();
+    if (header.bottom > context.top || context.bottom > screen.top) problems.push('header/context/screen overlap');
+    const selector = '.shell-hud,.hud-bar,.hud-level-xp,.hud-xp-track,.hud-progress-chip,.hud-stack-item,.hud-power-chip,.hud-power-hint,.hud-right,.v2-sync-status-slot,.hud-wallet-slot,.shell-context,.v2-title,.v2-hint,.v2-hint-btn';
+    for (const node of root.querySelectorAll<HTMLElement>(selector)) {
+      const rect = node.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) problems.push(`${node.className}: empty box`);
+      if (rect.left < 0 || rect.right > innerWidth || rect.top < 0 || rect.bottom > innerHeight) problems.push(`${node.className}: outside viewport`);
+      for (let ancestor = node.parentElement; ancestor; ancestor = ancestor.parentElement) {
+        const parent = ancestor.getBoundingClientRect(), style = getComputedStyle(ancestor);
+        if (['hidden', 'clip', 'auto', 'scroll'].includes(style.overflowX) && (rect.left < parent.left - 1 || rect.right > parent.right + 1)) problems.push(`${node.className}: horizontal ancestor clipping`);
+        if (['hidden', 'clip', 'auto', 'scroll'].includes(style.overflowY) && (rect.top < parent.top - 1 || rect.bottom > parent.bottom + 1)) problems.push(`${node.className}: vertical ancestor clipping`);
+      }
+    }
+    if (document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight) problems.push('document scroll');
+    return problems;
+  });
+  expect(clipped).toEqual([]);
+  const action = page.getByTestId('next-hint').getByRole('button');
+  await expect(action).toBeVisible();
+  const text = await action.innerText();
+  await expect(action).toHaveAccessibleName(text);
+  const textGeometry = await action.evaluate(element => {
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    const button = element.getBoundingClientRect();
+    const rects = [...range.getClientRects()];
+    return {
+      text: element.textContent,
+      fontSize: parseFloat(getComputedStyle(element).fontSize),
+      width: button.width,
+      textWidth: Math.max(...rects.map(rect => rect.width)),
+      unclipped: element.scrollWidth <= element.clientWidth + 1 && element.scrollHeight <= element.clientHeight + 1,
+      allTextInside: rects.length > 0 && rects.every(rect => rect.width > 0 && rect.left >= button.left - 1 && rect.right <= button.right + 1 && rect.top >= button.top - 1 && rect.bottom <= button.bottom + 1),
+    };
+  });
+  expect(textGeometry.text).toBe(text);
+  expect(textGeometry.fontSize).toBeGreaterThanOrEqual(12);
+  expect(textGeometry.width).toBeGreaterThan(100);
+  expect(textGeometry.unclipped).toBe(true);
+  expect(textGeometry.allTextInside).toBe(true);
+  await expect(page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab')).toHaveCount(7);
+  return { xp, textGeometry };
+}
+
+async function activateGuidanceWithKeyboard(page: Page, expected: 'map' | 'bag') {
+  const action = page.getByTestId('next-hint').getByRole('button');
+  // Reach the action through sequential keyboard navigation, including its focus ring.
+  for (let i = 0; i < 20 && !await action.evaluate(element => element === document.activeElement); i++) await page.keyboard.press('Tab');
+  await expect(action).toBeFocused();
+  expect(await action.evaluate(element => getComputedStyle(element).outlineStyle)).not.toBe('none');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('.app-shell')).toHaveAttribute('data-active-screen', expected);
+  await expect(page.getByTestId(`nav-${expected}`)).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('tabpanel', { name: expected === 'map' ? 'Map' : 'Bag', exact: true })).toBeVisible();
+}
+
+for (const viewport of sizes) {
+  for (const gated of [false, true]) {
+    test(`shared HUD keeps XP and every status chip visible at ${viewport.width}x${viewport.height}${gated ? ' when gated' : ''}`, async ({ page }) => {
+      const errors: string[] = [];
+      page.on('pageerror', error => errors.push(error.message));
+      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      const nowMs = Date.now();
+      const frontier = mockV2Save('midGame', { nowMs, chapter: 2 });
+      const save = gated ? mockV2Save('bossReadyWeak', { nowMs, chapter: 2 }) : frontier;
+      if (gated) {
+        save.state.round = frontier.state.round;
+        save.state.kills = frontier.state.kills;
+        save.state.bestStage = frontier.state.bestStage;
+      }
+      const maxXp = v2.xpToNextV2(save.state.level);
+      save.state.xp = Math.floor(maxXp / 4);
+      await page.clock.install({ time: nowMs });
+      await page.addInitScript(({ key, save }) => {
+        if (!localStorage.getItem(key)) localStorage.setItem(key, save);
+        localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+      }, { key, save: JSON.stringify(save) });
+      await page.goto('/');
+      await page.evaluate(() => document.fonts.ready);
+      const hud = page.getByRole('region', { name: 'Cat status' });
+      const experience = hud.getByRole('progressbar', { name: 'Experience' });
+      await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+      const before = await expectReadableChrome(page);
+      expect(before.xp.fill).toBeGreaterThan(0);
+      if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');
+      expect(await hud.locator('.hud-xp-fill').evaluate(element => getComputedStyle(element).transitionDuration)).toBe('0s');
+      expect(await hud.locator('.hud-xp-fill').evaluate(element => getComputedStyle(element).backgroundColor)).toBe('rgb(107, 224, 138)');
+      await expect(page.getByTestId('next-hint').getByRole('button')).toHaveText(gated
+        ? 'Next: Equip better gear to keep exploring' : 'Next: Explore the chapter and challenge its boss');
+      await expect(page.getByRole('region', { name: 'Game stage' }).locator('canvas')).toHaveCount(1);
+      await activateGuidanceWithKeyboard(page, gated ? 'bag' : 'map');
+      await expectReadableChrome(page);
+      // Change actual saved XP, then rehydrate the app; do not mutate bar styles or semantics.
+      save.state.xp = Math.floor(maxXp * 3 / 4);
+      await page.evaluate(({ key, save }) => localStorage.setItem(key, save), { key, save: JSON.stringify(save) });
+      await page.reload();
+      await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+      await page.evaluate(() => document.fonts.ready);
+      const after = await expectReadableChrome(page);
+      expect(after.xp.fill).toBeGreaterThan(before.xp.fill + 70);
+      expect(after.xp.width).toBe(before.xp.width);
+      console.log(JSON.stringify({ viewport, gated, before, after }));
+      expect(errors).toEqual([]);
+      if (process.env.SCREENSHOTS === '1' && gated) {
+        const directory = resolve('../../reports/scorecard/base0/hud-repair/screens');
+        mkdirSync(directory, { recursive: true });
+        const png = await page.screenshot({ path: resolve(directory, `repaired-${viewport.width}.png`), animations: 'disabled' });
+        expect(png.length).toBeLessThan(200 * 1024);
+      }
+    });
+  }
+
+  for (const state of ['normal', 'offline', '429', '503'] as const) {
+    test(`guidance remains readable with fallback fonts and ${state} at ${viewport.width}x${viewport.height}`, async ({ browser, request }) => {
+      // The same spec covers the demo preview above and the production HTTP client below.
+      // Use an explicit separate loopback context; the standard fixture blocks remote requests.
+      const context = await browser.newContext({ baseURL: serverURL, viewport, reducedMotion: 'reduce' });
+      try {
+        const page = await context.newPage();
+        const pageErrors: string[] = [];
+        const consoleErrors: { message: string; url: string }[] = [];
+        page.on('console', message => { if (message.type() === 'error') consoleErrors.push({ message: message.text(), url: message.location().url }); });
+        page.on('pageerror', error => pageErrors.push(error.message));
+        if (state === '429' || state === '503') {
+          await page.route('**/functions/v1/v2-claim', route => route.fulfill({
+            status: Number(state),
+            headers: { 'Retry-After': '3', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'Retry-After' },
+            body: JSON.stringify(state === '429' ? { error: 'rate_limited', retryAfter: 3 } : { error: 'server_busy' }),
+          }));
+        }
+        const session = await load(page, request, 'stocked');
+        await expect(page.locator('[data-game-v2="stage-v2-enabled"]')).toHaveCount(1);
+        // Prove the actual fallback font path, even if fonts were previously cached by Chromium.
+        await page.addStyleTag({ content: ':root { --font-body: sans-serif; --font-display: monospace; --font-num: monospace; }' });
+        const panel = await tab(page, 'Forge');
+        if (state === 'offline') {
+          await context.setOffline(true);
+          await page.evaluate(() => window.dispatchEvent(new Event('offline')));
+          await expect(panel.getByTestId('action-notice')).toHaveText('You are offline. Your cat keeps working; we will sync when you are back.');
+        } else if (state === '429' || state === '503') {
+          await advance(request, session, 600);
+          const response = page.waitForResponse(r => r.url().endsWith('/v2-claim') && r.request().method() === 'POST');
+          await page.clock.fastForward(30_000);
+          expect((await response).status()).toBe(Number(state));
+          await expect(panel.getByTestId('action-notice')).toHaveText(state === '429'
+            ? 'Easy, hero! Try again in 3 s.' : 'The cafe kitchen is busy. Nothing was spent. Try again in a minute.');
+        }
+        await expect(page.locator('header [data-sync-status]')).toHaveAttribute('data-sync-status', state === 'normal' ? 'live' : state === 'offline' ? 'offline' : 'error');
+        const measured = await expectReadableChrome(page);
+        expect(await page.getByTestId('next-hint').getByRole('button').evaluate(element => getComputedStyle(element).fontFamily)).toBe('sans-serif');
+        await expect(page.getByTestId('next-hint').getByRole('button')).toHaveText('Next: Explore the chapter and challenge its boss');
+        await activateGuidanceWithKeyboard(page, 'map');
+        await expectReadableChrome(page);
+        expect(pageErrors).toEqual([]);
+        const unexpected = consoleErrors.filter(error => {
+          const expectedFontBlock = error.url.startsWith('https://fonts.googleapis.com/') && ['Failed to load resource: net::ERR_BLOCKED_BY_CLIENT', 'Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector'].includes(error.message);
+          const expectedResponse = error.url.endsWith('/v2-claim') && (state === '429' || state === '503') && error.message === `Failed to load resource: the server responded with a status of ${state} (${state === '429' ? 'Too Many Requests' : 'Service Unavailable'})`;
+          return !expectedFontBlock && !expectedResponse;
+        });
+        expect(unexpected).toEqual([]);
+        console.log(JSON.stringify({ viewport, state, fallback: true, ...measured, consoleErrors }));
+      } finally {
+        await context.close();
+      }
+    });
+  }
+}
