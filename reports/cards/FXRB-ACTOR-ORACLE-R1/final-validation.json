@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-11-02T08:28:22+07:00",
+  "source_head": "26e7de846e82c58523eaa8c45984c635accb5357",
+  "source_published": true,
+  "pr": 243,
+  "prospective_integration": "abd64faab1ef256943232a12cb1b6457feed02da",
+  "checks": [
+    {
+      "name": "resize-repeat20-abd64fa",
+      "head": "abd64faab1ef256943232a12cb1b6457feed02da",
+      "exit_code": 0,
+      "passed": 200,
+      "viewport": "internal two-size/motion/theme matrix",
+      "log": "resize-repeat20-abd64fa.log",
+      "sha256": "d5feee4c0fc3c205d47ff7129bc7a8f0473eef98714301fcbd23cc1f91ff14d3"
+    },
+    {
+      "name": "full-1280-abd64fa",
+      "head": "abd64faab1ef256943232a12cb1b6457feed02da",
+      "exit_code": 0,
+      "passed": 272,
+      "viewport": "1280x720",
+      "log": "full-1280-abd64fa.log",
+      "sha256": "03ef3b809fbb76256456b59a9254c96b43fa2f9990c1a8dd721d52742eb8507d"
+    },
+    {
+      "name": "full-1600-abd64fa",
+      "head": "abd64faab1ef256943232a12cb1b6457feed02da",
+      "exit_code": 0,
+      "passed": 272,
+      "viewport": "1600x900",
+      "log": "full-1600-abd64fa.log",
+      "sha256": "fc781e7d6dc2c908d5fac91580af4bbfdf91450eeac332a8926be0a7417efbc0"
+    },
+    {
+      "name": "typecheck",
+      "head": "abd64faab1ef256943232a12cb1b6457feed02da",
+      "exit_code": 0,
+      "passed": null,
+      "viewport": null,
+      "log": "typecheck.log",
+      "sha256": "cd5ace93d296a7838bceb973d2f2797f9d86e8c72e9172589b7ff7e7104cf620"
+    },
+    {
+      "name": "links-abd64fa",
+      "head": "abd64faab1ef256943232a12cb1b6457feed02da",
+      "exit_code": 0,
+      "passed": null,
+      "viewport": null,
+      "log": "links-abd64fa.log",
+      "sha256": "d3dcfa642c8f06af5691ed908fe545032e85ff165741e9b5cb7e4168b0969f30"
+    },
+    {
+      "name": "source-typecheck-26e7de8",
+      "head": "26e7de846e82c58523eaa8c45984c635accb5357",
+      "exit_code": 0,
+      "passed": null,
+      "viewport": null,
+      "log": "source-typecheck-26e7de8.log",
+      "sha256": "ce5a4ad71caadc7a184dbb82a894ab708db72be15e8b1c1691182e612f689b3e"
+    }
+  ],
+  "three_visibility_variants_detected": true,
+  "precommit_restored_control_passed": 10,
+  "old_oracle_survivor_preserved": true,
+  "all_production_mutations_restored": true,
+  "owned_checkout_clean": true,
+  "owned_sessions_terminal": [
+    59040,
+    94092,
+    25446,
+    99721
+  ],
+  "owned_ports_free": [
+    4310,
+    4311,
+    4312,
+    4313
+  ],
+  "independent_grade": null,
+  "actual_main_verification": false,
+  "remaining_gates": [
+    "actual-main integration after BASE0",
+    "full remaining G1-G7 on final integrated head",
+    "independent reviews",
+    "serial merge",
+    "deployment identity and live path"
+  ],
+  "secret_pattern_hits": 0
+}
