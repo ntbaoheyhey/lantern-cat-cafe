@@ -1,6 +1,6 @@
 # Mega scorecard — living draft
 
-**ACTIVE: explicitly resumed2026-11-01.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**PAUSED BY USER: handoff saved2026-11-02; existing scores remain unchanged.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Historical BASE0 round1 failed on5db4949 and C was interrupted/ungraded. Repaired280ff4b now has independent A97.64285714285714 and recovery B98, each passing every floor with zero auto-fails. The difference is0.35714285714286, so no third grader is required. Score gate PASS; deployment hold remains; no mission merge.
 

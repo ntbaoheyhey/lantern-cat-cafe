@@ -1,0 +1,42 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/apps/web
+> vitest run src/pets/state.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/apps/web
+
+ ❯ src/pets/state.test.ts (17 tests | 1 failed) 123ms
+   × publishes the transition to the count cap once and keeps later no-op claims stable 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/state.test.ts > publishes the transition to the count cap once and keeps later no-op claims stable
+AssertionError: expected { version: 1, …(2) } to be { version: 1, …(2) } // Object.is equality
+
+If it should pass with deep equality, replace "toBe" with "toStrictEqual"
+
+Expected: { version: 1, …(2) }
+Received: serializes to the same string
+
+
+Compared values have no visual difference.
+
+ ❯ src/pets/state.test.ts:96:33
+     94|     store.recordClaimedKills(1);
+     95|     store.recordClaimedKills(Number.MAX_SAFE_INTEGER);
+     96|     expect(store.getSnapshot()).toBe(capped);
+       |                                 ^
+     97|     expect(listener).toHaveBeenCalledOnce();
+     98|     expect(write).toHaveBeenCalledOnce();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  08:33:38
+   Duration  722ms (environment 53%, tests 20%, import 15%, transform 12%)
+
+/Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/pets/state.test.ts`
+Exit status 1
