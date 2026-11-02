@@ -26,3 +26,4 @@ Next3actions:
 3. Only when BASE0 green, integrate actualmain into existing FXRB#243 and run builder plus separate fresh A/B self-grades.
 
 Latest real-state recheck: cards/CLI-RESUME-20261102/continuation-1350/REPORT.md. No source/ref change, no ownedtests/listeners.
+Scroll diagnostic R1 failed before class entry: Help overlay intercepted click; retain forge-scroll-r1-failure.json. Close Help through UI in corrected diagnostic; no product failure established.
