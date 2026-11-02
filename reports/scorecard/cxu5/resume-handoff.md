@@ -1,6 +1,6 @@
 # CXU5 resumed builder handoff
 
-Historical builder log only. The T008 continuation on 2026-11-02 integrates main 9c457a3; BASE0 is merged. Current exact-head self-reviews and merge/live evidence are published on ai/codex-mega-ledger at reports/cards/T008-CXU5-GATE/REPORT.md. No v2/backend flag change is authorized by this UI-only task.
+Historical builder log only. The T008 continuation on 2026-11-02 integrates main 9c457a3; BASE0 is merged. Current exact-head self-reviews and merge/live evidence are published on ai/codex-mega-ledger at reports/cards/CXU5-FRESH/REPORT.md. No v2/backend flag change is authorized by this UI-only task.
 
 2026-11-01, milestone: initial implementation. HEAD 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba; branch ai/codex-cxu5.
 
