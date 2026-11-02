@@ -1,0 +1,51 @@
+Local PGlite v2 API: http://127.0.0.1:4743 (test secret generated in memory)
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 1838 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/ui-audit-signed-in/index.html                               2.21 kB │ gzip:   0.78 kB
+dist/ui-audit-signed-in/assets/SpritePreview-DrGwRUam.css        0.69 kB │ gzip:   0.34 kB
+dist/ui-audit-signed-in/assets/ArtPilot-eVSJTpvn.css             6.45 kB │ gzip:   1.38 kB
+dist/ui-audit-signed-in/assets/index-CE9PMTOs.css              152.74 kB │ gzip:  23.95 kB
+dist/ui-audit-signed-in/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+dist/ui-audit-signed-in/assets/assets-BX3u0vig.js                2.42 kB │ gzip:   1.19 kB
+dist/ui-audit-signed-in/assets/ArenaScene-DyueFRS2.js            7.07 kB │ gzip:   2.73 kB
+dist/ui-audit-signed-in/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+dist/ui-audit-signed-in/assets/SpritePreview-CrNWISCn.js         8.62 kB │ gzip:   3.03 kB
+dist/ui-audit-signed-in/assets/StageScene-aT7Hyt96.js           16.20 kB │ gzip:   5.91 kB
+dist/ui-audit-signed-in/assets/ArenaPreview-BeXZ-gnp.js         23.30 kB │ gzip:   3.12 kB
+dist/ui-audit-signed-in/assets/ArtPilot-BpEFoqWo.js             25.36 kB │ gzip:   4.76 kB
+dist/ui-audit-signed-in/assets/ch1-Dcr1kpPd.js                 144.79 kB │ gzip:  12.46 kB
+dist/ui-audit-signed-in/assets/combat-1ewggOiX.js              189.18 kB │ gzip:  20.38 kB
+dist/ui-audit-signed-in/assets/web3-GR-fTfZ-.js                366.57 kB │ gzip: 109.07 kB
+dist/ui-audit-signed-in/assets/react-B_xwc9n3.js               431.26 kB │ gzip: 129.65 kB
+dist/ui-audit-signed-in/assets/index-By5amFL8.js               912.65 kB │ gzip: 127.56 kB
+dist/ui-audit-signed-in/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+
+✓ built in 614ms
+1280x720 home (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 bag (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 map (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 forge-craft (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 forge-salvage (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 forge-relic (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 market (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 hero (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+1280x720 help (rail): document-scroll=[]; horizontal-overflow=[]; element-overlap=[]; missing=[]; console-errors=[]
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid="rail"], [data-game-v2="stage-v2-enabled"]').first() to be visible[22m
+
+    at /private/tmp/tbh-t008-cxu5/apps/web/tools/.fresh-audit-signed.mjs:90:93 {
+  log: [
+    `  - waiting for locator('[data-testid="rail"], [data-game-v2="stage-v2-enabled"]').first() to be visible`
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

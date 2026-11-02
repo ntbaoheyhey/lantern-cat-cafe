@@ -25,8 +25,9 @@ Verified initial PR metadata (base SHA is GitHub-reported; current origin/main a
 |244|db0f9d64c408825a832d808bc31cfd88f1c3a014|9c457a3e56b7c5813fa40e6aa20b0c14242ef26a|MERGEABLE|
 
 Worktrees: ledger /private/tmp/tbh-t001-ledger; CXU5 /private/tmp/tbh-t008-cxu5.
-B clean checkout: /private/tmp/tbh-cxu5-fresh-b at a4dc85e; frozen install/submodules pass.
-In-flight owned PIDs: 88168 grade-a-r2 (cwd CXU5); 4700–4703. Other owned runs finished. Ports 4700–4703 repair active; 4710–4713 B, 4720–4723 main, 4740–4743 UI free.
+B clean checkout: /private/tmp/tbh-cxu5-fresh-b at 3678bc3; no tracked/untracked changes.
+B grade-b-r2/run.json ready, not started until A finishes; isolated 4710–4713/4750–4753.
+In-flight owned PIDs: 88168 grade-a-r2 (cwd CXU5); 4700–4703. UI 90727 (4740–4743) after fixing build-directory race; six mutants passed. Ports 4700–4703 repair active; 4710–4713 B, 4720–4723 main, 4740–4743 UI free.
 Unrelated listeners left untouched: 18457, 49986, OS ports 5000/7000/64xxx/65xxx.
 Safety: no secrets, live DB mutation/migration/function deploy, Vercel changes, mainnet or submission.
 No VITE_GAME_V2 setting changes. Existing local test configurations remain isolated.

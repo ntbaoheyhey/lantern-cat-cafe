@@ -1,0 +1,25 @@
+[
+  {
+    "name": "audit",
+    "original": "ui-audit.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/ui-a-r3/audit",
+      "bossReadyStrong",
+      "--strict"
+    ],
+    "exit": 0,
+    "adaptations": "Ports and Map-only screenshot output; --strict audits and existing viewport option; assertions unchanged"
+  },
+  {
+    "name": "audit-signed",
+    "original": "ui-audit.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/ui-a-r3/audit-signed",
+      "strong",
+      "--signed-in",
+      "--strict"
+    ],
+    "exit": 1,
+    "adaptations": "Ports and Map-only screenshot output; --strict audits and existing viewport option; assertions unchanged"
+  }
+]
