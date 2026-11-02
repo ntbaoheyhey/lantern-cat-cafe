@@ -1,0 +1,12 @@
+{
+  "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+  "role": "b",
+  "label": "shrink protected XP width",
+  "command": "E2E_PORT_CLASSIC=4790 E2E_PORT_V2=4791 E2E_PORT_SERVER=4792 E2E_PORT_API=4793 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/baseline-hud.spec.ts --grep \"late chapter HUD\" --workers=1 --retries=0 --reporter=line",
+  "controlExit": 0,
+  "mutantExit": 1,
+  "killed": true,
+  "originalSha256": "ee2796a704dab24c77aa6b30b80346068479223bd4310eb3485992d0625fb9ea",
+  "mutatedSha256": "34eaee20e184439b47d14a7ca237e88426f03b8bf287b59ce37d4c800bf32554",
+  "at": "2026-11-02T17:54:15.158570+00:00"
+}

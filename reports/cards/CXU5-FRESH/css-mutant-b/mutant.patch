@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 7538bfd..41a685a 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -257,7 +257,7 @@
+ @media (min-width: 1200px) and (max-width: 1399px) {
+   /* Keep the full XP value below its 160px bar so late-game chips do not spill into sync/wallet. */
+   .shell-hud.v2-topbar .hud-level-xp {
+-    grid-template-columns: auto 160px;
++    grid-template-columns: auto 120px;
+     grid-template-rows: 10px auto;
+   }
+   .shell-hud .hud-level-badge { grid-row: 1 / 3; }

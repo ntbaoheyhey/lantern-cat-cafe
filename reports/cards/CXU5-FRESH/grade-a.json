@@ -56,8 +56,8 @@
         "ui-a-r5/audit/map-1280x720.png",
         "ui-a-r5/audit/map-1600x900.png",
         "hud-late-chapter-fixed/1280.png",
-        "../../../../docs/decisions/cxu5-map-data.md",
-        "../../../../reports/scorecard/cxu5/ui-diff.md"
+        "/private/tmp/tbh-t008-cxu5/docs/decisions/cxu5-map-data.md",
+        "/private/tmp/tbh-t008-cxu5/reports/scorecard/cxu5/ui-diff.md"
       ]
     },
     {
@@ -66,11 +66,12 @@
       "max": 10,
       "reason": "Typed display-only adapters/reducer, no dependencies, no new lint warnings and bundle growth below5%. Deduct2 for the display hint repeating the literal key threshold1 rather than reading the existing boss key-cost configuration; current configured behavior is correct.",
       "evidence": [
-        "../../../../apps/web/src/layout/boss/BossMapScreen.tsx",
-        "../../../../apps/web/src/layout/boss/mapDetails.ts",
-        "../../../../apps/web/src/layout/bossPresentation.ts",
+        "/private/tmp/tbh-t008-cxu5/apps/web/src/layout/boss/BossMapScreen.tsx",
+        "/private/tmp/tbh-t008-cxu5/apps/web/src/layout/boss/mapDetails.ts",
+        "/private/tmp/tbh-t008-cxu5/apps/web/src/layout/bossPresentation.ts",
         "grade-a-r3/logs/lint.log",
-        "grade-a-r3/logs/build.log"
+        "grade-a-r3/logs/build.log",
+        "/private/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/logs/build.log"
       ]
     },
     {
@@ -103,7 +104,7 @@
       "reason": "Every file inventoried; StageLayout and shared HUD/test changes have explicit Tier2 reasons. No backend/contracts/assets/dependency/provider/flag/Actions changes.",
       "evidence": [
         "review-a-r3-inventory.json",
-        "../../../../docs/decisions/cxu5-map-data.md"
+        "/private/tmp/tbh-t008-cxu5/docs/decisions/cxu5-map-data.md"
       ]
     }
   ],
@@ -112,5 +113,7 @@
     "Correctly authored/suffixed squash; inherited806800d metadata is preserved in branch history under no-rewrite instruction but not imported to main",
     "Re-test actual main and live before next merge"
   ],
-  "mergeAllowed": false
+  "mergeAllowed": false,
+  "sourceRoot": "/private/tmp/tbh-t008-cxu5",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH"
 }

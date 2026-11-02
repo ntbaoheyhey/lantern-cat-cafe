@@ -1,0 +1,50 @@
+[
+  {
+    "name": "locked-selection",
+    "path": "apps/web/src/map/ChapterMap.tsx",
+    "from": "if (isLocked) return;",
+    "to": "if (false) return;",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "wrong-chest",
+    "path": "apps/web/src/layout/boss/mapDetails.ts",
+    "from": "firstClear ? definition.chests.firstClear : definition.chests.repeat",
+    "to": "firstClear ? definition.chests.repeat : definition.chests.firstClear",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "wrong-selected-boss",
+    "path": "apps/web/src/layout/boss/mapDetails.ts",
+    "from": "...v2.bossOfChapter(chapter)",
+    "to": "...v2.bossOfChapter(1)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "early-history",
+    "path": "apps/web/src/layout/bossPresentation.ts",
+    "from": "history: complete ? recordRun(state.history, fight) : state.history",
+    "to": "history: recordRun(state.history, fight)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "account-history-leak",
+    "path": "apps/web/src/layout/bossPresentation.ts",
+    "from": "case 'reset': return INITIAL_BOSS_PRESENTATION",
+    "to": "case 'reset': return state",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "compact-map-mode",
+    "path": "apps/web/src/layout/boss/BossMapScreen.tsx",
+    "from": "presentation={compact ? undefined : 'path'}",
+    "to": "presentation='path'",
+    "exit": 1,
+    "killed": true
+  }
+]

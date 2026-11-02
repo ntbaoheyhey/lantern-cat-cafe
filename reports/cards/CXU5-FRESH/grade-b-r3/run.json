@@ -1,0 +1,67 @@
+{
+  "root": "/private/tmp/tbh-cxu5-fresh-b",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/grade-b-r3",
+  "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+  "commands": [
+    [
+      "install",
+      "npx -y pnpm@10.28.0 install --frozen-lockfile"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "forge",
+      "cd contracts && forge test --offline"
+    ],
+    [
+      "abi-drift",
+      "cd contracts && node ../packages/chain/scripts/gen-abi.mjs && git diff --exit-code -- ../packages/chain"
+    ],
+    [
+      "repeat-changed",
+      "E2E_PORT_CLASSIC=4710 E2E_PORT_V2=4711 E2E_PORT_SERVER=4712 E2E_PORT_API=4713 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/ui/baseline-hud.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "classic-browser",
+      "E2E_PORT_CLASSIC=4710 E2E_PORT_V2=4711 E2E_PORT_SERVER=4712 E2E_PORT_API=4713 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "mutants",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/mutants-b-r3.mjs"
+    ]
+  ]
+}

@@ -1,9 +1,7 @@
 # Active fresh-session report — 2026-11-03T00:02:04+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
-CXU5 #249 local f846b49 contains main and both discovered repairs. Fix1 preserves the compact boss action below desktop; fix2 keeps late-game HUD Power separate from sync by stacking the XP value under its unchanged160px bar.
-The second repair passes typecheck and35 focused browser cases. Fresh A exact-head gate is active; B is prepared on a clean matching checkout. No passing current score, merge or live claim.
-Historical a4dc85e full1280 failed one mobile action assertion; 3678bc3 full298/298 at both sizes passed but an additional probe exposed the HUD overlap. Both failed review rounds and all harness/fixture corrections are retained.
+CXU5 #249 local f846b49: both fresh self-grades94/100, zero auto-fails. Full302/302 browser cases per desktop size;450 A repeats;250 B repeats;2,390 unit/script cases per pass;96 Forge cases; all UI/effects and seven mutants per pass green. Two real layout bugs were found and fixed with unchanged prior assertions. Exact-head squash is ready; no merge/live claim yet. Historical failed rounds and harness/fixture corrections are retained.
 
 CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;

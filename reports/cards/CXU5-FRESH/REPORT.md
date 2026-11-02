@@ -35,3 +35,8 @@ Integrated f846b49 in ai/codex-cxu5 after focused35/35. A grade-a-r3 PID96412 ru
 
 ## Grader A complete
 Self-graded (fresh pass):94/100 at f846b49, zero auto-fails. Full browser302/302 each size; changed-spec250/250, resize200/200, seven mutants, UI36/effects20 and exact late-state HUD/history probe all pass. Four conservative design deductions and one maintainability deduction are itemized in grade-a.json. B tests-first now runs in clean /private/tmp/tbh-cxu5-fresh-b on4710–4713, PID3906. No merge yet.
+
+B UI harness uses4750–4753 and a unique signed-audit build directory. Its dev watcher ignores generated dist/dist-v2 outputs so parallel test builds cannot trigger an irrelevant dev-page reload. Application source, assertions, thresholds and timers remain unchanged. B core,96 Forge tests, ABI drift and the protected-XP-width mutant passed before this step.
+
+## Grader B complete
+Self-graded (fresh pass):94/100 at f846b49; zero auto-fails. Clean tests preceded full diff review. A94/B94 agree, so no third pass is required. All floors pass. Merge is authorized only for the exact pushed head with requested author/suffix; actual-main and live checks remain mandatory.

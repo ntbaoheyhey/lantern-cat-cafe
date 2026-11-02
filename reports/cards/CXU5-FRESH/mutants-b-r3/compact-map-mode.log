@@ -1,0 +1,35 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu5-fresh-mutants-Uf1smE/apps/web
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx (4 tests | 1 failed) 1404ms
+   × preserves the original compact panel and pinned fight action for smaller viewports 149ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  00:57:42
+   Duration  1.95s (tests 75%, environment 16%, import 5%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/boss/BossMapScreen.test.tsx > preserves the original compact panel and pinned fight action for smaller viewports
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx:68:61
+     66|   const gate = screen.getByRole('region', { name: 'Boss Gate' });
+     67|   const map = within(gate).getByRole('navigation', { name: 'Chapter Ma…
+     68|   expect(map.classList.contains('v2-chapter-map--compact')).toBe(true);
+       |                                                             ^
+     69|   expect(map.classList.contains('v2-chapter-map--path')).toBe(false);
+     70|   expect(screen.queryByRole('region', { name: 'Past runs' })).toBeNull…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

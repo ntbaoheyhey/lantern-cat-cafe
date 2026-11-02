@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (fresh fetch at00:34 
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local f846b49 | A94 PASS; B tests-first active; two product fixes; no merge |
+| CXU5 | #249 / local f846b49 | A94/B94 PASS, zero auto-fails; ready for exact-head squash; no merge yet |
 | CXU4 | #251 / 1581084 | NEXT after A; frontend, independent of #244 |
 | CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
 | T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
@@ -28,11 +28,11 @@ B must run tests FIRST on clean exact head, then full diff. One full browser mat
 Current evidence: reports/cards/CXU5-FRESH/REPORT.md. Fresh graders label self-graded (fresh pass).
 
 Worktrees: A /private/tmp/tbh-t008-cxu5 (ai/codex-cxu5, f846b49).
-B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), grade-b-r3 tests running; review diff only after tests.
+B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), B tests then diff completed; clean at exact head.
 Repair/scratch /private/tmp/tbh-cxu5-hud-repair (codex/cxu5-hud-fit, f846b49, clean).
 Ledger /private/tmp/tbh-t001-ledger (ai/codex-mega-ledger); selected-file staging only; preserve historical dirt.
-In-flight PID3906: finite grade-b-r3 tests-first runner, cwd B; ports4710–4713.
-Ports4710–4713 B active; A4700–4703, main4720–4723, UI4740–4753 and scratch4780–4793 free.
+In-flight owned PIDs: none. All A/B tests, UI/effects, probes and mutants finished.
+Ports4700–4793 reserved blocks now free; unrelated listeners untouched.
 All previous owned runs finished. Do not kill unrelated18457/49986 or OS listeners.
 Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.mjs isolates audit build in/tmp.
 Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.

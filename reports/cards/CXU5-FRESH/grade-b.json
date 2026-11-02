@@ -1,0 +1,117 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B",
+  "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+  "base": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "sourceRoot": "/private/tmp/tbh-cxu5-fresh-b",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH",
+  "reviewOrder": "Fresh tests first; source/diff review afterwards",
+  "gradedAt": "2026-11-02T18:01:36.007527+00:00",
+  "score": 94,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Seven acceptance requirements satisfied by fresh behavior tests and source review; real chapter/reward/gate facts, replay-safe scoped history, desktop geometry and compact preservation verified.",
+      "evidence": [
+        "grade-b-r3/logs/repeat-changed.log",
+        "grade-b-r3/logs/unit.log",
+        "review-b.md",
+        "ui-b-r3/audit/findings.json",
+        "ui-b-r3/audit-signed/findings.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh clean install/core/unit/build/classic,250 repeated changed cases,38 classic cases,96 Forge cases, no ABI/Deno drift, links/bundle and UI/effects all pass. Full302-by-two matrix is the explicitly shared exact-head A receipt; no duplicate full run claimed.",
+      "evidence": [
+        "grade-b-r3/commands.json",
+        "ui-b-r3/commands.json",
+        "grade-a-r3/logs/browser-1280.log",
+        "grade-a-r3/logs/browser-1600.log"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "All seven fresh B mutants killed with green controls: locked selection, wrong chest/boss, early history, account reset leak, compact map mode and protected XP width.",
+      "evidence": [
+        "mutants-b-r3/control.log",
+        "mutants-b-r3/results.json",
+        "css-mutant-b/control.log",
+        "css-mutant-b/result.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 11,
+      "max": 15,
+      "reason": "Required visual hierarchy and original art retained. Conservatively deduct1 each for rectangular nodes,400px fight column, textual reward table and compact-desktop XP stacking; all are explained data/readability choices.",
+      "evidence": [
+        "ui-b-r3/audit/map-1280x720.png",
+        "ui-b-r3/audit/map-1600x900.png",
+        "review-b.md",
+        "/private/tmp/tbh-cxu5-fresh-b/docs/decisions/cxu5-map-data.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed adapters/reducer, bounded state, clean lint and small bundle growth. Deduct2 for literal key threshold1 in the display hint where configuration exists; no current behavioral discrepancy.",
+      "evidence": [
+        "/private/tmp/tbh-cxu5-fresh-b/apps/web/src/layout/boss/BossMapScreen.tsx",
+        "/private/tmp/tbh-cxu5-fresh-b/apps/web/src/layout/boss/mapDetails.ts",
+        "grade-b-r3/logs/lint.log",
+        "grade-b-r3/logs/build.log",
+        "/private/tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/logs/build.log"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "New assertions only; no existing skip, retry, timeout or threshold weakening. Expected mutant failures and real prior failures remain distinct.",
+      "evidence": [
+        "review-b.md",
+        "review-b-inventory.json",
+        "grade-b-r3/run.json",
+        "css-mutant-b/mutant.patch"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Current report and PR status are supported by receipts; former failed heads and scaffold/fixture corrections are explicit. No live or deployment claim is made before merge.",
+      "evidence": [
+        "REPORT.md",
+        "grade-b-r3/commands.json",
+        "review-b.md"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All files inventoried; adjacent HUD and mount changes have required rationale. Protected deployment/backend/art zones unchanged.",
+      "evidence": [
+        "review-b-inventory.json",
+        "/private/tmp/tbh-cxu5-fresh-b/docs/decisions/cxu5-map-data.md"
+      ]
+    }
+  ],
+  "sharedFullMatrix": "grade-a-r3, exact same head; once per head at both sizes",
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Match remote PR head to f846b49",
+    "Correctly authored/suffixed squash",
+    "Re-test actual main and live before next merge"
+  ]
+}

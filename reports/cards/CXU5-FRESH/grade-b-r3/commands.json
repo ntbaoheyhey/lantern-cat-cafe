@@ -1,0 +1,122 @@
+[
+  {
+    "name": "install",
+    "command": "npx -y pnpm@10.28.0 install --frozen-lockfile",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:52:42.267072+00:00",
+    "endedAt": "2026-11-02T17:52:43.164437+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:52:43.170898+00:00",
+    "endedAt": "2026-11-02T17:52:52.079028+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:52:52.085563+00:00",
+    "endedAt": "2026-11-02T17:52:59.616960+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:52:59.624764+00:00",
+    "endedAt": "2026-11-02T17:53:56.987448+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:53:56.994818+00:00",
+    "endedAt": "2026-11-02T17:53:58.199922+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:53:58.206263+00:00",
+    "endedAt": "2026-11-02T17:53:58.364291+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:53:58.370577+00:00",
+    "endedAt": "2026-11-02T17:54:06.184723+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:06.191572+00:00",
+    "endedAt": "2026-11-02T17:54:06.245699+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:06.252166+00:00",
+    "endedAt": "2026-11-02T17:54:11.623269+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:11.630408+00:00",
+    "endedAt": "2026-11-02T17:54:11.741876+00:00"
+  },
+  {
+    "name": "forge",
+    "command": "cd contracts && forge test --offline",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:11.759427+00:00",
+    "endedAt": "2026-11-02T17:54:14.987966+00:00"
+  },
+  {
+    "name": "abi-drift",
+    "command": "cd contracts && node ../packages/chain/scripts/gen-abi.mjs && git diff --exit-code -- ../packages/chain",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:14.995120+00:00",
+    "endedAt": "2026-11-02T17:54:15.065255+00:00"
+  },
+  {
+    "name": "repeat-changed",
+    "command": "E2E_PORT_CLASSIC=4710 E2E_PORT_V2=4711 E2E_PORT_SERVER=4712 E2E_PORT_API=4713 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/ui/baseline-hud.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:54:15.073993+00:00",
+    "endedAt": "2026-11-02T17:56:25.995690+00:00"
+  },
+  {
+    "name": "classic-browser",
+    "command": "E2E_PORT_CLASSIC=4710 E2E_PORT_V2=4711 E2E_PORT_SERVER=4712 E2E_PORT_API=4713 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=1 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:56:26.002580+00:00",
+    "endedAt": "2026-11-02T17:57:23.274434+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/mutants-b-r3.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:57:23.282284+00:00",
+    "endedAt": "2026-11-02T17:57:44.074754+00:00"
+  }
+]
