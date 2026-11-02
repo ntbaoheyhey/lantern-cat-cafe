@@ -7,7 +7,7 @@ import { stageHeight, stageZoom } from '../../src/layout/metrics';
 const KEY = readFileSync(resolve(process.cwd(), 'src/api/MockGameApiV2.ts'), 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 
 for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
-test(`viewport drag limits Phaser recreation and keeps both actors (${viewport.width}x${viewport.height})`, async ({ page }) => {
+test(`viewport drag limits Phaser recreation and keeps canvas content (${viewport.width}x${viewport.height})`, async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => {
@@ -41,8 +41,10 @@ test(`viewport drag limits Phaser recreation and keeps both actors (${viewport.w
     const c = element as HTMLCanvasElement;
     return [c.width, c.height];
   })), { message: 'one settled canvas after the drag' }).toEqual([[logicalWidth, 96]]);
-  // Read cardinality, size and actor pixels in the same browser turn: the
+  // Read cardinality, size and painted content in the same browser turn: the
   // desktop/phone boundary replaces the scene and can detach a selected node.
+  // Shadows and HP bars also paint pixels; resize.spec.ts separately verifies
+  // both sprite bodies while combat is halted and the ground is excluded.
   await expect.poll(() => canvas.evaluateAll((elements, expectedWidth) => {
     if (elements.length !== 1) return [];
     const c = elements[0] as HTMLCanvasElement;
@@ -53,7 +55,7 @@ test(`viewport drag limits Phaser recreation and keeps both actors (${viewport.w
       if (pixels[(y * c.width + x) * 4 + 3]! > 0) halves[x < c.width / 2 ? 0 : 1] = true;
     }
     return halves;
-  }, logicalWidth), { message: 'cat and monster in one correctly sized canvas after the drag' }).toEqual([true, true]);
+  }, logicalWidth), { message: 'painted content in both halves of one correctly sized canvas after the drag' }).toEqual([true, true]);
   const inserted = await page.evaluate(() => Number(document.documentElement.dataset.insertedCanvases));
   console.log(`Phaser canvas instances inserted during 100-step drag: ${inserted}`);
   expect(inserted).toBeLessThanOrEqual(10);
