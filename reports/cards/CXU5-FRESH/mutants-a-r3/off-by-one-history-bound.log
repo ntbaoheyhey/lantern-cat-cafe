@@ -1,0 +1,35 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu5-fresh-mutants-qbeQ9q/apps/web
+
+ ❯ src/layout/bossPresentation.test.ts (7 tests | 1 failed) 6ms
+   × records immediate outcomes and bounds session history to 30 newest results 3ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  00:36:13
+   Duration  546ms (environment 86%, transform 7%, import 5%, tests 1%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/bossPresentation.test.ts > records immediate outcomes and bounds session history to 30 newest results
+AssertionError: expected [ …(29) ] to have a length of 30 but got 29
+
+- Expected
++ Received
+
+- 30
++ 29
+
+ ❯ src/layout/bossPresentation.test.ts:78:25
+     76|     state = bossPresentation(state, { type: 'close' });
+     77|   }
+     78|   expect(state.history).toHaveLength(30);
+       |                         ^
+     79|   expect(state.history[0]?.chapter).toBe(32);
+     80|   expect(state.history.at(-1)?.chapter).toBe(3);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

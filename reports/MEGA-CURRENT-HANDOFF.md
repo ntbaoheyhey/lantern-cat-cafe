@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T00:35:23+07:00. ACTIVE; one Codex session, no agents/helpers/schedulers.
+Updated: 2026-11-03T00:39:51+07:00. ACTIVE; one session.
 Authority: user's 2026-11-02 evening prompt; old dependency/orchestration rules superseded.
 STOP intact: /Users/bao/taskbar-hero/.codex-orchestrator/STOP. Never run orchestrator.py.
 Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; all new commits end [skip ci].
@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (fresh fetch at00:34 
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local f846b49 | ACTIVE A grade-a-r3; two product fixes, no passing grade/merge |
+| CXU5 | #249 / local f846b49 | A94 PASS; B tests-first active; two product fixes; no merge |
 | CXU4 | #251 / 1581084 | NEXT after A; frontend, independent of #244 |
 | CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
 | T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
@@ -23,16 +23,16 @@ Additional chapter5 three-loss probe fit both sizes but exposed22.55px Power/syn
 Fix2 f846b49 puts full XP number below unchanged160x10 bar at1200–1399, same56px HUD.
 Focused fix2 typecheck +35 browser pass; integrated into ai/codex-cxu5 by fast-forward, no rewrite.
 Old failures and fixture/runner corrections retained. Current grades must cite f846b49 only.
-A now repeats Map+baseline HUD and full suites with2 Playwright workers; resize repeat stays1; retries0.
+A complete: self-graded (fresh pass)94/100, zero auto-fails; grade-a.json. No merge until B passes.
 B must run tests FIRST on clean exact head, then full diff. One full browser matrix per exact head in A.
 Current evidence: reports/cards/CXU5-FRESH/REPORT.md. Fresh graders label self-graded (fresh pass).
 
 Worktrees: A /private/tmp/tbh-t008-cxu5 (ai/codex-cxu5, f846b49).
-B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), grade-b-r3/run.json prepared, NOT started.
+B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), grade-b-r3 tests running; review diff only after tests.
 Repair/scratch /private/tmp/tbh-cxu5-hud-repair (codex/cxu5-hud-fit, f846b49, clean).
 Ledger /private/tmp/tbh-t001-ledger (ai/codex-mega-ledger); selected-file staging only; preserve historical dirt.
-In-flight PID96412: finite grade-a-r3 runner, cwd A; reports/cards/CXU5-FRESH/grade-a-r3/process.json.
-Ports4700–4703 A active. 4710–4713 B, 4720–4723 main, 4740–4743 UI, 4750–4753 B UI, 4760 probe, 4780–4783 scratch currently free.
+In-flight PID3906: finite grade-b-r3 tests-first runner, cwd B; ports4710–4713.
+Ports4710–4713 B active; A4700–4703, main4720–4723, UI4740–4753 and scratch4780–4793 free.
 All previous owned runs finished. Do not kill unrelated18457/49986 or OS listeners.
 Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.mjs isolates audit build in/tmp.
 Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.

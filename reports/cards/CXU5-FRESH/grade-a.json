@@ -1,0 +1,116 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A",
+  "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+  "base": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "tree": "ca5f56d32c7adb6854466aa90924b7d871174a82",
+  "gradedAt": "2026-11-02T17:52:42.228827+00:00",
+  "score": 94,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "All seven CXU5 acceptance lines verified: chapter selection/locks, actual key gate, replay/history, desktop bounds, effects/reference and unchanged art. Both discovered regressions are fixed and covered.",
+      "evidence": [
+        "grade-a-r3/logs/repeat-changed.log",
+        "grade-a-r3/logs/browser-1280.log",
+        "grade-a-r3/logs/browser-1600.log",
+        "hud-late-chapter-fixed/results.json",
+        "review-a-r3-inventory.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head core checks all green; complete browser matrix302 per size, changed-spec250 and resize200 repeats without retries. Classic project is included in each full run; explicit classic build passes. Inherited2 expected failures/11 skips unchanged.",
+      "evidence": [
+        "grade-a-r3/commands.json",
+        "grade-a-r3/logs/unit.log",
+        "grade-a-r3/logs/classic-build.log",
+        "grade-a-r3/logs/repeat-resize.log",
+        "ui-a-r5/commands.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Seven of seven semantic mutants killed after green controls, including the new compact fallback and removal of the late-state HUD fix.",
+      "evidence": [
+        "mutants-a-r3/control.log",
+        "mutants-a-r3/results.json",
+        "css-mutant-a/control.log",
+        "css-mutant-a/result.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 11,
+      "max": 15,
+      "reason": "Four explained visual departures retain real data/readability: rectangular original chapter cards,400px fight column, textual full reward lines, and stacked XP number at compact desktop widths. Path/fight/rewards/history hierarchy, original art and tokens match. Deduct one for each departure conservatively.",
+      "evidence": [
+        "ui-a-r5/audit/map-1280x720.png",
+        "ui-a-r5/audit/map-1600x900.png",
+        "hud-late-chapter-fixed/1280.png",
+        "../../../../docs/decisions/cxu5-map-data.md",
+        "../../../../reports/scorecard/cxu5/ui-diff.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed display-only adapters/reducer, no dependencies, no new lint warnings and bundle growth below5%. Deduct2 for the display hint repeating the literal key threshold1 rather than reading the existing boss key-cost configuration; current configured behavior is correct.",
+      "evidence": [
+        "../../../../apps/web/src/layout/boss/BossMapScreen.tsx",
+        "../../../../apps/web/src/layout/boss/mapDetails.ts",
+        "../../../../apps/web/src/layout/bossPresentation.ts",
+        "grade-a-r3/logs/lint.log",
+        "grade-a-r3/logs/build.log"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No prior assertion, timeout or threshold changed; additive regressions prove failures. All retries0. Historical/infrastructure failures retained and explained.",
+      "evidence": [
+        "review-a-r3-inventory.json",
+        "hud-repair-red/logs/new-regression.log",
+        "REPORT.md"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Current claims match exact-head receipts. Earlier count error, invalid fixture assumptions, failed product rounds and audit build race are explicitly retained; no previous source results are claimed for this head.",
+      "evidence": [
+        "REPORT.md",
+        "grade-a-failed-r1.json",
+        "grade-a-failed-r2.json",
+        "grade-a-r3/commands.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Every file inventoried; StageLayout and shared HUD/test changes have explicit Tier2 reasons. No backend/contracts/assets/dependency/provider/flag/Actions changes.",
+      "evidence": [
+        "review-a-r3-inventory.json",
+        "../../../../docs/decisions/cxu5-map-data.md"
+      ]
+    }
+  ],
+  "releaseConditions": [
+    "Grader B >=92 on the same exact head",
+    "Correctly authored/suffixed squash; inherited806800d metadata is preserved in branch history under no-rewrite instruction but not imported to main",
+    "Re-test actual main and live before next merge"
+  ],
+  "mergeAllowed": false
+}
