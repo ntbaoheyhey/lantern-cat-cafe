@@ -39,7 +39,7 @@ export function FujiProofPanel({ enabled }: { enabled: boolean }) {
       <div><dt>Lifetime minted total</dt><dd>Not exposed by this NFT contract</dd></div>
     </dl>}
     <section className="fuji-proof-events" aria-label="Recent Fuji contract events"><h4>Recent contract activity</h4>
-      <p>{proof ? `Blocks ${proof.fromBlock}–${proof.block}` : 'Latest 500 blocks'} · up to 10 events · this is a limited window, not lifetime history.</p>
+      <p>{proof ? `Blocks ${proof.fromBlock}–${proof.block}` : 'Latest 100 blocks'} · up to 10 events · this is a limited window, not lifetime history.</p>
       {!proof ? <p>Waiting for a Fuji snapshot</p> : proof.events.status === 'unavailable' ? <p role="status">Recent events unavailable. The contract facts above are independent reads.</p> : proof.events.value.length === 0 ? <p>No events found in this window.</p> :
         <ul>{proof.events.value.map((event, index) => <li key={`${event.transaction}-${index}`}><span>{event.event}</span><span>Block {event.block.toString()}</span><a href={transactionProofUrl(event.transaction)} target="_blank" rel="noopener noreferrer" title={event.transaction}>View transaction {short(event.transaction)}</a></li>)}</ul>}
     </section>

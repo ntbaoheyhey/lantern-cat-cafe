@@ -14,9 +14,9 @@ describe('bounded Fuji snapshot', () => {
   it('pins the requested contracts and one block; reports real zero listings and an empty bounded window', async () => {
     expect(PROOF_CONTRACTS).toEqual({ RelicNFT: '0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D', RelicMarket: '0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93' });
     const { client, calls } = fixture(); const proof = await readFujiProof(client, 99);
-    expect(proof).toMatchObject({ chainId: 43113, block: 1000n, fromBlock: 501n, checkedAt: 99, nftCodeBytes: { status: 'verified', value: 5 }, marketCodeBytes: { status: 'verified', value: 5 }, activeListings: { status: 'verified', value: 0n }, events: { status: 'verified', value: [] } });
+    expect(proof).toMatchObject({ chainId: 43113, block: 1000n, fromBlock: 901n, checkedAt: 99, nftCodeBytes: { status: 'verified', value: 5 }, marketCodeBytes: { status: 'verified', value: 5 }, activeListings: { status: 'verified', value: 0n }, events: { status: 'verified', value: [] } });
     expect(calls.getCode.mock.calls.map(([args]) => args)).toEqual([{ address: PROOF_CONTRACTS.RelicNFT, blockNumber: 1000n }, { address: PROOF_CONTRACTS.RelicMarket, blockNumber: 1000n }]);
-    expect(calls.getLogs).toHaveBeenCalledExactlyOnceWith({ address: [PROOF_CONTRACTS.RelicNFT, PROOF_CONTRACTS.RelicMarket], fromBlock: 501n, toBlock: 1000n });
+    expect(calls.getLogs).toHaveBeenCalledExactlyOnceWith({ address: [PROOF_CONTRACTS.RelicNFT, PROOF_CONTRACTS.RelicMarket], fromBlock: 901n, toBlock: 1000n });
     expect(calls.readContract.mock.calls.map(([args]) => args.functionName)).toEqual(['relicNFT', 'activeListingCount']);
     expect(calls.readContract.mock.calls.every(([args]) => args.blockNumber === 1000n && args.address === PROOF_CONTRACTS.RelicMarket)).toBe(true);
   });

@@ -63,7 +63,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     await expect(page.getByRole('link', { name: `View transaction ${tx.slice(0, 8)}…${tx.slice(-6)}` })).toHaveAttribute('href', `https://testnet.snowtrace.io/tx/${tx}`);
     await expect(page.getByText('Not exposed by this NFT contract')).toBeVisible(); await fit(page);
     const logRead = fx.requests.find(request => request.method === 'eth_getLogs')!;
-    expect(logRead.params).toEqual([{ address: [contracts.RelicNFT, contracts.RelicMarket], fromBlock: '0x1f5', toBlock: '0x3e8', topics: [] }]);
+    expect(logRead.params).toEqual([{ address: [contracts.RelicNFT, contracts.RelicMarket], fromBlock: '0x385', toBlock: '0x3e8', topics: [] }]);
     for (let i = 0; i < 5; i++) await page.getByRole('button', { name: 'Refresh proof' }).click();
     expect(fx.requests.filter(request => request.method === 'eth_chainId')).toHaveLength(1);
     if (process.env.CXC2_SCREENSHOTS) { fs.mkdirSync(process.env.CXC2_SCREENSHOTS, { recursive: true }); await page.screenshot({ path: path.join(process.env.CXC2_SCREENSHOTS, `proof-${size.width}.png`) }); }
