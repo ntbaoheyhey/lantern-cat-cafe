@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T04:34:01+07:00. ACTIVE, one chat/agent.
+Updated: 2026-11-03T04:41:25+07:00. ACTIVE, one chat/agent.
 Authority: Nov2 mission + Nov3 hourly reminder. No subagents/helper chats/orchestrator.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove or run orchestrator.py.
 Hourly taskbar-hero-hourly-handoff ACTIVE in this chat; sole scheduler exception; honor later pause/stop.
@@ -9,7 +9,7 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 |---|---|---|
 | CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
 | CXU4 | #251/main2847e9a | DONE fresh A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
-| CXU3 | codex/cxu3-forge-market | Fresh A2 on09bb682; no PR/grade/merge; initial A unit/visual findings repaired |
+| CXU3 | codex/cxu3-forge-market | Final repair3 active; A2 failed compact CTA; no PR/passing grade/merge |
 | CXC2 | pending after CXU3 | Read-only Fuji proof panel; NFT has no totalSupply getter |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
@@ -33,7 +33,7 @@ New Forge geometry test exposed tab nav flex-shrink clipping; fixed by reserving
 Failure/logs preserved in reports/cards/CXU3-FRESH/browser-builder; diagnose before rerun, no assertions removed.
 Test-only Market fixture uses actual components and mock callbacks, never claims real wallet proof.
 Production fixture exclusion and full Forge browser coverage remain to verify.
-In-flight PID52907: grade-a-r2 core/repeats/full matrix at CXU3 worktree;4900–4903. Do not duplicate.
+In-flight PID57109: repair-r3 type/lint/unit +21 browser/5 inherited-compact repeats;4900–4903.
 Preserved CXU4/CXU5 source/reviewer/main worktrees listed by git worktree list; no duplicate jobs.
 Read-ahead: reports/cards/NEXT-FRONTEND-NOTES.md. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
 Tooling: reports/fresh-session-tools/run-checks.py; isolated UI harness; parameterized live proof scripts.
@@ -46,5 +46,6 @@ Next3: finish A2 and own mutants/UI; run clean exact-head B tests first on other
 
 Initial A visual Cancel contrast and existing heading contract repaired; max3 formal rounds, this is round2.
 A2 core/220 repeats/UI36/effects20 PASS. Mutation scratch fixed missing public assets;10 killed/1 bag-boundary survived.
-A2 full319×2 is still running PID52907; next repair adds boundary coverage and correct Market fixture fonts.
-Next head will be final formal round3; if gates fail, mark CXU3 PARTIAL and continue CXC2.
+A2 full1280 FINISHED318/319: compact Forge CTA offscreen.1600 not run; all earlier A2 processes finished.
+Final repair also fixes compact CTA, boundary coverage, fixture fonts; if round3 fails, CXU3 PARTIAL then CXC2.
+CXC2 readonly preparation PASS block60421787: chain43113, both bytecodes, matching linkedNFT; no wallet/write.

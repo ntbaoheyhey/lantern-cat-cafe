@@ -1,0 +1,106 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:29:21.703808+00:00",
+    "endedAt": "2026-11-02T21:29:28.353804+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:29:28.360763+00:00",
+    "endedAt": "2026-11-02T21:29:34.902448+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:29:34.908741+00:00",
+    "endedAt": "2026-11-02T21:30:19.175962+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:19.182726+00:00",
+    "endedAt": "2026-11-02T21:30:19.801949+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:19.808362+00:00",
+    "endedAt": "2026-11-02T21:30:19.967168+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:19.973585+00:00",
+    "endedAt": "2026-11-02T21:30:27.237840+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:27.244564+00:00",
+    "endedAt": "2026-11-02T21:30:27.298349+00:00"
+  },
+  {
+    "name": "fixture-exclusion",
+    "command": "python3 -c \"from pathlib import Path; p=Path('apps/web/dist'); hits=[str(f) for f in p.rglob('*') if f.is_file() and (f.suffix in ['.js','.html']) and any(s in f.read_text(errors='ignore') for s in ['__cxu3Market','market-fixture','Local Market fixture'])]; assert not hits,hits; print('Production bundle excludes the mock Market fixture')\"",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:27.304891+00:00",
+    "endedAt": "2026-11-02T21:30:27.339082+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:27.345480+00:00",
+    "endedAt": "2026-11-02T21:30:32.742326+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:32.750628+00:00",
+    "endedAt": "2026-11-02T21:30:32.839259+00:00"
+  },
+  {
+    "name": "repeat-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-forge.spec.ts e2e/ui/cxu3-market.spec.ts e2e/ui/u5-panels.spec.ts e2e/ui/redesign-shell.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:30:32.846918+00:00",
+    "endedAt": "2026-11-02T21:31:44.839481+00:00"
+  },
+  {
+    "name": "repeat-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-forge.spec.ts e2e/ui/cxu3-market.spec.ts e2e/ui/u5-panels.spec.ts e2e/ui/redesign-shell.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:31:44.848907+00:00",
+    "endedAt": "2026-11-02T21:32:53.620974+00:00"
+  },
+  {
+    "name": "browser-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 1,
+    "startedAt": "2026-11-02T21:32:53.628745+00:00",
+    "endedAt": "2026-11-02T21:36:23.616945+00:00"
+  }
+]

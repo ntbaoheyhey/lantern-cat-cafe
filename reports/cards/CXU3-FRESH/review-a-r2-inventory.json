@@ -1,0 +1,99 @@
+{
+  "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+  "base": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "tree": "f1046f0c338edad3ba14e8dd90d7fef996a2b1f7",
+  "clean": true,
+  "files": [
+    {
+      "path": "apps/web/e2e/fixtures/market-view.html",
+      "bytes": 178,
+      "sha256": "7fbb37f6e4eb4b2d8398c332e38e0687d738275052c1c19f36cdb4c4d12cb1a5"
+    },
+    {
+      "path": "apps/web/e2e/fixtures/market-view.tsx",
+      "bytes": 3872,
+      "sha256": "5bc5e453b131aa06a7afcf0470ba3d116c0e8823886085196ce4065d79c5bf8c"
+    },
+    {
+      "path": "apps/web/e2e/support/market-build.mjs",
+      "bytes": 579,
+      "sha256": "270a8e5f78a447752f1e303578def718c4516e6da9eca07c36f62118eb1c3e4d"
+    },
+    {
+      "path": "apps/web/e2e/ui/cxu3-forge.spec.ts",
+      "bytes": 7590,
+      "sha256": "253b8e8efb07350da57bc79c1618a03ee2ac5f6440f7b0bdaa929e054daf6383"
+    },
+    {
+      "path": "apps/web/e2e/ui/cxu3-market.spec.ts",
+      "bytes": 5214,
+      "sha256": "ab2efa936c2daaa830eb96bc784435d7a9a25269b2ffeefa7568f52a899cdc86"
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "bytes": 3568,
+      "sha256": "004afd150275c7b4828bebed63a5f6dead74b205afdc64fceca2cd4a5e3d1510"
+    },
+    {
+      "path": "apps/web/src/layout/StageLayout.tsx",
+      "bytes": 28486,
+      "sha256": "8c1a5e06c07eaea6a3a42391edbd367f6ee684652841a3161d6fe1f1f18bd84e"
+    },
+    {
+      "path": "apps/web/src/layout/forge/ForgePanel.css",
+      "bytes": 21889,
+      "sha256": "5ef650e65a7e8c3db36b007b7fc47729fc18f0954f4a6ce9df500151a5ce2750"
+    },
+    {
+      "path": "apps/web/src/layout/forge/ForgePanel.test.tsx",
+      "bytes": 25835,
+      "sha256": "46b55083a1b6d9a5799b5bcad9bf382d08eced41415efb3494423331823fa263"
+    },
+    {
+      "path": "apps/web/src/layout/forge/ForgePanel.tsx",
+      "bytes": 41132,
+      "sha256": "db63aeea3488428a28400107e3b2d6895fa07b412199ba3da5103a00a8858640"
+    },
+    {
+      "path": "apps/web/src/market/MarketTab.test.tsx",
+      "bytes": 15074,
+      "sha256": "269fe351fa820a3cce41cc57cb8712fd4714ad05c1901b82b3dda3119595ea20"
+    },
+    {
+      "path": "apps/web/src/market/MarketTab.tsx",
+      "bytes": 7756,
+      "sha256": "edd0924522ab9ac7d4917dc83ec7996ce27f84c0817449e9e9988883f4cd759c"
+    },
+    {
+      "path": "apps/web/src/market/MarketView.tsx",
+      "bytes": 12008,
+      "sha256": "a07e812b697de1b2fde1f771ebc6a077004a8c8587f048130799d12e54a10197"
+    },
+    {
+      "path": "apps/web/src/market/market.css",
+      "bytes": 5233,
+      "sha256": "b552d63f8ce4bd9bb49194893fb8e1bcc17ad29bf791ef98cd82ad20ffcc3cfc"
+    },
+    {
+      "path": "apps/web/src/market/marketViewModel.test.ts",
+      "bytes": 1992,
+      "sha256": "2e289f7eb7f8af859c7365451de735e20b3f92d8574e221e0c859c68adfb4c73"
+    },
+    {
+      "path": "apps/web/src/market/marketViewModel.ts",
+      "bytes": 1984,
+      "sha256": "fec12e8a1105c61aebd3876d1953094e8d48588dfcbc3bc5111b83bb64e3fdcc"
+    },
+    {
+      "path": "docs/decisions/cxu3-forge-market.md",
+      "bytes": 3365,
+      "sha256": "4a4f2e349bbeb14a2f24998476446382d7667356aa59be3121fae7328781a097"
+    },
+    {
+      "path": "docs/design/decisions.md",
+      "bytes": 1492,
+      "sha256": "b9fef29269d94448ccb6e91f4ee254361dc8abc0c196a4295c338c1d6ec0ee85"
+    }
+  ],
+  "review": "All18 changed/new paths read, controller declarations compared, UI images inspected; existing assertions retained/adapted for moved detail/form controls. No protected-zone/art/dependency changes. Round2 still needs full-bag boundary coverage and fixture typography."
+}
