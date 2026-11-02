@@ -1,3 +1,9 @@
+# Runtime — ACTIVE CLI
+
+2026-11-02T13:21:34.240952+07:00: initial verification complete. No mission test/preview/verifier process, required/default ports free. Existing ChatGPT/CUA processes preserved. No mission automation or cron. No agents/helpers. Next: safe direct FORCE_ALL verifier246 with fresh private TMPDIR.
+
+## Historical runtime
+
 # Runtime — PAUSED FOR CLI TRANSFER
 
 2026-11-02T13:12:56.376350+07:00: user explicitly stopped desktop session. No owned verifier/test/preview process or required/default port listener. Verifier59362 did not persist; no worktree/exit/suites, only toolHEAD log. Attempt interrupted/unverified. Routine deleted; no schedules. No work until explicit CLI resume.

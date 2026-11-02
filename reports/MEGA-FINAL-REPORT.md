@@ -1,3 +1,11 @@
+# Taskbar Hero — active CLI mission
+
+Updated 2026-11-02T13:21:34.240952+07:00. User explicitly resumed; mission incomplete. Verified main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`, all nine PR states/heads, private repository, free required/default ports, and no mission automation. No process needed termination. Historical files and ChatGPT/CUA services preserved.
+
+BASE0 remains merged with original A97.64285714285714/B98; actual-main full265/repeat700 at both desktop sizes remain valid. Safe verifier, complete deployed-artifact equality, legacy checker and phased live journey are pending. No next merge until those gates pass. Remaining queue and full P0–P3 scope unchanged. [Verified table](cards/CLI-RESUME-20261102/REPORT.md).
+
+## Historical reports
+
 # Taskbar Hero — paused for Codex CLI transfer
 
 Updated 2026-11-02T13:12:56.376350+07:00. **Stopped at the user's request. Mission incomplete.** Ready-to-paste continuation: [Codex CLI prompt](CODEX-CLI-RESUME-PROMPT.md). Pasting it into CLI explicitly resumes the mission; this desktop session remains stopped.
