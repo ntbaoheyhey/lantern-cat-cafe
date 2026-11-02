@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-11-02T08:00:52+07:00",
+  "source_head": "d408ada368a05c078dcd97bbd61f4e4b1dbc238b",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "source_branch": "ai/codex-cxu4",
+  "published_head_verified": true,
+  "checks": [
+    {
+      "command": "pnpm install --frozen-lockfile",
+      "exit_code": 0,
+      "head": "d408ada368a05c078dcd97bbd61f4e4b1dbc238b",
+      "cwd": "/Users/bao/.codex/worktrees/mega-cxu4-verify-d408ada/taskbar-hero",
+      "test_count": null,
+      "log": "install.log",
+      "sha256": "2052b96514a4b31c68479eb7ee761c794d7ea088abc19e7a1eec9de047b44186"
+    },
+    {
+      "command": "CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' pnpm --filter @taskbar-hero/web test src/layout/character src/layout/HelpTab src/ui src/theme.contrast.test.ts src/layout/StageLayout.test.tsx src/layout/notice",
+      "exit_code": 0,
+      "head": "d408ada368a05c078dcd97bbd61f4e4b1dbc238b",
+      "cwd": "/Users/bao/.codex/worktrees/mega-cxu4-verify-d408ada/taskbar-hero",
+      "test_count": 56,
+      "log": "focused-units-d408ada.log",
+      "sha256": "239c1a18071c9ac954a4e33211aff712067a82f3a0956080aeab21c89a0a560a"
+    },
+    {
+      "command": "CI=true SCREENSHOTS=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' pnpm --filter @taskbar-hero/web test src/onboarding",
+      "exit_code": 0,
+      "head": "d408ada368a05c078dcd97bbd61f4e4b1dbc238b",
+      "cwd": "/Users/bao/.codex/worktrees/mega-cxu4-verify-d408ada/taskbar-hero",
+      "test_count": 19,
+      "log": "onboarding-d408ada.log",
+      "sha256": "74b5a7bde5a08f17f3e47627e6406bdb33939d2526a73ea187d3bccbec0bc9bb"
+    }
+  ],
+  "checkout_clean": true,
+  "source_scope": {
+    "files": 30,
+    "additions": 855,
+    "deletions": 208
+  },
+  "restricted_paths_changed": false,
+  "assets_changed": false,
+  "preflight_head": "b06a68d601bb09f5122bad163ac836891266f021",
+  "preflight_not_source_head": true,
+  "test_count_difference": "b06a68d also has two BASE0 contrast pairs: muted/surface-2 and good/surface-2",
+  "independent_grade": null,
+  "merge": null,
+  "no_active_job": true
+}
