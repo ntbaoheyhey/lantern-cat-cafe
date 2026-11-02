@@ -1,0 +1,48 @@
+{
+  "card": "CXC2",
+  "pr": 253,
+  "status": "DONE",
+  "featureHead": "e54f0750644322dbdc40dffe389130a1f6fc736f",
+  "mergeHead": "39e74d834aa246b8182b72bac1b610e4c985f574",
+  "tree": "85267f5fb3c7c6808a50331743a6746ddb1ed2dc",
+  "label": "self-graded (fresh pass)",
+  "grades": {
+    "A": 95,
+    "B": 96,
+    "lowest": 95
+  },
+  "main": {
+    "typeLintUnitBuild": "PASS",
+    "unitScriptPassed": 2423,
+    "expectedFailures": 2,
+    "skippedInherited": 11,
+    "browser1280": 317,
+    "browser1600": 317
+  },
+  "live": {
+    "assetsBefore": "32/32 MATCH",
+    "assetsAfter": "32/32 MATCH",
+    "healthPassed": 22,
+    "phasedStepsPerSize": 11,
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        1600,
+        900
+      ]
+    ],
+    "unexpectedErrors": 0,
+    "transactionsPerformed": 0,
+    "limitedEventWindow": true,
+    "fullFundedDemoClaim": false
+  },
+  "actionsRuns": {
+    "e54f0750644322dbdc40dffe389130a1f6fc736f": 0,
+    "39e74d834aa246b8182b72bac1b610e4c985f574": 0
+  },
+  "originalFailureRetained": "live/phased/summary.json: guard rejected read-only Multicall; corrected guard canonical-decodes only the two Market getters,22 controls PASS",
+  "nextMergeAllowed": true
+}

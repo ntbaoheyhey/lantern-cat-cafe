@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T05:39:04+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
+Updated: 2026-11-03T05:48:20+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
 Authority: Nov2 mission + Nov3 reminder. No subagents/helper chats/orchestrator. No parallel AI workers.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove/run orchestrator.py.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -9,7 +9,7 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
 | CXU4 | #251/main2847e9a | DONE fresh A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
 | CXU3 | #252/4da5104 draft | PARTIAL after3 formal rounds; A FAIL/B not run; never merge on current evidence |
-| CXC2 | codex/cxc2-fuji-proof | #253 merged39e74d8 A95/B96; actual-main/live validation active |
+| CXC2 | codex/cxc2-fuji-proof | #253 merged39e74d8; RELEASE FIX round2 active (RPC max100 blocks) |
 | T011/T012 + content + ART/T013 | rebased69902d6 local | T011/T012 prepared; default-OFF surfaces/art still pending |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
@@ -33,8 +33,11 @@ CXC2 builder type/lint/26 units/4 browser cases PASS. Frozen clean; no formal sc
 CXC2 A62738 FINISHED PASS95: core2423,317×2,140 repeats,12 mutants,UI36/effects20.
 CXC2 B67091 FINISHED PASS96 on clean e54f075: core2423,140 repeats,38classic,10mutants,UI/effects.
 CXC2 release70921 FINISHED: core/317×2 PASS,live32assets/22health PASS; proof path FAIL at strict RPC guard.
-Further merges STOPPED pending corrected live-r2 (process.json) on same39e74d8; no local preview ports.
-Cause: viem aggregate3 read batch blocked. Guard now canonical-decodes only2 Market getters;22 controls PASS.
+Corrected live-r2 PASSED11×2 with zero errors; recent events unavailable because publicRPC rejects500-block span.
+Unrelated merges STOPPED: diagnostic-32602 max100; same100-block public query passes.
+Initial guard mistake fixed via canonical aggregate3 decoding for2 getters;22 controls PASS; original failure retained.
+CXC2 release fix /private/tmp/tbh-cxc2-rpc-fix, codex/cxc2-rpc-window, base39e74d8, uncommitted.
+Range-fix-builder active (process.json),5020–5023; window/UI/docs/tests tightened to100. Fresh gates required.
 Browser harness JSON-import,wire-topics and late-clock failures retained; fixed without assertion/threshold changes.
 CXC2 read-ahead PASS block60421787: Fuji43113, both bytecodes, matching Market→NFT; no wallet/write.
 NFT has no totalSupply getter; never invent minted totals. Bound recent logs; cache at least30sec; no signing.
@@ -51,4 +54,4 @@ After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 ta
 Original content prep /private/tmp/tbh-original-content, codex/original-content,69902d6; rebase onto39e74d8 clean.
 Original T011/T012 branches preserved; authors/suffixes verified; shared flag remains false; no runtime consumer/PR yet.
 Original data builder73795 FINISHED: install/type/lint/29 focused cases PASS on69902d6; no feature activation.
-Next3: inspect corrected live-r2; package acceptance only if unchanged path passes; review/gate original tables then preview/art.
+Next3: finish range-fix builder; fresh A/B on exact fix head then fix PR; re-test main/live including available events before original-content merge.

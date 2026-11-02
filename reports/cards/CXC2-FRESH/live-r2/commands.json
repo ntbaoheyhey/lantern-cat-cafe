@@ -1,0 +1,26 @@
+[
+  {
+    "name": "asset-before",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-before.json",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:39:04.907018+00:00",
+    "endedAt": "2026-11-02T22:39:07.293003+00:00"
+  },
+  {
+    "name": "phased-proof",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-phased-proof.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/phased",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:39:07.301052+00:00",
+    "endedAt": "2026-11-02T22:40:15.975140+00:00"
+  },
+  {
+    "name": "asset-after",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-after.json",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:40:15.983007+00:00",
+    "endedAt": "2026-11-02T22:40:18.330403+00:00"
+  }
+]
