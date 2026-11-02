@@ -1,3 +1,14 @@
+# Active fresh-session report — 2026-11-02T23:53:52+07:00
+
+Living report, not a completion claim. Main verified at 9c457a3; repository private.
+CXU5 #249 and CXU4 #251 are frontend work and are NOT blocked by CXN3 #244.
+CXU5 already contains current main. Fresh verification begins; no new grades or merges yet.
+The full A–G queue remains open. T007 owner backup/restore recovery remains documented.
+Single session only, STOP preserved. [Current state](MEGA-CURRENT-HANDOFF.md).
+
+---
+Historical reports below retain their original dates and do not override current authority.
+
 T001 reconciliation — 2026-11-02T10:15:04.155386+00:00. BASE0 STEP 1 a–d was already complete in ledger 89664d7.
 Revalidated all four verifier heads, matching PR/base/tested trees, 55 original evidence files,
 32/32 historical deployed assets, legacy check-live and phased live at both desktop sizes.
