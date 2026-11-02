@@ -1,5 +1,13 @@
 STATUS: IN-PROGRESS
 
+# FXRB exact-head builder gates — ACTIVE
+
+2026-11-02T07:38:31.614876+00:00: explicit resume remains active. Recovered core/build checks pass on7f00ef5. Repeat1280 active; one preboot mutant killed with a green control. Fullgate and self-graded A/B remain pending. Details: [recovered state](recovered-state-20261102/REPORT.md). Earlier pause below is historical.
+
+## Historical checkpoint
+
+STATUS: IN-PROGRESS
+
 # FXRB actual-main integration — USER PAUSED
 
 The user paused at 2026-11-02T07:10:23.066771+00:00. No implementation/test/merge/release work may resume without a new explicit user instruction. No helpers, agents, new chats or schedules.

@@ -1,10 +1,8 @@
 # Taskbar Hero — active mission
 
-Updated 2026-11-02T14:28:16.266172+07:00. Latest explicit user resume lifts the pause. Verified-state checkpoint: [session verification](cards/RESUME-20261102-SESSION2/REPORT.md). Full P0–P3 mission and regression remain active.
+Updated 2026-11-02T07:38:31.614876+00:00. Full mission active in this session only. [Recovered state](cards/FXRB-CURRENT-R1/recovered-state-20261102/REPORT.md) verifies checkpoint6cca81c, private repository, unchanged main74d60da and product PRs. BASE0 main/phased-live PASS and historical independent A97.64285714285714/B98 remain unchanged.
 
-Fetched refs and repository privacy match the saved state. BASE0 remains merged/main and phased-live PASS at74d60da; historical independent scores unchanged. Local FXRB7f00ef5 is clean in its verifier, installation passed, bundle verified; remote26e7de8 remains draft. Builder gates and separate fresh A/B self-grades are pending. No new grade, product push, merge or release.
-
-Required/default ports are free, no mission tests or schedules, historical dirty artifacts preserved. Direct work continues on FXRB in this session only.
+FXRB7f00ef5 core/type/lint/unit/Deno/imports, default/classic/v2 builds, bundle and links pass. Resize repeat1280 remains active on4310–4313; no duplicate test started. Preboot guard mutant produced the intended regression failure after a green control. Full builder gate and separate fresh A/B self-grades remain pending; no product push, grade or merge.
 
 ## Historical reports
 

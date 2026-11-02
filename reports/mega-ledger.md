@@ -24,7 +24,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / MAIN + PHASED LIVE PASS | 2 | 74d60da core/build/full265each/repeat700each; safe FORCE_ALL265browser+96Forge PASS | A97.642857/B98;artifact32/32, legacy/phased live PASS; full future nine-stage path pendingCXU3+CXC2 |
-| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | ACTIVE / BUILDER GATES PENDING | 0 | 7f00ef5 frozeninstallPASS only; other exactheadgates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
+| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | ACTIVE / BUILDER GATES PENDING | 0 | 7f00ef5 core/build/imports/bundle/links PASS;repeat1280 ACTIVE;other gates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 7393dc3:core/build/G3,full280eachsize,repeat80,fourmutantsPASS | Source2b7ceebpublished;own18unit/typePASS;old1/17capfailure retained;actualmain/UI/G5/wrapper/grades pending |
@@ -134,3 +134,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
 
 - User stop/CLI transfer 2026-11-02T13:12:56.376350+07:00: verified-state6529cf6 pushed. Safe FORCE_ALL launcher59362 absent; only toolHEAD log, no worktree/exit/tests. INTERRUPTED/NOT VERIFIED. No owned processes/listeners and no termination needed. BASE0 artifact/live still pending; no nextmerge.
+
+- Recovered active state 2026-11-02T07:38:31.614876+00:00: checkpoint6cca81c and refs verified; ongoing resize test preserved, exact receipts hashed. No new score/push/merge. See cards/FXRB-CURRENT-R1/recovered-state-20261102.

@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE SESSION
-Updated 2026-11-02T14:28:16.266172+07:00. Latest explicit user resume lifts the pause. Complete mission active; routine authorized execution continues.
+Updated 2026-11-02T07:38:31.614876+00:00. Latest explicit user resume lifts the pause. Complete mission active; routine authorized execution continues.
 Single session only. No agents/helpers/AI elsewhere/new chats/scheduled routines/checkpoint.py/orchestration runners.
 Verified resume evidence: cards/RESUME-20261102-SESSION2/REPORT.md and verified-state.json; savedledger7b62f5d matchesremote.
 Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Preserve dirty historical runtime and untracked captures.
@@ -9,7 +9,7 @@ Verified refs before FXRB: cards/CLI-RESUME-20261102/continuation-fxrb/verified-
 FXRB#243 remote26e7de8 remains draft/unmerged. Local ai/codex-fxrb now7f00ef52fdd221ab5f38198dfe6c44c56316d25b; not pushed.
 Local commits:5e0cb7d merges actualmain without conflicts;7f00ef5 indexes/attributes sprite-oracle decision. No app runtime delta against main; source changes limited to two browser specs/docs/historicalevidence.
 Source: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero; historical captures preserved.
-Fresh verifier: /Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero; detached7f00ef52fdd221ab5f38198dfe6c44c56316d25b; frozen pnpm10.28.0 installPASS exit0,trackedclean. No further current-head gates/grades run.
+Fresh verifier: /Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero; detached7f00ef52fdd221ab5f38198dfe6c44c56316d25b; frozen pnpm10.28.0 installPASS exit0,trackedclean. Core/type/lint/unit/Deno/imports/default+classic+v2build/bundle/links now exit0; grades pending.
 FXRB evidence: cards/FXRB-CURRENT-R1/REPORT.md,pause-result.json,logs/install.log/.exit.
 Verified recovery bundle: /Users/bao/.codex/handoffs/taskbar-hero/reliability/fxrb-current-7f00ef5.bundle; requires preserved26e7de8/74d60da objects.
 At pause: install session77542 completed normally, no process in verifier cwd, all required/default portsfree; nothingkilled. No owned test/preview active.
@@ -25,6 +25,6 @@ Reference: reports/ui-redesign/index.html +BRIEF/PLAN/README; rune demo/design d
 No missionautomation/cron: local list onlyLifeMate/SC203; taskbar-hero-checkpoint-10-ph-t absent. No automationconnector available in this session; localinventory verified.
 Checkpoint at milestones/grade/merge/failure only: <=80linehandoff,livingreport,ledger/scorecard/runtime,directsnapshot,selectedcommit/pushledger. No automatic wake/resume.
 Next3actions:
-1. Verified savedstate/refs/ports and install/bundle; publish this checkpoint, then complete exactFXRB7f00ef5 builder gates. Do not rerun completedBASE0 suites.
-2. Complete FXRB builderfullgate includingrepeat20bothsizes followedfullbrowserbothsizes; ownmutants/UI/reference/a11y/effects/G5/wrapper/integrity/publication.
-3. SeparatefreshselfgradedA/B; onlygreeneligiblemerge then actualmain/livebeforeCXP1. No grade/productpush/merge has yet occurred.
+1. Recovered state verified in cards/FXRB-CURRENT-R1/recovered-state-20261102; checkpoint6cca81c pushed;main/productrefs unchanged. Do not duplicate active repeat or rerun completedBASE0 suites.
+2. Preserve ACTIVE repeat1280 PID87049/Playwright87071 ports4310–4313 on clean7f00ef5; logs/repeat-1280.exit pending. Thenrepeat1600/fullbothsizes. Mutant scratch has savedprebootguardvariant;restore before nextvariant.
+3. Complete buildermutants/UI/reference/a11y/effects/G5/wrapper/integrity/publication then separatefreshselfgradedA/B. No grade/productpush/merge. Main/livegreen beforeCXP1.
