@@ -308,7 +308,7 @@ export function ForgePanel({
               {/* Left Column: 1 · Pick gear */}
               <div className="forge-col-left">
                 <div className="forge-card">
-                  <h3 className="forge-section-title">1 · Pick gear</h3>
+                  <p className="forge-section-title">1 · Pick gear</p>
                   <div className="forge-selector-group">
                     <span className="forge-selector-label" id={`${panelId}-slot-label`}>
                       Choose Slot
@@ -477,7 +477,7 @@ export function ForgePanel({
               {/* Right Column: 2 · Materials & Chances Table */}
               <div className="forge-col-right">
                 <div className="forge-card" data-testid="forge-materials-card">
-                  <h3 className="forge-section-title">2 · Materials</h3>
+                  <h4 className="forge-section-title">Recipe cost</h4>
                   <ul className="forge-cost-list" aria-label="Required materials" style={{ padding: 0, margin: '8px 0 0', listStyle: 'none' }}>
                     {COST_ORDER.map((matId) => {
                       const req = recipe.materials[matId];
@@ -525,7 +525,7 @@ export function ForgePanel({
                 </div>
 
                 <div className="forge-card" data-testid="forge-chances-card">
-                  <h3 className="forge-section-title">Chances</h3>
+                  <h4 className="forge-section-title">Chances</h4>
                   <table className="forge-chances-table" aria-label="Crafting chances">
                     <thead>
                       <tr>
