@@ -89,6 +89,7 @@ export class PetsStore {
     if (!count(delta) || delta === 0) return;
     const old = this.state.killCounts[petsRules.PET_KILL_TARGET] ?? 0;
     const next = Math.min(Number.MAX_SAFE_INTEGER, old + delta);
+    if (next === old) return;
     this.publish({ ...this.state, killCounts: Object.freeze({ [petsRules.PET_KILL_TARGET]: next }) });
   }
   equip(id: string): petsRules.PetEquipResult {

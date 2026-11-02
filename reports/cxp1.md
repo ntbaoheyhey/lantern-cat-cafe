@@ -1,4 +1,18 @@
-STATUS: PARTIAL
+STATUS: IN-PROGRESS
+
+## Coordinator repair snapshot — 2026-11-02
+
+The documented stable-snapshot contract failed when the local preview counter was
+already saturated: another valid delta published an equal object, notified listeners
+and rewrote storage. A new regression first failed1/17cases at the identity assertion.
+The one-line no-op guard preserves the cap transition and ignores only a count that
+did not change. The focused store/isolation control then passed18/18. Preview numbers,
+storage keys/migration, claim observation, equipped selection and gameplay are unchanged.
+
+This section records implementation-time evidence. Current exact-head verification,
+retained failures and pending gates are recorded on the ledger in
+reports/cards/CXP1-VERIFY-R2/REPORT.md and linked from PR240. The builder record below
+is historical; no source/main/full-gate or independent-score claim is inferred from it.
 
 # CXP1 — scoped builder continuation
 

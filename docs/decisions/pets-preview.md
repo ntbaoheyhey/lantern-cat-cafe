@@ -69,6 +69,10 @@ corrupt (recover empty rather than resurrect stale selection). Keep the legacy
 key. Invalid selections are filtered through the same equip rules. Failed
 storage reads/writes use memory only.
 
+Count saturation at Number.MAX_SAFE_INTEGER is a storage/precision bound, not a
+balance value. Reaching it publishes the final increment once. Further positive
+claims preserve the same snapshot and do not notify subscribers or rewrite storage.
+
 Reverse: edit this preview registry and decision together, retain stable IDs,
 and rerun boundary/store/isolation tests. To reset incompatible local formats,
 introduce a new versioned key with an explicit migration; do not change game
