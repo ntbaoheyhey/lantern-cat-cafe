@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "6c8fa32158ae2db7d34254590c43b5b98b19d0fa",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:26:16.349296+00:00",
+    "endedAt": "2026-11-02T21:26:22.792101+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "6c8fa32158ae2db7d34254590c43b5b98b19d0fa",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:26:22.798135+00:00",
+    "endedAt": "2026-11-02T21:26:29.189098+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "6c8fa32158ae2db7d34254590c43b5b98b19d0fa",
+    "exit": 1,
+    "startedAt": "2026-11-02T21:26:29.195333+00:00",
+    "endedAt": "2026-11-02T21:27:13.937241+00:00"
+  }
+]
