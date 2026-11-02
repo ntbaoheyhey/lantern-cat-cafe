@@ -1,6 +1,6 @@
 # Runtime — ACTIVE CLI
 
-2026-11-02T13:32:43.683654+07:00: saved-state recheck complete. No mission-owned test/verifier/preview process; required/default ports free. Historical services and dirty files preserved. No helper/subagent/schedule. Retained verifier failed only Forge argument order; artifact32/32 and legacy checks passed; phased live journey pending.
+2026-11-02T13:43:32.680648+07:00: saved state verified after summary. No owned test/verifier/preview process; required/default ports free. CUA services preserved. No agents/helpers/schedules. Fixed safe verifier and phased live saved exits0 confirmed; visual review/checkpoint next. Local repair e4faf63 will be published with this verified table. Full scope remains active.
 
 ## Historical runtime
 

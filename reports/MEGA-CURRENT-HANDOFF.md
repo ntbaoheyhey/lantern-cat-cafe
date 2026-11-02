@@ -1,9 +1,9 @@
 # Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T13:32:43.683654+07:00; user explicitly resumed in this session. Older pause lines are superseded.
+Updated 2026-11-02T13:43:32.680648+07:00; user explicitly resumed in this session. Older pause lines are superseded.
 Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
 Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
 BASE0: MERGED / POSTMERGE INCOMPLETE. Historical independent A97.64285714285714/B98, floors passed. Actual-main full265/265 and12spec repeat700/700 at each1280x720/1600x900 passed. Do not rerun completed suites without changed code/new failure.
-Remaining BASE0: repair safe verifier Forge argument order and verify; phased live browser path bothsizes. Artifact equality32/32 and legacy checker PASS; no nextmerge until allgreen.
+Remaining BASE0: visual review and publish saved fixed-verifier/phased-live evidence. Fixed verifier exit0 (tool e4faf63, tested1aaa829 tree equals main); phased live bothsizes exit0. Artifact32/32 and legacy PASS; no nextmerge until review/checkpoint green.
 Verified source queue: FXRB#243 26e7de8 -> CXP1#240 2b7ceeb -> CXL1#248 178f379 -> ART1#247 4df594a -> CXN3-FIX#250 a9b804c -> CXN3#244 6257c0e -> CXU5#249 c5b846e -> CXU4#251 d408ada. All unmerged/draft and need exact current-main gates.
 PR250 was closed on deleted BASE0base. Restored historicalbase280ff4b, reopened samePR, retargetedmain; sourceunchanged, CONFLICTING. Historicalbase remains. Do not duplicate PR or merge now.
 Full verified table and caveat re stale APIbaseSHA/UNKNOWN: cards/CLI-RESUME-20261102/verified-refs.json and REPORT.md; current ledger table is authoritative.
@@ -21,6 +21,6 @@ Retained CLI verifier exit1: tool032da94/PR280ff4b/base74d60da/tested9f5687a; te
 CLI evidence reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102: artifact32/32, stable HTML, legacy exit0. Phased browser pending. New recheck table cards/CLI-RESUME-20261102/recheck.
 No ownedtestprocess, required/default ports free. No helper/subagent/schedule. Actualmain and queue heads unchanged after fetch.
 Next3actions:
-1. Correct ledger safe verifier Forge CLI order; validate actual pinned contract suite; fresh privateTMPDIR full wrapper if needed. Preserve all failures and four-head receipts.
-2. Directly verify approved phased live path at1280x720/1600x900 with read-only guest requests; link byte identity evidence. No --v2 until CXN3 merges.
-3. Publish/checkpoint BASE0; only if fully green integrate origin/main into FXRB#243 and run full gates plus separate fresh self-graded A/B.
+1. Review retained live screenshots; reconcile wrapper four-head/rawlog/equality and exactmain artifact proof.
+2. Publish complete BASE0 main/live checkpoint, retaining failed Forge attempt and historical grades.
+3. Only when BASE0 green, integrate actualmain into existing FXRB#243 and run builder plus separate fresh A/B self-grades.

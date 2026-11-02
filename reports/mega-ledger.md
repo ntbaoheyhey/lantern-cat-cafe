@@ -1,6 +1,6 @@
 # Mega ledger — living draft
 
-**ACTIVE — state rechecked 2026-11-02T13:32:43.683654+07:00.** Current authority: [CLI mission](CODEX-CLI-RESUME-PROMPT.md); milestone checkpoints only, single coordinator.
+**ACTIVE — state rechecked 2026-11-02T13:43:32.680648+07:00.** Current authority: [CLI mission](CODEX-CLI-RESUME-PROMPT.md); milestone checkpoints only, single coordinator.
 
 ## Verified remote state at CLI resumption
 
