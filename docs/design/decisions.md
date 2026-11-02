@@ -1,5 +1,7 @@
 # Design decisions — living draft
 
+- [ORIG1 original economy tables](original-economy.md): independently authored stat, item, quality and skill vocabulary; a six-level fish budget; capped secondary stats; explicit skill timing and conditional gear odds. All tunables live in `CONFIG.originalEconomy`, exercised through a pure preview factory. `CONFIG.features.originalEconomy` defaults to false. No server activation, migrations, stored-ID changes or Relic odds changes. See the tables for the reference rationale and rollout limits (2026-11-02).
+
 - [Restore the existing verification baseline](../decisions/mission-baseline-compatibility.md): combine minimal repairs needed by the strict complete-suite gate; preserve desktop scope and existing responsive behavior.
 
 - [Give HUD status and guidance their own rows](../decisions/baseline-hud-layout.md): preserve the complete next action and reserve a readable XP track at both desktop targets.
