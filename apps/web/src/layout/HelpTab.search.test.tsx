@@ -33,3 +33,13 @@ it('supports future Help tabs with independent keyboard navigation', () => {
   fireEvent.keyDown(screen.getByRole('tab', { name: 'Guide' }), { key: 'ArrowRight' });
   expect(screen.getByRole('tabpanel').textContent).toBe('Proof panel');
 });
+it('finds visible phrases across inline configuration values and punctuation', () => {
+  render(<HelpTab />);
+  const search = screen.getByLabelText('Search help');
+  fireEvent.change(search, { target: { value: '30 Yarn' } });
+  expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('Forge');
+  fireEvent.change(search, { target: { value: 'Warrior: sword' } });
+  expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('Classes');
+  fireEvent.change(search, { target: { value: '  first   claim each day  ' } });
+  expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('Cat Keys and bosses');
+});

@@ -83,11 +83,15 @@ for (const size of sizes) {
     const search = page.getByRole('searchbox', { name: 'Search help' }); await search.focus(); await page.keyboard.type('catnap');
     await expect(help.getByRole('heading', { level: 3 })).toHaveText('Cat Keys and bosses');
     await page.keyboard.press('Tab'); await expect(page.getByRole('button', { name: 'Cat Keys and bosses' })).toBeFocused(); await page.keyboard.press('Enter');
+    await search.fill('30 Yarn'); await expect(help.getByRole('heading', { level: 3 })).toHaveText('Forge');
+    await search.fill('Warrior: sword'); await expect(help.getByRole('heading', { level: 3 })).toHaveText('Classes');
     await search.fill(''); await page.getByRole('button', { name: 'Forge', exact: true }).focus(); await page.keyboard.press('Enter');
     await expect(help.getByRole('heading', { level: 3 })).toHaveText('Forge'); await layout(page); await screenshot(page, `help-${size.width}`);
     await search.fill('unfindable-qxyz'); await expect(page.getByRole('heading', { name: 'No matching topics' })).toBeVisible();
     await page.getByRole('button', { name: 'Clear search' }).click();
     await expect(help.getByRole('heading', { level: 3 })).toHaveText('Forge');
+    await help.getByRole('button', { name: 'Start Exploring', exact: true }).click();
+    await expect(page.getByTestId('home-dashboard')).toBeVisible();
     await page.getByRole('tab', { name: 'Hero', exact: true }).click(); await context.setOffline(true); await page.evaluate(() => dispatchEvent(new Event('offline')));
     const notice = page.getByRole('region', { name: 'Character' }).getByTestId('action-notice');
     await expect(notice).toBeVisible(); await expect(notice).toHaveAttribute('data-tone', 'offline');
