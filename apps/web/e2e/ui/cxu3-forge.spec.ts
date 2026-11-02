@@ -51,6 +51,13 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
       await page.getByTestId('craft-btn').focus(); await page.keyboard.press('Enter');
       await expect(page.getByTestId('craft-confirm-box')).toContainText('Common Helmet'); await geometry(page);
       expect(await page.getByTestId('craft-cancel-btn').evaluate(node => getComputedStyle(node).backgroundColor)).not.toBe(await page.getByTestId('craft-confirm-btn').evaluate(node => getComputedStyle(node).backgroundColor));
+      const contrast = await page.getByTestId('craft-cancel-btn').evaluate(node => {
+        const style = getComputedStyle(node);
+        const luminance = (rgb: string) => rgb.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(value => value / 255).map(value => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4).reduce((sum, value, index) => sum + value * [0.2126, 0.7152, 0.0722][index]!, 0);
+        const light = luminance(style.color), dark = luminance(style.backgroundColor);
+        return (Math.max(light, dark) + 0.05) / (Math.min(light, dark) + 0.05);
+      });
+      expect(contrast).toBeGreaterThanOrEqual(4.5);
       await screenshot(page, `craft-confirm-${size.width}-${reducedMotion}`);
       await page.getByTestId('craft-cancel-btn').click(); await expect(page.getByTestId('craft-confirm-box')).toHaveCount(0);
       await page.getByTestId('craft-btn').click(); await page.getByTestId('craft-confirm-btn').click();
