@@ -1,0 +1,115 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A",
+  "head": "3ed063385aad8ba450c5bb6a4eef1773721147ce",
+  "base": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+  "tree": "07054e396d292602e2ef10fd9054b3ddc19ba49f",
+  "sourceRoot": "/private/tmp/tbh-cxu4-active",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH",
+  "gradedAt": "2026-11-02T19:25:23.786382+00:00",
+  "score": 95,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "All eight acceptance lines verified: real equipment/power updates, preserved searchable Help, focus-safe modal, timed/persistent toasts, actual offline notice, UI/effects/reference, unchanged art and existing regressions.",
+      "evidence": [
+        "grade-a-r2/logs/unit.log",
+        "grade-a-r2/logs/repeat-changed.log",
+        "main-help-oracle.json",
+        "ui-a-r2/commands.json",
+        "review-a-inventory.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head core2412 cases, explicit classic build, full313 per desktop size and360 repeated browser cases all green. Fresh UI/effects and capture checks pass; inherited2 expected fails/11 skips unchanged.",
+      "evidence": [
+        "grade-a-r2/commands.json",
+        "grade-a-r2/logs/browser-1280.log",
+        "grade-a-r2/logs/browser-1600.log",
+        "capture-a/command.json",
+        "ui-a-r2/commands.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Eleven semantic mutants killed with a green control, covering power, equipment filtering, phrase search, modal stack/focus, toast persistence, roving tabs, class results and banner action.",
+      "evidence": [
+        "mutants-a-r2/control.log",
+        "mutants-a-r2/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 12,
+      "max": 15,
+      "reason": "Three conservative explained differences: real slot/stat density replaces placeholder content; typed single-tab hosts add a row; Hero numeric values retain plain integer formatting. Structure, colors, original art, secondary class action and primary Help action match the reference.",
+      "evidence": [
+        "ui-a-r2/audit/hero-1280x720.png",
+        "ui-a-r2/audit/help-1280x720.png",
+        "capture-a/raw/modal-1280.png",
+        "capture-a/raw/modal-1600.png",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed scoped components, no dependencies, clean lint; combined entry gzip growth4.90%, CSS-alone5.12% explicitly justified. Deduct2 for a duplicate muted-on-surface-2 contrast pair in the added test list; the actual check remains enforced.",
+      "evidence": [
+        "/private/tmp/tbh-cxu4-active/apps/web/src/theme.contrast.test.ts",
+        "/private/tmp/tbh-cxu4-active/apps/web/src/ui/Modal.tsx",
+        "grade-a-r2/logs/lint.log",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No existing assertion/timeout/threshold weakened. Selector updates have explicit old-to-new reasons, unchanged golden answers verified against actual main, and all failed rounds remain retained.",
+      "evidence": [
+        "review-a-inventory.json",
+        "main-help-oracle.json",
+        "grade-a-failed-r1.json",
+        "REPORT.md"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "All current claims tied to exact3ed0633. Failed earlier head and search regression remain explicit; no merge/live/independent-agent claim.",
+      "evidence": [
+        "REPORT.md",
+        "grade-a-r2/commands.json",
+        "repair-r2/logs/search-red.log"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Every file inventoried; mount/notice/manifest/static-fixture changes documented as integration. Protected backend/contracts/art/dependency/provider/flag zones untouched.",
+      "evidence": [
+        "review-a-inventory.json",
+        "/private/tmp/tbh-cxu4-active/docs/decisions/cxu4-hero-help.md"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "B>=92 same exact head",
+    "Correctly authored/suffixed squash",
+    "Actual-main/live checks after merge"
+  ]
+}
