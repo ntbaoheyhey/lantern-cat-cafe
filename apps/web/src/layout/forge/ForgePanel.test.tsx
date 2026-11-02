@@ -640,3 +640,20 @@ it('reads the daily Relic cost and limit from the same recipe as its guard', () 
   expect(screen.getByTestId('relic-confirm-box').textContent).toContain(`${v2.RELIC_RECIPE.materials.yarn} Yarn + ${v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl`);
   unmount();
 });
+
+
+it('blocks crafting at exact bag capacity and enables it when one slot opens', () => {
+  const items = Array.from({ length: v2.V2_CONFIG.bag.limit }, (_, index) => ({ ...SAMPLE_ITEMS[0]!, id: `full-${index}` }));
+  const props = createDefaultProps({ items });
+  const { rerender, unmount } = render(<ForgePanel {...props} />);
+  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(true);
+  expect(screen.getByTestId('craft-block-reason').textContent).toMatch(/bag.*full/i);
+  fireEvent.click(screen.getByTestId('craft-btn'));
+  expect(screen.queryByTestId('craft-confirm-btn')).toBeNull();
+  expect(props.onCraft).not.toHaveBeenCalled();
+  rerender(<ForgePanel {...props} items={items.slice(1)} />);
+  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(false);
+  fireEvent.click(screen.getByTestId('craft-btn'));
+  expect(screen.getByTestId('craft-confirm-btn')).toBeTruthy();
+  unmount();
+});

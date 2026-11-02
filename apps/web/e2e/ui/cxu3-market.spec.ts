@@ -29,6 +29,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     page.on('request', request => { if (request.method() !== 'GET') writes.push(request.method() + ' ' + new URL(request.url()).pathname); });
     await page.goto('/market-fixture/e2e/fixtures/market-view.html');
     await expect(page.getByTestId('market-fixture-disclaimer')).toBeVisible(); await page.evaluate(() => document.fonts.ready);
+    expect(await page.evaluate(() => ['14px "DM Sans"', '700 14px "Pixelify Sans"', '500 14px "JetBrains Mono"'].every(font => document.fonts.check(font)))).toBe(true);
     const table = page.getByRole('table', { name: 'Relic market listings' });
     await expect(table.getByRole('row')).toHaveCount(4); await geometry(page); await screenshot(page, `market-inspect-${size.width}`);
     const sort = page.getByRole('button', { name: 'Sort by quantity' }); await sort.focus(); await page.keyboard.press('Enter'); await page.keyboard.press('Enter');

@@ -85,3 +85,15 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     });
   }
 }
+
+
+test('CXU3 preserves the compact Forge action without scrolling', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  const save = mockV2Save('forgeRich', { nowMs: Date.now() });
+  await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
+  await page.goto('/'); await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+  await expect(page.getByTestId('craft-btn')).toBeInViewport({ ratio: 1 });
+  await page.getByTestId('craft-btn').click();
+  await expect(page.getByTestId('craft-confirm-btn')).toBeInViewport({ ratio: 1 });
+  await expect(page.getByTestId('craft-cancel-btn')).toBeInViewport({ ratio: 1 });
+});

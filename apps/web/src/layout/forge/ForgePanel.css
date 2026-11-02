@@ -11,12 +11,6 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 960px) {
-  .forge-cols {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
-  }
-}
 
 .forge-col-left,
 .forge-col-centre,
@@ -989,3 +983,11 @@
 
 .forge-preview-art { position:relative; display:grid; place-items:center; }
 .forge-preview-glyph { position:absolute; display:grid; place-items:center; }
+
+/* Preserve the compact panel's immediately reachable action while its choices scroll. */
+@media (max-width: 960px) {
+  .forge-cols { display: flex; flex-direction: column; height: auto; overflow: visible; }
+  .forge-col-left, .forge-col-centre, .forge-col-right { flex: none; overflow: visible; }
+  .forge-col-centre { order: -1; padding: var(--sp-3, 12px); }
+  .forge-col-centre .forge-action-area { order: -1; margin-top: 0 !important; margin-bottom: var(--sp-3, 12px); }
+}
