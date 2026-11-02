@@ -1,0 +1,40 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/reports/scorecard/cxu5/.mutants-z03ieZ/apps/web
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx (3 tests | 1 failed) 3759ms
+   × shows only three latest runs for the selected chapter and separates lifetime wins 872ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  16:51:07
+   Duration  5.76s (tests 68%, environment 15%, import 10%, transform 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/boss/BossMapScreen.test.tsx > shows only three latest runs for the selected chapter and separates lifetime wins
+AssertionError: expected <span></span> to be null
+
+- Expected:
+null
+
++ Received:
+<span>
+  Rematch
+   · 
+  9.9
+  s
+</span>
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx:57:49
+     55|   expect(within(past).getAllByRole('listitem')).toHaveLength(3);
+     56|   expect(within(past).getByText('Lifetime wins: 7')).toBeDefined();
+     57|   expect(within(past).queryByText(/9.9s|8.9s/)).toBeNull();
+       |                                                 ^
+     58|   expect(within(past).getAllByText('Rematch · 1.2s')).toHaveLength(3);
+     59|   expect(within(past).getAllByText('Win')).toHaveLength(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

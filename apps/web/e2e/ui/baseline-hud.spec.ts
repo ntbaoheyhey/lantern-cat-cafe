@@ -96,6 +96,36 @@ async function activateGuidanceWithKeyboard(page: Page, expected: 'map' | 'bag')
 }
 
 for (const viewport of sizes) {
+  for (const [fish, yarn] of [[8788, 256], [1_234_567, 12_345]]) {
+    test(`late chapter HUD keeps full balances and sync separate at ${viewport.width}x${viewport.height} (${fish})`, async ({ page }) => {
+      const errors: string[] = [];
+      page.on('pageerror', error => errors.push(error.message));
+      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      const save = mockV2Save('bossReadyStrong', { nowMs: Date.now(), chapter: 5 });
+      save.state.stacks.fish = fish!;
+      save.state.stacks.yarn = yarn!;
+      save.state.stacks.catKey = 4;
+      // Match the observed post-loss state, including its ordinary Explore guidance.
+      save.state.bossCooldownUntil = Math.floor(Date.now() / 1000) + v2.V2_CONFIG.boss.lossCooldownSeconds;
+      await page.addInitScript(({ key, save }) => {
+        localStorage.setItem(key, JSON.stringify(save));
+        localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
+      }, { key, save });
+      await page.goto('/');
+      await page.evaluate(() => document.fonts.ready);
+      await expectReadableChrome(page);
+      const separation = await page.locator('.shell-hud').evaluate(hud => ({
+        powerRight: hud.querySelector('.hud-power-chip')!.getBoundingClientRect().right,
+        syncLeft: hud.querySelector('.v2-sync-status-slot')!.getBoundingClientRect().left,
+      }));
+      expect(separation.powerRight).toBeLessThanOrEqual(separation.syncLeft);
+      await page.getByRole('tab', { name: 'Map', exact: true }).click();
+      await expectReadableChrome(page);
+      expect(errors).toEqual([]);
+    });
+  }
   for (const gated of [false, true]) {
     test(`shared HUD keeps XP and every status chip visible at ${viewport.width}x${viewport.height}${gated ? ' when gated' : ''}`, async ({ page }) => {
       const errors: string[] = [];

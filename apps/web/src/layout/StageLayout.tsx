@@ -28,10 +28,9 @@ import { RecentLootCard } from './home/RecentLootCard';
 import { EventLog } from './home/EventLog';
 import type { LoopEventV2 } from '../game/v2/events';
 import './home/home.css';
-import { BossGatePanel } from './boss/BossGatePanel';
+import { BossMapScreen } from './boss/BossMapScreen';
 import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
-import { ChapterMap } from '../map/ChapterMap';
 import { WelcomeBack } from './loot/WelcomeBack';
 import { LootSummary } from './loot/LootSummary';
 import { ChestReveal } from './loot/ChestReveal';
@@ -216,6 +215,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   useEffect(() => {
     setVoucher(null);
     setMintedNonce(null);
+    presentBoss({ type: 'reset' });
+    setChapter(null);
   }, [mode.demo, wallet.address]);
 
   const handleSelectScreen = (newScreen: ScreenId) => {
@@ -286,6 +287,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const fightBoss = async (selected: number) => {
     if (!state || !stats || bossRequest.current || presentation.hold || (fight && !fight.complete)) return;
     bossRequest.current = true;
+    setChapter(selected);
     setNotice('');
     const firstClear = !state.bosses.chapters.find((c) => c.chapter === selected)?.cleared;
     presentBoss({ type: 'begin', snapshot: liveSnapshot, syncStatus: liveSyncStatus, chapter: selected, maxHp: stats.hp, firstClear });
@@ -617,7 +619,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             <h2 className="v2-tabpanel-title">Map</h2>
             <div className="v2-panel-body-inner">
               {state ? (
-                <BossGatePanel
+                <BossMapScreen
+                  compact={width <= 1100}
+                  history={presentation.history}
                   state={state}
                   chapter={chapter ?? state.progress.chapter}
                   busy={actionBusy === 'fightBoss' || fight !== null}
@@ -625,15 +629,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                     void fightBoss(selected);
                   }}
                   onSelectChapter={setChapter}
-                >
-                  <ChapterMap
-                    currentChapter={state.progress.chapter}
-                    selectedChapter={chapter ?? state.progress.chapter}
-                    round={state.progress.round}
-                    clearedChapters={state.bosses.chapters.filter((c) => c.cleared).map((c) => c.chapter)}
-                    onSelect={setChapter}
-                  />
-                </BossGatePanel>
+                />
               ) : (
                 <p>Loading your cat…</p>
               )}
