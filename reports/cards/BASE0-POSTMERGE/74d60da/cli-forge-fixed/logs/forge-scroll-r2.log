@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('tab', { name: 'Forge', exact: true })[22m
+
+    at /Users/bao/.codex/worktrees/mega-base0-postmerge-74d60da/taskbar-hero/[eval1]:13:56 {
+  log: [
+    "  - waiting for getByRole('tab', { name: 'Forge', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

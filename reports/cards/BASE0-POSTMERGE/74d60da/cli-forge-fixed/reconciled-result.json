@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-11-02T07:01:09.193591+00:00",
+  "status": "PASS: BASE0 actual-main + phased live",
+  "main": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "historicalIndependentScores": {
+    "A": 97.64285714285714,
+    "B": 98
+  },
+  "heads": {
+    "VERIFIER_HEAD": "e4faf6351fc8163016f5450bd22ce3b41a4126d4",
+    "PR_HEAD": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "BASE_HEAD": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+    "TESTED_HEAD": "1aaa829cbfe70972e29f11ed9158a70896a4cba4"
+  },
+  "trees": {
+    "PR_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "BASE_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "TESTED_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1"
+  },
+  "treeEquality": true,
+  "verifierExit": 0,
+  "verifierBrowserPassed": 265,
+  "forgeTestsPassed": 96,
+  "actualMainFullBrowserEachSize": 265,
+  "actualMainRepeat12SpecsEachSize": 700,
+  "artifactFiles": 32,
+  "entryManifestStable": true,
+  "legacyLiveExit": 0,
+  "phasedLiveBothSizes": "PASS",
+  "fullNineStagePass": false,
+  "futurePhase": [
+    "CXC2 on-chain proof",
+    "CXU3 completed craft flow",
+    "CXU3 guest market browse"
+  ],
+  "visualReview": "All14 original screenshots reviewed before compaction; supplemental Forge scroll screenshot reviewed now. Fish cost row is reachable at1280 with scrollTop26 and fully visible/unobscured.",
+  "historicalFailuresRetained": [
+    "resume-20261102/stop-result.json",
+    "cli-20261102/reconciled-result.json",
+    "live-phased-cli/forge-scroll-r1-failure.json",
+    "live-phased-cli/forge-scroll-r2-failure.json",
+    "live-phased-cli/forge-scroll-r3-failure.json"
+  ],
+  "diagnosticCorrections": "R1 omitted first-run Help dismissal. R2/R3 omitted class confirmation, so navigation was not available (not an exact-case locator defect). R4 completes both UI steps; no assertion/timeout/code weakening.",
+  "next": "FXRB existing PR243 actual-main integration and full gates; no grade or merge authorized by this BASE0 result alone."
+}

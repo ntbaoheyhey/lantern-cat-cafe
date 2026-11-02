@@ -1,5 +1,11 @@
 # Runtime — ACTIVE CLI
 
+2026-11-02T07:01:09.193591+00:00: BASE0 complete through actual-main/phased-live gate. Direct scroll diagnostic closed its browser; no active mission test/preview. No helper/subagent/schedule. FXRB actual-main integration next.
+
+## Historical runtime
+
+# Runtime — ACTIVE CLI
+
 2026-11-02T06:52:55.491274+00:00: saved state verified after summary. No owned test/verifier/preview process; required/default ports free. CUA services preserved. No agents/helpers/schedules. Fixed safe verifier and phased live saved exits0 confirmed; visual review/checkpoint next. Local repair e4faf63 will be published with this verified table. Full scope remains active.
 
 ## Historical runtime

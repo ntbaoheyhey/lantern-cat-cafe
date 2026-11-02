@@ -1,10 +1,10 @@
 # Taskbar Hero — active CLI mission
 
-Updated 2026-11-02T06:52:55.491274+00:00. Mission incomplete; coordinator works alone. Private repository, main74d60da and all nine PR states/heads reverified; no mission automation or active test process.
+Updated 2026-11-02T07:01:09.193591+00:00. Mission incomplete; one coordinator in this session, no agents/helpers or schedules.
 
-BASE0 #246 remains merged with historical independent A97.64285714285714/B98. Actual-main full265/repeat700 at both desktop sizes remain valid. Retained safe verifier exit1: all checks except Forge passed, including265 browser cases; failure is incorrect `forge --offline test` option placement. Synthetic tested tree equals actual main. All32 deployed public files match the clean build and legacy live checks pass. The repaired verifier and phased live journeys have saved exits0; final Forge scrolling review and publication remain pending. No later merge until certification.
+BASE0 #246 is merged and actual-main/phased-live verified on74d60da. Historical independent scores A97.64285714285714/B98 remain unchanged. Full265 andrepeat700 pass at each desktop size; safe FORCE_ALL verifier includes265browser and96Forge tests, tested tree equals main; all32public files match; legacy live and current merged-core journeys pass. Full nine-step future flow awaits CXU3+CXC2. Failures are retained.
 
-Full P0–P3 scope remains active. [Rechecked refs](cards/CLI-RESUME-20261102/recheck/REPORT.md) · [Retained results](cards/BASE0-POSTMERGE/74d60da/cli-20261102/reconciled-result.json).
+FXRB#243 is next for actual-main integration, builder gates and separate fresh A/B self-grades. Every remaining P0–P3 item and regression stays in scope. No additional merge or score yet. [BASE0 evidence](cards/BASE0-POSTMERGE/74d60da/REPORT.md) · [Ledger](mega-ledger.md).
 
 ## Historical reports
 

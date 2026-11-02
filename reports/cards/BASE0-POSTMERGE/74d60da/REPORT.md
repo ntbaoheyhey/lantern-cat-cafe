@@ -1,3 +1,18 @@
+# BASE0 actual-main verification — PASS
+
+Updated 2026-11-02T07:01:09.193591+00:00. BASE0 PR246 merged as `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; historical independent A97.64285714285714/B98 remain unchanged. Actual main and the deployed merged-core phase are green. FXRB may now enter its own gates.
+
+- Actual-main full browser265/265 and12-spec repeat700/700 at each1280x720 and1600x900; core/type/lint/unit/default/classic/v2/build/import/link/bundle checks pass. Inherited game-rules2expected failures/11skips remain disclosed.
+- Safe ledger FORCE_ALL verifier exit0; tool `e4faf6351fc8163016f5450bd22ce3b41a4126d4`, PR `280ff4bed495fd28bd489eb5f2dcfd1910f21fc0`, base `74d60dab2cef8c31a3f2729d18719ff3021a9eda`, synthetic tested `1aaa829cbfe70972e29f11ed9158a70896a4cba4`. All three product trees equal `58b9abb2c30023dd33325603fa40bd3af13528a1`. Includes265browser cases and96Forge tests, pinned contracts/compiler, no ABI drift, clean retained checkout.
+- Public-artifact equality32/32, all emitted/public files with statuses and SHA256; entry manifest/HTML stable. Public config used only in memory. Provider exact-SHA production Ready evidence remains separate. Legacy live checker exit0; no v2 checker used.
+- Phased live journeys pass at both sizes: guest class entry, idle reward, locked-boss explanation, current Craft, Bag and wallet-required Market. Fourteen original captures plus one scrolled Forge capture, all below200000bytes. Forge Fish cost row is accessible by normal scrolling. No unexpected console/page error or wallet transaction.
+- Full nine-stage path is NOT certified: CXC2 proof, CXU3 completed craft flow and guest Market browse are outside the currently authorized phase.
+- Interrupted original verifier, incorrect Forge option attempt, and three scroll-diagnostic setup failures remain retained. Corrected command uses `forge test --offline`; corrected navigation dismisses Help and confirms class through UI. No failure was erased.
+
+Evidence: [reconciled result](cli-forge-fixed/reconciled-result.json), [raw verifier log](cli-forge-fixed/logs/verifier-raw.log), [artifact equality](cli-20261102/artifact-equality.json), [live journeys](live-phased-cli/summary.json), [visual review](live-phased-cli/visual-review.md), [scroll measurement](live-phased-cli/forge-scroll-r4.json).
+
+## Historical checkpoints
+
 # BASE0 actual-main verification — USER PAUSED
 
 Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.

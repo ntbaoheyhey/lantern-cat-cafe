@@ -1,9 +1,9 @@
 # Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T06:52:55.491274+00:00; user explicitly resumed in this session. Older pause lines are superseded.
+Updated 2026-11-02T07:01:09.193591+00:00; active mission, latest user resume controls.
 Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
 Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
-BASE0: MERGED / POSTMERGE INCOMPLETE. Historical independent A97.64285714285714/B98, floors passed. Actual-main full265/265 and12spec repeat700/700 at each1280x720/1600x900 passed. Do not rerun completed suites without changed code/new failure.
-Remaining BASE0: visual review and publish saved fixed-verifier/phased-live evidence. Fixed verifier exit0 (tool e4faf63, tested1aaa829 tree equals main); phased live bothsizes exit0. Artifact32/32 and legacy PASS; no nextmerge until review/checkpoint green.
+BASE0: MERGED / MAIN + PHASED LIVE PASS. Historical independent A97.64285714285714/B98 retained. Actual-main full265/repeat700 eachsize, safe verifier265browser+96Forge,32assets,legacy and phasedlive PASS. See postmerge REPORT.
+BASE0 finished: tested1aaa829 tree equals main74d60da; Forge scroll accessible at1280. Full nine-stage future flow still awaits CXU3+CXC2. All historical failures retained.
 Verified source queue: FXRB#243 26e7de8 -> CXP1#240 2b7ceeb -> CXL1#248 178f379 -> ART1#247 4df594a -> CXN3-FIX#250 a9b804c -> CXN3#244 6257c0e -> CXU5#249 c5b846e -> CXU4#251 d408ada. All unmerged/draft and need exact current-main gates.
 PR250 was closed on deleted BASE0base. Restored historicalbase280ff4b, reopened samePR, retargetedmain; sourceunchanged, CONFLICTING. Historicalbase remains. Do not duplicate PR or merge now.
 Full verified table and caveat re stale APIbaseSHA/UNKNOWN: cards/CLI-RESUME-20261102/verified-refs.json and REPORT.md; current ledger table is authoritative.
@@ -18,12 +18,11 @@ Checkpoint after each milestone/grade/merge/failure: <=80linehandoff, livingfina
 Verifier attempt after6529cf6: launcher59362absent, no retainedworktree, onlyVERIFIER_HEAD recorded in55byte rawlog; noexit/suites. INTERRUPTED/NOTVERIFIED. Evidence cards/BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json. Nothingkilled; required+default4173–4176portsfree.
 CLI launch correction: use E2E_PORT_SERVER=4442/E2E_PORT_API=4443; priorF2_WEB_PORT/F2_API_PORTnames incorrect but browser setup neverreached. Keep priorTMPDIR base0-pr246-jrzyXSs8.
 Retained CLI verifier exit1: tool032da94/PR280ff4b/base74d60da/tested9f5687a; tested tree equals actualmain58b9abb. All except Forge invocation PASS incl265browser. Failure: forge --offline test must be forge test --offline. Preserve original failure.
-CLI evidence reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102: artifact32/32, stable HTML, legacy exit0. Phased browser pending. New recheck table cards/CLI-RESUME-20261102/recheck.
+CLI evidence cli-forge-fixed/reconciled-result.json + live-phased-cli/summary.json. BASE0 main/live gate complete.
 No ownedtestprocess, required/default ports free. No helper/subagent/schedule. Actualmain and queue heads unchanged after fetch.
 Next3actions:
-1. All14 live screenshots reviewed before compaction; verify Forge cost-row scroll reachability at1280. Reconcile wrapper four-head/rawlog/tree and artifact proof.
-2. Publish complete BASE0 main/live checkpoint, retaining failed Forge attempt and historical grades.
-3. Only when BASE0 green, integrate actualmain into existing FXRB#243 and run builder plus separate fresh A/B self-grades.
-
-Latest real-state recheck: cards/CLI-RESUME-20261102/continuation-1350/REPORT.md. No source/ref change, no ownedtests/listeners.
-Scroll diagnostic R1 failed before class entry: Help overlay intercepted click; retain forge-scroll-r1-failure.json. Close Help through UI in corrected diagnostic; no product failure established.
+1. Integrate currentmain into existing FXRB#243 source26e7de8 without rewriting history; preserve historical dirty captures.
+2. Builder full gates on exact integrated head, then separate fresh self-graded A/B passes (B cleancheckout/differentports/testsfirst).
+3. Only after all floors/G1–G7/currentrefs/capacity pass: merge FXRB then full actualmain/live gates before CXP1.
+Latest verified refs: cards/CLI-RESUME-20261102/continuation-1350. No source/ref change; no ownedtest/listener.
+Scroll diagnostic R1 Help omission, R2/R3 class-confirm omission retained. R4 passes; earlier exact-case locator hypothesis corrected in visual-review.md.

@@ -23,7 +23,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / POSTMERGE VERIFY | 2 | 74d60da core/build/full265each/repeat700each PASS; wrapper Forge CLI failure retained | A97.642857/B98;merged74d60da;artifact32/32 and legacy live PASS; Forge repair/phased journey pending; no nextmerge |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / MAIN + PHASED LIVE PASS | 2 | 74d60da core/build/full265each/repeat700each; safe FORCE_ALL265browser+96Forge PASS | A97.642857/B98;artifact32/32, legacy/phased live PASS; full future nine-stage path pendingCXU3+CXC2 |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | abd64fa:200repeat/full272eachsize/type/linksPASS | Actor-oracle gap repaired;source26e7de8published;3visibilityvariants detected;independent/fullactualmain gates pending |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
