@@ -1,6 +1,10 @@
-STATUS: PAUSED BY USER — unfinished regression, no repair claim.
+STATUS: IN-PROGRESS — explicitly resumed; current verification pending.
 
-# CXP1 current-FXRB integration and pause handoff
+# CXP1 current-FXRB integration and repair
+
+Resume 2026-11-02T09:49:53+07:00: the user resumed after the pause. The one-line guard now preserves a saturated count without publishing another equal state. Store/isolation control18/18 passed. Four-file repair7393dc3 is committed on the prospective integration, with fresh full verification and mutation controls now pending/running. Source64cf350 and PR240 have not moved. The paused record below is historical, retained with its failing regression.
+
+## Historical pause snapshot
 
 Saved 2026-11-02T08:37:42+07:00. User explicitly requested a handoff and pause. Do not launch tests, change product code, merge or release until an explicit resume.
 

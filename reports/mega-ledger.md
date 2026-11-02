@@ -1,6 +1,6 @@
 # Mega ledger — living draft
 
-**PAUSED BY USER: explicit handoff-and-pause request2026-11-02.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**USER RESUMED: latest explicit continue instruction2026-11-02.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
 
@@ -10,7 +10,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | abd64fa:200repeat/full272eachsize/type/linksPASS | Actor-oracle gap repaired;source26e7de8published;3visibilityvariants detected;independent/fullactualmain gates pending |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
-| 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 3c202d6rootPASS before newcapregressionFAIL1/17 | PAUSED;WIPtestsaved;productionfixnotapplied;source64cf350unchanged;actual-main/grades pending |
+| 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 3c202d6rootPASS before newcapregressionFAIL1/17 | RESUMED;repair7393dc3/18focusedPASS;freshfullverificationrunning;source64cf350unchanged;actual-main/grades pending |
 | 5 | CXL1 | main | ai/codex-cxl1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/248 | IN-PROGRESS | 0 | Preliminary7731a65:rules402pass;webtype/Deno/v2build | Actual-main full gates and grades pending |
 | 6 | CXU4 | main | ai/codex-cxu4 | https://github.com/ntbaoheyhey/taskbar-hero/pull/251 | DRAFT / SCOPED SOURCE CHECKS | 0 | Preliminaryb06a68d:58unit/200browser/effects20/type | Publishedd408ada:56focused+19onboarding PASS;draftPR251created;fullgates/grades pending;R1failure retained |
 | 7 | CXU3 | main | ai/codex-cxu3 | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
