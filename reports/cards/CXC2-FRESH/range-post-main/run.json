@@ -1,0 +1,71 @@
+{
+  "root": "/private/tmp/tbh-main-after-cxc2-range",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-post-main",
+  "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+  "commands": [
+    [
+      "install",
+      "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "browser-1280x720",
+      "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5060 E2E_PORT_V2=5061 E2E_PORT_SERVER=5062 E2E_PORT_API=5063 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600x900",
+      "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5060 E2E_PORT_V2=5061 E2E_PORT_SERVER=5062 E2E_PORT_API=5063 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "live-asset-before",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-before.json"
+    ],
+    [
+      "live-health",
+      "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs"
+    ],
+    [
+      "live-phased-proof",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-phased-proof-100.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/phased"
+    ],
+    [
+      "live-asset-after",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2-range 666088ce06ce0c03485f46371b8fd7c22a99e386 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-live/artifact-after.json"
+    ]
+  ]
+}

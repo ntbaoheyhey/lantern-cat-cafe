@@ -34,3 +34,6 @@ Head df83851f5f653f25072f116c6bfa9f3ad02c7936 passes fresh A96: core2423,317 bro
 
 ## Release repair fresh B complete
 Fresh B96 on clean df83851, tests first then full five-file diff. Core2423,40 both-size targeted repeats,38 classic cases and10 distinct mutants pass; A317×2 is shared on the identical head. A96/B96 meet all floors. The stricter100-block live guard passes23 controls and now requires available recent-event results. Fix PR and actual-main/live verification remain.
+
+## Range repair merged; strict release verification active
+PR254 merged as666088ce06ce0c03485f46371b8fd7c22a99e386. Its tree equals reviewed df83851 exactly; requested author/email/skip-ci suffix verified. Actual-main and live checks run sequentially in /private/tmp/tbh-main-after-cxc2-range, PID82005,5060–5063. The live probe now requires an available100-block event result as well as code/linkage/asset/health proofs. Unrelated merges remain held until acceptance.
