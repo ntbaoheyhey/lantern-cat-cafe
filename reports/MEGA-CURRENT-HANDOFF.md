@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T07:01:09.193591+00:00; active mission, latest user resume controls.
+Updated 2026-11-02T07:04:36.858933+00:00; active mission, latest user resume controls.
 Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
 Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
 BASE0: MERGED / MAIN + PHASED LIVE PASS. Historical independent A97.64285714285714/B98 retained. Actual-main full265/repeat700 eachsize, safe verifier265browser+96Forge,32assets,legacy and phasedlive PASS. See postmerge REPORT.
@@ -24,5 +24,5 @@ Next3actions:
 1. Integrate currentmain into existing FXRB#243 source26e7de8 without rewriting history; preserve historical dirty captures.
 2. Builder full gates on exact integrated head, then separate fresh self-graded A/B passes (B cleancheckout/differentports/testsfirst).
 3. Only after all floors/G1–G7/currentrefs/capacity pass: merge FXRB then full actualmain/live gates before CXP1.
-Latest verified refs: cards/CLI-RESUME-20261102/continuation-1350. No source/ref change; no ownedtest/listener.
+Latest verified refs: cards/CLI-RESUME-20261102/continuation-fxrb. No source/ref change; no ownedtest/listener.
 Scroll diagnostic R1 Help omission, R2/R3 class-confirm omission retained. R4 passes; earlier exact-case locator hypothesis corrected in visual-review.md.

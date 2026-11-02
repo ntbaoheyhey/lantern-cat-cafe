@@ -1,5 +1,11 @@
 # Runtime — ACTIVE CLI
 
+2026-11-02T07:04:36.858933+00:00: saved BASE0 evidence and current refs verified before FXRB. Required/default ports free; no owned test/preview; unrelated services preserved. No mission automation or cron. No helper/subagent/new chat. See cards/CLI-RESUME-20261102/continuation-fxrb.
+
+## Historical runtime
+
+# Runtime — ACTIVE CLI
+
 2026-11-02T07:01:09.193591+00:00: BASE0 complete through actual-main/phased-live gate. Direct scroll diagnostic closed its browser; no active mission test/preview. No helper/subagent/schedule. FXRB actual-main integration next.
 
 ## Historical runtime
