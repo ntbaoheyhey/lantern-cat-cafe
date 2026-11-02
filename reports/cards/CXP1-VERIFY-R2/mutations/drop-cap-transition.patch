@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/pets/state.ts b/apps/web/src/pets/state.ts
+index a7e87d5..185dd88 100644
+--- a/apps/web/src/pets/state.ts
++++ b/apps/web/src/pets/state.ts
+@@ -89,7 +89,7 @@ export class PetsStore {
+     if (!count(delta) || delta === 0) return;
+     const old = this.state.killCounts[petsRules.PET_KILL_TARGET] ?? 0;
+     const next = Math.min(Number.MAX_SAFE_INTEGER, old + delta);
+-    if (next === old) return;
++    if (next === Number.MAX_SAFE_INTEGER) return;
+     this.publish({ ...this.state, killCounts: Object.freeze({ [petsRules.PET_KILL_TARGET]: next }) });
+   }
+   equip(id: string): petsRules.PetEquipResult {

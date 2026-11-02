@@ -2,7 +2,7 @@ STATUS: IN-PROGRESS — explicitly resumed; current verification pending.
 
 # CXP1 current-FXRB integration and repair
 
-Resume 2026-11-02T09:49:53+07:00: the user resumed after the pause. The one-line guard now preserves a saturated count without publishing another equal state. Store/isolation control18/18 passed. Four-file repair7393dc3 is committed on the prospective integration, with fresh full verification and mutation controls now pending/running. Source64cf350 and PR240 have not moved. The paused record below is historical, retained with its failing regression.
+Resume 2026-11-02T09:49:53+07:00: the user resumed after the pause. The one-line guard now preserves a saturated count without publishing another equal state. Store/isolation control18/18 passed. Four-file repair7393dc3 is committed on the prospective integration, with current-head root/type/lint/build/G3 checks passed, four detected cap mutations and two18-case green controls. Full1280passed280/280; full1600 and pets repeats are running/pending. Source2b7ceeb is saved locally with18focused tests/typecheck passed; it has not been pushed. Source64cf350 and PR240 have not moved. The paused record below is historical, retained with its failing regression.
 
 ## Historical pause snapshot
 

@@ -1,0 +1,23 @@
+{
+  "candidate": "7393dc3b47ec1bac4786e382659b0710072b4ace",
+  "baseline": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "localDate": "2026-11-02",
+  "method": "sum individually gzip -n -9 compressed production JS/CSS from the direct assets directory; E2E subdirectories excluded",
+  "baseline_reused_from": "../CXN3-FIX/local-checks/bundle-budget-a9b804.json",
+  "baseline_record_sha256": "730934289e5317840291d5a3adaac91ddac8e7d9e44e3e7ca702d260be880eaf",
+  "baseline_reason": "same-day main1fb25ed build; main ref, lockfile, web package/config and public assets unchanged; original build logs retained",
+  "limitPct": 5,
+  "classic": {
+    "candidateGzipBytes": 666181,
+    "mainGzipBytes": 663477,
+    "growthPct": 0.4075499226046997,
+    "assets": 11
+  },
+  "v2": {
+    "candidateGzipBytes": 680441,
+    "mainGzipBytes": 678033,
+    "growthPct": 0.35514495607145147,
+    "assets": 17
+  },
+  "passed": true
+}
