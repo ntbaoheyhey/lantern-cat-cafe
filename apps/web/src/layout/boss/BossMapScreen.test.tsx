@@ -59,3 +59,17 @@ it('shows only three latest runs for the selected chapter and separates lifetime
   expect(within(past).getAllByText('Win')).toHaveLength(2);
   expect(within(past).getByText('Loss')).toBeDefined();
 });
+
+it('preserves the original compact panel and pinned fight action for smaller viewports', () => {
+  const onFight = vi.fn();
+  render(<BossMapScreen state={state()} chapter={1} busy={false} onFight={onFight} onSelectChapter={vi.fn()} history={[]} compact />);
+  const gate = screen.getByRole('region', { name: 'Boss Gate' });
+  const map = within(gate).getByRole('navigation', { name: 'Chapter Map' });
+  expect(map.classList.contains('v2-chapter-map--compact')).toBe(true);
+  expect(map.classList.contains('v2-chapter-map--path')).toBe(false);
+  expect(screen.queryByRole('region', { name: 'Past runs' })).toBeNull();
+  const action = within(gate).getByRole('button', { name: 'Rematch' });
+  expect(action.closest('.boss-gate-actions')).not.toBeNull();
+  fireEvent.click(action);
+  expect(onFight).toHaveBeenCalledWith(1);
+});

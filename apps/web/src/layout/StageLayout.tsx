@@ -620,6 +620,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             <div className="v2-panel-body-inner">
               {state ? (
                 <BossMapScreen
+                  compact={width <= 1100}
                   history={presentation.history}
                   state={state}
                   chapter={chapter ?? state.progress.chapter}

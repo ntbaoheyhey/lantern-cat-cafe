@@ -5,17 +5,20 @@ import { bossRewardPreview } from './mapDetails';
 import './BossMapScreen.css';
 import { BossKeyHint } from './BossKeyHint';
 
-export function BossMapScreen({ history, ...props }: BossGatePanelProps & { history: readonly BossRun[] }) {
+export function BossMapScreen({ history, compact = false, ...props }: BossGatePanelProps & { history: readonly BossRun[]; compact?: boolean }) {
   const { state, chapter, onSelectChapter } = props;
   const clear = state.bosses.chapters.find((entry) => entry.chapter === chapter);
   const firstClear = !clear?.cleared;
   const runs = history.filter((run) => run.chapter === chapter).slice(0, 3);
+  const map = <ChapterMap presentation={compact ? undefined : 'path'} currentChapter={state.progress.chapter} selectedChapter={chapter}
+    round={state.progress.round} clearedChapters={state.bosses.chapters.filter((entry) => entry.cleared).map((entry) => entry.chapter)}
+    onSelect={onSelectChapter} />;
+  // Preserve the original scroll region and pinned action below the full Map's desktop breakpoint.
+  if (compact) return <BossGatePanel {...props}>{map}</BossGatePanel>;
   return (
     <div className="boss-map-screen">
       <div className="boss-map-world">
-      <ChapterMap presentation="path" currentChapter={state.progress.chapter} selectedChapter={chapter}
-        round={state.progress.round} clearedChapters={state.bosses.chapters.filter((entry) => entry.cleared).map((entry) => entry.chapter)}
-        onSelect={onSelectChapter} />
+      {map}
       {state.currencies.keys < 1 && <BossKeyHint keys={state.currencies.keys} />}
       </div>
       <div className="boss-map-sidebar">

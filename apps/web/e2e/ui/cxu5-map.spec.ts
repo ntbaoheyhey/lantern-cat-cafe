@@ -16,6 +16,17 @@ async function enter(page: Page, keys = 1, chapter = 1) {
   await expect(page.getByRole('region', { name: 'Boss Gate' })).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
 }
+test('preserves the compact boss panel and reachable Fight below the desktop breakpoint', async ({ page }) => {
+  for (const size of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 1024, height: 600 }]) {
+    await page.setViewportSize(size);
+    await enter(page);
+    await expect(page.getByRole('navigation', { name: 'Chapter Map' })).toHaveClass(/v2-chapter-map--compact/);
+    const fight = page.getByRole('button', { name: 'Fight', exact: true });
+    await expect(fight).toBeInViewport();
+    await expect(fight).toBeEnabled();
+    await expect(page.locator('.boss-map-screen')).toHaveCount(0);
+  }
+});
 for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
   test.describe(`${size.width}x${size.height}`, () => {
     test.use({ viewport: size });
