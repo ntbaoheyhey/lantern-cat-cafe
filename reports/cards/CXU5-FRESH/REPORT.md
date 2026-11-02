@@ -43,3 +43,8 @@ Self-graded (fresh pass):94/100 at f846b49; zero auto-fails. Clean tests precede
 
 ## Merge
 PR249 merged as1b299c4 at2026-11-02T18:02:48Z; exact tree equals verified f846b49 (ca5f56d...). Requested author/email and final skip-ci suffix verified. Actual-main fresh checkout /private/tmp/tbh-main-after-cxu5 now runs full core/browser checks on4720–4723, PID7827; live identity/legacy/phased checks pending. No next merge before these pass.
+
+Initial post-merge live checks passed all32 asset hashes before/after, legacy health and eight-stage guest paths at both sizes. The reused phased helper still had stale T014 wording and a stale relative proof label in diagnostic metadata, despite enforcing the correct1b299c4 head and current asset hash. Raw outputs remain in live/. Helper metadata is corrected to the actual in-memory build and absolute proof path; live-metadata-corrected re-runs the unchanged guest assertions and final asset comparison. No application change or hidden assertion retry is involved.
+
+## Actual-main and live acceptance complete
+PASS on actual main1b299c4: all12 core/build/browser checks,302/302 at each desktop size;32/32 production assets match before/after;22/22 legacy health checks; eight-stage merged-core guest path at both sizes with zero console/page errors. Corrected live proof metadata is in live-metadata-corrected; original raw pass remains separate. Zero Actions runs on both feature/release SHAs. This is not the future full nine-stage/on-chain demo claim and not backend deployment identity. CXU5 is DONE; next CXU4, independent of #244. See acceptance.json.

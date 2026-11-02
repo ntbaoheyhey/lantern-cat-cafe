@@ -1,7 +1,7 @@
-# Active fresh-session report — 2026-11-03T00:02:04+07:00
+# Active fresh-session report — 2026-11-03T01:14:11+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
-CXU5 #249 merged as1b299c4 after self-graded fresh passes A94/B94, zero auto-fails. Main tree exactly matches verified f846b49; correct author/email and skip-ci suffix confirmed. Actual-main core/full-browser and production asset/legacy/phased checks are now pending. No next merge until they pass.
+CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
 CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
