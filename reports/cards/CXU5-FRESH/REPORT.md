@@ -21,3 +21,5 @@ A exact a4dc85e full1280: 296 pass / 1 fail. G2 320×568 found Fight below the v
 Repair verification on 3678bc3: focused units 52/52 and browser 28/28 pass, including the unchanged G2 failing assertion. Exact-head A rerun now active. No passing grade yet.
 
 Second audit harness failure: ui-a-r3 signed-in 1280 passed nine screens; 1600 timed out loading the app. Parallel root build/classic build emptied dist, deleting the audit's nested dist/ui-audit-signed-in. output-race.json records the missing directory and exact build timestamps. The corrected harness allocates a unique /tmp build directory; no assertion/timeout is changed. Re-run is required after this infrastructure fix, not a retry of unchanged conditions. Product fix count remains one.
+
+Repaired-head progress 3678bc3: A core checks (2,390 unit/script cases) and 90 Map repeats green; six semantic mutants killed. Isolated ui-a-r4 guest/signed audits green at both sizes; effects still running. Full browser matrix and B not yet complete.

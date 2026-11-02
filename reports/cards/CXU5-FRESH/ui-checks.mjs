@@ -20,6 +20,6 @@ for (const [name, original, adapt, args] of probes) {
   results.push({name, original, args, exit: result.status, adaptations: 'Ports, isolated temporary audit build, and Map-only screenshot output; --strict audits and existing viewport option; assertions unchanged'});
   writeFileSync(`${out}/commands.json`, JSON.stringify(results, null, 2));
   console.log(name, `exit=${result.status}`);
-  if (result.status !== 0) break;
+  if (result.status !== 0) { process.exitCode = 1; break; }
  } finally { unlinkSync(temporary); }
 }

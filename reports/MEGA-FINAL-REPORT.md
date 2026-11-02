@@ -1,15 +1,15 @@
 # Active fresh-session report — 2026-11-03T00:02:04+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
-CXU5 #249 local a4dc85e contains main. Pass 1: 51 focused unit cases, 18 browser cases green.
-Grader A so far: typecheck/lint/build/classic/links/bundle/Deno green; 2,389 unit/script cases pass,
-with the inherited 2 expected failures and 11 skips unchanged. 80 Map repeats pass at both sizes.
-Five new semantic mutants were caught by assertions after a green control. Strict guest audit
-covers 18 screen/viewport combinations with zero findings. Resize/full browser and UI effects pending.
-A gate subsequently FAILED at 320×568 (Fight below viewport): full1280 296 pass / 1 fail.
-Fix round 1 committed as 3678bc3; focused checks running. No pass score, merge or live claim.
-B checkout is still old a4dc85e and will be refreshed before its review.
-Initial prose test-count error and UI launcher quoting failure are corrected and retained in evidence.
+CXU5 #249 local 3678bc3 contains main and fixes the narrow-screen Fight regression found by A.
+Previous a4dc85e: full1280 296 pass / 1 fail; no merge. Failure retained, fix round 1.
+Repaired head: 52 focused units and 28 focused browser cases pass, including the unchanged G2 assertion.
+Fresh A core: 2,390 unit/script cases, type/lint/build/classic/links/bundle/Deno pass;
+90 Map repeats pass and six semantic mutants are caught. Inherited 2 expected failures/11 skips unchanged.
+Isolated guest/local-signed UI audits pass at both desktop sizes; effects/resize/full browser matrix pending.
+A test-runner build-directory collision was diagnosed and fixed without changing assertions; failure retained.
+Clean B checkout now matches 3678bc3; tests-first fresh review prepared, not started.
+No passing current grade, merge or live claim.
 
 CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
