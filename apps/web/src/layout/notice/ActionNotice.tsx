@@ -9,6 +9,7 @@ import {
   useActionNoticeState,
   type ActionNoticeState,
 } from '../../game/v2/storeV2';
+import { Banner } from '../../ui';
 import './ActionNotice.css';
 
 export interface ActionNoticeProps {
@@ -139,7 +140,8 @@ export function ActionNotice({ state: propState, onClear }: ActionNoticeProps) {
   }
 
   return (
-    <div
+    <Banner
+      tone={activeState.code === 'offline' ? 'offline' : activeState.code === 'server_busy' ? 'error' : 'warning'}
       ref={containerRef}
       role="status"
       aria-live="polite"
@@ -147,6 +149,6 @@ export function ActionNotice({ state: propState, onClear }: ActionNoticeProps) {
       className="action-notice"
     >
       <span className="action-notice-text">{text}</span>
-    </div>
+    </Banner>
   );
 }

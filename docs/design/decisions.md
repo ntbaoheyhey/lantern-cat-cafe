@@ -10,4 +10,5 @@
 
 - [Bound v2 request input before authentication](../decisions/cxn3-request-body-limits.md): preserve the8192-byte contract, bound stream lifetime and cancellation, and retain authentication/budget gates before game work.
 
+- [CXU4 Hero, Help and shared states](../decisions/cxu4-hero-help.md)
 - [CXU5 Map data and presentation](../decisions/cxu5-map-data.md): real limits, advisory boss power, session-scoped history, preserved compact map.

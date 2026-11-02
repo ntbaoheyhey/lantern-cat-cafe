@@ -131,3 +131,22 @@
   padding-left: var(--sp-4, 16px);
   color: var(--muted, #c3aed0);
 }
+
+/* Searchable guide: one answer at a time, unchanged rule-backed text. */
+.help-v2-container { flex:1; min-height:0; max-width:none; }
+.help-panel-title { color:var(--text); }
+.help-columns { display:grid; grid-template-columns:260px minmax(0,1fr); gap:var(--sp-4,16px); flex:1; min-height:350px; }
+.help-topic-list,.help-answer { padding:var(--sp-4,16px); background:var(--surface); border:2px solid var(--border); box-shadow:var(--pixel-shadow); min-width:0; }
+.help-topic-list { display:flex; flex-direction:column; align-items:stretch; gap:var(--sp-2,8px); }
+.help-topic-list label { font-family:var(--font-display); }
+.help-topic-list input { width:100%; box-sizing:border-box; padding:var(--sp-2,8px); color:var(--text); background:var(--bg); border:2px solid var(--border); font:inherit; }
+.help-topic-count { color:var(--muted); font-size:var(--fs-xs,.75rem); }
+.help-topic-list button { display:flex; justify-content:space-between; gap:var(--sp-2,8px); text-align:left; background:transparent; color:var(--text); border:0; border-bottom:1px dashed var(--border); padding:var(--sp-2,8px) 0; font:inherit; cursor:pointer; }
+.help-topic-list button[aria-current=true] { color:var(--accent); font-weight:700; }
+.help-answer { display:flex; flex-direction:column; gap:var(--sp-4,16px); }
+.help-v2-section { border:0; background:transparent; padding:0; gap:var(--sp-4,16px); }
+.help-v2-section[hidden] { display:none; }
+.help-v2-section h3 { color:var(--text); font-size:var(--fs-lg,1.25rem); }
+.help-v2-term,.help-v2-code { color:var(--text); }
+.help-v2-action { margin-top:auto; }
+@media(max-width:700px) { .help-columns { grid-template-columns:1fr; } }

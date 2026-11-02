@@ -24,6 +24,9 @@ const pairs: [string, string, number][] = [
   // XP fill is a graphical indicator, so WCAG non-text contrast is 3:1.
   ['--good', '--surface-2', 3],
   ['--on-accent', '--accent', 4.5], ['--border', '--bg', 3],
+  // CXU4: selected Help topic, toast text and modal/button focus outlines.
+  ['--accent', '--surface', 4.5], ['--muted', '--surface-2', 4.5],
+  ['--focus', '--surface', 3], ['--focus', '--surface-2', 3],
 ];
 
 describe('theme WCAG contrast', () => {
