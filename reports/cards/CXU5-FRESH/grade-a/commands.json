@@ -1,0 +1,98 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:55:49.761158+00:00",
+    "endedAt": "2026-11-02T16:55:57.594763+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:55:57.601895+00:00",
+    "endedAt": "2026-11-02T16:56:05.097545+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:56:05.105477+00:00",
+    "endedAt": "2026-11-02T16:56:55.253459+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:56:55.262328+00:00",
+    "endedAt": "2026-11-02T16:56:55.994750+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:56:56.003225+00:00",
+    "endedAt": "2026-11-02T16:56:56.199335+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:56:56.208221+00:00",
+    "endedAt": "2026-11-02T16:57:04.181314+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:57:04.188507+00:00",
+    "endedAt": "2026-11-02T16:57:04.245985+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:57:04.252310+00:00",
+    "endedAt": "2026-11-02T16:57:09.344225+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:57:09.350824+00:00",
+    "endedAt": "2026-11-02T16:57:09.424665+00:00"
+  },
+  {
+    "name": "repeat-map",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts --repeat-each=10 --workers=1 --retries=0 --reporter=line",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:57:09.431276+00:00",
+    "endedAt": "2026-11-02T16:58:37.002224+00:00"
+  },
+  {
+    "name": "repeat-resize",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts --repeat-each=20 --workers=1 --retries=0 --reporter=line",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 0,
+    "startedAt": "2026-11-02T16:58:37.008749+00:00",
+    "endedAt": "2026-11-02T17:04:33.008301+00:00"
+  },
+  {
+    "name": "browser-1280",
+    "command": "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=1 --retries=0 --reporter=line",
+    "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+    "exit": 1,
+    "startedAt": "2026-11-02T17:04:33.017346+00:00",
+    "endedAt": "2026-11-02T17:09:55.112157+00:00"
+  }
+]

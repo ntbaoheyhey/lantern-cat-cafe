@@ -10,3 +10,10 @@ No new product behavior was needed in pass 1. Backend blocker #244 is unrelated.
 Count correction: initial ledger prose said 72; the retained pass1 unit log says 51. No test failed or was omitted from that focused command. Exact-head verification uses raw receipts.
 
 Audit launch attempt ui-a failed on a quoting typo before any test ran. Corrected harness passes node --check; ui-a-r2 runs unchanged assertions on reserved ports. Original failure retained.
+
+Verification allocation: one complete browser matrix per exact head (both viewports) in A. B uses a separate clean checkout, frozen install, other ports, fresh core/build/unit checks, all classic cases and ten changed-spec repeats at both sizes, plus a different five-mutant set; the shared exact-head full-browser receipts are explicitly cited rather than falsely claimed as another run. Historical whitespace in raw logs is preserved; product/docs diff whitespace is clean. No new author/suffix violations; inherited merge 806800d is retained under the no-rewrite rule and excluded from main by the intended correctly authored squash.
+
+PR #249 body refreshed: stale BASE0-unmerged/current-blocked wording removed; active source a4dc85e and only completed fresh checks identified. Full suites and B are explicitly pending.
+
+## First product failure and repair, 2026-11-03
+A exact a4dc85e full1280: 296 pass / 1 fail. G2 320×568 found Fight below the viewport; full1600 stopped by the failed gate. No grade pass or merge. Root cause: desktop path was stacked before the action on narrow widths. Fix 3678bc3 restores the old compact BossGatePanel at <=1100px, retaining existing scroll/pinned-action behavior and all old assertions. Adds compact component and 320/390/1024 browser coverage. This is fix round 1 of 3. Focused repair tests running; all previous receipts remain tied to a4dc85e.

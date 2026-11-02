@@ -6,7 +6,9 @@ Grader A so far: typecheck/lint/build/classic/links/bundle/Deno green; 2,389 uni
 with the inherited 2 expected failures and 11 skips unchanged. 80 Map repeats pass at both sizes.
 Five new semantic mutants were caught by assertions after a green control. Strict guest audit
 covers 18 screen/viewport combinations with zero findings. Resize/full browser and UI effects pending.
-No current score, merge or live claim. Clean B checkout installed with frozen lockfile.
+A gate subsequently FAILED at 320×568 (Fight below viewport): full1280 296 pass / 1 fail.
+Fix round 1 committed as 3678bc3; focused checks running. No pass score, merge or live claim.
+B checkout is still old a4dc85e and will be refreshed before its review.
 Initial prose test-count error and UI launcher quoting failure are corrected and retained in evidence.
 
 CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.

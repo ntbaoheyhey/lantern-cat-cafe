@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T00:02:04+07:00. ACTIVE: fresh single-session execution; no helpers or timers.
+Updated: 2026-11-03T00:11:37+07:00. ACTIVE single-session execution.
 Authority: user's 2026-11-02 evening prompt supersedes historical orchestration/dependencies.
 STOP preserved in /Users/bao/taskbar-hero/.codex-orchestrator/STOP; never run orchestrator.py.
 Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>.
@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (verified fetch).
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local a4dc85e | A: core/2389 cases +80 Map repeats +5 mutants green; resize/full/UI pending; current main integrated |
+| CXU5 | #249 / local 3678bc3 | A failed 320px Fight visibility; fix round 1 committed; focused checks running; current main integrated |
 | CXU4 | #251 / 1581084 | NEXT after A; not blocked by #244 |
 | CXU3 + CXC2 | pending | Build after A+B; frontend, independent of #244 |
 | T011 + T012 + content + ART/T013 | local 12d0355 / a35a280 | P1; publish and integrate default OFF |
@@ -26,10 +26,10 @@ Verified initial PR metadata (base SHA is GitHub-reported; current origin/main a
 
 Worktrees: ledger /private/tmp/tbh-t001-ledger; CXU5 /private/tmp/tbh-t008-cxu5.
 B clean checkout: /private/tmp/tbh-cxu5-fresh-b at a4dc85e; frozen install/submodules pass.
-In-flight owned PIDs: 82640 grade-A tests; 85162 audit/effects (cwd CXU5); 4740–4743 allocated. Ports 4700–4703 A, 4740–4743 UI active; 4710–4713 B and 4720–4723 main free.
+In-flight owned PIDs: 87649 repair-r1 (cwd CXU5); 4700–4703. Other owned runs finished. Ports 4700–4703 repair active; 4710–4713 B, 4720–4723 main, 4740–4743 UI free.
 Unrelated listeners left untouched: 18457, 49986, OS ports 5000/7000/64xxx/65xxx.
 Safety: no secrets, live DB mutation/migration/function deploy, Vercel changes, mainnet or submission.
 No VITE_GAME_V2 setting changes. Existing local test configurations remain isolated.
 Historical scores/evidence are not current grades. Grade files will say self-graded (fresh pass).
 Current owner step: reports/OPTIONAL-USER-STEPS.md T007; exact recovery path already present.
-Next 3: finish exact a4dc85e A gate; clean checkout B tests then full diff; merge only if both pass and verify main/live.
+Next 3: verify compact-panel repair; rerun A on 3678bc3 then clean B; merge only after both gates, then main/live.

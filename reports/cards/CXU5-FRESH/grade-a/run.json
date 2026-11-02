@@ -1,0 +1,59 @@
+{
+  "root": "/private/tmp/tbh-t008-cxu5",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/grade-a",
+  "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "repeat-map",
+      "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts --repeat-each=10 --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-resize",
+      "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts --repeat-each=20 --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1280",
+      "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600",
+      "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=1 --retries=0 --reporter=line"
+    ]
+  ]
+}
