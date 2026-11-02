@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-02T07:57:26+07:00",
+  "command": "bash scripts/verify-pr.sh 250",
+  "exit_code": 0,
+  "verifier_head": "9df9316c6492e594e3bb1b749f6631d5ba40e6e5",
+  "verifier_implementation_commit": "84c37e85f725693eb8083d774d81252d108a7517",
+  "pr_head": "a9b804cec74c866b0b06ca69142d10db3b642a75",
+  "base_head": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "tested_head": "a9b804cec74c866b0b06ca69142d10db3b642a75",
+  "worktree_status": "",
+  "retained_worktree": "/Users/bao/.codex/handoffs/taskbar-hero/reliability/cxn3-pr250-GGwefMJH/verify-pr-250",
+  "ports": [
+    4510,
+    4511,
+    4512,
+    4513
+  ],
+  "ports_free_after": true,
+  "session": 27003,
+  "former_pid": 84480,
+  "process_terminal": true,
+  "environment": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "empty",
+    "VITE_SUPABASE_ANON_KEY": "empty",
+    "VITE_ALLOW_MOCK_AUTH": "0"
+  },
+  "comments_posted": false,
+  "browser_count": 274,
+  "viewport_scope": "standard config defaults and specs own declared viewports; prior separate full 1280 and 1600 runs remain distinct evidence",
+  "contract_checks": "not applicable: no contract changes, conditional verifier skip",
+  "log_sha256": "5cdd1e5813134acac0172fd9a1301f9f3a96ddfbc120fc3c6e0d0b517e72c43e",
+  "summary_sha256": "d4ed97529dd5006352b5048b1907bde9d19629a70e7652dd252cd0ab7693f2ed",
+  "limitations": [
+    "not independent grading",
+    "not actual-main after prerequisite merges",
+    "not backend release or live repair proof"
+  ]
+}

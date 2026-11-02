@@ -1,6 +1,6 @@
 # CXN3-FIX verification — published draft, not merge-ready
 
-Candidate a9b804cec74c866b0b06ca69142d10db3b642a75 is published as draft [PR #250](https://github.com/ntbaoheyhey/taskbar-hero/pull/250), based on repaired BASE0280ff4b. Remote refs and PR metadata were rechecked on2026-11-02 at07:52–07:55UTC+7: main remains1fb25ed, the draft is open and mergeable, and its six-file/two-commit scope is unchanged. It is stacked only to expose the diff: never merge it into BASE0; integrate and retarget to actual main after prerequisites. The coordinator implemented and verified it directly; no subagent or helper runner was used. No backend release or player-state write is claimed.
+Candidate a9b804cec74c866b0b06ca69142d10db3b642a75 is published as draft [PR #250](https://github.com/ntbaoheyhey/taskbar-hero/pull/250), based on repaired BASE0280ff4b. Remote refs and PR metadata were rechecked on2026-11-02: main remains1fb25ed, the draft is open and mergeable, and its six-file/two-commit scope is unchanged. It is stacked only to expose the diff: never merge it into BASE0; integrate and retarget to actual main after prerequisites. The coordinator implemented and verified it directly; no subagent or helper runner was used. No backend release or player-state write is claimed.
 
 ## Behavior
 
@@ -17,6 +17,7 @@ The shared v2 handler rejects actual input above8192bytes before authentication.
 | Deno generation/drift/import guard | PASS;18functions clean |local-checks/deno-*-a9b804.log |
 | Links and bundle secret scans | PASS |local-checks/links-a9b804.log; bundle-scan*-a9b804.log |
 | Same-day main comparison |classicgzip+0.144240%;v2+0.140554%, below5%; static public tree unchanged |local-checks/bundle-budget-a9b804.json and comparison/build logs |
+| Safe standard PR verifier | PASS exit0; exact a9b804; install/drift/type/lint/unit/build/browser274 and clean retained checkout |local-checks/verify-pr-250-result.json;verify-pr-250-a9b804.log;verify-pr-250-summary.txt |
 | Complete browser suites |274/274at1280×720 and274/274at1600×900; zero retries |local-checks/full-*-a9b804.log |
 | New wire spec repeat10 |90/90at each configured desktop size |local-checks/repeat-*-a9b804.log |
 | Guest and local-signed UI audit |18+18records, zero findings |ui-audit-guest/findings.json;ui-audit-signed/findings.json |
@@ -37,8 +38,8 @@ Tier1: supabase/functions/_shared/v2/http.ts and supabase/tests/src/v2-body-limi
 
 ## Remaining gates
 
-Source publication and draft PR creation are complete. Required PR-verifier execution, actual-main integration, independent review and release/live proof remain incomplete. The user forbids subagents/helpers; self-review is not independent grading and no score is assigned.
+Source publication and draft PR creation are complete. The required PR-verifier run is complete. Actual-main integration after prerequisites, independent review and release/live proof remain incomplete. The user forbids subagents/helpers; self-review is not independent grading and no score is assigned.
 
-The candidate's historical verify-pr.sh contains forced cleanup and has not been invoked for this item. The coordinator updated the standard verifier on the ledger branch to refuse existing paths/logs, preserve evidence and avoid forced deletion; four direct guard checks passed. See ../VERIFY-PR-SAFETY/REPORT.md. Its real-PR run is still pending and will record both tool and tested-source heads. This removes the blocked behavior rather than hiding it in a script. No named-command PASS is asserted before execution.
+The candidate's historical verify-pr.sh contains forced cleanup and has not been invoked for this item. The coordinator updated the standard verifier on the ledger branch to refuse existing paths/logs, preserve evidence and avoid forced deletion; four direct guard checks passed. See ../VERIFY-PR-SAFETY/REPORT.md. Its direct real-PR run completed at2026-11-02T07:57:26+07:00, exit0: toolHEAD9df9316 (implementation84c37e8), PRHEAD/TESTED_HEADa9b804, current-mainBASE_HEAD1fb25ed. It ran every applicable standard check, including274browser cases, and retained a clean checkout outside the repository. No contracts changed, so the conditional contract step is N/A; no source check was disabled. Session27003/PID84480 terminated and4510–4513 are free. Its default browser config does not replace the separate prior two-size full runs. Raw output and exact identities are retained under local-checks. No comment was posted.
 
 BASE0's deployment hold is separate and remains. This item is inserted before CXN3 because the latter's mandatory v2 live check is known red. No merger, quota reset, backend health or full deployed-source identity follows from these local results.
