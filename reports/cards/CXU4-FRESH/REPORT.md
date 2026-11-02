@@ -30,3 +30,6 @@ Self-graded (fresh pass)95/100 on d969f16, zero auto-fails. Full313/313 at each 
 
 ## Final B gate complete
 Self-graded (fresh pass)95/100 at d969f16, zero auto-fails; A95/B95 agree. All thresholds/floors pass. B control is green and12 mutants killed; source/diff review is complete after tests. Third repair succeeded. Exact-head squash is ready, with actual-main/live verification still mandatory.
+
+## Merged, release validation active
+PR251 merged as2847e9a at2026-11-02T20:12:22Z. Tree c322284 equals tested d969f16 exactly; requested author/email and skip-ci suffix verified. Fresh actual-main core/browser run at /private/tmp/tbh-main-after-cxu4 on4820–4823, PID41503; production identity/health/phased+Hero/Help validation pending. No next merge before release checks pass.

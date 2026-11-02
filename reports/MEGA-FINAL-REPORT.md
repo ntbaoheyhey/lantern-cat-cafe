@@ -3,7 +3,7 @@
 Living report, not a completion claim. Main remains 9c457a3; repository private.
 CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
-CXU4 #251 final candidate d969f16 passes fresh self-grades A95/B95, zero auto-fails. Third repair cleared the modal cleanup timing defect without weakened assertions. Full313/313 per desktop size,360 repeats per pass,2412 unit/script cases, UI/effects and11 A/12 B mutants pass. Exact-head merge is ready; main/live acceptance is not yet claimed. Remaining queue is pending.
+CXU4 #251 merged as2847e9a after fresh self-grades A95/B95, zero auto-fails. Exact tree matches d969f16. Actual-main and live release validation is active; no completed live claim yet. The third repair fixed pre-paint modal accessibility while all assertions stayed intact. Remaining CXU3/CXC2 and P1 delivery are pending.
 
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
