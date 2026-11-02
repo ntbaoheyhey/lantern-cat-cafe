@@ -3,7 +3,7 @@
 Living report, not a completion claim. Main remains 9c457a3; repository private.
 CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
-CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
+CXU4 #251 is active at local8f2e3fe after integrating current main; builder checks underway. CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
 Single session only, STOP preserved. [Current state](MEGA-CURRENT-HANDOFF.md).

@@ -1,0 +1,15 @@
+{
+  "root": "/private/tmp/tbh-cxu4-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/builder-red",
+  "head": "8f2e3fec6265fa3d9f54b2c15a19768d8c0b7809",
+  "commands": [
+    [
+      "install",
+      "npx -y pnpm@10.28.0 install --frozen-lockfile"
+    ],
+    [
+      "focused-units",
+      "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/ui src/layout/character src/layout/HelpTab src/onboarding"
+    ]
+  ]
+}
