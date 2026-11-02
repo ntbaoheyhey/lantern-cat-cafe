@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "./fixture-clock.ts";
 // Relic recovery (docs/proposals/relic-recovery.md, fix 1): a used nonce is only a mint when a
 // RelicForged log says so. A nonce burned by RelicNFT.cancelNonce gets a fresh voucher for the same forge.
 import type { PGlite } from "@electric-sql/pglite";
@@ -10,7 +11,7 @@ import { migratedDb, pgliteStore } from "./game-db.ts";
 
 const NFT = "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D";
 const KEY = generatePrivateKey();
-const T0 = Date.UTC(2026, 10, 1, 10, 0, 0);
+let T0 = 0;
 
 const used = new Set<bigint>();
 const minted = new Set<bigint>();
@@ -42,7 +43,7 @@ const rows = async (id: string) =>
     `select nonce::text, status, relic_id, rarity from relic_vouchers where player_id = $1 order by nonce`, [id])).rows;
 const afterGrace = (expiry: number) => (clock = (expiry + REISSUE_GRACE_SECONDS + 1) * 1000);
 
-beforeAll(async () => { db = await migratedDb(); });
+beforeAll(async () => { db = await migratedDb(); T0 = await databaseFixtureClock(db); clock = T0; });
 
 describe("cancelled nonce recovery", () => {
   it("nonce used with a RelicForged log: recorded as minted, daily limit applies", async () => {

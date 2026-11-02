@@ -1,0 +1,16 @@
+$ sh -c 'git fetch --all --prune && git merge --no-edit origin/main && git rev-parse HEAD origin/main && git config user.name && git config user.email && node --version && pnpm --version && git log origin/main..HEAD --format="%h %an <%ae> %s" && gh pr view 243 --json number,state,isDraft,headRefName,baseRefName,url'
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero
+started: 2026-11-01T07:58:35.175212+00:00
+Already up to date.
+3d4e556ce9be2de1fbd8178bb5a4c49714a6ec7f
+1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
+ntbaoheyhey
+108352255+ntbaoheyhey@users.noreply.github.com
+v24.22.2
+10.28.0
+3d4e556 ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> FXRB: record independent PR verification evidence [skip ci]
+26945fa ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> FXRB: guard stage layout until Phaser scene readiness [skip ci]
+{"baseRefName":"main","headRefName":"ai/codex-fxrb","isDraft":true,"number":243,"state":"OPEN","url":"https://github.com/ntbaoheyhey/taskbar-hero/pull/243"}
+
+exit_code: 0
+elapsed_seconds: 2.18
