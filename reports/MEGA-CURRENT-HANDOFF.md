@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T05:27:42+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
+Updated: 2026-11-03T05:39:04+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
 Authority: Nov2 mission + Nov3 reminder. No subagents/helper chats/orchestrator. No parallel AI workers.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove/run orchestrator.py.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -32,7 +32,9 @@ CXC2 /private/tmp/tbh-cxc2-active, codex/cxc2-fuji-proof, heade54f0750644322dbdc
 CXC2 builder type/lint/26 units/4 browser cases PASS. Frozen clean; no formal score/PR.
 CXC2 A62738 FINISHED PASS95: core2423,317×2,140 repeats,12 mutants,UI36/effects20.
 CXC2 B67091 FINISHED PASS96 on clean e54f075: core2423,140 repeats,38classic,10mutants,UI/effects.
-CXC2 release PID70921 /private/tmp/tbh-main-after-cxc2,39e74d8,4980–4983; full main then live sequentially.
+CXC2 release70921 FINISHED: core/317×2 PASS,live32assets/22health PASS; proof path FAIL at strict RPC guard.
+Further merges STOPPED pending corrected live-r2 (process.json) on same39e74d8; no local preview ports.
+Cause: viem aggregate3 read batch blocked. Guard now canonical-decodes only2 Market getters;22 controls PASS.
 Browser harness JSON-import,wire-topics and late-clock failures retained; fixed without assertion/threshold changes.
 CXC2 read-ahead PASS block60421787: Fuji43113, both bytecodes, matching Market→NFT; no wallet/write.
 NFT has no totalSupply getter; never invent minted totals. Bound recent logs; cache at least30sec; no signing.
@@ -48,4 +50,5 @@ real funds/mainnet, repo publicity or contest submission. No .github changes or 
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
 Original content prep /private/tmp/tbh-original-content, codex/original-content,69902d6; rebase onto39e74d8 clean.
 Original T011/T012 branches preserved; authors/suffixes verified; shared flag remains false; no runtime consumer/PR yet.
-Next3: finish release70921 and inspect live proof; package acceptance if green; review/gate original-content tables then local preview/art.
+Original data builder73795 FINISHED: install/type/lint/29 focused cases PASS on69902d6; no feature activation.
+Next3: inspect corrected live-r2; package acceptance only if unchanged path passes; review/gate original tables then preview/art.

@@ -1,0 +1,19 @@
+{
+  "root": "/private/tmp/tbh-main-after-cxc2",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2",
+  "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+  "commands": [
+    [
+      "asset-before",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-before.json"
+    ],
+    [
+      "phased-proof",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-phased-proof.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/phased"
+    ],
+    [
+      "asset-after",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-r2/artifact-after.json"
+    ]
+  ]
+}

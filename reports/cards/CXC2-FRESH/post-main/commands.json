@@ -1,0 +1,122 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:26:07.878455+00:00",
+    "endedAt": "2026-11-02T22:26:15.349206+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:26:15.356222+00:00",
+    "endedAt": "2026-11-02T22:26:23.544032+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:26:23.550796+00:00",
+    "endedAt": "2026-11-02T22:26:30.310092+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:26:30.316934+00:00",
+    "endedAt": "2026-11-02T22:27:20.977342+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:20.984065+00:00",
+    "endedAt": "2026-11-02T22:27:21.906515+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:21.913446+00:00",
+    "endedAt": "2026-11-02T22:27:22.075450+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:22.082099+00:00",
+    "endedAt": "2026-11-02T22:27:29.467128+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:29.473834+00:00",
+    "endedAt": "2026-11-02T22:27:29.528299+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:29.534605+00:00",
+    "endedAt": "2026-11-02T22:27:34.893326+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:34.901152+00:00",
+    "endedAt": "2026-11-02T22:27:34.977638+00:00"
+  },
+  {
+    "name": "browser-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:27:34.985503+00:00",
+    "endedAt": "2026-11-02T22:30:19.869017+00:00"
+  },
+  {
+    "name": "browser-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:30:19.875849+00:00",
+    "endedAt": "2026-11-02T22:33:02.906348+00:00"
+  },
+  {
+    "name": "live-asset-before",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live/artifact-before.json",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:33:02.912956+00:00",
+    "endedAt": "2026-11-02T22:33:16.879898+00:00"
+  },
+  {
+    "name": "live-health",
+    "command": "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:33:16.888351+00:00",
+    "endedAt": "2026-11-02T22:33:28.414549+00:00"
+  },
+  {
+    "name": "live-phased-proof",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live-phased-proof.mjs /private/tmp/tbh-main-after-cxc2 39e74d834aa246b8182b72bac1b610e4c985f574 /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/live/phased",
+    "head": "39e74d834aa246b8182b72bac1b610e4c985f574",
+    "exit": 1,
+    "startedAt": "2026-11-02T22:33:28.421370+00:00",
+    "endedAt": "2026-11-02T22:34:47.425695+00:00"
+  }
+]

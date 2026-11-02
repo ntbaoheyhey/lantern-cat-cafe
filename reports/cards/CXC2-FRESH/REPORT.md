@@ -18,3 +18,8 @@ Self-graded (fresh pass)96/100 on the same e54f075, tests first then full diff r
 
 ## Merged; release acceptance pending
 PR253 merged as39e74d834aa246b8182b72bac1b610e4c985f574. Tree85267f5fb3c7c6808a50331743a6746ddb1ed2dc equals the exact reviewed feature tree; author/email and skip-ci suffix verified. Local main fast-forwarded while preserving untracked.worktrees/. Actual-main and then live asset/health/11-stage public-proof validation run sequentially in /private/tmp/tbh-main-after-cxc2, PID70921,4980–4983. No subsequent merge before acceptance.
+
+## Release harness finding; further merges stopped
+Actual main core and317/317 browsers at both sizes passed.32/32 live assets match and22 legacy health checks pass. The first11-stage live run reached the proof panel at both sizes but failed because its strict request guard blocked viem’s Multicall3 eth_call batch, leaving linkage unavailable. This was not an application write attempt. The diagnostic kept eth_call blocked and recorded only public request shapes: canonical aggregate3 at Fuji Multicall3, two calls.
+
+The corrected guard decodes/re-encodes aggregate3 and accepts only exactly the two expected Market getters at the expected target/block, with no value/extra fields/trailing bytes.22 positive/negative guard controls pass, including transaction/signing rejection. Original failed paths are retained. Live-r2 repeats unchanged product/UI assertions with fresh before/after asset identity. No further merge until it passes.

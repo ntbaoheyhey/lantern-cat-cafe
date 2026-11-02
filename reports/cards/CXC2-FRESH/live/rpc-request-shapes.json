@@ -1,0 +1,180 @@
+{
+  "scope": "Diagnostic only; all eth_call requests aborted; no signing or transaction method permitted",
+  "reads": [
+    {
+      "method": "eth_chainId",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method"
+      ],
+      "paramCount": 0,
+      "firstType": "undefined",
+      "callKeys": [],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "undefined"
+    },
+    {
+      "method": "eth_blockNumber",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method"
+      ],
+      "paramCount": 0,
+      "firstType": "undefined",
+      "callKeys": [],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "undefined"
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "string",
+      "callKeys": [],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "boolean"
+    },
+    {
+      "method": "eth_getCode",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "string",
+      "callKeys": [],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "0x399fd8a"
+    },
+    {
+      "method": "eth_getCode",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "string",
+      "callKeys": [],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "0x399fd8a"
+    },
+    {
+      "method": "eth_getLogs",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 1,
+      "firstType": "object",
+      "callKeys": [
+        "address",
+        "topics",
+        "fromBlock",
+        "toBlock"
+      ],
+      "to": null,
+      "selector": null,
+      "dataLength": null,
+      "blockTag": "undefined"
+    },
+    {
+      "method": "eth_call",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "object",
+      "callKeys": [
+        "to",
+        "data"
+      ],
+      "to": "0xca11bde05977b3631167028862be2a173976ca11",
+      "selector": "0x82ad56cb",
+      "dataLength": 906,
+      "blockTag": "0x399fd8a"
+    },
+    {
+      "method": "eth_call",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "object",
+      "callKeys": [
+        "to",
+        "data"
+      ],
+      "to": "0xca11bde05977b3631167028862be2a173976ca11",
+      "selector": "0x82ad56cb",
+      "dataLength": 906,
+      "blockTag": "0x399fd8a"
+    },
+    {
+      "method": "eth_call",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "object",
+      "callKeys": [
+        "to",
+        "data"
+      ],
+      "to": "0xca11bde05977b3631167028862be2a173976ca11",
+      "selector": "0x82ad56cb",
+      "dataLength": 906,
+      "blockTag": "0x399fd8a"
+    },
+    {
+      "method": "eth_call",
+      "keys": [
+        "jsonrpc",
+        "id",
+        "method",
+        "params"
+      ],
+      "paramCount": 2,
+      "firstType": "object",
+      "callKeys": [
+        "to",
+        "data"
+      ],
+      "to": "0xca11bde05977b3631167028862be2a173976ca11",
+      "selector": "0x82ad56cb",
+      "dataLength": 906,
+      "blockTag": "0x399fd8a"
+    }
+  ]
+}

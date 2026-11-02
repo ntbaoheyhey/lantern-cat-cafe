@@ -10,9 +10,18 @@ assert.equal(proof.status,'ARTIFACT_MATCH');assert.equal(proof.expectedHead,head
 assert.equal(execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),head);
 assert.equal(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim(),'');
 const {chromium,expect}=createRequire(root+'/apps/web/package.json')('@playwright/test');
-const {getFunctionSelector}=createRequire(root+'/apps/web/package.json')('viem');
+const {getFunctionSelector,decodeFunctionData,encodeFunctionData,multicall3Abi}=createRequire(root+'/apps/web/package.json')('viem');
 const nft='0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d',market='0x10fcc46e439d3e31fb1720b337c45cadb9b2ff93';
 const selectors=[getFunctionSelector('relicNFT()'),getFunctionSelector('activeListingCount()')];
+const multicall='0xca11bde05977b3631167028862be2a173976ca11';
+function allowedCall(c){
+ if(!c||typeof c.to!=='string'||typeof c.data!=='string'||!Object.keys(c).every(k=>['to','data'].includes(k)))return false;
+ if(c.to.toLowerCase()===market)return selectors.includes(c.data);
+ if(c.to.toLowerCase()!==multicall)return false;
+ try{const decoded=decodeFunctionData({abi:multicall3Abi,data:c.data});if(decoded.functionName!=='aggregate3')return false;const calls=decoded.args[0];
+ return calls.length===2&&new Set(calls.map(x=>x.callData)).size===2&&calls.every(x=>x.target.toLowerCase()===market&&selectors.includes(x.callData)&&typeof x.allowFailure==='boolean')&&encodeFunctionData({abi:multicall3Abi,functionName:'aggregate3',args:[calls]}).toLowerCase()===c.data.toLowerCase();
+ }catch{return false;}
+}
 const hex=x=>typeof x==='string'&&/^0x[0-9a-f]{1,16}$/i.test(x);
 function allowedRead(r){
  if(!r||r.jsonrpc!=='2.0'||Object.keys(r).some(k=>!['jsonrpc','id','method','params'].includes(k)))return false;
@@ -20,7 +29,7 @@ function allowedRead(r){
  if(['eth_chainId','eth_blockNumber'].includes(r.method))return p.length===0;
  if(r.method==='eth_getBlockByNumber')return p.length===2&&hex(p[0])&&p[1]===false;
  if(r.method==='eth_getCode')return p.length===2&&typeof p[0]==='string'&&[nft,market].includes(p[0].toLowerCase())&&hex(p[1]);
- if(r.method==='eth_call'){const c=p[0];return p.length===2&&c&&typeof c.to==='string'&&c.to.toLowerCase()===market&&selectors.includes(c.data)&&Object.keys(c).every(k=>['to','data'].includes(k))&&hex(p[1]);}
+ if(r.method==='eth_call')return p.length===2&&allowedCall(p[0])&&hex(p[1]);
  if(r.method==='eth_getLogs'){const q=p[0];return p.length===1&&q&&Array.isArray(q.address)&&q.address.length===2&&q.address.every(a=>typeof a==='string'&&[nft,market].includes(a.toLowerCase()))&&new Set(q.address.map(a=>a.toLowerCase())).size===2&&hex(q.fromBlock)&&hex(q.toBlock)&&BigInt(q.toBlock)>=BigInt(q.fromBlock)&&BigInt(q.toBlock)-BigInt(q.fromBlock)<500n&&Array.isArray(q.topics)&&q.topics.length===0&&Object.keys(q).every(k=>['address','fromBlock','toBlock','topics'].includes(k));}
  return false;
 }
