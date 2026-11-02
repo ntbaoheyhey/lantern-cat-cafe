@@ -23,6 +23,7 @@ const chain = vi.hoisted(() => ({
   switchChain: vi.fn(),
   invalidateQueries: vi.fn(),
   readFailed: false,
+  hasClient: true,
   refetch: vi.fn(),
 }));
 
@@ -30,7 +31,7 @@ vi.mock('wagmi', () => ({
   useAccount: () => ({ isConnected: chain.isConnected, chainId: chain.chainId, address: chain.isConnected ? ME : undefined }),
   useSwitchChain: () => ({ switchChain: chain.switchChain, isPending: false }),
   useWriteContract: () => ({ writeContractAsync: chain.writeContractAsync }),
-  usePublicClient: () => ({ waitForTransactionReceipt: chain.waitForTransactionReceipt }),
+  usePublicClient: () => chain.hasClient ? ({ waitForTransactionReceipt: chain.waitForTransactionReceipt }) : undefined,
   useReadContract: ({ functionName }: { functionName: string }) => {
     const data =
       functionName === 'balanceOfBatch' ? chain.balances
@@ -59,6 +60,7 @@ beforeEach(() => {
   chain.approved = false;
   chain.listings = [];
   chain.readFailed = false;
+  chain.hasClient = true;
   chain.refetch.mockReset().mockResolvedValue(undefined);
   chain.writeContractAsync.mockReset().mockResolvedValue(HASH);
   chain.waitForTransactionReceipt.mockReset().mockResolvedValue({ status: 'success' });
@@ -67,6 +69,10 @@ beforeEach(() => {
 });
 
 afterEach(cleanup);
+
+afterEach(() => {
+  for (const [call] of chain.writeContractAsync.mock.calls) expect(call.chainId).toBe(FUJI_CHAIN_ID);
+});
 
 it('shows My Relics counts per rarity', () => {
   chain.balances = [3n, 0n, 1n, 0n];
@@ -108,11 +114,15 @@ it('renders listings; own listing has Cancel, others have Buy', () => {
   const other = screen.getByTestId('listing-7');
   expect(other.textContent).toContain('Golden Maneki × 2');
   expect(other.textContent).toContain('0.25 AVAX');
-  expect(within(other).getByRole('button', { name: 'Buy' })).toBeTruthy();
+  const detail = within(screen.getByRole('region', { name: 'Listing details' }));
+  expect(detail.getByRole('button', { name: 'Buy' })).toBeTruthy();
+  expect(within(other).queryByRole('button', { name: 'Buy' })).toBeNull();
   const mine = screen.getByTestId('listing-9');
   expect(mine.textContent).toContain('You');
-  expect(within(mine).getByRole('button', { name: 'Cancel' })).toBeTruthy();
-  expect(within(mine).queryByRole('button', { name: 'Buy' })).toBeNull();
+  fireEvent.click(mine);
+  expect(detail.getByRole('button', { name: 'Cancel' })).toBeTruthy();
+  expect(detail.queryByRole('button', { name: 'Buy' })).toBeNull();
+  expect(within(mine).queryByRole('button', { name: 'Cancel' })).toBeNull();
   expect(screen.getAllByText(/Fuji testnet, test AVAX/).length).toBeGreaterThan(0);
 });
 
@@ -138,6 +148,7 @@ it('explains ListingNotActive when someone bought first', async () => {
 });
 
 function fillList(relicId: string, amount: string, price: string) {
+  fireEvent.click(screen.getByRole('button', { name: 'Sell a Relic' }));
   fireEvent.change(screen.getByLabelText('Relic'), { target: { value: relicId } });
   fireEvent.change(screen.getByLabelText('Amount'), { target: { value: amount } });
   fireEvent.change(screen.getByLabelText('Price (AVAX)'), { target: { value: price } });
@@ -146,6 +157,7 @@ function fillList(relicId: string, amount: string, price: string) {
 it('approves the market first when needed, then lists with parseEther(price)', async () => {
   chain.balances = [0n, 2n, 0n, 0n];
   render(<MarketTab />);
+  fireEvent.click(screen.getByRole('button', { name: 'Sell a Relic' }));
   expect(screen.getByText('Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.')).toBeTruthy();
   expect(chain.writeContractAsync).not.toHaveBeenCalled();
   fillList('2', '2', '0.5');
@@ -208,4 +220,84 @@ it('a failed chain read shows a plain message and Retry, not an empty shelf', ()
 
   fireEvent.click(screen.getByRole('button', { name: 'Retry' }));
   expect(chain.refetch).toHaveBeenCalledTimes(3);
+});
+
+it('survives disconnected, connected and wrong-chain transitions without changing hook order', () => {
+  chain.isConnected = false;
+  const errors = vi.spyOn(console, 'error').mockImplementation(() => {});
+  try {
+    const { rerender } = render(<MarketTab />);
+    chain.isConnected = true; rerender(<MarketTab />);
+    expect(screen.getByTestId('listings-empty')).toBeTruthy();
+    chain.chainId = 1; rerender(<MarketTab />);
+    expect(screen.getByRole('button', { name: 'Switch to Fuji' })).toBeTruthy();
+    chain.chainId = FUJI_CHAIN_ID; rerender(<MarketTab />);
+    chain.isConnected = false; rerender(<MarketTab />);
+    expect(screen.getByText(/Connect your wallet/)).toBeTruthy();
+    expect(errors).not.toHaveBeenCalled(); expect(chain.writeContractAsync).not.toHaveBeenCalled();
+  } finally { errors.mockRestore(); }
+});
+
+it('does not report a reverted buy as success', async () => {
+  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: 1n }]];
+  chain.waitForTransactionReceipt.mockResolvedValue({ status: 'reverted' });
+  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Buy' }));
+  expect((await screen.findByTestId('market-message')).textContent).toBe('Transaction failed. Please try again.');
+  expect(screen.queryByText('Bought! The Relic is in your wallet.')).toBeNull();
+});
+
+it('does not list after a reverted approval and does not write without the Fuji client', async () => {
+  chain.balances = [2n, 0n, 0n, 0n];
+  chain.waitForTransactionReceipt.mockResolvedValue({ status: 'reverted' });
+  const { unmount } = render(<MarketTab />); fillList('1', '1', '0.1');
+  fireEvent.click(screen.getByRole('button', { name: 'List' })); await screen.findByTestId('market-message');
+  expect(chain.writeContractAsync.mock.calls.map(([call]) => call.functionName)).toEqual(['setApprovalForAll']);
+  unmount(); chain.hasClient = false; chain.writeContractAsync.mockClear();
+  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: 1n }]];
+  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Buy' }));
+  await screen.findByTestId('market-message'); expect(chain.writeContractAsync).not.toHaveBeenCalled();
+});
+
+it('sorts, filters and selects real listing details while keeping trade actions outside rows', () => {
+  chain.listings = [
+    [3n, { seller: OTHER, relicId: 4n, amount: 10n, price: 20n }],
+    [9n, { seller: ME, relicId: 1n, amount: 2n, price: 10n }],
+  ];
+  render(<MarketTab />);
+  const rowIds = () => within(screen.getByTestId('listings')).getAllByRole('row').slice(1).map(row => row.getAttribute('data-testid'));
+  expect(rowIds()).toEqual(['listing-9', 'listing-3']);
+  fireEvent.click(screen.getByRole('button', { name: 'Sort by quantity' }));
+  expect(rowIds()).toEqual(['listing-9', 'listing-3']);
+  fireEvent.click(screen.getByRole('button', { name: 'Sort by quantity' }));
+  expect(rowIds()).toEqual(['listing-3', 'listing-9']);
+  fireEvent.click(screen.getByTestId('listing-3'));
+  expect(screen.getByRole('region', { name: 'Listing details' }).textContent).toContain('Quantity10');
+  expect(within(screen.getByTestId('listing-3')).queryByRole('button', { name: 'Buy' })).toBeNull();
+  fireEvent.click(within(screen.getByRole('group', { name: 'Filter listings' })).getByRole('button', { name: 'Your listings' }));
+  expect(rowIds()).toEqual(['listing-9']);
+  expect(screen.getByRole('button', { name: 'Cancel' })).toBeTruthy();
+  expect(screen.queryByRole('columnheader', { name: /power/i })).toBeNull();
+  expect(chain.writeContractAsync).not.toHaveBeenCalled();
+});
+
+it('cancels only the selected owned listing through the existing Fuji call', async () => {
+  chain.listings = [[9n, { seller: ME, relicId: 1n, amount: 1n, price: 1n }]];
+  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+  await screen.findByText('Listing cancelled. The Relic is back in your wallet.');
+  expect(chain.writeContractAsync).toHaveBeenCalledWith(expect.objectContaining({ address: RelicMarket, functionName: 'cancel', args: [9n], chainId: FUJI_CHAIN_ID }));
+});
+
+
+it('hides stale trading actions and disables a filled sell form after a read failure', () => {
+  chain.balances = [3n, 0n, 0n, 0n];
+  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: parseEther('0.05') }]];
+  const { rerender } = render(<MarketTab />);
+  fillList('1', '1', '0.1');
+  expect(screen.getByRole<HTMLButtonElement>('button', { name: 'List' }).disabled).toBe(false);
+  chain.readFailed = true; rerender(<MarketTab />);
+  expect(screen.getByRole<HTMLButtonElement>('button', { name: 'List' }).disabled).toBe(true);
+  fireEvent.click(screen.getByRole('button', { name: 'List' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Inspect listing' }));
+  expect(screen.queryByRole('button', { name: 'Buy' })).toBeNull();
+  expect(chain.writeContractAsync).not.toHaveBeenCalled();
 });

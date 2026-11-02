@@ -1,27 +1,18 @@
 import { FUJI_CHAIN_ID, getAddresses, relicMarketAbi, relicNftAbi } from '@taskbar-hero/chain';
 import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
-import { formatEther, parseEther } from 'viem';
+import { parseEther } from 'viem';
 import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
-import { PixelIcon } from '../art/pixelIcons';
-import { relicName } from '../forge/forgeText';
-import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
-import { ErrorNote } from '../game/LoadNotice';
+import { RELIC_IDS, txErrorText } from './marketText';
+import { MarketGate, MarketView } from './MarketView';
+import type { Listing } from './marketViewModel';
 import '../forge/forge.css';
 import '../inventory/inventory.css';
 import './market.css';
 
 const PAGE = 50n;
-const TESTNET = 'Fuji testnet, test AVAX';
 
 type Address = `0x${string}`;
-interface Listing {
-  id: bigint;
-  seller: Address;
-  relicId: bigint;
-  amount: bigint;
-  price: bigint;
-}
 
 /** Parses a positive AVAX amount; undefined for anything invalid or zero. */
 function parsePrice(text: string): bigint | undefined {
@@ -93,16 +84,16 @@ export function MarketTab() {
     return <p className="forge-note">The Relic contracts are not deployed on Fuji yet, so the market is not available.</p>;
   }
   if (!isConnected || !address) {
-    return <p className="forge-note">Connect your wallet to see your Relics and the market.</p>;
+    return <MarketGate nft={nft} market={market}><p className="forge-note">Connect your wallet to see your Relics and the market.</p></MarketGate>;
   }
   if (chainId !== FUJI_CHAIN_ID) {
     return (
-      <div className="forge-mint">
+      <MarketGate nft={nft} market={market}>
         <p className="forge-note" role="alert">Wrong network. Switch to Avalanche Fuji to use the market.</p>
         <button type="button" className="forge-btn" disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
           Switch to Fuji
         </button>
-      </div>
+      </MarketGate>
     );
   }
 
@@ -189,114 +180,10 @@ export function MarketTab() {
     });
   };
 
-  return (
-    <div className="market">
-      {readFailed && (
-        <ErrorNote text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again." onRetry={retryReads} />
-      )}
-      <section aria-labelledby="my-relics">
-        <h3 id="my-relics">My Relics</h3>
-        {balances.isLoading ? (
-          <p>Loading…</p>
-        ) : balances.isError ? null : holdings.length === 0 ? (
-          <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p>
-        ) : (
-          <ul className="market-relics" data-testid="my-relics">
-            {holdings.map((r) => (
-              <li key={r.rarity} className={`pixel-card rarity-${r.rarity}`}>
-                <img src={relicImageUrl(r.relicId)} alt={relicName(r.rarity)} width={40} height={40} />
-                <span>
-                  {relicName(r.rarity)}
-                  {r.balance > 0n && <> × {r.balance.toString()}</>}
-                  {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-
-      <section aria-labelledby="market-listings">
-        <h3 id="market-listings">Market</h3>
-        <p className="market-hint">Prices are in {TESTNET}.</p>
-        {readFailed ? null : listings.length === 0 ? (
-          <p data-testid="listings-empty">No Relics for sale right now.</p>
-        ) : (
-          <ul className="market-listings" data-testid="listings">
-            {listings.map((l) => {
-              const rarity = rarityOf(l.relicId);
-              return (
-                <li key={l.id.toString()} className="pixel-card market-listing" data-testid={`listing-${l.id}`}>
-                  <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
-                    <span className="market-art">
-                      {rarity ? (
-                        <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={56} height={56} />
-                      ) : (
-                        <PixelIcon name="bag" size={5} />
-                      )}
-                    </span>
-                    <span className="market-relic-info">
-                      <strong>{rarity ? relicName(rarity) : `Relic #${l.relicId}`}</strong>
-                      <small> × {l.amount.toString()} listed</small>
-                    </span>
-                  </span>
-                  <span className="market-price">
-                    <PixelIcon name="shop" size={2} />
-                    <span>{formatEther(l.price)} AVAX</span>
-                  </span>
-                  <span className="market-seller">Seller · {isMine(l) ? 'You' : shortAddress(l.seller)}</span>
-                  {isMine(l) ? (
-                    <button type="button" className="forge-btn" disabled={!!busy} onClick={() => void cancel(l)}>
-                      Cancel
-                    </button>
-                  ) : (
-                    <button type="button" className="forge-btn pixel-btn" disabled={!!busy} onClick={() => void buy(l)}>
-                      Buy
-                    </button>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
-
-      <section aria-labelledby="market-sell">
-        <h3 id="market-sell">Sell a Relic</h3>
-        <div className="market-form">
-          <label>
-            Relic
-            <select value={listId} onChange={(e) => setListId(e.target.value)}>
-              <option value="">Choose…</option>
-              {sellable.map((r) => (
-                <option key={r.rarity} value={r.relicId.toString()}>
-                  {relicName(r.rarity)} (you have {r.balance.toString()})
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Amount
-            <input inputMode="numeric" value={listAmount} onChange={(e) => setListAmount(e.target.value)} />
-          </label>
-          <label>
-            Price (AVAX)
-            <input inputMode="decimal" placeholder="0.1" value={listPrice} onChange={(e) => setListPrice(e.target.value)} />
-          </label>
-          <button type="button" className="forge-btn" disabled={!canList} onClick={list}>
-            List
-          </button>
-        </div>
-        <p className="market-hint">{TESTNET}. The total price covers all copies in the listing.</p>
-        <p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
-      </section>
-
-      {busy && <p role="status">{busy}</p>}
-      {message && !busy && (
-        <p className="forge-note" role="status" data-testid="market-message">
-          {message}
-        </p>
-      )}
-    </div>
-  );
+  return <MarketView nft={nft} market={market} address={address} listings={listings} holdings={holdings} sellable={sellable}
+    loadingHoldings={balances.isLoading} holdingsFailed={balances.isError} readFailed={readFailed}
+    loadingListings={count.isLoading || listingPages.isLoading} busy={busy} message={message}
+    form={{ relicId: listId, amount: listAmount, price: listPrice, canList }}
+    onRelicId={setListId} onAmount={setListAmount} onPrice={setListPrice} onList={list}
+    onBuy={listing => { void buy(listing); }} onCancel={listing => { void cancel(listing); }} onRetry={retryReads} />;
 }

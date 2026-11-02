@@ -1,5 +1,121 @@
 /* Cat Café Quest v2 - ForgePanel styles (Craft, Salvage, Relic) */
 
+/* 3-column desktop layout (AGR3 Redesign) */
+.forge-cols {
+  display: grid;
+  grid-template-columns: 300px 1fr 320px;
+  gap: var(--sp-3, 14px);
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+  .forge-cols {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+}
+
+.forge-col-left,
+.forge-col-centre,
+.forge-col-right {
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.forge-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.forge-col-centre {
+  background: radial-gradient(circle at 50% 45%, #5a3560, var(--surface, #2a1f36) 70%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+}
+
+.forge-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.forge-preview-slot {
+  width: 120px;
+  height: 120px;
+  background: var(--bg, #1a1220);
+  border: 2px solid var(--border, #72578d);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.forge-candidate-preview {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.forge-chances-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.forge-chances-table th {
+  text-align: left;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted, #c3aed0);
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--border, #72578d);
+}
+
+.forge-chances-table td {
+  padding: 6px 8px;
+  border-bottom: 1px dashed var(--border, #72578d);
+}
+
+/* In-place reveal & flash */
+@keyframes forgeFlash {
+  0% {
+    filter: brightness(2.2) drop-shadow(0 0 16px var(--accent, #ffb86b));
+    transform: scale(1.05);
+  }
+  50% {
+    filter: brightness(1.6) drop-shadow(0 0 8px var(--gold, #ffd34e));
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+}
+
+.forge-flash {
+  animation: forgeFlash 0.6s ease-out;
+}
+
 .forge-panel {
   display: flex;
   flex-direction: column;
@@ -18,7 +134,7 @@
 .forge-content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1 1 0;
   min-height: 0;
   overflow: hidden;
 }
@@ -48,6 +164,7 @@
 
 /* Panel Header */
 .forge-panel-header {
+  flex: none;
   display: flex;
   flex-direction: column;
   gap: var(--sp-1, 4px);
@@ -73,6 +190,7 @@
 
 /* Segmented Control (Craft / Salvage / Relic) */
 .forge-nav {
+  flex: none;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -496,7 +614,7 @@
   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
 }
 
-.forge-btn-cancel {
+.forge-panel .forge-btn-cancel {
   flex: 1 1 100px;
   background: var(--surface, #2a1f36);
   color: var(--text, #fff3e0);
@@ -854,8 +972,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .forge-flash,
   .forge-confirm-box {
-    animation: none;
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
   }
   .forge-tab-btn,
   .forge-btn,
@@ -865,3 +986,6 @@
     transform: none !important;
   }
 }
+
+.forge-preview-art { position:relative; display:grid; place-items:center; }
+.forge-preview-glyph { position:absolute; display:grid; place-items:center; }
