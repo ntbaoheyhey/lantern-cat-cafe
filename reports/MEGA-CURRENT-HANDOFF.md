@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (verified fetch).
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local a4dc85e | Pass 1 green; grader A running; current main integrated |
+| CXU5 | #249 / local a4dc85e | Pass 1 green (51 units, 18 browser); grader A running; current main integrated |
 | CXU4 | #251 / 1581084 | NEXT after A; not blocked by #244 |
 | CXU3 + CXC2 | pending | Build after A+B; frontend, independent of #244 |
 | T011 + T012 + content + ART/T013 | local 12d0355 / a35a280 | P1; publish and integrate default OFF |
