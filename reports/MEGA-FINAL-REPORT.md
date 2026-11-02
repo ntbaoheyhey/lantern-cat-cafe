@@ -14,7 +14,7 @@ Checkpoint milestone 2026-11-02T07:57:26+07:00: wrapper evidence saved with tool
 
 Provider investigation 2026-11-02T08:06:19+07:00: newly published CXN3-FIX and CXU4 statuses are green only because their builds were canceled by the existing ignore step. They are not deployed-build proof. The Usage UI did not expose remaining daily quota/reset, and its requested24hour range expanded to39.94hours, so that count is not used to lift BASE0hold. No manual retry/settings change; evidence retained, browser tab closed.
 
-FXRB review finding 2026-11-02T08:10:39+07:00: a deliberate invisible-cat-and-monster mutant passed all6original resize cases. The alpha oracle admits ground/HP-bar pixels; the new oracle rejected all3deliberate visibility faults (4failures each), a restored10case control passed and committed integrationabd64fa passed webtypecheck. Expandedrepeat20 is running; complete browser matrices remain pending. No production sprites were changed on a product branch, and no score/merge is claimed. Evidence: cards/FXRB-ACTOR-ORACLE-R1.
+FXRB review finding 2026-11-02T08:10:39+07:00: a deliberate invisible-cat-and-monster mutant passed all6original resize cases. The alpha oracle admits ground/HP-bar pixels; the new oracle rejected all3deliberate visibility faults (4failures each), a restored10case control passed and committed integrationabd64fa passed webtypecheck. Expandedrepeat20 passed200/200 onabd64fa; source26e7de8webtypecheck also passed. Complete browser matrices are now running/pending. No production sprites were changed on a product branch, and no score/merge is claimed. Evidence: cards/FXRB-ACTOR-ORACLE-R1.
 
 ## Historical progress (older candidates and running states)
 
