@@ -1,0 +1,52 @@
+$ env CI=true pnpm exec vitest run src/game/stage/StageScene.test.ts
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web
+started: 2026-11-01T07:59:53.363614+00:00
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m2-missing-create-layout/apps/web
+
+ ❯ src/game/stage/StageScene.test.ts (12 tests | 2 failed) 176ms
+   × defers a resize before scene boot and uses the latest scale when CREATE arrives 81ms
+   × renders the existing impact cue and cleans effects on shutdown (reduced=true) 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives
+AssertionError: expected +0 to be 136 // Object.is equality
+
+- Expected
++ Received
+
+- 136
++ 0
+
+ ❯ src/game/stage/StageScene.test.ts:54:17
+     52|   Object.assign(scene, { scale: { width: 453, height: 96 } });
+     53|   start();
+     54|   expect(cat.x).toBe(Math.round(453 * .3));
+       |                 ^
+     55| });
+     56|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/game/stage/StageScene.test.ts > renders the existing impact cue and cleans effects on shutdown (reduced=true)
+AssertionError: expected 26 to be less than 0
+ ❯ src/game/stage/StageScene.test.ts:102:34
+    100|   expect(number.setAlpha).toHaveBeenCalledWith(1);
+    101|   expect(flash.setVisible).toHaveBeenCalledWith(true);
+    102|   if (reduced) expect(monster.x).toBeLessThan(scene['homes'][1]);
+       |                                  ^
+    103|   else expect(Number(scene['game'].canvas.dataset.stageContactGap)).to…
+    104|   expect(scene['hp']!.value).toBeLessThan(scene['hp']!.max);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  14:59:54
+   Duration  2.37s (environment 44%, transform 41%, tests 8%, import 7%)
+
+
+exit_code: 1
+elapsed_seconds: 3.1

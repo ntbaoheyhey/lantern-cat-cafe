@@ -1,0 +1,34 @@
+CWD: /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+$ pnpm exec vitest run src/pets/state.test.ts src/pets/isolation.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+
+ ❯ src/pets/isolation.test.ts (1 test | 1 failed) 19ms
+   × greps runtime sources: only the preview store and export/mount boundaries may reference pets 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/isolation.test.ts > greps runtime sources: only the preview store and export/mount boundaries may reference pets
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "packages/game-rules/src/v2/combat/stats.ts",
++ ]
+
+ ❯ src/pets/isolation.test.ts:23:22
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 16 passed (17)
+   Start at  15:34:28
+   Duration  568ms (environment 70%, tests 17%, import 9%, transform 4%, worker 1%)
+
+
+EXIT: 1

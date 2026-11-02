@@ -1,0 +1,101 @@
+MUTANT: M4-weight-total
+FILE: odds.ts
+OLD: const probability = weight / totalWeight;
+NEW: const probability = weight / 100;
+$ pnpm exec vitest run src/v2/codex/entries.test.ts src/v2/codex/odds.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/mutant-c5a25v0s/packages/game-rules
+
+ ❯ src/v2/codex/odds.test.ts (6 tests | 4 failed) 23ms
+   ❯ exact chest odds (6)
+     × normalizes actual weights, includes absent rarities and sums exclusive outcomes to 100% 5ms
+     × pins independently calculated first/repeat examples and non-100 weight totals 1ms
+     × agrees with the existing analytic loot engine for every group and rarity 4ms
+     × uses changed input weights/chances without cached config or demo values 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2/codex/odds.test.ts > exact chest odds > normalizes actual weights, includes absent rarities and sums exclusive outcomes to 100%
+AssertionError: expected 0.5 to be 0.5102040816326531 // Object.is equality
+
+- Expected
++ Received
+
+- 0.5102040816326531
++ 0.5
+
+ ❯ src/v2/codex/odds.test.ts:30:45
+     28|         const weight = draw.pick.filter(p => !('table' in p.value) && …
+     29|         expect(row.weight).toBe(weight);
+     30|         expect(row.conditional.probability).toBe(weight / sum);
+       |                                             ^
+     31|         expect(row.conditional.chancePct).toBe(weight / sum * 100);
+     32|         expect(row.perChest.probability).toBe(root.chance * (weight / …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/v2/codex/odds.test.ts > exact chest odds > pins independently calculated first/repeat examples and non-100 weight totals
+AssertionError: expected 0.09 to be 0.09782608695652174 // Object.is equality
+
+- Expected
++ Received
+
+- 0.09782608695652174
++ 0.09
+
+ ❯ src/v2/codex/odds.test.ts:54:56
+     52|     expect(later.totalWeight).toBe(92);
+     53|     expect(later.rarities.map(r => r.weight)).toEqual([0, 20, 30, 33, …
+     54|     expect(later.rarities[4]!.conditional.probability).toBe(9 / 92);
+       |                                                        ^
+     55|     expect(later.rarities[4]!.conditional.oneIn).toBe(1 / (9 / 92));
+     56|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/v2/codex/odds.test.ts > exact chest odds > agrees with the existing analytic loot engine for every group and rarity
+AssertionError: expected 0.5 to be close to 0.510204081632653, received difference is 0.010204081632652962, but expected 5e-15
+ ❯ src/v2/codex/odds.test.ts:63:42
+     61|       const expected = chestExpectedValues(chest.chestId);
+     62|       for (const roll of chest.rolls) for (const row of roll.rarities)…
+     63|         expect(row.perChest.probability).toBeCloseTo(expected.gear[rol…
+       |                                          ^
+     64|         expect(row.perChest.probability).toBeCloseTo(rates.find(r => r…
+     65|       }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/v2/codex/odds.test.ts > exact chest odds > uses changed input weights/chances without cached config or demo values
+AssertionError: expected [ 2, +0, 3, +0, +0 ] to deeply equal [ 40, +0, 60, +0, +0 ]
+
+- Expected
++ Received
+
+  [
+-   40,
++   2,
+    0,
+-   60,
++   3,
+    0,
+    0,
+  ]
+
+ ❯ src/v2/codex/odds.test.ts:82:61
+     80|       { weight: 3, value: { kind: 'gear', group: 'main', rarity: 'rare…
+     81|     const main = chestOdds('chest.ch1.repeat', registry).rolls[0]!;
+     82|     expect(main.rarities.map(r => r.conditional.chancePct)).toEqual([4…
+       |                                                             ^
+     83|     expect(main.rarities.map(r => r.perChest.probability)).toEqual([0.…
+     84|     expect(main.noDrop.chancePct).toBe(80);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  4 failed | 12 passed (16)
+   Start at  15:38:23
+   Duration  392ms (tests 60%, transform 28%, import 11%, worker 1%)
+
+
+EXIT: 1

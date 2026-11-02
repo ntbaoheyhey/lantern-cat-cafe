@@ -1,0 +1,24 @@
+SCRATCH COPY MUTATION: png-accepts-bad-crc
+REPLACE: if zlib.crc32(kind + payload) != crc:
+WITH: if False:
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.PngTests.test_crc_corruption_rejected
+test_crc_corruption_rejected (test_pipeline.PngTests) ... FAIL
+
+======================================================================
+FAIL: test_crc_corruption_rejected (test_pipeline.PngTests)
+----------------------------------------------------------------------
+ValueError: PNG exceeds dimensions limit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bao/.codex/worktrees/mega-art1/taskbar-hero/tools/art/mutation-ykdk7553/test_pipeline.py", line 158, in test_crc_corruption_rejected
+    decode_png(bytes(corrupted))
+AssertionError: "CRC" does not match "PNG exceeds dimensions limit"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+
+EXIT: 1

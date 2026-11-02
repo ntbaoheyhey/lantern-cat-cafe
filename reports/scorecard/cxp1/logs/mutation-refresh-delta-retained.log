@@ -1,0 +1,61 @@
+CWD: /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+$ pnpm exec vitest run src/pets/state.test.ts src/pets/isolation.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1/taskbar-hero/.cxp1-mutants-19ej16xs/apps/web
+
+ ❯ src/pets/state.test.ts (16 tests | 2 failed) 121ms
+   × does not credit a same-round refresh when a later claim reuses its snapshot 3ms
+   × does not backfill a refresh that overtakes an in-flight claim 52ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/state.test.ts > does not credit a same-round refresh when a later claim reuses its snapshot
+AssertionError: expected { 'claimed-idle-kills': 4 } to deeply equal {}
+
+- Expected
++ Received
+
+- {}
++ {
++   "claimed-idle-kills": 4,
++ }
+
+ ❯ src/pets/state.test.ts:127:44
+    125|     await loop.retry();
+    126|     await loop.claimNow();
+    127|     expect(store.getSnapshot().killCounts).toEqual({});
+       |                                            ^
+    128|     claim.mockResolvedValue({ gains: sampleGainsV2(), state: sampleSer…
+    129|     await loop.claimNow();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/pets/state.test.ts > does not backfill a refresh that overtakes an in-flight claim
+AssertionError: expected { 'claimed-idle-kills': 4 } to deeply equal {}
+
+- Expected
++ Received
+
+- {}
++ {
++   "claimed-idle-kills": 4,
++ }
+
+ ❯ src/pets/state.test.ts:151:44
+    149|     finish({ gains: sampleGainsV2(), state: refreshed });
+    150|     await flight;
+    151|     expect(store.getSnapshot().killCounts).toEqual({});
+       |                                            ^
+    152|   } finally { dispose(); loop.stop(); }
+    153| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 15 passed (17)
+   Start at  15:34:25
+   Duration  582ms (environment 70%, tests 17%, import 8%, transform 5%, worker 1%)
+
+
+EXIT: 1

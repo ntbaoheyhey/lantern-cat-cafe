@@ -1,0 +1,55 @@
+{
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "tools/art/reference_review.mjs"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tools/art/source_audit.mjs"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "1fb25ed",
+        "--",
+        "apps/web",
+        "packages",
+        "supabase",
+        ".github",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "package.json"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "pythonAst": "all Python files parsed; exit 0"
+}
