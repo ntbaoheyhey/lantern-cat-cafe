@@ -8,3 +8,5 @@ Historical missing-suffix merge 806800d predates this session and is retained un
 No new product behavior was needed in pass 1. Backend blocker #244 is unrelated.
 
 Count correction: initial ledger prose said 72; the retained pass1 unit log says 51. No test failed or was omitted from that focused command. Exact-head verification uses raw receipts.
+
+Audit launch attempt ui-a failed on a quoting typo before any test ran. Corrected harness passes node --check; ui-a-r2 runs unchanged assertions on reserved ports. Original failure retained.
