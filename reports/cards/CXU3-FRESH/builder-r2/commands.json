@@ -1,0 +1,18 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:59:57.871823+00:00",
+    "endedAt": "2026-11-02T21:00:04.244043+00:00"
+  },
+  {
+    "name": "focused-units",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/market src/layout/forge src/forge",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 1,
+    "startedAt": "2026-11-02T21:00:04.250211+00:00",
+    "endedAt": "2026-11-02T21:00:07.289276+00:00"
+  }
+]

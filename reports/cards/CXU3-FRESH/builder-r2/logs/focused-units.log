@@ -1,0 +1,376 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu3-active/apps/web
+
+ ❯ src/layout/forge/ForgePanel.test.tsx (26 tests | 3 failed) 227ms
+   ❯ ForgePanel (25)
+     ❯ Salvage Tab: excludes equipped and locked items (3)
+       × disables equipped and locked items with plain reason and excludes from selection 16ms
+       × shows empty message when no items are present 9ms
+     ❯ V19c: Item icons in salvage list and reduced-motion stylesheet audit (2)
+       × salvage row for specific armor shows specific icon, untyped weapon falls back to class weapon, and craft slot picker shows slot icons 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/forge/ForgePanel.test.tsx > ForgePanel > Salvage Tab: excludes equipped and locked items > disables equipped and locked items with plain reason and excludes from selection
+TestingLibraryElementError: Unable to find an element by: [data-testid="disabled-reason-item-equipped"]
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"forge-panel"[39m
+      [33mdata-testid[39m=[32m"forge-panel"[39m
+    [36m>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"forge-panel-header"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"forge-panel-desc"[39m
+        [36m>[39m
+          [0mCraft custom gear, salvage materials, or forge daily Relics.[0m
+        [36m</p>[39m
+      [36m</header>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Forge sections"[39m
+        [33mclass[39m=[32m"forge-nav"[39m
+        [33mrole[39m=[32m"tablist"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_a_-panel-craft"[39m
+          [33maria-selected[39m=[32m"false"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-craft"[39m
+          [33mid[39m=[32m"_r_a_-tab-craft"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCraft[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_a_-panel-salvage"[39m
+          [33maria-selected[39m=[32m"true"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-salvage"[39m
+          [33mid[39m=[32m"_r_a_-tab-salvage"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mSalvage[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_a_-panel-relic"[39m
+          [33maria-selected[39m=[32m"false"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-relic"[39m
+          [33mid[39m=[32m"_r_a_-tab-relic"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRelic[0m
+        [36m</button>[39m
+      [36m</nav>[39m
+      [36m<section[39m
+        [33maria-labelledby[39m=[32m"_r_a_-tab-salvage"[39m
+        [33mclass[39m=[32m"forge-content forge-salvage-tab"[39m
+        [33mdata-testid[39m=[32m"salvage-panel"[39m
+        [33mid[39m=[32m"_r_a_-panel-salvage"[39m
+        [33mrole[39m=[32m"tabpanel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"forge-salvage-scroll"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"forge-salvage-summary"[39m
+            [33mdata-testid[39m=[32m"forge-salvage-summary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"forge-salvage-yield-wrap"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"forge-salvage-yield-lead"[39m
+              [36m>[39m
+                [0mYield ([0m
+                [0m0[0m
+                [0m selected):[0m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"forge-salvage-yield-tokens"[39m
+                [33mdata-testid[39m=[32m"salvage-yield-summary"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"forge-note"[39m
+                [36m>[39m
+                  [0mSelect items below to preview salvage returns[0m
+                [36m</span>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"forge-salvage-controls"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"forge-mini-btn"[39m
+                [33mdata-testid[39m=[32m"salvage-select-all"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSelect All Eligible[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"forge-mini-btn"[39m
+                [33mdata-testid[39m=[32m"salvage-deselect-all"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDeselect All[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<ul[39m
+            [33maria-label[39m=[32m"Owned items"[39m
+            [33mclass[39m=[32m"forge-items-list"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"forge-item-row disabled "[39m
+              [33mdata-testid[39m=[32m"salvage-item-item-equipped"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33maria-label[39m=[32m"Select Twig Sword for salvage"[39m
+                [33mclass[39m=[32m"forge-item-check"[39m
+                [33mdata-testid[39m=[32m"salvage-check-item-equipped"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mid[39m=[32m"check-item-equipped"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"forge-item-icon-box"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mdata-icon[39m=[32m"sword"[39m
+                  [33mheight[39m=[32m"22"[39m
+                  [33mshape-rendering[39m=[32m"crispEdges"[39m
+                  [33mstyle[39m=[32m"display: block;"[39m
+                  [33mviewBox[39m=[32m"0 0 11 11"[39m
+                  [33mwidth[39m=[32m"22"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM7 1h1v1h-1zM10 1h1v1h-1zM6 2h1v1h-1zM10 2h1v1h-1zM5 3h1v1h-1zM9 3h1v1h-1zM4 4h1v1h-1zM8 4h1v1h-1zM3 5h1v1h-1zM7 5h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM0 7h1v1h-1zM9 7h1v1h-1zM1 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM3 9h1v1h-1zM6 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1z"[39m
+                    [33mstyle[39m=[32m"fill: rgb(0, 0, 0);"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 1h1v1h-1zM9 1h1v1h-1zM7 2h1v1h-1zM6 3h1v1h-1zM5 4h1v1h-1zM4 5h1v1h-1z"[39m
+                    [33mstyle[39m=[32m"fill: rgb(255, 255, 255);"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 2h1v1h-1zM9 2h1v1h-1zM7 3h1v1h-1zM8 3h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1z"[39m
+                    [33mstyle[39m=[32m"fill: var(--rarity-common, #b9b6c9);"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M3 6h1v1h-1zM6 6h1v1h-1zM1 7h1v1h-1z"[39m
+                    [33mstyle[39m=[32m"fill: var(--gold, #ffd34e);"...
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/layout/forge/ForgePanel.test.tsx:261:21
+    259|       const checkEquipped = screen.getByTestId('salvage-check-item-equ…
+    260|       expect(checkEquipped.disabled).toBe(true);
+    261|       expect(screen.getByTestId('disabled-reason-item-equipped').textC…
+       |                     ^
+    262|
+    263|       // Check item 2 (locked)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/layout/forge/ForgePanel.test.tsx > ForgePanel > Salvage Tab: excludes equipped and locked items > shows empty message when no items are present
+TestingLibraryElementError: Unable to find an element with the text: No items in inventory.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"forge-panel"[39m
+      [33mdata-testid[39m=[32m"forge-panel"[39m
+    [36m>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"forge-panel-header"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"forge-panel-desc"[39m
+        [36m>[39m
+          [0mCraft custom gear, salvage materials, or forge daily Relics.[0m
+        [36m</p>[39m
+      [36m</header>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Forge sections"[39m
+        [33mclass[39m=[32m"forge-nav"[39m
+        [33mrole[39m=[32m"tablist"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_c_-panel-craft"[39m
+          [33maria-selected[39m=[32m"false"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-craft"[39m
+          [33mid[39m=[32m"_r_c_-tab-craft"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCraft[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_c_-panel-salvage"[39m
+          [33maria-selected[39m=[32m"true"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-salvage"[39m
+          [33mid[39m=[32m"_r_c_-tab-salvage"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mSalvage[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_c_-panel-relic"[39m
+          [33maria-selected[39m=[32m"false"[39m
+          [33mclass[39m=[32m"forge-tab-btn"[39m
+          [33mdata-testid[39m=[32m"tab-relic"[39m
+          [33mid[39m=[32m"_r_c_-tab-relic"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRelic[0m
+        [36m</button>[39m
+      [36m</nav>[39m
+      [36m<section[39m
+        [33maria-labelledby[39m=[32m"_r_c_-tab-salvage"[39m
+        [33mclass[39m=[32m"forge-content forge-salvage-tab"[39m
+        [33mdata-testid[39m=[32m"salvage-panel"[39m
+        [33mid[39m=[32m"_r_c_-panel-salvage"[39m
+        [33mrole[39m=[32m"tabpanel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"forge-salvage-scroll"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"forge-salvage-summary"[39m
+            [33mdata-testid[39m=[32m"forge-salvage-summary"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"forge-salvage-yield-wrap"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"forge-salvage-yield-lead"[39m
+              [36m>[39m
+                [0mYield ([0m
+                [0m0[0m
+                [0m selected):[0m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"forge-salvage-yield-tokens"[39m
+                [33mdata-testid[39m=[32m"salvage-yield-summary"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"forge-note"[39m
+                [36m>[39m
+                  [0mSelect items below to preview salvage returns[0m
+                [36m</span>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"forge-salvage-controls"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"forge-mini-btn"[39m
+                [33mdata-testid[39m=[32m"salvage-select-all"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSelect All Eligible[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"forge-mini-btn"[39m
+                [33mdata-testid[39m=[32m"salvage-deselect-all"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDeselect All[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"forge-empty-state"[39m
+            [33mdata-testid[39m=[32m"salvage-empty-state"[39m
+          [36m>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"forge-empty-note"[39m
+            [36m>[39m
+              [0mNo items available for salvage.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"forge-action-area"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"forge-salvage-actions"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-busy[39m=[32m"false"[39m
+              [33mclass[39m=[32m"forge-btn "[39m
+              [33mdata-testid[39m=[32m"salvage-btn"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mSelect items to salvage[0m
+            [36m</button>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"forge-note forge-block-reason"[39m
+              [33mdata-testid[39m=[32m"block-reason-salvage"[39m
+            [36m>[39m
+              [0mNo unlocked spare gear in your bag to salvage.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/layout/forge/ForgePanel.test.tsx:332:21
+    330|       render(<ForgePanel {...props} />);
+    331|       fireEvent.click(screen.getByTestId('tab-salvage'));
+    332|       expect(screen.getByText('No items in inventory.')).toBeTruthy();
+       |                     ^
+    333|     });
+    334|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/layout/forge/ForgePanel.test.tsx > ForgePanel > V19c: Item icons in salvage list and reduced-motion stylesheet audit > salvage row for specific armor shows specific icon, untyped weapon falls back to class weapon, and craft slot picker shows slot icons
+AssertionError: expected null to be truthy
+
+- Expected:
+true
+
++ Received:
+null
+
+ ❯ src/layout/forge/ForgePanel.test.tsx:557:25
+    555|         '[data-testid="salvage-item-salvage-untyped-weapon"] svg[data-…
+    556|       );
+    557|       expect(weaponSvg).toBeTruthy();
+       |                         ^
+    558|       expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
+    559|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 7 passed (8)
+      Tests  3 failed | 94 passed (97)
+   Start at  04:00:06
+   Duration  1.24s (environment 51%, transform 21%, tests 15%, import 13%)
+
+undefined
+/private/tmp/tbh-cxu3-active/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/market src/layout/forge src/forge

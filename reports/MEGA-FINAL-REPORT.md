@@ -5,7 +5,7 @@ CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actua
 
 CXU4 #251 DONE, merged2847e9a with A95/B95. Actual main313/313 per desktop size,32/32 live asset hashes,22 health probes and10-stage live paths per size (including Hero/Help) pass with zero errors. Zero Actions runs. Lossless evidence compression preserved pixels and the200KiB cap. [Evidence](cards/CXU4-FRESH/REPORT.md).
 
-CXU3 is active on verified main2847e9a. The saved AGR3 layout is structural input only; fabricated Relic metadata and a conditional-hook risk will be removed before validation. CXC2 and remaining P1/P2 work are pending; #244 remains independently blocked.
+CXU3 is active on verified main2847e9a; Market was rewritten around unchanged transaction logic and real chain metadata, while Forge/Salvage preservation issues from the saved draft are being corrected. The saved AGR3 layout is structural input only; fabricated Relic metadata and a conditional-hook risk will be removed before validation. CXC2 and remaining P1/P2 work are pending; #244 remains independently blocked.
 
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
