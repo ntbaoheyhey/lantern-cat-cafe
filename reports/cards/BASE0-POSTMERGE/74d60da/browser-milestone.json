@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-02T12:12:41+07:00",
+  "head": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "full1600": {
+    "exit": 0,
+    "passed": 265,
+    "session": 90053,
+    "shell_pid": 3427,
+    "log_sha256": "9f41819f672b65835b1990beaaf5c008183331d436baf020882d635f155d2676"
+  },
+  "repeat1280": {
+    "state": "RUNNING",
+    "session": 5924,
+    "shell_pid": 6207,
+    "viewport": "1280x720",
+    "repeat_each": 10,
+    "workers": 2,
+    "ports": [
+      4440,
+      4441,
+      4442,
+      4443
+    ]
+  },
+  "full1600_command": "CI=true SCREENSHOTS=0 E2E_VIEWPORT=1600x900 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= E2E_PORT_CLASSIC=4440 E2E_PORT_V2=4441 E2E_PORT_SERVER=4442 E2E_PORT_API=4443 pnpm --filter @taskbar-hero/web test:e2e --workers=2 --output=<card>/full-1600-artifacts"
+}

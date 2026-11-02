@@ -13,3 +13,5 @@ Updated 2026-11-02T11:51:03+07:00. PR246 merged as `74d60dab2cef8c31a3f2729d1871
 - No test, worker/helper, product edit, merge, release or app request was started by this checkpoint. No later merge before all main/live gates pass.
 
 Raw logs/exit files are retained here; checkpoint-result.json records their hashes/sizes. Existing A97.64285714285714/B98 remain unchanged; coordinator checks are not a new independent grade. The checkpoint preparation initially expected15 exits; the guard stopped before writes and inventory corrected this to14 without changing any result.
+
+Milestone 2026-11-02T12:12:41+07:00: actualmain74d60da fullbrowser265/265 at both1280x720 and1600x900, exit0. Twelve-spec repeat10 at1280 is RUNNING, session5924/shellPID6207, ports4440–4443 owned by6245/6264/6312/6361; worktree mega-base0-postmerge-74d60da remains tracked-clean. Repeat1600, safeFORCE_ALL verifier, artifact identity and live gates still pending. No nextmerge.
