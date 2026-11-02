@@ -8,7 +8,7 @@ Last merged/main: 1b299c40513ff9f5330a91ad040791bbd4065df9 (#249), exact reviewe
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249 / merged1b299c4 | A94/B94 PASS; DONE: A94/B94; main302×2, live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251 / local8f2e3fe | ACTIVE builder; current main merged, modal regression check running |
+| CXU4 | #251 / local577e0e2 | Builder modal repair verified49 units/20 browser; final disabled-tabindex check running |
 | CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
 | T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
 | CXR1 + CXR2 + CXQ1 | #245/e99e497 + pending | Refresh screens, preserve AA threshold; full live demo + throwaway Fuji |
@@ -36,6 +36,6 @@ Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.m
 Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.
 Safety: no secrets, live DB mutation/migration/function deploy, provider/VITE_GAME_V2 changes, real funds/mainnet/submission.
 Current main evidence: CXU5-FRESH/post-main; live helper scripts: reports/fresh-session-tools/{verify-live-assets,live-phased}.mjs.
-In-flight PID12231: CXU4 builder-red tests at /private/tmp/tbh-cxu4-active; no browser ports yet.
-CXU4 tree: ai/codex-cxu4, merged8f2e3fe; only new ui.test.tsx regression dirty.
 Next3: inspect builder result/fix any issue; freeze head and fresh A/B gates on4800/4810 blocks; merge then main/live.
+In-flight PID14422: CXU4 builder-final focused units at /private/tmp/tbh-cxu4-active.
+CXU4 tree clean at577e0e26aab1b88c11a4d0453f6d1a84481ff783; current main1b299c4 integrated. Formal A/B still pending.
