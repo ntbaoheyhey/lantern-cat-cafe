@@ -1,5 +1,5 @@
 import { useId, useState, type ReactNode } from 'react';
-export interface ScreenTab { id: string; label: string; content: ReactNode }
+export interface ScreenTab { id: string; label: string; content: ReactNode; lazy?: boolean }
 export interface TabsProps { label: string; tabs: readonly ScreenTab[]; initialTab?: string }
 /** Accessible tab host with automatic activation and roving keyboard focus. IDs must be unique. */
 export function Tabs({ label, tabs, initialTab }: TabsProps) {
@@ -16,6 +16,6 @@ export function Tabs({ label, tabs, initialTab }: TabsProps) {
         event.preventDefault(); const target = tabs[next]!; setSelected(target.id);
         document.getElementById(`${prefix}-tab-${target.id}`)?.focus();
       }}>{tab.label}</button>)}</div>
-    {tabs.map(tab => <div key={tab.id} id={`${prefix}-panel-${tab.id}`} role="tabpanel" aria-labelledby={`${prefix}-tab-${tab.id}`} hidden={active !== tab.id} className="ui-tab-content">{tab.content}</div>)}
+    {tabs.map(tab => <div key={tab.id} id={`${prefix}-panel-${tab.id}`} role="tabpanel" aria-labelledby={`${prefix}-tab-${tab.id}`} hidden={active !== tab.id} className="ui-tab-content">{(!tab.lazy || active === tab.id) && tab.content}</div>)}
   </div>;
 }

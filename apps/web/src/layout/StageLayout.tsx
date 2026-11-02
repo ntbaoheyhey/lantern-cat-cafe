@@ -43,6 +43,7 @@ import { equipBest } from './bag/equipRules';
 import { HeroScreen } from './character/HeroScreen';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
+import { FujiProofPanel } from '../chain-proof/FujiProofPanel';
 import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
 import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
@@ -736,7 +737,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
-              <HelpTab />
+              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }]} />
             </div>
           </div>
         </div>
