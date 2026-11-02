@@ -37,3 +37,5 @@ Fresh B96 on clean df83851, tests first then full five-file diff. Core2423,40 bo
 
 ## Range repair merged; strict release verification active
 PR254 merged as666088ce06ce0c03485f46371b8fd7c22a99e386. Its tree equals reviewed df83851 exactly; requested author/email/skip-ci suffix verified. Actual-main and live checks run sequentially in /private/tmp/tbh-main-after-cxc2-range, PID82005,5060–5063. The live probe now requires an available100-block event result as well as code/linkage/asset/health proofs. Unrelated merges remain held until acceptance.
+
+The first post-fix main browser attempt used5060/5061, which Chromium blocks as unsafe SIP ports. Failures occurred before application loading (46 other cases passed), not as product assertions. Core current-head checks had passed and remain valid. The entire unchanged browser matrices/live gate now run on proven free4980–4983; no browser security override, skips or retry-count changes. The invalid-port attempt remains recorded.

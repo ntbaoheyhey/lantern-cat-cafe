@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T06:16:01+07:00. ACTIVE, one chat/agent; native hourly taskbar-hero-hourly-handoff remains active.
+Updated: 2026-11-03T06:24:50+07:00. ACTIVE, one chat/agent; native hourly taskbar-hero-hourly-handoff remains active.
 Read this FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -22,8 +22,9 @@ Reviewed range tree755ca0eaf87a576314174085cfb7c0b492a97884 equals merged main; 
 Local main retains untracked.worktrees/; no historical files removed. Ledger /private/tmp/tbh-t001-ledger.
 Stage selected ledger files only; preserve untracked historical logs/media. Ledger branch ai/codex-mega-ledger.
 
-ACTIVE PID82005: /private/tmp/tbh-main-after-cxc2-range, head666088c, ports5060–5063.
-Config/logs: reports/cards/CXC2-FRESH/range-post-main/; full main317×2 then live sequentially.
+PID82005 FINISHED: core PASS; browser infrastructure failed at Chromium-restricted SIP5060/5061.
+ACTIVE corrected run: range-post-main-safe-ports/process.json, /private/tmp/tbh-main-after-cxc2-range,666088c,4980–4983.
+Config/logs: CXC2-FRESH/range-post-main-safe-ports/; full317×2 then live. Do not use5060/5061.
 Live output: CXC2-FRESH/range-live/; helper live-phased-proof-100.mjs requires recent-event availability.
 Do not start another main/live run. Unrelated merges held until this release gate passes.
 CXC2 source fix /private/tmp/tbh-cxc2-rpc-fix, codex/cxc2-rpc-window,df83851; merged via254.
@@ -51,4 +52,4 @@ real funds/mainnet, repo publicity, contest submission, .github changes, Actions
 Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007; no guard bypass. Do not kill unrelated18457/OS listeners.
 Gates: exact-head fresh A/B>=92, floors and zero auto-fails; max3 rounds/item; serial merges, main/live after each.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: inspect82005; accept only with real event read and stable assets; then originality/full gates for T011/T012 before preview/art.
+Next3: inspect corrected safe-port run; accept only with available event read/stable assets; then originality/full gates for original tables before preview/art.

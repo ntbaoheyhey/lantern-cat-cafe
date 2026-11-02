@@ -1,0 +1,8 @@
+{
+  "head": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+  "kind": "test infrastructure",
+  "reason": "ERR_UNSAFE_PORT: Chromium reserves SIP5060/5061. Application-target cases failed before page load;46 other cases passed.",
+  "original": "range-post-main/logs/browser-1280x720.log",
+  "repair": "Use already-proven free4980\u20134983; retain all assertions/retries0; run the complete browser matrices and live gate. No unsafe-port override or product change.",
+  "coreCurrentHead": "PASS; not repeated"
+}

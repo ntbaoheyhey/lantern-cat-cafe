@@ -260,3 +260,5 @@ and correction of stale BASE0 runbook warnings. Local preflight and fresh existi
 checks pass, but complete live function rollback source is unavailable: authenticated export
 refuses unsafe extraction. No release/merge or live --v2 check; no final self-review scores.
 Owner recovery step is recorded in OPTIONAL-USER-STEPS.md. [T007 evidence](cards/T007-CXN3-GATE/REPORT.md).
+
+Current release verification note: post-fix core checks passed, but a browser attempt used Chromium-restricted5060/5061 and failed before app loading. The unchanged full matrices and live gate are running on proven4980–4983; the infrastructure failure is retained. No unrelated merge is allowed yet.
