@@ -1,0 +1,309 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-02T11:36:18.956220+00:00",
+  "scope": "Retained evidence audit only; T001 acceptance correction pending; no source suites rerun",
+  "t001AcceptanceStatus": "BLOCKED",
+  "reason": "Literal 74d60da deployment criterion remains false; only orchestrator can correct read-only dispatch",
+  "historicalBASE0": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "historicalCheckpoint": "89664d7057df9a3f6720162538014d4da3e70e1a",
+  "verifierHeads": {
+    "VERIFIER_HEAD": "e4faf6351fc8163016f5450bd22ce3b41a4126d4",
+    "PR_HEAD": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "BASE_HEAD": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+    "TESTED_HEAD": "1aaa829cbfe70972e29f11ed9158a70896a4cba4"
+  },
+  "historicalTrees": {
+    "PR_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "BASE_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "TESTED_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1"
+  },
+  "testedHeadObjectStore": "/Users/bao/.codex/handoffs/taskbar-hero/reliability/base0-pr246-cli-mBQnzqAR/verify-pr-246",
+  "historicalReceipts": [
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/deployment-status.json",
+      "sha256": "265ccd0fafd16d98d59f851859d62520149fd7098c1726f24e7a991fadc6e00c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/evidence-manifest.json",
+      "sha256": "b31a3e48e9274f61ec9ffa6a62fc70e5d8540bcc4fb44ca1043849bbcbcc00ba"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/forge-scroll-r2.exit",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/forge-scroll-r3.exit",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/forge-scroll-r4.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/live-phased.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/forge-scroll-r2.log",
+      "sha256": "6f7d84d1dddda3643ffb42e0b48906732cab4f745b632defaf909e19edfa862e"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/forge-scroll-r3.log",
+      "sha256": "d371b39ee39c7a428d287e7e19b63d91f2fef65ad8f1801f6eb0d5ee8bd3dd68"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/forge-scroll-r4.log",
+      "sha256": "2dcd73996de0a8c8fb2306ba3829aa7d6721ef341100a6f768d9573057780723"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/live-phased.log",
+      "sha256": "0d3132d428ffebab7d88c17416b7a1b1a1998a5eb0b9d54b9e3f0e6b59c57159"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/verifier-console.log",
+      "sha256": "d430a0f232137070cb71a65c43963b2b5acb9ff14e452753e7fdfacaa97cdc03"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/verifier-raw.log",
+      "sha256": "bbc108b91ebeecb2add6204502871eeb06a674589172128e711ce85faf032c01"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/reconciled-result.json",
+      "sha256": "3df5dbe2865210169d8c69b6aa95fc6427b2c47e275c87b0aacbfeaebedd6fed"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/secret-scan.json",
+      "sha256": "f0102510f9afd5b0fa0d90ede67deebdbac266774f898554e5116a842b7a1a6c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/verifier-tmpdir.txt",
+      "sha256": "32136cb220bd222f95236719268690a1a59180d485880048abe038114e393f0e"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/verifier.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/verifier.pid",
+      "sha256": "7583217b6f954906945a9ab1db99a418b329dcb8649ff273d413827ce31a029e"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/artifact-equality.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/artifact-equality.json",
+      "sha256": "4a564acb76e70f3a9b1a2b0dbdcfc2a7dd958b25148d5e16511d897fa2b790af"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/forge-corrected.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/legacy-check-live.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/logs/artifact-equality.log",
+      "sha256": "77d31f176e359e4223d3c02ad538d858a4932e36932fba146aa906929f1a243c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/logs/forge-corrected.log",
+      "sha256": "8357fcab2da2af1f1037913e76f462cac37e9cc712a24fdf6492a491d6505d5b"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/logs/legacy-check-live.log",
+      "sha256": "936edc59aed99988c3f6869f5443b99b875caf0012ea25374b4bf062c5279731"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/logs/verifier-console.log",
+      "sha256": "c34adc842390033a8d74c83aaa31b62d1311de0e8c51cc1dea4be2347b41e1a8"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/logs/verifier-raw.log",
+      "sha256": "80ef0940d38648f11fb81213e12b7bae85e5abbb311c0c7ed74f3f555b946a2d"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/reconciled-result.json",
+      "sha256": "4885292c9c92f5dec3e05187beec52f75144e0525a5ba093a18249a62ef6d162"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/verifier-tmpdir.txt",
+      "sha256": "5d140dffa8875ab25eb64d85da5390ce4d13d38151d135720239600f97cfd37e"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102/verifier.exit",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/bag.png",
+      "sha256": "b06fb3ae4a8176a4282813e7e6aac04aaac573400334d84eb0c613923d78ba9d"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/bag.txt",
+      "sha256": "d671be4c4c59a157cb201feb8fe0efba0af56a55226ff1cb23033ab8f63fa048"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/boss.png",
+      "sha256": "d3560cda9966af9c9acbe17987f52adf671ac5ada19fcf88e44a06ea6f1c4038"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/boss.txt",
+      "sha256": "3ff6487473479306d8be54c950365906efffb0d0e37c9b6f89342cd652fe4bce"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/class.png",
+      "sha256": "a40d58d4482a4a9c552aacaf5a3a60163439ab88252158b448a1ae7501aac87f"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/class.txt",
+      "sha256": "56aca9e16a29a8e613d077230a4a70188f6cd65a1dae2b32f70d2275b9cdee6f"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/forge-scrolled.png",
+      "sha256": "e0e1e34b9a87dbc9e9300adacb88f3d60edfe4766439fa6352d908a3dcc2d708"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/forge.png",
+      "sha256": "316b229d6a5abab39e10023db6b53272f24973d83e56c1aca55b3bb0066e2310"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/forge.txt",
+      "sha256": "f926c0f999fa2f5015371398a70cc4571f51d5364318441e05ce69150bf81241"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/idle-loop.png",
+      "sha256": "76364bff001c99998efb13543e6cd2cd859c4637fc56cc8497994c90dbc659b9"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/idle-loop.txt",
+      "sha256": "a656bbbc58f068fe55ceca05cbe403cd114d5dcbc766ee602191f2e50ac56b7c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/landing.png",
+      "sha256": "0d477f388ec52373f235cb239c9309193012e70476da17b4f1c06d2f321f5249"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/landing.txt",
+      "sha256": "75d2ec8491d1a40af09fa21ffdced84717b6f86881870eb1e367b09fe0f780c6"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/market.png",
+      "sha256": "dd0ffc4c220522754575a0a2b6da87666bc17dcceaf888ff260d1a923f43169c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/market.txt",
+      "sha256": "dd7fa543ab8774d09a583b382015c66dc511509209c67f1918adc9db24c589cf"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1280x720/result.json",
+      "sha256": "924c5dcc1940f7ba5ec8a93551a1feb1c0b3f75064be02d6f027a6f553f3e617"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/bag.png",
+      "sha256": "c4ba9d6dc21ce4a4fce0dae2ff64066b28ddadd97f83b1b7cfdc29c88560a351"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/bag.txt",
+      "sha256": "d671be4c4c59a157cb201feb8fe0efba0af56a55226ff1cb23033ab8f63fa048"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/boss.png",
+      "sha256": "0147e0d760567a4bf6c9deaca3dbb899fe164d11bc230b6aa8fdccae1b5ff2ac"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/boss.txt",
+      "sha256": "3ff6487473479306d8be54c950365906efffb0d0e37c9b6f89342cd652fe4bce"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/class.png",
+      "sha256": "c487b7882fdf1953e3105c9b685a6ddd31d3fc83deebe9693e50fdd3bb6f7fa3"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/class.txt",
+      "sha256": "56aca9e16a29a8e613d077230a4a70188f6cd65a1dae2b32f70d2275b9cdee6f"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/forge.png",
+      "sha256": "57ba05da7a75c86aa3178c629f2dd3032ae6cd37a61256c240bc325ab44f4319"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/forge.txt",
+      "sha256": "f926c0f999fa2f5015371398a70cc4571f51d5364318441e05ce69150bf81241"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/idle-loop.png",
+      "sha256": "e832cd0af2527cf2c0fb2b5fe2e07ad5ba5ae7374a69bf21233ff0a8757349d6"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/idle-loop.txt",
+      "sha256": "a656bbbc58f068fe55ceca05cbe403cd114d5dcbc766ee602191f2e50ac56b7c"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/landing.png",
+      "sha256": "ff6a6f5213d07d8b147358654e52e843e1c31d6162427f3019ddb159bb26a72d"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/landing.txt",
+      "sha256": "75d2ec8491d1a40af09fa21ffdced84717b6f86881870eb1e367b09fe0f780c6"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/market.png",
+      "sha256": "8d2c99e506490d380a3a0ad187de38200d3d44fe08b99d98c40aeb5c5b778104"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/market.txt",
+      "sha256": "dd7fa543ab8774d09a583b382015c66dc511509209c67f1918adc9db24c589cf"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/1600x900/result.json",
+      "sha256": "7d909efe1284d3a0dabcbf3a85893e7a170309747f5ad6cc78b086574b326663"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/forge-scroll-r1-failure.json",
+      "sha256": "8a1e95e94ab2b7d1a2457a6200793aef882183d0e6f91c9eba764c9330bae77d"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/forge-scroll-r2-failure.json",
+      "sha256": "d2da65c2c3b14b767987f8b7753f8f35cce92e05376877a78d872c5c7e7784a6"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/forge-scroll-r3-failure.json",
+      "sha256": "13d1d305159ae4b65a2c3c1a09bd27eca658510a7b9c537c252963d90685c6ef"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/forge-scroll-r4.json",
+      "sha256": "5c38aa6d166405bf8497cebafcb9ec23d3b59f9df358e6af4fe874590e1b0021"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/summary.json",
+      "sha256": "1fdc6d308c286e63825f17246b9e1d92ce4f6a04638062e916ac119be88c367f"
+    },
+    {
+      "path": "reports/cards/BASE0-POSTMERGE/74d60da/live-phased-cli/visual-review.md",
+      "sha256": "e8656bfb98b5534ae3577e42a3d1c7e9b4ce934a044d4cce15a5becf05a2c026"
+    }
+  ],
+  "adoptedCurrentCheckpoint": "4b895739a69cca13b9e331d224e5e834cf8bf39d",
+  "currentTargetAuthority": "../T014-CURRENT-MAIN-LIVE/release-target.json",
+  "currentMain": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "currentTree": "3c662e8e7e9e28c9bb0be25045ac984c2f10fa43",
+  "remoteRefs": [
+    "57f287c276f1401d69d195394d69c8bfea8f6641\trefs/heads/ai/codex-mega-ledger",
+    "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a\trefs/heads/main"
+  ],
+  "currentReceiptFilesVerified": 120,
+  "currentBuildComparisons": [
+    "../T014-CURRENT-MAIN-LIVE/artifact-before.json",
+    "../T014-CURRENT-MAIN-LIVE/artifact-after.json"
+  ],
+  "currentLegacyLiveExit": 0,
+  "currentPhasedViewports": [
+    "1280x720",
+    "1600x900"
+  ],
+  "historicalFailuresRetained": 9,
+  "newSuitesRun": [],
+  "currentLiveEqualsHistoricalBASE0": false,
+  "reliabilityLimit": "Historical isolated StageLayout timeout under concurrent build load; unchanged isolated and full reruns passed. No unconditional first-run reliability claim; no reproducible product defect established."
+}

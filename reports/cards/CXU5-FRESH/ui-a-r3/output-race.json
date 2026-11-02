@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-02T17:16:37.413857+00:00",
+  "auditOutDir": "/private/tmp/tbh-t008-cxu5/apps/web/dist/ui-audit-signed-in",
+  "auditOutDirExists": false,
+  "parallelBuildReceipts": [
+    {
+      "name": "build",
+      "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+      "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+      "exit": 0,
+      "startedAt": "2026-11-02T17:13:59.686657+00:00",
+      "endedAt": "2026-11-02T17:14:08.389765+00:00"
+    },
+    {
+      "name": "classic-build",
+      "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+      "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+      "exit": 0,
+      "startedAt": "2026-11-02T17:14:08.459236+00:00",
+      "endedAt": "2026-11-02T17:14:14.036534+00:00"
+    }
+  ],
+  "finding": "The audit output was nested under the normal build directory, which Vite empties. First viewport passed; next viewport could not load the deleted audit assets. Correct harness by giving the audit a dedicated temporary output directory."
+}

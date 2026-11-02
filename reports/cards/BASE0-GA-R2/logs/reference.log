@@ -1,0 +1,12 @@
+{"name":"reference","command":"node /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/reference-compare.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/.grade-local/captures","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:34:18.864Z"}
+file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/reference-compare.mjs:22
+ const capture=async(page,path)=>{const png=await page.screenshot({animations:'disabled'});if(png.length>=200*1024)throw new Error(`PNG budget exceeded: ${path} (${png.length})`);writeFileSync(path,png);return png.length;};
+                                                                                                                         ^
+
+Error: PNG budget exceeded: /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/.grade-local/captures/reference-forge-craft-1600.png (343249)
+    at capture (file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/reference-compare.mjs:22:122)
+    at async file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/reference-compare.mjs:42:118
+
+Node.js v24.22.2
+
+{"name":"reference","command":"node /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/reference-compare.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero /Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/.grade-local/captures","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:34:18.864Z","exit":1,"signal":null,"ended":"2026-11-01T15:34:26.922Z"}

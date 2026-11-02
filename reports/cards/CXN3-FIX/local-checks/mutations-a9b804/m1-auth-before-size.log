@@ -1,0 +1,110 @@
+a9b804cec74c866b0b06ca69142d10db3b642a75
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 6 failed) 25ms
+   × rejects unsigned oversized bytes with Content-Length undefined before auth or game work 13ms
+   × rejects unsigned oversized bytes with Content-Length 2 before auth or game work 1ms
+   × rejects unsigned oversized bytes with Content-Length 8193 before auth or game work 0ms
+   × counts UTF-8 bytes rather than JavaScript characters (authenticated=false) 0ms
+   × bounds an unknown-length chunked stream and cancels the producer 1ms
+   × bounds total body-read time to ten seconds even when the producer never finishes 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length undefined before auth or game work
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length 2 before auth or game work
+ FAIL  src/v2-body-limits.test.ts > rejects unsigned oversized bytes with Content-Length 8193 before auth or game work
+AssertionError: expected 401 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 401
+
+ ❯ src/v2-body-limits.test.ts:44:27
+     42|   const headers: HeadersInit = contentLength === undefined ? {} : { "C…
+     43|   const response = await r.handle(post(objectOfSize(8193), headers));
+     44|   expect(response.status).toBe(400);
+       |                           ^
+     45|   expect(await response.json()).toEqual({ error: "invalid_request" });
+     46|   expect(response.headers.get("Access-Control-Allow-Origin")).toBe("ht…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/v2-body-limits.test.ts > counts UTF-8 bytes rather than JavaScript characters (authenticated=false)
+AssertionError: expected 401 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 401
+
+ ❯ src/v2-body-limits.test.ts:67:47
+     65|   expect(encoder.encode(body).length).toBeGreaterThan(8192);
+     66|   const r = route(authenticated);
+     67|   expect((await r.handle(post(body))).status).toBe(400);
+       |                                               ^
+     68|   expect(r.game).not.toHaveBeenCalled();
+     69| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/v2-body-limits.test.ts > bounds an unknown-length chunked stream and cancels the producer
+AssertionError: expected 401 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 401
+
+ ❯ src/v2-body-limits.test.ts:78:49
+     76|   });
+     77|   const r = route(false);
+     78|   expect((await r.handle(post(stream))).status).toBe(400);
+       |                                                 ^
+     79|   expect(cancel).toHaveBeenCalledOnce();
+     80|   expect(r.authenticate).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/v2-body-limits.test.ts > bounds total body-read time to ten seconds even when the producer never finishes
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      Request {},
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/v2-body-limits.test.ts:149:30
+    147|   expect(response?.status).toBe(400);
+    148|   expect(cancel).toHaveBeenCalledOnce();
+    149|   expect(r.authenticate).not.toHaveBeenCalled();
+       |                              ^
+    150|   expect(r.game).not.toHaveBeenCalled();
+    151|   expect(vi.getTimerCount()).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 21 passed (27)
+   Start at  02:11:55
+   Duration  1.03s (import 70%, transform 15%, tests 14%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1

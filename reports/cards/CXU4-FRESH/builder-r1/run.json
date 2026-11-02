@@ -1,0 +1,19 @@
+{
+  "root": "/private/tmp/tbh-cxu4-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/builder-r1",
+  "head": "9c7adc8e60126ba4142390b0e377c470d56ba515",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "focused-units",
+      "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/ui src/layout/character src/layout/HelpTab src/onboarding"
+    ],
+    [
+      "focused-browser",
+      "E2E_PORT_CLASSIC=4800 E2E_PORT_V2=4801 E2E_PORT_SERVER=4802 E2E_PORT_API=4803 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu4-hero-help.spec.ts e2e/server/cxu4-offline.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/u4-character-bag.spec.ts --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

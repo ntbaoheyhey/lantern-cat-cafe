@@ -1,0 +1,20 @@
+{"name":"typecheck","command":"pnpm typecheck","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","viewport":"1280x720","start":"2026-11-01T15:50:01.311Z","log":"/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/logs/typecheck.log","workers":1}
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+EXIT_CODE=0

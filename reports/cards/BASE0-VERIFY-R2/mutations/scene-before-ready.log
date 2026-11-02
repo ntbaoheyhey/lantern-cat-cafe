@@ -1,0 +1,42 @@
+COMMAND ["pnpm","exec","vitest","run","src/game/stage/StageScene.test.ts"]
+CWD /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+
+ ❯ src/game/stage/StageScene.test.ts (12 tests | 1 failed) 110ms
+   × defers a resize before scene boot and uses the latest scale when CREATE arrives 5ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  19:36:40
+   Duration  788ms (environment 55%, transform 17%, tests 17%, import 11%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives
+AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of …' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"TypeError: Cannot read properties of undefined (reading 'height')"
+
+ ❯ src/game/stage/StageScene.test.ts:51:38
+     49|   Object.assign(scene, { scale: undefined });
+     50|   scene.show(sampleServerStateV2(), false);
+     51|   expect(() => scene.relayout()).not.toThrow();
+       |                                      ^
+     52|   Object.assign(scene, { scale: { width: 453, height: 96 } });
+     53|   start();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

@@ -1,0 +1,42 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu5-fresh-mutants-b0fq8C/apps/web
+
+ ❯ src/layout/bossPresentation.test.ts (7 tests | 1 failed) 7ms
+   × records history only on release, once; close preserves it, reset clears it 4ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  00:14:02
+   Duration  519ms (environment 83%, transform 9%, import 6%, tests 1%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/bossPresentation.test.ts > records history only on release, once; close preserves it, reset clears it
+AssertionError: expected [ { chapter: 1, won: true, …(2) } ] to deeply equal [ { chapter: 1, won: true, …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
+      "chapter": 1,
+-     "durationMs": 740,
++     "durationMs": 0,
+      "firstClear": true,
+      "won": true,
+    },
+  ]
+
+ ❯ src/layout/bossPresentation.test.ts:61:28
+     59|   expect(replaying.history).toEqual([]);
+     60|   const released = bossPresentation(replaying, { type: 'release' });
+     61|   expect(released.history).toEqual([{ chapter: 1, won: resolved.result…
+       |                            ^
+     62|     durationMs: resolved.result.timeline.at(-1)!.t }]);
+     63|   expect(bossPresentation(released, { type: 'release' }).history).toHa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

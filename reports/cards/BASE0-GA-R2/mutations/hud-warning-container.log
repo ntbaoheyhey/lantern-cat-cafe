@@ -1,0 +1,94 @@
+{"name":"hud-warning-container","command":"pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720 when gated'","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:35:24.979Z"}
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web
+> playwright test e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720 when gated'
+
+[WebServer] (node:19209) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:19255) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:19282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19285) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:19292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:19299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:19336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:19349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+(node:19350) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F
+
+  1) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 26
+
+    - Array []
+    + Array [
+    +   "hud-left hud-bar: outside viewport",
+    +   "hud-left hud-bar: vertical ancestor clipping",
+    +   "hud-left hud-bar: vertical ancestor clipping",
+    +   "hud-left hud-bar: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-gold: outside viewport",
+    +   "hud-chip hud-stack-item hud-gold: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-gold: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-gold: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-shards: outside viewport",
+    +   "hud-chip hud-stack-item hud-shards: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-shards: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-shards: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-keys: outside viewport",
+    +   "hud-chip hud-stack-item hud-keys: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-keys: vertical ancestor clipping",
+    +   "hud-chip hud-stack-item hud-keys: vertical ancestor clipping",
+    +   "hud-chip hud-progress-chip: outside viewport",
+    +   "hud-chip hud-progress-chip: vertical ancestor clipping",
+    +   "hud-chip hud-progress-chip: vertical ancestor clipping",
+    +   "hud-chip hud-progress-chip: vertical ancestor clipping",
+    +   "hud-chip hud-power-chip: outside viewport",
+    +   "hud-chip hud-power-chip: vertical ancestor clipping",
+    +   "hud-chip hud-power-chip: vertical ancestor clipping",
+    +   "hud-chip hud-power-chip: vertical ancestor clipping",
+    + ]
+
+      56 |     return problems;
+      57 |   });
+    > 58 |   expect(clipped).toEqual([]);
+         |                   ^
+      59 |   const action = page.getByTestId('next-hint').getByRole('button');
+      60 |   await expect(action).toBeVisible();
+      61 |   const text = await action.innerText();
+        at expectReadableChrome (/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:58:19)
+        at /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web/e2e/ui/baseline-hud.spec.ts:126:22
+
+    Error Context: test-results/4420-4421/ui-baseline-hud-shared-HUD-0b549-ible-at-1280x720-when-gated-stage-layout/error-context.md
+
+  1 failed
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+ ELIFECYCLE  Command failed with exit code 1.
+
+{"name":"hud-warning-container","command":"pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 -g 'shared HUD keeps XP and every status chip visible at 1280x720 when gated'","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","started":"2026-11-01T15:35:24.979Z","browserExit":1,"signal":null,"artifacts":[],"finished":"2026-11-01T15:35:33.535Z","contractExit":0}

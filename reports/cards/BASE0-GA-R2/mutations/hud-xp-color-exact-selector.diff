@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 182bd94..fe78d1e 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -204,7 +204,7 @@
+ }
+ 
+ .shell-hud .hud-power-chip { border-color: var(--border, #72578d); }
+-.shell-hud .hud-xp-fill { background: var(--good, #6be08a); }
++.shell-hud .hud-xp-fill { background: var(--accent, #6be08a); }
+ 
+ .hud-center {
+   display: flex;

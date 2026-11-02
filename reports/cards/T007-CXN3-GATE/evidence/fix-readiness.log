@@ -1,0 +1,36 @@
+# CXN3-FIX verification — published draft, not merge-ready
+
+Candidate a9b804cec74c866b0b06ca69142d10db3b642a75 is published as draft [PR #250](https://github.com/ntbaoheyhey/taskbar-hero/pull/250), based on repaired BASE0280ff4b. Remote refs and PR metadata were rechecked on2026-11-02: main remains1fb25ed, the draft is open and mergeable, and its six-file/two-commit scope is unchanged. It is stacked only to expose the diff: never merge it into BASE0; integrate and retarget to actual main after prerequisites. The coordinator implemented and verified it directly; no subagent or helper runner was used. No backend release or player-state write is claimed.
+
+## Behavior
+
+The shared v2 handler rejects actual input above8192bytes before authentication. It bounds the entire body read to10seconds and handles abort/cancellation without waiting indefinitely for producer cleanup. UTF-8/object parsing remains after authentication and budget admission. Ordinary unsigned small/malformed/empty input remains401; refused input never reaches game work. The token verifier, SIWE, schemas, contracts and gameplay rules are unchanged. This does not yet establish a cause or deployed fix for historical endpoint timeouts.
+
+## Current-head evidence
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Frozen install, root typecheck/lint/unit tests | PASS; root includes575Supabase/1308web tests; inherited2expected failures/11skips disclosed |local-checks/install-a9b804.log and root-*-a9b804.log |
+| Direct handler regressions |27PASS; initial24-case run had8FAIL/16PASS and is retained |local-checks/body-limit-*.log; current root log |
+| Deliberate mutants |6/6detected,2green27-test controls; scratch restored clean |local-checks/mutations-a9b804/RESULT.md and per-fault logs/diffs |
+| Default/classic/v2 builds | PASS |local-checks/*build*a9b804.log |
+| Deno generation/drift/import guard | PASS;18functions clean |local-checks/deno-*-a9b804.log |
+| Links and bundle secret scans | PASS |local-checks/links-a9b804.log; bundle-scan*-a9b804.log |
+| Same-day main comparison |classicgzip+0.144240%;v2+0.140554%, below5%; static public tree unchanged |local-checks/bundle-budget-a9b804.json and comparison/build logs |
+| Safe standard PR verifier | PASS exit0; exact a9b804; install/drift/type/lint/unit/build/browser274 and clean retained checkout |local-checks/verify-pr-250-result.json;verify-pr-250-a9b804.log;verify-pr-250-summary.txt |
+| Complete browser suites |274/274at1280×720 and274/274at1600×900; zero retries |local-checks/full-*-a9b804.log |
+| New wire spec repeat10 |90/90at each configured desktop size |local-checks/repeat-*-a9b804.log |
+| Guest and local-signed UI audit |18+18records, zero findings |ui-audit-guest/findings.json;ui-audit-signed/findings.json |
+| Effects and reduced motion |10/10at each size; all9manifest screens reached in both modes |effects-1280/summary.json;effects-1600/summary.json |
+| Images |16PNG captures, each below200,000bytes |local-checks/png-bytes-a9b804.txt |
+| Keyboard and contrast |7main tabs at each size with focus/visible panels;10contrast tests pass |public-config/manual-results.json;local-checks/contrast-a9b804.log |
+| Production public-config guest UI |4manual cases pass across flags0/1 and both measured sizes; one visible canvas and no observed console errors |public-config/source.json, embedded-config-check.json, build/bundle logs and manual-results.json |
+
+The public configuration was observed from the live client, validated as the expected public anon role/project and verified embedded in both builds. Values were withheld. Manual guest checks used fresh tabs/origins and performed no sign-in/wallet action. Reviewed ApiSwitch/ApiSwitchV2 code selects demo APIs without a tab-scoped session token. This is manual UI/console evidence, not a new network-interception trace or proof that the server repair is deployed.
+
+7:The shared v2 handler rejects actual input above8192bytes before authentication. It bounds the entire body read to10seconds and handles abort/cancellation without waiting indefinitely for producer cleanup. UTF-8/object parsing remains after authentication and budget admission. Ordinary unsigned small/malformed/empty input remains401; refused input never reaches game work. The token verifier, SIWE, schemas, contracts and gameplay rules are unchanged. This does not yet establish a cause or deployed fix for historical endpoint timeouts.
+27:| Production public-config guest UI |4manual cases pass across flags0/1 and both measured sizes; one visible canvas and no observed console errors |public-config/source.json, embedded-config-check.json, build/bundle logs and manual-results.json |
+29:The public configuration was observed from the live client, validated as the expected public anon role/project and verified embedded in both builds. Values were withheld. Manual guest checks used fresh tabs/origins and performed no sign-in/wallet action. Reviewed ApiSwitch/ApiSwitchV2 code selects demo APIs without a tab-scoped session token. This is manual UI/console evidence, not a new network-interception trace or proof that the server repair is deployed.
+33:Initial type inference failure, the9over-constrained wire assertions and their original test source remain preserved. The mission accepts400or413; the unchanged loopback server's own8192-byte guard returns413 before the production handler. Corrected wire tests still reject401, while27direct handler tests exercise the masked branch. The loopback runtime also omits player-budget admission; dedicated Supabase tests cover the real PGlite budget RPC. No existing assertion, skip or retry was weakened.
+43:The candidate's historical verify-pr.sh contains forced cleanup and has not been invoked for this item. The coordinator updated the standard verifier on the ledger branch to refuse existing paths/logs, preserve evidence and avoid forced deletion; four direct guard checks passed. See ../VERIFY-PR-SAFETY/REPORT.md. Its direct real-PR run completed at2026-11-02T07:57:26+07:00, exit0: toolHEAD9df9316 (implementation84c37e8), PRHEAD/TESTED_HEADa9b804, current-mainBASE_HEAD1fb25ed. It ran every applicable standard check, including274browser cases, and retained a clean checkout outside the repository. No contracts changed, so the conditional contract step is N/A; no source check was disabled. Session27003/PID84480 terminated and4510–4513 are free. Its default browser config does not replace the separate prior two-size full runs. Raw output and exact identities are retained under local-checks. No comment was posted.
+45:BASE0's deployment hold is separate and remains. This item is inserted before CXN3 because the latter's mandatory v2 live check is known red. No merger, quota reset, backend health or full deployed-source identity follows from these local results.

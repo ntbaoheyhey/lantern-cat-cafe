@@ -1,0 +1,201 @@
+COMMAND ["pnpm","--filter","@taskbar-hero/supabase-tests","exec","vitest","run","src/fixture-clock.test.ts","src/forge.test.ts","v2/functions-forge.test.ts"]
+CWD /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 5db4949096e93eedeb98dff94ef1ec7019485f96
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/fixture-clock.test.ts (4 tests | 4 failed) 9ms
+   ❯ database-relative fixture clocks (4)
+     × keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z 5ms
+     × keeps lifecycle time ahead of SQL defaults at 2026-11-01T11:00:00.000Z 0ms
+     × keeps lifecycle time ahead of SQL defaults at 2040-12-31T00:00:00.000Z 1ms
+     × keeps lifecycle time ahead of SQL defaults at 2040-12-31T23:59:59.999Z 1ms
+ ❯ src/forge.test.ts (21 tests | 16 failed) 638ms
+   ❯ relic-forge (10)
+     × spends shards and the oldest Boss Key and returns a voucher signed by the server key 95ms
+     × a second call the same day returns the same voucher and spends nothing 10ms
+     × after expiry re-signs the same Relic with a new nonce and expiry; the old voucher becomes expired 17ms
+     × an expired voucher that was minted anyway is recorded, not re-signed 15ms
+     × does not re-sign when the chain cannot be read 20ms
+     × after a mint: blocked for the rest of the day, allowed again the next day 9ms
+     × two concurrent forges spend once and both get the same voucher 25ms
+     × game-state signs an interrupted forge or keeps its voucher recoverable without a signer 4ms
+   ❯ forge.today (3)
+     × null with no forge, then the unminted Relic, then minted with the reported tx hash 24ms
+     × yesterday's forge is not today's 20ms
+     × is per player 10ms
+   ❯ relic-mint-report (3)
+     × a valid receipt marks the voucher minted and clears forge.pending; a repeat is unchanged 11ms
+     × refuses receipts that do not mint exactly this voucher 12ms
+     × another player's or an unknown nonce is not_found 9ms
+   ❯ HTTP (3)
+     × relic-forge returns the ForgeResult shape and ignores body fields 33ms
+   ❯ grants and RLS (2)
+     × players read only their own forges and vouchers, and cannot write them 10ms
+ ❯ v2/functions-forge.test.ts (19 tests | 5 failed) 877ms
+   ❯ v2 Relic forge shares the v1 voucher lifecycle (8)
+     × spends the content costs, signs verifiable typed data, and returns pending without spending 24ms
+     × returns a live v1 pending voucher, then blocks once that v1 forge is minted 12ms
+     × reissues an expired unused nonce with the same Relic and no extra spend 11ms
+     × records an expired used voucher minted before applying the daily limit 11ms
+     × keeps a competing unsigned replacement recoverable until its interrupted check can resume 10ms
+
+ Test Files  3 failed (3)
+      Tests  25 failed | 19 passed (44)
+   Start at  18:15:52
+   Duration  2.64s (tests 72%, import 20%, transform 8%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/fixture-clock.test.ts src/forge.test.ts v2/functions-forge.test.ts
+stderr | src/forge.test.ts > HTTP > relic-forge returns the ForgeResult shape and ignores body fields
+error: new row for relation "relic_vouchers" violates check constraint "relic_vouchers_check"
+    at pe.Oe (file:///Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:18162)
+    at pe.tt (file:///Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:15548)
+    at pe.parse (file:///Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/chunk-3OMHRXTA.js:1:14222)
+    at D.Ne (file:///Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/index.js:5:1763)
+    at file:///Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/dist/index.js:5:1155
+    at wasm://wasm/0269dffe:wasm-function[10979]:0x5ad04f
+    at wasm://wasm/0269dffe:wasm-function[3598]:0x281dd2
+    at wasm://wasm/0269dffe:wasm-function[3640]:0x289ccf
+    at wasm://wasm/0269dffe:wasm-function[3650]:0x289f2b
+    at wasm://wasm/0269dffe:wasm-function[9956]:0x55697c {
+  length: 706,
+  severity: 'ERROR',
+  code: '23514',
+  detail: 'Failing row contains (16, 00000000-0000-4000-8000-000000000019, 2, rare, issued, null, 2026-11-01 18:15:55.292+07, 2026-11-01 17:30:00+07, 85bcace1-f841-42c2-8ae9-292976f0fc5c, null, null, null, null).',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: 'SQL statement "insert into public.relic_vouchers (player_id, forge_id, relic_id, rarity, expires_at)\n' +
+    '  values (p_player, v_forge, p_relic_id, p_rarity, p_expires_at)\n' +
+    '  returning *"\n' +
+    'PL/pgSQL function public.game_forge(uuid,date,integer,text,integer,integer,timestamp with time zone) line 41 at SQL statement',
+  schema: 'public',
+  table: 'relic_vouchers',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'relic_vouchers_check',
+  file: 'execMain.c',
+  line: '2081',
+  routine: 'ExecConstraints',
+  query: 'select public.game_forge($1, $2, $3, $4, $5, $6, $7) r',
+  params: [
+    '00000000-0000-4000-8000-000000000019',
+    '2026-11-01',
+    2,
+    'rare',
+    30,
+    1,
+    '2026-11-01T10:30:00.000Z'
+  ],
+  queryOptions: undefined
+}
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 25 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z
+AssertionError: expected '2020-02-28T10:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality
+
+Expected: "2020-02-29T10:00:00.000Z"
+Received: "2020-02-28T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/25]⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2026-11-01T11:00:00.000Z
+AssertionError: expected '2026-11-01T10:00:00.000Z' to be '2026-11-02T10:00:00.000Z' // Object.is equality
+
+Expected: "2026-11-02T10:00:00.000Z"
+Received: "2026-11-01T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/25]⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2040-12-31T00:00:00.000Z
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2040-12-31T23:59:59.999Z
+AssertionError: expected '2040-12-31T10:00:00.000Z' to be '2041-01-01T10:00:00.000Z' // Object.is equality
+
+Expected: "2041-01-01T10:00:00.000Z"
+Received: "2040-12-31T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/25]⎯
+
+ FAIL  src/forge.test.ts > relic-forge > spends shards and the oldest Boss Key and returns a voucher signed by the server key
+ FAIL  src/forge.test.ts > relic-forge > a second call the same day returns the same voucher and spends nothing
+ FAIL  src/forge.test.ts > relic-forge > after expiry re-signs the same Relic with a new nonce and expiry; the old voucher becomes expired
+ FAIL  src/forge.test.ts > relic-forge > an expired voucher that was minted anyway is recorded, not re-signed
+ FAIL  src/forge.test.ts > relic-forge > does not re-sign when the chain cannot be read
+ FAIL  src/forge.test.ts > relic-forge > after a mint: blocked for the rest of the day, allowed again the next day
+ FAIL  src/forge.test.ts > relic-forge > two concurrent forges spend once and both get the same voucher
+ FAIL  src/forge.test.ts > relic-forge > game-state signs an interrupted forge or keeps its voucher recoverable without a signer
+ FAIL  src/forge.test.ts > forge.today > null with no forge, then the unminted Relic, then minted with the reported tx hash
+ FAIL  src/forge.test.ts > forge.today > yesterday's forge is not today's
+ FAIL  src/forge.test.ts > forge.today > is per player
+ FAIL  src/forge.test.ts > relic-mint-report > a valid receipt marks the voucher minted and clears forge.pending; a repeat is unchanged
+ FAIL  src/forge.test.ts > relic-mint-report > refuses receipts that do not mint exactly this voucher
+ FAIL  src/forge.test.ts > relic-mint-report > another player's or an unknown nonce is not_found
+ FAIL  src/forge.test.ts > grants and RLS > players read only their own forges and vouchers, and cannot write them
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > spends the content costs, signs verifiable typed data, and returns pending without spending
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > returns a live v1 pending voucher, then blocks once that v1 forge is minted
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > reissues an expired unused nonce with the same Relic and no extra spend
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > records an expired used voucher minted before applying the daily limit
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > keeps a competing unsigned replacement recoverable until its interrupted check can resume
+error: new row for relation "relic_vouchers" violates check constraint "relic_vouchers_check"
+ ❯ pe.Oe ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:442:11
+ ❯ pe.tt ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:220:16
+ ❯ pe.parse ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:104:21
+ ❯ D.Ne ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:763:26
+ ❯ ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:716:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/25]⎯
+
+ FAIL  src/forge.test.ts > HTTP > relic-forge returns the ForgeResult shape and ignores body fields
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ src/forge.test.ts:414:24
+    412|     const p = await player();
+    413|     const res = await call("relic-forge", p.id, { rarity: "legendary",…
+    414|     expect(res.status).toBe(200);
+       |                        ^
+    415|     const body = (await res.json()) as ForgeResult;
+    416|     const fixture: ForgeResult = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/25]⎯
+
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

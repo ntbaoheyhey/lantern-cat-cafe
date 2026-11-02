@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/ui/g1-perf.spec.ts b/apps/web/e2e/ui/g1-perf.spec.ts
+index 0153441..c81149f 100644
+--- a/apps/web/e2e/ui/g1-perf.spec.ts
++++ b/apps/web/e2e/ui/g1-perf.spec.ts
+@@ -97,7 +97,7 @@ test('G1 demo action feedback, resize lifecycle and three plain claims', async (
+   const fight = await feedback(page, page.getByRole('button', { name: 'Fight', exact: true }));
+   const entry = { before, after, plainClaimRebuilds: rebuilds, feedback: { equip, craft, fight }, visibility: 'synthetic hidden/visible events, including resize while paused' };
+   const report = process.env.REPORT_DIR
+-    ? path.resolve(process.env.REPORT_DIR, 'metrics.json') : test.info().outputPath('metrics.json');
++    ? path.resolve(process.env.REPORT_DIR, 'metrics.json') : path.resolve('../../reports/g1-speed/metrics.json');
+   fs.mkdirSync(path.dirname(report), { recursive: true });
+   const existing = fs.existsSync(report) ? JSON.parse(fs.readFileSync(report, 'utf8')) : {};
+   const phase = process.env.G1_BASELINE === '1' ? 'baseline' : 'after';

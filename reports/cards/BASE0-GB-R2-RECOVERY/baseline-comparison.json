@@ -1,0 +1,31 @@
+{
+  "main": {
+    "classic": 663477,
+    "v2": 678033,
+    "linksTail": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"node scripts/check-links.mjs\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-main-reference-r2/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"name\": \"links\", \"ports\": {\"E2E_PORT_API\": \"4603\", \"E2E_PORT_CLASSIC\": \"4600\", \"E2E_PORT_SERVER\": \"4602\", \"E2E_PORT_V2\": \"4601\"}, \"screenshots\": false, \"started\": \"2026-11-01T16:40:09+07:00\", \"starting_git_status\": \"\", \"viewport\": \"1280x720\"}",
+      "Checked 67 markdown files and 807 links/paths.",
+      "",
+      "Found 1 broken link(s) or path(s) on disk:",
+      "",
+      "  docs/proposals/rune-skill-system/README.md:4 [backticked repo path]",
+      "    Target: `docs/proposals/tbh-index-research/`",
+      "    Not found: docs/proposals/tbh-index-research",
+      "",
+      "",
+      "EXIT_CODE=1"
+    ]
+  },
+  "candidate": {
+    "classic": 664434,
+    "v2": 678986,
+    "linksTail": [
+      "{\"base\": \"1fb25edf4c54ada0d161e3c1dd16a4c4550aafba\", \"command\": \"node scripts/check-links.mjs\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero\", \"empty_backend_env\": true, \"head\": \"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0\", \"name\": \"links\", \"ports\": {\"E2E_PORT_API\": \"4383\", \"E2E_PORT_CLASSIC\": \"4380\", \"E2E_PORT_SERVER\": \"4382\", \"E2E_PORT_V2\": \"4381\"}, \"screenshots\": false, \"started\": \"2026-11-01T19:34:48+07:00\", \"starting_git_status\": \"?? apps/web/tools/.base0-r2-audit.mjs\\n?? apps/web/tools/.base0-r2-effects.mjs\\n\", \"viewport\": \"1280x720\"}",
+      "Checked 70 markdown files and 811 links/paths.",
+      "",
+      "\u2713 All links, image paths, and backticked repo paths exist on disk.",
+      "",
+      "EXIT_CODE=0"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+diff --git a/scripts/gen-deno-json.mjs b/scripts/gen-deno-json.mjs
+index 38aa0db..65dee6f 100644
+--- a/scripts/gen-deno-json.mjs
++++ b/scripts/gen-deno-json.mjs
+@@ -67,7 +67,7 @@ export function generateImportMaps(projectRoot = root) {
+   };
+ 
+   const functions = readdirSync(functionsDir, { withFileTypes: true })
+-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith('_'))
++    .filter((entry) => entry.isDirectory())
+     .map((entry) => entry.name)
+     .filter((name) => existsSync(join(functionsDir, name, 'index.ts')))
+     .sort();

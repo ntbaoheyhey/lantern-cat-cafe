@@ -1,0 +1,155 @@
+[
+  {
+    "name": "anonymous-500",
+    "file": "scripts/check-live.mjs",
+    "before": "status === 401 :",
+    "after": "[401, 500].includes(status) :",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "oversized-401",
+    "file": "scripts/check-live.mjs",
+    "before": "[400, 413].includes(status)",
+    "after": "[400, 401, 413].includes(status)",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cors-origin",
+    "file": "scripts/check-live.mjs",
+    "before": "allowedOrigin === origin",
+    "after": "Boolean(allowedOrigin)",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "budget-hint",
+    "file": "scripts/check-live.mjs",
+    "before": "budgets migration missing?",
+    "after": "service unavailable",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "network-pass",
+    "file": "scripts/check-live.mjs",
+    "before": "{ ok: false, detail: 'network error' }",
+    "after": "{ ok: true, detail: 'network error' }",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "missing-route",
+    "file": "scripts/check-live.mjs",
+    "before": "['v2-boss-fight', 'v2-choose-class'",
+    "after": "['v2-choose-class'",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "small-body",
+    "file": "scripts/check-live.mjs",
+    "before": "'x'.repeat(8193)",
+    "after": "'x'.repeat(8000)",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "missing-migration",
+    "file": "docs/cutover-v2.md",
+    "before": "| [20261107000000_voucher_race_guard.sql]",
+    "after": "REMOVED [20261107000000_voucher_race_guard.sql]",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "user-only-authority",
+    "file": "docs/cutover-v2.md",
+    "before": "user-approved mission section 7",
+    "after": "user-only deployment",
+    "command": [
+      "node",
+      "--test",
+      "scripts/check-live.test.mjs"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "wrong-existing-table",
+    "file": "docs/proposals/sql/check-live-schema.sql",
+    "before": "('public.cat_state')",
+    "after": "('public.players')",
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "src/live-schema.test.ts",
+      "--reporter",
+      "verbose",
+      "--silent=false"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "missing-cxn1-signature",
+    "file": "docs/proposals/sql/check-live-schema.sql",
+    "before": "public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)",
+    "after": "public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)",
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "src/live-schema.test.ts",
+      "--reporter",
+      "verbose",
+      "--silent=false"
+    ],
+    "exit": 1,
+    "killed": true
+  }
+]

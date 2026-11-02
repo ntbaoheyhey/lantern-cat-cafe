@@ -1,0 +1,8 @@
+import fs from'node:fs';import{spawnSync}from'node:child_process';const c='/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1',w='/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch';
+function active(){if(!fs.readFileSync(c+'/CONTROL.md','utf8').startsWith('ACTIVE:'))throw Error('PAUSED');}
+while(!fs.existsSync(c+'/EXTRA_DONE')){active();await new Promise(r=>setTimeout(r,5000));}
+active();const command='pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep "roster sheet|bake time|T1-T5|G1 demo|G3 stage frame" --workers=1';
+const env={...process.env,CI:'true',SCREENSHOTS:'1',SCREENSHOT_DIR:c+'/opt-in',REPORT_DIR:c+'/opt-in',VITE_SUPABASE_URL:'',VITE_SUPABASE_ANON_KEY:'',E2E_PORT_CLASSIC:'4430',E2E_PORT_V2:'4431',E2E_PORT_SERVER:'4432',E2E_PORT_API:'4433',E2E_VIEWPORT:'1280x720'};
+const fd=fs.openSync(c+'/logs/artifact-opt-in.log','w'),start=new Date().toISOString();const r=spawnSync(command,{cwd:w+'/apps/web',env,shell:'/bin/zsh',stdio:['ignore',fd,fd]});fs.closeSync(fd);
+const files=fs.existsSync(c+'/opt-in')?fs.readdirSync(c+'/opt-in'):[],metrics=['bake-metrics.json','metrics.json','frame-metrics.json'];const pass=r.status===0&&files.some(f=>f.endsWith('.png'))&&metrics.every(f=>files.includes(f));
+fs.writeFileSync(c+'/opt-in-result.json',JSON.stringify({command,env:Object.fromEntries(Object.entries(env).filter(([k])=>/^(CI|SCREENSHOTS|SCREENSHOT_DIR|REPORT_DIR|VITE_SUPABASE_URL|VITE_SUPABASE_ANON_KEY|E2E_PORT_|E2E_VIEWPORT)/.test(k))),start,end:new Date().toISOString(),exit:r.status,files,pass},null,2));fs.writeFileSync(c+'/OPTIN_DONE',new Date().toISOString());

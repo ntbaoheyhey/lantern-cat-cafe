@@ -1,0 +1,85 @@
+/opt/homebrew/bin/supabase
+"""Reproduce CXN3 mutations in disposable copies under this checkout; never call live URLs."""
+from pathlib import Path
+import datetime
+import json
+import os
+import re
+import shutil
+import subprocess
+import tempfile
+
+ROOT = Path(__file__).resolve().parents[3]
+LOGS = ROOT / "reports/scorecard/cxn3/logs"
+SCRIPT = "scripts/check-live.mjs"
+DOC = "docs/cutover-v2.md"
+SQL = "docs/proposals/sql/check-live-schema.sql"
+COPIES = [
+    "package.json", "pnpm-workspace.yaml", "README.md", SCRIPT,
+    "scripts/check-live.test.mjs", DOC, SQL, "docs/go-live.md", "docs/runbook.md",
+    "supabase/tests/package.json", "supabase/tests/vitest.config.ts",
+    "supabase/tests/global-setup.ts", "supabase/tests/sql/bootstrap.sql",
+    "supabase/tests/src/live-schema.test.ts", "supabase/tests/src/game-db.ts",
+    "supabase/tests/src/standalone-db.ts",
+]
+LINKS = [".github", "packages", "node_modules", "supabase/tests/node_modules",
+         "supabase/migrations", "supabase/functions"]
+MUTANTS = [
+    ("anonymous-500", SCRIPT, "status === 401 :", "[401, 500].includes(status) :", "unsigned POST requires exactly 401"),
+    ("oversized-401", SCRIPT, "[400, 413].includes(status)", "[400, 401, 413].includes(status)", "oversized body requires 400 or 413"),
+    ("cors-origin", SCRIPT, "allowedOrigin === origin", "Boolean(allowedOrigin)", "preflight requires 2xx"),
+    ("budget-hint", SCRIPT, "budgets migration missing?", "service unavailable", "503 fails with a budget migration hint"),
+    ("network-pass", SCRIPT, "{ ok: false, detail: 'network error' }", "{ ok: true, detail: 'network error' }", "network errors fail"),
+    ("missing-route", SCRIPT, "['v2-boss-fight', 'v2-choose-class'", "['v2-choose-class'", "all nine routes get three probes"),
+    ("small-body", SCRIPT, "'x'.repeat(8193)", "'x'.repeat(8000)", "all nine routes get three probes"),
+    ("missing-migration", DOC, "| [20261107000000_voucher_race_guard.sql]", "REMOVED [20261107000000_voucher_race_guard.sql]", "migration table matches the branch exactly"),
+    ("user-only-authority", DOC, "user-approved mission section 7", "user-only deployment", "optional release follows section 7"),
+    ("wrong-existing-table", SQL, "('public.cat_state')", "('public.players')", "all 17 expected objects are present"),
+    ("missing-cxn1-signature", SQL, "public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean)", "public.game_voucher_reissue_resolve(uuid,bigint,uuid,text)", "all 17 expected objects are present"),
+]
+
+
+def run(name, target=None, before=None, after=None, witness=None, schema=False):
+    with tempfile.TemporaryDirectory(prefix=".cxn3-mutant-", dir=ROOT) as directory:
+#!/usr/bin/env bash
+# Verify a pull request in a retained worktree without spending GitHub Actions minutes.
+# Usage: scripts/verify-pr.sh <pr-number> [--comment]   (FORCE_ALL=1 runs every step)
+# The PR head is merged with the latest origin/main first, so the result is what main would be.
+# Steps run only when the PR changed files they cover: docs-only PRs run just the drift check.
+# --comment posts the result as a PR comment through the gh CLI.
+set -uo pipefail
+PR="${1:-}"; COMMENT="${2:-}"
+if ! [[ "$PR" =~ ^[1-9][0-9]*$ ]]; then
+  echo "Expected a positive PR number" >&2
+  exit 2
+fi
+ROOT="$(git rev-parse --show-toplevel)"; DIR="${TMPDIR:-/tmp}/verify-pr-$PR"
+LOG="$DIR.log"
+# Never erase an earlier checkout, a log, or a symlink to somebody else's data.
+if [ -e "$DIR" ] || [ -L "$DIR" ] || [ -e "$LOG" ] || [ -L "$LOG" ]; then
+  echo "Refusing to overwrite existing verification data: $DIR or $LOG" >&2
+  exit 2
+fi
+(set -o noclobber; : > "$LOG") || exit 2
+cd "$ROOT"
+printf 'VERIFIER_HEAD=%s\n' "$(git rev-parse HEAD)" >> "$LOG"
+git fetch -q origin "+refs/heads/main:refs/remotes/origin/main" "+pull/$PR/head:refs/verify/pr-$PR" || exit 2
+git worktree add -q --detach "$DIR" "refs/verify/pr-$PR" || exit 2
+cd "$DIR"
+printf 'PR_HEAD=%s\nBASE_HEAD=%s\n' "$(git rev-parse HEAD)" "$(git rev-parse origin/main)" >> "$LOG"
+RESULTS=(); FAIL=0
+run() { # name, command...
+  local name="$1"; shift
+  echo "== $name" >> "$LOG"
+  # Keep token-shaped credentials out of logs; pipefail preserves the command result.
+  if "$@" 2>&1 | sed -E 's/eyJ[A-Za-z0-9_-]{8,}[.]eyJ[A-Za-z0-9_-]{8,}[.][A-Za-z0-9_-]{8,}/[REDACTED_JWT]/g' >> "$LOG"; then RESULTS+=("PASS  $name"); else RESULTS+=("FAIL  $name"); FAIL=1; fi
+}
+skip() { RESULTS+=("skip  $1 ($2)"); }
+if git merge --no-edit -q -m "verify: merge latest main for PR #$PR [skip ci]" origin/main >> "$LOG" 2>&1; then RESULTS+=("PASS  merge with latest main"); else RESULTS+=("FAIL  merge with latest main (conflict)"); git merge --abort 2>/dev/null; FAIL=1; fi
+printf 'TESTED_HEAD=%s\n' "$(git rev-parse HEAD)" >> "$LOG"
+FILES="$(git diff --name-only origin/main HEAD)"
+has() { [ -n "${FORCE_ALL:-}" ] || echo "$FILES" | grep -Eq "$1"; }
+CODE=$(echo "$FILES" | grep -Ev '^(docs/|screenshots/)|\.md$' | grep -c . || true)
+if [ "$FAIL" = 0 ] && { [ "$CODE" -gt 0 ] || [ -n "${FORCE_ALL:-}" ]; }; then
+  run "pnpm install" pnpm install --frozen-lockfile
+  run "generated deno.json has no drift" bash -c 'pnpm gen:deno && git diff --exit-code -- supabase/functions'

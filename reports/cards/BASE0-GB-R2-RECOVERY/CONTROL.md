@@ -1,0 +1,1 @@
+ACTIVE: independent B recovery on unchanged280ff4b. Native A finished; original B errored and all its local pipelines stopped. First retry backoff elapsed; one-worker cap remains. No merge/source edits.

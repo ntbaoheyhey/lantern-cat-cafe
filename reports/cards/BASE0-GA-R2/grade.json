@@ -1,0 +1,407 @@
+{
+  "status": "DONE \u2014 PASS (independent premerge grade only)",
+  "grader": "A round2 /root/base0_grade_a_r2",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "branch": "ai/codex-mega-deno0",
+  "pr": 246,
+  "rawTotal": 97.64285714285714,
+  "finalTotal": 97.64285714285714,
+  "displayTotal": 97.642857,
+  "criteria": [
+    {
+      "id": "C1",
+      "weight": 25,
+      "score": 25,
+      "reason": "25 \u00d7 23/23 technical T/DONE acceptance lines; mapped below. No safety exclusions or unverified technical line. Procedural merge/live completion is separately pending.",
+      "evidence": [
+        "T-line table",
+        "results.jsonl",
+        "supplemental-results.jsonl",
+        "reference-comparison.json",
+        "mutations/adjudication.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "weight": 20,
+      "score": 20,
+      "reason": "All required gates green with permitted exact-head raw reuse; personally rerun typecheck/lint/full root units, all seven changed/new browser specs plus five shared consumers ten times at each size, original HUD/layout and direct UI gates. No repeat failure or retry. Optional all-reference-PNG diagnostic is grader instrumentation, corrected without changing product/tests or budget; fully disclosed.",
+      "evidence": [
+        "logs/typecheck.log (exit0)",
+        "logs/lint.log (exit0)",
+        "logs/unit.log:58",
+        "logs/repeat-1280x720.log:2488",
+        "logs/repeat-1600x900.log:2488",
+        "logs/original-hud-layout.log:42",
+        "reuse-validated.json",
+        "logs/reference-required.log:1",
+        "diagnostics.md"
+      ]
+    },
+    {
+      "id": "C3",
+      "weight": 10,
+      "score": 9.642857142857142,
+      "reason": "10 \u00d7 27/28. Ten green control runs. One mis-targeted rail-colour survivor retained in denominator; actual XP rule subsequently killed. Five artifact mutants correctly have browserexit0 and independent contractexit1. No setup, syntax, port or termination failure counted as a kill.",
+      "evidence": [
+        "mutations/adjudication.json (all commands/logline anchors)",
+        "mutations/hud-green-xp.diff:6",
+        "mutations/hud-xp-color-exact-selector.log:45"
+      ]
+    },
+    {
+      "id": "C4",
+      "weight": 15,
+      "score": 13,
+      "reason": "Start15; -1 documented extra status/context-row mismatch, -1 repeated NEXT/Next cosmetic wording. All other visible differences explicitly scoped to unchanged baseline/future user-approved cards, not misrepresented as redesign fidelity. No OPEN BASE0 row.",
+      "evidence": [
+        "ui-diff.md",
+        "reference-comparison.json",
+        "local-capture-inventory.json",
+        "logs/reference-required.log:1",
+        "accessibility/keyboard.json",
+        "logs/contrast.log:6"
+      ]
+    },
+    {
+      "id": "C5",
+      "weight": 10,
+      "score": 10,
+      "reason": "No new unjustified duplicated/dead code, suppression/any, untyped API, hardcoded token substitute, unclear name or lint warning. Compact API/duplicate narrow declarations removed. Gzip increases0.14424%classic and0.14055%v2 against same-day exact main.",
+      "evidence": [
+        "source-review.md",
+        "source.diff",
+        "independent-review.json",
+        "bundle-links-review.json",
+        "logs/lint.log (exit0)"
+      ]
+    },
+    {
+      "id": "C6",
+      "weight": 5,
+      "score": 5,
+      "reason": "No unjustified test-integrity hit. Exact smoke1280\u2192configured viewport preserves800resize; Deno expected-failure removal strengthens guard; SQL clocks preserve guards; new geometry/membership assertions supplement existing assertions. No added skip/retry/timeout/golden or assertion weakening.",
+      "evidence": [
+        "independent-review.json",
+        "source-review.md",
+        "source.diff",
+        "logs/unit.log (baseline expected/skipped cases unchanged)"
+      ]
+    },
+    {
+      "id": "C7",
+      "weight": 10,
+      "score": 10,
+      "reason": "No false PASS or unsupported current claim found. Original failures and incomplete historic workflow statuses are retained; coordinator verification is labeled non-independent. Living REPORT was subsequently published, while raw evidence hashes remain unchanged. Own survivor and optional artifact diagnostic are disclosed.",
+      "evidence": [
+        "source-review.md",
+        "publication-check.json",
+        "reuse-validated.json",
+        "diagnostics.md",
+        "mutations/adjudication.json",
+        "../BASE0-VERIFY-R2/REPORT.md"
+      ]
+    },
+    {
+      "id": "C8",
+      "weight": 5,
+      "score": 5,
+      "reason": "All82files independently inventoried with tier/reason. All adjacent harness/lifecycle/fixture/docs/report changes have valid Tier2 explanations in product report/decisions. No secret, dependency/version, workflow, contract, migration, backend/auth-source or default-flag change.",
+      "evidence": [
+        "independent-review.json (82file inventory)",
+        "generated-map-review.json",
+        "source-review.md",
+        "source.diff",
+        "reports/base0.md scope and repair notes"
+      ]
+    }
+  ],
+  "technicalAcceptance": {
+    "passed": 23,
+    "total": 23,
+    "lines": [
+      {
+        "id": "D1",
+        "requirement": "Reproduce missing explicit-index edges against real repository guard",
+        "status": "PASS",
+        "evidence": "mutations/deno-real-explicit-edges.log:3 (80edges); mutations/control-deno-real-edges.log (18clean)"
+      },
+      {
+        "id": "D2",
+        "requirement": "Root/nested explicit-index keys, directory aliases and ordinary modules",
+        "status": "PASS",
+        "evidence": "logs/unit.log:6; mutations/control-deno.log; scripts/gen-deno-json.test.mjs:23"
+      },
+      {
+        "id": "D3",
+        "requirement": "Test/fixture exclusions and deterministic generation",
+        "status": "PASS",
+        "evidence": "logs/unit.log:8; mutations/test-exclusion.log, fixture-exclusion.log, stable-order.log"
+      },
+      {
+        "id": "D4",
+        "requirement": "Auth distinctions preserved; generated maps additive and stable",
+        "status": "PASS",
+        "evidence": "logs/unit.log:10; generated-map-review.json (16maps,11keys each, no modified/removed entries); mutations/auth-separation.log"
+      },
+      {
+        "id": "D5",
+        "requirement": "Actual Deno guard clean and no generated drift",
+        "status": "PASS",
+        "evidence": "logs/deno.log:6-9; pnpm gen:deno && git diff --exit-code -- supabase/functions && node scripts/check-deno-imports.mjs"
+      },
+      {
+        "id": "D6",
+        "requirement": "At least six meaningful generator mutations rejected",
+        "status": "PASS",
+        "evidence": "mutations/unit-adjudication.json: six generator kills with green control; real-edge mutation adds integration proof"
+      },
+      {
+        "id": "B1",
+        "requirement": "Preboot relayout waits for active scene and uses latest CREATE size",
+        "status": "PASS",
+        "evidence": "mutations/control-scene.log; mutations/preboot-relayout.log; StageScene.test.ts:46"
+      },
+      {
+        "id": "B2",
+        "requirement": "Original stage-redraw normal/reduced and exact resize behavior at both mission sizes",
+        "status": "PASS",
+        "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488 (original resize/redraw/burst specs included)"
+      },
+      {
+        "id": "B3",
+        "requirement": "Unchanged HUD/layout limits at every existing size, including320/390/1280/1600",
+        "status": "PASS",
+        "evidence": "logs/original-hud-layout.log:42; logs/original-hud-layout.log:1 (u2-hud/u3-layout); no assertion changes"
+      },
+      {
+        "id": "B4",
+        "requirement": "Readable status, nonzero proportional XP, gated warning and complete context/action",
+        "status": "PASS",
+        "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; baseline-hud.spec.ts:13-149; mutations/hud-shared-style.log, hud-warning-container.log, hud-xp-color-exact-selector.log"
+      },
+      {
+        "id": "B5",
+        "requirement": "Fallback fonts, offline/429/503 status, accessible guidance and keyboard callback",
+        "status": "PASS",
+        "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; baseline-hud.spec.ts:153-209; mutations/hud-guidance-action.log"
+      },
+      {
+        "id": "L1",
+        "requirement": "Game-booted but SceneManager-unready teardown waits; initialized hidden-tab destruction still completes",
+        "status": "PASS",
+        "evidence": "mutations/control-canvas.log; mutations/premature-destruction.log:10; mutations/pending-destruction.log; StageCanvas.test.ts:28-72"
+      },
+      {
+        "id": "L2",
+        "requirement": "Browser clock tolerates deterministic interleaving, remains frozen and advances exactly",
+        "status": "PASS",
+        "evidence": "logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; mutations/clock-interleaving.log:45; e2e/server/fixture-clock.spec.ts:3"
+      },
+      {
+        "id": "S1",
+        "requirement": "SQL fixtures track next database UTC day10:00, including leap/year boundaries",
+        "status": "PASS",
+        "evidence": "mutations/control-date.log; mutations/next-db-day.log; mutations/db-anchor-hour.log; logs/unit.log (548SQLtests)"
+      },
+      {
+        "id": "S2",
+        "requirement": "Insertion clock rounds micros upward and respects snapshot+10s; early/stale claims remain rejected",
+        "status": "PASS",
+        "evidence": "mutations/control-insert.log; mutations/claim-micros-rounding.log; mutations/claim-clock-max.log; supabase/tests/v2/functions-forge.test.ts:42-74"
+      },
+      {
+        "id": "H1",
+        "requirement": "Ordinary screenshot runs preserve historical reports; F3buffer budget unchanged",
+        "status": "PASS",
+        "evidence": "mutations/control-browser.log (8pass, no requested artifacts); mutations/f3-opt-in.log and error-opt-in.log (browser0/contract1); cleanup.json"
+      },
+      {
+        "id": "H2",
+        "requirement": "Explicit SCREENSHOTS/SCREENSHOT_DIR still write bounded PNGs",
+        "status": "PASS",
+        "evidence": "mutations/control-explicit-artifacts.log (5pass,3PNGs<200KiB); mutations/browser-results.json"
+      },
+      {
+        "id": "H3",
+        "requirement": "F3/G1/G3 metrics default to Playwright output and honor REPORT_DIR",
+        "status": "PASS",
+        "evidence": "mutations/control-explicit-artifacts.log; mutations/browser-results.json lists bake-metrics.json/metrics.json/frame-metrics.json; three routing mutants browser0/contract1"
+      },
+      {
+        "id": "E1",
+        "requirement": "Effects reaches actual selected content for every manifest screen in both motion modes",
+        "status": "PASS",
+        "evidence": "effects-1280x720/summary.json; effects-1600x900/summary.json (10PASS each); mutations/effects-reached-screen.log (Help selection rejected)"
+      },
+      {
+        "id": "U1",
+        "requirement": "All-screen guest and isolated mock signed-in audits at both sizes",
+        "status": "PASS",
+        "evidence": "logs/audit-guest.log and logs/audit-signed-in.log:18visits each,0findings; audit-*/findings.json"
+      },
+      {
+        "id": "U2",
+        "requirement": "Matched app/reference, documented differences, keyboard/focus and contrast",
+        "status": "PASS",
+        "evidence": "logs/reference-required.log:1; reference-comparison.json (18pairs); ui-diff.md; accessibility/keyboard.json (7destinations eachsize); logs/contrast.log:6"
+      },
+      {
+        "id": "V1",
+        "requirement": "Complete required verification plus all changed-spec repeats and classic behavior",
+        "status": "PASS",
+        "evidence": "results.jsonl; logs/unit.log:58; logs/repeat-1280x720.log:2488; logs/repeat-1600x900.log:2488; reuse-validated.json explicitly validates exact-head full265/265eachsize and builds"
+      },
+      {
+        "id": "V2",
+        "requirement": "Viewport-aware smoke/config preserve exact dimensions without raised thresholds",
+        "status": "PASS",
+        "evidence": "mutations/control-extra.log (3pass at1600); mutations/smoke-hardcoded-width.log:45; mutations/configured-viewport-ignored.log:45; both repeat logs"
+      }
+    ]
+  },
+  "autoFails": [],
+  "gates": [
+    {
+      "id": "G1",
+      "status": "PASS",
+      "evidence": "remote-final.log: candidate and main unchanged; main is ancestor; personal results.jsonl; exact-head reuse-validated.json validates full265/265eachsize, builds and classic. Personal repeats700/700eachsize."
+    },
+    {
+      "id": "G2",
+      "status": "PASS",
+      "evidence": "Personal audit-guest/audit-signed-in findings, effects at both sizes, keyboard,10contrast tests and18matched reference records; ui-diff.md has no OPEN BASE0 row."
+    },
+    {
+      "id": "G3",
+      "status": "PASS",
+      "evidence": "Personal logs/deno.log; permitted exact-head bundle scan, build inventories and links. bundle-links-review.json: broken references1main\u21920candidate, growth<0.15%."
+    },
+    {
+      "id": "G4",
+      "status": "PASS \u2014 NOT APPLICABLE",
+      "evidence": "No contract or migration changed in82file diff. Complete548SQLunit cases ran personally; no contract forge command required."
+    },
+    {
+      "id": "G5",
+      "status": "PASS \u2014 PERMITTED EXACT-HEAD REUSE",
+      "evidence": "../BASE0-VERIFY-R2/public-config/source.json and build/bundle/smoke logs plus flag-0/flag-1results: four production-preview visits, errors[],blockedWrites[],failure:null. Read-only guest, no sign-in. Values withheld. This is premerge safety proof, not proof of deployed candidate."
+    },
+    {
+      "id": "G6",
+      "status": "PASS",
+      "evidence": "Independent full diff/source/tier/integrity review; generated-map-review.json; secret-scan.json; source-review.md; all required checks preserved."
+    },
+    {
+      "id": "G7",
+      "status": "PASS \u2014 EXISTING CANDIDATE REPORT/EVIDENCE PUBLISHED",
+      "evidence": "publication-check.json:244raw manifest files byte-identical at20881542; living REPORT update published at27772c. Independent grade publication is coordinator-owned next action, not claimed complete here."
+    }
+  ],
+  "mutationSummary": {
+    "tried": 28,
+    "killed": 27,
+    "survived": 1,
+    "controls": 10
+  },
+  "reuse": {
+    "permission": "User resume section4 permits identical-head raw full-suite/build evidence after personal required reruns and own mutants; brief explicitly permits wrapper/G5/links/bundle reuse.",
+    "sourceCard": "../BASE0-VERIFY-R2",
+    "validated": "reuse-validated.json",
+    "fullBrowser": "265passed each1280x720 and1600x900; raw exit0/head checked",
+    "other": "default/classic/v2 builds, bundle scan/inventories, links, wrapper PR246 and production-safe guest proof",
+    "notReused": "No previous/other grader score or formal grade used. Personal repeats, units, typecheck, lint, Deno, mutations, audit/effects, keyboard, contrast and matched reference inspection."
+  },
+  "blockers": [],
+  "proceduralPending": [
+    "Coordinator publication of this new grade",
+    "Other independent grade and any required disagreement resolution",
+    "Serial merge authorization/gates, then fresh merged-main and live proofs; no merge/deployment performed"
+  ],
+  "cleanup": {
+    "checkedAt": "2026-11-01T22:46:13.485603+07:00",
+    "ports": [
+      4420,
+      4421,
+      4422,
+      4423,
+      4424
+    ],
+    "listeners": [],
+    "checkouts": [
+      {
+        "path": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero",
+        "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+        "git_status": ""
+      },
+      {
+        "path": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero",
+        "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+        "git_status": ""
+      }
+    ],
+    "moves": [
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/.grade-local",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-local-evidence",
+        "reason": "Retained local-only screenshots/artifact probes in ignored test output; excluded from publication"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/.grade-local",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-local-evidence",
+        "reason": "Retained local-only screenshots/artifact probes in ignored test output; excluded from publication"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1280x720/video-motion-reduced",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1280x720/video-motion-reduced",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1280x720/video-motion-normal",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1280x720/video-motion-normal",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1280x720/video-combat",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1280x720/video-combat",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1280x720/video-boss-ready",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1280x720/video-boss-ready",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1600x900/video-motion-reduced",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1600x900/video-motion-reduced",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1600x900/video-motion-normal",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1600x900/video-motion-normal",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1600x900/video-combat",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1600x900/video-combat",
+        "reason": "Local-only raw effects video, not delivered"
+      },
+      {
+        "from": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GA-R2/effects-1600x900/video-boss-ready",
+        "to": "/Users/bao/.codex/worktrees/mega-base0-grade-a-280ff4b/taskbar-hero/apps/web/test-results/ga-r2-effects-1600x900/video-boss-ready",
+        "reason": "Local-only raw effects video, not delivered"
+      }
+    ],
+    "newPublishedPNG": 0,
+    "candidateAndScratchClean": true,
+    "ownedServersStopped": true,
+    "lockReleased": true
+  },
+  "limitations": [
+    "Full-redesign fidelity is not certified; unchanged Home/Bag/other feature differences remain explicitly assigned to later cards.",
+    "Optional expanded reference PNG capture failed budget; required capture/measurement completed with unchanged budget and no added delivered PNG.",
+    "One mis-targeted mutation survived and remains counted."
+  ],
+  "createdAt": "2026-11-01T15:45:15.280Z"
+}

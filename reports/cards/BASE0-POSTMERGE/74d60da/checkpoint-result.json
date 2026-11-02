@@ -1,0 +1,200 @@
+{
+  "observed_at": "2026-11-02T11:51:03+07:00",
+  "head": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "worktree": "/Users/bao/.codex/worktrees/mega-base0-postmerge-74d60da/taskbar-hero",
+  "tracked_worktree_clean": true,
+  "overall": "IN_PROGRESS",
+  "completed_step_exits": {
+    "bundle-classic": 0,
+    "bundle-v2": 0,
+    "classic-build": 0,
+    "default-build": 0,
+    "deno-drift": 0,
+    "deno-generation": 0,
+    "deno-imports": 0,
+    "full-1280": 0,
+    "install": 0,
+    "links": 0,
+    "lint": 0,
+    "root-test": 0,
+    "typecheck": 0,
+    "v2-build": 0
+  },
+  "full_browser": {
+    "1280x720": {
+      "passed": 265,
+      "exit": 0
+    },
+    "1600x900": "PENDING"
+  },
+  "repeated_browser": "PENDING both sizes",
+  "provider": "Ready / Production / exact main SHA observed",
+  "artifact_identity": "PENDING",
+  "live_check": "PENDING",
+  "live_journey": "PENDING",
+  "active_owned_tests": [],
+  "ports_4440_to_4444": "No listener observed at checkpoint",
+  "evidence_manifest": [
+    {
+      "path": "bundle-classic.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "bundle-classic.log",
+      "bytes": 100,
+      "sha256": "5f7e09542afc51ecd25656caacdc37aa544c3581c9ccf55b0f46dde3fe87f5e2"
+    },
+    {
+      "path": "bundle-v2.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "bundle-v2.log",
+      "bytes": 110,
+      "sha256": "426cee4c7996d1caabc3c880e40c8fe3ecf739cbbc988e99df271548911b38c0"
+    },
+    {
+      "path": "classic-build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "classic-build.log",
+      "bytes": 1617,
+      "sha256": "66034783a8d5ff582549b32a1ad0408166312dadce579975c9ff4a56481b8228"
+    },
+    {
+      "path": "default-build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "default-build.log",
+      "bytes": 2322,
+      "sha256": "037a5f1c43945337b1dfa591e53652b791ee11c10ade13d472c5450c1e334684"
+    },
+    {
+      "path": "deno-drift.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "deno-drift.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "deno-generation.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "deno-generation.log",
+      "bytes": 170,
+      "sha256": "6ab1d6f5bcaed745557af0f41b41e484c9cd3b191b7a28af25ad01cd8f453dde"
+    },
+    {
+      "path": "deno-imports.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "deno-imports.log",
+      "bytes": 38,
+      "sha256": "d7c417c65612d67e64f9c392db7f2116a3e715ded8fb87a4e057a20eb46ceaa6"
+    },
+    {
+      "path": "full-1280.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "full-1280.log",
+      "bytes": 21435,
+      "sha256": "50beff5869277dcab2d4b116f4b861b9f6d5169d351466fe53e6e429f63fe09c"
+    },
+    {
+      "path": "install.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "install.log",
+      "bytes": 1607,
+      "sha256": "acf18b0596fae19001b4fe55704f7da6756d5218d753a85279afbb004cf52db7"
+    },
+    {
+      "path": "links.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "links.log",
+      "bytes": 117,
+      "sha256": "2d2f7b8e340fec90116d7310ac3ec594739e328e843cf7f89880dd5368698e42"
+    },
+    {
+      "path": "lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "lint.log",
+      "bytes": 516,
+      "sha256": "591129c274e7d742f45918eab5e7726ebf21d651bc91ab170590132d1dab4bfa"
+    },
+    {
+      "path": "merge-result.json",
+      "bytes": 588,
+      "sha256": "ab968d1b51f43e9937dd3527d11c244f3f364b99eecee55aa91668a86e559f97"
+    },
+    {
+      "path": "provider-production.jpg",
+      "bytes": 83013,
+      "sha256": "e7a4aac644ec2b74f0347b008eae051b4916f1223679b1fd0f93af4d47629102"
+    },
+    {
+      "path": "provider-status.json",
+      "bytes": 542,
+      "sha256": "449e0063b3b2e8b15d45c3ed1e8005fd89b4a9a67b5edcc625aa466603c05b29"
+    },
+    {
+      "path": "provider-ui-observation.json",
+      "bytes": 627,
+      "sha256": "e6c4848447f17485a42a4979b7a2a1c39799ae355d741aa354c0f8ec395118b1"
+    },
+    {
+      "path": "root-test.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "root-test.log",
+      "bytes": 3657,
+      "sha256": "0f279eab76260864465280bb499045a3cf9c03749d46426af2294830493ef4d1"
+    },
+    {
+      "path": "typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "typecheck.log",
+      "bytes": 586,
+      "sha256": "a554018d7b4bbe6053633a6f5d529b3090128c9266720b5a90d0b30adec1f900"
+    },
+    {
+      "path": "v2-build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "v2-build.log",
+      "bytes": 2099,
+      "sha256": "8ae660a9d221a8254025c1404253d2d1091a0fa9581fe9a5c1ad692b6c3bb37a"
+    }
+  ],
+  "checkpoint_preparation_note": "An initial in-memory assertion expected15 exit files; actual inventory is14, all exit0. Guard stopped before writes; count corrected without changing evidence."
+}

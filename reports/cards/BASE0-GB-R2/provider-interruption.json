@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-11-01T22:32:35+07:00",
+  "native_agent": "/root/base0_grade_b_r2",
+  "native_status": "ERRORED",
+  "reason": "exceeded retry limit, last status:429 Too Many Requests",
+  "backgroundPidsStillPresent": [
+    7879,
+    12708,
+    14120
+  ],
+  "workerLimit": 1,
+  "workerLimitUntil": "2026-11-01T23:02:35+07:00",
+  "earliestFirstRetry": "2026-11-01T22:34:35+07:00",
+  "retryRule": "Same model; backoff2/4/8minutes. With A active, no new worker during the one-worker window. Do not duplicate running commands.",
+  "grade": "NOT ISSUED"
+}

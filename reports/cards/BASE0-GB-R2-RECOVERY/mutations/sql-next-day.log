@@ -1,0 +1,73 @@
+{"command":"pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts","root":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","start":"2026-11-01T15:51:39.402Z","pid":27272}
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/supabase/tests
+
+ ❯ src/fixture-clock.test.ts (4 tests | 4 failed) 6ms
+   ❯ database-relative fixture clocks (4)
+     × keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z 4ms
+     × keeps lifecycle time ahead of SQL defaults at 2026-11-01T11:00:00.000Z 0ms
+     × keeps lifecycle time ahead of SQL defaults at 2040-12-31T00:00:00.000Z 0ms
+     × keeps lifecycle time ahead of SQL defaults at 2040-12-31T23:59:59.999Z 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z
+AssertionError: expected '2020-02-28T10:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality
+
+Expected: "2020-02-29T10:00:00.000Z"
+Received: "2020-02-28T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2026-11-01T11:00:00.000Z
+AssertionError: expected '2026-11-01T10:00:00.000Z' to be '2026-11-02T10:00:00.000Z' // Object.is equality
+
+Expected: "2026-11-02T10:00:00.000Z"
+Received: "2026-11-01T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2040-12-31T00:00:00.000Z
+ FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2040-12-31T23:59:59.999Z
+AssertionError: expected '2040-12-31T10:00:00.000Z' to be '2041-01-01T10:00:00.000Z' // Object.is equality
+
+Expected: "2041-01-01T10:00:00.000Z"
+Received: "2040-12-31T10:00:00.000Z"
+
+ ❯ src/fixture-clock.test.ts:12:43
+     10|   ])("keeps lifecycle time ahead of SQL defaults at %s", (databaseTime…
+     11|     const clock = nextFixtureDayUtc(Date.parse(databaseTime));
+     12|     expect(new Date(clock).toISOString()).toBe(expected);
+       |                                           ^
+     13|     expect(clock).toBeGreaterThan(Date.parse(databaseTime));
+     14|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  22:51:39
+   Duration  1.04s (transform 41%, tests 26%, import 24%, worker 9%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/fixture-clock.test.ts
+
+EXIT_CODE=1

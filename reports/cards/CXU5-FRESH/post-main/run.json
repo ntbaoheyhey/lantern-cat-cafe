@@ -1,0 +1,55 @@
+{
+  "root": "/private/tmp/tbh-main-after-cxu5",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/post-main",
+  "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+  "commands": [
+    [
+      "install",
+      "npx -y pnpm@10.28.0 install --frozen-lockfile"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "browser-1280",
+      "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4720 E2E_PORT_V2=4721 E2E_PORT_SERVER=4722 E2E_PORT_API=4723 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600",
+      "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4720 E2E_PORT_V2=4721 E2E_PORT_SERVER=4722 E2E_PORT_API=4723 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

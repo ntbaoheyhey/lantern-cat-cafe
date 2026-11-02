@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/Rail.tsx b/apps/web/src/shell/Rail.tsx
+index 589dfbf..79b51e0 100644
+--- a/apps/web/src/shell/Rail.tsx
++++ b/apps/web/src/shell/Rail.tsx
+@@ -81,7 +81,7 @@ export function Rail({ activeScreen, onSelectScreen }: RailProps) {
+                 aria-controls={`panel-${id}`}
+                 tabIndex={isActive ? 0 : -1}
+                 className={`rail-item ${isActive ? 'active' : ''}`}
+-                onClick={() => onSelectScreen(id)}
++                onClick={() => { if (id !== 'help') onSelectScreen(id); }}
+               >
+                 <span className="rail-item-icon" aria-hidden="true">
+                   {icon === 'help' ? <TabIcon /> : <PixelIcon name={icon as IconName} size={3} />}

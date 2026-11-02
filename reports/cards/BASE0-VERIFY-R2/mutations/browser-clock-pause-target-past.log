@@ -1,0 +1,69 @@
+COMMAND ["pnpm","test:e2e","--workers=1","e2e/server/fixture-clock.spec.ts","--project=v2-server"]
+CWD /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+> playwright test --workers=1 e2e/server/fixture-clock.spec.ts --project=v2-server
+
+
+Running 1 test using 1 worker
+F
+
+  1) [v2-server] › e2e/server/fixture-clock.spec.ts:3:1 › server fixture freezes at wall time when its clock advances before the pause command 
+
+    Error: clock.pauseAt: Error: Cannot fast-forward to the past
+        at ClockController._innerFastForwardTo (eval at evaluate (:370:30), <anonymous>:201:13)
+        at ClockController.pauseAt (eval at evaluate (:370:30), <anonymous>:132:16)
+        at async <anonymous>:396:30
+        at ClockController._innerFastForwardTo (eval at evaluate (:370:30), <anonymous>:201:13)
+        at ClockController.pauseAt (eval at evaluate (:370:30), <anonymous>:132:16)
+        at async <anonymous>:396:30
+        at Clock2.page.clock.pauseAt (/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web/e2e/server/fixture-clock.spec.ts:9:11)
+        at load (/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web/e2e/support/server-fixture.ts:37:3)
+        at /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web/e2e/server/fixture-clock.spec.ts:11:19
+
+    Error Context: test-results/4400-4401/server-fixture-clock-serve-a2caa-es-before-the-pause-command-v2-server/error-context.md
+
+  1 failed
+    [v2-server] › e2e/server/fixture-clock.spec.ts:3:1 › server fixture freezes at wall time when its clock advances before the pause command 
+ ELIFECYCLE  Command failed with exit code 1.
+[WebServer] (node:53191) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:53196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:53201) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:53232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53233) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:53242) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:53249) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:53274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:53283) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:53287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

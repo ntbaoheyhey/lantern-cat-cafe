@@ -1,0 +1,542 @@
+[
+  {
+    "name": "deno-index",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-index.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:"
+      },
+      {
+        "line": 31,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 33,
+        "text": "    expected: '../../../packages/game-rules/src/index.ts',"
+      },
+      {
+        "line": 40,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 57,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 59,
+        "text": "    expected: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules"
+      },
+      {
+        "line": 66,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 85,
+        "text": "    code: 'ERR_ASSERTION',"
+      }
+    ]
+  },
+  {
+    "name": "deno-directory",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-directory.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 36,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 38,
+        "text": "    expected: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules"
+      },
+      {
+        "line": 45,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 64,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 66,
+        "text": "    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],"
+      }
+    ]
+  },
+  {
+    "name": "deno-test-exclusion",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-test-exclusion.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 35,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 37,
+        "text": "    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },"
+      }
+    ]
+  },
+  {
+    "name": "deno-fixture-exclusion",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-fixture-exclusion.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 37,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 39,
+        "text": "    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },"
+      }
+    ]
+  },
+  {
+    "name": "deno-order",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-order.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 41,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 43,
+        "text": "    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],"
+      }
+    ]
+  },
+  {
+    "name": "deno-auth",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/deno-auth.log",
+    "failure_lines": [
+      {
+        "line": 19,
+        "text": "  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      },
+      {
+        "line": 52,
+        "text": "    code: 'ERR_ASSERTION',"
+      },
+      {
+        "line": 54,
+        "text": "    expected: { imports: { '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3', jose: 'npm:jose@6.2.12', viem: 'npm:viem@2.57.4', 'viem/siwe': 'npm:viem@2.57.4/siwe' } },"
+      }
+    ]
+  },
+  {
+    "name": "stage-preboot",
+    "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/stage-preboot.log",
+    "failure_lines": [
+      {
+        "line": 4,
+        "text": " \u276f src/game/stage/StageScene.test.ts (12 tests | 1 failed) 102ms"
+      },
+      {
+        "line": 9,
+        "text": " FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives"
+      },
+      {
+        "line": 10,
+        "text": "AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of \u2026' was thrown"
+      },
+      {
+        "line": 12,
+        "text": "- Expected:"
+      },
+      {
+        "line": 15,
+        "text": "+ Received:"
+      },
+      {
+        "line": 29,
+        "text": " Test Files  1 failed (1)"
+      },
+      {
+        "line": 30,
+        "text": "      Tests  1 failed | 11 passed (12)"
+      },
+      {
+        "line": 36,
+        "text": "\u2009ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL\u2009 Command failed with exit code 1: vitest run src/game/stage/StageScene.test.ts"
+      }
+    ]
+  },
+  {
+    "name": "clock-next-day",
+    "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/clock-next-day.log",
+    "failure_lines": [
+      {
+        "line": 4,
+        "text": " \u276f src/fixture-clock.test.ts (4 tests | 4 failed) 6ms"
+      },
+      {
+        "line": 10,
+        "text": " \u276f v2/functions-forge.test.ts (19 tests | 5 failed) 643ms"
+      },
+      {
+        "line": 20,
+        "text": " FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2020-02-28T23:59:59.999Z"
+      },
+      {
+        "line": 21,
+        "text": "AssertionError: expected '2020-02-28T10:00:00.000Z' to be '2020-02-29T10:00:00.000Z' // Object.is equality"
+      },
+      {
+        "line": 23,
+        "text": "Expected: \"2020-02-29T10:00:00.000Z\""
+      },
+      {
+        "line": 24,
+        "text": "Received: \"2020-02-28T10:00:00.000Z\""
+      },
+      {
+        "line": 36,
+        "text": " FAIL  src/fixture-clock.test.ts > database-relative fixture clocks > keeps lifecycle time ahead of SQL defaults at 2026-11-01T11:00:00.000Z"
+      },
+      {
+        "line": 37,
+        "text": "AssertionError: expected '2026-11-01T10:00:00.000Z' to be '2026-11-02T10:00:00.000Z' // Object.is equality"
+      }
+    ]
+  },
+  {
+    "name": "clock-fixed-future",
+    "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/clock-fixed-future.log",
+    "failure_lines": [
+      {
+        "line": 4,
+        "text": " \u276f v2/functions-forge.test.ts (19 tests | 5 failed) 740ms"
+      },
+      {
+        "line": 14,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > spends the content costs, signs verifiable typed data, and returns pending without spending"
+      },
+      {
+        "line": 15,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > returns a live v1 pending voucher, then blocks once that v1 forge is minted"
+      },
+      {
+        "line": 16,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > reissues an expired unused nonce with the same Relic and no extra spend"
+      },
+      {
+        "line": 17,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > records an expired used voucher minted before applying the daily limit"
+      },
+      {
+        "line": 18,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > keeps a competing unsigned replacement recoverable until its interrupted check can resume"
+      },
+      {
+        "line": 29,
+        "text": " Test Files  1 failed | 1 passed (2)"
+      },
+      {
+        "line": 30,
+        "text": "      Tests  5 failed | 18 passed (23)"
+      }
+    ]
+  },
+  {
+    "name": "claim-rounding-recovered",
+    "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run v2/functions-forge.test.ts",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/mutations/claim-rounding-recovered.log",
+    "failure_lines": [
+      {
+        "line": 4,
+        "text": " \u276f v2/functions-forge.test.ts (19 tests | 1 failed) 565ms"
+      },
+      {
+        "line": 10,
+        "text": " FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards"
+      },
+      {
+        "line": 24,
+        "text": " Test Files  1 failed (1)"
+      },
+      {
+        "line": 25,
+        "text": "      Tests  1 failed | 18 passed (19)"
+      },
+      {
+        "line": 31,
+        "text": "\u2009ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL\u2009 Command failed with exit code 1: vitest run v2/functions-forge.test.ts"
+      }
+    ]
+  },
+  {
+    "name": "hud-xp-width",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --grep \"shared HUD.*1280x720\" --workers=1",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/hud-xp-width.log",
+    "failure_lines": [
+      {
+        "line": 46,
+        "text": "    Error: expect(received).toBeGreaterThanOrEqual(expected)"
+      },
+      {
+        "line": 48,
+        "text": "    Expected: >= 150"
+      },
+      {
+        "line": 49,
+        "text": "    Received:    8"
+      },
+      {
+        "line": 65,
+        "text": "    Error: expect(received).toBeGreaterThanOrEqual(expected)"
+      },
+      {
+        "line": 67,
+        "text": "    Expected: >= 150"
+      },
+      {
+        "line": 68,
+        "text": "    Received:    8"
+      },
+      {
+        "line": 82,
+        "text": "  2 failed"
+      },
+      {
+        "line": 85,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      }
+    ]
+  },
+  {
+    "name": "hud-guidance-action",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --grep \"shared HUD.*1280x720\" --workers=1",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/hud-guidance-action.log",
+    "failure_lines": [
+      {
+        "line": 46,
+        "text": "    Error: expect(locator).toHaveAttribute(expected) failed"
+      },
+      {
+        "line": 49,
+        "text": "    Expected: \"map\""
+      },
+      {
+        "line": 50,
+        "text": "    Received: \"home\""
+      },
+      {
+        "line": 74,
+        "text": "    Error: expect(locator).toHaveAttribute(expected) failed"
+      },
+      {
+        "line": 77,
+        "text": "    Expected: \"bag\""
+      },
+      {
+        "line": 78,
+        "text": "    Received: \"home\""
+      },
+      {
+        "line": 100,
+        "text": "  2 failed"
+      },
+      {
+        "line": 103,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      }
+    ]
+  },
+  {
+    "name": "f3-screenshot-optin",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+    "test_exit": 0,
+    "contract_exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/f3-screenshot-optin.log",
+    "failure_lines": [],
+    "contract": {
+      "expectation": "No historical report mutations or screenshot writes with SCREENSHOTS=0",
+      "trackedOrUntrackedChanges": "",
+      "screenshotFiles": [
+        "roster-ch1.png",
+        "roster-ch2.png",
+        "roster-ch3.png",
+        "roster-ch4.png",
+        "roster-ch5.png"
+      ],
+      "touchedHistoricalFiles": [],
+      "exit": 1
+    }
+  },
+  {
+    "name": "error-screenshot-optin",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+    "test_exit": 0,
+    "contract_exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/error-screenshot-optin.log",
+    "failure_lines": [],
+    "contract": {
+      "expectation": "No historical report mutations or screenshot writes with SCREENSHOTS=0",
+      "trackedOrUntrackedChanges": "",
+      "screenshotFiles": [
+        "429-1280x720-dark.png",
+        "429-390x844-light.png"
+      ],
+      "touchedHistoricalFiles": [],
+      "exit": 1
+    }
+  },
+  {
+    "name": "f3-metrics-output",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+    "test_exit": 0,
+    "contract_exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/f3-metrics-output.log",
+    "failure_lines": [],
+    "contract": {
+      "expectation": "No historical report mutations or screenshot writes with SCREENSHOTS=0",
+      "trackedOrUntrackedChanges": " M reports/f3-art/bake-metrics.json\n",
+      "screenshotFiles": [],
+      "touchedHistoricalFiles": [
+        "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/reports/f3-art/bake-metrics.json"
+      ],
+      "exit": 1
+    }
+  },
+  {
+    "name": "g1-metrics-output",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+    "test_exit": 0,
+    "contract_exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/g1-metrics-output.log",
+    "failure_lines": [],
+    "contract": {
+      "expectation": "No historical report mutations or screenshot writes with SCREENSHOTS=0",
+      "trackedOrUntrackedChanges": " M reports/f3-art/bake-metrics.json\n M reports/g1-speed/metrics.json\n",
+      "screenshotFiles": [],
+      "touchedHistoricalFiles": [
+        "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/reports/g1-speed/metrics.json"
+      ],
+      "exit": 1
+    }
+  },
+  {
+    "name": "g3-metrics-output",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep \"roster sheet|bake time|T1-T5|G1 demo|G3 stage frame\" --workers=1",
+    "test_exit": 0,
+    "contract_exit": 1,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/g3-metrics-output.log",
+    "failure_lines": [],
+    "contract": {
+      "expectation": "No historical report mutations or screenshot writes with SCREENSHOTS=0",
+      "trackedOrUntrackedChanges": " M reports/f3-art/bake-metrics.json\n M reports/g3-combat/frame-metrics.json\n",
+      "screenshotFiles": [],
+      "touchedHistoricalFiles": [
+        "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/reports/g3-combat/frame-metrics.json"
+      ],
+      "exit": 1
+    }
+  },
+  {
+    "name": "effects-reached-help",
+    "command": "node tools/.grade-effects.mjs /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/effects-mutant --viewport=1280x720",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/effects-reached-help.log",
+    "failure_lines": [
+      {
+        "line": 12,
+        "text": "ExpectError: expect(locator).toHaveAttribute(expected) failed"
+      },
+      {
+        "line": 15,
+        "text": "Expected: \"true\""
+      },
+      {
+        "line": 16,
+        "text": "Received: \"false\""
+      },
+      {
+        "line": 32,
+        "text": "    expected: 'true',"
+      },
+      {
+        "line": 33,
+        "text": "    message: 'expect(locator).toHaveAttribute(expected) failed\\n' +"
+      },
+      {
+        "line": 36,
+        "text": "      'Expected: \"true\"\\n' +"
+      },
+      {
+        "line": 37,
+        "text": "      'Received: \"false\"\\n' +"
+      }
+    ]
+  },
+  {
+    "name": "viewport-mutant",
+    "command": "pnpm test:e2e e2e/grader-viewport.spec.ts --workers=1",
+    "test_exit": 1,
+    "contract_exit": null,
+    "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R1/logs/viewport-mutant.log",
+    "failure_lines": [
+      {
+        "line": 45,
+        "text": "    Error: expect(received).toEqual(expected) // deep equality"
+      },
+      {
+        "line": 65,
+        "text": "  1 failed"
+      },
+      {
+        "line": 67,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      }
+    ]
+  }
+]

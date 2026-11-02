@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-11-02T12:28:58+07:00",
+  "status": "USER_PAUSED",
+  "main": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "commandExitCodes": {
+    "bundle-classic": 0,
+    "bundle-v2": 0,
+    "classic-build": 0,
+    "default-build": 0,
+    "deno-drift": 0,
+    "deno-generation": 0,
+    "deno-imports": 0,
+    "full-1280": 0,
+    "full-1600": 0,
+    "install": 0,
+    "links": 0,
+    "lint": 0,
+    "repeat-1280": 0,
+    "repeat-1600": 0,
+    "root-test": 0,
+    "typecheck": 0,
+    "v2-build": 0
+  },
+  "browser": {
+    "1280x720": {
+      "fullPassed": 265,
+      "repeatPassed": 700
+    },
+    "1600x900": {
+      "fullPassed": 265,
+      "repeatPassed": 700
+    }
+  },
+  "heartbeat": "PAUSED (persisted state verified)",
+  "goal": "PAUSED",
+  "activeOwnedTests": [],
+  "ports4440to4444": "no listeners observed",
+  "pending": [
+    "safe ledger FORCE_ALL verifier246",
+    "complete public artifact equality",
+    "legacy check-live",
+    "phased live browser path at both sizes"
+  ],
+  "files": {
+    "repeat-1280.log": {
+      "bytes": 146781,
+      "sha256": "3ea72b29e77b97f75a70785f7356c6204bfa2e196beb61042ea45494cf39c302"
+    },
+    "repeat-1280.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "repeat-1280.started": {
+      "bytes": 26,
+      "sha256": "8619a34d72bdb769b434df1bd3798369c834efe71ef975802138f7d3209038ce"
+    },
+    "repeat-1600.log": {
+      "bytes": 146819,
+      "sha256": "ad486309881911b64997386d814f0dca5985f9c29dbf0d1b0fed85c520400e74"
+    },
+    "repeat-1600.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "repeat-1600.started": {
+      "bytes": 26,
+      "sha256": "8a138db46a368f1ce5cb0dbed8291a565e41d70732a957f3895cde1047b26019"
+    }
+  }
+}

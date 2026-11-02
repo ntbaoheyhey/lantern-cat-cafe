@@ -1,0 +1,412 @@
+[
+  {
+    "path": "apps/web/e2e/server/fixture-clock.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/smoke.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/support/server-fixture.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/ui/f3-art.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/ui/g1-perf.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/ui/g3-combat.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/e2e/v2/errors-notice.spec.ts",
+    "tier": 2,
+    "note": "Viewport, readable HUD, fixture clock, or opt-in artifact regression; reports/base0.md corresponding repair/Tier2 sections"
+  },
+  {
+    "path": "apps/web/playwright.config.ts",
+    "tier": 2,
+    "note": "Both mandatory desktop viewports with original assertions; docs/test-stability.md"
+  },
+  {
+    "path": "apps/web/src/game/stage/StageCanvas.test.tsx",
+    "tier": 2,
+    "note": "Independent lifecycle crash repair and regression; reports/base0.md Round1 independent-grade repair"
+  },
+  {
+    "path": "apps/web/src/game/stage/StageCanvas.tsx",
+    "tier": 2,
+    "note": "Independent lifecycle crash repair and regression; reports/base0.md Round1 independent-grade repair"
+  },
+  {
+    "path": "apps/web/src/game/stage/StageScene.test.ts",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "apps/web/src/game/stage/StageScene.ts",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "apps/web/src/shell/Hud.tsx",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "apps/web/src/shell/shell.css",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "apps/web/src/theme.contrast.test.ts",
+    "tier": 2,
+    "note": "WCAG AA coverage for restored semantic XP/muted token pairs; HUD layout decision"
+  },
+  {
+    "path": "apps/web/tools/effects-test.mjs",
+    "tier": 2,
+    "note": "Actual reached-screen effects coverage at both mandated sizes; reports/base0.md Scope notes/Additional preflight repairs"
+  },
+  {
+    "path": "docs/decisions/baseline-hud-layout.md",
+    "tier": 2,
+    "note": "Accepted baseline/HUD decisions, test instructions, or repair of the one broken local provenance path; reports/base0.md"
+  },
+  {
+    "path": "docs/decisions/mission-baseline-compatibility.md",
+    "tier": 2,
+    "note": "Accepted baseline/HUD decisions, test instructions, or repair of the one broken local provenance path; reports/base0.md"
+  },
+  {
+    "path": "docs/design/decisions.md",
+    "tier": 2,
+    "note": "Accepted baseline/HUD decisions, test instructions, or repair of the one broken local provenance path; reports/base0.md"
+  },
+  {
+    "path": "docs/proposals/rune-skill-system/README.md",
+    "tier": 2,
+    "note": "Accepted baseline/HUD decisions, test instructions, or repair of the one broken local provenance path; reports/base0.md"
+  },
+  {
+    "path": "docs/test-stability.md",
+    "tier": 2,
+    "note": "Accepted baseline/HUD decisions, test instructions, or repair of the one broken local provenance path; reports/base0.md"
+  },
+  {
+    "path": "package.json",
+    "tier": 2,
+    "note": "Runs added Node generator regressions through mandatory root pnpm test; no dependency change"
+  },
+  {
+    "path": "reports/base0.md",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-focused-1280.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-focused-1600.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-lint.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1280.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1600.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-screens.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-typecheck.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/logs/resume-units.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/resume-commands.jsonl",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/resume-integrity.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/resume-secret-scan.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/resume-source.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/run-check.py",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/screens/repaired-1280.png",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-repair/screens/repaired-1600.png",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/hud-resume-handoff.md",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs-before-geometry.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs/focused-browser-r2.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs/focused-browser-r3.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs/focused-browser-r4.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs/focused-browser.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/logs/results.jsonl",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/screens/after-1280.png",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/screens/before-1280.png",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/base0/screens/before-1600.png",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/deno0/logs/generator-tests.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/deno0/logs/import-guard.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/deno0/logs/mutations.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/deno0/logs/mutations.log",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "reports/scorecard/deno0/logs/results.jsonl",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "scripts/gen-deno-json.mjs",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "scripts/gen-deno-json.test.mjs",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/boss-fight/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/equip/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/game-state/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/idle-claim/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/relic-forge/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/relic-mint-report/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/upgrade/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-boss-fight/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-choose-class/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-claim/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-craft/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-equip/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-lock/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-relic-forge/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-salvage/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/functions/v2-state/deno.json",
+    "tier": 1,
+    "note": "BASE0 implementation/generated maps/evidence"
+  },
+  {
+    "path": "supabase/tests/src/concurrency-hardening.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/concurrency.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/deno-imports.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/fixture-clock.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/fixture-clock.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/forge.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/relic-recovery.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/voucher-cancel.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/src/voucher-security.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  },
+  {
+    "path": "supabase/tests/v2/functions-forge.test.ts",
+    "tier": 2,
+    "note": "Test-only Deno-resolution/clock prerequisites; report sections Test integrity, Resumed fixture clock, Additional baseline fixture repair"
+  }
+]

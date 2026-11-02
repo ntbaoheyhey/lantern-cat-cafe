@@ -1,0 +1,13 @@
+diff --git a/supabase/functions/_shared/v2/http.ts b/supabase/functions/_shared/v2/http.ts
+index 7df5ade..6d67fe4 100644
+--- a/supabase/functions/_shared/v2/http.ts
++++ b/supabase/functions/_shared/v2/http.ts
+@@ -31,7 +31,7 @@ export class V2Error extends Error {
+   }
+ }
+ 
+-const MAX_BODY_BYTES = 8192;
++const MAX_BODY_BYTES = 8193;
+ // Bound the entire upload, not each chunk, below the existing 15-second probe deadline.
+ const BODY_READ_TIMEOUT_MS = 10_000;
+ 

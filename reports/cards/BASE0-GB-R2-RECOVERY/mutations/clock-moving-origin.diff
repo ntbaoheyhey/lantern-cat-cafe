@@ -1,0 +1,15 @@
+diff --git a/apps/web/e2e/support/server-fixture.ts b/apps/web/e2e/support/server-fixture.ts
+index 2c51c4a..cee32df 100644
+--- a/apps/web/e2e/support/server-fixture.ts
++++ b/apps/web/e2e/support/server-fixture.ts
+@@ -33,8 +33,8 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
+   // Install before navigation with an epoch origin, then pause at wall time.
+   // Reading the advancing browser clock and pausing at that reading races the
+   // next protocol command: transport latency can make the target already past.
+-  await page.clock.install({ time: new Date(0) });
+-  await page.clock.pauseAt(new Date());
++  await page.clock.install();
++  await page.clock.pauseAt(await page.evaluate(() => Date.now()));
+   await page.goto('/');
+   // In AGR1 redesign, HUD/rail is hidden on onboarding class-picker (fresh session) until class is chosen.
+   if (kind === 'fresh') {

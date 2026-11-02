@@ -1,0 +1,13 @@
+diff --git a/scripts/gen-deno-json.mjs b/scripts/gen-deno-json.mjs
+index 38aa0db..0fb1ccb 100644
+--- a/scripts/gen-deno-json.mjs
++++ b/scripts/gen-deno-json.mjs
+@@ -16,7 +16,7 @@ export function gameRulesImports(projectRoot = root) {
+   const src = join(projectRoot, 'packages/game-rules/src');
+   const out = {};
+   const walk = (dir) => {
+-    for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
++    for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => b.name.localeCompare(a.name))) {
+       const full = join(dir, entry.name);
+       if (entry.isDirectory()) {
+         if (entry.name.startsWith('__')) continue;

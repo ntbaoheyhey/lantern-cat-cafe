@@ -1,0 +1,60 @@
+{"command":"node --test scripts/gen-deno-json.test.mjs","root":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","start":"2026-11-01T15:51:30.711Z","pid":27272}
+✔ explicit root and nested index imports resolve to their exact files (11.3675ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (3.4235ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (4.485208ms)
+✔ output order is stable regardless of file creation order (11.729916ms)
+✖ generation preserves auth mappings and ignores shared or non-function directories (13.052584ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.749417
+
+✖ failing tests:
+
+test at scripts/gen-deno-json.test.mjs:54:1
+✖ generation preserves auth mappings and ignores shared or non-function directories (13.052584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      imports: {
+  +     '../../../packages/api-contract/src/endpoints': '../../../packages/api-contract/src/endpoints.ts',
+  +     '../../../packages/api-contract/src/errors': '../../../packages/api-contract/src/errors.ts',
+  +     '../../../packages/api-contract/src/state': '../../../packages/api-contract/src/state.ts',
+  +     '../../../packages/api-contract/src/types': '../../../packages/api-contract/src/types.ts',
+  +     '../../../packages/api-contract/src/v2': '../../../packages/api-contract/src/v2.ts',
+  +     '../../../packages/chain/src/abi': '../../../packages/chain/src/abi.ts',
+  +     '../../../packages/game-rules/src/index': '../../../packages/game-rules/src/index.ts',
+  +     '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts',
+  +     '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts',
+        '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3',
+  +     '@taskbar-hero/api-contract': '../../../packages/api-contract/src/index.ts',
+  +     '@taskbar-hero/chain': '../../../packages/chain/src/constants.ts',
+  +     '@taskbar-hero/game-rules': '../../../packages/game-rules/src/index.ts',
+  +     'viem/accounts': 'npm:viem@2.57.4/accounts',
+        'viem/siwe': 'npm:viem@2.57.4/siwe',
+        jose: 'npm:jose@6.2.12',
+        viem: 'npm:viem@2.57.4'
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/scripts/gen-deno-json.test.mjs:64:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { imports: { '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3', jose: 'npm:jose@6.2.12', viem: 'npm:viem@2.57.4', 'viem/siwe': 'npm:viem@2.57.4/siwe', 'viem/accounts': 'npm:viem@2.57.4/accounts', '@taskbar-hero/api-contract': '../../../packages/api-contract/src/index.ts', '../../../packages/api-contract/src/endpoints': '../../../packages/api-contract/src/endpoints.ts', '../../../packages/api-contract/src/errors': '../../../packages/api-contract/src/errors.ts', '../../../packages/api-contract/src/state': '../../../packages/api-contract/src/state.ts', '../../../packages/api-contract/src/types': '../../../packages/api-contract/src/types.ts', '../../../packages/api-contract/src/v2': '../../../packages/api-contract/src/v2.ts', '@taskbar-hero/chain': '../../../packages/chain/src/constants.ts', '../../../packages/chain/src/abi': '../../../packages/chain/src/abi.ts', '@taskbar-hero/game-rules': '../../../packages/game-rules/src/index.ts', '../../../packages/game-rules/src/index': '../../../packages/game-rules/src/index.ts', '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' } },
+    expected: { imports: { '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3', jose: 'npm:jose@6.2.12', viem: 'npm:viem@2.57.4', 'viem/siwe': 'npm:viem@2.57.4/siwe' } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1

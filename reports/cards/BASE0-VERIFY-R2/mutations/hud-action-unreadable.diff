@@ -1,0 +1,12 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 182bd94..d26358f 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -239,6 +239,7 @@
+   .shell-context .hud-center { flex: 1; justify-content: flex-end; }
+   .shell-context .v2-hint { max-width: 100%; }
+   .shell-context .v2-hint-btn {
++    font-size: 0;
+     white-space: normal;
+     overflow: visible;
+     text-overflow: clip;

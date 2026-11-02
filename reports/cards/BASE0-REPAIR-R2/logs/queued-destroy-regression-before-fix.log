@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-repair-r2/taskbar-hero/apps/web
+
+ ❯ src/game/stage/StageCanvas.test.tsx (6 tests | 1 failed) 238ms
+   × waits for scene-manager readiness before destruction when game.isBooted=true 59ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageCanvas.test.tsx > waits for scene-manager readiness before destruction when game.isBooted=true
+AssertionError: expected [Function] to not throw an error but 'Error: Scene manager is not ready' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Scene manager is not ready"
+
+ ❯ src/game/stage/StageCanvas.test.tsx:63:36
+     61|     if (!game.scene.isBooted) throw new Error('Scene manager is not re…
+     62|   });
+     63|   expect(() => view.unmount()).not.toThrow();
+       |                                    ^
+     64|   expect(game.destroy).toHaveBeenCalledExactlyOnceWith(true);
+     65|   expect(game.step).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  19:22:40
+   Duration  992ms (environment 47%, tests 26%, transform 16%, import 11%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-repair-r2/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/stage/StageCanvas.test.tsx

@@ -1,0 +1,81 @@
+
+> taskbar-hero@0.0.0 test /private/tmp/tbh-t001-independent-74d60da
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.932208ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.879333ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.33075ms)
+✔ output order is stable regardless of file creation order (3.441ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.498375ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.091958
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/packages/chain
+packages/auth test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  17:20:24
+packages/chain test:    Duration  813ms (import 46%, tests 26%, transform 26%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  17:20:24
+packages/auth test:    Duration  1.19s (import 58%, tests 35%, transform 7%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  17:20:24
+supabase/tests test:    Duration  15.59s (tests 79%, import 16%, transform 5%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  17:20:24
+packages/game-rules test:    Duration  36.33s (tests 92%, transform 5%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  17:21:01
+packages/api-contract test:    Duration  249ms (transform 79%, import 18%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /private/tmp/tbh-t001-independent-74d60da/apps/web
+apps/web test:  ❯ src/layout/StageLayout.test.tsx (11 tests | 1 failed) 22162ms
+apps/web test:    × holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner 5970ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/StageLayout.test.tsx > holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/layout/StageLayout.test.tsx:175:1
+apps/web test:     173|
+apps/web test:     174|
+apps/web test:     175| it('holds every boss-sensitive panel at the pre-request state, then re…
+apps/web test:        | ^
+apps/web test:     176|   const before = stageState;
+apps/web test:     177|   const result = ARENA_FIXTURES[0]!.result;
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+apps/web test:  Test Files  1 failed | 110 passed (111)
+apps/web test:       Tests  1 failed | 1307 passed (1308)
+apps/web test:    Start at  17:21:02
+apps/web test:    Duration  29.00s (environment 49%, tests 37%, import 10%, transform 4%)
+apps/web test: Environment  jsdom was created 111 times · 126.32s total, 49% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/private/tmp/tbh-t001-independent-74d60da/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

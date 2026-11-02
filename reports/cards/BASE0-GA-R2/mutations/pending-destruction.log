@@ -1,0 +1,35 @@
+{"name":"pending-destruction","command":"pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageCanvas.test.tsx","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","cwd":"/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero","started":"2026-11-01T15:08:41.119Z"}
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web
+
+ ❯ src/game/stage/StageCanvas.test.tsx (6 tests | 1 failed) 242ms
+   × resizes one game and consumes deferred destruction even with the tab hidden 79ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageCanvas.test.tsx > resizes one game and consumes deferred destruction even with the tab hidden
+AssertionError: expected "vi.fn()" to be called with arguments: [ Any<Number>, +0 ]
+
+Number of calls: 0
+
+ ❯ src/game/stage/StageCanvas.test.tsx:41:21
+     39|   view.unmount();
+     40|   expect(game.destroy).toHaveBeenCalledWith(true);
+     41|   expect(game.step).toHaveBeenCalledWith(expect.any(Number), 0);
+       |                     ^
+     42|   expect(game.destroy.mock.invocationCallOrder[0]).toBeLessThan(game.s…
+     43|   vi.restoreAllMocks();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  22:08:41
+   Duration  702ms (environment 44%, tests 39%, import 10%, transform 7%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-ga-r2-mutants-280ff4b/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/stage/StageCanvas.test.tsx
+
+EXIT=1 SIGNAL=null

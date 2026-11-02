@@ -1,0 +1,16 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm --filter @taskbar-hero/supabase-tests test src/live-schema.test.ts", "cwd": "/Users/bao/.codex/worktrees/mega-cxn3-preflight-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "cd274ab9b95d355e08c61452694cc09052f17bb8", "name": "schema-local", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-01T23:35:51+07:00", "starting_git_status": "", "viewport": "1280x720"}
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-preflight-280ff4b/taskbar-hero/supabase/tests
+> vitest run src/live-schema.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-preflight-280ff4b/taskbar-hero/supabase/tests
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  23:35:53
+   Duration  2.09s (tests 97%, import 1%, transform 1%)
+
+
+EXIT_CODE=0

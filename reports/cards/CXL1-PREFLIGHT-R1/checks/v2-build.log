@@ -1,0 +1,33 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "VITE_GAME_V2=1 pnpm --filter @taskbar-hero/web build", "cwd": "/Users/bao/.codex/worktrees/mega-cxl1-preflight-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "7731a65ca35ee2b3b388dca1c266c688f06a84c0", "name": "v2-build", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-01T23:02:15+07:00", "starting_git_status": "", "viewport": "1280x720"}
+
+> @taskbar-hero/web@0.0.0 build /Users/bao/.codex/worktrees/mega-cxl1-preflight-280ff4b/taskbar-hero/apps/web
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxl1-preflight-280ff4b/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1833 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               2.21 kB │ gzip:   0.78 kB
+dist/assets/SpritePreview-DrGwRUam.css        0.69 kB │ gzip:   0.34 kB
+dist/assets/ArtPilot-eVSJTpvn.css             6.45 kB │ gzip:   1.38 kB
+dist/assets/index-p4gCWqSt.css              147.43 kB │ gzip:  23.18 kB
+dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+dist/assets/assets-JlWYjYb4.js                2.42 kB │ gzip:   1.19 kB
+dist/assets/SpritePreview-DZ2O1_YP.js         6.61 kB │ gzip:   2.76 kB
+dist/assets/ArenaScene-C1aie7je.js            7.07 kB │ gzip:   2.73 kB
+dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+dist/assets/StageScene-gdYDYK6e.js           15.76 kB │ gzip:   5.81 kB
+dist/assets/ArtPilot-n_QR8Qgl.js             16.69 kB │ gzip:   3.93 kB
+dist/assets/ArenaPreview-C1bt7UuY.js         22.84 kB │ gzip:   3.01 kB
+dist/assets/ch1-Dcr1kpPd.js                 144.79 kB │ gzip:  12.46 kB
+dist/assets/combat-COPl1OEP.js              189.17 kB │ gzip:  20.37 kB
+dist/assets/react-KPuNr9iS.js               218.74 kB │ gzip:  68.27 kB
+dist/assets/web3-BKxr0A5j.js                363.83 kB │ gzip: 108.14 kB
+dist/assets/index-BQeA3Xr6.js               827.69 kB │ gzip: 116.22 kB
+dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+
+✓ built in 516ms
+
+EXIT_CODE=0

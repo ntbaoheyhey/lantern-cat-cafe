@@ -1,0 +1,31 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/supabase/tests
+
+ ❯ v2/functions-forge.test.ts (19 tests | 1 failed) 565ms
+   ❯ v2 craft, salvage and lock over migrated SQL (11)
+     × seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > seeds inventory across database clock 2040-01-01T00:00:00.123456Z while preserving claim guards
+TypeError: Cannot read properties of null (reading 'items')
+ ❯ insert v2/functions-forge.test.ts:48:18
+     46|   clock = Math.max(clock, Math.floor(before.lastClaimMicros / 1000) + …
+     47|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+     48|   return result!.items as v2.ItemViewV2[];
+       |                  ^
+     49| }
+     50| async function http(fn: (p: string, body: Record<string, unknown>) => …
+ ❯ v2/functions-forge.test.ts:65:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 18 passed (19)
+   Start at  18:46:25
+   Duration  1.82s (tests 73%, import 21%, transform 6%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run v2/functions-forge.test.ts

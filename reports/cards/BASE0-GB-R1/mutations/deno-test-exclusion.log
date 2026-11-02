@@ -1,0 +1,40 @@
+✔ explicit root and nested index imports resolve to their exact files (10.226833ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.27975ms)
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3.140042ms)
+✔ output order is stable regardless of file creation order (4.876084ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.729417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.816041
+
+✖ failing tests:
+
+test at scripts/gen-deno-json.test.mjs:38:1
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3.140042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts',
+  +   '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/scripts/gen-deno-json.test.mjs:43:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts', '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

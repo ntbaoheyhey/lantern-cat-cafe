@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 182bd94..e1735e7 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -247,7 +247,7 @@
+   .shell-hud.v2-topbar > .hud-left { flex: 1; }
+   .shell-hud.v2-topbar .hud-bar__layout { width: 100%; }
+   .shell-hud.v2-topbar .hud-level-xp {
+-    grid-template-columns: auto 160px auto;
++    grid-template-columns: auto 8px auto;
+   }
+   .shell-hud .hud-xp-track { height: 10px; }
+   .shell-hud .hud-power-chip { margin-left: auto; }

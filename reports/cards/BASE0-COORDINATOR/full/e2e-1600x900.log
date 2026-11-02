@@ -1,0 +1,321 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm test:e2e --workers=2", "cwd": "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/apps/web", "empty_backend_env": true, "head": "5db4949096e93eedeb98dff94ef1ec7019485f96", "name": "e2e-1600x900", "ports": {"E2E_PORT_API": "4383", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_SERVER": "4382", "E2E_PORT_V2": "4381"}, "screenshots": false, "started": "2026-11-01T18:11:26+07:00", "starting_git_status": "?? apps/web/tools/.base0-r4-audit.mjs\n?? apps/web/tools/.base0-r4-effects.mjs\n", "viewport": "1600x900"}
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/apps/web
+> playwright test --workers=2
+
+[WebServer] (node:12403) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12407) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:12451) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:12473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12475) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:12481) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:12484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:12508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-coordinator-r4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:12515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 264 tests using 2 workers
+(node:12545) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+···Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+···················(node:12623) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·············(node:12721) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·················(node:12815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+··············CSP classic 1600x900 light: canvas painted; violations=0; console/page errors=0
+·CSP classic 1280x720 light: canvas painted; violations=0; console/page errors=0
+·CSP classic 390x844 light: canvas painted; violations=0; console/page errors=0
+·CSP classic 320x568 light: canvas painted; violations=0; console/page errors=0
+··(node:13093) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+CSP classic 1280x720 dark: canvas painted; violations=0; console/page errors=0
+··CSP classic 390x844 dark: canvas painted; violations=0; console/page errors=0
+··CSP v2 1600x900 light: canvas painted; violations=0; console/page errors=0
+··CSP v2 1280x720 light: canvas painted; violations=0; console/page errors=0
+·CSP v2 390x844 light: canvas painted; violations=0; console/page errors=0
+··
+·CSP v2 320x568 light: canvas painted; violations=0; console/page errors=0
+···CSP v2 1280x720 dark: canvas painted; violations=0; console/page errors=0
+···CSP v2 390x844 dark: canvas painted; violations=0; console/page errors=0
+·(node:13187) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·Phaser canvas instances inserted during 100-step drag: 2
+·························{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+···{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":266.953125,"textWidth":266.953125,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Next: Equip better gear to keep exploring","fontSize":12,"width":226.609375,"textWidth":226.609375,"unclipped":true,"allTextInside":true}}}
+··{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+···{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+··{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+···{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Next: Explore the chapter and challenge its boss","fontSize":12,"width":257.484375,"textWidth":257.484375,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4383/functions/v1/v2-claim"}]}
+··Measured screenshot roster-ch1.png (75.8 KB)
+···Measured screenshot roster-ch2.png (75.4 KB)
+··Measured screenshot roster-ch3.png (75.0 KB)
+··Measured screenshot roster-ch4.png (75.5 KB)
+··Measured screenshot roster-ch5.png (76.5 KB)
+·Measured screenshot stage-ch1-1280x720.png (82.7 KB)
+·Measured screenshot stage-ch1-390x844.png (32.5 KB)
+·Measured screenshot stage-ch2-1280x720.png (84.0 KB)
+·Measured screenshot stage-ch2-390x844.png (33.2 KB)
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18563,"JSHeapUsedSize":14838132},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18563,"JSHeapUsedSize":16032768},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6.4000000059604645,"nextFrameMs":51.70000000298023,"eventTiming":[{"name":"click","duration":56,"inputDelay":1.1000000014901161}]},"craft":{"clickToPendingMs":0.6999999955296516,"nextFrameMs":19,"eventTiming":[{"name":"click","duration":24,"inputDelay":0.5999999940395355}]},"fight":{"clickToPendingMs":1.2000000029802322,"nextFrameMs":26.700000002980232,"eventTiming":[{"name":"click","duration":32,"inputDelay":1}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·Measured screenshot stage-ch3-1280x720.png (84.7 KB)
+·Measured screenshot stage-ch3-390x844.png (33.2 KB)
+··Measured screenshot stage-ch4-1280x720.png (85.5 KB)
+···Measured screenshot stage-ch4-390x844.png (33.7 KB)
+·
+···Measured screenshot stage-ch5-1280x720.png (88.0 KB)
+···Measured screenshot stage-ch5-390x844.png (36.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.7,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.6,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+······················G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+···················································
+·············[livingroom 1600x900] outer: 18.98, center: 47.02
+·[livingroom 390x844] outer: 25.13, center: 58.19
+··[kitchen 1600x900] outer: 20.06, center: 51.72
+·[kitchen 390x844] outer: 29.11, center: 63.40
+·[bathroom 1600x900] outer: 19.61, center: 50.56
+·[bathroom 390x844] outer: 22.95, center: 62.29
+·[basement 1600x900] outer: 24.56, center: 49.64
+·[basement 390x844] outer: 29.47, center: 61.00
+·[rooftops 1600x900] outer: 14.96, center: 41.73
+·[rooftops 390x844] outer: 16.21, center: 53.55
+·
+  264 passed (2.3m)
+
+EXIT_CODE=0

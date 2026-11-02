@@ -1,0 +1,18 @@
+[
+  {
+    "name": "phased-path",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/live-phased.mjs /private/tmp/tbh-main-after-cxu5 1b299c40513ff9f5330a91ad040791bbd4065df9 /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live-metadata-corrected/phased",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:07:59.773472+00:00",
+    "endedAt": "2026-11-02T18:09:05.369014+00:00"
+  },
+  {
+    "name": "asset-after",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxu5 1b299c40513ff9f5330a91ad040791bbd4065df9 /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live-metadata-corrected/artifact-after.json",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:09:05.386716+00:00",
+    "endedAt": "2026-11-02T18:09:09.087233+00:00"
+  }
+]

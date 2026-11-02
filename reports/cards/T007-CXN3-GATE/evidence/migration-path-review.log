@@ -1,0 +1,12 @@
+supabase/migrations/20261106000000_voucher_cancel_reissue.sql:7:alter table public.relic_vouchers drop constraint if exists relic_vouchers_status_check;
+supabase/migrations/20261106000000_voucher_cancel_reissue.sql:8:alter table public.relic_vouchers
+supabase/migrations/20261106000000_voucher_cancel_reissue.sql:27:  update public.relic_vouchers set status = 'cancelled' where nonce = old.nonce;
+supabase/migrations/20261104000000_v2_request_budgets.sql:13:alter table private.v2_request_budgets enable row level security;
+supabase/migrations/20261107000000_voucher_race_guard.sql:5:alter table public.relic_vouchers
+supabase/migrations/20261107000000_voucher_race_guard.sql:170:  update public.relic_vouchers set status = 'cancelled', reissue_check_token = null, reissue_check_after = null
+supabase/migrations/20261107000000_voucher_race_guard.sql:172:  update public.relic_vouchers set status = 'minted', tx_hash = coalesce(tx_hash, p_tx_hash),
+supabase/migrations/20261107000000_voucher_race_guard.sql:185:  update public.relic_vouchers v set signature = coalesce(v.signature, lower(p_signature))
+supabase/migrations/20261107000000_voucher_race_guard.sql:211:    update public.relic_vouchers set reissue_check_token = pg_catalog.gen_random_uuid(),
+supabase/migrations/20261107000000_voucher_race_guard.sql:216:    update public.relic_vouchers set status = 'expired' where nonce = old.nonce;
+supabase/migrations/20261107000000_voucher_race_guard.sql:251:  update public.relic_vouchers set reissue_check_token = null, reissue_check_after = null
+supabase/migrations/20261103000000_siwe_nonces_server_only.sql:7:alter table public.siwe_nonces enable row level security;

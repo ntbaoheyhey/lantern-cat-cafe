@@ -1,0 +1,50 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toBeFocused() failed
+
+Locator:  getByTestId('nav-home')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" getByTestId('nav-home') with timeout 5000ms
+  - waiting for getByTestId('nav-home')
+    14 × locator resolved to <button role="tab" tabindex="0" id="tab-home" aria-label="Home" aria-current="page" aria-selected="true" data-screen-id="home" data-testid="nav-home" class="rail-item active" aria-controls="panel-home">…</button>
+       - unexpected value "inactive"
+
+    at captureRawStack (/Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toBeFocused (/Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero/apps/web/[eval1]:35:59 {
+  matcherResult: {
+    message: 'expect(locator).toBeFocused() failed\n' +
+      '\n' +
+      "Locator:  getByTestId('nav-home')\n" +
+      'Expected: focused\n' +
+      'Received: inactive\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeFocused" getByTestId('nav-home') with timeout 5000ms\n` +
+      "  - waiting for getByTestId('nav-home')\n" +
+      '    14 × locator resolved to <button role="tab" tabindex="0" id="tab-home" aria-label="Home" aria-current="page" aria-selected="true" data-screen-id="home" data-testid="nav-home" class="rail-item active" aria-controls="panel-home">…</button>\n' +
+      '       - unexpected value "inactive"\n',
+    pass: false,
+    actual: 'inactive',
+    name: 'toBeFocused',
+    expected: 'focused',
+    log: [
+      `  - Expect "toBeFocused" getByTestId('nav-home') with timeout 5000ms`,
+      "  - waiting for getByTestId('nav-home')",
+      '    14 × locator resolved to <button role="tab" tabindex="0" id="tab-home" aria-label="Home" aria-current="page" aria-selected="true" data-screen-id="home" data-testid="nav-home" class="rail-item active" aria-controls="panel-home">…</button>',
+      '       - unexpected value "inactive"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- tab "Home" [selected]'
+  }
+}
+
+Node.js v24.22.2

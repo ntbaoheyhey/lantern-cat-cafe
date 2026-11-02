@@ -1,0 +1,106 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:34:09.054771+00:00",
+    "endedAt": "2026-11-02T17:34:16.809765+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:34:16.816244+00:00",
+    "endedAt": "2026-11-02T17:34:24.461686+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:34:24.468309+00:00",
+    "endedAt": "2026-11-02T17:35:13.328343+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:13.335950+00:00",
+    "endedAt": "2026-11-02T17:35:14.009345+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:14.015614+00:00",
+    "endedAt": "2026-11-02T17:35:14.183521+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:14.190989+00:00",
+    "endedAt": "2026-11-02T17:35:22.583926+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:22.590731+00:00",
+    "endedAt": "2026-11-02T17:35:22.647740+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:22.654160+00:00",
+    "endedAt": "2026-11-02T17:35:28.074971+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:28.082514+00:00",
+    "endedAt": "2026-11-02T17:35:28.159992+00:00"
+  },
+  {
+    "name": "repeat-changed",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/ui/baseline-hud.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:35:28.166607+00:00",
+    "endedAt": "2026-11-02T17:37:47.266183+00:00"
+  },
+  {
+    "name": "repeat-resize",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts --repeat-each=20 --workers=1 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:37:47.273829+00:00",
+    "endedAt": "2026-11-02T17:43:51.422622+00:00"
+  },
+  {
+    "name": "browser-1280",
+    "command": "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:43:51.429168+00:00",
+    "endedAt": "2026-11-02T17:46:54.263296+00:00"
+  },
+  {
+    "name": "browser-1600",
+    "command": "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "f846b49eb5921d05c6ddc39060889b05ac4c5e3f",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:46:54.270653+00:00",
+    "endedAt": "2026-11-02T17:50:00.021255+00:00"
+  }
+]

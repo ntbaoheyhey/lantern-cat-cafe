@@ -1,0 +1,1 @@
+runner.mjs wrote workers:1 in the common command metadata. This denotes the browser --workers=1 setting; root pnpm test/typecheck/lint retain their native package/runner concurrency and were not forced to one Vitest worker. Exact commands are preserved in every log header. No browser repeat used more than one worker.

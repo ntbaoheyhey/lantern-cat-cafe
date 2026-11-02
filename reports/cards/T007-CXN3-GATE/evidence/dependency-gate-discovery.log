@@ -1,0 +1,150 @@
+      "status": "done",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T006",
+      "title": "CXN3-FIX: merge PR #250 (check base, retarget to main if needed)",
+      "detail": "Resume file STEP 2. PR #250 is CONFLICTING (stacked on deleted BASE0 branch): retarget to main, rebase/resolve, then full gate. Goes BEFORE CXN3.",
+      "acceptance_criteria": [
+        "PR #250 merged on main or documented blocker",
+        "Main + live green"
+      ],
+      "depends_on": [
+        "T005"
+      ],
+      "priority": "P0",
+      "goal_link": "",
+      "status": "done",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T007",
+      "title": "CXN3: merge PR #244 through the full gate",
+      "detail": "Resume file STEP 2, same gate. No --v2 flag turned on before this is merged.",
+      "acceptance_criteria": [
+        "PR #244 merged or documented blocker",
+        "Main + live green"
+      ],
+      "depends_on": [
+        "T006"
+      ],
+      "priority": "P0",
+      "goal_link": "",
+      "status": "running",
+      "attempts": 1,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T008",
+      "title": "CXU5: merge PR #249 through the full gate",
+      "detail": "Resume file STEP 2, same gate.",
+      "acceptance_criteria": [
+        "PR #249 merged or documented blocker",
+        "Main + live green"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T014",
+      "title": "Reconcile the stale BASE0 release gate and prove current main equals live",
+      "detail": "T001 was closed from historical 74d60da receipts although its present-tense deployment criterion is false. Main is now 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a and live uses index-N5_1FrYv.js. Preserve the verified historical BASE0 checkpoint; have the orchestrator explicitly reconcile the stale task target against successor releases, then independently gate the exact intended current-main head and its deployment. Reuse the existing successor verification work if applicable. Do not roll back merged product work merely to satisfy the obsolete SHA assertion. Any release action must follow the existing authorized deployment path and safety restrictions.",
+      "acceptance_criteria": [
+        "T001 closure explicitly distinguishes historical 74d60da proof from current production verification and records the orchestrator-approved release target; no claim that the current site equals 74d60da while it differs.",
+        "Pin current main and tested heads, rerun typecheck/lint/unit/build/browser checks on that exact tree, and retain all failures as well as final outcomes.",
+        "Fresh production build bytes for the approved current-main target match every deployed emitted/public asset and the entry manifest during a stable observation window.",
+        "Rerun legacy live and merged-core phased journey at 1280x720 and 1600x900 against that verified deployment; record source and deployment identities in reports/.",
+        "Commit and push the new evidence checkpoint on ai/codex-mega-ledger with [skip ci], without direct main pushes, Actions, database-destructive operations or unauthorized edge deployments."
+      ],
+      "depends_on": [],
+      "priority": "P0",
+      "goal_link": "/Users/bao/taskbar-hero/.codex-orchestrator/GOAL.md \u2014 project completion criteria 1 (BASE0 live proof) and 5 (green main and live matches main)",
+      "status": "done",
+      "attempts": 1,
+      "feedback": "",
+      "auto": true,
+      "source": "corrective-of-T001",
+      "why": "",
+      "added": "2026-11-02 17:30:05",
+      "finished": "2026-11-02 18:07:55"
+    }
+  ]
+}# T014 — DONE
+- Historical BASE0 74d60da checkpoint 89664d7 preserved; T001 closure now explicitly separates it from current production.
+- Target authority: orchestrator's corrective-of-T001 T014 dispatch naming current main; GOAL/queue unchanged.
+- Approved/current-main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+- Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
+- Fresh typecheck/lint/unit/build PASS; 2,380 passing unit/script cases, inherited 2 expected-fail/11 skipped.
+- Browser 289/289 PASS at each 1280x720 and 1600x900; retries=0. Forge 96/96 PASS; Deno drift clean.
+- Two fresh in-memory production builds: 32/32 deployed files, including HTML, match exactly.
+- Stable HTML/entry/all asset hashes: 10:34:33.965Z–10:40:08.789Z, 2026-11-02 (334.824 seconds).
+- Live entry index-N5_1FrYv.js; legacy check-live and eight-stage merged-core live journey PASS at both sizes.
+- First live harness disclosure-order failures retained; R2 observes disclosure before dismissing help, as prior harness did.
+- Historical T001 failed asset comparison/unit timeout and passing unchanged unit rerun retained.
+- Extra EOF blank line failed initial diff check; fixed in second docs-only commit, logs retained.
+- Evidence commit: 54b3543b696841d9d1d29a12baf692c9cec3a9a9.
+- Final checkpoint: 4b895739a69cca13b9e331d224e5e834cf8bf39d; branch ai/codex-mega-ledger; pushed and remote equality verified.
+- No PR/product change/merge/release. Both commit subjects end [skip ci]; changed paths all reports/.
+- Report: /tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/REPORT.md
+- Verify: reports/cards/T014-CURRENT-MAIN-LIVE/manifest.json, stable-window.json, logs/ and live-phased-r2/summary.json.
+- Final all-five-criteria check: .codex-orchestrator/verification/T014/acceptance.json and final-acceptance.log.
+- Publication: .codex-orchestrator/verification/T014/publication.json, push.log, remote-after-push.log.
+- Ledger /tmp/tbh-t001-ledger clean; original dirty checkout untouched; task test ports 4670–4673 free.
+- Limits: frontend artifact equivalence, not unique provider commit or Edge Function identity; full nine-stage path remains outside phase.
+- No Actions, direct main push, .github edits, destructive DB writes, migrations/edge deploys, secrets, funds, helpers or timers.
+- No user step or new follow-up. Return to orchestrator; do not duplicate successor merges.
+reports/cutover-doc-fix.md
+reports/cxn3-fix.md
+reports/CODEX-CLI-RESUME-PROMPT.md
+reports/MEGA-CURRENT-HANDOFF.md
+reports/OPTIONAL-USER-STEPS.md
+reports/cards/CLI-RESUME-20261102/REPORT.md
+reports/cards/CLI-RESUME-20261102/continuation-1350/REPORT.md
+reports/cards/CLI-RESUME-20261102/continuation-1350/runtime.json
+reports/cards/CLI-RESUME-20261102/continuation-1350/verified-refs.json
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/REPORT.md
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/base0-evidence-manifest.json
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/fxrb-status-before.txt
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/ledger-status-before.txt
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/runtime-check.json
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/verified-refs.json
+reports/cards/CLI-RESUME-20261102/continuation-fxrb/worktrees-before.txt
+reports/cards/CLI-RESUME-20261102/recheck-after-compaction/REPORT.md
+reports/cards/CLI-RESUME-20261102/recheck-after-compaction/verified-refs.json
+reports/cards/CLI-RESUME-20261102/recheck/REPORT.md
+reports/cards/CLI-RESUME-20261102/recheck/verified-refs.json
+reports/cards/CLI-RESUME-20261102/runtime-verification.json
+reports/cards/CLI-RESUME-20261102/verified-refs.json
+reports/cards/RESUME-20261102-SESSION2/REPORT.md
+reports/cards/RESUME-20261102-SESSION2/preserved-ledger-status.txt
+reports/cards/RESUME-20261102-SESSION2/prs.json
+reports/cards/RESUME-20261102-SESSION2/repository.json
+reports/cards/RESUME-20261102-SESSION2/verified-state.json
+reports/cards/RESUME-20261102/REPORT.md
+reports/cards/RESUME-20261102/automation-and-runtime.json
+reports/cards/RESUME-20261102/verified-refs.json
+reports/mega-ledger-prior-run.md
+reports/mega-ledger.md

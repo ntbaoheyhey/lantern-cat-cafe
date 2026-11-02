@@ -1,0 +1,419 @@
+diff --git a/apps/web/e2e/server/request-body-limits.spec.ts b/apps/web/e2e/server/request-body-limits.spec.ts
+new file mode 100644
+index 0000000..3431cc3
+--- /dev/null
++++ b/apps/web/e2e/server/request-body-limits.spec.ts
+@@ -0,0 +1,43 @@
++import { test, expect } from '../support/test';
++
++const api = `http://127.0.0.1:${process.env.E2E_PORT_API ?? '4176'}`;
++const origin = `http://localhost:${process.env.E2E_PORT_SERVER ?? '4175'}`;
++const routes = [
++  'v2-boss-fight', 'v2-choose-class', 'v2-claim', 'v2-craft', 'v2-equip',
++  'v2-lock', 'v2-relic-forge', 'v2-salvage', 'v2-state',
++];
++const oversized = JSON.stringify({ padding: 'x'.repeat(8193) });
++
++for (const route of routes) {
++  test(`${route}: CORS and unsigned body-size refusals over HTTP`, async ({ request }) => {
++    const url = `${api}/functions/v1/${route}`;
++    const preflight = await request.fetch(url, {
++      method: 'OPTIONS', timeout: 15_000, maxRetries: 0,
++      headers: { Origin: origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' },
++    });
++    expect(preflight.status()).toBe(204);
++    expect(preflight.headers()['access-control-allow-origin']).toBe(origin);
++    expect(preflight.headers()['access-control-allow-methods']).toContain('POST');
++    expect(preflight.headers()['access-control-allow-headers']?.toLowerCase()).toContain('content-type');
++
++    // No session, Authorization or API key is sent in either request.
++    const small = await request.post(url, {
++      data: '{}', timeout: 15_000, maxRetries: 0,
++      headers: { Origin: origin, 'Content-Type': 'application/json' },
++    });
++    expect(small.status()).toBe(401);
++    expect(await small.json()).toEqual({ error: 'unauthenticated' });
++
++    const large = await request.post(url, {
++      data: oversized, timeout: 15_000, maxRetries: 0,
++      headers: { Origin: origin, 'Content-Type': 'application/json' },
++    });
++    // The loopback transport can reject first with413; the production handler
++    // uses400. Both satisfy the mission contract, while401 must still fail.
++    expect([400, 413]).toContain(large.status());
++    if (large.status() === 400) {
++      expect(await large.json()).toEqual({ error: 'invalid_request' });
++      expect(large.headers()['access-control-allow-origin']).toBe(origin);
++    }
++  });
++}
+diff --git a/docs/decisions/cxn3-request-body-limits.md b/docs/decisions/cxn3-request-body-limits.md
+new file mode 100644
+index 0000000..d04b0a1
+--- /dev/null
++++ b/docs/decisions/cxn3-request-body-limits.md
+@@ -0,0 +1,17 @@
++# Bound v2 input before authentication
++
++Decision by Codex under the user's mission authority, 2026-11-02.
++
++CXN3 requires unsigned oversized requests to return400 or413. The existing handler authenticates before reading the body, so an oversized unsigned request returns401. The former implementation also waits for stream cancellation and has no total body-read deadline. These behaviors are reproduced by the new regression tests; the initial run records8failures and16passing controls.
++
++Keep the existing8192-byte limit. Check actual streamed bytes before authentication; an advertised oversized Content-Length may reject early, but absent or misleading headers never bypass the real byte limit. Decode UTF-8 and parse the bounded object only after authentication and player-budget admission. Thus ordinary unsigned malformed/empty payloads still return401, and admitted malformed data still returns400. Budget refusals retain their status and Retry-After headers without running game logic.
++
++A single10-second deadline bounds the entire input read, including slow chunk delivery. It is shorter than the existing15-second diagnostic request timeout; that diagnostic timeout is not raised. Request aborts stop the read. Refusal responses do not wait for a producer's cancellation promise, which might never settle. Cancellation failures are cleanup failures after refusal and cannot turn the refusal into an indefinite wait. No game work or database action runs for rejected input.
++
++The small fixed buffer bounds memory use before authentication. The new deadline is an input-resource policy, not a claim that the observed live endpoint timeouts are fixed. Those timeouts remain an operational finding until the deployed behavior is verified. No auth token verification, SIWE, request budget, database schema, gameplay rule, contract or frontend flag changes. This repairs an existing input contract rather than enabling a new gameplay feature.
++
++This work is local and unreleased. Before release it still requires complete exact-head verification, applicable review gates and documented rollback. Rollback restores the previous handler source from the recorded parent commit; no migration or player-data change is involved. An independent review is not claimed: the user now forbids subagents/helpers.
++
++Adjacent browser-framework tests send actual loopback HTTP requests to all nine v2 routes through the existing PGlite server. They check CORS, ordinary unsigned401 and oversized400/413 responses without credentials or game actions, matching the mission's explicit contract. The local transport has its own8192-byte guard and returns413 before the handler; this wire check therefore does not prove the changed handler's oversized path. The27direct handler tests cover that path, and deployed-source verification remains mandatory. The initial wire probe incorrectly required400 and failed9cases on valid413responses; its original source and log are preserved on the ledger. Neither the local transport guard nor the15-second diagnostic timeout/retry policy was loosened.
++
++The loopback runtime also omits the optional player-budget admission callback. Its wire checks must not be called production budget coverage. Dedicated Supabase request-budget tests exercise handlerV2 with the real PGlite budget RPC, alongside the new direct admission-refusal controls.
+diff --git a/docs/design/decisions.md b/docs/design/decisions.md
+index 7fb307a..663dbcf 100644
+--- a/docs/design/decisions.md
++++ b/docs/design/decisions.md
+@@ -3,3 +3,5 @@
+ - [Restore the existing verification baseline](../decisions/mission-baseline-compatibility.md): combine minimal repairs needed by the strict complete-suite gate; preserve desktop scope and existing responsive behavior.
+ 
+ - [Give HUD status and guidance their own rows](../decisions/baseline-hud-layout.md): preserve the complete next action and reserve a readable XP track at both desktop targets.
++
++- [Bound v2 request input before authentication](../decisions/cxn3-request-body-limits.md): preserve the8192-byte contract, bound stream lifetime and cancellation, and retain authentication/budget gates before game work.
+diff --git a/reports/cxn3-fix.md b/reports/cxn3-fix.md
+new file mode 100644
+index 0000000..0fb3439
+--- /dev/null
++++ b/reports/cxn3-fix.md
+@@ -0,0 +1,15 @@
++STATUS: IN-PROGRESS — local implementation, not released or independently graded.
++
++# CXN3-FIX: bounded v2 request input
++
++The unsigned oversized-request probe expects400 or413. The former shared handler returned401 because authentication ran before the size check. A new regression suite reproduced that discrepancy for missing, small and oversized Content-Length values, UTF-8 byte sizes and chunked input. It also exposed pending reads/cancellation with no bounded completion. Initial working-tree result:8failed and16passed; raw evidence is preserved on the ledger in reports/cards/CXN3-FIX/local-checks/body-limit-before.log.
++
++The shared handler now bounds actual input bytes before authentication. It preserves the8192-byte limit and uses a single10-second body-read deadline. Aborts and oversized input cancel the producer without waiting indefinitely for cancellation. JSON/UTF-8 validation still follows authentication and budget admission; ordinary unsigned malformed/empty bodies remain401. Valid authenticated requests retain their identity, object payload and budget behavior. OPTIONS, method refusal, CORS and Retry-After behavior remain covered.
++
++Local working-tree checks:27new regressions passed; Supabase typecheck passed after an explicit HeadersInit annotation fixed a test typing error; the complete Supabase suite passed575tests in33files. The earlier typecheck error remains in typecheck-r1.log. No existing assertion, skip, retry or test timeout was changed. These working-tree results are not yet exact-commit full-gate certification.
++
++Scope: Tier1 is supabase/functions/_shared/v2/http.ts and supabase/tests/src/v2-body-limits.test.ts. Tier2 adds apps/web/e2e/server/request-body-limits.spec.ts to exercise all nine routes through the existing loopback HTTP/PGlite server, plus this report and the linked decision/index. The wire checks retain the existing15-second diagnostic timeout and disable retries. No authentication-token verifier, SIWE code, database schema, player state, gameplay rules, contracts, dependencies, environment values or frontend flags changed. The intended behavior is a repair to an existing input limit, not a new gameplay feature.
++
++The body-read policy and tradeoff are documented in docs/decisions/cxn3-request-body-limits.md. The timeout is an input-resource limit, not proof that historical live timeouts have been fixed. The existing15-second live checker timeout remains unchanged. The first wire probe over-constrained the mission's400-or413contract to400 and failed9cases because the unchanged local transport rejects at8192bytes with413. Its source/log are retained; the corrected wire test still rejects401 and does not certify the handler branch hidden behind that transport guard. Direct handler regressions and later live checks remain required. Current live findings, partial export limitations and the repair's position before CXN3 remain on the ledger.
++
++Pending: exact-commit verification, deliberate mutants, full root/build/browser/UI/public-config/wrapper gates, applicable independent review, actual-main integration, PR publication, release/rollback proof and fresh live validation. The user forbids subagents/helpers; coordinator self-review must not be described as independent grading. No source push, merge or backend deployment has occurred for this item.
+diff --git a/supabase/functions/_shared/v2/http.ts b/supabase/functions/_shared/v2/http.ts
+index 13c0955..7df5ade 100644
+--- a/supabase/functions/_shared/v2/http.ts
++++ b/supabase/functions/_shared/v2/http.ts
+@@ -31,34 +31,67 @@ export class V2Error extends Error {
+   }
+ }
+ 
+-/** Bound bytes while streaming; Content-Length is caller-controlled. */
+-async function requestObject(req: Request): Promise<Record<string, unknown>> {
+-  if (!req.body) throw new V2Error("invalid_request");
++const MAX_BODY_BYTES = 8192;
++// Bound the entire upload, not each chunk, below the existing 15-second probe deadline.
++const BODY_READ_TIMEOUT_MS = 10_000;
++
++/** Bound raw input before auth; JSON parsing and game admission remain separate. */
++async function requestBytes(req: Request): Promise<Uint8Array> {
++  const declared = req.headers.get("Content-Length");
++  if (req.signal.aborted || (declared !== null && /^\d+$/.test(declared) && Number(declared) > MAX_BODY_BYTES)) {
++    // Cancellation is cleanup, not a dependency of the refusal response.
++    void req.body?.cancel().catch(() => {});
++    throw new V2Error("invalid_request");
++  }
++  if (!req.body) return new Uint8Array();
+   const reader = req.body.getReader();
+-  const bytes = new Uint8Array(8192);
++  const bytes = new Uint8Array(MAX_BODY_BYTES);
++  const stopped = new AbortController();
++  const abort = () => stopped.abort();
++  const timer = setTimeout(abort, BODY_READ_TIMEOUT_MS);
++  const stop = new Promise<never>((_resolve, reject) => {
++    stopped.signal.addEventListener("abort", () => {
++      void reader.cancel().catch(() => {});
++      reject(new V2Error("invalid_request"));
++    }, { once: true });
++  });
++  req.signal.addEventListener("abort", abort, { once: true });
+   let size = 0;
+   try {
++    if (req.signal.aborted) abort();
+     for (;;) {
+-      const { done, value } = await reader.read();
++      const { done, value } = await Promise.race([reader.read(), stop]);
++      // cancel() can resolve the pending read before the rejection microtask runs.
++      if (stopped.signal.aborted) throw new V2Error("invalid_request");
+       if (done) break;
+       if (value.byteLength > bytes.length - size) {
+-        await reader.cancel();
+         throw new V2Error("invalid_request");
+       }
+       bytes.set(value, size);
+       size += value.byteLength;
+     }
+-    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, size)));
+-    if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
+-    return body as Record<string, unknown>;
++    return bytes.subarray(0, size);
+   } catch {
++    if (!stopped.signal.aborted) void reader.cancel().catch(() => {});
+     throw new V2Error("invalid_request");
+   } finally {
++    clearTimeout(timer);
++    req.signal.removeEventListener("abort", abort);
+     reader.releaseLock();
+   }
+ }
+ 
+-/** Called after authentication and before the body is read; a non-null refusal stops all game work. */
++function requestObject(bytes: Uint8Array): Record<string, unknown> {
++  try {
++    const body: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
++    if (body === null || typeof body !== "object" || Array.isArray(body)) throw new V2Error("invalid_request");
++    return body as Record<string, unknown>;
++  } catch {
++    throw new V2Error("invalid_request");
++  }
++}
++
++/** After byte limits and auth, but before JSON parsing; a refusal stops all game work. */
+ export type Admit = (player: string) => Promise<{ status: number; error: string; retryAfter: number } | null>;
+ 
+ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<string, unknown>) => Promise<unknown>, admit?: Admit): (req: Request) => Promise<Response> {
+@@ -66,6 +99,7 @@ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<st
+     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: http.json(req, {}).headers });
+     if (req.method !== "POST") return http.json(req, { error: "method_not_allowed" }, 405);
+     try {
++      const bytes = await requestBytes(req);
+       const player = await http.authenticate(req);
+       const refusal = await admit?.(player);
+       if (refusal) {
+@@ -74,7 +108,7 @@ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<st
+         res.headers.append("Access-Control-Expose-Headers", "Retry-After");
+         return res;
+       }
+-      const body = await requestObject(req);
++      const body = requestObject(bytes);
+       return http.json(req, await fn(player, body));
+     } catch (e) {
+       if (e instanceof V2Error) {
+diff --git a/supabase/tests/src/v2-body-limits.test.ts b/supabase/tests/src/v2-body-limits.test.ts
+new file mode 100644
+index 0000000..8e799e6
+--- /dev/null
++++ b/supabase/tests/src/v2-body-limits.test.ts
+@@ -0,0 +1,211 @@
++import { afterEach, expect, it, vi } from "vitest";
++import { GameError, type HttpDeps } from "../../functions/_shared/game.ts";
++import { handlerV2 } from "../../functions/_shared/v2/http.ts";
++
++const url = "https://example.test/v2-state";
++const encoder = new TextEncoder();
++type Refusal = { status: number; error: string; retryAfter: number };
++
++function route(authenticated = true, refusal: Refusal | null = null) {
++  const authenticate = vi.fn(async (_req: Request) => {
++    if (!authenticated) throw new GameError("unauthenticated");
++    return "body-limit-player";
++  });
++  const admit = vi.fn(async (_player: string) => refusal);
++  const game = vi.fn(async (player: string, body: Record<string, unknown>) => ({ player, body }));
++  const http: HttpDeps = {
++    authenticate,
++    json: (_req, body, status = 200) => Response.json(body, { status, headers: {
++      "Access-Control-Allow-Origin": "https://example.test",
++      "Access-Control-Allow-Methods": "POST, OPTIONS",
++      "Access-Control-Expose-Headers": "X-Existing",
++    } }),
++  };
++  return { authenticate, admit, game, handle: handlerV2(http, game, admit) };
++}
++
++function post(body: string | ReadableStream<Uint8Array> | null, headers: HeadersInit = {}, signal?: AbortSignal) {
++  const init: RequestInit & { duplex: "half" } = { method: "POST", body, headers, signal, duplex: "half" };
++  return new Request(url, init);
++}
++
++function objectOfSize(bytes: number): string {
++  const body = JSON.stringify({ padding: "x".repeat(bytes - 14) });
++  expect(encoder.encode(body)).toHaveLength(bytes);
++  return body;
++}
++
++afterEach(() => vi.useRealTimers());
++
++it.each([undefined, "2", "8193"])("rejects unsigned oversized bytes with Content-Length %s before auth or game work", async contentLength => {
++  const r = route(false);
++  const headers: HeadersInit = contentLength === undefined ? {} : { "Content-Length": contentLength };
++  const response = await r.handle(post(objectOfSize(8193), headers));
++  expect(response.status).toBe(400);
++  expect(await response.json()).toEqual({ error: "invalid_request" });
++  expect(response.headers.get("Access-Control-Allow-Origin")).toBe("https://example.test");
++  expect(r.authenticate).not.toHaveBeenCalled();
++  expect(r.admit).not.toHaveBeenCalled();
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it("accepts exactly 8192 actual bytes and passes the authenticated identity and object once", async () => {
++  const r = route();
++  const body = objectOfSize(8192);
++  const response = await r.handle(post(body));
++  expect(response.status).toBe(200);
++  expect(r.authenticate).toHaveBeenCalledOnce();
++  expect(r.admit).toHaveBeenCalledExactlyOnceWith("body-limit-player");
++  expect(r.game).toHaveBeenCalledExactlyOnceWith("body-limit-player", JSON.parse(body));
++});
++
++it.each([true, false])("counts UTF-8 bytes rather than JavaScript characters (authenticated=%s)", async authenticated => {
++  const body = JSON.stringify({ padding: "💫".repeat(2045) });
++  expect(body.length).toBeLessThan(8192);
++  expect(encoder.encode(body).length).toBeGreaterThan(8192);
++  const r = route(authenticated);
++  expect((await r.handle(post(body))).status).toBe(400);
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it("bounds an unknown-length chunked stream and cancels the producer", async () => {
++  const cancel = vi.fn();
++  const stream = new ReadableStream<Uint8Array>({
++    pull(controller) { controller.enqueue(new Uint8Array(4096).fill(120)); },
++    cancel,
++  });
++  const r = route(false);
++  expect((await r.handle(post(stream))).status).toBe(400);
++  expect(cancel).toHaveBeenCalledOnce();
++  expect(r.authenticate).not.toHaveBeenCalled();
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it.each([null, "{}", "[", "null", "[]"])("keeps ordinary unsigned requests unauthorized (%s)", async body => {
++  const r = route(false);
++  const response = await r.handle(post(body));
++  expect(response.status).toBe(401);
++  expect(await response.json()).toEqual({ error: "unauthenticated" });
++  expect(r.admit).not.toHaveBeenCalled();
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it.each([null, "[", "null", "[]"])("retains object-only JSON validation after authentication (%s)", async body => {
++  const r = route();
++  expect((await r.handle(post(body))).status).toBe(400);
++  expect(r.authenticate).toHaveBeenCalledOnce();
++  expect(r.admit).toHaveBeenCalledOnce();
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it("retains fatal UTF-8 validation", async () => {
++  const stream = new ReadableStream<Uint8Array>({ start(c) { c.enqueue(new Uint8Array([255])); c.close(); } });
++  const r = route();
++  expect((await r.handle(post(stream))).status).toBe(400);
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it("rejects invalid UTF-8 inside otherwise valid JSON instead of accepting a replacement character", async () => {
++  const prefix = encoder.encode('{"padding":"');
++  const suffix = encoder.encode('"}');
++  const bytes = new Uint8Array(prefix.length + 1 + suffix.length);
++  bytes.set(prefix); bytes[prefix.length] = 255; bytes.set(suffix, prefix.length + 1);
++  const stream = new ReadableStream<Uint8Array>({ start(c) { c.enqueue(bytes); c.close(); } });
++  const r = route();
++  expect((await r.handle(post(stream))).status).toBe(400);
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it.each([429, 503])("preserves budget refusal %s before JSON parsing and game work", async status => {
++  const r = route(true, { status, error: status === 429 ? "rate_limited" : "server_error", retryAfter: 5 });
++  const response = await r.handle(post("["));
++  expect(response.status).toBe(status);
++  expect(response.headers.get("Retry-After")).toBe("5");
++  expect(response.headers.get("Access-Control-Expose-Headers")).toBe("X-Existing, Retry-After");
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it.each([["OPTIONS", 204], ["GET", 405]] as const)("preserves %s handling without authentication", async (method, status) => {
++  const r = route(false);
++  const response = await r.handle(new Request(url, { method }));
++  expect(response.status).toBe(status);
++  expect(response.headers.get("Access-Control-Allow-Origin")).toBe("https://example.test");
++  expect(r.authenticate).not.toHaveBeenCalled();
++  expect(r.game).not.toHaveBeenCalled();
++});
++
++it("bounds total body-read time to ten seconds even when the producer never finishes", async () => {
++  vi.useFakeTimers();
++  const cancel = vi.fn(() => new Promise<void>(() => {}));
++  const stream = new ReadableStream<Uint8Array>({ pull: () => new Promise<void>(() => {}), cancel });
++  const r = route();
++  let response: Response | undefined;
++  void r.handle(post(stream)).then(value => { response = value; });
++  await vi.advanceTimersByTimeAsync(9999);
++  expect(response).toBeUndefined();
++  await vi.advanceTimersByTimeAsync(1);
++  expect(response?.status).toBe(400);
++  expect(cancel).toHaveBeenCalledOnce();
++  expect(r.authenticate).not.toHaveBeenCalled();
++  expect(r.game).not.toHaveBeenCalled();
++  expect(vi.getTimerCount()).toBe(0);
++});
++
++it("does not wait for an oversized producer's cancellation promise", async () => {
++  vi.useFakeTimers();
++  const cancel = vi.fn(() => new Promise<void>(() => {}));
++  const stream = new ReadableStream<Uint8Array>({ start(c) { c.enqueue(new Uint8Array(8193)); }, cancel });
++  const r = route();
++  let response: Response | undefined;
++  void r.handle(post(stream)).then(value => { response = value; });
++  await vi.advanceTimersByTimeAsync(0);
++  expect(response?.status).toBe(400);
++  expect(cancel).toHaveBeenCalledOnce();
++  expect(r.game).not.toHaveBeenCalled();
++  expect(vi.getTimerCount()).toBe(0);
++});
++
++it("does not restart the total deadline when a slow producer sends another chunk", async () => {
++  vi.useFakeTimers();
++  let chunkTimer: ReturnType<typeof setTimeout> | undefined;
++  const cancel = vi.fn(() => { if (chunkTimer !== undefined) clearTimeout(chunkTimer); });
++  const stream = new ReadableStream<Uint8Array>({
++    pull(controller) {
++      return new Promise<void>(resolve => {
++        chunkTimer = setTimeout(() => { controller.enqueue(new Uint8Array([120])); resolve(); }, 2000);
++      });
++    },
++    cancel,
++  });
++  const r = route();
++  let response: Response | undefined;
++  void r.handle(post(stream)).then(value => { response = value; });
++  await vi.advanceTimersByTimeAsync(10_000);
++  expect(response?.status).toBe(400);
++  expect(cancel).toHaveBeenCalledOnce();
++  expect(r.game).not.toHaveBeenCalled();
++  expect(vi.getTimerCount()).toBe(0);
++});
++
++it("removes the deadline after a normal complete request", async () => {
++  vi.useFakeTimers();
++  const r = route();
++  expect((await r.handle(post("{}"))).status).toBe(200);
++  expect(vi.getTimerCount()).toBe(0);
++});
++
++it("stops a pending read when the request is aborted", async () => {
++  vi.useFakeTimers();
++  const abort = new AbortController();
++  const cancel = vi.fn();
++  const stream = new ReadableStream<Uint8Array>({ pull: () => new Promise<void>(() => {}), cancel });
++  const r = route();
++  let response: Response | undefined;
++  void r.handle(post(stream, {}, abort.signal)).then(value => { response = value; });
++  abort.abort();
++  await vi.advanceTimersByTimeAsync(0);
++  expect(response?.status).toBe(400);
++  expect(cancel).toHaveBeenCalledOnce();
++  expect(r.game).not.toHaveBeenCalled();
++  expect(vi.getTimerCount()).toBe(0);
++});

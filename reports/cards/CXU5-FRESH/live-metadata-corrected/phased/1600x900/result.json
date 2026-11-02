@@ -1,0 +1,216 @@
+{
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "source": {
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "tree": "ca5f56d32c7adb6854466aa90924b7d871174a82",
+    "role": "Clean exact-main checkout; production bytes match an in-memory build of this head"
+  },
+  "deployment": {
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "identityMethod": "Fresh production asset hashes match the exact-main in-memory build",
+    "artifactProof": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/artifact-before.json"
+  },
+  "phase": "merged-core",
+  "fullNineStagePass": false,
+  "startedAt": "2026-11-02T18:08:33.598Z",
+  "steps": [
+    {
+      "name": "landing",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:08:33.638Z",
+      "detail": {
+        "scope": "Current class-picker entry; no future landing CTA claim."
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "guest",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:08:35.704Z",
+      "detail": {
+        "scope": "Fresh unauthenticated context; guest/preview disclosure observed before dismissing initial help.",
+        "disclosure": "Taskbar Hero\n\nSTEP 1 OF 1 · NEW GAME\n\nChoose Your Class\n\nPick your cat's class! You can switch anytime outside boss fights.\n\nWarrior\nMELEE\n\nCleave: every 3rd swing also hits the next monster for 50%\n\nHP\n1x\nATK\n1x\nDEF\n1x\nAttack Speed:\n1.00s\nGuardian\nMELEE\n\nBonk: each hit delays target attack by 500 ms\n\nHP\n1.3x\nATK\n1.35x\nDEF\n1.3x\nAttack Speed:\n1.40s\nRogue\nMELEE\n\nTwin Strike: strikes 2 times per attack\n\nHP\n0.85x\nATK\n0.3x\nDEF\n0.85x\nAttack Speed:\n0.80s\nSTART ADVENTURE AS WARRIOR\n×\nHow to play\n1\nMochi the cat naps and plays on the strip, earning Fish and Yarn even while you're away (up to 8 h).\n2\nBeat the boss to earn one Cat Key per day (5 fights a day).\n3\nSpend Fish on gear upgrades in Inventory, and equip better drops.\n4\nForge a Relic with 30 Yarn and 1 Cat Key, and mint it to your wallet on Avalanche Fuji (free testnet, costs no real money).\n5\nTrade your minted Relics with other players in Market.\n\nDemo mode works without a wallet; sign in to save progress and mint Relics on the Avalanche Fuji testnet (free testnet, costs no real money). Wallet sign-in needs Chrome, Brave or Edge.\n\nSTART PLAYING"
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "class",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:08:35.733Z",
+      "detail": {
+        "xpBefore": 0
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "idle-loop",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:08:36.440Z",
+      "detail": {
+        "xpBefore": 0,
+        "xpAfter": 18,
+        "scope": "Real guest idle reward; no clock/state injection."
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "boss",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:09:04.521Z",
+      "detail": {
+        "scope": "Locked boss with visible reason; no victory claimed."
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "forge",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:09:04.707Z",
+      "detail": {
+        "scope": "Current recipe and shortage action; no funded crafting or mint.",
+        "actionBounds": {
+          "x": 104,
+          "y": 799.625,
+          "width": 1484,
+          "height": 44
+        }
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "bag",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:09:04.952Z",
+      "detail": {
+        "scope": "Earned guest loot list and selected item detail."
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    },
+    {
+      "name": "market",
+      "status": "PASS",
+      "startedAt": "2026-11-02T18:09:05.208Z",
+      "detail": {
+        "scope": "Current guest wallet requirement; no trading or wallet connection."
+      },
+      "layout": {
+        "width": 1600,
+        "docWidth": 1600,
+        "height": 900,
+        "docHeight": 900
+      }
+    }
+  ],
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://taskbarhero-eight.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-CBNnW4TH.css",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/combat-1ewggOiX.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-Bbg-MllH.js",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/StageScene-Bn_Yh8LM.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/assets-x8M5yhBh.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/phaser-CS_hOpYn.js",
+      "status": 200
+    }
+  ],
+  "transactionsPerformed": 0,
+  "guestOnly": true,
+  "identity": {
+    "htmlSha256": "1da1a4a7d0370a8a0fc6a8cca5dc55abdcca35c56d63d13784d3de02b6b0678e",
+    "entryScripts": [
+      "/assets/index-Bbg-MllH.js"
+    ],
+    "etag": "W/\"0eaf2ff8448fb579f11983affe8373b9\""
+  },
+  "status": "PASS",
+  "endedAt": "2026-11-02T18:09:05.335Z"
+}

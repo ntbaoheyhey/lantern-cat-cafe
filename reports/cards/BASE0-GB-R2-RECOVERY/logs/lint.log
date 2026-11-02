@@ -1,0 +1,20 @@
+{"name":"lint","command":"pnpm lint","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","viewport":"1280x720","start":"2026-11-01T15:50:08.409Z","log":"/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/logs/lint.log","workers":1}
+
+> taskbar-hero@0.0.0 lint /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+EXIT_CODE=0

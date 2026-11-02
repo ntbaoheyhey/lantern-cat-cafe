@@ -1,0 +1,13 @@
+diff --git a/supabase/tests/src/fixture-clock.ts b/supabase/tests/src/fixture-clock.ts
+index eb58e20..233d44d 100644
+--- a/supabase/tests/src/fixture-clock.ts
++++ b/supabase/tests/src/fixture-clock.ts
+@@ -3,7 +3,7 @@ import type { PGlite } from "@electric-sql/pglite";
+ /** The next UTC day at 10:00, safely after SQL defaults and away from game midnight. */
+ export function nextFixtureDayUtc(databaseMillis: number): number {
+   const now = new Date(databaseMillis);
+-  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 10);
++  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 9);
+ }
+ 
+ /** Anchor injected test time to the database without changing its defaults or guards. */

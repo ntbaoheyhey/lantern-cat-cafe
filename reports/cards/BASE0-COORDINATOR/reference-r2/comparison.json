@@ -1,0 +1,3396 @@
+{
+  "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "builtApp": "apps/web/dist/v2-budget",
+  "records": [
+    {
+      "screen": "home",
+      "referenceScreen": "stage",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Mochi",
+          "Core Stats",
+          "Next Goal",
+          "Recent loot",
+          "Latest Drops"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Mochi",
+          "Next goal",
+          "Recent loot"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          },
+          {
+            "selector": "bar-t",
+            "rect": {
+              "x": 948,
+              "y": 328.375,
+              "width": 298,
+              "height": 10,
+              "top": 328.375,
+              "right": 1246,
+              "bottom": 338.375,
+              "left": 948
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "appPngBytes": 93282,
+      "referencePngBytes": 61020
+    },
+    {
+      "screen": "bag",
+      "referenceScreen": "bag",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Bag",
+          "Item Details"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Bag",
+          "Moonlit Fang",
+          "Compare"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "appPngBytes": 67892,
+      "referencePngBytes": 56594
+    },
+    {
+      "screen": "map",
+      "referenceScreen": "map",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Cucumber Scare",
+          "Kitchen"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "The Vacuum",
+          "Rewards",
+          "Past runs"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-craft",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge",
+          "Common Weapon (Sword)"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-salvage",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-relic",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge",
+          "Daily Relic Forge"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "market",
+      "referenceScreen": "market",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Market"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Relic market",
+          "Moonlit Fang",
+          "Your listings"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "hero",
+      "referenceScreen": "char",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Hero"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Mochi · Hunter",
+          "Power",
+          "Progress"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          },
+          {
+            "selector": "bar-t",
+            "rect": {
+              "x": 958,
+              "y": 221.578125,
+              "width": 288,
+              "height": 10,
+              "top": 221.578125,
+              "right": 1246,
+              "bottom": 231.578125,
+              "left": 958
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "help",
+      "referenceScreen": "help",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "app": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Help",
+          "Getting started",
+          "Classes",
+          "Chapters and rounds",
+          "Cat Keys and bosses",
+          "Forge",
+          "Drop rates"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1188,
+              "height": 55,
+              "top": 56,
+              "right": 1280,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 990.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1257,
+              "bottom": 105,
+              "left": 990.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "How the forge works"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1188,
+              "height": 56,
+              "top": 0,
+              "right": 1280,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "home",
+      "referenceScreen": "stage",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Mochi",
+          "Core Stats",
+          "Next Goal",
+          "Recent loot",
+          "Latest Drops"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Mochi",
+          "Next goal",
+          "Recent loot"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          },
+          {
+            "selector": "bar-t",
+            "rect": {
+              "x": 1268,
+              "y": 328.375,
+              "width": 298,
+              "height": 10,
+              "top": 328.375,
+              "right": 1566,
+              "bottom": 338.375,
+              "left": 1268
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "appPngBytes": 103402,
+      "referencePngBytes": 68185
+    },
+    {
+      "screen": "bag",
+      "referenceScreen": "bag",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Bag",
+          "Item Details"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Bag",
+          "Moonlit Fang",
+          "Compare"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "appPngBytes": 74627,
+      "referencePngBytes": 62923
+    },
+    {
+      "screen": "map",
+      "referenceScreen": "map",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Cucumber Scare",
+          "Kitchen"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "The Vacuum",
+          "Rewards",
+          "Past runs"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-craft",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge",
+          "Common Weapon (Sword)"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-salvage",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "forge-relic",
+      "referenceScreen": "forge",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Forge",
+          "Daily Relic Forge"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "1 · Pick gear",
+          "2 · Materials",
+          "Chances"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "market",
+      "referenceScreen": "market",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Market"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Relic market",
+          "Moonlit Fang",
+          "Your listings"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "hero",
+      "referenceScreen": "char",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Hero"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Mochi · Hunter",
+          "Power",
+          "Progress"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          },
+          {
+            "selector": "bar-t",
+            "rect": {
+              "x": 1278,
+              "y": 221.578125,
+              "width": 288,
+              "height": 10,
+              "top": 221.578125,
+              "right": 1566,
+              "bottom": 231.578125,
+              "left": 1278
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    },
+    {
+      "screen": "help",
+      "referenceScreen": "help",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "app": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "Taskbar Hero",
+          "Help",
+          "Getting started",
+          "Classes",
+          "Chapters and rounds",
+          "Cat Keys and bosses",
+          "Forge",
+          "Drop rates"
+        ],
+        "boxes": [
+          {
+            "selector": "shell-hud v2-topbar",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "hud-xp-track",
+            "rect": {
+              "x": 461.265625,
+              "y": 22.484375,
+              "width": 160,
+              "height": 10,
+              "top": 22.484375,
+              "right": 621.265625,
+              "bottom": 32.484375,
+              "left": 461.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(58, 44, 74)"
+          },
+          {
+            "selector": "hud-xp-fill hud-xp-fill--reduced-motion",
+            "rect": {
+              "x": 463.265625,
+              "y": 24.484375,
+              "width": 0,
+              "height": 6,
+              "top": 24.484375,
+              "right": 463.265625,
+              "bottom": 30.484375,
+              "left": 463.265625
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(107, 224, 138)"
+          },
+          {
+            "selector": "shell-context",
+            "rect": {
+              "x": 92,
+              "y": 56,
+              "width": 1508,
+              "height": 55,
+              "top": 56,
+              "right": 1600,
+              "bottom": 111,
+              "left": 92
+            },
+            "font": "16px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "v2-hint-btn",
+            "rect": {
+              "x": 1310.046875,
+              "y": 61,
+              "width": 266.953125,
+              "height": 44,
+              "top": 61,
+              "right": 1577,
+              "bottom": 105,
+              "left": 1310.046875
+            },
+            "font": "12px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#1a1220",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      },
+      "reference": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "nav": [
+          "Home",
+          "Bag",
+          "Map",
+          "Forge",
+          "Market",
+          "Hero",
+          "Help"
+        ],
+        "headings": [
+          "How the forge works"
+        ],
+        "boxes": [
+          {
+            "selector": "hud",
+            "rect": {
+              "x": 92,
+              "y": 0,
+              "width": 1508,
+              "height": 56,
+              "top": 0,
+              "right": 1600,
+              "bottom": 56,
+              "left": 92
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(42, 31, 54)"
+          },
+          {
+            "selector": "bar-t grow",
+            "rect": {
+              "x": 533.296875,
+              "y": 21.984375,
+              "width": 158.546875,
+              "height": 10,
+              "top": 21.984375,
+              "right": 691.84375,
+              "bottom": 31.984375,
+              "left": 533.296875
+            },
+            "font": "14px",
+            "color": "rgb(255, 243, 224)",
+            "background": "rgb(18, 11, 25)"
+          }
+        ],
+        "tokens": {
+          "--bg": "#120b19",
+          "--surface": "#2a1f36",
+          "--surface-2": "#3a2c4a",
+          "--text": "#fff3e0",
+          "--muted": "#c3aed0",
+          "--good": "#6be08a",
+          "--accent": "#ffb86b"
+        },
+        "animations": []
+      }
+    }
+  ]
+}

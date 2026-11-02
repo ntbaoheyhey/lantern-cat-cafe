@@ -1,0 +1,25 @@
+{
+  "owner": "coordinator",
+  "pid": 42683,
+  "status": "FAILED hero-help-units failed; preserve first failure",
+  "head": "3a34e8c675a2e44efd60db31e859e6ff14ef8b35",
+  "worktree": "/Users/bao/.codex/worktrees/mega-cxu4-preflight-280ff4b/taskbar-hero",
+  "ports": [
+    4440,
+    4441,
+    4442,
+    4443,
+    4444
+  ],
+  "updated_at": "2026-11-01T23:50:09.476541+07:00",
+  "checks": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "hero-help-units",
+      "exit": 1
+    }
+  ]
+}

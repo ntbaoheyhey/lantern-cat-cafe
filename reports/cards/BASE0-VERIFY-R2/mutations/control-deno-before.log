@@ -1,0 +1,49 @@
+COMMAND ["node","--test","--test-reporter=tap","scripts/gen-deno-json.test.mjs"]
+CWD /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+TAP version 13
+# Subtest: explicit root and nested index imports resolve to their exact files
+ok 1 - explicit root and nested index imports resolve to their exact files
+  ---
+  duration_ms: 8.324167
+  type: 'test'
+  ...
+# Subtest: directory aliases coexist with explicit indexes and ordinary modules
+ok 2 - directory aliases coexist with explicit indexes and ordinary modules
+  ---
+  duration_ms: 1.699542
+  type: 'test'
+  ...
+# Subtest: test modules, fixture folders and non-TypeScript files stay out of deployment maps
+ok 3 - test modules, fixture folders and non-TypeScript files stay out of deployment maps
+  ---
+  duration_ms: 1.878084
+  type: 'test'
+  ...
+# Subtest: output order is stable regardless of file creation order
+ok 4 - output order is stable regardless of file creation order
+  ---
+  duration_ms: 3.164
+  type: 'test'
+  ...
+# Subtest: generation preserves auth mappings and ignores shared or non-function directories
+ok 5 - generation preserves auth mappings and ignores shared or non-function directories
+  ---
+  duration_ms: 3.940166
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 72.385333
+
+TEST_EXIT=0
+CONTRACT_EXIT=null
+COMBINED_EXIT=0
+CONTRACT_DETAIL=

@@ -1,0 +1,346 @@
+{
+  "tried": 22,
+  "killed": 22,
+  "unique_green_controls": 20,
+  "cases": [
+    {
+      "name": "deno-root-index",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-root-index-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-root-index.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-nested-index",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-nested-index-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-nested-index.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-directory-alias",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-directory-alias-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-directory-alias.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-ordinary-module",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-ordinary-module-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-ordinary-module.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-test-exclusion",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-test-exclusion-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-test-exclusion.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-auth-distinction",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-auth-distinction-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-auth-distinction.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "deno-stable-order",
+      "file": "scripts/gen-deno-json.mjs",
+      "command": "node --test scripts/gen-deno-json.test.mjs",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-stable-order-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-stable-order.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "scene-preboot",
+      "file": "apps/web/src/game/stage/StageScene.ts",
+      "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/scene-preboot-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/scene-preboot.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "lifecycle-old-game-guard",
+      "file": "apps/web/src/game/stage/StageCanvas.tsx",
+      "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageCanvas.test.tsx",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/lifecycle-old-game-guard-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/lifecycle-old-game-guard.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "sql-next-day",
+      "file": "supabase/tests/src/fixture-clock.ts",
+      "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-next-day-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-next-day.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "sql-claim-rounding",
+      "file": "supabase/tests/v2/functions-forge.test.ts",
+      "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run v2/functions-forge.test.ts",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-claim-rounding-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-claim-rounding.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "clock-moving-origin",
+      "file": "apps/web/e2e/support/server-fixture.ts",
+      "command": "pnpm test:e2e e2e/server/fixture-clock.spec.ts --workers=1",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/clock-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/clock-moving-origin.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "hud-shared-style",
+      "file": "apps/web/src/shell/Hud.tsx",
+      "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-shared-style.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "hud-xp-width",
+      "file": "apps/web/src/shell/shell.css",
+      "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-xp-width.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "hud-guidance-hidden",
+      "file": "apps/web/src/shell/shell.css",
+      "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-guidance-hidden.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "f3-png",
+      "file": "apps/web/e2e/ui/f3-art.spec.ts",
+      "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 --grep 'F3 chapter 1 roster'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-png-control.log",
+        "contract_exit": 0
+      },
+      "mutant": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-png.log",
+        "files": [
+          "roster-ch1.png"
+        ],
+        "contract_exit": 1
+      },
+      "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate.",
+      "killed": true
+    },
+    {
+      "name": "error-png",
+      "file": "apps/web/e2e/v2/errors-notice.spec.ts",
+      "command": "pnpm test:e2e e2e/v2/errors-notice.spec.ts --workers=1 --grep 'T1-T5:'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/error-png-control.log",
+        "contract_exit": 0
+      },
+      "mutant": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/error-png.log",
+        "files": [
+          "429-1280x720-dark.png",
+          "429-390x844-light.png"
+        ],
+        "contract_exit": 1
+      },
+      "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate.",
+      "killed": true
+    },
+    {
+      "name": "f3-metrics",
+      "file": "apps/web/e2e/ui/f3-art.spec.ts",
+      "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 --grep 'F3 canvas bake'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-metrics-control.log",
+        "contract_exit": 0
+      },
+      "mutant": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-metrics.log",
+        "files": [
+          "bake-metrics.json"
+        ],
+        "contract_exit": 1
+      },
+      "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate.",
+      "killed": true
+    },
+    {
+      "name": "g1-metrics",
+      "file": "apps/web/e2e/ui/g1-perf.spec.ts",
+      "command": "pnpm test:e2e e2e/ui/g1-perf.spec.ts --workers=1 --grep 'G1 demo'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g1-metrics-control.log",
+        "contract_exit": 0
+      },
+      "mutant": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g1-metrics.log",
+        "files": [
+          "metrics.json"
+        ],
+        "contract_exit": 1
+      },
+      "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate.",
+      "killed": true
+    },
+    {
+      "name": "g3-metrics",
+      "file": "apps/web/e2e/ui/g3-combat.spec.ts",
+      "command": "pnpm test:e2e e2e/ui/g3-combat.spec.ts --workers=1 --grep 'G3 stage frame'",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g3-metrics-control.log",
+        "contract_exit": 0
+      },
+      "mutant": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g3-metrics.log",
+        "files": [
+          "frame-metrics.json"
+        ],
+        "contract_exit": 1
+      },
+      "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate.",
+      "killed": true
+    },
+    {
+      "name": "effects-inert-help",
+      "file": "apps/web/src/shell/Rail.tsx",
+      "command": "node tools/.grade-b-effects.mjs /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-inert-help --viewport=1280x720",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-control-1280.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-inert-help.log"
+      },
+      "killed": true
+    },
+    {
+      "name": "viewport-smoke-fixed-width",
+      "file": "apps/web/e2e/smoke.spec.ts",
+      "command": "pnpm test:e2e e2e/smoke.spec.ts --workers=1",
+      "control": {
+        "exit": 0,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/viewport-smoke-control.log"
+      },
+      "mutant": {
+        "exit": 1,
+        "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/viewport-smoke-fixed-width.log"
+      },
+      "killed": true
+    }
+  ]
+}

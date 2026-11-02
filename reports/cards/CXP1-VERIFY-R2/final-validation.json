@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-11-02T10:11:52+07:00",
+  "source_head": "2b7ceeb62a187a1064f2f307f1508326dff8ba0a",
+  "integration_head": "7393dc3b47ec1bac4786e382659b0710072b4ace",
+  "source_published": true,
+  "pr": 240,
+  "root_tests": "PASS; web1326, Supabase548, rules383; inherited2expected failures/11skips disclosed",
+  "full_browser": {
+    "1280x720": 280,
+    "1600x900": 280
+  },
+  "pets_repeat10": {
+    "passed": 80,
+    "internal_cases": 8,
+    "sizes": [
+      "1280x720",
+      "1600x900"
+    ],
+    "invocations": 1
+  },
+  "mutant_variants_detected": 4,
+  "mutant_assertion_failures": [
+    1,
+    1,
+    1,
+    2
+  ],
+  "green_controls": [
+    18,
+    18
+  ],
+  "source_own_checks": [
+    "18pets/isolation tests",
+    "web typecheck"
+  ],
+  "core_g3_checks_passed": true,
+  "classic_gzip_growth_pct": 0.4075499226046997,
+  "v2_gzip_growth_pct": 0.35514495607145147,
+  "owned_ports_free": [
+    4340,
+    4341,
+    4342,
+    4343
+  ],
+  "owned_sessions_terminal": [
+    84411,
+    39436,
+    26073,
+    64260
+  ],
+  "all_three_owned_checkouts_clean": true,
+  "no_new_png": true,
+  "secret_pattern_hits": 0,
+  "grade": null,
+  "merge": null,
+  "remaining": [
+    "actual-main integration after BASE0/FXRB",
+    "full UI/reference/effects/a11y/G5 on final head",
+    "safe standard PR verifier on final integrated source",
+    "independent reviews",
+    "serial merge and postmerge main/live proof"
+  ]
+}

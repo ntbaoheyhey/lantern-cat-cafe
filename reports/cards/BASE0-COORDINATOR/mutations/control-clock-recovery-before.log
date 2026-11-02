@@ -1,0 +1,18 @@
+COMMAND ["pnpm","--filter","@taskbar-hero/supabase-tests","exec","vitest","run","src/fixture-clock.test.ts","src/forge.test.ts","v2/functions-forge.test.ts"]
+CWD /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 5db4949096e93eedeb98dff94ef1ec7019485f96
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-finish-mutants/taskbar-hero/supabase/tests
+
+
+ Test Files  3 passed (3)
+      Tests  44 passed (44)
+   Start at  18:26:18
+   Duration  4.16s (tests 71%, import 18%, transform 11%)
+
+
+TEST_EXIT=0
+CONTRACT_EXIT=null
+COMBINED_EXIT=0
+CONTRACT_DETAIL=

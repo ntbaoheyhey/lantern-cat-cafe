@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED",
+  "reason": "Complete deployable current-live rollback source unavailable: Supabase rejected unsafe source path; partial output is not a valid rollback artifact. No deployment attempted.",
+  "candidate": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+  "comparisons": [
+    {
+      "path": "_shared/v2/server.ts",
+      "livePartialSha256": "b7219f9f5261a52468f4aff48b0a45ac1fca741a060c2454fe9c61b402ff11c6",
+      "candidateSha256": "b7219f9f5261a52468f4aff48b0a45ac1fca741a060c2454fe9c61b402ff11c6",
+      "equal": true
+    },
+    {
+      "path": "v2-state/index.ts",
+      "livePartialSha256": "6ac64c00c24777cc8370607ade3688e3792121d167a6035a00e5a78fb88511f1",
+      "candidateSha256": "6ac64c00c24777cc8370607ade3688e3792121d167a6035a00e5a78fb88511f1",
+      "equal": true
+    }
+  ],
+  "missingManualRollbackPaths": [
+    "supabase-manual/v2-rollback.sql"
+  ]
+}

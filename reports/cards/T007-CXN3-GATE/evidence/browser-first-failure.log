@@ -1,0 +1,31 @@
+{"dev":"vite","test":"vitest run","lint":"tsc --noEmit","typecheck":"tsc --noEmit","build":"tsc --noEmit && vite build","test:e2e":"playwright test"}
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Taskbar Hero', level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Taskbar Hero', level: 1 })
+
+
+       at support/test.ts:25
+
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+      24 |       if (!checked && devParam !== 'arena' && devParam !== 'art-pilot') {
+    > 25 |         await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+         |                                                                                     ^
+      26 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+      27 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+      28 |         checked = true;
+        at _Page.page.goto (/private/tmp/tbh-t007-cxn3/apps/web/e2e/support/test.ts:25:85)
+        at openPanel (/private/tmp/tbh-t007-cxn3/apps/web/e2e/a11y.spec.ts:23:3)
+        at /private/tmp/tbh-t007-cxn3/apps/web/e2e/a11y.spec.ts:95:7
+
+    Error Context: test-results/4680-4681/a11y-Accessibility-at-1280-26737-ave-at-least-4-5-1-contrast-classic/error-context.md
+
+  2) [classic] › e2e/a11y.spec.ts:121:5 › Accessibility at 1280px › reduced motion leaves no running CSS animations on the Forge tab 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Taskbar Hero', level: 1 })
+    Expected: visible

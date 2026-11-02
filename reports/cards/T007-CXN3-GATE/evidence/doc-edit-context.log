@@ -1,0 +1,27 @@
+3. Wallet: switched to Avalanche Fuji (chain 43113) and funded with test AVAX. Gas for a mint or a listing is a fraction of one test AVAX; keep at least 1 for the day. Faucet: https://core.app/tools/testnet-faucet/?subnet=c&token=c (limited per day; fund early).
+4. Sign in on the live site once, open the Forge and Market tabs, and confirm the account loads. Use a fresh account for the demo so the daily forge is unspent.
+5. Have the demo-mode fallback ready: `pnpm --filter @taskbar-hero/web dev` runs the whole game without Supabase or a wallet (no Relic mint).
+6. Tabs open before going on stage: the live site, the Fuji explorer page of RelicNFT (link in `README.md`).
+7. Do not merge anything to `main` during the demo window: every merge deploys the site (and the functions, when their code changes).
+
+## Redeploy the Edge Functions
+
+Under section 7, confirm the local score/merge gates and additive/reversible migration prerequisites
+first, run `node scripts/check-deno-imports.mjs`, then use the exact
+[optional deployment command](cutover-v2.md#3-deploy-the-verified-functions-optional-section-7).
+No existing CLI credentials means keep the deployment optional and verification local. The current
+missing `index` import-map aliases and missing manual rollback files are explicit no-go conditions
+in that checklist; generation without drift does not prove import resolution.
+The existing automatic workflow can deploy changed bundles on `main` when its repo secret is
+configured, but do not dispatch Actions for this release. Afterwards run the live checks.
+
+Function secrets (set in the Supabase dashboard, **Edge Functions > Secrets**; never in git): `AUTH_JWT_SECRET`, `GAME_SEED_SECRET`, `SIWE_DOMAIN`, `SIWE_ALLOWED_ORIGIN`, `VOUCHER_SIGNER_PRIVATE_KEY`, `FUJI_RPC_URL` (optional). New values apply to the next request without a redeploy. Changing `AUTH_JWT_SECRET` signs everyone out.
+STATUS: PARTIAL
+
+# CXN3 — cut-over truth, card P/B
+
+1 Nov 2026. Detached continuation from `458eebd`, based on `origin/main` `1fb25ed`.
+Reuse [PR #244](https://github.com/ntbaoheyhey/taskbar-hero/pull/244); no push or PR edit in this card.
+The local branch checked out elsewhere remains untouched. No deployment, live SQL, sign-in,
+transaction, workflow, auth/function implementation change or additional agent was used.
+

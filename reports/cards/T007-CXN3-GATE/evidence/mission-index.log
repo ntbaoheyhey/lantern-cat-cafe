@@ -1,0 +1,45 @@
+19:====================================================================================================
+20:0. ORCHESTRATION (the user's words, 1 Nov 2026)
+21:====================================================================================================
+28:====================================================================================================
+29:1. START
+30:====================================================================================================
+38: - UI redesign, approved direction: reports/ui-redesign/index.html (flip through every screen at 1280x720 and 1600x900), reports/ui-redesign/BRIEF.md, reports/ui-redesign/PLAN.md, reports/ui-redesign/README.md. Match LAYOUT, TOKENS, BEHAVIOUR; real repo art replacing a mockup placeholder is not a difference.
+44:====================================================================================================
+45:2. VERIFY - PER ITEM, IN A FRESH WORKTREE (run this on every item after you build it, and on any reused earlier code)
+46:====================================================================================================
+57:      cd apps/web && pnpm test:e2e   (both classic and v2 projects; affected specs at 1280x720 AND 1600x900)
+61:    UI items also: SCREENSHOTS=1 run, plus from apps/web: node tools/ui-audit.mjs ../../reports/scorecard/<id>/audit bossReadyStrong (and --signed-in) and node tools/effects-test.mjs ../../reports/scorecard/<id>/effects. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900.
+68: j. UI MATCH (UI items): open reports/ui-redesign/index.html and the built app at the SAME screen and size side by side (1280x720 and 1600x900). Check rail/nav order and items, HUD content and position, panel grid and gutters, type scale, token use (colours, spacing, radii from apps/web/src/theme.css, no hard-coded hex where a token exists), focus rings, hover/active states, empty states, motion with prefers-reduced-motion: reduce (no movement). List every difference in reports/scorecard/<id>/ui-diff.md. Pets/rune items: same check against docs/proposals/rune-skill-system/demo/index.html for mechanics and flow.
+71:====================================================================================================
+72:3. SCORING RUBRIC - DELIBERATELY HARD TO PASS
+73:====================================================================================================
+94: - Total >= 92 / 100, AND
+98: - TWO independent graders (different subagents, neither the builder) both score >= 92 separately. If they differ by more than 5 points, a third grader scores and the LOWEST of the three counts.
+111:====================================================================================================
+112:4. REDO LOOP - NO ROUND LIMIT
+113:====================================================================================================
+122:====================================================================================================
+123:5. MERGE GATE - SERIAL, ONE PR AT A TIME
+124:====================================================================================================
+129: 4. Then check the live site after the auto-deploy (read-only, wait for the new deploy): load https://taskbarhero-eight.vercel.app at 1280x720 and 1600x900, no console errors, landing -> guest start -> home works, any new flag is OFF. node scripts/check-live.mjs (read-only, no secrets; --v2 if CXN3 added it). Save output under reports/scorecard/<id>/post-merge/.
+134:====================================================================================================
+135:6. SCORECARD AND LEDGER
+136:====================================================================================================
+143:====================================================================================================
+144:7. NOTHING WAITS FOR THE USER - INTERIM SOLUTIONS
+145:====================================================================================================
+163:====================================================================================================
+164:8. ALWAYS-ON RULES
+165:====================================================================================================
+166: - Desktop only: 1280x720 and 1600x900. Do not delete existing responsive CSS.
+169: - Live systems: read-only, except the additive steps section 7 explicitly allows. Fuji testnet only, throwaway wallet only.
+174:====================================================================================================
+175:9. GIT DELIVERY, REPORT, DEFINITION OF DONE, MERGE GATE G1-G7 (every item; these add to sections 3-5, both must pass)
+176:====================================================================================================
+180: G1 Branch is up to date with the latest origin/main (git merge origin/main into the branch, no rebase of pushed history), and the FULL verify list (section 1 step 3) passes on that exact commit, including the complete e2e suite at 1280x720 AND 1600x900 and the classic build.
+201: [ ] UI items: ui-audit/effects gates met at 1280x720 AND 1600x900; DIFF TABLE has no OPEN row (or the item is PARTIAL)
+212:====================================================================================================
+213:10. ITEM SPECS (every item; former Antigravity items are yours)
+214:====================================================================================================
+215:How to read these blocks inside THIS prompt: where a block says "MERGE GATE", "section 6" or "the loop", use sections 2-5 here (audit, rubric 92/100 with two graders, redo with no round limit, serial merge + main + live re-test). Where it says "NEEDS-USER" or "user-hands", use section 7 here (interim solution, OPTIONAL-USER-STEPS.md). Where it says "AGN3 needs a wallet", use the throwaway Fuji testnet wallet of section 7 for the on-chain part (CXQ1 does the wallet-free play-through, then extend it with the throwaway wallet: mint/list/buy a Relic on Fuji only). Art items: original only, provenance in docs/art/provenance.md, never feed reference or third-party art to any generator. Safety guardrails 7a always win.

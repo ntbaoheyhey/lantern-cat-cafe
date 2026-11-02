@@ -1,0 +1,52 @@
+{
+  "base_head": "7393dc3b47ec1bac4786e382659b0710072b4ace",
+  "variants": [
+    {
+      "name": "remove-guard",
+      "exit": 1,
+      "assertion_failures": 1,
+      "log": "mutations/remove-guard.log",
+      "patch": "mutations/remove-guard.patch",
+      "sha256": "dab73a8d080eca48f5ce8a2b87e4a8b25689fce26b8d3d0f1e7d876c516663a5"
+    },
+    {
+      "name": "noop-persists",
+      "exit": 1,
+      "assertion_failures": 1,
+      "log": "mutations/noop-persists.log",
+      "patch": "mutations/noop-persists.patch",
+      "sha256": "d3b371bbcdc00237a6a992761a2dc1f549bb9cd5e5927f33949c72cfad2299c4"
+    },
+    {
+      "name": "noop-notifies",
+      "exit": 1,
+      "assertion_failures": 1,
+      "log": "mutations/noop-notifies.log",
+      "patch": "mutations/noop-notifies.patch",
+      "sha256": "905fa26c99e95b1029439a5e3df56b953b947a6fca1095869bebc5ac5f1c2cde"
+    },
+    {
+      "name": "drop-cap-transition",
+      "exit": 1,
+      "assertion_failures": 2,
+      "log": "mutations/drop-cap-transition.log",
+      "patch": "mutations/drop-cap-transition.patch",
+      "sha256": "28ef2de6e52b1ec72f8aaa567de7861dd9106f2991c8ee6293b38bf2c6053cff"
+    }
+  ],
+  "controls": [
+    {
+      "name": "control-before",
+      "passed": 18,
+      "exit": 0
+    },
+    {
+      "name": "control-after",
+      "passed": 18,
+      "exit": 0
+    }
+  ],
+  "scratch_clean": true,
+  "no_test_edits": true,
+  "no_independent_grade": true
+}

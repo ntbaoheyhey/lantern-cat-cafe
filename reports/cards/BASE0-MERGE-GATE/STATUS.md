@@ -1,0 +1,19 @@
+# BASE0 — score/technical gates passed; provider statuses refreshed
+
+Current 2026-11-02T10:53:42+07:00: exact candidate280ff4b/main1fb25ed unchanged. Two independent scores97.64285714285714/98 and all floors revalidated; grade bytes match immutable publications. One ordinary Preview request per configured project was admitted, and each ended CANCELED by the existing Ignored Build Step. Both GitHub contexts nowSUCCESS; no configuration override, retry loop, quota bypass, upgrade or production promotion. This proves recent admission and resolves stale red contexts; it does not prove a source build, a fixed quota-reset time or a live deployment. Records: provider-current-20261102.json and preview-recheck-result-20261102.json.
+
+Original userG1–G7 require exact-head technical checks and postmerge live verification. They do not specify an exact remaining-quota counter. The earlier blanket capacity hold is superseded by observed provider admission/status results; final premerge reconciliation and every postmerge check still apply. No mission merge has happened.
+
+## Historical observations
+
+# BASE0 — score gate passed; deployment hold
+
+Checked 2026-11-01T23:33:01+07:00. Candidate280ff4b and main1fb25ed remain unchanged, PR246 open/draft/unmerged. Independent A97.64285714285714 and B98 each satisfy all score floors with zero auto-fails. Difference0.35714285714286 is below5; no third grader required. Preserve both scores separately. Aggregation: score-aggregation-r2.json. A publication72c0b0b is verified; B150manifestfiles are published atbeb4a99 and byte-verified; see grade-b-publication.json. PR246 body links both immutable grades and the aggregation.
+
+Read-only GitHub recheck still returns failure for both Vercel contexts, with build-rate-limit targets. Original provider message is "Deployment rate limited — retry in24hours" at2026-11-01T12:53:20Z. Current recheck is provider-recheck-2330.json; exact reset remains unverified. This is not a source-build failure or proof of broken live.
+
+No worker remains active. Both B checkouts are clean and4450–4454free; no new PNG delivered. No source edit/merge/release/deployment attempt. Keep PR draft, do not bypass quota, change hosting settings or repeatedly deploy. Recheck capacity/currentrefs and complete grade publication before a permitted serial merge, then follow ../BASE0-POSTMERGE/PLAN.md. Full postmerge main/live gates remain mandatory and are not certified by these premerge scores.
+
+Fresh capacity investigation 2026-11-02T08:06:19+07:00: BASE0 still has the old two rate-limit failures; source/main unchanged. Newly published CXN3-FIX and CXU4 have success statuses whose description is explicitly "Canceled by Ignored Build Step". These are cancellation/admission records, not completed source builds or proof of remaining daily build capacity. The connector's normalized statuses omit descriptions/timestamps, so a read-only gh API query captured those fields in provider-*-20261102-0808.json. No manual redeploy/retry/settings change occurred.
+
+Authenticated Usage/detail UI exposes a122-completed/0-error count, but the requested24-hour filter produced an actual39.94-hour displayed range and data last updated16minutes ago. This sample is excluded as a rolling-day quota measurement. No remaining allowance or reset timestamp is exposed in the inspected view. See capacity-observation-20261102-0808.json. Hold remains; no quota restoration or deployment is certified. Temporary browser tab closed.

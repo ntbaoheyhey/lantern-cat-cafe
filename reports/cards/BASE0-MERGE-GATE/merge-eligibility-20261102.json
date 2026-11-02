@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-02T11:05:06+07:00",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "main": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "score_gate": "PASS",
+  "scores": {
+    "A": 97.64285714285714,
+    "B": 98
+  },
+  "floors_rechecked": true,
+  "third_grader_required": false,
+  "gates": {
+    "G1": "PASS: immutable exact-head complete coordinator/independent verification; main unchanged and ancestor",
+    "G2": "PASS: authorized BASE0 compatibility scope; no OPEN BASE0 row; unchanged redesign debt assigned to CXR1",
+    "G3": "PASS: fresh same-day links0candidate/1main; Nov2 bundle budget reused after proving identical bundled input trees280ff4b/a9b804; Deno/drift and other exact-head checks retained",
+    "G4": "N/A contracts/migrations; SQL full tests retained",
+    "G5": "PASS exact-head reuse: current live31assets/entrymanifest identical to verified main production baseline, including compiled public config; no environment values printed; candidate four flag/size guest checks unchanged",
+    "G6": "PASS: full exact-head review and no source changes after grading",
+    "G7": "PASS: raw244evidence and both independent grades published with receipts; living report corrected separately and published d768a6c"
+  },
+  "provider_contexts": "both SUCCESS after one ordinary ignored Preview perproject; not app-build or live proof",
+  "new_production_deployment_required_after_merge": true,
+  "merge_eligible": true,
+  "merge_action": "squash PR246 only, expected_head guard280ff4b, required author email and skip-CI suffix; immediately execute actualmain/full/repeats/deployment/live plan before any next merge",
+  "postmerge_plan": "../BASE0-POSTMERGE/PLAN.md",
+  "limitations": [
+    "Provider quota reset/remaining count not observed; recent admissions establish only current acceptance",
+    "Public artifact equality cannot distinguish identical-content commits without provider metadata",
+    "No candidate production deployment is yet claimed"
+  ],
+  "no_gate_waiver": true
+}

@@ -1,0 +1,44 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/layout/HelpTab.search.test.tsx (4 tests | 2 failed) 183ms
+   × searches answer content, selects visible answers and recovers from an empty result 106ms
+   × finds visible phrases across inline configuration values and punctuation 16ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  02:08:28
+   Duration  711ms (environment 48%, tests 30%, import 12%, transform 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > searches answer content, selects visible answers and recovers from an empty result
+AssertionError: expected 'No matching topics' to be 'Cat Keys and bosses' // Object.is equality
+
+Expected: "Cat Keys and bosses"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:26:65
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > finds visible phrases across inline configuration values and punctuation
+AssertionError: expected 'No matching topics' to be 'Forge' // Object.is equality
+
+Expected: "Forge"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:40:65
+     38|   const search = screen.getByLabelText('Search help');
+     39|   fireEvent.change(search, { target: { value: '30 Yarn' } });
+     40|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+       |                                                                 ^
+     41|   fireEvent.change(search, { target: { value: 'Warrior: sword' } });
+     42|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+EXIT 1

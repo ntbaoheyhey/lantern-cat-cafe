@@ -1,0 +1,35 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu5-fresh-mutants-qbeQ9q/apps/web
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx (4 tests | 1 failed) 2630ms
+   × shows only three latest runs for the selected chapter and separates lifetime wins 460ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  00:36:15
+   Duration  3.53s (tests 77%, environment 14%, import 5%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/boss/BossMapScreen.test.tsx > shows only three latest runs for the selected chapter and separates lifetime wins
+AssertionError: expected [ …(2) ] to have a length of 3 but got 2
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ src/layout/boss/BossMapScreen.test.tsx:55:49
+     53|   fireEvent.click(within(screen.getByRole('navigation', { name: 'Chapt…
+     54|   const past = screen.getByRole('region', { name: 'Past runs' });
+     55|   expect(within(past).getAllByRole('listitem')).toHaveLength(3);
+       |                                                 ^
+     56|   expect(within(past).getByText('Lifetime wins: 7')).toBeDefined();
+     57|   expect(within(past).queryByText(/9.9s|8.9s/)).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

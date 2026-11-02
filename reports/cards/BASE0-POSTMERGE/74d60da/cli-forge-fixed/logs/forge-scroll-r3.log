@@ -1,0 +1,67 @@
+after class Taskbar Hero
+
+STEP 1 OF 1 · NEW GAME
+
+Choose Your Class
+
+Pick your cat's class! You can switch anytime outside boss fights.
+
+Warrior
+MELEE
+
+Cleave: every 3rd swing also hits the next monster for 50%
+
+HP
+1x
+ATK
+1x
+DEF
+1x
+Attack Speed:
+1.00s
+Guardian
+MELEE
+
+Bonk: each hit delays target attack by 500 ms
+
+HP
+1.3x
+ATK
+1.35x
+DEF
+1.3x
+Attack Speed:
+1.40s
+Rogue
+MELEE
+
+Twin Strike: strikes 2 times per attack
+
+HP
+0.85x
+ATK
+0.3x
+DEF
+0.85x
+Attack Speed:
+0.80s
+
+Switch to Warrior? You can switch back any time outside boss fights.
+
+CONFIRM
+CANCEL
+START ADVENTURE AS WARRIOR
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByTestId('nav-forge')[22m
+
+    at /Users/bao/.codex/worktrees/mega-base0-postmerge-74d60da/taskbar-hero/[eval1]:10:38 {
+  log: [ "  - waiting for getByTestId('nav-forge')" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

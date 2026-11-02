@@ -1,0 +1,30 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/layout/character/HeroScreen.test.tsx (5 tests | 1 failed) 346ms
+   × equipping updates the paper doll and exact shared-rule power, with an additive breakdown 60ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  02:08:26
+   Duration  912ms (tests 41%, environment 38%, import 11%, transform 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/character/HeroScreen.test.tsx > equipping updates the paper doll and exact shared-rule power, with an additive breakdown
+AssertionError: expected 243 to be 231 // Object.is equality
+
+- Expected
++ Received
+
+- 231
++ 243
+
+ ❯ src/layout/character/HeroScreen.test.tsx:18:18
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

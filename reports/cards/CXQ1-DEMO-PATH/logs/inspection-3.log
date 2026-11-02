@@ -1,0 +1,5 @@
+110:    return state && !classId ? 'class' : 'home';
+119:    } else if (state && state.cat.classId && (screen === 'class' || screen === 'landing')) {
+466:          style={{ display: screen === 'landing' ? 'flex' : 'none' }}
+468:          {screen === 'landing' && (
+471:              onStartGuest={() => handleSelectScreen('class')}

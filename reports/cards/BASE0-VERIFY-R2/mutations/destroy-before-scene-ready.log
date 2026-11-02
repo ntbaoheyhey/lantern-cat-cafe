@@ -1,0 +1,42 @@
+COMMAND ["pnpm","exec","vitest","run","src/game/stage/StageCanvas.test.tsx"]
+CWD /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+ENV {"CI":"true","SCREENSHOTS":"0","VITE_SUPABASE_URL":"","VITE_SUPABASE_ANON_KEY":"","E2E_PORT_CLASSIC":"4400","E2E_PORT_V2":"4401","E2E_PORT_SERVER":"4402","E2E_PORT_API":"4403","E2E_VIEWPORT":"1280x720"}
+HEAD 280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web
+
+ ❯ src/game/stage/StageCanvas.test.tsx (6 tests | 1 failed) 281ms
+   × waits for scene-manager readiness before destruction when game.isBooted=true 61ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  19:43:54
+   Duration  849ms (environment 47%, tests 38%, import 9%, transform 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageCanvas.test.tsx > waits for scene-manager readiness before destruction when game.isBooted=true
+AssertionError: expected [Function] to not throw an error but 'Error: Scene manager is not ready' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Scene manager is not ready"
+
+ ❯ src/game/stage/StageCanvas.test.tsx:63:36
+     61|     if (!game.scene.isBooted) throw new Error('Scene manager is not re…
+     62|   });
+     63|   expect(() => view.unmount()).not.toThrow();
+       |                                    ^
+     64|   expect(game.destroy).toHaveBeenCalledExactlyOnceWith(true);
+     65|   expect(game.step).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+TEST_EXIT=1
+CONTRACT_EXIT=null
+COMBINED_EXIT=1
+CONTRACT_DETAIL=

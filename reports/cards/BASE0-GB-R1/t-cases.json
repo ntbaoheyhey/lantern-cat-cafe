@@ -1,0 +1,158 @@
+[
+  {
+    "id": "D1",
+    "requirement": "Exact root and nested index keys",
+    "evidence": "mutations/gen-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "D2",
+    "requirement": "Directory aliases coexist with ordinary module and explicit index",
+    "evidence": "mutations/gen-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "D3",
+    "requirement": "Exclude test, fixture, non-TypeScript files",
+    "evidence": "mutations/gen-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "D4",
+    "requirement": "Deterministic generation; preserve auth and eligible function scope",
+    "evidence": "mutations/gen-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "D5",
+    "requirement": "All Deno imports resolve and regeneration has no drift",
+    "evidence": "logs/deno.log",
+    "status": "PASS"
+  },
+  {
+    "id": "D6",
+    "requirement": "At least six Deno mutants killed with green controls",
+    "evidence": "mutations/results.jsonl",
+    "status": "PASS"
+  },
+  {
+    "id": "S1",
+    "requirement": "Preboot resize defers until CREATE then latest scale used",
+    "evidence": "mutations/stage-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "S2",
+    "requirement": "Original stage-redraw passes both motion modes at both mission defaults",
+    "evidence": "logs/stage-1280.log;logs/stage-1600.log",
+    "status": "PASS"
+  },
+  {
+    "id": "S3",
+    "requirement": "Exact original resize and burst dimensions preserved",
+    "evidence": "logs/inherited-1280x720.log;logs/inherited-1600x900.log",
+    "status": "PASS"
+  },
+  {
+    "id": "H1",
+    "requirement": "All existing HUD/topbar/narrow geometry cases preserved",
+    "evidence": "logs/inherited-1280x720.log;logs/inherited-1600x900.log",
+    "status": "PASS"
+  },
+  {
+    "id": "H2",
+    "requirement": "Real XP fill changes and complete keyboard-action guidance, normal/gated",
+    "evidence": "logs/repeat-1280.log;logs/repeat-1600.log",
+    "status": "PASS"
+  },
+  {
+    "id": "H3",
+    "requirement": "Fallback font and normal/offline/429/503 readability",
+    "evidence": "logs/repeat-1280.log;logs/repeat-1600.log",
+    "status": "PASS"
+  },
+  {
+    "id": "H4",
+    "requirement": "Desktop compatibility and accepted context decision recorded with matched reference",
+    "evidence": "ui-review.md;keyboard.json",
+    "status": "PASS"
+  },
+  {
+    "id": "A1",
+    "requirement": "Default F3/error screenshots do not overwrite reports; byte limits preserved",
+    "evidence": "artifact-control-recovered.json; logs/artifact-control-before-contract.json",
+    "status": "PASS"
+  },
+  {
+    "id": "A2",
+    "requirement": "F3/G1/G3 diagnostic output defaults isolated; assertions unchanged",
+    "evidence": "artifact-control-recovered.json; logs/artifact-control-before-contract.json",
+    "status": "PASS"
+  },
+  {
+    "id": "A3",
+    "requirement": "SCREENSHOTS and output overrides work when explicitly enabled",
+    "evidence": "logs/artifact-opt-in.log",
+    "status": "PASS"
+  },
+  {
+    "id": "C1",
+    "requirement": "UTC leap/year and before/after old expiry calendar cases",
+    "evidence": "mutations/clock-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "C2",
+    "requirement": "Seeded2020/2040 inventory insertion retains early/replay claim guards",
+    "evidence": "mutations/clock-control-before.log",
+    "status": "PASS"
+  },
+  {
+    "id": "C3",
+    "requirement": "All inherited SQL fixture lifecycle assertions pass",
+    "evidence": "logs/test.log",
+    "status": "PASS"
+  },
+  {
+    "id": "V1",
+    "requirement": "Complete unchanged root typecheck/lint/units/default+classic builds",
+    "evidence": "results.jsonl;build-results.jsonl",
+    "status": "PASS"
+  },
+  {
+    "id": "V2",
+    "requirement": "Complete original browser suite both projects and desktop defaults",
+    "evidence": "reused-evidence.json",
+    "status": "PASS"
+  },
+  {
+    "id": "V3",
+    "requirement": "All six changed specs repeated10 at both sizes with zero failures",
+    "evidence": "logs/repeat-1280.log;logs/repeat-1600.log",
+    "status": "PASS"
+  },
+  {
+    "id": "V4",
+    "requirement": "Guest/signed-in all-manifest UI audit and effects at both sizes",
+    "evidence": "follow-results.jsonl",
+    "status": "PASS"
+  },
+  {
+    "id": "V5",
+    "requirement": "Keyboard, contrast and matched desktop screenshots",
+    "evidence": "keyboard.json;logs/test.log;ui-review.md",
+    "status": "PASS"
+  },
+  {
+    "id": "V6",
+    "requirement": "Meaningful independent mutations including clockfix and browser behavior",
+    "evidence": "mutation-assertion-review.json;follow-results.jsonl;extra-results.jsonl",
+    "status": "PASS"
+  },
+  {
+    "id": "V7",
+    "requirement": "Same-day main links and bundle; production-safe G5; PR wrapper",
+    "evidence": "build-results.jsonl;reused-evidence.json",
+    "status": "PASS"
+  }
+]

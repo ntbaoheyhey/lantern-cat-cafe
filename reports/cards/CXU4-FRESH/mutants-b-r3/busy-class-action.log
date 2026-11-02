@@ -1,0 +1,35 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-5UPpOO/apps/web
+
+ ❯ src/layout/character/HeroScreen.test.tsx (5 tests | 1 failed) 273ms
+   × prevents duplicate in-flight requests and disables class action while the loop is busy 59ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  02:56:33
+   Duration  700ms (tests 43%, environment 38%, import 10%, transform 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/character/HeroScreen.test.tsx > prevents duplicate in-flight requests and disables class action while the loop is busy
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/layout/character/HeroScreen.test.tsx:48:159
+     46|   fireEvent.click(screen.getByText('Confirm class')); fireEvent.click(…
+     47|   resolve(true); await waitFor(() => expect(screen.queryByRole('dialog…
+     48|   rerender(<HeroScreen state={sampleStateV2()} onChooseClass={choose} …
+       |                                                                                                                                                               ^
+     49| });
+     50| it('leaves a typed tab host for pets without changing the character pa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

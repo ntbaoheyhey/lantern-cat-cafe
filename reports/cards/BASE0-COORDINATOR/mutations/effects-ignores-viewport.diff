@@ -1,0 +1,13 @@
+diff --git a/apps/web/tools/effects-test.mjs b/apps/web/tools/effects-test.mjs
+index 748f4ce..1f519a9 100644
+--- a/apps/web/tools/effects-test.mjs
++++ b/apps/web/tools/effects-test.mjs
+@@ -38,7 +38,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
+ const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+ browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
+ 
+-async function open(name, { fixture, reduced = false, size = viewport }) {
++async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
+   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
+   let ctx = await browser.newContext({ ...opts, recordVideo: { dir: `${out}/video-${name}`, size } });
+   let page;

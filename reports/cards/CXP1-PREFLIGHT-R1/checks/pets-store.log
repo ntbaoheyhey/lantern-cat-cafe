@@ -1,0 +1,16 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm --filter @taskbar-hero/web test src/pets/state.test.ts src/pets/isolation.test.ts", "cwd": "/Users/bao/.codex/worktrees/mega-cxp1-preflight-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "9d012cebf7300c60c3087cff5be632805ce75052", "name": "pets-store", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-01T22:56:01+07:00", "starting_git_status": "", "viewport": "1280x720"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-cxp1-preflight-280ff4b/taskbar-hero/apps/web
+> vitest run src/pets/state.test.ts src/pets/isolation.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-preflight-280ff4b/taskbar-hero/apps/web
+
+
+ Test Files  2 passed (2)
+      Tests  17 passed (17)
+   Start at  22:56:01
+   Duration  972ms (environment 66%, transform 15%, tests 10%, import 8%)
+
+
+EXIT_CODE=0

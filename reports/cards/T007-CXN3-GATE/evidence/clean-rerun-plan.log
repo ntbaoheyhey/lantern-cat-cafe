@@ -1,0 +1,26 @@
+  testDir: 'e2e',
+  outputDir: `test-results/${classicPort}-${v2Port}`,
+  webServer: [
+    ...(externalServer ? [] : [{
+      command: 'node ../../scripts/local-server.mjs',
+      url: `${apiURL}/health`, reuseExistingServer: false, timeout: 120_000,
+    }]),
+    { command: `node e2e/support/server-build.mjs${process.env.F2_SERVER_PREBUILT === '1' ? ' --preview-only' : ''}`, url: serverURL, reuseExistingServer: false, timeout: 120_000 },
+    {
+      command: `npx -y pnpm@10.28.0 exec vite build --outDir ${classicDist} && node e2e/support/serve.mjs ${classicDist} ${classicPort}`,
+      env: { ...demoEnv, VITE_GAME_V2: '0' },
+      url: classicURL,
+      reuseExistingServer: false,
+      timeout: 120_000,
+    },
+    {
+      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
+      env: { ...demoEnv, VITE_GAME_V2: '1' },
+      url: v2URL,
+      reuseExistingServer: false,
+      timeout: 120_000,
+    },
+  ],
+  projects: [
+    {
+      name: 'v2-server',

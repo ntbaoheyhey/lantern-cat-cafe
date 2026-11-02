@@ -1,0 +1,71 @@
+{
+  "root": "/private/tmp/tbh-cxu4-fresh-b",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/grade-b",
+  "head": "3ed063385aad8ba450c5bb6a4eef1773721147ce",
+  "commands": [
+    [
+      "install",
+      "npx -y pnpm@10.28.0 install --frozen-lockfile"
+    ],
+    [
+      "submodules",
+      "git submodule update --init --recursive"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "forge",
+      "cd contracts && forge test --offline"
+    ],
+    [
+      "abi-drift",
+      "cd contracts && node ../packages/chain/scripts/gen-abi.mjs && git diff --exit-code -- ../packages/chain"
+    ],
+    [
+      "repeat-changed",
+      "E2E_PORT_CLASSIC=4810 E2E_PORT_V2=4811 E2E_PORT_SERVER=4812 E2E_PORT_API=4813 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu4-hero-help.spec.ts e2e/server/cxu4-offline.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/ui/redesign-shell.spec.ts e2e/ui/u5-panels.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "classic-browser",
+      "E2E_PORT_CLASSIC=4810 E2E_PORT_V2=4811 E2E_PORT_SERVER=4812 E2E_PORT_API=4813 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "mutants",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/mutants-b.mjs"
+    ]
+  ]
+}

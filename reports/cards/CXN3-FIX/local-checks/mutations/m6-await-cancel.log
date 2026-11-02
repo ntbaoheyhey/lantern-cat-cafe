@@ -1,0 +1,41 @@
+eb3786f3a38d446fb2d08dbf195e44f8480220ab
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 1 failed) 22ms
+   × does not wait for an oversized producer's cancellation promise 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > does not wait for an oversized producer's cancellation promise
+AssertionError: expected undefined to be 400 // Object.is equality
+
+- Expected:
+400
+
++ Received:
+undefined
+
+ ❯ src/v2-body-limits.test.ts:162:28
+    160|   void r.handle(post(stream)).then(value => { response = value; });
+    161|   await vi.advanceTimersByTimeAsync(0);
+    162|   expect(response?.status).toBe(400);
+       |                            ^
+    163|   expect(cancel).toHaveBeenCalledOnce();
+    164|   expect(r.game).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 26 passed (27)
+   Start at  01:40:54
+   Duration  1.01s (import 66%, transform 20%, tests 13%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1

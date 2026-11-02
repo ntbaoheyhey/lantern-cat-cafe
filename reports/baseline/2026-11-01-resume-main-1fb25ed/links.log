@@ -1,0 +1,11 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "node scripts/check-links.mjs", "cwd": "/Users/bao/.codex/worktrees/mega-main-reference-r2/taskbar-hero", "empty_backend_env": true, "head": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "name": "links", "ports": {"E2E_PORT_API": "4603", "E2E_PORT_CLASSIC": "4600", "E2E_PORT_SERVER": "4602", "E2E_PORT_V2": "4601"}, "screenshots": false, "started": "2026-11-01T16:40:09+07:00", "starting_git_status": "", "viewport": "1280x720"}
+Checked 67 markdown files and 807 links/paths.
+
+Found 1 broken link(s) or path(s) on disk:
+
+  docs/proposals/rune-skill-system/README.md:4 [backticked repo path]
+    Target: `docs/proposals/tbh-index-research/`
+    Not found: docs/proposals/tbh-index-research
+
+
+EXIT_CODE=1

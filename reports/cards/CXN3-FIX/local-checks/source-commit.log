@@ -1,0 +1,5 @@
+[ai/codex-cxn3-fix eb3786f] fix: bound v2 request bytes and lifetime before authentication [skip ci]
+ 5 files changed, 286 insertions(+), 11 deletions(-)
+ create mode 100644 docs/decisions/cxn3-request-body-limits.md
+ create mode 100644 reports/cxn3-fix.md
+ create mode 100644 supabase/tests/src/v2-body-limits.test.ts

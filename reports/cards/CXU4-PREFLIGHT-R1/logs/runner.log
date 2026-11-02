@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXU4-PREFLIGHT-R1/run.py", line 21, in <module>
+    run('hero-help-units','pnpm --filter @taskbar-hero/web test src/layout/character src/layout/HelpTab src/ui src/theme.contrast.test.ts src/layout/StageLayout.test.tsx src/layout/notice',root)
+  File "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXU4-PREFLIGHT-R1/run.py", line 16, in run
+    if code:raise RuntimeError(name+' failed; preserve first failure')
+RuntimeError: hero-help-units failed; preserve first failure

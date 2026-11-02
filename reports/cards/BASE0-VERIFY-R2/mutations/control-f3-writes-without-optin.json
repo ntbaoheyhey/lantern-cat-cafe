@@ -1,0 +1,38 @@
+{
+  "name": "control-f3-writes-without-optin",
+  "kind": "control",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "cwd": "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero/apps/web",
+  "args": [
+    "pnpm",
+    "test:e2e",
+    "--workers=1",
+    "e2e/ui/f3-art.spec.ts",
+    "--project=stage-layout",
+    "--grep",
+    "F3 stage chapter 1 1280x720"
+  ],
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4400",
+    "E2E_PORT_V2": "4401",
+    "E2E_PORT_SERVER": "4402",
+    "E2E_PORT_API": "4403",
+    "E2E_VIEWPORT": "1280x720",
+    "SCREENSHOT_DIR": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-VERIFY-R2/mutations/f3-writes-without-optin-artifacts"
+  },
+  "start": "2026-11-01T12:39:30.906Z",
+  "portFreeCheckExit": 1,
+  "end": "2026-11-01T12:39:41.883Z",
+  "testExit": 0,
+  "contractExit": 0,
+  "combinedExit": 0,
+  "status": "passed",
+  "reason": "SCREENSHOTS=0 wrote no PNG files",
+  "expectedFailurePattern": null,
+  "signal": null,
+  "error": null
+}

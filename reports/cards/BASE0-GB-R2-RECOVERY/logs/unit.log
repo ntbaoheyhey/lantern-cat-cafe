@@ -1,0 +1,66 @@
+{"name":"unit","command":"pnpm test","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","viewport":"1280x720","start":"2026-11-01T15:50:14.589Z","log":"/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/logs/unit.log","workers":1}
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.983667ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.519459ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.733792ms)
+✔ output order is stable regardless of file creation order (2.946792ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.888625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67.14775
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  22:50:16
+packages/chain test:    Duration  646ms (import 41%, transform 30%, tests 27%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  22:50:16
+packages/auth test:    Duration  934ms (import 61%, tests 32%, transform 7%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  22:50:16
+supabase/tests test:    Duration  9.91s (tests 80%, import 15%, transform 5%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  22:50:16
+packages/game-rules test:    Duration  30.69s (tests 93%, transform 5%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  22:50:47
+packages/api-contract test:    Duration  218ms (transform 78%, import 18%, tests 3%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero/apps/web
+apps/web test:  Test Files  111 passed (111)
+apps/web test:       Tests  1308 passed (1308)
+apps/web test:    Start at  22:50:47
+apps/web test:    Duration  20.02s (environment 49%, tests 37%, import 9%, transform 4%)
+apps/web test: Environment  jsdom was created 111 times · 79.75s total, 49% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+EXIT_CODE=0

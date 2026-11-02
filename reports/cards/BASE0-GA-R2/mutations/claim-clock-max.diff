@@ -1,0 +1,13 @@
+diff --git a/supabase/tests/v2/functions-forge.test.ts b/supabase/tests/v2/functions-forge.test.ts
+index fd68818..d2ff9a6 100644
+--- a/supabase/tests/v2/functions-forge.test.ts
++++ b/supabase/tests/v2/functions-forge.test.ts
+@@ -43,7 +43,7 @@ async function raw(p: string) { return (await store.snapshot(p, dayDate(clock /
+ async function insert(p: string, items = [item()]) {
+   const before = await raw(p);
+   // SQL initializes last_claim_at with database time; honor its unchanged 10s guard.
+-  clock = Math.max(clock, Math.ceil(before.lastClaimMicros / 1000) + 10_000);
++  clock = clock;
+   const result = await fn(db).claim(p, { micros: before.lastClaimMicros, rev: before.progressRev, now: new Date(clock), items, bag: v2.V2_CONFIG.bag.limit });
+   return result!.items as v2.ItemViewV2[];
+ }

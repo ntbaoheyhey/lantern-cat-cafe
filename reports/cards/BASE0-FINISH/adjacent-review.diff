@@ -1,0 +1,216 @@
+diff --git a/apps/web/tools/effects-test.mjs b/apps/web/tools/effects-test.mjs
+index 8561fd6..748f4ce 100644
+--- a/apps/web/tools/effects-test.mjs
++++ b/apps/web/tools/effects-test.mjs
+@@ -1,18 +1,23 @@
+ // Wallet-free EFFECTS test: records video, grabs timed frame sequences, asserts animation behaviour.
+ // Screenshots cannot show motion, so this samples the running app over time. Demo mode on the Vite DEV
+ // server only (dev builds expose canvas data-stage-release/impact); nothing touches live services.
+-// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames]
++// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames] [--viewport=1600x900]
+ // One summary PNG by default; --frames opts into extra PNG sequences. Exit 1 on hard failures.
+ import { createServer } from 'vite';
+ import { createHash } from 'node:crypto';
+ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+ import { resolve } from 'node:path';
+ import { createRequire } from 'node:module';
+-const { chromium } = createRequire(import.meta.url)('@playwright/test');
++const { chromium, expect } = createRequire(import.meta.url)('@playwright/test');
+ 
+ const out = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? '../../reports/effects');
+ const writeScreenshots = process.env.SCREENSHOTS === '1';
+ const writeFrames = writeScreenshots && process.argv.includes('--frames');
++const viewportArg = process.argv.find(arg => arg.startsWith('--viewport='))?.slice('--viewport='.length) ?? '1280x720';
++if (!['1280x720', '1600x900'].includes(viewportArg)) throw new Error('--viewport must be 1280x720 or 1600x900');
++const [viewportWidth, viewportHeight] = viewportArg.split('x').map(Number);
++const viewport = { width: viewportWidth, height: viewportHeight };
++const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
+ const port = 5198, base = `http://localhost:${port}`;
+ const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
+ mkdirSync(out, { recursive: true });
+@@ -33,7 +38,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
+ const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+ browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
+ 
+-async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
++async function open(name, { fixture, reduced = false, size = viewport }) {
+   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
+   let ctx = await browser.newContext({ ...opts, recordVideo: { dir: `${out}/video-${name}`, size } });
+   let page;
+@@ -111,13 +116,20 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+   const normal = await open('motion-normal', { fixture: 'fresh' });
+   const walk = async page => {
+     const names = new Set(); let transformAnims = 0;
+-    for (const tab of ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help']) {
+-      let el = page.getByRole('tab', { name: tab, exact: true }).first();
+-      if (!(await el.count())) {
+-        const alias = tab === 'Hero' ? 'Character' : tab === 'Map' ? 'Boss' : tab;
+-        el = page.getByRole('tab', { name: alias, exact: true }).first();
++    const visited = [];
++    for (const screen of manifest.screens) {
++      const nav = page.getByTestId(screen.navTestId);
++      await nav.click();
++      await expect(nav).toHaveAttribute('aria-selected', 'true');
++      await expect(page.locator('.app-shell')).toHaveAttribute('data-active-screen', screen.navTestId.replace(/^nav-/, ''));
++      if (screen.subnavTestId) {
++        const subnav = page.getByTestId(screen.subnavTestId);
++        await subnav.click();
++        await expect(subnav).toHaveAttribute('aria-selected', 'true');
+       }
+-      if (await el.count()) await el.click();
++      const content = page.getByTestId(screen.screenTestId);
++      for (const selector of screen.required) await expect(content.locator(selector).filter({ visible: true }).first()).toBeVisible();
++      visited.push(screen.id);
+       for (let i = 0; i < 6; i++) {
+         await sleep(80);
+         const found = await page.evaluate(() => document.getAnimations().map(a => ({
+@@ -125,11 +137,15 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+         for (const f of found) { names.add(f.name); if (f.props.some(p => /transform|translate|scale|rotate/.test(p))) transformAnims++; }
+       }
+     }
+-    return { names: [...names], transformAnims };
++    return { screens: visited, names: [...names], transformAnims };
+   };
+   const n = await walk(normal.page); await normal.ctx.close();
+   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
+   const r = await walk(red.page);
++  const expectedScreens = JSON.stringify(manifest.screens.map(screen => screen.id));
++  check('coverage', 'every manifest screen visited in both motion modes',
++    JSON.stringify(n.screens) === expectedScreens && JSON.stringify(r.screens) === expectedScreens,
++    `normal=${n.screens.join(',')}; reduced=${r.screens.join(',')}`);
+   const homeTab = red.page.getByRole('tab', { name: 'Home' });
+   if (await homeTab.count()) {
+     await homeTab.click();
+@@ -145,7 +161,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+ await browser.close();
+ writeFileSync(`${out}/summary.json`, JSON.stringify(results, null, 2));
+ const fail = results.filter(r => r.status === 'FAIL').length;
+-console.log(`\n${results.length} checks, ${fail} FAIL. Videos + frames in ${out}`);
++console.log(`\n${results.length} checks, ${fail} FAIL at ${viewportArg}. Videos + frames in ${out}`);
+ process.exitCode = fail ? 1 : 0;
+ } finally {
+   await browser?.close();
+diff --git a/docs/decisions/baseline-hud-layout.md b/docs/decisions/baseline-hud-layout.md
+new file mode 100644
+index 0000000..61bd2ce
+--- /dev/null
++++ b/docs/decisions/baseline-hud-layout.md
+@@ -0,0 +1,26 @@
++# BASE0 HUD: status header and guidance context
++
++Accepted by Codex under the scoped HUD repair authority, 2026-11-01.
++
++## Context
++
++At 1280×720 the intrinsic status row left about 19px for the next-action text. Error labels and fallback fonts could consume the rest. XP's intrinsic grid allocated only 8px to its track. The approved reference uses currencies, a roughly 159px green XP track, then power and wallet. The implementation also needs to retain chapter progress, sync status, the title, actionable guidance and a gated power explanation.
++
++## Options
++
++1. Compress the existing single row. This leaves guidance dependent on status text length and font metrics.
++2. Give status and guidance separate rows, using the compact shell's existing context pattern at every size.
++
++## Choice and rationale
++
++Use option 2. Desktop status order is currencies → level/XP → chapter progress → power → sync/wallet. Move the existing title and unchanged action into a context row below the header. The action may wrap and gets the row's remaining width; it keeps its accessible name, focus behavior and callback. Nothing becomes a tooltip-only or hidden desktop control.
++
++Reserve a 160px × 10px desktop XP track and retain `--good` for the fill. This dimensional allowance matches the approved track; existing font, spacing, color and border tokens remain. The normal desktop header uses the existing 56px HUD dimension. Preserve the separate gated explanation allowance (80px header), so ancestor clipping does not return. Intermediate widths may wrap the status row. The existing ≤600px grid, normal topbar ≤72px, HUD ≤88px and wallet 44×44 constraints remain.
++
++The extra context row and the retained progress/sync/gated information are deliberate differences from the reference. Current currency names (Fish/Yarn), art and seven rail destinations remain. This decision changes no rules, backend behavior or flag default.
++
++## Verification and reversal
++
++`apps/web/e2e/ui/baseline-hud.spec.ts` measures the full action text, clipping ancestors, header/context/viewport containment, keyboard navigation and XP fill at two nonzero values, plus local offline/429/503 states with fallback fonts. Existing HUD, u3-layout and resize assertions retain their thresholds.
++
++To reverse, move title/guidance back into the header and remove the desktop sizing/context rules in `shell.css`. First provide another layout that passes the complete-text and XP regressions; the former truncation is not an acceptable reversal.
+diff --git a/docs/decisions/mission-baseline-compatibility.md b/docs/decisions/mission-baseline-compatibility.md
+new file mode 100644
+index 0000000..ea1d9f3
+--- /dev/null
++++ b/docs/decisions/mission-baseline-compatibility.md
+@@ -0,0 +1,21 @@
++# Restore the existing verification baseline
++
++Date: 2026-11-01. SIGNED by Codex under full user authority, 2026-11-01.
++
++## Context
++
++The mission requires every complete verification suite to pass before any merge. Fresh main at 1fb25ed fails the Deno import guard and three browser cases: stage recreation with reduced motion, plus existing HUD height constraints at narrow widths. The mission's feature work remains desktop-only; existing responsive behavior and tests must be preserved.
++
++## Options
++
++1. Leave the known failures and call a partial run green. Rejected: violates the score and merge gates.
++2. Remove or relax existing tests. Rejected: violates test integrity.
++3. Repair the baseline regressions in one prerequisite PR, without adding a mobile redesign or changing gameplay. Chosen.
++
++## Choice and rationale
++
++BASE0 combines exact Deno import-map aliases, the existing FXRB scene-readiness guard, and the smallest shell compatibility repair supported by the unchanged HUD tests. These independent failures must be repaired together because an intermediate red-main merge is forbidden. FXRB keeps its dedicated PR for its stronger resize assertions and repeat evidence. No dependency, auth source, contract, live deployment or game economy changes are included.
++
++## Reversal
++
++Revert the BASE0 merge through a PR, keeping all regression tests. If the old behavior is needed for investigation, reproduce it only in a scratch worktree. Do not restore unresolved Deno edges or a crashing scene to the deployed branch.
+diff --git a/docs/design/decisions.md b/docs/design/decisions.md
+new file mode 100644
+index 0000000..7fb307a
+--- /dev/null
++++ b/docs/design/decisions.md
+@@ -0,0 +1,5 @@
++# Design decisions — living draft
++
++- [Restore the existing verification baseline](../decisions/mission-baseline-compatibility.md): combine minimal repairs needed by the strict complete-suite gate; preserve desktop scope and existing responsive behavior.
++
++- [Give HUD status and guidance their own rows](../decisions/baseline-hud-layout.md): preserve the complete next action and reserve a readable XP track at both desktop targets.
+diff --git a/docs/proposals/rune-skill-system/README.md b/docs/proposals/rune-skill-system/README.md
+index 15bc83d..daf5217 100644
+--- a/docs/proposals/rune-skill-system/README.md
++++ b/docs/proposals/rune-skill-system/README.md
+@@ -1,7 +1,7 @@
+ # Rune and skill system proposal (docs and demo only)
+ 
+ Status: DRAFT. No game rule, contract, auth, schema, number or app code changed (Tier 3 untouched).
+-Date: 2026-10-31. Source of inspiration: the research in `docs/proposals/tbh-index-research/` (structure only).
++Date: 2026-10-31. Inspiration came from separate structure-only research; this directory contains the original proposal and runnable demo.
+ 
+ | File | What |
+ |---|---|
+@@ -12,4 +12,4 @@ Date: 2026-10-31. Source of inspiration: the research in `docs/proposals/tbh-ind
+ | `art/STYLE-BIBLE.md` | Palette, grid, outline and shading rules, frame counts, checklist, provenance rules. |
+ 
+ Originality rule: nothing here copies the reference game's art, names, flavour text or exact tables. The demo's pixel glyphs are placeholders drawn for this demo.
+-Ready-to-paste Codex/Antigravity logic prompts: `/mnt/project-files/taskbar-hero/PASTE-ALL-runes.txt` (art prompts intentionally not written yet; the user will ask).
++Implementation phases, dependencies and test requirements are in [the plan](plan.md). Asset requirements are in [the art manifest](art/MANIFEST.md).
+diff --git a/docs/test-stability.md b/docs/test-stability.md
+index b5726dc..e4dd5ce 100644
+--- a/docs/test-stability.md
++++ b/docs/test-stability.md
+@@ -163,3 +163,17 @@ for the missing manual-rollback file and conditional Founder batch step.
+ F2_EXTERNAL_SERVER=1 and F2_SERVER_PREBUILT=1 are internal rehearsal handoff flags: the
+ script starts the API on the restored snapshot and supplies the just-built web output.
+ Ordinary runs should leave both unset so Playwright owns all startup and cleanup.
++
++## Both mission desktop sizes
++
++`E2E_VIEWPORT=1280x720 pnpm test:e2e` and `E2E_VIEWPORT=1600x900 pnpm test:e2e`
++(from apps/web) run the same complete project set with each requested default
++viewport. The default remains 1280x720. Explicit per-test responsive-size cases
++remain intact. Any other E2E_VIEWPORT value fails before servers start. Use the
++existing four E2E_PORT variables when runs overlap; output directories stay
++port-isolated. Run one worker for repeated performance-sensitive cases.
++
++Ordinary tests keep screenshots in memory when measuring encoded byte budgets;
++PNG report writes require SCREENSHOTS=1. The F3 and error-notice writers honor
++SCREENSHOT_DIR. F3/G1/G3 metrics go into Playwright output unless REPORT_DIR is
++explicitly set, so reruns do not rewrite historical tracked reports.
+diff --git a/package.json b/package.json
+index 8ab5fe4..76867a9 100644
+--- a/package.json
++++ b/package.json
+@@ -5,7 +5,7 @@
+   "packageManager": "pnpm@10.28.0",
+   "scripts": {
+     "gen:deno": "node scripts/gen-deno-json.mjs",
+-    "test": "pnpm -r test",
++    "test": "node --test scripts/*.test.mjs && pnpm -r test",
+     "lint": "pnpm -r lint",
+     "build": "pnpm -r build",
+     "typecheck": "pnpm -r typecheck",

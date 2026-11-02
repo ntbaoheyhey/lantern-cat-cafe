@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-active/apps/web
+
+ ❯ src/layout/HelpTab.search.test.tsx (4 tests | 1 failed) 129ms
+   × finds visible phrases across inline configuration values and punctuation 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > finds visible phrases across inline configuration values and punctuation
+AssertionError: expected 'No matching topics' to be 'Forge' // Object.is equality
+
+Expected: "Forge"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:40:65
+     38|   const search = screen.getByLabelText('Search help');
+     39|   fireEvent.change(search, { target: { value: '30 Yarn' } });
+     40|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+       |                                                                 ^
+     41|   fireEvent.change(search, { target: { value: 'Warrior: sword' } });
+     42|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  01:59:35
+   Duration  750ms (environment 57%, tests 19%, import 14%, transform 9%)
+
+undefined
+/private/tmp/tbh-cxu4-active/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/layout/HelpTab.search.test.tsx

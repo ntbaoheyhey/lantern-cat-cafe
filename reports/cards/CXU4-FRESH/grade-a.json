@@ -1,0 +1,113 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A, final repair round",
+  "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+  "base": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+  "tree": "c322284c62698d29a48655d57ea51601a1b013b9",
+  "sourceRoot": "/private/tmp/tbh-cxu4-active",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH",
+  "gradedAt": "2026-11-02T19:56:09.603974+00:00",
+  "score": 95,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "All eight acceptance requirements pass on d969f16, including immediate modal background/focus restoration, true equipment/power and preserved phrase-searchable Help.",
+      "evidence": [
+        "grade-a-r3/logs/unit.log",
+        "grade-a-r3/logs/repeat-changed.log",
+        "unit-stability-r3/commands.json",
+        "main-help-oracle.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head core2412,313 browser cases per size,360 repeats,20 consecutive unit controls and fresh UI/effects/capture checks green. Existing expected failures/skips unchanged.",
+      "evidence": [
+        "grade-a-r3/commands.json",
+        "ui-a-r3/commands.json",
+        "capture-a-r3/command.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Eleven current-head semantic mutants killed after a green scratch control; the old B control failure was fixed in code, not waited or retried away.",
+      "evidence": [
+        "mutants-a-r3/control.log",
+        "mutants-a-r3/results.json",
+        "grade-b-failed-r1.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 12,
+      "max": 15,
+      "reason": "Conservative1-point deductions for real slot/stat density, added typed tab-host row and retained plain-integer Hero formatting. Required hierarchy, original art and readable modal/Help actions match.",
+      "evidence": [
+        "ui-a-r3/audit/hero-1280x720.png",
+        "ui-a-r3/audit/help-1600x900.png",
+        "capture-a-r3/raw/modal-1280.png",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed scoped code, clean lint and justified modest style growth. Deduct2 for the duplicate muted/surface-2 contrast case; no framework or asset added.",
+      "evidence": [
+        "grade-a-r3/logs/lint.log",
+        "grade-a-r3/logs/build.log",
+        "/private/tmp/tbh-cxu4-active/apps/web/src/ui/Modal.tsx",
+        "/private/tmp/tbh-cxu4-active/apps/web/src/theme.contrast.test.ts",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "Existing assertions remain, including the immediate status/focus check that exposed cleanup timing. New observer strengthens browser coverage; no retries or relaxed thresholds.",
+      "evidence": [
+        "review-a-r3-inventory.json",
+        "/private/tmp/tbh-cxu4-active/apps/web/e2e/ui/cxu4-hero-help.spec.ts",
+        "REPORT.md"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Current claims are tied to d969f16. Previous A95 is archived and explicitly not merge authorization; B failure and all real/harness findings retained.",
+      "evidence": [
+        "REPORT.md",
+        "grade-a-3ed0633.json",
+        "grade-b-failed-r1.json",
+        "grade-a-r3/commands.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All files inventoried and integration/test zones justified; no protected backend/contracts/assets/dependency/provider/flag changes.",
+      "evidence": [
+        "review-a-r3-inventory.json",
+        "/private/tmp/tbh-cxu4-active/docs/decisions/cxu4-hero-help.md"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "Fresh B>=92 same head",
+    "Correctly authored/suffixed squash",
+    "Actual-main/live validation before next merge"
+  ]
+}

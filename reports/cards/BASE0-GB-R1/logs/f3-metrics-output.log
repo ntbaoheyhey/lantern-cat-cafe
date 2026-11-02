@@ -1,0 +1,257 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web
+> playwright test e2e/ui/f3-art.spec.ts e2e/v2/errors-notice.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts --grep 'roster sheet|bake time|T1-T5|G1 demo|G3 stage frame' --workers=1
+
+[WebServer] (node:32866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32881) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:32888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:32919) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:32926) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:32929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:32965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:32973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+(node:32982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+·(node:33010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Measured screenshot roster-ch1.png (75.8 KB)
+·Measured screenshot roster-ch2.png (75.4 KB)
+·Measured screenshot roster-ch3.png (75.0 KB)
+·Measured screenshot roster-ch4.png (75.5 KB)
+·Measured screenshot roster-ch5.png (76.5 KB)
+·Bake benchmark results: {
+  "1": {
+    "chapter": 1,
+    "totalBakeMs": 0.9,
+    "monsters": {
+      "mon.dust.bunny": {
+        "ms": 0.4,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.loose.yarn": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sock.puppet": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.roomba.scout": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.yarn.giant": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 560,
+        "texH": 40,
+        "texBytes": 89600
+      }
+    }
+  },
+  "2": {
+    "chapter": 2,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.pickle.imp": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.toast.mimic": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.spoon.bug": {
+        "ms": 0.2,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.blender.brute": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.cucumber.scare": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "3": {
+    "chapter": 3,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.soap.slime": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.rubber.duck": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.sponge.crab": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.hair.dryer.wisp": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.bathtub.tyrant": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "4": {
+    "chapter": 4,
+    "totalBakeMs": 0.4,
+    "monsters": {
+      "mon.mouse.trap": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.dust.moth": {
+        "ms": 0,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.windup.robot": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 336,
+        "texH": 24,
+        "texBytes": 32256
+      },
+      "mon.box.fort.knight": {
+        "ms": 0.1,
+        "totalFrames": 14,
+        "texW": 392,
+        "texH": 28,
+        "texBytes": 43904
+      },
+      "mon.vacuum.beast": {
+        "ms": 0.1,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  },
+  "5": {
+    "chapter": 5,
+    "totalBakeMs": 0.5,
+    "monsters": {
+      "mon.shadow.crow": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.moth.swarm": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.neon.dot": {
+        "ms": 0.1,
+        "totalFrames": 13,
+        "texW": 312,
+        "texH": 24,
+        "texBytes": 29952
+      },
+      "mon.chimney.ghost": {
+        "ms": 0,
+        "totalFrames": 13,
+        "texW": 364,
+        "texH": 28,
+        "texBytes": 40768
+      },
+      "mon.laser.dot.phantom": {
+        "ms": 0.2,
+        "totalFrames": 23,
+        "texW": 920,
+        "texH": 40,
+        "texBytes": 147200
+      }
+    }
+  }
+}
+·G1 metrics {"phase":"after","before":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18534,"JSHeapUsedSize":14805080},"after":{"visibilityListeners":5,"JSEventListeners":259,"Nodes":18564,"JSHeapUsedSize":16034348},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":6.399999998509884,"nextFrameMs":48.899999998509884,"eventTiming":[{"name":"click","duration":56,"inputDelay":1.1999999955296516}]},"craft":{"clickToPendingMs":1.1000000014901161,"nextFrameMs":25.100000001490116,"eventTiming":[{"name":"click","duration":32,"inputDelay":0.8999999985098839}]},"fight":{"clickToPendingMs":1.5999999940395355,"nextFrameMs":33.29999999701977,"eventTiming":[{"name":"click","duration":40,"inputDelay":1.2999999970197678}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+·G3 stage frame metrics { p95: 16.799999999999955, frames: 180 }
+·
+  9 passed (22.2s)

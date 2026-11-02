@@ -1,0 +1,52 @@
+[
+  {
+    "file": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "line": 23,
+    "text": "  expect(xp.width).toBeGreaterThanOrEqual(150);"
+  },
+  {
+    "file": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "line": 78,
+    "text": "  expect(textGeometry.fontSize).toBeGreaterThanOrEqual(12);"
+  },
+  {
+    "file": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "line": 128,
+    "text": "      if (gated) await expect(hud.getByRole('status')).toContainText('Needs about');"
+  },
+  {
+    "file": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "line": 145,
+    "text": "      console.log(JSON.stringify({ viewport, gated, before, after }));"
+  },
+  {
+    "file": "apps/web/e2e/ui/baseline-hud.spec.ts",
+    "line": 204,
+    "text": "        console.log(JSON.stringify({ viewport, state, fallback: true, ...measured, consoleErrors }));"
+  },
+  {
+    "file": "apps/web/e2e/ui/f3-art.spec.ts",
+    "line": 42,
+    "text": "  console.log(`${writeScreenshots ? 'Saved' : 'Measured'} screenshot ${name}.png (${(size / 1024).toFixed(1)} KB)`);"
+  },
+  {
+    "file": "apps/web/tools/effects-test.mjs",
+    "line": 164,
+    "text": "console.log(`\\n${results.length} checks, ${fail} FAIL at ${viewportArg}. Videos + frames in ${out}`);"
+  },
+  {
+    "file": "reports/scorecard/base0/hud-resume-handoff.md",
+    "line": 60,
+    "text": "- Only newly added local HTTP cases permit exact blocked-font and deliberately injected 429/503 browser resource errors. No unexpected console/page errors passed. No bypass, suppression, timeout/retry increase, source console.log, deleted test, or edited golden/snapshot was introduced. Screenshot output stays opt-in and now has a byte-budget assertion."
+  },
+  {
+    "file": "scripts/gen-deno-json.mjs",
+    "line": 84,
+    "text": "  console.log(`wrote ${generateImportMaps()} Edge Function import maps`);"
+  },
+  {
+    "file": "supabase/tests/v2/functions-forge.test.ts",
+    "line": 68,
+    "text": "    expect((await raw(p)).inventory).toContainEqual(inserted[0]);"
+  }
+]

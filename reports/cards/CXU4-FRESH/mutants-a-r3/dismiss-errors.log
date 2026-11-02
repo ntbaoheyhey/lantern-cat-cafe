@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-Ommwp9/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 146ms
+   ❯ shared UI (9)
+     × success and warning dismiss on schedule while failure persists and can be closed 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:43:40
+   Duration  628ms (environment 53%, tests 28%, import 14%, transform 5%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > success and warning dismiss on schedule while failure persists and can be closed
+AssertionError: expected [ [ 's' ], [ 'w' ], [ 'e' ] ] to deeply equal [ [ 's' ], [ 'w' ] ]
+
+- Expected
++ Received
+
+@@ -3,6 +3,9 @@
+      "s",
+    ],
+    [
+      "w",
+    ],
++   [
++     "e",
++   ],
+  ]
+
+ ❯ src/ui/ui.test.tsx:85:70
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

@@ -1,0 +1,22 @@
+      pnpm gen:deno && git diff --exit-code -- supabase/functions
+      pnpm typecheck
+      pnpm lint
+      pnpm test
+      pnpm build
+      VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build
+      cd apps/web && pnpm test:e2e   (both classic and v2 projects; affected specs at 1280x720 AND 1600x900)
+      node scripts/check-links.mjs   (count must not exceed main's count, measured on main the same day)
+      node scripts/check-bundle.mjs  (record numbers vs main)
+      bash scripts/verify-pr.sh <branch>   (no --comment)
+    UI items also: SCREENSHOTS=1 run, plus from apps/web: node tools/ui-audit.mjs ../../reports/scorecard/<id>/audit bossReadyStrong (and --signed-in) and node tools/effects-test.mjs ../../reports/scorecard/<id>/effects. "document scrolls" and overlap findings must be empty at 1280x720 and 1600x900.
+ d. Re-run every T-test from the item spec, one by one, yourself. Mark each PASS / FAIL / NOT VERIFIED with the command and output tail. A T-test you did not run yourself is NOT VERIFIED.
+ e. FLAKE CHECK: every spec the item added or changed runs with --repeat-each=10 at both sizes; FXRB's resize specs --repeat-each=20 at both sizes. One failure in any repeat = the spec is red.
+ f. INTEGRITY DIFF: git diff origin/main...<branch> must be scanned for: test.skip / .only / .fixme / describe.skip / it.todo, deleted test files or deleted assertions, raised timeouts, added retries (retries:, test.retry, toPass with a wider window than before), loosened matchers (toBe -> toBeTruthy, exact -> toContain, count -> >=), edited golden/snapshot numbers, eslint-disable, @ts-ignore / @ts-expect-error, `as any`, console.log left in src. List every hit with file:line and whether it is justified (a test that encoded OLD behaviour the item deliberately changed is justified only with old -> new shown).
+ g. SCOPE + TIER CHECK: list every changed file and classify it Tier 1 (item zone), Tier 2 (adjacent, needs a note in the report) or Tier 3. Tier 3 under the AUTHORITY UPDATE means: secrets/.env/credentials, .github/**, any live write beyond what section 7 allows, dependency changes without a decisions.md entry, contract changes, auth/SIWE changes without tests, and any backend-dependent behaviour not behind a default-off flag.
+ h. SECRET SCAN: grep the diff, reports and logs for keys, JWTs, database URLs, private keys, passwords (including any leaked DB password). Found one = auto-fail; mask it everywhere, write "SECRET FOUND: <file>:<line>, masked" in the scorecard, never copy it.
+ i. REPORT HONESTY: compare every claim in the item report (status line, each PASS, each command output, file list, screenshot list, "fixed" root causes) with what you just observed. Record each mismatch.
+ j. UI MATCH (UI items): open reports/ui-redesign/index.html and the built app at the SAME screen and size side by side (1280x720 and 1600x900). Check rail/nav order and items, HUD content and position, panel grid and gutters, type scale, token use (colours, spacing, radii from apps/web/src/theme.css, no hard-coded hex where a token exists), focus rings, hover/active states, empty states, motion with prefers-reduced-motion: reduce (no movement). List every difference in reports/scorecard/<id>/ui-diff.md. Pets/rune items: same check against docs/proposals/rune-skill-system/demo/index.html for mechanics and flow.
+ k. Keyboard-only walk through every touched screen; axe or the existing contrast test for WCAG AA on every new token pair.
+
+====================================================================================================
+3. SCORING RUBRIC - DELIBERATELY HARD TO PASS

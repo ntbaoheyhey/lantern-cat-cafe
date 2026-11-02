@@ -1,0 +1,11 @@
+PASS current T014 manifest and checkpoint bytes: 120 files
+PASS historical BASE0 checkpoint bytes: 66 files
+VERIFIER_HEAD=e4faf6351fc8163016f5450bd22ce3b41a4126d4
+PR_HEAD=280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+BASE_HEAD=74d60dab2cef8c31a3f2729d18719ff3021a9eda
+TESTED_HEAD=1aaa829cbfe70972e29f11ed9158a70896a4cba4
+PASS original verifier exit=0; all four heads exist; PR/base/tested trees equal
+PASS approved current target and remote main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a
+PASS adopted exact-main production builds: 32/32 files twice, stable 334.824-second window
+PASS adopted legacy live and eight-stage phased path at 1280x720 and 1600x900
+PASS historical asset mismatch, unit timeout/passing rerun, and first T014 journey failure retained

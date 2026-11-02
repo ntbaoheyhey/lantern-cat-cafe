@@ -1,0 +1,41 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-5UPpOO/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 102ms
+   ❯ shared UI (9)
+     × pauses toast while hovered or focused, restarting the interval afterwards 5ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:56:23
+   Duration  470ms (environment 60%, tests 25%, import 10%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > pauses toast while hovered or focused, restarting the interval afterwards
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      "w",
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/ui/ui.test.tsx:94:140
+     92|     vi.useFakeTimers(); const dismiss = vi.fn(); render(<ToastHost onD…
+     93|     const toast = screen.getByRole('status'); fireEvent.mouseEnter(toa…
+     94|     fireEvent.mouseLeave(toast); fireEvent.focus(screen.getByRole('but…
+       |                                                                                                                                            ^
+     95|     fireEvent.blur(screen.getByRole('button'), { relatedTarget: docume…
+     96|     act(() => vi.advanceTimersByTime(1)); expect(dismiss).toHaveBeenCa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

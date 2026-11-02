@@ -1,0 +1,360 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/layout/character/HeroScreen.test.tsx (5 tests | 1 failed) 1358ms
+   × keeps failed confirmation open, permits retry and leaves an error toast after cancellation 1066ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  02:08:38
+   Duration  2.00s (tests 71%, environment 20%, import 5%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/character/HeroScreen.test.tsx > keeps failed confirmation open, permits retry and leaves an error toast after cancellation
+TestingLibraryElementError: Unable to find role="dialog"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"ui-tabs-host"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-label[39m=[32m"Hero sections"[39m
+        [33mclass[39m=[32m"ui-tabs"[39m
+        [33mrole[39m=[32m"tablist"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_4_-panel-character"[39m
+          [33maria-selected[39m=[32m"true"[39m
+          [33mid[39m=[32m"_r_4_-tab-character"[39m
+          [33mrole[39m=[32m"tab"[39m
+          [33mtabindex[39m=[32m"0"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCharacter[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33maria-labelledby[39m=[32m"_r_4_-tab-character"[39m
+        [33mclass[39m=[32m"ui-tab-content"[39m
+        [33mid[39m=[32m"_r_4_-panel-character"[39m
+        [33mrole[39m=[32m"tabpanel"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Character"[39m
+          [33mclass[39m=[32m"v2-character hero-sheet"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Gear slots"[39m
+            [33mclass[39m=[32m"hero-paper-doll"[39m
+            [33mrole[39m=[32m"group"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"hero-cat"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+                [33mclass[39m=[32m""[39m
+                [33mheight[39m=[32m"160"[39m
+                [33mrole[39m=[32m"img"[39m
+                [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+                [33mviewBox[39m=[32m"0 0 20 20"[39m
+                [33mwidth[39m=[32m"160"[39m
+              [36m>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"1"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"4"[39m
+                  [33my[39m=[32m"1"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"15"[39m
+                  [33my[39m=[32m"1"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"16"[39m
+                  [33my[39m=[32m"1"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"2"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"4"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"5"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"14"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"15"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"16"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"17"[39m
+                  [33my[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"2"[39m
+                  [33my[39m=[32m"3"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"3"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"4"[39m
+                  [33my[39m=[32m"3"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#ff8fb1"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"5"[39m
+                  [33my[39m=[32m"3"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mfill[39m=[32m"#c66a1a"[39m
+                  [33mheight[39m=[32m"1"[39m
+                  [33mwidth[39m=[32m"1"[39m
+                  [33mx[39m=[32m"6"[39m
+                  [33my[39m=[32m"3"[39m
+...
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"ui-tabs-host"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Hero sections"[39m
+          [33mclass[39m=[32m"ui-tabs"[39m
+          [33mrole[39m=[32m"tablist"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"_r_4_-panel-character"[39m
+            [33maria-selected[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_4_-tab-character"[39m
+            [33mrole[39m=[32m"tab"[39m
+            [33mtabindex[39m=[32m"0"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCharacter[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-labelledby[39m=[32m"_r_4_-tab-character"[39m
+          [33mclass[39m=[32m"ui-tab-content"[39m
+          [33mid[39m=[32m"_r_4_-panel-character"[39m
+          [33mrole[39m=[32m"tabpanel"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33maria-label[39m=[32m"Character"[39m
+            [33mclass[39m=[32m"v2-character hero-sheet"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33maria-label[39m=[32m"Gear slots"[39m
+              [33mclass[39m=[32m"hero-paper-doll"[39m
+              [33mrole[39m=[32m"group"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hero-cat"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+                  [33mclass[39m=[32m""[39m
+                  [33mheight[39m=[32m"160"[39m
+                  [33mrole[39m=[32m"img"[39m
+                  [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+                  [33mviewBox[39m=[32m"0 0 20 20"[39m
+                  [33mwidth[39m=[32m"160"[39m
+                [36m>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"3"[39m
+                    [33my[39m=[32m"1"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"4"[39m
+                    [33my[39m=[32m"1"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"15"[39m
+                    [33my[39m=[32m"1"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"16"[39m
+                    [33my[39m=[32m"1"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"2"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"3"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"4"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"5"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"14"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"15"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"16"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"17"[39m
+                    [33my[39m=[32m"2"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#c66a1a"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"2"[39m
+                    [33my[39m=[32m"3"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"3"[39m
+                    [33my[39m=[32m"3"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[32m"4"[39m
+                    [33my[39m=[32m"3"[39m
+                  [36m/>[39m
+                  [36m<rect[39m
+                    [33mfill[39m=[32m"#ff8fb1"[39m
+                    [33mheight[39m=[32m"1"[39m
+                    [33mwidth[39m=[32m"1"[39m
+                    [33mx[39m=[3...
+ ❯ waitForWrapper ../../../tbh-cxu4-active/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ src/layout/character/HeroScreen.test.tsx:37:9
+     35|   fireEvent.click(screen.getByText('Change class')); fireEvent.change(…
+     36|   fireEvent.click(screen.getByText('Confirm class'));
+     37|   await waitFor(() => expect(within(screen.getByRole('dialog')).getByR…
+       |         ^
+     38|   expect((screen.getByText('Confirm class') as HTMLButtonElement).disa…
+     39|   fireEvent.click(screen.getByText('Cancel')); expect(screen.getByRole…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

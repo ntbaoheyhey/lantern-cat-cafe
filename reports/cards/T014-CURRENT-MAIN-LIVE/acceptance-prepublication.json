@@ -1,0 +1,30 @@
+{
+  "sourceHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "PASS",
+      "evidence": "release-target.json and T001 report addendum: orchestrator dispatch T014 supersedes only the stale present-tense target; historical checkpoint retained."
+    },
+    {
+      "criterion": 2,
+      "status": "PASS",
+      "evidence": "Clean identical main/tested tree; logs for typecheck/lint/unit/build, 289 browser tests at each size, Deno drift, 96 Forge tests. Original failures and corrected harness outcomes preserved."
+    },
+    {
+      "criterion": 3,
+      "status": "PASS",
+      "evidence": "artifact-before.json, artifact-after.json, stable-window.json: all 32 files including index.html match on both fresh production builds."
+    },
+    {
+      "criterion": 4,
+      "status": "PASS",
+      "evidence": "legacy-check-live.exit=0 and live-phased-r2/summary.json: 8 merged-core stages at both sizes, source and deployment identity recorded."
+    },
+    {
+      "criterion": 5,
+      "status": "AWAITING_PUBLICATION",
+      "evidence": "Commit/push must follow this prepublication audit; final receipt and all-five-criteria audit will be recorded under .codex-orchestrator/verification/T014 and results/T014.json."
+    }
+  ]
+}

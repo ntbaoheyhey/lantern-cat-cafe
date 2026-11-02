@@ -1,0 +1,145 @@
+[
+  {
+    "name": "deno-root-index",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-root-index-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-root-index.log"
+    }
+  },
+  {
+    "name": "deno-nested-index",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-nested-index-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-nested-index.log"
+    }
+  },
+  {
+    "name": "deno-directory-alias",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-directory-alias-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-directory-alias.log"
+    }
+  },
+  {
+    "name": "deno-ordinary-module",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-ordinary-module-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-ordinary-module.log"
+    }
+  },
+  {
+    "name": "deno-test-exclusion",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-test-exclusion-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-test-exclusion.log"
+    }
+  },
+  {
+    "name": "deno-auth-distinction",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-auth-distinction-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-auth-distinction.log"
+    }
+  },
+  {
+    "name": "deno-stable-order",
+    "file": "scripts/gen-deno-json.mjs",
+    "command": "node --test scripts/gen-deno-json.test.mjs",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-stable-order-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/deno-stable-order.log"
+    }
+  },
+  {
+    "name": "scene-preboot",
+    "file": "apps/web/src/game/stage/StageScene.ts",
+    "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageScene.test.ts",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/scene-preboot-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/scene-preboot.log"
+    }
+  },
+  {
+    "name": "lifecycle-old-game-guard",
+    "file": "apps/web/src/game/stage/StageCanvas.tsx",
+    "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageCanvas.test.tsx",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/lifecycle-old-game-guard-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/lifecycle-old-game-guard.log"
+    }
+  },
+  {
+    "name": "sql-next-day",
+    "file": "supabase/tests/src/fixture-clock.ts",
+    "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/fixture-clock.test.ts",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-next-day-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-next-day.log"
+    }
+  },
+  {
+    "name": "sql-claim-rounding",
+    "file": "supabase/tests/v2/functions-forge.test.ts",
+    "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run v2/functions-forge.test.ts",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-claim-rounding-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/sql-claim-rounding.log"
+    }
+  }
+]

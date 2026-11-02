@@ -1,0 +1,6 @@
+apps/web/playwright.config.ts:16:// can use E2E_PORT_CLASSIC/E2E_PORT_V2; builds and test outputs are port-isolated.
+apps/web/playwright.config.ts:21:const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_ALLOW_MOCK_AUTH: '1' };
+apps/web/playwright.config.ts:22:const viewportName = process.env.E2E_VIEWPORT ?? '1280x720';
+apps/web/playwright.config.ts:24:  throw new Error('E2E_VIEWPORT must be 1280x720 or 1600x900');
+apps/web/playwright.config.ts:40:      env: { ...demoEnv, VITE_GAME_V2: '0' },
+apps/web/playwright.config.ts:47:      env: { ...demoEnv, VITE_GAME_V2: '1' },

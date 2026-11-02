@@ -1,0 +1,85 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web
+> playwright test e2e/ui/baseline-hud.spec.ts --grep 'shared HUD.*1280x720' --workers=1
+
+[WebServer] (node:31660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31681) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:31687) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:31720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31721) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:31730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:31738) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:31768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:31777) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+(node:31782) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:31795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F
+
+  1) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 150
+    Received:    8
+
+      21 |       now: Number(element.getAttribute('aria-valuenow')), max: Number(element.getAttribute('aria-valuemax')) };
+      22 |   });
+    > 23 |   expect(xp.width).toBeGreaterThanOrEqual(150);
+         |                    ^
+      24 |   expect(xp.width).toBeLessThanOrEqual(170);
+      25 |   expect(xp.height).toBe(10);
+      26 |   expect(xp.fill).toBeCloseTo(xp.inner * xp.now / xp.max, 1);
+        at expectReadableChrome (/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web/e2e/ui/baseline-hud.spec.ts:23:20)
+        at /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web/e2e/ui/baseline-hud.spec.ts:126:22
+
+    Error Context: test-results/4430-4431/ui-baseline-hud-shared-HUD-5920d-us-chip-visible-at-1280x720-stage-layout/error-context.md
+
+  2) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 150
+    Received:    8
+
+      21 |       now: Number(element.getAttribute('aria-valuenow')), max: Number(element.getAttribute('aria-valuemax')) };
+      22 |   });
+    > 23 |   expect(xp.width).toBeGreaterThanOrEqual(150);
+         |                    ^
+      24 |   expect(xp.width).toBeLessThanOrEqual(170);
+      25 |   expect(xp.height).toBe(10);
+      26 |   expect(xp.fill).toBeCloseTo(xp.inner * xp.now / xp.max, 1);
+        at expectReadableChrome (/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web/e2e/ui/baseline-hud.spec.ts:23:20)
+        at /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/apps/web/e2e/ui/baseline-hud.spec.ts:126:22
+
+    Error Context: test-results/4430-4431/ui-baseline-hud-shared-HUD-0b549-ible-at-1280x720-when-gated-stage-layout/error-context.md
+
+  2 failed
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated 
+ ELIFECYCLE  Command failed with exit code 1.

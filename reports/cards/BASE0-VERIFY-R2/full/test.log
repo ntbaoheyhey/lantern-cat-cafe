@@ -1,0 +1,66 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "pnpm test", "cwd": "/Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero", "empty_backend_env": true, "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0", "name": "test", "ports": {"E2E_PORT_API": "4383", "E2E_PORT_CLASSIC": "4380", "E2E_PORT_SERVER": "4382", "E2E_PORT_V2": "4381"}, "screenshots": false, "started": "2026-11-01T19:33:30+07:00", "starting_git_status": "?? apps/web/tools/.base0-r2-audit.mjs\n?? apps/web/tools/.base0-r2-effects.mjs\n", "viewport": "1280x720"}
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.553375ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.778875ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.033ms)
+✔ output order is stable regardless of file creation order (3.499833ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.617291ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 82.806791
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  19:33:32
+packages/chain test:    Duration  1.13s (import 63%, transform 19%, tests 17%, worker 1%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  19:33:32
+packages/auth test:    Duration  1.53s (import 66%, tests 24%, transform 9%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  19:33:32
+supabase/tests test:    Duration  14.14s (tests 80%, import 13%, transform 7%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  19:33:32
+packages/game-rules test:    Duration  35.87s (tests 87%, transform 11%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  19:34:08
+packages/api-contract test:    Duration  265ms (transform 78%, import 19%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-verify-280ff4b/taskbar-hero/apps/web
+apps/web test:  Test Files  111 passed (111)
+apps/web test:       Tests  1308 passed (1308)
+apps/web test:    Start at  19:34:09
+apps/web test:    Duration  25.47s (environment 48%, tests 37%, import 9%, transform 6%)
+apps/web test: Environment  jsdom was created 111 times · 105.02s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+
+EXIT_CODE=0

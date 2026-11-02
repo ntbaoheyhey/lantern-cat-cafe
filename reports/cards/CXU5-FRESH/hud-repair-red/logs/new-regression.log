@@ -1,0 +1,181 @@
+[WebServer] (node:94130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+[WebServer] (node:94135) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu5-hud-repair/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:94138) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:94165) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:94166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu5-hud-repair/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:94172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:94175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:94201) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:94202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxu5-hud-repair/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:94270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 1 worker
+
+(node:94292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (8788)
+  1) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (8788) 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -18,9 +18,9 @@
+        Object {
+          "inside": true,
+          "unclipped": true,
+        },
+        Object {
+    -     "inside": true,
+    +     "inside": false,
+          "unclipped": true,
+        },
+      ]
+
+      35 |     });
+      36 |   });
+    > 37 |   expect(geometry).toEqual(Array.from({ length: 6 }, () => ({ inside: true, unclipped: true })));
+         |                    ^
+      38 |   const clipped = await page.locator('.shell-body').evaluate(root => {
+      39 |     const problems: string[] = [];
+      40 |     const header = root.querySelector('header')!.getBoundingClientRect();
+        at expectReadableChrome (/private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:37:20)
+        at /private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:113:7
+
+    Error Context: test-results/4780-4781/ui-baseline-hud-late-chapt-59701--separate-at-1280x720-8788--stage-layout/error-context.md
+
+
+(node:94333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (1234567)
+  2) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (1234567) 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -18,9 +18,9 @@
+        Object {
+          "inside": true,
+          "unclipped": true,
+        },
+        Object {
+    -     "inside": true,
+    +     "inside": false,
+          "unclipped": true,
+        },
+      ]
+
+      35 |     });
+      36 |   });
+    > 37 |   expect(geometry).toEqual(Array.from({ length: 6 }, () => ({ inside: true, unclipped: true })));
+         |                    ^
+      38 |   const clipped = await page.locator('.shell-body').evaluate(root => {
+      39 |     const problems: string[] = [];
+      40 |     const header = root.querySelector('header')!.getBoundingClientRect();
+        at expectReadableChrome (/private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:37:20)
+        at /private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:113:7
+
+    Error Context: test-results/4780-4781/ui-baseline-hud-late-chapt-8aae4-parate-at-1280x720-1234567--stage-layout/error-context.md
+
+
+(node:94353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (8788)
+  3) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (8788) 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 100
+    Received:   61.359375
+
+      77 |   expect(textGeometry.text).toBe(text);
+      78 |   expect(textGeometry.fontSize).toBeGreaterThanOrEqual(12);
+    > 79 |   expect(textGeometry.width).toBeGreaterThan(100);
+         |                              ^
+      80 |   expect(textGeometry.unclipped).toBe(true);
+      81 |   expect(textGeometry.allTextInside).toBe(true);
+      82 |   await expect(page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab')).toHaveCount(7);
+        at expectReadableChrome (/private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:79:30)
+        at /private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:113:7
+
+    Error Context: test-results/4780-4781/ui-baseline-hud-late-chapt-1722f--separate-at-1600x900-8788--stage-layout/error-context.md
+
+
+(node:94364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567)
+  4) [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567) 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 100
+    Received:   61.359375
+
+      77 |   expect(textGeometry.text).toBe(text);
+      78 |   expect(textGeometry.fontSize).toBeGreaterThanOrEqual(12);
+    > 79 |   expect(textGeometry.width).toBeGreaterThan(100);
+         |                              ^
+      80 |   expect(textGeometry.unclipped).toBe(true);
+      81 |   expect(textGeometry.allTextInside).toBe(true);
+      82 |   await expect(page.getByRole('navigation', { name: 'Game menu' }).getByRole('tab')).toHaveCount(7);
+        at expectReadableChrome (/private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:79:30)
+        at /private/tmp/tbh-cxu5-hud-repair/apps/web/e2e/ui/baseline-hud.spec.ts:113:7
+
+    Error Context: test-results/4780-4781/ui-baseline-hud-late-chapt-2308b-parate-at-1600x900-1234567--stage-layout/error-context.md
+
+
+  4 failed
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (8788) 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (1234567) 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (8788) 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:100:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567) 
+undefined
+/private/tmp/tbh-cxu5-hud-repair/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test e2e/ui/baseline-hud.spec.ts --grep late chapter HUD --workers=1 --retries=0 --reporter=line

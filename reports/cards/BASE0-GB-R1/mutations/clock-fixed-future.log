@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/supabase/tests
+
+ ❯ v2/functions-forge.test.ts (19 tests | 5 failed) 740ms
+   ❯ v2 Relic forge shares the v1 voucher lifecycle (8)
+     × spends the content costs, signs verifiable typed data, and returns pending without spending 10ms
+     × returns a live v1 pending voucher, then blocks once that v1 forge is minted 10ms
+     × reissues an expired unused nonce with the same Relic and no extra spend 11ms
+     × records an expired used voucher minted before applying the daily limit 8ms
+     × keeps a competing unsigned replacement recoverable until its interrupted check can resume 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > spends the content costs, signs verifiable typed data, and returns pending without spending
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > returns a live v1 pending voucher, then blocks once that v1 forge is minted
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > reissues an expired unused nonce with the same Relic and no extra spend
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > records an expired used voucher minted before applying the daily limit
+ FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > keeps a competing unsigned replacement recoverable until its interrupted check can resume
+error: new row for relation "relic_vouchers" violates check constraint "relic_vouchers_check"
+ ❯ pe.Oe ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:442:11
+ ❯ pe.tt ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:220:16
+ ❯ pe.parse ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:104:21
+ ❯ D.Ne ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:763:26
+ ❯ ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:716:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  5 failed | 18 passed (23)
+   Start at  18:45:31
+   Duration  2.27s (tests 73%, import 21%, transform 5%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-grade-b-5db4949/scratch/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/fixture-clock.test.ts v2/functions-forge.test.ts

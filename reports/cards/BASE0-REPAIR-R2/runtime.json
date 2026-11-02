@@ -1,0 +1,19 @@
+{
+  "status": "TARGETED_REPAIR_VERIFICATION",
+  "pid": 41884,
+  "worktree": "/Users/bao/.codex/worktrees/mega-base0-repair-r2/taskbar-hero",
+  "ports": [
+    4380,
+    4381,
+    4382,
+    4383
+  ],
+  "changes": [
+    "defer destroy until scene.isBooted",
+    "epoch-origin fixture clock",
+    "new deterministic regressions",
+    "remove dead compact prop and duplicate CSS"
+  ],
+  "candidateBranchUnchanged": "5db4949",
+  "temporaryObserver": "removed; original errors-notice restored"
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "install",
+    "command": "npx -y pnpm@10.28.0 install --frozen-lockfile",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:09.639741+00:00",
+    "endedAt": "2026-11-02T19:56:10.485468+00:00"
+  },
+  {
+    "name": "submodules",
+    "command": "git submodule update --init --recursive",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:10.491758+00:00",
+    "endedAt": "2026-11-02T19:56:10.613643+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/mutants-b-r3.mjs",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:10.619174+00:00",
+    "endedAt": "2026-11-02T19:56:35.512374+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:35.518413+00:00",
+    "endedAt": "2026-11-02T19:56:43.103089+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:43.109325+00:00",
+    "endedAt": "2026-11-02T19:56:49.469598+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:56:49.475743+00:00",
+    "endedAt": "2026-11-02T19:57:31.146718+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:31.153285+00:00",
+    "endedAt": "2026-11-02T19:57:31.794541+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:31.800763+00:00",
+    "endedAt": "2026-11-02T19:57:31.956055+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:31.962439+00:00",
+    "endedAt": "2026-11-02T19:57:38.817811+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:38.824262+00:00",
+    "endedAt": "2026-11-02T19:57:38.876621+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:38.882605+00:00",
+    "endedAt": "2026-11-02T19:57:43.782142+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:43.788611+00:00",
+    "endedAt": "2026-11-02T19:57:43.861191+00:00"
+  },
+  {
+    "name": "forge",
+    "command": "cd contracts && forge test --offline",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:43.867596+00:00",
+    "endedAt": "2026-11-02T19:57:45.092021+00:00"
+  },
+  {
+    "name": "abi-drift",
+    "command": "cd contracts && node ../packages/chain/scripts/gen-abi.mjs && git diff --exit-code -- ../packages/chain",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:45.098368+00:00",
+    "endedAt": "2026-11-02T19:57:45.148918+00:00"
+  },
+  {
+    "name": "repeat-changed",
+    "command": "E2E_PORT_CLASSIC=4810 E2E_PORT_V2=4811 E2E_PORT_SERVER=4812 E2E_PORT_API=4813 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu4-hero-help.spec.ts e2e/server/cxu4-offline.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/ui/redesign-shell.spec.ts e2e/ui/u5-panels.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:57:45.154886+00:00",
+    "endedAt": "2026-11-02T20:00:34.746702+00:00"
+  },
+  {
+    "name": "classic-browser",
+    "command": "E2E_PORT_CLASSIC=4810 E2E_PORT_V2=4811 E2E_PORT_SERVER=4812 E2E_PORT_API=4813 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=1 --retries=0 --reporter=line",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:00:34.753379+00:00",
+    "endedAt": "2026-11-02T20:01:27.266165+00:00"
+  }
+]

@@ -1,0 +1,13 @@
+diff --git a/apps/web/e2e/smoke.spec.ts b/apps/web/e2e/smoke.spec.ts
+index 6d88d4f..08731a3 100644
+--- a/apps/web/e2e/smoke.spec.ts
++++ b/apps/web/e2e/smoke.spec.ts
+@@ -19,7 +19,7 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
+   const box = await canvas.boundingBox();
+   expect(box?.height).toBeGreaterThanOrEqual(94);
+   expect(box?.height).toBeLessThanOrEqual(96);
+-  expect(box?.width).toBe(initialViewport!.width);
++  expect(box?.width).toBe(1280);
+ 
+   const gold = page.getByTestId('gold-counter');
+   const readGold = async () => Number(((await gold.textContent()) ?? '').replace(/[^0-9]/g, ''));

@@ -1,0 +1,12 @@
+diff --git a/apps/web/src/shell/Hud.tsx b/apps/web/src/shell/Hud.tsx
+index 064ca29..3e5ed13 100644
+--- a/apps/web/src/shell/Hud.tsx
++++ b/apps/web/src/shell/Hud.tsx
+@@ -9,7 +9,6 @@ import { PowerChip } from '../layout/hud/PowerChip';
+ import { SyncStatus } from '../layout/hud/SyncStatus';
+ import { formatAmount } from '../layout/loot/lootLines';
+ import { WalletButton } from '../wallet/WalletButton';
+-import '../layout/hud/hud.css';
+ 
+ export interface HudProps {
+   state: ServerStateV2;

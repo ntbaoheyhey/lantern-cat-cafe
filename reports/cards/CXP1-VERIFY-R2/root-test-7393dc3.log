@@ -1,0 +1,63 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.4315ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.766291ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.057542ms)
+✔ output order is stable regardless of file creation order (3.387ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (6.44225ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 87.578625
+Scope: 6 of 7 workspace projects
+packages/chain test$ vitest run
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  09:49:50
+packages/chain test:    Duration  1.24s (import 58%, tests 35%, transform 6%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  09:49:50
+packages/auth test:    Duration  1.54s (import 74%, tests 24%, transform 2%)
+packages/auth test: Done
+supabase/tests test:  Test Files  32 passed (32)
+supabase/tests test:       Tests  548 passed (548)
+supabase/tests test:    Start at  09:49:50
+supabase/tests test:    Duration  22.96s (tests 83%, import 16%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  25 passed | 3 skipped (28)
+packages/game-rules test:       Tests  383 passed | 2 expected fail | 11 skipped (396)
+packages/game-rules test:    Start at  09:49:50
+packages/game-rules test:    Duration  47.27s (tests 97%, import 2%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  09:50:38
+packages/api-contract test:    Duration  147ms (transform 52%, import 38%, tests 7%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero/apps/web
+apps/web test:  Test Files  113 passed (113)
+apps/web test:       Tests  1326 passed (1326)
+apps/web test:    Start at  09:50:38
+apps/web test:    Duration  22.67s (environment 48%, tests 40%, import 10%, transform 2%)
+apps/web test: Environment  jsdom was created 113 times · 109.19s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

@@ -1,0 +1,13 @@
+diff --git a/scripts/gen-deno-json.mjs b/scripts/gen-deno-json.mjs
+index 38aa0db..b83d158 100644
+--- a/scripts/gen-deno-json.mjs
++++ b/scripts/gen-deno-json.mjs
+@@ -22,7 +22,7 @@ export function gameRulesImports(projectRoot = root) {
+         if (entry.name.startsWith('__')) continue;
+         if (existsSync(join(full, 'index.ts'))) out[spec(full)] = `${spec(full)}/index.ts`;
+         walk(full);
+-      } else if (entry.name.endsWith('.ts') && !entry.name.endsWith('.test.ts')) {
++      } else if (entry.name.endsWith('.ts')) {
+         // A directory import ('./forge') and an explicit index import
+         // ('./index' from forge/craft.ts) are different exact Deno keys.
+         out[spec(full.slice(0, -3))] = `${spec(full)}`;

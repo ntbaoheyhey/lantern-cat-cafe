@@ -1,0 +1,163 @@
+[
+  {
+    "name": "clock-moving-origin",
+    "file": "apps/web/e2e/support/server-fixture.ts",
+    "command": "pnpm test:e2e e2e/server/fixture-clock.spec.ts --workers=1",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/clock-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/clock-moving-origin.log"
+    }
+  },
+  {
+    "name": "hud-shared-style",
+    "file": "apps/web/src/shell/Hud.tsx",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-shared-style.log"
+    }
+  },
+  {
+    "name": "hud-xp-width",
+    "file": "apps/web/src/shell/shell.css",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-xp-width.log"
+    }
+  },
+  {
+    "name": "hud-guidance-hidden",
+    "file": "apps/web/src/shell/shell.css",
+    "command": "pnpm test:e2e e2e/ui/baseline-hud.spec.ts --workers=1 --grep 'shared HUD keeps XP and every status chip visible at 1280x720$'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-control.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/hud-guidance-hidden.log"
+    }
+  },
+  {
+    "name": "f3-png",
+    "file": "apps/web/e2e/ui/f3-art.spec.ts",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 --grep 'F3 chapter 1 roster'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-png-control.log",
+      "contract_exit": 0
+    },
+    "mutant": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-png.log",
+      "files": [
+        "roster-ch1.png"
+      ],
+      "contract_exit": 1
+    },
+    "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate."
+  },
+  {
+    "name": "error-png",
+    "file": "apps/web/e2e/v2/errors-notice.spec.ts",
+    "command": "pnpm test:e2e e2e/v2/errors-notice.spec.ts --workers=1 --grep 'T1-T5:'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/error-png-control.log",
+      "contract_exit": 0
+    },
+    "mutant": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/error-png.log",
+      "files": [
+        "429-1280x720-dark.png",
+        "429-390x844-light.png"
+      ],
+      "contract_exit": 1
+    },
+    "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate."
+  },
+  {
+    "name": "f3-metrics",
+    "file": "apps/web/e2e/ui/f3-art.spec.ts",
+    "command": "pnpm test:e2e e2e/ui/f3-art.spec.ts --workers=1 --grep 'F3 canvas bake'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-metrics-control.log",
+      "contract_exit": 0
+    },
+    "mutant": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/f3-metrics.log",
+      "files": [
+        "bake-metrics.json"
+      ],
+      "contract_exit": 1
+    },
+    "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate."
+  },
+  {
+    "name": "g1-metrics",
+    "file": "apps/web/e2e/ui/g1-perf.spec.ts",
+    "command": "pnpm test:e2e e2e/ui/g1-perf.spec.ts --workers=1 --grep 'G1 demo'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g1-metrics-control.log",
+      "contract_exit": 0
+    },
+    "mutant": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g1-metrics.log",
+      "files": [
+        "metrics.json"
+      ],
+      "contract_exit": 1
+    },
+    "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate."
+  },
+  {
+    "name": "g3-metrics",
+    "file": "apps/web/e2e/ui/g3-combat.spec.ts",
+    "command": "pnpm test:e2e e2e/ui/g3-combat.spec.ts --workers=1 --grep 'G3 stage frame'",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g3-metrics-control.log",
+      "contract_exit": 0
+    },
+    "mutant": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/g3-metrics.log",
+      "files": [
+        "frame-metrics.json"
+      ],
+      "contract_exit": 1
+    },
+    "oracle": "No report artifact without opt-in. Browser exit and artifact contract exit are separate."
+  },
+  {
+    "name": "effects-inert-help",
+    "file": "apps/web/src/shell/Rail.tsx",
+    "command": "node tools/.grade-b-effects.mjs /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-inert-help --viewport=1280x720",
+    "control": {
+      "exit": 0,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-control-1280.log"
+    },
+    "mutant": {
+      "exit": 1,
+      "log": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/mutations/effects-inert-help.log"
+    }
+  }
+]

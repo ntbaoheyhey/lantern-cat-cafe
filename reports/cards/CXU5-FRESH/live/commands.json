@@ -1,0 +1,34 @@
+[
+  {
+    "name": "asset-before",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxu5 1b299c40513ff9f5330a91ad040791bbd4065df9 /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/artifact-before.json",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:05:21.712322+00:00",
+    "endedAt": "2026-11-02T18:05:35.787480+00:00"
+  },
+  {
+    "name": "check-live",
+    "command": "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:05:35.795055+00:00",
+    "endedAt": "2026-11-02T18:05:46.760184+00:00"
+  },
+  {
+    "name": "phased-path",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/live-phased.mjs /private/tmp/tbh-main-after-cxu5 1b299c40513ff9f5330a91ad040791bbd4065df9 /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/phased",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:05:46.768292+00:00",
+    "endedAt": "2026-11-02T18:06:51.742247+00:00"
+  },
+  {
+    "name": "asset-after",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxu5 1b299c40513ff9f5330a91ad040791bbd4065df9 /private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/live/artifact-after.json",
+    "head": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:06:51.750383+00:00",
+    "endedAt": "2026-11-02T18:06:54.382180+00:00"
+  }
+]

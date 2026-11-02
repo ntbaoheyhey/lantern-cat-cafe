@@ -1,0 +1,32 @@
+  }
+  const ok = kind === 'anonymous' ? status === 401 : [400, 413].includes(status);
+  return { ok, detail: `HTTP ${status}${ok ? '' : kind === 'anonymous' ? '; expected 401' : '; expected 413 or 400 (authentication may run before body validation)'}` };
+}
+
+export async function checkV2(fetcher = fetchT) {
+  for (const fn of V2_FUNCTIONS) {
+    for (const kind of ['options', 'anonymous', 'oversized']) {
+      await check(`function ${fn} ${kind}`, async () => {
+        const headers = { Origin: SITE };
+        const init = kind === 'options'
+          ? { method: 'OPTIONS', headers: { ...headers, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' } }
+          : { method: 'POST', headers: { ...headers, 'content-type': 'application/json' }, body: kind === 'oversized' ? JSON.stringify({ padding: 'x'.repeat(8193) }) : '{}' };
+        // No Authorization, apikey, session, .env or credential is read or sent.
+        const result = classifyV2Response(kind, await fetcher(`${SUPABASE}/functions/v1/${fn}`, init));
+        if (!result.ok) throw new Error(result.detail);
+        return result.detail;
+      });
+    }
+  }
+}
+
+// Contract addresses come from README.md (the "On-chain" table), the public record of the deployment.
+const readme = readFileSync(join(root, 'README.md'), 'utf8');
+const addressOf = (name) => {
+  const m = readme.match(new RegExp(`\\|\\s*${name}[^|]*\\|[^|]*?(0x[0-9a-fA-F]{40})`));
+  if (!m) throw new Error(`${name} address not found in README.md`);
+  return m[1];
+};
+
+let failed = 0;
+function report(ok, name, detail = '') {

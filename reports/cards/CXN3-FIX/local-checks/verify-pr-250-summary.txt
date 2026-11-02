@@ -1,0 +1,13 @@
+Verified outside GitHub Actions (scripts/verify-pr.sh, PR head merged with origin/main 1fb25ed):
+PASS  merge with latest main
+PASS  pnpm install
+PASS  generated deno.json has no drift
+PASS  typecheck
+PASS  lint
+PASS  unit tests
+PASS  build
+PASS  playwright e2e
+skip  forge test (no contract changes)
+PASS  verification worktree remains clean
+log: /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxn3-pr250-GGwefMJH/verify-pr-250.log
+worktree retained for inspection: /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxn3-pr250-GGwefMJH/verify-pr-250

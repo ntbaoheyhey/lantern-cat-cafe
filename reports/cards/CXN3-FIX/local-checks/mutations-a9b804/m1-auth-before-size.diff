@@ -1,0 +1,14 @@
+diff --git a/supabase/functions/_shared/v2/http.ts b/supabase/functions/_shared/v2/http.ts
+index 7df5ade..1ac2cec 100644
+--- a/supabase/functions/_shared/v2/http.ts
++++ b/supabase/functions/_shared/v2/http.ts
+@@ -99,8 +99,8 @@ export function handlerV2(http: HttpDeps, fn: (playerId: string, body: Record<st
+     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: http.json(req, {}).headers });
+     if (req.method !== "POST") return http.json(req, { error: "method_not_allowed" }, 405);
+     try {
+-      const bytes = await requestBytes(req);
+       const player = await http.authenticate(req);
++      const bytes = await requestBytes(req);
+       const refusal = await admit?.(player);
+       if (refusal) {
+         const res = http.json(req, { error: refusal.error, retryAfter: refusal.retryAfter }, refusal.status);

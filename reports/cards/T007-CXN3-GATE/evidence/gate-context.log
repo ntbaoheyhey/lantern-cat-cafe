@@ -1,0 +1,134 @@
+      "status": "done",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T006",
+      "title": "CXN3-FIX: merge PR #250 (check base, retarget to main if needed)",
+      "detail": "Resume file STEP 2. PR #250 is CONFLICTING (stacked on deleted BASE0 branch): retarget to main, rebase/resolve, then full gate. Goes BEFORE CXN3.",
+      "acceptance_criteria": [
+        "PR #250 merged on main or documented blocker",
+        "Main + live green"
+      ],
+      "depends_on": [
+        "T005"
+      ],
+      "priority": "P0",
+      "goal_link": "",
+      "status": "done",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T007",
+      "title": "CXN3: merge PR #244 through the full gate",
+      "detail": "Resume file STEP 2, same gate. No --v2 flag turned on before this is merged.",
+      "acceptance_criteria": [
+        "PR #244 merged or documented blocker",
+        "Main + live green"
+      ],
+      "depends_on": [
+        "T006"
+      ],
+      "priority": "P0",
+      "goal_link": "",
+      "status": "running",
+      "attempts": 1,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T008",
+      "title": "CXU5: merge PR #249 through the full gate",
+      "detail": "Resume file STEP 2, same gate.",
+      "acceptance_criteria": [
+        "PR #249 merged or documented blocker",
+        "Main + live green"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "feedback": "dependency blocked",
+      "auto": false,
+      "source": "seed",
+      "why": "",
+      "added": "2026-11-02 15:52:40",
+      "sigs": []
+    },
+    {
+      "id": "T014",
+      "title": "Reconcile the stale BASE0 release gate and prove current main equals live",
+      "detail": "T001 was closed from historical 74d60da receipts although its present-tense deployment criterion is false. Main is now 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a and live uses index-N5_1FrYv.js. Preserve the verified historical BASE0 checkpoint; have the orchestrator explicitly reconcile the stale task target against successor releases, then independently gate the exact intended current-main head and its deployment. Reuse the existing successor verification work if applicable. Do not roll back merged product work merely to satisfy the obsolete SHA assertion. Any release action must follow the existing authorized deployment path and safety restrictions.",
+      "acceptance_criteria": [
+        "T001 closure explicitly distinguishes historical 74d60da proof from current production verification and records the orchestrator-approved release target; no claim that the current site equals 74d60da while it differs.",
+        "Pin current main and tested heads, rerun typecheck/lint/unit/build/browser checks on that exact tree, and retain all failures as well as final outcomes.",
+        "Fresh production build bytes for the approved current-main target match every deployed emitted/public asset and the entry manifest during a stable observation window.",
+        "Rerun legacy live and merged-core phased journey at 1280x720 and 1600x900 against that verified deployment; record source and deployment identities in reports/.",
+        "Commit and push the new evidence checkpoint on ai/codex-mega-ledger with [skip ci], without direct main pushes, Actions, database-destructive operations or unauthorized edge deployments."
+      ],
+      "depends_on": [],
+      "priority": "P0",
+      "goal_link": "/Users/bao/taskbar-hero/.codex-orchestrator/GOAL.md \u2014 project completion criteria 1 (BASE0 live proof) and 5 (green main and live matches main)",
+      "status": "done",
+      "attempts": 1,
+      "feedback": "",
+      "auto": true,
+      "source": "corrective-of-T001",
+      "why": "",
+      "added": "2026-11-02 17:30:05",
+      "finished": "2026-11-02 18:07:55"
+    }
+  ]
+}# T014 — DONE
+- Historical BASE0 74d60da checkpoint 89664d7 preserved; T001 closure now explicitly separates it from current production.
+- Target authority: orchestrator's corrective-of-T001 T014 dispatch naming current main; GOAL/queue unchanged.
+- Approved/current-main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+- Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
+- Fresh typecheck/lint/unit/build PASS; 2,380 passing unit/script cases, inherited 2 expected-fail/11 skipped.
+# Taskbar Hero current handoff — T001 retry 2 closure
+Updated 2026-11-02 after auditing T014 and freshly rechecking all 32 production assets.
+T001 retry 2 only: STEP 1 a–d, under T014's approved current-main target; no suites rerun.
+Fresh live identity window: 11:12:13.885Z–11:12:17.918Z; all assets/HTML/entry match exact main.
+Evidence: reports/cards/T001-BASE0-CLOSURE-R2/REPORT.md; final commit in results/T001.json.
+All four historical heads, 66 original receipt files and 120 T014 checkpoint files verified.
+T001 status is DONE with the explicit target reconciliation; historical 74d60da is not current live.
+Earlier object-store lookup failure retained; corrected lookup resolves TESTED_HEAD in verifier repo.
+
+The following T014 results are adopted from its audited committed checkpoint, not rerun here.
+Ledger: ai/codex-mega-ledger; worktree /tmp/tbh-t001-ledger.
+Approved target/current main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
+Target authority: orchestrator corrective-of-T001 task T014; recorded dispatch in release-target.json.
+GOAL.md and queue.json unchanged. No rollback, product commit, PR, merge or deployment.
+T001 remains historical BASE0 proof at 74d60da, original checkpoint 89664d7 preserved.
+Its stale present-tense target is superseded by this explicitly assigned current-main gate.
+Successors already merged: FXRB #243, CXP1 #240, CXL1 #248, ART1 #247, CXN3-FIX #250.
+Fresh typecheck/lint/build/unit PASS; 2,380 passing unit/script cases, inherited 2 expected-fail/11 skip.
+Full browser: 289/289 at each 1280x720 and 1600x900, retries=0. Forge: 96/96.
+Production: 32/32 files match two fresh builds; HTML/manifest/all hashes stable 334.824 seconds.
+Live entry index-N5_1FrYv.js; window 10:34:33.965Z–10:40:08.789Z on 2026-11-02.
+Legacy live PASS; merged-core eight stages PASS at both sizes, zero browser/network errors.
+Current phase does not claim full nine-stage, boss victory, funded crafting or on-chain transactions.
+No Edge Function deployment identity is claimed; no --v2 live check before CXN3 merge.
+First new live harness disclosure-order failure retained; corrected observation matches prior harness.
+Historical verifier asset mismatch/unit timeout and passing unchanged unit rerun retained.
+Evidence: reports/cards/T014-CURRENT-MAIN-LIVE/REPORT.md and acceptance-prepublication.json.
+Publication and final all-five-criteria audit: .codex-orchestrator/verification/T014; result names commit.
+All task test sessions completed; ports 4670–4673 free. No helpers, agents, timers or schedules.
+Original dirty checkout untouched. Repo private; no keys stored, main push, Actions or .github edits.
+No destructive database operation, migration, release, real funds or contest submission.
+No user step or duplicate follow-up for T014. Return control to orchestrator.
+Next: return to orchestrator; reconcile existing successor task states before further work.

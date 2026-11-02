@@ -1,0 +1,11 @@
+file:///private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/mutants-b.mjs:18
+if (control.status !== 0) { rmSync(scratch, { recursive: true }); throw Error('Scratch control failed'); }
+                                                                        ^
+
+Error: Scratch control failed
+    at file:///private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/mutants-b.mjs:18:73
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.2

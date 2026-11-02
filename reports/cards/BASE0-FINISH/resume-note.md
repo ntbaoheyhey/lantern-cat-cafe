@@ -1,0 +1,1 @@
+Historical pause evidence remains preserved in the inherited source and handoff archives. CONTROL.md explicitly authorizes this resume. No top-level source pause marker was found; no new pause has been removed.

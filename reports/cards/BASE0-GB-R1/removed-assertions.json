@@ -1,0 +1,10 @@
+[
+  {
+    "file": "apps/web/e2e/smoke.spec.ts",
+    "old": "  expect(box?.width).toBe(1280);"
+  },
+  {
+    "file": "supabase/tests/src/deno-imports.test.ts",
+    "old": "  expect(result.stderr.trim().split(\"\\n\").filter(line => line && !known.test(line))).toEqual([]);"
+  }
+]

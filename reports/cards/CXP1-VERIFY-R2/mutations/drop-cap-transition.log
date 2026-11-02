@@ -1,0 +1,58 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web
+> vitest run src/pets/state.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web
+
+ ❯ src/pets/state.test.ts (17 tests | 2 failed) 134ms
+   × handles unavailable storage and rejects invalid deltas without breaking play 5ms
+   × publishes the transition to the count cap once and keeps later no-op claims stable 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/state.test.ts > handles unavailable storage and rejects invalid deltas without breaking play
+AssertionError: expected { 'claimed-idle-kills': 1 } to deeply equal { Object (claimed-idle-kills) }
+
+- Expected
++ Received
+
+  {
+-   "claimed-idle-kills": 9007199254740991,
++   "claimed-idle-kills": 1,
+  }
+
+ ❯ src/pets/state.test.ts:76:42
+     74|   store.recordClaimedKills(Number.MAX_SAFE_INTEGER);
+     75|   store.recordClaimedKills(1);
+     76|   expect(store.getSnapshot().killCounts).toEqual(kills(Number.MAX_SAFE…
+       |                                          ^
+     77|   expect(store.equip(first).ok).toBe(true);
+     78| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/pets/state.test.ts > publishes the transition to the count cap once and keeps later no-op claims stable
+AssertionError: expected { version: 1, …(2) } not to be { version: 1, …(2) } // Object.is equality
+
+Compared values have no visual difference.
+
+ ❯ src/pets/state.test.ts:89:24
+     87|     store.recordClaimedKills(2);
+     88|     const capped = store.getSnapshot();
+     89|     expect(capped).not.toBe(beforeCap);
+       |                        ^
+     90|     expect(capped.killCounts).toEqual(kills(Number.MAX_SAFE_INTEGER));
+     91|     expect(listener).toHaveBeenCalledOnce();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 15 passed (17)
+   Start at  09:55:13
+   Duration  888ms (environment 53%, tests 17%, import 17%, transform 12%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/pets/state.test.ts`
+Exit status 1

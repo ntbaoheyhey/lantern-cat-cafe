@@ -1,0 +1,41 @@
+a9b804cec74c866b0b06ca69142d10db3b642a75
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+> vitest run src/v2-body-limits.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests
+
+ ❯ src/v2-body-limits.test.ts (27 tests | 1 failed) 25ms
+   × retains object-only JSON validation after authentication ([]) 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2-body-limits.test.ts > retains object-only JSON validation after authentication ([])
+AssertionError: expected 200 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 200
+
+ ❯ src/v2-body-limits.test.ts:95:47
+     93| it.each([null, "[", "null", "[]"])("retains object-only JSON validatio…
+     94|   const r = route();
+     95|   expect((await r.handle(post(body))).status).toBe(400);
+       |                                               ^
+     96|   expect(r.authenticate).toHaveBeenCalledOnce();
+     97|   expect(r.admit).toHaveBeenCalledOnce();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 26 passed (27)
+   Start at  02:15:44
+   Duration  1.06s (import 71%, tests 14%, transform 14%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxn3-fix-mutants/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run src/v2-body-limits.test.ts`
+Exit status 1

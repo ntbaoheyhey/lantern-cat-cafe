@@ -1,0 +1,50 @@
+[
+  {
+    "name": "chance-unit",
+    "path": "apps/web/src/layout/boss/mapDetails.ts",
+    "from": "line.chance * 100",
+    "to": "line.chance * 10",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "invert-history-win",
+    "path": "apps/web/src/layout/bossPresentation.ts",
+    "from": "won: fight.result.won",
+    "to": "won: !fight.result.won",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "off-by-one-history-bound",
+    "path": "apps/web/src/layout/bossPresentation.ts",
+    "from": ".slice(0, 30)",
+    "to": ".slice(0, 29)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "truncate-visible-runs",
+    "path": "apps/web/src/layout/boss/BossMapScreen.tsx",
+    "from": ".slice(0, 3)",
+    "to": ".slice(0, 2)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "first-timeline-duration",
+    "path": "apps/web/src/layout/bossPresentation.ts",
+    "from": "fight.result.timeline.at(-1)?.t",
+    "to": "fight.result.timeline.at(0)?.t",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "compact-fallback",
+    "path": "apps/web/src/layout/boss/BossMapScreen.tsx",
+    "from": "if (compact) return",
+    "to": "if (false) return",
+    "exit": 1,
+    "killed": true
+  }
+]

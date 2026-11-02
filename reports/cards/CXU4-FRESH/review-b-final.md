@@ -1,0 +1,9 @@
+# CXU4 final clean review
+
+Exact d969f16; fresh tests completed before the full origin/main diff review starting20:02:28UTC. The previously failing unmodified control is green and all12 B mutants are assertion failures after that control. No source changes during review.
+
+Checked modal stack ownership, simultaneous/out-of-order close, native disabled focus exclusion and layout-effect restoration before paint. The browser observer adds a real commit-boundary invariant while the original immediate status/focus assertions stay intact. Hero uses equipped items and shared rules, with a telescoping exact power breakdown. Existing class API/loop callbacks are reused; failures preserve state and remain visible. Help extraction is byte-equivalent under the three preserved configurations; current fixture hash matches the independent actual-main oracle. Phrase search handles inline punctuation/values/whitespace. Primary navigation and independent static stub now match the actual contract.
+
+Reviewed all application, test, fixture, manifest, decision and report changes. Existing selector adaptations retain nine slots and all six answers; desktop coverage expands. No skipped/deleted assertions or threshold/timeout/retry weakening. No backend/rules/assets/contracts/dependency/.github/provider/flag edits. Old source-report status is a builder snapshot; the ledger is current.
+
+Design deductions are limited to real data density, typed tab-host row and existing plain-integer Hero formatting. Code-quality deduction is the duplicate muted/surface-2 contrast case. CSS-only gzip growth is explicitly justified in decisions.md; no new font/framework/asset. A and B share the one exact-head full browser matrix per user efficiency instruction; B independently reran core/unit/build/classic,360 changed-spec repeats,38 classic browser cases,96 Forge cases, ABI drift, UI/effects and12 mutants.

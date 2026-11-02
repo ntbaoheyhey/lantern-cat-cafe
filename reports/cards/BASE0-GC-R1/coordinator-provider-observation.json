@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-01T19:39:31+07:00",
+  "nativeAgent": "/root/base0_grade_c_r1",
+  "event": "Native turn failed after retry limit with provider HTTP429; detached processes may continue",
+  "firstBackoffSeconds": 120,
+  "resumeNotBefore": "2026-11-01T19:41:31+07:00",
+  "maxNativeWorkers": 1,
+  "limitUntilAtLeast": "2026-11-01T20:09:31+07:00",
+  "nextBackoffsSeconds": [
+    240,
+    480
+  ],
+  "model": "gpt-6-astra",
+  "effort": "ultra",
+  "lastObservedRunningPids": [
+    40484,
+    41436
+  ]
+}

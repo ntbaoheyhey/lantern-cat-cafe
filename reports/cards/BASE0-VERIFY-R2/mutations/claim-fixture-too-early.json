@@ -1,0 +1,39 @@
+{
+  "name": "claim-fixture-too-early",
+  "kind": "mutant",
+  "head": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "cwd": "/Users/bao/.codex/worktrees/mega-base0-mutants-280ff4b/taskbar-hero",
+  "args": [
+    "pnpm",
+    "--filter",
+    "@taskbar-hero/supabase-tests",
+    "exec",
+    "vitest",
+    "run",
+    "src/fixture-clock.test.ts",
+    "src/forge.test.ts",
+    "v2/functions-forge.test.ts"
+  ],
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4400",
+    "E2E_PORT_V2": "4401",
+    "E2E_PORT_SERVER": "4402",
+    "E2E_PORT_API": "4403",
+    "E2E_VIEWPORT": "1280x720"
+  },
+  "start": "2026-11-01T12:43:47.921Z",
+  "portFreeCheckExit": 1,
+  "end": "2026-11-01T12:43:50.676Z",
+  "testExit": 1,
+  "contractExit": null,
+  "combinedExit": 1,
+  "status": "killed",
+  "reason": "",
+  "expectedFailurePattern": "FAIL.*functions-forge.test.ts",
+  "signal": null,
+  "error": null
+}

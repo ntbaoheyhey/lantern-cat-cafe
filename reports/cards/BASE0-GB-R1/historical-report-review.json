@@ -1,0 +1,1064 @@
+[
+  {
+    "file": "reports/base0.md",
+    "line_count": 59,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "STATUS: IN-PROGRESS"
+      },
+      {
+        "line": 5,
+        "text": "Base: origin/main 1fb25ed. Branch: ai/codex-mega-deno0 (DENO0 was folded into this prerequisite before edits). No score, merge, deployment or full-suite PASS is claimed here."
+      },
+      {
+        "line": 9,
+        "text": "1. The Deno generator omitted explicit index-module aliases while generating directory aliases. Five imports across sixteen function maps therefore failed resolution. Include index modules, retain directory aliases, test generation in isola"
+      },
+      {
+        "line": 11,
+        "text": "3. The new shell imported HUD primitives without their shared stylesheet or grid wrapper. Narrow content grew to 138px/214px inside a clipped 70px header. Restore the primitive stylesheet/grid classes. On the existing phone layout, keep sta"
+      },
+      {
+        "line": 17,
+        "text": "- supabase/tests/src/deno-imports.test.ts: the existing expected-failure case becomes a normal test with identical success assertions because explicit-index resolution is repaired. The companion test no longer filters out known index failur"
+      },
+      {
+        "line": 19,
+        "text": "- New generator fixtures cover root/nested index keys, ordinary modules, directory aliases, test/fixture exclusions, deterministic output and untouched auth mappings. Six scratch mutants all fail these tests; no mutant remains in the source"
+      },
+      {
+        "line": 23,
+        "text": "[Generator tests and mutations](scorecard/deno0/logs/) and [browser iteration logs](scorecard/base0/logs/) preserve actual commands and exit codes. Earlier failed iterations remain failures; later checks do not relabel them."
+      },
+      {
+        "line": 25,
+        "text": "- Generator tests: 5 pass, exit 0."
+      },
+      {
+        "line": 26,
+        "text": "- Deno guard: 18 functions clean, exit 0."
+      },
+      {
+        "line": 27,
+        "text": "- Scratch mutations: 6/6 detected, each mutant exits 1."
+      },
+      {
+        "line": 28,
+        "text": "- Focused Deno regression suite: 4 pass; StageScene/Hud units: 15 pass. These were run locally before the complete gate and will be re-run with saved output."
+      },
+      {
+        "line": 29,
+        "text": "- Full verification, all-screen audits/effects, repeat checks, independent grading, PR-wrapper, production-config/live smoke and post-merge checks: NOT VERIFIED at this commit."
+      },
+      {
+        "line": 41,
+        "text": "The complete exploratory run at the first BASE0 commit finished 253 passed / 1 failed: the legacy 390px topbar must remain <=72px. Its assertion was retained, and compact guidance/status separation plus the inherited sync-label line height "
+      },
+      {
+        "line": 43,
+        "text": "The native 1600x900 complete run found one test assumption: classic smoke asserted exactly 1280px regardless of its configured viewport (253 passed, 1 failed). Old -> new: exact width 1280 becomes exact configured initial width (1280 or 160"
+      },
+      {
+        "line": 47,
+        "text": "The independent reviewer observed ancestor clipping in the low-power HUD state at both desktop sizes, which the strong-fixture audit did not cover. The shared HUD reserves a warning row; the fixed-height shell did not. The header now grows "
+      },
+      {
+        "line": 53,
+        "text": "The inherited forge SQL fixture expired when database NOW() passed its fixed 10:00 UTC clock: five of seventeen existing cases failed. The same expired clock also violates the voucher expiry/creation constraint after its TTL elapses. Each c"
+      },
+      {
+        "line": 55,
+        "text": "Tier 2 decision: this isolated test-fixture repair is required for the current root-unit baseline; advancing the test clock preserves the production contract and avoids a calendar-dependent future cutoff. Reversal would restore the observed"
+      },
+      {
+        "line": 59,
+        "text": "The successor full unit gate at07d219b found63 failures in six more inherited voucher/concurrency suites after SQL NOW() passed their fixed voucher expiry. The shared test-only databaseFixtureClock now chooses10:00UTC on the following datab"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-focused-1280.log",
+    "line_count": 96,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-focused-1280\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts e2e/ui/u2-hud.spec.ts"
+      },
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 31,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 58,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 61,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 64,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 66,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 75,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 78,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 80,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 83,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 94,
+        "text": "  32 passed (31.5s)"
+      },
+      {
+        "line": 96,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-focused-1600.log",
+    "line_count": 96,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-focused-1600\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts e2e/ui/u2-hud.spec.ts"
+      },
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 31,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 59,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 62,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 65,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 68,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 76,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 79,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 82,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 84,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 94,
+        "text": "  32 passed (25.7s)"
+      },
+      {
+        "line": 96,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-lint.log",
+    "line_count": 20,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-lint\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm lint\", \"environment\": {\"VITE_SUPABASE_URL\": \"\", \"VITE_SUPABASE_ANON_KEY\": \"\", \"E2"
+      },
+      {
+        "line": 20,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1280.log",
+    "line_count": 305,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-repeat10-1280\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --repeat-each=10 --w"
+      },
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 31,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 52,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 56,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 58,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 60,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 62,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 64,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 66,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 68,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 76,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 80,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 82,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 84,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 86,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 88,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 90,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 94,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 104,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 108,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 110,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 112,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 114,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 116,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 118,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 120,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 128,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 132,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 134,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 136,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 138,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 140,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 142,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 146,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-repeat10-1600.log",
+    "line_count": 306,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-repeat10-1600\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --repeat-each=10 --w"
+      },
+      {
+        "line": 18,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 32,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 55,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 57,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 59,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 61,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 63,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 65,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 67,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 69,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 79,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 81,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 83,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 85,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 87,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 89,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 91,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 93,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 107,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 109,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 111,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 113,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 115,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 117,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 119,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 121,
+        "text": "{\"viewport\":{\"width\":1280,\"height\":720},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 131,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 133,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"normal\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":25"
+      },
+      {
+        "line": 135,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 137,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"offline\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":2"
+      },
+      {
+        "line": 139,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 141,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"429\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 143,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      },
+      {
+        "line": 145,
+        "text": "{\"viewport\":{\"width\":1600,\"height\":900},\"state\":\"503\",\"fallback\":true,\"xp\":{\"width\":160,\"height\":10,\"fill\":0,\"inner\":156,\"now\":0,\"max\":60},\"textGeometry\":{\"text\":\"Next: Explore the chapter and challenge its boss\",\"fontSize\":12,\"width\":257.4"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-screens.log",
+    "line_count": 55,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-screens\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --grep 'shared HUD' --work"
+      },
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 31,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 53,
+        "text": "  4 passed (13.8s)"
+      },
+      {
+        "line": 55,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-typecheck.log",
+    "line_count": 20,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-typecheck\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm typecheck\", \"environment\": {\"VITE_SUPABASE_URL\": \"\", \"VITE_SUPABASE_ANON_KEY"
+      },
+      {
+        "line": 20,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/logs/resume-units.log",
+    "line_count": 16,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-units\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --filter @taskbar-hero/web test src/shell/Hud.test.tsx src/shell/ScreenFrame.tes"
+      },
+      {
+        "line": 10,
+        "text": " Test Files  5 passed (5)"
+      },
+      {
+        "line": 11,
+        "text": "      Tests  21 passed (21)"
+      },
+      {
+        "line": 16,
+        "text": "EXIT: 0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/resume-commands.jsonl",
+    "line_count": 8,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"resume-focused-1280\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts e2e/ui/u2-hud.spec.ts"
+      },
+      {
+        "line": 2,
+        "text": "{\"name\": \"resume-units\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --filter @taskbar-hero/web test src/shell/Hud.test.tsx src/shell/ScreenFrame.tes"
+      },
+      {
+        "line": 3,
+        "text": "{\"name\": \"resume-lint\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm lint\", \"environment\": {\"VITE_SUPABASE_URL\": \"\", \"VITE_SUPABASE_ANON_KEY\": \"\", \"E2"
+      },
+      {
+        "line": 4,
+        "text": "{\"name\": \"resume-typecheck\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm typecheck\", \"environment\": {\"VITE_SUPABASE_URL\": \"\", \"VITE_SUPABASE_ANON_KEY"
+      },
+      {
+        "line": 5,
+        "text": "{\"name\": \"resume-repeat10-1280\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --repeat-each=10 --w"
+      },
+      {
+        "line": 6,
+        "text": "{\"name\": \"resume-repeat10-1600\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --repeat-each=10 --w"
+      },
+      {
+        "line": 7,
+        "text": "{\"name\": \"resume-focused-1600\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts e2e/ui/u2-hud.spec.ts"
+      },
+      {
+        "line": 8,
+        "text": "{\"name\": \"resume-screens\", \"cwd\": \"/Users/bao/.codex/worktrees/mega-base0-hud/taskbar-hero\", \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\", \"command\": \"pnpm --dir apps/web test:e2e e2e/ui/baseline-hud.spec.ts --grep 'shared HUD' --work"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/resume-integrity.json",
+    "line_count": 12,
+    "evidence_markers": [
+      {
+        "line": 2,
+        "text": "  \"scope\": \"HUD repair diff against starting HEAD only\","
+      },
+      {
+        "line": 3,
+        "text": "  \"bypass_suppression_retry_timeout_hits\": {"
+      },
+      {
+        "line": 4,
+        "text": "    \"test bypass\": [],"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/resume-secret-scan.json",
+    "line_count": 31,
+    "evidence_markers": []
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/resume-source.json",
+    "line_count": 36,
+    "evidence_markers": [
+      {
+        "line": 2,
+        "text": "  \"head\": \"42028adc2b1a5728a1f2896c47e7ca347c319c8b\","
+      },
+      {
+        "line": 10,
+        "text": "        \"exit\": 0,"
+      },
+      {
+        "line": 23,
+        "text": "        \"exit\": 0,"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-repair/run-check.py",
+    "line_count": 31,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "\"\"\"Run an explicitly supplied scoped command, preserving cwd, public env and exit.\"\"\""
+      },
+      {
+        "line": 14,
+        "text": "record = {'name': name, 'cwd': str(root), 'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(), 'command': shlex.join(command), 'environment': settings, 'started': datetime.datetime.now(datetime.timezon"
+      },
+      {
+        "line": 24,
+        "text": "    record['exit'] = result.returncode"
+      },
+      {
+        "line": 26,
+        "text": "    output.write(f'\\nEXIT: {result.returncode}\\n')"
+      },
+      {
+        "line": 31,
+        "text": "sys.exit(result.returncode)"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/hud-resume-handoff.md",
+    "line_count": 67,
+    "evidence_markers": [
+      {
+        "line": 3,
+        "text": "STATUS: PARTIAL \u2014 targeted HUD repair verified and ready for parent integration; complete BASE0 gates and grading remain pending."
+      },
+      {
+        "line": 5,
+        "text": "- Starting HEAD: `42028adc2b1a5728a1f2896c47e7ca347c319c8b` (detached)."
+      },
+      {
+        "line": 10,
+        "text": "- Interrupted pre-pause repeats remain NOT VERIFIED; old logs are historical. Fresh commands use unique resume- names and empty VITE_SUPABASE_URL/VITE_SUPABASE_ANON_KEY."
+      },
+      {
+        "line": 11,
+        "text": "- Resume focused browser regression is running; node --check of inspect-reference.mjs passed."
+      },
+      {
+        "line": 17,
+        "text": "HEAD remains 42028adc2b1a5728a1f2896c47e7ca347c319c8b; saved source unchanged. Fresh results in hud-repair/logs/: resume-focused-1280.log (32/32), resume-units.log (21/21), resume-typecheck.log (exit 0), resume-lint.log (exit 0), resume-rep"
+      },
+      {
+        "line": 23,
+        "text": "Both changed-spec repeat10 commands passed: 120/120 with E2E_VIEWPORT=1280x720 and 120/120 with E2E_VIEWPORT=1600x900; zero failures/retries. The spec explicitly exercises both viewport sizes in each run (normal/gated preview and normal/off"
+      },
+      {
+        "line": 33,
+        "text": "| Focused browser regression, default 1280\u00d7720 | PASS 32/32 | resume-focused-1280.log |"
+      },
+      {
+        "line": 34,
+        "text": "| Same regression, E2E_VIEWPORT=1600x900 | PASS 32/32 | resume-focused-1600.log |"
+      },
+      {
+        "line": 35,
+        "text": "| Changed HUD spec, repeat-each=10, E2E_VIEWPORT=1280x720 | PASS 120/120 | resume-repeat10-1280.log |"
+      },
+      {
+        "line": 36,
+        "text": "| Changed HUD spec, repeat-each=10, E2E_VIEWPORT=1600x900 | PASS 120/120 | resume-repeat10-1600.log |"
+      },
+      {
+        "line": 37,
+        "text": "| HUD/ScreenFrame/HudBar/a11y/contrast units | PASS 21/21 | resume-units.log |"
+      },
+      {
+        "line": 38,
+        "text": "| Repository typecheck | PASS exit 0 | resume-typecheck.log |"
+      },
+      {
+        "line": 39,
+        "text": "| Repository lint | PASS exit 0 | resume-lint.log |"
+      },
+      {
+        "line": 40,
+        "text": "| SCREENSHOTS=1 shared-HUD tests, both explicit sizes | PASS 4/4 | resume-screens.log |"
+      },
+      {
+        "line": 42,
+        "text": "All browser runs rebuilt their preview targets, used pnpm 10.28.0 and ports 4380\u20134383 after a free-port check. V2 preview runs have empty VITE_SUPABASE_URL/ANON_KEY; error-state cases use the existing isolated local server fixture. No runni"
+      },
+      {
+        "line": 51,
+        "text": "Focused runs include baseline-hud, u2-hud, u3-layout, resize, resize-burst and classic smoke. The changed spec sets both desktop sizes explicitly in each invocation, so 120 cases per run include 40 normal/gated nonzero-XP cases and 80 local"
+      },
+      {
+        "line": 60,
+        "text": "- Only newly added local HTTP cases permit exact blocked-font and deliberately injected 429/503 browser resource errors. No unexpected console/page errors passed. No bypass, suppression, timeout/retry increase, source console.log, deleted t"
+      },
+      {
+        "line": 61,
+        "text": "- Targeted secret-pattern scan is clean; [scan scope](hud-repair/resume-secret-scan.json) is explicit and does not claim a repository/history scan. git diff --check passed. TypeScript-transpiled Hud.tsx/spec passed node --check; source hash"
+      },
+      {
+        "line": 65,
+        "text": "Integrate the delivered detached commit into BASE0, reconciling docs/design/decisions.md with any parent additions. Complete integrated full suites at both sizes, other changed-spec repeats, current mutation checks, all-screen audits/effect"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/logs-before-geometry.json",
+    "line_count": 298,
+    "evidence_markers": []
+  },
+  {
+    "file": "reports/scorecard/base0/logs/focused-browser-r2.log",
+    "line_count": 201,
+    "evidence_markers": [
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 30,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 193,
+        "text": "  4 failed"
+      },
+      {
+        "line": 198,
+        "text": "  12 passed (35.3s)"
+      },
+      {
+        "line": 199,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      },
+      {
+        "line": 201,
+        "text": "EXIT_CODE=1"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/logs/focused-browser-r3.log",
+    "line_count": 115,
+    "evidence_markers": [
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 30,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 109,
+        "text": "  2 failed"
+      },
+      {
+        "line": 112,
+        "text": "  14 passed (33.0s)"
+      },
+      {
+        "line": 113,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      },
+      {
+        "line": 115,
+        "text": "EXIT_CODE=1"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/logs/focused-browser-r4.log",
+    "line_count": 46,
+    "evidence_markers": [
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 30,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 44,
+        "text": "  16 passed (24.2s)"
+      },
+      {
+        "line": 46,
+        "text": "EXIT_CODE=0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/logs/focused-browser.log",
+    "line_count": 138,
+    "evidence_markers": [
+      {
+        "line": 17,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 30,
+        "text": "[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line"
+      },
+      {
+        "line": 131,
+        "text": "  3 failed"
+      },
+      {
+        "line": 135,
+        "text": "  13 passed (33.7s)"
+      },
+      {
+        "line": 136,
+        "text": "\u2009ELIFECYCLE\u2009 Command failed with exit code 1."
+      },
+      {
+        "line": 138,
+        "text": "EXIT_CODE=1"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/base0/logs/results.jsonl",
+    "line_count": 4,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"focused-browser\", \"exitCode\": 1, \"seconds\": 34.62, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/base0/logs/focused-browser.log\"}"
+      },
+      {
+        "line": 2,
+        "text": "{\"name\": \"focused-browser-r2\", \"exitCode\": 1, \"seconds\": 35.81, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/base0/logs/focused-browser-r2.log\"}"
+      },
+      {
+        "line": 3,
+        "text": "{\"name\": \"focused-browser-r3\", \"exitCode\": 1, \"seconds\": 33.49, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/base0/logs/focused-browser-r3.log\"}"
+      },
+      {
+        "line": 4,
+        "text": "{\"name\": \"focused-browser-r4\", \"exitCode\": 0, \"seconds\": 24.61, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/base0/logs/focused-browser-r4.log\"}"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/deno0/logs/generator-tests.log",
+    "line_count": 17,
+    "evidence_markers": [
+      {
+        "line": 10,
+        "text": "\u2139 pass 5"
+      },
+      {
+        "line": 11,
+        "text": "\u2139 fail 0"
+      },
+      {
+        "line": 17,
+        "text": "EXIT_CODE=0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/deno0/logs/import-guard.log",
+    "line_count": 5,
+    "evidence_markers": [
+      {
+        "line": 5,
+        "text": "EXIT_CODE=0"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/deno0/logs/mutations.json",
+    "line_count": 32,
+    "evidence_markers": [
+      {
+        "line": 5,
+        "text": "    \"exitCode\": 1"
+      },
+      {
+        "line": 10,
+        "text": "    \"exitCode\": 1"
+      },
+      {
+        "line": 15,
+        "text": "    \"exitCode\": 1"
+      },
+      {
+        "line": 20,
+        "text": "    \"exitCode\": 1"
+      },
+      {
+        "line": 25,
+        "text": "    \"exitCode\": 1"
+      },
+      {
+        "line": 30,
+        "text": "    \"exitCode\": 1"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/deno0/logs/mutations.log",
+    "line_count": 445,
+    "evidence_markers": [
+      {
+        "line": 11,
+        "text": "\u2139 pass 1"
+      },
+      {
+        "line": 12,
+        "text": "\u2139 fail 4"
+      },
+      {
+        "line": 18,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 118,
+        "text": "EXIT_CODE=1"
+      },
+      {
+        "line": 129,
+        "text": "\u2139 pass 3"
+      },
+      {
+        "line": 130,
+        "text": "\u2139 fail 2"
+      },
+      {
+        "line": 136,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 192,
+        "text": "EXIT_CODE=1"
+      },
+      {
+        "line": 203,
+        "text": "\u2139 pass 4"
+      },
+      {
+        "line": 204,
+        "text": "\u2139 fail 1"
+      },
+      {
+        "line": 210,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 237,
+        "text": "EXIT_CODE=1"
+      },
+      {
+        "line": 248,
+        "text": "\u2139 pass 4"
+      },
+      {
+        "line": 249,
+        "text": "\u2139 fail 1"
+      },
+      {
+        "line": 255,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 284,
+        "text": "EXIT_CODE=1"
+      },
+      {
+        "line": 295,
+        "text": "\u2139 pass 2"
+      },
+      {
+        "line": 296,
+        "text": "\u2139 fail 3"
+      },
+      {
+        "line": 302,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 383,
+        "text": "EXIT_CODE=1"
+      },
+      {
+        "line": 394,
+        "text": "\u2139 pass 4"
+      },
+      {
+        "line": 395,
+        "text": "\u2139 fail 1"
+      },
+      {
+        "line": 401,
+        "text": "\u2716 failing tests:"
+      },
+      {
+        "line": 445,
+        "text": "EXIT_CODE=1"
+      }
+    ]
+  },
+  {
+    "file": "reports/scorecard/deno0/logs/results.jsonl",
+    "line_count": 2,
+    "evidence_markers": [
+      {
+        "line": 1,
+        "text": "{\"name\": \"generator-tests\", \"exitCode\": 0, \"seconds\": 0.13, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/deno0/logs/generator-tests.log\"}"
+      },
+      {
+        "line": 2,
+        "text": "{\"name\": \"import-guard\", \"exitCode\": 0, \"seconds\": 0.17, \"log\": \"/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/deno0/logs/import-guard.log\"}"
+      }
+    ]
+  }
+]

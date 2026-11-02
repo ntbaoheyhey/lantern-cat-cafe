@@ -1,0 +1,15 @@
+STATUS: SUCCESSOR PRELIMINARY CHECKS PASSED — not full gates or a grade.
+
+# CXU4 Hero/Help integration preflight
+
+Observed 2026-11-02T00:07:07+07:00. Tested detached b06a68d601bb09f5122bad163ac836891266f021, tree 695173a8e2e20731db95ab30233ec658b1ccb802, combines saved CXU4 source snapshotbb39ba5 with the prospective queue throughCXU5. Application code merged clean; the design index retains every decision. Original29source/decision-file bytes remain preserved.
+
+R1exact3a34e8c failed before browser verification:55unit tests passed but HelpTab.search.test.tsx could not load the saved Help-string oracle. The coordinator snapshot had omitted that existing report fixture. R1raw failure remains in ../CXU4-PREFLIGHT-R1. Successorb06a68d adds only the existing3809-byte fixture with SHA2564d774f0a789fea4188cd5b1500542fc94a96be6b2734f5f5a121fbe6b04f2696. An independent local rendering of baseline1fb25ed Help verifies the oracle for base, firstClear and classic; no expected string was regenerated from the new implementation.
+
+Successor results:58focused component/contrast tests passed; webtypecheck passed;200browser repeat10 cases passed across the four selected specs, including both required desktop sizes and preserved mobile coverage; effects10/10 passed separately at1280×720 and1600×900. One additional oracle integrity test passed. All seven recorded commands exited0 with unchanged testedHEAD. No retry/skip/assertion/timeout reduction. Effects visited all9manifest screens in normal and reduced motion, including the new Hero/Help and Map/Boss. The port-only helper changes5198to4444 and is removed afterward.
+
+The browser suite declares its own viewport matrix. Effect commands select their actual size with explicit --viewport flags; the shared log prefix's E2E_VIEWPORT=1280x720 is only the initial environment, not an assertion that every internal case/effect ran at1280. Raw commands and effect summaries preserve this distinction. No delivered PNG; inspection videos stay local-only and are excluded from publication.
+
+Saved source is now committed LOCALLY on ai/codex-cxu4 asd408ada368a05c078dcd97bbd61f4e4b1dbc238b (30files, including the original fixture), with required author andskipCI suffix. Original source bytes were checked before/after commit; historical dirty reports/media remain untouched. This local source commit is based on1fb25ed and has not been pushed or assigned a PR. The tests above ran on integratedb06a68d, not on that separate local commit. Full actual-main integration and verification remain mandatory.
+
+Cleanup: integratedcheckout clean; runner43392stopped;4440–4444free. Verified local recovery bundles: /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxu4-integrated-b06a68d.bundle and /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxu4-source-d408ada.bundle; both require existingmain1fb25ed. Exact commands/HEAD/exits: checks/results.jsonl. Complete full-suite/reference/UIaudit/keyboard/contrast/G5/wrapper/bundle/link gates, fresh mutants, independent scores, PRpublication, merge/live verification remain pending. This scoped preflight does not certify all those requirements.

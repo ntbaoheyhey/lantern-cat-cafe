@@ -1,0 +1,121 @@
+[
+  {
+    "name": "candidate-typecheck",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "pnpm typecheck",
+    "exit": 0,
+    "log": "final-typecheck.log"
+  },
+  {
+    "name": "candidate-lint",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "pnpm lint",
+    "exit": 0,
+    "log": "final-lint.log"
+  },
+  {
+    "name": "candidate-unit",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "CI=true pnpm test",
+    "exit": 0,
+    "log": "final-unit.log"
+  },
+  {
+    "name": "candidate-classic-build",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= pnpm --filter @taskbar-hero/web build",
+    "exit": 0,
+    "log": "classic-build.log"
+  },
+  {
+    "name": "candidate-bundle",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "node scripts/check-bundle.mjs",
+    "exit": 0,
+    "log": "bundle.log"
+  },
+  {
+    "name": "candidate-links",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "node scripts/check-links.mjs",
+    "exit": 0,
+    "log": "final-links.log"
+  },
+  {
+    "name": "candidate-browser-1600",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "CI=true SCREENSHOTS=0 E2E_PORT_CLASSIC=4680 E2E_PORT_V2=4681 E2E_PORT_SERVER=4682 E2E_PORT_API=4683 E2E_VIEWPORT=1600x900 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "exit": 0,
+    "log": "browser-1600.log"
+  },
+  {
+    "name": "safe-verifier",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "CI=true FORCE_ALL=1 SCREENSHOTS=0 E2E_PORT_CLASSIC=4690 E2E_PORT_V2=4691 E2E_PORT_SERVER=4692 E2E_PORT_API=4693 E2E_VIEWPORT=1280x720 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= TMPDIR=/tmp/tbh-t007-safe-verifier bash scripts/verify-pr.sh 244 (cwd /tmp/tbh-t001-ledger)",
+    "exit": 0,
+    "log": "safe-verifier-raw.log"
+  },
+  {
+    "name": "main-typecheck",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "pnpm typecheck",
+    "exit": 0,
+    "log": "main-typecheck.log"
+  },
+  {
+    "name": "main-lint",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "pnpm lint",
+    "exit": 0,
+    "log": "main-lint.log"
+  },
+  {
+    "name": "main-unit",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "CI=true pnpm test",
+    "exit": 0,
+    "log": "main-unit.log"
+  },
+  {
+    "name": "main-build",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "pnpm build",
+    "exit": 0,
+    "log": "main-build.log"
+  },
+  {
+    "name": "legacy-live",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "node scripts/check-live.mjs",
+    "exit": 0,
+    "log": "legacy-live.log"
+  },
+  {
+    "name": "read-only-catalog",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "supabase db query --linked --project-ref qoalewtxflagoprrxrgh --file docs/proposals/sql/check-live-schema.sql -o json",
+    "exit": 0,
+    "log": "live-schema-catalog.json"
+  },
+  {
+    "name": "source-export-blocker",
+    "testedHead": "db0f9d64c408825a832d808bc31cfd88f1c3a014",
+    "command": "supabase functions download v2-state --project-ref qoalewtxflagoprrxrgh --use-api --workdir /tmp/tbh-t007-live-source",
+    "exit": 1,
+    "log": "live-source-download.log"
+  },
+  {
+    "name": "main-browser-1280x720",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "CI=true SCREENSHOTS=0 E2E_PORT_CLASSIC=4670 E2E_PORT_V2=4671 E2E_PORT_SERVER=4672 E2E_PORT_API=4673 E2E_VIEWPORT=1280x720 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "exit": 0,
+    "log": "main-browser-1280.log"
+  },
+  {
+    "name": "main-browser-1600x900",
+    "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "command": "CI=true SCREENSHOTS=0 E2E_PORT_CLASSIC=4670 E2E_PORT_V2=4671 E2E_PORT_SERVER=4672 E2E_PORT_API=4673 E2E_VIEWPORT=1600x900 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "exit": 0,
+    "log": "main-browser-1600.log"
+  }
+]

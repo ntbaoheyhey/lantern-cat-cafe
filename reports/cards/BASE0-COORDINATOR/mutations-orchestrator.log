@@ -1,0 +1,78 @@
+START control-deno-before 2026-11-01T11:09:18.206Z
+DONE control-deno-before passed test 0 contract null
+START deno-omit-explicit-index 2026-11-01T11:09:18.420Z
+DONE deno-omit-explicit-index killed test 1 contract null
+START deno-omit-directory 2026-11-01T11:09:18.641Z
+DONE deno-omit-directory killed test 1 contract null
+START deno-include-test 2026-11-01T11:09:18.845Z
+DONE deno-include-test killed test 1 contract null
+START deno-include-fixture 2026-11-01T11:09:19.097Z
+DONE deno-include-fixture killed test 1 contract null
+START deno-omit-ordinary 2026-11-01T11:09:19.317Z
+DONE deno-omit-ordinary killed test 1 contract null
+START deno-auth-game 2026-11-01T11:09:19.546Z
+DONE deno-auth-game killed test 1 contract null
+START deno-include-shared 2026-11-01T11:09:19.801Z
+DONE deno-include-shared killed test 1 contract null
+START deno-include-nonfunction 2026-11-01T11:09:20.020Z
+DONE deno-include-nonfunction killed test 1 contract null
+START control-deno-after 2026-11-01T11:09:20.244Z
+DONE control-deno-after passed test 0 contract null
+START control-scene-before 2026-11-01T11:09:20.437Z
+DONE control-scene-before passed test 0 contract null
+START scene-before-ready 2026-11-01T11:09:23.060Z
+DONE scene-before-ready killed test 1 contract null
+START control-scene-after 2026-11-01T11:09:24.342Z
+DONE control-scene-after passed test 0 contract null
+START control-hud-before 2026-11-01T11:09:25.352Z
+DONE control-hud-before passed test 0 contract null
+START hud-missing-styles 2026-11-01T11:09:41.102Z
+DONE hud-missing-styles killed test 1 contract null
+START hud-action-unreadable 2026-11-01T11:09:54.966Z
+DONE hud-action-unreadable killed test 1 contract null
+START hud-action-inert 2026-11-01T11:10:08.356Z
+DONE hud-action-inert killed test 1 contract null
+START hud-xp-too-narrow 2026-11-01T11:10:43.603Z
+DONE hud-xp-too-narrow killed test 1 contract null
+START hud-xp-zero 2026-11-01T11:10:57.541Z
+DONE hud-xp-zero killed test 1 contract null
+START hud-gated-ancestor-clipping 2026-11-01T11:11:29.122Z
+DONE hud-gated-ancestor-clipping killed test 1 contract null
+START control-hud-after 2026-11-01T11:11:40.013Z
+DONE control-hud-after passed test 0 contract null
+START control-f3-writes-without-optin 2026-11-01T11:11:55.504Z
+DONE control-f3-writes-without-optin passed test 0 contract 0
+START f3-writes-without-optin 2026-11-01T11:12:05.321Z
+DONE f3-writes-without-optin killed test 0 contract 1
+START control-errors-writes-without-optin 2026-11-01T11:12:15.027Z
+DONE control-errors-writes-without-optin passed test 0 contract 0
+START errors-writes-without-optin 2026-11-01T11:12:23.009Z
+DONE errors-writes-without-optin killed test 0 contract 1
+START control-effects-before 2026-11-01T11:12:33.277Z
+DONE control-effects-before passed test 0 contract 0
+START effects-ignores-viewport 2026-11-01T11:13:13.897Z
+DONE effects-ignores-viewport killed test 0 contract 1
+START effects-omits-help 2026-11-01T11:13:53.729Z
+DONE effects-omits-help killed test 1 contract 0
+START effects-help-inert 2026-11-01T11:14:34.273Z
+DONE effects-help-inert killed test 1 contract 0
+START control-effects-after 2026-11-01T11:15:05.932Z
+DONE control-effects-after passed test 0 contract 0
+START control-clock-before 2026-11-01T11:15:46.092Z
+DONE control-clock-before passed test 0 contract null
+START clock-fixed-expired-date 2026-11-01T11:15:50.031Z
+DONE clock-fixed-expired-date killed test 1 contract null
+START clock-no-next-day 2026-11-01T11:15:52.592Z
+DONE clock-no-next-day killed test 1 contract null
+file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/run-mutations-r4.mjs:38
+ const file=resolve(root,path);const before=readFileSync(file,'utf8');if(before.split(old).length!==2)throw new Error(name+' exact source occurrence is not one');
+                                                                                                            ^
+
+Error: claim-fixture-too-early exact source occurrence is not one
+    at mutate (file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/run-mutations-r4.mjs:38:109)
+    at file:///Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/run-mutations-r4.mjs:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.2

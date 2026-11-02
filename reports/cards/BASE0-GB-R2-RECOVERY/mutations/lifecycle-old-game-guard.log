@@ -1,0 +1,39 @@
+{"command":"pnpm --filter @taskbar-hero/web exec vitest run src/game/stage/StageCanvas.test.tsx","root":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","start":"2026-11-01T15:51:36.242Z","pid":27272}
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/apps/web
+
+ ❯ src/game/stage/StageCanvas.test.tsx (6 tests | 1 failed) 266ms
+   × waits for scene-manager readiness before destruction when game.isBooted=true 60ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageCanvas.test.tsx > waits for scene-manager readiness before destruction when game.isBooted=true
+AssertionError: expected [Function] to not throw an error but 'Error: Scene manager is not ready' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Scene manager is not ready"
+
+ ❯ src/game/stage/StageCanvas.test.tsx:63:36
+     61|     if (!game.scene.isBooted) throw new Error('Scene manager is not re…
+     62|   });
+     63|   expect(() => view.unmount()).not.toThrow();
+       |                                    ^
+     64|   expect(game.destroy).toHaveBeenCalledExactlyOnceWith(true);
+     65|   expect(game.step).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  22:51:36
+   Duration  798ms (environment 45%, tests 37%, import 11%, transform 7%)
+
+undefined
+/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-mutants-280ff4b/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/stage/StageCanvas.test.tsx
+
+EXIT_CODE=1

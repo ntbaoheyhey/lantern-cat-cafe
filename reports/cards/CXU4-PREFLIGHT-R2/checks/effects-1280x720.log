@@ -1,0 +1,15 @@
+{"base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba", "command": "node tools/.cxu4-preflight-effects.mjs /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXU4-PREFLIGHT-R2/local-only/effects-1280x720 --viewport=1280x720", "cwd": "/Users/bao/.codex/worktrees/mega-cxu4-preflight-280ff4b/taskbar-hero/apps/web", "empty_backend_env": true, "head": "b06a68d601bb09f5122bad163ac836891266f021", "name": "effects-1280x720", "ports": {"E2E_PORT_API": "4443", "E2E_PORT_CLASSIC": "4440", "E2E_PORT_SERVER": "4442", "E2E_PORT_V2": "4441"}, "screenshots": false, "started": "2026-11-02T00:00:03+07:00", "starting_git_status": "?? apps/web/tools/.cxu4-preflight-effects.mjs\n", "viewport": "1280x720"}
+PASS  [combat] hits land on the monster repeatedly (hero swing reaches contact) - 7 impact cues in 8 s
+PASS  [combat] canvas is animating (not frozen) - 59 of 59 frame pairs differ
+PASS  [combat] hit flash/damage number changes pixels at each impact - 7/7 impacts changed the frame
+PASS  [combat] frame rate (headless software GL, relative) - avg 60.0 fps, p95 frame 17 ms
+PASS  [combat] no long-frame stalls over 250 ms - 0 frames over 250 ms
+PASS  [boss-ready] no attack swings while halted (by design) - 0 impacts
+PASS  [boss-ready] hero idle loop keeps animating while halted - 29 frame changes in 4 s
+PASS  [coverage] every manifest screen visited in both motion modes - normal=home,bag,map,forge-craft,forge-salvage,forge-relic,market,hero,help; reduced=home,bag,map,forge-craft,forge-salvage,forge-relic,market,hero,help
+PASS  [reduced-motion] no transform/slide animations when reduced - 0 transform animations (normal had 0)
+PASS  [reduced-motion] stage still updates (impacts) when reduced - 4 impacts
+
+10 checks, 0 FAIL at 1280x720. Videos + frames in /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/CXU4-PREFLIGHT-R2/local-only/effects-1280x720
+
+EXIT_CODE=0

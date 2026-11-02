@@ -1,0 +1,279 @@
+{
+  "status": "FAIL",
+  "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+  "base": "1fb25edf4c54ada0d161e3c1dd16a4c4550aafba",
+  "pr": 246,
+  "grader": "/root/base0_grade_a_r1",
+  "independent": true,
+  "criterion_scores": {
+    "C1": 22.916666666666668,
+    "C2": 0,
+    "C3": 10,
+    "C4": 14,
+    "C5": 6,
+    "C6": 5,
+    "C7": 10,
+    "C8": 5
+  },
+  "raw_total": 72.91666666666667,
+  "total": 0,
+  "autofails": [
+    "A7"
+  ],
+  "pass_boolean": false,
+  "blockers": [
+    "1280x720 repeat index 5: errors-notice.spec.ts:81 cannot find Forge craft-btn after the 429 countdown and phone-to-desktop resize; 469 pass/1 fail."
+  ],
+  "correctness": {
+    "passed": 11,
+    "total": 12,
+    "rows": [
+      {
+        "id": "T1",
+        "requirement": "Reproduce missing explicit-index baseline edges",
+        "status": "PASS",
+        "evidence": "[baseline-deno.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/baseline-deno.log:1)"
+      },
+      {
+        "id": "T2",
+        "requirement": "Root/nested index, directory aliases and ordinary modules",
+        "status": "PASS",
+        "evidence": "[control-before-deno.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-before-deno.log:2)"
+      },
+      {
+        "id": "T3",
+        "requirement": "Exclude test/fixture modules and preserve auth maps",
+        "status": "PASS",
+        "evidence": "[control-before-deno.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-before-deno.log:14)"
+      },
+      {
+        "id": "T4",
+        "requirement": "Deterministic generation, repository imports and no generation drift",
+        "status": "PASS",
+        "evidence": "[deno.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/deno.log:5)"
+      },
+      {
+        "id": "T5",
+        "requirement": "Six Deno kills and at least five meaningful overall mutants",
+        "status": "PASS",
+        "evidence": "[review.json](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/review.json:1)"
+      },
+      {
+        "id": "T6",
+        "requirement": "Preboot scene regression; original redraw in both motion modes; exact resize dimensions",
+        "status": "PASS",
+        "evidence": "[control-after-scene.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-after-scene.log:6); [required-T-1280x720.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1280x720.log:42); [required-T-1600x900.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1600x900.log:42)"
+      },
+      {
+        "id": "T7",
+        "requirement": "Unchanged original HUD cases at all existing sizes",
+        "status": "PASS",
+        "evidence": "[required-T-1280x720.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1280x720.log:42); [required-T-1600x900.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1600x900.log:42)"
+      },
+      {
+        "id": "T8",
+        "requirement": "Complete original suite/default/classic builds and classic behavior",
+        "status": "PASS",
+        "evidence": "[unit.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/unit.log:57); REUSED [e2e-1280x720.log](/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/full/e2e-1280x720.log:319); [e2e-1600x900.log](/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR/full/e2e-1600x900.log:319); [reuse-gates.json](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/reuse-gates.json:1)"
+      },
+      {
+        "id": "T9",
+        "requirement": "All-screen UI audits/effects, matched reference screenshots, keyboard and contrast at mission sizes",
+        "status": "PASS",
+        "evidence": "[audit-guest.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-guest.log:19); [audit-signed.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-signed.log:45); [reference.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/reference.log:1); [keyboard.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/keyboard.log:1); [contrast.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/contrast.log:46)"
+      },
+      {
+        "id": "T10",
+        "requirement": "Artifact writers retain assertions, default opt-out and report overrides",
+        "status": "PASS",
+        "evidence": "[control-after-artifact.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-after-artifact.log:1); [artifact-optin-bypassed.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/artifact-optin-bypassed.log:5); [source-final.json](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/source-final.json:1)"
+      },
+      {
+        "id": "T11",
+        "requirement": "Every changed browser spec repeated ten times at both exact viewports with zero failures",
+        "status": "FAIL",
+        "evidence": "[repeat-1280x720.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/repeat-1280x720.log:2469); [results.jsonl](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/results.jsonl:1)"
+      },
+      {
+        "id": "T12",
+        "requirement": "Seven inherited SQL suites, leap/year rollover and 2020/2040 early/replay guard regressions",
+        "status": "PASS",
+        "evidence": "[unit.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/unit.log:38); [control-after-clock.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-after-clock.log:6); [control-after-forge.log](/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/control-after-forge.log:6)"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "install",
+      "command": "pnpm install --frozen-lockfile",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:42:18.142Z",
+      "end": "2026-11-01T11:42:23.985Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/install.log"
+    },
+    {
+      "name": "typecheck",
+      "command": "pnpm typecheck",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:42:23.986Z",
+      "end": "2026-11-01T11:42:31.732Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/typecheck.log"
+    },
+    {
+      "name": "lint",
+      "command": "pnpm lint",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:42:31.732Z",
+      "end": "2026-11-01T11:42:38.488Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/lint.log"
+    },
+    {
+      "name": "unit",
+      "command": "pnpm test",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:42:38.489Z",
+      "end": "2026-11-01T11:43:29.994Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/unit.log"
+    },
+    {
+      "name": "deno",
+      "command": "pnpm gen:deno && git diff --exit-code -- supabase/functions && node scripts/check-deno-imports.mjs",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:43:29.994Z",
+      "end": "2026-11-01T11:43:30.902Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/deno.log"
+    },
+    {
+      "name": "repeat-1280x720",
+      "command": "pnpm test:e2e e2e/smoke.spec.ts e2e/ui/baseline-hud.spec.ts e2e/ui/f3-art.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts e2e/v2/errors-notice.spec.ts --repeat-each=10 --workers=1",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:43:30.902Z",
+      "end": "2026-11-01T11:53:03.630Z",
+      "exit": 1,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/repeat-1280x720.log"
+    },
+    {
+      "name": "repeat-1600x900",
+      "command": "pnpm test:e2e e2e/smoke.spec.ts e2e/ui/baseline-hud.spec.ts e2e/ui/f3-art.spec.ts e2e/ui/g1-perf.spec.ts e2e/ui/g3-combat.spec.ts e2e/v2/errors-notice.spec.ts --repeat-each=10 --workers=1",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "start": "2026-11-01T11:53:03.631Z",
+      "end": "2026-11-01T12:02:12.299Z",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1600x900",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/repeat-1600x900.log"
+    }
+  ],
+  "followup": [
+    {
+      "name": "required-T-1280x720",
+      "command": "pnpm test:e2e e2e/layout/stage-redraw.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/ui/u2-hud.spec.ts e2e/ui/u3-layout.spec.ts --workers=1",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1280x720.log"
+    },
+    {
+      "name": "required-T-1600x900",
+      "command": "pnpm test:e2e e2e/layout/stage-redraw.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/ui/u2-hud.spec.ts e2e/ui/u3-layout.spec.ts --workers=1",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1600x900",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/required-T-1600x900.log"
+    },
+    {
+      "name": "audit-signed",
+      "command": "node tools/.grade-a-audit.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-signed stocked --signed-in --strict",
+      "head": "5db4949096e93eedeb98dff94ef1ec7019485f96",
+      "exit": 0,
+      "signal": null,
+      "viewport": "1280x720",
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-signed.log"
+    }
+  ],
+  "ui": [
+    {
+      "name": "audit-guest",
+      "command": "node tools/.grade-a-audit.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-guest bossReadyStrong --strict",
+      "exit": 0,
+      "signal": null,
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/audit-guest.log"
+    },
+    {
+      "name": "effects-1280x720",
+      "command": "node tools/.grade-a-effects.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/effects-1280x720 --viewport=1280x720",
+      "exit": 0,
+      "signal": null,
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/effects-1280x720.log"
+    },
+    {
+      "name": "effects-1600x900",
+      "command": "node tools/.grade-a-effects.mjs /Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/effects-1600x900 --viewport=1600x900",
+      "exit": 0,
+      "signal": null,
+      "log": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/effects-1600x900.log"
+    }
+  ],
+  "mutations": {
+    "tried": 14,
+    "killed": 14,
+    "green_controls": 14,
+    "evidence": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/mutations/review.json"
+  },
+  "evidence": {
+    "root": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence",
+    "verifier": "/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-COORDINATOR",
+    "reused": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/reuse-gates.json",
+    "integrity": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/integrity.json",
+    "secrets": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/secret-scan.json",
+    "reference": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/reference/comparison.json",
+    "source_final": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/evidence/source-final.json"
+  },
+  "limitations": [
+    "Pre-merge grade only: no merge, post-merge main proof or deployment certification.",
+    "First failure context file was overwritten by the sequential second viewport using the same original Playwright output directory. The complete assertion stack and test identity survive in repeat-1280x720.log. A separate watcher preserves any later error contexts.",
+    "Port-isolated UI and scratch mutation checks overlapped portions of the first repeat run. Each browser test runner used one worker; required candidate assertions, retries and timeouts were unmodified."
+  ],
+  "quality_findings": [
+    {
+      "deduction": 2,
+      "file": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/taskbar-hero/apps/web/src/shell/Hud.tsx",
+      "line": 21,
+      "detail": "Unused compact prop and its ScreenFrame forwarding call have no behavioral role."
+    },
+    {
+      "deduction": 2,
+      "file": "/Users/bao/.codex/worktrees/mega-base0-grade-a-5db4949/taskbar-hero/apps/web/src/shell/shell.css",
+      "line": 330,
+      "detail": "Narrow .shell-context repeats display/align-items/justify-content/background/flex declarations already set at lines 225-234; only gap/padding differ."
+    }
+  ],
+  "gates": {
+    "G1": "FAIL: mandatory repeat flake; exact remote main and candidate unchanged.",
+    "G2": "PASS: personally rerun guest/signed audits, effects, reference comparisons, keyboard and contrast; scoped prerequisite, not full redesign.",
+    "G3": "PASS: own Deno/drift and same-day links; exact-head bundle evidence reused.",
+    "G4": "NOT_APPLICABLE: no migration or contract changes; SQL tests passed.",
+    "G5": "PASS_REUSED: identical-head public-config production guest proof for classic/v2 and both sizes.",
+    "G6": "REVIEW_COMPLETED_WITH_MINOR_FINDINGS: full source review, integrity and secrets checked; C5 deductions remain.",
+    "G7": "PUBLICATION_VERIFIED: authoritative verifier report at ledger 5f85bbd; this independent failing grade awaits parent publication."
+  }
+}

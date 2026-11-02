@@ -1,0 +1,43 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 109ms
+   ❯ shared UI (9)
+     × labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape 65ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:08:43
+   Duration  573ms (environment 62%, tests 23%, import 11%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape
+AssertionError: expected <button type="button" …(2)></button> to be <button type="button" …(1)></button> // Object.is equality
+
+- Expected
++ Received
+
+  <button
+-   class="pixel-btn--secondary"
++   aria-label="Close Confirm choice"
++   class="ui-modal-close"
+    type="button"
+  >
+-   Cancel
++   ×
+  </button>
+
+ ❯ src/ui/ui.test.tsx:19:36
+     17|     const dialog = screen.getByRole('dialog', { name: 'Confirm choice'…
+     18|     expect(dialog.getAttribute('aria-modal')).toBe('true');
+     19|     expect(document.activeElement).toBe(screen.getByText('Cancel'));
+       |                                    ^
+     20|     expect(opener.closest('[inert]')).not.toBeNull();
+     21|     screen.getByText('Save').focus(); fireEvent.keyDown(document, { ke…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

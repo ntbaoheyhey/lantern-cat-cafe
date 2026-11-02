@@ -1,0 +1,26 @@
+{
+  "sourceHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "PASS",
+      "evidence": "receipt-audit.json and logs/receipt-audit-r2.log: all four original verifier heads, exit 0, equal PR/base/tested trees"
+    },
+    {
+      "criterion": 2,
+      "status": "PASS_RECONCILED_TARGET",
+      "evidence": "T014 release-target.json supersedes obsolete 74d60da target; fresh live-assets.json matches all 32 exact-current-main build hashes; historical equality not claimed as current"
+    },
+    {
+      "criterion": 3,
+      "status": "PASS",
+      "evidence": "Audited T014 legacy and phased live logs/summary: 1280x720 and 1600x900; no suite rerun"
+    },
+    {
+      "criterion": 4,
+      "status": "PENDING_PUBLICATION",
+      "evidence": "Final commit/push audit goes to .codex-orchestrator/verification/T001-retry2/"
+    }
+  ],
+  "newSuitesRun": []
+}

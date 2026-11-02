@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-11-02T08:37:42+07:00",
+  "status": "PAUSED_BY_USER",
+  "source_head": "64cf350e71a5a4488576733c1dfead4cff015dc5",
+  "source_pr": 240,
+  "integrated_head": "3c202d6f1b19a5ae535d0b7a0d7e12fae5c79f26",
+  "parents": [
+    "9d012cebf7300c60c3087cff5be632805ce75052",
+    "26e7de846e82c58523eaa8c45984c635accb5357"
+  ],
+  "worktree": "/Users/bao/.codex/worktrees/mega-cxp1-current-fxrb/taskbar-hero",
+  "tracked_wip": "apps/web/src/pets/state.test.ts",
+  "wip_lines_added": 23,
+  "wip_sha256": "f97b38323f3b6bf12d590029abc177d33983705ef676fdb4d8e43df5f1b8b7fe",
+  "patch_sha256": "11a549ae8fdd29e3c7b90e17d23199201c8f7882fc1aa5b781b5af85dfaa1e41",
+  "patch_already_applied_in_worktree": true,
+  "production_fix_applied": false,
+  "source_branch_moved": false,
+  "checks": {
+    "frozen_install": 0,
+    "deno_generation": 0,
+    "deno_drift": 0,
+    "root_test_before_new_regression": 0,
+    "new_regression_before_fix": {
+      "exit": 1,
+      "failed": 1,
+      "passed": 16,
+      "reason": "saturated count publishes a new equal snapshot"
+    }
+  },
+  "root_test_counts_before_regression": {
+    "chain": 32,
+    "auth": 24,
+    "supabase": 548,
+    "game_rules_passed": 383,
+    "game_rules_expected_fail": 2,
+    "game_rules_skipped": 11,
+    "api_contract": 16,
+    "web": 1325
+  },
+  "sessions_terminal": [
+    35749,
+    63120,
+    47965
+  ],
+  "former_root_test_pid": 97554,
+  "owned_ports_free": [
+    4310,
+    4311,
+    4312,
+    4313,
+    4340,
+    4341,
+    4342,
+    4343
+  ],
+  "recovery_bundle": "/Users/bao/.codex/handoffs/taskbar-hero/reliability/cxp1-current-fxrb-3c202d6.bundle",
+  "bundle_requires": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+  "no_helper_or_subagent": true
+}

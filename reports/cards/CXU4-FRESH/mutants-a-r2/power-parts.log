@@ -1,0 +1,35 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/layout/character/HeroScreen.test.tsx (5 tests | 1 failed) 315ms
+   × equipping updates the paper doll and exact shared-rule power, with an additive breakdown 67ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  02:08:24
+   Duration  864ms (tests 41%, environment 39%, import 11%, transform 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/character/HeroScreen.test.tsx > equipping updates the paper doll and exact shared-rule power, with an additive breakdown
+AssertionError: expected 232 to be 231 // Object.is equality
+
+- Expected
++ Received
+
+- 231
++ 232
+
+ ❯ src/layout/character/HeroScreen.test.tsx:19:126
+     17|   const actual = Number(screen.getByTestId('character-power').textCont…
+     18|   expect(actual).toBe(Math.round(v2.powerRating(stats))); expect(actua…
+     19|   expect(['gear', 'level', 'bonus'].reduce((sum, part) => sum + Number…
+       |                                                                                                                              ^
+     20|   const unequipped = { ...changed, equipped: { ...changed.equipped, we…
+     21|   rerender(<CharacterPanel state={unequipped} />); expect(screen.getBy…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

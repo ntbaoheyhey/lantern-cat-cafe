@@ -1,0 +1,33 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web
+> vitest run src/pets/state.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web
+
+ ❯ src/pets/state.test.ts (17 tests | 1 failed) 134ms
+   × publishes the transition to the count cap once and keeps later no-op claims stable 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/state.test.ts > publishes the transition to the count cap once and keeps later no-op claims stable
+AssertionError: expected "setItem" to be called once, but got 3 times
+ ❯ src/pets/state.test.ts:98:19
+     96|     expect(store.getSnapshot()).toBe(capped);
+     97|     expect(listener).toHaveBeenCalledOnce();
+     98|     expect(write).toHaveBeenCalledOnce();
+       |                   ^
+     99|     expect(new PetsStore(storage).getSnapshot()).toEqual(capped);
+    100|   } finally { off(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  09:52:57
+   Duration  841ms (environment 54%, tests 18%, import 15%, transform 12%, worker 1%)
+
+/Users/bao/.codex/worktrees/mega-cxp1-cap-mutants/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/pets/state.test.ts`
+Exit status 1

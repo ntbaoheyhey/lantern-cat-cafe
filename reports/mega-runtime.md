@@ -1,0 +1,126 @@
+T014 current-main gate — 2026-11-02. Approved target/tested main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+Fresh typecheck/lint/unit/build PASS; 289 browser tests PASS at each desktop size; 96 Forge PASS.
+Two fresh production builds match all 32 deployed files and entry manifest over 334.824 seconds;
+legacy and eight-stage merged-core live paths PASS at both sizes. First harness failure retained.
+T001 is historical 74d60da proof only; its obsolete current-deployment target is explicitly
+superseded by orchestrator corrective task T014, without reverting merged product work.
+[T014 evidence and target authority](cards/T014-CURRENT-MAIN-LIVE/REPORT.md).
+No product, PR, merge, release, settings, flag, database or .github change. One task only.
+
+Earlier entries below are historical snapshots, not current remote status.
+
+T001 reconciliation — 2026-11-02T10:15:04.155386+00:00. BASE0 STEP 1 a–d was already complete in ledger 89664d7.
+Revalidated all four verifier heads, matching PR/base/tested trees, 55 original evidence files,
+32/32 historical deployed assets, legacy check-live and phased live at both desktop sizes.
+No suites rerun. Main has advanced to 9ee71d4 and the live entry changed; current-main/live
+equality is NOT established by this historical BASE0 proof. Existing T002–T005 need Git
+reconciliation before any work. [T001 evidence](cards/T001-BASE0-RECONCILE/REPORT.md).
+
+Earlier entries below are historical snapshots, not current remote status.
+
+**ACTIVE — 2026-11-02T08:05:14.050734+00:00.** Saved effects recovered: FXRB7f00ef5 full1280 272/272 and corrected keyboard/reference gates pass; original setup failure retained. No new score/product push/merge. [Verified state](cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md).
+
+# Runtime — ACTIVE SESSION
+
+2026-11-02T07:54:16.606884+00:00: no mission test/preview/listener at verification; verifier/mutants clean7f00ef5. Direct keyboard diagnosis next. No helpers/agents/schedules.
+
+## Historical runtime
+
+# Runtime — USER PAUSED
+
+2026-11-02T07:51:12.287587+00:00: explicit user pause. No mission-owned test/preview process or required/default listener. Verifier and mutant checkouts clean7f00ef5; old87049/87071 absent; nothing killed. Recovered repeats completed; reference-keyboard exit1 unresolved. No agents/helpers/schedules/new chats created. Wait for explicit resume.
+
+## Historical runtime
+
+# Runtime — ACTIVE SESSION
+
+2026-11-02T07:38:31.614876+00:00: recovered repeat1280 shell87049/Playwright87071 in mega-fxrb-current-verify/apps/web at7f00ef5, ports4310–4313. No duplicate launch. Preboot mutant retained in mega-fxrb-current-mutants; patch and intended failure saved. No agents/helpers/schedules.
+
+## Historical runtime
+
+# Runtime — ACTIVE SESSION
+
+2026-11-02T14:28:16.266172+07:00: saved refs/privacy/install/bundle verified. No mission test process or required/default listener. No mission schedule, helper or agent. Historical artifacts preserved. Direct FXRB builder gates next; ports4310–4313 selected, not started.
+
+## Historical runtime
+
+# Runtime — USER PAUSED
+
+2026-11-02T07:10:23.066771+00:00: user paused. Install session77542 finished exit0; no owned process in FXRB verifier or required/default port listener. Nothing killed. No further tests/productpush/merge/release; no helpers/agents/schedules. LocalFXRB7f00ef5 preserved. See cards/FXRB-CURRENT-R1/pause-result.json.
+
+## Historical runtime
+
+# Runtime — ACTIVE CLI
+
+2026-11-02T07:04:36.858933+00:00: saved BASE0 evidence and current refs verified before FXRB. Required/default ports free; no owned test/preview; unrelated services preserved. No mission automation or cron. No helper/subagent/new chat. See cards/CLI-RESUME-20261102/continuation-fxrb.
+
+## Historical runtime
+
+# Runtime — ACTIVE CLI
+
+2026-11-02T07:01:09.193591+00:00: BASE0 complete through actual-main/phased-live gate. Direct scroll diagnostic closed its browser; no active mission test/preview. No helper/subagent/schedule. FXRB actual-main integration next.
+
+## Historical runtime
+
+# Runtime — ACTIVE CLI
+
+2026-11-02T06:52:55.491274+00:00: saved state verified after summary. No owned test/verifier/preview process; required/default ports free. CUA services preserved. No agents/helpers/schedules. Fixed safe verifier and phased live saved exits0 confirmed; visual review/checkpoint next. Local repair e4faf63 will be published with this verified table. Full scope remains active.
+
+## Historical runtime
+
+# Runtime — PAUSED FOR CLI TRANSFER
+
+2026-11-02T13:12:56.376350+07:00: user explicitly stopped desktop session. No owned verifier/test/preview process or required/default port listener. Verifier59362 did not persist; no worktree/exit/suites, only toolHEAD log. Attempt interrupted/unverified. Routine deleted; no schedules. No work until explicit CLI resume.
+
+## Earlier runtime records
+
+# Runtime — ACTIVE
+
+Updated 2026-11-02T13:04:45.939025+07:00. No running test/preview job; required mission ports free. No agent/helper. Routine deleted and absence verified. Next: safe ledger FORCE_ALL verifier246. Main74d60da unchanged.
+
+## Historical runtime snapshots
+
+# Runtime — USER PAUSED
+
+Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
+No automatic resume. Older ACTIVE/RUNNING entries below are historical.
+
+## Historical records
+Milestone 2026-11-02T12:12:41+07:00: actualmain74d60da fullbrowser265/265 at both1280x720 and1600x900, exit0. Twelve-spec repeat10 at1280 is RUNNING, session5924/shellPID6207, ports4440–4443 owned by6245/6264/6312/6361; worktree mega-base0-postmerge-74d60da remains tracked-clean. Repeat1600, safeFORCE_ALL verifier, artifact identity and live gates still pending. No nextmerge.
+Checkpoint 2026-11-02T11:51:03+07:00: actual-main74d60da has14 completed commands exit0 including core/builds/imports/links/bundle and full1280 browser265/265. Both exact-SHA provider statuses completed; primary authenticated UI confirms Ready/Production/currentalias/main/fullSHA. Full1600, both12-spec repeats, safeFORCE_ALL verifier, fullartifact equality and live checks remain pending. No ownedtestprocess or4440–4444listener; no test/worker/deployment launched by this checkpoint. BASE0 remains MERGED / POSTMERGE VERIFY. Evidence: cards/BASE0-POSTMERGE/74d60da/REPORT.md. Prior directsnapshot11:11:55; this save is late, no intervening checkpoint invented.
+Latest2026-11-02T11:11:53+07:00: BASE0merged74d60da; fresh mega-base0-postmerge-74d60da installing. No helper/subagent. Ports4440–4444 checkedfree; directpostmergechecks thenactualdeployment/live proof before anyothermerge/work. Sourcecandidate treeequality andauthor verified.
+Latest2026-11-02T10:14:36+07:00: CXP1 scopedrepairverification finished, source2b7ceebpublished. Prospective7393dc3 full280eachsize/repeat80/core/build/G3/fourcapmutantsPASS. Allownedjobs terminal,4340–4343free, source/verifier/mutantcheckouts clean. No helper/subagent. Next currentPR240body/evidence update, then auditBASE0hold against actualrequiredgates.
+Latest2026-11-02T10:07:31+07:00: CXP1 full1600session26073 ended280/280 exit0; bothfullsizes green. Directpetsrepeat10 nowACTIVEon4340–4343,7393dc3; source2b7ceeb stilllocal/unpushed. No helper/subagent; ownedmutantsclean.
+Latest2026-11-02T10:00:58+07:00: CXP1 full1280session39436 finished280/280. Full1600 nowactive on4340–4343 in clean7393dc3. Fourcapmutants restoredclean with18-testbefore/after controls; source2b7ceeblocalclean and18unit/typePASS. All root/type/lint/build/G3checks passed. No helper/subagent.
+Latest2026-11-02T09:51:58+07:00: root7393dc3 exit0/web1326, session84411 terminal. Typecheck nowdirectlyrunning in clean mega-cxp1-current-fxrb; separate mega-cxp1-cap-mutants has a deliberate guard-removal mutant for regression validation. Source64cf350unchanged. No browserports/helper/subagent.
+Latest2026-11-02T09:49:53+07:00: explicitresume. CXP1 integration7393dc3 clean; freshroot verification started directly. Dedicated cap-mutant checkout7393dc3 is installing. No browserport used; no helpers/subagents. HeartbeatACTIVE30minutes; oldPAUSED entries below are historical.
+Latest2026-11-02T08:37:42+07:00: explicit userpause. No active ownedjob/helper/subagent;35749/63120/47965 terminal, PID97554absent;4310–4313/4340–4343free. CXP1checkout3c202d6 retains ONLY23line testWIP, capregressionFAIL1/17; source64cf350 unchanged/no productionfix. HeartbeatobservedPAUSED; do notresume withoutuser. All older ACTIVE entries below are historical.
+Latest2026-11-02T08:28:53+07:00: FXRB repair validation finished. Integratedabd64fa full272/272eachsize andrepeat200/200PASS; source26e7de8published, sourcewebtypePASS. Sessions59040/94092/25446 terminal,4310–4313free, mega-fxrb-actor-oracleclean. No activejob/helper/subagent. Originalworktreehistoricalmedia preserved. Next: updatePR243evidence, then reviewalready-builtCXP1 whileBASE0capacityhold remains.
+Latest2026-11-02T08:25:06+07:00: FXRB full1280 session94092 ended272/272 exit0. Full1600 directsession25446/shellPID95738 ACTIVE on4310–4313, cleanabd64fa checkout mega-fxrb-actor-oracle. Source26e7de8 local/notpushed; earlierrepeat200 andsource/integrationtypechecks passed. No helper/subagent.
+Latest2026-11-02T08:21:57+07:00: FXRB repeat20 finished200/200 exit0 on integratedabd64fa; source26e7de8webtype passed. Full1280 directsession94092/shellPID94686 ACTIVE on4310–4313 in mega-fxrb-actor-oracle; sourceandtestfilesclean, no mutant left. Full1600 follows. New source remains local; PR243 stillb5fd48e. No helper/subagent.
+Latest2026-11-02T08:15UTC+7: coordinator fixed FXRB alpha-oracle gap in prospective integrationabd64fa (scratch mega-fxrb-actor-oracle). Three deliberate visibility variants rejected4cases each, restored10case control and webtype/links pass. Direct repeat20 session59040, shellPID92405/pnpmPID92417, ports4310–4313 active; logs FXRB-ACTOR-ORACLE-R1. Sourcebranchb5fd48e unchanged. Application mutations restored; no helper/subagent. Fullbrowserbothsizes follows.
+Latest2026-11-02T08:06:19+07:00: provider read-only investigation finished; temporaryVerceltabclosed, no test/preview/helper/subagent active. Ignored CXN3-FIX/CXU4 statuses are not build/capacity proof. BASE0hold retained, main1fb25ed unchanged. Source PR250a9b804/PR251d408ada remain drafts. Next bounded work is FXRB acceptance/gate inventory review while awaiting a meaningful capacity signal.
+Latest2026-11-02T08:02:55+07:00: CXU4 source d408ada published and draftPR251 open/mergeable on main1fb25ed. Fresh clean mega-cxu4-verify-d408ada checkout passed56focused+19onboarding tests; install/session43119 and units/session22117 terminated, no active test/preview/helper/subagent. Canonical report reports/redesign/CXU4.md lives on ledger; source and historical integratedb06a68d evidence remain distinct. Next direct work: read-only Vercel capacity investigation; no deployment/retry.
+Latest2026-11-02T07:57:26+07:00: direct safe PR250 verifier completed exit0 at a9b804, toolHEAD9df9316/base1fb25ed, browser274PASS. Session27003/PID84480 terminal;4510–4513 free; retained clean checkout /Users/bao/.codex/handoffs/taskbar-hero/reliability/cxn3-pr250-GGwefMJH/verify-pr-250. No active job/helper/subagent. Source published as draftPR250, never merge intoBASE0. Next: publish wrapper evidence/updatePR, then prepare already-built CXU4 draft; no grade/merge/release.
+Latest2026-11-02T03:59:29+07:00: no active test/preview process. Standard verifier on ledger now safely retains evidence and refuses existing paths;4direct guard checks passed. Candidatea9b804 stays frozen. Next: source branch/draft PR publication and direct real-PR verification, with no helper/subagent and no comments/release/merge.
+Latest2026-11-02T03:37:13+07:00: local technical evidence for a9b804 now includes4manual G5 cases,7keyboard destinations at each size and10contrast tests. All owned preview/test servers are stopped; browser override reset. Source/PR publication, safe handling of the existing forced-cleanup verifier, independent review and actual-main/release/live gates remain. No helper or subagent is active or allowed.
+Latest2026-11-02T03:11:55+07:00: all current direct processes finished. a9b804 full browser274/274atbothsizes; wire repeat10=90/90each;guest18+local-signed18audits clean;effects10/10each. Same-daygzip growth<0.15%,16PNGs under200000bytes. Core checks and6mutants/2controls passed. G5/manual accessibility details,wrapper/publication/review/main/live remain pending. No active helper/subagent; old active-session entries below are historical.
+Latest2026-11-02T02:39:23+07:00: a9b804 full1280 passed274/274, exit0. Full1600 now runs directly in session91492, shellPID70298, ports4400–4403, same verifier/lock. Core/build/import/link/secret-scan checks and6current mutants/2controls passed. No helper/subagent; scratch clean. Older active/idle entries below are historical.
+Current direct run2026-11-02T02:33:05+07:00: full browser1280 on a9b804 is live in exec session56621, shellPID69609, ports4400–4403. Verifier worktree mega-cxn3-fix-verify-a9b804; log local-checks/full-1280-a9b804.log. Current core checks and6mutants/2controls passed; scratch restoredclean. No helper/subagent. This line supersedes older idle snapshots.
+Current checkpoint2026-11-02T02:08:26+07:00: CXN3-FIX source a9b804 is frozen locally. Fresh verifier mega-cxn3-fix-verify-a9b804 passed root tests/type/lint. Scratch is clean at a9b804 with a fresh27-test control; current-head mutations and remaining gates next. All direct test sessions are complete. No active browser servers, helpers or subagents. Older eb3786f evidence remains predecessor-only.
+Current direct work2026-11-02T01:36:05+07:00: CXN3-FIX eb3786f root pnpm test passed(exit0); session37513finished. No active test process or browser port. Scratch mega-cxn3-fix-mutants is clean/idle and not installed yet. Direct mutations and remaining exact-head gates follow. No helper/orchestration runner/subagent is used. This entry supersedes older snapshots below.
+Latest user override2026-11-02: no subagents or helpers. No new worker or auxiliary orchestration process may be launched. The same-chat30minute heartbeat now requires direct file/Git snapshots and explicitly forbids checkpoint.py. Existing completed grader evidence is preserved; self-review is not independent grading.
+Updated 2026-11-02T01:02:46+07:00. Main1fb25ed/candidate280ff4b unchanged; no mission merge.
+- No nativeworker or coordinatorpipeline active. CXU4 runner43392finished;temporarycheckoutclean;4440–4454released. Original CXU4/CXU5 historical dirty evidence preserved.
+- BASE0 independentA97.64285714285714/B98 pass everyfloor,zeroautofails,no thirdneeded. PublishedA72c0b0b,Bbeb4a99,receiptb500246. PR246bodyupdated,staysdraft because Vercelquota statusesfailureatlastread-onlycheck2026-11-01T23:29UTC+7. Exactresetunknown; no deploymentattempt/bypass.
+- Preliminaryqueue integration heads:FXRB7023a2d,CXP19d012ce,CXL17731a65,ART121fc7dd,CXN3cd274ab,CXU56bf7b13,CXU4b06a68d. EachcardREPORT states limitedchecks and cleanup; never substitutes for actual-main/fullgate/independentgrade/live proof.
+- CXU4R1 missingfixture failure retained. R2b06a68d:baselineoracle1,component58,browser200,effects10eachsize,webtypePASS. Local productbranchai/codex-cxu4 nowd408ada(30sourcefiles,bytespreserved),notpushed/PRpending. R2 testedintegratedb06a68d,notd408ada. Two recoverybundles verified; see handoff.
+- CXN3 historical10livefindings remain open; strict --v2postmerge requires source/release readiness. Nextsafe work:read-only rootcause/dependency diagnosis; keep serialmerge and source/release gates.
+- Lastmodel4292026-11-01T22:32:35+07:00; one-worker window expired. Fewagents,max2or1for30min afternew429,same-model2/4/8backoff,no downgrade. No grader needed now.
+
+- CXN3-FIX read-only diagnosis finished:5probes3PASS/2FAIL;no runningprocess. FunctionsACTIVE is not health proof. Partial CLI export refused unsafe monorepo paths; no bypass. New dependency insertsFIXbetweenART1/CXN3 without changing preparedrelativeorder. No implementation/release yet. Legacy postmerge checker nonce side effect now explicitly documented.
+
+- Latest user scheduling preference: existing heartbeat restored to ACTIVE30minutes, with immediate milestone checkpoints. Limit helpers as well as agents. No extra helper process created.
+- Read-only Vercel dashboard access is available; monthly usage is not current daily quota proof. Both GitHub contexts still fail at00:40UTC+7. Ledger-only deploymentEnabled policy researched but NOT applied; graded source and provider settings unchanged.
+
+- Ledger-only preview policy added in apps/web/vercel.json: exact ai/codex-mega-ledger=false, all other config preserved. Public HEAD requests to both Taskbar sites return200 and match all five existing security headers. No product source/account/env change. Provider enforcement and current quota reset are not certified; BASE0 hold remains.

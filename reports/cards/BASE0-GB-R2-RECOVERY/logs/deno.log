@@ -1,0 +1,9 @@
+{"name":"deno","command":"pnpm gen:deno && git diff --exit-code -- supabase/functions && node scripts/check-deno-imports.mjs","cwd":"/Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero","head":"280ff4bed495fd28bd489eb5f2dcfd1910f21fc0","viewport":"1280x720","start":"2026-11-01T15:51:07.753Z","log":"/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero/reports/cards/BASE0-GB-R2-RECOVERY/logs/deno.log","workers":1}
+
+> taskbar-hero@0.0.0 gen:deno /Users/bao/.codex/worktrees/mega-base0-grade-b-recovery-280ff4b/taskbar-hero
+> node scripts/gen-deno-json.mjs
+
+wrote 18 Edge Function import maps
+Deno import guard: 18 functions clean
+
+EXIT_CODE=0

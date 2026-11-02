@@ -1,0 +1,5 @@
+# Additional inherited voucher clock blocker
+
+Frozen HEAD 07d219b2fcb8c36fed3cf72a9f640e18c5156beb. Full gate `pnpm test` exits 1, 63 SQL cases fail across src/concurrency-hardening.test.ts, concurrency.test.ts, forge.test.ts, relic-recovery.test.ts, voucher-cancel.test.ts and voucher-security.test.ts. The repaired v2/functions-forge.test.ts passes all 19 cases. Raw evidence: full/test.log (with command/head/exit and size in full/results.jsonl).
+
+These six suites still set T0 to 2026-11-01 10:00 UTC; SQL NOW() is later than their voucher expiry (10:30 UTC). The unchanged relic_vouchers_check requires expiry after creation. Moving only a shared store/helper would either rewrite requested timestamps or alter schema defaults, obscuring the actual guard. Their test-local clock constants and day-boundary fixtures need a separate scope extension. No production guard/default/migration has been modified, and no root-unit PASS is claimed. The first narrow repair attempt and all existing failures are preserved.

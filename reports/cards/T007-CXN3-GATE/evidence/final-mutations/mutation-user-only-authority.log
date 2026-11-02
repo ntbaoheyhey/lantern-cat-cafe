@@ -1,0 +1,220 @@
+UTC 2026-11-02T12:39:44.477657+00:00
+scratch cwd: .cxn3-mutant-kkvjo7xs
+$ node --test scripts/check-live.test.mjs
+mutation: docs/cutover-v2.md
+BEFORE: user-approved mission section 7
+AFTER: user-only deployment
+expected failing test: optional release follows section 7
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-boss-fight anonymous - HTTP 401
+PASS  function v2-boss-fight oversized - HTTP 413
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+PASS  function v2-choose-class oversized - HTTP 413
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+PASS  function v2-claim oversized - HTTP 413
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+PASS  function v2-craft oversized - HTTP 413
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+PASS  function v2-equip oversized - HTTP 413
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+PASS  function v2-lock oversized - HTTP 413
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+PASS  function v2-relic-forge oversized - HTTP 413
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+PASS  function v2-salvage oversized - HTTP 413
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+PASS  function v2-state oversized - HTTP 413
+✔ unsigned POST requires exactly 401 (11.822041ms)
+✔ 503 fails with a budget migration hint for every probe (0.13875ms)
+✔ network errors fail (0.391833ms)
+✔ preflight requires 2xx and usable CORS headers (0.487292ms)
+✔ oversized body requires 400 or 413, and reports auth-before-body behavior (0.075416ms)
+✔ all nine routes get three probes without credentials; oversized JSON exceeds 8192 bytes (1.952292ms)
+✔ cut-over History contains the retired procedure; migration table matches the branch exactly (0.33975ms)
+✔ manual deploy lists the same 18 functions and options as the existing workflow (0.194791ms)
+✖ optional release follows section 7 with local proof and default-OFF flags (0.881584ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 68.764083
+
+✖ failing tests:
+
+test at scripts/check-live.test.mjs:87:1
+✖ optional release follows section 7 with local proof and default-OFF flags (0.881584ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /user-approved mission section 7/. Input:
+  
+  '# Cat RPG v2 cut-over checklist\n' +
+    '\n' +
+    'This living checklist follows **user-only deployment**: prove changes locally first;\n' +
+    'optional deployment may use already-configured CLI credentials only after the score and merge\n' +
+    'gates (sections 3 and 5) pass. Only additive, idempotent, reversible migrations qualify, with a\n' +
+    'matching rollback file under `supabase-manual/`. Never rewrite or remove live player data.\n' +
+    'Missing credentials mean local verification and recorded optional steps, not a request for secrets.\n' +
+    'The current CXN3 P/B card permits **read-only live probes only**: no deploy, SQL application outside\n' +
+    'PGlite, Vercel change, push or merge. Later release work must satisfy the prerequisites below.\n' +
+    'Use the exact release commit throughout; stop on a failed gate.\n' +
+    '\n' +
+    '## Reality (1 Nov 2026)\n' +
+    '\n' +
+    '- The six v2 tables have been live since **26 Oct 2026**; the integrity migration was applied\n' +
+    '  **27 Oct**, as recorded in [C3](../reports/C3.md). These are historical owner confirmations;\n' +
+    '  re-check the live catalog below rather than assuming newer migrations are applied.\n' +
+    '- The switch is **`VITE_GAME_V2=1` in Vercel Production environment variables, followed by a\n' +
+    '  redeploy**. [flag.ts](../apps/web/src/layout/flag.ts) reads that build-time value. Check the\n' +
+    '  production setting and the deployed build: C3 records that it may already be `1`.\n' +
+    '- Keep backend-dependent features **default-OFF** until their backend is verified. Locally use\n' +
+    '  `VITE_GAME_V2=0` for the classic baseline and `1` only for the isolated v2 demo build, with empty\n' +
+    '  `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Do not change an existing live setting in this card.\n' +
+    '- **D8 Founder batch: DROPPED**, decision 31 Oct (wave-n plan, section 4, per the mission record).\n' +
+    '  No batch, cutoff or grant is a launch gate. The existing `founder_grants` table remains.\n' +
+    '- Nine classic/shared and nine v2 Edge Functions coexist. Keep classic rows, shared accounts,\n' +
+    '  Relic history and Fuji contracts. This checklist does not reset player data.\n' +
+    '\n' +
+    '## 1. Go / no-go before the release\n' +
+    '\n' +
+    "Adapted from [C3's checklist](../reports/C3.md#go--no-go-checklist):\n" +
+    '\n' +
+    '- [ ] Hold merges during the release window and record the release commit from `origin/main`;\n' +
+    '  no open blocker PRs. Independent graders and the serial merge gates must pass.\n' +
+    '- [ ] Local checks green at that commit: install, Deno drift/import guard, typecheck, lint, unit\n' +
+    '  tests, build, classic and v2 browser tests. For an existing PR run\n' +
+    '  `bash scripts/verify-pr.sh <release-pr-number>` without `--comment`; do not spend Actions\n' +
+    '  minutes for verification. Create and push an RC tag\n' +
+    '  for that verified commit, using `git tag -a rc-v29-YYYYMMDD -m "v2 release candidate" <commit>`\n' +
+    '  then `git push origin rc-v29-YYYYMMDD` (replace date and commit).\n' +
+    '- [ ] `node scripts/rehearse-cutover.mjs` passes locally on the release commit, without secrets.\n' +
+    "- [ ] Record any balance decision/signature through the mission's full-authority decision process;\n" +
+    '  [numbers-v2.md](proposals/numbers-v2.md) currently says NOT READY FOR SIGN-OFF. That historical\n' +
+    '  proposal is not evidence of approved or deployed numbers; CXN3 changes no balance.\n' +
+    '- [ ] Prove migration application from zero and on the prior schema in PGlite. Review reversibility\n' +
+    '  and the matching rollback files before any optional live application. The live database has\n' +
+    '  **no verified backup**; never use destructive SQL there, even if a backup later becomes available.\n' +
+    '- [ ] Check Vercel **web > Deployments / Usage**: respect the 100 deploys/day cap and current plan\n' +
+    '  allowance. No GitHub Actions runs for this mission.\n' +
+    '- [ ] Confirm all nine `v2-*` functions and complete section 2; unsigned refusals alone do not\n' +
+    '  confirm deployed function versions or SQL.\n' +
+    '- [ ] Record Vercel Production `VITE_GAME_V2`, the intended release commit and a previous good\n' +
+    '  deployment. Test flag rollback locally before any optional switch; do not execute SQL rollback.\n' +
+    '\n' +
+    'Safe local checks from the release checkout (Node 20+, pnpm 10.28.0; no credentials):\n' +
+    '\n' +
+    '```sh\n' +
+    'CI=true pnpm install --frozen-lockfile\n' +
+    'pnpm gen:deno\n' +
+    'git diff --exit-code -- supabase/functions\n' +
+    'node scripts/check-deno-imports.mjs\n' +
+    'node --test scripts/check-live.test.mjs\n' +
+    'pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/live-schema.test.ts --reporter verbose --silent=false\n' +
+    "VITE_GAME_V2=0 VITE_SUPABASE_URL='' VITE_SUPABASE_ANON_KEY='' pnpm --filter @taskbar-hero/web build\n" +
+    '```\n' +
+    '\n' +
+    'These targeted checks supplement the full verification gate. Browser checks/rehearsal are scheduled\n' +
+    "separately; this card does not run them. CXN3's reserved ports are 4320/4321/4322/4323, with empty test\n" +
+    'backend configuration. Keep local mock-auth overrides out of production.\n' +
+    '\n' +
+    '## 2. Check the live schema, then apply pending migrations\n' +
+    '\n' +
+    'For an authorized read-only catalog check, open Supabase project `qoalewtxflagoprrxrgh` > **SQL Editor**, paste the entire\n' +
+    '[read-only schema query](proposals/sql/check-live-schema.sql), and run it. It returns one row per\n' +
+    'expected object with `present` true/false. All 17 must be true before the function deployment.\n' +
+    'It checks catalog presence and signatures, not full function definitions or gameplay behavior.\n' +
+    '\n' +
+    'The table below is generated from the sorted migration filenames **newer than 20261102000000**.\n' +
+    "These are pending live confirmation, not a claim that every file is unapplied. Check the owner's\n" +
+    'migration record. In a later section-7-authorized deployment, apply missing files **by hand in the\n' +
+    'SQL editor BEFORE deploying functions**, in this order, then run the catalog query again. Without\n' +
+    'the required access or release gates, keep this as an optional step and use the local PGlite proof.\n' +
+    'Do not replay an already-recorded migration blindly.\n' +
+    '\n' +
+    '| File | Why it must precede the function deployment |\n' +
+    '| --- | --- |\n' +
+    '| [20261103000000_siwe_nonces_server_only.sql](../supabase/migrations/20261103000000_siwe_nonces_server_only.sql) | Explicit server-only nonce policy and client privilege denial. |\n' +
+    '| [20261104000000_v2_request_budgets.sql](../supabase/migrations/20261104000000_v2_request_budgets.sql) | Private request budget table and RPCs; authenticated requests fail closed with **503** if the limiter cannot access them. |\n' +
+    '| [20261106000000_voucher_cancel_reissue.sql](../supabase/migrations/20261106000000_voucher_cancel_reissue.sql) | Cancelled voucher status and `game_voucher_cancel_reissue` for used-nonce recovery. |\n' +
+    '| [20261107000000_voucher_race_guard.sql](../supabase/migrations/20261107000000_voucher_race_guard.sql) | CXN1 reissue columns, one-minted-voucher index and `game_voucher_reissue_resolve`; prevents signing a replacement during the chain check. |\n' +
+    '\n' +
+    'Only `private.v2_request_budgets` is implemented as a budget table. The proposed per-IP\n' +
+    '`v2_proxy_requests` table is not a committed migration and is not part of this inventory.\n' +
+    '\n' +
+    '## 3. Deploy the verified functions (optional, section 7)\n' +
+    '\n' +
+    'Run `node scripts/check-deno-imports.mjs` first, from the release checkout. Stop if it fails.\n' +
+    'Use only an already-configured Supabase CLI login, after the local score/merge gates and migration\n' +
+    'prerequisites pass; never paste a token into a command log. Otherwise retain the commands as optional\n' +
+    'steps and the flags as default-OFF. Current NO-GO prerequisites:\n' +
+    '\n' +
+    '- BASE0 repaired the missing explicit `index` aliases and converted the known-defect case in\n' +
+    '  [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) to a passing regression.\n' +
+    '  The integrated checkout resolves all 18 functions. Re-run the strict import guard and\n' +
+    '  no-drift check on the exact release commit; successful generation alone is insufficient.\n' +
+    '  A failing guard remains a no-go condition. Do not disable it.\n' +
+    '- This checkout lacks `supabase-manual/v2-rollback.sql` and the per-migration rollback files required\n' +
+    '  by section 7. Review and test those locally before optional migration deployment; do not invent\n' +
+    '  a live rollback or claim the proposal below is an equivalent file.\n' +
+    '\n' +
+    'The [deployment reference](deploy.md#edge-functions) links here. This is the existing function\n' +
+    'workflow command with its public variables expanded, preserving `--use-api --no-verify-jwt`\n' +
+    'and all 18 function names:\n' +
+    '\n' +
+    '```sh\n' +
+    'node scripts/check-deno-imports.mjs\n' +
+    'supabase functions deploy auth-nonce auth-verify game-state idle-claim equip boss-fight upgrade relic-forge relic-mint-report v2-choose-class v2-claim v2-equip v2-state v2-craft v2-salvage v2-lock v2-relic-forge v2-boss-fight --project-ref qoalewtxflagoprrxrgh --use-api --no-verify-jwt\n' +
+    '```\n' +
+    '\n' +
+    'Stop on a failed deploy. Function configuration and secret names are in [go-live](go-live.md).\n' +
+    '\n' +
+    '## 4. Set the web switch and check the release\n' +
+    '\n' +
+    '1. Only after the entire live go/no-go checklist is green and rollback has been tested, section 7\n' +
+    '   permits the switch if the Vercel CLI is already logged in. Otherwise keep it as an optional step:\n' +
+    '   Vercel **web > Settings > Environment Variables > Production**: confirm `VITE_GAME_V2=1`,\n' +
+    '   the public Supabase configuration in [go-live](go-live.md#3-web-app-vercel),\n' +
+    '   and the intended release commit. Redeploy to bake in the environment value. If the intended\n' +
+    '   build is already Ready with this setting, no additional redeploy is needed.\n' +
+    '2. Wait for **Ready**, then confirm production points at that build at\n' +
+    '   <https://taskbarhero-eight.vercel.app>.\n' +
+    '3. Run the unsigned v2 checks (27 probes; no sign-in or key):\n' +
+    '\n' +
+    '   ```sh\n' +
+    '   node scripts/check-live.mjs --v2\n' +
+    '   ```\n' +
+    '\n' +
+    '   OPTIONS must return 2xx with CORS allowing the site origin, POST and content-type; an empty\n' +
+    '   unsigned POST must return 401; oversized JSON must return 413 or 400. A 503 prints\n' +
+    '   **"budgets migration missing?"**: check section 2 and function logs. This is a diagnostic hint,\n' +
+    '   not proof of that cause. Any failure is a no-go until reviewed.\n' +
+    '\n' +
+    '   **Current handler limitation:** authentication precedes body parsing and budget admission.\n' +
+    '   Unsigned oversized JSON can therefore return 401, which this strict check reports as FAIL.\n' +
+    '   A passing unsigned 401 does not prove the budgets migration is presen'... 2144 more characters
+  
+      at TestContext.<anonymous> (file:///private/tmp/tbh-t007-cxn3/.cxn3-mutant-kkvjo7xs/scripts/check-live.test.mjs:90:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# Cat RPG v2 cut-over checklist\n\nThis living checklist follows **user-only deployment**: prove changes locally first;\noptional deployment may use already-configured CLI credentials only after the score and merge\ngates (sections 3 and 5) pass. Only additive, idempotent, reversible migrations qualify, with a\nmatching rollback file under `supabase-manual/`. Never rewrite or remove live player data.\nMissing credentials mean local verification and recorded optional steps, not a request for secrets.\nThe current CXN3 P/B card permits **read-only live probes only**: no deploy, SQL application outside\nPGlite, Vercel change, push or merge. Later release work must satisfy the prerequisites below.\nUse the exact release commit throughout; stop on a failed gate.\n\n## Reality (1 Nov 2026)\n\n- The six v2 tables have been live since **26 Oct 2026**; the integrity migration was applied\n  **27 Oct**, as recorded in [C3](../reports/C3.md). These are historical owner confirmations;\n  re-check the live catalog below rather than assuming newer migrations are applied.\n- The switch is **`VITE_GAME_V2=1` in Vercel Production environment variables, followed by a\n  redeploy**. [flag.ts](../apps/web/src/layout/flag.ts) reads that build-time value. Check the\n  production setting and the deployed build: C3 records that it may already be `1`.\n- Keep backend-dependent features **default-OFF** until their backend is verified. Locally use\n  `VITE_GAME_V2=0` for the classic baseline and `1` only for the isolated v2 demo build, with empty\n  `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Do not change an existing live setting in this card.\n- **D8 Founder batch: DROPPED**, decision 31 Oct (wave-n plan, section 4, per the mission record).\n  No batch, cutoff or grant is a launch gate. The existing `founder_grants` table remains.\n- Nine classic/shared and nine v2 Edge Functions coexist. Keep classic rows, shared accounts,\n  Relic history and Fuji contracts. This checklist does not reset player data.\n\n## 1. Go / no-go before the release\n\nAdapted from [C3\'s checklist](../reports/C3.md#go--no-go-checklist):\n\n- [ ] Hold merges during the release window and record the release commit from `origin/main`;\n  no open blocker PRs. Independent graders and the serial merge gates must pass.\n- [ ] Local checks green at that commit: install, Deno drift/import guard, typecheck, lint, unit\n  tests, build, classic and v2 browser tests. For an existing PR run\n  `bash scripts/verify-pr.sh <release-pr-number>` without `--comment`; do not spend Actions\n  minutes for verification. Create and push an RC tag\n  for that verified commit, using `git tag -a rc-v29-YYYYMMDD -m "v2 release candidate" <commit>`\n  then `git push origin rc-v29-YYYYMMDD` (replace date and commit).\n- [ ] `node scripts/rehearse-cutover.mjs` passes locally on the release commit, without secrets.\n- [ ] Record any balance decision/signature through the mission\'s full-authority decision process;\n  [numbers-v2.md](proposals/numbers-v2.md) currently says NOT READY FOR SIGN-OFF. That historical\n  proposal is not evidence of approved or deployed numbers; CXN3 changes no balance.\n- [ ] Prove migration application from zero and on the prior schema in PGlite. Review reversibility\n  and the matching rollback files before any optional live application. The live database has\n  **no verified backup**; never use destructive SQL there, even if a backup later becomes available.\n- [ ] Check Vercel **web > Deployments / Usage**: respect the 100 deploys/day cap and current plan\n  allowance. No GitHub Actions runs for this mission.\n- [ ] Confirm all nine `v2-*` functions and complete section 2; unsigned refusals alone do not\n  confirm deployed function versions or SQL.\n- [ ] Record Vercel Production `VITE_GAME_V2`, the intended release commit and a previous good\n  deployment. Test flag rollback locally before any optional switch; do not execute SQL rollback.\n\nSafe local checks from the release checkout (Node 20+, pnpm 10.28.0; no credentials):\n\n```sh\nCI=true pnpm install --frozen-lockfile\npnpm gen:deno\ngit diff --exit-code -- supabase/functions\nnode scripts/check-deno-imports.mjs\nnode --test scripts/check-live.test.mjs\npnpm --filter @taskbar-hero/supabase-tests exec vitest run src/live-schema.test.ts --reporter verbose --silent=false\nVITE_GAME_V2=0 VITE_SUPABASE_URL=\'\' VITE_SUPABASE_ANON_KEY=\'\' pnpm --filter @taskbar-hero/web build\n```\n\nThese targeted checks supplement the full verification gate. Browser checks/rehearsal are scheduled\nseparately; this card does not run them. CXN3\'s reserved ports are 4320/4321/4322/4323, with empty test\nbackend configuration. Keep local mock-auth overrides out of production.\n\n## 2. Check the live schema, then apply pending migrations\n\nFor an authorized read-only catalog check, open Supabase project `qoalewtxflagoprrxrgh` > **SQL Editor**, paste the entire\n[read-only schema query](proposals/sql/check-live-schema.sql), and run it. It returns one row per\nexpected object with `present` true/false. All 17 must be true before the function deployment.\nIt checks catalog presence and signatures, not full function definitions or gameplay behavior.\n\nThe table below is generated from the sorted migration filenames **newer than 20261102000000**.\nThese are pending live confirmation, not a claim that every file is unapplied. Check the owner\'s\nmigration record. In a later section-7-authorized deployment, apply missing files **by hand in the\nSQL editor BEFORE deploying functions**, in this order, then run the catalog query again. Without\nthe required access or release gates, keep this as an optional step and use the local PGlite proof.\nDo not replay an already-recorded migration blindly.\n\n| File | Why it must precede the function deployment |\n| --- | --- |\n| [20261103000000_siwe_nonces_server_only.sql](../supabase/migrations/20261103000000_siwe_nonces_server_only.sql) | Explicit server-only nonce policy and client privilege denial. |\n| [20261104000000_v2_request_budgets.sql](../supabase/migrations/20261104000000_v2_request_budgets.sql) | Private request budget table and RPCs; authenticated requests fail closed with **503** if the limiter cannot access them. |\n| [20261106000000_voucher_cancel_reissue.sql](../supabase/migrations/20261106000000_voucher_cancel_reissue.sql) | Cancelled voucher status and `game_voucher_cancel_reissue` for used-nonce recovery. |\n| [20261107000000_voucher_race_guard.sql](../supabase/migrations/20261107000000_voucher_race_guard.sql) | CXN1 reissue columns, one-minted-voucher index and `game_voucher_reissue_resolve`; prevents signing a replacement during the chain check. |\n\nOnly `private.v2_request_budgets` is implemented as a budget table. The proposed per-IP\n`v2_proxy_requests` table is not a committed migration and is not part of this inventory.\n\n## 3. Deploy the verified functions (optional, section 7)\n\nRun `node scripts/check-deno-imports.mjs` first, from the release checkout. Stop if it fails.\nUse only an already-configured Supabase CLI login, after the local score/merge gates and migration\nprerequisites pass; never paste a token into a command log. Otherwise retain the commands as optional\nsteps and the flags as default-OFF. Current NO-GO prerequisites:\n\n- BASE0 repaired the missing explicit `index` aliases and converted the known-defect case in\n  [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) to a passing regression.\n  The integrated checkout resolves all 18 functions. Re-run the strict import guard and\n  no-drift check on the exact release commit; successful generation alone is insufficient.\n  A failing guard remains a no-go condition. Do not disable it.\n- This checkout lacks `supabase-manual/v2-rollback.sql` and the per-migration rollback files required\n  by section 7. Review and test those locally before optional migration deployment; do not invent\n  a live rollback or claim the proposal below is an equivalent file.\n\nThe [deployment reference](deploy.md#edge-functions) links here. This is the existing function\nworkflow command with its public variables expanded, preserving `--use-api --no-verify-jwt`\nand all 18 function names:\n\n```sh\nnode scripts/check-deno-imports.mjs\nsupabase functions deploy auth-nonce auth-verify game-state idle-claim equip boss-fight upgrade relic-forge relic-mint-report v2-choose-class v2-claim v2-equip v2-state v2-craft v2-salvage v2-lock v2-relic-forge v2-boss-fight --project-ref qoalewtxflagoprrxrgh --use-api --no-verify-jwt\n```\n\nStop on a failed deploy. Function configuration and secret names are in [go-live](go-live.md).\n\n## 4. Set the web switch and check the release\n\n1. Only after the entire live go/no-go checklist is green and rollback has been tested, section 7\n   permits the switch if the Vercel CLI is already logged in. Otherwise keep it as an optional step:\n   Vercel **web > Settings > Environment Variables > Production**: confirm `VITE_GAME_V2=1`,\n   the public Supabase configuration in [go-live](go-live.md#3-web-app-vercel),\n   and the intended release commit. Redeploy to bake in the environment value. If the intended\n   build is already Ready with this setting, no additional redeploy is needed.\n2. Wait for **Ready**, then confirm production points at that build at\n   <https://taskbarhero-eight.vercel.app>.\n3. Run the unsigned v2 checks (27 probes; no sign-in or key):\n\n   ```sh\n   node scripts/check-live.mjs --v2\n   ```\n\n   OPTIONS must return 2xx with CORS allowing the site origin, POST and content-type; an empty\n   unsigned POST must return 401; oversized JSON must return 413 or 400. A 503 prints\n   **"budgets migration missing?"**: check section 2 and function logs. This is a diagnostic hint,\n   not proof of that cause. Any failure is a no-go until reviewed.\n\n   **Current handler limitation:** authentication precedes body parsing and budget admission.\n   Unsigned oversized JSON can therefore return 401, which this strict check reports as FAIL.\n   A passing unsigned 401 does not prove the budgets migration is presen'... 2144 more characters,
+    expected: /user-approved mission section 7/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+KILLED=True

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "install",
+    "command": "npx -y pnpm@10.28.0 install --frozen-lockfile",
+    "head": "8f2e3fec6265fa3d9f54b2c15a19768d8c0b7809",
+    "exit": 0,
+    "startedAt": "2026-11-02T18:18:10.310112+00:00",
+    "endedAt": "2026-11-02T18:18:17.663234+00:00"
+  },
+  {
+    "name": "focused-units",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/ui src/layout/character src/layout/HelpTab src/onboarding",
+    "head": "8f2e3fec6265fa3d9f54b2c15a19768d8c0b7809",
+    "exit": 1,
+    "startedAt": "2026-11-02T18:18:17.669668+00:00",
+    "endedAt": "2026-11-02T18:18:27.812711+00:00"
+  }
+]

@@ -1,0 +1,46 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu5-fresh-mutants-Uf1smE/apps/web
+
+ ❯ src/layout/bossPresentation.test.ts (7 tests | 1 failed) 6ms
+   × records history only on release, once; close preserves it, reset clears it 4ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  00:57:40
+   Duration  475ms (environment 84%, transform 8%, import 6%, tests 2%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/bossPresentation.test.ts > records history only on release, once; close preserves it, reset clears it
+AssertionError: expected { hold: null, fight: null, …(1) } to be { Object (hold, fight, ...) } // Object.is equality
+
+- Expected
++ Received
+
+  {
+    "fight": null,
+-   "history": [],
++   "history": [
++     {
++       "chapter": 1,
++       "durationMs": 740,
++       "firstClear": true,
++       "won": true,
++     },
++   ],
+    "hold": null,
+  }
+
+ ❯ src/layout/bossPresentation.test.ts:66:55
+     64|   const closed = bossPresentation(released, { type: 'close' });
+     65|   expect(closed.history).toBe(released.history);
+     66|   expect(bossPresentation(closed, { type: 'reset' })).toBe(INITIAL_BOS…
+       |                                                       ^
+     67|   const failed = bossPresentation(bossPresentation(closed, begin), { t…
+     68|   expect(failed.history).toBe(released.history);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

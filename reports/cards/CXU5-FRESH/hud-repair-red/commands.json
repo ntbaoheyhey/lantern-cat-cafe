@@ -1,0 +1,18 @@
+[
+  {
+    "name": "install",
+    "command": "npx -y pnpm@10.28.0 install --frozen-lockfile",
+    "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:28:57.011891+00:00",
+    "endedAt": "2026-11-02T17:29:04.580774+00:00"
+  },
+  {
+    "name": "new-regression",
+    "command": "E2E_PORT_CLASSIC=4780 E2E_PORT_V2=4781 E2E_PORT_SERVER=4782 E2E_PORT_API=4783 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/baseline-hud.spec.ts --grep \"late chapter HUD\" --workers=1 --retries=0 --reporter=line",
+    "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+    "exit": 1,
+    "startedAt": "2026-11-02T17:29:04.588309+00:00",
+    "endedAt": "2026-11-02T17:29:21.651368+00:00"
+  }
+]

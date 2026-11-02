@@ -1,0 +1,18 @@
+✔ complete controlled run passes all nine stages (0.871166ms)
+✔ missing stage fails and blocks every later action without skipping (0.123708ms)
+✔ console and page errors fail the same health gate (0.11725ms)
+✔ elapsed judge time over 180 seconds fails (0.304875ms)
+✔ capture or screenshot budget failures cannot pass (0.1005ms)
+✔ read-only transport rejects backend writes, signing, and mixed RPC batches (0.102833ms)
+✔ proof validates both visible exact addresses and Fuji explorer links (0.516917ms)
+✔ real browser assertions reject hidden stage and ineffective guest click (665.169792ms)
+✔ late browser error or evidence time cannot escape final health/budget check (0.287458ms)
+✔ failed screenshot capture is not retried (0.119416ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 717.809666
