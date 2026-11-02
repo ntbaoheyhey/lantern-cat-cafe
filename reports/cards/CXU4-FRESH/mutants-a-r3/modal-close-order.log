@@ -1,0 +1,82 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-Ommwp9/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 165ms
+   ❯ shared UI (9)
+     × keeps the background locked when an older modal closes first, then restores it and the original opener 18ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:43:36
+   Duration  674ms (environment 59%, tests 28%, import 8%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > keeps the background locked when an older modal closes first, then restores it and the original opener
+TestingLibraryElementError: Unable to find an accessible element with the role "dialog" and name "Inner"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<button[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33minert[39m=[32m""[39m
+  [36m>[39m
+    [0mPage opener[0m
+  [36m</button>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33minert[39m=[32m""[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"ui-modal-backdrop"[39m
+    [33minert[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_3_-title"[39m
+      [33maria-modal[39m=[32m"true"[39m
+      [33mclass[39m=[32m"ui-modal"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"ui-modal-heading"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"_r_3_-title"[39m
+        [36m>[39m
+          [0mInner[0m
+        [36m</h2>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Close Inner"[39m
+          [33mclass[39m=[32m"ui-modal-close"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0m×[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<button>[39m
+        [0mInner action[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../../tbh-cxu4-active/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../../tbh-cxu4-active/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../../tbh-cxu4-active/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../../tbh-cxu4-active/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/ui/ui.test.tsx:50:21
+     48|       expect(opener.hasAttribute('inert')).toBe(true);
+     49|       expect(opener.getAttribute('aria-hidden')).toBe('true');
+     50|       expect(screen.getByRole('dialog', { name: 'Inner' }).contains(do…
+       |                     ^
+     51|       rerender(view(false, false));
+     52|       expect(opener.hasAttribute('inert')).toBe(false); expect(opener.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

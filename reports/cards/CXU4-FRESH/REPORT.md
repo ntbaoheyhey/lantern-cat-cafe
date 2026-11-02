@@ -24,3 +24,6 @@ B core,360 repeats,38 classic cases,96 Forge tests and UI/effects passed on3ed06
 Third repair d969f16 changes Modal to a layout effect so restoration completes before paint/DOM-removal observation. Original immediate status/focus assertions remain. A browser observer now checks accessible background at dialog removal. Targeted checks running, PID32491. Fresh A/B must be rerun on this head; if the third repair cannot clear the gate, record PARTIAL and move on per the user's limit.
 
 Third repair d969f16 passes typecheck,51 focused units,60 repeated browser cases with the new DOM-removal observer, and20 consecutive51-case unit controls (1020 cases) with zero failures. Formal A final-round gate starts on this exact head, PID33858; no current passing grades yet. B has been refreshed cleanly to the same head and will run tests first after A.
+
+## Final-round grader A complete
+Self-graded (fresh pass)95/100 on d969f16, zero auto-fails. Full313/313 at each size;360 repeats;2412 unit/script cases;20×51 focused stability controls;11 mutants; UI36/effects20; exact-head dialog captures all green. Current grade-a.json was written afresh; old3ed0633 A95 remains archived. B final-round tests start with mutation control on clean d969f16, PID37821; no merge yet.
