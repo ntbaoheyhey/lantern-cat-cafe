@@ -57,8 +57,9 @@ Under section 7, confirm the local score/merge gates and additive/reversible mig
 first, run `node scripts/check-deno-imports.mjs`, then use the exact
 [optional deployment command](cutover-v2.md#3-deploy-the-verified-functions-optional-section-7).
 No existing CLI credentials means keep the deployment optional and verification local. The current
-missing `index` import-map aliases and missing manual rollback files are explicit no-go conditions
-in that checklist; generation without drift does not prove import resolution.
+missing manual rollback files remain an explicit no-go condition in that checklist. BASE0 repaired
+the `index` import-map aliases; re-run the guard on the release commit because generation without
+drift does not prove import resolution.
 The existing automatic workflow can deploy changed bundles on `main` when its repo secret is
 configured, but do not dispatch Actions for this release. Afterwards run the live checks.
 

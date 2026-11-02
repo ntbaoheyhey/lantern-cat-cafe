@@ -98,14 +98,11 @@ Use only an already-configured Supabase CLI login, after the local score/merge g
 prerequisites pass; never paste a token into a command log. Otherwise retain the commands as optional
 steps and the flags as default-OFF. Current NO-GO prerequisites:
 
-- The generator omits explicit extensionless `index` aliases. Five imports of './index' in game-rules
-  (`v2/forge/{craft,relic}.ts` and `v2/bag/{compare,best,salvage}.ts`) cause 80 unresolved edges in
-  sixteen function maps. A separate import-map repair must include the `v2/forge/index` and
-  `v2/bag/index` keys, regenerate maps and pass both the strict guard and no-drift check.
-  The same repair must convert the known-defect `it.fails` in
-  [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) to an ordinary regression;
-  otherwise the repaired guard becomes an unexpected pass and makes the suite red.
-  A successful `pnpm gen:deno` alone does not resolve this failure. Do not disable the guard.
+- BASE0 repaired the missing explicit `index` aliases and converted the known-defect case in
+  [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) to a passing regression.
+  The integrated checkout resolves all 18 functions. Re-run the strict import guard and
+  no-drift check on the exact release commit; successful generation alone is insufficient.
+  A failing guard remains a no-go condition. Do not disable it.
 - This checkout lacks `supabase-manual/v2-rollback.sql` and the per-migration rollback files required
   by section 7. Review and test those locally before optional migration deployment; do not invent
   a live rollback or claim the proposal below is an equivalent file.

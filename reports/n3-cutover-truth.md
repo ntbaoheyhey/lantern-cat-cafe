@@ -1,5 +1,11 @@
 STATUS: PARTIAL
 
+T007 update, 2 Nov 2026: main includes BASE0 and CXN3-FIX (#250). The integrated branch
+passes the 18-function import guard, no-drift check, classifier tests and local schema tests.
+The import-map findings below are historical and resolved by BASE0. The other receipts below
+describe the earlier head, not the current merge gate. Full T007 gate and release evidence
+will be recorded separately; no live `--v2` check is permitted before #244 merges.
+
 # CXN3 — cut-over truth, card P/B
 
 1 Nov 2026. Detached continuation from `458eebd`, based on `origin/main` `1fb25ed`.
