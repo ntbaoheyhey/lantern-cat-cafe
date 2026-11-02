@@ -1,0 +1,15 @@
+UTC: 2026-11-01T08:31:43.558715+00:00
+CWD: .
+$ python3 reports/scorecard/cxp1/tools/mutate.py
+unlock-round-up: exit=1, assertion_failure=True
+equip-third: exit=1, assertion_failure=True
+equip-duplicate: exit=1, assertion_failure=True
+migration-disabled: exit=1, assertion_failure=True
+corrupt-grants-selection: exit=1, assertion_failure=True
+persistence-dropped: exit=1, assertion_failure=True
+refresh-delta-retained: exit=1, assertion_failure=True
+retired-cleanup-repeats: exit=1, assertion_failure=True
+hook-never-subscribes: exit=1, assertion_failure=True
+Scratch removed; original source hashes preserved: {'packages/game-rules/src/v2/meta/pets/index.ts': '886f9ee221d6c23a56842388bd3a19a78463f49bc77a9e7a290a67e9df4da2f8', 'apps/web/src/pets/state.ts': '4955e279e5bc5d0f6904d9b75f42856340273ffec8aa25163220c9a5220cd4a5'}
+
+EXIT: 0

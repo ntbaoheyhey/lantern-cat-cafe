@@ -19,6 +19,12 @@ const v2Dist = `dist-v2/e2e-${v2Port}`;
 if (new Set([classicPort, v2Port, serverPort, apiPort]).size !== 4) throw new Error('All four E2E ports must differ');
 const externalServer = process.env.F2_EXTERNAL_SERVER === '1';
 const demoEnv = { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '', VITE_ALLOW_MOCK_AUTH: '1' };
+const viewportName = process.env.E2E_VIEWPORT ?? '1280x720';
+if (!['1280x720', '1600x900'].includes(viewportName)) {
+  throw new Error('E2E_VIEWPORT must be 1280x720 or 1600x900');
+}
+const desktopViewport = viewportName === '1600x900'
+  ? { width: 1600, height: 900 } : { width: 1280, height: 720 };
 
 export default defineConfig({
   testDir: 'e2e',
@@ -49,23 +55,23 @@ export default defineConfig({
       name: 'v2-server',
       testMatch: ['server/**/*.spec.ts', 'v2/errors-notice.spec.ts'],
       fullyParallel: false,
-      use: { baseURL: serverURL, viewport: { width: 1280, height: 720 }, launchOptions },
+      use: { baseURL: serverURL, viewport: desktopViewport, launchOptions },
     },
     {
       name: 'v2-loop',
       testMatch: 'v2/**/*.spec.ts',
       testIgnore: ['v2/errors-notice.spec.ts'],
-      use: { baseURL: v2URL, viewport: { width: 1280, height: 720 }, launchOptions },
+      use: { baseURL: v2URL, viewport: desktopViewport, launchOptions },
     },
     {
       name: 'classic',
       testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**', 'server/**'],
-      use: { baseURL: classicURL, viewport: { width: 1280, height: 720 }, launchOptions },
+      use: { baseURL: classicURL, viewport: desktopViewport, launchOptions },
     },
     {
       name: 'stage-layout',
       testMatch: ['layout/**/*.spec.ts', 'ui/**/*.spec.ts', 'qa/**/*.spec.ts'],
-      use: { baseURL: v2URL, viewport: { width: 1280, height: 720 }, launchOptions },
+      use: { baseURL: v2URL, viewport: desktopViewport, launchOptions },
     },
   ],
 });

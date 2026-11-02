@@ -43,6 +43,17 @@ function sceneHarness() {
   return { scene, events, add, cat, monster, start, text, image };
 }
 
+it('defers a resize before scene boot and uses the latest scale when CREATE arrives', () => {
+  const { scene, cat, start } = sceneHarness();
+  // Phaser has not injected the scale plugin into a queued scene yet.
+  Object.assign(scene, { scale: undefined });
+  scene.show(sampleServerStateV2(), false);
+  expect(() => scene.relayout()).not.toThrow();
+  Object.assign(scene, { scale: { width: 453, height: 96 } });
+  start();
+  expect(cat.x).toBe(Math.round(453 * .3));
+});
+
 it('renders the latest queued state after Phaser enters RUNNING, without another state update', () => {
   const { scene, add, cat, monster, start } = sceneHarness();
   const first = sampleServerStateV2(), latest = sampleServerStateV2({ classId: 'witch' });

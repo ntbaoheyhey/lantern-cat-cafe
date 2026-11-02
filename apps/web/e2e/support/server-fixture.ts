@@ -30,8 +30,11 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
   const session = await control<Session>(request, 'session', { kind });
   await install(page.context(), session);
   // Freeze only the browser scheduler. Server time advances through a per-player local control.
-  await page.clock.install();
-  await page.clock.pauseAt(await page.evaluate(() => Date.now()));
+  // Install before navigation with an epoch origin, then pause at wall time.
+  // Reading the advancing browser clock and pausing at that reading races the
+  // next protocol command: transport latency can make the target already past.
+  await page.clock.install({ time: new Date(0) });
+  await page.clock.pauseAt(new Date());
   await page.goto('/');
   // In AGR1 redesign, HUD/rail is hidden on onboarding class-picker (fresh session) until class is chosen.
   if (kind === 'fresh') {

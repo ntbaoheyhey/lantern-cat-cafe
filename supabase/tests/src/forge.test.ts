@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "./fixture-clock.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import { CONFIG, rarityIndex, relicIdFor, rollRelicRarity } from "@taskbar-hero/game-rules";
 import { encodeAbiParameters, encodeEventTopics, getAddress, parseAbi, recoverTypedDataAddress, type Address, type Hex } from "viem";
@@ -32,8 +33,8 @@ const OTHER: Address = "0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93";
 // Throwaway key, new every run. Never a real signer key.
 const KEY = generatePrivateKey();
 const SIGNER = privateKeyToAccount(KEY).address;
-// 2026-11-01 10:00 UTC = 17:00 UTC+7.
-const T0 = Date.UTC(2026, 10, 1, 10, 0, 0);
+// Database-relative 10:00 UTC = 17:00 UTC+7; no fixed expiry date.
+let T0 = 0;
 const COST: number = CONFIG.relic.shardCost;
 
 /** Fake Fuji: receipts by tx hash, used nonces, and a switch to make the RPC fail. */
@@ -109,7 +110,7 @@ function mintTx(v: RelicVoucher, o: { address?: Address; nonce?: bigint; player?
 }
 
 beforeAll(async () => {
-  db = await migratedDb();
+  db = await migratedDb(); T0 = await databaseFixtureClock(db); clock = T0;
 });
 
 describe("relic-forge", () => {
@@ -225,7 +226,7 @@ describe("relic-forge", () => {
     });
     await expect(forgeRelic(deps, p.id)).rejects.toMatchObject({ code: "forge_blocked", reason: "daily_limit" });
 
-    clock = Date.UTC(2026, 10, 1, 17, 0, 1); // 00:00:01 UTC+7 on 2026-11-02
+    clock = T0 + 7 * 3600_000 + 1000; // 00:00:01 UTC+7 on the next game day
     expect((await getState(deps, p.id)).forge).toEqual({ blockedBy: null, forgedToday: false, pending: null, today: null });
     const next = await forgeRelic(deps, p.id);
     expect(next.voucher.nonce).not.toBe(v.nonce);
@@ -322,7 +323,7 @@ describe("forge.today", () => {
     const p = await player();
     const v = (await forgeRelic(deps, p.id)).voucher;
     await reportMint(deps, p.id, v.nonce, mintTx(v));
-    clock = Date.UTC(2026, 10, 1, 17, 0, 1); // 00:00:01 UTC+7 on 2026-11-02
+    clock = T0 + 7 * 3600_000 + 1000; // 00:00:01 UTC+7 on the next game day
     expect((await getState(deps, p.id)).forge.today).toBeNull();
     clock = T0;
   });

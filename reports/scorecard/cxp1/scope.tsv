@@ -1,0 +1,100 @@
+path	tier	reason
+apps/web/e2e/v2/pets-preview.spec.ts	2	Built-app local persistence and exact acknowledged kill-count coverage
+apps/web/src/game/v2/storeV2.ts	2	Inherited two-line read-only observer mount; unchanged in this continuation
+apps/web/src/pets/isolation.test.ts	1	CXP1 implementation, tests, documentation or evidence
+apps/web/src/pets/state.test.ts	1	CXP1 implementation, tests, documentation or evidence
+apps/web/src/pets/state.ts	1	CXP1 implementation, tests, documentation or evidence
+docs/decisions/pets-preview.md	2	Explicitly authorized preview-number decision and index
+docs/design/decisions.md	2	Explicitly authorized preview-number decision and index
+packages/game-rules/src/v2/meta/pets/README.md	1	CXP1 implementation, tests, documentation or evidence
+packages/game-rules/src/v2/meta/pets/index.ts	1	CXP1 implementation, tests, documentation or evidence
+packages/game-rules/src/v2/meta/pets/pets.test.ts	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1.md	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/checks/desktop-e2e.log	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/checks/observer-after.log	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/checks/observer-before.log	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/checks/round1-e2e.log	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/checks/verify-pr.log	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/desktop-1280x720.jpg	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/desktop-1600x900.jpg	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/home-1280x720.png	1	CXP1 implementation, tests, documentation or evidence
+reports/cxp1/home-1600x900.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/cards.md	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/demo-1280x720-after.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/demo-1280x720-initial.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/demo-1600x900-after.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/demo-1600x900-initial.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/demo-review.json	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/home-1280x720.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/home-1600x900.png	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/README.md	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/bundle-classic.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/bundle-v2.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/demo-review-corrected.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/demo-review.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/deno-drift.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/deno-imports.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/diff-check.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/diff-stat-branch.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/diff-stat-continuation.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/gen-deno.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/install.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/integrity-scope-secrets.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-baseline-complete-mirror.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-baseline-corrected.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-baseline.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-corrected.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-current.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-report-corrected.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-report.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/links-touched.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-baseline-rules.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-baseline-store.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-corrupt-grants-selection.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-equip-duplicate.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-equip-third.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-hook-never-subscribes.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-migration-disabled.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-persistence-dropped.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-preview-changes-power.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-refresh-delta-retained.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-restored-rules.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-restored-store.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-retired-cleanup-repeats.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-summary.json	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutation-unlock-round-up.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutations-with-isolation.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/mutations.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/persistence-e2e.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/persistence-repeat.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/port-check.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/rules-handoff.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/rules-targeted.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/rules-typecheck.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/store-handoff.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/store-targeted.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/versions.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/logs/web-typecheck.log	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/scope.tsv	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/tools/audit.py	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/tools/check-baseline-links.py	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/tools/mutate.py	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/tools/review-demo.mjs	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/tools/run_check.py	1	CXP1 implementation, tests, documentation or evidence
+reports/scorecard/cxp1/ui-diff.md	1	CXP1 implementation, tests, documentation or evidence
+supabase/functions/boss-fight/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/equip/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/game-state/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/idle-claim/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/relic-forge/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/relic-mint-report/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/upgrade/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-boss-fight/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-choose-class/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-claim/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-craft/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-equip/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-lock/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-relic-forge/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-salvage/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import
+supabase/functions/v2-state/deno.json	2	Inherited generator-required preview directory alias only; no new drift or runtime import

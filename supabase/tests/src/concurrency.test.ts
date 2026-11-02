@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "./fixture-clock.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import { CONFIG, upgradeCost } from "@taskbar-hero/game-rules";
 import { encodeAbiParameters, encodeEventTopics, parseAbi, type Address, type Hex } from "viem";
@@ -26,7 +27,7 @@ import { migratedDb, pgliteStore } from "./game-db.ts";
 const SECRET = "test-seed-secret";
 const NFT: Address = "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D";
 const KEY = generatePrivateKey(); // throwaway, never a real signer key
-const T0 = Date.UTC(2026, 10, 1, 10, 0, 0);
+let T0 = 0;
 const PARALLEL = 8;
 
 const receipts = new Map<string, MintReceipt>();
@@ -89,7 +90,7 @@ function mintTx(v: RelicVoucher): Hex {
 }
 
 beforeAll(async () => {
-  db = await migratedDb();
+  db = await migratedDb(); T0 = await databaseFixtureClock(db); clock = T0;
 });
 
 describe("idle-claim", () => {
