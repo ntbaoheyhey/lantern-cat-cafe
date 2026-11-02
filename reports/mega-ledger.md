@@ -1,12 +1,12 @@
 # Mega ledger — living draft
 
-**USER RESUMED: latest explicit continue instruction2026-11-02.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**USER PAUSED: latest explicit stop-and-report instruction2026-11-02.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
 
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / POSTMERGE VERIFY | 2 | 74d60da core/build PASS; full265/265 bothsizes; repeats/wrapper pending | A97.642857/B98;merged74d60da;productionReady/exactSHA observed;artifact/live pending;no nextmerge |
+| 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / POSTMERGE VERIFY | 2 | 74d60da core/build/full265each/repeat700each PASS; wrapper pending | A97.642857/B98;merged74d60da;productionReady/exactSHA observed;artifact/live pending;no nextmerge |
 | 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | IN-PROGRESS | 0 | abd64fa:200repeat/full272eachsize/type/linksPASS | Actor-oracle gap repaired;source26e7de8published;3visibilityvariants detected;independent/fullactualmain gates pending |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
@@ -113,3 +113,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - Checkpoint 2026-11-02T11:51:03+07:00: actual-main74d60da has14 completed commands exit0 including core/builds/imports/links/bundle and full1280 browser265/265. Both exact-SHA provider statuses completed; primary authenticated UI confirms Ready/Production/currentalias/main/fullSHA. Full1600, both12-spec repeats, safeFORCE_ALL verifier, fullartifact equality and live checks remain pending. No ownedtestprocess or4440–4444listener; no test/worker/deployment launched by this checkpoint. BASE0 remains MERGED / POSTMERGE VERIFY. Evidence: cards/BASE0-POSTMERGE/74d60da/REPORT.md. Prior directsnapshot11:11:55; this save is late, no intervening checkpoint invented.
 
 - Milestone 2026-11-02T12:12:41+07:00: actualmain74d60da fullbrowser265/265 at both1280x720 and1600x900, exit0. Twelve-spec repeat10 at1280 is RUNNING, session5924/shellPID6207, ports4440–4443 owned by6245/6264/6312/6361; worktree mega-base0-postmerge-74d60da remains tracked-clean. Repeat1600, safeFORCE_ALL verifier, artifact identity and live gates still pending. No nextmerge.
+
+- Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.

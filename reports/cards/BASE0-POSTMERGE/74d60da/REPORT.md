@@ -1,4 +1,11 @@
-# BASE0 actual-main verification — IN PROGRESS
+# BASE0 actual-main verification — USER PAUSED
+
+Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
+
+Evidence: `pause-result.json`, `full-{1280,1600}.{log,exit}` and `repeat-{1280,1600}.{log,exit}`. The two repeated suites completed normally with exit0 before the process inspection; no termination was necessary. The checkout remains tracked-clean. Existing independent A97.64285714285714/B98 grades are unchanged. No app/live PASS is claimed.
+
+## Historical checkpoints
+
 
 Updated 2026-11-02T11:51:03+07:00. PR246 merged as `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; resulting tree equals graded280ff4b. This report separates actual-main evidence from premerge checks.
 

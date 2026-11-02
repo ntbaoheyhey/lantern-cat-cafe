@@ -1,3 +1,62 @@
+# Taskbar Hero — báo cáo tạm dừng
+
+Cập nhật: 2026-11-02T12:28:58+07:00. **ĐÃ TẠM DỪNG theo yêu cầu của người dùng. Mission chưa hoàn thành.** Nội dung hiện tại ở đầu file này; các ghi chép cũ phía dưới là lịch sử, không phải trạng thái đang chạy.
+
+## Đã hoàn thành
+
+- BASE0 / PR246 đã được merge vào main: `74d60dab2cef8c31a3f2729d18719ff3021a9eda`. Cây mã giống bản đã được hai người chấm độc lập trước đó: A97.64285714285714 và B98; giữ nguyên hai điểm, không thay bằng điểm tự chấm.
+- Trên chính bản main đã merge: 17 lệnh đã ghi kết quả đều kết thúc với mã0. Bao gồm cài đặt cố định phiên bản, kiểm tra kiểu/lint/unit, build mặc định/classic/v2, Deno, liên kết và dung lượng bundle.
+- Hai bộ kiểm tra trình duyệt đầy đủ đạt **265/265 ở1280×720** và **265/265 ở1600×900**. Mười lượt lặp của12nhóm kiểm tra liên quan đạt **700/700 ở mỗi kích thước**. Hai lượt lặp đã tự kết thúc thành công trước lúc kiểm tra tiến trình khi dừng.
+- Các kết quả unit đã ghi: scripts5, chain32, auth24, Supabase548, game-rules366, API-contract16, web1308. Hai expected-failure và11skip của game-rules là trạng thái kế thừa, không phát sinh việc bỏ test mới.
+- Đã quan sát hai trạng thái triển khai thành công cho SHA trên; giao diện nhà cung cấp chính hiển thị Ready/Production/Current và đúng SHA. **Điều này chưa chứng minh toàn bộ game live đã qua kiểm tra.**
+
+## Những phần đã chuẩn bị, chưa hoàn tất toàn bộ gate
+
+| Hạng mục | Mốc hiện có | Phần còn thiếu |
+| --- | --- | --- |
+| FXRB / PR243 | Sửa kiểm tra hiển thị nhân vật; source26e7de8 đã đẩy. Bản tích hợpabd64fa đạt272browser mỗi kích thước và200repeat; phát hiện cả3biến thể cố tình ẩn sprite. | Tích hợp main hiện tại, đầy đủ gate và đánh giá độc lập, merge/live. |
+| CXP1 / PR240 | Sửa giới hạn pet; source2b7ceeb đã đẩy. Bản7393dc3 đạt280browser mỗi kích thước,80repeat và4kiểm tra cố ý gây lỗi. | Gate giao diện, tích hợp main, đánh giá độc lập, merge/live. |
+| CXL1 / PR248 | Kiểm tra sơ bộ bản7731a65:402rules cùng type/Deno/build đạt. | Fullgate trên main hiện tại, đánh giá độc lập, merge/live. |
+| ART1 / PR247 | Kiểm tra sơ bộ21fc7dd:36test, catalog và51spriteaudit đạt;71file nguồn được bảo toàn. | Fullgate, đánh giá độc lập, merge/live. |
+| CXN3-FIX / PR250 | Sourcea9b804 đã đẩy; core/build,274browser mỗi kích thước,90repeat mỗi kích thước, UI/a11y và verifier đều đạt trong phạm vi đã ghi. | Kiểm tra lại base của PR, tích hợp main, đánh giá độc lập, release/live. |
+| CXN3 / PR244 | Kiểm tra sơ bộ công cụ health; có10phát hiện live lịch sử chưa được xác nhận đã giải quyết. | Phụ thuộc CXN3-FIX; fullgate và kiểm tra live bắt buộc. |
+| CXU5 / PR249 | Bản sơ bộ6bf7b13 đạt80browserrepeat và unit/type trong phạm vi card. | Fullgate, đánh giá độc lập, merge/live. |
+| CXU4 / PR251 | Sourced408ada đã đẩy;56test tập trung+19onboarding đạt. Bản tích hợp cũb06a68d có bằng chứng riêng. | Fullgate/giao diện, đánh giá độc lập, merge/live; không gộp kết quả khác SHA. |
+
+Các phần còn lại của P0–P3 và regression giữ nguyên trong [bảng tiến độ](mega-ledger.md) và [kế hoạch ưu tiên](mega-priority-plan.md); không được coi là đã xong. Dữ liệu crawl của người dùng và https://tbhindex.com đã được đưa vào hồ sơ tham khảo tham số/cast; vẫn phải dùng khi triển khai các hạng mục gameplay/đồ họa tiếp theo.
+
+## Đang dở tại điểm dừng
+
+BASE0 đang ở trạng thái **MERGED / POSTMERGE VERIFY INCOMPLETE**. Còn thiếu: chạy verifier đầy đủ an toàn từ ledger; đối chiếu toàn bộ tài nguyên triển khai với build; chạy legacy check-live; kiểm tra đường đi demo live được người dùng chấp thuận ở cả hai kích thước. Chưa có kết luận PASS cho các bước này. Không merge hạng mục tiếp theo trước khi chúng đạt.
+
+## Trạng thái máy và nơi lưu
+
+- Không quan sát thấy tiến trình test/preview thuộc lượt này còn chạy; PID6207/13252 đã kết thúc, cổng4440–4444 trống. Không cần kill tiến trình.
+- Worktree kiểm tra sạch: `/Users/bao/.codex/worktrees/mega-base0-postmerge-74d60da/taskbar-hero` tại SHA74d60da.
+- Worktree báo cáo: `/Users/bao/.codex/worktrees/mega-ledger/taskbar-hero`, nhánh `ai/codex-mega-ledger`. Bảo toàn file bẩn/media lịch sử; chỉ commit file báo cáo được chọn.
+- Goal và lịch checkpoint30phút hiện **PAUSED**. Không tự đánh thức test/build/merge/release; chờ người dùng yêu cầu tiếp tục.
+- Log/exit/hash chính xác: [báo cáo postmerge](cards/BASE0-POSTMERGE/74d60da/REPORT.md), [biên bản dừng](cards/BASE0-POSTMERGE/74d60da/pause-result.json). Các snapshot riêng ở `/Users/bao/.codex/handoffs/taskbar-hero/reliability/checkpoints`.
+
+## Ba bước khi được yêu cầu tiếp tục
+
+1. Đọc handoff+bảng tiến độ; kiểm tra lại refs, tiến trình và cổng. Chạy verifier246 an toàn với FORCE_ALL=1, giữ lại worktree/log và ghi đúng các SHA. Không chạy lại những bộ test đã đạt nếu không có thay đổi/lỗi mới.
+2. Hoàn tất đối chiếu tài nguyên và kiểm tra live của BASE0, ghi trung thực giới hạn/kết quả. Legacy checker tạo nonce tạm theo gate đã được cho phép; không ký ví/giao dịch hay sửa SQL live.
+3. Công bố kết quả và lưu checkpoint. Chỉ khi gateBASE0 xanh mới tiếp tục FXRB→CXP1→CXL1→ART1→CXN3-FIX→CXN3→CXU5→CXU4, rồi các phần P0–P3 còn lại.
+
+## Quy tắc hiện hành
+
+- Coordinator tự làm và tự viết handoff; **không subagent, helper, checkpoint.py hay trình điều phối phụ**, không mở chat khác.
+- Khi hoạt động trở lại: checkpoint30phút và sau mốc quan trọng, handoff dưới80dòng; log lớn lưu trên đĩa. Lưu handoff không đồng nghĩa compact; ngưỡng64000 đã cấu hình nhưng hiệu lực runtime chưa được xác nhận.
+- Không giảm/né test, không xóa lỗi cũ hoặc gọi kiểm tra sơ bộ là fullgate. Bằng chứng gắn đúng SHA. Tự kiểm tra không thay thế đánh giá độc lập; các điểm độc lập mới vẫn còn thiếu nếu chưa có người chấm hợp lệ.
+- Merge tuần tự và giữ mọi ngưỡng điểm/G1–G7; không push thẳng main, chạy Actions, đổi secrets, dùng tiền thật/mainnet, thao tác SQL phá hủy, công khai repo hay nộp contest. Backend mới mặc địnhOFF.
+- Commit dùng `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>` và hậu tố `[skip ci]`; lần dừng này chỉ commit/push nhánh ledger.
+- Bảo toàn nguồn/art gốc. Tham khảo crawl/TBHIndex có nguồn/ngày/độ tin cậy; không suy cooldown từ độ dài clip dựng từ ảnh. ZIPResearch gốc là errorbody; dùng bản `TBH_Index_Research_2026-10-31-2.zip` hợp lệ và `TBH_All_36_Skills_2026-10-31.zip`.
+- P1 kiểm tra toàn bộ phần đã merge rồi bổ sung khi P2/P3 tới. Demo live hiện dùng gate theo phần đã merge; bắt buộc đủ9bước sau khi CXU3 và CXC2 cùng merge.
+
+---
+
+## Nhật ký trước lần tạm dừng này — chỉ để truy vết
+
 # Taskbar Hero mission progress — living draft
 
 STATUS: IN-PROGRESS — USER RESUMED

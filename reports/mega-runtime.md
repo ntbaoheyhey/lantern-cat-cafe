@@ -1,4 +1,9 @@
-# Runtime — USER RESUMED
+# Runtime — USER PAUSED
+
+Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
+No automatic resume. Older ACTIVE/RUNNING entries below are historical.
+
+## Historical records
 Milestone 2026-11-02T12:12:41+07:00: actualmain74d60da fullbrowser265/265 at both1280x720 and1600x900, exit0. Twelve-spec repeat10 at1280 is RUNNING, session5924/shellPID6207, ports4440–4443 owned by6245/6264/6312/6361; worktree mega-base0-postmerge-74d60da remains tracked-clean. Repeat1600, safeFORCE_ALL verifier, artifact identity and live gates still pending. No nextmerge.
 Checkpoint 2026-11-02T11:51:03+07:00: actual-main74d60da has14 completed commands exit0 including core/builds/imports/links/bundle and full1280 browser265/265. Both exact-SHA provider statuses completed; primary authenticated UI confirms Ready/Production/currentalias/main/fullSHA. Full1600, both12-spec repeats, safeFORCE_ALL verifier, fullartifact equality and live checks remain pending. No ownedtestprocess or4440–4444listener; no test/worker/deployment launched by this checkpoint. BASE0 remains MERGED / POSTMERGE VERIFY. Evidence: cards/BASE0-POSTMERGE/74d60da/REPORT.md. Prior directsnapshot11:11:55; this save is late, no intervening checkpoint invented.
 Latest2026-11-02T11:11:53+07:00: BASE0merged74d60da; fresh mega-base0-postmerge-74d60da installing. No helper/subagent. Ports4440–4444 checkedfree; directpostmergechecks thenactualdeployment/live proof before anyothermerge/work. Sourcecandidate treeequality andauthor verified.

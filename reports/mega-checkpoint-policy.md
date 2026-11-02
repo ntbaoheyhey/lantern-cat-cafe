@@ -1,4 +1,9 @@
-# Checkpoint and context policy — USER RESUMED
+# Checkpoint and context policy — USER PAUSED
+
+Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
+No automatic resume. Older ACTIVE/RUNNING entries below are historical.
+
+## Historical records
 Latest2026-11-02T09:49:53+07:00: explicit resume supersedes priorpause. Existing same-thread heartbeat updatedACTIVE with30minute cadence and unchanged prompt. Coordinator personally saves checkpoints; no helpers/subagents. Goal-controller bookkeeping still showedPAUSED on read; this does not cancel the newer explicit task instruction, and no unsupported resume API was attempted.
 Latest2026-11-02T08:37:42+07:00: user explicitly requested handoff and pause. Save this checkpoint only, then stop. Existing heartbeat taskbar-hero-checkpoint-10-ph-t is alreadyPAUSED according to persisted automation state;30minute cadence is unchanged. No tests, product edits, merges or releases until explicit resume. Older ACTIVE schedule lines below are historical.
 Latest authority: the user's 2026-11-02 instruction forbids subagents and helpers. It supersedes earlier delegation allowances. Stay in this chat; the coordinator directly owns implementation, tests, reports, decisions and merges, one item at a time.
