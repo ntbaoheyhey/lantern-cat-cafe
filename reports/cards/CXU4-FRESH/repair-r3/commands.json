@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:36:43.540070+00:00",
+    "endedAt": "2026-11-02T19:36:50.913909+00:00"
+  },
+  {
+    "name": "focused-units",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/ui src/layout/character src/layout/HelpTab src/onboarding",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:36:50.920749+00:00",
+    "endedAt": "2026-11-02T19:36:52.837429+00:00"
+  },
+  {
+    "name": "focused-browser",
+    "command": "E2E_PORT_CLASSIC=4800 E2E_PORT_V2=4801 E2E_PORT_SERVER=4802 E2E_PORT_API=4803 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu4-hero-help.spec.ts e2e/server/cxu4-offline.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+    "exit": 0,
+    "startedAt": "2026-11-02T19:36:52.844271+00:00",
+    "endedAt": "2026-11-02T19:37:37.710648+00:00"
+  }
+]

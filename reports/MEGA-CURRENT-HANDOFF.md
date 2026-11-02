@@ -39,5 +39,6 @@ Tools: reports/fresh-session-tools/run-checks.py; parameterized live assets/path
 Owner step remains exact in reports/OPTIONAL-USER-STEPS.md T007; this blocks no frontend work.
 Safety: no secrets, destructive live DB writes, migrations/functions deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, public repo or submission.
 Next3: finish current A + mutations/UI; clean B tests then diff; merge if both>=92/zero auto-fails then main/live.
-In-flight PID32491: CXU4 repair-r3, active worktree /private/tmp/tbh-cxu4-active, ports4800–4803.
-Current headd969f1662a4c159023c19b320825e04c91e5814e; B clone still3ed0633. Re-run A/B if targeted repair passes; otherwise PARTIAL after3 rounds.
+In-flight PID33858: CXU4 grade-a-r3 at /private/tmp/tbh-cxu4-active, ports4800–4803.
+Current d969f16: third repair passes51 units,60 browser repeats and20×51 unit stability controls; fresh A/B pending.
+B /private/tmp/tbh-cxu4-fresh-b is clean d969f16; grade-b-r3/run.json prepared, not started.
