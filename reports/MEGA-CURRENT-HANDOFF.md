@@ -3,11 +3,11 @@ Updated: 2026-11-03T00:39:51+07:00. ACTIVE; one session.
 Authority: user's 2026-11-02 evening prompt; old dependency/orchestration rules superseded.
 STOP intact: /Users/bao/taskbar-hero/.codex-orchestrator/STOP. Never run orchestrator.py.
 Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; all new commits end [skip ci].
-Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (fresh fetch at00:34 local Nov3).
+Last merged/main: 1b299c40513ff9f5330a91ad040791bbd4065df9 (#249), exact reviewed tree; author/suffix verified.
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local f846b49 | A94/B94 PASS, zero auto-fails; ready for exact-head squash; no merge yet |
+| CXU5 | #249 / merged1b299c4 | A94/B94 PASS; actual-main/live gate active |
 | CXU4 | #251 / 1581084 | NEXT after A; frontend, independent of #244 |
 | CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
 | T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
@@ -31,10 +31,11 @@ Worktrees: A /private/tmp/tbh-t008-cxu5 (ai/codex-cxu5, f846b49).
 B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), B tests then diff completed; clean at exact head.
 Repair/scratch /private/tmp/tbh-cxu5-hud-repair (codex/cxu5-hud-fit, f846b49, clean).
 Ledger /private/tmp/tbh-t001-ledger (ai/codex-mega-ledger); selected-file staging only; preserve historical dirt.
-In-flight owned PIDs: none. All A/B tests, UI/effects, probes and mutants finished.
-Ports4700–4793 reserved blocks now free; unrelated listeners untouched.
+In-flight PID7827: actual-main post-main runner at /private/tmp/tbh-main-after-cxu5, 4720–4723.
+Ports4720–4723 main active; other reserved test blocks free. No next merge before main/live passes.
 All previous owned runs finished. Do not kill unrelated18457/49986 or OS listeners.
 Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.mjs isolates audit build in/tmp.
 Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.
 Safety: no secrets, live DB mutation/migration/function deploy, provider/VITE_GAME_V2 changes, real funds/mainnet/submission.
 Next3: complete A and CSS mutant onf846b49; B clean tests+diff and grade; merge only after both>=92 then re-test main/live.
+Current main evidence: CXU5-FRESH/post-main; live helper scripts: reports/fresh-session-tools/{verify-live-assets,live-phased}.mjs.

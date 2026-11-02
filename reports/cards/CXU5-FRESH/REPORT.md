@@ -40,3 +40,6 @@ B UI harness uses4750–4753 and a unique signed-audit build directory. Its dev 
 
 ## Grader B complete
 Self-graded (fresh pass):94/100 at f846b49; zero auto-fails. Clean tests preceded full diff review. A94/B94 agree, so no third pass is required. All floors pass. Merge is authorized only for the exact pushed head with requested author/suffix; actual-main and live checks remain mandatory.
+
+## Merge
+PR249 merged as1b299c4 at2026-11-02T18:02:48Z; exact tree equals verified f846b49 (ca5f56d...). Requested author/email and final skip-ci suffix verified. Actual-main fresh checkout /private/tmp/tbh-main-after-cxu5 now runs full core/browser checks on4720–4723, PID7827; live identity/legacy/phased checks pending. No next merge before these pass.
