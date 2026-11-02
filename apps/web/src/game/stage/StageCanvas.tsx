@@ -64,7 +64,9 @@ export function StageCanvas({
       retiring.destroy(true);
       // destroy() only sets pendingDestroy; a hidden/paused loop may never step again.
       // The public step consumes pendingDestroy before updating or rendering anything.
-      if (retiring.isBooted) retiring.step(performance.now(), 0);
+      // Game.isBooted becomes true before textures and SceneManager are ready.
+      // runDestroy needs SceneManager's systemScene, created during READY.
+      if (retiring.scene.isBooted) retiring.step(performance.now(), 0);
       else retiring.events.once('ready', () => queueMicrotask(() => retiring.step(performance.now(), 0)));
     };
   }, []);

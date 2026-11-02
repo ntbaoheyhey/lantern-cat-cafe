@@ -1,0 +1,19 @@
+$ env CI=true pnpm --filter @taskbar-hero/web test src/game/stage/StageScene.test.ts src/game/stage/StageCanvas.test.tsx src/layout/metrics.test.ts
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero
+started: 2026-11-01T07:58:54.025723+00:00
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+> vitest run src/game/stage/StageScene.test.ts src/game/stage/StageCanvas.test.tsx src/layout/metrics.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  22 passed (22)
+   Start at  14:58:54
+   Duration  850ms (environment 75%, tests 11%, import 9%, transform 5%)
+
+
+exit_code: 0
+elapsed_seconds: 1.64

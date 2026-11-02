@@ -1,0 +1,445 @@
+
+MUTANT: omit explicit index aliases
+Command: node --test gen-deno-json.test.mjs
+✖ explicit root and nested index imports resolve to their exact files (13.568208ms)
+✖ directory aliases coexist with explicit indexes and ordinary modules (5.191125ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (4.514708ms)
+✖ output order is stable regardless of file creation order (4.250833ms)
+✖ generation preserves auth mappings and ignores shared or non-function directories (4.859791ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 88.011917
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:22:1
+✖ explicit root and nested index imports resolve to their exact files (13.568208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - '../../../packages/game-rules/src/index.ts'
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-ogb_gc2x/gen-deno-json.test.mjs:25:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '../../../packages/game-rules/src/index.ts',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:29:1
+✖ directory aliases coexist with explicit indexes and ordinary modules (5.191125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts',
+      '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts',
+  -   '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-ogb_gc2x/gen-deno-json.test.mjs:31:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts' },
+    expected: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:46:1
+✖ output order is stable regardless of file creation order (4.250833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '../../../packages/game-rules/src/a',
+      '../../../packages/game-rules/src/a/b',
+  -   '../../../packages/game-rules/src/a/index',
+  -   '../../../packages/game-rules/src/index',
+      '../../../packages/game-rules/src/z'
+    ]
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-ogb_gc2x/gen-deno-json.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/z' ],
+    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:54:1
+✖ generation preserves auth mappings and ignores shared or non-function directories (4.859791ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - '../../../packages/game-rules/src/v2/forge/index.ts'
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-ogb_gc2x/gen-deno-json.test.mjs:71:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '../../../packages/game-rules/src/v2/forge/index.ts',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+
+MUTANT: omit directory aliases
+Command: node --test gen-deno-json.test.mjs
+✔ explicit root and nested index imports resolve to their exact files (9.001583ms)
+✖ directory aliases coexist with explicit indexes and ordinary modules (2.763375ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.186417ms)
+✖ output order is stable regardless of file creation order (3.394916ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.778708ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.389166
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:29:1
+✖ directory aliases coexist with explicit indexes and ordinary modules (2.763375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  -   '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts',
+      '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts',
+      '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-amf6nbne/gen-deno-json.test.mjs:31:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' },
+    expected: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:46:1
+✖ output order is stable regardless of file creation order (3.394916ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  -   '../../../packages/game-rules/src/a',
+      '../../../packages/game-rules/src/a/b',
+      '../../../packages/game-rules/src/a/index',
+      '../../../packages/game-rules/src/index',
+      '../../../packages/game-rules/src/z'
+    ]
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-amf6nbne/gen-deno-json.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],
+    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+
+MUTANT: include test modules
+Command: node --test gen-deno-json.test.mjs
+✔ explicit root and nested index imports resolve to their exact files (8.403584ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.7125ms)
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.685416ms)
+✔ output order is stable regardless of file creation order (3.101417ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.253791ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.559292
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:38:1
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.685416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts',
+  +   '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-1fjiwo_9/gen-deno-json.test.mjs:43:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/rng.test': '../../../packages/game-rules/src/rng.test.ts', '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+
+MUTANT: include fixture modules
+Command: node --test gen-deno-json.test.mjs
+✔ explicit root and nested index imports resolve to their exact files (9.81925ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.870875ms)
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3ms)
+✔ output order is stable regardless of file creation order (3.559375ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.421125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 80.1895
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:38:1
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   '../../../packages/game-rules/src/__fixtures__': '../../../packages/game-rules/src/__fixtures__/index.ts',
+  +   '../../../packages/game-rules/src/__fixtures__/index': '../../../packages/game-rules/src/__fixtures__/index.ts',
+      '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts',
+  +   '../../../packages/game-rules/src/v2/__snapshots__/sample': '../../../packages/game-rules/src/v2/__snapshots__/sample.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-yvrcftu7/gen-deno-json.test.mjs:43:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/__fixtures__': '../../../packages/game-rules/src/__fixtures__/index.ts', '../../../packages/game-rules/src/__fixtures__/index': '../../../packages/game-rules/src/__fixtures__/index.ts', '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts', '../../../packages/game-rules/src/v2/__snapshots__/sample': '../../../packages/game-rules/src/v2/__snapshots__/sample.ts' },
+    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+
+MUTANT: omit ordinary module aliases
+Command: node --test gen-deno-json.test.mjs
+✔ explicit root and nested index imports resolve to their exact files (8.916125ms)
+✖ directory aliases coexist with explicit indexes and ordinary modules (2.98625ms)
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.401417ms)
+✖ output order is stable regardless of file creation order (3.804166ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.192208ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83.020084
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:29:1
+✖ directory aliases coexist with explicit indexes and ordinary modules (2.98625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts',
+  -   '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts',
+      '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts'
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-44ggisrv/gen-deno-json.test.mjs:31:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' },
+    expected: { '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/craft': '../../../packages/game-rules/src/v2/forge/craft.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:38:1
+✖ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.401417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + {}
+  - {
+  -   '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts'
+  - }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-44ggisrv/gen-deno-json.test.mjs:43:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: {},
+    expected: { '../../../packages/game-rules/src/rng': '../../../packages/game-rules/src/rng.ts' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at gen-deno-json.test.mjs:46:1
+✖ output order is stable regardless of file creation order (3.804166ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '../../../packages/game-rules/src/a',
+  -   '../../../packages/game-rules/src/a/b',
+      '../../../packages/game-rules/src/a/index',
+      '../../../packages/game-rules/src/index',
+  -   '../../../packages/game-rules/src/z'
+    ]
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-44ggisrv/gen-deno-json.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index' ],
+    expected: [ '../../../packages/game-rules/src/a', '../../../packages/game-rules/src/a/b', '../../../packages/game-rules/src/a/index', '../../../packages/game-rules/src/index', '../../../packages/game-rules/src/z' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
+
+MUTANT: give auth functions game mappings
+Command: node --test gen-deno-json.test.mjs
+✔ explicit root and nested index imports resolve to their exact files (9.731791ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.733458ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.297583ms)
+✔ output order is stable regardless of file creation order (7.128ms)
+✖ generation preserves auth mappings and ignores shared or non-function directories (4.617333ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 85.012125
+
+✖ failing tests:
+
+test at gen-deno-json.test.mjs:54:1
+✖ generation preserves auth mappings and ignores shared or non-function directories (4.617333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      imports: {
+  +     '../../../packages/api-contract/src/endpoints': '../../../packages/api-contract/src/endpoints.ts',
+  +     '../../../packages/api-contract/src/errors': '../../../packages/api-contract/src/errors.ts',
+  +     '../../../packages/api-contract/src/state': '../../../packages/api-contract/src/state.ts',
+  +     '../../../packages/api-contract/src/types': '../../../packages/api-contract/src/types.ts',
+  +     '../../../packages/api-contract/src/v2': '../../../packages/api-contract/src/v2.ts',
+  +     '../../../packages/chain/src/abi': '../../../packages/chain/src/abi.ts',
+  +     '../../../packages/game-rules/src/index': '../../../packages/game-rules/src/index.ts',
+  +     '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts',
+  +     '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts',
+        '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3',
+  +     '@taskbar-hero/api-contract': '../../../packages/api-contract/src/index.ts',
+  +     '@taskbar-hero/chain': '../../../packages/chain/src/constants.ts',
+  +     '@taskbar-hero/game-rules': '../../../packages/game-rules/src/index.ts',
+  +     'viem/accounts': 'npm:viem@2.57.4/accounts',
+        'viem/siwe': 'npm:viem@2.57.4/siwe',
+        jose: 'npm:jose@6.2.12',
+        viem: 'npm:viem@2.57.4'
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///private/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/tbh-deno-mutant-2os9nqyl/gen-deno-json.test.mjs:64:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { imports: { '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3', jose: 'npm:jose@6.2.12', viem: 'npm:viem@2.57.4', 'viem/siwe': 'npm:viem@2.57.4/siwe', 'viem/accounts': 'npm:viem@2.57.4/accounts', '@taskbar-hero/api-contract': '../../../packages/api-contract/src/index.ts', '../../../packages/api-contract/src/endpoints': '../../../packages/api-contract/src/endpoints.ts', '../../../packages/api-contract/src/errors': '../../../packages/api-contract/src/errors.ts', '../../../packages/api-contract/src/state': '../../../packages/api-contract/src/state.ts', '../../../packages/api-contract/src/types': '../../../packages/api-contract/src/types.ts', '../../../packages/api-contract/src/v2': '../../../packages/api-contract/src/v2.ts', '@taskbar-hero/chain': '../../../packages/chain/src/constants.ts', '../../../packages/chain/src/abi': '../../../packages/chain/src/abi.ts', '@taskbar-hero/game-rules': '../../../packages/game-rules/src/index.ts', '../../../packages/game-rules/src/index': '../../../packages/game-rules/src/index.ts', '../../../packages/game-rules/src/v2/forge': '../../../packages/game-rules/src/v2/forge/index.ts', '../../../packages/game-rules/src/v2/forge/index': '../../../packages/game-rules/src/v2/forge/index.ts' } },
+    expected: { imports: { '@supabase/supabase-js': 'npm:@supabase/supabase-js@2.117.3', jose: 'npm:jose@6.2.12', viem: 'npm:viem@2.57.4', 'viem/siwe': 'npm:viem@2.57.4/siwe' } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+EXIT_CODE=1
