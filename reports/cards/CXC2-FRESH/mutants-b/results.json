@@ -1,0 +1,82 @@
+[
+  {
+    "name": "wrong-snapshot-height",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "client.getCode({ address: nft, blockNumber: block })",
+    "to": "client.getCode({ address: nft, blockNumber: block + 1n })",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "window-upper-leak",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "log.blockNumber <= block",
+    "to": "log.blockNumber <= block + 100n",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "rpc-range-lower-leak",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "address: [nft, market], fromBlock, toBlock: block",
+    "to": "address: [nft, market], fromBlock: 0n, toBlock: block",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "oldest-events-first",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "a.blockNumber! > b.blockNumber! ? -1 : a.blockNumber! < b.blockNumber! ? 1 : (b.logIndex ?? 0) - (a.logIndex ?? 0)",
+    "to": "a.blockNumber! > b.blockNumber! ? 1 : a.blockNumber! < b.blockNumber! ? -1 : (a.logIndex ?? 0) - (b.logIndex ?? 0)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cache-expiry-too-soon",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "PROOF_CACHE_MS = 30_000",
+    "to": "PROOF_CACHE_MS = 10_000",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cache-expiry-never",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "now - previous.at < PROOF_CACHE_MS",
+    "to": "true",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "false-zero-listings",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "functionName: 'activeListingCount', blockNumber: block",
+    "to": "functionName: 'nextListingId', blockNumber: block",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "missing-linkage-warning",
+    "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+    "from": "'Mismatch — market points to another NFT'",
+    "to": "'Matches the contract above'",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "absent-code-deployed",
+    "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+    "from": "fact.value > 0",
+    "to": "fact.value >= 0",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "always-mounted-tabs",
+    "path": "apps/web/src/ui/Tabs.tsx",
+    "from": "(!tab.lazy || active === tab.id)",
+    "to": "true",
+    "exit": 1,
+    "killed": true
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "head": "e54f0750644322dbdc40dffe389130a1f6fc736f",
+  "base": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "tree": "85267f5fb3c7c6808a50331743a6746ddb1ed2dc",
+  "clean": true,
+  "testsFirst": true,
+  "reviewedAt": "2026-11-02T22:22:27.063027+00:00",
+  "files": [
+    {
+      "path": "apps/web/e2e/ui/cxc2-proof.spec.ts",
+      "bytes": 7783,
+      "sha256": "bfbc7eaf6d42b8580aa8c9e18ca12b354660eb2553e718b7d741cd17dcd8b23c"
+    },
+    {
+      "path": "apps/web/src/chain-proof/FujiProofPanel.test.tsx",
+      "bytes": 4703,
+      "sha256": "30af3fed289c028c066f3f284a57e3ffdf746b2451ab274af3372c6c1bd32c40"
+    },
+    {
+      "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+      "bytes": 4911,
+      "sha256": "4260f3aef05c4fd31ed34cc342a9c2038a4108e767a8ff89a53666b4c5945339"
+    },
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.css",
+      "bytes": 1886,
+      "sha256": "99d30bab2db6400ff2b27defe5852def384e38b3f8fc226a326fa68fa58915a2"
+    },
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.test.ts",
+      "bytes": 6129,
+      "sha256": "08fbaa50868846e804eabbf62df0fa364cbbf431ae76fd1761f85d902e387fbc"
+    },
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.ts",
+      "bytes": 4634,
+      "sha256": "06031157e979ebf0cc671c86a897524ff0304831ee25efc5f7012fda7a9e9195"
+    },
+    {
+      "path": "apps/web/src/layout/StageLayout.tsx",
+      "bytes": 28640,
+      "sha256": "04787d34378a3c8dcc2005d7c778731b6e93d2955d32432d06178703f32d8dcf"
+    },
+    {
+      "path": "apps/web/src/ui/Tabs.tsx",
+      "bytes": 1704,
+      "sha256": "c208de53462e7560d3b70cbfe24b42ebb126765dee2f8ed6f95cb0515f239b70"
+    },
+    {
+      "path": "docs/decisions/cxc2-fuji-proof.md",
+      "bytes": 3042,
+      "sha256": "36c3a273bfac429eb741f7bb15340a2c0c5dad931eaf18ca04be6e8c3a5fc3f4"
+    },
+    {
+      "path": "docs/design/decisions.md",
+      "bytes": 1464,
+      "sha256": "297a80560f8a6939a67820f9cbd64ff84a1c68f8c8e8d426e1cdb7f57912aaf1"
+    }
+  ],
+  "review": "Full product, test and decision diff read after B commands completed. No unsafe writes, unconditional hidden mounts, fabricated totals or changed inherited tests found. RPC data still depends on the configured node; code bytes alone are not an audit or backend proof."
+}

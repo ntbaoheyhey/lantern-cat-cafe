@@ -1,0 +1,101 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B: clean checkout, tests first then diff",
+  "head": "e54f0750644322dbdc40dffe389130a1f6fc736f",
+  "base": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "tree": "85267f5fb3c7c6808a50331743a6746ddb1ed2dc",
+  "sourceRoot": "/private/tmp/tbh-cxc2-fresh-b",
+  "gradedAt": "2026-11-02T22:22:27.064418+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Fresh B verifies the exact requested contracts, chain refusal before facts, optional lazy mounting and screen gating; unavailable/mismatched/absent values stay explicit.",
+      "evidence": [
+        "grade-b/logs/unit.log",
+        "grade-b/logs/capture.log"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh core2423,140 repeated changed cases,38 classic cases and strict UI36/effects20 pass. A317-per-size full matrix is explicitly shared on the identical head, not falsely rerun.",
+      "evidence": [
+        "grade-b/commands.json",
+        "grade-a/commands.json",
+        "ui-b/commands.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten distinct B mutants killed after the green clean scratch control: code block, RPC range, event order, expiry, getter, linkage, absent bytecode and hidden mounting.",
+      "evidence": [
+        "mutants-b/control.log",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Both fresh screenshots inspected; the proof tab fits the Help shell and keeps addresses/refresh readable. Deduct2 for compact metadata and protocol event labels.",
+      "evidence": [
+        "screenshots-b.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Code is typed and bounded with no added dependency. Deduct2 for dual cache layers and compressed render markup; scope and failure behavior are clear.",
+      "evidence": [
+        "review-b-inventory.json",
+        "grade-b/logs/lint.log"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "Original tests/thresholds remain; retries0 throughout. Exact wire and pre-load clock expectations preserve the intended checks rather than hiding failed controls.",
+      "evidence": [
+        "grade-b/run.json",
+        "REPORT.md"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Exact-head identity and clean B receipt verified; synthetic UI proof, public read-ahead and future wallet/backend evidence stay distinguished. Repeat-count prose was corrected to the actual140.",
+      "evidence": [
+        "review-b-inventory.json",
+        "REPORT.md",
+        "screenshots-b.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All10 files read after tests. Existing tabs default to mounted behavior; no server/deploy/contracts/flags/settings/art/Actions changes.",
+      "evidence": [
+        "review-b-inventory.json"
+      ]
+    }
+  ],
+  "sharedFullMatrix": "A exact-head317\u00d72 receipt; not rerun in B",
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Match-head squash with requested author/suffix",
+    "Verify main tree equals tested tree",
+    "Actual-main and live checks before next merge"
+  ]
+}
