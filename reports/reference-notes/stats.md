@@ -38,7 +38,7 @@ weapon-heavy sample over different levels and qualities, not complete
 catalogue limits or a distribution from which to generate items.
 
 In that same sample, readable intrinsic bonus lines span roughly 100–450
-flat health, 0.5–5% critical chance, and 30–190% critical damage.
+flat health, 0.5–6% critical chance, and 30–190% critical damage.
 Flat armor bonuses form a different range from base armor. Lines with
 additional formatting or unclear units were not folded into these bounds.
 Combining all numeric strings would incorrectly mix speed percentages with

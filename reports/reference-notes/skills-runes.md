@@ -52,7 +52,7 @@ band. The expanded capture and live page agree on the larger inventory.
 Count distinct node identifiers rather than repeated labels.
 
 Captured rank limits span 1–10. In the 29 detail-node sample, per-rank prices
-span approximately 100–180 million currency units; percentage increments
+span approximately 100–180,000,000 currency units; percentage increments
 span 1–5%, with sampled accumulated bonuses spanning 1–25%.
 These are selected detail nodes, not global maxima. Deep account investments
 can therefore be many orders of magnitude more expensive than entry nodes.
