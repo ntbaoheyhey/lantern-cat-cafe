@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T05:22:58+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
+Updated: 2026-11-03T05:27:42+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
 Authority: Nov2 mission + Nov3 reminder. No subagents/helper chats/orchestrator. No parallel AI workers.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove/run orchestrator.py.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -9,15 +9,15 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
 | CXU4 | #251/main2847e9a | DONE fresh A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
 | CXU3 | #252/4da5104 draft | PARTIAL after3 formal rounds; A FAIL/B not run; never merge on current evidence |
-| CXC2 | codex/cxc2-fuji-proof | A95/B96 on e54f075; gate PASS, PR/merge/release next |
-| T011/T012 + content + ART/T013 | rebased7339051 local | T011/T012 prepared; default-OFF surfaces/art still pending |
+| CXC2 | codex/cxc2-fuji-proof | #253 merged39e74d8 A95/B96; actual-main/live validation active |
+| T011/T012 + content + ART/T013 | rebased69902d6 local | T011/T012 prepared; default-OFF surfaces/art still pending |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
 | CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/main: 2847e9aa166c2c824a7725b63fe17266f753563d (#251), exact reviewed tree; author/suffix verified.
-Main/live unchanged; ten-stage Hero/Help proof is not future full nine-stage/wallet proof or backend identity.
+Last merged/origin+local main: 39e74d834aa246b8182b72bac1b610e4c985f574 (#253); reviewed tree equals main, author/suffix verified.
+Live39e74d8 acceptance pending; prior2847e9a ten-stage evidence is historical, not current deployment proof.
 Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; stage selected paths, preserve dirty history.
 CXU3 /private/tmp/tbh-cxu3-active, codex/cxu3-forge-market,4da51043fe1f0cfba79ea67642fa08ecfaccced1.
 CXU3 draft252 published once, zero Actions runs. Main controller39 AST declarations preserved.
@@ -32,6 +32,7 @@ CXC2 /private/tmp/tbh-cxc2-active, codex/cxc2-fuji-proof, heade54f0750644322dbdc
 CXC2 builder type/lint/26 units/4 browser cases PASS. Frozen clean; no formal score/PR.
 CXC2 A62738 FINISHED PASS95: core2423,317×2,140 repeats,12 mutants,UI36/effects20.
 CXC2 B67091 FINISHED PASS96 on clean e54f075: core2423,140 repeats,38classic,10mutants,UI/effects.
+CXC2 release PID70921 /private/tmp/tbh-main-after-cxc2,39e74d8,4980–4983; full main then live sequentially.
 Browser harness JSON-import,wire-topics and late-clock failures retained; fixed without assertion/threshold changes.
 CXC2 read-ahead PASS block60421787: Fuji43113, both bytecodes, matching Market→NFT; no wallet/write.
 NFT has no totalSupply getter; never invent minted totals. Bound recent logs; cache at least30sec; no signing.
@@ -45,6 +46,6 @@ Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007; #244 stays draft
 Safety: no secrets, destructive DB writes, migrations/function deploys, Vercel/VITE_GAME_V2 changes,
 real funds/mainnet, repo publicity or contest submission. No .github changes or Actions runs/direct-main pushes.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Original content prep /private/tmp/tbh-original-content, codex/original-content,7339051; rebase onto2847e9a clean.
+Original content prep /private/tmp/tbh-original-content, codex/original-content,69902d6; rebase onto39e74d8 clean.
 Original T011/T012 branches preserved; authors/suffixes verified; shared flag remains false; no runtime consumer/PR yet.
-Next3: publish/merge CXC2 at exact approved head; actual-main and live identity/health/11-stage proof; rebase original-content onto new main and gate.
+Next3: finish release70921 and inspect live proof; package acceptance if green; review/gate original-content tables then local preview/art.

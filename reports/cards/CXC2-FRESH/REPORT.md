@@ -15,3 +15,6 @@ Repeat-count correction: redesign-shell contributes6 cases, so the14-case change
 
 ## Fresh grader B complete
 Self-graded (fresh pass)96/100 on the same e54f075, tests first then full diff review. Fresh core2423,140 repeats,38 classic cases,10 distinct mutants and UI36/effects20 pass. A317×2 is explicitly shared; no duplicate full B matrix claimed. A95/B96, lowest95, zero auto-fails and all floors pass. Ready for match-head squash, then actual-main/live validation.
+
+## Merged; release acceptance pending
+PR253 merged as39e74d834aa246b8182b72bac1b610e4c985f574. Tree85267f5fb3c7c6808a50331743a6746ddb1ed2dc equals the exact reviewed feature tree; author/email and skip-ci suffix verified. Local main fast-forwarded while preserving untracked.worktrees/. Actual-main and then live asset/health/11-stage public-proof validation run sequentially in /private/tmp/tbh-main-after-cxc2, PID70921,4980–4983. No subsequent merge before acceptance.
