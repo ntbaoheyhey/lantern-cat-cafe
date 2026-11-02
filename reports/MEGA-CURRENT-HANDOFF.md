@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (verified fetch).
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local 3678bc3 | Fix round 1: core/2390 cases, Map90 repeats, 6 mutants green; A resize/full pending; current main integrated |
+| CXU5 | #249 / local 3678bc3 | Round 2: late-chapter HUD overlap confirmed; isolated repair + red regression underway; current main integrated |
 | CXU4 | #251 / 1581084 | NEXT after A; not blocked by #244 |
 | CXU3 + CXC2 | pending | Build after A+B; frontend, independent of #244 |
 | T011 + T012 + content + ART/T013 | local 12d0355 / a35a280 | P1; publish and integrate default OFF |
@@ -27,10 +27,12 @@ Verified initial PR metadata (base SHA is GitHub-reported; current origin/main a
 Worktrees: ledger /private/tmp/tbh-t001-ledger; CXU5 /private/tmp/tbh-t008-cxu5.
 B clean checkout: /private/tmp/tbh-cxu5-fresh-b at 3678bc3; no tracked/untracked changes.
 B grade-b-r2/run.json ready, not started until A finishes; isolated 4710–4713/4750–4753.
-In-flight owned PIDs: 88168 grade-a-r2 (cwd CXU5); 4700–4703. UI 90727 (4740–4743) after fixing build-directory race; six mutants passed. Ports 4700–4703 A and 4740–4743 UI active; 4710–4713 B and 4720–4723 main free.
+In-flight: 88168 old-head full matrix at CXU5 4700–4703; 93905 expected-red HUD test at 4780–4783.
+UI/effects and six mutants on3678bc3 passed; no passed grade because HUD probe failed. Ports 4700–4703 A and 4740–4743 UI active; 4710–4713 B and 4720–4723 main free.
 Unrelated listeners left untouched: 18457, 49986, OS ports 5000/7000/64xxx/65xxx.
 Safety: no secrets, live DB mutation/migration/function deploy, Vercel changes, mainnet or submission.
 No VITE_GAME_V2 setting changes. Existing local test configurations remain isolated.
 Historical scores/evidence are not current grades. Grade files will say self-graded (fresh pass).
 Current owner step: reports/OPTIONAL-USER-STEPS.md T007; exact recovery path already present.
-Next 3: verify compact-panel repair; rerun A on 3678bc3 then clean B; merge only after both gates, then main/live.
+Next 3: prove/fix late-state HUD overlap; integrate repair into ai/codex-cxu5 without rewrite; fresh A/B then main/live.
+Repair worktree: /private/tmp/tbh-cxu5-hud-repair, codex/cxu5-hud-fit; only new HUD test currently dirty.
