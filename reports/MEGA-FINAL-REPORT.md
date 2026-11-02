@@ -1,3 +1,5 @@
+**ACTIVE — 2026-11-02T08:05:14.050734+00:00.** Saved effects recovered: FXRB7f00ef5 full1280 272/272 and corrected keyboard/reference gates pass; original setup failure retained. No new score/product push/merge. [Verified state](cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md).
+
 # Taskbar Hero — active mission
 
 2026-11-02T07:54:16.606884+00:00: explicit resume verified. Private repo, ledgerdb96ca1, main74d60da and all queue PRs unchanged. FXRB7f00ef5 retains core/build/repeat200eachsize evidence; keyboard failure remains unresolved. Builder gates, separate fresh self-grades and all remaining mission work continue. No product push or merge.

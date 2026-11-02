@@ -1,3 +1,5 @@
+**ACTIVE — 2026-11-02T08:05:14.050734+00:00.** Saved effects recovered: FXRB7f00ef5 full1280 272/272 and corrected keyboard/reference gates pass; original setup failure retained. No new score/product push/merge. [Verified state](cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md).
+
 **ACTIVE — 2026-11-02T07:54:16.606884+00:00.** Explicit resume; FXRB ungraded and keyboard failure retained. BASE0 historical scores unchanged.
 
 **USER PAUSED — 2026-11-02T07:51:12.287587+00:00.** FXRB remains ungraded; reference/keyboard failure retained. BASE0 historical scores unchanged. No automatic resume.

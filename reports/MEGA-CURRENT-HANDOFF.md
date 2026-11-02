@@ -1,8 +1,8 @@
 # Taskbar Hero current handoff — ACTIVE SESSION
-Updated 2026-11-02T07:54:16.606884+00:00. Latest explicit user resume lifts the pause; full mission active in this session.
+Updated 2026-11-02T08:05:14.050734+00:00. Latest explicit user resume lifts the pause; full mission active in this session.
 Single session only; no agents/helpers/externalAI/newchats/schedules/checkpoint.py/orchestration runners.
-Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Resume checkpoint local/remotedb96ca1 matched;7b62f5d is preserved ancestry.
-Verified resume: cards/FXRB-CURRENT-R1/resume-20261102-2/REPORT.md. Historical pause evidence: cards/FXRB-CURRENT-R1/pause-20261102-0749.json and REPORT.md. Origin fetched; repositoryPRIVATE.
+Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Resume checkpoint local/remote1d30f1c matched;7b62f5d is preserved ancestry.
+Verified resume: cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md. Historical pause evidence: cards/FXRB-CURRENT-R1/pause-20261102-0749.json and REPORT.md. Origin fetched; repositoryPRIVATE.
 Main 74d60dab2cef8c31a3f2729d18719ff3021a9eda; BASE0#246 MERGED / MAIN + PHASED LIVE PASS. Historical independentA97.64285714285714/B98 unchanged.
 BASE0 evidence: full265/repeat700eachsize; safeverifier265browser+96Forge;32assets andlegacy/phasedlivePASS. Fullfuture9-stagepath awaitsCXU3+CXC2. No completedBASE0 rerun.
 FXRB#243 remains draftremote26e7de846e82c58523eaa8c45984c635accb5357; localai/codex-fxrb=7f00ef52fdd221ab5f38198dfe6c44c56316d25b, NOT pushed.
@@ -13,8 +13,8 @@ Mutants: /Users/bao/.codex/worktrees/mega-fxrb-current-mutants/taskbar-hero, det
 Frozenpnpm10.28.0 install/core/type/lint/unit/Deno/imports/default+classic+v2build/bundle/links exit0.
 Recovered resize20 receipts:200/200 at initial1280x720 and1600x900, exits0. Auditsguest/signed,effects10eachsize,contrast10 also exit0.
 Four variant exits1 and greencontrol exits0 preserved; detailed mutant-cause review pending. No grade inferred from recovered receipts.
-FAILURE: reference-keyboard.exit1; nav-home toBeFocused expected focused/received inactive. CauseUNDIAGNOSED; no retry. Only4referencePNGs at1280.
-Fullbrowserbothsizes/UIreferencekeyboard/G5/wrapper/integrity/publication/capacity and separatefreshA/B remain pending. No productpush/merge/score.
+Originalreference-keyboard.exit1 retained: click intentionally moves focus into panel; bad setup assumed railfocus. Diagnostic+correctedkeyboard-only proofPASS bothsizes,18referencepairs/8PNGs; no appchange.
+Full1280 272/272 exit0 recovered. Full1600/visualcomparison/G5/wrapper/integrity/publication/capacity and separatefreshA/B remain pending. No productpush/merge/score.
 Recoverybundle reverified: /Users/bao/.codex/handoffs/taskbar-hero/reliability/fxrb-current-7f00ef5.bundle; requires26e7de8/74d60da objects.
 Atpause no missiontest/preview/cwd process; required/default portsfree; nothingkilled. Oldportlockowner87049/87071 absent. Inspection process itself excluded.
 Preparedqueue afterFXRB: CXP1#2402b7ceeb -> CXL1#248178f379 -> ART1#2474df594a -> CXN3-FIX#250a9b804 -> CXN3#2446257c0e -> CXU5#249c5b846e -> CXU4#251d408ada.
@@ -28,6 +28,6 @@ Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; everycommit
 No missiontimer/automation/helper was created. No automaticwake/resume. Checkpointmilestones only: handoff<=80lines,livingreport/ledger/scorecard/runtime,directsnapshot,selectedcommit/push.
 Aftercompaction rereadthishandoff+ledger. Do notclaim unverifiablemodel/effort.
 Next3actions:
-1. Verified refs/privacy/processes/ports and unchanged29receipts; publish this checkpoint, then diagnose retainedkeyboardfailure.
-2. Diagnose retainedkeyboardfailure without weakeningassertions; finish buildergates onexacthead and recordmutantcauses/UI/G5/wrapper/capacity.
+1. Publish verified recovered-state checkpoint; full1600 next on exact7f00ef5; completed1280/repeats are not rerun.
+2. Finish buildergates onexacthead and recordmutantcauses/UI/G5/wrapper/capacity; old keyboard setup failure remains historical.
 3. SeparatefreshA/Bselfgrades, eligiblepublication/merge only afterallgates; main/livegreen beforeCXP1. Continuefullsavedqueue.
