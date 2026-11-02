@@ -1,0 +1,106 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A",
+  "head": "e54f0750644322dbdc40dffe389130a1f6fc736f",
+  "base": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "tree": "85267f5fb3c7c6808a50331743a6746ddb1ed2dc",
+  "gradedAt": "2026-11-02T22:13:42.660801+00:00",
+  "sourceRoot": "/private/tmp/tbh-cxc2-active",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH",
+  "score": 95,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Requested Fuji contracts/chain are pinned; actual lazy mounting, screen-active reads, bounded same-block facts/events and honest partial/zero/supply states pass.",
+      "evidence": [
+        "grade-a/logs/unit.log",
+        "grade-a/logs/capture.log"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "2423 unit/script cases pass; inherited2 expected failures/11 skips unchanged.317 browser cases pass per desktop size, changed-spec repeats, builds and strict UI/effects pass.",
+      "evidence": [
+        "grade-a/commands.json",
+        "ui-a/commands.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Twelve semantic mutants killed after a green scratch control, covering wrong chain, bounds, foreign/removed logs, zero/error facts, cache and lazy reads.",
+      "evidence": [
+        "mutants-a/control.log",
+        "mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 12,
+      "max": 15,
+      "reason": "Both desktop sizes inspected. Deduct3 for dense metadata rows and technical event names; full addresses, snapshot scope, refresh and limitations remain readable.",
+      "evidence": [
+        "screenshots-a.json",
+        "/private/tmp/tbh-cxc2-active/docs/decisions/cxc2-fuji-proof.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed public-client reader and scoped CSS; no new dependency. Deduct2 for overlapping cache layers and compact component markup, with their behavior covered explicitly.",
+      "evidence": [
+        "review-a-inventory.json",
+        "grade-a/logs/lint.log",
+        "grade-a/logs/build.log"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No inherited assertion or threshold changed. Harness collection/wire/clock failures retained; corrected setup runs the same exact request/cache assertions with retries0.",
+      "evidence": [
+        "REPORT.md",
+        "browser-builder/commands.json",
+        "browser-builder-r2/commands.json",
+        "browser-builder-r3/commands.json"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Evidence belongs to exact heade54f075; synthetic RPC screenshots are labelled, live read-ahead is separate, and no wallet/backend/full-demo completion is claimed.",
+      "evidence": [
+        "review-a-inventory.json",
+        "screenshots-a.json",
+        "read-ahead/commands.json",
+        "REPORT.md"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All10 paths inspected; optional lazy tab behavior preserves existing defaults. No protected backend/contracts/flags/provider/assets/dependency changes.",
+      "evidence": [
+        "review-a-inventory.json",
+        "/private/tmp/tbh-cxc2-active/docs/decisions/cxc2-fuji-proof.md"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "Fresh B>=92 on same exact head",
+    "Correct author/suffix squash through PR",
+    "Actual-main/live asset+health+phased proof before next merge"
+  ]
+}

@@ -7,3 +7,6 @@ Builder typecheck/lint and26 unit/component cases pass. First browser attempt di
 The separate public read-ahead at block60421787 verified Fuji/code/linkage, not a wallet journey. No secrets, wallet, write transaction, migrations/deployments, flags, dependencies or art changes.
 
 Builder complete:26 focused cases and4 browser cases pass. The wire expectation now includes viem topics=[], and the virtual clock is installed before app initialization so the reader and query cache use the same clock. Screenshots reviewed at both sizes are explicitly mocked-RPC evidence. Formal A is frozen ate54f0750644322dbdc40dffe389130a1f6fc736f, PID62738, sequential core→mutants→UI→repeats→full317×2. No passing score/PR/merge.
+
+## Fresh grader A complete
+Self-graded (fresh pass)95/100 on e54f075, zero auto-fails.2423 unit/script cases pass (2 inherited expected failures/11 skips unchanged),317 browser cases per size,120 changed-spec repeats,12 mutants,36 strict UI and20 effects checks pass. Both screenshots inspected and under200KiB; they are mocked RPC fixtures. The release-only read RPC guard separately passed15 controls. B runs tests first on clean /private/tmp/tbh-cxc2-fresh-b, PID67091, different ports; no merge yet.
