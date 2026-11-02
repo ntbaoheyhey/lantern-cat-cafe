@@ -7,7 +7,7 @@ Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (verified fetch).
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local 3678bc3 | A failed 320px Fight visibility; fix round 1 committed; focused checks running; current main integrated |
+| CXU5 | #249 / local 3678bc3 | Fix round 1 focused checks PASS (52 units/28 browser); A rerun active; current main integrated |
 | CXU4 | #251 / 1581084 | NEXT after A; not blocked by #244 |
 | CXU3 + CXC2 | pending | Build after A+B; frontend, independent of #244 |
 | T011 + T012 + content + ART/T013 | local 12d0355 / a35a280 | P1; publish and integrate default OFF |
@@ -26,7 +26,7 @@ Verified initial PR metadata (base SHA is GitHub-reported; current origin/main a
 
 Worktrees: ledger /private/tmp/tbh-t001-ledger; CXU5 /private/tmp/tbh-t008-cxu5.
 B clean checkout: /private/tmp/tbh-cxu5-fresh-b at a4dc85e; frozen install/submodules pass.
-In-flight owned PIDs: 87649 repair-r1 (cwd CXU5); 4700–4703. Other owned runs finished. Ports 4700–4703 repair active; 4710–4713 B, 4720–4723 main, 4740–4743 UI free.
+In-flight owned PIDs: 88168 grade-a-r2 (cwd CXU5); 4700–4703. Other owned runs finished. Ports 4700–4703 repair active; 4710–4713 B, 4720–4723 main, 4740–4743 UI free.
 Unrelated listeners left untouched: 18457, 49986, OS ports 5000/7000/64xxx/65xxx.
 Safety: no secrets, live DB mutation/migration/function deploy, Vercel changes, mainnet or submission.
 No VITE_GAME_V2 setting changes. Existing local test configurations remain isolated.

@@ -17,3 +17,5 @@ PR #249 body refreshed: stale BASE0-unmerged/current-blocked wording removed; ac
 
 ## First product failure and repair, 2026-11-03
 A exact a4dc85e full1280: 296 pass / 1 fail. G2 320×568 found Fight below the viewport; full1600 stopped by the failed gate. No grade pass or merge. Root cause: desktop path was stacked before the action on narrow widths. Fix 3678bc3 restores the old compact BossGatePanel at <=1100px, retaining existing scroll/pinned-action behavior and all old assertions. Adds compact component and 320/390/1024 browser coverage. This is fix round 1 of 3. Focused repair tests running; all previous receipts remain tied to a4dc85e.
+
+Repair verification on 3678bc3: focused units 52/52 and browser 28/28 pass, including the unchanged G2 failing assertion. Exact-head A rerun now active. No passing grade yet.

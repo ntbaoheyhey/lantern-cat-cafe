@@ -1,0 +1,18 @@
+[
+  {
+    "name": "focused-units",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/layout/boss src/layout/bossPresentation.test.ts",
+    "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:11:37.127751+00:00",
+    "endedAt": "2026-11-02T17:11:40.472371+00:00"
+  },
+  {
+    "name": "focused-browser",
+    "command": "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/ui/g2-shell.spec.ts e2e/ui/kw2-key-hint.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+    "exit": 0,
+    "startedAt": "2026-11-02T17:11:40.479125+00:00",
+    "endedAt": "2026-11-02T17:12:14.163238+00:00"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "root": "/private/tmp/tbh-t008-cxu5",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU5-FRESH/repair-r1",
+  "head": "3678bc319848b1a73e63092422ebed1ee90929fd",
+  "commands": [
+    [
+      "focused-units",
+      "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/layout/boss src/layout/bossPresentation.test.ts"
+    ],
+    [
+      "focused-browser",
+      "E2E_PORT_CLASSIC=4700 E2E_PORT_V2=4701 E2E_PORT_SERVER=4702 E2E_PORT_API=4703 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu5-map.spec.ts e2e/ui/g2-shell.spec.ts e2e/ui/kw2-key-hint.spec.ts --workers=1 --retries=0 --reporter=line"
+    ]
+  ]
+}
