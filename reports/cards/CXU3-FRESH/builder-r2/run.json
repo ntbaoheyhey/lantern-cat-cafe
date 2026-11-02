@@ -1,0 +1,16 @@
+{
+  "root": "/private/tmp/tbh-cxu3-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU3-FRESH/builder-r2",
+  "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "sourceState": "Builder working tree; not graded head",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "focused-units",
+      "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/market src/layout/forge src/forge"
+    ]
+  ]
+}
