@@ -1,43 +1,44 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T04:01:48+07:00. ACTIVE, one chat/agent.
-Authority: evening Nov2 mission + Nov3 hourly reminder request. Old orchestrator dependencies are superseded.
-STOP: /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact. Never run orchestrator.py or remove STOP.
-Native hourly heartbeat taskbar-hero-hourly-handoff ACTIVE in this chat; sole timer exception; honor later pause/stop.
-Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every new commit ends [skip ci].
+Updated: 2026-11-03T04:19:00+07:00. ACTIVE, one chat/agent.
+Authority: Nov2 mission + Nov3 hourly reminder. No subagents/helper chats/orchestrator.
+STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove or run orchestrator.py.
+Hourly taskbar-hero-hourly-handoff ACTIVE in this chat; sole scheduler exception; honor later pause/stop.
+Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249/main1b299c4 | DONE A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251/main2847e9a | DONE A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
-| CXU3 + CXC2 | CXU3 builder active | Forge/Market on2847e9a; CXC2 next; no current grade/merge |
+| CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
+| CXU4 | #251/main2847e9a | DONE fresh A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
+| CXU3 | codex/cxu3-forge-market | Builder on2847e9a, uncommitted; no PR/grade; Market browser failure under repair |
+| CXC2 | pending after CXU3 | Read-only Fuji proof panel; NFT has no totalSupply getter |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
 | CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/main: 2847e9aa166c2c824a7725b63fe17266f753563d (#251), exact reviewed tree; correct author/suffix.
-Current live proof is merged-core8 stages, not future full9/wallet proof or backend deployment identity.
-CXU4 builder fixed modal stack cleanup/disabled tabindex handling. First formal A failed Help primary/stub cases.
-Help repair3ed0633 passed A95 but FAILED B's unmodified mutation control: root remained inert after dialog removal.
-That A95 is historical for3ed0633, not current authorization. B failure preserved; no retry/weakening.
-Third repair d969f1662a4c159023c19b320825e04c91e5814e uses layout effect to restore root/focus before paint.
-Current targeted: typecheck51 units,60 browser repeats,20×51 unit controls all PASS.
-Current formal A3: core2412,360 repeats,11 mutants, UI36/effects20 PASS; full matrix status in grade-a-r3/runner.log.
-If the third repaired head cannot clear gates, record CXU4 PARTIAL and move on; no fourth fix round.
-
-A3 mutation/UI jobs are finished; original process receipts retain PID35457/35458. No duplicate jobs.
-Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; preserve dirty historical files, stage selected paths.
-All CXU5 runs finished. Do not kill unrelated18457/49986 or OS listeners.
-Reserved blocks:4800 A,4810 B,4820 main,4840 A UI,4850 B UI,4860 captures (each through+3).
-Tooling: reports/fresh-session-tools/run-checks.py; isolated UI build/watch harness; parameterized live proof scripts.
+Last merged/main: 2847e9aa166c2c824a7725b63fe17266f753563d (#251), exact reviewed tree; author/suffix verified.
+CXU4 accepted feature d969f1662a4c159023c19b320825e04c91e5814e, third repair; earlier3ed0633 A95 invalidated.
+Authoritative receipts: reports/cards/CXU5-FRESH/acceptance.json and CXU4-FRESH/acceptance.json.
+Current live ten-stage Hero/Help proof is not future full nine-stage/wallet proof or backend source identity.
+Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; stage selected paths, preserve dirty history.
+CXU3 worktree /private/tmp/tbh-cxu3-active on codex/cxu3-forge-market, base2847e9a, upstream unset.
+CXU3 MarketView/model uses real quantity/rarity; main transaction/Fuji/receipt calls retained.
+AGR3 saved layout is structural only: invented power/categories and unsafe transaction changes rejected.
+Forge canonical calculations/validation/Salvage restored; deterministic recipe rarity/cost, no Great Success activation.
+Craft animation keyed by result ID to avoid restart from unrelated parent rerenders.
+Corrected builder typecheck +97 focused tests across8 files PASS (builder-r3).
+Latest PID47133 FINISHED: typecheck PASS;2 new Market browser cases FAIL at exact Relic form-label locator.
+Failure/logs preserved in reports/cards/CXU3-FRESH/browser-builder; diagnose before rerun, no assertions removed.
+Test-only Market fixture uses actual components and mock callbacks, never claims real wallet proof.
+Production fixture exclusion and full Forge browser coverage remain to verify.
+No mission test PIDs/listeners active;4900–4903 free. Do not kill unrelated18457 or OS listeners.
+Preserved CXU4/CXU5 source/reviewer/main worktrees listed by git worktree list; no duplicate jobs.
 Read-ahead: reports/cards/NEXT-FRONTEND-NOTES.md. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
-AGR3 has invented mock power/Weapon-Armor categories and possible hook-order bug; do not ship these facts/logic unchanged.
-Owner step exact in reports/OPTIONAL-USER-STEPS.md T007; frontend work does not wait on it.
+Tooling: reports/fresh-session-tools/run-checks.py; isolated UI harness; parameterized live proof scripts.
+Gates: exact-head A/B>=92, floors/zero auto-fails; one full matrix/head; clean B tests first; own mutants.
+Max3 formal repair rounds/item; failed controls invalidate grade. Re-test main/live after each serial merge.
+Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007; #244 stays draft/unmerged.
 Safety: no secrets, destructive live DB writes, migrations/function deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, repo publicity or contest submission.
-After Nov25 no new server behavior ON; stop by Nov28 with regression/final report. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-CXU3 worktree /private/tmp/tbh-cxu3-active, codex/cxu3-forge-market, base2847e9a.
-CXU3 owns rewritten MarketView/model with real quantity/rarity; main wallet/receipt/Fuji calls retained verbatim.
-Saved draft fake power/categories, conditional hooks and unsafe transaction rewrites rejected. Canonical Forge logic/Salvage restored.
-In-flight PID46282: builder-r3 type/unit checks, /private/tmp/tbh-cxu3-active; working code uncommitted, no browser ports.
-Next3: finish builder units; add real-browser Forge/Market presentation checks and invariants; freeze head then A/B gates.
+After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
+Next3: fix Market browser accessible form names and rerun; cover Forge browser/rules invariants; freeze head then fresh A/B gate.
