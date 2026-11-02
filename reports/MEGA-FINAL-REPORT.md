@@ -12,6 +12,8 @@ All seven prepared items retain scoped integration evidence; CXU4 source d408ada
 
 Checkpoint milestone 2026-11-02T07:57:26+07:00: wrapper evidence saved with tool9df9316/sourcea9b804/main1fb25ed and no comments. Postmerge plan now explicitly forbids the old orchestration runners and preserves each direct verification requirement. CXU4 source and draftPR251 publication is complete, with historical results honestly separated from its source head. No merge, independent grade or deployment is claimed.
 
+Provider investigation 2026-11-02T08:06:19+07:00: newly published CXN3-FIX and CXU4 statuses are green only because their builds were canceled by the existing ignore step. They are not deployed-build proof. The Usage UI did not expose remaining daily quota/reset, and its requested24hour range expanded to39.94hours, so that count is not used to lift BASE0hold. No manual retry/settings change; evidence retained, browser tab closed.
+
 ## Historical progress (older candidates and running states)
 
 The coordinator directly owns build, fixes, verification, reporting and merges. No mission item has yet received two formal passing grades or merged; main remains1fb25ed. Latest authority is mega-resume-2026-11-01.md.
