@@ -1,11 +1,11 @@
-# Active fresh-session report — 2026-11-03T04:19:00+07:00
+# Active fresh-session report — 2026-11-03T05:02:38+07:00
 
 Living report, not a completion claim. Main is 2847e9a; repository private.
 CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
 CXU4 #251 DONE, merged2847e9a with A95/B95. Actual main313/313 per desktop size,32/32 live asset hashes,22 health probes and10-stage live paths per size (including Hero/Help) pass with zero errors. Zero Actions runs. Lossless evidence compression preserved pixels and the200KiB cap. [Evidence](cards/CXU4-FRESH/REPORT.md).
 
-CXU3 is PARTIAL at the three-round limit, preserved in draftPR252/head4da5104. Final A failed a5000ms StageLayout boss-state unit timeout (1374 other web cases pass); B/current-head full browser matrix not run.11 mutants and UI36/effects20 passed, with no retry/threshold relaxation. It stays unmerged; main/live remain2847e9a. CXC2 builder proceeds independently in /private/tmp/tbh-cxc2-active: bounded readonly reader,30-second failure-aware cache and lazy Help tab implemented; type/lint/26 focused cases pass. Browser harness JSON-import issue corrected; validation active. Public read-ahead verified Fuji/code/linkage at block60421787 without a wallet or writes.
+CXU3 is PARTIAL at the three-round limit, preserved in draftPR252/head4da5104. Final A failed a5000ms StageLayout boss-state unit timeout (1374 other web cases pass); B/current-head full browser matrix not run.11 mutants and UI36/effects20 passed, with no retry/threshold relaxation. It stays unmerged; main/live remain2847e9a. CXC2 builder proceeds independently in /private/tmp/tbh-cxc2-active: bounded readonly reader,30-second failure-aware cache and lazy Help tab implemented; type/lint/26 focused cases pass. Browser harness JSON-import/wire/clock issues are corrected and all4 cases pass. Frozen heade54f075 now runs formal A sequentially (PID62738) to avoid overlapping heavy checks; no score/PR yet. Public read-ahead verified Fuji/code/linkage at block60421787 without a wallet or writes.
 
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.

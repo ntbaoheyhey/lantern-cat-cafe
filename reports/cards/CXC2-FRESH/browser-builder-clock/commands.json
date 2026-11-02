@@ -1,0 +1,18 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:58:22.665757+00:00",
+    "endedAt": "2026-11-02T21:58:30.131802+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc CXC2_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/browser-builder-clock/screenshots E2E_PORT_CLASSIC=4940 E2E_PORT_V2=4941 E2E_PORT_SERVER=4942 E2E_PORT_API=4943 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxc2-proof.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:58:30.139422+00:00",
+    "endedAt": "2026-11-02T21:58:43.658253+00:00"
+  }
+]
