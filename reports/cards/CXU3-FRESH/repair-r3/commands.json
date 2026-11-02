@@ -1,0 +1,42 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:40:13.769705+00:00",
+    "endedAt": "2026-11-02T21:40:20.703208+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:40:20.709789+00:00",
+    "endedAt": "2026-11-02T21:40:27.831933+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/layout/forge/ForgePanel.test.tsx src/market/MarketTab.test.tsx src/market/marketViewModel.test.ts",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:40:27.840013+00:00",
+    "endedAt": "2026-11-02T21:40:29.523061+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "CXU3_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXU3-FRESH/repair-r3/screenshots E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-market.spec.ts e2e/ui/cxu3-forge.spec.ts --repeat-each=3 --workers=2 --retries=0 --reporter=line",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:40:29.529892+00:00",
+    "endedAt": "2026-11-02T21:41:04.236810+00:00"
+  },
+  {
+    "name": "inherited-compact",
+    "command": "E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/g2-shell.spec.ts --grep \"320x568 Layout Guarantee\" --repeat-each=5 --workers=2 --retries=0 --reporter=line",
+    "head": "09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:41:04.243691+00:00",
+    "endedAt": "2026-11-02T21:41:16.554566+00:00"
+  }
+]

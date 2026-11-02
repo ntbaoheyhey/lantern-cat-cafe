@@ -1,0 +1,67 @@
+{
+  "root": "/private/tmp/tbh-cxu3-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU3-FRESH/grade-a-r3",
+  "head": "4da51043fe1f0cfba79ea67642fa08ecfaccced1",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "fixture-exclusion",
+      "python3 -c \"from pathlib import Path; p=Path('apps/web/dist'); hits=[str(f) for f in p.rglob('*') if f.is_file() and (f.suffix in ['.js','.html']) and any(s in f.read_text(errors='ignore') for s in ['__cxu3Market','market-fixture','Local Market fixture'])]; assert not hits,hits; print('Production bundle excludes the mock Market fixture')\""
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "capture",
+      "CXU3_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXU3-FRESH/grade-a-r3/screenshots E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-forge.spec.ts e2e/ui/cxu3-market.spec.ts --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-1280x720",
+      "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-forge.spec.ts e2e/ui/cxu3-market.spec.ts e2e/ui/u5-panels.spec.ts e2e/ui/redesign-shell.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-1600x900",
+      "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxu3-forge.spec.ts e2e/ui/cxu3-market.spec.ts e2e/ui/u5-panels.spec.ts e2e/ui/redesign-shell.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1280x720",
+      "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600x900",
+      "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4900 E2E_PORT_V2=4901 E2E_PORT_SERVER=4902 E2E_PORT_API=4903 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

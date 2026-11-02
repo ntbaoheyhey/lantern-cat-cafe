@@ -9,7 +9,7 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 |---|---|---|
 | CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
 | CXU4 | #251/main2847e9a | DONE fresh A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
-| CXU3 | codex/cxu3-forge-market | Final repair3 active; A2 failed compact CTA; no PR/passing grade/merge |
+| CXU3 | codex/cxu3-forge-market | A3 on4da5104 active; final repair; no PR/passing grade/merge |
 | CXC2 | pending after CXU3 | Read-only Fuji proof panel; NFT has no totalSupply getter |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
@@ -22,7 +22,7 @@ CXU4 accepted feature d969f1662a4c159023c19b320825e04c91e5814e, third repair; ea
 Authoritative receipts: reports/cards/CXU5-FRESH/acceptance.json and CXU4-FRESH/acceptance.json.
 Current live ten-stage Hero/Help proof is not future full nine-stage/wallet proof or backend source identity.
 Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; stage selected paths, preserve dirty history.
-CXU3 /private/tmp/tbh-cxu3-active, codex/cxu3-forge-market, head09bb682a1e15fbe03b8fe8db6056f58c2fd7c78a, base2847e9a.
+CXU3 /private/tmp/tbh-cxu3-active, codex/cxu3-forge-market, head4da51043fe1f0cfba79ea67642fa08ecfaccced1, base2847e9a.
 CXU3 MarketView/model uses real quantity/rarity; main transaction/Fuji/receipt calls retained.
 AGR3 saved layout is structural only: invented power/categories and unsafe transaction changes rejected.
 Forge canonical calculations/validation/Salvage restored; deterministic recipe rarity/cost, no Great Success activation.
@@ -33,7 +33,7 @@ New Forge geometry test exposed tab nav flex-shrink clipping; fixed by reserving
 Failure/logs preserved in reports/cards/CXU3-FRESH/browser-builder; diagnose before rerun, no assertions removed.
 Test-only Market fixture uses actual components and mock callbacks, never claims real wallet proof.
 Production fixture exclusion and full Forge browser coverage remain to verify.
-In-flight PID57109: repair-r3 type/lint/unit +21 browser/5 inherited-compact repeats;4900–4903.
+In-flight A3 PID58351: core/capture/repeats/full320×2,4900–4903; mutants PID58352; UI PID58353,4920–4923.
 Preserved CXU4/CXU5 source/reviewer/main worktrees listed by git worktree list; no duplicate jobs.
 Read-ahead: reports/cards/NEXT-FRONTEND-NOTES.md. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
 Tooling: reports/fresh-session-tools/run-checks.py; isolated UI harness; parameterized live proof scripts.
@@ -49,3 +49,4 @@ A2 core/220 repeats/UI36/effects20 PASS. Mutation scratch fixed missing public a
 A2 full1280 FINISHED318/319: compact Forge CTA offscreen.1600 not run; all earlier A2 processes finished.
 Final repair also fixes compact CTA, boundary coverage, fixture fonts; if round3 fails, CXU3 PARTIAL then CXC2.
 CXC2 readonly preparation PASS block60421787: chain43113, both bytecodes, matching linkedNFT; no wallet/write.
+Repair3 targeted type/lint/60 units/21 browser+5 inherited-compact repeats all PASS; no test weakened.
