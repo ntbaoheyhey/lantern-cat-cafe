@@ -1,42 +1,42 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T01:14:11+07:00. ACTIVE; one session, no agents/helpers; hourly reminder explicitly authorized Nov3.
-Authority: user's 2026-11-02 evening prompt; old dependency/orchestration rules superseded.
-STOP intact: /Users/bao/taskbar-hero/.codex-orchestrator/STOP. Never run orchestrator.py.
-Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; all new commits end [skip ci].
-Last merged/main: 1b299c40513ff9f5330a91ad040791bbd4065df9 (#249), exact reviewed tree; author/suffix verified.
+Updated: 2026-11-03T02:06:04+07:00. ACTIVE single chat, no subagents/helpers.
+Authority: evening Nov2 mission plus Nov3 hourly reminder request. Do not follow old orchestrator dependencies.
+STOP remains /Users/bao/taskbar-hero/.codex-orchestrator/STOP; never run orchestrator.py or remove STOP.
+Hourly native heartbeat taskbar-hero-hourly-handoff is ACTIVE in this chat, sole timer exception.
+Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every new commit ends [skip ci].
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / merged1b299c4 | A94/B94 PASS; DONE: A94/B94; main302×2, live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251 / local577e0e2 | Builder50 units green; fresh A active on577e0e2; modal stack/disabled-focus fixes included |
-| CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
-| T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
-| CXR1 + CXR2 + CXQ1 | #245/e99e497 + pending | Refresh screens, preserve AA threshold; full live demo + throwaway Fuji |
-| CXS1 + CXS2 | pending | Security + submission DRAFT only |
-| CXN3 | #244/db0f9d6 | BLOCKED: owner backup/restore; no merge/deploy; blocks no frontend |
+| CXU5 | #249 / main1b299c4 | DONE A94/B94; actual main302×2, live32 assets/22 health/8 stages×2 PASS |
+| CXU4 | #251 / local3ed0633 | ACTIVE fresh A R2; fix round2, no passing grade/merge |
+| CXU3 + CXC2 | pending | After CXU4; frontend independent of #244 |
+| T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
+| CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix without lower threshold; full live path + throwaway Fuji |
+| CXS1/CXS2 | pending | Security evidence + submission DRAFT, never submit |
+| CXN3 | #244/db0f9d6 | BLOCKED only by owner backup/restore; do not merge/deploy |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-CXU5 pass history: a4dc85e core/Map80/resize200/UI passed; full1280 failed320px Fight viewport.
-Fix1 3678bc3 preserves old compact BossGatePanel <=1100px; 52 units/28 focused browser passed.
-3678bc3 core2390/Map90/resize200/full298 at each size passed; six mutants/UI passed.
-Additional chapter5 three-loss probe fit both sizes but exposed22.55px Power/sync overlap at1280.
-Fix2 f846b49 puts full XP number below unchanged160x10 bar at1200–1399, same56px HUD.
-Focused fix2 typecheck +35 browser pass; integrated into ai/codex-cxu5 by fast-forward, no rewrite.
-Old failures and fixture/runner corrections retained. Current grades must cite f846b49 only.
-A complete: self-graded (fresh pass)94/100, zero auto-fails; grade-a.json. No merge until B passes.
-B must run tests FIRST on clean exact head, then full diff. One full browser matrix per exact head in A.
-Current evidence: reports/cards/CXU5-FRESH/REPORT.md. Fresh graders label self-graded (fresh pass).
+Last merged/main: 1b299c40513ff9f5330a91ad040791bbd4065df9, exact reviewed CXU5 tree.
+CXU5 acceptance: reports/cards/CXU5-FRESH/acceptance.json; scores self-graded (fresh pass).
+Its two fixes preserve compact Fight access and keep late-state HUD Power clear of sync. Zero Actions runs.
+Current live gate is eight-stage merged-core, not the future nine-stage/wallet proof or backend source identity.
 
-Worktrees: A /private/tmp/tbh-t008-cxu5 (ai/codex-cxu5, f846b49).
-B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), B tests then diff completed; clean at exact head.
-Repair/scratch /private/tmp/tbh-cxu5-hud-repair (codex/cxu5-hud-fit, f846b49, clean).
-Ledger /private/tmp/tbh-t001-ledger (ai/codex-mega-ledger); selected-file staging only; preserve historical dirt.
-All previous owned runs finished. Do not kill unrelated18457/49986 or OS listeners.
-Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.mjs isolates audit build in/tmp.
-Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.
-Safety: no secrets, live DB mutation/migration/function deploy, provider/VITE_GAME_V2 changes, real funds/mainnet/submission.
-Current main evidence: CXU5-FRESH/post-main; live helper scripts: reports/fresh-session-tools/{verify-live-assets,live-phased}.mjs.
-Next3: inspect builder result/fix any issue; freeze head and fresh A/B gates on4800/4810 blocks; merge then main/live.
-CXU4 tree clean at577e0e26aab1b88c11a4d0453f6d1a84481ff783; current main1b299c4 integrated. Formal A/B still pending.
-In-flight PID19642: CXU4 grade-a at /private/tmp/tbh-cxu4-active, ports4800–4803.
-Hourly native heartbeat ACTIVE: taskbar-hero-hourly-handoff, same chat; sole timer exception. Never restart old orchestrator.
+CXU4 main merge8f2e3fe kept both decision index entries; app code merged cleanly.
+Builder repaired out-of-order/simultaneous modal cleanup and native disabled tabindex handling;50 unit cases pass.
+Formal A on577e0e2: core2411, repeat200, UI/effects,10 mutants pass; full1280=309 pass/4 fail.
+Failures: independent Help stub lacks new selectors (2); Help primary action absent (2). 1600 stopped by failed gate.
+Additional phrase regression30 Yarn failed; original visible guide strings still preserved.
+Repair3ed0633: primary Start Exploring restored, static fixture updated, normalized inline-text search.
+Repair typecheck/51 units/22 browser pass, including Home return. No existing assertion/timeout/threshold weakened.
+Current card reports/cards/CXU4-FRESH/REPORT.md; full new A/B still required; no score/merge claim.
+
+Active worktree /private/tmp/tbh-cxu4-active, branch ai/codex-cxu4, clean3ed0633.
+In-flight PID25341: finite grade-a-r2 runner, cwd active CXU4, ports4800–4803; logs under card.
+B /private/tmp/tbh-cxu4-fresh-b is still577e0e2; refresh to exact new head before tests-first B.
+Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; preserve historical dirty files, stage selected paths only.
+CXU5 worktrees retained; all their PIDs finished. Never kill unrelated18457/49986 or OS listeners.
+Reserved:4800–4803 A;4810–4813 B;4820–4823 main;4840–4843 A UI;4850–4853 B UI.
+Tools: reports/fresh-session-tools/run-checks.py; parameterized live assets/path scripts; safe isolated UI build/watch harness.
+Owner step remains exact in reports/OPTIONAL-USER-STEPS.md T007; this blocks no frontend work.
+Safety: no secrets, destructive live DB writes, migrations/functions deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, public repo or submission.
+Next3: finish current A + mutations/UI; clean B tests then diff; merge if both>=92/zero auto-fails then main/live.
