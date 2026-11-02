@@ -1,0 +1,74 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B, clean checkout/tests first; CXC2 release repair round2",
+  "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+  "base": "39e74d834aa246b8182b72bac1b610e4c985f574",
+  "tree": "755ca0eaf87a576314174085cfb7c0b492a97884",
+  "sourceRoot": "/private/tmp/tbh-cxc2-rpc-fix-b",
+  "gradedAt": "2026-11-02T23:09:32.743451+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Public endpoint cap is honored by exact source/UI/doc/wire bounds; positive100-block public read independently confirms the prerequisite."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh core2423,40 targeted repeats at both sizes,38 classic cases and capture/build checks pass. Shared A317\u00d72 receipt belongs to identical df83851; no duplicate full matrix claimed."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten fresh B mutants killed after a green control, including wrong snapshot block/range, cache expiry, wrong getter and misleading partial-state labels."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Both-size captures/fit/keyboard/console checks pass; deduct2 for retained metadata density and protocol event terms."
+    },
+    {
+      "id": "C5",
+      "score": 9,
+      "max": 10,
+      "reason": "Minimal parameter and oracle repair; deduct1 for separately spelled pending-state window text."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No weakening: request range shrank to the real provider limit, while all existing data/target/cache/error assertions and retries0 remain."
+    },
+    {
+      "id": "C7",
+      "score": 9,
+      "max": 10,
+      "reason": "Fresh clean-head receipts and real RPC error/success are linked. Deduct1 for the earlier provisional acceptance record; it is explicitly superseded and not authorization for this head."
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Only five frontend/test/decision files; protected backend/configuration/dependency/art areas unchanged."
+    }
+  ],
+  "evidence": [
+    "range-grade-b/commands.json",
+    "range-mutants-b/results.json",
+    "range-review-b.json",
+    "range-grade-a/commands.json"
+  ],
+  "sharedFullMatrix": "A317 per size on exact df83851",
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Correctly authored/suffixed fix PR squash",
+    "Actual-main and live path, now requiring recent-event availability"
+  ]
+}

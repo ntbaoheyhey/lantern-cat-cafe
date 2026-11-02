@@ -1,0 +1,5 @@
+The public Fuji RPC rejects eth_getLogs spans above100 blocks with error-32602, so Help’s500-block request always showed recent events unavailable. The proof window now includes only the latest100 blocks, and its label, decision and exact request assertions use the same bound. A direct public query confirmed that100 blocks succeeds.
+
+Validation on df83851f5f653f25072f116c6bfa9f3ad02c7936: self-graded fresh A96/B96, all floors, zero auto-fails. Fresh type/lint/core2423, full317 browser cases per desktop size,40 targeted repeats per pass,12 A/10 B mutants and clean B classic cases pass. B uses another clean checkout/ports and shares the identical-head A full matrix. The release harness separately validates viem’s canonical read-only Multicall and enforces the100-block cap;23 positive/negative controls pass.
+
+No backend deploy, migration, provider/Vercel setting, VITE_GAME_V2, dependency or art change. Fresh actual-main/live checks after merge must show an available recent-event result, including a legitimate empty window. The earlier guard and range failures remain recorded in ai/codex-mega-ledger: reports/cards/CXC2-FRESH/.

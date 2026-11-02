@@ -1,0 +1,114 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:04:39.313967+00:00",
+    "endedAt": "2026-11-02T23:04:45.473574+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-mutants-b.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:04:45.479953+00:00",
+    "endedAt": "2026-11-02T23:05:03.707939+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:05:03.714238+00:00",
+    "endedAt": "2026-11-02T23:05:11.117625+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:05:11.124534+00:00",
+    "endedAt": "2026-11-02T23:05:17.695874+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:05:17.702172+00:00",
+    "endedAt": "2026-11-02T23:06:03.795499+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:03.802068+00:00",
+    "endedAt": "2026-11-02T23:06:04.795374+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:04.801806+00:00",
+    "endedAt": "2026-11-02T23:06:04.959013+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:04.965438+00:00",
+    "endedAt": "2026-11-02T23:06:12.444930+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:12.451456+00:00",
+    "endedAt": "2026-11-02T23:06:12.504306+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:12.510472+00:00",
+    "endedAt": "2026-11-02T23:06:17.629271+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:17.635863+00:00",
+    "endedAt": "2026-11-02T23:06:17.706569+00:00"
+  },
+  {
+    "name": "capture",
+    "command": "CXC2_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-grade-b/screenshots VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxc2-proof.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:17.713201+00:00",
+    "endedAt": "2026-11-02T23:06:31.117687+00:00"
+  },
+  {
+    "name": "repeat-changed-both-sizes",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxc2-proof.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:31.124798+00:00",
+    "endedAt": "2026-11-02T23:06:57.992768+00:00"
+  },
+  {
+    "name": "classic-browser",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T23:06:57.999238+00:00",
+    "endedAt": "2026-11-02T23:07:31.790014+00:00"
+  }
+]

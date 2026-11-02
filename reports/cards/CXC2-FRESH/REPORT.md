@@ -31,3 +31,6 @@ The provisional core-only acceptance is superseded; CXC2 is not marked DONE. Rel
 
 ## Release repair fresh A complete
 Head df83851f5f653f25072f116c6bfa9f3ad02c7936 passes fresh A96: core2423,317 browser cases per size,40 changed-spec repeats across both sizes and12 mutants. The five-file diff only tightens the window/label/decision/exact request oracles. Clean fresh B is now tests-first in /private/tmp/tbh-cxc2-rpc-fix-b; no repair PR/merge yet. The post-repair live probe will additionally require recent-event availability, including a legitimate empty result.
+
+## Release repair fresh B complete
+Fresh B96 on clean df83851, tests first then full five-file diff. Core2423,40 both-size targeted repeats,38 classic cases and10 distinct mutants pass; A317×2 is shared on the identical head. A96/B96 meet all floors. The stricter100-block live guard passes23 controls and now requires available recent-event results. Fix PR and actual-main/live verification remain.
