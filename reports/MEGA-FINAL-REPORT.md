@@ -14,6 +14,8 @@ Checkpoint milestone 2026-11-02T07:57:26+07:00: wrapper evidence saved with tool
 
 Provider investigation 2026-11-02T08:06:19+07:00: newly published CXN3-FIX and CXU4 statuses are green only because their builds were canceled by the existing ignore step. They are not deployed-build proof. The Usage UI did not expose remaining daily quota/reset, and its requested24hour range expanded to39.94hours, so that count is not used to lift BASE0hold. No manual retry/settings change; evidence retained, browser tab closed.
 
+FXRB review finding 2026-11-02T08:10:39+07:00: a deliberate invisible-cat-and-monster mutant passed all6original resize cases. The alpha oracle admits ground/HP-bar pixels; a scoped test repair is now under direct validation. No production sprites were changed on a product branch, and no score/merge is claimed. Evidence: cards/FXRB-ACTOR-ORACLE-R1.
+
 ## Historical progress (older candidates and running states)
 
 The coordinator directly owns build, fixes, verification, reporting and merges. No mission item has yet received two formal passing grades or merged; main remains1fb25ed. Latest authority is mega-resume-2026-11-01.md.
