@@ -1,0 +1,20 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A, final round3",
+  "head": "4da51043fe1f0cfba79ea67642fa08ecfaccced1",
+  "status": "PARTIAL",
+  "score": null,
+  "autoFails": [
+    "StageLayout boss-state preservation unit timed out at unchanged5000ms limit;1374 web cases passed"
+  ],
+  "freshB": "Not run; clean checkout prepared only",
+  "mergeAllowed": false,
+  "repairRoundsUsed": 3,
+  "evidence": [
+    "grade-a-r3/commands.json",
+    "grade-a-r3/logs/unit.log",
+    "mutants-a-r3/results.json",
+    "ui-a-r3/commands.json"
+  ],
+  "notes": "No assertion or timeout threshold changed, no retry credited.11 killed mutants and UI/effects green do not override failed full unit suite. Draft PR252 parked; independent CXC2 proceeds."
+}

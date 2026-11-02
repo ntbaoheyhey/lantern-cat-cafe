@@ -1,0 +1,90 @@
+[
+  {
+    "name": "lossy-prices",
+    "path": "apps/web/src/market/marketViewModel.ts",
+    "from": "compare(a.price, b.price)",
+    "to": "compare(BigInt(Number(a.price)), BigInt(Number(b.price)))",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "case-sensitive-owner",
+    "path": "apps/web/src/market/marketViewModel.ts",
+    "from": "listing.seller.toLowerCase() === address.toLowerCase()",
+    "to": "listing.seller === address",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "unstable-ties",
+    "path": "apps/web/src/market/marketViewModel.ts",
+    "from": "order === 0 ? compare(a.id, b.id)",
+    "to": "order === 0 ? -compare(a.id, b.id)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "reverted-is-success",
+    "path": "apps/web/src/market/MarketTab.tsx",
+    "from": "if (receipt.status !== 'success')",
+    "to": "if (false)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "skip-approval",
+    "path": "apps/web/src/market/MarketTab.tsx",
+    "from": "if (approval.data !== true)",
+    "to": "if (false)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "missing-client-write",
+    "path": "apps/web/src/market/MarketTab.tsx",
+    "from": "if (!client) throw new Error('No Fuji connection');",
+    "to": "",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "buy-chain-not-pinned",
+    "path": "apps/web/src/market/MarketTab.tsx",
+    "from": "functionName: 'buy', args: [l.id], value: l.price, chainId: FUJI_CHAIN_ID",
+    "to": "functionName: 'buy', args: [l.id], value: l.price",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "stale-read-list",
+    "path": "apps/web/src/market/MarketView.tsx",
+    "from": "disabled={!props.form.canList || props.readFailed || props.loadingHoldings}",
+    "to": "disabled={!props.form.canList}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "false-craft-odds",
+    "path": "apps/web/src/layout/forge/ForgePanel.tsx",
+    "from": "textAlign: 'right' }}>100</td>",
+    "to": "textAlign: 'right' }}>99</td>",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "full-bag-allowed",
+    "path": "apps/web/src/layout/forge/ForgePanel.tsx",
+    "from": "items.length >= v2.V2_CONFIG.bag.limit",
+    "to": "items.length > v2.V2_CONFIG.bag.limit",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "false-relic-price",
+    "path": "apps/web/src/layout/forge/ForgePanel.tsx",
+    "from": "{v2.RELIC_RECIPE.materials.yarn} Yarn +",
+    "to": "{v2.RELIC_RECIPE.materials.yarn! + 1} Yarn +",
+    "exit": 1,
+    "killed": true
+  }
+]

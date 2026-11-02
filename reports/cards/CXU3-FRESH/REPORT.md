@@ -13,3 +13,6 @@ Round2 checkpoint 2026-11-03T04:34:01+07:00: core/220 repeats/UI36/effects20 gre
 Round2 full1280 ended318/319: inherited320×568 Forge primary action was outside the viewport. Full1600 correctly did not start. Final repair3 moves the compact action before scrolling choices, adds exact-full-bag coverage and matches the fixture fonts. Targeted checks PID57109 are active; no passing grade. Read-only CXC2 preparation independently confirmed Fuji43113, bytecode at both requested addresses and matching market→NFT linkage at block60421787; this is no wallet or UI proof.
 
 Final repair frozen at4da51043fe1f0cfba79ea67642fa08ecfaccced1. Targeted typecheck/lint/60 focused units/21 browser repeats and5 inherited compact repeats pass. Fresh A3 PID58351, mutants PID58352, UI PID58353. One full320-case matrix per size will run on this exact head; no score yet.
+
+## PARTIAL at the three-round limit
+Final A3 failed: StageLayout boss-state preservation unit timed out at its unchanged5000ms cap;1374 other web cases passed. No fourth repair or retry is credited.11 mutants were killed after a green control and36 UI/20 effects checks pass, but these cannot override the failure. Final-head full browser matrix and B grade were not run. DraftPR252 preserves head4da5104; it stays unmerged. Main/live remain2847e9a. CXC2 proceeds independently on current main.
