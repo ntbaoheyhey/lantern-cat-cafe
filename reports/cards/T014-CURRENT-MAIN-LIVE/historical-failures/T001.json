@@ -1,0 +1,46 @@
+{
+  "verdict": "FAIL",
+  "reasons": [
+    "FAIL as written: the current production deployment is not the 74d60da build. The fresh in-memory build reproduced all 31 historical non-HTML asset hashes, but live matched only 25/31; six expected JS files returned 404 and the stable live entry index-N5_1FrYv.js differs from index-BjY7onxL.js. Reconcile the stale release target and establish fresh exact-current-main/live equality; do not treat historical proof as current equality.",
+    "Historical evidence is valid: all four recorded verifier commits exist, PR/base/tested trees match, 57 original receipt files match checkpoint 89664d7 byte-for-byte, and docs-only checkpoint cac61419a16348308ea50aa9f508841eb7478265 is the remote ledger head. This does not cure the current deployment criterion.",
+    "Fresh checks on isolated 74d60da: typecheck, lint, build, Deno-map drift and five script tests passed; 265 browser tests passed at each viewport, 96 Forge tests passed, and legacy live checks plus the phased guest path passed at both sizes. These source-suite results apply to 74d60da, not current main 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.",
+    "Reliability caveat: the first pnpm test run timed out at StageLayout.test.tsx:175 (5000 ms) while independent build work was running. The unchanged isolated file passed 11/11 and a subsequent full pnpm test passed, including all 1308 web tests. Preserve logs/test.log and investigate load sensitivity before claiming unconditional first-run reliability; no reproducible product defect was established."
+  ],
+  "criteria": [
+    {
+      "c": "Verifier results recorded in reports/ with all four heads",
+      "ok": true,
+      "evidence": "PASS. reports/cards/BASE0-POSTMERGE/74d60da/cli-forge-fixed/logs/verifier-raw.log on remote ledger records VERIFIER_HEAD=e4faf6351fc8163016f5450bd22ce3b41a4126d4, PR_HEAD=280ff4bed495fd28bd489eb5f2dcfd1910f21fc0, BASE_HEAD=74d60dab2cef8c31a3f2729d18719ff3021a9eda, TESTED_HEAD=1aaa829cbfe70972e29f11ed9158a70896a4cba4. Independently resolved objects, equal PR/base/tested tree 58b9abb2c30023dd33325603fa40bd3af13528a1, clean retained tested checkout, and byte-checked 57 receipts against 89664d7. See T001-independent/logs/heads-and-receipts-audit-r2.log and fresh check logs."
+    },
+    {
+      "c": "Deployed assets equal main 74d60da build",
+      "ok": false,
+      "evidence": "FAIL at 2026-11-02T10:23:42.732Z. Fresh Vite write:false production build with live public configuration held only in memory reproduced all 31 historical non-HTML hashes. Only 25/31 current live files matched; six returned 404, including /assets/index-BjY7onxL.js. Live serves /assets/index-N5_1FrYv.js; start/end HTML stayed stable. See T001-independent/artifact-equality.json, logs/artifact-mismatch-detail.log and logs/rebuilt-historical-hashes.log. Historical 32/32 equality at 06:25:05Z is not current equality."
+    },
+    {
+      "c": "Live phased path passes at both sizes",
+      "ok": true,
+      "evidence": "PASS on current live at 1280x720 and 1600x900, using separate fresh guest contexts and real UI actions without state injection. Checked class-picker entry/help, Warrior confirmation, visible canvas and real idle reward (XP 0 to 18; level 2), boss disabled with reason, Craft recipe/shortage action, Bag and Market wallet requirement. Seven stages passed at each size; no console/page errors or HTTP >=400 responses; no horizontal overflow. Forge scroll/action visibility also passed. See T001-independent/live-phased/summary.json, screenshots, live-forge-scroll.json and logs/live-phased.log. This is the accepted merged-core phased scope, not boss victory, funded crafting, minting or the future full nine-step flow; current-live success does not prove deployment identity."
+    },
+    {
+      "c": "Checkpoint committed and pushed on ledger branch",
+      "ok": true,
+      "evidence": "PASS. git ls-remote independently returned cac61419a16348308ea50aa9f508841eb7478265 for refs/heads/ai/codex-mega-ledger; it contains original checkpoint 89664d7. All changed paths in cac6141 are under reports/, and its subject ends [skip ci]. See T001-independent/logs/remote-state.log, logs/heads-and-receipts-audit-r2.log and logs/final-source-state.log. No new verifier commit or push was made."
+    }
+  ],
+  "corrective_tasks": [
+    {
+      "title": "Reconcile the stale BASE0 release gate and prove current main equals live",
+      "detail": "T001 was closed from historical 74d60da receipts although its present-tense deployment criterion is false. Main is now 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a and live uses index-N5_1FrYv.js. Preserve the verified historical BASE0 checkpoint; have the orchestrator explicitly reconcile the stale task target against successor releases, then independently gate the exact intended current-main head and its deployment. Reuse the existing successor verification work if applicable. Do not roll back merged product work merely to satisfy the obsolete SHA assertion. Any release action must follow the existing authorized deployment path and safety restrictions.",
+      "acceptance_criteria": [
+        "T001 closure explicitly distinguishes historical 74d60da proof from current production verification and records the orchestrator-approved release target; no claim that the current site equals 74d60da while it differs.",
+        "Pin current main and tested heads, rerun typecheck/lint/unit/build/browser checks on that exact tree, and retain all failures as well as final outcomes.",
+        "Fresh production build bytes for the approved current-main target match every deployed emitted/public asset and the entry manifest during a stable observation window.",
+        "Rerun legacy live and merged-core phased journey at 1280x720 and 1600x900 against that verified deployment; record source and deployment identities in reports/.",
+        "Commit and push the new evidence checkpoint on ai/codex-mega-ledger with [skip ci], without direct main pushes, Actions, database-destructive operations or unauthorized edge deployments."
+      ],
+      "priority": "P0",
+      "goal_link": "/Users/bao/taskbar-hero/.codex-orchestrator/GOAL.md \u2014 project completion criteria 1 (BASE0 live proof) and 5 (green main and live matches main)"
+    }
+  ]
+}

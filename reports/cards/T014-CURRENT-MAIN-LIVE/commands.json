@@ -1,0 +1,25 @@
+{
+  "sourceWorktree": "/tmp/tbh-t014-current-main",
+  "commands": [
+    "git fetch origin",
+    "git worktree add --detach /tmp/tbh-t014-current-main 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "pnpm install --frozen-lockfile",
+    "pnpm typecheck",
+    "pnpm lint",
+    "pnpm test",
+    "pnpm build",
+    "E2E_PORT_CLASSIC=4670 E2E_PORT_V2=4671 E2E_PORT_SERVER=4672 E2E_PORT_API=4673 E2E_VIEWPORT=1280x720 pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "E2E_PORT_CLASSIC=4670 E2E_PORT_V2=4671 E2E_PORT_SERVER=4672 E2E_PORT_API=4673 E2E_VIEWPORT=1600x900 pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "git submodule update --init --recursive",
+    "forge test (cwd contracts)",
+    "node scripts/gen-deno-json.mjs; git diff --exit-code",
+    "node scripts/check-live.mjs"
+  ],
+  "inlineEvidenceCommands": [
+    "commands/artifact-before.sh",
+    "commands/artifact-after.sh",
+    "commands/live-phased.sh",
+    "commands/live-phased-r2.sh"
+  ],
+  "logging": "Every gate redirected to its unique logs/<step>.log and exit code retained in logs/<step>.exit. Live r1 and r2 outputs are distinct."
+}

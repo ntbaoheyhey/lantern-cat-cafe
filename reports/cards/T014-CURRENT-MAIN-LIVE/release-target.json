@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-11-02T10:33:50.461003+00:00",
+  "authority": "Explicit user dispatch of orchestrator task T014 (corrective-of-T001), which names current main and requires its gate without rollback. This records the dispatched target; it does not edit or independently reauthorize the queue.",
+  "approvedReleaseTarget": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "testedHead": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "tree": "3c662e8e7e9e28c9bb0be25045ac984c2f10fa43",
+  "historicalBASE0": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "historicalCheckpoint": "89664d7057df9a3f6720162538014d4da3e70e1a",
+  "queueSha256": "7a763d08e95c7a138659e5e64136a43bef304077982392859663db7eca24c25c",
+  "goalSha256": "d69b87803b18e3b3ba425891745440718e786bd5f836ee8ad446712eb4a6ef84",
+  "task": {
+    "id": "T014",
+    "title": "Reconcile the stale BASE0 release gate and prove current main equals live",
+    "detail": "T001 was closed from historical 74d60da receipts although its present-tense deployment criterion is false. Main is now 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a and live uses index-N5_1FrYv.js. Preserve the verified historical BASE0 checkpoint; have the orchestrator explicitly reconcile the stale task target against successor releases, then independently gate the exact intended current-main head and its deployment. Reuse the existing successor verification work if applicable. Do not roll back merged product work merely to satisfy the obsolete SHA assertion. Any release action must follow the existing authorized deployment path and safety restrictions.",
+    "acceptance_criteria": [
+      "T001 closure explicitly distinguishes historical 74d60da proof from current production verification and records the orchestrator-approved release target; no claim that the current site equals 74d60da while it differs.",
+      "Pin current main and tested heads, rerun typecheck/lint/unit/build/browser checks on that exact tree, and retain all failures as well as final outcomes.",
+      "Fresh production build bytes for the approved current-main target match every deployed emitted/public asset and the entry manifest during a stable observation window.",
+      "Rerun legacy live and merged-core phased journey at 1280x720 and 1600x900 against that verified deployment; record source and deployment identities in reports/.",
+      "Commit and push the new evidence checkpoint on ai/codex-mega-ledger with [skip ci], without direct main pushes, Actions, database-destructive operations or unauthorized edge deployments."
+    ],
+    "depends_on": [],
+    "priority": "P0",
+    "goal_link": "/Users/bao/taskbar-hero/.codex-orchestrator/GOAL.md \u2014 project completion criteria 1 (BASE0 live proof) and 5 (green main and live matches main)",
+    "status": "running",
+    "attempts": 1,
+    "feedback": "",
+    "auto": true,
+    "source": "corrective-of-T001",
+    "why": "",
+    "added": "2026-11-02 17:30:05"
+  },
+  "releaseAction": "None planned: verify existing deployment; no rollback, duplicate merge, deploy, settings or flag changes.",
+  "sourceWorktree": "/tmp/tbh-t014-current-main",
+  "ledgerBase": "cac61419a16348308ea50aa9f508841eb7478265"
+}

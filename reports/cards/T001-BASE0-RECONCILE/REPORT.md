@@ -1,3 +1,17 @@
+# T014 closure addendum — historical BASE0 and current target separated
+
+The original T001 audit below is historical proof only. Its present-tense production criterion
+was rejected by the verifier; it is not satisfied by current production equaling 74d60da.
+The orchestrator dispatched corrective task T014, explicitly naming current-main target
+`9c457a3e56b7c5813fa40e6aa20b0c14242ef26a`. That approved successor target now has fresh
+exact-tree checks, 32/32 production asset equality before/after a stable window, and both live
+journeys: [T014 report](../T014-CURRENT-MAIN-LIVE/REPORT.md),
+[dispatch/target record](../T014-CURRENT-MAIN-LIVE/release-target.json).
+Original BASE0 checkpoint 89664d7 and every original receipt remain unchanged.
+No rollback or duplicate successor merge was performed. The original audit follows unchanged.
+
+---
+
 # T001 — BASE0 STEP 1 a–d reconciliation
 
 Status: DONE for the exact BASE0 head, using verified existing receipts. No test suite was rerun.

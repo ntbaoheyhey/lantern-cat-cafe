@@ -1,0 +1,103 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "source": {
+    "head": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "tree": "3c662e8e7e9e28c9bb0be25045ac984c2f10fa43",
+    "role": "Exact clean main tree independently rebuilt; production artifact equality verified in ../artifact-before.json"
+  },
+  "deployment": {
+    "head": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "identityMethod": "Production artifact byte equality plus exact-SHA provider statuses",
+    "artifactProof": "../artifact-before.json"
+  },
+  "phase": "merged-core",
+  "fullNineStagePass": false,
+  "startedAt": "2026-11-02T10:36:51.824Z",
+  "steps": [
+    {
+      "name": "landing",
+      "status": "PASS",
+      "startedAt": "2026-11-02T10:36:51.895Z",
+      "detail": {
+        "scope": "Current class-picker entry; no future landing CTA claim."
+      },
+      "layout": {
+        "width": 1280,
+        "docWidth": 1280,
+        "height": 720,
+        "docHeight": 720
+      }
+    },
+    {
+      "name": "guest",
+      "status": "FAIL",
+      "startedAt": "2026-11-02T10:36:52.949Z",
+      "error": "The input did not match the regular expression /guest|demo|preview/i. Input:\n\n'Taskbar Hero\\n' +\n  '\\n' +\n  'STEP 1 OF 1 · NEW GAME\\n' +\n  '\\n' +\n  'Choose Your Class\\n' +\n  '\\n' +\n  \"Pick your cat's class! You can switch anytime outside boss fights.\\n\" +\n  '\\n' +\n  'Warrior\\n' +\n  'MELEE\\n' +\n  '\\n' +\n  'Cleave: every 3rd swing also hits the next monster for 50%\\n' +\n  '\\n' +\n  'HP\\n' +\n  '1x\\n' +\n  'ATK\\n' +\n  '1x\\n' +\n  'DEF\\n' +\n  '1x\\n' +\n  'Attack Speed:\\n' +\n  '1.00s\\n' +\n  'Guardian\\n' +\n  'MELEE\\n' +\n  '\\n' +\n  'Bonk: each hit delays target attack by 500 ms\\n' +\n  '\\n' +\n  'HP\\n' +\n  '1.3x\\n' +\n  'ATK\\n' +\n  '1.35x\\n' +\n  'DEF\\n' +\n  '1.3x\\n' +\n  'Attack Speed:\\n' +\n  '1.40s\\n' +\n  'Rogue\\n' +\n  'MELEE\\n' +\n  '\\n' +\n  'Twin Strike: strikes 2 times per attack\\n' +\n  '\\n' +\n  'HP\\n' +\n  '0.85x\\n' +\n  'ATK\\n' +\n  '0.3x\\n' +\n  'DEF\\n' +\n  '0.85x\\n' +\n  'Attack Speed:\\n' +\n  '0.80s\\n' +\n  'START ADVENTURE AS WARRIOR'\n"
+    }
+  ],
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://taskbarhero-eight.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/ch1-Dcr1kpPd.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/react-KPuNr9iS.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-p4gCWqSt.css",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/index-N5_1FrYv.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/rolldown-runtime-XKyaHtl9.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/combat-COPl1OEP.js",
+      "status": 200
+    },
+    {
+      "url": "https://taskbarhero-eight.vercel.app/assets/web3-BKxr0A5j.js",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/l/font",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/l/font",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/l/font",
+      "status": 200
+    }
+  ],
+  "transactionsPerformed": 0,
+  "guestOnly": true,
+  "identity": {
+    "htmlSha256": "6079e15e79a402c21e69a513b96ac8110cb38a7915c2ef0e85b01983725e9edf",
+    "entryScripts": [
+      "/assets/index-N5_1FrYv.js"
+    ],
+    "etag": "W/\"ddc924a743d0d5816fb71907cd8917c8\""
+  },
+  "status": "FAIL",
+  "endedAt": "2026-11-02T10:36:52.993Z"
+}

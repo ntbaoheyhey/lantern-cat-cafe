@@ -1,3 +1,14 @@
+T014 current-main gate — 2026-11-02. Approved target/tested main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+Fresh typecheck/lint/unit/build PASS; 289 browser tests PASS at each desktop size; 96 Forge PASS.
+Two fresh production builds match all 32 deployed files and entry manifest over 334.824 seconds;
+legacy and eight-stage merged-core live paths PASS at both sizes. First harness failure retained.
+T001 is historical 74d60da proof only; its obsolete current-deployment target is explicitly
+superseded by orchestrator corrective task T014, without reverting merged product work.
+[T014 evidence and target authority](cards/T014-CURRENT-MAIN-LIVE/REPORT.md).
+No product, PR, merge, release, settings, flag, database or .github change. One task only.
+
+Earlier entries below are historical snapshots, not current remote status.
+
 T001 reconciliation — 2026-11-02T10:15:04.155386+00:00. BASE0 STEP 1 a–d was already complete in ledger 89664d7.
 Revalidated all four verifier heads, matching PR/base/tested trees, 55 original evidence files,
 32/32 historical deployed assets, legacy check-live and phased live at both desktop sizes.
