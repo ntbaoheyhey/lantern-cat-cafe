@@ -1,0 +1,7 @@
+$ python3 reports/scorecard/CXL1/baseline-deno.py
+Traceback (most recent call last):
+  File "/Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/baseline-deno.py", line 12, in <module>
+    tar.extractall(temp, filter='data')
+TypeError: extractall() got an unexpected keyword argument 'filter'
+
+EXIT: 1

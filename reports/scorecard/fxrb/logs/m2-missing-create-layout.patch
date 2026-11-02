@@ -1,0 +1,11 @@
+--- apps/web/src/game/stage/StageScene.ts
++++ apps/web/src/game/stage/StageScene.ts
+@@ -296,7 +296,7 @@
+     this.preview = prepare(frontierMonster(state, stats), state.progress.round, false);
+     this.plans = montage.map(m => prepare(m.id, m.round, true)); this.planIndex = 0;
+     this.begin(this.plans[0] ?? this.preview);
+-    this.relayout();
++    // MUTATION: omit the layout when queued state is shown after CREATE.
+   }
+   private begin(plan: Plan) {
+     this.plan = plan; this.age = 0; this.attackAt = -1; this.defeatedAt = -1; this.defeatPose = false; this.lungeAt = -1;

@@ -1,3 +1,4 @@
+import { databaseFixtureClock } from "./fixture-clock.ts";
 import type { PGlite } from "@electric-sql/pglite";
 import type { RelicVoucher } from "@taskbar-hero/api-contract";
 import { CONFIG } from "@taskbar-hero/game-rules";
@@ -15,7 +16,7 @@ import { as, migratedDb } from "./game-db.ts";
 import { pgliteStore } from "./game-db.ts";
 
 const NFT = "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D";
-const T0 = Date.UTC(2026, 10, 1, 10);
+let T0 = 0;
 const TX = `0x${"12".repeat(32)}` as Hex;
 const signer = voucherSigner(generatePrivateKey(), NFT);
 const event = parseAbi(["event RelicForged(address indexed player, uint256 indexed relicId, uint8 rarity, uint256 nonce)"]);
@@ -35,7 +36,7 @@ const store = pgliteStore(() => db);
 const v2Store = pgliteV2Store(() => db);
 const deps = (): GameDeps => ({ store, seedSecret: "recovery-test", now: () => clock, relic: { signer, chain, nft: NFT } });
 const depsV2 = (): ForgeDepsV2 => ({ store: v2Store, seedSecret: "recovery-test", now: () => clock, relic: { signer, chain } });
-beforeAll(async () => { db = await migratedDb(); });
+beforeAll(async () => { db = await migratedDb(); T0 = await databaseFixtureClock(db); clock = T0; });
 afterAll(async () => { await db.close(); });
 beforeEach(() => { clock = T0; reads = []; read = async () => false; minted = false; receipts.clear(); });
 

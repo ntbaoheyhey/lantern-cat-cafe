@@ -1,0 +1,39 @@
+$ env CI=true pnpm exec vitest run src/game/stage/StageScene.test.ts
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m1-before-ready/apps/web
+started: 2026-11-01T07:59:53.363620+00:00
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m1-before-ready/apps/web
+
+ ❯ src/game/stage/StageScene.test.ts (12 tests | 1 failed) 168ms
+   × defers a resize before scene boot and uses the latest scale when CREATE arrives 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/stage/StageScene.test.ts > defers a resize before scene boot and uses the latest scale when CREATE arrives
+AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of …' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"TypeError: Cannot read properties of undefined (reading 'height')"
+
+ ❯ src/game/stage/StageScene.test.ts:51:38
+     49|   Object.assign(scene, { scale: undefined });
+     50|   scene.show(sampleServerStateV2(), false);
+     51|   expect(() => scene.relayout()).not.toThrow();
+       |                                      ^
+     52|   Object.assign(scene, { scale: { width: 453, height: 96 } });
+     53|   start();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  14:59:54
+   Duration  2.35s (environment 45%, transform 41%, tests 8%, import 6%)
+
+
+exit_code: 1
+elapsed_seconds: 3.1

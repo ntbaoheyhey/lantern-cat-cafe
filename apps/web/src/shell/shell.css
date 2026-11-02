@@ -196,6 +196,16 @@
   flex-shrink: 0;
 }
 
+/* The power warning adds a real text row to the shared HUD layout. */
+.shell-hud.v2-topbar:has(.hud-power-hint) {
+  height: auto;
+  min-height: calc(var(--hud-h, 56px) + var(--sp-5, 24px));
+  max-height: none;
+}
+
+.shell-hud .hud-power-chip { border-color: var(--border, #72578d); }
+.shell-hud .hud-xp-fill { background: var(--good, #6be08a); }
+
 .hud-center {
   display: flex;
   align-items: center;
@@ -209,6 +219,44 @@
   align-items: center;
   gap: var(--sp-2, 8px);
   flex-shrink: 0;
+}
+
+/* Title and actionable guidance have their own row at every viewport width. */
+.shell-context {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3, 12px);
+  padding: var(--sp-1, 4px) var(--sp-3, 12px);
+  background: var(--surface, #2a1f36);
+  border-bottom: 1px solid var(--border, #72578d);
+  flex: none;
+  min-width: 0;
+}
+
+@media (min-width: 601px) {
+  .shell-hud.v2-topbar { height: var(--hud-h, 56px); }
+  .shell-context .hud-center { flex: 1; justify-content: flex-end; }
+  .shell-context .v2-hint { max-width: 100%; }
+  .shell-context .v2-hint-btn {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .shell-hud.v2-topbar > .hud-left { flex: 1; }
+  .shell-hud.v2-topbar .hud-bar__layout { width: 100%; }
+  .shell-hud.v2-topbar .hud-level-xp {
+    grid-template-columns: auto 160px auto;
+  }
+  .shell-hud .hud-xp-track { height: 10px; }
+  .shell-hud .hud-power-chip { margin-left: auto; }
+}
+
+/* Intermediate windows retain every status item by allowing another line. */
+@media (min-width: 601px) and (max-width: 1199px) {
+  .shell-hud.v2-topbar { height: auto; max-height: none; padding-block: var(--sp-1, 4px); }
+  .shell-hud.v2-topbar .hud-bar__layout { flex-wrap: wrap; }
 }
 
 /* HUD chips */
@@ -269,18 +317,53 @@
     flex-direction: column-reverse;
   }
 
-  .shell-hud {
+  .shell-hud.v2-topbar {
     height: auto;
     min-height: 48px;
-    max-height: 88px;
+    max-height: none;
     padding: 2px 4px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto;
   }
 
-  .hud-left {
-    flex-wrap: wrap;
-    height: auto;
+  .shell-context {
+    gap: var(--sp-2, 8px);
+    padding: 0 var(--sp-1, 4px);
   }
+  .shell-context .v2-hint { min-width: 0; }
+  .shell-context .hud-center { min-width: 0; }
+  .shell-hud > .hud-right {
+    grid-area: 1 / 2;
+    flex-direction: column;
+    gap: 0;
+  }
+  .shell-hud .v2-sync-status-slot { line-height: 1; }
+  .shell-hud.v2-topbar > .hud-left {
+    grid-area: 1 / 1;
+    width: 100%;
+    max-width: 100%;
+    container-type: inline-size;
+    padding: 0 var(--sp-1, 4px);
+  }
+
+  /* Keep the existing HUD grid at the shared 600px layout boundary too. */
+  .shell-hud.v2-topbar .hud-bar__layout {
+    display: grid;
+    grid-template-columns: minmax(122px, 1fr) auto;
+    grid-template-areas: 'level power' 'progress progress' 'stacks stacks';
+    width: 100%;
+    gap: calc(var(--sp-1, 4px) / 2) var(--sp-1, 4px);
+  }
+
+  .shell-hud .hud-chip-label {
+    position: absolute;
+    inset-inline-end: 0;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .shell-hud .hud-chip { height: 20px; }
 
   .shell-rail {
     width: 100%;
