@@ -1,3 +1,9 @@
+# Runtime — USER PAUSED
+
+2026-11-02T07:51:12.287587+00:00: explicit user pause. No mission-owned test/preview process or required/default listener. Verifier and mutant checkouts clean7f00ef5; old87049/87071 absent; nothing killed. Recovered repeats completed; reference-keyboard exit1 unresolved. No agents/helpers/schedules/new chats created. Wait for explicit resume.
+
+## Historical runtime
+
 # Runtime — ACTIVE SESSION
 
 2026-11-02T07:38:31.614876+00:00: recovered repeat1280 shell87049/Playwright87071 in mega-fxrb-current-verify/apps/web at7f00ef5, ports4310–4313. No duplicate launch. Preboot mutant retained in mega-fxrb-current-mutants; patch and intended failure saved. No agents/helpers/schedules.

@@ -1,3 +1,5 @@
+**USER PAUSED — 2026-11-02T07:51:12.287587+00:00.** FXRB remains ungraded; reference/keyboard failure retained. BASE0 historical scores unchanged. No automatic resume.
+
 # Mega scorecard — living draft
 
 **ACTIVE SESSION 2026-11-02T14:28:16.266172+07:00; existing BASE0 scores unchanged. FXRB7f00ef5 has no grade.** Latest authority: [fresh-start mission](mega-resume-2026-11-02.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).

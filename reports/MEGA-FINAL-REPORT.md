@@ -1,3 +1,15 @@
+# Taskbar Hero — USER PAUSED
+
+Updated 2026-11-02T07:51:12.287587+00:00. Explicit user pause; mission incomplete. No further execution until a new explicit resume.
+
+Private repository and unchanged refs verified: main74d60da, ledgerad95738 before this save, FXRBlocal7f00ef5/unpublished and draftremote26e7de8. BASE0 main/phased-live PASS and historical independentA97.64285714285714/B98 remain unchanged.
+
+Recovered FXRB receipts show core/build checks,200resize repeats at each size, audits/effects and10contrast checks passing. The reference/keyboard command failed because nav-home was not focused; failure retained and undiagnosed. Full builder gates and two separate fresh self-grades remain incomplete. No product push, grade, merge or release.
+
+No mission test/preview remains; required/default ports free; nothing killed. Historical files/captures preserved. [Pause evidence](cards/FXRB-CURRENT-R1/REPORT.md) · [Handoff](MEGA-CURRENT-HANDOFF.md) · [Ledger](mega-ledger.md).
+
+## Historical reports
+
 # Taskbar Hero — active mission
 
 Updated 2026-11-02T07:38:31.614876+00:00. Full mission active in this session only. [Recovered state](cards/FXRB-CURRENT-R1/recovered-state-20261102/REPORT.md) verifies checkpoint6cca81c, private repository, unchanged main74d60da and product PRs. BASE0 main/phased-live PASS and historical independent A97.64285714285714/B98 remain unchanged.
