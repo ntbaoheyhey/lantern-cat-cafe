@@ -1,3 +1,9 @@
+# Runtime — ACTIVE SESSION
+
+2026-11-02T07:54:16.606884+00:00: no mission test/preview/listener at verification; verifier/mutants clean7f00ef5. Direct keyboard diagnosis next. No helpers/agents/schedules.
+
+## Historical runtime
+
 # Runtime — USER PAUSED
 
 2026-11-02T07:51:12.287587+00:00: explicit user pause. No mission-owned test/preview process or required/default listener. Verifier and mutant checkouts clean7f00ef5; old87049/87071 absent; nothing killed. Recovered repeats completed; reference-keyboard exit1 unresolved. No agents/helpers/schedules/new chats created. Wait for explicit resume.

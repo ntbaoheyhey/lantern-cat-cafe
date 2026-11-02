@@ -1,6 +1,6 @@
 # Mega ledger — living draft
 
-**USER PAUSED — 2026-11-02T07:51:12.287587+00:00.** No execution without explicit resume. Full scope and gates retained; refs/private repository verified; ledgerad95738 matched origin before this save. See cards/FXRB-CURRENT-R1/pause-20261102-0749.json.
+**ACTIVE — 2026-11-02T07:54:16.606884+00:00.** Explicit resume verified; all refs and29receipts unchanged. See cards/FXRB-CURRENT-R1/resume-20261102-2/REPORT.md.
 
 ## Verified remote state at session resumption
 
@@ -24,7 +24,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | # | item | base | branch | PR URL | state | rounds | last verify | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | BASE0 (DENO0 repair card) | main | ai/codex-mega-deno0 | https://github.com/ntbaoheyhey/taskbar-hero/pull/246 | MERGED / MAIN + PHASED LIVE PASS | 2 | 74d60da core/build/full265each/repeat700each; safe FORCE_ALL265browser+96Forge PASS | A97.642857/B98;artifact32/32, legacy/phased live PASS; full future nine-stage path pendingCXU3+CXC2 |
-| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | PAUSED / BUILDER GATES INCOMPLETE | 0 | 7f00ef5 core/build+repeat200eachsize receipts PASS;reference-keyboard FAIL;full gates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
+| 1 | FXRB | main | ai/codex-fxrb | https://github.com/ntbaoheyhey/taskbar-hero/pull/243 | ACTIVE / BUILDER GATES INCOMPLETE | 0 | 7f00ef5 core/build+repeat200eachsize receipts PASS;reference-keyboard FAIL;full gates pending | Remote26e7de8 unchanged;localmainmerge5e0cb7d+decisionindex7f00ef5 notpushed;no grades/merge |
 | 2 | CXN3 | main | ai/codex-n3-cutover-truth | https://github.com/ntbaoheyhey/taskbar-hero/pull/244 | IN-PROGRESS | 0 | Preliminarycd274ab:9classifier+4PGlite/type/Deno/links |10historical live findings open; full gates/grades/release pending |
 | 3 | ART1 | main | ai/codex-art1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/247 | IN-PROGRESS | 0 | Preliminary21fc7dd:36tests/catalog/51sprites/links |71sourcefiles preserved; actual-main full gates/grades pending |
 | 4 | CXP1 | main | ai/codex-cxp1 | https://github.com/ntbaoheyhey/taskbar-hero/pull/240 | IN-PROGRESS | 0 | 7393dc3:core/build/G3,full280eachsize,repeat80,fourmutantsPASS | Source2b7ceebpublished;own18unit/typePASS;old1/17capfailure retained;actualmain/UI/G5/wrapper/grades pending |

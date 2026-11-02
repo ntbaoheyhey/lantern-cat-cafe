@@ -1,3 +1,9 @@
+# Taskbar Hero — active mission
+
+2026-11-02T07:54:16.606884+00:00: explicit resume verified. Private repo, ledgerdb96ca1, main74d60da and all queue PRs unchanged. FXRB7f00ef5 retains core/build/repeat200eachsize evidence; keyboard failure remains unresolved. Builder gates, separate fresh self-grades and all remaining mission work continue. No product push or merge.
+
+## Historical reports
+
 # Taskbar Hero — USER PAUSED
 
 Updated 2026-11-02T07:51:12.287587+00:00. Explicit user pause; mission incomplete. No further execution until a new explicit resume.

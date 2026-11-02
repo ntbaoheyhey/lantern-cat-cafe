@@ -1,3 +1,5 @@
+**ACTIVE — 2026-11-02T07:54:16.606884+00:00.** Explicit resume; FXRB ungraded and keyboard failure retained. BASE0 historical scores unchanged.
+
 **USER PAUSED — 2026-11-02T07:51:12.287587+00:00.** FXRB remains ungraded; reference/keyboard failure retained. BASE0 historical scores unchanged. No automatic resume.
 
 # Mega scorecard — living draft

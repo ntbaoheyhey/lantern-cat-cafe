@@ -1,8 +1,8 @@
-# Taskbar Hero current handoff — USER PAUSED
-Updated 2026-11-02T07:51:12.287587+00:00. Latest user message: “tạm dừng”. Do not resume work without a new explicit instruction.
+# Taskbar Hero current handoff — ACTIVE SESSION
+Updated 2026-11-02T07:54:16.606884+00:00. Latest explicit user resume lifts the pause; full mission active in this session.
 Single session only; no agents/helpers/externalAI/newchats/schedules/checkpoint.py/orchestration runners.
-Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Before this save local/remotead95738 matched;7b62f5d is preserved ancestry.
-Verified pause evidence: cards/FXRB-CURRENT-R1/pause-20261102-0749.json and REPORT.md. Origin fetched; repositoryPRIVATE.
+Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Resume checkpoint local/remotedb96ca1 matched;7b62f5d is preserved ancestry.
+Verified resume: cards/FXRB-CURRENT-R1/resume-20261102-2/REPORT.md. Historical pause evidence: cards/FXRB-CURRENT-R1/pause-20261102-0749.json and REPORT.md. Origin fetched; repositoryPRIVATE.
 Main 74d60dab2cef8c31a3f2729d18719ff3021a9eda; BASE0#246 MERGED / MAIN + PHASED LIVE PASS. Historical independentA97.64285714285714/B98 unchanged.
 BASE0 evidence: full265/repeat700eachsize; safeverifier265browser+96Forge;32assets andlegacy/phasedlivePASS. Fullfuture9-stagepath awaitsCXU3+CXC2. No completedBASE0 rerun.
 FXRB#243 remains draftremote26e7de846e82c58523eaa8c45984c635accb5357; localai/codex-fxrb=7f00ef52fdd221ab5f38198dfe6c44c56316d25b, NOT pushed.
@@ -27,7 +27,7 @@ Safety: no directmainpush/Actions/.github/secrets/destructiveSQL/mainnet/realfun
 Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; everycommit ends [skip ci]. Reportsledgerbranch;productownbranch; preservehistoricaldirtyfiles/captures.
 No missiontimer/automation/helper was created. No automaticwake/resume. Checkpointmilestones only: handoff<=80lines,livingreport/ledger/scorecard/runtime,directsnapshot,selectedcommit/push.
 Aftercompaction rereadthishandoff+ledger. Do notclaim unverifiablemodel/effort.
-Next3actions ONLY AFTER EXPLICIT RESUME:
-1. Reverify refs/privacy/processes/ports and publish verifiedstate before substantivework; avoid duplicate passedruns.
+Next3actions:
+1. Verified refs/privacy/processes/ports and unchanged29receipts; publish this checkpoint, then diagnose retainedkeyboardfailure.
 2. Diagnose retainedkeyboardfailure without weakeningassertions; finish buildergates onexacthead and recordmutantcauses/UI/G5/wrapper/capacity.
 3. SeparatefreshA/Bselfgrades, eligiblepublication/merge only afterallgates; main/livegreen beforeCXP1. Continuefullsavedqueue.

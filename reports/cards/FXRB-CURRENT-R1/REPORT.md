@@ -1,5 +1,13 @@
 STATUS: IN-PROGRESS
 
+# FXRB — active explicit resume
+
+2026-11-02T07:54:16.606884+00:00: saved state verified; full mission resumes. See [verification](resume-20261102-2/REPORT.md). Keyboard failure retained; no retry or product change yet.
+
+## Historical checkpoints
+
+STATUS: IN-PROGRESS
+
 # FXRB verified checkpoint — USER PAUSED
 
 Updated 2026-11-02T07:51:12.287587+00:00. The user explicitly paused this session. No implementation, tests, push of product branches, merge, release or automatic resumption until a new explicit resume. Only pause-state preservation followed the request.
