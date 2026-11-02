@@ -69,6 +69,15 @@ describe('shared UI', () => {
     expect(opener.hasAttribute('inert')).toBe(false);
     expect(document.activeElement).toBe(opener); opener.remove();
   });
+  it('excludes a native disabled control even when it declares a tabindex', () => {
+    render(<Modal open title="Keyboard" onClose={() => {}}>
+      <button>Last enabled</button><button disabled tabIndex={0}>Unavailable tab stop</button>
+    </Modal>);
+    const first = screen.getByLabelText('Close Keyboard'); first.focus();
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+    expect(document.activeElement).toBe(screen.getByText('Last enabled'));
+    fireEvent.keyDown(document, { key: 'Tab' }); expect(document.activeElement).toBe(first);
+  });
   it('success and warning dismiss on schedule while failure persists and can be closed', () => {
     vi.useFakeTimers(); const dismiss = vi.fn();
     render(<ToastHost onDismiss={dismiss} toasts={[{ id: 's', tone: 'success', message: 'Done' }, { id: 'w', tone: 'warning', message: 'Check' }, { id: 'e', tone: 'error', message: 'Failed request' }]} />);

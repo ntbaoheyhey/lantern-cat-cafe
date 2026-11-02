@@ -35,7 +35,7 @@ function syncBackground() {
 const selector = 'button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]';
 function focusable(dialog: HTMLElement): HTMLElement[] {
   return Array.from(dialog.querySelectorAll<HTMLElement>(selector)).filter(el => {
-    if (el.tabIndex < 0 || el.closest('[hidden], [inert], [aria-hidden="true"]')) return false;
+    if (el.tabIndex < 0 || el.matches(':disabled') || el.closest('[hidden], [inert], [aria-hidden="true"]')) return false;
     for (let node: HTMLElement | null = el; node && node !== dialog; node = node.parentElement) {
       const style = getComputedStyle(node);
       if (style.display === 'none' || style.visibility === 'hidden') return false;
