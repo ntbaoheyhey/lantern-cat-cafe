@@ -1,5 +1,5 @@
 # Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T13:43:32.680648+07:00; user explicitly resumed in this session. Older pause lines are superseded.
+Updated 2026-11-02T06:52:55.491274+00:00; user explicitly resumed in this session. Older pause lines are superseded.
 Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
 Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
 BASE0: MERGED / POSTMERGE INCOMPLETE. Historical independent A97.64285714285714/B98, floors passed. Actual-main full265/265 and12spec repeat700/700 at each1280x720/1600x900 passed. Do not rerun completed suites without changed code/new failure.
@@ -21,6 +21,8 @@ Retained CLI verifier exit1: tool032da94/PR280ff4b/base74d60da/tested9f5687a; te
 CLI evidence reports/cards/BASE0-POSTMERGE/74d60da/cli-20261102: artifact32/32, stable HTML, legacy exit0. Phased browser pending. New recheck table cards/CLI-RESUME-20261102/recheck.
 No ownedtestprocess, required/default ports free. No helper/subagent/schedule. Actualmain and queue heads unchanged after fetch.
 Next3actions:
-1. Review retained live screenshots; reconcile wrapper four-head/rawlog/equality and exactmain artifact proof.
+1. All14 live screenshots reviewed before compaction; verify Forge cost-row scroll reachability at1280. Reconcile wrapper four-head/rawlog/tree and artifact proof.
 2. Publish complete BASE0 main/live checkpoint, retaining failed Forge attempt and historical grades.
 3. Only when BASE0 green, integrate actualmain into existing FXRB#243 and run builder plus separate fresh A/B self-grades.
+
+Latest real-state recheck: cards/CLI-RESUME-20261102/continuation-1350/REPORT.md. No source/ref change, no ownedtests/listeners.

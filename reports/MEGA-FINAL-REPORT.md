@@ -1,8 +1,8 @@
 # Taskbar Hero — active CLI mission
 
-Updated 2026-11-02T13:32:43.683654+07:00. Mission incomplete; coordinator works alone. Private repository, main74d60da and all nine PR states/heads reverified; no mission automation or active test process.
+Updated 2026-11-02T06:52:55.491274+00:00. Mission incomplete; coordinator works alone. Private repository, main74d60da and all nine PR states/heads reverified; no mission automation or active test process.
 
-BASE0 #246 remains merged with historical independent A97.64285714285714/B98. Actual-main full265/repeat700 at both desktop sizes remain valid. Retained safe verifier exit1: all checks except Forge passed, including265 browser cases; failure is incorrect `forge --offline test` option placement. Synthetic tested tree equals actual main. All32 deployed public files match the clean build and legacy live checks pass. Phased live journey remains pending. No later merge until the verifier and live gate pass.
+BASE0 #246 remains merged with historical independent A97.64285714285714/B98. Actual-main full265/repeat700 at both desktop sizes remain valid. Retained safe verifier exit1: all checks except Forge passed, including265 browser cases; failure is incorrect `forge --offline test` option placement. Synthetic tested tree equals actual main. All32 deployed public files match the clean build and legacy live checks pass. The repaired verifier and phased live journeys have saved exits0; final Forge scrolling review and publication remain pending. No later merge until certification.
 
 Full P0–P3 scope remains active. [Rechecked refs](cards/CLI-RESUME-20261102/recheck/REPORT.md) · [Retained results](cards/BASE0-POSTMERGE/74d60da/cli-20261102/reconciled-result.json).
 

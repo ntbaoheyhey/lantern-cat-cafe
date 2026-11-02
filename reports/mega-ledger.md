@@ -1,6 +1,6 @@
 # Mega ledger — living draft
 
-**ACTIVE — state rechecked 2026-11-02T13:43:32.680648+07:00.** Current authority: [CLI mission](CODEX-CLI-RESUME-PROMPT.md); milestone checkpoints only, single coordinator.
+**ACTIVE — state rechecked 2026-11-02T06:52:55.491274+00:00.** Current authority: [CLI mission](CODEX-CLI-RESUME-PROMPT.md); milestone checkpoints only, single coordinator.
 
 ## Verified remote state at CLI resumption
 
@@ -16,7 +16,7 @@
 | CXU5 #249 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `c5b846ec030be5a0bf6a89c515fe4ecd85514fc3` | CONFLICTING |
 | CXU4 #251 | OPEN / draft | main | `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba` | `d408ada368a05c078dcd97bbd61f4e4b1dbc238b` | CONFLICTING |
 
-Actual remote main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; stale API base SHAs are not current-main proof. [Verification](cards/CLI-RESUME-20261102/REPORT.md).
+Actual remote main `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; stale API base SHAs are not current-main proof. [Verification](cards/CLI-RESUME-20261102/continuation-1350/REPORT.md).
 
 
 Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](mega-plan.md). Previous narrower run archived in [prior ledger](mega-ledger-prior-run.md). No earlier grade is accepted as current evidence.
