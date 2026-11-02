@@ -1,0 +1,8 @@
+fatal: path 'vercel.json' does not exist in 'HEAD'
+Traceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'show', 'HEAD:vercel.json']' returned non-zero exit status 128.

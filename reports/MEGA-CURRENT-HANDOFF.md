@@ -1,5 +1,13 @@
-# Taskbar Hero current handoff — T014
-Updated 2026-11-02 after fresh current-main and production verification. T014 only.
+# Taskbar Hero current handoff — T001 retry 2 closure
+Updated 2026-11-02 after auditing T014 and freshly rechecking all 32 production assets.
+T001 retry 2 only: STEP 1 a–d, under T014's approved current-main target; no suites rerun.
+Fresh live identity window: 11:12:13.885Z–11:12:17.918Z; all assets/HTML/entry match exact main.
+Evidence: reports/cards/T001-BASE0-CLOSURE-R2/REPORT.md; final commit in results/T001.json.
+All four historical heads, 66 original receipt files and 120 T014 checkpoint files verified.
+T001 status is DONE with the explicit target reconciliation; historical 74d60da is not current live.
+Earlier object-store lookup failure retained; corrected lookup resolves TESTED_HEAD in verifier repo.
+
+The following T014 results are adopted from its audited committed checkpoint, not rerun here.
 Ledger: ai/codex-mega-ledger; worktree /tmp/tbh-t001-ledger.
 Approved target/current main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
 Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
@@ -23,4 +31,4 @@ All task test sessions completed; ports 4670–4673 free. No helpers, agents, ti
 Original dirty checkout untouched. Repo private; no keys stored, main push, Actions or .github edits.
 No destructive database operation, migration, release, real funds or contest submission.
 No user step or duplicate follow-up for T014. Return control to orchestrator.
-Next: verify the T014 checkpoint, reconcile existing successor task states, continue the existing queue.
+Next: return to orchestrator; reconcile existing successor task states before further work.

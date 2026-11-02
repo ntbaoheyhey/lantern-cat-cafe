@@ -1,3 +1,11 @@
+T001 retry 2 closure — 2026-11-02. Adopted T014's explicitly approved current-main target
+9c457a3e56b7c5813fa40e6aa20b0c14242ef26a; historical 74d60da is not current production.
+Fresh live GETs matched all 32 exact-main build hashes at 11:12:13.885Z–11:12:17.918Z.
+All four verifier commits, 66 historical receipt files, and 120 T014 checkpoint files audited.
+Legacy live and phased paths at both sizes adopted from the verified T014 window; no suites rerun.
+Historical failures and this retry's corrected object-store lookup failure retained.
+[T001 retry evidence](cards/T001-BASE0-CLOSURE-R2/REPORT.md). No product change or deployment.
+
 T014 current-main gate — 2026-11-02. Approved target/tested main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
 Fresh typecheck/lint/unit/build PASS; 289 browser tests PASS at each desktop size; 96 Forge PASS.
 Two fresh production builds match all 32 deployed files and entry manifest over 334.824 seconds;

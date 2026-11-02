@@ -1,0 +1,16 @@
+fatal: git cat-file: could not get object info
+PASS current T014 manifest and checkpoint bytes: 120 files
+PASS historical BASE0 checkpoint bytes: 66 files
+VERIFIER_HEAD=e4faf6351fc8163016f5450bd22ce3b41a4126d4
+PR_HEAD=280ff4bed495fd28bd489eb5f2dcfd1910f21fc0
+BASE_HEAD=74d60dab2cef8c31a3f2729d18719ff3021a9eda
+Traceback (most recent call last):
+  File "/private/tmp/tbh-t001-ledger/reports/cards/T001-BASE0-CLOSURE-R2/audit.py", line 47, in <module>
+    assert git('cat-file', '-t', head) == 'commit', name
+  File "/private/tmp/tbh-t001-ledger/reports/cards/T001-BASE0-CLOSURE-R2/audit.py", line 23, in git
+    return subprocess.check_output(['git', *args], cwd=ROOT).decode().strip()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'cat-file', '-t', '1aaa829cbfe70972e29f11ed9158a70896a4cba4']' returned non-zero exit status 128.
