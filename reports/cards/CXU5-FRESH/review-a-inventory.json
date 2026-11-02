@@ -1,0 +1,618 @@
+{
+  "head": "a4dc85e22932db4bc7a9731296df8dafe03f44b5",
+  "base": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "files": [
+    {
+      "path": "apps/web/e2e/ui/cxu5-map.spec.ts",
+      "bytes": 6973,
+      "sha256": "fe683a396f6c341b7fb9b9fc7a208a4402e7dcbaa6cc34d1d1e20bc2bd186800",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/StageLayout.tsx",
+      "bytes": 28243,
+      "sha256": "2f41293abb398aa392834a26bf8debd18da0368c5936fb144387eedce0dc15d5",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/BossGatePanel.tsx",
+      "bytes": 10842,
+      "sha256": "240c56032f29c5d3b1298a0e78050d49574813a46e51bb67dd47a44ed729dfb4",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/BossMapScreen.css",
+      "bytes": 6059,
+      "sha256": "cda625daafd6a393e329373cdcb1fcb0ee2a6cb091cfce3498f8ec5cdc27a868",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/BossMapScreen.test.tsx",
+      "bytes": 3679,
+      "sha256": "23d9aecf86de7e968a7d6ed247fe7985a2087c71fb8ff45a1167528e3436c24a",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/BossMapScreen.tsx",
+      "bytes": 2289,
+      "sha256": "8da2a592dd405de7922381ed5a8958514911fb99b19838d4c3b474b8fa62ebef",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/mapDetails.test.ts",
+      "bytes": 2264,
+      "sha256": "012c1b85ef7d71333126b2b149f5089588afa6596dea85ddf1dd613eb2828e95",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/boss/mapDetails.ts",
+      "bytes": 2462,
+      "sha256": "a667b629e443be8881bb73d6dd6b54236850705a5f3d9698c542a6a66d1a2b29",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/bossPresentation.test.ts",
+      "bytes": 4588,
+      "sha256": "ba54eb351922d30179fa4d47a424fff4c893837b508ef75565d0312aa83c3fdc",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/layout/bossPresentation.ts",
+      "bytes": 2835,
+      "sha256": "42b6ce68e61a9b9a70dbb777737b31e5876800ebd036bd428e14ad8ed8810230",
+      "kind": "product"
+    },
+    {
+      "path": "apps/web/src/map/ChapterMap.tsx",
+      "bytes": 11362,
+      "sha256": "e65f29d0671f9ab8e11c8bf3e3f60594817f3e10cb970f78ca50cd6e15bbb7c8",
+      "kind": "product"
+    },
+    {
+      "path": "docs/decisions/cxu5-map-data.md",
+      "bytes": 2940,
+      "sha256": "fb66e631331cdbea7ddb86a8463584d918a0dff2971fe17ea0173f8bdb82d883",
+      "kind": "decision"
+    },
+    {
+      "path": "docs/design/decisions.md",
+      "bytes": 1244,
+      "sha256": "d3c66500eb462d9393602a383b50fb248f03fd09c007637fc85c1ba519f498ba",
+      "kind": "decision"
+    },
+    {
+      "path": "reports/redesign/CXU5.md",
+      "bytes": 6998,
+      "sha256": "76fe3b669f8defbf4cff6d69c16d854acc127b83bec69f3a3e95b71b1bfe0e32",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/redesign/CXU5/README.md",
+      "bytes": 219,
+      "sha256": "57dd3356b635828e99e3bd253c7530440a17cc3e48b7fc68efee29424c2e3a8e",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/audit-signed/findings.json",
+      "bytes": 8070,
+      "sha256": "0426f62b27b62e9f766901c5557cdd258fd9c32035bed166aed19fc458ecf4b7",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/audit/findings.json",
+      "bytes": 8080,
+      "sha256": "f771f43f20280389cc63701cc89a691362c3a5bf5e5174fc87a4bd10ee549497",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/animation-inventory.json",
+      "bytes": 168,
+      "sha256": "1717abb598169c58e0e3d5f83e70f2f3afc74dbe46c12fd798b87c8120ffb0ee",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/summary.json",
+      "bytes": 1431,
+      "sha256": "a30862e06c840467e09329e9d9c0ed4ccbbf28ad27db026accc8a6a299f41996",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/video-boss-ready/page@3802e268f903e3ff66316b3ea52b4751.webm",
+      "bytes": 1272943,
+      "sha256": "3f918b564e85e8fda46a24b80023c11be0115fb1d6cfb92bf2c09000727f900e",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/video-combat/page@5ba3d18ac768ea6164d06026947fc2a0.webm",
+      "bytes": 3234798,
+      "sha256": "6b6f8b378a20a3c96b75a4301db411e3e2a4947f8506e76d03b4d261713e2cfb",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/video-motion-normal/page@9c18864eae190705b52a082793a9a826.webm",
+      "bytes": 1288772,
+      "sha256": "265fa2648eb5ceff5d0611bf0946e37dacee25f305705d91145d8e664491fd36",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1280/video-motion-reduced/page@2a70d07d9b9f752280a80175f18a78ae.webm",
+      "bytes": 2196466,
+      "sha256": "c149ee0d3edf2f39772b5bbbd6f231a4fecc5f96f903e303a2aa556eccf6ba30",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/animation-inventory.json",
+      "bytes": 168,
+      "sha256": "1717abb598169c58e0e3d5f83e70f2f3afc74dbe46c12fd798b87c8120ffb0ee",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/summary.json",
+      "bytes": 1431,
+      "sha256": "98bf2fbff51a6762bbf7e30c902095fd3674bc5de9f12355f088805c46bcc39d",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/video-boss-ready/page@e93b7552128c72e2e0bb3fddf2fd04ec.webm",
+      "bytes": 2390482,
+      "sha256": "8ff55128181a91c6d41414d6566bb28bfe0569b1bcf9cae6cdd5cdc36e45235f",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/video-combat/page@e68881d8caa9740a08335a0bbea9e61c.webm",
+      "bytes": 4183166,
+      "sha256": "241c25d446fb9a6a3d9bbfb40302b4b8960af19aa41aa853114f6d480c54d4e2",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/video-motion-normal/page@8b292d07405bac5f7e049934f71e1387.webm",
+      "bytes": 1573527,
+      "sha256": "3ebbc232d7fed86784f2afbbcc7be192d99526337634a10f5629826d6b6bdcff",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/effects-1600/video-motion-reduced/page@f8f5e998d84d84b5408bf0971322bbb7.webm",
+      "bytes": 3228515,
+      "sha256": "082f2a66dfb263c84f00d7c66df4ad5a3b49c6207f7e3a5fba36e05589e9c38e",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/full-browser.mjs",
+      "bytes": 1155,
+      "sha256": "b934acc769ae52602977605d947356c30526974cbf648c2251a05b1a7ea7ce55",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/audit-signed.log",
+      "bytes": 4330,
+      "sha256": "21443b17cebb69664389cf09fee899c97819ced8c261e7318390dc59cbb61ab4",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/audit.log",
+      "bytes": 2352,
+      "sha256": "0b250990ab4ab3cba9055cfd6ee827ac631cdce3d5c1825deb989bbdc9de8a6b",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-initial.log",
+      "bytes": 8923,
+      "sha256": "e652f6d89fa7a46727627a7561edf0f7a8c399d064228f61de84e972910fef2b",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-r2.log",
+      "bytes": 9442,
+      "sha256": "4ed4265a7ae78d7df9bfc6696e2ad87aa51506480ceafc0329fa2c0cc9a93a6f",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-r3.log",
+      "bytes": 4883,
+      "sha256": "f12fc29e0f602a316b129145031cf7585fb0333736bcd0a85477f03585980bee",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-r4.log",
+      "bytes": 6834,
+      "sha256": "84b73cfe2821e7f96ffe800a1f7001cf60759d966b6df80da235d1064203aeb1",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-r5.log",
+      "bytes": 5234,
+      "sha256": "992c5355435fa3a971f655008109898baf128f95b4452d7e899b88f93ef07d02",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-repeat10-r2.log",
+      "bytes": 17608,
+      "sha256": "d7fd5005d3ce52586b9b41df57d2616e3826ea77b31ad9bc137e13a9df23c85d",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/browser-repeat10.log",
+      "bytes": 26299,
+      "sha256": "4ec0e708ad5efc27223b7779d3958aef1db6021fb7c9fb92cb3568f6568f86fc",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/build.log",
+      "bytes": 2470,
+      "sha256": "c85a5aabc84cac79daa986b1e432b902a325f9c59b6dcb31fc0384ee3eec779d",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/bundle.log",
+      "bytes": 247,
+      "sha256": "6541ab1fb5f6cd4cb5b9b86e5ca1ce2a69433e9bb2e3abcf15748d94226cbd49",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/checks.json",
+      "bytes": 1018,
+      "sha256": "1936a93bdd19fbba997a5bab3ffae91c1a81203c1a31e1e7b8698b7444361ccd",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/classic-build.log",
+      "bytes": 1807,
+      "sha256": "14402e2701b5778b1fd44c7b97072b7eba5f32675069eb7f5e11b0fa68a17eba",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/deno-generation.log",
+      "bytes": 343,
+      "sha256": "ca6f057e3fa487f178942a63804e3b19ee15964a1461d6057785744a45212f77",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/deno-imports.log",
+      "bytes": 5310,
+      "sha256": "3db368a10ef45ca29ac6a0dff094a022b8e1bc4e76707978be38a9ddc1cf401a",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/effects-1280.log",
+      "bytes": 1000,
+      "sha256": "a7683f56fbb8286d805150d6333bf5d162cf5c1fc0022dfc3b3e17077405b52f",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/effects-1600.log",
+      "bytes": 1000,
+      "sha256": "80b28c11d866c960f737c5373a1b1f501919d4548ba8e75ca340518a2458df8b",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/full-e2e-1280.log",
+      "bytes": 50706,
+      "sha256": "bb41c68ff2db0efdc773b6f32f3701a831efce910c9335e3005207702377367b",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/install.log",
+      "bytes": 1667,
+      "sha256": "7a70ba15856e65d7b9e75786bdbb6be5a576cbc99f5e6ea9921b98f97d0b9b84",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/links.log",
+      "bytes": 407,
+      "sha256": "328ec832e44d543ba0bcd98af9f1082bf7566be42442cbd9c38ab472d4ca1bed",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/lint.log",
+      "bytes": 639,
+      "sha256": "7e4d65d561fceaba9ed42d3f5ae67841fa2c3c772009c57d6af8162c22a35697",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/control.log",
+      "bytes": 274,
+      "sha256": "354b12df65ff6d29b6f562aeaa90e3df559f1bbeec73a0c562b1a60fb69cd4b9",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/history-account-leak.log",
+      "bytes": 1521,
+      "sha256": "ddbb983d54559f8427db372252406a68ee9a04a0fde568e634b98b7c7bbc4e84",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/history-chapter-leak.log",
+      "bytes": 271,
+      "sha256": "9d8b164f383dbc16ca5bf059fa7cbd848cfe839f76003c1464bb88eafa62a122",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/history-unbounded.log",
+      "bytes": 1138,
+      "sha256": "9d947ee033d5f22267f06bb16fd658680b9553d034d72879872751374b827975",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/locked-node-click.log",
+      "bytes": 10852,
+      "sha256": "294c549e37130f740ee63d4c6071738b09b6e58ddb947ea606916924f0e4c84b",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/premature-history.log",
+      "bytes": 1382,
+      "sha256": "9d3d10bc580aa6f39e826aa4efa4e12cc1a97a025ec35b73407703110d020a8c",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/results.json",
+      "bytes": 1635,
+      "sha256": "0174bf0f9e33fe7a57f924a3ae2b8f6cd8480e09cd38aac1e1607123d72b679a",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/wrong-boss-advice.log",
+      "bytes": 1234,
+      "sha256": "0975fbfe2bddbfb5fb4972c64d7b5eec3094ea517f0f56d8bc5727f9e3ee1847",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations-r1/wrong-reward-table.log",
+      "bytes": 3554,
+      "sha256": "9a1d8c93682bd0f4825a97185fd88820820272eca4a694226fe4f28d96596d6a",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/control.log",
+      "bytes": 274,
+      "sha256": "9ee1f2858412fb07f1c2f5710b5b0de5f45a86e7f82d296182b0ef4bc3b98842",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/history-account-leak.log",
+      "bytes": 1513,
+      "sha256": "17615d56402640d1603ef6b4ffe7725d2c13fc4c57f8dce7636047387fd96be3",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/history-chapter-leak.log",
+      "bytes": 1326,
+      "sha256": "1b254bb1d739600007d2cb9da2695561e0e8745a2d2159fef07b27ae8ae71c3a",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/history-unbounded.log",
+      "bytes": 1137,
+      "sha256": "01f17cd4559e2826fcce0cc0ae6e79e703e7a0bfefdb62996924e9153d43b880",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/locked-node-click.log",
+      "bytes": 10853,
+      "sha256": "8d8d22bf1023e05ced4e69b13ac1b75c62056b3912d332682a4d41bf2e0de42c",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/premature-history.log",
+      "bytes": 1385,
+      "sha256": "1941565d0893a1ed407057006614cbdfb014e380dedbe0eb3903a0ac1c2a7395",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/results.json",
+      "bytes": 1634,
+      "sha256": "5ddbbdfc7a904fa5dcaedef69c05d86b3ef59735c9e843671aea8e28c9479cf5",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/wrong-boss-advice.log",
+      "bytes": 1224,
+      "sha256": "ef43cc7b5bd52a9bd6b34cac6d75ebd56f8c0c652e1657d29fe27b8f77510921",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/mutations/wrong-reward-table.log",
+      "bytes": 3567,
+      "sha256": "602ef5c600015af56c6b1156ab848d91c697ab12eee18453d81903a137880203",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/test.log",
+      "bytes": 3089,
+      "sha256": "49c52023955aca4f41dfe2a0dbdc8819b69f4ceed0ef0c237ec68738d96e4c64",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/typecheck-current.log",
+      "bytes": 113,
+      "sha256": "688ac8bcee268c0322d961c44af7effa64958f26ce1a7ff485935bfc51a94604",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/typecheck-initial.log",
+      "bytes": 698,
+      "sha256": "966d614dd800dd62212414ca6a2cdf4e56a1c95d11ca4a04d80a807b4d0cea62",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/typecheck.log",
+      "bytes": 714,
+      "sha256": "593b880b1a79481bcfff454c4b0be4e63e2b45e53c2ceadeb80822662bbbc841",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-1.log",
+      "bytes": 433,
+      "sha256": "d2c442a39625b729a07c35ea1e89b437343de66c9deaa7102c97c724febb2142",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-10.log",
+      "bytes": 433,
+      "sha256": "7cfdd4aef65f7feadd910f6c6af57bbd90b5bb7567f05dea005e3a206c6b4970",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-2.log",
+      "bytes": 433,
+      "sha256": "2321fcbb391fb730de7036479119c48bebe1c96f16caea075b0a0405d5c84ef6",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-3.log",
+      "bytes": 433,
+      "sha256": "85c2586dc0803112b51419e39795764875676834ceb9989ffaa88d4ba863d1cc",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-4.log",
+      "bytes": 433,
+      "sha256": "dd3d7db5d2d8347e226a7c45ff56ab5acbc6f137f12d6b926ccf0529215cb5cc",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-5.log",
+      "bytes": 433,
+      "sha256": "9afc547a67150ef1e390a6722a825c1f2ad757c0a4ca7138197c9d6275c10e32",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-6.log",
+      "bytes": 433,
+      "sha256": "28cffd20a50bb96e7d3381121347488cb7ab478d94206b0508552638e2479514",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-7.log",
+      "bytes": 433,
+      "sha256": "2259a0a171cd31505af7b9ceb38749e917a1689b230cb3053b14b1c2e90fc5a3",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-8.log",
+      "bytes": 433,
+      "sha256": "6c7042e578ea48396da36d9998d9d97c40ef88f6b8e43789beeffff9374a0fb1",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-9.log",
+      "bytes": 433,
+      "sha256": "cab340862930c72c3e555034166e019add3a014f43be038ebdec66f791f46343",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/unit-repeat-summary.log",
+      "bytes": 41,
+      "sha256": "63032401f3ee2690c88f2630ae23157b77a14081b48dc2c6507784d9ab8f6467",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/units-current-r2.log",
+      "bytes": 524,
+      "sha256": "77d1a14ad4a3231fb66175688b1436eeedb2865634f508fb9413398cc54a6e76",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/units-current.log",
+      "bytes": 1204,
+      "sha256": "09819745f69d27f0daddb7945b1b742d8d300befee80a005026b7da30dbb258c",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/units-initial.log",
+      "bytes": 726,
+      "sha256": "fae9b201cc80279610e3d01ca715fa952aa2af242d3b9d3dfbd048aa5c856417",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/logs/units.log",
+      "bytes": 226,
+      "sha256": "75934e7e1a260805382c7857411426a35f6abd509f12dea20ee5256e4ae6a3b3",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/map-1280.png",
+      "bytes": 125759,
+      "sha256": "426ac8ea73ed74da98935f9f65f91e20aadea7b6ffc2d2f0d845d24b2ccb8d98",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/map-1600.png",
+      "bytes": 130314,
+      "sha256": "46de620cf10c29e2c907edbc6f01d3163b72e65f5d7df131c113088fa4811b31",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/map-no-key-1280.png",
+      "bytes": 146492,
+      "sha256": "cb887213d2fbc83f46f83bb92f49486fda1cb0213c46054e91fcea86e6fa1333",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/mutations.mjs",
+      "bytes": 3614,
+      "sha256": "820d264b8d10e18bcbf9c455d7d45d0b541fcd050792c77b3eac4616e3715b85",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/reference-map-1280.png",
+      "bytes": 83264,
+      "sha256": "de1ee2adea0b16a693c6394a43a490d7bea4b8e4591fb064099b28fa8db23683",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/reference-map-1600.png",
+      "bytes": 102136,
+      "sha256": "4c8bec4c0a8c5700584fe6b80de2c94c4f83d7a7f1192229afb4f8b51823cf71",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/repeat-units.mjs",
+      "bytes": 639,
+      "sha256": "5ef9b6709994ffcd12b1f4793be7a913c8c65c4c2fead66add27d06ffd4195a2",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/resume-handoff.md",
+      "bytes": 4267,
+      "sha256": "e121eca5de85c05a74b4897190e64e37d139219790fb8cf533da9bb7ce9b2592",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/run-checks.mjs",
+      "bytes": 1378,
+      "sha256": "456a05087b3291a7b2c6957ceac9707c011b04c63a3ab2ed48ef6e0154fe5a40",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/run-ui-probes.mjs",
+      "bytes": 1746,
+      "sha256": "70a98f9d53b7e8e475372fee9857d39b6d807b69619ecdb068ed4dae92225bbb",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/secret-scan.json",
+      "bytes": 28,
+      "sha256": "4845f3e16b1667743c43223e5707ef33afa4a1b984764f09acde57e4235816cc",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/source-manifest.json",
+      "bytes": 1388,
+      "sha256": "49a0faf2025a7ffa874f669f720e4c41a246d78ade99db75c662fbff7e5c5d98",
+      "kind": "historical evidence"
+    },
+    {
+      "path": "reports/scorecard/cxu5/ui-diff.md",
+      "bytes": 2692,
+      "sha256": "b8444c8f79ae8f3a68ba64235c79cddc892dbbd098523f814e763c491ce39507",
+      "kind": "historical evidence"
+    }
+  ],
+  "secretCandidates": [],
+  "testIntegrityCandidates": [],
+  "assetChanges": [],
+  "protectedChanges": [],
+  "historicalWhitespace": "Raw historical logs have trailing whitespace and are preserved. Product/docs diff checked separately.",
+  "inheritedCommit": "806800d was authored Claude and lacks skip-ci before this session; no rewrite authorized. Requested squash merge will preserve only the correct authored and suffixed release commit on main."
+}

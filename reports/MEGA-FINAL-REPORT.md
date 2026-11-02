@@ -1,9 +1,17 @@
-# Active fresh-session report — 2026-11-02T23:53:52+07:00
+# Active fresh-session report — 2026-11-03T00:02:04+07:00
 
-Living report, not a completion claim. Main verified at 9c457a3; repository private.
-CXU5 #249 and CXU4 #251 are frontend work and are NOT blocked by CXN3 #244.
-CXU5 already contains current main. Fresh verification begins; no new grades or merges yet.
-The full A–G queue remains open. T007 owner backup/restore recovery remains documented.
+Living report, not a completion claim. Main remains 9c457a3; repository private.
+CXU5 #249 local a4dc85e contains main. Pass 1: 51 focused unit cases, 18 browser cases green.
+Grader A so far: typecheck/lint/build/classic/links/bundle/Deno green; 2,389 unit/script cases pass,
+with the inherited 2 expected failures and 11 skips unchanged. 80 Map repeats pass at both sizes.
+Five new semantic mutants were caught by assertions after a green control. Strict guest audit
+covers 18 screen/viewport combinations with zero findings. Resize/full browser and UI effects pending.
+No current score, merge or live claim. Clean B checkout installed with frozen lockfile.
+Initial prose test-count error and UI launcher quoting failure are corrected and retained in evidence.
+
+CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
+The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
+owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
 Single session only, STOP preserved. [Current state](MEGA-CURRENT-HANDOFF.md).
 
 ---
