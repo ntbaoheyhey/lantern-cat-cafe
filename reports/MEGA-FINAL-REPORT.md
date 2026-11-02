@@ -1,3 +1,15 @@
+# Taskbar Hero mission — active living report
+
+Updated 2026-11-02T13:04:45.939025+07:00. Explicit fresh-start resume; mission incomplete. No scheduled checkpoint routine remains. Work is performed directly in this chat; future scores will be labeled self-graded (fresh pass).
+
+- Main verified at `74d60dab2cef8c31a3f2729d18719ff3021a9eda`; BASE0 #246 merged, historical grades A97.642857/B98 retained. Its completed actual-main full265/repeat700 at both sizes remain valid.
+- Remaining BASE0 gates: safe FORCE_ALL verifier, public artifact equality, legacy check-live and approved phased live path at both sizes. No next merge until green.
+- PR250 recovered from closure caused by its deleted base; same draft reopened and retargeted to main, source unchanged. Integration conflicts remain for its later card.
+- Other prepared items and all remaining P0–P3/regression stay pending full gates. Verified head/state table: [resume record](cards/RESUME-20261102/REPORT.md). No new score, merge, backend release or live PASS claimed.
+- Historical dirty runtime and captures preserved; required test ports free, no owned test/preview running at checkpoint.
+
+## Historical reports (superseded state retained)
+
 # Taskbar Hero — báo cáo tạm dừng
 
 Cập nhật: 2026-11-02T12:28:58+07:00. **ĐÃ TẠM DỪNG theo yêu cầu của người dùng. Mission chưa hoàn thành.** Nội dung hiện tại ở đầu file này; các ghi chép cũ phía dưới là lịch sử, không phải trạng thái đang chạy.

@@ -1,18 +1,11 @@
-# Checkpoint and context policy — USER PAUSED
+# Milestone checkpoint and context policy
 
-Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
-No automatic resume. Older ACTIVE/RUNNING entries below are historical.
-
-## Historical records
-Latest2026-11-02T09:49:53+07:00: explicit resume supersedes priorpause. Existing same-thread heartbeat updatedACTIVE with30minute cadence and unchanged prompt. Coordinator personally saves checkpoints; no helpers/subagents. Goal-controller bookkeeping still showedPAUSED on read; this does not cancel the newer explicit task instruction, and no unsupported resume API was attempted.
-Latest2026-11-02T08:37:42+07:00: user explicitly requested handoff and pause. Save this checkpoint only, then stop. Existing heartbeat taskbar-hero-checkpoint-10-ph-t is alreadyPAUSED according to persisted automation state;30minute cadence is unchanged. No tests, product edits, merges or releases until explicit resume. Older ACTIVE schedule lines below are historical.
-Latest authority: the user's 2026-11-02 instruction forbids subagents and helpers. It supersedes earlier delegation allowances. Stay in this chat; the coordinator directly owns implementation, tests, reports, decisions and merges, one item at a time.
-Do not spawn or invoke subagents, helpers, checkpoint.py or auxiliary orchestration runners. Run ordinary project verification commands directly and retain their logs and exit codes. Do not create another chat or delegate handoff writing. Existing historical workers have finished; no new worker is authorized.
-Checkpoint after every milestone/failure/merge/grade and at least every30minutes. Keep the handoff under80lines with true state, active process/worktree/port ownership, last merge and next3actions. Update MEGA-FINAL-REPORT.md, commit/push only the ledger branch, then copy the report files and Git metadata directly into a timestamped private snapshot directory using standard file and Git operations. No helper script is used.
-Existing heartbeat taskbar-hero-checkpoint-10-ph-t is now ACTIVE with30minute cadence in this same chat. Stay quiet for unchanged routine snapshots. Future user pause stops it; no automatic resume. See https://learn.chatgpt.com/docs/automations for local scheduling requirements.
-model_auto_compact_token_limit=64000 remains configured; active-provider success unverified. Writing handoff is not compaction. After compaction/uncertainty reread current handoff+ledger table before acting. Never intentionally open replacement chats. On unrecovered transport only, user can reopen with saved resume prompt. Check PID/cwd/ports and persisted external results before retry; no duplicate commits/PRs/merges/releases. CLI -o must be logs/last-message.txt, never worker-owned RESULT.md.
-All score floors, G1-G7, original-content/default-OFF/safety, author and skip-CI rules remain. Existing independent BASE0 grades remain valid. Coordinator self-review is not independent grading; future unmet review gates must stay explicitly unmet. The ban on helpers does not silently waive merge gates. Sources and saved logs remain authoritative.
-
-Historical steering2026-11-01 allowed a few independent graders. That delegation allowance is now superseded. Preserve their completed evidence and never relabel the coordinator as an independent grader.
-
-Latest user preference 2026-11-02T00:58:42+07:00: restore the existing checkpoint heartbeat to30minutes (superseding the temporary15minute setting); keep milestone checkpoints. The existing automation was updated and its saved ACTIVE schedule verified. Limit helper processes/scripts as well as subagents; prefer direct commands and reuse only necessary verification/checkpoint tooling. No additional helper or agent is active.
+Authority: mega-resume-2026-11-02.md. Mission active under explicit user resume.
+No timer, heartbeat, cron or recurring automation. Deleted taskbar-hero-checkpoint-10-ph-t and verified the remaining automation list/user cron have no mission entries. Create no replacement.
+Coordinator personally implements, verifies, grades, snapshots and merges in this chat. No agents, helpers, checkpoint.py or auxiliary orchestration runners.
+Checkpoint every milestone, grade, merge and failure. Rewrite handoff <=80 lines; update living final report, ledger/scorecard/runtime; snapshot with direct file/Git commands; selected-file commit and push ai/codex-mega-ledger.
+Two separate self-graded (fresh pass) A/B reviews, B on a clean exact-head checkout with different ports and tests-first review order. Both rerun core, changed repeats at both sizes and own mutants. All numeric floors/G1–G7 unchanged. Difference >5 needs third fresh pass; lowest counts.
+Existing historical independent BASE0 scores remain attributed correctly. Never relabel self-grading independent.
+Keep logs on disk; inspect exit plus tail30/error summaries. Long tests are detached direct project commands, not helper runners. After transport interruption inspect PID/cwd/ports and persisted result before retry. No duplicate commits/PRs/merges/releases.
+Auto-compact64000 stays configured; runtime effect not certified. After compaction/uncertainty reread handoff and current ledger table. No new chat. Saving handoff is not compaction.
+Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commit suffix [skip ci]. Preserve historical dirty files/captures; stage selected files only.

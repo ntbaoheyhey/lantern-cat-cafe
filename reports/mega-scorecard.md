@@ -1,6 +1,6 @@
 # Mega scorecard — living draft
 
-**USER PAUSED2026-11-02; existing scores remain unchanged.** Latest authority: [balanced resume](mega-resume-2026-11-01.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**USER RESUMED2026-11-02; existing BASE0 scores remain unchanged.** Latest authority: [fresh-start mission](mega-resume-2026-11-02.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Historical BASE0 round1 failed on5db4949 and C was interrupted/ungraded. Repaired280ff4b now has independent A97.64285714285714 and recovery B98, each passing every floor with zero auto-fails. The difference is0.35714285714286, so no third grader is required. Score gate PASS; BASE0 merged as74d60da. Provider Ready/exactSHA observed; actual-main wrapper/artifact/live completion remains pending.
 
@@ -9,8 +9,8 @@ Historical BASE0 round1 failed on5db4949 and C was interrupted/ungraded. Repaire
 
 | BASE0 | ai/codex-mega-deno0 | #246 | 1 | A22.9167/B25 | A0/B20 | A10/B10 | A14/B14 | A6/B8 | A5/B5 | A10/B10 | A5/B5 | A0(final)/B97 | cards/BASE0-GA-R1/grade.md | cards/BASE0-GB-R1/grade.md | INTERRUPTED; no score | A7 | FAIL; superseded candidate | NONE | NOT RUN | baseline only |
 
-Scores will be entered only from independently observed, cited evidence. NOT VERIFIED is not PASS.
-Latest user instruction2026-11-02 forbids further subagents/helpers. Existing BASE0 grades remain valid. Other items remain ungraded until their independent-review requirement is actually satisfied or explicitly changed; coordinator self-review will not be labeled independent.
+Future scores require two separate self-graded (fresh pass) reviews with cited exact-head evidence. NOT VERIFIED is not PASS.
+Latest user instruction2026-11-02 forbids further subagents/helpers. Existing BASE0 grades remain valid. The fresh-start user instruction explicitly replaces future independent reviews with separate A/B self-graded (fresh pass) reviews; never label them independent. All numeric floors and gates remain.
 
 | BASE0 | ai/codex-mega-deno0 | #246 | 2 (280ff4b) | A25/B25 | A20/B20 | A9.642857/B10 | A13/B13 | A10/B10 | A5/B5 | A10/B10 | A5/B5 | A97.64285714285714/B98 | cards/BASE0-GA-R2/grade.md | cards/BASE0-GB-R2-RECOVERY/grade.md | NOT REQUIRED; difference0.357143 | NONE | MERGED; POSTMERGE IN PROGRESS | 74d60dab2cef8c31a3f2729d18719ff3021a9eda | 74d60da core/build/full265each/repeat700each PASS; wrapper pending | ProductionReady/exactSHA observed; artifact/live journey PENDING |
 

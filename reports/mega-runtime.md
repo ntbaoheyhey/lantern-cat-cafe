@@ -1,3 +1,9 @@
+# Runtime — ACTIVE
+
+Updated 2026-11-02T13:04:45.939025+07:00. No running test/preview job; required mission ports free. No agent/helper. Routine deleted and absence verified. Next: safe ledger FORCE_ALL verifier246. Main74d60da unchanged.
+
+## Historical runtime snapshots
+
 # Runtime — USER PAUSED
 
 Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
