@@ -1,0 +1,11 @@
+$ node scripts/check-links.mjs docs/compendium-adapter.md reports/cxl1.md
+Checked 2 markdown files and 45 links/paths.
+
+Found 1 broken link(s) or path(s) on disk:
+
+  reports/cxl1.md:25 [relative link]
+    Target: `scorecard/CXL1/logs/audit-current.log`
+    Not found: scorecard/CXL1/logs/audit-current.log
+
+
+EXIT: 1
