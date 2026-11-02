@@ -7,3 +7,5 @@ Created and viewed through the native Codex automation tool: taskbar-hero-hourly
 The saved prompt tells this chat to read the ledger handoff, reconcile actual Git/PR/PID state, write at most80 lines, update the living report, stage selected ledger files, commit/push with the required author and skip-ci suffix, then continue the authorized queue. It forbids duplicate test runners and AI workers, honors later pause/stop requests, and pauses the reminder when the queue is complete.
 
 Local scheduled work requires the computer and app to remain running: https://learn.chatgpt.com/docs/automations?surface=app . The native automation card is the control for pausing or changing this reminder.
+
+Active-chat hourly checkpoint saved at 2026-11-03T02:49:21+07:00: CXU5 done; CXU4 final repair A3 in progress. Native reminder remains active; no worker/orchestrator launched.

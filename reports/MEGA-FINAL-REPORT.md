@@ -1,9 +1,10 @@
-# Active fresh-session report — 2026-11-03T01:14:11+07:00
+# Active fresh-session report — 2026-11-03T02:49:21+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
 CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
-CXU4 #251 is active at local3ed0633, fix round2: modal and Help repairs. Fresh targeted51 units/22 browser pass; exact-head A/B gates are pending. CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
+CXU4 #251 remains unmerged at local d969f16, third/final repair round. Earlier3ed0633 A95 was invalidated for merge by B's unmodified control failure. Layout-effect cleanup now restores root usability before paint; targeted51 units,60 browser repeats and20×51 unit stability controls pass. Fresh A3 core2412,360 repeats,11 mutants and UI/effects pass; full matrix/B remain pending. Remaining CXU3/CXC2, original content/art, CXR1/2+CXQ1 and CXS1/2 are pending.
+
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.
 Single session only, STOP preserved. [Current state](MEGA-CURRENT-HANDOFF.md).
