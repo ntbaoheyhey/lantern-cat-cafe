@@ -2,6 +2,18 @@ STATUS: IN-PROGRESS
 
 # FXRB — resize verification, living draft
 
+## Coordinator oracle repair, 2026-11-02 — implementation snapshot
+
+This section records implementation-time evidence; the evolving exact-head verification record is on the ledger at reports/cards/FXRB-ACTOR-ORACLE-R1/REPORT.md and linked from PR243.
+
+The previous six resize cases still passed when both sprite objects were deliberately hidden: shadows and HP bars supplied their alpha pixels. A new test-only repair keeps all active-combat resize assertions and adds four stationary boss-ready cases (two desktop starts × normal/reduced motion). The pixel region excludes ground shadows and the fixture naturally halts combat/HP bars, so the two sprite bodies must render. Canvas count/dimensions and pixel evidence are read together. Existing assertions/timeouts/retries remain unchanged; old messages now describe painted content rather than claiming sprite identity.
+
+The changed tests passed a10-case restored control on a prospective BASE0+FXRB checkout; the same new assertions rejected the both-hidden mutant4/4, cat-only mutant4/4 and monster-only mutant4/4 with the expected missing sides. Expanded repeats and full-suite-after-resize are still pending. These are working-tree results on the prospective integration rooted at7023a2d, not exact source-head or actual-main gate certification. The product branch has not been changed or regraded yet. Raw evidence lives on the ledger under reports/cards/FXRB-ACTOR-ORACLE-R1; the [decision](../docs/decisions/fxrb-sprite-oracle.md) explains the oracle and its scope.
+
+No production rendering, gameplay, art, dependencies, flags, backend or other screen was changed. Independent review and all actual-main/release/live gates remain required. Historical results below remain attached to their original heads and are not overwritten by this new finding.
+
+## Historical builder record
+
 Builder recheck: 2026-11-01. Reused branch `ai/codex-fxrb`, [draft PR #243](https://github.com/ntbaoheyhey/taskbar-hero/pull/243). Base `1fb25edf4c54ada0d161e3c1dd16a4c4550aafba`; reviewed source/evidence HEAD `3d4e556ce9be2de1fbd8178bb5a4c49714a6ec7f`. Fetch and `git merge --no-edit origin/main` reported **Already up to date**. Node `v24.22.2`, pnpm `10.28.0`. No push or merge to main, no grading, no additional agents.
 
 The existing implementation needs no further resize change on this evidence. This card adds evidence and corrects the report; it does not change production code or test assertions. The complete mission gate remains open. The coordinator explicitly reserved fresh-worktree complete verification and asked this builder not to run the full suite yet.
