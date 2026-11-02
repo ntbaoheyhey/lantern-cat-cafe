@@ -2,7 +2,7 @@ import { FUJI_CHAIN_ID, getAddresses, relicMarketAbi, relicNftAbi } from '@taskb
 import { decodeEventLog, type Address, type Hex, type PublicClient } from 'viem';
 
 export const PROOF_CACHE_MS = 30_000;
-export const PROOF_BLOCK_WINDOW = 500n;
+export const PROOF_BLOCK_WINDOW = 100n;
 export const PROOF_EVENT_LIMIT = 10;
 export const PROOF_CONTRACTS = getAddresses(FUJI_CHAIN_ID);
 export type ProofClient = Pick<PublicClient, 'getChainId' | 'getBlockNumber' | 'getBlock' | 'getCode' | 'readContract' | 'getLogs'>;
