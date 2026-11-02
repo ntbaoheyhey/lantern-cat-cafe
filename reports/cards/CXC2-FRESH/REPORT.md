@@ -28,3 +28,6 @@ The corrected guard decodes/re-encodes aggregate3 and accepts only exactly the t
 The corrected11-stage path passed at both sizes, with real14200/7713-byte deployments, matching linkage,32/32 asset identity,22 health checks and zero errors/transactions. However, both snapshots honestly showed recent events unavailable. A bounded public diagnostic identified JSON-RPC-32602: this endpoint allows at most100 blocks, not500. The otherwise-identical100-block request succeeded with an empty result.
 
 The provisional core-only acceptance is superseded; CXC2 is not marked DONE. Release repair round2 in /private/tmp/tbh-cxc2-rpc-fix tightens the window/UI/docs/exact-bound assertions to100 blocks. Fresh gates and actual-main/live verification are required before unrelated merges resume. No provider setting or backend change is needed.
+
+## Release repair fresh A complete
+Head df83851f5f653f25072f116c6bfa9f3ad02c7936 passes fresh A96: core2423,317 browser cases per size,40 changed-spec repeats across both sizes and12 mutants. The five-file diff only tightens the window/label/decision/exact request oracles. Clean fresh B is now tests-first in /private/tmp/tbh-cxc2-rpc-fix-b; no repair PR/merge yet. The post-repair live probe will additionally require recent-event availability, including a legitimate empty result.

@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T05:48:20+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
+Updated: 2026-11-03T06:04:39+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
 Authority: Nov2 mission + Nov3 reminder. No subagents/helper chats/orchestrator. No parallel AI workers.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove/run orchestrator.py.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -36,8 +36,9 @@ CXC2 release70921 FINISHED: core/317×2 PASS,live32assets/22health PASS; proof p
 Corrected live-r2 PASSED11×2 with zero errors; recent events unavailable because publicRPC rejects500-block span.
 Unrelated merges STOPPED: diagnostic-32602 max100; same100-block public query passes.
 Initial guard mistake fixed via canonical aggregate3 decoding for2 getters;22 controls PASS; original failure retained.
-CXC2 release fix /private/tmp/tbh-cxc2-rpc-fix, codex/cxc2-rpc-window, base39e74d8, uncommitted.
-Range-fix-builder active (process.json),5020–5023; window/UI/docs/tests tightened to100. Fresh gates required.
+CXC2 release fix /private/tmp/tbh-cxc2-rpc-fix, codex/cxc2-rpc-window,df83851f5f653f25072f116c6bfa9f3ad02c7936.
+Range builder PASS26 units/4 browser cases. Fresh A96 PASS: core2423,317×2,40 repeats,12 mutants.
+Range clean B tests-first active (range-grade-b/process.json), /private/tmp/tbh-cxc2-rpc-fix-b,5030–5033.
 Browser harness JSON-import,wire-topics and late-clock failures retained; fixed without assertion/threshold changes.
 CXC2 read-ahead PASS block60421787: Fuji43113, both bytecodes, matching Market→NFT; no wallet/write.
 NFT has no totalSupply getter; never invent minted totals. Bound recent logs; cache at least30sec; no signing.
@@ -54,4 +55,4 @@ After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 ta
 Original content prep /private/tmp/tbh-original-content, codex/original-content,69902d6; rebase onto39e74d8 clean.
 Original T011/T012 branches preserved; authors/suffixes verified; shared flag remains false; no runtime consumer/PR yet.
 Original data builder73795 FINISHED: install/type/lint/29 focused cases PASS on69902d6; no feature activation.
-Next3: finish range-fix builder; fresh A/B on exact fix head then fix PR; re-test main/live including available events before original-content merge.
+Next3: finish range B then full five-file diff review; fix PR if both gates pass; actual-main/live including available events before original-content merge.

@@ -1,0 +1,35 @@
+{
+  "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+  "base": "39e74d834aa246b8182b72bac1b610e4c985f574",
+  "tree": "755ca0eaf87a576314174085cfb7c0b492a97884",
+  "clean": true,
+  "reviewedAt": "2026-11-02T23:02:36.451634+00:00",
+  "files": [
+    {
+      "path": "apps/web/e2e/ui/cxc2-proof.spec.ts",
+      "sha256": "01c64882258859020e11342659452296ddb6c963d44d21a4427e24c1308312c2",
+      "bytes": 7783
+    },
+    {
+      "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+      "sha256": "3b4f1e70f4cf2b036e8f4db6e51db06b7fc56ef7d76b8f4f653964a7c70f83c7",
+      "bytes": 4911
+    },
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.test.ts",
+      "sha256": "d60baadfade7ef388839bf98e64b470f6bfa366135cd93a24b85392ba17039c0",
+      "bytes": 6129
+    },
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.ts",
+      "sha256": "38693196de95b8e8b6ab207a7d716076d630d8c47c75027aa5b4b1c9abbe74fc",
+      "bytes": 4634
+    },
+    {
+      "path": "docs/decisions/cxc2-fuji-proof.md",
+      "sha256": "97ef236082f383da3a12b18d50d3e61e840fb1cbcf11a59c4df99b17dfb7e257",
+      "bytes": 3440
+    }
+  ],
+  "review": "Full five-file range repair reviewed.100 inclusive blocks are supported by the observed public RPC; exact fromBlock assertions changed from501 to901 at block1000. Existing cache/chain/target/failure assertions unchanged. No settings/backend/art/dependency changes."
+}

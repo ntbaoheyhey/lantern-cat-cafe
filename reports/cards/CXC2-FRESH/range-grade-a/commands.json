@@ -1,0 +1,114 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:52:14.477622+00:00",
+    "endedAt": "2026-11-02T22:52:22.237723+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:52:22.244536+00:00",
+    "endedAt": "2026-11-02T22:52:29.026817+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:52:29.033644+00:00",
+    "endedAt": "2026-11-02T22:53:17.317943+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:17.325062+00:00",
+    "endedAt": "2026-11-02T22:53:17.959679+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:17.966859+00:00",
+    "endedAt": "2026-11-02T22:53:18.126962+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:18.133616+00:00",
+    "endedAt": "2026-11-02T22:53:25.603701+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:25.611493+00:00",
+    "endedAt": "2026-11-02T22:53:25.670091+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:25.677604+00:00",
+    "endedAt": "2026-11-02T22:53:31.233754+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:31.241475+00:00",
+    "endedAt": "2026-11-02T22:53:31.319733+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-mutants-a.mjs",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:31.327608+00:00",
+    "endedAt": "2026-11-02T22:53:53.018715+00:00"
+  },
+  {
+    "name": "capture",
+    "command": "CXC2_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXC2-FRESH/range-grade-a/screenshots VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxc2-proof.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:53:53.025702+00:00",
+    "endedAt": "2026-11-02T22:54:05.431161+00:00"
+  },
+  {
+    "name": "repeat-changed-both-sizes",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxc2-proof.spec.ts --repeat-each=10 --workers=2 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:54:05.437823+00:00",
+    "endedAt": "2026-11-02T22:54:32.612020+00:00"
+  },
+  {
+    "name": "browser-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:54:32.620278+00:00",
+    "endedAt": "2026-11-02T22:57:15.259861+00:00"
+  },
+  {
+    "name": "browser-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+    "exit": 0,
+    "startedAt": "2026-11-02T22:57:15.266968+00:00",
+    "endedAt": "2026-11-02T22:59:52.700896+00:00"
+  }
+]

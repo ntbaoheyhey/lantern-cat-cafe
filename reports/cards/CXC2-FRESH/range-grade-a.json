@@ -1,0 +1,75 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A, CXC2 release repair round2",
+  "head": "df83851f5f653f25072f116c6bfa9f3ad02c7936",
+  "base": "39e74d834aa246b8182b72bac1b610e4c985f574",
+  "tree": "755ca0eaf87a576314174085cfb7c0b492a97884",
+  "sourceRoot": "/private/tmp/tbh-cxc2-rpc-fix",
+  "gradedAt": "2026-11-02T23:02:36.452628+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "100-block inclusive window conforms to the measured public RPC cap; source/UI/docs/exact wire oracles agree. Core deployment/linkage/cache semantics retained."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh core2423,317 browsers per size,40 changed-spec repeats covering both sizes, capture/build/links pass. No claim of another generic effects run for this parameter-only change."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Twelve semantic mutants killed after a green control, including reverting the window to the unsupported500 blocks."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Both-size fit/console/keyboard checks and captures pass. Deduct2 for existing metadata density and protocol event labels."
+    },
+    {
+      "id": "C5",
+      "score": 9,
+      "max": 10,
+      "reason": "Tiny shared-window repair with no dependency or provider changes; deduct1 for the pending-state label still spelling the window separately."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "The window oracle is tightened to the actual100-block contract; no assertions, failure checks, timeouts or retries weakened."
+    },
+    {
+      "id": "C7",
+      "score": 9,
+      "max": 10,
+      "reason": "Initial release guard/range failures and superseded acceptance candidate remain recorded. Deduct1 for the earlier provisional completion label; current evidence names the repair head and remaining release gate."
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Exactly five scoped frontend/test/decision files; no protected-zone, flag or deployment changes."
+    }
+  ],
+  "evidence": [
+    "range-grade-a/commands.json",
+    "range-mutants-a/results.json",
+    "range-review-a.json",
+    "live-r2/event-availability.json",
+    "live-r2/event-availability-100.json"
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "Fresh clean B>=92 on df83851",
+    "Fix PR squash with correct author/suffix",
+    "Actual-main/live pass with recent events available"
+  ]
+}

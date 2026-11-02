@@ -1,0 +1,98 @@
+[
+  {
+    "name": "wrong-chain-accepted",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "!== FUJI_CHAIN_ID",
+    "to": "!== 1",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "unbounded-history",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "PROOF_BLOCK_WINDOW = 100n",
+    "to": "PROOF_BLOCK_WINDOW = 500n",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "too-many-events",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "PROOF_EVENT_LIMIT = 10",
+    "to": "PROOF_EVENT_LIMIT = 20",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "foreign-address-leak",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": ".includes(log.address.toLowerCase())",
+    "to": ".includes(nft.toLowerCase())",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "removed-event-leak",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "!log.removed &&",
+    "to": "true &&",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "empty-code-positive",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "Math.max(0, (code.length - 2) / 2)",
+    "to": "Math.max(1, (code.length - 2) / 2)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "unavailable-as-zero",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "catch { return unavailable; }",
+    "to": "catch { return { status: 'verified', value: 0 as T }; }",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cache-bypassed",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "if (previous && now - previous.at < PROOF_CACHE_MS)",
+    "to": "if (false && previous && now - previous.at < PROOF_CACHE_MS)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "failure-cache-bypassed",
+    "path": "apps/web/src/chain-proof/fujiProof.ts",
+    "from": "const result = readFujiProof(client, now);",
+    "to": "const result = readFujiProof(client, now).catch(error => { cache.delete(client); throw error; });",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "hidden-proof-mounted",
+    "path": "apps/web/src/ui/Tabs.tsx",
+    "from": "{(!tab.lazy || active === tab.id) && tab.content}",
+    "to": "{tab.content}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "inactive-read-enabled",
+    "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+    "from": "enabled: enabled && Boolean(client)",
+    "to": "enabled: Boolean(client)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "reversed-linkage",
+    "path": "apps/web/src/chain-proof/FujiProofPanel.tsx",
+    "from": "linked.value.toLowerCase() === PROOF_CONTRACTS.RelicNFT?.toLowerCase()",
+    "to": "linked.value.toLowerCase() !== PROOF_CONTRACTS.RelicNFT?.toLowerCase()",
+    "exit": 1,
+    "killed": true
+  }
+]
