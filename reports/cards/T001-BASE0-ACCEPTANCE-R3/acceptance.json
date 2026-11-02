@@ -1,0 +1,40 @@
+{
+  "status": "BLOCKED",
+  "observedAt": "2026-11-02T11:39:37.834616+00:00",
+  "criteria": [
+    {
+      "criterion": "Verifier results recorded in reports/ with all four heads",
+      "status": "PASS_RETAINED_EVIDENCE"
+    },
+    {
+      "criterion": "Deployed assets equal main 74d60da build",
+      "status": "UNSATISFIED_AS_WRITTEN"
+    },
+    {
+      "criterion": "Live phased path passes at both sizes",
+      "status": "PASS_RETAINED_EVIDENCE"
+    },
+    {
+      "criterion": "Checkpoint committed and pushed on ledger branch",
+      "status": "PASS_RETAINED_EVIDENCE"
+    }
+  ],
+  "blockingReason": "Orchestrator must explicitly correct read-only T001 acceptance/dispatch; retained T014 evidence proves successor target only.",
+  "approvedT014Target": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "historicalBASE0": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "publishedEvidenceCheckpoint": "57f287c276f1401d69d195394d69c8bfea8f6641",
+  "remoteLedgerCheckpoint": "57f287c276f1401d69d195394d69c8bfea8f6641",
+  "receiptAudit": "receipt-audit.json",
+  "sourceSuitesRerun": [],
+  "freshLiveProbe": false,
+  "readonlyStateUnchanged": true,
+  "readonlyStateSha256": {
+    "GOAL.md": "d69b87803b18e3b3ba425891745440718e786bd5f836ee8ad446712eb4a6ef84",
+    "queue.json": "d65a9277d4fc03cd4c780eacf0943046a1a0191329bbb10000c6000ff7c9f230"
+  },
+  "remoteRefs": [
+    "57f287c276f1401d69d195394d69c8bfea8f6641\trefs/heads/ai/codex-mega-ledger",
+    "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a\trefs/heads/main"
+  ],
+  "followups": []
+}

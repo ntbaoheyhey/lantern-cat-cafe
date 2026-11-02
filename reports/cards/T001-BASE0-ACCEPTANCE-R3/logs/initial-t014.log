@@ -1,0 +1,24 @@
+# T014 — DONE
+- Historical BASE0 74d60da checkpoint 89664d7 preserved; T001 closure now explicitly separates it from current production.
+- Target authority: orchestrator's corrective-of-T001 T014 dispatch naming current main; GOAL/queue unchanged.
+- Approved/current-main/tested HEAD: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a.
+- Tested tree: 3c662e8e7e9e28c9bb0be25045ac984c2f10fa43; clean /tmp/tbh-t014-current-main.
+- Fresh typecheck/lint/unit/build PASS; 2,380 passing unit/script cases, inherited 2 expected-fail/11 skipped.
+- Browser 289/289 PASS at each 1280x720 and 1600x900; retries=0. Forge 96/96 PASS; Deno drift clean.
+- Two fresh in-memory production builds: 32/32 deployed files, including HTML, match exactly.
+- Stable HTML/entry/all asset hashes: 10:34:33.965Z–10:40:08.789Z, 2026-11-02 (334.824 seconds).
+- Live entry index-N5_1FrYv.js; legacy check-live and eight-stage merged-core live journey PASS at both sizes.
+- First live harness disclosure-order failures retained; R2 observes disclosure before dismissing help, as prior harness did.
+- Historical T001 failed asset comparison/unit timeout and passing unchanged unit rerun retained.
+- Extra EOF blank line failed initial diff check; fixed in second docs-only commit, logs retained.
+- Evidence commit: 54b3543b696841d9d1d29a12baf692c9cec3a9a9.
+- Final checkpoint: 4b895739a69cca13b9e331d224e5e834cf8bf39d; branch ai/codex-mega-ledger; pushed and remote equality verified.
+- No PR/product change/merge/release. Both commit subjects end [skip ci]; changed paths all reports/.
+- Report: /tmp/tbh-t001-ledger/reports/cards/T014-CURRENT-MAIN-LIVE/REPORT.md
+- Verify: reports/cards/T014-CURRENT-MAIN-LIVE/manifest.json, stable-window.json, logs/ and live-phased-r2/summary.json.
+- Final all-five-criteria check: .codex-orchestrator/verification/T014/acceptance.json and final-acceptance.log.
+- Publication: .codex-orchestrator/verification/T014/publication.json, push.log, remote-after-push.log.
+- Ledger /tmp/tbh-t001-ledger clean; original dirty checkout untouched; task test ports 4670–4673 free.
+- Limits: frontend artifact equivalence, not unique provider commit or Edge Function identity; full nine-stage path remains outside phase.
+- No Actions, direct main push, .github edits, destructive DB writes, migrations/edge deploys, secrets, funds, helpers or timers.
+- No user step or new follow-up. Return to orchestrator; do not duplicate successor merges.

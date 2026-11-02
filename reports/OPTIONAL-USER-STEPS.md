@@ -8,3 +8,13 @@ These steps do not substitute for local implementation or verification.
 Exact optional deployment commands will be added after corresponding local checks prove the changes. No live migration, deployment or flag change is claimed.
 
 Runtime inventory (2026-11-01): the existing Supabase CLI can list the specified project; no credential value was printed or stored. No Vercel CLI executable was found. No release action follows from inventory alone: local score/merge gates, additive-only migration checks and the live go/no-go checklist still apply.
+
+T001 attempt 3 (2026-11-02) — required orchestrator metadata correction: the worker
+cannot edit read-only GOAL.md or queue.json. Update T001's deployment acceptance
+to explicitly adopt completed T014's approved replacement target
+`9c457a3e56b7c5813fa40e6aa20b0c14242ef26a`, retaining historical `74d60da` proof,
+or explicitly limit the old SHA criterion to its historical observation window.
+Then re-grade the retained evidence. Current successor evidence does not satisfy
+literal present-tense `74d60da` equality. No rollback, repeated T014 verification,
+new release, or separate corrective task is needed. [Evidence and exact proposed
+wording](cards/T001-BASE0-ACCEPTANCE-R3/REPORT.md).
