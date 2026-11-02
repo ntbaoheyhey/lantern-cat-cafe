@@ -1,33 +1,27 @@
-# Taskbar Hero current handoff — ACTIVE SESSION
-Updated 2026-11-02T08:05:14.050734+00:00. Latest explicit user resume lifts the pause; full mission active in this session.
-Single session only; no agents/helpers/externalAI/newchats/schedules/checkpoint.py/orchestration runners.
-Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Resume checkpoint local/remote1d30f1c matched;7b62f5d is preserved ancestry.
-Verified resume: cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md. Historical pause evidence: cards/FXRB-CURRENT-R1/pause-20261102-0749.json and REPORT.md. Origin fetched; repositoryPRIVATE.
-Main 74d60dab2cef8c31a3f2729d18719ff3021a9eda; BASE0#246 MERGED / MAIN + PHASED LIVE PASS. Historical independentA97.64285714285714/B98 unchanged.
-BASE0 evidence: full265/repeat700eachsize; safeverifier265browser+96Forge;32assets andlegacy/phasedlivePASS. Fullfuture9-stagepath awaitsCXU3+CXC2. No completedBASE0 rerun.
-FXRB#243 remains draftremote26e7de846e82c58523eaa8c45984c635accb5357; localai/codex-fxrb=7f00ef52fdd221ab5f38198dfe6c44c56316d25b, NOT pushed.
-Local5e0cb7d integrates actualmain;7f00ef5 indexes/attributes oracle decision. No app runtime delta vs main; two browser specs/docs/historical evidence.
-Source: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero; historical captures preserved.
-Verifier: /Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero, detached7f00ef5, trackedclean.
-Mutants: /Users/bao/.codex/worktrees/mega-fxrb-current-mutants/taskbar-hero, detached7f00ef5, trackedclean; earlier prebootvariant restored.
-Frozenpnpm10.28.0 install/core/type/lint/unit/Deno/imports/default+classic+v2build/bundle/links exit0.
-Recovered resize20 receipts:200/200 at initial1280x720 and1600x900, exits0. Auditsguest/signed,effects10eachsize,contrast10 also exit0.
-Four variant exits1 and greencontrol exits0 preserved; detailed mutant-cause review pending. No grade inferred from recovered receipts.
-Originalreference-keyboard.exit1 retained: click intentionally moves focus into panel; bad setup assumed railfocus. Diagnostic+correctedkeyboard-only proofPASS bothsizes,18referencepairs/8PNGs; no appchange.
-Full1280 272/272 exit0 recovered. Full1600/visualcomparison/G5/wrapper/integrity/publication/capacity and separatefreshA/B remain pending. No productpush/merge/score.
-Recoverybundle reverified: /Users/bao/.codex/handoffs/taskbar-hero/reliability/fxrb-current-7f00ef5.bundle; requires26e7de8/74d60da objects.
-Atpause no missiontest/preview/cwd process; required/default portsfree; nothingkilled. Oldportlockowner87049/87071 absent. Inspection process itself excluded.
-Preparedqueue afterFXRB: CXP1#2402b7ceeb -> CXL1#248178f379 -> ART1#2474df594a -> CXN3-FIX#250a9b804 -> CXN3#2446257c0e -> CXU5#249c5b846e -> CXU4#251d408ada.
-AllremainOPEN/draft/unmerged onmain. PR250CONFLICTING; historicalbase280ff4b preserved. StaleAPIbaseSHA explicit,UNKNOWN notPASS.
-P0remainderCXU3/CXC2; P1CXR1/CXR2/CXQ1/CXS1/CXS2; P2CXP2/CXLU1/ART2/CXN4/CXN5; P3CXLU2/CXL2/CXG1/CXG2/ART3; REGRESSION. Fullscope retained.
-Two SEPARATE self-graded(freshpass)A/B; neverindependent. Bothreruncore/changedrepeatbothsizes/ownmutants; Bcleanexacthead,differentports,testsfirst. Difference>5 third/lowestcounts.
-Both>=92,C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails,G1–G7,currentrefs/capacity. FXRBrepeat20eachsize,minimum3meaningfulmutantsperpass. Nochangedheadreuse/retriedawayfailures.
-Mergecurrentmain into branches,nohistoryrewrite; serialmerges; actualmain/livegateaftereach before next. Safeledgerverifier only,newprivateTMPDIR,no--comment,retaincheckout/logs,fourheads/treeproof.
-Safety: no directmainpush/Actions/.github/secrets/destructiveSQL/mainnet/realfunds/publicrepo/contestsubmission/Vercelsettings/VITE_GAME_V2change. Backendnewbehavior defaultOFF.
-Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; everycommit ends [skip ci]. Reportsledgerbranch;productownbranch; preservehistoricaldirtyfiles/captures.
-No missiontimer/automation/helper was created. No automaticwake/resume. Checkpointmilestones only: handoff<=80lines,livingreport/ledger/scorecard/runtime,directsnapshot,selectedcommit/push.
-Aftercompaction rereadthishandoff+ledger. Do notclaim unverifiablemodel/effort.
-Next3actions:
-1. Publish verified recovered-state checkpoint; full1600 next on exact7f00ef5; completed1280/repeats are not rerun.
-2. Finish buildergates onexacthead and recordmutantcauses/UI/G5/wrapper/capacity; old keyboard setup failure remains historical.
-3. SeparatefreshA/Bselfgrades, eligiblepublication/merge only afterallgates; main/livegreen beforeCXP1. Continuefullsavedqueue.
+# Taskbar Hero current handoff — T001 reconciliation
+Updated 2026-11-02T10:15:04.155386+00:00. This session performed T001 only; no other queue work started.
+Ledger branch: ai/codex-mega-ledger. Working tree: /tmp/tbh-t001-ledger.
+Baseline ledger: 0a6828cdc8cb2d5602f7c90825b60f6f591e0757; original checkpoint 89664d7 already published.
+Task assumptions were stale. BASE0 #246 merged as 74d60dab2cef8c31a3f2729d18719ff3021a9eda.
+STEP 1 a–d receipts were already committed; T001 verifies/indexes them without rerunning suites.
+Evidence: [T001 report](cards/T001-BASE0-RECONCILE/REPORT.md) and audit.json in the same folder.
+Raw verifier: four heads recorded, exit 0, 265 browser + 96 Forge tests.
+PR/base/tested Git trees equal 58b9abb2c30023dd33325603fa40bd3af13528a1; retained checkout tracked-clean.
+51 manifest receipts + 4 asset/legacy receipts match original checkpoint bytes.
+Historical live: 32/32 assets matched 74d60da, legacy check-live PASS, phased path PASS at both sizes.
+Original failures remain; full nine-step future path was not claimed.
+Historical independent A97.642857/B98 remain historical; no new grade in this task.
+Current fetched main: 9ee71d44e3d1f12d149e4defbbe11e5fa3c2b7a6.
+Git history now includes FXRB #243, CXP1 #240, CXL1 #248, ART1 #247 after BASE0.
+Current live entry observed /assets/index-N5_1FrYv.js; differs from historical BASE0.
+Current-main/live equality NOT VERIFIED in this task; no rollback or deploy performed.
+Existing T002–T005 are stale pending descriptions; reconcile merged Git state and existing receipts first.
+Other PR states/gates were not audited; prior ledger sections remain historical.
+Original checkout and legacy ledger worktree dirty files remain untouched.
+No new suite/server/browser process, timer, scheduler, agent or helper was started.
+No source/.github changes, keys, database writes, wallet signing, Actions, main push or contest submission.
+No optional user step; no duplicate follow-up. One task only; return control to orchestrator.
+Next actions for the existing queue:
+1. Read T001 report and reconcile current main/PR heads before acting.
+2. Reuse exact-head evidence where valid; do not infer current-live proof from BASE0 history.
+3. Continue the existing successor tasks; never duplicate their merges.

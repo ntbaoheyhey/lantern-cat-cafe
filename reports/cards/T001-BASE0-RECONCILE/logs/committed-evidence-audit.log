@@ -1,0 +1,4 @@
+  File "<stdin>", line 6
+    for x in m:\n data=subprocess.check_output(['git','show',c+':'+str((b/x['path']).relative_to(root))])
+                                                                                                        ^
+SyntaxError: unexpected character after line continuation character

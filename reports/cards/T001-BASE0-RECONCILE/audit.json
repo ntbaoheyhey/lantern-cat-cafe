@@ -1,0 +1,53 @@
+{
+  "status": "PASS: historical BASE0 STEP 1 a-d receipts revalidated from committed bytes, no suites rerun",
+  "auditedAt": "2026-11-02T10:12:19.225919+00:00",
+  "originalCheckpoint": "89664d7057df9a3f6720162538014d4da3e70e1a",
+  "sourceHead": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+  "heads": {
+    "VERIFIER_HEAD": "e4faf6351fc8163016f5450bd22ce3b41a4126d4",
+    "PR_HEAD": "280ff4bed495fd28bd489eb5f2dcfd1910f21fc0",
+    "BASE_HEAD": "74d60dab2cef8c31a3f2729d18719ff3021a9eda",
+    "TESTED_HEAD": "1aaa829cbfe70972e29f11ed9158a70896a4cba4"
+  },
+  "trees": {
+    "PR_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "BASE_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1",
+    "TESTED_HEAD": "58b9abb2c30023dd33325603fa40bd3af13528a1"
+  },
+  "receiptManifestFiles": 51,
+  "artifactFiles": 32,
+  "artifactObservedAt": "2026-11-02T06:25:05.067Z",
+  "phasedViewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "legacyLive": "PASS, prior raw log and exit rechecked",
+  "currentMain": "9ee71d44e3d1f12d149e4defbbe11e5fa3c2b7a6",
+  "currentLiveObservation": {
+    "observedAt": "2026-11-02T10:10:35.188391+00:00",
+    "site": "https://taskbarhero-eight.vercel.app",
+    "status": 200,
+    "htmlSha256": "6079e15e79a402c21e69a513b96ac8110cb38a7915c2ef0e85b01983725e9edf",
+    "entries": [
+      "/assets/ch1-Dcr1kpPd.js",
+      "/assets/combat-COPl1OEP.js",
+      "/assets/index-N5_1FrYv.js",
+      "/assets/index-p4gCWqSt.css",
+      "/assets/react-KPuNr9iS.js",
+      "/assets/rolldown-runtime-XKyaHtl9.js",
+      "/assets/web3-BKxr0A5j.js"
+    ]
+  },
+  "currentLiveEqualsBase0": false,
+  "currentDeploymentSource": "NOT VERIFIED; current entry differs from BASE0. No current-main live claim.",
+  "newSuitesRun": [],
+  "newNetworkMutation": false,
+  "historicalFailureReceipts": "Preserved unmodified; no failed suite rerun.",
+  "originalCommittedBytesVerified": 55
+}

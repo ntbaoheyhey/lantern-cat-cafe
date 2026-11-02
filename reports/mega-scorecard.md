@@ -1,3 +1,12 @@
+T001 reconciliation — 2026-11-02T10:15:04.155386+00:00. BASE0 STEP 1 a–d was already complete in ledger 89664d7.
+Revalidated all four verifier heads, matching PR/base/tested trees, 55 original evidence files,
+32/32 historical deployed assets, legacy check-live and phased live at both desktop sizes.
+No suites rerun. Main has advanced to 9ee71d4 and the live entry changed; current-main/live
+equality is NOT established by this historical BASE0 proof. Existing T002–T005 need Git
+reconciliation before any work. [T001 evidence](cards/T001-BASE0-RECONCILE/REPORT.md).
+
+Earlier entries below are historical snapshots, not current remote status.
+
 **ACTIVE — 2026-11-02T08:05:14.050734+00:00.** Saved effects recovered: FXRB7f00ef5 full1280 272/272 and corrected keyboard/reference gates pass; original setup failure retained. No new score/product push/merge. [Verified state](cards/FXRB-CURRENT-R1/resume-20261102-3/REPORT.md).
 
 **ACTIVE — 2026-11-02T07:54:16.606884+00:00.** Explicit resume; FXRB ungraded and keyboard failure retained. BASE0 historical scores unchanged.
