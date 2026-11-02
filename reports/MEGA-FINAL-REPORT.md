@@ -22,6 +22,8 @@ FXRB review finding 2026-11-02T08:10:39+07:00: a deliberate invisible-cat-and-mo
 
 BASE0 provider milestone 2026-11-02T10:53:42+07:00: both old failure contexts were refreshed by one ordinary Preview request per configured project on unchanged280ff4b. Both requests were admitted then canceled by the existing Ignore Build Step; GitHub combined status is nowSUCCESS. No settings override, quota bypass, upgrade or production promotion. Exact quota reset/count remains unobserved, and no app build/live success is claimed. Published grade files/floors rechecked; stale coordinator-report text about missing grades corrected. Final premerge reconciliation/postmerge gates remain mandatory.
 
+First merge milestone 2026-11-02T11:11:53+07:00: BASE0 PR246 squash-merged as74d60da, parent1fb25ed. The resulting tree equals graded280ff4b; requestedauthor andskipCI suffix verified. CLIexit0 andremote productbranchdeleted. Actual-main verification has started in a fresh detached checkout; production deployment/artifact/live gates remain pending. No nextPR may merge until they pass. Premerge results are not postmerge certification.
+
 ## Historical progress (older candidates and running states)
 
 The coordinator directly owns build, fixes, verification, reporting and merges. No mission item has yet received two formal passing grades or merged; main remains1fb25ed. Latest authority is mega-resume-2026-11-01.md.
