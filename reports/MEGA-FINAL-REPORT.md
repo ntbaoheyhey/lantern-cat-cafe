@@ -1,15 +1,9 @@
 # Active fresh-session report — 2026-11-03T00:02:04+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
-CXU5 #249 local 3678bc3 contains main and fixes the narrow-screen Fight regression found by A.
-Previous a4dc85e: full1280 296 pass / 1 fail; no merge. Failure retained, fix round 1.
-Repaired head: 52 focused units and 28 focused browser cases pass, including the unchanged G2 assertion.
-Fresh A core: 2,390 unit/script cases, type/lint/build/classic/links/bundle/Deno pass;
-90 Map repeats pass and six semantic mutants are caught. Inherited 2 expected failures/11 skips unchanged.
-Isolated guest/local-signed UI audits pass at both desktop sizes; effects/resize/full browser matrix pending.
-A test-runner build-directory collision was diagnosed and fixed without changing assertions; failure retained.
-Clean B checkout now matches 3678bc3; tests-first fresh review prepared, not started.
-No passing current grade, merge or live claim.
+CXU5 #249 local f846b49 contains main and both discovered repairs. Fix1 preserves the compact boss action below desktop; fix2 keeps late-game HUD Power separate from sync by stacking the XP value under its unchanged160px bar.
+The second repair passes typecheck and35 focused browser cases. Fresh A exact-head gate is active; B is prepared on a clean matching checkout. No passing current score, merge or live claim.
+Historical a4dc85e full1280 failed one mobile action assertion; 3678bc3 full298/298 at both sizes passed but an additional probe exposed the HUD overlap. Both failed review rounds and all harness/fixture corrections are retained.
 
 CXU4 #251 is next; CXU3/CXC2, original content/art, CXR1/2+CXQ1, CXS1/2 remain pending.
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;

@@ -1,38 +1,40 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T00:18:27+07:00. ACTIVE single-session execution.
-Authority: user's 2026-11-02 evening prompt supersedes historical orchestration/dependencies.
-STOP preserved in /Users/bao/taskbar-hero/.codex-orchestrator/STOP; never run orchestrator.py.
-Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>.
-Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (verified fetch).
+Updated: 2026-11-03T00:35:23+07:00. ACTIVE; one Codex session, no agents/helpers/schedulers.
+Authority: user's 2026-11-02 evening prompt; old dependency/orchestration rules superseded.
+STOP intact: /Users/bao/taskbar-hero/.codex-orchestrator/STOP. Never run orchestrator.py.
+Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; all new commits end [skip ci].
+Last merged/main: 9c457a3e56b7c5813fa40e6aa20b0c14242ef26a (fresh fetch at00:34 local Nov3).
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249 / local 3678bc3 | Round2 HUD repair f846b49 committed on codex/cxu5-hud-fit; focused gate running; current main integrated |
-| CXU4 | #251 / 1581084 | NEXT after A; not blocked by #244 |
-| CXU3 + CXC2 | pending | Build after A+B; frontend, independent of #244 |
-| T011 + T012 + content + ART/T013 | local 12d0355 / a35a280 | P1; publish and integrate default OFF |
-| CXR1 + CXR2 + CXQ1 | #245 / e99e497 + pending | Refresh after screens; preserve AA threshold |
-| CXS1 + CXS2 | pending | Security evidence + submission DRAFT, never submit |
-| CXN3 | #244 / db0f9d6 | BLOCKED only by complete backend source backup/restore; no merge/deploy |
-| P2/P3 | pending | Only after A–F green and merged; default OFF |
+| CXU5 | #249 / local f846b49 | ACTIVE A grade-a-r3; two product fixes, no passing grade/merge |
+| CXU4 | #251 / 1581084 | NEXT after A; frontend, independent of #244 |
+| CXU3 + CXC2 | pending | Build on main after A+B; read-ahead in cards/NEXT-FRONTEND-NOTES.md |
+| T011 + T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish then demo surfaces default OFF and original art |
+| CXR1 + CXR2 + CXQ1 | #245/e99e497 + pending | Refresh screens, preserve AA threshold; full live demo + throwaway Fuji |
+| CXS1 + CXS2 | pending | Security + submission DRAFT only |
+| CXN3 | #244/db0f9d6 | BLOCKED: owner backup/restore; no merge/deploy; blocks no frontend |
+| P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Verified initial PR metadata (base SHA is GitHub-reported; current origin/main above):
-| PR | Head | Base | Mergeable |
-|---|---|---|---|
-|249|5d778004b4f6d19b144669ad530daf8eed463c1a|9c457a3e56b7c5813fa40e6aa20b0c14242ef26a|MERGEABLE|
-|251|15810841b90064be8d8083da02f35067fb4de078|9c457a3e56b7c5813fa40e6aa20b0c14242ef26a|MERGEABLE|
-|245|e99e497e81b608ba4aa772475251064f6c21803c|1fb25edf4c54ada0d161e3c1dd16a4c4550aafba|MERGEABLE|
-|244|db0f9d64c408825a832d808bc31cfd88f1c3a014|9c457a3e56b7c5813fa40e6aa20b0c14242ef26a|MERGEABLE|
+CXU5 pass history: a4dc85e core/Map80/resize200/UI passed; full1280 failed320px Fight viewport.
+Fix1 3678bc3 preserves old compact BossGatePanel <=1100px; 52 units/28 focused browser passed.
+3678bc3 core2390/Map90/resize200/full298 at each size passed; six mutants/UI passed.
+Additional chapter5 three-loss probe fit both sizes but exposed22.55px Power/sync overlap at1280.
+Fix2 f846b49 puts full XP number below unchanged160x10 bar at1200–1399, same56px HUD.
+Focused fix2 typecheck +35 browser pass; integrated into ai/codex-cxu5 by fast-forward, no rewrite.
+Old failures and fixture/runner corrections retained. Current grades must cite f846b49 only.
+A now repeats Map+baseline HUD and full suites with2 Playwright workers; resize repeat stays1; retries0.
+B must run tests FIRST on clean exact head, then full diff. One full browser matrix per exact head in A.
+Current evidence: reports/cards/CXU5-FRESH/REPORT.md. Fresh graders label self-graded (fresh pass).
 
-Worktrees: ledger /private/tmp/tbh-t001-ledger; CXU5 /private/tmp/tbh-t008-cxu5.
-B clean checkout: /private/tmp/tbh-cxu5-fresh-b at 3678bc3; no tracked/untracked changes.
-B grade-b-r2/run.json ready, not started until A finishes; isolated 4710–4713/4750–4753.
-In-flight: 88168 old-head full matrix at CXU5 4700–4703; 95106 fixed HUD test at repair worktree 4780–4783.
-UI/effects and six mutants on3678bc3 passed; no passed grade because HUD probe failed. Ports 4700–4703 A and 4740–4743 UI active; 4710–4713 B and 4720–4723 main free.
-Unrelated listeners left untouched: 18457, 49986, OS ports 5000/7000/64xxx/65xxx.
-Safety: no secrets, live DB mutation/migration/function deploy, Vercel changes, mainnet or submission.
-No VITE_GAME_V2 setting changes. Existing local test configurations remain isolated.
-Historical scores/evidence are not current grades. Grade files will say self-graded (fresh pass).
-Current owner step: reports/OPTIONAL-USER-STEPS.md T007; exact recovery path already present.
-Next 3: prove/fix late-state HUD overlap; integrate repair into ai/codex-cxu5 without rewrite; fresh A/B then main/live.
-Repair worktree: /private/tmp/tbh-cxu5-hud-repair, codex/cxu5-hud-fit; clean f846b49; integrate by fast-forward when old-head matrix ends and repair checks pass.
+Worktrees: A /private/tmp/tbh-t008-cxu5 (ai/codex-cxu5, f846b49).
+B /private/tmp/tbh-cxu5-fresh-b (detached f846b49, clean), grade-b-r3/run.json prepared, NOT started.
+Repair/scratch /private/tmp/tbh-cxu5-hud-repair (codex/cxu5-hud-fit, f846b49, clean).
+Ledger /private/tmp/tbh-t001-ledger (ai/codex-mega-ledger); selected-file staging only; preserve historical dirt.
+In-flight PID96412: finite grade-a-r3 runner, cwd A; reports/cards/CXU5-FRESH/grade-a-r3/process.json.
+Ports4700–4703 A active. 4710–4713 B, 4720–4723 main, 4740–4743 UI, 4750–4753 B UI, 4760 probe, 4780–4783 scratch currently free.
+All previous owned runs finished. Do not kill unrelated18457/49986 or OS listeners.
+Current tools: reports/fresh-session-tools/run-checks.py; CXU5-FRESH/ui-checks.mjs isolates audit build in/tmp.
+Original optional owner recovery is already exact in reports/OPTIONAL-USER-STEPS.md T007.
+Safety: no secrets, live DB mutation/migration/function deploy, provider/VITE_GAME_V2 changes, real funds/mainnet/submission.
+Next3: complete A and CSS mutant onf846b49; B clean tests+diff and grade; merge only after both>=92 then re-test main/live.
