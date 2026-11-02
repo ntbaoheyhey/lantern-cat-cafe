@@ -1,28 +1,29 @@
-# Taskbar Hero current handoff — ACTIVE CLI
-Updated 2026-11-02T07:04:36.858933+00:00; active mission, latest user resume controls.
-Ledger /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; branch ai/codex-mega-ledger. Preserve dirty original checkout and all historical captures.
-Main/last merge: 74d60dab2cef8c31a3f2729d18719ff3021a9eda, BASE0 PR246; remote+GitHub verified private. Tree matches graded280ff4b.
-BASE0: MERGED / MAIN + PHASED LIVE PASS. Historical independent A97.64285714285714/B98 retained. Actual-main full265/repeat700 eachsize, safe verifier265browser+96Forge,32assets,legacy and phasedlive PASS. See postmerge REPORT.
-BASE0 finished: tested1aaa829 tree equals main74d60da; Forge scroll accessible at1280. Full nine-stage future flow still awaits CXU3+CXC2. All historical failures retained.
-Verified source queue: FXRB#243 26e7de8 -> CXP1#240 2b7ceeb -> CXL1#248 178f379 -> ART1#247 4df594a -> CXN3-FIX#250 a9b804c -> CXN3#244 6257c0e -> CXU5#249 c5b846e -> CXU4#251 d408ada. All unmerged/draft and need exact current-main gates.
-PR250 was closed on deleted BASE0base. Restored historicalbase280ff4b, reopened samePR, retargetedmain; sourceunchanged, CONFLICTING. Historicalbase remains. Do not duplicate PR or merge now.
-Full verified table and caveat re stale APIbaseSHA/UNKNOWN: cards/CLI-RESUME-20261102/verified-refs.json and REPORT.md; current ledger table is authoritative.
-P0 remainder CXU3,CXC2; P1 CXR1,CXR2,CXQ1,CXS1,CXS2; P2 CXP2,CXLU1,ART2,CXN4,CXN5; P3 CXLU2,CXL2,CXG1,CXG2,ART3; then REGRESSION. Details mega-priority-plan.md and task cards.
-Runtime: ACTIVE / initial verification complete; no ownedtest/previewjob; required4310–4313,4340–4343,4420–4454,4510–4513free. ChatGPT/CUA servicePIDs preserved. Existing postmerge checkout mega-base0-postmerge-74d60da remains available.
-Automation deleted: taskbar-hero-checkpoint-10-ph-t; remaininglist onlyLifeMate/SC203; no missioncron. NO schedules/newchats/agents/helpers/orchestrationrunners. Direct commands and milestone checkpoints only.
-Fresh A/B self-graded passes explicitly authorized; label self-graded (fresh pass), never independent. B cleanexacthead/differentports/testsfirst. Rerun type/lint/unit/changedrepeatbothsizes/ownmutants perpass; difference>5 thirdpass/lowestscore. Allfloors/G1–G7 remain.
-Safety: no directmainpush/Actions/.github/secrets/destructiveSQL/mainnet/realfunds/publicrepo/contestsubmission/Vercelsettings/VITE_GAME_V2change. Backendnewbehavior defaultOFF. Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; everycommit ends [skip ci].
-Reference demos: reports/ui-redesign/index.html; docs/proposals/rune-skill-system/demo/index.html. Research structure/mechanics only; reference-usage records validZIP. Originalcontent only.
-Evidence: cards/BASE0-POSTMERGE/74d60da/REPORT.md and pause-result.json; prior exact proof cards/BASE0-VERIFY-R2. Safe verifier scripts/verify-pr.sh on ledger only; FORCE_ALL=1/newprivateTMPDIR/no--comment/retainedcheckout+log/fourheads+treeequality.
-Checkpoint after each milestone/grade/merge/failure: <=80linehandoff, livingfinalreport, selectedcommit/pushledger, directsnapshot. Auto-compact64000 configured; aftercompaction rereadthis+ledgertable.
-Verifier attempt after6529cf6: launcher59362absent, no retainedworktree, onlyVERIFIER_HEAD recorded in55byte rawlog; noexit/suites. INTERRUPTED/NOTVERIFIED. Evidence cards/BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json. Nothingkilled; required+default4173–4176portsfree.
-CLI launch correction: use E2E_PORT_SERVER=4442/E2E_PORT_API=4443; priorF2_WEB_PORT/F2_API_PORTnames incorrect but browser setup neverreached. Keep priorTMPDIR base0-pr246-jrzyXSs8.
-Retained CLI verifier exit1: tool032da94/PR280ff4b/base74d60da/tested9f5687a; tested tree equals actualmain58b9abb. All except Forge invocation PASS incl265browser. Failure: forge --offline test must be forge test --offline. Preserve original failure.
-CLI evidence cli-forge-fixed/reconciled-result.json + live-phased-cli/summary.json. BASE0 main/live gate complete.
-No ownedtestprocess, required/default ports free. No helper/subagent/schedule. Actualmain and queue heads unchanged after fetch.
-Next3actions:
-1. Integrate currentmain into existing FXRB#243 source26e7de8 without rewriting history; preserve historical dirty captures.
-2. Builder full gates on exact integrated head, then separate fresh self-graded A/B passes (B cleancheckout/differentports/testsfirst).
-3. Only after all floors/G1–G7/currentrefs/capacity pass: merge FXRB then full actualmain/live gates before CXP1.
-Latest verified refs: cards/CLI-RESUME-20261102/continuation-fxrb. No source/ref change; no ownedtest/listener.
-Scroll diagnostic R1 Help omission, R2/R3 class-confirm omission retained. R4 passes; earlier exact-case locator hypothesis corrected in visual-review.md.
+# Taskbar Hero current handoff — USER PAUSED
+Updated 2026-11-02T07:10:23.066771+00:00. Latest user instruction: “tạm dừng”. No work until new explicit resume; old resume lines do not override this pause.
+Single session only. No agents/helpers/AI elsewhere/new chats/scheduled routines/checkpoint.py/orchestration runners.
+Ledger: /Users/bao/.codex/worktrees/mega-ledger/taskbar-hero; ai/codex-mega-ledger. Preserve dirty historical runtime and untracked captures.
+Main 74d60dab2cef8c31a3f2729d18719ff3021a9eda; BASE0#246 MERGED / MAIN + PHASED LIVE PASS. Historical independent A97.64285714285714/B98 retained.
+BASE0 evidence: actualmain full265/repeat700 eachsize; safe verifier265browser+96Forge,32assets,legacy/phasedlivePASS. Full nine-stage future path awaits CXU3+CXC2. Historical failures retained.
+Verified refs before FXRB: cards/CLI-RESUME-20261102/continuation-fxrb/verified-refs.json. Repository private;main/queue unchanged. Stale APIbaseSHA remains recorded; UNKNOWN notPASS.
+FXRB#243 remote26e7de8 remains draft/unmerged. Local ai/codex-fxrb now7f00ef52fdd221ab5f38198dfe6c44c56316d25b; not pushed.
+Local commits:5e0cb7d merges actualmain without conflicts;7f00ef5 indexes/attributes sprite-oracle decision. No app runtime delta against main; source changes limited to two browser specs/docs/historicalevidence.
+Source: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero; historical captures preserved.
+Fresh verifier: /Users/bao/.codex/worktrees/mega-fxrb-current-verify/taskbar-hero; detached7f00ef52fdd221ab5f38198dfe6c44c56316d25b; frozen pnpm10.28.0 installPASS exit0,trackedclean. No further current-head gates/grades run.
+FXRB evidence: cards/FXRB-CURRENT-R1/REPORT.md,pause-result.json,logs/install.log/.exit.
+Verified recovery bundle: /Users/bao/.codex/handoffs/taskbar-hero/reliability/fxrb-current-7f00ef5.bundle; requires preserved26e7de8/74d60da objects.
+At pause: install session77542 completed normally, no process in verifier cwd, all required/default portsfree; nothingkilled. No owned test/preview active.
+Remaining built queue afterFXRB: CXP1#2402b7ceeb -> CXL1#248178f379 -> ART1#2474df594a -> CXN3-FIX#250a9b804 -> CXN3#2446257c0e -> CXU5#249c5b846e -> CXU4#251d408ada. All draft/unmerged/current-maingatespending.
+PR250 recovered from deletedbase closure; samePR retargetedmain,sourceunchanged,CONFLICTING. Historicalbase280ff4b preserved. No duplicate.
+P0 remainderCXU3/CXC2; P1CXR1/CXR2/CXQ1/CXS1/CXS2; P2CXP2/CXLU1/ART2/CXN4/CXN5; P3CXLU2/CXL2/CXG1/CXG2/ART3; REGRESSION. Fullscope in mega-priority-plan/taskcards.
+Two separate self-graded(freshpass)A/B reviews required; never independent. Both rerun type/lint/unit/changedrepeatbothsizes/ownmutants; B cleanexacthead/differentports/testsfirst. Difference>5 requires third/lowestcounts.
+Both>=92,C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails,G1–G7,currentrefs/capacity. Nochangedheadreuse. FXRBrepeat20 eachsize,3meaningfulmutantsminimum perpass.
+Mergecurrentmain into branches/nohistoryrewrite;serialmerges;actualmain/livegateaftereach. Safeledgerverifier only,newprivateTMPDIR,no--comment,retainedcheckout+logs,fourheads/treeproof.
+Safety: no directmainpush/Actions/.github/secrets/destructiveSQL/mainnet/realfunds/publicrepo/contestsubmission/Vercelsettings/VITE_GAME_V2change. Backendnewbehavior defaultOFF.
+Author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; everycommit ends [skip ci]. Reportsledgerbranch;productownbranch. No forcecleanup.
+Reference: reports/ui-redesign/index.html +BRIEF/PLAN/README; rune demo/design docs; researchstructure/mechanics only,originalcontent/provenance.
+No missionautomation/cron: local list onlyLifeMate/SC203; taskbar-hero-checkpoint-10-ph-t absent. No automationconnector available in this session; localinventory verified.
+Checkpoint at milestones/grade/merge/failure only: <=80linehandoff,livingreport,ledger/scorecard/runtime,directsnapshot,selectedcommit/pushledger. No automatic wake/resume.
+Next3actions ONLY AFTER NEW EXPLICIT RESUME:
+1. Recheck savedstate/refs/ports; inspect exactFXRB7f00ef5 and retained install result. Do not rerun completedBASE0gates absent changes/failures.
+2. Complete FXRB builderfullgate includingrepeat20bothsizes followedfullbrowserbothsizes; ownmutants/UI/reference/a11y/effects/G5/wrapper/integrity/publication.
+3. SeparatefreshselfgradedA/B; onlygreeneligiblemerge then actualmain/livebeforeCXP1. No grade/productpush/merge has yet occurred.

@@ -1,3 +1,15 @@
+# Taskbar Hero — USER PAUSED
+
+Updated 2026-11-02T07:10:23.066771+00:00. Paused at the user's request; mission incomplete. No work resumes without a new explicit instruction.
+
+BASE0#246 remains merged as74d60da, main/phased-live PASS; historical independent A97.64285714285714/B98 unchanged. Full future nine-stage path awaits CXU3+CXC2.
+
+FXRB#243 remains draft at remote26e7de8. Local7f00ef5 integrates currentmain and indexes its oracle decision; frozen install passed in a fresh clean checkout. No product push, full current-head gate, new score or merge. No owned test/preview remains; required/default ports free. Historical captures preserved; local commits backed up in a verified bundle.
+
+Every remaining P0–P3 item and regression stays in scope. [FXRB pause evidence](cards/FXRB-CURRENT-R1/REPORT.md) · [Handoff](MEGA-CURRENT-HANDOFF.md) · [Ledger](mega-ledger.md).
+
+## Historical reports
+
 # Taskbar Hero — active CLI mission
 
 Updated 2026-11-02T07:04:36.858933+00:00. Mission incomplete; one coordinator in this session, no agents/helpers or schedules.

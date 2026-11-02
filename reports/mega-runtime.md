@@ -1,3 +1,9 @@
+# Runtime — USER PAUSED
+
+2026-11-02T07:10:23.066771+00:00: user paused. Install session77542 finished exit0; no owned process in FXRB verifier or required/default port listener. Nothing killed. No further tests/productpush/merge/release; no helpers/agents/schedules. LocalFXRB7f00ef5 preserved. See cards/FXRB-CURRENT-R1/pause-result.json.
+
+## Historical runtime
+
 # Runtime — ACTIVE CLI
 
 2026-11-02T07:04:36.858933+00:00: saved BASE0 evidence and current refs verified before FXRB. Required/default ports free; no owned test/preview; unrelated services preserved. No mission automation or cron. No helper/subagent/new chat. See cards/CLI-RESUME-20261102/continuation-fxrb.
