@@ -1,9 +1,11 @@
-# Active fresh-session report — 2026-11-03T02:49:21+07:00
+# Active fresh-session report — 2026-11-03T03:33:42+07:00
 
 Living report, not a completion claim. Main remains 9c457a3; repository private.
 CXU5 #249 DONE, merged1b299c4. Self-graded fresh A94/B94, zero auto-fails. Actual main passes12 core/build/browser checks and302/302 per desktop size. Live32/32 assets match, legacy22/22 health checks pass, eight-stage merged-core guest paths pass at both sizes with zero errors. Feature/release Actions counts are0. This does not claim the future nine-stage/wallet demo or backend source identity. [Evidence](cards/CXU5-FRESH/REPORT.md).
 
-CXU4 #251 merged as2847e9a after fresh self-grades A95/B95, zero auto-fails. Exact tree matches d969f16. Actual-main and live release validation is active; no completed live claim yet. The third repair fixed pre-paint modal accessibility while all assertions stayed intact. Remaining CXU3/CXC2 and P1 delivery are pending.
+CXU4 #251 DONE, merged2847e9a with A95/B95. Actual main313/313 per desktop size,32/32 live asset hashes,22 health probes and10-stage live paths per size (including Hero/Help) pass with zero errors. Zero Actions runs. Lossless evidence compression preserved pixels and the200KiB cap. [Evidence](cards/CXU4-FRESH/REPORT.md).
+
+CXU3 is active on verified main2847e9a. The saved AGR3 layout is structural input only; fabricated Relic metadata and a conditional-hook risk will be removed before validation. CXC2 and remaining P1/P2 work are pending; #244 remains independently blocked.
 
 The full A–G queue remains open. CXN3 #244 alone is blocked by backend source backup/restore;
 owner recovery is in OPTIONAL-USER-STEPS.md. Frontend work is independent of that blocker.

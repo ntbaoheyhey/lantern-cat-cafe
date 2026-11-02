@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T03:18:13+07:00. ACTIVE one chat/agent.
+Updated: 2026-11-03T03:33:42+07:00. ACTIVE single chat/agent.
 Authority: evening Nov2 mission + Nov3 hourly reminder request. Old orchestrator dependencies are superseded.
 STOP: /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact. Never run orchestrator.py or remove STOP.
 Native hourly heartbeat taskbar-hero-hourly-handoff ACTIVE in this chat; sole timer exception; honor later pause/stop.
@@ -8,8 +8,8 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249/main1b299c4 | DONE A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251/main2847e9a | A95/B95 PASS; merged; actual-main/live validation active |
-| CXU3 + CXC2 | pending | Next; frontend independent of #244; saved AGR3 requires audit/correction |
+| CXU4 | #251/main2847e9a | DONE A95/B95; main313×2; live32 assets/22 health/10 stages×2 PASS |
+| CXU3 + CXC2 | CXU3 branch prepared | ACTIVE next, on verified main2847e9a; independent of #244 |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
@@ -36,6 +36,6 @@ AGR3 has invented mock power/Weapon-Armor categories and possible hook-order bug
 Owner step exact in reports/OPTIONAL-USER-STEPS.md T007; frontend work does not wait on it.
 Safety: no secrets, destructive live DB writes, migrations/function deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, repo publicity or contest submission.
 After Nov25 no new server behavior ON; stop by Nov28 with regression/final report. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: finish A3; clean B tests then diff on exact head; merge only if both>=92/zero auto-fails then main/live.
-In-flight PID41503: actual-main CXU4 regression, /private/tmp/tbh-main-after-cxu4, ports4820–4823.
-Next3: finish actual-main/live+Hero/Help; prepare CXU3 on verified main; remove fabricated AGR3 metadata before reuse.
+CXU3 worktree /private/tmp/tbh-cxu3-active, codex/cxu3-forge-market, base2847e9a.
+Saved6-file AGR3 patch applied only to this new tree, still dirty/unreviewed. Original AGR3 tree untouched.
+No owned tests running. Next3: remove fake Relic metadata and conditional hooks; verify Forge/Market semantics and add tests; run fresh A/B gates.

@@ -33,3 +33,8 @@ Self-graded (fresh pass)95/100 at d969f16, zero auto-fails; A95/B95 agree. All t
 
 ## Merged, release validation active
 PR251 merged as2847e9a at2026-11-02T20:12:22Z. Tree c322284 equals tested d969f16 exactly; requested author/email and skip-ci suffix verified. Fresh actual-main core/browser run at /private/tmp/tbh-main-after-cxu4 on4820–4823, PID41503; production identity/health/phased+Hero/Help validation pending. No next merge before release checks pass.
+
+## Actual-main/live acceptance and evidence packaging complete
+DONE: main2847e9a passes12 core/build/browser checks and313/313 at both desktop sizes. All32 production assets match before/after;22 health probes and10-stage merged-core+Hero/Help paths pass at both sizes with zero errors. Feature/release Actions counts are0. This is not the future on-chain full-nine/wallet proof or backend deployment identity.
+
+The first evidence packaging attempt caught a211878-byte raw1600px Hero PNG above the200KiB cap. Its original remains retained. Selected captures were recompressed losslessly (that image is now194123 bytes); independent on-disk PNG CRC/chunk/scanline checks prove identical pixels. The cap was not changed. live-screenshots.json defines the16 selected current-card images including A/B/modal captures; other raw captures are provenance, not extra delivered images.

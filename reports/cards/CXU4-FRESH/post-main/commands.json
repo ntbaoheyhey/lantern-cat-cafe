@@ -1,0 +1,98 @@
+[
+  {
+    "name": "install",
+    "command": "npx -y pnpm@10.28.0 install --frozen-lockfile",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:18:13.983485+00:00",
+    "endedAt": "2026-11-02T20:18:20.094561+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:18:20.101963+00:00",
+    "endedAt": "2026-11-02T20:18:27.894562+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:18:27.901191+00:00",
+    "endedAt": "2026-11-02T20:18:34.893939+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:18:34.901450+00:00",
+    "endedAt": "2026-11-02T20:19:24.819133+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:24.826841+00:00",
+    "endedAt": "2026-11-02T20:19:26.053994+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:26.060601+00:00",
+    "endedAt": "2026-11-02T20:19:26.219667+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:26.227147+00:00",
+    "endedAt": "2026-11-02T20:19:33.885801+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:33.893233+00:00",
+    "endedAt": "2026-11-02T20:19:33.952808+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:33.960301+00:00",
+    "endedAt": "2026-11-02T20:19:39.452523+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:39.460521+00:00",
+    "endedAt": "2026-11-02T20:19:39.538295+00:00"
+  },
+  {
+    "name": "browser-1280",
+    "command": "E2E_VIEWPORT=1280x720 E2E_PORT_CLASSIC=4820 E2E_PORT_V2=4821 E2E_PORT_SERVER=4822 E2E_PORT_API=4823 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:19:39.545585+00:00",
+    "endedAt": "2026-11-02T20:22:22.206272+00:00"
+  },
+  {
+    "name": "browser-1600",
+    "command": "E2E_VIEWPORT=1600x900 E2E_PORT_CLASSIC=4820 E2E_PORT_V2=4821 E2E_PORT_SERVER=4822 E2E_PORT_API=4823 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T20:22:22.213979+00:00",
+    "endedAt": "2026-11-02T20:25:02.360820+00:00"
+  }
+]

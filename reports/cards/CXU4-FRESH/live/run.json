@@ -1,0 +1,23 @@
+{
+  "root": "/private/tmp/tbh-main-after-cxu4",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live",
+  "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+  "commands": [
+    [
+      "asset-before",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxu4 2847e9aa166c2c824a7725b63fe17266f753563d /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live/artifact-before.json"
+    ],
+    [
+      "check-live",
+      "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs"
+    ],
+    [
+      "phased-path",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live-phased-hero-help.mjs /private/tmp/tbh-main-after-cxu4 2847e9aa166c2c824a7725b63fe17266f753563d /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live/phased"
+    ],
+    [
+      "asset-after",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-cxu4 2847e9aa166c2c824a7725b63fe17266f753563d /private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH/live/artifact-after.json"
+    ]
+  ]
+}
