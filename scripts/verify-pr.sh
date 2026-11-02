@@ -51,7 +51,7 @@ if [ "$FAIL" = 0 ] && { [ "$CODE" -gt 0 ] || [ -n "${FORCE_ALL:-}" ]; }; then
     if command -v forge >/dev/null; then
       run "pinned contract submodules" git submodule update --init --recursive -- contracts/lib/forge-std contracts/lib/openzeppelin-contracts
       run "prepare pinned Solidity compiler" bash -c 'cd contracts && forge build'
-      run "forge test" bash -c 'cd contracts && forge --offline test'
+      run "forge test" bash -c 'cd contracts && forge test --offline'
       run "chain ABI has no drift" bash -c 'cd contracts && node ../packages/chain/scripts/gen-abi.mjs && git diff --exit-code -- ../packages/chain'
     else RESULTS+=("skip  forge test (forge not installed here: run it in a contracts-capable session)"); fi
   else skip "forge test" "no contract changes"; fi
