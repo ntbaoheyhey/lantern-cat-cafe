@@ -1,0 +1,157 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web
+
+ ❯ src/market/relicMetadata.test.ts (12 tests | 12 failed) 6ms
+   ❯ common relic (id 1) (3)
+     × has identical decimal and 64-hex metadata files 2ms
+     × has the ERC-1155 metadata fields 0ms
+     × has an SVG image 2ms
+   ❯ rare relic (id 2) (3)
+     × has identical decimal and 64-hex metadata files 0ms
+     × has the ERC-1155 metadata fields 0ms
+     × has an SVG image 0ms
+   ❯ epic relic (id 3) (3)
+     × has identical decimal and 64-hex metadata files 0ms
+     × has the ERC-1155 metadata fields 0ms
+     × has an SVG image 0ms
+   ❯ legendary relic (id 4) (3)
+     × has identical decimal and 64-hex metadata files 0ms
+     × has the ERC-1155 metadata fields 0ms
+     × has an SVG image 0ms
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  12 failed | 79 passed (91)
+   Start at  04:29:51
+   Duration  1.19s (environment 34%, transform 27%, tests 27%, import 11%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/market/relicMetadata.test.ts > common relic (id 1) > has identical decimal and 64-hex metadata files
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000001.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:16:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > common relic (id 1) > has the ERC-1155 metadata fields
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/1.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:21:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > common relic (id 1) > has an SVG image
+ FAIL  src/market/relicMetadata.test.ts > rare relic (id 2) > has an SVG image
+ FAIL  src/market/relicMetadata.test.ts > epic relic (id 3) > has an SVG image
+ FAIL  src/market/relicMetadata.test.ts > legendary relic (id 4) > has an SVG image
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/market/relicMetadata.test.ts:32:30
+     30|   it('has an SVG image', () => {
+     31|     const file = resolve(PUBLIC, relicImageUrl(BigInt(id)).slice(1));
+     32|     expect(existsSync(file)).toBe(true);
+       |                              ^
+     33|     expect(readFileSync(file, 'utf8')).toMatch(/^<svg xmlns="http:\/\/…
+     34|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > rare relic (id 2) > has identical decimal and 64-hex metadata files
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000002.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:16:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > rare relic (id 2) > has the ERC-1155 metadata fields
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/2.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:21:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > epic relic (id 3) > has identical decimal and 64-hex metadata files
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000003.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:16:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > epic relic (id 3) > has the ERC-1155 metadata fields
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/3.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:21:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > legendary relic (id 4) > has identical decimal and 64-hex metadata files
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000004.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:16:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  src/market/relicMetadata.test.ts > legendary relic (id 4) > has the ERC-1155 metadata fields
+Error: ENOENT: no such file or directory, open '/private/tmp/tbh-cxu3-a-mutants-m4htrY/apps/web/public/relics/4.json'
+ ❯ read src/market/relicMetadata.test.ts:13:45
+     11| describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rari…
+     12|   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
+     13|   const read = (name: string) => JSON.parse(readFileSync(resolve(PUBLI…
+       |                                             ^
+     14|
+     15|   it('has identical decimal and 64-hex metadata files', () => {
+ ❯ src/market/relicMetadata.test.ts:21:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+
+EXIT 1

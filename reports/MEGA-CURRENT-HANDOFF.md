@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T04:19:00+07:00. ACTIVE, one chat/agent.
+Updated: 2026-11-03T04:34:01+07:00. ACTIVE, one chat/agent.
 Authority: Nov2 mission + Nov3 hourly reminder. No subagents/helper chats/orchestrator.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove or run orchestrator.py.
 Hourly taskbar-hero-hourly-handoff ACTIVE in this chat; sole scheduler exception; honor later pause/stop.
@@ -45,3 +45,6 @@ After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 ta
 Next3: finish A2 and own mutants/UI; run clean exact-head B tests first on other ports; merge only after both gates then actual-main/live.
 
 Initial A visual Cancel contrast and existing heading contract repaired; max3 formal rounds, this is round2.
+A2 core/220 repeats/UI36/effects20 PASS. Mutation scratch fixed missing public assets;10 killed/1 bag-boundary survived.
+A2 full319×2 is still running PID52907; next repair adds boundary coverage and correct Market fixture fonts.
+Next head will be final formal round3; if gates fail, mark CXU3 PARTIAL and continue CXC2.
