@@ -1,3 +1,9 @@
+# Runtime — PAUSED FOR CLI TRANSFER
+
+2026-11-02T13:12:56.376350+07:00: user explicitly stopped desktop session. No owned verifier/test/preview process or required/default port listener. Verifier59362 did not persist; no worktree/exit/suites, only toolHEAD log. Attempt interrupted/unverified. Routine deleted; no schedules. No work until explicit CLI resume.
+
+## Earlier runtime records
+
 # Runtime — ACTIVE
 
 Updated 2026-11-02T13:04:45.939025+07:00. No running test/preview job; required mission ports free. No agent/helper. Routine deleted and absence verified. Next: safe ledger FORCE_ALL verifier246. Main74d60da unchanged.

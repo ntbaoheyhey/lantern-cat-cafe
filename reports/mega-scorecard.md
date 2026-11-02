@@ -1,6 +1,6 @@
 # Mega scorecard — living draft
 
-**USER RESUMED2026-11-02; existing BASE0 scores remain unchanged.** Latest authority: [fresh-start mission](mega-resume-2026-11-02.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
+**USER PAUSED FOR CLI TRANSFER2026-11-02; existing BASE0 scores remain unchanged.** Latest authority: [fresh-start mission](mega-resume-2026-11-02.md); read [current handoff](MEGA-CURRENT-HANDOFF.md).
 
 Historical BASE0 round1 failed on5db4949 and C was interrupted/ungraded. Repaired280ff4b now has independent A97.64285714285714 and recovery B98, each passing every floor with zero auto-fails. The difference is0.35714285714286, so no third grader is required. Score gate PASS; BASE0 merged as74d60da. Provider Ready/exactSHA observed; actual-main wrapper/artifact/live completion remains pending.
 

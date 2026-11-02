@@ -1,3 +1,16 @@
+# Taskbar Hero — paused for Codex CLI transfer
+
+Updated 2026-11-02T13:12:56.376350+07:00. **Stopped at the user's request. Mission incomplete.** Ready-to-paste continuation: [Codex CLI prompt](CODEX-CLI-RESUME-PROMPT.md). Pasting it into CLI explicitly resumes the mission; this desktop session remains stopped.
+
+- Deleted the Taskbar Hero routine; verified no mission automation or user cron remains. No replacement.
+- Fetched and recorded main plus all nine PRs; repository private, main still `74d60da`. Verified-state ledger checkpoint `6529cf6` pushed.
+- Recovered existing PR250 from closure: restored its deleted historical base at280ff4b, reopened it, retargetedmain; sourcea9b804 unchanged, conflicts pending.
+- BASE0 safe verifier attempt is **INTERRUPTED / NOT VERIFIED**: only verifierHEAD recorded; no worktree, final exit or tests. No test/preview process remains; all required/default ports free; nothing killed.
+- No new product commit, merge, grade, backend release or live PASS. BASE0 previous full265/repeat700 bothsizes remain valid, A97.642857/B98 unchanged. Wrapper/artifact/legacy-live/phased-live gates still pending.
+- Other prepared queue and all P0–P3/regression remain pending. Exact state: [ledger](mega-ledger.md), [handoff](MEGA-CURRENT-HANDOFF.md), [stop evidence](cards/BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json).
+
+## Earlier reports (historical state retained)
+
 # Taskbar Hero mission — active living report
 
 Updated 2026-11-02T13:04:45.939025+07:00. Explicit fresh-start resume; mission incomplete. No scheduled checkpoint routine remains. Work is performed directly in this chat; future scores will be labeled self-graded (fresh pass).

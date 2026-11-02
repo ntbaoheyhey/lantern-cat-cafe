@@ -1,6 +1,6 @@
 # Milestone checkpoint and context policy
 
-Authority: mega-resume-2026-11-02.md. Mission active under explicit user resume.
+Authority: mega-resume-2026-11-02.md. Desktop session stopped by user for CLI transfer. Pasting CODEX-CLI-RESUME-PROMPT.md into CLI supplies explicit resume.
 No timer, heartbeat, cron or recurring automation. Deleted taskbar-hero-checkpoint-10-ph-t and verified the remaining automation list/user cron have no mission entries. Create no replacement.
 Coordinator personally implements, verifies, grades, snapshots and merges in this chat. No agents, helpers, checkpoint.py or auxiliary orchestration runners.
 Checkpoint every milestone, grade, merge and failure. Rewrite handoff <=80 lines; update living final report, ledger/scorecard/runtime; snapshot with direct file/Git commands; selected-file commit and push ai/codex-mega-ledger.

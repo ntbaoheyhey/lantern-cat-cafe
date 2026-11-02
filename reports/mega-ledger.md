@@ -1,6 +1,6 @@
 # Mega ledger — living draft
 
-**USER RESUMED 2026-11-02T13:04:45.939025+07:00.** Current authority: [fresh-start mission](mega-resume-2026-11-02.md). Milestone checkpoints only; fresh self-grading passes replace future independent graders.
+**USER PAUSED FOR CLI TRANSFER 2026-11-02T13:12:56.376350+07:00.** Current authority: user stop for CLI transfer; [CLI resume prompt](CODEX-CLI-RESUME-PROMPT.md) reactivates the [fresh-start mission](mega-resume-2026-11-02.md). Milestone checkpoints only; fresh self-grading passes replace future independent graders.
 
 ## Verified remote state at resumption
 
@@ -132,3 +132,5 @@ Coordinator clock repair milestone:114/114focused cases, typecheck/lint/fullroot
 - Milestone 2026-11-02T12:12:41+07:00: actualmain74d60da fullbrowser265/265 at both1280x720 and1600x900, exit0. Twelve-spec repeat10 at1280 is RUNNING, session5924/shellPID6207, ports4440–4443 owned by6245/6264/6312/6361; worktree mega-base0-postmerge-74d60da remains tracked-clean. Repeat1600, safeFORCE_ALL verifier, artifact identity and live gates still pending. No nextmerge.
 
 - Pause 2026-11-02T12:28:58+07:00: USER PAUSED. Actual main74d60da: all17 recorded command exits0; full browser265/265 and12-spec repeat10=700/700 at each1280x720 and1600x900. No active owned test process;4440–4444 free. Heartbeat alreadyPAUSED; goalPAUSED. Safe FORCE_ALL verifier, artifact equality and live gates remain pending. No new tests, source changes, merges or releases after pause.
+
+- User stop/CLI transfer 2026-11-02T13:12:56.376350+07:00: verified-state6529cf6 pushed. Safe FORCE_ALL launcher59362 absent; only toolHEAD log, no worktree/exit/tests. INTERRUPTED/NOT VERIFIED. No owned processes/listeners and no termination needed. BASE0 artifact/live still pending; no nextmerge.

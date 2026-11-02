@@ -23,3 +23,13 @@ Deleted automation taskbar-hero-checkpoint-10-ph-t (display name Taskbar Hero �
 All required ports 4310–4313, 4340–4343, 4420–4454 and 4510–4513 were free. Observed node processes in the original checkout belong to ChatGPT/CUA services; no test/preview owner identified and nothing killed. Historical dirty runtime.json and all untracked captures preserved.
 
 BASE0 prior actual-main full265 and repeated700 at both sizes remain valid on unchanged main. Safe FORCE_ALL verifier, artifact equality, legacy check-live and approved phased live journey are pending. No new test run or merge is claimed by this checkpoint.
+
+## User stop / CLI transfer — 2026-11-02T13:12:56.376350+07:00
+
+The user explicitly requested stopping this desktop session and preparing a Codex CLI prompt. No mission continuation is authorized in this session. Ledger verified-state checkpoint6529cf6 was pushed before the verifier attempt.
+
+Safe FORCE_ALL launch59362 did not persist: at stop inspection the PID and all descendants were absent, no process had the private verifier directory as cwd, and no verification worktree existed. Only VERIFIER_HEAD=6529cf6 was recorded (55-byte raw log); no exit receipt, PR/base/tested heads or suite result. This attempt is INTERRUPTED / NOT VERIFIED, not PASS. Nothing needed termination. All required and default4173–4176 ports were free. Evidence: ../BASE0-POSTMERGE/74d60da/resume-20261102/stop-result.json.
+
+The attempted launch supplied F2_WEB_PORT/F2_API_PORT, but the project reads E2E_PORT_SERVER/E2E_PORT_API. Correct those names in the next CLI attempt; no browser setup was reached here. Use a new privateTMPDIR and reliable direct-process logging; retain this incomplete evidence.
+
+No source branch or main changed, no merge/test success/live PASS/release is claimed. CLI prompt: ../../CODEX-CLI-RESUME-PROMPT.md.
