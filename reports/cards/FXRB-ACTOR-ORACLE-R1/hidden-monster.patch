@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/game/stage/StageScene.ts b/apps/web/src/game/stage/StageScene.ts
+index d817a3e..e96fff4 100644
+--- a/apps/web/src/game/stage/StageScene.ts
++++ b/apps/web/src/game/stage/StageScene.ts
+@@ -254,7 +254,7 @@ export class StageScene extends Phaser.Scene {
+       this.catFlash = this.flashTexture(this.cat);
+       this.attackDuration = this.sheet.anims.attack.frameMs.reduce((sum, n) => sum + n, 0);
+       const anims = bakeMonster(this, monsterArt(frontierMonster(state, stats))!);
+-      this.monster = this.add.sprite(0, 0, anims.walk, '0').setOrigin(.5, 1);
++      this.monster = this.add.sprite(0, 0, anims.walk, '0').setOrigin(.5, 1).setVisible(false);
+       this.ground = this.add.graphics().setDepth(-1); this.hpBar = this.add.graphics().setDepth(2);
+       this.projectiles = this.add.graphics().setDepth(3);
+       const colors = getComputedStyle(this.game.canvas);

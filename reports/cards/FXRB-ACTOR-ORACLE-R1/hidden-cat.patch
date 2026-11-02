@@ -1,0 +1,13 @@
+diff --git a/apps/web/src/game/stage/StageScene.ts b/apps/web/src/game/stage/StageScene.ts
+index d817a3e..062e9b9 100644
+--- a/apps/web/src/game/stage/StageScene.ts
++++ b/apps/web/src/game/stage/StageScene.ts
+@@ -237,7 +237,7 @@ export class StageScene extends Phaser.Scene {
+         canvas.dataset.stageRebuilds = String(Number(canvas.dataset.stageRebuilds ?? 0) + 1);
+       }
+       this.sheet = bakeCat(this, CLASS_LOOKS[cls], visuals);
+-      this.cat = this.add.sprite(0, 0, this.sheet.key, 'idle:0').setOrigin(this.sheet.origin.x, this.sheet.origin.y);
++      this.cat = this.add.sprite(0, 0, this.sheet.key, 'idle:0').setOrigin(this.sheet.origin.x, this.sheet.origin.y).setVisible(false);
+       const cachedCat = globalCatBoundsCache.get(this.sheet.key);
+       if (cachedCat) {
+         this.catWidth = cachedCat.width; this.catHeight = cachedCat.height;

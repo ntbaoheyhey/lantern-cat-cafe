@@ -1,0 +1,185 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web
+> playwright test e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --grep 'both sprite bodies'
+
+[WebServer] (node:90791) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:90865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:90885) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:90910) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:90911) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:90917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:90919) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:90942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:90943) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:90949) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+(node:90950) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:91118) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:91126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F(node:91174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+F
+
+  1) [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, no-preference) 
+
+    Error: both sprite bodies above ground at 1280×720
+
+    both sprite bodies above ground at 1280×720
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    -   true,
+    -   true,
+    +   false,
+    +   false,
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      111 |         }
+      112 |         return bodies;
+    > 113 |       }, { width: logicalWidth, bottom: bodyBottom }), { message: `both sprite bodies above ground at ${width}×${height}` }).toEqual([true, true]);
+          |                                                                                                                              ^
+      114 |     }
+      115 |     expect(errors).toEqual([]);
+      116 |   });
+        at /Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web/e2e/layout/resize.spec.ts:113:126
+
+    Error Context: test-results/4310-4311/layout-resize-both-sprite--c4d85-ows-1280x720-no-preference--stage-layout/error-context.md
+
+  2) [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, reduce) 
+
+    Error: both sprite bodies above ground at 1280×720
+
+    both sprite bodies above ground at 1280×720
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    -   true,
+    -   true,
+    +   false,
+    +   false,
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      111 |         }
+      112 |         return bodies;
+    > 113 |       }, { width: logicalWidth, bottom: bodyBottom }), { message: `both sprite bodies above ground at ${width}×${height}` }).toEqual([true, true]);
+          |                                                                                                                              ^
+      114 |     }
+      115 |     expect(errors).toEqual([]);
+      116 |   });
+        at /Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web/e2e/layout/resize.spec.ts:113:126
+
+    Error Context: test-results/4310-4311/layout-resize-both-sprite--31cab-ng-shadows-1280x720-reduce--stage-layout/error-context.md
+
+  3) [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, no-preference) 
+
+    Error: both sprite bodies above ground at 1600×900
+
+    both sprite bodies above ground at 1600×900
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    -   true,
+    -   true,
+    +   false,
+    +   false,
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      111 |         }
+      112 |         return bodies;
+    > 113 |       }, { width: logicalWidth, bottom: bodyBottom }), { message: `both sprite bodies above ground at ${width}×${height}` }).toEqual([true, true]);
+          |                                                                                                                              ^
+      114 |     }
+      115 |     expect(errors).toEqual([]);
+      116 |   });
+        at /Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web/e2e/layout/resize.spec.ts:113:126
+
+    Error Context: test-results/4310-4311/layout-resize-both-sprite--17408-ows-1600x900-no-preference--stage-layout/error-context.md
+
+  4) [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, reduce) 
+
+    Error: both sprite bodies above ground at 1600×900
+
+    both sprite bodies above ground at 1600×900
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    -   true,
+    -   true,
+    +   false,
+    +   false,
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      111 |         }
+      112 |         return bodies;
+    > 113 |       }, { width: logicalWidth, bottom: bodyBottom }), { message: `both sprite bodies above ground at ${width}×${height}` }).toEqual([true, true]);
+          |                                                                                                                              ^
+      114 |     }
+      115 |     expect(errors).toEqual([]);
+      116 |   });
+        at /Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web/e2e/layout/resize.spec.ts:113:126
+
+    Error Context: test-results/4310-4311/layout-resize-both-sprite--b5f9c-ng-shadows-1600x900-reduce--stage-layout/error-context.md
+
+  4 failed
+    [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, no-preference) 
+    [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, reduce) 
+    [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, no-preference) 
+    [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, reduce) 
+/Users/bao/.codex/worktrees/mega-fxrb-actor-oracle/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test:e2e: `playwright test e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --grep 'both sprite bodies'`
+Exit status 1
