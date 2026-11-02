@@ -1,0 +1,135 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-5UPpOO/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 4 failed) 96ms
+   ❯ shared UI (9)
+     × labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape 54ms
+     × keeps the background locked when an older modal closes first, then restores it and the original opener 6ms
+     × makes the top dialog usable when two portals open in the same render 6ms
+     × pauses toast while hovered or focused, restarting the interval afterwards 5ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 5 passed (9)
+   Start at  02:56:20
+   Duration  466ms (environment 60%, tests 25%, import 10%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape
+AssertionError: expected null not to be null
+ ❯ src/ui/ui.test.tsx:20:43
+     18|     expect(dialog.getAttribute('aria-modal')).toBe('true');
+     19|     expect(document.activeElement).toBe(screen.getByText('Cancel'));
+     20|     expect(opener.closest('[inert]')).not.toBeNull();
+       |                                           ^
+     21|     screen.getByText('Save').focus(); fireEvent.keyDown(document, { ke…
+     22|     expect(document.activeElement).toBe(screen.getByLabelText('Close C…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > keeps the background locked when an older modal closes first, then restores it and the original opener
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/ui/ui.test.tsx:46:44
+     44|     try {
+     45|       screen.getByText('Outer action').focus(); rerender(view(true, tr…
+     46|       expect(opener.hasAttribute('inert')).toBe(true);
+       |                                            ^
+     47|       rerender(view(false, true));
+     48|       expect(opener.hasAttribute('inert')).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > makes the top dialog usable when two portals open in the same render
+AssertionError: expected [ …(2) ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ src/ui/ui.test.tsx:64:45
+     62|     try {
+     63|       const top = screen.getByRole('dialog', { name: 'Top' });
+     64|       expect(screen.getAllByRole('dialog')).toHaveLength(1);
+       |                                             ^
+     65|       expect(top.closest('[inert]')).toBeNull();
+     66|       expect(top.contains(document.activeElement)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > pauses toast while hovered or focused, restarting the interval afterwards
+TestingLibraryElementError: Found multiple elements with the role "button"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button />[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-label[39m=[32m"Dismiss Read me"[39m
+  [33mtype[39m=[32m"button"[39m
+[36m>[39m
+  [0m×[0m
+[36m</button>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<button />[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33mclass[39m=[32m"ui-toast-host"[39m
+      [33mrole[39m=[32m"region"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33mclass[39m=[32m"ui-toast"[39m
+        [33mdata-tone[39m=[32m"warning"[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [36m<strong>[39m
+          [0mHeads up[0m
+        [36m</strong>[39m
+        [36m<span>[39m
+          [0mRead me[0m
+        [36m</span>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Dismiss Read me"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0m×[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/ui/ui.test.tsx:94:57
+     92|     vi.useFakeTimers(); const dismiss = vi.fn(); render(<ToastHost onD…
+     93|     const toast = screen.getByRole('status'); fireEvent.mouseEnter(toa…
+     94|     fireEvent.mouseLeave(toast); fireEvent.focus(screen.getByRole('but…
+       |                                                         ^
+     95|     fireEvent.blur(screen.getByRole('button'), { relatedTarget: docume…
+     96|     act(() => vi.advanceTimersByTime(1)); expect(dismiss).toHaveBeenCa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+EXIT 1

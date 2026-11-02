@@ -27,3 +27,6 @@ Third repair d969f16 passes typecheck,51 focused units,60 repeated browser cases
 
 ## Final-round grader A complete
 Self-graded (fresh pass)95/100 on d969f16, zero auto-fails. Full313/313 at each size;360 repeats;2412 unit/script cases;20×51 focused stability controls;11 mutants; UI36/effects20; exact-head dialog captures all green. Current grade-a.json was written afresh; old3ed0633 A95 remains archived. B final-round tests start with mutation control on clean d969f16, PID37821; no merge yet.
+
+## Final B gate complete
+Self-graded (fresh pass)95/100 at d969f16, zero auto-fails; A95/B95 agree. All thresholds/floors pass. B control is green and12 mutants killed; source/diff review is complete after tests. Third repair succeeded. Exact-head squash is ready, with actual-main/live verification still mandatory.

@@ -8,7 +8,7 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249/main1b299c4 | DONE A94/B94; main302×2; live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251/locald969f16 | Final-round A95 PASS; clean B3 tests-first active; no merge |
+| CXU4 | #251/locald969f16 | Final-round A95/B95 PASS; exact-head squash ready; no merge yet |
 | CXU3 + CXC2 | pending | Next; frontend independent of #244; saved AGR3 requires audit/correction |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix; full live path and throwaway Fuji run |
@@ -26,9 +26,7 @@ Current targeted: typecheck51 units,60 browser repeats,20×51 unit controls all 
 Current formal A3: core2412,360 repeats,11 mutants, UI36/effects20 PASS; full matrix status in grade-a-r3/runner.log.
 If the third repaired head cannot clear gates, record CXU4 PARTIAL and move on; no fourth fix round.
 
-A /private/tmp/tbh-cxu4-active clean d969f16; A3 complete95/100. All A PIDs finished.
 A3 mutation/UI jobs are finished; original process receipts retain PID35457/35458. No duplicate jobs.
-B /private/tmp/tbh-cxu4-fresh-b clean d969f16; final B3 tests-first PID37821, ports4810–4813.
 Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; preserve dirty historical files, stage selected paths.
 All CXU5 runs finished. Do not kill unrelated18457/49986 or OS listeners.
 Reserved blocks:4800 A,4810 B,4820 main,4840 A UI,4850 B UI,4860 captures (each through+3).
@@ -39,3 +37,5 @@ Owner step exact in reports/OPTIONAL-USER-STEPS.md T007; frontend work does not 
 Safety: no secrets, destructive live DB writes, migrations/function deploys, provider/VITE_GAME_V2 changes, real funds/mainnet, repo publicity or contest submission.
 After Nov25 no new server behavior ON; stop by Nov28 with regression/final report. P0 Nov12/P1 Nov18/P2 Nov21 targets.
 Next3: finish A3; clean B tests then diff on exact head; merge only if both>=92/zero auto-fails then main/live.
+Current CXU4 d969f16 passed A95/B95, zero auto-fails; all owned test PIDs finished and reserved ports free.
+Next: publish exact head/merge #251; re-test actual main/live; then CXU3/CXC2.

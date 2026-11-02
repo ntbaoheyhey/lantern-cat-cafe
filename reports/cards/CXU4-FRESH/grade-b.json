@@ -1,0 +1,111 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B, final repair round",
+  "head": "d969f1662a4c159023c19b320825e04c91e5814e",
+  "base": "1b299c40513ff9f5330a91ad040791bbd4065df9",
+  "tree": "c322284c62698d29a48655d57ea51601a1b013b9",
+  "sourceRoot": "/private/tmp/tbh-cxu4-fresh-b",
+  "evidenceRoot": "/private/tmp/tbh-t001-ledger/reports/cards/CXU4-FRESH",
+  "gradedAt": "2026-11-02T20:11:25.322732+00:00",
+  "score": 95,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "All eight required behavior/acceptance lines satisfied, including the previously failing immediate cleanup path and preserved Help content.",
+      "evidence": [
+        "grade-b-r3/logs/unit.log",
+        "grade-b-r3/logs/repeat-changed.log",
+        "review-b-final.md",
+        "main-help-oracle.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh clean16-step core/build/test verification,360 repeats,38 classic cases,96 Forge cases, ABI/Deno drift and UI/effects green; full313-by-two matrix explicitly shared from exact-head A3.",
+      "evidence": [
+        "grade-b-r3/commands.json",
+        "ui-b-r3/commands.json",
+        "grade-a-r3/logs/browser-1280.log",
+        "grade-a-r3/logs/browser-1600.log"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Twelve fresh B semantic mutants killed after the formerly failing unmodified control passed.",
+      "evidence": [
+        "mutants-b-r3/control.log",
+        "mutants-b-r3/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 12,
+      "max": 15,
+      "reason": "Three explained conservative deductions: actual slot/stat density, single-tab extension hosts and retained plain-integer Hero formatting. Fresh captures match the required structure and original art.",
+      "evidence": [
+        "ui-b-r3/audit/hero-1280x720.png",
+        "ui-b-r3/audit/help-1600x900.png",
+        "review-b-final.md",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed modular code, no dependencies and justified style growth. Deduct2 for an exact duplicate contrast-pair case; no current functional discrepancy.",
+      "evidence": [
+        "grade-b-r3/logs/lint.log",
+        "grade-b-r3/logs/build.log",
+        "/private/tmp/tbh-cxu4-fresh-b/apps/web/src/theme.contrast.test.ts",
+        "decisions.md"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No weakened tests. Existing immediate timing assertions retained, observer added, fixture/selector changes explicitly justified.",
+      "evidence": [
+        "review-b-final.md",
+        "review-b-final-inventory.json",
+        "/private/tmp/tbh-cxu4-fresh-b/docs/decisions/cxu4-hero-help.md"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "All claims reconcile to d969f16 receipts; prior failed heads/control and repairs retained, no live claim before merge.",
+      "evidence": [
+        "REPORT.md",
+        "grade-b-failed-r1.json",
+        "grade-b-r3/commands.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All paths inventoried and integration scope justified; protected areas unchanged.",
+      "evidence": [
+        "review-b-final-inventory.json",
+        "/private/tmp/tbh-cxu4-fresh-b/docs/decisions/cxu4-hero-help.md"
+      ]
+    }
+  ],
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Exact pushed head d969f16",
+    "Correct author/email and final skip-ci squash suffix",
+    "Actual-main/live acceptance before next merge"
+  ]
+}

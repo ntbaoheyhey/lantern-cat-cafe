@@ -1,0 +1,32 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-5UPpOO/apps/web
+
+ ❯ src/layout/HelpTab.search.test.tsx (4 tests | 1 failed) 122ms
+   × searches answer content, selects visible answers and recovers from an empty result 66ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  02:56:31
+   Duration  520ms (environment 53%, tests 27%, import 12%, transform 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > searches answer content, selects visible answers and recovers from an empty result
+AssertionError: expected 'No matching topics' to be 'Forge' // Object.is equality
+
+Expected: "Forge"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:29:116
+     27|   expect(screen.queryByRole('button', { name: 'Forge' })).toBeNull();
+     28|   fireEvent.change(screen.getByLabelText('Search help'), { target: { v…
+     29|   fireEvent.click(screen.getByText('Clear search')); expect(screen.get…
+       |                                                                                                                    ^
+     30| });
+     31| it('supports future Help tabs with independent keyboard navigation', (…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

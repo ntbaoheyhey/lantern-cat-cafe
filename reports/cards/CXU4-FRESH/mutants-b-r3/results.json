@@ -1,0 +1,98 @@
+[
+  {
+    "name": "gear-level-double-count",
+    "path": "apps/web/src/layout/character/CharacterPanel.tsx",
+    "from": "gear: withoutBonus - level",
+    "to": "gear: withoutBonus",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "wrong-total-power",
+    "path": "apps/web/src/layout/character/CharacterPanel.tsx",
+    "from": "const power = Math.round(v2.powerRating(stats));",
+    "to": "const power = Math.round(v2.powerRating(stats)) + 1;",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "query-case",
+    "path": "apps/web/src/layout/HelpTab.tsx",
+    "from": ".trim().toLocaleLowerCase()",
+    "to": ".trim()",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "query-spaces",
+    "path": "apps/web/src/layout/HelpTab.tsx",
+    "from": ".replace(/\\s+/g, ' ')",
+    "to": "",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "unlock-under-modal",
+    "path": "apps/web/src/ui/Modal.tsx",
+    "from": "const topBackdrop = stack.at(-1)?.parentElement;",
+    "to": "const topBackdrop = undefined;",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "lost-original-opener",
+    "path": "apps/web/src/ui/Modal.tsx",
+    "from": "opener?.isConnected ? opener : firstOpener",
+    "to": "opener",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "toast-focus-pause",
+    "path": "apps/web/src/ui/Toast.tsx",
+    "from": " || focused",
+    "to": "",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "tab-home",
+    "path": "apps/web/src/ui/Tabs.tsx",
+    "from": "event.key === 'Home' ? 0",
+    "to": "event.key === 'Home' ? tabs.length - 1",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "class-result-close",
+    "path": "apps/web/src/layout/character/HeroScreen.tsx",
+    "from": "if (success) setOpen(false);",
+    "to": "if (!success) setOpen(false);",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "empty-search-action",
+    "path": "apps/web/src/ui/EmptyState.tsx",
+    "from": "onClick={action.onAction}",
+    "to": "onClick={() => {}}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "busy-class-action",
+    "path": "apps/web/src/layout/character/CharacterPanel.tsx",
+    "from": "disabled={classBusy}",
+    "to": "disabled={false}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "escape-close",
+    "path": "apps/web/src/ui/Modal.tsx",
+    "from": "event.key === 'Escape'",
+    "to": "event.key === 'Esc'",
+    "exit": 1,
+    "killed": true
+  }
+]

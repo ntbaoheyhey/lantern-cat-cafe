@@ -1,0 +1,130 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-5UPpOO/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 3 failed) 104ms
+   ❯ shared UI (9)
+     × keeps the background locked when an older modal closes first, then restores it and the original opener 11ms
+     × makes the top dialog usable when two portals open in the same render 5ms
+     × pauses toast while hovered or focused, restarting the interval afterwards 5ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+   Start at  02:56:22
+   Duration  468ms (environment 59%, tests 26%, import 10%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > keeps the background locked when an older modal closes first, then restores it and the original opener
+AssertionError: expected <body><button></button>
+…(1)</body> to be <button></button> // Object.is equality
+
+- Expected
++ Received
+
+- <button>
+-   Page opener
+- </button>
++ <body>
++   <div />
++ </body>
+
+ ❯ src/ui/ui.test.tsx:53:38
+     51|       rerender(view(false, false));
+     52|       expect(opener.hasAttribute('inert')).toBe(false); expect(opener.…
+     53|       expect(document.activeElement).toBe(opener);
+       |                                      ^
+     54|     } finally { unmount(); opener.remove(); }
+     55|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > makes the top dialog usable when two portals open in the same render
+AssertionError: expected <body><button></button>
+…(1)</body> to be <button></button> // Object.is equality
+
+- Expected
++ Received
+
++ <body>
+    <button />
++   <div />
++ </body>
+
+ ❯ src/ui/ui.test.tsx:70:36
+     68|     } finally { unmount(); }
+     69|     expect(opener.hasAttribute('inert')).toBe(false);
+     70|     expect(document.activeElement).toBe(opener); opener.remove();
+       |                                    ^
+     71|   });
+     72|   it('excludes a native disabled control even when it declares a tabin…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > pauses toast while hovered or focused, restarting the interval afterwards
+TestingLibraryElementError: Found multiple elements with the role "button"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button />[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-label[39m=[32m"Dismiss Read me"[39m
+  [33mtype[39m=[32m"button"[39m
+[36m>[39m
+  [0m×[0m
+[36m</button>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<button />[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33mclass[39m=[32m"ui-toast-host"[39m
+      [33mrole[39m=[32m"region"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33mclass[39m=[32m"ui-toast"[39m
+        [33mdata-tone[39m=[32m"warning"[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [36m<strong>[39m
+          [0mHeads up[0m
+        [36m</strong>[39m
+        [36m<span>[39m
+          [0mRead me[0m
+        [36m</span>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Dismiss Read me"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0m×[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ ../../../tbh-cxu4-fresh-b/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/ui/ui.test.tsx:94:57
+     92|     vi.useFakeTimers(); const dismiss = vi.fn(); render(<ToastHost onD…
+     93|     const toast = screen.getByRole('status'); fireEvent.mouseEnter(toa…
+     94|     fireEvent.mouseLeave(toast); fireEvent.focus(screen.getByRole('but…
+       |                                                         ^
+     95|     fireEvent.blur(screen.getByRole('button'), { relatedTarget: docume…
+     96|     act(() => vi.advanceTimersByTime(1)); expect(dismiss).toHaveBeenCa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+EXIT 1
