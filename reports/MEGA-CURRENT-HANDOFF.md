@@ -8,7 +8,7 @@ Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | Item | PR/head | State |
 |---|---|---|
 | CXU5 | #249 / main1b299c4 | DONE A94/B94; actual main302×2, live32 assets/22 health/8 stages×2 PASS |
-| CXU4 | #251 / local3ed0633 | ACTIVE fresh A R2; fix round2, no passing grade/merge |
+| CXU4 | #251 / local3ed0633 | A95 PASS; B tests-first active; no merge |
 | CXU3 + CXC2 | pending | After CXU4; frontend independent of #244 |
 | T011/T012 + content + ART/T013 | local12d0355/a35a280 | P1 publish/rebase, default-OFF surfaces, original art |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | AA fix without lower threshold; full live path + throwaway Fuji |
@@ -31,8 +31,8 @@ Repair typecheck/51 units/22 browser pass, including Home return. No existing as
 Current card reports/cards/CXU4-FRESH/REPORT.md; full new A/B still required; no score/merge claim.
 
 Active worktree /private/tmp/tbh-cxu4-active, branch ai/codex-cxu4, clean3ed0633.
-In-flight PID25341: finite grade-a-r2 runner, cwd active CXU4, ports4800–4803; logs under card.
-B /private/tmp/tbh-cxu4-fresh-b is still577e0e2; refresh to exact new head before tests-first B.
+In-flight PID29718: clean CXU4 grade-b runner, cwd /private/tmp/tbh-cxu4-fresh-b, ports4810–4813.
+B /private/tmp/tbh-cxu4-fresh-b is clean3ed0633; tests first, then full diff review.
 Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; preserve historical dirty files, stage selected paths only.
 CXU5 worktrees retained; all their PIDs finished. Never kill unrelated18457/49986 or OS listeners.
 Reserved:4800–4803 A;4810–4813 B;4820–4823 main;4840–4843 A UI;4850–4853 B UI.

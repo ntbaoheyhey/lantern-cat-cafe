@@ -1,0 +1,32 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/layout/HelpTab.search.test.tsx (4 tests | 1 failed) 146ms
+   × finds visible phrases across inline configuration values and punctuation 19ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  02:08:45
+   Duration  686ms (environment 55%, tests 24%, import 12%, transform 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > finds visible phrases across inline configuration values and punctuation
+AssertionError: expected 'No matching topics' to be 'Classes' // Object.is equality
+
+Expected: "Classes"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:42:65
+     40|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+     41|   fireEvent.change(search, { target: { value: 'Warrior: sword' } });
+     42|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+       |                                                                 ^
+     43|   fireEvent.change(search, { target: { value: '  first   claim each da…
+     44|   expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

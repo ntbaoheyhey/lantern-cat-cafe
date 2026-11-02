@@ -14,3 +14,6 @@ Builder final50 focused units pass at577e0e2. Formal fresh A now runs core, chan
 Head577e0e2 passed core2411 cases,200 changed browser repeats, UI/effects and10 mutants, but full1280 failed4 cases (309 pass): independent Help stub missing the new selectors at both sizes, and Help primary action absent in desktop/phone checks. Full1600 was not run after the failure. No grade pass. A new phrase-search regression also failed for configured30 Yarn (3 existing search tests passed).
 
 Repair3ed0633 restores Start Exploring as primary, updates the independent hand-written fixture to the actual Help contract, and indexes rendered inline text with normalized whitespace. It does not alter existing assertions. Fresh targeted typecheck/51 units/22 browser cases pass, including return to Home. This is fix round2 (the earlier builder round repaired modal stack/focus). Exact-head fresh A rerun is active; B remains pending.
+
+## Fresh grader A complete
+Self-graded (fresh pass)95/100 at3ed0633, zero auto-fails. Core2412 cases; full313/313 both sizes;360 repeats;11 mutants;36 UI/20 effects checks and modal captures green. Exact old Help text independently matches actual main in all3 configurations. Minor design departures and one duplicated contrast pair are deducted explicitly. B tests-first starts in clean /private/tmp/tbh-cxu4-fresh-b on4810–4813, PID29718.

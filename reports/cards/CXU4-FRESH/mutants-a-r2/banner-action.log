@@ -1,0 +1,29 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 130ms
+   ❯ shared UI (9)
+     × banner and empty-state actions announce and invoke their owners 3ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:08:42
+   Duration  585ms (environment 57%, tests 26%, import 13%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > banner and empty-state actions announce and invoke their owners
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ src/ui/ui.test.tsx:109:141
+    107|   it('banner and empty-state actions announce and invoke their owners'…
+    108|     const retry = vi.fn(); render(<><Banner tone="offline" action={{ l…
+    109|     expect(screen.getByRole('status').getAttribute('data-tone')).toBe(…
+       |                                                                                                                                             ^
+    110|     expect(screen.getByRole('heading', { name: 'No items' })).toBeTrut…
+    111|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

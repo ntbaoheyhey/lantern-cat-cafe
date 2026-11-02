@@ -1,0 +1,43 @@
+
+ RUN  v5.0.5 /private/tmp/tbh-cxu4-fresh-mutants-HOST83/apps/web
+
+ ❯ src/ui/ui.test.tsx (9 tests | 1 failed) 135ms
+   ❯ shared UI (9)
+     × excludes a native disabled control even when it declares a tabindex 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  02:08:32
+   Duration  609ms (environment 60%, tests 26%, import 9%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > excludes a native disabled control even when it declares a tabindex
+AssertionError: expected <button type="button" …(2)></button> to be <button></button> // Object.is equality
+
+- Expected
++ Received
+
+- <button>
+-   Last enabled
++ <button
++   aria-label="Close Keyboard"
++   class="ui-modal-close"
++   type="button"
++ >
++   ×
+  </button>
+
+ ❯ src/ui/ui.test.tsx:78:36
+     76|     const first = screen.getByLabelText('Close Keyboard'); first.focus…
+     77|     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+     78|     expect(document.activeElement).toBe(screen.getByText('Last enabled…
+       |                                    ^
+     79|     fireEvent.keyDown(document, { key: 'Tab' }); expect(document.activ…
+     80|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+EXIT 1

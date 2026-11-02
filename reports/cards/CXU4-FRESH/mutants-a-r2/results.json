@@ -1,0 +1,90 @@
+[
+  {
+    "name": "power-parts",
+    "path": "apps/web/src/layout/character/CharacterPanel.tsx",
+    "from": "bonus: power - withoutBonus",
+    "to": "bonus: power - withoutBonus + 1",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "include-unworn",
+    "path": "apps/web/src/layout/character/CharacterPanel.tsx",
+    "from": ".filter((i) => i.equipped)",
+    "to": ".filter(() => true)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "search-prefix-only",
+    "path": "apps/web/src/layout/HelpTab.tsx",
+    "from": ".includes(normalized(query))",
+    "to": ".startsWith(normalized(query))",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "modal-close-order",
+    "path": "apps/web/src/ui/Modal.tsx",
+    "from": "stack.splice(stack.indexOf(node), 1);",
+    "to": "stack.pop();",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "disabled-tabstop",
+    "path": "apps/web/src/ui/Modal.tsx",
+    "from": " || el.matches(':disabled')",
+    "to": "",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "dismiss-errors",
+    "path": "apps/web/src/ui/Toast.tsx",
+    "from": "toast.tone === 'error' || hovered || focused",
+    "to": "hovered || focused",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "all-tabs-focusable",
+    "path": "apps/web/src/ui/Tabs.tsx",
+    "from": "tabIndex={active === tab.id ? 0 : -1}",
+    "to": "tabIndex={0}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "false-class-success",
+    "path": "apps/web/src/layout/character/HeroScreen.tsx",
+    "from": "success = await onChooseClass(selected);",
+    "to": "await onChooseClass(selected); success = true;",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "banner-action",
+    "path": "apps/web/src/ui/Banner.tsx",
+    "from": "onClick={action.onAction}",
+    "to": "onClick={() => {}}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "confirm-start-focus",
+    "path": "apps/web/src/ui/ConfirmModal.tsx",
+    "from": "initialFocusRef={cancel}",
+    "to": "initialFocusRef={undefined}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "inline-text-spacing",
+    "path": "apps/web/src/layout/HelpTab.tsx",
+    "from": ".join('')",
+    "to": ".join(' ')",
+    "exit": 1,
+    "killed": true
+  }
+]
