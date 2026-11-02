@@ -12,6 +12,26 @@ export interface ModalProps {
 }
 
 const stack: HTMLElement[] = [];
+const background = new Map<Element, { inert: string | null; hidden: string | null }>();
+let firstOpener: HTMLElement | null = null;
+function restoreBackgroundElement(el: Element, saved: { inert: string | null; hidden: string | null }) {
+  if (saved.inert === null) el.removeAttribute('inert'); else el.setAttribute('inert', saved.inert);
+  if (saved.hidden === null) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', saved.hidden);
+}
+/** Restore original attributes only when the last dialog closes, regardless of cleanup order. */
+function syncBackground() {
+  const topBackdrop = stack.at(-1)?.parentElement;
+  if (!topBackdrop) {
+    for (const [el, saved] of background) restoreBackgroundElement(el, saved);
+    background.clear();
+    return;
+  }
+  for (const el of document.body.children) {
+    if (!background.has(el)) background.set(el, { inert: el.getAttribute('inert'), hidden: el.getAttribute('aria-hidden') });
+    if (el === topBackdrop) restoreBackgroundElement(el, background.get(el)!);
+    else { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); }
+  }
+}
 const selector = 'button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]';
 function focusable(dialog: HTMLElement): HTMLElement[] {
   return Array.from(dialog.querySelectorAll<HTMLElement>(selector)).filter(el => {
@@ -35,11 +55,10 @@ export function Modal({ open, title, description, children, onClose, initialFocu
     if (!open || !dialog.current || !backdrop.current) return;
     const node = dialog.current;
     const opener = returnFocusRef?.current ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
-    const siblings = Array.from(document.body.children).filter(el => el !== backdrop.current);
-    const previous = siblings.map(el => ({ el, inert: el.getAttribute('inert'), hidden: el.getAttribute('aria-hidden') }));
+    if (stack.length === 0) firstOpener = opener;
     stack.push(node);
+    syncBackground();
     (initialFocusRef?.current ?? focusable(node)[0] ?? node).focus();
-    for (const { el } of previous) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); }
     const onKey = (event: KeyboardEvent) => {
       if (stack.at(-1) !== node) return;
       if (event.key === 'Escape') {
@@ -62,11 +81,16 @@ export function Modal({ open, title, description, children, onClose, initialFocu
       document.removeEventListener('keydown', onKey, true);
       document.removeEventListener('focusin', onFocus);
       stack.splice(stack.indexOf(node), 1);
-      for (const { el, inert, hidden } of previous) {
-        if (inert === null) el.removeAttribute('inert'); else el.setAttribute('inert', inert);
-        if (hidden === null) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', hidden);
+      syncBackground();
+      const remaining = stack.at(-1);
+      if (remaining) {
+        if (opener?.isConnected && remaining.contains(opener)) opener.focus();
+        else if (!remaining.contains(document.activeElement)) (focusable(remaining)[0] ?? remaining).focus();
+      } else {
+        const target = opener?.isConnected ? opener : firstOpener;
+        firstOpener = null;
+        if (target?.isConnected) target.focus();
       }
-      if (opener?.isConnected) opener.focus();
     };
   }, [open, initialFocusRef, returnFocusRef]);
   if (!open) return null;
