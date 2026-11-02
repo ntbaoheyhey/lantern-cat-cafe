@@ -1,6 +1,6 @@
-# CXN3-FIX verification — local candidate, not merge-ready
+# CXN3-FIX verification — published draft, not merge-ready
 
-Candidate a9b804cec74c866b0b06ca69142d10db3b642a75 is based on repaired BASE0280ff4b. Main remains1fb25ed at the last ref check. The coordinator implemented and verified it directly; no subagent or helper runner was used. No source push, PR, backend release or player-state write is claimed here.
+Candidate a9b804cec74c866b0b06ca69142d10db3b642a75 is published as draft [PR #250](https://github.com/ntbaoheyhey/taskbar-hero/pull/250), based on repaired BASE0280ff4b. Remote refs and PR metadata were rechecked on2026-11-02 at07:52–07:55UTC+7: main remains1fb25ed, the draft is open and mergeable, and its six-file/two-commit scope is unchanged. It is stacked only to expose the diff: never merge it into BASE0; integrate and retarget to actual main after prerequisites. The coordinator implemented and verified it directly; no subagent or helper runner was used. No backend release or player-state write is claimed.
 
 ## Behavior
 
@@ -37,7 +37,7 @@ Tier1: supabase/functions/_shared/v2/http.ts and supabase/tests/src/v2-body-limi
 
 ## Remaining gates
 
-Source publication/draft PR, required PR-verifier handling, actual-main integration, independent review and release/live proof remain incomplete. The user forbids subagents/helpers; self-review is not independent grading and no score is assigned.
+Source publication and draft PR creation are complete. Required PR-verifier execution, actual-main integration, independent review and release/live proof remain incomplete. The user forbids subagents/helpers; self-review is not independent grading and no score is assigned.
 
 The candidate's historical verify-pr.sh contains forced cleanup and has not been invoked for this item. The coordinator updated the standard verifier on the ledger branch to refuse existing paths/logs, preserve evidence and avoid forced deletion; four direct guard checks passed. See ../VERIFY-PR-SAFETY/REPORT.md. Its real-PR run is still pending and will record both tool and tested-source heads. This removes the blocked behavior rather than hiding it in a script. No named-command PASS is asserted before execution.
 

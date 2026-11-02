@@ -33,7 +33,7 @@ Updated 2026-11-02. Current authority: [mission](mega-mission.md); [task cards](
 | 24 | CXS2 | main | ai/codex-s2-submission | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 | 25 | REGRESSION | main | ai/codex-mega-regression | — | TODO | 0 | NOT VERIFIED in this mission | Queued under full mission |
 
-| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | — | LOCAL VERIFY | 0 | a9b804:core/build/G3,6mutants,full274each,repeats90each,audits/effects/manualG5/keyboard/contrast PASS | Sourcepub/PR,safe wrapper,review,actualmain/release/live pending; no independent score |
+| 26 | CXN3-FIX (P0) | BASE0; before CXN3 live gate | ai/codex-cxn3-fix | https://github.com/ntbaoheyhey/taskbar-hero/pull/250 | DRAFT / WRAPPER PENDING | 0 | a9b804:core/build/G3,6mutants,full274each,repeats90each,audits/effects/manualG5/keyboard/contrast PASS | Published unchanged; never merge into BASE0; wrapper,review,actualmain/release/live pending; no independent score |
 | 27 | CXQ1 Demo path (P1 gate) | current merged screens | ledger QA card | — | PREPARING | 0 | NOT VERIFIED | Three-minute live path after every P0/P1 merge |
 
 ## Corrections and scheduling decisions
