@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:51:58.066489+00:00",
+    "endedAt": "2026-11-02T21:52:06.555384+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:52:06.562830+00:00",
+    "endedAt": "2026-11-02T21:52:13.415750+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/chain-proof src/ui/ui.test.tsx src/layout/HelpTab.test.tsx",
+    "head": "2847e9aa166c2c824a7725b63fe17266f753563d",
+    "exit": 0,
+    "startedAt": "2026-11-02T21:52:13.422519+00:00",
+    "endedAt": "2026-11-02T21:52:15.886009+00:00"
+  }
+]

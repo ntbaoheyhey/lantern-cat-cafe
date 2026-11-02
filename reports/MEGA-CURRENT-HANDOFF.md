@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T04:48:31+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
+Updated: 2026-11-03T04:55:16+07:00. ACTIVE, one chat/agent; hourly same-chat heartbeat preserved.
 Authority: Nov2 mission + Nov3 reminder. No subagents/helper chats/orchestrator. No parallel AI workers.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never remove/run orchestrator.py.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; new commits end [skip ci].
@@ -29,7 +29,8 @@ A3 green control +11 killed mutants;36 UI/20 effects PASS; these do not override
 No current-head full matrix/B grade. B /private/tmp/tbh-cxu3-fresh-b is clean4da5104, install only.
 All CXU3 test PIDs58351/58352/58353 are FINISHED;4900–4903 and4920–4923 available. Do not duplicate jobs.
 CXC2 /private/tmp/tbh-cxc2-active, codex/cxc2-fuji-proof, base2847e9a, upstream unset.
-CXC2 setup PID60094 (frozen offline install; inspect before another install). No preview ports yet.
+CXC2 setup FINISHED. Builder type/lint/26 unit cases PASS; uncommitted code, no grade/PR.
+CXC2 browser-builder-r2 active (see process.json),4940–4943; initial Node JSON-import harness failure retained.
 CXC2 read-ahead PASS block60421787: Fuji43113, both bytecodes, matching Market→NFT; no wallet/write.
 NFT has no totalSupply getter; never invent minted totals. Bound recent logs; cache at least30sec; no signing.
 Help Tabs keeps hidden content mounted: add explicit lazy mounting and screen-active read gating.
