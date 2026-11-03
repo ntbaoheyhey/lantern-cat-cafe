@@ -1,0 +1,39 @@
+{
+  "card": "CXR2",
+  "status": "PARTIAL",
+  "head": "c49421f7287a04379b1eae9d1b69edbd916ff534",
+  "repairRoundsUsed": 3,
+  "mergeAllowed": false,
+  "gradeA": null,
+  "gradeB": null,
+  "fullGate": false,
+  "findings": [
+    {
+      "file": "apps/web/src/layout/StageLayout.test.tsx",
+      "count": 1,
+      "failure": "Unchanged5000ms boss-sensitive panel test timeout; do not retry/raise limit."
+    },
+    {
+      "file": "apps/web/src/layout/a11y/v2-loot.a11y.test.tsx",
+      "count": 3,
+      "failure": "Old render-container/title-class queries do not locate the migrated portal."
+    },
+    {
+      "file": "apps/web/src/game/stage/relicWiring.ui.test.tsx",
+      "count": 9,
+      "failure": "HowToPlay now correctly makes background Forge inaccessible; fixture does not dismiss the opening dialog."
+    }
+  ],
+  "evidence": [
+    "builder-core/commands.json",
+    "builder-core/logs/unit.log"
+  ],
+  "passedWeb": 1402,
+  "failedWeb": 13,
+  "notRun": [
+    "Final-head browser after last keyboard/rail changes",
+    "Full A/B gate",
+    "Main/live"
+  ],
+  "next": "Park under user3-fix limit; preserve source/failed logs. Do not reintroduce via another card."
+}

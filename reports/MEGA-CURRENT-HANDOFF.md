@@ -14,7 +14,8 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
 | CXR1 | #245/remotee99e497,local187a1b5 | A94 on187a1b5; clean B tests running |
-| CXR2/CXQ1 | pending | Final audit; timed live demo + throwaway Fuji wallet mint/list/buy |
+| CXR2 | localc49421f | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
+| CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
 | CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
@@ -65,5 +66,6 @@ CXR2 browser1:1PASS/10FAIL due portal-inert query assumptions; documented strict
 CXR2 browser2:7PASS/4FAIL; fixture lacked visit marker/30s tick; corrected locally, no product change.
 CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 initial Help using current rules.
 Builder-final40798 PASS44units/11browser; added missing new v2 unit +rail polish/keyboard loot-region.
-CXR2 builder-core PID44763 cwd above; fullunit+11browser on5110–5113; final correction still verifying.
-Next3: finish clean B tests then full-diff grade; if qualified merge245/main+live; finish CXR2 gate on updatedmain.
+CXR2 builder44763 FINISHED FAIL:13web failures/1402PASS (1boss-timeout,3portal queries,9undismissed Help).
+No final-head browser/fullgrade/live. No fourth repair; preserve c49421f and partial.json;5110–5113 free.
+Next3: finish CXR1 clean B and grade; if qualified merge245/main+live; publish CXR2PARTIAL then CXQ1/CXS docs.

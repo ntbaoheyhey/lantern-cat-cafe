@@ -1,3 +1,7 @@
+# CXR2 — PARTIAL; do not merge
+
+Final localc49421f after three corrections failed the full core suite:13 web failures/1402 passes. One unchanged5000ms StageLayout boss-state timeout, three portal-root/title-class a11y queries, nine Relic wiring cases blocked by the now-inert first-visit Help dialog. No timeout change, fixture bypass, fourth repair, retry or passing grade. Final keyboard/rail browser check was not reached. Source and all failures preserved; next independent queue work proceeds. Draft publication follows CXR1 so its diff stays scoped.
+
 # CXR2 shared-dialog polish — builder in progress
 
 Old15-file dirty polish work from the separate clone remains untouched and is preserved with hashes. Current isolated draft /private/tmp/tbh-cxr2-active on codex/cxr2-dialogs starts at reviewed-but-unmerged CXR1ed11f01; it must merge latest main after245 before any gate.

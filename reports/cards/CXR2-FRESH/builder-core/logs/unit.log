@@ -1,0 +1,2408 @@
+
+> taskbar-hero@0.0.0 test /private/tmp/tbh-cxr2-active
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.58725ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.073917ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.283834ms)
+✔ output order is stable regardless of file creation order (3.558667ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.437334ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.586917
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/packages/auth
+packages/chain test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  11:12:01
+packages/chain test:    Duration  696ms (import 45%, tests 31%, transform 21%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  11:12:01
+packages/auth test:    Duration  985ms (import 57%, tests 34%, transform 8%, worker 2%)
+packages/auth test: Done
+supabase/tests test:  Test Files  33 passed (33)
+supabase/tests test:       Tests  575 passed (575)
+supabase/tests test:    Start at  11:12:01
+supabase/tests test:    Duration  14.90s (tests 79%, import 14%, transform 7%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  30 passed | 3 skipped (33)
+packages/game-rules test:       Tests  431 passed | 2 expected fail | 11 skipped (444)
+packages/game-rules test:    Start at  11:12:01
+packages/game-rules test:    Duration  36.43s (tests 93%, transform 5%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  11:12:37
+packages/api-contract test:    Duration  365ms (transform 80%, import 17%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /private/tmp/tbh-cxr2-active/apps/web
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx (18 tests | 3 failed) 777ms
+apps/web test:    ❯ v2 Loot accessibility & reduced-motion audit (18)
+apps/web test:      ❯ ChestReveal (6)
+apps/web test:        × check 3: chest icon has role img and accessible label 7ms
+apps/web test:        × check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap 13ms
+apps/web test:      ❯ WelcomeBack (6)
+apps/web test:        × check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap 14ms
+apps/web test:  ❯ src/layout/StageLayout.test.tsx (11 tests | 1 failed) 22786ms
+apps/web test:    × holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner 6213ms
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx (9 tests | 9 failed) 30753ms
+apps/web test:    × hands the result to the existing MintPanel with the unchanged voucher 7492ms
+apps/web test:    × keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge 5204ms
+apps/web test:    × shows connect-wallet once and does not forge or mint without a wallet 6201ms
+apps/web test:    × renders not_enough_yarn without a mint call 2953ms
+apps/web test:    × renders no_moon_pearl without a mint call 1819ms
+apps/web test:    × renders daily_limit without a mint call 1889ms
+apps/web test:    × surfaces a wallet handoff error once 2025ms
+apps/web test:    × does not remount a consumed voucher while the v2 refresh is in flight 1657ms
+apps/web test:    × reuses confirmation reporting after a confirmed chain mint, without another mint call 1511ms
+apps/web test: ⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/StageLayout.test.tsx > holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/layout/StageLayout.test.tsx:175:1
+apps/web test:     173|
+apps/web test:     174|
+apps/web test:     175| it('holds every boss-sensitive panel at the pre-request state, then re…
+apps/web test:        | ^
+apps/web test:     176|   const before = stageState;
+apps/web test:     177|   const result = ARENA_FIXTURES[0]!.result;
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+apps/web test:  FAIL  src/layout/a11y/v2-loot.a11y.test.tsx > v2 Loot accessibility & reduced-motion audit > ChestReveal > check 3: chest icon has role img and accessible label
+apps/web test: AssertionError: expected undefined to be 'img' // Object.is equality
+apps/web test: - Expected:
+apps/web test: "img"
+apps/web test: + Received:
+apps/web test: undefined
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx:116:42
+apps/web test:     114|       const { container } = render(<ChestReveal {...chestRevealProps({…
+apps/web test:     115|       const icon = container.querySelector('.chest-reveal-icon-wrap sv…
+apps/web test:     116|       expect(icon?.getAttribute('role')).toBe('img');
+apps/web test:        |                                          ^
+apps/web test:     117|       expect(icon?.getAttribute('aria-label')).toBe('Boss chest');
+apps/web test:     118|     });
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+apps/web test:  FAIL  src/layout/a11y/v2-loot.a11y.test.tsx > v2 Loot accessibility & reduced-motion audit > ChestReveal > check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap
+apps/web test: AssertionError: expected '_r_a_-title' to be undefined // Object.is equality
+apps/web test: - Expected:
+apps/web test: undefined
+apps/web test: + Received:
+apps/web test: "_r_a_-title"
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx:136:54
+apps/web test:     134|       expect(dialog.getAttribute('aria-modal')).toBe('true');
+apps/web test:     135|       const title = container.querySelector('.chest-reveal-title');
+apps/web test:     136|       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
+apps/web test:        |                                                      ^
+apps/web test:     137|
+apps/web test:     138|       const actionBtn = screen.getByRole('button', { name: 'Skip' });
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+apps/web test:  FAIL  src/layout/a11y/v2-loot.a11y.test.tsx > v2 Loot accessibility & reduced-motion audit > WelcomeBack > check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap
+apps/web test: AssertionError: expected '_r_j_-title' to be undefined // Object.is equality
+apps/web test: - Expected:
+apps/web test: undefined
+apps/web test: + Received:
+apps/web test: "_r_j_-title"
+apps/web test:  ❯ src/layout/a11y/v2-loot.a11y.test.tsx:195:54
+apps/web test:     193|       expect(dialog.getAttribute('aria-modal')).toBe('true');
+apps/web test:     194|       const title = container.querySelector('.welcome-back-title');
+apps/web test:     195|       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
+apps/web test:        |                                                      ^
+apps/web test:     196|
+apps/web test:     197|       const okBtn = screen.getByRole('button', { name: 'OK' });
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > hands the result to the existing MintPanel with the unchanged voucher
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_a_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_a_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:48:3
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_l_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_l_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:55:3
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > shows connect-wallet once and does not forge or mint without a wallet
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_10_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_10_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:66:27
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders not_enough_yarn without a mint call
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_1b_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_1b_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:71:40
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders no_moon_pearl without a mint call
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_1m_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_1m_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:71:40
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > renders daily_limit without a mint call
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_21_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_21_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:71:40
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > surfaces a wallet handoff error once
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_2c_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_2c_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:79:3
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > does not remount a consumed voucher while the v2 refresh is in flight
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_2n_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_2n_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:83:3
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > reuses confirmation reporting after a confirmed chain mint, without another mint call
+apps/web test: TestingLibraryElementError: Unable to find an accessible element with the role "tab" and name "Forge"
+apps/web test: Here are the accessible roles:
+apps/web test:   dialog:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-labelledby[39m=[32m"_r_32_-title"[39m
+apps/web test:     [33maria-modal[39m=[32m"true"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal help-dialog pixel-card fx-pop"[39m
+apps/web test:     [33mrole[39m=[32m"dialog"[39m
+apps/web test:     [33mtabindex[39m=[32m"-1"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   heading:
+apps/web test:   Name "How to play":
+apps/web test:   [36m<h2[39m
+apps/web test:     [33mid[39m=[32m"_r_32_-title"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   button:
+apps/web test:   Name "Close help":
+apps/web test:   [36m<button[39m
+apps/web test:     [33maria-label[39m=[32m"Close help"[39m
+apps/web test:     [33mclass[39m=[32m"ui-modal-close"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "Start playing":
+apps/web test:   [36m<button[39m
+apps/web test:     [33mclass[39m=[32m"help-start pixel-btn"[39m
+apps/web test:     [33mtype[39m=[32m"button"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   list:
+apps/web test:   Name "":
+apps/web test:   [36m<ol[39m
+apps/web test:     [33mclass[39m=[32m"help-steps"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   listitem:
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   Name "":
+apps/web test:   [36m<li[39m
+apps/web test:     [33mclass[39m=[32m"help-step-item"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test:   paragraph:
+apps/web test:   Name "":
+apps/web test:   [36m<p[39m
+apps/web test:     [33mclass[39m=[32m"help-note"[39m
+apps/web test:   [36m/>[39m
+apps/web test:   --------------------------------------------------
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33maria-hidden[39m=[32m"true"[39m
+apps/web test:     [33minert[39m=[32m""[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"app-shell v2-shell"[39m
+apps/web test:       [33mdata-active-screen[39m=[32m"home"[39m
+apps/web test:       [33mdata-game-v2[39m=[32m"stage-v2-enabled"[39m
+apps/web test:       [33mdata-has-rail[39m=[32m"true"[39m
+apps/web test:       [33mdata-layout[39m=[32m"desktop"[39m
+apps/web test:       [33mstyle[39m=[32m"--stage-h: 461px;"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<nav[39m
+apps/web test:         [33maria-label[39m=[32m"Game menu"[39m
+apps/web test:         [33mclass[39m=[32m"shell-rail"[39m
+apps/web test:         [33mdata-testid[39m=[32m"rail"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"rail-top"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<button[39m
+apps/web test:             [33maria-label[39m=[32m"Taskbar Hero home"[39m
+apps/web test:             [33mclass[39m=[32m"rail-logo-btn"[39m
+apps/web test:             [33mdata-testid[39m=[32m"rail-logo"[39m
+apps/web test:             [33mtitle[39m=[32m"Taskbar Hero"[39m
+apps/web test:             [33mtype[39m=[32m"button"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<svg[39m
+apps/web test:               [33maria-label[39m=[32m"Portrait of Mochi the cat"[39m
+apps/web test:               [33mclass[39m=[32m""[39m
+apps/web test:               [33mheight[39m=[32m"36"[39m
+apps/web test:               [33mrole[39m=[32m"img"[39m
+apps/web test:               [33mstyle[39m=[32m"image-rendering: pixelated; shape-rendering: crispedges; display: block;"[39m
+apps/web test:               [33mviewBox[39m=[32m"0 0 20 20"[39m
+apps/web test:               [33mwidth[39m=[32m"36"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"1"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"15"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"16"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"17"[39m
+apps/web test:                 [33my[39m=[32m"2"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"2"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"3"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"4"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"5"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"6"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#c66a1a"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"13"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:                 [33mfill[39m=[32m"#ff8fb1"[39m
+apps/web test:                 [33mheight[39m=[32m"1"[39m
+apps/web test:                 [33mwidth[39m=[32m"1"[39m
+apps/web test:                 [33mx[39m=[32m"14"[39m
+apps/web test:                 [33my[39m=[32m"3"[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<rect[39m
+apps/web test:           ...
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ forgePanel src/game/stage/relicWiring.ui.test.tsx:40:26
+apps/web test:      38| function forgePanel() {
+apps/web test:      39|   render(<StageLayout />);
+apps/web test:      40|   fireEvent.click(screen.getByRole('tab', { name: 'Forge' }));
+apps/web test:        |                          ^
+apps/web test:      41|   fireEvent.click(screen.getByTestId('tab-relic'));
+apps/web test:      42| }
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:89:22
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+apps/web test:  Test Files  3 failed | 121 passed (124)
+apps/web test:       Tests  13 failed | 1402 passed (1415)
+apps/web test:    Start at  11:12:38
+apps/web test:    Duration  38.24s (environment 45%, tests 42%, import 10%, transform 2%)
+apps/web test: Environment  jsdom was created 124 times · 134.52s total, 45% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/private/tmp/tbh-cxr2-active/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
