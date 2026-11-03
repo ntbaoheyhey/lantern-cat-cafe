@@ -1,28 +1,18 @@
-# UI session handoff — PAUSED by user, 2026-11-03
-- User latest instruction: “tạm dừng” (pause). Do not resume task work until the user resumes it.
-- No UI test processes or5300–5399 listeners remain. UI merge lock RELEASED after fresh-main build/checks passed. No process was killed; checks had already completed.
-- Repo private; STOP preserved; no agents/schedulers/live writes/mainnet/submission/provider settings changed.
-- Source worktree /Users/bao/taskbar-hero-ui: ai/codex-ui-cxu3, release head6cf567453e36cd4f152bad87b34e12e700d94a03, pushed once.
-- CXU3 PR259 MERGED as8daa8e16fa916a3fc4d3c556ebba20bf6be124d7; requested author/email/skip-ci suffix and exact release-tree match verified.
-- CXU3 fresh self-grades A95/B95 on1e31e37. Each pass:2528 core cases,90 changed browser executions,20/20 resize cases,18 clear audit views. One exact-head full matrix:330 cases per desktop size.
-- Inherited2 expected-failure/11 skipped unit cases unchanged. No timeout, assertion threshold, skip or retry increase.
-- Final repairs: preserve original embedded Market shelf image; add AA Rare/Epic TEXT tokens while preserving original SVG palette; exact computed fills and4.5 contrast asserted.
-- Earlier provisional grades withdrawn/failed honestly; evidence retained in reports/ui/cards/CXU3/attempt-1 through attempt-3 and corresponding logs.
-- SYSTEM docs-only main5e35c7a integrated under merge lock. Release subset typecheck/lint/build+30 browser cases passed on6cf5674; source trees unchanged from reviewed head.
-- Fresh-main worktree /private/tmp/taskbar-hero-ui-main-cxu3 at8daa8e1: typecheck/lint/build+30 changed cases PASS. Logs/screenshots copied to UI ledger.
-- Live asset verification NOT RUN before pause. PR259 release is not yet declared live/CXQ1-ready. Do not run SYSTEM’s live scripted/wallet demo.
-- Branch head Actions count0 checked before merge using all-event GitHub REST query; merged-head Actions count remains to check.
-- CXU5 #249 merged1b299c4, historical A94/B94; CXU4 #251 merged2847e9a, historical A95/B95. Existing tests were present and pass current matrix.
-- CXC2 #253/#254 merged39e74d8/666088c, historical final A96/B96 and live acceptance adopted. CXR1 #245 merged6144d42, historical A94/B94; --bad corrected already.
-- Old partial PR252/branch codex/cxu3-forge-market and PR257/branch codex/cxr2-dialogs are untouched. Do not rewrite or delete them.
-- CXR2 NEXT, not applied: prepared own UI patch, repair script, screen-state spec and plan under reports/ui/cards/CXR2/. Script requires ai/codex-ui-cxr2 branch in source worktree.
-- CXR2 fixes prepared: shared portals, v2 help copy, help-store fixture reset, dialog-scoped a11y assertions, bounded keyboard loot scroll, dark surfaces, Forge frames and full large HUD numbers. Needs targeted checks/self-fixes/full gates.
-- CXR2 before captures: screenshots/ui-2026-11-03/cxr2-before-final (10 views). Known high defects: wrong v2 initial Help advice; long WelcomeBack pushes heading offscreen. Legacy loot surfaces are pale.
-- Draft gallery: reports/ui/gallery.html with26 linked captures; NOT final demo gallery. Before-state defects are labelled.
-- U3: existing34 original economy icons/5 frame aliases/all5 chapter backdrops adopted; new rune/pet/skill slot art and polish not built.
-- U4 motion not built. U5 conditional on U1–U4 merged/green; not built. U6 final demo/gallery pending.
-- Sole existing flag CONFIG.features.originalEconomy=false; global flag and provider VITE_GAME_V2 remain untouched.
-- Rune data request: SYSTEM deferred P2 model; use explicit unavailable/sample state, never invent ownership or repurpose/activate the flag.
-- SYS-UI-006: local compiled catalog paints after atlas decode in common and Rare/level6 views (8/11 distinct icon colors); no persistent product defect reproduced. Add paint-aware capture guards in art review. Local evidence only.
-- Ledger /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Own old B/B2/B3/B4 temp worktrees retained, all inactive. Primary and SYSTEM worktrees untouched.
-- On explicit resume: 1) verify deployed assets for8daa8e1 and Actions0, update board readiness; 2) create ai/codex-ui-cxr2 from latestmain and apply prepared UI-only repair; 3) finish CXR2 gates then art/motion/default-OFF previews.
+# UI session handoff — RESUMED
+- User resumed with “tiếp tục nhe”; execute the remaining UI-only programme without helpers/agents/schedulers.
+- Source: /Users/bao/taskbar-hero-ui, branch ai/codex-ui-cxr2, based on main8daa8e1. Prepared CXR2 patch applied; builder type/unit checks active (see reports/ui/logs/cxr2-builder-driver.log).
+- No merge lock held. Tests use5310–5313 (A),5320–5323 (B). Check ports before binding; never stop foreign processes.
+- CXU3 PR259 merged8daa8e1; A95/B95 on1e31e37; release6cf5674 tree matches. Main type/lint/build+30 browser cases passed.
+- CXU3 LIVE ACCEPTED:35/35 emitted/public files match8daa8e1 byte-for-byte; stable HTML/entries; merged-head Actions0. Evidence reports/ui/cards/CXU3/live-assets.json and main-actions.json.
+- Live check used clean /Users/bao/taskbar-hero-ui-verification-cxu3; no wallets/backend writes or live scripted demo. SYSTEM owns CXQ1.
+- CXU5 #249/1b299c4 historical94/94, CXU4 #251/2847e9a historical95/95, CXC2 #253/#254/666088c final96/96, CXR1 #245/6144d42 historical94/94 already merged; prior acceptance adopted.
+- Current CXR2 repairs: shared modal stack, v2 first-help copy, portal queries, help-store fixture reset, bounded offline-loot scroll, dark loot surfaces, framed Forge groups, large HUD-number wrapping. No passing CXR2 grade yet.
+- CXR2 new screen/state spec covers normal,zero/empty,max/long,offline at1280/1600; still add/verify loading/error and Market extremes as needed. Full review report and fresh gates required.
+- Before screenshots: screenshots/ui-2026-11-03/cxr2-before-final; prepared scripts/plan in reports/ui/cards/CXR2. Draft gallery has26 captures, not final.
+- Art remaining: rune/pet/skill frames/slots and empty-state polish. Existing34 original economy icons,5 frame aliases,all5 chapter backdrops retained. No new production art generated yet.
+- Motion and conditional pets/runes/skills UI remain. U5 only after U1–U4 merged/green. Use sole existing CONFIG.features.originalEconomy=false; never change provider VITE_GAME_V2.
+- Rune data unavailable: SYSTEM deferred model; render explicit unavailable/sample, never invent ownership/equipment or activate the flag.
+- SYS-UI-006 settled common/Rare6 catalog icons paint correctly after decode (8/11 distinct colors); strengthen capture paint/readiness checks in art review. No live UI rerun.
+- Ledger: /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Old /private/tmp worktrees were removed externally; do not prune foreign records. SYSTEM last board state was paused; our readiness update does not resume its chat.
+- Original scope/safety: own UI paths only, original assets additive/preserved, no API/wallet/v2text/packages/contracts/supabase/scripts/dependencies/.github edits. Author ntbaoheyhey<noreply108352255>; every commit ends[skip ci]. STOP remains.
+- Next3: fix CXR2 builder findings and complete desktop state review; freeze/run fresh A+B and locked merge/live gate; finish art/motion then conditional preview screens and final gallery.
