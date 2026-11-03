@@ -61,5 +61,6 @@ Context was compacted by user; continue queue. Prior optional context settings n
 CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
 CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: dirty migration baseded11f01; type/44units PASS.
 CXR2 browser1:1PASS/10FAIL due portal-inert query assumptions; documented strict guard/query adaptation.
-BrowserR2 PID38390 cwd above,5110–5113; no merge beforeCXR1.
+CXR2 browser2:7PASS/4FAIL; fixture lacked visit marker/30s tick; corrected locally, no product change.
+BrowserR3 PID39444 cwd above,5110–5113;2fixes used; no merge beforeCXR1.
 Next3: complete fresh A/mutants/review; clean B tests then diff+grade; if both qualify merge245 then main/live.

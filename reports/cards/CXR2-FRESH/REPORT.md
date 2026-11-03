@@ -8,3 +8,5 @@ Builder typecheck and44 focused cases pass, including two new simultaneous-dialo
 
 
 Browser builder1 finished1PASS/10FAIL: nine initial-load h1 accessibility queries conflict with the now-inert background, and one reduced-motion arena query runs after its chest has opened. Original failures preserved. The guard still checks actual painted h1 plus exact project/origin/build marker; it now additionally verifies an active dialog and inert/aria-hidden root when the heading is inaccessible. Reduced-only arena query includes painted background while retaining visibility. All assertion thresholds/waits unchanged; explanation in source decision. BuilderR2 reruns the full11-case targeted set on5110–5113.
+
+BuilderR2:7PASS/4FAIL; new offline fixture omitted the prior-visit marker and normal30s claim tick. Corrected the local precondition, preserving all assertions and production code. R3 runs the unchanged11-case targets; two builder fixes used.

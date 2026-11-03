@@ -1,0 +1,201 @@
+[WebServer] (node:38663) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+[WebServer] (node:38666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxr2-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:38668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:38693) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:38695) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxr2-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:38702) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:38707) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:38741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:38742) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/private/tmp/tbh-cxr2-active/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:38749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 11 tests using 1 worker
+
+(node:38752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] [v2-loop] › e2e/v2/t2-player-loop.spec.ts:24:38 › continuous stocked demo loop
+[2/11] [v2-loop] › e2e/v2/t2-player-loop.spec.ts:24:38 › continuous stocked demo loop with reduced motion
+(node:38820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/11] [classic] › e2e/onboarding.spec.ts:3:1 › first visit shows How to play; closing it reveals the game and it stays closed
+(node:38830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:30:7 › CXR2 1280 no-preference › first-visit Help uses shared keyboard and background isolation
+[5/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+  1) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Welcome back!', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!', exact: true }) with timeout 5000ms
+      - waiting for getByRole('dialog', { name: 'Welcome back!', exact: true })
+
+
+       6 | const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+       7 | async function checkDialog(page: Page, dialog: Locator) {
+    >  8 |   await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
+         |                        ^
+       9 |   await expect(page.locator('#root')).toHaveAttribute('inert', '');
+      10 |   await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
+      11 |   expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+        at checkDialog (/private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:8:24)
+        at /private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:53:15
+
+    Error Context: test-results/5110-5111/ui-cxr2-dialogs-CXR2-1280--790f3-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+(node:38862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:30:7 › CXR2 1280 reduce › first-visit Help uses shared keyboard and background isolation
+[7/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+  2) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Welcome back!', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!', exact: true }) with timeout 5000ms
+      - waiting for getByRole('dialog', { name: 'Welcome back!', exact: true })
+
+
+       6 | const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+       7 | async function checkDialog(page: Page, dialog: Locator) {
+    >  8 |   await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
+         |                        ^
+       9 |   await expect(page.locator('#root')).toHaveAttribute('inert', '');
+      10 |   await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
+      11 |   expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+        at checkDialog (/private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:8:24)
+        at /private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:53:15
+
+    Error Context: test-results/5110-5111/ui-cxr2-dialogs-CXR2-1280--50379-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+(node:38901) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:30:7 › CXR2 1600 no-preference › first-visit Help uses shared keyboard and background isolation
+[9/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+  3) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Welcome back!', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!', exact: true }) with timeout 5000ms
+      - waiting for getByRole('dialog', { name: 'Welcome back!', exact: true })
+
+
+       6 | const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+       7 | async function checkDialog(page: Page, dialog: Locator) {
+    >  8 |   await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
+         |                        ^
+       9 |   await expect(page.locator('#root')).toHaveAttribute('inert', '');
+      10 |   await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
+      11 |   expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+        at checkDialog (/private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:8:24)
+        at /private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:53:15
+
+    Error Context: test-results/5110-5111/ui-cxr2-dialogs-CXR2-1600--4d721-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+(node:38960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:30:7 › CXR2 1600 reduce › first-visit Help uses shared keyboard and background isolation
+[11/11] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+  4) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Welcome back!', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!', exact: true }) with timeout 5000ms
+      - waiting for getByRole('dialog', { name: 'Welcome back!', exact: true })
+
+
+       6 | const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+       7 | async function checkDialog(page: Page, dialog: Locator) {
+    >  8 |   await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
+         |                        ^
+       9 |   await expect(page.locator('#root')).toHaveAttribute('inert', '');
+      10 |   await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
+      11 |   expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+        at checkDialog (/private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:8:24)
+        at /private/tmp/tbh-cxr2-active/apps/web/e2e/ui/cxr2-dialogs.spec.ts:53:15
+
+    Error Context: test-results/5110-5111/ui-cxr2-dialogs-CXR2-1600--a3f26-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+  4 failed
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus 
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:45:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus 
+  7 passed (47.0s)
+undefined
+/private/tmp/tbh-cxr2-active/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test e2e/ui/cxr2-dialogs.spec.ts e2e/onboarding.spec.ts e2e/v2/t2-player-loop.spec.ts --workers=1 --retries=0 --reporter=line
