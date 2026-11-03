@@ -38,7 +38,9 @@ it('empty slot frames are decorative and cannot enter the keyboard tab sequence'
   const state = sampleStateV2();
   render(<BagPanel state={{ ...state, inventory: state.inventory.filter(item => item.equipped) }} {...handlers()} />);
   const empty = screen.getByRole('list', { name: 'Bag items' }).querySelectorAll('.bag-slot.empty');
-  expect(empty).toHaveLength(state.bagLimit);
+  // The sample has seven worn items; those occupy real storage capacity too.
+  expect(state.inventory.filter(i => i.equipped)).toHaveLength(7);
+  expect(empty).toHaveLength(state.bagLimit - 7);
   for (const slot of empty) {
     expect(slot.getAttribute('aria-hidden')).toBe('true');
     expect(slot.querySelector('button, a, input, [tabindex]')).toBeNull();
