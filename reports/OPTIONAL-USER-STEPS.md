@@ -59,12 +59,12 @@ The current handoff is saved in `reports/MEGA-CURRENT-HANDOFF.md`. The context-c
 The configured threshold was observed as180880 tokens with scope `total`; it was preserved. Runtime application and an actual new compaction event were NOT VERIFIED. Saving this handoff or reading that setting is not a claim that compaction occurred.
 
 
-## CXQ1 — funded throwaway Fuji wallet prerequisite
+## CXQ1 — user-controlled Fuji wallet test
 
-The current official [faucet](https://build.avax.network/console/primary-network/faucet) requires a connected wallet and a Builder Hub login. The Core faucet URL redirected there during this run. The connected in-app browser has neither; Chrome is not enabled in this session's browser tooling. The offered Console wallet would store a key in the browser and was not created. No wallet/key, signature, funding request or transaction has been created by SYSTEM.
+The user has Core in Chrome and supplied public address0x2Bba9a48F7F79d99154108A28d32f1a21d17055c. Read-only Fuji verification found0.57499999978920712testAVAX at block60447415; this account is also the deployed NFT owner. Funding for this account is therefore observed, but isolated throwaway status, the separate funded buyer and an actual mint/list/buy run are not verified.
 
-After the UI session records CXU3/CXC2 readiness, use two throwaway Fuji-only accounts in a wallet you control and obtain free test AVAX through a supported faucet/login flow. Keep seeds/private keys private; do not paste or commit them. A funded mint/list/buy run must record actual chain43113 receipt hashes for the specified NFT/Market contracts, and must never use mainnet or real funds. Until that run executes, wallet proof remains NOT VERIFIED. This owner prerequisite blocks neither security documentation nor the draft submission pack.
+The user stopped screen control. SYSTEM must not resume browser/native UI actions without explicit permission. The user can perform the [manual test](cards/CXQ1-FRESH/MANUAL-TEST.md) in Core and send only public addresses, start time and mint/list/buy transaction hashes. No seed, private key, password, voucher, signature or session token should be shared.
 
-[Current funding observation](cards/CXQ1-FRESH/FUNDING.md). No request is made to bypass login, CAPTCHA, the Supabase export guard or any production setting.
+Use normal game eligibility and wallet prompts on chain43113 only. The owner account does not need any administrative action. A separate buyer must have free test AVAX. The earlier official faucet/login observation remains [historical evidence](cards/CXQ1-FRESH/FUNDING.md), not a claim that the supplied account lacks funds.
 
-The [prepared wallet run and public receipt checker](cards/CXQ1-FRESH/WALLET-RUN.md) now describe the exact mint/list/buy evidence. The checker uses only public Fuji reads and rejects historical receipts before the stated run start, mismatched contracts/accounts/payments, missing transfers and reorgs. Its local controls do not count as a funded run. Use only public addresses/hashes in its manifest; no key, seed, voucher or signature should be shared or stored.
+The [public receipt checker](cards/CXQ1-FRESH/WALLET-RUN.md) rejects mismatched contracts/accounts/payments, stale receipts, missing transfers and reorgs. Its local controls do not count as a live funded run. UI-owned SYS-UI-007 also remains a separate live regression until its corrective release is verified. No backend deployment, production setting change or guard bypass is authorized.

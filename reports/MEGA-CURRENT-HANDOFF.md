@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T17:02:02.295020+07:00. ACTIVE background-only; user STOPPED screen control.
+Updated: 2026-11-03T17:17:10.109471+07:00. Background-only checkpoint; manual wallet guide ready; UI fix candidate not released.
 USER OVERRIDE: no screen/browser UI control until user explicitly resumes it; no CUA/native clicks/typing.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
@@ -17,7 +17,8 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 
 Fetched origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; repo PRIVATE; merge260 confirmed API; Actions0.
 UI CXU3 #259/8daa8e1 LIVE ACCEPTED35assets; CXC2 adoption666088c; readiness08:30:50Z permits CXQ1.
-UI owns CXR2 onward; latest board builder09:11:56Z; no current merge lock/listeners observed.
+UI CXR2 candidate911dec1 on1a1b499: board09:56:14Z reports007 both-size regression PASS; formal A running.
+Not merged/released; SYS-UI-007 remains OPEN live. No owned PID/system port/merge lock observed.
 Source PR heads:255=2f7c0b3,256=792b475,258=97a1595,259=6cf5674,260=a571066; all merged.
 244 OPEN draft db0f9d6/9c457a3; historical257 OPEN draft c49421f/6144d42; do not touch UI PRs.
 
@@ -44,7 +45,8 @@ Preparation head8daa8e1; timed R1 on1a1b499 revalidated35assets before/after. Re
 User provided Core/Chrome public account; read-only Fuji balance0.57499999978920712 at60447415.
 Account0x2Bba9a48F7F79d99154108A28d32f1a21d17055c is also deployed NFT owner; do not assume isolated throwaway.
 No key received, connection/signature/funding/tx performed; buyer account/custody and actual run still unverified.
-Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key;244 blocks nothing unrelated.
+Manual test guide cards/CXQ1-FRESH/MANUAL-TEST.md ready; user operates Core, supplies public hashes.
+Owner steps updated: seller funded; buyer/actual receipts unverified; no keys requested;244 independent.
 
 SYSTEM scope:ledger/owner steps,original data/packages/nonvisual wiring,CXQ1,CXS1/CXS2,CXN4/CXN5,regression.
 UI owns screens/layout/art; no edits to249/251/245 or ai/codex-ui-* branches/worktrees.
