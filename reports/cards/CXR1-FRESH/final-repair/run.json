@@ -1,0 +1,15 @@
+{
+  "root": "/private/tmp/tbh-cxr1-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/final-repair",
+  "head": "ed11f0133d5ae7ebc385a83d3dd846c203a3bc7f",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "browser",
+      "E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/layout/stage-layout.spec.ts e2e/ui/u1-tokens.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/ui/merged-redesign.spec.ts --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

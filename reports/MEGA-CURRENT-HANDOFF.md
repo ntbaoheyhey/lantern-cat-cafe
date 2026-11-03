@@ -28,8 +28,8 @@ Catalog local opt-in resets on Help-tab/reload, no config/storage/network/gamepl
 
 CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, sourceed11f01.
 Fresh A PID27776 FINISHED FAIL oned11f01;2490core/build/8mutants/capture/153repeat1280 PASS.
-A full1280:314PASS/9FAIL;4phone-stage padding regressions +2bg golden +3bulk-action golden assertions.
-No retry/no merge. Fix desktop-only gutter and document old→new design oracles; newhead gate required.
+A full1280:314PASS/9FAIL;4phone-stage padding regressions +2missing shared-button selectors +3bulk-action golden assertions.
+No retry/no merge. Fix desktop-only gutter and restore shared button class and document old→new bulk color oracle; newhead gate required.
 Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
 Clean B /private/tmp/tbh-cxr1-fresh-b at exacted11f01; dependency setup only; B tests/review NOT STARTED.
 Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.

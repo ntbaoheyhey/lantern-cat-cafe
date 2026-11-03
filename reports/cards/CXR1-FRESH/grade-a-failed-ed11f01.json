@@ -12,12 +12,13 @@
   },
   "findings": [
     "Four phone-stage geometry failures from globally applied Home padding.",
-    "Two old page-bg golden values need justified correction for requested new token.",
+    "Two token checks cannot find a visible shared pixel-btn after the class was removed. Restore base class plus secondary modifier; no token-test edit.",
     "Three old primary bulk-equip assertions need justified secondary-action correction; retain4.5 contrast."
   ],
   "evidence": [
     "grade-a/commands.json",
     "grade-a/logs/browser-1280x720.log"
   ],
-  "mergeAllowed": false
+  "mergeAllowed": false,
+  "triageCorrection": "Initial ledger triage said bg goldens; full log shows shared-button selector failures, corrected before implementation."
 }
