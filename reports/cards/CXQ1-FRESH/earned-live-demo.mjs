@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { guestCheckpoint } from './guest-checkpoint.mjs';
 import {createRequire} from 'node:module';
 import {execFileSync} from 'node:child_process';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
@@ -40,8 +41,9 @@ const source={head,tree:proof.testedTree,role:'Clean exact-main checkout; produc
 
 await mkdir(out,{recursive:false});
 const browser=await chromium.launch({headless:true});
-const evidence={head,source,startedAt:new Date().toISOString(),status:'PREPARING',clockInjection:false,syntheticFixture:false,preparedSave:'Earned via real UI, then cloned in memory unchanged for the two viewport runs',networkWrites:0,transactionsPerformed:0,preparation:[],runs:[]};
+const evidence={head,source,startedAt:new Date().toISOString(),status:'PREPARING',clockInjection:false,syntheticFixture:false,preparedSave:'Exact UI-earned guest bytes, credential-checked recovery snapshot; cloned unchanged for viewport runs',networkWrites:0,transactionsPerformed:0,preparation:[],runs:[]};
 const checkpoint=async()=>writeFile(out+'/result.json',JSON.stringify(evidence,null,2)+'\n');
+const saveGuest=async context=>{const earned=guestCheckpoint(await context.storageState(),new URL(site).origin);await writeFile(out+'/earned-guest.json',JSON.stringify(earned)+'\n',{mode:0o600});return earned;};
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const number=text=>Number(String(text).replace(/[^\d.]/g,''));
 async function openContext(size,state){
@@ -75,12 +77,12 @@ try{
   if(condition.fightEnabled&&condition.recommended>0&&condition.power>=condition.recommended*1.5&&afford){evidence.preparation.push(row);prepared=true;break;}
   const slot=['weapon','armor','helmet','gloves','boots'][tick%5];
   for(const rarity of ['rare','uncommon','common']){const action=await craftOptions(prep.page,slot,rarity);if(await action.isEnabled()){await craft(prep.page);row.craft={slot,rarity};await equip(prep.page);break;}}
-  await click(tab(prep.page,'Home'));evidence.preparation.push(row);await checkpoint();console.log('prepare',JSON.stringify(row));if(Date.now()-start>5400000)break;
+  await click(tab(prep.page,'Home'));evidence.preparation.push(row);await saveGuest(prep.context);await checkpoint();console.log('prepare',JSON.stringify(row));if(Date.now()-start>5400000)break;
  }
  assert.deepEqual(prep.errors,[]);
  if(!prepared){evidence.status='PRECONDITION_NOT_REACHED';evidence.demoStarted=false;await prep.page.screenshot({path:out+'/preparation-incomplete.png'});await checkpoint();process.exitCode=2;}
  else{
-  await click(tab(prep.page,'Home'));await prep.page.screenshot({path:out+'/prepared-home.png'});const earned=await prep.context.storageState();assert.ok(earned.origins.every(x=>x.origin===new URL(site).origin));assert.ok(earned.origins.every(x=>x.localStorage.every(k=>!/(session|jwt|private.?key|secret)/i.test(k.name))));evidence.preparationSeconds=Math.round((Date.now()-start)/1000);evidence.earnedSaveSha256=sha(JSON.stringify(earned));evidence.status='RUNNING_TIMED_DEMO';await checkpoint();await prep.context.close();
+  await click(tab(prep.page,'Home'));await prep.page.screenshot({path:out+'/prepared-home.png'});const earned=await saveGuest(prep.context);evidence.preparationSeconds=Math.round((Date.now()-start)/1000);evidence.earnedSaveSha256=sha(JSON.stringify(earned));evidence.status='RUNNING_TIMED_DEMO';await checkpoint();await prep.context.close();
   for(const size of [{width:1280,height:720},{width:1600,height:900}]){
    const ctx=await openContext(size,earned);const page=ctx.page;const run={viewport:size,steps:[],errors:ctx.errors,startedAt:new Date().toISOString(),status:'RUNNING',preparedSaveSha256:evidence.earnedSaveSha256};evidence.runs.push(run);const dir=out+'/'+size.width+'x'+size.height;await mkdir(dir);const timedStart=Date.now();
    const actions={
@@ -97,12 +99,12 @@ try{
    for(const [name,action] of Object.entries(actions)){
     const step={name,startedAt:new Date().toISOString(),elapsedStartMs:Date.now()-timedStart,status:'PASS'};
     try{step.detail=await action();assert.deepEqual(ctx.errors,[]);const layout=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight}));assert.ok(layout.scrollWidth<=size.width&&layout.scrollHeight<=size.height);step.layout=layout;await page.screenshot({path:dir+'/'+name+'.png'});await writeFile(dir+'/'+name+'.txt',redact(await page.locator('body').innerText()));step.elapsedEndMs=Date.now()-timedStart;assert.ok(step.elapsedEndMs<=180000);}
-    catch(e){step.status='FAIL';step.error=redact(e.message);await page.screenshot({path:dir+'/'+name+'-FAIL.png'}).catch(()=>{});}
-    run.steps.push(step);await checkpoint();console.log(size.width+'x'+size.height,name,step.status);if(step.status==='FAIL')break;
+    catch(e){step.status=name==='landing'&&/Expected values to be strictly equal/.test(e.message)?'DEPLOYMENT_CHANGED':'FAIL';step.error=redact(e.message);await page.screenshot({path:dir+'/'+name+'-FAIL.png'}).catch(()=>{});}
+    run.steps.push(step);await checkpoint();console.log(size.width+'x'+size.height,name,step.status);if(step.status!=='PASS')break;
    }
    run.elapsedMs=Date.now()-timedStart;run.status=run.steps.length===9&&run.steps.every(s=>s.status==='PASS')&&run.elapsedMs<=180000&&!ctx.errors.length?'PASS':'FAIL';await ctx.context.close();await checkpoint();if(run.status!=='PASS')break;
   }
-  evidence.status=evidence.runs.length===2&&evidence.runs.every(r=>r.status==='PASS')?'TIMED_GUEST_PASS_WALLET_PENDING':'DEMO_FAIL';evidence.fundedWalletStatus='NOT_VERIFIED';await checkpoint();if(evidence.status==='DEMO_FAIL')process.exitCode=1;
+  evidence.status=evidence.runs.length===2&&evidence.runs.every(r=>r.status==='PASS')?'TIMED_GUEST_PASS_WALLET_PENDING':'DEMO_FAIL';if(evidence.runs.some(r=>r.steps.some(s=>s.status==='DEPLOYMENT_CHANGED')))evidence.status='DEPLOYMENT_CHANGED_REVALIDATION_REQUIRED';evidence.fundedWalletStatus='NOT_VERIFIED';await checkpoint();if(evidence.status==='DEMO_FAIL')process.exitCode=1;else if(evidence.status==='DEPLOYMENT_CHANGED_REVALIDATION_REQUIRED')process.exitCode=2;
  }
 }catch(e){evidence.status=evidence.runs.length?'DEMO_FAIL':'PREPARATION_FAIL';evidence.error=redact(e.message);await checkpoint();process.exitCode=1;}
 finally{evidence.endedAt=new Date().toISOString();await checkpoint();await browser.close();}

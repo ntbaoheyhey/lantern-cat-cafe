@@ -1,0 +1,110 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "resume grader A on integrated current main",
+  "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+  "base": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+  "sourceRoot": "/Users/bao/taskbar-hero-system-cxs2",
+  "gradedAt": "2026-11-03T15:57:22.923862+07:00",
+  "status": "PASS",
+  "score": 96,
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Current-main integration leaves all16 reviewed draft/media files byte-identical;9slides,145s plan,7hashed images,private/DRAFT status and source fact limits verified.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Current integrated head passes install,pack/type/lint,2528 unit/script cases,Deno,builds,bundle,links and38classic cases on5200-series ports.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Six publication/evidence mutations detected after green control; no claimed wallet or backup success can pass validation.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Actual baseline images inspected earlier and every byte/caption retained; deduct2 for media requiring final UI refresh.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Bounded typed source-fact extraction and explicit receipt/hash inventory; deduct2 for repeated limitations across standalone drafts.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No product tests changed or weakened; old grades not reused for new integrated head; inherited expected failures/skips unchanged.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "No completed video/submission/funded wallet or deployed-backend certification claimed; temporary evidence loss and recovered committed artifacts disclosed.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Own SYSTEM branch/worktree/ports; only16 doc/media delivery files differ from current main; no manual UI/art/package/workflow changes.",
+      "evidence": [
+        "resume-a/commands.json",
+        "resume-review-a.json",
+        "resume-mutants-a/results.json"
+      ]
+    }
+  ],
+  "counts": {
+    "packagePassed": 2523,
+    "scriptsPassed": 5
+  },
+  "mergeAllowed": false,
+  "remaining": [
+    "Clean fresh B on this integrated head",
+    "Shared locked checks/merge"
+  ]
+}

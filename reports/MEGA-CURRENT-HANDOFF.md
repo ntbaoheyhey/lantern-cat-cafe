@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T15:40:42.151596+07:00. User explicitly resumed SYSTEM; prior pause revoked.
+Updated: 2026-11-03T15:57:23.778646+07:00. ACTIVE SYSTEM; CXS2 B + CXQ1 preparation.
 Read FIRST after compaction; reconcile Git/board/PIDs before actions; no duplicate tests or AI workers.
 Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to this durable worktree.
 
@@ -8,7 +8,7 @@ Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to 
 |T011/T012|DONE #255/a903fb6 A96/B96; original economy default OFF|
 |244 CXN3|db0f9d6 draft BLOCKED: full deployed-source/deps/import maps and tested restore absent|
 |CXS1|#258/5e35c7a A97/B97; docs/core/assets/health PASS; final integration regression pending|
-|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; old69a83d2 A96/B96 is historical|
+|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; fresh A96 PASS; clean B running; old69a83d2 grades historical|
 |CXQ1|UI board now READY for SYSTEM after CXU3 live acceptance and CXC2 adoption; restart on verified current head|
 |CXN4/CXN5|Conditional P2, default-OFF/versioned; not started|
 |regression|After current UI/system integration; no complete timed/funded proof yet|
@@ -23,7 +23,8 @@ Own durable CXS2 /Users/bao/taskbar-hero-system-cxs2, branch ai/codex-sys-cxs2-s
 Missing-worktree registrations retained; no global prune or removal of foreign/historical metadata.
 Untracked old temp logs/screenshots may be gone; do not claim they were recovered. Committed receipts/pack PNGs exist.
 No old tests restarted; new head needs refreshed verification. Old69a83d2 A/B evidence remains archived.
-No SYSTEM processes active at reconciliation; own5200–5203/5220–5223/5240–5243 blocks checked free.
+CXS2 A9336 finished PASS96. Clean B PID15353 /Users/bao/taskbar-hero-system-cxs2-b,5220–5223.
+CXQ1 identity9388 finished35assets MATCH; real-play PID14008 /Users/bao/taskbar-hero-system-cxq1; no ports.
 Source and ledger clean before integration; root main/worktree and UI worktrees untouched.
 
 CXS2 pack remains DRAFT:9slides,145s planned VN narration+EN subtitles,7 unchanged6144d42 guest/read-only PNGs.
@@ -35,7 +36,8 @@ Original sourcePNG paths in historical manifest are capture-time provenance, not
 
 CXQ1 old55396/55399 were interrupted on the ownership addendum; no timed run/tx had started.
 Script CXQ1-FRESH/earned-live-demo.mjs preserved in Git; future use requires fresh source/artifact proof and UI adaptation.
-Guest progress must be earned through normal UI/wall-clock; label prepared profile cloning honestly.
+Guest progress earned via real UI/clock; guest-checkpoint.mjs filters cookies/auth storage, rejects credentials/vouchers.
+Six local recovery controls pass; earned guest-only JSON checkpoints in CXQ1-FRESH/resume-natural/data (not staged).
 Official faucet observation requires connected wallet+Builder Hub login; no keys/signatures/funding/tx created by SYSTEM.
 Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key.244 remains independent blocker.
 
@@ -60,4 +62,4 @@ No secrets,destructive liveDB writes,migrations/edge deploys,Vercel/VITE_GAME_V2
 public repo/contest submission,.github changes,Actions or direct-main pushes. Kill only owned PIDs after cwd check.
 Gates A/B>=92,C1>=23,C2=20,C6=5,C7>=8,each>=60%,zero auto-fails; no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov; stop28Nov with regression/final report. Keep handoff<=80lines.
-Next3: regrade integrated CXS2; verify current live artifact/start authorized CXQ1; merge docs under shared lock.
+Next3: finish CXS2 B and locked merge; complete timed live demo from earned profile; resolve/report funded-wallet prerequisite.

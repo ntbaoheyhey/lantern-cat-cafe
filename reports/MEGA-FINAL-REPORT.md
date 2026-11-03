@@ -2,7 +2,7 @@
 
 Historical pause record (revoked by explicit resume 2026-11-03T15:40:42.151596+07:00): user requested a pause at 2026-11-03T13:20:50.200210+07:00. SYSTEM merge waiter95860 stopped before acquisition; PR260 remains unmerged. Hourly reminder PAUSED; no SYSTEM processes remain. Foreign UI work/lock untouched. Latest fetched main is8daa8e1; no further work until explicit resume.
 
-Current resume: temporary worktrees are missing; committed source/evidence recovered into durable SYSTEM folders. CXS2 integrated latest main and must refresh its grades. UI board now records CXU3 live acceptance and CXC2 adoption, permitting CXQ1 after source/deployment verification. Hourly reminder ACTIVE; safety/ownership split unchanged.
+Current resume: temporary worktrees are missing; committed source/evidence recovered into durable SYSTEM folders. CXS2 integrated current main8daa8e1 asa571066; fresh A96 passes and clean B is running. UI board now records CXU3 live acceptance and CXC2 adoption, permitting CXQ1. Independent35asset identity passes; real-play preparation14008 is running with credential-free guest recovery. Hourly reminder ACTIVE; safety/ownership split unchanged.
 
 SYSTEM scope addendum adopted 2026-11-03T11:49:00.097315+07:00. UI/layout/art ownership has transferred to the user-started UI session; historical UI results below are handoff evidence only. SYSTEM will not edit those files/branches/PRs. All future system branches use ai/codex-sys-*, ports5173–5299 and the shared merge lock/board protocol.
 

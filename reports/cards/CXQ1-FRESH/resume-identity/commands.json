@@ -1,0 +1,18 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:43:09.837026+00:00",
+    "endedAt": "2026-11-03T08:43:18.818422+00:00"
+  },
+  {
+    "name": "identity",
+    "command": "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-cxq1 8daa8e16fa916a3fc4d3c556ebba20bf6be124d7 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/resume-identity/artifact.json",
+    "head": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:43:18.825076+00:00",
+    "endedAt": "2026-11-03T08:43:23.176329+00:00"
+  }
+]
