@@ -25,7 +25,7 @@ The optional catalog starts OFF and previews 12 stats, 15 items, 5 qualities and
 
 ## Versioned live screenshots
 
-These are unchanged guest/read-only captures of 6144d42 on 3 November 2026, before the current UI refresh. [Media hashes and scope](reports/submission/evidence/media-manifest.json) · [Exact release receipt](reports/submission/evidence/6144d42-acceptance.json). That receipt records 2,490 core cases, 323 browser cases per desktop size and 35 matching live assets; these are historical, version-specific numbers.
+These are unchanged guest/read-only captures of 6144d42 on 3 November 2026, before the current UI refresh. [Media hashes and scope](reports/submission/evidence/media-manifest.json) · [Exact release receipt](reports/submission/evidence/6144d42-acceptance.json). That receipt records 2,490 package unit cases, 323 browser cases per desktop size and 35 matching live assets; these are historical, version-specific numbers.
 
 ![Live guest landing at 6144d42](reports/submission/screenshots/landing-1280x720.png)
 

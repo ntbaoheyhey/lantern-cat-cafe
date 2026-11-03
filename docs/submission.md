@@ -37,7 +37,7 @@ The requested Technical and Avalanche Integration axes are used below. Additiona
 
 ## Current evidence and omissions
 
-The archived 6144d42 acceptance records 2,490 core cases, 323 browser cases per desktop size, 40 art checks, 35 asset hashes matching before/after, 22 health checks and 16 guest/read-only stages per size. These numbers belong to that exact historical release; they are not a current run of a later UI head. Two expected game-rule failures and eleven inherited skips are disclosed in the receipt.
+The archived 6144d42 acceptance records 2,490 package unit cases, 323 browser cases per desktop size, 40 art checks, 35 asset hashes matching before/after, 22 health checks and 16 guest/read-only stages per size. These version-specific numbers belong to that exact historical release; they are not a current run of a later UI head. Two expected game-rule failures and eleven inherited skips are disclosed in the receipt.
 
 CXQ1's complete timed path and fresh throwaway Fuji mint/list/buy are pending. SYSTEM stopped preparation when the scope addendum required waiting for UI readiness. The current official faucet requires a connected wallet and Builder Hub login. No wallet/private key, funding request or transaction was created by SYSTEM.
 
