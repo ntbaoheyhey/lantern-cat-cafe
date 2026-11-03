@@ -1,54 +1,39 @@
 # Taskbar Hero
 
-## For judges
-Live: [Taskbar Hero](https://web-zeta-tan-13.vercel.app) — NOT VERIFIED: returned HTTP 404 on 2026-10-27; owner must restore/check it.
-60-second tour: inspect the two contracts below → follow the [voucher → mint → list → buy flow](docs/avalanche-integration.md) → run the read-only proof.
-[Five-minute reproduction, verification status, transaction evidence and test results](docs/avalanche-integration.md).
-| Contract (Avalanche Fuji, 43113) | Address | Explorers |
-| --- | --- | --- |
-| RelicNFT (ERC-1155) | `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D` | [Routescan Contract](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) · [Snowtrace](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
-| RelicMarket (fixed-price escrow) | `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93` | [Routescan Contract](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) · [Snowtrace](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |
-Setup: `CI=true pnpm install --frozen-lockfile`; proof: `pnpm onchain-proof`; TypeScript tests: `pnpm test`.
-Contract tests: `git submodule update --init --recursive`, then `cd contracts && forge test`.
-Security reviews: [contracts](docs/security-contracts.md), [web](docs/security-web.md). [Architecture and trust boundary](docs/architecture.md).
+## For judges — draft review entry
 
-Taskbar Hero is an idle RPG in a thin strip at the bottom of a web page: let your hero fight, claim loot, upgrade gear, beat bosses, and forge collectible Relics. Everyday progression stays off-chain, while ERC-1155 Relic NFTs can be minted and traded on Avalanche Fuji testnet (free testnet, costs no real money). There is no fungible token. **[Play the live demo](https://web-zeta-tan-13.vercel.app)**.
+[Play Taskbar Hero](https://taskbarhero-eight.vercel.app). The repository remains **private**; this task does not submit the project or change access. [Submission pack DRAFT](docs/submission.md) · [Nine-slide outline](docs/pitch-slides.md) · [Video script DRAFT](docs/video-script.md) · [Security overview](docs/security-overview.md).
 
-In **Cat RPG v2** (`VITE_GAME_V2=1`), the game expands into a full stage layout featuring 7 cat hero classes, 5 chapters of monsters, procedural cat paperdoll animations, a multi-tab Forge workshop, and daily Moon Pearl Relics. See [docs/play-v2.md](docs/play-v2.md) for full v2 details.
+Taskbar Hero is a desktop idle RPG with a cat adventurer. Guest progress lives locally in the browser. Authenticated play uses server-owned state and shared rules; collectible Relics use wallet transactions on Avalanche Fuji. No separate ERC-20 game currency or mainnet deployment is claimed.
 
-## How to play
+| Fuji 43113 contract | Address / public explorer |
+|---|---|
+| RelicNFT (ERC-1155) | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) |
+| RelicMarket (escrow) | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) |
 
-1. Open the live demo above to see your hero in the bottom strip.
-2. Connect an injected wallet such as Core or MetaMask in **Chrome, Brave, or Edge**, switch to Avalanche Fuji, and sign in. **Wallets do not work in Safari.**
-3. Let your hero idle, then claim gold, shards, and gear drops.
-4. Equip better gear, spend gold on upgrades, and beat the boss to earn a Boss Key.
-5. In the Forge, spend 30 shards and 1 Boss Key to forge a Relic, then approve its mint transaction in your wallet. You need test AVAX for gas; forging is limited to one Relic per account per day.
+Help→On-chain proof reads code, linkage and recent events. Read-only evidence is not a mint/list/buy receipt, lifetime supply count or independent audit. Fresh funded wallet proof is pending. PR #244 also remains blocked by the missing complete deployed function backup and tested restore path; see [security evidence](docs/security-overview.md).
 
-## Screenshots
+## How to inspect the current v2 guest loop
 
-Captured from a local demo-mode build; the Market and the Forge reveal use sample data because they need a wallet and the Fuji contracts.
+1. Open the live site, dismiss initial Help if shown, and choose one of three starter classes. The broader registry contains seven classes.
+2. Watch real idle claims, then use Bag to compare/equip gear. The bag holds 200 items; Hero shows nine slots.
+3. Map shows five chapters and boss requirements. A daily first claim grants a Cat Key; a boss win spends one and a loss keeps it.
+4. Forge crafts gear from game materials. The v2 daily Relic recipe is 30 Yarn plus 1 Moon Pearl; minting requires wallet/sign-in and free Fuji test AVAX.
+5. Open Help→On-chain proof, then Market. Guest mode honestly shows the wallet requirement; ordinary gear is not tradable there.
 
-![The idle strip](docs/screenshots/idle-strip.png)
-*Idle strip: Mochi the cat trots along the bottom of the page while fish, yarn and Cat Keys tick up.*
+The optional catalog starts OFF and previews 12 stats, 15 items, 5 qualities and 7 skills. It does not activate the shared original economy, change saves or grant ownership. Timed live demo refresh waits for the UI session's readiness log. See the [judge guide](docs/judge-walkthrough.md) and distinguish its dated historical sections from current evidence.
 
-![Inventory](docs/screenshots/inventory.png)
-*Inventory: equip gear and spend fish on upgrades.*
+## Versioned live screenshots
 
-![Boss fight](docs/screenshots/boss.png)
-*Boss: the server runs the fight, the client replays it.*
+These are unchanged guest/read-only captures of 6144d42 on 3 November 2026, before the current UI refresh. [Media hashes and scope](reports/submission/evidence/media-manifest.json) · [Exact release receipt](reports/submission/evidence/6144d42-acceptance.json). That receipt records 2,490 core cases, 323 browser cases per desktop size and 35 matching live assets; these are historical, version-specific numbers.
 
-![Forge](docs/screenshots/forge-tab.png)
-*Forge: the cost, the odds and why forging is blocked right now.*
+![Live guest landing at 6144d42](reports/submission/screenshots/landing-1280x720.png)
 
-![Forge reveal](docs/screenshots/forge-reveal.png)
-*Forge reveal: the Relic rises with its rarity banner (sample Legendary).*
+![Live guest Home at 6144d42](reports/submission/screenshots/home-1600x900.png)
 
-![Market](docs/screenshots/market.png)
-*Market: your Relics and fixed-price listings in test AVAX (sample listings).*
+![Public Fuji read-only proof at 6144d42](reports/submission/screenshots/fuji-read-only-1280x720.png)
 
-<img src="docs/screenshots/phone.png" alt="Phone view" width="260" />
-
-*Phone view at 390 px wide.*
+Other baseline captures in the manifest show a locked Map gate and an opt-in local catalog. They are not victory, wallet ownership or transaction evidence. Existing older local/sample screenshots remain in docs/screenshots and are not relabelled as live.
 
 ## On-chain
 
@@ -125,4 +110,4 @@ Dependency installation needs network access unless cached. Unit and contract te
 
 Built for **Avalanche Team1 Vietnam UniHack 2026**. Project code is licensed under the [MIT License](LICENSE); third-party dependencies retain their own licenses.
 
-All in-game sprites, frames, icons, backdrops, and Relic art are original works drawn in code or generated by project scripts in `scripts/`. Credit to [Kenney](https://kenney.nl) for CC0 asset packs evaluated during early prototyping; all current committed assets were created directly for this repository (see [docs/licenses-v2.md](docs/licenses-v2.md)). Fonts are loaded via Google Fonts under the SIL Open Font License 1.1.
+New catalog icons have [concrete source/tool/date/hash provenance](reports/asset-provenance.md). [Canonical historical provenance](docs/art/PROVENANCE.md) distinguishes existing project-original claims from independent chain-of-title proof; unknown historical prompts/model details remain unknown. The older [licence inventory](docs/licenses-v2.md) declares the fonts as SIL OFL1.1. This draft does not certify every historical asset licence or add third-party artwork.

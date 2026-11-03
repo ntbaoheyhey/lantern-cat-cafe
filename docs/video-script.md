@@ -1,0 +1,21 @@
+# Video script — DRAFT, 145 seconds maximum planned runtime
+
+Vietnamese narration with English subtitles. This is a recording plan, not a completed video or timed QA result. Wait for UI's CXU3/CXC2 readiness in the shared board; verify the final live head before recording. A prepared guest profile must be earned through ordinary play and disclosed. Never seed fake wins, currencies, wallet balances or transactions for a live claim.
+
+| Time | Shot/action | Vietnamese narration | English subtitle |
+|---|---|---|---|
+|00:00–00:15|Landing; choose Play as guest|Đây là Taskbar Hero, trò chơi nhập vai nhàn rỗi trên máy tính. Bạn có thể bắt đầu bằng chế độ khách, không cần ví.|Taskbar Hero is a desktop idle RPG. Start as a guest without a wallet.|
+|00:15–00:30|Class choice; confirm|Chọn một trong ba lớp khởi đầu. Chú mèo tự chiến đấu và nhận tiến trình theo nhịp của trò chơi.|Choose one of three starter classes. Your cat fights and earns progress automatically.|
+|00:30–00:50|Home and a real idle claim|Trong chế độ khách, dữ liệu nằm trong trình duyệt. Bản trình diễn này dùng tiến trình đã kiếm được trước đó; chúng tôi không tua đồng hồ hay tạo phần thưởng giả.|Guest data is local. This demonstration uses progress earned beforehand, without clock changes or fabricated rewards.|
+|00:50–01:05|Map; actual Fight/Skip replay/Collect only if ready|Bản đồ cho biết điều kiện đánh trùm. Khóa chỉ bị tiêu khi thắng. Nếu chưa đủ điều kiện, giao diện giải thích rõ thay vì báo một chiến thắng chưa xảy ra.|The map explains boss requirements. A key is spent on a win. Locked states are shown honestly.|
+|01:05–01:25|Forge a genuinely affordable recipe; inspect Bag|Trang bị có thể chế tạo bằng tài nguyên trong game. Túi đồ giữ các món đã kiếm được, cho phép so sánh và trang bị. Đây chưa phải tài sản trên chuỗi.|Craft gear with game resources, compare it in Bag and equip it. Ordinary gear is not an on-chain asset.|
+|01:25–01:45|Help→On-chain proof; display both contracts|Phần bằng chứng đọc trực tiếp các hợp đồng trên Avalanche Fuji, mã chuỗi 43113. Nó cho thấy mã hợp đồng, liên kết và sự kiện gần đây, không giả làm biên lai giao dịch.|Public proof reads Avalanche Fuji 43113: contract code, linkage and recent events. It is not a transaction receipt.|
+|01:45–01:55|Market; show honest wallet requirement|Relic dùng chuẩn ERC-1155 và có thể giao dịch qua hợp đồng ký quỹ. Chế độ khách yêu cầu kết nối ví trước khi thực hiện giao dịch.|Relics use ERC-1155 and escrow trading. Guest mode requires a wallet before transactions.|
+|01:55–02:10|Optional local catalog preview|Danh mục xem trước bổ sung nội dung và biểu tượng gốc. Người dùng phải tự bật xem trước; cờ kinh tế mới trên hệ thống vẫn tắt.|The optional catalog previews original content and icons. The shared new-economy flag remains OFF.|
+|02:10–02:25|Evidence/limits card and final link|Các kiểm tra cục bộ, dữ liệu đọc từ chuỗi và giao dịch thật được phân biệt rõ. Bản sao lưu hàm đang triển khai và lần thử ví có tiền test vẫn là điều kiện cần xác minh.|Local tests, public reads and real transactions are distinct. Deployed-function backup and funded-wallet proof remain unverified.|
+
+Total planned duration: 145 seconds. No claim that a completed capture currently meets this duration.
+
+If the boss/craft is blocked or a transaction is unavailable, show that state and retain the limitation; do not splice a local fixture into footage labelled live. The separate 3-minute QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→On-chain proof→Market at both 1280×720 and 1600×900. A failed demo step stops further merges until handled under the shared protocol. The funded mint/list/buy run needs separate actual Fuji receipts; no hashes are invented here.
+
+Baseline media: [manifest](../reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Refresh it after UI readiness. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
