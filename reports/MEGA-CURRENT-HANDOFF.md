@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T07:20:24+07:00. ACTIVE, one chat/agent; hourly taskbar-hero-hourly-handoff remains active.
+Updated: 2026-11-03T07:39:19+07:00. ACTIVE, one chat/agent; hourly taskbar-hero-hourly-handoff remains active.
 Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
@@ -10,17 +10,17 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | CXU4 | #251/main2847e9a | DONE A95/B95; main313×2; live assets/health/10 stages×2 PASS |
 | CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; never merge current evidence |
 | CXC2 | #253 + #254/main666088c | DONE feature A95/B96 + fix A96/B96; main317×2/live11×2 PASS |
-| T011/T012 | local2f7c0b3 | ORIG1 A96/B96; gate PASS; shared OFF; publication next |
+| T011/T012 | local2f7c0b3 | #255 mergeda903fb6 A96/B96; shared OFF; main/live validation active |
 | Content consumer + ART/T013 | pending P1 | Local default-OFF preview, original snapped/palette-locked art; no backend activation |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; remaining gaps; full live path + throwaway Fuji wallet |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
 | CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
 | P2/P3 | pending | Only after A–F green/merged; all default OFF/versioned |
 
-Last merged/origin+local main: 666088ce06ce0c03485f46371b8fd7c22a99e386 (#254).
+Last merged/origin+local main: a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3 (#255).
 Reviewed fix tree755ca0eaf87a576314174085cfb7c0b492a97884 equals main; author/suffix exact.
-Current acceptance: reports/cards/CXC2-FRESH/acceptance.json is DONE, nextMergeAllowed true.
-Main core2423 +317 browsers each size; live32/32 assets before/after,22 health,11 stages×2,zero errors/transactions.
+CXC2 acceptance666088c DONE. Current a903fb6 release validation active; no next merge before it passes.
+Previous666088c core2423/317×2/live32assets/22health/11×2 PASS; do not relabel it as a903fb6 proof.
 Recent100-block events are available; live NFT14200B/Market7713B/linkage verified. No funded wallet/backend proof.
 Local main retains untracked.worktrees/. Ledger /private/tmp/tbh-t001-ledger, ai/codex-mega-ledger; stage selected files only.
 
@@ -28,6 +28,7 @@ ORIG1 A89352 FINISHED PASS96: /private/tmp/tbh-original-content, codex/original-
 head2f7c0b307123695a8244813604d540334e5fb8c0, base666088c, ports5100–5103.
 A core2452,317×2,30 UI repeats,10 mutants and source/default-OFF checks PASS.
 B93028 FINISHED PASS96 on clean2f7c0b3: core2452,30 repeats,38classic,10 mutants,originality/config checks.
+ACTIVE post-main PID96199: /private/tmp/tbh-main-after-orig1,a903fb6,4980–4983; ORIG1-FRESH/post-main/.
 B config/logs ORIG1-FRESH/grade-b/. No duplicate full matrix; A exact-head receipt shared.
 Selected5100–5103 browser-safe preflight PASS; negative5060/5061 controls blocked. NEVER use SIP5060/5061.
 Originality88093 FINISHED PASS on2f7c0b3: archive identity/CRC,136 name patterns,964 descriptions,
@@ -36,7 +37,8 @@ Scanner is a reviewed standalone offline copy; patterns stay in memory; no orche
 Original ai/T01112d0355 and ai/T012a35a280 preserved;3 commits rebased with proper author/suffix.
 Builder73795 passed install/type/lint/29 focused tests on earlier69902d6; data blobs unchanged by rebase.
 Active-config AST showed9 existing properties unchanged; formal A reruns on current head. Shared feature flag false.
-P1 consumer/art plan: ORIG1-FRESH/NEXT-CONSUMER.md. Not implemented. Read art INVENTORY and tools README before art.
+P1 consumer/art /private/tmp/tbh-original-preview, codex/original-preview-art,basea903fb6,upstream unset.
+Plan ORIG1-FRESH/NEXT-CONSUMER.md; no implementation yet. Art inventory/tool contracts now read.
 Art decision/STYLE/provenance headers/manifest reviewed:48-color cafe-night-v1,32px icons,max16 colors,binary alpha,2px padding.
 
 All CXC2 verification PIDs finished; source /private/tmp/tbh-cxc2-active e54f075 and fix /private/tmp/tbh-cxc2-rpc-fix df83851 retained.
@@ -54,4 +56,4 @@ real funds/mainnet, repo publicity, contest submission, .github changes, Actions
 Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007. Do not kill unrelated18457/OS listeners; inspect owned cwd.
 Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: publish/merge exact approved table head; actual-main/live validation; then build the required local preview and original P1 art.
+Next3: finish96199 release; implement local default-OFF catalog and original icons in preview worktree; gates before next merge.

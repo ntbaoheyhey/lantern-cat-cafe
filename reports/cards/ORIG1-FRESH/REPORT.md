@@ -12,3 +12,6 @@ No PR/merge yet. The required local preview consumer and ART/T013 are separate P
 
 ## Fresh B complete
 Self-graded fresh B96 after tests-first full32-file review. Fresh core2452,30 default-UI repeats,38 classic cases,10 distinct semantic mutants, offline originality and9-property preservation pass. A317×2 is explicitly shared on identical2f7c0b3. All16 Deno maps were independently checked to add only the generated original-economy module entry. A96/B96, zero auto-fails and all floors pass. PR/merge and actual-main/live validation remain.
+
+## Published; release validation active
+PR255 merged asa903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3. Exact reviewed tree and requested author/email/skip-ci suffix verified. Shared flag remains false and no backend was deployed. Actual-main and live validation run in /private/tmp/tbh-main-after-orig1, PID96199,4980–4983; no next merge until acceptance. Preview/art worktree /private/tmp/tbh-original-preview, codex/original-preview-art, starts from this main.
