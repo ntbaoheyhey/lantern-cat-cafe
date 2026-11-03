@@ -11,7 +11,7 @@
 - Attempt 1 provisional A94/B94 WITHDRAWN before push/merge: removed embedded Market CSS data-URI art found in final review. Evidence retained in reports/ui/cards/CXU3/attempt-1/ and logs/cxu3-{a,b}.
 - Repair 16f940f restores the exact original icon and asserts its computed CSS on both empty states. Scope checker now checks embedded CSS art too.
 - A2/B2 machine checks passed; A2 provisional94 withdrawn after B2 expanded rarity contrast review found inherited Rare4.051/Epic3.428 selected-surface ratios. Evidence in cards/CXU3/attempt-2/.
-- Repair9628310 adds AA text-only rarity tokens (#66b7ff/#d0a0ff), preserving art tokens; extends4.5 tests and checks original SVG fills in browser. A3 stopped on new SVG-fill oracle returning null (12 cases), not contrast. Corrected to actual path/style.fill; targeted5/5 browser cases pass with unchanged RGB/4.5 assertions. Fresh A4 PID83412 on1e31e37 active, ports5310–5313; B4 next.
+- Repair9628310 adds AA text-only rarity tokens (#66b7ff/#d0a0ff), preserving art tokens; extends4.5 tests and checks original SVG fills in browser. A3 stopped on new SVG-fill oracle returning null (12 cases), not contrast. Corrected to actual path/style.fill; targeted5/5 browser cases pass with unchanged RGB/4.5 assertions. Fresh A4 PASS95 on1e31e37:2528 core/full330×2/changed45×2/resize20 of20/audit18 clean. B4 tests-first PID91045 active /private/tmp/taskbar-hero-ui-cxu3-b4 on5320–5323.
 - Prior B evidence worktree /private/tmp/taskbar-hero-ui-cxu3-b at2e1f83b retained; no listeners remain.
 - Merge lock released after cancelled attempt1 final checks. No UI feature push/PR/merge yet.
 - CXR2 next: old #257/c49421f has13 inherited failures (portal assertions, help-store fixture reset, boss-state timeout). Plan in cards/CXR2/PLAN.md.
@@ -23,3 +23,4 @@
 - SYSTEM QA handoff: /private/tmp/tbh-t001-ledger/reports/ui/REQUESTS-FROM-SYSTEM-QA.md; read board last20 at each card.
 - Ledger: /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Helpers/run logs/screenshots stored here at milestones.
 - Next3: finish A2/B2 with art review; lock/recheck/push once/create/merge CXU3; fresh-main changed specs/build and GET-only live asset equivalence, then announce board readiness for SYSTEM CXQ1.
+- Catalog diagnostic helpers: probe-catalog.mjs serves5362; its first attempts used an artifact inside dist deleted by the core build. Corrected copy is isolated under dist-v2/catalog-diagnostic-1e31e37. No app defect inferred yet.

@@ -1,0 +1,60 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader A final contrast/art repair",
+  "head": "1e31e37ff3f77f51b022854067a4c717d9ee5060",
+  "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
+  "status": "PASS",
+  "score": 95,
+  "autoFails": [],
+  "gradedAt": "2026-11-03T05:53:09.245096+00:00",
+  "criteria": [
+    {
+      "criterion": "Design/readability",
+      "score": 22,
+      "max": 25,
+      "reason": "Forge picker/preview/materials and truthful Relic table/detail match the approved desktop structure. Minor side-group framing and technical copy remain for CXR2 polish."
+    },
+    {
+      "criterion": "Behavior/art preservation",
+      "score": 25,
+      "max": 25,
+      "reason": "Existing controller declarations unchanged. Original embedded shelf icon and SVG palette retained, including exact computed original RGB assertions."
+    },
+    {
+      "criterion": "Accessibility",
+      "score": 20,
+      "max": 20,
+      "reason": "Text-only Rare/Epic tokens exceed4.5 on selected surfaces; original art tokens unchanged. Every selected rarity, contrast unit pairs, keyboard actions and reduced motion pass."
+    },
+    {
+      "criterion": "Scope",
+      "score": 20,
+      "max": 20,
+      "reason": "18 owned paths; no dependencies, API/wallet/economy logic, original asset files, provider settings or workflows changed."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "Fresh2528 core cases; full330 per size; changed45 per size with3 repeats; resize20/20;18 strict audit views. Market chain/wallet fixtures remain explicitly mocked; live acceptance is post-merge."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "inheritedUnitStatuses": {
+    "expectedFail": 2,
+    "skipped": 11,
+    "changed": false
+  },
+  "evidence": [
+    "reports/ui/logs/cxu3-a4/receipt.json",
+    "reports/ui/logs/cxu3-a4/scope.json",
+    "screenshots/ui-2026-11-03/cxu3-a4-audit/findings.json"
+  ],
+  "visualReview": "Inspected fresh Forge confirmation, populated/gated/empty Market and both desktop sizes; no in-scope clipped controls/overflow or missing original art.",
+  "priorAttempts": "All superseded/failed grades and logs preserved in attempt-1 through attempt-3.",
+  "knownBaselineNextCard": "CXR2 legacy onboarding/loot-dialog findings are separately documented with before captures; this is a CXU3 grade, not a completed all-state CXR2 review."
+}

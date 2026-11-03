@@ -23,3 +23,5 @@
 - CXU3 now introduces --rarity-rare-text and --rarity-epic-text for AA text; use these in dark loot text overrides. Original art rarity variables remain unchanged.
 
 - SYS-UI-006: investigate the historical catalog capture with blank-looking icon areas; distinguish CSS image loading timing from an app defect, then add a meaningful image-readiness/pixel check if needed. No old artwork may be replaced.
+
+- SYS-UI-006 loaded local common and Rare/level6 probes both show painted icons; no persistent app bug reproduced. Preserve the actual original asset files; strengthen capture readiness/pixel evidence during U3.

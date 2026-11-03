@@ -1,0 +1,15 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByTestId('landing-start')[22m
+
+    at /Users/bao/taskbar-hero-ui/reports/ui/probe-catalog.mjs:16:43 {
+  log: [ "  - waiting for getByTestId('landing-start')" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+exit=1
