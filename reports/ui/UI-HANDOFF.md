@@ -11,7 +11,7 @@
 - Attempt 1 provisional A94/B94 WITHDRAWN before push/merge: removed embedded Market CSS data-URI art found in final review. Evidence retained in reports/ui/cards/CXU3/attempt-1/ and logs/cxu3-{a,b}.
 - Repair 16f940f restores the exact original icon and asserts its computed CSS on both empty states. Scope checker now checks embedded CSS art too.
 - A2/B2 machine checks passed; A2 provisional94 withdrawn after B2 expanded rarity contrast review found inherited Rare4.051/Epic3.428 selected-surface ratios. Evidence in cards/CXU3/attempt-2/.
-- Repair9628310 adds AA text-only rarity tokens (#66b7ff/#d0a0ff), preserving art tokens; extends4.5 tests and checks original SVG fills in browser. Fresh A3 PID79795 on5310–5313; B3 prepared /private/tmp/taskbar-hero-ui-cxu3-b3, not yet run.
+- Repair9628310 adds AA text-only rarity tokens (#66b7ff/#d0a0ff), preserving art tokens; extends4.5 tests and checks original SVG fills in browser. Fresh A3 PID79795 stopped on new SVG-fill oracle returning null (12 cases), not contrast. Core2528 and33 other changed cases passed. Correct the oracle against the actual SVG structure, preserving expected original RGB values; then freeze a new head. B3 prepared at9628310, not run.
 - Prior B evidence worktree /private/tmp/taskbar-hero-ui-cxu3-b at2e1f83b retained; no listeners remain.
 - Merge lock released after cancelled attempt1 final checks. No UI feature push/PR/merge yet.
 - CXR2 next: old #257/c49421f has13 inherited failures (portal assertions, help-store fixture reset, boss-state timeout). Plan in cards/CXR2/PLAN.md.

@@ -1,0 +1,113 @@
+{
+  "head": "96283109b07ade8c26c6c182048043f8019680a4",
+  "pass": "cxu3-a3",
+  "pid": 79795,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T05:30:29.371214+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T05:30:37.563724+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T05:30:45.180514+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T05:30:45.288550+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T05:31:20.282509+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/web-units.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T05:32:02.962903+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a3/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/u1-tokens.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:32:11.175152+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/cxu3-a3/changed-1280x720.log"
+    }
+  ]
+}

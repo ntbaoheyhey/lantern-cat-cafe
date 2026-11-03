@@ -1,0 +1,12 @@
+{
+  "label": "self-graded (fresh pass)",
+  "head": "9628310",
+  "status": "FAIL",
+  "score": null,
+  "autoFails": [
+    "12 new browser preservation assertions returned null because the oracle searched rect/fill attributes; the existing SVG uses path/style.fill."
+  ],
+  "evidence": "reports/ui/logs/cxu3-a3/changed-1280x720.log",
+  "unchangedChecks": "2528 core cases and33 other changed browser executions pass. Full matrix not reached.",
+  "correction": "Target the actual existing SVG path/style, keep the same exact expected RGB values and4.5 text threshold."
+}
