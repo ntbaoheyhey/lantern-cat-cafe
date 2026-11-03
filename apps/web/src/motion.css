@@ -191,3 +191,6 @@
 .forge-craft-scroll { overflow-anchor: none; }
 
 @media (min-width: 961px) { .hud-level-badge.motion-cue { min-inline-size: 6ch; } }
+
+/* Fish can reach the representable maximum; keep its two lines inside the HUD chip. */
+@media (min-width: 961px) { .hud-gold .motion-number { inline-size: 11ch; } }
