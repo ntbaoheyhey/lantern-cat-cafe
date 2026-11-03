@@ -1,0 +1,938 @@
+diff --git a/apps/web/e2e/support/test.ts b/apps/web/e2e/support/test.ts
+index b5c3004..ee6cd31 100644
+--- a/apps/web/e2e/support/test.ts
++++ b/apps/web/e2e/support/test.ts
+@@ -22,7 +22,17 @@ export const test = base.extend<{ buildGuard: void }>({
+       // Its project and origin are still checked above. Check the first normal page.
+       const devParam = new URL(page.url()).searchParams.get('dev');
+       if (!checked && devParam !== 'arena' && devParam !== 'art-pilot') {
+-        await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
++        // Shared portals hide the painted background from assistive technology.
++        // Keep the rendered-heading check; inaccessible background requires an active modal.
++        const heading = page.getByRole('heading', { level: 1, name: 'Taskbar Hero', includeHidden: true });
++        await expect(heading).toBeVisible();
++        if (await heading.evaluate(el => Boolean(el.closest('[inert], [aria-hidden="true"]')))) {
++          await expect(page.getByRole('dialog')).toBeVisible();
++          await expect(page.locator('#root')).toHaveAttribute('inert', '');
++          await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
++        } else {
++          await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
++        }
+         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         checked = true;
+diff --git a/apps/web/e2e/ui/cxr2-dialogs.spec.ts b/apps/web/e2e/ui/cxr2-dialogs.spec.ts
+new file mode 100644
+index 0000000..afd3f9e
+--- /dev/null
++++ b/apps/web/e2e/ui/cxr2-dialogs.spec.ts
+@@ -0,0 +1,94 @@
++import { expect, test, type Page, type Locator } from '../support/test';
++import { readFileSync } from 'node:fs';
++import { resolve } from 'node:path';
++import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
++
++const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
++async function checkDialog(page: Page, dialog: Locator) {
++  await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
++  await expect(page.locator('#root')).toHaveAttribute('inert', '');
++  await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
++  expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
++  const box = await dialog.boundingBox(), size = page.viewportSize()!;
++  expect(box!.x).toBeGreaterThanOrEqual(0); expect(box!.y).toBeGreaterThanOrEqual(0);
++  expect(box!.x + box!.width).toBeLessThanOrEqual(size.width);
++  expect(box!.y + box!.height).toBeLessThanOrEqual(size.height);
++  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight && document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++}
++async function restored(page: Page) {
++  await expect(page.getByRole('dialog')).toHaveCount(0);
++  expect(await page.locator('#root').getAttribute('inert')).toBeNull();
++  expect(await page.locator('#root').getAttribute('aria-hidden')).toBeNull();
++}
++async function capture(page: Page, name: string) {
++  if (process.env.CXR2_SCREENSHOTS) await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, name + '.png') });
++}
++for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  for (const motion of ['no-preference', 'reduce'] as const) {
++    test.describe(`CXR2 ${size.width} ${motion}`, () => {
++      test.use({ viewport: size, reducedMotion: motion });
++      test('first-visit Help uses shared keyboard and background isolation', async ({ page }) => {
++        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
++        await page.goto('/#landing');
++        const dialog = page.getByRole('dialog', { name: 'How to play', exact: true });
++        await checkDialog(page, dialog);
++        await expect(dialog.getByRole('listitem')).toHaveCount(5);
++        await expect(dialog).toContainText('30 Yarn and 1 Moon Pearl');
++        await expect(dialog).not.toContainText('5 fights a day');
++        await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
++        await page.keyboard.press('Tab'); await expect(dialog.getByRole('button', { name: 'Close help' })).toBeFocused();
++        await page.keyboard.press('Shift+Tab'); await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
++        await capture(page, `help-${size.width}-${motion}`);
++        await page.keyboard.press('Escape'); await restored(page);
++        await expect(page.getByTestId('landing-start')).toBeEnabled();
++        await page.reload(); await expect(page.getByRole('dialog')).toHaveCount(0);
++        expect(errors).toEqual([]);
++      });
++      test('offline welcome and real boss chest retain actions, art and exclusive focus', async ({ page }) => {
++        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
++        const now = Date.UTC(2026, 10, 3, 12);
++        await page.clock.install({ time: now });
++        const save = mockV2SaveJson('bossReadyStrong', { nowMs: now - 3600_000, classId: 'warrior' });
++        // Seed a real prior visit as well as an old claim; the UI does not infer absence from a save alone.
++        await page.addInitScript(({ key, save, lastVisit }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); localStorage.setItem('taskbar-hero:v2-last-visit', String(lastVisit)); }, { key, save, lastVisit: now - 3600_000 });
++        await page.goto('/');
++        // The unchanged production loop claims on its normal30s tick.
++        await page.clock.fastForward(30_000);
++        const welcome = page.getByRole('dialog', { name: 'Welcome back!', exact: true });
++        await checkDialog(page, welcome);
++        await expect(welcome.getByRole('button')).toHaveCount(1);
++        await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
++        await page.keyboard.press('Tab');
++        const lootScroll = welcome.getByRole('region', { name: 'Scrollable offline loot' });
++        await expect(lootScroll).toBeFocused();
++        await page.keyboard.press('End');
++        await expect.poll(() => lootScroll.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
++        await page.keyboard.press('Home');
++        await page.keyboard.press('Tab'); await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
++        await expect(welcome.getByRole('heading', { name: 'Welcome back!', exact: true })).toBeInViewport();
++        await expect(welcome.locator('.welcome-back-rule')).toBeInViewport();
++        await expect(welcome.getByRole('button', { name: 'OK' })).toBeInViewport();
++        await capture(page, `welcome-${size.width}-${motion}`);
++        await welcome.getByRole('button', { name: 'OK' }).click(); await restored(page);
++        const railStyle = await page.getByTestId('nav-home').evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, border: getComputedStyle(el).borderTopWidth }));
++        expect(railStyle).toEqual({ radius: '0px', border: '2px' });
++        await page.getByRole('tab', { name: 'Map', exact: true }).click();
++        await page.getByRole('button', { name: 'Fight', exact: true }).click();
++        if (motion === 'no-preference') await page.getByRole('button', { name: 'Skip fight', exact: true }).click();
++        const chest = page.getByRole('dialog', { name: 'First clear chest!', exact: true });
++        await checkDialog(page, chest);
++        await expect(chest.locator('svg[data-backdrop="livingroom"]')).toHaveCount(1);
++        await expect(chest.getByRole('button')).toHaveCount(1);
++        await page.clock.resume();
++        if (await chest.getByRole('button', { name: 'Skip', exact: true }).isVisible()) await chest.getByRole('button', { name: 'Skip', exact: true }).click();
++        const collect = chest.getByRole('button', { name: 'Collect', exact: true });
++        await expect(collect).toBeVisible(); await expect(collect).toBeInViewport();
++        await page.keyboard.press('Shift+Tab'); await expect(collect).toBeFocused();
++        await capture(page, `chest-${size.width}-${motion}`);
++        await collect.click(); await restored(page);
++        await expect(page.getByTestId('nav-home')).toBeEnabled();
++        expect(errors).toEqual([]);
++      });
++    });
++  }
++}
+diff --git a/apps/web/e2e/v2/t2-player-loop.spec.ts b/apps/web/e2e/v2/t2-player-loop.spec.ts
+index e018e94..dfa80a8 100644
+--- a/apps/web/e2e/v2/t2-player-loop.spec.ts
++++ b/apps/web/e2e/v2/t2-player-loop.spec.ts
+@@ -96,7 +96,8 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
+   await expect(page.getByTestId('boss-key-hint')).toHaveCount(0);
+   await page.clock.resume();
+   await boss.getByRole('button', { name: 'Fight', exact: true }).click();
+-  const arena = page.getByRole('region', { name: 'Boss arena' });
++  // Reduced motion resolves immediately, so the chest makes its painted arena background inert.
++  const arena = page.getByRole('region', { name: 'Boss arena', includeHidden: reduced });
+   await expect(arena).toBeVisible();
+   if (!reduced) {
+     await expect(arena.locator('canvas')).toBeVisible();
+diff --git a/apps/web/src/layout/StageLayout.tsx b/apps/web/src/layout/StageLayout.tsx
+index d494548..407cd1a 100644
+--- a/apps/web/src/layout/StageLayout.tsx
++++ b/apps/web/src/layout/StageLayout.tsx
+@@ -768,7 +768,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
+         </nav>
+       )}
+ 
+-      <HowToPlay />
++      <HowToPlay mode="v2" />
+     </ScreenFrame>
+   );
+ }
+diff --git a/apps/web/src/layout/loot/ChestReveal.test.tsx b/apps/web/src/layout/loot/ChestReveal.test.tsx
+index fec8086..e18665b 100644
+--- a/apps/web/src/layout/loot/ChestReveal.test.tsx
++++ b/apps/web/src/layout/loot/ChestReveal.test.tsx
+@@ -145,7 +145,7 @@ describe('ChestReveal', () => {
+ 
+   it('first clear shows the gold chest (query data-icon="chestGoldOpen" after the open step)', () => {
+     const onDone = vi.fn();
+-    const { container } = render(
++    const { baseElement: container } = render(
+       <ChestReveal chest={SAMPLE_CHEST} firstClear={true} onDone={onDone} />,
+     );
+ 
+@@ -193,7 +193,7 @@ describe('ChestReveal', () => {
+ 
+   describe('V19c: Chapter room backdrop', () => {
+     it('with chapter 3 dialog contains exactly one svg[data-backdrop="bathroom"] with aria-hidden="true" and accessible name unchanged', () => {
+-      const { container } = render(
++      const { baseElement: container } = render(
+         <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={3} />,
+       );
+ 
+@@ -206,13 +206,13 @@ describe('ChestReveal', () => {
+       const dialog = screen.getByRole('dialog');
+       expect(dialog).toBeTruthy();
+       expect(dialog.getAttribute('aria-labelledby')).toBe(
+-        container.querySelector('.chest-reveal-title')?.id,
++        screen.getByRole('heading', { level: 2, name: 'Boss chest' }).id,
+       );
+       expect(screen.getByRole('heading', { level: 2, name: 'Boss chest' })).toBeTruthy();
+     });
+ 
+     it('without chapter there is no [data-backdrop]', () => {
+-      const { container } = render(
++      const { baseElement: container } = render(
+         <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} />,
+       );
+       expect(container.querySelector('[data-backdrop]')).toBeNull();
+@@ -221,7 +221,7 @@ describe('ChestReveal', () => {
+     it('for chapters 1-5 the backdrop id matches backdropFor(n).id', () => {
+       for (let ch = 1; ch <= 5; ch++) {
+         const expectedId = backdropFor(ch).id;
+-        const { container, unmount } = render(
++        const { baseElement: container, unmount } = render(
+           <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={ch} />,
+         );
+         const svg = container.querySelector('.chest-reveal-dialog svg[data-backdrop]');
+@@ -249,7 +249,9 @@ describe('ChestReveal', () => {
+ 
+       // Part 2: focus restored after pressing Escape
+       const onDone = vi.fn();
+-      render(<ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={onDone} />);
++      // Match StageLayout: onDone removes the controlled dialog before restoring focus.
++      const view = render(<ChestReveal chest={SAMPLE_CHEST} firstClear={false}
++        onDone={() => { onDone(); view.unmount(); }} />);
+       expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
+       fireEvent.keyDown(document, { key: 'Escape' });
+       expect(onDone).toHaveBeenCalledTimes(1);
+diff --git a/apps/web/src/layout/loot/ChestReveal.tsx b/apps/web/src/layout/loot/ChestReveal.tsx
+index 2e831cb..741f3b5 100644
+--- a/apps/web/src/layout/loot/ChestReveal.tsx
++++ b/apps/web/src/layout/loot/ChestReveal.tsx
+@@ -1,4 +1,4 @@
+-import { useCallback, useEffect, useId, useRef, useState } from 'react';
++import { useCallback, useEffect, useRef, useState } from 'react';
+ import type { LootV2, MaterialStacks } from '../../api/GameApiV2';
+ import { BackdropView } from '../../art/backdrops/BackdropView';
+ import { backdropFor } from '../../art/backdrops';
+@@ -6,6 +6,7 @@ import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
+ import { usePrefersReducedMotion } from '../../motion/reducedMotion';
+ import { LootSummary } from './LootSummary';
+ import { lootLines } from './lootLines';
++import { Modal } from '../../ui';
+ import './loot.css';
+ 
+ export interface ChestRevealProps {
+@@ -47,13 +48,8 @@ function getRevealedLoot(chest: LootV2, count: number): LootV2 {
+ 
+ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealProps) {
+   const reduced = usePrefersReducedMotion();
+-  const titleId = useId();
+-  const dialogRef = useRef<HTMLDivElement>(null);
+   const buttonRef = useRef<HTMLButtonElement>(null);
+   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+-  const priorFocused = useRef<HTMLElement | null>(
+-    typeof document !== 'undefined' ? (document.activeElement as HTMLElement | null) : null,
+-  );
+ 
+   const allLines = lootLines(chest);
+   const items = chest.items ?? [];
+@@ -63,12 +59,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+   const [isOpen, setIsOpen] = useState(reduced);
+   const [revealedCount, setRevealedCount] = useState(() => (reduced ? totalUnits : 0));
+ 
+-  const restoreFocus = useCallback(() => {
+-    if (priorFocused.current && document.contains(priorFocused.current)) {
+-      priorFocused.current.focus();
+-    }
+-  }, []);
+-
+   const clearTimer = useCallback(() => {
+     if (timerRef.current !== null) {
+       clearTimeout(timerRef.current);
+@@ -78,9 +68,8 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+ 
+   const handleDone = useCallback(() => {
+     clearTimer();
+-    restoreFocus();
+     onDone();
+-  }, [clearTimer, onDone, restoreFocus]);
++  }, [clearTimer, onDone]);
+ 
+   const isComplete = isOpen && revealedCount >= totalUnits;
+ 
+@@ -122,44 +111,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+     return () => clearTimer();
+   }, [clearTimer]);
+ 
+-  // Focus the action button on mount & restore focus on unmount
+-  useEffect(() => {
+-    buttonRef.current?.focus();
+-    return () => {
+-      restoreFocus();
+-    };
+-  }, [restoreFocus]);
+-
+-  // Keyboard navigation: Escape to done, Tab trap
+-  useEffect(() => {
+-    const onKeyDown = (e: KeyboardEvent) => {
+-      if (e.key === 'Escape') {
+-        e.preventDefault();
+-        handleDone();
+-        return;
+-      }
+-      if (e.key === 'Tab') {
+-        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+-          'button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+-        );
+-        if (!focusable || focusable.length === 0) return;
+-        const first = focusable[0]!;
+-        const last = focusable[focusable.length - 1]!;
+-
+-        if (e.shiftKey && document.activeElement === first) {
+-          e.preventDefault();
+-          last.focus();
+-        } else if (!e.shiftKey && document.activeElement === last) {
+-          e.preventDefault();
+-          first.focus();
+-        }
+-      }
+-    };
+-
+-    document.addEventListener('keydown', onKeyDown);
+-    return () => document.removeEventListener('keydown', onKeyDown);
+-  }, [handleDone]);
+-
+   const title = firstClear ? 'First clear chest!' : 'Boss chest';
+ 
+   let chestIconName: V2IconName;
+@@ -172,14 +123,9 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+   const revealedLoot = isOpen ? getRevealedLoot(chest, revealedCount) : null;
+ 
+   return (
+-    <div className="loot-backdrop">
+-      <div
+-        ref={dialogRef}
+-        role="dialog"
+-        aria-modal="true"
+-        aria-labelledby={titleId}
+-        className="loot-dialog chest-reveal-dialog"
+-      >
++    <Modal open title={title} onClose={handleDone} initialFocusRef={buttonRef}
++      className="loot-dialog chest-reveal-dialog" backdropClassName="loot-backdrop"
++      closeOnBackdrop={false} showCloseButton={false}>
+         {chapter !== undefined && (
+           <div className="chest-reveal-backdrop-frame" aria-hidden="true">
+             <BackdropView art={backdropFor(chapter)} className="chest-reveal-backdrop-art" />
+@@ -187,9 +133,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+           </div>
+         )}
+         <div className="chest-reveal-header">
+-          <h2 id={titleId} className="chest-reveal-title">
+-            {title}
+-          </h2>
+           <div className="chest-reveal-icon-wrap">
+             <V2PixelIcon name={chestIconName} size={4} title={title} />
+           </div>
+@@ -209,7 +152,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
+             {isComplete ? 'Collect' : 'Skip'}
+           </button>
+         </div>
+-      </div>
+-    </div>
++    </Modal>
+   );
+ }
+diff --git a/apps/web/src/layout/loot/WelcomeBack.test.tsx b/apps/web/src/layout/loot/WelcomeBack.test.tsx
+index 988e5c7..5d68346 100644
+--- a/apps/web/src/layout/loot/WelcomeBack.test.tsx
++++ b/apps/web/src/layout/loot/WelcomeBack.test.tsx
+@@ -121,7 +121,9 @@ describe('WelcomeBack', () => {
+ 
+     // Test 2: focus restore on Escape
+     const onClose = vi.fn();
+-    render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600} onClose={onClose} />);
++    // Match the real owner: closing unmounts the controlled dialog before focus returns.
++    const view = render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600}
++      onClose={() => { onClose(); view.unmount(); }} />);
+     expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
+     fireEvent.keyDown(document, { key: 'Escape' });
+     expect(onClose).toHaveBeenCalledTimes(1);
+diff --git a/apps/web/src/layout/loot/WelcomeBack.tsx b/apps/web/src/layout/loot/WelcomeBack.tsx
+index 7e71db3..c0711a1 100644
+--- a/apps/web/src/layout/loot/WelcomeBack.tsx
++++ b/apps/web/src/layout/loot/WelcomeBack.tsx
+@@ -1,8 +1,9 @@
+-import { useCallback, useEffect, useId, useRef } from 'react';
++import { useRef } from 'react';
+ import { CONFIG } from '@taskbar-hero/game-rules';
+ import type { GainsV2 } from '../../api/GameApiV2';
+ import { LootSummary } from './LootSummary';
+ import { isEmptyLoot } from './lootLines';
++import { Modal } from '../../ui';
+ import './loot.css';
+ 
+ export interface WelcomeBackProps {
+@@ -33,80 +34,12 @@ export function formatAwayTime(awaySeconds: number, capSeconds = CONFIG.idle.off
+ 
+ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
+   const isVisible = !isEmptyLoot(gains) && awaySeconds >= CONFIG.idle.onlineWindowSeconds;
+-  const titleId = useId();
+-  const dialogRef = useRef<HTMLDivElement>(null);
+   const buttonRef = useRef<HTMLButtonElement>(null);
+-  const priorFocused = useRef<HTMLElement | null>(
+-    typeof document !== 'undefined' ? (document.activeElement as HTMLElement | null) : null,
+-  );
+-
+-  const restoreFocus = useCallback(() => {
+-    if (priorFocused.current && document.contains(priorFocused.current)) {
+-      priorFocused.current.focus();
+-    }
+-  }, []);
+-
+-  const handleClose = useCallback(() => {
+-    restoreFocus();
+-    onClose();
+-  }, [onClose, restoreFocus]);
+-
+-  // Focus the OK button on open & restore focus on unmount
+-  useEffect(() => {
+-    if (!isVisible) return;
+-    buttonRef.current?.focus();
+-    return () => {
+-      restoreFocus();
+-    };
+-  }, [isVisible, restoreFocus]);
+-
+-  // Escape to close & Tab trap
+-  useEffect(() => {
+-    if (!isVisible) return;
+-    const onKeyDown = (e: KeyboardEvent) => {
+-      if (e.key === 'Escape') {
+-        e.preventDefault();
+-        handleClose();
+-        return;
+-      }
+-      if (e.key === 'Tab') {
+-        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+-          'button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+-        );
+-        if (!focusable || focusable.length === 0) return;
+-        const first = focusable[0]!;
+-        const last = focusable[focusable.length - 1]!;
+-
+-        if (e.shiftKey && document.activeElement === first) {
+-          e.preventDefault();
+-          last.focus();
+-        } else if (!e.shiftKey && document.activeElement === last) {
+-          e.preventDefault();
+-          first.focus();
+-        }
+-      }
+-    };
+-
+-    document.addEventListener('keydown', onKeyDown);
+-    return () => document.removeEventListener('keydown', onKeyDown);
+-  }, [isVisible, handleClose]);
+-
+-  if (!isVisible) {
+-    return null;
+-  }
+ 
+   return (
+-    <div className="loot-backdrop">
+-      <div
+-        ref={dialogRef}
+-        role="dialog"
+-        aria-modal="true"
+-        aria-labelledby={titleId}
+-        className="loot-dialog welcome-back-dialog"
+-      >
+-        <h2 id={titleId} className="welcome-back-title">
+-          Welcome back!
+-        </h2>
++    <Modal open={isVisible} title="Welcome back!" onClose={onClose} initialFocusRef={buttonRef}
++      className="loot-dialog welcome-back-dialog" backdropClassName="loot-backdrop"
++      closeOnBackdrop={false} showCloseButton={false}>
+         <p className="welcome-back-duration">
+           Your cat kept going for {formatAwayTime(awaySeconds)}.
+         </p>
+@@ -114,19 +47,20 @@ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
+         <p className="welcome-back-rule">
+           The first {CONFIG.idle.onlineWindowSeconds / 60} minutes count in full; after that the cat earns at {CONFIG.idle.offlineEfficiency === 0.5 ? 'half speed' : `${CONFIG.idle.offlineEfficiency * 100}% speed`}, up to {CONFIG.idle.offlineCapSeconds / 3600} hours.
+         </p>
+-        <LootSummary loot={gains} heading="While you were away" headingLevel={3} />
++        <div className="welcome-back-summary" role="region" aria-label="Scrollable offline loot" tabIndex={0}>
++          <LootSummary loot={gains} heading="While you were away" headingLevel={3} />
++        </div>
+ 
+         <div className="welcome-back-actions">
+           <button
+             ref={buttonRef}
+             type="button"
+             className="pixel-btn welcome-back-btn"
+-            onClick={handleClose}
++            onClick={onClose}
+           >
+             OK
+           </button>
+         </div>
+-      </div>
+-    </div>
++    </Modal>
+   );
+ }
+diff --git a/apps/web/src/layout/loot/loot.css b/apps/web/src/layout/loot/loot.css
+index a440609..545ef36 100644
+--- a/apps/web/src/layout/loot/loot.css
++++ b/apps/web/src/layout/loot/loot.css
+@@ -180,7 +180,7 @@
+ .loot-backdrop {
+   position: fixed;
+   inset: 0;
+-  z-index: 100;
++  z-index: 1000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+@@ -258,7 +258,7 @@
+   text-align: center;
+ }
+ 
+-.chest-reveal-title {
++.chest-reveal-dialog .ui-modal-heading h2 {
+   margin: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: 1.4rem;
+@@ -323,7 +323,7 @@
+ }
+ 
+ /* Welcome back dialog specifics */
+-.welcome-back-title {
++.welcome-back-dialog .ui-modal-heading h2 {
+   margin: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: 1.4rem;
+@@ -390,10 +390,10 @@
+   color: #8c4a00;
+ }
+ 
+-[data-theme='light'] .chest-reveal-title,
+-:root:not([data-theme='dark']) .chest-reveal-title,
+-[data-theme='light'] .welcome-back-title,
+-:root:not([data-theme='dark']) .welcome-back-title {
++[data-theme='light'] .chest-reveal-dialog .ui-modal-heading h2,
++:root:not([data-theme='dark']) .chest-reveal-dialog .ui-modal-heading h2,
++[data-theme='light'] .welcome-back-dialog .ui-modal-heading h2,
++:root:not([data-theme='dark']) .welcome-back-dialog .ui-modal-heading h2 {
+   color: #8c4a00;
+   text-shadow: none;
+ }
+@@ -452,3 +452,14 @@
+   background: #f4eee6;
+   border-color: #8c78a0;
+ }
++
++/* Shared dialog heading stays above the existing decorative chapter backdrop. */
++.chest-reveal-dialog .ui-modal-heading { position: relative; z-index: 1; }
++
++/* Long offline loot scrolls within its summary so focus never hides the title/rule/actions. */
++.ui-modal.welcome-back-dialog { overflow: hidden; }
++.welcome-back-dialog > .welcome-back-summary { min-height: 0; overflow-y: auto; flex: 1 1 auto; }
++.welcome-back-dialog > .ui-modal-heading,
++.welcome-back-dialog > .welcome-back-duration,
++.welcome-back-dialog > .welcome-back-rule,
++.welcome-back-dialog > .welcome-back-actions { flex: 0 0 auto; }
+diff --git a/apps/web/src/onboarding/HowToPlay.test.tsx b/apps/web/src/onboarding/HowToPlay.test.tsx
+index cbd513f..28cf889 100644
+--- a/apps/web/src/onboarding/HowToPlay.test.tsx
++++ b/apps/web/src/onboarding/HowToPlay.test.tsx
+@@ -229,3 +229,13 @@ describe('keyboard focus trapping inside dialog', () => {
+     expect(document.activeElement).toBe(startBtn);
+   });
+ });
++
++it('v2 first-visit guidance matches current key, recipe and bag rules without classic claims', () => {
++  render(<HowToPlay mode="v2" />);
++  expect(screen.getAllByRole('listitem')).toHaveLength(5);
++  expect(screen.getByText(/first claim each day grants 1 Cat Key/)).toBeTruthy();
++  expect(screen.getByText(/A boss win spends 1; a loss keeps your key/)).toBeTruthy();
++  expect(screen.getByText(/capacity 200/)).toBeTruthy();
++  expect(screen.getByText(/30 Yarn and 1 Moon Pearl, up to 1 per day/)).toBeTruthy();
++  expect(screen.queryByText(/5 fights a day|30 Yarn and 1 Cat Key|gear upgrades in Inventory/)).toBeNull();
++});
+diff --git a/apps/web/src/onboarding/HowToPlay.tsx b/apps/web/src/onboarding/HowToPlay.tsx
+index 17451e2..57d115b 100644
+--- a/apps/web/src/onboarding/HowToPlay.tsx
++++ b/apps/web/src/onboarding/HowToPlay.tsx
+@@ -1,9 +1,10 @@
+-import { CONFIG } from '@taskbar-hero/game-rules';
+-import { useEffect, useRef, useSyncExternalStore } from 'react';
++import { CONFIG, v2 } from '@taskbar-hero/game-rules';
++import { useLayoutEffect, useRef, useSyncExternalStore } from 'react';
+ import type { IconName } from '../art/pixelIcons';
+ import { PixelIcon } from '../art/pixelIcons';
+ import { LABELS } from '../theme/labels';
+ import { closeHelp, getHelpOpen, openHelp, subscribeHelp } from './helpStore';
++import { Modal } from '../ui';
+ import './onboarding.css';
+ 
+ const hours = CONFIG.idle.offlineCapSeconds / 3600;
+@@ -36,6 +37,15 @@ export const STEPS: StepItem[] = [
+   },
+ ];
+ 
++/** Initial v2 guidance uses the same current rules as the in-game Help screen. */
++export const V2_STEPS: StepItem[] = [
++  { icon: 'paw', text: 'Choose a starter class. Mochi earns Fish, Yarn, XP and materials while exploring.' },
++  { icon: 'sword', text: `Your first claim each day grants ${v2.V2_CONFIG.idle.dailyKeys} Cat Key. A boss win spends ${v2.V2_CONFIG.boss.keyCost}; a loss keeps your key.` },
++  { icon: 'bag', text: `Equip drops in Bag (capacity ${v2.V2_CONFIG.bag.limit}); craft or salvage gear in Forge.` },
++  { icon: 'flask', text: `Forge a Relic with ${v2.RELIC_RECIPE.materials.yarn ?? 0} Yarn and ${v2.RELIC_RECIPE.materials.moonPearl ?? 0} Moon Pearl, up to ${v2.RELIC_RECIPE.perDay} per day. Minting uses free Fuji test AVAX.` },
++  { icon: 'shop', text: 'Only minted Relics can be traded in Market. Ordinary gear stays in your game.' },
++];
++
+ let lastOpener: HTMLElement | null = null;
+ 
+ export function setOpener(el: HTMLElement | null): void {
+@@ -43,69 +53,25 @@ export function setOpener(el: HTMLElement | null): void {
+ }
+ 
+ /** The How to play dialog. Opens on the first visit and from the "?" button. */
+-export function HowToPlay() {
++export function HowToPlay({ mode = 'classic' }: { mode?: 'classic' | 'v2' } = {}) {
++  const steps = mode === 'v2' ? V2_STEPS : STEPS;
+   const open = useSyncExternalStore(subscribeHelp, getHelpOpen);
+-  const dialog = useRef<HTMLDivElement>(null);
++  const returnFocus = useRef<HTMLElement | null>(null);
+   const start = useRef<HTMLButtonElement>(null);
+ 
+-  useEffect(() => {
++  // Resolve the first-visit menu after the DOM commits. Reopens use the actual Help button.
++  useLayoutEffect(() => {
+     if (!open) return;
+-    const active = document.activeElement as HTMLElement | null;
+-    const opener = lastOpener ?? (active && active !== document.body && document.contains(active) ? active : null);
++    returnFocus.current = lastOpener ?? document.querySelector<HTMLElement>('button.toggle, [aria-controls="game-panel"]');
+     lastOpener = null;
+-
+-    start.current?.focus();
+-    const onKey = (e: KeyboardEvent) => {
+-      if (e.key === 'Escape') {
+-        e.preventDefault();
+-        closeHelp();
+-      } else if (e.key === 'Tab') {
+-        // Keep focus inside the dialog.
+-        const items = dialog.current?.querySelectorAll<HTMLElement>('button');
+-        if (!items?.length) return;
+-        const first = items[0]!;
+-        const last = items[items.length - 1]!;
+-        if (e.shiftKey && document.activeElement === first) {
+-          e.preventDefault();
+-          last.focus();
+-        } else if (!e.shiftKey && document.activeElement === last) {
+-          e.preventDefault();
+-          first.focus();
+-        }
+-      }
+-    };
+-    document.addEventListener('keydown', onKey);
+-    return () => {
+-      document.removeEventListener('keydown', onKey);
+-      const focusTarget = () => {
+-        if (opener && document.contains(opener) && opener !== document.body) {
+-          opener.focus();
+-        } else {
+-          const toggle = document.querySelector<HTMLElement>('button.toggle, [aria-controls="game-panel"]');
+-          toggle?.focus();
+-        }
+-      };
+-      focusTarget();
+-      queueMicrotask?.(focusTarget);
+-    };
+   }, [open]);
+ 
+-  if (!open) return null;
+   return (
+-    <div className="help-backdrop" onClick={(e) => e.target === e.currentTarget && closeHelp()}>
+-      <div
+-        ref={dialog}
+-        className="help-dialog pixel-card fx-pop"
+-        role="dialog"
+-        aria-modal="true"
+-        aria-labelledby="help-title"
+-      >
+-        <button type="button" className="help-x" aria-label="Close help" onClick={closeHelp}>
+-          ×
+-        </button>
+-        <h2 id="help-title">How to play</h2>
++    <Modal open={open} title="How to play" onClose={closeHelp} initialFocusRef={start}
++      returnFocusRef={returnFocus} className="help-dialog pixel-card fx-pop"
++      backdropClassName="help-backdrop" closeLabel="Close help">
+         <ol className="help-steps">
+-          {STEPS.map((step, i) => (
++          {steps.map((step, i) => (
+             <li key={step.icon} className="help-step-item">
+               <div className="help-step-lead">
+                 <span className="help-step-badge" aria-hidden="true">
+@@ -126,8 +92,7 @@ export function HowToPlay() {
+         <button ref={start} type="button" className="help-start pixel-btn" onClick={closeHelp}>
+           Start playing
+         </button>
+-      </div>
+-    </div>
++    </Modal>
+   );
+ }
+ 
+diff --git a/apps/web/src/onboarding/onboarding.css b/apps/web/src/onboarding/onboarding.css
+index b01890e..e979630 100644
+--- a/apps/web/src/onboarding/onboarding.css
++++ b/apps/web/src/onboarding/onboarding.css
+@@ -10,7 +10,7 @@
+ .help-backdrop {
+   position: fixed;
+   inset: 0;
+-  z-index: 20;
++  z-index: 1000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+@@ -116,27 +116,6 @@
+   line-height: 1.4;
+ }
+ 
+-.help-x {
+-  position: absolute;
+-  top: 8px;
+-  right: 8px;
+-  width: 32px;
+-  height: 32px;
+-  font-size: 1.3rem;
+-  line-height: 1;
+-  color: var(--muted);
+-  background: transparent;
+-  border: 0;
+-  border-radius: 4px;
+-  cursor: pointer;
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-}
+-.help-x:hover {
+-  color: var(--text);
+-}
+-
+ .help-start, .next-hint-btn, .help-btn { font: inherit; cursor: pointer; }
+ .help-start {
+   min-height: 40px;
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 7538bfd..2fe0d66 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -22,7 +22,7 @@
+   min-width: var(--rail-w, 92px);
+   max-width: var(--rail-w, 92px);
+   height: 100%;
+-  background: var(--surface, #2a1f36);
++  background: var(--bg, #120b19);
+   border-right: 2px solid #000;
+   display: flex;
+   flex-direction: column;
+@@ -51,7 +51,7 @@
+   border: none;
+   padding: 4px;
+   cursor: pointer;
+-  border-radius: 4px;
++  border-radius: 0;
+ }
+ .rail-logo-btn:focus-visible {
+   outline: 2px solid var(--focus, #ffd75e);
+@@ -79,7 +79,7 @@
+   background: transparent;
+   color: var(--muted, #c3aed0);
+   border: 1px solid transparent;
+-  border-radius: 4px;
++  border-radius: 0;
+   cursor: pointer;
+   font-family: var(--font-display, monospace);
+   font-size: 11px;
+@@ -106,9 +106,9 @@
+ .rail-item.active,
+ .rail-item[aria-current='page'],
+ .rail-item[aria-selected='true'] {
+-  background: var(--surface-2, #3a2c4a);
++  background: var(--surface, #2a1f36);
+   color: var(--accent, #ffb86b);
+-  border: 1px solid var(--border, #72578d);
++  border: 2px solid var(--border, #72578d);
+   box-shadow: 0 2px 0 #000;
+ }
+ 
+@@ -142,22 +142,22 @@
+   align-items: center;
+   gap: 6px;
+   padding: 4px 8px;
+-  background: rgba(0, 0, 0, 0.4);
++  background: var(--good, #6be08a);
+   border: 1px solid var(--border, #72578d);
+   font-family: var(--font-num, monospace);
+   font-size: 11px;
+   font-weight: 700;
+-  color: var(--muted, #c3aed0);
++  color: var(--bg, #120b19);
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
+ }
+ 
+-.rail-fuji-dot {
++.rail-fuji-badge .rail-fuji-dot {
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   background: var(--good, #6be08a);
+-  box-shadow: 0 0 4px var(--good, #6be08a);
++  box-shadow: none;
+ }
+ 
+ /* Shell Body (HUD + Screen) */
+diff --git a/apps/web/src/ui/Modal.tsx b/apps/web/src/ui/Modal.tsx
+index 00d7378..9091e71 100644
+--- a/apps/web/src/ui/Modal.tsx
++++ b/apps/web/src/ui/Modal.tsx
+@@ -9,6 +9,11 @@ export interface ModalProps {
+   initialFocusRef?: RefObject<HTMLElement | null>;
+   returnFocusRef?: RefObject<HTMLElement | null>;
+   description?: string;
++  className?: string;
++  backdropClassName?: string;
++  closeLabel?: string;
++  showCloseButton?: boolean;
++  closeOnBackdrop?: boolean;
+ }
+ 
+ const stack: HTMLElement[] = [];
+@@ -45,7 +50,8 @@ function focusable(dialog: HTMLElement): HTMLElement[] {
+ }
+ 
+ /** Controlled, portalled dialog. Escape/backdrop close; background is inert until cleanup. */
+-export function Modal({ open, title, description, children, onClose, initialFocusRef, returnFocusRef }: ModalProps) {
++export function Modal({ open, title, description, children, onClose, initialFocusRef, returnFocusRef,
++  className = '', backdropClassName = '', closeLabel, showCloseButton = true, closeOnBackdrop = true }: ModalProps) {
+   const id = useId();
+   const dialog = useRef<HTMLDivElement>(null);
+   const backdrop = useRef<HTMLDivElement>(null);
+@@ -87,7 +93,8 @@ export function Modal({ open, title, description, children, onClose, initialFocu
+         if (opener?.isConnected && remaining.contains(opener)) opener.focus();
+         else if (!remaining.contains(document.activeElement)) (focusable(remaining)[0] ?? remaining).focus();
+       } else {
+-        const target = opener?.isConnected ? opener : firstOpener;
++        const preferred = returnFocusRef?.current;
++        const target = preferred?.isConnected ? preferred : opener?.isConnected ? opener : firstOpener;
+         firstOpener = null;
+         if (target?.isConnected) target.focus();
+       }
+@@ -95,11 +102,12 @@ export function Modal({ open, title, description, children, onClose, initialFocu
+   }, [open, initialFocusRef, returnFocusRef]);
+   if (!open) return null;
+   return createPortal(
+-    <div className="ui-modal-backdrop" ref={backdrop} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
+-      <div className="ui-modal" ref={dialog} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}
++    <div className={`ui-modal-backdrop ${backdropClassName}`.trim()} ref={backdrop}
++      onClick={event => { if (closeOnBackdrop && event.target === event.currentTarget) onClose(); }}>
++      <div className={`ui-modal ${className}`.trim()} ref={dialog} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}
+         aria-describedby={description ? `${id}-description` : undefined} tabIndex={-1}>
+         <div className="ui-modal-heading"><h2 id={`${id}-title`}>{title}</h2>
+-          <button type="button" className="ui-modal-close" aria-label={`Close ${title}`} onClick={onClose}>×</button>
++          {showCloseButton && <button type="button" className="ui-modal-close" aria-label={closeLabel ?? `Close ${title}`} onClick={onClose}>×</button>}
+         </div>
+         {description && <p id={`${id}-description`}>{description}</p>}
+         {children}
+diff --git a/apps/web/src/ui/index.ts b/apps/web/src/ui/index.ts
+index c833c31..fc80d88 100644
+--- a/apps/web/src/ui/index.ts
++++ b/apps/web/src/ui/index.ts
+@@ -1,6 +1,8 @@
+ /**
+  * Shared UI API (CXU4): import components and their typed props from this module.
+  * Modal: controlled open/title/onClose/children, optional description and focus refs.
++ * className/backdropClassName preserve caller presentation; closeLabel customizes naming.
++ * showCloseButton/closeOnBackdrop default true; loot uses false to keep its existing actions.
+  * Portals to body; traps focus, makes background inert, closes on Escape/backdrop,
+  * restores opener on close/unmount. ConfirmModal adds confirmLabel/onConfirm,
+  * confirmDisabled/busy; starts on Cancel. Owners handle async results and closing.
+diff --git a/apps/web/src/ui/legacy-dialogs.test.tsx b/apps/web/src/ui/legacy-dialogs.test.tsx
+new file mode 100644
+index 0000000..5db4811
+--- /dev/null
++++ b/apps/web/src/ui/legacy-dialogs.test.tsx
+@@ -0,0 +1,69 @@
++import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
++import { useState } from 'react';
++import { afterEach, expect, it, vi } from 'vitest';
++import { HowToPlay } from '../onboarding/HowToPlay';
++import { resetHelpForTests } from '../onboarding/helpStore';
++import { ChestReveal } from '../layout/loot/ChestReveal';
++import { WelcomeBack } from '../layout/loot/WelcomeBack';
++import type { GainsV2, LootV2 } from '../api/GameApiV2';
++
++const loot: LootV2 = { fish: 3, yarn: 2, keys: 0, materials: {}, items: [], autoSalvaged: [] };
++const gains: GainsV2 = { ...loot, xp: 4, levelsGained: 0 };
++afterEach(() => { cleanup(); vi.useRealTimers(); localStorage.clear(); });
++
++it('all migrated dialogs share one stack; Escape closes only the top and restores access in order', () => {
++  vi.useFakeTimers();
++  localStorage.removeItem('taskbar-hero.howToPlaySeen'); act(() => resetHelpForTests());
++  const page = document.createElement('button'); page.textContent = 'Page'; document.body.append(page); page.focus();
++  const chestDone = vi.fn(), welcomeDone = vi.fn();
++  function Stack() {
++    const [welcome, setWelcome] = useState(true), [chest, setChest] = useState(true);
++    return <><HowToPlay />
++      {welcome && <WelcomeBack gains={gains} awaySeconds={3600} onClose={() => { welcomeDone(); setWelcome(false); }} />}
++      {chest && <ChestReveal chest={loot} firstClear={false} onDone={() => { chestDone(); setChest(false); }} />}
++    </>;
++  }
++  const view = render(<Stack />);
++  try {
++    expect(screen.getAllByRole('dialog', { hidden: true })).toHaveLength(3);
++    expect(screen.getAllByRole('dialog')).toHaveLength(1);
++    expect(screen.getByRole('dialog', { name: 'Boss chest' }).closest('.ui-modal-backdrop')).not.toBeNull();
++    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
++    expect(page.hasAttribute('inert')).toBe(true);
++    page.focus(); expect(screen.getByRole('dialog').contains(document.activeElement)).toBe(true);
++    fireEvent.click(document.querySelectorAll('.loot-backdrop')[1]!);
++    expect(chestDone).not.toHaveBeenCalled();
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(chestDone).toHaveBeenCalledTimes(1); expect(welcomeDone).not.toHaveBeenCalled();
++    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
++    expect(page.hasAttribute('inert')).toBe(true);
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(welcomeDone).toHaveBeenCalledTimes(1);
++    expect(screen.getByRole('dialog', { name: 'How to play' }).contains(document.activeElement)).toBe(true);
++    expect(page.hasAttribute('inert')).toBe(true);
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(screen.queryByRole('dialog')).toBeNull();
++    expect(page.hasAttribute('inert')).toBe(false); expect(page.hasAttribute('aria-hidden')).toBe(false);
++    expect(document.activeElement).toBe(page);
++    act(() => vi.advanceTimersByTime(5000)); expect(chestDone).toHaveBeenCalledTimes(1);
++  } finally { view.unmount(); page.remove(); }
++});
++
++it('hiding an older loot dialog keeps the newer one active and preserves original background attributes', () => {
++  const page = document.createElement('button'); document.body.append(page); page.focus();
++  const prior = document.createElement('div'); prior.setAttribute('inert', ''); prior.setAttribute('aria-hidden', 'true'); document.body.append(prior);
++  const view = (welcome: boolean, chest: boolean) => <>
++    {welcome && <WelcomeBack gains={gains} awaySeconds={3600} onClose={() => {}} />}
++    {chest && <ChestReveal chest={loot} firstClear onDone={() => {}} />}
++  </>;
++  const mounted = render(view(true, false));
++  try {
++    mounted.rerender(view(true, true)); mounted.rerender(view(false, true));
++    expect(screen.getAllByRole('dialog')).toHaveLength(1);
++    expect(screen.getByRole('dialog', { name: 'First clear chest!' }).contains(document.activeElement)).toBe(true);
++    expect(page.hasAttribute('inert')).toBe(true);
++    mounted.rerender(view(false, false));
++    expect(document.activeElement).toBe(page); expect(page.hasAttribute('inert')).toBe(false);
++    expect(prior.hasAttribute('inert')).toBe(true); expect(prior.getAttribute('aria-hidden')).toBe('true');
++  } finally { mounted.unmount(); page.remove(); prior.remove(); }
++});

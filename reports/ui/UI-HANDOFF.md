@@ -10,8 +10,8 @@
 - Attempt 1 head 2e1f83b: 2512 core passes; full330×2, changed57×2 per pass, resize20/20 per pass, audit18 views per pass all pass.
 - Attempt 1 provisional A94/B94 WITHDRAWN before push/merge: removed embedded Market CSS data-URI art found in final review. Evidence retained in reports/ui/cards/CXU3/attempt-1/ and logs/cxu3-{a,b}.
 - Repair 16f940f restores the exact original icon and asserts its computed CSS on both empty states. Scope checker now checks embedded CSS art too.
-- Fresh A2 detached PID70000, reports/ui/logs/cxu3-a2-driver.log; ports5310–5313; full matrix scheduled once on exact16f940f.
-- Fresh B2 prepared /private/tmp/taskbar-hero-ui-cxu3-b2 at16f940f; dependencies installing; will use5320–5323.
+- Fresh A2 PASS94 on16f940f: core2512/full330×2/changed21×2/resize20 of20/audit18 clean.
+- Fresh B2 tests-first PID76192 active in /private/tmp/taskbar-hero-ui-cxu3-b2 on16f940f; ports5320–5323.
 - Prior B evidence worktree /private/tmp/taskbar-hero-ui-cxu3-b at2e1f83b retained; no listeners remain.
 - Merge lock released after cancelled attempt1 final checks. No UI feature push/PR/merge yet.
 - CXR2 next: old #257/c49421f has13 inherited failures (portal assertions, help-store fixture reset, boss-state timeout). Plan in cards/CXR2/PLAN.md.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Read-only enforcement of this UI session's path and asset contract."""
 import json
+import re
 import subprocess
 import sys
 
@@ -27,6 +28,11 @@ for status, path in changes:
         failures.append({'path': path, 'reason': 'existing art must remain untouched'})
     if path.lower().endswith(('.png', '.svg', '.jpg', '.jpeg', '.gif', '.webp')) and status != 'A':
         failures.append({'path': path, 'reason': 'existing image cannot be replaced or removed'})
+    if path.endswith('.css') and status == 'M':
+        ancestor = git('merge-base', base, 'HEAD').strip()
+        embedded = lambda text: set(re.findall(r'url\("(data:image/.*?)"\)', text))
+        if embedded(git('show', ancestor + ':' + path)) - embedded(git('show', 'HEAD:' + path)):
+            failures.append({'path': path, 'reason': 'original embedded CSS image was removed'})
 for row in git('log', '--format=%H%x09%an%x09%ae%x09%s', base + '..HEAD').splitlines():
     sha, name, email, subject = row.split('\t', 3)
     if name != 'ntbaoheyhey' or email != '108352255+ntbaoheyhey@users.noreply.github.com' or not subject.endswith(' [skip ci]'):

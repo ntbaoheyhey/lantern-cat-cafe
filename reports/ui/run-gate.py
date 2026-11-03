@@ -13,6 +13,7 @@ p = argparse.ArgumentParser()
 p.add_argument('--pass-name', required=True)
 p.add_argument('--port', type=int, required=True)
 p.add_argument('--full', action='store_true')
+p.add_argument('--release', action='store_true', help='Lock/fresh-main subset: typecheck, lint, build, changed specs at both sizes.')
 p.add_argument('--specs', nargs='+', default=['e2e/ui/cxu3-forge.spec.ts', 'e2e/ui/cxu3-market.spec.ts', 'e2e/layout/character-bag.spec.ts', 'e2e/ui/merged-redesign.spec.ts'])
 a = p.parse_args()
 root = Path.cwd()
@@ -43,18 +44,20 @@ def run(label, command, cwd=root, ports=False):
 
 run('typecheck', pnpm + ['typecheck'])
 run('lint', pnpm + ['lint'])
-run('scripts', ['node', '--test', *map(str, sorted(Path('scripts').glob('*.test.mjs')))])
-run('packages', pnpm + ['--filter', '!@taskbar-hero/web', '-r', '--workspace-concurrency=1', 'test'])
-run('web-units', pnpm + ['exec', 'vitest', 'run', '--maxWorkers=2'], root / 'apps/web')
+if not a.release:
+    run('scripts', ['node', '--test', *map(str, sorted(Path('scripts').glob('*.test.mjs')))])
+    run('packages', pnpm + ['--filter', '!@taskbar-hero/web', '-r', '--workspace-concurrency=1', 'test'])
+    run('web-units', pnpm + ['exec', 'vitest', 'run', '--maxWorkers=2'], root / 'apps/web')
 run('build', pnpm + ['build'])
 for size in ['1280x720', '1600x900']:
     env['E2E_VIEWPORT'] = size
-    run('changed-' + size, pnpm + ['exec', 'playwright', 'test', *a.specs, '--repeat-each=3', '--workers=2', '--retries=0', '--reporter=line'], root / 'apps/web', True)
+    run('changed-' + size, pnpm + ['exec', 'playwright', 'test', *a.specs, '--repeat-each=' + ('1' if a.release else '3'), '--workers=2', '--retries=0', '--reporter=line'], root / 'apps/web', True)
 if a.full:
     for size in ['1280x720', '1600x900']:
         env['E2E_VIEWPORT'] = size
         run('full-' + size, pnpm + ['exec', 'playwright', 'test', '--workers=2', '--retries=0', '--reporter=line'], root / 'apps/web', True)
-for size in ['1280x720', '1600x900']:
-    env['E2E_VIEWPORT'] = size
-    run('resize-five-' + size, pnpm + ['exec', 'playwright', 'test', 'e2e/layout/resize-burst.spec.ts', '--repeat-each=5', '--workers=2', '--retries=0', '--reporter=line'], root / 'apps/web', True)
+if not a.release:
+    for size in ['1280x720', '1600x900']:
+        env['E2E_VIEWPORT'] = size
+        run('resize-five-' + size, pnpm + ['exec', 'playwright', 'test', 'e2e/layout/resize-burst.spec.ts', '--repeat-each=5', '--workers=2', '--retries=0', '--reporter=line'], root / 'apps/web', True)
 print('GATE COMMANDS PASS; human diff/visual review and scope checks still required.', flush=True)

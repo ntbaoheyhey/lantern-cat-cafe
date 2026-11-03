@@ -7,3 +7,9 @@
 - Stress Market with unknown long token IDs and maximum bigint quantities; ensure contained wrapping and truthful loading states.
 - Keep screenshots/ui-2026-11-03/cxu3-a-audit as before evidence; capture missing landing/class/shared states on the merged base.
 - CXR2 13 inherited failures are acknowledged, not waived. Full A/B gate remains mandatory.
+
+## Verified before-state findings
+- HIGH: offline WelcomeBack with a one-hour strong fixture grows above the 1280 viewport; heading and duration are offscreen while the OK button receives focus. The old dialog lacks a bounded keyboard-scroll region.
+- MEDIUM: WelcomeBack and ChestReveal use pale fallback surfaces inside the dark desktop app; shared modal tokens need to apply consistently at both desktop sizes.
+- HIGH: first-visit v2 Help still describes classic five-fights/Cat-Key forging rules.
+- Before images captured from a compiled local candidate (16f940f), not a live wallet path. The two dev-capture attempts and middleware HMR warning remain in source logs; final capture uses the built preview on5360 and explicitly assigns the fixture-loader HMR port5361; clean capture log is cxr2-before-final.log.

@@ -1,0 +1,54 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader A repaired head",
+  "head": "16f940f0cecc01915f86f32fe8c1e30b5a782cdc",
+  "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
+  "status": "PASS",
+  "score": 94,
+  "autoFails": [],
+  "gradedAt": "2026-11-03T05:18:17.437254+00:00",
+  "criteria": [
+    {
+      "criterion": "Design/readability",
+      "score": 22,
+      "max": 25,
+      "reason": "Approved Forge/Market composition works at both sizes. Minor side-card framing and technical footnote remain for CXR2."
+    },
+    {
+      "criterion": "Behavior and original art",
+      "score": 25,
+      "max": 25,
+      "reason": "Existing controllers unchanged. Original embedded shelf icon restored verbatim and checked by browser assertions in both empty states; no image-file mutation."
+    },
+    {
+      "criterion": "Accessibility",
+      "score": 19,
+      "max": 20,
+      "reason": "Unchanged contrast/keyboard/reduced-motion assertions and 18 strict audit views pass; original empty-icon geometry remains readable."
+    },
+    {
+      "criterion": "Scope",
+      "score": 20,
+      "max": 20,
+      "reason": "16 UI-owned paths, original embedded/file assets preserved, no dependency/API/economy/provider change."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "Fresh2512 core cases, full330\u00d72, changed21\u00d72 (3 repeats), resize20/20; visual review of populated/empty/gated Market and Forge at both sizes. Market wallet evidence is mock-only."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "evidence": [
+    "reports/ui/logs/cxu3-a2/receipt.json",
+    "reports/ui/logs/cxu3-a2/scope.json",
+    "screenshots/ui-2026-11-03/cxu3-a2-audit/findings.json"
+  ],
+  "previousAttempt": "Attempt1 passing grades explicitly withdrawn for embedded-image removal; retained in attempt-1/.",
+  "preExistingNextCardFindings": "CXR2 owns the already-existing first-visit Help copy, oversized WelcomeBack and legacy light dialog surfaces. These are captured before repair; this score applies to the CXU3 changes, not a completed CXR2 review."
+}
