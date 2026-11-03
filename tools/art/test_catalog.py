@@ -129,5 +129,22 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(self.manifest, manifest())
 
 
+
+
+class OriginalCatalogSlots(unittest.TestCase):
+    def test_original_content_has34_new_icons_and5_unchanged_frame_aliases(self):
+        from original_icons import SPECS
+        obj=json.loads(text('docs/art/manifest.json'));rows={row['id']:row for row in obj['slots']}
+        expected={f'original.{kind}.{key}' for kind,items in SPECS.items() for key in items}
+        expected|={f'original.quality.{quality}' for quality in ['common','uncommon','rare','epic','legendary']}
+        self.assertEqual({key for key in rows if key.startswith('original.')},expected)
+        for kind,items in SPECS.items():
+            for key in items:
+                row=rows[f'original.{kind}.{key}'];self.assertEqual((row['width'],row['height'],row['frames'],row['status']),(32,32,1,'new'))
+                self.assertEqual(row['path'],f'apps/web/src/art/generated/original/icons/{kind}-{key.lower()}.png')
+        for quality in ['common','uncommon','rare','epic','legendary']:
+            row=rows[f'original.quality.{quality}'];self.assertEqual((row['width'],row['height'],row['status']),(16,16,'existing'))
+            self.assertEqual(row['path'],'apps/web/src/art/v2Frames.tsx');self.assertEqual(row['selector'],'frame'+quality.title())
+
 if __name__ == '__main__':
     unittest.main()

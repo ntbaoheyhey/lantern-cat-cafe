@@ -1,0 +1,2846 @@
+{
+  "commands": [
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-hp.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-hp.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-hp.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-hp.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-hp.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-atk.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-atk.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-atk.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-atk.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-atk.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-def.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-def.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-def.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-def.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-def.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-attackspeed.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-attackspeed.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-attackspeed.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-critchance.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-critchance.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-critchance.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-critdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-critdamage.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-critdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-dodge.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-dodge.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-dodge.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-hpregen.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-hpregen.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-hpregen.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-fishbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-fishbonus.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-fishbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-xpbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-xpbonus.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-xpbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-materialfind.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-materialfind.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-materialfind.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-bossdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/locked/stat-bossdamage.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/padded/stat-bossdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-seamblade.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-seamblade.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-seamblade.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-kettlemaul.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-kettlemaul.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-kettlemaul.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-hemknives.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-hemknives.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-hemknives.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-windowpike.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-windowpike.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-windowpike.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-rafterbow.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-rafterbow.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-rafterbow.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-lanternrod.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-lanternrod.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-lanternrod.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-mossflasks.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-mossflasks.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-mossflasks.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-quiltcap.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-quiltcap.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-quiltcap.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-porchcoat.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-porchcoat.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-porchcoat.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-spoolmitts.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-spoolmitts.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-spoolmitts.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-eaveboots.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-eaveboots.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-eaveboots.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-chimecollar.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-chimecollar.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-chimecollar.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-pantrystud.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-pantrystud.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-pantrystud.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-hemring.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-hemring.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-hemring.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/final/item-hemring.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-hemring.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/snapped/item-purrcharm.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/locked/item-purrcharm.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/padded/item-purrcharm.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-seamsweep.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-seamsweep.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-seamsweep.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-kettlepulse.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-kettlepulse.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-kettlepulse.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-hempair.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-hempair.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-hempair.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-windowthrust.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-windowthrust.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-windowthrust.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-rafterecho.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-rafterecho.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-rafterecho.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-lanternarc.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-lanternarc.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-lanternarc.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "snap",
+        "/private/tmp/tbh-original-art-r1/raw/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-mossparcel.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "snap: wrote new output"
+    },
+    {
+      "args": [
+        "lock",
+        "/private/tmp/tbh-original-art-r1/snapped/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r1/locked/skill-mossparcel.png"
+      ],
+      "exit": 0,
+      "output": "lock: wrote new output"
+    },
+    {
+      "args": [
+        "trim",
+        "/private/tmp/tbh-original-art-r1/locked/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.png",
+        "--metadata",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.json"
+      ],
+      "exit": 0,
+      "output": "trim: wrote new output"
+    },
+    {
+      "args": [
+        "pad",
+        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r1/padded/skill-mossparcel.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "pad: wrote new output"
+    },
+    {
+      "args": [
+        "optimize",
+        "/private/tmp/tbh-original-art-r1/padded/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png"
+      ],
+      "exit": 0,
+      "output": "optimize: wrote new output"
+    },
+    {
+      "args": [
+        "check",
+        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png",
+        "--width",
+        "32",
+        "--height",
+        "32"
+      ],
+      "exit": 0,
+      "output": "palette, binary alpha, native dimensions and color budget verified"
+    },
+    {
+      "args": [
+        "sheet",
+        "/private/tmp/tbh-original-art-r1/atlas",
+        "/private/tmp/tbh-original-art-r1/final/stat-hp.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-atk.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-def.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r1/final/item-hemring.png",
+        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png",
+        "--columns",
+        "8",
+        "--fps",
+        "12"
+      ],
+      "exit": 0,
+      "output": "sheet: wrote new output"
+    }
+  ],
+  "date": "2026-11-03",
+  "entries": [
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-hp",
+      "imageModel": null,
+      "key": "hp",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-hp.png",
+      "prompt": "Original32x32 native pixel icon. A stitched pink heart with a clear cream glint and shaded lower lobe. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "05e7dc9b12183925f4d158893fefe31ee15acb4948e8dad59f5ddafef0e005b2",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-atk",
+      "imageModel": null,
+      "key": "atk",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-atk.png",
+      "prompt": "Original32x32 native pixel icon. An upward steel strike with a brass guard and a cloth grip. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "e9a9ea1a38f1fd8b863e0b109b82c87054e08297975fce784fabe961a0c3f279",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-def",
+      "imageModel": null,
+      "key": "def",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-def.png",
+      "prompt": "Original32x32 native pixel icon. A quilted shield with stitched seams and a warm brass rim. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "c01ca7f4ae342f49d364afebf9a6f892c1147496bf7ae8e2153be1b5fa4682cf",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-attackspeed",
+      "imageModel": null,
+      "key": "attackSpeed",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-attackspeed.png",
+      "prompt": "Original32x32 native pixel icon. Two forward step arrows with short motion dashes. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "fe794bdca1e37ba1fc046482fb51f8f03c01a59eacf7f7cf905966025a323eb6",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-critchance",
+      "imageModel": null,
+      "key": "critChance",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-critchance.png",
+      "prompt": "Original32x32 native pixel icon. A bright star centered in a watchful blue eye. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "8e85380bf96f55d78bb137f8c9cd92bd1e5720e43e1f15c2ee8fa4730a42eaa8",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-critdamage",
+      "imageModel": null,
+      "key": "critDamage",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-critdamage.png",
+      "prompt": "Original32x32 native pixel icon. A sharp amber impact star over a jagged red burst. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "f3aae9f1cb44bb5aaa3f026cb87af2700ca8b7dca0c741c560d4761c09ffa966",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-dodge",
+      "imageModel": null,
+      "key": "dodge",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-dodge.png",
+      "prompt": "Original32x32 native pixel icon. Two separated pawprints moving around a curved path. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "38b781cb62762a41d31576e94b93d25a29ce9a3866724242870364e3d5081619",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-hpregen",
+      "imageModel": null,
+      "key": "hpRegen",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-hpregen.png",
+      "prompt": "Original32x32 native pixel icon. A green heart cradled by a fresh leaf. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "9b4ac383f6fdeb99bd5c9f0e2ed92746928ad5a39df089a1f9d923989dd48593",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-fishbonus",
+      "imageModel": null,
+      "key": "fishBonus",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-fishbonus.png",
+      "prompt": "Original32x32 native pixel icon. A small blue fish resting above a woven pantry basket. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "de007b3e98a37e1f320527fe96e4f8700180db71f2e45052769cbd3cf0d05af1",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-xpbonus",
+      "imageModel": null,
+      "key": "xpBonus",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-xpbonus.png",
+      "prompt": "Original32x32 native pixel icon. A cream notebook with three ascending square trail marks, no letters. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "97c83fb00447fcf57c40eb0a6ebde6e2dab5524fa092a5b02430563f1c38a345",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-materialfind",
+      "imageModel": null,
+      "key": "materialFind",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-materialfind.png",
+      "prompt": "Original32x32 native pixel icon. A cloth supply pouch with a blue inspection lens. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "3816f7f1508fc7ded38e4e47e7ab629cb7bc987aefed5839618dd9e8a1d2f00f",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "stat-bossdamage",
+      "imageModel": null,
+      "key": "bossDamage",
+      "kind": "stat",
+      "palette": "cafe-night-v1",
+      "path": "final/stat-bossdamage.png",
+      "prompt": "Original32x32 native pixel icon. A household gate marked by three diagonal claw scratches. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "3210b0b3dd028a5d685612bd12502fe77088cc5b3171c0ea5ed0b3cd76065f38",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-seamblade",
+      "imageModel": null,
+      "key": "seamblade",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-seamblade.png",
+      "prompt": "Original32x32 native pixel icon. A curved saber with a stitched grip, brass guard and steel edge. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "f2e1d9f4fa83d2e91c96768ad477ba72b9503384569bbc3e81597e10c154dc5b",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-kettlemaul",
+      "imageModel": null,
+      "key": "kettlemaul",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-kettlemaul.png",
+      "prompt": "Original32x32 native pixel icon. A rounded hollow maul head with a low brass band and wooden haft. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "a5d5ce2024148627b08ba96e4c6c4df1919b57bbd93b2bcb317ad66af0ab7724",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-hemknives",
+      "imageModel": null,
+      "key": "hemknives",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-hemknives.png",
+      "prompt": "Original32x32 native pixel icon. Two separated narrow apron knives with warm cloth handles. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "16c433674daddc61b78845051b2e8f797b8fa9003904b9840f2bc10b5b9b0510",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-windowpike",
+      "imageModel": null,
+      "key": "windowpike",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-windowpike.png",
+      "prompt": "Original32x32 native pixel icon. A long diagonal wooden pike with a small bright steel point. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "d04446b914bfea9c5c969d1feec89e422a0d806e979c734c74674300dac4c7bd",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-rafterbow",
+      "imageModel": null,
+      "key": "rafterbow",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-rafterbow.png",
+      "prompt": "Original32x32 native pixel icon. A curved attic-wood bow, taut cream cord and a single ready arrow. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "17e738ca5c2d72fb8371621771b2fc7e38f6bb2fd94fd93361cb26f17ca739f8",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-lanternrod",
+      "imageModel": null,
+      "key": "lanternrod",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-lanternrod.png",
+      "prompt": "Original32x32 native pixel icon. A shaded brass lantern atop a slanted wooden staff. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "0499fb429d926c69044263b920a0d5600b61aa5020646614a8b562447316feac",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-mossflasks",
+      "imageModel": null,
+      "key": "mossflasks",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-mossflasks.png",
+      "prompt": "Original32x32 native pixel icon. Two green and blue flasks in protective sleeves with cork tops. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "ff6afeadac46e4bfbc804fba477e363e47b091a896a64f4f2e285adf7ec09eb8",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-quiltcap",
+      "imageModel": null,
+      "key": "quiltcap",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-quiltcap.png",
+      "prompt": "Original32x32 native pixel icon. A folded cloth cap with one stitched patch and a padded brim. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "42c7f168f128b1e78cc00d00d9f0d57e690663c07a84113a06d7ab03910f7094",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-porchcoat",
+      "imageModel": null,
+      "key": "porchcoat",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-porchcoat.png",
+      "prompt": "Original32x32 native pixel icon. A broad patched evening coat with distinct cuffs and buttons. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "93710074e309cad1da43912a0d75430bfde478244bcabb5d84951aa61a94677a",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-spoolmitts",
+      "imageModel": null,
+      "key": "spoolmitts",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-spoolmitts.png",
+      "prompt": "Original32x32 native pixel icon. Two separated padded mitts with thread-wrapped wrist cuffs. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "6064b83e1519041cbe9f8e3fa95c3259c0200f2c0a66dbd42a0270253b288941",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-eaveboots",
+      "imageModel": null,
+      "key": "eaveboots",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-eaveboots.png",
+      "prompt": "Original32x32 native pixel icon. Two quiet leather boots with pale folded tops and sturdy soles. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "c9b2a3e0581db8a5d6b13cfa6a948df3bb57d77299edf8b764e9e499309b58bd",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-chimecollar",
+      "imageModel": null,
+      "key": "chimecollar",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-chimecollar.png",
+      "prompt": "Original32x32 native pixel icon. A lilac collar loop with a small golden first-watch bell. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "3a8f295fe66f6b18a069f0e2eec631900d476cf65f3bc027bcc7c10034c7cd75",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-pantrystud",
+      "imageModel": null,
+      "key": "pantrystud",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-pantrystud.png",
+      "prompt": "Original32x32 native pixel icon. A polished brass ear clasp with a blue pantry-fish inset. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "bd4fc310a007ad7ff1257ac2a0c68d337342b728b5934b8bf7728cf4aeca4c71",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-hemring",
+      "imageModel": null,
+      "key": "hemring",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-hemring.png",
+      "prompt": "Original32x32 native pixel icon. A smooth golden ring wrapped with one loose lilac thread. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "95ed8d711cc85476116f182383e62851d9d0056c7fcda08f0eb00b012b480dc2",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "item-purrcharm",
+      "imageModel": null,
+      "key": "purrcharm",
+      "kind": "item",
+      "palette": "cafe-night-v1",
+      "path": "final/item-purrcharm.png",
+      "prompt": "Original32x32 native pixel icon. A warm round keepsake with a pink paw and a short blue tie. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "ee756dacfc467d1242d012a38715aa1e768e0531bf6f643615e3bd7b62eba6cb",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-seamsweep",
+      "imageModel": null,
+      "key": "seamsweep",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-seamsweep.png",
+      "prompt": "Original32x32 native pixel icon. One sweeping cyan crescent with three small stitch sparks. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "92bb16722a21993e6f2aa0ec61a8e1caabeb0b6be280573842f8f009d7d7500b",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-kettlepulse",
+      "imageModel": null,
+      "key": "kettlepulse",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-kettlepulse.png",
+      "prompt": "Original32x32 native pixel icon. Concentric brass pulse rings under a descending bright strike. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "5994efc87032e5538daec774d1d7975bc2c1e1b4d540c752539b5f17dbe1c94a",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-hempair",
+      "imageModel": null,
+      "key": "hempair",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-hempair.png",
+      "prompt": "Original32x32 native pixel icon. Two separated diagonal lilac cuts with different lengths. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "a5e4a998a57d3f88dd82862a1f755e37973b7812e23eb922704bd2259d297217",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-windowthrust",
+      "imageModel": null,
+      "key": "windowthrust",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-windowthrust.png",
+      "prompt": "Original32x32 native pixel icon. A narrow blue thrust with a bright leading point and side streaks. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "ec4f19af026347127a99a5b5e67526a211f838ea9cc8521658dfb539ceeeb9df",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-rafterecho",
+      "imageModel": null,
+      "key": "rafterecho",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-rafterecho.png",
+      "prompt": "Original32x32 native pixel icon. Two parallel arrow notes joined by one small echo mark. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "5b99d7a663acb956edabdd080852a5c733740e0f1eecd408dcd8e8f25bb6b9d2",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-lanternarc",
+      "imageModel": null,
+      "key": "lanternarc",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-lanternarc.png",
+      "prompt": "Original32x32 native pixel icon. A curved brass arc ending in a warm lantern-like spark. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "74cb8145108d3f62d1ddf36bbc80429d9c1dfe8cbcfa926bcd4722a68961442d",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    },
+    {
+      "date": "2026-11-03",
+      "height": 32,
+      "id": "skill-mossparcel",
+      "imageModel": null,
+      "key": "mossparcel",
+      "kind": "skill",
+      "palette": "cafe-night-v1",
+      "path": "final/skill-mossparcel.png",
+      "prompt": "Original32x32 native pixel icon. A leaf-wrapped green poultice parcel with a bright tie. One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.",
+      "seed": null,
+      "sha256": "8ebc3dd4c26d3b12204f5deeb6e1e73e21c95d3cf37aead65b030c7fbb3d08e5",
+      "tool": "Codex-authored Python coordinate drawing + tools/art/pipeline.py",
+      "width": 32
+    }
+  ],
+  "externalMediaInputs": [],
+  "generatorSha256": "3fd4103858a00c8bfa5989a63033366daaa2ad419876989ae65d381d12165898",
+  "palette": "cafe-night-v1",
+  "schemaVersion": 1,
+  "scope": "34 original static icons; atlas order is lookup order, not an animation"
+}

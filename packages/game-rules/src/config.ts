@@ -7,7 +7,7 @@ import { RARITY_IDS, SLOT_IDS } from './content';
  * ORIG1 is a separate default-off draft; timing units are explicit in docs/design/original-economy.md.
  */
 export const CONFIG = {
-  /** ORIG1 is a local balance preview. No server or client runtime reads this flag. */
+  /** ORIG1 gameplay remains OFF. The local catalog uses this default and opts in without changing it. */
   features: { originalEconomy: false },
   /** Original draft tables; see docs/design/original-economy.md for units and rationale. */
   originalEconomy: {
