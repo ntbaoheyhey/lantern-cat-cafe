@@ -1,0 +1,28 @@
+{
+  "root": "/private/tmp/tbh-cxs1-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/locked-merge",
+  "pr": 258,
+  "head": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "grades": [
+    "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/grade-a.json",
+    "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/grade-b.json"
+  ],
+  "changedChecks": [
+    [
+      "docs",
+      [
+        "python3",
+        "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/check-docs.py",
+        "/private/tmp/tbh-cxs1-active"
+      ]
+    ],
+    [
+      "links",
+      [
+        "node",
+        "scripts/check-links.mjs"
+      ]
+    ]
+  ],
+  "title": "CXS1: document security evidence and deployment limits [skip ci]"
+}

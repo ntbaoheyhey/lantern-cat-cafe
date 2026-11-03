@@ -1,0 +1,67 @@
+{
+  "root": "/private/tmp/tbh-sys-main-after-cxs1",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/post-main",
+  "head": "5e35c7a3725d45a3daaf4b3ac6741b255fdef6df",
+  "commands": [
+    [
+      "install",
+      "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline"
+    ],
+    [
+      "docs",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/check-docs.py /private/tmp/tbh-sys-main-after-cxs1"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "classic-project",
+      "E2E_PORT_CLASSIC=5240 E2E_PORT_V2=5241 E2E_PORT_SERVER=5242 E2E_PORT_API=5243 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "asset-before",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-sys-main-after-cxs1 5e35c7a3725d45a3daaf4b3ac6741b255fdef6df /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/live/artifact-before.json"
+    ],
+    [
+      "health",
+      "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs"
+    ],
+    [
+      "asset-after",
+      "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-sys-main-after-cxs1 5e35c7a3725d45a3daaf4b3ac6741b255fdef6df /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/live/artifact-after.json"
+    ]
+  ]
+}

@@ -24,22 +24,24 @@ Board: UI adopted CXC2 #253/#254 evidence; CXU3 2e1f83b gate active, NOT merged/
 | T011/T012 | DONE #255/maina903fb6, A96/B96; shared original economy OFF, data publication accepted |
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
-|CXS1 | own ai/codex-sys-cxs1-security-overview 97a1595 atop6144d42;691-word docs+6 companions |
+|CXS1 | #258 merged 5e35c7a under lock; A97/B97; post-main/read-only checks active |
 |CXS2 | own ai/codex-sys-cxs2-submission /private/tmp/tbh-cxs2-active atop97a1595; drafting only |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
 |UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
 |CXU3/CXR2 | drafts252/257 were PARTIAL under SYSTEM; UI now owns continuation/disposition |
 
-Last verified origin/local main6144d42ce12d9c61dc4f863733356de99f605eb9 (245 merged BEFORE addendum).
+Latest origin/main 5e35c7a3725d45a3daaf4b3ac6741b255fdef6df (#258 SYSTEM docs, lock protocol followed).
+Last complete pre-addendum UI acceptance6144d42; root local main left untouched.
 CXR1 acceptance: A94/B94,2490core/323browser×2/40art/35assets before+after/22health/16live×2,Actions0.
 No funded wallet or full timed demo claim. All prior verification PIDs finished; old test ports must not be reused.
 
 Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, 97a1595 clean.
 CXS1 exact97a1595 fresh A97 PASS:691words/2490core/38classic/6mutants/builds/links.
 A62344/B66562 FINISHED PASS97/97 on97a1595; clean B tests then full diff; all ports free.
-CXS1 waits for UI-held merge lock; first attempt inCXS1-FRESH/lock-wait.json; recheck2–3min,max60min.
-Need latest-main integration and locked changed-spec/type/lint before merge; regrade if reviewed head changes.
+CXS1 locked merge72883 completed and released: fetch/integrate/docs/links/type/lint/expected-head merge PASS.
+Post-main PID74574 /private/tmp/tbh-sys-main-after-cxs1,5240–5243; CXS1-FRESH/post-main/run.json.
+Read-only live assets/health allowed; live UI phase remains deferred until UI CXU3 readiness.
 Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
 Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.
 

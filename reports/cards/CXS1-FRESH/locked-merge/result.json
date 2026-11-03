@@ -1,0 +1,141 @@
+{
+  "status": "MERGED_VERIFICATION_PENDING",
+  "pr": 258,
+  "reviewedHead": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "pid": 72883,
+  "commands": [
+    {
+      "name": "fetch",
+      "argv": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:08.777937+00:00",
+      "endedAt": "2026-11-03T05:13:12.106477+00:00"
+    },
+    {
+      "name": "integrate-main",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=ntbaoheyhey",
+        "-c",
+        "user.email=108352255+ntbaoheyhey@users.noreply.github.com",
+        "merge",
+        "--no-stat",
+        "origin/main",
+        "-m",
+        "Integrate current main into SYSTEM documentation [skip ci]"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:12.114203+00:00",
+      "endedAt": "2026-11-03T05:13:12.125174+00:00"
+    },
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/check-docs.py",
+        "/private/tmp/tbh-cxs1-active"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:12.132591+00:00",
+      "endedAt": "2026-11-03T05:13:12.175218+00:00"
+    },
+    {
+      "name": "links",
+      "argv": [
+        "node",
+        "scripts/check-links.mjs"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:12.175489+00:00",
+      "endedAt": "2026-11-03T05:13:12.258569+00:00"
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:12.258794+00:00",
+      "endedAt": "2026-11-03T05:13:21.927694+00:00"
+    },
+    {
+      "name": "lint",
+      "argv": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:21.928239+00:00",
+      "endedAt": "2026-11-03T05:13:35.522328+00:00"
+    },
+    {
+      "name": "pr-state",
+      "argv": [
+        "gh",
+        "pr",
+        "view",
+        "258",
+        "--repo",
+        "ntbaoheyhey/taskbar-hero",
+        "--json",
+        "headRefOid,baseRefOid,isDraft,state"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:35.556929+00:00",
+      "endedAt": "2026-11-03T05:13:36.658094+00:00"
+    },
+    {
+      "name": "actions-state",
+      "argv": [
+        "gh",
+        "api",
+        "repos/ntbaoheyhey/taskbar-hero/actions/runs?head_sha=97a1595ac69edd105e7a5fa92b1b00402a033a0c&per_page=1"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:36.658397+00:00",
+      "endedAt": "2026-11-03T05:13:37.596331+00:00"
+    },
+    {
+      "name": "merge",
+      "argv": [
+        "gh",
+        "api",
+        "--method",
+        "PUT",
+        "repos/ntbaoheyhey/taskbar-hero/pulls/258/merge",
+        "--input",
+        "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/locked-merge/merge-request.json"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:37.596811+00:00",
+      "endedAt": "2026-11-03T05:13:40.593360+00:00"
+    },
+    {
+      "name": "fetch-merged",
+      "argv": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T05:13:40.593682+00:00",
+      "endedAt": "2026-11-03T05:13:43.559073+00:00"
+    }
+  ],
+  "acquiredAt": "2026-11-03T05:13:08.777828+00:00",
+  "baseBefore": "6144d42ce12d9c61dc4f863733356de99f605eb9",
+  "integratedHead": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "mergeHead": "5e35c7a3725d45a3daaf4b3ac6741b255fdef6df",
+  "releasedAt": "2026-11-03T05:13:43.588059+00:00",
+  "endedAt": "2026-11-03T05:13:43.588134+00:00"
+}
