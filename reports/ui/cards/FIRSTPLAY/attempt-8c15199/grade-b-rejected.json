@@ -1,0 +1,9 @@
+{
+  "card": "FIRSTPLAY",
+  "head": "8c15199315bf6be4dad793b9364010fce3ccc4b7",
+  "grader": "B",
+  "pass": false,
+  "score": 0,
+  "reason": "161/162 changed cases: landing1600 original exact PNG mismatch; actual image and font metadata retained. Natural first-earn, zero-blank and recovery cases pass, but visual gate rejects candidate.",
+  "diagnosis": "Same mismatch reproduced in run3/30 fresh browser contexts, stable across4 screenshots/160ms; not fixed by further paint frames. Both font faces loaded but title width differs275.46875vs275.359375; network/font identity diagnosis in progress. Baseline and byte assertion untouched."
+}

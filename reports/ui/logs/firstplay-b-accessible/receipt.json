@@ -1,0 +1,147 @@
+{
+  "head": "8c15199315bf6be4dad793b9364010fce3ccc4b7",
+  "pass": "firstplay-b-accessible",
+  "pid": 83569,
+  "cwd": "/Users/bao/taskbar-hero-ui-firstplay-b",
+  "ports": [
+    5350,
+    5351,
+    5352,
+    5353,
+    5354
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T18:03:59.442029+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T18:04:21.407637+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T18:04:49.777249+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T18:04:49.948680+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T18:05:59.396142+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T18:07:09.448240+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T18:07:13.633342+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T18:07:24.143311+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/firstplay-b-accessible/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/cxr2-dialogs.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/a11y.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T18:07:35.236157+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/firstplay-b-accessible/changed-1280x720.log"
+    }
+  ]
+}
