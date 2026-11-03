@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A94/B94 gate PASS; publication next.
+Updated: 2026-11-03T11:27:47.930132+07:00. ACTIVE; CXR1 merged, main/live running.
 Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
 Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
@@ -13,14 +13,14 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
-| CXR1 | #245/remotee99e497,local187a1b5 | A94/B94 on187a1b5; exacthead gate PASS; unmerged |
+| CXR1 | #245/remotee99e497,local187a1b5 | MERGED A94/B94; main6144d42; main/live running |
 | CXR2 | localc49421f | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
 | CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
 | CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/origin+local main:2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 (#256), exact approved tree.
+Last merged/origin+local main:6144d42ce12d9c61dc4f863733356de99f605eb9 (#245), exact approved tree.
 ORIG2-ART-FRESH/acceptance.json:35/35 asset hashes before+after;22health;16live stages each size;
 zero unexpected errors/transactions; Actions0. PID19884 finished,4980–4983 free. No funded demo claim.
 ORIG2 source /private/tmp/tbh-original-preview and clean B retained at792b475. Normal merge preserved art history.
@@ -70,4 +70,5 @@ CXR2 builder44763 FINISHED FAIL:13web failures/1402PASS (1boss-timeout,3portal q
 No final-head browser/fullgrade/live. No fourth repair; preserve c49421f and partial.json;5110–5113 free.
 CXS1 draft /private/tmp/tbh-cxs1-active codex/cxs1-security-overview atmain2bc98cd;7docs dirty; no tests.
 Overview691words, linked sources/quoted cases checked; includes244 backup gap and supersedes old Deno/budget claims.
-Next3: finish CXR1 clean B and grade; if qualified merge245/main+live; publish CXR2PARTIAL then CXQ1/CXS docs.
+Main verifier PID49427 /private/tmp/tbh-main-after-cxr1,4980–4983; CXR1-FRESH/post-main/run.json.
+Next3: accept actual-main/live CXR1; publish CXR2PARTIAL without more repair; CXQ1 live demo and CXS docs.
