@@ -18,3 +18,5 @@
 - All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
 
 - Continuation milestone: notification overlap repaired at bd5b0c2; 22 targeted wallet/client tests PASS. Fresh A2/B2 running in SYS-owned worktrees (launches-auth2.json); ca26498 not accepted. Live/main stage-role and reward contrast defects already repaired in held #263, so standalone auth accessibility remains a known gate dependency. Main regression complete, both sizes PASS.
+
+- 19:59Z verification: auth-a2/auth-b2 commands exited0, but A source changed after its build (uncommitted wrong-network/notification CSS edits at19:51Z). Do NOT accept A2 as exact-head evidence. Builder wallet axe also records inherited stage-role failure fixed by held UI263. Finish pending wallet changes, freeze new head, fresh A/B; keep grades0 until all gate criteria pass.
