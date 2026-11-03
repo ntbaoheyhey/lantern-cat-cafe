@@ -179,7 +179,7 @@
   :where(.pixel-btn, .pixel-btn--secondary, .forge-btn, .rail-item, .landing__guest-btn):active:not(:disabled) { transform: none !important; }
 }
 
-@media (min-width: 961px) { .motion-number { inline-size: 8ch; } }
+@media (min-width: 961px) { .motion-number { inline-size: 7ch; } }
 
 /* Currency labels and neighbouring pills keep their positions as amounts grow. */
 .home-card--loot .home-loot-currencies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -197,3 +197,8 @@
 
 /* The live first-reward heading sits on a night card, including with no OS theme attribute. */
 :root .home-card--loot.v2-recent-loot .loot-summary-heading { color: var(--accent); }
+
+/* Leave room for Chapter 5 / Round 10 / 10 kills beside the fixed numeric columns. */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .shell-hud.v2-topbar .hud-bar__layout { column-gap: var(--sp-1, 4px); }
+}
