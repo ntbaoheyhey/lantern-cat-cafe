@@ -13,3 +13,9 @@
 - MEDIUM: WelcomeBack and ChestReveal use pale fallback surfaces inside the dark desktop app; shared modal tokens need to apply consistently at both desktop sizes.
 - HIGH: first-visit v2 Help still describes classic five-fights/Cat-Key forging rules.
 - Before images captured from a compiled local candidate (16f940f), not a live wallet path. The two dev-capture attempts and middleware HMR warning remain in source logs; final capture uses the built preview on5360 and explicitly assigns the fixture-loader HMR port5361; clean capture log is cxr2-before-final.log.
+
+## Further implementation notes
+- Shared Modal alone does not fix pale loot surfaces: loot.css has hard-coded light selectors. Override them for .ui-modal.loot-dialog using existing dark semantic tokens and verify computed text contrast; preserve all sprites/backdrops.
+- Update the WelcomeBack a11y Tab boundary assertions for its newly focusable scroll region, retaining the focus/escape/aria checks.
+- First-visit v2 Help should restore focus to the landing/class/Home action if there is no explicit opener; preserve the classic Menu return target.
+- Consider adding the existing unchanged CatPortrait to the large first-run class cards; the current class capture has very sparse artwork. Keep original weapon icons/swatch art.

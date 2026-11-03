@@ -1,0 +1,12 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader B repaired art head",
+  "head": "16f940f0cecc01915f86f32fe8c1e30b5a782cdc",
+  "status": "FAIL",
+  "score": null,
+  "autoFails": [
+    "Rarity text contrast below unchanged4.5:1 threshold."
+  ],
+  "machineChecks": "Core,42 changed executions and20 resize runs passed; expanded source/contrast review then failed.",
+  "remedy": "New text-only tokens and actual browser assertions for every selected rarity; original SVG fills asserted unchanged."
+}

@@ -3,9 +3,10 @@
   "pass": "grader A repaired head",
   "head": "16f940f0cecc01915f86f32fe8c1e30b5a782cdc",
   "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
-  "status": "PASS",
-  "score": 94,
-  "autoFails": [],
+  "status": "SUPERSEDED",
+  "autoFails": [
+    "Expanded rarity-text audit: Rare on selected surface 4.051:1; Epic on surface-2 4.304:1 and selected surface 3.428:1."
+  ],
   "gradedAt": "2026-11-03T05:18:17.437254+00:00",
   "criteria": [
     {
@@ -50,5 +51,7 @@
     "screenshots/ui-2026-11-03/cxu3-a2-audit/findings.json"
   ],
   "previousAttempt": "Attempt1 passing grades explicitly withdrawn for embedded-image removal; retained in attempt-1/.",
-  "preExistingNextCardFindings": "CXR2 owns the already-existing first-visit Help copy, oversized WelcomeBack and legacy light dialog surfaces. These are captured before repair; this score applies to the CXU3 changes, not a completed CXR2 review."
+  "preExistingNextCardFindings": "CXR2 owns the already-existing first-visit Help copy, oversized WelcomeBack and legacy light dialog surfaces. These are captured before repair; this score applies to the CXU3 changes, not a completed CXR2 review.",
+  "priorProvisionalScore": 94,
+  "correction": "Dedicated brighter text tokens preserve original frame/art variables. Threshold remains4.5. No UI feature push or merge occurred."
 }
