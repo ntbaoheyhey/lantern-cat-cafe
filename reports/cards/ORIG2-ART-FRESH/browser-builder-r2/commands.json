@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:25:39.425393+00:00",
+    "endedAt": "2026-11-03T01:25:48.448784+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/original-preview src/ui/ui.test.tsx src/layout/HelpTab.test.tsx",
+    "head": "a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:25:48.457060+00:00",
+    "endedAt": "2026-11-03T01:25:50.254211+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "ORIGINAL_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/browser-builder-r2/screenshots E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:25:50.261622+00:00",
+    "endedAt": "2026-11-03T01:26:10.789594+00:00"
+  }
+]

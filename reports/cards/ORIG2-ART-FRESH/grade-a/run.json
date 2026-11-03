@@ -1,0 +1,79 @@
+{
+  "root": "/private/tmp/tbh-original-preview",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/grade-a",
+  "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "art-unit",
+      "python3 -B -m unittest discover -s tools/art -v"
+    ],
+    [
+      "art-catalog",
+      "python3 -B tools/art/catalog.py --check"
+    ],
+    [
+      "ui-mutants",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/ui-mutants-a.mjs"
+    ],
+    [
+      "art-mutants",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants.py /private/tmp/tbh-original-preview /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants-a"
+    ],
+    [
+      "originality",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/check-originality.py /private/tmp/tbh-original-preview origin/main"
+    ],
+    [
+      "capture",
+      "ORIGINAL_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/grade-a/screenshots VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-changed",
+      "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxc2-proof.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1280x720",
+      "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "browser-1600x900",
+      "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

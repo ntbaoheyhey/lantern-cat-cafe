@@ -1,0 +1,42 @@
+[
+  {
+    "name": "art-unit",
+    "command": "python3 -B -m unittest discover -s tools/art -v",
+    "head": "c9cf55f5579ab75abd263390a2926ebfa5addbf7",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:50:57.207604+00:00",
+    "endedAt": "2026-11-03T01:50:59.320896+00:00"
+  },
+  {
+    "name": "catalog-drift",
+    "command": "python3 -B tools/art/catalog.py --check",
+    "head": "c9cf55f5579ab75abd263390a2926ebfa5addbf7",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:50:59.328077+00:00",
+    "endedAt": "2026-11-03T01:51:04.834547+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "c9cf55f5579ab75abd263390a2926ebfa5addbf7",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:51:04.841083+00:00",
+    "endedAt": "2026-11-03T01:51:12.832509+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "c9cf55f5579ab75abd263390a2926ebfa5addbf7",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:51:12.839466+00:00",
+    "endedAt": "2026-11-03T01:51:19.817686+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/original-preview src/ui/ui.test.tsx src/layout/HelpTab.test.tsx",
+    "head": "c9cf55f5579ab75abd263390a2926ebfa5addbf7",
+    "exit": 0,
+    "startedAt": "2026-11-03T01:51:19.824204+00:00",
+    "endedAt": "2026-11-03T01:51:21.531784+00:00"
+  }
+]

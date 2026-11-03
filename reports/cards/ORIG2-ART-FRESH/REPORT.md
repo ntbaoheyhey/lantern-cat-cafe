@@ -1,0 +1,13 @@
+# ORIG2 / T013 — local preview and original art gate
+
+Required P1 consumer/art work follows the published default-OFF tables in PR255. Worktree /private/tmp/tbh-original-preview, branch codex/original-preview-art, current frozen head792b475d9dc30847e8c7ff2660419a0cd67a78b0, basea903fb6. No PR or formal score yet.
+
+Help has a lazy Catalog preview tab with explicit transient opt-in,12 stats,15 item examples,5 qualities and7 skills. Shared CONFIG.features.originalEconomy remains false. Unit checks prove no shared-config, storage or network mutation; selection guards preserve fractional values and correct per-trigger output. The preview resets when switching Help tabs/reloading. All hooks precede conditional content. Existing game rules, on-chain behavior and saved IDs are unchanged.
+
+T013 adds34 static32px icons authored as original coordinate drawings, not from an image model or external media. Every file passed snap/lock/trim/pad/optimize/check; max16 opaque colors from cafe-night-v1, binary alpha and2px padding. Source PNGs exactly match static-atlas crops. Existing quality frames are reused unchanged. Native1x/3x dark/cream and silhouette review completed; contrast distributions are recorded with no false all-pixel3:1 claim. Adjacent UI text supplies meaning.
+
+Original generation output /private/tmp/tbh-original-art-r1 was preserved. A second run captured exact Python3.9.6/zlib1.2.12 runtime metadata and produced byte-identical34 PNGs, atlas PNG and atlas JSON. Final recipe SHA b409a077f428c50b430bc31d9ff86911678f53a3737376351efc9534e91a3044. Per-asset briefs/date/tool/hash are in reports/asset-provenance.md and tools/art/original-icons.json; full command receipt is reports/art/original-economy/generation.json.
+
+Builder type/lint,22 focused UI cases and4 browser cases (both desktop sizes/motion modes) pass. Layout was compacted so costs/skill facts fit the720px detail pane. Keyboard stat scrolling has explicit assertions. One catalog test initially caught missing first/latest git hashes on new provenance rows; the generator was fixed, without weakening the test.40 art tests now pass, including that inherited provenance invariant.
+
+Fresh offline originality on792b475 passes: no copied entity names, prose fragments or byte-identical reference media. Existing art has no modified/deleted file. Formal A PID7959 runs sequential core/build,40 art tests/catalog drift,10 UI mutants,4 independent palette/alpha/padding/atlas mutants, originality, captures, repeats and full321×2. Core/art/mutant/capture steps have passed; matrix is still running. No score/merge claim.

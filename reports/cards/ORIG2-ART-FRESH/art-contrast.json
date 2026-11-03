@@ -1,0 +1,652 @@
+{
+  "target": 3,
+  "interpretation": "Art ramps include deliberately dark contours/light highlights; no all-pixel contrast claim. Each icon was visually inspected at1x/3x on both surfaces and in silhouette; adjacent UI text carries its meaning. UI text still requires its existing AA thresholds.",
+  "assets": [
+    {
+      "id": "stat-hp",
+      "opaquePixels": 297,
+      "opaqueColors": 4,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.283,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.505
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.951,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.495
+        }
+      }
+    },
+    {
+      "id": "stat-atk",
+      "opaquePixels": 293,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.512
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.488
+        }
+      }
+    },
+    {
+      "id": "stat-def",
+      "opaquePixels": 474,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.235,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.793
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 2.714,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.207
+        }
+      }
+    },
+    {
+      "id": "stat-attackspeed",
+      "opaquePixels": 319,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.239,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.476
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 17.603,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.524
+        }
+      }
+    },
+    {
+      "id": "stat-critchance",
+      "opaquePixels": 418,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 10.93,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.77
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.3,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.23
+        }
+      }
+    },
+    {
+      "id": "stat-critdamage",
+      "opaquePixels": 423,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 2.475,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.284
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 5.741,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.716
+        }
+      }
+    },
+    {
+      "id": "stat-dodge",
+      "opaquePixels": 385,
+      "opaqueColors": 4,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.239,
+          "maximum": 10.93,
+          "fractionAtLeast3": 0.413
+        },
+        "cream": {
+          "minimum": 1.3,
+          "median": 17.603,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.587
+        }
+      }
+    },
+    {
+      "id": "stat-hpregen",
+      "opaquePixels": 340,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 9.39,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.729
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.513,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.45
+        }
+      }
+    },
+    {
+      "id": "stat-fishbonus",
+      "opaquePixels": 498,
+      "opaqueColors": 7,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.416
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.616
+        }
+      }
+    },
+    {
+      "id": "stat-xpbonus",
+      "opaquePixels": 504,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 10.694,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.829
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.329,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.171
+        }
+      }
+    },
+    {
+      "id": "stat-materialfind",
+      "opaquePixels": 439,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 11.571,
+          "fractionAtLeast3": 0.301
+        },
+        "cream": {
+          "minimum": 1.228,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.699
+        }
+      }
+    },
+    {
+      "id": "stat-bossdamage",
+      "opaquePixels": 603,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 2.935,
+          "maximum": 10.93,
+          "fractionAtLeast3": 0.204
+        },
+        "cream": {
+          "minimum": 1.3,
+          "median": 4.841,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.796
+        }
+      }
+    },
+    {
+      "id": "item-seamblade",
+      "opaquePixels": 327,
+      "opaqueColors": 7,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.876,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.526
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 2.418,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.474
+        }
+      }
+    },
+    {
+      "id": "item-kettlemaul",
+      "opaquePixels": 410,
+      "opaqueColors": 8,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.876,
+          "maximum": 11.571,
+          "fractionAtLeast3": 0.541
+        },
+        "cream": {
+          "minimum": 1.228,
+          "median": 2.418,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.48
+        }
+      }
+    },
+    {
+      "id": "item-hemknives",
+      "opaquePixels": 400,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.876,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.525
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 2.418,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.475
+        }
+      }
+    },
+    {
+      "id": "item-windowpike",
+      "opaquePixels": 260,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.342
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.658
+        }
+      }
+    },
+    {
+      "id": "item-rafterbow",
+      "opaquePixels": 410,
+      "opaqueColors": 7,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.229
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.846
+        }
+      }
+    },
+    {
+      "id": "item-lanternrod",
+      "opaquePixels": 288,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.49
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.51
+        }
+      }
+    },
+    {
+      "id": "item-mossflasks",
+      "opaquePixels": 468,
+      "opaqueColors": 9,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.876,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.699
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 2.418,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.464
+        }
+      }
+    },
+    {
+      "id": "item-quiltcap",
+      "opaquePixels": 493,
+      "opaqueColors": 8,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.797
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.203
+        }
+      }
+    },
+    {
+      "id": "item-porchcoat",
+      "opaquePixels": 499,
+      "opaqueColors": 8,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.425
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.663
+        }
+      }
+    },
+    {
+      "id": "item-spoolmitts",
+      "opaquePixels": 452,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.566
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.434
+        }
+      }
+    },
+    {
+      "id": "item-eaveboots",
+      "opaquePixels": 492,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 11.571,
+          "fractionAtLeast3": 0.24
+        },
+        "cream": {
+          "minimum": 1.228,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.919
+        }
+      }
+    },
+    {
+      "id": "item-chimecollar",
+      "opaquePixels": 352,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.235,
+          "maximum": 11.571,
+          "fractionAtLeast3": 0.568
+        },
+        "cream": {
+          "minimum": 1.228,
+          "median": 2.714,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.432
+        }
+      }
+    },
+    {
+      "id": "item-pantrystud",
+      "opaquePixels": 360,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.736
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.264
+        }
+      }
+    },
+    {
+      "id": "item-hemring",
+      "opaquePixels": 367,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.523
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.477
+        }
+      }
+    },
+    {
+      "id": "item-purrcharm",
+      "opaquePixels": 452,
+      "opaqueColors": 7,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.859,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.496
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 7.641,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.504
+        }
+      }
+    },
+    {
+      "id": "skill-seamsweep",
+      "opaquePixels": 323,
+      "opaqueColors": 4,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 9.968,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.588
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.425,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.412
+        }
+      }
+    },
+    {
+      "id": "skill-kettlepulse",
+      "opaquePixels": 454,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.577
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.423
+        }
+      }
+    },
+    {
+      "id": "skill-hempair",
+      "opaquePixels": 363,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 5.235,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.584
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 2.714,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.416
+        }
+      }
+    },
+    {
+      "id": "skill-windowthrust",
+      "opaquePixels": 370,
+      "opaqueColors": 4,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.239,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.473
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 17.603,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.527
+        }
+      }
+    },
+    {
+      "id": "skill-rafterecho",
+      "opaquePixels": 371,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 1.239,
+          "maximum": 11.571,
+          "fractionAtLeast3": 0.423
+        },
+        "cream": {
+          "minimum": 1.228,
+          "median": 17.603,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.577
+        }
+      }
+    },
+    {
+      "id": "skill-lanternarc",
+      "opaquePixels": 428,
+      "opaqueColors": 5,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 7.476,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.589
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 1.9,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.411
+        }
+      }
+    },
+    {
+      "id": "skill-mossparcel",
+      "opaquePixels": 490,
+      "opaqueColors": 6,
+      "contrast": {
+        "dark": {
+          "minimum": 1.239,
+          "median": 4.637,
+          "maximum": 14.208,
+          "fractionAtLeast3": 0.527
+        },
+        "cream": {
+          "minimum": 1.0,
+          "median": 3.064,
+          "maximum": 17.603,
+          "fractionAtLeast3": 0.637
+        }
+      }
+    }
+  ]
+}

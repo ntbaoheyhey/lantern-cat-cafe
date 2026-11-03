@@ -46,3 +46,10 @@ its tested procedure; never roll back by deleting player data. No release comman
 ready to execute while these prerequisites are unresolved.
 
 [Evidence, exact failed export command, and retained preflight results](cards/T007-CXN3-GATE/REPORT.md).
+
+
+## Optional: native context compaction for this long chat
+
+The current handoff is saved in `reports/MEGA-CURRENT-HANDOFF.md`. The context-compact skill at `/Users/bao/.codex/skills/context-compact/SKILL.md` says: “If no such tool is exposed, ask the user to enter `/compact` in the current Codex composer.” No native compaction action is exposed in this tool session. If desired, enter `/compact` in this same chat; do not create a helper chat or use another writer. Per the user instruction, this owner step is optional and blocks no ongoing work.
+
+The configured threshold was observed as180880 tokens with scope `total`; it was preserved. Runtime application and an actual new compaction event were NOT VERIFIED. Saving this handoff or reading that setting is not a claim that compaction occurred.

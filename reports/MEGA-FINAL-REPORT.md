@@ -1,20 +1,20 @@
-# Active fresh-session report — 2026-11-03T06:58:20+07:00
+# Active fresh-session report — 2026-11-03T09:18:47+07:00
 
-Living report, not a completion claim. Current main isa903fb6; its release checks are active; repository remains private.
+Living report, not a completion claim. Current main is a903fb6, accepted on main and live; repository private.
 
-CXU5 #249 DONE, merged1b299c4, self-graded fresh A94/B94. CXU4 #251 DONE, merged2847e9a, A95/B95. Their acceptance receipts remain in their FRESH cards; current main/live regression is included in the CXC2 release checks.
+CXU5 #249 DONE (1b299c4, fresh A94/B94); CXU4 #251 DONE (2847e9a, A95/B95). Their features remain covered by current regression. CXU3 #252 is PARTIAL at4da5104 after three rounds: final A timed out in the unchanged5000ms StageLayout boss-state unit; B/current-head full browser matrix not run. It stays unmerged.
 
-CXU3 #252 is PARTIAL at4da5104 after the three-round limit. Final A hit the unchanged5000ms StageLayout boss-state unit timeout;1374 other web cases passed. No retry, weakened assertion, current-head full matrix or B grade is claimed. It stays unmerged.
+CXC2 DONE via #253/39e74d8 and #254/666088c. Initial feature A95/B96; range fix A96/B96. Real public Fuji code/linkage and available100-block event reads are verified, with zero transactions. Direct-only Multicall guard,500-block RPC-limit and unsafe test-port failures were fixed and retained. [Acceptance](cards/CXC2-FRESH/acceptance.json).
 
-CXC2 is DONE via #253/39e74d8 and public-RPC range repair #254/666088c. Initial feature A95/B96; range fix A96/B96, all self-graded fresh passes. Exact reviewed trees/author/suffix verified. Actual main core2423 and317/317 browsers per desktop size pass; live32/32 asset hashes before/after,22 health checks and11-stage fresh guest paths at both sizes pass with zero unexpected errors/transactions. Real contract code/linkage and an available100-block event read are verified. Source/merge Actions counts0. Initial Multicall guard,500-block API-limit and unsafe-port harness failures remain retained. [Acceptance](cards/CXC2-FRESH/acceptance.json).
+T011/T012 DONE via #255/a903fb6, fresh A96/B96. Current main core2452,317/317 browsers per desktop size,32/32 live assets before/after,22 health probes and11-stage guest paths per size pass with zero unexpected errors/transactions. Shared original-gameplay flag remains false; no backend deployment. Originality checks pass against the verified archive, with source patterns in memory. [Acceptance](cards/ORIG1-FRESH/acceptance.json).
 
-T011/T012 are rebased onto666088c as2f7c0b3 in /private/tmp/tbh-original-content. Shared default-OFF flag, nine unchanged active config properties,29 focused cases and fresh offline originality checks pass. Original branches remain preserved. Formal A96 passes on2f7c0b3 (core2452,317×2,30 repeats,10 mutants); clean fresh B96 is complete, including its own10 semantic mutants and originality/config checks. Publication and actual-main/live validation are next. PR255 merged asa903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3; default OFF, no backend activation. PID96199 validates actual main/live. No runtime consumer yet. Preview surfaces and original ART/T013 remain required P1 work. [Plan](cards/ORIG1-FRESH/NEXT-CONSUMER.md).
+Required P1 local consumer and ART/T013 are implemented but unmerged at792b475 in /private/tmp/tbh-original-preview. The lazy Help catalog starts OFF, uses the shared pure calculator and leaves config/storage/network/gameplay untouched.34 original native icons passed the complete palette/snap/alpha/padding chain and were inspected at1x/3x on dark/cream backgrounds and in silhouette. Existing art is unchanged; exact per-asset briefs/date/method/runtime/hashes are recorded. Builder22 focused cases,4 desktop/motion browser cases and40 art tests pass. Formal A PID7959 is active on5020–5023; no score/PR yet. [Card](cards/ORIG2-ART-FRESH/REPORT.md).
 
-CXR1/CXR2/CXQ1 and CXS1/CXS2 remain pending. No funded mint/list/buy or full future nine-stage demo completion is claimed. CXS2 stays a submission DRAFT only. P2/P3 remain conditional on A–F green/merged; P0/P1 are not complete.
+CXR1/CXR2/CXQ1 and CXS1/CXS2 remain pending. No funded mint/list/buy or full future nine-stage demo completion is claimed. CXS2 stays a DRAFT; no contest submission. P0/P1 are not fully complete; P2/P3 remain conditional.
 
-CXN3 #244 alone requires the owner's complete deployed-source backup and tested restore path. No guard bypass, function deploy, migration, provider/production-flag change, real funds, public-repo change or contest submission. Exact owner action: [OPTIONAL-USER-STEPS.md](OPTIONAL-USER-STEPS.md). Frontend work proceeds independently.
+CXN3 #244 still requires the owner's complete deployed-source backup and tested restore path. No guard bypass/deploy/migration/provider or production-flag change. [Exact owner steps](OPTIONAL-USER-STEPS.md). Frontend work is independent. Optional manual context compaction is also recorded there; no native compaction action is exposed and no compaction success is claimed.
 
-Single session/agent, old STOP preserved; native hourly same-chat reminder remains active. [Current handoff](MEGA-CURRENT-HANDOFF.md).
+Single agent/chat, STOP preserved; requested hourly reminder active. [Current handoff](MEGA-CURRENT-HANDOFF.md).
 
 ---
 Historical reports below retain their original dates and do not override current authority.

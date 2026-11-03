@@ -1,59 +1,59 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T07:39:19+07:00. ACTIVE, one chat/agent; hourly taskbar-hero-hourly-handoff remains active.
+Updated: 2026-11-03T09:18:47+07:00. ACTIVE one chat/agent; native hourly taskbar-hero-hourly-handoff remains active.
 Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249/main1b299c4 | DONE A94/B94; main302×2; live assets/health/8 stages×2 PASS |
-| CXU4 | #251/main2847e9a | DONE A95/B95; main313×2; live assets/health/10 stages×2 PASS |
-| CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; never merge current evidence |
-| CXC2 | #253 + #254/main666088c | DONE feature A95/B96 + fix A96/B96; main317×2/live11×2 PASS |
-| T011/T012 | local2f7c0b3 | #255 mergeda903fb6 A96/B96; shared OFF; main/live validation active |
-| Content consumer + ART/T013 | pending P1 | Local default-OFF preview, original snapped/palette-locked art; no backend activation |
-| CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; remaining gaps; full live path + throwaway Fuji wallet |
+| CXU5 | #249/main1b299c4 | DONE fresh A94/B94, main/live accepted |
+| CXU4 | #251/main2847e9a | DONE fresh A95/B95, main/live accepted |
+| CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; do not merge |
+| CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
+| T011/T012 | #255/maina903fb6 | DONE A96/B96; shared OFF; main2452/317×2/live32/22/11×2 PASS |
+| ORIG2+ART/T013 | local792b475 | Preview+34icons built; formal A active, no PR/score/merge |
+| CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; gaps; full live demo + throwaway Fuji wallet |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
 | CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
-| P2/P3 | pending | Only after A–F green/merged; all default OFF/versioned |
+| P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/origin+local main: a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3 (#255).
-Reviewed fix tree755ca0eaf87a576314174085cfb7c0b492a97884 equals main; author/suffix exact.
-CXC2 acceptance666088c DONE. Current a903fb6 release validation active; no next merge before it passes.
-Previous666088c core2423/317×2/live32assets/22health/11×2 PASS; do not relabel it as a903fb6 proof.
-Recent100-block events are available; live NFT14200B/Market7713B/linkage verified. No funded wallet/backend proof.
-Local main retains untracked.worktrees/. Ledger /private/tmp/tbh-t001-ledger, ai/codex-mega-ledger; stage selected files only.
+Last merged/origin+local main: a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3 (#255), exact reviewed tree/author/suffix.
+Current acceptance ORIG1-FRESH/acceptance.json DONE: core2452,317 browsers each size;32assets before/after,
+22health,11-stage guest paths each size,zero errors/transactions; recent100-block reads available; Actions0.
+No funded wallet/full future nine-stage/backend-source identity claim. Local main preserves untracked.worktrees/.
+Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; stage selected paths, preserve historical dirty files.
 
-ORIG1 A89352 FINISHED PASS96: /private/tmp/tbh-original-content, codex/original-content,
-head2f7c0b307123695a8244813604d540334e5fb8c0, base666088c, ports5100–5103.
-A core2452,317×2,30 UI repeats,10 mutants and source/default-OFF checks PASS.
-B93028 FINISHED PASS96 on clean2f7c0b3: core2452,30 repeats,38classic,10 mutants,originality/config checks.
-ACTIVE post-main PID96199: /private/tmp/tbh-main-after-orig1,a903fb6,4980–4983; ORIG1-FRESH/post-main/.
-B config/logs ORIG1-FRESH/grade-b/. No duplicate full matrix; A exact-head receipt shared.
-Selected5100–5103 browser-safe preflight PASS; negative5060/5061 controls blocked. NEVER use SIP5060/5061.
-Originality88093 FINISHED PASS on2f7c0b3: archive identity/CRC,136 name patterns,964 descriptions,
-11113 prose fragments,2375 tracked files/1780 archive entries; no matches;39 authored labels/34 descriptions unique.
-Scanner is a reviewed standalone offline copy; patterns stay in memory; no orchestrator/media extraction/generator input.
-Original ai/T01112d0355 and ai/T012a35a280 preserved;3 commits rebased with proper author/suffix.
-Builder73795 passed install/type/lint/29 focused tests on earlier69902d6; data blobs unchanged by rebase.
-Active-config AST showed9 existing properties unchanged; formal A reruns on current head. Shared feature flag false.
-P1 consumer/art /private/tmp/tbh-original-preview, codex/original-preview-art,basea903fb6,upstream unset.
-Plan ORIG1-FRESH/NEXT-CONSUMER.md; no implementation yet. Art inventory/tool contracts now read.
-Art decision/STYLE/provenance headers/manifest reviewed:48-color cafe-night-v1,32px icons,max16 colors,binary alpha,2px padding.
+ACTIVE PID7959: /private/tmp/tbh-original-preview, codex/original-preview-art,
+head792b475d9dc30847e8c7ff2660419a0cd67a78b0, basea903fb6, ports5020–5023.
+Config/logs ORIG2-ART-FRESH/grade-a/. Core/build,40art/catalog checks,10 UI+4 art mutants,originality,capture PASS.
+Inspect latest logs for repeat/full321×2 before anything. No duplicate run. No formal score/PR yet.
+Preview uses transient local opt-in from shared false default, no config/storage/network/game mutations.
+12stats/15items/5qualities/7skills; exact fractional units/caps/costs/triggers; safe selectors; lazy Help host.
+34 original coordinate-drawn32px icons; no external media/image model; at most16 palette colors,binary alpha,2px padding.
+Static atlas exact per-pixel crop checks; old frames reused at integer scales; no existing art modified/deleted.
+Sources/provenance: tools/art/original_icons.py, original-icons.json, reports/asset-provenance.md,
+reports/art/original-economy/generation.json; docs/art generated catalogs include34 new icons+5 existing frame aliases.
+Original outputs /private/tmp/tbh-original-art-r1 and r2 retained. R2 added runtime metadata; all PNG/atlas bytes equal.
+Runtime Python3.9.6/zlib1.2.12; generator SHA b409a077f428c50b430bc31d9ff86911678f53a3737376351efc9534e91a3044.
+Images inspected native1x/3x dark/cream and monochrome; contrast distributions in ORIG2-ART-FRESH/art-contrast.json.
+Builder22 UI cases/4 browser cases normal+reduced motion PASS. Compact header makes costs/skill facts fit720px.
+Catalog provenance initially omitted new first/latest git hashes; fixed in generator; inherited test unchanged;40art PASS.
+Commits52614a7 implementation,ec9adef catalog,c9cf55f exact runtime,792b475 current catalog evidence.
+Art and UI builder PIDs all finished. Catalog clean at792b475; do not regenerate into old output dirs (exclusive writes).
 
-All CXC2 verification PIDs finished; source /private/tmp/tbh-cxc2-active e54f075 and fix /private/tmp/tbh-cxc2-rpc-fix df83851 retained.
-Clean reviewers /private/tmp/tbh-cxc2-fresh-b and /private/tmp/tbh-cxc2-rpc-fix-b retained.
-Main verification /private/tmp/tbh-main-after-cxc2-range is666088c; successful receipt range-post-main-safe-ports/.
-Failures retained: direct-only guard rejected Multicall; canonical2-getter decode fixed it;500-block RPC request exceeded100 cap;
-fixed via254. First main attempt used unsafe5060/5061; safe4980–4983 run passed unchanged assertions. No unsafe-port override.
-Strict100-block live guard23 controls PASS; all source/merge Actions counts0.
-CXU3 /private/tmp/tbh-cxu3-active4da5104, draft252; third A StageLayout boss-state unit timed out at5000ms (1374 other web cases PASS).
-No fourth repair/retry;11 mutants/UI/effects green do not override failed gate. B checkout installed only.
-Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3 and saved immutable source patch/inventory.
+ORIG1 source /private/tmp/tbh-original-content and clean B /private/tmp/tbh-original-content-b at2f7c0b3 retained.
+Original ai/T01112d0355 and ai/T012a35a280 preserved. Main verifier /private/tmp/tbh-main-after-orig1 at a903fb6.
+CXC2 acceptance CXC2-FRESH/acceptance.json DONE. Old guard/range/unsafe-port failures retained; all fixed.
+NEVER use Chromium SIP5060/5061. Known-safe blocks:4980 main,5020 A,5030 B,5100 (each +0..3).
+CXU3 /private/tmp/tbh-cxu3-active4da5104 draft252: third A StageLayout boss-state test timed out at unchanged5000ms.
+1374 other web cases passed;11 mutants/UI checks do not override failure. No fourth repair/retry; B installed only.
+Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3 and its saved immutable patch/inventory.
 
-Safety: no secrets, destructive DB writes, migrations/function deploys, Vercel/VITE_GAME_V2 changes,
-real funds/mainnet, repo publicity, contest submission, .github changes, Actions or direct-main pushes.
-Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007. Do not kill unrelated18457/OS listeners; inspect owned cwd.
+Context skill read: configured180880 total unchanged, runtime application NOT_VERIFIED; no native compact tool exposed.
+No actual compaction performed. Optional manual /compact recorded in OPTIONAL-USER-STEPS; it blocks no work.
+Safety: no secrets, destructive DB writes, migrations/function deploys, Vercel/VITE_GAME_V2 changes, real funds/mainnet,
+repo publicity, contest submission, .github changes, Actions or direct-main pushes. Exact owner backup step is T007.
+Do not kill unrelated18457/OS listeners; inspect owned cwd. No new chats/helpers/schedulers beyond the requested heartbeat.
 Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: finish96199 release; implement local default-OFF catalog and original icons in preview worktree; gates before next merge.
+Next3: finish A7959 and inspect every result; clean exact-head B tests first then diff; merge/re-test preview/art if green, then CXR1.

@@ -1,0 +1,41 @@
+PASS valid reference archive identity
+PASS reference archive CRC
+PASS five system notes and source index; Markdown only
+PASS substantive note README.md
+PASS no source tables/images README.md
+PASS substantive note items.md
+PASS no source tables/images items.md
+PASS numeric envelopes present items.md
+PASS substantive note pets.md
+PASS no source tables/images pets.md
+PASS numeric envelopes present pets.md
+PASS substantive note skills-runes.md
+PASS no source tables/images skills-runes.md
+PASS numeric envelopes present skills-runes.md
+PASS substantive note stats.md
+PASS no source tables/images stats.md
+PASS numeric envelopes present stats.md
+PASS substantive note ui-layout.md
+PASS no source tables/images ui-layout.md
+COMMAND git ls-files -z exit=0
+patterns entity-names 136 matched_files 0
+PASS repository-wide literal scan: entity-names absent
+patterns descriptions 964 matched_files 0
+PASS repository-wide literal scan: descriptions absent
+normalized_source_12word_fragments 11113 matched_files 0
+PASS no normalized 12-word source prose overlap across tracked text
+tracked_files 2422 archive_members 1780 archive_hash_matches 0
+PASS no byte-identical source files or media in tracked tree
+notes new_labels 39 label_matches 0 new_descriptions 34 description_matches 0
+PASS original labels and descriptions absent from notes
+archive new_labels 39 label_matches 0 new_descriptions 34 description_matches 0
+PASS original labels and descriptions absent from archive
+COMMAND git diff --name-only origin/main -- exit=0
+normalized_note_12word_matches 0
+PASS no copied reference-note prose in changed files
+PASS no workflow or migration changes
+COMMAND git diff --check origin/main -- exit=0
+PASS diff whitespace check
+COMMAND git rev-parse HEAD exit=0
+HEAD 792b475d9dc30847e8c7ff2660419a0cd67a78b0
+RESULT PASS failures 0
