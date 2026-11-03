@@ -2,6 +2,7 @@ import {
   lazy,
   Suspense,
   useEffect,
+  useLayoutEffect,
   useRef,
   useReducer,
   useState,
@@ -120,7 +121,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   });
   const [visited, setVisited] = useState<Set<ScreenId>>(() => new Set<ScreenId>(['home', 'hero']));
 
-  useEffect(() => {
+  // Keep the confirmed class screen painted until Home is ready in the same frame.
+  useLayoutEffect(() => {
     if (initialScreen) {
       setScreen(initialScreen);
     } else if (state && !state.cat.classId) {
