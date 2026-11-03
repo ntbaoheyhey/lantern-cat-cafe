@@ -50,7 +50,8 @@ Official faucet redirects to Builder Hub and requires wallet+login. Console key 
 Funded wallet owner prerequisite in OPTIONAL-USER-STEPS; no key/seed should be supplied in chat.
 
 UI worktrees observed READ-ONLY: /Users/bao/taskbar-hero-ui and /Users/bao/taskbar-hero-ui-ledger.
-REQUESTS-FOR-SYSTEM in UI ledger says no missing fields yet. Recheck at milestones; ship or decline each actual request.
+UI requested CXLU1 rune definitions/ownership/equipped fields; declined under current P2 gate/no authoritative model.
+Inline reply mirror reports/ui/REQUESTS-FOR-SYSTEM.md in own ledger; board links it; UI worktree untouched.
 Handoff findings at this ledger reports/ui/REQUESTS-FROM-SYSTEM-QA.md; board points UI to that absolute path.
 257/c49421f source /private/tmp/tbh-cxr2-active and252/4da5104 source /private/tmp/tbh-cxu3-active untouched now.
 Old separate CXR2 dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero preserved; do not edit it.
