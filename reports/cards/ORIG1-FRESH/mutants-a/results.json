@@ -1,0 +1,92 @@
+[
+  {
+    "name": "default-on",
+    "file": "packages/game-rules/src/config.ts",
+    "from": "originalEconomy: false",
+    "to": "originalEconomy: true",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "off-guard-missing",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "if (!enabled) return null;",
+    "to": "if (false) return null;",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "caps-reversed",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "Math.min(value, stat.cap)",
+    "to": "Math.max(value, stat.cap)",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "level-zero-offset",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "table.gear.levelGrowth * (level - 1)",
+    "to": "table.gear.levelGrowth * level",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "fractions-rounded",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "[stat, base * scale]",
+    "to": "[stat, Math.round(base * scale)]",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "attack-speed-reversed",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "table.combat.attackIntervalMs / (1 + current.attackSpeed)",
+    "to": "table.combat.attackIntervalMs * (1 + current.attackSpeed)",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "cooldown-speed-leak",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "? entry.every\n",
+    "to": "? entry.every / (1 + current.attackSpeed)\n",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "quality-denominator",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "quality.weightBp / 10000",
+    "to": "quality.weightBp / 1000",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "offline-cap-reversed",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "Math.min(elapsedSeconds, table.rewards.offlineCapSeconds)",
+    "to": "Math.max(elapsedSeconds, table.rewards.offlineCapSeconds)",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "price-rounds-down",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "Math.ceil(table.gear.upgradeFish",
+    "to": "Math.floor(table.gear.upgradeFish",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  }
+]

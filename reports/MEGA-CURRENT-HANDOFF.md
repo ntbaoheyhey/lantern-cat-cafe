@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T06:58:20+07:00. ACTIVE, one chat/agent; hourly taskbar-hero-hourly-handoff remains active.
+Updated: 2026-11-03T07:11:19+07:00. ACTIVE, one chat/agent; hourly taskbar-hero-hourly-handoff remains active.
 Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
@@ -10,7 +10,7 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | CXU4 | #251/main2847e9a | DONE A95/B95; main313×2; live assets/health/10 stages×2 PASS |
 | CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; never merge current evidence |
 | CXC2 | #253 + #254/main666088c | DONE feature A95/B96 + fix A96/B96; main317×2/live11×2 PASS |
-| T011/T012 | local2f7c0b3 | Fresh ORIG1 A active; shared default OFF; no runtime consumer/PR |
+| T011/T012 | local2f7c0b3 | ORIG1 A96; clean B active; shared default OFF; no consumer/PR |
 | Content consumer + ART/T013 | pending P1 | Local default-OFF preview, original snapped/palette-locked art; no backend activation |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; remaining gaps; full live path + throwaway Fuji wallet |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
@@ -24,9 +24,11 @@ Main core2423 +317 browsers each size; live32/32 assets before/after,22 health,1
 Recent100-block events are available; live NFT14200B/Market7713B/linkage verified. No funded wallet/backend proof.
 Local main retains untracked.worktrees/. Ledger /private/tmp/tbh-t001-ledger, ai/codex-mega-ledger; stage selected files only.
 
-ACTIVE ORIG1 A PID89352: /private/tmp/tbh-original-content, codex/original-content,
+ORIG1 A89352 FINISHED PASS96: /private/tmp/tbh-original-content, codex/original-content,
 head2f7c0b307123695a8244813604d540334e5fb8c0, base666088c, ports5100–5103.
-Config/logs reports/cards/ORIG1-FRESH/grade-a/; type/lint/unit/build,active-config,10 mutants,default-UI repeats,full317×2.
+A core2452,317×2,30 UI repeats,10 mutants and source/default-OFF checks PASS.
+ACTIVE B PID93028: /private/tmp/tbh-original-content-b exact2f7c0b3,5030–5033; tests first then full diff.
+B config/logs ORIG1-FRESH/grade-b/. No duplicate full matrix; A exact-head receipt shared.
 Selected5100–5103 browser-safe preflight PASS; negative5060/5061 controls blocked. NEVER use SIP5060/5061.
 Originality88093 FINISHED PASS on2f7c0b3: archive identity/CRC,136 name patterns,964 descriptions,
 11113 prose fragments,2375 tracked files/1780 archive entries; no matches;39 authored labels/34 descriptions unique.
@@ -52,4 +54,4 @@ real funds/mainnet, repo publicity, contest submission, .github changes, Actions
 Owner backup step exact in reports/OPTIONAL-USER-STEPS.md T007. Do not kill unrelated18457/OS listeners; inspect owned cwd.
 Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: inspect ORIG1 A89352 without duplicates; clean fresh B then publish T011/T012 if green; wire local preview and original P1 art.
+Next3: finish B93028 then full32-file review; publish/merge tables only if both gates pass and re-test main/live; then local preview/art.

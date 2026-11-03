@@ -1,0 +1,76 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A, T011/T012 publication only",
+  "head": "2f7c0b307123695a8244813604d540334e5fb8c0",
+  "base": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+  "tree": "cef0523a2aeb920239677a2fb594013444b36c50",
+  "sourceRoot": "/private/tmp/tbh-original-content",
+  "gradedAt": "2026-11-03T00:08:20.022274+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Publishes T011/T012 scope:12 stats,15 items,5 qualities,7 skills; shared flag false, pure opt-in API and9 existing active properties preserved. Stable IDs and Relic odds untouched."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head type/lint/core2452,317 browsers per size,30 default-UI repeats, build/Deno/link checks and original-content isolation/math/docs checks pass; inherited expected failures/skips unchanged."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten semantic mutants killed after green control using numeric/isolation tests, not merely the docs-sync mirror."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Data-only/default-OFF phase: unchanged UI passes both sizes; docs distinguish units/caps/conditional probabilities and hypothetical output. Deduct2 for dense long tables; consumer/art delivery is still pending."
+    },
+    {
+      "id": "C5",
+      "score": 9,
+      "max": 10,
+      "reason": "Typed pure calculator, no dependencies/persistence/random/HTTP/game overrides. Deduct1 because future consumers must validate external IDs before calling the typed API."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No inherited assertion, limit or retry weakened. New tests cover caps, budgets, timing and disabled API; default UI repeated unchanged."
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Fresh archive identity/CRC/name/prose/media checks tied to exact head; source patterns stay in memory. Notes explicitly retain observational limits and unavailable historical material, without copying source records."
+    },
+    {
+      "id": "C8",
+      "score": 4,
+      "max": 5,
+      "reason": "Generated Deno maps are required source consistency, not deployment. Deduct1 for neutral wording changes in3 historical description tables; actual art and recorded prompts remain untouched."
+    }
+  ],
+  "evidence": [
+    "grade-a/commands.json",
+    "grade-a/active-config.json",
+    "mutants-a/results.json",
+    "originality-current/commands.json",
+    "originality-current/logs/originality.log",
+    "review-a-inventory.json"
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "Clean exact-head B>=92",
+    "PR squash and main/live validation",
+    "Consumer/art remain separate required P1 work"
+  ]
+}
