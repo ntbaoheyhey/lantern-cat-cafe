@@ -9,7 +9,7 @@ import { injected, mock } from 'wagmi/connectors';
 import { AUTH_UNAVAILABLE_MESSAGE, createHttpAuthApi, createMockAuthApi, type AuthApi } from './authApi';
 import { fuji, makeFujiChain } from './config';
 import { createSessionStore } from './session';
-import { CORE_INSTALL_URL, NO_WALLET_HINT, WalletButton } from './WalletButton';
+import { CORE_INSTALL_URL, NO_WALLET_HINT, WRONG_NETWORK_MESSAGE, WalletButton } from './WalletButton';
 import { WalletProvider } from './WalletProvider';
 
 const ACCOUNT = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8' as const;
@@ -67,7 +67,21 @@ it('shows a switch prompt on the wrong network', async () => {
   setup({ startOnFuji: false });
   fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
   expect((await screen.findByRole('alert')).textContent).toMatch(/Wrong network/);
+  expect(screen.getByRole('group', { name: 'Wallet' }).contains(screen.getByRole('alert'))).toBe(false);
   fireEvent.click(screen.getByRole('button', { name: 'Switch to Fuji' }));
+  expect(await screen.findByRole('button', { name: 'Sign in' })).toBeTruthy();
+  expect(screen.queryByText(WRONG_NETWORK_MESSAGE)).toBeNull();
+});
+
+it('dismissing a network warning leaves the switch action reachable', async () => {
+  const { store } = setup({ startOnFuji: false });
+  fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
+  fireEvent.click(await screen.findByRole('button', { name: `Dismiss ${WRONG_NETWORK_MESSAGE}` }));
+  expect(screen.queryByRole('alert')).toBeNull();
+  const switchButton = screen.getByRole('button', { name: 'Switch to Fuji' });
+  expect(switchButton.getAttribute('title')).toBe(WRONG_NETWORK_MESSAGE);
+  expect(store.get()).toBeNull();
+  fireEvent.click(switchButton);
   expect(await screen.findByRole('button', { name: 'Sign in' })).toBeTruthy();
 });
 

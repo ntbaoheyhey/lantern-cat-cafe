@@ -6,7 +6,9 @@ import { expiryFromToken } from './session';
 import { buildSiweMessage } from './siwe';
 import { useAuthContext, useSession } from './WalletProvider';
 import { ToastHost } from '../ui';
+import './notifications.css';
 
+export const WRONG_NETWORK_MESSAGE = 'Wrong network. Switch to Avalanche Fuji.';
 export const CORE_INSTALL_URL = 'https://core.app';
 export const NO_WALLET_HINT =
   'No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.';
@@ -86,8 +88,7 @@ export function WalletButton() {
   } else if (chainId !== FUJI_CHAIN_ID) {
     body = (
       <>
-        <span className="wallet-msg" role="alert">Wrong network. Switch to Avalanche Fuji.</span>
-        <button className="wallet-btn" disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
+        <button className="wallet-btn" title={WRONG_NETWORK_MESSAGE} disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
           Switch to Fuji
         </button>
       </>
@@ -111,14 +112,16 @@ export function WalletButton() {
     );
   }
 
-  const error = signError ?? (connectError ? errText(connectError) : undefined);
+  const error = isConnected && address && chainId !== FUJI_CHAIN_ID
+    ? WRONG_NETWORK_MESSAGE : signError ?? (connectError ? errText(connectError) : undefined);
+  useEffect(() => { setDismissedError(undefined); }, [chainId, isConnected]);
   return (
     <>
       <div className="wallet" role="group" aria-label="Wallet">
         {body}
       </div>
       {error && error !== dismissedError && createPortal(
-        <ToastHost toasts={[{ id: 'wallet-error', tone: 'error', message: error }]} onDismiss={() => setDismissedError(error)} />,
+        <div className="wallet-notifications"><ToastHost toasts={[{ id: 'wallet-error', tone: 'error', message: error }]} onDismiss={() => setDismissedError(error)} /></div>,
         document.body,
       )}
     </>
