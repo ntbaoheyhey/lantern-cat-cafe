@@ -12,3 +12,5 @@
 - Created separate own SYS branch ai/codex-ovn-sys-auth-stack, head e2994f6, on FIRSTPLAY7d0d08e with only the three SYS commits replayed. FreshA58589/B58591 at5173–5178/5190–5195 are running. Next wallet supplemental reviews. This tests inherited accessibility dependency without editing UI paths. No passing standalone95d9c32grade claimed.
 - Existing wrong-network/nonce502 browser reviews at reports/sys/wallet-a3 and wallet-b3. They prove no signature, transaction/session, errors or overflow, but retain inheritedaxe failure.
 - Reports and receipts use ai/codex-ui-ledger. Update handoff per milestone. Draft PRs only while quota holds. No merge lock held.
+
+- 20:35Z SYS e2994f6 rejected after native1280connectedwalletPower/Live overlap. Geometry repro RED preserved. Wallet-owned CSS repair85a6919 builder8/8PASS, native1280reviewPASS, freshA70182/B70183 at5173/5190. Keyboardafd0699 cleanB14commandsPASS, A full still running. No merge/quota probe.

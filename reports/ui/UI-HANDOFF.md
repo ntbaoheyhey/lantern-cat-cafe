@@ -17,3 +17,5 @@
 - No active merge lock acquired. Foreign processes and untracked files preserved. Author ntbaoheyhey noreply, commit suffix [skip ci].
 - Next finish keyboard cluster and exact-head gates, gallery artifacts, SYS dependency gate, draft PRs and reports/OVERNIGHT-REPORT.md. Stop when authorized work is complete or remaining work only needs quota/user.
 - 20:23Z milestone keyboardafd0699 frozen after100targetedbuilderPASS, fixes navigationfocusrace too. FreshA58517/B58519 at5310–5314/5320–5324. SYSstacke2994f6 on acceptedFIRSTPLAY7d0d08e, A58589/B58591 at5173–5178/5190–5195. Effects61021 runs5330. No source mutations during gates.
+
+- 20:35Z SYS e2994f6 rejected after native1280connectedwalletPower/Live overlap. Geometry repro RED preserved. Wallet-owned CSS repair85a6919 builder8/8PASS, native1280reviewPASS, freshA70182/B70183 at5173/5190. Keyboardafd0699 cleanB14commandsPASS, A full still running. No merge/quota probe.
