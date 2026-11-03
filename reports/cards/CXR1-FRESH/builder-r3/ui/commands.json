@@ -1,0 +1,45 @@
+[
+  {
+    "name": "audit",
+    "original": "ui-audit.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r3/ui/audit",
+      "bossReadyStrong",
+      "--strict"
+    ],
+    "exit": 0,
+    "adaptations": "Ports, isolated temporary audit build, and all manifest guest-only screenshot output; --strict audits and existing viewport option; generated build outputs ignored by dev watcher; assertions unchanged"
+  },
+  {
+    "name": "audit-signed",
+    "original": "ui-audit.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r3/ui/audit-signed",
+      "strong",
+      "--signed-in",
+      "--strict"
+    ],
+    "exit": 0,
+    "adaptations": "Ports, isolated temporary audit build, and all manifest guest-only screenshot output; --strict audits and existing viewport option; generated build outputs ignored by dev watcher; assertions unchanged"
+  },
+  {
+    "name": "effects-1280",
+    "original": "effects-test.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r3/ui/effects-1280",
+      "--viewport=1280x720"
+    ],
+    "exit": 0,
+    "adaptations": "Ports, isolated temporary audit build, and all manifest guest-only screenshot output; --strict audits and existing viewport option; generated build outputs ignored by dev watcher; assertions unchanged"
+  },
+  {
+    "name": "effects-1600",
+    "original": "effects-test.mjs",
+    "args": [
+      "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r3/ui/effects-1600",
+      "--viewport=1600x900"
+    ],
+    "exit": 0,
+    "adaptations": "Ports, isolated temporary audit build, and all manifest guest-only screenshot output; --strict audits and existing viewport option; generated build outputs ignored by dev watcher; assertions unchanged"
+  }
+]

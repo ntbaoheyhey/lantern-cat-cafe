@@ -1,67 +1,58 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:34:38.353515+07:00. ACTIVE; CXR1 final builder/audit.
-Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
-STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
-Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
+Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A running.
+Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
+Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
+No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
+STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orchestrator.py/remove STOP.
 
 | Item | PR/head | State |
 |---|---|---|
-| CXU5 | #249/main1b299c4 | DONE fresh A94/B94, main/live accepted |
-| CXU4 | #251/main2847e9a | DONE fresh A95/B95, main/live accepted |
-| CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; do not merge |
+| CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main/live accepted |
+| CXU4 | #251/main2847e9a | DONE A95/B95; main/live accepted |
+| CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout; no B; do not merge/retry fourth |
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
-| T011/T012 | #255/maina903fb6 | DONE A96/B96; shared OFF; main2452/317×2/live32/22/11×2 PASS |
-| ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; actual-main/live accepted |
-| CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; gaps; full live demo + throwaway Fuji wallet |
-| CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
-| CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
+| T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
+| ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
+| CXR1 | #245/remotee99e497,localed11f01 | Refreshed main; builder green; fresh A in progress |
+| CXR2/CXQ1 | pending | Final audit; timed live demo + throwaway Fuji wallet mint/list/buy |
+| CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
+| CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/origin+local main: 2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 (#256), exact reviewed tree/author/suffix.
-Current acceptance ORIG1-FRESH/acceptance.json DONE: core2452,317 browsers each size;32assets before/after,
-22health,11-stage guest paths each size,zero errors/transactions; recent100-block reads available; Actions0.
-No funded wallet/full future nine-stage/backend-source identity claim. Local main preserves untracked.worktrees/.
-Ledger /private/tmp/tbh-t001-ledger on ai/codex-mega-ledger; stage selected paths, preserve historical dirty files.
+Last merged/origin+local main:2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 (#256), exact approved tree.
+ORIG2-ART-FRESH/acceptance.json:35/35 asset hashes before+after;22health;16live stages each size;
+zero unexpected errors/transactions; Actions0. PID19884 finished,4980–4983 free. No funded demo claim.
+ORIG2 source /private/tmp/tbh-original-preview and clean B retained at792b475. Normal merge preserved art history.
+34 original coordinate-drawn32px icons, palette/snap/binary alpha/padding; existing artwork unchanged.
+Catalog local opt-in resets on Help-tab/reload, no config/storage/network/gameplay/backend mutations.
 
-A7959 FINISHED PASS96: /private/tmp/tbh-original-preview, codex/original-preview-art,
-head792b475d9dc30847e8c7ff2660419a0cd67a78b0, basea903fb6, ports5020–5023.
-Config/logs ORIG2-ART-FRESH/grade-a/. Core/build,40art/catalog checks,10 UI+4 art mutants,originality,capture PASS.
-A full321×2/60 repeats PASS. B12044 FINISHED all checks PASS at same head in /private/tmp/tbh-original-preview-b.
-PID19884 FINISHED PASS; /private/tmp/tbh-main-after-orig2;4980–4983 free.
-Core2459/40art+321 browsers each size PASS;35assets before/after;22health;16live stages each size PASS.
-A/B5020–5023/5030–5033 free; B review complete96; do not rerun completed tests.
-Normal merge preserved creation commits; isolated merge-object probe verified38 new paths stable.
-Preview uses transient local opt-in from shared false default, no config/storage/network/game mutations.
-12stats/15items/5qualities/7skills; exact fractional units/caps/costs/triggers; safe selectors; lazy Help host.
-34 original coordinate-drawn32px icons; no external media/image model; at most16 palette colors,binary alpha,2px padding.
-Static atlas exact per-pixel crop checks; old frames reused at integer scales; no existing art modified/deleted.
-Sources/provenance: tools/art/original_icons.py, original-icons.json, reports/asset-provenance.md,
-reports/art/original-economy/generation.json; docs/art generated catalogs include34 new icons+5 existing frame aliases.
-Original outputs /private/tmp/tbh-original-art-r1 and r2 retained. R2 added runtime metadata; all PNG/atlas bytes equal.
-Runtime Python3.9.6/zlib1.2.12; generator SHA b409a077f428c50b430bc31d9ff86911678f53a3737376351efc9534e91a3044.
-Images inspected native1x/3x dark/cream and monochrome; contrast distributions in ORIG2-ART-FRESH/art-contrast.json.
-Builder22 UI cases/4 browser cases normal+reduced motion PASS. Compact header makes costs/skill facts fit720px.
-Catalog provenance initially omitted new first/latest git hashes; fixed in generator; inherited test unchanged;40art PASS.
-Commits52614a7 implementation,ec9adef catalog,c9cf55f exact runtime,792b475 current catalog evidence.
-Art and UI builder PIDs all finished. Catalog clean at792b475; do not regenerate into old output dirs (exclusive writes).
+CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, sourceed11f01.
+Fresh A PID27776 at same cwd; ports5020–5023, then5100–5103 audit/effects; no final grade yet.
+Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
+Clean B /private/tmp/tbh-cxr1-fresh-b at exacted11f01; dependency setup only; B tests/review NOT STARTED.
+Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
+Builder1 exposed historical assertions requiring false landing claims; documented old→new, retained failure.
+Builder2 PASS87focused/24browser; visual found omitted context-row height/fixed empty tiles/bulk100% width.
+Builder3 corrected all;87focused/24browser+strict guest/local-signed audits+effects both sizes PASS.
+Eight reference/app pairs inspected; captures in builder-r3; two historical HUD images restored after copies.
+Latest source cleanup uses shared SCENE_HEIGHT; exact-head full gate in A re-verifies everything.
+Changes: bad token#ff9696 with4.5 threshold unchanged; bg#120b19/body14; truthfulERC1155/public links/local guest;
+full-bleed integer-scale existing scene; tall first-run class cards; stage/log left+one320px sidebar;
+fluid8-col Bag/200capacity, secondary bulk equip, actions above separate compare, unavailable mint proof.
+All existing actions/data/art preserved. docs/decisions/cxr1-truth-and-layout.md explains changed false tests.
+Original CXR1 report and screenshots explicitly historical. No new PR push/merge yet.
+CXR1-FRESH/resume-state.json/md records verified Git/PR/ports; review-a-inventory.json hashes all diff files.
 
-ORIG1 source /private/tmp/tbh-original-content and clean B /private/tmp/tbh-original-content-b at2f7c0b3 retained.
-Original ai/T01112d0355 and ai/T012a35a280 preserved. Main verifier /private/tmp/tbh-main-after-orig1 at a903fb6.
-CXC2 acceptance CXC2-FRESH/acceptance.json DONE. Old guard/range/unsafe-port failures retained; all fixed.
-NEVER use Chromium SIP5060/5061. Known-safe blocks:4980 main,5020 A,5030 B,5100 (each +0..3).
-CXU3 /private/tmp/tbh-cxu3-active4da5104 draft252: third A StageLayout boss-state test timed out at unchanged5000ms.
-1374 other web cases passed;11 mutants/UI checks do not override failure. No fourth repair/retry; B installed only.
-Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3 and its saved immutable patch/inventory.
-
-Context skill read: configured180880 total unchanged, runtime application NOT_VERIFIED; no native compact tool exposed.
-No actual compaction performed. Optional manual /compact recorded in OPTIONAL-USER-STEPS; it blocks no work.
-Safety: no secrets, destructive DB writes, migrations/function deploys, Vercel/VITE_GAME_V2 changes, real funds/mainnet,
-repo publicity, contest submission, .github changes, Actions or direct-main pushes. Exact owner backup step is T007.
-Do not kill unrelated18457/OS listeners; inspect owned cwd. No new chats/helpers/schedulers beyond the requested heartbeat.
-Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
-After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-CXR1 /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1: main merged d71899a; dirty builder.
-BuilderR1 typecheck/86 focused PASS,1 stale landing-claim assertion FAIL; documented truthful correction.
-BuilderR2 PASS87focused/24browser; visual caught HUD reserve/empty tile/bulk-width gaps; corrected.
-BuilderR3 PID26389 /private/tmp/tbh-cxr1-active:5020–5023 then5100–5103 audits/effects; no A/B yet.
-Next3: correct CXR1 contrast/truth/layout gaps; build focused checks; exact-head A/B gate.
+CXU3 /private/tmp/tbh-cxu3-active4da5104: third A unchanged5000ms StageLayout boss-state test timeout.
+1374 other web cases pass; no final-head full matrix/B. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
+CXN3 complete deployed-source+dependencies/import maps and tested restore unavailable; CLI UnsafeFunctionDownloadPathError.
+Partial export is not backup. Exact owner step T007 in OPTIONAL-USER-STEPS.md; no live --v2 check.
+No secrets, destructive liveDB writes, migrations/edge deploys, Vercel/VITE_GAME_V2 changes,
+real funds/mainnet, repo publicity, contest submission,.github changes,Actions,direct-main pushes.
+No broad pkill; inspect cwd before killing owned PIDs; PID reuse observed. Leave unrelated18457/OS listeners.
+Never Chromium5060/5061. Safe4980 main/5020 A/5030 B/5100 UI (each+0..3); verify listeners first.
+Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger draft241; stage selected files, preserve historical dirty evidence.
+After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/push ledger. No completion claim.
+Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
+Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
+Next3: complete fresh A/mutants/review; clean B tests then diff+grade; if both qualify merge245 then main/live.
