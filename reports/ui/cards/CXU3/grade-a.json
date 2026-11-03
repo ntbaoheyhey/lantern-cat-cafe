@@ -1,0 +1,66 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader A",
+  "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
+  "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
+  "score": 94,
+  "status": "PASS",
+  "autoFails": [],
+  "gradedAt": "2026-11-03T04:58:07.755171+00:00",
+  "criteria": [
+    {
+      "criterion": "Design and readability",
+      "score": 22,
+      "max": 25,
+      "reason": "Picker/preview/materials and Relic table/detail follow the approved reference at both sizes. Minor inherited unframed Forge side groups and technical odds footnote queued for CXR2."
+    },
+    {
+      "criterion": "Behavior and data truth",
+      "score": 25,
+      "max": 25,
+      "reason": "Actual recipes, bigint rows, existing transactions and guards preserved; immutable query sorting; one-shot reveals; confirmations and stale-read states verified."
+    },
+    {
+      "criterion": "Accessibility and motion",
+      "score": 19,
+      "max": 20,
+      "reason": "Unchanged contrast tests, computed Cancel contrast >=4.5, keyboard actions, named controls and both motion preferences pass. Compact action behavior preserved."
+    },
+    {
+      "criterion": "Scope and preservation",
+      "score": 20,
+      "max": 20,
+      "reason": "16 owned paths only; no dependency, API, economy, art, provider or workflow edit. Requested author and skip-ci suffix checked."
+    },
+    {
+      "criterion": "Verification evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "2512 unit/script passes (2 inherited expected failures and 11 skips unchanged), 330 full browser cases per size, 57 changed-case executions per size, 20/20 resize repetitions and 18 clear audit views. Market RPC/wallet behavior is mocked and clearly labelled; fresh-main/live validation follows merge."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0,
+    "repeatEach": 5,
+    "note": "Each spec itself tests both desktop sizes; run under both viewport configurations."
+  },
+  "evidence": [
+    "reports/ui/logs/cxu3-a/receipt.json",
+    "reports/ui/logs/cxu3-a/scope.json",
+    "screenshots/ui-2026-11-03/cxu3-a-audit/findings.json"
+  ],
+  "visualReview": [
+    "craft-confirm-1280-reduce.png",
+    "craft-result-1600-no-preference.png",
+    "market-inspect-1280.png",
+    "market-sell-1600.png",
+    "hero-1280x720.png",
+    "home-1600x900.png",
+    "bag-1280x720.png",
+    "map-1600x900.png",
+    "help-1600x900.png"
+  ],
+  "reviewOrder": "Full source diff, fresh core/changed/full/resize checks, screenshot inspection; no assertion or timeout changes."
+}

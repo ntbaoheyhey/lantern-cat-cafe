@@ -1,0 +1,9 @@
+# CXR2 build preparation
+- Import only owned paths from partial c49421f; retain docs decisions and old PR257 untouched.
+- Preserve every timeout/assertion. Fix portal queries with dialog-scoped assertions, retain heading names and aria linkage. Initialize helpStore from the already-seeded seen flag in the Relic-specific fixture.
+- Correct v2 first-visit guidance from current shared rules (SYSTEM SYS-UI-003).
+- Review all desktop screens plus applicable loading/empty/error/offline/wallet/long text/zero/max states. Record N/A for states a screen cannot expose, rather than fabricate gameplay fields.
+- Visual polish candidates from CXU3 A: unframed Forge side groups; implementation-oriented odds footnote; rounded rail/Next surfaces; make intended scroll regions keyboard reachable.
+- Stress Market with unknown long token IDs and maximum bigint quantities; ensure contained wrapping and truthful loading states.
+- Keep screenshots/ui-2026-11-03/cxu3-a-audit as before evidence; capture missing landing/class/shared states on the merged base.
+- CXR2 13 inherited failures are acknowledged, not waived. Full A/B gate remains mandatory.
