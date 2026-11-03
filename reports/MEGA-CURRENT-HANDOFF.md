@@ -17,15 +17,15 @@ If held, wait/check every2–3min up to60min; stale ONLY owner older90min AND PI
 Inside lock fetch,merge latest origin/main into own branch,rerun changed specs+typecheck+lint,merge,release rmdir.
 Keep exact-head fresh A/B gate; if integration changes reviewed head, reverify rather than use stale evidence.
 Append one atomic line per milestone to ~/.taskbar-hero-locks/board.log. No cross-session messages needed.
-Board: UI adopted CXC2 #253/#254 evidence; CXU3 2e1f83b gate active, NOT merged/ready yet.
+Board: UI adopted CXC2; CXU3 9628310 fresh A3 active, art/rarity repairs; NOT merged/ready yet.
 
 | Item | Verified state |
 |---|---|
 | T011/T012 | DONE #255/maina903fb6, A96/B96; shared original economy OFF, data publication accepted |
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
-|CXS1 | #258 merged 5e35c7a under lock; A97/B97; post-main/read-only checks active |
-|CXS2 | own ai/codex-sys-cxs2-submission /private/tmp/tbh-cxs2-active atop97a1595; drafting only |
+|CXS1 | #258 merged 5e35c7a under lock; A97/B97; post-main/read-only PASS; live UI phase deferred |
+|CXS2 | own ai/codex-sys-cxs2-submission b6ec43f atop5e35c7a; draft committed; install/links PASS |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
 |UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
@@ -40,7 +40,7 @@ Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-over
 CXS1 exact97a1595 fresh A97 PASS:691words/2490core/38classic/6mutants/builds/links.
 A62344/B66562 FINISHED PASS97/97 on97a1595; clean B tests then full diff; all ports free.
 CXS1 locked merge72883 completed and released: fetch/integrate/docs/links/type/lint/expected-head merge PASS.
-Post-main PID74574 /private/tmp/tbh-sys-main-after-cxs1,5240–5243; CXS1-FRESH/post-main/run.json.
+Post-main74574 FINISHED PASS:2490package+5script=2495,38classic,35assets×2/22health,Actions0;5240free.
 Read-only live assets/health allowed; live UI phase remains deferred until UI CXU3 readiness.
 Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
 Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.

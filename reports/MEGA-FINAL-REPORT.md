@@ -17,8 +17,8 @@ Living report, not a completion claim. Latest main is5e35c7a (CXS1 docs). Last c
 | CXR1 |245|94/94|6144d42 DONE|accepted, real landing entry|
 | CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
 | CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
-| CXS1 |258|97/97|5e35c7a merged under shared lock|post-main/read-only checks running; live UI phase deferred|
-| CXS2 |pending|pending|submission pack DRAFT only|no submission|
+| CXS1 |258|97/97|5e35c7a merged under shared lock|post-main2495 unit/script+38classic+35assets/22health PASS; live UI phase deferred|
+| CXS2 |localb6ec43f|pending|nine-slide/145s draft with7 versioned captures; install/links PASS|no submission|
 | CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
 | P2/P3 |conditional|—|A–F not all green/merged|not started|
 

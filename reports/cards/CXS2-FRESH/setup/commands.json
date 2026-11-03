@@ -1,0 +1,18 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "b6ec43f051ad2535ea0e8ed67764649bb875490b",
+    "exit": 0,
+    "startedAt": "2026-11-03T05:30:15.892122+00:00",
+    "endedAt": "2026-11-03T05:30:23.164499+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "b6ec43f051ad2535ea0e8ed67764649bb875490b",
+    "exit": 0,
+    "startedAt": "2026-11-03T05:30:23.172351+00:00",
+    "endedAt": "2026-11-03T05:30:23.246425+00:00"
+  }
+]
