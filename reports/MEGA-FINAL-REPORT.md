@@ -1,8 +1,8 @@
-# SYSTEM ACTIVE — 2026-11-03T17:17:10.109471+07:00
+# SYSTEM ACTIVE — 2026-11-03T19:09:43.247400+07:00
 
 User restriction 2026-11-03T17:02:02.295020+07:00: screen/browser UI control stopped; background-only work remains authorized. Core/Chrome public address was supplied and read-only Fuji balance is approximately0.575testAVAX at block60447415. The account is also the deployed RelicNFT owner; it is not established as an isolated throwaway account. No key, connection, signature or transaction was performed. Buyer account and the actual funded journey remain unverified.
 
-Latest checkpoint: 2026-11-03T17:17:10.109471+07:00 — main1a1b499 unchanged; no owned test PIDs, system listeners or merge lock. UI candidate911dec1 reports returning-guest checks passing locally at both sizes; formal grades/release remain pending. The user can perform the wallet test with Core; [manual guide](cards/CXQ1-FRESH/MANUAL-TEST.md) is ready. Seller test funds are observed; buyer and actual receipts remain unverified. Screen control stays stopped.
+Latest checkpoint: 2026-11-03T19:09:43.247400+07:00 — fetched main1a1b499 and blocked PR244 are unchanged. UI reports candidate6ef93c0 resumed after a user pause:219changed executions at each size and368full1280 cases pass; full1600/resize and fresh B/release remain pending. No SYSTEM PID, system listener or merge lock was found. No new wallet hashes or data requests arrived. Screen control remains stopped; no duplicate tests or merge were started.
 
 Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delivery. Explicit resume is active and the existing same-chat checkpoint is now every15minutes. Repository remains private; no Actions run or submission.
 
