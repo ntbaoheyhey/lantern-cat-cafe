@@ -17,14 +17,14 @@ If held, wait/check every2–3min up to60min; stale ONLY owner older90min AND PI
 Inside lock fetch,merge latest origin/main into own branch,rerun changed specs+typecheck+lint,merge,release rmdir.
 Keep exact-head fresh A/B gate; if integration changes reviewed head, reverify rather than use stale evidence.
 Append one atomic line per milestone to ~/.taskbar-hero-locks/board.log. No cross-session messages needed.
-Board now has SYSTEM scope adoption + UI starting CXU3; NO required CXU3/CXC2 merge readiness entries yet.
+Board: UI adopted CXC2 #253/#254 evidence; CXU3 2e1f83b gate active, NOT merged/ready yet.
 
 | Item | Verified state |
 |---|---|
 | T011/T012 | DONE #255/maina903fb6, A96/B96; shared original economy OFF, data publication accepted |
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
-|CXS1 | own ai/codex-sys-cxs1-security-overview fbcec3b atop6144d42;691-word docs+6 companions |
+|CXS1 | own ai/codex-sys-cxs1-security-overview 97a1595 atop6144d42;691-word docs+6 companions |
 |CXS2 | pending DRAFT pack; no contest submission |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
@@ -35,9 +35,9 @@ Last verified origin/local main6144d42ce12d9c61dc4f863733356de99f605eb9 (245 mer
 CXR1 acceptance: A94/B94,2490core/323browser×2/40art/35assets before+after/22health/16live×2,Actions0.
 No funded wallet or full timed demo claim. All prior verification PIDs finished; old test ports must not be reused.
 
-Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, fbcec3b clean.
-Seven docs committed; install/links PASS (86md/912links), quoted source cases checked; full gate pending.
-No active test PID. Planned new SYSTEM ports5200–5203 A,5220–5223 B,5240–5243 main; all checked free.
+Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, 97a1595 clean.
+Seven docs committed; first core/docs/build/6mutants PASS; final text cleanup now re-verifying exacthead.
+CXS1 A PID62344 cwd above; grade-a-final/run.json; ports5200–5203 classic, future5220 B/5240main.
 Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
 Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.
 

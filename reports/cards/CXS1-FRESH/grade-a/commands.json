@@ -1,0 +1,90 @@
+[
+  {
+    "name": "docs",
+    "command": "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/check-docs.py /private/tmp/tbh-cxs1-active",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:51:00.026680+00:00",
+    "endedAt": "2026-11-03T04:51:00.088859+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:51:00.100721+00:00",
+    "endedAt": "2026-11-03T04:51:12.040444+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:51:12.048431+00:00",
+    "endedAt": "2026-11-03T04:51:21.869350+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:51:21.877789+00:00",
+    "endedAt": "2026-11-03T04:52:30.876387+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:30.883612+00:00",
+    "endedAt": "2026-11-03T04:52:31.945079+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:31.952239+00:00",
+    "endedAt": "2026-11-03T04:52:32.125129+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:32.131841+00:00",
+    "endedAt": "2026-11-03T04:52:42.081054+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:42.089791+00:00",
+    "endedAt": "2026-11-03T04:52:42.154808+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:42.161787+00:00",
+    "endedAt": "2026-11-03T04:52:49.984262+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:49.993762+00:00",
+    "endedAt": "2026-11-03T04:52:50.113042+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/mutants.py /private/tmp/tbh-cxs1-active /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/mutants-a a",
+    "head": "956f263bb2ca47fe524dcba2db6d6261b4298a3d",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:52:50.125827+00:00",
+    "endedAt": "2026-11-03T04:52:50.735228+00:00"
+  }
+]

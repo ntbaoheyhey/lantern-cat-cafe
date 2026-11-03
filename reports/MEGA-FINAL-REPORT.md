@@ -17,7 +17,7 @@ Living report, not a completion claim. Main is6144d42; its exact reviewed tree, 
 | CXR1 |245|94/94|6144d42 DONE|accepted, real landing entry|
 | CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
 | CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
-| CXS1 |localfbcec3b|pending|691-word security draft; install/links pass|not released|
+| CXS1 |local97a1595|pending|691-word security draft; first core/mutants pass; final exact-head gate running|not released|
 | CXS2 |pending|pending|submission pack DRAFT only|no submission|
 | CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
 | P2/P3 |conditional|—|A–F not all green/merged|not started|

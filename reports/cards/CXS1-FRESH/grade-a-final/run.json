@@ -1,0 +1,55 @@
+{
+  "root": "/private/tmp/tbh-cxs1-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/grade-a-final",
+  "head": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "commands": [
+    [
+      "docs",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/check-docs.py /private/tmp/tbh-cxs1-active"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "mutants",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/mutants.py /private/tmp/tbh-cxs1-active /private/tmp/tbh-t001-ledger/reports/cards/CXS1-FRESH/mutants-a-final a"
+    ],
+    [
+      "classic-project",
+      "E2E_PORT_CLASSIC=5200 E2E_PORT_V2=5201 E2E_PORT_SERVER=5202 E2E_PORT_API=5203 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}
