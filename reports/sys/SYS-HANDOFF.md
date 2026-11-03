@@ -1,0 +1,15 @@
+# Overnight SYS handoff
+- Updated 2026-11-03T19:24:43.916344+00:00; lane ALL, SYS first then UI. No subagents, schedulers or old orchestrator.
+- Authorized source: attachment dbc68717; 8-hour maximum from about 2026-11-03T19:17Z.
+- Main remains 340f88b; main checkout untouched. Own worktree /Users/bao/taskbar-hero-ovn-sys, branch ai/codex-ovn-sys-auth.
+- Private repo verified; #244 untouched; superseded #252/#257 remain open. UI drafts #262–#266 exact accepted heads unchanged.
+- S1 first nonce POST at 2026-11-03T19:20:48.838570Z is 200, correct CORS; nonce redacted. Second probe due >=19:30:49Z. Max 3 total public nonce probes.
+- Source download stopped at CLI UnsafeFunctionDownloadPathError; guard respected, partial auth-nonce/index.ts and _shared/auth.ts are byte-identical to origin/main. No package source identity asserted.
+- Installed Supabase CLI logged in; auth-nonce/auth-verify ACTIVE v46. CLI has no logs command; Vercel CLI absent; Docker daemon unavailable. No live deploy/migration/write.
+- Local PGlite before migrations 20261103/04/06 issues nonce successfully: budget-table explanation disproved for downloaded wiring. Historical 502 cause not established; do not claim fixed by code or migrations.
+- Builder tests: 31 edge, 21 wallet/client, 6 health-script PASS. Working changes add lazy nonce store init/503 Retry-After, bounded nonce-only retries/plain English errors and named wallet group.
+- S2 DONE: reports/sys/deploy-capacity.md; 23 main commits / 7 merged PRs, actual deployment count unavailable. Same-UTC-day >100 cap error recorded on #262 at13:23:17Z. Stop merges for the day.
+- UTC reset recheck 2026-11-04T00:00Z (07:00 Vietnam); provider says24h so not guaranteed until quota verified. At most1 merge/20min after clearance, stop at80/errors.
+- Next: capture baseline red repro, formal exact-head A/B gate (B clean tests-first), main regression once, request responses, live UX/guest audit and UI parked-release decision. Keep raw failures; no softened thresholds.
+- Existing CXS1 security overview and CXS2 draft pack already in main; verify identity, do not redo or submit. originalEconomy remains default OFF.
+- All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
