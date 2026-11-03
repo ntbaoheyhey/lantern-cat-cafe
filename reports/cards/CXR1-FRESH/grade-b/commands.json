@@ -1,0 +1,138 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:08:25.886328+00:00",
+    "endedAt": "2026-11-03T04:08:37.973516+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:08:37.980274+00:00",
+    "endedAt": "2026-11-03T04:08:45.501910+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:08:45.510287+00:00",
+    "endedAt": "2026-11-03T04:09:43.425663+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:43.433091+00:00",
+    "endedAt": "2026-11-03T04:09:45.260215+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:45.266953+00:00",
+    "endedAt": "2026-11-03T04:09:45.432523+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:45.440749+00:00",
+    "endedAt": "2026-11-03T04:09:53.403278+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:53.409952+00:00",
+    "endedAt": "2026-11-03T04:09:53.464403+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:53.470819+00:00",
+    "endedAt": "2026-11-03T04:09:58.869291+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:58.877097+00:00",
+    "endedAt": "2026-11-03T04:09:58.955502+00:00"
+  },
+  {
+    "name": "art-unit",
+    "command": "python3 -B -m unittest discover -s tools/art -v",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:09:58.962917+00:00",
+    "endedAt": "2026-11-03T04:10:01.287894+00:00"
+  },
+  {
+    "name": "art-catalog",
+    "command": "python3 -B tools/art/catalog.py --check",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:10:01.295165+00:00",
+    "endedAt": "2026-11-03T04:10:07.875362+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/mutants.py /private/tmp/tbh-cxr1-fresh-b /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/mutants-b b 5030",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:10:07.881822+00:00",
+    "endedAt": "2026-11-03T04:12:11.115036+00:00"
+  },
+  {
+    "name": "capture",
+    "command": "SCREENSHOTS=1 SCREENSHOT_DIR=/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/grade-b/screenshots E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:12:11.132050+00:00",
+    "endedAt": "2026-11-03T04:12:28.128316+00:00"
+  },
+  {
+    "name": "repeat-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/layout/stage-layout.spec.ts e2e/ui/u1-tokens.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/layout/stage-redraw.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxu5-map.spec.ts e2e/ui/cxc2-proof.spec.ts e2e/ui/original-preview.spec.ts --repeat-each=3 --workers=2 --retries=0 --reporter=line",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:12:28.136255+00:00",
+    "endedAt": "2026-11-03T04:15:16.932332+00:00"
+  },
+  {
+    "name": "repeat-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/layout/stage-layout.spec.ts e2e/ui/u1-tokens.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/layout/stage-redraw.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxu5-map.spec.ts e2e/ui/cxc2-proof.spec.ts e2e/ui/original-preview.spec.ts --repeat-each=3 --workers=2 --retries=0 --reporter=line",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:15:16.940907+00:00",
+    "endedAt": "2026-11-03T04:17:58.349810+00:00"
+  },
+  {
+    "name": "ui-audit-effects",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/ui-checks.mjs /private/tmp/tbh-cxr1-fresh-b /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/grade-b/ui 5120",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:17:58.357394+00:00",
+    "endedAt": "2026-11-03T04:19:55.188575+00:00"
+  },
+  {
+    "name": "classic-project",
+    "command": "E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:19:55.195458+00:00",
+    "endedAt": "2026-11-03T04:20:42.975600+00:00"
+  }
+]

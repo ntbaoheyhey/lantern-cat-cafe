@@ -1,0 +1,1135 @@
+diff --git a/apps/web/e2e/ui/merged-redesign.spec.ts b/apps/web/e2e/ui/merged-redesign.spec.ts
+new file mode 100644
+index 0000000..091f5a5
+--- /dev/null
++++ b/apps/web/e2e/ui/merged-redesign.spec.ts
+@@ -0,0 +1,114 @@
++import { expect, test, type Page } from '../support/test';
++import { resolve } from 'node:path';
++import { installT2LoopFixture } from '../support/t2-loop-fixture';
++import { layoutFindings } from '../../tools/layout-findings.mjs';
++
++async function capture(page: Page, screen: string, width: number, height: number) {
++  await page.evaluate(() => document.fonts.ready);
++  const findings = await page.evaluate(layoutFindings);
++  expect(findings.documentScroll, `${screen}: document scroll`).toBe(false);
++  expect(findings.horizontalOverflow, `${screen}: overflow`).toEqual([]);
++  expect(findings.elementOverlap, `${screen}: overlap`).toEqual([]);
++  if (process.env.SCREENSHOTS === '1') {
++    await page.screenshot({ path: resolve(process.env.SCREENSHOT_DIR ?? '../../reports/redesign/CXR1/screens', `${screen}-${width}x${height}.png`) });
++  }
++}
++
++for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  test.describe(`merged redesign journey ${viewport.width}x${viewport.height}`, () => {
++    test.use({ viewport });
++    test('guest landing to class, Home, populated Bag and equip', async ({ page }) => {
++      const errors: string[] = [];
++      page.on('pageerror', error => errors.push(error.message));
++      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++      await installT2LoopFixture(page);
++      await page.clock.resume();
++      // Existing entry hash, stocked test fixture; no live account or new route.
++      await page.goto('/#landing');
++      await expect(page.getByTestId('landing-hero')).toBeVisible();
++      await expect(page.getByTestId('rail')).toHaveCount(0);
++      await expect(page.getByTestId('landing-hero')).toContainText('ERC-1155');
++      await expect(page.getByTestId('landing-hero')).not.toContainText(/ERC-721|Open source|Server-checked/);
++      const backdrop = page.locator('.landing__backdrop');
++      const scene = await backdrop.boundingBox();
++      expect(scene!.width).toBeGreaterThanOrEqual(viewport.width);
++      expect(scene!.height).toBeGreaterThanOrEqual(viewport.height);
++      expect(scene!.height % 96).toBe(0);
++      expect(await page.locator('body').evaluate(el => getComputedStyle(el).fontSize)).toBe('14px');
++      await capture(page, 'landing', viewport.width, viewport.height);
++      await page.getByTestId('landing-start').click();
++      await expect(page.getByTestId('class-picker')).toBeVisible();
++      await expect(page.getByRole('radio')).toHaveCount(3);
++      const cardBox = await page.getByRole('radio').first().boundingBox();
++      expect(cardBox!.height).toBeGreaterThan(viewport.height * .55);
++      const startBox = await page.getByTestId('class-picker-choose-button').boundingBox();
++      expect(startBox!.x).toBeGreaterThan(viewport.width / 2);
++      expect(startBox!.y).toBeGreaterThan(viewport.height - 100);
++      await capture(page, 'class', viewport.width, viewport.height);
++      await page.getByTestId('class-picker-choose-button').click();
++      await page.getByTestId('class-picker-confirm-button').click();
++      await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
++      const before = await page.getByTestId('hud-level').textContent();
++      await page.clock.fastForward(10 * 60_000);
++      await expect(page.getByTestId('hud-level')).not.toHaveText(before!);
++      const canvas = page.getByRole('region', { name: 'Game stage' }).locator('canvas');
++      await expect.poll(() => canvas.evaluateAll(nodes => nodes.length === 1 && (() => {
++        const c = nodes[0] as HTMLCanvasElement;
++        const pixels = c.getContext('2d')?.getImageData(0, 0, c.width, c.height).data;
++        return !!pixels?.some((value, index) => index % 4 === 3 && value > 0);
++      })())).toBe(true);
++      const stageBox = await page.getByRole('region', { name: 'Game stage' }).boundingBox();
++      const heroBox = await page.getByTestId('home-hero-card').boundingBox();
++      const goalBox = await page.getByTestId('home-next-goal-card').boundingBox();
++      expect(stageBox!.x).toBeGreaterThan(92);
++      expect(stageBox!.x + stageBox!.width).toBeLessThan(heroBox!.x);
++      expect(Math.abs(heroBox!.x - goalBox!.x)).toBeLessThan(1);
++      expect(goalBox!.y).toBeGreaterThan(heroBox!.y + heroBox!.height);
++      const raster = await page.locator('.v2-stage-art').first().boundingBox();
++      expect(raster!.height % 96).toBe(0);
++      expect(raster!.width).toBeLessThanOrEqual(stageBox!.width - 4);
++      expect(raster!.height).toBeLessThanOrEqual(stageBox!.height - 4);
++      await capture(page, 'home', viewport.width, viewport.height);
++
++      await page.getByTestId('nav-bag').click();
++      const bag = page.getByTestId('bag-screen');
++      await expect(bag).toBeVisible();
++      const count = await page.getByTestId('bag-count').textContent();
++      const weapons = bag.getByRole('button', { name: 'Weapons', exact: true });
++      await weapons.click();
++      await expect(weapons).toHaveAttribute('aria-pressed', 'true');
++      await expect(page.getByTestId('bag-count')).toHaveText(count!);
++      await bag.getByRole('button', { name: 'All', exact: true }).click();
++      const cards = bag.getByRole('list', { name: 'Bag items' }).getByRole('button');
++      expect(await cards.count()).toBeGreaterThan(0);
++      await cards.first().click();
++      await expect(bag.getByRole('region', { name: 'Item detail' }).getByRole('heading', { level: 3 }).first()).toBeVisible();
++      const columns = await bag.locator('.bag-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length);
++      expect(columns).toBe(8);
++      const slots = bag.locator('.bag-slot');
++      const gridBox = await bag.locator('.bag-grid').boundingBox();
++      const eighth = await slots.nth(7).boundingBox();
++      expect(Math.abs(gridBox!.x + gridBox!.width - eighth!.x - eighth!.width)).toBeLessThanOrEqual(4);
++      const emptyBox = await bag.locator('.bag-slot.empty').first().boundingBox();
++      const emptyTileBox = await bag.locator('.bag-tile.empty-tile').first().boundingBox();
++      expect(Math.abs(emptyBox!.width - emptyTileBox!.width)).toBeLessThan(1);
++      const sortBox = await bag.getByRole('combobox', { name: 'Sort bag' }).boundingBox();
++      const bulkBox = await bag.getByRole('button', { name: 'Equip best', exact: true }).boundingBox();
++      expect(Math.abs(sortBox!.y - bulkBox!.y)).toBeLessThanOrEqual(6);
++      const detail = bag.getByRole('region', { name: 'Item detail' });
++      const equipBox = await detail.getByRole('button', { name: 'Equip', exact: true }).boundingBox();
++      const compareBox = await detail.locator('.compare').boundingBox();
++      expect(equipBox!.y + equipBox!.height).toBeLessThan(compareBox!.y);
++      expect(await bag.getByRole('button', { name: 'Equip best', exact: true }).evaluate(el => el.classList.contains('pixel-btn--secondary'))).toBe(true);
++      await capture(page, 'bag', viewport.width, viewport.height);
++      await expect(bag.getByRole('button', { name: 'Equip best', exact: true })).toBeEnabled();
++      await bag.getByRole('button', { name: 'Equip best', exact: true }).click();
++      await expect(bag.getByTestId('block-reason-equip-best')).toHaveText('Best gear already equipped');
++      await page.reload();
++      await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
++      await page.getByTestId('nav-bag').click();
++      await expect(bag.getByTestId('block-reason-equip-best')).toHaveText('Best gear already equipped');
++      expect(errors).toEqual([]);
++    });
++  });
++}
+diff --git a/apps/web/e2e/ui/redesign-shell.spec.ts b/apps/web/e2e/ui/redesign-shell.spec.ts
+index 56b66de..6c92c86 100644
+--- a/apps/web/e2e/ui/redesign-shell.spec.ts
++++ b/apps/web/e2e/ui/redesign-shell.spec.ts
+@@ -7,7 +7,6 @@ import { layoutFindings } from '../../tools/layout-findings.mjs';
+ 
+ const storageKey = readFileSync(new URL('../../src/api/MockGameApiV2.ts', import.meta.url), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
+ const stub = readFileSync(new URL('../fixtures/redesign-shell.html', import.meta.url), 'utf8');
+-const missingContract = 'AGR0 shell contract is not implemented on this build: data-testid="rail" is absent. Re-run this same test after the shell lands; partial shells fail.';
+ 
+ function collectErrors(page: Page) {
+   const errors: string[] = [];
+@@ -23,7 +22,7 @@ async function openStub(page: Page) {
+ for (const viewport of manifest.viewports) {
+   test.describe(`redesign shell ${viewport.width}x${viewport.height}`, () => {
+     test.use({ viewport });
+-    test('live rail route smoke (auto-gated until AGR0)', async ({ page }) => {
++    test('live rail route smoke requires the merged AGR0 shell', async ({ page }) => {
+       const errors = collectErrors(page);
+       await page.addInitScript(({ key, save }) => {
+         localStorage.setItem(key, save);
+@@ -32,9 +31,8 @@ for (const viewport of manifest.viewports) {
+       await page.goto('/');
+       await expect(page.locator('[data-testid="rail"], .v2-shell').first()).toBeVisible();
+       await expect(page.locator('[data-testid="hud"], [aria-label="Cat status"]').first()).toBeVisible();
+-      expect(errors, 'Startup errors must not be hidden by the selector gate').toEqual([]);
+-      // The mission explicitly authorizes this one conditional skip, never an unconditional skip.
+-      test.skip(await page.getByTestId(manifest.shell.railTestId).count() === 0, missingContract);
++      expect(errors, 'Startup errors must not be hidden').toEqual([]);
++      await expect(page.getByTestId(manifest.shell.railTestId)).toBeVisible();
+       await smokeShell(page, errors);
+     });
+ 
+diff --git a/apps/web/e2e/ui/u4-character-bag.spec.ts b/apps/web/e2e/ui/u4-character-bag.spec.ts
+index 76b1b50..217514f 100644
+--- a/apps/web/e2e/ui/u4-character-bag.spec.ts
++++ b/apps/web/e2e/ui/u4-character-bag.spec.ts
+@@ -128,15 +128,15 @@ for (const vp of CHECK_VIEWPORTS) {
+       }
+     }
+ 
+-    // (c) "Equip best" button background equals --accent and its text contrast >= 4.5
++    // (c) "Equip best" is secondary; background equals --surface-2 and its text contrast >= 4.5
+     const equipBestBtn = bag.getByRole('button', { name: 'Equip best', exact: true });
+     await expect(equipBestBtn).toBeVisible();
+-    const { bg, expectedAccent, contrast } = await equipBestBtn.evaluate((el) => {
++    const { bg, expectedSurface, contrast } = await equipBestBtn.evaluate((el) => {
+       const style = getComputedStyle(el);
+       const temp = document.createElement('div');
+-      temp.style.color = 'var(--accent)';
++      temp.style.color = 'var(--surface-2)';
+       document.body.appendChild(temp);
+-      const expectedAccent = getComputedStyle(temp).color;
++      const expectedSurface = getComputedStyle(temp).color;
+       document.body.removeChild(temp);
+ 
+       function parseRgb(str: string): [number, number, number] {
+@@ -160,11 +160,11 @@ for (const vp of CHECK_VIEWPORTS) {
+ 
+       return {
+         bg: style.backgroundColor,
+-        expectedAccent,
++        expectedSurface,
+         contrast: contrastRatio,
+       };
+     });
+-    expect(bg).toBe(expectedAccent);
++    expect(bg).toBe(expectedSurface);
+     expect(contrast).toBeGreaterThanOrEqual(4.5);
+ 
+     // (d) no element in the card or bag clips text (scrollWidth <= clientWidth + 1)
+diff --git a/apps/web/src/layout/LandingHero.tsx b/apps/web/src/layout/LandingHero.tsx
+index 8b2ddb2..8121942 100644
+--- a/apps/web/src/layout/LandingHero.tsx
++++ b/apps/web/src/layout/LandingHero.tsx
+@@ -3,6 +3,7 @@ import { CatPortrait } from '../CatPortrait';
+ import { BackdropView } from '../art/backdrops/BackdropView';
+ import { backdropFor } from '../art/backdrops';
+ import { WalletButton } from '../wallet/WalletButton';
++import { SCENE_HEIGHT, useViewport } from './metrics';
+ import './landing.css';
+ 
+ export interface LandingHeroProps {
+@@ -12,13 +13,18 @@ export interface LandingHeroProps {
+ }
+ 
+ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps) {
++  const { width, height } = useViewport();
++  const sceneScale = Math.max(1, Math.ceil(height / SCENE_HEIGHT));
++  const sceneWidth = Math.ceil(width / sceneScale);
+   const handleGuest = onStartGuest ?? onStart ?? (() => {});
+ 
+   return (
+     <section className="landing" aria-labelledby="landing-title" data-testid="landing-hero">
+       {/* Full-bleed background scene */}
+       <div className="landing__scene" aria-hidden="true">
+-        <BackdropView art={backdropFor(1)} width={640} className="landing__backdrop" />
++        <div style={{ position: 'absolute', left: Math.floor((width - sceneWidth * sceneScale) / 2), top: Math.floor((height - SCENE_HEIGHT * sceneScale) / 2) }}>
++          <BackdropView art={backdropFor(1)} width={sceneWidth} scale={sceneScale} className="landing__backdrop" />
++        </div>
+       </div>
+ 
+       {/* Hero content grid */}
+@@ -73,7 +79,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+       {/* Proof strip pinned to bottom */}
+       <div className="landing__proof-strip" role="region" aria-label="Game guarantees and proof">
+         <div className="landing__proof-item">
+-          <span className="landing__proof-pill">ERC-721</span>
++          <span className="landing__proof-pill">ERC-1155</span>
+           <span>Relic NFT</span>
+         </div>
+ 
+@@ -86,7 +92,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+             target="_blank"
+             rel="noreferrer"
+           >
+-            Verified on Routescan ↗
++            View contract on Routescan ↗
+           </a>
+         </div>
+ 
+@@ -94,7 +100,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+ 
+         <div className="landing__proof-item">
+           <span className="landing__proof-check" aria-hidden="true">✓</span>
+-          <span>Server-checked fights</span>
++          <span>Guest play is local</span>
+         </div>
+ 
+         <div className="landing__proof-divider" aria-hidden="true">·</div>
+@@ -102,11 +108,11 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+         <div className="landing__proof-item">
+           <a
+             className="landing__proof-link"
+-            href="https://github.com/ntbaoheyhey/taskbar-hero"
++            href="https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract"
+             target="_blank"
+             rel="noreferrer"
+           >
+-            Open source ↗
++            Market contract ↗
+           </a>
+         </div>
+ 
+diff --git a/apps/web/src/layout/StageLayout.tsx b/apps/web/src/layout/StageLayout.tsx
+index c1423d5..d494548 100644
+--- a/apps/web/src/layout/StageLayout.tsx
++++ b/apps/web/src/layout/StageLayout.tsx
+@@ -530,11 +530,6 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
+               </>
+             ) : (
+               <div className="home-dashboard" data-testid="home-dashboard">
+-                <div className="home-col home-col--left">
+-                  <HeroCard state={state} />
+-                  <NextGoalCard state={state} onNavigate={handleSelectScreen} />
+-                </div>
+-
+                 <div className="home-col home-col--center">
+                   <div role="region" aria-label="Game stage" className="v2-stage home-stage-wrap">
+                     <StageCanvas
+@@ -549,6 +544,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
+                 </div>
+ 
+                 <div className="home-col home-col--right">
++                  <HeroCard state={state} />
++                  <NextGoalCard state={state} onNavigate={handleSelectScreen} />
+                   <RecentLootCard state={state} gains={gains && !welcome ? gains : null} />
+                 </div>
+               </div>
+@@ -590,7 +587,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
+           style={{ display: screen === 'bag' ? 'flex' : 'none' }}
+         >
+           <div id="panel-Bag" className="v2-tabpanel">
+-            <h2 className="v2-tabpanel-title">Bag</h2>
++            <h2 className="sr-only">Bag</h2>
+             <div className="v2-panel-body-inner">
+               {state ? (
+                 <BagPanel
+diff --git a/apps/web/src/layout/bag/BagPanel.redesign.test.tsx b/apps/web/src/layout/bag/BagPanel.redesign.test.tsx
+new file mode 100644
+index 0000000..8480f43
+--- /dev/null
++++ b/apps/web/src/layout/bag/BagPanel.redesign.test.tsx
+@@ -0,0 +1,46 @@
++import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
++import { afterEach, expect, it, vi } from 'vitest';
++import { sampleStateV2 } from '../sampleState';
++import { BagPanel, BAG_FILTERS } from './BagPanel';
++
++afterEach(cleanup);
++const handlers = () => ({ onEquip: vi.fn(), onToggleLock: vi.fn() });
++
++it('filter selection is announced once and never changes the total owned count', () => {
++  render(<BagPanel state={sampleStateV2()} {...handlers()} />);
++  const count = screen.getByTestId('bag-count').textContent;
++  const filters = within(screen.getByRole('group', { name: 'Item filters' }));
++  for (const filter of BAG_FILTERS) {
++    const button = filters.getByRole('button', { name: filter.label });
++    fireEvent.click(button);
++    expect(filters.getAllByRole('button', { pressed: true })).toEqual([button]);
++    expect(screen.getByTestId('bag-count').textContent).toBe(count);
++  }
++});
++
++it('selection follows item identity through sorting and disappears after the item is equipped', () => {
++  const state = sampleStateV2(), actions = handlers();
++  const view = render(<BagPanel state={state} {...actions} />);
++  fireEvent.click(screen.getByRole('button', { name: /^Silverclaw Saber,/ }));
++  fireEvent.change(screen.getByRole('combobox', { name: 'Sort bag' }), { target: { value: 'level' } });
++  expect(screen.getByRole('button', { name: /^Silverclaw Saber,/ }).getAttribute('aria-pressed')).toBe('true');
++  expect(within(screen.getByRole('region', { name: 'Item detail' })).getByRole('heading', { name: 'Silverclaw Saber' })).toBeTruthy();
++  view.rerender(<BagPanel state={{ ...state,
++    equipped: { ...state.equipped, weapon: 'it-8' },
++    inventory: state.inventory.map(item => item.slot === 'weapon' ? { ...item, equipped: item.id === 'it-8' } : item),
++  }} {...actions} />);
++  expect(screen.queryByRole('button', { name: /^Silverclaw Saber,/ })).toBeNull();
++  expect(within(screen.getByRole('region', { name: 'Item detail' })).queryByRole('heading', { name: 'Silverclaw Saber' })).toBeNull();
++  expect(actions.onEquip).not.toHaveBeenCalled();
++});
++
++it('empty slot frames are decorative and cannot enter the keyboard tab sequence', () => {
++  const state = sampleStateV2();
++  render(<BagPanel state={{ ...state, inventory: state.inventory.filter(item => item.equipped) }} {...handlers()} />);
++  const empty = screen.getByRole('list', { name: 'Bag items' }).querySelectorAll('.bag-slot.empty');
++  expect(empty).toHaveLength(state.bagLimit);
++  for (const slot of empty) {
++    expect(slot.getAttribute('aria-hidden')).toBe('true');
++    expect(slot.querySelector('button, a, input, [tabindex]')).toBeNull();
++  }
++});
+diff --git a/apps/web/src/layout/bag/BagPanel.test.tsx b/apps/web/src/layout/bag/BagPanel.test.tsx
+index 37ccfbc..74e4169 100644
+--- a/apps/web/src/layout/bag/BagPanel.test.tsx
++++ b/apps/web/src/layout/bag/BagPanel.test.tsx
+@@ -379,7 +379,9 @@ describe('Mission AGR2-FIX: Empty slots and right detail hint', () => {
+ 
+     const detail = screen.getByRole('region', { name: 'Item detail' });
+     expect(within(detail).getAllByText('Moon Pearl Relic').length).toBeGreaterThan(0);
+-    expect(within(detail).getByText('#1042 · minted')).toBeTruthy();
++    // A synthetic Relic item carries no receipt or token proof. Never invent one.
++    expect(within(detail).getByText('Mint proof unavailable')).toBeTruthy();
++    expect(within(detail).queryByText(/#1042|minted/)).toBeNull();
+   });
+ 
+   it('shows filter empty notice when a category has 0 items and keeps capacity slots', () => {
+diff --git a/apps/web/src/layout/bag/BagPanel.tsx b/apps/web/src/layout/bag/BagPanel.tsx
+index 27f6f07..492b43c 100644
+--- a/apps/web/src/layout/bag/BagPanel.tsx
++++ b/apps/web/src/layout/bag/BagPanel.tsx
+@@ -197,7 +197,7 @@ export function BagPanel({
+ 
+               <button
+                 type="button"
+-                className="pixel-btn bag-equip-best"
++                className="pixel-btn pixel-btn--secondary bag-equip-best"
+                 disabled={upgrades.length === 0 || isLoopBusy}
+                 aria-busy={isBusyEquip ? 'true' : 'false'}
+                 title={upgrades.length === 0 ? 'Nothing in the bag is better than what you wear' : undefined}
+@@ -281,7 +281,7 @@ export function BagPanel({
+ 
+         {/* Right Detail Panel */}
+         <aside className="bag-sidebar">
+-          <section aria-label="Item detail" className={`bag-detail pixel-card${selected ? '' : ' is-empty'}`}>
++          <section aria-label="Item detail" className={`bag-detail${selected ? '' : ' is-empty'}`}>
+             {selected ? (
+               <ItemDetail
+                 item={selected}
+@@ -349,56 +349,107 @@ function ItemDetail({
+ 
+   return (
+     <div className="detail-body">
+-      <div className="detail-head">
+-        <span
+-          className="detail-art"
+-          data-rarity={item.rarity}
+-          style={{ borderColor: rarityColor(item.rarity) }}
+-        >
+-          <ItemIcon item={item} size={2} />
+-        </span>
+-        <div className="detail-title">
+-          <h3>{itemName(item.itemKey)}</h3>
+-          <div className="detail-pills">
+-            <span
+-              className="rarity-pill"
+-              data-rarity={item.rarity}
+-              style={{ borderColor: rarityColor(item.rarity) }}
+-            >
+-              {RARITY_LABEL[item.rarity] ?? item.rarity}
+-            </span>
+-            <span className="detail-meta">
+-              Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
+-            </span>
++      <div className="detail-item-card pixel-card">
++        <div className="detail-head">
++          <span
++            className="detail-art"
++            data-rarity={item.rarity}
++            style={{ borderColor: rarityColor(item.rarity) }}
++          >
++            <ItemIcon item={item} size={2} />
++          </span>
++          <div className="detail-title">
++            <h3>{itemName(item.itemKey)}</h3>
++            <div className="detail-pills">
++              <span
++                className="rarity-pill"
++                data-rarity={item.rarity}
++                style={{ borderColor: rarityColor(item.rarity) }}
++              >
++                {RARITY_LABEL[item.rarity] ?? item.rarity}
++              </span>
++              <span className="detail-meta">
++                Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
++              </span>
++            </div>
+           </div>
+         </div>
+-      </div>
+ 
+-      <div className="detail-section">
+-        <h4 className="detail-section-heading">Stats</h4>
+-        <ul className="detail-lines" aria-label="Item lines">
+-          {base.map((line) => (
+-            <li key={`base-${line.stat}`} className="detail-stat-row">
+-              <span className="stat-label">{statLabel(line.stat)}</span>
+-              <span className="stat-value">{formatStat(line.stat, line.value)}</span>
+-            </li>
+-          ))}
+-          {bonus.map((line) => (
+-            <li key={`bonus-${line.stat}`} className="detail-stat-row bonus">
+-              <span className="stat-label">{statLabel(line.stat)}</span>
+-              <span className="stat-value">+{formatStat(line.stat, line.value)} (bonus)</span>
+-            </li>
+-          ))}
+-          {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
+-            <li className="detail-stat-row relic-stat">
+-              <span className="stat-label">Relic</span>
+-              <span className="stat-value">#1042 · minted</span>
+-            </li>
+-          )}
+-        </ul>
+-      </div>
++        <div className="detail-section">
++          <h4 className="detail-section-heading">Stats</h4>
++          <ul className="detail-lines" aria-label="Item lines">
++            {base.map((line) => (
++              <li key={`base-${line.stat}`} className="detail-stat-row">
++                <span className="stat-label">{statLabel(line.stat)}</span>
++                <span className="stat-value">{formatStat(line.stat, line.value)}</span>
++              </li>
++            ))}
++            {bonus.map((line) => (
++              <li key={`bonus-${line.stat}`} className="detail-stat-row bonus">
++                <span className="stat-label">{statLabel(line.stat)}</span>
++                <span className="stat-value">+{formatStat(line.stat, line.value)} (bonus)</span>
++              </li>
++            ))}
++            {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
++              <li className="detail-stat-row relic-stat">
++                <span className="stat-label">Relic</span>
++                <span className="stat-value">Mint proof unavailable</span>
++              </li>
++            )}
++          </ul>
++        </div>
++
++        <div className="detail-actions">
++          <button
++            type="button"
++            className="pixel-btn bag-btn-equip"
++            disabled={block !== null || isLoopBusy}
++            aria-busy={isBusyEquip ? 'true' : 'false'}
++            title={block ?? undefined}
++            aria-describedby={block ? noteId : undefined}
++            onClick={() => onEquip(item.id, item.slot)}
++          >
++            {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
++            {isBusyEquip ? 'Equipping...' : 'Equip'}
++          </button>
++
++          <button
++            type="button"
++            className="bag-btn-secondary bag-btn-forge"
++            disabled={isLoopBusy}
++            onClick={() => (onForge ? onForge(item) : onNavigate?.('forge'))}
++          >
++            Forge
++          </button>
++
++          <button
++            type="button"
++            className="bag-btn-secondary bag-btn-list"
++            disabled={isLoopBusy}
++            onClick={() => (onList ? onList(item) : onNavigate?.('market'))}
++          >
++            List
++          </button>
+ 
+-      <div className="compare">
++          <button
++            type="button"
++            className="bag-btn-secondary bag-btn-lock"
++            disabled={isLoopBusy}
++            aria-busy={isBusyLock ? 'true' : 'false'}
++            onClick={() => onToggleLock(item.id, !item.locked)}
++          >
++            {isBusyLock && <span className="btn-spinner" aria-hidden="true" />}
++            {isBusyLock ? 'Saving...' : item.locked ? 'Unlock' : 'Lock'}
++          </button>
++        </div>
++
++        {block && (
++          <p id={noteId} className="detail-note" data-testid="block-reason-equip">
++            {block}
++          </p>
++        )}
++      </div>
++      <div className="compare pixel-card">
+         <h4>Compare with equipped</h4>
+         <div className="compare-cols">
+           <div className="compare-col current">
+@@ -442,55 +493,6 @@ function ItemDetail({
+         )}
+       </div>
+ 
+-      <div className="detail-actions">
+-        <button
+-          type="button"
+-          className="pixel-btn bag-btn-equip"
+-          disabled={block !== null || isLoopBusy}
+-          aria-busy={isBusyEquip ? 'true' : 'false'}
+-          title={block ?? undefined}
+-          aria-describedby={block ? noteId : undefined}
+-          onClick={() => onEquip(item.id, item.slot)}
+-        >
+-          {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
+-          {isBusyEquip ? 'Equipping...' : 'Equip'}
+-        </button>
+-
+-        <button
+-          type="button"
+-          className="bag-btn-secondary bag-btn-forge"
+-          disabled={isLoopBusy}
+-          onClick={() => (onForge ? onForge(item) : onNavigate?.('forge'))}
+-        >
+-          Forge
+-        </button>
+-
+-        <button
+-          type="button"
+-          className="bag-btn-secondary bag-btn-list"
+-          disabled={isLoopBusy}
+-          onClick={() => (onList ? onList(item) : onNavigate?.('market'))}
+-        >
+-          List
+-        </button>
+-
+-        <button
+-          type="button"
+-          className="bag-btn-secondary bag-btn-lock"
+-          disabled={isLoopBusy}
+-          aria-busy={isBusyLock ? 'true' : 'false'}
+-          onClick={() => onToggleLock(item.id, !item.locked)}
+-        >
+-          {isBusyLock && <span className="btn-spinner" aria-hidden="true" />}
+-          {isBusyLock ? 'Saving...' : item.locked ? 'Unlock' : 'Lock'}
+-        </button>
+-      </div>
+-
+-      {block && (
+-        <p id={noteId} className="detail-note" data-testid="block-reason-equip">
+-          {block}
+-        </p>
+-      )}
+     </div>
+   );
+ }
+diff --git a/apps/web/src/layout/bag/bag.css b/apps/web/src/layout/bag/bag.css
+index cd977ba..ccfb55c 100644
+--- a/apps/web/src/layout/bag/bag.css
++++ b/apps/web/src/layout/bag/bag.css
+@@ -106,7 +106,7 @@
+   height: 30px;
+   min-height: 30px;
+   padding: 0 12px;
+-  border-radius: 999px;
++  border-radius: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: var(--fs-xs, 0.75rem);
+   font-weight: 700;
+@@ -157,7 +157,7 @@
+   appearance: none;
+   -webkit-appearance: none;
+   border: 1px solid var(--border, #5b4572);
+-  border-radius: 4px;
++  border-radius: 0;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+   box-sizing: border-box;
+@@ -282,7 +282,7 @@
+   box-shadow: var(--pixel-shadow, 2px 2px 0 #000);
+   box-sizing: border-box;
+   flex-shrink: 0;
+-  border-radius: 2px;
++  border-radius: 0;
+ }
+ 
+ .bag-card.selected .bag-tile,
+@@ -406,7 +406,7 @@
+   flex-direction: column;
+   overflow: hidden;
+   box-sizing: border-box;
+-  align-self: flex-start;
++  align-self: stretch;
+ }
+ 
+ .bag-detail {
+@@ -542,7 +542,7 @@
+   display: inline-flex;
+   align-items: center;
+   padding: 1px 7px;
+-  border-radius: 999px;
++  border-radius: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: 11px;
+   font-weight: 700;
+@@ -927,3 +927,21 @@
+     justify-content: center;
+   }
+ }
++
++/* The detail and comparison are separate cards in one scrollable named region. */
++.bag .bag-detail { padding: 0 3px 3px 0; border: 0; box-shadow: none; background: transparent; }
++.detail-item-card { display: flex; flex-direction: column; gap: 8px; }
++.bag .compare { margin: 0; border: 2px solid var(--border); padding: 10px 12px; }
++.bag .detail-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++.bag .bag-equip-best { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
++.bag-detail.is-empty .detail-hint-body { padding: 12px; border: 2px solid var(--border); background: var(--surface); }
++@media (min-width: 1024px) {
++  .bag-layout { padding: 16px; gap: 14px; }
++  .bag-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
++  .bag-filters { grid-column: 1 / -1; grid-row: 2; }
++  .bag-toolbar-actions { justify-content: flex-end; flex-wrap: nowrap; }
++  .bag .bag-equip-best { width: auto; min-width: 0; }
++  .bag-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); padding: 3px; }
++  .bag-slot { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; }
++  .bag-card, .bag-tile, .bag-tile.empty-tile { width: 100%; height: 100%; }
++}
+diff --git a/apps/web/src/layout/classpicker/ClassPicker.css b/apps/web/src/layout/classpicker/ClassPicker.css
+index 420c07c..017e8e0 100644
+--- a/apps/web/src/layout/classpicker/ClassPicker.css
++++ b/apps/web/src/layout/classpicker/ClassPicker.css
+@@ -525,3 +525,21 @@
+   text-transform: uppercase;
+   color: var(--picker-gold);
+ }
++
++/* First-run desktop composition; the seven-class change dialog keeps its compact layout. */
++@media (min-width: 1024px) {
++  .screen-class .class-picker {
++    max-width: none;
++    height: 100%;
++    min-height: 0;
++    align-items: stretch;
++    justify-content: flex-start;
++    padding: 24px 32px;
++    gap: 20px;
++  }
++  .screen-class .class-picker__header { align-items: flex-start; text-align: left; }
++  .screen-class .class-picker__cards { flex: 1; min-height: 0; padding: 3px; overflow-y: auto; }
++  .screen-class .class-card { justify-content: space-evenly; padding: 24px; }
++  .screen-class .class-picker__footer { align-self: flex-end; max-width: 320px; }
++  .screen-class .class-picker__confirm-box { align-self: flex-end; width: min(100%, 540px); box-sizing: border-box; }
++}
+diff --git a/apps/web/src/layout/home/Home.test.tsx b/apps/web/src/layout/home/Home.test.tsx
+index e9549df..1028487 100644
+--- a/apps/web/src/layout/home/Home.test.tsx
++++ b/apps/web/src/layout/home/Home.test.tsx
+@@ -122,11 +122,11 @@ describe('Home and Landing Components (AGR1)', () => {
+       expect(onStartGuest).toHaveBeenCalledTimes(1);
+ 
+       // Proof strip items
+-      expect(screen.getByText('ERC-721')).toBeTruthy();
++      expect(screen.getByText('ERC-1155')).toBeTruthy();
+       expect(screen.getByText('Relic NFT')).toBeTruthy();
+-      expect(screen.getByText(/Verified on Routescan/i)).toBeTruthy();
+-      expect(screen.getByText(/Server-checked fights/i)).toBeTruthy();
+-      expect(screen.getByText(/Open source/i)).toBeTruthy();
++      expect(screen.getByText(/View contract on Routescan/i)).toBeTruthy();
++      expect(screen.getByText(/Guest play is local/i)).toBeTruthy();
++      expect(screen.getByText(/Market contract/i)).toBeTruthy();
+ 
+       // Help link
+       const helpBtn = screen.getByTestId('landing-help-link');
+@@ -135,3 +135,15 @@ describe('Home and Landing Components (AGR1)', () => {
+     });
+   });
+ });
++
++it('landing gives accurate public Fuji contract facts without private-source or guest-server claims', () => {
++  render(<LandingHero />);
++  expect(screen.getByText('ERC-1155')).toBeTruthy();
++  expect(screen.queryByText(/ERC-721|Open source|Server-checked fights|Verified on Routescan/)).toBeNull();
++  expect(screen.getByText('Guest play is local')).toBeTruthy();
++  expect(screen.getByRole('link', { name: 'View contract on Routescan ↗' }).getAttribute('href'))
++    .toBe('https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract');
++  expect(screen.getByRole('link', { name: 'Market contract ↗' }).getAttribute('href'))
++    .toBe('https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract');
++  cleanup();
++});
+diff --git a/apps/web/src/layout/home/home.css b/apps/web/src/layout/home/home.css
+index 6a347e8..433c99e 100644
+--- a/apps/web/src/layout/home/home.css
++++ b/apps/web/src/layout/home/home.css
+@@ -13,11 +13,10 @@
+ 
+ .home-dashboard {
+   display: grid;
+-  grid-template-columns: 280px minmax(0, 1fr) 280px;
+-  gap: var(--sp-4, 16px);
++  grid-template-columns: minmax(0, 1fr) 320px;
++  gap: 14px;
+   width: 100%;
+   height: 100%;
+-  max-width: 1560px;
+   margin: 0 auto;
+   box-sizing: border-box;
+   overflow: hidden;
+@@ -27,15 +26,12 @@
+ .home-col {
+   display: flex;
+   flex-direction: column;
+-  gap: var(--sp-3, 12px);
++  gap: 14px;
++  min-width: 0;
+   min-height: 0;
+   overflow: hidden;
+ }
+ 
+-.home-col--left {
+-  justify-content: flex-start;
+-}
+-
+ .home-col--center {
+   align-items: center;
+   justify-content: flex-start;
+@@ -43,14 +39,16 @@
+ 
+ .home-col--right {
+   justify-content: flex-start;
++  overflow-y: auto;
++  padding: 0 3px 3px 0;
+ }
+ 
+ /* Generic Home Card */
+ .home-card {
+   background: var(--surface, #2a1f36);
+-  border: var(--pixel-border, 2px solid #000);
++  border: 2px solid var(--border);
+   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  border-radius: 6px;
++  border-radius: 0;
+   padding: var(--sp-3, 12px);
+   box-sizing: border-box;
+   display: flex;
+@@ -87,7 +85,7 @@
+   background: var(--surface-2, #3a2c4a);
+   color: var(--accent, #ffb86b);
+   padding: 2px 6px;
+-  border-radius: 4px;
++  border-radius: 0;
+ }
+ 
+ .home-card__body {
+@@ -101,7 +99,7 @@
+ .home-hero-card__avatar {
+   background: var(--surface-2, #3a2c4a);
+   border: 1px solid var(--border, #72578d);
+-  border-radius: 4px;
++  border-radius: 0;
+   padding: 2px;
+   display: flex;
+   align-items: center;
+@@ -124,7 +122,7 @@
+   font-family: var(--font-num);
+   font-size: var(--fs-xs, 0.75rem);
+   padding: 1px 6px;
+-  border-radius: 3px;
++  border-radius: 0;
+   line-height: 1.3;
+ }
+ 
+@@ -199,7 +197,7 @@
+   height: 10px;
+   background: var(--surface-2, #3a2c4a);
+   border: 1px solid var(--border, #72578d);
+-  border-radius: 5px;
++  border-radius: 0;
+   overflow: hidden;
+ }
+ 
+@@ -239,19 +237,19 @@
+   background: #000;
+   border: var(--pixel-border, 2px solid #000);
+   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  border-radius: 6px;
++  border-radius: 0;
+   overflow: hidden;
+ }
+ 
+ /* Event Log */
+ .home-event-log {
+   width: 100%;
+-  flex: 0 0 130px;
+-  height: 130px;
++  flex: 0 0 100px;
++  height: 100px;
+   background: var(--surface, #2a1f36);
+   border: var(--pixel-border, 2px solid #000);
+   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  border-radius: 6px;
++  border-radius: 0;
+   padding: var(--sp-2, 8px) var(--sp-3, 12px);
+   box-sizing: border-box;
+   display: flex;
+@@ -314,7 +312,7 @@
+ /* Recent Loot Card */
+ .home-card--loot {
+   flex: 1;
+-  min-height: 0;
++  min-height: 120px;
+   display: flex;
+   flex-direction: column;
+ }
+@@ -339,7 +337,7 @@
+   gap: 4px;
+   background: var(--surface-2, #3a2c4a);
+   padding: 4px 6px;
+-  border-radius: 4px;
++  border-radius: 0;
+   font-size: var(--fs-xs, 0.75rem);
+ }
+ 
+@@ -385,7 +383,7 @@
+   padding: 4px;
+   background: var(--surface-2, #3a2c4a);
+   border: 1px solid var(--border, #72578d);
+-  border-radius: 4px;
++  border-radius: 0;
+ }
+ 
+ .home-loot-item__icon {
+diff --git a/apps/web/src/layout/landing.css b/apps/web/src/layout/landing.css
+index 3530dc8..013ef0f 100644
+--- a/apps/web/src/layout/landing.css
++++ b/apps/web/src/layout/landing.css
+@@ -34,11 +34,6 @@
+ }
+ 
+ .landing__backdrop {
+-  position: absolute;
+-  inset: 0;
+-  width: 100% !important;
+-  height: 100% !important;
+-  object-fit: cover;
+   image-rendering: pixelated;
+   opacity: 0.75;
+   pointer-events: none;
+@@ -51,12 +46,11 @@
+   width: 100%;
+   height: 100%;
+   display: grid;
+-  grid-template-columns: 1.2fr 0.8fr;
++  grid-template-columns: 1fr 1fr;
+   align-items: center;
+-  padding: 40px 60px 80px;
++  padding: 40px 48px 80px;
+   box-sizing: border-box;
+   gap: 40px;
+-  max-width: 1400px;
+   margin: 0 auto;
+ }
+ 
+@@ -77,7 +71,7 @@
+   background: var(--surface, #2a1f36);
+   border: 1px solid var(--border, #72578d);
+   padding: 4px 12px;
+-  border-radius: 9999px;
++  border-radius: 0;
+   font-family: var(--font-num, monospace);
+   font-size: 11px;
+   font-weight: 700;
+@@ -233,7 +227,7 @@
+ /* Right column with cat art */
+ .landing__hero-right {
+   display: flex;
+-  align-items: flex-end;
++  align-items: center;
+   justify-content: center;
+   height: 100%;
+   pointer-events: none;
+diff --git a/apps/web/src/layout/layout.css b/apps/web/src/layout/layout.css
+index 848fc0a..c2174af 100644
+--- a/apps/web/src/layout/layout.css
++++ b/apps/web/src/layout/layout.css
+@@ -1058,9 +1058,13 @@
+ 
+ .shell-panel-view.screen-landing,
+ .shell-panel-view.screen-class {
+-  padding: var(--sp-4, 16px);
++  padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow-y: auto;
+ }
++
++@media (min-width: 1024px) {
++  .shell-panel-view.screen-home { padding: var(--sp-4, 16px); }
++}
+diff --git a/apps/web/src/layout/metrics.test.ts b/apps/web/src/layout/metrics.test.ts
+index 1c4d432..6047a32 100644
+--- a/apps/web/src/layout/metrics.test.ts
++++ b/apps/web/src/layout/metrics.test.ts
+@@ -1,5 +1,5 @@
+ import { expect, it } from 'vitest';
+-import { layoutKind, stageHeight, stageZoom } from './metrics';
++import { desktopStageMetrics, layoutKind, stageHeight, stageZoom } from './metrics';
+ 
+ it('picks phone, tablet and desktop layouts at the documented breakpoints', () => {
+   expect(layoutKind(320)).toBe('phone');
+@@ -35,3 +35,17 @@ it('zooms the 96 px scene by a whole number', () => {
+ it('keeps at least 160 px of scene width', () => {
+   expect(stageZoom(500, 900)).toBe(3);
+ });
++
++// Concrete design oracles: 320px sidebar, 16px gutters, 14px gap, integer 96px scene.
++it('fills the two-column desktop scene without stretching or cropping pixels', () => {
++  expect(desktopStageMetrics(1280, 720)).toEqual({ zoom: 4, width: 816, logicalWidth: 204 });
++  expect(desktopStageMetrics(1600, 900)).toEqual({ zoom: 6, width: 1134, logicalWidth: 189 });
++  for (const [width, height] of [[1024, 720], [1280, 720], [1600, 900], [1920, 1080]]) {
++    const scene = desktopStageMetrics(width!, height!);
++    expect(Number.isInteger(scene.zoom)).toBe(true);
++    expect(scene.width % scene.zoom).toBe(0);
++    expect(scene.width).toBeLessThanOrEqual(width! - 462);
++    expect(scene.logicalWidth).toBeGreaterThanOrEqual(160);
++    expect(scene.zoom * 96).toBeLessThanOrEqual(height! - 284);
++  }
++});
+diff --git a/apps/web/src/layout/metrics.ts b/apps/web/src/layout/metrics.ts
+index a99af7a..886fe95 100644
+--- a/apps/web/src/layout/metrics.ts
++++ b/apps/web/src/layout/metrics.ts
+@@ -32,10 +32,12 @@ export function stageZoom(width: number, stageH: number): number {
+   return Math.max(MIN_ZOOM, Math.min(zoom, Math.floor(width / MIN_LOGICAL_WIDTH)));
+ }
+ 
+-/** Stage dimensions for the 3-column redesign desktop dashboard. */
++/** Stage dimensions for the scene + 320px sidebar desktop dashboard.
++ * Match home.css: 92px rail, 16px screen padding, 14px gap and 2px stage borders.
++ * Reserve the 80px warning-capable HUD and 54px guidance row so status changes cannot crop the scene. */
+ export function desktopStageMetrics(width: number, height: number): { zoom: number; width: number; logicalWidth: number } {
+-  const centerColW = Math.max(320, width - 92 - 32 - 280 - 280 - 32);
+-  const centerAvailH = Math.max(280, height - 56 - 32 - 140 - 12);
++  const centerColW = Math.max(320, width - 92 - 32 - 320 - 14 - 4);
++  const centerAvailH = Math.max(280, height - 80 - 54 - 32 - 100 - 14 - 4);
+   const maxZoomW = Math.floor(centerColW / 160);
+   const maxZoomH = Math.floor(centerAvailH / 96);
+   const zoom = Math.max(2, Math.min(maxZoomW, maxZoomH));
+diff --git a/apps/web/src/shell/redesign-contract.test.tsx b/apps/web/src/shell/redesign-contract.test.tsx
+new file mode 100644
+index 0000000..a279844
+--- /dev/null
++++ b/apps/web/src/shell/redesign-contract.test.tsx
+@@ -0,0 +1,68 @@
++import { readFileSync } from 'node:fs';
++import { resolve } from 'node:path';
++import { cleanup, render, screen, within } from '@testing-library/react';
++import { afterEach, expect, it, vi } from 'vitest';
++import { RAIL_SCREENS, SCREEN_REGISTRY, TABS, tabNameToScreenId } from '../nav/screens';
++import { sampleServerStateV2 } from '../layout/a11y/fixtures';
++import { Rail } from './Rail';
++import { ScreenFrame } from './ScreenFrame';
++import { Hud } from './Hud';
++
++vi.mock('../wallet/WalletButton', () => ({ WalletButton: () => <button>Wallet fixture</button> }));
++afterEach(cleanup);
++
++it('every registered destination has one rail item or is an entry screen', () => {
++  expect(new Set(SCREEN_REGISTRY.map(s => s.id)).size).toBe(SCREEN_REGISTRY.length);
++  expect(SCREEN_REGISTRY.filter(s => !s.rail).map(s => s.id).sort()).toEqual(['class', 'landing']);
++  render(<Rail activeScreen="home" onSelectScreen={vi.fn()} />);
++  expect(screen.getAllByRole('tab')).toHaveLength(RAIL_SCREENS.length);
++  for (const entry of SCREEN_REGISTRY) {
++    const items = screen.queryAllByTestId(`nav-${entry.id}`);
++    expect(items).toHaveLength(entry.rail ? 1 : 0);
++    if (entry.rail) expect(items[0]!.getAttribute('aria-controls')).toBe(`panel-${entry.id}`);
++  }
++});
++
++it('every legacy tab and onboarding destination resolves to its intended rail screen', () => {
++  const expected = { Hero: 'hero', Inventory: 'bag', Boss: 'map', Forge: 'forge', Market: 'market' };
++  const onboarding = readFileSync(resolve('src/onboarding/nextStep.ts'), 'utf8');
++  const used = [...onboarding.matchAll(/\btab:\s*(['"])([^'"]+)\1/g)].map(m => m[2]!);
++  expect(used.length).toBeGreaterThan(0);
++  for (const name of [...TABS.map(tab => tab.id), ...used]) {
++    expect(expected).toHaveProperty(name);
++    const destination = tabNameToScreenId(name);
++    expect(destination).toBe(expected[name as keyof typeof expected]);
++    expect(RAIL_SCREENS.some(screen => screen.id === destination)).toBe(true);
++  }
++});
++
++for (const entry of RAIL_SCREENS) it(`${entry.label} frame keeps one heading and one current rail destination`, () => {
++  render(<ScreenFrame activeScreen={entry.id} onSelectScreen={vi.fn()} hudProps={{ state: sampleServerStateV2(), power: 42 }}>
++    <section id={`panel-${entry.id}`} role="tabpanel" aria-label={entry.label}>Screen content fixture</section>
++  </ScreenFrame>);
++  expect(screen.getAllByRole('heading', { level: 1, name: 'Taskbar Hero' })).toHaveLength(1);
++  expect(screen.getByTestId('rail').querySelectorAll('[aria-current="page"]')).toHaveLength(1);
++  expect(screen.getByTestId(`nav-${entry.id}`).getAttribute('aria-current')).toBe('page');
++  expect(within(screen.getByRole('main')).getByRole('tabpanel', { name: entry.label })).toBeTruthy();
++  expect(screen.getByRole('main').tabIndex).toBe(-1);
++  expect(screen.getByTestId('hud')).toBeTruthy();
++});
++
++for (const id of ['landing', 'class'] as const) it(`${id} frame remains named without HUD or rail`, () => {
++  render(<ScreenFrame activeScreen={id} onSelectScreen={vi.fn()} hudProps={null}>Entry fixture</ScreenFrame>);
++  expect(screen.queryByTestId('rail')).toBeNull();
++  expect(screen.queryByTestId('hud')).toBeNull();
++  expect(screen.getAllByRole('heading', { level: 1, name: 'Taskbar Hero' })).toHaveLength(1);
++  expect(screen.getByRole('main')).toBeTruthy();
++});
++
++it('HUD accessible currency values update with the authoritative snapshot', () => {
++  const state = sampleServerStateV2({ level: 14, keys: 1 });
++  const view = render(<Hud state={state} power={42} />);
++  const next = { ...state, currencies: { ...state.currencies, fish: 9876, yarn: 543, keys: 4 } };
++  view.rerender(<Hud state={next} power={1234} />);
++  expect(screen.getByRole('listitem', { name: 'Fish 9,876' })).toBeTruthy();
++  expect(screen.getByRole('listitem', { name: 'Yarn 543' })).toBeTruthy();
++  expect(screen.getByRole('listitem', { name: 'Cat Keys 4 of 5' })).toBeTruthy();
++  expect(screen.getByTestId('hud-power').textContent).toContain('1,234');
++});
+diff --git a/apps/web/src/theme.contrast.test.ts b/apps/web/src/theme.contrast.test.ts
+index e0962b7..d96f01a 100644
+--- a/apps/web/src/theme.contrast.test.ts
++++ b/apps/web/src/theme.contrast.test.ts
+@@ -29,6 +29,16 @@ const pairs: [string, string, number][] = [
+   ['--focus', '--surface', 3], ['--focus', '--surface-2', 3],
+ ];
+ 
++// Redesign semantic labels are text, including warnings and currency values.
++// Keep the existing AA threshold and cover every plum surface, not just page bg.
++for (const foreground of ['--text', '--muted', '--accent', '--good', '--bad', '--shard', '--key']) {
++  for (const background of ['--bg', '--surface', '--surface-2', '--surface-3']) {
++    if (!pairs.some(([fg, bg]) => fg === foreground && bg === background)) {
++      pairs.push([foreground, background, 4.5]);
++    }
++  }
++}
++
+ describe('theme WCAG contrast', () => {
+   for (const [foreground, background, minimum] of pairs) {
+     it(`${foreground} on ${background} >= ${minimum}:1`, () => {
+diff --git a/apps/web/src/theme.css b/apps/web/src/theme.css
+index 79d76c4..39fc82d 100644
+--- a/apps/web/src/theme.css
++++ b/apps/web/src/theme.css
+@@ -1,7 +1,7 @@
+ /* Cat Café Quest theme tokens. Loaded last so it re-skins the older component CSS.
+    New UI should use these tokens and the shared classes below. */
+ :root {
+-  --bg: #1a1220;
++  --bg: #120b19;
+   --surface: #2a1f36;
+   --surface-2: #3a2c4a;
+   --border: #72578d;
+@@ -13,7 +13,7 @@
+   --shard: #8fd8ff;
+   --key: #ff8fb1;
+   --good: #6be08a;
+-  --bad: #ff6b6b;
++  --bad: #ff9696;
+   --focus: #ffd75e;
+   --rarity-common: #b9b6c9;
+   --rarity-rare: #4aa8ff;
+@@ -45,7 +45,7 @@
+ }
+ body {
+   font-family: var(--font-body);
+-  font-size: var(--fs-md, 1rem);
++  font-size: var(--fs-sm, .875rem);
+   line-height: 1.5;
+ }
+ h1, h2, h3, .tab, .toggle { font-family: var(--font-display); }
+diff --git a/docs/decisions/cxr1-truth-and-layout.md b/docs/decisions/cxr1-truth-and-layout.md
+new file mode 100644
+index 0000000..83eb5cb
+--- /dev/null
++++ b/docs/decisions/cxr1-truth-and-layout.md
+@@ -0,0 +1,14 @@
++# CXR1 refresh: display truth and desktop composition
++
++3 November 2026. Base main2bc98cd; existing PR245 refreshed with a normal merge.
++
++The landing now names ERC-1155 (RelicNFT.sol extends ERC1155), links both public Fuji contracts and accurately labels local guest play. A private source repository is not an open-source guarantee. Contract viewing does not imply verified source. Bag synthetic Relic-like items have no chain receipt: show “Mint proof unavailable”, never a fabricated token number.
++
++Historical Home.test.tsx assertions demanded ERC-721, verified-source wording, server-checked guest fights and open source. They now require the corresponding truthful wording; exact contract URLs and absence of false claims are additionally tested. BagPanel.test.tsx previously demanded “#1042 · minted”; it now requires unavailable proof and rejects the fabricated claim. No action, value, assertion threshold or capacity is removed. The first builder failure exposing the stale landing expectations is retained in ledger CXR1-FRESH/builder-r1.
++
++The warning token is raised to #ff9696 against unchanged4.5:1 text thresholds. Body base14px and page #120b19 follow the brief; fonts and existing artwork are preserved. Landing crops the same backdrop at integer scale. Home uses one scene/log column and a320px sidebar, with stage dimensions calculated for the same gutters/borders and the actual HUD plus guidance row (including room for power warnings). Visual review caught inherited56px HUD-only sizing, fixed-size empty cells and the bulk-button100% width; new geometry assertions cover all three. First-run desktop class cards fill the page; change-class dialogs retain their compact layout. Bag has eight fluid desktop columns, existing200 capacity, secondary bulk equip, actions above a separate comparison card, and every existing action.
++
++Mockup names, balances, cat placeholders, sample wallet values and token claims are not data authority. Existing classes/stats/currencies/content remain authoritative. Forge/Market redesign PR252 stays PARTIAL after three rounds; its code is not reintroduced here. Hero/Help/Map and local catalog continue to use their accepted implementations. No backend, flags, economics, artwork files, contract, auth, repository visibility or settings change.
++
++
++Fresh A caught four phone16:9 stage regressions: limit the new Home gutter to desktops, preserving every phone geometry assertion. Two token checks require a visible shared `.pixel-btn`; bulk equip keeps that base class with the existing secondary modifier. No token test changes. Three u4 color assertions previously required bulk equip's accent background; requested action prioritization now requires the exact surface-2 background, while the same4.5 contrast check and all hit-target/overflow/action checks remain. The initial ledger triage misidentified those two token failures as background goldens; the log proves they were missing shared button-class selectors. This final repair corrects source and only the documented u4 design oracle.

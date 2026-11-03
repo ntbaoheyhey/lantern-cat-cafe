@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A94 complete; clean B tests running.
+Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A94/B94 gate PASS; publication next.
 Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
 Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
@@ -13,7 +13,7 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
-| CXR1 | #245/remotee99e497,local187a1b5 | A94 on187a1b5; clean B tests running |
+| CXR1 | #245/remotee99e497,local187a1b5 | A94/B94 on187a1b5; exacthead gate PASS; unmerged |
 | CXR2 | localc49421f | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
 | CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
@@ -33,8 +33,8 @@ A full1280:314PASS/9FAIL;4phone-stage padding regressions +2missing shared-butto
 Final repair29browser/type PASS. Frozen187a1b5 A33210 FINISHED PASS94; last repair;5020–5023 free.
 A2490core/323matrix×2/234repeats×2/10mutants/UI36/effects20 PASS; all exacthead.
 Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
-Clean B /private/tmp/tbh-cxr1-fresh-b exact187a1b5; PID42260 tests first,5030–5033 then5120–5123.
-B review NOT STARTED; shares A fullmatrix, reruns core/repeats10mutants/classic/UI/effects; grade-b/run.json.
+Clean B /private/tmp/tbh-cxr1-fresh-b exact187a1b5;42260 FINISHED PASS94; all ports free.
+B tests then full diff/8capture review complete; shares A fullmatrix;2490core/234×2/10mutants/38classic/UI/effects PASS.
 Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
 Builder1 exposed historical assertions requiring false landing claims; documented old→new, retained failure.
 Builder2 PASS87focused/24browser; visual found omitted context-row height/fixed empty tiles/bulk100% width.

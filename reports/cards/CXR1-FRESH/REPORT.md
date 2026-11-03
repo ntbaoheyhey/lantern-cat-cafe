@@ -13,3 +13,6 @@ Fresh A ed11f01 FAILED:2490core/build/8mutants/153repeat1280 pass; full1280 has3
 
 
 Final fresh A187a1b5: self-graded94/100, all floors/zero auto-fails.2490core,323 browsers at each size,234 repeats each,10 mutants and all build/import/link/art/UI/effects checks pass. Eight exact-head desktop captures inspected. Bundle JS+CSS growth0.054%. Minor rail rounding/context-row/whole-pixel letterboxing disclosed and scored. Clean B tests-first pass begins next; no merge yet.
+
+
+Clean B187a1b5 finished tests before full diff review and source/artifact comparison: self-graded94/100, all floors/zero auto-fails. B2490core/234repeats×2/38classic/10differentmutants/UI36/effects20 all pass; identical-head A full323×2 matrix shared. Every49 diff file matches A; source clean. Both94 meet the gate, no third pass. Serial publication/merge then main+live remain required.
