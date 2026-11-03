@@ -1,20 +1,34 @@
-# Active fresh-session report — 2026-11-03T10:25:29.724911+07:00
+# Active session report — 2026-11-03T11:38:09.299013+07:00
 
-Living report, not a completion claim. Current main is6144d42 (#245); actual-main/live verification running; repository private.
+Living report, not a completion claim. Main is6144d42; its exact reviewed tree, private repository, author and skip-ci subject are verified. Latest main/live acceptance:2490 core cases,323 browser cases at each desktop size,40 art checks,35 matching live assets before/after,22 health checks and16 live stages per size. No unexpected errors, transactions or Actions runs. Inherited2 expected failures/11 skips remain disclosed.
 
-CXU5 #249 DONE (1b299c4, fresh A94/B94); CXU4 #251 DONE (2847e9a, A95/B95). Their features remain covered by current regression. CXU3 #252 is PARTIAL at4da5104 after three rounds: final A timed out in the unchanged5000ms StageLayout boss-state unit; B/current-head full browser matrix not run. It stays unmerged.
+| Item | PR | Fresh self-grades | Merge/status | Live |
+|---|---|---|---|---|
+| CXU5 |249|94/94|1b299c4 DONE|accepted|
+| CXU4 |251|95/95|2847e9a DONE|accepted|
+| CXU3 |252 draft|not passed|4da5104 PARTIAL after3 rounds|unreleased|
+| CXC2 |253+254|95/96; fix96/96|666088c DONE|accepted, public read-only proof|
+| T011/T012 |255|96/96|a903fb6 DONE|shared feature OFF|
+| ORIG2+ART/T013 |256|96/96|2bc98cd DONE|local opt-in/reset accepted|
+| CXR1 |245|94/94|6144d42 DONE|accepted, real landing entry|
+| CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
+| CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
+| CXS1 |localfbcec3b|pending|691-word security draft; install/links pass|not released|
+| CXS2 |pending|pending|submission pack DRAFT only|no submission|
+| CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
+| P2/P3 |conditional|—|A–F not all green/merged|not started|
 
-CXC2 DONE via #253/39e74d8 and #254/666088c. Initial feature A95/B96; range fix A96/B96. Real public Fuji code/linkage and available100-block event reads are verified, with zero transactions. Direct-only Multicall guard,500-block RPC-limit and unsafe test-port failures were fixed and retained. [Acceptance](cards/CXC2-FRESH/acceptance.json).
+[CXR1 acceptance](cards/CXR1-FRESH/acceptance.json) · [ORIG2/art acceptance](cards/ORIG2-ART-FRESH/acceptance.json) · [CXC2 acceptance](cards/CXC2-FRESH/acceptance.json).
 
-T011/T012 DONE via #255/a903fb6, fresh A96/B96. Current main core2452,317/317 browsers per desktop size,32/32 live assets before/after,22 health probes and11-stage guest paths per size pass with zero unexpected errors/transactions. Shared original-gameplay flag remains false; no backend deployment. Originality checks pass against the verified archive, with source patterns in memory. [Acceptance](cards/ORIG1-FRESH/acceptance.json).
+CXR1 fixes warning contrast without lowering4.5, truthful ERC1155/public links/unavailable mint proof, landing/class/Home/Bag composition, preserved phone geometry and all existing actions/data/art. A and clean tests-first B each passed234 repeats per size and10 different mutants; full323×2 matrix belongs to the identical reviewed head187a1b5. Earlier failed headed11f01 and its corrections are retained.
 
-Required P1 local consumer and ART/T013 merged via#256/2bc98cd from reviewed792b475 in /private/tmp/tbh-original-preview. The lazy Help catalog starts OFF, uses the shared pure calculator and leaves config/storage/network/gameplay untouched.34 original native icons passed the complete palette/snap/alpha/padding chain and were inspected at1x/3x on dark/cream backgrounds and in silhouette. Existing art is unchanged; exact per-asset briefs/date/method/runtime/hashes are recorded. Builder22 focused cases,4 desktop/motion browser cases and40 art tests pass. Fresh A96 is complete (321×2,60 repeats,14 mutants); clean fresh B96 completed tests and full source/artifact review on792b475. Normal merge preserves artwork provenance. Actual-main core2459/40art/321 browsers per size pass; before-assets and22 health pass. All16 live stages per size pass, 35/35 asset hashes match before/after and no errors/transactions. Actions0. [Acceptance](cards/ORIG2-ART-FRESH/acceptance.json). [Card](cards/ORIG2-ART-FRESH/REPORT.md).
+CXR2's full core failed13 web cases:1 unchanged5000ms boss-state timeout,3 legacy portal/title queries,9 Relic fixtures blocked by first-visit Help.1402 other web cases passed; final browser/full grades were not reached. The candidate and original dirty clone are preserved. No fourth correction or merge. [Partial receipt](cards/CXR2-FRESH/partial.json). CXU3 remains parked under the same limit.
 
-CXR1 refreshed cleanly on main2bc98cd in /private/tmp/tbh-cxr1-active; gap corrections now active. First builder caught stale assertions requiring false landing claims; corrected to verified ERC1155/public-contract/local-guest truth, with failure retained. BuilderR2 passed87 focused cases and24 browser cases. Visual inspection caught HUD-reserve/empty-slot/bulk-width gaps; corrected with stronger geometry assertions. BuilderR3 passed87 focused/24 browser cases, strict guest+local-signed audits and both effects runs. Localed11f01 committed; fresh A oned11f01 failed full1280 with314 pass/9 fail (four real phone gutter regressions, two shared-button selector regressions and three stale bulk-action design goldens). Type/lint2490core/build8mutants/153repeat1280 passed but do not override failure. Final repair29browser/type PASS; new exacthead187a1b5 passed fresh A94:2490core/323matrix×2/234repeats×2/10mutants/UI+effects. Clean tests-first B94 also passes; exact187a1b5 gate A94/B94 complete. PR245 merged normally as6144d42, exact reviewed tree/author/suffix; actual-main/live now running under PID49427. CXR2 draft#257/c49421f unifies three dialogs and corrects v2 guidance, long-loot focus/scroll and rail styling. PARTIAL after3 corrections: final core failed13 web cases (1boss-state timeout,3portal-query cases,9Relic fixtures blocked by initial Help).1402 other web cases passed; final browser/fullgate not reached. No grade/merge/fourth repair. [Receipt](cards/CXR2-FRESH/partial.json). CXQ1 and CXS2 remain pending. CXS1 has an isolated691-word docs draft with source-checked test names and honest deployment/backup limits; its gate is pending. No funded mint/list/buy or full future nine-stage demo completion is claimed. CXS2 stays a DRAFT; no contest submission. P0/P1 are not fully complete; P2/P3 remain conditional.
+No fresh funded mint/list/buy or complete timed nine-stage demo is claimed. Current16-stage acceptance is guest/read-only smoke. Original economy remains default OFF; preview is transient and does not alter server/gameplay.34 original icons retain full palette/pixel/provenance evidence; existing art is unchanged.
 
-CXN3 #244 still requires the owner's complete deployed-source backup and tested restore path. No guard bypass/deploy/migration/provider or production-flag change. [Exact owner steps](OPTIONAL-USER-STEPS.md). Frontend work is independent. Optional manual context compaction is also recorded there; no native compaction action is exposed and no compaction success is claimed.
+PR244 needs the owner's complete deployed function source, dependencies/import maps and a tested restore path; UnsafeFunctionDownloadPathError was not bypassed. No destructive live writes, migrations/backend deploys, Vercel/production flag changes, real funds/mainnet, public-repo change or contest submission. [Owner steps](OPTIONAL-USER-STEPS.md). This blocks no unrelated frontend/documentation work.
 
-Single agent/chat, STOP preserved; requested hourly reminder active. [Current handoff](MEGA-CURRENT-HANDOFF.md).
+P0/P1 remain incomplete. Single agent/chat; STOP and the requested hourly reminder are preserved. [Handoff](MEGA-CURRENT-HANDOFF.md).
 
 ---
 Historical reports below retain their original dates and do not override current authority.

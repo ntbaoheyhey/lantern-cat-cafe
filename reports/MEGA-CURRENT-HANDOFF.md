@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T11:27:47.930132+07:00. ACTIVE; CXR1 merged, main/live running.
+Updated: 2026-11-03T11:27:47.930132+07:00. ACTIVE; CXR1 main/live accepted; CXQ1 next.
 Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
 Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
@@ -13,7 +13,7 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
-| CXR1 | #245/remotee99e497,local187a1b5 | MERGED A94/B94; main6144d42; main/live running |
+| CXR1 | #245/remotee99e497,local187a1b5 | DONE A94/B94; main6144d42; main/live accepted |
 | CXR2 | #257/c49421f draft | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
 | CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
@@ -68,7 +68,8 @@ CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 in
 Builder-final40798 PASS44units/11browser; added missing new v2 unit +rail polish/keyboard loot-region.
 CXR2 builder44763 FINISHED FAIL:13web failures/1402PASS (1boss-timeout,3portal queries,9undismissed Help).
 No final-head browser/fullgrade/live. No fourth repair; preserve c49421f and partial.json;5110–5113 free.
-CXS1 draft /private/tmp/tbh-cxs1-active codex/cxs1-security-overview atmain2bc98cd;7docs dirty; no tests.
+CXS1 /private/tmp/tbh-cxs1-active codex/cxs1-security-overview fbcec3b atop6144d42;7docs committed.
+CXS1 setup53124 finished; install/links PASS; full gate pending.
 Overview691words, linked sources/quoted cases checked; includes244 backup gap and supersedes old Deno/budget claims.
-Main verifier PID49427 /private/tmp/tbh-main-after-cxr1,4980–4983; CXR1-FRESH/post-main/run.json.
-Next3: accept actual-main/live CXR1; publish CXR2PARTIAL without more repair; CXQ1 live demo and CXS docs.
+Main49427 FINISHED PASS; /private/tmp/tbh-main-after-cxr1;2490core/323×2/35assets×2/22health/16live×2.
+Next3: CXQ1 live earned-progress demo; complete CXS1 docs gate; CXS2 draft pack.
