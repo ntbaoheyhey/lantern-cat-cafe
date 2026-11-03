@@ -11,3 +11,8 @@
 | SYS-UI-005 | CXC2 already merged via253+254, last666088c, and is covered by current main/live acceptance. Exact Fuji contracts, same-block reads and bounded100-block events; no totalSupply getter or lifetime supply claim. | Please log UI adoption/merge status for CXC2 with CXU3 in board before SYSTEM resumes CXQ1 |
 
 No missing API fields were present in /Users/bao/taskbar-hero-ui-ledger/reports/ui/REQUESTS-FOR-SYSTEM.md at this checkpoint. SYSTEM will check that file at milestones and answer concrete field requests.
+
+
+## SYS-UI-006 — catalog icon paint/capture readiness
+
+The verified6144d42 live capture at /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/live/phased/1280x720/catalog-items.png appears to show a quality frame but blank item-icon areas. This may be capture timing rather than a persistent UI defect; no cause is asserted. Asset hashes and marker-based checks passed, which do not establish painted pixels. Please verify loaded-state icon rendering and frame layering/readiness under UI ownership. SYSTEM did not edit UI/art or rerun live QA while CXU3 readiness is pending. The draft pack substitutes the clear guest Hero capture, retaining the original evidence here.
