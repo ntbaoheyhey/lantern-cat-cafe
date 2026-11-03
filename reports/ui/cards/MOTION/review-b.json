@@ -1,0 +1,26 @@
+{
+  "head": "4b0e69accfc7d8079fdf3d044676c0179cf5a1f4",
+  "testsFirst": true,
+  "pass": "motion-b-accessible",
+  "completedChecks": [
+    "typecheck",
+    "lint",
+    "scripts",
+    "packages",
+    "web-units",
+    "art-delivery",
+    "art-catalog",
+    "build",
+    "changed-1280x720",
+    "changed-1600x900",
+    "resize-five-1280x720",
+    "resize-five-1600x900",
+    "strict-ui-audit",
+    "axe-wcag-aa"
+  ],
+  "axeScans": 22,
+  "confirmedViolations": 0,
+  "fullMatrixSharedFromA": "pending",
+  "scope": "../../../logs/motion-b-scope-resumed.json",
+  "humanReview": "Application source, effect benchmark and changed fixture assertions reread after B tests. No authoritative game/API/wallet changes; no lowered assertion, new skip or baseline replacement. Remaining inherited axe incompletes retained in axe-incomplete-review.json."
+}
