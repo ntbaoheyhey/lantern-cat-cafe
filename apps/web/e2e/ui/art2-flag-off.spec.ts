@@ -2,7 +2,7 @@ import { expect, test } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
 
-for (const width of [1280, 1600]) test(`ART2 flag-off landing and class stay pixel-identical to main 340f88b ${width}`, async ({ page }) => {
+for (const width of [1280, 1600]) test(`ART2 flag-off landing and class stay pixel-identical to main 340f88b ${width}`, async ({ page }, testInfo) => {
   await page.setViewportSize({ width, height: width === 1280 ? 720 : 900 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.clock.install({ time: Date.UTC(2026, 10, 3, 12) });
@@ -13,9 +13,23 @@ for (const width of [1280, 1600]) test(`ART2 flag-off landing and class stay pix
     if (screen === 'class') await page.getByTestId('landing-start').click();
     await expect(page.getByTestId(screen === 'landing' ? 'landing-hero' : 'class-picker')).toBeVisible();
     await page.evaluate(() => document.fonts.ready);
+    // The test clock is paused: explicitly service two paint frames after font layout.
+    // Forty milliseconds cannot reach the existing30-second game claim interval.
+    await page.clock.runFor(40);
+    await page.evaluate(() => document.fonts.ready);
     await expect(page.locator('[data-art2]')).toHaveCount(0);
     const actual = await page.screenshot({ animations: 'disabled' });
     const baseline = fs.readFileSync(path.resolve(`e2e/ui/art2-baseline/${screen}-${width}.png`));
+    if (!actual.equals(baseline)) {
+      await testInfo.attach('flag-off-actual', { body: actual, contentType: 'image/png' });
+      await testInfo.attach('flag-off-baseline', { body: baseline, contentType: 'image/png' });
+      if (process.env.ART2_SCREENSHOTS) {
+        fs.mkdirSync(process.env.ART2_SCREENSHOTS, { recursive: true });
+        const name = path.join(process.env.ART2_SCREENSHOTS, `unexpected-${screen}-${width}-${testInfo.repeatEachIndex}-${testInfo.workerIndex}`);
+        fs.writeFileSync(name + '.png', actual, { flag: 'wx' });
+        fs.writeFileSync(name + '.json', JSON.stringify(await page.evaluate(() => ({ fontStatus: document.fonts.status, fonts: [...document.fonts].map(face => ({ family: face.family, status: face.status })), title: document.querySelector('.landing__title')?.getBoundingClientRect().toJSON() })), null, 2));
+      }
+    }
     expect(actual.equals(baseline), `${screen} ${width}: default-off pixels changed from accepted main`).toBe(true);
   }
 });

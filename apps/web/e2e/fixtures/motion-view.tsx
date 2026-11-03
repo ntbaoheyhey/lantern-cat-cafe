@@ -22,7 +22,7 @@ function Fixture() {
   if (step) state.inventory = state.inventory.map((item, i) => i === state.inventory.length - 1 ? { ...item, id: 'sample-loot-' + step } : item);
   const mint = useMotionCue<HTMLParagraphElement>(step ? String(step) : null, 'relic');
   return <ScreenFrame activeScreen="home" onSelectScreen={() => {}} hudProps={{ state, power: 360 }}>
-    <section className="shell-panel-view" key={panel} style={{ display: 'flex', flexDirection: 'column', padding: 20, height: '100%' }}>
+    <section id="panel-home" role="tabpanel" aria-labelledby="tab-home" className="shell-panel-view" key={panel} style={{ display: 'flex', flexDirection: 'column', padding: 20, height: '100%' }}>
       <h2>Motion samples</h2><p>Local UI samples only. No reward, ownership or wallet write.</p>
       <div style={{ display: 'flex', gap: 16 }}>
         <button className="pixel-btn" onClick={() => setStep(value => value + 1)}>Play sample cues</button>
