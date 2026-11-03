@@ -1,9 +1,11 @@
 import { FUJI_CHAIN_ID } from '@taskbar-hero/chain';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useAccount, useConnect, useDisconnect, useSignMessage, useSwitchChain } from 'wagmi';
 import { expiryFromToken } from './session';
 import { buildSiweMessage } from './siwe';
 import { useAuthContext, useSession } from './WalletProvider';
+import { ToastHost } from '../ui';
 
 export const CORE_INSTALL_URL = 'https://core.app';
 export const NO_WALLET_HINT =
@@ -27,6 +29,7 @@ export function WalletButton() {
   const { signMessageAsync } = useSignMessage();
   const [signing, setSigning] = useState(false);
   const [signError, setSignError] = useState<string>();
+  const [dismissedError, setDismissedError] = useState<string>();
 
   // Drop a session that does not belong to the connected account.
   useEffect(() => {
@@ -42,6 +45,7 @@ export function WalletButton() {
   const doDisconnect = () => {
     store.clear();
     setSignError(undefined);
+    setDismissedError(undefined);
     disconnect();
   };
 
@@ -49,6 +53,7 @@ export function WalletButton() {
     if (!address) return;
     setSigning(true);
     setSignError(undefined);
+    setDismissedError(undefined);
     try {
       const nonce = await api.getNonce();
       const message = buildSiweMessage({ address, nonce });
@@ -108,9 +113,14 @@ export function WalletButton() {
 
   const error = signError ?? (connectError ? errText(connectError) : undefined);
   return (
-    <div className="wallet" role="group" aria-label="Wallet">
-      {body}
-      {error && <span className="wallet-msg" role="status">{error}</span>}
-    </div>
+    <>
+      <div className="wallet" role="group" aria-label="Wallet">
+        {body}
+      </div>
+      {error && error !== dismissedError && createPortal(
+        <ToastHost toasts={[{ id: 'wallet-error', tone: 'error', message: error }]} onDismiss={() => setDismissedError(error)} />,
+        document.body,
+      )}
+    </>
   );
 }
