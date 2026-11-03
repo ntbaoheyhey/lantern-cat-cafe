@@ -85,7 +85,7 @@ export function MarketView(props: MarketViewProps) {
           <p className="market-hint">Prices are in {MARKET_TESTNET}. Select a listing to inspect it.</p>
           {props.readFailed ? null : props.loadingListings ? <p role="status">Loading listings…</p> : rows.length === 0 ?
             <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
-            <div className="market-table-wrap"><table className="market-table" data-testid="listings" aria-label="Relic market listings">
+            <div className="market-table-wrap" tabIndex={0} role="region" aria-label="Scrollable Relic listings"><table className="market-table" data-testid="listings" aria-label="Relic market listings">
               <thead><tr><th scope="col" aria-label="Artwork" />{columns.map(column => <th key={column.key} scope="col" aria-sort={sort === column.key ? direction === 'asc' ? 'ascending' : 'descending' : 'none'}>
                 <button type="button" className="market-sort" aria-label={`Sort by ${column.label.toLowerCase()}`} onClick={() => sortBy(column.key)}>{column.label}{sort === column.key && <span aria-hidden="true"> {direction === 'asc' ? '↑' : '↓'}</span>}</button>
               </th>)}</tr></thead>
@@ -109,7 +109,7 @@ export function MarketView(props: MarketViewProps) {
         </div>
         {mode === 'inspect' ? <section className="market-card market-detail-card" aria-label="Listing details">
           {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={64} height={64} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
-            <dl className="market-facts"><div><dt>Listing</dt><dd>#{selected.id.toString()}</dd></div><div><dt>Token</dt><dd data-testid="token-id">#{selected.relicId.toString()}</dd></div><div><dt>Quantity</dt><dd>{selected.amount.toString()}</dd></div><div><dt>Total price</dt><dd data-testid="market-detail-price">{formatEther(selected.price)} AVAX</dd></div><div><dt>Seller</dt><dd title={selected.seller}>{isOwnListing(selected, props.address) ? 'You' : shortAddress(selected.seller)}</dd></div><div><dt>RelicNFT</dt><dd title={props.nft} data-testid="contract-addr">{shortAddress(props.nft)}</dd></div></dl>
+            <div className="market-facts-scroll" tabIndex={0} role="region" aria-label="Scrollable listing facts"><dl className="market-facts"><div><dt>Listing</dt><dd>#{selected.id.toString()}</dd></div><div><dt>Token</dt><dd data-testid="token-id">#{selected.relicId.toString()}</dd></div><div><dt>Quantity</dt><dd>{selected.amount.toString()}</dd></div><div><dt>Total price</dt><dd data-testid="market-detail-price">{formatEther(selected.price)} AVAX</dd></div><div><dt>Seller</dt><dd title={selected.seller}>{isOwnListing(selected, props.address) ? 'You' : shortAddress(selected.seller)}</dd></div><div><dt>RelicNFT</dt><dd title={props.nft} data-testid="contract-addr">{shortAddress(props.nft)}</dd></div></dl></div>
             {isOwnListing(selected, props.address) ? <button type="button" className="forge-btn" disabled={!!props.busy} onClick={() => props.onCancel(selected)}>Cancel</button> : <button type="button" className="forge-btn pixel-btn" disabled={!!props.busy} onClick={() => props.onBuy(selected)}>Buy</button>}
           </> : <EmptyState title="Inspect a Relic">Select a listing to see its on-chain details.</EmptyState>}
           <ContractLinks nft={props.nft} market={props.market} />
@@ -120,7 +120,7 @@ export function MarketView(props: MarketViewProps) {
           </div><p className="market-hint">{MARKET_TESTNET}. The total price covers all copies in the listing.</p><p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
         </section>}
         <section className="market-card market-your-listings" aria-labelledby="your-listings"><h3 id="your-listings">Your listings</h3>
-          {props.readFailed ? <p>Listings are unavailable until the chain read succeeds.</p> : mine.length ? <ul>{mine.map(row => <li key={row.id.toString()}><button type="button" className="market-select" onClick={() => { setFilter('all'); select(row); }}>{listingName(row)} · {formatEther(row.price)} AVAX</button></li>)}</ul> : <p data-testid="your-listings-empty">Nothing listed. Use Sell a Relic to create a listing.</p>}
+          {props.readFailed ? <p>Listings are unavailable until the chain read succeeds.</p> : props.loadingListings ? <p role="status">Loading your listings…</p> : mine.length ? <ul>{mine.map(row => <li key={row.id.toString()}><button type="button" className="market-select" onClick={() => { setFilter('all'); select(row); }}>{listingName(row)} · {formatEther(row.price)} AVAX</button></li>)}</ul> : <p data-testid="your-listings-empty">Nothing listed. Use Sell a Relic to create a listing.</p>}
         </section>
       </aside>
     </div>

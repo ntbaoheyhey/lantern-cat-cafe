@@ -7,7 +7,6 @@ import { LevelXpBar } from '../layout/hud/LevelXpBar';
 import { ProgressChip } from '../layout/hud/ProgressChip';
 import { PowerChip } from '../layout/hud/PowerChip';
 import { SyncStatus } from '../layout/hud/SyncStatus';
-import { formatAmount } from '../layout/loot/lootLines';
 import { WalletButton } from '../wallet/WalletButton';
 import '../layout/hud/hud.css';
 
@@ -54,22 +53,22 @@ export function Hud({
                 className="hud-chip hud-stack-item hud-gold"
                 data-testid="hud-gold"
                 role="listitem"
-                aria-label={`Fish ${formatAmount(state.currencies.fish)}`}
+                aria-label={`Fish ${state.currencies.fish.toLocaleString('en-US')}`}
               >
                 <PixelIcon name="fish" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Fish</span>
-                <span className="hud-chip-val num" aria-hidden="true">{formatAmount(state.currencies.fish)}</span>
+                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.fish.toLocaleString('en-US')}</span>
               </div>
 
               <div
                 className="hud-chip hud-stack-item hud-shards"
                 data-testid="hud-shards"
                 role="listitem"
-                aria-label={`Yarn ${formatAmount(state.currencies.yarn)}`}
+                aria-label={`Yarn ${state.currencies.yarn.toLocaleString('en-US')}`}
               >
                 <PixelIcon name="yarn" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Yarn</span>
-                <span className="hud-chip-val num" aria-hidden="true">{formatAmount(state.currencies.yarn)}</span>
+                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.yarn.toLocaleString('en-US')}</span>
               </div>
 
               <div

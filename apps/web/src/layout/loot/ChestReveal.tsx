@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { LootV2, MaterialStacks } from '../../api/GameApiV2';
 import { BackdropView } from '../../art/backdrops/BackdropView';
 import { backdropFor } from '../../art/backdrops';
@@ -6,6 +6,7 @@ import { V2PixelIcon, type V2IconName } from '../../art/v2Icons';
 import { usePrefersReducedMotion } from '../../motion/reducedMotion';
 import { LootSummary } from './LootSummary';
 import { lootLines } from './lootLines';
+import { Modal } from '../../ui';
 import './loot.css';
 
 export interface ChestRevealProps {
@@ -47,13 +48,8 @@ function getRevealedLoot(chest: LootV2, count: number): LootV2 {
 
 export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealProps) {
   const reduced = usePrefersReducedMotion();
-  const titleId = useId();
-  const dialogRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const priorFocused = useRef<HTMLElement | null>(
-    typeof document !== 'undefined' ? (document.activeElement as HTMLElement | null) : null,
-  );
 
   const allLines = lootLines(chest);
   const items = chest.items ?? [];
@@ -62,12 +58,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
 
   const [isOpen, setIsOpen] = useState(reduced);
   const [revealedCount, setRevealedCount] = useState(() => (reduced ? totalUnits : 0));
-
-  const restoreFocus = useCallback(() => {
-    if (priorFocused.current && document.contains(priorFocused.current)) {
-      priorFocused.current.focus();
-    }
-  }, []);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current !== null) {
@@ -78,9 +68,8 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
 
   const handleDone = useCallback(() => {
     clearTimer();
-    restoreFocus();
     onDone();
-  }, [clearTimer, onDone, restoreFocus]);
+  }, [clearTimer, onDone]);
 
   const isComplete = isOpen && revealedCount >= totalUnits;
 
@@ -122,44 +111,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
     return () => clearTimer();
   }, [clearTimer]);
 
-  // Focus the action button on mount & restore focus on unmount
-  useEffect(() => {
-    buttonRef.current?.focus();
-    return () => {
-      restoreFocus();
-    };
-  }, [restoreFocus]);
-
-  // Keyboard navigation: Escape to done, Tab trap
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        handleDone();
-        return;
-      }
-      if (e.key === 'Tab') {
-        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
-          'button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        );
-        if (!focusable || focusable.length === 0) return;
-        const first = focusable[0]!;
-        const last = focusable[focusable.length - 1]!;
-
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [handleDone]);
-
   const title = firstClear ? 'First clear chest!' : 'Boss chest';
 
   let chestIconName: V2IconName;
@@ -172,14 +123,9 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
   const revealedLoot = isOpen ? getRevealedLoot(chest, revealedCount) : null;
 
   return (
-    <div className="loot-backdrop">
-      <div
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={titleId}
-        className="loot-dialog chest-reveal-dialog"
-      >
+    <Modal open title={title} onClose={handleDone} initialFocusRef={buttonRef}
+      className="loot-dialog chest-reveal-dialog" backdropClassName="loot-backdrop"
+      closeOnBackdrop={false} showCloseButton={false}>
         {chapter !== undefined && (
           <div className="chest-reveal-backdrop-frame" aria-hidden="true">
             <BackdropView art={backdropFor(chapter)} className="chest-reveal-backdrop-art" />
@@ -187,9 +133,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
           </div>
         )}
         <div className="chest-reveal-header">
-          <h2 id={titleId} className="chest-reveal-title">
-            {title}
-          </h2>
           <div className="chest-reveal-icon-wrap">
             <V2PixelIcon name={chestIconName} size={4} title={title} />
           </div>
@@ -209,7 +152,6 @@ export function ChestReveal({ chest, firstClear, onDone, chapter }: ChestRevealP
             {isComplete ? 'Collect' : 'Skip'}
           </button>
         </div>
-      </div>
-    </div>
+    </Modal>
   );
 }

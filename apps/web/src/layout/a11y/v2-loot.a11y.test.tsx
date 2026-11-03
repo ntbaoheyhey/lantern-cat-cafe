@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import * as reducedMotionModule from '../../motion/reducedMotion';
 import { ChestReveal } from '../loot/ChestReveal';
@@ -111,8 +111,8 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
     });
 
     it('check 3: chest icon has role img and accessible label', () => {
-      const { container } = render(<ChestReveal {...chestRevealProps({ firstClear: false })} />);
-      const icon = container.querySelector('.chest-reveal-icon-wrap svg');
+      render(<ChestReveal {...chestRevealProps({ firstClear: false })} />);
+      const icon = screen.getByRole('dialog').querySelector('.chest-reveal-icon-wrap svg');
       expect(icon?.getAttribute('role')).toBe('img');
       expect(icon?.getAttribute('aria-label')).toBe('Boss chest');
     });
@@ -128,11 +128,11 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
 
     it('check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap', () => {
       const onDone = vi.fn();
-      const { container } = render(<ChestReveal {...chestRevealProps({ onDone })} />);
+      render(<ChestReveal {...chestRevealProps({ onDone })} />);
 
       const dialog = screen.getByRole('dialog');
       expect(dialog.getAttribute('aria-modal')).toBe('true');
-      const title = container.querySelector('.chest-reveal-title');
+      const title = within(dialog).getByRole('heading', { level: 2 });
       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
 
       const actionBtn = screen.getByRole('button', { name: 'Skip' });
@@ -187,18 +187,19 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
 
     it('check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap', () => {
       const onClose = vi.fn();
-      const { container } = render(<WelcomeBack {...welcomeBackProps({ onClose })} />);
+      render(<WelcomeBack {...welcomeBackProps({ onClose })} />);
 
       const dialog = screen.getByRole('dialog');
       expect(dialog.getAttribute('aria-modal')).toBe('true');
-      const title = container.querySelector('.welcome-back-title');
+      const title = within(dialog).getByRole('heading', { level: 2 });
       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
 
       const okBtn = screen.getByRole('button', { name: 'OK' });
       expect(document.activeElement).toBe(okBtn);
 
+      const scroll = screen.getByRole('region', { name: 'Scrollable offline loot' });
       fireEvent.keyDown(document, { key: 'Tab', shiftKey: false });
-      expect(document.activeElement).toBe(okBtn);
+      expect(document.activeElement).toBe(scroll);
       fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
       expect(document.activeElement).toBe(okBtn);
 

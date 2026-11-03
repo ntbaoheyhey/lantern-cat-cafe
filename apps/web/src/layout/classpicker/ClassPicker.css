@@ -526,6 +526,16 @@
   color: var(--picker-gold);
 }
 
+.class-picker__error {
+  flex: none;
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid var(--bad);
+  font: var(--fs-sm, .875rem)/1.5 var(--font-body);
+}
+
 /* First-run desktop composition; the seven-class change dialog keeps its compact layout. */
 @media (min-width: 1024px) {
   .screen-class .class-picker {

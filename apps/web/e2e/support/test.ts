@@ -22,7 +22,17 @@ export const test = base.extend<{ buildGuard: void }>({
       // Its project and origin are still checked above. Check the first normal page.
       const devParam = new URL(page.url()).searchParams.get('dev');
       if (!checked && devParam !== 'arena' && devParam !== 'art-pilot') {
-        await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+        // Shared portals hide the painted background from assistive technology.
+        // Keep the rendered-heading check; inaccessible background requires an active modal.
+        const heading = page.getByRole('heading', { level: 1, name: 'Taskbar Hero', includeHidden: true });
+        await expect(heading).toBeVisible();
+        if (await heading.evaluate(el => Boolean(el.closest('[inert], [aria-hidden="true"]')))) {
+          await expect(page.getByRole('dialog')).toBeVisible();
+          await expect(page.locator('#root')).toHaveAttribute('inert', '');
+          await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
+        } else {
+          await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+        }
         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
         checked = true;

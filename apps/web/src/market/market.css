@@ -49,6 +49,13 @@
 .market-status { flex:none; padding:var(--sp-2,8px); border:1px solid var(--border); background:var(--surface); }
 .market-gate .market-card { align-self:stretch; }
 .market-gate .ui-empty { flex:1; }
+.market-table { table-layout: fixed; }
+.market-table th, .market-table td { overflow-wrap: anywhere; }
+.market-detail-card { flex: 0 1 auto; min-height: 0; overflow: hidden; }
+.market-detail-hero, .market-detail-card > .forge-btn, .market-detail-card > .market-contract-links { flex-shrink: 0; }
+.market-detail-hero > div, .market-relics li, .market-relics li > span { min-width: 0; overflow-wrap: anywhere; }
+.market-relics li { max-width: 100%; box-sizing: border-box; }
+.market-facts-scroll { min-height: 0; overflow: auto; flex: 1 1 auto; }
 @media(max-width:900px) { .market { height:auto; } .market-cols { grid-template-columns:1fr; } .market-list-card { min-height:280px; } .market-your-listings { min-height:100px; } }
 @media(prefers-reduced-motion:reduce) { .market * { animation:none!important; transition:none!important; } }
 

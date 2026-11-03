@@ -15,7 +15,17 @@ async function expectNamedControls(page: Page): Promise<void> {
   const controls = page.locator('button, a[href], [role="button"], [role="link"]');
   expect(await controls.count()).toBeGreaterThan(0);
   for (const control of await controls.all()) {
-    if (await control.isVisible()) await expect(control).toHaveAccessibleName(/\S/);
+    if (await control.isVisible()) {
+      const isolation = await control.evaluate(element => ({
+        hidden: Boolean(element.closest('[inert], [aria-hidden="true"]')),
+        paired: Boolean(element.closest('[inert][aria-hidden="true"]')),
+      }));
+      if (isolation.hidden) {
+        // A painted modal background is intentionally absent from the accessibility tree.
+        await expect(page.getByRole('dialog')).toBeVisible();
+        expect(isolation.paired).toBe(true);
+      } else await expect(control).toHaveAccessibleName(/\S/);
+    }
   }
 }
 
