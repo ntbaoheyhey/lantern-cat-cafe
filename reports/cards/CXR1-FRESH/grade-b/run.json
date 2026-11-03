@@ -1,0 +1,75 @@
+{
+  "root": "/private/tmp/tbh-cxr1-fresh-b",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/grade-b",
+  "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "art-unit",
+      "python3 -B -m unittest discover -s tools/art -v"
+    ],
+    [
+      "art-catalog",
+      "python3 -B tools/art/catalog.py --check"
+    ],
+    [
+      "mutants",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/mutants.py /private/tmp/tbh-cxr1-fresh-b /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/mutants-b b 5030"
+    ],
+    [
+      "capture",
+      "SCREENSHOTS=1 SCREENSHOT_DIR=/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/grade-b/screenshots E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-1280x720",
+      "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/layout/stage-layout.spec.ts e2e/ui/u1-tokens.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/layout/stage-redraw.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxu5-map.spec.ts e2e/ui/cxc2-proof.spec.ts e2e/ui/original-preview.spec.ts --repeat-each=3 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-1600x900",
+      "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/layout/stage-layout.spec.ts e2e/ui/u1-tokens.spec.ts e2e/ui/u4-character-bag.spec.ts e2e/layout/resize.spec.ts e2e/layout/resize-burst.spec.ts e2e/layout/stage-redraw.spec.ts e2e/layout/character-bag.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxu5-map.spec.ts e2e/ui/cxc2-proof.spec.ts e2e/ui/original-preview.spec.ts --repeat-each=3 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "ui-audit-effects",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/ui-checks.mjs /private/tmp/tbh-cxr1-fresh-b /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/grade-b/ui 5120"
+    ],
+    [
+      "classic-project",
+      "E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

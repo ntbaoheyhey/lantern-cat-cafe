@@ -10,3 +10,6 @@ Builder3: running focused/browser plus strict guest and signed-local UI audits a
 
 
 Fresh A ed11f01 FAILED:2490core/build/8mutants/153repeat1280 pass; full1280 has314pass/9fail. Four phone16:9 failures are real from global Home padding. Two token tests lose the shared pixel-btn selector (initial quick triage incorrectly called these background goldens; corrected after reading full logs). Three u4 tests still require primary bulk equip. Final repair scopes gutters to desktop, restores shared base button + secondary modifier, changes only u4's exact requested secondary-color oracle, retaining4.5 contrast and all geometry/actions. No retry/skip; final-head gate required. CXR2 dirty migration draft is isolated in /private/tmp/tbh-cxr2-active and untested.
+
+
+Final fresh A187a1b5: self-graded94/100, all floors/zero auto-fails.2490core,323 browsers at each size,234 repeats each,10 mutants and all build/import/link/art/UI/effects checks pass. Eight exact-head desktop captures inspected. Bundle JS+CSS growth0.054%. Minor rail rounding/context-row/whole-pixel letterboxing disclosed and scored. Clean B tests-first pass begins next; no merge yet.

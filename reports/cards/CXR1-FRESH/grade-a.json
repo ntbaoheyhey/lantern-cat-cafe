@@ -1,0 +1,97 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A final repair",
+  "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+  "base": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+  "tree": "3d6eead4dc08bb3eb4c63ee8d51c714535d369d3",
+  "sourceRoot": "/private/tmp/tbh-cxr1-active",
+  "gradedAt": "2026-11-03T11:08:25.808787+07:00",
+  "status": "PASS",
+  "score": 94,
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 24,
+      "max": 25,
+      "reason": "Merged-screen coverage, contrast, truth corrections, integer-stage sizing, Bag actions/capacity and registry contracts pass; deduct1 for minor rail styling left to CXR2.",
+      "evidence": [
+        "grade-a-final/commands.json",
+        "grade-a-final/logs/unit.log",
+        "grade-a-final/logs/browser-1280x720.log"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head2490 core passes, inherited2 expected failures/11 skips unchanged;323 browsers per size including phone/classic;234 repeated cases per size; all builds/import/link/art/audit/effects checks green.",
+      "evidence": [
+        "grade-a-final/commands.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten mutants killed after green unit/browser controls: AA, metrics, false mint/contract claims, fluid grid, class layout, scene fill, phone gutter and body size.",
+      "evidence": [
+        "mutants-a-final/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 12,
+      "max": 15,
+      "reason": "Eight exact-head captures compared to the original reference. Deduct1 each for retained extra guidance row, rail rounded edges, and integer-scene letterboxing. Real art/data replaces placeholders by authorization.",
+      "evidence": [
+        "grade-a-final/screenshots",
+        "grade-a-final/ui/commands.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed presentation-only changes, unchanged callbacks/data and shared scene height; deduct2 for CSS override duplication. JS+CSS build growth0.054%.",
+      "evidence": [
+        "integrity-a.json",
+        "review-a-final-inventory.json"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "Phone geometry and token tests remain unchanged. False copy and primary bulk-color expectations have explicit old\u2192new reasons;4.5 contrast retained. Conditional shell skip removed, no retries/timeouts relaxed.",
+      "evidence": [
+        "integrity-a.json",
+        "grade-a-failed-ed11f01.json"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Earlier failures retained with corrected triage. Fixtures/local signed server distinguished from live and wallet proof. Old report/captures explicitly historical; no missing Forge/Market or backend success claimed.",
+      "evidence": [
+        "REPORT.md",
+        "grade-a-failed-ed11f01.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Only authorized frontend/tests/decision/evidence changes; no protected backend/workflow/settings/art modifications. All author subjects correct; repo private/STOP present.",
+      "evidence": [
+        "integrity-a.json"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "remainingConditions": [
+    "Clean fresh B>=92 on exacthead",
+    "Serial publication then actual-main/live checks"
+  ]
+}
