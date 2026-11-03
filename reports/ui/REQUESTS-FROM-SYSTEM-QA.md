@@ -29,3 +29,5 @@ Source observation (not a SYSTEM edit): StageLayout's landing action selects `cl
 Disposition: UI owns the fix. Unrelated main merges are held under the demo-path failure rule; the corrective UI change still requires its full gates and this reproducer passing before release, then live confirmation. SYSTEM will not edit UI files or branches.
 
 Separate SYSTEM harness finding: the old timed runner expects first-time class onboarding from a prepared save that already has a class. That assumption is invalid even after routing is fixed; SYSTEM will correct the script with explicit fresh-onboarding versus earned-save segments and will not claim an uninterrupted fresh-to-boss three-minute run.
+
+Second required viewport confirmed the same defect at1600x900,2026-11-03T09:42:19Z; [receipt](../cards/CXQ1-FRESH/returning-probe-1600/data/result.json). Both probes completed and no owned probe process remains. No UI source was edited.

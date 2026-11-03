@@ -3,7 +3,9 @@ import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { guestCheckpoint } from './guest-checkpoint.mjs';
-const [root, savePath, proofPath, out] = process.argv.slice(2);
+const [root, savePath, proofPath, out, size = '1280x720'] = process.argv.slice(2);
+assert.ok(['1280x720', '1600x900'].includes(size));
+const [width, height] = size.split('x').map(Number);
 const site = 'https://taskbarhero-eight.vercel.app';
 const proof = JSON.parse(await readFile(proofPath, 'utf8'));
 assert.equal(proof.status, 'ARTIFACT_MATCH');
@@ -11,9 +13,9 @@ const save = guestCheckpoint(JSON.parse(await readFile(savePath, 'utf8')), site)
 const { chromium } = createRequire(root + '/apps/web/package.json')('@playwright/test');
 await mkdir(out, { recursive: false });
 const browser = await chromium.launch({ headless: true });
-const result = { sourceHead: proof.expectedHead, scope: 'Returning guest route diagnostic using unmodified UI-earned storage', startedAt: new Date().toISOString(), writesAttempted: 0, phases: [] };
+const result = { sourceHead: proof.expectedHead, viewport: { width, height }, scope: 'Returning guest route diagnostic using unmodified UI-earned storage', startedAt: new Date().toISOString(), writesAttempted: 0, phases: [] };
 try {
-  const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, storageState: save, serviceWorkers: 'block' });
+  const context = await browser.newContext({ viewport: { width, height }, storageState: save, serviceWorkers: 'block' });
   await context.route('**/*', async route => {
     if (['GET', 'HEAD', 'OPTIONS'].includes(route.request().method())) return route.continue();
     result.writesAttempted++; await route.abort();

@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:40:50.832757+07:00. ACTIVE; SYS-UI-007 live returning-guest defect confirmed.
+Updated: 2026-11-03T16:47:11.967378+07:00. ACTIVE; SYS-UI-007 confirmed at BOTH desktop sizes.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
@@ -50,7 +50,9 @@ Before ANY main merge mkdir ~/.taskbar-hero-locks/merge.lock; wait2–3min up to
 Stale foreign lock only owner older90min AND PID dead; inside lock fetch/integrate/changed checks/type/lint/grades.
 Append atomic board milestone line; release only own lock. Unrelated main merges HELD for SYS-UI-007.
 UI corrective release needs reproducer/full gates, then live confirmation; no SYSTEM UI edit.
-Receipt-only helper wallet-receipts.mjs:37local controls PASS; no actual wallet receipt supplied.
+Receipt-only helper:37controls PASS; prepared-progress12+credential6=55total controls PASS; no funded proof.
+New timed-earned-demo.mjs separates fresh onboarding and unchanged earned save; syntax PASS, live run pending.
+Requires completed original preparation receipt/hash; preserves failure and cannot clear SYS-UI-007.
 Old timed harness incorrectly expects onboarding from classed save; correct with explicit two-segment disclosure.
 
 Safety: ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
@@ -59,4 +61,4 @@ No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME
 public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
 Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
-Next3: preserve natural earned progress; correct timed harness/await UI007 repair; finish receipt/regression evidence.
+Next3: finish prep14008; run corrected two-segment rehearsal from saved provenance; await UI007/funded prerequisites.

@@ -2,6 +2,8 @@
 
 These steps do not substitute for local implementation or verification.
 
+Current SYSTEM authority (3 November2026) prohibits backend deployments, live migrations and Vercel/VITE_GAME_V2 changes. Recovering the backup below does not itself authorize any such action; a later explicit instruction would be needed. Historical release wording below is conditional, not a ready-to-run instruction.
+
 1. Rotate any previously exposed database credential through Supabase project Settings → Database → Reset database password. Verify authorized integrations reconnect. Do not restore an exposed password; replace integrations with the newly rotated credential. No secret values are recorded here.
 2. Repo visibility and contest submission remain unchanged. A later submission pack will document optional publication/submission steps; neither action is authorized for execution by this mission.
 
@@ -64,3 +66,5 @@ The current official [faucet](https://build.avax.network/console/primary-network
 After the UI session records CXU3/CXC2 readiness, use two throwaway Fuji-only accounts in a wallet you control and obtain free test AVAX through a supported faucet/login flow. Keep seeds/private keys private; do not paste or commit them. A funded mint/list/buy run must record actual chain43113 receipt hashes for the specified NFT/Market contracts, and must never use mainnet or real funds. Until that run executes, wallet proof remains NOT VERIFIED. This owner prerequisite blocks neither security documentation nor the draft submission pack.
 
 [Current funding observation](cards/CXQ1-FRESH/FUNDING.md). No request is made to bypass login, CAPTCHA, the Supabase export guard or any production setting.
+
+The [prepared wallet run and public receipt checker](cards/CXQ1-FRESH/WALLET-RUN.md) now describe the exact mint/list/buy evidence. The checker uses only public Fuji reads and rejects historical receipts before the stated run start, mismatched contracts/accounts/payments, missing transfers and reorgs. Its local controls do not count as a funded run. Use only public addresses/hashes in its manifest; no key, seed, voucher or signature should be shared or stored.
