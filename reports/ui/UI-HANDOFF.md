@@ -1,21 +1,25 @@
 # UI session handoff — 2026-11-03
-- Current main: 6144d42; repository private; STOP preserved; no other worktrees modified.
-- CXU5 #249 merged 1b299c4; historical A94/B94; inherited HUD failures already fixed.
-- CXU4 #251 merged 2847e9a; historical A95/B95; Help/character tests present.
-- CXC2 #253 merged 39e74d8, subsequent range repair 666088c; verify latest live assets.
-- CXR1 #245 merged 6144d42; historical A94/B94; contrast repair already landed.
-- CXU3 active: ai/codex-ui-cxu3 in /Users/bao/taskbar-hero-ui; imported only owned files from 4da5104; old #252 remains untouched.
-- CXR2 old #257 partial; continue with owned files after CXU3.
-- U3: original economy 34 icons/5 frame aliases already merged as 2bc98cd; audit gaps next.
-- U4 pending; U5 gated on U1-U4; U6 screenshot/gallery pending.
-- Ledger: ai/codex-ui-ledger in /Users/bao/taskbar-hero-ui-ledger.
-- CXU3 A PID 57251, source 2e1f83b; ports 5310–5313. Audit PID 58643 completed on 5340. B clean detached worktree /private/tmp/taskbar-hero-ui-cxu3-b installed; not yet graded.
-- Original-content flag: CONFIG.features.originalEconomy (false); VITE_GAME_V2 unchanged.
-- Next 3: reproduce CXU3 blocker; finish A/B gate; merge under shared lock and verify main/live.
-- Historical scores above are inherited evidence, not fresh grades from this session.
-- CXU3 A core green: 1429 web tests, package/scripts tests, typecheck/lint/build; changed specs 57×2 pass (3 repeats each). Full 330×2 browser matrix running. Strict audit 18 screens, zero geometry/console findings.
-- SYSTEM requests read at /private/tmp/tbh-t001-ledger/reports/ui/REQUESTS-FROM-SYSTEM-QA.md; CXR2 onboarding copy/portal tests remain queued.
-- Field request posted for CXLU1 rune model; current contracts have no rune data. Placeholder/sample states remain allowed; no API edits planned.
-- CXU3 A94 PASS on 2e1f83b: 330/330 browser cases per size; 20/20 resize runs. Fresh B tests-first PID 64531 on 5320–5323; no merge yet.
-- CXU3 B94 PASS on 2e1f83b: fresh core, 114 repeats, 20/20 resize, 18 clear audit views; tests-first scope/AST/diff review complete. Next acquire merge lock, recheck current main, push once and open/merge UI PR.
-- CXU3 provisional A94/B94 withdrawn before push/merge: embedded Market data-URI art was removed by imported CSS. Original exact icon restored; new head must rerun gates. Attempt-1 evidence retained.
+- Scope: UI/layout/art only; no agents/schedulers/live writes; STOP preserved. Requested author and every commit [skip ci].
+- Main at start/current: 6144d42 (private repo). Do not alter primary checkout /Users/bao/taskbar-hero.
+- Active source: /Users/bao/taskbar-hero-ui, branch ai/codex-ui-cxu3, head 16f940f.
+- CXU5 #249 merged 1b299c4; historical A94/B94; current full matrix also passes.
+- CXU4 #251 merged 2847e9a; historical A95/B95; all Help/character tests present.
+- CXC2 #253/#254 merged 39e74d8/666088c; historical final A96/B96 and live acceptance adopted.
+- CXR1 #245 merged 6144d42; historical A94/B94; --bad now #ff9696; unchanged contrast passes.
+- CXU3: imported owned UI paths only from old partial #252/4da5104. That branch/PR remains untouched.
+- Attempt 1 head 2e1f83b: 2512 core passes; full330×2, changed57×2 per pass, resize20/20 per pass, audit18 views per pass all pass.
+- Attempt 1 provisional A94/B94 WITHDRAWN before push/merge: removed embedded Market CSS data-URI art found in final review. Evidence retained in reports/ui/cards/CXU3/attempt-1/ and logs/cxu3-{a,b}.
+- Repair 16f940f restores the exact original icon and asserts its computed CSS on both empty states. Scope checker now checks embedded CSS art too.
+- Fresh A2 detached PID70000, reports/ui/logs/cxu3-a2-driver.log; ports5310–5313; full matrix scheduled once on exact16f940f.
+- Fresh B2 prepared /private/tmp/taskbar-hero-ui-cxu3-b2 at16f940f; dependencies installing; will use5320–5323.
+- Prior B evidence worktree /private/tmp/taskbar-hero-ui-cxu3-b at2e1f83b retained; no listeners remain.
+- Merge lock released after cancelled attempt1 final checks. No UI feature push/PR/merge yet.
+- CXR2 next: old #257/c49421f has13 inherited failures (portal assertions, help-store fixture reset, boss-state timeout). Plan in cards/CXR2/PLAN.md.
+- CXR2 baseline script reports/ui/capture-dialog-baseline.mjs got landing/class/Help; Welcome capture fails on dev StrictMode/clock setup. Preserve logs cxr2-before*.log; use built preview for remaining before states.
+- U3: 34 original economy icons (12 stats/15 items/7 skills),5 frame aliases and all5 chapter backdrops already exist. Rune/pet/skill slot art and empty-state polish remain.
+- U4 motion pending. U5 conditional on U1–U4 merged/green. U6 final gallery pending.
+- Existing sole flag CONFIG.features.originalEconomy=false; never modify global/provider VITE_GAME_V2.
+- SYSTEM replies rune model unavailable and P2-gated. Keep clearly labelled unavailable/sample state; no invented ownership/equipped data. See REQUESTS-FOR-SYSTEM.md.
+- SYSTEM QA handoff: /private/tmp/tbh-t001-ledger/reports/ui/REQUESTS-FROM-SYSTEM-QA.md; read board last20 at each card.
+- Ledger: /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Helpers/run logs/screenshots stored here at milestones.
+- Next3: finish A2/B2 with art review; lock/recheck/push once/create/merge CXU3; fresh-main changed specs/build and GET-only live asset equivalence, then announce board readiness for SYSTEM CXQ1.
