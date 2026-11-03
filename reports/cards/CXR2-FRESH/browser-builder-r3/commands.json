@@ -1,0 +1,18 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "ed11f0133d5ae7ebc385a83d3dd846c203a3bc7f",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:58:53.997418+00:00",
+    "endedAt": "2026-11-03T03:59:04.745183+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "CXR2_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXR2-FRESH/browser-builder-r3/screenshots E2E_PORT_CLASSIC=5110 E2E_PORT_V2=5111 E2E_PORT_SERVER=5112 E2E_PORT_API=5113 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxr2-dialogs.spec.ts e2e/onboarding.spec.ts e2e/v2/t2-player-loop.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "ed11f0133d5ae7ebc385a83d3dd846c203a3bc7f",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:59:04.754143+00:00",
+    "endedAt": "2026-11-03T03:59:36.569090+00:00"
+  }
+]
