@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:30:40.229520+00:00",
+    "endedAt": "2026-11-03T03:30:48.198228+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/theme.contrast.test.ts src/layout/metrics.test.ts src/layout/home/Home.test.tsx src/layout/bag/BagPanel.test.tsx src/layout/bag/BagPanel.redesign.test.tsx src/shell/redesign-contract.test.tsx",
+    "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:30:48.206627+00:00",
+    "endedAt": "2026-11-03T03:30:50.555838+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "SCREENSHOTS=1 SCREENSHOT_DIR=/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r2/screenshots E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/ui/baseline-hud.spec.ts --workers=2 --retries=0 --reporter=line",
+    "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:30:50.565141+00:00",
+    "endedAt": "2026-11-03T03:31:15.481076+00:00"
+  }
+]
