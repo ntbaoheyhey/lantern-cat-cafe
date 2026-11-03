@@ -1,0 +1,497 @@
+diff --git a/apps/web/e2e/ui/u4-character-bag.spec.ts b/apps/web/e2e/ui/u4-character-bag.spec.ts
+index 2a0a1dc..76c75cc 100644
+--- a/apps/web/e2e/ui/u4-character-bag.spec.ts
++++ b/apps/web/e2e/ui/u4-character-bag.spec.ts
+@@ -127,15 +127,16 @@ for (const vp of CHECK_VIEWPORTS) {
+       }
+     }
+ 
+-    // (c) "Equip best" button background equals --accent and its text contrast >= 4.5
++    // (c) Desktop bulk equip is secondary; the detail Equip action is primary.
++    // Narrow styling is unchanged. Text contrast still requires AA.
+     const equipBestBtn = bag.getByRole('button', { name: 'Equip best', exact: true });
+     await expect(equipBestBtn).toBeVisible();
+-    const { bg, expectedAccent, contrast } = await equipBestBtn.evaluate((el) => {
++    const { bg, expectedBackground, contrast } = await equipBestBtn.evaluate((el, token) => {
+       const style = getComputedStyle(el);
+       const temp = document.createElement('div');
+-      temp.style.color = 'var(--accent)';
++      temp.style.color = `var(${token})`;
+       document.body.appendChild(temp);
+-      const expectedAccent = getComputedStyle(temp).color;
++      const expectedBackground = getComputedStyle(temp).color;
+       document.body.removeChild(temp);
+ 
+       function parseRgb(str: string): [number, number, number] {
+@@ -159,11 +160,11 @@ for (const vp of CHECK_VIEWPORTS) {
+ 
+       return {
+         bg: style.backgroundColor,
+-        expectedAccent,
++        expectedBackground,
+         contrast: contrastRatio,
+       };
+-    });
+-    expect(bg).toBe(expectedAccent);
++    }, vp.width >= 1024 ? '--surface-2' : '--accent');
++    expect(bg).toBe(expectedBackground);
+     expect(contrast).toBeGreaterThanOrEqual(4.5);
+ 
+     // (d) no element in the card or bag clips text (scrollWidth <= clientWidth + 1)
+diff --git a/apps/web/src/layout/LandingHero.tsx b/apps/web/src/layout/LandingHero.tsx
+index 8b2ddb2..d115480 100644
+--- a/apps/web/src/layout/LandingHero.tsx
++++ b/apps/web/src/layout/LandingHero.tsx
+@@ -73,7 +73,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+       {/* Proof strip pinned to bottom */}
+       <div className="landing__proof-strip" role="region" aria-label="Game guarantees and proof">
+         <div className="landing__proof-item">
+-          <span className="landing__proof-pill">ERC-721</span>
++          <span className="landing__proof-pill">ERC-1155</span>
+           <span>Relic NFT</span>
+         </div>
+ 
+@@ -106,7 +106,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
+             target="_blank"
+             rel="noreferrer"
+           >
+-            Open source ↗
++            Repository ↗
+           </a>
+         </div>
+ 
+diff --git a/apps/web/src/layout/bag/BagPanel.test.tsx b/apps/web/src/layout/bag/BagPanel.test.tsx
+index 37ccfbc..42451c3 100644
+--- a/apps/web/src/layout/bag/BagPanel.test.tsx
++++ b/apps/web/src/layout/bag/BagPanel.test.tsx
+@@ -379,7 +379,8 @@ describe('Mission AGR2-FIX: Empty slots and right detail hint', () => {
+ 
+     const detail = screen.getByRole('region', { name: 'Item detail' });
+     expect(within(detail).getAllByText('Moon Pearl Relic').length).toBeGreaterThan(0);
+-    expect(within(detail).getByText('#1042 · minted')).toBeTruthy();
++    expect(within(detail).getByText('Token details unavailable')).toBeTruthy();
++    expect(detail.textContent).not.toContain('#1042');
+   });
+ 
+   it('shows filter empty notice when a category has 0 items and keeps capacity slots', () => {
+diff --git a/apps/web/src/layout/bag/BagPanel.tsx b/apps/web/src/layout/bag/BagPanel.tsx
+index 27f6f07..0f144f9 100644
+--- a/apps/web/src/layout/bag/BagPanel.tsx
++++ b/apps/web/src/layout/bag/BagPanel.tsx
+@@ -392,7 +392,7 @@ function ItemDetail({
+           {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
+             <li className="detail-stat-row relic-stat">
+               <span className="stat-label">Relic</span>
+-              <span className="stat-value">#1042 · minted</span>
++              <span className="stat-value">Token details unavailable</span>
+             </li>
+           )}
+         </ul>
+diff --git a/apps/web/src/layout/bag/bag.css b/apps/web/src/layout/bag/bag.css
+index cd977ba..9e85deb 100644
+--- a/apps/web/src/layout/bag/bag.css
++++ b/apps/web/src/layout/bag/bag.css
+@@ -927,3 +927,57 @@
+     justify-content: center;
+   }
+ }
++
++@media (min-width: 1024px) {
++  .screen-bag > .v2-tabpanel > .v2-tabpanel-title {
++    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
++    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
++  }
++  .screen-bag .bag-layout { gap: var(--card-gap, 14px); padding: var(--sp-4, 16px); }
++  .screen-bag .bag-sidebar { flex: 0 0 340px; width: 340px; max-width: 340px; }
++  .screen-bag .bag-toolbar { flex-wrap: nowrap; gap: var(--sp-2, 8px); }
++  .screen-bag .bag-toolbar-stats { flex-direction: column; align-items: flex-start; gap: 0; }
++  .screen-bag .bag-toolbar-actions { flex-wrap: nowrap; flex-shrink: 0; }
++  .screen-bag .bag-filter-chip { border-radius: 0; padding: 0 8px; min-height: var(--tap, 44px); border: var(--pixel-border); }
++  .screen-bag .bag-filter-chip.active { background: var(--surface-3); color: var(--text); border-color: var(--accent); }
++  .screen-bag .bag-equip-best { min-width: 0; width: auto; color: var(--text); background: var(--surface-2); }
++  .screen-bag .bag-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); }
++  .screen-bag .bag-slot { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; }
++  .screen-bag .bag-card,
++  .screen-bag .bag-tile,
++  .screen-bag .empty-tile { width: 100%; height: 100%; min-width: 0; border-radius: 0; }
++  .screen-bag .bag-tile { background: var(--bg); }
++  .screen-bag .bag-detail:not(.is-empty) { padding: 0; border: 0; background: transparent; box-shadow: none; }
++  .screen-bag .detail-body { gap: 0; }
++  .screen-bag .detail-head {
++    padding: var(--sp-3, 12px); background: var(--surface);
++    border: 2px solid var(--border); border-bottom: 0;
++  }
++  .screen-bag .detail-section {
++    margin: 0; padding: 0 var(--sp-3, 12px) var(--sp-3, 12px);
++    background: var(--surface); border-inline: 2px solid var(--border);
++  }
++  .screen-bag .detail-actions {
++    order: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0;
++    padding: 0 var(--sp-3, 12px) var(--sp-3, 12px); background: var(--surface);
++    border: 2px solid var(--border); border-top: 0;
++  }
++  .screen-bag .detail-actions button {
++    min-width: 0; min-height: var(--tap, 44px); height: auto;
++    padding: 4px 6px; white-space: normal; line-height: 1.1;
++  }
++  .screen-bag .detail-actions .bag-btn-equip { grid-column: auto; }
++  .screen-bag .detail-body:has(.detail-note) .detail-actions { border-bottom: 0; }
++  .screen-bag .detail-note {
++    order: 2; margin: 0; padding: 0 var(--sp-3, 12px) var(--sp-3, 12px);
++    background: var(--surface); border: 2px solid var(--border); border-top: 0;
++  }
++  .screen-bag .compare {
++    order: 3; margin-top: var(--sp-4, 16px); padding: var(--sp-3, 12px);
++    border: 2px solid var(--border); background: var(--surface); box-shadow: var(--pixel-shadow);
++  }
++}
++@media (prefers-reduced-motion: reduce) {
++  .bag-card:hover .bag-tile,
++  .bag-card:active .bag-tile { transform: none; }
++}
+diff --git a/apps/web/src/layout/classpicker/ClassPicker.css b/apps/web/src/layout/classpicker/ClassPicker.css
+index 420c07c..9f7f2fd 100644
+--- a/apps/web/src/layout/classpicker/ClassPicker.css
++++ b/apps/web/src/layout/classpicker/ClassPicker.css
+@@ -525,3 +525,36 @@
+   text-transform: uppercase;
+   color: var(--picker-gold);
+ }
++
++/* Entry screen only: preserve the existing compact retraining/narrow layouts. */
++@media (min-width: 1024px) {
++  .screen-class .class-picker {
++    --picker-bg: var(--bg-2, #1a1220);
++    height: 100%; min-height: 0; max-width: none; margin: 0;
++    padding: 28px 40px; align-items: stretch; justify-content: flex-start; overflow: hidden;
++  }
++  .screen-class .class-picker__header { align-items: flex-start; text-align: left; }
++  .screen-class .class-picker__title { font-size: clamp(var(--fs-xl, 1.5rem), 3vw, 2.125rem); }
++  .screen-class .class-picker__cards { flex: 1; min-height: 0; align-items: stretch; }
++  .screen-class .class-card { min-height: 0; overflow-y: auto; padding: var(--sp-4, 16px); }
++  .screen-class .class-card__top { flex-direction: column; justify-content: flex-start; gap: var(--sp-3, 12px); }
++  .screen-class .class-card__identity { justify-content: center; text-align: center; }
++  .screen-class .class-card__swatch-wrapper { order: -1; width: 64px; height: 64px; }
++  .screen-class .class-card__swatch { transform: scale(2); }
++  .screen-class .class-card::after {
++    content: 'Select'; margin-top: auto; min-height: var(--tap, 44px); flex-shrink: 0;
++    display: grid; place-items: center; border: var(--pixel-border);
++    background: var(--surface-3); color: var(--text); font-family: var(--font-display);
++  }
++  .screen-class .class-card[aria-checked='true']::after {
++    content: 'Selected'; background: var(--accent); color: var(--on-accent);
++  }
++  .screen-class .class-picker__footer { max-width: none; align-self: stretch; justify-content: flex-end; }
++  .screen-class .class-picker__choose-btn { width: auto; min-width: 240px; }
++  .screen-class .class-picker__header,
++  .screen-class .class-picker__footer,
++  .screen-class .class-picker__confirm-box { flex-shrink: 0; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .class-card:hover:not(.class-card--disabled) { transform: none; }
++}
+diff --git a/apps/web/src/layout/home/Home.test.tsx b/apps/web/src/layout/home/Home.test.tsx
+index e9549df..5f6462d 100644
+--- a/apps/web/src/layout/home/Home.test.tsx
++++ b/apps/web/src/layout/home/Home.test.tsx
+@@ -122,11 +122,11 @@ describe('Home and Landing Components (AGR1)', () => {
+       expect(onStartGuest).toHaveBeenCalledTimes(1);
+ 
+       // Proof strip items
+-      expect(screen.getByText('ERC-721')).toBeTruthy();
++      expect(screen.getByText('ERC-1155')).toBeTruthy();
+       expect(screen.getByText('Relic NFT')).toBeTruthy();
+       expect(screen.getByText(/Verified on Routescan/i)).toBeTruthy();
+       expect(screen.getByText(/Server-checked fights/i)).toBeTruthy();
+-      expect(screen.getByText(/Open source/i)).toBeTruthy();
++      expect(screen.getByRole('link', { name: /Repository/i }).getAttribute('href')).toBe('https://github.com/ntbaoheyhey/taskbar-hero');
+ 
+       // Help link
+       const helpBtn = screen.getByTestId('landing-help-link');
+diff --git a/apps/web/src/layout/home/home.css b/apps/web/src/layout/home/home.css
+index 6a347e8..d0d5555 100644
+--- a/apps/web/src/layout/home/home.css
++++ b/apps/web/src/layout/home/home.css
+@@ -425,3 +425,37 @@
+     transition: none;
+   }
+ }
++
++/* Approved desktop composition: stage/log left, one context column right. */
++@media (min-width: 1024px) {
++  .screen-home .home-dashboard {
++    grid-template-columns: minmax(0, 1fr) 330px;
++    grid-template-rows: auto minmax(0, 1fr);
++    gap: var(--card-gap, 14px);
++    max-width: none;
++  }
++  .screen-home .home-col--center { grid-column: 1; grid-row: 1 / 3; gap: var(--card-gap, 14px); }
++  .screen-home .home-col--left { grid-column: 2; grid-row: 1; gap: var(--card-gap, 14px); }
++  .screen-home .home-col--right { grid-column: 2; grid-row: 2; }
++  .screen-home .home-card { border: 2px solid var(--border); border-radius: 0; }
++  .screen-home .home-col--center .home-stage-wrap {
++    min-width: 0; min-height: 0; height: auto; padding: 0;
++    box-sizing: border-box; border-radius: 0; background: var(--bg);
++  }
++  .screen-home .home-event-log {
++    flex-basis: 96px; height: 96px; border-radius: 0; background: var(--bg);
++  }
++  .screen-home .home-card--loot.v2-recent-loot { max-height: none; overflow: hidden; }
++  .screen-home .home-card--loot .home-card__body { overflow-y: auto; }
++  .screen-home .home-card--loot .loot-summary-heading { color: var(--text); }
++  .screen-home .home-card--loot .loot-line {
++    color: var(--text); background: var(--surface-2); border-color: var(--border); border-radius: 0;
++  }
++  .screen-home .home-card--loot .loot-line-badge { color: var(--text); }
++  .screen-home .home-loot-item,
++  .screen-home .home-loot-curr-pill { border-radius: 0; }
++  .screen-home .home-loot-item__rarity { color: var(--muted); }
++  .screen-home:has(.stage-moment.is-actionable) .home-goal-action-btn {
++    color: var(--text); background: var(--surface-2);
++  }
++}
+diff --git a/apps/web/src/layout/landing.css b/apps/web/src/layout/landing.css
+index 3530dc8..e08503d 100644
+--- a/apps/web/src/layout/landing.css
++++ b/apps/web/src/layout/landing.css
+@@ -330,3 +330,29 @@
+     box-shadow: none;
+   }
+ }
++
++@media (min-width: 1024px) {
++  .screen-landing .landing__hero {
++    max-width: none; grid-template-columns: 1fr 1fr;
++    padding: 40px 40px 80px;
++  }
++  /* Size the existing SVG by its intrinsic ratio, then crop in the scene wrapper.
++     No backdrop source or preserveAspectRatio implementation is changed. */
++  .screen-landing .landing__backdrop {
++    inset: 0 auto 0 50%; width: auto !important; min-width: 100%;
++    height: 100% !important; aspect-ratio: 640 / 96;
++    transform: translateX(-50%);
++  }
++  .screen-landing .landing__hero-right { align-items: center; }
++  .screen-landing .landing__cats-group { padding-bottom: 70px; }
++  .screen-landing .landing__network-pill {
++    color: var(--on-accent); background: var(--good);
++    border: var(--pixel-border); border-radius: 0; padding: 2px 8px;
++    font-family: var(--font-display);
++  }
++  .screen-landing .landing__network-dot { box-shadow: none; background: currentColor; }
++  .screen-landing .landing__proof-item { font-family: var(--font-body); }
++}
++@media (prefers-reduced-motion: reduce) {
++  .landing__guest-btn:active { transform: none; }
++}
+diff --git a/apps/web/src/layout/layout.css b/apps/web/src/layout/layout.css
+index 848fc0a..f62e574 100644
+--- a/apps/web/src/layout/layout.css
++++ b/apps/web/src/layout/layout.css
+@@ -1064,3 +1064,10 @@
+   justify-content: center;
+   overflow-y: auto;
+ }
++
++/* Desktop frame gutters: entry art is edge-to-edge; the dashboard has breathing room. */
++@media (min-width: 1024px) {
++  .shell-panel-view.screen-home { padding: var(--sp-4, 16px); }
++  .shell-panel-view.screen-landing,
++  .shell-panel-view.screen-class { padding: 0; }
++}
+diff --git a/apps/web/src/layout/metrics.ts b/apps/web/src/layout/metrics.ts
+index a99af7a..32e86d4 100644
+--- a/apps/web/src/layout/metrics.ts
++++ b/apps/web/src/layout/metrics.ts
+@@ -32,10 +32,12 @@ export function stageZoom(width: number, stageH: number): number {
+   return Math.max(MIN_ZOOM, Math.min(zoom, Math.floor(width / MIN_LOGICAL_WIDTH)));
+ }
+ 
+-/** Stage dimensions for the 3-column redesign desktop dashboard. */
++/** Integer scene sizing for the desktop stage + context sidebar; keep narrow sizing unchanged. */
+ export function desktopStageMetrics(width: number, height: number): { zoom: number; width: number; logicalWidth: number } {
+-  const centerColW = Math.max(320, width - 92 - 32 - 280 - 280 - 32);
+-  const centerAvailH = Math.max(280, height - 56 - 32 - 140 - 12);
++  const desktop = width >= DESKTOP_MIN;
++  // Rail, screen padding, sidebar, column gap, stage border. Log is 96px tall.
++  const centerColW = Math.max(320, desktop ? width - 92 - 32 - 330 - 14 - 4 : width - 92 - 32 - 280 - 280 - 32);
++  const centerAvailH = desktop ? Math.max(192, height - 56 - 32 - 96 - 14 - 4) : Math.max(280, height - 56 - 32 - 140 - 12);
+   const maxZoomW = Math.floor(centerColW / 160);
+   const maxZoomH = Math.floor(centerAvailH / 96);
+   const zoom = Math.max(2, Math.min(maxZoomW, maxZoomH));
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index ca6e236..0ea545d 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -362,3 +362,22 @@
+   opacity: 0.001 !important;
+   pointer-events: none !important;
+ }
++
++@media (min-width: 1024px) {
++  .shell-rail { background: var(--bg); }
++  .rail-item { border-radius: 0; }
++  .shell-hud.v2-topbar { height: 56px; min-height: 56px; max-height: 56px; flex-shrink: 0; }
++  .shell-hud .v2-title {
++    flex: 0 0 84px; width: 84px; font-size: var(--fs-sm, .875rem); line-height: 1.1;
++    white-space: normal;
++  }
++  .shell-hud .hud-progress-wrap { flex: 0 0 128px; width: 128px; min-width: 0; }
++  .shell-hud .hud-progress-chip { min-width: 0; white-space: normal; line-height: 1.2; }
++  .shell-hud .hud-progress-chip > span { white-space: normal; }
++  .shell-hud .hud-center { flex: 1 1 auto; }
++  .shell-hud .v2-hint { width: 100%; max-width: none; min-width: 0; border-radius: 0; }
++  .shell-hud .v2-hint-btn {
++    min-width: 0; white-space: normal; overflow: visible; text-overflow: clip;
++    font-size: var(--fs-xs, .75rem); line-height: 1.15;
++  }
++}
+diff --git a/apps/web/src/theme.css b/apps/web/src/theme.css
+index 79d76c4..a50fae1 100644
+--- a/apps/web/src/theme.css
++++ b/apps/web/src/theme.css
+@@ -1,7 +1,7 @@
+ /* Cat Café Quest theme tokens. Loaded last so it re-skins the older component CSS.
+    New UI should use these tokens and the shared classes below. */
+ :root {
+-  --bg: #1a1220;
++  --bg: #120b19;
+   --surface: #2a1f36;
+   --surface-2: #3a2c4a;
+   --border: #72578d;
+@@ -13,7 +13,7 @@
+   --shard: #8fd8ff;
+   --key: #ff8fb1;
+   --good: #6be08a;
+-  --bad: #ff6b6b;
++  --bad: #ff8f8f;
+   --focus: #ffd75e;
+   --rarity-common: #b9b6c9;
+   --rarity-rare: #4aa8ff;
+@@ -45,7 +45,7 @@
+ }
+ body {
+   font-family: var(--font-body);
+-  font-size: var(--fs-md, 1rem);
++  font-size: var(--fs-sm, .875rem);
+   line-height: 1.5;
+ }
+ h1, h2, h3, .tab, .toggle { font-family: var(--font-display); }
+diff --git a/apps/web/tools/effects-test.mjs b/apps/web/tools/effects-test.mjs
+index 8561fd6..e20c8cb 100644
+--- a/apps/web/tools/effects-test.mjs
++++ b/apps/web/tools/effects-test.mjs
+@@ -1,7 +1,7 @@
+ // Wallet-free EFFECTS test: records video, grabs timed frame sequences, asserts animation behaviour.
+ // Screenshots cannot show motion, so this samples the running app over time. Demo mode on the Vite DEV
+ // server only (dev builds expose canvas data-stage-release/impact); nothing touches live services.
+-// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames]
++// Usage: SCREENSHOTS=1 node tools/effects-test.mjs [outDir] [--frames] [--viewport=1600x900]
+ // One summary PNG by default; --frames opts into extra PNG sequences. Exit 1 on hard failures.
+ import { createServer } from 'vite';
+ import { createHash } from 'node:crypto';
+@@ -13,6 +13,11 @@ const { chromium } = createRequire(import.meta.url)('@playwright/test');
+ const out = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? '../../reports/effects');
+ const writeScreenshots = process.env.SCREENSHOTS === '1';
+ const writeFrames = writeScreenshots && process.argv.includes('--frames');
++const viewportArg = process.argv.find(arg => arg.startsWith('--viewport='))?.slice('--viewport='.length) ?? '1280x720';
++if (!['1280x720', '1600x900'].includes(viewportArg)) throw new Error('--viewport must be 1280x720 or 1600x900');
++const [viewportWidth, viewportHeight] = viewportArg.split('x').map(Number);
++const viewport = { width: viewportWidth, height: viewportHeight };
++const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
+ const port = 5198, base = `http://localhost:${port}`;
+ const key = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
+ mkdirSync(out, { recursive: true });
+@@ -33,7 +38,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
+ const executablePath = process.env.CHROMIUM_PATH || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+ browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
+ 
+-async function open(name, { fixture, reduced = false, size = { width: 1280, height: 720 } }) {
++async function open(name, { fixture, reduced = false, size = viewport }) {
+   const opts = { viewport: size, reducedMotion: reduced ? 'reduce' : 'no-preference' };
+   let ctx = await browser.newContext({ ...opts, recordVideo: { dir: `${out}/video-${name}`, size } });
+   let page;
+@@ -111,13 +116,9 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+   const normal = await open('motion-normal', { fixture: 'fresh' });
+   const walk = async page => {
+     const names = new Set(); let transformAnims = 0;
+-    for (const tab of ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help']) {
+-      let el = page.getByRole('tab', { name: tab, exact: true }).first();
+-      if (!(await el.count())) {
+-        const alias = tab === 'Hero' ? 'Character' : tab === 'Map' ? 'Boss' : tab;
+-        el = page.getByRole('tab', { name: alias, exact: true }).first();
+-      }
+-      if (await el.count()) await el.click();
++    for (const screen of manifest.screens) {
++      await page.getByTestId(screen.navTestId).click();
++      if (screen.subnavTestId) await page.getByTestId(screen.subnavTestId).click();
+       for (let i = 0; i < 6; i++) {
+         await sleep(80);
+         const found = await page.evaluate(() => document.getAnimations().map(a => ({
+@@ -125,7 +126,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+         for (const f of found) { names.add(f.name); if (f.props.some(p => /transform|translate|scale|rotate/.test(p))) transformAnims++; }
+       }
+     }
+-    return { names: [...names], transformAnims };
++    return { screens: manifest.screens.map(screen => screen.id), names: [...names], transformAnims };
+   };
+   const n = await walk(normal.page); await normal.ctx.close();
+   const red = await open('motion-reduced', { fixture: 'fresh', reduced: true });
+@@ -145,7 +146,7 @@ const changes = frames => frames.slice(1).filter((f, i) => f.hash !== frames[i].
+ await browser.close();
+ writeFileSync(`${out}/summary.json`, JSON.stringify(results, null, 2));
+ const fail = results.filter(r => r.status === 'FAIL').length;
+-console.log(`\n${results.length} checks, ${fail} FAIL. Videos + frames in ${out}`);
++console.log(`\n${results.length} checks, ${fail} FAIL at ${viewportArg}. Videos + frames in ${out}`);
+ process.exitCode = fail ? 1 : 0;
+ } finally {
+   await browser?.close();
+diff --git a/apps/web/tools/ui-audit.mjs b/apps/web/tools/ui-audit.mjs
+index a5ef546..a5362c4 100644
+--- a/apps/web/tools/ui-audit.mjs
++++ b/apps/web/tools/ui-audit.mjs
+@@ -1,5 +1,6 @@
+ // Wallet-free audit. Run from apps/web (paths also work from other directories).
+-// Usage: SCREENSHOTS=1 node tools/ui-audit.mjs [outDir] [fixture] [--signed-in] [--mobile] [--strict]
++// Usage: SCREENSHOTS=1 node tools/ui-audit.mjs [outDir] [fixture] [--signed-in] [--mobile] [--strict] [--capture=id,id]
++// --capture selects PNGs only; every manifest state is still measured.
+ // Desktop: 1280x720 + 1600x900. --mobile adds 390x844 measurements only.
+ // Demo fixtures: fresh|bossReadyStrong|bossReadyWeak|forgeRich|bagNearFull|midGame.
+ // --signed-in uses loopback-only PGlite, never a live account. Fixtures: fresh|stocked|strong|weak|equip.
+@@ -14,12 +15,17 @@ import { layoutFindings } from './layout-findings.mjs';
+ const webRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+ const args = process.argv.slice(2);
+ const flags = new Set(['--signed-in', '--mobile', '--strict']);
+-for (const arg of args) if (arg.startsWith('--') && !flags.has(arg)) throw new Error(`Unknown option: ${arg}`);
++for (const arg of args) if (arg.startsWith('--') && !flags.has(arg) && !arg.startsWith('--capture=')) throw new Error(`Unknown option: ${arg}`);
+ const positional = args.filter(arg => !arg.startsWith('--'));
+ const out = resolve(positional[0] ?? resolve(webRoot, '../../reports/ui-audit'));
+ const signedIn = args.includes('--signed-in');
+ const kind = positional[1] ?? (signedIn ? 'stocked' : 'bossReadyStrong');
+ const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
++const captureArg = args.find(arg => arg.startsWith('--capture='));
++const captureIds = captureArg ? new Set(captureArg.slice('--capture='.length).split(',')) : null;
++if (captureIds && [...captureIds].some(id => !manifest.screens.some(screen => screen.id === id))) {
++  throw new Error('--capture must name existing manifest screen ids');
++}
+ const sizes = [...manifest.viewports, ...(args.includes('--mobile') ? [{ width: 390, height: 844 }] : [])];
+ const port = signedIn ? 4175 : 5199, apiPort = 4176;
+ const base = `http://localhost:${port}`;
+@@ -33,7 +39,7 @@ async function requireFreePort(port) {
+   await new Promise(ok => socket.close(ok));
+ }
+ let server, local, browser;
+-const report = { fixture: kind, signedIn, viewports: sizes, screens: [] };
++const report = { fixture: kind, signedIn, viewports: sizes, capture: captureIds ? [...captureIds] : 'manifest defaults', screens: [] };
+ let closing;
+ const close = () => closing ??= (async () => {
+   await browser?.close();
+@@ -110,7 +116,7 @@ try {
+         for (const selector of screen.required) if (!await root.locator(selector).filter({ visible: true }).first().isVisible()) missing.push(selector);
+         const findings = await page.evaluate(layoutFindings);
+         const item = { viewport: `${size.width}x${size.height}`, screen: screen.id, navigation: contract ? 'rail' : 'legacy baseline', ...findings, missingRequired: missing, consoleErrors: [...new Set(errors.splice(0))] };
+-        if (process.env.SCREENSHOTS === '1' && screen.screenshot && size.width >= 1280) {
++        if (process.env.SCREENSHOTS === '1' && (captureIds ? captureIds.has(screen.id) : screen.screenshot) && size.width >= 1280) {
+           item.screenshot = `${screen.id}-${size.width}x${size.height}.png`;
+           await page.screenshot({ path: resolve(out, item.screenshot) });
+         }
