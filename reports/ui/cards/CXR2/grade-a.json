@@ -1,0 +1,65 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader A",
+  "head": "6ef93c0b6959aa470665613616781211225d15bd",
+  "status": "PASS",
+  "score": 96,
+  "autoFails": [],
+  "gradedAt": "2026-11-03T12:15:41.645029+00:00",
+  "criteria": [
+    {
+      "criterion": "Desktop design/state fidelity",
+      "score": 23,
+      "max": 25,
+      "reason": "All main screens at both sizes cover normal,empty,offline,full/long and loading/recovery states; shared dialogs remain bounded. Extreme numeric strings still need multiple lines, a disclosed minor visual tradeoff."
+    },
+    {
+      "criterion": "Behavior and data truth",
+      "score": 25,
+      "max": 25,
+      "reason": "Returning guests retain progress; class-save failure retains a retryable choice; Bag occupancy follows existing all-owned capacity. No rules/API/wallet logic edited."
+    },
+    {
+      "criterion": "Accessibility/contrast",
+      "score": 20,
+      "max": 20,
+      "reason": "Unchanged contrast thresholds, named controls, shared focus isolation, keyboard scroll and post-reveal focus checks pass in both motion modes."
+    },
+    {
+      "criterion": "Scope/preservation",
+      "score": 20,
+      "max": 20,
+      "reason": "Only allowed UI/report/screenshot paths; original asset files and embedded images preserved; requested author and skip-ci suffix checked."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "2531 core cases including1448 web cases; full368 per desktop size;219 repeated changed cases per size;20/20 resize cases;18 clear strict-audit views. Chain/wallet error states are labelled local fixtures; release verification follows merge."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "inheritedUnitStatuses": {
+    "expectedFail": 2,
+    "skipped": 11,
+    "changed": false
+  },
+  "pauseHistory": "The user interrupted full1600 after full1280 completed. Original partial log retained; only interrupted1600 was restarted on unchanged6ef93c0.",
+  "visualReview": [
+    "class-save-error-1600",
+    "home-maximum-long-1280",
+    "market-fixture-maximum-long-1280",
+    "welcome-1280-reduce",
+    "166 before/after review captures"
+  ],
+  "evidence": [
+    "reports/ui/logs/cxr2-a2/receipt.json",
+    "reports/ui/logs/cxr2-a2/scope.json",
+    "screenshots/ui-2026-11-03/cxr2-a2-audit/findings.json"
+  ],
+  "limitations": "No live wallet transaction or SYSTEM live demo performed."
+}

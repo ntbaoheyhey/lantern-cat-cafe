@@ -166,6 +166,61 @@
       "started": "2026-11-03T10:11:50.973665+00:00",
       "exit": 0,
       "log": "reports/ui/logs/cxr2-a2/full-1280x720.log"
+    },
+    {
+      "label": "full-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a2/full-1600x900.log",
+      "resumedAt": "2026-11-03T12:08:38.663039+00:00"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a2/resize-five-1280x720.log",
+      "resumedAt": "2026-11-03T12:08:56.614120+00:00"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a2/resize-five-1600x900.log",
+      "resumedAt": "2026-11-03T12:09:12.546747+00:00"
     }
   ]
 }
