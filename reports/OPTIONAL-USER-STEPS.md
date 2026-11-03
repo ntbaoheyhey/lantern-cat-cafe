@@ -53,3 +53,12 @@ ready to execute while these prerequisites are unresolved.
 The current handoff is saved in `reports/MEGA-CURRENT-HANDOFF.md`. The context-compact skill at `/Users/bao/.codex/skills/context-compact/SKILL.md` says: “If no such tool is exposed, ask the user to enter `/compact` in the current Codex composer.” No native compaction action is exposed in this tool session. If desired, enter `/compact` in this same chat; do not create a helper chat or use another writer. Per the user instruction, this owner step is optional and blocks no ongoing work.
 
 The configured threshold was observed as180880 tokens with scope `total`; it was preserved. Runtime application and an actual new compaction event were NOT VERIFIED. Saving this handoff or reading that setting is not a claim that compaction occurred.
+
+
+## CXQ1 — funded throwaway Fuji wallet prerequisite
+
+The current official [faucet](https://build.avax.network/console/primary-network/faucet) requires a connected wallet and a Builder Hub login. The Core faucet URL redirected there during this run. The connected in-app browser has neither; Chrome is not enabled in this session's browser tooling. The offered Console wallet would store a key in the browser and was not created. No wallet/key, signature, funding request or transaction has been created by SYSTEM.
+
+After the UI session records CXU3/CXC2 readiness, use two throwaway Fuji-only accounts in a wallet you control and obtain free test AVAX through a supported faucet/login flow. Keep seeds/private keys private; do not paste or commit them. A funded mint/list/buy run must record actual chain43113 receipt hashes for the specified NFT/Market contracts, and must never use mainnet or real funds. Until that run executes, wallet proof remains NOT VERIFIED. This owner prerequisite blocks neither security documentation nor the draft submission pack.
+
+[Current funding observation](cards/CXQ1-FRESH/FUNDING.md). No request is made to bypass login, CAPTCHA, the Supabase export guard or any production setting.

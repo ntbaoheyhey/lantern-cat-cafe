@@ -1,75 +1,63 @@
-# Taskbar Hero — current handoff
-Updated: 2026-11-03T11:27:47.930132+07:00. ACTIVE; CXR1 main/live accepted; CXQ1 next.
-Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
-Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
-No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
-STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orchestrator.py/remove STOP.
+# Taskbar Hero — SYSTEM current handoff
+Updated: 2026-11-03T11:49:00.097315+07:00. ACTIVE SYSTEM scope under 3Nov addendum; UI work delegated by USER.
+Read FIRST after compaction; reconcile board/Git/owned PIDs before action; no duplicate tests.
+Repo private; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
+No subagents/helper chats/orchestrator/new schedulers; user-started UI session is separate. Preserve STOP.
 
-| Item | PR/head | State |
-|---|---|---|
-| CXU5 | #249/main1b299c4 | DONE fresh A94/B94; main/live accepted |
-| CXU4 | #251/main2847e9a | DONE A95/B95; main/live accepted |
-| CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout; no B; do not merge/retry fourth |
-| CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
-| T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
-| ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
-| CXR1 | #245/remotee99e497,local187a1b5 | DONE A94/B94; main6144d42; main/live accepted |
-| CXR2 | #257/c49421f draft | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
-| CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
-| CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
-| CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
-| P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
+SCOPE: SYSTEM owns ledger/244 prerequisite,T011/T012 original data/packages/nonvisual wiring,CXQ1,CXS1/CXS2,
+CXN4/CXN5 default-OFF, regression. UI owns all layout/screens/art incl249/251/245/CXR2/CXU3/CXC2.
+Do not touch249,251,245 or ai/codex-ui-* branches. No UI/layout/art edits.
+May edit apps/web/src only api/,wallet/,v2text/; e2e only own-script specs; no public/,tools/art/,ui-redesign/.
+Only explicit reports/ui exceptions: read/reply REQUESTS-FOR-SYSTEM.md; write REQUESTS-FROM-SYSTEM-QA.md.
+Own new branches ai/codex-sys-*; own ports5173–5299 only. UI5300–5399. Never edit UI worktrees.
+Never combine package.json/pnpm-lock edits with UI-owned files. Neither is changed by current system work.
 
-Last merged/origin+local main:6144d42ce12d9c61dc4f863733356de99f605eb9 (#245), exact approved tree.
-ORIG2-ART-FRESH/acceptance.json:35/35 asset hashes before+after;22health;16live stages each size;
-zero unexpected errors/transactions; Actions0. PID19884 finished,4980–4983 free. No funded demo claim.
-ORIG2 source /private/tmp/tbh-original-preview and clean B retained at792b475. Normal merge preserved art history.
-34 original coordinate-drawn32px icons, palette/snap/binary alpha/padding; existing artwork unchanged.
-Catalog local opt-in resets on Help-tab/reload, no config/storage/network/gameplay/backend mutations.
+MERGES: before ANY merge-to-main acquire ~/.taskbar-hero-locks/merge.lock via mkdir.
+If held, wait/check every2–3min up to60min; stale ONLY owner older90min AND PID dead; no blind removal.
+Inside lock fetch,merge latest origin/main into own branch,rerun changed specs+typecheck+lint,merge,release rmdir.
+Keep exact-head fresh A/B gate; if integration changes reviewed head, reverify rather than use stale evidence.
+Append one atomic line per milestone to ~/.taskbar-hero-locks/board.log. No cross-session messages needed.
+Board now has SYSTEM scope adoption + UI starting CXU3; NO required CXU3/CXC2 merge readiness entries yet.
 
-CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, source187a1b5.
-Fresh A PID27776 FINISHED FAIL oned11f01;2490core/build/8mutants/capture/153repeat1280 PASS.
-A full1280:314PASS/9FAIL;4phone-stage padding regressions +2missing shared-button selectors +3bulk-action golden assertions.
-Final repair29browser/type PASS. Frozen187a1b5 A33210 FINISHED PASS94; last repair;5020–5023 free.
-A2490core/323matrix×2/234repeats×2/10mutants/UI36/effects20 PASS; all exacthead.
-Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
-Clean B /private/tmp/tbh-cxr1-fresh-b exact187a1b5;42260 FINISHED PASS94; all ports free.
-B tests then full diff/8capture review complete; shares A fullmatrix;2490core/234×2/10mutants/38classic/UI/effects PASS.
-Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
-Builder1 exposed historical assertions requiring false landing claims; documented old→new, retained failure.
-Builder2 PASS87focused/24browser; visual found omitted context-row height/fixed empty tiles/bulk100% width.
-Builder3 corrected all;87focused/24browser+strict guest/local-signed audits+effects both sizes PASS.
-Eight reference/app pairs inspected; captures in builder-r3; two historical HUD images restored after copies.
-Latest source cleanup uses shared SCENE_HEIGHT; exact-head full gate in A re-verifies everything.
-Changes: bad token#ff9696 with4.5 threshold unchanged; bg#120b19/body14; truthfulERC1155/public links/local guest;
-full-bleed integer-scale existing scene; tall first-run class cards; stage/log left+one320px sidebar;
-fluid8-col Bag/200capacity, secondary bulk equip, actions above separate compare, unavailable mint proof.
-All existing actions/data/art preserved. docs/decisions/cxr1-truth-and-layout.md explains changed false tests.
-Original CXR1 report and screenshots explicitly historical. No new PR push/merge yet.
-CXR1-FRESH/resume-state.json/md records verified Git/PR/ports; review-a-inventory.json hashes all diff files.
+| Item | Verified state |
+|---|---|
+| T011/T012 | DONE #255/maina903fb6, A96/B96; shared original economy OFF, data publication accepted |
+|244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
+|CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
+|CXS1 | own ai/codex-sys-cxs1-security-overview fbcec3b atop6144d42;691-word docs+6 companions |
+|CXS2 | pending DRAFT pack; no contest submission |
+|CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
+|regression | after UI/system integration; latest pre-addendum6144d42 accepted |
+|UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
+|CXU3/CXR2 | drafts252/257 were PARTIAL under SYSTEM; UI now owns continuation/disposition |
 
-CXU3 /private/tmp/tbh-cxu3-active4da5104: third A unchanged5000ms StageLayout boss-state test timeout.
-1374 other web cases pass; no final-head full matrix/B. Preserve dirty /Users/bao/taskbar-hero/.worktrees/agr3.
-CXN3 complete deployed-source+dependencies/import maps and tested restore unavailable; CLI UnsafeFunctionDownloadPathError.
-Partial export is not backup. Exact owner step T007 in OPTIONAL-USER-STEPS.md; no live --v2 check.
-No secrets, destructive liveDB writes, migrations/edge deploys, Vercel/VITE_GAME_V2 changes,
-real funds/mainnet, repo publicity, contest submission,.github changes,Actions,direct-main pushes.
-No broad pkill; inspect cwd before killing owned PIDs; PID reuse observed. Leave unrelated18457/OS listeners.
-Never Chromium5060/5061. Safe4980 main/5020 A/5030 B/5100 UI (each+0..3); verify listeners first.
-Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger draft241; stage selected files, preserve historical dirty evidence.
-After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/push ledger. No completion claim.
-Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
-Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
-CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
-CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: c49421f published draft257; unmerged.
-CXR2 browser1:1PASS/10FAIL due portal-inert query assumptions; documented strict guard/query adaptation.
-CXR2 browser2:7PASS/4FAIL; fixture lacked visit marker/30s tick; corrected locally, no product change.
-CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 initial Help using current rules.
-Builder-final40798 PASS44units/11browser; added missing new v2 unit +rail polish/keyboard loot-region.
-CXR2 builder44763 FINISHED FAIL:13web failures/1402PASS (1boss-timeout,3portal queries,9undismissed Help).
-No final-head browser/fullgrade/live. No fourth repair; preserve c49421f and partial.json;5110–5113 free.
-CXS1 /private/tmp/tbh-cxs1-active codex/cxs1-security-overview fbcec3b atop6144d42;7docs committed.
-CXS1 setup53124 finished; install/links PASS; full gate pending.
-Overview691words, linked sources/quoted cases checked; includes244 backup gap and supersedes old Deno/budget claims.
-Main49427 FINISHED PASS; /private/tmp/tbh-main-after-cxr1;2490core/323×2/35assets×2/22health/16live×2.
-Next3: CXQ1 live earned-progress demo; complete CXS1 docs gate; CXS2 draft pack.
+Last verified origin/local main6144d42ce12d9c61dc4f863733356de99f605eb9 (245 merged BEFORE addendum).
+CXR1 acceptance: A94/B94,2490core/323browser×2/40art/35assets before+after/22health/16live×2,Actions0.
+No funded wallet or full timed demo claim. All prior verification PIDs finished; old test ports must not be reused.
+
+Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, fbcec3b clean.
+Seven docs committed; install/links PASS (86md/912links), quoted source cases checked; full gate pending.
+No active test PID. Planned new SYSTEM ports5200–5203 A,5220–5223 B,5240–5243 main; all checked free.
+Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
+Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.
+
+CXQ1 old process55396/Node55399 and children interrupted after checking lineage+cwb; all exited.
+Cwd /private/tmp/tbh-main-after-cxr1; no timed demo had started, no wallet/funds/transactions/network writes.
+Evidence: CXQ1-FRESH/natural-run/scope-interruption.json;6real30s preparation ticks retained.
+Do NOT restart until UI board records CXU3/CXC2 readiness. Future run must use own script worktree/new ports.
+Script CXQ1-FRESH/earned-live-demo.mjs uses real wall-clock/UI-earned guest state, clones earned save only in memory.
+Official faucet redirects to Builder Hub and requires wallet+login. Console key storage was not used.
+Funded wallet owner prerequisite in OPTIONAL-USER-STEPS; no key/seed should be supplied in chat.
+
+UI worktrees observed READ-ONLY: /Users/bao/taskbar-hero-ui and /Users/bao/taskbar-hero-ui-ledger.
+REQUESTS-FOR-SYSTEM in UI ledger says no missing fields yet. Recheck at milestones; ship or decline each actual request.
+Handoff findings at this ledger reports/ui/REQUESTS-FROM-SYSTEM-QA.md; board points UI to that absolute path.
+257/c49421f source /private/tmp/tbh-cxr2-active and252/4da5104 source /private/tmp/tbh-cxu3-active untouched now.
+Old separate CXR2 dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero preserved; do not edit it.
+
+Safety: no secrets, destructive liveDB writes, migrations/edge deploys,Vercel/VITE_GAME_V2 changes,
+real funds/mainnet,repo publicity,contest submission,.github changes,Actions,direct main pushes.
+244 CLI failed UnsafeFunctionDownloadPathError; partial files are NOT backup; exact owner recovery step remains.
+No broad pkill; kill only owned PIDs after cwd check; PID reuse observed. Leave unrelated18457/OS listeners.
+Fresh self-grades>=92 both, C1>=23,C2=20,C6=5,C7>=8,each>=60%,zeroauto-fails; no weakened tests/retries.
+Next3: CXS1 exact-head docs/core/mutation gate; CXS2 draft preparation; recheck UI requests/board before CXQ1.

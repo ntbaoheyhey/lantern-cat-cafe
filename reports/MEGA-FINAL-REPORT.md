@@ -1,5 +1,9 @@
 # Active session report — 2026-11-03T11:38:09.299013+07:00
 
+SYSTEM scope addendum adopted 2026-11-03T11:49:00.097315+07:00. UI/layout/art ownership has transferred to the user-started UI session; historical UI results below are handoff evidence only. SYSTEM will not edit those files/branches/PRs. All future system branches use ai/codex-sys-*, ports5173–5299 and the shared merge lock/board protocol.
+
+CXQ1 real-play preparation was interrupted before the timed demo because the required UI CXU3/CXC2 board readiness entries do not yet exist. Owned process lineage/cwd were checked; all exited. No wallet, secrets, funding or transactions were created. CXS1/CXS2 continue independently. [UI handoff](ui/REQUESTS-FROM-SYSTEM-QA.md).
+
 Living report, not a completion claim. Main is6144d42; its exact reviewed tree, private repository, author and skip-ci subject are verified. Latest main/live acceptance:2490 core cases,323 browser cases at each desktop size,40 art checks,35 matching live assets before/after,22 health checks and16 live stages per size. No unexpected errors, transactions or Actions runs. Inherited2 expected failures/11 skips remain disclosed.
 
 | Item | PR | Fresh self-grades | Merge/status | Live |
