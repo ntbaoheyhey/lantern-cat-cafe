@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T19:09:43.247400+07:00. Background-only checkpoint; UI resumed gates, no corrective release; wallet receipts pending.
+Updated: 2026-11-03T19:24:11.790020+07:00. Background-only checkpoint; UI reports A96/B running, no release; wallet receipts pending.
 USER OVERRIDE: no screen/browser UI control until user explicitly resumes it; no CUA/native clicks/typing.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
@@ -17,8 +17,8 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 
 Fetched origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; repo PRIVATE; merge260 confirmed API; Actions0.
 UI CXU3 #259/8daa8e1 LIVE ACCEPTED35assets; CXC2 adoption666088c; readiness08:30:50Z permits CXQ1.
-UI CXR2 candidate6ef93c0 on1a1b499 resumed12:03:55Z; reported219changed EACHsize+full1280 368/368 PASS.
-UI A2 completing full1600/resize, then fresh B; reported PID45051 on5310–5313 is FOREIGN, untouched.
+UI CXR2 candidate6ef93c0 on1a1b499: UI reports fresh A96 PASS,2531core,368full EACHsize,438changed,resize20/20.
+UI fresh B tests-first reported PID48052 in own verify-cxr2-b,ports5320–5323; FOREIGN, untouched; no PR/merge.
 Not merged/released; SYS-UI-007 remains OPEN live. No owned PID/system port/merge lock observed.
 Source PR heads:255=2f7c0b3,256=792b475,258=97a1595,259=6cf5674,260=a571066; all merged.
 244 OPEN draft db0f9d6/9c457a3; historical257 OPEN draft c49421f/6144d42; do not touch UI PRs.
