@@ -1,42 +1,34 @@
-# SYSTEM ACTIVE — 2026-11-03T15:40:42.151596+07:00
+# SYSTEM ACTIVE — 2026-11-03T16:34:26.497366+07:00
 
-Historical pause record (revoked by explicit resume 2026-11-03T15:40:42.151596+07:00): user requested a pause at 2026-11-03T13:20:50.200210+07:00. SYSTEM merge waiter95860 stopped before acquisition; PR260 remains unmerged. Hourly reminder PAUSED; no SYSTEM processes remain. Foreign UI work/lock untouched. Latest fetched main is8daa8e1; no further work until explicit resume.
+Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delivery. Explicit resume is active and the existing same-chat checkpoint is now every15minutes. Repository remains private; no Actions run or submission.
 
-Current resume: temporary worktrees are missing; committed source/evidence recovered into durable SYSTEM folders. CXS2 integrated current main8daa8e1 asa571066; fresh A96 passes and clean B is running. UI board now records CXU3 live acceptance and CXC2 adoption, permitting CXQ1. Independent35asset identity passes; real-play preparation14008 is running with credential-free guest recovery. Hourly reminder ACTIVE; safety/ownership split unchanged.
-
-SYSTEM scope addendum adopted 2026-11-03T11:49:00.097315+07:00. UI/layout/art ownership has transferred to the user-started UI session; historical UI results below are handoff evidence only. SYSTEM will not edit those files/branches/PRs. All future system branches use ai/codex-sys-*, ports5173–5299 and the shared merge lock/board protocol.
-
-CXQ1 real-play preparation was interrupted before the timed demo because the required UI CXU3/CXC2 board readiness entries do not yet exist. Owned process lineage/cwd were checked; all exited. No wallet, secrets, funding or transactions were created. CXS1/CXS2 continue independently. [UI handoff](ui/REQUESTS-FROM-SYSTEM-QA.md).
-
-Living report, not a completion claim. Latest main is1a1b499 (CXS2 DRAFT docs). Last complete UI acceptance is6144d42; its exact reviewed tree, private repository, author and skip-ci subject are verified. Latest main/live acceptance:2490 core cases,323 browser cases at each desktop size,40 art checks,35 matching live assets before/after,22 health checks and16 live stages per size. No unexpected errors, transactions or Actions runs. Inherited2 expected failures/11 skips remain disclosed.
-
-| Item | PR | Fresh self-grades | Merge/status | Live |
+| Item | PR | Self-graded (fresh pass) | Merge/status | Live |
 |---|---|---|---|---|
-| CXU5 |249|94/94|1b299c4 DONE|accepted|
-| CXU4 |251|95/95|2847e9a DONE|accepted|
-| CXU3 |252 draft|not passed|4da5104 PARTIAL after3 rounds|unreleased|
-| CXC2 |253+254|95/96; fix96/96|666088c DONE|accepted, public read-only proof|
-| T011/T012 |255|96/96|a903fb6 DONE|shared feature OFF|
-| ORIG2+ART/T013 |256|96/96|2bc98cd DONE|local opt-in/reset accepted|
-| CXR1 |245|94/94|6144d42 DONE|accepted, real landing entry|
-| CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
-| CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
-| CXS1 |258|97/97|5e35c7a merged under shared lock|post-main2495 unit/script+38classic+35assets/22health PASS; live UI phase deferred|
-| CXS2 |260|96/96 refreshed|1a1b499 merged under shared lock|post-main/live running; no submission|
-| CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
-| P2/P3 |conditional|—|A–F not all green/merged|not started|
+|CXU5 (UI owned)|249|94/94|1b299c4|historically accepted|
+|CXU4 (UI owned)|251|95/95|2847e9a|historically accepted|
+|CXU3 (UI owned)|259|95/95 per UI board|8daa8e1|UI LIVE ACCEPTED; current smoke PASS|
+|CXC2 (UI owned)|253+254|95/96;fix96/96|666088c|adopted by UI;read-only proof PASS|
+|T011/T012|255|96/96|a903fb6|default-OFF shared original economy|
+|ORIG2+ART/T013 (art now UI owned)|256|96/96|2bc98cd|local opt-in/reset smoke PASS|
+|CXR1 (UI owned)|245|94/94|6144d42|historically accepted|
+|CXR2 (UI owned)|257 historical draft;UI successor active|pending|unmerged|UI builder in progress|
+|CXQ1|pending|pending|earned guest preparation14008 active|timed9stage/funded-wallet proof incomplete|
+|CXS1|258|97/97|5e35c7a|current main core/assets/health/phased smoke PASS|
+|CXS2|260|96/96 on a571066|1a1b499|post-main/live acceptance PASS;DRAFT only|
+|CXN3|244 draft|not passed|db0f9d6 BLOCKED|no backend deploy|
+|CXN4/CXN5;regression|conditional|pending|A–F not all green/merged|not complete|
 
-[CXR1 acceptance](cards/CXR1-FRESH/acceptance.json) · [ORIG2/art acceptance](cards/ORIG2-ART-FRESH/acceptance.json) · [CXC2 acceptance](cards/CXC2-FRESH/acceptance.json).
+CXS2 post-main acceptance completed at09:21UTC:2,523 package cases plus5 script cases,38classic browser cases,typecheck,lint,Deno/build/bundle/docs/links passed. Two inherited expected failures and11skips remain disclosed.35/35live assets matched before and after;22health checks and16guest/read-only stages at EACH1280x720 and1600x900 passed with zero unexpected errors or transactions. No full UI matrix is claimed for this documentation merge. [Acceptance](cards/CXS2-FRESH/acceptance.json).
 
-CXR1 fixes warning contrast without lowering4.5, truthful ERC1155/public links/unavailable mint proof, landing/class/Home/Bag composition, preserved phone geometry and all existing actions/data/art. A and clean tests-first B each passed234 repeats per size and10 different mutants; full323×2 matrix belongs to the identical reviewed head187a1b5. Earlier failed headed11f01 and its corrections are retained.
+CXS2 remains a9-slide DRAFT with a145-second planned VN narration/EN subtitle script and7hashed historical6144d42 screenshots. No video,upload,invitation,contest submission or funded-wallet success is claimed. Source was reviewed on a571066 in two separate passes; historical69a83d2 grades were not reused.
 
-CXR2's full core failed13 web cases:1 unchanged5000ms boss-state timeout,3 legacy portal/title queries,9 Relic fixtures blocked by first-visit Help.1402 other web cases passed; final browser/full grades were not reached. The candidate and original dirty clone are preserved. No fourth correction or merge. [Partial receipt](cards/CXR2-FRESH/partial.json). CXU3 remains parked under the same limit.
+CXQ1 runs only after UI board readiness08:30:50UTC for CXU3/CXC2. Real guest play earns resources and gear using wall-clock time; checkpoint data stays local/credential-filtered and is not committed. The timed path has not started. Current clean source8daa8e1 and docs-only1a1b499 emit the same35deployed assets; final evidence will identify its exact source. No wallet/key/signature/funding/transaction has been created by SYSTEM.
 
-No fresh funded mint/list/buy or complete timed nine-stage demo is claimed. Current16-stage acceptance is guest/read-only smoke. Original economy remains default OFF; preview is transient and does not alter server/gameplay.34 original icons retain full palette/pixel/provenance evidence; existing art is unchanged.
+PR244 remains blocked by missing complete deployed function source,dependencies/import maps and tested restore; UnsafeFunctionDownloadPathError is not bypassed. Official free Fuji faucet currently needs a connected wallet and Builder Hub login. [Owner steps](OPTIONAL-USER-STEPS.md). These block neither independent documentation nor guest QA; funded mint/list/buy remains NOT VERIFIED.
 
-PR244 needs the owner's complete deployed function source, dependencies/import maps and a tested restore path; UnsafeFunctionDownloadPathError was not bypassed. No destructive live writes, migrations/backend deploys, Vercel/production flag changes, real funds/mainnet, public-repo change or contest submission. [Owner steps](OPTIONAL-USER-STEPS.md). This blocks no unrelated frontend/documentation work.
+Ownership addendum remains in force: SYSTEM does nonvisual data/security/evidence; UI session owns layout/screens/art. Rune fields are deferred under P2 gate; UI accepted labelled unavailable/sample state. UI defects are reported in the SYSTEM request mirror, not fixed in UI files. No new feature proposed.
 
-P0/P1 remain incomplete. Single agent/chat; STOP and the requested hourly reminder are preserved. [Handoff](MEGA-CURRENT-HANDOFF.md).
+P0/P1 are not fully complete. P2 remains gated; final regression follows UI/CXQ1 integration. Preserved old temporary registrations/untracked historical files; only committed evidence was recovered after temp-worktree loss. [Handoff](MEGA-CURRENT-HANDOFF.md).
 
 ---
 Historical reports below retain their original dates and do not override current authority.

@@ -1,66 +1,59 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:17:19.208119+07:00. ACTIVE; CXS2 merged, CXQ1 preparation.
-Read FIRST after compaction; reconcile Git/board/PIDs before actions; no duplicate tests or AI workers.
-Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to this durable worktree.
+Updated: 2026-11-03T16:34:26.497366+07:00. Resume verified; CXS2 main/live acceptance complete.
+Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
+Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
-| SYSTEM item | Current state |
+| SYSTEM item | Verified state |
 |---|---|
-|T011/T012|DONE #255/a903fb6 A96/B96; original economy default OFF|
-|244 CXN3|db0f9d6 draft BLOCKED: full deployed-source/deps/import maps and tested restore absent|
-|CXS1|#258/5e35c7a A97/B97; docs/core/assets/health PASS; final integration regression pending|
-|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; MERGED 1a1b499 A96/B96; post-main active; old69a83d2 grades historical|
-|CXQ1|UI board now READY for SYSTEM after CXU3 live acceptance and CXC2 adoption; restart on verified current head|
-|CXN4/CXN5|Conditional P2, default-OFF/versioned; not started|
-|regression|After current UI/system integration; no complete timed/funded proof yet|
+|T011/T012|DONE #255/a903fb6 A96/B96; original economy flag default OFF|
+|ORIG2 nonvisual|DONE #256/2bc98cd A96/B96; UI/art now exclusively UI-owned|
+|244 CXN3|db0f9d6 draft BLOCKED; deployed source/deps/import maps backup + tested restore absent|
+|CXS1|DONE #258/5e35c7a A97/B97; current main core/assets/health/phased smoke PASS|
+|CXS2|DONE #260/1a1b499; exact a571066 A96/B96; main/live acceptance PASS; DRAFT only|
+|CXQ1|Earned guest preparation running14008; timed9stage and funded-wallet proof pending|
+|CXN4/CXN5|Conditional P2 default-OFF/versioned; not started; A–F not all green|
+|regression|Current main smoke green; final integrated regression after UI/CXQ1 pending|
 
-origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; SYSTEM #260 DRAFT docs merge under shared lock.
-UI board2026-11-03T08:30:50Z: CXU3 #259 LIVE ACCEPTED35assets/main checks/Actions0; CXC2 adopted666088c.
-UI has resumed independently and owns CXR2 onward. Do not resume, kill or edit its work.
+Fetched origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; repo PRIVATE; merge260 confirmed API; Actions0.
+UI CXU3 #259/8daa8e1 LIVE ACCEPTED35assets; CXC2 adoption666088c; readiness08:30:50Z permits CXQ1.
+UI owns CXR2 onward; latest board builder09:11:56Z; no current merge lock/listeners observed.
+Source PR heads:255=2f7c0b3,256=792b475,258=97a1595,259=6cf5674,260=a571066; all merged.
+244 OPEN draft db0f9d6/9c457a3; historical257 OPEN draft c49421f/6144d42; do not touch UI PRs.
 
-RECOVERY: all old /private/tmp/tbh-* worktrees disappeared during pause; committed source/ledger restored.
-Own durable ledger /Users/bao/taskbar-hero-system-ledger, branch ai/codex-mega-ledger.
-Own durable CXS2 /Users/bao/taskbar-hero-system-cxs2, branch ai/codex-sys-cxs2-submission, heada571066e7ef29bfc920d13509ac54fd8a9438459.
-Missing-worktree registrations retained; no global prune or removal of foreign/historical metadata.
-Untracked old temp logs/screenshots may be gone; do not claim they were recovered. Committed receipts/pack PNGs exist.
-No old tests restarted; new head needs refreshed verification. Old69a83d2 A/B evidence remains archived.
-CXS2 A9336/B15353 finished PASS96/96 on a571066;2528unit/script+38classic per pass;5200/5220 free.
-CXQ1 identity9388 finished35assets MATCH; real-play PID14008 /Users/bao/taskbar-hero-system-cxq1; no ports.
-Source and ledger clean before integration; root main/worktree and UI worktrees untouched.
+Own durable ledger /Users/bao/taskbar-hero-system-ledger branch ai/codex-mega-ledger.
+Own CXQ1 /Users/bao/taskbar-hero-system-cxq1 branch ai/codex-sys-cxq1 head8daa8e1.
+Owned prep parent14008 (cwd checked), child14010; no local listener ports. Keep running; do not duplicate.
+Own CXS2 /Users/bao/taskbar-hero-system-cxs2 branch ai/codex-sys-cxs2-submission heada571066.
+Clean B /Users/bao/taskbar-hero-system-cxs2-b a571066; main /Users/bao/taskbar-hero-system-main-cxs2 1a1b499.
+Post-main23398 EXITED successfully;5200–5299 free. Finished A9336/B15353 not active.
+Old /private/tmp worktrees absent; registrations retained, no global prune. Uncommitted historical temp evidence lost.
+Preserve dirty/untracked historical ledger logs; stage only intended files; never stage earned guest storage.
 
-CXS2 pack remains DRAFT:9slides,145s planned VN narration+EN subtitles,7 unchanged6144d42 guest/read-only PNGs.
-All artifact hashes/captions preserved, including class-phase post-confirmation Home view.
+CXS2 acceptance:2528unit/script,38classic,type/lint/build/Deno/docs/links PASS;35assets before/after MATCH;
+22health,16live stages EACH1280x720+1600x900,no unexpected errors/transactions; cards/CXS2-FRESH/acceptance.json.
+Grades resume-grade-a/b.json on a571066; old69a83d2 grades historical. No full UI matrix rerun claimed.
+DRAFT pack:9slides,145s planned VN narration/EN subtitles,7hashed historical6144d42 screenshots.
 No contest submission,visibility change,video upload or funded-wallet proof.
-Use CXS2-FRESH/check-pack.py,source-facts.mjs,mutants.py and fresh-session-tools/run-checks.py at NEW ledger path.
-Historical run configs contain old tmp paths; create new run folders/configs, never overwrite old evidence.
-Original sourcePNG paths in historical manifest are capture-time provenance, not current filesystem promises.
+CXQ1: actual UI/clock earns guest progress; original script bounded90min. Prepared save disclosed, never synthetic.
+Guest-checkpoint.mjs rejects credentials/vouchers;6 controls PASS; checkpoint JSON mode0600 stays unstaged.
+Preparation head8daa8e1; CXS2 docs-only1a1b499 has same deployed assets. Revalidate before final current-main claim.
+Official faucet requires wallet+Builder Hub login; no SYSTEM wallet/key/signature/funding/tx created.
+Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key;244 blocks nothing unrelated.
 
-CXQ1 old55396/55399 were interrupted on the ownership addendum; no timed run/tx had started.
-Script CXQ1-FRESH/earned-live-demo.mjs preserved in Git; future use requires fresh source/artifact proof and UI adaptation.
-Guest progress earned via real UI/clock; guest-checkpoint.mjs filters cookies/auth storage, rejects credentials/vouchers.
-Six local recovery controls pass; earned guest-only JSON checkpoints in CXQ1-FRESH/resume-natural/data (not staged).
-Official faucet observation requires connected wallet+Builder Hub login; no keys/signatures/funding/tx created by SYSTEM.
-Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key.244 remains independent blocker.
+SYSTEM scope:ledger/owner steps,original data/packages/nonvisual wiring,CXQ1,CXS1/CXS2,CXN4/CXN5,regression.
+UI owns screens/layout/art; no edits to249/251/245 or ai/codex-ui-* branches/worktrees.
+No apps/web/src except api/,wallet/,v2text/;e2e only own-script specs;no public/,tools/art/,ui-redesign/.
+Explicit reports/ui exceptions:requests/reply mirror and REQUESTS-FROM-SYSTEM-QA.md in OWN ledger only.
+Read UI ledger REQUESTS-FOR-SYSTEM.md: Rune fields deferred under P2 gate; UI accepts labelled sample/unavailable.
+New branches ai/codex-sys-*; own ports5173–5299; UI5300–5399; no manifests+UI files in one PR.
+Before ANY main merge mkdir ~/.taskbar-hero-locks/merge.lock; wait2–3min up to60min if held.
+Stale foreign lock only owner older90min AND PID dead; inside lock fetch/integrate/changed checks/type/lint/grades.
+Append atomic board milestone line; release only own lock. No merge planned until CXQ1 path result.
 
-SYSTEM scope: ledger/owner steps,original data/packages/nonvisual wiring,CXQ1,CXS1/CXS2,CXN4/CXN5,regression.
-UI scope: all layout/screens/art; do not touch249/251/245 or ai/codex-ui-* branches/worktrees.
-No apps/web/src edits except api/,wallet/,v2text/; e2e only own-script specs; no public/,tools/art/,ui-redesign/ edits.
-Explicit reports/ui exceptions are request/reply mirror and REQUESTS-FROM-SYSTEM-QA.md in OWN ledger.
-New SYSTEM branches ai/codex-sys-*; own ports5173–5299 only, UI5300–5399.
-Never combine package.json/pnpm-lock edits with UI-owned files.
-
-MERGES: acquire ~/.taskbar-hero-locks/merge.lock via mkdir before any main merge.
-If held,check every2–3min,max60min; stale only owner older90min AND PID dead; no blind cleanup.
-Inside lock fetch/integrate current main,changed checks+typecheck+lint,verify exact-head grades,merge,release.
-If integration changes reviewed head, refresh evidence. Append one atomic board line per milestone.
-Read /Users/bao/taskbar-hero-ui-ledger/reports/ui/REQUESTS-FOR-SYSTEM.md at milestones; reply via own mirror+board.
-Rune request declined under P2 gate/no authoritative model; UI accepted labelled unavailable/sample; flag stays OFF.
-SYS-UI-006 catalog capture: UI local icons paint; no persistent defect proven; paint-aware guards with UI.
-
-Safety: repo private; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
-Preserve STOP; no subagents/helpers/new chats/schedulers except existing heartbeat; no orchestrator.py.
-No secrets,destructive liveDB writes,migrations/edge deploys,Vercel/VITE_GAME_V2 changes,real funds/mainnet,
-public repo/contest submission,.github changes,Actions or direct-main pushes. Kill only owned PIDs after cwd check.
-Gates A/B>=92,C1>=23,C2=20,C6=5,C7>=8,each>=60%,zero auto-fails; no weakened/skipped/retried-away tests.
-No new server behavior ON after25Nov; stop28Nov with regression/final report. Keep handoff<=80lines.
-Post-main PID23398 /Users/bao/taskbar-hero-system-main-cxs2,5240–5243; resume-post-main/run.json.
-Next3: finish main/live docs acceptance; complete earned timed demo; funded-wallet prerequisite/guarded run.
+Safety: ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
+Preserve STOP;no subagents/helpers/new chats/schedulers except existing15min heartbeat;no orchestrator.py.
+No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME_V2 changes,real funds/mainnet,
+public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
+Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
+No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
+Next3: finish natural timed demo; report/fix only SYSTEM harness issues or send UI defect; close regression/wallet prerequisites.

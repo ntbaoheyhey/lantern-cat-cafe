@@ -1,0 +1,130 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:17:19.150730+00:00",
+    "endedAt": "2026-11-03T09:17:26.590247+00:00"
+  },
+  {
+    "name": "docs",
+    "command": "python3 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/check-pack.py /Users/bao/taskbar-hero-system-main-cxs2",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:17:26.598874+00:00",
+    "endedAt": "2026-11-03T09:17:26.814384+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:17:26.826284+00:00",
+    "endedAt": "2026-11-03T09:17:35.997162+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:17:36.004053+00:00",
+    "endedAt": "2026-11-03T09:17:44.629097+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:17:44.636199+00:00",
+    "endedAt": "2026-11-03T09:18:38.369667+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:38.378205+00:00",
+    "endedAt": "2026-11-03T09:18:39.171796+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:39.179995+00:00",
+    "endedAt": "2026-11-03T09:18:39.352019+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:39.358754+00:00",
+    "endedAt": "2026-11-03T09:18:47.507918+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:47.515882+00:00",
+    "endedAt": "2026-11-03T09:18:47.579845+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:47.587674+00:00",
+    "endedAt": "2026-11-03T09:18:54.229235+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:54.238046+00:00",
+    "endedAt": "2026-11-03T09:18:54.318375+00:00"
+  },
+  {
+    "name": "classic-project",
+    "command": "E2E_PORT_CLASSIC=5240 E2E_PORT_V2=5241 E2E_PORT_SERVER=5242 E2E_PORT_API=5243 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:18:54.326708+00:00",
+    "endedAt": "2026-11-03T09:19:35.833763+00:00"
+  },
+  {
+    "name": "asset-before",
+    "command": "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-before.json",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:19:35.840924+00:00",
+    "endedAt": "2026-11-03T09:19:39.399363+00:00"
+  },
+  {
+    "name": "health",
+    "command": "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:19:39.407431+00:00",
+    "endedAt": "2026-11-03T09:19:51.187371+00:00"
+  },
+  {
+    "name": "phased",
+    "command": "node /Users/bao/taskbar-hero-system-ledger/reports/cards/CXR1-FRESH/live-phased-redesign.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-before.json /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/phased",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:19:51.195805+00:00",
+    "endedAt": "2026-11-03T09:21:03.649819+00:00"
+  },
+  {
+    "name": "asset-after",
+    "command": "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-after.json",
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "exit": 0,
+    "startedAt": "2026-11-03T09:21:03.660942+00:00",
+    "endedAt": "2026-11-03T09:21:07.317490+00:00"
+  }
+]
