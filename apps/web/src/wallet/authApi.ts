@@ -9,14 +9,41 @@ export interface AuthApi {
   verify(input: { message: string; signature: string }): Promise<VerifyResult>;
 }
 
-async function post<T>(url: string, body?: unknown): Promise<T> {
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: body === undefined ? undefined : JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Request failed (${res.status})`);
-  return (await res.json()) as T;
+export const AUTH_UNAVAILABLE_MESSAGE = 'Wallet sign-in is temporarily unavailable, guest play still works.';
+
+export class AuthUnavailableError extends Error {
+  constructor() { super(AUTH_UNAVAILABLE_MESSAGE); this.name = 'AuthUnavailableError'; }
+}
+
+const wait = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
+
+async function post<T>(url: string, body?: unknown, retryNonce = false): Promise<T> {
+  // Only nonce issuance can be retried. A signed verification is single-use.
+  for (let attempt = 0; ; attempt++) {
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: body === undefined ? undefined : JSON.stringify(body),
+        signal: AbortSignal.timeout(10_000),
+      });
+    } catch {
+      if (!retryNonce || attempt >= 2) throw new AuthUnavailableError();
+      await wait(250 * 2 ** attempt);
+      continue;
+    }
+    if (res.status >= 500) {
+      // Honour a server cooldown by letting the user try later. Do not hammer
+      // a missing dependency or hold the wallet UI for a 30-second retry.
+      const retryAfter = res.headers.get('retry-after');
+      if (!retryNonce || attempt >= 2 || retryAfter !== null) throw new AuthUnavailableError();
+      await wait(250 * 2 ** attempt);
+      continue;
+    }
+    if (!res.ok) throw new Error(`Request failed (${res.status})`);
+    try { return await res.json() as T; } catch { throw new AuthUnavailableError(); }
+  }
 }
 
 /** Talks to the Supabase edge functions auth-nonce / auth-verify. */
@@ -25,7 +52,9 @@ export function createHttpAuthApi(baseUrl = import.meta.env.VITE_SUPABASE_URL): 
   if (!root) throw new Error('VITE_SUPABASE_URL is not set');
   return {
     async getNonce() {
-      const { nonce } = await post<{ nonce: string }>(`${root}/functions/v1/auth-nonce`);
+      const result = await post<{ nonce?: unknown } | null>(`${root}/functions/v1/auth-nonce`, undefined, true);
+      const nonce = result?.nonce;
+      if (typeof nonce !== 'string' || !nonce) throw new AuthUnavailableError();
       return nonce;
     },
     verify: (input) => post<VerifyResult>(`${root}/functions/v1/auth-verify`, input),

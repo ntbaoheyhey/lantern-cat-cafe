@@ -6,7 +6,7 @@ import { avalanche } from 'viem/chains';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { createConfig, http } from 'wagmi';
 import { injected, mock } from 'wagmi/connectors';
-import { createMockAuthApi, type AuthApi } from './authApi';
+import { AUTH_UNAVAILABLE_MESSAGE, createHttpAuthApi, createMockAuthApi, type AuthApi } from './authApi';
 import { fuji, makeFujiChain } from './config';
 import { createSessionStore } from './session';
 import { CORE_INSTALL_URL, NO_WALLET_HINT, WalletButton } from './WalletButton';
@@ -106,6 +106,23 @@ it('disconnect clears the session', async () => {
   await waitFor(() => expect(screen.getByRole('button', { name: 'Connect wallet' })).toBeTruthy());
   expect(store.get()).toBeNull();
   expect(window.sessionStorage.getItem('taskbar-hero.session')).toBeNull();
+});
+
+it('a mocked nonce 502 keeps the wallet visible, explains guest play and never requests a signature', async () => {
+  const fetchMock = vi.fn(async () => new Response('Bad Gateway', { status: 502 }));
+  vi.stubGlobal('fetch', fetchMock);
+  const api = createHttpAuthApi('https://auth.test');
+  const verify = vi.spyOn(api, 'verify');
+  const { store } = setup({ api });
+  fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Sign in' }));
+  expect(await screen.findByText(AUTH_UNAVAILABLE_MESSAGE, {}, { timeout: 3000 })).toBeTruthy();
+  expect(screen.getByRole('group', { name: 'Wallet' })).toBeTruthy();
+  expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
+  expect(fetchMock).toHaveBeenCalledTimes(3);
+  expect(verify).not.toHaveBeenCalled();
+  expect(store.get()).toBeNull();
+  expect(screen.queryByText(/Request failed|Bad Gateway/)).toBeNull();
 });
 
 it('session store survives broken storage and drops expired sessions', () => {
