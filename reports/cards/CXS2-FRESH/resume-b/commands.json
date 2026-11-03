@@ -1,0 +1,106 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:57:23.773225+00:00",
+    "endedAt": "2026-11-03T08:57:30.713222+00:00"
+  },
+  {
+    "name": "docs",
+    "command": "python3 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/check-pack.py /Users/bao/taskbar-hero-system-cxs2-b",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:57:30.721138+00:00",
+    "endedAt": "2026-11-03T08:57:30.902821+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:57:30.909429+00:00",
+    "endedAt": "2026-11-03T08:57:39.434548+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:57:39.441547+00:00",
+    "endedAt": "2026-11-03T08:57:46.964467+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:57:46.971359+00:00",
+    "endedAt": "2026-11-03T08:58:37.832004+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:37.838800+00:00",
+    "endedAt": "2026-11-03T08:58:39.051200+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:39.057785+00:00",
+    "endedAt": "2026-11-03T08:58:39.219030+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:39.225727+00:00",
+    "endedAt": "2026-11-03T08:58:46.762649+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:46.769552+00:00",
+    "endedAt": "2026-11-03T08:58:46.825468+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:46.832172+00:00",
+    "endedAt": "2026-11-03T08:58:52.169529+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:52.176371+00:00",
+    "endedAt": "2026-11-03T08:58:52.236897+00:00"
+  },
+  {
+    "name": "mutants",
+    "command": "python3 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/mutants.py /Users/bao/taskbar-hero-system-cxs2-b /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-mutants-b b",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:52.243483+00:00",
+    "endedAt": "2026-11-03T08:58:52.779819+00:00"
+  },
+  {
+    "name": "classic-project",
+    "command": "E2E_PORT_CLASSIC=5220 E2E_PORT_V2=5221 E2E_PORT_SERVER=5222 E2E_PORT_API=5223 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line",
+    "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+    "exit": 0,
+    "startedAt": "2026-11-03T08:58:52.786016+00:00",
+    "endedAt": "2026-11-03T08:59:29.323302+00:00"
+  }
+]

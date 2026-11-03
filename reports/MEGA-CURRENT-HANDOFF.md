@@ -8,7 +8,7 @@ Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to 
 |T011/T012|DONE #255/a903fb6 A96/B96; original economy default OFF|
 |244 CXN3|db0f9d6 draft BLOCKED: full deployed-source/deps/import maps and tested restore absent|
 |CXS1|#258/5e35c7a A97/B97; docs/core/assets/health PASS; final integration regression pending|
-|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; fresh A96 PASS; clean B running; old69a83d2 grades historical|
+|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; fresh A96/B96 PASS; locked publication next; old69a83d2 grades historical|
 |CXQ1|UI board now READY for SYSTEM after CXU3 live acceptance and CXC2 adoption; restart on verified current head|
 |CXN4/CXN5|Conditional P2, default-OFF/versioned; not started|
 |regression|After current UI/system integration; no complete timed/funded proof yet|
@@ -23,7 +23,7 @@ Own durable CXS2 /Users/bao/taskbar-hero-system-cxs2, branch ai/codex-sys-cxs2-s
 Missing-worktree registrations retained; no global prune or removal of foreign/historical metadata.
 Untracked old temp logs/screenshots may be gone; do not claim they were recovered. Committed receipts/pack PNGs exist.
 No old tests restarted; new head needs refreshed verification. Old69a83d2 A/B evidence remains archived.
-CXS2 A9336 finished PASS96. Clean B PID15353 /Users/bao/taskbar-hero-system-cxs2-b,5220–5223.
+CXS2 A9336/B15353 finished PASS96/96 on a571066;2528unit/script+38classic per pass;5200/5220 free.
 CXQ1 identity9388 finished35assets MATCH; real-play PID14008 /Users/bao/taskbar-hero-system-cxq1; no ports.
 Source and ledger clean before integration; root main/worktree and UI worktrees untouched.
 
