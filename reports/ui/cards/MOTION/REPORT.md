@@ -1,0 +1,9 @@
+# MOTION — short, reduced-motion-aware UI feedback
+
+Adds 180ms HUD number ticks, level/loot/mint confirmation cues and Forge reveal; panel entry is 140ms. Hover/press feedback is 100ms. All final states are immediate under reduced motion. Existing mint, API, wallet and reward logic stays authoritative; the layer only observes values.
+
+Fixed numeric columns and a stable level badge prevent shifts across 12→240,000 Fish and level9→10. Recent-loot labels occupy a fixed row, and left-aligned tabular text prevents glyph-origin shifts. The browser contract requires CLS exactly0 including recent-input shifts. Compact Forge confirmation disables browser scroll anchoring so its expanded actions remain visible.
+
+Builder: typecheck, lint, build and92 focused motion/HUD/shell/contrast cases passed. All13 regression browser cases passed after fixing the real layout shifts and compact scroll regression; a subsequent9-case run also covers level9→10 and bounded sample cards. Initial failures and two CLS source probes remain in reports/ui/logs/motion-builder. No assertion or threshold was weakened. The prior Forge event-count test now tracks the new animation name while preserving exact start/end/replay counts.
+
+The isolated fixture uses real HUD/RecentLoot and cue components, labelled sample mint/relic state, and no persistence/network writes. It is not a funded mint. Performance: four4-second RAF samples at1280×720/1600×900,normal/reduced, average60.001–60.002fps,p9516.7ms,CLS0,zero console errors/writes. No screenshots occur in the timing window. The inherited real-stage effects audit also passes10/10checks at each size; its screenshot-heavy software-GL measurement is a separate relative diagnostic (about60fps). See performance/fps.json and screenshots/ui/motion-effects-* evidence. Fresh A/B gates are pending. Release remains subject to the shared backend health hold.

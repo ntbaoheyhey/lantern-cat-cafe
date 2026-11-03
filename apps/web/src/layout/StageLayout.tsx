@@ -22,6 +22,7 @@ import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapsh
 import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
 import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
+import { useMotionCue } from '../motion/useMotionCue';
 import { ClassPicker, STARTER_CLASSES } from './classpicker/ClassPicker';
 import { LandingHero } from './LandingHero';
 import { HeroCard } from './home/HeroCard';
@@ -95,6 +96,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const wallet = useAccount();
   const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
   const [mintedNonce, setMintedNonce] = useState<string | null>(null);
+  const mintCue = useMotionCue<HTMLParagraphElement>(mintedNonce, 'relic');
   const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
   const [savingMint, setSavingMint] = useState(false);
   const [classChoiceError, setClassChoiceError] = useState<string | null>(null);
@@ -434,7 +436,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       )}
 
       {notice && (
-        <p role="status" className="v2-action-notice">
+        <p ref={mintCue} role="status" className="v2-action-notice motion-cue" data-mint-confirmed={mintedNonce ? 'true' : undefined}>
           {notice}
           <button aria-label="Dismiss message" onClick={() => setNotice('')}>
             ×

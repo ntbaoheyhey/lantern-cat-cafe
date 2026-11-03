@@ -65,8 +65,8 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
       await page.getByTestId('rarity-common').click(); await page.getByTestId('slot-helmet').click();
       const animations = await page.evaluateHandle(() => {
         const count = { starts: 0, ends: 0 };
-        document.addEventListener('animationstart', event => { if (event.animationName === 'forgeFlash') count.starts++; });
-        document.addEventListener('animationend', event => { if (event.animationName === 'forgeFlash') count.ends++; });
+        document.addEventListener('animationstart', event => { if (event.animationName === 'motion-forge-reveal') count.starts++; });
+        document.addEventListener('animationend', event => { if (event.animationName === 'motion-forge-reveal') count.ends++; });
         return count;
       });
       await page.getByTestId('craft-btn').focus(); await page.keyboard.press('Enter');

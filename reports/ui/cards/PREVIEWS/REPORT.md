@@ -6,4 +6,4 @@ The view reads only existing immutable definitions. It never imports the pet sto
 
 Builder:53focused unit/contrast tests,typecheck and7browser cases pass; both sizes and motion modes cover keyboard tabs, all labels, the last list entry, sample rank, geometry, reload reset and zero network/storage writes. The inherited four Landing/Class PNGs still match main340f88b byte-for-byte. Initial sidecar fixture omitted the existing build marker; the guard correctly failed. Added the marker, without changing the guard or assertion. Initial failure log is retained.
 
-No new artwork, dependency, production flag or gameplay balance. Fresh A/B, motion integration and release checks are pending; backend health hold prevents merge.
+No new artwork, dependency, production flag or gameplay balance. Integrated frozen MOTION7d0427c. The only conflict was the owned sidecar build helper: both independent fixture outputs are retained. Fresh A/B and release checks are pending; backend health hold prevents merge.
