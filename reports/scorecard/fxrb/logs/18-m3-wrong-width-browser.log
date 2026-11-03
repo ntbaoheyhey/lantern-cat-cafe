@@ -1,0 +1,238 @@
+$ env CI=true SCREENSHOTS=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= E2E_PORT_CLASSIC=4310 E2E_PORT_V2=4311 E2E_PORT_SERVER=4312 E2E_PORT_API=4313 pnpm test:e2e e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --reporter=list
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web
+started: 2026-11-01T08:04:07.334402+00:00
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web
+> playwright test e2e/layout/resize-burst.spec.ts e2e/layout/resize.spec.ts --project=stage-layout --workers=1 --reporter=list
+
+[WebServer] (node:48636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48637) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:48639) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:48664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48665) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:48671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:48673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:48697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:48705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:48706) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1280x720) (5.9s)
+(node:48720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1600x900) (5.9s)
+(node:48843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1280x720) (5.8s)
+(node:48889) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1280x720) (5.8s)
+(node:48912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1600x900) (5.9s)
+(node:48931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1600x900) (6.0s)
+
+
+  1) [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1280x720)
+
+    Error: one settled canvas after the drag
+
+    one settled canvas after the drag
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+        Array [
+    -     200,
+    +     201,
+          96,
+        ],
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      41 |     const c = element as HTMLCanvasElement;
+      42 |     return [c.width, c.height];
+    > 43 |   })), { message: 'one settled canvas after the drag' }).toEqual([[logicalWidth, 96]]);
+         |                                                          ^
+      44 |   // Read cardinality, size and actor pixels in the same browser turn: the
+      45 |   // desktop/phone boundary replaces the scene and can detach a selected node.
+      46 |   await expect.poll(() => canvas.evaluateAll((elements, expectedWidth) => {
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize-burst.spec.ts:43:58
+
+    Error Context: test-results/4310-4311/layout-resize-burst-viewpo-0a304-keeps-both-actors-1280x720--stage-layout/error-context.md
+
+  2) [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1600x900)
+
+    Error: one settled canvas after the drag
+
+    one settled canvas after the drag
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+        Array [
+    -     200,
+    +     201,
+          96,
+        ],
+      ]
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      41 |     const c = element as HTMLCanvasElement;
+      42 |     return [c.width, c.height];
+    > 43 |   })), { message: 'one settled canvas after the drag' }).toEqual([[logicalWidth, 96]]);
+         |                                                          ^
+      44 |   // Read cardinality, size and actor pixels in the same browser turn: the
+      45 |   // desktop/phone boundary replaces the scene and can detach a selected node.
+      46 |   await expect.poll(() => canvas.evaluateAll((elements, expectedWidth) => {
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize-burst.spec.ts:43:58
+
+    Error Context: test-results/4310-4311/layout-resize-burst-viewpo-92772-keeps-both-actors-1600x900--stage-layout/error-context.md
+
+  3) [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1280x720)
+
+    Error: stage actors redraw at 1600×900 (expected logicalWidth=176)
+
+    stage actors redraw at 1600×900 (expected logicalWidth=176)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      62 |       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
+      63 |       return false;
+    > 64 |     }, logicalWidth), { message: `stage actors redraw at ${width}×${height} (expected logicalWidth=${logicalWidth})` }).toBe(true);
+         |                                                                                                                         ^
+      65 |     await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+      66 |     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
+      67 |     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize.spec.ts:64:121
+
+    Error Context: test-results/4310-4311/layout-resize-continuous-r-7fb84-readable-HUD-dark-1280x720--stage-layout/error-context.md
+
+  4) [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1280x720)
+
+    Error: stage actors redraw at 1600×900 (expected logicalWidth=176)
+
+    stage actors redraw at 1600×900 (expected logicalWidth=176)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      62 |       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
+      63 |       return false;
+    > 64 |     }, logicalWidth), { message: `stage actors redraw at ${width}×${height} (expected logicalWidth=${logicalWidth})` }).toBe(true);
+         |                                                                                                                         ^
+      65 |     await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+      66 |     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
+      67 |     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize.spec.ts:64:121
+
+    Error Context: test-results/4310-4311/layout-resize-continuous-r-5bff5-eadable-HUD-light-1280x720--stage-layout/error-context.md
+
+  5) [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1600x900)
+
+    Error: stage actors redraw at 1280×720 (expected logicalWidth=188)
+
+    stage actors redraw at 1280×720 (expected logicalWidth=188)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      62 |       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
+      63 |       return false;
+    > 64 |     }, logicalWidth), { message: `stage actors redraw at ${width}×${height} (expected logicalWidth=${logicalWidth})` }).toBe(true);
+         |                                                                                                                         ^
+      65 |     await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+      66 |     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
+      67 |     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize.spec.ts:64:121
+
+    Error Context: test-results/4310-4311/layout-resize-continuous-r-24777-readable-HUD-dark-1600x900--stage-layout/error-context.md
+
+  6) [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1600x900)
+
+    Error: stage actors redraw at 1280×720 (expected logicalWidth=188)
+
+    stage actors redraw at 1280×720 (expected logicalWidth=188)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      62 |       for (let i = 3; i < pixels.length; i += 4) if (pixels[i]! > 0) return true;
+      63 |       return false;
+    > 64 |     }, logicalWidth), { message: `stage actors redraw at ${width}×${height} (expected logicalWidth=${logicalWidth})` }).toBe(true);
+         |                                                                                                                         ^
+      65 |     await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+      66 |     await expect(page.getByRole('tabpanel', { name: 'Forge' })).toBeVisible();
+      67 |     expect(await page.evaluate(key => { const s = JSON.parse(localStorage.getItem(key)!).state; return [s.classId, s.level, s.items.map((i: { id: string }) => i.id)]; }, KEY)).toEqual(identity);
+        at /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m3-wrong-logical-width/apps/web/e2e/layout/resize.spec.ts:64:121
+
+    Error Context: test-results/4310-4311/layout-resize-continuous-r-1fe5f-eadable-HUD-light-1600x900--stage-layout/error-context.md
+
+  6 failed
+    [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1280x720)
+    [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps both actors (1600x900)
+    [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1280x720)
+    [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1280x720)
+    [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (dark, 1600x900)
+    [stage-layout] › e2e/layout/resize.spec.ts:23:40 › continuous resize preserves state and readable HUD (light, 1600x900)
+ ELIFECYCLE  Command failed with exit code 1.
+
+exit_code: 1
+elapsed_seconds: 44.64

@@ -1,0 +1,42 @@
+MUTANT: M8-readonly
+FILE: types.ts
+OLD: Object.freeze(part);
+NEW: <empty>
+$ pnpm exec vitest run src/v2/codex/entries.test.ts src/v2/codex/odds.test.ts
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxl1/taskbar-hero/reports/scorecard/CXL1/mutant-i7vqq1f2/packages/game-rules
+
+ ❯ src/v2/codex/entries.test.ts (10 tests | 1 failed) 200ms
+   ❯ Compendium registry adapter (10)
+     × returns deterministic deeply frozen copies without freezing or mutating source registries 25ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/v2/codex/entries.test.ts > Compendium registry adapter > returns deterministic deeply frozen copies without freezing or mutating source registries
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ walk src/v2/codex/entries.test.ts:167:80
+    165|     expect(result).toEqual(compendiumData());
+    166|     const walk = (value: unknown): void => {
+    167|       if (value && typeof value === 'object') { expect(Object.isFrozen…
+       |                                                                                ^
+    168|     };
+    169|     walk(result);
+ ❯ src/v2/codex/entries.test.ts:169:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 15 passed (16)
+   Start at  15:38:26
+   Duration  366ms (tests 57%, transform 31%, import 11%, worker 1%)
+
+
+EXIT: 1

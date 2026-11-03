@@ -1,11 +1,86 @@
 import { RARITY_IDS, SLOT_IDS } from './content';
 
 /**
- * ALL tunable numbers for Taskbar Hero live here. Signed off by the user on 2026-10-23
+ * Classic tunables were signed off by the user on 2026-10-23
  * (boss.powerGrowth 1.15 and relic.shardCost 30 changed at sign-off; the rest kept).
- * Time is always in seconds. Docs: docs/game-rules.md (keep in sync).
+ * Classic time is in seconds. Docs: docs/game-rules.md (keep in sync).
+ * ORIG1 is a separate default-off draft; timing units are explicit in docs/design/original-economy.md.
  */
 export const CONFIG = {
+  /** ORIG1 gameplay remains OFF. The local catalog uses this default and opts in without changing it. */
+  features: { originalEconomy: false },
+  /** Original draft tables; see docs/design/original-economy.md for units and rationale. */
+  originalEconomy: {
+    revision: 'orig1-2026-11-02',
+    stats: {
+      hp: { name: 'Ninefold Stamina', description: 'How much punishment a cat can carry before resting.', base: 116, cap: null, unit: 'points' },
+      atk: { name: 'Pawprint Force', description: 'The starting strength of one landed hit.', base: 12, cap: null, unit: 'points' },
+      def: { name: 'Quiltguard', description: 'Padding that softens each incoming hit.', base: 7, cap: null, unit: 'rating' },
+      attackSpeed: { name: 'Quickstep Rhythm', description: 'Shortens the pause between ordinary attacks.', base: 0, cap: 0.65, unit: 'fraction' },
+      critChance: { name: 'Glint Focus', description: 'The share of hits that find a bright opening.', base: 0.035, cap: 0.42, unit: 'probability' },
+      critDamage: { name: 'Flare Payoff', description: 'Extra damage above a normal hit when an opening is found.', base: 0.55, cap: 1.1, unit: 'fraction' },
+      dodge: { name: 'Threadstep', description: 'The chance to slip entirely past an incoming hit.', base: 0.02, cap: 0.28, unit: 'probability' },
+      hpRegen: { name: 'Purr Reserve', description: 'The fraction of full stamina restored each second.', base: 0, cap: 0.012, unit: 'fraction/second' },
+      fishBonus: { name: 'Pantry Yield', description: 'Adds a share to fish earned from encounters.', base: 0, cap: 0.24, unit: 'fraction' },
+      xpBonus: { name: 'Trail Memory', description: 'Adds a share to experience earned from encounters.', base: 0, cap: 0.2, unit: 'fraction' },
+      materialFind: { name: 'Pocket Scouting', description: 'Raises material roll chances without changing gear quality.', base: 0, cap: 0.18, unit: 'fraction' },
+      bossDamage: { name: 'Gate Pressure', description: 'Adds a share of damage against the chapter guardian.', base: 0, cap: 0.22, unit: 'fraction' },
+    },
+    combat: { attackIntervalMs: 1250, defenseScale: 90, minDamage: 1 },
+    gear: {
+      maxLevel: 6,
+      levelGrowth: 0.055,
+      /** Fish to buy levels 2..6, before quality cost scaling; round up once. */
+      upgradeFish: [18, 29, 47, 76, 123],
+      /** Quality weights are conditional on receiving gear; basis points total 10000. */
+      qualities: {
+        common: { name: 'Hearthmade', multiplier: 1, costMultiplier: 1, weightBp: 6250 },
+        uncommon: { name: 'Trailstitched', multiplier: 1.22, costMultiplier: 1.18, weightBp: 2520 },
+        rare: { name: 'Lamplit', multiplier: 1.52, costMultiplier: 1.45, weightBp: 940 },
+        epic: { name: 'Aurorawoven', multiplier: 1.95, costMultiplier: 1.85, weightBp: 250 },
+        legendary: { name: 'Daybreakbound', multiplier: 2.45, costMultiplier: 2.3, weightBp: 40 },
+      },
+      items: {
+        seamblade: { name: 'Seamlight Saber', description: 'A curved edge with a stitched grip for steady patrols.', slot: 'weapon', weaponType: 'sword', stats: { atk: 7 } },
+        kettlemaul: { name: 'Kettlebelly Maul', description: 'A hollow workshop head gives every swing a low note.', slot: 'weapon', weaponType: 'hammer', stats: { atk: 9 } },
+        hemknives: { name: 'Hemskip Twins', description: 'Two small blades nest neatly in a folded apron.', slot: 'weapon', weaponType: 'daggers', stats: { atk: 5 } },
+        windowpike: { name: 'Windowline Pike', description: 'A long reach fashioned for narrow rooftop crossings.', slot: 'weapon', weaponType: 'spear', stats: { atk: 7 } },
+        rafterbow: { name: 'Rafterstring Bow', description: 'Its woven cord hums beneath the attic beams.', slot: 'weapon', weaponType: 'bow', stats: { atk: 6 } },
+        lanternrod: { name: 'Lanternwake Rod', description: 'A shaded lamp at the tip guides wandering sparks.', slot: 'weapon', weaponType: 'staff', stats: { atk: 8 } },
+        mossflasks: { name: 'Mossfoam Bottles', description: 'Soft glass sleeves keep the bubbling cargo snug.', slot: 'weapon', weaponType: 'flasks', stats: { atk: 6 } },
+        quiltcap: { name: 'Quiltfold Cap', description: 'A padded brim catches dust from the rafters.', slot: 'helmet', stats: { hp: 10, def: 2 } },
+        porchcoat: { name: 'Porchlight Coat', description: 'Broad patches keep the evening chill outside.', slot: 'armor', stats: { hp: 22, def: 4 } },
+        spoolmitts: { name: 'Spoolgrip Mitts', description: 'Reinforced palms hold fast on wet window ledges.', slot: 'gloves', stats: { hp: 6, def: 1 } },
+        eaveboots: { name: 'Eaveskip Boots', description: 'Quiet soles leave only a faint trail on the tiles.', slot: 'boots', stats: { hp: 8, def: 1 } },
+        chimecollar: { name: 'Firstchime Collar', description: 'A tiny chime marks the start of each watch.', slot: 'collar', stats: { critChance: 0.014 } },
+        pantrystud: { name: 'Pantrygleam Stud', description: 'A polished clasp recalls the promise of supper.', slot: 'earring', stats: { fishBonus: 0.025 } },
+        hemring: { name: 'Hemturn Band', description: 'A smooth loop keeps loose threads from catching.', slot: 'ring', stats: { attackSpeed: 0.018 } },
+        purrcharm: { name: 'Purrwell Token', description: 'A warm keepsake settles against a tired heartbeat.', slot: 'charm', stats: { hpRegen: 0.0015 } },
+      },
+    },
+    skills: {
+      /** Rank prices are incremental fish purchases; rank gates use character level. */
+      rankFish: [24, 58, 126],
+      unlockLevels: [2, 5, 9],
+      entries: {
+        seamsweep: { name: 'Seamlight Sweep', description: 'Draw a bright seam across one nearby foe.', weaponType: 'sword', trigger: 'cooldown', every: 9000, effect: 'damage', hits: 1, perRank: [1.2, 1.5, 1.8] },
+        kettlepulse: { name: 'Kettlefall Pulse', description: 'Release the stored ring of seven deliberate swings.', weaponType: 'hammer', trigger: 'attacks', every: 7, effect: 'damage', hits: 1, perRank: [1.4, 1.7, 2] },
+        hempair: { name: 'Hemskip Pair', description: 'Slip two quick cuts through the same opening.', weaponType: 'daggers', trigger: 'attacks', every: 9, effect: 'damage', hits: 2, perRank: [0.55, 0.68, 0.82] },
+        windowthrust: { name: 'Windowline Thrust', description: 'Place a measured jab beyond the nearest pawhold.', weaponType: 'spear', trigger: 'cooldown', every: 11000, effect: 'damage', hits: 1, perRank: [1.65, 1.95, 2.3] },
+        rafterecho: { name: 'Rafter Echo', description: 'Send a second note along the path of the first arrow.', weaponType: 'bow', trigger: 'attacks', every: 8, effect: 'damage', hits: 2, perRank: [0.6, 0.75, 0.9] },
+        lanternarc: { name: 'Lanternwake Arc', description: 'Gather a patient glow and spill it onto one foe.', weaponType: 'staff', trigger: 'cooldown', every: 12000, effect: 'damage', hits: 1, perRank: [1.9, 2.2, 2.6] },
+        mossparcel: { name: 'Mossfoam Parcel', description: 'Unwrap a cool poultice to mend your own scrapes.', weaponType: 'flasks', trigger: 'cooldown', every: 15000, effect: 'heal', hits: 1, perRank: [0.06, 0.085, 0.11] },
+      },
+    },
+    rewards: {
+      /** Fixed early-loop benchmark, not a replacement for stage/monster rewards. */
+      fishPerSecond: 0.42,
+      killIntervalSeconds: 6,
+      gearDropChance: 0.028,
+      offlineEfficiency: 0.55,
+      offlineCapSeconds: 6 * 3600,
+    },
+  },
   /** Gear slots, in display order (content.ts). */
   slots: SLOT_IDS,
   /** Rarity tiers, lowest to highest (content.ts). */

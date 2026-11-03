@@ -11,6 +11,8 @@ const VIEWPORTS = [
   { name: '320', width: 320, height: 568 },
   { name: '390', width: 390, height: 844 },
   { name: '1280', width: 1280, height: 800 },
+  { name: '1280x720', width: 1280, height: 720 },
+  { name: '1600x900', width: 1600, height: 900 },
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -64,7 +66,7 @@ for (const vp of VIEWPORTS) {
     await openCharacter(page);
     const character = page.getByRole('region', { name: 'Character' });
     await expect(character).toBeVisible();
-    await expect(character.getByRole('button')).toHaveCount(9);
+    await expect(character.getByRole('group', { name: 'Gear slots' }).getByRole('button')).toHaveCount(9);
     await expect(page.getByTestId('character-power')).toBeVisible();
     await expect(character.getByRole('progressbar', { name: 'Experience' })).toBeVisible();
     await noHorizontalScroll(page);

@@ -14,6 +14,8 @@ export interface ChapterMapProps {
   onSelect?: (chapterNumber: number) => void;
   /** Compact mode: only this chapter's card, no header or path (used under the chapter tabs). */
   selectedChapter?: number;
+  /** Full-screen path; compact selected-card consumers retain their existing layout. */
+  presentation?: 'path';
 }
 
 export const CHAPTER_THEME_COLORS: Record<number, { color: string; label: string }> = {
@@ -84,8 +86,9 @@ export function ChapterMap({
   round = 1,
   onSelect,
   selectedChapter,
+  presentation,
 }: ChapterMapProps) {
-  const compact = selectedChapter !== undefined;
+  const compact = selectedChapter !== undefined && presentation !== 'path';
   const shown = chapters;
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -95,7 +98,7 @@ export function ChapterMap({
   }, [clearedChapters]);
 
   return (
-    <nav className={`v2-chapter-map${compact ? ' v2-chapter-map--compact' : ''}`} aria-label="Chapter Map">
+    <nav className={`v2-chapter-map${compact ? ' v2-chapter-map--compact' : ''}${presentation === 'path' ? ' v2-chapter-map--path' : ''}`} aria-label="Chapter Map">
       {(
       <div className="v2-map-header">
         <h2 className="v2-map-title">World Map</h2>
@@ -182,11 +185,12 @@ export function ChapterMap({
               .join(' ');
 
             return (
-              <li key={c.id || c.index} className={`v2-map-item v2-map-item--ch${c.index}${compact && c.index === selectedChapter ? ' v2-map-item--selected' : ''}`}>
+              <li key={c.id || c.index} className={`v2-map-item v2-map-item--ch${c.index}${c.index === selectedChapter ? ' v2-map-item--selected' : ''}`}>
                 <button
                   type="button"
                   className={classNames}
                   aria-current={isCurrent ? 'step' : undefined}
+                  aria-pressed={presentation === 'path' ? c.index === selectedChapter : undefined}
                   aria-disabled={isLocked ? true : undefined}
                   aria-describedby={isLocked ? lockedReasonId : undefined}
                   onClick={handleClick}

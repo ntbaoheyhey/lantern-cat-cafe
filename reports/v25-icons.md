@@ -17,7 +17,7 @@ All icons are between 8 and 12 art pixels wide, completely bordered with 1-pixel
 | **Materials** | `catnipCrystal` | 10 × 11 px | Faceted magical green catnip crystal with glowing emerald facets | `k`, `w`, `s`, `e`, `n` |
 | **Materials** | `starlightScale` | 11 × 11 px | Pale gold curved scale adorned with a brilliant 4-point white sparkle | `k`, `w`, `y`, `g`, `d` |
 | **Materials** | `moonPearl` | 10 × 10 px | Lustrous spherical pearl with iridescent violet sheen and cream body | `k`, `w`, `t`, `j`, `v`, `i` |
-| **Main Slots** | `slotWeapon` | 10 × 11 px | Centered upright knight sword with cat-ear golden guard and steel blade | `k`, `w`, `x`, `g`, `y`, `d`, `m` |
+| **Main Slots** | `slotWeapon` | 10 × 11 px | Centered upright straight blade with cat-ear golden guard and steel finish | `k`, `w`, `x`, `g`, `y`, `d`, `m` |
 | **Main Slots** | `slotHelmet` | 10 × 10 px | Cat-eared knight plate helmet with visor eye-slit revealing glowing cat eyes | `k`, `w`, `x`, `z` |
 | **Main Slots** | `slotArmor` | 10 × 10 px | Knight breastplate with pauldrons and an iconic glowing pink cat crest | `k`, `w`, `x`, `z`, `p` |
 | **Main Slots** | `slotGloves` | 10 × 11 px | Cozy cat paw mitten with pink toe beans, thumb, and main palm pad | `k`, `w`, `t`, `x`, `z`, `p` |

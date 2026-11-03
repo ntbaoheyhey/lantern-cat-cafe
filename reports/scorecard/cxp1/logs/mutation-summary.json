@@ -1,0 +1,82 @@
+[
+  {
+    "id": "unlock-round-up",
+    "path": "packages/game-rules/src/v2/meta/pets/index.ts",
+    "before": "Math.floor(count / def.unlock.count)",
+    "after": "Math.ceil(count / def.unlock.count)",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "equip-third",
+    "path": "packages/game-rules/src/v2/meta/pets/index.ts",
+    "before": "maxEquipped: 2",
+    "after": "maxEquipped: 3",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "equip-duplicate",
+    "path": "packages/game-rules/src/v2/meta/pets/index.ts",
+    "before": "if (equipped.includes(id))",
+    "after": "if (false && equipped.includes(id))",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "migration-disabled",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "data.version === 0",
+    "after": "data.version === -1",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "corrupt-grants-selection",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "catch { return empty(); }",
+    "after": "catch { return Object.freeze({ ...empty(), equipped: Object.freeze(['pet.hemwhisk']) }); }",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "persistence-dropped",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "this.state = Object.freeze(state);\n    this.persist();",
+    "after": "this.state = Object.freeze(state);",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "refresh-delta-retained",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "if (revision === adopted) pending = 0;",
+    "after": "if (revision === adopted) revision += 0;",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "retired-cleanup-repeats",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "if (disposed) return;",
+    "after": "/* mutant: retired cleanup runs again */",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "hook-never-subscribes",
+    "path": "apps/web/src/pets/state.ts",
+    "before": "useSyncExternalStore(store.subscribe,",
+    "after": "useSyncExternalStore(() => () => {},",
+    "exit": 1,
+    "assertion_failure": true
+  },
+  {
+    "id": "preview-changes-power",
+    "path": "packages/game-rules/src/v2/combat/stats.ts",
+    "before": "export function powerRating(stats: CatStats): number {",
+    "after": "import { PET_DEFS } from '../meta/pets';\nexport function powerRating(stats: CatStats): number {\n  stats = { ...stats, atk: stats.atk * (1 + PET_DEFS[0]!.perLevel[0]!) };",
+    "exit": 1,
+    "assertion_failure": true
+  }
+]

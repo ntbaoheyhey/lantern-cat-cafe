@@ -1,4 +1,6 @@
 import {
+  lazy,
+  Suspense,
   useEffect,
   useRef,
   useReducer,
@@ -28,10 +30,9 @@ import { RecentLootCard } from './home/RecentLootCard';
 import { EventLog } from './home/EventLog';
 import type { LoopEventV2 } from '../game/v2/events';
 import './home/home.css';
-import { BossGatePanel } from './boss/BossGatePanel';
+import { BossMapScreen } from './boss/BossMapScreen';
 import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
-import { ChapterMap } from '../map/ChapterMap';
 import { WelcomeBack } from './loot/WelcomeBack';
 import { LootSummary } from './loot/LootSummary';
 import { ChestReveal } from './loot/ChestReveal';
@@ -41,15 +42,18 @@ import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { TabIcon } from './tabIcons';
 import { BagPanel } from './bag/BagPanel';
 import { equipBest } from './bag/equipRules';
-import { CharacterPanel } from './character/CharacterPanel';
+import { HeroScreen } from './character/HeroScreen';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
+import { FujiProofPanel } from '../chain-proof/FujiProofPanel';
 import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
 import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
 import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
 import './layout.css';
+
+const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -216,6 +220,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   useEffect(() => {
     setVoucher(null);
     setMintedNonce(null);
+    presentBoss({ type: 'reset' });
+    setChapter(null);
   }, [mode.demo, wallet.address]);
 
   const handleSelectScreen = (newScreen: ScreenId) => {
@@ -286,6 +292,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const fightBoss = async (selected: number) => {
     if (!state || !stats || bossRequest.current || presentation.hold || (fight && !fight.complete)) return;
     bossRequest.current = true;
+    setChapter(selected);
     setNotice('');
     const firstClear = !state.bosses.chapters.find((c) => c.chapter === selected)?.cleared;
     presentBoss({ type: 'begin', snapshot: liveSnapshot, syncStatus: liveSyncStatus, chapter: selected, maxHp: stats.hp, firstClear });
@@ -565,7 +572,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             <h2 className="v2-tabpanel-title">Hero</h2>
             <div className="v2-panel-body-inner">
               {state ? (
-                <CharacterPanel state={state} onSelectSlot={() => handleSelectScreen('bag')} />
+                <HeroScreen state={state} onSelectSlot={() => handleSelectScreen('bag')} classBusy={actionBusy !== null}
+                  onChooseClass={async (id) => { await loop.chooseClass(id); return loop.getSnapshot().state?.cat.classId === id; }} />
               ) : (
                 <p>Loading your cat…</p>
               )}
@@ -617,7 +625,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             <h2 className="v2-tabpanel-title">Map</h2>
             <div className="v2-panel-body-inner">
               {state ? (
-                <BossGatePanel
+                <BossMapScreen
+                  compact={width <= 1100}
+                  history={presentation.history}
                   state={state}
                   chapter={chapter ?? state.progress.chapter}
                   busy={actionBusy === 'fightBoss' || fight !== null}
@@ -625,15 +635,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                     void fightBoss(selected);
                   }}
                   onSelectChapter={setChapter}
-                >
-                  <ChapterMap
-                    currentChapter={state.progress.chapter}
-                    selectedChapter={chapter ?? state.progress.chapter}
-                    round={state.progress.round}
-                    clearedChapters={state.bosses.chapters.filter((c) => c.cleared).map((c) => c.chapter)}
-                    onSelect={setChapter}
-                  />
-                </BossGatePanel>
+                />
               ) : (
                 <p>Loading your cat…</p>
               )}
@@ -739,7 +741,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
-              <HelpTab />
+              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }]} />
             </div>
           </div>
         </div>

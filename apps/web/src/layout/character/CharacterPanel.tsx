@@ -19,17 +19,22 @@ export interface CharacterPanelProps {
   state: ServerStateV2;
   compact?: boolean;
   onSelectSlot?: (slot: GearSlotId) => void;
+  onChangeClass?: () => void;
+  classBusy?: boolean;
 }
 
 const MS_PER_SECOND = 1000;
 
 /** Derived stats and power of the cat with its equipped gear, from the shared rules. */
-function deriveFor(state: ServerStateV2, classId: v2.ClassId) {
+export function deriveFor(state: ServerStateV2, classId: v2.ClassId) {
   const worn = state.inventory
     .filter((i) => i.equipped)
     .map((i) => ({ itemId: i.itemKey, level: i.level, bonusLines: i.bonus }));
   const stats = v2.deriveStats({ classId, level: state.cat.level }, worn);
-  return { stats, power: Math.round(v2.powerRating(stats)) };
+  const level = Math.round(v2.powerRating(v2.deriveStats({ classId, level: state.cat.level }, [])));
+  const withoutBonus = Math.round(v2.powerRating(v2.deriveStats({ classId, level: state.cat.level }, worn.map(item => ({ ...item, bonusLines: [] })))));
+  const power = Math.round(v2.powerRating(stats));
+  return { stats, power, level, gear: withoutBonus - level, bonus: power - withoutBonus };
 }
 
 function statRows(stats: v2.CatStats): [string, string][] {
@@ -101,7 +106,7 @@ function SlotButton({
       title={`${label}: ${itemName(item.itemKey)}`}
       onClick={() => onSelectSlot?.(slot.id)}
       style={{
-        borderColor: `var(--rarity-${item.rarity}, #b9b6c9)`,
+        borderColor: `var(--rarity-${item.rarity}, var(--muted))`,
       }}
     >
       <ItemIcon item={item} size={2} />
@@ -120,7 +125,7 @@ function SlotCell({
 }) {
   const label = SLOT_LABEL[slot.id];
   return (
-    <div className="slot-cell">
+    <div className="slot-cell" data-slot={slot.id}>
       <SlotButton slot={slot} state={state} onSelectSlot={onSelectSlot} />
       <span className="slot-name" aria-hidden="true">
         {label}
@@ -129,7 +134,7 @@ function SlotCell({
   );
 }
 
-export function CharacterPanel({ state, compact, onSelectSlot }: CharacterPanelProps) {
+export function CharacterPanel({ state, compact, onSelectSlot, onChangeClass, classBusy }: CharacterPanelProps) {
   const { cat } = state;
   const cls = v2.CLASSES.find((c) => c.id === cat.classId) ?? null;
   const derived = cls ? deriveFor(state, cls.id) : null;
@@ -164,64 +169,33 @@ export function CharacterPanel({ state, compact, onSelectSlot }: CharacterPanelP
   }
 
   return (
-    <section aria-label="Character" className="v2-character pixel-card">
+    <section aria-label="Character" className="v2-character hero-sheet">
       <ActionNotice />
-      <div className="v2-character-head">
-        <div className="cat-portrait-wrap">
-          <CatPortrait size={64} />
-        </div>
-        <div className="character-title">
-          <div className="v2-character-name">Mochi the cat</div>
-          <p className="character-meta">
-            <span>{cls ? cls.name : 'No class yet'}</span>
-            {cls ? ' · ' : ''}
-            {cls && <span>Lv {cat.level}</span>}
-          </p>
-          <div className="xp">
-            <div
-              className="xp-bar"
-              role="progressbar"
-              aria-label="Experience"
-              aria-valuemin={0}
-              aria-valuemax={xpMax}
-              aria-valuenow={cat.xp}
-              aria-valuetext={`${cat.xp} of ${xpMax} XP`}
-            >
-              <span className="xp-fill" style={{ width: `${xpPct}%` }} />
-            </div>
-            <p className="xp-text">
-              {cat.xp} / {xpMax} XP
-            </p>
-          </div>
-        </div>
+      <div className="hero-paper-doll" role="group" aria-label="Gear slots">
+        <div className="hero-cat"><CatPortrait size={160} /><span>Mochi the cat</span></div>
+        {v2.GEAR_SLOTS.map(slot => <SlotCell key={slot.id} slot={slot} state={state} onSelectSlot={onSelectSlot} />)}
       </div>
-
-      <div className="slot-grid" role="group" aria-label="Gear slots">
-        {v2.GEAR_SLOTS.map((slot) => (
-          <SlotCell key={slot.id} slot={slot} state={state} onSelectSlot={onSelectSlot} />
-        ))}
-        <div className="slot-cell slot-cell-empty" aria-hidden="true">
-          <div className="slot-btn empty placeholder" />
-          <span className="slot-name">—</span>
-        </div>
+      <div className="hero-stat-card pixel-card">
+        <div className="v2-character-name">Mochi the cat</div>
+        <p className="character-meta"><span>{cls ? cls.name : 'No class yet'}</span>{cls && <> · <span>Lv {cat.level}</span></>}</p>
+        {derived ? <dl className="stats">
+          {statRows(derived.stats).map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}
+        </dl> : <p className="stats-hint">Choose a class to see stats.</p>}
       </div>
-
-      {derived ? (
-        <dl className="stats">
-          <div className="power">
-            <dt>Power</dt>
-            <dd data-testid="character-power">{derived.power}</dd>
-          </div>
-          {statRows(derived.stats).map(([term, value]) => (
-            <div key={term}>
-              <dt>{term}</dt>
-              <dd>{value}</dd>
-            </div>
-          ))}
-        </dl>
-      ) : (
-        <p className="stats-hint">Choose a class to see stats.</p>
-      )}
+      <div className="hero-progress pixel-card">
+        <h3>Power</h3>
+        {derived && <><div className="hero-power" data-testid="character-power">{derived.power}</div>
+          <dl className="hero-breakdown" aria-label="Power breakdown">
+            <div><dt>Gear</dt><dd data-testid="power-gear">{derived.gear}</dd></div>
+            <div><dt>Level</dt><dd data-testid="power-level">{derived.level}</dd></div>
+            <div><dt>Bonuses</dt><dd data-testid="power-bonus">{derived.bonus}</dd></div>
+          </dl><p className="hero-power-note">Level includes base class stats. Gear adds item stats; bonuses add rolled lines.</p></>}
+        <h3>Progress</h3>
+        <div className="xp"><div className="xp-bar" role="progressbar" aria-label="Experience" aria-valuemin={0} aria-valuemax={xpMax}
+          aria-valuenow={cat.xp} aria-valuetext={`${cat.xp} of ${xpMax} XP`}><span className="xp-fill" style={{ width: `${xpPct}%` }} /></div>
+          <p className="xp-text">{cat.xp} / {xpMax} XP</p></div>
+        {onChangeClass && <button type="button" className="pixel-btn--secondary" onClick={onChangeClass} disabled={classBusy}>Change class</button>}
+      </div>
     </section>
   );
 }

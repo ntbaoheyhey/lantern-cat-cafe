@@ -1,0 +1,15 @@
+$ env CI=true pnpm exec vitest run src/game/stage/StageScene.test.ts src/game/stage/StageCanvas.test.tsx src/layout/metrics.test.ts
+cwd: /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m1-before-ready/apps/web
+started: 2026-11-01T08:04:28.372460+00:00
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-fxrb/taskbar-hero/.fxrb-scratch/m1-before-ready/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  22 passed (22)
+   Start at  15:04:28
+   Duration  771ms (environment 71%, tests 11%, import 9%, transform 8%, worker 1%)
+
+
+exit_code: 0
+elapsed_seconds: 1.16

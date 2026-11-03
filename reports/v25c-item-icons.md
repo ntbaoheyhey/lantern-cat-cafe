@@ -75,12 +75,12 @@ Each of the 24 icons and what it shows:
 | `acc.fishhook` | Earring (Fishhook) | 11 × 11 px | Polished golden fishing hook with top hanging eyelet, straight shank, curved bend, and sharp barbed tip. |
 | `acc.feather` | Earring (Feather) | 11 × 11 px | Dangling turquoise and emerald avian feather earring with delicate central quill line on a gold loop. |
 | `acc.pearl` | Earring (Pearl) | 11 × 11 px | Radiant iridescent spherical pearl stud with white glint and lilac-violet glow mounted in four gold prongs. |
-| `acc.paw` | Ring (Paw) | 12 × 11 px | Polished gold ring band crowned with a three-toed pink cat paw print signet. |
-| `acc.hunter` | Ring (Hunter) | 11 × 11 px | Rugged bronze ring band mounting a curved, sharp ivory predatory beast fang set in a ruby socket. |
-| `acc.lucky` | Ring (Lucky) | 11 × 11 px | Gleaming gold ring band set with a vibrant emerald four-leaf clover shamrock signet. |
+| `acc.paw` | Ring (Paw) | 12 × 11 px | Polished golden band crowned with a three-toed pink cat paw print signet. |
+| `acc.hunter` | Ring (Hunter) | 11 × 11 px | Rugged bronze band mounting a curved, sharp ivory predatory beast fang set in a ruby socket. |
+| `acc.lucky` | Ring (Lucky) | 11 × 11 px | Gleaming golden band set with a vibrant emerald four-leaf clover shamrock signet. |
 | `acc.catnip` | Charm (Catnip) | 11 × 11 px | Sprig of aromatic green catnip leaves tied with twine on a charm loop, accented by scent sparkles. |
 | `acc.mouse` | Charm (Mouse) | 11 × 11 px | Miniature grey plush toy mouse charm with pink inner ears, whiskers, pointed pink nose, and curled string tail. |
-| `acc.star` | Charm (Star) | 11 × 11 px | Radiant celestial five-pointed golden star charm suspended from a gold ring, centered with a cyan glint. |
+| `acc.star` | Charm (Star) | 11 × 11 px | Radiant celestial five-pointed golden star charm suspended from a golden loop, centered with a cyan glint. |
 
 ---
 

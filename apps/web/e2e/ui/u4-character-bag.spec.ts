@@ -60,6 +60,7 @@ async function openInventory(page: Page, _width: number): Promise<void> {
 
 const CHECK_VIEWPORTS = [
   { name: '1280x720', width: 1280, height: 720 },
+  { name: '1600x900', width: 1600, height: 900 },
   { name: '390x844', width: 390, height: 844 },
 ];
 
@@ -79,7 +80,7 @@ for (const vp of CHECK_VIEWPORTS) {
 
     // (a) every gear slot is >= 44x44 on the phone
     if (vp.width <= 600) {
-      const slotButtons = character.getByRole('button');
+      const slotButtons = character.getByRole('group', { name: 'Gear slots' }).getByRole('button');
       const slotCount = await slotButtons.count();
       expect(slotCount).toBe(9);
       for (let i = 0; i < slotCount; i++) {
@@ -219,7 +220,7 @@ test('capture screenshots', async ({ page }) => {
     }
     await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
     if (vp.w > 600) {
-      await expect(page.getByRole('tabpanel', { name: 'Hero', exact: true }).or(page.getByRole('tabpanel', { name: 'Character', exact: true }))).toBeVisible();
+      await expect(page.getByRole('tabpanel', { name: 'Hero', exact: true })).toBeVisible();
     }
     const name = `${screenshotPrefix}-${vp.w}x${vp.h}${vp.dark ? '-dark' : ''}.png`;
     if (writeScreenshots) await page.screenshot({ path: path.join(reportsDir, name) });

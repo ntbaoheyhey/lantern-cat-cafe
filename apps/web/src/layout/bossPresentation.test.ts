@@ -53,3 +53,29 @@ it('a refused/failed request restores live display without inventing an outcome'
   expect(cancelled).toBe(INITIAL_BOSS_PRESENTATION);
   expect(bossPresentation(cancelled, resolved)).toBe(cancelled);
 });
+
+it('records history only on release, once; close preserves it, reset clears it', () => {
+  const replaying = bossPresentation(bossPresentation(INITIAL_BOSS_PRESENTATION, begin), resolved);
+  expect(replaying.history).toEqual([]);
+  const released = bossPresentation(replaying, { type: 'release' });
+  expect(released.history).toEqual([{ chapter: 1, won: resolved.result.won, firstClear: true,
+    durationMs: resolved.result.timeline.at(-1)!.t }]);
+  expect(bossPresentation(released, { type: 'release' }).history).toHaveLength(1);
+  const closed = bossPresentation(released, { type: 'close' });
+  expect(closed.history).toBe(released.history);
+  expect(bossPresentation(closed, { type: 'reset' })).toBe(INITIAL_BOSS_PRESENTATION);
+  const failed = bossPresentation(bossPresentation(closed, begin), { type: 'close' });
+  expect(failed.history).toBe(released.history);
+});
+
+it('records immediate outcomes and bounds session history to 30 newest results', () => {
+  let state = INITIAL_BOSS_PRESENTATION;
+  for (let i = 1; i <= 32; i++) {
+    state = bossPresentation(state, { ...begin, chapter: i });
+    state = bossPresentation(state, { ...resolved, immediate: true });
+    state = bossPresentation(state, { type: 'close' });
+  }
+  expect(state.history).toHaveLength(30);
+  expect(state.history[0]?.chapter).toBe(32);
+  expect(state.history.at(-1)?.chapter).toBe(3);
+});
