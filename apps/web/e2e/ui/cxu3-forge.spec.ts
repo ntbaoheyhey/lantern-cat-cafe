@@ -53,8 +53,8 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
         expect(measured.ratio, `${quality}: ${JSON.stringify(measured)}`).toBeGreaterThanOrEqual(4.5);
         // Read the original SVG fill as well: improving text must not recolour existing art.
         if (quality === 'rare' || quality === 'epic') {
-          const fill = await option.locator('svg rect').evaluateAll((rects, rarity) => {
-            const colored = rects.find(rect => rect.getAttribute('fill')?.includes(`--rarity-${rarity},`));
+          const fill = await option.locator('svg[data-frame] path').evaluateAll((paths, rarity) => {
+            const colored = paths.find(path => path.getAttribute('style')?.includes(`--rarity-${rarity},`));
             return colored ? getComputedStyle(colored).fill : null;
           }, quality);
           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
