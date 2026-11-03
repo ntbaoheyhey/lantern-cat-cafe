@@ -28,7 +28,7 @@ env['CXR2_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['ART2_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['ORIGINAL_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['MOTION_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
-env['PREVIEWS_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
+env['PREVIEWS_SCREENSHOTS'] = str(Path(env['CXU3_SCREENSHOTS']) / 'feature-samples')
 env['FIRSTPLAY_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['NODE_OPTIONS'] = env.get('NODE_OPTIONS', '') + ' --import=/Users/bao/taskbar-hero-ui-ledger/reports/ui/ports-aux-loader.mjs'
 pnpm = ['npx', '-y', 'pnpm@10.28.0']

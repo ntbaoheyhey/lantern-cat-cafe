@@ -30,3 +30,9 @@
 - Nov4 PREVIEWS949cc44 acceptedA95/B95fresh:126changed/size/reviewer,384full/sizeONCE,20/20resizeeach,18strict/28axe eachzero confirmed violations; nativeSample/Unavailablecapturesretainedseparately. Branchpushedonce;draftPR264openedagainstMOTION. FIRSTPLAYB8c15199FAILED161/162pixelbaselineLanding1600;actualPNG/fontsretained,gradeblocked;Afullrunningunchanged. Diagnosebeforeanynewgate.
 
 - Nov4 FIRSTPLAYpixelmismatchreproduced1/30freshcontextsunchanged8c15199,stable4shots/160ms;soadditionalpaintwaitisnotfix. Titlewidthbad275.46875vsgood275.359375;bothfontsloaded. Fontidentity/networkdiagnosticPID(see logs/flag-font-diagnostic/launch.json)5380running;Bgrade0andactualretained. Aoriginalfull1600running;donotmutateheaduntilfinished.
+
+- Nov4 ROOTCAUSEconfirmed:GoogleFontsendpointoccasionallyreturnsstatic/l/font?kit=fonts (CSSSHA7d26...)insteadbaselinevariableWOFF2(CSSed64...). FontSHAandCDPPostScriptdiffer,badtitle275.46875. Reproduced1/60evenafterforcedfontloadandextraframes. WillpinexistingversionedWOFF2sourcesinflag-offTESTfixtureonly;nofontbinaries,productionCSS,baselineorthresholdchange. Aoriginalfullrunningbeforefreeze.
+
+- Nov4 continuation: original FIRSTPLAYA8c15199 finished all16checksPASS including full388/size,resize20/20,strict/axe; Bfailure retained. No test process from prior run remains. Pinnedfontdiagnostic40/40contexts exact. Implemented SHA256-verified versioned font fixture only in FIRSTPLAY; unchanged productCSS/baselines/equality. Builder91625ports5340–5343: typecheckPASS,pixelrepeats30running. Freeze correctedhead and freshA/B next; no merge underhold.
+
+- CorrectedFIRSTPLAY frozen7d0d08e48e87c7f758cd8b2a959fb5153c3c9470: builder30/30baselinecontextsPASS (bothsizes,2screens/context),typecheckPASS. FreshA92247ports5340–5344fullONCE;cleanB92249ports5350–5354 tests-first. Exact equality/PNG/productCSS unchanged; SHA256verified fontresponses. No push/merge yet.
