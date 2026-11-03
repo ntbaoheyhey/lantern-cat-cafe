@@ -1,8 +1,8 @@
-# SYSTEM ACTIVE — 2026-11-03T19:24:11.790020+07:00
+# SYSTEM ACTIVE — 2026-11-03T19:40:49.339903+07:00
 
 User restriction 2026-11-03T17:02:02.295020+07:00: screen/browser UI control stopped; background-only work remains authorized. Core/Chrome public address was supplied and read-only Fuji balance is approximately0.575testAVAX at block60447415. The account is also the deployed RelicNFT owner; it is not established as an isolated throwaway account. No key, connection, signature or transaction was performed. Buyer account and the actual funded journey remain unverified.
 
-Latest checkpoint: 2026-11-03T19:24:11.790020+07:00 — main1a1b499/PR244 unchanged. UI reports fresh A96 for CXR2 candidate6ef93c0:2531core,368full cases at each size,438changed repeats and20resize checks; clean tests-first B is running. There is no corrective PR/merge/live release yet. No SYSTEM processes, system listeners, merge lock, new wallet hashes or data requests. Screen control remains stopped; no duplicate tests started.
+Latest checkpoint: 2026-11-03T19:40:49.339903+07:00 — main1a1b499/PR244 unchanged. UI opened draft PR261 at6ef93c0 with reported fresh A96/B96; API confirms open,draft,mergeable. Release refresh is UI-owned. A prior UI merge.lock has dead owner54443 but its file is younger than90minutes; it was retained under the shared protocol. No corrective merge/live acceptance, new user wallet receipts, SYSTEM process or system listener. Screen control remains stopped; no duplicate tests/merge started.
 
 Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delivery. Explicit resume is active and the existing same-chat checkpoint is now every15minutes. Repository remains private; no Actions run or submission.
 
@@ -15,7 +15,7 @@ Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delive
 |T011/T012|255|96/96|a903fb6|default-OFF shared original economy|
 |ORIG2+ART/T013 (art now UI owned)|256|96/96|2bc98cd|local opt-in/reset smoke PASS|
 |CXR1 (UI owned)|245|94/94|6144d42|historically accepted|
-|CXR2 (UI owned)|257 historical draft;UI successor active|A96 reported;B pending|unmerged|UI verification in progress|
+|CXR2 (UI owned)|261 draft;257 historical|96/96 reported on6ef93c0|unmerged|release waiting shared lock;live fix pending|
 |CXQ1|pending|pending|PARTIAL:segmented9stage rehearsal PASS at both sizes|36.070/36.292s;returning route fails;funded proof absent|
 |CXS1|258|97/97|5e35c7a|current main core/assets/health/phased smoke PASS|
 |CXS2|260|96/96 on a571066|1a1b499|post-main/live acceptance PASS;DRAFT only|

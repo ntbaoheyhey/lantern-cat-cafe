@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T19:24:11.790020+07:00. Background-only checkpoint; UI reports A96/B running, no release; wallet receipts pending.
+Updated: 2026-11-03T19:40:49.339903+07:00. Background-only checkpoint; UI PR261 draft A96/B96, release pending shared lock.
 USER OVERRIDE: no screen/browser UI control until user explicitly resumes it; no CUA/native clicks/typing.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
@@ -17,9 +17,10 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 
 Fetched origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; repo PRIVATE; merge260 confirmed API; Actions0.
 UI CXU3 #259/8daa8e1 LIVE ACCEPTED35assets; CXC2 adoption666088c; readiness08:30:50Z permits CXQ1.
-UI CXR2 candidate6ef93c0 on1a1b499: UI reports fresh A96 PASS,2531core,368full EACHsize,438changed,resize20/20.
-UI fresh B tests-first reported PID48052 in own verify-cxr2-b,ports5320–5323; FOREIGN, untouched; no PR/merge.
-Not merged/released; SYS-UI-007 remains OPEN live. No owned PID/system port/merge lock observed.
+UI CXR2 PR261 draft6ef93c0 on1a1b499: reported fresh A96/B96;2531core,368full EACHsize,438changed,resize20/20.
+UI release refresh58195 on5360–5363 reported; FOREIGN, untouched. PR261 API confirms OPEN draft/mergeable.
+Not merged/released; SYS-UI-007 remains OPEN live. No owned PID/system listener.
+Foreign UI merge.lock owner54443 dead; file12:28:54Z, younger90min. Retained per protocol; UI handles release.
 Source PR heads:255=2f7c0b3,256=792b475,258=97a1595,259=6cf5674,260=a571066; all merged.
 244 OPEN draft db0f9d6/9c457a3; historical257 OPEN draft c49421f/6144d42; do not touch UI PRs.
 
@@ -70,5 +71,5 @@ No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME
 public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
 Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
-Next3: read UI board for007 corrective release; fresh-current recheck returning path/rehearsal; funded proof/final regression.
+Next3: read UI board for007 release; refresh read-only main/live evidence respecting UI-control stop; verify user receipts/regression.
 Unblocked SYSTEM docs/data/evidence done for now; P2 remains gated. Reminder ACTIVE15min; not user-paused.
