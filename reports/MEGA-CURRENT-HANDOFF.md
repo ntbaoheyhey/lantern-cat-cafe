@@ -25,7 +25,7 @@ Board: UI adopted CXC2; CXU3 9628310 fresh A3 active, art/rarity repairs; NOT me
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
 |CXS1 | #258 merged 5e35c7a under lock; A97/B97; post-main/read-only PASS; live UI phase deferred |
-|CXS2 | own ai/codex-sys-cxs2-submission d4bf52e atop5e35c7a; fresh A active;9slides/145s/7baseline captures |
+|CXS2 | own ai/codex-sys-cxs2-submission 69a83d2 atop5e35c7a; final A active;9slides/145s/7baseline captures |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
 |UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
@@ -65,6 +65,7 @@ real funds/mainnet,repo publicity,contest submission,.github changes,Actions,dir
 244 CLI failed UnsafeFunctionDownloadPathError; partial files are NOT backup; exact owner recovery step remains.
 No broad pkill; kill only owned PIDs after cwd check; PID reuse observed. Leave unrelated18457/OS listeners.
 Fresh self-grades>=92 both, C1>=23,C2=20,C6=5,C7>=8,each>=60%,zeroauto-fails; no weakened tests/retries.
-CXS2 A PID82761 /private/tmp/tbh-cxs2-active; CXS2-FRESH/grade-a/run.json;5200–5203.
+CXS2 preflight82761 allPASS; final captions/text cleanup 69a83d2 A PID86208;5200–5203.
+Config CXS2-FRESH/grade-a-final/run.json; source /private/tmp/tbh-cxs2-active.
 Catalog capture ambiguity SYS-UI-006 sent to UI; packet uses Hero instead; no UI/art source edits.
 Next3: finish CXS2 A/B gate; shared-lock publication; recheck UI readiness before CXQ1/regression.
