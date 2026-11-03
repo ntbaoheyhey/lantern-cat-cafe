@@ -194,3 +194,6 @@
 
 /* Fish can reach the representable maximum; keep its two lines inside the HUD chip. */
 @media (min-width: 961px) { .hud-gold .motion-number { inline-size: 11ch; } }
+
+/* The live first-reward heading sits on a night card, including with no OS theme attribute. */
+:root .home-card--loot.v2-recent-loot .loot-summary-heading { color: var(--accent); }
