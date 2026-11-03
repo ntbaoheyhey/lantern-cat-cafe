@@ -1,0 +1,52 @@
+{
+  "card": "CXQ1",
+  "status": "PARTIAL_UI_AND_FUNDED_WALLET_PENDING",
+  "recordedAt": "2026-11-03T16:52:34.285606+07:00",
+  "sourceHead": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "sourceTree": "a56d4f002fcf9eccd0101043e02a95d01de80206",
+  "selfGradedScores": null,
+  "guestRehearsal": {
+    "status": "PASS_TWO_DISCLOSED_SEGMENTS",
+    "viewportResults": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "steps": 9,
+        "elapsedMs": 36070,
+        "unexpectedErrors": 0
+      },
+      {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "steps": 9,
+        "elapsedMs": 36292,
+        "unexpectedErrors": 0
+      }
+    ],
+    "preparationSeconds": 3342,
+    "preparationTicks": 105,
+    "preparedSourceHead": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+    "clockInjection": false,
+    "syntheticFixture": false,
+    "freshToBossInThreeMinutesClaim": false,
+    "guestWritesOnly": "Browser-local gameplay; no server writes",
+    "assetMatchesBefore": 35,
+    "assetMatchesAfter": 35,
+    "networkWrites": 0,
+    "walletTransactions": 0
+  },
+  "returningGuestRoute": "FAIL_SYS_UI_007_BOTH_VIEWPORTS",
+  "fundedWalletRun": "NOT_VERIFIED",
+  "controlsPassed": 55,
+  "remaining": [
+    "UI-owned returning guest route repair and fresh live checks",
+    "Funded throwaway Fuji mint/list/buy with actual receipts and UI evidence",
+    "Complete CXQ1 grading and final integrated regression"
+  ],
+  "unrelatedMainMergeAllowed": false,
+  "p2Allowed": false
+}

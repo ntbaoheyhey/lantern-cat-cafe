@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:49:38.988589+07:00. ACTIVE; original prep complete/timed setup failed; corrected R1 running.
+Updated: 2026-11-03T16:52:34.285606+07:00. ACTIVE; guest rehearsal PASS, UI007/funded proof pending; no owned processes.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
@@ -10,7 +10,7 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 |244 CXN3|db0f9d6 draft BLOCKED; deployed source/deps/import maps backup + tested restore absent|
 |CXS1|DONE #258/5e35c7a A97/B97; current main core/assets/health/phased smoke PASS|
 |CXS2|DONE #260/1a1b499; exact a571066 A96/B96; main/live acceptance PASS; DRAFT only|
-|CXQ1|PARTIAL SYS-UI-007; prep14008 EXITED; corrected rehearsal PID32912; funded proof pending|
+|CXQ1|PARTIAL:9stages eachsize PASS36.070/36.292s; explicit earned-save transition; UI007/wallet pending|
 |CXN4/CXN5|Conditional P2 default-OFF/versioned; not started; A–F not all green|
 |regression|Current main smoke green; final integrated regression after UI/CXQ1 pending|
 
@@ -24,7 +24,8 @@ Own durable ledger /Users/bao/taskbar-hero-system-ledger branch ai/codex-mega-le
 Own CXQ1 /Users/bao/taskbar-hero-system-cxq1 branch ai/codex-sys-cxq1 head8daa8e1.
 Owned prep14008/14010 EXITED;105ticks,3342seconds,382power/249recommended,craft ready.
 Original timed entry DEMO_FAIL (classed save auto-opens Home); failure retained in resume-natural/data/result.json.
-Corrected timed R1 PID32912,cwd /Users/bao/taskbar-hero-system-main-cxs2,head1a1b499;no listener ports.
+Corrected timed R1 PID32912 EXITED PASS,cwd /Users/bao/taskbar-hero-system-main-cxs2,head1a1b499.
+No owned running PIDs or system listener ports. No duplicate tests; next action depends on UI/funded evidence.
 Own CXS2 /Users/bao/taskbar-hero-system-cxs2 branch ai/codex-sys-cxs2-submission heada571066.
 Clean B /Users/bao/taskbar-hero-system-cxs2-b a571066; main /Users/bao/taskbar-hero-system-main-cxs2 1a1b499.
 Post-main23398 EXITED successfully;5200–5299 free. Finished A9336/B15353 not active.
@@ -38,7 +39,7 @@ DRAFT pack:9slides,145s planned VN narration/EN subtitles,7hashed historical6144
 No contest submission,visibility change,video upload or funded-wallet proof.
 CXQ1: actual UI/clock earns guest progress; original script bounded90min. Prepared save disclosed, never synthetic.
 Guest-checkpoint.mjs rejects credentials/vouchers;6 controls PASS; checkpoint JSON mode0600 stays unstaged.
-Preparation head8daa8e1; CXS2 docs-only1a1b499 has same deployed assets. Revalidate before final current-main claim.
+Preparation head8daa8e1; timed R1 on1a1b499 revalidated35assets before/after. Refresh identity if main changes.
 Official faucet requires wallet+Builder Hub login; no SYSTEM wallet/key/signature/funding/tx created.
 Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key;244 blocks nothing unrelated.
 
@@ -53,9 +54,9 @@ Stale foreign lock only owner older90min AND PID dead; inside lock fetch/integra
 Append atomic board milestone line; release only own lock. Unrelated main merges HELD for SYS-UI-007.
 UI corrective release needs reproducer/full gates, then live confirmation; no SYSTEM UI edit.
 Receipt-only helper:37controls PASS; prepared-progress12+credential6=55total controls PASS; no funded proof.
-New timed-earned-demo.mjs separates fresh onboarding and unchanged earned save; live R1 now running.
+Timed R1 PASS9stages EACH1280/1600,zeroerrors/writes/tx,35assets before/after MATCH; source1a1b499.
 Requires completed original preparation receipt/hash; preserves failure and cannot clear SYS-UI-007.
-Old timed harness incorrectly expects onboarding from classed save; correct with explicit two-segment disclosure.
+Old timed harness preserved; corrected timed-earned-demo.mjs uses explicit fresh/earned segments.
 
 Safety: ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 Preserve STOP;no subagents/helpers/new chats/schedulers except existing15min heartbeat;no orchestrator.py.
@@ -63,4 +64,5 @@ No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME
 public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
 Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
-Next3: inspect corrected R1 result and asset identity; retain/report failures; await UI007/funded prerequisites.
+Next3: read UI board for007 corrective release; fresh-current recheck returning path/rehearsal; funded proof/final regression.
+Unblocked SYSTEM docs/data/evidence done for now; P2 remains gated. Reminder ACTIVE15min; not user-paused.

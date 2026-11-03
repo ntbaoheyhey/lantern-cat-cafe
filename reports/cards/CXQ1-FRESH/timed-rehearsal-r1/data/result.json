@@ -1,0 +1,395 @@
+{
+  "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "source": {
+    "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+    "tree": "a56d4f002fcf9eccd0101043e02a95d01de80206",
+    "role": "Clean exact-main checkout; production bytes match an in-memory build of this head"
+  },
+  "startedAt": "2026-11-03T09:49:42.953Z",
+  "status": "TWO_SEGMENT_GUEST_REHEARSAL_PASS_UI_AND_WALLET_PENDING",
+  "clockInjection": false,
+  "syntheticFixture": false,
+  "preparedSave": "Exact UI-earned guest snapshot; explicit transition after genuine fresh onboarding, not uninterrupted fresh-to-boss progression",
+  "knownUiGate": "SYS-UI-007 returning guest blank route remains open; this rehearsal cannot clear it",
+  "networkWrites": 0,
+  "transactionsPerformed": 0,
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "steps": [
+        {
+          "name": "landing",
+          "startedAt": "2026-11-03T09:49:42.991Z",
+          "elapsedStartMs": 0,
+          "status": "PASS",
+          "detail": {
+            "scope": "Fresh guest landing on verified live deployment; earned-save transition occurs only after class confirmation."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 1251
+        },
+        {
+          "name": "guest",
+          "startedAt": "2026-11-03T09:49:44.243Z",
+          "elapsedStartMs": 1252,
+          "status": "PASS",
+          "detail": {
+            "scope": "Actual Play as guest action in a fresh context; no prepared progress loaded yet."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 1383
+        },
+        {
+          "name": "class",
+          "startedAt": "2026-11-03T09:49:44.374Z",
+          "elapsedStartMs": 1383,
+          "status": "PASS",
+          "detail": {
+            "scope": "Actual class confirmation; no hidden state injection."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 1934
+        },
+        {
+          "name": "idle-loop",
+          "startedAt": "2026-11-03T09:49:44.925Z",
+          "elapsedStartMs": 1934,
+          "status": "PASS",
+          "detail": {
+            "fishBefore": 5026,
+            "fishAfter": 5446,
+            "scope": "Real wall-clock auto claim; no fake clock."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 32805
+        },
+        {
+          "name": "boss",
+          "startedAt": "2026-11-03T09:50:15.796Z",
+          "elapsedStartMs": 32805,
+          "status": "PASS",
+          "detail": {
+            "before": {
+              "recommended": 249,
+              "power": 382,
+              "fightEnabled": true,
+              "reason": null
+            },
+            "scope": "Real guest fight, actual victory and first-clear collection; Skip accelerates replay only."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 33491
+        },
+        {
+          "name": "forge",
+          "startedAt": "2026-11-03T09:50:16.482Z",
+          "elapsedStartMs": 33491,
+          "status": "PASS",
+          "detail": {
+            "fishBefore": 9946,
+            "fishAfter": 9896,
+            "scope": "Actual affordable guest craft and payment through UI."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 34160
+        },
+        {
+          "name": "bag",
+          "startedAt": "2026-11-03T09:50:17.151Z",
+          "elapsedStartMs": 34160,
+          "status": "PASS",
+          "detail": {
+            "scope": "Earned and crafted guest items; real detail/actions."
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 34386
+        },
+        {
+          "name": "on-chain-proof",
+          "startedAt": "2026-11-03T09:50:17.378Z",
+          "elapsedStartMs": 34387,
+          "status": "PASS",
+          "detail": {
+            "scope": "Real read-only Fuji43113 code/linkage/recent events; no wallet transaction.",
+            "snapshot": "Snapshot at block 60447021 · checked 2026-11-03T09:50:17.548Z"
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 35936
+        },
+        {
+          "name": "market",
+          "startedAt": "2026-11-03T09:50:18.928Z",
+          "elapsedStartMs": 35937,
+          "status": "PASS",
+          "detail": {
+            "scope": "Correct guest wallet requirement; mint/list/buy is a separate still-unverified funded scenario.",
+            "walletConnected": false
+          },
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "scrollWidth": 1280,
+            "scrollHeight": 720
+          },
+          "elapsedEndMs": 36069
+        }
+      ],
+      "errors": [],
+      "startedAt": "2026-11-03T09:49:42.991Z",
+      "status": "PASS",
+      "preparedSaveSha256": "95b70cb0b5a07d7390be13c8d2762afb201a14dcf1b58c7cd5fbadf06a11b404",
+      "preparedProgressTransition": {
+        "after": "class",
+        "before": "idle-loop",
+        "elapsedMs": 2644,
+        "sha256": "95b70cb0b5a07d7390be13c8d2762afb201a14dcf1b58c7cd5fbadf06a11b404",
+        "sourceHead": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+        "earnedPreparationSeconds": 3342,
+        "disclosure": "Explicit switch from fresh onboarding to unmodified, separately earned guest progress. No fresh-to-boss-in-three-minutes claim."
+      },
+      "elapsedMs": 36070
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "steps": [
+        {
+          "name": "landing",
+          "startedAt": "2026-11-03T09:50:19.109Z",
+          "elapsedStartMs": 0,
+          "status": "PASS",
+          "detail": {
+            "scope": "Fresh guest landing on verified live deployment; earned-save transition occurs only after class confirmation."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 1100
+        },
+        {
+          "name": "guest",
+          "startedAt": "2026-11-03T09:50:20.209Z",
+          "elapsedStartMs": 1100,
+          "status": "PASS",
+          "detail": {
+            "scope": "Actual Play as guest action in a fresh context; no prepared progress loaded yet."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 1233
+        },
+        {
+          "name": "class",
+          "startedAt": "2026-11-03T09:50:20.343Z",
+          "elapsedStartMs": 1234,
+          "status": "PASS",
+          "detail": {
+            "scope": "Actual class confirmation; no hidden state injection."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 1853
+        },
+        {
+          "name": "idle-loop",
+          "startedAt": "2026-11-03T09:50:20.962Z",
+          "elapsedStartMs": 1853,
+          "status": "PASS",
+          "detail": {
+            "fishBefore": 5026,
+            "fishAfter": 5591,
+            "scope": "Real wall-clock auto claim; no fake clock."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 32912
+        },
+        {
+          "name": "boss",
+          "startedAt": "2026-11-03T09:50:52.022Z",
+          "elapsedStartMs": 32913,
+          "status": "PASS",
+          "detail": {
+            "before": {
+              "recommended": 249,
+              "power": 382,
+              "fightEnabled": true,
+              "reason": null
+            },
+            "scope": "Real guest fight, actual victory and first-clear collection; Skip accelerates replay only."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 33628
+        },
+        {
+          "name": "forge",
+          "startedAt": "2026-11-03T09:50:52.738Z",
+          "elapsedStartMs": 33629,
+          "status": "PASS",
+          "detail": {
+            "fishBefore": 10091,
+            "fishAfter": 10041,
+            "scope": "Actual affordable guest craft and payment through UI."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 34363
+        },
+        {
+          "name": "bag",
+          "startedAt": "2026-11-03T09:50:53.472Z",
+          "elapsedStartMs": 34363,
+          "status": "PASS",
+          "detail": {
+            "scope": "Earned and crafted guest items; real detail/actions."
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 34608
+        },
+        {
+          "name": "on-chain-proof",
+          "startedAt": "2026-11-03T09:50:53.717Z",
+          "elapsedStartMs": 34608,
+          "status": "PASS",
+          "detail": {
+            "scope": "Real read-only Fuji43113 code/linkage/recent events; no wallet transaction.",
+            "snapshot": "Snapshot at block 60447048 · checked 2026-11-03T09:50:53.882Z"
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 36161
+        },
+        {
+          "name": "market",
+          "startedAt": "2026-11-03T09:50:55.270Z",
+          "elapsedStartMs": 36161,
+          "status": "PASS",
+          "detail": {
+            "scope": "Correct guest wallet requirement; mint/list/buy is a separate still-unverified funded scenario.",
+            "walletConnected": false
+          },
+          "layout": {
+            "width": 1600,
+            "height": 900,
+            "scrollWidth": 1600,
+            "scrollHeight": 900
+          },
+          "elapsedEndMs": 36292
+        }
+      ],
+      "errors": [],
+      "startedAt": "2026-11-03T09:50:19.108Z",
+      "status": "PASS",
+      "preparedSaveSha256": "95b70cb0b5a07d7390be13c8d2762afb201a14dcf1b58c7cd5fbadf06a11b404",
+      "preparedProgressTransition": {
+        "after": "class",
+        "before": "idle-loop",
+        "elapsedMs": 2655,
+        "sha256": "95b70cb0b5a07d7390be13c8d2762afb201a14dcf1b58c7cd5fbadf06a11b404",
+        "sourceHead": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+        "earnedPreparationSeconds": 3342,
+        "disclosure": "Explicit switch from fresh onboarding to unmodified, separately earned guest progress. No fresh-to-boss-in-three-minutes claim."
+      },
+      "elapsedMs": 36292
+    }
+  ],
+  "earnedSaveSha256": "95b70cb0b5a07d7390be13c8d2762afb201a14dcf1b58c7cd5fbadf06a11b404",
+  "preparation": {
+    "head": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+    "seconds": 3342,
+    "ticks": 105,
+    "readiness": {
+      "tick": 104,
+      "at": "2026-11-03T09:48:40.609Z",
+      "elapsedSeconds": 3342,
+      "equipped": false,
+      "recommended": 249,
+      "power": 382,
+      "fightEnabled": true,
+      "reason": null,
+      "commonCraftReady": true,
+      "craft": null
+    }
+  },
+  "fundedWalletStatus": "NOT_VERIFIED",
+  "fullCxq1Accepted": false,
+  "endedAt": "2026-11-03T09:50:55.404Z"
+}

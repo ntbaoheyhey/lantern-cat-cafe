@@ -1,7 +1,7 @@
 {
   "card": "SYSTEM-REGRESSION",
   "status": "PARTIAL",
-  "recordedAt": "2026-11-03T16:47:11.967378+07:00",
+  "recordedAt": "2026-11-03T16:52:34.285606+07:00",
   "sourceHead": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
   "selfGradedScores": null,
   "reusedExactHeadEvidence": "../CXS2-FRESH/acceptance.json",
@@ -13,7 +13,7 @@
     "phasedGuestStepsPerViewport": 16,
     "returningGuest1280": "FAIL_SYS_UI_007",
     "returningGuest1600": "FAIL_SYS_UI_007",
-    "timedEarnedDemo": "PENDING",
+    "timedEarnedDemo": "TWO_SEGMENT_REHEARSAL_PASS_36.070s_36.292s",
     "fundedFujiMintListBuy": "NOT_VERIFIED",
     "uiCxr2Integration": "PENDING"
   },
@@ -23,5 +23,6 @@
     "Two inherited expected failures and eleven skips disclosed",
     "No backend source identity/backup certification; #244 remains blocked",
     "No wallet transaction, backend write, submission, production setting change or P2 activation"
-  ]
+  ],
+  "timedRehearsalReceipt": "../CXQ1-FRESH/acceptance-partial.json"
 }

@@ -1,4 +1,4 @@
-# SYSTEM ACTIVE — 2026-11-03T16:34:26.497366+07:00
+# SYSTEM ACTIVE — 2026-11-03T16:53:21.284724+07:00
 
 Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delivery. Explicit resume is active and the existing same-chat checkpoint is now every15minutes. Repository remains private; no Actions run or submission.
 
@@ -12,7 +12,7 @@ Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delive
 |ORIG2+ART/T013 (art now UI owned)|256|96/96|2bc98cd|local opt-in/reset smoke PASS|
 |CXR1 (UI owned)|245|94/94|6144d42|historically accepted|
 |CXR2 (UI owned)|257 historical draft;UI successor active|pending|unmerged|UI builder in progress|
-|CXQ1|pending|pending|SYS-UI-007 confirmed;prep complete;corrected R1 active|returning guest blank route;timed/funded proof incomplete|
+|CXQ1|pending|pending|PARTIAL:segmented9stage rehearsal PASS at both sizes|36.070/36.292s;returning route fails;funded proof absent|
 |CXS1|258|97/97|5e35c7a|current main core/assets/health/phased smoke PASS|
 |CXS2|260|96/96 on a571066|1a1b499|post-main/live acceptance PASS;DRAFT only|
 |CXN3|244 draft|not passed|db0f9d6 BLOCKED|no backend deploy|
@@ -22,13 +22,15 @@ CXS2 post-main acceptance completed at09:21UTC:2,523 package cases plus5 script 
 
 CXS2 remains a9-slide DRAFT with a145-second planned VN narration/EN subtitle script and7hashed historical6144d42 screenshots. No video,upload,invitation,contest submission or funded-wallet success is claimed. Source was reviewed on a571066 in two separate passes; historical69a83d2 grades were not reused.
 
-CXQ1 runs only after UI board readiness08:30:50UTC for CXU3/CXC2. Real guest play earns resources and gear using wall-clock time; checkpoint data stays local/credential-filtered and is not committed. Original timed entry failed at landing because the classed save auto-opens Home;105preparation ticks earned boss-ready progress in3342seconds. Corrected explicit two-segment rehearsal is now running; no completed timed path is claimed. Current clean source8daa8e1 and docs-only1a1b499 emit the same35deployed assets; final evidence will identify its exact source. No wallet/key/signature/funding/transaction has been created by SYSTEM.
+CXQ1 runs only after UI board readiness08:30:50UTC for CXU3/CXC2. Real guest play earns resources and gear using wall-clock time; checkpoint data stays local/credential-filtered and is not committed. Original timed entry failed at landing because the classed save auto-opens Home;105preparation ticks earned boss-ready progress in3342seconds. Corrected two-segment rehearsal passed all9stages in36.070/36.292seconds at1280/1600, with zero unexpected errors/server writes/transactions and35matching assets before/after. The transition to unchanged earned progress is explicit; no uninterrupted fresh-to-boss3minute claim. Current clean source8daa8e1 and docs-only1a1b499 emit the same35deployed assets; R1 evidence identifies exact source1a1b499 and separately records earned-save source8daa8e1. No wallet/key/signature/funding/transaction has been created by SYSTEM.
 
 PR244 remains blocked by missing complete deployed function source,dependencies/import maps and tested restore; UnsafeFunctionDownloadPathError is not bypassed. Official free Fuji faucet currently needs a connected wallet and Builder Hub login. [Owner steps](OPTIONAL-USER-STEPS.md). These block neither independent documentation nor guest QA; funded mint/list/buy remains NOT VERIFIED.
 
 Ownership addendum remains in force: SYSTEM does nonvisual data/security/evidence; UI session owns layout/screens/art. Rune fields are deferred under P2 gate; UI accepted labelled unavailable/sample state. UI defects are reported in the SYSTEM request mirror, not fixed in UI files. No new feature proposed.
 
-CXQ1 finding2026-11-03T09:39:26Z: live returning guest Play as guest leads to a blank class screen on1a1b499. Screenshot/receipt confirm it; zero writes. SYS-UI-007 is handed to UI via the request mirror and board; unrelated merges are held. The old timed script also incorrectly requests first-time onboarding from an already-classed save; SYSTEM will correct its own harness and disclose any prepared-progress transition. Both1280x720 and1600x900 reproduce it. Read-only receipt helper passes37 local controls;12prepared-save provenance plus6credential controls also pass (55total). Corrected timed-earned-demo.mjs explicitly separates actual fresh onboarding from unchanged UI-earned progress; it is now running live and cannot clear SYS-UI-007. No funded run is verified.
+CXQ1 finding2026-11-03T09:39:26Z: live returning guest Play as guest leads to a blank class screen on1a1b499. Screenshot/receipt confirm it; zero writes. SYS-UI-007 is handed to UI via the request mirror and board; unrelated merges are held. The old timed script also incorrectly requests first-time onboarding from an already-classed save; SYSTEM corrected its own harness and disclosed the prepared-progress transition. Both1280x720 and1600x900 reproduce it. Read-only receipt helper passes37 local controls;12prepared-save provenance plus6credential controls also pass (55total). Corrected timed-earned-demo.mjs explicitly separates actual fresh onboarding from unchanged UI-earned progress; it passed live in36.070/36.292seconds and cannot clear SYS-UI-007. No funded run is verified.
+
+[CXQ1 partial report](cards/CXQ1-FRESH/REPORT.md) preserves the original failure,105-tick preparation, corrected timed results, public asset proofs and owner prerequisites. All owned PIDs have exited; no system ports are bound. Unblocked SYSTEM work is complete for now, with UI007/funded evidence and final regression outstanding; the15minute reminder stays active.
 
 P0/P1 are not fully complete. P2 remains gated; final regression follows UI/CXQ1 integration. Preserved old temporary registrations/untracked historical files; only committed evidence was recovered after temp-worktree loss. [Handoff](MEGA-CURRENT-HANDOFF.md).
 
