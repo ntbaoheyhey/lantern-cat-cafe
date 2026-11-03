@@ -25,7 +25,7 @@ Board: UI adopted CXC2; CXU3 1e31e37 fresh A4 active, art/rarity repairs; NOT me
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
 |CXS1 | #258 merged 5e35c7a under lock; A97/B97; post-main/read-only PASS; live UI phase deferred |
-|CXS2 | own ai/codex-sys-cxs2-submission 69a83d2 atop5e35c7a; A96 PASS, clean B running;9slides/145s/7baseline captures |
+|CXS2 | own ai/codex-sys-cxs2-submission 69a83d2 atop5e35c7a; A96/B96 PASS; unmergedDRAFT;9slides/145s/7baseline captures |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
 |UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
@@ -66,6 +66,6 @@ real funds/mainnet,repo publicity,contest submission,.github changes,Actions,dir
 No broad pkill; kill only owned PIDs after cwd check; PID reuse observed. Leave unrelated18457/OS listeners.
 Fresh self-grades>=92 both, C1>=23,C2=20,C6=5,C7>=8,each>=60%,zeroauto-fails; no weakened tests/retries.
 CXS2 A86208 FINISHED PASS96;2495unit+script/38classic/6mutants,9slides/145s/7images validated.
-B PID89001 /private/tmp/tbh-sys-cxs2-b same69a83d2;5220–5223; tests before diff review.
+B89001 FINISHED PASS96: tests then full diff;16file hashes match A;5220–5223 free.
 Catalog capture ambiguity SYS-UI-006 sent to UI; packet uses Hero instead; no UI/art source edits.
 Next3: finish CXS2 A/B gate; shared-lock publication; recheck UI readiness before CXQ1/regression.

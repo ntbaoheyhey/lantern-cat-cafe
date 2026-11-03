@@ -1,0 +1,106 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B clean checkout; tests before full packet review",
+  "head": "69a83d2a99dfeec6bfefef438bb6b224ffd4978f",
+  "base": "5e35c7a3725d45a3daaf4b3ac6741b255fdef6df",
+  "sourceRoot": "/private/tmp/tbh-sys-cxs2-b",
+  "gradedAt": "2026-11-03T12:59:01.184147+07:00",
+  "status": "PASS",
+  "score": 96,
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Complete requested DRAFT pack: refreshed judge entry and facts,criteria mapping,9 slides,145-second Vietnamese/English plan,7 versioned PNGs,owner placeholders and licence/evidence limits.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Clean B passed source/pack/media validation,type/lint,2495 unit+script cases,all build/import/bundle/link checks and38classic cases before full diff review; no runtime changes.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Six different B mutants killed: submitted claim,fake timed completion,foreign contract,broken pitch link,enabled-economy claim and forged image hash; green control first.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "All16 files exactly match inspected A inventory; captions identify actual phase outcomes. Deduct2 for intentionally historical media awaiting final UI recording.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Source facts checked with the locked TypeScript parser; receipt/image hashes consistent. Deduct2 for repeated caveats across standalone draft documents.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No existing test/threshold/timeout weakened,skipped or retried. Ambiguous image excluded without altering original evidence or UI/art source.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Clear DRAFT/no submission/private status; snapshot numbers,local versus live,missing wallet proof and244 backup limits are explicit. Planned145seconds is not measured completion.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Only authorized SYSTEM docs/own media evidence,not UI/art/public/package/workflow/settings. All authors and skip-ci subjects match.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "remaining": [
+    "Shared-lock current-main integration and changed specs/typecheck/lint",
+    "Post-main read-only checks; live UI phase remains user-gated"
+  ]
+}
