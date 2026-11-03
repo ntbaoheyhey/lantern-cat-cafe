@@ -1,0 +1,50 @@
+{
+  "card": "MOTION",
+  "grader": "B",
+  "label": "self-graded (fresh pass)",
+  "head": "4b0e69accfc7d8079fdf3d044676c0179cf5a1f4",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T18:09:57.041677+00:00",
+  "tests": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "webUnitFiles": 127,
+    "webUnits": 1452,
+    "contrast": "PASS (unchanged theme.contrast.test.ts)",
+    "changedBrowserPerSize": 195,
+    "changedRepeatEach": 3,
+    "fullBrowserPerSize": 379,
+    "fullMatrix": "One exact-head full matrix in A, shared by B; no duplicate run",
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "auditFindings": 0,
+    "axeScans": 22,
+    "confirmedAxeViolations": 0
+  },
+  "review": {
+    "testsFirst": true,
+    "diff": "Application/fixture/assertion/effect benchmark diff reviewed; authoritative game, API, wallet, package and production flags unchanged. Original baseline PNGs and thresholds preserved.",
+    "visual": "Reviewed 44 maximum/empty/late-HUD/motion captures in A contact sheets; native maximum Home and late Chapter5 HUD reviewed at both sizes across A/B. Amounts remain in chips, controls stay reachable, reduced motion reaches the same final state.",
+    "criticalDefects": [],
+    "limitations": [
+      "Mint reveal uses an explicitly labelled confirmation sample, not a funded mint.",
+      "Axe incomplete contrast entries and inherited unowned wallet wrapper advisory retained in reports/ui/logs/axe-incomplete-review.json; named wallet controls and strict/token/rendered contrast checks pass.",
+      "Full maximum Fish values wrap to two lines inside the chip."
+    ]
+  },
+  "performance": {
+    "source": "performance-release/fps.json",
+    "fps": 60.0025,
+    "p95MaxMs": 16.8,
+    "cls": 0,
+    "errors": 0,
+    "writes": 0,
+    "sameRuntimeMeasurement": "Measured release animation/HUD code retained in this accessibility repair; no animation or numeric geometry changed after measurement."
+  },
+  "gateReceipt": "../../logs/motion-b-accessible/receipt.json",
+  "scopeReceipt": "scope-b-accessible.json",
+  "release": "PARKED: SYSTEM auth-nonce502 health hold; not merged or live"
+}

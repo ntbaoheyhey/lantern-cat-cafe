@@ -1,0 +1,24 @@
+{
+  "head": "4b0e69accfc7d8079fdf3d044676c0179cf5a1f4",
+  "reviewedAt": "2026-11-03T17:49:57.620446+00:00",
+  "confirmedViolations": 0,
+  "advisories": [
+    {
+      "selector": ".wallet",
+      "rule": "aria-prohibited-attr",
+      "status": "incomplete/advisory",
+      "source": "SYSTEM-owned apps/web/src/wallet/WalletButton.tsx",
+      "assessment": "Generic wrapper label is redundant; actual wallet controls retain accessible names. Do not alter unowned file; request sent to S1."
+    }
+  ],
+  "contrastReview": {
+    "scope": "Incomplete axe color-contrast entries include text shadows, image-backed decorative proof strip, hero gradients, and overlapping bounded night cards. Retain these entries; do not disable the rule or claim complete automated contrast coverage.",
+    "evidence": [
+      "Unchanged theme.contrast.test.ts required by both fresh unit gates",
+      "Strict UI audit required at both desktop sizes",
+      "FIRSTPLAY rendered recent-reward text ratios >=4.5 at both sizes",
+      "Native screenshot review of landing, first Help, class, home, Bag, Map, Forge, Market, Hero and Help in final passes"
+    ],
+    "assessment": "Confirmed inherited contrast defect in Recent finds was fixed in MOTION and regressed in FIRSTPLAY. Remaining automated incompletes require screenshot/token review, retained as audit limitations."
+  }
+}

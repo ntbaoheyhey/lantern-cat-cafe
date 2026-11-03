@@ -24,3 +24,5 @@
 
 - Nov4 continuation: main still340f88b; hold unchanged. MotionA/B on4b0e69a both195/195changed per size PASS; A full matrix running once, B resize20/20PASS and strict/axe pending. Reviewed44A maximum/empty/late-HUD/motion captures; no new visual defect. PREVIEWSA74529ports5320–5324(fullonce)started949cc44; PREVIEWSB advanced tracked-clean to949cc44, FIRSTPLAYB to8c15199. No candidate mutation, push or merge.
 - Nov4 next: MotionB68148finished all14checks:390changed,20resize,18strictviews,22axe scans zero confirmed violations/errors; diff/scope and two-size native captures reviewed after tests. ReviewB is pending sharedAfullmatrix, noacceptedgrade. PREVIEWSB76113ports5330–5334running949cc44; FIRSTPLAYA77976ports5340–5344fullonceon8c15199. Launch receipts are ledger logs/*accessible-launch.json.
+
+- Nov4 Motion4b0e69a accepted A95/B95 fresh:16A/14BchecksPASS,195changed/size/reviewer,379full/sizeONCE,20/20resize each,18strictviews/22axe scans each; zero confirmed violations. A/Bgrades+alllogsonledger,stable44reviewcaptures. Frozenbranchpushstarted;draftPRpending. No merge underSYSTEMhold. PREVIEWSAfull1600andFIRSTPLAYA/Bstillrunning;do not duplicate.
