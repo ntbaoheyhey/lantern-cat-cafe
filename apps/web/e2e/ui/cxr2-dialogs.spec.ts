@@ -58,6 +58,12 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
         await checkDialog(page, welcome);
         await expect(welcome.getByRole('button')).toHaveCount(1);
         await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
+        await page.keyboard.press('Tab');
+        const lootScroll = welcome.getByRole('region', { name: 'Scrollable offline loot' });
+        await expect(lootScroll).toBeFocused();
+        await page.keyboard.press('End');
+        await expect.poll(() => lootScroll.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
+        await page.keyboard.press('Home');
         await page.keyboard.press('Tab'); await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
         await expect(welcome.getByRole('heading', { name: 'Welcome back!', exact: true })).toBeInViewport();
         await expect(welcome.locator('.welcome-back-rule')).toBeInViewport();

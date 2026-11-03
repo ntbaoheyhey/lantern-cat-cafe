@@ -47,7 +47,9 @@ export function WelcomeBack({ gains, awaySeconds, onClose }: WelcomeBackProps) {
         <p className="welcome-back-rule">
           The first {CONFIG.idle.onlineWindowSeconds / 60} minutes count in full; after that the cat earns at {CONFIG.idle.offlineEfficiency === 0.5 ? 'half speed' : `${CONFIG.idle.offlineEfficiency * 100}% speed`}, up to {CONFIG.idle.offlineCapSeconds / 3600} hours.
         </p>
-        <LootSummary loot={gains} heading="While you were away" headingLevel={3} />
+        <div className="welcome-back-summary" role="region" aria-label="Scrollable offline loot" tabIndex={0}>
+          <LootSummary loot={gains} heading="While you were away" headingLevel={3} />
+        </div>
 
         <div className="welcome-back-actions">
           <button
