@@ -1,0 +1,60 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader B final contrast/art repair",
+  "head": "1e31e37ff3f77f51b022854067a4c717d9ee5060",
+  "status": "PASS",
+  "score": 95,
+  "autoFails": [],
+  "gradedAt": "2026-11-03T06:00:27.688774+00:00",
+  "sourceRoot": "/private/tmp/taskbar-hero-ui-cxu3-b4",
+  "reviewOrder": "Clean exact-head checkout: fresh tests first, then independent source/scope/controller/visual review. Ports5320\u20135323, audit5350.",
+  "criteria": [
+    {
+      "criterion": "Reference fidelity",
+      "score": 22,
+      "max": 25,
+      "reason": "Both desktop compositions and all three Forge tabs retain reachable actions. Minor framing/copy polish assigned to CXR2."
+    },
+    {
+      "criterion": "Behavior/art preservation",
+      "score": 25,
+      "max": 25,
+      "reason": "36 Market and32 Forge controller declarations unchanged by AST comparison. Bigint sorting, confirmations, stale read guards and exact original mask/SVG colors verified."
+    },
+    {
+      "criterion": "Accessibility",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh unchanged AA, all selected rarity colors, keyboard and reduced-motion assertions pass. No in-scope clipping, overflow, unnamed controls or unexpected console errors."
+    },
+    {
+      "criterion": "Isolation",
+      "score": 20,
+      "max": 20,
+      "reason": "18 permitted files; no asset-file/API/wallet/rules/dependency/provider/workflow change. Original frame and icon color variables unchanged."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "Independent2528 core cases,90 repeated changed executions,20/20 resize cases and18 audit views. A330\u00d72 full matrix explicitly shared on the identical head; no duplicate full run. Market wallet data is mocked; main/live checks pending."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "inheritedUnitStatuses": {
+    "expectedFail": 2,
+    "skipped": 11,
+    "changed": false
+  },
+  "evidence": [
+    "reports/ui/logs/cxu3-b4/receipt.json",
+    "reports/ui/logs/cxu3-b4/scope.json",
+    "reports/ui/logs/cxu3-b4/controller-review.json",
+    "screenshots/ui-2026-11-03/cxu3-b4-audit/findings.json"
+  ],
+  "knownBaselineNextCard": "CXR2 legacy initial Help and loot-dialog defects remain documented separately; no completed CXR2 review is claimed."
+}

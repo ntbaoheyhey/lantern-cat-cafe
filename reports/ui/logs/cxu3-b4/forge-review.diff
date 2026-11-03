@@ -1,0 +1,999 @@
+diff --git a/apps/web/src/layout/forge/ForgePanel.css b/apps/web/src/layout/forge/ForgePanel.css
+index 57c25c5..ac3d628 100644
+--- a/apps/web/src/layout/forge/ForgePanel.css
++++ b/apps/web/src/layout/forge/ForgePanel.css
+@@ -1,5 +1,115 @@
+ /* Cat Café Quest v2 - ForgePanel styles (Craft, Salvage, Relic) */
+ 
++/* 3-column desktop layout (AGR3 Redesign) */
++.forge-cols {
++  display: grid;
++  grid-template-columns: 300px 1fr 320px;
++  gap: var(--sp-3, 14px);
++  height: 100%;
++  min-height: 0;
++  align-items: stretch;
++  box-sizing: border-box;
++}
++
++
++.forge-col-left,
++.forge-col-centre,
++.forge-col-right {
++  min-width: 0;
++  min-height: 0;
++  box-sizing: border-box;
++}
++
++.forge-col-left {
++  display: flex;
++  flex-direction: column;
++  gap: 12px;
++  overflow-y: auto;
++}
++
++.forge-col-centre {
++  background: radial-gradient(circle at 50% 45%, #5a3560, var(--surface, #2a1f36) 70%) !important;
++  display: flex;
++  flex-direction: column;
++  align-items: center;
++  justify-content: center;
++  text-align: center;
++  padding: 20px;
++  position: relative;
++  overflow: hidden;
++  border: 2px solid var(--border, #5b4572);
++  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
++}
++
++.forge-col-right {
++  display: flex;
++  flex-direction: column;
++  gap: 14px;
++  overflow-y: auto;
++}
++
++.forge-preview-slot {
++  width: 120px;
++  height: 120px;
++  background: var(--bg, #1a1220);
++  border: 2px solid var(--border, #72578d);
++  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
++  display: grid;
++  place-items: center;
++  position: relative;
++  margin-bottom: 8px;
++}
++
++.forge-candidate-preview {
++  margin-top: 8px;
++  display: flex;
++  flex-direction: column;
++  gap: 4px;
++}
++
++.forge-chances-table {
++  width: 100%;
++  border-collapse: collapse;
++  font-size: 13px;
++  margin-top: 4px;
++}
++
++.forge-chances-table th {
++  text-align: left;
++  font-family: var(--font-display, 'Pixelify Sans', monospace);
++  font-size: 11px;
++  font-weight: 700;
++  letter-spacing: 0.07em;
++  text-transform: uppercase;
++  color: var(--muted, #c3aed0);
++  padding: 6px 8px;
++  border-bottom: 2px solid var(--border, #72578d);
++}
++
++.forge-chances-table td {
++  padding: 6px 8px;
++  border-bottom: 1px dashed var(--border, #72578d);
++}
++
++/* In-place reveal & flash */
++@keyframes forgeFlash {
++  0% {
++    filter: brightness(2.2) drop-shadow(0 0 16px var(--accent, #ffb86b));
++    transform: scale(1.05);
++  }
++  50% {
++    filter: brightness(1.6) drop-shadow(0 0 8px var(--gold, #ffd34e));
++  }
++  100% {
++    filter: brightness(1);
++    transform: scale(1);
++  }
++}
++
++.forge-flash {
++  animation: forgeFlash 0.6s ease-out;
++}
++
+ .forge-panel {
+   display: flex;
+   flex-direction: column;
+@@ -18,7 +128,7 @@
+ .forge-content {
+   display: flex;
+   flex-direction: column;
+-  height: 100%;
++  flex: 1 1 0;
+   min-height: 0;
+   overflow: hidden;
+ }
+@@ -48,6 +158,7 @@
+ 
+ /* Panel Header */
+ .forge-panel-header {
++  flex: none;
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-1, 4px);
+@@ -73,6 +184,7 @@
+ 
+ /* Segmented Control (Craft / Salvage / Relic) */
+ .forge-nav {
++  flex: none;
+   display: flex;
+   flex-direction: row;
+   align-items: stretch;
+@@ -496,7 +608,7 @@
+   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+ }
+ 
+-.forge-btn-cancel {
++.forge-panel .forge-btn.forge-btn-cancel {
+   flex: 1 1 100px;
+   background: var(--surface, #2a1f36);
+   color: var(--text, #fff3e0);
+@@ -854,8 +966,11 @@
+ }
+ 
+ @media (prefers-reduced-motion: reduce) {
++  .forge-flash,
+   .forge-confirm-box {
+-    animation: none;
++    animation: none !important;
++    transition: none !important;
++    filter: none !important;
+   }
+   .forge-tab-btn,
+   .forge-btn,
+@@ -865,3 +980,14 @@
+     transform: none !important;
+   }
+ }
++
++.forge-preview-art { position:relative; display:grid; place-items:center; }
++.forge-preview-glyph { position:absolute; display:grid; place-items:center; }
++
++/* Preserve the compact panel's immediately reachable action while its choices scroll. */
++@media (max-width: 960px) {
++  .forge-cols { display: flex; flex-direction: column; height: auto; overflow: visible; }
++  .forge-col-left, .forge-col-centre, .forge-col-right { flex: none; overflow: visible; }
++  .forge-col-centre { order: -1; padding: var(--sp-3, 12px); }
++  .forge-col-centre .forge-action-area { order: -1; margin-top: 0 !important; margin-bottom: var(--sp-3, 12px); }
++}
+diff --git a/apps/web/src/layout/forge/ForgePanel.tsx b/apps/web/src/layout/forge/ForgePanel.tsx
+index 624753e..5f95513 100644
+--- a/apps/web/src/layout/forge/ForgePanel.tsx
++++ b/apps/web/src/layout/forge/ForgePanel.tsx
+@@ -45,6 +45,8 @@ export interface ForgePanelProps {
+   defaultSelectedItems?: string[];
+   defaultConfirm?: boolean;
+   craftResult?: ReactNode;
++  /** Stable item identity for the one-shot result reveal. */
++  craftResultId?: string;
+   relicFooter?: ReactNode;
+ }
+ 
+@@ -109,6 +111,7 @@ export function ForgePanel({
+   defaultSelectedItems = [],
+   defaultConfirm = false,
+   craftResult,
++  craftResultId,
+   relicFooter,
+ }: ForgePanelProps) {
+   const panelId = useId();
+@@ -291,7 +294,7 @@ export function ForgePanel({
+         </button>
+       </nav>
+ 
+-      {/* CRAFT TAB */}
++      {/* CRAFT TAB (Desktop 3-Column: Left gear picker, centre preview with result reveal, right materials & chances) */}
+       {activeTab === 'craft' && (
+         <section
+           role="tabpanel"
+@@ -301,208 +304,249 @@ export function ForgePanel({
+           data-testid="craft-panel"
+         >
+           <div className="forge-craft-scroll">
+-            <div className="forge-selector-group">
+-            <span className="forge-selector-label" id={`${panelId}-slot-label`}>
+-              Choose Slot
+-            </span>
+-            <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-slot-label`}>
+-              {MAIN_SLOTS.map((slot) => {
+-                const isSelected = selectedSlot === slot;
+-                const iconName = getSlotIconName(slot, classWeaponType);
+-                const title =
+-                  slot === 'weapon'
+-                    ? `Weapon (${capitalize(classWeaponType)})`
+-                    : capitalize(slot);
+-                return (
+-                  <button
+-                    key={slot}
+-                    type="button"
+-                    role="button"
+-                    aria-pressed={isSelected}
+-                    className="forge-slot-btn"
+-                    data-testid={`slot-${slot}`}
+-                    onClick={() => {
+-                      setSelectedSlot(slot);
+-                      setConfirmCraft(false);
+-                    }}
+-                  >
+-                    <V2PixelIcon name={iconName} size={3} title={title} />
+-                    <span className="forge-option-name">{title}</span>
+-                  </button>
+-                );
+-              })}
+-            </div>
+-          </div>
++            <div className="forge-cols">
++              {/* Left Column: 1 · Pick gear */}
++              <div className="forge-col-left">
++                <div className="forge-card">
++                  <p className="forge-section-title">1 · Pick gear</p>
++                  <div className="forge-selector-group">
++                    <span className="forge-selector-label" id={`${panelId}-slot-label`}>
++                      Choose Slot
++                    </span>
++                    <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-slot-label`}>
++                      {MAIN_SLOTS.map((slot) => {
++                        const isSelected = selectedSlot === slot;
++                        const iconName = getSlotIconName(slot, classWeaponType);
++                        const title =
++                          slot === 'weapon'
++                            ? `Weapon (${capitalize(classWeaponType)})`
++                            : capitalize(slot);
++                        return (
++                          <button
++                            key={slot}
++                            type="button"
++                            role="button"
++                            aria-pressed={isSelected}
++                            className="forge-slot-btn"
++                            data-testid={`slot-${slot}`}
++                            onClick={() => {
++                              setSelectedSlot(slot);
++                              setConfirmCraft(false);
++                            }}
++                          >
++                            <V2PixelIcon name={iconName} size={3} title={title} />
++                            <span className="forge-option-name">{title}</span>
++                          </button>
++                        );
++                      })}
++                    </div>
++                  </div>
+ 
+-          <div className="forge-selector-group">
+-            <span className="forge-selector-label" id={`${panelId}-rarity-label`}>
+-              Choose Rarity
+-            </span>
+-            <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-rarity-label`}>
+-              {GEAR_RARITIES.map((rarity) => {
+-                const isSelected = selectedRarity === rarity;
+-                const frameName = `frame${capitalize(rarity)}` as V2FrameName;
+-                return (
+-                  <button
+-                    key={rarity}
+-                    type="button"
+-                    role="button"
+-                    aria-pressed={isSelected}
+-                    className={`forge-rarity-btn rarity-${rarity}`}
+-                    data-testid={`rarity-${rarity}`}
+-                    onClick={() => {
+-                      setSelectedRarity(rarity);
+-                      setConfirmCraft(false);
+-                    }}
++                  <div className="forge-selector-group">
++                    <span className="forge-selector-label" id={`${panelId}-rarity-label`}>
++                      Choose Rarity
++                    </span>
++                    <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-rarity-label`}>
++                      {GEAR_RARITIES.map((rarity) => {
++                        const isSelected = selectedRarity === rarity;
++                        const frameName = `frame${capitalize(rarity)}` as V2FrameName;
++                        return (
++                          <button
++                            key={rarity}
++                            type="button"
++                            role="button"
++                            aria-pressed={isSelected}
++                            className={`forge-rarity-btn rarity-${rarity}`}
++                            data-testid={`rarity-${rarity}`}
++                            onClick={() => {
++                              setSelectedRarity(rarity);
++                              setConfirmCraft(false);
++                            }}
++                          >
++                            <V2PixelFrame name={frameName} size={2} title={capitalize(rarity)} />
++                            <span className="forge-option-name">{capitalize(rarity)}</span>
++                          </button>
++                        );
++                      })}
++                    </div>
++                  </div>
++                </div>
++              </div>
++
++              {/* Centre Column: Preview with in-place reveal (short flash, no modal) */}
++              <div className="forge-col-centre" data-testid="forge-centre-card">
++                <div
++                  className="forge-preview-slot"
++                  data-testid="forge-centre-preview"
++                >
++                  <div className="forge-preview-art">
++                    <V2PixelFrame name={`frame${capitalize(selectedRarity)}` as V2FrameName} size={4} className="forge-frame" />
++                    <span className="forge-preview-glyph"><V2PixelIcon name={getSlotIconName(selectedSlot, classWeaponType)} size={3} title={slotLabel} /></span>
++                  </div>
++                </div>
++                <div className="forge-candidate-preview">
++                  <h3 className={`forge-preview-name rarity-${selectedRarity}`} style={{ margin: 0 }}>
++                    {capitalize(selectedRarity)} {slotLabel}
++                  </h3>
++                  <div className="num muted" style={{ fontSize: '12px' }}>
++                    Recipe fixes the rarity; bonus lines still roll.
++                  </div>
++                  <p className="forge-preview-meta" style={{ margin: '4px 0 0' }}>
++                    Guaranteed {capitalize(selectedRarity)} • Bonus lines: {rarityDef.bonusLines} • Max Lv. {rarityDef.maxLevel}
++                  </p>
++                </div>
++
++                {/* In-place result reveal */}
++                {craftResult && (
++                  <div
++                    key={craftResultId}
++                    className="forge-result-reveal forge-flash"
++                    data-testid="forge-in-place-reveal"
++                    style={{ marginTop: '12px', width: '100%' }}
+                   >
+-                    <V2PixelFrame name={frameName} size={2} title={capitalize(rarity)} />
+-                    <span className="forge-option-name">{capitalize(rarity)}</span>
+-                  </button>
+-                );
+-              })}
+-            </div>
+-          </div>
++                    {craftResult}
++                  </div>
++                )}
+ 
+-          {/* Recipe Details & Balance */}
+-          <div className="forge-craft-details">
+-            <div className="forge-preview-card">
+-              <div className="forge-preview-icon-wrap">
+-                <V2PixelIcon
+-                  name={getSlotIconName(selectedSlot, classWeaponType)}
+-                  size={3}
+-                  title={slotLabel}
+-                />
+-                <V2PixelFrame
+-                  name={`frame${capitalize(selectedRarity)}` as V2FrameName}
+-                  size={3.5}
+-                  className="forge-frame"
+-                />
+-              </div>
+-              <div className="forge-preview-info">
+-                <h3 className={`forge-preview-name rarity-${selectedRarity}`}>
+-                  {capitalize(selectedRarity)} {slotLabel}
+-                </h3>
+-                <p className="forge-preview-meta">
+-                  Guaranteed {capitalize(selectedRarity)} • Bonus lines: {rarityDef.bonusLines} • Max Lv. {rarityDef.maxLevel}
+-                </p>
++                {/* Action & Confirm Area */}
++                <div className="forge-action-area" style={{ marginTop: '14px', width: '100%' }}>
++                  {disabledCraftReason ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="craft-btn"
++                      >
++                        {disabledCraftReason}
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
++                        <span data-testid="block-reason-craft">{disabledCraftReason}</span>
++                      </p>
++                      {!anyRecipeAffordable && (
++                        <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
++                          No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
++                        </p>
++                      )}
++                    </>
++                  ) : confirmCraft ? (
++                    <div className="forge-confirm-box" data-testid="craft-confirm-box" role="alert">
++                      <p className="forge-confirm-text">
++                        Confirm crafting <strong>{capitalize(selectedRarity)} {slotLabel}</strong>?
++                      </p>
++                      <div className="forge-confirm-actions">
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-confirm pixel-btn"
++                          disabled={isLoopBusy}
++                          aria-busy={isBusyCraft ? 'true' : 'false'}
++                          onClick={() => void handleCraftConfirm()}
++                          data-testid="craft-confirm-btn"
++                        >
++                          {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
++                          {isBusyCraft ? 'Crafting...' : 'Confirm Craft'}
++                        </button>
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-cancel"
++                          disabled={isLoopBusy}
++                          onClick={() => setConfirmCraft(false)}
++                          data-testid="craft-cancel-btn"
++                        >
++                          Cancel
++                        </button>
++                      </div>
++                    </div>
++                  ) : (
++                    <button
++                      type="button"
++                      className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
++                      disabled={isLoopBusy}
++                      aria-busy={isBusyCraft ? 'true' : 'false'}
++                      onClick={() => setConfirmCraft(true)}
++                      data-testid="craft-btn"
++                    >
++                      {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
++                      {isBusyCraft ? 'Crafting...' : `Craft ${capitalize(selectedRarity)} ${slotLabel}`}
++                    </button>
++                  )}
++                </div>
+               </div>
+-            </div>
+ 
+-            <div className="forge-costs">
+-              <h4 className="forge-cost-title">Recipe Cost & Balance</h4>
+-              <ul className="forge-cost-list" aria-label="Required materials">
+-                {COST_ORDER.map((matId) => {
+-                  const req = recipe.materials[matId];
+-                  if (!req || req <= 0) return null;
+-                  const current = stacks[matId] ?? 0;
+-                  const def = v2.MATERIALS.find((m) => m.id === matId);
+-                  const name = def ? def.name : matId;
+-                  const met = current >= req;
+-                  return (
++              {/* Right Column: 2 · Materials & Chances Table */}
++              <div className="forge-col-right">
++                <div className="forge-card" data-testid="forge-materials-card">
++                  <h4 className="forge-section-title">Recipe Cost &amp; Balance</h4>
++                  <ul className="forge-cost-list" aria-label="Required materials" style={{ padding: 0, margin: '8px 0 0', listStyle: 'none' }}>
++                    {COST_ORDER.map((matId) => {
++                      const req = recipe.materials[matId];
++                      if (!req || req <= 0) return null;
++                      const current = stacks[matId] ?? 0;
++                      const def = v2.MATERIALS.find((m) => m.id === matId);
++                      const name = def ? def.name : matId;
++                      const met = current >= req;
++                      return (
++                        <li
++                          key={matId}
++                          className="forge-cost-item"
++                          data-testid={`cost-${matId}`}
++                          data-met={met}
++                        >
++                          <div className="forge-cost-item-left">
++                            <MaterialOrCurrencyIcon id={matId} size={2} title={name} />
++                            <span className="forge-cost-item-name">{name}</span>
++                          </div>
++                          <span className={`forge-cost-ratio num ${met ? 'met' : 'unmet'}`}>
++                            {current} / {req}
++                          </span>
++                        </li>
++                      );
++                    })}
+                     <li
+-                      key={matId}
++                      key="fish"
+                       className="forge-cost-item"
+-                      data-testid={`cost-${matId}`}
+-                      data-met={met}
++                      data-testid="cost-fish"
++                      data-met={(stacks.fish ?? 0) >= recipe.fish}
+                     >
+                       <div className="forge-cost-item-left">
+-                        <MaterialOrCurrencyIcon id={matId} size={2} title={name} />
+-                        <span className="forge-cost-item-name">{name}</span>
++                        <MaterialOrCurrencyIcon id="fish" size={2} title="Fish" />
++                        <span className="forge-cost-item-name">Fish</span>
+                       </div>
+-                      <span className={`forge-cost-ratio ${met ? 'met' : 'unmet'}`}>
+-                        {current} / {req}
++                      <span
++                        className={`forge-cost-ratio num ${
++                          (stacks.fish ?? 0) >= recipe.fish ? 'met' : 'unmet'
++                        }`}
++                      >
++                        {stacks.fish ?? 0} / {recipe.fish}
+                       </span>
+                     </li>
+-                  );
+-                })}
+-                <li
+-                  key="fish"
+-                  className="forge-cost-item"
+-                  data-testid="cost-fish"
+-                  data-met={(stacks.fish ?? 0) >= recipe.fish}
+-                >
+-                  <div className="forge-cost-item-left">
+-                    <MaterialOrCurrencyIcon id="fish" size={2} title="Fish" />
+-                    <span className="forge-cost-item-name">Fish</span>
+-                  </div>
+-                  <span
+-                    className={`forge-cost-ratio ${
+-                      (stacks.fish ?? 0) >= recipe.fish ? 'met' : 'unmet'
+-                    }`}
+-                  >
+-                    {stacks.fish ?? 0} / {recipe.fish}
+-                  </span>
+-                </li>
+-              </ul>
+-            </div>
+-          </div>
+-        </div>
++                  </ul>
++                </div>
+ 
+-          {/* Action & Confirm Area */}
+-          <div className="forge-action-area">
+-            {disabledCraftReason ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="craft-btn"
+-                >
+-                  {disabledCraftReason}
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
+-                  <span data-testid="block-reason-craft">{disabledCraftReason}</span>
+-                </p>
+-                {!anyRecipeAffordable && (
+-                  <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
+-                    No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
++                <div className="forge-card" data-testid="forge-chances-card">
++                  <h4 className="forge-section-title">Chances</h4>
++                  <table className="forge-chances-table" aria-label="Crafting chances">
++                    <thead>
++                      <tr>
++                        <th>Outcome</th>
++                        <th style={{ textAlign: 'right' }}>%</th>
++                      </tr>
++                    </thead>
++                    <tbody>
++                      <tr>
++                        <td>{capitalize(recipe.rarity)} gear</td>
++                        <td className="num" style={{ textAlign: 'right' }}>100</td>
++                      </tr>
++                    </tbody>
++                  </table>
++                  <p className="muted" style={{ fontSize: '11px', margin: '8px 0 0' }}>
++                    Bonus lines, when present, scale with item level.
+                   </p>
+-                )}
+-              </>
+-            ) : confirmCraft ? (
+-              <div className="forge-confirm-box" data-testid="craft-confirm-box" role="alert">
+-                <p className="forge-confirm-text">
+-                  Confirm crafting <strong>{capitalize(selectedRarity)} {slotLabel}</strong>?
+-                </p>
+-                <div className="forge-confirm-actions">
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-confirm pixel-btn"
+-                    disabled={isLoopBusy}
+-                    aria-busy={isBusyCraft ? 'true' : 'false'}
+-                    onClick={() => void handleCraftConfirm()}
+-                    data-testid="craft-confirm-btn"
+-                  >
+-                    {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+-                    {isBusyCraft ? 'Crafting...' : 'Confirm Craft'}
+-                  </button>
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-cancel"
+-                    disabled={isLoopBusy}
+-                    onClick={() => setConfirmCraft(false)}
+-                    data-testid="craft-cancel-btn"
+-                  >
+-                    Cancel
+-                  </button>
+                 </div>
+               </div>
+-            ) : (
+-              <button
+-                type="button"
+-                className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
+-                disabled={isLoopBusy}
+-                aria-busy={isBusyCraft ? 'true' : 'false'}
+-                onClick={() => setConfirmCraft(true)}
+-                data-testid="craft-btn"
+-              >
+-                {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+-                {isBusyCraft ? 'Crafting...' : `Craft ${capitalize(selectedRarity)} ${slotLabel}`}
+-              </button>
+-            )}
++            </div>
+           </div>
+-          {craftResult}
+         </section>
+       )}
+ 
+@@ -714,7 +758,7 @@ export function ForgePanel({
+         </section>
+       )}
+ 
+-      {/* RELIC TAB */}
++      {/* RELIC TAB (Desktop 3-Column: Left today's relic, centre preview, right materials & chances table) */}
+       {activeTab === 'relic' && (
+         <section
+           role="tabpanel"
+@@ -724,165 +768,191 @@ export function ForgePanel({
+           data-testid="relic-panel"
+         >
+           <div className="forge-relic-scroll">
+-            {/* Pending voucher state if unminted */}
+-          {relic.pending ? (
+-            <div className="forge-pending-voucher" data-testid="forge-pending" aria-live="polite">
+-              <div className={`relic-tile rarity-${relic.pending.rarityName}`}>
+-                <img
+-                  src={relicImageUrl(BigInt(relic.pending.relicId))}
+-                  alt=""
+-                  width={64}
+-                  height={64}
+-                />
+-              </div>
+-              <p>
+-                You have an unminted{' '}
+-                <strong className={`rarity-${relic.pending.rarityName}`}>
+-                  {relicName(relic.pending.rarityName)}
+-                </strong>
+-                .{' '}
+-                <span className={`forge-tag rarity-${relic.pending.rarityName}`}>
+-                  {LABELS.rarities[relic.pending.rarityName]}
+-                </span>
+-              </p>
+-              <p className="forge-note">
+-                {relic.pending.signature === null
+-                  ? 'Your paid Relic can be recovered when the server is ready.'
+-                  : 'Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).'}
+-              </p>
+-            </div>
+-          ) : relic.today ? (
+-            <TodayRelicCard
+-              today={relic.today}
+-              mintable={false}
+-              canReissue={relicBlockedReason === null}
+-            />
+-          ) : (
+-            <div className="forge-empty-state" data-testid="relic-empty-state">
+-              <div className="forge-empty-icon" aria-hidden="true">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={4} />
++            <div className="forge-cols">
++              {/* Left Column: 1 · Today's Relic */}
++              <div className="forge-col-left">
++                <div className="forge-card">
++                  <h3 className="forge-section-title">1 · Today's Relic</h3>
++                  {relic.pending ? (
++                    <div className="forge-pending-voucher" data-testid="forge-pending" aria-live="polite">
++                      <div className={`relic-tile rarity-${relic.pending.rarityName}`}>
++                        <img
++                          src={relicImageUrl(BigInt(relic.pending.relicId))}
++                          alt=""
++                          width={64}
++                          height={64}
++                        />
++                      </div>
++                      <p>
++                        You have an unminted{' '}
++                        <strong className={`rarity-${relic.pending.rarityName}`}>
++                          {relicName(relic.pending.rarityName)}
++                        </strong>
++                        .{' '}
++                        <span className={`forge-tag rarity-${relic.pending.rarityName}`}>
++                          {LABELS.rarities[relic.pending.rarityName]}
++                        </span>
++                      </p>
++                      <p className="forge-note">
++                        {relic.pending.signature === null
++                          ? 'Your paid Relic can be recovered when the server is ready.'
++                          : 'Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).'}
++                      </p>
++                    </div>
++                  ) : relic.today ? (
++                    <TodayRelicCard
++                      today={relic.today}
++                      mintable={false}
++                      canReissue={relicBlockedReason === null}
++                    />
++                  ) : (
++                    <div className="forge-empty-state" data-testid="relic-empty-state">
++                      <div className="forge-empty-icon" aria-hidden="true">
++                        <MaterialOrCurrencyIcon id="moonPearl" size={4} />
++                      </div>
++                      <p className="forge-empty-note">No Relic voucher forged today yet.</p>
++                    </div>
++                  )}
++                </div>
+               </div>
+-              <p className="forge-empty-note">No Relic voucher forged today yet.</p>
+-            </div>
+-          )}
+ 
+-          {/* Relic Forge Card */}
+-          <div className="forge-relic-card">
+-            <div className="forge-relic-header">
+-              <div className="forge-relic-icon-wrap">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={4} title="Moon Pearl" />
+-              </div>
+-              <div className="forge-relic-info">
+-                <h3 className="forge-section-title">Daily Relic Forge</h3>
+-                <p className="forge-section-desc">
+-                  Forge a collectible Relic NFT on the Avalanche Fuji testnet (free testnet, costs no real money). Limit: 1 per day across v1 and v2.
+-                </p>
+-              </div>
+-            </div>
++              {/* Centre Column: Relic Forge Preview & Actions */}
++              <div className="forge-col-centre">
++                <div
++                  className="forge-preview-slot"
++                  data-testid="relic-centre-preview"
++                >
++                  <MaterialOrCurrencyIcon id="moonPearl" size={6} title="Daily Relic" />
++                </div>
++                <div className="forge-candidate-preview">
++                  <h3 className="forge-section-title" style={{ margin: 0 }}>Daily Relic Forge</h3>
++                  <p className="num muted" style={{ fontSize: '12px', margin: '4px 0 0' }}>
++                    Avalanche Fuji testnet · Limit: {v2.RELIC_RECIPE.perDay} per day
++                  </p>
++                </div>
+ 
+-            <div className="forge-relic-cost-box">
+-              <span className="forge-cost-title">Cost:</span>
+-              <span className="chip" data-testid="relic-cost-yarn">
+-                <MaterialOrCurrencyIcon id="yarn" size={2} title="Yarn" />
+-                30 Yarn (You have {stacks.yarn ?? 0})
+-              </span>
+-              <span className="chip" data-testid="relic-cost-pearl">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={2} title="Moon Pearl" />
+-                1 Moon Pearl (You have {stacks.moonPearl ?? 0})
+-              </span>
+-            </div>
++                {/* Action / Confirmation Area */}
++                <div className="forge-action-area" style={{ marginTop: '16px', width: '100%' }}>
++                  {relicBlockedReason ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="relic-forge-btn"
++                      >
++                        {relicButtonText}
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="relic-blocked-reason">
++                        <span data-testid="block-reason-relic">{relicBlockedText}</span>
++                      </p>
++                    </>
++                  ) : relic.pending ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="relic-forge-btn"
++                      >
++                        Voucher Pending Mint
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
++                        {RELIC_WAITING_TEXT}
++                      </p>
++                    </>
++                  ) : confirmRelic ? (
++                    <div className="forge-confirm-box" data-testid="relic-confirm-box" role="alert">
++                      <p className="forge-confirm-text">
++                        Confirm forging daily Relic for <strong>{v2.RELIC_RECIPE.materials.yarn} Yarn + {v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl</strong>?
++                      </p>
++                      <div className="forge-confirm-actions">
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-confirm pixel-btn"
++                          disabled={isLoopBusy}
++                          aria-busy={isBusyRelic ? 'true' : 'false'}
++                          onClick={() => void handleRelicConfirm()}
++                          data-testid="relic-confirm-btn"
++                        >
++                          {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
++                          {isBusyRelic ? 'Forging...' : 'Confirm Forge'}
++                        </button>
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-cancel"
++                          disabled={isLoopBusy}
++                          onClick={() => setConfirmRelic(false)}
++                          data-testid="relic-cancel-btn"
++                        >
++                          Cancel
++                        </button>
++                      </div>
++                    </div>
++                  ) : (
++                    <button
++                      type="button"
++                      className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
++                      disabled={Boolean(relicBlockedReason || relic.pending || isLoopBusy)}
++                      aria-busy={isBusyRelic ? 'true' : 'false'}
++                      onClick={() => setConfirmRelic(true)}
++                      data-testid="relic-forge-btn"
++                    >
++                      {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
++                      {isBusyRelic ? 'Forging...' : 'Forge Relic'}
++                    </button>
++                  )}
++                </div>
++                {relicFooter}
++              </div>
+ 
+-            <div className="forge-selector-group">
+-              <span className="forge-selector-label">Relic Odds</span>
+-              <ul className="forge-odds-list" aria-label="Relic drop probabilities">
+-                {oddsRows().map(({ rarity, percent }) => (
+-                  <li key={rarity} className="forge-odds-item">
+-                    <span className={`rarity-${rarity}`}>{LABELS.rarities[rarity]}</span>
+-                    <span>{percent}</span>
+-                  </li>
+-                ))}
+-              </ul>
+-            </div>
+-          </div>
++              {/* Right Column: Materials & Plain Chances Table from Game-Rules */}
++              <div className="forge-col-right">
++                <div className="forge-card" data-testid="relic-materials-card">
++                  <h3 className="forge-section-title">2 · Materials</h3>
++                  <div className="forge-relic-cost-box" style={{ display: 'flex', flexDirection: 'column', gap: '8px', margin: '8px 0 0' }}>
++                    <span className="chip" data-testid="relic-cost-yarn" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
++                      <MaterialOrCurrencyIcon id="yarn" size={2} title="Yarn" />
++                      {v2.RELIC_RECIPE.materials.yarn} Yarn (You have {stacks.yarn ?? 0})
++                    </span>
++                    <span className="chip" data-testid="relic-cost-pearl" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
++                      <MaterialOrCurrencyIcon id="moonPearl" size={2} title="Moon Pearl" />
++                      {v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl (You have {stacks.moonPearl ?? 0})
++                    </span>
++                  </div>
++                </div>
+ 
+-          {/* Action / Confirmation Area */}
+-          <div className="forge-action-area">
+-            {relicBlockedReason ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="relic-forge-btn"
+-                >
+-                  {relicButtonText}
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="relic-blocked-reason">
+-                  <span data-testid="block-reason-relic">{relicBlockedText}</span>
+-                </p>
+-              </>
+-            ) : relic.pending ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="relic-forge-btn"
+-                >
+-                  Voucher Pending Mint
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
+-                  {RELIC_WAITING_TEXT}
+-                </p>
+-              </>
+-            ) : confirmRelic ? (
+-              <div className="forge-confirm-box" data-testid="relic-confirm-box" role="alert">
+-                <p className="forge-confirm-text">
+-                  Confirm forging daily Relic for <strong>30 Yarn + 1 Moon Pearl</strong>?
+-                </p>
+-                <div className="forge-confirm-actions">
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-confirm pixel-btn"
+-                    disabled={isLoopBusy}
+-                    aria-busy={isBusyRelic ? 'true' : 'false'}
+-                    onClick={() => void handleRelicConfirm()}
+-                    data-testid="relic-confirm-btn"
+-                  >
+-                    {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+-                    {isBusyRelic ? 'Forging...' : 'Confirm Forge'}
+-                  </button>
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-cancel"
+-                    disabled={isLoopBusy}
+-                    onClick={() => setConfirmRelic(false)}
+-                    data-testid="relic-cancel-btn"
+-                  >
+-                    Cancel
+-                  </button>
++                <div className="forge-card" data-testid="relic-chances-card">
++                  <h3 className="forge-section-title">Chances</h3>
++                  <table className="forge-chances-table" aria-label="Relic drop probabilities">
++                    <thead>
++                      <tr>
++                        <th>Rarity</th>
++                        <th style={{ textAlign: 'right' }}>%</th>
++                      </tr>
++                    </thead>
++                    <tbody>
++                      {oddsRows().map(({ rarity, percent }) => (
++                        <tr key={rarity}>
++                          <td>
++                            <span className={`rarity-pill ${rarity}`}>{LABELS.rarities[rarity]}</span>
++                          </td>
++                          <td className="num" style={{ textAlign: 'right' }}>{percent}</td>
++                        </tr>
++                      ))}
++                    </tbody>
++                  </table>
++                  <p className="muted" style={{ fontSize: '11px', margin: '8px 0 0' }}>
++                    Odds read directly from game-rules configuration.
++                  </p>
+                 </div>
+               </div>
+-            ) : (
+-              <button
+-                type="button"
+-                className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
+-                disabled={Boolean(relicBlockedReason || relic.pending || isLoopBusy)}
+-                aria-busy={isBusyRelic ? 'true' : 'false'}
+-                onClick={() => setConfirmRelic(true)}
+-                data-testid="relic-forge-btn"
+-              >
+-                {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+-                {isBusyRelic ? 'Forging...' : 'Forge Relic'}
+-              </button>
+-            )}
++            </div>
+           </div>
+-          {relicFooter}
+-        </div>
+-      </section>
+-    )}
++        </section>
++      )}
+     </div>
+   );
+ }

@@ -24,3 +24,4 @@
 - Ledger: /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Helpers/run logs/screenshots stored here at milestones.
 - Next3: finish A2/B2 with art review; lock/recheck/push once/create/merge CXU3; fresh-main changed specs/build and GET-only live asset equivalence, then announce board readiness for SYSTEM CXQ1.
 - Catalog diagnostic helpers: probe-catalog.mjs serves5362; its first attempts used an artifact inside dist deleted by the core build. Corrected copy is isolated under dist-v2/catalog-diagnostic-1e31e37. No app defect inferred yet.
+- CXU3 final A95/B95 PASS on1e31e37; B4 tests/visual/scope review complete. Integrate SYSTEM docs-only5e35c7a under lock, rerun release subset, then push/create/merge own PR.
