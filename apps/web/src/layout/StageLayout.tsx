@@ -688,6 +688,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                       });
                       setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
                     }}
+                    craftResultId={crafted?.id}
                     craftResult={
                       crafted ? (
                         <div className="forge-reveal" role="status" data-testid="craft-result">
