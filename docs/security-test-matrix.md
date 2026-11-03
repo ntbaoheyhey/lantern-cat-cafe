@@ -27,10 +27,16 @@ Unlinked test paths are relative to `supabase/tests/`. **GAP** means passing enf
 | 19 | HTTP trust boundary: streamed body cap, authenticated identity wins over body fields, no internal error leaks | `v2/security-http.test.ts`; `src/malformed.test.ts` | covered |
 | 20 | Per-player request limiting: route/global budgets, isolated players, 429 Retry-After, 503 fail closed | [request-budgets.test.ts](../supabase/tests/v2/request-budgets.test.ts); [request-budgets-hardening.test.ts](../supabase/tests/src/request-budgets-hardening.test.ts) twenty concurrent HTTP requests, integer Retry-After >= 1, player B keeps a full burst, actual missing RPC returns 503 | covered (C7 #216, 20261104 migration) |
 | 21 | Paid-but-unminted Relic can be recovered after cancellation; expiry reissue cannot expose a signature before its second chain check | [voucher-cancel.test.ts](../supabase/tests/src/voucher-cancel.test.ts); [relic-recovery.test.ts](../supabase/tests/src/relic-recovery.test.ts) T1–T12, held-replacement and interrupted-lease races, v1 and v2 | covered (20261106 and CXN1 #225 / 20261107) |
-| 22 | Every Edge Function's transitive imports resolve with its own Deno map; removing the api-contract v2 map key is detected | [check-deno-imports.mjs](../scripts/check-deno-imports.mjs); [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) real graph, broken scratch map, aliases/type exports/dynamic imports/cycles | **KNOWN DEFECT**: five extensionless ./index edges lack exact map keys across 16 game functions; guard exits 1 and clean-graph test is an expected failure |
+| 22 | Every Edge Function's transitive imports resolve with its own Deno map; removing the api-contract v2 map key is detected | [check-deno-imports.mjs](../scripts/check-deno-imports.mjs); [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) real graph, broken scratch map, aliases/type exports/dynamic imports/cycles | covered in current source: the strict guard checks 18 function graphs; exact-index map edges are present and the clean-graph test is an ordinary passing test |
 | 23 | ALL public tables have RLS; nonce/private-budget tables deny all client DML/column grants; new RPCs reject clients and execute as service_role | [new-migration-security.test.ts](../supabase/tests/src/new-migration-security.test.ts), all migrations applied in order | covered; RLS allowlist is empty. Existing internal game_voucher_json deliberately also denies service_role (20260106); definer RPCs call it as owner |
 | 24 | Contract vouchers mint once; identical replay, same nonce with a different signed relicId, expiry, wrong signer/player and owner-cancelled nonce revert | [VoucherReplay.t.sol](../contracts/test/VoucherReplay.t.sol), seven local Foundry cases | covered offline; deployed contract NOT VERIFIED |
 | 25 | Per-IP request limiting | [rate-limit-v2.md](proposals/rate-limit-v2.md) | **GAP**, decision U-5: not before the contest; no trusted proxy IP contract verified |
+
+## Current verification boundary
+
+3 November 2026: the former Deno map defect is fixed in merged source; [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) now includes “does not exempt formerly unresolved explicit-index imports”. The current guard reports 18 clean function graphs. Earlier counts/results below retain their original date. Exact fresh checks belong to the [CXS1 report](../reports/n2-security-docs.md); an expected-failure test elsewhere is not a passing product requirement.
+
+The live proof panel verifies public code presence/linkage and recent events only. It does not certify deployed source, all policies, mint correctness or a fresh funded transaction. PR #244 still needs the [complete owner backup and tested restore](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-mega-ledger/reports/OPTIONAL-USER-STEPS.md).
 
 ## Not covered by any offline test (NOT VERIFIED)
 
@@ -38,6 +44,6 @@ Unlinked test paths are relative to `supabase/tests/`. **GAP** means passing enf
 - The deployed RelicNFT contract's signature check: offline Foundry tests now cover replay and signature enforcement, but do not verify deployed bytecode or live transactions.
 - Real Fuji RPC behaviour: receipts and `usedNonces` are faked through `ChainReader`.
 
-## Result of the last run
+## Historical result (1 November; superseded for current-source status)
 
 CXN2 run on 1 November 2026 (Asia/Ho_Chi_Minh), based on origin/main ea3da8c. Supabase: 31 files, **541 passed + 1 expected failure** (the Deno map defect). New CXN2 cases: **24 passed + 1 expected failure**. Full workspace: **2,239 passed + 3 expected failures + 11 pre-existing skipped tests**, no unexpected failures. Foundry: **96 passed**, including all **7 VoucherReplay** cases. Classic Playwright: **38 passed**. All **15 public tables** have RLS; allowlist empty. The strict import guard exits **1** with **80 diagnostics** (five edges across sixteen game functions), so T1 remains FAIL. See [n2-hardening-tests.md](../reports/n2-hardening-tests.md) for reproduction, the known defect and the recorded browser-load rerun.
