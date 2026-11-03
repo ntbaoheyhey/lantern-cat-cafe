@@ -87,7 +87,14 @@ export function ClassPicker({
   const [highlightId, setHighlightId] = useState<v2.ClassId | null>(() => selected ?? classes[0]?.id ?? null);
   const [isConfirming, setIsConfirming] = useState(false);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const chooseRef = useRef<HTMLButtonElement>(null);
+  const confirmRef = useRef<HTMLButtonElement>(null);
   const radiogroupId = useId();
+  const confirmationId = useId();
+
+  useEffect(() => {
+    if (isConfirming) confirmRef.current?.focus();
+  }, [isConfirming]);
 
   // Keep internal highlight aligned when selected prop changes externally
   useEffect(() => {
@@ -157,6 +164,7 @@ export function ClassPicker({
 
   const handleCancel = () => {
     setIsConfirming(false);
+    chooseRef.current?.focus();
   };
 
   return (
@@ -326,16 +334,25 @@ export function ClassPicker({
       {/* Confirmation box inside the page */}
       {isConfirming && activeClass && (
         <div
+          id={confirmationId}
           className="class-picker__confirm-box"
           role="region"
           aria-label="Confirm class switch"
           data-testid="class-picker-confirm-box"
+          onKeyDown={event => {
+            if (event.key === 'Escape' && !busy) {
+              event.preventDefault();
+              event.stopPropagation();
+              handleCancel();
+            }
+          }}
         >
           <p className="class-picker__confirm-text" data-testid="class-picker-confirm-text">
             Switch to {activeClass.name}? You can switch back any time outside boss fights.
           </p>
           <div className="class-picker__confirm-actions">
             <button
+              ref={confirmRef}
               type="button"
               className="pixel-btn class-picker__confirm-btn"
               disabled={busy}
@@ -362,7 +379,10 @@ export function ClassPicker({
       {/* Choose button */}
       <div className="class-picker__footer">
         <button
+          ref={chooseRef}
           type="button"
+          aria-expanded={isConfirming}
+          aria-controls={isConfirming ? confirmationId : undefined}
           disabled={locked || !activeClass || busy}
           aria-disabled={locked || !activeClass || busy}
           aria-busy={busy ? 'true' : 'false'}
