@@ -51,3 +51,22 @@
 .market-gate .ui-empty { flex:1; }
 @media(max-width:900px) { .market { height:auto; } .market-cols { grid-template-columns:1fr; } .market-list-card { min-height:280px; } .market-your-listings { min-height:100px; } }
 @media(prefers-reduced-motion:reduce) { .market * { animation:none!important; transition:none!important; } }
+
+/* Preserve the original embedded empty-shelf art exactly. */
+[data-testid='relics-empty']::before,
+[data-testid='listings-empty']::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: var(--muted, #c3aed0);
+  opacity: 0.6;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}

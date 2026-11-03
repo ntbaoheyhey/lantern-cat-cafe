@@ -53,6 +53,13 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     await page.getByRole('button', { name: 'Retry', exact: true }).click();
     await page.getByRole('group', { name: 'Filter listings' }).getByRole('button', { name: 'All Relics', exact: true }).click(); await page.evaluate(() => window.__cxu3Market.scenario('empty'));
     await expect(page.getByTestId('listings-empty')).toContainText('No Relics for sale'); await geometry(page);
+    // The original empty-shelf icon lives in CSS, so file-level asset checks alone miss it.
+    const originalMask = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E")`;
+    for (const id of ['listings-empty', 'relics-empty']) {
+      const mask = await page.getByTestId(id).evaluate(node => getComputedStyle(node, '::before').maskImage);
+      expect(mask).toBe(originalMask);
+    }
+    await screenshot(page, `market-empty-${size.width}`);
     await page.evaluate(() => window.__cxu3Market.scenario('loading'));
     await expect(page.getByRole('status').filter({ hasText: 'Loading listings' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
