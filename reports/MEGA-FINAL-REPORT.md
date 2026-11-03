@@ -1,4 +1,6 @@
-# Active session report — 2026-11-03T11:38:09.299013+07:00
+# SYSTEM PAUSED — 2026-11-03T13:20:50.200210+07:00
+
+User requested a pause at 2026-11-03T13:20:50.200210+07:00. SYSTEM merge waiter95860 stopped before acquisition; PR260 remains unmerged. Hourly reminder PAUSED; no SYSTEM processes remain. Foreign UI work/lock untouched. Latest fetched main is8daa8e1; no further work until explicit resume.
 
 SYSTEM scope addendum adopted 2026-11-03T11:49:00.097315+07:00. UI/layout/art ownership has transferred to the user-started UI session; historical UI results below are handoff evidence only. SYSTEM will not edit those files/branches/PRs. All future system branches use ai/codex-sys-*, ports5173–5299 and the shared merge lock/board protocol.
 
@@ -18,7 +20,7 @@ Living report, not a completion claim. Latest main is5e35c7a (CXS1 docs). Last c
 | CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
 | CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
 | CXS1 |258|97/97|5e35c7a merged under shared lock|post-main2495 unit/script+38classic+35assets/22health PASS; live UI phase deferred|
-| CXS2 |locald4bf52e|pending|nine-slide/145s draft with7 versioned captures; source/media validator PASS; A running|no submission|
+| CXS2 |260 OPEN|96/96|69a83d2 reviewed DRAFT; merge stopped by user pause|unreleased; no submission|
 | CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
 | P2/P3 |conditional|—|A–F not all green/merged|not started|
 

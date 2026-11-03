@@ -1,11 +1,7 @@
-# User-authorized hourly checkpoint
+# Latest SYSTEM checkpoint
 
-On2026-11-03 the user explicitly requested an hourly message in this same chat asking to write the handoff and continue work. This is the sole exception to the earlier no-schedulers/no-timers rule. All other safety, single-agent and grading rules remain in force.
+2026-11-03T13:20:50.200210+07:00: user pause superseded the hourly continue instruction. Handoff saved; no duplicate tests. All owned processes exited; PR260 remains open at69a83d2. The pending merger was waiting on a foreign UI lock and never acquired it. No SYSTEM main merge followed the pause.
 
-Created and viewed through the native Codex automation tool: taskbar-hero-hourly-handoff; kind heartbeat; destination current chat; cadence every hour; status ACTIVE. No launchd/cron script, helper chat or old orchestrator was started. STOP remains intact.
+The existing same-chat hourly automation was updated for the user's SYSTEM/UI ownership split, then explicitly paused. No new automation/model/chat was created. Current origin/main8daa8e16fa916a3fc4d3c556ebba20bf6be124d7 was observed only for handoff; UI work was not interrupted.
 
-The saved prompt tells this chat to read the ledger handoff, reconcile actual Git/PR/PID state, write at most80 lines, update the living report, stage selected ledger files, commit/push with the required author and skip-ci suffix, then continue the authorized queue. It forbids duplicate test runners and AI workers, honors later pause/stop requests, and pauses the reminder when the queue is complete.
-
-Local scheduled work requires the computer and app to remain running: https://learn.chatgpt.com/docs/automations?surface=app . The native automation card is the control for pausing or changing this reminder.
-
-Active-chat hourly checkpoint saved at 2026-11-03T02:49:21+07:00: CXU5 done; CXU4 final repair A3 in progress. Native reminder remains active; no worker/orchestrator launched.
+Resume requires the user's explicit instruction. Reconcile main/board first and preserve the exact-head and shared-lock gates.

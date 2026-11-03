@@ -1,0 +1,28 @@
+{
+  "root": "/private/tmp/tbh-cxs2-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXS2-FRESH/locked-merge",
+  "pr": 260,
+  "head": "69a83d2a99dfeec6bfefef438bb6b224ffd4978f",
+  "grades": [
+    "/private/tmp/tbh-t001-ledger/reports/cards/CXS2-FRESH/grade-a.json",
+    "/private/tmp/tbh-t001-ledger/reports/cards/CXS2-FRESH/grade-b.json"
+  ],
+  "changedChecks": [
+    [
+      "pack",
+      [
+        "python3",
+        "/private/tmp/tbh-t001-ledger/reports/cards/CXS2-FRESH/check-pack.py",
+        "/private/tmp/tbh-cxs2-active"
+      ]
+    ],
+    [
+      "links",
+      [
+        "node",
+        "scripts/check-links.mjs"
+      ]
+    ]
+  ],
+  "title": "CXS2: publish the private submission pack draft [skip ci]"
+}
