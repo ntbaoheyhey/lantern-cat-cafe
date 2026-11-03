@@ -31,11 +31,11 @@ Selected comparisons:
 
 | State | Before | After |
 |---|---|---|
-| First Help, 1280 | [Classic advice in v2](../../screenshots/ui-2026-11-03/cxr2-before-final/first-help-1280.png) | [Current v2 advice](../../screenshots/ui-2026-11-03/cxr2-preflight-final/help-1280-reduce.png) |
-| Offline loot, 1280 | [Heading pushed offscreen](../../screenshots/ui-2026-11-03/cxr2-before-final/welcome-1280.png) | [Pinned heading and action](../../screenshots/ui-2026-11-03/cxr2-preflight-final/welcome-1280-reduce.png) |
-| Boss chest, 1600 | [Legacy pale surface](../../screenshots/ui-2026-11-03/cxr2-before-final/chest-1600.png) | [Shared night dialog](../../screenshots/ui-2026-11-03/cxr2-preflight-final/chest-1600-reduce.png) |
+| First Help, 1280 | [Classic advice in v2](../../screenshots/ui/2026-11-03/cxr2-before-final/first-help-1280.png) | [Current v2 advice](../../screenshots/ui/2026-11-03/cxr2-preflight-final/help-1280-reduce.png) |
+| Offline loot, 1280 | [Heading pushed offscreen](../../screenshots/ui/2026-11-03/cxr2-before-final/welcome-1280.png) | [Pinned heading and action](../../screenshots/ui/2026-11-03/cxr2-preflight-final/welcome-1280-reduce.png) |
+| Boss chest, 1600 | [Legacy pale surface](../../screenshots/ui/2026-11-03/cxr2-before-final/chest-1600.png) | [Shared night dialog](../../screenshots/ui/2026-11-03/cxr2-preflight-final/chest-1600-reduce.png) |
 
-Additional inspected states: [class save error](../../screenshots/ui-2026-11-03/cxr2-preflight-final/class-save-error-1280.png), [full Bag](../../screenshots/ui-2026-11-03/cxr2-preflight-final/bag-full-bag-1280.png), [maximum Home values](../../screenshots/ui-2026-11-03/cxr2-preflight-final/home-maximum-long-1280.png), [maximum Relic values](../../screenshots/ui-2026-11-03/cxr2-preflight-final/market-fixture-maximum-long-1280.png), [returning guest](../../screenshots/ui-2026-11-03/cxr2-preflight-final/returning-guest-home-1280.png).
+Additional inspected states: [class save error](../../screenshots/ui/2026-11-03/cxr2-preflight-final/class-save-error-1280.png), [full Bag](../../screenshots/ui/2026-11-03/cxr2-preflight-final/bag-full-bag-1280.png), [maximum Home values](../../screenshots/ui/2026-11-03/cxr2-preflight-final/home-maximum-long-1280.png), [maximum Relic values](../../screenshots/ui/2026-11-03/cxr2-preflight-final/market-fixture-maximum-long-1280.png), [returning guest](../../screenshots/ui/2026-11-03/cxr2-preflight-final/returning-guest-home-1280.png).
 
 Mobile-only redesign is WONTFIX for this desktop-only product scope. Existing compact and classic tests remain in the regression gate; no failures are skipped, quarantined, or given lower thresholds.
 
