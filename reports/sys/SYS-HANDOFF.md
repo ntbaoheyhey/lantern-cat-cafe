@@ -10,6 +10,9 @@
 - Builder tests: 31 edge, 21 wallet/client, 6 health-script PASS. Working changes add lazy nonce store init/503 Retry-After, bounded nonce-only retries/plain English errors and named wallet group.
 - S2 DONE: reports/sys/deploy-capacity.md; 23 main commits / 7 merged PRs, actual deployment count unavailable. Same-UTC-day >100 cap error recorded on #262 at13:23:17Z. Stop merges for the day.
 - UTC reset recheck 2026-11-04T00:00Z (07:00 Vietnam); provider says24h so not guaranteed until quota verified. At most1 merge/20min after clearance, stop at80/errors.
-- Next: capture baseline red repro, formal exact-head A/B gate (B clean tests-first), main regression once, request responses, live UX/guest audit and UI parked-release decision. Keep raw failures; no softened thresholds.
+- Baseline missing-configuration repro RED on unmodified origin/main; retained logs. New head ca26498 frozen; clean B exact ca26498. A/B/main core unit/typecheck/lint/build PASS; browser gates running detached at5173–5177/5190–5194/5210–5214.
+- S3 request dispositions in reports/sys/requests-response.md; wrapper named-group repair drafted; ownership fields declined with reason. CXS1/CXS2 already merged; no redo/submission.
+- Live audit first1280 first naturalreward28.50s; audit-tool inline axe blocked by CSP (tool failure retained), corrected CDP evaluation changes no production policy; full audit in progress.
+- Next: second publicnonceprobe>=19:30:49Z; finish formal A/B (clean B tests-first then diff), main regression once, live UX and parked-release receipts. Keep failures; no weakened thresholds.
 - Existing CXS1 security overview and CXS2 draft pack already in main; verify identity, do not redo or submit. originalEconomy remains default OFF.
 - All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
