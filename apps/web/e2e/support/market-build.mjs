@@ -19,3 +19,8 @@ await build({
   build: { outDir: `${directory}/art2-fixture`, emptyOutDir: true,
     rollupOptions: { input: resolve("e2e/fixtures/art2-view.html") } },
 });
+
+// Read-only conditional feature fixture, isolated from production output.
+await build({ configFile: resolve('vite.config.ts'), envDir: false, publicDir: false,
+  base: '/feature-fixture/', build: { outDir: `${directory}/feature-fixture`, emptyOutDir: true,
+    rollupOptions: { input: resolve('e2e/fixtures/feature-samples.html') } } });
