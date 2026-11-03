@@ -1,0 +1,14 @@
+✔ auth health HTTP 200 exits correctly without leaking response data (31.968958ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (19.876291ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (21.016208ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (23.170875ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (35.756916ms)
+✔ auth health fails closed when the transport is unavailable (20.943ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 254.185375

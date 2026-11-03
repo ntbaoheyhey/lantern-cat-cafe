@@ -1,0 +1,31 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys/supabase/tests
+
+ ❯ src/auth-availability.test.ts (6 tests | 6 skipped) 1099ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/auth-availability.test.ts [ src/auth-availability.test.ts ]
+Error: missing env SUPABASE_SERVICE_ROLE_KEY
+ ❯ env ../functions/_shared/auth.ts:11:17
+      9| function env(name: string): string {
+     10|   const v = Deno.env.get(name);
+     11|   if (!v) throw new Error(`missing env ${name}`);
+       |                 ^
+     12|   return v;
+     13| }
+ ❯ pgStore ../functions/_shared/auth.ts:17:48
+ ❯ ../functions/auth-nonce/index.ts:4:15
+ ❯ src/auth-availability.test.ts:39:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 skipped (6)
+   Start at  02:25:34
+   Duration  2.01s (tests 98%, import 1%)
+
+undefined
+/Users/bao/taskbar-hero-ovn-sys/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/auth-availability.test.ts

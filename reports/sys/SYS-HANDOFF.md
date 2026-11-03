@@ -3,7 +3,7 @@
 - Authorized source: attachment dbc68717; 8-hour maximum from about 2026-11-03T19:17Z.
 - Main remains 340f88b; main checkout untouched. Own worktree /Users/bao/taskbar-hero-ovn-sys, branch ai/codex-ovn-sys-auth.
 - Private repo verified; #244 untouched; superseded #252/#257 remain open. UI drafts #262–#266 exact accepted heads unchanged.
-- S1 first nonce POST at 2026-11-03T19:20:48.838570Z is 200, correct CORS; nonce redacted. Second probe due >=19:30:49Z. Max 3 total public nonce probes.
+- S1 HEALTH HOLD CLEARED: public nonce POST200 at19:20:48.838570Z and19:31:17.468499Z (628.63s apart), expected CORS; exactly2probes, nonces redacted. Historicalcause unproven; no live changes. reports/sys/auth-nonce-502.md + auth-evidence/.
 - Source download stopped at CLI UnsafeFunctionDownloadPathError; guard respected, partial auth-nonce/index.ts and _shared/auth.ts are byte-identical to origin/main. No package source identity asserted.
 - Installed Supabase CLI logged in; auth-nonce/auth-verify ACTIVE v46. CLI has no logs command; Vercel CLI absent; Docker daemon unavailable. No live deploy/migration/write.
 - Local PGlite before migrations 20261103/04/06 issues nonce successfully: budget-table explanation disproved for downloaded wiring. Historical 502 cause not established; do not claim fixed by code or migrations.
@@ -13,6 +13,6 @@
 - Baseline missing-configuration repro RED on unmodified origin/main; retained logs. New head ca26498 frozen; clean B exact ca26498. A/B/main core unit/typecheck/lint/build PASS; browser gates running detached at5173–5177/5190–5194/5210–5214.
 - S3 request dispositions in reports/sys/requests-response.md; wrapper named-group repair drafted; ownership fields declined with reason. CXS1/CXS2 already merged; no redo/submission.
 - Live audit first1280 first naturalreward28.50s; audit-tool inline axe blocked by CSP (tool failure retained), corrected CDP evaluation changes no production policy; full audit in progress.
-- Next: second publicnonceprobe>=19:30:49Z; finish formal A/B (clean B tests-first then diff), main regression once, live UX and parked-release receipts. Keep failures; no weakened thresholds.
+- Next: finish formal A/B (clean B tests-first then diff), main regression once, live UX and parked-release receipts. Keep failures; no weakened thresholds.
 - Existing CXS1 security overview and CXS2 draft pack already in main; verify identity, do not redo or submit. originalEconomy remains default OFF.
 - All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
