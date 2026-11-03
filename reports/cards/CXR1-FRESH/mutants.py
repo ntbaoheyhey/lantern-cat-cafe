@@ -30,6 +30,16 @@ B=[
  ('left-start-action','src/layout/classpicker/ClassPicker.css','.screen-class .class-picker__footer { align-self: flex-end;','.screen-class .class-picker__footer { align-self: flex-start;',browser),
  ('reversed-home-columns','src/layout/home/home.css',None,'\n.home-col--right{grid-row:1;grid-column:1}.home-col--center{grid-row:1;grid-column:2}\n',browser),
 ]
+phone=pnpm+['exec','playwright','test','e2e/layout/stage-layout.spec.ts','--grep','stage layout at 320px','--workers=1','--retries=0','--reporter=line']
+button=pnpm+['exec','playwright','test','e2e/ui/u1-tokens.spec.ts','e2e/ui/u4-character-bag.spec.ts','--workers=1','--retries=0','--reporter=line']
+A += [
+ ('phone-gutter-regression','src/layout/layout.css','@media (min-width: 1024px) {\n  .shell-panel-view.screen-home','@media (min-width: 0px) {\n  .shell-panel-view.screen-home',phone),
+ ('wrong-body-size','src/theme.css','font-size: var(--fs-sm, .875rem);\n  line-height: 1.5;','font-size: 16px;\n  line-height: 1.5;',browser),
+]
+B += [
+ ('lost-shared-button','src/layout/bag/BagPanel.tsx','className="pixel-btn pixel-btn--secondary bag-equip-best"','className="pixel-btn--secondary bag-equip-best"',button),
+ ('competing-primary-action','src/layout/bag/bag.css','.bag .bag-equip-best { background: var(--surface-2);','.bag .bag-equip-best { background: var(--accent);',button),
+]
 for name,rel,old,new,cmd in (A if which=='a' else B):
  p=web/rel;original=p.read_bytes();source=original.decode();assert old is None or source.count(old)==1,(name,'nonunique anchor')
  try:

@@ -30,9 +30,9 @@ CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d
 Fresh A PID27776 FINISHED FAIL oned11f01;2490core/build/8mutants/capture/153repeat1280 PASS.
 A full1280:314PASS/9FAIL;4phone-stage padding regressions +2missing shared-button selectors +3bulk-action golden assertions.
 Final repair29browser/type PASS. Frozen187a1b5 fresh A PID33210 same source/5020–5023; last repair.
-Config grade-a-final/run.json; full gate starts over. No old failing head reused/no merge.
+Config grade-a-final/run.json;2490core/build/10mutants/capture PASS;234repeats each size+full matrices running.
 Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
-Clean B /private/tmp/tbh-cxr1-fresh-b at exacted11f01; dependency setup only; B tests/review NOT STARTED.
+Clean B /private/tmp/tbh-cxr1-fresh-b now exact187a1b5; setup only; B tests/review NOT STARTED.
 Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
 Builder1 exposed historical assertions requiring false landing claims; documented old→new, retained failure.
 Builder2 PASS87focused/24browser; visual found omitted context-row height/fixed empty tiles/bulk100% width.
@@ -59,5 +59,6 @@ After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/pus
 Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
 Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
 CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
-CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: dirty migration draft; no tests yet; baseded11f01.
+CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: dirty migration baseded11f01; type/44units PASS.
+CXR2 browser builder PID37219 cwd above,5110–5113; Help/Welcome/Chest +classic/loop; no merge beforeCXR1.
 Next3: complete fresh A/mutants/review; clean B tests then diff+grade; if both qualify merge245 then main/live.
