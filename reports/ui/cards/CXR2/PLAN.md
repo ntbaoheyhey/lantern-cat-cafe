@@ -19,3 +19,5 @@
 - Update the WelcomeBack a11y Tab boundary assertions for its newly focusable scroll region, retaining the focus/escape/aria checks.
 - First-visit v2 Help should restore focus to the landing/class/Home action if there is no explicit opener; preserve the classic Menu return target.
 - Consider adding the existing unchanged CatPortrait to the large first-run class cards; the current class capture has very sparse artwork. Keep original weapon icons/swatch art.
+
+- CXU3 now introduces --rarity-rare-text and --rarity-epic-text for AA text; use these in dark loot text overrides. Original art rarity variables remain unchanged.

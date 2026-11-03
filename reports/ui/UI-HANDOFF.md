@@ -1,7 +1,7 @@
 # UI session handoff — 2026-11-03
 - Scope: UI/layout/art only; no agents/schedulers/live writes; STOP preserved. Requested author and every commit [skip ci].
-- Main at start/current: 6144d42 (private repo). Do not alter primary checkout /Users/bao/taskbar-hero.
-- Active source: /Users/bao/taskbar-hero-ui, branch ai/codex-ui-cxu3, head 16f940f.
+- Main at start6144d42; SYSTEM docs-only #258 merged5e35c7a (private repo). Do not alter primary checkout /Users/bao/taskbar-hero.
+- Active source: /Users/bao/taskbar-hero-ui, branch ai/codex-ui-cxu3, head 9628310.
 - CXU5 #249 merged 1b299c4; historical A94/B94; current full matrix also passes.
 - CXU4 #251 merged 2847e9a; historical A95/B95; all Help/character tests present.
 - CXC2 #253/#254 merged 39e74d8/666088c; historical final A96/B96 and live acceptance adopted.
@@ -10,12 +10,12 @@
 - Attempt 1 head 2e1f83b: 2512 core passes; full330×2, changed57×2 per pass, resize20/20 per pass, audit18 views per pass all pass.
 - Attempt 1 provisional A94/B94 WITHDRAWN before push/merge: removed embedded Market CSS data-URI art found in final review. Evidence retained in reports/ui/cards/CXU3/attempt-1/ and logs/cxu3-{a,b}.
 - Repair 16f940f restores the exact original icon and asserts its computed CSS on both empty states. Scope checker now checks embedded CSS art too.
-- Fresh A2 PASS94 on16f940f: core2512/full330×2/changed21×2/resize20 of20/audit18 clean.
-- Fresh B2 tests-first PID76192 active in /private/tmp/taskbar-hero-ui-cxu3-b2 on16f940f; ports5320–5323.
+- A2/B2 machine checks passed; A2 provisional94 withdrawn after B2 expanded rarity contrast review found inherited Rare4.051/Epic3.428 selected-surface ratios. Evidence in cards/CXU3/attempt-2/.
+- Repair9628310 adds AA text-only rarity tokens (#66b7ff/#d0a0ff), preserving art tokens; extends4.5 tests and checks original SVG fills in browser. Fresh A3 PID79795 on5310–5313; B3 prepared /private/tmp/taskbar-hero-ui-cxu3-b3, not yet run.
 - Prior B evidence worktree /private/tmp/taskbar-hero-ui-cxu3-b at2e1f83b retained; no listeners remain.
 - Merge lock released after cancelled attempt1 final checks. No UI feature push/PR/merge yet.
 - CXR2 next: old #257/c49421f has13 inherited failures (portal assertions, help-store fixture reset, boss-state timeout). Plan in cards/CXR2/PLAN.md.
-- CXR2 baseline script reports/ui/capture-dialog-baseline.mjs got landing/class/Help; Welcome capture fails on dev StrictMode/clock setup. Preserve logs cxr2-before*.log; use built preview for remaining before states.
+- CXR2 baseline COMPLETE10 views in screenshots/ui-2026-11-03/cxr2-before-final; built preview5360/fixture HMR5361, clean log. Earlier harness failures retained. Draft26-view gallery exists; no final gallery claim.
 - U3: 34 original economy icons (12 stats/15 items/7 skills),5 frame aliases and all5 chapter backdrops already exist. Rune/pet/skill slot art and empty-state polish remain.
 - U4 motion pending. U5 conditional on U1–U4 merged/green. U6 final gallery pending.
 - Existing sole flag CONFIG.features.originalEconomy=false; never modify global/provider VITE_GAME_V2.
