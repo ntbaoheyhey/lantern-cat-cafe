@@ -1,84 +1,54 @@
-# Contest submission kit
+# Submission pack — DRAFT, not submitted
 
-Ready-to-paste text for the Avalanche Team1 Vietnam UniHack 2026 submission. Every claim below comes from `README.md`, the files in `docs/` or the confirmed Fuji deployment, and is true on `main`.
+Prepared for the owner; this is not a contest entry or an approval to publish. The repository stays private. Organizer criteria, deadline, submission URL, team details and private judge-access arrangements remain owner-confirmed placeholders.
 
-> **Before submitting**
-> - **Deadline and platform: TBD, confirm with organizers.** Do not paste a date from here.
-> - **The repository is private.** Make it public (or add the organizers as collaborators if the rules allow) before submitting, then check the link below opens while signed out.
-> - Re-check the live URL and both contract links the day you submit.
+## Project and pitch
 
-## Project name
+**Taskbar Hero** is a desktop idle RPG with a cat adventurer. Guest play runs locally in the browser; authenticated play uses server-owned state and shared rules. Everyday play needs no on-chain transaction. Earned Relics can use an EIP-712 voucher mint and an ERC-1155 escrow market on Avalanche Fuji. There is no separate ERC-20 game currency and no mainnet claim.
 
-Taskbar Hero
+The current guest UI offers three starter classes, a broader seven-class registry, five chapters, nine equipment slots, a 200-slot bag, gear crafting and a public proof panel. In v2, the first daily claim grants a Cat Key; a boss win spends one. The daily Relic recipe is 30 Yarn plus 1 Moon Pearl, not the classic Cat-Key recipe. Configuration remains the source of these values.
 
-## One-line pitch
+Help's local catalog preview starts OFF. Its 12 stats, 15 item examples, 5 qualities and 7 skills are draft content, not live inventory or activated server behavior. The original-economy flag remains false. New 34-icon provenance is recorded; historical art evidence has limits described below.
 
-An idle RPG that lives in a thin strip at the bottom of a web page, where everyday progress is free and off-chain and the rare Relics you forge are real ERC-1155 NFTs on Avalanche Fuji that you can trade.
+## Avalanche integration
 
-## Pitch (one paragraph)
+| Resource | Verified address/link | Evidence boundary |
+|---|---|---|
+| Live frontend | [Taskbar Hero](https://taskbarhero-eight.vercel.app) | Last packet media snapshot 6144d42; recheck after UI readiness |
+| Network | Avalanche Fuji, 43113 | Free test AVAX only |
+| RelicNFT | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) | ERC-1155 voucher mint; deployed-code presence is not source certification |
+| RelicMarket | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) | Fixed-price escrow in test AVAX |
+| Source | [Private repository](https://github.com/ntbaoheyhey/taskbar-hero) | No visibility change; owner confirms permitted reviewer access |
+| Video | OWNER TO INSERT after recording/verification | Do not invent a recording URL |
 
-Taskbar Hero is a cozy idle RPG that sits in a strip at the bottom of a web page, like a game on your taskbar. Mochi the cat fights on its own while you work; you claim Fish (gold), Yarn (shards) and gear drops, upgrade gear, and beat a daily boss for a Cat Key. Spend 30 Yarn and one Cat Key to forge a collectible Relic: the server signs a voucher, your wallet mints it on Avalanche Fuji, and you can list it on a fixed-price market for test AVAX. Gameplay stays fast and free of gas; only the things worth owning go on-chain. There is no fungible token.
+The public Help panel reads code, Market→NFT linkage, active listings and a bounded recent-event window. RelicNFT does not expose a totalSupply getter; do not infer lifetime supply from recent events. A read-only snapshot is not a mint/list/buy receipt. Fresh funded wallet proof is NOT VERIFIED in this packet. No private key or seed should be shared for review.
 
-## Problem and solution
+## Criteria mapping (provisional, no invented weights)
 
-**Problem.** Blockchain games often put every action on-chain, which makes them slow and costly to play, or they add a token whose price matters more than the game.
+The requested Technical and Avalanche Integration axes are used below. Additional categories are presentation aids, not a claim about the organizer's final rubric.
 
-**Solution.** Taskbar Hero keeps fast, frequent progress off-chain and decided by the server (gold, gear, shards, Boss Keys), so it cannot be forged from the browser. Only the rare, collectible outcome, the Relic, becomes an NFT. The server proves a forge was earned by signing an EIP-712 voucher; the player's wallet submits it and pays only test-AVAX gas for the mint. Relics then trade peer to peer in an escrow market. The game is low-attention by design, so it fits next to your real work.
+| Evaluation angle | What to show | Evidence / current limit |
+|---|---|---|
+| Technical | Shared rules, auth/ownership, atomic retries, bounded requests, regression evidence | [Security overview](security-overview.md), [test matrix](security-test-matrix.md); local checks do not prove deployed backend identity |
+| Avalanche Integration | Exact Fuji contracts, EIP-712 mint/reconciliation, escrow flow, public proof panel | [Contracts](contracts.md), [proof screenshot](../reports/submission/screenshots/fuji-read-only-1280x720.png); fresh funded receipts pending |
+| Product usability | Landing→guest→class→idle→Map→Forge→Bag→proof→Market | [Demo script](video-script.md); timed live run waits for UI's CXU3/CXC2 readiness |
+| Original content | Draft economy catalog and 34 original code-drawn icons | [Asset provenance](../reports/asset-provenance.md); original-economy default OFF |
+| Honesty and reproducibility | Separate guest, local-server and live-chain evidence; disclose missing work | [Evidence manifest](../reports/submission/evidence/media-manifest.json), [release receipt](../reports/submission/evidence/6144d42-acceptance.json) |
 
-## How it uses Avalanche
+## Current evidence and omissions
 
-- **Network:** Avalanche Fuji testnet, chain ID 43113. Test AVAX only; no mainnet, no custom L1.
-- **RelicNFT (ERC-1155):** one token id per rarity (Common, Rare, Epic, Legendary). Mints require a valid voucher.
-- **Server-signed EIP-712 vouchers:** the voucher binds player, Relic ID, rarity, nonce and expiry to this chain and contract. RelicNFT checks the signer, the caller, expiry, that the nonce is unused, and that rarity matches the Relic ID, then mints one copy. Expired vouchers are re-signed with a new nonce only after the server confirms on-chain that the old nonce was not used, so one paid forge can never mint twice.
-- **RelicMarket:** fixed-price, escrow-based listings in test AVAX. No fees, no token, no owner.
-- **Reconciliation:** after minting, the client reports the transaction hash; the server reads the receipt on Fuji and accepts it only if RelicNFT emitted a matching `RelicForged` event for that voucher. The chain is the source of truth for ownership.
+The archived 6144d42 acceptance records 2,490 package unit cases, 323 browser cases per desktop size, 40 art checks, 35 asset hashes matching before/after, 22 health checks and 16 guest/read-only stages per size. These version-specific numbers belong to that exact historical release; they are not a current run of a later UI head. Two expected game-rule failures and eleven inherited skips are disclosed in the receipt.
 
-Details: `docs/contracts.md`, `docs/api.md`.
+CXQ1's complete timed path and fresh throwaway Fuji mint/list/buy are pending. SYSTEM stopped preparation when the scope addendum required waiting for UI readiness. The current official faucet requires a connected wallet and Builder Hub login. No wallet/private key, funding request or transaction was created by SYSTEM.
 
-## Tech stack
+PR #244 remains unmerged because a complete deployed Supabase source/dependency/import-map backup and tested restore path are unavailable. UnsafeFunctionDownloadPathError was not bypassed. No backend deployment, migration, production flag change or live policy certification is claimed. UI refreshes belong to the separate UI session; consult its board before refreshing this packet.
 
-- Client: Vite, React 19, TypeScript, Phaser 3 (the strip), wagmi 2 and viem 2 (injected wallets), react-query.
-- Backend: Supabase (Postgres with row-level security, Edge Functions on Deno), wallet sign-in with SIWE and a session JWT.
-- Shared rules: `packages/game-rules`, deterministic TypeScript used by both client (prediction) and server (truth); seeds are HMACs the client cannot predict.
-- Contracts: Solidity, Foundry, OpenZeppelin v5.
-- Hosting: Vercel (web), Supabase free tier (backend). Tests: Vitest, PGlite (in-process Postgres), Foundry, Playwright; CI on GitHub Actions.
+## Licensing and media review
 
-## Links
+Project code declares [MIT](../LICENSE); dependencies keep their own licenses. The existing font inventory declares OFL1.1. [Canonical provenance](art/PROVENANCE.md) explicitly distinguishes Git history from independent proof of historical authorship/licensing; the older blanket “zero unknown origins” claim is not adopted here. Historical prompts/model versions remain unknown where unrecorded. The 34 new icons have concrete code/tool/date/recipe/hash evidence.
 
-| What | Link | Notes |
-| --- | --- | --- |
-| Live demo | https://taskbarhero-eight.vercel.app | Open in Chrome, Brave, or Edge |
-| Pitch video | TODO: [Owner to insert 2-3 minute YouTube/Loom demo video URL] | Walkthrough matching demo script |
-| Repository | https://github.com/ntbaoheyhey/taskbar-hero | **private now; must be made public before submitting** |
-| RelicNFT (ERC-1155) | [`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) | Verified on Avalanche Fuji (43113) |
-| RelicMarket | [`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) | Zero-fee escrow market on Fuji |
-| Demo media kit | [reports/t3-demo-media/](../reports/t3-demo-media/) | 12 screenshots, 2 GIFs, 2 MP4s from verified v2 build |
+Packet PNGs are unchanged copies of verified live guest captures, not newly generated art. Filenames identify completed QA phases; the class-phase image shows Home immediately after confirmation. Their hashes and original paths are in the manifest. The Map image shows a locked gate; the proof image is read-only; the Hero image is local guest equipment. Do not label any as a boss win, owned NFT, live balance entitlement or transaction receipt. No third-party artwork was added. A catalog capture with apparently blank icon areas was excluded pending UI verification; it is not used as final art-integration evidence.
 
-Both contracts are on Fuji (43113). The Routescan links are used because Snowtrace is not reachable from our build environment; Snowtrace links for the same addresses are in the README.
+## Owner-only completion steps
 
-## Try it in 2 minutes
-
-1. Open the live demo in **Chrome, Brave or Edge** (wallet extensions do not work in Safari).
-2. Read the short "How to play" card, then watch Mochi fight in the bottom strip.
-3. Open the menu and look at Inventory and Boss to see gear, upgrades and the daily boss.
-4. To play for real, connect an injected wallet such as Core or MetaMask, switch to Avalanche Fuji, and sign in. You need a little Fuji test AVAX for gas (from a public faucet).
-5. Claim, upgrade, win the boss for a Cat Key, then Forge (30 Yarn + 1 Cat Key, once per day) and approve the mint in your wallet.
-6. Open Market to see your Relic and list it for test AVAX.
-
-For an in-depth 5-minute numbered guide (with and without a wallet), see [Judge Walkthrough](judge-walkthrough.md). For the timed presentation shot list with spoken dialogue, see [Demo Script v2](demo-script-v2.md).
-
-Without a wallet you can still see the game, but claims, the Forge and the Market need sign-in. Running locally without Supabase config uses a mock backend that does not mint (see the README).
-
-## What is honestly not done
-
-- **Testnet only.** Fuji and test AVAX. No mainnet deployment, no audit of the contracts or backend.
-- **No rate limiting.** There is no per-IP limiter on the public endpoints (`docs/auth.md`, "Known limits"); the free Supabase tier has none built in. Server rules still stop duplicate or concurrent requests from double-paying.
-- **Wallet support is narrow.** Injected wallets on desktop Chrome, Brave and Edge only. No Safari, no mobile wallet connection (WalletConnect is a possible later addition).
-- **Market needs a wallet.** Browsing the Relic market requires connecting one; there is no read-only view.
-- **Placeholder art.** The strip uses pixel art drawn at runtime; there is no commissioned art, music or sound.
-- **Small content set.** One boss (Yarn Giant) that scales by level, four gear slots, four Relic rarities. Game numbers were tuned by simulation and signed off by the project owner, not by a large playtest.
-- **Known browser QA findings.** The remaining open items from the Round 2 browser QA are listed in `docs/qa-report-2.md` (for example, the tab bar overflowing on very narrow phones).
-
-## Team
-
-Built solo for the hackathon, with AI coding assistants. Third-party art and code are credited in the README; project code is MIT licensed.
+Confirm organizer rules/deadline/team details and a permitted private source-access route. After UI readiness, refresh screenshots and execute the timed demo, then obtain actual throwaway Fuji receipts if the wallet prerequisite is satisfied. Record the [145-second video draft](video-script.md), check every subtitle/claim against the final release, and fill the video URL. Review the [nine-slide outline](pitch-slides.md). Submission, invitations, publication and repository visibility changes are not performed by this task.
