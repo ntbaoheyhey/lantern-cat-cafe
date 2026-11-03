@@ -77,7 +77,7 @@ export function StageCanvas({
   useEffect(() => { scene.current?.show(state, reducedMotion); }, [state, reducedMotion]);
   return <div className="v2-stage-art" style={{ width: logicalWidth * zoom, height: 96 * zoom }}>
     <BackdropView art={backdropFor(state.progress.chapter)} width={logicalWidth} scale={zoom} />
-    <div ref={host} className="v2-stage-canvas" aria-label="Cat exploring the chapter" />
+    <div ref={host} className="v2-stage-canvas" role="img" aria-label="Cat exploring the chapter" />
     <div className="stage-progress" aria-label="Stage progress">
       <span>Chapter {progress.chapter} · Round {progress.round} / {v2.CHAPTERS.find(c => c.index === progress.chapter)!.roundsPerChapter}</span>
       <span className="stage-kills" aria-label={`${progress.kills} / ${progress.killsPerRound} kills; last kill is elite`}>
