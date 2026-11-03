@@ -1,5 +1,13 @@
 # Abuse-controls assessment
 
+## Current source status — 3 November 2026
+
+V2 per-player route/aggregate request budgets are implemented in [budgets.ts](../supabase/functions/_shared/v2/budgets.ts), with 429/Retry-After denial and 503 fail-closed counter errors. [Hardening tests](../supabase/tests/src/request-budgets-hardening.test.ts) exercise parallel bursts and an actually missing RPC. V2 actual-byte limits, fatal UTF-8 decoding and a total read deadline are covered by [body-limit tests](../supabase/tests/src/v2-body-limits.test.ts). Request-ID replay, revision/ownership checks, starter protection and voucher recovery now have [current source coverage](security-test-matrix.md).
+
+Per-IP/auth-challenge throttling, Sybil resistance and live enforcement are not established by these tests. Production function-source backup/restore remains unresolved in #244. No deployment or migration follows from this documentation. [Consolidated overview](security-overview.md).
+
+## Historical assessment (superseded where corrected above)
+
 Status update (2026-10-26, S2): historical v1 assessment retained; new v2 concurrency tests confirm several atomic boundaries and expose gated retry/equipment/starter gaps; bounded v2 JSON parsing is fixed, request budgets remain proposal-only. See [current review](security-review-2026-10.md).
 
 Assessed on 2026-10-24 against `main` commit `e64934d`, for B3-CX3. This is a source review, not a live penetration test or a deployment/configuration audit. No application, database, contract or game-rule changes are proposed by this patch.
@@ -25,13 +33,13 @@ Supabase's primary documentation confirms the [service-role RLS bypass](https://
 
 **Abuse:** An anonymous script can repeatedly request challenges, causing an RPC, cleanup work and an insert per request. Parallel requests can grow the set of fresh unused nonces and consume database/Edge quotas without owning a wallet.
 
-**Existing limits:** Nonces use 128 random bits from WebCrypto. Redemption is single-use and limited to ten minutes. `create_siwe_nonce` deletes **up to 1,000 used or older-than-ten-minute rows per creation**; it does not delete fresh unused nonces. This is cleanup, not a hard table-size limit or request throttle. The description of a bounded table in `auth.md` should not be read as a fixed maximum under sustained issuance; without new calls, stale rows also remain until later cleanup. Nonces are server-only via grants/RLS. No issuance cap or binding to an IP/wallet exists.
+**Existing limits:** Nonces use 128 random bits from WebCrypto. Redemption is single-use and limited to ten minutes. `create_siwe_nonce` deletes **up to 1,000 used or older-than-ten minute rows per creation**; it does not delete fresh unused nonces. This is cleanup, not a hard table-size limit or request throttle. The description of a bounded table in `auth.md` should not be read as a fixed maximum under sustained issuance; without new calls, stale rows also remain until later cleanup. Nonces are server-only via grants/RLS. No issuance cap or binding to an IP/wallet exists.
 
 ### Sign-in: `auth-verify`
 
 **Abuse:** Repeated well-shaped messages can force parsing and signature recovery, including replayed signatures whose nonce check eventually fails. A bot can generate many wallet keypairs and sign in to create many players and idle-state rows. It can also repeatedly sign in to one wallet; authentication has no wallet balance, NFT ownership or human-uniqueness prerequisite.
 
-**Existing limits:** Message length is at most 2,048 characters and the signature must be a 65-byte hex signature. Canonical SIWE, expected domain/URI, Fuji chain ID 43113, issue/not-before times (60-second future skew), non-expired message, and recovered signer are checked. Issue-time age permits the ten-minute window plus skew, but database nonce redemption itself requires creation less than ten minutes ago. Atomic `consume_siwe_nonce` prevents concurrent replay; it runs after signature verification, so invalid signatures cannot burn another nonce. Wallet uniqueness maps repeat sign-ins to one player. JWT expiry limits session duration, not request count. No failed-login throttle, player-creation budget or Sybil resistance is present.
+**Existing limits:** Message length is at most 2,048 characters and the signature must be a 65-byte hex signature. Canonical SIWE, expected domain/URI, Fuji chain ID 43113, issue/not-before times (60-second future skew), non-expired message, and recovered signer are checked. Issue-time age permits the ten minute window plus skew, but database nonce redemption itself requires creation less than ten minutes ago. Atomic `consume_siwe_nonce` prevents concurrent replay; it runs after signature verification, so invalid signatures cannot burn another nonce. Wallet uniqueness maps repeat sign-ins to one player. JWT expiry limits session duration, not request count. No failed-login throttle, player-creation budget or Sybil resistance is present.
 
 ### `game-state`
 

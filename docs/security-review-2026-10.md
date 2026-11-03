@@ -1,5 +1,13 @@
 # Security review — 2026-10-26 (S2)
 
+## Current source update — 3 November 2026
+
+The dated findings below are historical. Later merged tests cover starter salvage refusal, gear/progress revision consistency, intent-bound request-ID retries, per-player route/global budgets, bounded V2 body parsing, nonce-table privilege hardening, voucher cancellation/reissue races and transitive Deno maps. See [the current matrix](security-test-matrix.md) and [overview](security-overview.md) for exact source links and limits. The former extensionless-import guard failure no longer describes current source.
+
+These fixes are not a claim that the corresponding deployed functions match the repository. PR #244 remains unmerged because the complete deployed Supabase source/dependencies/import maps and tested restoration path are unavailable; the CLI export guard is not bypassed. No new live policy audit, backend deployment or funded transaction verification is claimed. PGlite/local-EVM results do not prove distributed production scheduling.
+
+## Historical review
+
 Status update (S2-FIX1, 2026-10-27): S2-01, S2-04 and S2-05 are **fixed in repo, pending live apply** of the integrity migration and Edge/web rollout. The original route matrix below records the S2 baseline; [S2-FIX1](../reports/s2-fix1-integrity.md) documents the new request-ID/source/revision behavior. S2-04 covers two of the four original regression tests.
 
 Source baseline: `origin/main` at `672bdeb`. Read the three earlier reviews, all nine v2 entry points, all eight `_shared/v2` modules, their rule-engine calls, SQL definitions/grants, signing/receipt helpers, and relevant browser build/auth/link configuration. This is a source review plus local exploit/regression testing, not an independent audit or a live deployment certification. No live database, secret store, deployed auth setting or wallet was accessed. Findings below distinguish CONFIRMED, NOT REPRODUCIBLE and NOT VERIFIED; severity refers to the current testnet game.
