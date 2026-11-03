@@ -9,7 +9,9 @@
 - U3: original economy 34 icons/5 frame aliases already merged as 2bc98cd; audit gaps next.
 - U4 pending; U5 gated on U1-U4; U6 screenshot/gallery pending.
 - Ledger: ai/codex-ui-ledger in /Users/bao/taskbar-hero-ui-ledger.
-- Dependencies installing locally, PID: 56940; no servers yet. Reserved test ports 5310–5313 (A), 5320–5323 (B).
+- CXU3 A PID 57251, source 2e1f83b; ports 5310–5313. Audit PID 58643 completed on 5340. B clean detached worktree /private/tmp/taskbar-hero-ui-cxu3-b installed; not yet graded.
 - Original-content flag: CONFIG.features.originalEconomy (false); VITE_GAME_V2 unchanged.
 - Next 3: reproduce CXU3 blocker; finish A/B gate; merge under shared lock and verify main/live.
 - Historical scores above are inherited evidence, not fresh grades from this session.
+- CXU3 A core green: 1429 web tests, package/scripts tests, typecheck/lint/build; changed specs 57×2 pass (3 repeats each). Full 330×2 browser matrix running. Strict audit 18 screens, zero geometry/console findings.
+- SYSTEM requests read at /private/tmp/tbh-t001-ledger/reports/ui/REQUESTS-FROM-SYSTEM-QA.md; CXR2 onboarding copy/portal tests remain queued.
