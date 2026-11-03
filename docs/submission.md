@@ -47,7 +47,7 @@ PR #244 remains unmerged because a complete deployed Supabase source/dependency/
 
 Project code declares [MIT](../LICENSE); dependencies keep their own licenses. The existing font inventory declares OFL1.1. [Canonical provenance](art/PROVENANCE.md) explicitly distinguishes Git history from independent proof of historical authorship/licensing; the older blanket “zero unknown origins” claim is not adopted here. Historical prompts/model versions remain unknown where unrecorded. The 34 new icons have concrete code/tool/date/recipe/hash evidence.
 
-Packet PNGs are unchanged copies of verified live guest captures, not newly generated art. Their hashes and original paths are in the manifest. The Map image shows a locked gate; the proof image is read-only; the Hero image is local guest equipment. Do not label any as a boss win, owned NFT, live balance entitlement or transaction receipt. No third-party artwork was added. A catalog capture with apparently blank icon areas was excluded pending UI verification; it is not used as final art-integration evidence.
+Packet PNGs are unchanged copies of verified live guest captures, not newly generated art. Filenames identify completed QA phases; the class-phase image shows Home immediately after confirmation. Their hashes and original paths are in the manifest. The Map image shows a locked gate; the proof image is read-only; the Hero image is local guest equipment. Do not label any as a boss win, owned NFT, live balance entitlement or transaction receipt. No third-party artwork was added. A catalog capture with apparently blank icon areas was excluded pending UI verification; it is not used as final art-integration evidence.
 
 ## Owner-only completion steps
 

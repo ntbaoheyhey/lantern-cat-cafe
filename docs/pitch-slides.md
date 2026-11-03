@@ -30,7 +30,7 @@ Show the local catalog with explicit opt-in. 12 stats, 15 items, 5 qualities, 7 
 
 ## Slide 7 — Evidence that can be reproduced
 
-Use the archived 6144d42 receipt only with its version label: 2,490 package unit cases and323 browser cases per desktop size, plus live identity/health/guest checks. Distinguish local mocks, local server tests, public RPC reads and real transactions. Replace counts only from a new verified receipt.
+Use the archived 6144d42 receipt only with its version label: 2,490 package unit cases and 323 browser cases per desktop size, plus live identity/health/guest checks. Distinguish local mocks, local server tests, public RPC reads and real transactions. Replace counts only from a new verified receipt.
 
 ## Slide 8 — Current limits and next work
 
