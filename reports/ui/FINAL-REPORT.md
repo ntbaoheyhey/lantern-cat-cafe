@@ -3,11 +3,11 @@
 | Card | PR | Self-graded (fresh pass) | Merged commit | Live state |
 | --- | --- | --- | --- | --- |
 | CXR2 | [#261](https://github.com/ntbaoheyhey/taskbar-hero/pull/261) | A96 / B96 · self-graded (fresh pass) | 340f88b | Main340f88b · live accepted; SYSTEM independently confirmed |
-| ART2 | [#262](https://github.com/ntbaoheyhey/taskbar-hero/pull/262) | A96 / B96 · self-graded (fresh pass) | — | Draft; backend health hold; feature flag OFF |
-| MOTION | [#263](https://github.com/ntbaoheyhey/taskbar-hero/pull/263) | A95 / B95 · self-graded (fresh pass) | — | Draft; SYSTEM health hold; not live |
-| PREVIEWS | [#264](https://github.com/ntbaoheyhey/taskbar-hero/pull/264) | A95 / B95 · self-graded (fresh pass) | — | Draft; SYSTEM health hold; feature flag OFF |
-| FIRSTPLAY | [#265](https://github.com/ntbaoheyhey/taskbar-hero/pull/265) | A95 / B95 · self-graded (fresh pass) | — | Draft; SYSTEM health hold; not live |
-| GALLERY | See UI ledger release receipt | Fresh A/B receipt on UI ledger | — | Static local review; SYSTEM health hold; not live |
+| ART2 | [#262](https://github.com/ntbaoheyhey/taskbar-hero/pull/262) | A96 / B96 · self-graded (fresh pass) | — | Draft; deployment-capacity hold; feature flag OFF |
+| MOTION | [#263](https://github.com/ntbaoheyhey/taskbar-hero/pull/263) | A95 / B95 · self-graded (fresh pass) | — | Draft; deployment-capacity hold; not live |
+| PREVIEWS | [#264](https://github.com/ntbaoheyhey/taskbar-hero/pull/264) | A95 / B95 · self-graded (fresh pass) | — | Draft; deployment-capacity hold; feature flag OFF |
+| FIRSTPLAY | [#265](https://github.com/ntbaoheyhey/taskbar-hero/pull/265) | A95 / B95 · self-graded (fresh pass) | — | Draft; deployment-capacity hold; not live |
+| GALLERY | [#266](https://github.com/ntbaoheyhey/taskbar-hero/pull/266) | A95 / B95 · self-graded (fresh pass) | — | Static local review; deployment-capacity hold; not live |
 
 The gallery indexes 624 captures at 1280×720 and 1600×900, with native-size links, screen/state filters and four playable local motion recordings. Original captures and before-repair evidence remain intact.
 
@@ -15,7 +15,7 @@ Across 12 fresh local guest runs, Home appears in 0.90–1.47 seconds and the fi
 
 Four isolated motion samples measure 60.002–60.002 fps, p95 ≤ 16.8ms and CLS 0. Reduced motion reaches the same final state instantly. Stage recordings are local samples, not funded mints.
 
-Release blocker: SYSTEM retained an auth-nonce HTTP502 health hold and was stopped by the user. ART2 and later cards remain drafts and must be refreshed and released in stack order only after the owner explicitly clears that hold. The optional owner step is recorded in reports/OPTIONAL-USER-STEPS.md on ai/codex-ui-ledger. No backend deployment, migration or live write was performed.
+Release blocker: Vercel reported more than 100 deployments on 2026-11-03 UTC. The nonce health hold cleared after two HTTP 200 responses 628.63 seconds apart on 2026-11-04 Vietnam time; no backend deployment or migration was performed. Main/live remains 340f88b. ART2 and later cards remain parked drafts under the deployment-capacity rule. Recheck capacity after 2026-11-04T00:00Z; the provider 24-hour window may last longer. The overnight report and optional owner steps are on ai/codex-ui-ledger. Scores and measurements below belong to the named accepted candidate heads, not this documentation refresh or the current live build.
 
 The authoritative rune/companion/skill ownership selector remains absent. Conditional previews use only the existing default-OFF flag and label every entry Sample/Unavailable, without ownership or persistence writes.
 

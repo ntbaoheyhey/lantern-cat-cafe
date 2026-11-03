@@ -10,7 +10,7 @@ const manifest = JSON.parse(readFileSync(resolve(root, 'reports/ui/gallery-manif
 const axeSource = readFileSync(process.env.UI_AXE_SOURCE, 'utf8');
 if (createHash('sha256').update(axeSource).digest('hex') !== '880970c081707360e64f34cea25ff91892f5bc95675b0776925b9709dd8a68bb') throw new Error('Unexpected axe-core audit source');
 
-for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
+for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html', 'docs/ui/gallery/index.html']) {
   test(`${relative} is a standalone, complete and usable review`, async ({ page }, info) => {
     const errors = [], network = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -71,7 +71,7 @@ for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
     expect(accessibility.violations).toEqual([]);
     if (process.env.GALLERY_SCREENSHOTS) {
       mkdirSync(process.env.GALLERY_SCREENSHOTS, { recursive: true });
-      await page.screenshot({ path: resolve(process.env.GALLERY_SCREENSHOTS, `${relative.startsWith('docs') ? 'demo' : 'gallery'}-${page.viewportSize().width}-${info.repeatEachIndex}.png`) });
+      await page.screenshot({ path: resolve(process.env.GALLERY_SCREENSHOTS, `${relative.replaceAll('/', '-')}-${page.viewportSize().width}-${info.repeatEachIndex}.png`) });
     }
     expect(errors).toEqual([]); expect(network).toEqual([]);
   });
