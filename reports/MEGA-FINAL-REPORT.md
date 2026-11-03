@@ -1,42 +1,40 @@
-# SYSTEM ACTIVE — 2026-11-03T19:40:49.339903+07:00
+# SYSTEM STOPPED BY USER — 2026-11-03T20:37:28.263020+07:00
 
-User restriction 2026-11-03T17:02:02.295020+07:00: screen/browser UI control stopped; background-only work remains authorized. Core/Chrome public address was supplied and read-only Fuji balance is approximately0.575testAVAX at block60447415. The account is also the deployed RelicNFT owner; it is not established as an isolated throwaway account. No key, connection, signature or transaction was performed. Buyer account and the actual funded journey remain unverified.
+User requested deleting the schedule and stopping. The same-chat automation taskbar-hero-hourly-handoff was deleted through the app and its configuration removal verified. No owned test processes or system listeners remain. Do not restart on a queued heartbeat; wait for explicit user resume. The pending diagnostic question requires no response while stopped.
 
-Latest checkpoint: 2026-11-03T19:40:49.339903+07:00 — main1a1b499/PR244 unchanged. UI opened draft PR261 at6ef93c0 with reported fresh A96/B96; API confirms open,draft,mergeable. Release refresh is UI-owned. A prior UI merge.lock has dead owner54443 but its file is younger than90minutes; it was retained under the shared protocol. No corrective merge/live acceptance, new user wallet receipts, SYSTEM process or system listener. Screen control remains stopped; no duplicate tests/merge started.
-
-Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delivery. Explicit resume is active and the existing same-chat checkpoint is now every15minutes. Repository remains private; no Actions run or submission.
+Living report, not a completion claim. Current main340f88b includes CXR2 PR261. Independent live tests CLOSE SYS-UI-007; a new auth-nonce502 health failure holds unrelated merges. Screen/native Chrome control remains stopped. Background headless QA used isolated browsers only; all owned processes have exited.
 
 | Item | PR | Self-graded (fresh pass) | Merge/status | Live |
 |---|---|---|---|---|
 |CXU5 (UI owned)|249|94/94|1b299c4|historically accepted|
 |CXU4 (UI owned)|251|95/95|2847e9a|historically accepted|
-|CXU3 (UI owned)|259|95/95 per UI board|8daa8e1|UI LIVE ACCEPTED; current smoke PASS|
-|CXC2 (UI owned)|253+254|95/96;fix96/96|666088c|adopted by UI;read-only proof PASS|
-|T011/T012|255|96/96|a903fb6|default-OFF shared original economy|
-|ORIG2+ART/T013 (art now UI owned)|256|96/96|2bc98cd|local opt-in/reset smoke PASS|
+|CXU3 (UI owned)|259|95/95 reported|8daa8e1|accepted|
+|CXC2 (UI owned)|253+254|95/96;fix96/96|666088c|public Fuji proof passes|
+|T011/T012|255|96/96|a903fb6|shared flag default OFF|
+|ORIG2+T013 (art now UI owned)|256|96/96|2bc98cd|local preview accepted|
 |CXR1 (UI owned)|245|94/94|6144d42|historically accepted|
-|CXR2 (UI owned)|261 draft;257 historical|96/96 reported on6ef93c0|unmerged|release waiting shared lock;live fix pending|
-|CXQ1|pending|pending|PARTIAL:segmented9stage rehearsal PASS at both sizes|36.070/36.292s;returning route fails;funded proof absent|
-|CXS1|258|97/97|5e35c7a|current main core/assets/health/phased smoke PASS|
-|CXS2|260|96/96 on a571066|1a1b499|post-main/live acceptance PASS;DRAFT only|
-|CXN3|244 draft|not passed|db0f9d6 BLOCKED|no backend deploy|
-|CXN4/CXN5;regression|conditional|pending|A–F not all green/merged|not complete|
+|CXR2 (UI owned)|261|96/96 on6ef93c0 reported;release335011f runtime identical|340f88b|SYS-UI-007 independently CLOSED|
+|CXQ1|pending|not assigned|PARTIAL|guest9stages eachsize PASS;health/wallet pending|
+|CXS1|258|97/97|5e35c7a|source-based security overview;no live certification|
+|CXS2|260|96/96 on a571066|1a1b499|DRAFT delivery accepted;historical media|
+|CXN3|244 draft|not passed|db0f9d6 BLOCKED|backup/restore prerequisite absent|
+|CXN4/CXN5;regression|conditional|pending|P2 gated|backend health/funded proof outstanding|
 
-CXS2 post-main acceptance completed at09:21UTC:2,523 package cases plus5 script cases,38classic browser cases,typecheck,lint,Deno/build/bundle/docs/links passed. Two inherited expected failures and11skips remain disclosed.35/35live assets matched before and after;22health checks and16guest/read-only stages at EACH1280x720 and1600x900 passed with zero unexpected errors or transactions. No full UI matrix is claimed for this documentation merge. [Acceptance](cards/CXS2-FRESH/acceptance.json).
+Current independent evidence on340f88b: returning guests reach Home at BOTH1280x720 and1600x900, preserving Warrior,level35 and all55saved items. The nine-stage guest rehearsal passes36.038/36.464seconds with an explicit fresh-onboarding→unchanged earned-save transition. No fake clock/resources, unexpected console/page/request errors, gameplay network writes or wallet transactions.35/35frontend assets match before/after. This is not uninterrupted fresh-to-boss progression in three minutes. [Current partial receipt](cards/CXQ1-FRESH/post-cxr2-acceptance-partial.json).
 
-CXS2 remains a9-slide DRAFT with a145-second planned VN narration/EN subtitle script and7hashed historical6144d42 screenshots. No video,upload,invitation,contest submission or funded-wallet success is claimed. Source was reviewed on a571066 in two separate passes; historical69a83d2 grades were not reused.
+The required legacy health run at12:57UTC has21PASS/1FAIL: auth-nonce POST502 instead of200. A bounded follow-up POST at13:00UTC also502; GET at13:25UTC also502 while auth-verify GET405 confirms the expected method rejection on the control function. CLI metadata reports both ACTIVE/version46,updated31October03:54UTC; ACTIVE does not prove runtime health or deployed source identity. No backend/auth/wallet source changed in PR261. Root cause is unknown; the original failed gate was retained. [SYS-HEALTH-001](cards/SYS-HEALTH-001/REPORT.md).
 
-CXQ1 runs only after UI board readiness08:30:50UTC for CXU3/CXC2. Real guest play earns resources and gear using wall-clock time; checkpoint data stays local/credential-filtered and is not committed. Original timed entry failed at landing because the classed save auto-opens Home;105preparation ticks earned boss-ready progress in3342seconds. Corrected two-segment rehearsal passed all9stages in36.070/36.292seconds at1280/1600, with zero unexpected errors/server writes/transactions and35matching assets before/after. The transition to unchanged earned progress is explicit; no uninterrupted fresh-to-boss3minute claim. Current clean source8daa8e1 and docs-only1a1b499 emit the same35deployed assets; R1 evidence identifies exact source1a1b499 and separately records earned-save source8daa8e1. No wallet/key/signature/funding/transaction has been created by SYSTEM.
+Owner step: inspect sanitized auth-nonce platform logs/request ids for19:57–20:25 Vietnam time. The installed CLI exposes no function-log command and user screen control is stopped. No credentials,raw exports,redeploy,migration or production setting change is requested. [Owner steps](OPTIONAL-USER-STEPS.md). UI acknowledges the backend merge hold and continues only local ART2/MOTION work.
 
-PR244 remains blocked by missing complete deployed function source,dependencies/import maps and tested restore; UnsafeFunctionDownloadPathError is not bypassed. Official free Fuji faucet currently needs a connected wallet and Builder Hub login. [Owner steps](OPTIONAL-USER-STEPS.md). These block neither independent documentation nor guest QA; funded mint/list/buy remains NOT VERIFIED.
+The user supplied Core/Chrome public account0x2Bba9a48F7F79d99154108A28d32f1a21d17055c. Observed Fuji balance was0.57499999978920712testAVAX at block60447415; it is also NFT owner, so isolated throwaway status is not established. A distinct funded buyer and actual mint/list/buy receipts remain unverified. The user operates Core; SYSTEM verifies public hashes. [Manual guide](cards/CXQ1-FRESH/MANUAL-TEST.md). No private key or signature has been received.
 
-Ownership addendum remains in force: SYSTEM does nonvisual data/security/evidence; UI session owns layout/screens/art. Rune fields are deferred under P2 gate; UI accepted labelled unavailable/sample state. UI defects are reported in the SYSTEM request mirror, not fixed in UI files. No new feature proposed.
+Earlier CXS2 acceptance on1a1b499 remains historical evidence:2528unit/script,38classic,35assets,22health and16guest/read-only stages per size passed. Two inherited expected failures and11skips were disclosed. Current340f88b does not inherit a passing backend health claim from that run. UI reports current main146changed cases and its full frozen-head gates; SYSTEM did not duplicate those suites.
 
-CXQ1 finding2026-11-03T09:39:26Z: live returning guest Play as guest leads to a blank class screen on1a1b499. Screenshot/receipt confirm it; zero writes. SYS-UI-007 is handed to UI via the request mirror and board; unrelated merges are held. The old timed script also incorrectly requests first-time onboarding from an already-classed save; SYSTEM corrected its own harness and disclosed the prepared-progress transition. Both1280x720 and1600x900 reproduce it. Read-only receipt helper passes37 local controls;12prepared-save provenance plus6credential controls also pass (55total). Corrected timed-earned-demo.mjs explicitly separates actual fresh onboarding from unchanged UI-earned progress; it passed live in36.070/36.292seconds and cannot clear SYS-UI-007. No funded run is verified.
+CXS2 remains a9-slide DRAFT with145-second planned VN narration/EN subtitles and7hashed historical6144d42 screenshots. No video,submission,invitation,visibility change or funded-wallet success is claimed. PR244 still lacks complete deployed source/dependencies/import maps plus a tested restore; UnsafeFunctionDownloadPathError was not bypassed.
 
-[CXQ1 partial report](cards/CXQ1-FRESH/REPORT.md) preserves the original failure,105-tick preparation, corrected timed results, public asset proofs and owner prerequisites. All owned PIDs have exited; no system ports are bound. Unblocked SYSTEM work is complete for now, with UI007/funded evidence and final regression outstanding; the15minute reminder stays active.
+All finished owned PIDs70204/73441 have exited; no system ports are bound. New own clean worktree is /Users/bao/taskbar-hero-system-main-cxr2 at340f88b. Two CLI-created non-credential metadata cache files were removed only from that owned worktree; no foreign files/processes/locks were touched. No backend deployment,destructive live write,production flag change,mainnet or real-funds action occurred.
 
-P0/P1 are not fully complete. P2 remains gated; final regression follows UI/CXQ1 integration. Preserved old temporary registrations/untracked historical files; only committed evidence was recovered after temp-worktree loss. [Handoff](MEGA-CURRENT-HANDOFF.md).
+P0/P1 are not fully complete; P2 remains gated. The15-minute checkpoint is deleted and SYSTEM work is stopped. [Handoff](MEGA-CURRENT-HANDOFF.md).
 
 ---
 Historical reports below retain their original dates and do not override current authority.

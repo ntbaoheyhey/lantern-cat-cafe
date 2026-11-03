@@ -1,3 +1,16 @@
+# CXQ1 — current update after CXR2
+
+Current source340f88b passes the returning-guest route at BOTH desktop sizes: Home is visible and Warrior,level35 and all55saved items survive. SYS-UI-007 is CLOSED. The explicitly two-segment nine-stage guest rehearsal passes36.038seconds at1280x720 and36.464seconds at1600x900, with no unexpected errors/gameplay network writes/transactions and35matching assets before/after.
+
+The separate health gate has21PASS/1FAIL: auth-nonce POST502, a bounded follow-up also502, and diagnostic GET502 while auth-verify GET returns405. The original failure is retained. [Backend diagnosis and owner step](../SYS-HEALTH-001/REPORT.md). No source identity or root cause is claimed from ACTIVE deployment metadata.
+
+Funded wallet proof remains NOT VERIFIED. The seller's test funds are observed, but the supplied account is also NFT owner; a distinct buyer and actual fresh receipts remain needed. User controls Core/Chrome; no native screen/browser control resumed. Isolated headless QA used the existing original scripted-test authorization and never attached to the user's browser.
+
+[Current partial receipt](post-cxr2-acceptance-partial.json) · [manual wallet guide](MANUAL-TEST.md).
+
+---
+Historical1a1b499 rehearsal below is retained and does not override the current UI closure/backend failure.
+
 # CXQ1 — partial; guest rehearsal passed, UI and funded proof pending
 
 Current source1a1b499 completed all nine requested guest/read-only stages at1280x720 in36.070seconds and1600x900 in36.292seconds. Both fit the180-second budget. There were no unexpected console/page/request errors, no network writes and no wallet transactions. All35frontend/public assets matched an in-memory build of the exact source before and after the run.

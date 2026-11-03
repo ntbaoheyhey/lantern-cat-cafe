@@ -68,3 +68,8 @@ The user stopped screen control. SYSTEM must not resume browser/native UI action
 Use normal game eligibility and wallet prompts on chain43113 only. The owner account does not need any administrative action. A separate buyer must have free test AVAX. The earlier official faucet/login observation remains [historical evidence](cards/CXQ1-FRESH/FUNDING.md), not a claim that the supplied account lacks funds.
 
 The [public receipt checker](cards/CXQ1-FRESH/WALLET-RUN.md) rejects mismatched contracts/accounts/payments, stale receipts, missing transfers and reorgs. Its local controls do not count as a live funded run. UI-owned SYS-UI-007 also remains a separate live regression until its corrective release is verified. No backend deployment, production setting change or guard bypass is authorized.
+
+
+## SYS-HEALTH-001 — read-only sign-in failure diagnosis
+
+Current auth-nonce returns502 for POST and GET; auth-verify GET returns405. The supplied seller wallet has observed test funds, but new sign-in can fail independently. Please inspect the Supabase auth-nonce logs/Invocations for3November2026 19:57–20:25 Vietnam time and share only the sanitized error category/redacted message. Request ids and exact evidence are in [SYS-HEALTH-001](cards/SYS-HEALTH-001/REPORT.md). No credential or raw log export is needed. This is a read-only owner step, not authorization to redeploy, migrate, change flags or bypass #244 backup/restore safeguards.

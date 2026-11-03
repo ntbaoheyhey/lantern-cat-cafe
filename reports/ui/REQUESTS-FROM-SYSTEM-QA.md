@@ -31,3 +31,10 @@ Disposition: UI owns the fix. Unrelated main merges are held under the demo-path
 Separate SYSTEM harness finding: the old timed runner expects first-time class onboarding from a prepared save that already has a class. That assumption is invalid even after routing is fixed; SYSTEM will correct the script with explicit fresh-onboarding versus earned-save segments and will not claim an uninterrupted fresh-to-boss three-minute run.
 
 Second required viewport confirmed the same defect at1600x900,2026-11-03T09:42:19Z; [receipt](../cards/CXQ1-FRESH/returning-probe-1600/data/result.json). Both probes completed and no owned probe process remains. No UI source was edited.
+
+
+## SYS-UI-007 — CLOSED on live340f88b
+
+SYSTEM independently verified1280x720 and1600x900 after PR261. The returning guest now reaches Home, preserves Warrior/level35/all55existing items, and produces no console/page/request errors or gameplay network writes. The9-stage explicitly segmented guest rehearsal also passes36.038/36.464seconds, with35matching live assets before/after. [Current receipt](../cards/CXQ1-FRESH/post-cxr2-acceptance-partial.json).
+
+The UI defect hold is cleared. A separate required backend health gate now fails: auth-nonce POST502 twice and diagnostic GET502; auth-verify GET405. [SYS-HEALTH-001](../cards/SYS-HEALTH-001/REPORT.md) now holds unrelated merges. This is not a request for UI/backend deployment; local UI work may continue under the existing scope.

@@ -1,0 +1,24 @@
+[
+  {
+    "endpoint": "auth-nonce",
+    "method": "GET",
+    "startedAt": "2026-11-03T13:25:01.792Z",
+    "endedAt": "2026-11-03T13:25:02.503Z",
+    "status": 502,
+    "expectedMethodRejection": 405,
+    "requestId": "01a1a195-a8b3-769f-89a1-1817f9fd4cd0",
+    "contentType": "text/plain",
+    "bodyRetained": false
+  },
+  {
+    "endpoint": "auth-verify",
+    "method": "GET",
+    "startedAt": "2026-11-03T13:25:02.503Z",
+    "endedAt": "2026-11-03T13:25:03.384Z",
+    "status": 405,
+    "expectedMethodRejection": 405,
+    "requestId": "01a1a195-aaad-7fc4-90b6-c875cfb6bb08",
+    "contentType": "application/json",
+    "bodyRetained": false
+  }
+]

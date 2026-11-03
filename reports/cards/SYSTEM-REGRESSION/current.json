@@ -1,28 +1,30 @@
 {
   "card": "SYSTEM-REGRESSION",
-  "status": "PARTIAL",
-  "recordedAt": "2026-11-03T16:52:34.285606+07:00",
-  "sourceHead": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "status": "PARTIAL_BACKEND_HEALTH_AND_WALLET_PENDING",
+  "recordedAt": "2026-11-03T20:34:21.008380+07:00",
+  "sourceHead": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
   "selfGradedScores": null,
   "reusedExactHeadEvidence": "../CXS2-FRESH/acceptance.json",
   "checks": {
     "mainPackageAndScriptPasses": 2528,
     "classicBrowserPasses": 38,
     "assetsBeforeAndAfter": 35,
-    "liveHealthPasses": 22,
+    "liveHealthPasses": 21,
     "phasedGuestStepsPerViewport": 16,
-    "returningGuest1280": "FAIL_SYS_UI_007",
-    "returningGuest1600": "FAIL_SYS_UI_007",
-    "timedEarnedDemo": "TWO_SEGMENT_REHEARSAL_PASS_36.070s_36.292s",
+    "returningGuest1280": "PASS_LIVE_PROGRESS_PRESERVED",
+    "returningGuest1600": "PASS_LIVE_PROGRESS_PRESERVED",
+    "timedEarnedDemo": "TWO_SEGMENT_PASS_36.038s_36.464s",
     "fundedFujiMintListBuy": "NOT_VERIFIED",
-    "uiCxr2Integration": "PENDING"
+    "uiCxr2Integration": "MERGED_AND_LIVE_ROUTE_VERIFIED",
+    "liveHealthFailures": 1
   },
-  "mergeGate": "No unrelated main merge while SYS-UI-007 is unresolved; corrective UI change requires reproduction/full gates/live confirmation",
+  "mergeGate": "No unrelated main merge while auth-nonce health gate fails",
   "limits": [
     "No full current-head UI matrix claimed",
     "Two inherited expected failures and eleven skips disclosed",
     "No backend source identity/backup certification; #244 remains blocked",
     "No wallet transaction, backend write, submission, production setting change or P2 activation"
   ],
-  "timedRehearsalReceipt": "../CXQ1-FRESH/acceptance-partial.json"
+  "timedRehearsalReceipt": "../CXQ1-FRESH/acceptance-partial.json",
+  "currentEvidence": "../CXQ1-FRESH/post-cxr2-acceptance-partial.json"
 }

@@ -1,0 +1,55 @@
+{
+  "card": "CXQ1",
+  "status": "PARTIAL_BACKEND_HEALTH_AND_WALLET_PENDING",
+  "recordedAt": "2026-11-03T20:34:21.008380+07:00",
+  "sourceHead": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+  "uiPr": 261,
+  "uiDefect": "SYS-UI-007 CLOSED by independent live tests at both sizes",
+  "returningGuest": {
+    "viewports": [
+      "1280x720",
+      "1600x900"
+    ],
+    "status": "PASS",
+    "classPreserved": "warrior",
+    "levelPreserved": 35,
+    "retainedItems": 55,
+    "unexpectedErrors": 0,
+    "gameplayNetworkWrites": 0
+  },
+  "guestRehearsal": {
+    "status": "PASS_TWO_DISCLOSED_SEGMENTS",
+    "elapsedMs": [
+      36038,
+      36464
+    ],
+    "stepsPerViewport": 9,
+    "preparationSeconds": 3342,
+    "clockInjection": false,
+    "syntheticFixture": false,
+    "uninterruptedFreshToBossClaim": false,
+    "networkWrites": 0,
+    "transactionsPerformed": 0
+  },
+  "assetsBeforeAndAfter": 35,
+  "health": {
+    "passed": 21,
+    "failed": 1,
+    "failure": "auth-nonce POST HTTP502",
+    "followupPostStatus": 502,
+    "diagnosticGetStatus": 502,
+    "authVerifyControlGetStatus": 405,
+    "deployedMetadata": "ACTIVE version46 is not proof of availability",
+    "rootCause": "UNKNOWN",
+    "originalFailedGateRetained": true
+  },
+  "fundedWalletRun": "NOT_VERIFIED",
+  "selfGradedScores": null,
+  "unrelatedMainMergeAllowed": false,
+  "p2Allowed": false,
+  "remaining": [
+    "Resolve auth-nonce availability with verified evidence",
+    "Actual funded mint/list/buy receipts and UI evidence",
+    "Complete CXQ1 grading and final regression"
+  ]
+}

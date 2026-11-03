@@ -1,7 +1,7 @@
-# SYSTEM regression — partial
+# SYSTEM regression — partial on340f88b
 
-Current source1a1b499 passes its documentation-release core, classic and live smoke gate; the exact evidence is [CXS2 acceptance](../CXS2-FRESH/acceptance.json). These results are not a new full UI matrix.
+The returning-guest defect is now closed by independent live tests at1280x720 and1600x900, preserving the saved class,level and55items. The nine-stage guest rehearsal passes36.038/36.464seconds with an explicit fresh/earned transition, no unexpected errors or gameplay writes, and35matching frontend assets before/after.
 
-The returning-guest demo route fails at both1280x720 and1600x900 (SYS-UI-007). [UI request and reproduction](../../ui/REQUESTS-FROM-SYSTEM-QA.md). Unrelated main merges remain held until the corrective change satisfies its gates and the live defect is cleared. The explicitly segmented earned-progress rehearsal passes9stages in36.070/36.292seconds with35matching assets before/after; this does not clear the returning-guest defect. Funded Fuji mint/list/buy remains incomplete; no final score or complete regression certification is assigned. [Machine-readable card](current.json).
+The required legacy health gate fails21PASS/1FAIL: auth-nonce returns502. A bounded POST follow-up and a separate GET diagnostic also return502. The original failure remains visible; no retry-to-green is claimed. [SYS-HEALTH-001](../SYS-HEALTH-001/REPORT.md) holds unrelated merges.
 
-The code/data gate remains default OFF, the repository private, and #244 blocked by missing deployed-source backup and tested restore. All production settings and backend state/deployments are unchanged. P2 is not authorized by these partial results.
+Funded Fuji mint/list/buy remains unverified. No complete regression grade or P0/P1 completion is assigned. #244 remains blocked, repository private, production flags unchanged and P2 gated. [Current receipt](../CXQ1-FRESH/post-cxr2-acceptance-partial.json).
