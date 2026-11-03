@@ -15,3 +15,4 @@
 - Historical scores above are inherited evidence, not fresh grades from this session.
 - CXU3 A core green: 1429 web tests, package/scripts tests, typecheck/lint/build; changed specs 57×2 pass (3 repeats each). Full 330×2 browser matrix running. Strict audit 18 screens, zero geometry/console findings.
 - SYSTEM requests read at /private/tmp/tbh-t001-ledger/reports/ui/REQUESTS-FROM-SYSTEM-QA.md; CXR2 onboarding copy/portal tests remain queued.
+- Field request posted for CXLU1 rune model; current contracts have no rune data. Placeholder/sample states remain allowed; no API edits planned.
