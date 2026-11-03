@@ -22,6 +22,7 @@ out.mkdir(parents=True, exist_ok=True)
 env = dict(os.environ)
 env.update({name: str(a.port + i) for i, name in enumerate(['E2E_PORT_CLASSIC', 'E2E_PORT_V2', 'E2E_PORT_SERVER', 'E2E_PORT_API'])})
 env['CXU3_SCREENSHOTS'] = str(root / 'screenshots/ui-2026-11-03' / a.pass_name)
+env['CXR2_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 pnpm = ['npx', '-y', 'pnpm@10.28.0']
 receipt = {'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), 'pass': a.pass_name, 'pid': os.getpid(), 'cwd': str(root), 'ports': list(range(a.port, a.port + 4)), 'checks': []}
 
