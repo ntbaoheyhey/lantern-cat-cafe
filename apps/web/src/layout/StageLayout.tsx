@@ -53,6 +53,7 @@ import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
 import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
+import { Banner } from '../ui';
 import './layout.css';
 
 const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
@@ -430,6 +431,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
+      {mode.notice && <Banner tone="warning" data-testid="session-expired-notice">{mode.notice}</Banner>}
       {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
         <p role="alert" className="v2-alert">
