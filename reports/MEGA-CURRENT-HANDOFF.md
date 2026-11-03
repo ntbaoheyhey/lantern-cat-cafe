@@ -60,9 +60,10 @@ After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/pus
 Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
 Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
 CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
-CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: dirty migration base187a1b5; type/44units/11browser PASS.
+CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: localc49421f atop187a1b5; not pushed.
 CXR2 browser1:1PASS/10FAIL due portal-inert query assumptions; documented strict guard/query adaptation.
 CXR2 browser2:7PASS/4FAIL; fixture lacked visit marker/30s tick; corrected locally, no product change.
 CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 initial Help using current rules.
-Builder-final PID40798 cwd above,5110–5113;third correction; no main/CXR2 grade/merge yet.
+Builder-final40798 PASS44units/11browser; added missing new v2 unit +rail polish/keyboard loot-region.
+CXR2 builder-core PID44763 cwd above; fullunit+11browser on5110–5113; final correction still verifying.
 Next3: finish clean B tests then full-diff grade; if qualified merge245/main+live; finish CXR2 gate on updatedmain.

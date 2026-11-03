@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:02:12.568668+00:00",
+    "endedAt": "2026-11-03T04:02:22.742558+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/ui/ui.test.tsx src/ui/legacy-dialogs.test.tsx src/onboarding/HowToPlay.test.tsx src/layout/loot/WelcomeBack.test.tsx src/layout/loot/ChestReveal.test.tsx",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:02:22.749909+00:00",
+    "endedAt": "2026-11-03T04:02:25.291597+00:00"
+  },
+  {
+    "name": "browser",
+    "command": "CXR2_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/CXR2-FRESH/builder-final/screenshots E2E_PORT_CLASSIC=5110 E2E_PORT_V2=5111 E2E_PORT_SERVER=5112 E2E_PORT_API=5113 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/cxr2-dialogs.spec.ts e2e/onboarding.spec.ts e2e/v2/t2-player-loop.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "187a1b5b551766bc031c6ab54e1562e7aa7bc6fb",
+    "exit": 0,
+    "startedAt": "2026-11-03T04:02:25.299494+00:00",
+    "endedAt": "2026-11-03T04:02:54.654372+00:00"
+  }
+]
