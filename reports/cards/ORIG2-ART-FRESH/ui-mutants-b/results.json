@@ -1,0 +1,82 @@
+[
+  {
+    "name": "level-selection-ignored",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "preview?.item(selectedItem, quality, level)",
+    "to": "preview?.item(selectedItem, quality, 1)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "output-rate-as-trigger",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "number(effect!.amountPerActivation)",
+    "to": "number(effect!.amountPerSecond)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "zero-upgrade-price",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "number(upgrade!)",
+    "to": "number(0)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cooldown-unit-wrong",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "number(skill.every / 1000)",
+    "to": "number(skill.every)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "weapons-filter-all",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "table.gear.items[id].slot === 'weapon'",
+    "to": "true",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "cap-shows-base",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "formatDraftStat(id, table.stats[id].cap!)",
+    "to": "formatDraftStat(id, table.stats[id].base)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "rank-gate-wrong",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "table.skills.unlockLevels[rank - 1]!",
+    "to": "table.skills.unlockLevels[0]!",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "regen-unit-missing",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "unit === 'fraction/second' ? '/s' : ''",
+    "to": "unit === 'fraction/second' ? '' : ''",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "atlas-scale-ignored",
+    "path": "apps/web/src/original-preview/OriginalArt.tsx",
+    "from": "atlas.meta.size.w * scale",
+    "to": "atlas.meta.size.w",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "lazy-unmount-missing",
+    "path": "apps/web/src/ui/Tabs.tsx",
+    "from": "{(!tab.lazy || active === tab.id) && tab.content}",
+    "to": "{tab.content}",
+    "exit": 1,
+    "killed": true
+  }
+]

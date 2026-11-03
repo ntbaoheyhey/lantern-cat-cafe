@@ -1,0 +1,80 @@
+{
+  "root": "/private/tmp/tbh-original-preview-b",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/grade-b",
+  "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+  "sharedFullMatrix": "A321 each size on identical792b475; no duplicate full B matrix",
+  "commands": [
+    [
+      "install",
+      "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline"
+    ],
+    [
+      "ui-mutants",
+      "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/ui-mutants-b.mjs"
+    ],
+    [
+      "art-mutants",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants-b.py /private/tmp/tbh-original-preview-b /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants-b"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "art-unit",
+      "python3 -B -m unittest discover -s tools/art -v"
+    ],
+    [
+      "art-catalog",
+      "python3 -B tools/art/catalog.py --check"
+    ],
+    [
+      "originality",
+      "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/check-originality.py /private/tmp/tbh-original-preview-b origin/main"
+    ],
+    [
+      "capture",
+      "ORIGINAL_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/grade-b/screenshots VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts --workers=1 --retries=0 --reporter=line"
+    ],
+    [
+      "repeat-changed",
+      "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxc2-proof.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "classic-browser",
+      "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

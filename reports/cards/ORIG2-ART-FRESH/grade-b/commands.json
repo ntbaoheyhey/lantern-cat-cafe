@@ -1,0 +1,146 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:30:33.414186+00:00",
+    "endedAt": "2026-11-03T02:30:40.664951+00:00"
+  },
+  {
+    "name": "ui-mutants",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/ui-mutants-b.mjs",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:30:40.672507+00:00",
+    "endedAt": "2026-11-03T02:31:02.939528+00:00"
+  },
+  {
+    "name": "art-mutants",
+    "command": "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants-b.py /private/tmp/tbh-original-preview-b /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/art-mutants-b",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:31:02.946314+00:00",
+    "endedAt": "2026-11-03T02:31:03.920210+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:31:03.927002+00:00",
+    "endedAt": "2026-11-03T02:31:12.303269+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:31:12.310778+00:00",
+    "endedAt": "2026-11-03T02:31:19.552088+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:31:19.560084+00:00",
+    "endedAt": "2026-11-03T02:32:10.681098+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:10.688369+00:00",
+    "endedAt": "2026-11-03T02:32:11.381594+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:11.388298+00:00",
+    "endedAt": "2026-11-03T02:32:11.554511+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:11.561828+00:00",
+    "endedAt": "2026-11-03T02:32:19.348072+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:19.355989+00:00",
+    "endedAt": "2026-11-03T02:32:19.415686+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:19.424285+00:00",
+    "endedAt": "2026-11-03T02:32:25.842434+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:25.849367+00:00",
+    "endedAt": "2026-11-03T02:32:25.920746+00:00"
+  },
+  {
+    "name": "art-unit",
+    "command": "python3 -B -m unittest discover -s tools/art -v",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:25.927535+00:00",
+    "endedAt": "2026-11-03T02:32:28.023375+00:00"
+  },
+  {
+    "name": "art-catalog",
+    "command": "python3 -B tools/art/catalog.py --check",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:28.030058+00:00",
+    "endedAt": "2026-11-03T02:32:33.399810+00:00"
+  },
+  {
+    "name": "originality",
+    "command": "python3 /private/tmp/tbh-t001-ledger/reports/cards/ORIG1-FRESH/check-originality.py /private/tmp/tbh-original-preview-b origin/main",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:33.406969+00:00",
+    "endedAt": "2026-11-03T02:32:58.824016+00:00"
+  },
+  {
+    "name": "capture",
+    "command": "ORIGINAL_SCREENSHOTS=/private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/grade-b/screenshots VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts --workers=1 --retries=0 --reporter=line",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:32:58.831560+00:00",
+    "endedAt": "2026-11-03T02:33:18.085350+00:00"
+  },
+  {
+    "name": "repeat-changed",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/original-preview.spec.ts e2e/ui/cxu4-hero-help.spec.ts e2e/ui/cxc2-proof.spec.ts --repeat-each=5 --workers=2 --retries=0 --reporter=line",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:33:18.092262+00:00",
+    "endedAt": "2026-11-03T02:34:15.598157+00:00"
+  },
+  {
+    "name": "classic-browser",
+    "command": "VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=5030 E2E_PORT_V2=5031 E2E_PORT_SERVER=5032 E2E_PORT_API=5033 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line",
+    "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+    "exit": 0,
+    "startedAt": "2026-11-03T02:34:15.606002+00:00",
+    "endedAt": "2026-11-03T02:34:50.919311+00:00"
+  }
+]

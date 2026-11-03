@@ -1,0 +1,82 @@
+[
+  {
+    "name": "default-preview-on",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "useState<boolean>(CONFIG.features.originalEconomy)",
+    "to": "useState<boolean>(true)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "fraction-rounded-away",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "number(value * 100)",
+    "to": "number(Math.round(value) * 100)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "quality-selection-ignored",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "preview?.item(selectedItem, quality, level)",
+    "to": "preview?.item(selectedItem, 'common', level)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "rank-selection-ignored",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "preview?.skill(skillId, rank)",
+    "to": "preview?.skill(skillId, 1)",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "free-max-upgrade",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "upgrade === null ? 'Maximum preview level'",
+    "to": "upgrade === null ? 'Next draft upgrade: 0 Fish'",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "armor-includes-weapons",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "['helmet', 'armor', 'gloves', 'boots']",
+    "to": "['weapon', 'helmet', 'armor', 'gloves', 'boots']",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "atlas-wrong-y",
+    "path": "apps/web/src/original-preview/OriginalArt.tsx",
+    "from": "-entry.frame.y * scale",
+    "to": "-entry.frame.x * scale",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "fractional-icon-width",
+    "path": "apps/web/src/original-preview/OriginalArt.tsx",
+    "from": "width: entry.sourceSize.w * scale",
+    "to": "width: entry.sourceSize.w * scale + 0.5",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "persist-local-opt-in",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "onClick={() => setEnabled(value => !value)}",
+    "to": "onClick={() => { localStorage.setItem('original-mutant', '1'); setEnabled(value => !value); }}",
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "name": "mutate-shared-flag",
+    "path": "apps/web/src/original-preview/OriginalCatalog.tsx",
+    "from": "onClick={() => setEnabled(value => !value)}",
+    "to": "onClick={() => { Object.assign(CONFIG.features, { originalEconomy: true }); setEnabled(value => !value); }}",
+    "exit": 1,
+    "killed": true
+  }
+]

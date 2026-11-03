@@ -1,0 +1,75 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader A, local preview and T013 art",
+  "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+  "base": "a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3",
+  "tree": "2d5eb6e15ad2b0e85bb6e7246e68282542b3ca68",
+  "sourceRoot": "/private/tmp/tbh-original-preview",
+  "gradedAt": "2026-11-03T02:28:58.291782+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Default-OFF local consumer covers12/15/5/7 data; no config/storage/network mutation; selections, units, caps/costs and reset behavior pass.34 original icons and5 preserved frame aliases delivered."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Exact-head core2459,40 art tests/catalog drift,321 browsers per size,60 changed-case repeats and captures/build/import/link/originality checks pass; inherited expected failures/skips unchanged."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten UI and four independent art-property mutants killed after green controls, including shared-flag/storage effects, fractions, selection, atlas mapping, palette/alpha/padding and frame offsets."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Native1x/3x dark/cream/silhouette art and compact desktop UI inspected. Deduct2 for a few small prop details relying on adjacent text and necessary scrolling of larger lists."
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Isolated typed calculator consumer, lazy loading and deterministic standard-library art pipeline; deduct2 for dense JSX and duplicated human/machine provenance views, covered by checks."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "Existing assertions retained; missing provenance git hashes were fixed in generation, not removed from the inherited test. No retries, skipped failures or reduced thresholds."
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Exact per-file briefs/date/method/runtime/hash recorded; no image model/external media. Regeneration kept all pixels/atlas bytes identical. Originality checks pass; local fixtures are not live gameplay claims."
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Additive frontend/art/tool/catalog scope and config comment only. No existing art, active config values, server logic, migrations, flags/settings, dependency or workflow changes."
+    }
+  ],
+  "evidence": [
+    "grade-a/commands.json",
+    "ui-mutants-a/results.json",
+    "art-mutants-a/results.json",
+    "art-runtime-equality.json",
+    "art-contrast.json",
+    "review-inventory.json"
+  ],
+  "mergeAllowed": false,
+  "releaseConditions": [
+    "Clean fresh B>=92",
+    "Exact-head PR and actual-main/live validation including preview opt-in"
+  ]
+}
