@@ -1,0 +1,38 @@
+{
+  "head": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "passName": "b",
+  "control": "PASS",
+  "originalSha256": "5a461fb5198300a2a30d37877b119ee8c5c6a309d120aee95908df952ce657fe",
+  "results": [
+    {
+      "name": "session-unbounded",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "name": "nonce-window",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "name": "counter-fails-open",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "name": "per-ip-overclaim",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "name": "fake-live-receipt",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "name": "wrong-contract",
+      "killed": true,
+      "exit": 1
+    }
+  ]
+}

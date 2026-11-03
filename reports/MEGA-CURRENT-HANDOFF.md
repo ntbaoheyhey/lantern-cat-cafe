@@ -37,8 +37,9 @@ No funded wallet or full timed demo claim. All prior verification PIDs finished;
 
 Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, 97a1595 clean.
 CXS1 exact97a1595 fresh A97 PASS:691words/2490core/38classic/6mutants/builds/links.
-A62344 finished. Clean B PID66562 /private/tmp/tbh-sys-cxs1-b at97a1595; tests-first,5220–5223.
-B diff review not started; no merge lock held; future main block5240–5243.
+A62344/B66562 FINISHED PASS97/97 on97a1595; clean B tests then full diff; all ports free.
+CXS1 waits for UI-held merge lock; first attempt inCXS1-FRESH/lock-wait.json; recheck2–3min,max60min.
+Need latest-main integration and locked changed-spec/type/lint before merge; regrade if reviewed head changes.
 Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
 Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.
 

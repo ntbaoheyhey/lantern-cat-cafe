@@ -1,0 +1,107 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B clean checkout; tests before diff",
+  "head": "97a1595ac69edd105e7a5fa92b1b00402a033a0c",
+  "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
+  "sourceRoot": "/private/tmp/tbh-sys-cxs1-b",
+  "gradedAt": "2026-11-03T12:07:53.855300+07:00",
+  "status": "PASS",
+  "score": 97,
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "All seven docs reviewed after tests;691-word overview, correct source-test quotations, requested companion refresh and judge block;244 remains explicitly blocked.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Clean exact-head B passed install/docs/type/lint/2490core/Deno/default+classic builds/bundle/links/38classic cases. Only docs changed; no new visual specifications require desktop repeats.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Six distinct B mutants caught unbounded sessions,wrong nonce window,fail-open budgets,per-IP overclaim,fake transaction evidence and wrong contract address, following a green control.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "score": 14,
+      "max": 15,
+      "reason": "Code/deployment/test scopes are accurate; deduct1 for long dated material remaining under superseded labels.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Concrete references and a compact overview; deduct2 for repeated status notices across historical companion docs.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No runtime or test implementation changes, weakened thresholds,new skips or retries. Source cases are ordinary tests, not expected-failure evidence.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "No backend identity,complete backup,audit or funded-wallet success claimed. Test/source facts and production limitations remain separate.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "Seven documentation files; no UI/art/code/package/workflow edits; own SYSTEM checkout and5220-series ports.",
+      "evidence": [
+        "grade-b/commands.json",
+        "review-b.json",
+        "mutants-b/results.json"
+      ]
+    }
+  ],
+  "mergeAllowed": false,
+  "remaining": [
+    "Acquire shared merge lock",
+    "Integrate current main and require matching exact-head evidence",
+    "Locked changed specs/typecheck/lint; then merge and verify"
+  ]
+}
