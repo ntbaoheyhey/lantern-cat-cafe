@@ -1,0 +1,76 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B, clean checkout/tests before diff",
+  "head": "792b475d9dc30847e8c7ff2660419a0cd67a78b0",
+  "base": "a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3",
+  "tree": "2d5eb6e15ad2b0e85bb6e7246e68282542b3ca68",
+  "sourceRoot": "/private/tmp/tbh-original-preview-b",
+  "gradedAt": "2026-11-03T03:11:35.282937+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "Local default-OFF12/15/5/7 preview and34 original icons meet scope; selectors/units/reset behavior and no config/storage/network writes verified. Gameplay and backend remain unchanged."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh B core2459,40 art cases,60 repeats,38 classic cases, capture/build/catalog/originality checks pass. A321\u00d72 is explicitly shared on identical head."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten distinct UI and four provenance mutants killed after green controls: level/rank/price/units/filters/caps/atlas/lazy state and recipe/model/brief/date integrity."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Fresh desktop captures and original icon set inspected; fits and integer scaling verified. Deduct2 for fine prop details aided by labels and necessary list scrolling."
+    },
+    {
+      "id": "C5",
+      "score": 8,
+      "max": 10,
+      "reason": "Typed pure presentation and reproducible stdlib pipeline; deduct2 for dense JSX and generated provenance duplication, with drift/hash coverage."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No threshold, assertion or retry weakened. Missing provenance commit fields were fixed at generation; inherited art and UI tests remain active."
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Per-asset creation/runtime/brief/hash evidence is exact; no external media or image model. Normal merge preserves truthful creation commits, verified without changing refs. No backend/full-wallet claim."
+    },
+    {
+      "id": "C8",
+      "score": 5,
+      "max": 5,
+      "reason": "All59 paths scoped to additive UI/art/catalog/docs and a config comment. Existing art, active config values, server behavior, dependencies, settings and workflows preserved."
+    }
+  ],
+  "evidence": [
+    "grade-b/commands.json",
+    "review-b-inventory.json",
+    "ui-mutants-b/results.json",
+    "art-mutants-b/results.json",
+    "screenshots-b.json",
+    "merge-strategy-check.json"
+  ],
+  "sharedFullMatrix": "A321 each size on identical head",
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Normal merge preserves creation provenance; exact tree/author/suffix",
+    "Actual-main and live including local opt-in/reset"
+  ]
+}

@@ -1,0 +1,9 @@
+Adds the required P1 local catalog preview and T013 art after the original tables in PR255. Help’s lazy Catalog preview starts OFF, shows12 stats/15 item examples/5 qualities/7 skills only after explicit local opt-in, and resets on Help-tab changes/reload. It does not change shared config, saves, inventory, currency, combat, wallet or backend behavior.
+
+34 original32px icons were authored as coordinate drawings, with no external media or image model. The full snap/palette/trim/pad/optimize/check chain enforces cafe-night-v1, max16 opaque colors, binary alpha and2px padding. Static-atlas pixels match every source icon; existing art and quality frames are preserved. Per-asset briefs/date/tool/runtime/hash and exact generation receipts are recorded. Native1x/3x dark/cream/silhouette review is complete.
+
+Self-graded fresh A96/B96 on792b475d9dc30847e8c7ff2660419a0cd67a78b0, all floors and zero auto-fails: core2459,40 art cases,321 browsers per desktop size,60 changed-case repeats per pass,14 mutants per pass, builds/imports/catalog/originality checks pass. B uses a clean checkout and different ports, tests before review; it shares A’s identical-head full matrix. Fixtures are not live gameplay evidence. Actual-main/live opt-in/reset checks follow merge.
+
+Use a normal merge commit to retain the verified first/latest artwork provenance commits; all four feature commits have the required author and [skip ci]. An isolated merge-object probe verified provenance stability. No existing artwork, server logic, migrations, production flags/settings, dependencies, .github or repository visibility changes. No backend activation, funded wallet proof or contest submission is claimed.
+
+Decision: docs/decisions/original-preview-art.md. Evidence: ai/codex-mega-ledger, reports/cards/ORIG2-ART-FRESH/.
