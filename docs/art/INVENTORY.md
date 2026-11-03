@@ -32,6 +32,42 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/src/art/backdrops/rooftops.ts | 31600 | art source | 160x86, 160x96 | 12 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/backdrops/types.test.ts | 4069 | support/test; no standalone asset | dynamic / not applicable | 2 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/backdrops/types.ts | 5255 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/art/generated/original/atlas/atlas.json | 15394 | art metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
+| apps/web/src/art/generated/original/atlas/sheet.png | 4559 | raster | 272x170 | 22 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-chimecollar.png | 260 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-eaveboots.png | 219 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-hemknives.png | 219 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-hemring.png | 282 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-kettlemaul.png | 247 | raster | 32x32 | 8 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-lanternrod.png | 234 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-mossflasks.png | 286 | raster | 32x32 | 9 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-pantrystud.png | 232 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-porchcoat.png | 268 | raster | 32x32 | 8 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-purrcharm.png | 286 | raster | 32x32 | 7 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-quiltcap.png | 237 | raster | 32x32 | 8 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-rafterbow.png | 288 | raster | 32x32 | 7 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-seamblade.png | 251 | raster | 32x32 | 7 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-spoolmitts.png | 219 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/item-windowpike.png | 233 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-hempair.png | 242 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-kettlepulse.png | 269 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-lanternarc.png | 264 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-mossparcel.png | 264 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-rafterecho.png | 227 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-seamsweep.png | 226 | raster | 32x32 | 4 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/skill-windowthrust.png | 221 | raster | 32x32 | 4 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-atk.png | 220 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-attackspeed.png | 232 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-bossdamage.png | 222 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-critchance.png | 223 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-critdamage.png | 273 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-def.png | 236 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-dodge.png | 267 | raster | 32x32 | 4 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-fishbonus.png | 225 | raster | 32x32 | 7 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-hp.png | 198 | raster | 32x32 | 4 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-hpregen.png | 234 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-materialfind.png | 236 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
+| apps/web/src/art/generated/original/icons/stat-xpbonus.png | 149 | raster | 32x32 | 5 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
 | apps/web/src/art/itemIcons.test.tsx | 5507 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/itemIcons.tsx | 8369 | art source | 11x11, 12x11 | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/ch1.test.ts | 1379 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
@@ -77,3 +113,5 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | reports/ui-redesign/index.html | 49315 | original design demo; placeholder glyphs | 100x100, 16x16, 24x24 | 37 values in inventory.json | mixed SVG/CSS; not production sprite art |
 | scripts/gen-og.mjs | 5765 | art source | 16x16 | 23 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | scripts/gen-relics.mjs | 4937 | art source | 16x16 | 17 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| tools/art/original-icons.json | 44534 | art metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
+| tools/art/original_icons.py | 20228 | original art generator | 32x32 | 26 values in inventory.json | native coordinate grid; static icons only |

@@ -16,3 +16,5 @@
 - [CXU5 Map data and presentation](../decisions/cxu5-map-data.md): real limits, advisory boss power, session-scoped history, preserved compact map.
 
 - [CXC2 public Fuji proof](../decisions/cxc2-fuji-proof.md): lazy Help panel, bounded same-block reads, honest partial results and a30-second cache.
+
+- [ORIG2 local catalog and T013 original art](../decisions/original-preview-art.md): explicit default-OFF local inspection, shared calculator,34 native icons, preserved gameplay and existing art.

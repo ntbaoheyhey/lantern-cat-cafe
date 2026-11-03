@@ -6,6 +6,9 @@ tables are `CONFIG.originalEconomy` in `packages/game-rules/src/config.ts`.
 `createOriginalEconomyPreview({ enabled: true })` provides pure calculations for
 review and tests. It has no inventory, persistence, random roll, purchase, HTTP,
 or production combat entry point. Calling it cannot activate a server feature.
+The optional Help catalog (2026-11-03) uses explicit local opt-in to inspect
+these calculations. Its initial state reads the shared false default; its
+component state does not change that flag or the current player run.
 
 ## Why these choices
 

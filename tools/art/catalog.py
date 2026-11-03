@@ -15,7 +15,7 @@ CONTENT = 'packages/game-rules/src/v2/content/'
 DEMO = 'docs/proposals/rune-skill-system/art/MANIFEST.md'
 EXTRA = ['apps/web/src/CatPortrait.tsx', 'apps/web/src/game/StripScene.ts',
          'scripts/gen-og.mjs', 'scripts/gen-relics.mjs', 'reports/ui-redesign/index.html',
-         'docs/proposals/rune-skill-system/demo/index.html']
+         'docs/proposals/rune-skill-system/demo/index.html', 'tools/art/original_icons.py', 'tools/art/original-icons.json']
 
 
 def git(*args):
@@ -89,6 +89,8 @@ def inventory():
             native = [f'{image.width}x{image.height}']
             colors = sorted({'#' + image.pixels[i:i + 3].hex() for i in range(0, len(image.pixels), 4) if image.pixels[i + 3]})
             scale, kind = 'mixed procedural rectangle sizes; no uniform sprite scale asserted', 'raster'
+            if path.startswith(ART + 'generated/original/'):
+                scale = 'native32px icon frames; integer1x/2x/3x lookup in static atlas'
         else:
             colors = palette_literals(source)
             native += [f'{w}x{h}' for w, h in re.findall(r'size:\s*\{\s*w:\s*(\d+),\s*h:\s*(\d+)', source)]
@@ -99,7 +101,7 @@ def inventory():
             if path.endswith('.test.ts') or path.endswith('.test.tsx') or Path(path).name in ('index.ts', 'types.ts', 'BackdropView.tsx'):
                 kind = 'support/test; no standalone asset'
             elif path.endswith('.json'):
-                kind, scale = 'relic metadata; no pixels', 'not applicable'
+                kind, scale = ('relic metadata; no pixels' if path.startswith('apps/web/public/relics/') else 'art metadata; no pixels'), 'not applicable'
             elif path.endswith('.html'):
                 kind, scale = 'original design demo; placeholder glyphs', 'mixed SVG/CSS; not production sprite art'
             elif path.endswith('.svg'):
@@ -108,6 +110,9 @@ def inventory():
                 dimensions = re.search(r'<svg[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"', source)
                 if view and dimensions:
                     scale = f'{int(dimensions[1]) / int(view[1]):g}x horizontal / {int(dimensions[2]) / int(view[2]):g}x vertical at declared SVG dimensions'
+            elif path == 'tools/art/original_icons.py':
+                native += ['32x32']
+                kind, scale = 'original art generator', 'native coordinate grid; static icons only'
             elif '/rig/' in path:
                 native += ['56x48 composed canvas']
             elif path.endswith('/CatPortrait.tsx'):
@@ -148,6 +153,28 @@ def content_ids():
     if (len(weapons), len(armor), len(accessories)) != (35, 60, 60):
         raise ValueError('content registry structure/count changed: update explicit art adapters')
     return weapons, armor, accessories
+
+
+def original_art():
+    path = ROOT / 'tools/art/original-icons.json'
+    if not path.exists(): return None
+    obj = json.loads(path.read_text())
+    if obj.get('schemaVersion') != 1 or obj.get('palette') != 'cafe-night-v1':
+        raise ValueError('unsupported original-art registry')
+    entries = obj['entries']
+    if len(entries) != 34 or len({row['id'].lower() for row in entries}) != 34:
+        raise ValueError('original-art coverage/identity changed; review the adapter')
+    for row in entries:
+        relative = Path(row['path'])
+        if relative.is_absolute() or '..' in relative.parts or not row['path'].startswith(ART + 'generated/original/icons/'):
+            raise ValueError('original-art path must stay in its additive source directory')
+        if (row['width'], row['height']) != (32, 32) or row['kind'] not in ('stat', 'item', 'skill'):
+            raise ValueError('invalid original-art slot')
+        if hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() != row['sha256']:
+            raise ValueError('original-art hash drift: ' + row['id'])
+    if hashlib.sha256((ROOT / obj['generator']).read_bytes()).hexdigest() != obj['generatorSha256']:
+        raise ValueError('original-art generator does not match its recorded recipe')
+    return obj
 
 
 def manifest():
@@ -243,6 +270,16 @@ def manifest():
     # Existing capstones need an explicit frame as well as the 32px icon in the proposal.
     for key in ('echo', 'moonw', 'catnap'):
         add('passive.' + key + '.frame', 'passive frame', 48, 48)
+    originals = original_art()
+    if originals:
+        for row in originals['entries']:
+            add('original.' + row['kind'] + '.' + row['key'], 'original ' + row['kind'], 32, 32,
+                path=row['path'], source='tools/art/original-icons.json', status='new',
+                note='Original static icon; runtime atlas lookup preserves these exact pixels. Local catalog only.')
+        for quality in ('common', 'uncommon', 'rare', 'epic', 'legendary'):
+            add('original.quality.' + quality, 'original quality frame', 16, 16,
+                path=ART + 'v2Frames.tsx', selector='frame' + quality.title(), status='existing',
+                source='packages/game-rules/src/config.ts', note='Unchanged existing frame; original quality name is a text cue.')
     return {'schemaVersion': 1, 'palette': 'cafe-night-v1', 'proposalPetAliases': aliases, 'slots': sorted(slots, key=lambda s: s['id'])}
 
 
@@ -250,7 +287,7 @@ def render_manifest(obj):
     counts = Counter(s['status'] for s in obj['slots'])
     lines = ['# Art slot manifest', '',
              'Generated by tools/art/catalog.py from the proposal, current registries and explicit ART1 reservations. Machine contract: [manifest.json](manifest.json).', '',
-             'Status: existing = reusable source exists; placeholder = required art has no delivered file; new = delivered new art (none in ART1). Paths on placeholder rows are future destinations, not links or claims that files exist.', '',
+             'Status: existing = reusable source exists; placeholder = required art has no delivered file; new = delivered original art (ORIG2/T013 adds34 static icons; ART1 generated none). Paths on placeholder rows are future destinations, not links or claims that files exist.', '',
              'Sizes are native art pixels per frame. Existing matrices keep their native dimensions; pad or integer-scale them in consumers. New icon canvases are 32/48; portraits 96; cards 128. Sheets use the [atlas contract](../../tools/art/README.md).', '',
              'The six proposal pet IDs map to the first six reservations in manifest.json; all twelve reservations have a portrait, locked silhouette and idle sheet. CXP1 owns pet identity: bind its twelve IDs before ART2 wiring. Demo names and balance numbers are not adopted.', '',
              'Recipe icons are currently missing. Gear uses shared existing source drawings for every real item ID. Map state and decor slots are additive. Demo nav slots are tab glyphs, not permission to add rail items. Chapter order is Living Room, Kitchen, Bathroom, Basement, Night Rooftops.', '',
@@ -273,6 +310,11 @@ def render_inventory(rows):
 
 
 def render_provenance(rows):
+    originals = original_art()
+    authored = {row['path']: row for row in originals['entries']} if originals else {}
+    if originals:
+        for path in [originals['atlas']['image'], originals['atlas']['metadata'], originals['generator'], 'tools/art/original-icons.json']:
+            authored[path] = {'tool': 'Original coordinate recipe and static atlas; see reports/asset-provenance.md', 'date': originals['date'], 'prompt': 'Packing/recipe for the34 individually recorded original icon briefs.'}
     lines = ['# Art provenance', '',
              'Canonical record. Brief compatibility link: [provenance.md](PROVENANCE.md). This is a lowercase link label, not a second case-colliding file on macOS.', '',
              'One row per inventoried source/export file. A source file owns all of its literal maps, animation frames and procedural output; inventory.json enumerates literal map selectors and native dimensions, and MANIFEST.md identifies reusable selectors. Companion PNGs are not claimed as delivered.', '',
@@ -281,7 +323,12 @@ def render_provenance(rows):
              '| Asset path | Tool / full method | Model/version | Seed | Date | Post-processing | Licence / evidence |',
              '|---|---|---|---|---|---|---|']
     for r in rows:
+        if r['path'] in authored:
+            row = authored[r['path']]
+            lines.append(f"| {r['path']} | {row['tool']}; full per-icon brief/commands in [asset-provenance](../../reports/asset-provenance.md) | Python {originals['runtime']['python']}, zlib {originals['runtime']['zlib']}; no image model | none (deterministic) | {row['date']} | snap32 → cafe-night-v1 lock → trim/pad32 → optimize/check → static atlas, gutter1 | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']} ({r['firstDate']}); latest {r['latestCommit']}; no external media input |")
+            continue
         if r['path'].startswith('apps/web/public/relics/'):
+
             method = 'scripts/gen-relics.mjs (current recipe; historical invocation not recorded)'
         elif r['path'] in ('apps/web/public/favicon.svg', 'apps/web/public/og.png'):
             method = 'scripts/gen-og.mjs (current recipe; historical invocation not recorded)'
