@@ -108,7 +108,7 @@ export function WalletButton() {
 
   const error = signError ?? (connectError ? errText(connectError) : undefined);
   return (
-    <div className="wallet" aria-label="Wallet">
+    <div className="wallet" role="group" aria-label="Wallet">
       {body}
       {error && <span className="wallet-msg" role="status">{error}</span>}
     </div>
