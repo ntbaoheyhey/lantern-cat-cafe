@@ -27,4 +27,4 @@
 
 - Nov4 Motion4b0e69a accepted A95/B95 fresh:16A/14BchecksPASS,195changed/size/reviewer,379full/sizeONCE,20/20resize each,18strictviews/22axe scans each; zero confirmed violations. A/Bgrades+alllogsonledger,stable44reviewcaptures. Frozenbranchpushedonce;draftPR263openedagainstART2,head4b0e69a. No merge underSYSTEMhold. PREVIEWSAfull1600andFIRSTPLAYA/Bstillrunning;do not duplicate.
 
-- Nov4 PREVIEWS949cc44 acceptedA95/B95fresh:126changed/size/reviewer,384full/sizeONCE,20/20resizeeach,18strict/28axe eachzero confirmed violations; nativeSample/Unavailablecapturesretainedseparately. Branchpush/draftPRpending. FIRSTPLAYB8c15199FAILED161/162pixelbaselineLanding1600;actualPNG/fontsretained,gradeblocked;Afullrunningunchanged. Diagnosebeforeanynewgate.
+- Nov4 PREVIEWS949cc44 acceptedA95/B95fresh:126changed/size/reviewer,384full/sizeONCE,20/20resizeeach,18strict/28axe eachzero confirmed violations; nativeSample/Unavailablecapturesretainedseparately. Branchpushedonce;draftPR264openedagainstMOTION. FIRSTPLAYB8c15199FAILED161/162pixelbaselineLanding1600;actualPNG/fontsretained,gradeblocked;Afullrunningunchanged. Diagnosebeforeanynewgate.
