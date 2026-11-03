@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A failed; repair active.
+Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 final repair passed; new exact-head A running.
 Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
 Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
@@ -13,7 +13,7 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
-| CXR1 | #245/remotee99e497,localed11f01 | Refreshed main; builder green; fresh A in progress |
+| CXR1 | #245/remotee99e497,local187a1b5 | Refreshed main; builder green; fresh A in progress |
 | CXR2/CXQ1 | pending | Final audit; timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
 | CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
@@ -26,10 +26,11 @@ ORIG2 source /private/tmp/tbh-original-preview and clean B retained at792b475. N
 34 original coordinate-drawn32px icons, palette/snap/binary alpha/padding; existing artwork unchanged.
 Catalog local opt-in resets on Help-tab/reload, no config/storage/network/gameplay/backend mutations.
 
-CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, sourceed11f01.
+CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, source187a1b5.
 Fresh A PID27776 FINISHED FAIL oned11f01;2490core/build/8mutants/capture/153repeat1280 PASS.
 A full1280:314PASS/9FAIL;4phone-stage padding regressions +2missing shared-button selectors +3bulk-action golden assertions.
-No retry/no merge. Fix desktop-only gutter and restore shared button class and document old→new bulk color oracle; newhead gate required.
+Final repair29browser/type PASS. Frozen187a1b5 fresh A PID33210 same source/5020–5023; last repair.
+Config grade-a-final/run.json; full gate starts over. No old failing head reused/no merge.
 Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
 Clean B /private/tmp/tbh-cxr1-fresh-b at exacted11f01; dependency setup only; B tests/review NOT STARTED.
 Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
