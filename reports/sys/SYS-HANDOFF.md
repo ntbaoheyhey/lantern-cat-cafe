@@ -16,3 +16,5 @@
 - Next: finish formal A/B (clean B tests-first then diff), main regression once, live UX and parked-release receipts. Keep failures; no weakened thresholds.
 - Existing CXS1 security overview and CXS2 draft pack already in main; verify identity, do not redo or submit. originalEconomy remains default OFF.
 - All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
+
+- Continuation milestone: notification overlap repaired at bd5b0c2; 22 targeted wallet/client tests PASS. Fresh A2/B2 running in SYS-owned worktrees (launches-auth2.json); ca26498 not accepted. Live/main stage-role and reward contrast defects already repaired in held #263, so standalone auth accessibility remains a known gate dependency. Main regression complete, both sizes PASS.
