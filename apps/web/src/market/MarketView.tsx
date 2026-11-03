@@ -1,3 +1,4 @@
+import { Art2Image } from '../art/Art2';
 import { useId, useState, type ReactNode } from 'react';
 import type { Rarity } from '@taskbar-hero/game-rules';
 import { formatEther } from 'viem';
@@ -47,7 +48,7 @@ function ContractLinks({ nft, market }: { nft: string; market: string }) {
 export function MarketGate({ nft, market, children }: { nft: string; market: string; children: ReactNode }) {
   return <div className="market market-gate"><div className="market-cols">
     <section className="market-card market-list-card"><h2>Relic market</h2><p className="market-hint">{MARKET_TESTNET}. On-chain Relics only.</p>
-      <EmptyState title="Your Relic shelf" illustration={<PixelIcon name="shop" size={6} />}>{children}</EmptyState>
+      <EmptyState title="Your Relic shelf" illustration={<><PixelIcon name="shop" size={6} /><Art2Image id="no-wallet" /></>}>{children}</EmptyState>
     </section>
     <aside className="market-card"><h3>Avalanche Fuji</h3><p className="market-hint">Chain 43113</p>
       <p>Relics are ERC-1155 collectibles. Equipment stays in your Bag.</p>
@@ -84,7 +85,7 @@ export function MarketView(props: MarketViewProps) {
           </div>
           <p className="market-hint">Prices are in {MARKET_TESTNET}. Select a listing to inspect it.</p>
           {props.readFailed ? null : props.loadingListings ? <p role="status">Loading listings…</p> : rows.length === 0 ?
-            <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
+            <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'} illustration={<Art2Image id="market-empty" />}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
             <div className="market-table-wrap" tabIndex={0} role="region" aria-label="Scrollable Relic listings"><table className="market-table" data-testid="listings" aria-label="Relic market listings">
               <thead><tr><th scope="col" aria-label="Artwork" />{columns.map(column => <th key={column.key} scope="col" aria-sort={sort === column.key ? direction === 'asc' ? 'ascending' : 'descending' : 'none'}>
                 <button type="button" className="market-sort" aria-label={`Sort by ${column.label.toLowerCase()}`} onClick={() => sortBy(column.key)}>{column.label}{sort === column.key && <span aria-hidden="true"> {direction === 'asc' ? '↑' : '↓'}</span>}</button>

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Run ART1 targeted checks and save raw command output; no scoring or full gate."""
+import argparse
 import hashlib
 import json
 import os
@@ -10,7 +11,7 @@ import sys
 
 from catalog import ROOT, source_paths
 
-LOGS = ROOT / 'reports/scorecard/art1/logs'
+LOGS = ROOT / 'reports/art/validation/logs'
 
 
 def fingerprint() -> dict:
@@ -18,6 +19,13 @@ def fingerprint() -> dict:
 
 
 def main() -> int:
+    global LOGS
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--logs', default='reports/art/validation/logs')
+    parser.add_argument('--baseline-ref', default='origin/main')
+    args = parser.parse_args()
+    LOGS = (ROOT / args.logs).resolve()
+    assert str(LOGS.relative_to(ROOT)).startswith(('reports/art/', 'reports/ui/'))
     LOGS.mkdir(parents=True, exist_ok=True)
     records = []
 
@@ -35,17 +43,17 @@ def main() -> int:
     run('catalog-drift', [sys.executable, '-B', 'tools/art/catalog.py', '--check'])
     for i in range(1, 11):
         run(f'pipeline-repeat-{i:02}', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tools/art', '-p', 'test_pipeline.py', '-v'])
-    run('mutations', [sys.executable, '-B', 'tools/art/mutation_check.py', '--logs', 'reports/scorecard/art1/logs/mutations'])
-    baseline_paths = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '1fb25ed'], cwd=ROOT, text=True).splitlines()
-    baseline_docs = [p for p in baseline_paths if p == 'README.md' or (p.startswith('docs/') and p.endswith('.md') and Path(p).name != 'link-check.md')]
-    # ART1 never edits baseline docs: passing their explicit list excludes only this card's additions.
-    run('baseline-docs-unchanged', ['git', 'diff', '--exit-code', '1fb25ed', '--', *baseline_docs])
+    run('mutations', [sys.executable, '-B', 'tools/art/mutation_check.py', '--logs', str(LOGS.relative_to(ROOT) / 'mutations')])
+    baseline_paths = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', args.baseline_ref], cwd=ROOT, text=True).splitlines()
+    baseline_docs = [p for p in baseline_paths if p == 'README.md' or (p.startswith('docs/') and not p.startswith('docs/ui/') and p.endswith('.md') and Path(p).name != 'link-check.md')]
+    # UI never edits non-owned baseline docs: passing their explicit list excludes only this card's additions.
+    run('baseline-docs-unchanged', ['git', 'diff', '--exit-code', args.baseline_ref, '--', *baseline_docs])
     baseline = run('links-base-docs', ['node', 'scripts/check-links.mjs', '--json', *baseline_docs])
     current = run('links-current', ['node', 'scripts/check-links.mjs', '--json'])
     old, new = json.loads(baseline.stdout), json.loads(current.stdout)
     old_items = {json.dumps(item, sort_keys=True) for item in old['brokenItems']}
     new_items = {json.dumps(item, sort_keys=True) for item in new['brokenItems']}
-    link_delta = {'baseCommit': '1fb25ed', 'baselineBroken': old['brokenCount'], 'currentBroken': new['brokenCount'],
+    link_delta = {'baseCommit': args.baseline_ref, 'baselineBroken': old['brokenCount'], 'currentBroken': new['brokenCount'],
                   'newFailures': [json.loads(item) for item in sorted(new_items - old_items)]}
     (LOGS / 'links-comparison.json').write_text(json.dumps(link_delta, indent=2) + '\n')
     run('whitespace', ['git', 'diff', '--check'])

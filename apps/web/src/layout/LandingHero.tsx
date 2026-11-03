@@ -1,3 +1,4 @@
+import { Art2Image } from '../art/Art2';
 import React from 'react';
 import { CatPortrait } from '../CatPortrait';
 import { BackdropView } from '../art/backdrops/BackdropView';
@@ -68,6 +69,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
         </div>
 
         <div className="landing__hero-right" aria-hidden="true">
+          <Art2Image id="landing" scale={2} eager />
           <div className="landing__cats-group">
             <div className="landing__cat-item landing__cat-item--primary">
               <CatPortrait size={160} />

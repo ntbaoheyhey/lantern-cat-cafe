@@ -1,3 +1,4 @@
+import { Art2Image } from '../../art/Art2';
 import { useId, useRef, useState } from 'react';
 import type { GearSlotId, ItemV2, ServerStateV2 } from '../../api/GameApiV2';
 import type { ScreenId } from '../../nav/screens';
@@ -223,6 +224,7 @@ export function BagPanel({
           <div className="bag-grid-container">
             {bag.length === 0 && (
               <div className="bag-empty" data-testid="bag-empty">
+                <Art2Image id="bag-empty" />
                 <p>Your bag is empty.</p>
                 <p className="bag-empty-hint">Defeat monsters or visit the Forge to obtain gear.</p>
               </div>

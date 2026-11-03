@@ -11,3 +11,11 @@ await build({
     rollupOptions: { input: resolve('e2e/fixtures/market-view.html') },
   },
 });
+
+// Isolated ART2 test fixture; production output/config stays untouched.
+await build({
+  configFile: resolve("vite.config.ts"), envDir: false, publicDir: false,
+  base: "/art2-fixture/",
+  build: { outDir: `${directory}/art2-fixture`, emptyOutDir: true,
+    rollupOptions: { input: resolve("e2e/fixtures/art2-view.html") } },
+});
