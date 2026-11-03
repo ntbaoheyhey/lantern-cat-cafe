@@ -123,6 +123,12 @@ it('a mocked nonce 502 keeps the wallet visible, explains guest play and never r
   expect(verify).not.toHaveBeenCalled();
   expect(store.get()).toBeNull();
   expect(screen.queryByText(/Request failed|Bad Gateway/)).toBeNull();
+  const notice = screen.getByRole('alert');
+  expect(notice.textContent).toContain(AUTH_UNAVAILABLE_MESSAGE);
+  expect(screen.getByRole('group', { name: 'Wallet' }).contains(notice)).toBe(false);
+  fireEvent.click(screen.getByRole('button', { name: `Dismiss ${AUTH_UNAVAILABLE_MESSAGE}` }));
+  expect(screen.queryByText(AUTH_UNAVAILABLE_MESSAGE)).toBeNull();
+  expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
 });
 
 it('session store survives broken storage and drops expired sessions', () => {
