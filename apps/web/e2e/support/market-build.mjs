@@ -19,3 +19,11 @@ await build({
   build: { outDir: `${directory}/art2-fixture`, emptyOutDir: true,
     rollupOptions: { input: resolve("e2e/fixtures/art2-view.html") } },
 });
+
+// Wallet-free motion fixture uses the actual HUD/cue components.
+await build({
+  configFile: resolve("vite.config.ts"), envDir: false, publicDir: false,
+  base: "/motion-fixture/",
+  build: { outDir: `${directory}/motion-fixture`, emptyOutDir: true,
+    rollupOptions: { input: resolve("e2e/fixtures/motion-view.html") } },
+});

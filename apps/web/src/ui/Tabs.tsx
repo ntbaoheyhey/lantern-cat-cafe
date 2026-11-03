@@ -1,4 +1,5 @@
 import { useId, useState, type ReactNode } from 'react';
+import { scrollBoundaryKey } from './scrollBoundaryKey';
 export interface ScreenTab { id: string; label: string; content: ReactNode; lazy?: boolean }
 export interface TabsProps { label: string; tabs: readonly ScreenTab[]; initialTab?: string }
 /** Accessible tab host with automatic activation and roving keyboard focus. IDs must be unique. */
@@ -6,7 +7,7 @@ export function Tabs({ label, tabs, initialTab }: TabsProps) {
   const prefix = useId();
   const [selected, setSelected] = useState(initialTab ?? tabs[0]?.id);
   const active = tabs.some(tab => tab.id === selected) ? selected : tabs[0]?.id;
-  return <div className="ui-tabs-host">
+  return <div className="ui-tabs-host" onKeyDown={scrollBoundaryKey}>
     <div role="tablist" aria-label={label} className="ui-tabs">{tabs.map((tab, index) => <button type="button" key={tab.id}
       id={`${prefix}-tab-${tab.id}`} role="tab" aria-selected={active === tab.id} aria-controls={`${prefix}-panel-${tab.id}`} tabIndex={active === tab.id ? 0 : -1}
       onClick={() => setSelected(tab.id)} onKeyDown={event => {

@@ -34,7 +34,8 @@ async function expectReadableChrome(page: Page) {
       };
     });
   });
-  expect(geometry).toEqual(Array.from({ length: 6 }, () => ({ inside: true, unclipped: true })));
+  const bounds = await hud.evaluate(root => ({ outer: root.getBoundingClientRect().toJSON(), chips: [...root.querySelectorAll('.hud-level-xp,.hud-progress-chip,.hud-stack-item,.hud-power-chip')].map(node => ({ name: node.className, text: node.textContent, rect: node.getBoundingClientRect().toJSON() })) }));
+  expect(geometry, JSON.stringify(bounds)).toEqual(Array.from({ length: 6 }, () => ({ inside: true, unclipped: true })));
   const clipped = await page.locator('.shell-body').evaluate(root => {
     const problems: string[] = [];
     const header = root.querySelector('header')!.getBoundingClientRect();
@@ -124,6 +125,10 @@ for (const viewport of sizes) {
       await page.getByRole('tab', { name: 'Map', exact: true }).click();
       await expectReadableChrome(page);
       expect(errors).toEqual([]);
+      if (process.env.CXR2_SCREENSHOTS) {
+        mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
+        await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `late-hud-${viewport.width}-${fish}.png`), animations: 'disabled' });
+      }
     });
   }
   for (const gated of [false, true]) {

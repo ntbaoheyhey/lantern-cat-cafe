@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMotionCue } from '../../motion/useMotionCue';
 import type { GainsV2, ServerStateV2 } from '../../api/GameApiV2';
 import { PixelIcon } from '../../art/pixelIcons';
 import { ItemIcon } from '../ItemIcon';
@@ -12,9 +13,10 @@ export interface RecentLootCardProps {
 
 export function RecentLootCard({ state, gains }: RecentLootCardProps) {
   const recentItems = state.inventory.slice(-6).reverse();
+  const lootCue = useMotionCue<HTMLDivElement>(recentItems.map(item => item.id).join(':'), 'loot');
 
   return (
-    <div className="home-card home-card--loot v2-recent-loot" data-testid="home-recent-loot-card">
+    <div ref={lootCue} className="home-card home-card--loot v2-recent-loot" data-testid="home-recent-loot-card">
       <div className="home-card__header">
         <h2 className="home-card__title">Recent loot</h2>
       </div>
