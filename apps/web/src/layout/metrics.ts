@@ -32,10 +32,12 @@ export function stageZoom(width: number, stageH: number): number {
   return Math.max(MIN_ZOOM, Math.min(zoom, Math.floor(width / MIN_LOGICAL_WIDTH)));
 }
 
-/** Stage dimensions for the 3-column redesign desktop dashboard. */
+/** Stage dimensions for the scene + 320px sidebar desktop dashboard.
+ * Match home.css: 92px rail, 16px screen padding, 14px gap and 2px stage borders.
+ * Reserve the 80px warning-capable HUD and 54px guidance row so status changes cannot crop the scene. */
 export function desktopStageMetrics(width: number, height: number): { zoom: number; width: number; logicalWidth: number } {
-  const centerColW = Math.max(320, width - 92 - 32 - 280 - 280 - 32);
-  const centerAvailH = Math.max(280, height - 56 - 32 - 140 - 12);
+  const centerColW = Math.max(320, width - 92 - 32 - 320 - 14 - 4);
+  const centerAvailH = Math.max(280, height - 80 - 54 - 32 - 100 - 14 - 4);
   const maxZoomW = Math.floor(centerColW / 160);
   const maxZoomH = Math.floor(centerAvailH / 96);
   const zoom = Math.max(2, Math.min(maxZoomW, maxZoomH));

@@ -1,0 +1,11 @@
+# CXR1 refresh: display truth and desktop composition
+
+3 November 2026. Base main2bc98cd; existing PR245 refreshed with a normal merge.
+
+The landing now names ERC-1155 (RelicNFT.sol extends ERC1155), links both public Fuji contracts and accurately labels local guest play. A private source repository is not an open-source guarantee. Contract viewing does not imply verified source. Bag synthetic Relic-like items have no chain receipt: show “Mint proof unavailable”, never a fabricated token number.
+
+Historical Home.test.tsx assertions demanded ERC-721, verified-source wording, server-checked guest fights and open source. They now require the corresponding truthful wording; exact contract URLs and absence of false claims are additionally tested. BagPanel.test.tsx previously demanded “#1042 · minted”; it now requires unavailable proof and rejects the fabricated claim. No action, value, assertion threshold or capacity is removed. The first builder failure exposing the stale landing expectations is retained in ledger CXR1-FRESH/builder-r1.
+
+The warning token is raised to #ff9696 against unchanged4.5:1 text thresholds. Body base14px and page #120b19 follow the brief; fonts and existing artwork are preserved. Landing crops the same backdrop at integer scale. Home uses one scene/log column and a320px sidebar, with stage dimensions calculated for the same gutters/borders and the actual HUD plus guidance row (including room for power warnings). Visual review caught inherited56px HUD-only sizing, fixed-size empty cells and the bulk-button100% width; new geometry assertions cover all three. First-run desktop class cards fill the page; change-class dialogs retain their compact layout. Bag has eight fluid desktop columns, existing200 capacity, secondary bulk equip, actions above a separate comparison card, and every existing action.
+
+Mockup names, balances, cat placeholders, sample wallet values and token claims are not data authority. Existing classes/stats/currencies/content remain authoritative. Forge/Market redesign PR252 stays PARTIAL after three rounds; its code is not reintroduced here. Hero/Help/Map and local catalog continue to use their accepted implementations. No backend, flags, economics, artwork files, contract, auth, repository visibility or settings change.

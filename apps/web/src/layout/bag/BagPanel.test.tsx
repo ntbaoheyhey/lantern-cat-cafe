@@ -379,7 +379,9 @@ describe('Mission AGR2-FIX: Empty slots and right detail hint', () => {
 
     const detail = screen.getByRole('region', { name: 'Item detail' });
     expect(within(detail).getAllByText('Moon Pearl Relic').length).toBeGreaterThan(0);
-    expect(within(detail).getByText('#1042 · minted')).toBeTruthy();
+    // A synthetic Relic item carries no receipt or token proof. Never invent one.
+    expect(within(detail).getByText('Mint proof unavailable')).toBeTruthy();
+    expect(within(detail).queryByText(/#1042|minted/)).toBeNull();
   });
 
   it('shows filter empty notice when a category has 0 items and keeps capacity slots', () => {

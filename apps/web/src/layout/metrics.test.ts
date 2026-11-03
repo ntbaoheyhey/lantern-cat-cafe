@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import { layoutKind, stageHeight, stageZoom } from './metrics';
+import { desktopStageMetrics, layoutKind, stageHeight, stageZoom } from './metrics';
 
 it('picks phone, tablet and desktop layouts at the documented breakpoints', () => {
   expect(layoutKind(320)).toBe('phone');
@@ -34,4 +34,18 @@ it('zooms the 96 px scene by a whole number', () => {
 
 it('keeps at least 160 px of scene width', () => {
   expect(stageZoom(500, 900)).toBe(3);
+});
+
+// Concrete design oracles: 320px sidebar, 16px gutters, 14px gap, integer 96px scene.
+it('fills the two-column desktop scene without stretching or cropping pixels', () => {
+  expect(desktopStageMetrics(1280, 720)).toEqual({ zoom: 4, width: 816, logicalWidth: 204 });
+  expect(desktopStageMetrics(1600, 900)).toEqual({ zoom: 6, width: 1134, logicalWidth: 189 });
+  for (const [width, height] of [[1024, 720], [1280, 720], [1600, 900], [1920, 1080]]) {
+    const scene = desktopStageMetrics(width!, height!);
+    expect(Number.isInteger(scene.zoom)).toBe(true);
+    expect(scene.width % scene.zoom).toBe(0);
+    expect(scene.width).toBeLessThanOrEqual(width! - 462);
+    expect(scene.logicalWidth).toBeGreaterThanOrEqual(160);
+    expect(scene.zoom * 96).toBeLessThanOrEqual(height! - 284);
+  }
 });

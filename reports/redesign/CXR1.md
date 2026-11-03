@@ -1,3 +1,18 @@
+# CXR1 refreshed on current merged screens — gate pending
+
+3 November 2026. Base main2bc98cd merged normally into this branch. The1 November report below is preserved historical evidence, not current acceptance. No historical screenshot/log claims this refreshed head.
+
+Current implementation corrects AA warning text (4.5 threshold retained), page/type tokens, full-bleed integer-scaled landing art, accurate ERC1155/public contract/local guest claims, tall desktop class cards, Home scene/log left with one320px sidebar and safe pixel sizing, fluid eight-column Bag including empty cells, secondary bulk equip, separate item/action and comparison cards, and honest unavailable mint proof. All existing200-slot capacity, actions, data and art are retained.
+
+The previous inherited phone failures remain in the full test matrix. Focused current HUD tests pass; no exclusions are used. Map, Hero, Help and the local catalog have now merged and stay covered. Forge/Market redesign PR252 remains PARTIAL after three rounds; no missing implementation is claimed complete by this card.
+
+Builder: typecheck,87 focused tests,24 desktop/HUD browser cases, strict guest/local-signed UI audits and both desktop effects runs pass. Visual inspection of eight current screenshots caught and repaired omitted guidance-row height, fixed empty-tile widths and stretched bulk action. Latest cleanup replaces a literal scene-height with the existing constant. Exact-head full suite, repeats, mutants and fresh A/B grades remain pending; no merge authorization yet.
+
+[Decision and old-to-new assertions](../../docs/decisions/cxr1-truth-and-layout.md). Fresh evidence is on ai/codex-mega-ledger under reports/cards/CXR1-FRESH. Screenshots below are the old baseline comparison only.
+
+---
+## Historical1 November report (superseded)
+
 STATUS: PARTIAL
 
 # CXR1 — merged redesign coverage and findings (living draft)
