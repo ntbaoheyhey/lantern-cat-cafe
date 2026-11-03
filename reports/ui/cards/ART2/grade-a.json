@@ -1,0 +1,38 @@
+{
+  "card": "ART2",
+  "grader": "A",
+  "label": "self-graded (fresh pass)",
+  "head": "a9afaadf263593d6849dbbd0934238d4b1289403",
+  "score": 96,
+  "pass": true,
+  "reviewedAt": "2026-11-03T13:15:40.762998+00:00",
+  "tests": {
+    "corePassed": 2533,
+    "existingExpectedFail": 2,
+    "existingSkipped": 11,
+    "artTests": 44,
+    "changedBrowserPerSize": 150,
+    "fullBrowserPerSize": 373,
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "auditFindings": 0,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "contrast": "PASS"
+  },
+  "review": {
+    "fullDiff": "Reviewed application, fixture, guard, generator, catalog pipeline changes; generated catalogs checked against committed source hashes. Scope and all prior images independently compared.",
+    "visual": "Inspected both-size art samples, common and Rare6 catalog paint, default-off reference captures; internal gallery scroll is intentional. No clipped controls, missing artwork, console error or contrast failure found.",
+    "minorLimitations": [
+      "Companion sockets are symbolic paw samples; portrait content awaits authoritative availability.",
+      "The sample gallery is a utility grid and requires internal scrolling at 1280x720."
+    ],
+    "criticalDefects": []
+  },
+  "gateReceipt": "../../logs/art2-a/receipt.json",
+  "scopeReceipt": "scope.json",
+  "release": "PARKED: SYSTEM auth-nonce502 health hold",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/262"
+}
