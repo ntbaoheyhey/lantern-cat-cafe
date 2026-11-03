@@ -25,7 +25,7 @@ Board: UI adopted CXC2 #253/#254 evidence; CXU3 2e1f83b gate active, NOT merged/
 |244 CXN3 | db0f9d6 draft BLOCKED: complete deployed-source+deps/import maps+tested restore absent |
 |CXQ1 | WAITING UI board CXU3/CXC2 merges/adoption; natural-prep run interrupted on user scope change |
 |CXS1 | own ai/codex-sys-cxs1-security-overview 97a1595 atop6144d42;691-word docs+6 companions |
-|CXS2 | pending DRAFT pack; no contest submission |
+|CXS2 | own ai/codex-sys-cxs2-submission /private/tmp/tbh-cxs2-active atop97a1595; drafting only |
 |CXN4/CXN5 | default-OFF/versioned only; conditional on earlier gates; no implementation started |
 |regression | after UI/system integration; latest pre-addendum6144d42 accepted |
 |UI handoff | all UI/art now UI-owned; historical accepted249/251/253+254/255/256/245 receipts retained |
@@ -36,8 +36,9 @@ CXR1 acceptance: A94/B94,2490core/323browser×2/40art/35assets before+after/22he
 No funded wallet or full timed demo claim. All prior verification PIDs finished; old test ports must not be reused.
 
 Own active source: /private/tmp/tbh-cxs1-active, ai/codex-sys-cxs1-security-overview, 97a1595 clean.
-Seven docs committed; first core/docs/build/6mutants PASS; final text cleanup now re-verifying exacthead.
-CXS1 A PID62344 cwd above; grade-a-final/run.json; ports5200–5203 classic, future5220 B/5240main.
+CXS1 exact97a1595 fresh A97 PASS:691words/2490core/38classic/6mutants/builds/links.
+A62344 finished. Clean B PID66562 /private/tmp/tbh-sys-cxs1-b at97a1595; tests-first,5220–5223.
+B diff review not started; no merge lock held; future main block5240–5243.
 Ledger /private/tmp/tbh-t001-ledger ai/codex-mega-ledger (existing branch retained), stage selected paths only.
 Preserve historical dirty/untracked evidence; update this<=80lines and living MEGA-FINAL-REPORT after milestones.
 

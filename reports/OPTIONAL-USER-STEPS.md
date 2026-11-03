@@ -9,7 +9,9 @@ Exact optional deployment commands will be added after corresponding local check
 
 Runtime inventory (2026-11-01): the existing Supabase CLI can list the specified project; no credential value was printed or stored. No Vercel CLI executable was found. No release action follows from inventory alone: local score/merge gates, additive-only migration checks and the live go/no-go checklist still apply.
 
-T001 attempt 3 (2026-11-02) — required orchestrator metadata correction: the worker
+Historical T001 attempt3 (2026-11-02) — retired orchestrator metadata note; no current action. The orchestrator remains stopped and must not be restarted.
+
+Original historical wording: the worker
 cannot edit read-only GOAL.md or queue.json. Update T001's deployment acceptance
 to explicitly adopt completed T014's approved replacement target
 `9c457a3e56b7c5813fa40e6aa20b0c14242ef26a`, retaining historical `74d60da` proof,
