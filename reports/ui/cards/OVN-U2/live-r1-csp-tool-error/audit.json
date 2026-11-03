@@ -1,0 +1,48 @@
+{
+  "site": "https://taskbarhero-eight.vercel.app",
+  "at": "2026-11-03T19:29:03.558Z",
+  "methodology": "fresh isolated Chromium profiles; real clock; no fixture save or manual claim for first reward; guest persistence reused in a second profile; no wallet signature/transaction; nonce endpoint never probed by this audit",
+  "runs": [
+    {
+      "width": 1280,
+      "errors": [
+        "Executing inline script violates the following Content Security Policy directive 'script-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-iAlwwIFwc2DmTzTOol/5GJL1vJVnWwd2kluXCd2KaLs='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked."
+      ],
+      "writes": [],
+      "screens": [
+        {
+          "name": "landing",
+          "screenshot": "landing-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "first-reward",
+          "screenshot": "first-reward-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        }
+      ],
+      "timings": {
+        "homeSeconds": 0.3954975410000006,
+        "firstNaturalRewardSeconds": 28.501889958,
+        "target36Seconds": true
+      },
+      "checks": [],
+      "liveAssets": [
+        "/assets/index-Ccs5evFH.js",
+        "/assets/rolldown-runtime-XKyaHtl9.js",
+        "/assets/react-C1iE8mnY.js",
+        "/assets/src-CtQx5-nM.js",
+        "/assets/web3-C6G9LtNF.js",
+        "/assets/ch1-Dcr1kpPd.js",
+        "/assets/index-jL_b_lsJ.css"
+      ]
+    }
+  ],
+  "defects": []
+}

@@ -1,0 +1,33 @@
+START install
+END install exit=0
+START scripts
+END scripts exit=0
+START packages
+END packages exit=0
+START web-units
+END web-units exit=0
+START typecheck
+END typecheck exit=0
+START lint
+END lint exit=0
+START build
+END build exit=0
+START full-1280x720
+END full-1280x720 exit=0
+START changed-1280x720
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/sys/tools/gate.py", line 29, in <module>
+    if not a.main:run('changed-'+size,['pnpm','exec','playwright','test',*specs,'--repeat-each=3','--workers=2','--retries=0','--reporter=line'],root/'apps/web',True)
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/sys/tools/gate.py", line 16, in run
+    f=log.open('w');result=subprocess.run(command,cwd=cwd,env=env,stdout=f,stderr=subprocess.STDOUT);f.write('\nexit='+str(result.returncode)+'\n');f.close()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1126, in communicate
+    self.wait()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1917, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1875, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

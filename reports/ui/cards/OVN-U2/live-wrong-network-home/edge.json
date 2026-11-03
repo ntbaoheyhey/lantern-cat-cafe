@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-03T19:49:45.655Z",
+  "site": "https://taskbarhero-eight.vercel.app",
+  "methodology": "Real live assets, browser-local synthetic sessions/wallet, all Supabase function requests mocked before network; no real token, wallet, signature, transaction or DB write.",
+  "cases": [
+    {
+      "width": 1280,
+      "state": "wrong-network",
+      "errors": [],
+      "requestsMocked": 0,
+      "message": "Wrong network. Switch to Avalanche Fuji.",
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "signedOrSent": false,
+      "geometry": {
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Wrong network. Switch to Avalanche Fuji.",
+            "x": 906.984375,
+            "y": 17.296875,
+            "right": 1163.5625,
+            "bottom": 37.6875
+          },
+          {
+            "text": "Switch to Fuji",
+            "x": 1167.5625,
+            "y": 5.5,
+            "right": 1268,
+            "bottom": 49.5
+          }
+        ]
+      }
+    },
+    {
+      "width": 1600,
+      "state": "wrong-network",
+      "errors": [],
+      "requestsMocked": 0,
+      "message": "Wrong network. Switch to Avalanche Fuji.",
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "signedOrSent": false,
+      "geometry": {
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Wrong network. Switch to Avalanche Fuji.",
+            "x": 1226.984375,
+            "y": 17.296875,
+            "right": 1483.5625,
+            "bottom": 37.6875
+          },
+          {
+            "text": "Switch to Fuji",
+            "x": 1487.5625,
+            "y": 5.5,
+            "right": 1588,
+            "bottom": 49.5
+          }
+        ]
+      }
+    }
+  ],
+  "complete": true
+}

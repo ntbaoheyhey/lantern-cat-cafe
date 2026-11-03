@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys/apps/web
+
+ ❯ src/layout/StageLayout.test.tsx (11 tests | 1 failed) 13720ms
+   × desktop: rail, top HUD, stage, character area and the seven tabs 5482ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/StageLayout.test.tsx > desktop: rail, top HUD, stage, character area and the seven tabs
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/layout/StageLayout.test.tsx:56:1
+     54| });
+     55|
+     56| it('desktop: rail, top HUD, stage, character area and the seven tabs',…
+       | ^
+     57|   render(<App />);
+     58|   expect(screen.getByTestId('rail')).toBeTruthy();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 124 passed (125)
+      Tests  1 failed | 1459 passed (1460)
+   Start at  02:58:19
+   Duration  58.22s (tests 49%, environment 40%, import 10%, transform 2%)
+
+Environment  jsdom was created 125 times · 41.63s total, 40% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+exit=1

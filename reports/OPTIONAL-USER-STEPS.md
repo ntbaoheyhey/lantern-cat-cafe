@@ -12,7 +12,7 @@ GitHub's Vercel bot reports `api-deployments-free-per-day` (more than100 deploym
 
 The health hold is **CLEARED**, using two public HTTP 200 responses at 2026-11-03T19:20:48Z and 19:31:17Z, 628.63 seconds apart. The historical 502 cause remains unproven. No migration, secret change or live deployment is required by this evidence. The earlier stopped-SYSTEM instructions above are historical and superseded by this authorized ALL-lane session.
 
-Optional hardening is on `ai/codex-ovn-sys-auth` (`95d9c32`): nonce failures become a CORS-readable 503 with Retry-After, and the client explains guest play. It is **not deployed**. Before any owner-authorized edge deployment or #244 work, obtain a complete off-repository function/dependency/import-map backup and successfully rehearse restoring that exact version. The supported read-only backup command attempted here was:
+Accepted optional hardening is draft [#269](https://github.com/ntbaoheyhey/taskbar-hero/pull/269), `ai/codex-ovn-sys-auth-stack` (`85a6919`, self-graded fresh A95/B95). Nonce failures become a CORS-readable 503 with Retry-After, and the client explains guest play. It is **not deployed**. Before any owner-authorized edge deployment or #244 work, obtain a complete off-repository function/dependency/import-map backup and successfully rehearse restoring that exact version. The supported read-only backup command attempted here was:
 
 ```sh
 backup_dir=$(mktemp -d /tmp/taskbar-hero-auth-backup.XXXXXX)
@@ -25,10 +25,18 @@ It fails with `UnsafeFunctionDownloadPathError` at `source/packages/auth/src/ind
 
 The observed `api-deployments-free-per-day` error triggers the stop-merging-for-the-day rule. UTC boundary recheck: **2026-11-04T00:00Z (07:00 Vietnam)**. The provider says “try again in 24 hours”; 24 hours after the recorded error is **2026-11-04T13:23:17Z (20:23:17 Vietnam)**. Midnight alone does not prove capacity. Vercel CLI is absent, and no login/install/settings change was performed. The release owner should check the existing Vercel account's usage before resuming. No merge or deploy command should be used merely to test quota.
 
-After capacity is verified, release #262 → #263 → #264 → #265 → #266 in order, followed by the overnight repair/refresh drafts, through the documented merge lock and exact-head changed checks. At most one merge per 20 minutes; stop at 80 deployments or any cap error. Verify live asset hashes and both-size guest/Forge smoke after each merge. SYS hardening also requires the inherited #263 accessibility repair before it can receive a passing standalone gate. Keep #252/#257 open and superseded, #244 blocked, and originalEconomy OFF.
+After capacity is verified, release #262 → #263 → #264 → #265 → #266 in order, followed by recovery #268 and SYS #269, then refreshed gallery #267, through the documented merge lock and exact-head changed checks. At most one merge per 20 minutes; stop at 80 deployments or any cap error. Verify live asset hashes and both-size guest/Forge smoke after each merge. SYS #269 includes the inherited #263 accessibility repair through its held FIRSTPLAY parent and passes A95/B95 on that dependency-complete head. Refresh after the parent lands and confirm SYS-only scope before merge. Keep #252/#257 open and superseded, #244 blocked, and originalEconomy OFF.
 
 Local review command (no hosting or backend change):
 
 ```sh
 open /Users/bao/taskbar-hero-ovn-ui/docs/ui/gallery/index.html
 ```
+
+### Updated quota evidence from recovery draft #268
+
+The automatic PR preview again received `api-deployments-free-per-day` at 2026-11-03T20:41:35Z. The newer provider24-hour warning runs through **2026-11-04T20:41:35Z**, while **2026-11-04T00:00Z** remains the next UTC-boundary recheck. Verify account usage through the already connected Vercel dashboard before resuming. This session has no authenticated Vercel CLI and cannot establish the actual remaining count. Release remains parked. Recovery draft #268 has fresh A95/B95 receipts.
+
+## Final SYS draft capacity evidence
+
+Commit `85a6919` for draft #269 has a Vercel commit-status failure at **2026-11-03T20:51:55Z**, described as “Deployment rate limited — retry in 24 hours.” The other project check succeeded by canceling its build through the existing Ignored Build Step. This establishes no hosted preview acceptance. The latest conservative 24-hour warning runs through **2026-11-04T20:51:55Z (03:51:55 Vietnam on November 5)**. Recheck actual account usage at the UTC boundary **2026-11-04T00:00Z (07:00 Vietnam)** before considering release. See `reports/sys/release-final-state.json` for the minimal structured evidence.

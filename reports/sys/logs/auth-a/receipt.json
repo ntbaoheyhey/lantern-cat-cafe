@@ -1,0 +1,109 @@
+{
+  "head": "ca264984c73d30a2be3d85a8b20a1ea7b7974a4f",
+  "cwd": "/Users/bao/taskbar-hero-ovn-sys",
+  "pid": 17336,
+  "ports": [
+    5173,
+    5174,
+    5175,
+    5176,
+    5177
+  ],
+  "checks": [
+    {
+      "label": "install",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/install.log",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "finished": "2026-11-03T19:27:44.936528+00:00"
+    },
+    {
+      "label": "scripts",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/scripts.log",
+      "command": [
+        "node",
+        "--test",
+        "/Users/bao/taskbar-hero-ovn-sys/scripts/gen-deno-json.test.mjs",
+        "/Users/bao/taskbar-hero-ovn-sys/scripts/health-auth.test.mjs"
+      ],
+      "finished": "2026-11-03T19:27:45.442880+00:00"
+    },
+    {
+      "label": "packages",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/packages.log",
+      "command": [
+        "pnpm",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "finished": "2026-11-03T19:28:34.762907+00:00"
+    },
+    {
+      "label": "web-units",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/web-units.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "finished": "2026-11-03T19:29:46.972270+00:00"
+    },
+    {
+      "label": "typecheck",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/typecheck.log",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "finished": "2026-11-03T19:29:58.991032+00:00"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/lint.log",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "finished": "2026-11-03T19:30:09.586466+00:00"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/build.log",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "finished": "2026-11-03T19:30:20.825360+00:00"
+    },
+    {
+      "label": "full-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-a/full-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T19:34:37.751899+00:00"
+    }
+  ]
+}

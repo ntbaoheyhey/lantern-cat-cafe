@@ -1,0 +1,63 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: getByText(/Your session expired/)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByText(/Your session expired/) with timeout 5000ms
+  - waiting for getByText(/Your session expired/)
+
+    at captureRawStack (/Users/bao/taskbar-hero-ovn-sys/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/bao/taskbar-hero-ovn-sys/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toBeVisible (/Users/bao/taskbar-hero-ovn-sys/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /Users/bao/taskbar-hero-ui-ledger/reports/ui/cards/OVN-U2/live-edge-states.mjs:29:56 {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      'Locator: getByText(/Your session expired/)\n' +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      '  - Expect "toBeVisible" getByText(/Your session expired/) with timeout 5000ms\n' +
+      '  - waiting for getByText(/Your session expired/)\n',
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      '  - Expect "toBeVisible" getByText(/Your session expired/) with timeout 5000ms',
+      '  - waiting for getByText(/Your session expired/)'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- heading "Taskbar Hero" [level=1]\n' +
+      '- main:\n' +
+      '  - tabpanel "Class":\n' +
+      '    - paragraph: Step 1 of 1 · New game\n' +
+      '    - heading "Choose Your Class" [level=2]\n' +
+      "    - paragraph: Pick your cat's class! You can switch anytime outside boss fights.\n" +
+      '    - radiogroup "Cat classes":\n' +
+      `      - 'radio "Warrior, Melee class. Attack speed 1.00s. Passive: Cleave: every 3rd swing also hits the next monster for 50%" [checked]':\n` +
+      '        - text: Warrior Melee\n' +
+      '        - paragraph: "Cleave: every 3rd swing also hits the next monster for 50%"\n' +
+      '        - text: "HP 1x ATK 1x DEF 1x Attack Speed: 1.00s"\n' +
+      `      - 'radio "Guardian, Melee class. Attack speed 1.40s. Passive: Bonk: each hit delays target attack by 500 ms"':\n` +
+      '        - text: Guardian Melee\n' +
+      '        - paragraph: "Bonk: each hit delays target attack by 500 ms"\n' +
+      '        - text: "HP 1.3x ATK 1.35x DEF 1.3x Attack Speed: 1.40s"\n' +
+      `      - 'radio "Rogue, Melee class. Attack speed 0.80s. Passive: Twin Strike: strikes 2 times per attack"':\n` +
+      '        - text: Rogue Melee\n' +
+      '        - paragraph: "Twin Strike: strikes 2 times per attack"\n' +
+      '        - text: "HP 0.85x ATK 0.3x DEF 0.85x Attack Speed: 0.80s"\n' +
+      '    - button "Start Adventure as Warrior"'
+  }
+}
+
+Node.js v24.22.2

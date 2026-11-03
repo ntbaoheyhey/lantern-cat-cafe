@@ -1,0 +1,159 @@
+{
+  "head": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+  "cwd": "/Users/bao/taskbar-hero-ovn-sys-main",
+  "pid": 17339,
+  "ports": [
+    5210,
+    5211,
+    5212,
+    5213,
+    5214
+  ],
+  "checks": [
+    {
+      "label": "install",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/install.log",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "finished": "2026-11-03T19:27:53.975630+00:00"
+    },
+    {
+      "label": "scripts",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/scripts.log",
+      "command": [
+        "node",
+        "--test",
+        "/Users/bao/taskbar-hero-ovn-sys-main/scripts/gen-deno-json.test.mjs"
+      ],
+      "finished": "2026-11-03T19:27:54.126618+00:00"
+    },
+    {
+      "label": "packages",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/packages.log",
+      "command": [
+        "pnpm",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "finished": "2026-11-03T19:28:55.275372+00:00"
+    },
+    {
+      "label": "web-units",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/web-units.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "finished": "2026-11-03T19:29:52.229296+00:00"
+    },
+    {
+      "label": "typecheck",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/typecheck.log",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "finished": "2026-11-03T19:30:04.226856+00:00"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/lint.log",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "finished": "2026-11-03T19:30:15.016137+00:00"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/build.log",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "finished": "2026-11-03T19:30:25.670000+00:00"
+    },
+    {
+      "label": "full-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/full-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T19:34:44.938898+00:00"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/resize-five-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T19:35:03.484334+00:00"
+    },
+    {
+      "label": "full-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/full-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T19:38:44.651213+00:00"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/main-regression/resize-five-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T19:38:59.245815+00:00"
+    }
+  ],
+  "complete": true,
+  "pass": true
+}

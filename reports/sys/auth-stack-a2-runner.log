@@ -1,0 +1,20 @@
+START install
+END install exit=0
+START scripts
+END scripts exit=0
+START packages
+END packages exit=0
+START web-units
+END web-units exit=1
+START typecheck
+END typecheck exit=0
+START lint
+END lint exit=0
+START build
+END build exit=0
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/sys/tools/gate.py", line 28, in <module>
+    if a.full:run('full-'+size,['pnpm','exec','playwright','test','--workers=2','--retries=0','--reporter=line'],root/'apps/web',True)
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/sys/tools/gate.py", line 14, in run
+    with socket.socket() as s:s.bind(('127.0.0.1',port))
+OSError: [Errno 48] Address already in use

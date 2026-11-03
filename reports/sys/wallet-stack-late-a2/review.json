@@ -1,0 +1,180 @@
+{
+  "head": "85a6919ba80fc0578f1cfc363865b6ea734e608f",
+  "root": "/Users/bao/taskbar-hero-ovn-sys-stack",
+  "dist": "dist-wallet-final-review",
+  "port": 5260,
+  "fixtureName": "late",
+  "cases": [
+    {
+      "repeat": 1,
+      "width": 1280,
+      "screen": "landing",
+      "state": "nonce-502",
+      "nonceCalls": 3,
+      "otherFunctionCalls": 0,
+      "errors": [],
+      "geometry": {
+        "x": 796,
+        "y": 570,
+        "right": 1256,
+        "bottom": 640,
+        "clipped": false,
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Play as guest",
+            "occluded": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#landing-title"
+              ],
+              [
+                "#landing-promise"
+              ],
+              [
+                ".wallet-addr"
+              ],
+              [
+                "#landing-footnote"
+              ],
+              [
+                ".landing__proof-item:nth-child(1) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(2)"
+              ],
+              [
+                ".landing__proof-item:nth-child(3) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(4)"
+              ],
+              [
+                ".landing__proof-check"
+              ],
+              [
+                ".landing__proof-item:nth-child(5) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(6)"
+              ],
+              [
+                ".landing__proof-item:nth-child(7) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(8)"
+              ],
+              [
+                ".landing__proof-btn"
+              ],
+              [
+                ".ui-toast > span"
+              ]
+            ]
+          }
+        ]
+      },
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "sessionWritten": false
+    },
+    {
+      "repeat": 1,
+      "width": 1280,
+      "screen": "landing",
+      "state": "wrong-network",
+      "nonceCalls": 0,
+      "otherFunctionCalls": 0,
+      "errors": [],
+      "geometry": {
+        "x": 851.6875,
+        "y": 576,
+        "right": 1256,
+        "bottom": 640,
+        "clipped": false,
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Play as guest",
+            "occluded": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#landing-title"
+              ],
+              [
+                "#landing-promise"
+              ],
+              [
+                "#landing-footnote"
+              ],
+              [
+                ".landing__proof-item:nth-child(1) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(2)"
+              ],
+              [
+                ".landing__proof-item:nth-child(3) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(4)"
+              ],
+              [
+                ".landing__proof-check"
+              ],
+              [
+                ".landing__proof-item:nth-child(5) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(6)"
+              ],
+              [
+                ".landing__proof-item:nth-child(7) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(8)"
+              ],
+              [
+                ".landing__proof-btn"
+              ]
+            ]
+          }
+        ]
+      },
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "sessionWritten": false
+    },
+    {
+      "repeat": 1,
+      "width": 1280,
+      "screen": "home",
+      "state": "nonce-502",
+      "nonceCalls": 0,
+      "otherFunctionCalls": 0,
+      "errors": []
+    }
+  ]
+}

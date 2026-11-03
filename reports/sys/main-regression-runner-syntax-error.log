@@ -1,0 +1,4 @@
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/sys/tools/gate.py", line 16
+    with log.open('w') as f:\n  result=subprocess.run(command,cwd=cwd,env=env,stdout=f,stderr=subprocess.STDOUT);f.write('\nexit='+str(result.returncode)+'\n')
+                                                                                                                                                              ^
+SyntaxError: unexpected character after line continuation character

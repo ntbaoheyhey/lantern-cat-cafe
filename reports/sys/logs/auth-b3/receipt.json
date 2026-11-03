@@ -1,0 +1,183 @@
+{
+  "head": "95d9c3267ca61246316cb591c3efbe52c1a89810",
+  "cwd": "/Users/bao/taskbar-hero-ovn-sys-b3",
+  "pid": 41287,
+  "ports": [
+    5190,
+    5191,
+    5192,
+    5193,
+    5194
+  ],
+  "checks": [
+    {
+      "label": "install",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/install.log",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "finished": "2026-11-03T19:57:37.821518+00:00"
+    },
+    {
+      "label": "scripts",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/scripts.log",
+      "command": [
+        "node",
+        "--test",
+        "/Users/bao/taskbar-hero-ovn-sys-b3/scripts/gen-deno-json.test.mjs",
+        "/Users/bao/taskbar-hero-ovn-sys-b3/scripts/health-auth.test.mjs"
+      ],
+      "finished": "2026-11-03T19:57:38.099039+00:00"
+    },
+    {
+      "label": "packages",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/packages.log",
+      "command": [
+        "pnpm",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "finished": "2026-11-03T19:58:31.931422+00:00"
+    },
+    {
+      "label": "web-units",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/web-units.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "finished": "2026-11-03T19:59:23.643129+00:00"
+    },
+    {
+      "label": "typecheck",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/typecheck.log",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "finished": "2026-11-03T19:59:33.207879+00:00"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/lint.log",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "finished": "2026-11-03T19:59:43.163892+00:00"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/build.log",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "finished": "2026-11-03T19:59:57.211727+00:00"
+    },
+    {
+      "label": "changed-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/changed-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/polish.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:01:16.843385+00:00"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/resize-five-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:01:57.729289+00:00"
+    },
+    {
+      "label": "changed-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/changed-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/polish.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:03:15.458945+00:00"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/resize-five-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:03:40.914324+00:00"
+    },
+    {
+      "label": "strict-ui-audit",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-b3/strict-ui-audit.log",
+      "command": [
+        "node",
+        "tools/ui-audit.mjs",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/screenshots/auth-b3-audit",
+        "bossReadyStrong",
+        "--strict"
+      ],
+      "finished": "2026-11-03T20:03:59.900719+00:00"
+    }
+  ],
+  "complete": true,
+  "pass": true
+}

@@ -1,0 +1,276 @@
+{
+  "at": "2026-11-03T19:32:56.202Z",
+  "url": "http://localhost:5175",
+  "root": "/Users/bao/taskbar-hero-ovn-sys",
+  "cases": [
+    {
+      "width": 1280,
+      "state": "landing",
+      "requests": 3,
+      "signatureRequests": 0,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "message": "Wallet sign-in is temporarily unavailable, guest play still works.",
+      "layout": {
+        "dimensions": {
+          "viewportWidth": 1280,
+          "viewportHeight": 720,
+          "scrollWidth": 1280,
+          "scrollHeight": 720,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "documentScroll": false,
+        "horizontalOverflow": [],
+        "elementOverlap": []
+      },
+      "clipping": {
+        "scroll": false,
+        "x": 579.296875,
+        "y": 457.140625,
+        "right": 967.984375,
+        "bottom": 477.53125,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ]
+      },
+      "sessionWritten": false
+    },
+    {
+      "width": 1280,
+      "state": "home",
+      "requests": 3,
+      "signatureRequests": 0,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "message": "Wallet sign-in is temporarily unavailable, guest play still works.",
+      "layout": {
+        "dimensions": {
+          "viewportWidth": 1280,
+          "viewportHeight": 720,
+          "scrollWidth": 1280,
+          "scrollHeight": 720,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "documentScroll": false,
+        "horizontalOverflow": [],
+        "elementOverlap": [
+          {
+            "first": "hud-power-chip",
+            "second": "hud-wallet",
+            "width": 85,
+            "height": 34
+          },
+          {
+            "first": "hud-power-chip",
+            "second": "button.wallet-btn.wallet-sub",
+            "width": 69,
+            "height": 34
+          }
+        ]
+      },
+      "clipping": {
+        "scroll": false,
+        "x": 879.3125,
+        "y": 17.296875,
+        "right": 1268,
+        "bottom": 37.6875,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2"
+            ],
+            "description": "Ensure ARIA attributes are not prohibited for an element's role",
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr?application=axeAPI",
+            "nodes": [
+              {
+                "any": [],
+                "all": [],
+                "none": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "data": {
+                      "role": null,
+                      "nodeName": "div",
+                      "messageKey": "noRoleSingular",
+                      "prohibited": [
+                        "aria-label"
+                      ]
+                    },
+                    "relatedNodes": [],
+                    "impact": "serious",
+                    "message": "aria-label attribute cannot be used on a div with no valid role attribute."
+                  }
+                ],
+                "impact": "serious",
+                "html": "<div class=\"v2-stage-canvas\" aria-label=\"Cat exploring the chapter\"><canvas width=\"204\" height=\"96\" style=\"image-rendering: pixelated;\"></canvas></div>",
+                "target": [
+                  ".v2-stage-canvas"
+                ],
+                "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "sessionWritten": false
+    },
+    {
+      "width": 1600,
+      "state": "landing",
+      "requests": 3,
+      "signatureRequests": 0,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "message": "Wallet sign-in is temporarily unavailable, guest play still works.",
+      "layout": {
+        "dimensions": {
+          "viewportWidth": 1600,
+          "viewportHeight": 900,
+          "scrollWidth": 1600,
+          "scrollHeight": 900,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "documentScroll": false,
+        "horizontalOverflow": [],
+        "elementOverlap": []
+      },
+      "clipping": {
+        "scroll": false,
+        "x": 579.296875,
+        "y": 547.140625,
+        "right": 967.984375,
+        "bottom": 567.53125,
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        }
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ]
+      },
+      "sessionWritten": false
+    },
+    {
+      "width": 1600,
+      "state": "home",
+      "requests": 3,
+      "signatureRequests": 0,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "message": "Wallet sign-in is temporarily unavailable, guest play still works.",
+      "layout": {
+        "dimensions": {
+          "viewportWidth": 1600,
+          "viewportHeight": 900,
+          "scrollWidth": 1600,
+          "scrollHeight": 900,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "documentScroll": false,
+        "horizontalOverflow": [],
+        "elementOverlap": [
+          {
+            "first": "hud-power-chip",
+            "second": "hud-wallet",
+            "width": 15,
+            "height": 34
+          }
+        ]
+      },
+      "clipping": {
+        "scroll": false,
+        "x": 1199.3125,
+        "y": 17.296875,
+        "right": 1588,
+        "bottom": 37.6875,
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        }
+      },
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2"
+            ],
+            "description": "Ensure ARIA attributes are not prohibited for an element's role",
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr?application=axeAPI",
+            "nodes": [
+              {
+                "any": [],
+                "all": [],
+                "none": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "data": {
+                      "role": null,
+                      "nodeName": "div",
+                      "messageKey": "noRoleSingular",
+                      "prohibited": [
+                        "aria-label"
+                      ]
+                    },
+                    "relatedNodes": [],
+                    "impact": "serious",
+                    "message": "aria-label attribute cannot be used on a div with no valid role attribute."
+                  }
+                ],
+                "impact": "serious",
+                "html": "<div class=\"v2-stage-canvas\" aria-label=\"Cat exploring the chapter\"><canvas width=\"189\" height=\"96\" style=\"image-rendering: pixelated;\"></canvas></div>",
+                "target": [
+                  ".v2-stage-canvas"
+                ],
+                "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "sessionWritten": false
+    }
+  ],
+  "complete": true
+}

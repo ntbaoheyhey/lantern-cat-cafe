@@ -1,0 +1,65 @@
+{
+  "head": "85a6919ba80fc0578f1cfc363865b6ea734e608f",
+  "checks": [
+    {
+      "repeat": 1,
+      "exit": 0,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/layout/StageLayout.test.tsx",
+        "--maxWorkers=1"
+      ]
+    },
+    {
+      "repeat": 2,
+      "exit": 0,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/layout/StageLayout.test.tsx",
+        "--maxWorkers=1"
+      ]
+    },
+    {
+      "repeat": 3,
+      "exit": 0,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/layout/StageLayout.test.tsx",
+        "--maxWorkers=1"
+      ]
+    },
+    {
+      "repeat": 4,
+      "exit": 0,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/layout/StageLayout.test.tsx",
+        "--maxWorkers=1"
+      ]
+    },
+    {
+      "repeat": 5,
+      "exit": 0,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/layout/StageLayout.test.tsx",
+        "--maxWorkers=1"
+      ]
+    }
+  ]
+}

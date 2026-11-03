@@ -1,0 +1,109 @@
+{
+  "head": "e2994f6bc9e360d413f63ca7e6b2cf38fdf83f97",
+  "cwd": "/Users/bao/taskbar-hero-ovn-sys-stack",
+  "pid": 58589,
+  "ports": [
+    5173,
+    5174,
+    5175,
+    5176,
+    5177
+  ],
+  "checks": [
+    {
+      "label": "install",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/install.log",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "finished": "2026-11-03T20:19:26.405951+00:00"
+    },
+    {
+      "label": "scripts",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/scripts.log",
+      "command": [
+        "node",
+        "--test",
+        "/Users/bao/taskbar-hero-ovn-sys-stack/scripts/gen-deno-json.test.mjs",
+        "/Users/bao/taskbar-hero-ovn-sys-stack/scripts/health-auth.test.mjs"
+      ],
+      "finished": "2026-11-03T20:19:26.683066+00:00"
+    },
+    {
+      "label": "packages",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/packages.log",
+      "command": [
+        "pnpm",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "finished": "2026-11-03T20:20:35.825924+00:00"
+    },
+    {
+      "label": "web-units",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/web-units.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "finished": "2026-11-03T20:21:47.253061+00:00"
+    },
+    {
+      "label": "typecheck",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/typecheck.log",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "finished": "2026-11-03T20:22:00.482735+00:00"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/lint.log",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "finished": "2026-11-03T20:22:12.338229+00:00"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/build.log",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "finished": "2026-11-03T20:22:24.546873+00:00"
+    },
+    {
+      "label": "full-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-a/full-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:27:17.309889+00:00"
+    }
+  ]
+}

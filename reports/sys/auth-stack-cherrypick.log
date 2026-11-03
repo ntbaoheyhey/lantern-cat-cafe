@@ -1,0 +1,13 @@
+[ai/codex-ovn-sys-auth-stack e1f548c] fix(auth): explain nonce outages and bound safe retries [skip ci]
+ Date: Wed Nov 4 02:25:36 2026 +0700
+ 9 files changed, 289 insertions(+), 16 deletions(-)
+ create mode 100755 scripts/health-auth.sh
+ create mode 100644 scripts/health-auth.test.mjs
+ create mode 100644 supabase/tests/src/auth-availability.test.ts
+[ai/codex-ovn-sys-auth-stack 8315a7a] fix(wallet): keep sign-in outages in a persistent notification [skip ci]
+ Date: Wed Nov 4 02:42:11 2026 +0700
+ 2 files changed, 20 insertions(+), 4 deletions(-)
+[ai/codex-ovn-sys-auth-stack e2994f6] fix(wallet): keep network guidance clear of the HUD and landing actions [skip ci]
+ Date: Wed Nov 4 02:57:12 2026 +0700
+ 3 files changed, 24 insertions(+), 5 deletions(-)
+ create mode 100644 apps/web/src/wallet/notifications.css

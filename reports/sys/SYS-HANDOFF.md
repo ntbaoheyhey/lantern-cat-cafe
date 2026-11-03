@@ -1,18 +1,25 @@
-# Overnight SYS handoff
-- Authorized ALL-lane session dbc68717 began2026-11-03T19:17Z, deadline2026-11-04T03:17Z. No agents/schedulers/orchestrator. Main checkout untouched.
-- Main340f88b remains live and private. #244 untouched. #252/#257 remain superseded/open. No live migration, function/contract deployment, settings/env change, real wallet/funds or submission.
-- S1 health HOLD CLEARED by two POST200 probes19:20:48Z/19:31:17Z,628.63s apart. Exactly2probes. Historical502cause unproven. reports/sys/auth-nonce-502.md preserves evidence.
-- Supported Supabase function download fails UnsafeFunctionDownloadPathError. Partial source is not a usable rollback backup. Owner must obtain supported full export and rehearse restore before deploying. No guard bypass.
-- Local PGlite pre-Nov3/4/6 migrations issues nonce, disproving missing-budget-table explanation for downloaded wiring. Docker unavailable. CLI has no function logs, Vercel CLI absent.
-- S2 deployment quota HOLD remains. Actual provider count unavailable.23maincommits/7mergedPR proxy recorded. Cap error >100 onNov3. Recheck00:00ZNov4, provider24h through13:23:17Z. No merge/deploy quota probes. Max1merge/20min, stop80/cap error after clearance.
-- SYS original candidate95d9c32 frozen in /Users/bao/taskbar-hero-ovn-sys, ai/codex-ovn-sys-auth. Only10owned paths. Lazy nonce dependencies yield CORS503/Retry-After, fail closed, nonce-only bounded backoff, plain-language persistent notifications, wrong-network guidance, read-only health script and tests.
-- A3/B3 completed. A3has1unit timeout in inherited StageLayout test among1460, B3allcommandchecksPASS. Both have supplemental HomeaxeFAIL stagearia from main, fixed in heldUI263. Overall self-graded0/0 until repaired dependency is included and gated. Failed receipts retained.
-- Main regression completed once on340f88b, both sizes PASS. Resize rate and inherited defects must be included in final report. Do not repeat full main suite.
-- All SYSTEM requests answered in reports/sys/requests-response.md. Authoritative ownership fields declined with reasons. CXS1/CXS2 already main, no duplicate work or submission. originalEconomy staysOFF, config numbers unchanged.
-- Created separate own SYS branch ai/codex-ovn-sys-auth-stack, head e2994f6, on FIRSTPLAY7d0d08e with only the three SYS commits replayed. FreshA58589/B58591 at5173–5178/5190–5195 are running. Next wallet supplemental reviews. This tests inherited accessibility dependency without editing UI paths. No passing standalone95d9c32grade claimed.
-- Existing wrong-network/nonce502 browser reviews at reports/sys/wallet-a3 and wallet-b3. They prove no signature, transaction/session, errors or overflow, but retain inheritedaxe failure.
-- Reports and receipts use ai/codex-ui-ledger. Update handoff per milestone. Draft PRs only while quota holds. No merge lock held.
-
-- 20:35Z SYS e2994f6 rejected after native1280connectedwalletPower/Live overlap. Geometry repro RED preserved. Wallet-owned CSS repair85a6919 builder8/8PASS, native1280reviewPASS, freshA70182/B70183 at5173/5190. Keyboardafd0699 cleanB14commandsPASS, A full still running. No merge/quota probe.
-
-- 20:41Z recovery draft268/afd0699 acceptedA95/B95. SYS85a6919 B2all14commandsPASS,24wallet+8late/maxbalancecases/reviewerPASS. A2unit1/1467timeout/orphanportFAIL retained;5isolatedStageLayout runsPASS. Ownorphan67797cwdverified/stopped. FreshA3PID74597 unitworkers1 nowall1467units/typecheck/lint/buildPASS,firstexactheadfullmatrixrunning. No overallSYSgrade untilcompletion.
+# Overnight final handoff
+- Authorized ALL session began 2026-11-03T19:17Z, deadline 2026-11-04T03:17Z. Finalized 2026-11-03T20:53:31.527164+00:00.
+- Main/live remains 340f88b92405ceb6b5421b207307fdbb283b2ca3, previous PR261. No overnight merge. Repository private.
+- Stop condition reached. All scoped local work is complete, remaining production release needs verified deployment capacity. No agent, scheduler or orchestrator was started.
+- Nonce health HOLD CLEARED by POST200 at19:20:48Z/19:31:17Z, 628.63s apart. Exactly2 public nonce probes, no more needed. Historical502 cause unproven.
+- Deployment quota HOLD persists after cap error on268 and exact-head269 rate-limit status at2026-11-03T20:51:55Z. Actual provider count unavailable, CLI absent.
+- UTC boundary recheck2026-11-04T00:00Z, latest recorded24h warning through2026-11-04T20:51:55Z. Neither proves capacity. Verify existing account usage, no merge/deploy quota probes.
+- Release262→263→264→265→266, recovery268/SYS269, then refresh267 to final screens. Max1merge/20min, stop80deployments or any cap error.
+- Before each merge acquire documented lock, fetch/merge latestmain, rerun changed specs/typecheck/lint, require origin/main...HEAD only OWN paths, then verify deploy hashes and both-size live smoke.
+- Keep244 untouched/blocked pending complete backup and restore rehearsal. Keep252/257 open/superseded. Default-OFF originalEconomy/config numbers untouched.
+- Original accepted drafts262/a9afaad A96/B96,263/4b0e69a,264/949cc44,265/7d0d08e,266/f2a0588 all A95/B95 otherwise. Preserve exact-head receipts, no repeated full matrices.
+- Recovery268/afd0699 A95/B95 in taskbar-hero-ovn-ui-keyboard, based265. 1455units/reviewer,391full/size once,33changed/size/reviewer,20resize/18strict/28axe each. Keyboard and native checks pass.
+- Gallery267/e161f06 A95/B95 in taskbar-hero-ovn-ui, based266. All624 hashes verified. Static gallery/demo and90second walkthrough exist. Captures label candidate heads and live340f88b.
+- SYS269/85a6919 A95/B95 in taskbar-hero-ovn-sys-stack, based265. Ten SYS-owned paths against parent. Current-main cumulative diff includes UI dependency, cannot merge directly.
+- SYS A3 all14commands PASS,1467units,388full/size ONCE,69changed/size repeat3,20resize,18strict. Clean B2 tests-first all12commands PASS except shared full. Each adds28axe/24wallet/8late-maxbalance checks.
+- SYS native screenshots reviewed at both sizes. No confirmed violations, clipping, HUD overlap, unexpected errors, signatures or transactions. Axe incompletes retained.
+- Earlier standalone stagearia failures, native HUD overlap, inherited StageLayout unit timeout1/1467 and own orphan-port failure remain failed receipts. Five isolated unchanged unit runs and serialized freshA3 PASS. No weakened tests/timeouts.
+- Own orphan67797 cwd verified before stopping. Final gate74597 completed. No merge lock held. Check ownership/cwd before any process cleanup.
+- Local PGlite beforeNov3/4/6 migrations issues nonce. Missing-budget-table hypothesis disproved for downloaded wiring. Docker/log tooling unavailable. Live inventory/dependency graph unverified.
+- Supported function download fails UnsafeFunctionDownloadPathError. Partial source is not rollback backup. Obtain complete supported export and rehearse restore before any edge deploy or244 work, never bypass guard.
+- Main regression340f88b once PASS,1448units/368full per size. Resize0/20 failures. All SYSTEM request lines dispositioned, CXS1/CXS2 alreadymain, no submission.
+- Live UX both sizes first natural rewards29.49/29.96s. Fresh/saved guests, all routes, Forge, proof, offline, mocked503/401 and wrong network reviewed. Live medium defects fixed in held263/268/269.
+- Exact recovery effects10/10 per size,~60fps/p95~17ms. Four separate samples60.001–60.004fps,p95<=16.8ms,CLS0. Bundle entry gzip delta+1.24kB vs main includes heldUI stack, large modules already dynamic.
+- Authoritative final report reports/OVERNIGHT-REPORT.md. Owner commands reports/OPTIONAL-USER-STEPS.md. Fresh grades reports/sys/cards/OVN-AUTH and reports/ui/cards/OVN-RECOVERY,OVN-GALLERY.
+- Local gallery /Users/bao/taskbar-hero-ovn-ui/docs/ui/gallery/index.html. Ledger ai/codex-ui-ledger is the evidence branch. Do not repeat completed exact-head full suites.

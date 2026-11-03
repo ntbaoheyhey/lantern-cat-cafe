@@ -1,0 +1,17 @@
+START install
+END install exit=0
+START scripts
+END scripts exit=0
+START packages
+END packages exit=0
+START web-units
+END web-units exit=0
+START typecheck
+END typecheck exit=0
+START lint
+END lint exit=0
+START build
+END build exit=0
+START full-1280x720
+END full-1280x720 exit=0
+START changed-1280x720

@@ -1,0 +1,44 @@
+{
+  "card": "OVN-AUTH",
+  "grader": "A",
+  "label": "self-graded (fresh pass)",
+  "head": "85a6919ba80fc0578f1cfc363865b6ea734e608f",
+  "parent": "7d0d08e48e87c7f758cd8b2a959fb5153c3c9470",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T20:51:46.186899+00:00",
+  "tests": {
+    "productGateCommands": 14,
+    "webUnitCases": 1467,
+    "changedPerSize": 69,
+    "changedRepeatEach": 3,
+    "fullPerSize": 388,
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "axeScans": 28,
+    "walletErrorCases": 24,
+    "lateMaximumBalanceCases": 8,
+    "confirmedViolations": 0
+  },
+  "review": {
+    "testsFirst": false,
+    "diff": "Reviewed all ten SYS-owned paths against accepted FIRSTPLAY parent. Dependencies initialize inside the nonce request boundary. CORS-readable 503 preserves fail-closed nonce persistence, sanitized errors and Retry-After. Only nonce is retried, at most three attempts with bounded backoff and request timeout. Verification remains single-attempt. Persistent shared notifications keep sign-in and wrong-network guidance outside the wallet control group. Wallet-owned compact-desktop wrapping preserves HUD controls. Health script suppresses bodies and tests use local HTTP servers. Existing callers retain default handler behavior.",
+    "visual": "Native 1280x720 and 1600x900 wallet-error and wrong-network screenshots reviewed, including late-game maximum balances. Power and Live fit with connected controls, notifications and dismiss buttons remain readable, guest controls remain reachable. No confirmed clipping, overlap, document overflow or unexpected browser errors.",
+    "criticalDefects": [],
+    "limitations": [
+      "Historical production 502 cause remains unproven. Local PGlite disproves the missing-budget-table hypothesis for downloaded wiring. Docker was unavailable.",
+      "Existing axe color-contrast incomplete checks remain in raw evidence, with native visual review and strict contrast audit.",
+      "A2 inherited StageLayout unit timeout and earlier accessibility/HUD failures remain failed receipts. Five isolated StageLayout runs and serialized fresh A3 pass without changing timeout or assertions.",
+      "Existing package environment skips and expected failures remain unchanged.",
+      "Passing score applies to the dependency-complete FIRSTPLAY-based candidate. Current-main cumulative scope includes held UI parent and cannot merge directly."
+    ]
+  },
+  "gateReceipt": "../../logs/auth-stack-a3/receipt.json",
+  "axeReceipt": "../../auth-stack-axe-a3/axe.json",
+  "walletReceipt": "../../wallet-stack-a2/review.json",
+  "lateWalletReceipt": "../../wallet-stack-late-a2-r2/review.json",
+  "scopeReceipt": "scope-a.json",
+  "release": "PARKED under deployment quota. Refresh only after parent PR265 reaches main, with SYS-only origin/main scope and merge-lock checks. Edge deployment additionally requires verified complete backup and restore rehearsal.",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/269"
+}

@@ -1,0 +1,65 @@
+{
+  "motionFixtureHead": "993bfc4",
+  "recoveryEffectsHead": "afd06992b05b4c98a15c77ec4903166ef892b0f1",
+  "samples": [
+    {
+      "width": 1280,
+      "height": 720,
+      "reducedMotion": "no-preference",
+      "fps": 60.00398366696544,
+      "p95Ms": 16.799999999999955,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "reducedMotion": "reduce",
+      "fps": 60.002489729864315,
+      "p95Ms": 16.799999999999727,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "reducedMotion": "no-preference",
+      "fps": 60.002489729864315,
+      "p95Ms": 16.700000000000273,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "reducedMotion": "reduce",
+      "fps": 60.00099586715132,
+      "p95Ms": 16.700000000000728,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    }
+  ],
+  "exactRecoveryMotionTests": "Full browser matrix on afd0699 includes the real MOTION fixture tests at both sizes and motion settings, asserting every layout shift sums to exactly zero.",
+  "effectsPassedPerSize": 10,
+  "bundle": {
+    "mainIndexGzipKB": 142.73,
+    "recoveryIndexGzipKB": 143.97,
+    "deltaGzipKB": 1.24,
+    "recoveryCssGzipKB": 27.6,
+    "phaserGzipKB": 318.49,
+    "phaserAlreadyDynamic": true,
+    "stageAndArenaAlreadyDynamic": true,
+    "optionalArtCatalogAndSamplesAlreadyDynamic": true,
+    "newOptionalFeatureChunkGzipKB": 2.09,
+    "newArtPreviewChunkGzipKB": 0.6
+  },
+  "notes": [
+    "Numbers are local build measurements, with default production flags preserved.",
+    "Phaser is the largest chunk and is already loaded on entering the stage or arena. The original catalog, art preview and feature samples are dynamically imported.",
+    "Bundle increase is measured against main340f88b and includes the complete held UI stack. No extra bundle refactor was required for the scoped overnight fixes."
+  ]
+}

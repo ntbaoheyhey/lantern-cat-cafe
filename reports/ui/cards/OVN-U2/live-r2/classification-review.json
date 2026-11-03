@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-03T19:49:26.149364+00:00",
+  "source": "live-r2/audit.json",
+  "explanation": "eth_getBlockByNumber is a read-only JSON-RPC query; HTTP POST alone does not imply a state write. Only method names were recorded, never request params/headers. Axe-phase CSP errors remain in raw evidence; no production CSP change.",
+  "runs": [
+    {
+      "width": 1280,
+      "rpcMethods": [
+        "eth_chainId",
+        "eth_blockNumber",
+        "eth_getCode",
+        "eth_getCode",
+        "eth_getLogs",
+        "eth_call",
+        "eth_getBlockByNumber"
+      ],
+      "onlyReadOnlyRpc": true,
+      "productErrors": [],
+      "toolErrors": [
+        {
+          "phase": "axe",
+          "text": "Connecting to 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap' violates the following Content Security Policy directive: \"connect-src 'self' https://api.avax-test.network https://qoalewtxflagoprrxrgh.supabase.co\". The action has been blocked.",
+          "location": ""
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "rpcMethods": [
+        "eth_chainId",
+        "eth_blockNumber",
+        "eth_getCode",
+        "eth_getCode",
+        "eth_getLogs",
+        "eth_call",
+        "eth_getBlockByNumber"
+      ],
+      "onlyReadOnlyRpc": true,
+      "productErrors": [],
+      "toolErrors": [
+        {
+          "phase": "axe",
+          "text": "Connecting to 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap' violates the following Content Security Policy directive: \"connect-src 'self' https://api.avax-test.network https://qoalewtxflagoprrxrgh.supabase.co\". The action has been blocked.",
+          "location": ""
+        }
+      ]
+    }
+  ]
+}

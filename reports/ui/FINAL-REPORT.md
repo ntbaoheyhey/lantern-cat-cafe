@@ -1,3 +1,5 @@
+> Overnight update, 2026-11-04 Vietnam time. The nonce health hold is cleared by two HTTP200 probes ten minutes apart. Deployment capacity still parks drafts #262–#269. Main/live remains340f88b. The older health-hold wording below records the original six-card acceptance state. Use [OVERNIGHT-REPORT](../OVERNIGHT-REPORT.md) for the final release state and owner steps.
+
 # Taskbar Hero — six-card UI report
 
 | Card | PR | Self-graded (fresh pass) | Merged commit | Live state |

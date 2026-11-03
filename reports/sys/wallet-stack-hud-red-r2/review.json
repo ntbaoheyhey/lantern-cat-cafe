@@ -1,0 +1,222 @@
+{
+  "head": "e2994f6bc9e360d413f63ca7e6b2cf38fdf83f97",
+  "root": "/Users/bao/taskbar-hero-ovn-sys-stack",
+  "dist": "dist-wallet-review",
+  "port": 5260,
+  "cases": [
+    {
+      "width": 1280,
+      "screen": "landing",
+      "state": "nonce-502",
+      "nonceCalls": 3,
+      "otherFunctionCalls": 0,
+      "errors": [],
+      "geometry": {
+        "x": 796,
+        "y": 570,
+        "right": 1256,
+        "bottom": 640,
+        "clipped": false,
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Play as guest",
+            "occluded": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#landing-title"
+              ],
+              [
+                "#landing-promise"
+              ],
+              [
+                ".wallet-addr"
+              ],
+              [
+                "#landing-footnote"
+              ],
+              [
+                ".landing__proof-item:nth-child(1) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(2)"
+              ],
+              [
+                ".landing__proof-item:nth-child(3) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(4)"
+              ],
+              [
+                ".landing__proof-check"
+              ],
+              [
+                ".landing__proof-item:nth-child(5) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(6)"
+              ],
+              [
+                ".landing__proof-item:nth-child(7) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(8)"
+              ],
+              [
+                ".landing__proof-btn"
+              ],
+              [
+                ".ui-toast > span"
+              ]
+            ]
+          }
+        ]
+      },
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "sessionWritten": false
+    },
+    {
+      "width": 1280,
+      "screen": "landing",
+      "state": "wrong-network",
+      "nonceCalls": 0,
+      "otherFunctionCalls": 0,
+      "errors": [],
+      "geometry": {
+        "x": 851.6875,
+        "y": 576,
+        "right": 1256,
+        "bottom": 640,
+        "clipped": false,
+        "documentOverflow": false,
+        "controls": [
+          {
+            "text": "Play as guest",
+            "occluded": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#landing-title"
+              ],
+              [
+                "#landing-promise"
+              ],
+              [
+                "#landing-footnote"
+              ],
+              [
+                ".landing__proof-item:nth-child(1) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(2)"
+              ],
+              [
+                ".landing__proof-item:nth-child(3) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(4)"
+              ],
+              [
+                ".landing__proof-check"
+              ],
+              [
+                ".landing__proof-item:nth-child(5) > span:nth-child(2)"
+              ],
+              [
+                ".landing__proof-divider:nth-child(6)"
+              ],
+              [
+                ".landing__proof-item:nth-child(7) > a"
+              ],
+              [
+                ".landing__proof-divider:nth-child(8)"
+              ],
+              [
+                ".landing__proof-btn"
+              ]
+            ]
+          }
+        ]
+      },
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "sessionWritten": false
+    },
+    {
+      "width": 1280,
+      "screen": "home",
+      "state": "nonce-502",
+      "nonceCalls": 3,
+      "otherFunctionCalls": 0,
+      "errors": [],
+      "geometry": {
+        "x": 796,
+        "y": 570,
+        "right": 1256,
+        "bottom": 640,
+        "clipped": false,
+        "documentOverflow": false,
+        "controls": []
+      },
+      "hudGeometry": {
+        "power": {
+          "left": 924.046875,
+          "right": 1009.265625,
+          "width": 85.21875,
+          "font": "12px",
+          "gap": "6px"
+        },
+        "sync": {
+          "left": 968.078125,
+          "right": 1010.609375,
+          "width": 42.53125,
+          "font": "14px",
+          "gap": "normal"
+        },
+        "wallet": {
+          "left": 1018.609375,
+          "right": 1268,
+          "width": 249.390625,
+          "font": "14px",
+          "gap": "4px"
+        },
+        "address": {
+          "left": 1018.609375,
+          "right": 1108.46875,
+          "width": 89.859375,
+          "font": "13.6px",
+          "gap": "normal"
+        },
+        "layout": {
+          "left": 104,
+          "right": 960.078125,
+          "width": 856.078125,
+          "font": "14px",
+          "gap": "4px"
+        }
+      }
+    }
+  ]
+}

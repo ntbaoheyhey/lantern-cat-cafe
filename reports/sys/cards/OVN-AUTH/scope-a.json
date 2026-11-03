@@ -1,0 +1,23 @@
+{
+  "head": "85a6919ba80fc0578f1cfc363865b6ea734e608f",
+  "reviewedAt": "2026-11-03T20:43:22.008116+00:00",
+  "parent": "7d0d08e48e87c7f758cd8b2a959fb5153c3c9470",
+  "parentPR": 265,
+  "paths": [
+    "apps/web/src/wallet/WalletButton.tsx",
+    "apps/web/src/wallet/authApi.test.ts",
+    "apps/web/src/wallet/authApi.ts",
+    "apps/web/src/wallet/notifications.css",
+    "apps/web/src/wallet/wallet.test.tsx",
+    "scripts/health-auth.sh",
+    "scripts/health-auth.test.mjs",
+    "supabase/functions/_shared/auth.ts",
+    "supabase/functions/auth-nonce/index.ts",
+    "supabase/tests/src/auth-availability.test.ts"
+  ],
+  "violations": [],
+  "trackedWorkingChanges": [],
+  "mainDeltaPaths": 353,
+  "mergeScope": "Dependency-scoped SYS-only now. origin/main...HEAD includes the held UI parent. Cannot merge until the UI parent lands and origin/main...HEAD is SYS-only under the merge lock.",
+  "privateRepository": true
+}

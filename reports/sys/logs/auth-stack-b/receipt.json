@@ -1,0 +1,183 @@
+{
+  "head": "e2994f6bc9e360d413f63ca7e6b2cf38fdf83f97",
+  "cwd": "/Users/bao/taskbar-hero-ovn-sys-stack-b",
+  "pid": 58591,
+  "ports": [
+    5190,
+    5191,
+    5192,
+    5193,
+    5194
+  ],
+  "checks": [
+    {
+      "label": "install",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/install.log",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "finished": "2026-11-03T20:19:26.413806+00:00"
+    },
+    {
+      "label": "scripts",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/scripts.log",
+      "command": [
+        "node",
+        "--test",
+        "/Users/bao/taskbar-hero-ovn-sys-stack-b/scripts/gen-deno-json.test.mjs",
+        "/Users/bao/taskbar-hero-ovn-sys-stack-b/scripts/health-auth.test.mjs"
+      ],
+      "finished": "2026-11-03T20:19:26.683067+00:00"
+    },
+    {
+      "label": "packages",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/packages.log",
+      "command": [
+        "pnpm",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "finished": "2026-11-03T20:20:35.852390+00:00"
+    },
+    {
+      "label": "web-units",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/web-units.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "finished": "2026-11-03T20:21:47.438516+00:00"
+    },
+    {
+      "label": "typecheck",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/typecheck.log",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "finished": "2026-11-03T20:22:00.528618+00:00"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/lint.log",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "finished": "2026-11-03T20:22:12.480704+00:00"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/build.log",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "finished": "2026-11-03T20:22:24.789425+00:00"
+    },
+    {
+      "label": "changed-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/changed-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/polish.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:23:31.334256+00:00"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/resize-five-1280x720.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:23:51.335134+00:00"
+    },
+    {
+      "label": "changed-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/changed-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/polish.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:24:54.934539+00:00"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/resize-five-1600x900.log",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "finished": "2026-11-03T20:25:14.058186+00:00"
+    },
+    {
+      "label": "strict-ui-audit",
+      "exit": 0,
+      "log": "reports/sys/logs/auth-stack-b/strict-ui-audit.log",
+      "command": [
+        "node",
+        "tools/ui-audit.mjs",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/screenshots/auth-stack-b-audit",
+        "bossReadyStrong",
+        "--strict"
+      ],
+      "finished": "2026-11-03T20:25:31.972442+00:00"
+    }
+  ],
+  "complete": true,
+  "pass": true
+}

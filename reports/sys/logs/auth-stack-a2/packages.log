@@ -1,0 +1,68 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-ovn-sys-stack/packages/auth
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys-stack/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  03:32:12
+   Duration  512ms (import 74%, tests 21%, transform 4%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-ovn-sys-stack/packages/chain
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys-stack/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  03:32:13
+   Duration  444ms (import 64%, tests 20%, transform 13%, worker 2%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-ovn-sys-stack/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys-stack/packages/game-rules
+
+
+ Test Files  30 passed | 3 skipped (33)
+      Tests  431 passed | 2 expected fail | 11 skipped (444)
+   Start at  03:32:14
+   Duration  28.48s (tests 94%, import 4%, transform 2%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-ovn-sys-stack/supabase/tests
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys-stack/supabase/tests
+
+
+ Test Files  34 passed (34)
+      Tests  581 passed (581)
+   Start at  03:32:43
+   Duration  14.21s (tests 85%, import 14%, transform 1%)
+
+
+> @taskbar-hero/api-contract@0.0.0 test /Users/bao/taskbar-hero-ovn-sys-stack/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ovn-sys-stack/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  03:32:58
+   Duration  159ms (transform 55%, import 35%, tests 7%, worker 3%)
+
+
+exit=0
