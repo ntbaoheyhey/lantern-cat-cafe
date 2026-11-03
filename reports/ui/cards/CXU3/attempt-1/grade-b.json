@@ -1,13 +1,14 @@
 {
   "label": "self-graded (fresh pass)",
   "pass": "grader B",
-  "status": "PASS",
-  "score": 94,
+  "status": "SUPERSEDED",
   "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
   "sourceRoot": "/private/tmp/taskbar-hero-ui-cxu3-b",
   "reviewOrder": "Clean exact-head checkout: tests first, then full diff/AST and screenshot review. Separate ports 5320\u20135323 and audit 5350.",
   "gradedAt": "2026-11-03T05:04:10.152733+00:00",
-  "autoFails": [],
+  "autoFails": [
+    "The original Market empty-state data-URI icon was removed with legacy CSS; original art must be preserved."
+  ],
   "criteria": [
     {
       "criterion": "Reference fidelity",
@@ -57,5 +58,8 @@
     "market-inspect-1600.png",
     "craft-result-1280-no-preference.png",
     "market-sell-1280.png"
-  ]
+  ],
+  "priorProvisionalScore": 94,
+  "acceptedScore": null,
+  "correction": "Caught during final diff/asset review before any UI push or merge; both passing grades withdrawn."
 }

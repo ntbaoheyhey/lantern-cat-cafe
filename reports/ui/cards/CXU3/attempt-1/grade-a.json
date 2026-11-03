@@ -3,9 +3,10 @@
   "pass": "grader A",
   "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
   "base": "6144d42ce12d9c61dc4f863733356de99f605eb9",
-  "score": 94,
-  "status": "PASS",
-  "autoFails": [],
+  "status": "SUPERSEDED",
+  "autoFails": [
+    "The original Market empty-state data-URI icon was removed with legacy CSS; original art must be preserved."
+  ],
   "gradedAt": "2026-11-03T04:58:07.755171+00:00",
   "criteria": [
     {
@@ -62,5 +63,8 @@
     "map-1600x900.png",
     "help-1600x900.png"
   ],
-  "reviewOrder": "Full source diff, fresh core/changed/full/resize checks, screenshot inspection; no assertion or timeout changes."
+  "reviewOrder": "Full source diff, fresh core/changed/full/resize checks, screenshot inspection; no assertion or timeout changes.",
+  "priorProvisionalScore": 94,
+  "acceptedScore": null,
+  "correction": "Caught during final diff/asset review before any UI push or merge; both passing grades withdrawn."
 }

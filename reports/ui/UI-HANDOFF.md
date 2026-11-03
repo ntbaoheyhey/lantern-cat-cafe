@@ -18,3 +18,4 @@
 - Field request posted for CXLU1 rune model; current contracts have no rune data. Placeholder/sample states remain allowed; no API edits planned.
 - CXU3 A94 PASS on 2e1f83b: 330/330 browser cases per size; 20/20 resize runs. Fresh B tests-first PID 64531 on 5320–5323; no merge yet.
 - CXU3 B94 PASS on 2e1f83b: fresh core, 114 repeats, 20/20 resize, 18 clear audit views; tests-first scope/AST/diff review complete. Next acquire merge lock, recheck current main, push once and open/merge UI PR.
+- CXU3 provisional A94/B94 withdrawn before push/merge: embedded Market data-URI art was removed by imported CSS. Original exact icon restored; new head must rerun gates. Attempt-1 evidence retained.
