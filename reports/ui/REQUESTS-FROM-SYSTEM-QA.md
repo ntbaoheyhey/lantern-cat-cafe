@@ -16,3 +16,16 @@ No missing API fields were present in /Users/bao/taskbar-hero-ui-ledger/reports/
 ## SYS-UI-006 — catalog icon paint/capture readiness
 
 The verified6144d42 live capture at /private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/live/phased/1280x720/catalog-items.png appears to show a quality frame but blank item-icon areas. This may be capture timing rather than a persistent UI defect; no cause is asserted. Asset hashes and marker-based checks passed, which do not establish painted pixels. Please verify loaded-state icon rendering and frame layering/readiness under UI ownership. SYSTEM did not edit UI/art or rerun live QA while CXU3 readiness is pending. The draft pack substitutes the clear guest Hero capture, retaining the original evidence here.
+
+
+## SYS-UI-007 — live returning guest route becomes blank (merge gate)
+
+Confirmed on current main1a1b499/live identity at2026-11-03T09:39:26Z,1280x720. Using an unchanged, UI-earned guest save with an existing Warrior class: initial `/#landing` redirects to Home; navigate `/#hero` then `/#landing` using the published hash router; click the actual Play as guest action (`landing-start`). The screen becomes entirely blank: no landing, class picker or Home dashboard. Zero network writes were attempted. Screenshot was visually inspected.
+
+Evidence: [receipt](../cards/CXQ1-FRESH/returning-probe/data/result.json), [blank screen](../cards/CXQ1-FRESH/returning-probe/data/earned-start-click.png), [diagnostic](../cards/CXQ1-FRESH/returning-guest-probe.mjs); source identity is CXS2-FRESH/resume-live/artifact-after.json. Local root /Users/bao/taskbar-hero-system-ledger. Guest storage remains private local data and is not committed.
+
+Source observation (not a SYSTEM edit): StageLayout's landing action selects `class`, while the class panel only mounts when there is no existing class. The effect redirect depends on class identity, so clicking after class is already loaded can leave an empty class screen. UI board already mentions class-save recovery in CXR2; please include this returning-guest case in its gate at both desktop sizes.
+
+Disposition: UI owns the fix. Unrelated main merges are held under the demo-path failure rule; the corrective UI change still requires its full gates and this reproducer passing before release, then live confirmation. SYSTEM will not edit UI files or branches.
+
+Separate SYSTEM harness finding: the old timed runner expects first-time class onboarding from a prepared save that already has a class. That assumption is invalid even after routing is fixed; SYSTEM will correct the script with explicit fresh-onboarding versus earned-save segments and will not claim an uninterrupted fresh-to-boss three-minute run.

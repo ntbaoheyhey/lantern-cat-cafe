@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:34:26.497366+07:00. Resume verified; CXS2 main/live acceptance complete.
+Updated: 2026-11-03T16:40:50.832757+07:00. ACTIVE; SYS-UI-007 live returning-guest defect confirmed.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
@@ -10,7 +10,7 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 |244 CXN3|db0f9d6 draft BLOCKED; deployed source/deps/import maps backup + tested restore absent|
 |CXS1|DONE #258/5e35c7a A97/B97; current main core/assets/health/phased smoke PASS|
 |CXS2|DONE #260/1a1b499; exact a571066 A96/B96; main/live acceptance PASS; DRAFT only|
-|CXQ1|Earned guest preparation running14008; timed9stage and funded-wallet proof pending|
+|CXQ1|PARTIAL: SYS-UI-007 blank returning-guest route;prep14008 active;timed/wallet pending|
 |CXN4/CXN5|Conditional P2 default-OFF/versioned; not started; A–F not all green|
 |regression|Current main smoke green; final integrated regression after UI/CXQ1 pending|
 
@@ -48,7 +48,10 @@ Read UI ledger REQUESTS-FOR-SYSTEM.md: Rune fields deferred under P2 gate; UI ac
 New branches ai/codex-sys-*; own ports5173–5299; UI5300–5399; no manifests+UI files in one PR.
 Before ANY main merge mkdir ~/.taskbar-hero-locks/merge.lock; wait2–3min up to60min if held.
 Stale foreign lock only owner older90min AND PID dead; inside lock fetch/integrate/changed checks/type/lint/grades.
-Append atomic board milestone line; release only own lock. No merge planned until CXQ1 path result.
+Append atomic board milestone line; release only own lock. Unrelated main merges HELD for SYS-UI-007.
+UI corrective release needs reproducer/full gates, then live confirmation; no SYSTEM UI edit.
+Receipt-only helper wallet-receipts.mjs:37local controls PASS; no actual wallet receipt supplied.
+Old timed harness incorrectly expects onboarding from classed save; correct with explicit two-segment disclosure.
 
 Safety: ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 Preserve STOP;no subagents/helpers/new chats/schedulers except existing15min heartbeat;no orchestrator.py.
@@ -56,4 +59,4 @@ No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME
 public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
 Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
-Next3: finish natural timed demo; report/fix only SYSTEM harness issues or send UI defect; close regression/wallet prerequisites.
+Next3: preserve natural earned progress; correct timed harness/await UI007 repair; finish receipt/regression evidence.

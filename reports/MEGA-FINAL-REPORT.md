@@ -12,7 +12,7 @@ Living report, not a completion claim. Current main is1a1b499, CXS2 DRAFT delive
 |ORIG2+ART/T013 (art now UI owned)|256|96/96|2bc98cd|local opt-in/reset smoke PASS|
 |CXR1 (UI owned)|245|94/94|6144d42|historically accepted|
 |CXR2 (UI owned)|257 historical draft;UI successor active|pending|unmerged|UI builder in progress|
-|CXQ1|pending|pending|earned guest preparation14008 active|timed9stage/funded-wallet proof incomplete|
+|CXQ1|pending|pending|SYS-UI-007 confirmed;prep14008 active|returning guest blank route;timed/funded proof incomplete|
 |CXS1|258|97/97|5e35c7a|current main core/assets/health/phased smoke PASS|
 |CXS2|260|96/96 on a571066|1a1b499|post-main/live acceptance PASS;DRAFT only|
 |CXN3|244 draft|not passed|db0f9d6 BLOCKED|no backend deploy|
@@ -27,6 +27,8 @@ CXQ1 runs only after UI board readiness08:30:50UTC for CXU3/CXC2. Real guest pla
 PR244 remains blocked by missing complete deployed function source,dependencies/import maps and tested restore; UnsafeFunctionDownloadPathError is not bypassed. Official free Fuji faucet currently needs a connected wallet and Builder Hub login. [Owner steps](OPTIONAL-USER-STEPS.md). These block neither independent documentation nor guest QA; funded mint/list/buy remains NOT VERIFIED.
 
 Ownership addendum remains in force: SYSTEM does nonvisual data/security/evidence; UI session owns layout/screens/art. Rune fields are deferred under P2 gate; UI accepted labelled unavailable/sample state. UI defects are reported in the SYSTEM request mirror, not fixed in UI files. No new feature proposed.
+
+CXQ1 finding2026-11-03T09:39:26Z: live returning guest Play as guest leads to a blank class screen on1a1b499. Screenshot/receipt confirm it; zero writes. SYS-UI-007 is handed to UI via the request mirror and board; unrelated merges are held. The old timed script also incorrectly requests first-time onboarding from an already-classed save; SYSTEM will correct its own harness and disclose any prepared-progress transition. Read-only receipt helper passes37 local controls but no funded run is verified.
 
 P0/P1 are not fully complete. P2 remains gated; final regression follows UI/CXQ1 integration. Preserved old temporary registrations/untracked historical files; only committed evidence was recovered after temp-worktree loss. [Handoff](MEGA-CURRENT-HANDOFF.md).
 
