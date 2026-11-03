@@ -1,0 +1,80 @@
+{
+  "head": "911dec148a80617449ab78bc247ca89fa1bfb43a",
+  "pass": "cxr2-a",
+  "pid": 34675,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T09:56:13.679705+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T09:56:23.423707+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T09:56:31.112334+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T09:56:31.224190+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-a/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T09:57:05.753459+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/cxr2-a/web-units.log"
+    }
+  ]
+}

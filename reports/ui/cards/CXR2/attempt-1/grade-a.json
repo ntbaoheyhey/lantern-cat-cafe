@@ -1,0 +1,11 @@
+{
+  "label": "self-graded (fresh pass)",
+  "head": "911dec148a80617449ab78bc247ca89fa1bfb43a",
+  "status": "FAIL",
+  "score": null,
+  "autoFails": [
+    "One decorative-slot audit still expected200 free slots despite7 equipped items; actual193 matches the authoritative owned-capacity guard."
+  ],
+  "result": "1447 other web tests passed; full browser matrix not reached.",
+  "repair": "Expect193 using the unchanged200 capacity and explicitly assert7 equipped. All aria-hidden/non-tabstop checks remain unchanged."
+}
