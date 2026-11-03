@@ -1,0 +1,92 @@
+{
+  "head": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+  "pass": "cxu3-main",
+  "pid": 96542,
+  "cwd": "/private/tmp/taskbar-hero-ui-main-cxu3",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T06:13:57.450821+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-main/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T06:14:06.974602+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-main/lint.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T06:14:15.502109+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-main/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/u1-tokens.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T06:14:25.324260+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-main/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/u1-tokens.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T06:14:51.150266+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-main/changed-1600x900.log"
+    }
+  ]
+}
