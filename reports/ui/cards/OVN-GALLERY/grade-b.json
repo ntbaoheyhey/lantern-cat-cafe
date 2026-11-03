@@ -1,0 +1,38 @@
+{
+  "card": "OVN-GALLERY",
+  "grader": "B",
+  "label": "self-graded (fresh pass)",
+  "head": "e161f0686efb7e81b14a7761568bcfab8bc5096b",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T20:22:28.465663+00:00",
+  "tests": {
+    "productGateCommands": 14,
+    "artifactGateCommands": 4,
+    "changedRepeatEach": 3,
+    "standalonePerSize": 12,
+    "standaloneRepeatEach": 3,
+    "captureHashes": 624,
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "axeScans": 28,
+    "confirmedViolations": 0,
+    "fullBrowser": "Not repeated for documentation-only refresh. Runtime, app tests, tools and dependency trees equal accepted FIRSTPLAY7d0d08e and GALLERYf2a0588, with saved388full cases per size."
+  },
+  "review": {
+    "testsFirst": true,
+    "diff": "Reviewed all ten changed files and generated content. Static gallery entrypoint, status and judge walkthrough match the current live340f88b and quota hold. Reproduction leaves a clean tracked tree. All821 cumulative paths belong to UI,1141original image blobs unchanged, provenance append-only.",
+    "visual": "Native1280x720 and1600x900 gallery images reviewed. Readable table and status, clear local candidate labelling, no clipped text, console errors, unnamed controls or horizontal overflow.",
+    "criticalDefects": [],
+    "limitations": [
+      "Hosted release remains parked under the deployment quota. Captures retain their named candidate heads and do not establish live acceptance.",
+      "Existing axe incompletes remain in raw output. No confirmed violations and no rules excluded."
+    ]
+  },
+  "gateReceipt": "../../logs/ovn-gallery-b/receipt.json",
+  "artifactReceipt": "../../logs/ovn-gallery-b/gallery-receipt.json",
+  "scopeReceipt": "scope-b.json",
+  "release": "PARKED under deployment-capacity hold. Stacked on draft266.",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/267"
+}
