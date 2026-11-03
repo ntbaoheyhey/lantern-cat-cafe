@@ -99,7 +99,7 @@ for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900
       const equipBox = await detail.getByRole('button', { name: 'Equip', exact: true }).boundingBox();
       const compareBox = await detail.locator('.compare').boundingBox();
       expect(equipBox!.y + equipBox!.height).toBeLessThan(compareBox!.y);
-      expect(await bag.getByRole('button', { name: 'Equip best', exact: true }).evaluate(el => el.classList.contains('pixel-btn'))).toBe(false);
+      expect(await bag.getByRole('button', { name: 'Equip best', exact: true }).evaluate(el => el.classList.contains('pixel-btn--secondary'))).toBe(true);
       await capture(page, 'bag', viewport.width, viewport.height);
       await expect(bag.getByRole('button', { name: 'Equip best', exact: true })).toBeEnabled();
       await bag.getByRole('button', { name: 'Equip best', exact: true }).click();

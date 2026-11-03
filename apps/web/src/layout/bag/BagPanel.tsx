@@ -197,7 +197,7 @@ export function BagPanel({
 
               <button
                 type="button"
-                className="bag-btn-secondary bag-equip-best"
+                className="pixel-btn pixel-btn--secondary bag-equip-best"
                 disabled={upgrades.length === 0 || isLoopBusy}
                 aria-busy={isBusyEquip ? 'true' : 'false'}
                 title={upgrades.length === 0 ? 'Nothing in the bag is better than what you wear' : undefined}
