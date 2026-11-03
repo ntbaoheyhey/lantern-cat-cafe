@@ -1,0 +1,141 @@
+{
+  "status": "MERGED_VERIFICATION_PENDING",
+  "pr": 260,
+  "reviewedHead": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+  "pid": 20934,
+  "commands": [
+    {
+      "name": "fetch",
+      "argv": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:02.421819+00:00",
+      "endedAt": "2026-11-03T09:11:03.636414+00:00"
+    },
+    {
+      "name": "integrate-main",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=ntbaoheyhey",
+        "-c",
+        "user.email=108352255+ntbaoheyhey@users.noreply.github.com",
+        "merge",
+        "--no-stat",
+        "origin/main",
+        "-m",
+        "Integrate current main into SYSTEM documentation [skip ci]"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:03.643923+00:00",
+      "endedAt": "2026-11-03T09:11:03.654390+00:00"
+    },
+    {
+      "name": "pack",
+      "argv": [
+        "python3",
+        "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/check-pack.py",
+        "/Users/bao/taskbar-hero-system-cxs2"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:03.661355+00:00",
+      "endedAt": "2026-11-03T09:11:03.852745+00:00"
+    },
+    {
+      "name": "links",
+      "argv": [
+        "node",
+        "scripts/check-links.mjs"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:03.852970+00:00",
+      "endedAt": "2026-11-03T09:11:03.922382+00:00"
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:03.922597+00:00",
+      "endedAt": "2026-11-03T09:11:15.277509+00:00"
+    },
+    {
+      "name": "lint",
+      "argv": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:15.277753+00:00",
+      "endedAt": "2026-11-03T09:11:23.279099+00:00"
+    },
+    {
+      "name": "pr-state",
+      "argv": [
+        "gh",
+        "pr",
+        "view",
+        "260",
+        "--repo",
+        "ntbaoheyhey/taskbar-hero",
+        "--json",
+        "headRefOid,baseRefOid,isDraft,state"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:23.308453+00:00",
+      "endedAt": "2026-11-03T09:11:23.856170+00:00"
+    },
+    {
+      "name": "actions-state",
+      "argv": [
+        "gh",
+        "api",
+        "repos/ntbaoheyhey/taskbar-hero/actions/runs?head_sha=a571066e7ef29bfc920d13509ac54fd8a9438459&per_page=1"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:23.856522+00:00",
+      "endedAt": "2026-11-03T09:11:24.378317+00:00"
+    },
+    {
+      "name": "merge",
+      "argv": [
+        "gh",
+        "api",
+        "--method",
+        "PUT",
+        "repos/ntbaoheyhey/taskbar-hero/pulls/260/merge",
+        "--input",
+        "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-locked-merge/merge-request.json"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:24.378851+00:00",
+      "endedAt": "2026-11-03T09:11:27.205959+00:00"
+    },
+    {
+      "name": "fetch-merged",
+      "argv": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "exit": 0,
+      "startedAt": "2026-11-03T09:11:27.207056+00:00",
+      "endedAt": "2026-11-03T09:11:28.765859+00:00"
+    }
+  ],
+  "acquiredAt": "2026-11-03T09:11:02.421601+00:00",
+  "baseBefore": "8daa8e16fa916a3fc4d3c556ebba20bf6be124d7",
+  "integratedHead": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+  "mergeHead": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "releasedAt": "2026-11-03T09:11:28.790008+00:00",
+  "endedAt": "2026-11-03T09:11:28.790058+00:00"
+}

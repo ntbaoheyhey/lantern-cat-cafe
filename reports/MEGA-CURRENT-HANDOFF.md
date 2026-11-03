@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T15:57:23.778646+07:00. ACTIVE SYSTEM; CXS2 B + CXQ1 preparation.
+Updated: 2026-11-03T16:17:19.208119+07:00. ACTIVE; CXS2 merged, CXQ1 preparation.
 Read FIRST after compaction; reconcile Git/board/PIDs before actions; no duplicate tests or AI workers.
 Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to this durable worktree.
 
@@ -8,12 +8,12 @@ Hourly taskbar-hero-hourly-handoff ACTIVE in same chat; handoff path updated to 
 |T011/T012|DONE #255/a903fb6 A96/B96; original economy default OFF|
 |244 CXN3|db0f9d6 draft BLOCKED: full deployed-source/deps/import maps and tested restore absent|
 |CXS1|#258/5e35c7a A97/B97; docs/core/assets/health PASS; final integration regression pending|
-|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; fresh A96/B96 PASS; locked publication next; old69a83d2 grades historical|
+|CXS2|#260 OPEN; source nowa571066 after merging8daa8e1; MERGED 1a1b499 A96/B96; post-main active; old69a83d2 grades historical|
 |CXQ1|UI board now READY for SYSTEM after CXU3 live acceptance and CXC2 adoption; restart on verified current head|
 |CXN4/CXN5|Conditional P2, default-OFF/versioned; not started|
 |regression|After current UI/system integration; no complete timed/funded proof yet|
 
-origin/main8daa8e16fa916a3fc4d3c556ebba20bf6be124d7; last SYSTEM merge5e35c7a (#258).
+origin/main 1a1b4995a2758c98665e5fe84d4f95239cd292b2; SYSTEM #260 DRAFT docs merge under shared lock.
 UI board2026-11-03T08:30:50Z: CXU3 #259 LIVE ACCEPTED35assets/main checks/Actions0; CXC2 adopted666088c.
 UI has resumed independently and owns CXR2 onward. Do not resume, kill or edit its work.
 
@@ -62,4 +62,5 @@ No secrets,destructive liveDB writes,migrations/edge deploys,Vercel/VITE_GAME_V2
 public repo/contest submission,.github changes,Actions or direct-main pushes. Kill only owned PIDs after cwd check.
 Gates A/B>=92,C1>=23,C2=20,C6=5,C7>=8,each>=60%,zero auto-fails; no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov; stop28Nov with regression/final report. Keep handoff<=80lines.
-Next3: finish CXS2 B and locked merge; complete timed live demo from earned profile; resolve/report funded-wallet prerequisite.
+Post-main PID23398 /Users/bao/taskbar-hero-system-main-cxs2,5240–5243; resume-post-main/run.json.
+Next3: finish main/live docs acceptance; complete earned timed demo; funded-wallet prerequisite/guarded run.

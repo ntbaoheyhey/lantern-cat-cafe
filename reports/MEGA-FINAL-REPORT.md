@@ -8,7 +8,7 @@ SYSTEM scope addendum adopted 2026-11-03T11:49:00.097315+07:00. UI/layout/art ow
 
 CXQ1 real-play preparation was interrupted before the timed demo because the required UI CXU3/CXC2 board readiness entries do not yet exist. Owned process lineage/cwd were checked; all exited. No wallet, secrets, funding or transactions were created. CXS1/CXS2 continue independently. [UI handoff](ui/REQUESTS-FROM-SYSTEM-QA.md).
 
-Living report, not a completion claim. Latest main is5e35c7a (CXS1 docs). Last complete UI acceptance is6144d42; its exact reviewed tree, private repository, author and skip-ci subject are verified. Latest main/live acceptance:2490 core cases,323 browser cases at each desktop size,40 art checks,35 matching live assets before/after,22 health checks and16 live stages per size. No unexpected errors, transactions or Actions runs. Inherited2 expected failures/11 skips remain disclosed.
+Living report, not a completion claim. Latest main is1a1b499 (CXS2 DRAFT docs). Last complete UI acceptance is6144d42; its exact reviewed tree, private repository, author and skip-ci subject are verified. Latest main/live acceptance:2490 core cases,323 browser cases at each desktop size,40 art checks,35 matching live assets before/after,22 health checks and16 live stages per size. No unexpected errors, transactions or Actions runs. Inherited2 expected failures/11 skips remain disclosed.
 
 | Item | PR | Fresh self-grades | Merge/status | Live |
 |---|---|---|---|---|
@@ -22,7 +22,7 @@ Living report, not a completion claim. Latest main is5e35c7a (CXS1 docs). Last c
 | CXR2 |257 draft|not passed|c49421f PARTIAL after3 corrections|unreleased|
 | CXQ1 |pending|pending|timed earned-progress demo/wallet proof next|not complete|
 | CXS1 |258|97/97|5e35c7a merged under shared lock|post-main2495 unit/script+38classic+35assets/22health PASS; live UI phase deferred|
-| CXS2 |260 OPEN|96/96|69a83d2 reviewed DRAFT; merge stopped by user pause|unreleased; no submission|
+| CXS2 |260|96/96 refreshed|1a1b499 merged under shared lock|post-main/live running; no submission|
 | CXN3 |244 draft|not passed|db0f9d6 owner backup/restore BLOCKED|no deploy|
 | P2/P3 |conditional|—|A–F not all green/merged|not started|
 

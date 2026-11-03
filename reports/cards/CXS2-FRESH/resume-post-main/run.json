@@ -1,0 +1,71 @@
+{
+  "root": "/Users/bao/taskbar-hero-system-main-cxs2",
+  "out": "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-post-main",
+  "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "commands": [
+    [
+      "install",
+      "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline"
+    ],
+    [
+      "docs",
+      "python3 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/check-pack.py /Users/bao/taskbar-hero-system-main-cxs2"
+    ],
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "lint",
+      "npx -y pnpm@10.28.0 lint"
+    ],
+    [
+      "unit",
+      "npx -y pnpm@10.28.0 test"
+    ],
+    [
+      "deno-drift",
+      "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions"
+    ],
+    [
+      "deno-imports",
+      "node scripts/check-deno-imports.mjs"
+    ],
+    [
+      "build",
+      "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build"
+    ],
+    [
+      "bundle",
+      "node scripts/check-bundle.mjs"
+    ],
+    [
+      "classic-build",
+      "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build"
+    ],
+    [
+      "links",
+      "node scripts/check-links.mjs"
+    ],
+    [
+      "classic-project",
+      "E2E_PORT_CLASSIC=5240 E2E_PORT_V2=5241 E2E_PORT_SERVER=5242 E2E_PORT_API=5243 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --project=classic --workers=2 --retries=0 --reporter=line"
+    ],
+    [
+      "asset-before",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-before.json"
+    ],
+    [
+      "health",
+      "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs"
+    ],
+    [
+      "phased",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/cards/CXR1-FRESH/live-phased-redesign.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-before.json /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/phased"
+    ],
+    [
+      "asset-after",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-live/artifact-after.json"
+    ]
+  ]
+}

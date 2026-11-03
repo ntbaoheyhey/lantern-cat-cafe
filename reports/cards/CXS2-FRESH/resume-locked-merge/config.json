@@ -1,0 +1,28 @@
+{
+  "root": "/Users/bao/taskbar-hero-system-cxs2",
+  "out": "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-locked-merge",
+  "pr": 260,
+  "head": "a571066e7ef29bfc920d13509ac54fd8a9438459",
+  "grades": [
+    "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-grade-a.json",
+    "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/resume-grade-b.json"
+  ],
+  "changedChecks": [
+    [
+      "pack",
+      [
+        "python3",
+        "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXS2-FRESH/check-pack.py",
+        "/Users/bao/taskbar-hero-system-cxs2"
+      ]
+    ],
+    [
+      "links",
+      [
+        "node",
+        "scripts/check-links.mjs"
+      ]
+    ]
+  ],
+  "title": "CXS2: publish the private submission pack draft [skip ci]"
+}
