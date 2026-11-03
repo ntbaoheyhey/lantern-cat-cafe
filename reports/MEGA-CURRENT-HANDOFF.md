@@ -68,4 +68,6 @@ CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 in
 Builder-final40798 PASS44units/11browser; added missing new v2 unit +rail polish/keyboard loot-region.
 CXR2 builder44763 FINISHED FAIL:13web failures/1402PASS (1boss-timeout,3portal queries,9undismissed Help).
 No final-head browser/fullgrade/live. No fourth repair; preserve c49421f and partial.json;5110–5113 free.
+CXS1 draft /private/tmp/tbh-cxs1-active codex/cxs1-security-overview atmain2bc98cd;7docs dirty; no tests.
+Overview691words, linked sources/quoted cases checked; includes244 backup gap and supersedes old Deno/budget claims.
 Next3: finish CXR1 clean B and grade; if qualified merge245/main+live; publish CXR2PARTIAL then CXQ1/CXS docs.
