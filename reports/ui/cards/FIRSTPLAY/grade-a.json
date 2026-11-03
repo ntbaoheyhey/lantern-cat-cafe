@@ -1,0 +1,40 @@
+{
+  "card": "FIRSTPLAY",
+  "grader": "A",
+  "label": "self-graded (fresh pass)",
+  "head": "7d0d08e48e87c7f758cd8b2a959fb5153c3c9470",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T18:44:28.250461+00:00",
+  "tests": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "unitContrast": "PASS unchanged threshold",
+    "changedBrowserPerSize": 162,
+    "changedRepeatEach": 3,
+    "fullBrowserPerSize": 388,
+    "fullMatrix": "A exact-head full matrix once, shared by clean B",
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "axeScans": 28,
+    "confirmedViolations": 0,
+    "flagOff": "Four unchanged baseline PNGs byte-identical; versioned font bytes SHA256 verified"
+  },
+  "review": {
+    "testsFirst": false,
+    "diff": "Reviewed route layout effect, Landing semantics, RAF visible-root monitor, save-fault fixture, natural-reward/contrast assertions and font-only visual fixture. No API, wallet, balance, dependency or production flag changes.",
+    "visual": "Both-size native natural-reward, returning/offline/wallet-disconnected and class-save error/saving captures reviewed. Reward text is readable; labelled recovery states remain visible.",
+    "criticalDefects": [],
+    "limitations": [
+      "First natural reward follows the unchanged 30-second scheduler; local demo measurements are not live backend performance.",
+      "Axe incomplete contrast entries and inherited SYSTEM wallet wrapper advisory remain disclosed; zero confirmed violations.",
+      "Release remains held by SYSTEM auth-nonce502."
+    ]
+  },
+  "gateReceipt": "../../logs/firstplay-a-pinned/receipt.json",
+  "scopeReceipt": "scope-a.json",
+  "release": "PARKED: draft PR265; SYSTEM auth-nonce502 hold; not merged or live",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/265"
+}
