@@ -1,0 +1,47 @@
+{
+  "card": "GALLERY",
+  "grader": "A",
+  "label": "self-graded (fresh pass)",
+  "head": "f2a05881fe0d6235d1eeaa57c7d9a155f2445280",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T18:53:03.305801+00:00",
+  "tests": {
+    "productGateCommands": 14,
+    "artifactGateCommands": 5,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "unitContrast": "PASS; unchanged threshold",
+    "changedBrowserPerSize": 12,
+    "changedRepeatEach": 3,
+    "standaloneBrowserPerSize": 9,
+    "standaloneRepeatEach": 3,
+    "fullBrowser": "Not repeated for documentation-only gallery. Runtime, app tests, tools and dependency trees are identical to FIRSTPLAY7d0d08e, whose once-per-head full matrix passed388 cases per size.",
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "axeScans": 28,
+    "confirmedViolations": 0,
+    "captureHashes": 624,
+    "pairedStates": 312,
+    "standalone": "Both file:// entry points and index; hashes, links, all filters, native image decoding, playable local recordings, names, no horizontal overflow, no console errors or network requests; pinned WCAG2/2.1AA rules without exclusions.",
+    "generatedOutputs": "Rebuilt deterministically; tracked tree remains clean."
+  },
+  "review": {
+    "testsFirst": false,
+    "diff": "Reviewed the complete gallery delta: generator, escaped HTML, static CSS/filter script, viewport configuration, browser contract, six-card metadata/reports and unchanged imported grades. Generated pages, manifest and all new capture blobs validated through deterministic generation and exact hashes.819 cumulative paths are owned;1141 original image blobs unchanged; provenance append-only.",
+    "visual": "Reviewed native gallery/demo top at1280x720 and1600x900 from each fresh pass. No clipped text, unnamed control or horizontal overflow. Corrected first-play and motion evidence and clearly labelled before-repair states remain indexed.",
+    "criticalDefects": [],
+    "limitations": [
+      "Local review evidence does not establish hosted-preview or production acceptance.",
+      "SYSTEM auth-nonce502 release hold remains active; Vercel bot also reports daily deployment quota exhaustion on the existing draft stack.",
+      "Inherited SYSTEM wallet wrapper and some rendered-contrast axe incompletes remain disclosed; zero confirmed violations."
+    ]
+  },
+  "gateReceipt": "../../logs/gallery-a-final/gallery-receipt.json",
+  "productReceipt": "../../logs/gallery-a-final/receipt.json",
+  "scopeReceipt": "scope-a.json",
+  "release": "PARKED: draft PR266; SYSTEM auth-nonce502 health hold; not merged or live",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/266"
+}

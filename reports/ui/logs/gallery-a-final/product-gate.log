@@ -1,0 +1,31 @@
+START typecheck
+END typecheck exit=0
+START lint
+END lint exit=0
+START scripts
+END scripts exit=0
+START packages
+END packages exit=0
+START web-units
+END web-units exit=0
+START art-delivery
+END art-delivery exit=0
+START art-catalog
+END art-catalog exit=0
+START build
+END build exit=0
+START changed-1280x720
+END changed-1280x720 exit=0
+START changed-1600x900
+END changed-1600x900 exit=0
+START resize-five-1280x720
+END resize-five-1280x720 exit=0
+START resize-five-1600x900
+END resize-five-1600x900 exit=0
+GATE COMMANDS PASS; human diff/visual review and scope checks still required.
+START strict-ui-audit
+END strict-ui-audit exit=0
+START axe-wcag-aa
+END axe-wcag-aa exit=0
+
+exit=0

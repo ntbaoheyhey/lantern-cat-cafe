@@ -1,0 +1,11 @@
+START product-gate
+END product-gate exit=0
+START generate
+END generate exit=0
+START generated-clean
+END generated-clean exit=0
+START standalone-1280x720
+END standalone-1280x720 exit=0
+START standalone-1600x900
+END standalone-1600x900 exit=0
+Gallery commands PASS; exact-head scope, diff and native visual review remain required.
