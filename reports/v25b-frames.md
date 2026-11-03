@@ -17,8 +17,8 @@ All frames are strictly 16 × 16 pixel squares. Rarity border frames feature a f
 | **Rarity Border** | `frameRare` | 16 × 16 px | Luminous azure blue border (`#4aa8ff`) with cyan magic shard shine and deep navy shadow | `k`, `r`, `s`, `b` |
 | **Rarity Border** | `frameEpic` | 16 × 16 px | Violet purple border (`#bb74ff`) with a 1-pixel specular white corner glint at top-left and deep violet shadow | `k`, `p`, `j`, `i`, `w` |
 | **Rarity Border** | `frameLegendary` | 16 × 16 px | Radiant gold border (`#ff9a3c`) adorned with glowing diamond corner star sparkles (`#ffffff` & `#ffd75e`) | `k`, `o`, `g`, `y`, `d`, `w` |
-| **Empty Slot** | `emptyWeapon` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of an upright knight sword | `k`, `f` |
-| **Empty Slot** | `emptyHelmet` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of a cat-eared knight helmet with visor slit | `k`, `f` |
+| **Empty Slot** | `emptyWeapon` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of an upright straight blade | `k`, `f` |
+| **Empty Slot** | `emptyHelmet` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of a cat-eared armored headpiece with visor slit | `k`, `f` |
 | **Empty Slot** | `emptyArmor` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of a chestplate with pauldrons and split skirt | `k`, `f` |
 | **Empty Slot** | `emptyGloves` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of a cat paw mitten gauntlet with toe lobes and thumb | `k`, `f` |
 | **Empty Slot** | `emptyBoots` | 16 × 16 px | Dashed 1px dark perimeter framing a faint watermark silhouette of a pair of adventurer boots with soles and heels | `k`, `f` |
