@@ -1,24 +1,14 @@
 # Overnight SYS handoff
-- Updated 2026-11-03T19:24:43.916344+00:00; lane ALL, SYS first then UI. No subagents, schedulers or old orchestrator.
-- Authorized source: attachment dbc68717; 8-hour maximum from about 2026-11-03T19:17Z.
-- Main remains 340f88b; main checkout untouched. Own worktree /Users/bao/taskbar-hero-ovn-sys, branch ai/codex-ovn-sys-auth.
-- Private repo verified; #244 untouched; superseded #252/#257 remain open. UI drafts #262–#266 exact accepted heads unchanged.
-- S1 HEALTH HOLD CLEARED: public nonce POST200 at19:20:48.838570Z and19:31:17.468499Z (628.63s apart), expected CORS; exactly2probes, nonces redacted. Historicalcause unproven; no live changes. reports/sys/auth-nonce-502.md + auth-evidence/.
-- Source download stopped at CLI UnsafeFunctionDownloadPathError; guard respected, partial auth-nonce/index.ts and _shared/auth.ts are byte-identical to origin/main. No package source identity asserted.
-- Installed Supabase CLI logged in; auth-nonce/auth-verify ACTIVE v46. CLI has no logs command; Vercel CLI absent; Docker daemon unavailable. No live deploy/migration/write.
-- Local PGlite before migrations 20261103/04/06 issues nonce successfully: budget-table explanation disproved for downloaded wiring. Historical 502 cause not established; do not claim fixed by code or migrations.
-- Builder tests: 31 edge, 21 wallet/client, 6 health-script PASS. Working changes add lazy nonce store init/503 Retry-After, bounded nonce-only retries/plain English errors and named wallet group.
-- S2 DONE: reports/sys/deploy-capacity.md; 23 main commits / 7 merged PRs, actual deployment count unavailable. Same-UTC-day >100 cap error recorded on #262 at13:23:17Z. Stop merges for the day.
-- UTC reset recheck 2026-11-04T00:00Z (07:00 Vietnam); provider says24h so not guaranteed until quota verified. At most1 merge/20min after clearance, stop at80/errors.
-- Baseline missing-configuration repro RED on unmodified origin/main; retained logs. New head ca26498 frozen; clean B exact ca26498. A/B/main core unit/typecheck/lint/build PASS; browser gates running detached at5173–5177/5190–5194/5210–5214.
-- S3 request dispositions in reports/sys/requests-response.md; wrapper named-group repair drafted; ownership fields declined with reason. CXS1/CXS2 already merged; no redo/submission.
-- Live audit first1280 first naturalreward28.50s; audit-tool inline axe blocked by CSP (tool failure retained), corrected CDP evaluation changes no production policy; full audit in progress.
-- Next: finish formal A/B (clean B tests-first then diff), main regression once, live UX and parked-release receipts. Keep failures; no weakened thresholds.
-- Existing CXS1 security overview and CXS2 draft pack already in main; verify identity, do not redo or submit. originalEconomy remains default OFF.
-- All reports/receipts on ai/codex-ui-ledger; no merge lock acquired.
-
-- Continuation milestone: notification overlap repaired at bd5b0c2; 22 targeted wallet/client tests PASS. Fresh A2/B2 running in SYS-owned worktrees (launches-auth2.json); ca26498 not accepted. Live/main stage-role and reward contrast defects already repaired in held #263, so standalone auth accessibility remains a known gate dependency. Main regression complete, both sizes PASS.
-
-- 19:59Z verification: auth-a2/auth-b2 commands exited0, but A source changed after its build (uncommitted wrong-network/notification CSS edits at19:51Z). Do NOT accept A2 as exact-head evidence. Builder wallet axe also records inherited stage-role failure fixed by held UI263. Finish pending wallet changes, freeze new head, fresh A/B; keep grades0 until all gate criteria pass.
-- 19:59Z milestone: finalized network guidance/toast offset and23targetedtestsPASS; new95d9c32 frozen, cleanA3/B3 launched41280/41287. Do not mutate sources during gate. New worktree /Users/bao/taskbar-hero-ovn-sys-b3; logs/launches-auth3.json onledger.
-- 2026-11-03T20:04:32.308098+00:00 wallet-a3/b3 supplemental reviews complete: bothstates/bothsizes,no overflow/clipping/errors/signature/session; LandingaxePASS,HomeaxeFAIL stagearia alreadyfixedinheld263. SYS must remain self-graded0/0,not release-ready. A3unitStageLayout timeout preserved; B3core+browserPASS. Do not weaken/ignoreaxe.
+- Authorized ALL-lane session dbc68717 began2026-11-03T19:17Z, deadline2026-11-04T03:17Z. No agents/schedulers/orchestrator. Main checkout untouched.
+- Main340f88b remains live and private. #244 untouched. #252/#257 remain superseded/open. No live migration, function/contract deployment, settings/env change, real wallet/funds or submission.
+- S1 health HOLD CLEARED by two POST200 probes19:20:48Z/19:31:17Z,628.63s apart. Exactly2probes. Historical502cause unproven. reports/sys/auth-nonce-502.md preserves evidence.
+- Supported Supabase function download fails UnsafeFunctionDownloadPathError. Partial source is not a usable rollback backup. Owner must obtain supported full export and rehearse restore before deploying. No guard bypass.
+- Local PGlite pre-Nov3/4/6 migrations issues nonce, disproving missing-budget-table explanation for downloaded wiring. Docker unavailable. CLI has no function logs, Vercel CLI absent.
+- S2 deployment quota HOLD remains. Actual provider count unavailable.23maincommits/7mergedPR proxy recorded. Cap error >100 onNov3. Recheck00:00ZNov4, provider24h through13:23:17Z. No merge/deploy quota probes. Max1merge/20min, stop80/cap error after clearance.
+- SYS original candidate95d9c32 frozen in /Users/bao/taskbar-hero-ovn-sys, ai/codex-ovn-sys-auth. Only10owned paths. Lazy nonce dependencies yield CORS503/Retry-After, fail closed, nonce-only bounded backoff, plain-language persistent notifications, wrong-network guidance, read-only health script and tests.
+- A3/B3 completed. A3has1unit timeout in inherited StageLayout test among1460, B3allcommandchecksPASS. Both have supplemental HomeaxeFAIL stagearia from main, fixed in heldUI263. Overall self-graded0/0 until repaired dependency is included and gated. Failed receipts retained.
+- Main regression completed once on340f88b, both sizes PASS. Resize rate and inherited defects must be included in final report. Do not repeat full main suite.
+- All SYSTEM requests answered in reports/sys/requests-response.md. Authoritative ownership fields declined with reasons. CXS1/CXS2 already main, no duplicate work or submission. originalEconomy staysOFF, config numbers unchanged.
+- Next create a separate own SYS stacked branch from accepted UI parent, cherry-pick only the three SYS commits, fresh A/B plus wallet supplemental reviews. This tests inherited accessibility dependency without editing UI paths. No passing standalone95d9c32grade claimed.
+- Existing wrong-network/nonce502 browser reviews at reports/sys/wallet-a3 and wallet-b3. They prove no signature, transaction/session, errors or overflow, but retain inheritedaxe failure.
+- Reports and receipts use ai/codex-ui-ledger. Update handoff per milestone. Draft PRs only while quota holds. No merge lock held.
