@@ -22,4 +22,4 @@ Outstanding: complete CXR2 formal A/B verification and release, additive UI slot
 
 Resume from [UI-HANDOFF.md](UI-HANDOFF.md). [Draft gallery](gallery.html). [Requests for SYSTEM](REQUESTS-FOR-SYSTEM.md).
 
-Pause update: CXR2 A2 core/1448 web units/build and438 repeated changed browser executions passed. Full1280 run was interrupted by the user; no passing CXR2 grade is claimed. The15-minute continuation heartbeat is paused.
+Pause update: CXR2 A2 core/1448 web units/build and438 repeated changed browser executions passed. Full1280 passed368/368; full1600 was interrupted by the user; no passing CXR2 grade is claimed. The15-minute continuation heartbeat is paused.
