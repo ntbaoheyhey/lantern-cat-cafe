@@ -1,6 +1,6 @@
 # Wallet sign-in (B2)
 
-Current source review (3 November 2026): the flow below describes checked-in code. Nonces are single-use with a ten minute window; sessions pin HS256/audience/role and are capped at24 hours. A valid signature precedes nonce consumption. Tests are linked from the [security overview](security-overview.md). No fresh live sign-in/security audit or deployed-source identity is claimed. PR #244 still lacks a complete function backup and tested restore path; do not bypass the export guard or change production settings.
+Current source review (3 November 2026): the flow below describes checked-in code. Nonces are single-use with a ten minute window; sessions pin HS256/audience/role and are capped at 24 hours. A valid signature precedes nonce consumption. Tests are linked from the [security overview](security-overview.md). No fresh live sign-in/security audit or deployed-source identity is claimed. PR #244 still lacks a complete function backup and tested restore path; do not bypass the export guard or change production settings.
 
 Players sign in by signing a Sign-In with Ethereum (EIP-4361) message with their wallet. There is no email or password. The server returns an application JWT whose `sub` is `players.id`; Edge handlers and RPCs bind requests to that identity. RLS separately restricts client access (see [database.md](database.md)). Acceptance of this application token by PostgREST depends on deployed signing configuration and is not verified here.
 
