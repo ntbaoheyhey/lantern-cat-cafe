@@ -250,7 +250,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     if (!fromArrowNav) {
       requestAnimationFrame(() => {
         const panel = document.getElementById(`panel-${newScreen}`);
-        if (panel) {
+        if (panel && !panel.contains(document.activeElement)) {
           const focusable = panel.querySelector<HTMLElement>(
             'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
           );
