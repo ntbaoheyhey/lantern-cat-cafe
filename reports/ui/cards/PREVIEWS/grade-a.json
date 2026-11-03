@@ -1,0 +1,42 @@
+{
+  "card": "PREVIEWS",
+  "grader": "A",
+  "label": "self-graded (fresh pass)",
+  "head": "949cc444472c87c731c22b737748f56b6419ba5e",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T18:14:34.784532+00:00",
+  "tests": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "webUnits": 1455,
+    "contrast": "PASS unchanged theme test",
+    "changedBrowserPerSize": 126,
+    "changedRepeatEach": 3,
+    "fullBrowserPerSize": 384,
+    "fullMatrix": "A exact-head matrix once; shared by B",
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "auditFindings": 0,
+    "axeScans": 28,
+    "confirmedViolations": 0,
+    "flagOff": "All four original PNGs byte-identical; test and images unchanged"
+  },
+  "review": {
+    "testsFirst": false,
+    "fullDiff": "Read application, fixtures, sample labels/definitions, isolated build helper and browser assertions. No ownership/store/API/wallet hooks; companion snapshot contains id/name/flavour only; original isolation guard unchanged.",
+    "visual": "Both-size rune, companion and skill samples inspected at native resolution; selected last entries, Sample and Unavailable, sample rank, bounded list/detail scrollers. Separate skill captures retained to avoid inherited catalog filename collisions.",
+    "criticalDefects": [],
+    "limitations": [
+      "Authoritative ownership selector is absent; all content remains sample-only behind existing default-OFF flag.",
+      "Companion art is a labelled symbolic portrait placeholder.",
+      "Axe incomplete contrast entries and inherited unowned wallet advisory remain disclosed."
+    ]
+  },
+  "gateReceipt": "../../logs/previews-a-accessible/receipt.json",
+  "scopeReceipt": "scope-a-accessible.json",
+  "sampleCaptureReceipt": "sample-captures/receipt.json",
+  "release": "PARKED under SYSTEM auth-nonce502 health hold; not merged or live"
+}
