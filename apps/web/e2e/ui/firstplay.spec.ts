@@ -15,6 +15,30 @@ async function capture(page: Page, name: string) {
   }
 }
 
+async function expectRewardContrast(page: Page) {
+  const colors = await page.locator('.home-card--loot .loot-summary-heading, .home-card--loot .loot-line, .home-card--loot .loot-item-name, .home-card--loot .loot-item-meta').evaluateAll(nodes => nodes.filter(node => {
+    const rect = node.getBoundingClientRect();
+    return rect.width && rect.height;
+  }).map(node => {
+    let surface: Element | null = node;
+    while (surface && getComputedStyle(surface).backgroundColor === 'rgba(0, 0, 0, 0)') surface = surface.parentElement;
+    return { label: node.textContent, foreground: getComputedStyle(node).color, background: surface ? getComputedStyle(surface).backgroundColor : '' };
+  }));
+  expect(colors.length).toBeGreaterThan(1);
+  const luminance = (rgb: string) => {
+    const channels = rgb.match(/[\d.]+/g)!.map(Number);
+    expect(channels.length === 3 || channels[3] === 1, `Opaque color required: ${rgb}`).toBe(true);
+    const values = channels.slice(0, 3).map(value => { const channel = value / 255; return channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4; });
+    return .2126 * values[0]! + .7152 * values[1]! + .0722 * values[2]!;
+  };
+  return colors.map(row => {
+    const a = luminance(row.foreground), b = luminance(row.background);
+    const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+    expect(ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+    return { ...row, ratio };
+  });
+}
+
 for (const width of [1280, 1600]) {
   test(`First play reaches Home and naturally earns without a wallet ${width}`, async ({ page }, testInfo) => {
     // The real scheduler claims every30seconds. This budget includes that wait; no clock or claim shortcut.
@@ -44,10 +68,14 @@ for (const width of [1280, 1600]) {
     const initial = await page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish);
     await expect.poll(() => page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish), { timeout: 36_000, intervals: [100, 250, 500] }).toBeGreaterThan(initial);
     await expect(page.getByRole('heading', { name: 'Recent finds', exact: true })).toBeVisible();
+    const contrast = await expectRewardContrast(page);
     timing.firstEarnMs = Date.now() - start;
-    const result = { width, height: width * 9 / 16, method: 'Fresh local guest; first-visit Help; real wall clock and natural30-second claim; no seeded save, manual claim or clock acceleration', timing, blankFrames: await page.evaluate(() => (window as Window & { __visibleRootGuard?: { blankFrames: unknown[] } }).__visibleRootGuard?.blankFrames ?? null), errors, writes };
+    const result = { width, height: width * 9 / 16, method: 'Fresh local guest; first-visit Help; real wall clock and natural30-second claim; no seeded save, manual claim or clock acceleration', timing, contrast, blankFrames: await page.evaluate(() => (window as Window & { __visibleRootGuard?: { blankFrames: unknown[] } }).__visibleRootGuard?.blankFrames ?? null), errors, writes };
     await testInfo.attach('first-play-timing', { body: JSON.stringify(result, null, 2), contentType: 'application/json' });
-    if (process.env.FIRSTPLAY_SCREENSHOTS) fs.writeFileSync(path.join(process.env.FIRSTPLAY_SCREENSHOTS, `timing-${width}-${process.env.E2E_VIEWPORT ?? 'default'}-repeat${testInfo.repeatEachIndex}.json`), JSON.stringify(result, null, 2) + '\n');
+    if (process.env.FIRSTPLAY_SCREENSHOTS) {
+      fs.mkdirSync(process.env.FIRSTPLAY_SCREENSHOTS, { recursive: true });
+      fs.writeFileSync(path.join(process.env.FIRSTPLAY_SCREENSHOTS, `timing-${width}-${process.env.E2E_VIEWPORT ?? 'default'}-repeat${testInfo.repeatEachIndex}.json`), JSON.stringify(result, null, 2) + '\n');
+    }
     await capture(page, `first-earn-${width}`);
     expect(errors).toEqual([]); expect(writes).toEqual([]);
   });
