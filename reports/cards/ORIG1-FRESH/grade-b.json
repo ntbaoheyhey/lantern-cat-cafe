@@ -1,0 +1,77 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "grader B, clean checkout/tests first, T011/T012 publication",
+  "head": "2f7c0b307123695a8244813604d540334e5fb8c0",
+  "base": "666088ce06ce0c03485f46371b8fd7c22a99e386",
+  "tree": "cef0523a2aeb920239677a2fb594013444b36c50",
+  "sourceRoot": "/private/tmp/tbh-original-content-b",
+  "gradedAt": "2026-11-03T00:18:44.953615+00:00",
+  "score": 96,
+  "status": "PASS",
+  "autoFails": [],
+  "criteria": [
+    {
+      "id": "C1",
+      "score": 25,
+      "max": 25,
+      "reason": "T011/T012 content/identity/units and pure default-OFF API verified; all9 active properties preserved, IDs unchanged, no runtime or server activation."
+    },
+    {
+      "id": "C2",
+      "score": 20,
+      "max": 20,
+      "reason": "Fresh B core2452,30 UI repeats,38 classic cases, import/build/link checks and current-head originality/config checks pass. A317\u00d72 shared explicitly on identical head."
+    },
+    {
+      "id": "C3",
+      "score": 10,
+      "max": 10,
+      "reason": "Ten distinct B semantic mutants detected after green control, covering basis, gates/indexing, capped upgrades, stat scaling, bonuses, offline cap, defense and multihit."
+    },
+    {
+      "id": "C4",
+      "score": 13,
+      "max": 15,
+      "reason": "Readable unit/cap/quality/trigger/price sections and preserved default UI. Deduct2 for wide dense documentation tables; visual consumer/art remain future required P1 work."
+    },
+    {
+      "id": "C5",
+      "score": 9,
+      "max": 10,
+      "reason": "Pure typed deterministic calculations and generated imports; deduct1 for runtime ID validation being a future consumer responsibility."
+    },
+    {
+      "id": "C6",
+      "score": 5,
+      "max": 5,
+      "reason": "No tests skipped, weakened or retried away; semantic mutant runs use the numeric/isolation suite rather than only docs-sync."
+    },
+    {
+      "id": "C7",
+      "score": 10,
+      "max": 10,
+      "reason": "Fresh offline scan proves reviewed-archive identity and absence of copied labels/prose/media for this exact tree; limitations, historical provenance and lack of runtime delivery are explicit."
+    },
+    {
+      "id": "C8",
+      "score": 4,
+      "max": 5,
+      "reason": "All32 paths reviewed;16 generated maps justified. Deduct1 for ancillary neutral descriptions in3 historical reports; no artwork, prompts, workflows or migrations changed."
+    }
+  ],
+  "evidence": [
+    "grade-b/commands.json",
+    "grade-b/active-config.json",
+    "grade-b/logs/originality.log",
+    "mutants-b/results.json",
+    "review-b-inventory.json",
+    "grade-a/commands.json"
+  ],
+  "sharedFullMatrix": "A317 each size on identical head; no second B full matrix claimed",
+  "mergeAllowed": true,
+  "releaseConditions": [
+    "Exact-head PR squash",
+    "Actual-main/live revalidation",
+    "Local consumer and original P1 art remain separate"
+  ]
+}

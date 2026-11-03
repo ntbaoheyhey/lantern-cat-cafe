@@ -1,0 +1,92 @@
+[
+  {
+    "name": "heal-damage-basis",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "entry.effect === 'damage' ? current.atk : current.hp",
+    "to": "entry.effect === 'damage' ? current.hp : current.atk",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "rank-gate-off-by-one",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "characterLevel < table.skills.unlockLevels",
+    "to": "characterLevel <= table.skills.unlockLevels",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "rank-cost-offset",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "table.skills.rankFish[rank - 1]!",
+    "to": "table.skills.rankFish[rank]!",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "max-level-upgrade",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "if (fromLevel === table.gear.maxLevel) return null;",
+    "to": "if (false) return null;",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "wrong-item-multiplier",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "table.gear.qualities[quality].multiplier",
+    "to": "table.gear.qualities[quality].costMultiplier",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "cap-at-base",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "Math.min(value, stat.cap)",
+    "to": "Math.min(value, stat.base)",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "material-bonus-gear-leak",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "paidSeconds / table.rewards.killIntervalSeconds * table.rewards.gearDropChance",
+    "to": "paidSeconds / table.rewards.killIntervalSeconds * table.rewards.gearDropChance * (1 + current.materialFind)",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "offline-cap-missing",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "Math.min(elapsedSeconds, table.rewards.offlineCapSeconds) * table.rewards.offlineEfficiency",
+    "to": "elapsedSeconds * table.rewards.offlineEfficiency",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "linear-defense",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "attack * table.combat.defenseScale / (table.combat.defenseScale + defense)",
+    "to": "attack - defense",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  },
+  {
+    "name": "missing-multihit",
+    "file": "packages/game-rules/src/original-economy.ts",
+    "from": "basis * entry.perRank[rank - 1]! * entry.hits",
+    "to": "basis * entry.perRank[rank - 1]!",
+    "exit": 1,
+    "killed": true,
+    "head": "2f7c0b307123695a8244813604d540334e5fb8c0"
+  }
+]

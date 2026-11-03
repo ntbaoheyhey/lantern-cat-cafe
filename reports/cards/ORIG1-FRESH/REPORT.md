@@ -9,3 +9,6 @@ Fresh offline originality on exact2f7c0b3 passes archive identity/CRC,136 entity
 Self-graded (fresh pass) A96: type/lint/core2452,317 browser cases per size,30 default-UI repeats,10 semantic mutants and docs/math/isolation checks pass. Inherited2 expected failures/11 skips remain unchanged. All32 paths were reviewed. Clean B at /private/tmp/tbh-original-content-b runs tests first on the exact same head, PID93028,5030–5033. It shares A's exact-head full matrix, rather than rerunning it.
 
 No PR/merge yet. The required local preview consumer and ART/T013 are separate P1 work after publication; NEXT-CONSUMER.md records their constraints. No P0/P1 completion claim.
+
+## Fresh B complete
+Self-graded fresh B96 after tests-first full32-file review. Fresh core2452,30 default-UI repeats,38 classic cases,10 distinct semantic mutants, offline originality and9-property preservation pass. A317×2 is explicitly shared on identical2f7c0b3. All16 Deno maps were independently checked to add only the generated original-economy module entry. A96/B96, zero auto-fails and all floors pass. PR/merge and actual-main/live validation remain.
