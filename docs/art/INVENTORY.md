@@ -113,5 +113,5 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | reports/ui-redesign/index.html | 49315 | original design demo; placeholder glyphs | 100x100, 16x16, 24x24 | 37 values in inventory.json | mixed SVG/CSS; not production sprite art |
 | scripts/gen-og.mjs | 5765 | art source | 16x16 | 23 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | scripts/gen-relics.mjs | 4937 | art source | 16x16 | 17 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| tools/art/original-icons.json | 40599 | art metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
-| tools/art/original_icons.py | 20088 | original art generator | 32x32 | 26 values in inventory.json | native coordinate grid; static icons only |
+| tools/art/original-icons.json | 44534 | art metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
+| tools/art/original_icons.py | 20228 | original art generator | 32x32 | 26 values in inventory.json | native coordinate grid; static icons only |
