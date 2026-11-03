@@ -24,7 +24,7 @@ Site: https://taskbarhero-eight.vercel.app. Live main remains `340f88b`. Audit: 
 | OVN-U2-01 | Medium | 401 returns to guest/class selection without explaining session expiry | [1280](live-edge-r2/expired-1280.png), [1600](live-edge-r2/expired-1600.png) | UI fix `993bfc4`, fresh A/B in progress; reuses existing status Banner and preserves guest save. Not live. |
 | OVN-U2-02 | Medium | Stage canvas container has a prohibited aria-label without a semantic role | [1280](live-r2/first-reward-1280.png), [1600](live-r2/first-reward-1600.png) | Already repaired by accepted held #263 (`4b0e69a`); do not duplicate its change. Still present live. |
 | OVN-U2-03 | Medium | First-reward heading contrast fails WCAG AA | Same first-reward screenshots | Already repaired by accepted held #263; original threshold retained. Still present live. |
-| OVN-SYS-01 | Medium | Mocked nonce 502 produces raw wallet error/notification overlap in the old live wallet UI | See SYS browser evidence | SYS hardening `95d9c32` uses a persistent dismissible notification and plain-language guest explanation; exact-head A/B in progress. Not live. |
+| OVN-SYS-01 | Medium | Local mocked nonce 502 reproduces wallet notification overlap while testing the hardening candidate | See SYS browser evidence | SYS hardening `95d9c32` uses a persistent dismissible notification and plain-language guest explanation; exact-head A/B in progress. Not live. |
 
 No other high/medium defect was confirmed by the audited paths. This is a bounded browser review, not a funded on-chain rehearsal or production sign-in acceptance. Deployment capacity blocks all releases, independently of the cleared nonce health hold.
 
