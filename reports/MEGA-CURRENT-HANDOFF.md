@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:12:52+07:00. ACTIVE one chat/agent; preview/art gate complete.
+Updated: 2026-11-03T10:25:29.724911+07:00. ACTIVE one chat/agent; PR256 merged, main/live gate running.
 Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
@@ -11,13 +11,13 @@ Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com
 | CXU3 | #252/4da5104 draft | PARTIAL after3 rounds; final A unit timeout/B not run; do not merge |
 | CXC2 | #253+#254/main666088c | DONE feature A95/B96 + fix A96/B96; main/live accepted |
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared OFF; main2452/317×2/live32/22/11×2 PASS |
-| ORIG2+ART/T013 | local792b475 | A96/B96 gate PASS; normal merge next; no PR/merge yet |
+| ORIG2+ART/T013 | #256/main2bc98cd | MERGED A96/B96; actual-main green, live in progress |
 | CXR1/CXR2/CXQ1 | #245/e99e497 + pending | Raise --bad AA token; gaps; full live demo + throwaway Fuji wallet |
 | CXS1/CXS2 | pending | Security evidence and submission DRAFT only |
 | CXN3 | #244/db0f9d6 | Owner backup/restore BLOCKED; no merge/deploy; blocks no frontend |
 | P2/P3 | pending | Only after A–F green/merged; default OFF/versioned |
 
-Last merged/origin+local main: a903fb63ffcfa1b7fa894fa4e3a51632c3ab77f3 (#255), exact reviewed tree/author/suffix.
+Last merged/origin+local main: 2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 (#256), exact reviewed tree/author/suffix.
 Current acceptance ORIG1-FRESH/acceptance.json DONE: core2452,317 browsers each size;32assets before/after,
 22health,11-stage guest paths each size,zero errors/transactions; recent100-block reads available; Actions0.
 No funded wallet/full future nine-stage/backend-source identity claim. Local main preserves untracked.worktrees/.
@@ -27,8 +27,10 @@ A7959 FINISHED PASS96: /private/tmp/tbh-original-preview, codex/original-preview
 head792b475d9dc30847e8c7ff2660419a0cd67a78b0, basea903fb6, ports5020–5023.
 Config/logs ORIG2-ART-FRESH/grade-a/. Core/build,40art/catalog checks,10 UI+4 art mutants,originality,capture PASS.
 A full321×2/60 repeats PASS. B12044 FINISHED all checks PASS at same head in /private/tmp/tbh-original-preview-b.
-No active test PIDs/listeners;5020–5023/5030–5033 free. B review complete96; do not rerun completed tests.
-Use normal merge to preserve creation commits; isolated merge-object probe verified38 new paths stable.
+Owned PID19884 /private/tmp/tbh-main-after-orig2; post-main then live sequential;4980–4983 free now.
+Core/build/art+321 browsers each size PASS; before-assets and22 health PASS;16-stage live in progress.
+A/B5020–5023/5030–5033 free; B review complete96; do not rerun completed tests.
+Normal merge preserved creation commits; isolated merge-object probe verified38 new paths stable.
 Preview uses transient local opt-in from shared false default, no config/storage/network/game mutations.
 12stats/15items/5qualities/7skills; exact fractional units/caps/costs/triggers; safe selectors; lazy Help host.
 34 original coordinate-drawn32px icons; no external media/image model; at most16 palette colors,binary alpha,2px padding.
@@ -58,4 +60,4 @@ repo publicity, contest submission, .github changes, Actions or direct-main push
 Do not kill unrelated18457/OS listeners; inspect owned cwd. No new chats/helpers/schedulers beyond the requested heartbeat.
 Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-Next3: publish/normal-merge exact approved preview/art head; actual-main/live opt-in/reset validation; refresh CXR1.
+Next3: finish actual-main/live catalog acceptance; refresh CXR1 without rewriting history; build gap corrections.
