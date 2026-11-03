@@ -1,0 +1,666 @@
+diff --git a/apps/web/e2e/a11y.spec.ts b/apps/web/e2e/a11y.spec.ts
+index ff2d4aa..aed17f2 100644
+--- a/apps/web/e2e/a11y.spec.ts
++++ b/apps/web/e2e/a11y.spec.ts
+@@ -15,7 +15,17 @@ async function expectNamedControls(page: Page): Promise<void> {
+   const controls = page.locator('button, a[href], [role="button"], [role="link"]');
+   expect(await controls.count()).toBeGreaterThan(0);
+   for (const control of await controls.all()) {
+-    if (await control.isVisible()) await expect(control).toHaveAccessibleName(/\S/);
++    if (await control.isVisible()) {
++      const isolation = await control.evaluate(element => ({
++        hidden: Boolean(element.closest('[inert], [aria-hidden="true"]')),
++        paired: Boolean(element.closest('[inert][aria-hidden="true"]')),
++      }));
++      if (isolation.hidden) {
++        // A painted modal background is intentionally absent from the accessibility tree.
++        await expect(page.getByRole('dialog')).toBeVisible();
++        expect(isolation.paired).toBe(true);
++      } else await expect(control).toHaveAccessibleName(/\S/);
++    }
+   }
+ }
+ 
+diff --git a/apps/web/e2e/fixtures/market-view.tsx b/apps/web/e2e/fixtures/market-view.tsx
+index fd92976..2ef9ee4 100644
+--- a/apps/web/e2e/fixtures/market-view.tsx
++++ b/apps/web/e2e/fixtures/market-view.tsx
+@@ -14,7 +14,7 @@ import '../../src/motion.css';
+ import '../../src/layout/layout.css';
+ import '../../src/forge/forge.css';
+ 
+-type Scenario = 'populated' | 'empty' | 'error' | 'loading';
++type Scenario = 'populated' | 'empty' | 'error' | 'loading' | 'extreme';
+ interface Call { kind: 'buy' | 'cancel' | 'list'; id: string; amount: string; price: string }
+ declare global { interface Window { __cxu3Market: { calls: Call[]; scenario: (value: Scenario) => void } } }
+ const calls: Call[] = [];
+@@ -29,6 +29,9 @@ const holdings = [
+   { rarity: 'common' as const, relicId: 1n, balance: 3n, listed: 2n },
+   { rarity: 'legendary' as const, relicId: 4n, balance: 1n, listed: 0n },
+ ];
++const uint256Max = (1n << 256n) - 1n;
++const extremeListings = [{ id: 31n, seller: other, relicId: uint256Max, amount: uint256Max, price: uint256Max }, ...listings];
++const extremeHoldings = [{ rarity: 'common' as const, relicId: 1n, balance: uint256Max, listed: 0n }];
+ const state = sampleStateV2();
+ const stats = v2.deriveStats({ classId: state.cat.classId!, level: state.cat.level }, state.inventory.filter(item => item.equipped).map(item => ({ itemId: item.itemKey, level: item.level, bonusLines: item.bonus })));
+ const addresses = getAddresses(FUJI_CHAIN_ID);
+@@ -42,7 +45,8 @@ function Fixture() {
+     <div className="shell-panel-container"><div className="shell-panel-view screen-market" style={{ display: 'flex' }}><div className="v2-tabpanel">
+       <h2 className="v2-tabpanel-title" data-testid="market-fixture-disclaimer">Local Market fixture — mock wallet data, no transactions</h2>
+       <div className="v2-panel-body-inner"><MarketView nft={addresses.RelicNFT!} market={addresses.RelicMarket!} address={me}
+-        listings={scenario === 'empty' ? [] : listings} holdings={scenario === 'empty' ? [] : holdings} sellable={holdings}
++        listings={scenario === 'empty' ? [] : scenario === 'extreme' ? extremeListings : listings}
++        holdings={scenario === 'empty' ? [] : scenario === 'extreme' ? extremeHoldings : holdings} sellable={holdings}
+         loadingHoldings={scenario === 'loading'} loadingListings={scenario === 'loading'} holdingsFailed={scenario === 'error'} readFailed={scenario === 'error'} busy={null} message={message}
+         form={{ relicId: id, amount, price, canList: Boolean(id && amount && price) }}
+         onRelicId={setId} onAmount={setAmount} onPrice={setPrice} onRetry={() => setScenario('populated')}
+diff --git a/apps/web/e2e/layout/character-bag.spec.ts b/apps/web/e2e/layout/character-bag.spec.ts
+index 8bff4a3..a03e3d5 100644
+--- a/apps/web/e2e/layout/character-bag.spec.ts
++++ b/apps/web/e2e/layout/character-bag.spec.ts
+@@ -73,7 +73,8 @@ for (const vp of VIEWPORTS) {
+ 
+     await openInventory(page, vp.width);
+     const bag = page.getByRole('tabpanel', { name: 'Bag', exact: true });
+-    await expect(bag.getByTestId('bag-count')).toHaveText('Bag 15 / 200');
++    await expect(bag.getByTestId('bag-count')).toHaveText('Bag 22 / 200');
++    await expect(bag.getByTestId('bag-storage')).toHaveText('15 stored · 7 equipped');
+     await expect(bag.getByRole('list', { name: 'Bag items' })).toBeVisible();
+     await noHorizontalScroll(page);
+   });
+diff --git a/apps/web/e2e/server/cxr2-class-states.spec.ts b/apps/web/e2e/server/cxr2-class-states.spec.ts
+new file mode 100644
+index 0000000..c336d69
+--- /dev/null
++++ b/apps/web/e2e/server/cxr2-class-states.spec.ts
+@@ -0,0 +1,45 @@
++import { test, expect, load, inspect } from '../support/server-fixture';
++import { mkdirSync } from 'node:fs';
++import { resolve } from 'node:path';
++
++for (const width of [1280, 1600]) test(`CXR2 first class stays visible during save and can recover ${width}`, async ({ page, request }) => {
++  await page.setViewportSize({ width, height: width * 9 / 16 });
++  await page.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, route => route.continue());
++  const session = await load(page, request, 'fresh');
++  await page.evaluate(() => document.fonts.ready);
++  let release!: () => void;
++  const held = new Promise<void>(done => { release = done; });
++  let refuse = true;
++  await page.route('**/functions/v1/v2-choose-class', async route => {
++    if (route.request().method() !== 'POST' || !refuse) return route.continue();
++    await held;
++    return route.fulfill({ status: 503, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ error: 'server_busy' }) });
++  });
++  const capture = async (state: string) => {
++    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
++    if (process.env.CXR2_SCREENSHOTS) {
++      mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++      await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `class-${state}-${width}.png`) });
++    }
++  };
++  try {
++    await page.getByTestId('class-picker-choose-button').click();
++    const started = page.waitForRequest(request => request.url().endsWith('/v2-choose-class') && request.method() === 'POST');
++    await page.getByTestId('class-picker-confirm-button').click(); await started;
++    await expect(page.getByTestId('class-picker')).toBeVisible();
++    await expect(page.getByTestId('class-picker-choose-button')).toBeDisabled();
++    await expect(page.getByTestId('class-picker-locked-notice')).toHaveCount(0);
++    await expect(page.getByTestId('class-picker-choose-button')).toHaveAttribute('aria-busy', 'true');
++    await capture('saving');
++    release();
++    await expect(page.getByRole('alert').filter({ hasText: 'Class selection did not go through' })).toBeVisible();
++    await expect(page.getByTestId('class-picker-choose-button')).toBeEnabled();
++    expect((await inspect(request, session)).raw.classId).toBeNull();
++    await capture('save-error');
++    refuse = false;
++    await page.getByTestId('class-picker-choose-button').click();
++    await page.getByTestId('class-picker-confirm-button').click();
++    await expect(page.getByTestId('home-dashboard')).toBeVisible();
++    expect((await inspect(request, session)).raw.classId).toBe('warrior');
++  } finally { release(); }
++});
+diff --git a/apps/web/e2e/server/cxr2-load-states.spec.ts b/apps/web/e2e/server/cxr2-load-states.spec.ts
+new file mode 100644
+index 0000000..bdd01fd
+--- /dev/null
++++ b/apps/web/e2e/server/cxr2-load-states.spec.ts
+@@ -0,0 +1,54 @@
++import { test, expect, control } from '../support/server-fixture';
++import type { Session } from '../../src/wallet/session';
++import { mkdirSync } from 'node:fs';
++import { resolve } from 'node:path';
++
++for (const width of [1280, 1600]) for (const screen of ['home', 'bag', 'map', 'forge', 'market', 'hero', 'help']) {
++  test(`CXR2 ${screen} loading, failed load and recovery ${width}`, async ({ page, request }) => {
++    await page.setViewportSize({ width, height: width * 9 / 16 });
++    const session = await control<Session>(request, 'session', { kind: 'stocked' });
++    await page.addInitScript(session => {
++      sessionStorage.setItem('taskbar-hero.session', JSON.stringify(session));
++      localStorage.setItem('taskbar-hero.howToPlaySeen', '1');
++    }, session);
++    const unexpected: string[] = [];
++    page.on('pageerror', error => unexpected.push(error.message));
++    page.on('console', message => {
++      if (message.type() !== 'error') return;
++      // The single intentional HTTP503 is a network test response, not an app console error.
++      if (message.location().url.endsWith('/v2-state') && message.text().includes('503')) return;
++      unexpected.push(message.text());
++    });
++    let release!: () => void;
++    const held = new Promise<void>(done => { release = done; });
++    let recover = false;
++    await page.route('**/functions/v1/v2-state', async route => {
++      if (route.request().method() !== 'POST' || recover) return route.continue();
++      await held;
++      return route.fulfill({ status: 503, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ error: 'server_busy' }) });
++    });
++    const capture = async (state: string) => {
++      expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
++      if (process.env.CXR2_SCREENSHOTS) {
++        mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++        await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `${screen}-${state}-${width}.png`) });
++      }
++    };
++    try {
++      await page.goto('/#' + screen);
++      await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
++      await capture('loading');
++      const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
++      release(); await failed;
++      await expect(page.getByRole('alert').filter({ hasText: 'Could not load your cat' })).toBeVisible();
++      await expect(page.getByRole('button', { name: 'Retry', exact: true })).toBeInViewport({ ratio: 1 });
++      await capture('load-error');
++      recover = true;
++      await page.getByRole('button', { name: 'Retry', exact: true }).click();
++      await expect(page.getByTestId('hud')).toBeVisible();
++      await expect(page.getByRole('status', { name: 'Loading game' })).toHaveCount(0);
++      await expect(page.getByRole('alert').filter({ hasText: 'Could not load your cat' })).toHaveCount(0);
++      expect(unexpected).toEqual([]);
++    } finally { release(); }
++  });
++}
+diff --git a/apps/web/e2e/support/test.ts b/apps/web/e2e/support/test.ts
+index b5c3004..ee6cd31 100644
+--- a/apps/web/e2e/support/test.ts
++++ b/apps/web/e2e/support/test.ts
+@@ -22,7 +22,17 @@ export const test = base.extend<{ buildGuard: void }>({
+       // Its project and origin are still checked above. Check the first normal page.
+       const devParam = new URL(page.url()).searchParams.get('dev');
+       if (!checked && devParam !== 'arena' && devParam !== 'art-pilot') {
+-        await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
++        // Shared portals hide the painted background from assistive technology.
++        // Keep the rendered-heading check; inaccessible background requires an active modal.
++        const heading = page.getByRole('heading', { level: 1, name: 'Taskbar Hero', includeHidden: true });
++        await expect(heading).toBeVisible();
++        if (await heading.evaluate(el => Boolean(el.closest('[inert], [aria-hidden="true"]')))) {
++          await expect(page.getByRole('dialog')).toBeVisible();
++          await expect(page.locator('#root')).toHaveAttribute('inert', '');
++          await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
++        } else {
++          await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
++        }
+         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         checked = true;
+diff --git a/apps/web/e2e/ui/cxc2-proof.spec.ts b/apps/web/e2e/ui/cxc2-proof.spec.ts
+index e618126..9af8b4f 100644
+--- a/apps/web/e2e/ui/cxc2-proof.spec.ts
++++ b/apps/web/e2e/ui/cxc2-proof.spec.ts
+@@ -51,6 +51,11 @@ async function fit(page: Page) {
+   const bad = await page.locator('.fuji-proof a').evaluateAll(nodes => nodes.filter(node => { const box = node.getBoundingClientRect(); return box.left < 0 || box.right > innerWidth + 1; }).map(node => node.textContent));
+   expect(bad).toEqual([]);
+ }
++async function captureReview(page: Page, state: string, width: number) {
++  if (!process.env.CXR2_SCREENSHOTS) return;
++  fs.mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++  await page.screenshot({ path: path.join(process.env.CXR2_SCREENSHOTS, `proof-fixture-${state}-${width}.png`) });
++}
+ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
+   test(`CXC2 lazy guest proof, bounded read RPC and cache ${size.width}`, async ({ page }) => {
+     await page.setViewportSize(size); await page.clock.install(); const fx = await fixture(page); const errors: string[] = [];
+@@ -62,6 +67,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
+     await expect(page.getByTestId('proof-snapshot')).toContainText('1000'); await expect(page.getByTestId('proof-linkage')).toContainText('Matches');
+     await expect(page.getByRole('link', { name: `View transaction ${tx.slice(0, 8)}…${tx.slice(-6)}` })).toHaveAttribute('href', `https://testnet.snowtrace.io/tx/${tx}`);
+     await expect(page.getByText('Not exposed by this NFT contract')).toBeVisible(); await fit(page);
++    await captureReview(page, 'loaded', size.width);
+     const logRead = fx.requests.find(request => request.method === 'eth_getLogs')!;
+     expect(logRead.params).toEqual([{ address: [contracts.RelicNFT, contracts.RelicMarket], fromBlock: '0x385', toBlock: '0x3e8', topics: [] }]);
+     for (let i = 0; i < 5; i++) await page.getByRole('button', { name: 'Refresh proof' }).click();
+@@ -71,6 +77,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
+     expect(fx.requests.filter(request => request.method === 'eth_chainId')).toHaveLength(1);
+     fx.mode('partial'); await page.getByRole('tab', { name: 'Help', exact: true }).click();
+     await expect(page.getByText(/Recent events unavailable/)).toBeVisible(); await expect(page.getByTestId('proof-code-RelicNFT')).toContainText('5 bytes'); await fit(page);
++    await captureReview(page, 'partial-error', size.width);
+     expect(fx.requests.filter(request => request.method === 'eth_chainId')).toHaveLength(2);
+     expect([...new Set(fx.requests.map(request => request.method))].sort()).toEqual(['eth_blockNumber', 'eth_call', 'eth_chainId', 'eth_getBlockByNumber', 'eth_getCode', 'eth_getLogs'].sort()); expect(errors).toEqual([]);
+   });
+@@ -79,5 +86,6 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
+     await page.goto('/'); await page.getByRole('tab', { name: 'Help', exact: true }).click(); await page.getByRole('tab', { name: 'On-chain proof' }).click();
+     await expect(page.getByRole('alert')).toContainText('unavailable'); await expect(page.getByTestId('proof-snapshot')).toHaveCount(0);
+     expect(fx.requests.map(request => request.method)).toEqual(['eth_chainId']); await fit(page);
++    await captureReview(page, 'unavailable', size.width);
+   });
+ }
+diff --git a/apps/web/e2e/ui/cxr2-dialogs.spec.ts b/apps/web/e2e/ui/cxr2-dialogs.spec.ts
+new file mode 100644
+index 0000000..b5fe907
+--- /dev/null
++++ b/apps/web/e2e/ui/cxr2-dialogs.spec.ts
+@@ -0,0 +1,98 @@
++import { expect, test, type Page, type Locator } from '../support/test';
++import { readFileSync } from 'node:fs';
++import { resolve } from 'node:path';
++import { mockV2SaveJson } from '../../src/api/mockV2Fixtures';
++
++const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
++async function checkDialog(page: Page, dialog: Locator) {
++  await expect(dialog).toBeVisible(); await expect(dialog).toHaveClass(/ui-modal/);
++  await expect(dialog).toHaveCSS('background-color', 'rgb(42, 31, 54)');
++  await expect(page.locator('#root')).toHaveAttribute('inert', '');
++  await expect(page.locator('#root')).toHaveAttribute('aria-hidden', 'true');
++  expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
++  const box = await dialog.boundingBox(), size = page.viewportSize()!;
++  expect(box!.x).toBeGreaterThanOrEqual(0); expect(box!.y).toBeGreaterThanOrEqual(0);
++  expect(box!.x + box!.width).toBeLessThanOrEqual(size.width);
++  expect(box!.y + box!.height).toBeLessThanOrEqual(size.height);
++  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight && document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++}
++async function restored(page: Page) {
++  await expect(page.getByRole('dialog')).toHaveCount(0);
++  expect(await page.locator('#root').getAttribute('inert')).toBeNull();
++  expect(await page.locator('#root').getAttribute('aria-hidden')).toBeNull();
++}
++async function capture(page: Page, name: string) {
++  if (process.env.CXR2_SCREENSHOTS) await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, name + '.png') });
++}
++for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  for (const motion of ['no-preference', 'reduce'] as const) {
++    test.describe(`CXR2 ${size.width} ${motion}`, () => {
++      test.use({ viewport: size, reducedMotion: motion });
++      test('first-visit Help uses shared keyboard and background isolation', async ({ page }) => {
++        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
++        await page.goto('/#landing');
++        const dialog = page.getByRole('dialog', { name: 'How to play', exact: true });
++        await checkDialog(page, dialog);
++        await expect(dialog.getByRole('listitem')).toHaveCount(5);
++        await expect(dialog).toContainText('30 Yarn and 1 Moon Pearl');
++        await expect(dialog).not.toContainText('5 fights a day');
++        await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
++        await page.keyboard.press('Tab'); await expect(dialog.getByRole('button', { name: 'Close help' })).toBeFocused();
++        await page.keyboard.press('Shift+Tab'); await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
++        await capture(page, `help-${size.width}-${motion}`);
++        await page.keyboard.press('Escape'); await restored(page);
++        await expect(page.getByTestId('landing-start')).toBeEnabled();
++        await expect(page.getByTestId('landing-start')).toBeFocused();
++        await page.reload(); await expect(page.getByRole('dialog')).toHaveCount(0);
++        expect(errors).toEqual([]);
++      });
++      test('offline welcome and real boss chest retain actions, art and exclusive focus', async ({ page }) => {
++        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
++        const now = Date.UTC(2026, 10, 3, 12);
++        await page.clock.install({ time: now });
++        const save = mockV2SaveJson('bossReadyStrong', { nowMs: now - 3600_000, classId: 'warrior' });
++        // Seed a real prior visit as well as an old claim; the UI does not infer absence from a save alone.
++        await page.addInitScript(({ key, save, lastVisit }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); localStorage.setItem('taskbar-hero:v2-last-visit', String(lastVisit)); }, { key, save, lastVisit: now - 3600_000 });
++        await page.goto('/');
++        // The unchanged production loop claims on its normal30s tick.
++        await page.clock.fastForward(30_000);
++        const welcome = page.getByRole('dialog', { name: 'Welcome back!', exact: true });
++        await checkDialog(page, welcome);
++        await expect(welcome.getByRole('button')).toHaveCount(1);
++        await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
++        await page.keyboard.press('Tab');
++        const lootScroll = welcome.getByRole('region', { name: 'Scrollable offline loot' });
++        await expect(lootScroll).toBeFocused();
++        await page.keyboard.press('End');
++        await expect.poll(() => lootScroll.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
++        await page.keyboard.press('Home');
++        await expect.poll(() => lootScroll.evaluate(el => el.scrollTop)).toBe(0);
++        await page.keyboard.press('Tab'); await expect(welcome.getByRole('button', { name: 'OK' })).toBeFocused();
++        await expect(welcome.getByRole('heading', { name: 'Welcome back!', exact: true })).toBeInViewport();
++        await expect(welcome.locator('.welcome-back-rule')).toBeInViewport();
++        await expect(welcome.getByRole('button', { name: 'OK' })).toBeInViewport();
++        await capture(page, `welcome-${size.width}-${motion}`);
++        await welcome.getByRole('button', { name: 'OK' }).click(); await restored(page);
++        const railStyle = await page.getByTestId('nav-home').evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, border: getComputedStyle(el).borderTopWidth }));
++        expect(railStyle).toEqual({ radius: '0px', border: '2px' });
++        await page.getByRole('tab', { name: 'Map', exact: true }).click();
++        await page.getByRole('button', { name: 'Fight', exact: true }).click();
++        if (motion === 'no-preference') await page.getByRole('button', { name: 'Skip fight', exact: true }).click();
++        const chest = page.getByRole('dialog', { name: 'First clear chest!', exact: true });
++        await checkDialog(page, chest);
++        await expect(chest.locator('svg[data-backdrop="livingroom"]')).toHaveCount(1);
++        await expect(chest.getByRole('button')).toHaveCount(1);
++        await page.clock.resume();
++        if (await chest.getByRole('button', { name: 'Skip', exact: true }).isVisible()) await chest.getByRole('button', { name: 'Skip', exact: true }).click();
++        const collect = chest.getByRole('button', { name: 'Collect', exact: true });
++        await expect(collect).toBeVisible(); await expect(collect).toBeInViewport();
++        await page.keyboard.press('Shift+Tab'); await expect(collect).toBeFocused();
++        await capture(page, `chest-${size.width}-${motion}`);
++        await collect.click(); await restored(page);
++        await expect(page.getByTestId('nav-map')).toBeFocused();
++        await expect(page.getByTestId('nav-home')).toBeEnabled();
++        expect(errors).toEqual([]);
++      });
++    });
++  }
++}
+diff --git a/apps/web/e2e/ui/cxr2-market-states.spec.ts b/apps/web/e2e/ui/cxr2-market-states.spec.ts
+new file mode 100644
+index 0000000..4710051
+--- /dev/null
++++ b/apps/web/e2e/ui/cxr2-market-states.spec.ts
+@@ -0,0 +1,41 @@
++import { test, expect } from '../support/test';
++import type {} from '../fixtures/market-view';
++import { mkdirSync } from 'node:fs';
++import { resolve } from 'node:path';
++
++for (const width of [1280, 1600]) {
++  test(`CXR2 Market loading, failure and full-width bigint details ${width}`, async ({ page }) => {
++    await page.setViewportSize({ width, height: width * 9 / 16 });
++    const errors: string[] = [];
++    page.on('pageerror', error => errors.push(error.message));
++    page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++    await page.goto('/market-fixture/e2e/fixtures/market-view.html');
++    const capture = async (state: string) => {
++      expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
++      if (process.env.CXR2_SCREENSHOTS) {
++        mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++        await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `market-fixture-${state}-${width}.png`) });
++      }
++    };
++    await page.evaluate(() => window.__cxu3Market.scenario('loading'));
++    await expect(page.getByText('Loading listings…', { exact: true })).toBeVisible();
++    await expect(page.getByText('Loading your listings…', { exact: true })).toBeVisible();
++    await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
++    await capture('loading');
++    await page.evaluate(() => window.__cxu3Market.scenario('error'));
++    await expect(page.getByRole('alert')).toBeVisible();
++    await expect(page.getByRole('button', { name: 'Retry' })).toBeInViewport({ ratio: 1 });
++    await capture('error');
++    await page.getByRole('button', { name: 'Retry' }).click();
++    await page.evaluate(() => window.__cxu3Market.scenario('extreme'));
++    await page.getByTestId('listing-31').getByRole('button').click();
++    const max = ((1n << 256n) - 1n).toString();
++    await expect(page.getByTestId('token-id')).toHaveText('#' + max);
++    await expect(page.getByRole('region', { name: 'Listing details' })).toContainText('Quantity' + max);
++    await expect(page.getByRole('button', { name: 'Buy', exact: true })).toBeInViewport({ ratio: 1 });
++    expect(await page.locator('.market-table-wrap').evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
++    await capture('maximum-long');
++    expect(await page.evaluate(() => window.__cxu3Market.calls)).toEqual([]);
++    expect(errors).toEqual([]);
++  });
++}
+diff --git a/apps/web/e2e/ui/cxr2-returning-guest.spec.ts b/apps/web/e2e/ui/cxr2-returning-guest.spec.ts
+new file mode 100644
+index 0000000..270f883
+--- /dev/null
++++ b/apps/web/e2e/ui/cxr2-returning-guest.spec.ts
+@@ -0,0 +1,32 @@
++import { test, expect } from '../support/test';
++import { mockV2Save } from '../../src/api/mockV2Fixtures';
++import { readFileSync, mkdirSync } from 'node:fs';
++import { resolve } from 'node:path';
++const storageKey = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
++
++for (const width of [1280, 1600]) test(`CXR2 returning guest can play again from Landing without losing progress ${width}`, async ({ page }) => {
++  await page.setViewportSize({ width, height: width * 9 / 16 });
++  const now = Date.now(), save = mockV2Save('midGame', { nowMs: now, classId: 'warrior' });
++  await page.clock.install({ time: new Date(0) }); await page.clock.pauseAt(new Date(now));
++  await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
++  const errors: string[] = [];
++  page.on('pageerror', error => errors.push(error.message));
++  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++  await page.goto('/#hero');
++  await expect(page.getByRole('region', { name: 'Character' })).toBeVisible();
++  const before = await page.evaluate(() => window.__g1Loop.getSnapshot().state);
++  await page.evaluate(() => { location.hash = 'landing'; });
++  await expect(page.getByTestId('landing-hero')).toBeVisible();
++  await page.getByTestId('landing-start').click();
++  await expect(page.getByTestId('home-dashboard')).toBeVisible();
++  await expect(page.getByTestId('nav-home')).toHaveAttribute('aria-selected', 'true');
++  await expect(page.getByTestId('class-picker')).toHaveCount(0);
++  expect(await page.evaluate(() => window.__g1Loop.getSnapshot().state)).toEqual(before);
++  expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
++  await page.clock.runFor(500); await page.evaluate(() => document.fonts.ready);
++  if (process.env.CXR2_SCREENSHOTS) {
++    mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++    await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `returning-guest-home-${width}.png`) });
++  }
++  expect(errors).toEqual([]);
++});
+diff --git a/apps/web/e2e/ui/cxr2-state-matrix.spec.ts b/apps/web/e2e/ui/cxr2-state-matrix.spec.ts
+new file mode 100644
+index 0000000..f08960f
+--- /dev/null
++++ b/apps/web/e2e/ui/cxr2-state-matrix.spec.ts
+@@ -0,0 +1,80 @@
++import { test, expect, type Page } from '../support/test';
++import { v2 } from '@taskbar-hero/game-rules';
++import { mockV2Save } from '../../src/api/mockV2Fixtures';
++import { readFileSync, mkdirSync } from 'node:fs';
++import { resolve } from 'node:path';
++
++const storageKey = readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
++const screens = ['Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help'] as const;
++const scenarios = ['normal', 'zero-empty', 'maximum-long', 'full-bag', 'offline'] as const;
++
++async function inspect(page: Page, label: string) {
++  expect(await page.evaluate(() => ({ x: document.documentElement.scrollWidth > innerWidth, y: document.documentElement.scrollHeight > innerHeight })), label).toEqual({ x: false, y: false });
++  const hud = page.getByTestId('hud');
++  const clipped = await hud.evaluate(root => [...root.querySelectorAll<HTMLElement>('*')]
++    .filter(node => node.getClientRects().length && getComputedStyle(node).visibility !== 'hidden' && node.scrollWidth > node.clientWidth + 1)
++    .map(node => node.getAttribute('data-testid') || node.className));
++  expect(clipped, label + ' HUD text').toEqual([]);
++  if (await page.getByTestId('home-dashboard').isVisible()) {
++    const currencyClip = await page.locator('.home-loot-currencies').evaluateAll(nodes => nodes.some(node => node.scrollWidth > node.clientWidth + 1));
++    expect(currencyClip, label + ' recent loot currencies').toBe(false);
++  }
++  for (const control of await page.locator('button:visible, a[href]:visible, input:visible, select:visible').all()) {
++    await expect(control, label).toHaveAccessibleName(/\S/);
++  }
++  if (process.env.CXR2_SCREENSHOTS) {
++    mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
++    await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, label + '.png') });
++  }
++}
++
++for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  for (const scenario of scenarios) {
++    test(`CXR2 screen/state review ${size.width} ${scenario}`, async ({ page, context }) => {
++      await page.setViewportSize(size); await page.emulateMedia({ reducedMotion: 'reduce' });
++      const errors: string[] = [];
++      page.on('pageerror', error => errors.push(error.message));
++      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++      const now = Date.now();
++      const save = mockV2Save(scenario === 'maximum-long' ? 'bossReadyStrong' : 'forgeRich', { nowMs: now, classId: 'warrior' });
++      if (scenario === 'zero-empty') { save.state.items = []; save.state.stacks = { fish: 0 }; }
++      if (scenario === 'full-bag') {
++        while (save.state.items.length < v2.V2_CONFIG.bag.limit) save.state.items.push({ ...save.state.items[1]!, id: `cxr2-full-${save.state.items.length}`, equipped: false });
++      }
++      if (scenario === 'maximum-long') {
++        // Maximum representable Fish and registry-capped materials, not new economy limits.
++        save.state.stacks = { fish: Number.MAX_SAFE_INTEGER, ...Object.fromEntries(v2.MATERIALS.map(material => [material.id, material.maxStack])) };
++        const longest = [...v2.ITEMS].sort((a, b) => b.name.length - a.name.length)[0]!;
++        save.state.items.push({ id: 'cxr2-longest', itemId: longest.id, itemKey: longest.id, slot: longest.slot, rarity: longest.rarity,
++          ...(longest.weaponType ? { weaponType: longest.weaponType } : {}), level: 1, bonus: [], bonusLines: [], equipped: false, locked: false, source: 'drop' });
++      }
++      await page.clock.install({ time: new Date(0) });
++      await page.clock.pauseAt(new Date(now));
++      await page.addInitScript(({ key, value }) => { localStorage.setItem(key, value); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, value: JSON.stringify(save) });
++      await page.goto('/#home');
++      await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
++      await page.evaluate(() => document.fonts.ready);
++      await page.clock.runFor(500);
++      if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
++      if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
++      if (scenario === 'offline') { await context.setOffline(true); await page.evaluate(() => dispatchEvent(new Event('offline'))); }
++      for (const screen of screens) {
++        await page.getByRole('tab', { name: screen, exact: true }).click();
++        await expect(page.getByRole('tab', { name: screen, exact: true })).toHaveAttribute('aria-selected', 'true');
++        if (scenario === 'offline') await expect(page.locator('header [data-sync-status="offline"]')).toBeVisible();
++        if (scenario === 'full-bag' && screen === 'Bag') {
++          await expect(page.getByTestId('bag-count')).toHaveText('Bag 200 / 200');
++          await expect(page.getByRole('status').filter({ hasText: 'Bag full' })).toBeVisible();
++          await expect(page.locator('.bag-slot.empty')).toHaveCount(0);
++        }
++        if (scenario === 'zero-empty' && screen === 'Bag') await expect(page.locator('.bag-slot.empty')).toHaveCount(200);
++        if (scenario === 'full-bag' && screen === 'Forge') await expect(page.getByTestId('craft-btn')).toBeDisabled();
++        await inspect(page, `${screen.toLowerCase()}-${scenario}-${size.width}`);
++        if (screen === 'Forge') {
++          for (const sub of ['salvage', 'relic']) { await page.getByTestId('tab-' + sub).click(); await inspect(page, `forge-${sub}-${scenario}-${size.width}`); }
++        }
++      }
++      expect(errors).toEqual([]);
++    });
++  }
++}
+diff --git a/apps/web/e2e/v2/t2-player-loop.spec.ts b/apps/web/e2e/v2/t2-player-loop.spec.ts
+index e018e94..dfa80a8 100644
+--- a/apps/web/e2e/v2/t2-player-loop.spec.ts
++++ b/apps/web/e2e/v2/t2-player-loop.spec.ts
+@@ -96,7 +96,8 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
+   await expect(page.getByTestId('boss-key-hint')).toHaveCount(0);
+   await page.clock.resume();
+   await boss.getByRole('button', { name: 'Fight', exact: true }).click();
+-  const arena = page.getByRole('region', { name: 'Boss arena' });
++  // Reduced motion resolves immediately, so the chest makes its painted arena background inert.
++  const arena = page.getByRole('region', { name: 'Boss arena', includeHidden: reduced });
+   await expect(arena).toBeVisible();
+   if (!reduced) {
+     await expect(arena.locator('canvas')).toBeVisible();
+diff --git a/apps/web/src/layout/a11y/v2-loot.a11y.test.tsx b/apps/web/src/layout/a11y/v2-loot.a11y.test.tsx
+index 76f2f64..54acc4e 100644
+--- a/apps/web/src/layout/a11y/v2-loot.a11y.test.tsx
++++ b/apps/web/src/layout/a11y/v2-loot.a11y.test.tsx
+@@ -1,5 +1,5 @@
+ // @vitest-environment jsdom
+-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
++import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+ import * as reducedMotionModule from '../../motion/reducedMotion';
+ import { ChestReveal } from '../loot/ChestReveal';
+@@ -111,8 +111,8 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
+     });
+ 
+     it('check 3: chest icon has role img and accessible label', () => {
+-      const { container } = render(<ChestReveal {...chestRevealProps({ firstClear: false })} />);
+-      const icon = container.querySelector('.chest-reveal-icon-wrap svg');
++      render(<ChestReveal {...chestRevealProps({ firstClear: false })} />);
++      const icon = screen.getByRole('dialog').querySelector('.chest-reveal-icon-wrap svg');
+       expect(icon?.getAttribute('role')).toBe('img');
+       expect(icon?.getAttribute('aria-label')).toBe('Boss chest');
+     });
+@@ -128,11 +128,11 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
+ 
+     it('check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap', () => {
+       const onDone = vi.fn();
+-      const { container } = render(<ChestReveal {...chestRevealProps({ onDone })} />);
++      render(<ChestReveal {...chestRevealProps({ onDone })} />);
+ 
+       const dialog = screen.getByRole('dialog');
+       expect(dialog.getAttribute('aria-modal')).toBe('true');
+-      const title = container.querySelector('.chest-reveal-title');
++      const title = within(dialog).getByRole('heading', { level: 2 });
+       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
+ 
+       const actionBtn = screen.getByRole('button', { name: 'Skip' });
+@@ -187,18 +187,19 @@ describe('v2 Loot accessibility & reduced-motion audit', () => {
+ 
+     it('check 5: dialog role, aria-modal, heading label, focus on open, Escape, and Tab trap', () => {
+       const onClose = vi.fn();
+-      const { container } = render(<WelcomeBack {...welcomeBackProps({ onClose })} />);
++      render(<WelcomeBack {...welcomeBackProps({ onClose })} />);
+ 
+       const dialog = screen.getByRole('dialog');
+       expect(dialog.getAttribute('aria-modal')).toBe('true');
+-      const title = container.querySelector('.welcome-back-title');
++      const title = within(dialog).getByRole('heading', { level: 2 });
+       expect(dialog.getAttribute('aria-labelledby')).toBe(title?.id);
+ 
+       const okBtn = screen.getByRole('button', { name: 'OK' });
+       expect(document.activeElement).toBe(okBtn);
+ 
++      const scroll = screen.getByRole('region', { name: 'Scrollable offline loot' });
+       fireEvent.keyDown(document, { key: 'Tab', shiftKey: false });
+-      expect(document.activeElement).toBe(okBtn);
++      expect(document.activeElement).toBe(scroll);
+       fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+       expect(document.activeElement).toBe(okBtn);
+ 
+diff --git a/apps/web/src/ui/legacy-dialogs.test.tsx b/apps/web/src/ui/legacy-dialogs.test.tsx
+new file mode 100644
+index 0000000..5db4811
+--- /dev/null
++++ b/apps/web/src/ui/legacy-dialogs.test.tsx
+@@ -0,0 +1,69 @@
++import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
++import { useState } from 'react';
++import { afterEach, expect, it, vi } from 'vitest';
++import { HowToPlay } from '../onboarding/HowToPlay';
++import { resetHelpForTests } from '../onboarding/helpStore';
++import { ChestReveal } from '../layout/loot/ChestReveal';
++import { WelcomeBack } from '../layout/loot/WelcomeBack';
++import type { GainsV2, LootV2 } from '../api/GameApiV2';
++
++const loot: LootV2 = { fish: 3, yarn: 2, keys: 0, materials: {}, items: [], autoSalvaged: [] };
++const gains: GainsV2 = { ...loot, xp: 4, levelsGained: 0 };
++afterEach(() => { cleanup(); vi.useRealTimers(); localStorage.clear(); });
++
++it('all migrated dialogs share one stack; Escape closes only the top and restores access in order', () => {
++  vi.useFakeTimers();
++  localStorage.removeItem('taskbar-hero.howToPlaySeen'); act(() => resetHelpForTests());
++  const page = document.createElement('button'); page.textContent = 'Page'; document.body.append(page); page.focus();
++  const chestDone = vi.fn(), welcomeDone = vi.fn();
++  function Stack() {
++    const [welcome, setWelcome] = useState(true), [chest, setChest] = useState(true);
++    return <><HowToPlay />
++      {welcome && <WelcomeBack gains={gains} awaySeconds={3600} onClose={() => { welcomeDone(); setWelcome(false); }} />}
++      {chest && <ChestReveal chest={loot} firstClear={false} onDone={() => { chestDone(); setChest(false); }} />}
++    </>;
++  }
++  const view = render(<Stack />);
++  try {
++    expect(screen.getAllByRole('dialog', { hidden: true })).toHaveLength(3);
++    expect(screen.getAllByRole('dialog')).toHaveLength(1);
++    expect(screen.getByRole('dialog', { name: 'Boss chest' }).closest('.ui-modal-backdrop')).not.toBeNull();
++    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
++    expect(page.hasAttribute('inert')).toBe(true);
++    page.focus(); expect(screen.getByRole('dialog').contains(document.activeElement)).toBe(true);
++    fireEvent.click(document.querySelectorAll('.loot-backdrop')[1]!);
++    expect(chestDone).not.toHaveBeenCalled();
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(chestDone).toHaveBeenCalledTimes(1); expect(welcomeDone).not.toHaveBeenCalled();
++    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
++    expect(page.hasAttribute('inert')).toBe(true);
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(welcomeDone).toHaveBeenCalledTimes(1);
++    expect(screen.getByRole('dialog', { name: 'How to play' }).contains(document.activeElement)).toBe(true);
++    expect(page.hasAttribute('inert')).toBe(true);
++    fireEvent.keyDown(document, { key: 'Escape' });
++    expect(screen.queryByRole('dialog')).toBeNull();
++    expect(page.hasAttribute('inert')).toBe(false); expect(page.hasAttribute('aria-hidden')).toBe(false);
++    expect(document.activeElement).toBe(page);
++    act(() => vi.advanceTimersByTime(5000)); expect(chestDone).toHaveBeenCalledTimes(1);
++  } finally { view.unmount(); page.remove(); }
++});
++
++it('hiding an older loot dialog keeps the newer one active and preserves original background attributes', () => {
++  const page = document.createElement('button'); document.body.append(page); page.focus();
++  const prior = document.createElement('div'); prior.setAttribute('inert', ''); prior.setAttribute('aria-hidden', 'true'); document.body.append(prior);
++  const view = (welcome: boolean, chest: boolean) => <>
++    {welcome && <WelcomeBack gains={gains} awaySeconds={3600} onClose={() => {}} />}
++    {chest && <ChestReveal chest={loot} firstClear onDone={() => {}} />}
++  </>;
++  const mounted = render(view(true, false));
++  try {
++    mounted.rerender(view(true, true)); mounted.rerender(view(false, true));
++    expect(screen.getAllByRole('dialog')).toHaveLength(1);
++    expect(screen.getByRole('dialog', { name: 'First clear chest!' }).contains(document.activeElement)).toBe(true);
++    expect(page.hasAttribute('inert')).toBe(true);
++    mounted.rerender(view(false, false));
++    expect(document.activeElement).toBe(page); expect(page.hasAttribute('inert')).toBe(false);
++    expect(prior.hasAttribute('inert')).toBe(true); expect(prior.getAttribute('aria-hidden')).toBe('true');
++  } finally { mounted.unmount(); page.remove(); prior.remove(); }
++});

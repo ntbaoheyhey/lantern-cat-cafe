@@ -22,3 +22,4 @@
 - Next3 after explicit resume: finish CXR2 gate/release; implement additive art and motion with provenance/palette checks; build conditional previews and final gallery/report.
 - Resumed A2 PID45051 on5310–5313: full1600 then resize repeats; completed368-case1280 matrix is retained. Heartbeat is ACTIVE again.
 - CXR2 A96 PASS on6ef93c0 after resumed full1600:2531 core,368full per size,438 changed repeats,resize20/20,18 strict audit views. B tests-first PID48052 active in /Users/bao/taskbar-hero-ui-verify-cxr2-b on5320–5323. No CXR2 merge/PR yet.
+- CXR2 A96/B96 PASS on6ef93c0. Each core2531/438changed/20resize/18audit passes; full368×2 shared. Corrective release now preparing locked checks.

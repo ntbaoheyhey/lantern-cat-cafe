@@ -1,0 +1,192 @@
+{
+  "head": "6ef93c0b6959aa470665613616781211225d15bd",
+  "pass": "cxr2-b",
+  "pid": 48052,
+  "cwd": "/Users/bao/taskbar-hero-ui-verify-cxr2-b",
+  "ports": [
+    5320,
+    5321,
+    5322,
+    5323
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T12:15:41.715241+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T12:15:50.541866+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T12:15:58.668937+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T12:15:58.799015+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T12:16:38.638751+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/web-units.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T12:17:23.644055+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/a11y.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/cxc2-proof.spec.ts",
+        "e2e/ui/cxr2-dialogs.spec.ts",
+        "e2e/ui/cxr2-market-states.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "e2e/v2/t2-player-loop.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:17:32.959787+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/a11y.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/cxc2-proof.spec.ts",
+        "e2e/ui/cxr2-dialogs.spec.ts",
+        "e2e/ui/cxr2-market-states.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "e2e/v2/t2-player-loop.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:20:48.561826+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/changed-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:24:02.366313+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:24:21.447801+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-b/resize-five-1600x900.log"
+    }
+  ]
+}

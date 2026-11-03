@@ -1,0 +1,68 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/auth
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  19:16:01
+   Duration  376ms (import 69%, tests 22%, transform 8%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/chain
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  19:16:01
+   Duration  321ms (import 50%, transform 27%, tests 21%, worker 2%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/game-rules
+
+
+ Test Files  30 passed | 3 skipped (33)
+      Tests  431 passed | 2 expected fail | 11 skipped (444)
+   Start at  19:16:02
+   Duration  24.92s (tests 91%, transform 6%, import 2%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-ui-verify-cxr2-b/supabase/tests
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-verify-cxr2-b/supabase/tests
+
+
+ Test Files  33 passed (33)
+      Tests  575 passed (575)
+   Start at  19:16:27
+   Duration  10.38s (tests 77%, import 15%, transform 8%)
+
+
+> @taskbar-hero/api-contract@0.0.0 test /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-verify-cxr2-b/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  19:16:38
+   Duration  217ms (transform 79%, import 18%, tests 2%, worker 1%)
+
+
+exit=0

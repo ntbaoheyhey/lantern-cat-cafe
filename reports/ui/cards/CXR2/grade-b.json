@@ -1,0 +1,65 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader B",
+  "head": "6ef93c0b6959aa470665613616781211225d15bd",
+  "status": "PASS",
+  "score": 96,
+  "autoFails": [],
+  "gradedAt": "2026-11-03T12:28:46.292865+00:00",
+  "sourceRoot": "/Users/bao/taskbar-hero-ui-verify-cxr2-b",
+  "reviewOrder": "Clean checkout, tests first, then complete scope/source/style/test and native screenshot review. Separate ports5320\u20135323 and5350.",
+  "criteria": [
+    {
+      "criterion": "Desktop design/state fidelity",
+      "score": 23,
+      "max": 25,
+      "reason": "Normal,empty,offline,loading,error,recovery and extreme states fit both viewports; very large numeric strings remain readable but necessarily wrap."
+    },
+    {
+      "criterion": "Behavior/data truth",
+      "score": 25,
+      "max": 25,
+      "reason": "Returning-guest snapshot preserved, initial class save waits for authoritative state, full storage display matches existing owned-capacity guard. No backend/rule/wallet mutation."
+    },
+    {
+      "criterion": "Accessibility",
+      "score": 20,
+      "max": 20,
+      "reason": "Shared modal focus/stack restoration, named scroll regions, Home/End, unchanged contrast thresholds and reduced motion verified."
+    },
+    {
+      "criterion": "Scope/art preservation",
+      "score": 20,
+      "max": 20,
+      "reason": "Only UI-owned source/test/report/capture paths; existing art and all protected code/config paths have zero diff."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "Fresh2531 core,438 changed browser executions,20/20 resize,18 clear audit views. A368\u00d72 full matrix shared on identical6ef93c0; local RPC/wallet fixtures are explicitly labelled."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "inheritedUnitStatuses": {
+    "expectedFail": 2,
+    "skipped": 11,
+    "changed": false
+  },
+  "evidence": [
+    "reports/ui/logs/cxr2-b/receipt.json",
+    "reports/ui/logs/cxr2-b/scope.json",
+    "screenshots/ui-2026-11-03/cxr2-b-audit/findings.json"
+  ],
+  "visualReview": [
+    "class-save-error-1280",
+    "returning-guest-home-1600",
+    "market-fixture-maximum-long-1600",
+    "shared dialogs and normal screen audit"
+  ],
+  "limitations": "No SYSTEM live scripted demo or funded wallet run."
+}

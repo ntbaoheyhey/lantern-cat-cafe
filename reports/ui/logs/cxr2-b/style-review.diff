@@ -1,0 +1,408 @@
+diff --git a/apps/web/src/layout/bag/bag.css b/apps/web/src/layout/bag/bag.css
+index ccfb55c..dd7f254 100644
+--- a/apps/web/src/layout/bag/bag.css
++++ b/apps/web/src/layout/bag/bag.css
+@@ -59,6 +59,7 @@
+ 
+ .bag-toolbar-stats {
+   display: flex;
++  flex-wrap: wrap;
+   align-items: baseline;
+   gap: var(--sp-2, 8px);
+   min-width: 0;
+@@ -76,6 +77,8 @@
+   color: var(--bad, #ff6b6b);
+ }
+ 
++.bag-storage { margin: 0; color: var(--muted); font: var(--fs-xs, .75rem)/1.4 var(--font-body); }
++
+ .bag-status {
+   margin: 0;
+   font-family: var(--font-body, 'DM Sans', sans-serif);
+diff --git a/apps/web/src/layout/classpicker/ClassPicker.css b/apps/web/src/layout/classpicker/ClassPicker.css
+index 017e8e0..a3a7666 100644
+--- a/apps/web/src/layout/classpicker/ClassPicker.css
++++ b/apps/web/src/layout/classpicker/ClassPicker.css
+@@ -526,6 +526,16 @@
+   color: var(--picker-gold);
+ }
+ 
++.class-picker__error {
++  flex: none;
++  margin: 0;
++  padding: 10px 12px;
++  color: var(--text);
++  background: var(--surface-2);
++  border: 2px solid var(--bad);
++  font: var(--fs-sm, .875rem)/1.5 var(--font-body);
++}
++
+ /* First-run desktop composition; the seven-class change dialog keeps its compact layout. */
+ @media (min-width: 1024px) {
+   .screen-class .class-picker {
+diff --git a/apps/web/src/layout/forge/ForgePanel.css b/apps/web/src/layout/forge/ForgePanel.css
+index ac3d628..9886ca1 100644
+--- a/apps/web/src/layout/forge/ForgePanel.css
++++ b/apps/web/src/layout/forge/ForgePanel.css
+@@ -991,3 +991,12 @@
+   .forge-col-centre { order: -1; padding: var(--sp-3, 12px); }
+   .forge-col-centre .forge-action-area { order: -1; margin-top: 0 !important; margin-bottom: var(--sp-3, 12px); }
+ }
++
++/* Match the approved framed side groups without shrinking labels or artwork. */
++@media (min-width: 961px) {
++  .forge-card { min-width: 0; padding: 12px; border: 2px solid var(--border); background: var(--surface); box-shadow: var(--pixel-shadow); }
++  .forge-card > .forge-section-title { margin-bottom: 8px; }
++  .forge-col-left .forge-options-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++  .forge-col-left .forge-slot-btn, .forge-col-left .forge-rarity-btn { padding: 6px 4px; border-width: 2px; }
++  .forge-col-left .forge-selector-group + .forge-selector-group { margin-top: 8px; }
++}
+diff --git a/apps/web/src/layout/home/home.css b/apps/web/src/layout/home/home.css
+index 433c99e..5ef49bf 100644
+--- a/apps/web/src/layout/home/home.css
++++ b/apps/web/src/layout/home/home.css
+@@ -312,7 +312,9 @@
+ /* Recent Loot Card */
+ .home-card--loot {
+   flex: 1;
+-  min-height: 120px;
++  min-height: 216px;
++  max-height: none;
++  overflow: hidden;
+   display: flex;
+   flex-direction: column;
+ }
+@@ -322,16 +324,22 @@
+   min-height: 0;
+   display: flex;
+   flex-direction: column;
++  overflow-y: auto;
++  overflow-x: hidden;
+ }
+ 
+ .home-loot-currencies {
+   display: flex;
++  flex-wrap: wrap;
+   gap: 8px;
+   justify-content: space-between;
+ }
+ 
+ .home-loot-curr-pill {
+-  flex: 1;
++  flex: 1 0 auto;
++  min-width: 0;
++  max-width: 100%;
++  box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+@@ -342,6 +350,8 @@
+ }
+ 
+ .home-loot-curr-val {
++  min-width: 0;
++  overflow-wrap: anywhere;
+   font-family: var(--font-num);
+   font-weight: bold;
+   color: var(--text, #fff3e0);
+@@ -353,12 +363,12 @@
+ }
+ 
+ .home-loot-items {
+-  flex: 1;
+-  min-height: 0;
++  flex: none;
++  min-height: auto;
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+-  overflow-y: auto;
++  overflow: visible;
+ }
+ 
+ .home-loot-empty {
+@@ -404,9 +414,8 @@
+ .home-loot-item__name {
+   color: var(--text, #fff3e0);
+   font-weight: bold;
+-  white-space: nowrap;
+-  overflow: hidden;
+-  text-overflow: ellipsis;
++  white-space: normal;
++  overflow-wrap: anywhere;
+ }
+ 
+ .home-loot-item__rarity {
+@@ -414,8 +423,8 @@
+ }
+ 
+ .rarity-common { color: var(--rarity-common, #b9b6c9); }
+-.rarity-rare { color: var(--rarity-rare, #4aa8ff); }
+-.rarity-epic { color: var(--rarity-epic, #bb74ff); }
++.rarity-rare { color: var(--rarity-rare-text, #66b7ff); }
++.rarity-epic { color: var(--rarity-epic-text, #d0a0ff); }
+ .rarity-legendary { color: var(--rarity-legendary, #ff9a3c); }
+ 
+ @media (prefers-reduced-motion: reduce) {
+@@ -423,3 +432,14 @@
+     transition: none;
+   }
+ }
++
++@media (min-width: 1024px) and (max-height: 800px) {
++  .home-card--hero, .home-card--goal { padding: 8px; gap: 4px; }
++  .home-card--hero .home-card__header, .home-card--goal .home-card__header { padding-bottom: 4px; }
++  .home-card--hero .home-card__body, .home-card--goal .home-card__body { gap: 4px; }
++  .home-card--hero .home-card__subtitle { margin-bottom: 0; }
++  .home-hero-stats-grid { gap: 4px 12px; }
++  .home-goal-action-btn { margin-top: 0; }
++}
++
++.home-card--loot.v2-recent-loot { max-height: none; overflow: hidden; }
+diff --git a/apps/web/src/layout/layout.css b/apps/web/src/layout/layout.css
+index c2174af..8a542f5 100644
+--- a/apps/web/src/layout/layout.css
++++ b/apps/web/src/layout/layout.css
+@@ -990,6 +990,23 @@
+   font-size: var(--fs-xs, 0.75rem);
+ }
+ 
++.v2-loading {
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  gap: var(--sp-3, 12px);
++  margin: var(--sp-4, 16px);
++  padding: var(--sp-5, 24px);
++  min-height: 80px;
++  box-sizing: border-box;
++  color: var(--muted);
++  background: var(--surface);
++  border: 2px solid var(--border);
++  font: var(--fs-sm, .875rem)/1.5 var(--font-body);
++}
++
++.v2-alert { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--text); border-color: var(--bad); }
++
+ .v2-fight-result {
+   padding: var(--sp-2, 8px);
+ }
+diff --git a/apps/web/src/layout/loot/loot.css b/apps/web/src/layout/loot/loot.css
+index a440609..4753213 100644
+--- a/apps/web/src/layout/loot/loot.css
++++ b/apps/web/src/layout/loot/loot.css
+@@ -180,7 +180,7 @@
+ .loot-backdrop {
+   position: fixed;
+   inset: 0;
+-  z-index: 100;
++  z-index: 1000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+@@ -258,7 +258,7 @@
+   text-align: center;
+ }
+ 
+-.chest-reveal-title {
++.chest-reveal-dialog .ui-modal-heading h2 {
+   margin: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: 1.4rem;
+@@ -323,7 +323,7 @@
+ }
+ 
+ /* Welcome back dialog specifics */
+-.welcome-back-title {
++.welcome-back-dialog .ui-modal-heading h2 {
+   margin: 0;
+   font-family: var(--font-display, 'Pixelify Sans', monospace);
+   font-size: 1.4rem;
+@@ -390,10 +390,10 @@
+   color: #8c4a00;
+ }
+ 
+-[data-theme='light'] .chest-reveal-title,
+-:root:not([data-theme='dark']) .chest-reveal-title,
+-[data-theme='light'] .welcome-back-title,
+-:root:not([data-theme='dark']) .welcome-back-title {
++[data-theme='light'] .chest-reveal-dialog .ui-modal-heading h2,
++:root:not([data-theme='dark']) .chest-reveal-dialog .ui-modal-heading h2,
++[data-theme='light'] .welcome-back-dialog .ui-modal-heading h2,
++:root:not([data-theme='dark']) .welcome-back-dialog .ui-modal-heading h2 {
+   color: #8c4a00;
+   text-shadow: none;
+ }
+@@ -452,3 +452,33 @@
+   background: #f4eee6;
+   border-color: #8c78a0;
+ }
++
++/* Shared dialog heading stays above the existing decorative chapter backdrop. */
++.chest-reveal-dialog .ui-modal-heading { position: relative; z-index: 1; }
++
++/* Long offline loot scrolls within its summary so focus never hides the title/rule/actions. */
++.ui-modal.welcome-back-dialog { overflow: hidden; }
++.welcome-back-dialog > .welcome-back-summary { min-height: 0; overflow-y: auto; overflow-anchor: none; flex: 1 1 auto; }
++.welcome-back-dialog > .ui-modal-heading,
++.welcome-back-dialog > .welcome-back-duration,
++.welcome-back-dialog > .welcome-back-rule,
++.welcome-back-dialog > .welcome-back-actions { flex: 0 0 auto; }
++
++/* The desktop game uses its night palette for shared loot dialogs in every OS theme. */
++:root .ui-modal.loot-dialog { width: min(520px, calc(100vw - 32px)); background: var(--surface); color: var(--text); border-color: var(--accent); color-scheme: dark; }
++:root .ui-modal.loot-dialog .ui-modal-heading h2,
++:root .ui-modal.loot-dialog .loot-summary-heading { color: var(--accent); text-shadow: none; }
++:root .ui-modal.loot-dialog .welcome-back-duration,
++:root .ui-modal.loot-dialog .loot-item-name { color: var(--text); }
++:root .ui-modal.loot-dialog .welcome-back-rule,
++:root .ui-modal.loot-dialog .loot-item-meta { color: var(--muted); }
++:root .ui-modal.loot-dialog .loot-line,
++:root .ui-modal.loot-dialog .loot-item-tile,
++:root .ui-modal.loot-dialog .chest-reveal-icon-wrap { background: var(--surface-2); color: var(--text); border-color: var(--border); }
++:root .ui-modal.loot-dialog .loot-item-rarity-common { color: var(--rarity-common); }
++:root .ui-modal.loot-dialog .loot-item-rarity-uncommon { color: var(--good); }
++:root .ui-modal.loot-dialog .loot-item-rarity-rare { color: var(--rarity-rare-text); }
++:root .ui-modal.loot-dialog .loot-item-rarity-epic { color: var(--rarity-epic-text); }
++:root .ui-modal.loot-dialog .loot-item-rarity-legendary { color: var(--rarity-legendary); }
++:root .ui-modal.loot-dialog .chest-reveal-scrim { background: rgb(18 11 25 / .88); }
++.ui-modal.loot-dialog .loot-item-name { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+diff --git a/apps/web/src/market/market.css b/apps/web/src/market/market.css
+index 019b02d..83abc0f 100644
+--- a/apps/web/src/market/market.css
++++ b/apps/web/src/market/market.css
+@@ -49,6 +49,13 @@
+ .market-status { flex:none; padding:var(--sp-2,8px); border:1px solid var(--border); background:var(--surface); }
+ .market-gate .market-card { align-self:stretch; }
+ .market-gate .ui-empty { flex:1; }
++.market-table { table-layout: fixed; }
++.market-table th, .market-table td { overflow-wrap: anywhere; }
++.market-detail-card { flex: 0 1 auto; min-height: 0; overflow: hidden; }
++.market-detail-hero, .market-detail-card > .forge-btn, .market-detail-card > .market-contract-links { flex-shrink: 0; }
++.market-detail-hero > div, .market-relics li, .market-relics li > span { min-width: 0; overflow-wrap: anywhere; }
++.market-relics li { max-width: 100%; box-sizing: border-box; }
++.market-facts-scroll { min-height: 0; overflow: auto; flex: 1 1 auto; }
+ @media(max-width:900px) { .market { height:auto; } .market-cols { grid-template-columns:1fr; } .market-list-card { min-height:280px; } .market-your-listings { min-height:100px; } }
+ @media(prefers-reduced-motion:reduce) { .market * { animation:none!important; transition:none!important; } }
+ 
+diff --git a/apps/web/src/onboarding/onboarding.css b/apps/web/src/onboarding/onboarding.css
+index b01890e..e979630 100644
+--- a/apps/web/src/onboarding/onboarding.css
++++ b/apps/web/src/onboarding/onboarding.css
+@@ -10,7 +10,7 @@
+ .help-backdrop {
+   position: fixed;
+   inset: 0;
+-  z-index: 20;
++  z-index: 1000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+@@ -116,27 +116,6 @@
+   line-height: 1.4;
+ }
+ 
+-.help-x {
+-  position: absolute;
+-  top: 8px;
+-  right: 8px;
+-  width: 32px;
+-  height: 32px;
+-  font-size: 1.3rem;
+-  line-height: 1;
+-  color: var(--muted);
+-  background: transparent;
+-  border: 0;
+-  border-radius: 4px;
+-  cursor: pointer;
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-}
+-.help-x:hover {
+-  color: var(--text);
+-}
+-
+ .help-start, .next-hint-btn, .help-btn { font: inherit; cursor: pointer; }
+ .help-start {
+   min-height: 40px;
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index 7538bfd..791df8a 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -22,7 +22,7 @@
+   min-width: var(--rail-w, 92px);
+   max-width: var(--rail-w, 92px);
+   height: 100%;
+-  background: var(--surface, #2a1f36);
++  background: var(--bg, #120b19);
+   border-right: 2px solid #000;
+   display: flex;
+   flex-direction: column;
+@@ -51,7 +51,7 @@
+   border: none;
+   padding: 4px;
+   cursor: pointer;
+-  border-radius: 4px;
++  border-radius: 0;
+ }
+ .rail-logo-btn:focus-visible {
+   outline: 2px solid var(--focus, #ffd75e);
+@@ -79,7 +79,7 @@
+   background: transparent;
+   color: var(--muted, #c3aed0);
+   border: 1px solid transparent;
+-  border-radius: 4px;
++  border-radius: 0;
+   cursor: pointer;
+   font-family: var(--font-display, monospace);
+   font-size: 11px;
+@@ -106,9 +106,9 @@
+ .rail-item.active,
+ .rail-item[aria-current='page'],
+ .rail-item[aria-selected='true'] {
+-  background: var(--surface-2, #3a2c4a);
++  background: var(--surface, #2a1f36);
+   color: var(--accent, #ffb86b);
+-  border: 1px solid var(--border, #72578d);
++  border: 2px solid var(--border, #72578d);
+   box-shadow: 0 2px 0 #000;
+ }
+ 
+@@ -142,22 +142,22 @@
+   align-items: center;
+   gap: 6px;
+   padding: 4px 8px;
+-  background: rgba(0, 0, 0, 0.4);
++  background: var(--good, #6be08a);
+   border: 1px solid var(--border, #72578d);
+   font-family: var(--font-num, monospace);
+   font-size: 11px;
+   font-weight: 700;
+-  color: var(--muted, #c3aed0);
++  color: var(--bg, #120b19);
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
+ }
+ 
+-.rail-fuji-dot {
++.rail-fuji-badge .rail-fuji-dot {
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   background: var(--good, #6be08a);
+-  box-shadow: 0 0 4px var(--good, #6be08a);
++  box-shadow: none;
+ }
+ 
+ /* Shell Body (HUD + Screen) */
+@@ -457,3 +457,9 @@
+   opacity: 0.001 !important;
+   pointer-events: none !important;
+ }
++
++/* Keep full large currency values in the HUD; wrap digits rather than hide or shrink them. */
++@media (min-width: 961px) {
++  .shell-hud .hud-chip-val { max-inline-size: 11ch; white-space: normal; overflow-wrap: anywhere; text-align: right; }
++  .shell-context .v2-hint { border-radius: 0; }
++}
