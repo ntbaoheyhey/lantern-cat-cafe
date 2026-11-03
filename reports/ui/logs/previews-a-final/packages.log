@@ -1,0 +1,68 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-ui-previews/packages/auth
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  00:33:02
+   Duration  923ms (import 74%, tests 21%, transform 3%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-ui-previews/packages/chain
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  00:33:03
+   Duration  668ms (import 69%, tests 21%, transform 8%, worker 1%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-ui-previews/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/packages/game-rules
+
+
+ Test Files  30 passed | 3 skipped (33)
+      Tests  431 passed | 2 expected fail | 11 skipped (444)
+   Start at  00:33:04
+   Duration  47.68s (tests 97%, import 3%, transform 1%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-ui-previews/supabase/tests
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/supabase/tests
+
+
+ Test Files  33 passed (33)
+      Tests  575 passed (575)
+   Start at  00:33:52
+   Duration  34.60s (tests 86%, import 13%, transform 1%)
+
+
+> @taskbar-hero/api-contract@0.0.0 test /Users/bao/taskbar-hero-ui-previews/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  00:34:30
+   Duration  541ms (transform 58%, import 37%, tests 4%, worker 1%)
+
+
+exit=0

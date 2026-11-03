@@ -18,6 +18,8 @@ p.add_argument('--specs', nargs='+', default=['e2e/ui/cxu3-forge.spec.ts', 'e2e/
 a = p.parse_args()
 root = Path.cwd()
 out = root / 'reports/ui/logs' / a.pass_name
+if (out / 'receipt.json').exists():
+    p.error('Pass name already has evidence; choose a fresh name to preserve earlier logs')
 out.mkdir(parents=True, exist_ok=True)
 env = dict(os.environ)
 env.update({name: str(a.port + i) for i, name in enumerate(['E2E_PORT_CLASSIC', 'E2E_PORT_V2', 'E2E_PORT_SERVER', 'E2E_PORT_API'])})
@@ -28,8 +30,9 @@ env['ORIGINAL_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['MOTION_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['PREVIEWS_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
 env['FIRSTPLAY_SCREENSHOTS'] = env['CXU3_SCREENSHOTS']
+env['NODE_OPTIONS'] = env.get('NODE_OPTIONS', '') + ' --import=/Users/bao/taskbar-hero-ui-ledger/reports/ui/ports-aux-loader.mjs'
 pnpm = ['npx', '-y', 'pnpm@10.28.0']
-receipt = {'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), 'pass': a.pass_name, 'pid': os.getpid(), 'cwd': str(root), 'ports': list(range(a.port, a.port + 4)), 'checks': []}
+receipt = {'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), 'pass': a.pass_name, 'pid': os.getpid(), 'cwd': str(root), 'ports': list(range(a.port, a.port + 5)), 'checks': []}
 
 def run(label, command, cwd=root, ports=False):
     if ports:
@@ -75,3 +78,5 @@ if not a.release:
     env['UI_AUDIT_PORT'] = str(a.port + 4)
     env['SCREENSHOTS'] = '1'
     run('strict-ui-audit', ['node', '--import', '/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs', 'tools/ui-audit.mjs', str(root / 'screenshots/ui' / (a.pass_name + '-audit')), 'bossReadyStrong', '--strict'], root / 'apps/web')
+    mode = 'all' if (root / 'apps/web/src/runes/FeatureSamples.tsx').exists() else 'motion'
+    run('axe-wcag-aa', ['node', '/Users/bao/taskbar-hero-ui-ledger/reports/ui/axe-review.mjs', str(root), 'dist-v2/e2e-' + str(a.port + 1), str(a.port + 4), str(out / 'axe'), mode])
