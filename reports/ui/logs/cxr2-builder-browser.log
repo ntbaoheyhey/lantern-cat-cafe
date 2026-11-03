@@ -1,0 +1,740 @@
+[WebServer] (node:6450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:6454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:6464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:6495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:6496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:6505) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:6507) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:6543) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:6549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:6558) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:6559) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 47 tests using 2 workers
+
+(node:6622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:6621) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1280
+[2/47] [classic] › e2e/a11y.spec.ts:32:5 › Accessibility at 390px › How to play traps Tab in both directions and Escape returns focus to Menu
+[3/47] [classic] › e2e/a11y.spec.ts:57:5 › Accessibility at 390px › every tab is reachable with Tab and activates with Enter and Space
+[4/47] [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 390px › buttons and links have accessible names on onboarding and every tab
+  1) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-1371c-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1280
+  2) [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 390px › buttons and links have accessible names on onboarding and every tab 
+
+    Error: expect(locator).toHaveAccessibleName(expected) failed
+
+    Locator: locator('button, a[href], [role="button"], [role="link"]').first()
+    Expected pattern: /\S/
+    Received string:  ""
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveAccessibleName" locator('button, a[href], [role="button"], [role="link"]').first() with timeout 5000ms
+      - waiting for locator('button, a[href], [role="button"], [role="link"]').first()
+        14 × locator resolved to <button type="button" class="next-hint-btn pixel-btn">Try the boss (5 fights left today) →</button>
+           - unexpected value ""
+
+
+      16 |   expect(await controls.count()).toBeGreaterThan(0);
+      17 |   for (const control of await controls.all()) {
+    > 18 |     if (await control.isVisible()) await expect(control).toHaveAccessibleName(/\S/);
+         |                                                          ^
+      19 |   }
+      20 | }
+      21 |
+        at expectNamedControls (/Users/bao/taskbar-hero-ui/apps/web/e2e/a11y.spec.ts:18:58)
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/a11y.spec.ts:83:7
+
+    Error Context: test-results/5310-5311/a11y-Accessibility-at-390p-a2c9d-on-onboarding-and-every-tab-classic/error-context.md
+
+
+(node:6696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/47] [classic] › e2e/a11y.spec.ts:94:5 › Accessibility at 390px › primary Forge text and background have at least 4.5:1 contrast
+[7/47] [classic] › e2e/a11y.spec.ts:121:5 › Accessibility at 390px › reduced motion leaves no running CSS animations on the Forge tab
+[8/47] [classic] › e2e/a11y.spec.ts:32:5 › Accessibility at 1280px › How to play traps Tab in both directions and Escape returns focus to Menu
+  3) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-7156a-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+[9/47] [classic] › e2e/a11y.spec.ts:57:5 › Accessibility at 1280px › every tab is reachable with Tab and activates with Enter and Space
+(node:6758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1280
+[11/47] [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 1280px › buttons and links have accessible names on onboarding and every tab
+  4) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-33755-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1280
+  5) [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 1280px › buttons and links have accessible names on onboarding and every tab 
+
+    Error: expect(locator).toHaveAccessibleName(expected) failed
+
+    Locator: locator('button, a[href], [role="button"], [role="link"]').first()
+    Expected pattern: /\S/
+    Received string:  ""
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveAccessibleName" locator('button, a[href], [role="button"], [role="link"]').first() with timeout 5000ms
+      - waiting for locator('button, a[href], [role="button"], [role="link"]').first()
+        14 × locator resolved to <button type="button" class="next-hint-btn pixel-btn">Try the boss (5 fights left today) →</button>
+           - unexpected value ""
+
+
+      16 |   expect(await controls.count()).toBeGreaterThan(0);
+      17 |   for (const control of await controls.all()) {
+    > 18 |     if (await control.isVisible()) await expect(control).toHaveAccessibleName(/\S/);
+         |                                                          ^
+      19 |   }
+      20 | }
+      21 |
+        at expectNamedControls (/Users/bao/taskbar-hero-ui/apps/web/e2e/a11y.spec.ts:18:58)
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/a11y.spec.ts:83:7
+
+    Error Context: test-results/5310-5311/a11y-Accessibility-at-1280-e6273-on-onboarding-and-every-tab-classic/error-context.md
+
+
+(node:6859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/47] [classic] › e2e/a11y.spec.ts:94:5 › Accessibility at 1280px › primary Forge text and background have at least 4.5:1 contrast
+[14/47] [classic] › e2e/a11y.spec.ts:121:5 › Accessibility at 1280px › reduced motion leaves no running CSS animations on the Forge tab
+(node:6865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 no-preference › first-visit Help uses shared keyboard and background isolation
+[16/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+[17/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 reduce › first-visit Help uses shared keyboard and background isolation
+  6) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-dd05e-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6891) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[18/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1280
+[19/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+[20/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 no-preference › first-visit Help uses shared keyboard and background isolation
+[21/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+[22/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 reduce › first-visit Help uses shared keyboard and background isolation
+[23/47] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+  7) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-48595-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6906) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1280
+[25/47] [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1280
+  8) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-5b0f8-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[26/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1280
+  9) [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Loading your listings…', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('Loading your listings…', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Loading your listings…', { exact: true })
+
+
+      20 |     await page.evaluate(() => window.__cxu3Market.scenario('loading'));
+      21 |     await expect(page.getByText('Loading listings…', { exact: true })).toBeVisible();
+    > 22 |     await expect(page.getByText('Loading your listings…', { exact: true })).toBeVisible();
+         |                                                                             ^
+      23 |     await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
+      24 |     await capture('loading');
+      25 |     await page.evaluate(() => window.__cxu3Market.scenario('error'));
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-market-states.spec.ts:22:77
+
+    Error Context: test-results/5310-5311/ui-cxr2-market-states-CXR2-cb8ef-l-width-bigint-details-1280-stage-layout/error-context.md
+
+
+(node:6944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[27/47] [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1600
+  10) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-914b1-iled-load-and-recovery-1280-v2-server/error-context.md
+
+
+(node:6960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[28/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1600
+  11) [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Loading your listings…', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('Loading your listings…', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Loading your listings…', { exact: true })
+
+
+      20 |     await page.evaluate(() => window.__cxu3Market.scenario('loading'));
+      21 |     await expect(page.getByText('Loading listings…', { exact: true })).toBeVisible();
+    > 22 |     await expect(page.getByText('Loading your listings…', { exact: true })).toBeVisible();
+         |                                                                             ^
+      23 |     await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
+      24 |     await capture('loading');
+      25 |     await page.evaluate(() => window.__cxu3Market.scenario('error'));
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-market-states.spec.ts:22:77
+
+    Error Context: test-results/5310-5311/ui-cxr2-market-states-CXR2-0553e-l-width-bigint-details-1600-stage-layout/error-context.md
+
+
+(node:6963) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[29/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 normal
+[30/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 zero-empty
+[31/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 maximum-long
+  12) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-24fa3-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[32/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1600
+  13) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 maximum-long 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('hud-gold')
+    Expected: "Fish 9,007,199,254,740,991"
+    Received: "Fish 9007199254.7M"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('hud-gold') with timeout 5000ms
+      - waiting for getByTestId('hud-gold')
+        14 × locator resolved to <div role="listitem" data-testid="hud-gold" aria-label="Fish 9007199254.7M" class="hud-chip hud-stack-item hud-gold">…</div>
+           - unexpected value "Fish 9007199254.7M"
+
+
+      46 |       await page.goto('/#home');
+      47 |       await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
+    > 48 |       if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
+         |                                                                                   ^
+      49 |       if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
+      50 |       if (scenario === 'offline') { await context.setOffline(true); await page.evaluate(() => dispatchEvent(new Event('offline'))); }
+      51 |       for (const screen of screens) {
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:48:83
+
+    Error Context: test-results/5310-5311/ui-cxr2-state-matrix-CXR2--510be-te-review-1280-maximum-long-stage-layout/error-context.md
+
+
+(node:7338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[33/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 offline
+  14) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-c758f-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7342) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[34/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1600
+[35/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 normal
+[36/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 zero-empty
+  15) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-748d9-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[37/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1600
+[38/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 maximum-long
+  16) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-bb92f-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[39/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1600
+  17) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 maximum-long 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('hud-gold')
+    Expected: "Fish 9,007,199,254,740,991"
+    Received: "Fish 9007199254.7M"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('hud-gold') with timeout 5000ms
+      - waiting for getByTestId('hud-gold')
+        14 × locator resolved to <div role="listitem" data-testid="hud-gold" aria-label="Fish 9007199254.7M" class="hud-chip hud-stack-item hud-gold">…</div>
+           - unexpected value "Fish 9007199254.7M"
+
+
+      46 |       await page.goto('/#home');
+      47 |       await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
+    > 48 |       if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
+         |                                                                                   ^
+      49 |       if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
+      50 |       if (scenario === 'offline') { await context.setOffline(true); await page.evaluate(() => dispatchEvent(new Event('offline'))); }
+      51 |       for (const screen of screens) {
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:48:83
+
+    Error Context: test-results/5310-5311/ui-cxr2-state-matrix-CXR2--d7190-te-review-1600-maximum-long-stage-layout/error-context.md
+
+
+(node:7426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[40/47] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 offline
+[41/47] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference
+  18) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-dd871-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7447) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[42/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1600
+[43/47] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce
+[44/47] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference
+  19) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-9329f-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+(node:7459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[45/47] [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1600
+[46/47] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce
+[47/47] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:111:1 › CXU3 preserves the compact Forge action without scrolling
+  20) [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('status', { name: 'Loading game' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('status', { name: 'Loading game' }) with timeout 5000ms
+      - waiting for getByRole('status', { name: 'Loading game' })
+
+
+      37 |     try {
+      38 |       await page.goto('/#' + screen);
+    > 39 |       await expect(page.getByRole('status', { name: 'Loading game' })).toBeVisible();
+         |                                                                        ^
+      40 |       await capture('loading');
+      41 |       const failed = page.waitForResponse(response => response.url().endsWith('/v2-state') && response.status() === 503);
+      42 |       release(); await failed;
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-load-states.spec.ts:39:72
+
+    Error Context: test-results/5310-5311/server-cxr2-load-states-CX-5bfbe-iled-load-and-recovery-1600-v2-server/error-context.md
+
+
+  20 failed
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1280 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1600 
+    [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1600 
+    [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 390px › buttons and links have accessible names on onboarding and every tab 
+    [classic] › e2e/a11y.spec.ts:80:5 › Accessibility at 1280px › buttons and links have accessible names on onboarding and every tab 
+    [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1280 
+    [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1600 
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1280 maximum-long 
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:29:5 › CXR2 screen/state review 1600 maximum-long 
+  27 passed (1.5m)
+exit=1
