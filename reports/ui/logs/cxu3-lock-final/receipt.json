@@ -1,0 +1,92 @@
+{
+  "head": "6cf567453e36cd4f152bad87b34e12e700d94a03",
+  "pass": "cxu3-lock-final",
+  "pid": 94355,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T06:00:35.172683+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock-final/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T06:00:43.636976+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock-final/lint.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T06:00:51.595707+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock-final/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/u1-tokens.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T06:00:59.119304+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock-final/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/u1-tokens.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T06:01:22.335591+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock-final/changed-1600x900.log"
+    }
+  ]
+}
