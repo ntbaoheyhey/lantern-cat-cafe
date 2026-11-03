@@ -39,6 +39,27 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
       await expect(page.getByTestId('cost-fluffTuft')).toContainText(`${save.state.stacks.fluffTuft} / 4`);
       await expect(page.getByTestId('cost-fish')).toContainText(`${save.state.stacks.fish} / 50`);
       await expect(page.getByRole('table', { name: 'Crafting chances' })).toContainText('Common gear100'); await geometry(page);
+      for (const quality of ['common', 'uncommon', 'rare', 'epic', 'legendary']) {
+        const option = page.getByTestId('rarity-' + quality); await option.click();
+        const measured = await option.evaluate(button => {
+          const text = getComputedStyle(button.querySelector('.forge-option-name')!).color;
+          const background = getComputedStyle(button).backgroundColor;
+          const luminance = (rgb: string) => rgb.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(value => value / 255)
+            .map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+            .reduce((sum, value, i) => sum + value * [.2126, .7152, .0722][i]!, 0);
+          const a = luminance(text), b = luminance(background);
+          return { text, background, ratio: (Math.max(a, b) + .05) / (Math.min(a, b) + .05) };
+        });
+        expect(measured.ratio, `${quality}: ${JSON.stringify(measured)}`).toBeGreaterThanOrEqual(4.5);
+        // Read the original SVG fill as well: improving text must not recolour existing art.
+        if (quality === 'rare' || quality === 'epic') {
+          const fill = await option.locator('svg rect').evaluateAll((rects, rarity) => {
+            const colored = rects.find(rect => rect.getAttribute('fill')?.includes(`--rarity-${rarity},`));
+            return colored ? getComputedStyle(colored).fill : null;
+          }, quality);
+          expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+        }
+      }
       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
       await expect(page.getByRole('table', { name: 'Crafting chances' })).toContainText('Legendary gear100');
       await page.getByTestId('rarity-common').click(); await page.getByTestId('slot-helmet').click();

@@ -31,7 +31,8 @@ const pairs: [string, string, number][] = [
 
 // Redesign semantic labels are text, including warnings and currency values.
 // Keep the existing AA threshold and cover every plum surface, not just page bg.
-for (const foreground of ['--text', '--muted', '--accent', '--good', '--bad', '--shard', '--key']) {
+for (const foreground of ['--text', '--muted', '--accent', '--good', '--bad', '--shard', '--key',
+  '--rarity-common', '--rarity-rare-text', '--rarity-epic-text', '--rarity-legendary']) {
   for (const background of ['--bg', '--surface', '--surface-2', '--surface-3']) {
     if (!pairs.some(([fg, bg]) => fg === foreground && bg === background)) {
       pairs.push([foreground, background, 4.5]);
