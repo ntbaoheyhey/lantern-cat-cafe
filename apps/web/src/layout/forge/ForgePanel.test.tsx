@@ -1,11 +1,13 @@
 // @vitest-environment jsdom
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ItemV2 } from '../../api/GameApiV2';
 import type { RelicVoucher, TodayRelic } from '@taskbar-hero/api-contract';
 import { ForgePanel, type ForgePanelProps } from './ForgePanel';
+import { v2 } from '@taskbar-hero/game-rules';
+import { mockV2Save } from '../../api/mockV2Fixtures';
 
 const RICH_STACKS = {
   yarn: 10_000,
@@ -593,4 +595,65 @@ it('disables starter salvage, shows the hint and keeps ordinary items salvageabl
   fireEvent.click(screen.getByTestId('salvage-btn'));
   fireEvent.click(screen.getByTestId('salvage-confirm-btn'));
   expect(props.onSalvage).toHaveBeenCalledExactlyOnceWith([ordinary.id]);
+});
+
+
+describe('CXU3 displayed recipe contract', () => {
+  afterEach(cleanup);
+  it.each(v2.RECIPES)('$id shows the actual costs and guaranteed rarity from the crafting rules', recipe => {
+    render(<ForgePanel {...createDefaultProps()} defaultRarity={recipe.rarity} />);
+    const chances = within(screen.getByRole('table', { name: 'Crafting chances' }));
+    expect(chances.getAllByRole('row')).toHaveLength(2);
+    expect(chances.getAllByRole('cell').map(cell => cell.textContent)).toEqual([
+      `${recipe.rarity[0]!.toUpperCase()}${recipe.rarity.slice(1)} gear`, '100',
+    ]);
+    const costs = { ...recipe.materials, fish: recipe.fish };
+    for (const [id, cost] of Object.entries(costs)) {
+      expect(screen.getByTestId(`cost-${id}`).textContent).toContain(`${RICH_STACKS[id as keyof typeof RICH_STACKS]} / ${cost}`);
+      expect(screen.getByTestId(`cost-${id}`).getAttribute('data-met')).toBe('true');
+    }
+    expect(within(screen.getByRole('list', { name: 'Required materials' })).getAllByRole('listitem')).toHaveLength(Object.keys(costs).length);
+    const state = mockV2Save('forgeRich', { nowMs: 0 }).state;
+    state.stacks = { ...RICH_STACKS };
+    for (const slot of ['weapon', 'helmet', 'armor', 'gloves', 'boots'] as const) {
+      for (const seed of [1, 17, 999]) {
+        const result = v2.applyCraft(state, recipe.id, slot, seed, 0);
+        expect(result.ok).toBe(true);
+        if (!result.ok) throw new Error(result.code);
+        expect(result.item.rarity).toBe(recipe.rarity);
+        for (const [id, cost] of Object.entries(costs)) {
+          const key = id as v2.StateStackIdV2;
+          expect(state.stacks[key]! - result.state.stacks[key]!).toBe(cost);
+        }
+      }
+    }
+  });
+});
+
+
+it('reads the daily Relic cost and limit from the same recipe as its guard', () => {
+  const { unmount } = render(<ForgePanel {...createDefaultProps()} defaultTab="relic" />);
+  expect(screen.getByTestId('relic-cost-yarn').textContent).toBe(`Yarn${v2.RELIC_RECIPE.materials.yarn} Yarn (You have ${RICH_STACKS.yarn})`);
+  expect(screen.getByTestId('relic-cost-pearl').textContent).toBe(`Moon Pearl${v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl (You have ${RICH_STACKS.moonPearl})`);
+  expect(screen.getByText(`Avalanche Fuji testnet · Limit: ${v2.RELIC_RECIPE.perDay} per day`)).toBeTruthy();
+  fireEvent.click(screen.getByTestId('relic-forge-btn'));
+  expect(screen.getByTestId('relic-confirm-box').textContent).toContain(`${v2.RELIC_RECIPE.materials.yarn} Yarn + ${v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl`);
+  unmount();
+});
+
+
+it('blocks crafting at exact bag capacity and enables it when one slot opens', () => {
+  const items = Array.from({ length: v2.V2_CONFIG.bag.limit }, (_, index) => ({ ...SAMPLE_ITEMS[0]!, id: `full-${index}` }));
+  const props = createDefaultProps({ items });
+  const { rerender, unmount } = render(<ForgePanel {...props} />);
+  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(true);
+  expect(screen.getByTestId('craft-block-reason').textContent).toMatch(/bag.*full/i);
+  fireEvent.click(screen.getByTestId('craft-btn'));
+  expect(screen.queryByTestId('craft-confirm-btn')).toBeNull();
+  expect(props.onCraft).not.toHaveBeenCalled();
+  rerender(<ForgePanel {...props} items={items.slice(1)} />);
+  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(false);
+  fireEvent.click(screen.getByTestId('craft-btn'));
+  expect(screen.getByTestId('craft-confirm-btn')).toBeTruthy();
+  unmount();
 });
