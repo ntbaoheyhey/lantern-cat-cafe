@@ -1,0 +1,146 @@
+[
+  {
+    "name": "install",
+    "command": "CI=true npx -y pnpm@10.28.0 install --frozen-lockfile --offline",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:16:28.821678+00:00",
+    "endedAt": "2026-11-03T03:16:37.917238+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:16:37.926549+00:00",
+    "endedAt": "2026-11-03T03:16:48.102273+00:00"
+  },
+  {
+    "name": "lint",
+    "command": "npx -y pnpm@10.28.0 lint",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:16:48.109587+00:00",
+    "endedAt": "2026-11-03T03:16:55.400167+00:00"
+  },
+  {
+    "name": "unit",
+    "command": "npx -y pnpm@10.28.0 test",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:16:55.407393+00:00",
+    "endedAt": "2026-11-03T03:17:53.005122+00:00"
+  },
+  {
+    "name": "deno-drift",
+    "command": "npx -y pnpm@10.28.0 gen:deno && git diff --exit-code -- supabase/functions",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:17:53.012775+00:00",
+    "endedAt": "2026-11-03T03:17:54.649159+00:00"
+  },
+  {
+    "name": "deno-imports",
+    "command": "node scripts/check-deno-imports.mjs",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:17:54.655918+00:00",
+    "endedAt": "2026-11-03T03:17:54.823754+00:00"
+  },
+  {
+    "name": "build",
+    "command": "VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 build",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:17:54.831419+00:00",
+    "endedAt": "2026-11-03T03:18:03.639738+00:00"
+  },
+  {
+    "name": "bundle",
+    "command": "node scripts/check-bundle.mjs",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:03.646911+00:00",
+    "endedAt": "2026-11-03T03:18:03.703738+00:00"
+  },
+  {
+    "name": "classic-build",
+    "command": "VITE_GAME_V2=0 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= npx -y pnpm@10.28.0 --filter @taskbar-hero/web build",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:03.710872+00:00",
+    "endedAt": "2026-11-03T03:18:09.282625+00:00"
+  },
+  {
+    "name": "links",
+    "command": "node scripts/check-links.mjs",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:09.290460+00:00",
+    "endedAt": "2026-11-03T03:18:09.368021+00:00"
+  },
+  {
+    "name": "art-unit",
+    "command": "python3 -B -m unittest discover -s tools/art -v",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:09.375243+00:00",
+    "endedAt": "2026-11-03T03:18:11.695472+00:00"
+  },
+  {
+    "name": "art-catalog",
+    "command": "python3 -B tools/art/catalog.py --check",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:11.702414+00:00",
+    "endedAt": "2026-11-03T03:18:18.046019+00:00"
+  },
+  {
+    "name": "browser-1280x720",
+    "command": "E2E_VIEWPORT=1280x720 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:18:18.053970+00:00",
+    "endedAt": "2026-11-03T03:21:18.991643+00:00"
+  },
+  {
+    "name": "browser-1600x900",
+    "command": "E2E_VIEWPORT=1600x900 VITE_FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc E2E_PORT_CLASSIC=4980 E2E_PORT_V2=4981 E2E_PORT_SERVER=4982 E2E_PORT_API=4983 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test --workers=2 --retries=0 --reporter=line",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:21:18.998959+00:00",
+    "endedAt": "2026-11-03T03:24:17.381947+00:00"
+  },
+  {
+    "name": "asset-before",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-orig2 2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/live/artifact-before.json",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:24:17.389928+00:00",
+    "endedAt": "2026-11-03T03:24:32.264707+00:00"
+  },
+  {
+    "name": "health",
+    "command": "FUJI_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc SITE_URL=https://taskbarhero-eight.vercel.app SUPABASE_URL=https://qoalewtxflagoprrxrgh.supabase.co node scripts/check-live.mjs",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:24:32.272744+00:00",
+    "endedAt": "2026-11-03T03:24:43.715913+00:00"
+  },
+  {
+    "name": "phased",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/live-phased-catalog.mjs /private/tmp/tbh-main-after-orig2 2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/live/artifact-before.json /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/live/phased",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:24:43.722973+00:00",
+    "endedAt": "2026-11-03T03:25:54.246080+00:00"
+  },
+  {
+    "name": "asset-after",
+    "command": "node /private/tmp/tbh-t001-ledger/reports/fresh-session-tools/verify-live-assets.mjs /private/tmp/tbh-main-after-orig2 2bc98cdef4d3fd76c0ee51932b58bbd419b6a600 /private/tmp/tbh-t001-ledger/reports/cards/ORIG2-ART-FRESH/live/artifact-after.json",
+    "head": "2bc98cdef4d3fd76c0ee51932b58bbd419b6a600",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:25:54.254650+00:00",
+    "endedAt": "2026-11-03T03:25:56.948926+00:00"
+  }
+]
