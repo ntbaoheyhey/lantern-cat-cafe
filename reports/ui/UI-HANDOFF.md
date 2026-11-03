@@ -1,0 +1,15 @@
+# UI session handoff — 2026-11-03
+- Current main: 6144d42; repository private; STOP preserved; no other worktrees modified.
+- CXU5 #249 merged 1b299c4; historical A94/B94; inherited HUD failures already fixed.
+- CXU4 #251 merged 2847e9a; historical A95/B95; Help/character tests present.
+- CXC2 #253 merged 39e74d8, subsequent range repair 666088c; verify latest live assets.
+- CXR1 #245 merged 6144d42; historical A94/B94; contrast repair already landed.
+- CXU3 active: ai/codex-ui-cxu3 in /Users/bao/taskbar-hero-ui; imported only owned files from 4da5104; old #252 remains untouched.
+- CXR2 old #257 partial; continue with owned files after CXU3.
+- U3: original economy 34 icons/5 frame aliases already merged as 2bc98cd; audit gaps next.
+- U4 pending; U5 gated on U1-U4; U6 screenshot/gallery pending.
+- Ledger: ai/codex-ui-ledger in /Users/bao/taskbar-hero-ui-ledger.
+- Dependencies installing locally, PID: 56940; no servers yet. Reserved test ports 5310–5313 (A), 5320–5323 (B).
+- Original-content flag: CONFIG.features.originalEconomy (false); VITE_GAME_V2 unchanged.
+- Next 3: reproduce CXU3 blocker; finish A/B gate; merge under shared lock and verify main/live.
+- Historical scores above are inherited evidence, not fresh grades from this session.
