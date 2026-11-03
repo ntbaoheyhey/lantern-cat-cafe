@@ -26,4 +26,4 @@ Guest progress is local browser data. Authenticated progress uses wallet sign-in
 
 Open Help → On-chain proof to read the public Fuji contracts (43113). Code/linkage/events are read-only evidence, not a transaction receipt or an independent audit. The [security overview](security-overview.md) links exact source tests and explains the distinction.
 
-PR #244 is still blocked by the missing complete deployed function backup and tested restore path. This session has not deployed the backend, changed flags/settings or completed fresh funded mint/list/buy proof. The walkthrough below is older media guidance; screen names/timings and transaction claims require the upcoming submission-pack refresh. Three starter classes are currently offered on first entry, with the broader class registry available through Hero.
+PR #244 is still blocked by the missing complete deployed function backup and tested restore path. This session has not deployed the backend, changed flags/settings or completed fresh funded mint/list/buy proof. UI presentation still awaits its release-readiness record and a fresh timed run; this document does not imply either is complete.
