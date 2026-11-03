@@ -7,6 +7,8 @@ vi.mock('@taskbar-hero/game-rules', async importOriginal => {
   return { ...original, CONFIG: { ...original.CONFIG, features: { ...original.CONFIG.features, get originalEconomy() { return enabled.value; } } } };
 });
 import FeatureSamples from './FeatureSamples';
+import { PET_DEFS } from '@taskbar-hero/game-rules/src/v2/meta/pets';
+import { COMPANION_SAMPLES } from '../pets/companionSamples';
 afterEach(() => { cleanup(); enabled.value = false; vi.restoreAllMocks(); });
 it('renders nothing under the existing default-off flag', () => {
   const { container } = render(<FeatureSamples />);
@@ -30,4 +32,9 @@ it('labels samples and unavailable ownership without touching storage or making 
   fireEvent.change(screen.getByLabelText('Sample rank'), { target: { value: '3' } });
   expect(screen.getByText('11% of maximum HP')).toBeTruthy();
   expect(store).not.toHaveBeenCalled(); expect(read).not.toHaveBeenCalled(); expect(network).not.toHaveBeenCalled();
+});
+
+it('keeps the display snapshot aligned while excluding all progression and equip fields', () => {
+  expect(COMPANION_SAMPLES).toEqual(PET_DEFS.map(({ id, name, flavour }) => ({ id, name, flavour })));
+  for (const row of COMPANION_SAMPLES) expect(Object.keys(row).sort()).toEqual(['flavour', 'id', 'name']);
 });

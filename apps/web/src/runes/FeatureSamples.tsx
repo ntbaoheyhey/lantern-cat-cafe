@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { CONFIG } from '@taskbar-hero/game-rules';
-import { PET_DEFS } from '@taskbar-hero/game-rules/src/v2/meta/pets';
+import { COMPANION_SAMPLES } from '../pets/companionSamples';
 import { ART2_QUALITIES, ART2_SKILLS, Art2Frame, Art2Image } from '../art/Art2';
 import { OriginalArt } from '../original-preview/OriginalArt';
 import { Tabs } from '../ui';
@@ -37,7 +37,7 @@ function RuneSamples() {
 }
 
 function CompanionSamples() {
-  return <SampleList label="Companion" entries={PET_DEFS.map(pet => ({ id: pet.id, name: pet.name,
+  return <SampleList label="Companion" entries={COMPANION_SAMPLES.map(pet => ({ id: pet.id, name: pet.name,
     art: <Art2Image id="pet-slot-common" scale={2} />,
     detail: <><p>{pet.flavour}</p><p>This is a companion concept with a sample portrait placeholder.</p>
       <dl><div><dt>Ownership</dt><dd>Unavailable</dd></div><div><dt>Level and progress</dt><dd>Unavailable</dd></div><div><dt>Equipping</dt><dd>Unavailable</dd></div></dl>
