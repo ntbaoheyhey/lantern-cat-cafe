@@ -1,0 +1,19 @@
+{
+  "root": "/private/tmp/tbh-cxr1-active",
+  "out": "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r2",
+  "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+  "commands": [
+    [
+      "typecheck",
+      "npx -y pnpm@10.28.0 typecheck"
+    ],
+    [
+      "focused",
+      "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/theme.contrast.test.ts src/layout/metrics.test.ts src/layout/home/Home.test.tsx src/layout/bag/BagPanel.test.tsx src/layout/bag/BagPanel.redesign.test.tsx src/shell/redesign-contract.test.tsx"
+    ],
+    [
+      "browser",
+      "SCREENSHOTS=1 SCREENSHOT_DIR=/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/builder-r2/screenshots E2E_PORT_CLASSIC=5020 E2E_PORT_V2=5021 E2E_PORT_SERVER=5022 E2E_PORT_API=5023 npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec playwright test e2e/ui/merged-redesign.spec.ts e2e/ui/redesign-shell.spec.ts e2e/ui/baseline-hud.spec.ts --workers=2 --retries=0 --reporter=line"
+    ]
+  ]
+}

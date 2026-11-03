@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:25:29.724911+07:00. ACTIVE one chat/agent; PR256 DONE, main/live accepted; CXR1 refreshed.
+Updated: 2026-11-03T10:31:58.891916+07:00. ACTIVE one chat/agent; CXR1 builder fixes in progress.
 Read FIRST after compaction. No subagents/workers/helper chats/orchestrator; no duplicate tests.
 STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP intact; never run orchestrator.py/remove STOP.
 Private repo; author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; commits end [skip ci].
@@ -60,5 +60,7 @@ repo publicity, contest submission, .github changes, Actions or direct-main push
 Do not kill unrelated18457/OS listeners; inspect owned cwd. No new chats/helpers/schedulers beyond the requested heartbeat.
 Gates: exact-head fresh A/B>=92, floors/zero auto-fails; max3 rounds/item; serial merges then main/live.
 After Nov25 no new server behavior ON; stop Nov28. P0 Nov12/P1 Nov18/P2 Nov21 targets.
-CXR1 /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1: main merged clean; no tests started.
+CXR1 /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1: main merged d71899a; dirty builder.
+BuilderR1 typecheck/86 focused PASS,1 stale landing-claim assertion FAIL; documented truthful correction.
+BuilderR2 PID24891 on5020–5023: type/focused/browser; no formal A/B grade yet.
 Next3: correct CXR1 contrast/truth/layout gaps; build focused checks; exact-head A/B gate.

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx -y pnpm@10.28.0 typecheck",
+    "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+    "exit": 0,
+    "startedAt": "2026-11-03T03:29:45.277357+00:00",
+    "endedAt": "2026-11-03T03:29:54.160711+00:00"
+  },
+  {
+    "name": "focused",
+    "command": "npx -y pnpm@10.28.0 --filter @taskbar-hero/web exec vitest run src/theme.contrast.test.ts src/layout/metrics.test.ts src/layout/home/Home.test.tsx src/layout/bag/BagPanel.test.tsx src/layout/bag/BagPanel.redesign.test.tsx src/shell/redesign-contract.test.tsx",
+    "head": "d71899ad1420ed7742be00131f767f9e08d6b9b1",
+    "exit": 1,
+    "startedAt": "2026-11-03T03:29:54.167711+00:00",
+    "endedAt": "2026-11-03T03:29:58.211099+00:00"
+  }
+]
