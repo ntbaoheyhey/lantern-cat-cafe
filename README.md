@@ -33,7 +33,7 @@ These are unchanged guest/read-only captures of 6144d42 on 3 November 2026, befo
 
 ![Public Fuji read-only proof at 6144d42](reports/submission/screenshots/fuji-read-only-1280x720.png)
 
-Other baseline captures in the manifest show a locked Map gate and an opt-in local catalog. They are not victory, wallet ownership or transaction evidence. Existing older local/sample screenshots remain in docs/screenshots and are not relabelled as live.
+Other baseline captures in the manifest show a locked Map gate and the guest Hero screen. They are not victory, wallet ownership or transaction evidence. Existing older local/sample screenshots remain in docs/screenshots and are not relabelled as live.
 
 ## On-chain
 

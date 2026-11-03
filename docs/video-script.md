@@ -19,3 +19,5 @@ Total planned duration: 145 seconds. No claim that a completed capture currently
 If the boss/craft is blocked or a transaction is unavailable, show that state and retain the limitation; do not splice a local fixture into footage labelled live. The separate 3-minute QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→On-chain proof→Market at both 1280×720 and 1600×900. A failed demo step stops further merges until handled under the shared protocol. The funded mint/list/buy run needs separate actual Fuji receipts; no hashes are invented here.
 
 Baseline media: [manifest](../reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Refresh it after UI readiness. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
+
+The optional catalog shot also needs UI confirmation that the icons have painted; one earlier baseline capture was excluded for this reason. No UI or art source was changed by SYSTEM.

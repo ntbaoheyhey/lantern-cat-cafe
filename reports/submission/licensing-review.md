@@ -8,6 +8,6 @@ Historical art: docs/art/PROVENANCE.md explicitly says Git proves byte history, 
 
 Fonts: the existing inventory declares DM Sans, JetBrains Mono and Pixelify Sans under SIL OFL1.1 through Google Fonts. No new font files or sources are introduced here. This packet records that declaration; it is not a legal audit of every dependency or historical asset.
 
-Screenshots: seven files are unchanged copies of the verified 6144d42 live guest/read-only capture. The media manifest records each original path, viewport, source commit and SHA-256. A locked Map gate, local catalog and public-chain read remain labelled as such; no screenshot claims victory, token ownership or a new transaction.
+Screenshots: seven files are unchanged copies of the verified 6144d42 live guest/read-only capture. The media manifest records each original path, viewport, source commit and SHA-256. A locked Map gate, guest Hero and public-chain read remain labelled as such; no screenshot claims victory, token ownership or a new transaction.
 
 Owner review before any future authorized external distribution: confirm any missing historical rights evidence and applicable organizer rules. Repository privacy and the no-submission instruction remain in force. Unresolved historical provenance is disclosed and blocks no draft preparation.

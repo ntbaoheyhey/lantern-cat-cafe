@@ -58,13 +58,17 @@
       "scope": "Live guest/read-only capture; no wallet transaction or victory claimed"
     },
     {
-      "path": "reports/submission/screenshots/catalog-local-preview-1280x720.png",
-      "sha256": "4f354b626522a47f2015e47dd070465921dc3126c8fc390a4f3c5b8d7007ecd5",
-      "source": "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/live/phased/1280x720/catalog-items.png",
+      "path": "reports/submission/screenshots/hero-1280x720.png",
+      "sha256": "ee6d7640d32c3e651f37aa61175d681b6de19254ffd98e629c8d1e66bcd5fa0f",
+      "source": "/private/tmp/tbh-t001-ledger/reports/cards/CXR1-FRESH/live/phased/1280x720/hero.png",
       "sourceHead": "6144d42ce12d9c61dc4f863733356de99f605eb9",
       "viewport": "1280x720",
-      "phase": "catalog-items",
+      "phase": "hero",
       "scope": "Live guest/read-only capture; no wallet transaction or victory claimed"
     }
-  ]
+  ],
+  "excludedCapture": {
+    "phase": "catalog-items",
+    "reason": "Baseline capture appears to have blank icon areas; UI verification/capture-readiness needed (SYS-UI-006). Original evidence retained in ledger."
+  }
 }
