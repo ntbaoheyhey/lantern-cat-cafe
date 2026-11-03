@@ -59,6 +59,7 @@
 
 .bag-toolbar-stats {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: var(--sp-2, 8px);
   min-width: 0;
@@ -75,6 +76,8 @@
 .bag-count.warn {
   color: var(--bad, #ff6b6b);
 }
+
+.bag-storage { margin: 0; color: var(--muted); font: var(--fs-xs, .75rem)/1.4 var(--font-body); }
 
 .bag-status {
   margin: 0;

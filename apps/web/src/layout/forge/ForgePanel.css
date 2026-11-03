@@ -991,3 +991,12 @@
   .forge-col-centre { order: -1; padding: var(--sp-3, 12px); }
   .forge-col-centre .forge-action-area { order: -1; margin-top: 0 !important; margin-bottom: var(--sp-3, 12px); }
 }
+
+/* Match the approved framed side groups without shrinking labels or artwork. */
+@media (min-width: 961px) {
+  .forge-card { min-width: 0; padding: 12px; border: 2px solid var(--border); background: var(--surface); box-shadow: var(--pixel-shadow); }
+  .forge-card > .forge-section-title { margin-bottom: 8px; }
+  .forge-col-left .forge-options-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .forge-col-left .forge-slot-btn, .forge-col-left .forge-rarity-btn { padding: 6px 4px; border-width: 2px; }
+  .forge-col-left .forge-selector-group + .forge-selector-group { margin-top: 8px; }
+}

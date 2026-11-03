@@ -88,9 +88,10 @@ export function BagPanel({
 
   const slotRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-  // Equipped items do not use bag space.
+  // The grid contains stored items; the authoritative capacity includes worn gear too.
   const bag = state.inventory.filter((i) => !i.equipped);
-  const warn = state.bagLimit > 0 && bag.length / state.bagLimit >= BAG_WARN_SHARE;
+  const ownedCount = state.inventory.length;
+  const warn = state.bagLimit > 0 && ownedCount / state.bagLimit >= BAG_WARN_SHARE;
 
   // Filter and sort items for the grid
   const filteredItems = sortBag(
@@ -105,7 +106,7 @@ export function BagPanel({
 
   // Visible empty slots up to capacity (bagLimit or fallback to 40)
   const capacity = state.bagLimit > 0 ? state.bagLimit : 40;
-  const emptySlotsCount = Math.max(0, capacity - filteredItems.length);
+  const emptySlotsCount = Math.max(0, capacity - ownedCount);
 
   const handleSlotKeyDown = (e: React.KeyboardEvent, index: number) => {
     const count = filteredItems.length;
@@ -158,10 +159,11 @@ export function BagPanel({
           <div className="bag-toolbar">
             <div className="bag-toolbar-stats">
               <p className={`bag-count${warn ? ' warn' : ''}`} data-testid="bag-count">
-                Bag {bag.length} / {state.bagLimit}
+                Bag {ownedCount} / {state.bagLimit}
               </p>
+              <p className="bag-storage" data-testid="bag-storage">{bag.length} stored · {ownedCount - bag.length} equipped</p>
               <p role="status" className="bag-status">
-                {warn ? 'Bag almost full' : ''}
+                {state.bagLimit > 0 && ownedCount >= state.bagLimit ? 'Bag full' : warn ? 'Bag almost full' : ''}
               </p>
             </div>
 

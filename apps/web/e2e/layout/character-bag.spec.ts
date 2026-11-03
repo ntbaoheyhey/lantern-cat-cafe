@@ -73,7 +73,8 @@ for (const vp of VIEWPORTS) {
 
     await openInventory(page, vp.width);
     const bag = page.getByRole('tabpanel', { name: 'Bag', exact: true });
-    await expect(bag.getByTestId('bag-count')).toHaveText('Bag 15 / 200');
+    await expect(bag.getByTestId('bag-count')).toHaveText('Bag 22 / 200');
+    await expect(bag.getByTestId('bag-storage')).toHaveText('15 stored · 7 equipped');
     await expect(bag.getByRole('list', { name: 'Bag items' })).toBeVisible();
     await noHorizontalScroll(page);
   });

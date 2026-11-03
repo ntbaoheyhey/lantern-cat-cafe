@@ -19,7 +19,7 @@ export function RecentLootCard({ state, gains }: RecentLootCardProps) {
         <h2 className="home-card__title">Recent loot</h2>
       </div>
 
-      <div className="home-card__body">
+      <div className="home-card__body" role="region" aria-label="Recent loot details" tabIndex={0}>
         {gains ? (
           <LootSummary loot={gains} heading="Recent finds" headingLevel={3} />
         ) : (

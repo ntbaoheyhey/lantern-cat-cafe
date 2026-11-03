@@ -128,15 +128,16 @@ describe('BagPanel: Equip best', () => {
 describe('BagPanel: counter, filters and sorting', () => {
   it('turns the counter into a warning at 90 percent of the bag limit', () => {
     const base = sampleStateV2();
-    const equipped = base.inventory.filter((i) => i.equipped);
-    const nine = bagItems(base).slice(0, 9);
-    const { unmount } = renderBag({ ...base, bagLimit: 10, inventory: [...equipped, ...nine] });
+    const equipped = base.inventory.filter((i) => i.equipped).slice(0, 1);
+    const storedEight = bagItems(base).slice(0, 8);
+    const { unmount } = renderBag({ ...base, bagLimit: 10, inventory: [...equipped, ...storedEight] });
     expect(screen.getByTestId('bag-count').className).toContain('warn');
     expect(screen.getByTestId('bag-count').textContent).toBe('Bag 9 / 10');
+    expect(screen.getByTestId('bag-storage').textContent).toBe('8 stored · 1 equipped');
     expect(screen.getByRole('status').textContent).toBe('Bag almost full');
     unmount();
 
-    renderBag({ ...base, bagLimit: 10, inventory: [...equipped, ...bagItems(base).slice(0, 8)] });
+    renderBag({ ...base, bagLimit: 10, inventory: [...equipped, ...bagItems(base).slice(0, 7)] });
     expect(screen.getByTestId('bag-count').className).not.toContain('warn');
     expect(screen.getByRole('status').textContent).toBe('');
   });
@@ -177,7 +178,8 @@ describe('BagPanel: counter, filters and sorting', () => {
   it('T2: Filters change the grid and keep the count', () => {
     renderBag();
     const initialCount = screen.getByTestId('bag-count').textContent;
-    expect(initialCount).toBe('Bag 15 / 200');
+    expect(initialCount).toBe('Bag 22 / 200');
+    expect(screen.getByTestId('bag-storage').textContent).toBe('15 stored · 7 equipped');
 
     // Weapons filter
     fireEvent.click(screen.getByRole('button', { name: 'Weapons' }));
@@ -341,10 +343,11 @@ describe('Mission AGR2-FIX: Empty slots and right detail hint', () => {
     expect(screen.getByTestId('bag-empty')).toBeTruthy();
     expect(screen.getByText('Your bag is empty.')).toBeTruthy();
 
-    // 8-column slot grid still renders empty slots up to capacity (40)
+    // Seven worn items consume capacity even though they are outside the stored-item grid.
     const list = screen.getByRole('list', { name: 'Bag items' });
     const emptySlots = list.querySelectorAll('.bag-slot.empty');
-    expect(emptySlots.length).toBe(40);
+    expect(emptySlots.length).toBe(33);
+    expect(screen.getByTestId('bag-count').textContent).toBe('Bag 7 / 40');
 
     // Right detail panel shows short hint card and compare skeleton
     const detail = screen.getByRole('region', { name: 'Item detail' });

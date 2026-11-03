@@ -51,6 +51,11 @@ async function fit(page: Page) {
   const bad = await page.locator('.fuji-proof a').evaluateAll(nodes => nodes.filter(node => { const box = node.getBoundingClientRect(); return box.left < 0 || box.right > innerWidth + 1; }).map(node => node.textContent));
   expect(bad).toEqual([]);
 }
+async function captureReview(page: Page, state: string, width: number) {
+  if (!process.env.CXR2_SCREENSHOTS) return;
+  fs.mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
+  await page.screenshot({ path: path.join(process.env.CXR2_SCREENSHOTS, `proof-fixture-${state}-${width}.png`) });
+}
 for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
   test(`CXC2 lazy guest proof, bounded read RPC and cache ${size.width}`, async ({ page }) => {
     await page.setViewportSize(size); await page.clock.install(); const fx = await fixture(page); const errors: string[] = [];
@@ -62,6 +67,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     await expect(page.getByTestId('proof-snapshot')).toContainText('1000'); await expect(page.getByTestId('proof-linkage')).toContainText('Matches');
     await expect(page.getByRole('link', { name: `View transaction ${tx.slice(0, 8)}…${tx.slice(-6)}` })).toHaveAttribute('href', `https://testnet.snowtrace.io/tx/${tx}`);
     await expect(page.getByText('Not exposed by this NFT contract')).toBeVisible(); await fit(page);
+    await captureReview(page, 'loaded', size.width);
     const logRead = fx.requests.find(request => request.method === 'eth_getLogs')!;
     expect(logRead.params).toEqual([{ address: [contracts.RelicNFT, contracts.RelicMarket], fromBlock: '0x385', toBlock: '0x3e8', topics: [] }]);
     for (let i = 0; i < 5; i++) await page.getByRole('button', { name: 'Refresh proof' }).click();
@@ -71,6 +77,7 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     expect(fx.requests.filter(request => request.method === 'eth_chainId')).toHaveLength(1);
     fx.mode('partial'); await page.getByRole('tab', { name: 'Help', exact: true }).click();
     await expect(page.getByText(/Recent events unavailable/)).toBeVisible(); await expect(page.getByTestId('proof-code-RelicNFT')).toContainText('5 bytes'); await fit(page);
+    await captureReview(page, 'partial-error', size.width);
     expect(fx.requests.filter(request => request.method === 'eth_chainId')).toHaveLength(2);
     expect([...new Set(fx.requests.map(request => request.method))].sort()).toEqual(['eth_blockNumber', 'eth_call', 'eth_chainId', 'eth_getBlockByNumber', 'eth_getCode', 'eth_getLogs'].sort()); expect(errors).toEqual([]);
   });
@@ -79,5 +86,6 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
     await page.goto('/'); await page.getByRole('tab', { name: 'Help', exact: true }).click(); await page.getByRole('tab', { name: 'On-chain proof' }).click();
     await expect(page.getByRole('alert')).toContainText('unavailable'); await expect(page.getByTestId('proof-snapshot')).toHaveCount(0);
     expect(fx.requests.map(request => request.method)).toEqual(['eth_chainId']); await fit(page);
+    await captureReview(page, 'unavailable', size.width);
   });
 }

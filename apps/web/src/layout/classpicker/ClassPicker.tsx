@@ -13,6 +13,8 @@ export interface ClassPickerProps {
   locked?: boolean;
   /** True while class switch action is in flight. */
   busy?: boolean;
+  /** A failed selection remains visible beside the unchanged choice. */
+  error?: string | null;
   /** When true, clicking start immediately triggers onChoose without asking for confirmation. */
   directStart?: boolean;
   /** Callback fired with the chosen classId after confirmation. */
@@ -78,6 +80,7 @@ export function ClassPicker({
   selected = null,
   locked = false,
   busy = false,
+  error = null,
   directStart = false,
   onChoose,
 }: ClassPickerProps) {
@@ -166,7 +169,9 @@ export function ClassPicker({
         </p>
       </div>
 
-      {locked && (
+      {error && <p role="alert" id={`${radiogroupId}-error`} className="class-picker__error">{error}</p>}
+
+      {locked && !busy && (
         <div
           className="class-picker__locked-notice"
           role="status"
@@ -186,6 +191,7 @@ export function ClassPicker({
         id={radiogroupId}
         role="radiogroup"
         aria-label="Cat classes"
+        aria-describedby={error ? `${radiogroupId}-error` : undefined}
         aria-disabled={locked}
         className="class-picker__cards"
       >

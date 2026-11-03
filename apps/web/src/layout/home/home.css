@@ -312,7 +312,9 @@
 /* Recent Loot Card */
 .home-card--loot {
   flex: 1;
-  min-height: 120px;
+  min-height: 216px;
+  max-height: none;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -322,16 +324,22 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .home-loot-currencies {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: space-between;
 }
 
 .home-loot-curr-pill {
-  flex: 1;
+  flex: 1 0 auto;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -342,6 +350,8 @@
 }
 
 .home-loot-curr-val {
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-family: var(--font-num);
   font-weight: bold;
   color: var(--text, #fff3e0);
@@ -353,12 +363,12 @@
 }
 
 .home-loot-items {
-  flex: 1;
-  min-height: 0;
+  flex: none;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .home-loot-empty {
@@ -404,9 +414,8 @@
 .home-loot-item__name {
   color: var(--text, #fff3e0);
   font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .home-loot-item__rarity {
@@ -414,8 +423,8 @@
 }
 
 .rarity-common { color: var(--rarity-common, #b9b6c9); }
-.rarity-rare { color: var(--rarity-rare, #4aa8ff); }
-.rarity-epic { color: var(--rarity-epic, #bb74ff); }
+.rarity-rare { color: var(--rarity-rare-text, #66b7ff); }
+.rarity-epic { color: var(--rarity-epic-text, #d0a0ff); }
 .rarity-legendary { color: var(--rarity-legendary, #ff9a3c); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -423,3 +432,14 @@
     transition: none;
   }
 }
+
+@media (min-width: 1024px) and (max-height: 800px) {
+  .home-card--hero, .home-card--goal { padding: 8px; gap: 4px; }
+  .home-card--hero .home-card__header, .home-card--goal .home-card__header { padding-bottom: 4px; }
+  .home-card--hero .home-card__body, .home-card--goal .home-card__body { gap: 4px; }
+  .home-card--hero .home-card__subtitle { margin-bottom: 0; }
+  .home-hero-stats-grid { gap: 4px 12px; }
+  .home-goal-action-btn { margin-top: 0; }
+}
+
+.home-card--loot.v2-recent-loot { max-height: none; overflow: hidden; }

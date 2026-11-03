@@ -945,7 +945,7 @@ export function ForgePanel({
                     </tbody>
                   </table>
                   <p className="muted" style={{ fontSize: '11px', margin: '8px 0 0' }}>
-                    Odds read directly from game-rules configuration.
+                    Each daily Relic uses these same chances.
                   </p>
                 </div>
               </div>

@@ -95,6 +95,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const [mintedNonce, setMintedNonce] = useState<string | null>(null);
   const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
   const [savingMint, setSavingMint] = useState(false);
+  const [classChoiceError, setClassChoiceError] = useState<string | null>(null);
   const liveSnapshot = useGameSnapshotV2(loop);
   const liveSyncStatus = useSyncStatusV2(loop);
   const [presentation, presentBoss] = useReducer(bossPresentation, INITIAL_BOSS_PRESENTATION);
@@ -176,6 +177,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     };
     const off = loop.onEvent((event) => {
       setRecentEvents((prev) => [...prev.slice(-19), event]);
+      if ((event.type === 'error' || (event.type === 'refused' && event.code !== 'busy')) && event.action === 'chooseClass') {
+        setClassChoiceError('Class selection did not go through. Please try again.');
+      }
       if (event.type === 'claimed') {
         setGains(event.gains);
         if (awayRef.current >= 60) {
@@ -337,6 +341,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
 
   const showRail = !['landing', 'class'].includes(screen);
   const showChrome = screen !== 'landing' && screen !== 'class';
+  const loadingNotice = snapshot.loadFailed ? null : (
+    <p role="status" aria-label="Loading game" className="v2-loading"><PixelIcon name="paw" size={3} />Loading your cat…</p>
+  );
   const stageW = computeStageWidth(width, height);
   const stageH = stageHeight(width, height);
   const zoom = stageZoom(stageW, stageH);
@@ -417,9 +424,10 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
+      {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
         <p role="alert" className="v2-alert">
-          Could not load your cat. <button onClick={() => { void loop.retry(); }}>Retry</button>
+          Could not load your cat. <button className="pixel-btn--secondary" onClick={() => { void loop.retry(); }}>Retry</button>
         </p>
       )}
 
@@ -474,8 +482,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         >
           {screen === 'landing' && (
             <LandingHero
-              onStart={() => handleSelectScreen('class')}
-              onStartGuest={() => handleSelectScreen('class')}
+              onStart={() => handleSelectScreen(classId ? 'home' : 'class')}
+              onStartGuest={() => handleSelectScreen(classId ? 'home' : 'class')}
               onHelp={() => handleSelectScreen('help')}
             />
           )}
@@ -492,11 +500,12 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           {state && !classId ? (
             <ClassPicker
               classes={STARTER_CLASSES}
+              error={classChoiceError}
               locked={snapshot.busy !== null}
               busy={snapshot.busy === 'chooseClass'}
               onChoose={(id) => {
+                setClassChoiceError(null);
                 void loop.chooseClass(id);
-                handleSelectScreen('home');
               }}
             />
           ) : null}
@@ -543,7 +552,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                   <EventLog state={state} events={recentEvents} />
                 </div>
 
-                <div className="home-col home-col--right">
+                <div className="home-col home-col--right" role="region" aria-label="Home details" tabIndex={0}>
                   <HeroCard state={state} />
                   <NextGoalCard state={state} onNavigate={handleSelectScreen} />
                   <RecentLootCard state={state} gains={gains && !welcome ? gains : null} />
@@ -552,7 +561,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
             )
           ) : (
             <div role="region" aria-label="Game stage" className="v2-stage">
-              <p>Loading your cat…</p>
+              {loadingNotice}
             </div>
           )}
         </div>
@@ -571,9 +580,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
               {state ? (
                 <HeroScreen state={state} onSelectSlot={() => handleSelectScreen('bag')} classBusy={actionBusy !== null}
                   onChooseClass={async (id) => { await loop.chooseClass(id); return loop.getSnapshot().state?.cat.classId === id; }} />
-              ) : (
-                <p>Loading your cat…</p>
-              )}
+              ) : loadingNotice}
             </div>
           </div>
         </div>
@@ -603,9 +610,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                   onList={(_item) => handleSelectScreen('market')}
                   onNavigate={handleSelectScreen}
                 />
-              ) : (
-                <p>Loading your cat…</p>
-              )}
+              ) : loadingNotice}
             </div>
           </div>
         </div>
@@ -633,9 +638,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                   }}
                   onSelectChapter={setChapter}
                 />
-              ) : (
-                <p>Loading your cat…</p>
-              )}
+              ) : loadingNotice}
             </div>
           </div>
         </div>
@@ -705,9 +708,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                 ) : (
                   <p>Choose a class to use the forge.</p>
                 )
-              ) : (
-                <p>Loading your cat…</p>
-              )}
+              ) : loadingNotice}
             </div>
           </div>
         </div>
@@ -769,7 +770,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         </nav>
       )}
 
-      <HowToPlay />
+      <HowToPlay mode="v2" />
     </ScreenFrame>
   );
 }

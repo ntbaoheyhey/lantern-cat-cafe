@@ -145,7 +145,7 @@ describe('ChestReveal', () => {
 
   it('first clear shows the gold chest (query data-icon="chestGoldOpen" after the open step)', () => {
     const onDone = vi.fn();
-    const { container } = render(
+    const { baseElement: container } = render(
       <ChestReveal chest={SAMPLE_CHEST} firstClear={true} onDone={onDone} />,
     );
 
@@ -193,7 +193,7 @@ describe('ChestReveal', () => {
 
   describe('V19c: Chapter room backdrop', () => {
     it('with chapter 3 dialog contains exactly one svg[data-backdrop="bathroom"] with aria-hidden="true" and accessible name unchanged', () => {
-      const { container } = render(
+      const { baseElement: container } = render(
         <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={3} />,
       );
 
@@ -206,13 +206,13 @@ describe('ChestReveal', () => {
       const dialog = screen.getByRole('dialog');
       expect(dialog).toBeTruthy();
       expect(dialog.getAttribute('aria-labelledby')).toBe(
-        container.querySelector('.chest-reveal-title')?.id,
+        screen.getByRole('heading', { level: 2, name: 'Boss chest' }).id,
       );
       expect(screen.getByRole('heading', { level: 2, name: 'Boss chest' })).toBeTruthy();
     });
 
     it('without chapter there is no [data-backdrop]', () => {
-      const { container } = render(
+      const { baseElement: container } = render(
         <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} />,
       );
       expect(container.querySelector('[data-backdrop]')).toBeNull();
@@ -221,7 +221,7 @@ describe('ChestReveal', () => {
     it('for chapters 1-5 the backdrop id matches backdropFor(n).id', () => {
       for (let ch = 1; ch <= 5; ch++) {
         const expectedId = backdropFor(ch).id;
-        const { container, unmount } = render(
+        const { baseElement: container, unmount } = render(
           <ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={vi.fn()} chapter={ch} />,
         );
         const svg = container.querySelector('.chest-reveal-dialog svg[data-backdrop]');
@@ -249,7 +249,9 @@ describe('ChestReveal', () => {
 
       // Part 2: focus restored after pressing Escape
       const onDone = vi.fn();
-      render(<ChestReveal chest={SAMPLE_CHEST} firstClear={false} onDone={onDone} />);
+      // Match StageLayout: onDone removes the controlled dialog before restoring focus.
+      const view = render(<ChestReveal chest={SAMPLE_CHEST} firstClear={false}
+        onDone={() => { onDone(); view.unmount(); }} />);
       expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Skip' }));
       fireEvent.keyDown(document, { key: 'Escape' });
       expect(onDone).toHaveBeenCalledTimes(1);
