@@ -121,7 +121,9 @@ describe('WelcomeBack', () => {
 
     // Test 2: focus restore on Escape
     const onClose = vi.fn();
-    render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600} onClose={onClose} />);
+    // Match the real owner: closing unmounts the controlled dialog before focus returns.
+    const view = render(<WelcomeBack gains={VALID_GAINS} awaySeconds={3600}
+      onClose={() => { onClose(); view.unmount(); }} />);
     expect(document.activeElement).toBe(screen.getByRole('button', { name: 'OK' }));
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(onClose).toHaveBeenCalledTimes(1);

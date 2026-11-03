@@ -9,6 +9,11 @@ export interface ModalProps {
   initialFocusRef?: RefObject<HTMLElement | null>;
   returnFocusRef?: RefObject<HTMLElement | null>;
   description?: string;
+  className?: string;
+  backdropClassName?: string;
+  closeLabel?: string;
+  showCloseButton?: boolean;
+  closeOnBackdrop?: boolean;
 }
 
 const stack: HTMLElement[] = [];
@@ -45,7 +50,8 @@ function focusable(dialog: HTMLElement): HTMLElement[] {
 }
 
 /** Controlled, portalled dialog. Escape/backdrop close; background is inert until cleanup. */
-export function Modal({ open, title, description, children, onClose, initialFocusRef, returnFocusRef }: ModalProps) {
+export function Modal({ open, title, description, children, onClose, initialFocusRef, returnFocusRef,
+  className = '', backdropClassName = '', closeLabel, showCloseButton = true, closeOnBackdrop = true }: ModalProps) {
   const id = useId();
   const dialog = useRef<HTMLDivElement>(null);
   const backdrop = useRef<HTMLDivElement>(null);
@@ -87,7 +93,8 @@ export function Modal({ open, title, description, children, onClose, initialFocu
         if (opener?.isConnected && remaining.contains(opener)) opener.focus();
         else if (!remaining.contains(document.activeElement)) (focusable(remaining)[0] ?? remaining).focus();
       } else {
-        const target = opener?.isConnected ? opener : firstOpener;
+        const preferred = returnFocusRef?.current;
+        const target = preferred?.isConnected ? preferred : opener?.isConnected ? opener : firstOpener;
         firstOpener = null;
         if (target?.isConnected) target.focus();
       }
@@ -95,11 +102,12 @@ export function Modal({ open, title, description, children, onClose, initialFocu
   }, [open, initialFocusRef, returnFocusRef]);
   if (!open) return null;
   return createPortal(
-    <div className="ui-modal-backdrop" ref={backdrop} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
-      <div className="ui-modal" ref={dialog} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}
+    <div className={`ui-modal-backdrop ${backdropClassName}`.trim()} ref={backdrop}
+      onClick={event => { if (closeOnBackdrop && event.target === event.currentTarget) onClose(); }}>
+      <div className={`ui-modal ${className}`.trim()} ref={dialog} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}
         aria-describedby={description ? `${id}-description` : undefined} tabIndex={-1}>
         <div className="ui-modal-heading"><h2 id={`${id}-title`}>{title}</h2>
-          <button type="button" className="ui-modal-close" aria-label={`Close ${title}`} onClick={onClose}>×</button>
+          {showCloseButton && <button type="button" className="ui-modal-close" aria-label={closeLabel ?? `Close ${title}`} onClick={onClose}>×</button>}
         </div>
         {description && <p id={`${id}-description`}>{description}</p>}
         {children}

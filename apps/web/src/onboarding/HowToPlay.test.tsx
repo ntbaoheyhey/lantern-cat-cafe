@@ -229,3 +229,13 @@ describe('keyboard focus trapping inside dialog', () => {
     expect(document.activeElement).toBe(startBtn);
   });
 });
+
+it('v2 first-visit guidance matches current key, recipe and bag rules without classic claims', () => {
+  render(<HowToPlay mode="v2" />);
+  expect(screen.getAllByRole('listitem')).toHaveLength(5);
+  expect(screen.getByText(/first claim each day grants 1 Cat Key/)).toBeTruthy();
+  expect(screen.getByText(/A boss win spends 1; a loss keeps your key/)).toBeTruthy();
+  expect(screen.getByText(/capacity 200/)).toBeTruthy();
+  expect(screen.getByText(/30 Yarn and 1 Moon Pearl, up to 1 per day/)).toBeTruthy();
+  expect(screen.queryByText(/5 fights a day|30 Yarn and 1 Cat Key|gear upgrades in Inventory/)).toBeNull();
+});
