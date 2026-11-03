@@ -1,0 +1,190 @@
+{
+  "head": "0df4347f356a352c1589a04d46d412fc4b7d01d7",
+  "pass": "motion-a-contrast",
+  "pid": 37483,
+  "cwd": "/Users/bao/taskbar-hero-ui-motion",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T17:05:12.504532+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T17:05:28.773688+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T17:05:42.363296+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T17:05:42.508776+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T17:06:39.198910+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T17:07:50.861684+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T17:07:56.161324+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T17:08:08.988036+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/server/n1-relic-recovery.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:08:27.429271+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/server/n1-relic-recovery.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:11:26.493691+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-contrast/changed-1600x900.log"
+    },
+    {
+      "label": "full-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:14:06.323149+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/motion-a-contrast/full-1280x720.log"
+    }
+  ]
+}

@@ -18,3 +18,5 @@
 - Preserve ledger preexisting untracked reports/art/UI-ART-PLAN.md, reports/ui/cxr2-main-accept.py and screenshots/ui/cxr2-main. Old orchestrator STOP stays; no orchestrator.py. No merge-lock exception remains authorized.
 
 - Latest milestone: FIRSTPLAY frozenf9c3322c3dc03710873475db84193716373cc41e after2/2natural-earn contrastGREEN; captures visually inspected bothsizes. Includes mkdir fix + renderedcontrast ratios in timingJSON. CleanB updatedf9c3322; formalA/B notstarted. GALLERY integratedf9c3322 and now has two-size beforeFish/beforeheading comparisons. MOTION cleanB0df4347 isRUNNING PID39987 on5320–5324 (no duplicatefull); freshA37483 continues.
+
+- Nov4 continuation: Motion0df4347 full1280FAILED375/377: latechapterPower chip13.90625px outside region. Failuregrade/logs saved, no acceptedscore. CleanBcommandsallPASS(20resize/18audit); invalidated by actualAdefect. PreviewsA46851 stopped with verifiedcwd/PGID before anyfull run; partiallogsretained. Motionbuilder49196RED reproduces2/4; corrected7chYarn+4pxcompactgrid builder49570GREEN running5355–5358 on motion worktree. Add baseline-hud.spec to everychangedgate. Do not push/grade0df4347.
