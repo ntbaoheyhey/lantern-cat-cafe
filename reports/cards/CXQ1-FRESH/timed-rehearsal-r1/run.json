@@ -1,0 +1,19 @@
+{
+  "root": "/Users/bao/taskbar-hero-system-main-cxs2",
+  "out": "/Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-rehearsal-r1",
+  "head": "1a1b4995a2758c98665e5fe84d4f95239cd292b2",
+  "commands": [
+    [
+      "asset-before",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-rehearsal-r1/artifact-before.json"
+    ],
+    [
+      "timed-demo",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-earned-demo.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-rehearsal-r1/artifact-before.json /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-rehearsal-r1/data /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/resume-natural/data/earned-guest.json /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/resume-natural/data/result.json"
+    ],
+    [
+      "asset-after",
+      "node /Users/bao/taskbar-hero-system-ledger/reports/fresh-session-tools/verify-live-assets.mjs /Users/bao/taskbar-hero-system-main-cxs2 1a1b4995a2758c98665e5fe84d4f95239cd292b2 /Users/bao/taskbar-hero-system-ledger/reports/cards/CXQ1-FRESH/timed-rehearsal-r1/artifact-after.json"
+    ]
+  ]
+}

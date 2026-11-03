@@ -1,5 +1,5 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:47:11.967378+07:00. ACTIVE; SYS-UI-007 confirmed at BOTH desktop sizes.
+Updated: 2026-11-03T16:49:38.988589+07:00. ACTIVE; original prep complete/timed setup failed; corrected R1 running.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
@@ -10,7 +10,7 @@ Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat
 |244 CXN3|db0f9d6 draft BLOCKED; deployed source/deps/import maps backup + tested restore absent|
 |CXS1|DONE #258/5e35c7a A97/B97; current main core/assets/health/phased smoke PASS|
 |CXS2|DONE #260/1a1b499; exact a571066 A96/B96; main/live acceptance PASS; DRAFT only|
-|CXQ1|PARTIAL: SYS-UI-007 blank returning-guest route;prep14008 active;timed/wallet pending|
+|CXQ1|PARTIAL SYS-UI-007; prep14008 EXITED; corrected rehearsal PID32912; funded proof pending|
 |CXN4/CXN5|Conditional P2 default-OFF/versioned; not started; A–F not all green|
 |regression|Current main smoke green; final integrated regression after UI/CXQ1 pending|
 
@@ -22,7 +22,9 @@ Source PR heads:255=2f7c0b3,256=792b475,258=97a1595,259=6cf5674,260=a571066; all
 
 Own durable ledger /Users/bao/taskbar-hero-system-ledger branch ai/codex-mega-ledger.
 Own CXQ1 /Users/bao/taskbar-hero-system-cxq1 branch ai/codex-sys-cxq1 head8daa8e1.
-Owned prep parent14008 (cwd checked), child14010; no local listener ports. Keep running; do not duplicate.
+Owned prep14008/14010 EXITED;105ticks,3342seconds,382power/249recommended,craft ready.
+Original timed entry DEMO_FAIL (classed save auto-opens Home); failure retained in resume-natural/data/result.json.
+Corrected timed R1 PID32912,cwd /Users/bao/taskbar-hero-system-main-cxs2,head1a1b499;no listener ports.
 Own CXS2 /Users/bao/taskbar-hero-system-cxs2 branch ai/codex-sys-cxs2-submission heada571066.
 Clean B /Users/bao/taskbar-hero-system-cxs2-b a571066; main /Users/bao/taskbar-hero-system-main-cxs2 1a1b499.
 Post-main23398 EXITED successfully;5200–5299 free. Finished A9336/B15353 not active.
@@ -51,7 +53,7 @@ Stale foreign lock only owner older90min AND PID dead; inside lock fetch/integra
 Append atomic board milestone line; release only own lock. Unrelated main merges HELD for SYS-UI-007.
 UI corrective release needs reproducer/full gates, then live confirmation; no SYSTEM UI edit.
 Receipt-only helper:37controls PASS; prepared-progress12+credential6=55total controls PASS; no funded proof.
-New timed-earned-demo.mjs separates fresh onboarding and unchanged earned save; syntax PASS, live run pending.
+New timed-earned-demo.mjs separates fresh onboarding and unchanged earned save; live R1 now running.
 Requires completed original preparation receipt/hash; preserves failure and cannot clear SYS-UI-007.
 Old timed harness incorrectly expects onboarding from classed save; correct with explicit two-segment disclosure.
 
@@ -61,4 +63,4 @@ No secrets,destructive liveDB writes,migrations/backend deploys,Vercel/VITE_GAME
 public repo/contest submission,.github/Actions/direct-main pushes. Kill only owned PIDs after cwd check.
 Fresh A/B>=92;C1>=23,C2=20,C6=5,C7>=8,everycriterion>=60%,zeroautofails;no weakened/skipped/retried-away tests.
 No new server behavior ON after25Nov;stop28Nov with regression/final report;handoff<=80lines.
-Next3: finish prep14008; run corrected two-segment rehearsal from saved provenance; await UI007/funded prerequisites.
+Next3: inspect corrected R1 result and asset identity; retain/report failures; await UI007/funded prerequisites.
