@@ -14,7 +14,7 @@ STOP /Users/bao/taskbar-hero/.codex-orchestrator/STOP preserved; never run orche
 | T011/T012 | #255/maina903fb6 | DONE A96/B96; shared gameplay flag OFF; main/live accepted |
 | ORIG2+ART/T013 | #256/main2bc98cd | DONE A96/B96; core2459/art40/browser321×2/live35/22/16×2 PASS |
 | CXR1 | #245/remotee99e497,local187a1b5 | MERGED A94/B94; main6144d42; main/live running |
-| CXR2 | localc49421f | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
+| CXR2 | #257/c49421f draft | PARTIAL after3 fixes;13 full-unit failures; no grade/merge/fourth repair |
 | CXQ1 | pending | Timed live demo + throwaway Fuji wallet mint/list/buy |
 | CXS1/CXS2 | pending | Evidence-backed security; submission pack DRAFT only |
 | CXN3 | #244/db0f9d6 draft | Owner full backup/tested restore BLOCKED; no merge/deploy; independent frontend proceeds |
@@ -61,7 +61,7 @@ After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/pus
 Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
 Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
 CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
-CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: localc49421f atop187a1b5; not pushed.
+CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: c49421f published draft257; unmerged.
 CXR2 browser1:1PASS/10FAIL due portal-inert query assumptions; documented strict guard/query adaptation.
 CXR2 browser2:7PASS/4FAIL; fixture lacked visit marker/30s tick; corrected locally, no product change.
 CXR2 final visual correction keeps welcome title/rule/OK visible and fixes v2 initial Help using current rules.
