@@ -1,0 +1,174 @@
+{
+  "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
+  "pass": "cxu3-b",
+  "pid": 64531,
+  "cwd": "/private/tmp/taskbar-hero-ui-cxu3-b",
+  "ports": [
+    5320,
+    5321,
+    5322,
+    5323
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T04:58:07.805617+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T04:58:19.717574+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T04:58:27.981192+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T04:58:28.088779+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T04:59:07.277480+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/web-units.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T04:59:52.777752+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:00:02.353745+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:00:58.740212+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/changed-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:01:52.168663+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:02:12.486001+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-b/resize-five-1600x900.log"
+    }
+  ]
+}

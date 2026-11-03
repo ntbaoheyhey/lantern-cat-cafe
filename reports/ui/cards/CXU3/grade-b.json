@@ -1,0 +1,61 @@
+{
+  "label": "self-graded (fresh pass)",
+  "pass": "grader B",
+  "status": "PASS",
+  "score": 94,
+  "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
+  "sourceRoot": "/private/tmp/taskbar-hero-ui-cxu3-b",
+  "reviewOrder": "Clean exact-head checkout: tests first, then full diff/AST and screenshot review. Separate ports 5320\u20135323 and audit 5350.",
+  "gradedAt": "2026-11-03T05:04:10.152733+00:00",
+  "autoFails": [],
+  "criteria": [
+    {
+      "criterion": "Reference fidelity",
+      "score": 22,
+      "max": 25,
+      "reason": "Both desktop compositions preserve readable controls and separation of selection from transactions. Minor side-card and explanatory-copy polish retained for CXR2."
+    },
+    {
+      "criterion": "Functional correctness",
+      "score": 25,
+      "max": 25,
+      "reason": "Fresh 2512 core cases pass, with inherited 2 expected failures/11 skips unchanged; 114 changed-case repeats and 20/20 resize cases. AST independently confirms all 36 Market and 32 Forge controller declarations unchanged."
+    },
+    {
+      "criterion": "Accessibility",
+      "score": 19,
+      "max": 20,
+      "reason": "Unchanged AA thresholds, control naming, keyboard focus and reduced-motion checks pass. Strict 18-screen audit reports zero findings."
+    },
+    {
+      "criterion": "Isolation",
+      "score": 20,
+      "max": 20,
+      "reason": "16 allowed paths; original asset paths unchanged; author/suffix correct; no unowned source modifications."
+    },
+    {
+      "criterion": "Evidence",
+      "score": 8,
+      "max": 10,
+      "reason": "Independent screenshots reviewed at 1280 and 1600. Shares A full 330\u00d72 matrix on identical source commit, as only one full suite per exact head is permitted. Wallet fixtures are explicitly synthetic; live verification is still pending."
+    }
+  ],
+  "resizeBurst": {
+    "executions": 20,
+    "failed": 0,
+    "failureRate": 0
+  },
+  "sharedFullSuite": "reports/ui/logs/cxu3-a/full-{1280x720,1600x900}.log",
+  "evidence": [
+    "reports/ui/logs/cxu3-b/receipt.json",
+    "reports/ui/logs/cxu3-b/scope.json",
+    "reports/ui/logs/cxu3-b/controller-review.json",
+    "screenshots/ui-2026-11-03/cxu3-b-audit/findings.json"
+  ],
+  "screenshotsReviewed": [
+    "craft-confirm-1600-no-preference.png",
+    "market-inspect-1600.png",
+    "craft-result-1280-no-preference.png",
+    "market-sell-1280.png"
+  ]
+}
