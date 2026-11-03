@@ -1,5 +1,5 @@
 # Taskbar Hero — current handoff
-Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A running.
+Updated: 2026-11-03T10:38:52.824095+07:00. ACTIVE same chat/agent; CXR1 fresh A failed; repair active.
 Read FIRST after compaction; reconcile Git/PIDs before actions; do not duplicate tests.
 Private repo; ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>; every commit ends [skip ci].
 No subagents/workers/helper chats/orchestrator/new schedulers. Hourly requested heartbeat is sole exception.
@@ -27,8 +27,9 @@ ORIG2 source /private/tmp/tbh-original-preview and clean B retained at792b475. N
 Catalog local opt-in resets on Help-tab/reload, no config/storage/network/gameplay/backend mutations.
 
 CXR1 source /private/tmp/tbh-cxr1-active on ai/codex-redesign-cxr1; main merge d71899a, sourceed11f01.
-Fresh A PID27776 at same cwd; ports5020–5023 then5100–5103;2490core/build/8mutants/capture PASS.
-A153 repeated browser cases per size and full323?matrix in progress; do not claim counts until receipts.
+Fresh A PID27776 FINISHED FAIL oned11f01;2490core/build/8mutants/capture/153repeat1280 PASS.
+A full1280:314PASS/9FAIL;4phone-stage padding regressions +2bg golden +3bulk-action golden assertions.
+No retry/no merge. Fix desktop-only gutter and document old→new design oracles; newhead gate required.
 Config/logs reports/cards/CXR1-FRESH/grade-a/. Core/build then8 mutants,capture,repeat3/full per size,audits.
 Clean B /private/tmp/tbh-cxr1-fresh-b at exacted11f01; dependency setup only; B tests/review NOT STARTED.
 Use5030–5033 B; test first, then full diff. One full browser matrix per head shared from A; rerun B core/repeats.
@@ -57,5 +58,5 @@ After milestones rewrite this<=80lines + living MEGA-FINAL-REPORT.md; commit/pus
 Gates fresh self-graded A/B>=92, floors,zero auto-fails; max3 repair rounds; serial merges/main+live after each.
 Context was compacted by user; continue queue. Prior optional context settings note blocks nothing.
 CXR2 old dirty clone /Users/bao/.codex/worktrees/mega-cxr2/taskbar-hero untouched;15files preserved inCXR2-FRESH.
-Read-ahead inventory identifies HowToPlay/WelcomeBack/ChestReveal shared-Modal migration; not implemented.
+CXR2 /private/tmp/tbh-cxr2-active codex/cxr2-dialogs: dirty migration draft; no tests yet; baseded11f01.
 Next3: complete fresh A/mutants/review; clean B tests then diff+grade; if both qualify merge245 then main/live.

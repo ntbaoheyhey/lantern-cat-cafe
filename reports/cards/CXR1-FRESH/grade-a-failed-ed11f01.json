@@ -1,0 +1,23 @@
+{
+  "label": "self-graded (fresh pass)",
+  "passName": "A first frozen head",
+  "head": "ed11f0133d5ae7ebc385a83d3dd846c203a3bc7f",
+  "status": "FAIL",
+  "score": 0,
+  "autoFails": [
+    "Required full1280 browser matrix red:9 failures/314 passes"
+  ],
+  "criteria": {
+    "C2": 0
+  },
+  "findings": [
+    "Four phone-stage geometry failures from globally applied Home padding.",
+    "Two old page-bg golden values need justified correction for requested new token.",
+    "Three old primary bulk-equip assertions need justified secondary-action correction; retain4.5 contrast."
+  ],
+  "evidence": [
+    "grade-a/commands.json",
+    "grade-a/logs/browser-1280x720.log"
+  ],
+  "mergeAllowed": false
+}
