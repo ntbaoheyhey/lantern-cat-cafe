@@ -2,11 +2,11 @@
 
 34 original static icons, authored from coordinate drawings on2026-11-03. No image model, seed, external media, reference art, new font or library was used. Existing art is unchanged. Five quality frames reuse the existing v2 frame drawings without edits.
 
-Generation command: `python3 -B tools/art/original_icons.py --out /private/tmp/tbh-original-art-r1 --date 2026-11-03`. The output directory must be new; use a new directory for reproduction. Full command receipts are preserved in [generation.json](art/original-economy/generation.json), the ledger card ORIG2-ART-FRESH and the original generation output.
+Generation command: `python3 -B tools/art/original_icons.py --out /private/tmp/tbh-original-art-r2 --date 2026-11-03`. The output directory must be new; use a new directory for reproduction. Full command receipts are preserved in [generation.json](art/original-economy/generation.json), the ledger card ORIG2-ART-FRESH and the original generation output.
 
 Every icon ran snap32 → palette-lock(cafe-night-v1) → trim → center-pad32 → lossless optimize → check32/max16 colors. The34 checked frames were packed with1px gutters into a static lookup atlas. No animation is claimed; atlas fps metadata is unused. Each image is32×32, uses binary alpha and has at least2px transparent padding.
 
-Inspected at1x/3x on dark and cream backgrounds and as monochrome silhouettes. UI text provides meaning alongside the art. The exact generator SHA-256 is `3fd4103858a00c8bfa5989a63033366daaa2ad419876989ae65d381d12165898`. Canonical source/export inventory: [PROVENANCE](../docs/art/PROVENANCE.md).
+Inspected at1x/3x on dark and cream backgrounds and as monochrome silhouettes. UI text provides meaning alongside the art. The exact generator SHA-256 is `b409a077f428c50b430bc31d9ff86911678f53a3737376351efc9534e91a3044`. Canonical source/export inventory: [PROVENANCE](../docs/art/PROVENANCE.md).
 
 | Asset | Tool / method | Date | Original authoring brief (not an image-model prompt) | SHA-256 |
 |---|---|---|---|---|
@@ -50,3 +50,5 @@ Atlas: `apps/web/src/art/generated/original/atlas/sheet.png`; mapping: `apps/web
 Licence/provenance claim: original, made for this project by the recorded code/briefs. This does not retrofit missing evidence for historical art.
 
 Atlas PNG SHA-256: `4e0bff51f9372606e9df4007fc5188837a69893bea65c768e3f7e7230a7e7352`. Atlas JSON SHA-256: `92234263ae6ef40097fb887dad6840895fe03ac5157364d3d7b5649c518214d0`.
+
+Runtime recorded by the generator: Python 3.9.6, zlib 1.2.12 (compiled 1.2.12). Regeneration with explicit runtime metadata preserved every final PNG and atlas byte from the reviewed first run.

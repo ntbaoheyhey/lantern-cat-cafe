@@ -3,8 +3,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-hp.png",
         "--width",
         "32",
         "--height",
@@ -16,8 +16,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-hp.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-hp.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -25,10 +25,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hp.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hp.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -36,8 +36,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-hp.png",
         "--width",
         "32",
         "--height",
@@ -49,8 +49,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-hp.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-hp.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -58,7 +58,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-hp.png",
         "--width",
         "32",
         "--height",
@@ -70,8 +70,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-atk.png",
         "--width",
         "32",
         "--height",
@@ -83,8 +83,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-atk.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-atk.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -92,10 +92,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-atk.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-atk.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -103,8 +103,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-atk.png",
         "--width",
         "32",
         "--height",
@@ -116,8 +116,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-atk.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-atk.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -125,7 +125,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-atk.png",
         "--width",
         "32",
         "--height",
@@ -137,8 +137,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-def.png",
         "--width",
         "32",
         "--height",
@@ -150,8 +150,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-def.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-def.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -159,10 +159,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-def.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-def.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -170,8 +170,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-def.png",
         "--width",
         "32",
         "--height",
@@ -183,8 +183,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-def.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-def.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -192,7 +192,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-def.png",
         "--width",
         "32",
         "--height",
@@ -204,8 +204,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-attackspeed.png",
         "--width",
         "32",
         "--height",
@@ -217,8 +217,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-attackspeed.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-attackspeed.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -226,10 +226,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-attackspeed.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-attackspeed.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -237,8 +237,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-attackspeed.png",
         "--width",
         "32",
         "--height",
@@ -250,8 +250,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-attackspeed.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -259,7 +259,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-attackspeed.png",
         "--width",
         "32",
         "--height",
@@ -271,8 +271,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-critchance.png",
         "--width",
         "32",
         "--height",
@@ -284,8 +284,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-critchance.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-critchance.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -293,10 +293,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critchance.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critchance.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -304,8 +304,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-critchance.png",
         "--width",
         "32",
         "--height",
@@ -317,8 +317,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critchance.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -326,7 +326,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critchance.png",
         "--width",
         "32",
         "--height",
@@ -338,8 +338,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-critdamage.png",
         "--width",
         "32",
         "--height",
@@ -351,8 +351,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-critdamage.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-critdamage.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -360,10 +360,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critdamage.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critdamage.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -371,8 +371,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-critdamage.png",
         "--width",
         "32",
         "--height",
@@ -384,8 +384,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critdamage.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -393,7 +393,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critdamage.png",
         "--width",
         "32",
         "--height",
@@ -405,8 +405,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-dodge.png",
         "--width",
         "32",
         "--height",
@@ -418,8 +418,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-dodge.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-dodge.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -427,10 +427,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-dodge.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-dodge.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -438,8 +438,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-dodge.png",
         "--width",
         "32",
         "--height",
@@ -451,8 +451,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-dodge.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -460,7 +460,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-dodge.png",
         "--width",
         "32",
         "--height",
@@ -472,8 +472,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-hpregen.png",
         "--width",
         "32",
         "--height",
@@ -485,8 +485,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-hpregen.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-hpregen.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -494,10 +494,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hpregen.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hpregen.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -505,8 +505,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-hpregen.png",
         "--width",
         "32",
         "--height",
@@ -518,8 +518,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-hpregen.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -527,7 +527,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-hpregen.png",
         "--width",
         "32",
         "--height",
@@ -539,8 +539,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-fishbonus.png",
         "--width",
         "32",
         "--height",
@@ -552,8 +552,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-fishbonus.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-fishbonus.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -561,10 +561,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-fishbonus.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-fishbonus.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -572,8 +572,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-fishbonus.png",
         "--width",
         "32",
         "--height",
@@ -585,8 +585,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-fishbonus.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -594,7 +594,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-fishbonus.png",
         "--width",
         "32",
         "--height",
@@ -606,8 +606,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-xpbonus.png",
         "--width",
         "32",
         "--height",
@@ -619,8 +619,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-xpbonus.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-xpbonus.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -628,10 +628,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-xpbonus.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-xpbonus.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -639,8 +639,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-xpbonus.png",
         "--width",
         "32",
         "--height",
@@ -652,8 +652,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-xpbonus.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -661,7 +661,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-xpbonus.png",
         "--width",
         "32",
         "--height",
@@ -673,8 +673,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-materialfind.png",
         "--width",
         "32",
         "--height",
@@ -686,8 +686,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-materialfind.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-materialfind.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -695,10 +695,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-materialfind.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-materialfind.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -706,8 +706,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-materialfind.png",
         "--width",
         "32",
         "--height",
@@ -719,8 +719,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-materialfind.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -728,7 +728,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-materialfind.png",
         "--width",
         "32",
         "--height",
@@ -740,8 +740,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/raw/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/snapped/stat-bossdamage.png",
         "--width",
         "32",
         "--height",
@@ -753,8 +753,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/locked/stat-bossdamage.png"
+        "/private/tmp/tbh-original-art-r2/snapped/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-bossdamage.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -762,10 +762,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/locked/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-bossdamage.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-bossdamage.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -773,8 +773,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/padded/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/padded/stat-bossdamage.png",
         "--width",
         "32",
         "--height",
@@ -786,8 +786,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png"
+        "/private/tmp/tbh-original-art-r2/padded/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-bossdamage.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -795,7 +795,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-bossdamage.png",
         "--width",
         "32",
         "--height",
@@ -807,8 +807,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-seamblade.png",
         "--width",
         "32",
         "--height",
@@ -820,8 +820,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-seamblade.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-seamblade.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -829,10 +829,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-seamblade.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-seamblade.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -840,8 +840,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-seamblade.png",
         "--width",
         "32",
         "--height",
@@ -853,8 +853,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/final/item-seamblade.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -862,7 +862,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/final/item-seamblade.png",
         "--width",
         "32",
         "--height",
@@ -874,8 +874,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-kettlemaul.png",
         "--width",
         "32",
         "--height",
@@ -887,8 +887,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-kettlemaul.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-kettlemaul.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -896,10 +896,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-kettlemaul.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-kettlemaul.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -907,8 +907,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-kettlemaul.png",
         "--width",
         "32",
         "--height",
@@ -920,8 +920,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/final/item-kettlemaul.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -929,7 +929,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/final/item-kettlemaul.png",
         "--width",
         "32",
         "--height",
@@ -941,8 +941,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-hemknives.png",
         "--width",
         "32",
         "--height",
@@ -954,8 +954,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-hemknives.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-hemknives.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -963,10 +963,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemknives.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemknives.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -974,8 +974,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-hemknives.png",
         "--width",
         "32",
         "--height",
@@ -987,8 +987,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemknives.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -996,7 +996,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemknives.png",
         "--width",
         "32",
         "--height",
@@ -1008,8 +1008,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-windowpike.png",
         "--width",
         "32",
         "--height",
@@ -1021,8 +1021,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-windowpike.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-windowpike.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1030,10 +1030,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-windowpike.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-windowpike.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1041,8 +1041,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-windowpike.png",
         "--width",
         "32",
         "--height",
@@ -1054,8 +1054,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/final/item-windowpike.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1063,7 +1063,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/final/item-windowpike.png",
         "--width",
         "32",
         "--height",
@@ -1075,8 +1075,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-rafterbow.png",
         "--width",
         "32",
         "--height",
@@ -1088,8 +1088,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-rafterbow.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-rafterbow.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1097,10 +1097,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-rafterbow.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-rafterbow.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1108,8 +1108,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-rafterbow.png",
         "--width",
         "32",
         "--height",
@@ -1121,8 +1121,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/final/item-rafterbow.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1130,7 +1130,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/final/item-rafterbow.png",
         "--width",
         "32",
         "--height",
@@ -1142,8 +1142,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-lanternrod.png",
         "--width",
         "32",
         "--height",
@@ -1155,8 +1155,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-lanternrod.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-lanternrod.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1164,10 +1164,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-lanternrod.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-lanternrod.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1175,8 +1175,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-lanternrod.png",
         "--width",
         "32",
         "--height",
@@ -1188,8 +1188,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/final/item-lanternrod.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1197,7 +1197,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/final/item-lanternrod.png",
         "--width",
         "32",
         "--height",
@@ -1209,8 +1209,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-mossflasks.png",
         "--width",
         "32",
         "--height",
@@ -1222,8 +1222,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-mossflasks.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-mossflasks.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1231,10 +1231,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-mossflasks.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-mossflasks.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1242,8 +1242,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-mossflasks.png",
         "--width",
         "32",
         "--height",
@@ -1255,8 +1255,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/final/item-mossflasks.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1264,7 +1264,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/final/item-mossflasks.png",
         "--width",
         "32",
         "--height",
@@ -1276,8 +1276,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-quiltcap.png",
         "--width",
         "32",
         "--height",
@@ -1289,8 +1289,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-quiltcap.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-quiltcap.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1298,10 +1298,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-quiltcap.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-quiltcap.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1309,8 +1309,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-quiltcap.png",
         "--width",
         "32",
         "--height",
@@ -1322,8 +1322,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/final/item-quiltcap.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1331,7 +1331,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/final/item-quiltcap.png",
         "--width",
         "32",
         "--height",
@@ -1343,8 +1343,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-porchcoat.png",
         "--width",
         "32",
         "--height",
@@ -1356,8 +1356,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-porchcoat.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-porchcoat.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1365,10 +1365,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-porchcoat.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-porchcoat.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1376,8 +1376,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-porchcoat.png",
         "--width",
         "32",
         "--height",
@@ -1389,8 +1389,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/final/item-porchcoat.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1398,7 +1398,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/final/item-porchcoat.png",
         "--width",
         "32",
         "--height",
@@ -1410,8 +1410,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-spoolmitts.png",
         "--width",
         "32",
         "--height",
@@ -1423,8 +1423,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-spoolmitts.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-spoolmitts.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1432,10 +1432,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-spoolmitts.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-spoolmitts.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1443,8 +1443,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-spoolmitts.png",
         "--width",
         "32",
         "--height",
@@ -1456,8 +1456,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/final/item-spoolmitts.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1465,7 +1465,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/final/item-spoolmitts.png",
         "--width",
         "32",
         "--height",
@@ -1477,8 +1477,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-eaveboots.png",
         "--width",
         "32",
         "--height",
@@ -1490,8 +1490,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-eaveboots.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-eaveboots.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1499,10 +1499,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-eaveboots.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-eaveboots.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1510,8 +1510,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-eaveboots.png",
         "--width",
         "32",
         "--height",
@@ -1523,8 +1523,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/final/item-eaveboots.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1532,7 +1532,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/final/item-eaveboots.png",
         "--width",
         "32",
         "--height",
@@ -1544,8 +1544,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-chimecollar.png",
         "--width",
         "32",
         "--height",
@@ -1557,8 +1557,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-chimecollar.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-chimecollar.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1566,10 +1566,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-chimecollar.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-chimecollar.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1577,8 +1577,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-chimecollar.png",
         "--width",
         "32",
         "--height",
@@ -1590,8 +1590,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/final/item-chimecollar.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1599,7 +1599,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/final/item-chimecollar.png",
         "--width",
         "32",
         "--height",
@@ -1611,8 +1611,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-pantrystud.png",
         "--width",
         "32",
         "--height",
@@ -1624,8 +1624,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-pantrystud.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-pantrystud.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1633,10 +1633,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-pantrystud.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-pantrystud.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1644,8 +1644,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-pantrystud.png",
         "--width",
         "32",
         "--height",
@@ -1657,8 +1657,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/final/item-pantrystud.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1666,7 +1666,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/final/item-pantrystud.png",
         "--width",
         "32",
         "--height",
@@ -1678,8 +1678,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-hemring.png",
         "--width",
         "32",
         "--height",
@@ -1691,8 +1691,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-hemring.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-hemring.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1700,10 +1700,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemring.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemring.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1711,8 +1711,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-hemring.png",
         "--width",
         "32",
         "--height",
@@ -1724,8 +1724,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/final/item-hemring.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemring.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1733,7 +1733,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemring.png",
         "--width",
         "32",
         "--height",
@@ -1745,8 +1745,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/snapped/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/raw/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/snapped/item-purrcharm.png",
         "--width",
         "32",
         "--height",
@@ -1758,8 +1758,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/locked/item-purrcharm.png"
+        "/private/tmp/tbh-original-art-r2/snapped/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-purrcharm.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1767,10 +1767,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/locked/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-purrcharm.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/item-purrcharm.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1778,8 +1778,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/padded/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/padded/item-purrcharm.png",
         "--width",
         "32",
         "--height",
@@ -1791,8 +1791,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png"
+        "/private/tmp/tbh-original-art-r2/padded/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/final/item-purrcharm.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1800,7 +1800,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/final/item-purrcharm.png",
         "--width",
         "32",
         "--height",
@@ -1812,8 +1812,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-seamsweep.png",
         "--width",
         "32",
         "--height",
@@ -1825,8 +1825,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-seamsweep.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-seamsweep.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1834,10 +1834,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-seamsweep.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-seamsweep.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1845,8 +1845,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-seamsweep.png",
         "--width",
         "32",
         "--height",
@@ -1858,8 +1858,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-seamsweep.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1867,7 +1867,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-seamsweep.png",
         "--width",
         "32",
         "--height",
@@ -1879,8 +1879,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-kettlepulse.png",
         "--width",
         "32",
         "--height",
@@ -1892,8 +1892,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-kettlepulse.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-kettlepulse.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1901,10 +1901,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-kettlepulse.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-kettlepulse.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1912,8 +1912,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-kettlepulse.png",
         "--width",
         "32",
         "--height",
@@ -1925,8 +1925,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-kettlepulse.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -1934,7 +1934,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-kettlepulse.png",
         "--width",
         "32",
         "--height",
@@ -1946,8 +1946,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-hempair.png",
         "--width",
         "32",
         "--height",
@@ -1959,8 +1959,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-hempair.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-hempair.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -1968,10 +1968,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-hempair.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-hempair.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -1979,8 +1979,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-hempair.png",
         "--width",
         "32",
         "--height",
@@ -1992,8 +1992,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-hempair.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -2001,7 +2001,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-hempair.png",
         "--width",
         "32",
         "--height",
@@ -2013,8 +2013,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-windowthrust.png",
         "--width",
         "32",
         "--height",
@@ -2026,8 +2026,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-windowthrust.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-windowthrust.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -2035,10 +2035,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-windowthrust.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-windowthrust.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -2046,8 +2046,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-windowthrust.png",
         "--width",
         "32",
         "--height",
@@ -2059,8 +2059,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-windowthrust.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -2068,7 +2068,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-windowthrust.png",
         "--width",
         "32",
         "--height",
@@ -2080,8 +2080,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-rafterecho.png",
         "--width",
         "32",
         "--height",
@@ -2093,8 +2093,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-rafterecho.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-rafterecho.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -2102,10 +2102,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-rafterecho.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-rafterecho.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -2113,8 +2113,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-rafterecho.png",
         "--width",
         "32",
         "--height",
@@ -2126,8 +2126,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-rafterecho.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -2135,7 +2135,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-rafterecho.png",
         "--width",
         "32",
         "--height",
@@ -2147,8 +2147,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-lanternarc.png",
         "--width",
         "32",
         "--height",
@@ -2160,8 +2160,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-lanternarc.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-lanternarc.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -2169,10 +2169,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-lanternarc.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-lanternarc.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -2180,8 +2180,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-lanternarc.png",
         "--width",
         "32",
         "--height",
@@ -2193,8 +2193,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-lanternarc.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -2202,7 +2202,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-lanternarc.png",
         "--width",
         "32",
         "--height",
@@ -2214,8 +2214,8 @@
     {
       "args": [
         "snap",
-        "/private/tmp/tbh-original-art-r1/raw/skill-mossparcel.png",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/raw/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/snapped/skill-mossparcel.png",
         "--width",
         "32",
         "--height",
@@ -2227,8 +2227,8 @@
     {
       "args": [
         "lock",
-        "/private/tmp/tbh-original-art-r1/snapped/skill-mossparcel.png",
-        "/private/tmp/tbh-original-art-r1/locked/skill-mossparcel.png"
+        "/private/tmp/tbh-original-art-r2/snapped/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-mossparcel.png"
       ],
       "exit": 0,
       "output": "lock: wrote new output"
@@ -2236,10 +2236,10 @@
     {
       "args": [
         "trim",
-        "/private/tmp/tbh-original-art-r1/locked/skill-mossparcel.png",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/locked/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-mossparcel.png",
         "--metadata",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.json"
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-mossparcel.json"
       ],
       "exit": 0,
       "output": "trim: wrote new output"
@@ -2247,8 +2247,8 @@
     {
       "args": [
         "pad",
-        "/private/tmp/tbh-original-art-r1/trimmed/skill-mossparcel.png",
-        "/private/tmp/tbh-original-art-r1/padded/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/trimmed/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/padded/skill-mossparcel.png",
         "--width",
         "32",
         "--height",
@@ -2260,8 +2260,8 @@
     {
       "args": [
         "optimize",
-        "/private/tmp/tbh-original-art-r1/padded/skill-mossparcel.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png"
+        "/private/tmp/tbh-original-art-r2/padded/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-mossparcel.png"
       ],
       "exit": 0,
       "output": "optimize: wrote new output"
@@ -2269,7 +2269,7 @@
     {
       "args": [
         "check",
-        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-mossparcel.png",
         "--width",
         "32",
         "--height",
@@ -2281,41 +2281,41 @@
     {
       "args": [
         "sheet",
-        "/private/tmp/tbh-original-art-r1/atlas",
-        "/private/tmp/tbh-original-art-r1/final/stat-hp.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-atk.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-def.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-attackspeed.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-critchance.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-critdamage.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-dodge.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-hpregen.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-fishbonus.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-xpbonus.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-materialfind.png",
-        "/private/tmp/tbh-original-art-r1/final/stat-bossdamage.png",
-        "/private/tmp/tbh-original-art-r1/final/item-seamblade.png",
-        "/private/tmp/tbh-original-art-r1/final/item-kettlemaul.png",
-        "/private/tmp/tbh-original-art-r1/final/item-hemknives.png",
-        "/private/tmp/tbh-original-art-r1/final/item-windowpike.png",
-        "/private/tmp/tbh-original-art-r1/final/item-rafterbow.png",
-        "/private/tmp/tbh-original-art-r1/final/item-lanternrod.png",
-        "/private/tmp/tbh-original-art-r1/final/item-mossflasks.png",
-        "/private/tmp/tbh-original-art-r1/final/item-quiltcap.png",
-        "/private/tmp/tbh-original-art-r1/final/item-porchcoat.png",
-        "/private/tmp/tbh-original-art-r1/final/item-spoolmitts.png",
-        "/private/tmp/tbh-original-art-r1/final/item-eaveboots.png",
-        "/private/tmp/tbh-original-art-r1/final/item-chimecollar.png",
-        "/private/tmp/tbh-original-art-r1/final/item-pantrystud.png",
-        "/private/tmp/tbh-original-art-r1/final/item-hemring.png",
-        "/private/tmp/tbh-original-art-r1/final/item-purrcharm.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-seamsweep.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-kettlepulse.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-hempair.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-windowthrust.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-rafterecho.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-lanternarc.png",
-        "/private/tmp/tbh-original-art-r1/final/skill-mossparcel.png",
+        "/private/tmp/tbh-original-art-r2/atlas",
+        "/private/tmp/tbh-original-art-r2/final/stat-hp.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-atk.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-def.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-attackspeed.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critchance.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-critdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-dodge.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-hpregen.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-fishbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-xpbonus.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-materialfind.png",
+        "/private/tmp/tbh-original-art-r2/final/stat-bossdamage.png",
+        "/private/tmp/tbh-original-art-r2/final/item-seamblade.png",
+        "/private/tmp/tbh-original-art-r2/final/item-kettlemaul.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemknives.png",
+        "/private/tmp/tbh-original-art-r2/final/item-windowpike.png",
+        "/private/tmp/tbh-original-art-r2/final/item-rafterbow.png",
+        "/private/tmp/tbh-original-art-r2/final/item-lanternrod.png",
+        "/private/tmp/tbh-original-art-r2/final/item-mossflasks.png",
+        "/private/tmp/tbh-original-art-r2/final/item-quiltcap.png",
+        "/private/tmp/tbh-original-art-r2/final/item-porchcoat.png",
+        "/private/tmp/tbh-original-art-r2/final/item-spoolmitts.png",
+        "/private/tmp/tbh-original-art-r2/final/item-eaveboots.png",
+        "/private/tmp/tbh-original-art-r2/final/item-chimecollar.png",
+        "/private/tmp/tbh-original-art-r2/final/item-pantrystud.png",
+        "/private/tmp/tbh-original-art-r2/final/item-hemring.png",
+        "/private/tmp/tbh-original-art-r2/final/item-purrcharm.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-seamsweep.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-kettlepulse.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-hempair.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-windowthrust.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-rafterecho.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-lanternarc.png",
+        "/private/tmp/tbh-original-art-r2/final/skill-mossparcel.png",
         "--columns",
         "8",
         "--fps",
@@ -2839,8 +2839,13 @@
     }
   ],
   "externalMediaInputs": [],
-  "generatorSha256": "3fd4103858a00c8bfa5989a63033366daaa2ad419876989ae65d381d12165898",
+  "generatorSha256": "b409a077f428c50b430bc31d9ff86911678f53a3737376351efc9534e91a3044",
   "palette": "cafe-night-v1",
+  "runtime": {
+    "python": "3.9.6",
+    "zlib": "1.2.12",
+    "zlibCompile": "1.2.12"
+  },
   "schemaVersion": 1,
   "scope": "34 original static icons; atlas order is lookup order, not an animation"
 }

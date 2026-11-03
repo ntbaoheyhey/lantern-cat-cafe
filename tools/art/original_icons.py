@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import html
 import json
+import platform
+import zlib
 from pathlib import Path
 import subprocess
 import sys
@@ -293,7 +295,7 @@ def main():
             assert all(result.at(x,y)[:3] in allowed for x,y in bounds)
             entries.append({'id':asset_id,'kind':kind,'key':key,'path':f'final/{asset_id}.png','width':32,'height':32,'sha256':hashlib.sha256(final.read_bytes()).hexdigest(),'prompt':'Original32x32 native pixel icon. '+brief+' One-pixel object contour, top-left light,2px safe padding, cafe-night-v1 palette, binary alpha, no text, gradients or external media.','date':args.date,'tool':'Codex-authored Python coordinate drawing + tools/art/pipeline.py','imageModel':None,'seed':None,'palette':'cafe-night-v1'})
     run(['sheet',str(args.out/'atlas')]+[str(args.out/e['path']) for e in entries]+['--columns','8','--fps','12'])
-    report={'schemaVersion':1,'scope':'34 original static icons; atlas order is lookup order, not an animation','date':args.date,'generatorSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'palette':'cafe-night-v1','externalMediaInputs':[],'entries':entries,'commands':commands}
+    report={'schemaVersion':1,'runtime':{'python':platform.python_version(),'zlib':zlib.ZLIB_RUNTIME_VERSION,'zlibCompile':zlib.ZLIB_VERSION},'scope':'34 original static icons; atlas order is lookup order, not an animation','date':args.date,'generatorSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'palette':'cafe-night-v1','externalMediaInputs':[],'entries':entries,'commands':commands}
     pipeline.write_new(args.out/'provenance.json',pipeline.json_bytes(report))
     figures=''.join('<figure><img src="'+html.escape(e['path'])+'" alt=""><figcaption>'+html.escape(e['id'])+'</figcaption></figure>' for e in entries)
     document='''<!doctype html><meta charset="utf-8"><title>Original icon review</title><style>body{margin:16px;background:#2a1f36;color:#fff3e0;font:12px monospace}main{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}figure{margin:0;min-height:126px;display:grid;place-items:center;border:1px solid #72578d}img{width:96px;height:96px;image-rendering:pixelated}figcaption{font-size:11px}body.light{background:#fff3e0;color:#100c18}body.silhouette img{filter:brightness(0)}</style><h1>Original ORIG1 icons — native32px</h1><main>'''+figures+'''</main><script>const p=new URLSearchParams(location.search);document.body.className=p.get('theme')||'';const scale=Number(p.get('scale')||3);for(const image of document.images){image.style.width=32*scale+'px';image.style.height=32*scale+'px';}</script>'''

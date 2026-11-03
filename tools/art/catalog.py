@@ -325,7 +325,7 @@ def render_provenance(rows):
     for r in rows:
         if r['path'] in authored:
             row = authored[r['path']]
-            lines.append(f"| {r['path']} | {row['tool']}; full per-icon brief/commands in [asset-provenance](../../reports/asset-provenance.md) | Python3.9+ standard library; no image model | none (deterministic) | {row['date']} | snap32 → cafe-night-v1 lock → trim/pad32 → optimize/check → static atlas, gutter1 | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']} ({r['firstDate']}); latest {r['latestCommit']}; no external media input |")
+            lines.append(f"| {r['path']} | {row['tool']}; full per-icon brief/commands in [asset-provenance](../../reports/asset-provenance.md) | Python {originals['runtime']['python']}, zlib {originals['runtime']['zlib']}; no image model | none (deterministic) | {row['date']} | snap32 → cafe-night-v1 lock → trim/pad32 → optimize/check → static atlas, gutter1 | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']} ({r['firstDate']}); latest {r['latestCommit']}; no external media input |")
             continue
         if r['path'].startswith('apps/web/public/relics/'):
 
