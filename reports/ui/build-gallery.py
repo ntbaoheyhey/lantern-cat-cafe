@@ -135,7 +135,7 @@ def final_report(rows, cards, measured):
     lines += ['', f'The gallery indexes {len(rows)} captures at 1280×720 and 1600×900, with native-size links, screen/state filters and four playable local motion recordings. Original captures and before-repair evidence remain intact.', '',
               f'Across {measured["timingRuns"]} fresh local guest runs, Home appears in {measured["homeSeconds"]} seconds and the first natural reward in {measured["earnSeconds"]} seconds. Tests use the real claim interval without seeded saves, manual claims or accelerated clocks. Every measured run has zero blank frames, errors and network writes; reward text passes 4.5:1 contrast.', '',
               f'Four isolated motion samples measure {measured["fpsMin"]:.3f}–{measured["fpsMax"]:.3f} fps, p95 ≤ {measured["p95MaxMs"]:.1f}ms and CLS 0. Reduced motion reaches the same final state instantly. Stage recordings are local samples, not funded mints.', '',
-              'Release blocker: SYSTEM retained an auth-nonce HTTP502 health hold and was stopped by the user. ART2 and later cards remain drafts and must be refreshed and released in stack order only after the owner explicitly clears that hold. The optional owner step is recorded in reports/OPTIONAL-USER-STEPS.md on ai/codex-ui-ledger. No backend deployment, migration or live write was performed.', '',
+              'Release blocker: Vercel reported more than 100 deployments on 2026-11-03 UTC. The nonce health hold cleared after two HTTP 200 responses 628.63 seconds apart on 2026-11-04 Vietnam time; no backend deployment or migration was performed. Main/live remains 340f88b. ART2 and later cards remain parked drafts under the deployment-capacity rule. Recheck capacity after 2026-11-04T00:00Z; the provider 24-hour window may last longer. The overnight report and optional owner steps are on ai/codex-ui-ledger. Scores and measurements below belong to the named accepted candidate heads, not this documentation refresh or the current live build.', '',
               'The authoritative rune/companion/skill ownership selector remains absent. Conditional previews use only the existing default-OFF flag and label every entry Sample/Unavailable, without ownership or persistence writes.', '',
               'Superseded drafts [#257](https://github.com/ntbaoheyhey/taskbar-hero/pull/257) and [#252](https://github.com/ntbaoheyhey/taskbar-hero/pull/252) remain open untouched and must not be merged.', '',
               'Review: [gallery](gallery.html), [one-page card index](cards/index.html), [static repo demo](../../docs/ui/demo/index.html), [capture hashes and raw measurements](gallery-manifest.json). Exact-head fresh grades, failure history, scope and release receipts are maintained on [ai/codex-ui-ledger](https://github.com/ntbaoheyhey/taskbar-hero/tree/ai/codex-ui-ledger/reports/ui).', '']
@@ -156,11 +156,13 @@ def main():
     (OUT / 'gallery.html').write_text(render(rows, cards, '../../', measured))
     demo = ROOT / 'docs/ui/demo/index.html'; demo.parent.mkdir(parents=True, exist_ok=True)
     demo.write_text(render(rows, cards, '../../../', measured))
+    gallery = ROOT / 'docs/ui/gallery/index.html'; gallery.parent.mkdir(parents=True, exist_ok=True)
+    gallery.write_text(render(rows, cards, '../../../', measured))
     index = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>Taskbar Hero UI card index</title><style>' + CSS + '</style><h1>UI card index</h1><p><a href="../gallery.html">Open the complete static gallery</a></p><ol>']
     for card in cards:
         index.append(f'<li><a href="../../../{quote(card["report"], safe="/")}">{html.escape(card["id"])} · {html.escape(card["name"])}</a> — {html.escape(card["state"])}</li>')
     index.append('</ol>'); (OUT / 'cards/index.html').write_text('\n'.join(index) + '\n')
-    print(json.dumps({'captures': len(rows), 'cards': len(cards), 'outputs': ['reports/ui/gallery.html', 'docs/ui/demo/index.html', 'reports/ui/cards/index.html']}))
+    print(json.dumps({'captures': len(rows), 'cards': len(cards), 'outputs': ['reports/ui/gallery.html', 'docs/ui/demo/index.html', 'docs/ui/gallery/index.html', 'reports/ui/cards/index.html']}))
 
 
 if __name__ == '__main__': main()
