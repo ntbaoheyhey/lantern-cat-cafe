@@ -1,6 +1,7 @@
 import { expect, test } from '../support/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { pinVisualFonts } from '../support/visual-fonts';
 
 for (const width of [1280, 1600]) test(`ART2 flag-off landing and class stay pixel-identical to main 340f88b ${width}`, async ({ page }, testInfo) => {
   await page.setViewportSize({ width, height: width === 1280 ? 720 : 900 });
@@ -8,6 +9,7 @@ for (const width of [1280, 1600]) test(`ART2 flag-off landing and class stay pix
   await page.clock.install({ time: Date.UTC(2026, 10, 3, 12) });
   await page.clock.pauseAt(Date.UTC(2026, 10, 3, 12));
   await page.addInitScript(() => localStorage.setItem('taskbar-hero.howToPlaySeen', '1'));
+  await pinVisualFonts(page);
   await page.goto('/#landing');
   for (const screen of ['landing', 'class']) {
     if (screen === 'class') await page.getByTestId('landing-start').click();
