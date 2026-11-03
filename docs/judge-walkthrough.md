@@ -1,5 +1,15 @@
 # Taskbar Hero (Cat RPG v2) — 5-Minute Judge Walkthrough
 
+## Security in 2 minutes
+
+Guest progress is local browser data. Authenticated progress uses wallet sign-in, verified player identity and server-computed rewards; a wallet signature does not authorize another player's rows. Local tests exercise RLS/grants, request-ID retry/ownership, per-player budgets and voucher replay/recovery. V2 budgets fail closed if their counter store is unavailable; per-IP and human-uniqueness protections remain gaps.
+
+Open Help → On-chain proof to read the public Fuji contracts (43113). Code/linkage/events are read-only evidence, not a transaction receipt or an independent audit. The [security overview](security-overview.md) links exact source tests and explains the distinction.
+
+PR #244 is still blocked by the missing complete deployed function backup and tested restore path. This session has not deployed the backend, changed flags/settings or completed fresh funded mint/list/buy proof. The walkthrough below is older media guidance; screen names/timings and transaction claims require the upcoming submission-pack refresh. Three starter classes are currently offered on first entry, with the broader class registry available through Hero.
+
+## Historical gameplay walkthrough (refresh pending)
+
 A structured, step-by-step evaluation guide for contest judges testing **Taskbar Hero (Cat RPG v2: Cat Café Quest)**.
 
 - **Target Evaluation Time:** ~5 minutes

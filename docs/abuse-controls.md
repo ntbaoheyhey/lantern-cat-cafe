@@ -1,5 +1,13 @@
 # Abuse-controls assessment
 
+## Current source status — 3 November 2026
+
+V2 per-player route/aggregate request budgets are implemented in [budgets.ts](../supabase/functions/_shared/v2/budgets.ts), with 429/Retry-After denial and 503 fail-closed counter errors. [Hardening tests](../supabase/tests/src/request-budgets-hardening.test.ts) exercise parallel bursts and an actually missing RPC. V2 actual-byte limits, fatal UTF-8 decoding and a total read deadline are covered by [body-limit tests](../supabase/tests/src/v2-body-limits.test.ts). Request-ID replay, revision/ownership checks, starter protection and voucher recovery now have [current source coverage](security-test-matrix.md).
+
+Per-IP/auth-challenge throttling, Sybil resistance and live enforcement are not established by these tests. Production function-source backup/restore remains unresolved in #244. No deployment or migration follows from this documentation. [Consolidated overview](security-overview.md).
+
+## Historical assessment (superseded where corrected above)
+
 Status update (2026-10-26, S2): historical v1 assessment retained; new v2 concurrency tests confirm several atomic boundaries and expose gated retry/equipment/starter gaps; bounded v2 JSON parsing is fixed, request budgets remain proposal-only. See [current review](security-review-2026-10.md).
 
 Assessed on 2026-10-24 against `main` commit `e64934d`, for B3-CX3. This is a source review, not a live penetration test or a deployment/configuration audit. No application, database, contract or game-rule changes are proposed by this patch.
