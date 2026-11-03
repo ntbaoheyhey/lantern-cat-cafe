@@ -1,25 +1,18 @@
-# UI session handoff — RESUMED
-- Latest human instruction: “resume”. Continue the UI programme and its requested15-minute prompt.
-- Own CXR2 A2 runner38116 and its descendants were stopped after PID/cwd checks. No broad kill; no foreign processes touched. No5300–5399 listeners remain. No UI merge lock held.
-- Requested15-minute native heartbeat ti-p-t-c-c-ng-vi-c-m-i-15-ph-t is PAUSED too; exact prompt “tiếp tục công việc”, current chat target. Other automations untouched.
-- Source /Users/bao/taskbar-hero-ui: ai/codex-ui-cxr2, frozen6ef93c0b6959aa470665613616781211225d15bd, not pushed. Parent911dec1 integrates docs-only main1a1b499.
-- CXR2 A2 passed typecheck,lint,script/package tests,1448 web units,build,219 changed browser executions at EACH size (3 repeats). Full1280 completed368/368 before shutdown; full1600 was interrupted and5-repeat resize not reached. No passing formal grade.
-- A1 stopped at one stale decorative empty-slot count (expected200,correct193 with7 equipped). Fixed exact expectation while retaining all aria-hidden/non-tabstop assertions; failure retained in cards/CXR2/attempt-1/.
-- Fresh B worktree /Users/bao/taskbar-hero-ui-verify-cxr2-b at6ef93c0, dependencies installed; B tests/review NOT started.
-- CXR2 repairs: shared dark modal stack, bounded loot scroll/Home-End/focus fallback, v2 Help advice, loading/error/retry, first-class save recovery, returning guest route, exact HUD amounts, owned-capacity Bag display, Market bigint wrapping, Recent loot overflow, Forge/rail frames.
-- SYS-UI-007 returning earned guest blank-screen fixed locally: Hero hash->Landing->Play guest routesHome and preserves snapshot at1280/1600. Included in30/30 repeated returning/focus cases. SYSTEM owns live reproducer after release.
-- Review report reports/ui/CXR2.md, gallery reports/ui/cards/CXR2/gallery.html,166 hashed before/after captures in captures.json. All committed to feature branch. Local fixtures/mock RPC/wallet data are labelled; no live wallet/demo run.
-- CXR2 no PR/merge yet. Preserve incomplete full1600 logs; on explicit resume inspect any recorded failures then complete1600 on the frozen source. Do not repeat the completed1280 matrix. Finish resize repeats, fresh A/B, scope/visual/contrast checks, locked merge and live acceptance.
-- CXU3 PR259 merged8daa8e1: fresh A95/B95, main checks passed,35/35 deployed assets match,Actions0. LIVE ACCEPTED. Evidence cards/CXU3/.
-- CXU5 #249/1b299c4 historical94/94; CXU4 #251/2847e9a historical95/95; CXC2 #253/#254/666088c final96/96; CXR1 #245/6144d42 historical94/94: existing merges/acceptance adopted.
-- SYSTEM PR260 docs-only merged1a1b499. Read latest board/requests before resuming; unrelated merges held for SYS-UI-007, corrective CXR2 is intended release. Do not operate SYSTEM worktrees or live demo.
-- Art remaining:34 economy icons/5 quality aliases/all5 backdrops already exist. New rune/pet/skill frames/slots and empty-state polish not built. Art pipeline catalog currently writes docs/art (unowned); plan an owned docs/ui output path with strict equivalent tests instead of editing docs/art.
-- U4 motion not built. U5 conditional on U1–U4 merged/green. Rune model absent; render labelled unavailable/sample, never invent ownership. Sole CONFIG.features.originalEconomy=false and provider VITE_GAME_V2 unchanged.
-- SYS-UI-006 loaded local catalog common/Rare6 paints (8/11 colors); no persistent defect reproduced. Paint-aware capture guards still planned for art review.
-- U6 final demo/gallery pending. reports/ui/gallery.html remains a draft; CXR2 card gallery is current review evidence.
-- Ledger /Users/bao/taskbar-hero-ui-ledger, ai/codex-ui-ledger. Live verifier /Users/bao/taskbar-hero-ui-verification-cxu3 is inactive. Old /private/tmp worktrees were removed externally; do not prune foreign records.
-- Safety: no subagents/helper sessions; only explicitly requested heartbeat (now paused). UI-owned paths only; no original asset replacement/deletion, rules/API/wallet/v2text/packages/contracts/backend/workflow/dependency/provider changes. STOP preserved. Every commit requested author and[skip ci].
-- Next3 after explicit resume: finish CXR2 gate/release; implement additive art and motion with provenance/palette checks; build conditional previews and final gallery/report.
-- Resumed A2 PID45051 on5310–5313: full1600 then resize repeats; completed368-case1280 matrix is retained. Heartbeat is ACTIVE again.
-- CXR2 A96 PASS on6ef93c0 after resumed full1600:2531 core,368full per size,438 changed repeats,resize20/20,18 strict audit views. B tests-first PID48052 active in /Users/bao/taskbar-hero-ui-verify-cxr2-b on5320–5323. No CXR2 merge/PR yet.
-- CXR2 A96/B96 PASS on6ef93c0. Each core2531/438changed/20resize/18audit passes; full368×2 shared. Corrective release now preparing locked checks.
+# UI handoff — CXR2 release in progress
+- Current chat 01a1a168-1c8a-7b00-a0c2-2e89b0d3810c; explicit evening run instructions read from attachment. No subagents/helper sessions.
+- Source /Users/bao/taskbar-hero-ui on ai/codex-ui-cxr2 at frozen 6ef93c0b6959aa470665613616781211225d15bd. Fetched main is still 1a1b499; merge reports already up to date. No main checkout mutations.
+- CXR2 pushed once; new draft PR261 https://github.com/ntbaoheyhey/taskbar-hero/pull/261. A96/B96 self-graded fresh passes adopted at exact frozen head. Source and grades inspected.
+- A/B each 2531 core, 438 changed browser executions, 20/20 resize, 18 strict audit views. Shared full matrix 368 per desktop size. Existing 2 expected-fail/11 skipped statuses unchanged.
+- Prior locked release receipt at reports/ui/logs/cxr2-lock in source also passed typecheck/lint/build and changed specs at both sizes; PID54443 has exited.
+- BLOCK: shared merge.lock remains owned by prior UI release, timestamp 2026-11-03T12:28:54Z, PID54443 dead. It is younger than90min and MUST NOT be removed without explicit user exception. No lock owned by this new run. Check every2–3min, max60min.
+- New release refresh PID58195 in source: reports/ui/release-cxr2-refresh.py; logs reports/ui/logs/cxr2-release-refresh. Ports5360–5363 checked before each run. Three returning/focus/class specs repeated3 at each size; resize repeated5 at each size. No full matrix repeated.
+- Need strict current-instruction scope audit before merge: inherited candidate captures live in screenshots/ui-2026-11-03; current OWN list names screenshots/ui/**. Resolve without losing original captures or changing runtime.
+- New native heartbeat retargeted to THIS chat, ACTIVE every15min, exact prompt “tiếp tục công việc”; existing automation id ti-p-t-c-c-ng-vi-c-m-i-15-ph-t reused. No new scheduler.
+- Board last30 read; requests directory/U1.md/UI.md do not currently exist. Last SYSTEM state holds unrelated merges for SYS-UI-007; no new selector delivered. Do not control SYSTEM worktrees or live demo.
+- CXR2 SYS-UI-007 local returning guest snapshot regression passes frozen gate; NOT yet fixed on main/live. Live acceptance and SYSTEM recheck pending release.
+- Historical #257 remains open/superseded: 1 boss-state timeout,3 stale a11y queries,9 first-visit Help-blocked Relic fixtures. CXR2 fixes queries/seed initialization; no timeout increase. #252 also remains open/superseded by shipped #259.
+- Existing CXU3 #259/8daa8e1 live accepted35/35 assets, A95/B95. CXU5 #249, CXU4 #251, CXC2 #253/#254, CXR1 #245 accepted; do not redo.
+- Card2 ART2 pending additive rune/pet/skill frames/slots, empty-state/landing art, provenance, owned docs/ui/art catalog and paint guard. Card3 MOTION pending. Card4 labelled sample previews pending absent selector. Card5 first-play polish pending. Card6 final gallery pending.
+- Existing34 economy icons/5quality aliases/5chapter backdrops/class/Relic art must remain byte-identical. Deterministic original art only; no deps/flags/provider changes.
+- Ledger untracked reports/art/UI-ART-PLAN.md existed before this run; preserve it. Source untracked prior runners/logs/captures preserved. No broad kills.
+- Next: finish refresh and strict scope; safely obtain shared lock, fetch/recheck, merge PR261, fresh main changed specs and live artifact hashes; board “SYS-UI-007 fixed in main” only after acceptance. Then cards2–6 in order.
