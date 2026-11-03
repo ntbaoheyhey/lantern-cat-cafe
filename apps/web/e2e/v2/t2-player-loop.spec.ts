@@ -96,7 +96,8 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   await expect(page.getByTestId('boss-key-hint')).toHaveCount(0);
   await page.clock.resume();
   await boss.getByRole('button', { name: 'Fight', exact: true }).click();
-  const arena = page.getByRole('region', { name: 'Boss arena' });
+  // Reduced motion resolves immediately, so the chest makes its painted arena background inert.
+  const arena = page.getByRole('region', { name: 'Boss arena', includeHidden: reduced });
   await expect(arena).toBeVisible();
   if (!reduced) {
     await expect(arena.locator('canvas')).toBeVisible();

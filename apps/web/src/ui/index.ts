@@ -1,6 +1,8 @@
 /**
  * Shared UI API (CXU4): import components and their typed props from this module.
  * Modal: controlled open/title/onClose/children, optional description and focus refs.
+ * className/backdropClassName preserve caller presentation; closeLabel customizes naming.
+ * showCloseButton/closeOnBackdrop default true; loot uses false to keep its existing actions.
  * Portals to body; traps focus, makes background inert, closes on Escape/backdrop,
  * restores opener on close/unmount. ConfirmModal adds confirmLabel/onConfirm,
  * confirmDisabled/busy; starts on Cancel. Owners handle async results and closing.

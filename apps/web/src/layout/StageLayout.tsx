@@ -768,7 +768,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         </nav>
       )}
 
-      <HowToPlay />
+      <HowToPlay mode="v2" />
     </ScreenFrame>
   );
 }

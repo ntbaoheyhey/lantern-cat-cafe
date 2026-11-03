@@ -1,9 +1,10 @@
-import { CONFIG } from '@taskbar-hero/game-rules';
-import { useEffect, useRef, useSyncExternalStore } from 'react';
+import { CONFIG, v2 } from '@taskbar-hero/game-rules';
+import { useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import type { IconName } from '../art/pixelIcons';
 import { PixelIcon } from '../art/pixelIcons';
 import { LABELS } from '../theme/labels';
 import { closeHelp, getHelpOpen, openHelp, subscribeHelp } from './helpStore';
+import { Modal } from '../ui';
 import './onboarding.css';
 
 const hours = CONFIG.idle.offlineCapSeconds / 3600;
@@ -36,6 +37,15 @@ export const STEPS: StepItem[] = [
   },
 ];
 
+/** Initial v2 guidance uses the same current rules as the in-game Help screen. */
+export const V2_STEPS: StepItem[] = [
+  { icon: 'paw', text: 'Choose a starter class. Mochi earns Fish, Yarn, XP and materials while exploring.' },
+  { icon: 'sword', text: `Your first claim each day grants ${v2.V2_CONFIG.idle.dailyKeys} Cat Key. A boss win spends ${v2.V2_CONFIG.boss.keyCost}; a loss keeps your key.` },
+  { icon: 'bag', text: `Equip drops in Bag (capacity ${v2.V2_CONFIG.bag.limit}); craft or salvage gear in Forge.` },
+  { icon: 'flask', text: `Forge a Relic with ${v2.RELIC_RECIPE.materials.yarn ?? 0} Yarn and ${v2.RELIC_RECIPE.materials.moonPearl ?? 0} Moon Pearl, up to ${v2.RELIC_RECIPE.perDay} per day. Minting uses free Fuji test AVAX.` },
+  { icon: 'shop', text: 'Only minted Relics can be traded in Market. Ordinary gear stays in your game.' },
+];
+
 let lastOpener: HTMLElement | null = null;
 
 export function setOpener(el: HTMLElement | null): void {
@@ -43,69 +53,25 @@ export function setOpener(el: HTMLElement | null): void {
 }
 
 /** The How to play dialog. Opens on the first visit and from the "?" button. */
-export function HowToPlay() {
+export function HowToPlay({ mode = 'classic' }: { mode?: 'classic' | 'v2' } = {}) {
+  const steps = mode === 'v2' ? V2_STEPS : STEPS;
   const open = useSyncExternalStore(subscribeHelp, getHelpOpen);
-  const dialog = useRef<HTMLDivElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
   const start = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
+  // Resolve the first-visit menu after the DOM commits. Reopens use the actual Help button.
+  useLayoutEffect(() => {
     if (!open) return;
-    const active = document.activeElement as HTMLElement | null;
-    const opener = lastOpener ?? (active && active !== document.body && document.contains(active) ? active : null);
+    returnFocus.current = lastOpener ?? document.querySelector<HTMLElement>('button.toggle, [aria-controls="game-panel"]');
     lastOpener = null;
-
-    start.current?.focus();
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeHelp();
-      } else if (e.key === 'Tab') {
-        // Keep focus inside the dialog.
-        const items = dialog.current?.querySelectorAll<HTMLElement>('button');
-        if (!items?.length) return;
-        const first = items[0]!;
-        const last = items[items.length - 1]!;
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      const focusTarget = () => {
-        if (opener && document.contains(opener) && opener !== document.body) {
-          opener.focus();
-        } else {
-          const toggle = document.querySelector<HTMLElement>('button.toggle, [aria-controls="game-panel"]');
-          toggle?.focus();
-        }
-      };
-      focusTarget();
-      queueMicrotask?.(focusTarget);
-    };
   }, [open]);
 
-  if (!open) return null;
   return (
-    <div className="help-backdrop" onClick={(e) => e.target === e.currentTarget && closeHelp()}>
-      <div
-        ref={dialog}
-        className="help-dialog pixel-card fx-pop"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="help-title"
-      >
-        <button type="button" className="help-x" aria-label="Close help" onClick={closeHelp}>
-          ×
-        </button>
-        <h2 id="help-title">How to play</h2>
+    <Modal open={open} title="How to play" onClose={closeHelp} initialFocusRef={start}
+      returnFocusRef={returnFocus} className="help-dialog pixel-card fx-pop"
+      backdropClassName="help-backdrop" closeLabel="Close help">
         <ol className="help-steps">
-          {STEPS.map((step, i) => (
+          {steps.map((step, i) => (
             <li key={step.icon} className="help-step-item">
               <div className="help-step-lead">
                 <span className="help-step-badge" aria-hidden="true">
@@ -126,8 +92,7 @@ export function HowToPlay() {
         <button ref={start} type="button" className="help-start pixel-btn" onClick={closeHelp}>
           Start playing
         </button>
-      </div>
-    </div>
+    </Modal>
   );
 }
 

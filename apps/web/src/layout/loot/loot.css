@@ -180,7 +180,7 @@
 .loot-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,7 +258,7 @@
   text-align: center;
 }
 
-.chest-reveal-title {
+.chest-reveal-dialog .ui-modal-heading h2 {
   margin: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 1.4rem;
@@ -323,7 +323,7 @@
 }
 
 /* Welcome back dialog specifics */
-.welcome-back-title {
+.welcome-back-dialog .ui-modal-heading h2 {
   margin: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 1.4rem;
@@ -390,10 +390,10 @@
   color: #8c4a00;
 }
 
-[data-theme='light'] .chest-reveal-title,
-:root:not([data-theme='dark']) .chest-reveal-title,
-[data-theme='light'] .welcome-back-title,
-:root:not([data-theme='dark']) .welcome-back-title {
+[data-theme='light'] .chest-reveal-dialog .ui-modal-heading h2,
+:root:not([data-theme='dark']) .chest-reveal-dialog .ui-modal-heading h2,
+[data-theme='light'] .welcome-back-dialog .ui-modal-heading h2,
+:root:not([data-theme='dark']) .welcome-back-dialog .ui-modal-heading h2 {
   color: #8c4a00;
   text-shadow: none;
 }
@@ -452,3 +452,14 @@
   background: #f4eee6;
   border-color: #8c78a0;
 }
+
+/* Shared dialog heading stays above the existing decorative chapter backdrop. */
+.chest-reveal-dialog .ui-modal-heading { position: relative; z-index: 1; }
+
+/* Long offline loot scrolls within its summary so focus never hides the title/rule/actions. */
+.ui-modal.welcome-back-dialog { overflow: hidden; }
+.welcome-back-dialog > .welcome-back-summary { min-height: 0; overflow-y: auto; flex: 1 1 auto; }
+.welcome-back-dialog > .ui-modal-heading,
+.welcome-back-dialog > .welcome-back-duration,
+.welcome-back-dialog > .welcome-back-rule,
+.welcome-back-dialog > .welcome-back-actions { flex: 0 0 auto; }
