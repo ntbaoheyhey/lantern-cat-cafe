@@ -1,0 +1,2 @@
+/* Leave the Landing footer and ordinary character notifications reachable. */
+.wallet-notifications .ui-toast-host { bottom: calc(var(--sp-5, 24px) + 56px); }
