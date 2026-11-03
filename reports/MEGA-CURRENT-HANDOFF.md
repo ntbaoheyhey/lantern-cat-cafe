@@ -1,5 +1,6 @@
 # Taskbar Hero — SYSTEM ACTIVE
-Updated: 2026-11-03T16:56:08.217101+07:00. 15min checkpoint: Git/PR/board unchanged; no owned processes; UI007/funded proof pending.
+Updated: 2026-11-03T17:02:02.295020+07:00. ACTIVE background-only; user STOPPED screen control.
+USER OVERRIDE: no screen/browser UI control until user explicitly resumes it; no CUA/native clicks/typing.
 Read FIRST after compaction; reconcile Git/board/PIDs; never duplicate tests or AI workers.
 Existing taskbar-hero-hourly-handoff now ACTIVE every15minutes in this same chat (user request).
 
@@ -40,7 +41,9 @@ No contest submission,visibility change,video upload or funded-wallet proof.
 CXQ1: actual UI/clock earns guest progress; original script bounded90min. Prepared save disclosed, never synthetic.
 Guest-checkpoint.mjs rejects credentials/vouchers;6 controls PASS; checkpoint JSON mode0600 stays unstaged.
 Preparation head8daa8e1; timed R1 on1a1b499 revalidated35assets before/after. Refresh identity if main changes.
-Official faucet requires wallet+Builder Hub login; no SYSTEM wallet/key/signature/funding/tx created.
+User provided Core/Chrome public account; read-only Fuji balance0.57499999978920712 at60447415.
+Account0x2Bba9a48F7F79d99154108A28d32f1a21d17055c is also deployed NFT owner; do not assume isolated throwaway.
+No key received, connection/signature/funding/tx performed; buyer account/custody and actual run still unverified.
 Owner prerequisite in OPTIONAL-USER-STEPS; never request/persist seed/private key;244 blocks nothing unrelated.
 
 SYSTEM scope:ledger/owner steps,original data/packages/nonvisual wiring,CXQ1,CXS1/CXS2,CXN4/CXN5,regression.

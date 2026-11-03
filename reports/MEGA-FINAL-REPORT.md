@@ -1,4 +1,6 @@
-# SYSTEM ACTIVE — 2026-11-03T16:56:08.217101+07:00
+# SYSTEM ACTIVE — 2026-11-03T17:02:02.295020+07:00
+
+User restriction 2026-11-03T17:02:02.295020+07:00: screen/browser UI control stopped; background-only work remains authorized. Core/Chrome public address was supplied and read-only Fuji balance is approximately0.575testAVAX at block60447415. The account is also the deployed RelicNFT owner; it is not established as an isolated throwaway account. No key, connection, signature or transaction was performed. Buyer account and the actual funded journey remain unverified.
 
 Latest checkpoint: 2026-11-03T16:56:08.217101+07:00 — fetched main1a1b499 and PR244/260 states unchanged; no new UI readiness/data request, owned PID, system listener or merge lock. Existing test evidence retained; no duplicate run or new merge. UI007/funded prerequisites remain pending.
 
