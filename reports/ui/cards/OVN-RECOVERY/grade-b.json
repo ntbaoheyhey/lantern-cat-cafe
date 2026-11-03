@@ -1,0 +1,39 @@
+{
+  "card": "OVN-RECOVERY",
+  "grader": "B",
+  "label": "self-graded (fresh pass)",
+  "head": "afd06992b05b4c98a15c77ec4903166ef892b0f1",
+  "score": 95,
+  "pass": true,
+  "reviewedAt": "2026-11-03T20:40:56.086824+00:00",
+  "tests": {
+    "productGateCommands": 14,
+    "webUnitCases": 1455,
+    "changedPerSize": 33,
+    "changedRepeatEach": 3,
+    "fullPerSize": "Exact-head A ran the full matrix once per size. B independently ran changed specs and all other checks.",
+    "resizePassed": 20,
+    "resizeTotal": 20,
+    "strictAuditViews": 18,
+    "axeScans": 28,
+    "confirmedViolations": 0,
+    "supplementalRecoveryScans": 6,
+    "keyboardEnterEscapeFocus": true
+  },
+  "review": {
+    "testsFirst": true,
+    "diff": "Read all four changed files. Existing mode notice is rendered with the shared polite status Banner. Class confirmation focuses Confirm, Escape and Cancel return focus to Choose, and delayed navigation preserves focus already inside its destination. Tests cover fresh and returning guest recovery without weakening assertions.",
+    "visual": "Native 1280x720 and 1600x900 recovery screenshots reviewed. Notice and controls fit, all text readable, no document overflow, no unexpected browser errors.",
+    "criticalDefects": [],
+    "limitations": [
+      "Earlier 993bfc4 command gates passed but supplemental keyboard review failed. Its failure is preserved and superseded by this corrected exact head.",
+      "Existing axe incomplete checks remain in raw evidence. No confirmed violations or excluded rules.",
+      "Release remains parked under the Vercel quota hold."
+    ]
+  },
+  "gateReceipt": "../../logs/ovn-keyboard-b/receipt.json",
+  "supplementalReceipt": "../OVN-U3/expiry-keyboard-b/review.json",
+  "scopeReceipt": "scope-b.json",
+  "release": "PARKED. Depends on FIRSTPLAY draft265.",
+  "pr": "https://github.com/ntbaoheyhey/taskbar-hero/pull/268"
+}

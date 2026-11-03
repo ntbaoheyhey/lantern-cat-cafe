@@ -14,3 +14,5 @@
 - Reports and receipts use ai/codex-ui-ledger. Update handoff per milestone. Draft PRs only while quota holds. No merge lock held.
 
 - 20:35Z SYS e2994f6 rejected after native1280connectedwalletPower/Live overlap. Geometry repro RED preserved. Wallet-owned CSS repair85a6919 builder8/8PASS, native1280reviewPASS, freshA70182/B70183 at5173/5190. Keyboardafd0699 cleanB14commandsPASS, A full still running. No merge/quota probe.
+
+- 20:41Z recovery draft268/afd0699 acceptedA95/B95. SYS85a6919 B2all14commandsPASS,24wallet+8late/maxbalancecases/reviewerPASS. A2unit1/1467timeout/orphanportFAIL retained;5isolatedStageLayout runsPASS. Ownorphan67797cwdverified/stopped. FreshA3PID74597 unitworkers1 nowall1467units/typecheck/lint/buildPASS,firstexactheadfullmatrixrunning. No overallSYSgrade untilcompletion.

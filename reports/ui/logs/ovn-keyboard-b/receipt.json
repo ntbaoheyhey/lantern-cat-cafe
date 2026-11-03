@@ -1,0 +1,234 @@
+{
+  "head": "afd06992b05b4c98a15c77ec4903166ef892b0f1",
+  "pass": "ovn-keyboard-b",
+  "pid": 58812,
+  "cwd": "/Users/bao/taskbar-hero-ovn-ui-keyboard-b",
+  "ports": [
+    5320,
+    5321,
+    5322,
+    5323,
+    5324
+  ],
+  "checks": [
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T20:19:25.977908+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T20:19:26.171797+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T20:20:35.708637+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/web-units.log"
+    },
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T20:21:48.093437+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T20:22:01.308728+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/lint.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T20:22:14.030921+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T20:22:19.041361+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T20:22:32.963609+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/class-confirmation-keyboard.spec.ts",
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T20:22:47.551174+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/class-confirmation-keyboard.spec.ts",
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T20:25:36.760398+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/changed-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T20:28:13.827537+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T20:28:35.510157+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/resize-five-1600x900.log"
+    },
+    {
+      "label": "strict-ui-audit",
+      "command": [
+        "node",
+        "--import",
+        "/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs",
+        "tools/ui-audit.mjs",
+        "/Users/bao/taskbar-hero-ovn-ui-keyboard-b/screenshots/ui/ovn-keyboard-b-audit",
+        "bossReadyStrong",
+        "--strict"
+      ],
+      "started": "2026-11-03T20:28:56.983820+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/strict-ui-audit.log"
+    },
+    {
+      "label": "axe-wcag-aa",
+      "command": [
+        "node",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/ui/axe-review.mjs",
+        "/Users/bao/taskbar-hero-ovn-ui-keyboard-b",
+        "dist-v2/e2e-5321",
+        "5324",
+        "/Users/bao/taskbar-hero-ovn-ui-keyboard-b/reports/ui/logs/ovn-keyboard-b/axe",
+        "all"
+      ],
+      "started": "2026-11-03T20:29:14.997221+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/ovn-keyboard-b/axe-wcag-aa.log"
+    }
+  ]
+}
