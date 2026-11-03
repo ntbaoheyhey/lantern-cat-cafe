@@ -1058,9 +1058,13 @@
 
 .shell-panel-view.screen-landing,
 .shell-panel-view.screen-class {
-  padding: var(--sp-4, 16px);
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .shell-panel-view.screen-home { padding: var(--sp-4, 16px); }
 }

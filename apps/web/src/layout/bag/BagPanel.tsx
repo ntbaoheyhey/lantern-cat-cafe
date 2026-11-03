@@ -197,7 +197,7 @@ export function BagPanel({
 
               <button
                 type="button"
-                className="pixel-btn bag-equip-best"
+                className="pixel-btn pixel-btn--secondary bag-equip-best"
                 disabled={upgrades.length === 0 || isLoopBusy}
                 aria-busy={isBusyEquip ? 'true' : 'false'}
                 title={upgrades.length === 0 ? 'Nothing in the bag is better than what you wear' : undefined}
@@ -281,7 +281,7 @@ export function BagPanel({
 
         {/* Right Detail Panel */}
         <aside className="bag-sidebar">
-          <section aria-label="Item detail" className={`bag-detail pixel-card${selected ? '' : ' is-empty'}`}>
+          <section aria-label="Item detail" className={`bag-detail${selected ? '' : ' is-empty'}`}>
             {selected ? (
               <ItemDetail
                 item={selected}
@@ -349,56 +349,107 @@ function ItemDetail({
 
   return (
     <div className="detail-body">
-      <div className="detail-head">
-        <span
-          className="detail-art"
-          data-rarity={item.rarity}
-          style={{ borderColor: rarityColor(item.rarity) }}
-        >
-          <ItemIcon item={item} size={2} />
-        </span>
-        <div className="detail-title">
-          <h3>{itemName(item.itemKey)}</h3>
-          <div className="detail-pills">
-            <span
-              className="rarity-pill"
-              data-rarity={item.rarity}
-              style={{ borderColor: rarityColor(item.rarity) }}
-            >
-              {RARITY_LABEL[item.rarity] ?? item.rarity}
-            </span>
-            <span className="detail-meta">
-              Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
-            </span>
+      <div className="detail-item-card pixel-card">
+        <div className="detail-head">
+          <span
+            className="detail-art"
+            data-rarity={item.rarity}
+            style={{ borderColor: rarityColor(item.rarity) }}
+          >
+            <ItemIcon item={item} size={2} />
+          </span>
+          <div className="detail-title">
+            <h3>{itemName(item.itemKey)}</h3>
+            <div className="detail-pills">
+              <span
+                className="rarity-pill"
+                data-rarity={item.rarity}
+                style={{ borderColor: rarityColor(item.rarity) }}
+              >
+                {RARITY_LABEL[item.rarity] ?? item.rarity}
+              </span>
+              <span className="detail-meta">
+                Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="detail-section">
-        <h4 className="detail-section-heading">Stats</h4>
-        <ul className="detail-lines" aria-label="Item lines">
-          {base.map((line) => (
-            <li key={`base-${line.stat}`} className="detail-stat-row">
-              <span className="stat-label">{statLabel(line.stat)}</span>
-              <span className="stat-value">{formatStat(line.stat, line.value)}</span>
-            </li>
-          ))}
-          {bonus.map((line) => (
-            <li key={`bonus-${line.stat}`} className="detail-stat-row bonus">
-              <span className="stat-label">{statLabel(line.stat)}</span>
-              <span className="stat-value">+{formatStat(line.stat, line.value)} (bonus)</span>
-            </li>
-          ))}
-          {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
-            <li className="detail-stat-row relic-stat">
-              <span className="stat-label">Relic</span>
-              <span className="stat-value">#1042 · minted</span>
-            </li>
-          )}
-        </ul>
-      </div>
+        <div className="detail-section">
+          <h4 className="detail-section-heading">Stats</h4>
+          <ul className="detail-lines" aria-label="Item lines">
+            {base.map((line) => (
+              <li key={`base-${line.stat}`} className="detail-stat-row">
+                <span className="stat-label">{statLabel(line.stat)}</span>
+                <span className="stat-value">{formatStat(line.stat, line.value)}</span>
+              </li>
+            ))}
+            {bonus.map((line) => (
+              <li key={`bonus-${line.stat}`} className="detail-stat-row bonus">
+                <span className="stat-label">{statLabel(line.stat)}</span>
+                <span className="stat-value">+{formatStat(line.stat, line.value)} (bonus)</span>
+              </li>
+            ))}
+            {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
+              <li className="detail-stat-row relic-stat">
+                <span className="stat-label">Relic</span>
+                <span className="stat-value">Mint proof unavailable</span>
+              </li>
+            )}
+          </ul>
+        </div>
 
-      <div className="compare">
+        <div className="detail-actions">
+          <button
+            type="button"
+            className="pixel-btn bag-btn-equip"
+            disabled={block !== null || isLoopBusy}
+            aria-busy={isBusyEquip ? 'true' : 'false'}
+            title={block ?? undefined}
+            aria-describedby={block ? noteId : undefined}
+            onClick={() => onEquip(item.id, item.slot)}
+          >
+            {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
+            {isBusyEquip ? 'Equipping...' : 'Equip'}
+          </button>
+
+          <button
+            type="button"
+            className="bag-btn-secondary bag-btn-forge"
+            disabled={isLoopBusy}
+            onClick={() => (onForge ? onForge(item) : onNavigate?.('forge'))}
+          >
+            Forge
+          </button>
+
+          <button
+            type="button"
+            className="bag-btn-secondary bag-btn-list"
+            disabled={isLoopBusy}
+            onClick={() => (onList ? onList(item) : onNavigate?.('market'))}
+          >
+            List
+          </button>
+
+          <button
+            type="button"
+            className="bag-btn-secondary bag-btn-lock"
+            disabled={isLoopBusy}
+            aria-busy={isBusyLock ? 'true' : 'false'}
+            onClick={() => onToggleLock(item.id, !item.locked)}
+          >
+            {isBusyLock && <span className="btn-spinner" aria-hidden="true" />}
+            {isBusyLock ? 'Saving...' : item.locked ? 'Unlock' : 'Lock'}
+          </button>
+        </div>
+
+        {block && (
+          <p id={noteId} className="detail-note" data-testid="block-reason-equip">
+            {block}
+          </p>
+        )}
+      </div>
+      <div className="compare pixel-card">
         <h4>Compare with equipped</h4>
         <div className="compare-cols">
           <div className="compare-col current">
@@ -442,55 +493,6 @@ function ItemDetail({
         )}
       </div>
 
-      <div className="detail-actions">
-        <button
-          type="button"
-          className="pixel-btn bag-btn-equip"
-          disabled={block !== null || isLoopBusy}
-          aria-busy={isBusyEquip ? 'true' : 'false'}
-          title={block ?? undefined}
-          aria-describedby={block ? noteId : undefined}
-          onClick={() => onEquip(item.id, item.slot)}
-        >
-          {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
-          {isBusyEquip ? 'Equipping...' : 'Equip'}
-        </button>
-
-        <button
-          type="button"
-          className="bag-btn-secondary bag-btn-forge"
-          disabled={isLoopBusy}
-          onClick={() => (onForge ? onForge(item) : onNavigate?.('forge'))}
-        >
-          Forge
-        </button>
-
-        <button
-          type="button"
-          className="bag-btn-secondary bag-btn-list"
-          disabled={isLoopBusy}
-          onClick={() => (onList ? onList(item) : onNavigate?.('market'))}
-        >
-          List
-        </button>
-
-        <button
-          type="button"
-          className="bag-btn-secondary bag-btn-lock"
-          disabled={isLoopBusy}
-          aria-busy={isBusyLock ? 'true' : 'false'}
-          onClick={() => onToggleLock(item.id, !item.locked)}
-        >
-          {isBusyLock && <span className="btn-spinner" aria-hidden="true" />}
-          {isBusyLock ? 'Saving...' : item.locked ? 'Unlock' : 'Lock'}
-        </button>
-      </div>
-
-      {block && (
-        <p id={noteId} className="detail-note" data-testid="block-reason-equip">
-          {block}
-        </p>
-      )}
     </div>
   );
 }

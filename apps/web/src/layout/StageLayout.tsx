@@ -530,11 +530,6 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
               </>
             ) : (
               <div className="home-dashboard" data-testid="home-dashboard">
-                <div className="home-col home-col--left">
-                  <HeroCard state={state} />
-                  <NextGoalCard state={state} onNavigate={handleSelectScreen} />
-                </div>
-
                 <div className="home-col home-col--center">
                   <div role="region" aria-label="Game stage" className="v2-stage home-stage-wrap">
                     <StageCanvas
@@ -549,6 +544,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                 </div>
 
                 <div className="home-col home-col--right">
+                  <HeroCard state={state} />
+                  <NextGoalCard state={state} onNavigate={handleSelectScreen} />
                   <RecentLootCard state={state} gains={gains && !welcome ? gains : null} />
                 </div>
               </div>
@@ -590,7 +587,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           style={{ display: screen === 'bag' ? 'flex' : 'none' }}
         >
           <div id="panel-Bag" className="v2-tabpanel">
-            <h2 className="v2-tabpanel-title">Bag</h2>
+            <h2 className="sr-only">Bag</h2>
             <div className="v2-panel-body-inner">
               {state ? (
                 <BagPanel

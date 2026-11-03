@@ -525,3 +525,21 @@
   text-transform: uppercase;
   color: var(--picker-gold);
 }
+
+/* First-run desktop composition; the seven-class change dialog keeps its compact layout. */
+@media (min-width: 1024px) {
+  .screen-class .class-picker {
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 24px 32px;
+    gap: 20px;
+  }
+  .screen-class .class-picker__header { align-items: flex-start; text-align: left; }
+  .screen-class .class-picker__cards { flex: 1; min-height: 0; padding: 3px; overflow-y: auto; }
+  .screen-class .class-card { justify-content: space-evenly; padding: 24px; }
+  .screen-class .class-picker__footer { align-self: flex-end; max-width: 320px; }
+  .screen-class .class-picker__confirm-box { align-self: flex-end; width: min(100%, 540px); box-sizing: border-box; }
+}

@@ -128,15 +128,15 @@ for (const vp of CHECK_VIEWPORTS) {
       }
     }
 
-    // (c) "Equip best" button background equals --accent and its text contrast >= 4.5
+    // (c) "Equip best" is secondary; background equals --surface-2 and its text contrast >= 4.5
     const equipBestBtn = bag.getByRole('button', { name: 'Equip best', exact: true });
     await expect(equipBestBtn).toBeVisible();
-    const { bg, expectedAccent, contrast } = await equipBestBtn.evaluate((el) => {
+    const { bg, expectedSurface, contrast } = await equipBestBtn.evaluate((el) => {
       const style = getComputedStyle(el);
       const temp = document.createElement('div');
-      temp.style.color = 'var(--accent)';
+      temp.style.color = 'var(--surface-2)';
       document.body.appendChild(temp);
-      const expectedAccent = getComputedStyle(temp).color;
+      const expectedSurface = getComputedStyle(temp).color;
       document.body.removeChild(temp);
 
       function parseRgb(str: string): [number, number, number] {
@@ -160,11 +160,11 @@ for (const vp of CHECK_VIEWPORTS) {
 
       return {
         bg: style.backgroundColor,
-        expectedAccent,
+        expectedSurface,
         contrast: contrastRatio,
       };
     });
-    expect(bg).toBe(expectedAccent);
+    expect(bg).toBe(expectedSurface);
     expect(contrast).toBeGreaterThanOrEqual(4.5);
 
     // (d) no element in the card or bag clips text (scrollWidth <= clientWidth + 1)

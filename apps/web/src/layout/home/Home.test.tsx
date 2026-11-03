@@ -122,11 +122,11 @@ describe('Home and Landing Components (AGR1)', () => {
       expect(onStartGuest).toHaveBeenCalledTimes(1);
 
       // Proof strip items
-      expect(screen.getByText('ERC-721')).toBeTruthy();
+      expect(screen.getByText('ERC-1155')).toBeTruthy();
       expect(screen.getByText('Relic NFT')).toBeTruthy();
-      expect(screen.getByText(/Verified on Routescan/i)).toBeTruthy();
-      expect(screen.getByText(/Server-checked fights/i)).toBeTruthy();
-      expect(screen.getByText(/Open source/i)).toBeTruthy();
+      expect(screen.getByText(/View contract on Routescan/i)).toBeTruthy();
+      expect(screen.getByText(/Guest play is local/i)).toBeTruthy();
+      expect(screen.getByText(/Market contract/i)).toBeTruthy();
 
       // Help link
       const helpBtn = screen.getByTestId('landing-help-link');
@@ -134,4 +134,16 @@ describe('Home and Landing Components (AGR1)', () => {
       expect(onHelp).toHaveBeenCalledTimes(1);
     });
   });
+});
+
+it('landing gives accurate public Fuji contract facts without private-source or guest-server claims', () => {
+  render(<LandingHero />);
+  expect(screen.getByText('ERC-1155')).toBeTruthy();
+  expect(screen.queryByText(/ERC-721|Open source|Server-checked fights|Verified on Routescan/)).toBeNull();
+  expect(screen.getByText('Guest play is local')).toBeTruthy();
+  expect(screen.getByRole('link', { name: 'View contract on Routescan ↗' }).getAttribute('href'))
+    .toBe('https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract');
+  expect(screen.getByRole('link', { name: 'Market contract ↗' }).getAttribute('href'))
+    .toBe('https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract');
+  cleanup();
 });

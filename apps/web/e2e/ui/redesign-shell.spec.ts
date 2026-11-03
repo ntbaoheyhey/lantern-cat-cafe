@@ -7,7 +7,6 @@ import { layoutFindings } from '../../tools/layout-findings.mjs';
 
 const storageKey = readFileSync(new URL('../../src/api/MockGameApiV2.ts', import.meta.url), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 const stub = readFileSync(new URL('../fixtures/redesign-shell.html', import.meta.url), 'utf8');
-const missingContract = 'AGR0 shell contract is not implemented on this build: data-testid="rail" is absent. Re-run this same test after the shell lands; partial shells fail.';
 
 function collectErrors(page: Page) {
   const errors: string[] = [];
@@ -23,7 +22,7 @@ async function openStub(page: Page) {
 for (const viewport of manifest.viewports) {
   test.describe(`redesign shell ${viewport.width}x${viewport.height}`, () => {
     test.use({ viewport });
-    test('live rail route smoke (auto-gated until AGR0)', async ({ page }) => {
+    test('live rail route smoke requires the merged AGR0 shell', async ({ page }) => {
       const errors = collectErrors(page);
       await page.addInitScript(({ key, save }) => {
         localStorage.setItem(key, save);
@@ -32,9 +31,8 @@ for (const viewport of manifest.viewports) {
       await page.goto('/');
       await expect(page.locator('[data-testid="rail"], .v2-shell').first()).toBeVisible();
       await expect(page.locator('[data-testid="hud"], [aria-label="Cat status"]').first()).toBeVisible();
-      expect(errors, 'Startup errors must not be hidden by the selector gate').toEqual([]);
-      // The mission explicitly authorizes this one conditional skip, never an unconditional skip.
-      test.skip(await page.getByTestId(manifest.shell.railTestId).count() === 0, missingContract);
+      expect(errors, 'Startup errors must not be hidden').toEqual([]);
+      await expect(page.getByTestId(manifest.shell.railTestId)).toBeVisible();
       await smokeShell(page, errors);
     });
 

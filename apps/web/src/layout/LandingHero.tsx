@@ -3,6 +3,7 @@ import { CatPortrait } from '../CatPortrait';
 import { BackdropView } from '../art/backdrops/BackdropView';
 import { backdropFor } from '../art/backdrops';
 import { WalletButton } from '../wallet/WalletButton';
+import { SCENE_HEIGHT, useViewport } from './metrics';
 import './landing.css';
 
 export interface LandingHeroProps {
@@ -12,13 +13,18 @@ export interface LandingHeroProps {
 }
 
 export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps) {
+  const { width, height } = useViewport();
+  const sceneScale = Math.max(1, Math.ceil(height / SCENE_HEIGHT));
+  const sceneWidth = Math.ceil(width / sceneScale);
   const handleGuest = onStartGuest ?? onStart ?? (() => {});
 
   return (
     <section className="landing" aria-labelledby="landing-title" data-testid="landing-hero">
       {/* Full-bleed background scene */}
       <div className="landing__scene" aria-hidden="true">
-        <BackdropView art={backdropFor(1)} width={640} className="landing__backdrop" />
+        <div style={{ position: 'absolute', left: Math.floor((width - sceneWidth * sceneScale) / 2), top: Math.floor((height - SCENE_HEIGHT * sceneScale) / 2) }}>
+          <BackdropView art={backdropFor(1)} width={sceneWidth} scale={sceneScale} className="landing__backdrop" />
+        </div>
       </div>
 
       {/* Hero content grid */}
@@ -73,7 +79,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
       {/* Proof strip pinned to bottom */}
       <div className="landing__proof-strip" role="region" aria-label="Game guarantees and proof">
         <div className="landing__proof-item">
-          <span className="landing__proof-pill">ERC-721</span>
+          <span className="landing__proof-pill">ERC-1155</span>
           <span>Relic NFT</span>
         </div>
 
@@ -86,7 +92,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
             target="_blank"
             rel="noreferrer"
           >
-            Verified on Routescan ↗
+            View contract on Routescan ↗
           </a>
         </div>
 
@@ -94,7 +100,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
 
         <div className="landing__proof-item">
           <span className="landing__proof-check" aria-hidden="true">✓</span>
-          <span>Server-checked fights</span>
+          <span>Guest play is local</span>
         </div>
 
         <div className="landing__proof-divider" aria-hidden="true">·</div>
@@ -102,11 +108,11 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
         <div className="landing__proof-item">
           <a
             className="landing__proof-link"
-            href="https://github.com/ntbaoheyhey/taskbar-hero"
+            href="https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract"
             target="_blank"
             rel="noreferrer"
           >
-            Open source ↗
+            Market contract ↗
           </a>
         </div>
 

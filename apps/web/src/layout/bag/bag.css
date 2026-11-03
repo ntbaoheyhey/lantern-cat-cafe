@@ -106,7 +106,7 @@
   height: 30px;
   min-height: 30px;
   padding: 0 12px;
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: var(--fs-xs, 0.75rem);
   font-weight: 700;
@@ -157,7 +157,7 @@
   appearance: none;
   -webkit-appearance: none;
   border: 1px solid var(--border, #5b4572);
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   box-sizing: border-box;
@@ -282,7 +282,7 @@
   box-shadow: var(--pixel-shadow, 2px 2px 0 #000);
   box-sizing: border-box;
   flex-shrink: 0;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .bag-card.selected .bag-tile,
@@ -406,7 +406,7 @@
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
-  align-self: flex-start;
+  align-self: stretch;
 }
 
 .bag-detail {
@@ -542,7 +542,7 @@
   display: inline-flex;
   align-items: center;
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
   font-size: 11px;
   font-weight: 700;
@@ -926,4 +926,22 @@
     grid-template-columns: repeat(4, 56px);
     justify-content: center;
   }
+}
+
+/* The detail and comparison are separate cards in one scrollable named region. */
+.bag .bag-detail { padding: 0 3px 3px 0; border: 0; box-shadow: none; background: transparent; }
+.detail-item-card { display: flex; flex-direction: column; gap: 8px; }
+.bag .compare { margin: 0; border: 2px solid var(--border); padding: 10px 12px; }
+.bag .detail-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bag .bag-equip-best { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.bag-detail.is-empty .detail-hint-body { padding: 12px; border: 2px solid var(--border); background: var(--surface); }
+@media (min-width: 1024px) {
+  .bag-layout { padding: 16px; gap: 14px; }
+  .bag-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+  .bag-filters { grid-column: 1 / -1; grid-row: 2; }
+  .bag-toolbar-actions { justify-content: flex-end; flex-wrap: nowrap; }
+  .bag .bag-equip-best { width: auto; min-width: 0; }
+  .bag-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); padding: 3px; }
+  .bag-slot { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; }
+  .bag-card, .bag-tile, .bag-tile.empty-tile { width: 100%; height: 100%; }
 }
