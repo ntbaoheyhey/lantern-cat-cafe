@@ -2,8 +2,7 @@ import { createManagedGame } from '../managedGame';
 import { useEffect, useRef, useState } from 'react';
 import type Phaser from 'phaser';
 import type { ServerStateV2 } from '../../api/GameApiV2';
-import { backdropFor } from '../../art/backdrops';
-import { BackdropView } from '../../art/backdrops/BackdropView';
+import { SceneBackdrop } from '../../visual/SceneBackdrop';
 import type { StageScene } from './StageScene';
 import './stage.css';
 import { v2 } from '@taskbar-hero/game-rules';
@@ -76,8 +75,9 @@ export function StageCanvas({
   }, [logicalWidth]);
   useEffect(() => { scene.current?.show(state, reducedMotion); }, [state, reducedMotion]);
   return <div className="v2-stage-art" style={{ width: logicalWidth * zoom, height: 96 * zoom }}>
-    <BackdropView art={backdropFor(state.progress.chapter)} width={logicalWidth} scale={zoom} />
+    <SceneBackdrop chapter={state.progress.chapter} width={logicalWidth} scale={zoom} />
     <div ref={host} className="v2-stage-canvas" role="img" aria-label="Cat exploring the chapter" />
+    <SceneBackdrop chapter={state.progress.chapter} width={logicalWidth} scale={zoom} foreground />
     <div className="stage-progress" aria-label="Stage progress">
       <span>Chapter {progress.chapter} · Round {progress.round} / {v2.CHAPTERS.find(c => c.index === progress.chapter)!.roundsPerChapter}</span>
       <span className="stage-kills" aria-label={`${progress.kills} / ${progress.killsPerRound} kills; last kill is elite`}>

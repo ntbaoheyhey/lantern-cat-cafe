@@ -1,0 +1,31 @@
+@import './tokens.css';
+.atelier-scene { display:block; overflow:hidden; pointer-events:none; }
+.atelier-scene--front { position:absolute; inset:0; z-index:2; }
+.atelier-room { animation:atelier-room 18s steps(1,end) infinite alternate; }
+.atelier-foreground { animation:atelier-foreground 18s steps(1,end) infinite alternate; }
+.atelier-lamp { animation:atelier-lamp 6s ease-in-out infinite; }
+.atelier-dust rect { opacity:0; animation:atelier-dust 12s ease-in-out infinite; }
+.atelier-steam { animation:atelier-steam 5s ease-in-out infinite; }
+.mochi-portrait { display:inline-block; position:relative; flex:none; overflow:hidden; image-rendering:pixelated; }
+.mochi-portrait__pixels { display:block; width:48px; height:48px; transform-origin:top left; background:url('/art/visual/mochi-idle.png') 0 0 / 480px 48px; animation:mochi-idle 28s step-end infinite; }
+@keyframes mochi-idle {
+  0%,100%{background-position:0 0} 10%,30%,50%{background-position:-48px 0}
+  12%,32%,52%{background-position:-96px 0} 13%,33%,53%{background-position:-144px 0}
+  14%,34%,54%{background-position:-192px 0} 20%,40%,60%{background-position:-240px 0}
+  22%,42%,62%{background-position:-288px 0} 24%,44%,64%{background-position:-336px 0}
+  26%,46%,66%{background-position:0 0} 78%,84%,90%{background-position:-384px 0}
+  81%,87%,93%{background-position:-432px 0} 96%{background-position:0 0}
+}
+.atelier-mouse { opacity:0; animation:atelier-peek 28s step-end infinite; }
+@keyframes atelier-peek { 80%{opacity:1;transform:translateX(-1px)} 85%{transform:translateX(-3px)} 90%,100%{opacity:0} }
+
+@keyframes atelier-room { to {transform:translateX(-1px)} }
+@keyframes atelier-foreground { to {transform:translateX(1px)} }
+@keyframes atelier-lamp { 0%,100%{opacity:.75} 45%{opacity:1} 50%{opacity:.87} 55%{opacity:.98} }
+@keyframes atelier-dust { 15%,70%{opacity:.5} 100%{opacity:0;transform:translate(3px,-8px)} }
+@keyframes atelier-steam { 0%,100%{opacity:.1;transform:translateY(1px)} 50%{opacity:.5;transform:translateY(-2px)} }
+[data-visual-paused=true] *, [data-visual-paused=true] *::before, [data-visual-paused=true] *::after { animation-play-state:paused!important; }
+@media(prefers-reduced-motion:reduce) {
+  .atelier-scene *, .mochi-portrait__pixels { animation:none!important; }
+  .atelier-dust, .atelier-mouse { display:none; }
+}
