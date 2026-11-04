@@ -8,3 +8,10 @@
 
 .guest-coach .pixel-btn{background:#f5cb7b;color:#121522;border:1px solid #ae7961;padding:6px 10px;box-shadow:0 2px 0 #231d2b}
 .guest-coach button:focus-visible{outline:2px solid #fff1d6;outline-offset:3px}
+/* Preserve compact navigation geometry; the full ladder stays in Home. */
+@media(max-width:960px){.shell-context>.journey-horizons{display:none}}
+@media(max-width:600px){
+  .app-shell .forge-col-centre .forge-action-area{margin-bottom:6px!important}
+  .app-shell .forge-confirm-box{padding:8px}
+  .app-shell .forge-confirm-actions{flex-wrap:nowrap}
+}
