@@ -16,8 +16,13 @@ export function SceneBackdrop({ chapter, width, scale = 1, foreground = false }:
     </defs>
     {foreground ? <>
       <image className="atelier-foreground" href={`/art/visual/foreground-${ch}.png`} x={x} width="256" height="96" />
-      <g className="atelier-dust" fill={C.cream}>{Array.from({ length: 7 }, (_, i) => <rect key={i} x={Math.round(width * .2) + (i * 31) % Math.round(width * .65)} y={20 + i * 7 % 46} width={i % 3 === 0 ? .7 : .4} height={i % 3 === 0 ? .7 : .4} style={{ animationDelay: `${-i * 1.7}s` }} />)}</g>
+      <g className="atelier-dust" fill={C.cream}>{Array.from({ length: 7 }, (_, i) => <rect key={i} x={Math.round(width * .2) + (i * 31) % Math.round(width * .65)} y={20 + i * 7 % 46} width="1" height="1" style={{ animationDelay: `${-i * 1.7}s` }} />)}</g>
       <g className="atelier-steam" fill="none" stroke={C.cream} strokeWidth=".6" opacity=".5"><path d={`M${x + 181} 57 q-2 -2 0 -4 t0 -4`} /><path d={`M${x + 184} 55 q2 -2 0 -4`} /></g>
+      <g transform={`translate(${width - 24} 84)`}><g className="atelier-mouse">
+        <ellipse cx="0" cy="0" rx="3" ry="2" fill={C.ink} /><ellipse cx="-1" cy="-1" rx="2" ry="1.5" fill={C.common} />
+        <rect x="-2" y="-3" width="1" height="2" fill={C.rose} /><rect x="-3" y="-1" width="1" height="1" fill={C.ink} />
+        <path d="M2 0h4v-1h2" fill="none" stroke={C.coral} strokeWidth="1" />
+      </g></g>
       <rect width={width} height="96" fill={`url(#${id}-edge)`} />
     </> : <>
       <rect width={width} height="96" fill={C.night} />

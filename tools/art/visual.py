@@ -122,8 +122,21 @@ def foreground(ch):
 
 def mochi(frame):
     c=Canvas(48,48);dy=1 if frame in [2,3,6] else 0
+    if frame >= 8:
+        # A curled, sleeping silhouette; a one-pixel breathing change, never a KO pose.
+        c.ellipse(24,38,20,5,'coffee');c.ellipse(25,31,18,11,'ink');c.ellipse(25,30,17,10,'amber')
+        c.ellipse(24,29,14,9,'fur');c.ellipse(30,32,9,6,'cream')
+        lift=frame%2
+        c.poly([(6,25),(7,15+lift),(14,20),(21,16+lift),(24,27)],'ink')
+        c.poly([(8,25),(9,19+lift),(14,23),(20,20+lift),(22,27)],'fur')
+        c.ellipse(15,28+lift,10,8,'ink');c.ellipse(15,27+lift,9,7,'fur');c.ellipse(15,31+lift,6,3,'cream')
+        c.line(8,27+lift,12,28+lift,'ink');c.line(17,28+lift,21,27+lift,'ink');c.dot(15,30+lift,'coral')
+        c.rect(20,31,9,3,'blue');c.rect(20,31,8,1,'aqua')
+        c.ellipse(33,31,8,7,'rust');c.ellipse(32,30,7,6,'fur');c.ellipse(30,28,5,4,'amber')
+        c.rect(28,34,9,2,'cream');c.rect(12,36,10,3,'cream');return c
+    tx=1 if frame in [5,6] else 0
     # Lifted tail, generous head, cream muzzle, knitted dusk scarf, asymmetrical whiskers.
-    c.ellipse(35,33,7,7,'ink');c.ellipse(35,31,5,7,'amber');c.ellipse(35,29,3,6,'fur');c.ellipse(33,28,2,4,'night')
+    c.ellipse(35+tx,33,7,7,'ink');c.ellipse(35+tx,31,5,7,'amber');c.ellipse(35+tx,29,3,6,'fur');c.ellipse(33+tx,28,2,4,'night')
     c.ellipse(23,33,11,11,'ink');c.ellipse(23,32,10,10,'amber');c.ellipse(22,31,8,9,'fur');c.ellipse(23,35,5,6,'cream')
     c.rect(15,40,7,4,'ink');c.rect(16,40,6,3,'cream');c.rect(25,40,7,4,'ink');c.rect(25,40,6,3,'cream')
     c.poly([(10,17+dy),(10,3+dy),(20,10+dy),(29,10+dy),(36,3+dy),(37,21+dy)],'ink')
@@ -137,7 +150,8 @@ def mochi(frame):
     c.rect(21,24+dy,3,2,'coral');c.dot(22,26+dy,'ink');c.dot(20,27+dy,'rust');c.dot(24,27+dy,'rust')
     for x in [8,32]:c.rect(x,25+dy,6,1,'copper');c.rect(x,28+dy,5,1,'rust')
     c.rect(14,31,18,3,'blue');c.rect(15,31,16,1,'aqua');c.rect(28,34,4,6,'blue');c.rect(28,39,4,1,'aqua');c.rect(22,33,3,3,'gold');c.dot(23,33,'paper')
-    if frame==5:c.rect(36,5,1,5,'gold');c.rect(34,7,5,1,'gold')
+    if frame==5:
+        c.line(10,4,11,8,'night');c.line(11,4,14,7,'ink');c.dot(12,6,'fur')
     return c
 
 def forge():
@@ -154,9 +168,9 @@ def forge():
 assets={}
 for ch in range(1,6):
     assets[f'room-{ch}.png']=room(ch);assets[f'foreground-{ch}.png']=foreground(ch)
-frames=[mochi(i) for i in range(8)];sheet=Canvas(48*8,48)
+frames=[mochi(i) for i in range(10)];sheet=Canvas(48*10,48)
 for i,f in enumerate(frames):
-    for y in range(48):sheet.p[(y*384+i*48)*4:(y*384+(i+1)*48)*4]=f.p[y*48*4:(y+1)*48*4]
+    for y in range(48):sheet.p[(y*480+i*48)*4:(y*480+(i+1)*48)*4]=f.p[y*48*4:(y+1)*48*4]
 assets['mochi-idle.png']=sheet;assets['mochi.png']=frames[0];assets['forge-hearth.png']=forge()
 outputs={}
 for name,c in assets.items():outputs[OUT/name]=c.export()

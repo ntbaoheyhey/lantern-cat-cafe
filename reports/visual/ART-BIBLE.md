@@ -9,9 +9,9 @@
 
 **Light / depth:** upper-left window key + one warm practical lamp. Dark foreground, quieter cool back wall, brighter actor and item silhouette. A soft pool on the floor replaces concentric ellipses. Far layer drift ≤1 native pixel, foreground ≤2; never move the HUD. Five keys: living room plum/amber window; kitchen teal/oven; bath blue/aqua reflected window; basement wine/lantern; rooftop indigo/moon.
 
-**Rarity ladder:** Common: neutral single inset, no glow. Uncommon: sage corners. Rare: blue double edge, soft backing light. Epic: violet frame and one slow shimmer. Legendary: gold frame, four sparse sparks, warm halo. Mythic: rose/gold dual rim in the design demo only. Every rarity retains a text label; effects never encode eligibility.
+**Rarity ladder:** Common: neutral single inset, no glow. Uncommon: sage corners. Rare: blue double edge, soft backing light. Epic: violet frame and one slow shimmer. Legendary: gold frame, two sparse sparks, warm halo. Mythic: rose/gold dual rim in the design demo only. Every rarity retains a text label; effects never encode eligibility.
 
-**Motion:** idle 5.6 s stepped blink/breathe/tail; steam 4–6 s; ambience 12–20 s. Hover 140 ms, press 80 ms, reward anticipation 180 ms → impact 70 ms → settle 480 ms. Crit hit-stop 60 ms affects presentation only; shake ≤2 rendered px. At most 12 number labels and 16 impact particles. Reduced motion: static lit scene and fully visible result; no shimmer, drift, flash or shake. Hidden tab: pause CSS and stop cosmetic clocks. No audio.
+**Motion:** portrait 28 s stepped blink/breathe/tail/occasional nap; actor idle 2.2 s; steam 4–6 s; ambience 12–20 s. Hover 140 ms, press 80 ms, reward anticipation 180 ms → impact 70 ms → settle 480 ms. Crit hit-stop 60 ms affects presentation only; shake ≤2 rendered px. At most 12 number labels and 16 impact particles. Reduced motion: static lit scene and fully visible result; no shimmer, drift, flash or shake. Hidden tab: pause CSS and stop cosmetic clocks. No audio.
 
 **Typography / surfaces:** existing bundled Pixelify Sans for short headings, DM Sans for explanation, JetBrains Mono for values. Minimum body 12 px, ordinary text ≥4.5:1. Three surfaces: dark dusk recess, warm wood panel with top bevel, illuminated item plinth. Preserve readable text and focus outline before decorative chrome.
 
