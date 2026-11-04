@@ -309,4 +309,3 @@ Exact per-file parameters/hashes: `tools/art/gameplay-relics.json`. No prompt; c
 | `apps/web/public/relics/4.svg` | `{"id":4,"name":"Golden Maneki","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 34663 | 2026-11-04 |
 | `apps/web/public/art/gameplay/relic-4.png` | `{"id":4,"name":"Golden Maneki","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 485 | 2026-11-04 |
 | `reports/gameplay/relic-contact.png` | `{"scale":2,"ids":[1,2,3,4]}` | 1968 | 2026-11-04 |
-

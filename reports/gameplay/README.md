@@ -6,3 +6,5 @@ The final real-clock comparison uses `before-corrected-run.json` and `after-run.
 `timeline-metrics.json` contains the measured timeline and limits. `performance.json` contains the production five-minute soak and full application payload accounting; `effects/fps.json` contains the isolated effect benchmark. `accessibility.json`, capture receipts and `gallery-check.json` record desktop/offline checks. `scores.json` is a single-author nine-axis review, not player research. `gallery-manifest.json` hashes the 72 delivered gallery images.
 
 `asset-provenance.md` records every original asset and exact generator inputs. Machine-generated art manifests are under `tools/art/`. No reference-game artwork was downloaded or used. Logs include initial failures and final passes; see `logs/README.md` for compressed receipts.
+
+`delivery.json` binds the four review layers to their branches and the verified runtime. The isolated runtime is byte-identical to the pre-split source used for the full suite and production soak. Gallery labels use that stable runtime SHA; documentation-only commits can follow it.
