@@ -1,0 +1,105 @@
+{
+  "method": "Chromium CDP TaskDuration/ScriptDuration (renderer main-thread time); requestAnimationFrame intervals; forced-GC heap at 0/60/120/180/240/300 s. Hidden sample uses a synthetic visibilitychange, not OS power measurement.",
+  "samples": [
+    {
+      "second": 0,
+      "heapBytes": 14973724,
+      "nodes": 14745,
+      "documents": 1,
+      "taskSeconds": 0.032899,
+      "scriptSeconds": 0.000587,
+      "fps": 59.88023952095792,
+      "p95Ms": 16.700000000000045,
+      "mainThreadPercent": null
+    },
+    {
+      "second": 60,
+      "heapBytes": 16511316,
+      "nodes": 15104,
+      "documents": 1,
+      "taskSeconds": 4.146322,
+      "scriptSeconds": 0.846,
+      "fps": 59.952457817557296,
+      "p95Ms": 16.700000000004366,
+      "mainThreadPercent": 6.851786349190784
+    },
+    {
+      "second": 120,
+      "heapBytes": 16811228,
+      "nodes": 15107,
+      "documents": 1,
+      "taskSeconds": 7.395931,
+      "scriptSeconds": 1.426636,
+      "fps": 60.00239809750931,
+      "p95Ms": 16.79999999998836,
+      "mainThreadPercent": 5.411628153830226
+    },
+    {
+      "second": 180,
+      "heapBytes": 16920040,
+      "nodes": 15117,
+      "documents": 1,
+      "taskSeconds": 9.941276,
+      "scriptSeconds": 1.875286,
+      "fps": 60.00239809750931,
+      "p95Ms": 16.70000000001164,
+      "mainThreadPercent": 4.239535712339422
+    },
+    {
+      "second": 240,
+      "heapBytes": 16308956,
+      "nodes": 15117,
+      "documents": 1,
+      "taskSeconds": 13.32364,
+      "scriptSeconds": 2.433268,
+      "fps": 60.002398097509335,
+      "p95Ms": 16.70000000001164,
+      "mainThreadPercent": 5.632826686066361
+    },
+    {
+      "second": 300,
+      "heapBytes": 16402252,
+      "nodes": 15155,
+      "documents": 1,
+      "taskSeconds": 16.36282,
+      "scriptSeconds": 2.957897,
+      "fps": 60.00239809750927,
+      "p95Ms": 16.70000000001164,
+      "mainThreadPercent": 5.061097770521178
+    }
+  ],
+  "hidden": {
+    "mainThreadPercent": 2.4842240855097493,
+    "runningCss": 0
+  },
+  "errors": [],
+  "writes": [],
+  "reduced": {
+    "mainThreadPercent": 3.813146350641619,
+    "runningCss": 0
+  },
+  "bundle": {
+    "before": {
+      "files": 18,
+      "gzipBytes": 677186,
+      "entry": [
+        {
+          "file": "index-DHSIkfUt.js",
+          "gzipBytes": 129509
+        }
+      ]
+    },
+    "after": {
+      "files": 18,
+      "gzipBytes": 679529,
+      "entry": [
+        {
+          "file": "index-BAnzey32.js",
+          "gzipBytes": 130903
+        }
+      ]
+    },
+    "deltaGzip": 2343
+  },
+  "imageBytes": 14513
+}

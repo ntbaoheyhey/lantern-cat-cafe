@@ -1,0 +1,46 @@
+{
+  "method": "requestAnimationFrame over 4 seconds during real HUD, level, loot, forge and confirmation sample cues; no screenshots in timing window; all layout shifts included",
+  "target": "nominal60fps (rounded average >=60), p95 <=20ms, CLS exactly0",
+  "samples": [
+    {
+      "width": 1280,
+      "height": 720,
+      "reducedMotion": "no-preference",
+      "fps": 60.00398366696545,
+      "p95Ms": 16.700000000000728,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "reducedMotion": "reduce",
+      "fps": 60.002489729864315,
+      "p95Ms": 16.799999999999955,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "reducedMotion": "no-preference",
+      "fps": 60.00099586715132,
+      "p95Ms": 16.800000000000068,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "reducedMotion": "reduce",
+      "fps": 60.002489729864315,
+      "p95Ms": 16.799999999999955,
+      "cls": 0,
+      "errors": [],
+      "writes": []
+    }
+  ]
+}
