@@ -10,7 +10,7 @@
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
     "onchain-proof": "node scripts/onchain-proof.mjs",
-    "art:generate": "python3 -B tools/art/visual.py && python3 -B tools/art/gameplay.py && python3 -B tools/art/gameplay-items.py && node tools/art/gameplay-sheets.mjs",
-    "art:check": "python3 -B tools/art/visual.py --check && python3 -B tools/art/gameplay.py --check && python3 -B tools/art/gameplay-items.py --check && node tools/art/gameplay-sheets.mjs --check"
+    "art:generate": "python3 -B tools/art/visual.py && python3 -B tools/art/gameplay.py && python3 -B tools/art/gameplay-items.py && python3 -B tools/art/gameplay-relics.py && node tools/art/gameplay-sheets.mjs",
+    "art:check": "python3 -B tools/art/visual.py --check && python3 -B tools/art/gameplay.py --check && python3 -B tools/art/gameplay-items.py --check && python3 -B tools/art/gameplay-relics.py --check && node tools/art/gameplay-sheets.mjs --check"
   }
 }
