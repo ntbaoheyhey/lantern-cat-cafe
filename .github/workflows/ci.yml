@@ -71,7 +71,13 @@ jobs:
       - run: pnpm exec playwright install --with-deps chromium
         working-directory: apps/web
       - run: pnpm --filter @taskbar-hero/web build
+      - name: Check native screenshot and font fixtures
+        run: pnpm --filter @taskbar-hero/web exec playwright test e2e/ui/art2-flag-off.spec.ts e2e/ui/landing-font-stability.spec.ts --project=stage-layout --workers=2
+        env:
+          ART2_SCREENSHOTS: ${{ github.workspace }}/apps/web/test-results/flag-off-native
       - run: pnpm --filter @taskbar-hero/web test:e2e
+        env:
+          ART2_SCREENSHOTS: ${{ github.workspace }}/apps/web/test-results/flag-off-native
       - name: Retain browser failure evidence
         if: failure()
         uses: actions/upload-artifact@v4
