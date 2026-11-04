@@ -1,0 +1,24 @@
+Initial publication CI import-map drift (PRs #279/#280/#281).
+Full run: https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41850927436
+Root cause: gen:deno maps every non-test TS module beneath packages/game-rules/src, including unused presentation helpers.
+Correction: relocate helpers to packages/game-rules/client without changing the generator or Supabase maps.
+
+2026-11-04T14:48:28.6767764Z diff --git a/supabase/functions/boss-fight/deno.json b/supabase/functions/boss-fight/deno.json
+2026-11-04T14:48:28.6809353Z index 28e1f6d..c5ec863 100644
+2026-11-04T14:48:28.6819483Z --- a/supabase/functions/boss-fight/deno.json
+2026-11-04T14:48:28.6839354Z +++ b/supabase/functions/boss-fight/deno.json
+2026-11-04T14:48:28.6859375Z @@ -16,6 +16,7 @@
+2026-11-04T14:48:28.6865777Z      "@taskbar-hero/game-rules": "../../../packages/game-rules/src/index.ts",
+2026-11-04T14:48:28.6879587Z      "../../../packages/game-rules/src/config": "../../../packages/game-rules/src/config.ts",
+2026-11-04T14:48:28.6892445Z      "../../../packages/game-rules/src/content": "../../../packages/game-rules/src/content.ts",
+2026-11-04T14:48:28.6901951Z +    "../../../packages/game-rules/src/gameplay": "../../../packages/game-rules/src/gameplay.ts",
+2026-11-04T14:48:28.6902967Z      "../../../packages/game-rules/src/index": "../../../packages/game-rules/src/index.ts",
+2026-11-04T14:48:28.6909131Z      "../../../packages/game-rules/src/loot": "../../../packages/game-rules/src/loot.ts",
+2026-11-04T14:48:28.6910224Z      "../../../packages/game-rules/src/original-economy": "../../../packages/game-rules/src/original-economy.ts",
+2026-11-04T14:48:28.6911313Z diff --git a/supabase/functions/equip/deno.json b/supabase/functions/equip/deno.json
+2026-11-04T14:48:28.6912040Z index 28e1f6d..c5ec863 100644
+2026-11-04T14:48:28.6912667Z --- a/supabase/functions/equip/deno.json
+2026-11-04T14:48:28.6913236Z +++ b/supabase/functions/equip/deno.json
+2026-11-04T14:48:28.6913717Z @@ -16,6 +16,7 @@
+2026-11-04T14:48:28.6914339Z      "@taskbar-hero/game-rules": "../../../packages/game-rules/src/index.ts",
+2026-11-04T14:48:28.7099715Z ##[error]Process completed with exit code 1.

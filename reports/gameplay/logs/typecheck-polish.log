@@ -1,0 +1,24 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-gameplay
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: e2e/ui/baseline-hud.spec.ts(169,48): error TS2345: Argument of type '"bag" | "home"' is not assignable to parameter of type '"map" | "bag"'.
+apps/web typecheck:   Type '"home"' is not assignable to type '"map" | "bag"'.
+apps/web typecheck: e2e/ui/baseline-hud.spec.ts(230,50): error TS2345: Argument of type '"home"' is not assignable to parameter of type '"map" | "bag"'.
+apps/web typecheck: Failed
+/Users/bao/taskbar-hero-gameplay/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

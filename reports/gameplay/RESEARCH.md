@@ -2,7 +2,7 @@
 2026-11-04 · Original art only · Candidate build, not live. One author; no player-retention claim.
 
 ## Evidence and principles
-The baseline is #278, f8837d6. The full wall-clock guest run is being recorded in `before-run.json`; its completed metrics will be inserted before delivery. Seeded fixtures are used separately for screenshots, never as evidence of first-session pacing. An initial harness failure exposed an extra class confirmation and is retained in `logs/before-run-failed.log`.
+The baseline is #278, f8837d6. Two real ten-minute guest sessions are complete (`before-corrected-run.json`, `after-run.json`; summary `timeline-metrics.json`). First reward/drop: 29.542→10.042s; available upgrade: 30.196→10.146s; boss attempt: 300.820→301.095s. Scripted inspection at46s and equip at121s are not human decision-time measures. Baseline/candidate gear drops1→3 (all Common), Fish417→417, Yarn19→18, XP1502→1576; a single seed is not a rate-distribution study. Progress-kills60 on both runs stops at the chapter gate and is not total farming kills. Acknowledged reward gaps still reach30s; continuous preview combat is not proof of meaningful reactions every8s. Initial `before-run.json` is exploratory with a boss-gate harness bug; do not use its boss time. Seeded screenshot fixtures remain separate from pacing evidence.
 
 | ID | Source (text study only) | Finding and application |
 |---|---|---|
@@ -40,3 +40,6 @@ Impact is 1–5 (5 highest); effort S/M/L. Ranking combines expected fun/first i
 Economy constraints: V2 claim, drop and boss outcomes are calculated by the same rules used server-side. Craft rarity is guaranteed; only bonus stats/values roll. There is no craft pity or great-success mechanic. A visual “great roll” must mean an explicitly defined quality threshold, with no new reward. New interactive boss mechanics that alter damage are a separate default-OFF Sample; default replay must remain identical. Cosmetic combo/mouse cues grant zero currency and cannot be farmed.
 
 Backlog under the five-hour limit: human first-session research, bespoke enemy mechanics requiring server verification, new item taxonomy/economy, original audio, broader hardware/OS power tests. Do not mark these delivered from static mockups.
+
+## Publication validation findings
+Linux CI exposed native text-rasterization differences and a real delayed-font shift beside the ERC-1155 pill. Container reproduction using the exact CI Chromium also found a two-to-three-line body-copy change and narrow proof links. Reserve readable text/control footprints rather than relaxing the zero-shift or exact-pixel assertions. This follows R3/R5 clarity, and [web.dev, Optimize CLS](https://web.dev/articles/optimize-cls): reserve layout space and account for web-font metrics. Native macOS/Linux screenshots retain zero tolerance. The same inspection found the inherited Landing “Live on Avalanche Fuji” pill; the candidate now explicitly says “Candidate build, not live.” before class selection as well as in the HUD.
