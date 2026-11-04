@@ -17,7 +17,7 @@ const axe = readFileSync(provenance.path, 'utf8');
 assert.equal(createHash('sha256').update(axe).digest('hex'), provenance.scriptSha256);
 const require = createRequire(resolve(web, 'package.json'));
 const { chromium } = require('@playwright/test');
-const { preview } = await import(pathToFileURL(require.resolve('vite')).href);
+const { preview, createServer: createViteServer } = await import(pathToFileURL(require.resolve('vite')).href);
 const report = { head: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(), tool: provenance, scans: [] };
 process.on('exit', code => console.log('exit=' + code));
 mkdirSync(out, { recursive: true });
@@ -26,6 +26,15 @@ await new Promise((ok, fail) => { socket.once('error', fail); socket.listen(port
 await new Promise(ok => socket.close(ok));
 let server, browser;
 try {
+  // Load the existing local fixture through Vite's TypeScript loader, then close
+  // it before opening the preview on the same owned port. No app files change.
+  const fixtures = await createViteServer({ root: web, envDir: false, server: { middlewareMode: true, hmr: { port }, watch: null } });
+  let forgeSave;
+  try {
+    const module = await fixtures.ssrLoadModule('/src/api/mockV2Fixtures.ts');
+    forgeSave = module.mockV2SaveJson('forgeRich', { nowMs: Date.now(), classId: 'warrior' });
+  } finally { await fixtures.close(); }
+  const storageKey = readFileSync(resolve(web, 'src/api/MockGameApiV2.ts'), 'utf8').match(/MOCK_V2_STORAGE_KEY = '([^']+)'/)[1];
   server = await preview({ root: web, envDir: false, build: { outDir: dist }, preview: { port, strictPort: true } });
   browser = await chromium.launch();
   for (const width of [1280, 1600]) {
@@ -78,6 +87,25 @@ try {
           await scan('chain-proof');
         }
       }
+      await page.evaluate(([key, value]) => localStorage.setItem(key, value), [storageKey, forgeSave]);
+      await page.goto(`http://localhost:${port}/#forge`);
+      // A hash-only navigation keeps the mounted store; reload to read the fixture.
+      await page.reload();
+      await page.getByTestId('craft-btn').waitFor();
+      await page.getByTestId('rarity-common').click();
+      await page.getByTestId('slot-helmet').click();
+      await page.getByTestId('craft-btn').click();
+      await page.getByTestId('craft-confirm-box').waitFor();
+      await scan('craft-confirmation');
+      await page.getByTestId('craft-cancel-btn').click();
+      await page.getByTestId('tab-salvage').click();
+      await page.getByTestId('salvage-check-fx:forgeRich:1').check();
+      await page.getByTestId('salvage-btn').click();
+      await page.getByTestId('salvage-confirm-box').waitFor();
+      await scan('salvage-confirmation');
+      await page.getByTestId('salvage-cancel-btn').click();
+      await page.getByTestId('tab-relic').click();
+      await scan('relic-unavailable');
     }
     await page.close();
   }

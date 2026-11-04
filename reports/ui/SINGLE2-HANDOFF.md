@@ -10,7 +10,7 @@
 - Local merge commits all [skip ci]; repository private. Main/live baseline340f88b, main checkout localHEAD6144d42 unchanged.
 - Pass1 frozen install/typecheck/lint/buildPASS. FreshA scripts/packages/web-units/typecheck/lint/art-delivery/art-catalog/buildPASS.
 - A runner88710 interrupted during changed1280 repeat3 after verifiedcwd/PGID. Orphan listeners91012/91056/91098/91138 received SIGTERM after individualcwd checks.
-- No complete grade yet. A2 changed checks passed192 per size; FULL1280 now running. Clean B tests-first started; never call the tip release-ready before all gates.
+- No complete grade yet. A2 changed192/size and FULL391/391 per size PASS once. Clean B tests-first running; final audits pending.
 - Raw A receipt/logs preserved reports/sys/single2/stack-a-interrupted; launch/log in reports/sys/single2.
 - Primary runner reports/ui/single2-gate.py; axe adapter reports/ui/single2-axe.mjs uses pinned4.10.3, adds class confirmation + Chain unavailable scans and native screenshots.
 - These harnesses live on ledger, not product branch. Review/verify axe adapter before asserting it passes (not reached yet).
@@ -30,3 +30,4 @@
 - A2 running ownedPID95209,passsingle2-stack-a2,ports5300–5304. B ownedPID1398,temp/private/tmp/taskbar-hero-single2-b-d31cb2a,ports5320–5324; install0/clean tracked tree.
 - Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal ACTIVE, not complete.
 - P1e mocked-state milestone:14/14PASS on d31cb2a,nonce503/expiry/focus/wrongnet/signed+unsignedHUD/offline/API503; zero product errors/overflow/signatures. Evidence reports/ui/cards/SINGLE2-U5/stack-audit.md. Two harness failures preserved; source unchanged.
+- Full-suite milestone: A2 FULL391/391 PASS both sizes; no repeat. Resize/strict/axe remaining; B changed1600 finishing. Axe harness now reloads seededForge before confirmation scans.

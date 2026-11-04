@@ -1,6 +1,6 @@
-# SINGLE2 progress report — PAUSED by user
+# SINGLE2 progress report — ACTIVE, incomplete
 
-The user requested a pause at2026-11-04T05:43Z (12:43 Vietnam). This is an incomplete-work report, not a passing release receipt. Work will not resume automatically.
+The user resumed at 2026-11-04T07:01Z after the earlier pause. The original 15:36:34Z deadline remains. This is an incomplete-work report, not a passing release receipt.
 
 ## Proven so far
 
@@ -8,11 +8,13 @@ P0 is complete: **CAPACITY BLOCKED**. VercelCLI is absent; fresh #269 status ret
 
 P1a is complete: remote branch `ai/codex-stack-tip` at **`d31cb2a3961e49fea4aab7ebbef216dc4277cda2`** combines #262→#263→#264→#265→#266→#268→#269. All seven merges were clean, with no conflict resolution and no product edits beyond the held PRs. **Integration only, never merge**; no integration PR was opened. [Merge record](sys/single2/stack-tip.md)
 
-Pass1 install/typecheck/lint/build passed. FreshA completed scripts, package units, web units, typecheck, lint, art delivery/catalog and build with exit0. The user paused during the first changed-spec repeat at1280×720. The runner was interrupted; **A is INCOMPLETE, B is NOT RUN, no full Playwright suite has started, no passing score is assigned.** [Partial command receipt](sys/single2/stack-a-interrupted/receipt.json) · [Runner log](sys/single2/stack-a.log)
+Pass 1 install/typecheck/lint/build passed. Fresh A2 passes script/package units, web units, typecheck, lint, art checks, build and changed browser specs repeated three times (192 per viewport setting). The full Playwright suite passed **391/391 at 1280×720 and 391/391 at 1600×900**, once each on exact head d31cb2a. The earlier interrupted A logs remain preserved. Clean detached B is running tests first. Resize, strict geometry and pinned axe are still pending; **no final grade yet**.
+
+The final-stack mocked-state audit passes **14/14**, including nonce 503, expiry and focus return, wrong network, signed/unsigned connected HUD, offline and API 503. No product error, overflow, signature or live write. Two harness mistakes are retained with their corrected evidence. [U5 audit](ui/cards/SINGLE2-U5/stack-audit.md)
 
 ## Remaining work and unchanged drafts
 
-P1b–f remain unfinished: full/changed browser matrix, clean tests-firstB, pinned axe/contrast, geometry, effects, mocked recovery/HUD cases, docs-on-stack and regenerated gallery. P2 release tooling, P3 offline system rehearsals and P4 judge drafts have not been completed. Docker daemon is unavailable and Deno is absent; these require the allowed local unit/PGlite alternative and accurate restore limitations.
+P1b–f remain unfinished: final A/B audits and grades, effects, docs-on-stack and regenerated gallery. Full and mocked-state results above are complete. P2 release tooling, P3 offline system rehearsals and P4 judge drafts have not been completed. Docker daemon is unavailable and Deno is absent; these require the allowed local unit/PGlite alternative and accurate restore limitations.
 
 #270 remains its original127e3f8 draft with A0/B0 inherited-main failures; it has not yet been refreshed or reassessed on the stack. #267 remains unchanged; [existing candidate gallery source](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ovn-ui-gallery/docs/ui/gallery/index.html) is historical and not a SINGLE2 capture. Local existing gallery: `/Users/bao/taskbar-hero-ovn-ui/docs/ui/gallery/index.html`.
 
