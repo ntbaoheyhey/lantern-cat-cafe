@@ -1,0 +1,101 @@
+{"width":1280,"label":"first-visit-help","violations":[],"incomplete":["color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"landing","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"class","violations":[],"incomplete":["color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"home","violations":["aria-prohibited-attr"],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"bag","violations":["scrollable-region-focusable"],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"map","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"forge","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"market","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"hero","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1280,"label":"help","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"first-visit-help","violations":[],"incomplete":["color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"landing","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"class","violations":[],"incomplete":["color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"home","violations":["aria-prohibited-attr"],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"bag","violations":["scrollable-region-focusable"],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"map","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"forge","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"market","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"hero","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+{"width":1600,"label":"help","violations":[],"incomplete":["aria-prohibited-attr","color-contrast"],"consoleErrors":[]}
+exit=1
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   {
++     errors: [],
++     label: 'home',
++     violations: [
++       'aria-prohibited-attr'
++     ],
++     width: 1280
++   },
++   {
++     errors: [],
++     label: 'bag',
++     violations: [
++       'scrollable-region-focusable'
++     ],
++     width: 1280
++   },
++   {
++     errors: [],
++     label: 'home',
++     violations: [
++       'aria-prohibited-attr'
++     ],
++     width: 1600
++   },
++   {
++     errors: [],
++     label: 'bag',
++     violations: [
++       'scrollable-region-focusable'
++     ],
++     width: 1600
++   }
++ ]
+- []
+
+    at file:///Users/bao/taskbar-hero-ui-ledger/reports/ui/single-main-axe.mjs:78:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      width: 1280,
+      label: 'home',
+      violations: [ 'aria-prohibited-attr' ],
+      errors: []
+    },
+    {
+      width: 1280,
+      label: 'bag',
+      violations: [ 'scrollable-region-focusable' ],
+      errors: []
+    },
+    {
+      width: 1600,
+      label: 'home',
+      violations: [ 'aria-prohibited-attr' ],
+      errors: []
+    },
+    {
+      width: 1600,
+      label: 'bag',
+      violations: [ 'scrollable-region-focusable' ],
+      errors: []
+    }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+
+exit=1
