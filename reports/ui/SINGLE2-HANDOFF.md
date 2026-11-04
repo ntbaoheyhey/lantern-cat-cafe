@@ -7,7 +7,8 @@
 - Provider warning 2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z, beyond this session maximum; no waiting/scheduler.
 - Accepted262/a9afaad,263/4b0e69a,264/949cc44,265/7d0d08e,266/f2a0588,267/e161f06,268/afd0699,269/85a6919 unchanged; private repo.
 - #270127e3f8 remains draftA0/B0 on main defects already fixed in held stack. Prove docs on stack, do not duplicate repairs.
-- Current: integrate262→263→264→265→266→268→269 on ai/codex-stack-tip, integration NEVER MERGE.
+- P1a COMPLETE: d31cb2a3961e49fea4aab7ebbef216dc4277cda2 integrates262/263/264/265/266/268/269 cleanly, no conflicts; NEVER MERGE.
+- Pass1 install/typecheck/lint/buildPASS; P1b freshA starting with full once per size, then cleanB.
 - Next: builder, exact-head A/full suite once per size, clean tests-first B, pinned axe/keyboard/geometry/effects/mock audits.
 - Then docs-on-stack and gallery-on-stack drafts; release dry-run tooling; nonce/local source restore/CXN3 rehearsal; judge drafts; final report.
 - #244/#252/#257 untouched. #269 edge source undeployed. Economy defaultOFF, previews Sample/Unavailable.
