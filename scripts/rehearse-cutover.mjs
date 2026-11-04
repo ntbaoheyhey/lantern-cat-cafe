@@ -36,7 +36,21 @@ async function schema(db) {
   };
 }
 let harness, db, server, before, sentinel;
-let migrated = false, rolledBack = false;
+let migrated = false, rolledBack = false, rollbackApplied = false;
+// Later migrations also harden shared nonce/voucher paths. A v2 rollback must
+// retain those changes, not restore their obsolete pre-security definitions.
+const v2Tables = new Set(['boss_fights', 'boss_clears', 'founder_grants', 'items', 'player_stacks', 'cat_state', 'v2_action_results']);
+const sharedBudgetFunctions = new Set(['v2_take_budgets', 'v2_cleanup_budgets']);
+const sharedSchema = current => ({
+  tables: current.tables.filter(row => !v2Tables.has(row.relname)
+    && !current.indexes.some(index => v2Tables.has(index.tablename) && index.indexname === row.relname)),
+  functions: current.functions.filter(row => !row.proname.startsWith('v2_') || sharedBudgetFunctions.has(row.proname)),
+  columns: current.columns.filter(row => !v2Tables.has(row.table_name)),
+  constraints: current.constraints.filter(row => !v2Tables.has(row.name.replace(/^public\./, ''))),
+  indexes: current.indexes.filter(row => !v2Tables.has(row.tablename)),
+  triggers: current.triggers.filter(row => !v2Tables.has(row.name.replace(/^public\./, ''))),
+  policies: current.policies.filter(row => !v2Tables.has(row.tablename)),
+});
 const started = performance.now();
 async function rollback() {
   const manual = resolve(root, 'supabase-manual/v2-rollback.sql');
@@ -44,11 +58,17 @@ async function rollback() {
     console.log('Using requested supabase-manual/v2-rollback.sql');
     await db.exec(readFileSync(manual, 'utf8'));
   } else {
-    console.log('Requested supabase-manual/v2-rollback.sql is absent on main; using tracked integrity + v2 test rollback fixtures.');
+    console.log('Requested supabase-manual/v2-rollback.sql is absent; using disposable local integrity + gameplay rollback fixtures that retain shared security.');
     await db.exec(readFileSync(resolve(root, 'docs/proposals/sql/v2-integrity-rollback.sql'), 'utf8'));
-    await db.exec(harness.rollbackSql());
+    await db.exec(readFileSync(resolve(root, 'scripts/local-cutover-rollback.sql'), 'utf8'));
   }
-  assert.deepEqual(await schema(db), before, 'Rollback must restore the exact v1 schema/functions/grants/policies');
+  rollbackApplied = true;
+  assert.deepEqual(await schema(db), before, 'Rollback must preserve the exact current shared schema/functions/grants/policies');
+  assert.equal((await db.query("select count(*)::integer n from private.v2_request_budgets")).rows[0].n >= 0, true);
+  for (const role of ['anon', 'authenticated']) {
+    await assert.rejects(harness.as(db, role, null, () => db.query('select * from public.siwe_nonces')), /permission denied/);
+    await assert.rejects(harness.as(db, role, null, () => db.query("select public.v2_take_budgets('[]'::jsonb)")), /permission denied/);
+  }
   const state = await db.query('select gold, shards from idle_state where player_id=$1', [sentinel]);
   assert.equal(Number(state.rows[0].gold), 123); assert.equal(Number(state.rows[0].shards), 50);
   const v1 = await harness.as(db, 'service_role', null, () => db.query("select public.game_snapshot($1, '2026-10-28', '[]'::jsonb) r", [sentinel]));
@@ -73,6 +93,9 @@ try {
   const migrations = readdirSync(harness.migrationsDir).filter(f => f.endsWith('.sql') && f >= harness.V2_MIGRATION).sort();
   for (const migration of migrations) await step(`Apply ${migration}`, async () => { await db.exec(readFileSync(resolve(harness.migrationsDir, migration), 'utf8')); });
   migrated = true;
+  before = sharedSchema(await schema(db));
+  assert.ok(before.functions.some(row => row.proname === 'game_voucher_reissue_resolve'), 'Current shared voucher race protection is required');
+  assert.ok(before.functions.some(row => row.proname === 'v2_take_budgets'), 'Shared budget RPC must survive gameplay rollback');
   await step('Founder grant dry run when its batch migration exists', async () => {
     const batch = (await db.query("select 1 from pg_proc where pronamespace='public'::regnamespace and proname='v2_grant_founder_batch'")).rows.length > 0;
     if (!batch) { console.log('NOT AVAILABLE: Founder batch migration is not on this main; no draft is imported or applied.'); return 'NOT AVAILABLE'; }
@@ -98,7 +121,7 @@ try {
 } finally {
   if (child) child.kill('SIGTERM');
   if (server) await server.close();
-  if (migrated && !rolledBack) {
+  if (migrated && !rolledBack && !rollbackApplied) {
     try { await step('Rollback after failed journeys', rollback); } catch (error) { console.error(error); process.exitCode = 1; }
   }
   if (db) await db.close();
