@@ -10,3 +10,5 @@ The final real-clock comparison uses `before-corrected-run.json` and `after-run.
 `delivery.json` binds the four review layers to their branches and the verified runtime. `runtime-equivalence.json` chains the original normalized import-relocation comparison to the final runtime: only Landing geometry/candidate-label changes and their tests/native baselines follow. Gameplay, economy, replay and original art are unchanged. Native font diagnostics and screenshots are retained under `platform-captures/`. Performance retains the original optimized g1-perf soak and separately reports final production bundle bytes. Gallery labels use that stable runtime SHA; documentation-only commits can follow it.
 
 `native-font-diagnosis.md`, `native-delta-*.json` and `native-failure-41863629344/` preserve the exact hosted-runner symbol-font mismatch. The final CI pin changes only the browser test environment; no baseline or pixel tolerance is relaxed.
+
+`ci-final.json` records the three final runtime layers passing full hosted CI on their exact SHAs. The final proof publication receipt is retained on the ledger branch so the checked proof commit is not modified by its own receipt.

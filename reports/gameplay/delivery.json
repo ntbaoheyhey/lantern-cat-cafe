@@ -69,16 +69,19 @@
     80310,
     80594
   ],
-  "remoteCI": "Final pinned-image runs pending: G1 41866021161, Art 41866016850, UI 41866018424. System fonts are provided by the digest-pinned image; browser installation does not upgrade OS dependencies.",
+  "remoteCI": "All three runtime layers pass full hosted CI: each6/6 native preflight and399/399 E2E; G1/Art1477 web tests, UI1482; all node checks pass. G1 contracts96/96. Exact proof-head publication check follows.",
   "normalizedRuntimeSourceIsIdentical": false,
   "equivalenceReceipt": "runtime-equivalence.json",
   "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
-  "finalizedAtUtc": "2026-11-04T16:20:00Z",
+  "finalizedAtUtc": "2026-11-04T16:36:25.851386+00:00",
   "previousVerifiedRuntimeSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
   "applicationSourceIdenticalToPreviousRuntime": true,
   "ciRuns": {
     "g1": 41866021161,
     "art": 41866016850,
     "ui": 41866018424
-  }
+  },
+  "runtimeLayerCI": "ci-final.json",
+  "postPublicationLedger": "https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/gameplay/ci-final.json",
+  "ledgerCheckpoint": "db51796"
 }

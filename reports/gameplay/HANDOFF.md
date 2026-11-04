@@ -1,5 +1,5 @@
 # Gameplay candidate — final container CI and ledger delivery
-Updated 2026-11-04 16:20 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no delegation, schedulers or automations. Original five-hour deadline: 17:45:44 UTC; report honestly and stop by then.
+Updated 2026-11-04 16:37 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no delegation, schedulers or automations. Original five-hour deadline: 17:45:44 UTC; report honestly and stop by then.
 
 ## Delivered work and boundaries
 - Worktree `/Users/bao/taskbar-hero-gameplay`, branch `ai/codex-gameplay-2026-11-04`. Desktop cwd/main are unrelated dirty checkouts: do not reset/stash/checkout there.
@@ -21,17 +21,17 @@ Initial CI uncovered Deno-map drift (browser helpers moved to `packages/game-rul
 
 Diagnostic run41863629344 onb46a691 retained PNG artifact13341362610. Each1280/1600 image differs in exactly859 pixels, confined to the proof-strip arrows/checkmark/adjacent label. All other pixels identical. Hosted Ubuntu fallback symbol fonts differ from the Noble container used for reviewed baselines. See `native-font-diagnosis.md`, `native-delta-*.json`, original `native-failure-41863629344/`. The local exact six-case suite had passed inside that same container with Chromium156.0.8078.4.
 
-Commitc8a8474 pins E2E to `mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f`. Final70594b3 also avoids apt upgrades of pinned fonts and allows20 minutes for container startup plus the full suite. No source, baselines or tolerances changed. It also retains the earlier PNG upload and six-case preflight. Propagated G1→Art→UI→Proof via rebase, separate assertions preserved; G1/Art/UI pushed. Final runs: G1 **41866021161**, Art **41866016850**, UI **41866018424** (41865323933 superseded duplicate). The superseded first pinned run41865231768 passed6/6 preflight cases on GitHub, then was cancelled by final70594b3. Await full final completion before claiming green.
+Commitc8a8474 pins E2E to `mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f`. Final70594b3 also avoids apt upgrades of pinned fonts and allows20 minutes for container startup plus the full suite. No source, baselines or tolerances changed. It also retains the earlier PNG upload and six-case preflight. Propagated G1→Art→UI→Proof via rebase, separate assertions preserved; G1/Art/UI pushed. Final runs: G1 **41866021161**, Art **41866016850**, UI **41866018424** (41865323933 superseded duplicate). The superseded first pinned run41865231768 passed6/6 preflight cases on GitHub, then was cancelled by final70594b3. All three final runs now officially completed successfully; each passes6/6 preflight and399/399 E2E. All node jobs pass; G1 contracts96/96. Exact receipts:ci-final.json and logs/ci-final-*.log.gz.
 
 GitHub run-list/job-list status can lag badly: prior run still reported queued after its artifact and completed job logs existed. Prefer fetching job logs by ID for final evidence. Read job IDs from each final run before fetching logs. GitHub connector supports job logs; `structuredContent.content` is log text. A404 BlobNotFound means the log is not finalized yet, not a test failure.
 
 ## Remaining actions
-1. Check final container CI and fix concrete failures without skipping tests. No need to rerun unchanged ten-minute/perf runs.
-2. Update final report/delivery/equivalence/handoff and all four PR bodies with exact receipts. Runtime SHA6888df5; gallery generator reads delivery.json. Gallery check with final6888df5 label passes all three desktop sizes,39 images, no requests/errors/overflow/axe findings.
-3. Commit/push proof with explicit lease, preserving reports. Run final proof CI if time permits; distinguish source-equivalent evidence from exact proof-head CI.
-4. Copy ONLY `reports/gameplay/` to ledger `/Users/bao/taskbar-hero-ui-ledger`, branch `ai/codex-ui-ledger`; stage that subtree only, commit/push. Preserve unrelated untracked ledger files. Ledger still has older handoff.
-5. Stop owned processes only; no task server presently running. Previous ports5393/5394 PIDs80310/80594 already stopped. Builds retained `/private/tmp/taskbar-hero-gameplay-final-builds-20261104`.
-6. Final Vietnamese≤10 lines: offline demo/report, draft PRs,8.0→8.7, key metrics and top3 risks. Existing draft-delivery authorization needs no additional permission.
+1. Final runtime CI is complete: G1/Art/UI all green, each6/6 preflight+399/399 E2E. All four PR descriptions now include exact final runtime results. Gallery6888df5 label passes all three desktop sizes. Do not rerun unchanged gameplay/perf.
+2. Commit/push the final proof changes now (regular push, no rebase needed). Use a normal CI-triggering commit, without skip-ci, for an exact final proof-head check. Onlydocs/gameplay/index.html andreports/gameplay/are modified. Proof application paths exactly match UI6888df5.
+3. After proof CI completes, record its exact SHA/run/logs in the ledger copy ofci-final.json,delivery.json,GAMEPLAY-REPORT.md,HANDOFF.md and PR282 body. Keep the tested proof commit unchanged; the proof report already links to the ledger post-publication receipt. This avoids an endless cycle of changing a commit to record its own check.
+4. Copy ONLYreports/gameplay/to ledger `/Users/bao/taskbar-hero-ui-ledger`, branchai/codex-ui-ledger; stage that subtree only, commit/push. Preserve unrelated untracked files. Ledger checkpointdb51796 is already pushed, with earlier partial receipts; final refresh remains.
+5. No task server/process currently remains; prior PIDs80310/80594 stopped. Do not stop pre-existing servers. Production builds retained/private/tmp/taskbar-hero-gameplay-final-builds-20261104.
+6. Vietnamese final≤10 lines: candidate demo/report, four draft PRs,8.0→8.7, reward29.5→10.0s and top3 risks. Candidate only, no merge/deploy. Mark the delivery goal complete only after proof CI and ledger finalization.
 
 ## Resume demo and backlog
 `cd /Users/bao/taskbar-hero-gameplay && pnpm demo`
