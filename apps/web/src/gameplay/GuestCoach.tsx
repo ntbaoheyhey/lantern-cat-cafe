@@ -3,6 +3,8 @@ import { CONFIG } from '@taskbar-hero/game-rules';
 import type { ScreenId } from '../nav/screens';
 export const COACH_KEY = 'taskbar-hero:guest-coach:1';
 export function isNewGuest() {
+  const query = new URLSearchParams(window.location.search);
+  if (query.has('demo') && query.get('coach') === 'off') return false;
   try { return localStorage.getItem(COACH_KEY) !== 'done' && localStorage.getItem('taskbar-hero.howToPlaySeen') !== '1'; }
   catch { return true; }
 }

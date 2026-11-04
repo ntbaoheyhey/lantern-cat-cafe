@@ -4,7 +4,16 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { GuestCoach, COACH_KEY, isNewGuest } from './GuestCoach';
 import { journeyGoals } from './goals';
 import { sampleServerStateV2 } from '../layout/a11y/fixtures';
-afterEach(() => { cleanup(); localStorage.clear(); });
+afterEach(() => { cleanup(); localStorage.clear(); window.history.replaceState({}, '', '/'); });
+it('allows a demo entry without coaching while preserving a permanent dismissal', () => {
+  window.history.replaceState({}, '', '/?demo&coach=off');
+  expect(isNewGuest()).toBe(false);
+  expect(localStorage.getItem(COACH_KEY)).toBeNull();
+  window.history.replaceState({}, '', '/?demo');
+  expect(isNewGuest()).toBe(true);
+  localStorage.setItem(COACH_KEY, 'done');
+  expect(isNewGuest()).toBe(false);
+});
 it('gives three non-modal tips and persists a forever dismissal', () => {
   const nav = vi.fn(); render(<GuestCoach enabled onNavigate={nav} />);
   expect(screen.queryByRole('dialog')).toBeNull();
