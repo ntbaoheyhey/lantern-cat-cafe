@@ -1,0 +1,9 @@
+# Integrated candidate 1eefc3e — not deployed
+
+**PASS — self-graded (fresh pass), A95/B95**, exact integrated product `1eefc3ef6d828b06710c8be18feb08e90b099e3e`. Both passes ran typecheck, lint, build, script/package units and 1,467 web units. Full Playwright ran once per size on this head: **399/399 at 1280×720 and 399/399 at 1600×900**. Complete changed-spec coverage repeats each spec three times: 246 executions per size per reviewer. Resize burst: 0/40 failures across A/B; strict geometry: 0/36 failures; pinned axe 4.10.3: zero violations in 38 scans per reviewer. The previous four failing accessibility scans and twelve confirmation keyboard failures are now zero.
+
+Both isolated performance passes reached nominal 60 fps, p95 below 20 ms and exactly zero CLS, including cold-font keyboard journeys. Stage effects pass 10/10 per size per reviewer. Final mocked recovery/wallet audit passes 14/14 with no signing or live writes. The entry JS is 143,074 B gzip using Node gzip defaults, +1,471 B (+1.04%) versus the 141,603 B baseline; Phaser remains lazy at 315,728 B gzip. No runtime flag or economy value changed.
+
+Package results retain **two expected failures and eleven inherited skips**; none were added or weakened. Axe reports some incomplete contrast determinations; measured text regressions and native visual review supplement those checks. Accessibility-tree/live-region inspection is automated, not a human screen-reader listening session. These local results do not prove deployed backend source, native gateway behavior, production asset identity or a funded wallet journey.
+
+[Exact receipts](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/sys/single2/stack-tip-receipts.md). The original 624 captures remain historical; new candidate captures label fixtures and preserve default-OFF samples.
