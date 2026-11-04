@@ -47,7 +47,7 @@ while(Date.now()-start<600000){
  samples.push({t:(Date.now()-start)/1000,cat:s.state.cat,progress:s.state.progress,currencies:s.state.currencies,inventory:s.state.inventory.map(i=>({id:i.id,key:i.itemKey,rarity:i.rarity,equipped:i.equipped})),next: s.text.match(/Next Goal[\s\S]{0,300}/)?.[0]??s.text.match(/Next:[^\n]+/)?.[0]??null});
  if(s.state.progress.round===10&&s.state.progress.kills>=s.state.progress.killsPerRound&&s.state.currencies.keys>0&&!bossAttempted){await record('First boss attempt',async()=>{await nav('map');const b=page.getByRole('button',{name:'Fight',exact:true});if(await b.isEnabled()){await b.click();bossAttempted=true;}});}
  if(t%60<3){await page.screenshot({path:resolve(out,`${phase}-minute-${Math.floor(t/60)}.png`)});console.log(JSON.stringify({t,progress:s.state.progress,items:s.state.inventory.length,fish:s.state.currencies.fish}));}
- writeFileSync(resolve(out,`${phase}-run.json`),JSON.stringify({phase,base,seed:1404,economySeed:1,start:new Date(start).toISOString(),duration:(Date.now()-start)/1000,actions,samples,events,errors},null,2));
+ writeFileSync(resolve(out,`${phase}-run.json`),JSON.stringify({phase,base,seed:1404,economySeed:1,start:new Date(start).toISOString(),duration:(Date.now()-start)/1000,actions,samples,events,errors}));
  await page.waitForTimeout(2000);
 }
 console.log('Finished',phase,'wall seconds',(Date.now()-start)/1000);

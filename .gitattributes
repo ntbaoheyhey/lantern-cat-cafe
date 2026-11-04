@@ -1,3 +1,10 @@
 
 # Preserve raw validation receipts, including terminal whitespace.
 reports/gameplay/logs/*.log -whitespace
+
+# Raw telemetry and deterministic art manifests are machine-generated.
+reports/gameplay/*-run.json linguist-generated=true
+reports/gameplay/timeline-metrics.json linguist-generated=true
+reports/gameplay/performance.json linguist-generated=true
+reports/gameplay/effects/fps.json linguist-generated=true
+tools/art/gameplay*.json linguist-generated=true
