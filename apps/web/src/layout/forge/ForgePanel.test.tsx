@@ -547,14 +547,14 @@ describe('ForgePanel', () => {
 
       // Salvage row for 'arm.ranger.armor.rare' shows data-icon "arm.ranger.armor"
       const armorSvg = container.querySelector(
-        '[data-testid="salvage-item-salvage-armor-1"] svg[data-icon="arm.ranger.armor"]',
+        '[data-testid="salvage-item-salvage-armor-1"] img[data-icon="arm.ranger.armor"]',
       );
       expect(armorSvg).toBeTruthy();
       expect(armorSvg?.getAttribute('aria-hidden')).toBe('true');
 
       // Weapon row without weaponType shows class weapon icon "bow"
       const weaponSvg = container.querySelector(
-        '[data-testid="salvage-item-salvage-untyped-weapon"] svg[data-icon="bow"]',
+        '[data-testid="salvage-item-salvage-untyped-weapon"] img[data-icon="bow"]',
       );
       expect(weaponSvg).toBeTruthy();
       expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
