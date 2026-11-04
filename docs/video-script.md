@@ -1,6 +1,6 @@
-# Video script — DRAFT, 145 seconds maximum planned runtime
+# Historical video script — DRAFT, 145 seconds maximum planned runtime
 
-Vietnamese narration with English subtitles. This is a recording plan, not a completed video or timed QA result. Wait for UI's CXU3/CXC2 readiness in the shared board; verify the final live head before recording. A prepared guest profile must be earned through ordinary play and disclosed. Never seed fake wins, currencies, wallet balances or transactions for a live claim.
+This retained script predates the integrated candidate. Use the current [90-second shot list](submission/shot-list-90-second.md) and [3-minute pitch](submission/pitch-3-minute.md) for the refreshed packet. Vietnamese narration with English subtitles. This is a recording plan, not a completed video or timed QA result. The earlier CXU3/CXC2 readiness wait is superseded by the deployment-capacity hold. Follow the [release status](release-status.md), then verify the final live head before recording. A prepared guest profile must be earned through ordinary play and disclosed. Never seed fake wins, currencies, wallet balances or transactions for a live claim.
 
 | Time | Shot/action | Vietnamese narration | English subtitle |
 |---|---|---|---|
@@ -18,6 +18,6 @@ Total planned duration: 145 seconds. No claim that a completed capture currently
 
 If the boss/craft is blocked or a transaction is unavailable, show that state and retain the limitation; do not splice a local fixture into footage labelled live. The separate 3-minute QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→On-chain proof→Market at both 1280×720 and 1600×900. A failed demo step stops further merges until handled under the shared protocol. The funded mint/list/buy run needs separate actual Fuji receipts; no hashes are invented here.
 
-Baseline media: [manifest](../reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Refresh it after UI readiness. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
+Baseline media: [manifest](../reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Keep it labelled historical; current live media is linked from the release status. Refresh the final recording packet again after the held stack lands. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
 
 The optional catalog shot also needs UI confirmation that the icons have painted; one earlier baseline capture was excluded for this reason. No UI or art source was changed by SYSTEM.
