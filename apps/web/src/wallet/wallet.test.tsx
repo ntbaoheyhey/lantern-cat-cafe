@@ -6,10 +6,10 @@ import { avalanche } from 'viem/chains';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { createConfig, http } from 'wagmi';
 import { injected, mock } from 'wagmi/connectors';
-import { createMockAuthApi, type AuthApi } from './authApi';
+import { AUTH_UNAVAILABLE_MESSAGE, createHttpAuthApi, createMockAuthApi, type AuthApi } from './authApi';
 import { fuji, makeFujiChain } from './config';
 import { createSessionStore } from './session';
-import { CORE_INSTALL_URL, NO_WALLET_HINT, WalletButton } from './WalletButton';
+import { CORE_INSTALL_URL, NO_WALLET_HINT, WRONG_NETWORK_MESSAGE, WalletButton } from './WalletButton';
 import { WalletProvider } from './WalletProvider';
 
 const ACCOUNT = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8' as const;
@@ -67,7 +67,21 @@ it('shows a switch prompt on the wrong network', async () => {
   setup({ startOnFuji: false });
   fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
   expect((await screen.findByRole('alert')).textContent).toMatch(/Wrong network/);
+  expect(screen.getByRole('group', { name: 'Wallet' }).contains(screen.getByRole('alert'))).toBe(false);
   fireEvent.click(screen.getByRole('button', { name: 'Switch to Fuji' }));
+  expect(await screen.findByRole('button', { name: 'Sign in' })).toBeTruthy();
+  expect(screen.queryByText(WRONG_NETWORK_MESSAGE)).toBeNull();
+});
+
+it('dismissing a network warning leaves the switch action reachable', async () => {
+  const { store } = setup({ startOnFuji: false });
+  fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
+  fireEvent.click(await screen.findByRole('button', { name: `Dismiss ${WRONG_NETWORK_MESSAGE}` }));
+  expect(screen.queryByRole('alert')).toBeNull();
+  const switchButton = screen.getByRole('button', { name: 'Switch to Fuji' });
+  expect(switchButton.getAttribute('title')).toBe(WRONG_NETWORK_MESSAGE);
+  expect(store.get()).toBeNull();
+  fireEvent.click(switchButton);
   expect(await screen.findByRole('button', { name: 'Sign in' })).toBeTruthy();
 });
 
@@ -106,6 +120,29 @@ it('disconnect clears the session', async () => {
   await waitFor(() => expect(screen.getByRole('button', { name: 'Connect wallet' })).toBeTruthy());
   expect(store.get()).toBeNull();
   expect(window.sessionStorage.getItem('taskbar-hero.session')).toBeNull();
+});
+
+it('a mocked nonce 502 keeps the wallet visible, explains guest play and never requests a signature', async () => {
+  const fetchMock = vi.fn(async () => new Response('Bad Gateway', { status: 502 }));
+  vi.stubGlobal('fetch', fetchMock);
+  const api = createHttpAuthApi('https://auth.test');
+  const verify = vi.spyOn(api, 'verify');
+  const { store } = setup({ api });
+  fireEvent.click(await screen.findByRole('button', { name: 'Connect wallet' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Sign in' }));
+  expect(await screen.findByText(AUTH_UNAVAILABLE_MESSAGE, {}, { timeout: 3000 })).toBeTruthy();
+  expect(screen.getByRole('group', { name: 'Wallet' })).toBeTruthy();
+  expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
+  expect(fetchMock).toHaveBeenCalledTimes(3);
+  expect(verify).not.toHaveBeenCalled();
+  expect(store.get()).toBeNull();
+  expect(screen.queryByText(/Request failed|Bad Gateway/)).toBeNull();
+  const notice = screen.getByRole('alert');
+  expect(notice.textContent).toContain(AUTH_UNAVAILABLE_MESSAGE);
+  expect(screen.getByRole('group', { name: 'Wallet' }).contains(notice)).toBe(false);
+  fireEvent.click(screen.getByRole('button', { name: `Dismiss ${AUTH_UNAVAILABLE_MESSAGE}` }));
+  expect(screen.queryByText(AUTH_UNAVAILABLE_MESSAGE)).toBeNull();
+  expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
 });
 
 it('session store survives broken storage and drops expired sessions', () => {
