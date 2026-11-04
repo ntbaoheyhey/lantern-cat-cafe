@@ -27,3 +27,7 @@ The latest recorded provider warning runs through **2026-11-04T20:51:55Z**; plan
 ## Docs-only draft preview disposition
 
 Fresh #270/127e3f8 statuses at2026-11-04T04:34:28Z and04:34:42Z are both “Canceled by Ignored Build Step.” Their success flags do not represent a deployment or quota recovery. No new rate-limit warning or verified remaining usage is supplied by this draft. The conservative20:51:55Z warning and21:00Z planned recheck remain unchanged. [Minimal status evidence](single-session/docs-preview-status.json)
+
+## SINGLE2 P0 — 2026-11-04T05:37:54.708357+00:00
+
+**CAPACITY BLOCKED.** Vercel CLI is absent. Fresh GitHub status on #269 retains “Deployment rate limited — retry in 24 hours” (2026-11-03T20:51:55Z); #270 previews were ignored builds. Today UTC main commits/merged PRs: 0/0, activity only, not deployment usage. Actual remaining quota is unknown. No merge or deployment quota probe. Next planned retry: **2026-11-04T21:00Z** (November 5, 04:00 Vietnam), only if still running; this is later than SINGLE2’s 15:36Z maximum. Not a guaranteed reset. Continue offline P1–P4.

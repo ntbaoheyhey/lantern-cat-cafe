@@ -1,0 +1,16 @@
+# SINGLE2 handoff
+- Started 2026-11-04T05:36:34Z; deadline 2026-11-04T15:36:34Z (10 hours maximum).
+- One agent only. No helpers, schedulers, orchestrator, main checkout mutations, live writes or signatures.
+- Own worktree /Users/bao/taskbar-hero-single2; branch ai/codex-stack-tip created from origin/main.
+- Main/live baseline 340f88b; main checkout local HEAD6144d42 is untouched. Remote main verified.
+- P0 COMPLETE: CAPACITY BLOCKED. #269 retains rate-limit failure; #270 previews ignored. UTC activity0/0 is not quota proof.
+- Provider warning 2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z, beyond this session maximum; no waiting/scheduler.
+- Accepted262/a9afaad,263/4b0e69a,264/949cc44,265/7d0d08e,266/f2a0588,267/e161f06,268/afd0699,269/85a6919 unchanged; private repo.
+- #270127e3f8 remains draftA0/B0 on main defects already fixed in held stack. Prove docs on stack, do not duplicate repairs.
+- Current: integrate262→263→264→265→266→268→269 on ai/codex-stack-tip, integration NEVER MERGE.
+- Next: builder, exact-head A/full suite once per size, clean tests-first B, pinned axe/keyboard/geometry/effects/mock audits.
+- Then docs-on-stack and gallery-on-stack drafts; release dry-run tooling; nonce/local source restore/CXN3 rehearsal; judge drafts; final report.
+- #244/#252/#257 untouched. #269 edge source undeployed. Economy defaultOFF, previews Sample/Unavailable.
+- User steps retained verbatim in reports/OPTIONAL-USER-STEPS.md; append SINGLE2 final status later.
+- Ledger contains unrelated untracked files: stage only this session’s explicit paths.
+- Session state: reports/sys/single2/session-state.json. Merges/deployments/signatures:0.
