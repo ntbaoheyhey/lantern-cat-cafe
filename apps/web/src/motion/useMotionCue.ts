@@ -11,14 +11,16 @@ export function useMotionCue<T extends HTMLElement>(value: string | number | nul
   const reduced = usePrefersReducedMotion();
   useEffect(() => {
     const before = previous.current; previous.current = value;
-    if (reduced || before === value || value === null || (kind === 'level' && Number(value) <= Number(before))) return;
+    if (reduced || document.hidden || before === value || value === null || (kind === 'level' && Number(value) <= Number(before))) return;
     const node = element.current;
     if (!node?.animate) return;
     const frames = kind === 'loot'
       ? [{ transform: 'translateY(-3px)' }, { transform: 'translateY(0)' }]
-      : [{ outlineColor: 'var(--accent)', outlineOffset: '3px' }, { outlineColor: 'transparent', outlineOffset: '3px' }];
+      : [{ outlineColor: 'var(--accent)', outlineOffset: '3px' }, { outlineColor: 'transparent', outlineOffset: kind === 'level' ? '8px' : '3px' }];
     const animation = node.animate(frames, { duration: UI_CUE_MS, easing: 'ease-out' });
-    return () => animation.cancel();
+    const hide = () => { if (document.hidden) animation.cancel(); };
+    document.addEventListener('visibilitychange', hide);
+    return () => { animation.cancel(); document.removeEventListener('visibilitychange', hide); };
   }, [value, kind, reduced]);
   return element;
 }

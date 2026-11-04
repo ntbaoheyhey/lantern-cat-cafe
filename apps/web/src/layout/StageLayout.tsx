@@ -49,7 +49,8 @@ import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
 import { FujiProofPanel } from '../chain-proof/FujiProofPanel';
 import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
-import { itemName, rarityLabel } from './itemView';
+import { itemName, itemIconName, rarityLabel } from './itemView';
+import { V2PixelIcon } from '../art/v2Icons';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
 import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
@@ -702,12 +703,13 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                     craftResultId={crafted?.id}
                     craftResult={
                       crafted ? (
-                        <div className="forge-reveal" role="status" data-testid="craft-result">
-                          <strong>
+                        <div className="forge-reveal" data-rarity={crafted.rarity} role="status" data-testid="craft-result">
+                          <span className="forge-reveal-art" aria-hidden="true"><V2PixelIcon name={itemIconName(crafted)} size={3} /></span>
+                          <div><strong>
                             Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
-                          </strong>{' '}
-                          (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
-                          tab can be listed in the Market.
+                          </strong>
+                          <span>Level {crafted.level} · Added to your Bag</span>
+                          <small>Gear is not tradable; only Relics can be listed in the Market.</small></div>
                         </div>
                       ) : null
                     }

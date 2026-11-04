@@ -98,7 +98,8 @@ for (const reduced of [false, true]) it(`renders the existing impact cue and cle
   const number = text.mock.results.find(r => r.value.setText.mock.calls.length > 0)!.value;
   const flash = image.mock.results.find(r => r.value.setTexture.mock.calls.length > 0)!.value;
   expect(number.setAlpha).toHaveBeenCalledWith(1);
-  expect(flash.setVisible).toHaveBeenCalledWith(true);
+  expect(flash.setVisible).toHaveBeenCalledWith(!reduced);
+  if (reduced) expect(flash.setVisible).not.toHaveBeenCalledWith(true);
   if (reduced) expect(monster.x).toBeLessThan(scene['homes'][1]);
   else expect(Number(scene['game'].canvas.dataset.stageContactGap)).toBe(2);
   expect(scene['hp']!.value).toBeLessThan(scene['hp']!.max);
@@ -114,7 +115,7 @@ it('shows a muted Miss without flashing or shaking a dodging target', () => {
   scene.update(0, 20);
   const number = text.mock.results.find(r => r.value.setText.mock.calls.some(([label]: string[]) => label === 'Miss'))!.value;
   expect(number.setText).toHaveBeenCalledWith('Miss');
-  expect(number.setColor).toHaveBeenCalledWith('#b8a9c9');
+  expect(number.setColor).toHaveBeenCalledWith('#bcc2d2');
   expect(image.mock.results.every(r => !r.value.setVisible.mock.calls.some(([visible]: boolean[]) => visible))).toBe(true);
 });
 
