@@ -16,10 +16,12 @@
 - Runner reports/ui/single2-gate.py; axe reports/ui/single2-axe.mjs pinned4.10.3 adds class/craft/salvage confirmations and Chain unavailable. Forgefixture reload fixed in harness; no product assertion waiver.
 - After finalgates: run tools/effects-test.mjs only when browsergates idle, inspect native screenshots, writefreshA/Bgrades; complete full diff/scope review. Earlier original source diff largely reviewed; remaining generateddocs/art data verified by generators/hashes.
 - P1e mocked14/14PASS on originald31cb2a (SINGLE2-U5); final68ab4c1 must rerun mocked audit and update head. Signnothing; routeintercept only. Harness reports/ui/single2-stack-audit.mjs.
-- P1d/f PENDING: docs-on-stack rebase270, gallery-on-stack refresh267; branches not created. Original270127e3f8 remainsA0/B0 inheritedmain; original267e161f06 untouched.
-- P2 PENDING release dry-run script/runbook. P3 PENDING localnoncecauses/exportrestore/CXN3/regression card. P4 PENDING updatedCXS1/CXS2,pitch/shotlist/Fujiproof/FAQ/keyboard/bundle. P5 finalreport pending.
+- P1d/f IN PROGRESS: /Users/bao/taskbar-hero-single2-docs and -gallery exist at68ab4c1. Original270/267 changes applied without commit; docs release facts updated,4new judge draft files in docs/submission. Finish after stackgate; originalPRs untouched.
+- P2/P3 IN PROGRESS: /Users/bao/taskbar-hero-single2-tooling branch ai/codex-single2-tooling from68ab4c1. Archive script+integrity tests and noncefailure-mode tests added, builders21347/21349; releaseengine/runbook/CXN3 stillpending. P4 4drafts written; keyboard/bundle pending. P5 pending.
 - Docker binary present but daemon unavailable; Deno absent. Unit/PGlite fallback allowed; deployedbackup remains user-gated. No live nonceprobes used.
 - #269 already tests startupmissingenv,DBunavailable/missingRPC,CORS/method; historical502cause unproven. #244db0f9d6 runbook read-only; #244/#252/#257 untouched.
 - Keep originalEconomy defaultOFF, rune/skill/companion Sample/Unavailable. ContractsFuji43113 fixed; no economy/artsource changes made bySINGLE2.
 - Ledger has unrelateduntrackedfiles; stage ONLY explicit SINGLE2 paths. Handoffmax80lines; commit+push aftereverymilestone and appendboardlog.
 - Progress report reports/SINGLE2-REPORT.md is incomplete; merges/deploys/signatures0. Existinggoal ACTIVE. Do not declare complete untilP0–P5 done or explicitstop/deadline.
+- Resume checkpoint: final cleanB68ab4c1 all14commandsPASS incl38axe/18geometry; evidence copied to SINGLE2-STACK/b. Bdiffreview underway; nativeSalvage1280 inspected. A full1280PASS,full1600active. FinalU5 14/14PASS at68ab4c1; newpath SINGLE2-U5/final-68ab4c1.
+- Reusable detached launcher /tmp/single2-launch.py accepts cwd logfile -- argv; protects logs and records PID. New parameterized keyboard runner reports/ui/single2-keyboard-performance.mjs tests actualCancel; run when browsergates idle.
