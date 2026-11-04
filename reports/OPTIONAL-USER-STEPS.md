@@ -76,3 +76,15 @@ User paused before stack acceptance; no owner action was performed. The requeste
 5. Contest: planning deadline 2026-11-21 (UTC+7), Demo Day 2026-11-30; official submission deadline unconfirmed (Builder Hub shows 25 Nov 05:59). The user submits; you only prepare drafts.
 
 Exact dashboard-opening commands remain in the Single-session owner actions section above. No verified complete deployed-backup command is invented.
+
+## SINGLE2 completion — November 4, 2026
+
+Candidate 1eefc3e and drafts #270/#271/#272/#273 pass their exact-head reviews. No owner step was performed; capacity remains BLOCKED. Next check: 2026-11-04T21:00:00Z (November 5, 04:00 Vietnam), not a guaranteed reset or scheduled retry. Release order: #262 → #263 → #264 → #265 → #266 → #268 → #269 → #271 → #273. Original #267 stays open. Never merge the integration branch.
+
+1. Open the Vercel account usage page and confirm real remaining deployments if you could not verify them.
+2. Supabase: obtain a COMPLETE backup of the deployed functions, dependencies and import maps through a supported export/support route, rehearse restoring it locally. Required before deploying #269's edge source or merging #244. Do not bypass UnsafeFunctionDownloadPathError.
+3. Reset the leaked Supabase DB password (it was pasted in chat on 31 Oct) and discard the old test wallet.
+4. VITE_GAME_V2 cut-over go/no-go (only after #244 + backup + rehearsal).
+5. Contest: planning deadline 2026-11-21 (UTC+7), Demo Day 2026-11-30; official submission deadline unconfirmed (Builder Hub shows 25 Nov 05:59). The user submits; you only prepare drafts.
+
+Repository-source restore passes local checks but does not replace the deployed backup. See [final report](SINGLE2-REPORT.md) and [restore instructions](sys/single2/repo-source-restore.md). Dashboard commands above remain the owner entry points; no complete deployed-export command is invented.

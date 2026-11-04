@@ -1,0 +1,95 @@
+{
+  "candidate": "1eefc3ef6d828b06710c8be18feb08e90b099e3e",
+  "releaseTree": "f5c0a0c2bcc5e869f937b487bfbc3069f490bfe4",
+  "scope": "Nine-step product and final gallery train; #270 docs and #272 tooling are separately held drafts, not silently included in this tree.",
+  "steps": [
+    {
+      "pr": 262,
+      "branch": "ai/codex-ui-art2",
+      "head": "a9afaadf263593d6849dbbd0934238d4b1289403",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/art2.spec.ts",
+        "e2e/ui/original-preview.spec.ts"
+      ]
+    },
+    {
+      "pr": 263,
+      "branch": "ai/codex-ui-motion",
+      "head": "4b0e69accfc7d8079fdf3d044676c0179cf5a1f4",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/keyboard-regions.spec.ts",
+        "e2e/ui/motion.spec.ts"
+      ]
+    },
+    {
+      "pr": 264,
+      "branch": "ai/codex-ui-previews",
+      "head": "949cc444472c87c731c22b737748f56b6419ba5e",
+      "specs": [
+        "e2e/ui/feature-samples.spec.ts"
+      ]
+    },
+    {
+      "pr": 265,
+      "branch": "ai/codex-ui-firstplay",
+      "head": "7d0d08e48e87c7f758cd8b2a959fb5153c3c9470",
+      "specs": [
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/firstplay.spec.ts"
+      ]
+    },
+    {
+      "pr": 266,
+      "branch": "ai/codex-ui-gallery",
+      "head": "f2a05881fe0d6235d1eeaa57c7d9a155f2445280",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts"
+      ]
+    },
+    {
+      "pr": 268,
+      "branch": "ai/codex-ovn-ui-keyboard",
+      "head": "afd06992b05b4c98a15c77ec4903166ef892b0f1",
+      "specs": [
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/ui/class-confirmation-keyboard.spec.ts"
+      ]
+    },
+    {
+      "pr": 269,
+      "branch": "ai/codex-ovn-sys-auth-stack",
+      "head": "85a6919ba80fc0578f1cfc363865b6ea734e608f",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts"
+      ]
+    },
+    {
+      "pr": 271,
+      "branch": "ai/codex-stackfix",
+      "head": "1eefc3ef6d828b06710c8be18feb08e90b099e3e",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/forge-disabled-contrast.spec.ts",
+        "e2e/ui/landing-font-stability.spec.ts"
+      ]
+    },
+    {
+      "pr": 273,
+      "branch": "ai/codex-gallery-on-stack",
+      "head": "f5c0a0c2bcc5e869f937b487bfbc3069f490bfe4",
+      "specs": [
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts"
+      ],
+      "role": "gallery-refresh"
+    }
+  ]
+}

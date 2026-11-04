@@ -1,0 +1,41 @@
+{
+  "head": "68ab4c12cfdb24b107480fa34b3c1c82dd105089",
+  "checks": [
+    {
+      "label": "deno-map-generation",
+      "command": [
+        "node",
+        "scripts/gen-deno-json.mjs"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "deno-map-drift",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "supabase/functions"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "deno-import-guard",
+      "command": [
+        "node",
+        "scripts/check-deno-imports.mjs"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "local-cutover",
+      "command": [
+        "node",
+        "scripts/rehearse-cutover.mjs"
+      ],
+      "exit": 1
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,263 @@
+{
+  "head": "f1a338854a8eb632a0d8f1841436595d59e83890",
+  "pass": "single2-tooling-a",
+  "pid": 54831,
+  "cwd": "/Users/bao/taskbar-hero-single2-tooling",
+  "ports": [
+    5360,
+    5361,
+    5362,
+    5363,
+    5364
+  ],
+  "checks": [
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs",
+        "scripts/health-auth.test.mjs"
+      ],
+      "started": "2026-11-04T09:07:41.207274+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-04T09:07:41.418362+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-04T09:08:21.293249+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/web-units.log"
+    },
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-04T09:09:14.936996+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-04T09:09:25.336030+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/lint.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-04T09:09:34.051315+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-04T09:09:37.559881+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-04T09:09:50.790561+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/server/journeys.spec.ts",
+        "e2e/server/request-body-limits.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:10:02.780731+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/server/journeys.spec.ts",
+        "e2e/server/request-body-limits.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:10:27.508995+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/changed-1600x900.log"
+    },
+    {
+      "label": "full-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:10:53.733457+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/full-1280x720.log"
+    },
+    {
+      "label": "full-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:16:06.815228+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/full-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:21:15.713404+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T09:21:32.908621+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/resize-five-1600x900.log"
+    },
+    {
+      "label": "strict-ui-audit",
+      "command": [
+        "node",
+        "--import",
+        "/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs",
+        "tools/ui-audit.mjs",
+        "/Users/bao/taskbar-hero-single2-tooling/screenshots/ui/single2-tooling-a-audit",
+        "bossReadyStrong",
+        "--strict"
+      ],
+      "started": "2026-11-04T09:21:50.089705+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/strict-ui-audit.log"
+    },
+    {
+      "label": "axe-wcag-aa",
+      "command": [
+        "node",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/ui/single2-axe.mjs",
+        "/Users/bao/taskbar-hero-single2-tooling",
+        "dist-v2/e2e-5361",
+        "5364",
+        "/Users/bao/taskbar-hero-single2-tooling/reports/ui/logs/single2-tooling-a/axe",
+        "all"
+      ],
+      "started": "2026-11-04T09:22:08.397555+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-tooling-a/axe-wcag-aa.log"
+    }
+  ]
+}

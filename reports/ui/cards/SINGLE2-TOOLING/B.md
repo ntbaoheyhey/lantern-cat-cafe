@@ -1,0 +1,15 @@
+# SINGLE2 TOOLING B — self-graded (fresh pass)
+
+Exact head `f1a338854a8eb632a0d8f1841436595d59e83890`. **95/100 PASS** for the local tooling and rehearsal scope. Clean detached checkout on separate ports; tests first, then full diff/scope and native screenshot review. All 12 changed paths are accounted for. No final failing assertion, console error or layout overflow remains.
+
+Both reviews pass typecheck, lint, build, script/package units, 1,467 web units, art checks, 60 related browser executions per size with repeat-each=3, 20 resize cases, 18 strict geometry views and 38 pinned axe scans. The one full suite per head passes 399/399 at each size in A. Across A/B: resize 0/40, geometry 0/36, axe 0/76. Two expected package failures and eleven inherited skips remain unchanged.
+
+Supplemental tests on this exact head pass 5 release-barrier tests and 3 archive-integrity tests in each checkout. Actual local release smoke passes fresh and returning guest flows, Forge/Help and natural reward at both sizes; zero browser errors or blocked mutating requests. A rewards: 29.576/29.662 seconds; B: 29.850/29.432 seconds from Home. Owned loopback servers are stopped after the smoke. No live release path was executed.
+
+The nine-step actual dry run exits 0 and reports writes=0, with capacity and missing future refreshed-head/production-asset receipts as explicit execution blockers. It does not claim to execute its printed remote stages. Reviewed guards include explicit full-SHA execution confirmation, current capacity, receipt/head/scope equality, merge lock, 20-minute spacing, pending mutation recovery, live HTML plus asset checks and stop-on-error. The historical product/gallery receipts must never be copied onto a refreshed head without rerunning its gate.
+
+Repo-source export/restore is deterministic and verifies 713 files, 18 maps, 7 present locks and 11 missing function locks. Twin archive SHA-256: `323ab32249f341e4019487cf2d48e6d20f0f01d3d8fe0e0762fe0ac3c153e522`. Restored exact source passes 588 Supabase tests. Seven new nonce cases cover cold missing-config registration, rejected dependencies, CORS, upstream rejection and pending-call limitations (42 focused builder cases pass). The historical gateway 502 cause is not proven. Local cutover passes 52 browser/HTTP cases plus exact shared security and v1 balance preservation after disposable rollback. No weakened limiter or live SQL was introduced.
+
+Five points are reserved for the unexecuted production/native-runtime paths. Docker daemon and Deno are unavailable; this is repository-source rehearsal only, not a complete deployed backup or native Supabase recovery. No production configuration, function deployment, wallet signature or main merge occurred. Existing product performance and mocked wallet evidence remains on unchanged 1eefc3e runtime source.
+
+[Gate commands](b/receipt.json) · [Supplemental commands](b-supplement/receipt.json) · [Scope](b-scope.json) · [Release dry run](../../../sys/single2/release-dry-run.log).

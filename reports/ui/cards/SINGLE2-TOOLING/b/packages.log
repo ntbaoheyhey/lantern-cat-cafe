@@ -1,0 +1,68 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/auth
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  16:16:12
+   Duration  429ms (import 67%, tests 22%, transform 10%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/chain
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  16:16:12
+   Duration  345ms (import 50%, transform 29%, tests 20%, worker 2%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/game-rules
+
+
+ Test Files  30 passed | 3 skipped (33)
+      Tests  431 passed | 2 expected fail | 11 skipped (444)
+   Start at  16:16:13
+   Duration  30.11s (tests 91%, transform 6%, import 2%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/supabase/tests
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/supabase/tests
+
+
+ Test Files  35 passed (35)
+      Tests  588 passed (588)
+   Start at  16:16:44
+   Duration  15.55s (tests 80%, import 15%, transform 5%)
+
+
+> @taskbar-hero/api-contract@0.0.0 test /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-tooling-b-f1a3388/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  16:17:00
+   Duration  460ms (transform 83%, import 15%, tests 1%, worker 1%)
+
+
+exit=0
