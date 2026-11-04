@@ -1,0 +1,930 @@
+{
+  "site": "https://taskbarhero-eight.vercel.app",
+  "at": "2026-11-04T04:30:46.979Z",
+  "methodology": "fresh isolated Chromium profiles; real clock; no fixture save or manual claim for first reward; guest persistence reused in a second profile; no wallet signature/transaction; nonce endpoint never probed by this audit",
+  "runs": [
+    {
+      "width": 1280,
+      "errors": [
+        {
+          "phase": "axe",
+          "text": "Connecting to 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap' violates the following Content Security Policy directive: \"connect-src 'self' https://api.avax-test.network https://qoalewtxflagoprrxrgh.supabase.co\". The action has been blocked.",
+          "location": ""
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        }
+      ],
+      "rpcReads": [
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_chainId"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_blockNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getCode"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getCode"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getLogs"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_call"
+          ]
+        }
+      ],
+      "otherPosts": [
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        }
+      ],
+      "screens": [
+        {
+          "name": "landing",
+          "screenshot": "landing-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "class",
+          "screenshot": "class-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "first-reward",
+          "screenshot": "first-reward-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "home",
+          "screenshot": "home-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "bag",
+          "screenshot": "bag-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "map",
+          "screenshot": "map-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge",
+          "screenshot": "forge-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-salvage",
+          "screenshot": "forge-salvage-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-relic",
+          "screenshot": "forge-relic-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-craft",
+          "screenshot": "forge-craft-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "market",
+          "screenshot": "market-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "hero",
+          "screenshot": "hero-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "help",
+          "screenshot": "help-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "chain-proof",
+          "screenshot": "chain-proof-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "offline",
+          "screenshot": "offline-1280.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        }
+      ],
+      "timings": {
+        "homeSeconds": 0.40301733399999967,
+        "firstNaturalRewardSeconds": 29.620376792,
+        "target36Seconds": true
+      },
+      "checks": [
+        {
+          "name": "offline text",
+          "passed": true
+        },
+        {
+          "name": "saved guest Hero -> Landing -> guest -> Home",
+          "passed": true
+        },
+        {
+          "name": "no mutating requests",
+          "passed": false
+        },
+        {
+          "name": "product console/page errors",
+          "passed": false
+        }
+      ],
+      "liveAssets": [
+        "/assets/index-Ccs5evFH.js",
+        "/assets/rolldown-runtime-XKyaHtl9.js",
+        "/assets/react-C1iE8mnY.js",
+        "/assets/src-CtQx5-nM.js",
+        "/assets/web3-C6G9LtNF.js",
+        "/assets/ch1-Dcr1kpPd.js",
+        "/assets/index-jL_b_lsJ.css"
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2"
+            ],
+            "description": "Ensure ARIA attributes are not prohibited for an element's role",
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr?application=axeAPI",
+            "nodes": [
+              {
+                "any": [],
+                "all": [],
+                "none": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "data": {
+                      "role": null,
+                      "nodeName": "div",
+                      "messageKey": "noRoleSingular",
+                      "prohibited": [
+                        "aria-label"
+                      ]
+                    },
+                    "relatedNodes": [],
+                    "impact": "serious",
+                    "message": "aria-label attribute cannot be used on a div with no valid role attribute."
+                  }
+                ],
+                "impact": "serious",
+                "html": "<div class=\"v2-stage-canvas\" aria-label=\"Cat exploring the chapter\"><canvas width=\"204\" height=\"96\" style=\"image-rendering: pixelated;\"></canvas></div>",
+                "target": [
+                  ".v2-stage-canvas"
+                ],
+                "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+              }
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT"
+            ],
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "data": {
+                      "fgColor": "#8c4a00",
+                      "bgColor": "#2a1f36",
+                      "contrastRatio": 2.29,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "bold",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    },
+                    "relatedNodes": [
+                      {
+                        "html": "<div class=\"home-card home-card--loot v2-recent-loot\" data-testid=\"home-recent-loot-card\">",
+                        "target": [
+                          ".home-card--loot"
+                        ]
+                      }
+                    ],
+                    "impact": "serious",
+                    "message": "Element has insufficient color contrast of 2.29 (foreground color: #8c4a00, background color: #2a1f36, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+                  }
+                ],
+                "all": [],
+                "none": [],
+                "impact": "serious",
+                "html": "<h3 id=\"_r_g_\" class=\"loot-summary-heading\">Recent finds</h3>",
+                "target": [
+                  "#_r_g_"
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.29 (foreground color: #8c4a00, background color: #2a1f36, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "targets": [
+              [
+                ".wallet"
+              ],
+              [
+                ".stage-progress"
+              ],
+              [
+                ".stage-kills"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "span[aria-atomic=\"true\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".stage-progress > span:nth-child(1)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(1)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(2)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(3)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(4)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(5)"
+              ],
+              [
+                ".is-elite"
+              ],
+              [
+                "span:nth-child(7)"
+              ],
+              [
+                ".loot-line-levelup > .loot-line-badge[aria-hidden=\"true\"]"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "width": 1600,
+      "errors": [
+        {
+          "phase": "axe",
+          "text": "Connecting to 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap' violates the following Content Security Policy directive: \"connect-src 'self' https://api.avax-test.network https://qoalewtxflagoprrxrgh.supabase.co\". The action has been blocked.",
+          "location": ""
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        },
+        {
+          "phase": "product",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": "https://api.avax-test.network/ext/bc/C/rpc"
+        }
+      ],
+      "rpcReads": [
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_chainId"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_blockNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getCode"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getCode"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getLogs"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_call"
+          ]
+        }
+      ],
+      "otherPosts": [
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        },
+        {
+          "method": "POST",
+          "origin": "https://api.avax-test.network",
+          "path": "/ext/bc/C/rpc",
+          "rpcMethods": [
+            "eth_getBlockByNumber"
+          ]
+        }
+      ],
+      "screens": [
+        {
+          "name": "landing",
+          "screenshot": "landing-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "class",
+          "screenshot": "class-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "first-reward",
+          "screenshot": "first-reward-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "home",
+          "screenshot": "home-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "bag",
+          "screenshot": "bag-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "map",
+          "screenshot": "map-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge",
+          "screenshot": "forge-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-salvage",
+          "screenshot": "forge-salvage-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-relic",
+          "screenshot": "forge-relic-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "forge-craft",
+          "screenshot": "forge-craft-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "market",
+          "screenshot": "market-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "hero",
+          "screenshot": "hero-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "help",
+          "screenshot": "help-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "chain-proof",
+          "screenshot": "chain-proof-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        },
+        {
+          "name": "offline",
+          "screenshot": "offline-1600.png",
+          "overflow": {
+            "x": false,
+            "y": false
+          }
+        }
+      ],
+      "timings": {
+        "homeSeconds": 0.41154358299999877,
+        "firstNaturalRewardSeconds": 29.629745542000006,
+        "target36Seconds": true
+      },
+      "checks": [
+        {
+          "name": "offline text",
+          "passed": true
+        },
+        {
+          "name": "saved guest Hero -> Landing -> guest -> Home",
+          "passed": true
+        },
+        {
+          "name": "no mutating requests",
+          "passed": false
+        },
+        {
+          "name": "product console/page errors",
+          "passed": false
+        }
+      ],
+      "liveAssets": [
+        "/assets/index-Ccs5evFH.js",
+        "/assets/rolldown-runtime-XKyaHtl9.js",
+        "/assets/react-C1iE8mnY.js",
+        "/assets/src-CtQx5-nM.js",
+        "/assets/web3-C6G9LtNF.js",
+        "/assets/ch1-Dcr1kpPd.js",
+        "/assets/index-jL_b_lsJ.css"
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2"
+            ],
+            "description": "Ensure ARIA attributes are not prohibited for an element's role",
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr?application=axeAPI",
+            "nodes": [
+              {
+                "any": [],
+                "all": [],
+                "none": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "data": {
+                      "role": null,
+                      "nodeName": "div",
+                      "messageKey": "noRoleSingular",
+                      "prohibited": [
+                        "aria-label"
+                      ]
+                    },
+                    "relatedNodes": [],
+                    "impact": "serious",
+                    "message": "aria-label attribute cannot be used on a div with no valid role attribute."
+                  }
+                ],
+                "impact": "serious",
+                "html": "<div class=\"v2-stage-canvas\" aria-label=\"Cat exploring the chapter\"><canvas width=\"189\" height=\"96\" style=\"image-rendering: pixelated;\"></canvas></div>",
+                "target": [
+                  ".v2-stage-canvas"
+                ],
+                "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+              }
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT"
+            ],
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "data": {
+                      "fgColor": "#8c4a00",
+                      "bgColor": "#2a1f36",
+                      "contrastRatio": 2.29,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "bold",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    },
+                    "relatedNodes": [
+                      {
+                        "html": "<div class=\"home-card home-card--loot v2-recent-loot\" data-testid=\"home-recent-loot-card\">",
+                        "target": [
+                          ".home-card--loot"
+                        ]
+                      }
+                    ],
+                    "impact": "serious",
+                    "message": "Element has insufficient color contrast of 2.29 (foreground color: #8c4a00, background color: #2a1f36, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+                  }
+                ],
+                "all": [],
+                "none": [],
+                "impact": "serious",
+                "html": "<h3 id=\"_r_g_\" class=\"loot-summary-heading\">Recent finds</h3>",
+                "target": [
+                  "#_r_g_"
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.29 (foreground color: #8c4a00, background color: #2a1f36, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "targets": [
+              [
+                ".wallet"
+              ],
+              [
+                ".stage-progress"
+              ],
+              [
+                ".stage-kills"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "span[aria-atomic=\"true\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".stage-progress > span:nth-child(1)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(1)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(2)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(3)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(4)"
+              ],
+              [
+                ".is-cleared.stage-pip[aria-hidden=\"true\"]:nth-child(5)"
+              ],
+              [
+                ".is-elite"
+              ],
+              [
+                "span:nth-child(7)"
+              ],
+              [
+                ".stage-preview"
+              ],
+              [
+                ".home-hero-badge--class"
+              ],
+              [
+                ".home-hero-card__power"
+              ],
+              [
+                ".home-card__subtitle"
+              ],
+              [
+                ".home-hero-stat-row:nth-child(1) > dt"
+              ],
+              [
+                ".home-hero-stat-row:nth-child(3) > dt"
+              ],
+              [
+                ".home-hero-stat-row:nth-child(5) > dt"
+              ],
+              [
+                ".home-hero-stat-row:nth-child(5) > dd"
+              ],
+              [
+                ".home-card--goal > .home-card__header > .home-card__title"
+              ],
+              [
+                ".home-goal-progress__title"
+              ],
+              [
+                ".home-goal-action-btn"
+              ],
+              [
+                ".home-card--loot > .home-card__header > .home-card__title"
+              ],
+              [
+                ".loot-line-levelup > .loot-line-badge[aria-hidden=\"true\"]"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "defects": [
+    {
+      "severity": "medium",
+      "width": 1280,
+      "state": "first-reward",
+      "description": "aria-prohibited-attr",
+      "targets": [
+        [
+          ".v2-stage-canvas"
+        ]
+      ],
+      "screenshot": "first-reward-1280.png"
+    },
+    {
+      "severity": "medium",
+      "width": 1280,
+      "state": "first-reward",
+      "description": "color-contrast",
+      "targets": [
+        [
+          "#_r_g_"
+        ]
+      ],
+      "screenshot": "first-reward-1280.png"
+    },
+    {
+      "severity": "medium",
+      "width": 1600,
+      "state": "first-reward",
+      "description": "aria-prohibited-attr",
+      "targets": [
+        [
+          ".v2-stage-canvas"
+        ]
+      ],
+      "screenshot": "first-reward-1600.png"
+    },
+    {
+      "severity": "medium",
+      "width": 1600,
+      "state": "first-reward",
+      "description": "color-contrast",
+      "targets": [
+        [
+          "#_r_g_"
+        ]
+      ],
+      "screenshot": "first-reward-1600.png"
+    }
+  ],
+  "complete": true
+}
