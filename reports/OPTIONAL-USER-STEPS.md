@@ -40,3 +40,27 @@ The automatic PR preview again received `api-deployments-free-per-day` at 2026-1
 ## Final SYS draft capacity evidence
 
 Commit `85a6919` for draft #269 has a Vercel commit-status failure at **2026-11-03T20:51:55Z**, described as “Deployment rate limited — retry in 24 hours.” The other project check succeeded by canceling its build through the existing Ignored Build Step. This establishes no hosted preview acceptance. The latest conservative 24-hour warning runs through **2026-11-04T20:51:55Z (03:51:55 Vietnam on November 5)**. Recheck actual account usage at the UTC boundary **2026-11-04T00:00Z (07:00 Vietnam)** before considering release. See `reports/sys/release-final-state.json` for the minimal structured evidence.
+
+## Single-session owner actions — November 4, 2026
+
+The five requested owner steps are preserved verbatim below. None was performed by this session.
+
+1. Open the Vercel account usage page and confirm real remaining deployments if you could not verify them.
+2. Supabase: obtain a COMPLETE backup of the deployed functions, dependencies and import maps through a supported export/support route, rehearse restoring it locally. Required before deploying #269's edge source or merging #244. Do not bypass UnsafeFunctionDownloadPathError.
+3. Reset the leaked Supabase DB password (it was pasted in chat on 31 Oct) and discard the old test wallet.
+4. VITE_GAME_V2 cut-over go/no-go (only after #244 + backup + rehearsal).
+5. Contest: planning deadline 2026-11-21 (UTC+7), Demo Day 2026-11-30; official submission deadline unconfirmed (Builder Hub shows 25 Nov 05:59). The user submits; you only prepare drafts.
+
+The next planned capacity check is **2026-11-04T21:00:00Z** (04:00 Vietnam on November 5). The provider warning through20:51:55Z is not a guaranteed reset. No automatic retry is scheduled. Open the already identified account dashboard and choose Usage:
+
+```sh
+open 'https://vercel.com/ntbaoheyheys-projects'
+```
+
+For the owner-only database password reset, open the project database settings; enter a new password through the supported dashboard flow without pasting it in chat:
+
+```sh
+open 'https://supabase.com/dashboard/project/qoalewtxflagoprrxrgh/settings/database'
+```
+
+The earlier attempted function-download command above is a retained failed attempt, not a supported complete export or restore command. No exact complete-backup/restore command is verified; request the full deployed bundle from Supabase support. Do not run a deployment or flag-change command until the backup/restore and explicit owner go/no-go gates are satisfied. Discard the old wallet in its wallet application; no private key is required here.

@@ -6,8 +6,11 @@
 - Existing accepted exact-head full suites must not be repeated. Preserve all original receipts and failures.
 - Release order262→263→264→265→266→268→269→267; P1/P2 final-live work parked by capacity.
 - Main checkout and existing worktrees untouched; own /Users/bao/taskbar-hero-single on codex/single-session-docs.
-- P3 in progress: audit CXS1/CXS2 links/counts/media, keyboard/semantics/performance/spacing and existing main regression evidence.
-- Confirmed docs drift: submission still waits for CXU3/CXC2 readiness; media/test evidence is explicitly historical6144d42. Prepare accurate current status without claiming held patches live.
+- P3 docs candidate 127e3f87c678be5909c4b420c46fd55d75fb5d72 frozen: 4 docs-only paths, builder and37 links PASS. Exact A gate PID71422 on5300–5304 running full once; B clean tests-first pending.
+- All624 gallery capture hashes verified against unchanged267/e161f06. Live entrypoints freshly rechecked unchanged.
+- Fresh live current-main route audit in progress; known stagearia/rewardcontrast defects reproduced, not new; no final-stack live acceptance.
+- Initial live audit guard omitted read-only eth_getBlockByNumber and blocked it; failed harness record retained. Corrected read-only allowlist rerun in current-live-r2.
+- Corrected docs drift: submission still waits for CXU3/CXC2 readiness; media/test evidence is explicitly historical6144d42. Prepare accurate current status without claiming held patches live.
 - #244 blocked by complete deployed-bundle backup + restore rehearsal; #252/#257 stay open/superseded.
 - No live writes/migrations, edge/contract deploys, secrets, funded wallet, settings/flag changes or submission.
 - #269 edge source remains undeployed; historical502 cause unproven, health hold cleared.
