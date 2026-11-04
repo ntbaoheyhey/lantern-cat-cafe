@@ -27,6 +27,9 @@ for (const width of [1280, 1600]) for (const reducedMotion of ['no-preference', 
     await page.evaluate(() => document.fonts.ready);
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+    for (const link of await page.locator('.landing__proof-link').all()) {
+      expect(await link.evaluate(e => e.getBoundingClientRect().height <= parseFloat(getComputedStyle(e).lineHeight) + 1)).toBe(true);
+    }
     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
       for (const item of await page.locator(selector).all()) {
         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);

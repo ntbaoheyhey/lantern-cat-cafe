@@ -265,7 +265,7 @@
   padding: 12px 40px;
   /* Stable slots prevent late body/numeric fonts moving neighbouring proof links. */
   display: grid;
-  grid-template-columns: 152px 4px 212px 4px 166px 4px 136px 4px minmax(110px, 1fr);
+  grid-template-columns: 152px 4px 240px 4px 166px 4px 136px 4px minmax(110px, 1fr);
   align-items: center;
   gap: 24px;
   font-size: 13px;
@@ -274,6 +274,7 @@
 }
 
 .landing__proof-item {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 6px;
