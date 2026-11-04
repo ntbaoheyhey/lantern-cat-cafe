@@ -1,0 +1,84 @@
+{
+  "basePr": 278,
+  "baseSha": "f8837d650a7efa5d485223caf9846ef0f54a6494",
+  "branches": {
+    "codex/gameplay-onboarding-2026-11-04": "70594b3bce68df32f8a25ed901f0677446b9806f",
+    "codex/gameplay-art-2026-11-04": "68b00038a09e5b47c1fd0ad25b71372678fd3339",
+    "codex/gameplay-juice-2026-11-04": "6888df5e15ec2e514c03469110866ce50b882b4f",
+    "ai/codex-gameplay-2026-11-04": "1f6313b64ffb3118096257a5f40d3a799a209b58"
+  },
+  "runtimeSourceSha": "6888df5e15ec2e514c03469110866ce50b882b4f",
+  "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
+  "runtimeEquivalentPaths": [
+    "apps/web/src",
+    "apps/web/public",
+    "apps/web/e2e",
+    "packages",
+    "package.json",
+    "tools/art"
+  ],
+  "runtimeDiffIsEmpty": false,
+  "draftPullRequests": [
+    {
+      "number": 279,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/279",
+      "layer": "Guest guidance and claims",
+      "head": "codex/gameplay-onboarding-2026-11-04",
+      "base": "ai/codex-visual-2026-11-04"
+    },
+    {
+      "number": 280,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/280",
+      "layer": "Original character and item art",
+      "head": "codex/gameplay-art-2026-11-04",
+      "base": "codex/gameplay-onboarding-2026-11-04"
+    },
+    {
+      "number": 281,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/281",
+      "layer": "Item UI and bounded feedback",
+      "head": "codex/gameplay-juice-2026-11-04",
+      "base": "codex/gameplay-art-2026-11-04"
+    },
+    {
+      "number": 282,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/282",
+      "layer": "Offline demo and measured proof",
+      "head": "ai/codex-gameplay-2026-11-04",
+      "base": "codex/gameplay-juice-2026-11-04"
+    }
+  ],
+  "merged": false,
+  "deployed": false,
+  "proofCommitNote": "Proof branch SHA records the local evidence checkpoint preceding this manifest update. Later documentation-only commits may follow. The runtime SHA identifies the exact final UI source.",
+  "mergeOrder": [
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282
+  ],
+  "publishedAtUtc": "2026-11-04T14:48:55.800213+00:00",
+  "localProcessesStopped": [
+    41657,
+    41659,
+    58761,
+    80310,
+    80594
+  ],
+  "remoteCI": "Final pinned-image runs pending: G1 41866021161, Art 41866016850, UI 41866018424. System fonts are provided by the digest-pinned image; browser installation does not upgrade OS dependencies.",
+  "normalizedRuntimeSourceIsIdentical": false,
+  "equivalenceReceipt": "runtime-equivalence.json",
+  "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
+  "finalizedAtUtc": "2026-11-04T16:20:00Z",
+  "previousVerifiedRuntimeSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
+  "applicationSourceIdenticalToPreviousRuntime": true,
+  "ciRuns": {
+    "g1": 41866021161,
+    "art": 41866016850,
+    "ui": 41866018424
+  }
+}

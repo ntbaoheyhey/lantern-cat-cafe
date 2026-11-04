@@ -1,0 +1,108 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-gameplay
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.836791ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.8315ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.903ms)
+✔ output order is stable regardless of file creation order (3.001459ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.323083ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (20.87675ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.824667ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.105333ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.324625ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (12.147541ms)
+✔ auth health fails closed when the transport is unavailable (12.017417ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 146.530083
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/supabase/tests
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/packages/chain
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  20:49:26
+packages/chain test:    Duration  567ms (import 51%, tests 33%, transform 14%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  20:49:26
+packages/auth test:    Duration  776ms (import 59%, tests 32%, transform 9%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  20:49:26
+supabase/tests test:    Duration  10.27s (tests 83%, import 14%, transform 3%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  32 passed | 3 skipped (35)
+packages/game-rules test:       Tests  437 passed | 2 expected fail | 11 skipped (450)
+packages/game-rules test:    Start at  20:49:26
+packages/game-rules test:    Duration  30.33s (tests 96%, import 2%, transform 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  20:49:57
+packages/api-contract test:    Duration  120ms (transform 49%, import 41%, tests 7%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay/apps/web
+apps/web test:  ❯ src/dev/previewGrid.test.ts (4 tests | 1 failed) 8ms
+apps/web test:    ❯ previewGrid (4)
+apps/web test:      × covers class x armor set x rarity x animation when nothing is filtered 6ms
+apps/web test:  ❯ src/layout/loot/LootSummary.test.tsx (8 tests | 1 failed) 157ms
+apps/web test:    ❯ LootSummary (8)
+apps/web test:      × renders specific item icons for armor, accessory, and weapon with aria-hidden 20ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/dev/previewGrid.test.ts > previewGrid > covers class x armor set x rarity x animation when nothing is filtered
+apps/web test: AssertionError: expected [ 'idle', 'walk', 'attack', …(5) ] to have a length of 6 but got 8
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test: - 6
+apps/web test: + 8
+apps/web test:  ❯ src/dev/previewGrid.test.ts:8:21
+apps/web test:       6|     const g = previewGrid({ cls: 'all', gear: 'all', rarity: 'all', an…
+apps/web test:       7|     expect(g.rows).toHaveLength(7 * 2 * 5);
+apps/web test:       8|     expect(g.anims).toHaveLength(6);
+apps/web test:        |                     ^
+apps/web test:       9|     expect(new Set(g.rows.map((r) => r.label)).size).toBe(g.rows.lengt…
+apps/web test:      10|   });
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+apps/web test:  FAIL  src/layout/loot/LootSummary.test.tsx > LootSummary > renders specific item icons for armor, accessory, and weapon with aria-hidden
+apps/web test: AssertionError: expected  to have a length of 3 but got +0
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test: - 3
+apps/web test: + 0
+apps/web test:  ❯ src/layout/loot/LootSummary.test.tsx:204:23
+apps/web test:     202|     // Every item icon is aria-hidden
+apps/web test:     203|     const itemIcons = container.querySelectorAll('.loot-item-art-icon …
+apps/web test:     204|     expect(itemIcons).toHaveLength(3);
+apps/web test:        |                       ^
+apps/web test:     205|     itemIcons.forEach((svg) => {
+apps/web test:     206|       expect(svg.getAttribute('aria-hidden')).toBe('true');
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+apps/web test:  Test Files  2 failed | 130 passed (132)
+apps/web test:       Tests  2 failed | 1477 passed (1479)
+apps/web test:    Start at  20:49:57
+apps/web test:    Duration  15.07s (tests 44%, environment 43%, import 10%, transform 2%)
+apps/web test: Environment  jsdom was created 132 times · 63.16s total, 43% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-gameplay/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
