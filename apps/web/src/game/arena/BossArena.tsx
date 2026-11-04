@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BossFightResultV2 } from '../../api/GameApiV2';
 import { SceneBackdrop } from '../../visual/SceneBackdrop';
+import { bossLabel } from '../../layout/boss/bossGate';
 import { prefersReducedMotion } from '../combat';
 import type { ArenaCueOptions } from './cues';
 import './arena.css';
@@ -36,8 +37,9 @@ export function BossArena({ result, complete = false, onDone, chapter, classId, 
   }, [complete]);
   const finished = complete || ended;
   return <section className="boss-arena" aria-label="Boss arena">
+    <header className="atelier-arena-heading"><span>Chapter {chapter} · Household boss</span><h2>{bossLabel(chapter).name}</h2></header>
     <div className="boss-arena-stage"><SceneBackdrop chapter={chapter} width={256} scale={2} /><div ref={host} className="boss-arena-canvas" /><SceneBackdrop chapter={chapter} width={256} scale={2} foreground /></div>
-    <p aria-label="Fight health">Cat HP {Math.round(hp.cat)} · Boss HP {Math.round(hp.boss)}</p>
+    <p className="atelier-arena-health" aria-label="Fight health"><span>Cat HP <strong>{Math.round(hp.cat)}</strong></span><span>Boss HP <strong>{Math.round(hp.boss)}</strong></span></p>
     <p role="status">{finished ? result.won ? 'Victory — boss defeated' : 'Defeat — rest and try again' : 'Boss fight in progress'}</p>
     {error && <p role="alert">{error}</p>}
     <button ref={skipButton} type="button" aria-disabled={ended && !complete} onClick={() => { if (ended) return; if (error) { setEnded(true); callback.current(); } else { skipRequested.current = true; skip.current?.(); } }}>{error ? 'Show fight result' : 'Skip fight'}</button>

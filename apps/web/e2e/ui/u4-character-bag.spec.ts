@@ -103,9 +103,9 @@ for (const vp of CHECK_VIEWPORTS) {
         const style = getComputedStyle(el);
         const temp = document.createElement('div');
         temp.style.color = `var(--rarity-${r})`;
-        document.body.appendChild(temp);
+        el.parentElement!.appendChild(temp);
         const expected = getComputedStyle(temp).color;
-        document.body.removeChild(temp);
+        temp.remove();
         return { borderColor: style.borderTopColor, expectedRarityColor: expected };
       }, rarity);
       expect(borderColor).toBe(expectedRarityColor);
@@ -135,9 +135,9 @@ for (const vp of CHECK_VIEWPORTS) {
       const style = getComputedStyle(el);
       const temp = document.createElement('div');
       temp.style.color = 'var(--surface-2)';
-      document.body.appendChild(temp);
+      el.parentElement!.appendChild(temp);
       const expectedSurface = getComputedStyle(temp).color;
-      document.body.removeChild(temp);
+      temp.remove();
 
       function parseRgb(str: string): [number, number, number] {
         const m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);

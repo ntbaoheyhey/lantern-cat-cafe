@@ -375,11 +375,12 @@ export function ForgePanel({
               </div>
 
               {/* Centre Column: Preview with in-place reveal (short flash, no modal) */}
-              <div className="forge-col-centre" data-testid="forge-centre-card">
+              <div className="forge-col-centre" data-crafting={isBusyCraft} data-testid="forge-centre-card">
                 <div
                   className="forge-preview-slot"
                   data-testid="forge-centre-preview"
                 >
+                  <img className="forge-hearth" src="/art/visual/forge-hearth.png" width={320} height={240} alt="" aria-hidden="true" />
                   <div className="forge-preview-art">
                     <V2PixelFrame name={`frame${capitalize(selectedRarity)}` as V2FrameName} size={4} className="forge-frame" />
                     <span className="forge-preview-glyph"><V2PixelIcon name={getSlotIconName(selectedSlot, classWeaponType)} size={3} title={slotLabel} /></span>

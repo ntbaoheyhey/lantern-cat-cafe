@@ -6,6 +6,25 @@ Source palettes include comments and CSS fallback literals; this is static evide
 
 | Path | Bytes | Kind | Native sizes (px) | Palette evidence | Pixel scale |
 |---|---|---|---|---|---|
+| apps/web/public/art/visual/foreground-1.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/foreground-2.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/foreground-3.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/foreground-4.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/foreground-5.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/forge-hearth.png | 501 | raster | 160x120 | 13 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/light-1.png | 663 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/light-2.png | 663 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/light-3.png | 663 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/light-4.png | 663 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/light-5.png | 663 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/mochi-idle.png | 1294 | raster | 480x48 | 15 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/mochi.png | 442 | raster | 48x48 | 14 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/room-1.png | 1085 | raster | 256x96 | 21 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/room-2.png | 1197 | raster | 256x96 | 22 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/room-3.png | 1293 | raster | 256x96 | 24 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/room-4.png | 1381 | raster | 256x96 | 21 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/room-5.png | 906 | raster | 256x96 | 16 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
+| apps/web/public/art/visual/shade.png | 1134 | raster | 256x96 | 1 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
 | apps/web/public/favicon.svg | 8767 | vector pixel art | 16x16 | 5 values in inventory.json | 4x horizontal / 4x vertical at declared SVG dimensions |
 | apps/web/public/og.png | 6698 | raster | 1200x630 | 23 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
 | apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000001.json | 361 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
@@ -142,7 +161,7 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/src/game/rig/index.ts | 524 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/palettes.ts | 2826 | art source | 56x48 composed canvas | 48 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/parts.ts | 6813 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/poses.ts | 9073 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/poses.ts | 9106 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/rig.test.ts | 7901 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/spriteMap.ts | 2353 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/types.ts | 3867 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |

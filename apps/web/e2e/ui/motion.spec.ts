@@ -27,8 +27,18 @@ for (const width of [1280, 1600]) for (const reducedMotion of ['no-preference', 
       expect(await page.locator('[data-motion-number="240000"]').textContent()).toBe('240,000');
       expect(await page.evaluate(() => document.getAnimations().filter(animation => animation.playState === 'running').length)).toBe(0);
     } else {
-      const durations = await page.evaluate(() => document.getAnimations().map(animation => Number(animation.effect?.getTiming().duration)).filter(Number.isFinite));
-      expect(durations.length).toBeGreaterThan(0); expect(Math.max(...durations)).toBeLessThanOrEqual(200);
+      const animations = await page.evaluate(() => document.getAnimations().map(animation => ({
+        duration: Number(animation.effect?.getTiming().duration),
+        target: ((animation.effect as KeyframeEffect)?.target as Element | null)?.className ?? '',
+      })).filter(animation => Number.isFinite(animation.duration)));
+      expect(animations.length).toBeGreaterThan(0);
+      // Controls remain <=200ms; the new local gain arc and forge light settle
+      // have independent, bounded budgets. No global relaxation for other motion.
+      for (const animation of animations) {
+        const limit = String(animation.target).includes('visual-gain') ? 900
+          : String(animation.target).includes('forge-result-reveal') ? 700 : 200;
+        expect(animation.duration, JSON.stringify(animation)).toBeLessThanOrEqual(limit);
+      }
     }
     await expect(page.locator('[data-motion-number="240000"]')).toHaveText('240,000');
     await expect(page.getByTestId('hud-level')).toContainText('Lv 10');

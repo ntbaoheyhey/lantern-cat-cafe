@@ -92,6 +92,8 @@ def inventory():
             scale, kind = 'mixed procedural rectangle sizes; no uniform sprite scale asserted', 'raster'
             if path.startswith(ART + 'generated/original/'):
                 scale = 'native32px icon frames; integer1x/2x/3x lookup in static atlas'
+            elif path.startswith('apps/web/public/art/visual/'):
+                scale = 'Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames'
         else:
             colors = palette_literals(source)
             native += [f'{w}x{h}' for w, h in re.findall(r'size:\s*\{\s*w:\s*(\d+),\s*h:\s*(\d+)', source)]
@@ -328,6 +330,9 @@ def render_provenance(rows):
     art2 = json.loads(text('tools/art/ui-art2.json'))
     fresh = {row['path']: row for row in art2['entries']}
     for r in rows:
+        if r['path'].startswith('apps/web/public/art/visual/'):
+            lines.append(f"| {r['path']} | Original integer-coordinate recipe `tools/art/visual.py`; exact parameters, full brief and hashes in [visual provenance](../../../reports/visual/asset-provenance.md) | Python standard library; no image model | 0 (no randomness) | 2026-11-04 | 32-color Evening Atelier palette; integer pixels; quantized-alpha light masks; lossless PNG | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']}; latest {r['latestCommit']}; no external media input |")
+            continue
         if r['path'] in fresh:
             row = fresh[r['path']]
             lines.append(f"| {r['path']} | {row['tool']}; exact script `tools/art/ui_art2.py`, SHA-256 `{row['generatorSha256']}`; full prompt in [asset-provenance](../../../reports/asset-provenance.md) | Python {row['runtime']['python']}, zlib {row['runtime']['zlib']}; no image model | none (deterministic) | {row['date']} | native integer pixels; identity cafe-night-v1 lock; lossless PNG | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']}; no media input |")

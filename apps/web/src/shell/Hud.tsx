@@ -1,4 +1,5 @@
 import React from 'react';
+import { ResourceGain } from '../visual/ResourceGain';
 import { MotionNumber } from '../motion/MotionNumber';
 import type { ServerStateV2 } from '../api/GameApiV2';
 import type { SyncStatusV2 } from '../game/v2/syncStatus';
@@ -56,7 +57,7 @@ export function Hud({
                 role="listitem"
                 aria-label={`Fish ${state.currencies.fish.toLocaleString('en-US')}`}
               >
-                <PixelIcon name="fish" size={2} />
+                <ResourceGain value={state.currencies.fish} /><PixelIcon name="fish" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Fish</span>
                 <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.fish} /></span>
               </div>
@@ -67,7 +68,7 @@ export function Hud({
                 role="listitem"
                 aria-label={`Yarn ${state.currencies.yarn.toLocaleString('en-US')}`}
               >
-                <PixelIcon name="yarn" size={2} />
+                <ResourceGain value={state.currencies.yarn} /><PixelIcon name="yarn" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Yarn</span>
                 <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.yarn} /></span>
               </div>
@@ -123,7 +124,7 @@ export function Hud({
           </div>
         </div>
       </header>
-      <div className="shell-context">{title}{guidance}</div>
+      <div className="shell-context">{title}<span className="visual-build-label">Candidate build, not live.</span>{guidance}</div>
     </>
   );
 }
