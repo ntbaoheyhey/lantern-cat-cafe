@@ -42,7 +42,7 @@ function Fixture() {
   window.__cxu3Market = { calls, scenario: setScenario };
   const record = (kind: 'buy' | 'cancel', listing: Listing) => { calls.push({ kind, id: listing.id.toString(), amount: listing.amount.toString(), price: listing.price.toString() }); setMessage('Mock wallet request captured; no transaction sent.'); };
   return <ScreenFrame activeScreen="market" onSelectScreen={() => {}} dataLayout="desktop" hudProps={{ state, power: Math.round(v2.powerRating(stats)) }}>
-    <div className="shell-panel-container"><div className="shell-panel-view screen-market" style={{ display: 'flex' }}><div className="v2-tabpanel">
+    <div className="shell-panel-container"><div id="panel-market" role="tabpanel" aria-labelledby="tab-market" className="shell-panel-view screen-market" style={{ display: 'flex' }}><div className="v2-tabpanel">
       <h2 className="v2-tabpanel-title" data-testid="market-fixture-disclaimer">Local Market fixture — mock wallet data, no transactions</h2>
       <div className="v2-panel-body-inner"><MarketView nft={addresses.RelicNFT!} market={addresses.RelicMarket!} address={me}
         listings={scenario === 'empty' ? [] : scenario === 'extreme' ? extremeListings : listings}
