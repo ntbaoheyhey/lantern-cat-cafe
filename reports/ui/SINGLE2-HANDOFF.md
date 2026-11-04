@@ -10,12 +10,12 @@
 - Local merge commits all [skip ci]; repository private. Main/live baseline340f88b, main checkout localHEAD6144d42 unchanged.
 - Pass1 frozen install/typecheck/lint/buildPASS. FreshA scripts/packages/web-units/typecheck/lint/art-delivery/art-catalog/buildPASS.
 - A runner88710 interrupted during changed1280 repeat3 after verifiedcwd/PGID. Orphan listeners91012/91056/91098/91138 received SIGTERM after individualcwd checks.
-- NO complete grade: A incomplete; no full suite started; B not started. Never call this tip release-ready yet.
+- No complete grade yet. A2 changed checks passed192 per size; FULL1280 now running. Clean B tests-first started; never call the tip release-ready before all gates.
 - Raw A receipt/logs preserved reports/sys/single2/stack-a-interrupted; launch/log in reports/sys/single2.
 - Primary runner reports/ui/single2-gate.py; axe adapter reports/ui/single2-axe.mjs uses pinned4.10.3, adds class confirmation + Chain unavailable scans and native screenshots.
 - These harnesses live on ledger, not product branch. Review/verify axe adapter before asserting it passes (not reached yet).
 - Resume: choose NEW A pass name to preserve interrupted logs, ports5300–5304 after free-port check; changed-spec list in stack-a-launch.json.
-- No exact-head full run has occurred, so still run full once at1280 and1600, then clean detachedB tests-first on5320–5324.
+- A2 owns the only exact-head full suite:1280 then1600 once each. Clean B has no --full, on5320–5324.
 - Full integration/product diffs retained in reports/sys/single2; additional full diff review still needed before final grade.
 - Pending P1: full gate/strict geometry/axe/effects/keyboard/mock wallet states; fix defects in owning PR then remerge if needed.
 - Pending P1d/f: docs-on-stack refresh of270 and gallery-on-stack refresh of267; neither new branch exists yet.
@@ -27,5 +27,6 @@
 - Pending P4: CXS1/CXS2 current facts,3min pitch,90sec shotlist,Fuji proof,FAQ,keyboard/bundle; Sample/Unavailable/defaultOFF retained.
 - Existing security/submission docs read; exact contracts unchanged. No economy number or newart change made.
 - Ledger has unrelated untracked prior-session files: stage ONLY explicit SINGLE2 paths.
-- A2 running as ownedPID95209,passsingle2-stack-a2,ports5300–5304. Pause evidence preserved.
+- A2 running ownedPID95209,passsingle2-stack-a2,ports5300–5304. B ownedPID1398,temp/private/tmp/taskbar-hero-single2-b-d31cb2a,ports5320–5324; install0/clean tracked tree.
 - Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal ACTIVE, not complete.
+- P1e mocked-state milestone:14/14PASS on d31cb2a,nonce503/expiry/focus/wrongnet/signed+unsignedHUD/offline/API503; zero product errors/overflow/signatures. Evidence reports/ui/cards/SINGLE2-U5/stack-audit.md. Two harness failures preserved; source unchanged.

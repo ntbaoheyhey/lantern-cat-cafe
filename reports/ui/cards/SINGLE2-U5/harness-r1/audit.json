@@ -1,0 +1,251 @@
+{
+  "head": "d31cb2a3961e49fea4aab7ebbef216dc4277cda2",
+  "method": "Isolated local candidate builds; synthetic sessions and provider; all function/RPC traffic mocked; sign/send requests rejected",
+  "cases": [
+    {
+      "width": 1280,
+      "state": "nonce-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/auth-nonce"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/auth-nonce"
+      ],
+      "checks": [
+        "Persistent for5.5s; dismissible; retry remains; one nonce request; no verification"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "expired",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Expiry explained; session cleared; Enter/Escape/Cancel preserve focus"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "wrong-network",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Network message and action remain visible on Home"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "connected-hud",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [],
+      "walletMethods": [],
+      "passed": false,
+      "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('.wallet-addr')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('.wallet-addr') with timeout 5000ms\n  - waiting for locator('.wallet-addr')\n"
+    },
+    {
+      "width": 1280,
+      "state": "offline",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Offline status visible; guest remains painted"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "api-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "API503 explanation and Retry visible"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "nonce-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/auth-nonce"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/auth-nonce"
+      ],
+      "checks": [
+        "Persistent for5.5s; dismissible; retry remains; one nonce request; no verification"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "expired",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Expiry explained; session cleared; Enter/Escape/Cancel preserve focus"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "wrong-network",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Network message and action remain visible on Home"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "connected-hud",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [],
+      "walletMethods": [],
+      "passed": false,
+      "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('.wallet-addr')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('.wallet-addr') with timeout 5000ms\n  - waiting for locator('.wallet-addr')\n"
+    },
+    {
+      "width": 1600,
+      "state": "offline",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Offline status visible; guest remains painted"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "api-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "API503 explanation and Retry visible"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    }
+  ],
+  "complete": true
+}
