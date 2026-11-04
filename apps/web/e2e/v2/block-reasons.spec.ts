@@ -108,7 +108,7 @@ for (const [width, height] of [[1280, 720], [390, 844]] as const) {
 
     // 5. Bag Tab: Equip button disabled for off-class hammer -> shows block-reason-equip
     const bagPanel = await tab(page, 'Bag');
-    await expect(bagPanel.getByTestId('block-reason-equip-best')).toHaveText('No higher total-stat score');
+    await expect(bagPanel.getByTestId('block-reason-equip-best')).toHaveText('Best gear already equipped');
     // Select the off-class hammer
     await bagPanel.getByRole('button', { name: /Yarn Mallet/i }).click();
     const equipBtn = bagPanel.getByRole('button', { name: 'Equip', exact: true });
