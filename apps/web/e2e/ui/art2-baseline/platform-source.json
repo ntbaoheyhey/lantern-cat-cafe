@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-04",
+  "sourceParent": "db225fdca270e6845b4677ab04a54a71d0374307",
+  "styleSha256": "b22012ff53b83145011ef24bfe1e8e2377000d913260b907b202413e07053463",
+  "source": "Unedited native Playwright screenshots at the existing fixed clock and exact versioned fonts. macOS ARM64 and Linux x64 use Chromium 156.0.8078.4. Linux runs in the official Playwright Noble container. Baselines were visually inspected; original root baseline files remain unchanged. Exact PNG equality is retained separately per OS. The inherited live-Fuji label is replaced by the required candidate/not-live label.",
+  "captureTool": "reports/gameplay/platform-capture.mjs (proof layer)",
+  "linuxImage": "mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f",
+  "records": [
+    {
+      "screen": "landing",
+      "width": 1280,
+      "sha256": "c6e8d4b06c4bcd6a38f1fdf3a25ca9b403d436ddbeed9c3c1754d5a96a6d34d1",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 687.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 687.5,
+          "right": 110,
+          "bottom": 708,
+          "left": 40
+        }
+      ],
+      "file": "darwin/landing-stable-1280.png"
+    },
+    {
+      "screen": "class",
+      "width": 1280,
+      "sha256": "35b559c8708906189b90650a0c79432048b137dc970b8798360adc4fac8eae65",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "darwin/class-1280.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1600,
+      "sha256": "7c14c26b3cc948f6f89bb5ec0942cd4673277c8c12a5d71b8f54689e2f16478d",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 867.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 867.5,
+          "right": 110,
+          "bottom": 888,
+          "left": 40
+        }
+      ],
+      "file": "darwin/landing-stable-1600.png"
+    },
+    {
+      "screen": "class",
+      "width": 1600,
+      "sha256": "7c18246934e03f6d3c564e7a37e63bc527e97a880337b7d3219e8bba7f820ac0",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "darwin/class-1600.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1280,
+      "sha256": "f5d998865932d074cf193d52d2fd12722011059db49997147e502fde2a03079a",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 687.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 687.5,
+          "right": 110,
+          "bottom": 708,
+          "left": 40
+        }
+      ],
+      "file": "linux/landing-stable-1280.png"
+    },
+    {
+      "screen": "class",
+      "width": 1280,
+      "sha256": "bad5b5ecdbc6c9d0021bdd59032592ddc3fbe137c110b5cda6a6f935eae8c6e7",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "linux/class-1280.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1600,
+      "sha256": "f38dc978b7fc9d097fe8ee2bc8125b5036b4c7c34a400c513480ac042094e3b5",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 867.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 867.5,
+          "right": 110,
+          "bottom": 888,
+          "left": 40
+        }
+      ],
+      "file": "linux/landing-stable-1600.png"
+    },
+    {
+      "screen": "class",
+      "width": 1600,
+      "sha256": "563bc3c11a2a29006a0d4d068b018ad9de2dd11ae97a49a438de0bec2e169693",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "linux/class-1600.png"
+    }
+  ],
+  "linuxFontValidation": "Four delayed-font width/motion cases: no layout shifts, overflow or wrapped proof links. Initial narrower fix and failures retained in the proof layer.",
+  "heroSha256": "18c328fc6d70141a2814275d6e143fd4b71b8393d3f023f004b7b60e88f94a88"
+}

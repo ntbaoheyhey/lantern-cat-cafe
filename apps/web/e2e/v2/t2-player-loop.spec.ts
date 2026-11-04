@@ -29,7 +29,6 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   await page.goto('/');
   await expect(page.getByTestId('class-picker')).toBeVisible();
   await page.getByTestId('class-picker-choose-button').click();
-  await page.getByTestId('class-picker-confirm-button').click();
   await expect(page.getByTestId('class-picker')).toHaveCount(0);
   await tab(page, 'Character');
   const character = page.getByRole('region', { name: 'Character', exact: true });

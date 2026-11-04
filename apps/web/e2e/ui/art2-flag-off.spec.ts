@@ -22,9 +22,10 @@ for (const width of [1280, 1600]) test(`ART2 flag-off landing and class match re
     await expect(page.locator('[data-art2]')).toHaveCount(0);
     const actual = await page.screenshot({ animations: 'disabled' });
     // The intentional CLS repair has its own reviewed Landing baseline. Keep the
-    // original main captures and unchanged class baseline; allow zero pixel drift.
+    // original main captures. Native rasterization differs across OSes, so each
+    // supported platform has reviewed baselines; keep zero pixel/byte tolerance.
     const baselineScreen = screen === 'landing' ? 'landing-stable' : screen;
-    const baseline = fs.readFileSync(path.resolve(`e2e/ui/art2-baseline/${baselineScreen}-${width}.png`));
+    const baseline = fs.readFileSync(path.resolve(`e2e/ui/art2-baseline/${process.platform}/${baselineScreen}-${width}.png`));
     if (!actual.equals(baseline)) {
       await testInfo.attach('flag-off-actual', { body: actual, contentType: 'image/png' });
       await testInfo.attach('flag-off-baseline', { body: baseline, contentType: 'image/png' });

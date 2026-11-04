@@ -475,3 +475,19 @@ it('waits for an action still in flight when an old claim finishes, then refresh
   expect(api.claim).toHaveBeenCalledOnce();
   expect(events.filter(e => e.type === 'claimed')).toHaveLength(1);
 });
+
+it('makes one early first-class claim through the API without minting local rewards', async () => {
+  const unchosen = state(); unchosen.cat.classId = null; api.getState.mockResolvedValue(unchosen);
+  await start(); await loop.chooseClass('warrior');
+  await vi.advanceTimersByTimeAsync(9999); expect(api.claim).not.toHaveBeenCalled();
+  await vi.advanceTimersByTimeAsync(1); expect(api.claim).toHaveBeenCalledTimes(1);
+  expect(loop.getSnapshot().state!.currencies.fish).toBe(0);
+  await loop.chooseClass('guardian'); await vi.advanceTimersByTimeAsync(10000);
+  expect(api.claim).toHaveBeenCalledTimes(1);
+});
+it('does not claim the early reward while hidden or after stopping', async () => {
+  const unchosen = state(); unchosen.cat.classId = null; api.getState.mockResolvedValue(unchosen);
+  await start(); await loop.chooseClass('warrior'); doc.setVisibility('hidden');
+  await vi.advanceTimersByTimeAsync(10000); expect(api.claim).not.toHaveBeenCalled();
+  loop.stop(); await vi.advanceTimersByTimeAsync(30000); expect(api.claim).not.toHaveBeenCalled();
+});

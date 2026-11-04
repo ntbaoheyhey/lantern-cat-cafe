@@ -53,7 +53,6 @@ const scenarios = {
     await load(page);
     await expect(page.getByTestId('class-picker')).toBeVisible();
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
     await expect(page.getByTestId('class-picker')).toHaveCount(0);
     await tab(page, 'Character');
     await expect(page.getByRole('region', { name: 'Character' }).getByRole('button', { name: 'Weapon: Twig Sword, Common' })).toBeVisible();

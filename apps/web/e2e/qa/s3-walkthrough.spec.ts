@@ -36,7 +36,6 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
 
     // Pick warrior
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
 
     // Stage canvas is mounted
     await expect(page.locator('.v2-stage canvas')).toBeVisible();

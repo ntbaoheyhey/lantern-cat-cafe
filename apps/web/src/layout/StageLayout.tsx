@@ -1,3 +1,6 @@
+import { GuestCoach, isNewGuest } from '../gameplay/GuestCoach';
+import { journeyGoals } from '../gameplay/goals';
+import '../gameplay/gameplay.css';
 import {
   lazy,
   Suspense,
@@ -33,7 +36,6 @@ import { EventLog } from './home/EventLog';
 import type { LoopEventV2 } from '../game/v2/events';
 import './home/home.css';
 import { BossMapScreen } from './boss/BossMapScreen';
-import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
 import { WelcomeBack } from './loot/WelcomeBack';
 import { LootSummary } from './loot/LootSummary';
@@ -43,7 +45,6 @@ import { HowToPlay } from '../onboarding/HowToPlay';
 import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { TabIcon } from './tabIcons';
 import { BagPanel } from './bag/BagPanel';
-import { equipBest } from './bag/equipRules';
 import { HeroScreen } from './character/HeroScreen';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
@@ -93,6 +94,7 @@ export interface StageLayoutProps {
 
 export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const { width, height } = useViewport();
+  const [newGuest] = useState(isNewGuest);
   const kind = layoutKind(width);
   const loop = getGameLoopV2();
   const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
@@ -318,34 +320,10 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     } finally { bossRequest.current = false; }
   };
 
-  const upgrades = state ? equipBest(state) : [];
-  const bossStatus = state ? bossGateStatus(state, state.progress.chapter, Math.floor(Date.now() / 1000)) : null;
-  const isBossReady = bossStatus?.kind === 'ready';
 
-  let hintText: string;
-  let handleHintAction: () => void;
-
-  if (upgrades.length > 0) {
-    hintText = state?.progress.gated
-      ? `Equip best (+${upgrades.length}) · Equip better gear`
-      : `Equip best (+${upgrades.length})`;
-    handleHintAction = () => {
-      handleSelectScreen('bag');
-      if (presentation.hold) return;
-      upgrades.forEach((u) => equipQueue.current?.equip(u.itemId, u.slot));
-    };
-  } else if (isBossReady) {
-    hintText = 'Boss ready';
-    handleHintAction = () => {
-      handleSelectScreen('map');
-    };
-  } else {
-    const gated = state?.progress.gated;
-    hintText = `Next: ${gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}`;
-    handleHintAction = () => {
-      handleSelectScreen(gated ? 'bag' : 'map');
-    };
-  }
+  const goals = state ? journeyGoals(state) : null;
+  const hintText = goals?.now.text ?? 'Choose a class to begin';
+  const handleHintAction = () => handleSelectScreen(goals?.now.screen ?? 'class');
 
   const showRail = !['landing', 'class'].includes(screen);
   const showChrome = screen !== 'landing' && screen !== 'class';
@@ -432,6 +410,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
+      {showChrome && classId && <GuestCoach enabled={newGuest && mode.demo} onNavigate={handleSelectScreen} />}
       {mode.notice && <Banner tone="warning" data-testid="session-expired-notice">{mode.notice}</Banner>}
       {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
@@ -508,6 +487,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         >
           {state && !classId ? (
             <ClassPicker
+              directStart={!classId}
               classes={STARTER_CLASSES}
               error={classChoiceError}
               locked={snapshot.busy !== null}
@@ -780,7 +760,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         </nav>
       )}
 
-      <HowToPlay mode="v2" />
+      <HowToPlay mode="v2" autoShow={false} />
     </ScreenFrame>
   );
 }

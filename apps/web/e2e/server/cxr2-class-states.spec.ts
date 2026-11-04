@@ -27,9 +27,8 @@ for (const width of [1280, 1600]) test(`CXR2 first class stays visible during sa
     }
   };
   try {
-    await page.getByTestId('class-picker-choose-button').click();
     const started = page.waitForRequest(request => request.url().endsWith('/v2-choose-class') && request.method() === 'POST');
-    await page.getByTestId('class-picker-confirm-button').click(); await started;
+    await page.getByTestId('class-picker-choose-button').click(); await started;
     await expect(page.getByTestId('class-picker')).toBeVisible();
     await expect(page.getByTestId('class-picker-choose-button')).toBeDisabled();
     await expect(page.getByTestId('class-picker-locked-notice')).toHaveCount(0);
@@ -42,7 +41,6 @@ for (const width of [1280, 1600]) test(`CXR2 first class stays visible during sa
     await capture('save-error');
     refuse = false;
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
     await expect(page.getByTestId('home-dashboard')).toBeVisible();
     expect((await inspect(request, session)).raw.classId).toBe('warrior');
   } finally { release(); }

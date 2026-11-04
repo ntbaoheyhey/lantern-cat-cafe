@@ -46,7 +46,6 @@ for (const viewport of [{ width: 1280, height: 720 }, { width: 1600, height: 900
       expect(startBox!.y).toBeGreaterThan(viewport.height - 100);
       await capture(page, 'class', viewport.width, viewport.height);
       await page.getByTestId('class-picker-choose-button').click();
-      await page.getByTestId('class-picker-confirm-button').click();
       await expect(page.getByRole('tabpanel', { name: 'Home', exact: true })).toBeVisible();
       const before = await page.getByTestId('hud-level').textContent();
       await page.clock.fastForward(10 * 60_000);

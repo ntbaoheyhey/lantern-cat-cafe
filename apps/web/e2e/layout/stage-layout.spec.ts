@@ -247,7 +247,6 @@ for (const width of [390, 1280]) {
     await page.goto('/');
     await expect(page.getByTestId('class-picker')).toBeVisible();
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
     await expect(page.getByTestId('class-picker')).toHaveCount(0);
     await expect(page.getByRole('region', { name: 'Game stage' }).locator('canvas')).toBeVisible();
     const progress = page.getByRole('group', { name: /^Chapter / });
