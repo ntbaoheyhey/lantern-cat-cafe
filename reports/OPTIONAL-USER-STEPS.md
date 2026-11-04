@@ -64,3 +64,15 @@ open 'https://supabase.com/dashboard/project/qoalewtxflagoprrxrgh/settings/datab
 ```
 
 The earlier attempted function-download command above is a retained failed attempt, not a supported complete export or restore command. No exact complete-backup/restore command is verified; request the full deployed bundle from Supabase support. Do not run a deployment or flag-change command until the backup/restore and explicit owner go/no-go gates are satisfied. Discard the old wallet in its wallet application; no private key is required here.
+
+## SINGLE2 pause — November 4, 2026
+
+User paused before stack acceptance; no owner action was performed. The requested steps remain verbatim:
+
+1. Open the Vercel account usage page and confirm real remaining deployments if you could not verify them.
+2. Supabase: obtain a COMPLETE backup of the deployed functions, dependencies and import maps through a supported export/support route, rehearse restoring it locally. Required before deploying #269's edge source or merging #244. Do not bypass UnsafeFunctionDownloadPathError.
+3. Reset the leaked Supabase DB password (it was pasted in chat on 31 Oct) and discard the old test wallet.
+4. VITE_GAME_V2 cut-over go/no-go (only after #244 + backup + rehearsal).
+5. Contest: planning deadline 2026-11-21 (UTC+7), Demo Day 2026-11-30; official submission deadline unconfirmed (Builder Hub shows 25 Nov 05:59). The user submits; you only prepare drafts.
+
+Exact dashboard-opening commands remain in the Single-session owner actions section above. No verified complete deployed-backup command is invented.

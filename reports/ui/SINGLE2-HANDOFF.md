@@ -1,17 +1,30 @@
-# SINGLE2 handoff
-- Started 2026-11-04T05:36:34Z; deadline 2026-11-04T15:36:34Z (10 hours maximum).
-- One agent only. No helpers, schedulers, orchestrator, main checkout mutations, live writes or signatures.
-- Own worktree /Users/bao/taskbar-hero-single2; branch ai/codex-stack-tip created from origin/main.
-- Main/live baseline 340f88b; main checkout local HEAD6144d42 is untouched. Remote main verified.
-- P0 COMPLETE: CAPACITY BLOCKED. #269 retains rate-limit failure; #270 previews ignored. UTC activity0/0 is not quota proof.
-- Provider warning 2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z, beyond this session maximum; no waiting/scheduler.
-- Accepted262/a9afaad,263/4b0e69a,264/949cc44,265/7d0d08e,266/f2a0588,267/e161f06,268/afd0699,269/85a6919 unchanged; private repo.
-- #270127e3f8 remains draftA0/B0 on main defects already fixed in held stack. Prove docs on stack, do not duplicate repairs.
-- P1a COMPLETE: d31cb2a3961e49fea4aab7ebbef216dc4277cda2 integrates262/263/264/265/266/268/269 cleanly, no conflicts; NEVER MERGE.
-- Pass1 install/typecheck/lint/buildPASS; P1b freshA starting with full once per size, then cleanB.
-- Next: builder, exact-head A/full suite once per size, clean tests-first B, pinned axe/keyboard/geometry/effects/mock audits.
-- Then docs-on-stack and gallery-on-stack drafts; release dry-run tooling; nonce/local source restore/CXN3 rehearsal; judge drafts; final report.
-- #244/#252/#257 untouched. #269 edge source undeployed. Economy defaultOFF, previews Sample/Unavailable.
-- User steps retained verbatim in reports/OPTIONAL-USER-STEPS.md; append SINGLE2 final status later.
-- Ledger contains unrelated untracked files: stage only this session’s explicit paths.
-- Session state: reports/sys/single2/session-state.json. Merges/deployments/signatures:0.
+# SINGLE2 handoff — PAUSED by user
+- User explicitly said “tạm dừng” at 2026-11-04T05:43Z; stop work until resumed.
+- Started about2026-11-04T05:36:34Z; original10h deadline2026-11-04T15:36:34Z. No automatic resumption or scheduler.
+- One agent only, no helpers. Main checkout untouched; no live writes, signatures, settings changes or deployments.
+- Own worktree /Users/bao/taskbar-hero-single2; branch ai/codex-stack-tip; remote pushed.
+- Exact head d31cb2a3961e49fea4aab7ebbef216dc4277cda2; INTEGRATION ONLY, NEVER MERGE, no PR to main.
+- P0 COMPLETE: CAPACITY BLOCKED. VercelCLI absent, fresh269 rate-limit status;270 previews ignored; UTCmain/merged0/0 are activity not usage.
+- Latest provider warning2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z only if running, beyond original session deadline; no wait/schedule.
+- P1a COMPLETE:262/a9afaad→263/4b0e69a→264/949cc44→265/7d0d08e→266/f2a0588→268/afd0699→269/85a6919 merged cleanly, no conflicts.
+- Local merge commits all [skip ci]; repository private. Main/live baseline340f88b, main checkout localHEAD6144d42 unchanged.
+- Pass1 frozen install/typecheck/lint/buildPASS. FreshA scripts/packages/web-units/typecheck/lint/art-delivery/art-catalog/buildPASS.
+- A runner88710 interrupted during changed1280 repeat3 after verifiedcwd/PGID. Orphan listeners91012/91056/91098/91138 received SIGTERM after individualcwd checks.
+- NO complete grade: A incomplete; no full suite started; B not started. Never call this tip release-ready yet.
+- Raw A receipt/logs preserved reports/sys/single2/stack-a-interrupted; launch/log in reports/sys/single2.
+- Primary runner reports/ui/single2-gate.py; axe adapter reports/ui/single2-axe.mjs uses pinned4.10.3, adds class confirmation + Chain unavailable scans and native screenshots.
+- These harnesses live on ledger, not product branch. Review/verify axe adapter before asserting it passes (not reached yet).
+- Resume: choose NEW A pass name to preserve interrupted logs, ports5300–5304 after free-port check; changed-spec list in stack-a-launch.json.
+- No exact-head full run has occurred, so still run full once at1280 and1600, then clean detachedB tests-first on5320–5324.
+- Full integration/product diffs retained in reports/sys/single2; additional full diff review still needed before final grade.
+- Pending P1: full gate/strict geometry/axe/effects/keyboard/mock wallet states; fix defects in owning PR then remerge if needed.
+- Pending P1d/f: docs-on-stack refresh of270 and gallery-on-stack refresh of267; neither new branch exists yet.
+- #270 remains127e3f8 draftA0/B0 original inheritedmain failures, original branch untouched.
+- Pending P2: dry-run release script + runbook. Pending P3: nonce reproductions, deterministic repo-source restore kit, localCXN3, flake card.
+- Docker binary exists but daemon unavailable; Deno absent. Use unit/PGlite harness; restore script must label repo-source rehearsal only.
+- #269 already tests missingenv, DB unavailable/missingRPC, CORS/method and startup. Historical502cause remains unproven; no live probes used here.
+- #244 branch ai/codex-n3-cutover-truth/db0f9d6 read-only. #244/#252/#257 untouched. Complete deployed backup remains user-gated; never bypass guard.
+- Pending P4: CXS1/CXS2 current facts,3min pitch,90sec shotlist,Fuji proof,FAQ,keyboard/bundle; Sample/Unavailable/defaultOFF retained.
+- Existing security/submission docs read; exact contracts unchanged. No economy number or newart change made.
+- Ledger has unrelated untracked prior-session files: stage ONLY explicit SINGLE2 paths.
+- Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal PAUSED, not complete.

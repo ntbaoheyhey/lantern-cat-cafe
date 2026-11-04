@@ -1,0 +1,99 @@
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +505
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 505, reused 496, downloaded 0, added 205
+Progress: resolved 505, reused 496, downloaded 0, added 424
+Progress: resolved 505, reused 496, downloaded 0, added 499
+Progress: resolved 505, reused 496, downloaded 0, added 500
+Progress: resolved 505, reused 496, downloaded 0, added 504
+Progress: resolved 505, reused 496, downloaded 0, added 505, done
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 5.4s using pnpm v10.28.0
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-single2
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-single2
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+
+> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero-single2
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1859 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               2.13 kB │ gzip:   0.76 kB
+apps/web build: dist/assets/sheet-B8UIec1E.png                4.55 kB
+apps/web build: dist/assets/FeatureSamples-BG4xVUCy.css       2.75 kB │ gzip:   0.86 kB
+apps/web build: dist/assets/OriginalCatalog-BqG91EfA.css      5.04 kB │ gzip:   1.28 kB
+apps/web build: dist/assets/index-1syx9ynX.css              171.62 kB │ gzip:  27.77 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/Art2Preview-CiNgpigD.js           1.32 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/assets-kPFSOY-3.js                2.42 kB │ gzip:   1.19 kB
+apps/web build: dist/assets/FeatureSamples-DmSKdJLy.js        6.27 kB │ gzip:   2.09 kB
+apps/web build: dist/assets/OriginalArt-CU0VJYZ3.js           6.67 kB │ gzip:   1.08 kB
+apps/web build: dist/assets/ArenaScene-BYevsYb6.js            7.07 kB │ gzip:   2.73 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/OriginalCatalog-C9ACLdNG.js       8.89 kB │ gzip:   2.71 kB
+apps/web build: dist/assets/StageScene-COTxrY-h.js           15.75 kB │ gzip:   5.80 kB
+apps/web build: dist/assets/src-CtQx5-nM.js                  54.41 kB │ gzip:  18.36 kB
+apps/web build: dist/assets/react-C1iE8mnY.js               218.75 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-C6G9LtNF.js                363.85 kB │ gzip: 108.15 kB
+apps/web build: dist/assets/index-CKL31aCG.js             1,133.06 kB │ gzip: 143.97 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 591ms
+apps/web build: Done
+exit=0
