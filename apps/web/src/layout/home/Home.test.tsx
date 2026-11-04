@@ -37,17 +37,17 @@ describe('Home and Landing Components (AGR1)', () => {
   });
 
   describe('NextGoalCard', () => {
-    it('renders chapter and round progress, and navigates to map on click', () => {
+    it('renders chapter progress and sends a power-wall guest to compare gear', () => {
       const state = sampleServerStateV2();
       const onNavigate = vi.fn();
       render(<NextGoalCard state={state} onNavigate={onNavigate} />);
 
       expect(screen.getByRole('heading', { name: 'Next Goal' })).toBeTruthy();
       const mapBtn = screen.getByTestId('home-goal-map');
-      expect(mapBtn.textContent).toBe('Go to map');
+      expect(mapBtn.textContent).toBe('Compare gear');
 
       fireEvent.click(mapBtn);
-      expect(onNavigate).toHaveBeenCalledWith('map');
+      expect(onNavigate).toHaveBeenCalledWith('bag');
     });
   });
 

@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@10.28.0",
   "scripts": {
+    "demo": "node tools/gameplay-demo.mjs",
     "gen:deno": "node scripts/gen-deno-json.mjs",
     "test": "node --test scripts/*.test.mjs && pnpm -r test",
     "lint": "pnpm -r lint",

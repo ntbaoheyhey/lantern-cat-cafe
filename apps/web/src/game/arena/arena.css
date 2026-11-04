@@ -6,3 +6,5 @@
 .boss-arena button { min-height: 44px; padding: .6rem 1rem; }
 .arena-preview { max-width: 60rem; margin: auto; padding: 1rem; box-sizing: border-box; }
 .arena-preview select { max-width: 100%; min-height: 44px; margin: .5rem; }
+.arena-phase{min-height:26px;padding:8px 12px;border-left:3px solid #f5cb7b;background:#1d2335;color:#ffe0aa;font:600 14px var(--font-display,monospace)}
+.arena-phase[data-phase="Heavy windup"]{border-color:#ff9696;background:#362b38;color:#ff9696}.arena-mechanics{color:#bcc2d2;font-size:12px;line-height:1.5;margin:8px 0}.arena-outcome-badge{padding:8px 12px;border:1px solid #f5cb7b;color:#ffe0aa;background:#2d354d;font-size:13px}

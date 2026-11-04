@@ -1,5 +1,5 @@
 import { ImpactPool } from '../../visual/impact';
-import { VISUAL_MOTION, VISUAL_PALETTE as C } from '../../visual/tokens';
+import { VISUAL_PALETTE as C } from '../../visual/tokens';
 import Phaser from 'phaser';
 import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
@@ -68,7 +68,7 @@ export class StageScene extends Phaser.Scene {
   private hpBar: Phaser.GameObjects.Graphics | null = null;
   private projectiles: Phaser.GameObjects.Graphics | null = null;
   private hits: Pool<Hit> | null = null;
-  private shots = new Pool<Projectile>(8, () => ({ kind: 'arrow', age: 0, dur: 1, from: { x: 0, y: 0 }, to: { x: 0, y: 0 } }));
+  private shots = new Pool<Projectile>(CONFIG.gameplay.juice.maxProjectiles, () => ({ kind: 'arrow', age: 0, dur: 1, from: { x: 0, y: 0 }, to: { x: 0, y: 0 } }));
   private floor = 84;
   private preloadedBosses = false;
   private catWidth = 0;
@@ -266,12 +266,12 @@ export class StageScene extends Phaser.Scene {
       this.projectiles = this.add.graphics().setDepth(3);
       this.impact = new ImpactPool(this.add.graphics().setDepth(5));
       const colors = getComputedStyle(this.game.canvas);
-      this.hits = new Pool<Hit>(12, () => ({ target: this.monster!, age: 0, x: 0, y: 0, missed: false,
+      this.hits = new Pool<Hit>(CONFIG.gameplay.juice.maxLabels, () => ({ target: this.monster!, age: 0, x: 0, y: 0, missed: false,
         text: this.add.text(0, 0, '', damageTextStyle(false, false, { accent: C.gold, muted: C.common, font: colors.getPropertyValue('--font-num').trim() || 'monospace' })).setOrigin(.5, 1).setDepth(4),
         flash: this.add.image(0, 0, this.sheet.key, 'idle:0').setDepth(1),
       }), hit => { hit.text.setVisible(false); hit.flash.setVisible(false); }, true);
       // Prewarm the capped number/silhouette and projectile pools outside update().
-      for (let i = 0; i < 12; i++) this.hits.acquire();
+      for (let i = 0; i < CONFIG.gameplay.juice.maxLabels; i++) this.hits.acquire();
       this.hits.releaseAll();
       for (let i = 0; i < 8; i++) this.shots.acquire();
       this.shots.releaseAll();
@@ -406,8 +406,8 @@ export class StageScene extends Phaser.Scene {
     hit.text.setColor(missed ? C.common : big ? C.gold : C.paper).setText(missed ? 'Miss' : `${Math.round(damage)}${big ? '!' : ''}`).setScale(big && !this.reduced ? 1.4 : 1).setVisible(true).setAlpha(1);
     if (!this.reduced && !missed) {
       this.impact?.burst(target.x, target.y - (target === this.cat ? this.catHeight : this.plan.height) * .55, big);
-      if (big && this.anims) { this.critStop = VISUAL_MOTION.critStopMs; this.anims.globalTimeScale = 0;
-        this.cameras?.main?.shake(80, VISUAL_MOTION.maxShakePx / Math.max(this.scale.width, this.game.canvas.clientWidth)); }
+      if (big && this.anims) { this.critStop = CONFIG.gameplay.juice.critStopMs; this.anims.globalTimeScale = 0;
+        this.cameras?.main?.shake(CONFIG.gameplay.juice.shakeMs, CONFIG.gameplay.juice.maxShakePx / Math.max(this.scale.width, this.game.canvas.clientWidth)); }
     }
     hit.flash.setTexture(target === this.cat ? this.catFlash : this.plan.flash).setOrigin(target.originX, target.originY).setScale(target.scaleX, target.scaleY).setVisible(!missed && !this.reduced);
   }
@@ -456,13 +456,13 @@ export class StageScene extends Phaser.Scene {
     if (document.hidden) return;
     this.director?.update(delta);
     this.impact?.update(delta);
-    if (this.hp) this.chipHp = this.reduced || this.chipHp < this.hp.value ? this.hp.value : Math.max(this.hp.value, this.chipHp - this.hp.max * Math.min(delta, 50) / 650);
+    if (this.hp) this.chipHp = this.reduced || this.chipHp < this.hp.value ? this.hp.value : Math.max(this.hp.value, this.chipHp - this.hp.max * Math.min(delta, 50) / CONFIG.gameplay.juice.chipTrailMs);
     if (this.critStop > 0) { this.critStop -= Math.min(delta, 50); if (this.critStop <= 0 && this.anims) this.anims.globalTimeScale = 1; }
     const active = this.hits?.active;
     if (active) for (let i = active.length - 1; i >= 0; i--) {
       const hit = active[i]!;
       const progress = Math.min(1, hit.age / 600);
-      hit.flash.setPosition(hit.target.x, hit.target.y).setVisible(!this.reduced && !hit.missed && hit.age < 70).setAlpha(hit.target.alpha);
+      hit.flash.setPosition(hit.target.x, hit.target.y).setVisible(!this.reduced && !hit.missed && hit.age < CONFIG.gameplay.juice.flashMs).setAlpha(hit.target.alpha);
       hit.text.setPosition(hit.x, hit.y - (this.reduced ? 0 : 12 * progress)).setAlpha(1 - progress);
       hit.age += Math.min(delta, 50);
       if (hit.age >= 600) this.hits!.release(hit);

@@ -41,3 +41,17 @@ it('maps every cue into scene actions, clamps HP and honors reduced motion', () 
     if (!reducedMotion) expect(cat.play).toHaveBeenCalledWith('defeat');
   }
 });
+
+it('keeps a heavy telegraph visible when a regular windup and impact overlap it', () => {
+  const scene = new ArenaScene(), phase = vi.fn(), danger = object(), actor = object();
+  Object.assign(scene, { input0: { ...ARENA_FIXTURES[0]!, reducedMotion: true, hp: vi.fn(), phase }, danger, cat: actor, boss: actor, bars: object(),
+    add: { text: () => object() }, tweens: { add: vi.fn(), killTweensOf: vi.fn() } });
+  scene['applyCue']({ t: 0, type: 'bossWindup', big: true });
+  scene['applyCue']({ t: 600, type: 'bossWindup', big: false });
+  scene['applyCue']({ t: 1000, type: 'bossImpact', big: false, catHp: 80, damage: 20, dodged: false });
+  expect(phase).toHaveBeenLastCalledWith('Heavy windup · brace for impact');
+  scene['applyCue']({ t: 1000, type: 'bossImpact', big: true, catHp: 30, damage: 50, dodged: false });
+  expect(phase).toHaveBeenLastCalledWith('Recovery · Mochi keeps attacking');
+  expect(scene['pendingHeavy']).toBe(0); expect(scene['pendingQuick']).toBe(0);
+  expect(danger.fillRect).toHaveBeenCalled(); // Static cue also survives reduced motion.
+});

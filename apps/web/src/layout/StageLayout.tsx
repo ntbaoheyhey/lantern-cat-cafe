@@ -1,3 +1,4 @@
+import { CraftResult } from '../gameplay/CraftResult';
 import { GuestCoach, isNewGuest } from '../gameplay/GuestCoach';
 import { journeyGoals } from '../gameplay/goals';
 import '../gameplay/gameplay.css';
@@ -683,14 +684,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                     craftResultId={crafted?.id}
                     craftResult={
                       crafted ? (
-                        <div className="forge-reveal" data-rarity={crafted.rarity} role="status" data-testid="craft-result">
-                          <span className="forge-reveal-art" aria-hidden="true"><V2PixelIcon name={itemIconName(crafted)} size={3} /></span>
-                          <div><strong>
-                            Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
-                          </strong>
-                          <span>Level {crafted.level} · Added to your Bag</span>
-                          <small>Gear is not tradable; only Relics can be listed in the Market.</small></div>
-                        </div>
+                        <CraftResult item={crafted} />
                       ) : null
                     }
                     relicFooter={relicFooter}

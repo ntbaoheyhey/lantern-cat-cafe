@@ -1,3 +1,4 @@
+import { RarityMark } from '../gameplay/RarityMark';
 import { Art2Image } from '../art/Art2';
 import { useId, useState, type ReactNode } from 'react';
 import type { Rarity } from '@taskbar-hero/game-rules';
@@ -109,7 +110,8 @@ export function MarketView(props: MarketViewProps) {
           <button type="button" aria-pressed={mode === 'sell'} onClick={() => setMode('sell')}>Sell a Relic</button>
         </div>
         {mode === 'inspect' ? <section className="market-card market-detail-card" aria-label="Listing details">
-          {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={64} height={64} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
+          {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={96} height={96} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity && <RarityMark rarity={rarity} />} {rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
+            <p className="relic-provenance">Cat Relic #{selected.relicId.toString()} · <a href={`/relics/${selected.relicId.toString()}.json`} target="_blank" rel="noreferrer">Metadata</a></p><p className="market-hint">Collectible · No combat-stat bonus</p>
             <div className="market-facts-scroll" tabIndex={0} role="region" aria-label="Scrollable listing facts"><dl className="market-facts"><div><dt>Listing</dt><dd>#{selected.id.toString()}</dd></div><div><dt>Token</dt><dd data-testid="token-id">#{selected.relicId.toString()}</dd></div><div><dt>Quantity</dt><dd>{selected.amount.toString()}</dd></div><div><dt>Total price</dt><dd data-testid="market-detail-price">{formatEther(selected.price)} AVAX</dd></div><div><dt>Seller</dt><dd title={selected.seller}>{isOwnListing(selected, props.address) ? 'You' : shortAddress(selected.seller)}</dd></div><div><dt>RelicNFT</dt><dd title={props.nft} data-testid="contract-addr">{shortAddress(props.nft)}</dd></div></dl></div>
             {isOwnListing(selected, props.address) ? <button type="button" className="forge-btn" disabled={!!props.busy} onClick={() => props.onCancel(selected)}>Cancel</button> : <button type="button" className="forge-btn pixel-btn" disabled={!!props.busy} onClick={() => props.onBuy(selected)}>Buy</button>}
           </> : <EmptyState title="Inspect a Relic">Select a listing to see its on-chain details.</EmptyState>}
