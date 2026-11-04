@@ -10,7 +10,7 @@ const manifest = JSON.parse(readFileSync(resolve(root, 'reports/ui/gallery-manif
 const axeSource = readFileSync(process.env.UI_AXE_SOURCE, 'utf8');
 if (createHash('sha256').update(axeSource).digest('hex') !== '880970c081707360e64f34cea25ff91892f5bc95675b0776925b9709dd8a68bb') throw new Error('Unexpected axe-core audit source');
 
-for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
+for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html', 'docs/ui/gallery/index.html']) {
   test(`${relative} is a standalone, complete and usable review`, async ({ page }, info) => {
     const errors = [], network = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -18,9 +18,11 @@ for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
     page.on('request', request => { if (/^https?:/.test(request.url())) network.push(request.url()); });
     const url = pathToFileURL(resolve(root, relative)).href;
     await page.goto(url);
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Taskbar Hero · Six-card UI review');
-    await expect(page.getByRole('table', { name: 'Card release index' }).locator('tbody tr')).toHaveCount(6);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Taskbar Hero · Integrated candidate review');
+    await expect(page.getByRole('table', { name: 'Card release index' }).locator('tbody tr')).toHaveCount(manifest.cards.length);
     await expect(page.locator('.capture')).toHaveCount(manifest.captures.length);
+    await expect(page.getByLabel('Card', { exact: true })).toHaveValue('STACK');
+    await expect(page.locator('.notice')).toContainText('NOT DEPLOYED');
     const journey = page.locator('section', { has: page.getByRole('heading', { name: 'Guest journey', exact: true }) });
     await expect(journey).toContainText(manifest.measurements.homeSeconds + ' seconds');
     await expect(journey).toContainText(manifest.measurements.earnSeconds + ' seconds');
@@ -44,7 +46,7 @@ for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
     }
     const localLinks = await page.locator('[href], img[src], source[src]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href') ?? node.getAttribute('src')).filter(Boolean));
     for (const link of localLinks) if (!/^(https?:|#)/.test(link)) expect(existsSync(fileURLToPath(new URL(link, url))), link).toBe(true);
-    for (const card of ['CXR2', 'ART2', 'MOTION', 'PREVIEWS', 'FIRSTPLAY']) {
+    for (const card of ['STACK', 'CXR2', 'ART2', 'MOTION', 'PREVIEWS', 'FIRSTPLAY']) {
       await page.getByLabel('Card', { exact: true }).selectOption(card);
       for (const width of ['1280', '1600']) {
         await page.getByLabel('Viewport', { exact: true }).selectOption(width);
@@ -71,7 +73,7 @@ for (const relative of ['reports/ui/gallery.html', 'docs/ui/demo/index.html']) {
     expect(accessibility.violations).toEqual([]);
     if (process.env.GALLERY_SCREENSHOTS) {
       mkdirSync(process.env.GALLERY_SCREENSHOTS, { recursive: true });
-      await page.screenshot({ path: resolve(process.env.GALLERY_SCREENSHOTS, `${relative.startsWith('docs') ? 'demo' : 'gallery'}-${page.viewportSize().width}-${info.repeatEachIndex}.png`) });
+      await page.screenshot({ path: resolve(process.env.GALLERY_SCREENSHOTS, `${relative.replaceAll('/', '-')}-${page.viewportSize().width}-${info.repeatEachIndex}.png`) });
     }
     expect(errors).toEqual([]); expect(network).toEqual([]);
   });
@@ -85,7 +87,7 @@ test('the one-page card index links every report offline', async ({ page }) => {
   const url = pathToFileURL(resolve(root, 'reports/ui/cards/index.html')).href;
   await page.goto(url);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('UI card index');
-  await expect(page.locator('ol > li > a')).toHaveCount(6);
+  await expect(page.locator('ol > li > a')).toHaveCount(manifest.cards.length);
   for (const href of await page.locator('a[href]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')))) {
     expect(existsSync(fileURLToPath(new URL(href, url))), href).toBe(true);
   }
