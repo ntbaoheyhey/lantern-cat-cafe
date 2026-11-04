@@ -2,12 +2,12 @@
   "basePr": 278,
   "baseSha": "f8837d650a7efa5d485223caf9846ef0f54a6494",
   "branches": {
-    "codex/gameplay-onboarding-2026-11-04": "db225fdca270e6845b4677ab04a54a71d0374307",
-    "codex/gameplay-art-2026-11-04": "ad725da3a838ba5d8afb1139cf40229ed29a43d0",
-    "codex/gameplay-juice-2026-11-04": "ed87703554341dbc0542beee3eeb251659d350c0",
-    "ai/codex-gameplay-2026-11-04": "6dde85d4a6e5eaf227b02f39d66c0869f0f48330"
+    "codex/gameplay-onboarding-2026-11-04": "1f5ead0a18ee7fbba1691225e61fe8fc51ff83b9",
+    "codex/gameplay-art-2026-11-04": "88d65d43a3c95caf5229f8837b32fc1a33da3a7f",
+    "codex/gameplay-juice-2026-11-04": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
+    "ai/codex-gameplay-2026-11-04": "85023fc0867ca3c795b12090fb2ec95af09db25c"
   },
-  "runtimeSourceSha": "ed87703554341dbc0542beee3eeb251659d350c0",
+  "runtimeSourceSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
   "runtimeEquivalentPaths": [
     "apps/web/src",
@@ -50,7 +50,7 @@
   ],
   "merged": false,
   "deployed": false,
-  "proofCommitNote": "The branch SHA records the published proof checkpoint; subsequent documentation-only commits add final URLs and shutdown receipts. The runtime SHA remains fixed.",
+  "proofCommitNote": "Proof branch SHA records the local evidence checkpoint preceding this manifest update. Later documentation-only commits may follow. The runtime SHA identifies the exact final UI source.",
   "mergeOrder": [
     275,
     276,
@@ -65,9 +65,13 @@
   "localProcessesStopped": [
     41657,
     41659,
-    58761
+    58761,
+    80310,
+    80594
   ],
-  "remoteCI": "Rerunning after client helper relocation fixes generated Deno map drift without editing Supabase.",
-  "normalizedRuntimeSourceIsIdentical": true,
-  "equivalenceReceipt": "runtime-equivalence.json"
+  "remoteCI": "Final G1, art and UI heads are running native GitHub CI; do not claim green until recorded in remote-ci.json.",
+  "normalizedRuntimeSourceIsIdentical": false,
+  "equivalenceReceipt": "runtime-equivalence.json",
+  "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
+  "finalizedAtUtc": "2026-11-04T15:39:15.081210+00:00"
 }

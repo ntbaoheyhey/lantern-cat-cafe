@@ -1,37 +1,40 @@
-# Gameplay candidate — delivered draft stack
-Updated 2026-11-04 15:20 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no agents, schedulers or automations.
+# Gameplay candidate — final CI and ledger delivery
+Updated 2026-11-04 15:40 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no subagents, schedulers or automations.
 
-## Delivery
-- Worktree `/Users/bao/taskbar-hero-gameplay`, branch `ai/codex-gameplay-2026-11-04`.
-- Base visual PR #278: `f8837d650a7efa5d485223caf9846ef0f54a6494`, `ai/codex-visual-2026-11-04`.
-- Published DRAFT stack: [#279](https://github.com/ntbaoheyhey/taskbar-hero/pull/279) guidance/claims → [#280](https://github.com/ntbaoheyhey/taskbar-hero/pull/280) original art → [#281](https://github.com/ntbaoheyhey/taskbar-hero/pull/281) item UI/juice → [#282](https://github.com/ntbaoheyhey/taskbar-hero/pull/282) offline demo/proof.
-- Full future release order: #275 → #276 → #277 → #278 → #279 → #280 → #281 → #282. Never merge a tip directly; retarget/recheck each layer.
-- Final runtime `ed87703554341dbc0542beee3eeb251659d350c0`; matches measured `501880e` after normalizing only relocation of client presentation helpers and their import specifiers (1,006 files; `runtime-equivalence.json`). CI found generated Deno-map drift on initial publication; moving helpers to `packages/game-rules/client/gameplay.ts` fixes it without changing generator/Supabase. Initial failure retained. `delivery.json` records current heads.
-- Offline demo `/Users/bao/taskbar-hero-gameplay/docs/gameplay/index.html`; open with adjacent `img/`. 12 comparisons at 1280/1920, ordinary views also 1440, actual motion strips, timeline, numeric decisions and exact original-art provenance.
-- Report `reports/gameplay/GAMEPLAY-REPORT.md`; evidence index `README.md`; original brief `BRIEF.md`. Candidate build, not live.
+## Delivered candidate
+- Worktree `/Users/bao/taskbar-hero-gameplay`, branch `ai/codex-gameplay-2026-11-04`. Desktop cwd and main are unrelated dirty checkouts: do not reset, stash or checkout there.
+- Visual base #278: `f8837d650a7efa5d485223caf9846ef0f54a6494`, `ai/codex-visual-2026-11-04`.
+- DRAFT stack: #279 guidance/claims → #280 original art → #281 item UI/juice → #282 offline demo/proof. Full future merge order #275 → #276 → #277 → #278 → #279 → #280 → #281 → #282; never merge a tip directly.
+- Final runtime `9051efccc9b24fa29b9f575e6935bb6222cd300f`. Source in proof worktree matches #281 exactly. Compared to measured `501880e`, only the documented client-helper relocation and final Landing geometry/candidate-label/test/native-baseline changes differ. Gameplay, economy, replay and original art are unchanged. See `runtime-equivalence.json`.
+- G1 `1f5ead0a18ee7fbba1691225e61fe8fc51ff83b9`, Art `88d65d43a3c95caf5229f8837b32fc1a33da3a7f`, UI `9051efccc9b24fa29b9f575e6935bb6222cd300f`. G1 worktree `/Users/bao/taskbar-hero-gameplay-review`; UI currently checked out in `/Users/bao/taskbar-hero-gameplay-art-review`.
+- Offline demo `/Users/bao/taskbar-hero-gameplay/docs/gameplay/index.html` with adjacent `img/`. Twelve matched comparisons, full ten-minute timeline, looping original sprites and actual animation strips, decisions and provenance. Label: Candidate build, not live.
+- Report `reports/gameplay/GAMEPLAY-REPORT.md`; evidence index `README.md`; exact original request `BRIEF.md`.
 
-## Verified outcomes
-- Two full normal-clock ten-minute guest runs. Reward 29.542 → 10.042s; available upgrade 30.196 → 10.146s; boss attempt ~301s unchanged and both lose after 9s. Use `before-corrected-run.json`, not exploratory `before-run.json`.
-- Self-reviewed nine-axis score 8.0 → 8.7; Home/Boss/reveal 8.8, Market 8.4. Targets remain open. Long ~30s reward gaps and unaffordable minute-2 crafting remain; single seed does not prove retention/fun/loot distribution.
-- 399/399 full E2E + 5/5 compact Forge rerun; 1482 web units; workspace/backend mock suites, typecheck/lint, art:check and 44 catalog tests pass. Eleven inherited rule skips and two expected failures remain unchanged.
-- Isolated layers: G1 typecheck +46 focused UI +6 rule/economy tests; full E2E394 passes, all5 failures fixed and covered by9 targeted reruns. Art typecheck/generators/catalog +2 exact pixel tests. UI typecheck +35 focused tests. No skipped assertions; initial failures retained. Forge Cancel layout fix is in G1.
-- 24 axe/keyboard views; 3 offline sizes including final draft links, both capture sets, 39 image elements, zero network/axe/overflow/broken links. Effects4/4 at60 FPS; optimized g1-perf5-minute soak59.95–60 FPS, renderer3.46–4.38%, stable heap, hidden/reduced CSS0.
-- Final production JS+26,174 gzip bytes; 264 changed public images total243,695 bytes. Gallery13,304,053 bytes is documentation only. No need to repeat unchanged runtime tests.
+## Measured outcomes and limits
+- Two full normal-clock seeded guest runs: first reward29.542 →10.042s, available upgrade30.196 →10.146s. Boss attempt~301s unchanged; both lose after9s. Corrected baseline is `before-corrected-run.json`; exploratory baseline retained separately.
+- Strict nine-axis self-review8.0 →8.7; Home/Boss/reveal8.8, Market8.4. Requested9+/8.5 targets remain open. Long~30s reward gaps and unaffordable minute2 crafting remain. One seed and self-review do not establish fun, retention or loot distribution.
+- Local pre-follow-up full E2E399/399 plus compact Forge5/5; web1482/1482; workspace/backend mocks, typecheck/lint, art check and44 catalog tests pass. Eleven inherited rule skips and two expected failures unchanged.
+- 24 axe/keyboard views; offline artifact at1280/1440/1920 passes again on the final runtime label, with39 image elements, no requests/errors/broken links/overflow/axe findings. Four effects cases~60 FPS. Five-minute optimized build soak59.95–60 FPS, renderer task time3.46–4.38%, stable warm heap; hidden/reduced CSS0. Soak source remains501880e, not rerun for Landing-only edits.
+- Final production JS+26,194 gzip bytes;264 changed public images total243,695 bytes. Gallery13,304,053 bytes is documentation only.
 
-## Boundaries and deferred work
-No merge/deployment/Supabase/DB/contract/signing/funds. Protected PRs #244/#252/#257 untouched. Candidate/ledger Vercel Git deployment disabled at repo/web roots. Unrelated dirty main and desktop cwd left untouched; main is newer than the original brief, so do not reset or silently rebase. No WIP commit in the review stack. Existing Sample switches remain default-OFF; interactive boss rules and unsupported economy changes were deferred.
+## CI follow-up
+Initial GitHub failures exposed Deno-map drift, misplaced art-layer test assertions, native screenshot differences and actual late-font shifts on Landing. Helpers now live in `packages/game-rules/client/gameplay.ts` without changing Supabase or its generator. Art assertions live in Art. Landing reserves text/button/proof-link geometry and displays the candidate label. Native baselines use exact comparison with documented Linux/macOS captures; no checks/tolerances skipped. Four native Linux delayed-font cases and final six local pixel/font cases pass. All initial failure receipts remain.
 
-Backlog: sustained pacing/micro-events, human/multi-seed studies, two complete viable builds with unlocked gear, interactive per-chapter mechanics with server/replay agreement, additional portrait expression wiring, richer Market, defeat/loot arcs, time-of-day/audio and broader hardware/power tests. These are explicitly unshipped, not partially wired.
+At this checkpoint, final GitHub runs are still running: G1 `41858775255`, Art `41858845586`, UI `41858844077`. Record exact heads, conclusions, test totals and log receipts in `remote-ci.json` once finished. Do not claim remote green before that. Source/docs are already integrated on the proof branch after rebase; its remote still needs the authorized lease-protected update. PR bodies need current native CI and final payload/runtime notes.
 
-## Finalization checkpoint
-CI follow-up in progress: G1 and Art each pass 393/399 browser tests on Linux, exposing two platform-specific screenshot mismatches and four instances of a real late-font shift at the ERC-1155/Relic label. Art also had three unit assertions placed too late in the stack; these now live on Art `d683251`, with 45 focused tests passing. UI was rebased to `12a6927` with identical final source/tests. The G1 worktree currently has the narrow pill-width fix and macOS-specific exact baselines under validation; Docker Linux x64 Playwright is being prepared for matching Linux evidence. Do not claim remote CI green yet. Original failure logs are retained.
+## Remaining delivery steps
+1. Check final native CI; resolve any concrete failures without skipping tests. No need to rerun unchanged full local gameplay or ten-minute sessions.
+2. Update report, delivery manifest, this handoff and draft PR bodies with exact CI outcomes. Save/push proof branch with explicit lease (own task branch only).
+3. Copy ONLY `reports/gameplay/` into ledger `/Users/bao/taskbar-hero-ui-ledger`, branch `ai/codex-ui-ledger`; stage that subtree only, commit/push. Preserve all unrelated ledger files. Ledger currently contains an obsolete pause handoff and must be refreshed.
+4. Final font-check servers80310 (G1 port5393) and80594 (proof port5394) were stopped after verifying command/cwd. No task server remains. Production build outputs were retained at `/private/tmp/taskbar-hero-gameplay-final-builds-20261104`. Never broad-pkill or stop pre-existing servers.
+5. Vietnamese final reply≤10 lines: offline demo/report links, draft PR links,8.0→8.7 score and top3 remaining risks. No additional approval needed for already-authorized draft delivery.
 
-Final link/label offline checks pass; task-owned local processes stopped. Corrected G1/art/UI heads are `db225fd` / `ad725da` / `ed87703`. Local gen:deno (zero map diff), typecheck,6 rule/economy tests,10 focused web tests and both build modes pass. GitHub CI is rerunning after the import-path correction; check remote status before final reply. Save final report/handoff/receipts to ledger `/Users/bao/taskbar-hero-ui-ledger`, branch `ai/codex-ui-ledger`, adding ONLY `reports/gameplay/`; unrelated untracked ledger files remain untouched. Final Vietnamese reply ≤10 lines with demo, PRs, score and top3 risks. No additional approval required for the already-authorized draft delivery.
+## Boundaries and backlog
+No merge, deploy/preview, Supabase/DB/contract change, signing or funds. Protected PRs#244/#252/#257 untouched. Candidate and ledger Vercel Git deployment disabled. No WIP in delivered stack; existing Sample switches stay default-OFF. Unsupported interactive mechanics and reward changes were deferred.
+Backlog: sustained pacing/micro-events; human and multi-seed studies; two complete viable gear builds; interactive chapter mechanics with replay/server agreement; fuller portrait wiring, Market, defeat/loot arcs, time-of-day/audio and broader hardware/power measurements. All explicitly unshipped.
 
-## Local restart
+## Local restart and skill
 `cd /Users/bao/taskbar-hero-gameplay && pnpm demo`
-With coach: `http://127.0.0.1:5391/?demo#home`; skip coach: `http://127.0.0.1:5391/?demo&coach=off#home`. Saves preserved. Fresh profile needed to inspect first-guest coach.
-Stopped with targeted TERM after verifying commands/cwd: baseline5390 PID41659, candidate5391 PID41657, production5392 PID58761. Pre-existing port5380 is not ours and remains untouched. No broad pkill.
-
-## Skills
-Sites local-only workflow: `/Users/bao/.codex/plugins/cache/openai-curated-remote/sites/1.1.3/skills/sites/SKILL.md`. No image generator, reference-game artwork, external hosting or delegation.
+Coach: `http://127.0.0.1:5391/?demo#home`; skip: `http://127.0.0.1:5391/?demo&coach=off#home`. Saves preserved; fresh profile for new-guest coach.
+Sites local-only workflow: `/Users/bao/.codex/plugins/cache/openai-curated-remote/sites/1.1.3/skills/sites/SKILL.md`. No external hosting, image generator, reference-game art or delegation.
+Original work start12:45:44 UTC and outer five-hour deadline17:45:44 UTC. Continue only within that budget, then report honestly and stop.
