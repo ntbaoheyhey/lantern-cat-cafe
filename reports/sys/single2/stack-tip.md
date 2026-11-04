@@ -8,3 +8,7 @@ All seven were clean Git merges. **No conflict resolution or intent override was
 #267 and #270 are deliberately separate refresh drafts. No integration PR will be opened to main.
 
 Pass 1: frozen-lockfile install, typecheck, lint and build all exited0. No runtime source fix was necessary. Full diff and subsequent A/B evidence are recorded separately.
+
+## STACKFIX integration
+
+Expanded confirmation scanning found inherited Salvage row opacity contrast failures. New draft #271 removes that opacity and adds a regression that fails 4/4 before the repair and passes after it. The tip fast-forwards to `68ab4c12cfdb24b107480fa34b3c1c82dd105089`; no conflict. Immutable `ai/codex-stack-tip-base` retains d31cb2a only to keep the two-file STACKFIX review visible. Neither integration branch is a release PR. Final A/B gates are running on 68ab4c1.

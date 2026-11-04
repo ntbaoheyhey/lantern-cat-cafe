@@ -1,0 +1,12 @@
+{
+  "pid": 9859,
+  "cwd": "/Users/bao/taskbar-hero-single2-fix",
+  "command": "npx -y pnpm@10.28.0 typecheck && cd apps/web && npx -y pnpm@10.28.0 exec playwright test e2e/ui/forge-disabled-contrast.spec.ts e2e/ui/cxu3-forge.spec.ts --workers=2 --retries=0 --reporter=line; result=$?; printf '\\nexit=%s\\n' \"$result\"; exit \"$result\"",
+  "ports": [
+    5340,
+    5341,
+    5342,
+    5343,
+    5344
+  ]
+}

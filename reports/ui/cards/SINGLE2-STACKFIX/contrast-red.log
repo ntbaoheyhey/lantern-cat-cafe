@@ -1,0 +1,165 @@
+[WebServer] (node:9601) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:9602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:9622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:9652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:9653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:9659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:9663) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:9710) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:9711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:9717) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:9718) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 1 worker
+
+(node:9719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 no-preference
+  1) [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 no-preference 
+
+    Error: {"text":"Starter gear can't be salvaged","ratio":3.219231624697461}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.219231624697461
+
+      55 |       for (const label of await labels.all()) {
+      56 |         const measured = await contrast(label);
+    > 57 |         expect(measured.ratio, JSON.stringify(measured)).toBeGreaterThanOrEqual(4.5);
+         |                                                          ^
+      58 |       }
+      59 |     }
+      60 |     await page.getByTestId('salvage-check-fx:forgeRich:1').check();
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/forge-disabled-contrast.spec.ts:57:58
+
+    Error Context: test-results/5340-5341/ui-forge-disabled-contrast-4f7a5-readable-1280-no-preference-stage-layout/error-context.md
+
+
+(node:9724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 reduce
+  2) [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 reduce 
+
+    Error: {"text":"Starter gear can't be salvaged","ratio":3.219231624697461}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.219231624697461
+
+      55 |       for (const label of await labels.all()) {
+      56 |         const measured = await contrast(label);
+    > 57 |         expect(measured.ratio, JSON.stringify(measured)).toBeGreaterThanOrEqual(4.5);
+         |                                                          ^
+      58 |       }
+      59 |     }
+      60 |     await page.getByTestId('salvage-check-fx:forgeRich:1').check();
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/forge-disabled-contrast.spec.ts:57:58
+
+    Error Context: test-results/5340-5341/ui-forge-disabled-contrast-6178b-remain-readable-1280-reduce-stage-layout/error-context.md
+
+
+(node:9731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 no-preference
+  3) [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 no-preference 
+
+    Error: {"text":"Starter gear can't be salvaged","ratio":3.219231624697461}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.219231624697461
+
+      55 |       for (const label of await labels.all()) {
+      56 |         const measured = await contrast(label);
+    > 57 |         expect(measured.ratio, JSON.stringify(measured)).toBeGreaterThanOrEqual(4.5);
+         |                                                          ^
+      58 |       }
+      59 |     }
+      60 |     await page.getByTestId('salvage-check-fx:forgeRich:1').check();
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/forge-disabled-contrast.spec.ts:57:58
+
+    Error Context: test-results/5340-5341/ui-forge-disabled-contrast-2c0ce-readable-1600-no-preference-stage-layout/error-context.md
+
+
+(node:9736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 reduce
+  4) [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 reduce 
+
+    Error: {"text":"Starter gear can't be salvaged","ratio":3.219231624697461}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.219231624697461
+
+      55 |       for (const label of await labels.all()) {
+      56 |         const measured = await contrast(label);
+    > 57 |         expect(measured.ratio, JSON.stringify(measured)).toBeGreaterThanOrEqual(4.5);
+         |                                                          ^
+      58 |       }
+      59 |     }
+      60 |     await page.getByTestId('salvage-check-fx:forgeRich:1').check();
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/forge-disabled-contrast.spec.ts:57:58
+
+    Error Context: test-results/5340-5341/ui-forge-disabled-contrast-a4cd1-remain-readable-1600-reduce-stage-layout/error-context.md
+
+
+  4 failed
+    [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 no-preference 
+    [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1280 reduce 
+    [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 no-preference 
+    [stage-layout] › e2e/ui/forge-disabled-contrast.spec.ts:39:3 › Unavailable salvage reasons remain readable 1600 reduce 
+
+exit=1

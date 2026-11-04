@@ -1,35 +1,25 @@
-# SINGLE2 handoff — RESUMED
-- User paused at05:43Z and explicitly resumed at07:01Z; ACTIVE. Original15:36:34Z deadline retained.
-- Started about2026-11-04T05:36:34Z; original10h deadline2026-11-04T15:36:34Z. No automatic resumption or scheduler.
-- One agent only, no helpers. Main checkout untouched; no live writes, signatures, settings changes or deployments.
-- Own worktree /Users/bao/taskbar-hero-single2; branch ai/codex-stack-tip; remote pushed.
-- Exact head d31cb2a3961e49fea4aab7ebbef216dc4277cda2; INTEGRATION ONLY, NEVER MERGE, no PR to main.
-- P0 COMPLETE: CAPACITY BLOCKED. VercelCLI absent, fresh269 rate-limit status;270 previews ignored; UTCmain/merged0/0 are activity not usage.
-- Latest provider warning2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z only if running, beyond original session deadline; no wait/schedule.
-- P1a COMPLETE:262/a9afaad→263/4b0e69a→264/949cc44→265/7d0d08e→266/f2a0588→268/afd0699→269/85a6919 merged cleanly, no conflicts.
-- Local merge commits all [skip ci]; repository private. Main/live baseline340f88b, main checkout localHEAD6144d42 unchanged.
-- Pass1 frozen install/typecheck/lint/buildPASS. FreshA scripts/packages/web-units/typecheck/lint/art-delivery/art-catalog/buildPASS.
-- A runner88710 interrupted during changed1280 repeat3 after verifiedcwd/PGID. Orphan listeners91012/91056/91098/91138 received SIGTERM after individualcwd checks.
-- No complete grade yet. A2 changed192/size and FULL391/391 per size PASS once. Clean B tests-first running; final audits pending.
-- Raw A receipt/logs preserved reports/sys/single2/stack-a-interrupted; launch/log in reports/sys/single2.
-- Primary runner reports/ui/single2-gate.py; axe adapter reports/ui/single2-axe.mjs uses pinned4.10.3, adds class confirmation + Chain unavailable scans and native screenshots.
-- These harnesses live on ledger, not product branch. Review/verify axe adapter before asserting it passes (not reached yet).
-- Resume: choose NEW A pass name to preserve interrupted logs, ports5300–5304 after free-port check; changed-spec list in stack-a-launch.json.
-- A2 owns the only exact-head full suite:1280 then1600 once each. Clean B has no --full, on5320–5324.
-- Full integration/product diffs retained in reports/sys/single2; additional full diff review still needed before final grade.
-- Pending P1: full gate/strict geometry/axe/effects/keyboard/mock wallet states; fix defects in owning PR then remerge if needed.
-- Pending P1d/f: docs-on-stack refresh of270 and gallery-on-stack refresh of267; neither new branch exists yet.
-- #270 remains127e3f8 draftA0/B0 original inheritedmain failures, original branch untouched.
-- Pending P2: dry-run release script + runbook. Pending P3: nonce reproductions, deterministic repo-source restore kit, localCXN3, flake card.
-- Docker binary exists but daemon unavailable; Deno absent. Use unit/PGlite harness; restore script must label repo-source rehearsal only.
-- #269 already tests missingenv, DB unavailable/missingRPC, CORS/method and startup. Historical502cause remains unproven; no live probes used here.
-- #244 branch ai/codex-n3-cutover-truth/db0f9d6 read-only. #244/#252/#257 untouched. Complete deployed backup remains user-gated; never bypass guard.
-- Pending P4: CXS1/CXS2 current facts,3min pitch,90sec shotlist,Fuji proof,FAQ,keyboard/bundle; Sample/Unavailable/defaultOFF retained.
-- Existing security/submission docs read; exact contracts unchanged. No economy number or newart change made.
-- Ledger has unrelated untracked prior-session files: stage ONLY explicit SINGLE2 paths.
-- A2 running ownedPID95209,passsingle2-stack-a2,ports5300–5304. B ownedPID1398,temp/private/tmp/taskbar-hero-single2-b-d31cb2a,ports5320–5324; install0/clean tracked tree.
-- Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal ACTIVE, not complete.
-- P1e mocked-state milestone:14/14PASS on d31cb2a,nonce503/expiry/focus/wrongnet/signed+unsignedHUD/offline/API503; zero product errors/overflow/signatures. Evidence reports/ui/cards/SINGLE2-U5/stack-audit.md. Two harness failures preserved; source unchanged.
-- Full-suite milestone: A2 FULL391/391 PASS both sizes; no repeat. Resize/strict/axe remaining; B changed1600 finishing. Axe harness now reloads seededForge before confirmation scans.
-- NEW REAL DEFECT: d31cb2a A2/B both AUTO-FAIL0: axe38scans, salvage contrastFAIL2sizes (rowopacity0.55;2.73–3.66:1). Other gatesPASS. Evidence SINGLE2-STACK/rejected-a,b.
-- STACKFIX started /Users/bao/taskbar-hero-single2-fix branch ai/codex-stackfix fromd31cb2a. New regression4/4RED; CSS removes inheritedrowopacity, greenbuilderPID9859 pending. Finaltip must rerun gate once per newhead.
+# SINGLE2 handoff — ACTIVE
+- User resumed at 07:01Z after pause; one agent only, no helpers/scheduler. Original deadline 2026-11-04T15:36:34Z retained (started05:36:34Z).
+- Safety: no main checkout/reset/stash, live writes/migrations, deployments, signatures, settings, flags, secrets or public submission. Main checkout6144d42 untouched; origin/main/live340f88b.
+- P0 COMPLETE: CAPACITY BLOCKED. No VercelCLI; fresh269 rate-limit status,270 ignored builds. UTC activity0/0 is not remaining quota. No merge.
+- Latest warning2026-11-03T20:51:55Z. Next planned check2026-11-04T21:00Z only if running; beyond deadline; no wait or scheduler.
+- P1a COMPLETE:262/a9afaad→263/4b0e69a→264/949cc44→265/7d0d08e→266/f2a0588→268/afd0699→269/85a6919 merged cleanly into d31cb2a; no conflicts.
+- P1b initial d31cb2a A2/B AUTO-FAIL0: expanded axe38scans finds salvagecontrast in2sizes. Rowopacity0.55 lowers9textnodes/size to2.73–3.66:1. No threshold waived.
+- Other initial checksPASS:1467webunits,1084packagepasses plus2expectedfail/11skips,44art;changed192/size/reviewer;full391/size ONCE inA;resize0/40 acrossA+B;strict0/36. Source unchanged until STACKFIX.
+- Failure evidence reports/ui/cards/SINGLE2-STACK/rejected-a,b; earlier pause logs retained reports/sys/single2/stack-a-interrupted.
+- Inheritedopacity exists onmain and no heldPR owns it. STACKFIX draft271 fixesCSS and adds compositedcontrastregression. RED4/4, GREENcombinedForge9/9; no art/economy/behavior change.
+- STACKFIX worktree /Users/bao/taskbar-hero-single2-fix, branch ai/codex-stackfix at68ab4c12cfdb24b107480fa34b3c1c82dd105089, remote pushed. Red/green logs onledger SINGLE2-STACKFIX.
+- PR271 base ai/codex-stack-tip-base is immutable d31cb2a snapshot so two-file review remains visible as integration advances. NEVER MERGE integration branches to main.
+- Current stack tip68ab4c12cfdb24b107480fa34b3c1c82dd105089, remote pushed; /Users/bao/taskbar-hero-single2 branch ai/codex-stack-tip. No integration PR.
+- FreshfinalA launchedPID10715 at07:30:58Z, single2-stack-final-a,ports5300–5304, --full ONCE per size. Log logs/single2-stack-final-a.log.
+- CleanfinalB launchedPID10716, /private/tmp/taskbar-hero-single2-b-68ab4c1,ports5320–5324,testsfirst, no--full. Log logs/single2-stack-final-b.log. Read full diff AFTER B tests.
+- Runner reports/ui/single2-gate.py; axe reports/ui/single2-axe.mjs pinned4.10.3 adds class/craft/salvage confirmations and Chain unavailable. Forgefixture reload fixed in harness; no product assertion waiver.
+- After finalgates: run tools/effects-test.mjs only when browsergates idle, inspect native screenshots, writefreshA/Bgrades; complete full diff/scope review. Earlier original source diff largely reviewed; remaining generateddocs/art data verified by generators/hashes.
+- P1e mocked14/14PASS on originald31cb2a (SINGLE2-U5); final68ab4c1 must rerun mocked audit and update head. Signnothing; routeintercept only. Harness reports/ui/single2-stack-audit.mjs.
+- P1d/f PENDING: docs-on-stack rebase270, gallery-on-stack refresh267; branches not created. Original270127e3f8 remainsA0/B0 inheritedmain; original267e161f06 untouched.
+- P2 PENDING release dry-run script/runbook. P3 PENDING localnoncecauses/exportrestore/CXN3/regression card. P4 PENDING updatedCXS1/CXS2,pitch/shotlist/Fujiproof/FAQ/keyboard/bundle. P5 finalreport pending.
+- Docker binary present but daemon unavailable; Deno absent. Unit/PGlite fallback allowed; deployedbackup remains user-gated. No live nonceprobes used.
+- #269 already tests startupmissingenv,DBunavailable/missingRPC,CORS/method; historical502cause unproven. #244db0f9d6 runbook read-only; #244/#252/#257 untouched.
+- Keep originalEconomy defaultOFF, rune/skill/companion Sample/Unavailable. ContractsFuji43113 fixed; no economy/artsource changes made bySINGLE2.
+- Ledger has unrelateduntrackedfiles; stage ONLY explicit SINGLE2 paths. Handoffmax80lines; commit+push aftereverymilestone and appendboardlog.
+- Progress report reports/SINGLE2-REPORT.md is incomplete; merges/deploys/signatures0. Existinggoal ACTIVE. Do not declare complete untilP0–P5 done or explicitstop/deadline.
