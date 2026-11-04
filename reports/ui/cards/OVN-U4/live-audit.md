@@ -18,7 +18,7 @@ Isolated fresh Chromium profiles at1280×720 and1600×900; real clock and natura
 | Expired-session state lacks an explanation and class-confirm Escape/Cancel focus needs repair | Medium, carried from prior verified audit | [Prior recovery evidence](../OVN-RECOVERY/REPORT.md) | #268 |
 | Wallet errors need a persistent dismissible notice; connected compact HUD can overlap Power/Live | Medium, carried from prior verified audit | [Prior wallet evidence](../../../sys/cards/OVN-AUTH/REPORT.md) | #269 |
 
-The known defects are not waived: the corrected audit exits1. No new repair duplicates the accepted candidates. Native Home1280 and Forge1600 captures were visually inspected for spacing, readable typography and contained panels. Other screenshot inspection is recorded in the single-session report.
+The known defects are not waived: the corrected audit exits1. No new repair duplicates the accepted candidates. Native class1280, Home1280, Help1280, Bag1600, Forge1600 and Market1600 captures were visually inspected for spacing, readable typography and contained panels. No additional visual defect was confirmed in these views.
 
 ## Evidence boundaries and harness correction
 

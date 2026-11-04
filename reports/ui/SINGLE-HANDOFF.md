@@ -6,10 +6,10 @@
 - Existing accepted exact-head full suites must not be repeated. Preserve all original receipts and failures.
 - Release order262→263→264→265→266→268→269→267; P1/P2 final-live work parked by capacity.
 - Main checkout and existing worktrees untouched; own /Users/bao/taskbar-hero-single on codex/single-session-docs.
-- P3 docs candidate 127e3f87c678be5909c4b420c46fd55d75fb5d72 frozen: 4 docs-only paths, builder and37 links PASS. Exact A gate PID71422 on5300–5304 running full once; B clean tests-first pending.
+- P3 docs candidate 127e3f87c678be5909c4b420c46fd55d75fb5d72 frozen: 4 docs-only paths, builder and37 links PASS. Exact A gate PID71422 on5300–5304: full368/368 per size PASS; resize/audit finishing. B clean tests-first pending.
 - All624 gallery capture hashes verified against unchanged267/e161f06. Live entrypoints freshly rechecked unchanged.
 - Fresh current-live audit complete: rewards30.158/29.999s, savedguest/allroutes/3Forgemodes/proof/offline pass, no producterrors/writes/overflow; auto-fail knownstagearia/rewardcontrast (#263).
-- New docs draftPR270/127e3f8,4ownedpaths; A scripts/packages/1448webunits/typecheck/lint/art/build/relatedrepeat3 pass; fullmatrix in progress.
+- New docs draftPR270/127e3f8,4ownedpaths; A scripts/packages/1448webunits/typecheck/lint/art/build/relatedrepeat3 pass; fullmatrix368/368 per size PASS (once each).
 - Clean B checkout /private/tmp/taskbar-hero-single-b-127e3f8 installed; tests-first will follow A, no B diff read yet.
 - Native class1280/Home1280/Forge1600/Bag1600 reviewed; no new typography/spacing defect. Keyboard/performance audits prepared, serial after gate.
 - Initial live audit guard omitted read-only eth_getBlockByNumber and blocked it; failed harness record retained. Corrected read-only allowlist rerun in current-live-r2.
