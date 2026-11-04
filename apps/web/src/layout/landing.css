@@ -107,6 +107,8 @@
   line-height: 1.5;
   color: var(--text, #fff3e0);
   max-width: 480px;
+  /* Reserve the three lines used by the loaded body font on desktop. */
+  min-height: 72px;
 }
 
 /* Action CTA Buttons (Side-by-side, no overlap) */
@@ -133,6 +135,7 @@
   text-transform: uppercase !important;
   padding: 12px 26px !important;
   min-height: 46px !important;
+  line-height: 21px !important;
   background: var(--accent, #ffb86b) !important;
   color: var(--on-accent, #1a1200) !important;
   border: 2px solid #000 !important;
@@ -186,6 +189,7 @@
   text-transform: uppercase !important;
   padding: 12px 22px !important;
   min-height: 46px !important;
+  line-height: 21px !important;
   background: var(--surface-3, #3a2c4a) !important;
   color: var(--text, #fff3e0) !important;
   border: 2px solid #000 !important;
@@ -265,7 +269,7 @@
   padding: 12px 40px;
   /* Stable slots prevent late body/numeric fonts moving neighbouring proof links. */
   display: grid;
-  grid-template-columns: 152px 4px 240px 4px 166px 4px 136px 4px minmax(110px, 1fr);
+  grid-template-columns: 152px 4px 240px 4px 174px 4px 144px 4px minmax(110px, 1fr);
   align-items: center;
   gap: 24px;
   font-size: 13px;
@@ -283,11 +287,13 @@
 
 .landing__proof-item--help {
   justify-self: end;
+  width: 110px;
 }
 
 .landing__proof-pill {
   /* Keep the adjacent label fixed while the numeric web font replaces fallback. */
-  flex: 0 0 68px;
+  flex: 0 0 70px;
+  min-width: 0;
   box-sizing: border-box;
   background: var(--surface-3, #4a3a5e);
   color: var(--shard, #8fd8ff);
@@ -298,6 +304,7 @@
 }
 
 .landing__proof-check {
+  flex: 0 0 12px;
   color: var(--good, #6be08a);
   font-weight: bold;
 }
@@ -316,6 +323,8 @@
 }
 
 .landing__proof-btn {
+  width: 100%;
+  text-align: left;
   background: none;
   border: none;
   color: var(--accent, #ffb86b);
