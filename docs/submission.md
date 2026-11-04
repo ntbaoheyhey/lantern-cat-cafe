@@ -14,7 +14,7 @@ Help's local catalog preview starts OFF. Its 12 stats, 15 item examples, 5 quali
 
 | Resource | Verified address/link | Evidence boundary |
 |---|---|---|
-| Live frontend | [Taskbar Hero](https://taskbarhero-eight.vercel.app) | Last packet media snapshot 6144d42; recheck after UI readiness |
+| Live frontend | [Taskbar Hero](https://taskbarhero-eight.vercel.app) | Current live frontend 340f88b; see the dated [release evidence](release-status.md); refresh again after the held stack lands |
 | Network | Avalanche Fuji, 43113 | Free test AVAX only |
 | RelicNFT | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) | ERC-1155 voucher mint; deployed-code presence is not source certification |
 | RelicMarket | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) | Fixed-price escrow in test AVAX |
@@ -31,17 +31,19 @@ The requested Technical and Avalanche Integration axes are used below. Additiona
 |---|---|---|
 | Technical | Shared rules, auth/ownership, atomic retries, bounded requests, regression evidence | [Security overview](security-overview.md), [test matrix](security-test-matrix.md); local checks do not prove deployed backend identity |
 | Avalanche Integration | Exact Fuji contracts, EIP-712 mint/reconciliation, escrow flow, public proof panel | [Contracts](contracts.md), [proof screenshot](../reports/submission/screenshots/fuji-read-only-1280x720.png); fresh funded receipts pending |
-| Product usability | Landing→guest→class→idle→Map→Forge→Bag→proof→Market | [Demo script](video-script.md); timed live run waits for UI's CXU3/CXC2 readiness |
+| Product usability | Landing→guest→class→idle→Map→Forge→Bag→proof→Market | [Demo script](video-script.md); current guest timing and remaining release gates are recorded in [release evidence](release-status.md) |
 | Original content | Draft economy catalog and 34 original code-drawn icons | [Asset provenance](../reports/asset-provenance.md); original-economy default OFF |
 | Honesty and reproducibility | Separate guest, local-server and live-chain evidence; disclose missing work | [Evidence manifest](../reports/submission/evidence/media-manifest.json), [release receipt](../reports/submission/evidence/6144d42-acceptance.json) |
 
 ## Current evidence and omissions
 
+The [November 4 release status](release-status.md) separates current main/live `340f88b` from the eight accepted, unmerged UI/auth drafts. The earlier CXU3/CXC2 readiness wait is superseded by the deployment-capacity hold. Current-main regression records 1,448 web unit cases and 368 browser cases at each desktop size; these are different scopes from the historical all-package total below. No final-stack live acceptance is claimed.
+
 The archived 6144d42 acceptance records 2,490 package unit cases, 323 browser cases per desktop size, 40 art checks, 35 asset hashes matching before/after, 22 health checks and 16 guest/read-only stages per size. These version-specific numbers belong to that exact historical release; they are not a current run of a later UI head. Two expected game-rule failures and eleven inherited skips are disclosed in the receipt.
 
-CXQ1's complete timed path and fresh throwaway Fuji mint/list/buy are pending. SYSTEM stopped preparation when the scope addendum required waiting for UI readiness. The current official faucet requires a connected wallet and Builder Hub login. No wallet/private key, funding request or transaction was created by SYSTEM.
+The current guest route has been audited at both desktop sizes, including a natural first reward and saved-guest return. This does not prove a fresh-to-boss win, a complete recorded video, or fresh throwaway Fuji mint/list/buy; those remain pending. The earlier UI-readiness stop is historical. The current official faucet requires a connected wallet and Builder Hub login. No wallet/private key, funding request or transaction was created by SYSTEM.
 
-PR #244 remains unmerged because a complete deployed Supabase source/dependency/import-map backup and tested restore path are unavailable. UnsafeFunctionDownloadPathError was not bypassed. No backend deployment, migration, production flag change or live policy certification is claimed. UI refreshes belong to the separate UI session; consult its board before refreshing this packet.
+PR #244 remains unmerged because a complete deployed Supabase source/dependency/import-map backup and tested restore path are unavailable. UnsafeFunctionDownloadPathError was not bypassed. No backend deployment, migration, production flag change or live policy certification is claimed. The release order and current candidate/live distinction are recorded in [release evidence](release-status.md). Draft #269 includes edge source that remains undeployed even after a future frontend release.
 
 ## Licensing and media review
 
@@ -51,4 +53,6 @@ Packet PNGs are unchanged copies of verified live guest captures, not newly gene
 
 ## Owner-only completion steps
 
-Confirm organizer rules/deadline/team details and a permitted private source-access route. After UI readiness, refresh screenshots and execute the timed demo, then obtain actual throwaway Fuji receipts if the wallet prerequisite is satisfied. Record the [145-second video draft](video-script.md), check every subtitle/claim against the final release, and fill the video URL. Review the [nine-slide outline](pitch-slides.md). Submission, invitations, publication and repository visibility changes are not performed by this task.
+Confirm organizer rules/deadline/team details and a permitted private source-access route. After deployment capacity is verified and the held stack is released, refresh screenshots and execute the final timed demo, then obtain actual throwaway Fuji receipts if the wallet prerequisite is satisfied. Record the [145-second video draft](video-script.md), check every subtitle/claim against the final release, and fill the video URL. Review the [nine-slide outline](pitch-slides.md). Submission, invitations, publication and repository visibility changes are not performed by this task.
+
+Planning dates: November 21, 2026 (UTC+7) is the owner's planning deadline; Demo Day is November 30. The official submission deadline is unconfirmed; Builder Hub has been reported as November 25 at 05:59 without a confirmed timezone here. The owner must confirm it with the organizer and submit personally.
