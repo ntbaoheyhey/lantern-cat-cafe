@@ -286,6 +286,9 @@
 }
 
 .landing__proof-pill {
+  /* Keep the adjacent label fixed while the numeric web font replaces fallback. */
+  flex: 0 0 68px;
+  box-sizing: border-box;
   background: var(--surface-3, #4a3a5e);
   color: var(--shard, #8fd8ff);
   font-size: 11px;

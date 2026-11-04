@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-04",
+  "sourceParent": "db225fdca270e6845b4677ab04a54a71d0374307",
+  "styleSha256": "0d81d046861662c7256dc107b0e84278cc73eb0d5b513a57e47acd1554e558af",
+  "source": "Unedited native Playwright screenshots at the existing fixed clock and exact versioned fonts. macOS ARM64 and Linux x64 use Chromium 156.0.8078.4. Linux runs in the official Playwright Noble container. Baselines were visually inspected; original root baseline files remain unchanged. Exact PNG equality is retained separately per OS.",
+  "captureTool": "reports/gameplay/platform-capture.mjs (proof layer)",
+  "linuxImage": "mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f",
+  "records": [
+    {
+      "screen": "landing",
+      "width": 1280,
+      "sha256": "f7bb81a1b1e30080e96dd4e08034fea0efd4c81f569f184b451b44b9cc4b6c72",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 687.5,
+          "width": 68,
+          "height": 20.5,
+          "top": 687.5,
+          "right": 108,
+          "bottom": 708,
+          "left": 40
+        }
+      ],
+      "file": "darwin/landing-stable-1280.png"
+    },
+    {
+      "screen": "class",
+      "width": 1280,
+      "sha256": "35b559c8708906189b90650a0c79432048b137dc970b8798360adc4fac8eae65",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "darwin/class-1280.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1600,
+      "sha256": "45b61fa8f2f10f7351d579e133d2c7f27e4688743bd548c6bd16b9060c8aba42",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 867.5,
+          "width": 68,
+          "height": 20.5,
+          "top": 867.5,
+          "right": 108,
+          "bottom": 888,
+          "left": 40
+        }
+      ],
+      "file": "darwin/landing-stable-1600.png"
+    },
+    {
+      "screen": "class",
+      "width": 1600,
+      "sha256": "7c18246934e03f6d3c564e7a37e63bc527e97a880337b7d3219e8bba7f820ac0",
+      "platform": "darwin",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "darwin/class-1600.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1280,
+      "sha256": "2fddbdac425abc5a4175487ade78216a9f61307c5c393de77f800003a7f7bd98",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 687.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 687.5,
+          "right": 110,
+          "bottom": 708,
+          "left": 40
+        }
+      ],
+      "file": "linux/landing-stable-1280.png"
+    },
+    {
+      "screen": "class",
+      "width": 1280,
+      "sha256": "bad5b5ecdbc6c9d0021bdd59032592ddc3fbe137c110b5cda6a6f935eae8c6e7",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "linux/class-1280.png"
+    },
+    {
+      "screen": "landing",
+      "width": 1600,
+      "sha256": "124a8f44ea33521564b56f1ae2f372504091cfd3581f70bccd1024a1abd21ec3",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [
+        {
+          "x": 40,
+          "y": 867.5,
+          "width": 70,
+          "height": 20.5,
+          "top": 867.5,
+          "right": 110,
+          "bottom": 888,
+          "left": 40
+        }
+      ],
+      "file": "linux/landing-stable-1600.png"
+    },
+    {
+      "screen": "class",
+      "width": 1600,
+      "sha256": "563bc3c11a2a29006a0d4d068b018ad9de2dd11ae97a49a438de0bec2e169693",
+      "platform": "linux",
+      "browser": "156.0.8078.4",
+      "geometry": [],
+      "file": "linux/class-1600.png"
+    }
+  ]
+}
