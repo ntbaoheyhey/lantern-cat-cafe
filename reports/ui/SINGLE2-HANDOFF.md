@@ -31,3 +31,7 @@
 - Tooling draft #272 at f1a338854a8eb632a0d8f1841436595d59e83890 pushed. Source export twins byte-identical,713files exact restore,18import maps clean,588/588 Supabase tests pass. SHA256323ab32249f341e4019487cf2d48e6d20f0f01d3d8fe0e0762fe0ac3c153e522; repo-restore/f1a3388.
 - Tooling A PID54830,ports5360–5364, --full once. Clean B installed /private/tmp/taskbar-hero-single2-tooling-b-f1a3388,ports5380–5384 planned; launch after A units end. Python3archive/5releasebarriers and52browser+security-preserving rollback builder pass.
 - #244 local verifier overlay in /private/tmp/taskbar-hero-single2-cxn3-local: read-only db0f9d6 files on1eefc3e, no PR branch change. Classifier/catalog tests all pass; preserve exact source manifest/log in reports/sys/single2/cxn3-local. No live checker invocation.
+
+- 09:19Z resume audit: final1eefc3e A16/B14checks all0; full399/sizeONCE; complete changed specs75+171=246/size/reviewer allPASS; resize0/40. Final performance pending idle browser gates.
+- Tooling cleanB launchedPID60025 at09:16Z,ports5380–5384; A full1600 active. U5final1eefc3e launchedPID61013,ports5310–5312,outputSINGLE2-U5/reviewed-1eefc3e.
+- Read-only #244 classifier/catalog source evidence and cutover report are ready. Original52-case comparison failures preserved; final current-security rollback passes. Nonce report records7new regressions, historical502unproven.

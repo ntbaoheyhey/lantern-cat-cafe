@@ -1,0 +1,82 @@
+{
+  "head": "1eefc3ef6d828b06710c8be18feb08e90b099e3e",
+  "coveredByEarlierPass": [
+    "e2e/ui/art2-flag-off.spec.ts",
+    "e2e/ui/cxu3-forge.spec.ts",
+    "e2e/ui/landing-font-stability.spec.ts"
+  ],
+  "specs": [
+    "e2e/server/cxr2-class-states.spec.ts",
+    "e2e/server/expired-session-feedback.spec.ts",
+    "e2e/ui/art2.spec.ts",
+    "e2e/ui/baseline-hud.spec.ts",
+    "e2e/ui/class-confirmation-keyboard.spec.ts",
+    "e2e/ui/cxr2-state-matrix.spec.ts",
+    "e2e/ui/feature-samples.spec.ts",
+    "e2e/ui/firstplay.spec.ts",
+    "e2e/ui/forge-disabled-contrast.spec.ts",
+    "e2e/ui/keyboard-regions.spec.ts",
+    "e2e/ui/motion.spec.ts",
+    "e2e/ui/original-preview.spec.ts"
+  ],
+  "checks": [
+    {
+      "size": "1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/ui/art2.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "e2e/ui/class-confirmation-keyboard.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/feature-samples.spec.ts",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/forge-disabled-contrast.spec.ts",
+        "e2e/ui/keyboard-regions.spec.ts",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/original-preview.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "finished": "2026-11-04T09:07:09.127663+00:00"
+    },
+    {
+      "size": "1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/ui/art2.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "e2e/ui/class-confirmation-keyboard.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/feature-samples.spec.ts",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/forge-disabled-contrast.spec.ts",
+        "e2e/ui/keyboard-regions.spec.ts",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/original-preview.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "finished": "2026-11-04T09:11:05.518887+00:00"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/auth
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  15:54:11
+   Duration  371ms (import 66%, tests 24%, transform 9%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/chain
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  15:54:12
+   Duration  345ms (import 50%, transform 27%, tests 21%, worker 2%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/game-rules
+
+
+ Test Files  30 passed | 3 skipped (33)
+      Tests  431 passed | 2 expected fail | 11 skipped (444)
+   Start at  15:54:13
+   Duration  25.52s (tests 90%, transform 7%, import 2%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /private/tmp/taskbar-hero-single2-b-1eefc3e/supabase/tests
+> vitest run
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-b-1eefc3e/supabase/tests
+
+
+ Test Files  34 passed (34)
+      Tests  581 passed (581)
+   Start at  15:54:39
+   Duration  10.68s (tests 80%, import 15%, transform 5%)
+
+
+> @taskbar-hero/api-contract@0.0.0 test /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-b-1eefc3e/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  15:54:50
+   Duration  250ms (transform 79%, import 17%, tests 2%, worker 1%)
+
+
+exit=0
