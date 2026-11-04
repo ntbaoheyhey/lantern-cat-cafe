@@ -1,0 +1,49 @@
+{
+  "head": "f1a338854a8eb632a0d8f1841436595d59e83890",
+  "label": "repo-source rehearsal only, not deployed backup",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/repo-functions-rehearsal.py",
+        "export",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/single2/repo-restore/f1a3388/repo-source-a.tgz"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/repo-functions-rehearsal.py",
+        "export",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/single2/repo-restore/f1a3388/repo-source-b.tgz"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "cmp",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/single2/repo-restore/f1a3388/repo-source-a.tgz",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/single2/repo-restore/f1a3388/repo-source-b.tgz"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/repo-functions-rehearsal.py",
+        "restore",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/sys/single2/repo-restore/f1a3388/repo-source-a.tgz",
+        "/private/tmp/taskbar-hero-repo-restore-f1a3388",
+        "--test"
+      ],
+      "exit": 0
+    }
+  ],
+  "archiveSha256": "323ab32249f341e4019487cf2d48e6d20f0f01d3d8fe0e0762fe0ac3c153e522",
+  "archiveBytes": 1363261,
+  "complete": true
+}

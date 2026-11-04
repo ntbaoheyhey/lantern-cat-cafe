@@ -1,0 +1,145 @@
+Scope: all 7 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +505
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 505, reused 496, downloaded 0, added 145
+Progress: resolved 505, reused 496, downloaded 0, added 403
+Progress: resolved 505, reused 496, downloaded 0, added 470
+Progress: resolved 505, reused 496, downloaded 0, added 500
+Progress: resolved 505, reused 496, downloaded 0, added 504
+Progress: resolved 505, reused 496, downloaded 0, added 505, done
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+│   utf-8-validate@5.0.10.                                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 5.9s using pnpm v10.28.0
+PASS  function v2-boss-fight options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-boss-fight anonymous - HTTP 401
+PASS  function v2-boss-fight oversized - HTTP 413
+PASS  function v2-choose-class options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-choose-class anonymous - HTTP 401
+PASS  function v2-choose-class oversized - HTTP 413
+PASS  function v2-claim options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-claim anonymous - HTTP 401
+PASS  function v2-claim oversized - HTTP 413
+PASS  function v2-craft options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-craft anonymous - HTTP 401
+PASS  function v2-craft oversized - HTTP 413
+PASS  function v2-equip options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-equip anonymous - HTTP 401
+PASS  function v2-equip oversized - HTTP 413
+PASS  function v2-lock options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-lock anonymous - HTTP 401
+PASS  function v2-lock oversized - HTTP 413
+PASS  function v2-relic-forge options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-relic-forge anonymous - HTTP 401
+PASS  function v2-relic-forge oversized - HTTP 413
+PASS  function v2-salvage options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-salvage anonymous - HTTP 401
+PASS  function v2-salvage oversized - HTTP 413
+PASS  function v2-state options - HTTP 204, CORS allows origin, POST and content-type
+PASS  function v2-state anonymous - HTTP 401
+PASS  function v2-state oversized - HTTP 413
+✔ unsigned POST requires exactly 401 (11.826917ms)
+✔ 503 fails with a budget migration hint for every probe (0.15225ms)
+✔ network errors fail (0.413666ms)
+✔ preflight requires 2xx and usable CORS headers (0.50875ms)
+✔ oversized body requires 400 or 413, and reports auth-before-body behavior (0.08525ms)
+✔ all nine routes get three probes without credentials; oversized JSON exceeds 8192 bytes (1.693417ms)
+✔ cut-over History contains the retired procedure; migration table matches the branch exactly (0.454167ms)
+✔ manual deploy lists the same 18 functions and options as the existing workflow (0.342209ms)
+✔ optional release follows section 7 with local proof and default-OFF flags (0.668959ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.411
+
+ RUN  v5.0.5 /private/tmp/taskbar-hero-single2-cxn3-local/supabase/tests
+
+stdout | src/live-schema.test.ts > all 17 expected objects are present with all migrations
+live-schema all migrations: 17/17 true
+constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled: true
+function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz): true
+function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean): true
+function public.v2_action_result(uuid,text,uuid,jsonb): true
+function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb): true
+function public.v2_cleanup_budgets(): true
+function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer): true
+function public.v2_take_budgets(jsonb): true
+policy public.siwe_nonces.siwe_nonces_server_only: true
+table private.v2_request_budgets: true
+table public.boss_clears: true
+table public.boss_fights: true
+table public.cat_state: true
+table public.founder_grants: true
+table public.items: true
+table public.player_stacks: true
+table public.v2_action_results: true
+
+stdout | src/live-schema.test.ts > only the seven newer objects are false through 20261102
+live-schema through 20261102: 10 true, 7 false
+constraint public.relic_vouchers.relic_vouchers_status_check allows cancelled: false
+function public.game_voucher_cancel_reissue(uuid,bigint,timestamptz): false
+function public.game_voucher_reissue_resolve(uuid,bigint,uuid,boolean): false
+function public.v2_action_result(uuid,text,uuid,jsonb): true
+function public.v2_boss_fight_once(uuid,uuid,jsonb,jsonb,jsonb): true
+function public.v2_cleanup_budgets(): false
+function public.v2_craft_once(uuid,uuid,jsonb,jsonb,jsonb,integer): true
+function public.v2_take_budgets(jsonb): false
+policy public.siwe_nonces.siwe_nonces_server_only: false
+table private.v2_request_budgets: false
+table public.boss_clears: true
+table public.boss_fights: true
+table public.cat_state: true
+table public.founder_grants: true
+table public.items: true
+table public.player_stacks: true
+table public.v2_action_results: true
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261107000000_voucher_race_guard.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 2: 20261107000000_voucher_race_guard.sql
+
+ ✓ src/live-schema.test.ts > is one catalog-only inventory with no write keywords, even in comments 2ms
+ ✓ src/live-schema.test.ts > all 17 expected objects are present with all migrations 6ms
+ ✓ src/live-schema.test.ts > only the seven newer objects are false through 20261102 2ms
+ ✓ src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally 134ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  16:07:13
+   Duration  2.19s (tests 97%, transform 2%, import 1%)
+
+[0, 0, 0]
+
+exit=0
