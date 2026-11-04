@@ -34,7 +34,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           {/* Network pill */}
           <div className="landing__network-pill" data-testid="landing-network-pill">
             <span className="landing__network-dot" aria-hidden="true" />
-            <span>Live on Avalanche Fuji</span>
+            <span>Candidate build, not live.</span>
           </div>
 
           {/* Title */}

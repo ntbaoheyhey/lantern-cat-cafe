@@ -110,7 +110,7 @@ describe('Home and Landing Components (AGR1)', () => {
       render(<LandingHero onStartGuest={onStartGuest} onHelp={onHelp} />);
 
       expect(screen.getByTestId('landing-hero')).toBeTruthy();
-      expect(screen.getByTestId('landing-network-pill').textContent).toContain('Live on Avalanche Fuji');
+      expect(screen.getByTestId('landing-network-pill').textContent).toContain('Candidate build, not live.');
       expect(screen.getByText(/Taskbar/i)).toBeTruthy();
       expect(screen.getByText(/A cozy idle RPG that lives in a strip of your browser/i)).toBeTruthy();
       expect(screen.getByText(/No token\. No fees to play/i)).toBeTruthy();
