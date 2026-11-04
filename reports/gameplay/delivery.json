@@ -5,7 +5,7 @@
     "codex/gameplay-onboarding-2026-11-04": "7d8d82135940c45191a73c505f9625c96bc7d8e9",
     "codex/gameplay-art-2026-11-04": "6b532f6d6ac215ea35c809e4473c3ccc97212247",
     "codex/gameplay-juice-2026-11-04": "be4abe91cc3044bd34902851ec02cecceadd5df0",
-    "ai/codex-gameplay-2026-11-04": "61bf3e42487a4129224e3cd289d1033684e1fe86"
+    "ai/codex-gameplay-2026-11-04": "64a1b864a7a2106db5c3f3b0af9b6fc355162a0c"
   },
   "runtimeSourceSha": "be4abe91cc3044bd34902851ec02cecceadd5df0",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
@@ -18,7 +18,54 @@
     "tools/art"
   ],
   "runtimeDiffIsEmpty": true,
-  "draftPullRequests": [],
+  "draftPullRequests": [
+    {
+      "number": 279,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/279",
+      "layer": "Guest guidance and claims",
+      "head": "codex/gameplay-onboarding-2026-11-04",
+      "base": "ai/codex-visual-2026-11-04"
+    },
+    {
+      "number": 280,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/280",
+      "layer": "Original character and item art",
+      "head": "codex/gameplay-art-2026-11-04",
+      "base": "codex/gameplay-onboarding-2026-11-04"
+    },
+    {
+      "number": 281,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/281",
+      "layer": "Item UI and bounded feedback",
+      "head": "codex/gameplay-juice-2026-11-04",
+      "base": "codex/gameplay-art-2026-11-04"
+    },
+    {
+      "number": 282,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/pull/282",
+      "layer": "Offline demo and measured proof",
+      "head": "ai/codex-gameplay-2026-11-04",
+      "base": "codex/gameplay-juice-2026-11-04"
+    }
+  ],
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "proofCommitNote": "The branch SHA records the published proof checkpoint; subsequent documentation-only commits add final URLs and shutdown receipts. The runtime SHA remains fixed.",
+  "mergeOrder": [
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282
+  ],
+  "publishedAtUtc": "2026-11-04T14:48:55.800213+00:00",
+  "localProcessesStopped": [
+    41657,
+    41659,
+    58761
+  ],
+  "remoteCI": "Pending at first publication; final check results recorded separately."
 }
