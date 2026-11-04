@@ -9,6 +9,8 @@
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
-    "onchain-proof": "node scripts/onchain-proof.mjs"
+    "onchain-proof": "node scripts/onchain-proof.mjs",
+    "art:generate": "python3 -B tools/art/visual.py",
+    "art:check": "python3 -B tools/art/visual.py --check"
   }
 }
