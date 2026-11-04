@@ -50,6 +50,10 @@ Read-only #244 review executes locally available checks: 18-function import guar
 
 Only release/user-gated work remains: real account quota, complete supported deployed backup/native restore, secret rotation, cutover go/no-go, final released recording and owner contest submission. [Judge packet](https://github.com/ntbaoheyhey/taskbar-hero/tree/ai/codex-docs-on-stack/docs/submission) · [Gallery source](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-gallery-on-stack/docs/ui/gallery/index.html). Private GitHub source is not hosted HTML. Local gallery: `/Users/bao/taskbar-hero-single2-gallery/docs/ui/gallery/index.html`.
 
+### Closing metadata correction — 2026-11-04T10:30:46Z
+
+Direct `git ls-remote origin refs/heads/main` and GitHub `GET /repos/ntbaoheyhey/taskbar-hero/commits/main` both confirm `340f88b92405ceb6b5421b207307fdbb283b2ca3`. The final GitHub snapshot incorrectly copied PR #244's historical base SHA `9c457a3` into its `main` field; that field is now corrected with explicit provenance. The report's main identity was already correct. Remote candidate refs and #270–#273 heads still match their accepted receipts, all recorded final gate exit codes are zero, and #244/#252/#257 remain unchanged/open/draft. No accepted gate was repeated and no capacity check, main merge or deployment was performed during this metadata correction.
+
 ## Owner steps — verbatim, not performed
 
 1. Open the Vercel account usage page and confirm real remaining deployments if you could not verify them.

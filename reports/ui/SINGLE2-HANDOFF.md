@@ -3,6 +3,7 @@
 - P0 capacity BLOCKED: Vercel CLI absent, #269 warning 2026-11-03T20:51:55Z retained. Ignored builds/UTC activity do not prove capacity.
 - Next planned check 2026-11-04T21:00Z (November 5, 04:00 Vietnam), not a guaranteed reset and not scheduled.
 - Main merges/deployments/live nonce probes/signatures/transactions: 0. Repo private. Remote main 340f88b; local main 6144d42 untouched.
+- Closing verification 10:30:46Z: remote ref + GitHub commits/main agree at 340f88b. Corrected final-github-state.json, which had copied #244's historical base 9c457a3; candidate refs/receipts unchanged.
 - P1 product COMPLETE: ai/codex-stack-tip and STACKFIX #271 at 1eefc3ef6d828b06710c8be18feb08e90b099e3e. Integration NEVER MERGE.
 - Seven original merges #262→#263→#264→#265→#266→#268→#269 were clean. Original heads unchanged; immutable stack-tip-base d31cb2a preserves #271 review.
 - Product self-graded (fresh pass) A95/B95: full 399/size ONCE, changed 246/size/reviewer, 1,467 web units/pass, axe 0/76, geometry 0/36, resize 0/40.

@@ -2,7 +2,18 @@
   "checkedAt": "2026-11-04 10:20:29 UTC",
   "repository": "ntbaoheyhey/taskbar-hero",
   "visibility": "private",
-  "main": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+  "main": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+  "mainVerifiedAt": "2026-11-04T10:30:46Z",
+  "mainEvidence": {
+    "gitCommand": "git ls-remote origin refs/heads/main",
+    "githubEndpoint": "GET /repos/ntbaoheyhey/taskbar-hero/commits/main",
+    "sha": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+    "agreement": true
+  },
+  "correction": {
+    "previousMain": "9c457a3e56b7c5813fa40e6aa20b0c14242ef26a",
+    "reason": "The original snapshot used PR #244 base_sha, which is not the current main branch head. Direct remote-ref and GitHub commit reads agree with the report. No release or candidate change occurred."
+  },
   "prs": [
     {
       "number": 244,
