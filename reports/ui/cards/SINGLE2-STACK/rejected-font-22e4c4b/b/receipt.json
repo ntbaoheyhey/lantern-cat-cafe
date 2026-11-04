@@ -1,0 +1,155 @@
+{
+  "head": "22e4c4b09323171ba15d26651fe0388f954d9efd",
+  "pass": "single2-stack-font-b",
+  "pid": 35942,
+  "cwd": "/private/tmp/taskbar-hero-single2-b-font",
+  "ports": [
+    5320,
+    5321,
+    5322,
+    5323,
+    5324
+  ],
+  "checks": [
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs",
+        "scripts/health-auth.test.mjs"
+      ],
+      "started": "2026-11-04T08:36:43.033193+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-04T08:36:43.248157+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-04T08:37:34.570736+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/web-units.log"
+    },
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-04T08:38:19.667313+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-04T08:38:28.779602+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/lint.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-04T08:38:36.588632+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-04T08:38:39.849738+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-04T08:38:51.331098+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-b/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/expired-session-feedback.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/art2.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "e2e/ui/class-confirmation-keyboard.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/feature-samples.spec.ts",
+        "e2e/ui/firstplay.spec.ts",
+        "e2e/ui/keyboard-regions.spec.ts",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/original-preview.spec.ts",
+        "e2e/ui/cxc2-proof.spec.ts",
+        "e2e/ui/forge-disabled-contrast.spec.ts",
+        "e2e/ui/landing-font-stability.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-04T08:38:59.643930+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/single2-stack-font-b/changed-1280x720.log"
+    }
+  ]
+}

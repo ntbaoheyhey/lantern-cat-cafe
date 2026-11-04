@@ -1,0 +1,58 @@
+{
+  "head": "22e4c4b09323171ba15d26651fe0388f954d9efd",
+  "pass": "single2-stack-font-a",
+  "pid": 35685,
+  "cwd": "/Users/bao/taskbar-hero-single2",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303,
+    5304
+  ],
+  "checks": [
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs",
+        "scripts/health-auth.test.mjs"
+      ],
+      "started": "2026-11-04T08:36:34.435586+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-04T08:36:34.654541+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-stack-font-a/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-04T08:37:16.319572+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/single2-stack-font-a/web-units.log"
+    }
+  ]
+}

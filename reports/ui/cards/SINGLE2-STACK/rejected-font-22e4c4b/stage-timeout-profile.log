@@ -1,0 +1,22 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-single2/apps/web
+
+ ✓ src/layout/StageLayout.test.tsx > keeps the classic layout when VITE_GAME_V2 is not set 71ms
+ ✓ src/layout/StageLayout.test.tsx > desktop: rail, top HUD, stage, character area and the seven tabs 833ms
+ ✓ src/layout/StageLayout.test.tsx > phone: bottom nav switches panels, Escape returns focus to tab 254ms
+ ✓ src/layout/StageLayout.test.tsx > uses fixture HUD values and exposes the gated hint 327ms
+ ✓ src/layout/StageLayout.test.tsx > shows class selection only while the authoritative class is null 253ms
+ ✓ src/layout/StageLayout.test.tsx > boss request opens the replay, then the victory chest 761ms
+ ✓ src/layout/StageLayout.test.tsx > phone: panel opening moves focus inside and closing returns it to the selected tab 298ms
+ ✓ src/layout/StageLayout.test.tsx > StageLayout does not re-render on a timer 144ms
+ ✓ src/layout/StageLayout.test.tsx > marks the production stage root when VITE_GAME_V2 is enabled 177ms
+ ✓ src/layout/StageLayout.test.tsx > renders SyncStatus inside the header sync-status slot 162ms
+ ✓ src/layout/StageLayout.test.tsx > holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner 1032ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  15:51:15
+   Duration  5.38s (tests 81%, import 9%, environment 7%, transform 3%)
+
+
+exit=0
