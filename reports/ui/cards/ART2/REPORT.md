@@ -13,3 +13,5 @@ Builder evidence:44 art/pipeline/catalog tests;51 focused + unchanged contrast c
 Paint-aware screenshots decode each visible image/atlas, inspect opaque clipped pixels and color diversity, and wait two browser paints before capture. Both common and Rare level6 catalog states are captured; this addresses SYS-UI-006's premature capture risk. No contrast threshold, failed test or assertion was weakened. Initial new-unit matcher API errors were fixed with the repository's existing DOM assertion style before passing typecheck.
 
 The extended pipeline validation passed10 deterministic repeats,8/8 mutation controls, source preservation for148 files and zero new broken links. Fresh A/B scores, locked release and live acceptance are still pending and will be recorded on the UI ledger. This report does not claim live activation of a default-off feature.
+
+Fresh pass A96/B96 on `a9afaadf263593d6849dbbd0934238d4b1289403`: each2533 core,44art,300changed browser,20/20resize,18strict audit views pass; full373per size shared once from A. All1141 prior image blobs unchanged;97owned paths; no critical defect found. Merge/live acceptance parked by SYSTEM auth-nonce502 hold.
