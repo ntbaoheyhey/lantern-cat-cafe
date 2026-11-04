@@ -11,7 +11,7 @@
 - Fresh current-live audit complete: rewards30.158/29.999s, savedguest/allroutes/3Forgemodes/proof/offline pass, no producterrors/writes/overflow; auto-fail knownstagearia/rewardcontrast (#263).
 - New docs draftPR270/127e3f8,4ownedpaths; A1448units/full368per-sizeONCE PASS, resize0/20, strict0/18; known failures retained.
 - Clean B finished tests-first, then full diff/scope/native review;14commandsPASS, same4axe failures/20scans=>0/100. No full suite repeated.
-- Native class1280/Home1280/Forge1600/Bag1600 reviewed; no new typography/spacing defect. Keyboard/performance audits prepared, serial after gate.
+- Native class/Home/Forge/Bag and focus captures reviewed; typography tokens match across28 route observations, no new visual defect.
 - Initial live audit guard omitted read-only eth_getBlockByNumber and blocked it; failed harness record retained. Corrected read-only allowlist rerun in current-live-r2.
 - Corrected docs drift: submission still waits for CXU3/CXC2 readiness; media/test evidence is explicitly historical6144d42. Prepare accurate current status without claiming held patches live.
 - #244 blocked by complete deployed-bundle backup + restore rehearsal; #252/#257 stay open/superseded.
@@ -20,4 +20,6 @@
 - Needs-user text will be appended verbatim to OPTIONAL-USER-STEPS; final SINGLE-REPORT.md required.
 - Docs270 Vercel statuses are both Ignored Build Step, not deployment/capacity evidence; release remains parked.
 - A/B receipts+fresh0/0grades+native geometry captures in reports/ui/cards/SINGLE-DOCS; accepted262–269 receipts unchanged.
-- Supplement PID80667 in /Users/bao/taskbar-hero-single, ports5300–5304/5340: intendedA state-matrix repeat, effects both sizes, keyboard/fps/CLS running serially.
+- Supplement80667 completed:60state casesPASS; effects10/10persize60fps;4samples60.001–60.004fps/CLS0. Keyboard12known failures(#268), overallexit1.
+- P3 no-deploy work complete with known failures retained; no new runtime repair. PR270 body updated with A0/B0 and final checks; release remains parked.
+- Final GitHub/main/live snapshot: private,allheads unchanged,main340f88b,7entryasset hashes unchanged. No own5300–5340listeners remain.
