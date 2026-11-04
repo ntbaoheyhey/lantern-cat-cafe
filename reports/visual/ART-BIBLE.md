@@ -13,6 +13,6 @@
 
 **Motion:** portrait 28 s stepped blink/breathe/tail/occasional nap; actor idle 2.2 s; steam 4–6 s; ambience 12–20 s. Hover 140 ms, press 80 ms, reward anticipation 180 ms → impact 70 ms → settle 480 ms. Crit hit-stop 60 ms affects presentation only; shake ≤2 rendered px. At most 12 number labels and 16 impact particles. Reduced motion: static lit scene and fully visible result; no shimmer, drift, flash or shake. Hidden tab: pause CSS and stop cosmetic clocks. No audio.
 
-**Typography / surfaces:** existing bundled Pixelify Sans for short headings, DM Sans for explanation, JetBrains Mono for values. Minimum body 12 px, ordinary text ≥4.5:1. Three surfaces: dark dusk recess, warm wood panel with top bevel, illuminated item plinth. Preserve readable text and focus outline before decorative chrome.
+**Typography / surfaces:** existing Pixelify Sans for short headings, DM Sans for explanation, JetBrains Mono for values. Evidence pins the existing font versions; runtime retains the existing font-loading path. Minimum body 12 px, ordinary text ≥4.5:1. Three surfaces: dark dusk recess, warm wood panel with top bevel, illuminated item plinth. Preserve readable text and focus outline before decorative chrome.
 
 **Do:** large readable silhouette, quiet resting space, icon with number, tooltips for secondary detail, finite feedback tied to real acknowledged events. **Don't:** copy art, sample third-party palettes, invent rewards, flicker the whole screen, animate every card, put glow behind body text, change rules or default-OFF Sample previews.
