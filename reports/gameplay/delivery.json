@@ -2,12 +2,12 @@
   "basePr": 278,
   "baseSha": "f8837d650a7efa5d485223caf9846ef0f54a6494",
   "branches": {
-    "codex/gameplay-onboarding-2026-11-04": "1f5ead0a18ee7fbba1691225e61fe8fc51ff83b9",
-    "codex/gameplay-art-2026-11-04": "88d65d43a3c95caf5229f8837b32fc1a33da3a7f",
-    "codex/gameplay-juice-2026-11-04": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
-    "ai/codex-gameplay-2026-11-04": "85023fc0867ca3c795b12090fb2ec95af09db25c"
+    "codex/gameplay-onboarding-2026-11-04": "c8a8474f1ce04fdeb958dd51dcd7b55272417698",
+    "codex/gameplay-art-2026-11-04": "e1ba53c756a57d58dacbb6e94e5fbc15437c8ec6",
+    "codex/gameplay-juice-2026-11-04": "24809e94dfd4d0074e3d0ccc8f9e4344ddbf7d6b",
+    "ai/codex-gameplay-2026-11-04": "691341edfbd0592b2f83d9665fabd2219e6ac963"
   },
-  "runtimeSourceSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
+  "runtimeSourceSha": "24809e94dfd4d0074e3d0ccc8f9e4344ddbf7d6b",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
   "runtimeEquivalentPaths": [
     "apps/web/src",
@@ -69,9 +69,11 @@
     80310,
     80594
   ],
-  "remoteCI": "G1 diagnostic rerun41861194618 pending; Art/UI final node checks pass, but both native E2E suites have397 passes and2 Landing PNG mismatches. Exact local Linux six-case suite passes; await retained native failure screenshots before fixing.",
+  "remoteCI": "Container-pinned runs pending: G1 41865231768, Art 41865325281, UI 41865324182. Native pixel diagnosis identifies exactly 859 fallback-symbol pixels per image; no baseline or tolerance changed.",
   "normalizedRuntimeSourceIsIdentical": false,
   "equivalenceReceipt": "runtime-equivalence.json",
   "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
-  "finalizedAtUtc": "2026-11-04T15:39:15.081210+00:00"
+  "finalizedAtUtc": "2026-11-04T16:17:00Z",
+  "previousVerifiedRuntimeSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
+  "applicationSourceIdenticalToPreviousRuntime": true
 }

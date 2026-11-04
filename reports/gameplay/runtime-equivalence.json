@@ -32,5 +32,17 @@
     ],
     "reason": "Native Linux late-font geometry, truthful candidate landing label, matching assertion and separately reviewed native pixel baselines. All gameplay/economy/art/replay source remains identical to the normalized measured runtime.",
     "proofBranchRuntimeMatchesFinalExactly": true
+  },
+  "ciEnvironmentFollowup": {
+    "checkedAtUtc": "2026-11-04T16:17:00Z",
+    "runtimeSourceSha": "24809e94dfd4d0074e3d0ccc8f9e4344ddbf7d6b",
+    "previousRuntime": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
+    "applicationSourceAndAssetsIdentical": true,
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "apps/web/e2e/ui/art2-baseline/PLATFORMS.md"
+    ],
+    "reason": "Retain native PNG diagnostics, run six exact pixel/font cases first, and pin the reviewed Linux fallback-font environment. No application, baseline, assertion or tolerance changes.",
+    "proofBranchApplicationMatchesFinalExactly": true
   }
 }
