@@ -2,7 +2,7 @@
 2026-11-04 · Original art only · Candidate build, not live. One author; no player-retention claim.
 
 ## Evidence and principles
-The baseline is #278, f8837d6. The full wall-clock guest run is being recorded in `before-run.json`; its completed metrics will be inserted before delivery. Seeded fixtures are used separately for screenshots, never as evidence of first-session pacing. An initial harness failure exposed an extra class confirmation and is retained in `logs/before-run-failed.log`.
+The baseline is #278, f8837d6. Two real ten-minute guest sessions are complete (`before-corrected-run.json`, `after-run.json`; summary `timeline-metrics.json`). First reward/drop: 29.542→10.042s; available upgrade: 30.196→10.146s; boss attempt: 300.820→301.095s. Scripted inspection at46s and equip at121s are not human decision-time measures. Baseline/candidate gear drops1→3 (all Common), Fish417→417, Yarn19→18, XP1502→1576; a single seed is not a rate-distribution study. Progress-kills60 on both runs stops at the chapter gate and is not total farming kills. Acknowledged reward gaps still reach30s; continuous preview combat is not proof of meaningful reactions every8s. Initial `before-run.json` is exploratory with a boss-gate harness bug; do not use its boss time. Seeded screenshot fixtures remain separate from pacing evidence.
 
 | ID | Source (text study only) | Finding and application |
 |---|---|---|
