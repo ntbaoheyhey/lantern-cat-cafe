@@ -1,4 +1,5 @@
 import React from 'react';
+import { MotionNumber } from '../motion/MotionNumber';
 import type { ServerStateV2 } from '../api/GameApiV2';
 import type { SyncStatusV2 } from '../game/v2/syncStatus';
 import { v2 } from '@taskbar-hero/game-rules';
@@ -57,7 +58,7 @@ export function Hud({
               >
                 <PixelIcon name="fish" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Fish</span>
-                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.fish.toLocaleString('en-US')}</span>
+                <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.fish} /></span>
               </div>
 
               <div
@@ -68,7 +69,7 @@ export function Hud({
               >
                 <PixelIcon name="yarn" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Yarn</span>
-                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.yarn.toLocaleString('en-US')}</span>
+                <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.yarn} /></span>
               </div>
 
               <div
