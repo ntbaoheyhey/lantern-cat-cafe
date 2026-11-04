@@ -1,0 +1,14 @@
+# Single-session handoff
+- Started 2026-11-04T04:27Z; hard deadline 2026-11-04T14:27Z. One agent, no helpers/scheduler/orchestrator.
+- P0 checked 2026-11-04T04:29:07.556170+00:00: CAPACITY BLOCKED; CLI absent; fresh #269 Vercel rate-limit status, second project ignored.
+- Actual deployment count unknown; UTC main commits/merged PRs 0/0 are activity only. Next retry 2026-11-04T21:00Z, beyond session limit; warning through20:51:55Z is not a guaranteed reset.
+- Main/live recorded340f88b; GitHub main unchanged, private, eight accepted draft heads unchanged.
+- Existing accepted exact-head full suites must not be repeated. Preserve all original receipts and failures.
+- Release order262→263→264→265→266→268→269→267; P1/P2 final-live work parked by capacity.
+- Main checkout and existing worktrees untouched; own /Users/bao/taskbar-hero-single on codex/single-session-docs.
+- P3 in progress: audit CXS1/CXS2 links/counts/media, keyboard/semantics/performance/spacing and existing main regression evidence.
+- Confirmed docs drift: submission still waits for CXU3/CXC2 readiness; media/test evidence is explicitly historical6144d42. Prepare accurate current status without claiming held patches live.
+- #244 blocked by complete deployed-bundle backup + restore rehearsal; #252/#257 stay open/superseded.
+- No live writes/migrations, edge/contract deploys, secrets, funded wallet, settings/flag changes or submission.
+- #269 edge source remains undeployed; historical502 cause unproven, health hold cleared.
+- Needs-user text will be appended verbatim to OPTIONAL-USER-STEPS; final SINGLE-REPORT.md required.

@@ -17,3 +17,9 @@ Vercel bot on new recovery draft #268 again reported the same `api-deployments-f
 ## Final SYS draft capacity evidence
 
 Commit `85a6919` for draft #269 has a Vercel commit-status failure at **2026-11-03T20:51:55Z**, described as “Deployment rate limited — retry in 24 hours.” The other project check succeeded by canceling its build through the existing Ignored Build Step. This establishes no hosted preview acceptance. The latest conservative 24-hour warning runs through **2026-11-04T20:51:55Z (03:51:55 Vietnam on November 5)**. Recheck actual account usage at the UTC boundary **2026-11-04T00:00Z (07:00 Vietnam)** before considering release. See `reports/sys/release-final-state.json` for the minimal structured evidence.
+
+## Single-session capacity check — 2026-11-04T04:29:07.556170+00:00
+
+CAPACITY BLOCKED. Fresh GitHub API reads still show the exact #269 head with Vercel production-project status “Deployment rate limited — retry in 24 hours”; the second project is Ignored, not a successful deployment. Vercel CLI remains absent. Current UTC activity is zero main commits and zero merged PRs, which does not establish actual deployment usage or remaining quota. Repository remains private; main and all eight accepted draft heads are unchanged. No merge or deployment was used as a quota probe.
+
+The latest recorded provider warning runs through **2026-11-04T20:51:55Z**; planned next check is **2026-11-04T21:00:00Z** (04:00 Vietnam on November 5), not a guaranteed reset. This is beyond the session’s ten-hour maximum (started around 04:27Z). No scheduler/heartbeat is available or started; finish no-deploy work and stop when only capacity/user gates remain. The next UTC date boundary is 2026-11-05T00:00Z and is not capacity proof. Raw minimal evidence: [release-state.json](single-session/release-state.json).
