@@ -20,6 +20,10 @@ await build({
     rollupOptions: { input: resolve("e2e/fixtures/art2-view.html") } },
 });
 
+// Read-only conditional feature fixture, isolated from production output.
+await build({ configFile: resolve('vite.config.ts'), envDir: false, publicDir: false,
+  base: '/feature-fixture/', build: { outDir: `${directory}/feature-fixture`, emptyOutDir: true,
+    rollupOptions: { input: resolve('e2e/fixtures/feature-samples.html') } } });
 // Wallet-free motion fixture uses the actual HUD/cue components.
 await build({
   configFile: resolve("vite.config.ts"), envDir: false, publicDir: false,
