@@ -89,17 +89,18 @@ Initial GitHub checks exposed generated Deno-map drift, art-layer assertions pla
 
 Native diagnostic run 41863629344 saved the actual PNG bytes. Each Landing image differs by exactly 859 pixels, restricted to the proof-strip arrows, checkmark and adjacent label; all other pixels match. Hosted Ubuntu's fallback symbol fonts differ from the reviewed Playwright Noble container. The E2E job now pins that exact image by digest. No application code, baseline bytes, assertions or tolerances changed in this final CI fix. Four native delayed-font cases and the exact local Linux six-case suite already pass. See `native-font-diagnosis.md`, the original artifact files and `native-delta-*.json` for reproducible evidence.
 
-All three final hosted CI runs pass on their exact published heads:
+All four final hosted CI runs pass on their exact published heads:
 
 | Layer | Head | Run | Native preflight | Full E2E | Web units |
 |---|---|---|---:|---:|---:|
 | Guest guidance | `70594b3` | [41866021161](https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866021161) | 6/6 | 399/399 | 1477/1477 |
 | Original art | `68b0003` | [41866016850](https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866016850) | 6/6 | 399/399 | 1477/1477 |
 | Items / juice | `6888df5` | [41866018424](https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866018424) | 6/6 | 399/399 | 1482/1482 |
+| Offline proof / delivery | `7eb1ee7` | [41869199176](https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41869199176) | 6/6 | 399/399 | 1482/1482 |
 
 All node jobs pass the unchanged Deno-map drift guard, typecheck, lint, workspace/backend mock tests and builds. G1 also passes96 contract tests and the ABI drift guard; later layers skip only that unchanged job via the existing path filter. No E2E test is skipped. The existing11 rule skips and2 expected failures remain unchanged. Original completed logs are retained as `logs/ci-final-*.log.gz` with hashes in the archive manifest. `ci-final.json` binds each receipt to its full SHA. The runtime is source/asset-identical to9051efc; `runtime-equivalence.json` records the CI-only follow-up.
 
-The proof layer contains documentation/evidence/tools only and matches the final UI runtime. Its exact post-publication check is recorded in the [ledger CI receipt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/gameplay/ci-final.json), allowing the tested proof commit to remain unchanged.
+Final proof commit `7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5` passed its own hosted CI on 2026-11-04 at 16:50:24 UTC: 6/6 native preflight, 399/399 E2E and 1482/1482 web units, with all node checks green. The proof layer contains documentation/evidence/tools only and matches the final UI runtime. Original node/E2E logs are retained as `logs/ci-final-proof-*.log.gz`; all 27 archived logs match their decoded hashes. This post-publication [ledger CI receipt](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/gameplay/ci-final.json) preserves the tested proof commit unchanged. All four PRs remain draft and unmerged; no deployment occurred.
 
 ## Local reproduction
 ```sh

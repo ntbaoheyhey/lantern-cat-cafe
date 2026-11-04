@@ -12,3 +12,7 @@ The final real-clock comparison uses `before-corrected-run.json` and `after-run.
 `native-font-diagnosis.md`, `native-delta-*.json` and `native-failure-41863629344/` preserve the exact hosted-runner symbol-font mismatch. The final CI pin changes only the browser test environment; no baseline or pixel tolerance is relaxed.
 
 `ci-final.json` records the three final runtime layers passing full hosted CI on their exact SHAs. The final proof publication receipt is retained on the ledger branch so the checked proof commit is not modified by its own receipt.
+
+## Final publication receipt
+
+The exact proof head `7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5` passed [hosted CI](https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41869199176): 399/399 E2E, 6/6 native preflight, 1482/1482 web units and all node checks. The tested candidate commit remains unchanged; this ledger holds its final `ci-final.json`, delivery manifest and losslessly archived job logs. See `HANDOFF.md` for completed delivery and the explicit backlog.

@@ -5,7 +5,7 @@
     "codex/gameplay-onboarding-2026-11-04": "70594b3bce68df32f8a25ed901f0677446b9806f",
     "codex/gameplay-art-2026-11-04": "68b00038a09e5b47c1fd0ad25b71372678fd3339",
     "codex/gameplay-juice-2026-11-04": "6888df5e15ec2e514c03469110866ce50b882b4f",
-    "ai/codex-gameplay-2026-11-04": "1f6313b64ffb3118096257a5f40d3a799a209b58"
+    "ai/codex-gameplay-2026-11-04": "7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5"
   },
   "runtimeSourceSha": "6888df5e15ec2e514c03469110866ce50b882b4f",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
@@ -50,7 +50,7 @@
   ],
   "merged": false,
   "deployed": false,
-  "proofCommitNote": "Proof branch SHA records the local evidence checkpoint preceding this manifest update. Later documentation-only commits may follow. The runtime SHA identifies the exact final UI source.",
+  "proofCommitNote": "This ledger receipt records the exact final proof commit. Post-publication results are written only on the ledger, preserving the checked proof commit.",
   "mergeOrder": [
     275,
     276,
@@ -69,19 +69,25 @@
     80310,
     80594
   ],
-  "remoteCI": "All three runtime layers pass full hosted CI: each6/6 native preflight and399/399 E2E; G1/Art1477 web tests, UI1482; all node checks pass. G1 contracts96/96. Exact proof-head publication check follows.",
+  "remoteCI": "All four published heads pass full hosted CI, each with 6/6 native preflight and 399/399 E2E. G1/Art pass 1477 web tests, UI/Proof pass 1482. All node jobs pass. G1 contracts pass 96/96; later unchanged contract jobs are path-filtered.",
   "normalizedRuntimeSourceIsIdentical": false,
   "equivalenceReceipt": "runtime-equivalence.json",
   "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
-  "finalizedAtUtc": "2026-11-04T16:36:25.851386+00:00",
+  "finalizedAtUtc": "2026-11-04T23:45:38.106198+00:00",
   "previousVerifiedRuntimeSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
   "applicationSourceIdenticalToPreviousRuntime": true,
   "ciRuns": {
     "g1": 41866021161,
     "art": 41866016850,
-    "ui": 41866018424
+    "ui": 41866018424,
+    "proof": 41869199176
   },
   "runtimeLayerCI": "ci-final.json",
   "postPublicationLedger": "https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/gameplay/ci-final.json",
-  "ledgerCheckpoint": "db51796"
+  "ledgerCheckpoint": "5555ddb8c08e8faa8feaefbd024145f041e5871f",
+  "proofPublicationRun": 41869199176,
+  "proofPublicationStatus": "completed",
+  "proofPublicationConclusion": "success",
+  "proofPublicationCompletedAtUtc": "2026-11-04T16:50:24Z",
+  "deliveryStatus": "complete with explicitly documented quality gaps and backlog"
 }
