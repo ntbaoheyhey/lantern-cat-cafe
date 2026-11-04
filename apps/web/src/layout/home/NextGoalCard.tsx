@@ -1,3 +1,4 @@
+import { journeyGoals } from '../../gameplay/goals';
 import React from 'react';
 import type { ServerStateV2 } from '../../api/GameApiV2';
 
@@ -8,7 +9,8 @@ export interface NextGoalCardProps {
 
 export function NextGoalCard({ state, onNavigate }: NextGoalCardProps) {
   const { chapter, round, kills, killsPerRound, gated, neededPower } = state.progress;
-  const isReady = gated || kills >= killsPerRound;
+  const goals = journeyGoals(state);
+  const isReady = goals.journey.bossReached;
   const pct = Math.min(100, Math.round((kills / Math.max(1, killsPerRound)) * 100));
 
   return (
@@ -34,7 +36,7 @@ export function NextGoalCard({ state, onNavigate }: NextGoalCardProps) {
           <div
             className="home-goal-bar"
             role="progressbar"
-            aria-label="Progress to boss"
+            aria-label="Progress through this round"
             aria-valuenow={kills}
             aria-valuemin={0}
             aria-valuemax={killsPerRound}
@@ -48,12 +50,13 @@ export function NextGoalCard({ state, onNavigate }: NextGoalCardProps) {
 
         <p className="home-goal-desc">
           {gated
-            ? 'Boss is ready! Recommended power: ' + neededPower.toLocaleString('en-US') + '.'
+            ? 'Power wall. Compare gear; estimated power needed: ' + neededPower.toLocaleString('en-US') + '.'
             : isReady
             ? 'The chapter boss awaits your challenge.'
             : 'Defeat ' + (killsPerRound - kills) + ' more monsters to reach the next stage.'}
         </p>
 
+        <div className="journey-horizons journey-horizons--home"><span><b>Now</b>{goals.now.text}</span><span><b>Soon</b>{goals.soon}</span><span><b>Later</b>{goals.later}</span></div>
         <button
           type="button"
           className="pixel-btn home-goal-action-btn"

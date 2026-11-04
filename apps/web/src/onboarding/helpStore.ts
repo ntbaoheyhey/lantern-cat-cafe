@@ -11,6 +11,8 @@ function seen(): boolean {
 }
 
 let open = !seen();
+let automatic = true;
+export const isAutomaticHelp = () => automatic;
 
 export const getHelpOpen = (): boolean => open;
 
@@ -26,7 +28,9 @@ function set(next: boolean): void {
 }
 
 export function openHelp(): void {
+  automatic = false;
   set(true);
+  listeners.forEach((fn) => fn());
 }
 
 export function closeHelp(): void {
@@ -41,5 +45,6 @@ export function closeHelp(): void {
 /** Tests: re-read localStorage as if the page had just loaded. */
 export function resetHelpForTests(): void {
   open = !seen();
+  automatic = true;
   listeners.forEach((fn) => fn());
 }

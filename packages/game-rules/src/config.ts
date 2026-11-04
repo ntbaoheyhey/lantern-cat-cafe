@@ -81,6 +81,20 @@ export const CONFIG = {
       offlineCapSeconds: 6 * 3600,
     },
   },
+  /** Client presentation only. No grants, drops or server combat rules depend on these. */
+  gameplay: {
+    firstClaimMs: 10_000,
+    claimIntervalMs: 30_000,
+    closeCallHpFraction: 0.2,
+    greatRollThreshold: 0.8,
+    keyStats: 3,
+    coachSteps: 3,
+    juice: { maxParticles: 16, maxTweens: 32, maxLabels: 12, maxProjectiles: 8,
+      critStopMs: 60, maxShakePx: 2, flashMs: 70, chipTrailMs: 650,
+      anticipationMs: 180, impactMs: 70, settleMs: 480, defeatMs: 300,
+      labelMs: 650, calmLabelMs: 220, comboCap: 9, comboResetMs: 8000 },
+    actor: { idleFrameMs: [700, 180, 120, 180, 600, 100, 120, 200] },
+  },
   /** Gear slots, in display order (content.ts). */
   slots: SLOT_IDS,
   /** Rarity tiers, lowest to highest (content.ts). */

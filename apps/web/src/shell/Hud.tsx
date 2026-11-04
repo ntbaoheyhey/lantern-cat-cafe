@@ -1,3 +1,4 @@
+import { journeyGoals } from '../gameplay/goals';
 import React from 'react';
 import { ResourceGain } from '../visual/ResourceGain';
 import { MotionNumber } from '../motion/MotionNumber';
@@ -29,6 +30,7 @@ export function Hud({
   onHintAction,
   mode,
 }: HudProps) {
+  const goals = journeyGoals(state);
   const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
   const maxKeys = catKeyDef ? catKeyDef.maxStack : 5;
   const title = <h1 className="v2-title">Taskbar Hero</h1>;
@@ -124,7 +126,7 @@ export function Hud({
           </div>
         </div>
       </header>
-      <div className="shell-context">{title}<span className="visual-build-label">Candidate build, not live.</span>{guidance}</div>
+      <div className="shell-context">{title}<span className="visual-build-label">Candidate build, not live.</span><div className="journey-horizons" aria-label="Goal ladder"><span><b>Soon</b>{goals.soon}</span><span><b>Later</b>{goals.later}</span></div>{guidance}</div>
     </>
   );
 }
