@@ -31,3 +31,5 @@
 - Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal ACTIVE, not complete.
 - P1e mocked-state milestone:14/14PASS on d31cb2a,nonce503/expiry/focus/wrongnet/signed+unsignedHUD/offline/API503; zero product errors/overflow/signatures. Evidence reports/ui/cards/SINGLE2-U5/stack-audit.md. Two harness failures preserved; source unchanged.
 - Full-suite milestone: A2 FULL391/391 PASS both sizes; no repeat. Resize/strict/axe remaining; B changed1600 finishing. Axe harness now reloads seededForge before confirmation scans.
+- NEW REAL DEFECT: d31cb2a A2/B both AUTO-FAIL0: axe38scans, salvage contrastFAIL2sizes (rowopacity0.55;2.73–3.66:1). Other gatesPASS. Evidence SINGLE2-STACK/rejected-a,b.
+- STACKFIX started /Users/bao/taskbar-hero-single2-fix branch ai/codex-stackfix fromd31cb2a. New regression4/4RED; CSS removes inheritedrowopacity, greenbuilderPID9859 pending. Finaltip must rerun gate once per newhead.
