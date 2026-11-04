@@ -14,3 +14,5 @@ python3 reports/gameplay/native-pixel-diff.py reports/gameplay/native-failure-41
 ```
 
 The preceding exact six-case suite already passed in this local image with Chromium 156.0.8078.4 (`logs/native-suite-reproduction.log`). Hosted verification of the image pin is recorded separately in the final CI receipts; local success alone is not a hosted-green claim.
+
+The initial pinned-container GitHub run 41865231768 passed all six preflight cases in31.5s at16:17:14 UTC. Its full run was cancelled by the final commit, which prevents apt from upgrading the pinned system fonts during browser installation. The cancelled log is retained as `logs/ci-pinned-preflight-superseded.log.gz`; full final-suite results are separate.

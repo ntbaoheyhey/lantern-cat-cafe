@@ -1,0 +1,51 @@
+{
+  "checkedAtUtc": "2026-11-04T16:36:25.851386+00:00",
+  "layers": [
+    {
+      "layer": "g1",
+      "runId": 41866021161,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866021161",
+      "headSha": "70594b3bce68df32f8a25ed901f0677446b9806f",
+      "status": "completed",
+      "conclusion": "success",
+      "nativePreflightPassed": 6,
+      "e2ePassed": 399,
+      "e2eSkipped": 0,
+      "webUnitsPassed": 1477,
+      "nodeChecks": "Deno map drift guard, typecheck, lint, workspace tests and build pass",
+      "contractsPassed": 96,
+      "contractsNote": "Build,96 tests and generated ABI drift guard pass"
+    },
+    {
+      "layer": "art",
+      "runId": 41866016850,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866016850",
+      "headSha": "68b00038a09e5b47c1fd0ad25b71372678fd3339",
+      "status": "completed",
+      "conclusion": "success",
+      "nativePreflightPassed": 6,
+      "e2ePassed": 399,
+      "e2eSkipped": 0,
+      "webUnitsPassed": 1477,
+      "nodeChecks": "Deno map drift guard, typecheck, lint, workspace tests and build pass",
+      "contractsPassed": null,
+      "contractsNote": "Unchanged source; path filter skips this job in later layers"
+    },
+    {
+      "layer": "ui",
+      "runId": 41866018424,
+      "url": "https://github.com/ntbaoheyhey/taskbar-hero/actions/runs/41866018424",
+      "headSha": "6888df5e15ec2e514c03469110866ce50b882b4f",
+      "status": "completed",
+      "conclusion": "success",
+      "nativePreflightPassed": 6,
+      "e2ePassed": 399,
+      "e2eSkipped": 0,
+      "webUnitsPassed": 1482,
+      "nodeChecks": "Deno map drift guard, typecheck, lint, workspace tests and build pass",
+      "contractsPassed": null,
+      "contractsNote": "Unchanged source; path filter skips this job in later layers"
+    }
+  ],
+  "proofNote": "The documentation-only final proof commit follows this receipt. Its post-publication CI receipt will be recorded on ai/codex-ui-ledger at reports/gameplay/ci-final.json to avoid changing the tested proof commit."
+}

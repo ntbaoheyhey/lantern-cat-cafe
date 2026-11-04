@@ -2,12 +2,12 @@
   "basePr": 278,
   "baseSha": "f8837d650a7efa5d485223caf9846ef0f54a6494",
   "branches": {
-    "codex/gameplay-onboarding-2026-11-04": "c8a8474f1ce04fdeb958dd51dcd7b55272417698",
-    "codex/gameplay-art-2026-11-04": "e1ba53c756a57d58dacbb6e94e5fbc15437c8ec6",
-    "codex/gameplay-juice-2026-11-04": "24809e94dfd4d0074e3d0ccc8f9e4344ddbf7d6b",
-    "ai/codex-gameplay-2026-11-04": "691341edfbd0592b2f83d9665fabd2219e6ac963"
+    "codex/gameplay-onboarding-2026-11-04": "70594b3bce68df32f8a25ed901f0677446b9806f",
+    "codex/gameplay-art-2026-11-04": "68b00038a09e5b47c1fd0ad25b71372678fd3339",
+    "codex/gameplay-juice-2026-11-04": "6888df5e15ec2e514c03469110866ce50b882b4f",
+    "ai/codex-gameplay-2026-11-04": "1f6313b64ffb3118096257a5f40d3a799a209b58"
   },
-  "runtimeSourceSha": "24809e94dfd4d0074e3d0ccc8f9e4344ddbf7d6b",
+  "runtimeSourceSha": "6888df5e15ec2e514c03469110866ce50b882b4f",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
   "runtimeEquivalentPaths": [
     "apps/web/src",
@@ -69,11 +69,19 @@
     80310,
     80594
   ],
-  "remoteCI": "Container-pinned runs pending: G1 41865231768, Art 41865325281, UI 41865324182. Native pixel diagnosis identifies exactly 859 fallback-symbol pixels per image; no baseline or tolerance changed.",
+  "remoteCI": "All three runtime layers pass full hosted CI: each6/6 native preflight and399/399 E2E; G1/Art1477 web tests, UI1482; all node checks pass. G1 contracts96/96. Exact proof-head publication check follows.",
   "normalizedRuntimeSourceIsIdentical": false,
   "equivalenceReceipt": "runtime-equivalence.json",
   "gameplayRuntimeEquivalentExceptDeclaredLandingFix": true,
-  "finalizedAtUtc": "2026-11-04T16:17:00Z",
+  "finalizedAtUtc": "2026-11-04T16:36:25.851386+00:00",
   "previousVerifiedRuntimeSha": "9051efccc9b24fa29b9f575e6935bb6222cd300f",
-  "applicationSourceIdenticalToPreviousRuntime": true
+  "applicationSourceIdenticalToPreviousRuntime": true,
+  "ciRuns": {
+    "g1": 41866021161,
+    "art": 41866016850,
+    "ui": 41866018424
+  },
+  "runtimeLayerCI": "ci-final.json",
+  "postPublicationLedger": "https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/gameplay/ci-final.json",
+  "ledgerCheckpoint": "db51796"
 }
