@@ -15,11 +15,11 @@ Base1eefc3e + #270 cherry-picked as05ecd89. Main untouched.
 - Full VISUAL-REPORT.md + exact provenance + logs; full browser log compressed, no runtime deployment.
 - Cold review fixed Bag art size, complete hearth, Market columns, arena scale/title/HP, secondary actions and rarity contrast. No unfinished runtime code.
 
-## Delivery next
-1. Commit proof/docs. Four branch stack: foundation a1cdfb4 -> scenes f35b0d8 -> polish fb59d8a -> final visual branch (proof). Each diff<1500 changed lines; verify counts.
-2. Push four branches and open DRAFT PRs via GitHub connector; query found no existing visual PR. No main base and no merges/deploys. Existing Vercel ignoreCommand skips non-main branches.
-3. Append PR links to report/gallery, commit/push proof metadata. Copy final report to ledger reports/visual/VISUAL-REPORT.md; commit/push ONLY own paths. Ledger has many unrelated untracked files.
-4. Final Vietnamese <=10 lines with gallery path, PR links, scores and merge recommendation after cap clears. Explicitly state target9+ still open.
+## Delivery status
+- Four branches pushed, all DRAFT and stacked: #275 foundation -> #276 scenes -> #277 polish -> #278 proof. No merge/deploy.
+- Current task: commit final report/gallery PR links, push final branch; copy report to ledger and commit/push ONLY own paths. Then verify remote heads/draft state and final Vietnamese reply.
+- Foundation a1cdfb4, scenes f35b0d8, polish fb59d8a; proof initial d54a3eb (later publication metadata commit changes only proof/docs). Each diff<1500 text lines.
+- Final Vietnamese <=10 lines: gallery path, PRs, scores5.7->8.3, target9+ still open, merge order after cap clears. User can view Vite5380 now.
 
 ## Local processes and artifacts
 Vite5380 PID8577 (real demo), baseline5382 PID9896, production5381 PID19874. Only kill owned PIDs if needed; no broad kills. Keep5380 for viewing.

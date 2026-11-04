@@ -7,6 +7,7 @@ const root=resolve(import.meta.dirname,'..'), out=resolve(root,'docs/visual');
 const read=p=>readFileSync(resolve(root,p),'utf8'), json=p=>JSON.parse(read(p));
 const scores=json('reports/visual/scores.json'), palette=json('tools/art/visual-palette.json');
 const frames=json('reports/visual/animation-frames.json');
+const prs=json('reports/visual/pull-requests.json');
 const comparisons=[...scores.screens,{id:'classic-upgrade',label:'Classic Upgrade · unchanged supplement',before:[5,6,8,4,5,5,6],after:[5,6,8,4,5,5,6],unchanged:true,note:'This is the actual classic Upgrade screen, kept as an honest supplement. Its before/after PNGs are byte-identical at all three sizes. It is not part of the approved v2 layout or the upgraded-view score mean.'}];
 const sourceSha=execFileSync('git',['log','-1','--format=%h','--','apps/web/src','tools/art'],{cwd:root,encoding:'utf8'}).trim();
 const esc=v=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
@@ -39,7 +40,7 @@ ${comparisons.map(s=>`<section class="review" id="${s.id}"><div class="review-he
 VITE_GAME_V2=1 VITE_ALLOW_MOCK_AUTH=1 VITE_SUPABASE_URL= VITE_SUPABASE_ANON_KEY= \\
   pnpm --filter @taskbar-hero/web exec vite --host 127.0.0.1 --port 5380 --strictPort
 # Open http://127.0.0.1:5380/?demo#home</pre><p><a href="../../reports/visual/VISUAL-REPORT.md">Read the delivery report</a> · <a href="../../reports/visual/ART-BIBLE.md">Full art bible</a> · <a href="../../reports/visual/RESEARCH.md">Research and baseline audit</a></p></section>
-<footer class="foot">Candidate build, not live. Not merged, not deployed. No rule, economy, contract, backend or database changes. Original single-agent work · 2026-11-04.</footer></main>
+<footer class="foot"><p>Draft review stack: ${prs.map(p=>`<a href="${p.url}">#${p.number}</a>`).join(' → ')}. Review foundation → scenes → polish → proof after capacity and visual acceptance gates clear.</p>Candidate build, not live. Not merged, not deployed. No rule, economy, contract, backend or database changes. Original single-agent work · 2026-11-04.</footer></main>
 <script>
 const size=document.querySelector('#size'),mode=document.querySelector('#mode');let side=false,paused=false;
 for(const section of document.querySelectorAll('.review')){const input=section.querySelector('input'),compare=section.querySelector('.compare');input.addEventListener('input',()=>{compare.style.setProperty('--split',input.value+'%');section.querySelector('output').value=input.value+'%';});}

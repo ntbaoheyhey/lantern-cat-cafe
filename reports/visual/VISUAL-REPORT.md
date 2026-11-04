@@ -8,7 +8,7 @@ Open **`/Users/bao/taskbar-hero-visual/docs/visual/index.html`** by double-click
 ## Candidate and review stack
 - Base: `ai/codex-stack-tip` at `1eefc3e`; #270 `932b6f7` cherry-picked as `05ecd89`, as explicitly requested. Its docs are inherited context, not new product behavior.
 - Runtime implementation: `0067d5c`; final art catalog and accessible Market fixture checkpoint: `fb59d8a`. Gallery SHA refers to this checkpoint; subsequent commits contain proof/documentation only.
-- Final branch: `ai/codex-visual-2026-11-04`. Draft PR links and final branch SHA are recorded below after publication.
+- Final branch: `ai/codex-visual-2026-11-04`. Draft review order: [#275](https://github.com/ntbaoheyhey/taskbar-hero/pull/275) → [#276](https://github.com/ntbaoheyhey/taskbar-hero/pull/276) → [#277](https://github.com/ntbaoheyhey/taskbar-hero/pull/277) → [#278](https://github.com/ntbaoheyhey/taskbar-hero/pull/278). Four layers keep every diff below 1,500 changed text lines; the last contains proof/docs only.
 - Main checkout `/Users/bao/taskbar-hero` was never checked out, reset or stashed. #244, #252 and #257 were not changed. No deploy, database write, signing, wallet transaction or real funds. Local fixture callbacks only.
 
 ## Before / after scores
@@ -95,4 +95,4 @@ No `pnpm demo` script exists on this branch. The live local demo starts from the
 4. Existing runtime web-font loading remains unchanged; evidence pins it but the product has no new offline font guarantee.
 5. Accessibility evidence is automated plus a keyboard sample, not a complete assistive-technology certification. A real hidden-tab/OS energy profile and broader hardware testing remain follow-up work.
 
-Keep every PR **draft**. After the Vercel cap clears, first follow the existing integration/release runbook for stack dependencies; do not merge the integration stack branch itself. Review visual preference, then accept the visual foundation → scenes → UI/feedback/catalog → proof stack in order, retargeting and rerunning checks against the actual release head after any squash. Preview and production smoke/asset receipts are still required then. No deployment or merge was performed during this task.
+Published draft stack: [#275](https://github.com/ntbaoheyhey/taskbar-hero/pull/275) → [#276](https://github.com/ntbaoheyhey/taskbar-hero/pull/276) → [#277](https://github.com/ntbaoheyhey/taskbar-hero/pull/277) → [#278](https://github.com/ntbaoheyhey/taskbar-hero/pull/278). Keep every PR **draft**. After the Vercel cap clears, first follow the existing integration/release runbook for stack dependencies; do not merge the integration stack branch itself. Review visual preference, then accept the visual foundation → scenes → UI/feedback/catalog → proof stack in order, retargeting and rerunning checks against the actual release head after any squash. Preview and production smoke/asset receipts are still required then. No deployment or merge was performed during this task.
