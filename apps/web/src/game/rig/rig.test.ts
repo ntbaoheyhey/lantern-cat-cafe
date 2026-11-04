@@ -9,7 +9,7 @@ import {
   ANCHOR_NAMES, ANIM_NAMES, CLASS_IDS, GEAR_RARITIES, WEAPON_TYPES, type EquippedVisuals, type GearRarity, type SpriteMap,
 } from './types';
 
-const FRAME_COUNTS = { idle: 4, walk: 6, attack: 6, hurt: 2, defeat: 4, victory: 4 } as const;
+const FRAME_COUNTS = { idle: 8, walk: 6, attack: 6, hurt: 2, defeat: 4, victory: 4, nap: 2, equip: 4 } as const;
 
 function gearFor(cls: (typeof CLASS_IDS)[number], armor: boolean, rarity: GearRarity, armorSet = 'cozy'): EquippedVisuals {
   const weapon = { set: CLASS_LOOKS[cls].starterWeapon, rarity };

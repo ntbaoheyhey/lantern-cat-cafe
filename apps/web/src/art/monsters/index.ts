@@ -1,3 +1,4 @@
+import { GAMEPLAY_MONSTERS } from './gameplay.generated';
 import type { MonsterArt } from './types';
 import { CH1_ART, CH1_PILOT_ART } from './ch1';
 import { CH2_ART, CH2_PILOT_ART } from './ch2';
@@ -11,6 +12,7 @@ export const MONSTER_ART: Readonly<Record<string, MonsterArt>> = {
   ...CH3_ART,
   ...CH4_ART,
   ...CH5_ART,
+  ...GAMEPLAY_MONSTERS,
 };
 
 export const MONSTER_PILOT_ART: Readonly<Record<string, MonsterArt>> = {
@@ -19,6 +21,7 @@ export const MONSTER_PILOT_ART: Readonly<Record<string, MonsterArt>> = {
   ...CH3_PILOT_ART,
   ...CH4_PILOT_ART,
   ...CH5_PILOT_ART,
+  ...GAMEPLAY_MONSTERS,
 };
 
 export function monsterArt(id: string): MonsterArt | null {

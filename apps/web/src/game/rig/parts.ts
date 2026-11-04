@@ -10,17 +10,17 @@ import type { ClassId, Markings, Point, SpriteMap } from './types';
  */
 
 export const HEAD = sprite([
-  '.oo......oo..',
-  '.ono....ono..',
-  '.onnooooonno.',
-  'ooooooooooooo',
-  'ooooooooooooo',
-  'ooooooooooooo',
-  'ooooooooooooo',
-  'oooooowwwwwoo',
-  'ooooowwwnwwwo',
-  '.ooowwwkwkwo.',
-  '..ooooooooo..',
+  '.wo......oo..',
+  '.wno....ond..',
+  '.wnnowooonnd.',
+  'owwwwoooooodd',
+  'owwoooooooood',
+  'owooooooooood',
+  'ooooooooooood',
+  'oowoowwwwwodd',
+  'oowwwwwnwwwwd',
+  '.oowwwkwkwdd.',
+  '..odddddddd..',
 ]);
 /** Skull top centre inside HEAD: where a helmet's pivot lands. */
 export const HEAD_TOP: Point = { x: 6, y: 3 };
