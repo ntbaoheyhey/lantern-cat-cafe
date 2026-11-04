@@ -730,7 +730,8 @@
 }
 
 .forge-item-row.disabled {
-  opacity: 0.55;
+  /* The disabled checkbox and status tag convey availability. Keep the reason
+     and item metadata readable at full contrast. */
   background: var(--surface, #2a1f36);
 }
 
