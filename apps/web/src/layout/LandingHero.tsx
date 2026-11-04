@@ -38,12 +38,12 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           </div>
 
           {/* Title */}
-          <div id="landing-title" className="landing__title" aria-hidden="true">
+          <div id="landing-title" className="landing__title" role="heading" aria-level={2}>
             Taskbar<br />Hero
           </div>
 
           {/* Promise copy */}
-          <p className="landing__promise">
+          <p id="landing-promise" className="landing__promise">
             A cozy idle RPG that lives in a strip of your browser. Your cat fights while you work. Rare gear can become a Relic you truly own.
           </p>
 
@@ -54,6 +54,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
               className="landing__guest-btn"
               onClick={handleGuest}
               data-testid="landing-start"
+              aria-describedby="landing-promise landing-footnote"
             >
               Play as guest
             </button>
@@ -63,7 +64,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           </div>
 
           {/* Footnote */}
-          <p className="landing__footnote">
+          <p id="landing-footnote" className="landing__footnote">
             No token. No fees to play. Wallet only needed to mint or trade Relics.
           </p>
         </div>
