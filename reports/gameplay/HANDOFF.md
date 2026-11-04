@@ -1,5 +1,5 @@
 # Gameplay candidate — delivered draft stack
-Updated 2026-11-04 15:09 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no agents, schedulers or automations.
+Updated 2026-11-04 15:20 UTC. Latest user instruction: “tiếp tục nha”. One agent only; no agents, schedulers or automations.
 
 ## Delivery
 - Worktree `/Users/bao/taskbar-hero-gameplay`, branch `ai/codex-gameplay-2026-11-04`.
@@ -24,6 +24,8 @@ No merge/deployment/Supabase/DB/contract/signing/funds. Protected PRs #244/#252/
 Backlog: sustained pacing/micro-events, human/multi-seed studies, two complete viable builds with unlocked gear, interactive per-chapter mechanics with server/replay agreement, additional portrait expression wiring, richer Market, defeat/loot arcs, time-of-day/audio and broader hardware/power tests. These are explicitly unshipped, not partially wired.
 
 ## Finalization checkpoint
+CI follow-up in progress: G1 and Art each pass 393/399 browser tests on Linux, exposing two platform-specific screenshot mismatches and four instances of a real late-font shift at the ERC-1155/Relic label. Art also had three unit assertions placed too late in the stack; these now live on Art `d683251`, with 45 focused tests passing. UI was rebased to `12a6927` with identical final source/tests. The G1 worktree currently has the narrow pill-width fix and macOS-specific exact baselines under validation; Docker Linux x64 Playwright is being prepared for matching Linux evidence. Do not claim remote CI green yet. Original failure logs are retained.
+
 Final link/label offline checks pass; task-owned local processes stopped. Corrected G1/art/UI heads are `db225fd` / `ad725da` / `ed87703`. Local gen:deno (zero map diff), typecheck,6 rule/economy tests,10 focused web tests and both build modes pass. GitHub CI is rerunning after the import-path correction; check remote status before final reply. Save final report/handoff/receipts to ledger `/Users/bao/taskbar-hero-ui-ledger`, branch `ai/codex-ui-ledger`, adding ONLY `reports/gameplay/`; unrelated untracked ledger files remain untouched. Final Vietnamese reply ≤10 lines with demo, PRs, score and top3 risks. No additional approval required for the already-authorized draft delivery.
 
 ## Local restart
