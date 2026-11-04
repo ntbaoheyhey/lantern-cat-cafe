@@ -9,6 +9,10 @@
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
-    "onchain-proof": "node scripts/onchain-proof.mjs"
+    "onchain-proof": "node scripts/onchain-proof.mjs",
+    "demo": "bash scripts/demo.sh",
+    "demo:build": "bash scripts/demo.sh --build",
+    "demo:static": "node scripts/demo-static.mjs",
+    "demo:check": "node scripts/demo-check.mjs"
   }
 }

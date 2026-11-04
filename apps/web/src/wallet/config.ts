@@ -1,7 +1,8 @@
 import { FUJI_CHAIN_ID } from '@taskbar-hero/chain';
 import { avalancheFuji } from 'viem/chains';
 import { defineChain } from 'viem';
-import { createConfig, http, injected } from 'wagmi';
+import { isOfflineDemo } from '../demo/mode';
+import { createConfig, custom, http, injected } from 'wagmi';
 
 /** Fuji with the RPC overridden by VITE_FUJI_RPC_URL when set (public RPC otherwise). */
 export function makeFujiChain(rpcUrl?: string) {
@@ -16,7 +17,9 @@ if (fuji.id !== FUJI_CHAIN_ID) throw new Error('Fuji chain id mismatch');
 export function makeWagmiConfig() {
   return createConfig({
     chains: [fuji],
-    connectors: [injected()],
-    transports: { [fuji.id]: http() },
+    connectors: isOfflineDemo() ? [] : [injected()],
+    multiInjectedProviderDiscovery: !isOfflineDemo(),
+    ...(isOfflineDemo() ? { storage: null } : {}),
+    transports: { [fuji.id]: isOfflineDemo() ? custom({ request: async () => { throw new Error('Chain access is disabled in the offline demo'); } }, { retryCount: 0 }) : http() },
   });
 }

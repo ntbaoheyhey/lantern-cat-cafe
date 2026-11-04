@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { FUJI_CHAIN_ID } from '@taskbar-hero/chain';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { usePublicClient } from 'wagmi';
@@ -7,6 +8,15 @@ import './fujiProof.css';
 const short = (value: string) => `${value.slice(0, 8)}…${value.slice(-6)}`;
 const codeText = (fact: ReadFact<number> | undefined) => !fact || fact.status === 'unavailable' ? 'Unavailable' : fact.value > 0 ? `${fact.value.toLocaleString('en-US')} bytes of deployed code` : 'No code at this block';
 export function FujiProofPanel({ enabled }: { enabled: boolean }) {
+  if (isOfflineDemo()) return <section className="fuji-proof" aria-label="Avalanche Fuji on-chain proof">
+    <h3>Avalanche Fuji reference · offline</h3><p>Chain {FUJI_CHAIN_ID} · testnet. No chain reads are made in this demo.</p>
+    <div className="fuji-proof-contracts">{Object.entries(PROOF_CONTRACTS).map(([name, address]) => <article className="fuji-proof-card" key={name}><h4>{name}</h4><p style={{ overflowWrap: 'anywhere' }}>{address}</p></article>)}</div>
+    <p>Deployed-code, linkage, listings and event checks: Unavailable offline. These are documented contract addresses, not a new verification or transaction receipt.</p>
+  </section>;
+  return <ConnectedFujiProofPanel enabled={enabled} />;
+}
+
+function ConnectedFujiProofPanel({ enabled }: { enabled: boolean }) {
   const client = usePublicClient({ chainId: FUJI_CHAIN_ID });
   const cache = useQueryClient();
   const options = {

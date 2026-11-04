@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { Art2Image } from '../art/Art2';
 import React from 'react';
 import { CatPortrait } from '../CatPortrait';
@@ -34,7 +35,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           {/* Network pill */}
           <div className="landing__network-pill" data-testid="landing-network-pill">
             <span className="landing__network-dot" aria-hidden="true" />
-            <span>Live on Avalanche Fuji</span>
+            <span>{isOfflineDemo() ? 'Offline candidate · Fuji integration reference' : 'Live on Avalanche Fuji'}</span>
           </div>
 
           {/* Title */}

@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { FUJI_CHAIN_ID } from '@taskbar-hero/chain';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -22,6 +23,10 @@ function errText(e: unknown) {
 }
 
 export function WalletButton() {
+  return isOfflineDemo() ? <span className="wallet-badge">Offline guest · wallet disabled</span> : <ConnectedWalletButton />;
+}
+
+function ConnectedWalletButton() {
   const { api, store } = useAuthContext();
   const session = useSession();
   const { address, chainId, isConnected } = useAccount();
