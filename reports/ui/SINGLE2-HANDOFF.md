@@ -1,5 +1,5 @@
-# SINGLE2 handoff — PAUSED by user
-- User explicitly said “tạm dừng” at 2026-11-04T05:43Z; stop work until resumed.
+# SINGLE2 handoff — RESUMED
+- User paused at05:43Z and explicitly resumed at07:01Z; ACTIVE. Original15:36:34Z deadline retained.
 - Started about2026-11-04T05:36:34Z; original10h deadline2026-11-04T15:36:34Z. No automatic resumption or scheduler.
 - One agent only, no helpers. Main checkout untouched; no live writes, signatures, settings changes or deployments.
 - Own worktree /Users/bao/taskbar-hero-single2; branch ai/codex-stack-tip; remote pushed.
@@ -27,4 +27,5 @@
 - Pending P4: CXS1/CXS2 current facts,3min pitch,90sec shotlist,Fuji proof,FAQ,keyboard/bundle; Sample/Unavailable/defaultOFF retained.
 - Existing security/submission docs read; exact contracts unchanged. No economy number or newart change made.
 - Ledger has unrelated untracked prior-session files: stage ONLY explicit SINGLE2 paths.
-- Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal PAUSED, not complete.
+- A2 running as ownedPID95209,passsingle2-stack-a2,ports5300–5304. Pause evidence preserved.
+- Partial report reports/SINGLE2-REPORT.md; merges to main0,deployments0,signatures0. Goal ACTIVE, not complete.
