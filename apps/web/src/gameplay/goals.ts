@@ -1,5 +1,5 @@
 import { v2 } from '@taskbar-hero/game-rules';
-import { chapterJourney } from '@taskbar-hero/game-rules/src/gameplay';
+import { chapterJourney } from '@taskbar-hero/game-rules/client/gameplay';
 import type { ServerStateV2 } from '../api/GameApiV2';
 import { bossGateStatus } from '../layout/boss/bossGate';
 import { equipBest } from '../layout/bag/equipRules';

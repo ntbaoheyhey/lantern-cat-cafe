@@ -1,7 +1,8 @@
-import { CONFIG } from './config';
-import { CHAPTERS } from './v2/content/chapters';
-import { BONUS_LINE_RANGES, type StatId } from './v2/content/stats';
-import type { GearRarityId } from './v2/content/rarities';
+// Read-only client presentation helpers; intentionally outside the server import-map source tree.
+import { CONFIG } from '../src/config';
+import { CHAPTERS } from '../src/v2/content/chapters';
+import { BONUS_LINE_RANGES, type StatId } from '../src/v2/content/stats';
+import type { GearRarityId } from '../src/v2/content/rarities';
 
 /** Derived progress only: a power wall is never a boss unlock. */
 export function chapterJourney(chapter: number, round: number, kills: number) {

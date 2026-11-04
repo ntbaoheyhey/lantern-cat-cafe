@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { CONFIG } from './config';
 import * as v2 from './v2';
-import { chapterJourney, bonusRollQuality, replayOutcome } from './gameplay';
+import { chapterJourney, bonusRollQuality, replayOutcome } from '../client/gameplay';
 
 function starter(classId: v2.ClassId): v2.PlayerStateV2 {
   const empty = v2.emptyState(); if (!empty.ok) throw Error('empty');

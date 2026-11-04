@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CONFIG } from './config';
-import { chapterJourney, bonusRollQuality, replayOutcome } from './gameplay';
+import { chapterJourney, bonusRollQuality, replayOutcome } from '../client/gameplay';
 import { BONUS_LINE_RANGES } from './v2/content/stats';
 import { CHAPTERS } from './v2/content/chapters';
 
