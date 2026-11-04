@@ -1,0 +1,12 @@
+.art2-image { display: inline-block; flex: none; image-rendering: pixelated; object-fit: contain; vertical-align: middle; }
+.art2-frame { display: inline-grid; grid-template: 96px / 96px; vertical-align: middle; }
+.art2-frame > * { grid-area: 1 / 1; }
+.art2-frame-content { align-self: center; justify-self: center; display: inline-flex; }
+.art2-preview { padding: 16px; height: 100%; overflow: auto; min-height: 0; }
+.art2-preview h2 { color: var(--accent); margin: 0 0 8px; }
+.art2-preview p { color: var(--muted); max-width: 75ch; }
+.art2-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.art2-preview figure { display: grid; justify-items: center; align-content: center; gap: 8px; margin: 0; min-height: 156px; padding: 12px; border: 2px solid var(--border); background: var(--surface); }
+.art2-preview figcaption { text-align: center; overflow-wrap: anywhere; }
+.art2-preview figcaption small { display: block; color: var(--muted); }
+.landing__hero-right > .art2-image { position: absolute; bottom: 0; right: 24px; }

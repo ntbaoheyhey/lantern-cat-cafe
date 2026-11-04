@@ -2,6 +2,7 @@ import { expect, test, type Page } from '../support/test';
 import { mockV2Save } from '../../src/api/mockV2Fixtures';
 import fs from 'node:fs';
 import path from 'node:path';
+import { expectArtPaint } from '../support/art-ready';
 const storageKey=fs.readFileSync('src/api/MockGameApiV2.ts','utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
 async function prepare(page: Page) {
   const save=mockV2Save('bossReadyStrong',{nowMs:Date.now(),classId:'warrior'});
@@ -16,6 +17,7 @@ async function geometry(page: Page) {
   await expect(page.locator('[data-art-missing]')).toHaveCount(0);
 }
 async function capture(page: Page,name: string) {
+  if(await page.locator('[data-original-art]').count()) await expectArtPaint(page);
   if(!process.env.ORIGINAL_SCREENSHOTS)return;
   const dir=path.resolve(process.env.ORIGINAL_SCREENSHOTS);fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,name+'.png')});
 }
@@ -31,6 +33,7 @@ for(const size of [{width:1280,height:720},{width:1600,height:900}]) for(const m
     const items=page.getByRole('list',{name:'Preview items'});await expect(items.getByRole('button')).toHaveCount(15);
     await page.evaluate(()=>document.fonts.ready);
     const atlas=await page.locator('[data-original-art]').first().evaluate(async node=>{const url=getComputedStyle(node).backgroundImage.slice(5,-2);const image=new Image();image.src=url;await image.decode();return {width:image.naturalWidth,height:image.naturalHeight};});expect(atlas).toEqual({width:272,height:170});
+    await expectArtPaint(page);await capture(page,`items-common-${size.width}-${motion}`);
     await page.getByLabel('Preview quality',{exact:true}).selectOption('rare');await page.getByLabel('Preview item level',{exact:true}).selectOption('6');
     await expect(page.getByTestId('draft-bonus-atk')).toHaveText('+13.566');await expect(page.getByTestId('draft-upgrade-cost')).toHaveText('Maximum preview level');await geometry(page);await capture(page,`items-${size.width}-${motion}`);
     await page.getByRole('group',{name:'Item categories'}).getByRole('button',{name:'Accessories',exact:true}).click();await expect(items.getByRole('button')).toHaveCount(4);

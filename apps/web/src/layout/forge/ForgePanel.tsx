@@ -1,3 +1,4 @@
+import { Art2Image } from '../../art/Art2';
 import { useState, useId, type ReactNode } from 'react';
 import type {
   GearSlotId,
@@ -426,6 +427,7 @@ export function ForgePanel({
                       </p>
                       {!anyRecipeAffordable && (
                         <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
+                          <Art2Image id="forge-no-materials" />
                           No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
                         </p>
                       )}

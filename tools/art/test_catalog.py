@@ -5,13 +5,13 @@ from pathlib import Path
 import re
 import unittest
 
-from catalog import ART, CONTENT, ROOT, content_ids, git, manifest, matrices, palette_literals, proposal_rows, source_paths, text
+from catalog import CATALOG, ART, CONTENT, ROOT, content_ids, git, manifest, matrices, palette_literals, proposal_rows, source_paths, text
 
 
 class CatalogTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.manifest = json.loads(text('docs/art/manifest.json'))
+        cls.manifest = json.loads(text(CATALOG + '/manifest.json'))
         cls.slots = cls.manifest['slots']
 
     def test_unique_slot_ids_and_portable_placeholder_paths(self):
@@ -102,14 +102,14 @@ class CatalogTests(unittest.TestCase):
                     self.assertEqual((row['width'], row['height']), (maps[row['selector']]['width'], maps[row['selector']]['height']))
 
     def test_complete_inventory_and_provenance_with_real_git_hashes(self):
-        files = json.loads(text('docs/art/inventory.json'))['files']
+        files = json.loads(text(CATALOG + '/inventory.json'))['files']
         self.assertEqual([r['path'] for r in files], source_paths())
-        provenance = text('docs/art/PROVENANCE.md')
+        provenance = text(CATALOG + '/PROVENANCE.md')
         for row in files:
             self.assertIn('| ' + row['path'] + ' |', provenance)
             self.assertIn(row['firstCommit'], provenance)
             self.assertEqual(git('rev-parse', row['firstCommit'] + '^{commit}'), row['firstCommit'])
-        names = [p.name for p in (ROOT / 'docs/art').iterdir() if p.name.lower() == 'provenance.md']
+        names = [p.name for p in (ROOT / CATALOG).iterdir() if p.name.lower() == 'provenance.md']
         self.assertEqual(names, ['PROVENANCE.md'])
         self.assertIn('[provenance.md](PROVENANCE.md)', provenance)
         self.assertIn('unknown', provenance)
@@ -134,7 +134,7 @@ class CatalogTests(unittest.TestCase):
 class OriginalCatalogSlots(unittest.TestCase):
     def test_original_content_has34_new_icons_and5_unchanged_frame_aliases(self):
         from original_icons import SPECS
-        obj=json.loads(text('docs/art/manifest.json'));rows={row['id']:row for row in obj['slots']}
+        obj=json.loads(text(CATALOG + '/manifest.json'));rows={row['id']:row for row in obj['slots']}
         expected={f'original.{kind}.{key}' for kind,items in SPECS.items() for key in items}
         expected|={f'original.quality.{quality}' for quality in ['common','uncommon','rare','epic','legendary']}
         self.assertEqual({key for key in rows if key.startswith('original.')},expected)

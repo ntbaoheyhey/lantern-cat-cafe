@@ -10,7 +10,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { GainsV2, ItemV2, GearSlotId } from '../api/GameApiV2';
-import { v2 } from '@taskbar-hero/game-rules';
+import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import { useAccount } from 'wagmi';
 import type { RelicVoucher } from '@taskbar-hero/api-contract';
 import { MintPanel } from '../forge/MintPanel';
@@ -54,6 +54,7 @@ import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from 
 import './layout.css';
 
 const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
+const Art2Preview = lazy(() => import('../art/Art2Preview'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -740,7 +741,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
-              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }]} />
+              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }, ...(CONFIG.features.originalEconomy ? [{ id: 'art-samples', label: 'Art samples', lazy: true, content: <Suspense fallback={<p role="status">Loading art…</p>}><Art2Preview /></Suspense> }] : [])]} />
             </div>
           </div>
         </div>
