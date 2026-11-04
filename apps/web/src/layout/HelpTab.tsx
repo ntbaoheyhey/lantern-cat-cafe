@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { isValidElement, useId, useState, type ReactNode } from 'react';
 import { PixelIcon } from '../art/pixelIcons';
 import { STEPS } from '../onboarding/HowToPlay';
@@ -67,5 +68,5 @@ export function HelpTab({ additionalTabs = [] }: HelpTabProps = {}) {
     );
   }
 
-  return <Tabs label="Help sections" tabs={[{ id: 'guide', label: 'Guide', content: <Guide /> }, ...additionalTabs]} />;
+  return <>{isOfflineDemo() && <p className="forge-note">Offline candidate guide: progress is local; wallet, minting and trading are unavailable in this build. Rune, skill and companion previews remain off.</p>}<Tabs label="Help sections" tabs={[{ id: 'guide', label: 'Guide', content: <Guide /> }, ...additionalTabs]} /></>;
 }

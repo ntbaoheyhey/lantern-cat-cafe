@@ -10,6 +10,9 @@ import { Panel, type TabName } from './Panel';
 import { WalletButton } from './wallet/WalletButton';
 import { WalletProvider } from './wallet/WalletProvider';
 
+import { isOfflineDemo } from './demo/mode';
+import { OfflineDemoBanner } from './demo/OfflineDemoBanner';
+
 const PANEL_ID = 'game-panel';
 
 // Clean up legacy mini mode key on load so saved choice never persists.
@@ -71,6 +74,7 @@ export function App() {
 
   return (
     <WalletProvider store={getSessionStore()}>
+      {isOfflineDemo() && <OfflineDemoBanner />}
       {isGameV2() ? <StageLayout /> : <ClassicLayout />}
     </WalletProvider>
   );

@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-11-04T11:02:20.264Z",
+  "head": "7af383e43235d7a3ec8a7f4c31f861d68230dc89",
+  "base": "http://localhost:5199",
+  "deviceScaleFactor": 2,
+  "checks": [
+    {
+      "name": "1280x720: candidate identity and isolated guest",
+      "status": "PASS",
+      "ms": 334
+    },
+    {
+      "name": "1280x720: Home / Hunt renders",
+      "status": "PASS",
+      "ms": 523
+    },
+    {
+      "name": "1280x720: Bag / Inventory renders",
+      "status": "PASS",
+      "ms": 390
+    },
+    {
+      "name": "1280x720: inspect the documented Twig Sword item",
+      "status": "FAIL",
+      "message": "expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: 'Item details', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: 'Item details', exact: true }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: 'Item details', exact: true })\n"
+    }
+  ],
+  "screenshots": [],
+  "errors": [],
+  "externalRequests": [],
+  "walletRequests": 0,
+  "completedAt": "2026-11-04T11:02:27.570Z",
+  "pass": false
+}

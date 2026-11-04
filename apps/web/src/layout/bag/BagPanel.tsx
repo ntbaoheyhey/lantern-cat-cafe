@@ -1,3 +1,4 @@
+import { Art2Image } from '../../art/Art2';
 import { useId, useRef, useState } from 'react';
 import type { GearSlotId, ItemV2, ServerStateV2 } from '../../api/GameApiV2';
 import type { ScreenId } from '../../nav/screens';
@@ -14,6 +15,7 @@ import { compareItems, itemLines } from './compare';
 import { BAG_SORTS, sortBag, type BagSort } from './bagSort';
 import { equipBest, equipBlock } from './equipRules';
 import { ActionNotice } from '../notice/ActionNotice';
+import { scrollBoundaryKey } from '../../ui/scrollBoundaryKey';
 import './bag.css';
 
 /** The counter turns into a warning from this share of the bag limit. */
@@ -220,9 +222,10 @@ export function BagPanel({
           )}
 
           {/* Grid Area */}
-          <div className="bag-grid-container">
+          <div className="bag-grid-container" role="region" aria-label="Scrollable bag slots" tabIndex={0} onKeyDown={scrollBoundaryKey}>
             {bag.length === 0 && (
               <div className="bag-empty" data-testid="bag-empty">
+                <Art2Image id="bag-empty" />
                 <p>Your bag is empty.</p>
                 <p className="bag-empty-hint">Defeat monsters or visit the Forge to obtain gear.</p>
               </div>

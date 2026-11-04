@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import { useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import type { IconName } from '../art/pixelIcons';
@@ -86,8 +87,7 @@ export function HowToPlay({ mode = 'classic' }: { mode?: 'classic' | 'v2' } = {}
           ))}
         </ol>
         <p className="help-note">
-          Demo mode works without a wallet; sign in to save progress and mint Relics on the Avalanche Fuji testnet (free testnet, costs no real money). Wallet sign-in needs Chrome,
-          Brave or Edge.
+          {isOfflineDemo() ? 'This offline candidate uses local guest progress and sample scenarios. Wallet sign-in, minting and trading are unavailable here. The guide describes the full game rules.' : <>Demo mode works without a wallet; sign in to save progress and mint Relics on the Avalanche Fuji testnet (free testnet, costs no real money). Wallet sign-in needs Chrome, Brave or Edge.</>}
         </p>
         <button ref={start} type="button" className="help-start pixel-btn" onClick={closeHelp}>
           Start playing

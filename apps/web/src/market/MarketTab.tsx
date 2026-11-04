@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { FUJI_CHAIN_ID, getAddresses, relicMarketAbi, relicNftAbi } from '@taskbar-hero/chain';
 import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
@@ -26,6 +27,14 @@ function parsePrice(text: string): bigint | undefined {
 
 /** My Relics (on-chain balances) and the RelicMarket: browse, buy, cancel and list. Fully on chain. */
 export function MarketTab() {
+  if (isOfflineDemo()) {
+    const { RelicNFT, RelicMarket } = getAddresses(FUJI_CHAIN_ID);
+    return <MarketGate nft={RelicNFT!} market={RelicMarket!}><p>Offline market preview. Listings and ownership are unavailable. Buying, listing and minting are disabled; no chain is queried.</p></MarketGate>;
+  }
+  return <ConnectedMarketTab />;
+}
+
+function ConnectedMarketTab() {
   const { isConnected, chainId, address } = useAccount();
   const { switchChain, isPending: switching } = useSwitchChain();
   const { writeContractAsync } = useWriteContract();

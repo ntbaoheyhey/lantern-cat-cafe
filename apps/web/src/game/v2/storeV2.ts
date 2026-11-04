@@ -1,3 +1,5 @@
+import { isOfflineDemo } from '../../demo/mode';
+import { offlineStorage } from '../../demo/profiles';
 import { useSyncExternalStore } from 'react';
 import { MockGameApiV2 } from '../../api/MockGameApiV2';
 import { SupabaseGameApiV2 } from '../../api/SupabaseGameApiV2';
@@ -95,7 +97,7 @@ export function withNoticeGuardV2(api: GameApiV2, onUnauthenticated: () => void)
 export function createStageStoreV2(options: Pick<ApiSwitchV2Options, 'sessions' | 'env'> & Partial<Pick<ApiSwitchV2Options, 'demo' | 'server'>>) {
   const store = new ApiSwitchV2({
     ...options,
-    demo: () => withNoticeGuardV2(options.demo ? options.demo() : new MockGameApiV2(), () => {}),
+    demo: () => withNoticeGuardV2(options.demo ? options.demo() : new MockGameApiV2(isOfflineDemo() ? { storage: offlineStorage } : {}), () => {}),
     server: (opts) => withNoticeGuardV2(options.server ? options.server(opts) : new SupabaseGameApiV2(opts), () => {}),
     guard: withNoticeGuardV2,
   });

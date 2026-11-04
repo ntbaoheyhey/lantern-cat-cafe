@@ -38,7 +38,7 @@ export interface SessionStore {
 }
 
 /** In-memory session mirrored to sessionStorage; storage failures are ignored. */
-export function createSessionStore(storage: Storage | undefined = defaultStorage(), now = () => Date.now()): SessionStore {
+export function createSessionStore(storage: Storage | null | undefined = defaultStorage(), now = () => Date.now()): SessionStore {
   const listeners = new Set<() => void>();
   const valid = (s: Session | null): s is Session => !!s && s.expiresAt > now();
 

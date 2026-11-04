@@ -2,6 +2,7 @@ import {
   lazy,
   Suspense,
   useEffect,
+  useLayoutEffect,
   useRef,
   useReducer,
   useState,
@@ -10,7 +11,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { GainsV2, ItemV2, GearSlotId } from '../api/GameApiV2';
-import { v2 } from '@taskbar-hero/game-rules';
+import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import { useAccount } from 'wagmi';
 import type { RelicVoucher } from '@taskbar-hero/api-contract';
 import { MintPanel } from '../forge/MintPanel';
@@ -22,6 +23,7 @@ import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapsh
 import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
 import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
+import { useMotionCue } from '../motion/useMotionCue';
 import { ClassPicker, STARTER_CLASSES } from './classpicker/ClassPicker';
 import { LandingHero } from './LandingHero';
 import { HeroCard } from './home/HeroCard';
@@ -51,9 +53,12 @@ import { itemName, rarityLabel } from './itemView';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
 import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
+import { Banner } from '../ui';
 import './layout.css';
 
 const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
+const Art2Preview = lazy(() => import('../art/Art2Preview'));
+const FeatureSamples = lazy(() => import('../runes/FeatureSamples'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -93,6 +98,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const wallet = useAccount();
   const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
   const [mintedNonce, setMintedNonce] = useState<string | null>(null);
+  const mintCue = useMotionCue<HTMLParagraphElement>(mintedNonce, 'relic');
   const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
   const [savingMint, setSavingMint] = useState(false);
   const [classChoiceError, setClassChoiceError] = useState<string | null>(null);
@@ -116,7 +122,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   });
   const [visited, setVisited] = useState<Set<ScreenId>>(() => new Set<ScreenId>(['home', 'hero']));
 
-  useEffect(() => {
+  // Keep the confirmed class screen painted until Home is ready in the same frame.
+  useLayoutEffect(() => {
     if (initialScreen) {
       setScreen(initialScreen);
     } else if (state && !state.cat.classId) {
@@ -243,7 +250,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     if (!fromArrowNav) {
       requestAnimationFrame(() => {
         const panel = document.getElementById(`panel-${newScreen}`);
-        if (panel) {
+        if (panel && !panel.contains(document.activeElement)) {
           const focusable = panel.querySelector<HTMLElement>(
             'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
           );
@@ -424,6 +431,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
+      {mode.notice && <Banner tone="warning" data-testid="session-expired-notice">{mode.notice}</Banner>}
       {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
         <p role="alert" className="v2-alert">
@@ -432,7 +440,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       )}
 
       {notice && (
-        <p role="status" className="v2-action-notice">
+        <p ref={mintCue} role="status" className="v2-action-notice motion-cue" data-mint-confirmed={mintedNonce ? 'true' : undefined}>
           {notice}
           <button aria-label="Dismiss message" onClick={() => setNotice('')}>
             ×
@@ -740,7 +748,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
-              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }]} />
+              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }, ...(CONFIG.features.originalEconomy ? [{ id: 'art-samples', label: 'Art samples', lazy: true, content: <Suspense fallback={<p role="status">Loading art…</p>}><Art2Preview /></Suspense> }, { id: 'feature-samples', label: 'Feature samples', lazy: true, content: <Suspense fallback={<p role="status">Loading samples…</p>}><FeatureSamples /></Suspense> }] : [])]} />
             </div>
           </div>
         </div>

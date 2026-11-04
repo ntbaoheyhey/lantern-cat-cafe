@@ -1,0 +1,17 @@
+# Conditional previews — samples without ownership
+
+The existing default-off originalEconomy flag alone exposes a lazy Feature samples tab in Help. It offers five rune socket styles, twelve companion concepts and seven skills with sample ranks, using ART2 frames and unchanged original skill icons. Every list entry and detail is labelled Sample; ownership, progress and equip state say Unavailable. No ownership is inferred from the browser-local DEMO_PREVIEW pet store.
+
+The view reads existing skill definitions and a checked display-only companion snapshot (id/name/flavour only). It never imports the pet store, API or wallet hooks, and no equip, unlock, purchase or persistence action exists. Rune inventory/equipped data and authoritative companion/skill availability selectors remain requested in ~/.taskbar-hero-locks/requests/S1.md. No response was available at implementation time.
+
+Builder:53focused unit/contrast tests,typecheck and7browser cases pass; both sizes and motion modes cover keyboard tabs, all labels, the last list entry, sample rank, geometry, reload reset and zero network/storage writes. The inherited four Landing/Class PNGs still match main340f88b byte-for-byte. Initial sidecar fixture omitted the existing build marker; the guard correctly failed. Added the marker, without changing the guard or assertion. Initial failure log is retained.
+
+No new artwork, dependency, production flag or gameplay balance. Integrated frozen MOTION7d0427c. The only conflict was the owned sidecar build helper: both independent fixture outputs are retained. Fresh A/B and release checks are pending; backend health hold prevents merge.
+
+Fresh A atdfd2ba6 stopped at the unchanged pet-isolation test: the new view had imported the runtime companion registry directly. Fixed the cause by removing that import and using a string-only display snapshot, checked against project definitions in a unit test. The original global isolation test and allowlist are unchanged; no progression, ownership, equip or bonus values enter the sample view. All127other unit files passed in the failed run; no browser/full matrix ran.
+
+Fresh A2 at4e441b5 passed allcore checks and125/126changed browser executions, but one1280Landing PNG byte comparison differed. The original spec did not retain its actual PNG, so its cause is unclassified. Forty diagnostic reruns matched all original PNGs byte-for-byte. The test now preserves actual/baseline evidence on any mismatch and explicitly services two paint frames after font layout under its paused clock; the original baseline and exact byte assertion remain unchanged. A new full fresh gate is required; no full matrix ran on the failed head.
+
+The explicit paint preparation passes typecheck and6/6repeated exact-byte visual cases at both sizes. No baseline or threshold changed. Fresh A3/B will decide acceptance; the earlier unclassified mismatch remains documented.
+
+Accepted at949cc44: A95/B95 self-graded (fresh pass),16A/14B checks PASS,126changed cases per size per reviewer,384full cases per size once,20/20resize each,18strict views and28axe scans each with zero confirmed violations. Four flag-off baselines remain byte-identical. Separate sample-captures receipt preserves the three feature categories despite catalog filename collisions. No ownership selector has shipped; default-OFF and all Sample/Unavailable labels remain. SYSTEM hold blocks release.

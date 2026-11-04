@@ -1,3 +1,5 @@
+import { isOfflineDemo } from '../demo/mode';
+import { Art2Image } from '../art/Art2';
 import React from 'react';
 import { CatPortrait } from '../CatPortrait';
 import { BackdropView } from '../art/backdrops/BackdropView';
@@ -33,16 +35,16 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           {/* Network pill */}
           <div className="landing__network-pill" data-testid="landing-network-pill">
             <span className="landing__network-dot" aria-hidden="true" />
-            <span>Live on Avalanche Fuji</span>
+            <span>{isOfflineDemo() ? 'Offline candidate · Fuji integration reference' : 'Live on Avalanche Fuji'}</span>
           </div>
 
           {/* Title */}
-          <div id="landing-title" className="landing__title" aria-hidden="true">
+          <div id="landing-title" className="landing__title" role="heading" aria-level={2}>
             Taskbar<br />Hero
           </div>
 
           {/* Promise copy */}
-          <p className="landing__promise">
+          <p id="landing-promise" className="landing__promise">
             A cozy idle RPG that lives in a strip of your browser. Your cat fights while you work. Rare gear can become a Relic you truly own.
           </p>
 
@@ -53,6 +55,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
               className="landing__guest-btn"
               onClick={handleGuest}
               data-testid="landing-start"
+              aria-describedby="landing-promise landing-footnote"
             >
               Play as guest
             </button>
@@ -62,12 +65,13 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           </div>
 
           {/* Footnote */}
-          <p className="landing__footnote">
+          <p id="landing-footnote" className="landing__footnote">
             No token. No fees to play. Wallet only needed to mint or trade Relics.
           </p>
         </div>
 
         <div className="landing__hero-right" aria-hidden="true">
+          <Art2Image id="landing" scale={2} eager />
           <div className="landing__cats-group">
             <div className="landing__cat-item landing__cat-item--primary">
               <CatPortrait size={160} />

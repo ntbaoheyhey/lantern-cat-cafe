@@ -10,7 +10,7 @@ import vm from 'node:vm';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const require = createRequire(resolve(root, 'apps/web/package.json'));
 const ts = require('typescript');
-const inventory = JSON.parse(readFileSync(resolve(root, 'docs/art/inventory.json'), 'utf8'));
+const inventory = JSON.parse(readFileSync(resolve(root, 'docs/ui/art/inventory.json'), 'utf8'));
 let inspected = 0;
 for (let chapter = 1; chapter <= 5; chapter++) {
   const path = `apps/web/src/art/monsters/ch${chapter}.ts`;

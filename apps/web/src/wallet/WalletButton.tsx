@@ -1,10 +1,15 @@
+import { isOfflineDemo } from '../demo/mode';
 import { FUJI_CHAIN_ID } from '@taskbar-hero/chain';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useAccount, useConnect, useDisconnect, useSignMessage, useSwitchChain } from 'wagmi';
 import { expiryFromToken } from './session';
 import { buildSiweMessage } from './siwe';
 import { useAuthContext, useSession } from './WalletProvider';
+import { ToastHost } from '../ui';
+import './notifications.css';
 
+export const WRONG_NETWORK_MESSAGE = 'Wrong network. Switch to Avalanche Fuji.';
 export const CORE_INSTALL_URL = 'https://core.app';
 export const NO_WALLET_HINT =
   'No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.';
@@ -18,6 +23,10 @@ function errText(e: unknown) {
 }
 
 export function WalletButton() {
+  return isOfflineDemo() ? <span className="wallet-badge">Offline guest · wallet disabled</span> : <ConnectedWalletButton />;
+}
+
+function ConnectedWalletButton() {
   const { api, store } = useAuthContext();
   const session = useSession();
   const { address, chainId, isConnected } = useAccount();
@@ -27,6 +36,7 @@ export function WalletButton() {
   const { signMessageAsync } = useSignMessage();
   const [signing, setSigning] = useState(false);
   const [signError, setSignError] = useState<string>();
+  const [dismissedError, setDismissedError] = useState<string>();
 
   // Drop a session that does not belong to the connected account.
   useEffect(() => {
@@ -42,6 +52,7 @@ export function WalletButton() {
   const doDisconnect = () => {
     store.clear();
     setSignError(undefined);
+    setDismissedError(undefined);
     disconnect();
   };
 
@@ -49,6 +60,7 @@ export function WalletButton() {
     if (!address) return;
     setSigning(true);
     setSignError(undefined);
+    setDismissedError(undefined);
     try {
       const nonce = await api.getNonce();
       const message = buildSiweMessage({ address, nonce });
@@ -81,8 +93,7 @@ export function WalletButton() {
   } else if (chainId !== FUJI_CHAIN_ID) {
     body = (
       <>
-        <span className="wallet-msg" role="alert">Wrong network. Switch to Avalanche Fuji.</span>
-        <button className="wallet-btn" disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
+        <button className="wallet-btn" title={WRONG_NETWORK_MESSAGE} disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
           Switch to Fuji
         </button>
       </>
@@ -106,11 +117,18 @@ export function WalletButton() {
     );
   }
 
-  const error = signError ?? (connectError ? errText(connectError) : undefined);
+  const error = isConnected && address && chainId !== FUJI_CHAIN_ID
+    ? WRONG_NETWORK_MESSAGE : signError ?? (connectError ? errText(connectError) : undefined);
+  useEffect(() => { setDismissedError(undefined); }, [chainId, isConnected]);
   return (
-    <div className="wallet" aria-label="Wallet">
-      {body}
-      {error && <span className="wallet-msg" role="status">{error}</span>}
-    </div>
+    <>
+      <div className="wallet" role="group" aria-label="Wallet">
+        {body}
+      </div>
+      {error && error !== dismissedError && createPortal(
+        <div className="wallet-notifications"><ToastHost toasts={[{ id: 'wallet-error', tone: 'error', message: error }]} onDismiss={() => setDismissedError(error)} /></div>,
+        document.body,
+      )}
+    </>
   );
 }

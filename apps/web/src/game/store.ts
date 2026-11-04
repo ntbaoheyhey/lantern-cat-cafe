@@ -6,12 +6,14 @@ import { createSessionStore, type SessionStore } from '../wallet/session';
 import { ApiSwitch, type GameMode } from './apiSwitch';
 import type { GameLoop, GameSnapshot } from './gameState';
 
+import { isOfflineDemo } from '../demo/mode';
+
 let sessions: SessionStore | null = null;
 let apiSwitch: ApiSwitch | null = null;
 
 /** App-wide wallet session, shared by WalletProvider and the game. */
 export function getSessionStore(): SessionStore {
-  return (sessions ??= createSessionStore());
+  return (sessions ??= createSessionStore(isOfflineDemo() ? null : undefined));
 }
 
 function getSwitch(): ApiSwitch {

@@ -4,6 +4,9 @@ import { App } from './App';
 import './styles.css';
 import './theme.css';
 import './motion.css';
+import { initializeOfflineDemo } from './demo/profiles';
+
+initializeOfflineDemo();
 
 const root = createRoot(document.getElementById('root')!);
 

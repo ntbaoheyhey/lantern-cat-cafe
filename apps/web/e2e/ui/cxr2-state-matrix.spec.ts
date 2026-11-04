@@ -15,6 +15,12 @@ async function inspect(page: Page, label: string) {
     .filter(node => node.getClientRects().length && getComputedStyle(node).visibility !== 'hidden' && node.scrollWidth > node.clientWidth + 1)
     .map(node => node.getAttribute('data-testid') || node.className));
   expect(clipped, label + ' HUD text').toEqual([]);
+  const vertical = await hud.locator('.hud-chip-val').evaluateAll(nodes => nodes.filter(node => {
+    const box = node.getBoundingClientRect(), chip = node.closest('.hud-chip')?.getBoundingClientRect();
+    return box.height > 0 && chip && (box.top < chip.top - 1 || box.bottom > chip.bottom + 1);
+  }).map(node => node.textContent));
+  expect(vertical, label + ' HUD numbers must stay inside their chip').toEqual([]);
+
   if (await page.getByTestId('home-dashboard').isVisible()) {
     const currencyClip = await page.locator('.home-loot-currencies').evaluateAll(nodes => nodes.some(node => node.scrollWidth > node.clientWidth + 1));
     expect(currencyClip, label + ' recent loot currencies').toBe(false);

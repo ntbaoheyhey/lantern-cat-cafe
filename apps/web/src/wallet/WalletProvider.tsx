@@ -1,3 +1,4 @@
+import { isOfflineDemo } from '../demo/mode';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createContext, useContext, useMemo, useSyncExternalStore, type ReactNode } from 'react';
 import { WagmiProvider, type Config } from 'wagmi';
@@ -27,7 +28,7 @@ export function WalletProvider({ children, config, api, store }: WalletProviderP
     [api, store],
   );
   return (
-    <WagmiProvider config={wagmiConfig}>
+    <WagmiProvider config={wagmiConfig} reconnectOnMount={!isOfflineDemo()}>
       <QueryClientProvider client={queryClient}>
         <WalletCtx.Provider value={ctx}>{children}</WalletCtx.Provider>
       </QueryClientProvider>

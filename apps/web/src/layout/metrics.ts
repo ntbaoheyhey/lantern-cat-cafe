@@ -1,3 +1,4 @@
+import { DEMO_BAR_HEIGHT, isOfflineDemo } from '../demo/mode';
 import { useEffect, useState } from 'react';
 
 export type LayoutKind = 'phone' | 'tablet' | 'desktop';
@@ -51,13 +52,14 @@ export interface Viewport {
 }
 
 export function useViewport(): Viewport {
-  const [size, setSize] = useState<Viewport>(() => ({ width: window.innerWidth, height: window.innerHeight }));
+  const viewportHeight = () => window.innerHeight - (isOfflineDemo() ? DEMO_BAR_HEIGHT : 0);
+  const [size, setSize] = useState<Viewport>(() => ({ width: window.innerWidth, height: viewportHeight() }));
   useEffect(() => {
     const onResize = () =>
       setSize((prev) =>
-        prev.width === window.innerWidth && prev.height === window.innerHeight
+        prev.width === window.innerWidth && prev.height === viewportHeight()
           ? prev
-          : { width: window.innerWidth, height: window.innerHeight },
+          : { width: window.innerWidth, height: viewportHeight() },
       );
     onResize();
     window.addEventListener('resize', onResize);

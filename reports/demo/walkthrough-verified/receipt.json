@@ -1,0 +1,79 @@
+{
+  "startedAt": "2026-11-04T11:02:41.131Z",
+  "head": "7af383e43235d7a3ec8a7f4c31f861d68230dc89",
+  "base": "http://localhost:5199",
+  "deviceScaleFactor": 2,
+  "checks": [
+    {
+      "name": "1280x720: candidate identity and isolated guest",
+      "status": "PASS",
+      "ms": 281
+    },
+    {
+      "name": "1280x720: Home / Hunt renders",
+      "status": "PASS",
+      "ms": 387
+    },
+    {
+      "name": "1280x720: Bag / Inventory renders",
+      "status": "PASS",
+      "ms": 328
+    },
+    {
+      "name": "1280x720: inspect the documented Twig Sword item",
+      "status": "PASS",
+      "ms": 83
+    },
+    {
+      "name": "1280x720: Forge renders",
+      "status": "PASS",
+      "ms": 343
+    },
+    {
+      "name": "1280x720: Boss / Map renders",
+      "status": "PASS",
+      "ms": 324
+    },
+    {
+      "name": "1280x720: Market preview renders",
+      "status": "PASS",
+      "ms": 308
+    },
+    {
+      "name": "1280x720: Help renders",
+      "status": "PASS",
+      "ms": 357
+    },
+    {
+      "name": "1280x720: documented Guide search finds Forge",
+      "status": "PASS",
+      "ms": 121
+    },
+    {
+      "name": "1280x720: offline chain reference and default-off previews",
+      "status": "PASS",
+      "ms": 77
+    },
+    {
+      "name": "1280x720: crafting spends only local sample materials",
+      "status": "PASS",
+      "ms": 312
+    },
+    {
+      "name": "1280x720: boss sample resolves using local rules",
+      "status": "PASS",
+      "ms": 946
+    },
+    {
+      "name": "1280x720: fresh guest chooses a class",
+      "status": "FAIL",
+      "message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Start adventure as Warrior', exact: true })\u001b[22m\n"
+    }
+  ],
+  "screenshots": [],
+  "errors": [],
+  "externalRequests": [],
+  "walletRequests": 0,
+  "completedAt": "2026-11-04T11:03:16.460Z",
+  "pass": false
+}

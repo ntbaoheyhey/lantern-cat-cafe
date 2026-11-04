@@ -1,0 +1,36 @@
+import { test, expect } from '../support/test';
+import { pinVisualFonts } from '../support/visual-fonts';
+
+test('class confirmation supports keyboard confirm, Cancel and Escape with focus return', async ({ page }) => {
+  await pinVisualFonts(page);
+  await page.addInitScript(() => localStorage.setItem('taskbar-hero.howToPlaySeen', '1'));
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  await page.goto('/#landing');
+  await page.getByTestId('landing-start').click();
+  const choose = page.getByTestId('class-picker-choose-button');
+  const confirm = page.getByTestId('class-picker-confirm-button');
+  await choose.focus();
+  await page.keyboard.press('Enter');
+  await expect(confirm).toBeFocused();
+  await expect(choose).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.getByTestId('class-picker-confirm-box')).toHaveAttribute('id', await choose.getAttribute('aria-controls') ?? '');
+  await page.keyboard.press('Escape');
+  await expect(confirm).toHaveCount(0);
+  await expect(choose).toBeFocused();
+  await expect(choose).toHaveAttribute('aria-expanded', 'false');
+  await page.keyboard.press('Enter');
+  await expect(confirm).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByTestId('class-picker-cancel-button')).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(confirm).toHaveCount(0);
+  await expect(choose).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(confirm).toBeFocused();
+  await expect(confirm).toBeInViewport({ ratio: 1 });
+  await page.keyboard.press('Enter');
+  await expect(page.getByTestId('home-dashboard')).toBeVisible();
+  expect(errors).toEqual([]);
+});
