@@ -7,9 +7,8 @@ import type { CraftResultV2, ClaimResultV2 } from '../../src/api/GameApiV2';
 test('choose class and claim through the HTTP transport and migrated SQL', async ({ page, request }) => {
   const session = await load(page, request, 'fresh');
   await expect(page.getByTestId('class-picker')).toBeVisible();
-  await page.getByTestId('class-picker-choose-button').click();
   const chosen = page.waitForResponse(r => r.url().endsWith('/v2-choose-class') && r.request().method() === 'POST');
-  await page.getByTestId('class-picker-confirm-button').click();
+  await page.getByTestId('class-picker-choose-button').click();
   expect((await chosen).status()).toBe(200);
   await expect(page.getByTestId('class-picker')).toHaveCount(0);
   expect((await inspect(request, session)).raw.classId).toBe('warrior');

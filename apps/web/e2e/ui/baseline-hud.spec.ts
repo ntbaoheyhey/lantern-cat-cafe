@@ -84,7 +84,7 @@ async function expectReadableChrome(page: Page) {
   return { xp, textGeometry };
 }
 
-async function activateGuidanceWithKeyboard(page: Page, expected: 'map' | 'bag') {
+async function activateGuidanceWithKeyboard(page: Page, expected: 'map' | 'bag' | 'home') {
   const action = page.getByTestId('next-hint').getByRole('button');
   // Reach the action through sequential keyboard navigation, including its focus ring.
   for (let i = 0; i < 20 && !await action.evaluate(element => element === document.activeElement); i++) await page.keyboard.press('Tab');
@@ -93,7 +93,7 @@ async function activateGuidanceWithKeyboard(page: Page, expected: 'map' | 'bag')
   await page.keyboard.press('Enter');
   await expect(page.locator('.app-shell')).toHaveAttribute('data-active-screen', expected);
   await expect(page.getByTestId(`nav-${expected}`)).toHaveAttribute('aria-selected', 'true');
-  await expect(page.getByRole('tabpanel', { name: expected === 'map' ? 'Map' : 'Bag', exact: true })).toBeVisible();
+  await expect(page.getByRole('tabpanel', { name: expected === 'map' ? 'Map' : expected === 'home' ? 'Home' : 'Bag', exact: true })).toBeVisible();
 }
 
 for (const viewport of sizes) {
@@ -164,9 +164,9 @@ for (const viewport of sizes) {
       expect(await hud.locator('.hud-xp-fill').evaluate(element => getComputedStyle(element).transitionDuration)).toBe('0s');
       expect(await hud.locator('.hud-xp-fill').evaluate(element => getComputedStyle(element).backgroundColor)).toBe('rgb(107, 224, 138)');
       await expect(page.getByTestId('next-hint').getByRole('button')).toHaveText(gated
-        ? 'Next: Equip better gear to keep exploring' : 'Next: Explore the chapter and challenge its boss');
+        ? 'Compare gear to pass this power wall' : 'Clear round 5 · 5 foes left');
       await expect(page.getByRole('region', { name: 'Game stage' }).locator('canvas')).toHaveCount(1);
-      await activateGuidanceWithKeyboard(page, gated ? 'bag' : 'map');
+      await activateGuidanceWithKeyboard(page, gated ? 'bag' : 'home');
       await expectReadableChrome(page);
       // Change actual saved XP, then rehydrate the app; do not mutate bar styles or semantics.
       save.state.xp = Math.floor(maxXp * 3 / 4);
@@ -226,8 +226,8 @@ for (const viewport of sizes) {
         await expect(page.locator('header [data-sync-status]')).toHaveAttribute('data-sync-status', state === 'normal' ? 'live' : state === 'offline' ? 'offline' : 'error');
         const measured = await expectReadableChrome(page);
         expect(await page.getByTestId('next-hint').getByRole('button').evaluate(element => getComputedStyle(element).fontFamily)).toBe('sans-serif');
-        await expect(page.getByTestId('next-hint').getByRole('button')).toHaveText('Next: Explore the chapter and challenge its boss');
-        await activateGuidanceWithKeyboard(page, 'map');
+        await expect(page.getByTestId('next-hint').getByRole('button')).toHaveText('Clear round 1 · 6 foes left');
+        await activateGuidanceWithKeyboard(page, 'home');
         await expectReadableChrome(page);
         expect(pageErrors).toEqual([]);
         const unexpected = consoleErrors.filter(error => {

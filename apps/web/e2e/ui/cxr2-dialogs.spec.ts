@@ -28,22 +28,26 @@ for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }])
   for (const motion of ['no-preference', 'reduce'] as const) {
     test.describe(`CXR2 ${size.width} ${motion}`, () => {
       test.use({ viewport: size, reducedMotion: motion });
-      test('first-visit Help uses shared keyboard and background isolation', async ({ page }) => {
-        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+      test('guest coach stays nonmodal, dismisses forever and leaves Help available', async ({ page }) => {
+        const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
         await page.goto('/#landing');
-        const dialog = page.getByRole('dialog', { name: 'How to play', exact: true });
-        await checkDialog(page, dialog);
-        await expect(dialog.getByRole('listitem')).toHaveCount(5);
-        await expect(dialog).toContainText('30 Yarn and 1 Moon Pearl');
-        await expect(dialog).not.toContainText('5 fights a day');
-        await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
-        await page.keyboard.press('Tab'); await expect(dialog.getByRole('button', { name: 'Close help' })).toBeFocused();
-        await page.keyboard.press('Shift+Tab'); await expect(dialog.getByRole('button', { name: 'Start playing' })).toBeFocused();
-        await capture(page, `help-${size.width}-${motion}`);
-        await page.keyboard.press('Escape'); await restored(page);
-        await expect(page.getByTestId('landing-start')).toBeEnabled();
-        await expect(page.getByTestId('landing-start')).toBeFocused();
-        await page.reload(); await expect(page.getByRole('dialog')).toHaveCount(0);
+        await expect(page.getByRole('dialog')).toHaveCount(0);
+        await page.getByTestId('landing-start').click();
+        await page.getByTestId('class-picker-choose-button').click();
+        const coach = page.getByTestId('guest-coach');
+        await expect(coach).toBeVisible();
+        expect(await page.locator('#root').getAttribute('inert')).toBeNull();
+        await coach.getByRole('button', { name: 'Next tip' }).focus();
+        await page.keyboard.press('Enter');
+        await expect(coach).toContainText('Give each find a job');
+        await coach.getByRole('button', { name: 'Open Bag' }).click();
+        await expect(page.getByRole('tabpanel', { name: 'Bag', exact: true })).toBeVisible();
+        await coach.getByRole('button', { name: 'Dismiss forever' }).focus();
+        await page.keyboard.press('Enter'); await expect(coach).toHaveCount(0);
+        await page.reload(); await expect(coach).toHaveCount(0);
+        await page.getByTestId('nav-help').click();
+        await expect(page.getByRole('tabpanel', { name: 'Help', exact: true })).toBeVisible();
+        await expect(page.getByRole('dialog')).toHaveCount(0);
         expect(errors).toEqual([]);
       });
       test('offline welcome and real boss chest retain actions, art and exclusive focus', async ({ page }) => {

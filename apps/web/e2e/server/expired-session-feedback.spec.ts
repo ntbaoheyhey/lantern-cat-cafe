@@ -34,7 +34,6 @@ for (const savedGuest of [false, true]) {
     else {
       await expect(page.getByTestId('class-picker')).toBeVisible();
       await page.getByTestId('class-picker-choose-button').click();
-      await page.getByTestId('class-picker-confirm-button').click();
       await expect(page.getByTestId('home-dashboard')).toBeVisible();
       await expect(notice).toBeVisible();
     }

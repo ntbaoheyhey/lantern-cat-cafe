@@ -41,7 +41,7 @@ async function expectRewardContrast(page: Page) {
 
 for (const width of [1280, 1600]) {
   test(`First play reaches Home and naturally earns without a wallet ${width}`, async ({ page }, testInfo) => {
-    // The real scheduler claims every30seconds. This budget includes that wait; no clock or claim shortcut.
+    // The real first claim is scheduled after ten seconds; no clock or claim shortcut.
     test.setTimeout(50_000);
     await page.setViewportSize({ width, height: width * 9 / 16 });
     await watchVisibleRoot(page);
@@ -52,9 +52,9 @@ for (const width of [1280, 1600]) {
     const start = Date.now(); const timing: Record<string, number> = {};
     await page.goto('/#landing');
     const help = page.getByRole('dialog', { name: 'How to play', exact: true });
-    await expect(help).toBeVisible(); timing.firstVisitHelpMs = Date.now() - start;
+    await expect(help).toHaveCount(0); timing.firstVisitMs = Date.now() - start;
     await expectVisibleRoot(page);
-    await help.getByRole('button', { name: 'Start playing', exact: true }).click();
+    await page.getByTestId('landing-start').focus();
     await expect(page.getByTestId('landing-start')).toBeFocused();
     await expect(page.getByTestId('landing-start')).toHaveAccessibleDescription(/No token.*No fees to play/);
     await expectVisibleRoot(page); timing.landingMs = Date.now() - start;
@@ -62,15 +62,15 @@ for (const width of [1280, 1600]) {
     await expect(page.getByTestId('class-picker')).toBeVisible(); timing.classMs = Date.now() - start;
     await expectVisibleRoot(page);
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
     await expect(page.getByTestId('home-dashboard')).toBeVisible(); timing.homeMs = Date.now() - start;
     expect(timing.homeMs, 'UI interaction path should reach Home well before the reward interval').toBeLessThan(5_000);
+    await expect(page.getByTestId('guest-coach')).toBeVisible();
     const initial = await page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish);
     await expect.poll(() => page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish), { timeout: 36_000, intervals: [100, 250, 500] }).toBeGreaterThan(initial);
     await expect(page.getByRole('heading', { name: 'Recent finds', exact: true })).toBeVisible();
     const contrast = await expectRewardContrast(page);
     timing.firstEarnMs = Date.now() - start;
-    const result = { width, height: width * 9 / 16, method: 'Fresh local guest; first-visit Help; real wall clock and natural30-second claim; no seeded save, manual claim or clock acceleration', timing, contrast, blankFrames: await page.evaluate(() => (window as Window & { __visibleRootGuard?: { blankFrames: unknown[] } }).__visibleRootGuard?.blankFrames ?? null), errors, writes };
+    const result = { width, height: width * 9 / 16, method: 'Fresh local guest; nonblocking coach; real wall clock and natural ten-second first claim; no seeded save, manual claim or clock acceleration', timing, contrast, blankFrames: await page.evaluate(() => (window as Window & { __visibleRootGuard?: { blankFrames: unknown[] } }).__visibleRootGuard?.blankFrames ?? null), errors, writes };
     await testInfo.attach('first-play-timing', { body: JSON.stringify(result, null, 2), contentType: 'application/json' });
     if (process.env.FIRSTPLAY_SCREENSHOTS) {
       fs.mkdirSync(process.env.FIRSTPLAY_SCREENSHOTS, { recursive: true });
