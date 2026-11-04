@@ -7,4 +7,4 @@ The final real-clock comparison uses `before-corrected-run.json` and `after-run.
 
 `asset-provenance.md` records every original asset and exact generator inputs. Machine-generated art manifests are under `tools/art/`. No reference-game artwork was downloaded or used. Logs include initial failures and final passes; see `logs/README.md` for compressed receipts.
 
-`delivery.json` binds the four review layers to their branches and the verified runtime. The isolated runtime is byte-identical to the pre-split source used for the full suite and production soak. Gallery labels use that stable runtime SHA; documentation-only commits can follow it.
+`delivery.json` binds the four review layers to their branches and the verified runtime. The final runtime matches the pre-split source after normalizing only the client-helper relocation and import specifiers, as recorded in `runtime-equivalence.json`. Performance retains the original optimized g1-perf soak and separately reports final production bundle bytes. Gallery labels use that stable runtime SHA; documentation-only commits can follow it.

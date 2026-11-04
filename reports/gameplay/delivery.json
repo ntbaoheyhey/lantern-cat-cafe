@@ -2,12 +2,12 @@
   "basePr": 278,
   "baseSha": "f8837d650a7efa5d485223caf9846ef0f54a6494",
   "branches": {
-    "codex/gameplay-onboarding-2026-11-04": "7d8d82135940c45191a73c505f9625c96bc7d8e9",
-    "codex/gameplay-art-2026-11-04": "6b532f6d6ac215ea35c809e4473c3ccc97212247",
-    "codex/gameplay-juice-2026-11-04": "be4abe91cc3044bd34902851ec02cecceadd5df0",
-    "ai/codex-gameplay-2026-11-04": "64a1b864a7a2106db5c3f3b0af9b6fc355162a0c"
+    "codex/gameplay-onboarding-2026-11-04": "db225fdca270e6845b4677ab04a54a71d0374307",
+    "codex/gameplay-art-2026-11-04": "ad725da3a838ba5d8afb1139cf40229ed29a43d0",
+    "codex/gameplay-juice-2026-11-04": "ed87703554341dbc0542beee3eeb251659d350c0",
+    "ai/codex-gameplay-2026-11-04": "6dde85d4a6e5eaf227b02f39d66c0869f0f48330"
   },
-  "runtimeSourceSha": "be4abe91cc3044bd34902851ec02cecceadd5df0",
+  "runtimeSourceSha": "ed87703554341dbc0542beee3eeb251659d350c0",
   "originalMeasuredRuntimeSha": "501880eb12de866967ce317ed6fd869447c30a5a",
   "runtimeEquivalentPaths": [
     "apps/web/src",
@@ -17,7 +17,7 @@
     "package.json",
     "tools/art"
   ],
-  "runtimeDiffIsEmpty": true,
+  "runtimeDiffIsEmpty": false,
   "draftPullRequests": [
     {
       "number": 279,
@@ -67,5 +67,7 @@
     41659,
     58761
   ],
-  "remoteCI": "Pending at first publication; final check results recorded separately."
+  "remoteCI": "Rerunning after client helper relocation fixes generated Deno map drift without editing Supabase.",
+  "normalizedRuntimeSourceIsIdentical": true,
+  "equivalenceReceipt": "runtime-equivalence.json"
 }
