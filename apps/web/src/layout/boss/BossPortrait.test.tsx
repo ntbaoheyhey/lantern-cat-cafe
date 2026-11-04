@@ -13,7 +13,7 @@ describe('BossPortrait', () => {
     expect(img.tagName.toLowerCase()).toBe('svg');
 
     // crisp edges and viewBox
-    expect(img.getAttribute('viewBox')).toBe('0 0 48 48');
+    expect(img.getAttribute('viewBox')).toBe('0 0 40 40');
     expect(img.getAttribute('shape-rendering')).toBe('crispEdges');
 
     // check that paths are rendered inside svg
@@ -32,7 +32,7 @@ describe('BossPortrait', () => {
   it('respects the zoom prop for scaling dimensions', () => {
     const { container } = render(<BossPortrait chapter={1} zoom={3} />);
     const svg = container.querySelector('svg');
-    expect(svg?.getAttribute('width')).toBe(String(48 * 3));
-    expect(svg?.getAttribute('height')).toBe(String(48 * 3));
+    expect(svg?.getAttribute('width')).toBe(String(40 * 3));
+    expect(svg?.getAttribute('height')).toBe(String(40 * 3));
   });
 });

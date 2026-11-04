@@ -260,7 +260,7 @@ def manifest():
     for key in re.findall(r"id: '(rcp\.[^']+)'", text(CONTENT + 'recipes.ts')):
         add('compendium.' + key, 'compendium recipe', 32, 32, source=CONTENT + 'recipes.ts', note='No dedicated recipe icon; neutral tile until ART2.')
     for index in range(1, 5):
-        add(f'compendium.relic.{index}', 'compendium relic', 16, 16, path=f'apps/web/public/relics/{index}.svg', selector='svg', note='Existing 16x16 native SVG, 128x128 display card (8x); retain SVG.')
+        add(f'compendium.relic.{index}', 'compendium relic', 64, 64, path=f'apps/web/public/relics/{index}.svg', selector='svg', note='Original gameplay redraw, native64px; exact same pixels as companion PNG. Metadata URL retained. See reports/gameplay/asset-provenance.md.')
     chapter_source = text(CONTENT + 'chapters.ts')
     backgrounds = re.findall(r"'([^']+)'", re.search(r'const BACKGROUNDS = \[(.*?)\]', chapter_source)[1])
     for index, backdrop in enumerate(backgrounds, 1):
@@ -329,7 +329,17 @@ def render_provenance(rows):
              '|---|---|---|---|---|---|---|']
     art2 = json.loads(text('tools/art/ui-art2.json'))
     fresh = {row['path']: row for row in art2['entries']}
+    gameplay = {}
+    for manifest_name in ('gameplay-manifest', 'gameplay-items', 'gameplay-sheets', 'gameplay-relics'):
+        data = json.loads(text('tools/art/' + manifest_name + '.json'))
+        for row in data['files']:
+            gameplay[row['file']] = data['generator']
+    for path in ('parts.ts', 'poses.ts', 'compose.ts', 'palettes.ts'):
+        gameplay['apps/web/src/game/rig/' + path] = 'hand-authored runtime rig; node tools/art/gameplay-sheets.mjs'
     for r in rows:
+        if r['path'] in gameplay:
+            lines.append(f"| {r['path']} | Original recipe `{gameplay[r['path']]}`; exact per-file parameters and source edits in [gameplay provenance](../../../reports/gameplay/asset-provenance.md) | Python/Node standard libraries; no image model | 0 (no randomness) | 2026-11-04 | 32-color Evening Atelier lock; integer pixels; binary alpha; runtime-compatible frames | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']}; latest {r['latestCommit']}; no external media input |")
+            continue
         if r['path'].startswith('apps/web/public/art/visual/'):
             lines.append(f"| {r['path']} | Original integer-coordinate recipe `tools/art/visual.py`; exact parameters, full brief and hashes in [visual provenance](../../../reports/visual/asset-provenance.md) | Python standard library; no image model | 0 (no randomness) | 2026-11-04 | 32-color Evening Atelier palette; integer pixels; quantized-alpha light masks; lossless PNG | original, made for this project; SHA-256 `{r['sha256']}`; first git {r['firstCommit']}; latest {r['latestCommit']}; no external media input |")
             continue

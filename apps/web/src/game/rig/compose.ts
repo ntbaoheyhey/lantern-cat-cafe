@@ -132,6 +132,14 @@ export function composeFrame(look: ClassLook, gear: EquippedVisuals, animName: A
     c.draw(set[slot], at, { ...setPalette, ...RARITY_PALETTES[v.rarity] });
   };
 
+  // Original two-tone smear only on the authored contact frame; never changes hit timing.
+  if (animName === 'attack' && anim.hitFrames?.includes(index) && !['bow', 'staff', 'flasks'].includes(look.weaponType)) {
+    for (let trail = 1; trail <= 4; trail++) {
+      c.set(p.pawFront.x - trail, p.pawFront.y - trail - 1, weaponPalette.h!);
+      if (trail < 4) c.set(p.pawFront.x - trail - 1, p.pawFront.y - trail - 1, weaponPalette.T!);
+    }
+  }
+
   // Back to front: weapon held behind, the off-hand weapon, tail, far arm and leg, near leg, torso,
   // armor, head, helmet, weapon in front, near arm (the paw wraps the handle).
   if (p.weaponBehind) drawMain();

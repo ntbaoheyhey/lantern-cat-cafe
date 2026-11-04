@@ -1,7 +1,7 @@
 import { ImpactPool } from '../../visual/impact';
 import { VISUAL_MOTION, VISUAL_PALETTE as C } from '../../visual/tokens';
 import Phaser from 'phaser';
-import { v2 } from '@taskbar-hero/game-rules';
+import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
 import { monsterArt, monsterPilotArt, type MonsterArt } from '../../art/monsters';
 import { backdropFor } from '../../art/backdrops';
@@ -88,6 +88,7 @@ export class StageScene extends Phaser.Scene {
   private planIndex = 0;
   private plan!: Plan;
   private age = 0;
+  private napping = false;
   private defeatedAt = -1;
   private defeatPose = false;
   private lungeAt = -1;
@@ -230,6 +231,7 @@ export class StageScene extends Phaser.Scene {
       Object.entries(visuals).sort(([a], [b]) => a.localeCompare(b))]);
     const stats = stageStats(state);
     const cls = state.cat.classId;
+    const gearChanged = this.visualKey !== '' && key !== this.visualKey && before?.cat.classId === cls && before.progress.chapter === state.progress.chapter;
     const rebuild = key !== this.visualKey || !this.cat || !this.monster;
     const changed = rebuild || motionChanged || !before || before.cat.level !== state.cat.level ||
       JSON.stringify(before.progress) !== JSON.stringify(state.progress) ||
@@ -303,9 +305,12 @@ export class StageScene extends Phaser.Scene {
     this.plans = montage.map(m => prepare(m.id, m.round, true)); this.planIndex = 0;
     this.begin(this.plans[0] ?? this.preview);
     this.relayout();
+    if (gearChanged && !this.reduced) {
+      this.pose(this.cat!, this.sheet.anims.equip.key, 'equip:0');
+    }
   }
   private begin(plan: Plan) {
-    this.plan = plan; this.age = 0; this.attackAt = -1; this.defeatedAt = -1; this.defeatPose = false; this.lungeAt = -1;
+    this.plan = plan; this.age = 0; this.napping = false; this.attackAt = -1; this.defeatedAt = -1; this.defeatPose = false; this.lungeAt = -1;
     this.nextEnemyAttack = APPROACH_MS + plan.enemyInterval - 90;
     this.catHp = this.maxHp; if (!this.hp) this.hp = { value: plan.hp, max: plan.hp };
     else { this.hp.value = plan.hp; this.hp.max = plan.hp; }
@@ -410,7 +415,12 @@ export class StageScene extends Phaser.Scene {
     if (document.hidden || !this.plan) return;
     this.age += Math.min(delta, 50);
     this.positionActors();
-    if (this.stopped()) return;
+    if (this.stopped()) {
+      if (!this.reduced && !this.napping && this.age >= CONFIG.gameplay.actor.napAfterMs) {
+        this.napping = true; this.pose(this.cat!, this.sheet.anims.nap.key, 'nap:0');
+      }
+      return;
+    }
     if (this.age >= APPROACH_MS) {
       this.player.advance(Math.min(delta, 50));
       this.catHp = expectedCatHp(this.maxHp, this.plan.fight.damageTaken, this.player.now, this.plan.fight.timeToKillMs);

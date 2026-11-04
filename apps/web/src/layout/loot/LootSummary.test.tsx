@@ -185,22 +185,22 @@ describe('LootSummary', () => {
     const { container } = render(<LootSummary loot={loot} heading="Specific Items" />);
 
     // Armor-set item renders data-icon "arm.ranger.armor"
-    const armorSvg = container.querySelector('svg[data-icon="arm.ranger.armor"]');
+    const armorSvg = container.querySelector('img[data-icon="arm.ranger.armor"]');
     expect(armorSvg).toBeTruthy();
     expect(armorSvg?.getAttribute('aria-hidden')).toBe('true');
 
     // Accessory renders data-icon "acc.star"
-    const accSvg = container.querySelector('svg[data-icon="acc.star"]');
+    const accSvg = container.querySelector('img[data-icon="acc.star"]');
     expect(accSvg).toBeTruthy();
     expect(accSvg?.getAttribute('aria-hidden')).toBe('true');
 
     // Weapon renders data-icon "sword"
-    const weaponSvg = container.querySelector('svg[data-icon="sword"]');
+    const weaponSvg = container.querySelector('img[data-icon="sword"]');
     expect(weaponSvg).toBeTruthy();
     expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
 
     // Every item icon is aria-hidden
-    const itemIcons = container.querySelectorAll('.loot-item-art-icon svg');
+    const itemIcons = container.querySelectorAll('.loot-item-art-icon img');
     expect(itemIcons).toHaveLength(3);
     itemIcons.forEach((svg) => {
       expect(svg.getAttribute('aria-hidden')).toBe('true');

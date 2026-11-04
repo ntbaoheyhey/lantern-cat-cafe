@@ -10,13 +10,13 @@ export type WeaponType = 'sword' | 'hammer' | 'daggers' | 'spear' | 'bow' | 'sta
 export type GearRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
 /** Main slots that change the cat's look. Accessories are stat-only and never drawn. */
 export type VisibleSlot = 'weapon' | 'helmet' | 'armor' | 'gloves' | 'boots';
-export type AnimName = 'idle' | 'walk' | 'attack' | 'hurt' | 'defeat' | 'victory';
+export type AnimName = 'idle' | 'walk' | 'attack' | 'hurt' | 'defeat' | 'victory' | 'nap' | 'equip';
 
 export const CLASS_IDS: readonly ClassId[] = ['warrior', 'guardian', 'rogue', 'hunter', 'archer', 'witch', 'alchemist'];
 export const WEAPON_TYPES: readonly WeaponType[] = ['sword', 'hammer', 'daggers', 'spear', 'bow', 'staff', 'flasks'];
 export const GEAR_RARITIES: readonly GearRarity[] = ['common', 'uncommon', 'rare', 'epic', 'legendary'];
 export const VISIBLE_SLOTS: readonly VisibleSlot[] = ['weapon', 'helmet', 'armor', 'gloves', 'boots'];
-export const ANIM_NAMES: readonly AnimName[] = ['idle', 'walk', 'attack', 'hurt', 'defeat', 'victory'];
+export const ANIM_NAMES: readonly AnimName[] = ['idle', 'walk', 'attack', 'hurt', 'defeat', 'victory', 'nap', 'equip'];
 
 /** A colour as 0xRRGGBB. */
 export type Color = number;

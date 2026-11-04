@@ -24,7 +24,7 @@ for (const width of [1280, 1600]) test(`ART2 flag-off landing and class match re
     // The intentional CLS repair has its own reviewed Landing baseline. Keep the
     // original main captures. Native rasterization differs across OSes, so each
     // supported platform has reviewed baselines; keep zero pixel/byte tolerance.
-    const baselineScreen = screen === 'landing' ? 'landing-stable' : screen;
+    const baselineScreen = screen === 'landing' ? 'landing-stable' : 'class-gameplay';
     const baseline = fs.readFileSync(path.resolve(`e2e/ui/art2-baseline/${process.platform}/${baselineScreen}-${width}.png`));
     if (!actual.equals(baseline)) {
       await testInfo.attach('flag-off-actual', { body: actual, contentType: 'image/png' });

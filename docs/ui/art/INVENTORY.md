@@ -6,6 +6,266 @@ Source palettes include comments and CSS fallback literals; this is static evide
 
 | Path | Bytes | Kind | Native sizes (px) | Palette evidence | Pixel scale |
 |---|---|---|---|---|---|
+| apps/web/public/art/gameplay/item-acc.bell.png | 269 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.catnip.png | 221 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.feather.png | 205 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.fishhook.png | 211 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.hunter.png | 231 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.lucky.png | 231 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.mouse.png | 250 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.paw.png | 232 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.pearl.png | 208 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.ribbon.png | 256 | raster | 32x32 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.star.png | 226 | raster | 32x32 | 3 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-acc.studded.png | 259 | raster | 32x32 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.cozy.armor.png | 244 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.cozy.boots.png | 221 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.cozy.gloves.png | 216 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.cozy.helmet.png | 224 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.moon.armor.png | 244 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.moon.boots.png | 221 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.moon.gloves.png | 216 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.moon.helmet.png | 224 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.ranger.armor.png | 244 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.ranger.boots.png | 221 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.ranger.gloves.png | 216 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-arm.ranger.helmet.png | 224 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-bow.png | 263 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-daggers.png | 215 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-flasks.png | 278 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-hammer.png | 208 | raster | 32x32 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotArmor.png | 244 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotBoots.png | 221 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotCharm.png | 226 | raster | 32x32 | 3 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotCollar.png | 268 | raster | 32x32 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotEarring.png | 211 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotGloves.png | 216 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotHelmet.png | 224 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotRing.png | 231 | raster | 32x32 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-slotWeapon.png | 189 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-spear.png | 190 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-staff.png | 218 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/item-sword.png | 189 | raster | 32x32 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-attack.png | 911 | raster | 336x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-defeat.png | 753 | raster | 224x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-equip.png | 652 | raster | 224x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-hurt.png | 463 | raster | 112x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-idle.png | 750 | raster | 448x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-nap.png | 447 | raster | 112x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-victory.png | 708 | raster | 224x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-alchemist-walk.png | 816 | raster | 336x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-attack.png | 854 | raster | 336x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-defeat.png | 715 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-equip.png | 641 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-hurt.png | 444 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-idle.png | 745 | raster | 448x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-nap.png | 421 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-victory.png | 702 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-archer-walk.png | 794 | raster | 336x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-attack.png | 1047 | raster | 336x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-defeat.png | 757 | raster | 224x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-equip.png | 690 | raster | 224x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-hurt.png | 468 | raster | 112x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-idle.png | 771 | raster | 448x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-nap.png | 446 | raster | 112x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-victory.png | 734 | raster | 224x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-guardian-walk.png | 787 | raster | 336x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-attack.png | 885 | raster | 336x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-defeat.png | 754 | raster | 224x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-equip.png | 678 | raster | 224x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-hurt.png | 468 | raster | 112x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-idle.png | 811 | raster | 448x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-nap.png | 460 | raster | 112x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-victory.png | 732 | raster | 224x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-hunter-walk.png | 876 | raster | 336x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-attack.png | 910 | raster | 448x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-defeat.png | 682 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-equip.png | 617 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-hurt.png | 449 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-idle.png | 695 | raster | 448x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-nap.png | 423 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-victory.png | 676 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-rogue-walk.png | 784 | raster | 336x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-attack.png | 980 | raster | 336x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-defeat.png | 741 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-equip.png | 680 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-hurt.png | 458 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-idle.png | 815 | raster | 448x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-nap.png | 441 | raster | 112x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-victory.png | 702 | raster | 224x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-warrior-walk.png | 841 | raster | 336x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-attack.png | 909 | raster | 336x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-defeat.png | 734 | raster | 224x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-equip.png | 657 | raster | 224x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-hurt.png | 470 | raster | 112x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-idle.png | 766 | raster | 448x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-nap.png | 452 | raster | 112x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-victory.png | 735 | raster | 224x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mochi-witch-walk.png | 819 | raster | 336x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-attack.png | 535 | raster | 160x40 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-defeat.png | 674 | raster | 240x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-hit.png | 468 | raster | 80x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-idle.png | 549 | raster | 160x40 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-walk.png | 549 | raster | 160x40 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.bathtub.tyrant-windup.png | 491 | raster | 120x40 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-attack.png | 318 | raster | 112x28 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-defeat.png | 396 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-hit.png | 269 | raster | 56x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-idle.png | 340 | raster | 112x28 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-walk.png | 340 | raster | 112x28 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.blender.brute-windup.png | 318 | raster | 84x28 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-attack.png | 343 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-defeat.png | 430 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-hit.png | 309 | raster | 56x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-idle.png | 372 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-walk.png | 372 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.box.fort.knight-windup.png | 347 | raster | 84x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-attack.png | 343 | raster | 112x28 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-defeat.png | 380 | raster | 112x28 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-hit.png | 271 | raster | 56x28 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-idle.png | 375 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-walk.png | 375 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.chimney.ghost-windup.png | 336 | raster | 84x28 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-attack.png | 485 | raster | 160x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-defeat.png | 663 | raster | 240x40 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-hit.png | 414 | raster | 80x40 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-idle.png | 526 | raster | 160x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-walk.png | 526 | raster | 160x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.cucumber.scare-windup.png | 467 | raster | 120x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-attack.png | 354 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-defeat.png | 398 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-hit.png | 287 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-idle.png | 356 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-walk.png | 356 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.bunny-windup.png | 314 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-attack.png | 379 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-defeat.png | 413 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-hit.png | 299 | raster | 48x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-idle.png | 345 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-walk.png | 345 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.dust.moth-windup.png | 308 | raster | 72x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-attack.png | 366 | raster | 112x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-defeat.png | 447 | raster | 112x28 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-hit.png | 316 | raster | 56x28 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-idle.png | 397 | raster | 112x28 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-walk.png | 397 | raster | 112x28 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.hair.dryer.wisp-windup.png | 346 | raster | 84x28 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-attack.png | 529 | raster | 160x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-defeat.png | 733 | raster | 240x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-hit.png | 496 | raster | 80x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-idle.png | 527 | raster | 160x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-walk.png | 527 | raster | 160x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.laser.dot.phantom-windup.png | 482 | raster | 120x40 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-attack.png | 347 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-defeat.png | 370 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-hit.png | 284 | raster | 48x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-idle.png | 346 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-walk.png | 346 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.loose.yarn-windup.png | 293 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-attack.png | 383 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-defeat.png | 420 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-hit.png | 308 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-idle.png | 349 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-walk.png | 349 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.moth.swarm-windup.png | 313 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-attack.png | 286 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-defeat.png | 341 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-hit.png | 264 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-idle.png | 308 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-walk.png | 308 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.mouse.trap-windup.png | 271 | raster | 72x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-attack.png | 307 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-defeat.png | 378 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-hit.png | 257 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-idle.png | 321 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-walk.png | 321 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.neon.dot-windup.png | 264 | raster | 72x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-attack.png | 364 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-defeat.png | 390 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-hit.png | 303 | raster | 48x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-idle.png | 404 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-walk.png | 404 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.pickle.imp-windup.png | 315 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-attack.png | 333 | raster | 112x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-defeat.png | 395 | raster | 112x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-hit.png | 268 | raster | 56x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-idle.png | 349 | raster | 112x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-walk.png | 349 | raster | 112x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.roomba.scout-windup.png | 295 | raster | 84x28 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-attack.png | 328 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-defeat.png | 406 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-hit.png | 277 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-idle.png | 343 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-walk.png | 343 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.rubber.duck-windup.png | 307 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-attack.png | 322 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-defeat.png | 409 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-hit.png | 283 | raster | 48x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-idle.png | 348 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-walk.png | 348 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.shadow.crow-windup.png | 313 | raster | 72x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-attack.png | 341 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-defeat.png | 378 | raster | 96x24 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-hit.png | 283 | raster | 48x24 | 4 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-idle.png | 359 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-walk.png | 359 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.soap.slime-windup.png | 304 | raster | 72x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-attack.png | 275 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-defeat.png | 341 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-hit.png | 234 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-idle.png | 299 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-walk.png | 299 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sock.puppet-windup.png | 275 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-attack.png | 370 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-defeat.png | 394 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-hit.png | 261 | raster | 48x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-idle.png | 351 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-walk.png | 351 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.sponge.crab-windup.png | 305 | raster | 72x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-attack.png | 337 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-defeat.png | 395 | raster | 96x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-hit.png | 261 | raster | 48x24 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-idle.png | 370 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-walk.png | 370 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.spoon.bug-windup.png | 310 | raster | 72x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-attack.png | 290 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-defeat.png | 367 | raster | 96x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-hit.png | 240 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-idle.png | 326 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-walk.png | 326 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.toast.mimic-windup.png | 296 | raster | 72x24 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-attack.png | 524 | raster | 160x40 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-defeat.png | 702 | raster | 240x40 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-hit.png | 441 | raster | 80x40 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-idle.png | 540 | raster | 160x40 | 11 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-walk.png | 540 | raster | 160x40 | 11 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.vacuum.beast-windup.png | 482 | raster | 120x40 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-attack.png | 308 | raster | 96x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-defeat.png | 347 | raster | 96x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-hit.png | 241 | raster | 48x24 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-idle.png | 331 | raster | 96x24 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-walk.png | 331 | raster | 96x24 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.windup.robot-windup.png | 299 | raster | 72x24 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-attack.png | 546 | raster | 160x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-defeat.png | 707 | raster | 240x40 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-hit.png | 489 | raster | 80x40 | 5 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-idle.png | 528 | raster | 160x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-walk.png | 528 | raster | 160x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/mon.yarn.giant-windup.png | 453 | raster | 120x40 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-1-alert.png | 347 | raster | 48x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-1-calm.png | 353 | raster | 48x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-2-alert.png | 323 | raster | 48x48 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-2-calm.png | 326 | raster | 48x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-3-alert.png | 363 | raster | 48x48 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-3-calm.png | 363 | raster | 48x48 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-4-alert.png | 349 | raster | 48x48 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-4-calm.png | 353 | raster | 48x48 | 11 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-5-alert.png | 362 | raster | 48x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/portrait-boss-5-calm.png | 355 | raster | 48x48 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/relic-1.png | 434 | raster | 64x64 | 9 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/relic-2.png | 449 | raster | 64x64 | 13 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/relic-3.png | 493 | raster | 64x64 | 10 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
+| apps/web/public/art/gameplay/relic-4.png | 485 | raster | 64x64 | 12 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
 | apps/web/public/art/visual/foreground-1.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
 | apps/web/public/art/visual/foreground-2.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
 | apps/web/public/art/visual/foreground-3.png | 393 | raster | 256x96 | 11 values in inventory.json | Evening Atelier native integer pixels; nearest-neighbor integer display scale; 48x48 portrait frames |
@@ -32,13 +292,13 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000003.json | 364 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
 | apps/web/public/relics/0000000000000000000000000000000000000000000000000000000000000004.json | 364 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
 | apps/web/public/relics/1.json | 361 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
-| apps/web/public/relics/1.svg | 6440 | vector pixel art | 16x16 | 4 values in inventory.json | 8x horizontal / 8x vertical at declared SVG dimensions |
+| apps/web/public/relics/1.svg | 34012 | vector pixel art | 64x64 | 9 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/public/relics/2.json | 368 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
-| apps/web/public/relics/2.svg | 5290 | vector pixel art | 16x16 | 4 values in inventory.json | 8x horizontal / 8x vertical at declared SVG dimensions |
+| apps/web/public/relics/2.svg | 33175 | vector pixel art | 64x64 | 13 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/public/relics/3.json | 364 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
-| apps/web/public/relics/3.svg | 3922 | vector pixel art | 16x16 | 4 values in inventory.json | 8x horizontal / 8x vertical at declared SVG dimensions |
+| apps/web/public/relics/3.svg | 32537 | vector pixel art | 64x64 | 10 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/public/relics/4.json | 364 | relic metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
-| apps/web/public/relics/4.svg | 8525 | vector pixel art | 16x16 | 5 values in inventory.json | 8x horizontal / 8x vertical at declared SVG dimensions |
+| apps/web/public/relics/4.svg | 34663 | vector pixel art | 64x64 | 12 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/public/ui-art2/bag-empty.png | 410 | raster | 96x96 | 7 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
 | apps/web/public/ui-art2/forge-no-materials.png | 314 | raster | 96x96 | 6 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
 | apps/web/public/ui-art2/landing.png | 487 | raster | 96x96 | 8 values in inventory.json | mixed procedural rectangle sizes; no uniform sprite scale asserted |
@@ -88,6 +348,7 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/src/art/backdrops/rooftops.ts | 31600 | art source | 160x86, 160x96 | 12 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/backdrops/types.test.ts | 4069 | support/test; no standalone asset | dynamic / not applicable | 2 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/backdrops/types.ts | 5255 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/art/gameplayItemKeys.ts | 668 | art source | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/generated/original/atlas/atlas.json | 15394 | art metadata; no pixels | dynamic / not applicable | 0 values in inventory.json | not applicable |
 | apps/web/src/art/generated/original/atlas/sheet.png | 4559 | raster | 272x170 | 22 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
 | apps/web/src/art/generated/original/icons/item-chimecollar.png | 260 | raster | 32x32 | 6 values in inventory.json | native32px icon frames; integer1x/2x/3x lookup in static atlas |
@@ -141,8 +402,9 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/src/art/monsters/ch5.test.ts | 3349 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/ch5.ts | 198283 | art source | 18x18, 20x20, 24x24, 26x26, 28x28, 40x40, 48x48 | 45 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/ch5Pilot.test.ts | 2859 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/art/monsters/gameplay.generated.ts | 509607 | art source | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/index.test.ts | 1035 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/art/monsters/index.ts | 832 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/art/monsters/index.ts | 938 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/types.test.ts | 1914 | support/test; no standalone asset | 10x10, 24x24 | 1 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/monsters/types.ts | 6516 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/art/pixelIcons.test.tsx | 1910 | support/test; no standalone asset | dynamic / not applicable | 1 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
@@ -154,17 +416,17 @@ Source palettes include comments and CSS fallback literals; this is static evide
 | apps/web/src/game/StripScene.ts | 15909 | art source | dynamic / not applicable | 34 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/bake.test.ts | 4329 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/bake.ts | 8040 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/classLooks.test.ts | 3835 | support/test; no standalone asset | dynamic / not applicable | 29 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/compose.ts | 7187 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/classLooks.test.ts | 3836 | support/test; no standalone asset | dynamic / not applicable | 20 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/compose.ts | 7636 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/gear.sets.test.ts | 6467 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/gear.ts | 8604 | art source | 56x48 composed canvas | 4 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/index.ts | 524 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/palettes.ts | 2826 | art source | 56x48 composed canvas | 48 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/palettes.ts | 2989 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/parts.ts | 6813 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/poses.ts | 9106 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/rig.test.ts | 7901 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/poses.ts | 9911 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/rig.test.ts | 7919 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | apps/web/src/game/rig/spriteMap.ts | 2353 | art source | 56x48 composed canvas | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
-| apps/web/src/game/rig/types.ts | 3867 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
+| apps/web/src/game/rig/types.ts | 3901 | support/test; no standalone asset | dynamic / not applicable | 0 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |
 | docs/proposals/rune-skill-system/demo/index.html | 95365 | original design demo; placeholder glyphs | 16x16, 32x33, 420x200, 8x8, 9x8 | 36 values in inventory.json | mixed SVG/CSS; not production sprite art |
 | reports/ui-redesign/index.html | 49315 | original design demo; placeholder glyphs | 100x100, 16x16, 24x24 | 37 values in inventory.json | mixed SVG/CSS; not production sprite art |
 | scripts/gen-og.mjs | 5765 | art source | 16x16 | 23 values in inventory.json | 1 source cell = 1 art pixel; display scale is consumer-defined |

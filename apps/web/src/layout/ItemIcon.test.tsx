@@ -11,7 +11,7 @@ describe('ItemIcon', () => {
     const { container } = render(
       <ItemIcon item={{ itemKey: 'arm.ranger.armor.rare', slot: 'armor' }} />,
     );
-    const svg = container.querySelector('svg');
+    const svg = container.querySelector('img');
     expect(svg?.getAttribute('data-icon')).toBe('arm.ranger.armor');
     expect(svg?.getAttribute('aria-hidden')).toBe('true');
   });
@@ -20,7 +20,7 @@ describe('ItemIcon', () => {
     const { container } = render(
       <ItemIcon item={{ itemKey: 'acc.charm.star.epic', slot: 'charm' }} />,
     );
-    const svg = container.querySelector('svg');
+    const svg = container.querySelector('img');
     expect(svg?.getAttribute('data-icon')).toBe('acc.star');
     expect(svg?.getAttribute('aria-hidden')).toBe('true');
   });
@@ -29,7 +29,7 @@ describe('ItemIcon', () => {
     const { container } = render(
       <ItemIcon item={{ itemKey: 'wpn.sword.twig', slot: 'weapon', weaponType: 'sword' }} />,
     );
-    const svg = container.querySelector('svg');
+    const svg = container.querySelector('img');
     expect(svg?.getAttribute('data-icon')).toBe('sword');
     expect(svg?.getAttribute('aria-hidden')).toBe('true');
   });
@@ -42,18 +42,18 @@ describe('ItemIcon', () => {
         title="Ranger Armor"
       />
     );
-    const svg = container.querySelector('svg');
-    expect(svg?.getAttribute('role')).toBe('img');
-    expect(svg?.getAttribute('aria-label')).toBe('Ranger Armor');
-    expect(svg?.querySelector('title')?.textContent).toBe('Ranger Armor');
-    expect(svg?.getAttribute('width')).toBe(String(11 * 4));
+    const svg = container.querySelector('img');
+    expect(svg?.tagName).toBe('IMG');
+    expect(svg?.getAttribute('alt')).toBe('Ranger Armor');
+    expect(svg?.getAttribute('title')).toBe('Ranger Armor');
+    expect(svg?.getAttribute('width')).toBe(String(16 * 4));
   });
 
   it('falls back to slot icon when item has no specific icon', () => {
     const { container } = render(
       <ItemIcon item={{ itemKey: 'custom.unknown.item', slot: 'ring' }} />,
     );
-    const svg = container.querySelector('svg');
+    const svg = container.querySelector('img');
     expect(svg?.getAttribute('data-icon')).toBe('slotRing');
   });
 });

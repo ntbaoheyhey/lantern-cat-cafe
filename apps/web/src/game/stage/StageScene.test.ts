@@ -2,7 +2,7 @@ import { EventEmitter } from 'node:events';
 import { beforeEach, expect, it, vi } from 'vitest';
 vi.mock('phaser', () => ({ default: { Scene: class {}, Scenes: { Events: { CREATE: 'create', SHUTDOWN: 'shutdown', DESTROY: 'destroy' } } } }));
 vi.mock('../rig', () => ({ CLASS_LOOKS: { warrior: { name: 'warrior' }, witch: { name: 'witch' } }, bakeCat: vi.fn(() => ({
-  key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle', frames: ['idle:0'] }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack', frames: ['attack:0'], frameMs: [240], hitFrames: [0] }, hurt: { key: 'cat-hurt' } },
+  key: 'cat-sheet', origin: { x: 0.5, y: 1 }, anims: { idle: { key: 'cat-idle', frames: ['idle:0'] }, walk: { key: 'cat-walk' }, attack: { key: 'cat-attack', frames: ['attack:0'], frameMs: [240], hitFrames: [0] }, hurt: { key: 'cat-hurt' }, nap: { key: 'cat-nap' }, equip: { key: 'cat-equip' } },
 })) }));
 vi.mock('../arena/assets', () => ({ equippedVisuals: vi.fn(() => ({})), bakeMonster: () => ({ walk: 'monster-walk', hit: 'monster-hit', defeat: 'monster-defeat' }), preloadMonsterArt: vi.fn() }));
 vi.mock('../combat', async () => ({ ...await vi.importActual('../combat/timeline'), ...await vi.importActual('../combat/pool') }));
