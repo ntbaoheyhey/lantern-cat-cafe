@@ -1,6 +1,6 @@
 # P3 keyboard, motion, spacing and bundle review
 
-Head `127e3f87c678be5909c4b420c46fd55d75fb5d72` has a runtime tree identical to main `340f88b`. This is a current-main baseline, not final-stack acceptance. All serial measurements completed at2026-11-04T04:57:46Z. The combined supplement exits1 for the known keyboard defects; performance passes do not override that failure.
+Head `127e3f87c678be5909c4b420c46fd55d75fb5d72` has a runtime tree identical to main `340f88b`. This is a current-main baseline, not final-stack acceptance. All serial measurements completed at2026-11-04T04:57:50.554647+00:00. The combined supplement exits1 for the known keyboard defects; performance passes do not override that failure.
 
 ## Keyboard and screen-reader semantics
 

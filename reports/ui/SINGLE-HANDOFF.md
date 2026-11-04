@@ -1,25 +1,33 @@
 # Single-session handoff
-- Started 2026-11-04T04:27Z; hard deadline 2026-11-04T14:27Z. One agent, no helpers/scheduler/orchestrator.
-- P0 checked 2026-11-04T04:29:07.556170+00:00: CAPACITY BLOCKED; CLI absent; fresh #269 Vercel rate-limit status, second project ignored.
-- Actual deployment count unknown; UTC main commits/merged PRs 0/0 are activity only. Next retry 2026-11-04T21:00Z, beyond session limit; warning through20:51:55Z is not a guaranteed reset.
-- Main/live recorded340f88b; GitHub main unchanged, private, eight accepted draft heads unchanged.
-- Existing accepted exact-head full suites must not be repeated. Preserve all original receipts and failures.
-- Release order262→263→264→265→266→268→269→267; P1/P2 final-live work parked by capacity.
-- Main checkout and existing worktrees untouched; own /Users/bao/taskbar-hero-single on codex/single-session-docs.
-- P3 docs candidate 127e3f87c678be5909c4b420c46fd55d75fb5d72 frozen: 4 docs-only paths, builder and37 links PASS. A finished: 16 command checks PASS, axe AUTO-FAIL for known Home aria/empty-Bag keyboard defects (#263); overall0/100.
-- All624 gallery capture hashes verified against unchanged267/e161f06. Live entrypoints freshly rechecked unchanged.
-- Fresh current-live audit complete: rewards30.158/29.999s, savedguest/allroutes/3Forgemodes/proof/offline pass, no producterrors/writes/overflow; auto-fail knownstagearia/rewardcontrast (#263).
-- New docs draftPR270/127e3f8,4ownedpaths; A1448units/full368per-sizeONCE PASS, resize0/20, strict0/18; known failures retained.
-- Clean B finished tests-first, then full diff/scope/native review;14commandsPASS, same4axe failures/20scans=>0/100. No full suite repeated.
-- Native class/Home/Forge/Bag and focus captures reviewed; typography tokens match across28 route observations, no new visual defect.
-- Initial live audit guard omitted read-only eth_getBlockByNumber and blocked it; failed harness record retained. Corrected read-only allowlist rerun in current-live-r2.
-- Corrected docs drift: submission still waits for CXU3/CXC2 readiness; media/test evidence is explicitly historical6144d42. Prepare accurate current status without claiming held patches live.
-- #244 blocked by complete deployed-bundle backup + restore rehearsal; #252/#257 stay open/superseded.
-- No live writes/migrations, edge/contract deploys, secrets, funded wallet, settings/flag changes or submission.
-- #269 edge source remains undeployed; historical502 cause unproven, health hold cleared.
-- Needs-user text will be appended verbatim to OPTIONAL-USER-STEPS; final SINGLE-REPORT.md required.
-- Docs270 Vercel statuses are both Ignored Build Step, not deployment/capacity evidence; release remains parked.
-- A/B receipts+fresh0/0grades+native geometry captures in reports/ui/cards/SINGLE-DOCS; accepted262–269 receipts unchanged.
-- Supplement80667 completed:60state casesPASS; effects10/10persize60fps;4samples60.001–60.004fps/CLS0. Keyboard12known failures(#268), overallexit1.
-- P3 no-deploy work complete with known failures retained; no new runtime repair. PR270 body updated with A0/B0 and final checks; release remains parked.
-- Final GitHub/main/live snapshot: private,allheads unchanged,main340f88b,7entryasset hashes unchanged. No own5300–5340listeners remain.
+- Finalized 2026-11-04T05:01:09Z; started around04:27Z, maximum14:27Z. STOP: only capacity/owner-gated work remains.
+- One agent; no helpers, scheduler, heartbeat or orchestrator. No merge, lock, manual deploy, live write, secret handling or production flag change.
+- Main checkout untouched. Own /Users/bao/taskbar-hero-single on codex/single-session-docs at127e3f87c678be5909c4b420c46fd55d75fb5d72.
+- Main/live340f88b92405ceb6b5421b207307fdbb283b2ca3 (#261), repository private. Final GitHub/fetch unchanged.
+- Live entrypoints index-Ccs5evFH.js / index-jL_b_lsJ.css; all7 entry SHA256 values unchanged. Evidence reports/sys/single-session/final-live-assets.json.
+- P0 CAPACITY BLOCKED. CLI absent; actualused/remainingunknown.04:29Z activity0maincommits/0mergedPRs is not usage proof.
+- Accepted269 status retains rate-limit warning. New270 previews BOTH Ignored Build Step; no hosted build or recovered quota.
+- Latest provider warning03Nov20:51:55Z -> conservative04Nov20:51:55Z; planned retry04Nov21:00Z (05Nov04:00Vietnam), beyond session limit. NOT a guaranteed reset.
+- Next UTC boundary05Nov00:00Z is not quota proof. No automatic retry scheduled. Owner usage check required.
+- Existing accepted drafts unchanged:262/a9afaad A96B96;263/4b0e69a,264/949cc44,265/7d0d08e,266/f2a0588,267/e161f06,268/afd0699,269/85a6919 A95B95 each.
+- Preserve all exact-head receipts and rejected attempts. Do not rerun accepted full suites without a head change.
+- Release262→263→264→265→266→268→269→267. Merge lock, latest-main integration, changed specs/typecheck/lint, exact-head checks and live smoke remain required.
+- Max1merge/20min; stop80deployments or anyquotaerror. After266/268/269 refresh267screens/demo/walkthrough and all624capture hashes against finalmain.
+- P1 and final-stack P2 parked. Current-live OVN-U4 baseline fresh/saved profiles/bothsizes/allroutes/Forge/proof/offline checked; rewards30.158/29.999s.
+- Known live defects remain:263 stagearia/emptyBagkeyboard/rewardcontrast;268expiry/classfocus;269walletnotice/connectedHUD. No duplicate repair.
+- P3 complete. New docs270/127e3f8 changes4ownedMarkdownpaths;37links/7historicalmedia hashes pass, runtime tree identicalmain.
+- New docs self-graded(freshpass) A0/B0 AUTO-FAIL, NOT release-ready. Each reviewer has4knownaxe failures/20scans. Stage/Bag repairs are held263.
+- A/B each1448webunits/typecheck/lint/build/art PASS; full368/368persizeONCEinA; related72/reviewer inclA60casesupplement; resize0/40; strict18views/reviewerPASS.
+- A initially named nonexistentcxr2-states.spec.ts; correctedcxr2-state-matrix.spec.ts supplement passes60. All original logs preserved.
+- Clean B /private/tmp/taskbar-hero-single-b-127e3f8 tests-first, then full diff/scope/native review; no full repeat. Receipts/screenshots copied to ledger.
+- Effects10/10persize at60fps;4separate samples60.001–60.004fps/p95<=16.7ms/CLS0. Keyboard12knownEnter/Escape/Cancelfailures(#268), supplementexit1.
+- Native focus/screens reviewed;28routefont observations match theme/nooverflow. Automated semantics only, not a human VoiceOver/NVDA listening claim.
+- Bundle141603Bentrygzip/315728BPhasergzip; stage/arena/catalog alreadydynamic, docs0runtimebytes. EconomyOFF; Sample/Unavailable unchanged; no artchanges.
+- 624/624galleryhashes match unchanged267. Local /Users/bao/taskbar-hero-ovn-ui/docs/ui/gallery/index.html; private source viewer is not hostedHTML.
+- #244 blocked/untouched: complete supported function/dependency/import-map backup + local restore rehearsal. Never bypass UnsafeFunctionDownloadPathError.
+- #252/#257 open/superseded/untouched. #269 edge source UNDEPLOYED; historical502causeunproven, prior2x200healthholdcleared.
+- Initial live guard omitted read-onlyeth_getBlockByNumber; failure retained, corrected rerun guarded. AxeCSP diagnostic retained, CSP unchanged.
+- Package11inheritedskips/2expectedfailures retained. No test weakened. HistoricalStageLayout1/1467failure and5passedfollowups retained.
+- Own gates71422/77190/80667 finished; ports5300–5340checkedclear; no foreign process killed. Temporary B checkout retained for review.
+- PR270 body updated with final tests/failures; remainsdraft until P1, factsrefresh and newgate.
+- Canonical final reports/SINGLE-REPORT.md; exact5ownersteps verbatim in reports/OPTIONAL-USER-STEPS.md, with dashboardcommands.
+- Owner actions: verifyVercelusage; completeSupabasebackup/restore; resetleakedDBpassword+discardoldwallet; laterVITE_GAME_V2go/no-go; ownerconfirmscontestdeadline/submits.
