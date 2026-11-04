@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BossFightResultV2 } from '../../api/GameApiV2';
-import { backdropFor } from '../../art/backdrops';
-import { BackdropView } from '../../art/backdrops/BackdropView';
+import { SceneBackdrop } from '../../visual/SceneBackdrop';
 import { prefersReducedMotion } from '../combat';
 import type { ArenaCueOptions } from './cues';
 import './arena.css';
@@ -37,7 +36,7 @@ export function BossArena({ result, complete = false, onDone, chapter, classId, 
   }, [complete]);
   const finished = complete || ended;
   return <section className="boss-arena" aria-label="Boss arena">
-    <div className="boss-arena-stage"><BackdropView art={backdropFor(chapter)} width={256} scale={2} /><div ref={host} className="boss-arena-canvas" /></div>
+    <div className="boss-arena-stage"><SceneBackdrop chapter={chapter} width={256} scale={2} /><div ref={host} className="boss-arena-canvas" /><SceneBackdrop chapter={chapter} width={256} scale={2} foreground /></div>
     <p aria-label="Fight health">Cat HP {Math.round(hp.cat)} · Boss HP {Math.round(hp.boss)}</p>
     <p role="status">{finished ? result.won ? 'Victory — boss defeated' : 'Defeat — rest and try again' : 'Boss fight in progress'}</p>
     {error && <p role="alert">{error}</p>}

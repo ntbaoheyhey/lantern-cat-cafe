@@ -107,9 +107,9 @@ export const SHARED_ANIMS: Readonly<Record<Exclude<AnimName, 'attack'>, AnimDef>
   idle: anim([
     {},
     { head: [0, 1], tail: 'mid' },
-    { dy: 1, head: [0, -1], pf: [0, -1], pb: [0, -1], tail: 'mid' },
+    { dy: 1, head: [0, -1], pf: [0, -1], pb: [0, -1], tail: 'mid', face: 'blink' },
     { head: [0, 1] },
-  ], 220, true),
+  ], [900, 180, 120, 1000], true),
   walk: anim([
     { ff: [2, 0], fb: [-2, 0], pf: [-1, 0], pb: [1, 0] },
     { dy: 1, ff: [1, 0], fb: [-1, 0], tail: 'mid' },
