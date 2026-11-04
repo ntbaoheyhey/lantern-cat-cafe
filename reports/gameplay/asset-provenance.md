@@ -295,3 +295,18 @@ Exact per-file parameters/hashes: `tools/art/gameplay-sheets.json`. No prompt; c
 | `apps/web/public/art/gameplay/mochi-alchemist-victory.png` | `{"class":"alchemist","gear":{},"animation":"victory","frames":4,"frameMs":[120,140,200,240],"hitFrames":[],"frameWidth":56,"frameHeight":48,"scale":1}` | 708 | 2026-11-04 |
 | `apps/web/public/art/gameplay/mochi-alchemist-attack.png` | `{"class":"alchemist","gear":{},"animation":"attack","frames":6,"frameMs":[80,90,90,80,80,100],"hitFrames":[3],"frameWidth":56,"frameHeight":48,"scale":1}` | 911 | 2026-11-04 |
 
+### `python3 -B tools/art/gameplay-relics.py`
+Exact per-file parameters/hashes: `tools/art/gameplay-relics.json`. No prompt; coordinates/poses in the script are the complete recipe.
+
+| File | Parameters | Bytes | Date |
+|---|---|---:|---|
+| `apps/web/public/relics/1.svg` | `{"id":1,"name":"Paw Charm","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 34012 | 2026-11-04 |
+| `apps/web/public/art/gameplay/relic-1.png` | `{"id":1,"name":"Paw Charm","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 434 | 2026-11-04 |
+| `apps/web/public/relics/2.svg` | `{"id":2,"name":"Silver Bell","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 33175 | 2026-11-04 |
+| `apps/web/public/art/gameplay/relic-2.png` | `{"id":2,"name":"Silver Bell","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 449 | 2026-11-04 |
+| `apps/web/public/relics/3.svg` | `{"id":3,"name":"Moon Collar","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 32537 | 2026-11-04 |
+| `apps/web/public/art/gameplay/relic-3.png` | `{"id":3,"name":"Moon Collar","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 493 | 2026-11-04 |
+| `apps/web/public/relics/4.svg` | `{"id":4,"name":"Golden Maneki","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 34663 | 2026-11-04 |
+| `apps/web/public/art/gameplay/relic-4.png` | `{"id":4,"name":"Golden Maneki","size":64,"scale":1,"seed":0,"light":"upper-left"}` | 485 | 2026-11-04 |
+| `reports/gameplay/relic-contact.png` | `{"scale":2,"ids":[1,2,3,4]}` | 1968 | 2026-11-04 |
+
