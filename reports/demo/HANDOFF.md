@@ -1,6 +1,6 @@
 # Offline demo handoff
 
-Updated: 2026-11-04. D0–D3 complete; D4 local checks passed, clean-clone proof pending. One agent; no delegation.
+Updated: 2026-11-04. D0–D4 complete; draft PR created. Final publication receipt and exact final branch head are maintained in the ledger report. One agent; no delegation.
 
 - Deadline: 2026-11-04 13:42 UTC (20:42 Vietnam).
 - Worktree: `/Users/bao/taskbar-hero-demo`, branch `ai/codex-demo-2026-11-04`.
@@ -17,7 +17,7 @@ Updated: 2026-11-04. D0–D3 complete; D4 local checks passed, clean-clone proof
 - D1 browser: 25/25 scenario checks at 1280×720 and 1440×900 (scale 2), zero console errors / external requests / wallet requests. Local craft, boss victory, fresh class choice and a natural first reward verified. 8 PNG captures in docs/demo/shots/.
 - Units: 1467/1467 existing web tests passed. Initial typecheck and lint passed. Repeat affected checks only after remaining runtime changes; do not reuse these as final-head proof.
 - D2: production bundle builds (~3.4 MB). Standard ES-module bundle cannot open via file://; documented CORS/module failure in reports/demo/file-bundle-probe.json. Use self-contained guided screenshot HTML plus included dist served by Python.
-- Owned server: pnpm demo tool session 61242 on localhost:5199. Stop with Ctrl+C only; no broad process kill.
+- All owned servers stopped: original session 61242, clean-clone process group 3833, production session 87129. Port 5199 is available for the user; no unrelated process was killed.
 - D2: self-contained static HTML generated from 8 real screenshots; 34/34 offline file navigation checks pass. Embedded rail hotspots come from measured Playwright boxes. Entire docs/demo currently ~9.2 MB (<25 MB).
 - D3: README with top REFERENCE line and DRAFT bilingual/three-minute/rubric/90-second walkthrough complete. Exact class and craft confirmation labels inspected.
 - New safety regressions: 6/6 pass. Earlier draft test referenced a non-existent progress field; corrected to assert the actual boss gate. Earlier static check found a long-address overflow; fixed with wrapping and all 34 checks pass.
@@ -25,4 +25,14 @@ Updated: 2026-11-04. D0–D3 complete; D4 local checks passed, clean-clone proof
 - D4: final runtime web units 1473/1473 (129 files), repository typecheck and lint pass; logs are in reports/demo/. Runtime has not changed since these checks.
 - Walkthrough verification found harness/document label mismatches (item accessible name vs visible text, item-detail region, Start Adventure capitalization); corrected without changing gameplay. Failed receipts are retained and must not be counted as passes.
 - Static package measured 9,152,836 bytes; static HTML 3,315,929; dist 3,339,319; eight shots + manifest 2,481,149. Re-measure at final publication.
-- Remaining: commit build; fresh clone install/run and production-bundle/browser proof; push branch, create draft PR, write/push ledger report. No new scope or cards.
+- Source/artifact commit: b241eb6fc2f01f0ffb6ffa72ecf83d05569381c1. All following changes are proof/report metadata only.
+- Fresh clone: /private/tmp/taskbar-hero-demo-clean.TgyZFs, initially clean at b241eb6. Frozen install passed in 5.8 seconds, 505 packages, 0 downloads. pnpm demo warm startup 1,897 ms. Deliberately hostile inherited VITE_* placeholders are ignored.
+- Fresh-clone browser proof: 29/29 at the two requested sizes; static: 34/34 offline file checks. Zero console errors, external requests or wallet calls. Walkthrough now follows exact accessible button labels.
+- Fresh-clone production build passed and reproduced the versioned dist byte-for-byte (no tracked bundle diff).
+- Busy-port check exited 1 with clear EADDRINUSE guidance and left the owned active server alive.
+- Production bundle: 29/29 browser checks pass; zero console errors, external requests or wallet calls. All receipt details are summarized in reports/demo/VERIFICATION.json.
+- Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/274, title "Demo: runnable stack-tip preview (do not merge)", base main, draft true, merged false.
+- Source branch push initially received GitHub HTTP 500 / Internal Server Error; a normal retry succeeded. GitHub reports zero deployment records for b241eb6.
+- Runtime/artifact source remains b241eb6; this final follow-up changes reports only. Final branch head is recorded by the separately committed ledger DEMO-REPORT.
+- Final report: https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/demo/DEMO-REPORT.md.
+- Publication handoff: the ledger report records the final evidence commit and remote verification. Runtime work is finished; no merge, deployment or additional feature work is authorized. All owned servers are stopped.
