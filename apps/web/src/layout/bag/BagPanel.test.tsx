@@ -121,7 +121,7 @@ describe('BagPanel: Equip best', () => {
     renderBag({ ...base, inventory: base.inventory.filter((i) => i.equipped) });
     const best = screen.getByRole('button', { name: 'Equip best' }) as HTMLButtonElement;
     expect(best.disabled).toBe(true);
-    expect(screen.getByTestId('block-reason-equip-best').textContent).toBe('Best gear already equipped');
+    expect(screen.getByTestId('block-reason-equip-best').textContent).toBe('No higher total-stat score');
   });
 });
 
@@ -214,11 +214,11 @@ describe('BagPanel: counter, filters and sorting', () => {
     const detail = screen.getByRole('region', { name: 'Item detail' });
     const pill = detail.querySelector('.rarity-pill');
     expect(pill).not.toBeNull();
-    expect(pill?.textContent).toBe('Rare');
+    expect(pill?.textContent).toContain('Rare');
 
     pick(/Sunfang/);
     const epicPill = detail.querySelector('.rarity-pill');
-    expect(epicPill?.textContent).toBe('Epic');
+    expect(epicPill?.textContent).toContain('Epic');
   });
 });
 

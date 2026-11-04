@@ -566,11 +566,11 @@ describe('ForgePanel', () => {
       // Craft slot picker still shows slot icons
       fireEvent.click(screen.getByTestId('tab-craft'));
       const weaponSlotBtn = screen.getByTestId('slot-weapon');
-      expect(weaponSlotBtn.querySelector('svg[data-icon="bow"]')).toBeTruthy();
+      expect(weaponSlotBtn.querySelector('img[data-icon="bow"]')?.getAttribute('src')).toBe('/art/gameplay/item-bow.png');
       const helmetSlotBtn = screen.getByTestId('slot-helmet');
-      expect(helmetSlotBtn.querySelector('svg[data-icon="slotHelmet"]')).toBeTruthy();
+      expect(helmetSlotBtn.querySelector('img[data-icon="slotHelmet"]')?.getAttribute('src')).toBe('/art/gameplay/item-slotHelmet.png');
       const armorSlotBtn = screen.getByTestId('slot-armor');
-      expect(armorSlotBtn.querySelector('svg[data-icon="slotArmor"]')).toBeTruthy();
+      expect(armorSlotBtn.querySelector('img[data-icon="slotArmor"]')?.getAttribute('src')).toBe('/art/gameplay/item-slotArmor.png');
     });
 
     it('proves prefers-reduced-motion animation: none rules exist in ForgePanel.css and ClassPicker.css (A18 finding #3)', () => {

@@ -1,3 +1,4 @@
+import { RarityMark } from '../../gameplay/RarityMark';
 import { Art2Image } from '../../art/Art2';
 import { useState, useId, type ReactNode } from 'react';
 import type {
@@ -70,18 +71,6 @@ function MaterialOrCurrencyIcon({
     return <PixelIcon name={id} size={size} title={title} />;
   }
   return <V2PixelIcon name={id as V2IconName} size={size} title={title} />;
-}
-
-function getSlotIconName(slot: GearSlotId, classWeaponType: WeaponType): V2IconName {
-  if (slot === 'weapon') return classWeaponType as V2IconName;
-  if (slot === 'helmet') return 'slotHelmet';
-  if (slot === 'armor') return 'slotArmor';
-  if (slot === 'gloves') return 'slotGloves';
-  if (slot === 'boots') return 'slotBoots';
-  if (slot === 'collar') return 'slotCollar';
-  if (slot === 'earring') return 'slotEarring';
-  if (slot === 'ring') return 'slotRing';
-  return 'slotCharm';
 }
 
 function formatYieldSummary(materials: v2.MaterialCost): string {
@@ -317,7 +306,6 @@ export function ForgePanel({
                     <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-slot-label`}>
                       {MAIN_SLOTS.map((slot) => {
                         const isSelected = selectedSlot === slot;
-                        const iconName = getSlotIconName(slot, classWeaponType);
                         const title =
                           slot === 'weapon'
                             ? `Weapon (${capitalize(classWeaponType)})`
@@ -335,7 +323,7 @@ export function ForgePanel({
                               setConfirmCraft(false);
                             }}
                           >
-                            <V2PixelIcon name={iconName} size={3} title={title} />
+                            <ItemIcon item={{ itemKey: 'preview', slot, weaponType: classWeaponType }} size={2} title={title} />
                             <span className="forge-option-name">{title}</span>
                           </button>
                         );
@@ -365,7 +353,7 @@ export function ForgePanel({
                             }}
                           >
                             <V2PixelFrame name={frameName} size={2} title={capitalize(rarity)} />
-                            <span className="forge-option-name">{capitalize(rarity)}</span>
+                            <span className="forge-option-name"><RarityMark rarity={rarity} /> {capitalize(rarity)}</span>
                           </button>
                         );
                       })}
@@ -383,7 +371,7 @@ export function ForgePanel({
                   <img className="forge-hearth" src="/art/visual/forge-hearth.png" width={320} height={240} alt="" aria-hidden="true" />
                   <div className="forge-preview-art">
                     <V2PixelFrame name={`frame${capitalize(selectedRarity)}` as V2FrameName} size={4} className="forge-frame" />
-                    <span className="forge-preview-glyph"><V2PixelIcon name={getSlotIconName(selectedSlot, classWeaponType)} size={3} title={slotLabel} /></span>
+                    <span className="forge-preview-glyph"><ItemIcon item={{ itemKey: 'preview', slot: selectedSlot, weaponType: classWeaponType }} size={4} title={slotLabel} /></span>
                   </div>
                 </div>
                 <div className="forge-candidate-preview">
@@ -391,7 +379,7 @@ export function ForgePanel({
                     {capitalize(selectedRarity)} {slotLabel}
                   </h3>
                   <div className="num muted" style={{ fontSize: '12px' }}>
-                    Recipe fixes the rarity; bonus lines still roll.
+                    {rarityDef.bonusLines ? 'Recipe fixes the rarity; bonus lines still roll.' : 'Recipe fixes the rarity; no bonus roll.'}
                   </div>
                   <p className="forge-preview-meta" style={{ margin: '4px 0 0' }}>
                     Guaranteed {capitalize(selectedRarity)} • Bonus lines: {rarityDef.bonusLines} • Max Lv. {rarityDef.maxLevel}

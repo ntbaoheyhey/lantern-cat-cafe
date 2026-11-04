@@ -91,8 +91,9 @@ export const CONFIG = {
     coachSteps: 3,
     juice: { maxParticles: 16, maxTweens: 32, maxLabels: 12, maxProjectiles: 8,
       critStopMs: 60, maxShakePx: 2, flashMs: 70, chipTrailMs: 650,
-      anticipationMs: 180, impactMs: 70, settleMs: 480, defeatMs: 300,
-      labelMs: 650, calmLabelMs: 220, comboCap: 9, comboResetMs: 8000 },
+      anticipationMs: 180, settleMs: 480,
+      labelMs: 650, calmLabelMs: 220, shakeMs: 80, resourceGainMs: 900,
+      burstNormal: 3, burstCrit: 6, burstDefeat: 8 },
     actor: { idleFrameMs: [700, 180, 120, 180, 600, 100, 120, 200], napFrameMs: 1400, equipFrameMs: [100, 140, 140, 180], napAfterMs: 12000 },
   },
   /** Gear slots, in display order (content.ts). */

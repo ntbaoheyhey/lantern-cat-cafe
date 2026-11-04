@@ -1,3 +1,4 @@
+import { CONFIG } from '@taskbar-hero/game-rules';
 import { useEffect, useRef, useState } from 'react';
 
 /** Acknowledged gains only. One short-lived cue; no initial-mount or spending cue. */
@@ -9,7 +10,7 @@ export function ResourceGain({ value }: { value: number }) {
     previous.current = value;
     setGain(delta > 0 && !document.hidden ? delta : 0);
     if (delta <= 0 || document.hidden) return;
-    const timer = setTimeout(() => setGain(0), 900);
+    const timer = setTimeout(() => setGain(0), CONFIG.gameplay.juice.resourceGainMs);
     const hide = () => { if (document.hidden) { clearTimeout(timer); setGain(0); } };
     document.addEventListener('visibilitychange', hide);
     return () => { clearTimeout(timer); document.removeEventListener('visibilitychange', hide); };

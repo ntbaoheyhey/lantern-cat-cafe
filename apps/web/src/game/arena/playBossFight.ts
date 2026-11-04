@@ -7,6 +7,7 @@ export interface PlayBossOptions extends ArenaCueOptions {
   signal?: AbortSignal;
   onReady?(skip: () => void): void;
   onHp?(catHp: number, bossHp: number): void;
+  onPhase?(phase: string): void;
 }
 /** Resolve once the replay ends or is skipped; the owner aborts to release the canvas. */
 export async function playBossFight(result: BossFightResultV2, opts: PlayBossOptions): Promise<void> {
@@ -23,6 +24,6 @@ export async function playBossFight(result: BossFightResultV2, opts: PlayBossOpt
       else game.events.once('ready', () => queueMicrotask(() => game.step(performance.now(), 0)));
       finish();
     }, { once: true });
-    game.scene.add('boss-arena', ArenaScene, true, { ...opts, result, ready: opts.onReady ?? (() => {}), hp: opts.onHp ?? (() => {}), done: finish });
+    game.scene.add('boss-arena', ArenaScene, true, { ...opts, result, ready: opts.onReady ?? (() => {}), hp: opts.onHp ?? (() => {}), phase: opts.onPhase, done: finish });
   });
 }

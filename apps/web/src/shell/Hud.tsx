@@ -1,3 +1,4 @@
+import '../gameplay/gameplay.css';
 import { journeyGoals } from '../gameplay/goals';
 import React from 'react';
 import { ResourceGain } from '../visual/ResourceGain';
