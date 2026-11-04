@@ -1,0 +1,225 @@
+[WebServer] (node:34030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34075) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:34118) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:34178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34189) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:34195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:34281) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 1 worker
+
+(node:34332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference
+  1) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 15
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__wallet-btn-wrap\" data-testid=\"landing-wallet\"><div class=\"wallet\" role=\"group\" aria-label=\"Wallet\"><a class=\"wallet-btn\" href=\"https://core.app\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.\">Get a browser wallet</a></div></div>",
+    +     ],
+    +     "value": 0.0001363960901896159,
+    +   },
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__proof-item\"><a class=\"landing__proof-link\" href=\"https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract\" target=\"_blank\" rel=\"noreferrer\">Market contract ↗</a></div>",
+    +       "<div class=\"landing__proof-divider\" aria-hidden=\"true\">·</div>",
+    +     ],
+    +     "value": 0.000008864402770996092,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--3a806-s-arrive-1280-no-preference-stage-layout/error-context.md
+
+
+(node:34395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce
+  2) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 15
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__wallet-btn-wrap\" data-testid=\"landing-wallet\"><div class=\"wallet\" role=\"group\" aria-label=\"Wallet\"><a class=\"wallet-btn\" href=\"https://core.app\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.\">Get a browser wallet</a></div></div>",
+    +     ],
+    +     "value": 0.0001363960901896159,
+    +   },
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__proof-item\"><a class=\"landing__proof-link\" href=\"https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract\" target=\"_blank\" rel=\"noreferrer\">Market contract ↗</a></div>",
+    +       "<div class=\"landing__proof-divider\" aria-hidden=\"true\">·</div>",
+    +     ],
+    +     "value": 0.000008864402770996092,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--76c9c-eb-fonts-arrive-1280-reduce-stage-layout/error-context.md
+
+
+(node:34406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference
+  3) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 15
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__wallet-btn-wrap\" data-testid=\"landing-wallet\"><div class=\"wallet\" role=\"group\" aria-label=\"Wallet\"><a class=\"wallet-btn\" href=\"https://core.app\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.\">Get a browser wallet</a></div></div>",
+    +     ],
+    +     "value": 0.00006983479817708334,
+    +   },
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__proof-item\"><a class=\"landing__proof-link\" href=\"https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract\" target=\"_blank\" rel=\"noreferrer\">Market contract ↗</a></div>",
+    +       "<div class=\"landing__proof-divider\" aria-hidden=\"true\">·</div>",
+    +     ],
+    +     "value": 0.00000453857421875,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--0f5f5-s-arrive-1600-no-preference-stage-layout/error-context.md
+
+
+(node:34414) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce
+  4) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 15
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__wallet-btn-wrap\" data-testid=\"landing-wallet\"><div class=\"wallet\" role=\"group\" aria-label=\"Wallet\"><a class=\"wallet-btn\" href=\"https://core.app\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"No wallet found. Core, MetaMask or any Avalanche-compatible browser wallet works on desktop Chrome, Brave or Edge. This link opens core.app.\">Get a browser wallet</a></div></div>",
+    +     ],
+    +     "value": 0.00006983479817708334,
+    +   },
+    +   Object {
+    +     "sources": Array [
+    +       "<div class=\"landing__proof-item\"><a class=\"landing__proof-link\" href=\"https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract\" target=\"_blank\" rel=\"noreferrer\">Market contract ↗</a></div>",
+    +       "<div class=\"landing__proof-divider\" aria-hidden=\"true\">·</div>",
+    +     ],
+    +     "value": 0.0000045068359375,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--bdc45-eb-fonts-arrive-1600-reduce-stage-layout/error-context.md
+
+
+  4 failed
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce 
+
+exit=1

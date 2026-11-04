@@ -1,0 +1,212 @@
+[WebServer] (node:34602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34605) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:34630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:34675) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:34684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:34721) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:34722) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:34731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 10 tests using 2 workers
+
+(node:34744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:34743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference
+[2/10] [stage-layout] › e2e/ui/firstplay.spec.ts:43:3 › First play reaches Home and naturally earns without a wallet 1280
+  1) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "",
+    +     ],
+    +     "value": 0.000020537296930948894,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--3a806-s-arrive-1280-no-preference-stage-layout/error-context.md
+
+
+(node:34756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/10] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce
+  2) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "",
+    +     ],
+    +     "value": 0.000020537296930948894,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--76c9c-eb-fonts-arrive-1280-reduce-stage-layout/error-context.md
+
+
+(node:34763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/10] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference
+  3) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "",
+    +     ],
+    +     "value": 0.000010515096028645832,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--0f5f5-s-arrive-1600-no-preference-stage-layout/error-context.md
+
+
+(node:34768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/10] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce
+  4) [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "sources": Array [
+    +       "",
+    +     ],
+    +     "value": 0.000010515096028645832,
+    +   },
+    + ]
+
+      26 |     await page.evaluate(() => document.fonts.ready);
+      27 |     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    > 28 |     expect(await page.evaluate(() => (window as unknown as { landingShifts: unknown[] }).landingShifts)).toEqual([]);
+         |                                                                                                          ^
+      29 |     for (const selector of ['.landing__guest-btn', '.landing__wallet-btn-wrap', '.landing__proof-item']) {
+      30 |       for (const item of await page.locator(selector).all()) {
+      31 |         expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/landing-font-stability.spec.ts:28:106
+
+    Error Context: test-results/5300-5301/ui-landing-font-stability--bdc45-eb-fonts-arrive-1600-reduce-stage-layout/error-context.md
+
+
+(node:34796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/10] [stage-layout] › e2e/ui/merged-redesign.spec.ts:20:5 › merged redesign journey 1280x720 › guest landing to class, Home, populated Bag and equip
+[7/10] [stage-layout] › e2e/ui/merged-redesign.spec.ts:20:5 › merged redesign journey 1600x900 › guest landing to class, Home, populated Bag and equip
+[8/10] [stage-layout] › e2e/ui/firstplay.spec.ts:83:3 › Returning guest stays labelled through disconnected wallet and offline recovery 1280
+[9/10] [stage-layout] › e2e/ui/firstplay.spec.ts:43:3 › First play reaches Home and naturally earns without a wallet 1600
+[10/10] [stage-layout] › e2e/ui/firstplay.spec.ts:83:3 › Returning guest stays labelled through disconnected wallet and offline recovery 1600
+  4 failed
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference 
+    [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce 
+  6 passed (1.2m)
+
+exit=1

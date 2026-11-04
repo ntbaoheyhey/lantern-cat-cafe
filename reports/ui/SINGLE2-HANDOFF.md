@@ -10,7 +10,7 @@
 - Inheritedopacity exists onmain and no heldPR owns it. STACKFIX draft271 fixesCSS and adds compositedcontrastregression. RED4/4, GREENcombinedForge9/9; no art/economy/behavior change.
 - STACKFIX worktree /Users/bao/taskbar-hero-single2-fix, branch ai/codex-stackfix at68ab4c12cfdb24b107480fa34b3c1c82dd105089, remote pushed. Red/green logs onledger SINGLE2-STACKFIX.
 - PR271 base ai/codex-stack-tip-base is immutable d31cb2a snapshot so two-file review remains visible as integration advances. NEVER MERGE integration branches to main.
-- Current stack tip68ab4c12cfdb24b107480fa34b3c1c82dd105089, remote pushed; /Users/bao/taskbar-hero-single2 branch ai/codex-stack-tip. No integration PR.
+- Previous stack tip68ab4c12cfdb24b107480fa34b3c1c82dd105089, remote pushed; /Users/bao/taskbar-hero-single2 branch ai/codex-stack-tip. No integration PR.
 - FreshfinalA launchedPID10715 at07:30:58Z, single2-stack-final-a,ports5300–5304, --full ONCE per size. Log logs/single2-stack-final-a.log.
 - CleanfinalB launchedPID10716, /private/tmp/taskbar-hero-single2-b-68ab4c1,ports5320–5324,testsfirst, no--full. Log logs/single2-stack-final-b.log. Read full diff AFTER B tests.
 - Runner reports/ui/single2-gate.py; axe reports/ui/single2-axe.mjs pinned4.10.3 adds class/craft/salvage confirmations and Chain unavailable. Forgefixture reload fixed in harness; no product assertion waiver.
@@ -25,3 +25,8 @@
 - Progress report reports/SINGLE2-REPORT.md is incomplete; merges/deploys/signatures0. Existinggoal ACTIVE. Do not declare complete untilP0–P5 done or explicitstop/deadline.
 - Resume checkpoint: final cleanB68ab4c1 all14commandsPASS incl38axe/18geometry; evidence copied to SINGLE2-STACK/b. Bdiffreview underway; nativeSalvage1280 inspected. A full1280PASS,full1600active. FinalU5 14/14PASS at68ab4c1; newpath SINGLE2-U5/final-68ab4c1.
 - Reusable detached launcher /tmp/single2-launch.py accepts cwd logfile -- argv; protects logs and records PID. New parameterized keyboard runner reports/ui/single2-keyboard-performance.mjs tests actualCancel; run when browsergates idle.
+- 08:36Z milestone:68ab4c1 full395/size,38axe/reviewer,18geometry/reviewer PASS but supplementary cold-font CLS0.000074–0.000167=>REJECTED overall. All original a/b/polish evidence retained; no passing final grade yet.
+- CLS source: Landing guest/button widths and proof flex positions change on external font arrival. Original main CSS; no heldPR owns it. Added to STACKFIX271: fixed slots+left text alignment, no font/economy change.
+- Delayedrealfont regression RED4/4, firstCSSstillRED4/4 (centered text), finalGREEN4/4. One builder launch rejected busyports; retained log, no foreignprocess touched.
+- Newstack/STACKFIXhead22e4c4b09323171ba15d26651fe0388f954d9efd pushed. A35683 at5300–5304 fullONCE; cleanB35686 /tmp/taskbar-hero-single2-b-font at5320–5324 installthen testsfirst; logs single2-stack-font-a/b.log.
+- P3localcutover builder:52browsercasesPASS; rollbackFAIL due comparing sharednonce/voucher security migrations to older schema. Correct local rehearsal to retain sharedsecurity and verify exactexpectedsharedschema; #244 untouched. Priorlog reports/sys/single2/local-system/local-cutover.log retained.
