@@ -21,11 +21,13 @@ Ten causes of dullness: (1) diffuse concentric ellipses instead of a motivated l
 
 ## Principles studied (text only; no asset downloads)
 - [SLYNYRD — Color Palettes](https://www.slynyrd.com/blog/2018/1/10/pixelblog-1-color-palettes): shift hue across material ramps and reduce saturation near bright highlights. We author a separate 32-color palette; none is sampled.
-- [Pedro Medeiros — Outlines](https://www.patreon.com/saint11/posts/outlines-14106192): use outlines deliberately at low resolution; preserve a strong outside silhouette without outlining every internal cluster.
+- [Pedro Medeiros — Outlines](https://saint11.art/blog/pixel-art-tutorials/): use outlines deliberately at low resolution; preserve a strong outside silhouette without outlining every internal cluster.
 - [Unity — 2D lighting and mood](https://unity.com/how-to/use-2d-lights-unity-set-mood): separate lighting by depth layer; reserve illumination for the intended subject. Applied as cheap baked layers plus gradients, without adding a renderer.
 - [Jan Willem Nijman — The Art of Screenshake](https://www.jwaaaap.com/): feedback layers can transform perceived impact without changing mechanics. Here: capped shake, color-coded numbers, short flash and impact/settle, with a calmer fallback.
 - [NN/g — Visual Hierarchy](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/): scale, contrast and grouping determine reading order. One visual anchor per screen; smaller secondary borders.
 - [Cats Protection — Body language](https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language): relaxed eyes, slow blinks and an upright tail convey a friendly cat. Used for original expressive poses, not anatomical or copied art.
+
+Sources rechecked as text only on 2026-11-04; no illustrations fetched or used as generator inputs.
 
 ## Ranked work (impact / effort)
 1. Layered room + motivated lighting (very high / medium).
