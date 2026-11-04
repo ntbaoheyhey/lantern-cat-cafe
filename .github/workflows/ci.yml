@@ -62,7 +62,7 @@ jobs:
     # Match the reviewed Linux pixel fixtures, including fallback symbol fonts.
     # Chromium and pinned web-font bytes alone do not fix host font rasterization.
     container: mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -71,7 +71,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      # The pinned image supplies system libraries/fonts; do not upgrade them via apt.
+      - run: pnpm exec playwright install chromium
         working-directory: apps/web
       - run: pnpm --filter @taskbar-hero/web build
       - name: Check native screenshot and font fixtures
