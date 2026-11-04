@@ -10,13 +10,14 @@ mkdirSync(out, { recursive: true });
 const require = createRequire(resolve(web, 'package.json'));
 const { chromium, expect } = require('@playwright/test');
 const { preview } = await import(pathToFileURL(require.resolve('vite')).href);
-const port = 5340;
+const dist = process.argv[4] ?? 'dist-v2/e2e-5301';
+const port = Number(process.argv[5] ?? 5340);
 const sock = createServer(); await new Promise((ok, fail) => { sock.once('error', fail); sock.listen(port, '127.0.0.1', ok); }); await new Promise(ok => sock.close(ok));
 const report = { head: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(), productIdenticalToMain: false, samples: [] };
 const save = () => writeFileSync(resolve(out, 'keyboard-performance.json'), JSON.stringify(report, null, 2)+'\n');
 let browser, server;
 try {
- server = await preview({ root: web, envDir: false, build: { outDir: 'dist-v2/e2e-5301' }, preview: { port, strictPort: true } });
+ server = await preview({ root: web, envDir: false, build: { outDir: dist }, preview: { port, strictPort: true } });
  browser = await chromium.launch();
  for (const width of [1280, 1600]) for (const reducedMotion of ['no-preference', 'reduce']) {
   const page = await browser.newPage({ viewport: { width, height: width === 1280 ? 720 : 900 }, reducedMotion });

@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(output.startsWith(resolve(root, 'reports/ui') + '/') || output.startsWith(resolve(root, 'screenshots/ui') + '/'))
+
+    at file:///private/tmp/taskbar-hero-single2-b-1eefc3e/tools/effects-test.mjs:20:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+
+exit=1

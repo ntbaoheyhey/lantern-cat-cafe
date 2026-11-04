@@ -1,37 +1,27 @@
 # SINGLE2 handoff — ACTIVE
-- One agent only. Started 2026-11-04T05:36:34Z; hard deadline 15:36:34Z. User resumed after pause; original deadline retained.
-- Safety: no main checkout/reset/stash, live writes/migrations, deployments, signatures, settings, flags, secrets or submission. No orchestrator/helpers/schedulers.
-- P0 COMPLETE: CAPACITY BLOCKED. No Vercel CLI; #269 retained rate-limit status, #270 ignored builds. UTC 0/0 activity is not remaining quota.
-- Latest provider warning 2026-11-03T20:51:55Z. Next planned check 2026-11-04T21:00Z only if running; beyond deadline; no scheduler.
-- Main checkout 6144d42 is untouched; origin/main/live 340f88b. Main merges/deploys/signatures/live nonce probes all 0.
-- P1a COMPLETE: #262/a9afaad → #263/4b0e69a → #264/949cc44 → #265/7d0d08e → #266/f2a0588 → #268/afd0699 → #269/85a6919 merged cleanly to d31cb2a. No conflicts.
-- ai/codex-stack-tip is INTEGRATION, NEVER MERGE; no integration PR. Immutable ai/codex-stack-tip-base=d31cb2a preserves review for STACKFIX draft #271.
-- Initial d31cb2a A/B AUTO-FAIL 0: expanded axe catches salvage opacity contrast 2.73–3.66 at both sizes. Full 391/size passed once; no threshold waived.
-- STACKFIX #271 removes inherited opacity. RED 4/4, GREEN combined Forge 9/9. Head 68ab4c1 full 395/size, 38 axe/reviewer, 18 geometry/reviewer passed but supplementary cold-font CLS 0.000074–0.000167 => rejected overall.
-- Cold-font fix reserves Landing control/link slots. RED 4/4, GREEN 4/4. Native screenshot review found link arrow wrapping; 55c832d fixes grid widths and nowrap, adds assertion.
-- Intentional Landing pixel changes have new manually reviewed exact PNG baselines; original main Landing and class PNGs retained. Pixel byte equality not weakened. 18 repeated Landing/flag-off cases pass.
-- Current stack + STACKFIX head 1eefc3ef6d828b06710c8be18feb08e90b099e3e, both pushed. Worktrees /Users/bao/taskbar-hero-single2 and -single2-fix.
-- Rejected 22e4c4b: A unit StageLayout boss-sensitive test hit 5s under concurrent gates; B units pass but old baseline rejects deliberate Landing change. Evidence reports/ui/cards/SINGLE2-STACK/rejected-font-22e4c4b.
-- StageLayout unchanged: isolated original follow-up plus five repeats plus verbose profile all pass; last case 1032ms. CPU contention suspected, no timeout increase. Serialize gate unit phases; preserve failure/rates.
-- Final A PID41990, logs/single2-stack-reviewed-a.log, ports5300–5304, FULL ONCE per size. Specs include prior four plus landing-font-stability and art2-flag-off. Started08:52:15Z.
-- Clean B /private/tmp/taskbar-hero-single2-b-1eefc3e installed by PID42100. Launch gate only after A unit phase ends, ports5320–5324, no --full, tests BEFORE diff.
-- Gate harness reports/ui/single2-gate.py; pinned axe4.10.3 reports/ui/single2-axe.mjs. After gates run effects/keyboard/bundle serially; effects require idle browser gates. Review full diff and native screenshots; fresh A/B grades only after all pass.
-- P1e U5 mocked14/14 PASS at68ab4c1. Rerun at final1eefc3e using reports/ui/single2-stack-audit.mjs; no signature/live write.
-- P1d/f: docs and gallery worktrees based68ab4c1 with staged/unstaged original #270/#267 plus draft changes, not committed. Fast-forward to final stack without losing those changes; finish and gate. Original #270/#267 untouched.
-- P2/P3 tooling worktree /Users/bao/taskbar-hero-single2-tooling on ai/codex-single2-tooling, based68ab4c1; scripts and nonce harness are uncommitted. Review release engine then builder/gates/draft PR.
-- Tooling archive integrity tests PASS; auth-nonce failure modes PASS. Historical gateway502 not reproduced; no Deno, Docker binary but daemon unavailable. Never claim repo-source export equals complete deployed backup; Deno locks may be absent.
-- P3 local rehearsal now PASS:52 browser cases; exact rollback retains current shared nonce/voucher/budget security and sentinel balances. logs/local-system-fixed2.log. Earlier failed comparisons retained. #244 read-only, no change.
-- reports/ui/single2-local-system.py writes ledger local-system receipt; earlier receipt may reflect failure until explicitly refreshed. Rehearse-cutover script change plus local-cutover-rollback.sql are in tooling worktree.
-- P4 four judge drafts in docs worktree docs/submission; facts/counts/head pending final gate. Rune/skill/companion Sample/Unavailable, default OFF; no economy/art changes.
-- P5 final report incomplete: reports/SINGLE2-REPORT.md. Finish P1–P4 or stop on hard deadline then report exact limitations; only user/cap gates remain is also stop condition.
-- Needs-user items verbatim in original attachment and reports/OPTIONAL-USER-STEPS.md: provider quota, COMPLETE deployed backup, credential reset+old wallet discard, flag cut-over decision, user submission/deadlines.
-- Detached launcher /tmp/single2-launch.py accepts cwd logfile -- argv; refuses log overwrite, records PID. Read exit+tail40; kill only verified owned PIDs; ports5300–5399.
-- Ledger has unrelated untracked files. Stage explicit SINGLE2 paths only; rewrite handoff <=80 lines and commit+push every milestone; append ~/.taskbar-hero-locks/board.log. All commits end [skip ci], author ntbaoheyhey.
-- 09:07Z: 1eefc3e A FULL399/399 per size ONCE,38axe/18geometry pass; clean B base14checks pass. Discovered initial changed-spec subset omitted some inherited PR specs; supplement runs every remaining changed spec x3 per size, A PID54883 (check launch json), B51053. No full rerun.
-- Tooling draft #272 at f1a338854a8eb632a0d8f1841436595d59e83890 pushed. Source export twins byte-identical,713files exact restore,18import maps clean,588/588 Supabase tests pass. SHA256323ab32249f341e4019487cf2d48e6d20f0f01d3d8fe0e0762fe0ac3c153e522; repo-restore/f1a3388.
-- Tooling A PID54830,ports5360–5364, --full once. Clean B installed /private/tmp/taskbar-hero-single2-tooling-b-f1a3388,ports5380–5384 planned; launch after A units end. Python3archive/5releasebarriers and52browser+security-preserving rollback builder pass.
-- #244 local verifier overlay in /private/tmp/taskbar-hero-single2-cxn3-local: read-only db0f9d6 files on1eefc3e, no PR branch change. Classifier/catalog tests all pass; preserve exact source manifest/log in reports/sys/single2/cxn3-local. No live checker invocation.
-
-- 09:19Z resume audit: final1eefc3e A16/B14checks all0; full399/sizeONCE; complete changed specs75+171=246/size/reviewer allPASS; resize0/40. Final performance pending idle browser gates.
-- Tooling cleanB launchedPID60025 at09:16Z,ports5380–5384; A full1600 active. U5final1eefc3e launchedPID61013,ports5310–5312,outputSINGLE2-U5/reviewed-1eefc3e.
-- Read-only #244 classifier/catalog source evidence and cutover report are ready. Original52-case comparison failures preserved; final current-security rollback passes. Nonce report records7new regressions, historical502unproven.
+- One agent only. Started2026-11-04T05:36:34Z; original hard deadline15:36:34Z remains after user pause/resume.
+- Safety: no main checkout/reset/stash; no main merges, deploys, signatures, live writes/migrations, production flags/settings, contest submission or secrets. No orchestrator/helpers/schedulers.
+- P0 COMPLETE: capacity BLOCKED; no VercelCLI,269retains rate-limit; ignored builds are not quota proof. UTC0/0activity is not deployments.
+- Latest provider warning2026-11-03T20:51:55Z; planned retryNov4 21:00Z (Nov5 04:00Vietnam), beyond deadline, no scheduler or guaranteed reset.
+- Origin/main/live340f88b; main checkout6144d42 untouched. Merges/deploys/signatures/live nonce probes0.
+- P1 product COMPLETE: integration ai/codex-stack-tip and STACKFIX271 at1eefc3ef6d828b06710c8be18feb08e90b099e3e, pushed. Integration NEVER MERGE; no integration PR.
+- Seven original merges262→263→264→265→266→268→269 conflict-free. Immutable ai/codex-stack-tip-base=d31cb2a preserves271review.
+- Final fresh self-graded A95/B95; full399/size ONCE; complete changed246/size/reviewer; resize0/40; axe0/76; strictgeometry0/36; webunits1467/pass. Two expectedfailures/11inheritedskips retained.
+- Final A/B effects10/size each, nominal60fps, p95<20ms, CLS0; keyboard prior12failures now0. Final U5mocked14/14PASS at1eefc3e, no signing/livewrite.
+- Evidence reports/sys/single2/stack-tip-receipts.md, reports/ui/cards/SINGLE2-STACK/{A,B}.md; reviewed-a/b and changed-complete-a/b dirs. Product worktree /Users/bao/taskbar-hero-single2; cleanB /private/tmp/taskbar-hero-single2-b-1eefc3e.
+- B performance first launcher failed out-of-root output assertion, no browser run. Retained final-polish-b.log; corrected final-polish-b-r2.log PASS, verified-clean-b-1eefc3e artifacts.
+- Earlier d31cb2a contrast A0/B0,68ab4c1 cold-fontCLS and22e4c4b unit/pixel rejections preserved. No relaxed contrast, retries, timeouts or pixel tolerance. New reviewed Landing baselines retain original PNGs.
+- Entry gzip143074B vs141603baseline (+1471/+1.04%); Phaser315728B stays lazy. Automated tree/live-region inspection is not human VoiceOver/NVDA.
+- P1d/P4 docs worktree /Users/bao/taskbar-hero-single2-docs, branchai/codex-docs-on-stack, based1eefc3e. Ten doc paths with finalstack facts and4judge drafts ready to freeze/gate.
+- Original270/codex/single-session-docs head127e3f8 untouched so far; only update/force-with-lease after docs new exact head passes A/B. Preserve old rejection.
+- P1f gallery worktree /Users/bao/taskbar-hero-single2-gallery branchai/codex-gallery-on-stack based1eefc3e.910captures=286current+624historical,16natural-journey receipts after adding12existing repeated timings. Freeze and new draft PR, gate all standalone outputs/hashes atbothsizes.
+- Gallery files generated by reports/ui/build-gallery.py; 7card reports/6screenshot groups; STACK default filter. Do not add untracked obsolete68ab4c1captures.
+- P2/P3 tooling272 atf1a338854a8eb632a0d8f1841436595d59e83890, based1eefc3e. A16/B14gatecommands all0, full399/size once. Needs final diff/scope grade, supplemental effects if needed, and actual release dryrun manifest.
+- Tooling worktree /Users/bao/taskbar-hero-single2-tooling; cleanB /private/tmp/taskbar-hero-single2-tooling-b-f1a3388. Scripts release-stack defaultdryrun, receipt+capacity+lock/20min/pending barriers, noexecute.
+- Repo-source deterministic713files,18maps,7locks/11missinglocks; twin archive hash323ab32249f341e4019487cf2d48e6d20f0f01d3d8fe0e0762fe0ac3c153e522. Exact restore588testsPASS. Not deployedbackup; no vendored remote modules.
+- Nonce7newfailuremode cases,42focusedPASS; missingconfig/DBreject503reproduced, historical502/nativegateway unproven. Deno absent, Docker daemon unavailable. No liveprobe.
+- P3 localcutover52browsercases + exact currentsecurity/v1sentinel rollbackPASS. Earlier failed obsoletecomparison retained.244read-only classifier/catalog passed; no branchmodification.
+- reports/sys/single2/{nonce-root-cause,cutover-dry-run,repo-source-restore,regression-card}.md carry limits. Release manifest/actualdryrun and finalreport still pending.
+- P5 reports/SINGLE2-REPORT.md is still incomplete; replace at finish. Needs-user verbatim fiveitems inoriginalattachment and OPTIONAL-USER-STEPS.md; do notperform.
+- Detached launcher /tmp/single2-launch.py cwd logfile --argv refusesoverwrite; logtail40+exit only. Ports5300–5399; only stop verified ownedPID/cwd. No broadkill.
+- Ledger unrelated untrackedfiles remain. Stage explicit SINGLE2paths only; handoff<=80lines+board milestone+commitpush eachmilestone. Commits authorntbaoheyhey, suffix[skip ci].

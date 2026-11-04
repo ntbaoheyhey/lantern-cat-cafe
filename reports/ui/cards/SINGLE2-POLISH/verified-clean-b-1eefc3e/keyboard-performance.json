@@ -1,0 +1,999 @@
+{
+  "head": "1eefc3ef6d828b06710c8be18feb08e90b099e3e",
+  "productIdenticalToMain": false,
+  "samples": [
+    {
+      "width": 1280,
+      "reducedMotion": "no-preference",
+      "errors": [],
+      "checks": [
+        {
+          "name": "Class radio arrow selects and focuses next option",
+          "passed": true
+        },
+        {
+          "name": "Confirmation receives focus after Enter",
+          "passed": true
+        },
+        {
+          "name": "Escape closes confirmation and returns focus",
+          "passed": true
+        },
+        {
+          "name": "Cancel returns focus to choose",
+          "passed": true
+        }
+      ],
+      "tabOrder": [
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "View contract on Routescan ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Market contract ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-help-link",
+          "name": "Help & Guide",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BODY",
+          "testId": null,
+          "name": "\n    Taskbar HeroLive on Avalanche FujiTaskbarHeroA cozy idle RPG that lives in ",
+          "outline": "rgb(255, 243, 224) none 3px",
+          "boxShadow": "none",
+          "focusVisible": false
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        }
+      ],
+      "typography": [
+        {
+          "screen": "home",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "bag",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "map",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "forge",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "market",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "hero",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "help",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        }
+      ],
+      "landingFocus": {
+        "outline": "rgb(255, 215, 94) solid 2px",
+        "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+        "focusVisible": true
+      },
+      "performance": {
+        "fps": 60.00240009600385,
+        "p95Ms": 16.799999999999727,
+        "longFrames": 0,
+        "cls": 0
+      },
+      "homeAccessibilityTree": "- navigation \"Game menu\":\n  - button \"Taskbar Hero home\":\n    - img \"Portrait of Mochi the cat\"\n  - tablist \"Game panel tabs\":\n    - tab \"Home\" [selected]\n    - tab \"Bag\"\n    - tab \"Map\"\n    - tab \"Forge\"\n    - tab \"Market\"\n    - tab \"Hero\"\n    - tab \"Help\"\n  - text: Fuji\n- banner:\n  - region \"Cat status\":\n    - list \"Currencies and keys\":\n      - listitem \"Fish 0\"\n      - listitem \"Yarn 0\"\n      - listitem \"Cat Keys 0 of 5\"\n    - text: Lv 1\n    - progressbar \"Experience\"\n    - group \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\n    - text: Power 50\n  - status: Live\n  - group \"Wallet\":\n    - link \"Get a browser wallet\":\n      - /url: https://core.app\n- heading \"Taskbar Hero\" [level=1]\n- 'button \"Next: Explore the chapter and challenge its boss\"'\n- main:\n  - tabpanel \"Home\":\n    - region \"Game stage\":\n      - img \"Cat exploring the chapter\"\n      - text: Chapter 1 · Round 1 / 10 0 / 6 Fight preview · rewards on claim\n    - region \"Event log\": \"Battle Log › Mochi entered Chapter 1 (Round 1). › Auto-battle active: exploring and defeating monsters.\"\n    - region \"Home details\":\n      - img \"Portrait of Mochi the cat\"\n      - heading \"Mochi\" [level=2]\n      - text: \"Guardian Lv. 1 Power:\"\n      - strong: \"50\"\n      - heading \"Core Stats\" [level=3]\n      - term: HP\n      - definition: \"130\"\n      - term: ATK\n      - definition: \"24\"\n      - term: Crit chance\n      - definition: 5%\n      - term: DEF\n      - definition: \"6.5\"\n      - term: Speed\n      - definition: 0.71/s\n      - heading \"Next Goal\" [level=2]\n      - text: Ch. 1 · Round 1 Monster Hunt 0 / 6\n      - progressbar \"Progress to boss\"\n      - paragraph: Defeat 6 more monsters to reach the next stage.\n      - button \"Go to map\"\n      - heading \"Recent loot\" [level=2]\n      - region \"Recent loot details\":\n        - text: 0 Fish 0 Yarn 0 Keys\n        - heading \"Latest Drops\" [level=3]\n        - list:\n          - listitem: Yarn Mallet Common Lv.1",
+      "liveRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "label": null,
+          "text": "●Live"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "›Mochi entered Chapter 1 (Round 1).›Auto-battle active: exploring and defeating monsters."
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "Chapter not reached"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": "6 topics"
+        }
+      ],
+      "navigationFocus": [
+        {
+          "screen": "home",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": true,
+          "active": true
+        },
+        {
+          "screen": "bag",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "map",
+          "outline": "rgb(202, 175, 197) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "forge",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "market",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "hero",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "help",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "reducedMotion": "reduce",
+      "errors": [],
+      "checks": [
+        {
+          "name": "Class radio arrow selects and focuses next option",
+          "passed": true
+        },
+        {
+          "name": "Confirmation receives focus after Enter",
+          "passed": true
+        },
+        {
+          "name": "Escape closes confirmation and returns focus",
+          "passed": true
+        },
+        {
+          "name": "Cancel returns focus to choose",
+          "passed": true
+        }
+      ],
+      "tabOrder": [
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "View contract on Routescan ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Market contract ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-help-link",
+          "name": "Help & Guide",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BODY",
+          "testId": null,
+          "name": "\n    Taskbar HeroLive on Avalanche FujiTaskbarHeroA cozy idle RPG that lives in ",
+          "outline": "rgb(255, 243, 224) none 3px",
+          "boxShadow": "none",
+          "focusVisible": false
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        }
+      ],
+      "typography": [
+        {
+          "screen": "home",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "bag",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "map",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "forge",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "market",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "hero",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "help",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        }
+      ],
+      "landingFocus": {
+        "outline": "rgb(255, 215, 94) solid 2px",
+        "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+        "focusVisible": true
+      },
+      "performance": {
+        "fps": 60.00240009600385,
+        "p95Ms": 16.799999999999727,
+        "longFrames": 0,
+        "cls": 0
+      },
+      "homeAccessibilityTree": "- navigation \"Game menu\":\n  - button \"Taskbar Hero home\":\n    - img \"Portrait of Mochi the cat\"\n  - tablist \"Game panel tabs\":\n    - tab \"Home\" [selected]\n    - tab \"Bag\"\n    - tab \"Map\"\n    - tab \"Forge\"\n    - tab \"Market\"\n    - tab \"Hero\"\n    - tab \"Help\"\n  - text: Fuji\n- banner:\n  - region \"Cat status\":\n    - list \"Currencies and keys\":\n      - listitem \"Fish 0\"\n      - listitem \"Yarn 0\"\n      - listitem \"Cat Keys 0 of 5\"\n    - text: Lv 1\n    - progressbar \"Experience\"\n    - group \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\n    - text: Power 50\n  - status: Live\n  - group \"Wallet\":\n    - link \"Get a browser wallet\":\n      - /url: https://core.app\n- heading \"Taskbar Hero\" [level=1]\n- 'button \"Next: Explore the chapter and challenge its boss\"'\n- main:\n  - tabpanel \"Home\":\n    - region \"Game stage\":\n      - img \"Cat exploring the chapter\"\n      - text: Chapter 1 · Round 1 / 10 0 / 6 Fight preview · rewards on claim\n    - region \"Event log\": \"Battle Log › Mochi entered Chapter 1 (Round 1). › Auto-battle active: exploring and defeating monsters.\"\n    - region \"Home details\":\n      - img \"Portrait of Mochi the cat\"\n      - heading \"Mochi\" [level=2]\n      - text: \"Guardian Lv. 1 Power:\"\n      - strong: \"50\"\n      - heading \"Core Stats\" [level=3]\n      - term: HP\n      - definition: \"130\"\n      - term: ATK\n      - definition: \"24\"\n      - term: Crit chance\n      - definition: 5%\n      - term: DEF\n      - definition: \"6.5\"\n      - term: Speed\n      - definition: 0.71/s\n      - heading \"Next Goal\" [level=2]\n      - text: Ch. 1 · Round 1 Monster Hunt 0 / 6\n      - progressbar \"Progress to boss\"\n      - paragraph: Defeat 6 more monsters to reach the next stage.\n      - button \"Go to map\"\n      - heading \"Recent loot\" [level=2]\n      - region \"Recent loot details\":\n        - text: 0 Fish 0 Yarn 0 Keys\n        - heading \"Latest Drops\" [level=3]\n        - list:\n          - listitem: Yarn Mallet Common Lv.1",
+      "liveRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "label": null,
+          "text": "●Live"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "›Mochi entered Chapter 1 (Round 1).›Auto-battle active: exploring and defeating monsters."
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "Chapter not reached"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": "6 topics"
+        }
+      ],
+      "navigationFocus": [
+        {
+          "screen": "home",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": true,
+          "active": true
+        },
+        {
+          "screen": "bag",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "map",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "forge",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "market",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "hero",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "help",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "reducedMotion": "no-preference",
+      "errors": [],
+      "checks": [
+        {
+          "name": "Class radio arrow selects and focuses next option",
+          "passed": true
+        },
+        {
+          "name": "Confirmation receives focus after Enter",
+          "passed": true
+        },
+        {
+          "name": "Escape closes confirmation and returns focus",
+          "passed": true
+        },
+        {
+          "name": "Cancel returns focus to choose",
+          "passed": true
+        }
+      ],
+      "tabOrder": [
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "View contract on Routescan ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Market contract ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-help-link",
+          "name": "Help & Guide",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BODY",
+          "testId": null,
+          "name": "\n    Taskbar HeroLive on Avalanche FujiTaskbarHeroA cozy idle RPG that lives in ",
+          "outline": "rgb(255, 243, 224) none 3px",
+          "boxShadow": "none",
+          "focusVisible": false
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        }
+      ],
+      "typography": [
+        {
+          "screen": "home",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "bag",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "map",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "forge",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "market",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "hero",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "help",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        }
+      ],
+      "landingFocus": {
+        "outline": "rgb(255, 215, 94) solid 2px",
+        "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+        "focusVisible": true
+      },
+      "performance": {
+        "fps": 60.00360021601296,
+        "p95Ms": 16.799999999999272,
+        "longFrames": 0,
+        "cls": 0
+      },
+      "homeAccessibilityTree": "- navigation \"Game menu\":\n  - button \"Taskbar Hero home\":\n    - img \"Portrait of Mochi the cat\"\n  - tablist \"Game panel tabs\":\n    - tab \"Home\" [selected]\n    - tab \"Bag\"\n    - tab \"Map\"\n    - tab \"Forge\"\n    - tab \"Market\"\n    - tab \"Hero\"\n    - tab \"Help\"\n  - text: Fuji\n- banner:\n  - region \"Cat status\":\n    - list \"Currencies and keys\":\n      - listitem \"Fish 0\"\n      - listitem \"Yarn 0\"\n      - listitem \"Cat Keys 0 of 5\"\n    - text: Lv 1\n    - progressbar \"Experience\"\n    - group \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\n    - text: Power 50\n  - status: Live\n  - group \"Wallet\":\n    - link \"Get a browser wallet\":\n      - /url: https://core.app\n- heading \"Taskbar Hero\" [level=1]\n- 'button \"Next: Explore the chapter and challenge its boss\"'\n- main:\n  - tabpanel \"Home\":\n    - region \"Game stage\":\n      - img \"Cat exploring the chapter\"\n      - text: Chapter 1 · Round 1 / 10 0 / 6 Fight preview · rewards on claim\n    - region \"Event log\": \"Battle Log › Mochi entered Chapter 1 (Round 1). › Auto-battle active: exploring and defeating monsters.\"\n    - region \"Home details\":\n      - img \"Portrait of Mochi the cat\"\n      - heading \"Mochi\" [level=2]\n      - text: \"Guardian Lv. 1 Power:\"\n      - strong: \"50\"\n      - heading \"Core Stats\" [level=3]\n      - term: HP\n      - definition: \"130\"\n      - term: ATK\n      - definition: \"24\"\n      - term: Crit chance\n      - definition: 5%\n      - term: DEF\n      - definition: \"6.5\"\n      - term: Speed\n      - definition: 0.71/s\n      - heading \"Next Goal\" [level=2]\n      - text: Ch. 1 · Round 1 Monster Hunt 0 / 6\n      - progressbar \"Progress to boss\"\n      - paragraph: Defeat 6 more monsters to reach the next stage.\n      - button \"Go to map\"\n      - heading \"Recent loot\" [level=2]\n      - region \"Recent loot details\":\n        - text: 0 Fish 0 Yarn 0 Keys\n        - heading \"Latest Drops\" [level=3]\n        - list:\n          - listitem: Yarn Mallet Common Lv.1",
+      "liveRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "label": null,
+          "text": "●Live"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "›Mochi entered Chapter 1 (Round 1).›Auto-battle active: exploring and defeating monsters."
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "Chapter not reached"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": "6 topics"
+        }
+      ],
+      "navigationFocus": [
+        {
+          "screen": "home",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": true,
+          "active": true
+        },
+        {
+          "screen": "bag",
+          "outline": "rgb(202, 175, 197) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "map",
+          "outline": "rgb(202, 175, 197) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "forge",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "market",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "hero",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "help",
+          "outline": "rgb(195, 174, 208) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "reducedMotion": "reduce",
+      "errors": [],
+      "checks": [
+        {
+          "name": "Class radio arrow selects and focuses next option",
+          "passed": true
+        },
+        {
+          "name": "Confirmation receives focus after Enter",
+          "passed": true
+        },
+        {
+          "name": "Escape closes confirmation and returns focus",
+          "passed": true
+        },
+        {
+          "name": "Cancel returns focus to choose",
+          "passed": true
+        }
+      ],
+      "tabOrder": [
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "View contract on Routescan ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Market contract ↗",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-help-link",
+          "name": "Help & Guide",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "none",
+          "focusVisible": true
+        },
+        {
+          "tag": "BODY",
+          "testId": null,
+          "name": "\n    Taskbar HeroLive on Avalanche FujiTaskbarHeroA cozy idle RPG that lives in ",
+          "outline": "rgb(255, 243, 224) none 3px",
+          "boxShadow": "none",
+          "focusVisible": false
+        },
+        {
+          "tag": "BUTTON",
+          "testId": "landing-start",
+          "name": "Play as guest",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        },
+        {
+          "tag": "A",
+          "testId": null,
+          "name": "Get a browser wallet",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+          "focusVisible": true
+        }
+      ],
+      "typography": [
+        {
+          "screen": "home",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "bag",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "map",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "forge",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "market",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "hero",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        },
+        {
+          "screen": "help",
+          "bodyFont": "\"DM Sans\", system-ui, sans-serif",
+          "headingFont": "\"Pixelify Sans\", ui-monospace, monospace",
+          "numericFont": "\"JetBrains Mono\", ui-monospace, monospace",
+          "overflowX": false,
+          "overflowY": false
+        }
+      ],
+      "landingFocus": {
+        "outline": "rgb(255, 215, 94) solid 2px",
+        "boxShadow": "rgb(0, 0, 0) 3px 3px 0px 0px",
+        "focusVisible": true
+      },
+      "performance": {
+        "fps": 60.00240009600384,
+        "p95Ms": 16.800000000000182,
+        "longFrames": 0,
+        "cls": 0
+      },
+      "homeAccessibilityTree": "- navigation \"Game menu\":\n  - button \"Taskbar Hero home\":\n    - img \"Portrait of Mochi the cat\"\n  - tablist \"Game panel tabs\":\n    - tab \"Home\" [selected]\n    - tab \"Bag\"\n    - tab \"Map\"\n    - tab \"Forge\"\n    - tab \"Market\"\n    - tab \"Hero\"\n    - tab \"Help\"\n  - text: Fuji\n- banner:\n  - region \"Cat status\":\n    - list \"Currencies and keys\":\n      - listitem \"Fish 0\"\n      - listitem \"Yarn 0\"\n      - listitem \"Cat Keys 0 of 5\"\n    - text: Lv 1\n    - progressbar \"Experience\"\n    - group \"Chapter 1 Living Room, round 1 of 10, 0 of 6 monsters\"\n    - text: Power 50\n  - status: Live\n  - group \"Wallet\":\n    - link \"Get a browser wallet\":\n      - /url: https://core.app\n- heading \"Taskbar Hero\" [level=1]\n- 'button \"Next: Explore the chapter and challenge its boss\"'\n- main:\n  - tabpanel \"Home\":\n    - region \"Game stage\":\n      - img \"Cat exploring the chapter\"\n      - text: Chapter 1 · Round 1 / 10 0 / 6 Fight preview · rewards on claim\n    - region \"Event log\": \"Battle Log › Mochi entered Chapter 1 (Round 1). › Auto-battle active: exploring and defeating monsters.\"\n    - region \"Home details\":\n      - img \"Portrait of Mochi the cat\"\n      - heading \"Mochi\" [level=2]\n      - text: \"Guardian Lv. 1 Power:\"\n      - strong: \"50\"\n      - heading \"Core Stats\" [level=3]\n      - term: HP\n      - definition: \"130\"\n      - term: ATK\n      - definition: \"24\"\n      - term: Crit chance\n      - definition: 5%\n      - term: DEF\n      - definition: \"6.5\"\n      - term: Speed\n      - definition: 0.71/s\n      - heading \"Next Goal\" [level=2]\n      - text: Ch. 1 · Round 1 Monster Hunt 0 / 6\n      - progressbar \"Progress to boss\"\n      - paragraph: Defeat 6 more monsters to reach the next stage.\n      - button \"Go to map\"\n      - heading \"Recent loot\" [level=2]\n      - region \"Recent loot details\":\n        - text: 0 Fish 0 Yarn 0 Keys\n        - heading \"Latest Drops\" [level=3]\n        - list:\n          - listitem: Yarn Mallet Common Lv.1",
+      "liveRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "label": null,
+          "text": "●Live"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "›Mochi entered Chapter 1 (Round 1).›Auto-battle active: exploring and defeating monsters."
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": ""
+        },
+        {
+          "role": null,
+          "live": "polite",
+          "label": null,
+          "text": "Chapter not reached"
+        },
+        {
+          "role": "status",
+          "live": null,
+          "label": null,
+          "text": "6 topics"
+        }
+      ],
+      "navigationFocus": [
+        {
+          "screen": "home",
+          "outline": "rgb(255, 215, 94) solid 2px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": true,
+          "active": true
+        },
+        {
+          "screen": "bag",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "map",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "forge",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "market",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "hero",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        },
+        {
+          "screen": "help",
+          "outline": "rgb(255, 184, 107) none 3px",
+          "boxShadow": "rgb(0, 0, 0) 0px 2px 0px 0px",
+          "focusVisible": false,
+          "active": false
+        }
+      ]
+    }
+  ],
+  "complete": true
+}
