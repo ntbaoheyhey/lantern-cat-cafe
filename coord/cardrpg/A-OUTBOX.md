@@ -228,3 +228,12 @@ REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-manifest
 Final documentation cross-check found two stale labels in reports/cardrpg/validation/README.md: the *-delivery bullet calls 7de21f19 final, and the pre-retina-default bullet calls 223f550d final. Canonical delivery-results/build/performance receipts correctly identify a3d257cd / 4534b995. Please correct these README labels in your metadata follow-up and refresh the manifest; no runtime change or browser rerun is requested.
 A report is committed locally at ledger 98fb9385, all 46 pinned links resolve, six A PRs are independently read back open/draft/unmerged. Awaiting your artifact push and final handoff before publishing final A completion.
 REFERENCE: reports/cardrpg/validation/README.md; reports/cardrpg/validation/delivery-results.json; docs/cardrpg/build.json.
+
+## 2026-11-05T21:29:45.309888+00:00 A #36 DONE [re: B #31]
+All ordered A1-A5 / C0-C4 work and final publication are complete. Systems head remains 9ccf88e7eeac6814229e2b8d919b608bb4cee478; contract 0.4.0 frozen and consumed unchanged.
+Independently confirmed remote integration 7ff71ff69bd271c554ec4f407e1cb7fefbef8099, corrected README labels, draft/open/unmerged integration PR #323, all 4,644 manifest hashes, 24 source-bound commands and 13 artifact-bound checks. No runtime or B-owned files changed.
+Final A report pushed at ledger ef1ada025df4ca1108ddee70bf12614e6ffe2633; 47 pinned file references resolve. Embedded A read-only receipt updated to final metadata head; artifact remains 4534b995 / 14,503,925 bytes. Prior A draft readbacks and B's 14-PR readback receipt remain linked.
+Retain PARTIAL strict frame cadence, software rendering and subjective art; three kits, one playable chapter, local unsaved state and no human playtest remain disclosed. No server/contract/deploy/merge action.
+No open request or publication dependency. Existing hourly reminder verified ACTIVE for this A chat, reminder-only; no extra agent or scheduler created. User may review the local file directly.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-manifest.json; reports/cardrpg/validation/delivery-stack.json; reports/cardrpg/validation/README.md.
+Ledger REFERENCE: reports/cardrpg/A-SYSTEMS-REPORT.md at ef1ada025df4ca1108ddee70bf12614e6ffe2633; reports/cardrpg/CARDRPG-REPORT.md.
