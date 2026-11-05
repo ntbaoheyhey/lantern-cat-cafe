@@ -1,3 +1,4 @@
+import { actCafe, advanceCafe, bossReady, createCafe, returnToCafe } from '../client/cafe';
 import { describe, expect, it } from 'vitest';
 import { CONFIG } from './config';
 import * as v2 from './v2';
@@ -37,7 +38,7 @@ function hour(classId: v2.ClassId, seed: number, times: number[], cosmeticReads:
 
 describe('first-session cadence stays inside the server-accepted economy', () => {
   it('credits at most one hour and matches authoritative grants despite repeated requests and UI effects', () => {
-    const regular = Array.from({ length: 3600_000 / CONFIG.gameplay.claimIntervalMs }, (_, i) => (i + 1) * CONFIG.gameplay.claimIntervalMs);
+    const regular = Array.from({ length: Math.floor((3600_000 - CONFIG.gameplay.firstClaimMs) / CONFIG.gameplay.claimIntervalMs) }, (_, i) => CONFIG.gameplay.firstClaimMs + (i + 1) * CONFIG.gameplay.claimIntervalMs);
     const times = [CONFIG.gameplay.firstClaimMs, ...regular];
     const duplicateClicks = times.flatMap(t => [t, t, t + 1, t + 100]);
     for (const cls of ['warrior', 'guardian', 'rogue'] as const) for (let seed = 1; seed <= 12; seed++) {
@@ -53,5 +54,32 @@ describe('first-session cadence stays inside the server-accepted economy', () =>
     const state = starter('warrior');
     for (const ms of [-1, 0, CONFIG.gameplay.firstClaimMs - 1]) expect(v2.guardClaim(state, ms, 0).creditedSeconds).toBe(0);
     expect(v2.guardClaim(state, 30 * 86400_000, 0).creditedSeconds).toBe(CONFIG.idle.offlineCapSeconds);
+  });
+});
+
+describe('Sample adventure cannot enter the server economy or alter replay', () => {
+  it('keeps authoritative rewards and replay byte-identical through all local play styles and five seeds', () => {
+    for (const seed of [11, 29, 47, 71, 101]) for (const style of ['idle', 'active', 'minmax']) {
+      const stats = v2.deriveStats({ classId: 'warrior', level: 10 });
+      const boss = v2.bossOfChapter(1), replay = v2.simulateBossV2(stats, 'warrior', boss, seed);
+      const times = Array.from({ length: 33 }, (_, i) => CONFIG.gameplay.firstClaimMs + i * CONFIG.gameplay.claimIntervalMs);
+      const before = hour('warrior', seed, times, false);
+      let local = createCafe(seed);
+      for (let t = 0; t < 600; t++) {
+        if (style !== 'idle' && local.encounter) local = actCafe(local, { type: 'route', route: style === 'minmax' ? 'risk' : 'study' });
+        if (bossReady(local)) local = actCafe(local, { type: 'fight' });
+        if (local.boss && style !== 'idle') local = actCafe(local, { type: 'counter', counter: local.boss.counter });
+        if (!local.boss && t % 32 === 0 && style !== 'idle') local = actCafe(local, { type: 'craft', set: 'ember', slot: 'paw' });
+        local = advanceCafe(local);
+      }
+      local = returnToCafe(local, 30 * 86400).state;
+      expect(local.patches).toBeLessThanOrEqual(CONFIG.cafe.maxPatches);
+      expect(local.inventory.length).toBeLessThanOrEqual(CONFIG.cafe.maxItems);
+      expect(local).not.toHaveProperty('relics'); expect(local).not.toHaveProperty('stacks'); expect(local).not.toHaveProperty('currencies');
+      expect(hour('warrior', seed, times.flatMap(t => [t, t, t + 100]), true)).toEqual(before);
+      expect(v2.simulateBossV2(stats, 'warrior', boss, seed)).toEqual(replay);
+      expect(before.state.lastRelicDay).toBeNull();
+      expect(v2.relicForgeBlockV2({ stacks: before.state.stacks, lastRelicDay: -1 }, 0)).not.toBeNull();
+    }
   });
 });
