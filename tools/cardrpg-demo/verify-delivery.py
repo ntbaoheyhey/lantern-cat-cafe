@@ -33,7 +33,7 @@ checks = [
     'performance-delivery/performance-metal.json', 'performance-delivery/transitions.json',
     'performance-software-delivery/performance-software.json',
     'performance-retina-delivery/performance-metal.json',
-    'lifecycle-delivery/measurement.json', 'preview-lifetime/check.json',
+    'lifecycle-delivery/measurement.json', 'lifecycle-retina-delivery/measurement.json', 'preview-lifetime/check.json',
 ]
 for name in checks:
     data = read('reports/cardrpg/' + name)
@@ -46,6 +46,11 @@ assert len(commands) >= 23
 assert all(row['exit'] == 0 and row['source'] == build['head'] for row in commands)
 casts = read('reports/cardrpg/performance-delivery/performance-metal.json')['rows']
 assert len(casts) == 258 and all(not row['longTasks'] for row in casts)
+retina = read('reports/cardrpg/performance-retina-delivery/performance-metal.json')['rows']
+assert len(retina) == 258 and all(not row['longTasks'] for row in retina)
+retina_life = read('reports/cardrpg/lifecycle-retina-delivery/measurement.json')['rows']
+assert len(retina_life) == 1 and retina_life[0]['pixelRatio'] == 2
+assert not retina_life[0]['long'] and retina_life[0]['result']['winner'] == 'party'
 transitions = read('reports/cardrpg/performance-delivery/transitions.json')['rows']
 assert len(transitions) == 9 and all(not row['longTasks'] for row in transitions)
 life = read('reports/cardrpg/lifecycle-delivery/measurement.json')['rows']

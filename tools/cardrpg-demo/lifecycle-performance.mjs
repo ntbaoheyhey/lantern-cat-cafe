@@ -7,7 +7,7 @@ const artifactSha256=createHash('sha256').update(await fs.readFile(new URL(url))
 const widths=process.env.CARDRPG_WIDTHS?JSON.parse(process.env.CARDRPG_WIDTHS):[[1024,600],[1280,720],[1440,900]];
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),rows=[],errors=[],warnings=[];
 try{for(const [width,height] of widths){
- const p=await browser.newPage({viewport:{width,height}}),cdp=await p.context().newCDPSession(p);
+ const p=await browser.newPage({viewport:{width,height},deviceScaleFactor:Number(process.env.CARDRPG_DPR||1)}),cdp=await p.context().newCDPSession(p);
  p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());if(m.type()==='warning')warnings.push(m.text())});
  await p.addInitScript(()=>{
   window.__lifecycle={long:[],marks:[],frames:[],record:false,last:0,contexts:0};
@@ -29,7 +29,7 @@ try{for(const [width,height] of widths){
    await p.getByRole('button',{name:'Auto-equip best',exact:true}).click();await p.getByRole('button',{name:/Continue patrol|Face the Yarn Giant/}).click();
   }else break;
  }
- const measurement=await p.evaluate(()=>{const x=window.__lifecycle;x.record=false;return {...x,stats:window.__turn3dReview.scene?.stats,result:window.__turn3dReview.controller.battle.result,rendererRetained:window.__turn3dReview.scene===window.__retainedScene}});
+ const measurement=await p.evaluate(()=>{const x=window.__lifecycle;x.record=false;return {...x,pixelRatio:window.__turn3dReview.scene.renderer.getPixelRatio(),stats:window.__turn3dReview.scene?.stats,result:window.__turn3dReview.controller.battle.result,rendererRetained:window.__turn3dReview.scene===window.__retainedScene}});
  if(process.env.CARDRPG_PROFILE)await fs.writeFile(`${out}/profile-${width}.json`,JSON.stringify(await cdp.send('Profiler.stop')));
  const sorted=[...measurement.frames].sort((a,b)=>a-b);rows.push({width,height,...measurement,p95Ms:sorted[Math.floor((sorted.length-1)*.95)],p99Ms:sorted[Math.floor((sorted.length-1)*.99)]});
  console.log(JSON.stringify({width,long:measurement.long,contexts:measurement.contexts,atStart:measurement.contextsAtStart,result:measurement.result}));await p.close();
