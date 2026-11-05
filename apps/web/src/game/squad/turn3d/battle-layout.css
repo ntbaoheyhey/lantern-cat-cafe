@@ -1,0 +1,142 @@
+/* Desktop battle is a bounded app viewport. Scroll belongs to drawers, never the stage. */
+.t3-shell {height:100dvh; min-height:0; grid-template-columns:76px minmax(0,1fr); overflow:hidden;}
+.t3-shell .sq-main {display:flex; flex-direction:column; min-height:0;}
+.t3-shell .sq-topbar {height:46px; flex:none; padding:6px 18px;}
+.t3-shell .sq-topbar h1 {font-size:22px;}
+.t3-shell .sq-topbar .sq-eyebrow {font-size:8px; margin:0 0 2px;}
+.t3-shell .sq-hud {gap:24px;}
+.t3-shell .sq-hud b {font:11px/1.5 system-ui;}
+.t3-shell .sq-hud>span {font-size:9px;}
+.t3-shell .sq-prototype {flex:none; font:9px/1.4 system-ui; padding:3px 18px;}
+.t3-shell .sq-rail {padding:14px 5px; gap:20px;}
+.t3-shell .sq-brand {font:11px/1.1 system-ui;}
+.t3-shell .sq-brand>span {font-size:24px;}
+.t3-shell .sq-rail nav {gap:7px;}
+.t3-shell .sq-rail nav button {font-size:10px; padding:8px 2px;}
+.t3-shell .sq-rail-note {font-size:8px;}
+.t3-shell .t3-content {display:flex; flex-direction:column; flex:1; min-height:0; width:100%; max-width:none; padding:9px 14px; gap:7px;}
+.t3-shell .sq-titlebar {flex:none; height:31px; margin:0;}
+.t3-shell .sq-titlebar h2 {display:none;}
+.t3-shell .sq-titlebar .sq-eyebrow {font-size:9px;}
+.t3-shell .sq-tools {align-items:center; gap:6px;}
+.t3-shell .sq-tools label {flex-direction:row; align-items:center; font-size:9px;}
+.t3-shell .sq-tools select {min-width:145px; font-size:10px; padding:5px;}
+.t3-shell .sq-tools button {font-size:10px; min-height:27px; padding:5px 9px;}
+.t3-shell .t3-rounds {flex:none; margin:0; gap:3px;}
+.t3-shell .t3-round {gap:6px;}
+.t3-shell .t3-round>b {width:58px; font-size:10px;}
+.t3-shell .t3-round>b small {font-size:7px;}
+.t3-shell .t3-round li {font-size:10px; padding:3px 6px;}
+.t3-shell .t3-round li small {font-size:8px;}
+.t3-shell .t3-round.is-next li {padding:2px 6px; font-size:9px;}
+.t3-shell .t3-battle-grid {flex:1; min-height:0; grid-template-columns:minmax(0,1fr) 215px; gap:12px;}
+.t3-shell .sq-arena-column {display:flex; flex-direction:column; min-height:0; gap:7px;}
+.t3-shell .sq-arena-frame {flex:1; min-height:0; display:flex; flex-direction:column;}
+.t3-shell .t3-caption {flex:none; min-height:29px; padding:5px 10px;}
+.t3-shell .t3-caption strong {font-size:12px;}
+.t3-shell .t3-caption>span {font-size:9px;}
+.t3-shell .t3-stage {flex:1; min-height:150px; height:auto;}
+.t3-shell .t3-stage-footer {flex:none; min-height:27px; padding:4px 8px; font-size:9px;}
+.t3-shell .t3-stage-footer>span {max-width:none;}
+.t3-shell .t3-stage-footer button {font-size:9px; padding:3px 5px;}
+.t3-shell .t3-skills {flex:none; height:59px; min-height:0; margin:0; gap:6px;}
+.t3-shell .t3-skills button {padding:7px 5px 6px 32px;}
+.t3-shell .t3-skill-glyph {left:7px; font-size:20px;}
+.t3-shell .t3-skills b {font-size:10px; white-space:normal; line-height:1.2;}
+.t3-shell .t3-skills small {font-size:9px; margin-top:3px;}
+.t3-shell .t3-party {flex:none; height:73px; gap:6px; margin:0;}
+.t3-shell .t3-party .sq-card {padding:6px 8px; overflow:hidden;}
+.t3-shell .t3-party-head {gap:6px; margin-bottom:3px;}
+.t3-shell .t3-party-head>span {font-size:19px;}
+.t3-shell .t3-party-head>b {font-size:11px;}
+.t3-shell .t3-party-head>b small {display:none;}
+.t3-shell .t3-party-head>strong {font-size:10px;}
+.t3-shell .t3-party-head>strong small {font-size:8px;}
+.t3-shell .t3-party-head label {flex-direction:row; font-size:8px;}
+.t3-shell .t3-party-meta {margin:3px 0; font-size:9px;}
+.t3-shell .t3-party .t3-gear-icons {display:none;}
+.t3-shell .t3-status {margin:3px 0 0!important; font-size:8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.t3-shell .t3-side {min-height:0; gap:7px; overflow:auto; padding:1px 3px 3px; scrollbar-width:thin;}
+.t3-shell .t3-side .sq-goal {padding:9px 10px;}
+.t3-shell .t3-side .sq-goal .sq-eyebrow {font-size:8px;}
+.t3-shell .t3-side .sq-goal h3 {font:17px/1.2 Georgia,serif; margin:5px 0;}
+.t3-shell .t3-side .sq-goal p {font-size:10px; line-height:1.45;}
+.t3-shell .t3-side>h3 {font-size:9px;}
+.t3-shell .t3-targets {flex:none; max-height:none; gap:4px; overflow:visible;}
+.t3-shell .t3-targets button {min-height:36px; padding:5px 7px; gap:5px;}
+.t3-shell .t3-targets button b {font-size:10px;}
+.t3-shell .t3-targets button small {font-size:9px; line-height:1.3;}
+.t3-shell .t3-target-icon {font-size:18px; width:18px;}
+.t3-shell .t3-controls {padding-top:7px; gap:6px; font-size:9px; margin-top:auto;}
+.t3-shell .t3-controls select {font-size:10px; max-width:90px; padding:3px;}
+.t3-shell .t3-controls>button {font-size:9px; padding:5px;}
+.t3-shell .t3-supplies {display:grid; grid-template-columns:1fr 1fr; gap:4px; margin:0; flex:none;}
+.t3-shell .t3-supplies button {font-size:9px; min-height:26px; padding:4px;}
+.t3-shell .t3-debug {position:absolute; bottom:5px; left:7px; z-index:20; margin:0; width:64px; border:0; font-size:8px;}
+.t3-shell .t3-debug[open] {position:fixed; left:84px; right:20px; bottom:16px; width:auto; padding:14px; background:#211e2af5; border:1px solid #a18a6c; border-radius:8px; box-shadow:0 -10px 50px #0009;}
+.t3-shell .t3-gallery-controls {flex:none; margin:0; padding:7px 10px; gap:14px;}
+.t3-shell .t3-gallery-controls select {font-size:11px; min-width:130px;}
+.t3-shell .t3-loadout,.t3-shell .t3-loot {flex:1; min-height:0; overflow:auto; scrollbar-width:thin;}
+.t3-shell .t3-loadout-heading {margin:0; padding-right:0; min-height:0;}
+.t3-shell .t3-loadout-heading>div:last-child {position:static; margin:0;}
+.t3-shell .t3-loadout-heading h2 {font-size:24px;}
+.t3-shell .t3-loadout-cats {margin:10px 0;}
+.t3-shell .t3-loadout-cat {padding:10px;}
+.t3-shell .t3-mini-preview {height:135px;}
+.t3-shell .t3-slots {grid-template-columns:1fr 1fr;}
+.t3-shell .t3-slots button {min-height:43px;}
+.t3-shell .t3-rest-supplies {margin:7px 0; padding:8px;}
+.t3-shell .t3-loadout footer {min-height:33px;}
+.t3-shell .sq-result {position:absolute; inset:78px 30px 25px 100px; z-index:15; overflow:auto; padding:24px; margin:0; background:#252130f5; box-shadow:0 15px 70px #0009;}
+@media (min-height:800px) {
+ .t3-shell .sq-topbar {height:55px;}
+ .t3-shell .t3-content {gap:10px; padding:12px 18px;}
+ .t3-shell .t3-party {height:87px;}
+ .t3-shell .t3-party .sq-card {padding:9px 12px;}
+ .t3-shell .t3-party-head {margin-bottom:6px;}
+ .t3-shell .t3-skills {height:70px;}
+ .t3-shell .t3-mini-preview {height:215px;}
+}
+@media (max-width:1100px) {
+ .t3-shell {grid-template-columns:64px minmax(0,1fr);}
+ .t3-shell .t3-content {padding:7px 10px; gap:6px;}
+ .t3-shell .t3-battle-grid {grid-template-columns:minmax(0,1fr) 185px; gap:8px;}
+ .t3-shell .t3-skills button {padding-left:26px;}
+ .t3-shell .t3-skill-glyph {left:5px; font-size:16px;}
+ .t3-shell .t3-caption>span {font-size:8px;}
+ .t3-shell .t3-party .sq-card {padding:5px 6px;}
+ .t3-shell .t3-party-head>span {display:none;}
+ .t3-shell .t3-party-head>strong small {display:none;}
+ .t3-shell .t3-controls {gap:5px;}
+ .t3-shell .sq-tools label {font-size:0;}
+ .t3-shell .t3-debug {width:53px;}
+ .t3-shell .t3-slots b {font-size:9px;}
+ .t3-shell .t3-mini-preview {height:120px;}
+}
+.t3-shell .t3-anchor,.t3-shell .t3-anchor.party {width:90px;}
+.t3-shell .t3-anchor>b {font-size:9px; padding:2px 3px;}
+.t3-shell .t3-anchor>span {font-size:7px; line-height:10px;}
+.t3-shell .t3-anchor>em {font-size:7px;}
+.t3-shell .t3-side .sq-goal {padding:7px 8px;}
+.t3-shell .t3-side .sq-goal h3 {font-size:14px; margin:3px 0;}
+.t3-shell .t3-side .sq-goal p {font-size:9px; line-height:1.3;}
+.t3-shell .t3-side .sq-goal .sq-eyebrow {display:none;}
+.t3-shell .sq-topbar {gap:16px;}
+.t3-shell .sq-hud {margin-left:auto;}
+.t3-shell .sq-hud>span:first-child {display:none;}
+.t3-shell .t3-anchor>span {padding:0; margin-top:2px; line-height:9px;}
+.t3-shell .t3-anchor>b {padding:1px 3px; line-height:11px;}
+.t3-shell .t3-anchor>b small {font-size:8px;}
+.t3-shell .t3-controls {order:-1; margin:0; border-top:0; border-bottom:1px solid #514351; padding:0 0 7px;}
+@media (max-height:650px) {
+ .t3-shell .sq-topbar {height:42px;}
+ .t3-shell .sq-prototype {padding-block:2px; font-size:8px;}
+ .t3-shell .t3-round li small {display:none;}
+ .t3-shell .t3-round li {padding:3px 5px; font-size:9px;}
+ .t3-shell .t3-round.is-next li {padding:2px 5px; font-size:8px;}
+ .t3-shell .t3-party {height:65px;}
+ .t3-shell .t3-skills {height:56px;}
+ .t3-shell .t3-side .sq-goal {display:none;}
+ .t3-shell .sq-hud {display:none;}
+ .t3-shell .sq-tools {margin-left:auto;}
+}
