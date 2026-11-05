@@ -16,12 +16,33 @@ describe('account to numbered-round combat',()=>{
 });
 
 describe('complete reward and equipment presentation contract', () => {
+ it('effect-hit investment rescues resisted casts without changing numbered-round action limits', () => {
+  let baseHits=0, improvedHits=0;
+  for(let seed=1;seed<=400;seed++){
+   const outcomes=[0,800].map(hit=>{
+    const options=R.toBattleOptions(R.createStarterAccount(),seed);
+    options.cardRpg!.cards.witch.stats.effectHitBp=hit;
+    const b=E.createTurnBattle({...options,encounter:'dummy'});E.beginRun(b);
+    b.queue.sort((a,z)=>Number(z.actorId==='witch')-Number(a.actorId==='witch'));
+    E.startTurn(b);const target=E.getLegalTargets(b,'threadSnare').find(t=>t.legal)!;
+    expect(E.chooseAction(b,{actorId:'witch',skillId:'threadSnare',targetId:target.actorId})).toBe(true);
+    const events=E.resolveAction(b);E.endTurn(b);
+    expect(b.acted.filter(id=>id==='witch')).toHaveLength(1);
+    return events.some(e=>e.type==='status_apply'&&e.status==='snare');
+   });
+   if(outcomes[0])baseHits++;if(outcomes[1])improvedHits++;
+   expect(!outcomes[0]||outcomes[1]).toBe(true);
+  }
+  expect(baseHits).toBeGreaterThan(300);expect(baseHits).toBeLessThan(380);
+  expect(improvedHits-baseHits).toBeGreaterThan(15);
+  expect(improvedHits).toBeLessThan(400);
+ });
  it('preview exactly equals settlement, including first-clear gear and seal, without mutation', () => {
-  const r=R.startBattle(R.createStarterAccount(),11); if(!r.ok)throw Error();
+  const r=R.startBattle(R.createStarterAccount(),1); if(!r.ok)throw Error();
   const before=JSON.stringify(r.state), b=play(r.value.battle), p=R.previewBattleRewards(r.state,b);if(!p.ok)throw Error();
   const settled=R.finishBattle(r.state,b);if(!settled.ok)throw Error();
   expect(JSON.stringify(r.state)).toBe(before);expect(p.value.reward).toEqual(settled.value);
-  if(b.result!.winner==='party'){expect(p.value.reward.currencies.fish).toBe(290);expect(p.value.reward.items).toHaveLength(1);expect(p.value.reward.stacks).toEqual({'boss-proof':1});}
+  expect(b.result!.winner).toBe('party');expect(p.value.reward.currencies.fish).toBe(290);expect(p.value.reward.items).toHaveLength(1);expect(p.value.reward.stacks).toEqual({'boss-proof':1});
  });
  it('preview shows the capped amounts actually received', () => {
   const state=R.createStarterAccount();state.daily.earned={...R.CARD_RPG_CONFIG.dailyCaps};state.daily.xpEarned=R.CARD_RPG_CONFIG.dailyXpCap;state.clearedChapters=['cafe-patrol'];

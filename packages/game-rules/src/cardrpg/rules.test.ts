@@ -57,7 +57,7 @@ describe('deterministic spending and capped progress', () => {
  it('spare threads can buy a chosen consumable and cannot return through a salvage loop', () => {
   let s=rich(); const start={...s.currencies}; const key=ok(R.forge(s,'mend-pantry-key'));s=key.state;
   const brew=ok(R.forge(s,'pantry-shield-biscuit'));s=brew.state;
-  expect(s.currencies.threads).toBe(start.threads-40);expect(s.currencies.fish).toBe(start.fish-40);expect(s.inventory.stacks['shield-biscuit']).toBe(1);
+  expect(s.currencies.threads).toBe(start.threads-50);expect(s.currencies.fish).toBe(start.fish);expect(s.inventory.stacks['shield-biscuit']).toBe(1);
  });
  it('earned essence has a repeatable deterministic epic-gear sink with a strictly losing salvage loop', () => {
   let s=rich();s.chapter=2;const before={...s.currencies};for(let n=0;n<10;n++){const r=ok(R.forge(s,'tailor-moonwick-weapon'));s=step(R.salvage(r.state,r.value));}

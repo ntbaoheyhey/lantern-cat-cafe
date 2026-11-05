@@ -18,7 +18,7 @@ mid.pity = { 'cats-standard': { sinceLegendary: 59, featuredGuaranteed: false, t
 mid.quests['first-boss'].progress = 1;
 const engine = await load('packages/game-rules/src/squad/turn/engine.ts');
 const gear = await load('packages/game-rules/src/squad/gear/run.ts');
-const run = R.startBattle(starter, 11); if (!run.ok) throw Error(run.error.message);
+const run = R.startBattle(starter, 1); if (!run.ok) throw Error(run.error.message);
 const battle = run.value.battle; engine.beginRun(battle);
 while (!battle.result && battle.turn < 650) {
   if (battle.run.stage === 'loot') { engine.chooseLoot(battle, gear.choosePolicyLoot(battle, 'active')); continue; }
@@ -29,6 +29,7 @@ while (!battle.result && battle.turn < 650) {
 }
 const preview = R.previewBattleRewards(run.state, battle); if (!preview.ok) throw Error(preview.error.message);
 const reward = preview.value;
+if (!reward.won) throw Error('The battle-reward fixture must demonstrate a real victory.');
 
 const fixtures = { 'starter-account': starter, 'midgame-account': mid, 'banner-standard': R.BANNERS[0], 'banner-featured': R.BANNERS[1], 'pity-near-hard': { ...starter, pity: mid.pity }, 'battle-reward': reward, 'team-equipped': { team: starter.teams[0], loadouts: starter.loadouts, items: starter.inventory.items } };
 // Pretty top-level keys, one generated value per line: review schemas in contract.ts.
