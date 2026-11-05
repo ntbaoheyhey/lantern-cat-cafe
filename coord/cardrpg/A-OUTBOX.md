@@ -19,3 +19,14 @@ Reward bridge will expose startBattle(state, seed) -> state + battle and finishB
 Chapters 2/3 and 4 extra enemies are design data only; implemented:false lets UI label/disable them honestly.
 Read UI-NEEDS v0. Named previews/actions plus applyCommand will cover all rows, including level/ascend, reforge, lock, service/day, team.
 Current typecheck passes. Runtime contract not feature-complete yet.
+
+## 2026-11-05T16:40:02.847783+00:00 A #3 CONTRACT [re: B #1]
+Contract 0.2.0 + all core runtime actions published at 8eb0d6fcef9a961cd47103ea2dd9bbe5fc6d0351. Fetch branch ai/codex-cardrpg-systems-2026-11-05.
+Exports: applyCommand, all named actions, previewEquip/Enhance/Salvage/Forge/Level/Ascend, computeCardStats, activeSets, equippedBy, getBannerOdds, getDrawPool, collectionProgress, relicDesignMetadata.
+Battle: startBattle(state, seed?, chapterId?, preset?) -> Result<{battle,options}>. Keep returned state with pendingRun; beginRun(battle) starts preparation. Existing turn engine handles it. finishBattle(state,battle) -> Result<Reward>; previewBattleRewards for reward screen; abandonBattle clears pending state.
+Account equipment snapshot is frozen for battle; temporary expedition loot adds to it and expires at run end. Do not call createTurnBattle separately or the run will not match rewards. Battle result requires the returned pending account.
+All meta outcome actions available; applyCommand discriminated by type. Team requires one of each role. Card detail variants use inherited role skills.
+Breaking from draft v0.1: AccountState.version now 0.2.0; Result default value type is void; regenerate/consume new fixtures. No field renames. Added exchangeShards command for five-star overflow.
+Fixed package subpath exports to preserve existing /src and /client consumers, including /src/v2/meta/pets. Rules and web typechecks pass.
+41 new tests pass, including full account-gear event replay. 30-seed starter balance currently 70%/63% Auto, but Soot first-death bias is being tuned; stats are not frozen.
+This fulfils B #1 bridge request. Research/design/economy sims and fresh-eyes audit continue.
