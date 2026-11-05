@@ -1,0 +1,7 @@
+<!-- REFERENCE: apps/web/src/game/squad/turn3d/scene.ts
+REFERENCE: docs/design/turn3d-2026-11-05.md
+Developer scene probe, candidate, not live. Run through local Vite only. -->
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Turn3D scene probe</title><style>body{margin:0;background:#252332}#stage{width:1024px;height:480px}canvas{display:block;width:100%;height:100%}</style><div id="stage"></div><script type="module">
+import {TurnScene} from '../../apps/web/src/game/squad/turn3d/scene.ts';
+window.__sceneProbe=new TurnScene(document.getElementById('stage'),()=>({actors:[],currentId:null,frame:null,targetIds:[],legalIds:[],reducedMotion:false,paused:false,boss:false}),()=>{},()=>{},console.error);
+</script></html>
