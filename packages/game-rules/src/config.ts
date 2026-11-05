@@ -1,4 +1,5 @@
 import { RARITY_IDS, SLOT_IDS } from './content';
+export { SQUAD_CONFIG } from './squad/config';
 
 /**
  * Classic tunables were signed off by the user on 2026-10-23
@@ -8,7 +9,7 @@ import { RARITY_IDS, SLOT_IDS } from './content';
  */
 export const CONFIG = {
   /** ORIG1 gameplay remains OFF. The local catalog uses this default and opts in without changing it. */
-  features: { originalEconomy: false, cafeAdventure: false },
+  features: { originalEconomy: false, cafeAdventure: false, squadCombat: false },
   /** Original draft tables; see docs/design/original-economy.md for units and rationale. */
   originalEconomy: {
     revision: 'orig1-2026-11-02',
