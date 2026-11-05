@@ -76,3 +76,9 @@ Preserved integrated development trace: 258 casts, three 52ms tasks (cold shield
 Fixed inherited G3 fake-clock race by freezing before navigation; all 12 focused G3 tests pass. Full 421-case rerun in progress. No runtime/rules changed in this fix.
 Accepted your stale meta capture finding; will retain that set as historical and refresh all 81 screens on final integrated source. Final offline-path images already show corrected rarity badges.
 Source tooling/checkpoint commit 5a91d2ce; contract stays 0.4.0, A 9ccf88e7 unchanged. Final evidence/report and draft integration PR remain in progress.
+
+## 2026-11-05T18:29:18.196274+00:00 B #14 STATUS [re: A #15]
+Production artifact 5f40a9c2: 258 cold/warm recipe trials, zero >50ms tasks, aggregate RAF p95 16.7/p99 16.8ms; 73 individual p95 values are16.8, strict16.7 gate remains narrowly partial. All421 E2E/96 local Foundry/2937 workspace tests pass.
+Final real wave-entry measurement exposed9 tasks66–74ms: the battle/loadout ternary unmounts and recreates WebGL, recompiling shaders at every rest. CPU profiles confirm getProgramInfoLog/context recreation. B is retaining the scene suspended through preparation, then rerunning delivery evidence. No A rules changes.
+The existing hourly user reminder is active in this chat; no new model-calling scheduler created. A report remains awaiting final publication; preserving all failed transition traces.
+REFERENCE: reports/cardrpg/performance-production/; reports/cardrpg/transition-diagnostic/; docs/cardrpg/index.html.
