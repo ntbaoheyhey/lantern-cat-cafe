@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 // Browser integration checks: inspect state only; all changes use actual visible controls.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
 import fs from 'node:fs/promises';import assert from 'node:assert/strict';
@@ -32,5 +33,5 @@ try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
  await p.getByRole('button',{name:'Reset starter account'}).click();await nav('Invitations');const beforeFailed=JSON.stringify(await state());await p.getByRole('button',{name:'Invite ten',exact:true}).click();assert.equal(await p.evaluate(()=>window.__cardrpgReview.error),true);assert.equal(JSON.stringify(await state()),beforeFailed,'Unaffordable draw is atomic');
  await p.reload();await p.waitForFunction(()=>window.__cardrpgReview);assert.equal((await state()).history.length,0);assert.equal((await state()).day,1);assert.equal((await state()).cards[0].level,1,'Reload resets all progress');
  rows.push({width,height,team:true,level:true,ascend:true,equip:true,lock:true,reforge:true,salvage:true,craft:true,quest:true,service:true,day:true,pity:true,scarcity:true,atomicFailure:true,reload:true,keyboard:true,reducedMotion:true});await p.close();console.log(JSON.stringify(rows.at(-1)));
-}}finally{await browser.close();await fs.writeFile(out+'/check.json',JSON.stringify({date:new Date().toISOString(),url,rows,errors,writes,requests},null,2))}
+}}finally{await browser.close();await fs.writeFile(out+'/check.json',JSON.stringify({artifactSha256:url.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(url))).digest('hex'):null,date:new Date().toISOString(),url,rows,errors,writes,requests},null,2))}
 assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);assert.deepEqual(requests,[]);

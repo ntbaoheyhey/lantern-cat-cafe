@@ -1,7 +1,8 @@
 // Measures real wave-entry rendering separately from the per-recipe cast gallery.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
-import fs from 'node:fs/promises';import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 const out=process.env.CARDRPG_PERF_OUT||'reports/cardrpg/performance-final',url=process.env.CARDRPG_URL||'file://'+process.cwd()+'/docs/cardrpg/index.html';await fs.mkdir(out,{recursive:true});
+const artifactSha256=url.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(url))).digest('hex'):null;
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),rows=[],errors=[];
 try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
  const p=await browser.newPage({viewport:{width,height}});p.on('pageerror',e=>errors.push(String(e)));
@@ -18,5 +19,5 @@ try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
   }
  }
  await p.close();console.log(JSON.stringify({width,transitions:rows.filter(r=>r.width===width).length}));
-}}finally{await browser.close();await fs.writeFile(out+'/transitions.json',JSON.stringify({date:new Date().toISOString(),url,method:'Actual file UI wave/rest entry with auto-equip. Rules accelerated only outside each 2.2 second measurement window. Raw RAF and Long Tasks retained.',rows,errors},null,2)+'\n')}
+}}finally{await browser.close();await fs.writeFile(out+'/transitions.json',JSON.stringify({artifactSha256,date:new Date().toISOString(),url,method:'Actual file UI wave/rest entry with auto-equip. Rules accelerated only outside each 2.2 second measurement window. Raw RAF and Long Tasks retained.',rows,errors},null,2)+'\n')}
 assert.deepEqual(errors,[]);assert.equal(rows.length,9);

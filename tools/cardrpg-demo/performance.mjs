@@ -1,7 +1,8 @@
 // Local RAF cadence, Long Tasks and CDP renderer metrics. No GPU-time claim.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
-import fs from 'node:fs/promises';import {gzipSync} from 'node:zlib';import {execFileSync} from 'node:child_process';
+import fs from 'node:fs/promises';import {gzipSync} from 'node:zlib';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 const base=process.env.CARDRPG_URL||'http://127.0.0.1:5521',out=process.env.CARDRPG_PERF_OUT||'reports/cardrpg/baseline';
+const source=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),artifactSha256=base.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(base))).digest('hex'):null;
 await fs.mkdir(out,{recursive:true});const rows=[],errors=[],hardware=process.env.CARDRPG_GPU!=='software';
 const browser=await chromium.launch({headless:true,channel:'chromium',args:hardware?['--use-angle=metal']:['--use-angle=swiftshader']});
 const quantile=(a,p)=>{const s=[...a].sort((a,b)=>a-b);return s[Math.floor((s.length-1)*p)]??0};
@@ -10,13 +11,13 @@ try{for(const [width,height] of (process.env.CARDRPG_WIDTHS?JSON.parse(process.e
  await page.addInitScript(()=>{window.__perf={long:[],raf:[],record:false,last:0};new PerformanceObserver(list=>{if(window.__perf.record)window.__perf.long.push(...list.getEntries().map(e=>({start:e.startTime,duration:e.duration})))}).observe({type:'longtask',buffered:false});const tick=t=>{const p=window.__perf;if(p.record&&p.last)p.raf.push(t-p.last);p.last=t;requestAnimationFrame(tick)};requestAnimationFrame(tick)});
  const cdp=await page.context().newCDPSession(page);await cdp.send('Performance.enable');
  if(base.startsWith('file:')){
-  await page.goto(base);await page.getByRole('button',{name:/Prepare patrol/}).click();await page.getByRole('button',{name:/Begin patrol/}).click();await page.waitForFunction(()=>window.__turn3dReview);await page.evaluate(()=>{const c=window.__turn3dReview.controller;c.gallery(c.galleryId)});
- }else{
-  await page.goto(base+'/?demo&squad=1&squad3d=1&squadDebug=1');await page.getByRole('button',{name:'Effects',exact:true}).click();
- }
- // One empty frame loads the fixture's models; it does not render any spell.
- await page.evaluate(()=>{const c=window.__turn3dReview.controller;c.captureFrame=null;c.presenter.reset(c.battle.events.slice(0,1));c.fixedTime=1;c.notify()});
- await page.waitForFunction(()=>{const r=window.__turn3dReview;return r.scene?.stats.loaded===r.view().actors.length});
+  await page.goto(base);await page.getByRole('button',{name:/Prepare patrol/}).click();
+ }else await page.goto(base+'/?demo&squad=1&squad3d=1&squadDebug=1');
+ await page.waitForFunction(()=>window.__turn3dReview);
+ // Prepare actors and freeze the empty fixture in ONE task before any RAF can
+ // display an effect. Only the scene's loading-time shader/model warmup runs.
+ await page.evaluate(()=>{const c=window.__turn3dReview.controller;c.gallery(c.galleryId);c.captureFrame=null;c.presenter.reset(c.battle.events.slice(0,1));c.fixedTime=1;c.notify()});
+ await page.waitForFunction(()=>{const r=window.__turn3dReview;return r.scene?.ready&&r.scene.stats.loaded===r.view().actors.length});
  if(!hardware)await page.getByLabel('Rendering quality').selectOption('low');
  await page.waitForTimeout(600);
  await cdp.send('Tracing.start',{categories:'toplevel,devtools.timeline,v8,blink.user_timing',transferMode:'ReturnAsStream'});
@@ -34,5 +35,5 @@ try{for(const [width,height] of (process.env.CARDRPG_WIDTHS?JSON.parse(process.e
  if(process.env.CARDRPG_PROFILE){const profile=await cdp.send('Profiler.stop');await fs.writeFile(`${out}/profile-${width}.json`,JSON.stringify(profile))}
  const completed=new Promise(resolve=>cdp.once('Tracing.tracingComplete',resolve));await cdp.send('Tracing.end');const {stream}=await completed;let trace='';for(;;){const chunk=await cdp.send('IO.read',{handle:stream});trace+=chunk.data;if(chunk.eof)break}await cdp.send('IO.close',{handle:stream});await fs.writeFile(`${out}/trace-${hardware?'metal':'software'}-${width}.json.gz`,gzipSync(trace));
  console.log(JSON.stringify({width,samples:rows.length,longTasks:rows.reduce((n,r)=>n+r.longTasks.length,0)}));
- await fs.writeFile(`${out}/performance-${hardware?'metal':'software'}.json`,JSON.stringify({base,date:new Date().toISOString(),method:(base.startsWith('file:')?'Production offline artifact':'Development runtime')+'; first and second cast; RAF/CDP; no GPU timestamp claim.',errors,rows},null,2));await page.close();
-}}finally{await browser.close();await fs.writeFile(`${out}/performance-${hardware?'metal':'software'}.json`,JSON.stringify({base,date:new Date().toISOString(),machine:execFileSync('uname',['-sm'],{encoding:'utf8'}).trim(),method:(base.startsWith('file:')?'Production offline artifact':'Development runtime')+' / Metal requested; inspect recorded renderer and pixelRatio. All raw RAF intervals retained. One model-only fixture warmup; no cast before the cold sample.',errors,rows},null,2))}
+ await fs.writeFile(`${out}/performance-${hardware?'metal':'software'}.json`,JSON.stringify({base,source,artifactSha256,date:new Date().toISOString(),method:(base.startsWith('file:')?'Production offline artifact':'Development runtime')+'; first and second cast; RAF/CDP; no GPU timestamp claim.',errors,rows},null,2));await page.close();
+}}finally{await browser.close();await fs.writeFile(`${out}/performance-${hardware?'metal':'software'}.json`,JSON.stringify({base,source,artifactSha256,date:new Date().toISOString(),machine:execFileSync('uname',['-sm'],{encoding:'utf8'}).trim(),method:(base.startsWith('file:')?'Production offline artifact':'Development runtime')+' / Metal requested; inspect recorded renderer and pixelRatio. All raw RAF intervals retained. Empty fixture frozen atomically before RAF; scene loading warmup only, no cast before cold sample. Cold means first playback after loading, not uncompiled shaders.',errors,rows},null,2))}
