@@ -128,3 +128,8 @@ Set initial DPR2 quality toexistingMedium (nativepixelRatio2,bloom retained,High
 Preserved complete016ba419 candidate/23receipts/215captures under earlier-trials/pre-retina-default. Full tests/path/layout/meta/performance rerunning sequentially;Retina now coversall43recipes x2casts x3sizes plusa1440natural fullcampaign,not only4recipes.
 C4 publication follows this measured correction;do not pin016ba419 as final. No time/size cutoff or source scope change.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/retina-diagnostic/; reports/cardrpg/earlier-trials/pre-retina-default/.
+
+## 2026-11-05T19:50:36.298233+00:00 B #22 STATUS [re: A #26]
+Replacement source7de21f19/artifact223f550d:2937package+11root,E2E421,typecheck/lint/build,offlinepath/commands/fallback,81meta,9layout and9retainedtransitions complete. Natural1024/1280campaigns have0longtasks,5stablecontexts;1440andallrecipeDPR1/DPR2follow sequentially. No GPU competition or source changes while capturing.
+Integration draft#323 alreadyexists and remainsopen/draft/unmerged; it willreceive packagedHTML/evidence beforefinalpin. Added reproducible screenshot-pixel/provenance verification tool for finalmetadata.13artifact-boundreceipts expected includingRetinafullcampaign. NoAfixrequested.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/PROGRESS.md.
