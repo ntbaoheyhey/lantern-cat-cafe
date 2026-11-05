@@ -4,7 +4,7 @@ const out=process.env.CARDRPG_ART_OUT||'reports/cardrpg/art',records=[],errors=[
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),repeats=[];
 try{
  for(const [width,height] of [[1280,720]]){
-  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});page.on('pageerror',e=>errors.push(String(e)));await pinExistingFonts(page);await page.goto('http://127.0.0.1:5520/?demo&squad=1&squad3d=1&squadDebug=1');await page.getByRole('button',{name:'Effects',exact:true}).click();
+  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});page.on('pageerror',e=>errors.push(String(e)));await pinExistingFonts(page);await page.goto((process.env.CARDRPG_URL||'http://127.0.0.1:5520')+'/?demo&squad=1&squad3d=1&squadDebug=1');await page.getByRole('button',{name:'Effects',exact:true}).click();
   const ids=await page.getByLabel('Effect action').locator('option').evaluateAll(es=>es.map(e=>e.value));
   for(const id of ids)for(let beat=0;beat<5;beat++){
    await page.evaluate(({id,beat})=>window.__turn3dReview.controller.inspect(id,beat),{id,beat});await page.waitForFunction(()=>{const r=window.__turn3dReview;return r.scene.stats.loaded===r.view().actors.length});await page.waitForTimeout(70);await page.evaluate(()=>{const r=window.__turn3dReview;r.scene.render(r.view())});await page.waitForTimeout(50);
