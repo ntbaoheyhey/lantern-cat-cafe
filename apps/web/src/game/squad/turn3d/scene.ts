@@ -8,7 +8,7 @@ import {EFFECT_DIRECTION} from './effect-direction';
 import {CafePost,type Quality} from './post';
 import {stageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
-import {GearAttachments} from './gear-visuals';
+import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import {screenBounds,auditBounds} from './scene-audit';
@@ -38,6 +38,7 @@ export class TurnScene {
   readonly labelAudit:{heads:LabelInput['head'][];cards:LabelInput['head'][];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
   private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
   private puppets = new Map<string,Puppet>();
+  private gearResources = new GearResources();
   private pending = new Set<string>();
   private disposed = false;
   private raf = 0;
@@ -123,8 +124,14 @@ export class TurnScene {
       const initial={...this.view(),frame:null};
       await Promise.all(initial.actors.map(a=>this.ensure(a,initial.boss)));if(this.disposed)return;
       for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
-      this.scene.add(warm);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
-      const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
+      this.scene.add(warm);
+      // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
+      // Prepare both while loading so adaptive quality never links at a hit.
+      await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
+      this.renderer.render(this.scene,this.camera);
+      const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);
+      await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed){target.dispose();return}
+      this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }
@@ -182,7 +189,7 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -279,7 +286,7 @@ export class TurnScene {
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
   private disposePuppet(p:Puppet){p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
-  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();
+  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.gearResources.dispose();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();
     // Loot/rest previews own separate contexts. Release them immediately so
     // Chromium cannot evict the retained battlefield before garbage collection.
     this.renderer.forceContextLoss();this.renderer.domElement.remove();}
