@@ -4,7 +4,7 @@ import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
 const base=process.env.CARDRPG_URL||'http://127.0.0.1:5523/?demo&squad=1&cardrpg=1&squadDebug=1',out=process.env.CARDRPG_CHECK_OUT||'reports/cardrpg/path';await fs.mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),rows=[],errors=[],requests=[],writes=[];
 try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){
- const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(base.startsWith('file:')&&!/^(file:|data:|blob:)/.test(r.url()))requests.push(r.url())});
+ const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('request',r=>{if(base.startsWith('file:')&&!/^(file:|data:|blob:)/.test(r.url()))requests.push(r.url())});
  await page.exposeFunction('__storageWrite',s=>writes.push(s));await page.addInitScript(()=>{for(const name of ['setItem','removeItem','clear'])Storage.prototype[name]=function(){window.__storageWrite('Storage.'+name);throw Error('Storage write forbidden')};indexedDB.open=()=>{window.__storageWrite('indexedDB.open');throw Error('No database')};Object.defineProperty(document,'cookie',{set(){window.__storageWrite('cookie');throw Error('No cookie')},get(){return ''}})});
  await page.goto(base);await page.getByRole('heading',{name:'A small light. A brave little team.'}).waitFor();
  const shot=async(id)=>page.screenshot({path:`${out}/${width}-${id}.png`});await shot('hub');
@@ -26,7 +26,7 @@ try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){
   if(++steps>2000)throw Error('Battle made no completion progress');
  }
  await page.evaluate(()=>{const c=window.__turn3dReview.controller;while(c.presenter.busy)c.skip();c.notify()});
- const battle=await page.evaluate(()=>window.__turn3dReview.controller.battle.result);assert.equal(battle.winner,'party','Starter path should complete Yarn Giant');assert.equal(battle.wavesCleared,3);
+ assert.equal(await page.locator('.t3-fallback').count(),0,'Full journey must retain 3D rendering');const battle=await page.evaluate(()=>window.__turn3dReview.controller.battle.result);assert.equal(battle.winner,'party','Starter path should complete Yarn Giant');assert.equal(battle.wavesCleared,3);
  await page.getByRole('button',{name:/Collect patrol rewards/}).click();await page.getByRole('heading',{name:'Something to bring home.'}).waitFor();await shot('rewards');
  assert.equal(await page.evaluate(()=>window.__cardrpgReview.error),false);assert.equal(await page.evaluate(()=>window.__cardrpgReview.state.pendingRun),null);
  await page.getByRole('button',{name:'Enhance a favourite'}).click();const level=await page.evaluate(()=>{const m=window.__cardrpgReview;return m.state.inventory.items.find(i=>i.id===m.itemId).enhancement});await page.getByRole('button',{name:'Enhance equipment',exact:true}).click();assert.equal(await page.evaluate(()=>{const m=window.__cardrpgReview;return m.state.inventory.items.find(i=>i.id===m.itemId).enhancement}),level+1);await shot('enhance');
