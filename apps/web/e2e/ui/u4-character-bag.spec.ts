@@ -70,11 +70,9 @@ for (const vp of CHECK_VIEWPORTS) {
     await page.goto('/');
 
     const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
-    if ((await heroTab.count()) > 0) {
-      await heroTab.click();
-    } else {
-      await page.getByRole('tab', { name: 'Character', exact: true }).click();
-    }
+    // The lazy entry can paint after navigation resolves. Let click wait for
+    // Hero rather than treating a transient zero count as an older UI version.
+    await heroTab.click();
     const character = page.getByRole('region', { name: 'Character', exact: true });
     await expect(character).toBeVisible();
 
@@ -213,11 +211,7 @@ test('capture screenshots', async ({ page }) => {
     await page.setViewportSize({ width: vp.w, height: vp.h });
     await page.goto('/');
     const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
-    if ((await heroTab.count()) > 0) {
-      await heroTab.click();
-    } else {
-      await page.getByRole('tab', { name: 'Character', exact: true }).click();
-    }
+    await heroTab.click();
     await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
     if (vp.w > 600) {
       await expect(page.getByRole('tabpanel', { name: 'Hero', exact: true })).toBeVisible();
