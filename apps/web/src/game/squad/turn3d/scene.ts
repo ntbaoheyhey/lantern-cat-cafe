@@ -20,7 +20,7 @@ export interface SceneView {
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { height:number; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -52,6 +52,7 @@ export class TurnScene {
   private activeRing: T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;
   private targetRings: T.Mesh<T.RingGeometry,T.MeshBasicMaterial>[] = [];
   private aura: T.PointLight;
+  private targetLines:T.Line<T.BufferGeometry,T.LineBasicMaterial>[]=[];
   private stage: T.Group;
   private bossBackdrop: T.Group;
   private cameraTarget = new T.Vector3(0,.65,0);
@@ -92,6 +93,10 @@ export class TurnScene {
     const makeRing=(color:string)=>{const m=new T.Mesh(new T.RingGeometry(.54,.60,40),new T.MeshBasicMaterial({color,transparent:true,opacity:.8,side:T.DoubleSide,depthWrite:false}));m.rotation.x=-Math.PI/2;m.position.y=.04;this.scene.add(m);return m;};
     this.activeRing=makeRing(GOLD);
     for(let i=0;i<12;i++){const r=makeRing(TEAL);r.visible=false;this.targetRings.push(r);}
+    for(let i=0;i<9;i++){
+      const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(6),3));
+      const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
+    }
     this.spells=new SpellVfx(this.scene);
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
@@ -150,7 +155,7 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -185,6 +190,8 @@ export class TurnScene {
         if(other)p.model.rotation.y=blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
       }
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
+      const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
+      p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
       p.guard.visible=a.hp>0&&a.shield>0;p.snare.visible=a.hp>0&&a.statuses.some(s=>['snare','restrain'].includes(s.kind));
       for(const child of p.snare.children)(child as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>).material.color.set(a.statuses.some(s=>s.kind==='restrain')?'#ed869b':VIOLET);
       p.root.visible=a.hp>0||!!(frame&&frame.plan.targetIds.includes(a.id));
@@ -193,7 +200,13 @@ export class TurnScene {
     }
     this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
     this.activeRing.visible=false;this.targetRings.forEach(r=>r.visible=false);
-    const active=this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
+    const active=source??this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
+    this.aura.intensity=active&&!view.model?1.2:0;if(active)this.aura.position.copy(active.root.position).add(new T.Vector3(0,1.4,.3));
+    this.targetLines.forEach(l=>l.visible=false);
+    if(active&&!view.model&&(!frame||frame.beat.kind==='anticipation'))view.targetIds.slice(0,9).forEach((id,i)=>{
+      const p=this.puppets.get(id),line=this.targetLines[i];if(!p||!line||p===active)return;
+      const a=active.root.position,b=p.root.position,attr=line.geometry.attributes.position!;attr.setXYZ(0,a.x,.1,a.z);attr.setXYZ(1,b.x,.1,b.z);attr.needsUpdate=true;line.visible=true;line.material.color.set(frame?.color??TEAL);
+    });
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=view.camera==='close'?1.05:1;
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):stageHeight(this.camera.aspect);
@@ -211,6 +224,7 @@ export class TurnScene {
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;
+      if(frame?.plan.ultimate&&['anticipation','travel','impact'].includes(frame.beat.kind)&&a.id!==frame.plan.actorId&&!frame.plan.targetIds.includes(a.id))continue;
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
       const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));const ideal=screen(aTop);ideal.y-=8;

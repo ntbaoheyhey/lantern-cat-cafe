@@ -140,3 +140,32 @@
  .t3-shell .sq-hud {display:none;}
  .t3-shell .sq-tools {margin-left:auto;}
 }
+/* Skill cards use original in-project portraits and explicit rarity text. */
+.t3-shell img {image-rendering:auto;}
+.t3-shell .t3-skills .t3-skill-card {display:flex;align-items:stretch;padding:0;gap:0;overflow:visible;border-color:var(--frame);border-bottom-width:2px;transition:transform .16s,border-color .16s;position:relative;background:linear-gradient(130deg,#34303c,#24212f);}
+.t3-shell .t3-skill-card:not(:disabled):hover,.t3-shell .t3-skill-card:focus-visible {transform:translateY(-4px) scale(1.035);z-index:10;box-shadow:0 8px 20px #0008;}
+.t3-shell .t3-skill-card[aria-pressed=true] {box-shadow:0 0 0 1px #ffe1a2,inset 0 0 20px #f4cb7b25;}
+.t3-skill-art {width:45px;flex:none;position:relative;overflow:hidden;border-radius:5px 0 0 4px;background:radial-gradient(ellipse at 30% 10%,#8a7968,#2c2737);border-right:1px solid #ffffff20;}
+.t3-skill-art img {width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.7;}
+.t3-skill-art>span {position:absolute;bottom:0;right:2px;color:#ffe8a8;font:24px Georgia;text-shadow:0 1px 7px #090715;}
+.t3-skill-art.arcane,.t3-skill-art.thread {background:radial-gradient(ellipse at 20% 20%,#705d9d,#211e32);}
+.t3-skill-art.water,.t3-skill-art.nature {background:radial-gradient(ellipse at 20% 20%,#508b78,#192e2c);}
+.t3-card-copy {display:flex;flex-direction:column;justify-content:center;min-width:0;padding:4px 5px;}
+.t3-shell .t3-card-copy b {font-size:10px;color:#ffe6b5;}
+.t3-shell .t3-card-copy small {font-size:8px;margin-top:3px;}
+.t3-card-copy em {font:7px/1.2 system-ui;color:var(--frame);text-transform:uppercase;letter-spacing:.025em;margin-top:3px;}
+.t3-action-readout {position:absolute;top:8px;left:50%;transform:translateX(-50%);min-width:185px;text-align:center;padding:7px 14px;border:1px solid color-mix(in srgb,var(--signature),transparent 40%);border-radius:8px;background:#171622e8;box-shadow:0 5px 25px #0005;pointer-events:none;z-index:6;}
+.t3-action-readout>small {display:block;color:#e6d6d8;font:9px system-ui;}
+.t3-action-readout>strong {display:block;color:var(--signature);font:19px/1.3 Georgia;margin:2px 0;}
+.t3-action-readout>div {display:flex;justify-content:center;gap:6px;font:7px system-ui;color:#9b8f9d;}
+.t3-action-readout .current {color:#fff2d8;}
+.t3-action-readout:not(.anticipation) {padding:4px 10px;min-width:150px;}
+.t3-action-readout:not(.anticipation)>strong {font-size:14px;}
+.t3-action-readout:not(.anticipation)>small {display:none;}
+.t3-log {flex:none;border-top:1px solid #514351;padding:8px 0;font-size:10px;color:#e6d8e5;}
+.t3-log summary {cursor:pointer;color:#edc98e;}
+.t3-log summary span {float:right;color:#bdb2c5;font-size:8px;}
+.t3-log ol {padding-left:19px;max-height:180px;overflow:auto;line-height:1.5;margin-bottom:0;}
+.t3-log li {padding:3px 0;}
+@media(max-width:1100px) {.t3-skill-art{width:32px}.t3-shell .t3-card-copy b{font-size:9px}.t3-card-copy em{font-size:6px}.t3-card-copy{padding:4px}}
+@media(prefers-reduced-motion:reduce) {.t3-shell .t3-skill-card:hover{transform:none}}
