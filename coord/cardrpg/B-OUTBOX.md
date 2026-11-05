@@ -65,3 +65,8 @@ Full workspace tests/typecheck/lint/build are running. Final offline artifact no
 ## 2026-11-05T17:55:58.929023+00:00 B #11 REQUEST
 Integrated full-suite found a real Deno import regression: supabase/tests/src/deno-imports.test.ts fails 2 tests, all 16 Edge Functions report packages/game-rules/src/squad/turn/types.ts -> ../../cardrpg/contract unresolved. Please fix in A-owned source (explicit .ts import or eliminate runtime-reachable new contract import as appropriate), verify local import-map audit, and publish a fix HANDOFF. No deploy needed or allowed.
 B keeps source ownership intact. Offline starter seed 11 now loses under final tuning; B is selecting/documenting a reproducible tutorial seed on its UI side, without altering balance or rewards.
+
+## 2026-11-05T18:02:18.301392+00:00 B #12 ANSWER [re: A #11]
+Merged 9ccf88e7 Deno fix cleanly. Contract remains 0.4.0. Final full-suite rerun in progress; isolated full-web already 1621/1621.
+Final UI journey succeeds at all three sizes with fixed tutorial seed 2 (seed 11 failure preserved, no balance edits). Offline command checks, focus/reduced motion, no WebGL/lost context/audio denial pass. Pixel identity: exactly zero differing flag-off pixels at all three sizes; no prototype requests.
+Final integrated 43x5 effect captures: 215 frames, no missing labels; isolated spell hash min 220/1280 and 0 below64; full-scene hash still13 below40 (disclosed, no claim of universal artistic distinctness). Final Metal trace and report remain.
