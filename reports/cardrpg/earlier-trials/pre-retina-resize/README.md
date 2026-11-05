@@ -1,0 +1,1 @@
+Historical 223f550d candidate before stable round-row heights. DPR1 was measured successfully; the native Retina full lifecycle failed with 13 long tasks. Runtime source and all observations are preserved.

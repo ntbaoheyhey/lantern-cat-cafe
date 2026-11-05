@@ -1,0 +1,125 @@
+[
+  {
+    "check": "test-delivery",
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "exit": 0,
+    "seconds": 50.59,
+    "date": "2026-11-05T18:32:34.879198+00:00"
+  },
+  {
+    "check": "typecheck-delivery",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exit": 0,
+    "seconds": 8.61,
+    "date": "2026-11-05T18:32:43.488494+00:00"
+  },
+  {
+    "check": "lint-delivery",
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "exit": 0,
+    "seconds": 8.18,
+    "date": "2026-11-05T18:32:51.671559+00:00"
+  },
+  {
+    "check": "build-delivery",
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 9.21,
+    "date": "2026-11-05T18:33:00.885383+00:00"
+  },
+  {
+    "check": "isolation-build-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-build.mjs"
+    ],
+    "exit": 0,
+    "seconds": 1.11,
+    "date": "2026-11-05T18:33:01.995000+00:00"
+  },
+  {
+    "check": "isolation-check-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 15.47,
+    "date": "2026-11-05T18:33:17.464633+00:00"
+  },
+  {
+    "check": "e2e-delivery",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "test:e2e",
+      "--workers=2"
+    ],
+    "exit": 0,
+    "seconds": 231.2,
+    "date": "2026-11-05T18:37:08.668784+00:00"
+  },
+  {
+    "check": "offline-path-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/path-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 18.13,
+    "date": "2026-11-05T18:37:26.801501+00:00"
+  },
+  {
+    "check": "offline-commands-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/commands-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 6.15,
+    "date": "2026-11-05T18:37:32.948550+00:00"
+  },
+  {
+    "check": "fallback-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/fallback-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 5.23,
+    "date": "2026-11-05T18:37:38.176067+00:00"
+  },
+  {
+    "check": "meta-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/meta-inspect.mjs"
+    ],
+    "exit": 0,
+    "seconds": 12.37,
+    "date": "2026-11-05T18:37:50.547061+00:00"
+  },
+  {
+    "check": "transitions-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/transition-performance.mjs"
+    ],
+    "exit": 1,
+    "seconds": 11.69,
+    "date": "2026-11-05T18:38:02.236826+00:00"
+  }
+]

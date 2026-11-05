@@ -1,0 +1,247 @@
+{
+  "date": "2026-11-05T20:52:19.992954+00:00",
+  "runtimeSource": "a3d257cdd1eb1dc2e38d21fafab5bd41fdf725a1",
+  "artifactSha256": "4534b9951e2b4f27c44b55e1a8131800a4caad0bf976d4bc2c4c9b842a302772",
+  "method": "Raw RAF cadence and Long Tasks. Floating-point epsilon 0.000001ms only, no rounding 16.8ms down to16.7ms. Cold means first playback after model/material load warmup; no hidden first cast. No GPU timestamp claim.",
+  "measurements": {
+    "metal": {
+      "path": "performance-delivery/performance-metal.json",
+      "summary": {
+        "trials": 258,
+        "rafSamples": 21620,
+        "longTasks": 0,
+        "aggregateP95Ms": 16.70000000001164,
+        "aggregateP99Ms": 16.80000000000291,
+        "worstCaseP95Ms": 16.80000000000291,
+        "worstCaseP99Ms": 16.80000000000291,
+        "p95Misses": 60,
+        "p99Misses": 0
+      },
+      "byViewport": {
+        "1024": {
+          "trials": 86,
+          "rafSamples": 7203,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.70000000001164,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 22,
+          "p99Misses": 0
+        },
+        "1280": {
+          "trials": 86,
+          "rafSamples": 7209,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.70000000001164,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 18,
+          "p99Misses": 0
+        },
+        "1440": {
+          "trials": 86,
+          "rafSamples": 7208,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.70000000001164,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 20,
+          "p99Misses": 0
+        }
+      },
+      "renderers": [
+        "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)"
+      ],
+      "byTemperature": {
+        "cold": {
+          "trials": 129,
+          "rafSamples": 10819,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.70000000001164,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 28,
+          "p99Misses": 0
+        },
+        "warm": {
+          "trials": 129,
+          "rafSamples": 10801,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.70000000001164,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 32,
+          "p99Misses": 0
+        }
+      }
+    },
+    "transitions": {
+      "path": "performance-delivery/transitions.json",
+      "summary": {
+        "trials": 9,
+        "rafSamples": 1195,
+        "longTasks": 0,
+        "aggregateP95Ms": 16.700000000000728,
+        "aggregateP99Ms": 16.80000000000109,
+        "worstCaseP95Ms": 16.800000000000182,
+        "worstCaseP99Ms": 16.80000000000109,
+        "p95Misses": 3,
+        "p99Misses": 0
+      },
+      "byViewport": {
+        "1024": {
+          "trials": 3,
+          "rafSamples": 399,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.700000000000728,
+          "aggregateP99Ms": 16.80000000000109,
+          "worstCaseP95Ms": 16.700000000000728,
+          "worstCaseP99Ms": 16.80000000000109,
+          "p95Misses": 0,
+          "p99Misses": 0
+        },
+        "1280": {
+          "trials": 3,
+          "rafSamples": 398,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.799999999999272,
+          "aggregateP99Ms": 16.80000000000109,
+          "worstCaseP95Ms": 16.800000000000182,
+          "worstCaseP99Ms": 16.80000000000109,
+          "p95Misses": 2,
+          "p99Misses": 0
+        },
+        "1440": {
+          "trials": 3,
+          "rafSamples": 398,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.700000000000728,
+          "aggregateP99Ms": 16.80000000000109,
+          "worstCaseP95Ms": 16.799999999999272,
+          "worstCaseP99Ms": 16.800000000000182,
+          "p95Misses": 1,
+          "p99Misses": 0
+        }
+      },
+      "renderers": [
+        "identity retained"
+      ]
+    },
+    "software": {
+      "path": "performance-software-delivery/performance-software.json",
+      "summary": {
+        "trials": 8,
+        "rafSamples": 337,
+        "longTasks": 1,
+        "aggregateP95Ms": 66.70000000000073,
+        "aggregateP99Ms": 83.29999999999927,
+        "worstCaseP95Ms": 66.70000000000073,
+        "worstCaseP99Ms": 83.40000000000146,
+        "p95Misses": 8,
+        "p99Misses": 8
+      },
+      "byViewport": {
+        "1024": {
+          "trials": 8,
+          "rafSamples": 337,
+          "longTasks": 1,
+          "aggregateP95Ms": 66.70000000000073,
+          "aggregateP99Ms": 83.29999999999927,
+          "worstCaseP95Ms": 66.70000000000073,
+          "worstCaseP99Ms": 83.40000000000146,
+          "p95Misses": 8,
+          "p99Misses": 8
+        }
+      },
+      "renderers": [
+        "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)"
+      ]
+    },
+    "retina": {
+      "path": "performance-retina-delivery/performance-metal.json",
+      "summary": {
+        "trials": 258,
+        "rafSamples": 21627,
+        "longTasks": 0,
+        "aggregateP95Ms": 16.79999999998836,
+        "aggregateP99Ms": 16.80000000000291,
+        "worstCaseP95Ms": 16.80000000000291,
+        "worstCaseP99Ms": 16.80000000000291,
+        "p95Misses": 79,
+        "p99Misses": 0
+      },
+      "byViewport": {
+        "1024": {
+          "trials": 86,
+          "rafSamples": 7211,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.79999999998836,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 25,
+          "p99Misses": 0
+        },
+        "1280": {
+          "trials": 86,
+          "rafSamples": 7207,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.79999999998836,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 26,
+          "p99Misses": 0
+        },
+        "1440": {
+          "trials": 86,
+          "rafSamples": 7209,
+          "longTasks": 0,
+          "aggregateP95Ms": 16.79999999998836,
+          "aggregateP99Ms": 16.80000000000291,
+          "worstCaseP95Ms": 16.80000000000291,
+          "worstCaseP99Ms": 16.80000000000291,
+          "p95Misses": 28,
+          "p99Misses": 0
+        }
+      },
+      "renderers": [
+        "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)"
+      ]
+    }
+  },
+  "lifecycle": {
+    "campaigns": 3,
+    "longTasks": 0,
+    "contextsByCampaign": [
+      5,
+      5,
+      5
+    ],
+    "strictP95Misses": 0
+  },
+  "retinaLifecycle": {
+    "campaigns": 1,
+    "longTasks": 0,
+    "contextsByCampaign": [
+      5
+    ],
+    "p95Ms": 16.799999999999272,
+    "p99Ms": 33.30000000000291,
+    "pixelRatio": 2
+  },
+  "boundChecks": [
+    "preview-lifetime/check.json",
+    "offline-path/check.json",
+    "offline-commands/check.json",
+    "fallback/check.json",
+    "meta/checks.json",
+    "layout-delivery/checks.json",
+    "art/effect-captures.json"
+  ]
+}

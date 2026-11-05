@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Starter path should complete Yarn Giant
+
+'enemy' !== 'party'
+
+    at file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/path-check.mjs:28:94 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'enemy',
+  expected: 'party',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-int/apps/web
+> vitest run -- src/game/squad/turn3d
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-int/apps/web
+
+
+ Test Files  146 passed (146)
+      Tests  1621 passed (1621)
+   Start at  02:09:45
+   Duration  18.65s (environment 48%, tests 39%, import 11%, transform 2%)
+
+Environment  jsdom was created 146 times · 89.03s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
