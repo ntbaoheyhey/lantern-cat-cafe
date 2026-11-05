@@ -2,10 +2,6 @@
 
 Candidate branch: `ai/codex-turn3d-polish-2026-11-05`. Base: `e1731dc2660e6ad7a60d797d45a965e6a8ba67f5` / draft #299. Runtime source: `08e5595fe570c885bffb782518d2414637f1f74e` (later commits package proof and the demo). Main remains `340f88b92405ceb6b5421b207307fdbb283b2ca3`. No merge, deployment, server grant, migration or contract action.
 
-Final delivered commit: `d7b81c8afd4f03278e7e9498f4ea2e881cf65abe`; draft stack #300–#309. The candidate worktree is clean.
-
-[All captured evidence and raw receipts](https://github.com/ntbaoheyhey/taskbar-hero/tree/ai/codex-turn3d-polish-2026-11-05/reports/turn3d-polish) live on the candidate branch; this ledger carries the report and compact measurement receipts. Generated Deno import maps were refreshed for pure squad imports; no function implementation, economy rule or deployment was changed.
-
 ## Result and recommendation
 A complete local round-based run now includes preparation, 30 equipment items, real skill properties, three sets, seeded loot after each wave, cafe rest, five finite consumables and an end summary. Twelve rebuilt original figures and 43 five-beat effects replace the previous primitive presentation. Keep this as a draft prototype: measured functional and Metal gates pass, but the absolute premium-art/every-effect-distinct subjective gates and software-renderer performance do not fully pass. No human playtest is claimed.
 
@@ -126,9 +122,9 @@ Soak: 602.237 seconds; 0 page errors; retained-heap range 2.15 MiB after warmup.
 | Flag-off startup JS, same build settings | Before | After | Delta |
 |---|---:|---:|---:|
 | Raw bytes | 2,333,591 | 2,335,487 | +1,896 |
-| Gzip bytes | 379,307 | 379,891 | +584 |
+| Gzip bytes | 379,307 | 379,900 | +593 |
 
-Flag-off screenshots are pixel-identical. The bundle is not byte-identical. No squad/GLB requests and no Three.js markers in fetched startup chunks. Flag-on proof recorded no local/session/IndexedDB writes or server mutations; the normal app still fetches its pre-existing Google Fonts. The offline artifact makes zero external requests and zero storage writes.
+Final d7b81c8a same-settings rebuild: flag-off screenshots are pixel-identical after awaiting font readiness (zero differing pixels). The final gzip delta is +593 bytes; the earlier runtime snapshot measured +584 bytes and is retained in `raw/isolation-runtime-snapshot.json.gz`. See `final-head-verification.json` and the final build/isolation logs. The bundle is not byte-identical. No squad/GLB requests and no Three.js markers in fetched startup chunks. Flag-on proof recorded no local/session/IndexedDB writes or server mutations; the normal app still fetches its pre-existing Google Fonts. The offline artifact makes zero external requests and zero storage writes.
 
 Synthesized WebAudio only. Measured cue/stinger peaks -27.45 to -26.56 dBFS, RMS -52.82 to -50.22 dBFS, no PCM clipping in these fixtures. No listening test or professional audio quality claim.
 
@@ -195,19 +191,4 @@ All drafts stack on #299 and are under 1,500 changed text lines each; binary art
 - #308: Captured evidence and receipts — https://github.com/ntbaoheyhey/taskbar-hero/pull/308
 - #309: Offline playable demo — https://github.com/ntbaoheyhey/taskbar-hero/pull/309
 
-## Final review-size inventory
-
-| Draft | Added + deleted text lines | Binary files | Binary bytes at that head |
-|---|---:|---:|---:|
-| #300 | 139 | 0 | 0 |
-| #301 | 528 | 0 | 0 |
-| #302 | 563 | 0 | 0 |
-| #303 | 1191 | 15 | 6,964,418 |
-| #304 | 567 | 0 | 0 |
-| #305 | 236 | 0 | 0 |
-| #306 | 160 | 0 | 0 |
-| #307 | 383 | 0 | 0 |
-| #308 | 230 | 1459 | 328,406,786 |
-| #309 | 203 | 8 duplicate recordings removed | 0 new binary files; 23,264,467-byte embedded HTML counted as text |
-
-The evidence draft stores 328,406,786 bytes of binary captures/archives, separate from the 23.26 MB portable demo. The final candidate removes eight redundant Playwright video copies. Text-line limits are respected; a reviewer should open the local demo rather than inspect its generated bundle by hand.
+Final delivery head: `3bf2cfa3bd32d8355c5c967e979240330a595682`. The offline HTML remains the exact verified artifact; only proof tooling, receipts and report text changed in the final verification commit.
