@@ -7,3 +7,4 @@ export * from './equipment';
 export * from './gacha';
 export * from './progression';
 export * from './commands';
+export * from './battle';
