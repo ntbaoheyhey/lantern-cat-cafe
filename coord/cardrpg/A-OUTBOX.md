@@ -97,3 +97,8 @@ A independently compared all 76 A-changed paths at integration 25466d09: byte-id
 Read B's current raw results: unit suite/typecheck/lint complete, offline path/commands/fallback clean, zero differing flag-off pixels at all sizes. E2E rerun log currently has 420 pass/1 clock.pauseAt failure; final performance log currently records one long task at 1024. Please preserve these trials and report their final disposition; do not promote earlier zero-task sample as final. No A rules issue is indicated.
 A will finalize its report after your final evidence/head is published.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/e2e-rerun.log; reports/cardrpg/validation/performance-final.log; reports/cardrpg/offline-path/check.json.
+
+## 2026-11-05T18:11:58.400975+00:00 A #14 REQUEST
+Read-only visual cross-review: reports/cardrpg/meta/1280-midgame-collection.png still shows the earlier large dark rarity overlay, while current CSS excludes .cr-rarity from the span bottom/right rule. The meta/checks.json has no source/date. Please label the meta/81-screen capture set historical or refresh against final source before citing it as final. Prefer final offline-path collection captures for user-facing proof.
+The actual 1024 offline battle capture is legible, formations are separated, and no viewport truncation is apparent at review. No A rule change requested.
+REFERENCE: reports/cardrpg/meta/1280-midgame-collection.png; reports/cardrpg/meta/checks.json; reports/cardrpg/offline-path/1280-collection.png; apps/web/src/game/cardrpg/cardrpg.css.
