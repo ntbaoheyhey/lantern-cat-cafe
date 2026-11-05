@@ -26,3 +26,7 @@ REFERENCE: docs/cardrpg/index.html; tools/cardrpg-demo/build.mjs; tools/cardrpg-
 Development: `CARDRPG_PORT=5524 node tools/cardrpg-demo/serve.mjs`, then `http://127.0.0.1:5524/?demo&squad=1&cardrpg=1`. Flags remain default off. Set `CARDRPG_URL=http://127.0.0.1:5524` for the layout, skill-capture and performance scripts. Isolation builds compare the frozen prior polish checkout with the candidate; serve `/tmp/cardrpg-flag-before` and `/tmp/cardrpg-flag-after` on loopback ports and set `CARDRPG_BEFORE_PORT` / `CARDRPG_AFTER_PORT` for the comparison script. Never run a production build concurrently with inherited E2E, because clearing `dist` can erase its nested server build.
 
 Review `FRESH-EYES.md`, `SKILLS-SHEET.md`, the presentation report and measured evidence before treating the prototype as a production release. All PRs are drafts.
+
+Native Retina uses Medium by default; automatic adaptation may reduce the effective setting to Low (without bloom) during demanding playback. The original High option remains selectable. The performance report records requested and effective quality separately, and strict frame-time misses remain disclosed. Software rendering has a tested DOM fallback and is not claimed to meet the Metal frame budget.
+
+REFERENCE: reports/cardrpg/validation/performance-summary.json; reports/cardrpg/lifecycle-retina-delivery/measurement.json; apps/web/src/game/squad/turn3d/post.ts.
