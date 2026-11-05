@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "date": "2026-11-05",
   "originalOnly": true,
   "assets": [
@@ -11,9 +11,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -21,31 +22,57 @@
       "externalReferences": [],
       "parameters": {
         "targetHeight": 1.72,
-        "scale": 0.9691294113154221,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "scale": 0.955302877417387,
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 3956,
-      "triangleBudget": 6000,
-      "drawCalls": 12,
-      "bytes": 190608,
-      "gzipBytes": 46679,
-      "sha256": "d1a99a7961bde04856eb569d8d4e2cb880ac0dda2d9ce7af999186dd849ed42b"
+      "triangles": 14020,
+      "triangleBudget": 25000,
+      "drawCalls": 17,
+      "bytes": 809448,
+      "gzipBytes": 345819,
+      "sha256": "a02b237a744ccf44c45dca00b7b5cdb093ed3baa713236a0db7eb73ba57aea5a"
     },
     {
       "id": "witch",
@@ -55,9 +82,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -65,31 +93,57 @@
       "externalReferences": [],
       "parameters": {
         "targetHeight": 1.82,
-        "scale": 0.8291571663924159,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "scale": 0.8258792351931454,
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 4186,
-      "triangleBudget": 6000,
-      "drawCalls": 13,
-      "bytes": 213120,
-      "gzipBytes": 53709,
-      "sha256": "416429dfc82201b557157a15b36600344e0ddf61bf56046f0dfc11fdc4476623"
+      "triangles": 14666,
+      "triangleBudget": 25000,
+      "drawCalls": 18,
+      "bytes": 866884,
+      "gzipBytes": 374939,
+      "sha256": "fc9061257fca3cbd95b98a739facd13b9e8c7f26300bd26a9e12b131d6215732"
     },
     {
       "id": "alchemist",
@@ -99,9 +153,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -109,31 +164,57 @@
       "externalReferences": [],
       "parameters": {
         "targetHeight": 1.72,
-        "scale": 0.9691294113154221,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "scale": 0.955302877417387,
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 3874,
-      "triangleBudget": 6000,
-      "drawCalls": 12,
-      "bytes": 218232,
-      "gzipBytes": 53679,
-      "sha256": "289f7d86e074946039bce62886154fa059194159a4a08075d7da7781ec1d3189"
+      "triangles": 12998,
+      "triangleBudget": 25000,
+      "drawCalls": 17,
+      "bytes": 805704,
+      "gzipBytes": 325178,
+      "sha256": "a66c3e4a81bff843fea273be5d5aa24cb7eb48a6dbac26b3d99e6e024e76f550"
     },
     {
       "id": "guard",
@@ -143,9 +224,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -154,30 +236,56 @@
       "parameters": {
         "targetHeight": 1.4,
         "scale": 0.9150326812357439,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2112,
-      "triangleBudget": 3000,
+      "triangles": 4564,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 119188,
-      "gzipBytes": 26137,
-      "sha256": "b9f87e7a9c942c02600469c35a3cf993269ef034ef5e8ccee36aeddad3130d9b"
+      "bytes": 431432,
+      "gzipBytes": 187638,
+      "sha256": "906730755ca1bcb85d349f98516337574b12ebdcf8ef4a9414b797bd6935cfd1"
     },
     {
       "id": "flanker",
@@ -187,9 +295,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -198,30 +307,56 @@
       "parameters": {
         "targetHeight": 1.48,
         "scale": 1.0003002389868867,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 1800,
-      "triangleBudget": 3000,
+      "triangles": 3724,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 111516,
-      "gzipBytes": 25531,
-      "sha256": "673fcd4c4a954e518ddeb584117976ae8c03bd4353fd458a6fab5906866bd53f"
+      "bytes": 378768,
+      "gzipBytes": 150919,
+      "sha256": "878670da18f8746ae55fc1825cb40c60cab2f4e11e393599b33401f09ae3a82f"
     },
     {
       "id": "charger",
@@ -231,9 +366,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -242,30 +378,56 @@
       "parameters": {
         "targetHeight": 1.34,
         "scale": 1.1884700585774142,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2910,
-      "triangleBudget": 3000,
+      "triangles": 4414,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 118792,
-      "gzipBytes": 26834,
-      "sha256": "8a08b23ca5e14316ead9e60994c2604d89b9c83dceb345f0729c3291a161d86b"
+      "bytes": 357196,
+      "gzipBytes": 133305,
+      "sha256": "ac3cf63202d2882b19dc7d02b60f8ead567d9c18644ad93a8fd8f36da92f627f"
     },
     {
       "id": "ranger",
@@ -275,9 +437,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -286,30 +449,56 @@
       "parameters": {
         "targetHeight": 1.48,
         "scale": 1.0422535269453372,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2560,
-      "triangleBudget": 3000,
+      "triangles": 5164,
+      "triangleBudget": 10000,
       "drawCalls": 12,
-      "bytes": 142724,
-      "gzipBytes": 30445,
-      "sha256": "caaaf7f667dda5b898b70cb7dfba66da87b96987464e7ae0643b9b8e218844a1"
+      "bytes": 433984,
+      "gzipBytes": 160029,
+      "sha256": "3ef2eebcba39fd0d60a59b953c388ebc7a2597bea77d6e2c583ad735fdcaa1c0"
     },
     {
       "id": "healer",
@@ -319,9 +508,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -330,30 +520,56 @@
       "parameters": {
         "targetHeight": 1.42,
         "scale": 1.078482072620367,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2252,
-      "triangleBudget": 3000,
+      "triangles": 4708,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 122168,
-      "gzipBytes": 29002,
-      "sha256": "cf7acf18b9c269c5b289b21fb6c8e33cfbda6f48a6f3bc78ea122f9ae68ee6e2"
+      "bytes": 387180,
+      "gzipBytes": 136724,
+      "sha256": "4616cf3ec23795340d9ec737c6e6e0052c0239adcc18ebcf914de8c4872549fb"
     },
     {
       "id": "elite",
@@ -363,9 +579,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -374,30 +591,56 @@
       "parameters": {
         "targetHeight": 1.7,
         "scale": 0.9321698654021868,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2840,
-      "triangleBudget": 8000,
+      "triangles": 6032,
+      "triangleBudget": 20000,
       "drawCalls": 10,
-      "bytes": 150408,
-      "gzipBytes": 35731,
-      "sha256": "3dea76ab029549c1d16f6ccd6f85efe60be49d85cdb309bd821377f189b4b517"
+      "bytes": 517792,
+      "gzipBytes": 224698,
+      "sha256": "30845f55000d1cc8b6cf82da25b43c714f12b11c3bc4f8886995081fca9b1849"
     },
     {
       "id": "yarn",
@@ -407,9 +650,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -418,30 +662,56 @@
       "parameters": {
         "targetHeight": 2.6,
         "scale": 1.187541343004576,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 16360,
-      "triangleBudget": 20000,
+      "triangles": 20050,
+      "triangleBudget": 60000,
       "drawCalls": 14,
-      "bytes": 457220,
-      "gzipBytes": 153733,
-      "sha256": "82992dc17b0ea3e3f24955520ca85d263135ac0743d33dd44c22f74dc2f8d4b3"
+      "bytes": 828464,
+      "gzipBytes": 397205,
+      "sha256": "624c6e57c3dbd38301469daa408203c2a29bceb91d14a0fb0881c4f514530c86"
     },
     {
       "id": "thread",
@@ -451,9 +721,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -462,30 +733,56 @@
       "parameters": {
         "targetHeight": 1.34,
         "scale": 0.9623507018707149,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2216,
-      "triangleBudget": 3000,
+      "triangles": 3468,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 95220,
-      "gzipBytes": 29081,
-      "sha256": "273400525dfab5c9eaaa98c71a4473a3abb887a06908859f9f6d0956db62b289"
+      "bytes": 320980,
+      "gzipBytes": 130381,
+      "sha256": "668de42aef7156d9a6dd41be27b710285c9fdd691c42e15d9cec26995b410637"
     },
     {
       "id": "dummy",
@@ -495,9 +792,10 @@
         "tools/art3d/cast.mjs",
         "tools/art3d/geometry.mjs",
         "tools/art3d/animation.mjs",
-        "tools/art3d/build.mjs"
+        "tools/art3d/build.mjs",
+        "tools/art3d/materials.mjs"
       ],
-      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "author": "OpenAI Codex primary polish session; original earlier definitions extended with smooth lofts, expressions, sockets and baked surfaces",
       "date": "2026-11-05",
       "tool": "three.js 0.180.0 GLTFExporter",
       "command": "pnpm art:turn3d",
@@ -506,30 +804,56 @@
       "parameters": {
         "targetHeight": 1.36,
         "scale": 1.0445885856975576,
-        "radialSegments": "6–24, by silhouette",
-        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "radialSegments": "12–36; Catmull-Rom loft profiles ×3",
+        "surface": "baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes",
         "forward": "+Z",
         "ground": "y=0",
-        "seed": "deterministic; no random inputs"
+        "seed": "deterministic; no random inputs",
+        "bake": {
+          "size": 128,
+          "seed": "integer hash x+17,y+71",
+          "surfaces": [
+            "felt",
+            "knit",
+            "brass",
+            "ceramic",
+            "gloss"
+          ],
+          "channels": "embedded albedo + finite-difference tangent normal PNG",
+          "vertexAO": "analytic neighboring-bound sphere occlusion, capped at 20%; downward ambient at 7%",
+          "compression": "PNG deflate level 9"
+        }
       },
       "clips": [
         "idle",
-        "step",
+        "ready",
+        "walk-in",
         "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
         "cast",
-        "special",
         "hit",
-        "stagger",
-        "down",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
         "victory",
-        "telegraph"
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down"
       ],
-      "triangles": 2248,
-      "triangleBudget": 3000,
+      "triangles": 4322,
+      "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 133832,
-      "gzipBytes": 29189,
-      "sha256": "56a86df20294f48bfed4a80c28e2379b7acb42c8972138ab8f855734aaaf6775"
+      "bytes": 412244,
+      "gzipBytes": 153216,
+      "sha256": "7c49fbb49cb4117990704707f802ad25be83a61e1fb92557ad5423e4a996e109"
     }
   ],
   "proceduralAssets": [
