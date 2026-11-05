@@ -10,10 +10,10 @@ try{for(const [width,height] of widths){
  const p=await browser.newPage({viewport:{width,height},deviceScaleFactor:Number(process.env.CARDRPG_DPR||1)}),cdp=await p.context().newCDPSession(p);
  p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());if(m.type()==='warning')warnings.push(m.text())});
  await p.addInitScript(()=>{
-  window.__lifecycle={long:[],marks:[],frames:[],record:false,last:0,contexts:0};
+  window.__lifecycle={long:[],marks:[],frames:[],record:false,last:0,contexts:0,buffers:[],qualities:[]};
   const context=HTMLCanvasElement.prototype.getContext,seen=new WeakSet();HTMLCanvasElement.prototype.getContext=function(...args){const result=context.apply(this,args);if(result&&String(args[0]).startsWith('webgl')&&!seen.has(result)){seen.add(result);window.__lifecycle.contexts++}return result};
   new PerformanceObserver(es=>{if(window.__lifecycle.record)for(const e of es.getEntries())window.__lifecycle.long.push({start:e.startTime,duration:e.duration,stage:window.__turn3dReview?.controller.battle.run.stage})}).observe({type:'longtask'});
-  requestAnimationFrame(function tick(t){const x=window.__lifecycle;if(x.record&&x.last)x.frames.push(t-x.last);x.last=t;requestAnimationFrame(tick)});
+  requestAnimationFrame(function tick(t){const x=window.__lifecycle;if(x.record){if(x.last)x.frames.push(t-x.last);const s=window.__turn3dReview?.scene,c=s?.renderer.domElement;if(c){const size={width:c.width,height:c.height},prior=x.buffers.at(-1);if(!prior||prior.width!==size.width||prior.height!==size.height)x.buffers.push({...size,at:t});const quality={requested:window.__turn3dReview.view().quality,effective:s.stats.quality},q=x.qualities.at(-1);if(!q||q.requested!==quality.requested||q.effective!==quality.effective)x.qualities.push({...quality,at:t})}}x.last=t;requestAnimationFrame(tick)});
  });
  await p.goto(url);await p.getByRole('button',{name:/Prepare patrol/}).click();await p.getByRole('button',{name:/Begin patrol/}).click();await p.waitForFunction(()=>window.__turn3dReview?.scene?.ready&&window.__turn3dReview.controller.canChoose);
  if(process.env.CARDRPG_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start')}
@@ -29,10 +29,10 @@ try{for(const [width,height] of widths){
    await p.getByRole('button',{name:'Auto-equip best',exact:true}).click();await p.getByRole('button',{name:/Continue patrol|Face the Yarn Giant/}).click();
   }else break;
  }
- const measurement=await p.evaluate(()=>{const x=window.__lifecycle;x.record=false;return {...x,pixelRatio:window.__turn3dReview.scene.renderer.getPixelRatio(),stats:window.__turn3dReview.scene?.stats,result:window.__turn3dReview.controller.battle.result,rendererRetained:window.__turn3dReview.scene===window.__retainedScene}});
+ const measurement=await p.evaluate(()=>{const x=window.__lifecycle;x.record=false;return {...x,requestedQuality:window.__turn3dReview.view().quality,pixelRatio:window.__turn3dReview.scene.renderer.getPixelRatio(),stats:window.__turn3dReview.scene?.stats,result:window.__turn3dReview.controller.battle.result,rendererRetained:window.__turn3dReview.scene===window.__retainedScene}});
  if(process.env.CARDRPG_PROFILE)await fs.writeFile(`${out}/profile-${width}.json`,JSON.stringify(await cdp.send('Profiler.stop')));
  const sorted=[...measurement.frames].sort((a,b)=>a-b);rows.push({width,height,...measurement,p95Ms:sorted[Math.floor((sorted.length-1)*.95)],p99Ms:sorted[Math.floor((sorted.length-1)*.99)]});
  console.log(JSON.stringify({width,long:measurement.long,contexts:measurement.contexts,atStart:measurement.contextsAtStart,result:measurement.result}));await p.close();
 }}finally{await browser.close();await fs.writeFile(out+'/measurement.json',JSON.stringify({artifactSha256,date:new Date().toISOString(),method:'Natural x4 presentation and actual Auto rules. Full three waves and boss, including every loot/rest entry, one equipment picker and all continuations. No skip/tick injection. Context creation counted throughout; RAF and Long Tasks include the complete path after loading.',errors,warnings,rows},null,2)+'\n')}
 assert.deepEqual(errors,[]);assert.deepEqual(warnings,[]);assert.equal(rows.length,widths.length);
-for(const r of rows){assert.ok(r.rendererRetained);assert.equal(r.marks.filter(m=>m.event==='rest').length,3);assert.equal(r.result?.winner,'party');assert.equal(r.contexts,r.contextsAtStart,'No new WebGL contexts after loading');assert.deepEqual(r.long,[],'No lifecycle long tasks after loading')}
+for(const r of rows){assert.ok(r.rendererRetained);assert.equal(r.marks.filter(m=>m.event==='rest').length,3);assert.equal(r.result?.winner,'party');assert.equal(r.contexts,r.contextsAtStart,'No new WebGL contexts after loading');assert.equal(r.buffers.length,1,'Round completion must not resize the battlefield');assert.deepEqual(r.long,[],'No lifecycle long tasks after loading')}
