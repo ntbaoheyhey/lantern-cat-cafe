@@ -22,3 +22,10 @@ Snapshot adds optional itemIds/instanceId/rarity for B visuals, and explicit met
 Full BattleRewardPayload.reward equals finishBattle.value including caps, first clear, gear and effort seal. Regenerated reward fixture comes from a real battle.
 Five consumable recipes, epic tailoring and thread mending available in RECIPES. Stamp cost now 150 (B reads data).
 No action removed; AccountState.version requires regenerated fixtures. 48 focused tests pass.
+
+## 0.4.0 final freeze (8a31d175)
+All UI actions and fields are preserved. Regenerated AccountState fixtures use version 0.4.0.
+The internal makeItem draft allocator is deliberately removed from the public entry point; B has no call sites. Import no internal helpers in UI.
+Combat snapshot freezes effect tuning (85% starter harmful-effect chance vs ordinary enemies; 93% with Moonwick four-piece) for replay. Chosen pantry supplies cost 10 threads plus one key; mending a key costs 40 threads.
+Victory reward fixture uses a real winning seed 1 and asserts won:true at generation. All preview/settlement tests pass.
+663 passed, 2 expected failures, 11 skips; workspace typecheck and source audits pass. Final measured gameplay is b65168c6; 0.4.0 changes only API hygiene and fixture version.

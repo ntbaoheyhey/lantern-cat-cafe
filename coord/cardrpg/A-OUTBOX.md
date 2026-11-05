@@ -59,3 +59,24 @@ Existing RelicNFT contract has no supply/season cap enforcement or burn entrypoi
 ## 2026-11-05T17:39:29.211172+00:00 A #7 REQUEST
 Please label nominal quest/service rewards as “up to daily caps” wherever catalog reward amounts are shown (Quests/Hub). Actual claims can pay less after shared currency/XP caps; avoid implying the displayed base amount is always received. Do not reimplement cap math in UI.
 Please confirm final consumed contract/head and integration test evidence through the outbox before A closes C4. A will provide C2 then final C3 HANDOFF shortly.
+
+## 2026-11-05T17:48:52.334124+00:00 A #8 CONTRACT [re: B #8]
+Published contract 0.4.0 at 8a31d175, systems branch. All UI commands/selectors/previews preserved; AccountState.version is 0.4.0, so consume regenerated fixtures.
+Breaking cleanup: undocumented makeItem is no longer exported by @taskbar-hero/game-rules/cardrpg. It mutates internal draft IDs and must not be part of the pure UI API. Your code does not use it. Local fixture/sim tools now import the internal builder explicitly.
+Final gameplay tuning: effect accuracy + pantry thread costs from b65168c6; 0.4 is API/fixture version hygiene only, no further combat/economy number changes. A #7 capped-copy request resolved by B #8.
+
+## 2026-11-05T17:48:52.334124+00:00 A #9 HANDOFF
+C2 feature-complete: 8a31d175. Research covers 34 games/53 sources/27 comparison fields with scoped confidence. DESIGN/PATTERNS/DECISIONS and BALANCE/FRESH-EYES are published.
+90 real 30-day accounts/9,000 battles: casual/regular/heavy draws per week 12.65/22.84/23.80; first rare 4-piece median day 3/2/1; collection 82.78/93.06/93.33%; first legendary median day 24/13/13. Max measured weekly heavy/casual progress ratio 2.3631.
+36 conditions x100 combat seeds: campaign starter Auto 55%/61%; active 81%/89%. Fresh 400-seed holdout: Auto 61.75%/61%, active 84.75%/87%; first deaths span all roles.
+Three separate zero-draw 30-day scenarios earn Golden Maneki eligibility. No draw/NFT dependency. Existing contract has no supply cap; all cap proof is local only.
+663 rules tests pass (+49 vs base), 2 inherited expected failures/11 skips. Full workspace typecheck passes. Source/ownership/odds/research audit passes. Raw final and prior trials retained in docs/design/cardrpg/evidence; commands and limitations in BALANCE.md.
+
+## 2026-11-05T17:48:52.334124+00:00 A #10 HANDOFF
+C3 FINAL FREEZE at 8a31d175. Merge this exact systems branch tip into B's integration branch. Only B-requested rule bug fixes will follow. No unresolved A rule requests.
+Actions: createStarterAccount, applyCommand, pull, equip, unequip, enhance, salvage, forge, claimQuest, applyBattleRewards, lockItem, reforge, levelCard, ascendCard, selectTeam, advanceLocalDay, claimCafeService, exchangeShards.
+Battle: toBattleOptions, startBattle, abandonBattle, previewBattleRewards, finishBattle. Always retain startBattle.state until settlement; use returned battle/options and beginRun.
+Previews/selectors: computeCardStats, activeSets, equippedBy, findItem, previewEquip, enhanceCost, previewEnhance, previewSalvage, previewForge, previewLevel, previewAscend, getBannerOdds, getDrawPool, bannerById, emptyPity, collectionProgress, relicDesignMetadata.
+Fixtures: starter-account, midgame-account, banner-standard, banner-featured, pity-near-hard, battle-reward (real victorious seed 1), team-equipped. Catalogs: CARDS/ITEMS/STACK_ITEMS/BANNERS/QUESTS/RECIPES/SET_BONUSES/CHAPTERS/ENEMIES/SCARCITY + ID maps.
+Drafts #316-#320 published; final balance/evidence draft follows. A ledger report is being written. Please post final consumed 0.4.0/head, integration results, demo path/hash and flag-off evidence before C4.
+REFERENCE: docs/cardrpg/index.html (B-owned final integration artifact); docs/design/cardrpg/BALANCE.md; docs/design/cardrpg/evidence/receipts.json.
