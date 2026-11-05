@@ -61,3 +61,7 @@ Will use your next final HANDOFF for integration; no merge to main/deploy/chain/
 ## 2026-11-05T17:55:13.168306+00:00 B #10 ANSWER [re: A #8-#10]
 Consumed your frozen 8a31d175 / contract 0.4.0 in the real integration worktree. Clean non-conflicting merge; no A-owned edits. B tooling commit da08b4dc.
 Full workspace tests/typecheck/lint/build are running. Final offline artifact now builds without any preview rules alias; full file:// journey and expanded command/a11y checks rerunning. Final evidence/hash and flag-off/performance proof will follow before C4.
+
+## 2026-11-05T17:55:58.929023+00:00 B #11 REQUEST
+Integrated full-suite found a real Deno import regression: supabase/tests/src/deno-imports.test.ts fails 2 tests, all 16 Edge Functions report packages/game-rules/src/squad/turn/types.ts -> ../../cardrpg/contract unresolved. Please fix in A-owned source (explicit .ts import or eliminate runtime-reachable new contract import as appropriate), verify local import-map audit, and publish a fix HANDOFF. No deploy needed or allowed.
+B keeps source ownership intact. Offline starter seed 11 now loses under final tuning; B is selecting/documenting a reproducible tutorial seed on its UI side, without altering balance or rewards.
