@@ -8,7 +8,7 @@ import {EFFECT_DIRECTION} from './effect-direction';
 import {CafePost,type Quality} from './post';
 import {stageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
-import {GearAttachments} from './gear-visuals';
+import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import {screenBounds,auditBounds} from './scene-audit';
@@ -17,7 +17,7 @@ import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from 
 
 export interface SceneView {
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
-  targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean;
+  targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
 }
@@ -38,6 +38,7 @@ export class TurnScene {
   readonly labelAudit:{heads:LabelInput['head'][];cards:LabelInput['head'][];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
   private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
   private puppets = new Map<string,Puppet>();
+  private gearResources = new GearResources();
   private pending = new Set<string>();
   private disposed = false;
   private raf = 0;
@@ -82,7 +83,7 @@ export class TurnScene {
     this.renderer.toneMapping=T.ACESFilmicToneMapping; this.renderer.toneMappingExposure=1.04;
     this.renderer.setClearColor('#252332'); this.renderer.domElement.setAttribute('aria-label','Original 3D cafe battlefield');
     this.renderer.domElement.setAttribute('role','img'); host.appendChild(this.renderer.domElement);
-    this.post=new CafePost(this.renderer);this.renderer.info.autoReset=false;
+    this.post=new CafePost(this.renderer);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;
     this.glow=this.makeGlow();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',15,27);
@@ -101,7 +102,7 @@ export class TurnScene {
       const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(6),3));
       const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
     }
-    this.spells=new SpellVfx(this.scene);this.spells.warm(this.renderer,this.camera);this.scene.add(this.spells.root);
+    this.spells=new SpellVfx(this.scene);
     void this.warmModels();
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
@@ -118,9 +119,21 @@ export class TurnScene {
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
       }
-      this.scene.add(warm);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
-      const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
-      this.scene.remove(warm);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
+      // A spare preview has never drawn its equipped actor. Prepare that
+      // material variant too, before exposing it in the first item picker.
+      const initial={...this.view(),frame:null};
+      await Promise.all(initial.actors.map(a=>this.ensure(a,initial.boss)));if(this.disposed)return;
+      for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
+      this.scene.add(warm);
+      // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
+      // Prepare both while loading so adaptive quality never links at a hit.
+      await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
+      this.renderer.render(this.scene,this.camera);
+      const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);
+      await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed){target.dispose();return}
+      this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
+      this.spells.warm(this.renderer,this.camera,this.scene);
+      this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }
   private makeGlow():T.Texture {
@@ -158,7 +171,12 @@ export class TurnScene {
     mesh(new RoundedBoxGeometry(15,.14,.6,2,.04),woodMat,0,.7,-5.25);
     return group;
   }
-  private resizeToHost(){this.width=Math.max(1,this.host.clientWidth);this.height=Math.max(1,this.host.clientHeight);this.renderer.setSize(this.width,this.height,false);this.post.resize(this.width,this.height);this.camera.aspect=this.width/this.height;this.camera.updateProjectionMatrix();this.dirty=true;}
+  private resizeToHost(){
+    const width=this.host.clientWidth,height=this.host.clientHeight;
+    if(!width||!height||(width===this.width&&height===this.height))return;
+    this.width=width;this.height=height;this.renderer.setSize(width,height,false);this.post.resize(width,height);
+    this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.dirty=true;
+  }
   invalidate(){this.dirty=true;}
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
@@ -172,7 +190,7 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -183,7 +201,7 @@ export class TurnScene {
   }
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
-    this.raf=requestAnimationFrame(this.loop);if(!this.ready){this.last=now;this.renderAt=now;return}const view=this.view();const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
+    this.raf=requestAnimationFrame(this.loop);const view=this.view();if(!this.ready||view.suspended){this.last=now;this.renderAt=now;return}const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
     const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
     if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
     this.time=view.fixedTime??this.time+delta;this.render(view,delta);
@@ -269,5 +287,8 @@ export class TurnScene {
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
   private disposePuppet(p:Puppet){p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
-  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();this.renderer.domElement.remove();}
+  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.gearResources.dispose();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();
+    // Loot/rest previews own separate contexts. Release them immediately so
+    // Chromium cannot evict the retained battlefield before garbage collection.
+    this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

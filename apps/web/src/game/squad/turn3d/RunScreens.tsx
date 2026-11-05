@@ -1,6 +1,6 @@
 import type {ActorAppearance} from './appearance';
 import {useEffect,useRef,useState} from 'react';
-import {SceneCanvas} from './SceneCanvas';
+import {usePreviewPool} from './PreviewPool';
 import type {TurnScene,SceneView} from './scene';
 import type {TurnActor,Hero} from '@taskbar-hero/game-rules/src/squad/turn/types';
 import {GEAR_SLOTS,ITEM_BY_ID,SET_NAMES,SET_TEXT,describeItem,formatStat,type GearSlot,type SquadItem,type GearSet} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
@@ -13,10 +13,14 @@ export const SLOT_ICON:Record<GearSlot,string>={weapon:'⚒',outfit:'♜',charm:
 export const SLOT_NAME:Record<GearSlot,string>={weapon:'Weapon',outfit:'Outfit',charm:'Charm',relic:'Relic'};
 export function GearIcons({actor,appearance}:{actor:TurnActor;appearance?:ActorAppearance}){return <span className="t3-gear-icons" aria-label={`${actor.name} equipment`}>{GEAR_SLOTS.map(slot=>{const i=appearance?.(actor)[slot]??ITEM_BY_ID[actor.equipment[slot]??''];return <span key={slot} title={i?`${i.name}: ${describeItem(i)}`:`Empty ${SLOT_NAME[slot]}`} style={{color:i?RARITY_COLOR[i.rarity]:'#66616f'}}>{SLOT_ICON[slot]}</span>})}</span>}
 export function MiniPreview({actor,calm=false,appearance}:{actor:TurnActor;calm?:boolean;appearance?:ActorAppearance}){
- const scene=useRef<TurnScene|null>(null),[error,setError]=useState('');
+ const scene=useRef<TurnScene|null>(null),host=useRef<HTMLDivElement>(null),pool=usePreviewPool(),[error,setError]=useState('');
  const view=():SceneView=>({appearance,actors:[actor],currentId:null,frame:null,targetIds:[],legalIds:[],reducedMotion:calm,paused:calm,boss:false,model:{role:actor.role,clip:'idle',angle:.25},camera:'close',quality:'low'});
  const ref=useRef(view);ref.current=view;useEffect(()=>{scene.current?.invalidate()});
- return <div className="t3-mini-preview" aria-label={`${actor.name} live equipment preview`}>{error?<span>{actor.name}<GearIcons actor={actor}/></span>:<SceneCanvas view={()=>ref.current()} onTarget={()=>{}} onAnchors={()=>{}} onFailure={setError} onReady={s=>{scene.current=s}}/>}</div>;
+ useEffect(()=>{if(!host.current)return;let lease:ReturnType<typeof pool.acquire>|undefined;
+  try{lease=pool.acquire(host.current,()=>ref.current(),setError);scene.current=lease.scene}catch(e){setError(String(e))}
+  return()=>{lease?.release();scene.current=null};
+ },[pool]);
+ return <div className="t3-mini-preview" aria-label={`${actor.name} live equipment preview`}>{error?<span>{actor.name}<GearIcons actor={actor}/></span>:<div className="t3-canvas" data-ready="true" ref={host}/>}</div>;
 }
 function ItemText({item}:{item:SquadItem}){return <><span className="t3-rarity" style={{color:RARITY_COLOR[item.rarity]}}>{item.rarity} · {SLOT_NAME[item.slot]}{item.set?` · ${SET_NAMES[item.set]}`:''}</span><h3>{item.name}</h3><p>{describeItem(item)}</p><em>{item.flavor}</em></>}
 export function LoadoutScreen({c,calm,appearance}:{c:TurnController;calm:boolean;appearance?:ActorAppearance}){

@@ -13,7 +13,7 @@ export class CardRpgModel{
  }
  command(command:Command,message?:string){return this.accept(applyCommand(this.state,command),message)}
  draw(bannerId:string,count=1){return this.command({type:'pull',bannerId,count,seed:this.drawSeed++},'Your invitation has arrived. Every result is bound to this local account.')}
- start(){const result=startBattle(this.state,11);if(this.accept(result)&&result.ok){this.battle=new TurnController(result.value.options,result.value.battle);this.notify()}}
+ start(){const result=startBattle(this.state,2);if(this.accept(result)&&result.ok){this.battle=new TurnController(result.value.options,result.value.battle);this.notify()}}
  finish(){if(!this.battle)return;const result=finishBattle(this.state,this.battle.battle);if(this.accept(result,'Patrol rewards received.')&&result.ok){this.reward=result.value;this.battle=null;this.screen='rewards';this.notify()}}
  abandon(){if(this.accept(abandonBattle(this.state),'Patrol ended. No completion rewards claimed.')){this.battle=null;this.notify()}}
  fixture(id:'starter'|'midgame'|'nearHard'){this.state=id==='starter'?createStarterAccount(11):structuredClone(FIXTURES[id]);this.cardId=this.state.cards[0]!.id;this.itemId=this.state.inventory.items[0]!.id;this.screen='hub';this.battle=null;this.reward=null;this.notice=`Loaded ${id} preview. All progress is unsaved.`;this.error=false;this.notify()}
