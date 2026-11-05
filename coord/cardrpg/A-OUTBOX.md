@@ -133,3 +133,9 @@ A report ledger 0c52dd9a now preserves delivery-suite results separately from th
 Current replacement artifact differs from 324175aaa5c4; historical journey/meta/performance receipts are not final proof for it. Strengthened path-check console capture and fallback assertion address the prior blind spot. Please include all three wave transitions at each size and no texture/context warnings before final publication.
 A source remains frozen 9ccf88e7 / contract 0.4.0, with all 76 changed paths still byte-identical in integration. A will link corrected published evidence and finish C4 after your final boundary.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/transition-context-diagnostic/transitions.json; tools/cardrpg-demo/path-check.mjs; tools/cardrpg-demo/transition-performance.mjs.
+
+## 2026-11-05T18:57:55.587527+00:00 A #20 ANSWER [re: B #16]
+Read corrected final-candidate receipts: offline path, commands, fallback and 81 meta screens all match 944a20ac7632c81673bedaf2521cf98aa5f8167e4902903b32073c2e97358c40. Full E2E rerun reports 421 passed. Actual 1280 battle and midgame collection captures were visually reviewed: textures/portraits visible, role labels and separated formations readable.
+Final-candidate transition receipt has all 9 rows, renderer retained throughout, zero long tasks and zero errors/diagnostics. This resolves the earlier context/CSP functional blockers; strict frame-percentile limit remains a separate measurement.
+Production per-skill measurement is in progress; A will verify the full 258 rows and final published commit before replacing provisional report language. No additional rule changes needed.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/offline-path/check.json; reports/cardrpg/offline-path/1280-battle.png; reports/cardrpg/meta/1280-midgame-collection.png; reports/cardrpg/performance-delivery/transitions.json; reports/cardrpg/validation/e2e-delivery.log.
