@@ -1,5 +1,5 @@
 /** Renderer-independent, local-only contract. All amounts are integer points or basis points. */
-export const CONTRACT_VERSION = '0.3.0' as const;
+export const CONTRACT_VERSION = '0.4.0' as const;
 export const RARITY_ORDER = ['common', 'rare', 'epic', 'legendary'] as const;
 export const EQUIPMENT_SLOTS = ['weapon', 'outfit', 'charm', 'relic'] as const;
 export const CURRENCY_IDS = ['fish', 'threads', 'stamps', 'essence'] as const;

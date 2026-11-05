@@ -1,6 +1,6 @@
 # Balance and reproduction evidence
 
-Runtime source: `b65168c6`; contract 0.3.0. All measurements use the actual pure meta commands and existing numbered-round battle engine, not estimated reward formulas. The runtime files did not change between these final simulations and this revision. The audit records SHA-256 values. Previous tuning trials remain in `evidence/`; filenames containing `initial`, `pressure`, `durability`, `redistributed`, or `tuned` are historical, not final gates.
+Measured gameplay source: `b65168c6`; contract 0.3.0. Final contract 0.4.0 removes an internal mutating builder from the public API and regenerates fixture version fields; tuning and simulation outcomes are unchanged. All measurements use the actual pure meta commands and existing numbered-round battle engine, not estimated reward formulas. The runtime files did not change between these final simulations and this revision. The audit records SHA-256 values. Previous tuning trials remain in `evidence/`; filenames containing `initial`, `pressure`, `durability`, `redistributed`, or `tuned` are historical, not final gates.
 
 ## Combat
 

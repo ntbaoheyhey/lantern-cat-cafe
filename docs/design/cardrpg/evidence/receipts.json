@@ -16,7 +16,7 @@
   "maximumWeeklyHeavyCasualRatio": 2.363062867087231,
   "files": {
     "evidence/combat-effects-validation.json": "36db770c0b185edc0b693113731d37e5bd4d2ac6b68b7349e9037245c5358978",
-    "evidence/audit.json": "423959524587859a86c0e1f6e8014304b249f8f17a4ef65d9886e8f99056e50b",
+    "evidence/audit.json": "c01f331f39f90a4baaeae67cf5b06bb5d7ca8de76a9950de5c89e8aabdc43803",
     "evidence/combat-pressure12.json": "7daa7aa25545f751e9363c25f738108fb0c95e4564e45a0dc3cf1b1ee780dc27",
     "evidence/combat-formation104.json": "c1cde89a0dae2e1a992b6e7a5bd206cd063f64be2bc1e2b48cfa805e520251d3",
     "evidence/combat-final30.json": "39af20c3baff5f1ac88cb53b2523d6126842540258e73925502b701653b2fbe4",
@@ -42,13 +42,15 @@
     "evidence/combat-pressure10.json": "8d760cf3d2c81bddaae3a0f085f05b827347c8aaa98b13aea54bfbcf5bce41e1",
     "evidence/combat-pressure8.json": "4eb63a512506a8704d3b58b480b1a9418a929a020dde8815bd73e415a03457ce",
     "evidence/logs/cardrpg-combat-final-grid.log": "712ad485cdd04ed0a7bda2af8834e4dca3177f2bbbbe1247366b62e5121d481c",
-    "evidence/logs/cardrpg-rules-final.log": "e4e57023147d983ce470ab62f90ddcec550abe217acaca8fa739fdfe32c1124a",
+    "evidence/logs/cardrpg-rules-final.log": "2b55f25709a04449ed514895b8304307a983a1ed0d43df756593d1a3db916af5",
     "evidence/logs/cardrpg-economy-final.log": "51ee9e736d0255f529d5c28790bb0f00ff9ac31a41f0539f134abeb6ecf4a5ff",
     "evidence/logs/cardrpg-combat-final-holdout.log": "046389ab6afaf7c004ec7188291b4e72930902bfa26b40cd624e55266c77cf46",
-    "evidence/logs/cardrpg-typecheck-final.log": "f8ffe284679e0bd44e48c1f49b376f62479b7017427e792b34f00ee6735b9bdb",
-    "evidence/logs/cardrpg-audit-final.log": "4f55b3233a42462cd79f8092e6bb8ef3ee794400c1df8b063b2c6174d2b93d5f",
+    "evidence/logs/cardrpg-typecheck-final.log": "710eca1ee85b91901bfaeda2c4c0fa3eecfe9d26ceeee81f776da0d24b222e02",
+    "evidence/logs/cardrpg-audit-final.log": "b4fe92234eb6a78d984811fa51a0fed320427e0442432cc96216eedf4f3e8b7b",
     "evidence/logs/cardrpg-economy-no-draws.log": "d71e3ef4ce56e3cf8a35317d2a52a3af53748a0747c0d7c444e01be4ab75e0b1",
     "evidence/logs/cardrpg-a-baseline.log": "869261e3c25559a5b3e4302c0c81e13b21ad4c4d77fb808b17ef53465c4f6806",
     "evidence/logs/cardrpg-effects-regression.log": "10601cf7df63952d7378fccc7e1b29b2fcf934a5ddfcd375ee46f68eca78239b"
-  }
+  },
+  "finalContract": "0.4.0",
+  "apiRefinement": "Public entry point excludes the internal mutating makeItem draft builder; UI actions and all tuning unchanged."
 }

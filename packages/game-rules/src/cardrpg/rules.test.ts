@@ -4,11 +4,12 @@ import { Rng } from '../rng';
 import * as R from './index';
 import type { AccountState, Result, RulesApi } from './contract';
 import { clone } from './internal';
+import { makeItem } from './state';
 const api: RulesApi = R;
 const rich = (): AccountState => ({ ...R.createStarterAccount(), currencies: { fish: 1000000, threads: 100000, stamps: 1000000, essence: 1000 } });
 function ok<T>(r: Result<T>) { if (!r.ok) throw Error(`${r.error.code}: ${r.error.message}`); return r; }
 const step = <T>(r: Result<T>) => ok(r).state;
-function item(s: AccountState, id = 'hearthloom-charm-rare') { const i = R.makeItem(s,id,'forge'); s.inventory.items.push(i); return i; }
+function item(s: AccountState, id = 'hearthloom-charm-rare') { const i = makeItem(s,id,'forge'); s.inventory.items.push(i); return i; }
 function drawMany(seed: number, count: number) { let s=rich(); const results:R.GachaResult[]=[]; for(let n=0;n<count;n++){ if(s.daily.draws===30)s=step(R.advanceLocalDay(s)); const r=ok(R.pull('standard',s,seed+n));s=r.state;results.push(...r.value); } return {s,results}; }
 describe('card RPG contract and content', () => {
   it('exports the published pure API', () => expect(api.createStarterAccount(1).version).toBe(R.CONTRACT_VERSION));

@@ -2,13 +2,14 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { loadRules, root } from './load.mjs';
 const { rules: R, vite, load } = await loadRules();
+const { makeItem } = await load('packages/game-rules/src/cardrpg/state.ts');
 const dir = resolve(root, 'packages/game-rules/src/cardrpg/fixtures');
 mkdirSync(dir, { recursive: true });
 const starter = R.createStarterAccount(11), mid = R.createStarterAccount(23);
 mid.accountXp = 2000; mid.accountLevel = 11; mid.chapter = 2; mid.clearedChapters = ['cafe-patrol'];
 mid.currencies = { fish: 4200, threads: 600, stamps: 1600, essence: 40 };
 mid.cards = R.CARDS.map(c => ({ id: c.id, cardId: c.id, level: Math.min(12, c.levelCap), stars: 2, shards: 30, soulbound: true }));
-mid.inventory.items = R.ITEMS.map(i => { const x = R.makeItem(mid, i.id, 'forge'); x.enhancement = R.RARITY_ORDER.indexOf(i.rarity) * 2; return x; });
+mid.inventory.items = R.ITEMS.map(i => { const x = makeItem(mid, i.id, 'forge'); x.enhancement = R.RARITY_ORDER.indexOf(i.rarity) * 2; return x; });
 mid.inventory.stacks = { 'boss-proof': 10, 'pantry-key': 3, 'milk-tonic': 2 };
 mid.loadouts = {};
 for (const [id, set] of [['mochi', 'hearthloom'], ['soot', 'moonwick'], ['clover', 'mossbrew']]) {

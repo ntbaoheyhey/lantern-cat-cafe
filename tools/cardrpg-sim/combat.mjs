@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { loadRules, root } from './load.mjs';
 const {rules:R,vite,load}=await loadRules();
+const { makeItem } = await load('packages/game-rules/src/cardrpg/state.ts');
 const E=await load('packages/game-rules/src/squad/turn/engine.ts');
 const {choosePolicyLoot}=await load('packages/game-rules/src/squad/gear/run.ts');
 const seeds=Number(process.env.CARDRPG_SEEDS||30), full=process.env.CARDRPG_FULL==='1';
@@ -18,7 +19,7 @@ for(const encounter of full?['patrol','boss','campaign']:['campaign'])for(const 
  for(let seed=1+Number(process.env.CARDRPG_SEED_OFFSET||0);seed<=seeds+Number(process.env.CARDRPG_SEED_OFFSET||0);seed++){
   const s=R.createStarterAccount(seed);
   if(gear==='off'){s.inventory.items=[];s.loadouts={};}
-  if(gear==='high')for(const c of s.cards){const set={guardian:'hearthloom',witch:'moonwick',alchemist:'mossbrew'}[R.CARD_BY_ID[c.cardId].role];s.loadouts[c.id]={};for(const slot of R.EQUIPMENT_SLOTS){const i=R.makeItem(s,`${set}-${slot}-legendary`,'forge');i.enhancement=12;s.inventory.items.push(i);s.loadouts[c.id][slot]=i.id;}}
+  if(gear==='high')for(const c of s.cards){const set={guardian:'hearthloom',witch:'moonwick',alchemist:'mossbrew'}[R.CARD_BY_ID[c.cardId].role];s.loadouts[c.id]={};for(const slot of R.EQUIPMENT_SLOTS){const i=makeItem(s,`${set}-${slot}-legendary`,'forge');i.enhancement=12;s.inventory.items.push(i);s.loadouts[c.id][slot]=i.id;}}
   const options={...R.toBattleOptions(s,seed,preset),encounter,gearMode:gear==='off'?'off':'starter'};
   const b=E.createTurnBattle(options);E.beginRun(b);
   while(!b.result&&b.turn<650){

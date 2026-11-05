@@ -50,4 +50,6 @@ Method: audit formulas, effect-hit utility, all faucets/sinks, cap boundaries, g
 4. Small collectible roster and only three legendary property families.
 5. Per-game research details beyond the cited mechanisms are not a current live-game audit; exact popularity/market value was not measured.
 
+Final API hygiene also removed the mutating internal item builder from the public entry point; fixture/simulation tools import it explicitly as an internal draft helper. Contract 0.4.0 preserves all UI actions and previews; callers regenerate in-memory fixtures.
+
 The highest fixable systems defects (reward mismatch, useless effect-hit, excess threads, weak evidence scoping and a loss masquerading as a victory fixture) were corrected before freeze. Content production and authorized online operations cannot be inferred from this local deliverable.
