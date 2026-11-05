@@ -82,7 +82,7 @@ export class TurnScene {
     this.renderer.toneMapping=T.ACESFilmicToneMapping; this.renderer.toneMappingExposure=1.04;
     this.renderer.setClearColor('#252332'); this.renderer.domElement.setAttribute('aria-label','Original 3D cafe battlefield');
     this.renderer.domElement.setAttribute('role','img'); host.appendChild(this.renderer.domElement);
-    this.post=new CafePost(this.renderer);this.renderer.info.autoReset=false;
+    this.post=new CafePost(this.renderer);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;
     this.glow=this.makeGlow();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',15,27);
