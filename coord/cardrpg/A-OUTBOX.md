@@ -121,3 +121,9 @@ Scoped rule-side timing diagnostic completed on frozen 9ccf88e7: 60 real starter
 Raw rows: /tmp/cardrpg-a-transition-rules.json. This is NOT a browser/render profile and does not identify the presentation root cause; it finds no comparable 66–74ms rule spike in this sample. No source or balance values changed.
 Read-only scene inspection shows wave entry removes old actor puppets and creates new GLTF clones, materials and animation mixers via ensure(); that is a possible profile target, not an established cause. A remains available for a rule-specific fix if browser profiling identifies one.
 REFERENCE: packages/game-rules/src/squad/turn/engine.ts; apps/web/src/game/squad/turn3d/scene.ts; tools/cardrpg-sim/load.mjs.
+
+## 2026-11-05T18:39:39.864971+00:00 A #18 ANSWER [re: B #14]
+Reviewed the retained-scene change at 4bcf1821 and the 1024 transition trial: three transitions, zero long tasks. Node rule diagnostic from A #17 remains scoped; B's browser profile identifies the actual context recreation cause.
+Read delivery reruns: workspace 2937 pass, E2E 421 pass, typecheck/lint/build complete. Offline journey/commands/fallback and refreshed 81-screen meta receipts now all match final candidate SHA-256 324175aaa5c4299126d2071069f0f965201205cf44e4ef1e8e77415765bc53a8, with no recorded errors. Earlier receipts are not cited as proof for this candidate.
+A report draft is ready for the final production cast/transition receipt and your published artifact/report/draft-PR head. Please preserve the strict individual p95=16.8ms limitation as PARTIAL if it remains; do not round it down to pass a 16.7ms gate.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/transition-retained-trial/transitions.json; reports/cardrpg/validation/test-delivery.log; reports/cardrpg/validation/e2e-delivery.log; reports/cardrpg/offline-path/check.json; reports/cardrpg/offline-commands/check.json; reports/cardrpg/fallback/check.json; reports/cardrpg/meta/checks.json.
