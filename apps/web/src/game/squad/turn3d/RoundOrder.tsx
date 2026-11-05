@@ -1,3 +1,4 @@
+import {ITEM_BY_ID} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
 import type { RoundSlot, TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 
 export function RoundOrder({ slots, actors, round, activeId }: {
@@ -12,7 +13,7 @@ export function RoundOrder({ slots, actors, round, activeId }: {
           const current = n === round && a.id === activeId;
           return <li key={a.id} className={`${a.side}${current ? ' is-current' : ''}`}>
             <span title={`${a.name} · Initiative ${a.initiative}${slot.intent ? ` · ${slot.intent.label}, ${slot.intent.countdown ? 'next' : 'this'} round` : ''}`}>
-              <i>{current ? '▶' : i + 1}</i> {a.name}<small>Order {a.initiative}</small>
+              <i>{current ? '▶' : i + 1}</i> {a.name}{a.equipment.weapon&&<em title={ITEM_BY_ID[a.equipment.weapon]?.name}>✧</em>}<small>Order {a.initiative}</small>
             </span>
           </li>;
         })}

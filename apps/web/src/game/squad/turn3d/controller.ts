@@ -1,4 +1,7 @@
-import { createTurnBattle, startTurn, endTurn, chooseAction, resolveAction, getTimeline, getLegalActions, getLegalTargets, getAutoAction } from '@taskbar-hero/game-rules/src/squad/turn/engine';
+import { createTurnBattle, startTurn, endTurn, chooseAction, resolveAction, getTimeline, getLegalActions, getLegalTargets, getAutoAction, equipGear, autoEquipGear, resetGear, beginRun, chooseLoot, continueRun } from '@taskbar-hero/game-rules/src/squad/turn/engine';
+import {SQUAD_ITEMS} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
+import type { GearSlot } from '@taskbar-hero/game-rules/src/squad/gear/catalog';
+import type { Hero } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { TurnBattle, TurnChoice, TurnOptions, TurnEvent, RoundSlot, Role } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { TurnPresenter } from './presenter';
 import { createEffectFixture } from './fixtures';
@@ -8,12 +11,12 @@ import { createActionPlan, sampleActionPlan, type EffectFrame } from './effects'
 export class TurnController {
   battle:TurnBattle=createTurnBattle({encounter:'campaign'});
   presenter=new TurnPresenter(); running=true; selectedSkill=''; hoverId='';
-  mode:'battle'|'effects'|'models'='battle'; galleryId='lanternstorm';
+  mode:'battle'|'effects'|'models'='battle'; galleryId='lanternstorm'; galleryGear:'off'|'starter'|'high'='off';
   model={role:'guardian' as Role,clip:'idle',angle:.35};
   timeline:RoundSlot[]=[]; policy:'auto'|'active'='auto';
   captureFrame:EffectFrame|null=null; fixedTime:number|undefined;
   private cursor=0; private version=0;private listeners=new Set<()=>void>();private sinceNotify=0;private pendingNotify=true;private galleryWait=0;
-  constructor(){this.flush();this.boundary();}
+  constructor(options:TurnOptions={}){this.battle=createTurnBattle(options);this.flush();this.boundary();}
   subscribe=(fn:()=>void)=>{this.listeners.add(fn);return()=>this.listeners.delete(fn);};
   snapshot=()=>this.version;
   notify=()=>{this.version++;for(const fn of this.listeners)fn();};
@@ -49,13 +52,32 @@ export class TurnController {
   auto(id:string,enabled:boolean){const a=this.battle.actors.find(a=>a.id===id);if(a?.side==='party')a.auto=enabled;this.notify();}
   autoAll(enabled:boolean){this.battle.actors.filter(a=>a.side==='party').forEach(a=>a.auto=enabled);this.notify();}
   reset(options:TurnOptions={}){this.battle=createTurnBattle(options);this.cursor=0;this.mode='battle';this.selectedSkill='';this.hoverId='';this.captureFrame=null;this.fixedTime=undefined;this.presenter.reset();this.presenter.paused=false;this.running=true;this.flush();this.boundary();this.notify();}
+  equip(hero:Hero,slot:GearSlot,id:string|null){if(!equipGear(this.battle,hero,slot,id))return false;this.preparation();return true;}
+  equipBest(){if(autoEquipGear(this.battle))this.preparation();}
+  resetGear(){if(resetGear(this.battle))this.preparation();}
+  begin(){if(beginRun(this.battle)){this.flush();this.notify();}}
+  loot(id:string){if(chooseLoot(this.battle,id))this.preparation();}
+  continue(){if(continueRun(this.battle)){this.flush();this.notify();}}
+  private preparation(){this.flush();while(this.presenter.busy)this.presenter.skip();this.notify();}
   pause(){this.running=!this.running;this.presenter.paused=!this.running;this.notify();}
   skip(){this.presenter.skip();this.notify();}
   debugSnapshot(){const e:TurnEvent={version: 3,seq:this.battle.events.length,actionId:(this.battle.events.at(-1)?.actionId??0)+1,turn:this.battle.turn,round:this.battle.round,beat:4,type:'snapshot',actorId:'',skillId:'',targetIds:[],amount:0,actors:structuredClone(this.battle.actors),intents:structuredClone(this.battle.intents)};this.battle.events.push(e);this.flush();this.notify();}
+  grantGear(){if(!['loadout','rest'].includes(this.battle.run.stage))return;this.battle.run.inventory=SQUAD_ITEMS.map(i=>i.id);this.notify();}
+  jumpRound(round:number){
+    if(this.presenter.busy||this.mode!=='battle'||!Number.isInteger(round)||round<1)return;
+    const goal=Math.min(this.battle.round+20,round);if(this.battle.run.stage==='loadout')beginRun(this.battle);
+    for(let n=0;n<650&&!this.battle.result&&this.battle.round<goal;n++){
+      if(this.battle.run.stage==='loot'){chooseLoot(this.battle,this.battle.run.loot[0]!);continue}
+      if(this.battle.run.stage==='rest'){continueRun(this.battle);continue}
+      startTurn(this.battle);if(this.battle.phase==='choose'){const choice=getAutoAction(this.battle,this.policy);if(choice&&chooseAction(this.battle,choice))resolveAction(this.battle)}endTurn(this.battle);
+      this.flush();while(this.presenter.busy)this.presenter.skip();
+    }
+    this.flush();while(this.presenter.busy)this.presenter.skip();this.notify();
+  }
   grantCharge(){if(this.presenter.busy)return;this.battle.actors.filter(a=>a.side==='party').forEach(a=>a.charge=100);this.debugSnapshot();}
   gallery(id:string){
-    const fixture=createEffectFixture(id);this.mode='effects';this.galleryId=id;this.battle=fixture.battle;this.presenter.reset(fixture.initial);while(this.presenter.busy)this.presenter.skip();
-    const type=['status_apply','status_expire','death','wave_clear','victory','defeat'].includes(id)?id:'passive';
+    const fixture=createEffectFixture(id,this.galleryGear);this.mode='effects';this.galleryId=id;this.battle=fixture.battle;this.presenter.reset(fixture.initial);while(this.presenter.busy)this.presenter.skip();
+    const type=id==='bossIntro'?'boss_phase':['status_apply','status_expire','death','wave_clear','victory','defeat'].includes(id)?id:'passive';
     const special=fixture.events.find(e=>(id==='relicProc'?e.type==='gear_proc':id==='thorns'?e.type==='damage'&&e.skillId==='thorns':e.type===type)&&(type!=='passive'||e.skillId===id));
     if(special){const cue=createActionPlan([special]);cue.events=[];this.captureFrame=sampleActionPlan(cue,0);}
     else this.captureFrame=null;
