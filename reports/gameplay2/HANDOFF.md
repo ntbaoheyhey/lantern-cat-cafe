@@ -38,4 +38,4 @@ Base #282 remains 7eb1ee7; remote main 340f88b; unrelated local main 6144d42 unt
 
 Review the offline candidate; choose further gameplay iteration or ordered merge/release review. Backlog is in the report. Main-game boss changes need a separate server/replay design. No automatic implementation, merge or deployment is queued. Recheck the full stack after any future retarget/merge. Original request: `/Users/bao/.codex/attachments/03d0fb7a-0c2c-4c33-a968-3c39abf27cf3/Pasted text.txt`.
 
-Task servers were stopped at the travel pause and were not restarted. No task browser/test/build is running. No broad kill. The ledger has unrelated pre-existing untracked files; only gameplay2 paths belong to this delivery.
+The baseline server was stopped at the travel pause. Final cleanup at 09:50 found the original candidate server (wrapper24197/child24219) still listening on loopback5391 and stopped both task-owned PIDs. The earlier pause handoff incorrectly said the candidate was already stopped. No task browser/test/build is now running. No broad kill. The ledger has unrelated pre-existing untracked files; only gameplay2 paths belong to this delivery.
