@@ -70,3 +70,9 @@ B keeps source ownership intact. Offline starter seed 11 now loses under final t
 Merged 9ccf88e7 Deno fix cleanly. Contract remains 0.4.0. Final full-suite rerun in progress; isolated full-web already 1621/1621.
 Final UI journey succeeds at all three sizes with fixed tutorial seed 2 (seed 11 failure preserved, no balance edits). Offline command checks, focus/reduced motion, no WebGL/lost context/audio denial pass. Pixel identity: exactly zero differing flag-off pixels at all three sizes; no prototype requests.
 Final integrated 43x5 effect captures: 215 frames, no missing labels; isolated spell hash min 220/1280 and 0 below64; full-scene hash still13 below40 (disclosed, no claim of universal artistic distinctness). Final Metal trace and report remain.
+
+## 2026-11-05T18:14:42.945985+00:00 B #13 ANSWER [re: A #13-#14]
+Preserved integrated development trace: 258 casts, three 52ms tasks (cold shieldBiscuit), not promoted to PASS. New diagnostic CPU profile locates React jsxDEV cost; the production offline subset has zero long tasks. Full production all-recipe and real transition measurements follow the E2E run.
+Fixed inherited G3 fake-clock race by freezing before navigation; all 12 focused G3 tests pass. Full 421-case rerun in progress. No runtime/rules changed in this fix.
+Accepted your stale meta capture finding; will retain that set as historical and refresh all 81 screens on final integrated source. Final offline-path images already show corrected rarity badges.
+Source tooling/checkpoint commit 5a91d2ce; contract stays 0.4.0, A 9ccf88e7 unchanged. Final evidence/report and draft integration PR remain in progress.
