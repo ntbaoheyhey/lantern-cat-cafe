@@ -1,6 +1,6 @@
 # Original turn-based miniatures · 2026-11-05
 
-No imported models, textures or reference-game inputs. CC0 original assets; MIT libraries. Source and animation are reproducible with `pnpm art:turn3d`. Exact authorship and parameters: `docs/turn3d/ASSET-MANIFEST.json`.
+No imported models, textures or reference-game inputs. CC0 original assets; runtime libraries are MIT. Build-only TypeScript is Apache-2.0. Source and animation are reproducible with `pnpm art:turn3d`. Exact authorship and parameters: `docs/turn3d/ASSET-MANIFEST.json`.
 
 | Model | Triangles / budget | GLB bytes | Gzip bytes | Draw calls |
 |---|---:|---:|---:|---:|

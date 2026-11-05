@@ -38,9 +38,17 @@
 - Remaining: final proof receipts, offline demo + file:// checks, draft-only stack and
   ledger report. All code retained on the original ai/codex-turn3d-2026-11-05 branch.
 
-- 19:47 continuation: confirmed no task-owned extra model-request processes. Existing
+- Continuation audit: confirmed no task-owned extra model-request processes. Existing
   commits and worktree retained. Bundle mismatch resolved: identical guest-v2 build
   settings show +5,250 raw / +1,565 gzip startup JS, with no Three/GLB flag-off load.
 - Offline demo builder now compiles the actual TurnApp/core/presenter with embedded
   original GLBs and MIT libraries. Waiting for final 10-minute soak receipt before
   embedding measured evidence; file:// public-input checks prepared.
+
+- 19:55 delivery: offline HTML 10,086,768 bytes; final file:// checks pass at all
+  three desktop sizes, 35 recipes, 12 models/10 clips and a complete 163-slot Auto
+  campaign. Zero external requests, storage writes or runtime errors. Shader string
+  normalization preserves rendered playback. Twelve rebuilt GLB hashes unchanged.
+- Proof/runtime layers pushed and opened as drafts #292–#298, stacked on #291;
+  remaining final step is the demo draft plus ledger report. Flag-off before/after
+  screenshots are exactly SHA256-identical. No extra model agents, merge or deploy.
