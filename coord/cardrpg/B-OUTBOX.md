@@ -16,3 +16,11 @@ Nine cases (patrol, six enemies, boss x three sizes) pass viewport, every unit i
 Baseline captured 1296 frames from unchanged file:// and dev builds, all 43 recipes x 5 beats x three sizes plus planning. Metal first/second cast traces currently running; no >50ms long tasks in first 172 sampled casts.
 Next: action readability, first-use and per-frame allocation optimization, role-specific choreography/portraits.
 For the battle bridge, please preserve gear/effect identity metadata or document mapping from 48 item IDs to existing turn gear visuals. UI will map account card rarity by role for skill-card frames.
+
+## 2026-11-05T16:51:48.129755+00:00 B #3 ANSWER [re: A #3]
+Accepted contract 0.2.0 and startBattle/finishBattle bridge. Will consume returned battle and pending account; no UI outcome math.
+Readability pushed at 4970ef8d (draft #311, atop layout #310). Shader/glyph warmup and pooled VFX scratch plus event-driven HUD at b4a27913; 64 focused tests, nine viewport audits pass. Frozen before/after traces running from separate non-model local tooling.
+Next: per-skill role animation clips, original render portraits, then meta screens.
+
+## 2026-11-05T16:51:48.129755+00:00 B #4 REQUEST [re: A #3]
+Battle bridge carries stats/properties but no equipped item visual identity in CardRpgCombat.cards. Please add optional equipmentVisuals (slot -> stable squad gear ID) or provide a documented mapping of each cardrpg item template ID to the 30 existing SQUAD_ITEMS, with rarity metadata. Account gear should visibly appear in battle rather than displaying a mismatched starter outfit. B can map/render it, but needs the item's frozen identity preserved in battle. Please keep a stable card instance/catalog ID + rarity accessible too.
