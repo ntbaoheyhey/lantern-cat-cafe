@@ -10,6 +10,8 @@ import {stageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
 import {GearAttachments} from './gear-visuals';
 import { loadModel } from './assets';
+import {screenBounds,auditBounds} from './scene-audit';
+import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 
 export interface SceneView {
   actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
@@ -18,19 +20,12 @@ export interface SceneView {
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { height:number; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
 const lerp = T.MathUtils.lerp;
-const point = (a: TurnActor, boss: boolean): T.Vector3 => {
-  if (a.side === 'party') return [new T.Vector3(-1.85, 0, .45),new T.Vector3(-3.35, 0, -1.25),new T.Vector3(-3.65, 0, 1.65)][a.slot % 3]!;
-  if (a.role === 'yarn') return new T.Vector3(2.15, 0, -.25);
-  if (a.role === 'thread') return new T.Vector3(.25 + (a.slot % 2) * .7, 0, 1.9);
-  if (boss) return new T.Vector3(.5 + (a.slot % 3)*1.75,0,1.9);
-  // Alternate rows so a front miniature never hides the one directly behind it.
-  return new T.Vector3(1.05 + (a.slot % 3)*1.8 - (Math.floor(a.slot/3)%2)*.9,0,-1.15 + Math.floor(a.slot/3)*2.45);
-};
+const point=(a:TurnActor,boss:boolean)=>{const p=formationPoint(a,boss);return new T.Vector3(p.x,p.y,p.z)};
 
 export class TurnScene {
   readonly renderer: T.WebGLRenderer;
@@ -148,13 +143,14 @@ export class TurnScene {
     try{
       const gltf=await loadModel(a.role);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
+      const height=new T.Box3().setFromObject(model).max.y;
       const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));}});
       const mixer=new T.AnimationMixer(model);const actions=new Map(gltf.animations.map(c=>[c.name,mixer.clipAction(c)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
-      const base=point(a,boss);root.position.copy(base);model.rotation.y=a.side==='party'?.4:-.4;this.scene.add(root);
-      this.puppets.set(a.id,{gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
+      this.puppets.set(a.id,{height,gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -178,29 +174,34 @@ export class TurnScene {
     for(const a of view.actors)void this.ensure(a,view.boss);
     const frame=view.frame, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;p.base=view.model?new T.Vector3(0,0,0):point(a,view.boss);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:a.side==='party'?1.18:1.06);p.model.rotation.y=view.model?view.model.angle:a.side==='party'?.4:-.4;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;p.base=view.model?new T.Vector3(0,0,0):point(a,view.boss);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:restYaw(a.side);
       p.gear.update(a);p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
-      if(frame&&source===p){clip=frame.plan.ultimate?'ultimate':({shieldBash:'skill1',rally:'guard',hearthwall:'skill3',emberOrb:'skill1',threadSnare:'skill2',milkFlask:'skill1',mossFlask:'skill2'} as Record<string,string>)[frame.plan.skillId]??frame.clip;progress=frame.beat.kind==='impact'?.45:frame.progress;if(!view.reducedMotion){const phase=frame.beat.kind;const target=targets[0]?.base??p.base;const melee=['slash','bash','charge','sweep','cross'].includes(frame.plan.shape);if(melee&&['travel','impact','reaction'].includes(phase)){const t=phase==='travel'?ease(frame.progress):phase==='reaction'?1-ease(frame.progress):1;const dest=p.base.clone().lerp(target,.68);p.root.position.lerpVectors(p.base,dest,t);}if(phase==='anticipation'){const baseScale=a.side==='party'?1.18:1.06;p.root.scale.set(1+Math.sin(frame.progress*Math.PI)*.055,1-Math.sin(frame.progress*Math.PI)*.07,1+.025*Math.sin(frame.progress*Math.PI)).multiplyScalar(baseScale);}}}
+      if(frame&&source===p){clip=frame.plan.ultimate?'ultimate':({shieldBash:'skill1',rally:'guard',hearthwall:'skill3',emberOrb:'skill1',threadSnare:'skill2',milkFlask:'skill1',mossFlask:'skill2'} as Record<string,string>)[frame.plan.skillId]??frame.clip;progress=frame.beat.kind==='impact'?.45:frame.progress;if(!view.reducedMotion){const phase=frame.beat.kind;const target=targets[0]?.base??p.base;const melee=['slash','bash','charge','sweep','cross'].includes(frame.plan.shape);if(melee&&['travel','impact','reaction'].includes(phase)){const t=phase==='travel'?ease(frame.progress):phase==='reaction'?1-ease(frame.progress):1;const dest=p.base.clone().lerp(target,.68);p.root.position.lerpVectors(p.base,dest,t);}if(phase==='anticipation'){const baseScale=figureScale(a.role,a.side);p.root.scale.set(1+Math.sin(frame.progress*Math.PI)*.055,1-Math.sin(frame.progress*Math.PI)*.07,1+.025*Math.sin(frame.progress*Math.PI)).multiplyScalar(baseScale);}}}
       if(frame&&targets.includes(p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';progress=frame.beat.kind==='impact'?.45:frame.progress;if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}}
+      if(frame&&!view.model&&!view.reducedMotion){
+        const phase=frame.beat.kind,weight=phase==='anticipation'?ease(frame.progress):phase==='residue'?1-ease(frame.progress):1;
+        const other=source===p?targets.find(t=>t!==p):targets.includes(p)?source:undefined;
+        if(other)p.model.rotation.y=blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
+      }
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
       p.guard.visible=a.hp>0&&a.shield>0;p.snare.visible=a.hp>0&&a.statuses.some(s=>['snare','restrain'].includes(s.kind));
       for(const child of p.snare.children)(child as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>).material.color.set(a.statuses.some(s=>s.kind==='restrain')?'#ed869b':VIOLET);
       p.root.visible=a.hp>0||!!(frame&&frame.plan.targetIds.includes(a.id));
-      if(a.hp<=0&&p.root.visible)p.root.scale.setScalar(Math.max(.6,1-(frame?.progress??0)*.4));
+      if(a.hp<=0&&p.root.visible)p.root.scale.multiplyScalar(Math.max(.6,1-(frame?.progress??0)*.4));
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
     this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
     this.activeRing.visible=false;this.targetRings.forEach(r=>r.visible=false);
     const active=this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
-    this.camera.position.set(0,4.9,11.3);this.cameraTarget.set(0,.9,0);this.camera.zoom=view.camera==='close'?1.05:1;
-    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):11.8/this.camera.aspect;
+    this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=view.camera==='close'?1.05:1;
+    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
-    if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.055:.16);const focus=source?.base??new T.Vector3();this.cameraTarget.x=focus.x*push*(crowded?.08:.24);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
+    if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??new T.Vector3();this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
     if(frame&&!view.reducedMotion&&!view.model){const shot=EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();
@@ -212,15 +213,18 @@ export class TurnScene {
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
-      const left=screen(center.clone().add(new T.Vector3(-.6,.46,0))),right=screen(center.clone().add(new T.Vector3(.6,-.35,0)));
-      const aTop=p.root.position.clone().add(new T.Vector3(0,a.role==='yarn'?2.85:2.2,0));const ideal=screen(aTop);
+      const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:a.side==='enemy'?a.statuses.length?52:40:a.statuses.length?36:24,head:{x:left.x,y:left.y,width:Math.max(24,right.x-left.x),height:Math.max(20,right.y-left.y)}});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
-    const placed=layoutLabels(labels,this.width,this.height);
+    const placed=layoutLabels(labels,this.width,this.height,90);
     this.labelAudit.heads=labels.map(p=>p.head);this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);
     for(const a of projected){const box=placed.get(a.id);if(box){a.labelX=box.x+box.width/2;a.labelY=box.y}else a.visible=false;}
     this.onAnchors(projected);
+  }
+  audit(){
+    const view=this.view();
+    return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
   private disposePuppet(p:Puppet){p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
   dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();this.renderer.domElement.remove();}
