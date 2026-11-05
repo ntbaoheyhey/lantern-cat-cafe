@@ -48,11 +48,31 @@ for name in checks:
 commands = read('reports/cardrpg/validation/delivery-results.json')
 assert len(commands) >= 23
 assert all(row['exit'] == 0 and row['source'] == build['head'] for row in commands)
+# Count alone cannot prove coverage: reject duplicate/missing recipe trials and
+# independently derive the reported percentiles from untouched RAF intervals.
+capture_rows = [json.loads(line) for line in (report / 'art/effect-captures.jsonl').read_text().splitlines()]
+recipe_ids = {row['id'] for row in capture_rows}
+assert len(recipe_ids) == 43
+expected_casts = {(width, height, recipe, temperature)
+                  for width, height in [(1024, 600), (1280, 720), (1440, 900)]
+                  for recipe in recipe_ids for temperature in ['cold', 'warm']}
+
+def verify_cast_grid(rows, ratio):
+    assert len(rows) == len(expected_casts)
+    assert {(r['width'], r['height'], r['id'], r['temperature']) for r in rows} == expected_casts
+    for row in rows:
+        assert row['pixelRatio'] == ratio
+        samples = sorted(row['raf'])
+        assert samples
+        for field, fraction in [('p95Ms', .95), ('p99Ms', .99)]:
+            assert abs(row[field] - samples[int((len(samples) - 1) * fraction)]) < .000001
+
 casts = read('reports/cardrpg/performance-delivery/performance-metal.json')['rows']
 assert len(casts) == 258 and all(not row['longTasks'] for row in casts)
 retina = read('reports/cardrpg/performance-retina-delivery/performance-metal.json')['rows']
 assert len(retina) == 258 and all(not row['longTasks'] for row in retina)
-assert all(row['pixelRatio'] == 2 for row in retina)
+verify_cast_grid(casts, 1)
+verify_cast_grid(retina, 2)
 retina_life = read('reports/cardrpg/lifecycle-retina-delivery/measurement.json')['rows']
 assert len(retina_life) == 1 and retina_life[0]['pixelRatio'] == 2
 assert not retina_life[0]['long'] and retina_life[0]['result']['winner'] == 'party'
