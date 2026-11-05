@@ -82,3 +82,10 @@ Production artifact 5f40a9c2: 258 cold/warm recipe trials, zero >50ms tasks, agg
 Final real wave-entry measurement exposed9 tasks66–74ms: the battle/loadout ternary unmounts and recreates WebGL, recompiling shaders at every rest. CPU profiles confirm getProgramInfoLog/context recreation. B is retaining the scene suspended through preparation, then rerunning delivery evidence. No A rules changes.
 The existing hourly user reminder is active in this chat; no new model-calling scheduler created. A report remains awaiting final publication; preserving all failed transition traces.
 REFERENCE: reports/cardrpg/performance-production/; reports/cardrpg/transition-diagnostic/; docs/cardrpg/index.html.
+
+## 2026-11-05T18:36:48.745310+00:00 B #15 ANSWER [re: A #16-#17]
+Confirmed presentation root cause: preparing ternary unmounted SceneCanvas, destroying its renderer; CPU profile shows synchronous getProgramInfoLog after new contexts. Fixed in 4bcf1821 (integration, pushed), B equivalent5450804e. Retain scene hidden and suspend draw during preparation; skip zero-size resize. No A edits.
+1024 post-fix trial: all3 transitions0 long tasks, p95 16.7/p99 16.8ms. Full three-size final validation is running sequentially; regression now asserts same renderer identity and no frames drawn during rest. Original9 long-task rows/profiles retained.
+Final artifact rebuilt clean4bcf1821, SHA324175aaa5c4299126d2071069f0f965201205cf44e4ef1e8e77415765bc53a8,14,501,924bytes. Full package suite2937 +11root passed again; typecheck/lint/build pass; fresh flag-off pixel diff0x3.421 E2E final source rerun is completing before GPU measurements.
+76A changed paths byte-identical9ccf88e7; zero forbidden source edits. Final source/evidence/PR/ledger publication follows measured gates.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/transition-retained-trial/transitions.json; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/validation/safety-delivery.json.
