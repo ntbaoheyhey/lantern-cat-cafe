@@ -2,7 +2,7 @@ import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
 const browser=await chromium.launch(),rows=[];const errors=[];
 try{
  for(const [name,base,dir] of [['before','http://127.0.0.1:5518','apps/web/dist-turn3d-polish-base'],['after','http://127.0.0.1:5517','apps/web/dist-turn3d-polish-final']]){
-  const page=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'reduce'});const urls=[];page.on('request',r=>urls.push(r.url()));page.on('pageerror',e=>errors.push(String(e)));await page.goto(base+'/?demo&coach=off#home');await page.waitForTimeout(1800);
+  const page=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'reduce'});const urls=[];page.on('request',r=>urls.push(r.url()));page.on('pageerror',e=>errors.push(String(e)));await page.goto(base+'/?demo&coach=off#home');await page.waitForTimeout(1800);await page.evaluate(()=>document.fonts.ready);
   const resources=await page.evaluate(()=>performance.getEntriesByType('resource').filter(e=>e.name.endsWith('.js')).map(e=>e.name.split('/assets/')[1]).filter(Boolean));let raw=0,gzip=0;
   for(const file of resources){const buf=await fs.readFile(dir+'/assets/'+file);assert(!buf.includes('Original 3D cafe battlefield'));assert(!buf.includes('isWebGLRenderer'));assert(!buf.includes('THREE.GLTFLoader'));raw+=buf.length;gzip+=gzipSync(buf).length}
   const squadAssets=urls.filter(u=>/turn3d|\.glb/.test(u));assert.deepEqual(squadAssets,[]);assert.equal(await page.locator('[data-testid="turn3d-prototype"]').count(),0);

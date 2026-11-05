@@ -122,9 +122,9 @@ Soak: 602.237 seconds; 0 page errors; retained-heap range 2.15 MiB after warmup.
 | Flag-off startup JS, same build settings | Before | After | Delta |
 |---|---:|---:|---:|
 | Raw bytes | 2,333,591 | 2,335,487 | +1,896 |
-| Gzip bytes | 379,307 | 379,891 | +584 |
+| Gzip bytes | 379,307 | 379,900 | +593 |
 
-Flag-off screenshots are pixel-identical. The bundle is not byte-identical. No squad/GLB requests and no Three.js markers in fetched startup chunks. Flag-on proof recorded no local/session/IndexedDB writes or server mutations; the normal app still fetches its pre-existing Google Fonts. The offline artifact makes zero external requests and zero storage writes.
+Final d7b81c8a same-settings rebuild: flag-off screenshots are pixel-identical after awaiting font readiness (zero differing pixels). The final gzip delta is +593 bytes; the earlier runtime snapshot measured +584 bytes and is retained in `raw/isolation-runtime-snapshot.json.gz`. See `final-head-verification.json` and the final build/isolation logs. The bundle is not byte-identical. No squad/GLB requests and no Three.js markers in fetched startup chunks. Flag-on proof recorded no local/session/IndexedDB writes or server mutations; the normal app still fetches its pre-existing Google Fonts. The offline artifact makes zero external requests and zero storage writes.
 
 Synthesized WebAudio only. Measured cue/stinger peaks -27.45 to -26.56 dBFS, RMS -52.82 to -50.22 dBFS, no PCM clipping in these fixtures. No listening test or professional audio quality claim.
 
