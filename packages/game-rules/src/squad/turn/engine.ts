@@ -178,7 +178,10 @@ function cleanse(b: TurnBattle, p: Plan, target: TurnActor): void {
 function status(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, kind: StatusKind, rounds: number, strength = 1): boolean {
   if (!living(target)) return false;
   if ((source.cardRpg || target.cardRpg) && !['guard','exposed'].includes(kind)) {
-    const chance = Math.max(.15, Math.min(.95, 1 + (source.cardRpg?.stats.effectHitBp ?? 0) / 10000 - (target.cardRpg?.stats.effectResistBp ?? 0) / 10000));
+    const tuning = b.run.cardRpg?.effects;
+    const hit = source.cardRpg?.stats.effectHitBp ?? 0;
+    const resist = target.cardRpg?.stats.effectResistBp ?? (target.side === 'enemy' ? tuning?.enemyResistBp ?? 0 : 0);
+    const chance = Math.max(tuning?.minEffectBp ?? 1500, Math.min(tuning?.maxEffectBp ?? 9500, (tuning?.baseEffectBp ?? 10000) + hit - resist)) / 10000;
     if (random(b) >= chance) { emit(b,p,'fizzle',2,{targetIds:[target.id],status:kind,note:'Effect resisted.'}); return false; }
   }
   if (kind === 'stun' || kind === 'snare') {

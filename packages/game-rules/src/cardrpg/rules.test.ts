@@ -4,11 +4,12 @@ import { Rng } from '../rng';
 import * as R from './index';
 import type { AccountState, Result, RulesApi } from './contract';
 import { clone } from './internal';
+import { makeItem } from './state';
 const api: RulesApi = R;
 const rich = (): AccountState => ({ ...R.createStarterAccount(), currencies: { fish: 1000000, threads: 100000, stamps: 1000000, essence: 1000 } });
 function ok<T>(r: Result<T>) { if (!r.ok) throw Error(`${r.error.code}: ${r.error.message}`); return r; }
 const step = <T>(r: Result<T>) => ok(r).state;
-function item(s: AccountState, id = 'hearthloom-charm-rare') { const i = R.makeItem(s,id,'forge'); s.inventory.items.push(i); return i; }
+function item(s: AccountState, id = 'hearthloom-charm-rare') { const i = makeItem(s,id,'forge'); s.inventory.items.push(i); return i; }
 function drawMany(seed: number, count: number) { let s=rich(); const results:R.GachaResult[]=[]; for(let n=0;n<count;n++){ if(s.daily.draws===30)s=step(R.advanceLocalDay(s)); const r=ok(R.pull('standard',s,seed+n));s=r.state;results.push(...r.value); } return {s,results}; }
 describe('card RPG contract and content', () => {
   it('exports the published pure API', () => expect(api.createStarterAccount(1).version).toBe(R.CONTRACT_VERSION));
@@ -57,7 +58,7 @@ describe('deterministic spending and capped progress', () => {
  it('spare threads can buy a chosen consumable and cannot return through a salvage loop', () => {
   let s=rich(); const start={...s.currencies}; const key=ok(R.forge(s,'mend-pantry-key'));s=key.state;
   const brew=ok(R.forge(s,'pantry-shield-biscuit'));s=brew.state;
-  expect(s.currencies.threads).toBe(start.threads-40);expect(s.currencies.fish).toBe(start.fish-40);expect(s.inventory.stacks['shield-biscuit']).toBe(1);
+  expect(s.currencies.threads).toBe(start.threads-50);expect(s.currencies.fish).toBe(start.fish);expect(s.inventory.stacks['shield-biscuit']).toBe(1);
  });
  it('earned essence has a repeatable deterministic epic-gear sink with a strictly losing salvage loop', () => {
   let s=rich();s.chapter=2;const before={...s.currencies};for(let n=0;n<10;n++){const r=ok(R.forge(s,'tailor-moonwick-weapon'));s=step(R.salvage(r.state,r.value));}

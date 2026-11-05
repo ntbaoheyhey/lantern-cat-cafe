@@ -18,7 +18,7 @@ export const CARD_RPG_CONFIG = {
   baseCritDamageBp: 5000,
   gear: { mainBase: [12,45,6,25], mainPerTier: [4,12,2,8], defenseAffix: 2, critAffix: 100, critPerTier: 50, resistAffix: 300 },
   sets: { hearthTwo: { defense:5,shieldBp:600 }, hearthFour: { hp:30,shieldBp:600 }, moonTwo: { attack:6,critBp:200 }, moonFour: { effectHitBp:800,critDamageBp:1000 }, mossTwo: { healingBp:600,hp:15 }, mossFour: { healingBp:600,effectResistBp:1000 } },
-  recipes: { gear: { fish:180,threads:30 }, epicGear: { fish:120,threads:180,essence:5 }, pantryKey: { threads:40 }, pantry: { fish:40 }, ribbon: { essence:10,threads:20 }, epicDesign: { fish:900,threads:120,essence:15 }, legendaryDesign: { fish:2400,threads:300,essence:30 }, epicProof:3,legendaryProof:10 },
+  recipes: { gear: { fish:180,threads:30 }, epicGear: { fish:120,threads:180,essence:5 }, pantryKey: { threads:40 }, pantry: { threads:10 }, ribbon: { essence:10,threads:20 }, epicDesign: { fish:900,threads:120,essence:15 }, legendaryDesign: { fish:2400,threads:300,essence:30 }, epicProof:3,legendaryProof:10 },
   quests: { dailyBattles: { target:2, reward:{currencies:{stamps:100,fish:100},xp:40} }, dailyService:{target:1,reward:{currencies:{stamps:100,threads:10},xp:40}}, weeklyWins:{target:3,reward:{currencies:{stamps:300,essence:5},xp:100,stacks:{'pantry-key':1}}}, boss:{target:1,reward:{currencies:{essence:15},xp:150}}, mender:{target:6,reward:{currencies:{stamps:100},xp:100}} },
   supplies: { 'milk-tonic': { skill:'healTonic', max:2 }, 'shield-biscuit': { skill:'shieldBiscuit', max:2 }, 'quicken-yarn': { skill:'quickenYarn', max:2 }, 'cleanse-tea': { skill:'cleanseTea', max:2 }, 'ultimate-treat': { skill:'ultimateTreat', max:1 } },
   drawCost: 150, maxBatch: 10, maxDrawsPerDay: 30, historyLimit: 200,
@@ -35,6 +35,6 @@ export const CARD_RPG_CONFIG = {
   dailyXpCap: 180,
   accountXpStep: 200, accountLevelCap: 50,
   statCaps: { hp: 9999, attack: 999, defense: 300, critBp: 4000, critDamageBp: 10000, effectHitBp: 7500, effectResistBp: 6000, healingBp: 6000, shieldBp: 6000, initiative: 12 } satisfies Record<Stat, number>,
-  combat: { defenseScale: 80, varianceBp: 800, minEffectBp: 1500, maxEffectBp: 9500 },
+  combat: { defenseScale: 80, varianceBp: 800, baseEffectBp: 9500, enemyResistBp: 1000, minEffectBp: 1500, maxEffectBp: 9500 },
   scarcity: { epic: { global: 2400, season: 400 }, legendary: { global: 360, season: 60 } },
 } as const;

@@ -1,6 +1,7 @@
 import { CARD_BY_ID, ITEMS, QUESTS, SCARCITY } from './catalog';
 import { CARD_RPG_CONFIG as C } from './config';
 import { CONTRACT_VERSION, type AccountState, type ItemInstance } from './contract';
+/** Internal draft builder; deliberately excluded from the public pure API. */
 export function makeItem(state: AccountState, itemId: string, source: ItemInstance['source']): ItemInstance {
   const template = ITEMS.find(i => i.id === itemId);
   if (!template) throw new Error(`Unknown item ${itemId}`);

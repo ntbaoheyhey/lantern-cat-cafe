@@ -1,7 +1,7 @@
 export * from './contract';
 export * from './config';
 export * from './catalog';
-export * from './state';
+export { createStarterAccount } from './state';
 export * from './fixtures';
 export * from './equipment';
 export * from './gacha';
