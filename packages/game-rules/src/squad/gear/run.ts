@@ -1,7 +1,7 @@
 import { TURN_CONFIG as C, HEROES } from '../turn/config';
 import type { Hero, TurnBattle, TurnChoice, TurnOptions } from '../turn/types';
 import { GEAR_SLOTS, ITEM_BY_ID, SQUAD_ITEMS, type GearSlot, type Loadout } from './catalog';
-import { applyEquipment, bestLoadouts, initialLoadout, startingInventory } from './equipment';
+import { applyEquipment, bestLoadouts, initialLoadout, startingInventory, itemScore, gearBonuses } from './equipment';
 export type GearMode='off'|'starter'|'high';
 export type ConsumableId='healTonic'|'shieldBiscuit'|'quickenYarn'|'cleanseTea'|'ultimateTreat';
 export type RunCommand={kind:'begin'}|{kind:'equip';hero:Hero;slot:GearSlot;itemId:string|null}|{kind:'loot';itemId:string}|{kind:'continue'}|{kind:'action';choice:TurnChoice};
@@ -66,3 +66,11 @@ export function runSummary(b:TurnBattle) {
   return {rounds:b.round,actions:b.turn,itemsFound:[...b.run.itemsFound],mvp:mvp?.name??'—',cats};
 }
 export function loadouts(b:TurnBattle):Record<Hero,Loadout>{return Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.role,{...a.equipment}])) as Record<Hero,Loadout>}
+
+/** Headless active-player proxy: inspect current inventory, stats and completed sets only. */
+export function choosePolicyLoot(b:TurnBattle,policy:'auto'|'active'):string|undefined {
+ if(b.run.stage!=='loot')return undefined;
+ if(policy==='auto')return b.run.loot[0];
+ const score=(id:string)=>{const builds=bestLoadouts([...b.run.inventory,id]);return HEROES.reduce((sum,hero)=>sum+C.policy.lootRole[hero]*(Object.values(builds[hero]).reduce((n,i)=>n+itemScore(i!,hero),0)+Object.values(gearBonuses(builds[hero]).sets).reduce((n,count)=>n+(count>=3?C.policy.lootThree:count>=2?C.policy.lootTwo:0),0)),0)};
+ return [...b.run.loot].sort((a,z)=>score(z)-score(a)||a.localeCompare(z))[0];
+}
