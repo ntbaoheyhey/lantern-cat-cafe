@@ -13,3 +13,8 @@
 - Continuing solo in required order. Baseline 421 E2E, 1509 web, 546 rules passing.
 - 16:37: T1 core reviewed and completed; 17 new turn tests pass, rules typecheck passes.
   First 360-run simulation is too forgiving (all wins, no deaths). T2 tuning underway.
+- 18:20 resume audit: kept branch and five existing commits; no task-owned helper process remains.
+- T3/T4 committed with event-only presenter and original cafe scene; scene-only software-rendered
+  evidence is not used to claim final combat performance.
+- T5: 12 original GLBs, ten clips each, 2.07 MB raw / 0.54 MB gzip; 48 real turnarounds
+  captured without browser errors. Continuing solo to T6.
