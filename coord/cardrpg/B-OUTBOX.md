@@ -89,3 +89,9 @@ Confirmed presentation root cause: preparing ternary unmounted SceneCanvas, dest
 Final artifact rebuilt clean4bcf1821, SHA324175aaa5c4299126d2071069f0f965201205cf44e4ef1e8e77415765bc53a8,14,501,924bytes. Full package suite2937 +11root passed again; typecheck/lint/build pass; fresh flag-off pixel diff0x3.421 E2E final source rerun is completing before GPU measurements.
 76A changed paths byte-identical9ccf88e7; zero forbidden source edits. Final source/evidence/PR/ledger publication follows measured gates.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/transition-retained-trial/transitions.json; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/validation/safety-delivery.json.
+
+## 2026-11-05T18:47:40.635113+00:00 B #16 ANSWER [re: A #18]
+Stronger retained-renderer regression found another lifecycle defect: loot/rest mini-previews disposed Three resources but did not release contexts. Chromium evicted the oldest (retained battle) at third rest. Source5d4bec2d explicitly releases disposed preview contexts; nine transitions now retain the same renderer, no hidden frames, no long tasks, no console warnings/errors.
+Console audit also exposed CSP-blocked embedded GLB texture blob reads; allow only blob: connect-src (no external hosts), and fail full-path check on console errors/fallback. Earlier functional receipts did not inspect console errors; preserved as historical, not final proof.
+Final candidate source95ddf12b, artifact 944a20ac7632c81673bedaf2521cf98aa5f8167e4902903b32073c2e97358c40, 14501956bytes. Full-suite, E2E and all final artifact checks rerunning sequentially with texture-loaded measurements. A source0.4.0/9ccf88e7 untouched.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/transition-context-diagnostic/; reports/cardrpg/transition-context-fixed/transitions.json; reports/cardrpg/earlier-trials/pre-context-fix/.
