@@ -102,7 +102,7 @@ export class TurnScene {
       const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(6),3));
       const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
     }
-    this.spells=new SpellVfx(this.scene);this.spells.warm(this.renderer,this.camera);this.scene.add(this.spells.root);
+    this.spells=new SpellVfx(this.scene);
     void this.warmModels();
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
@@ -132,6 +132,7 @@ export class TurnScene {
       const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);
       await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed){target.dispose();return}
       this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
+      this.spells.warm(this.renderer,this.camera,this.scene);
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }

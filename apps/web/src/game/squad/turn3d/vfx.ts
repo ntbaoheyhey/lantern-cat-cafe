@@ -157,12 +157,14 @@ export class SpellVfx{
   }}
   this.motes.count=used;this.motes.instanceMatrix.needsUpdate=true;if(this.motes.instanceColor)this.motes.instanceColor.needsUpdate=true;this.count=used;
  }
- warm(renderer:T.WebGLRenderer,camera:T.Camera){
+ warm(renderer:T.WebGLRenderer,camera:T.Camera,stage:T.Scene){
   // Compile every shader variant and upload every original glyph behind loading.
-  const target=new T.WebGLRenderTarget(2,2),stage=new T.Scene();stage.add(this.root);
+  const target=new T.WebGLRenderTarget(2,2);
   for(const m of this.root.children){m.visible=true;m.frustumCulled=false;}this.motes.count=1;
   renderer.setRenderTarget(target);for(const geometry of this.shapes.values()){this.emblems[0]!.geometry=geometry;renderer.render(stage,camera)}
-  renderer.setRenderTarget(null);target.dispose();for(const m of this.root.children)m.visible=false;this.motes.visible=true;this.motes.count=0;
+  // Prepare the direct output with the battlefield's actual fog/light state,
+  // as well as its HDR target. A detached no-fog scene is a different shader.
+  renderer.setRenderTarget(null);renderer.render(stage,camera);target.dispose();for(const m of this.root.children)m.visible=false;this.motes.visible=true;this.motes.count=0;
  }
  dispose(){this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
 }
