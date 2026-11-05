@@ -30,3 +30,18 @@ Campaign means: Hearthkeepers 160.47/153.93 turns Auto/active, Lanternbreakers
 boss turns; burst attack/speed premiums reduced to 1.12/1.06. Burst is still easier,
 and active target priority is not a universally better boss policy; disclose this.
 No human duration/quality claim follows from these headless runs.
+
+## Proof regrade · solo
+
+- Replace per-particle sprites with one bounded InstancedMesh; paused updates only
+  invalidate when state/anchors change. Source remains an event-only presenter.
+- Keep 3D as an explicit extra opt-in. The original 2D candidate remains available.
+- Correct KO actor ownership, healing reaction, terminal caption, multihit totals,
+  model role replacement, fixed-time animation and missed throttled UI notification.
+- Add original shield/flame/flask/petal path geometry and reduce impact whiteout.
+- Run software and Metal profiles separately. Metal full Chromium is supported on
+  this Mac; no claim is extrapolated to other hardware. Keep both backend receipts.
+- Preserve complete failed balance trials as gzip JSON and current runs with full
+  histories. Captures use JSONL, one frame per record, to keep evidence diffs readable.
+- Split proof tools/balance from measured evidence to keep every draft layer under
+  1500 changed text lines. Disable the additional evidence ref in both Vercel roots.

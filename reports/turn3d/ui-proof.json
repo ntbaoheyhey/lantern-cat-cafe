@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-05T12:27:59.138Z",
+  "checks": [
+    {
+      "name": "keyboard Bash cancels advertised charge",
+      "history": {
+        "actorId": "guardian",
+        "skillId": "shieldBash",
+        "targetId": "w0-charger-3"
+      },
+      "interrupted": [
+        {
+          "actorId": "w0-charger-3",
+          "skillId": "chargerAttack",
+          "targetId": "guardian",
+          "targetIds": [
+            "guardian"
+          ],
+          "icon": "charge",
+          "label": "Spool Charge",
+          "countdown": 4,
+          "interrupted": true
+        }
+      ],
+      "timeline": [
+        "guardian",
+        "witch",
+        "alchemist",
+        "w0-guard-0",
+        "w0-charger-3",
+        "w0-flanker-1",
+        "w0-flanker-2",
+        "guardian"
+      ]
+    },
+    {
+      "name": "six enemies at 1280x720",
+      "overlaps": 0,
+      "labels": [
+        {
+          "x": 569.328125,
+          "y": 236.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Button Guard\n245\n╱ Button Cut → Mochi"
+        },
+        {
+          "x": 685.59375,
+          "y": 236.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Sock Skipper\n145\n╱ Sock Skip → Soot"
+        },
+        {
+          "x": 801.875,
+          "y": 236.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Spool Ram\n245\n➤ Spool Charge → Mochi"
+        },
+        {
+          "x": 511.1875,
+          "y": 289.234375,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Needle Moth\n175\n➶ Needle Shot → Soot"
+        },
+        {
+          "x": 627.453125,
+          "y": 279.640625,
+          "w": 108,
+          "h": 46.984375,
+          "text": "Teacup Healer\n230\n◇ Teacup Mend → Button Guard"
+        },
+        {
+          "x": 743.734375,
+          "y": 289.234375,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Kettle Knight\n380\n◈ Kettle Crush → Mochi"
+        }
+      ],
+      "scroll": {
+        "width": 1280,
+        "viewport": 1280
+      },
+      "stats": {
+        "frames": 103,
+        "calls": 174,
+        "triangles": 31618,
+        "geometries": 180,
+        "textures": 1,
+        "particles": 0,
+        "estimatedGpuBytes": 1328196,
+        "loaded": 9,
+        "hiddenFrames": 0
+      }
+    },
+    {
+      "name": "six enemies at 1440x900",
+      "overlaps": 0,
+      "labels": [
+        {
+          "x": 661.578125,
+          "y": 339.65625,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Button Guard\n245\n╱ Button Cut → Mochi"
+        },
+        {
+          "x": 798.875,
+          "y": 339.65625,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Sock Skipper\n145\n╱ Sock Skip → Soot"
+        },
+        {
+          "x": 936.1875,
+          "y": 339.65625,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Spool Ram\n245\n➤ Spool Charge → Mochi"
+        },
+        {
+          "x": 592.9375,
+          "y": 413.03125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Needle Moth\n175\n➶ Needle Shot → Soot"
+        },
+        {
+          "x": 730.234375,
+          "y": 403.4375,
+          "w": 108,
+          "h": 46.984375,
+          "text": "Teacup Healer\n230\n◇ Teacup Mend → Button Guard"
+        },
+        {
+          "x": 867.53125,
+          "y": 413.03125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Kettle Knight\n380\n◈ Kettle Crush → Mochi"
+        }
+      ],
+      "scroll": {
+        "width": 1440,
+        "viewport": 1440
+      },
+      "stats": {
+        "frames": 106,
+        "calls": 174,
+        "triangles": 31618,
+        "geometries": 180,
+        "textures": 1,
+        "particles": 0,
+        "estimatedGpuBytes": 1328196,
+        "loaded": 9,
+        "hiddenFrames": 0
+      }
+    },
+    {
+      "name": "six enemies at 1024x600",
+      "overlaps": 0,
+      "labels": [
+        {
+          "x": 439.796875,
+          "y": 233.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Button Guard\n245\n╱ Button Cut → Mochi"
+        },
+        {
+          "x": 553.796875,
+          "y": 233.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Sock Skipper\n145\n╱ Sock Skip → Soot"
+        },
+        {
+          "x": 667.796875,
+          "y": 233.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Spool Ram\n245\n➤ Spool Charge → Mochi"
+        },
+        {
+          "x": 393.671875,
+          "y": 286.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Needle Moth\n175\n➶ Needle Shot → Soot"
+        },
+        {
+          "x": 507.671875,
+          "y": 277.109375,
+          "w": 108,
+          "h": 46.984375,
+          "text": "Teacup Healer\n230\n◇ Teacup Mend → Button Guard"
+        },
+        {
+          "x": 621.671875,
+          "y": 286.703125,
+          "w": 108,
+          "h": 37.390625,
+          "text": "Kettle Knight\n380\n◈ Kettle Crush → Mochi"
+        }
+      ],
+      "scroll": {
+        "width": 1024,
+        "viewport": 1024
+      },
+      "stats": {
+        "frames": 108,
+        "calls": 174,
+        "triangles": 31618,
+        "geometries": 180,
+        "textures": 1,
+        "particles": 0,
+        "estimatedGpuBytes": 1328196,
+        "loaded": 9,
+        "hiddenFrames": 0
+      }
+    },
+    {
+      "name": "hidden lifecycle",
+      "before": {
+        "frames": 113,
+        "turn": 1
+      },
+      "after": {
+        "frames": 113,
+        "turn": 1
+      },
+      "method": "Synthetic document.hidden + visibilitychange; lifecycle handler, not an OS-tab claim"
+    },
+    {
+      "name": "real WebGL context loss retains playable DOM",
+      "passed": true
+    },
+    {
+      "name": "WebGL missing retains playable DOM",
+      "passed": true
+    },
+    {
+      "name": "reduced motion keeps numbers without shake or flash",
+      "camera": 0,
+      "shake": 0,
+      "flash": 0,
+      "reduced": true,
+      "overlay": false
+    },
+    {
+      "name": "model selector changes the loaded mesh for all twelve roles",
+      "roles": [
+        "guardian",
+        "witch",
+        "alchemist",
+        "guard",
+        "flanker",
+        "charger",
+        "ranger",
+        "healer",
+        "elite",
+        "yarn",
+        "thread",
+        "dummy"
+      ]
+    }
+  ],
+  "errors": []
+}
