@@ -49,8 +49,10 @@
     "evidence/logs/cardrpg-audit-final.log": "b4fe92234eb6a78d984811fa51a0fed320427e0442432cc96216eedf4f3e8b7b",
     "evidence/logs/cardrpg-economy-no-draws.log": "d71e3ef4ce56e3cf8a35317d2a52a3af53748a0747c0d7c444e01be4ab75e0b1",
     "evidence/logs/cardrpg-a-baseline.log": "869261e3c25559a5b3e4302c0c81e13b21ad4c4d77fb808b17ef53465c4f6806",
-    "evidence/logs/cardrpg-effects-regression.log": "10601cf7df63952d7378fccc7e1b29b2fcf934a5ddfcd375ee46f68eca78239b"
+    "evidence/logs/cardrpg-effects-regression.log": "10601cf7df63952d7378fccc7e1b29b2fcf934a5ddfcd375ee46f68eca78239b",
+    "evidence/deno-integration-fix.json": "1322d4c0da22cbfb78984d6329f128d23993cd2c2644d7c969a9ebcd0ae2a897"
   },
   "finalContract": "0.4.0",
-  "apiRefinement": "Public entry point excludes the internal mutating makeItem draft builder; UI actions and all tuning unchanged."
+  "apiRefinement": "Public entry point excludes the internal mutating makeItem draft builder; UI actions and all tuning unchanged.",
+  "integrationFix": "Type-only Deno-compatible contract import; tuning unchanged; see deno-integration-fix.json."
 }

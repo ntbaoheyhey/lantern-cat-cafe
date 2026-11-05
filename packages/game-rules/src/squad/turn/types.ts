@@ -1,5 +1,5 @@
 /** Local-only turn format. No verified replay, save, economy or renderer dependencies. */
-import type { Stats } from '../../cardrpg/contract';
+import type { Rarity, Stats } from '../../cardrpg/contract.ts';
 import type { GearProperty } from '../gear/catalog';
 import type { Loadout } from '../gear/catalog';
 import type { GearMode, SquadRun } from '../gear/run';
@@ -9,7 +9,7 @@ export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
 export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
 export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
 export interface TurnStatus { kind: StatusKind; source: string; rounds: number; strength: number; appliedRound: number }
-export interface CardRpgCombatCard { cardId: string; instanceId?: string; rarity?: import('../../cardrpg/contract').Rarity; name: string; stats: Stats; properties: GearProperty[]; sets: string[]; itemIds?: string[]; formationHpBp?: number }
+export interface CardRpgCombatCard { cardId: string; instanceId?: string; rarity?: Rarity; name: string; stats: Stats; properties: GearProperty[]; sets: string[]; itemIds?: string[]; formationHpBp?: number }
 export interface CardRpgCombat { runId: number; cards: Record<Hero, CardRpgCombatCard>; extraTonics: number; enemyAttackBp?: number; effects?: { baseEffectBp: number; enemyResistBp: number; minEffectBp: number; maxEffectBp: number }; extraSupplies?: Partial<Record<'shieldBiscuit'|'quickenYarn'|'cleanseTea'|'ultimateTreat',number>> }
 export interface TurnActor {
   cardRpg?: CardRpgCombatCard;
