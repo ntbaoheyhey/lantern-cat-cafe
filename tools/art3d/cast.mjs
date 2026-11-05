@@ -1,21 +1,22 @@
 // THE LAST LANTERN — twelve original sculpted household miniatures.
 // No imported model, texture, font, silhouette, or reference-game asset is used.
-import { THREE, PALETTE as C, group, ellipsoid as ball, cylinder as cyl, torus, tube, rod, polygon, roundedBox as box, loft, leaf, star, stitch, finish } from './geometry.mjs';
+import { THREE, PALETTE as C, add, group, ellipsoid as ball, cylinder as cyl, torus, tube, rod, polygon, roundedBox as box, loft, leaf, star, stitch, finish } from './geometry.mjs';
 
 export const CAST = [
-  ['guardian', 'Mochi', 'hero', 1.72, 6000], ['witch', 'Soot', 'hero', 1.82, 6000],
-  ['alchemist', 'Clover', 'hero', 1.72, 6000], ['guard', 'Button Guard', 'small', 1.40, 3000],
-  ['flanker', 'Sock Skipper', 'small', 1.48, 3000], ['charger', 'Spool Ram', 'small', 1.34, 3000],
-  ['ranger', 'Needle Moth', 'small', 1.48, 3000], ['healer', 'Teacup Healer', 'small', 1.42, 3000],
-  ['elite', 'Kettle Knight', 'elite', 1.70, 8000], ['yarn', 'Yarn Giant', 'boss', 2.60, 20000],
-  ['thread', 'Binding Thread', 'small', 1.34, 3000], ['dummy', 'Practice Cushion', 'small', 1.36, 3000],
+  ['guardian', 'Mochi', 'hero', 1.72, 25000], ['witch', 'Soot', 'hero', 1.82, 25000],
+  ['alchemist', 'Clover', 'hero', 1.72, 25000], ['guard', 'Button Guard', 'small', 1.40, 10000],
+  ['flanker', 'Sock Skipper', 'small', 1.48, 10000], ['charger', 'Spool Ram', 'small', 1.34, 10000],
+  ['ranger', 'Needle Moth', 'small', 1.48, 10000], ['healer', 'Teacup Healer', 'small', 1.42, 10000],
+  ['elite', 'Kettle Knight', 'elite', 1.70, 20000], ['yarn', 'Yarn Giant', 'boss', 2.60, 60000],
+  ['thread', 'Binding Thread', 'small', 1.34, 10000], ['dummy', 'Practice Cushion', 'small', 1.36, 10000],
 ].map(([role, name, category, targetHeight, triangleBudget]) => ({ role, name, category, targetHeight, triangleBudget }));
 
 function rig(spec) {
   const root = group(null, spec.role); const motion = group(root, `${spec.role}_motion`);
   root.userData = { role: spec.role, displayName: spec.name, author: 'OpenAI Codex · original procedural geometry', license: 'CC0-1.0', facing: '+Z', ground: 'y=0', source: 'tools/art3d/cast.mjs' };
-  const parts = {};
-  const part = (id, pos = [0, 0, 0], parent = motion) => (parts[id] = group(parent, `${spec.role}_${id}`, pos));
+  const spine=group(motion,`${spec.role}_spine`);
+  const parts = {spine};
+  const part = (id, pos = [0, 0, 0], parent = spine) => (parts[id] = group(parent, `${spec.role}_${id}`, pos));
   return { ...spec, root, motion, parts, part };
 }
 function eyes(r, parent, y, z, spacing = .19, size = 1, color = C.ink) {
@@ -55,17 +56,20 @@ function cat(r) {
   // A cloth collar, a tiny clasp, and broad hips make the cats read as dressed miniatures.
   torus(body, accent, [0, .265, 0], .235, .055, [Math.PI / 2, 0, 0], 14, 5);
   ball(body, C.gold, [0, .20, .28], [.065, .068, .036], 8, 5);
-  const head = r.part('head', [0, 1.18, .035]);
+  const head = r.part('head', [0, 1.17, .045]); head.scale.set(1.1,1.06,1.02);
   loft(head, fur, [[-.34, 0, 0], [-.29, .29, .24], [-.15, .43, .31], [.05, .45, .31], [.25, .36, .24], [.31, .20, .17], [.32, 0, 0]], 20);
   for (const s of [-1, 1]) {
     ball(head, soot ? '#999096' : C.ivory, [s * .095, -.135, .289], [.125, .086, .060], 10, 5);
     ball(head, soot ? '#b080a3' : C.peach, [s * .32, -.095, .241], [.067, .035, .025], 8, 4);
     for (let i = 0; i < 2; i++) rod(head, soot ? C.lilac : C.ink, [s * .275, -.115 - .045 * i, .292], [s * .47, -.085 - .086 * i, .24], .009, 4);
     // Eyebrows and small forehead tuft; broad readable eye whites are kept animated together.
-    rod(head, soot ? C.lilac : accent, [s * .135, .185, .276], [s * .245, .17, .267], .021, 5);
+    const brow=r.part(s<0?'browL':'browR',[s*.19,.19,.30],head); tube(brow,soot?C.lilac:accent,[[-.065,0,0],[0,.018,.008],[.065,-.005,0]],.016,10,6);
   }
-  eyes(r, head, .025, .31, .19, 1.05, soot ? '#211e32' : C.ink);
-  nose(head, [0, -.11, .36], 1.0, soot ? C.rose : C.ink); mouth(head, -.168, .346, .75);
+  eyes(r, head, .035, .315, .19, 1.28, soot ? '#211e32' : C.ink);
+  nose(head, [0, -.10, .37], .9, soot ? C.rose : C.ink); const lips=r.part('mouth',[0,-.158,.35],head);mouth(lips,0,0,.9);
+  for(const side of [-1,1]){
+    ball(head,fur,[side*.345,-.10,.09],[.12,.12,.17],16,10);
+  }
   catEar(r, head, 'earL', -1, fur); catEar(r, head, 'earR', 1, fur);
   polygon(head, accent, [[-.065, .26], [0, .15], [.065, .26]], .014, [0, .005, .248], .008);
   feet(r, fur, .22, .08);
@@ -75,8 +79,14 @@ function cat(r) {
     ball(arm, soot ? '#77717d' : C.ivory, [s * .075, -.26, .095], [.133, .12, .135], 10, 5);
   }
   const tail = r.part('tail', [.18, .35, -.22]);
-  tube(tail, fur, [[0, 0, 0], [.25, .04, -.19], [.35, .30, -.27], [.27, .48, -.24], [.12, .46, -.22]], .105, 13, 7);
-  ball(tail, accent, [.12, .46, -.22], [.105, .105, .105], 8, 5);
+  tube(tail,fur,[[0,0,0],[.21,.02,-.15],[.31,.21,-.25]],.095,16,10);
+  const mid=r.part('tailMid',[.31,.21,-.25],tail);
+  tube(mid,fur,[[0,0,0],[.01,.19,0],[-.10,.30,.02]],.075,16,10);
+  const tip=r.part('tailTip',[-.10,.30,.02],mid);
+  tube(tip,accent,[[0,0,0],[-.10,-.02,.02],[-.13,-.11,.05]],.055,12,9);ball(tip,accent,[-.13,-.11,.05],[.055,.055,.055],12,8);
+  for(const side of [-1,1]){const paw=r.parts[side<0?'armL':'armR'];ball(paw,C.peach,[side*.075,-.26,.22],[.055,.05,.016],12,8);for(let n=0;n<3;n++)ball(paw,C.peach,[side*.075+(n-1)*.045,-.20,.21],[.017,.021,.012],10,6);}
+  for(const [key,parent,pos] of [['head',head,[0,.35,0]],['back',body,[0,.1,-.28]],['mainHand',r.parts.armR,[.1,-.24,.14]],['offHand',r.parts.armL,[-.1,-.24,.14]],['neck',body,[0,.27,.28]],['tail',tip,[0,0,0]]])group(parent,`${r.role}_socket_${key}`,pos);
+
   if (r.role === 'guardian') guardian(r);
   if (soot) witch(r);
   if (clover) alchemist(r);
@@ -111,7 +121,7 @@ function witch(r) {
   // Cape opening is on the face side, so a bib and moon clasp cover its seam.
   polygon(cape, C.charcoal, [[-.18, .2], [.18, .2], [.2, -.24], [0, -.34], [-.2, -.24]], .02, [0, 0, .222], .01);
   star(cape, C.gold, [0, .16, .28], .07);
-  const hat = r.part('hat', [0, .295, -.035], r.parts.head);
+  const hat = r.part('hat', [0, .32, -.10], r.parts.head);hat.scale.set(.88,.91,.9);
   loft(hat, C.shadow, [[-.035, 0, 0], [-.025, .72, .49], [.015, .74, .50], [.06, .64, .44], [.055, 0, 0]], 24);
   loft(hat, C.violet, [[.025, .40, .34], [.16, .34, .30], [.36, .25, .23, -.035], [.55, .15, .15, -.105], [.69, .09, .09, -.20], [.72, .06, .055, -.30], [.66, 0, 0, -.38]], 16);
   loft(hat, C.lilac, [[.07, .385, .327], [.16, .348, .304]], 16);
@@ -353,8 +363,9 @@ function bindingThread(r) {
   const b = r.part('body', [0, .72, 0]);
   // Open binding arch, not a solid cocoon: the captive remains visible inside.
   const pts = Array.from({ length: 35 }, (_, i) => { const a = i / 34 * Math.PI * 2; return [Math.cos(a) * .43, Math.sin(a) * .60, .015 * Math.sin(a * 3)]; });
-  tube(b, C.redDark, pts, .067, 34, 6);
-  const pts2 = pts.map(([x, y, z]) => [x * .85, y * .88, z + .045]); tube(b, C.coral, pts2, .025, 34, 5);
+  // Three raised helical plies form a soft braided loop, visible from the back too.
+  for(let strand=0;strand<3;strand++){const braid=Array.from({length:97},(_,i)=>{const a=i/96*Math.PI*2,t=a*18+strand*Math.PI*2/3;return [Math.cos(a)*(.43+Math.cos(t)*.026),Math.sin(a)*(.60+Math.cos(t)*.026),Math.sin(t)*.027]});tube(b,[C.redDark,C.red,C.coral][strand],braid,.034,96,6)}
+  for(const side of [-1,1])tube(b,C.knot,[[side*.39,-.1,.02],[side*.47,-.16,.03],[side*.45,-.23,.03],[side*.38,-.2,.05]],.016,12,5);
   for (const y of [-.23, .12]) tube(b, C.red, [[-.35, y, .035], [-.12, y - .035, .08], [.14, y + .02, .06], [.36, y + .06, .03]], .03, 10, 5);
   const h = r.part('head', [0, 1.20, .025]);
   ball(h, C.red, [0, 0, 0], [.18, .14, .105], 12, 6); eyes(r, h, .01, .10, .075, .53); mouth(h, -.06, .115, .40);
@@ -367,11 +378,13 @@ function bindingThread(r) {
 function practiceCushion(r) {
   feet(r, C.wood, .23, 0, .8);
   const b = r.part('body', [0, .71, 0]);
-  // Pillow perimeter is a bevelled custom polygon, with stuffed front and back panels.
-  const outline = [[-.40, -.33], [-.46, -.18], [-.45, .24], [-.34, .38], [.34, .38], [.45, .24], [.46, -.18], [.40, -.33]];
-  polygon(b, C.copper, outline, .30, [0, 0, 0], .075);
-  ball(b, C.cream, [0, .02, .11], [.445, .365, .17], 16, 8);
-  ball(b, C.wood, [0, .02, -.11], [.445, .365, .12], 14, 7);
+  // Sculpted superellipsoid: stuffed curved panels with a pinched sewn perimeter.
+  const plush=new THREE.SphereGeometry(1,32,20),v=plush.attributes.position;
+  for(let i=0;i<v.count;i++){const x=v.getX(i),y=v.getY(i),z=v.getZ(i);v.setXYZ(i,Math.sign(x)*Math.abs(x)**.58*.46,Math.sign(y)*Math.abs(y)**.58*.38,Math.sign(z)*Math.abs(z)**.78*.25)}
+  plush.computeVertexNormals();add(b,plush,C.cream);
+  const edge=Array.from({length:65},(_,i)=>{const a=i/64*Math.PI*2,x=Math.cos(a),y=Math.sin(a);return [Math.sign(x)*Math.abs(x)**.58*.465,Math.sign(y)*Math.abs(y)**.58*.385,0]});
+  tube(b,C.wood,edge,.024,64,5);
+  for(const side of [-1,1]){stitch(b,C.copper,[side*.42,-.26,.13],[side*.42,.27,.13],8,.006,[.022,0,0]);leaf(b,C.teal,[side*.13,.02,-.25],.8,[0,Math.PI,side*.6])}
   stitch(b, C.ivory, [-.35, -.32, .17], [.35, -.32, .17], 9, .008, [.018, .025, 0]);
   stitch(b, C.ivory, [-.36, .34, .16], [.36, .34, .16], 9, .008, [.018, .025, 0]);
   const h = r.part('head', [0, .85, .0]); eyes(r, h, .04, .279, .15, .95); nose(h, [0, -.045, .30], .8); mouth(h, -.08, .288, .70);
@@ -388,6 +401,6 @@ export function createModel(spec) {
   const r = rig(spec); BUILDERS[spec.role](r); finish(r.root); r.root.updateMatrixWorld(true);
   const bounds = new THREE.Box3().setFromObject(r.root); const factor = spec.targetHeight / (bounds.max.y - bounds.min.y);
   r.root.scale.setScalar(factor); r.motion.position.y = -bounds.min.y; r.root.updateMatrixWorld(true);
-  r.sourceParameters = { targetHeight: spec.targetHeight, scale: factor, radialSegments: '6–24, by silhouette', surface: 'smooth vertex normals; opaque matte vertex color; no textures', forward: '+Z', ground: 'y=0', seed: 'deterministic; no random inputs' };
+  r.sourceParameters = { targetHeight: spec.targetHeight, scale: factor, radialSegments: '12–36; Catmull-Rom loft profiles ×3', surface: 'baked albedo/normal surfaces; analytic vertex AO; felt, knit, brass, porcelain and glossy eyes', forward: '+Z', ground: 'y=0', seed: 'deterministic; no random inputs' };
   return r;
 }

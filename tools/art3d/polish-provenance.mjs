@@ -1,0 +1,14 @@
+// Extend the GLB manifest with every original runtime-generated asset family and portrait.
+import fs from 'node:fs/promises';import {createHash} from 'node:crypto';
+const path='docs/turn3d/ASSET-MANIFEST.json',m=JSON.parse(await fs.readFile(path,'utf8'));
+const specs=[
+ ['cafe-stage',['apps/web/src/game/squad/turn3d/scene.ts','apps/web/src/game/squad/turn3d/surfaces.ts'],'Wood/cloth/ceramic procedural canvas maps, deterministic integer noise; warm key/cool rim; contact gradients and fog.'],
+ ['spell-language',['apps/web/src/game/squad/turn3d/vfx.ts','apps/web/src/game/squad/turn3d/effect-direction.ts','apps/web/src/game/squad/turn3d/effects.ts'],'43 authored signatures, tapered noisy ribbon meshes, at most 192 instanced motes, eight branching bolts, nine flame/water planes. Fixed integer recipe seeds; five beats; .73 nonultimate motion duration scale, impact and 1.45s portraits retained.'],
+ ['equipment-sockets',['apps/web/src/game/squad/turn3d/gear-visuals.ts','packages/game-rules/src/squad/gear/catalog.ts'],'30 original items; four weapon profiles and four outfit patterns per role, shared charm/relic silhouettes; one merged draw per item; rarity emissive colors; set aura.'],
+ ['post-processing',['apps/web/src/game/squad/turn3d/post.ts'],'Half-float bright-pass threshold 1.12, separable quarter-resolution High bloom, grade, edge contrast, vignette and radial impact ripple. Medium at sixth-resolution; Low bypasses post; p95>25ms degrades after warmup.'],
+ ['cafe-synth-audio',['apps/web/src/game/squad/turn3d/audio.ts'],'WebAudio oscillators + seeded filtered noise; six cue families × five beats, UI/turn/round/stingers; 8-note sine ambience; 44.1kHz/master .14. Muted by default; context only after click; no downloaded samples.'],
+];
+m.proceduralAssets=await Promise.all(specs.map(async([id,source,parameters])=>({id,source,parameters,tool:'Authored TypeScript / Three.js 0.180.0 / WebAudio',author:'OpenAI Codex primary polish session',date:'2026-11-05',license:'CC0-1.0',externalReferences:[],sourceSha256:await Promise.all(source.map(async p=>({path:p,sha256:createHash('sha256').update(await fs.readFile(p)).digest('hex')})))})));
+m.portraits=JSON.parse(await fs.readFile('reports/turn3d-polish/portrait-renders.json','utf8'));
+await fs.writeFile(path,JSON.stringify(m,null,2)+'\n');
+await fs.writeFile('assets/provenance/turn3d.md',(await fs.readFile('assets/provenance/turn3d.md','utf8')).split('\n## Polish runtime assets')[0]+'\n## Polish runtime assets\n\n'+m.proceduralAssets.map(a=>`- **${a.id}**: ${a.source.join(', ')}. ${a.parameters} Author: Codex primary polish session; 2026-11-05; CC0-1.0. Exact source hashes in ASSET-MANIFEST.json.`).join('\n')+'\n\nPortraits are original GLB renders captured by tools/turn3d/polish-portraits.mjs, 320×440, ready clip, angle .15, fixed render 1. Manifest contains image hashes. Contact sheets use Pillow (HPND), evidence only. No downloaded or model-generated art.\n');
