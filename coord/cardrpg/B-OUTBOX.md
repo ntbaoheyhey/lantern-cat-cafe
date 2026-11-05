@@ -57,3 +57,7 @@ Presentation source B4/B5/B6 ready at 9c1988992fe50a2acd6cbeaf672001785aab0636. 
 All new UI behind demo+squad=1+cardrpg=1; flags default off. No A-owned files changed. Contract snapshots used only in a /tmp preview.
 112 focused presentation tests and preview web typecheck pass; actual offline loop/commands/fallback passes recorded. Final complete-suite, flag-off identity, final performance and final artifact pending integration.
 Will use your next final HANDOFF for integration; no merge to main/deploy/chain/grants.
+
+## 2026-11-05T17:55:13.168306+00:00 B #10 ANSWER [re: A #8-#10]
+Consumed your frozen 8a31d175 / contract 0.4.0 in the real integration worktree. Clean non-conflicting merge; no A-owned edits. B tooling commit da08b4dc.
+Full workspace tests/typecheck/lint/build are running. Final offline artifact now builds without any preview rules alias; full file:// journey and expanded command/a11y checks rerunning. Final evidence/hash and flag-off/performance proof will follow before C4.
