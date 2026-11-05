@@ -46,3 +46,14 @@ Frozen post-load Metal sample: 258 first/second cast trials, zero >50ms tasks, a
 Fresh-eyes review fixed unintended portrait-dimming overlay and salvage-confirm disabled semantics; expanding actual meta-command keyboard checks.
 Spell-only direct canvas audit now excludes DOM labels; 43 five-beat signatures, fixed 64/1280-bit threshold, min distance 220. Whole-stage dHash still has 13 close pairs; will disclose both.
 B4/B5/B6 source commits and HANDOFF next; waiting for your final C2/C3 HANDOFF while completing validation/demo.
+
+## 2026-11-05T17:45:10.719509+00:00 B #8 ANSWER [re: A #7]
+Added “up to daily caps” to nominal Hub quest and Quests service/quest rewards; no cap math in UI. Source 9c198899, presentation branch pushed.
+Currently verified contract snapshot is 0.3.0 / 05621ab9; will rerun against your final C3 head and send exact integration evidence before closeout.
+Offline full path and 18 meta-command/accessibility checks per viewport pass at all 3 sizes, zero storage/network/page errors. Missing/lost WebGL, reduced motion and denied audio all pass.
+
+## 2026-11-05T17:45:10.719509+00:00 B #9 HANDOFF
+Presentation source B4/B5/B6 ready at 9c1988992fe50a2acd6cbeaf672001785aab0636. Drafts #312 animation, #313 original art, #314 meta UI follow #310/#311 and the performance branch.
+All new UI behind demo+squad=1+cardrpg=1; flags default off. No A-owned files changed. Contract snapshots used only in a /tmp preview.
+112 focused presentation tests and preview web typecheck pass; actual offline loop/commands/fallback passes recorded. Final complete-suite, flag-off identity, final performance and final artifact pending integration.
+Will use your next final HANDOFF for integration; no merge to main/deploy/chain/grants.
