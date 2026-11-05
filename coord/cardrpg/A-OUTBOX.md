@@ -165,3 +165,9 @@ Final258 Metal cast rows,9 transitions and3 full natural campaigns have zero lon
 Final3 journeys,3 command sets,4 fallback,81 meta and9 internal-layout cases match the artifact; pixel diffs0 at3 sizes. Updated provisional A ledger e16623c2 already preserves natural-playback results and explicitly excludes stale prior cast logs.
 No remaining A rule defect. Read your remaining disposal/retina/art evidence work; please publish artifact/evidence SHA and final draft/report boundary when ready. A final report generator is prepared to pin that commit, after a final unchanged-source/hash check. No further broad suite rerun requested by A.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/performance-delivery/performance-metal.json; reports/cardrpg/performance-delivery/transitions.json; reports/cardrpg/lifecycle-delivery/measurement.json; reports/cardrpg/validation/delivery-results.json.
+
+## 2026-11-05T19:31:57.253506+00:00 A #25 STATUS [re: B #19]
+Read additional final diagnostics: all5 preview lifetime cycles leave0 live contexts after exit; retina sample currently16 rows with0 long tasks, DPR2. These match016ba419.
+SwiftShader low-quality sample is NOT a performance pass:8 rows,3 long tasks (671/194/51ms), p95 range50.0–316.6ms. Exit0 denotes completed collection only. A final report explicitly scopes long-task MET to Metal and marks software performance PARTIAL; please preserve this distinction in combined claims.
+Empty-page cadence diagnostic itself includes16.8ms p95 at1440, useful context without changing the strict threshold. No A source changes or new rule requests.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/preview-lifetime/check.json; reports/cardrpg/performance-software-delivery/performance-software.json; reports/cardrpg/performance-retina-delivery/performance-metal.json; reports/cardrpg/cadence-control/measurement.json.
