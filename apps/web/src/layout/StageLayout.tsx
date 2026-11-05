@@ -1,6 +1,7 @@
 import { CraftResult } from '../gameplay/CraftResult';
 import { GuestCoach, isNewGuest } from '../gameplay/GuestCoach';
 import { journeyGoals } from '../gameplay/goals';
+import { cafeEnabled } from '../cafe/save';
 import '../gameplay/gameplay.css';
 import {
   lazy,
@@ -62,6 +63,7 @@ import './layout.css';
 const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
 const Art2Preview = lazy(() => import('../art/Art2Preview'));
 const FeatureSamples = lazy(() => import('../runes/FeatureSamples'));
+const CafeAdventure = lazy(() => import('../cafe/CafeAdventure'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -113,6 +115,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const syncStatus = presentation.hold?.syncStatus ?? liveSyncStatus;
   const bossRequest = useRef(false);
   const mode = useGameModeV2();
+  const [adventure, setAdventure] = useState(() => cafeEnabled(window.location.search, true));
   const state = snapshot.state;
   const classId = state?.cat.classId;
 
@@ -404,8 +407,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
               state,
               power: stats ? Math.round(v2.powerRating(stats)) : 0,
               syncStatus,
-              hintText,
-              onHintAction: handleHintAction,
+              hintText: adventure && mode.demo && !phone && screen === 'home' ? 'Return to the main game' : hintText,
+              onHintAction: adventure && mode.demo && !phone && screen === 'home' ? () => setAdventure(false) : handleHintAction,
+              sampleAdventure: adventure && mode.demo && !phone && screen === 'home',
               mode,
             }
           : null
@@ -510,7 +514,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           style={{ display: screen === 'home' ? 'flex' : 'none' }}
         >
           {state && classId ? (
-            phone ? (
+            adventure && mode.demo && !phone ? (
+              <Suspense fallback={<p role="status">Opening the cafe…</p>}><CafeAdventure active={screen === 'home'} onExit={() => setAdventure(false)} /></Suspense>
+            ) : phone ? (
               <>
                 <div role="region" aria-label="Game stage" className="v2-stage">
                   <StageCanvas

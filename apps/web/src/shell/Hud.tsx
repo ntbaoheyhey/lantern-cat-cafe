@@ -21,6 +21,7 @@ export interface HudProps {
   hintText?: string;
   onHintAction?: () => void;
   mode?: { demo: boolean; notice: string | null };
+  sampleAdventure?: boolean;
 }
 
 export function Hud({
@@ -30,8 +31,9 @@ export function Hud({
   hintText,
   onHintAction,
   mode,
+  sampleAdventure = false,
 }: HudProps) {
-  const goals = journeyGoals(state);
+  const goals = sampleAdventure ? { soon: 'Sample: assemble a set', later: 'Sample: finish the journal' } : journeyGoals(state);
   const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
   const maxKeys = catKeyDef ? catKeyDef.maxStack : 5;
   const title = <h1 className="v2-title">Taskbar Hero</h1>;
@@ -51,7 +53,7 @@ export function Hud({
   return (
     <>
       <header data-testid="hud" className="shell-hud v2-topbar">
-        <div className="hud-left hud-bar" role="region" aria-label="Cat status">
+        <div className="hud-left hud-bar" role="region" aria-label={sampleAdventure ? 'Main game cat status' : 'Cat status'}>
           <div className="hud-bar__layout">
             <div className="hud-currencies hud-stacks-list" role="list" aria-label="Currencies and keys">
               <div
