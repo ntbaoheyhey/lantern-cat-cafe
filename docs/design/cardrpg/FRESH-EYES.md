@@ -53,3 +53,7 @@ Method: audit formulas, effect-hit utility, all faucets/sinks, cap boundaries, g
 Final API hygiene also removed the mutating internal item builder from the public entry point; fixture/simulation tools import it explicitly as an internal draft helper. Contract 0.4.0 preserves all UI actions and previews; callers regenerate in-memory fixtures.
 
 The highest fixable systems defects (reward mismatch, useless effect-hit, excess threads, weak evidence scoping and a loss masquerading as a victory fixture) were corrected before freeze. Content production and authorized online operations cannot be inferred from this local deliverable.
+
+## Integration regression follow-up
+
+B #11 found that the extensionless new type import into the shared turn types broke the repository Deno import-map guard. The fix imports Rarity and Stats from the explicit `.ts` contract path. All 18 function graphs resolve, the four existing Deno graph regressions pass, and game-rules typecheck passes. Contract 0.4.0 and runtime behavior are unchanged; no server or contract changes. Evidence: `evidence/deno-integration-fix.json`.
