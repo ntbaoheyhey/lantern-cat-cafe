@@ -7,8 +7,14 @@ const key = readFileSync(resolve('src/api/MockGameApiV2.ts'), 'utf8').match(/exp
 const evidence = resolve(process.env.SCREENSHOT_DIR ?? '../../reports/g3-combat');
 type Scenario = 'melee' | 'ranged' | 'elite' | 'gated' | 'round-cleared';
 async function install(page: Page, scenario: Scenario, clock = true) {
-  if (clock) await page.clock.install({ time: Date.now() });
-  const save = mockV2Save('bossReadyStrong', { nowMs: Date.now(), classId: scenario === 'ranged' ? 'archer' : 'warrior' });
+  // Freeze before navigation: a running fake clock can overtake a pauseAt
+  // timestamp between evaluate() and the protocol command on a loaded machine.
+  const nowMs = clock ? Date.UTC(2026, 10, 5, 0, 0, 1) : Date.now();
+  if (clock) {
+    await page.clock.install({ time: nowMs - 1000 });
+    await page.clock.pauseAt(nowMs);
+  }
+  const save = mockV2Save('bossReadyStrong', { nowMs, classId: scenario === 'ranged' ? 'archer' : 'warrior' });
   save.state.round = 1; save.state.kills = scenario === 'elite' || scenario === 'round-cleared' ? 5 : 0;
   if (scenario === 'gated') { save.state.level = 1; save.state.items = []; save.state.round = 10; save.state.chapter = 5; }
   await page.addInitScript(({ key, save }) => {
@@ -32,10 +38,10 @@ for (const [width, height] of [[1280, 720], [390, 844]]) for (const scenario of 
     const errors: string[] = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.goto('/');
+    await page.clock.runFor(100);
     const canvas = page.locator('.v2-stage-canvas canvas');
     await expect(canvas).toBeVisible();
     await expect(canvas).toHaveAttribute('data-stage-monster', /mon\./);
-    await page.clock.pauseAt((await page.evaluate(() => Date.now())) + 50);
     await authoritativeLabel(page);
     if (scenario === 'gated') {
       await expect(page.getByText('Too strong — equip better gear', { exact: true })).toBeVisible();
@@ -43,7 +49,7 @@ for (const [width, height] of [[1280, 720], [390, 844]]) for (const scenario of 
       expect(await canvas.getAttribute('data-stage-impact')).toBeNull();
     } else if (scenario === 'round-cleared') {
       await page.clock.runFor(1600);
-      await page.clock.setSystemTime(Date.now() + 15_000);
+      await page.clock.setSystemTime((await page.evaluate(() => Date.now())) + 15_000);
       await page.evaluate(() => window.__g1Loop.claimNow());
       await expect(page.locator('.stage-moment')).toHaveText('Round cleared');
       await authoritativeLabel(page);
@@ -91,8 +97,9 @@ test('G3 reduced motion and remaining evidence viewports', async ({ page }) => {
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ reducedMotion: 'reduce', colorScheme });
     await page.goto('/');
+    await page.clock.runFor(100);
     await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
-    await page.waitForTimeout(900);
+    await page.clock.runFor(900);
     await authoritativeLabel(page);
     await shot(page, `reduced-${width}x${height}-${colorScheme}`);
   }
