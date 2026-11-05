@@ -17,6 +17,7 @@ try{for(const [width,height] of widths){
  });
  await p.goto(url);await p.getByRole('button',{name:/Prepare patrol/}).click();await p.getByRole('button',{name:/Begin patrol/}).click();await p.waitForFunction(()=>window.__turn3dReview?.scene?.ready&&window.__turn3dReview.controller.canChoose);
  if(process.env.CARDRPG_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start')}
+ if(process.env.CARDRPG_CADENCE_PROBE)await (await import('./cadence-probe.mjs')).installCadenceProbe(p);
  await p.getByLabel('Animation playback rate').selectOption('4');
  await p.evaluate(()=>{window.__retainedScene=window.__turn3dReview.scene;const x=window.__lifecycle;x.contextsAtStart=x.contexts;x.record=true;x.last=0;x.marks.push({event:'start',at:performance.now()})});
  await p.getByLabel('Auto all cats',{exact:true}).check();
@@ -31,6 +32,7 @@ try{for(const [width,height] of widths){
  }
  const measurement=await p.evaluate(()=>{const x=window.__lifecycle;x.record=false;return {...x,requestedQuality:window.__turn3dReview.view().quality,pixelRatio:window.__turn3dReview.scene.renderer.getPixelRatio(),stats:window.__turn3dReview.scene?.stats,result:window.__turn3dReview.controller.battle.result,rendererRetained:window.__turn3dReview.scene===window.__retainedScene}});
  if(process.env.CARDRPG_PROFILE)await fs.writeFile(`${out}/profile-${width}.json`,JSON.stringify(await cdp.send('Profiler.stop')));
+ if(process.env.CARDRPG_CADENCE_PROBE)await fs.writeFile(`${out}/cadence-${width}.json`,JSON.stringify({diagnosticOnly:true,artifactSha256,...await p.evaluate(()=>window.__cadenceProbe)},null,2));
  const sorted=[...measurement.frames].sort((a,b)=>a-b);rows.push({width,height,...measurement,p95Ms:sorted[Math.floor((sorted.length-1)*.95)],p99Ms:sorted[Math.floor((sorted.length-1)*.99)]});
  console.log(JSON.stringify({width,long:measurement.long,contexts:measurement.contexts,atStart:measurement.contextsAtStart,result:measurement.result}));await p.close();
 }}finally{await browser.close();await fs.writeFile(out+'/measurement.json',JSON.stringify({artifactSha256,date:new Date().toISOString(),method:'Natural x4 presentation and actual Auto rules. Full three waves and boss, including every loot/rest entry, one equipment picker and all continuations. No skip/tick injection. Context creation counted throughout; RAF and Long Tasks include the complete path after loading.',errors,warnings,rows},null,2)+'\n')}

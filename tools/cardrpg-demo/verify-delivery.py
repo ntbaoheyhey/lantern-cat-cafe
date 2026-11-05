@@ -26,7 +26,12 @@ assert artifact_hash == build['sha256']
 assert (root / 'docs/cardrpg/index.html').stat().st_size == build['bytes']
 assert build['dirty'] is False and build['rulesOverride'] is None
 runtime_roots = ['apps/web/src', 'apps/web/public', 'packages', 'assets']
-runtime_diff = subprocess.check_output(['git', 'diff', build['head'], '--', *runtime_roots], cwd=root)
+# This audit document is refreshed after the measured VFX warmup correction.
+# It is not imported by the runtime/build. Every source hash it names is checked
+# below; no executable source, model, texture or portrait is excluded here.
+provenance_metadata = ':(exclude)assets/cardrpg/procedural-manifest.json'
+runtime_diff = subprocess.check_output(
+    ['git', 'diff', build['head'], '--', *runtime_roots, provenance_metadata], cwd=root)
 assert not runtime_diff, 'Runtime changed after the measured artifact was built'
 for path, expected in build['sourceHashes'].items():
     assert digest(root / path) == expected, path
@@ -111,6 +116,8 @@ assert not safety['aSourceDifferences'] and not safety['forbiddenSourceChanges']
 assert safety['noNewRuntimeDependencies']
 assert all(row['passHash'] and digest(root / row['path']) == row['sha256']
            for row in read('reports/cardrpg/validation/provenance.json'))
+assert all(digest(root / row['path']) == row['sha256']
+           for row in read('assets/cardrpg/procedural-manifest.json')['sourceSha256'])
 
 if '--write-manifest' in sys.argv:
     paths = sorted(p for directory in [root / 'docs/cardrpg', report]
