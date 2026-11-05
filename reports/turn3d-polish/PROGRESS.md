@@ -15,3 +15,13 @@ Single model-driven agent; no subagents, workers, schedulers, image generation o
 Round core → sandbox gear/run loop → models/stage → effects/audio → UI → balance/proof → offline demo/draft stack and ledger report.
 Every claimed gate requires a running capture or real test/measurement; incomplete gates will be named plainly.
 
+
+## 14:26 UTC checkpoint
+Round core and thirty-item sandbox are implemented. Twelve rebuilt GLBs total 6,550,076 bytes, 22 clips each, all individual triangle budgets met. New post stack, 43 effect recipes, synthesized audio, original portrait cutscenes, loadout/loot/rest/supplies/summary are wired. Running visual inspection shows larger expressive faces and readable cards; 129 impact label trials have no collisions. Full 430-frame recapture is in progress after HMR invalidated a previous capture; do not claim that earlier partial set as complete.
+
+Baseline 421 E2E passed again. Full rules testing exposed replay boundaries cleared by burn before loot; fixed by probing/draining forced boundaries and preserving the next choice. Generated Deno import maps were refreshed after gear imports. Final suite rerun pending. Campaign starter tuning: Auto 17/30 both compositions, active 23/30 and 26/30. Standalone boss tuning and final exact matrix pending. Metal High p95 16.7–16.8 ms in an initial production run. Software Low remains slow. Ten-minute production soak running. No deploy, merge, extra model agents, skills or image model calls.
+
+## 14:50 UTC checkpoint
+Final round/gear rules 614 pass; web 1566 pass after a resource-contention StageLayout timeout on the combined run (raw failure retained); 421 inherited E2E pass. Full capture: 430 effect frames, 215/215 exact repeated hashes, 849 model frames, no detected card collisions. M3 Pro Metal High p95 16.7–16.8 ms; final soak 602.237 seconds with zero errors and 2.15 MiB retained-heap range. Campaign starter Auto 17/30 each; active proxy 23/30 and 26/30. x1 winning estimates 7.55 and 7.92 minutes.
+
+Offline artifact built and file:// tested at all three sizes, 31 images decoded, all 43 effects/12 models/22 clips/30 catalog items, keyboard action and equipment change, full three-loot/rest loop to result, no network or storage writes. Viewer now exposes the final four existing clips. Remaining: archive evidence, final self-review/ledger report, draft stack. Software rendering is slow (83–100 ms p95 active); no human playtest.
