@@ -37,6 +37,9 @@ export function getAutoAction(b: TurnBattle, policy: 'auto' | 'active' = 'auto')
         if (skill.status === 'guard' && !hasStatus(a,'guard')) score += 12;
         if (skill.delay && a.controlCount === 0) score += b.intents[a.id]?.interrupted ? 0 : 18;
       }
+      if (skill.orderSteps) score += policy === 'active' ? 25 : 0;
+      if (skill.chargeGrant) score += affected.reduce((n,a)=>n+Math.min(skill.chargeGrant!,100-a.charge)*.65,0);
+      if (skill.consumable) score -= policy === 'active' ? 40 : 65;
       if (skill.id === 'rally') {
         const threats = Object.values(b.intents).filter(i => i.targetIds.some(id => id !== actor.id && allies.some(a => a.id === id))).length;
         score += threats * 20;

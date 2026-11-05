@@ -1,3 +1,6 @@
+import { applyEquipment, bestLoadouts, effectiveSkill, gearBonuses, hasProperty, initialLoadout } from '../gear/equipment';
+import { createSquadRun, outfitParty, changeEquipment, offerLoot, takeLoot, type ConsumableId, type RunCommand } from '../gear/run';
+import { GEAR_SLOTS, type GearSlot } from '../gear/catalog';
 import { HEROES, NAMES, TURN_CONFIG as C, TURN_SKILLS } from './config';
 import { getTimeline, orderForRound, moveInRound } from './rounds';
 import { affected, getLegalActions, getLegalTargets, hasStatus, living, taunter } from './targeting';
@@ -10,10 +13,10 @@ const copy = <T>(x: T): T => JSON.parse(JSON.stringify(x)) as T;
 const find = (b: TurnBattle, id: string): TurnActor | undefined => b.actors.find(a => a.id === id);
 const aliveSide = (b: TurnBattle, side: Side): TurnActor[] => b.actors.filter(a => living(a) && a.side === side);
 const has = hasStatus;
-const zero = () => ({ damage: 0, healing: 0, shielding: 0 });
-interface Plan { from: number; id: number; actorId: string; skillId: string }
+const zero = () => ({ damage: 0, healing: 0, shielding: 0, taken: 0 });
+interface Plan { from: number; id: number; actorId: string; skillId: string; procs: string[] }
 function plan(b: TurnBattle, actorId = '', skillId = ''): Plan {
-  return { from: b.events.length, id: (b.events.at(-1)?.actionId ?? -1) + 1, actorId, skillId };
+  return { from: b.events.length, id: (b.events.at(-1)?.actionId ?? -1) + 1, actorId, skillId, procs: [] };
 }
 function emit(b: TurnBattle, p: Plan, type: TurnEventKind, beat: number,
   data: Partial<Omit<TurnEvent, 'version' | 'seq' | 'turn' | 'actionId' | 'type' | 'beat'>> = {}): void {
@@ -39,7 +42,7 @@ function random(b: TurnBattle): number {
 function makeActor(role: Role, slot: number, id: string, b: TurnBattle): TurnActor {
   const side: Side = HEROES.includes(role as Hero) ? 'party' : 'enemy', base = C.stats[role], preset = C.presets[b.preset];
   const hp = Math.round(base.hp * (side === 'party' ? preset.hp : 1));
-  return { id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
+  return { equipment: {}, setBonuses: [], id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
     : ['ranger', 'healer', 'thread'].includes(role) ? 'rear' : 'front',
     hp, maxHp: hp, shield: 0, shieldRounds: 0, shieldAppliedRound: 0, charge: side === 'party' ? C.charge.initial : 0,
     attack: Math.round(base.attack * (side === 'party' ? preset.attack : 1)), defense: base.defense,
@@ -118,11 +121,12 @@ export function createTurnBattle(options: TurnOptions = {}): TurnBattle {
   const encounter = options.encounter ?? 'campaign';
   const initialWave = Number.isFinite(options.wave) ? Math.floor(options.wave!) : 0;
   const b: TurnBattle = { version: 3, seed, rng: seed || 1, encounter, preset: options.preset ?? 'hearthkeepers',
-    actors: [], queue: [], round: 1, acted: [], turn: 0, activeId: null, phase: 'ready', selected: null,
+    run: createSquadRun(options), actors: [], queue: [], round: 1, acted: [], turn: 0, activeId: null, phase: 'ready', selected: null,
     events: [], history: [], intents: {}, wave: encounter === 'boss' ? C.waves.length : Math.max(0, Math.min(C.waves.length - 1, initialWave)),
     bossPhase: 0, bossRounds: 0, bossCountdown: 1, settledWaves: [], fishFound: 0, deaths: [], result: null, totals: {} };
   b.actors = HEROES.map((role, slot) => makeActor(role, slot, role, b));
   for (const a of b.actors) b.totals[a.id] = zero();
+  outfitParty(b);
   const p = plan(b); spawnWave(b, p); closePlan(b, p);
   return b;
 }
@@ -134,7 +138,7 @@ function charge(b: TurnBattle, p: Plan, a: TurnActor, amount: number, note: stri
 function shield(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number, skillId = p.skillId): void {
   if (!living(target)) return;
   const before = target.shield;
-  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === 'party' ? C.presets[b.preset].shield : 1)));
+  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === 'party' ? C.presets[b.preset].shield * (1 + gearBonuses(source.equipment).stats.shield) : 1)));
   const added = target.shield - before;
   if (added <= 0) return;
   target.shieldRounds = C.shieldRounds; target.shieldAppliedRound = b.round;
@@ -150,13 +154,13 @@ function passive(b: TurnBattle, p: Plan, source: TurnActor, skillId: string, tar
 function heal(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number): void {
   if (!living(target)) return;
   const injured = target.hp / target.maxHp < C.passive.injuredFraction;
-  const added = Math.min(target.maxHp - target.hp, Math.round(raw * (source.side === 'party' ? C.presets[b.preset].healing : 1)));
+  const added = Math.min(target.maxHp - target.hp, Math.round(raw * (source.side === 'party' ? C.presets[b.preset].healing * (1 + gearBonuses(source.equipment).stats.healing) : 1)));
   target.hp += added; (b.totals[source.id] ??= zero()).healing += added;
   emit(b, p, 'heal', 2, { actorId: source.id, targetIds: [target.id], amount: added });
   if (source.role === 'alchemist' && injured && added > 0 && passive(b, p, source, 'lastSip', [target.id]))
     shield(b, p, source, target, C.passive.alchemistShield, 'lastSip');
-  if (source.role === 'alchemist' && b.preset === 'hearthkeepers' && p.skillId === 'milkFlask' && added > 0)
-    shield(b, p, source, target, C.gear.afterhealShield, 'lastLight');
+  if (source.role === 'alchemist' && hasProperty(source, 'afterheal') && p.skillId === 'milkFlask' && added > 0)
+    shield(b, p, source, target, C.equipment.afterheal, 'lastLight');
 }
 function expireStatus(b: TurnBattle, p: Plan, target: TurnActor, kind: StatusKind, note: string): void {
   for (const s of target.statuses.filter(s => s.kind === kind)) {
@@ -239,6 +243,7 @@ function damage(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, ra
     (has(target, 'exposed') ? C.boss.exposedMultiplier : 1) * C.defenseScale / (C.defenseScale + Math.max(0, target.defense)) * (1 - guard)));
   const absorbed = Math.min(target.shield, amount), lost = Math.min(target.hp, amount - absorbed);
   target.shield -= absorbed; target.hp -= lost;
+  (b.totals[target.id] ??= zero()).taken += lost + absorbed;
   (b.totals[source.id] ??= zero()).damage += lost + absorbed;
   emit(b, p, 'damage', 2, { actorId: source.id, skillId, targetIds: [target.id], amount: lost + absorbed, critical,
     note: absorbed ? `${absorbed} absorbed by shield; ${lost} HP lost.` : `${lost} HP lost.` });
@@ -246,9 +251,13 @@ function damage(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, ra
   if (source.role === 'witch' && has(target, 'burn') && passive(b, p, source, 'warmWick', [target.id]))
     charge(b, p, source, C.passive.witchCharge, 'Warm Wick.');
   if (!living(target)) death(b, p, source, target);
+  if (absorbed > 0 && hasProperty(target, 'thorns') && !p.procs.includes(`thorns:${target.id}`) && skillId !== 'thorns') {
+    p.procs.push(`thorns:${target.id}`); damage(b, p, target, source, C.equipment.thorns, false, 'thorns');
+    emit(b, p, 'gear_proc', 2, { actorId: target.id, skillId: 'relicProc', targetIds: [source.id], note: 'Quilted Return · 10 reflected damage before defense.' });
+  }
   const boss = b.actors.find(a => a.role === 'yarn' && living(a));
   if (boss) {
-    if (target === boss) stagger(b, p, source, boss, skillId === 'shieldBash' ? C.boss.bashBreak : C.boss.ordinaryBreak);
+    if (target === boss) stagger(b, p, source, boss, skillId === 'shieldBash' ? C.boss.bashBreak + (hasProperty(source, 'break') ? C.equipment.extraBreak : 0) : C.boss.ordinaryBreak);
     else if (source === boss && guard > 0) stagger(b, p, target, boss, C.boss.guardedBreak);
   }
 }
@@ -292,7 +301,7 @@ function finish(b: TurnBattle, p: Plan, winner: Side, cause: string): void {
   const lost = b.deaths.filter(id => HEROES.includes(id as Hero));
   b.result = { winner, turns: b.turn, rounds: b.round, deaths: lost, firstDeath: (lost[0] as Hero | undefined) ?? null,
     wavesCleared: b.settledWaves.filter(w => w < C.waves.length).length, fishFound: b.fishFound, cause };
-  b.phase = 'finished'; b.queue = [];
+  b.phase = 'finished'; b.queue = []; b.run.stage = 'complete';
   emit(b, p, winner === 'party' ? 'victory' : 'defeat', 4, { actors: b.actors, result: b.result, amount: b.fishFound, note: cause });
 }
 function settle(b: TurnBattle, p: Plan): void {
@@ -306,7 +315,15 @@ function settle(b: TurnBattle, p: Plan): void {
       emit(b, p, 'wave_clear', 4, { wave: b.wave, amount: fish, note: 'Local cosmetic settlement; no save or server grant.' });
     }
     const last = b.encounter === 'campaign' ? C.waves.length : C.waves.length - 1;
-    if (['campaign', 'patrol'].includes(b.encounter) && b.wave < last) { finishRound(b, p); b.wave++; b.round++; spawnWave(b, p); }
+    if (['campaign', 'patrol'].includes(b.encounter) && b.wave < last) {
+      if (b.run.gearMode !== 'off') {
+        b.run.nextWave = b.wave + 1; b.run.stage = 'loot'; b.run.loot = offerLoot(b);
+        emit(b, p, 'loot', 4, { note: 'Choose one of three local items. Nothing is saved.' });
+        if (b.run.interactive) return;
+        takeLoot(b, b.run.loot[0]!);
+      }
+      finishRound(b, p); b.wave++; b.round++; b.run.stage = 'battle'; b.run.nextWave = null; spawnWave(b, p);
+    }
     else { finish(b, p, 'party', 'The cafe is safe for tonight.'); return; }
   }
   if (b.turn >= C.maxTurns) finish(b, p, 'enemy', 'The turn limit was reached.');
@@ -329,7 +346,7 @@ function finishRound(b: TurnBattle, p: Plan): void {
 }
 /** Open one slot, then wait indefinitely. Forced lost turns resolve without an invented choice. */
 export function startTurn(b: TurnBattle): TurnActor | null {
-  if (b.result) return null;
+  if (b.result || b.run.stage !== 'battle') return null;
   if (b.phase !== 'ready') return b.activeId ? find(b, b.activeId) ?? null : null;
   b.queue = b.queue.filter(s => find(b, s.actorId)?.hp! > 0);
   if (!b.queue.length) {
@@ -362,12 +379,13 @@ export function chooseAction(b: TurnBattle, choice: TurnChoice): boolean {
   if (!getLegalTargets(b, choice.skillId).some(t => t.legal && t.actorId === choice.targetId)) return false;
   const intent = b.intents[choice.actorId];
   if (intent && (choice.skillId !== intent.skillId || choice.targetId !== intent.targetId)) return false;
-  b.selected = { ...choice }; b.history.push({ ...choice }); b.phase = 'chosen';
+  b.selected = { ...choice }; b.history.push({ ...choice }); b.run.commands.push({ kind: 'action', choice: { ...choice } }); b.phase = 'chosen';
   return true;
 }
 export function resolveAction(b: TurnBattle): TurnEvent[] {
   if (b.phase !== 'chosen' || !b.selected || b.result) return [];
-  const choice = b.selected, source = find(b, choice.actorId), skill = TURN_SKILLS[choice.skillId];
+  const choice = b.selected, source = find(b, choice.actorId), definition = TURN_SKILLS[choice.skillId];
+  const skill = source && definition ? effectiveSkill(source, definition) : undefined;
   b.phase = 'resolved';
   const p = plan(b, choice.actorId, choice.skillId);
   const target = find(b, choice.targetId);
@@ -378,11 +396,17 @@ export function resolveAction(b: TurnBattle): TurnEvent[] {
     emit(b, p, 'fizzle', 2, { note: 'Locked source or target is no longer living.' });
     return closePlan(b, p);
   }
+  if (skill.consumable) b.run.consumables[skill.id as ConsumableId]--;
   source.cooldowns[skill.id] = skill.cooldown; source.cooldownApplied[skill.id] = b.round;
   charge(b, p, source, -skill.chargeCost, 'Ultimate cost.');
-  charge(b, p, source, C.charge.action, 'Charge from taking an action.');
+  charge(b, p, source, C.charge.action + (hasProperty(source, 'charge') ? C.equipment.actionCharge : 0), 'Charge from taking an action.');
   for (const t of targets) {
+    if (!living(source)) break;
     if (skill.cleanse) cleanse(b, p, t);
+    if (skill.chargeGrant) charge(b, p, t, skill.chargeGrant, 'Starlight Treat.');
+    if (skill.orderSteps && t.quickenedRound !== b.round && moveInRound(b, t.id, -skill.orderSteps)) {
+      t.quickenedRound = b.round; emit(b, p, 'delay', 2, { targetIds: [t.id], amount: -skill.orderSteps, note: 'Quicken: earlier this round.' });
+    }
     for (let hit = 0; hit < (skill.hits ?? 1); hit++) if (skill.power > 0) damage(b, p, source, t, source.attack * skill.power);
     if (skill.heal) heal(b, p, source, t, skill.heal);
     if (skill.shield) shield(b, p, source, t, skill.shield);
@@ -392,16 +416,23 @@ export function resolveAction(b: TurnBattle): TurnEvent[] {
       const slots = t.role === 'yarn' ? C.control.bossDelay : skill.delay;
       if (moveInRound(b, t.id, slots)) emit(b, p, 'delay', 2, { targetIds: [t.id], amount: slots, note: 'Pushed back in this round.' });
     }
+    const burnChance = Math.min(C.equipment.maxStatusChance, gearBonuses(source.equipment).stats.statusChance);
+    if (skill.power > 0 && living(t) && burnChance > 0 && random(b) < burnChance) status(b, p, source, t, 'burn', 1);
     if (skill.id === 'bindThread') spawnThread(b, p, source, t);
   }
   if (skill.id === 'rally') {
     for (const enemy of b.actors.filter(a => living(a) && a.side !== source.side)) status(b, p, source, enemy, 'taunt', skill.duration!);
     refreshIntents(b, p, 2);
   }
-  if (skill.id === 'witchBasic' && b.preset === 'lanternbreakers') {
+  if (skill.id === 'witchBasic' && hasProperty(source, 'chain')) {
     const next = b.actors.find(a => living(a) && a.side !== source.side && a.row === target.row && a.id !== target.id);
-    if (next) damage(b, p, source, next, source.attack * C.gear.pierceMultiplier, true, 'needleLantern');
+    if (next) damage(b, p, source, next, source.attack * C.equipment.chainPower, true, 'needleLantern');
   }
+  if (skill.shield && hasProperty(source, 'neighborShield')) {
+    const ally = getTimeline(b).map(s => find(b, s.actorId)).find(a => a && a.side === source.side && a.id !== source.id && living(a));
+    if (ally) { shield(b, p, source, ally, C.equipment.neighborShield, 'relicProc'); emit(b, p, 'gear_proc', 2, { skillId: 'relicProc', targetIds: [ally.id], note: 'Second Chair · neighboring shield.' }); }
+  }
+  if (skill.power > 0 && hasProperty(source, 'vampiric')) heal(b, p, source, source, C.equipment.vampiric);
   bossRules(b, p); refreshIntents(b, p);
   return closePlan(b, p);
 }
@@ -412,6 +443,7 @@ export function endTurn(b: TurnBattle): void {
   if (has(a, 'stun')) expireStatus(b, p, a, 'stun', 'Interrupted action consumed.');
   b.acted.push(a.id);
   a.turnsTaken++;
+  if (hasProperty(a, 'firstStep')) { applyEquipment(a, b.preset); a.initiative = Math.min(C.initiative.maxRank, a.initiative + 1); }
   b.activeId = null; b.phase = 'ready'; b.selected = null;
   if (a.role === 'yarn') { b.bossRounds++; bossRules(b, p, true); }
   if (a.side === 'enemy' && living(a)) commitIntent(b, p, a);
@@ -432,6 +464,56 @@ export function advanceActor(b: TurnBattle, id: string, slots: number): void {
   const a = find(b, id); if (!a || a.quickenedRound === b.round || slots <= 0 || !Number.isFinite(slots)) return;
   if (!b.queue.some(s => s.actorId === id) || b.queue[0]?.actorId === id) return;
   moveActor(b, id, -slots); a.quickenedRound = b.round;
+}
+/** Preparation and between-wave choices remain synchronous local rules. */
+export function equipGear(b: TurnBattle, hero: Hero, slot: GearSlot, itemId: string | null): boolean {
+  if (!changeEquipment(b, hero, slot, itemId)) return false;
+  if (b.turn === 0) b.queue = orderForRound(b);
+  const p = plan(b, hero); emit(b, p, 'snapshot', 4, { actors: b.actors }); closePlan(b, p); return true;
+}
+export function autoEquipGear(b: TurnBattle): boolean {
+  if (!['loadout','rest'].includes(b.run.stage) || b.result) return false;
+  const best = bestLoadouts(b.run.inventory);
+  for (const hero of HEROES) for (const slot of GEAR_SLOTS) equipGear(b, hero, slot, null);
+  for (const hero of HEROES) for (const slot of GEAR_SLOTS) if (best[hero][slot]) equipGear(b, hero, slot, best[hero][slot]!);
+  return true;
+}
+export function resetGear(b: TurnBattle): boolean {
+  if (!['loadout','rest'].includes(b.run.stage) || b.result) return false;
+  for (const hero of HEROES) for (const slot of GEAR_SLOTS) equipGear(b, hero, slot, null);
+  for (const hero of HEROES) for (const [slot, id] of Object.entries(initialLoadout(hero, b.run.gearMode))) equipGear(b, hero, slot as GearSlot, id!);
+  return true;
+}
+export function beginRun(b: TurnBattle): boolean {
+  if (b.run.stage !== 'loadout' || b.result) return false;
+  b.run.stage = 'battle'; b.run.commands.push({ kind: 'begin' }); b.queue = orderForRound(b);
+  const p = plan(b); refreshIntents(b, p); closePlan(b, p); return true;
+}
+export function chooseLoot(b: TurnBattle, itemId: string): boolean {
+  if (!takeLoot(b, itemId)) return false;
+  const p = plan(b); emit(b, p, 'rest', 4, { note: 'Cafe rest · adjust equipment and check supplies.' }); closePlan(b, p); return true;
+}
+export function continueRun(b: TurnBattle): boolean {
+  if (b.run.stage !== 'rest' || b.run.nextWave === null || b.result) return false;
+  const p = plan(b); finishRound(b, p); b.round++; b.wave = b.run.nextWave;
+  b.run.nextWave = null; b.run.stage = 'battle'; b.run.commands.push({ kind: 'continue' });
+  spawnWave(b, p); closePlan(b, p); return true;
+}
+export function replayRun(options: TurnOptions, commands: readonly RunCommand[]): TurnBattle {
+  const b = createTurnBattle({ ...options, interactive: true });
+  for (const command of commands) {
+    let accepted = false;
+    if (command.kind === 'begin') accepted = beginRun(b);
+    else if (command.kind === 'equip') accepted = equipGear(b, command.hero, command.slot, command.itemId);
+    else if (command.kind === 'loot') accepted = chooseLoot(b, command.itemId);
+    else if (command.kind === 'continue') accepted = continueRun(b);
+    else {
+      while (!b.result && b.run.stage === 'battle') { startTurn(b); if (b.phase !== 'resolved') break; endTurn(b); }
+      accepted = chooseAction(b, command.choice); if (accepted) { resolveAction(b); endTurn(b); }
+    }
+    if (!accepted) throw Error(`Invalid run replay command: ${command.kind}`);
+  }
+  return b;
 }
 /** Replay accepted choices, including enemies. Never invent a policy decision. */
 export function replayTurns(options: TurnOptions, choices: readonly TurnChoice[]): TurnBattle {

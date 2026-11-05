@@ -1,13 +1,13 @@
 /** Dev/offline inspection uses the real rules to produce resolved actions. */
 import { createTurnBattle, startTurn, chooseAction, resolveAction, getLegalTargets, endTurn } from '@taskbar-hero/game-rules/src/squad/turn/engine';
-import { TURN_KITS, TURN_SKILLS } from '@taskbar-hero/game-rules/src/squad/turn/config';
+import { CONSUMABLE_SKILLS, TURN_KITS, TURN_SKILLS } from '@taskbar-hero/game-rules/src/squad/turn/config';
 import type { Hero, TurnEvent, TurnBattle } from '@taskbar-hero/game-rules/src/squad/turn/types';
 
 export interface EffectFixture { battle:TurnBattle; initial:TurnEvent[]; events:TurnEvent[]; requested:string }
 export function createEffectFixture(requested:string):EffectFixture {
-  const special:Record<string,string>={steadfast:'shieldBash',warmWick:'emberOrb',lastSip:'milkFlask',lastLight:'milkFlask',needleLantern:'witchBasic',status_apply:'threadSnare',status_expire:'rally',burn:'guardAttack',death:'guardianBasic',wave_clear:'guardianBasic',victory:'guardianBasic',defeat:'guardAttack'};
+  const special:Record<string,string>={relicProc:'rally',thorns:'guardAttack',steadfast:'shieldBash',warmWick:'emberOrb',lastSip:'milkFlask',lastLight:'milkFlask',needleLantern:'witchBasic',status_apply:'threadSnare',status_expire:'rally',burn:'guardAttack',death:'guardianBasic',wave_clear:'guardianBasic',victory:'guardianBasic',defeat:'guardAttack'};
   const skillId=special[requested]??requested;
-  const hero=Object.entries(TURN_KITS).find(([,kit])=>kit.includes(skillId))?.[0] as Hero|undefined;
+  const hero=(CONSUMABLE_SKILLS[requested]?'guardian':undefined)??Object.entries(TURN_KITS).find(([,kit])=>kit.includes(skillId))?.[0] as Hero|undefined;
   const boss=['yarnAttack','bindThread','crossSweep'].includes(skillId);
   const b=createTurnBattle({seed:11,encounter:boss?'boss':['victory','wave_clear','death'].includes(requested)?'dummy':'group',preset:requested==='needleLantern'?'lanternbreakers':'hearthkeepers'});
   let actor=b.actors.find(a=>a.id===hero)??b.actors.find(a=>`${a.role}Attack`===skillId)??b.actors.find(a=>a.role==='yarn');
@@ -19,6 +19,10 @@ export function createEffectFixture(requested:string):EffectFixture {
   if(!actor&&skillId==='dummyAttack'){const a=createTurnBattle({encounter:'dummy'}).actors.find(a=>a.role==='dummy')!;b.actors.push(a);b.queue.push({actorId:a.id,round:b.round});actor=a;}
   if(!actor)throw Error(`No fixture actor for ${requested}`);
   b.actors.forEach(a=>{if(a.side==='party'){a.charge=100;a.hp=Math.round(a.maxHp*.55);}if(a.side==='enemy')a.hp=a.maxHp=Math.max(a.maxHp,600);});
+  if(requested==='lastLight')b.actors.find(a=>a.role==='alchemist')!.equipment.weapon='a-kettle';
+  if(requested==='needleLantern')b.actors.find(a=>a.role==='witch')!.equipment.weapon='w-needle';
+  if(requested==='relicProc')b.actors.find(a=>a.role==='guardian')!.equipment.weapon='g-bell';
+  if(requested==='thorns'){const g=b.actors.find(a=>a.role==='guardian')!;g.equipment.outfit='g-quilt';g.shield=200}
   if(['death','wave_clear','victory'].includes(requested))b.actors.filter(a=>a.side==='enemy').forEach(a=>a.hp=1);
   if(requested==='defeat')b.actors.filter(a=>a.side==='party').forEach((a,i)=>a.hp=i?0:1);
   if(requested==='warmWick')b.actors.filter(a=>a.side==='enemy').forEach(a=>a.statuses.push({kind:'burn',source:'witch',rounds:2,strength:1,appliedRound:0}));
