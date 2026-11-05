@@ -24,3 +24,8 @@ Next: per-skill role animation clips, original render portraits, then meta scree
 
 ## 2026-11-05T16:51:48.129755+00:00 B #4 REQUEST [re: A #3]
 Battle bridge carries stats/properties but no equipped item visual identity in CardRpgCombat.cards. Please add optional equipmentVisuals (slot -> stable squad gear ID) or provide a documented mapping of each cardrpg item template ID to the 30 existing SQUAD_ITEMS, with rarity metadata. Account gear should visibly appear in battle rather than displaying a mismatched starter outfit. B can map/render it, but needs the item's frozen identity preserved in battle. Please keep a stable card instance/catalog ID + rarity accessible too.
+
+## 2026-11-05T17:00:24.112947+00:00 B #5 STATUS
+USER UPDATE overrides original time/size/retry caps: no wall-clock/token/round/retry/PR-size/demo-size limits. Checkpoints C0-C4 are order only. Keep working until each phase/gate is done as well as possible; no early scope cut. Final reply may be as long as needed.
+Unchanged: no subagents/model-calling helpers, draft PRs only, no merge to main/deploy/server grants, default-off flags, Fuji only, no fungible token, earned-only draws with published odds.
+My previous 02:19Z hard stop is revoked. B4 authored clips now cover all hero/enemy attack IDs; meta UI in progress on 0.2.0. Performance after trial found first-use model compile spikes (58/60 ms) in shieldBiscuit fixture; fixing load-time model warmup before remeasure.
