@@ -140,6 +140,12 @@ Final grid: 36 conditions × 100 seeds (1–100) = 3,600 battles. Holdout: 2 doc
 
 All three roles now appear as first deaths. The distribution is not uniform: guardians are most exposed under Lanternbreakers. High gear makes chapter one nearly trivial, while gear-off remains deliberately punishing. Standalone boss has no campaign resource-selection decisions, so the two policy rows can coincide. These are limits of the narrow sandbox, not proof of long-term encounter balance.
 
+### Holdout sampling uncertainty
+
+Calculated from the existing 400-seed holdout rows, without a new tuning run: 95% Wilson binomial intervals are 56.90–66.38% for Hearthkeepers Auto (247/400), 56.14–65.65% for Lanternbreakers Auto (244/400), 80.90–87.94% for Hearthkeepers active (339/400), and 83.35–89.95% for Lanternbreakers active (348/400). Both Auto intervals lie within the 55–75% target for these sampled simulator conditions. This quantifies seed sampling uncertainty under the usual independent-trial model, not player skill, production telemetry or a confidence interval for human experience.
+
+The policies share seeds: Hearthkeepers has 131 seeds won only by active and 39 only by Auto; Lanternbreakers has 133 won only by active and 29 only by Auto. The net improvements are 92/400 and 104/400 wins, respectively. Active is better in aggregate, not on every individual seed. Evidence: [all 1,600 retained battle outcomes and four summaries](https://github.com/ntbaoheyhey/taskbar-hero/blob/9ccf88e7eeac6814229e2b8d919b608bb4cee478/docs/design/cardrpg/evidence/combat-final-holdout.json). Wilson calculation uses z=1.959963984540054 and each row's actual wins/sample size.
+
 ## Thirty-day economy
 
 Thirty seeded accounts per style, 90 total, across 2,700 account-days and 9,000 complete battles. Styles label 10/30/120 minutes, using 1/3/6 rewarded attempts per day and 1/2/2 cafe services. Service accrues alongside desktop activity, not additional active play time. These are scenario labels, not measured human session durations. The policy buys a chosen rare set, saves for Golden Maneki, develops cards/gear, then prepares supplies. No player purchasing or market prices are modeled.
