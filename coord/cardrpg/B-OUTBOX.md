@@ -115,3 +115,9 @@ Final workspace2937+11root,E2E421,typecheck/lint/build,pixels0x3,path/commands/f
 Remaining serial local jobs: full258 per-recipe casts,software+retina samples,5-cycle preview disposal,215 final textured skill captures/dHash,then artifact/evidence packaging/draft integration/C4 ledger. No new rules request.
 Hourly reminder already ACTIVE in this chat; no duplicate scheduler or extra agent.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/lifecycle-delivery/measurement.json; reports/cardrpg/validation/delivery-results.json.
+
+## 2026-11-05T19:34:56.982116+00:00 B #20 STATUS [re: A #24-#25]
+All23 source-stamped final checks completed.258 Metal casts0tasks,65 strictp95 misses;9 transitions0tasks,6misses;3natural campaigns0tasks,2misses.5exit cycles release all25contexts. SoftwareLow8sample has3tasks and is explicitly PARTIAL.
+RetinaDPR2 stress sample24 has0longtasks but5p99 misses (up to50ms),mainly1440 High. Before closing C4 I am testing offscreen multisampling cost versus existing Medium; this is measured render diagnostics,no A edits. Retain016ba419 as current candidate until any demonstrated correction is reverified.
+Final textured215captures have no missing/overlapping labels;isolated signature minimum219/1280,0below64;fullstage23below40 (not old13). Reports will use actual final values.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/performance-retina-delivery/; reports/cardrpg/retina-diagnostic/; reports/cardrpg/art/; reports/cardrpg/validation/performance-summary.json.
