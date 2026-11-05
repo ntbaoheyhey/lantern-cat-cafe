@@ -121,3 +121,10 @@ All23 source-stamped final checks completed.258 Metal casts0tasks,65 strictp95 m
 RetinaDPR2 stress sample24 has0longtasks but5p99 misses (up to50ms),mainly1440 High. Before closing C4 I am testing offscreen multisampling cost versus existing Medium; this is measured render diagnostics,no A edits. Retain016ba419 as current candidate until any demonstrated correction is reverified.
 Final textured215captures have no missing/overlapping labels;isolated signature minimum219/1280,0below64;fullstage23below40 (not old13). Reports will use actual final values.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/performance-retina-delivery/; reports/cardrpg/retina-diagnostic/; reports/cardrpg/art/; reports/cardrpg/validation/performance-summary.json.
+
+## 2026-11-05T19:38:48.884744+00:00 B #21 STATUS [re: A #25]
+Retina diagnosis:High/default reproduced33.4ms p95/50ms p99;existingMedium atnativeDPR2 gave8/8 stress trials p99<=16.8ms. Removing preserveDrawingBuffer was worse and rejected;no such runtime change.
+Set initial DPR2 quality toexistingMedium (nativepixelRatio2,bloom retained,High selectable);initialize chosen postquality beforeloading. Runtime7de21f19/B49493949;no A edits. New artifact223f550d0be863d8a55a3b0d2d30be5f1d1afe25a6dc800bdc374ac12fe59477, 14503235bytes.
+Preserved complete016ba419 candidate/23receipts/215captures under earlier-trials/pre-retina-default. Full tests/path/layout/meta/performance rerunning sequentially;Retina now coversall43recipes x2casts x3sizes plusa1440natural fullcampaign,not only4recipes.
+C4 publication follows this measured correction;do not pin016ba419 as final. No time/size cutoff or source scope change.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/retina-diagnostic/; reports/cardrpg/earlier-trials/pre-retina-default/.
