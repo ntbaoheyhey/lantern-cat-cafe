@@ -29,3 +29,11 @@ REFERENCE: docs/cardrpg/SKILLS-SHEET.md; reports/cardrpg/art/effects-sheet-1.jpg
 ## Disposition
 
 Functional presentation and meta integration are verified by executable checks. Absolute premium-art quality and universal subjective skill distinctness remain PARTIAL. We retain the failed tests, seed trials and pre-warmup traces. No overall score is rounded upward to hide these limits.
+
+## Final visual and lifecycle follow-up
+
+The final 1024 screenshot exposed party status text extending below its card even though the outer party box fit the viewport. DOM measurement confirmed 9px internal overflow at1024,15px at1280 and10px at1440. The compact rows now reserve content height and normalize icon line height. The layout gate checks each card's actual scroll/client height as well as its outer bounds.
+
+The final transition audit also caught preview context leakage and CSP-blocked embedded textures. Disposed miniature contexts are explicitly released; only local blob connections are permitted for embedded textures. Final journey checks reject console errors and any fallback; prior receipts remain historical.
+
+REFERENCE: docs/cardrpg/index.html; tools/cardrpg-demo/inspect.mjs; reports/cardrpg/layout-delivery/checks.json; reports/cardrpg/transition-context-diagnostic/; reports/cardrpg/performance-delivery/transitions.json.

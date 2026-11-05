@@ -44,10 +44,10 @@
 .t3-shell .t3-skill-glyph {left:7px; font-size:20px;}
 .t3-shell .t3-skills b {font-size:10px; white-space:normal; line-height:1.2;}
 .t3-shell .t3-skills small {font-size:9px; margin-top:3px;}
-.t3-shell .t3-party {flex:none; height:73px; gap:6px; margin:0;}
+.t3-shell .t3-party {flex:none; height:80px; gap:6px; margin:0;}
 .t3-shell .t3-party .sq-card {padding:6px 8px; overflow:hidden;}
 .t3-shell .t3-party-head {gap:6px; margin-bottom:3px;}
-.t3-shell .t3-party-head>span {font-size:19px;}
+.t3-shell .t3-party-head>span {font-size:19px; line-height:1;}
 .t3-shell .t3-party-head>b {font-size:11px;}
 .t3-shell .t3-party-head>b small {display:none;}
 .t3-shell .t3-party-head>strong {font-size:10px;}
@@ -91,7 +91,7 @@
 @media (min-height:800px) {
  .t3-shell .sq-topbar {height:55px;}
  .t3-shell .t3-content {gap:10px; padding:12px 18px;}
- .t3-shell .t3-party {height:87px;}
+ .t3-shell .t3-party {height:90px;}
  .t3-shell .t3-party .sq-card {padding:9px 12px;}
  .t3-shell .t3-party-head {margin-bottom:6px;}
  .t3-shell .t3-skills {height:70px;}
@@ -134,7 +134,7 @@
  .t3-shell .t3-round li small {display:none;}
  .t3-shell .t3-round li {padding:3px 5px; font-size:9px;}
  .t3-shell .t3-round.is-next li {padding:2px 5px; font-size:8px;}
- .t3-shell .t3-party {height:65px;}
+ .t3-shell .t3-party {height:75px;}
  .t3-shell .t3-skills {height:56px;}
  .t3-shell .t3-side .sq-goal {display:none;}
  .t3-shell .sq-hud {display:none;}
