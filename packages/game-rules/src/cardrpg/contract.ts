@@ -1,5 +1,5 @@
 /** Renderer-independent, local-only contract. All amounts are integer points or basis points. */
-export const CONTRACT_VERSION = '0.1.0' as const;
+export const CONTRACT_VERSION = '0.2.0' as const;
 export const RARITY_ORDER = ['common', 'rare', 'epic', 'legendary'] as const;
 export const EQUIPMENT_SLOTS = ['weapon', 'outfit', 'charm', 'relic'] as const;
 export const CURRENCY_IDS = ['fish', 'threads', 'stamps', 'essence'] as const;
@@ -40,12 +40,12 @@ export interface AccountState { version: typeof CONTRACT_VERSION; seed: number; 
 export type Event = { type: 'pull.revealed'; result: GachaResult } | { type: 'item.enhanced'; instanceId: string; level: number } | { type: 'item.equipped'; cardId: string; instanceId: string | null; slot: Slot } | { type: 'set.activated'; cardId: string; setId: string; pieces: number } | { type: 'levelUp'; cardId?: string; level: number } | { type: 'reward.claimed'; id: string; reward: Reward } | { type: 'day.advanced'; day: number } | { type: 'item.forged'; id: string } | { type: 'item.salvaged'; id: string } | { type: 'relic.designClaimed'; scarcityId: string; notice: typeof CHAIN_NOTICE };
 export type ErrorCode = 'UNKNOWN_ID' | 'INVALID_AMOUNT' | 'INSUFFICIENT_FUNDS' | 'LOCKED' | 'EQUIPPED' | 'WRONG_SLOT' | 'WRONG_ROLE' | 'MAX_LEVEL' | 'NOT_READY' | 'ALREADY_CLAIMED' | 'DAILY_CAP' | 'SUPPLY_CAP' | 'INVALID_TEAM' | 'BATTLE_PENDING';
 export interface RuleError { code: ErrorCode; message: string }
-export type Result<T = undefined> = { ok: true; state: AccountState; events: Event[]; value: T } | { ok: false; state: AccountState; events: []; error: RuleError };
+export type Result<T = void> = { ok: true; state: AccountState; events: Event[]; value: T } | { ok: false; state: AccountState; events: []; error: RuleError };
 export type Preview<T> = { ok: true; value: T } | { ok: false; error: RuleError };
 export interface EnhanceResult { instanceId: string; before: number; after: number; cost: Cost }
 export interface SalvageResult { instanceId: string; reward: Reward }
 export interface EquipPreview { before: Stats; after: Stats; delta: Stats; activatedSets: SetBonus[] }
-export type Command = { type: 'pull'; bannerId: string; seed: number; count?: number } | { type: 'equip'; cardId: string; instanceId: string } | { type: 'unequip'; cardId: string; slot: Slot } | { type: 'enhance'; instanceId: string } | { type: 'salvage'; instanceId: string } | { type: 'forge'; recipeId: string } | { type: 'claimQuest'; questId: string } | { type: 'lock'; instanceId: string; locked: boolean; favourite?: boolean } | { type: 'level'; cardId: string } | { type: 'ascend'; cardId: string } | { type: 'reforge'; instanceId: string; affixIndex: number; stat: Stat } | { type: 'selectTeam'; cardIds: string[] } | { type: 'advanceLocalDay' } | { type: 'service'; minutes: number };
+export type Command = { type: 'pull'; bannerId: string; seed: number; count?: number } | { type: 'equip'; cardId: string; instanceId: string } | { type: 'unequip'; cardId: string; slot: Slot } | { type: 'enhance'; instanceId: string } | { type: 'salvage'; instanceId: string } | { type: 'forge'; recipeId: string } | { type: 'claimQuest'; questId: string } | { type: 'lock'; instanceId: string; locked: boolean; favourite?: boolean } | { type: 'level'; cardId: string } | { type: 'ascend'; cardId: string } | { type: 'reforge'; instanceId: string; affixIndex: number; stat: Stat } | { type: 'selectTeam'; cardIds: string[] } | { type: 'advanceLocalDay' } | { type: 'service'; minutes: number } | { type: 'exchangeShards'; cardId: string; batches: number };
 /** Implemented by index.ts; signatures describe the stable UI boundary, not ambient globals. */
 export interface RulesApi {
   createStarterAccount(seed?: number): AccountState;

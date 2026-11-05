@@ -16,7 +16,7 @@ for (const [id, set] of [['mochi', 'hearthloom'], ['soot', 'moonwick'], ['clover
 }
 mid.pity = { 'cats-standard': { sinceLegendary: 59, featuredGuaranteed: false, totalPulls: 59 }, 'cats-featured': { sinceLegendary: 44, featuredGuaranteed: true, totalPulls: 104 } };
 mid.quests['first-boss'].progress = 1;
-const reward = { id: 'run-1', runId: 1, chapterId: 'cafe-patrol', won: true, wavesCleared: 4, rounds: 35, reward: { currencies: { fish: 90, threads: 12, stamps: 40 }, xp: 60 }, firstClear: true, eligibleRelicDesign: true };
+const reward = { id: 'run-1', runId: 1, chapterId: 'cafe-patrol', won: true, wavesCleared: 3, rounds: 35, reward: { currencies: { fish: 90, threads: 12, stamps: 40 }, xp: 60 }, firstClear: true, eligibleRelicDesign: true };
 const fixtures = { 'starter-account': starter, 'midgame-account': mid, 'banner-standard': R.BANNERS[0], 'banner-featured': R.BANNERS[1], 'pity-near-hard': { ...starter, pity: mid.pity }, 'battle-reward': reward, 'team-equipped': { team: starter.teams[0], loadouts: starter.loadouts, items: starter.inventory.items } };
 // Pretty top-level keys, one generated value per line: review schemas in contract.ts.
 for (const [name, value] of Object.entries(fixtures)) writeFileSync(resolve(dir, `${name}.json`), '{\n' + Object.entries(value).map(([k,v]) => `  ${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(',\n') + '\n}\n');

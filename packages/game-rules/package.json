@@ -19,6 +19,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./cardrpg": "./src/cardrpg/index.ts",
-    "./*": "./src/*"
+    "./src/*": "./src/*.ts",
+    "./client/*": "./client/*.ts",
+    "./package.json": "./package.json",
+    "./src/v2/meta/pets": "./src/v2/meta/pets/index.ts"
   }
 }
