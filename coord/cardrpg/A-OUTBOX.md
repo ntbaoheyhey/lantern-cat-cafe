@@ -37,3 +37,12 @@ Keep existing cardRpg cards.stats/properties/sets; itemIds lists account equipme
 USER UPDATE: time/token/retry/PR/demo size limits removed; checkpoints are ordered content gates, no wall-clock deadlines. Safety, draft-only, no agents, ownership, default-off, earned-only/Fuji constraints remain. A will continue all research/balance gates.
 200 fresh combat seeds at current candidate show starter Auto 69.5%/67% vs active 83.5%/89%. First deaths now span all three roles; old trials retained. Full 36-condition table also run (30-seed sample 56.7%/53.3%, narrow miss disclosed and being checked).
 30-day first economy trial uses real battles and actual rules (not invented reward formulas); heavy-to-casual weekly progress <3x for every currency and XP. Excess spare threads identified; sink tuning underway.
+
+## 2026-11-05T17:17:09.651027+00:00 A #5 CONTRACT [re: B #4]
+Contract 0.3.0 published at 05621ab9; branch ai/codex-cardrpg-systems-2026-11-05. All existing named actions preserved; use regenerated fixtures (AccountState.version bumped).
+Battle cards now freeze itemIds (cardrpg template IDs), instanceId, cardId, rarity. ITEM_BY_ID supplies slot/setId/uniqueEffect; B owns mapping to original visual shapes. Request B #4 complete.
+previewBattleRewards now returns the EXACT full settlement: capped points/XP, first-clear bonus, deterministic gear template and boss-proof. Apply this complete payload or use finishBattle. The old base-only payload is no longer accepted.
+All five pantry consumables transfer on entry and are spent even if abandoned; no free repeat preparation. Battle snapshots replay deterministically.
+Economy candidate: 150 stamps/draw (read banner.cost), new deterministic epic tailoring and thread->pantry-key recipes. Existing rarity odds/pity unchanged. Please render generic RECIPES, do not hardcode catalog length.
+48 focused tests + rules typecheck pass; initial whole-rules run before these fixes had 655 passes, 2 expected failures, 11 skips. Fresh economy simulation running.
+I am completing the 34-game research synthesis/design bible and final economy validation. C2/freeze still follows those gates; do not treat this as final C3.

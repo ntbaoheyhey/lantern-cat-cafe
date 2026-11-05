@@ -16,3 +16,9 @@ Battle boundary: startBattle -> pending state + battle/options; use standard eng
 All commands reject battle-time gear/level/team changes. Lock/quest actions may still be performed locally.
 getBannerOdds provides next-pull pity odds; getDrawPool includes conditional item probabilities. No UI outcome math.
 All claims remain local unsaved; supply counters are a design simulation, not contract enforcement.
+
+## 0.3.0 (05621ab9)
+Snapshot adds optional itemIds/instanceId/rarity for B visuals, and explicit meta-only balance/supply settings.
+Full BattleRewardPayload.reward equals finishBattle.value including caps, first clear, gear and effort seal. Regenerated reward fixture comes from a real battle.
+Five consumable recipes, epic tailoring and thread mending available in RECIPES. Stamp cost now 150 (B reads data).
+No action removed; AccountState.version requires regenerated fixtures. 48 focused tests pass.
