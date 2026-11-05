@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-05T12:35:01.413Z",
+  "runtime": "372c65a89ac6dc6bb7e35db40fcfa3575236740f",
+  "defaultOff": true,
+  "protectedPaths": [],
+  "serverChanges": [
+    "supabase/functions/boss-fight/deno.json",
+    "supabase/functions/equip/deno.json",
+    "supabase/functions/game-state/deno.json",
+    "supabase/functions/idle-claim/deno.json",
+    "supabase/functions/relic-forge/deno.json",
+    "supabase/functions/relic-mint-report/deno.json",
+    "supabase/functions/upgrade/deno.json",
+    "supabase/functions/v2-boss-fight/deno.json",
+    "supabase/functions/v2-choose-class/deno.json",
+    "supabase/functions/v2-claim/deno.json",
+    "supabase/functions/v2-craft/deno.json",
+    "supabase/functions/v2-equip/deno.json",
+    "supabase/functions/v2-lock/deno.json",
+    "supabase/functions/v2-relic-forge/deno.json",
+    "supabase/functions/v2-salvage/deno.json",
+    "supabase/functions/v2-state/deno.json"
+  ],
+  "note": "Only generated Deno import-map additions; no server logic or deployment. GLTFLoader performs allowed local GETs when flag on; file demo uses embedded bytes. This source audit is complemented by runtime isolation.json.",
+  "sourceFiles": 16,
+  "storageOrAPIMatches": [],
+  "originalModels": 12,
+  "totalBytes": 2073028,
+  "assets": [
+    {
+      "id": "guardian",
+      "bytes": 190608,
+      "sha256": "d1a99a7961bde04856eb569d8d4e2cb880ac0dda2d9ce7af999186dd849ed42b"
+    },
+    {
+      "id": "witch",
+      "bytes": 213120,
+      "sha256": "416429dfc82201b557157a15b36600344e0ddf61bf56046f0dfc11fdc4476623"
+    },
+    {
+      "id": "alchemist",
+      "bytes": 218232,
+      "sha256": "289f7d86e074946039bce62886154fa059194159a4a08075d7da7781ec1d3189"
+    },
+    {
+      "id": "guard",
+      "bytes": 119188,
+      "sha256": "b9f87e7a9c942c02600469c35a3cf993269ef034ef5e8ccee36aeddad3130d9b"
+    },
+    {
+      "id": "flanker",
+      "bytes": 111516,
+      "sha256": "673fcd4c4a954e518ddeb584117976ae8c03bd4353fd458a6fab5906866bd53f"
+    },
+    {
+      "id": "charger",
+      "bytes": 118792,
+      "sha256": "8a08b23ca5e14316ead9e60994c2604d89b9c83dceb345f0729c3291a161d86b"
+    },
+    {
+      "id": "ranger",
+      "bytes": 142724,
+      "sha256": "caaaf7f667dda5b898b70cb7dfba66da87b96987464e7ae0643b9b8e218844a1"
+    },
+    {
+      "id": "healer",
+      "bytes": 122168,
+      "sha256": "cf7acf18b9c269c5b289b21fb6c8e33cfbda6f48a6f3bc78ea122f9ae68ee6e2"
+    },
+    {
+      "id": "elite",
+      "bytes": 150408,
+      "sha256": "3dea76ab029549c1d16f6ccd6f85efe60be49d85cdb309bd821377f189b4b517"
+    },
+    {
+      "id": "yarn",
+      "bytes": 457220,
+      "sha256": "82992dc17b0ea3e3f24955520ca85d263135ac0743d33dd44c22f74dc2f8d4b3"
+    },
+    {
+      "id": "thread",
+      "bytes": 95220,
+      "sha256": "273400525dfab5c9eaaa98c71a4473a3abb887a06908859f9f6d0956db62b289"
+    },
+    {
+      "id": "dummy",
+      "bytes": 133832,
+      "sha256": "56a86df20294f48bfed4a80c28e2379b7acb42c8972138ab8f855734aaaf6775"
+    }
+  ]
+}
