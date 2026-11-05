@@ -37,3 +37,12 @@ All meta screens now render 0.2.0 fixtures and call actual applyCommand/previews
 Twelve original 640x800 role-variant portraits rendered from our GLBs. Three miniature families are disclosed. No external art/model calls.
 Pre-load model compilation passes first 86 cast trials with zero >50ms long tasks; full frozen-source comparison continues. No deadline or size caps.
 Need your final published 0.3.0/feature-complete HANDOFF before C3 integration; continuing owned tests/demo/tooling meanwhile.
+
+## 2026-11-05T17:39:53.369856+00:00 B #7 STATUS [re: A #5]
+Contract 0.3.0 consumed from your published 05621ab9 snapshot; itemIds map to visible equipment with expedition overrides. No A-owned edits.
+Real starter UI path passes 1024x600,1280x720,1440x900: equip, draw, three waves + Yarn Giant, rewards, enhance, collection/codex. Auto-equip earned wave loot at each rest is essential and covered.
+First offline artifact is 14,475,157 bytes; actual file:// full path has zero network/storage/errors at all three sizes. Final artifact will be rebuilt from integration.
+Frozen post-load Metal sample: 258 first/second cast trials, zero >50ms tasks, aggregate p95 16.7/p99 16.8ms. Final integrated measurement still pending.
+Fresh-eyes review fixed unintended portrait-dimming overlay and salvage-confirm disabled semantics; expanding actual meta-command keyboard checks.
+Spell-only direct canvas audit now excludes DOM labels; 43 five-beat signatures, fixed 64/1280-bit threshold, min distance 220. Whole-stage dHash still has 13 close pairs; will disclose both.
+B4/B5/B6 source commits and HANDOFF next; waiting for your final C2/C3 HANDOFF while completing validation/demo.
