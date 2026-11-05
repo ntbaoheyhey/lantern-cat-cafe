@@ -36,7 +36,7 @@ The design keeps clear roles, visible enemy intent, meaningful equipment goals, 
 | No paid acquisition | Earned stamps only; all draws soulbound/non-tradeable | All seed/property trajectories and command surface audit |
 | Deterministic Relic design | Effort seals plus chosen resource costs; global/season checks | Cap-boundary tests and zero-draw reachable runs; local simulation only |
 | Opt-in combat | Frozen account stats, identity and supplies enter existing round engine | Replay, default-off shape, exact settlement tests |
-| UI calls rules | B imports actions, previews and battle bridge | B #10 confirms contract 0.4.0 in real integration; final evidence pending |
+| UI calls rules | B imports actions, previews and battle bridge | B #12 confirms final fix merged; 76 A-owned changed files match byte-for-byte |
 
 Formulas, stat caps, costs, card roster and gear pools: [docs/design/cardrpg/DESIGN.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/9ccf88e7eeac6814229e2b8d919b608bb4cee478/docs/design/cardrpg/DESIGN.md); authoritative tuning: [packages/game-rules/src/cardrpg/config.ts](https://github.com/ntbaoheyhey/taskbar-hero/blob/9ccf88e7eeac6814229e2b8d919b608bb4cee478/packages/game-rules/src/cardrpg/config.ts). Existing live `packages/game-rules/src/config.ts` is unchanged; audit lists every changed A-owned file. No new runtime dependency.
 
@@ -215,7 +215,7 @@ Pinned raw receipts: [3,600-battle grid](https://github.com/ntbaoheyhey/taskbar-
 | First deaths across roles | MET, uneven | holdout G/W/A counts in balance table |
 | Three 30-day styles | MET | 30 seeded accounts/style, 9,000 real battles |
 | Heavy/casual weekly progress | MET in cohort means | worst currency/XP/pull ratio 2.3631; not universal individual bound |
-| Contract consumed by B | MET at 0.4.0 | B #10, real integration; final fix consumption pending |
+| Contract consumed by B | MET at 0.4.0 / 9ccf88e7 | B #12; independent byte comparison of all 76 A-owned changed files is identical |
 | Numbered rounds / replay | MET | battle.test.ts and source grep audit |
 | Pure API / immutable commands | MET | command/state/reward-preview tests; internal builder removed |
 | Deno import compatibility | MET locally after B #11 | 18 clean graphs, 4 existing regression tests, typecheck; receipt linked below |
@@ -228,12 +228,18 @@ Evidence: [docs/design/cardrpg/evidence/logs/cardrpg-a-baseline.log](https://git
 
 ## Contract, coordination and artifact
 
-A published 0.1 → 0.2 battle bridge → 0.3 reward/identity → 0.4 public-API freeze with regenerated typed fixtures. B's UI-needs and requests were answered only through `coord/cardrpg/`: B #4 equipment identity, B #8 capped reward copy, B #11 import regression. Latest A #11 delivers `9ccf88e7`. B #10 consumed 0.4.0 at `8a31d175`; updated integrated evidence is still pending here. A never edits B's owned paths.
+A published 0.1 → 0.2 battle bridge → 0.3 reward/identity → 0.4 public-API freeze with regenerated typed fixtures. B's UI-needs and requests were answered only through `coord/cardrpg/`: B #4 equipment identity, B #8 capped reward copy, B #11 import regression. Latest A #11 delivers `9ccf88e7`. B #12 confirms the final `9ccf88e7` fix merged. At integrated head `25466d096cce0442b8ec6896b79cc6abbb98303e`, an independent read-only comparison finds all 76 changed A-owned paths byte-identical to A. The UI model delegates commands and battle outcomes to imported rules; Collection/Inventory/Forge/Gacha use the exported stats, previews and conditional odds. Source inspection covers delegation, while final browser evidence remains B-owned. A never edits B's owned paths.
 
 Public surface: `createStarterAccount`, `applyCommand`, equipment/forge/progression/gacha actions, all previews/selectors, `startBattle`, `finishBattle`, `previewBattleRewards`, `abandonBattle`. Fixtures: starter-account, midgame-account, banner-standard, banner-featured, pity-near-hard, battle-reward (actual winning seed 1), team-equipped. Exact exports: [packages/game-rules/src/cardrpg/index.ts](https://github.com/ntbaoheyhey/taskbar-hero/blob/9ccf88e7eeac6814229e2b8d919b608bb4cee478/packages/game-rules/src/cardrpg/index.ts); seven generated fixtures: [packages/game-rules/src/cardrpg/fixtures/index.ts](https://github.com/ntbaoheyhey/taskbar-hero/blob/9ccf88e7eeac6814229e2b8d919b608bb4cee478/packages/game-rules/src/cardrpg/fixtures/index.ts).
 
 B owns the self-contained artifact at `/Users/bao/taskbar-hero-cardrpg-int/docs/cardrpg/index.html`; final integrated file:// validation/hash is pending. Open it in a desktop browser once B publishes final evidence; only 1024×600, 1280×720 and 1440×900 are claimed.
 REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `coord/cardrpg/B-OUTBOX.md` entries #7–#11. Earlier preview observations are not presented as final integrated proof.
+
+## Integration inspection receipt
+
+The read-only comparison enumerated `git diff --name-only 3bf2cfa3bd32d8355c5c967e979240330a595682 HEAD` in A and compared each file to the real integration worktree: 76 files, zero differences at `25466d096cce0442b8ec6896b79cc6abbb98303e`. The rules client `apps/web/src/game/cardrpg/model.ts` SHA-256 was `c0e6c1d8c4131e243434c5d0a602547b9a4ad4de0a1d571c71d7b1ead0d4b3b2`; its command/start/finish/abandon methods call imported game-rules functions directly. Screens obtain actual stats, preview costs and odds from the same package. This is a source-boundary review, not a substitute for runtime browser tests.
+
+All 32 pinned evidence links resolve to 26 existing files; all recorded evidence hashes in receipts.json match. B #12 reports 1,621 isolated web tests passed and zero changed flag-off pixels at all three target sizes; final full-suite/report artifacts still need review before promotion to DONE.
 
 ## Draft review stack
 
