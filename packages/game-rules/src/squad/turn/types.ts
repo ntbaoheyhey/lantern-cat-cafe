@@ -9,8 +9,8 @@ export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
 export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
 export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
 export interface TurnStatus { kind: StatusKind; source: string; rounds: number; strength: number; appliedRound: number }
-export interface CardRpgCombatCard { cardId: string; name: string; stats: Stats; properties: GearProperty[]; sets: string[] }
-export interface CardRpgCombat { runId: number; cards: Record<Hero, CardRpgCombatCard>; extraTonics: number }
+export interface CardRpgCombatCard { cardId: string; instanceId?: string; rarity?: import('../../cardrpg/contract').Rarity; name: string; stats: Stats; properties: GearProperty[]; sets: string[]; itemIds?: string[]; formationHpBp?: number }
+export interface CardRpgCombat { runId: number; cards: Record<Hero, CardRpgCombatCard>; extraTonics: number; enemyAttackBp?: number; extraSupplies?: Partial<Record<'shieldBiscuit'|'quickenYarn'|'cleanseTea'|'ultimateTreat',number>> }
 export interface TurnActor {
   cardRpg?: CardRpgCombatCard;
   equipment: Loadout; setBonuses: string[];

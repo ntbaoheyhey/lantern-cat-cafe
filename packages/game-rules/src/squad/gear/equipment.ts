@@ -23,7 +23,7 @@ export function hasProperty(a:TurnActor,p:GearProperty):boolean{return gearBonus
 export function applyEquipment(a:TurnActor,preset:Preset,fill=false):void {
   if(a.side!=='party')return;
   const base=a.cardRpg?{...a.cardRpg.stats,crit:a.cardRpg.stats.critBp/10000}:C.stats[a.role],squad=C.presets[preset],g=gearBonuses(a.equipment,a.cardRpg),before=a.hp;
-  a.maxHp=Math.round(base.hp*squad.hp+g.stats.hp*C.equipment.statScale);a.hp=fill?a.maxHp:Math.min(before,a.maxHp);
+  a.maxHp=Math.round(base.hp*(a.cardRpg?.formationHpBp === undefined ? squad.hp : a.cardRpg.formationHpBp/10000)+g.stats.hp*C.equipment.statScale);a.hp=fill?a.maxHp:Math.min(before,a.maxHp);
   a.attack=Math.round(base.attack*squad.attack+g.stats.attack*C.equipment.statScale);
   a.defense=base.defense+g.stats.defense*C.equipment.statScale;a.crit=Math.min(C.caps.crit,base.crit+g.stats.crit);
   a.initiative=Math.min(C.initiative.maxRank,base.initiative+squad.initiative+g.stats.initiative);

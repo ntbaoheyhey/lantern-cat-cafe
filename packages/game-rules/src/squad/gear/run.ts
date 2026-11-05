@@ -13,9 +13,11 @@ export interface SquadRun {
 }
 export function createSquadRun(options:TurnOptions):SquadRun {
   const mode=options.gearMode??'off';
+  const supplies:Record<ConsumableId,number>={...C.consumables.counts};
+  for(const [id,count] of Object.entries(options.cardRpg?.extraSupplies??{}))supplies[id as ConsumableId]+=count;
   return {...(options.cardRpg ? { cardRpg: JSON.parse(JSON.stringify(options.cardRpg)) as CardRpgCombat } : {}),stage:options.interactive?'loadout':'battle',interactive:!!options.interactive,gearMode:mode,
     inventory:options.cardRpg?[]:mode==='off'?[]:mode==='high'?SQUAD_ITEMS.map(i=>i.id):startingInventory(),loot:[],itemsFound:[],
-    consumables:{...C.consumables.counts, healTonic:C.consumables.counts.healTonic+(options.cardRpg?.extraTonics??0)},commands:[],nextWave:null};
+    consumables:{...supplies, healTonic:C.consumables.counts.healTonic+(options.cardRpg?.extraTonics??0)},commands:[],nextWave:null};
 }
 export function outfitParty(b:TurnBattle):void {
   for(const a of b.actors.filter(a=>a.side==='party')){if(b.run.cardRpg){a.cardRpg=b.run.cardRpg.cards[a.role as Hero];a.name=a.cardRpg.name;}a.equipment=b.run.cardRpg?{}:initialLoadout(a.role as Hero,b.run.gearMode);applyEquipment(a,b.preset,true)}

@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { loadRules, root } from './load.mjs';
-const { rules: R, vite } = await loadRules();
+const { rules: R, vite, load } = await loadRules();
 const dir = resolve(root, 'packages/game-rules/src/cardrpg/fixtures');
 mkdirSync(dir, { recursive: true });
 const starter = R.createStarterAccount(11), mid = R.createStarterAccount(23);
@@ -16,7 +16,20 @@ for (const [id, set] of [['mochi', 'hearthloom'], ['soot', 'moonwick'], ['clover
 }
 mid.pity = { 'cats-standard': { sinceLegendary: 59, featuredGuaranteed: false, totalPulls: 59 }, 'cats-featured': { sinceLegendary: 44, featuredGuaranteed: true, totalPulls: 104 } };
 mid.quests['first-boss'].progress = 1;
-const reward = { id: 'run-1', runId: 1, chapterId: 'cafe-patrol', won: true, wavesCleared: 3, rounds: 35, reward: { currencies: { fish: 90, threads: 12, stamps: 40 }, xp: 60 }, firstClear: true, eligibleRelicDesign: true };
+const engine = await load('packages/game-rules/src/squad/turn/engine.ts');
+const gear = await load('packages/game-rules/src/squad/gear/run.ts');
+const run = R.startBattle(starter, 11); if (!run.ok) throw Error(run.error.message);
+const battle = run.value.battle; engine.beginRun(battle);
+while (!battle.result && battle.turn < 650) {
+  if (battle.run.stage === 'loot') { engine.chooseLoot(battle, gear.choosePolicyLoot(battle, 'active')); continue; }
+  if (battle.run.stage === 'rest') { engine.autoEquipGear(battle); engine.continueRun(battle); continue; }
+  engine.startTurn(battle);
+  if (battle.phase === 'choose') { engine.chooseAction(battle, engine.getAutoAction(battle, 'active')); engine.resolveAction(battle); }
+  engine.endTurn(battle);
+}
+const preview = R.previewBattleRewards(run.state, battle); if (!preview.ok) throw Error(preview.error.message);
+const reward = preview.value;
+
 const fixtures = { 'starter-account': starter, 'midgame-account': mid, 'banner-standard': R.BANNERS[0], 'banner-featured': R.BANNERS[1], 'pity-near-hard': { ...starter, pity: mid.pity }, 'battle-reward': reward, 'team-equipped': { team: starter.teams[0], loadouts: starter.loadouts, items: starter.inventory.items } };
 // Pretty top-level keys, one generated value per line: review schemas in contract.ts.
 for (const [name, value] of Object.entries(fixtures)) writeFileSync(resolve(dir, `${name}.json`), '{\n' + Object.entries(value).map(([k,v]) => `  ${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(',\n') + '\n}\n');

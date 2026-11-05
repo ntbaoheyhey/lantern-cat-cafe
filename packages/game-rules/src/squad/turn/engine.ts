@@ -45,7 +45,7 @@ function makeActor(role: Role, slot: number, id: string, b: TurnBattle): TurnAct
   return { equipment: {}, setBonuses: [], id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
     : ['ranger', 'healer', 'thread'].includes(role) ? 'rear' : 'front',
     hp, maxHp: hp, shield: 0, shieldRounds: 0, shieldAppliedRound: 0, charge: side === 'party' ? C.charge.initial : 0,
-    attack: Math.round(base.attack * (side === 'party' ? preset.attack : 1)), defense: base.defense,
+    attack: Math.round(base.attack * (side === 'party' ? preset.attack : (b.run.cardRpg?.enemyAttackBp ?? 10000) / 10000)), defense: base.defense,
     initiative: base.initiative + (side === 'party' ? preset.initiative : 0), crit: base.crit, auto: false,
     statuses: [], cooldowns: {}, cooldownApplied: {}, turnsTaken: 0, break: 0, controlCount: 0, passiveReady: 0, quickenedRound: 0 };
 }
