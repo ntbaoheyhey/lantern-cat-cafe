@@ -1,11 +1,15 @@
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
+const base=process.env.CARDRPG_URL||'http://127.0.0.1:5520',source=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),artifactSha256=base.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(base))).digest('hex'):null;
 const out=process.env.CARDRPG_CAPTURE||'reports/cardrpg/layout';await fs.mkdir(out,{recursive:true});
 const b=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});const rows=[],errors=[];
 try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){
  const p=await b.newPage({viewport:{width,height}});p.on('pageerror',e=>errors.push(String(e)));
- await p.goto((process.env.CARDRPG_URL||'http://127.0.0.1:5520')+'/?demo&squad=1&squad3d=1&squadDebug=1');await p.getByRole('button',{name:/Begin patrol/}).click();await p.waitForFunction(()=>window.__turn3dReview?.controller.canChoose);
+ await p.goto(base.startsWith('file:')?base:base+'/?demo&squad=1&squad3d=1&squadDebug=1');if(base.startsWith('file:'))await p.getByRole('button',{name:/Prepare patrol/}).click();await p.getByRole('button',{name:/Begin patrol/}).click();await p.waitForFunction(()=>window.__turn3dReview?.controller.canChoose);
  await p.evaluate(()=>{const c=window.__turn3dReview.controller;c.fixedTime=1;c.notify()});await p.waitForFunction(()=>window.__turn3dReview.scene?.stats.loaded>=7);await p.waitForTimeout(200);
  const capture=async(name)=>{
   await p.waitForFunction(()=>{const r=window.__turn3dReview;return r.scene.stats.loaded===r.view().actors.length});await p.evaluate(()=>{const r=window.__turn3dReview;r.scene.render(r.view())});await p.waitForTimeout(100);
@@ -15,7 +19,7 @@ try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){
  await capture('planning');
  for(const encounter of ['group','boss']){await p.evaluate(encounter=>{const c=window.__turn3dReview.controller;c.reset({encounter,gearMode:'starter'});while(c.presenter.busy)c.presenter.skip();c.fixedTime=1;c.notify()},encounter);await capture(encounter)}
  await p.close();
-}}finally{await b.close();await fs.writeFile(`${out}/checks.json`,JSON.stringify({errors,rows},null,2));console.log(JSON.stringify({errors,rows}))}
+}}finally{await b.close();await fs.writeFile(`${out}/checks.json`,JSON.stringify({source,artifactSha256,date:new Date().toISOString(),errors,rows},null,2));console.log(JSON.stringify({source,artifactSha256,errors,cases:rows.length}))}
 
 assert.deepEqual(errors,[]);
 const overlap=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
