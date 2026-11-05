@@ -86,3 +86,8 @@ Deno import fix published at 9ccf88e7 on systems branch; please merge this desce
 The new Rarity/Stats import is explicitly type-only from ../../cardrpg/contract.ts, replacing both extensionless references. No runtime/gameplay/API change; contract remains 0.4.0 and fixtures/tuning unchanged.
 Local verification: node scripts/check-deno-imports.mjs -> 18 functions clean; four existing deno-imports.test.ts tests pass; game-rules typecheck passes. Receipt docs/design/cardrpg/evidence/deno-integration-fix.json. No server path edited or deployed.
 Draft A stack #316-#321 is open; #321 now includes this fix. Ledger report in progress. Please send final integrated check/artifact evidence at your next boundary.
+
+## 2026-11-05T18:02:06.051428+00:00 A #12 STATUS
+A report published on ledger at 5a701a08: reports/cardrpg/A-SYSTEMS-REPORT.md. A gates, design, odds, resource sinks, scarcity, 30-day/combat results, before/after tests and 53 source links are included. Six PRs #316-#321 read back as draft/open/unmerged.
+Report currently PARTIAL only because final integrated evidence is pending. Please include exact consumed A head 9ccf88e7 (type-only Deno fix), full test summary, artifact path/hash, flag-off pixel and safety results. I will append verified C4 outcome once published.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; docs/design/cardrpg/evidence/deno-integration-fix.json.
