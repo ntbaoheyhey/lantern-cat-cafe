@@ -9,14 +9,14 @@ import { createActionPlan, sampleActionPlan, type EffectFrame } from './effects'
 
 /** Single synchronous writer. Presentation must drain before another rules boundary. */
 export class TurnController {
-  battle:TurnBattle=createTurnBattle({encounter:'campaign'});
+  battle:TurnBattle;
   presenter=new TurnPresenter(); running=true; selectedSkill=''; hoverId='';
   mode:'battle'|'effects'|'models'='battle'; galleryId='lanternstorm'; galleryGear:'off'|'starter'|'high'='off';
   model={role:'guardian' as Role,clip:'idle',angle:.35};
   timeline:RoundSlot[]=[]; policy:'auto'|'active'='auto';
   captureFrame:EffectFrame|null=null; fixedTime:number|undefined;
   private cursor=0; private version=0;private listeners=new Set<()=>void>();private presentationKey="";private galleryWait=0;
-  constructor(options:TurnOptions={}){this.battle=createTurnBattle(options);this.flush();this.boundary();}
+  constructor(options:TurnOptions={},battle?:TurnBattle){this.battle=battle??createTurnBattle(options);this.flush();this.boundary();}
   subscribe=(fn:()=>void)=>{this.listeners.add(fn);return()=>this.listeners.delete(fn);};
   snapshot=()=>this.version;
   notify=()=>{this.version++;for(const fn of this.listeners)fn();};
@@ -78,7 +78,7 @@ export class TurnController {
   gallery(id:string){
     const fixture=createEffectFixture(id,this.galleryGear);this.mode='effects';this.galleryId=id;this.battle=fixture.battle;this.presenter.reset(fixture.initial);while(this.presenter.busy)this.presenter.skip();
     const type=id==='bossIntro'?'boss_phase':['status_apply','status_expire','death','wave_clear','victory','defeat'].includes(id)?id:'passive';
-    const special=fixture.events.find(e=>(id==='relicProc'?e.type==='gear_proc':id==='thorns'?e.type==='damage'&&e.skillId==='thorns':e.type===type)&&(type!=='passive'||e.skillId===id));
+    const special=(id==='burn'?fixture.initial:fixture.events).find(e=>(id==='relicProc'?e.type==='gear_proc':['thorns','needleLantern','burn'].includes(id)?e.type==='damage'&&e.skillId===id:id==='lastLight'?e.type==='shield'&&e.skillId===id:e.type===type)&&(type!=='passive'||e.skillId===id));
     if(special){const cue=createActionPlan([special]);cue.events=[];this.captureFrame=sampleActionPlan(cue,0);}
     else this.captureFrame=null;
     this.presenter.push(fixture.events);this.galleryWait=0;this.running=true;this.presenter.paused=false;this.fixedTime=undefined;this.notify();

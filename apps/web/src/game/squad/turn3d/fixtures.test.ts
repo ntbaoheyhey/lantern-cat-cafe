@@ -7,3 +7,9 @@ it.each([...Object.keys(TURN_SKILLS),'steadfast','warmWick','lastSip','status_ap
   while(p.busy&&count++<40)p.skip();expect(p.busy).toBe(false);expect(p.state.actors).toEqual(f.battle.actors);
   if(['steadfast','warmWick','lastSip'].includes(id))expect(f.events.some(e=>e.type==='passive'&&e.skillId===id)).toBe(true);
 });
+
+import {TurnController} from './controller';
+import {EFFECT_REGISTRY} from './effects';
+it.each(Object.keys(EFFECT_REGISTRY))('inspection renders the requested recipe %s, including secondary procs',(id)=>{
+ const c=new TurnController();c.inspect(id,2);expect(c.frame?.plan.skillId).toBe(id);expect(c.frame?.beat.kind).toBe('impact');
+});

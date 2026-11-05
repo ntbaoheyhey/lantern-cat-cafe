@@ -1,10 +1,12 @@
 /** Original synthesized sound only. The AudioContext is created exclusively by an explicit click. */
+import {EFFECT_REGISTRY} from './effects';
 import type {EffectFrame} from './effects';
 export type AudioFamily='swish'|'thud'|'chime'|'flame'|'glass'|'whoosh';
 export const AUDIO_SETTINGS={master:.14,ambient:.018,cue:.14,peakCeiling:.72,notes:[196,246.94,293.66,369.99,293.66,246.94,220,261.63],sampleRate:44100};
 export function cueFamily(shape:string):AudioFamily{return ['slash','arrow'].includes(shape)?'swish':['bash','charge','sweep','cross'].includes(shape)?'thud':['mend','shelter','rally','wall'].includes(shape)?'chime':['orb','storm'].includes(shape)?'flame':['flask','patch'].includes(shape)?'glass':'whoosh'}
+export function cueSignature(id:string){const i=Math.max(0,Object.keys(EFFECT_REGISTRY).indexOf(id));return {notes:[i%12,(i*5+3)%17,(i*7+5)%19],gap:.06+(i%5)*.012}}
 export function synthCue(ctx:BaseAudioContext,destination:AudioNode,family:AudioFamily,beat:number,when:number,variant=0){
- const duration=beat===2?.18:beat===0?.12:.24,volume=beat===2?.32:.12,base={swish:170,thud:84,chime:587,flame:210,glass:1046,whoosh:330}[family]*(1+(variant%5)*.035);
+ const duration=beat===2?.18:beat===0?.12:.24,volume=beat===2?.32:.12,base={swish:170,thud:84,chime:587,flame:210,glass:1046,whoosh:330}[family]*2**((variant%19)/19);
  const gain=ctx.createGain();gain.connect(destination);gain.gain.setValueAtTime(0,when);gain.gain.linearRampToValueAtTime(volume,when+.009);gain.gain.exponentialRampToValueAtTime(.0001,when+duration);
  const oscillator=ctx.createOscillator();oscillator.type=family==='thud'?'sine':family==='flame'?'triangle':'sine';oscillator.frequency.setValueAtTime(base*(beat===0?.75:1.5),when);oscillator.frequency.exponentialRampToValueAtTime(Math.max(30,base*(family==='thud'?.35:beat===1?2:.7)),when+duration);oscillator.connect(gain);oscillator.start(when);oscillator.stop(when+duration+.02);
  oscillator.onended=()=>{oscillator.disconnect();gain.disconnect()};
@@ -25,6 +27,7 @@ export class CafeAudio{
   if(!this.enabled||!this.ctx||!this.master||this.ctx.state!=='running')return;const now=this.ctx.currentTime;
   const key=frame?`${frame.plan.id}/${frame.plan.skillId}/${frame.beat.kind}`:'';
   if(key&&key!==this.key){this.key=key;const beat=['anticipation','travel','impact','reaction','residue'].indexOf(frame!.beat.kind),id=frame!.plan.skillId;let variant=[...id].reduce((s,c)=>s+c.charCodeAt(0),0);synthCue(this.ctx,this.master,cueFamily(frame!.plan.shape),beat,now,variant);
+   if(beat===0){const signature=cueSignature(id);signature.notes.forEach((note,i)=>synthCue(this.ctx!,this.master!,'chime',0,now+i*signature.gap,note));}
    if(['victory','defeat'].includes(id)&&beat===0)for(let i=0;i<4;i++)synthCue(this.ctx,this.master,id==='victory'?'chime':'thud',0,now+i*.16,variant+i*2);
   }
   if(round!==this.round){this.round=round;synthCue(this.ctx,this.master,'chime',0,now,2)}

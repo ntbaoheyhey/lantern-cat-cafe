@@ -169,3 +169,5 @@
 .t3-log li {padding:3px 0;}
 @media(max-width:1100px) {.t3-skill-art{width:32px}.t3-shell .t3-card-copy b{font-size:9px}.t3-card-copy em{font-size:6px}.t3-card-copy{padding:4px}}
 @media(prefers-reduced-motion:reduce) {.t3-shell .t3-skill-card:hover{transform:none}}
+
+.t3-canvas:not([data-ready=true])::after{content:"Preparing miniatures & spells…";position:absolute;inset:0;display:grid;place-items:center;background:#252332;color:#f2d6b3;font:14px Georgia;z-index:9}

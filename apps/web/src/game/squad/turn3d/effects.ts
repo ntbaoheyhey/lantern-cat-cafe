@@ -1,3 +1,4 @@
+import {SKILL_MOTION} from './choreography';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 
 export type BeatKind = 'anticipation'|'travel'|'impact'|'reaction'|'residue';
@@ -56,8 +57,8 @@ export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
 };
 const kinds:BeatKind[]=['anticipation','travel','impact','reaction','residue'];
 export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
-  const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['boss_phase','passive','damage','status_apply','status_expire','death','gear_proc'].includes(e.type))??events[0];
-  const key=first?.type==='boss_phase'?'bossIntro':first?.type==='action_start'||first?.type==='damage'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
+  const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['boss_phase','passive','damage','status_apply','status_expire','death','gear_proc','shield'].includes(e.type))??events[0];
+  const key=first?.type==='boss_phase'?'bossIntro':first?.type==='action_start'||first?.type==='damage'||first?.type==='shield'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
   const data=EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
   let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=Math.max(i===0&&events.some(e=>e.type==='action_start')?600:0,Math.round(data.duration[i]!*(i===3&&(data.ultimate||events.some(e=>e.type==='death'))?1.4:1)*(!data.ultimate&&i!==2?.73:1)));const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
     shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?(data.ultimate?.055:.025):0,
@@ -67,7 +68,8 @@ export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
 }
 export function sampleActionPlan(plan:EffectPlan,elapsed:number,reducedMotion=false):EffectFrame {
   const t=Math.max(0,Math.min(plan.duration,elapsed));const beat=plan.beats.find(b=>t<b.start+b.duration)??plan.beats[4]!;
-  const progress=Math.max(0,Math.min(1,(t-beat.start)/beat.duration));
+  const hold=beat.kind==='impact'&&!reducedMotion?Math.min(beat.duration*.8,SKILL_MOTION[plan.skillId]?.hold??0):0;
+  const progress=Math.max(0,Math.min(1,(t-beat.start-hold)/(beat.duration-hold)));
   return {plan,beat,progress,actionProgress:t/plan.duration,elapsed:t,color:plan.color,camera:reducedMotion?0:beat.camera,
     shake:reducedMotion?0:beat.shake*(1-progress),flash:reducedMotion?0:beat.flash*(1-progress),clip:beat.clip,intensity:beat.kind==='impact'?1:Math.sin(progress*Math.PI)*.7+.3};
 }

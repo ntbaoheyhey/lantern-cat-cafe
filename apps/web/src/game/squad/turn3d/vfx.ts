@@ -124,8 +124,34 @@ export class SpellVfx{
       const q=this.copy(p).add(this.v(Math.cos(a)*r,.12+Math.sin(life*Math.PI)*(.3+random(i+18,seed)*.9),Math.sin(a)*r*.65));const size=(dir.particles==='petal'?.22:.12)*(1-life*.55);particle(q,size,i%4?color:accent,fade*(.5+v*.35),a+life*dir.twist);
      }
     });
+    // Secondary cues have spatial signatures of their own, not a recoloured heal burst.
+    const focus=targets[0]!;
+    if(frame.plan.skillId==='lastSip'){
+     for(let i=0;i<3;i++)emblem(6+i,this.copy(focus).add(this.v(-1.05+i*.65,.30+life*.7,.55)),.48,false,.95);
+     ribbon(3,this.copy(focus).add(this.v(-1.15,.12,.45)),this.copy(focus).add(this.v(1.15,.12,.45)),'lob',life,.07);
+    }
+    if(frame.plan.skillId==='milkFlask'){
+     emblem(6,this.copy(focus).add(this.v(.85,.25,.7)),1.25,false,.9);
+     for(let i=0;i<3;i++)ribbon(3+i,this.copy(focus).add(this.v((i-1)*.5,.05,0)),this.copy(focus).add(this.v((i-1)*.5,.4,.4)),'fall',life,.06,i);
+    }
+    if(frame.plan.skillId==='status_apply'){
+     for(let i=0;i<3;i++)emblem(6+i,this.copy(focus).add(this.v(.8,.3+i*.48,.55)),.68-i*.13,false,.9);
+     ribbon(4,this.copy(focus).add(this.v(-1.1,.1,.7)),this.copy(focus).add(this.v(1.1,.1,.7)),'needle',1,.06);
+    }
+    if(frame.plan.skillId==='cleanseTea'){
+     for(let i=0;i<4;i++){const a=i*Math.PI/2+life;emblem(6+i,this.copy(focus).add(this.v(Math.cos(a)*1.2,.2+i*.12,Math.sin(a)*.7)),.66,false,.85)}
+     ribbon(4,this.copy(focus).setY(.08),this.copy(focus).setY(1.3),'helix',life,.11);
+    }
+    if(frame.plan.skillId==='shieldBiscuit'){
+     for(let i=0;i<3;i++)emblem(6+i,this.copy(focus).add(this.v((i-1)*.85,.25,.8)),.65,false,.95);
+     emblem(9,this.copy(focus).setY(.075),1.8,true,.9);
+    }
+    if(frame.plan.skillId==='ultimateTreat'){
+     for(let i=0;i<4;i++){const a=i*Math.PI/2;emblem(6+i,this.copy(focus).add(this.v(Math.cos(a)*1.3,.6+Math.sin(a)*.65,.6)),.45,false,.95)}
+     ribbon(4,this.copy(focus).setY(.3),this.copy(focus).setY(.3),'orbit',life,.13);
+    }
     // Real branching bolts with independently offset child branches. No white face-covering core.
-    if(frame.plan.skillId==='lanternstorm'||frame.plan.skillId==='ultimateTreat')for(let i=0;i<Math.min(8,targets.length*2+2);i++){const target=targets[i%targets.length]!,m=this.bolts[i]!;m.visible=true;m.material.color.set(i%2?accent:color).multiplyScalar(1.6);m.material.opacity=fade*.8;const a=this.copy(target).add(this.v((i%3-1)*.3,2.6,0)),b=this.copy(target).add(this.v(i%2?.35:0,.18,0)),attr=m.geometry.attributes.position!;for(let k=0;k<25;k++){const u=k/24,q=this.scratch[1023]!.copy(a).lerp(b,u),jitter=Math.sin(u*Math.PI)*.19;q.x+=(random(k+i*45,seed)-.5)*jitter;q.z+=(random(k+82+i*19,seed)-.5)*jitter;const w=i%2?.012:.024;attr.setXYZ(k*2,q.x-w,q.y,q.z);attr.setXYZ(k*2+1,q.x+w,q.y,q.z)}attr.needsUpdate=true;}
+    if(frame.plan.skillId==='lanternstorm')for(let i=0;i<Math.min(8,targets.length*2+2);i++){const target=targets[i%targets.length]!,m=this.bolts[i]!;m.visible=true;m.material.color.set(i%2?accent:color).multiplyScalar(1.6);m.material.opacity=fade*.8;const a=this.copy(target).add(this.v((i%3-1)*.3,2.6,0)),b=this.copy(target).add(this.v(i%2?.35:0,.18,0)),attr=m.geometry.attributes.position!;for(let k=0;k<25;k++){const u=k/24,q=this.scratch[1023]!.copy(a).lerp(b,u),jitter=Math.sin(u*Math.PI)*.19;q.x+=(random(k+i*45,seed)-.5)*jitter;q.z+=(random(k+82+i*19,seed)-.5)*jitter;const w=i%2?.012:.024;attr.setXYZ(k*2,q.x-w,q.y,q.z);attr.setXYZ(k*2+1,q.x+w,q.y,q.z)}attr.needsUpdate=true;}
     if(frame.plan.events.some(e=>e.critical)&&phase==='impact'){const m=this.ribbons[5]!;ribbon(5,this.copy(end).add(this.v(-1.6,0,0)),this.copy(end).add(this.v(1.6,0,0)),'needle',1,.025);m.material.uniforms.fade!.value=.9}
    }
   }}
