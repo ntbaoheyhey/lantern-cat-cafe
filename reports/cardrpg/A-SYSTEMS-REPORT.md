@@ -1,7 +1,7 @@
 # Session A — Systems delivery report
 
-Status: **PARTIAL — A systems complete and frozen; final Retina natural-campaign performance failed and is under B diagnosis.**
-Updated: 2026-11-05T20:00:22.697307+00:00.
+Status: **PARTIAL — A systems complete and frozen; corrected Retina trial passes the long-task gate, final source-matched delivery verification is running.**
+Updated: 2026-11-05T20:25:01.055350+00:00.
 
 Base: `3bf2cfa3bd32d8355c5c967e979240330a595682` on `ai/codex-turn3d-polish-2026-11-05`. Systems head: `9ccf88e7eeac6814229e2b8d919b608bb4cee478` on `ai/codex-cardrpg-systems-2026-11-05`; worktree `/Users/bao/taskbar-hero-cardrpg-a`. Contract **0.4.0**. The no-limits update supersedes all clock/size/retry ceilings; checkpoints record content order only. No extra agents or model-calling helpers were used.
 
@@ -258,6 +258,13 @@ On artifact `223f550d`, all 258 DPR-1 casts completed with zero >50 ms tasks; 59
 
 The additional **1440×900 native-DPR-2 natural campaign fails its long-task assertion**: 13 tasks of 51–98 ms, p95 16.8 ms and p99 33.4 ms. Gameplay wins, all three rests complete, five contexts stay stable, and no console errors/warnings occur. Final effective quality is recorded as Low despite the initial Medium selection; adaptive quality is part of what B must diagnose and disclose. Functional victory does not turn this performance failure into a pass. A #28 requests diagnosis and retention of the failed receipt; no A rule change is implicated. Full DPR-2 casts and final publication remain pending. These are provisional local receipts, not yet a pinned delivery commit.
 REFERENCE: `docs/cardrpg/index.html`; `reports/cardrpg/performance-delivery/performance-metal.json`; `reports/cardrpg/performance-delivery/transitions.json`; `reports/cardrpg/lifecycle-delivery/measurement.json`; `reports/cardrpg/lifecycle-retina-delivery/measurement.json`; `reports/cardrpg/validation/lifecycle-retina-delivery.log`; `coord/cardrpg/A-OUTBOX.md` #28.
+
+### Latest correction and replacement — full delivery checks pending
+
+B #26 identifies two remaining shader preparation faults after the framebuffer correction: gear resources were being evicted between previews, and effect warmup used a detached scene without the actual battlefield fog. B retains gear resources for the renderer lifetime and warms the real fog plus HDR/direct output variants. A reviewed the native-DPR-2 diagnostic: zero long tasks/errors/warnings, all three rests and real boss victory, five stable contexts, one framebuffer size, requested/effective Medium throughout, p95/p99 16.8/16.8 ms. This is one diagnostic trial, not final all-size validation; strict 16.7 ms p95 remains PARTIAL.
+
+The clean replacement source is `a3d257cdd1eb1dc2e38d21fafab5bd41fdf725a1`; artifact SHA-256 `4534b9951e2b4f27c44b55e1a8131800a4caad0bf976d4bc2c4c9b842a302772`, 14,503,925 bytes. Full serial source-bound tests, E2E, functional journeys, both DPR grids, natural campaigns and art checks are running. The preceding failed candidate and diagnostic measurements remain historical. A rules stay frozen at `9ccf88e7` / 0.4.0; no duplicate GPU runs or new model agents were launched by A.
+REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `reports/cardrpg/retina-resources-trial/measurement.json`; `reports/cardrpg/retina-spell-output-trial/measurement.json`; `reports/cardrpg/validation/delivery-results.json`; `apps/web/src/game/squad/turn3d/scene.ts`.
 
 ### Prior candidate observations, retained for traceability
 
