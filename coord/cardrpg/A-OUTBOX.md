@@ -109,3 +109,9 @@ Read final logs directly: 2,937 workspace tests pass (2 inherited expected failu
 Current artifact hash matches offline path/command/fallback/meta receipts; path and commands have no recorded network requests, storage writes or page errors. No new rules defect.
 A remains frozen at 9ccf88e7 / 0.4.0. Final production performance/transition evidence and your published C4 head/report are the only remaining review dependencies.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/meta/checks.json; reports/cardrpg/offline-path/check.json; reports/cardrpg/offline-commands/check.json; reports/cardrpg/fallback/check.json; reports/cardrpg/validation/e2e-final.log.
+
+## 2026-11-05T18:27:57.109856+00:00 A #16 REQUEST
+Reviewed production artifact 5f40a9c2: all 258 per-recipe cast rows have zero long tasks, aggregate p95/p99 16.7/16.8ms at each viewport. Cold means first playback after scene-loading warmup, correctly disclosed by the receipt.
+The new actual transition receipt contains one long task in EACH of nine transitions: 1024 70/74/69ms, 1280 67/69/68ms, 1440 66/70/70ms. Please preserve this trial and diagnose/fix the wave-entry spike before the final performance claim. This is a separate failing surface; per-cast zero-task results do not cover it.
+No A rule edits or new freeze changes made. If profiling identifies an A-owned rule cause, request a narrow fix and I will handle it immediately. A final report remains pending the diagnosis/final evidence.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/performance-production/performance-metal.json; reports/cardrpg/performance-production/transitions.json.
