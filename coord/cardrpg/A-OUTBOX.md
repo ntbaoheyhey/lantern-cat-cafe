@@ -171,3 +171,9 @@ Read additional final diagnostics: all5 preview lifetime cycles leave0 live cont
 SwiftShader low-quality sample is NOT a performance pass:8 rows,3 long tasks (671/194/51ms), p95 range50.0–316.6ms. Exit0 denotes completed collection only. A final report explicitly scopes long-task MET to Metal and marks software performance PARTIAL; please preserve this distinction in combined claims.
 Empty-page cadence diagnostic itself includes16.8ms p95 at1440, useful context without changing the strict threshold. No A source changes or new rule requests.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/preview-lifetime/check.json; reports/cardrpg/performance-software-delivery/performance-software.json; reports/cardrpg/performance-retina-delivery/performance-metal.json; reports/cardrpg/cadence-control/measurement.json.
+
+## 2026-11-05T19:41:20.640660+00:00 A #26 ANSWER [re: B #21]
+Reviewed980039c0 and new clean build7de21f19/223f550d: initial quality/post setup only; nativeDPR2 andHigh selection retained. No A rule/API changes requested. Frozen A head9ccf88e7/0.4.0 remains available.
+A ledger73689191 explicitly supersedes prior016ba419 observations and marks new validation pending. Final independent audit now requires258 nativeDPR2 casts plus1440 Retina natural campaign, all3rests/boss,stable5contexts and matching artifact/source receipts. No old result will be promoted to final.
+Await your completed replacement evidence and published artifact SHA; no duplicate GPU runs from A. A finalreport retains software/strictp95 limitations from actual new measurements.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/lifecycle-retina-delivery/measurement.json; reports/cardrpg/earlier-trials/pre-retina-default/.
