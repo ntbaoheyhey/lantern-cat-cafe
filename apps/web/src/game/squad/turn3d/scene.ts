@@ -33,6 +33,7 @@ export class TurnScene {
   readonly camera = new T.PerspectiveCamera(32,1,.1,80);
   readonly stats = { frames: 0, calls: 0, triangles: 0, geometries: 0, textures: 0, particles: 0, estimatedGpuBytes: 0, loaded: 0, hiddenFrames: 0,quality:'high' as Quality };
   readonly labelAudit:{heads:LabelInput['head'][];cards:LabelInput['head'][];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
+  private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
   private puppets = new Map<string,Puppet>();
   private pending = new Set<string>();
   private disposed = false;
@@ -97,7 +98,8 @@ export class TurnScene {
       const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(6),3));
       const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
     }
-    this.spells=new SpellVfx(this.scene);
+    this.spells=new SpellVfx(this.scene);this.spells.warm(this.renderer,this.camera);this.scene.add(this.spells.root);
+    this.renderer.compile(this.scene,this.camera);
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
     this.renderer.domElement.addEventListener('pointerup',this.pick);
@@ -155,7 +157,7 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.renderer.compile(this.scene,this.camera);this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -176,13 +178,13 @@ export class TurnScene {
     const ids=new Set(view.actors.map(a=>a.id));
     for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
     this.stats.loaded=this.puppets.size;
-    for(const a of view.actors)void this.ensure(a,view.boss);
+    for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss);
     const frame=view.frame, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;p.base=view.model?new T.Vector3(0,0,0):point(a,view.boss);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:restYaw(a.side);
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:formationPoint(a,view.boss);p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:restYaw(a.side);
       p.gear.update(a);p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
-      if(frame&&source===p){clip=frame.plan.ultimate?'ultimate':({shieldBash:'skill1',rally:'guard',hearthwall:'skill3',emberOrb:'skill1',threadSnare:'skill2',milkFlask:'skill1',mossFlask:'skill2'} as Record<string,string>)[frame.plan.skillId]??frame.clip;progress=frame.beat.kind==='impact'?.45:frame.progress;if(!view.reducedMotion){const phase=frame.beat.kind;const target=targets[0]?.base??p.base;const melee=['slash','bash','charge','sweep','cross'].includes(frame.plan.shape);if(melee&&['travel','impact','reaction'].includes(phase)){const t=phase==='travel'?ease(frame.progress):phase==='reaction'?1-ease(frame.progress):1;const dest=p.base.clone().lerp(target,.68);p.root.position.lerpVectors(p.base,dest,t);}if(phase==='anticipation'){const baseScale=figureScale(a.role,a.side);p.root.scale.set(1+Math.sin(frame.progress*Math.PI)*.055,1-Math.sin(frame.progress*Math.PI)*.07,1+.025*Math.sin(frame.progress*Math.PI)).multiplyScalar(baseScale);}}}
+      if(frame&&source===p){clip=frame.plan.ultimate?'ultimate':({shieldBash:'skill1',rally:'guard',hearthwall:'skill3',emberOrb:'skill1',threadSnare:'skill2',milkFlask:'skill1',mossFlask:'skill2'} as Record<string,string>)[frame.plan.skillId]??frame.clip;progress=frame.beat.kind==='impact'?.45:frame.progress;if(!view.reducedMotion){const phase=frame.beat.kind;const target=targets[0]?.base??p.base;const melee=['slash','bash','charge','sweep','cross'].includes(frame.plan.shape);if(melee&&['travel','impact','reaction'].includes(phase)){const t=phase==='travel'?ease(frame.progress):phase==='reaction'?1-ease(frame.progress):1;const dest=this.scratch.copy(p.base).lerp(target,.68);p.root.position.lerpVectors(p.base,dest,t);}if(phase==='anticipation'){const baseScale=figureScale(a.role,a.side);p.root.scale.set(1+Math.sin(frame.progress*Math.PI)*.055,1-Math.sin(frame.progress*Math.PI)*.07,1+.025*Math.sin(frame.progress*Math.PI)).multiplyScalar(baseScale);}}}
       if(frame&&targets.includes(p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';progress=frame.beat.kind==='impact'?.45:frame.progress;if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}}
       if(frame&&!view.model&&!view.reducedMotion){
         const phase=frame.beat.kind,weight=phase==='anticipation'?ease(frame.progress):phase==='residue'?1-ease(frame.progress):1;
@@ -201,7 +203,7 @@ export class TurnScene {
     this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
     this.activeRing.visible=false;this.targetRings.forEach(r=>r.visible=false);
     const active=source??this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
-    this.aura.intensity=active&&!view.model?1.2:0;if(active)this.aura.position.copy(active.root.position).add(new T.Vector3(0,1.4,.3));
+    this.aura.intensity=active&&!view.model?1.2:0;if(active)this.aura.position.set(active.root.position.x,active.root.position.y+1.4,active.root.position.z+.3);
     this.targetLines.forEach(l=>l.visible=false);
     if(active&&!view.model&&(!frame||frame.beat.kind==='anticipation'))view.targetIds.slice(0,9).forEach((id,i)=>{
       const p=this.puppets.get(id),line=this.targetLines[i];if(!p||!line||p===active)return;
@@ -214,13 +216,16 @@ export class TurnScene {
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
-    if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??new T.Vector3();this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
+    if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
     if(frame&&!view.reducedMotion&&!view.model){const shot=EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();
-    this.spells.render(frame,view.actors,new Map([...this.puppets].map(([id,p])=>[id,p.root.position])),this.camera,this.time,view.reducedMotion);this.stats.particles=this.spells.count;
+    this.positions.clear();for(const [id,p] of this.puppets)this.positions.set(id,p.root.position);
+    this.spells.render(frame,view.actors,this.positions,this.camera,this.time,view.reducedMotion);this.stats.particles=this.spells.count;
     this.renderer.info.reset();this.post.render(this.scene,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
     if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line)geometries.add(o.geometry);});let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
+    // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
+    const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;

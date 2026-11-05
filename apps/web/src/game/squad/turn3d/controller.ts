@@ -15,7 +15,7 @@ export class TurnController {
   model={role:'guardian' as Role,clip:'idle',angle:.35};
   timeline:RoundSlot[]=[]; policy:'auto'|'active'='auto';
   captureFrame:EffectFrame|null=null; fixedTime:number|undefined;
-  private cursor=0; private version=0;private listeners=new Set<()=>void>();private sinceNotify=0;private pendingNotify=true;private galleryWait=0;
+  private cursor=0; private version=0;private listeners=new Set<()=>void>();private presentationKey="";private galleryWait=0;
   constructor(options:TurnOptions={}){this.battle=createTurnBattle(options);this.flush();this.boundary();}
   subscribe=(fn:()=>void)=>{this.listeners.add(fn);return()=>this.listeners.delete(fn);};
   snapshot=()=>this.version;
@@ -35,12 +35,12 @@ export class TurnController {
   }
   tick(delta:number,hidden=false){
     if(hidden||!this.running||this.mode==='models'||this.fixedTime!==undefined)return;
-    const wasBusy=this.presenter.busy,beforeSeq=this.presenter.appliedSeq;
+    const beforeSeq=this.presenter.appliedSeq;
     const ms=Math.min(100,Math.max(0,delta));this.presenter.tick(ms);
     if(this.mode==='effects'&&!this.presenter.busy){this.galleryWait+=ms;if(this.galleryWait>750)this.gallery(this.galleryId);}
     else this.boundary();
-    this.pendingNotify ||= wasBusy||this.presenter.busy||beforeSeq!==this.presenter.appliedSeq;
-    this.sinceNotify+=ms;if(this.sinceNotify>=33){this.sinceNotify=0;if(this.pendingNotify){this.pendingNotify=false;this.notify();}}
+    const f=this.frame;const key=`${f?.plan.id}/${f?.beat.kind}/${!!f&&f.elapsed<1450}/${this.presenter.busy}`;
+    if(key!==this.presentationKey||beforeSeq!==this.presenter.appliedSeq){this.presentationKey=key;this.notify();}
   }
   act(choice:TurnChoice){
     if(this.presenter.busy||!this.running||this.mode!=='battle')return false;
