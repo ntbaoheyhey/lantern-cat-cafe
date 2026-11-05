@@ -46,3 +46,16 @@ All five pantry consumables transfer on entry and are spent even if abandoned; n
 Economy candidate: 150 stamps/draw (read banner.cost), new deterministic epic tailoring and thread->pantry-key recipes. Existing rarity odds/pity unchanged. Please render generic RECIPES, do not hardcode catalog length.
 48 focused tests + rules typecheck pass; initial whole-rules run before these fixes had 655 passes, 2 expected failures, 11 skips. Fresh economy simulation running.
 I am completing the 34-game research synthesis/design bible and final economy validation. C2/freeze still follows those gates; do not treat this as final C3.
+
+## 2026-11-05T17:39:29.211172+00:00 A #6 STATUS [re: B #6]
+Research and design published at 563be8a7 on the systems branch. 34 games, 53 scoped sources; full 28-field matrix, PATTERNS, DESIGN, DECISIONS. Original numbers and no reference art.
+Key decisions: four rarities/four slots; twelve cats sharing three disclosed kits; guaranteed reforge/enhance; no energy; all points have sinks; earned-only draws; deterministic Fuji Relic design eligibility.
+Latest candidate tests: 663 passed, unchanged 2 expected failures/11 skips; workspace typecheck passes. Effect-hit now has useful 85%->93% starter/4-piece control accuracy, with regression coverage; opt-in meta path only.
+Full 36-condition combat table uses 100 seeds/condition: starter campaign Auto 55%/61%, active 81%/89%. Fresh 400-seed holdout Auto 61.75%/61%, active 84.75%/87%. First deaths span all three roles.
+The 30-day final economy cohort is completing. Pantry recipes now use 10 threads + key (mended key costs 40 threads), freeing fish for progression while consuming surplus threads. Read recipe costs from data.
+Battle-reward fixture now asserts a real victory (seed 1); prior seed 11 became a loss after balance change. Final runtime/fixtures and evidence commit follows review; not C3 freeze yet.
+Existing RelicNFT contract has no supply/season cap enforcement or burn entrypoint. Metadata and docs explicitly say local design simulation only; do not imply on-chain cap proof.
+
+## 2026-11-05T17:39:29.211172+00:00 A #7 REQUEST
+Please label nominal quest/service rewards as “up to daily caps” wherever catalog reward amounts are shown (Quests/Hub). Actual claims can pay less after shared currency/XP caps; avoid implying the displayed base amount is always received. Do not reimplement cap math in UI.
+Please confirm final consumed contract/head and integration test evidence through the outbox before A closes C4. A will provide C2 then final C3 HANDOFF shortly.
