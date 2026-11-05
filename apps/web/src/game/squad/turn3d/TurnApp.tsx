@@ -7,6 +7,7 @@ import {UltimateCard} from './UltimateCard';
 import type {Quality} from './post';
 import {TurnController} from './controller';
 import {SceneCanvas} from './SceneCanvas';
+import {MiniPreviewProvider} from './PreviewPool';
 import type {Anchor,SceneView,TurnScene} from './scene';
 import {TURN_KITS,TURN_SKILLS,describeTurnSkill,NAMES} from '@taskbar-hero/game-rules/src/squad/turn/config';
 import type {Hero,Role,Preset,TurnEncounter} from '@taskbar-hero/game-rules/src/squad/turn/types';
@@ -68,7 +69,7 @@ export default function TurnApp({offline=false,cardRarities={},controller,onExit
  };
  const turnLabel=s.result?s.result.winner==='party'?'The cafe is safe.':'A lesson for tomorrow.':modelMode?NAMES[c.model.role]:effects?`Effect study · ${EFFECT_REGISTRY[c.galleryId]?.name}`:p.busy?`${frame?.plan.name??active?.name??'Next turn'} · ${frame?.beat.kind??'preparing'}`:c.canChoose?`${c.selectedSkill?'Choose a target':'Your move'}: ${active?.name??c.active?.name}`:'Enemy turn';
  const numbers=frame&&['impact','reaction','residue'].includes(frame.beat.kind)?frame.plan.events.filter(e=>['damage','heal','shield','status_apply','status_expire','interrupt'].includes(e.type)):[];
- return <div className={`sq-shell t3-shell${controller?' cr-integrated-battle':''}`} data-testid="turn3d-prototype" onClickCapture={e=>{if((e.target as HTMLElement).closest('button'))audio.ui()}}>
+ return <MiniPreviewProvider><div className={`sq-shell t3-shell${controller?' cr-integrated-battle':''}`} data-testid="turn3d-prototype" onClickCapture={e=>{if((e.target as HTMLElement).closest('button'))audio.ui()}}>
   <aside className="sq-rail" aria-label="Cafe navigation"><a className="sq-brand" href={offline?'#overview':'?demo#home'}><span aria-hidden="true">♜</span><b>CAT<br/>CAFE</b></a><nav aria-label="Prototype scenes">
    <button className={c.mode==='battle'&&c.battle.encounter==='campaign'?'is-current':''} onClick={()=>reset()}><span aria-hidden="true">⚔</span>Patrol</button>
    <button className={c.mode==='battle'&&c.battle.encounter==='boss'?'is-current':''} onClick={()=>reset('boss')}><span aria-hidden="true">◎</span>Yarn Giant</button>
@@ -109,5 +110,5 @@ export default function TurnApp({offline=false,cardRarities={},controller,onExit
    {s.result&&c.mode==='battle'&&<section className="sq-result" aria-label="Encounter result"><div><h3>{s.result.winner==='party'?'The lantern stays lit.':'Rest, regroup, try again.'}</h3><p>{s.result.rounds} rounds · {s.result.wavesCleared} waves · {s.result.deaths.filter(id=>['guardian','witch','alchemist'].includes(id)).length} fallen cats · local only</p><RunSummary c={c}/>{onFinish?<button disabled={p.busy} onClick={onFinish}>Collect patrol rewards →</button>:<button onClick={()=>reset()}>Play again</button>}</div></section>}
    {debug&&!controller&&<details className="t3-debug"><summary>Local review controls</summary><label>Seed <input aria-label="Battle seed" type="number" value={seed} onChange={e=>setSeed(Number(e.target.value)||11)}/></label>{[0,1,2].map(w=><button key={w} onClick={()=>reset('patrol',w)}>Wave {w+1}</button>)}<button onClick={()=>reset('boss')}>Spawn boss</button><button onClick={()=>reset('group')}>Six-role fixture</button><button disabled={p.busy} onClick={()=>c.grantCharge()}>Fill ultimate charge</button><label>Camera <select aria-label="Camera preset" value={camera} onChange={e=>setCamera(e.target.value as typeof camera)}><option>wide</option><option>close</option><option>overhead</option></select></label><button disabled={p.busy} onClick={()=>{const intent=Object.values(c.battle.intents)[0];if(intent){intent.targetId='witch';intent.targetIds=['witch'];c.debugSnapshot()}}}>Aim first intent at Soot</button><label>Round <input aria-label="Jump to round" type="number" min="1" value={jump} onChange={e=>setJump(Number(e.target.value))}/></label><button disabled={p.busy} onClick={()=>c.jumpRound(jump)}>Play to round</button><button disabled={!['loadout','rest'].includes(c.battle.run.stage)} onClick={()=>c.grantGear()}>Grant sandbox gear</button><button onClick={()=>navigator.clipboard?.writeText(String(c.battle.seed))}>Copy run seed</button><span>Resets discard local progress.</span></details>}
   </main></div>
- </div>;
+ </div></MiniPreviewProvider>;
 }

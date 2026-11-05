@@ -37,3 +37,7 @@ The final 1024 screenshot exposed party status text extending below its card eve
 The final transition audit also caught preview context leakage and CSP-blocked embedded textures. Disposed miniature contexts are explicitly released; only local blob connections are permitted for embedded textures. Final journey checks reject console errors and any fallback; prior receipts remain historical.
 
 REFERENCE: docs/cardrpg/index.html; tools/cardrpg-demo/inspect.mjs; reports/cardrpg/layout-delivery/checks.json; reports/cardrpg/transition-context-diagnostic/; reports/cardrpg/performance-delivery/transitions.json.
+
+The natural-playback follow-up included the previously unmeasured entrance into loot and rest. It found 198/194ms creation stalls (profile repeat 208/209ms), dominated by shader compilation in three new miniature contexts. The run now owns a four-slot warmed preview pool, shared across loadout/loot/rest and the equipment picker, suspended while detached and disposed when leaving the run. The full natural x4 campaign audit counts contexts and includes these screen entrances; its final receipt, not the earlier next-wave-only measurements, governs the lifecycle claim.
+
+REFERENCE: apps/web/src/game/squad/turn3d/PreviewPool.tsx; tools/cardrpg-demo/lifecycle-performance.mjs; reports/cardrpg/lifecycle-diagnostic/; reports/cardrpg/lifecycle-delivery/measurement.json.
