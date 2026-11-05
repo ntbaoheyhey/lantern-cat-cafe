@@ -1,7 +1,7 @@
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 const out='reports/cardrpg/meta';await fs.mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,channel:'chromium',args:['--use-angle=metal']}),rows=[],errors=[];
 try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>errors.push(String(e)));
- await page.goto('http://127.0.0.1:5523/?demo&squad=1&squad3d=1&cardrpg=1');await page.waitForFunction(()=>window.__cardrpgReview);
+ await page.goto(process.env.CARDRPG_URL||'http://127.0.0.1:5523/?demo&squad=1&squad3d=1&cardrpg=1');await page.waitForFunction(()=>window.__cardrpgReview);
  for(const fixture of ['starter','midgame','nearHard']){await page.evaluate(id=>window.__cardrpgReview.fixture(id),fixture);
  for(const screen of ['hub','collection','detail','inventory','forge','gacha','quests','codex','relics']){await page.evaluate(screen=>window.__cardrpgReview.go(screen),screen);await page.waitForTimeout(60);await page.screenshot({path:`${out}/${width}-${fixture}-${screen}.png`});rows.push({width,height,fixture,screen,...await page.evaluate(()=>({docWidth:document.documentElement.scrollWidth,docHeight:document.documentElement.scrollHeight,contentWidth:document.querySelector('.cr-content').scrollWidth,clientWidth:document.querySelector('.cr-content').clientWidth,brokenImages:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)}))});}
  }await page.close();console.log(JSON.stringify({width,rows:rows.length,errors}));}
