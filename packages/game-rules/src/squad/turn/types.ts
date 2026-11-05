@@ -1,4 +1,6 @@
 /** Local-only turn format. No verified replay, save, economy or renderer dependencies. */
+import type { Stats } from '../../cardrpg/contract';
+import type { GearProperty } from '../gear/catalog';
 import type { Loadout } from '../gear/catalog';
 import type { GearMode, SquadRun } from '../gear/run';
 import type { Hero, Preset, Role, Side, StatusKind } from '../types';
@@ -7,7 +9,10 @@ export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
 export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
 export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
 export interface TurnStatus { kind: StatusKind; source: string; rounds: number; strength: number; appliedRound: number }
+export interface CardRpgCombatCard { cardId: string; name: string; stats: Stats; properties: GearProperty[]; sets: string[] }
+export interface CardRpgCombat { runId: number; cards: Record<Hero, CardRpgCombatCard>; extraTonics: number }
 export interface TurnActor {
+  cardRpg?: CardRpgCombatCard;
   equipment: Loadout; setBonuses: string[];
   id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
   hp: number; maxHp: number; shield: number; shieldRounds: number; shieldAppliedRound: number; charge: number;
@@ -54,7 +59,7 @@ export interface TurnBattle {
   settledWaves: number[]; fishFound: number; deaths: string[]; result: TurnResult | null;
   totals: Record<string, { damage: number; healing: number; shielding: number; taken: number }>;
 }
-export interface TurnOptions { seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number; gearMode?: GearMode; interactive?: boolean }
+export interface TurnOptions { cardRpg?: CardRpgCombat; seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number; gearMode?: GearMode; interactive?: boolean }
 
 /** Stable integration API implemented in engine.ts:
  * createTurnBattle(options?), getTimeline(b), startTurn(b): TurnActor|null,

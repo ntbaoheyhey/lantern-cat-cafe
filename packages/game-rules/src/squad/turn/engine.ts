@@ -138,7 +138,7 @@ function charge(b: TurnBattle, p: Plan, a: TurnActor, amount: number, note: stri
 function shield(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number, skillId = p.skillId): void {
   if (!living(target)) return;
   const before = target.shield;
-  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === 'party' ? C.presets[b.preset].shield * (1 + gearBonuses(source.equipment).stats.shield) : 1)));
+  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === 'party' ? C.presets[b.preset].shield * (1 + gearBonuses(source.equipment,source.cardRpg).stats.shield) : 1)));
   const added = target.shield - before;
   if (added <= 0) return;
   target.shieldRounds = C.shieldRounds; target.shieldAppliedRound = b.round;
@@ -154,7 +154,7 @@ function passive(b: TurnBattle, p: Plan, source: TurnActor, skillId: string, tar
 function heal(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number): void {
   if (!living(target)) return;
   const injured = target.hp / target.maxHp < C.passive.injuredFraction;
-  const added = Math.min(target.maxHp - target.hp, Math.round(raw * (source.side === 'party' ? C.presets[b.preset].healing * (1 + gearBonuses(source.equipment).stats.healing) : 1)));
+  const added = Math.min(target.maxHp - target.hp, Math.round(raw * (source.side === 'party' ? C.presets[b.preset].healing * (1 + gearBonuses(source.equipment,source.cardRpg).stats.healing) : 1)));
   target.hp += added; (b.totals[source.id] ??= zero()).healing += added;
   emit(b, p, 'heal', 2, { actorId: source.id, targetIds: [target.id], amount: added });
   if (source.role === 'alchemist' && injured && added > 0 && passive(b, p, source, 'lastSip', [target.id]))
@@ -177,6 +177,10 @@ function cleanse(b: TurnBattle, p: Plan, target: TurnActor): void {
 }
 function status(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, kind: StatusKind, rounds: number, strength = 1): boolean {
   if (!living(target)) return false;
+  if ((source.cardRpg || target.cardRpg) && !['guard','exposed'].includes(kind)) {
+    const chance = Math.max(.15, Math.min(.95, 1 + (source.cardRpg?.stats.effectHitBp ?? 0) / 10000 - (target.cardRpg?.stats.effectResistBp ?? 0) / 10000));
+    if (random(b) >= chance) { emit(b,p,'fizzle',2,{targetIds:[target.id],status:kind,note:'Effect resisted.'}); return false; }
+  }
   if (kind === 'stun' || kind === 'snare') {
     if (target.controlCount > 0) {
       emit(b, p, 'fizzle', 2, { targetIds: [target.id], status: kind, note: 'Control resisted during recovery.' }); return false;
@@ -239,7 +243,7 @@ function damage(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, ra
   const guard = Math.min(C.caps.guard, target.statuses.filter(s => s.kind === 'guard' && s.rounds > 0).reduce((n, s) => n + s.strength, 0));
   const enrage = source.role === 'yarn' && b.bossRounds >= C.boss.enrageRounds
     ? C.boss.enrageMultiplier + (b.bossRounds - C.boss.enrageRounds) * C.boss.enrageGrowth : 1;
-  const amount = Math.max(C.minDamage, Math.round(raw * variance * (critical ? C.critMultiplier : 1) * enrage *
+  const amount = Math.max(C.minDamage, Math.round(raw * variance * (critical ? (source.cardRpg ? 1 + source.cardRpg.stats.critDamageBp / 10000 : C.critMultiplier) : 1) * enrage *
     (has(target, 'exposed') ? C.boss.exposedMultiplier : 1) * C.defenseScale / (C.defenseScale + Math.max(0, target.defense)) * (1 - guard)));
   const absorbed = Math.min(target.shield, amount), lost = Math.min(target.hp, amount - absorbed);
   target.shield -= absorbed; target.hp -= lost;
@@ -416,7 +420,7 @@ export function resolveAction(b: TurnBattle): TurnEvent[] {
       const slots = t.role === 'yarn' ? C.control.bossDelay : skill.delay;
       if (moveInRound(b, t.id, slots)) emit(b, p, 'delay', 2, { targetIds: [t.id], amount: slots, note: 'Pushed back in this round.' });
     }
-    const burnChance = Math.min(C.equipment.maxStatusChance, gearBonuses(source.equipment).stats.statusChance);
+    const burnChance = Math.min(C.equipment.maxStatusChance, gearBonuses(source.equipment,source.cardRpg).stats.statusChance);
     if (skill.power > 0 && living(t) && burnChance > 0 && random(b) < burnChance) status(b, p, source, t, 'burn', 1);
     if (skill.id === 'bindThread') spawnThread(b, p, source, t);
   }
