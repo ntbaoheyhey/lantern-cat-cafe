@@ -21,8 +21,8 @@ const point = (a: TurnActor, boss: boolean): T.Vector3 => {
   if (a.side === 'party') return [new T.Vector3(-1.85, 0, .45),new T.Vector3(-3.35, 0, -1.25),new T.Vector3(-3.65, 0, 1.65)][a.slot % 3]!;
   if (a.role === 'yarn') return new T.Vector3(2.15, 0, -.25);
   if (a.role === 'thread') return new T.Vector3(.25 + (a.slot % 2) * .7, 0, 1.9);
-  const rows = boss ? [-1.9, 1.85, -.1] : [-1.8, .15, 1.95];
-  return new T.Vector3(1.3 + Math.floor(a.slot / 3) * 2.1, 0, rows[a.slot % 3]!);
+  const rows = boss ? [-1.9, 1.85, -.1] : [-1.15, .4, 1.9];
+  return new T.Vector3(1.1 + (a.slot % 3) * .42 + Math.floor(a.slot / 3) * 1.9, 0, rows[a.slot % 3]!);
 };
 
 export class TurnScene {
@@ -72,14 +72,14 @@ export class TurnScene {
     this.renderer = new T.WebGLRenderer({ antialias:true, alpha:false, powerPreference:'low-power', preserveDrawingBuffer:true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
     this.renderer.outputColorSpace=T.SRGBColorSpace;
-    this.renderer.toneMapping=T.ACESFilmicToneMapping; this.renderer.toneMappingExposure=1.12;
+    this.renderer.toneMapping=T.ACESFilmicToneMapping; this.renderer.toneMappingExposure=1.08;
     this.renderer.setClearColor('#252332'); this.renderer.domElement.setAttribute('aria-label','Original 3D cafe battlefield');
     this.renderer.domElement.setAttribute('role','img'); host.appendChild(this.renderer.domElement);
     this.glow=this.makeGlow();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',20,35);
-    this.scene.add(new T.HemisphereLight('#eee7ff','#76606a',2.3));
-    const key=new T.DirectionalLight('#ffe0ad',3.6); key.position.set(-4,8,5); this.scene.add(key);
+    this.scene.add(new T.HemisphereLight('#eee7ff','#76606a',1.8));
+    const key=new T.DirectionalLight('#ffe0ad',2.8); key.position.set(-4,8,5); this.scene.add(key);
     const rim=new T.DirectionalLight('#b3c9ff',2.6);rim.position.set(4,4,-5);this.scene.add(rim);
     this.aura=new T.PointLight(GOLD,0,7);this.scene.add(this.aura);
     this.stage=this.makeStage();this.scene.add(this.stage);
@@ -128,7 +128,7 @@ export class TurnScene {
     const glow=new T.Sprite(new T.SpriteMaterial({map:this.glow,color:'#ffc27b',transparent:true,opacity:.6,blending:T.AdditiveBlending,depthWrite:false}));glow.position.copy(flame.position);glow.scale.set(1.1,1.1,1);group.add(glow);
     return group;
   }
-  private resizeToHost(){this.width=Math.max(1,this.host.clientWidth);this.height=Math.max(1,this.host.clientHeight);this.renderer.setSize(this.width,this.height,false);const aspect=this.width/this.height;const halfWidth=6.45;this.camera.left=-halfWidth;this.camera.right=halfWidth;this.camera.top=halfWidth/aspect;this.camera.bottom=-halfWidth/aspect;this.camera.updateProjectionMatrix();this.dirty=true;}
+  private resizeToHost(){this.width=Math.max(1,this.host.clientWidth);this.height=Math.max(1,this.host.clientHeight);this.renderer.setSize(this.width,this.height,false);const aspect=this.width/this.height;const halfWidth=6.85;this.camera.left=-halfWidth;this.camera.right=halfWidth;this.camera.top=halfWidth/aspect;this.camera.bottom=-halfWidth/aspect;this.camera.updateProjectionMatrix();this.dirty=true;}
   invalidate(){this.dirty=true;}
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
@@ -179,7 +179,7 @@ export class TurnScene {
     const active=this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.renderEffects(frame,source,targets,view);
-    this.camera.position.set(0,8.3,11.5);this.cameraTarget.set(0,.65,0);this.camera.zoom=view.model?2.3:view.camera==='close'?1.13:view.camera==='overhead'?.9:1;
+    this.camera.position.set(0,6.5,13);this.cameraTarget.set(0,.95,0);this.camera.zoom=view.model?2.3:view.camera==='close'?1.13:view.camera==='overhead'?.9:1;
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
     if(view.model)this.cameraTarget.y=1;
     if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;this.camera.zoom+=push*.16;const focus=source?.base??new T.Vector3();this.cameraTarget.x=focus.x*push*.24;const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
