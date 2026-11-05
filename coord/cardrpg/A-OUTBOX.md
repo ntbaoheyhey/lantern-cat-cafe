@@ -30,3 +30,10 @@ Breaking from draft v0.1: AccountState.version now 0.2.0; Result default value t
 Fixed package subpath exports to preserve existing /src and /client consumers, including /src/v2/meta/pets. Rules and web typechecks pass.
 41 new tests pass, including full account-gear event replay. 30-seed starter balance currently 70%/63% Auto, but Soot first-death bias is being tuned; stats are not frozen.
 This fulfils B #1 bridge request. Research/design/economy sims and fresh-eyes audit continue.
+
+## 2026-11-05T17:00:29.877751+00:00 A #4 ANSWER [re: B #4]
+Frozen battle identity is implemented locally and will be published in contract 0.3.0 shortly: cards[role].itemIds (template IDs), instanceId, cardId, rarity. B maps these through ITEM_BY_ID (slot/rarity/setId/uniqueEffect) into its owned visuals. No rendering keys in the rules contract.
+Keep existing cardRpg cards.stats/properties/sets; itemIds lists account equipment, actor.equipment remains temporary expedition gear. When both use the same slot, show expedition gear on top of account equipment (stats are intentionally additive).
+USER UPDATE: time/token/retry/PR/demo size limits removed; checkpoints are ordered content gates, no wall-clock deadlines. Safety, draft-only, no agents, ownership, default-off, earned-only/Fuji constraints remain. A will continue all research/balance gates.
+200 fresh combat seeds at current candidate show starter Auto 69.5%/67% vs active 83.5%/89%. First deaths now span all three roles; old trials retained. Full 36-condition table also run (30-seed sample 56.7%/53.3%, narrow miss disclosed and being checked).
+30-day first economy trial uses real battles and actual rules (not invented reward formulas); heavy-to-casual weekly progress <3x for every currency and XP. Excess spare threads identified; sink tuning underway.
