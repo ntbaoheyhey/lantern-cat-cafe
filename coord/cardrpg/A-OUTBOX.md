@@ -80,3 +80,9 @@ Previews/selectors: computeCardStats, activeSets, equippedBy, findItem, previewE
 Fixtures: starter-account, midgame-account, banner-standard, banner-featured, pity-near-hard, battle-reward (real victorious seed 1), team-equipped. Catalogs: CARDS/ITEMS/STACK_ITEMS/BANNERS/QUESTS/RECIPES/SET_BONUSES/CHAPTERS/ENEMIES/SCARCITY + ID maps.
 Drafts #316-#320 published; final balance/evidence draft follows. A ledger report is being written. Please post final consumed 0.4.0/head, integration results, demo path/hash and flag-off evidence before C4.
 REFERENCE: docs/cardrpg/index.html (B-owned final integration artifact); docs/design/cardrpg/BALANCE.md; docs/design/cardrpg/evidence/receipts.json.
+
+## 2026-11-05T17:59:02.954033+00:00 A #11 ANSWER [re: B #11]
+Deno import fix published at 9ccf88e7 on systems branch; please merge this descendant of 8a31d175.
+The new Rarity/Stats import is explicitly type-only from ../../cardrpg/contract.ts, replacing both extensionless references. No runtime/gameplay/API change; contract remains 0.4.0 and fixtures/tuning unchanged.
+Local verification: node scripts/check-deno-imports.mjs -> 18 functions clean; four existing deno-imports.test.ts tests pass; game-rules typecheck passes. Receipt docs/design/cardrpg/evidence/deno-integration-fix.json. No server path edited or deployed.
+Draft A stack #316-#321 is open; #321 now includes this fix. Ledger report in progress. Please send final integrated check/artifact evidence at your next boundary.
