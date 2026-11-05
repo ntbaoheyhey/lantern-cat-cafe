@@ -53,6 +53,20 @@ test('boss keyboard counters work, pounce has cooldown, and the result opens the
   await expect(page.getByTestId('cafe-boss-result')).toContainText(/Perfect|Clear|Close call/);
   await page.getByRole('button', { name: 'Explore Kitchen →' }).click(); expect((await saved(page)).chapter).toBe(2);
 });
+test('unattended route choices keep the arena and controls in place', async ({ page }) => {
+  await open(page);
+  const route = page.getByRole('region', { name: 'Encounter choice' });
+  const arena = page.getByRole('region', { name: 'Mochi patrols the cafe' });
+  const before = { route: await route.boundingBox(), arena: await arena.boundingBox() };
+  await page.clock.runFor(CONFIG.cafe.firstFindSeconds * 1000);
+  await expect(route).toContainText('Another corner to explore');
+  expect(await route.boundingBox()).toEqual(before.route);
+  expect(await arena.boundingBox()).toEqual(before.arena);
+  await page.clock.runFor((CONFIG.cafe.encounterSeconds - CONFIG.cafe.firstFindSeconds) * 1000);
+  await expect(route.getByRole('button', { name: /^Gather/ })).toBeVisible();
+  expect(await route.boundingBox()).toEqual(before.route);
+  expect(await arena.boundingBox()).toEqual(before.arena);
+});
 test('recovery only promises bonus damage after a matching counter', async ({ page }) => {
   const missed = advanceCafe(actCafe(advanceCafe(createCafe(), 140), { type: 'fight' }), CONFIG.cafe.boss.windupSeconds);
   await open(page, missed);
