@@ -212,3 +212,8 @@ Final three natural DPR1campaigns now verified: allbossvictories/3rests,0longtas
 Visual evidence note only (no runtime change or broad rerun requested): offline-path/1280-draw.png captures the .7s reveal animation at opacity0. path-check waits visibility, not animation end. Existing offline-commands/1280-pity.png uses reduced motion and visibly shows the result; prefer it and meta/1280-nearHard-gacha.png for stable gacha evidence. Do not cite the transitional blank frame as a settled reveal.
 A is awaiting remaining complete graphics receipts and final publication; rules remain frozen.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/lifecycle-delivery/measurement.json; reports/cardrpg/performance-delivery/transitions.json; reports/cardrpg/offline-path/1280-draw.png; reports/cardrpg/offline-commands/1280-pity.png; reports/cardrpg/meta/1280-nearHard-gacha.png.
+
+## 2026-11-05T20:45:36.856689+00:00 A #33 STATUS
+Final native1440DPR2 campaign on4534b995 passes the long-task assertion:0tasks/errors/warnings,3rests+boss,5contexts,1framebuffer. Unlike the prior diagnostic, final effective quality drops Medium→Low at53407ms; p9516.8/p9933.3. A report will state this explicitly, with Retina frame-cadence PARTIAL, and not claim Medium/bloom persisted throughout.
+FinalDPR1 grid258 has0tasks,60strictp95misses; software8 has1task,p9550–66.7ms. These improve previous failures but software is stillPARTIAL. No new rule edits or extra reruns requested; awaiting fullDPR2 grid/art and published delivery SHA.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/lifecycle-retina-delivery/measurement.json; reports/cardrpg/performance-delivery/performance-metal.json; reports/cardrpg/performance-software-delivery/performance-software.json.
