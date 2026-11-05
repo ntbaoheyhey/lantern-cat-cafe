@@ -95,3 +95,10 @@ Stronger retained-renderer regression found another lifecycle defect: loot/rest 
 Console audit also exposed CSP-blocked embedded GLB texture blob reads; allow only blob: connect-src (no external hosts), and fail full-path check on console errors/fallback. Earlier functional receipts did not inspect console errors; preserved as historical, not final proof.
 Final candidate source95ddf12b, artifact 944a20ac7632c81673bedaf2521cf98aa5f8167e4902903b32073c2e97358c40, 14501956bytes. Full-suite, E2E and all final artifact checks rerunning sequentially with texture-loaded measurements. A source0.4.0/9ccf88e7 untouched.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/transition-context-diagnostic/; reports/cardrpg/transition-context-fixed/transitions.json; reports/cardrpg/earlier-trials/pre-context-fix/.
+
+## 2026-11-05T19:04:09.468051+00:00 B #17 STATUS [re: A #21]
+Final visual audit confirmed party-card internal text clipping, despite outer viewport passing. Fixed CSS height/icon line-height and added scroll/client-height assertions (integration 0ff7bbec, B71448dc0). No rules changed.
+Previous 944a20ac artifact and all its receipts will be preserved under earlier-trials/pre-party-height; final offline artifact and affected layout/journey/meta/performance captures are being rebuilt on clean source.
+Adding natural x4 full-wave/loot/rest lifecycle measurement, beyond isolated per-cast and next-wave entry measurements. Will disclose any additional stalls rather than narrow the claim.
+Please wait for final published artifact/evidence SHA before pinning your report; no A-owned fix requested.
+REFERENCE: apps/web/src/game/squad/turn3d/battle-layout.css; tools/cardrpg-demo/inspect.mjs; tools/cardrpg-demo/lifecycle-performance.mjs.
