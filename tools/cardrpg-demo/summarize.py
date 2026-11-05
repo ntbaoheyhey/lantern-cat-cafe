@@ -15,6 +15,12 @@ for name,path,count in [('metal','performance-delivery/performance-metal.json',2
  result['measurements'][name]=entry
 life=load('lifecycle-delivery/measurement.json');assert life['artifactSha256']==digest;assert not life['errors'] and not life['warnings'];assert len(life['rows'])==3
 result['lifecycle']={'campaigns':len(life['rows']),'longTasks':sum(len(r['long']) for r in life['rows']),'contextsByCampaign':[r['contexts'] for r in life['rows']],'strictP95Misses':sum(r['p95Ms']>16.700001 for r in life['rows'])}
+retina_life=load('lifecycle-retina-delivery/measurement.json');assert retina_life['artifactSha256']==digest
+assert not retina_life['errors'] and not retina_life['warnings'];assert len(retina_life['rows'])==1
+result['retinaLifecycle']={'campaigns':1,'longTasks':sum(len(r['long']) for r in retina_life['rows']),
+ 'contextsByCampaign':[r['contexts'] for r in retina_life['rows']],
+ 'p95Ms':retina_life['rows'][0]['p95Ms'],'p99Ms':retina_life['rows'][0]['p99Ms'],
+ 'pixelRatio':retina_life['rows'][0]['pixelRatio']}
 checks=['preview-lifetime/check.json','offline-path/check.json','offline-commands/check.json','fallback/check.json','meta/checks.json','layout-delivery/checks.json','art/effect-captures.json'];result['boundChecks']=[]
 for p in checks:
  d=load(p);assert d['artifactSha256']==digest,(p,d.get('artifactSha256'));assert not d.get('errors'),(p,d.get('errors'));assert not d.get('requests'),p;assert not d.get('writes'),p;result['boundChecks'].append(p)

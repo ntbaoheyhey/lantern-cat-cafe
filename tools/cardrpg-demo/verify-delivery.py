@@ -7,6 +7,7 @@ Use --write-manifest only after capture and report files have stopped changing.
 from pathlib import Path
 import hashlib
 import json
+import subprocess
 import sys
 
 root = Path(__file__).resolve().parents[2]
@@ -24,6 +25,9 @@ artifact_hash = digest(root / 'docs/cardrpg/index.html')
 assert artifact_hash == build['sha256']
 assert (root / 'docs/cardrpg/index.html').stat().st_size == build['bytes']
 assert build['dirty'] is False and build['rulesOverride'] is None
+runtime_roots = ['apps/web/src', 'apps/web/public', 'packages', 'assets']
+runtime_diff = subprocess.check_output(['git', 'diff', build['head'], '--', *runtime_roots], cwd=root)
+assert not runtime_diff, 'Runtime changed after the measured artifact was built'
 for path, expected in build['sourceHashes'].items():
     assert digest(root / path) == expected, path
 
@@ -48,22 +52,33 @@ casts = read('reports/cardrpg/performance-delivery/performance-metal.json')['row
 assert len(casts) == 258 and all(not row['longTasks'] for row in casts)
 retina = read('reports/cardrpg/performance-retina-delivery/performance-metal.json')['rows']
 assert len(retina) == 258 and all(not row['longTasks'] for row in retina)
+assert all(row['pixelRatio'] == 2 for row in retina)
 retina_life = read('reports/cardrpg/lifecycle-retina-delivery/measurement.json')['rows']
 assert len(retina_life) == 1 and retina_life[0]['pixelRatio'] == 2
 assert not retina_life[0]['long'] and retina_life[0]['result']['winner'] == 'party'
+assert retina_life[0]['rendererRetained']
+assert len(retina_life[0]['buffers']) == 1
+assert retina_life[0]['contexts'] == retina_life[0]['contextsAtStart'] == 5
+assert sum(mark['event'] == 'rest' for mark in retina_life[0]['marks']) == 3
 transitions = read('reports/cardrpg/performance-delivery/transitions.json')['rows']
 assert len(transitions) == 9 and all(not row['longTasks'] for row in transitions)
 life = read('reports/cardrpg/lifecycle-delivery/measurement.json')['rows']
 assert len(life) == 3
 for row in life:
     assert not row['long'] and row['rendererRetained']
+    assert len(row['buffers']) == 1
     assert row['contexts'] == row['contextsAtStart'] == 5
     assert row['result']['winner'] == 'party'
     assert len([m for m in row['marks'] if m['event'] == 'rest']) == 3
 assert all(row['live'] == 0 for row in read('reports/cardrpg/preview-lifetime/check.json')['rows'])
-assert all(row['differingPixels'] == 0 for row in read('reports/cardrpg/isolation/pixels.json'))
+pixels = read('reports/cardrpg/isolation/pixels.json')
+assert len(pixels) == 3 and all(row['differingPixels'] == 0 for row in pixels)
+for row in pixels:
+    for version in ['before', 'after']:
+        assert digest(report / f"isolation/{row['width']}-{version}.png") == row[version + 'Sha256']
 art = read('reports/cardrpg/art/effect-captures.json')
 assert art['frames'] == 215 and art['recipes'] == 43 and not art['missing']
+assert not art['overlaps']
 for line in (report / 'art/effect-captures.jsonl').read_text().splitlines():
     row = json.loads(line)
     assert row['recipe'] == row['id']
@@ -74,6 +89,8 @@ assert not read('reports/cardrpg/validation/round-audit.json')['matches']
 safety = read('reports/cardrpg/validation/safety-delivery.json')
 assert not safety['aSourceDifferences'] and not safety['forbiddenSourceChanges']
 assert safety['noNewRuntimeDependencies']
+assert all(row['passHash'] and digest(root / row['path']) == row['sha256']
+           for row in read('reports/cardrpg/validation/provenance.json'))
 
 if '--write-manifest' in sys.argv:
     paths = sorted(p for directory in [root / 'docs/cardrpg', report]
@@ -89,4 +106,6 @@ for row in manifest['files']:
 print(json.dumps(dict(artifactSha256=artifact_hash, hashBoundChecks=len(checks), commandReceipts=len(commands),
     manifestFiles=len(manifest['files']), functionalEvidence='verified',
     strictCastP95Misses=sum(row['p95Ms'] > 16.700001 for row in casts),
+    strictRetinaP95Misses=sum(row['p95Ms'] > 16.700001 for row in retina),
+    strictRetinaP99Misses=sum(row['p99Ms'] > 25.000001 for row in retina),
     status='PARTIAL: exact percentile and subjective art gates remain disclosed'), indent=2))
