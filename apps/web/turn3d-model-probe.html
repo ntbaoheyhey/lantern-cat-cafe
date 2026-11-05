@@ -1,0 +1,11 @@
+<!-- REFERENCE: docs/design/squad-combat-review-2026-11-05.md; docs/design/squad-slice-2026-11-05.md; packages/game-rules/src/squad/; apps/web/src/game/squad/; docs/squad/index.html; docs/proposals/rune-skill-system/demo/index.html
+Candidate model inspection tool, prototype, not live. -->
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Original miniature inspection</title><style>body{margin:0;background:#252332;color:#fff0cd;font:16px system-ui}#stage{width:640px;height:520px}h1{position:absolute;top:8px;left:22px;font-size:20px;pointer-events:none}canvas{display:block;width:100%;height:100%}</style><h1 id="label"></h1><div id="stage"></div><script type="module">
+import {TurnScene} from './src/game/squad/turn3d/scene.ts';
+import {createTurnBattle} from '@taskbar-hero/game-rules/src/squad/turn/engine';
+const q=new URLSearchParams(location.search),role=q.get('role')||'guardian';
+const actor={...createTurnBattle().actors[0],id:role,role,name:role};
+const view={actors:[actor],currentId:null,frame:null,targetIds:[],legalIds:[],reducedMotion:false,paused:false,boss:false,model:{role,clip:q.get('clip')||'idle',angle:Number(q.get('angle')||0)},fixedTime:1};
+window.probeView=view;window.probe=new TurnScene(document.getElementById('stage'),()=>view,()=>{},()=>{},m=>{throw Error(m)});
+document.getElementById('label').textContent=role+' · original miniature';
+</script></html>

@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "date": "2026-11-05",
+  "originalOnly": true,
+  "assets": [
+    {
+      "id": "guardian",
+      "name": "Mochi",
+      "output": "apps/web/public/art/turn3d/guardian.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.72,
+        "scale": 0.9691294113154221,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 3956,
+      "triangleBudget": 6000,
+      "drawCalls": 12,
+      "bytes": 190608,
+      "gzipBytes": 46679,
+      "sha256": "d1a99a7961bde04856eb569d8d4e2cb880ac0dda2d9ce7af999186dd849ed42b"
+    },
+    {
+      "id": "witch",
+      "name": "Soot",
+      "output": "apps/web/public/art/turn3d/witch.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.82,
+        "scale": 0.8291571663924159,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 4186,
+      "triangleBudget": 6000,
+      "drawCalls": 13,
+      "bytes": 213120,
+      "gzipBytes": 53709,
+      "sha256": "416429dfc82201b557157a15b36600344e0ddf61bf56046f0dfc11fdc4476623"
+    },
+    {
+      "id": "alchemist",
+      "name": "Clover",
+      "output": "apps/web/public/art/turn3d/alchemist.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.72,
+        "scale": 0.9691294113154221,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 3874,
+      "triangleBudget": 6000,
+      "drawCalls": 12,
+      "bytes": 218232,
+      "gzipBytes": 53679,
+      "sha256": "289f7d86e074946039bce62886154fa059194159a4a08075d7da7781ec1d3189"
+    },
+    {
+      "id": "guard",
+      "name": "Button Guard",
+      "output": "apps/web/public/art/turn3d/guard.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.4,
+        "scale": 0.9150326812357439,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2112,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 119188,
+      "gzipBytes": 26137,
+      "sha256": "b9f87e7a9c942c02600469c35a3cf993269ef034ef5e8ccee36aeddad3130d9b"
+    },
+    {
+      "id": "flanker",
+      "name": "Sock Skipper",
+      "output": "apps/web/public/art/turn3d/flanker.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.48,
+        "scale": 1.0003002389868867,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 1800,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 111516,
+      "gzipBytes": 25531,
+      "sha256": "673fcd4c4a954e518ddeb584117976ae8c03bd4353fd458a6fab5906866bd53f"
+    },
+    {
+      "id": "charger",
+      "name": "Spool Ram",
+      "output": "apps/web/public/art/turn3d/charger.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.34,
+        "scale": 1.1884700585774142,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2910,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 118792,
+      "gzipBytes": 26834,
+      "sha256": "8a08b23ca5e14316ead9e60994c2604d89b9c83dceb345f0729c3291a161d86b"
+    },
+    {
+      "id": "ranger",
+      "name": "Needle Moth",
+      "output": "apps/web/public/art/turn3d/ranger.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.48,
+        "scale": 1.0422535269453372,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2560,
+      "triangleBudget": 3000,
+      "drawCalls": 12,
+      "bytes": 142724,
+      "gzipBytes": 30445,
+      "sha256": "caaaf7f667dda5b898b70cb7dfba66da87b96987464e7ae0643b9b8e218844a1"
+    },
+    {
+      "id": "healer",
+      "name": "Teacup Healer",
+      "output": "apps/web/public/art/turn3d/healer.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.42,
+        "scale": 1.078482072620367,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2252,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 122168,
+      "gzipBytes": 29002,
+      "sha256": "cf7acf18b9c269c5b289b21fb6c8e33cfbda6f48a6f3bc78ea122f9ae68ee6e2"
+    },
+    {
+      "id": "elite",
+      "name": "Kettle Knight",
+      "output": "apps/web/public/art/turn3d/elite.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.7,
+        "scale": 0.9321698654021868,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2840,
+      "triangleBudget": 8000,
+      "drawCalls": 10,
+      "bytes": 150408,
+      "gzipBytes": 35731,
+      "sha256": "3dea76ab029549c1d16f6ccd6f85efe60be49d85cdb309bd821377f189b4b517"
+    },
+    {
+      "id": "yarn",
+      "name": "Yarn Giant",
+      "output": "apps/web/public/art/turn3d/yarn.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 2.6,
+        "scale": 1.187541343004576,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 16360,
+      "triangleBudget": 20000,
+      "drawCalls": 14,
+      "bytes": 457220,
+      "gzipBytes": 153733,
+      "sha256": "82992dc17b0ea3e3f24955520ca85d263135ac0743d33dd44c22f74dc2f8d4b3"
+    },
+    {
+      "id": "thread",
+      "name": "Binding Thread",
+      "output": "apps/web/public/art/turn3d/thread.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.34,
+        "scale": 0.9623507018707149,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2216,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 95220,
+      "gzipBytes": 29081,
+      "sha256": "273400525dfab5c9eaaa98c71a4473a3abb887a06908859f9f6d0956db62b289"
+    },
+    {
+      "id": "dummy",
+      "name": "Practice Cushion",
+      "output": "apps/web/public/art/turn3d/dummy.glb",
+      "source": [
+        "tools/art3d/cast.mjs",
+        "tools/art3d/geometry.mjs",
+        "tools/art3d/animation.mjs",
+        "tools/art3d/build.mjs"
+      ],
+      "author": "OpenAI Codex (procedural definitions preserved from stopped model helper; animation/export/validation completed by primary session)",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0 GLTFExporter",
+      "command": "pnpm art:turn3d",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "parameters": {
+        "targetHeight": 1.36,
+        "scale": 1.0445885856975576,
+        "radialSegments": "6–24, by silhouette",
+        "surface": "smooth vertex normals; opaque matte vertex color; no textures",
+        "forward": "+Z",
+        "ground": "y=0",
+        "seed": "deterministic; no random inputs"
+      },
+      "clips": [
+        "idle",
+        "step",
+        "attack",
+        "cast",
+        "special",
+        "hit",
+        "stagger",
+        "down",
+        "victory",
+        "telegraph"
+      ],
+      "triangles": 2248,
+      "triangleBudget": 3000,
+      "drawCalls": 10,
+      "bytes": 133832,
+      "gzipBytes": 29189,
+      "sha256": "56a86df20294f48bfed4a80c28e2379b7acb42c8972138ab8f855734aaaf6775"
+    }
+  ],
+  "proceduralAssets": [
+    {
+      "id": "cafe-stage-and-vfx",
+      "source": "apps/web/src/game/squad/turn3d/scene.ts",
+      "author": "OpenAI Codex primary session",
+      "date": "2026-11-05",
+      "tool": "three.js 0.180.0",
+      "recipe": "makeStage and makeGlow: original primitive diorama, 64px radial canvas gradient, rings, curved lines and bounded sprites",
+      "license": "CC0-1.0",
+      "externalReferences": []
+    }
+  ],
+  "libraries": [
+    {
+      "name": "three",
+      "version": "0.180.0",
+      "license": "MIT"
+    },
+    {
+      "name": "@types/three",
+      "version": "0.180.0",
+      "license": "MIT",
+      "buildOnly": true
+    },
+    {
+      "name": "React",
+      "version": "19.3.1",
+      "license": "MIT"
+    },
+    {
+      "name": "Vite",
+      "version": "8.3.5",
+      "license": "MIT",
+      "buildOnly": true
+    }
+  ]
+}
