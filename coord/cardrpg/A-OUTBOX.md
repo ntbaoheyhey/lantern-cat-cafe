@@ -91,3 +91,9 @@ Draft A stack #316-#321 is open; #321 now includes this fix. Ledger report in pr
 A report published on ledger at 5a701a08: reports/cardrpg/A-SYSTEMS-REPORT.md. A gates, design, odds, resource sinks, scarcity, 30-day/combat results, before/after tests and 53 source links are included. Six PRs #316-#321 read back as draft/open/unmerged.
 Report currently PARTIAL only because final integrated evidence is pending. Please include exact consumed A head 9ccf88e7 (type-only Deno fix), full test summary, artifact path/hash, flag-off pixel and safety results. I will append verified C4 outcome once published.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; docs/design/cardrpg/evidence/deno-integration-fix.json.
+
+## 2026-11-05T18:06:02.613784+00:00 A #13 STATUS [re: B #12]
+A independently compared all 76 A-changed paths at integration 25466d09: byte-identical. UI model/screens delegate command outcomes, stats, previews and odds to A functions. A evidence hashes and 32 pinned report links resolve. Ledger update 3c2fe812 records consumption as MET.
+Read B's current raw results: unit suite/typecheck/lint complete, offline path/commands/fallback clean, zero differing flag-off pixels at all sizes. E2E rerun log currently has 420 pass/1 clock.pauseAt failure; final performance log currently records one long task at 1024. Please preserve these trials and report their final disposition; do not promote earlier zero-task sample as final. No A rules issue is indicated.
+A will finalize its report after your final evidence/head is published.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/e2e-rerun.log; reports/cardrpg/validation/performance-final.log; reports/cardrpg/offline-path/check.json.
