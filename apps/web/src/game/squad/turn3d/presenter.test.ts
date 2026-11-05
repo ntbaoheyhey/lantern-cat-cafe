@@ -37,3 +37,8 @@ it('reduced motion removes camera, shake and flash without dropping beats',()=>{
 it('presenter production source cannot import the rules engine or inspect a battle',()=>{
   const source=readFileSync('src/game/squad/turn3d/presenter.ts','utf8');expect(source).not.toMatch(/from ['"].*(?:engine|config|policy|targeting)/);expect(source).not.toMatch(/\bTurnBattle\b|\.battle\b/);
 });
+
+it('KO choreography belongs to the defeated target throughout all five beats',()=>{
+ const e={...fixture().events[0]!,type:'death' as const,actorId:'guardian',targetIds:['fallen-foe'],beat:3};
+ const plan=createActionPlan([e]);expect(plan.actorId).toBe('fallen-foe');expect(plan.targetIds).toEqual(['fallen-foe']);expect(plan.beats.every(b=>b.clip==='down')).toBe(true);
+});

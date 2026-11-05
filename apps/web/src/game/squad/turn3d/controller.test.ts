@@ -23,3 +23,11 @@ describe('turn controller serialization',()=>{
   const c=new TurnController();c.inspect('lanternstorm');expect(c.fixedTime).toBe(1);c.reset();expect(c.fixedTime).toBeUndefined();expect(c.mode).toBe('battle');
  });
 });
+it('publishes the manual-turn boundary even between throttled notification frames',()=>{
+ for(const delta of [1,7,16,19]){
+  const c=new TurnController();let observed=false,notifications=0;c.subscribe(()=>{observed=!!c.canChoose;notifications++});
+  for(let i=0;i<20000&&!c.canChoose;i++)c.tick(delta);
+  for(let i=0;i<40;i++)c.tick(delta);expect(c.canChoose).toBe(true);expect(observed).toBe(true);
+  const count=notifications;for(let i=0;i<100;i++)c.tick(delta);expect(notifications).toBe(count);
+ }
+});

@@ -44,7 +44,7 @@ export const TURN_CONFIG = {
     dummy: { hp: 1200, attack: 0, defense: 16, speed: 60, crit: 0 },
   } satisfies Record<Role, { hp: number; attack: number; defense: number; speed: number; crit: number }>,
   waves: SQUAD_CONFIG.waves,
-  trainingRoles: SQUAD_CONFIG.trainingRoles,
+  trainingRoles: ['guard', 'flanker', 'charger', 'ranger', 'healer', 'elite'] as readonly Role[],
 } as const;
 
 const skill = (id: string, target: TurnSkill['target'], values: Partial<TurnSkill> = {}): TurnSkill => ({

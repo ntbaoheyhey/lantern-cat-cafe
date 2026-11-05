@@ -4,3 +4,10 @@
 @media(prefers-reduced-motion:reduce){.t3-shell *{transition:none!important}}
 @media(max-height:800px){.t3-content{padding-top:9px}.t3-shell .sq-titlebar{margin-bottom:7px}.t3-shell .sq-titlebar h2{font-size:23px}.t3-shell .sq-topbar{height:53px}.t3-shell .sq-prototype{font-size:9px;padding-top:3px;padding-bottom:3px}.t3-order{margin-bottom:8px}.t3-order button{height:44px}.t3-stage{height:256px}.t3-caption{min-height:30px;padding:5px 10px}.t3-stage-footer{min-height:30px;padding:3px 8px}.t3-skills{margin:7px 0;min-height:51px}.t3-skills button{padding-top:6px;padding-bottom:5px}.t3-party-head{margin-bottom:4px}.t3-party .sq-card{padding:6px 8px}.t3-targets{max-height:245px}.t3-side .sq-goal{padding:9px}.t3-side .sq-goal p{font-size:10px;line-height:1.5}.t3-side{gap:7px}}
 @media(max-height:650px){.t3-stage{height:235px}.t3-shell .sq-titlebar h2{font-size:20px}.t3-order button{height:41px}.t3-shell .sq-hud{gap:15px}.t3-shell .sq-hud b{font-size:11px}.t3-party-head>strong{font-size:10px}}
+.t3-anchor{width:108px}.t3-anchor>span{font-size:8px}.t3-anchor>b{font-size:9px}.t3-anchor.party{width:118px}
+
+.t3-anchor{transform:translate(-50%,-100%)}.t3-leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.t3-leaders line{stroke:#f1d9ae;stroke-width:1;opacity:.45}
+.t3-shell .t3-skills button{padding-left:38px}.t3-shell .t3-skill-glyph{top:50%;transform:translateY(-50%)}
+@media(max-width:1120px){.t3-shell .t3-skills button{padding-left:27px}}
+
+.t3-hit-count{display:block;font:700 8px/1.2 system-ui;color:#ffe7c5;letter-spacing:.03em}

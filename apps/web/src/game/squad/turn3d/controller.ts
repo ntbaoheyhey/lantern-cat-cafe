@@ -12,7 +12,7 @@ export class TurnController {
   model={role:'guardian' as Role,clip:'idle',angle:.35};
   timeline:TimelineSlot[]=[]; policy:'auto'|'active'='auto';
   captureFrame:EffectFrame|null=null; fixedTime:number|undefined;
-  private cursor=0; private version=0;private listeners=new Set<()=>void>();private sinceNotify=0;private galleryWait=0;
+  private cursor=0; private version=0;private listeners=new Set<()=>void>();private sinceNotify=0;private pendingNotify=false;private galleryWait=0;
   constructor(){this.flush();this.boundary();}
   subscribe=(fn:()=>void)=>{this.listeners.add(fn);return()=>this.listeners.delete(fn);};
   snapshot=()=>this.version;
@@ -32,10 +32,12 @@ export class TurnController {
   }
   tick(delta:number,hidden=false){
     if(hidden||!this.running||this.mode==='models'||this.fixedTime!==undefined)return;
+    const wasBusy=this.presenter.busy,beforeSeq=this.presenter.appliedSeq;
     const ms=Math.min(100,Math.max(0,delta));this.presenter.tick(ms);
     if(this.mode==='effects'&&!this.presenter.busy){this.galleryWait+=ms;if(this.galleryWait>750)this.gallery(this.galleryId);}
     else this.boundary();
-    this.sinceNotify+=ms;if(this.sinceNotify>=33){this.sinceNotify=0;this.notify();}
+    this.pendingNotify ||= wasBusy||this.presenter.busy||beforeSeq!==this.presenter.appliedSeq;
+    this.sinceNotify+=ms;if(this.sinceNotify>=33){this.sinceNotify=0;if(this.pendingNotify){this.pendingNotify=false;this.notify();}}
   }
   act(choice:TurnChoice){
     if(this.presenter.busy||!this.running||this.mode!=='battle')return false;
@@ -60,6 +62,6 @@ export class TurnController {
     this.presenter.push(fixture.events);this.galleryWait=0;this.running=true;this.presenter.paused=false;this.fixedTime=undefined;this.notify();
   }
   inspect(id:string,beat=2){this.gallery(id);const p=this.captureFrame?.plan??this.presenter.frame?.plan;if(!p)return;
-    const at=p.beats[beat]!.start+p.beats[beat]!.duration*.45;this.presenter.tick(at/this.presenter.speed/(this.presenter.fast?1.8:1));this.captureFrame=sampleActionPlan(p,at,this.presenter.reducedMotion);this.fixedTime=1;this.notify();}
+    const at=p.beats[beat]!.start+p.beats[beat]!.duration*.45;const underlying=this.presenter.frame?.plan??p;const projectedAt=underlying.beats[beat]!.start+underlying.beats[beat]!.duration*.45;this.presenter.tick(projectedAt/this.presenter.speed/(this.presenter.fast?1.8:1));this.captureFrame=sampleActionPlan(p,at,this.presenter.reducedMotion);this.fixedTime=1;this.notify();}
   get frame(){if(this.captureFrame&&this.fixedTime===undefined){const at=this.presenter.frame?.elapsed??this.captureFrame.plan.duration;return sampleActionPlan(this.captureFrame.plan,at,this.presenter.reducedMotion);}return this.captureFrame??this.presenter.frame;}
 }
