@@ -32,7 +32,7 @@ Functional presentation and meta integration are verified by executable checks. 
 
 ## Final visual and lifecycle follow-up
 
-The final 1024 screenshot exposed party status text extending below its card even though the outer party box fit the viewport. DOM measurement confirmed 9px internal overflow at1024,15px at1280 and10px at1440. The compact rows now reserve content height and normalize icon line height. The layout gate checks each card's actual scroll/client height as well as its outer bounds.
+The final 1024 screenshot exposed party status text extending below its card even though the outer party box fit the viewport. DOM measurement confirmed 9px internal overflow at1024,15px at1280 and10px at 1440. The compact rows now reserve content height and normalize icon line height. The layout gate checks each card's actual scroll/client height as well as its outer bounds.
 
 The final transition audit also caught preview context leakage and CSP-blocked embedded textures. Disposed miniature contexts are explicitly released; only local blob connections are permitted for embedded textures. Final journey checks reject console errors and any fallback; prior receipts remain historical.
 
@@ -41,3 +41,17 @@ REFERENCE: docs/cardrpg/index.html; tools/cardrpg-demo/inspect.mjs; reports/card
 The natural-playback follow-up included the previously unmeasured entrance into loot and rest. It found 198/194ms creation stalls (profile repeat 208/209ms), dominated by shader compilation in three new miniature contexts. The run now owns a four-slot warmed preview pool, shared across loadout/loot/rest and the equipment picker, suspended while detached and disposed when leaving the run. The full natural x4 campaign audit counts contexts and includes these screen entrances; its final receipt, not the earlier next-wave-only measurements, governs the lifecycle claim.
 
 REFERENCE: apps/web/src/game/squad/turn3d/PreviewPool.tsx; tools/cardrpg-demo/lifecycle-performance.mjs; reports/cardrpg/lifecycle-diagnostic/; reports/cardrpg/lifecycle-delivery/measurement.json.
+
+## Final native Retina review
+
+A separate DPR2 stress audit exposed 33–50ms p99 tails in the optional High pipeline at 1440×900. A controlled comparison retained native Retina pixels and existing bloom while selecting Medium by default at DPR2. The full-screen multisample post target is skipped at that quality; High remains an explicit choice. Removing drawing-buffer preservation did not improve the measured result and was rejected. Final evidence includes all 43 recipes at both DPR1 and DPR2, cold and warm, plus an additional complete natural Retina campaign. The exact final percentiles, including strict 16.7ms misses, are in the source-bound summary.
+
+The final screenshot review reconfirmed the corrected 1024 party status height and readable 1280 cafe hierarchy. No external human playtest or universal artistic distinctness is claimed.
+
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/retina-diagnostic/; reports/cardrpg/performance-retina-delivery/performance-metal.json; reports/cardrpg/lifecycle-retina-delivery/measurement.json; reports/cardrpg/validation/performance-summary.json; reports/cardrpg/offline-path/1024-battle.png; reports/cardrpg/offline-path/1280-hub.png.
+
+## Round-boundary Retina diagnosis
+
+The full Retina campaign exposed 13 long tasks of 51–98ms despite successful victory and stable context counts. A profile repeat attributed 1.85 seconds of cumulative self time to renderer.setSize. Instrumented layout showed the remaining-order row shrinking from 34.09 to 24.64px when empty, then growing again on the next round: 99 resize callbacks, almost all actual 9px framebuffer changes. A duplicate-size guard alone did not fix it. The round rows now reserve their height even when empty and stay mounted through the result, and identical host sizes no longer reset the canvas. The natural-playback check records drawing-buffer sizes, requested quality and effective adaptive quality throughout the campaign. The failed receipts and diagnostic override remain explicitly historical.
+
+REFERENCE: apps/web/src/game/squad/turn3d/battle-layout.css; apps/web/src/game/squad/turn3d/scene.ts; tools/cardrpg-demo/lifecycle-performance.mjs; reports/cardrpg/retina-lifecycle-diagnostic/; reports/cardrpg/retina-resize-diagnostic/; reports/cardrpg/retina-resize-boxes/; reports/cardrpg/earlier-trials/pre-retina-resize/.
