@@ -32,6 +32,10 @@ export class TurnPresenter {
         const cue=createActionPlan([e]);cue.events=[];this.queue.push(cue);
       }
     }
+    for(const e of fresh.filter(e=>e.type==='boss_phase'||(e.type==='wave_start'&&e.bossPhase===1))){
+      const boss=e.actors?.find(a=>a.role==='yarn')??fresh.flatMap(x=>x.actors??[]).find(a=>a.role==='yarn');
+      const cue=createActionPlan([{...e,type:'boss_phase',actorId:boss?.id??e.actorId,targetIds:boss?[boss.id]:[e.actorId]}]);cue.events=[];this.queue.push(cue);
+    }
     this.queuedSeq=fresh.at(-1)!.seq;this.begin();
   }
   private begin(){

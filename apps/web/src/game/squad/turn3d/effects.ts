@@ -10,6 +10,7 @@ const recipe=(name:string,color:string,shape:string,options:Partial<EffectRecipe
 
 /** Authored choreography, not damage logic. Milliseconds here never advance rules. */
 export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
+  bossIntro:recipe('The knot awakens',red,'thread',{ultimate:true,clip:'telegraph',duration:[1200,250,110,330,400],shake:1.7,motifs:['woven-crown','red-spokes','knot-eye','thread-tension','dust-fall']}),
   healTonic:recipe('Warm Milk Tonic','#ffe4bd','mend',{clip:'cast',shake:0,motifs:['cork-pop','cream-helix','milk-crown','heart-rise','cream-drops']}),
   shieldBiscuit:recipe('Shield Biscuit','#eebc6e','wall',{clip:'guard',shake:.2,motifs:['biscuit-sigil','crumb-spiral','honey-facets','warm-shell','crumb-dust']}),
   quickenYarn:recipe('Quicken Yarn','#b7d6ff','thread',{clip:'cast',shake:0,motifs:['unspool','sky-loop','forward-chevron','step-lights','blue-fibres']}),
@@ -20,15 +21,15 @@ export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
   guardianBasic:recipe('Hearthblade',gold,'slash',{motifs:['ladle-glint','crescent','star','recoil','gold-dust']}),
   shieldBash:recipe('Shield Bash',gold,'bash',{clip:'special',duration:[360,230,100,240,330],shake:1.5,motifs:['shield-charge','shield-rush','hexagon','stagger','shield-shards']}),
   rally:recipe('Rally',gold,'rally',{clip:'cast',motifs:['paw-sigil','gold-ribbons','shield','salute','guard-dome'],shake:.3}),
-  hearthwall:recipe('Hearthwall',gold,'wall',{ultimate:true,clip:'special',duration:[850,250,100,240,450],shake:1.3,motifs:['sunrise','three-pillars','hexagon-wall','guard','gold-canopy']}),
+  hearthwall:recipe('Hearthwall',gold,'wall',{ultimate:true,clip:'special',duration:[1200,250,100,240,450],shake:1.3,motifs:['sunrise','three-pillars','hexagon-wall','guard','gold-canopy']}),
   witchBasic:recipe('Wick Spark',violet,'orb',{clip:'cast',motifs:['wick','ember-trail','four-star','recoil','embers']}),
   threadSnare:recipe('Thread Snare',violet,'thread',{clip:'special',motifs:['spindle','looping-thread','woven-star','tether','thread-loops'],shake:.4}),
   emberOrb:recipe('Ember Orb',violet,'orb',{clip:'cast',accent:'#ffb27c',duration:[400,350,100,250,400],shake:1.5,motifs:['lantern-pulse','comet','ember-flower','stagger','embers']}),
-  lanternstorm:recipe('Lanternstorm',violet,'storm',{ultimate:true,clip:'special',duration:[900,230,100,300,450],shake:2,motifs:['three-lanterns','falling-ribbons','triple-star','stagger','violet-cinders']}),
+  lanternstorm:recipe('Lanternstorm',violet,'storm',{ultimate:true,clip:'special',duration:[1220,230,100,300,450],shake:2,motifs:['three-lanterns','falling-ribbons','triple-star','stagger','violet-cinders']}),
   alchemistBasic:recipe('Sour Drop',teal,'flask',{clip:'cast',motifs:['flask-tilt','potion-arc','splash','recoil','bubbles']}),
   milkFlask:recipe('Milk Flask',teal,'flask',{clip:'cast',accent:'#fff6dc',duration:[300,360,60,220,400],shake:0,motifs:['milk-glow','flask-arc','cream-splash','heal','soft-bubbles']}),
   mossFlask:recipe('Moss Flask',teal,'patch',{clip:'special',duration:[350,320,70,250,420],shake:0,motifs:['leaf-swirl','green-arc','petal-ring','heal','moss-garden']}),
-  nineLives:recipe('Nine-Lives Shelter',teal,'shelter',{ultimate:true,clip:'special',duration:[850,250,90,280,480],shake:.4,motifs:['nine-seeds','spiral-leaves','petal-dome','heal','leaf-canopy']}),
+  nineLives:recipe('Nine-Lives Shelter',teal,'shelter',{ultimate:true,clip:'special',duration:[1200,250,90,280,480],shake:.4,motifs:['nine-seeds','spiral-leaves','petal-dome','heal','leaf-canopy']}),
   steadfast:recipe('Steadfast',gold,'wall',{duration:[200,140,60,180,280],clip:'cast',shake:0}),
   warmWick:recipe('Warm Wick',violet,'orb',{duration:[200,140,60,180,280],clip:'cast',shake:0}),
   lastSip:recipe('Last Sip',teal,'shelter',{duration:[200,140,60,180,280],clip:'cast',shake:0}),
@@ -55,11 +56,11 @@ export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
 };
 const kinds:BeatKind[]=['anticipation','travel','impact','reaction','residue'];
 export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
-  const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['passive','damage','status_apply','status_expire','death'].includes(e.type))??events[0];
-  const key=first?.type==='action_start'||first?.type==='damage'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
+  const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['boss_phase','passive','damage','status_apply','status_expire','death','gear_proc'].includes(e.type))??events[0];
+  const key=first?.type==='boss_phase'?'bossIntro':first?.type==='action_start'||first?.type==='damage'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
   const data=EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
-  let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=data.duration[i]!;const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
-    shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?.22:0,
+  let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=Math.round(data.duration[i]!*(i===3&&(data.ultimate||events.some(e=>e.type==='death'))?1.4:1)*(!data.ultimate&&i!==2?.73:1));const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
+    shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?(data.ultimate?.055:.025):0,
     clip:data.clip==='down'||data.clip==='victory'?data.clip:i===0?data.clip:i===1&&['slash','bash','charge'].includes(data.shape)?'step':i>=3?'idle':data.clip,vfx:data.motifs[i]??'glow',soundCue:`${key}.${kind}`};at+=duration;return beat;});
   const targetIds=[...new Set((events.find(e=>e.type==='action_start')?.targetIds??events.flatMap(e=>['damage','heal','shield','status_apply','passive','death'].includes(e.type)?e.targetIds:[])))];
   return {id:events[0]?.actionId??0,actorId:(first?.type==='death'?first.targetIds[0]:first?.actorId)||first?.actors?.find(a=>a.side==='party'&&a.hp>0)?.id||'guardian',skillId:key,targetIds,color:data.color,accent:data.accent,shape:data.shape,duration:at,ultimate:data.ultimate,beats,events:[...events],name:data.name,motifs:data.motifs};
