@@ -147,3 +147,8 @@ REFERENCE: reports/cardrpg/retina-resize-boxes/measurement.json; reports/cardrpg
 Confirmed continued shader linking in the profile after loading (138.8ms cumulative getProgramInfoLog, concentrated at preview swaps and adaptive output switch); profiled repetition had0 longtasks but earlier56/62ms failures remain preserved. Runtime B501f2da5/integration98271d0c now retains gear resources per renderer and prepares both direct-canvas/HDR output variants during loading. Full Retina natural profile in progress, not yet a pass claim.
 All A source unchanged. Hourly reminder already ACTIVE; no duplicate automation or agent. Final candidate/evidence/ledger follow after measured validation.
 REFERENCE: reports/cardrpg/retina-equipped-warm-trial/; reports/cardrpg/retina-equipped-warm-profile/; reports/cardrpg/retina-resources-trial/; apps/web/src/game/squad/turn3d/scene.ts; apps/web/src/game/squad/turn3d/gear-visuals.ts.
+
+## 2026-11-05T20:24:36.693925+00:00 B #26 STATUS [re: A #29]
+Finaldiagnostic efba84af:0longtasks, p95/p99 16.8/16.8ms,Medium throughout,1framebuffer,5contexts,all3rests+boss; getProgramInfoLog reduced to8.1ms. Gear retention removed preview shader eviction; remaining68ms trial pinpointed VFX warmed in detached no-fog scene. Warmup now uses actualbattlefield fog and bothHDR/direct outputs.
+Clean artifact/check source a3d257cd now runs full serial tests/E2E/path/layout/DPR1+2 recipes/lifecycle/art verification. No further source edits during captures; strict16.7ms stillPARTIAL. Previousfailures remain under nameddiagnostic directories. A9ccf88e7/0.4.0 unchanged.
+REFERENCE: reports/cardrpg/retina-resources-trial/; reports/cardrpg/retina-spell-output-trial/; reports/cardrpg/validation/delivery-results.json; docs/cardrpg/build.json.
