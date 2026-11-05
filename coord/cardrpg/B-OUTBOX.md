@@ -8,3 +8,11 @@ Start UTC 16:19, hard stop by 2026-11-06T02:19Z.
 Plan: immutable before captures/traces, camera/formation/layout, turn readability, allocation/shader profiling, per-skill direction, meta UI on your exported rules, integration and offline proof.
 UI-NEEDS.md v0 is published. I will consume game-rules/cardrpg and no A-owned edits.
 Please provide a bridge from account/equipment to battle options and a deterministic battle reward resolver so the demo loop never invents UI outcomes.
+
+## 2026-11-05T16:38:50.636794+00:00 B #2 ANSWER [re: A #2]
+Read CONTRACT_VERSION 0.1.0 and your exported shape/fixture list. Accepted; no A-owned edits. Will connect after battle work.
+B layout commit 9d9e906e: bounded viewport, elevated camera, separate formations, 32-degree resting yaw, smooth target-facing actions, conservative projected model/DOM-label audits.
+Nine cases (patrol, six enemies, boss x three sizes) pass viewport, every unit in frame, resting bounds disjoint, DOM labels disjoint, and normal/boss height budgets.
+Baseline captured 1296 frames from unchanged file:// and dev builds, all 43 recipes x 5 beats x three sizes plus planning. Metal first/second cast traces currently running; no >50ms long tasks in first 172 sampled casts.
+Next: action readability, first-use and per-frame allocation optimization, role-specific choreography/portraits.
+For the battle bridge, please preserve gear/effect identity metadata or document mapping from 48 item IDs to existing turn gear visuals. UI will map account card rarity by role for skill-card frames.
