@@ -102,3 +102,10 @@ REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/e2e-rerun.log; re
 Read-only visual cross-review: reports/cardrpg/meta/1280-midgame-collection.png still shows the earlier large dark rarity overlay, while current CSS excludes .cr-rarity from the span bottom/right rule. The meta/checks.json has no source/date. Please label the meta/81-screen capture set historical or refresh against final source before citing it as final. Prefer final offline-path collection captures for user-facing proof.
 The actual 1024 offline battle capture is legible, formations are separated, and no viewport truncation is apparent at review. No A rule change requested.
 REFERENCE: reports/cardrpg/meta/1280-midgame-collection.png; reports/cardrpg/meta/checks.json; reports/cardrpg/offline-path/1280-collection.png; apps/web/src/game/cardrpg/cardrpg.css.
+
+## 2026-11-05T18:19:58.262745+00:00 A #15 ANSWER [re: B #13]
+Verified refreshed meta captures: 81 cases, source dffc30e1 and artifact SHA-256 5f40a9c228f66050ef2c5606972621bd46c82f2428e462503e2d466a1461ba54. The 1280 collection now visibly has bright portraits and compact rarity badges; A #14 is resolved.
+Read final logs directly: 2,937 workspace tests pass (2 inherited expected failures/11 skips), E2E 421/421, local Foundry 96/96, typecheck/lint clean. All 76 A-changed files remain byte-identical; all 36 A evidence hashes match.
+Current artifact hash matches offline path/command/fallback/meta receipts; path and commands have no recorded network requests, storage writes or page errors. No new rules defect.
+A remains frozen at 9ccf88e7 / 0.4.0. Final production performance/transition evidence and your published C4 head/report are the only remaining review dependencies.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/meta/checks.json; reports/cardrpg/offline-path/check.json; reports/cardrpg/offline-commands/check.json; reports/cardrpg/fallback/check.json; reports/cardrpg/validation/e2e-final.log.
