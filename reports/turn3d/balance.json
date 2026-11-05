@@ -1,0 +1,501 @@
+{
+  "date": "2026-11-05",
+  "seeds": 30,
+  "config": {
+    "version": 2,
+    "defaultSeed": 11,
+    "maxTurns": 650,
+    "preview": 8,
+    "initiative": {
+      "unit": 1000,
+      "maxMove": 8,
+      "minSpeed": 1
+    },
+    "defenseScale": 80,
+    "minDamage": 1,
+    "variance": 0.08,
+    "critMultiplier": 1.5,
+    "caps": {
+      "crit": 0.4,
+      "guard": 0.5,
+      "shieldFraction": 0.6,
+      "burn": 3
+    },
+    "guardFraction": 0.3,
+    "shieldTurns": 2,
+    "burnDamage": 12,
+    "charge": {
+      "max": 100,
+      "initial": 15,
+      "action": 16,
+      "received": 7
+    },
+    "passive": {
+      "cooldown": 2,
+      "guardianShield": 30,
+      "witchCharge": 12,
+      "alchemistShield": 30,
+      "injuredFraction": 0.65
+    },
+    "control": {
+      "normalTurns": 1,
+      "bossTurns": 1,
+      "recoveryTurns": 1,
+      "bossRecoveryTurns": 2,
+      "delay": 2,
+      "bossDelay": 1
+    },
+    "policy": {
+      "healThreshold": 0.78,
+      "urgentHeal": 0.45,
+      "guardThreshold": 0.7,
+      "shelterThreshold": 0.72,
+      "priority": {
+        "thread": 100,
+        "healer": 75,
+        "charger": 55,
+        "elite": 45,
+        "ranger": 40,
+        "flanker": 30,
+        "guard": 20,
+        "yarn": 10,
+        "dummy": 0
+      },
+      "activePriority": {
+        "thread": 140,
+        "healer": 90,
+        "charger": 65,
+        "elite": 55,
+        "ranger": 45,
+        "flanker": 35,
+        "guard": 20,
+        "yarn": 15,
+        "dummy": 0
+      },
+      "woundedBonus": 20,
+      "killBonus": 100,
+      "exposedBonus": 85,
+      "threatBonus": 50
+    },
+    "boss": {
+      "phaseFraction": 0.5,
+      "enrageTurns": 15,
+      "enrageMultiplier": 1.7,
+      "enrageGrowth": 0.12,
+      "breakMax": 100,
+      "bashBreak": 30,
+      "ordinaryBreak": 7,
+      "guardedBreak": 12,
+      "exposedTurns": 2,
+      "exposedMultiplier": 1.6,
+      "bindTurns": 3,
+      "addsEvery": 4,
+      "addsPerWave": 2,
+      "maxEnemies": 8,
+      "threadSlot": 7,
+      "addSlots": [
+        2,
+        3,
+        1,
+        4,
+        5,
+        6
+      ],
+      "cycleOne": [
+        "yarnAttack",
+        "bindThread"
+      ],
+      "cycleTwo": [
+        "yarnAttack",
+        "bindThread",
+        "crossSweep"
+      ]
+    },
+    "gear": {
+      "pierceMultiplier": 0.5,
+      "afterhealShield": 20
+    },
+    "localFish": {
+      "wave": 9,
+      "boss": 15
+    },
+    "presets": {
+      "hearthkeepers": {
+        "name": "Hearthkeepers",
+        "hp": 1.12,
+        "attack": 1,
+        "healing": 1.12,
+        "shield": 1.15,
+        "speed": 1,
+        "gear": "last-light"
+      },
+      "lanternbreakers": {
+        "name": "Lanternbreakers",
+        "hp": 0.95,
+        "attack": 1.12,
+        "healing": 1,
+        "shield": 1,
+        "speed": 1.06,
+        "gear": "needle-lantern"
+      }
+    },
+    "stats": {
+      "guardian": {
+        "hp": 610,
+        "attack": 52,
+        "defense": 42,
+        "speed": 104,
+        "crit": 0.08
+      },
+      "witch": {
+        "hp": 340,
+        "attack": 65,
+        "defense": 14,
+        "speed": 100,
+        "crit": 0.12
+      },
+      "alchemist": {
+        "hp": 380,
+        "attack": 38,
+        "defense": 22,
+        "speed": 96,
+        "crit": 0.05
+      },
+      "guard": {
+        "hp": 245,
+        "attack": 64,
+        "defense": 32,
+        "speed": 80,
+        "crit": 0.04
+      },
+      "flanker": {
+        "hp": 145,
+        "attack": 40,
+        "defense": 5,
+        "speed": 105,
+        "crit": 0.08
+      },
+      "ranger": {
+        "hp": 175,
+        "attack": 60,
+        "defense": 8,
+        "speed": 85,
+        "crit": 0.05
+      },
+      "healer": {
+        "hp": 230,
+        "attack": 12,
+        "defense": 12,
+        "speed": 75,
+        "crit": 0
+      },
+      "charger": {
+        "hp": 245,
+        "attack": 100,
+        "defense": 20,
+        "speed": 65,
+        "crit": 0.05
+      },
+      "elite": {
+        "hp": 380,
+        "attack": 98,
+        "defense": 50,
+        "speed": 72,
+        "crit": 0.08
+      },
+      "yarn": {
+        "hp": 3050,
+        "attack": 157,
+        "defense": 28,
+        "speed": 88,
+        "crit": 0
+      },
+      "thread": {
+        "hp": 85,
+        "attack": 18,
+        "defense": 0,
+        "speed": 80,
+        "crit": 0
+      },
+      "dummy": {
+        "hp": 1200,
+        "attack": 0,
+        "defense": 16,
+        "speed": 60,
+        "crit": 0
+      }
+    },
+    "waves": [
+      {
+        "name": "Doorstep tangle",
+        "roles": [
+          "guard",
+          "flanker",
+          "flanker",
+          "charger"
+        ],
+        "threat": 7,
+        "goal": "Intercept the charger. Hold the pack for Ember Orb."
+      },
+      {
+        "name": "Teatime trouble",
+        "roles": [
+          "guard",
+          "healer",
+          "ranger",
+          "ranger",
+          "flanker"
+        ],
+        "threat": 9,
+        "goal": "Mark the Teacup Healer to stop its mending."
+      },
+      {
+        "name": "Closing patrol",
+        "roles": [
+          "elite",
+          "healer",
+          "charger",
+          "ranger",
+          "flanker",
+          "flanker"
+        ],
+        "threat": 12,
+        "goal": "Protect the front. Save a barrier for the heavy windup."
+      }
+    ],
+    "trainingRoles": [
+      "guard",
+      "healer",
+      "flanker",
+      "ranger",
+      "charger",
+      "elite",
+      "ranger",
+      "flanker"
+    ]
+  },
+  "rows": [
+    {
+      "encounter": "patrol",
+      "preset": "hearthkeepers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 65.93,
+      "meanWinningTurns": 65.93,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 0,
+      "bossWins": 0
+    },
+    {
+      "encounter": "patrol",
+      "preset": "hearthkeepers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 56.7,
+      "meanWinningTurns": 56.7,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 0,
+      "bossWins": 0
+    },
+    {
+      "encounter": "patrol",
+      "preset": "lanternbreakers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 53.8,
+      "meanWinningTurns": 53.8,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 0,
+      "bossWins": 0
+    },
+    {
+      "encounter": "patrol",
+      "preset": "lanternbreakers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 47.43,
+      "meanWinningTurns": 47.43,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 0,
+      "bossWins": 0
+    },
+    {
+      "encounter": "boss",
+      "preset": "hearthkeepers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 27,
+      "winRate": 0.9,
+      "meanTurns": 108.77,
+      "meanWinningTurns": 105.26,
+      "totalDeaths": 14,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 6,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 27
+    },
+    {
+      "encounter": "boss",
+      "preset": "hearthkeepers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 24,
+      "winRate": 0.8,
+      "meanTurns": 105.3,
+      "meanWinningTurns": 101.88,
+      "totalDeaths": 20,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 7,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 24
+    },
+    {
+      "encounter": "boss",
+      "preset": "lanternbreakers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 69.07,
+      "meanWinningTurns": 69.07,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    },
+    {
+      "encounter": "boss",
+      "preset": "lanternbreakers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 71,
+      "meanWinningTurns": 71,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    },
+    {
+      "encounter": "campaign",
+      "preset": "hearthkeepers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 160.47,
+      "meanWinningTurns": 160.47,
+      "totalDeaths": 0,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 0,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    },
+    {
+      "encounter": "campaign",
+      "preset": "hearthkeepers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 153.93,
+      "meanWinningTurns": 153.93,
+      "totalDeaths": 2,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 1,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    },
+    {
+      "encounter": "campaign",
+      "preset": "lanternbreakers",
+      "policy": "auto",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 132.47,
+      "meanWinningTurns": 132.47,
+      "totalDeaths": 3,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 3,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    },
+    {
+      "encounter": "campaign",
+      "preset": "lanternbreakers",
+      "policy": "active",
+      "seeds": 30,
+      "wins": 30,
+      "winRate": 1,
+      "meanTurns": 122.5,
+      "meanWinningTurns": 122.5,
+      "totalDeaths": 1,
+      "firstDeaths": {
+        "guardian": 0,
+        "witch": 1,
+        "alchemist": 0
+      },
+      "bossReached": 30,
+      "bossWins": 30
+    }
+  ],
+  "rawEvidence": {
+    "path": "reports/turn3d/raw/balance.json.gz",
+    "sha256": "b2b6cf3ae71d818568a200d32b9300adadaa7a3f050231c2adedc6bc96c2eebe",
+    "uncompressedBytes": 4244399,
+    "runs": 360
+  }
+}

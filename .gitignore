@@ -16,3 +16,12 @@ dist-gameplay2
 
 # Local turn3d verification builds
 dist-turn3d-*
+
+# Native capture intermediates; the reviewed MP4 is the delivery artifact.
+reports/turn3d/video/*.webm
+
+# Full tuning trials are delivered losslessly under reports/turn3d/raw/.
+reports/turn3d/balance-initial.json
+reports/turn3d/balance-pressure.json
+reports/turn3d/balance-third.json
+reports/turn3d/performance-before-optimization.json
