@@ -17,7 +17,7 @@ import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from 
 
 export interface SceneView {
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
-  targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean;
+  targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
 }
@@ -158,7 +158,7 @@ export class TurnScene {
     mesh(new RoundedBoxGeometry(15,.14,.6,2,.04),woodMat,0,.7,-5.25);
     return group;
   }
-  private resizeToHost(){this.width=Math.max(1,this.host.clientWidth);this.height=Math.max(1,this.host.clientHeight);this.renderer.setSize(this.width,this.height,false);this.post.resize(this.width,this.height);this.camera.aspect=this.width/this.height;this.camera.updateProjectionMatrix();this.dirty=true;}
+  private resizeToHost(){if(!this.host.clientWidth||!this.host.clientHeight)return;this.width=this.host.clientWidth;this.height=this.host.clientHeight;this.renderer.setSize(this.width,this.height,false);this.post.resize(this.width,this.height);this.camera.aspect=this.width/this.height;this.camera.updateProjectionMatrix();this.dirty=true;}
   invalidate(){this.dirty=true;}
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
@@ -183,7 +183,7 @@ export class TurnScene {
   }
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
-    this.raf=requestAnimationFrame(this.loop);if(!this.ready){this.last=now;this.renderAt=now;return}const view=this.view();const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
+    this.raf=requestAnimationFrame(this.loop);const view=this.view();if(!this.ready||view.suspended){this.last=now;this.renderAt=now;return}const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
     const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
     if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
     this.time=view.fixedTime??this.time+delta;this.render(view,delta);
