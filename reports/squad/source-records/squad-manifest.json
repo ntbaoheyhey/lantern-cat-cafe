@@ -1,0 +1,800 @@
+{
+  "date": "2026-11-05",
+  "generator": "python3 -B tools/art/squad.py",
+  "prompt": "None. Original scripted integer geometry; no reference images, image models, network or third-party game art.",
+  "palette": "tools/art/visual-palette.json",
+  "seed": 0,
+  "files": [
+    {
+      "file": "apps/web/public/art/squad/guardian.png",
+      "bytes": 10801,
+      "sha256": "b03d6831de9fd51692e68895cdf0281d63a5d383295c499dc4501783d0c8f00a",
+      "params": {
+        "frame": [
+          80,
+          80
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "foot": [
+          40,
+          72
+        ],
+        "light": "upper-left"
+      }
+    },
+    {
+      "file": "reports/squad/art/guardian-real-size.png",
+      "bytes": 5478,
+      "sha256": "285dc7fa97c74a5ee1ec062e59d059aedf23731c5b50805ea2678cef838a4fef",
+      "params": {
+        "scale": 1,
+        "columns": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "rows": [
+          "contact",
+          "anticipation"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/portrait-guardian.png",
+      "bytes": 683,
+      "sha256": "88a8889772b3ff00d9ca3250a05fa90ce3fa933f6e8d2d586e08f2567d4a95c6",
+      "params": {
+        "source": "same original rig",
+        "frame": 0,
+        "crop": [
+          -8,
+          -4,
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/witch.png",
+      "bytes": 12447,
+      "sha256": "7b919a6e90a7649c4a5d288275c31b51023d8ea5b98e7dfa87342c6fc20cb49d",
+      "params": {
+        "frame": [
+          80,
+          80
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "foot": [
+          40,
+          72
+        ],
+        "light": "upper-left"
+      }
+    },
+    {
+      "file": "reports/squad/art/witch-real-size.png",
+      "bytes": 5679,
+      "sha256": "9208adce3bfe932bcb35c9afff109a4b3270800c1719da17b4ca4976d77513a2",
+      "params": {
+        "scale": 1,
+        "columns": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "rows": [
+          "contact",
+          "anticipation"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/portrait-witch.png",
+      "bytes": 747,
+      "sha256": "ca069e1a7b691688505ba7b96f952ecd8a1d3360750449982d9e9d7278a38deb",
+      "params": {
+        "source": "same original rig",
+        "frame": 0,
+        "crop": [
+          -8,
+          -4,
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/alchemist.png",
+      "bytes": 10745,
+      "sha256": "6bde3524b0e3f7e4e540b1d35fb9778d2be6963adc510c8474bdc20423575656",
+      "params": {
+        "frame": [
+          80,
+          80
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "foot": [
+          40,
+          72
+        ],
+        "light": "upper-left"
+      }
+    },
+    {
+      "file": "reports/squad/art/alchemist-real-size.png",
+      "bytes": 4685,
+      "sha256": "4a87aa14233e04214520c138d0241059971af9c433409a7924ae5f02c541ece7",
+      "params": {
+        "scale": 1,
+        "columns": [
+          "idle",
+          "move",
+          "basic",
+          "cast1",
+          "cast2",
+          "ultimate",
+          "hit",
+          "defeat",
+          "victory"
+        ],
+        "rows": [
+          "contact",
+          "anticipation"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/portrait-alchemist.png",
+      "bytes": 677,
+      "sha256": "a43d20d5cf580ccb9ec185669ff7e06da103b183d9f9b8d0bf31ad5eb43991e9",
+      "params": {
+        "source": "same original rig",
+        "frame": 0,
+        "crop": [
+          -8,
+          -4,
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/guard.png",
+      "bytes": 3375,
+      "sha256": "b5d4f56168aa348b069794d2b4a5a3f0b31fd618517d5f9a4df6c89a9ddff97c",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/guard-real-size.png",
+      "bytes": 1299,
+      "sha256": "f83c751752b7fa1515fa5af37d0ea736e1f784f9379f7ec4410b1ce60d18b8f2",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/flanker.png",
+      "bytes": 3312,
+      "sha256": "4e05a6e9ed7fcbb947cc014725adc4afe888bb67a09aa6536c1a63b45b52386b",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/flanker-real-size.png",
+      "bytes": 1158,
+      "sha256": "b2f171d3e483ef2b707249d0079ffdebcb75148c937149e5ab15c19a49b9c193",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/ranger.png",
+      "bytes": 5549,
+      "sha256": "c145dd43c40220eee921330e7a5971d9047a2ade694c2e9a2fefe2c4278ed2ed",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/ranger-real-size.png",
+      "bytes": 1531,
+      "sha256": "852158724c048d0060ffd8cdcfe79529f05e9a54534e215140a73673bac50f3a",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/healer.png",
+      "bytes": 3568,
+      "sha256": "ac47da4a7d74f7db9c161e4ce3c3f49738ebd5d6f5f59aae01ecdb45d0b2a851",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/healer-real-size.png",
+      "bytes": 1300,
+      "sha256": "6c124daf4149c0ef86caeb0df3a5e128131652ea137932c0acaf715b1f33eb8a",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/charger.png",
+      "bytes": 3529,
+      "sha256": "67939edec3c2b1aaa2b61ba5f8c8276713e7152b5d50956b6fd2b1692a9093b8",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/charger-real-size.png",
+      "bytes": 1367,
+      "sha256": "44c576cde2f653c22fa17a6e1a37bbd6044cda2f009152c32709e04873caafe8",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/elite.png",
+      "bytes": 3472,
+      "sha256": "e1b43f1c2ccddbc7564ebd005157faf9362a1b47348152069aab594491e4f2e4",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/elite-real-size.png",
+      "bytes": 1373,
+      "sha256": "9cc4563e75be2bce14ba67fcfd389d15ecb4817a5b34b2dc1da80bce9c301ed0",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/yarn.png",
+      "bytes": 22551,
+      "sha256": "c4c7d14d7c06c8e817ee4f878ef4a0e172cce8a7ae103aa1e69dc64629a8c41f",
+      "params": {
+        "frame": [
+          144,
+          144
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/yarn-real-size.png",
+      "bytes": 4104,
+      "sha256": "1cd6e1467cc5fbe9caddbfc2e7f30c220360dff83ca825aedd3152cd34fb9c14",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/thread.png",
+      "bytes": 2683,
+      "sha256": "cbb32d231aa1d86aafcbecf0bfafe656941d3f6c9ace12fc456e740914e674c8",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/thread-real-size.png",
+      "bytes": 908,
+      "sha256": "a9823b48ed6dd4fc328abbc9dc86cd9f3a37b8a5c1b4f8dd781338d0765134d5",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/dummy.png",
+      "bytes": 3190,
+      "sha256": "0a7010c4c5c078896f69be186ce39f1d4d37fd5c3c438734d5524102dbcef2d5",
+      "params": {
+        "frame": [
+          72,
+          72
+        ],
+        "frames": 6,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "file": "reports/squad/art/dummy-real-size.png",
+      "bytes": 1141,
+      "sha256": "b00d03b66bbad4ba604f5e0db858ae7c8ac463d3b983bc66e2629c5b7d8b15b8",
+      "params": {
+        "scale": 1,
+        "poses": [
+          "idle",
+          "move",
+          "attack",
+          "windup",
+          "hit",
+          "defeat",
+          "phase2"
+        ]
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-shieldBash.png",
+      "bytes": 166,
+      "sha256": "9bf66ac614491a975a028346ca38d998175f992bdea77f05c0790c7e3238c086",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "shieldBash"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-rally.png",
+      "bytes": 184,
+      "sha256": "11f8d55545f3fce86d2b0e5ef66f7935e01f3779ce4a02adeef6fa20143764ce",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "rally"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-hearthwall.png",
+      "bytes": 205,
+      "sha256": "2f4b01160e1e486b26df64021b3974976a232dd766d195385b632b8fd96d8e99",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "hearthwall"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-threadSnare.png",
+      "bytes": 242,
+      "sha256": "6e192c10bea53594b6401c354ddc5b15f20541513c457558f22cd0afad67541f",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "threadSnare"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-emberOrb.png",
+      "bytes": 206,
+      "sha256": "ac8b2a8771561f7096172df3943d1f074d0bc649964808613ca73c187e0a1c05",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "emberOrb"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-lanternstorm.png",
+      "bytes": 185,
+      "sha256": "6b3c500f5452692532a403329240e9257e8b737c244465a712fa3c81356163c6",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "lanternstorm"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-milkFlask.png",
+      "bytes": 190,
+      "sha256": "9208d1ac0865b07bc8c796fd3717d03f0d45338e2f9a0deee2b7e84e49fccc13",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "milkFlask"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-mossFlask.png",
+      "bytes": 190,
+      "sha256": "07155919bd358695c0b3c5de9bbe535075f10431fe7ba764521c60b68b3f1a6c",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "mossFlask"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-nineLives.png",
+      "bytes": 199,
+      "sha256": "5cb9ae57f6ddfad9db438e25c57effd7e81e6d6735e53b7a649b925b157c74db",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "nineLives"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-steadfast.png",
+      "bytes": 166,
+      "sha256": "9bf66ac614491a975a028346ca38d998175f992bdea77f05c0790c7e3238c086",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "steadfast"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-warmWick.png",
+      "bytes": 206,
+      "sha256": "ac8b2a8771561f7096172df3943d1f074d0bc649964808613ca73c187e0a1c05",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "warmWick"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-lastSip.png",
+      "bytes": 190,
+      "sha256": "9208d1ac0865b07bc8c796fd3717d03f0d45338e2f9a0deee2b7e84e49fccc13",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "lastSip"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-guard.png",
+      "bytes": 166,
+      "sha256": "9bf66ac614491a975a028346ca38d998175f992bdea77f05c0790c7e3238c086",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "guard"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-snare.png",
+      "bytes": 242,
+      "sha256": "6e192c10bea53594b6401c354ddc5b15f20541513c457558f22cd0afad67541f",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "snare"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-restrain.png",
+      "bytes": 242,
+      "sha256": "6e192c10bea53594b6401c354ddc5b15f20541513c457558f22cd0afad67541f",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "restrain"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-taunt.png",
+      "bytes": 242,
+      "sha256": "6e192c10bea53594b6401c354ddc5b15f20541513c457558f22cd0afad67541f",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "taunt"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-burn.png",
+      "bytes": 206,
+      "sha256": "ac8b2a8771561f7096172df3943d1f074d0bc649964808613ca73c187e0a1c05",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "burn"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-exposed.png",
+      "bytes": 185,
+      "sha256": "6b3c500f5452692532a403329240e9257e8b737c244465a712fa3c81356163c6",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "exposed"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/icon-stun.png",
+      "bytes": 176,
+      "sha256": "ad7e6a446fcdef70b3cebdbf95d7a253250b4d8126ebf2c2ae81d48268d83bd5",
+      "params": {
+        "size": [
+          24,
+          24
+        ],
+        "shape": "stun"
+      }
+    },
+    {
+      "file": "apps/web/public/art/squad/cafe-room.png",
+      "bytes": 2095,
+      "sha256": "150002e3f50644da81802b200a7554c34be9c15975708f3262d8e170f53db24f",
+      "params": {
+        "size": [
+          680,
+          360
+        ],
+        "seed": 0,
+        "light": "upper-left and two pendants",
+        "layers": "quiet wall, open floor"
+      }
+    }
+  ]
+}

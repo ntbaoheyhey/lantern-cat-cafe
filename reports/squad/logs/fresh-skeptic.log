@@ -1,0 +1,17 @@
+skeptic: first-thread, sim 12450ms
+skeptic: phase-pressure, sim 49550ms
+skeptic: boss-result, sim 102550ms
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.selectOption: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByLabel('Squad', { exact: true })[22m
+
+    at /Users/bao/taskbar-hero-squad/tools/squad-fresh-eyes.mjs:35:47 {
+  log: [ "  - waiting for getByLabel('Squad', { exact: true })" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

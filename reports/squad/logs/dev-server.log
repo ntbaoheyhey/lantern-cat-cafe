@@ -1,0 +1,181 @@
+
+  VITE v8.3.5  ready in 184 ms
+
+  ➜  Local:   http://127.0.0.1:5394/
+12:12:03 PM [vite] (client) [console.error] Failed to process file: image "sq-room"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-witch"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-alchemist"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-guard"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-flanker"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-ranger"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-charger"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-elite"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-healer"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-yarn"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-thread"
+12:12:03 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-dummy"
+12:13:39 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+12:13:39 PM [vite] (client) [console.error] Failed to process file: image "sq-room"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-alchemist"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-flanker"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-witch"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-guard"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-ranger"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-healer"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-charger"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-yarn"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-elite"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-thread"
+12:13:39 PM [vite] (client) [console.error] Failed to process file: spritesheet "sq-dummy"
+12:13:40 PM [vite] (client) hmr update /src/game/squad/squad.css
+12:17:35 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+12:17:35 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+12:17:35 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:17:35 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:17:35 PM [vite] (client) [Unhandled error] TypeError: controller.autoFor is not a function
+ > src/game/squad/SquadApp.tsx:87:447
+    85 |                  <div className="sq-statuses">{a.shield > 0 && <span>◇ {a.shield}</span>}{a.statuses.length ? a.status...
+    86 |                  <div className="sq-cooldowns">{KITS[a.role as Hero].slice(0, 2).map(id => <span key={id} title={ABILI...
+    87 |  ...ssName="sq-auto"><input type="checkbox" checked={controller.autoFor(a.id)} onChange={e => controller.command({ typ...
+       |                                                                 ^
+    88 |                </article>)}
+    89 |              </div>
+ > SquadApp src/game/squad/SquadApp.tsx:82:20
+ > Object.react_stack_bottom_frame ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+
+12:17:35 PM [vite] (client) [console.warn] An error occurred in the <SquadApp> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:18:58 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+12:18:58 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:18:58 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:24:15 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx, /src/game/squad/SquadCanvas.tsx
+12:33:01 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx, /src/game/squad/SquadCanvas.tsx
+12:33:24 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:34:13 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+12:34:13 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:34:13 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:35:17 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+12:35:17 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:38:11 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:38:11 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+12:42:36 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/index.html
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/market-fixture/e2e/fixtures/market-view.html
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/market-fixture/e2e/fixtures/market-view.html
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/art2-fixture/e2e/fixtures/art2-view.html
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/feature-fixture/e2e/fixtures/feature-samples.html
+12:43:56 PM [vite] (client) page reload dist-v2/e2e-4374/motion-fixture/e2e/fixtures/motion-view.html
+12:47:55 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:51:22 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+12:51:22 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx, /src/game/squad/SquadCanvas.tsx
+12:54:49 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+12:57:32 PM [vite] (client) hmr update /src/game/squad/squad.css
+1:13:09 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+1:14:50 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+1:16:16 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:16:16 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+1:26:09 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:27:00 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:27:00 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:27:00 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+1:28:11 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+1:28:11 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:30:54 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+1:41:29 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:41:29 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+1:50:26 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+1:58:10 PM [vite] (client) page reload dist-v2/e2e-4474/index.html
+1:58:10 PM [vite] (client) page reload dist-v2/e2e-4474/market-fixture/e2e/fixtures/market-view.html
+1:58:11 PM [vite] (client) page reload dist-v2/e2e-4474/art2-fixture/e2e/fixtures/art2-view.html
+1:58:11 PM [vite] (client) page reload dist-v2/e2e-4474/feature-fixture/e2e/fixtures/feature-samples.html
+1:58:11 PM [vite] (client) page reload dist-v2/e2e-4474/motion-fixture/e2e/fixtures/motion-view.html
+1:58:58 PM [vite] (client) hmr update /src/game/squad/SquadApp.tsx
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/index.html
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/art2-fixture/e2e/fixtures/art2-view.html
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/feature-fixture/e2e/fixtures/feature-samples.html
+2:05:05 PM [vite] (client) page reload dist-v2/e2e-4574/motion-fixture/e2e/fixtures/motion-view.html
+2:06:40 PM [vite] (client) page reload src/main.tsx
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/art2-fixture/e2e/fixtures/art2-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/feature-fixture/e2e/fixtures/feature-samples.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/index.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/motion-fixture/e2e/fixtures/motion-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/index.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/art2-fixture/e2e/fixtures/art2-view.html
+2:06:48 PM [vite] (client) page reload dist-v2/e2e-4574/feature-fixture/e2e/fixtures/feature-samples.html
+2:06:49 PM [vite] (client) page reload dist-v2/e2e-4574/motion-fixture/e2e/fixtures/motion-view.html
+2:08:23 PM [vite] (client) page reload src/game/squad/entry.tsx
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/art2-fixture/e2e/fixtures/art2-view.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/feature-fixture/e2e/fixtures/feature-samples.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/index.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/motion-fixture/e2e/fixtures/motion-view.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/index.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/market-fixture/e2e/fixtures/market-view.html
+2:08:30 PM [vite] (client) page reload dist-v2/e2e-4574/art2-fixture/e2e/fixtures/art2-view.html
+2:08:31 PM [vite] (client) page reload dist-v2/e2e-4574/feature-fixture/e2e/fixtures/feature-samples.html
+2:08:31 PM [vite] (client) page reload dist-v2/e2e-4574/motion-fixture/e2e/fixtures/motion-view.html
+2:08:49 PM [vite] (client) page reload src/game/squad/entry.tsx
+2:09:43 PM [vite] (client) page reload dist-v2/e2e-4674/index.html
+2:09:43 PM [vite] (client) page reload dist-v2/e2e-4674/market-fixture/e2e/fixtures/market-view.html
+2:09:43 PM [vite] (client) page reload dist-v2/e2e-4674/market-fixture/e2e/fixtures/market-view.html
+2:09:43 PM [vite] (client) page reload dist-v2/e2e-4674/art2-fixture/e2e/fixtures/art2-view.html
+2:09:43 PM [vite] (client) page reload dist-v2/e2e-4674/feature-fixture/e2e/fixtures/feature-samples.html
+2:09:44 PM [vite] (client) page reload dist-v2/e2e-4674/motion-fixture/e2e/fixtures/motion-view.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/index.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/market-fixture/e2e/fixtures/market-view.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/market-fixture/e2e/fixtures/market-view.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/art2-fixture/e2e/fixtures/art2-view.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/feature-fixture/e2e/fixtures/feature-samples.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/motion-fixture/e2e/fixtures/motion-view.html
+2:36:53 PM [vite] (client) page reload dist-v2/e2e-4774/motion-fixture/e2e/fixtures/motion-view.html
+2:38:00 PM [vite] (client) page reload dist-v2/e2e-4874/index.html
+2:38:00 PM [vite] (client) page reload dist-v2/e2e-4874/market-fixture/e2e/fixtures/market-view.html
+2:38:00 PM [vite] (client) page reload dist-v2/e2e-4874/market-fixture/e2e/fixtures/market-view.html
+2:38:00 PM [vite] (client) page reload dist-v2/e2e-4874/art2-fixture/e2e/fixtures/art2-view.html
+2:38:01 PM [vite] (client) page reload dist-v2/e2e-4874/feature-fixture/e2e/fixtures/feature-samples.html
+2:38:01 PM [vite] (client) page reload dist-v2/e2e-4874/motion-fixture/e2e/fixtures/motion-view.html
+2:44:14 PM [vite] (client) page reload dist-v2/e2e-4974/index.html
+2:44:14 PM [vite] (client) page reload dist-v2/e2e-4974/market-fixture/e2e/fixtures/market-view.html
+2:44:14 PM [vite] (client) page reload dist-v2/e2e-4974/art2-fixture/e2e/fixtures/art2-view.html
+2:44:14 PM [vite] (client) page reload dist-v2/e2e-4974/feature-fixture/e2e/fixtures/feature-samples.html
+2:44:14 PM [vite] (client) page reload dist-v2/e2e-4974/motion-fixture/e2e/fixtures/motion-view.html
+2:47:09 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+2:47:09 PM [vite] (client) hmr update /src/game/squad/SquadCanvas.tsx
+2:47:09 PM [vite] (client) page reload /Users/bao/taskbar-hero-squad/packages/game-rules/src/squad/config.ts
+2:48:08 PM [vite] (client) page reload dist-v2/e2e-5074/index.html
+2:48:08 PM [vite] (client) page reload dist-v2/e2e-5074/market-fixture/e2e/fixtures/market-view.html
+2:48:08 PM [vite] (client) page reload dist-v2/e2e-5074/art2-fixture/e2e/fixtures/art2-view.html
+2:48:08 PM [vite] (client) page reload dist-v2/e2e-5074/feature-fixture/e2e/fixtures/feature-samples.html
+2:48:08 PM [vite] (client) page reload dist-v2/e2e-5074/motion-fixture/e2e/fixtures/motion-view.html
+2:52:39 PM [vite] (client) page reload src/game/squad/gate.ts
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/index.html
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/market-fixture/e2e/fixtures/market-view.html
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/market-fixture/e2e/fixtures/market-view.html
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/art2-fixture/e2e/fixtures/art2-view.html
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/feature-fixture/e2e/fixtures/feature-samples.html
+2:52:49 PM [vite] (client) page reload dist-v2/e2e-5174/motion-fixture/e2e/fixtures/motion-view.html
+2:58:37 PM [vite] (client) page reload dist-v2/e2e-5574/index.html
+2:58:37 PM [vite] (client) page reload dist-v2/e2e-5574/market-fixture/e2e/fixtures/market-view.html
+2:58:37 PM [vite] (client) page reload dist-v2/e2e-5574/art2-fixture/e2e/fixtures/art2-view.html
+2:58:37 PM [vite] (client) page reload dist-v2/e2e-5574/feature-fixture/e2e/fixtures/feature-samples.html
+2:58:38 PM [vite] (client) page reload dist-v2/e2e-5574/motion-fixture/e2e/fixtures/motion-view.html
+2:59:08 PM [vite] (client) page reload dist-v2/e2e-5674/index.html
+2:59:08 PM [vite] (client) page reload dist-v2/e2e-5674/market-fixture/e2e/fixtures/market-view.html
+2:59:08 PM [vite] (client) page reload dist-v2/e2e-5674/art2-fixture/e2e/fixtures/art2-view.html
+2:59:08 PM [vite] (client) page reload dist-v2/e2e-5674/feature-fixture/e2e/fixtures/feature-samples.html
+2:59:08 PM [vite] (client) page reload dist-v2/e2e-5674/motion-fixture/e2e/fixtures/motion-view.html

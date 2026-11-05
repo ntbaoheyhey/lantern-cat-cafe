@@ -1,0 +1,86 @@
+Scope: 6 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-squad/packages/auth
+> vitest run --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  13:55:02
+   Duration  510ms (import 78%, tests 18%, transform 4%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-squad/packages/chain
+> vitest run --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  13:55:03
+   Duration  403ms (import 67%, tests 20%, transform 10%, worker 3%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-squad/packages/game-rules
+> vitest run --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/packages/game-rules
+
+
+ Test Files  34 passed | 3 skipped (37)
+      Tests  546 passed | 2 expected fail | 11 skipped (559)
+   Start at  13:55:03
+   Duration  24.35s (tests 96%, transform 2%, import 2%)
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-squad/supabase/tests
+> vitest run --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/supabase/tests
+
+
+ Test Files  34 passed (34)
+      Tests  581 passed (581)
+   Start at  13:55:28
+   Duration  8.49s (tests 82%, import 16%, transform 1%)
+
+    Isolate  34 workers spawned · ~89ms startup each (spawn + environment, per file)
+             at least ~666ms faster with isolate: false — reuses workers across files instead of one per file
+
+
+> @taskbar-hero/api-contract@0.0.0 test /Users/bao/taskbar-hero-squad/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  13:55:37
+   Duration  152ms (transform 64%, import 30%, tests 4%, worker 2%)
+
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-squad/apps/web
+> vitest run --maxWorkers=4
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-squad/apps/web
+
+
+ Test Files  136 passed (136)
+      Tests  1508 passed (1508)
+   Start at  13:55:37
+   Duration  22.60s (environment 49%, tests 39%, import 11%, transform 1%)
+
+Environment  jsdom was created 136 times · 38.76s total, 49% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

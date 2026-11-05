@@ -1,0 +1,61 @@
+
+> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero-squad
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-squad/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 1904 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                               1.98 kB │ gzip:   0.73 kB
+apps/web build: dist/assets/sheet-B8UIec1E.png                4.55 kB
+apps/web build: dist/assets/SpritePreview-DrGwRUam.css        0.69 kB │ gzip:   0.34 kB
+apps/web build: dist/assets/FeatureSamples-BG4xVUCy.css       2.75 kB │ gzip:   0.86 kB
+apps/web build: dist/assets/OriginalCatalog-BqG91EfA.css      5.04 kB │ gzip:   1.28 kB
+apps/web build: dist/assets/ArtPilot-eVSJTpvn.css             6.45 kB │ gzip:   1.38 kB
+apps/web build: dist/assets/entry-VKEV-ytx.css               12.90 kB │ gzip:   3.30 kB
+apps/web build: dist/assets/CafeAdventure--Ys12J6X.css       13.23 kB │ gzip:   3.47 kB
+apps/web build: dist/assets/legacy-entry-aHGj9hrq.css       194.17 kB │ gzip:  32.79 kB
+apps/web build: dist/assets/tokens-CQioJAvZ.js                0.52 kB │ gzip:   0.35 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/managedGame-B-Ra4VQQ.js           0.75 kB │ gzip:   0.40 kB
+apps/web build: dist/assets/Art2Preview-Cd3YYRUx.js           1.33 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/assets-DPbPEqjM.js                3.36 kB │ gzip:   1.64 kB
+apps/web build: dist/assets/FeatureSamples-CuBYkJxa.js        6.27 kB │ gzip:   2.09 kB
+apps/web build: dist/assets/SpritePreview-Dr8GeZjk.js         6.62 kB │ gzip:   2.77 kB
+apps/web build: dist/assets/OriginalArt-BEHMgaIL.js           6.67 kB │ gzip:   1.08 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/OriginalCatalog-CvxPCBRy.js       8.90 kB │ gzip:   2.72 kB
+apps/web build: dist/assets/ArenaScene-DZMoEJyx.js            9.39 kB │ gzip:   3.44 kB
+apps/web build: dist/assets/ArtPilot-p1Tb8Yyd.js             16.69 kB │ gzip:   3.93 kB
+apps/web build: dist/assets/SquadScene-w9udhEkx.js           16.87 kB │ gzip:   6.15 kB
+apps/web build: dist/assets/StageScene-CKesFhhc.js           17.26 kB │ gzip:   6.27 kB
+apps/web build: dist/assets/ArenaPreview-CgUdLrqR.js         22.81 kB │ gzip:   3.01 kB
+apps/web build: dist/assets/CafeAdventure-BheulzMl.js        27.79 kB │ gzip:   8.69 kB
+apps/web build: dist/assets/entry-DmGi0xDH.js                32.78 kB │ gzip:  10.95 kB
+apps/web build: dist/assets/index-E7wKQYhS.js                67.14 kB │ gzip:  23.69 kB
+apps/web build: dist/assets/ch1-Dcr1kpPd.js                 144.79 kB │ gzip:  12.46 kB
+apps/web build: dist/assets/react-trdGxmaQ.js               218.75 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-D6_Jr5Bd.js                363.85 kB │ gzip: 108.14 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: dist/assets/legacy-entry-CkhjUKu7.js      1,531.66 kB │ gzip: 168.00 kB
+apps/web build: [plugin builtin:vite-reporter] 
+apps/web build: (!) Some chunks are larger than 1500 kB after minification. Consider:
+apps/web build: - Using dynamic import() to code-split the application
+apps/web build: - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+apps/web build: ✓ built in 923ms
+apps/web build: Done
