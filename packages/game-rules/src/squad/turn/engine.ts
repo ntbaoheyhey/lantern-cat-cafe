@@ -40,7 +40,7 @@ function random(b: TurnBattle): number {
   b.rng = n >>> 0; return b.rng / 0x100000000;
 }
 function makeActor(role: Role, slot: number, id: string, b: TurnBattle): TurnActor {
-  const side: Side = HEROES.includes(role as Hero) ? 'party' : 'enemy', base = C.stats[role], preset = C.presets[b.preset];
+  const side: Side = HEROES.includes(role as Hero) ? 'party' : 'enemy', base = role === 'yarn' && b.encounter === 'boss' ? { ...C.stats[role], ...C.boss.standalone } : C.stats[role], preset = C.presets[b.preset];
   const hp = Math.round(base.hp * (side === 'party' ? preset.hp : 1));
   return { equipment: {}, setBonuses: [], id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
     : ['ranger', 'healer', 'thread'].includes(role) ? 'rear' : 'front',
@@ -500,8 +500,18 @@ export function continueRun(b: TurnBattle): boolean {
   spawnWave(b, p); closePlan(b, p); return true;
 }
 export function replayRun(options: TurnOptions, commands: readonly RunCommand[]): TurnBattle {
-  const b = createTurnBattle({ ...options, interactive: true });
+  let b = createTurnBattle({ ...options, interactive: true });
+  // Burn or a forced skip can clear a wave without an accepted action command.
+  // Probe a copy so a future player decision is never invented by playback.
+  const drainForced = () => {
+    while (!b.result && b.run.stage === 'battle' && b.history.length) {
+      const candidate = copy(b); startTurn(candidate);
+      if (candidate.phase !== 'resolved') break;
+      endTurn(candidate); b = candidate;
+    }
+  };
   for (const command of commands) {
+    if (command.kind !== 'action') drainForced();
     let accepted = false;
     if (command.kind === 'begin') accepted = beginRun(b);
     else if (command.kind === 'equip') accepted = equipGear(b, command.hero, command.slot, command.itemId);
@@ -513,6 +523,7 @@ export function replayRun(options: TurnOptions, commands: readonly RunCommand[])
     }
     if (!accepted) throw Error(`Invalid run replay command: ${command.kind}`);
   }
+  drainForced();
   return b;
 }
 /** Replay accepted choices, including enemies. Never invent a policy decision. */
