@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 // Uses actual controls and the actual presenter/rules. Only animation waiting is accelerated.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 const base=process.env.CARDRPG_URL||'http://127.0.0.1:5523/?demo&squad=1&cardrpg=1&squadDebug=1',out=process.env.CARDRPG_CHECK_OUT||'reports/cardrpg/path';await fs.mkdir(out,{recursive:true});
@@ -31,5 +32,5 @@ try{for(const [width,height] of [[1024,600],[1280,720],[1440,900]]){
  await page.getByRole('button',{name:'Enhance a favourite'}).click();const level=await page.evaluate(()=>{const m=window.__cardrpgReview;return m.state.inventory.items.find(i=>i.id===m.itemId).enhancement});await page.getByRole('button',{name:'Enhance equipment',exact:true}).click();assert.equal(await page.evaluate(()=>{const m=window.__cardrpgReview;return m.state.inventory.items.find(i=>i.id===m.itemId).enhancement}),level+1);await shot('enhance');
  await page.getByRole('button',{name:'Companions',exact:false}).first().click();await page.locator('.cr-card-grid').waitFor();await shot('collection');await page.getByRole('button',{name:'Field guide',exact:false}).click();await page.getByRole('heading',{name:'Know what matters.'}).waitFor();await shot('codex');
  rows.push({width,height,stages,battle,steps,draws:drawn.history.length,enhanced:true,viewport,audit});await page.close();console.log(JSON.stringify(rows.at(-1)));
-}}finally{await browser.close();await fs.writeFile(`${out}/check.json`,JSON.stringify({date:new Date().toISOString(),base,rows,errors,requests,writes,method:'Real UI setup, draw and rewards; real battle auto rules with presenter skip/tick acceleration, no HP/reward edits.'},null,2))}
+}}finally{await browser.close();await fs.writeFile(`${out}/check.json`,JSON.stringify({artifactSha256:base.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(base))).digest('hex'):null,date:new Date().toISOString(),base,rows,errors,requests,writes,method:'Real UI setup, draw and rewards; real battle auto rules with presenter skip/tick acceleration, no HP/reward edits.'},null,2))}
 assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert.deepEqual(writes,[]);

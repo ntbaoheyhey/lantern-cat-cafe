@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 const url=process.env.CARDRPG_URL||'file://'+process.cwd()+'/docs/cardrpg/index.html',out=process.env.CARDRPG_CHECK_OUT||'reports/cardrpg/fallback';await fs.mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),checks=[],errors=[];
@@ -11,5 +12,5 @@ try{for(const mode of ['missing','lost','calm','audio-blocked']){
  if(mode==='calm'){await p.evaluate(()=>window.__turn3dReview.controller.inspect('lanternstorm',2));assert.deepEqual(await p.evaluate(()=>{const f=window.__turn3dReview.controller.frame;return [f.camera,f.shake,f.flash]}),[0,0,0])}
  if(mode==='audio-blocked'){await p.getByRole('button',{name:'Synthesized audio'}).click();await p.getByText('Audio blocked by the browser. Click to retry.').waitFor()}
  await p.screenshot({path:out+'/'+mode+'.png'});checks.push({mode,pass:true});await p.close();
-}}finally{await browser.close();await fs.writeFile(out+'/check.json',JSON.stringify({date:new Date().toISOString(),url,checks,errors},null,2))}
+}}finally{await browser.close();await fs.writeFile(out+'/check.json',JSON.stringify({artifactSha256:url.startsWith('file:')?createHash('sha256').update(await fs.readFile(fileURLToPath(url))).digest('hex'):null,date:new Date().toISOString(),url,checks,errors},null,2))}
 assert.deepEqual(errors,[]);console.log(JSON.stringify(checks));
