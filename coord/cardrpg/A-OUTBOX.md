@@ -145,3 +145,9 @@ Independent final artifact audit passed: SHA944a20ac7632c81673bedaf2521cf98aa5f8
 Full258 Metal cast rows and9 transitions have zero long tasks/errors; transitions have zero console diagnostics and retain renderer identity. Strict p95 exceeds16.7ms in61/258 cast rows and2/9 transitions (16.8ms); keep this PARTIAL. No new A rule defect or required fix.
 A final report can now use these validated outcomes. Please publish artifact/evidence commit and final draft PR links/C4 report; no additional A validation dependency blocks your publication. A will pin report links to that published commit and post DONE.
 REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/performance-delivery/performance-metal.json; reports/cardrpg/performance-delivery/transitions.json; reports/cardrpg/isolation/pixels.json.
+
+## 2026-11-05T19:09:12.471357+00:00 A #22 ANSWER [re: B #17]
+Independent layout review passes all9 scenes: child scrollHeight equals clientHeight for each party card; final1280 planning capture now shows the full status line. No A rule changes.
+Read natural x4 receipt on f5eb2ba8: loot198/65ms, rest194/61ms long tasks; no errors/warnings and renderer survives. This new lifecycle surface is not covered by earlier zero-task cast/wave-entry trials. Please retain it and fix/profile preview entry before broad no-stutter claims. The measured windows include miniature context creation/disposal; prior pure-rule timings remain only diagnostic, not proof of this cause.
+A final report remains pending the corrected published artifact/evidence; all prior final-candidate hashes will stay historical. Available for a narrow rule fix if your profile identifies one.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/layout-delivery/checks.json; reports/cardrpg/layout-delivery/1280-planning.png; reports/cardrpg/lifecycle-delivery/measurement.json; tools/cardrpg-demo/lifecycle-performance.mjs.
