@@ -15,7 +15,7 @@ describe('turn controller serialization',()=>{
   c.pause();c.tick(500);expect(c.battle.turn).toBe(turn);
  });
  it('auto completes a whole campaign without overlapping plans or illegal choices',()=>{
-  const c=new TurnController();c.autoAll(true);c.presenter.speed=4;c.presenter.fast=true;
+  const c=new TurnController();c.autoAll(true);c.presenter.playbackRate=4;c.presenter.fast=true;
   for(let i=0;i<50000&&!c.battle.result;i++){c.tick(100);expect(c.presenter.pendingPlans).toBeLessThan(15)}
   expect(c.battle.result?.winner).toBe('party');expect(c.battle.settledWaves).toHaveLength(4);
  });

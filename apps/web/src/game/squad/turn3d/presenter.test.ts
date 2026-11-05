@@ -22,8 +22,8 @@ it('consumes a recorded fight in event order and projects its final snapshot',()
   for(let i=0;i<100&&!b.result;i++){startTurn(b);if(b.phase==='choose'){chooseAction(b,getAutoAction(b)!);resolveAction(b);}endTurn(b);p.push(b.events.slice(read));read=b.events.length;p.tick(100000);}
   expect(p.appliedSeq).toBe(b.events.length-1);expect(p.state.actors).toEqual(b.actors);expect(p.state.result).toEqual(b.result);expect(p.busy).toBe(false);
 });
-it('skip, duplicate batches, huge deltas and speed never duplicate events',()=>{
-  const {initial,rest,b}=fixture(),p=new TurnPresenter();p.reset(initial);p.push(rest);p.push(rest);p.speed=4;p.fast=true;
+it('skip, duplicate batches, huge deltas and playbackRate never duplicate events',()=>{
+  const {initial,rest,b}=fixture(),p=new TurnPresenter();p.reset(initial);p.push(rest);p.push(rest);p.playbackRate=4;p.fast=true;
   while(p.busy)p.skip();expect(p.appliedSeq).toBe(b.events.length-1);expect(p.recent.map(e=>e.seq)).toEqual([...new Set(p.recent.map(e=>e.seq))]);
   const seq=p.appliedSeq;p.tick(1e8);p.skip();expect(p.appliedSeq).toBe(seq);
 });

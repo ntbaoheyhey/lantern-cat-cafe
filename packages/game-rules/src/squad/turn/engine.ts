@@ -1,5 +1,5 @@
 import { HEROES, NAMES, TURN_CONFIG as C, TURN_SKILLS } from './config';
-import { getTimeline, insertSlot, interval, moveSlot } from './initiative';
+import { getTimeline, orderForRound, moveInRound } from './rounds';
 import { affected, getLegalActions, getLegalTargets, hasStatus, living, taunter } from './targeting';
 import type { Hero, Role, Side, StatusKind, TurnActor, TurnBattle, TurnChoice, TurnEvent, TurnEventKind,
   TurnIntent, TurnOptions, TurnSkill } from './types';
@@ -21,7 +21,7 @@ function emit(b: TurnBattle, p: Plan, type: TurnEventKind, beat: number,
   // Outcome snapshots contain only affected actors. Including an unrelated source here
   // could rewind its later charge/status snapshot when reactions are sorted after hits.
   const actors = data.actors ?? b.actors.filter(a => targetIds.length ? targetIds.includes(a.id) : a.id === actorId);
-  b.events.push(copy({ version: 2, seq: b.events.length, turn: b.turn, actionId: p.id, beat,
+  b.events.push(copy({ version: 3, seq: b.events.length, turn: b.turn, round: b.round, actionId: p.id, beat,
     type, actorId, skillId: p.skillId, targetIds, amount: 0, ...data, actors }));
 }
 /** Batch consequences by presentation beat. Stable sorting preserves same-beat causality. */
@@ -41,15 +41,15 @@ function makeActor(role: Role, slot: number, id: string, b: TurnBattle): TurnAct
   const hp = Math.round(base.hp * (side === 'party' ? preset.hp : 1));
   return { id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
     : ['ranger', 'healer', 'thread'].includes(role) ? 'rear' : 'front',
-    hp, maxHp: hp, shield: 0, shieldTurns: 0, charge: side === 'party' ? C.charge.initial : 0,
+    hp, maxHp: hp, shield: 0, shieldRounds: 0, shieldAppliedRound: 0, charge: side === 'party' ? C.charge.initial : 0,
     attack: Math.round(base.attack * (side === 'party' ? preset.attack : 1)), defense: base.defense,
-    speed: base.speed * (side === 'party' ? preset.speed : 1), crit: base.crit, auto: false,
-    statuses: [], cooldowns: {}, turnsTaken: 0, break: 0, controlCount: 0, passiveReady: 0 };
+    initiative: base.initiative + (side === 'party' ? preset.initiative : 0), crit: base.crit, auto: false,
+    statuses: [], cooldowns: {}, cooldownApplied: {}, turnsTaken: 0, break: 0, controlCount: 0, passiveReady: 0, quickenedRound: 0 };
 }
 function enemySkill(b: TurnBattle, a: TurnActor): string {
   if (a.role !== 'yarn') return `${a.role}Attack`;
   const cycle = b.bossPhase >= 2 ? C.boss.cycleTwo : C.boss.cycleOne;
-  return cycle[b.bossTurns % cycle.length]!;
+  return cycle[b.bossRounds % cycle.length]!;
 }
 function chooseEnemyTarget(b: TurnBattle, source: TurnActor, skill: TurnSkill): TurnActor | undefined {
   const friendly = ['ally', 'allAllies', 'self'].includes(skill.target);
@@ -75,7 +75,7 @@ function commitIntent(b: TurnBattle, p: Plan, a: TurnActor, note = 'Committed ne
   if (!target) { delete b.intents[a.id]; return; }
   b.intents[a.id] = { actorId: a.id, skillId: skill.id, targetId: target.id,
     targetIds: affected(b, a, skill, target).map(t => t.id), icon: skill.icon, label: skill.name,
-    countdown: a.id === b.activeId ? 0 : 1, interrupted: false };
+    countdown: b.acted.includes(a.id) ? 1 : 0, interrupted: false };
   emit(b, p, 'intent', 4, { actorId: a.id, skillId: skill.id, targetIds: b.intents[a.id]!.targetIds, note, intents: b.intents });
 }
 function refreshIntents(b: TurnBattle, p: Plan, beat = 4): void {
@@ -88,27 +88,27 @@ function refreshIntents(b: TurnBattle, p: Plan, beat = 4): void {
     if (!target) { delete b.intents[a.id]; continue; }
     const ids = affected(b, a, skill, target).map(t => t.id);
     const changed = intent.targetId !== target.id || ids.join('|') !== intent.targetIds.join('|');
-    intent.countdown = a.id === b.activeId ? 0 : a.role === 'yarn' ? 1 : b.queue.findIndex(s => s.actorId === a.id) + 1;
+    intent.countdown = b.acted.includes(a.id) ? 1 : 0;
     if (changed) {
       intent.targetId = target.id; intent.targetIds = ids;
       emit(b, p, 'intent', beat, { actorId: a.id, skillId: skill.id, targetIds: ids,
         note: forced ? 'Taunt redirects the committed target.' : 'Target defeated; intent retargets.', intents: b.intents });
     }
   }
-  b.bossCountdown = b.activeId && find(b, b.activeId)?.role === 'yarn' ? 0 : 1;
+  b.bossCountdown = b.actors.some(a => a.role === 'yarn' && b.acted.includes(a.id)) ? 1 : 0;
 }
 function spawnWave(b: TurnBattle, p: Plan): void {
   b.actors = b.actors.filter(a => a.side === 'party');
-  b.queue = b.queue.filter(s => find(b, s.actorId)?.side === 'party'); b.intents = {};
+  b.queue = []; b.intents = {}; b.acted = [];
   const boss = b.encounter === 'boss' || (b.encounter === 'campaign' && b.wave === C.waves.length);
   const roles: readonly Role[] = boss ? ['yarn'] : b.encounter === 'dummy' ? ['dummy']
     : b.encounter === 'group' ? C.trainingRoles : C.waves[b.wave]!.roles;
-  if (boss) { b.bossPhase = 1; b.bossTurns = 0; b.bossCountdown = 1; }
+  if (boss) { b.bossPhase = 1; b.bossRounds = 0; b.bossCountdown = 1; }
   for (const [slot, role] of roles.entries()) {
     const a = makeActor(role, slot, `w${b.wave}-${role}-${slot}`, b);
     b.actors.push(a); b.totals[a.id] = zero();
-    insertSlot(b, b.queue, { actorId: a.id, at: b.clock + interval(a) });
   }
+  b.queue = orderForRound(b);
   emit(b, p, 'wave_start', 4, { actors: b.actors, wave: b.wave, bossPhase: b.bossPhase });
   for (const a of aliveSide(b, 'enemy')) commitIntent(b, p, a);
   refreshIntents(b, p);
@@ -117,12 +117,12 @@ export function createTurnBattle(options: TurnOptions = {}): TurnBattle {
   const seed = (options.seed ?? C.defaultSeed) >>> 0;
   const encounter = options.encounter ?? 'campaign';
   const initialWave = Number.isFinite(options.wave) ? Math.floor(options.wave!) : 0;
-  const b: TurnBattle = { version: 2, seed, rng: seed || 1, encounter, preset: options.preset ?? 'hearthkeepers',
-    actors: [], queue: [], clock: 0, turn: 0, activeId: null, phase: 'ready', selected: null,
+  const b: TurnBattle = { version: 3, seed, rng: seed || 1, encounter, preset: options.preset ?? 'hearthkeepers',
+    actors: [], queue: [], round: 1, acted: [], turn: 0, activeId: null, phase: 'ready', selected: null,
     events: [], history: [], intents: {}, wave: encounter === 'boss' ? C.waves.length : Math.max(0, Math.min(C.waves.length - 1, initialWave)),
-    bossPhase: 0, bossTurns: 0, bossCountdown: 1, settledWaves: [], fishFound: 0, deaths: [], result: null, totals: {} };
+    bossPhase: 0, bossRounds: 0, bossCountdown: 1, settledWaves: [], fishFound: 0, deaths: [], result: null, totals: {} };
   b.actors = HEROES.map((role, slot) => makeActor(role, slot, role, b));
-  for (const a of b.actors) { b.totals[a.id] = zero(); insertSlot(b, b.queue, { actorId: a.id, at: interval(a) }); }
+  for (const a of b.actors) b.totals[a.id] = zero();
   const p = plan(b); spawnWave(b, p); closePlan(b, p);
   return b;
 }
@@ -137,13 +137,13 @@ function shield(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, ra
   target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === 'party' ? C.presets[b.preset].shield : 1)));
   const added = target.shield - before;
   if (added <= 0) return;
-  target.shieldTurns = C.shieldTurns;
+  target.shieldRounds = C.shieldRounds; target.shieldAppliedRound = b.round;
   (b.totals[source.id] ??= zero()).shielding += added;
   emit(b, p, 'shield', 2, { actorId: source.id, skillId, targetIds: [target.id], amount: added });
 }
 function passive(b: TurnBattle, p: Plan, source: TurnActor, skillId: string, targets: string[]): boolean {
-  if (source.turnsTaken < source.passiveReady || !living(source)) return false;
-  source.passiveReady = source.turnsTaken + C.passive.cooldown;
+  if (b.round < source.passiveReady || !living(source)) return false;
+  source.passiveReady = b.round + C.passive.cooldown;
   emit(b, p, 'passive', 2, { actorId: source.id, skillId, targetIds: targets });
   return true;
 }
@@ -171,21 +171,21 @@ function expireStatus(b: TurnBattle, p: Plan, target: TurnActor, kind: StatusKin
 function cleanse(b: TurnBattle, p: Plan, target: TurnActor): void {
   for (const s of [...target.statuses]) if (s.kind !== 'guard') expireStatus(b, p, target, s.kind, `Cleanse: ${s.kind}.`);
 }
-function status(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, kind: StatusKind, turns: number, strength = 1): boolean {
+function status(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, kind: StatusKind, rounds: number, strength = 1): boolean {
   if (!living(target)) return false;
   if (kind === 'stun' || kind === 'snare') {
     if (target.controlCount > 0) {
       emit(b, p, 'fizzle', 2, { targetIds: [target.id], status: kind, note: 'Control resisted during recovery.' }); return false;
     }
-    turns = Math.min(turns, target.role === 'yarn' ? C.control.bossTurns : C.control.normalTurns);
-    target.controlCount = turns + (target.role === 'yarn' ? C.control.bossRecoveryTurns : C.control.recoveryTurns);
+    rounds = Math.min(rounds, target.role === 'yarn' ? C.control.bossRounds : C.control.normalRounds);
+    target.controlCount = rounds + (target.role === 'yarn' ? C.control.bossRecoveryRounds : C.control.recoveryRounds);
   }
   const existing = target.statuses.find(s => s.kind === kind);
   if (existing) {
-    existing.turns = Math.max(existing.turns, turns); existing.appliedTurn = b.turn; existing.source = source.id;
+    existing.rounds = Math.max(existing.rounds, rounds); existing.appliedRound = b.round; existing.source = source.id;
     existing.strength = kind === 'burn' ? Math.min(C.caps.burn, existing.strength + strength) : Math.max(existing.strength, strength);
-  } else target.statuses.push({ kind, source: source.id, turns, strength, appliedTurn: b.turn });
-  emit(b, p, 'status_apply', 2, { actorId: source.id, targetIds: [target.id], status: kind, amount: turns });
+  } else target.statuses.push({ kind, source: source.id, rounds, strength, appliedRound: b.round });
+  emit(b, p, 'status_apply', 2, { actorId: source.id, targetIds: [target.id], status: kind, amount: rounds });
   return true;
 }
 function interrupt(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): void {
@@ -193,13 +193,13 @@ function interrupt(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor)
   if (!intent || intent.interrupted || !living(target)) return;
   intent.interrupted = true;
   emit(b, p, 'interrupt', 2, { actorId: source.id, targetIds: [target.id], note: `Canceled ${intent.label}.`, intents: b.intents });
-  emit(b, p, 'intent', 2, { actorId: target.id, skillId: intent.skillId, targetIds: intent.targetIds, note: 'Interrupted; next slot is lost.', intents: b.intents });
+  emit(b, p, 'intent', 2, { actorId: target.id, skillId: intent.skillId, targetIds: intent.targetIds, note: 'Interrupted; its next action is lost.', intents: b.intents });
   if (source.role === 'guardian' && passive(b, p, source, 'steadfast', [source.id])) shield(b, p, source, source, C.passive.guardianShield, 'steadfast');
 }
 function death(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): void {
   if (b.deaths.includes(target.id)) return;
   b.deaths.push(target.id); b.queue = b.queue.filter(s => s.actorId !== target.id); delete b.intents[target.id];
-  target.shield = 0; target.shieldTurns = 0;
+  target.shield = 0; target.shieldRounds = 0;
   emit(b, p, 'death', 3, { actorId: source.id, targetIds: [target.id] });
   if (target.role === 'thread') {
     const captive = target.boundAlly ? find(b, target.boundAlly) : undefined;
@@ -208,7 +208,7 @@ function death(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): vo
       if (bound) expireStatus(b, p, captive, 'restrain', 'Binding Thread destroyed; captive released.');
     }
     const boss = b.actors.find(a => a.role === 'yarn' && living(a));
-    if (boss) status(b, p, source, boss, 'exposed', C.boss.exposedTurns);
+    if (boss) status(b, p, source, boss, 'exposed', C.boss.exposedRounds);
   }
   if (target.side === 'party') {
     for (const thread of b.actors.filter(a => a.role === 'thread' && a.boundAlly === target.id && living(a))) {
@@ -223,18 +223,18 @@ function stagger(b: TurnBattle, p: Plan, source: TurnActor, boss: TurnActor, amo
   if (!living(boss) || has(boss, 'exposed')) return;
   boss.break = Math.min(C.boss.breakMax, boss.break + amount);
   if (boss.break < C.boss.breakMax) return;
-  boss.break = 0; status(b, p, source, boss, 'exposed', C.boss.exposedTurns);
+  boss.break = 0; status(b, p, source, boss, 'exposed', C.boss.exposedRounds);
   // Opening is guaranteed; loss of a boss action still respects its recovery window.
-  if (status(b, p, source, boss, 'stun', C.control.bossTurns)) interrupt(b, p, source, boss);
+  if (status(b, p, source, boss, 'stun', C.control.bossRounds)) interrupt(b, p, source, boss);
   emit(b, p, 'boss_phase', 4, { targetIds: [boss.id], bossPhase: b.bossPhase, note: 'Staggered: the knot is exposed.' });
 }
 function damage(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number, roll = true, skillId = p.skillId): void {
   if (!living(target) || raw <= 0) return;
   const critical = roll && random(b) < Math.min(C.caps.crit, source.crit);
   const variance = roll ? 1 + (random(b) * 2 - 1) * C.variance : 1;
-  const guard = Math.min(C.caps.guard, target.statuses.filter(s => s.kind === 'guard' && s.turns > 0).reduce((n, s) => n + s.strength, 0));
-  const enrage = source.role === 'yarn' && b.bossTurns >= C.boss.enrageTurns
-    ? C.boss.enrageMultiplier + (b.bossTurns - C.boss.enrageTurns) * C.boss.enrageGrowth : 1;
+  const guard = Math.min(C.caps.guard, target.statuses.filter(s => s.kind === 'guard' && s.rounds > 0).reduce((n, s) => n + s.strength, 0));
+  const enrage = source.role === 'yarn' && b.bossRounds >= C.boss.enrageRounds
+    ? C.boss.enrageMultiplier + (b.bossRounds - C.boss.enrageRounds) * C.boss.enrageGrowth : 1;
   const amount = Math.max(C.minDamage, Math.round(raw * variance * (critical ? C.critMultiplier : 1) * enrage *
     (has(target, 'exposed') ? C.boss.exposedMultiplier : 1) * C.defenseScale / (C.defenseScale + Math.max(0, target.defense)) * (1 - guard)));
   const absorbed = Math.min(target.shield, amount), lost = Math.min(target.hp, amount - absorbed);
@@ -259,8 +259,8 @@ function spawnThread(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActo
   if (slot === undefined) return;
   const thread = makeActor('thread', slot, `w${b.wave}-thread-${b.turn}`, b);
   thread.boundAlly = target.id; b.actors.push(thread); b.totals[thread.id] = zero();
-  insertSlot(b, b.queue, { actorId: thread.id, at: b.clock + interval(thread) });
-  status(b, p, thread, target, 'restrain', C.boss.bindTurns);
+  b.acted.push(thread.id); // Summons first act in the next round.
+  status(b, p, thread, target, 'restrain', C.boss.bindRounds);
   emit(b, p, 'spawn', 4, { actorId: source.id, targetIds: [thread.id], note: 'Destroy Binding Thread to release the captive and expose the knot.' });
   commitIntent(b, p, thread);
 }
@@ -273,16 +273,16 @@ function bossRules(b: TurnBattle, p: Plan, afterBossTurn = false): void {
     // Already committed intent remains visible and unchanged; phase applies to the next commitment.
   }
   if (!afterBossTurn) return;
-  if (b.bossTurns === C.boss.enrageTurns) emit(b, p, 'boss_phase', 4, { actorId: boss.id, bossPhase: b.bossPhase,
+  if (b.bossRounds === C.boss.enrageRounds) emit(b, p, 'boss_phase', 4, { actorId: boss.id, bossPhase: b.bossPhase,
     note: 'Enrage: each following boss turn increases damage.' });
-  if (b.bossTurns % C.boss.addsEvery !== 0) return;
+  if (b.bossRounds % C.boss.addsEvery !== 0) return;
   for (let i = 0; i < C.boss.addsPerWave; i++) {
     const enemies = aliveSide(b, 'enemy');
     if (enemies.length >= C.boss.maxEnemies) break;
     const slot = C.boss.addSlots.find(s => !enemies.some(a => a.slot === s));
     if (slot === undefined) break;
     const add = makeActor('flanker', slot, `w${b.wave}-add-${b.turn}-${i}`, b);
-    b.actors.push(add); b.totals[add.id] = zero(); insertSlot(b, b.queue, { actorId: add.id, at: b.clock + interval(add) });
+    b.actors.push(add); b.totals[add.id] = zero(); b.acted.push(add.id);
     emit(b, p, 'spawn', 4, { actorId: boss.id, targetIds: [add.id], note: 'Loose threads join the fight.' });
     commitIntent(b, p, add);
   }
@@ -290,7 +290,7 @@ function bossRules(b: TurnBattle, p: Plan, afterBossTurn = false): void {
 function finish(b: TurnBattle, p: Plan, winner: Side, cause: string): void {
   if (b.result) return;
   const lost = b.deaths.filter(id => HEROES.includes(id as Hero));
-  b.result = { winner, turns: b.turn, deaths: lost, firstDeath: (lost[0] as Hero | undefined) ?? null,
+  b.result = { winner, turns: b.turn, rounds: b.round, deaths: lost, firstDeath: (lost[0] as Hero | undefined) ?? null,
     wavesCleared: b.settledWaves.filter(w => w < C.waves.length).length, fishFound: b.fishFound, cause };
   b.phase = 'finished'; b.queue = [];
   emit(b, p, winner === 'party' ? 'victory' : 'defeat', 4, { actors: b.actors, result: b.result, amount: b.fishFound, note: cause });
@@ -306,23 +306,44 @@ function settle(b: TurnBattle, p: Plan): void {
       emit(b, p, 'wave_clear', 4, { wave: b.wave, amount: fish, note: 'Local cosmetic settlement; no save or server grant.' });
     }
     const last = b.encounter === 'campaign' ? C.waves.length : C.waves.length - 1;
-    if (['campaign', 'patrol'].includes(b.encounter) && b.wave < last) { b.wave++; spawnWave(b, p); }
+    if (['campaign', 'patrol'].includes(b.encounter) && b.wave < last) { finishRound(b, p); b.wave++; b.round++; spawnWave(b, p); }
     else { finish(b, p, 'party', 'The cafe is safe for tonight.'); return; }
   }
   if (b.turn >= C.maxTurns) finish(b, p, 'enemy', 'The turn limit was reached.');
+}
+/** End-of-round maintenance runs once, independently of individual action order. */
+function finishRound(b: TurnBattle, p: Plan): void {
+  for (const a of b.actors) {
+    for (const [id, remaining] of Object.entries(a.cooldowns))
+      if ((a.cooldownApplied[id] ?? 0) < b.round) a.cooldowns[id] = Math.max(0, remaining - 1);
+    for (const s of [...a.statuses]) if (s.appliedRound < b.round) {
+      s.rounds--; if (s.rounds <= 0) expireStatus(b, p, a, s.kind, 'Round duration completed.');
+    }
+    if (a.shieldRounds > 0 && a.shieldAppliedRound < b.round && --a.shieldRounds === 0) {
+      const expired = a.shield; a.shield = 0;
+      emit(b, p, 'shield', 2, { targetIds: [a.id], amount: -expired, note: 'Shield expired after two rounds.' });
+    }
+    if (!a.statuses.some(s => ['stun', 'snare'].includes(s.kind) && s.appliedRound === b.round))
+      a.controlCount = Math.max(0, a.controlCount - 1);
+  }
 }
 /** Open one slot, then wait indefinitely. Forced lost turns resolve without an invented choice. */
 export function startTurn(b: TurnBattle): TurnActor | null {
   if (b.result) return null;
   if (b.phase !== 'ready') return b.activeId ? find(b, b.activeId) ?? null : null;
   b.queue = b.queue.filter(s => find(b, s.actorId)?.hp! > 0);
+  if (!b.queue.length) {
+    const opening = plan(b); finishRound(b, opening); b.round++; b.acted = [];
+    b.queue = orderForRound(b); refreshIntents(b, opening);
+    emit(b, opening, 'round_start', 0, { actors: b.actors, note: `Round ${b.round}.` }); closePlan(b, opening);
+  }
   const slot = b.queue.shift();
   if (!slot) return null;
   const a = find(b, slot.actorId)!;
-  b.activeId = a.id; b.clock = Math.max(b.clock, slot.at); b.turn++; b.selected = null; b.phase = 'choose';
+  b.activeId = a.id; b.turn++; b.selected = null; b.phase = 'choose';
   const p = plan(b, a.id);
   emit(b, p, 'turn_start', 0, { targetIds: [a.id], actors: b.actors });
-  for (const burn of a.statuses.filter(s => s.kind === 'burn' && s.turns > 0 && s.appliedTurn < b.turn)) {
+  for (const burn of a.statuses.filter(s => s.kind === 'burn' && s.rounds > 0 && s.appliedRound < b.round)) {
     const source = find(b, burn.source) ?? a;
     damage(b, p, source, a, C.burnDamage * burn.strength, false, 'burn');
   }
@@ -357,7 +378,7 @@ export function resolveAction(b: TurnBattle): TurnEvent[] {
     emit(b, p, 'fizzle', 2, { note: 'Locked source or target is no longer living.' });
     return closePlan(b, p);
   }
-  source.cooldowns[skill.id] = skill.cooldown;
+  source.cooldowns[skill.id] = skill.cooldown; source.cooldownApplied[skill.id] = b.round;
   charge(b, p, source, -skill.chargeCost, 'Ultimate cost.');
   charge(b, p, source, C.charge.action, 'Charge from taking an action.');
   for (const t of targets) {
@@ -369,7 +390,7 @@ export function resolveAction(b: TurnBattle): TurnEvent[] {
     if (applied && skill.status === 'stun') interrupt(b, p, source, t);
     if (applied && skill.delay) {
       const slots = t.role === 'yarn' ? C.control.bossDelay : skill.delay;
-      if (moveSlot(b, t.id, slots)) emit(b, p, 'delay', 2, { targetIds: [t.id], amount: slots, note: 'Existing slot delayed.' });
+      if (moveInRound(b, t.id, slots)) emit(b, p, 'delay', 2, { targetIds: [t.id], amount: slots, note: 'Pushed back in this round.' });
     }
     if (skill.id === 'bindThread') spawnThread(b, p, source, t);
   }
@@ -388,22 +409,11 @@ export function endTurn(b: TurnBattle): void {
   if (b.phase !== 'resolved' || !b.activeId || b.result) return;
   const a = find(b, b.activeId)!;
   const p = plan(b, a.id, b.selected?.skillId ?? '');
-  for (const [id, remaining] of Object.entries(a.cooldowns)) {
-    if (id !== b.selected?.skillId) a.cooldowns[id] = Math.max(0, remaining - 1);
-  }
-  for (const s of [...a.statuses]) if (s.appliedTurn < b.turn) {
-    s.turns--; if (s.turns <= 0) expireStatus(b, p, a, s.kind, 'Duration completed on the affected actor’s turn.');
-  }
-  const freshlyShielded = b.events.some(e => e.turn === b.turn && e.type === 'shield' && e.targetIds.includes(a.id) && e.amount > 0);
-  if (a.shieldTurns > 0 && !freshlyShielded) {
-    a.shieldTurns--;
-    if (a.shieldTurns === 0) { const expired = a.shield; a.shield = 0; emit(b, p, 'shield', 2, { targetIds: [a.id], amount: -expired, note: 'Shield expired after two owner turns.' }); }
-  }
-  if (!a.statuses.some(s => ['stun', 'snare'].includes(s.kind) && s.appliedTurn === b.turn)) a.controlCount = Math.max(0, a.controlCount - 1);
+  if (has(a, 'stun')) expireStatus(b, p, a, 'stun', 'Interrupted action consumed.');
+  b.acted.push(a.id);
   a.turnsTaken++;
   b.activeId = null; b.phase = 'ready'; b.selected = null;
-  if (living(a)) insertSlot(b, b.queue, { actorId: a.id, at: b.clock + interval(a) });
-  if (a.role === 'yarn') { b.bossTurns++; bossRules(b, p, true); }
+  if (a.role === 'yarn') { b.bossRounds++; bossRules(b, p, true); }
   if (a.side === 'enemy' && living(a)) commitIntent(b, p, a);
   settle(b, p); if (!b.result) refreshIntents(b, p);
   emit(b, p, 'turn_end', 4, { targetIds: [a.id] });
@@ -412,13 +422,17 @@ export function endTurn(b: TurnBattle): void {
 function moveActor(b: TurnBattle, id: string, slots: number): void {
   if (!Number.isFinite(slots) || slots === 0) return;
   const amount = Math.sign(slots) * Math.min(C.initiative.maxMove, Math.abs(Math.trunc(slots)));
-  if (!moveSlot(b, id, amount)) return;
+  if (!moveInRound(b, id, amount)) return;
   const p = plan(b, b.activeId ?? id);
-  emit(b, p, 'delay', 2, { targetIds: [id], amount, note: amount > 0 ? 'Existing slot delayed.' : 'Existing slot advanced.' });
+  emit(b, p, 'delay', 2, { targetIds: [id], amount, note: amount > 0 ? 'Pushed back in this round.' : 'Quickened in this round.' });
   refreshIntents(b, p); closePlan(b, p);
 }
 export function delayActor(b: TurnBattle, id: string, slots: number): void { if (slots > 0) moveActor(b, id, slots); }
-export function advanceActor(b: TurnBattle, id: string, slots: number): void { if (slots > 0) moveActor(b, id, -slots); }
+export function advanceActor(b: TurnBattle, id: string, slots: number): void {
+  const a = find(b, id); if (!a || a.quickenedRound === b.round || slots <= 0 || !Number.isFinite(slots)) return;
+  if (!b.queue.some(s => s.actorId === id) || b.queue[0]?.actorId === id) return;
+  moveActor(b, id, -slots); a.quickenedRound = b.round;
+}
 /** Replay accepted choices, including enemies. Never invent a policy decision. */
 export function replayTurns(options: TurnOptions, choices: readonly TurnChoice[]): TurnBattle {
   let b = createTurnBattle(options);
