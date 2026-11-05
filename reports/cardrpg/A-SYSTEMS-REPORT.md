@@ -1,7 +1,7 @@
 # Session A — Systems delivery report
 
 Status: **PARTIAL — A systems and requested integration fix complete; B final integrated evidence pending.**
-Updated: 2026-11-05T18:01:40.065346+00:00.
+Updated: 2026-11-05T18:46:28.093765+00:00.
 
 Base: `3bf2cfa3bd32d8355c5c967e979240330a595682` on `ai/codex-turn3d-polish-2026-11-05`. Systems head: `9ccf88e7eeac6814229e2b8d919b608bb4cee478` on `ai/codex-cardrpg-systems-2026-11-05`; worktree `/Users/bao/taskbar-hero-cardrpg-a`. Contract **0.4.0**. The no-limits update supersedes all clock/size/retry ceilings; checkpoints record content order only. No extra agents or model-calling helpers were used.
 
@@ -246,6 +246,13 @@ REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `coord/cardrpg/
 The read-only comparison enumerated `git diff --name-only 3bf2cfa3bd32d8355c5c967e979240330a595682 HEAD` in A and compared each file to the real integration worktree: 76 files, zero differences at `25466d096cce0442b8ec6896b79cc6abbb98303e`. The rules client `apps/web/src/game/cardrpg/model.ts` SHA-256 was `c0e6c1d8c4131e243434c5d0a602547b9a4ad4de0a1d571c71d7b1ead0d4b3b2`; its command/start/finish/abandon methods call imported game-rules functions directly. Screens obtain actual stats, preview costs and odds from the same package. This is a source-boundary review, not a substitute for runtime browser tests.
 
 All 32 pinned evidence links resolve to 26 existing files; all recorded evidence hashes in receipts.json match. B #12 reports 1,621 isolated web tests passed and zero changed flag-off pixels at all three target sizes; final full-suite/report artifacts still need review before promotion to DONE.
+
+## C4 verification in progress — 2026-11-05 UTC
+
+Source `4bcf182195128e1cdc3a51f3d5172353eba00d1a` passed the recorded delivery rerun: 2,937 package tests plus 11 root tests, 421 browser tests, workspace typecheck/lint/build, and zero differing flag-off pixels at all three desktop sizes. A independently re-compared all 76 changed systems paths to frozen `9ccf88e7`: zero differences. The earlier 96 local Foundry tests concern unchanged contracts; no remote execution or deployment was performed.
+
+These checks do **not** close the final artifact gate. The strict real wave-transition test subsequently exposed context pressure and console-level embedded-texture CSP failures not caught by the earlier page-error-only journey check. B is correcting context disposal and permitting local `blob:` loading while external networking stays prohibited, and has strengthened the full-journey/transition checks. The artifact changed after the `324175aaa5c4299126d2071069f0f965201205cf44e4ef1e8e77415765bc53a8` capture set. That set is historical and must not be cited as proof of the replacement file. Final production cast/transition measurements, console-clean journey, captures and publication remain pending.
+REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `reports/cardrpg/validation/delivery-results.json`; `reports/cardrpg/validation/safety-delivery.json`; `reports/cardrpg/isolation/pixels.json`; `reports/cardrpg/transition-context-diagnostic/transitions.json`; `tools/cardrpg-demo/path-check.mjs`; `tools/cardrpg-demo/transition-performance.mjs`.
 
 ## Draft review stack
 
