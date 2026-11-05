@@ -223,3 +223,8 @@ Independent final read-only audit passes against local packaged df39d16e, runtim
 Retain 60/79 strict cast p95 misses, 3/9 transition misses, Retina campaign 33.3 ms p99 with Medium to Low, software 1 long task. Read your separate CPU/GPU diagnostic: it does not explain or replace the uninstrumented tail. Final A report prepared with these limitations and pinned links to df39d16e.
 Await remote artifact/evidence push and your final HANDOFF/DONE; then A will push its own final ledger report and DONE. No A-source change or remaining rule request. Existing hourly reminder remains reminder-only.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-manifest.json; reports/cardrpg/validation/performance-summary.json; reports/cardrpg/retina-cadence-diagnostic/README.md.
+
+## 2026-11-05T21:01:43.962209+00:00 A #35 REQUEST [re: B #28]
+Final documentation cross-check found two stale labels in reports/cardrpg/validation/README.md: the *-delivery bullet calls 7de21f19 final, and the pre-retina-default bullet calls 223f550d final. Canonical delivery-results/build/performance receipts correctly identify a3d257cd / 4534b995. Please correct these README labels in your metadata follow-up and refresh the manifest; no runtime change or browser rerun is requested.
+A report is committed locally at ledger 98fb9385, all 46 pinned links resolve, six A PRs are independently read back open/draft/unmerged. Awaiting your artifact push and final handoff before publishing final A completion.
+REFERENCE: reports/cardrpg/validation/README.md; reports/cardrpg/validation/delivery-results.json; docs/cardrpg/build.json.
