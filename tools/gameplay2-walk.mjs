@@ -2,7 +2,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { chromium, root, pinExistingFonts } from './visual-support.mjs';
-const phase = process.argv[2] ?? 'before', base = process.argv[3] ?? 'http://127.0.0.1:5490';
+const phase = process.argv[2] ?? 'before-corrected', base = process.argv[3] ?? 'http://127.0.0.1:5490';
 if (!['127.0.0.1', 'localhost'].includes(new URL(base).hostname)) throw Error('Loopback only');
 const out = resolve(root, 'reports/gameplay2'); mkdirSync(out, { recursive: true });
 const browser = await chromium.launch();
@@ -32,6 +32,8 @@ try {
     const nav = id => page.getByTestId('nav-' + id).click();
     console.log(JSON.stringify({ phase, style, seed, start: new Date(start).toISOString() }));
     while (Date.now() - start < 600_000) {
+      const back = page.getByRole('button', { name: 'Back to exploring', exact: true });
+      if (await back.isVisible()) await action('Leave the boss result', () => back.click());
       const t = (Date.now() - start) / 1000, slot = Math.floor(t / 20);
       if (slot !== lastSlot) {
         lastSlot = slot;
@@ -59,7 +61,7 @@ try {
           if (await b.isEnabled()) { await b.click(); attempts++; } else throw Error('Boss unavailable'); });
       }
       writeFileSync(resolve(out, `${phase}-${style}-${seed}.json`), JSON.stringify({ phase, base, seed, style, clock: 'normal wall clock',
-        source: phase === 'before' ? '7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5' : 'working candidate', start, duration: (Date.now() - start) / 1000, actions, samples, events: s.events, errors }));
+        source: phase.startsWith('before') ? '7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5' : 'working candidate', start, duration: (Date.now() - start) / 1000, actions, samples, events: s.events, errors }));
       await page.waitForTimeout(500);
     }
     console.log(JSON.stringify({ phase, style, seed, duration: (Date.now() - start) / 1000, actions: actions.length, errors }));
