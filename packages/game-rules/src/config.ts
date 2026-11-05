@@ -1,5 +1,6 @@
 import { RARITY_IDS, SLOT_IDS } from './content';
 export { SQUAD_CONFIG } from './squad/config';
+export { TURN_CONFIG } from './squad/turn/config';
 
 /**
  * Classic tunables were signed off by the user on 2026-10-23
