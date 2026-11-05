@@ -1,5 +1,6 @@
 /** Original socket attachments. One merged draw per item, independent of real inventory. */
 import * as T from 'three';
+import type {EquipmentAppearance} from './appearance';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {ITEM_BY_ID,type SquadItem} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
@@ -60,14 +61,17 @@ function createPiece(item:SquadItem,role:string):Piece{
  const material=new T.MeshStandardMaterial({vertexColors:true,roughness:item.slot==='outfit'?.86:.38,metalness:item.slot==='outfit'?0:.35,emissive:accent,emissiveIntensity:item.rarity==='Legendary'?.14:item.rarity==='Epic'?.07:0});group.add(new T.Mesh(geometry,material));return {group,geometry,material};
 }
 export class GearAttachments{
- private pieces:Piece[]=[];private key='';private aura:T.Mesh|null=null;
+ private pieces:Piece[]=[];private key='';private lastEquipment:TurnActor["equipment"]={};private lastSets:string[]=[];private lastAppearance?:EquipmentAppearance;private aura:T.Mesh|null=null;
  constructor(private model:T.Group,private role:string){}
- update(actor:TurnActor){
-  const key=JSON.stringify([actor.equipment,actor.setBonuses]);if(key===this.key)return;this.clear();this.key=key;
+ update(actor:TurnActor,appearance?:EquipmentAppearance){
+  let sameSets=actor.setBonuses.length===this.lastSets.length;for(let i=0;sameSets&&i<this.lastSets.length;i++)sameSets=actor.setBonuses[i]===this.lastSets[i];
+  const e=actor.equipment,o=this.lastEquipment;if(this.key&&sameSets&&appearance===this.lastAppearance&&e.weapon===o.weapon&&e.outfit===o.outfit&&e.charm===o.charm&&e.relic===o.relic)return;
+  this.lastEquipment={...e};this.lastSets=[...actor.setBonuses];this.lastAppearance=appearance;
+  const key=JSON.stringify([actor.equipment,actor.setBonuses,appearance]);if(key===this.key)return;this.clear();this.key=key;
   // Built-in role props remain available in the immutable before model; here loadouts own the hands.
   for(const name of ['ladle','wand','lantern','satchel']){const o=this.model.getObjectByName(`${this.role}_${name}`);if(o)o.visible=false}
   this.model.traverse(o=>{if(o.name.includes('armR_flask'))o.visible=false});
-  for(const [slot,id] of Object.entries(actor.equipment)){const item=ITEM_BY_ID[id!];if(!item)continue;const p=createPiece(item,this.role);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
+  for(const [slot,value] of Object.entries(appearance??actor.equipment)){const item=typeof value==='string'?ITEM_BY_ID[value]:value;const id=item?.id;if(!item)continue;const p=createPiece(item,this.role);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
    const parent=this.model.getObjectByName(slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`)??this.model;parent.add(p.group);this.pieces.push(p);
    if(slot==='outfit'){
     // Tint the original garment consistently while preserving fur/face vertex color.

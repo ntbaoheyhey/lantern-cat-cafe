@@ -9,12 +9,14 @@ import {CafePost,type Quality} from './post';
 import {stageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
 import {GearAttachments} from './gear-visuals';
+import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import {screenBounds,auditBounds} from './scene-audit';
+import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 
 export interface SceneView {
-  actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
+  appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
   targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
@@ -28,6 +30,7 @@ const lerp = T.MathUtils.lerp;
 const point=(a:TurnActor,boss:boolean)=>{const p=formationPoint(a,boss);return new T.Vector3(p.x,p.y,p.z)};
 
 export class TurnScene {
+  ready=false;
   readonly renderer: T.WebGLRenderer;
   readonly scene = new T.Scene();
   readonly camera = new T.PerspectiveCamera(32,1,.1,80);
@@ -99,7 +102,7 @@ export class TurnScene {
       const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
     }
     this.spells=new SpellVfx(this.scene);this.spells.warm(this.renderer,this.camera);this.scene.add(this.spells.root);
-    this.renderer.compile(this.scene,this.camera);
+    void this.warmModels();
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
     this.renderer.domElement.addEventListener('pointerup',this.pick);
@@ -108,6 +111,18 @@ export class TurnScene {
     this.raf=requestAnimationFrame(this.loop);
   }
 
+  private async warmModels(){
+    const warm=new T.Group();
+    try{
+      for(const role of ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy'] as const){
+        const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
+        model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
+      }
+      this.scene.add(warm);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
+      const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
+      this.scene.remove(warm);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
+    }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
+  }
   private makeGlow():T.Texture {
     const c=document.createElement('canvas');c.width=c.height=64;const ctx=c.getContext('2d')!;
     const g=ctx.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'#ffffff');g.addColorStop(.12,'#ffffffe8');g.addColorStop(.42,'#ffffff50');g.addColorStop(1,'#ffffff00');ctx.fillStyle=g;ctx.fillRect(0,0,64,64);
@@ -151,13 +166,13 @@ export class TurnScene {
       const gltf=await loadModel(a.role);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
       const height=new T.Box3().setFromObject(model).max.y;
-      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));}});
+      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
       const mixer=new T.AnimationMixer(model);const actions=new Map(gltf.animations.map(c=>[c.name,mixer.clipAction(c)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.renderer.compile(this.scene,this.camera);this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -168,7 +183,7 @@ export class TurnScene {
   }
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
-    this.raf=requestAnimationFrame(this.loop);const view=this.view();const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
+    this.raf=requestAnimationFrame(this.loop);if(!this.ready){this.last=now;this.renderAt=now;return}const view=this.view();const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
     const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
     if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
     this.time=view.fixedTime??this.time+delta;this.render(view,delta);
@@ -182,9 +197,17 @@ export class TurnScene {
     const frame=view.frame, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:formationPoint(a,view.boss);p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:restYaw(a.side);
-      p.gear.update(a);p.gear.animate(view.reducedMotion?0:this.time);
+      p.gear.update(a,view.appearance?.(a));p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
-      if(frame&&source===p){clip=frame.plan.ultimate?'ultimate':({shieldBash:'skill1',rally:'guard',hearthwall:'skill3',emberOrb:'skill1',threadSnare:'skill2',milkFlask:'skill1',mossFlask:'skill2'} as Record<string,string>)[frame.plan.skillId]??frame.clip;progress=frame.beat.kind==='impact'?.45:frame.progress;if(!view.reducedMotion){const phase=frame.beat.kind;const target=targets[0]?.base??p.base;const melee=['slash','bash','charge','sweep','cross'].includes(frame.plan.shape);if(melee&&['travel','impact','reaction'].includes(phase)){const t=phase==='travel'?ease(frame.progress):phase==='reaction'?1-ease(frame.progress):1;const dest=this.scratch.copy(p.base).lerp(target,.68);p.root.position.lerpVectors(p.base,dest,t);}if(phase==='anticipation'){const baseScale=figureScale(a.role,a.side);p.root.scale.set(1+Math.sin(frame.progress*Math.PI)*.055,1-Math.sin(frame.progress*Math.PI)*.07,1+.025*Math.sin(frame.progress*Math.PI)).multiplyScalar(baseScale);}}}
+      if(frame&&source===p){
+        const direction=SKILL_MOTION[frame.plan.skillId];
+        clip=p.actions.has(frame.plan.skillId)?frame.plan.skillId:frame.clip;progress=clipProgress(frame);
+        if(!view.reducedMotion&&direction){const t=movementProgress(frame),target=targets[0]?.base??p.base;
+          p.root.position.lerpVectors(p.base,this.scratch.copy(p.base).lerp(target,direction.travel),t);
+          const lift=Math.sin(frame.actionProgress*Math.PI);p.root.position.y+=Math.sin(t*Math.PI)*direction.arc+lift*direction.float;
+          p.root.position.z+=Math.sin(t*Math.PI)*direction.side;
+        }
+      }
       if(frame&&targets.includes(p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';progress=frame.beat.kind==='impact'?.45:frame.progress;if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}}
       if(frame&&!view.model&&!view.reducedMotion){
         const phase=frame.beat.kind,weight=phase==='anticipation'?ease(frame.progress):phase==='residue'?1-ease(frame.progress):1;
