@@ -507,7 +507,7 @@ void main ()
     {
         float g = d / radius;
         g = sin(g * 3.14 * strength);
-    	col = vec4(g * g * g);
+        col = vec4(g * g * g);
     }
     vec4 texture = texture2D(uMainSampler, outTexCoord);
     gl_FragColor = texture * (1.0 - col);
