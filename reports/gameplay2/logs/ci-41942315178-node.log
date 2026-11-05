@@ -1,0 +1,909 @@
+﻿2026-11-05T00:34:40.5998942Z Current runner version: '2.338.2'
+2026-11-05T00:34:40.6018914Z ##[group]Runner Image Provisioner
+2026-11-05T00:34:40.6019521Z Hosted Compute Agent
+2026-11-05T00:34:40.6019945Z Version: 20261028.624
+2026-11-05T00:34:40.6020358Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-05T00:34:40.6020830Z Build Date: 2026-10-28T21:51:42Z
+2026-11-05T00:34:40.6021340Z Worker ID: {eec74a16-2b4d-47de-b122-8bcd6fcd86f7}
+2026-11-05T00:34:40.6021791Z Region: centralus
+2026-11-05T00:34:40.6022167Z Cloud: Azure
+2026-11-05T00:34:40.6022539Z ##[endgroup]
+2026-11-05T00:34:40.6023494Z ##[group]Operating System
+2026-11-05T00:34:40.6023960Z Ubuntu
+2026-11-05T00:34:40.6024299Z 24.04.5
+2026-11-05T00:34:40.6024618Z LTS
+2026-11-05T00:34:40.6025211Z ##[endgroup]
+2026-11-05T00:34:40.6025580Z ##[group]Runner Image
+2026-11-05T00:34:40.6026074Z Image: ubuntu-24.04
+2026-11-05T00:34:40.6026442Z Version: 20261101.360.1
+2026-11-05T00:34:40.6027277Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-05T00:34:40.6028195Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-05T00:34:40.6028840Z ##[endgroup]
+2026-11-05T00:34:40.6029567Z ##[group]GITHUB_TOKEN Permissions
+2026-11-05T00:34:40.6031104Z Contents: read
+2026-11-05T00:34:40.6031481Z Metadata: read
+2026-11-05T00:34:40.6031832Z Packages: read
+2026-11-05T00:34:40.6032271Z ##[endgroup]
+2026-11-05T00:34:40.6033658Z Secret source: Actions
+2026-11-05T00:34:40.6034297Z Cache mode: write
+2026-11-05T00:34:40.6035176Z Prepare workflow directory
+2026-11-05T00:34:40.6296113Z Prepare all required actions
+2026-11-05T00:34:40.6334410Z Getting action download info
+2026-11-05T00:34:40.8403395Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-05T00:34:40.9570749Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+2026-11-05T00:34:41.4218757Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-05T00:34:41.7067244Z Complete job name: node
+2026-11-05T00:34:41.7610595Z ##[group]Run actions/checkout@v4
+2026-11-05T00:34:41.7611034Z with:
+2026-11-05T00:34:41.7611308Z   repository: ntbaoheyhey/taskbar-hero
+2026-11-05T00:34:41.7613473Z   token: ***
+2026-11-05T00:34:41.7613731Z   ssh-strict: true
+2026-11-05T00:34:41.7613996Z   ssh-user: git
+2026-11-05T00:34:41.7614262Z   persist-credentials: true
+2026-11-05T00:34:41.7614553Z   clean: true
+2026-11-05T00:34:41.7614954Z   sparse-checkout-cone-mode: true
+2026-11-05T00:34:41.7615262Z   fetch-depth: 1
+2026-11-05T00:34:41.7615522Z   fetch-tags: false
+2026-11-05T00:34:41.7615791Z   show-progress: true
+2026-11-05T00:34:41.7616063Z   lfs: false
+2026-11-05T00:34:41.7616313Z   submodules: false
+2026-11-05T00:34:41.7616585Z   set-safe-directory: true
+2026-11-05T00:34:41.7616889Z   allow-unsafe-pr-checkout: false
+2026-11-05T00:34:41.7617271Z ##[endgroup]
+2026-11-05T00:34:41.9947539Z Syncing repository: ntbaoheyhey/taskbar-hero
+2026-11-05T00:34:41.9950043Z ##[group]Getting Git version info
+2026-11-05T00:34:41.9951456Z Working directory is '/home/runner/work/taskbar-hero/taskbar-hero'
+2026-11-05T00:34:41.9953060Z [command]/usr/bin/git version
+2026-11-05T00:34:42.0087174Z git version 2.56.0
+2026-11-05T00:34:42.0162799Z ##[endgroup]
+2026-11-05T00:34:42.0170361Z Temporarily overriding HOME='/home/runner/work/_temp/5448afac-fa70-4408-a0f8-2d889697e5a9' before making global git config changes
+2026-11-05T00:34:42.0171699Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T00:34:42.0172832Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:34:42.0235855Z Deleting the contents of '/home/runner/work/taskbar-hero/taskbar-hero'
+2026-11-05T00:34:42.0256620Z ##[group]Initializing the repository
+2026-11-05T00:34:42.0266285Z [command]/usr/bin/git init /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:34:42.0359130Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-05T00:34:42.0362294Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-05T00:34:42.0375885Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-05T00:34:42.0395426Z hint: call:
+2026-11-05T00:34:42.0408602Z hint:
+2026-11-05T00:34:42.0409504Z hint: 	git config --global init.defaultBranch <name>
+2026-11-05T00:34:42.0410270Z hint:
+2026-11-05T00:34:42.0410952Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-05T00:34:42.0411740Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-05T00:34:42.0412267Z hint:
+2026-11-05T00:34:42.0412887Z hint: 	git branch -m <name>
+2026-11-05T00:34:42.0426529Z hint:
+2026-11-05T00:34:42.0442651Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-05T00:34:42.0445623Z Initialized empty Git repository in /home/runner/work/taskbar-hero/taskbar-hero/.git/
+2026-11-05T00:34:42.0460859Z [command]/usr/bin/git remote add origin https://github.com/ntbaoheyhey/taskbar-hero
+2026-11-05T00:34:42.0462686Z ##[endgroup]
+2026-11-05T00:34:42.0463516Z ##[group]Disabling automatic garbage collection
+2026-11-05T00:34:42.0464230Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-05T00:34:42.0549807Z ##[endgroup]
+2026-11-05T00:34:42.0552765Z ##[group]Setting up auth
+2026-11-05T00:34:42.0553808Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T00:34:42.0657511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T00:34:42.0971656Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T00:34:42.1010731Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T00:34:42.1217097Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T00:34:42.1254251Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T00:34:42.1455475Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-05T00:34:42.1500584Z ##[endgroup]
+2026-11-05T00:34:42.1501850Z ##[group]Fetching the repository
+2026-11-05T00:34:42.1520417Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd:refs/remotes/pull/283/merge
+2026-11-05T00:34:48.2017871Z From https://github.com/ntbaoheyhey/taskbar-hero
+2026-11-05T00:34:48.2025119Z  * [new ref]         6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd -> pull/283/merge
+2026-11-05T00:34:48.2041788Z ##[endgroup]
+2026-11-05T00:34:48.2042512Z ##[group]Determining the checkout info
+2026-11-05T00:34:48.2043333Z ##[endgroup]
+2026-11-05T00:34:48.2043893Z [command]/usr/bin/git sparse-checkout disable
+2026-11-05T00:34:48.2081666Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-05T00:34:48.2120663Z ##[group]Checking out the ref
+2026-11-05T00:34:48.2121471Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/283/merge
+2026-11-05T00:34:49.2304146Z Updating files:  93% (3950/4243)
+2026-11-05T00:34:49.2431824Z Updating files:  94% (3989/4243)
+2026-11-05T00:34:49.2501865Z Updating files:  95% (4031/4243)
+2026-11-05T00:34:49.2520656Z Updating files:  96% (4074/4243)
+2026-11-05T00:34:49.2541463Z Updating files:  97% (4116/4243)
+2026-11-05T00:34:49.2566025Z Updating files:  98% (4159/4243)
+2026-11-05T00:34:49.2651310Z Updating files:  99% (4201/4243)
+2026-11-05T00:34:49.2662657Z Updating files: 100% (4243/4243)
+2026-11-05T00:34:49.2663216Z Updating files: 100% (4243/4243), done.
+2026-11-05T00:34:49.2664068Z Note: switching to 'refs/remotes/pull/283/merge'.
+2026-11-05T00:34:49.2664430Z 
+2026-11-05T00:34:49.2664892Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-05T00:34:49.2665577Z changes and commit them, and you can discard any commits you make in this
+2026-11-05T00:34:49.2666142Z state without impacting any branches by switching back to a branch.
+2026-11-05T00:34:49.2666713Z 
+2026-11-05T00:34:49.2667091Z If you want to create a new branch to retain commits you create, you may
+2026-11-05T00:34:49.2667638Z do so (now or later) by using -c with the switch command. Example:
+2026-11-05T00:34:49.2668005Z 
+2026-11-05T00:34:49.2668243Z   git switch -c <new-branch-name>
+2026-11-05T00:34:49.2668544Z 
+2026-11-05T00:34:49.2668878Z Or undo this operation with:
+2026-11-05T00:34:49.2669173Z 
+2026-11-05T00:34:49.2669393Z   git switch -
+2026-11-05T00:34:49.2669645Z 
+2026-11-05T00:34:49.2670017Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-05T00:34:49.2670434Z 
+2026-11-05T00:34:49.2670887Z HEAD is now at 6ce9a55 Merge 0dbfd6a96e4619678c759d42dec01a03216d6474 into 7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5
+2026-11-05T00:34:49.2707130Z ##[endgroup]
+2026-11-05T00:34:49.2757440Z [command]/usr/bin/git log -1 --format=%H
+2026-11-05T00:34:49.2791773Z 6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd
+2026-11-05T00:34:49.2986309Z ##[group]Run pnpm/action-setup@v4
+2026-11-05T00:34:49.2986482Z with:
+2026-11-05T00:34:49.2986608Z   dest: ~/setup-pnpm
+2026-11-05T00:34:49.2986740Z   run_install: null
+2026-11-05T00:34:49.2986863Z   cache: false
+2026-11-05T00:34:49.2986996Z   cache_dependency_path: pnpm-lock.yaml
+2026-11-05T00:34:49.2987174Z   package_json_file: package.json
+2026-11-05T00:34:49.2987340Z   standalone: false
+2026-11-05T00:34:49.2987467Z ##[endgroup]
+2026-11-05T00:34:49.3975934Z ##[group]Running self-installer...
+2026-11-05T00:34:49.7793940Z (node:2019) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-05T00:34:49.7795466Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:34:50.0000837Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-11-05T00:34:50.0001944Z Packages: +1
+2026-11-05T00:34:50.0007068Z +
+2026-11-05T00:34:50.3220629Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2026-11-05T00:34:50.3878872Z 
+2026-11-05T00:34:50.3880194Z dependencies:
+2026-11-05T00:34:50.3885292Z + pnpm 10.28.0 (12.16.1 is available)
+2026-11-05T00:34:50.3889425Z 
+2026-11-05T00:34:50.3956040Z Done in 856ms
+2026-11-05T00:34:50.4151330Z ##[endgroup]
+2026-11-05T00:34:50.4152021Z Installation Completed!
+2026-11-05T00:34:50.4313674Z ##[group]Run actions/setup-node@v4
+2026-11-05T00:34:50.4313843Z with:
+2026-11-05T00:34:50.4313975Z   node-version-file: .nvmrc
+2026-11-05T00:34:50.4314117Z   cache: pnpm
+2026-11-05T00:34:50.4314250Z   always-auth: false
+2026-11-05T00:34:50.4314382Z   check-latest: false
+2026-11-05T00:34:50.4316023Z   token: ***
+2026-11-05T00:34:50.4316142Z env:
+2026-11-05T00:34:50.4316304Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:34:50.4316491Z ##[endgroup]
+2026-11-05T00:34:50.5327718Z Resolved .nvmrc as 24
+2026-11-05T00:34:50.5370083Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+2026-11-05T00:34:50.5371600Z (node:2032) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T00:34:50.5372496Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:34:50.5373963Z ##[group]Environment details
+2026-11-05T00:34:50.9545776Z node: v24.22.2
+2026-11-05T00:34:50.9552965Z npm: 11.19.1
+2026-11-05T00:34:50.9553642Z yarn: 1.22.22
+2026-11-05T00:34:50.9554380Z ##[endgroup]
+2026-11-05T00:34:50.9555205Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2026-11-05T00:34:51.2318156Z /home/runner/setup-pnpm/node_modules/.bin/store/v10
+2026-11-05T00:34:51.3981097Z Cache hit for: node-cache-Linux-x64-pnpm-d28bad3b2fb436d5259233e52a0530931c0aa171c50457a6f66d6f3d4ba7612d
+2026-11-05T00:34:51.4076133Z (node:2032) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-05T00:34:52.5584678Z Received 96468992 of 135084897 (71.4%), 91.9 MBs/sec
+2026-11-05T00:34:53.4556200Z Received 135084897 of 135084897 (100.0%), 67.9 MBs/sec
+2026-11-05T00:34:53.4556978Z Cache Size: ~129 MB (135084897 B)
+2026-11-05T00:34:53.4579646Z [command]/usr/bin/tar -xf /home/runner/work/_temp/73874a7c-12f7-4047-8ee5-e4c7698e7026/cache.tzst -P -C /home/runner/work/taskbar-hero/taskbar-hero --use-compress-program unzstd
+2026-11-05T00:34:55.9565867Z Cache restored successfully
+2026-11-05T00:34:55.9655879Z Cache restored from key: node-cache-Linux-x64-pnpm-d28bad3b2fb436d5259233e52a0530931c0aa171c50457a6f66d6f3d4ba7612d
+2026-11-05T00:34:55.9934954Z ##[group]Run pnpm install --frozen-lockfile
+2026-11-05T00:34:55.9935255Z [36;1mpnpm install --frozen-lockfile[0m
+2026-11-05T00:34:55.9959030Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:34:55.9959191Z env:
+2026-11-05T00:34:55.9959346Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:34:55.9959529Z ##[endgroup]
+2026-11-05T00:34:56.2558650Z Scope: all 7 workspace projects
+2026-11-05T00:34:56.2950769Z Lockfile is up to date, resolution step is skipped
+2026-11-05T00:34:56.3566373Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-11-05T00:34:56.4264494Z Packages: +506
+2026-11-05T00:34:56.4273406Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-11-05T00:34:57.3558129Z Progress: resolved 506, reused 497, downloaded 0, added 5
+2026-11-05T00:34:58.3562575Z Progress: resolved 506, reused 497, downloaded 0, added 11
+2026-11-05T00:34:59.3571041Z Progress: resolved 506, reused 497, downloaded 0, added 17
+2026-11-05T00:35:00.3597176Z Progress: resolved 506, reused 497, downloaded 0, added 44
+2026-11-05T00:35:01.3586550Z Progress: resolved 506, reused 497, downloaded 0, added 193
+2026-11-05T00:35:02.3601871Z Progress: resolved 506, reused 497, downloaded 0, added 326
+2026-11-05T00:35:03.3592670Z Progress: resolved 506, reused 497, downloaded 0, added 353
+2026-11-05T00:35:04.3600729Z Progress: resolved 506, reused 497, downloaded 0, added 501
+2026-11-05T00:35:04.6721589Z Progress: resolved 506, reused 497, downloaded 0, added 506, done
+2026-11-05T00:35:05.0561971Z 
+2026-11-05T00:35:05.0720028Z ╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-11-05T00:35:05.0721671Z │                                                                              │
+2026-11-05T00:35:05.0722516Z │   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+2026-11-05T00:35:05.0723122Z │   utf-8-validate@5.0.10.                                                     │
+2026-11-05T00:35:05.0723841Z │   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-11-05T00:35:05.0724442Z │   to run scripts.                                                            │
+2026-11-05T00:35:05.0725158Z │                                                                              │
+2026-11-05T00:35:05.0726954Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-11-05T00:35:05.0778115Z Done in 8.9s using pnpm v10.28.0
+2026-11-05T00:35:05.1251346Z ##[group]Run pnpm gen:deno
+2026-11-05T00:35:05.1251623Z [36;1mpnpm gen:deno[0m
+2026-11-05T00:35:05.1279338Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:35:05.1279495Z env:
+2026-11-05T00:35:05.1279648Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:05.1279836Z ##[endgroup]
+2026-11-05T00:35:05.3425472Z 
+2026-11-05T00:35:05.3436657Z > taskbar-hero@0.0.0 gen:deno /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:35:05.3437350Z > node scripts/gen-deno-json.mjs
+2026-11-05T00:35:05.3438047Z 
+2026-11-05T00:35:05.4379661Z wrote 18 Edge Function import maps
+2026-11-05T00:35:05.4774021Z ##[group]Run git diff --exit-code -- supabase/functions
+2026-11-05T00:35:05.4774448Z [36;1mgit diff --exit-code -- supabase/functions[0m
+2026-11-05T00:35:05.4795486Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:35:05.4795729Z env:
+2026-11-05T00:35:05.4795966Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:05.4796247Z ##[endgroup]
+2026-11-05T00:35:05.6532699Z ##[group]Run pnpm typecheck
+2026-11-05T00:35:05.6532985Z [36;1mpnpm typecheck[0m
+2026-11-05T00:35:05.6554368Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:35:05.6554629Z env:
+2026-11-05T00:35:05.6555373Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:05.6555656Z ##[endgroup]
+2026-11-05T00:35:05.8480674Z 
+2026-11-05T00:35:05.8481823Z > taskbar-hero@0.0.0 typecheck /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:35:05.8482263Z > pnpm -r typecheck
+2026-11-05T00:35:05.8482423Z 
+2026-11-05T00:35:06.0404421Z Scope: 6 of 7 workspace projects
+2026-11-05T00:35:06.0442883Z packages/auth typecheck$ tsc --noEmit
+2026-11-05T00:35:06.0452165Z packages/chain typecheck$ tsc --noEmit
+2026-11-05T00:35:06.8993471Z packages/chain typecheck: Done
+2026-11-05T00:35:06.9002364Z packages/game-rules typecheck$ tsc --noEmit
+2026-11-05T00:35:08.4390229Z packages/auth typecheck: Done
+2026-11-05T00:35:08.4416401Z supabase/tests typecheck$ tsc --noEmit
+2026-11-05T00:35:10.7000290Z packages/game-rules typecheck: Done
+2026-11-05T00:35:12.6234205Z supabase/tests typecheck: Done
+2026-11-05T00:35:12.6241743Z packages/api-contract typecheck$ tsc --noEmit
+2026-11-05T00:35:13.5181211Z packages/api-contract typecheck: Done
+2026-11-05T00:35:13.5186054Z apps/web typecheck$ tsc --noEmit
+2026-11-05T00:35:23.8449997Z apps/web typecheck: Done
+2026-11-05T00:35:23.8645916Z ##[group]Run pnpm lint
+2026-11-05T00:35:23.8646095Z [36;1mpnpm lint[0m
+2026-11-05T00:35:23.8662593Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:35:23.8662746Z env:
+2026-11-05T00:35:23.8662894Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:23.8663069Z ##[endgroup]
+2026-11-05T00:35:24.0359529Z 
+2026-11-05T00:35:24.0360569Z > taskbar-hero@0.0.0 lint /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:35:24.0361158Z > pnpm -r lint
+2026-11-05T00:35:24.0363629Z 
+2026-11-05T00:35:24.2189291Z Scope: 6 of 7 workspace projects
+2026-11-05T00:35:24.2223769Z packages/auth lint$ tsc --noEmit
+2026-11-05T00:35:24.2227289Z packages/chain lint$ tsc --noEmit
+2026-11-05T00:35:24.9833344Z packages/chain lint: Done
+2026-11-05T00:35:24.9885407Z packages/game-rules lint$ tsc --noEmit
+2026-11-05T00:35:26.4744655Z packages/auth lint: Done
+2026-11-05T00:35:26.4763424Z supabase/tests lint$ tsc --noEmit
+2026-11-05T00:35:28.8119271Z packages/game-rules lint: Done
+2026-11-05T00:35:30.7497016Z supabase/tests lint: Done
+2026-11-05T00:35:30.7502417Z packages/api-contract lint$ tsc --noEmit
+2026-11-05T00:35:31.7730376Z packages/api-contract lint: Done
+2026-11-05T00:35:31.7732293Z apps/web lint$ tsc --noEmit
+2026-11-05T00:35:41.2843117Z apps/web lint: Done
+2026-11-05T00:35:41.3116185Z ##[group]Run pnpm test
+2026-11-05T00:35:41.3116456Z [36;1mpnpm test[0m
+2026-11-05T00:35:41.3138771Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:35:41.3139012Z env:
+2026-11-05T00:35:41.3139248Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:41.3139536Z ##[endgroup]
+2026-11-05T00:35:41.4947893Z 
+2026-11-05T00:35:41.4948701Z > taskbar-hero@0.0.0 test /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:35:41.4950434Z > node --test scripts/*.test.mjs && pnpm -r test
+2026-11-05T00:35:41.4950624Z 
+2026-11-05T00:35:41.5688653Z ✔ explicit root and nested index imports resolve to their exact files (6.788965ms)
+2026-11-05T00:35:41.5691427Z ✔ directory aliases coexist with explicit indexes and ordinary modules (1.213901ms)
+2026-11-05T00:35:41.5705748Z ✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.58674ms)
+2026-11-05T00:35:41.5708336Z ✔ output order is stable regardless of file creation order (1.743735ms)
+2026-11-05T00:35:41.5709164Z ✔ generation preserves auth mappings and ignores shared or non-function directories (2.733981ms)
+2026-11-05T00:35:41.6428056Z ✔ auth health HTTP 200 exits correctly without leaking response data (19.496836ms)
+2026-11-05T00:35:41.6526733Z ✔ auth health HTTP 429 exits correctly without leaking response data (9.911618ms)
+2026-11-05T00:35:41.6572902Z ✔ auth health HTTP 500 exits correctly without leaking response data (8.017246ms)
+2026-11-05T00:35:41.6676696Z ✔ auth health HTTP 502 exits correctly without leaking response data (7.159089ms)
+2026-11-05T00:35:41.6747825Z ✔ auth health HTTP 503 exits correctly without leaking response data (7.945138ms)
+2026-11-05T00:35:41.6806234Z ✔ auth health fails closed when the transport is unavailable (7.558318ms)
+2026-11-05T00:35:41.6865343Z ℹ tests 11
+2026-11-05T00:35:41.6866009Z ℹ suites 0
+2026-11-05T00:35:41.6866678Z ℹ pass 11
+2026-11-05T00:35:41.6867112Z ℹ fail 0
+2026-11-05T00:35:41.6867768Z ℹ cancelled 0
+2026-11-05T00:35:41.6868217Z ℹ skipped 0
+2026-11-05T00:35:41.6868841Z ℹ todo 0
+2026-11-05T00:35:41.6869268Z ℹ duration_ms 169.470586
+2026-11-05T00:35:41.8807318Z Scope: 6 of 7 workspace projects
+2026-11-05T00:35:41.8855578Z packages/auth test$ vitest run
+2026-11-05T00:35:41.8863595Z packages/chain test$ vitest run
+2026-11-05T00:35:42.2299957Z packages/chain test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/packages/chain[39m
+2026-11-05T00:35:42.2726799Z packages/auth test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/packages/auth[39m
+2026-11-05T00:35:42.8586421Z packages/chain test:  [32m✓[39m src/proof/proof.test.mjs [2m([22m[2m25 tests[22m[2m)[22m[32m 132[2mms[22m[39m
+2026-11-05T00:35:43.0184935Z packages/chain test:  [32m✓[39m src/index.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:35:43.0217116Z packages/auth test:  [32m✓[39m src/index.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 154[2mms[22m[39m
+2026-11-05T00:35:43.0336270Z packages/auth test: [2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+2026-11-05T00:35:43.0349027Z packages/auth test: [2m      Tests [22m [1m[32m24 passed[39m[22m[90m (24)[39m
+2026-11-05T00:35:43.0352481Z packages/auth test: [2m   Start at [22m 00:35:42
+2026-11-05T00:35:43.0353384Z packages/auth test: [2m   Duration [22m 769ms[2m (import 53%, tests 27%, transform 19%, worker 1%)[22m
+2026-11-05T00:35:43.0640834Z packages/auth test: Done
+2026-11-05T00:35:43.0688496Z packages/game-rules test$ vitest run
+2026-11-05T00:35:43.1563791Z packages/chain test:  [32m✓[39m src/constants.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:35:43.1620494Z packages/chain test: [2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+2026-11-05T00:35:43.1628584Z packages/chain test: [2m      Tests [22m [1m[32m32 passed[39m[22m[90m (32)[39m
+2026-11-05T00:35:43.1648424Z packages/chain test: [2m   Start at [22m 00:35:42
+2026-11-05T00:35:43.1650577Z packages/chain test: [2m   Duration [22m 953ms[2m (import 43%, tests 28%, transform 25%, worker 4%)[22m
+2026-11-05T00:35:43.1651586Z packages/chain test: [2m    Isolate [22m [33m3 workers spawned[39m[2m · ~129ms startup each (spawn + environment, per file)[22m
+2026-11-05T00:35:43.1652792Z packages/chain test: [2m            [22m [2mat least ~258ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+2026-11-05T00:35:43.2096100Z packages/chain test: Done
+2026-11-05T00:35:43.2117437Z supabase/tests test$ vitest run
+2026-11-05T00:35:43.4799610Z packages/game-rules test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/packages/game-rules[39m
+2026-11-05T00:35:43.6196525Z supabase/tests test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests[39m
+2026-11-05T00:35:43.9867359Z packages/game-rules test:  [32m✓[39m src/edge.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 112[2mms[22m[39m
+2026-11-05T00:35:44.9878491Z packages/game-rules test:  [32m✓[39m src/v2/state/state.test.ts [2m([22m[2m36 tests[22m[2m)[22m[33m 509[2mms[22m[39m
+2026-11-05T00:35:45.4166677Z packages/game-rules test:  [32m✓[39m src/v2/content/docs.gen.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+2026-11-05T00:35:46.2876672Z packages/game-rules test:  [32m✓[39m src/cafe.test.ts [2m([22m[2m44 tests[22m[2m)[22m[33m 390[2mms[22m[39m
+2026-11-05T00:35:47.2866987Z packages/game-rules test:  [32m✓[39m src/v2/idle/idle.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 721[2mms[22m[39m
+2026-11-05T00:35:47.8582679Z packages/game-rules test:  [32m✓[39m src/v2/combat/combat.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 383[2mms[22m[39m
+2026-11-05T00:35:48.4046832Z packages/game-rules test:  [32m✓[39m src/v2/bag/bag.test.ts [2m([22m[2m24 tests[22m[2m)[22m[33m 359[2mms[22m[39m
+2026-11-05T00:35:48.4048294Z packages/game-rules test:    [33m[2m✓[22m[39m preserves invariants over 500 seeded random bags[33m 337[2mms[22m[39m
+2026-11-05T00:35:50.3197687Z supabase/tests test: [90mstderr[2m | src/forge.test.ts[2m > [22m[2mrelic-forge[2m > [22m[2manswers server_error when the signer is not configured, before spending anything
+2026-11-05T00:35:50.3596409Z supabase/tests test: [22m[39mrelic: signer not configured
+2026-11-05T00:35:50.5107665Z supabase/tests test: [90mstderr[2m | src/forge.test.ts[2m > [22m[2mrelic-mint-report[2m > [22m[2mrefuses receipts that do not mint exactly this voucher
+2026-11-05T00:35:50.5122378Z supabase/tests test: [22m[39mError: rpc down
+2026-11-05T00:35:50.5337461Z supabase/tests test:     at Object.receipt [90m(/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests/[39msrc/forge.test.ts:46:24[90m)[39m
+2026-11-05T00:35:50.5376050Z supabase/tests test:     at reportMint (/home/runner/work/taskbar-hero/taskbar-hero/supabase/functions/_shared/game.ts:509:44)
+2026-11-05T00:35:50.5582742Z supabase/tests test:     at [90m/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests/[39msrc/forge.test.ts:379:7
+2026-11-05T00:35:50.5787674Z supabase/tests test:     at async file:///home/runner/work/taskbar-hero/taskbar-hero/node_modules/[4m.pnpm[24m/vitest@5.0.5_@types+node@22.20.5_jsdom@30.1.3_@noble+hashes@1.8.0__vite@8.3.5_@types+node@22.20.5_/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+2026-11-05T00:35:50.6087090Z supabase/tests test: [90mstderr[2m | src/forge.test.ts[2m > [22m[2mHTTP[2m > [22m[2mserver_error never leaks a reason
+2026-11-05T00:35:50.6108657Z supabase/tests test: [22m[39mrelic: signer not configured
+2026-11-05T00:35:50.6717136Z supabase/tests test:  [32m✓[39m src/forge.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 2205[2mms[22m[39m
+2026-11-05T00:35:50.6956748Z supabase/tests test:    [32m✓[39m relic-forge [2m(10)[22m
+2026-11-05T00:35:50.7338370Z supabase/tests test:      [33m[2m✓[22m[39m spends shards and the oldest Boss Key and returns a voucher signed by the server key[32m 300[2mms[22m[39m
+2026-11-05T00:35:52.4217502Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mcommits exactly one parallel first clear and refuses the other as stale
+2026-11-05T00:35:52.4245737Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631489: 77.84 ms
+2026-11-05T00:35:52.4837498Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mcommits exactly one parallel first clear and refuses the other as stale
+2026-11-05T00:35:52.4855880Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631489: 94.18 ms
+2026-11-05T00:35:52.5489069Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mkeeps the key on a weak-cat loss and returns the stored cooldown through HTTP
+2026-11-05T00:35:52.5986703Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631490: 25.04 ms
+2026-11-05T00:35:52.7073358Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mrefuses unreached rounds and insufficient kills before missing keys, without writing
+2026-11-05T00:35:52.7136146Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631491: 6.81 ms
+2026-11-05T00:35:52.7577237Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mrefuses unreached rounds and insufficient kills before missing keys, without writing
+2026-11-05T00:35:52.7696665Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631492: 4.28 ms
+2026-11-05T00:35:52.7698676Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mrefuses no_key at a reached boss without writing
+2026-11-05T00:35:52.7896480Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631493: 7.53 ms
+2026-11-05T00:35:52.8446833Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mrefuses missing players and no_class before cooldown, reach and keys
+2026-11-05T00:35:52.8846701Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-0000000000ff: 3.50 ms
+2026-11-05T00:35:52.8886772Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mrefuses missing players and no_class before cooldown, reach and keys
+2026-11-05T00:35:52.9292918Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631494: 6.15 ms
+2026-11-05T00:35:52.9295085Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mchecks cooldown before not_reached and no_key without invoking the write
+2026-11-05T00:35:52.9539295Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631495: 20.12 ms
+2026-11-05T00:35:52.9685975Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mreturns the exact seeded timeline, nonnegative HP and D2 boss flags
+2026-11-05T00:35:52.9707282Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631496: 13.69 ms
+2026-11-05T00:35:52.9721542Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mreturns the exact seeded timeline, nonnegative HP and D2 boss flags
+2026-11-05T00:35:52.9723764Z supabase/tests test: [22m[39mV10 D2 sample: [{"t":1100,"type":"boss_windup","big":false},{"t":1500,"type":"boss_impact","damage":26,"catHp":74,"big":false,"dodged":false}]
+2026-11-05T00:35:53.0391242Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2muses the rematch chest under the SQL lock and preserves progress
+2026-11-05T00:35:53.0406006Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631499: 18.16 ms
+2026-11-05T00:35:53.0573515Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2muses the rematch chest under the SQL lock and preserves progress
+2026-11-05T00:35:53.0596455Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631499: 10.24 ms
+2026-11-05T00:35:53.1724148Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mauto-salvages every chest item at the configured bag limit and returns actual credits
+2026-11-05T00:35:53.1776318Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631500: 25.86 ms
+2026-11-05T00:35:53.1938676Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.1943953Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 3.35 ms
+2026-11-05T00:35:53.1992076Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.2014276Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 5.85 ms
+2026-11-05T00:35:53.2049574Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.2050991Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 4.35 ms
+2026-11-05T00:35:53.2099134Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.2125651Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 3.05 ms
+2026-11-05T00:35:53.2127299Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.2148402Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 4.46 ms
+2026-11-05T00:35:53.2166556Z supabase/tests test: [90mstdout[2m | v2/functions-boss.test.ts[2m > [22m[2mv2 boss Edge Function over migrated SQL[2m > [22m[2mmaps SQL refusals, includes SQL cooldown extras and never retries stale
+2026-11-05T00:35:53.2185726Z supabase/tests test: [22m[39mV10 PGlite fight 00000000-0000-4000-8000-000013631501: 2.63 ms
+2026-11-05T00:35:53.4235030Z supabase/tests test:  [32m✓[39m v2/functions-boss.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 2218[2mms[22m[39m
+2026-11-05T00:35:53.4285936Z supabase/tests test:    [32m✓[39m v2 boss Edge Function over migrated SQL [2m(13)[22m
+2026-11-05T00:35:53.4310829Z supabase/tests test:      [33m[2m✓[22m[39m commits exactly one parallel first clear and refuses the other as stale[33m 357[2mms[22m[39m
+2026-11-05T00:35:55.6702652Z supabase/tests test:  [32m✓[39m v2/functions.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 2043[2mms[22m[39m
+2026-11-05T00:35:57.9287048Z packages/game-rules test:  [32m✓[39m src/v2/lootcheck/lootcheck.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 9318[2mms[22m[39m
+2026-11-05T00:35:57.9321705Z packages/game-rules test:    [32m✓[39m V1 chest tables with the V4 loot engine [2m(21)[22m
+2026-11-05T00:35:57.9358856Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch1.first: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1068[2mms[22m[39m
+2026-11-05T00:35:57.9406253Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch1.repeat: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 603[2mms[22m[39m
+2026-11-05T00:35:57.9426136Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch2.first: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 768[2mms[22m[39m
+2026-11-05T00:35:57.9456008Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch2.repeat: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 424[2mms[22m[39m
+2026-11-05T00:35:57.9485996Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch3.first: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1362[2mms[22m[39m
+2026-11-05T00:35:57.9510074Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch3.repeat: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 460[2mms[22m[39m
+2026-11-05T00:35:57.9590891Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch4.first: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1090[2mms[22m[39m
+2026-11-05T00:35:57.9592386Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch4.repeat: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1016[2mms[22m[39m
+2026-11-05T00:35:57.9676708Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch5.first: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1392[2mms[22m[39m
+2026-11-05T00:35:57.9757335Z packages/game-rules test:      [33m[2m✓[22m[39m chest.ch5.repeat: 20,000 seeded rolls match Fish/gear means within 2% relative error[33m 1029[2mms[22m[39m
+2026-11-05T00:35:58.8903403Z packages/game-rules test:  [32m✓[39m src/v2/codex/entries.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 583[2mms[22m[39m
+2026-11-05T00:35:58.8991836Z supabase/tests test:  [32m✓[39m v2/security-races.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 2668[2mms[22m[39m
+2026-11-05T00:35:58.9087044Z supabase/tests test:    [32m✓[39m S2 route concurrency and replay over migrated SQL [2m(26)[22m
+2026-11-05T00:35:58.9156610Z supabase/tests test:      [33m[2m✓[22m[39m parallel claims credit one window and at most one daily key; immediate replay pays zero[33m 390[2mms[22m[39m
+2026-11-05T00:35:59.0824583Z packages/game-rules test:  [32m✓[39m src/original-economy.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+2026-11-05T00:35:59.4981060Z packages/game-rules test:  [32m✓[39m src/v2/forge/forge.test.ts [2m([22m[2m31 tests[22m[2m)[22m[32m 239[2mms[22m[39m
+2026-11-05T00:35:59.8786321Z packages/game-rules test:  [32m✓[39m src/loot.test.ts [2m([22m[2m25 tests[22m[2m)[22m[32m 153[2mms[22m[39m
+2026-11-05T00:36:00.3186941Z packages/game-rules test:  [32m✓[39m src/v2/state/guards.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 224[2mms[22m[39m
+2026-11-05T00:36:00.9296689Z packages/game-rules test:  [32m✓[39m src/v2/levers.test.ts [2m([22m[2m26 tests[22m[2m)[22m[33m 375[2mms[22m[39m
+2026-11-05T00:36:01.3878702Z supabase/tests test: [90mstderr[2m | src/relic-recovery.test.ts[2m > [22m[2mv1 paid Relic recovery[2m > [22m[2mT6 pending voucher without a signer returns HTTP server_error, never forge_blocked or daily_limit
+2026-11-05T00:36:01.3925986Z supabase/tests test: [22m[39mrelic: signer not configured
+2026-11-05T00:36:01.4396721Z packages/game-rules test:  [32m✓[39m src/v2/codex/odds.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 115[2mms[22m[39m
+2026-11-05T00:36:01.9768110Z packages/game-rules test:  [32m✓[39m src/v2/sim/targets.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 152[2mms[22m[39m
+2026-11-05T00:36:02.2205874Z supabase/tests test: [90mstderr[2m | src/relic-recovery.test.ts[2m > [22m[2mv2 paid Relic recovery[2m > [22m[2ma failing signer keeps state recoverable and forge fails without a daily-limit refusal
+2026-11-05T00:36:02.2275552Z supabase/tests test: [22m[39mError: signer unavailable
+2026-11-05T00:36:02.2341207Z supabase/tests test:     at Object.<anonymous> [90m(/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests/[39msrc/relic-recovery.test.ts:224:65[90m)[39m
+2026-11-05T00:36:02.2343390Z supabase/tests test:     at Object.Mock [as sign] (file:///home/runner/work/taskbar-hero/taskbar-hero/node_modules/[4m.pnpm[24m/vitest@5.0.5_@types+node@22.20.5_jsdom@30.1.3_@noble+hashes@1.8.0__vite@8.3.5_@types+node@22.20.5_/node_modules/[4mvitest[24m/dist/chunks/spy.DDMXghXv.js:353:40)
+2026-11-05T00:36:02.2345209Z supabase/tests test:     at signedVoucherV2 (/home/runner/work/taskbar-hero/taskbar-hero/supabase/functions/_shared/v2/voucher.ts:18:31)
+2026-11-05T00:36:02.2346762Z supabase/tests test:     at done (/home/runner/work/taskbar-hero/taskbar-hero/supabase/functions/_shared/v2/forge.ts:89:55)
+2026-11-05T00:36:02.2780802Z packages/game-rules test:  [32m✓[39m src/v2/view/view.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 124[2mms[22m[39m
+2026-11-05T00:36:02.3256746Z supabase/tests test:  [32m✓[39m src/relic-recovery.test.ts [2m([22m[2m28 tests[22m[2m)[22m[33m 2748[2mms[22m[39m
+2026-11-05T00:36:02.3299492Z supabase/tests test:    [32m✓[39m v1 paid Relic recovery [2m(13)[22m
+2026-11-05T00:36:02.3316077Z supabase/tests test:      [33m[2m✓[22m[39m T1 used nonce with a matching RelicForged log stores its tx and never issues another voucher[33m 333[2mms[22m[39m
+2026-11-05T00:36:02.5476899Z packages/game-rules test:  [32m✓[39m src/v2/content/content.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+2026-11-05T00:36:02.7562006Z packages/game-rules test:  [32m✓[39m src/v2/content/mechanics-doc.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+2026-11-05T00:36:05.2786909Z supabase/tests test:  [32m✓[39m v2/functions-forge.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 2455[2mms[22m[39m
+2026-11-05T00:36:05.2791564Z supabase/tests test:    [32m✓[39m v2 craft, salvage and lock over migrated SQL [2m(11)[22m
+2026-11-05T00:36:05.2836249Z supabase/tests test:      [33m[2m✓[22m[39m seeds inventory across database clock 2020-01-01T00:00:00.123456Z while preserving claim guards[33m 394[2mms[22m[39m
+2026-11-05T00:36:07.5882031Z supabase/tests test:  [32m✓[39m src/game.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 1823[2mms[22m[39m
+2026-11-05T00:36:09.2086781Z supabase/tests test:  [32m✓[39m src/consistency.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1167[2mms[22m[39m
+2026-11-05T00:36:11.7878065Z supabase/tests test: [90mstdout[2m | v2/functions-state.test.ts[2m > [22m[2mv2 Edge Function logic over migrated SQL[2m > [22m[2mcompletes an eight-hour claim in under 500 ms
+2026-11-05T00:36:11.7881060Z supabase/tests test: [22m[39mV9 eight-hour claim: 93.48 ms
+2026-11-05T00:36:11.8418220Z supabase/tests test:  [32m✓[39m v2/functions-state.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 2096[2mms[22m[39m
+2026-11-05T00:36:14.5267180Z packages/game-rules test:  [32m✓[39m src/v2/sim/sim.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 11550[2mms[22m[39m
+2026-11-05T00:36:14.5289111Z packages/game-rules test:    [33m[2m✓[22m[39m is deterministic and responds to a different seed[33m 9620[2mms[22m[39m
+2026-11-05T00:36:14.5319200Z packages/game-rules test:    [33m[2m✓[22m[39m records the fallback target failures across seven classes and three seeds[33m 845[2mms[22m[39m
+2026-11-05T00:36:14.5321702Z packages/game-rules test:    [33m[2m✓[22m[39m repeats every proposed class/seed result exactly[33m 849[2mms[22m[39m
+2026-11-05T00:36:14.8836038Z packages/game-rules test:  [32m✓[39m src/index.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 118[2mms[22m[39m
+2026-11-05T00:36:15.0882210Z packages/game-rules test:  [2m[90m↓[39m[22m src/v2/sim/search.test.ts [2m([22m[2m3 tests[22m[2m | [22m[33m3 skipped[39m[2m)[22m
+2026-11-05T00:36:15.4270272Z packages/game-rules test:  [32m✓[39m src/properties.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 177[2mms[22m[39m
+2026-11-05T00:36:16.3668070Z supabase/tests test:  [32m✓[39m src/malformed.test.ts [2m([22m[2m148 tests[22m[2m)[22m[33m 3987[2mms[22m[39m
+2026-11-05T00:36:16.5589242Z packages/game-rules test:  [32m✓[39m src/gameplay.economy.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 912[2mms[22m[39m
+2026-11-05T00:36:16.5606862Z packages/game-rules test:    [32m✓[39m first-session cadence stays inside the server-accepted economy [2m(2)[22m
+2026-11-05T00:36:16.5626091Z packages/game-rules test:      [33m[2m✓[22m[39m credits at most one hour and matches authoritative grants despite repeated requests and UI effects[33m 666[2mms[22m[39m
+2026-11-05T00:36:16.7723398Z packages/game-rules test:  [2m[90m↓[39m[22m src/v2/sim/pacing.test.ts [2m([22m[2m7 tests[22m[2m | [22m[33m7 skipped[39m[2m)[22m
+2026-11-05T00:36:24.4257512Z supabase/tests test:  [32m✓[39m v2/schema.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 7863[2mms[22m[39m
+2026-11-05T00:36:24.4258812Z supabase/tests test:    [32m✓[39m migration and rollback [2m(2)[22m
+2026-11-05T00:36:24.4677136Z supabase/tests test:      [33m[2m✓[22m[39m applies on top of v1, and rollback.sql restores the v1 listing exactly[33m 2604[2mms[22m[39m
+2026-11-05T00:36:24.4695915Z supabase/tests test:      [33m[2m✓[22m[39m migration is additive: rollback keeps v1 behaviour[33m 1778[2mms[22m[39m
+2026-11-05T00:36:24.5077206Z supabase/tests test:    [33m[2m✓[22m[39m integrity migration and manual rollback preserve the original function bodies/grants and can reapply[33m 1769[2mms[22m[39m
+2026-11-05T00:36:27.1066744Z supabase/tests test:  [32m✓[39m src/concurrency.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 2190[2mms[22m[39m
+2026-11-05T00:36:27.1116012Z supabase/tests test:    [32m✓[39m idle-claim [2m(1)[22m
+2026-11-05T00:36:27.1116885Z supabase/tests test:      [33m[2m✓[22m[39m parallel claims credit one claim's worth, not one per call[33m 357[2mms[22m[39m
+2026-11-05T00:36:29.0679573Z supabase/tests test:  [32m✓[39m src/auth-wrappers.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 1465[2mms[22m[39m
+2026-11-05T00:36:31.1346633Z supabase/tests test:  [32m✓[39m src/voucher-security.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 1527[2mms[22m[39m
+2026-11-05T00:36:31.1396290Z supabase/tests test:    [32m✓[39m replay of a used nonce or a reused mint transaction [2m(3)[22m
+2026-11-05T00:36:31.1446122Z supabase/tests test:      [33m[2m✓[22m[39m one player's mint transaction cannot mark another player's voucher minted[33m 316[2mms[22m[39m
+2026-11-05T00:36:33.4342456Z supabase/tests test:  [32m✓[39m src/rls.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 2020[2mms[22m[39m
+2026-11-05T00:36:33.4396065Z supabase/tests test:    [32m✓[39m every public table [2m(8)[22m
+2026-11-05T00:36:33.4406181Z supabase/tests test:      [33m[2m✓[22m[39m anon and authenticated cannot insert, update, delete or truncate any table[33m 597[2mms[22m[39m
+2026-11-05T00:36:35.5167034Z supabase/tests test:  [32m✓[39m src/boss.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1655[2mms[22m[39m
+2026-11-05T00:36:36.0801358Z supabase/tests test:  [32m✓[39m src/v2-body-limits.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 76[2mms[22m[39m
+2026-11-05T00:36:38.1021697Z supabase/tests test:  [32m✓[39m src/upgrade.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 1603[2mms[22m[39m
+2026-11-05T00:36:40.3020983Z supabase/tests test:  [32m✓[39m src/concurrency-hardening.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1693[2mms[22m[39m
+2026-11-05T00:36:40.3056771Z supabase/tests test:    [33m[2m✓[22m[39m five v2 claims forced to read the same snapshot pay exactly one window in PGlite[33m 471[2mms[22m[39m
+2026-11-05T00:36:41.6397780Z supabase/tests test:  [32m✓[39m src/schema.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 1147[2mms[22m[39m
+2026-11-05T00:36:43.3425755Z supabase/tests test: [90mstderr[2m | v2/request-budgets.test.ts[2m > [22m[2mhandlerV2 admission[2m > [22m[2mdoes not charge unauthenticated requests or OPTIONS to any player
+2026-11-05T00:36:43.3465992Z supabase/tests test: [22m[39mError: x
+2026-11-05T00:36:43.3516130Z supabase/tests test:     at Object.authenticate [90m(/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests/[39mv2/request-budgets.test.ts:100:66[90m)[39m
+2026-11-05T00:36:43.3535579Z supabase/tests test:     at /home/runner/work/taskbar-hero/taskbar-hero/supabase/functions/_shared/v2/http.ts:103:33
+2026-11-05T00:36:43.3575398Z supabase/tests test:     at [90m/home/runner/work/taskbar-hero/taskbar-hero/supabase/tests/[39mv2/request-budgets.test.ts:101:5
+2026-11-05T00:36:43.3602485Z supabase/tests test:     at async file:///home/runner/work/taskbar-hero/taskbar-hero/node_modules/[4m.pnpm[24m/vitest@5.0.5_@types+node@22.20.5_jsdom@30.1.3_@noble+hashes@1.8.0__vite@8.3.5_@types+node@22.20.5_/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+2026-11-05T00:36:43.3655871Z supabase/tests test:  [32m✓[39m v2/request-budgets.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1219[2mms[22m[39m
+2026-11-05T00:36:45.3317166Z supabase/tests test:  [32m✓[39m v2/concurrency.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 1732[2mms[22m[39m
+2026-11-05T00:36:45.3355742Z supabase/tests test:    [32m✓[39m parallel calls [2m(8)[22m
+2026-11-05T00:36:45.3395915Z supabase/tests test:      [33m[2m✓[22m[39m two parallel boss wins: exactly one first clear[33m 310[2mms[22m[39m
+2026-11-05T00:36:47.3105888Z supabase/tests test:  [32m✓[39m src/voucher-cancel.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1576[2mms[22m[39m
+2026-11-05T00:36:47.3145812Z supabase/tests test:    [32m✓[39m cancelled nonce recovery [2m(6)[22m
+2026-11-05T00:36:47.3165822Z supabase/tests test:      [33m[2m✓[22m[39m nonce used with a RelicForged log: recorded as minted, daily limit applies[33m 320[2mms[22m[39m
+2026-11-05T00:36:48.9036955Z supabase/tests test:  [32m✓[39m src/new-migration-security.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 1340[2mms[22m[39m
+2026-11-05T00:36:51.5847056Z supabase/tests test:  [32m✓[39m v2/security-proposals.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 2121[2mms[22m[39m
+2026-11-05T00:36:52.8264469Z supabase/tests test:  [32m✓[39m src/siwe.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 1082[2mms[22m[39m
+2026-11-05T00:36:56.5756685Z supabase/tests test:  [32m✓[39m src/auth-availability.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 3461[2mms[22m[39m
+2026-11-05T00:36:58.1396772Z supabase/tests test:  [32m✓[39m src/state.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1133[2mms[22m[39m
+2026-11-05T00:36:59.8083624Z supabase/tests test:  [32m✓[39m src/request-budgets-hardening.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 1223[2mms[22m[39m
+2026-11-05T00:36:59.8166680Z supabase/tests test:    [33m[2m✓[22m[39m 20 parallel calls admit exactly the route burst, return integer Retry-After >= 1, and do not charge player B[33m 322[2mms[22m[39m
+2026-11-05T00:37:00.3282227Z supabase/tests test:  [32m✓[39m v2/security-http.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+2026-11-05T00:37:01.6344413Z supabase/tests test:  [32m✓[39m src/deno-imports.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1150[2mms[22m[39m
+2026-11-05T00:37:01.6355996Z supabase/tests test:    [33m[2m✓[22m[39m every Edge Function resolves its transitive local imports using its own Deno map[33m 330[2mms[22m[39m
+2026-11-05T00:37:01.6375603Z supabase/tests test:    [33m[2m✓[22m[39m a scratch copy missing the api-contract v2 map key fails and names the exact edge[33m 383[2mms[22m[39m
+2026-11-05T00:37:01.6377311Z supabase/tests test:    [33m[2m✓[22m[39m does not exempt formerly unresolved explicit-index imports[33m 326[2mms[22m[39m
+2026-11-05T00:37:02.8111832Z supabase/tests test:  [32m✓[39m src/siwe-nonces-policy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1016[2mms[22m[39m
+2026-11-05T00:37:03.2324465Z supabase/tests test:  [32m✓[39m src/relic-reader.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 18[2mms[22m[39m
+2026-11-05T00:37:03.3816981Z supabase/tests test:  [32m✓[39m src/fixture-clock.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:37:03.3936688Z supabase/tests test: [2m Test Files [22m [1m[32m34 passed[39m[22m[90m (34)[39m
+2026-11-05T00:37:03.3953345Z supabase/tests test: [2m      Tests [22m [1m[32m581 passed[39m[22m[90m (581)[39m
+2026-11-05T00:37:03.3981523Z supabase/tests test: [2m   Start at [22m 00:35:43
+2026-11-05T00:37:03.3982438Z supabase/tests test: [2m   Duration [22m 79.76s[2m (tests 88%, import 10%, transform 2%)[22m
+2026-11-05T00:37:03.3983932Z supabase/tests test: [2m    Isolate [22m [33m34 workers spawned[39m[2m · ~151ms startup each (spawn + environment, per file)[22m
+2026-11-05T00:37:03.3985357Z supabase/tests test: [2m            [22m [2mat least ~4.97s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+2026-11-05T00:37:03.4673190Z supabase/tests test: Done
+2026-11-05T00:37:10.0667376Z packages/game-rules test:  [32m✓[39m src/v2/sim/diagnosis.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 53106[2mms[22m[39m
+2026-11-05T00:37:10.0671294Z packages/game-rules test:    [33m[2m✓[22m[39m records wins inside steps and ch1 medians agree within one minute[33m 2026[2mms[22m[39m
+2026-11-05T00:37:10.0672345Z packages/game-rules test:    [33m[2m✓[22m[39m measures the C5b ch4 key wall and zero wait with five daily keys[33m 31586[2mms[22m[39m
+2026-11-05T00:37:10.0673473Z packages/game-rules test:    [33m[2m✓[22m[39m cleared-chapter key chance is inert on the C5b frontier before ch5 wins[33m 19454[2mms[22m[39m
+2026-11-05T00:37:11.5981437Z packages/game-rules test:  [32m✓[39m src/v2/codex/generator.test.mjs [2m([22m[2m3 tests[22m[2m)[22m[33m 1422[2mms[22m[39m
+2026-11-05T00:37:11.5983966Z packages/game-rules test:    [32m✓[39m offline Compendium generator and provenance [2m(3)[22m
+2026-11-05T00:37:11.5985542Z packages/game-rules test:      [33m[2m✓[22m[39m runs outside the repo root, twice with all Node network entry points disabled, and writes identical JSON[33m 905[2mms[22m[39m
+2026-11-05T00:37:11.5986709Z packages/game-rules test:      [33m[2m✓[22m[39m reports invalid arguments and unwritable output with a failing exit[33m 464[2mms[22m[39m
+2026-11-05T00:37:11.6962454Z packages/game-rules test:  [32m✓[39m src/v2/meta/pets/pets.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:37:11.8200028Z packages/game-rules test:  [32m✓[39m src/v2/sim/bands.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+2026-11-05T00:37:11.9138161Z packages/game-rules test:  [32m✓[39m src/gameplay.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-11-05T00:37:12.0196859Z packages/game-rules test:  [32m✓[39m src/content.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:37:12.1033565Z packages/game-rules test:  [32m✓[39m src/v2/sim/config-async.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:37:12.6011543Z packages/game-rules test:  [32m✓[39m src/v2/sim/equivalence.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 391[2mms[22m[39m
+2026-11-05T00:37:12.6012964Z packages/game-rules test:    [33m[2m✓[22m[39m preserves every C5c S-B result on seeds 1–3 with the config leaf[33m 390[2mms[22m[39m
+2026-11-05T00:37:12.7066422Z packages/game-rules test:  [2m[90m↓[39m[22m src/v2/sim/report.write.test.ts [2m([22m[2m1 test[22m[2m | [22m[33m1 skipped[39m[2m)[22m
+2026-11-05T00:37:12.7938421Z packages/game-rules test:  [32m✓[39m src/original-economy-doc.test.mjs [2m([22m[2m1 test[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:37:12.8856547Z packages/game-rules test:  [32m✓[39m src/v2/config.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:37:12.8928126Z packages/game-rules test: [2m Test Files [22m [1m[32m33 passed[39m[22m[2m | [22m[33m3 skipped[39m[90m (36)[39m
+2026-11-05T00:37:12.8945511Z packages/game-rules test: [2m      Tests [22m [1m[32m482 passed[39m[22m[2m | [22m[36m2 expected fail[39m[2m | [22m[33m11 skipped[39m[90m (495)[39m
+2026-11-05T00:37:12.8946667Z packages/game-rules test: [2m   Start at [22m 00:35:43
+2026-11-05T00:37:12.8947458Z packages/game-rules test: [2m   Duration [22m 89.40s[2m (tests 97%, import 2%, transform 1%)[22m
+2026-11-05T00:37:12.9344131Z packages/game-rules test: Done
+2026-11-05T00:37:12.9346605Z packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+2026-11-05T00:37:13.3472528Z packages/api-contract test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/packages/api-contract[39m
+2026-11-05T00:37:13.6902993Z packages/api-contract test:  [32m✓[39m src/index.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:37:13.6959976Z packages/api-contract test: [2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+2026-11-05T00:37:13.6963588Z packages/api-contract test: [2m      Tests [22m [1m[32m16 passed[39m[22m[90m (16)[39m
+2026-11-05T00:37:13.6964358Z packages/api-contract test: [2m   Start at [22m 00:37:13
+2026-11-05T00:37:13.6965508Z packages/api-contract test: [2m   Duration [22m 340ms[2m (transform 82%, import 15%, tests 2%, worker 1%)[22m
+2026-11-05T00:37:13.7491251Z packages/api-contract test: Done
+2026-11-05T00:37:13.7497106Z apps/web test$ vitest run
+2026-11-05T00:37:13.9942720Z apps/web test: [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/taskbar-hero/taskbar-hero/apps/web[39m
+2026-11-05T00:37:15.5446857Z apps/web test:  [32m✓[39m src/layout/forge/ForgePanel.test.tsx [2m([22m[2m33 tests[22m[2m)[22m[33m 559[2mms[22m[39m
+2026-11-05T00:37:16.0572456Z apps/web test:  [32m✓[39m src/game/v2/loopV2.test.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+2026-11-05T00:37:16.5644289Z apps/web test:  [32m✓[39m src/api/MockGameApiV2.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+2026-11-05T00:37:17.6817200Z apps/web test:  [32m✓[39m src/layout/boss/BossGatePanel.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[32m 275[2mms[22m[39m
+2026-11-05T00:37:19.3186258Z apps/web test:  [32m✓[39m src/layout/bag/BagPanel.test.tsx [2m([22m[2m24 tests[22m[2m)[22m[33m 1076[2mms[22m[39m
+2026-11-05T00:37:19.9776842Z apps/web test:  [32m✓[39m src/pets/state.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 121[2mms[22m[39m
+2026-11-05T00:37:21.0206441Z apps/web test:  [32m✓[39m src/forge/ForgeTab.test.tsx [2m([22m[2m19 tests[22m[2m)[22m[33m 474[2mms[22m[39m
+2026-11-05T00:37:22.2893853Z apps/web test:  [32m✓[39m src/market/MarketTab.test.tsx [2m([22m[2m23 tests[22m[2m)[22m[33m 549[2mms[22m[39m
+2026-11-05T00:37:22.7719948Z apps/web test:  [32m✓[39m src/api/SupabaseGameApiV2.test.ts [2m([22m[2m72 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+2026-11-05T00:37:23.8071682Z apps/web test:  [32m✓[39m src/layout/a11y/v2-components.a11y.test.tsx [2m([22m[2m20 tests[22m[2m)[22m[33m 380[2mms[22m[39m
+2026-11-05T00:37:24.5282979Z apps/web test:  [32m✓[39m src/game/stage/StageScene.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 135[2mms[22m[39m
+2026-11-05T00:37:24.9220030Z apps/web test:  [32m✓[39m src/game/arena/cues.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+2026-11-05T00:37:25.7853905Z apps/web test:  [32m✓[39m src/layout/a11y/v2-loot.a11y.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[33m 311[2mms[22m[39m
+2026-11-05T00:37:33.7654537Z apps/web test:  [32m✓[39m src/layout/StageLayout.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[33m 6854[2mms[22m[39m
+2026-11-05T00:37:33.7666122Z apps/web test:    [33m[2m✓[22m[39m desktop: rail, top HUD, stage, character area and the seven tabs[33m 1415[2mms[22m[39m
+2026-11-05T00:37:33.7667319Z apps/web test:    [33m[2m✓[22m[39m phone: bottom nav switches panels, Escape returns focus to tab[33m 392[2mms[22m[39m
+2026-11-05T00:37:33.7668319Z apps/web test:    [33m[2m✓[22m[39m uses fixture HUD values and exposes the gated hint[33m 656[2mms[22m[39m
+2026-11-05T00:37:33.7669250Z apps/web test:    [33m[2m✓[22m[39m shows class selection only while the authoritative class is null[33m 497[2mms[22m[39m
+2026-11-05T00:37:33.7670169Z apps/web test:    [33m[2m✓[22m[39m boss request opens the replay, then the victory chest[33m 1104[2mms[22m[39m
+2026-11-05T00:37:33.7671514Z apps/web test:    [33m[2m✓[22m[39m phone: panel opening moves focus inside and closing returns it to the selected tab[33m 504[2mms[22m[39m
+2026-11-05T00:37:33.7672750Z apps/web test:    [33m[2m✓[22m[39m holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner[33m 1509[2mms[22m[39m
+2026-11-05T00:37:37.9567459Z apps/web test:  [32m✓[39m src/map/ChapterMap.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 3648[2mms[22m[39m
+2026-11-05T00:37:37.9585689Z apps/web test:    [32m✓[39m ChapterMap Component [2m(10)[22m
+2026-11-05T00:37:37.9586335Z apps/web test:      [33m[2m✓[22m[39m renders five chapters[33m 1182[2mms[22m[39m
+2026-11-05T00:37:37.9587031Z apps/web test:      [33m[2m✓[22m[39m locked chapter does not call onSelect[33m 339[2mms[22m[39m
+2026-11-05T00:37:37.9587720Z apps/web test:      [33m[2m✓[22m[39m current chapter has aria-current[33m 361[2mms[22m[39m
+2026-11-05T00:37:37.9588492Z apps/web test:      [33m[2m✓[22m[39m reduced motion removes the pulse class (mock matchMedia)[33m 398[2mms[22m[39m
+2026-11-05T00:37:37.9589412Z apps/web test:      [33m[2m✓[22m[39m no new accessible names appear (the thumbnail is aria-hidden)[33m 382[2mms[22m[39m
+2026-11-05T00:37:38.8407070Z apps/web test:  [32m✓[39m src/layout/classpicker/ClassPicker.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 364[2mms[22m[39m
+2026-11-05T00:37:40.0032304Z apps/web test:  [32m✓[39m src/layout/loot/ChestReveal.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[33m 608[2mms[22m[39m
+2026-11-05T00:37:40.6565980Z apps/web test:  [32m✓[39m src/game/combat/CombatDirector.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 146[2mms[22m[39m
+2026-11-05T00:37:41.4754292Z apps/web test:  [32m✓[39m src/onboarding/HowToPlay.test.tsx [2m([22m[2m15 tests[22m[2m)[22m[32m 295[2mms[22m[39m
+2026-11-05T00:37:42.4601564Z apps/web test: [90mstdout[2m | src/api/mockV2Fixtures.test.ts[2m > [22m[2mboss fixtures[2m > [22m[2mrecords strongest warrior chapter 2 outcomes without asserting balance
+2026-11-05T00:37:42.4616047Z apps/web test: [22m[39mChapter 2, warrior max-level fixture, seeds 1-5: win, win, win, win, win
+2026-11-05T00:37:42.4687473Z apps/web test: [90mstdout[2m | src/api/mockV2Fixtures.test.ts[2m > [22m[2mboss fixtures[2m > [22m[2mrecords strongest warrior chapter 3 outcomes without asserting balance
+2026-11-05T00:37:42.4688560Z apps/web test: [22m[39mChapter 3, warrior max-level fixture, seeds 1-5: win, win, win, win, win
+2026-11-05T00:37:42.4788435Z apps/web test: [90mstdout[2m | src/api/mockV2Fixtures.test.ts[2m > [22m[2mboss fixtures[2m > [22m[2mrecords strongest warrior chapter 4 outcomes without asserting balance
+2026-11-05T00:37:42.4791327Z apps/web test: [22m[39mChapter 4, warrior max-level fixture, seeds 1-5: loss, loss, loss, loss, loss
+2026-11-05T00:37:42.4845964Z apps/web test: [90mstdout[2m | src/api/mockV2Fixtures.test.ts[2m > [22m[2mboss fixtures[2m > [22m[2mrecords strongest warrior chapter 5 outcomes without asserting balance
+2026-11-05T00:37:42.4847780Z apps/web test: [22m[39mChapter 5, warrior max-level fixture, seeds 1-5: loss, loss, loss, loss, loss
+2026-11-05T00:37:42.5270616Z apps/web test:  [32m✓[39m src/api/mockV2Fixtures.test.ts [2m([22m[2m180 tests[22m[2m)[22m[33m 529[2mms[22m[39m
+2026-11-05T00:37:43.2424057Z apps/web test:  [32m✓[39m src/ui/ui.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 193[2mms[22m[39m
+2026-11-05T00:37:45.1463247Z apps/web test:  [32m✓[39m src/wallet/wallet.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 976[2mms[22m[39m
+2026-11-05T00:37:45.1465695Z apps/web test:    [33m[2m✓[22m[39m a mocked nonce 502 keeps the wallet visible, explains guest play and never requests a signature[33m 777[2mms[22m[39m
+2026-11-05T00:37:45.6275937Z apps/web test:  [32m✓[39m src/layout/boss/bossGate.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-11-05T00:37:46.4259944Z apps/web test:  [32m✓[39m src/game/rig/rig.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 320[2mms[22m[39m
+2026-11-05T00:37:47.2176974Z apps/web test:  [32m✓[39m src/game/errorStates.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[32m 253[2mms[22m[39m
+2026-11-05T00:37:47.6889616Z apps/web test:  [32m✓[39m src/api/MockGameApi.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2026-11-05T00:37:47.8989249Z apps/web test: [90mstdout[2m | src/game/arena/arenaFixtures.test.ts[2m > [22m[2mregenerates every generated demo API fixture and audits inference against the raw log
+2026-11-05T00:37:47.9000396Z apps/web test: [22m[39mch1-win: class=warrior chapter=1 level=60 seed=1 won=true duration=740ms events=5; inference impact.big=0/0 impact.dodged=0/0 windup.big=0/0
+2026-11-05T00:37:47.9001855Z apps/web test: ch1-loss: class=warrior chapter=1 level=1 seed=1 won=false duration=6000ms events=22; inference impact.big=4/4 impact.dodged=4/4 windup.big=3/5
+2026-11-05T00:37:47.9003204Z apps/web test: ch3-win: class=archer chapter=3 level=60 seed=1 won=true duration=9950ms events=68; inference impact.big=6/7 impact.dodged=7/7 windup.big=6/7
+2026-11-05T00:37:47.9004431Z apps/web test: ch3-loss: class=archer chapter=3 level=1 seed=1 won=false duration=1500ms events=7; inference impact.big=1/1 impact.dodged=1/1 windup.big=1/1
+2026-11-05T00:37:47.9005732Z apps/web test: ch5-loss: class=witch chapter=5 level=1 seed=1 won=false duration=1500ms events=5; inference impact.big=1/1 impact.dodged=1/1 windup.big=1/1
+2026-11-05T00:37:47.9006832Z apps/web test: ch2-win: class=witch chapter=2 level=60 seed=1 won=true duration=4050ms events=22; inference impact.big=2/2 impact.dodged=2/2 windup.big=2/2
+2026-11-05T00:37:47.9009768Z apps/web test:  [32m✓[39m src/game/arena/arenaFixtures.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+2026-11-05T00:37:49.0928904Z apps/web test:  [32m✓[39m src/boss/BossTab.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 660[2mms[22m[39m
+2026-11-05T00:37:49.0930287Z apps/web test:    [33m[2m✓[22m[39m the replay keeps going while the idle loop re-renders the tab[33m 311[2mms[22m[39m
+2026-11-05T00:37:55.8285405Z apps/web test:  [32m✓[39m src/game/stage/relicWiring.ui.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 5896[2mms[22m[39m
+2026-11-05T00:37:55.8291095Z apps/web test:    [33m[2m✓[22m[39m hands the result to the existing MintPanel with the unchanged voucher[33m 893[2mms[22m[39m
+2026-11-05T00:37:55.8292411Z apps/web test:    [33m[2m✓[22m[39m keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge[33m 1153[2mms[22m[39m
+2026-11-05T00:37:55.8293570Z apps/web test:    [33m[2m✓[22m[39m shows connect-wallet once and does not forge or mint without a wallet[33m 646[2mms[22m[39m
+2026-11-05T00:37:55.8294495Z apps/web test:    [33m[2m✓[22m[39m renders not_enough_yarn without a mint call[33m 425[2mms[22m[39m
+2026-11-05T00:37:55.8295594Z apps/web test:    [33m[2m✓[22m[39m renders no_moon_pearl without a mint call[33m 430[2mms[22m[39m
+2026-11-05T00:37:55.8296939Z apps/web test:    [33m[2m✓[22m[39m renders daily_limit without a mint call[33m 327[2mms[22m[39m
+2026-11-05T00:37:55.8299192Z apps/web test:    [33m[2m✓[22m[39m surfaces a wallet handoff error once[33m 624[2mms[22m[39m
+2026-11-05T00:37:55.8300095Z apps/web test:    [33m[2m✓[22m[39m does not remount a consumed voucher while the v2 refresh is in flight[33m 532[2mms[22m[39m
+2026-11-05T00:37:55.8301160Z apps/web test:    [33m[2m✓[22m[39m reuses confirmation reporting after a confirmed chain mint, without another mint call[33m 865[2mms[22m[39m
+2026-11-05T00:37:56.7766853Z apps/web test:  [32m✓[39m src/original-preview/OriginalCatalog.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 379[2mms[22m[39m
+2026-11-05T00:37:57.2984347Z apps/web test:  [32m✓[39m src/game/combat/timeline.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+2026-11-05T00:37:58.2585001Z apps/web test:  [32m✓[39m src/inventory/InventoryTab.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 435[2mms[22m[39m
+2026-11-05T00:37:58.7891500Z apps/web test:  [32m✓[39m src/game/rig/gear.sets.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+2026-11-05T00:37:59.4422030Z apps/web test:  [32m✓[39m src/layout/loot/LootSummary.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 139[2mms[22m[39m
+2026-11-05T00:38:00.3777286Z apps/web test: [90mstdout[2m | src/art/backdrops/BackdropView.test.tsx[2m > [22m[2mBackdropView Component and backdropRects[2m > [22m[2mrect count per backdrop and layer logged and < 4000 (assert)
+2026-11-05T00:38:00.3778734Z apps/web test: [22m[39m[BackdropView] livingroom   -> far rects: 1078, near rects:  515, total: 1593
+2026-11-05T00:38:00.3779510Z apps/web test: [BackdropView] kitchen      -> far rects:  740, near rects:  612, total: 1352
+2026-11-05T00:38:00.3780306Z apps/web test: [BackdropView] bathroom     -> far rects: 1616, near rects:  384, total: 2000
+2026-11-05T00:38:00.3781066Z apps/web test: [BackdropView] basement     -> far rects:  914, near rects:  455, total: 1369
+2026-11-05T00:38:00.3781846Z apps/web test: [BackdropView] rooftops     -> far rects:  582, near rects:  262, total: 844
+2026-11-05T00:38:00.4037012Z apps/web test:  [32m✓[39m src/art/backdrops/BackdropView.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 416[2mms[22m[39m
+2026-11-05T00:38:00.8942672Z apps/web test:  [32m✓[39m src/game/v2/apiSwitchV2.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2026-11-05T00:38:02.0096670Z apps/web test:  [32m✓[39m src/layout/home/Home.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 581[2mms[22m[39m
+2026-11-05T00:38:02.7896222Z apps/web test:  [32m✓[39m src/CafeBoard.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 234[2mms[22m[39m
+2026-11-05T00:38:03.3542906Z apps/web test:  [32m✓[39m src/chain-proof/fujiProof.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:04.0191363Z apps/web test:  [32m✓[39m src/art/v2Frames.test.tsx [2m([22m[2m54 tests[22m[2m)[22m[32m 170[2mms[22m[39m
+2026-11-05T00:38:04.6920611Z apps/web test:  [32m✓[39m src/game/stage/bulkEquip.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 187[2mms[22m[39m
+2026-11-05T00:38:05.3063147Z apps/web test:  [32m✓[39m src/art/itemIcons.test.tsx [2m([22m[2m29 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+2026-11-05T00:38:06.1446063Z apps/web test:  [32m✓[39m src/game/stage/StageCanvas.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 299[2mms[22m[39m
+2026-11-05T00:38:06.6177828Z apps/web test:  [32m✓[39m src/wallet/authApi.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-05T00:38:07.6308628Z apps/web test:  [32m✓[39m src/layout/character/HeroScreen.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 466[2mms[22m[39m
+2026-11-05T00:38:08.2890645Z apps/web test:  [32m✓[39m src/layout/HelpTab.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 123[2mms[22m[39m
+2026-11-05T00:38:08.7874134Z apps/web test:  [32m✓[39m src/layout/loot/lootLines.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+2026-11-05T00:38:09.5907021Z apps/web test:  [32m✓[39m src/chain-proof/FujiProofPanel.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 190[2mms[22m[39m
+2026-11-05T00:38:10.3056938Z apps/web test:  [32m✓[39m src/layout/loot/WelcomeBack.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 197[2mms[22m[39m
+2026-11-05T00:38:10.7912838Z apps/web test:  [32m✓[39m src/layout/bossPresentation.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:38:11.3336287Z apps/web test:  [32m✓[39m src/art/monsters/ch1Pilot.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2026-11-05T00:38:11.8257112Z apps/web test:  [32m✓[39m src/game/stage/storeV2.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:14.7367782Z apps/web test:  [32m✓[39m src/layout/boss/BossMapScreen.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 2332[2mms[22m[39m
+2026-11-05T00:38:14.7370667Z apps/web test:    [33m[2m✓[22m[39m selects reachable nodes, updates the boss and real rewards, blocks locked nodes by mouse and keyboard[33m 1045[2mms[22m[39m
+2026-11-05T00:38:14.7374385Z apps/web test:    [33m[2m✓[22m[39m explains key limits and preserves the key gate even when a caller selects a locked chapter[33m 585[2mms[22m[39m
+2026-11-05T00:38:14.7376409Z apps/web test:    [33m[2m✓[22m[39m shows only three latest runs for the selected chapter and separates lifetime wins[33m 392[2mms[22m[39m
+2026-11-05T00:38:14.7378153Z apps/web test:    [33m[2m✓[22m[39m preserves the original compact panel and pinned fight action for smaller viewports[33m 309[2mms[22m[39m
+2026-11-05T00:38:15.3304311Z apps/web test:  [32m✓[39m src/motion/useTickNumber.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+2026-11-05T00:38:15.9134966Z apps/web test:  [32m✓[39m src/game/rig/bake.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+2026-11-05T00:38:16.4147208Z apps/web test:  [32m✓[39m src/game/gameState.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-05T00:38:17.1388148Z apps/web test:  [32m✓[39m src/ui/legacy-dialogs.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 174[2mms[22m[39m
+2026-11-05T00:38:17.5986657Z apps/web test:  [32m✓[39m src/v2text/blockReasons.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:38:18.1562263Z apps/web test:  [32m✓[39m src/game/arena/ArenaScene.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:38:18.6392502Z apps/web test:  [32m✓[39m src/api/SupabaseGameApi.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+2026-11-05T00:38:19.2648488Z apps/web test:  [32m✓[39m src/forge/MintPanel.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 92[2mms[22m[39m
+2026-11-05T00:38:19.7412636Z apps/web test:  [32m✓[39m src/art/backdrops/types.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-05T00:38:20.8969021Z apps/web test:  [32m✓[39m src/shell/redesign-contract.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 411[2mms[22m[39m
+2026-11-05T00:38:21.6544437Z apps/web test:  [32m✓[39m src/art/v2Icons.test.tsx [2m([22m[2m77 tests[22m[2m)[22m[32m 217[2mms[22m[39m
+2026-11-05T00:38:22.1561275Z apps/web test:  [32m✓[39m src/game/rig/classLooks.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+2026-11-05T00:38:22.6687654Z apps/web test:  [32m✓[39m src/game/arena/playback.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+2026-11-05T00:38:23.5674032Z apps/web test:  [32m✓[39m src/layout/character/CharacterPanel.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 313[2mms[22m[39m
+2026-11-05T00:38:24.1665082Z apps/web test:  [32m✓[39m src/game/apiSwitch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+2026-11-05T00:38:24.8792815Z apps/web test:  [32m✓[39m src/layout/hud/HudBar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+2026-11-05T00:38:25.4192905Z apps/web test:  [32m✓[39m src/game/stage/stageFx.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+2026-11-05T00:38:26.0875559Z apps/web test:  [32m✓[39m src/layout/notice/ActionNotice.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+2026-11-05T00:38:27.3521246Z apps/web test:  [32m✓[39m src/App.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 341[2mms[22m[39m
+2026-11-05T00:38:27.8455489Z apps/web test:  [32m✓[39m src/art/monsters/ch4.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:38:28.3484020Z apps/web test:  [32m✓[39m src/game/stage/choreography.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+2026-11-05T00:38:29.1590283Z apps/web test:  [32m✓[39m src/layout/HelpTab.search.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 255[2mms[22m[39m
+2026-11-05T00:38:29.6654979Z apps/web test:  [32m✓[39m src/art/monsters/ch5.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:38:30.1593386Z apps/web test:  [32m✓[39m src/art/monsters/ch3.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:38:30.6580878Z apps/web test:  [32m✓[39m src/art/monsters/ch2.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:31.1584107Z apps/web test:  [32m✓[39m src/api/sessionGuardV2.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+2026-11-05T00:38:31.7625423Z apps/web test:  [32m✓[39m src/gameplay/gameplay.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+2026-11-05T00:38:32.2970315Z apps/web test:  [32m✓[39m src/motion/reducedMotion.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+2026-11-05T00:38:32.8019436Z apps/web test:  [32m✓[39m src/game/stage/relicWiring.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+2026-11-05T00:38:33.4293200Z apps/web test:  [32m✓[39m src/layout/ItemIcon.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+2026-11-05T00:38:34.0941912Z apps/web test:  [32m✓[39m src/layout/hud/LevelXpBar.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 110[2mms[22m[39m
+2026-11-05T00:38:34.7525816Z apps/web test:  [32m✓[39m src/layout/hud/hud.a11y.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 112[2mms[22m[39m
+2026-11-05T00:38:35.2280571Z apps/web test:  [32m✓[39m src/game/managedGame.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:38:35.7302958Z apps/web test:  [32m✓[39m src/art/monsters/ch3Pilot.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-11-05T00:38:36.2390335Z apps/web test:  [32m✓[39m src/art/monsters/ch5Pilot.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:36.7381223Z apps/web test:  [32m✓[39m src/art/monsters/ch4Pilot.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:37.2280280Z apps/web test:  [32m✓[39m src/art/monsters/ch2Pilot.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-11-05T00:38:38.1538683Z apps/web test:  [32m✓[39m src/layout/bag/BagPanel.redesign.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 381[2mms[22m[39m
+2026-11-05T00:38:38.8210194Z apps/web test:  [32m✓[39m src/layout/hud/SyncStatus.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 89[2mms[22m[39m
+2026-11-05T00:38:39.5451550Z apps/web test:  [32m✓[39m src/game/arena/BossArena.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 190[2mms[22m[39m
+2026-11-05T00:38:40.4615197Z apps/web test:  [32m✓[39m src/shell/Rail.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 163[2mms[22m[39m
+2026-11-05T00:38:40.9269572Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--text on --bg >= 4.5:1
+2026-11-05T00:38:40.9289582Z apps/web test: [22m[39m--text on --bg: 17.6059:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9314229Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--text on --surface >= 4.5:1
+2026-11-05T00:38:40.9323035Z apps/web test: [22m[39m--text on --surface: 14.2082:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9325424Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--text on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9370891Z apps/web test: [22m[39m--text on --surface-2: 11.6826:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9376923Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--text on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9379820Z apps/web test: [22m[39m--text on --surface-3: 9.3044:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9381344Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--muted on --bg >= 4.5:1
+2026-11-05T00:38:40.9382273Z apps/web test: [22m[39m--muted on --bg: 9.4570:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9383693Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--muted on --surface >= 4.5:1
+2026-11-05T00:38:40.9388898Z apps/web test: [22m[39m--muted on --surface: 7.6319:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9389892Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--muted on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9390614Z apps/web test: [22m[39m--muted on --surface-2: 6.2753:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9391418Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--good on --surface-2 >= 3:1
+2026-11-05T00:38:40.9392133Z apps/web test: [22m[39m--good on --surface-2: 7.7205:1 (minimum 3:1)
+2026-11-05T00:38:40.9393010Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--on-accent on --accent >= 4.5:1
+2026-11-05T00:38:40.9393784Z apps/web test: [22m[39m--on-accent on --accent: 10.8988:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9406422Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--border on --bg >= 3:1
+2026-11-05T00:38:40.9407048Z apps/web test: [22m[39m--border on --bg: 3.1843:1 (minimum 3:1)
+2026-11-05T00:38:40.9407723Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--accent on --surface >= 4.5:1
+2026-11-05T00:38:40.9408317Z apps/web test: [22m[39m--accent on --surface: 9.1418:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9408975Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--muted on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9409561Z apps/web test: [22m[39m--muted on --surface-2: 6.2753:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9410209Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--focus on --surface >= 3:1
+2026-11-05T00:38:40.9410803Z apps/web test: [22m[39m--focus on --surface: 11.2293:1 (minimum 3:1)
+2026-11-05T00:38:40.9411446Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--focus on --surface-2 >= 3:1
+2026-11-05T00:38:40.9412032Z apps/web test: [22m[39m--focus on --surface-2: 9.2332:1 (minimum 3:1)
+2026-11-05T00:38:40.9412678Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--muted on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9413273Z apps/web test: [22m[39m--muted on --surface-3: 4.9978:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9413914Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--accent on --bg >= 4.5:1
+2026-11-05T00:38:40.9414479Z apps/web test: [22m[39m--accent on --bg: 11.3279:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9415668Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--accent on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9425480Z apps/web test: [22m[39m--accent on --surface-2: 7.5168:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9426333Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--accent on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9427077Z apps/web test: [22m[39m--accent on --surface-3: 5.9866:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9427879Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--good on --bg >= 4.5:1
+2026-11-05T00:38:40.9428581Z apps/web test: [22m[39m--good on --bg: 11.6349:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9429386Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--good on --surface >= 4.5:1
+2026-11-05T00:38:40.9430108Z apps/web test: [22m[39m--good on --surface: 9.3896:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9431123Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--good on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9431877Z apps/web test: [22m[39m--good on --surface-3: 6.1488:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9432680Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--bad on --bg >= 4.5:1
+2026-11-05T00:38:40.9433362Z apps/web test: [22m[39m--bad on --bg: 9.2449:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9434173Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--bad on --surface >= 4.5:1
+2026-11-05T00:38:40.9435012Z apps/web test: [22m[39m--bad on --surface: 7.4608:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9435975Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--bad on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9439320Z apps/web test: [22m[39m--bad on --surface-2: 6.1346:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9440144Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--bad on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9440870Z apps/web test: [22m[39m--bad on --surface-3: 4.8857:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9441743Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--shard on --bg >= 4.5:1
+2026-11-05T00:38:40.9442446Z apps/web test: [22m[39m--shard on --bg: 12.3519:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9443250Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--shard on --surface >= 4.5:1
+2026-11-05T00:38:40.9443977Z apps/web test: [22m[39m--shard on --surface: 9.9682:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9444903Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--shard on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9445700Z apps/web test: [22m[39m--shard on --surface-2: 8.1963:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9446558Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--shard on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9447331Z apps/web test: [22m[39m--shard on --surface-3: 6.5278:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9448119Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--key on --bg >= 4.5:1
+2026-11-05T00:38:40.9448800Z apps/web test: [22m[39m--key on --bg: 9.0250:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9449591Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--key on --surface >= 4.5:1
+2026-11-05T00:38:40.9450303Z apps/web test: [22m[39m--key on --surface: 7.2833:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9451110Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--key on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9452011Z apps/web test: [22m[39m--key on --surface-2: 5.9887:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9452820Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--key on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9453759Z apps/web test: [22m[39m--key on --surface-3: 4.7696:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9454629Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-common on --bg >= 4.5:1
+2026-11-05T00:38:40.9455553Z apps/web test: [22m[39m--rarity-common on --bg: 9.7436:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9456423Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-common on --surface >= 4.5:1
+2026-11-05T00:38:40.9457266Z apps/web test: [22m[39m--rarity-common on --surface: 7.8633:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9458128Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-common on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9459060Z apps/web test: [22m[39m--rarity-common on --surface-2: 6.4655:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9459939Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-common on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9460733Z apps/web test: [22m[39m--rarity-common on --surface-3: 5.1493:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9461630Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-rare-text on --bg >= 4.5:1
+2026-11-05T00:38:40.9462420Z apps/web test: [22m[39m--rarity-rare-text on --bg: 8.9942:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9463315Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-rare-text on --surface >= 4.5:1
+2026-11-05T00:38:40.9464154Z apps/web test: [22m[39m--rarity-rare-text on --surface: 7.2585:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9465207Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-rare-text on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9466124Z apps/web test: [22m[39m--rarity-rare-text on --surface-2: 5.9683:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9473664Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-rare-text on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9474585Z apps/web test: [22m[39m--rarity-rare-text on --surface-3: 4.7533:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9475769Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-epic-text on --bg >= 4.5:1
+2026-11-05T00:38:40.9476686Z apps/web test: [22m[39m--rarity-epic-text on --bg: 9.3362:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9477738Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-epic-text on --surface >= 4.5:1
+2026-11-05T00:38:40.9478709Z apps/web test: [22m[39m--rarity-epic-text on --surface: 7.5345:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9479754Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-epic-text on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9480708Z apps/web test: [22m[39m--rarity-epic-text on --surface-2: 6.1952:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9481663Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-epic-text on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9482602Z apps/web test: [22m[39m--rarity-epic-text on --surface-3: 4.9340:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9483546Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-legendary on --bg >= 4.5:1
+2026-11-05T00:38:40.9484383Z apps/web test: [22m[39m--rarity-legendary on --bg: 9.1387:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9486283Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-legendary on --surface >= 4.5:1
+2026-11-05T00:38:40.9515609Z apps/web test: [22m[39m--rarity-legendary on --surface: 7.3751:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9516624Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-legendary on --surface-2 >= 4.5:1
+2026-11-05T00:38:40.9535617Z apps/web test: [22m[39m--rarity-legendary on --surface-2: 6.0641:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9536577Z apps/web test: [90mstdout[2m | src/theme.contrast.test.ts[2m > [22m[2mtheme WCAG contrast[2m > [22m[2m--rarity-legendary on --surface-3 >= 4.5:1
+2026-11-05T00:38:40.9537406Z apps/web test: [22m[39m--rarity-legendary on --surface-3: 4.8296:1 (minimum 4.5:1)
+2026-11-05T00:38:40.9538227Z apps/web test:  [32m✓[39m src/theme.contrast.test.ts [2m([22m[2m49 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-05T00:38:41.6261674Z apps/web test:  [32m✓[39m src/shell/Hud.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 119[2mms[22m[39m
+2026-11-05T00:38:42.3450058Z apps/web test:  [32m✓[39m src/layout/boss/BossKeyHint.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 130[2mms[22m[39m
+2026-11-05T00:38:43.1244145Z apps/web test:  [32m✓[39m src/runes/FeatureSamples.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 221[2mms[22m[39m
+2026-11-05T00:38:43.6133260Z apps/web test:  [32m✓[39m src/layout/boss/mapDetails.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+2026-11-05T00:38:44.0856803Z apps/web test:  [32m✓[39m src/onboarding/nextStep.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:38:44.9830541Z apps/web test:  [32m✓[39m src/shell/ScreenFrame.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 109[2mms[22m[39m
+2026-11-05T00:38:45.5653570Z apps/web test:  [32m✓[39m src/game/store.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+2026-11-05T00:38:46.0430476Z apps/web test:  [32m✓[39m src/layout/metrics.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:38:46.6096011Z apps/web test:  [32m✓[39m src/game/Hud.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+2026-11-05T00:38:47.0995972Z apps/web test:  [32m✓[39m src/market/marketViewModel.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:38:47.6490147Z apps/web test:  [32m✓[39m src/motion/MotionNumber.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+2026-11-05T00:38:48.1120107Z apps/web test:  [32m✓[39m src/art/monsters/types.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:38:48.7512343Z apps/web test:  [32m✓[39m src/art/pixelIcons.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+2026-11-05T00:38:49.3207811Z apps/web test:  [32m✓[39m src/gameplay/gameplay-items.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+2026-11-05T00:38:49.9718786Z apps/web test:  [32m✓[39m src/forge/ForgeReveal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+2026-11-05T00:38:50.4292167Z apps/web test:  [32m✓[39m src/api/GameApiV2.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-11-05T00:38:51.0902431Z apps/web test:  [32m✓[39m src/art/Art2.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 121[2mms[22m[39m
+2026-11-05T00:38:51.5997440Z apps/web test:  [32m✓[39m src/art/backdrops/backdrops.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+2026-11-05T00:38:52.2399142Z apps/web test:  [32m✓[39m src/layout/hud/StacksBar.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+2026-11-05T00:38:52.7154625Z apps/web test:  [32m✓[39m src/pets/isolation.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-05T00:38:53.2027687Z apps/web test:  [32m✓[39m src/market/relicMetadata.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+2026-11-05T00:38:53.7675649Z apps/web test:  [32m✓[39m src/visual/ResourceGain.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+2026-11-05T00:38:54.4262289Z apps/web test:  [32m✓[39m src/layout/boss/BossPortrait.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 86[2mms[22m[39m
+2026-11-05T00:38:55.0457985Z apps/web test:  [32m✓[39m src/layout/hud/ProgressChip.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 90[2mms[22m[39m
+2026-11-05T00:39:01.6496671Z apps/web test:  [32m✓[39m src/wallet/prodBundle.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 6145[2mms[22m[39m
+2026-11-05T00:39:01.6507659Z apps/web test:    [33m[2m✓[22m[39m a production build without the opt-in flag excludes mock sign-in[33m 3814[2mms[22m[39m
+2026-11-05T00:39:01.6509162Z apps/web test:    [33m[2m✓[22m[39m mock sign-in only ships when a build explicitly opts in (demo/e2e builds)[33m 2330[2mms[22m[39m
+2026-11-05T00:39:02.1425572Z apps/web test:  [32m✓[39m src/dev/previewGrid.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-05T00:39:02.7349046Z apps/web test:  [32m✓[39m src/layout/HelpTab.keys.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 57[2mms[22m[39m
+2026-11-05T00:39:03.2146496Z apps/web test:  [32m✓[39m src/art/monsters/ch1.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-11-05T00:39:03.6539374Z apps/web test:  [32m✓[39m src/v2text/errorNotices.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+2026-11-05T00:39:04.2569639Z apps/web test:  [32m✓[39m src/layout/hud/PowerChip.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 97[2mms[22m[39m
+2026-11-05T00:39:04.8043523Z apps/web test:  [32m✓[39m src/visual/impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-11-05T00:39:04.8917141Z apps/web test:  [32m✓[39m src/securityHeaders.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 2[2mms[22m[39m
+2026-11-05T00:39:05.6012762Z apps/web test:  [32m✓[39m src/forge/TodayRelicCard.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+2026-11-05T00:39:06.0719535Z apps/web test:  [32m✓[39m src/theme/labels.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+2026-11-05T00:39:06.5771541Z apps/web test:  [32m✓[39m src/art/monsters/index.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+2026-11-05T00:39:07.1842303Z apps/web test:  [32m✓[39m src/HeroTab.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 29[2mms[22m[39m
+2026-11-05T00:39:07.6346817Z apps/web test:  [32m✓[39m src/game/v2/syncStatus.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+2026-11-05T00:39:07.6460678Z apps/web test: [2m Test Files [22m [1m[32m132 passed[39m[22m[90m (132)[39m
+2026-11-05T00:39:07.6487835Z apps/web test: [2m      Tests [22m [1m[32m1483 passed[39m[22m[90m (1483)[39m
+2026-11-05T00:39:07.6489846Z apps/web test: [2m   Start at [22m 00:37:14
+2026-11-05T00:39:07.6512664Z apps/web test: [2m   Duration [22m 113.63s[2m (environment 46%, tests 42%, import 9%, transform 2%)[22m
+2026-11-05T00:39:07.6525978Z apps/web test: [2mEnvironment [22m [33mjsdom was created 132 times[39m[2m · 46.94s total, 46% of tracked time[22m
+2026-11-05T00:39:07.6527173Z apps/web test: [2m            [22m [2mcreate it once per worker with [22m[33mpool: 'vmThreads'[39m[2m (keeps per-file isolation) or [22m[33misolate: false[39m[2m (shares it across files)[22m
+2026-11-05T00:39:07.6530641Z apps/web test: [2m            [22m [2mlearn more: https://vitest.dev/guide/improving-performance#test-environments[22m
+2026-11-05T00:39:07.7061185Z apps/web test: Done
+2026-11-05T00:39:07.7335080Z ##[group]Run pnpm build
+2026-11-05T00:39:07.7335259Z [36;1mpnpm build[0m
+2026-11-05T00:39:07.7351477Z shell: /usr/bin/bash -e {0}
+2026-11-05T00:39:07.7351618Z env:
+2026-11-05T00:39:07.7351763Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-11-05T00:39:07.7351954Z ##[endgroup]
+2026-11-05T00:39:07.9251458Z 
+2026-11-05T00:39:07.9252687Z > taskbar-hero@0.0.0 build /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:39:07.9253291Z > pnpm -r build
+2026-11-05T00:39:07.9253533Z 
+2026-11-05T00:39:08.1300824Z Scope: 6 of 7 workspace projects
+2026-11-05T00:39:08.1339703Z packages/auth build$ tsc --noEmit
+2026-11-05T00:39:08.1343437Z packages/chain build$ tsc --noEmit
+2026-11-05T00:39:09.0798024Z packages/chain build: Done
+2026-11-05T00:39:09.0859307Z packages/game-rules build$ tsc --noEmit
+2026-11-05T00:39:10.4096066Z packages/auth build: Done
+2026-11-05T00:39:10.4096528Z supabase/tests build$ tsc --noEmit
+2026-11-05T00:39:13.0250120Z packages/game-rules build: Done
+2026-11-05T00:39:14.9044158Z supabase/tests build: Done
+2026-11-05T00:39:14.9049700Z packages/api-contract build$ tsc --noEmit
+2026-11-05T00:39:15.8226948Z packages/api-contract build: Done
+2026-11-05T00:39:15.8231193Z apps/web build$ tsc --noEmit && vite build
+2026-11-05T00:39:25.1967423Z apps/web build: [36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+2026-11-05T00:39:25.2116710Z apps/web build: transforming...
+2026-11-05T00:39:25.7796957Z apps/web build: [33m[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/home/runner/work/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-11-05T00:39:25.7998069Z apps/web build: ✓ 1875 modules transformed.
+2026-11-05T00:39:25.9909380Z apps/web build: rendering chunks...
+2026-11-05T00:39:26.1735567Z apps/web build: computing gzip size...
+2026-11-05T00:39:26.1939656Z apps/web build: dist/index.html                               2.13 kB │ gzip:   0.76 kB
+2026-11-05T00:39:26.1942044Z apps/web build: dist/assets/sheet-B8UIec1E.png                4.55 kB
+2026-11-05T00:39:26.1943056Z apps/web build: dist/assets/FeatureSamples-BG4xVUCy.css       2.75 kB │ gzip:   0.86 kB
+2026-11-05T00:39:26.1956913Z apps/web build: dist/assets/OriginalCatalog-BqG91EfA.css      5.04 kB │ gzip:   1.28 kB
+2026-11-05T00:39:26.1957786Z apps/web build: dist/assets/index-CIeu2Y4G.css              194.17 kB │ gzip:  32.77 kB
+2026-11-05T00:39:26.1958652Z apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+2026-11-05T00:39:26.1959496Z apps/web build: dist/assets/Art2Preview-CbkXcBNF.js           1.32 kB │ gzip:   0.60 kB
+2026-11-05T00:39:26.1960335Z apps/web build: dist/assets/assets-AXZdw2KP.js                3.32 kB │ gzip:   1.61 kB
+2026-11-05T00:39:26.1961202Z apps/web build: dist/assets/FeatureSamples-CuUhAoQx.js        6.26 kB │ gzip:   2.09 kB
+2026-11-05T00:39:26.1962029Z apps/web build: dist/assets/OriginalArt-CU0VJYZ3.js           6.67 kB │ gzip:   1.08 kB
+2026-11-05T00:39:26.1962848Z apps/web build: dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+2026-11-05T00:39:26.1963620Z apps/web build: dist/assets/OriginalCatalog-Df26gCbU.js       8.89 kB │ gzip:   2.71 kB
+2026-11-05T00:39:26.1967834Z apps/web build: dist/assets/ArenaScene-eUSHFcbK.js            9.35 kB │ gzip:   3.42 kB
+2026-11-05T00:39:26.1968691Z apps/web build: dist/assets/StageScene-DXChqJ_G.js           17.21 kB │ gzip:   6.24 kB
+2026-11-05T00:39:26.1969567Z apps/web build: dist/assets/src-DAMQeCrb.js                  56.91 kB │ gzip:  19.51 kB
+2026-11-05T00:39:26.1970351Z apps/web build: dist/assets/react-C1iE8mnY.js               218.75 kB │ gzip:  68.27 kB
+2026-11-05T00:39:26.1971569Z apps/web build: dist/assets/web3-C6G9LtNF.js                363.85 kB │ gzip: 108.15 kB
+2026-11-05T00:39:26.1972776Z apps/web build: dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+2026-11-05T00:39:26.1973413Z apps/web build: dist/assets/index-n2l1YBjT.js             1,642.24 kB │ gzip: 173.82 kB
+2026-11-05T00:39:26.1973931Z apps/web build: [33m[plugin builtin:vite-reporter] 
+2026-11-05T00:39:26.1974402Z apps/web build: (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:39:26.1975128Z apps/web build: - Using dynamic import() to code-split the application
+2026-11-05T00:39:26.1975916Z apps/web build: - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:39:26.1976508Z apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-11-05T00:39:26.2005178Z apps/web build: [32m✓ built in 1.00s[39m
+2026-11-05T00:39:26.2208694Z apps/web build: Done
+2026-11-05T00:39:26.2494382Z Post job cleanup.
+2026-11-05T00:39:26.3334055Z (node:4753) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T00:39:26.3335206Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:39:26.3338280Z Cache hit occurred on the primary key node-cache-Linux-x64-pnpm-d28bad3b2fb436d5259233e52a0530931c0aa171c50457a6f66d6f3d4ba7612d, not saving cache.
+2026-11-05T00:39:26.3434540Z Post job cleanup.
+2026-11-05T00:39:26.4365147Z Pruning is unnecessary.
+2026-11-05T00:39:26.4540204Z Post job cleanup.
+2026-11-05T00:39:26.5426461Z [command]/usr/bin/git version
+2026-11-05T00:39:26.5485669Z git version 2.56.0
+2026-11-05T00:39:26.5594997Z Temporarily overriding HOME='/home/runner/work/_temp/1e06e238-bfdc-43db-ade4-320150e80539' before making global git config changes
+2026-11-05T00:39:26.5620692Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T00:39:26.5622496Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/taskbar-hero/taskbar-hero
+2026-11-05T00:39:26.5623805Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T00:39:26.5625642Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T00:39:26.6006082Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T00:39:26.6052014Z http.https://github.com/.extraheader
+2026-11-05T00:39:26.6085955Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-05T00:39:26.6199077Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T00:39:26.6460070Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T00:39:26.6501474Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T00:39:26.6852836Z Cleaning up orphan processes
+2026-11-05T00:39:26.7069942Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

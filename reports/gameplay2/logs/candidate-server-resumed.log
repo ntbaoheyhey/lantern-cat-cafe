@@ -1,0 +1,17 @@
+
+> taskbar-hero@0.0.0 demo /Users/bao/taskbar-hero-gameplay2
+> node tools/gameplay-demo.mjs
+
+file:///Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:14661
+			throw new Error(`Port ${port} is already in use`);
+			      ^
+
+Error: Port 5391 is already in use
+    at httpServerStart (file:///Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:14661:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async startServer (file:///Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:25127:30)
+    at async Object.listen (file:///Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:24933:4)
+    at async file:///Users/bao/taskbar-hero-gameplay2/tools/gameplay-demo.mjs:9:1
+
+Node.js v24.22.2
+ ELIFECYCLE  Command failed with exit code 1.

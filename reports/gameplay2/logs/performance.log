@@ -1,0 +1,21 @@
+8:07:46 AM [vite] (client) Re-optimizing dependencies because vite config has changed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 0.02054211319817437
+- 0
+
+    at file:///Users/bao/taskbar-hero-gameplay2/tools/gameplay2-perf.mjs:40:115 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 0.02054211319817437,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

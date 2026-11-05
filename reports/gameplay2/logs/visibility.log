@@ -1,0 +1,10 @@
+7:51:19 AM [vite] (client) Re-optimizing dependencies because vite config has changed
+/Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:63972
+          throw new Error("Please use browser.newContext()");
+                ^
+
+Error: Please use browser.newContext()
+    at _BrowserContext.newPage (/Users/bao/taskbar-hero-gameplay2/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:63972:17)
+    at file:///Users/bao/taskbar-hero-gameplay2/tools/gameplay2-visibility.mjs:12:36
+
+Node.js v24.22.2

@@ -1,0 +1,225 @@
+{
+  "views": 21,
+  "violations": [
+    {
+      "id": "scrollable-region-focusable",
+      "impact": "serious",
+      "nodes": [
+        {
+          "target": [
+            ".cafe-sidebar"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        }
+      ]
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "impact": "serious",
+      "nodes": [
+        {
+          "target": [
+            ".cafe-scroll"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        },
+        {
+          "target": [
+            ".cafe-sidebar"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        }
+      ]
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "impact": "serious",
+      "nodes": [
+        {
+          "target": [
+            ".cafe-scroll"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        },
+        {
+          "target": [
+            ".cafe-sidebar"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        }
+      ]
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "impact": "serious",
+      "nodes": [
+        {
+          "target": [
+            ".cafe-scroll"
+          ],
+          "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+        }
+      ]
+    }
+  ],
+  "overflows": 0,
+  "offscreenFocus": [],
+  "errors": [],
+  "writes": [],
+  "hiddenAdvances": [],
+  "runningAnimations": []
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   {
++     id: 'scrollable-region-focusable',
++     impact: 'serious',
++     nodes: [
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-sidebar'
++         ]
++       }
++     ]
++   },
++   {
++     id: 'scrollable-region-focusable',
++     impact: 'serious',
++     nodes: [
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-scroll'
++         ]
++       },
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-sidebar'
++         ]
++       }
++     ]
++   },
++   {
++     id: 'scrollable-region-focusable',
++     impact: 'serious',
++     nodes: [
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-scroll'
++         ]
++       },
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-sidebar'
++         ]
++       }
++     ]
++   },
++   {
++     id: 'scrollable-region-focusable',
++     impact: 'serious',
++     nodes: [
++       {
++         summary: 'Fix any of the following:\n' +
++           '  Element should have focusable content\n' +
++           '  Element should be focusable',
++         target: [
++           '.cafe-scroll'
++         ]
++       }
++     ]
++   }
++ ]
+- []
+
+    at file:///Users/bao/taskbar-hero-gameplay2/tools/gameplay2-audit.mjs:43:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      id: 'scrollable-region-focusable',
+      impact: 'serious',
+      nodes: [
+        {
+          target: [ '.cafe-sidebar' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        }
+      ]
+    },
+    {
+      id: 'scrollable-region-focusable',
+      impact: 'serious',
+      nodes: [
+        {
+          target: [ '.cafe-scroll' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        },
+        {
+          target: [ '.cafe-sidebar' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        }
+      ]
+    },
+    {
+      id: 'scrollable-region-focusable',
+      impact: 'serious',
+      nodes: [
+        {
+          target: [ '.cafe-scroll' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        },
+        {
+          target: [ '.cafe-sidebar' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        }
+      ]
+    },
+    {
+      id: 'scrollable-region-focusable',
+      impact: 'serious',
+      nodes: [
+        {
+          target: [ '.cafe-scroll' ],
+          summary: 'Fix any of the following:\n' +
+            '  Element should have focusable content\n' +
+            '  Element should be focusable'
+        }
+      ]
+    }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

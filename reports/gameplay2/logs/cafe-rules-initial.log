@@ -1,0 +1,105 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-gameplay2/packages/game-rules
+
+ ❯ src/cafe.test.ts (35 tests | 2 failed) 471ms
+   ❯ learnable bosses and fair retry (14)
+     × provides three phases, consistent cues and a perfect counter path in chapter 1 4ms
+   ❯ builds, honest crafting and long goals (11)
+     × challenge tiers change boss pressure and local quality without changing any server rewards 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cafe.test.ts > learnable bosses and fair retry > provides three phases, consistent cues and a perfect counter path in chapter 1
+AssertionError: expected 2 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ src/cafe.test.ts:80:71
+     78|     const { s, phases, moves } = fight(ready(chapter), true);
+     79|     // Later rooms require stronger kits: perfect counters alone canno…
+     80|     expect(phases.size).toBeGreaterThanOrEqual(2); expect(moves.size).…
+       |                                                                       ^
+     81|     expect(s.lastBoss?.counters).toBeGreaterThan(0);
+     82|     if (s.lastBoss?.won) expect(s.lastBoss.grade).toBe('Perfect');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/cafe.test.ts > builds, honest crafting and long goals > challenge tiers change boss pressure and local quality without changing any server rewards
+AssertionError: expected { version: 1, seed: 11, …(28) } to deeply equal { version: 1, seed: 11, …(28) }
+
+- Expected
++ Received
+
+@@ -1,10 +1,12 @@
+  {
+    "assist": true,
+    "boss": null,
+    "chapter": 1,
+-   "claimed": [],
++   "claimed": [
++     "patrol",
++   ],
+    "clears": [],
+    "counters": 0,
+    "crafts": 0,
+    "discovered": [],
+    "encounter": {
+@@ -24,10 +26,15 @@
+      {
+        "at": 0,
+        "kind": "decision",
+        "text": "A neighbor visits: gather, study, or explore?",
+      },
++     {
++       "at": 0,
++       "kind": "goal",
++       "text": "Make the rounds: +6 mastery, +2 patches.",
++     },
+    ],
+    "insight": 0,
+    "inventory": [
+      {
+        "affix": "cushioned",
+@@ -74,16 +81,16 @@
+    "loadouts": {},
+    "losses": 0,
+    "lucky": 0,
+    "mastery": "gentle",
+    "nextEncounterAt": 0,
+-   "patches": 4,
++   "patches": 6,
+    "perfects": 0,
+    "retryAt": 0,
+    "rngStep": 0,
+    "seconds": 0,
+    "seed": 11,
+    "tier": 0,
+    "tours": 0,
+    "version": 1,
+-   "xp": 0,
++   "xp": 6,
+  }
+
+ ❯ src/cafe.test.ts:189:52
+    187|     const s = ready(), cozy = actCafe(s, { type: 'fight' }), daring = …
+    188|     expect(daring.boss!.maxHp).toBeGreaterThan(cozy.boss!.maxHp);
+    189|     expect(actCafe(s, { type: 'tier', tier: -1 })).toEqual(s); expect(…
+       |                                                    ^
+    190|   });
+    191|   it('away catch-up is capped, never runs battles, and cannot reward i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 33 passed (35)
+   Start at  07:02:11
+   Duration  701ms (tests 78%, transform 18%, import 4%)
+
+undefined
+/Users/bao/taskbar-hero-gameplay2/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cafe.test.ts

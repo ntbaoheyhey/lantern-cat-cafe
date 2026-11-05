@@ -1,0 +1,729 @@
+﻿2026-11-05T00:34:40.5419485Z Current runner version: '2.338.2'
+2026-11-05T00:34:40.5455744Z ##[group]Runner Image Provisioner
+2026-11-05T00:34:40.5457076Z Hosted Compute Agent
+2026-11-05T00:34:40.5457928Z Version: 20261028.624
+2026-11-05T00:34:40.5458793Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-05T00:34:40.5459945Z Build Date: 2026-10-28T21:51:42Z
+2026-11-05T00:34:40.5460908Z Worker ID: {e02218a1-beb6-4948-8e19-46d9190e5d47}
+2026-11-05T00:34:40.5461913Z Region: westus3
+2026-11-05T00:34:40.5462663Z Cloud: Azure
+2026-11-05T00:34:40.5463769Z ##[endgroup]
+2026-11-05T00:34:40.5465927Z ##[group]Operating System
+2026-11-05T00:34:40.5466802Z Ubuntu
+2026-11-05T00:34:40.5467477Z 24.04.5
+2026-11-05T00:34:40.5468318Z LTS
+2026-11-05T00:34:40.5469054Z ##[endgroup]
+2026-11-05T00:34:40.5469884Z ##[group]Runner Image
+2026-11-05T00:34:40.5470767Z Image: ubuntu-24.04
+2026-11-05T00:34:40.5471652Z Version: 20261101.360.1
+2026-11-05T00:34:40.5473803Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-05T00:34:40.5476179Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-05T00:34:40.5477447Z ##[endgroup]
+2026-11-05T00:34:40.5479307Z ##[group]GITHUB_TOKEN Permissions
+2026-11-05T00:34:40.5482344Z Contents: read
+2026-11-05T00:34:40.5483939Z Metadata: read
+2026-11-05T00:34:40.5484869Z Packages: read
+2026-11-05T00:34:40.5485606Z ##[endgroup]
+2026-11-05T00:34:40.5488683Z Secret source: Actions
+2026-11-05T00:34:40.5490090Z Cache mode: write
+2026-11-05T00:34:40.5491131Z Prepare workflow directory
+2026-11-05T00:34:40.6237412Z Prepare all required actions
+2026-11-05T00:34:40.6312467Z Getting action download info
+2026-11-05T00:34:41.0617426Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-05T00:34:41.1895039Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+2026-11-05T00:34:42.0791488Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-05T00:34:42.2929878Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-05T00:34:42.6647949Z Complete job name: e2e
+2026-11-05T00:34:42.7306953Z ##[group]Checking docker version
+2026-11-05T00:34:42.7321413Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2026-11-05T00:34:42.8129734Z '1.48'
+2026-11-05T00:34:42.8149868Z Docker daemon API version: '1.48'
+2026-11-05T00:34:42.8151583Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2026-11-05T00:34:42.8350984Z '1.48'
+2026-11-05T00:34:42.8362207Z Docker client API version: '1.48'
+2026-11-05T00:34:42.8369013Z ##[endgroup]
+2026-11-05T00:34:42.8372397Z ##[group]Clean up resources from previous jobs
+2026-11-05T00:34:42.8379493Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=f6245c"
+2026-11-05T00:34:42.8560385Z ##[command]/usr/bin/docker network prune --force --filter "label=f6245c"
+2026-11-05T00:34:42.8734045Z ##[endgroup]
+2026-11-05T00:34:42.8735332Z ##[group]Create local container network
+2026-11-05T00:34:42.8747753Z ##[command]/usr/bin/docker network create --label f6245c github_network_ad6b8fbf4cb94ff2ba3125c7e54002e4
+2026-11-05T00:34:42.9451964Z 29aeb4cddc4380db5b07c61208bffc393a0d94bc9a9b9ac57547ab086a8343c7
+2026-11-05T00:34:42.9470927Z ##[endgroup]
+2026-11-05T00:34:42.9502511Z ##[group]Starting job container
+2026-11-05T00:34:42.9534541Z ##[command]/usr/bin/docker pull mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+2026-11-05T00:34:43.1797991Z mcr.microsoft.com/playwright@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f: Pulling from playwright
+2026-11-05T00:34:43.2724610Z 7a48b8f0e5c7: Already exists
+2026-11-05T00:34:43.2754774Z 7f09f8b6ee13: Pulling fs layer
+2026-11-05T00:34:43.2757138Z 1838e4eb65d9: Pulling fs layer
+2026-11-05T00:34:43.2759635Z 6a04ac251623: Pulling fs layer
+2026-11-05T00:34:43.2762170Z cc4939249994: Pulling fs layer
+2026-11-05T00:34:43.2765198Z ec6213bdc8d0: Pulling fs layer
+2026-11-05T00:34:43.2768089Z 81918556fc04: Pulling fs layer
+2026-11-05T00:34:43.2770084Z cc4939249994: Waiting
+2026-11-05T00:34:43.2771862Z ec6213bdc8d0: Waiting
+2026-11-05T00:34:43.2773702Z 81918556fc04: Waiting
+2026-11-05T00:34:43.4812502Z 1838e4eb65d9: Verifying Checksum
+2026-11-05T00:34:43.4842848Z 1838e4eb65d9: Download complete
+2026-11-05T00:34:43.8874087Z 7f09f8b6ee13: Verifying Checksum
+2026-11-05T00:34:43.8874949Z 7f09f8b6ee13: Download complete
+2026-11-05T00:34:44.8639237Z 6a04ac251623: Verifying Checksum
+2026-11-05T00:34:44.8644670Z 6a04ac251623: Download complete
+2026-11-05T00:34:44.9584098Z ec6213bdc8d0: Verifying Checksum
+2026-11-05T00:34:44.9585242Z ec6213bdc8d0: Download complete
+2026-11-05T00:34:45.6624789Z cc4939249994: Verifying Checksum
+2026-11-05T00:34:45.6651424Z cc4939249994: Download complete
+2026-11-05T00:34:45.6652110Z 81918556fc04: Verifying Checksum
+2026-11-05T00:34:45.6658007Z 81918556fc04: Download complete
+2026-11-05T00:34:58.7240499Z 7f09f8b6ee13: Pull complete
+2026-11-05T00:34:58.7934611Z 1838e4eb65d9: Pull complete
+2026-11-05T00:35:12.9373781Z 6a04ac251623: Pull complete
+2026-11-05T00:35:24.3873970Z cc4939249994: Pull complete
+2026-11-05T00:35:26.8433303Z ec6213bdc8d0: Pull complete
+2026-11-05T00:35:32.6759341Z 81918556fc04: Pull complete
+2026-11-05T00:35:32.6838059Z Digest: sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+2026-11-05T00:35:32.6856970Z Status: Downloaded newer image for mcr.microsoft.com/playwright@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+2026-11-05T00:35:32.6869522Z mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+2026-11-05T00:35:32.6981234Z ##[command]/usr/bin/docker create --name 86c60d5b77dc4f608fade5608152a03d_mcrmicrosoftcomplaywrightv1641noblesha2562f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f_0de805 --label f6245c --workdir /__w/taskbar-hero/taskbar-hero --network github_network_ad6b8fbf4cb94ff2ba3125c7e54002e4  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.2/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f "-f" "/dev/null"
+2026-11-05T00:35:32.7388454Z 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:35:32.7412502Z ##[command]/usr/bin/docker start 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:35:32.9304175Z 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:35:32.9332258Z ##[command]/usr/bin/docker ps --all --filter id=9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2026-11-05T00:35:32.9473119Z 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e Up Less than a second
+2026-11-05T00:35:32.9492233Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:35:32.9645985Z HOME=/github/home
+2026-11-05T00:35:32.9646300Z GITHUB_ACTIONS=true
+2026-11-05T00:35:32.9646518Z CI=true
+2026-11-05T00:35:32.9646815Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2026-11-05T00:35:32.9647164Z LANG=C.UTF-8
+2026-11-05T00:35:32.9647386Z LC_ALL=C.UTF-8
+2026-11-05T00:35:32.9647675Z PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+2026-11-05T00:35:32.9667884Z ##[endgroup]
+2026-11-05T00:35:32.9677890Z ##[group]Waiting for all services to be ready
+2026-11-05T00:35:32.9680599Z ##[endgroup]
+2026-11-05T00:35:33.0002657Z ##[group]Run actions/checkout@v4
+2026-11-05T00:35:33.0003666Z with:
+2026-11-05T00:35:33.0004034Z   repository: ntbaoheyhey/taskbar-hero
+2026-11-05T00:35:33.0006888Z   token: ***
+2026-11-05T00:35:33.0007215Z   ssh-strict: true
+2026-11-05T00:35:33.0007567Z   ssh-user: git
+2026-11-05T00:35:33.0007900Z   persist-credentials: true
+2026-11-05T00:35:33.0008253Z   clean: true
+2026-11-05T00:35:33.0008596Z   sparse-checkout-cone-mode: true
+2026-11-05T00:35:33.0008956Z   fetch-depth: 1
+2026-11-05T00:35:33.0009276Z   fetch-tags: false
+2026-11-05T00:35:33.0009619Z   show-progress: true
+2026-11-05T00:35:33.0009930Z   lfs: false
+2026-11-05T00:35:33.0010282Z   submodules: false
+2026-11-05T00:35:33.0010602Z   set-safe-directory: true
+2026-11-05T00:35:33.0010961Z   allow-unsafe-pr-checkout: false
+2026-11-05T00:35:33.0011494Z ##[endgroup]
+2026-11-05T00:35:33.0087300Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:35:33.5014638Z Syncing repository: ntbaoheyhey/taskbar-hero
+2026-11-05T00:35:33.5017076Z ##[group]Getting Git version info
+2026-11-05T00:35:33.5017677Z Working directory is '/__w/taskbar-hero/taskbar-hero'
+2026-11-05T00:35:33.5018572Z [command]/usr/bin/git version
+2026-11-05T00:35:33.5018997Z git version 2.43.0
+2026-11-05T00:35:33.5020436Z ##[endgroup]
+2026-11-05T00:35:33.5045116Z Temporarily overriding HOME='/__w/_temp/a5394b83-7b12-42ec-b928-a4d0a08501d8' before making global git config changes
+2026-11-05T00:35:33.5046192Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T00:35:33.5047104Z [command]/usr/bin/git config --global --add safe.directory /__w/taskbar-hero/taskbar-hero
+2026-11-05T00:35:33.5048429Z Deleting the contents of '/__w/taskbar-hero/taskbar-hero'
+2026-11-05T00:35:33.5049392Z ##[group]Initializing the repository
+2026-11-05T00:35:33.5049903Z [command]/usr/bin/git init /__w/taskbar-hero/taskbar-hero
+2026-11-05T00:35:33.5050657Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-05T00:35:33.5051440Z hint: is subject to change. To configure the initial branch name to use in all
+2026-11-05T00:35:33.5052184Z hint: of your new repositories, which will suppress this warning, call:
+2026-11-05T00:35:33.5052723Z hint: 
+2026-11-05T00:35:33.5053293Z hint: 	git config --global init.defaultBranch <name>
+2026-11-05T00:35:33.5053758Z hint: 
+2026-11-05T00:35:33.5054197Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-05T00:35:33.5054933Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-05T00:35:33.5055504Z hint: 
+2026-11-05T00:35:33.5055805Z hint: 	git branch -m <name>
+2026-11-05T00:35:33.5071112Z Initialized empty Git repository in /__w/taskbar-hero/taskbar-hero/.git/
+2026-11-05T00:35:33.5073221Z [command]/usr/bin/git remote add origin https://github.com/ntbaoheyhey/taskbar-hero
+2026-11-05T00:35:33.5074405Z ##[endgroup]
+2026-11-05T00:35:33.5074955Z ##[group]Disabling automatic garbage collection
+2026-11-05T00:35:33.5075473Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-05T00:35:33.5076624Z ##[endgroup]
+2026-11-05T00:35:33.5077143Z ##[group]Setting up auth
+2026-11-05T00:35:33.5077706Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T00:35:33.5079546Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T00:35:33.5627776Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T00:35:33.5630193Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T00:35:33.5956738Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T00:35:33.5978503Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T00:35:33.6232705Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-05T00:35:33.6276796Z ##[endgroup]
+2026-11-05T00:35:33.6277841Z ##[group]Fetching the repository
+2026-11-05T00:35:33.6300675Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd:refs/remotes/pull/283/merge
+2026-11-05T00:35:40.5906855Z From https://github.com/ntbaoheyhey/taskbar-hero
+2026-11-05T00:35:40.5914493Z  * [new ref]         6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd -> pull/283/merge
+2026-11-05T00:35:40.5946268Z ##[endgroup]
+2026-11-05T00:35:40.5946917Z ##[group]Determining the checkout info
+2026-11-05T00:35:40.5947592Z ##[endgroup]
+2026-11-05T00:35:40.5954392Z [command]/usr/bin/git sparse-checkout disable
+2026-11-05T00:35:40.6005312Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-05T00:35:40.6030273Z ##[group]Checking out the ref
+2026-11-05T00:35:40.6037308Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/283/merge
+2026-11-05T00:35:41.6220657Z Updating files:  79% (3376/4243)
+2026-11-05T00:35:41.6411156Z Updating files:  80% (3395/4243)
+2026-11-05T00:35:41.7331014Z Updating files:  81% (3437/4243)
+2026-11-05T00:35:42.0697120Z Updating files:  82% (3480/4243)
+2026-11-05T00:35:42.1348394Z Updating files:  83% (3522/4243)
+2026-11-05T00:35:42.1659236Z Updating files:  84% (3565/4243)
+2026-11-05T00:35:42.1826299Z Updating files:  85% (3607/4243)
+2026-11-05T00:35:42.2234118Z Updating files:  86% (3649/4243)
+2026-11-05T00:35:42.2476073Z Updating files:  87% (3692/4243)
+2026-11-05T00:35:42.2732475Z Updating files:  88% (3734/4243)
+2026-11-05T00:35:42.2953062Z Updating files:  89% (3777/4243)
+2026-11-05T00:35:42.3175931Z Updating files:  90% (3819/4243)
+2026-11-05T00:35:42.3554932Z Updating files:  91% (3862/4243)
+2026-11-05T00:35:42.3779357Z Updating files:  92% (3904/4243)
+2026-11-05T00:35:42.4015527Z Updating files:  93% (3946/4243)
+2026-11-05T00:35:42.4250573Z Updating files:  94% (3989/4243)
+2026-11-05T00:35:42.4369317Z Updating files:  95% (4031/4243)
+2026-11-05T00:35:42.4388475Z Updating files:  96% (4074/4243)
+2026-11-05T00:35:42.4408833Z Updating files:  97% (4116/4243)
+2026-11-05T00:35:42.4437621Z Updating files:  98% (4159/4243)
+2026-11-05T00:35:42.4460795Z Updating files:  99% (4201/4243)
+2026-11-05T00:35:42.4461833Z Updating files: 100% (4243/4243)
+2026-11-05T00:35:42.4463956Z Updating files: 100% (4243/4243), done.
+2026-11-05T00:35:42.4507512Z Note: switching to 'refs/remotes/pull/283/merge'.
+2026-11-05T00:35:42.4509380Z 
+2026-11-05T00:35:42.4579251Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-05T00:35:42.4580306Z changes and commit them, and you can discard any commits you make in this
+2026-11-05T00:35:42.4581442Z state without impacting any branches by switching back to a branch.
+2026-11-05T00:35:42.4582034Z 
+2026-11-05T00:35:42.4582675Z If you want to create a new branch to retain commits you create, you may
+2026-11-05T00:35:42.4583818Z do so (now or later) by using -c with the switch command. Example:
+2026-11-05T00:35:42.4584553Z 
+2026-11-05T00:35:42.4586104Z   git switch -c <new-branch-name>
+2026-11-05T00:35:42.4586413Z 
+2026-11-05T00:35:42.4586580Z Or undo this operation with:
+2026-11-05T00:35:42.4586829Z 
+2026-11-05T00:35:42.4586964Z   git switch -
+2026-11-05T00:35:42.4587143Z 
+2026-11-05T00:35:42.4587472Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-05T00:35:42.4587930Z 
+2026-11-05T00:35:42.4588474Z HEAD is now at 6ce9a55 Merge 0dbfd6a96e4619678c759d42dec01a03216d6474 into 7eb1ee7ef052ec90ee2cbc9e2299b185c8ab11b5
+2026-11-05T00:35:42.4590273Z ##[endgroup]
+2026-11-05T00:35:42.4679441Z [command]/usr/bin/git log -1 --format=%H
+2026-11-05T00:35:42.4706958Z 6ce9a5543b0918ab3e0dbb81cfba67a6e7fc63fd
+2026-11-05T00:35:42.4989440Z ##[group]Run pnpm/action-setup@v4
+2026-11-05T00:35:42.4989728Z with:
+2026-11-05T00:35:42.4989956Z   dest: ~/setup-pnpm
+2026-11-05T00:35:42.4990187Z   run_install: null
+2026-11-05T00:35:42.4990408Z   cache: false
+2026-11-05T00:35:42.4990642Z   cache_dependency_path: pnpm-lock.yaml
+2026-11-05T00:35:42.4990935Z   package_json_file: package.json
+2026-11-05T00:35:42.4991190Z   standalone: false
+2026-11-05T00:35:42.4991405Z ##[endgroup]
+2026-11-05T00:35:42.4995767Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:35:42.7981927Z ##[group]Running self-installer...
+2026-11-05T00:35:43.2639496Z (node:162) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-05T00:35:43.2641914Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:35:43.4582762Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-11-05T00:35:43.4679701Z Packages: +1
+2026-11-05T00:35:43.4680226Z +
+2026-11-05T00:35:43.8782435Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2026-11-05T00:35:43.9543361Z 
+2026-11-05T00:35:43.9544150Z dependencies:
+2026-11-05T00:35:43.9545084Z + pnpm 10.28.0 (12.16.1 is available)
+2026-11-05T00:35:43.9545694Z 
+2026-11-05T00:35:43.9578322Z Done in 923ms
+2026-11-05T00:35:43.9726059Z ##[endgroup]
+2026-11-05T00:35:43.9726814Z Installation Completed!
+2026-11-05T00:35:43.9952765Z ##[group]Run actions/setup-node@v4
+2026-11-05T00:35:43.9953482Z with:
+2026-11-05T00:35:43.9953720Z   node-version-file: .nvmrc
+2026-11-05T00:35:43.9953981Z   cache: pnpm
+2026-11-05T00:35:43.9954200Z   always-auth: false
+2026-11-05T00:35:43.9954432Z   check-latest: false
+2026-11-05T00:35:43.9956854Z   token: ***
+2026-11-05T00:35:43.9957056Z env:
+2026-11-05T00:35:43.9957318Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:43.9957643Z ##[endgroup]
+2026-11-05T00:35:43.9965329Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:35:44.2704160Z Resolved .nvmrc as 24
+2026-11-05T00:35:44.2787910Z (node:183) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T00:35:44.2788690Z Found in cache @ /__t/node/24.22.2/x64
+2026-11-05T00:35:44.2789446Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:35:44.2790273Z ##[group]Environment details
+2026-11-05T00:35:44.7042817Z node: v24.22.2
+2026-11-05T00:35:44.7056594Z npm: 11.19.1
+2026-11-05T00:35:44.7064609Z yarn: 1.22.22
+2026-11-05T00:35:44.7065759Z ##[endgroup]
+2026-11-05T00:35:44.7083674Z [command]/github/home/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2026-11-05T00:35:45.1239867Z /__w/.pnpm-store/v10
+2026-11-05T00:35:45.3826607Z pnpm cache is not found
+2026-11-05T00:35:45.4012321Z ##[group]Run pnpm install --frozen-lockfile
+2026-11-05T00:35:45.4012757Z [36;1mpnpm install --frozen-lockfile[0m
+2026-11-05T00:35:45.4016469Z shell: sh -e {0}
+2026-11-05T00:35:45.4016709Z env:
+2026-11-05T00:35:45.4016985Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:35:45.4017297Z ##[endgroup]
+2026-11-05T00:35:45.7980406Z Scope: all 7 workspace projects
+2026-11-05T00:35:45.8876736Z Lockfile is up to date, resolution step is skipped
+2026-11-05T00:35:45.9685764Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-11-05T00:35:46.0435911Z Packages: +506
+2026-11-05T00:35:46.0439330Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-11-05T00:35:46.9709154Z Progress: resolved 506, reused 0, downloaded 11, added 0
+2026-11-05T00:35:48.0055349Z Progress: resolved 506, reused 0, downloaded 12, added 0
+2026-11-05T00:35:49.0055889Z Progress: resolved 506, reused 0, downloaded 23, added 4
+2026-11-05T00:35:50.0081714Z Progress: resolved 506, reused 0, downloaded 29, added 5
+2026-11-05T00:35:51.0094947Z Progress: resolved 506, reused 0, downloaded 52, added 13
+2026-11-05T00:35:52.0090542Z Progress: resolved 506, reused 0, downloaded 112, added 41
+2026-11-05T00:35:53.0134594Z Progress: resolved 506, reused 0, downloaded 151, added 57
+2026-11-05T00:35:54.0107729Z Progress: resolved 506, reused 0, downloaded 222, added 130
+2026-11-05T00:35:55.0102431Z Progress: resolved 506, reused 0, downloaded 305, added 172
+2026-11-05T00:35:56.0170130Z Progress: resolved 506, reused 0, downloaded 359, added 196
+2026-11-05T00:35:57.0117599Z Progress: resolved 506, reused 0, downloaded 415, added 212
+2026-11-05T00:35:58.0129548Z Progress: resolved 506, reused 0, downloaded 477, added 237
+2026-11-05T00:35:59.0136328Z Progress: resolved 506, reused 0, downloaded 491, added 241
+2026-11-05T00:36:00.0133259Z Progress: resolved 506, reused 0, downloaded 497, added 453
+2026-11-05T00:36:00.2534665Z Progress: resolved 506, reused 0, downloaded 497, added 506, done
+2026-11-05T00:36:01.1199747Z 
+2026-11-05T00:36:01.1416226Z ╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-11-05T00:36:01.1417142Z │                                                                              │
+2026-11-05T00:36:01.1417967Z │   Ignored build scripts: bufferutil@4.1.0, keccak@3.0.4,                     │
+2026-11-05T00:36:01.1418686Z │   utf-8-validate@5.0.10.                                                     │
+2026-11-05T00:36:01.1419407Z │   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-11-05T00:36:01.1420125Z │   to run scripts.                                                            │
+2026-11-05T00:36:01.1420715Z │                                                                              │
+2026-11-05T00:36:01.1421392Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-11-05T00:36:01.1491443Z Done in 15.6s using pnpm v10.28.0
+2026-11-05T00:36:01.1935474Z ##[group]Run pnpm exec playwright install chromium
+2026-11-05T00:36:01.1935904Z [36;1mpnpm exec playwright install chromium[0m
+2026-11-05T00:36:01.1936346Z shell: sh -e {0}
+2026-11-05T00:36:01.1936557Z env:
+2026-11-05T00:36:01.1936807Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:36:01.1937114Z ##[endgroup]
+2026-11-05T00:36:02.1709602Z ##[group]Run pnpm --filter @taskbar-hero/web build
+2026-11-05T00:36:02.1710339Z [36;1mpnpm --filter @taskbar-hero/web build[0m
+2026-11-05T00:36:02.1711819Z shell: sh -e {0}
+2026-11-05T00:36:02.1712326Z env:
+2026-11-05T00:36:02.1713393Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:36:02.1714108Z ##[endgroup]
+2026-11-05T00:36:02.5223389Z 
+2026-11-05T00:36:02.5224915Z > @taskbar-hero/web@0.0.0 build /__w/taskbar-hero/taskbar-hero/apps/web
+2026-11-05T00:36:02.5234990Z > tsc --noEmit && vite build
+2026-11-05T00:36:02.5235635Z 
+2026-11-05T00:36:17.0109342Z [36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+2026-11-05T00:36:17.0263183Z transforming...
+2026-11-05T00:36:17.8868925Z [33m[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-11-05T00:36:17.9201886Z ✓ 1875 modules transformed.
+2026-11-05T00:36:18.1461872Z rendering chunks...
+2026-11-05T00:36:18.4294726Z computing gzip size...
+2026-11-05T00:36:18.4623449Z dist/index.html                               2.13 kB │ gzip:   0.76 kB
+2026-11-05T00:36:18.4624510Z dist/assets/sheet-B8UIec1E.png                4.55 kB
+2026-11-05T00:36:18.4626251Z dist/assets/FeatureSamples-BG4xVUCy.css       2.75 kB │ gzip:   0.86 kB
+2026-11-05T00:36:18.4627567Z dist/assets/OriginalCatalog-BqG91EfA.css      5.04 kB │ gzip:   1.28 kB
+2026-11-05T00:36:18.4629232Z dist/assets/index-CIeu2Y4G.css              194.17 kB │ gzip:  32.77 kB
+2026-11-05T00:36:18.4630406Z dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+2026-11-05T00:36:18.4631537Z dist/assets/Art2Preview-CbkXcBNF.js           1.32 kB │ gzip:   0.60 kB
+2026-11-05T00:36:18.4632760Z dist/assets/assets-AXZdw2KP.js                3.32 kB │ gzip:   1.61 kB
+2026-11-05T00:36:18.4634204Z dist/assets/FeatureSamples-CuUhAoQx.js        6.26 kB │ gzip:   2.09 kB
+2026-11-05T00:36:18.4635405Z dist/assets/OriginalArt-CU0VJYZ3.js           6.67 kB │ gzip:   1.08 kB
+2026-11-05T00:36:18.4636555Z dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+2026-11-05T00:36:18.4637675Z dist/assets/OriginalCatalog-Df26gCbU.js       8.89 kB │ gzip:   2.71 kB
+2026-11-05T00:36:18.4638927Z dist/assets/ArenaScene-eUSHFcbK.js            9.35 kB │ gzip:   3.42 kB
+2026-11-05T00:36:18.4639980Z dist/assets/StageScene-DXChqJ_G.js           17.21 kB │ gzip:   6.24 kB
+2026-11-05T00:36:18.4641015Z dist/assets/src-DAMQeCrb.js                  56.91 kB │ gzip:  19.51 kB
+2026-11-05T00:36:18.4641992Z dist/assets/react-C1iE8mnY.js               218.75 kB │ gzip:  68.27 kB
+2026-11-05T00:36:18.4643261Z dist/assets/web3-C6G9LtNF.js                363.85 kB │ gzip: 108.15 kB
+2026-11-05T00:36:18.4644821Z dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+2026-11-05T00:36:18.4645618Z [33m[plugin builtin:vite-reporter] 
+2026-11-05T00:36:18.4646563Z (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:36:18.4647503Z - Using dynamic import() to code-split the application
+2026-11-05T00:36:18.4648585Z - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:36:18.4650230Z dist/assets/index-n2l1YBjT.js             1,642.24 kB │ gzip: 173.82 kB
+2026-11-05T00:36:18.4650839Z 
+2026-11-05T00:36:18.4661727Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-11-05T00:36:18.4708620Z [32m✓ built in 1.46s[39m
+2026-11-05T00:36:18.5138949Z ##[group]Run pnpm --filter @taskbar-hero/web exec playwright test e2e/ui/art2-flag-off.spec.ts e2e/ui/landing-font-stability.spec.ts --project=stage-layout --workers=2
+2026-11-05T00:36:18.5140123Z [36;1mpnpm --filter @taskbar-hero/web exec playwright test e2e/ui/art2-flag-off.spec.ts e2e/ui/landing-font-stability.spec.ts --project=stage-layout --workers=2[0m
+2026-11-05T00:36:18.5140967Z shell: sh -e {0}
+2026-11-05T00:36:18.5141344Z env:
+2026-11-05T00:36:18.5141697Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:36:18.5142288Z   ART2_SCREENSHOTS: /home/runner/work/taskbar-hero/taskbar-hero/apps/web/test-results/flag-off-native
+2026-11-05T00:36:18.5142841Z ##[endgroup]
+2026-11-05T00:36:26.7257682Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:27.3011710Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:36:27.3013279Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:36:27.3014230Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:36:27.3015558Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:36:27.3016609Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:36:27.9062727Z [WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:36:32.0801117Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:32.6921683Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:36:32.6922628Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:36:32.6928263Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:36:32.6930026Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:36:32.6931715Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:36:33.5234908Z [WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:36:36.0318331Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:36.6778943Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:36:36.6782208Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:36:36.6783941Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:36:36.6785564Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:36:36.6795041Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:36:37.4214784Z [WebServer] 
+2026-11-05T00:36:37.4216683Z [WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+2026-11-05T00:36:37.5049103Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:38.2013567Z [WebServer] 
+2026-11-05T00:36:38.2015433Z [WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+2026-11-05T00:36:38.3426427Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:39.2617978Z 
+2026-11-05T00:36:39.2619188Z Running 6 tests using 2 workers
+2026-11-05T00:36:49.5493875Z ······
+2026-11-05T00:36:49.5498975Z   6 passed (30.0s)
+2026-11-05T00:36:49.5845505Z ##[group]Run pnpm --filter @taskbar-hero/web test:e2e
+2026-11-05T00:36:49.5846092Z [36;1mpnpm --filter @taskbar-hero/web test:e2e[0m
+2026-11-05T00:36:49.5846566Z shell: sh -e {0}
+2026-11-05T00:36:49.5846876Z env:
+2026-11-05T00:36:49.5847236Z   PNPM_HOME: /github/home/setup-pnpm/node_modules/.bin
+2026-11-05T00:36:49.5847830Z   ART2_SCREENSHOTS: /home/runner/work/taskbar-hero/taskbar-hero/apps/web/test-results/flag-off-native
+2026-11-05T00:36:49.5848549Z ##[endgroup]
+2026-11-05T00:36:49.9512833Z 
+2026-11-05T00:36:49.9514246Z > @taskbar-hero/web@0.0.0 test:e2e /__w/taskbar-hero/taskbar-hero/apps/web
+2026-11-05T00:36:49.9515328Z > playwright test
+2026-11-05T00:36:49.9515592Z 
+2026-11-05T00:36:57.6049611Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:36:58.2272447Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:36:58.2273457Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:36:58.2274368Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:36:58.2275292Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:36:58.2276338Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:36:58.5591804Z [WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:36:58.5594493Z [WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:36:58.5596490Z [WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:36:58.5598544Z [WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:37:01.0528599Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:37:01.6676992Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:37:01.6678211Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:37:01.6678894Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:37:01.6679867Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:37:01.6680838Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:37:02.4396842Z [WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:37:02.4398228Z [WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:37:02.4399532Z [WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:37:02.4401041Z [WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+2026-11-05T00:37:04.9499811Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:37:05.6137554Z [WebServer] [plugin builtin:vite-reporter] 
+2026-11-05T00:37:05.6139016Z [WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+2026-11-05T00:37:05.6140225Z [WebServer] - Using dynamic import() to code-split the application
+2026-11-05T00:37:05.6141903Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+2026-11-05T00:37:05.6143659Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-11-05T00:37:06.3361755Z [WebServer] 
+2026-11-05T00:37:06.3363420Z [WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+2026-11-05T00:37:06.3992786Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:37:07.0953244Z [WebServer] 
+2026-11-05T00:37:07.0954968Z [WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+2026-11-05T00:37:07.3055775Z [WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/__w/taskbar-hero/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+2026-11-05T00:37:10.7049270Z 
+2026-11-05T00:37:10.7050688Z Running 399 tests using 1 worker
+2026-11-05T00:37:34.9669050Z ······················Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+2026-11-05T00:39:11.1067193Z ··························································
+2026-11-05T00:39:44.9240382Z ························CSP classic 1600x900 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:45.9379764Z ·CSP classic 1280x720 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:46.8755032Z ·CSP classic 390x844 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:47.8061244Z ·CSP classic 320x568 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:48.7514016Z ·CSP classic 1280x720 dark: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:49.6745373Z ·CSP classic 390x844 dark: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:50.9992748Z ·CSP v2 1600x900 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:52.3664920Z ·CSP v2 1280x720 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:53.6190692Z ·CSP v2 390x844 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:54.8361920Z ·CSP v2 320x568 light: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:56.1364131Z ·CSP v2 1280x720 dark: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:39:57.3591969Z ·CSP v2 390x844 dark: canvas painted; violations=0; console/page errors=0
+2026-11-05T00:40:23.5202159Z ················Phaser canvas instances inserted during 100-step drag: 2
+2026-11-05T00:40:26.2501092Z ·Phaser canvas instances inserted during 100-step drag: 2
+2026-11-05T00:41:34.1064881Z ····························
+2026-11-05T00:41:48.1695487Z ··············{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":140,"textWidth":140,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":140,"textWidth":140,"unclipped":true,"allTextInside":true}}}
+2026-11-05T00:41:49.9733352Z ·{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":213,"textWidth":213,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":213,"textWidth":213,"unclipped":true,"allTextInside":true}}}
+2026-11-05T00:41:51.2195589Z ·{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+2026-11-05T00:41:52.5433342Z ·{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+2026-11-05T00:41:53.9991652Z ·{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4176/functions/v1/v2-claim"}]}
+2026-11-05T00:41:55.5255346Z ·{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4176/functions/v1/v2-claim"}]}
+2026-11-05T00:41:59.7842467Z ···{"viewport":{"width":1600,"height":900},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":140,"textWidth":140,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":140,"textWidth":140,"unclipped":true,"allTextInside":true}}}
+2026-11-05T00:42:01.7216941Z ·{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":213,"textWidth":213,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":213,"textWidth":213,"unclipped":true,"allTextInside":true}}}
+2026-11-05T00:42:02.9508569Z ·{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+2026-11-05T00:42:04.2228869Z ·{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+2026-11-05T00:42:05.6429582Z ·{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:4176/functions/v1/v2-claim"}]}
+2026-11-05T00:42:07.1695996Z ·{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":135.40625,"textWidth":135.40625,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:4176/functions/v1/v2-claim"}]}
+2026-11-05T00:43:58.2567662Z ·····················································
+2026-11-05T00:44:05.0840089Z ········Measured screenshot roster-ch1.png (60.8 KB)
+2026-11-05T00:44:06.1352676Z ·Measured screenshot roster-ch2.png (59.1 KB)
+2026-11-05T00:44:07.1684745Z ·Measured screenshot roster-ch3.png (58.7 KB)
+2026-11-05T00:44:08.2192135Z ·Measured screenshot roster-ch4.png (59.2 KB)
+2026-11-05T00:44:09.2522816Z ·Measured screenshot roster-ch5.png (60.1 KB)
+2026-11-05T00:44:10.6443032Z ·Measured screenshot stage-ch1-1280x720.png (117.3 KB)
+2026-11-05T00:44:11.9495209Z ·Measured screenshot stage-ch1-390x844.png (37.3 KB)
+2026-11-05T00:44:13.3607388Z ·Measured screenshot stage-ch2-1280x720.png (118.3 KB)
+2026-11-05T00:44:14.6989530Z ·Measured screenshot stage-ch2-390x844.png (37.9 KB)
+2026-11-05T00:44:16.1273507Z ·Measured screenshot stage-ch3-1280x720.png (119.8 KB)
+2026-11-05T00:44:17.4499047Z ·Measured screenshot stage-ch3-390x844.png (38.8 KB)
+2026-11-05T00:44:18.8279162Z ·Measured screenshot stage-ch4-1280x720.png (119.3 KB)
+2026-11-05T00:44:20.1496283Z ·Measured screenshot stage-ch4-390x844.png (38.4 KB)
+2026-11-05T00:44:21.5435083Z ·Measured screenshot stage-ch5-1280x720.png (121.6 KB)
+2026-11-05T00:44:22.8650799Z ·Measured screenshot stage-ch5-390x844.png (38.1 KB)
+2026-11-05T00:44:23.7476682Z ·Bake benchmark results: {
+2026-11-05T00:44:23.7478004Z   "1": {
+2026-11-05T00:44:23.7478943Z     "chapter": 1,
+2026-11-05T00:44:23.7479545Z     "totalBakeMs": 2.7,
+2026-11-05T00:44:23.7480126Z     "monsters": {
+2026-11-05T00:44:23.7480748Z       "mon.dust.bunny": {
+2026-11-05T00:44:23.7481403Z         "ms": 0.8,
+2026-11-05T00:44:23.7482036Z         "totalFrames": 14,
+2026-11-05T00:44:23.7482683Z         "texW": 336,
+2026-11-05T00:44:23.7483550Z         "texH": 24,
+2026-11-05T00:44:23.7484165Z         "texBytes": 32256
+2026-11-05T00:44:23.7484790Z       },
+2026-11-05T00:44:23.7485391Z       "mon.loose.yarn": {
+2026-11-05T00:44:23.7485972Z         "ms": 0.6,
+2026-11-05T00:44:23.7486489Z         "totalFrames": 14,
+2026-11-05T00:44:23.7487126Z         "texW": 336,
+2026-11-05T00:44:23.7487734Z         "texH": 24,
+2026-11-05T00:44:23.7488457Z         "texBytes": 32256
+2026-11-05T00:44:23.7489108Z       },
+2026-11-05T00:44:23.7489629Z       "mon.sock.puppet": {
+2026-11-05T00:44:23.7490259Z         "ms": 0.5,
+2026-11-05T00:44:23.7490904Z         "totalFrames": 14,
+2026-11-05T00:44:23.7491508Z         "texW": 336,
+2026-11-05T00:44:23.7492050Z         "texH": 24,
+2026-11-05T00:44:23.7492587Z         "texBytes": 32256
+2026-11-05T00:44:23.7493462Z       },
+2026-11-05T00:44:23.7494092Z       "mon.roomba.scout": {
+2026-11-05T00:44:23.7494777Z         "ms": 0.3,
+2026-11-05T00:44:23.7495354Z         "totalFrames": 14,
+2026-11-05T00:44:23.7495930Z         "texW": 392,
+2026-11-05T00:44:23.7514224Z         "texH": 28,
+2026-11-05T00:44:23.7515048Z         "texBytes": 43904
+2026-11-05T00:44:23.7515757Z       },
+2026-11-05T00:44:23.7516419Z       "mon.yarn.giant": {
+2026-11-05T00:44:23.7516938Z         "ms": 0.5,
+2026-11-05T00:44:23.7517570Z         "totalFrames": 14,
+2026-11-05T00:44:23.7518143Z         "texW": 560,
+2026-11-05T00:44:23.7518676Z         "texH": 40,
+2026-11-05T00:44:23.7519214Z         "texBytes": 89600
+2026-11-05T00:44:23.7519719Z       }
+2026-11-05T00:44:23.7520279Z     }
+2026-11-05T00:44:23.7520801Z   },
+2026-11-05T00:44:23.7521313Z   "2": {
+2026-11-05T00:44:23.7521811Z     "chapter": 2,
+2026-11-05T00:44:23.7522292Z     "totalBakeMs": 1.5,
+2026-11-05T00:44:23.7523132Z     "monsters": {
+2026-11-05T00:44:23.7523679Z       "mon.pickle.imp": {
+2026-11-05T00:44:23.7524280Z         "ms": 0.2,
+2026-11-05T00:44:23.7524808Z         "totalFrames": 14,
+2026-11-05T00:44:23.7525331Z         "texW": 336,
+2026-11-05T00:44:23.7525971Z         "texH": 24,
+2026-11-05T00:44:23.7526479Z         "texBytes": 32256
+2026-11-05T00:44:23.7527037Z       },
+2026-11-05T00:44:23.7527554Z       "mon.toast.mimic": {
+2026-11-05T00:44:23.7528079Z         "ms": 0.2,
+2026-11-05T00:44:23.7528857Z         "totalFrames": 14,
+2026-11-05T00:44:23.7529374Z         "texW": 336,
+2026-11-05T00:44:23.7529867Z         "texH": 24,
+2026-11-05T00:44:23.7530379Z         "texBytes": 32256
+2026-11-05T00:44:23.7530982Z       },
+2026-11-05T00:44:23.7531513Z       "mon.spoon.bug": {
+2026-11-05T00:44:23.7532011Z         "ms": 0.2,
+2026-11-05T00:44:23.7532549Z         "totalFrames": 14,
+2026-11-05T00:44:23.7533375Z         "texW": 336,
+2026-11-05T00:44:23.7533978Z         "texH": 24,
+2026-11-05T00:44:23.7534525Z         "texBytes": 32256
+2026-11-05T00:44:23.7535193Z       },
+2026-11-05T00:44:23.7535807Z       "mon.blender.brute": {
+2026-11-05T00:44:23.7536496Z         "ms": 0.4,
+2026-11-05T00:44:23.7537065Z         "totalFrames": 14,
+2026-11-05T00:44:23.7537957Z         "texW": 392,
+2026-11-05T00:44:23.7538427Z         "texH": 28,
+2026-11-05T00:44:23.7538975Z         "texBytes": 43904
+2026-11-05T00:44:23.7539509Z       },
+2026-11-05T00:44:23.7547804Z       "mon.cucumber.scare": {
+2026-11-05T00:44:23.7548674Z         "ms": 0.5,
+2026-11-05T00:44:23.7549219Z         "totalFrames": 23,
+2026-11-05T00:44:23.7549915Z         "texW": 920,
+2026-11-05T00:44:23.7550494Z         "texH": 40,
+2026-11-05T00:44:23.7551052Z         "texBytes": 147200
+2026-11-05T00:44:23.7551953Z       }
+2026-11-05T00:44:23.7552540Z     }
+2026-11-05T00:44:23.7553353Z   },
+2026-11-05T00:44:23.7553931Z   "3": {
+2026-11-05T00:44:23.7554528Z     "chapter": 3,
+2026-11-05T00:44:23.7555047Z     "totalBakeMs": 1.7,
+2026-11-05T00:44:23.7555533Z     "monsters": {
+2026-11-05T00:44:23.7556165Z       "mon.soap.slime": {
+2026-11-05T00:44:23.7556729Z         "ms": 0.3,
+2026-11-05T00:44:23.7557286Z         "totalFrames": 14,
+2026-11-05T00:44:23.7557808Z         "texW": 336,
+2026-11-05T00:44:23.7558318Z         "texH": 24,
+2026-11-05T00:44:23.7558938Z         "texBytes": 32256
+2026-11-05T00:44:23.7559484Z       },
+2026-11-05T00:44:23.7559978Z       "mon.rubber.duck": {
+2026-11-05T00:44:23.7560506Z         "ms": 0.2,
+2026-11-05T00:44:23.7560964Z         "totalFrames": 14,
+2026-11-05T00:44:23.7561590Z         "texW": 336,
+2026-11-05T00:44:23.7562120Z         "texH": 24,
+2026-11-05T00:44:23.7562700Z         "texBytes": 32256
+2026-11-05T00:44:23.7563595Z       },
+2026-11-05T00:44:23.7564128Z       "mon.sponge.crab": {
+2026-11-05T00:44:23.7564856Z         "ms": 0.3,
+2026-11-05T00:44:23.7565393Z         "totalFrames": 14,
+2026-11-05T00:44:23.7565986Z         "texW": 336,
+2026-11-05T00:44:23.7566536Z         "texH": 24,
+2026-11-05T00:44:23.7567160Z         "texBytes": 32256
+2026-11-05T00:44:23.7567760Z       },
+2026-11-05T00:44:23.7568312Z       "mon.hair.dryer.wisp": {
+2026-11-05T00:44:23.7568936Z         "ms": 0.3,
+2026-11-05T00:44:23.7569499Z         "totalFrames": 14,
+2026-11-05T00:44:23.7570166Z         "texW": 392,
+2026-11-05T00:44:23.7570781Z         "texH": 28,
+2026-11-05T00:44:23.7571856Z         "texBytes": 43904
+2026-11-05T00:44:23.7572446Z       },
+2026-11-05T00:44:23.7573220Z       "mon.bathtub.tyrant": {
+2026-11-05T00:44:23.7574286Z         "ms": 0.6,
+2026-11-05T00:44:23.7578593Z         "totalFrames": 23,
+2026-11-05T00:44:23.7579217Z         "texW": 920,
+2026-11-05T00:44:23.7579844Z         "texH": 40,
+2026-11-05T00:44:23.7580353Z         "texBytes": 147200
+2026-11-05T00:44:23.7581050Z       }
+2026-11-05T00:44:23.7581519Z     }
+2026-11-05T00:44:23.7581996Z   },
+2026-11-05T00:44:23.7582538Z   "4": {
+2026-11-05T00:44:23.7583336Z     "chapter": 4,
+2026-11-05T00:44:23.7584029Z     "totalBakeMs": 1.7,
+2026-11-05T00:44:23.7584585Z     "monsters": {
+2026-11-05T00:44:23.7585089Z       "mon.mouse.trap": {
+2026-11-05T00:44:23.7585714Z         "ms": 0.3,
+2026-11-05T00:44:23.7586282Z         "totalFrames": 14,
+2026-11-05T00:44:23.7587044Z         "texW": 336,
+2026-11-05T00:44:23.7587554Z         "texH": 24,
+2026-11-05T00:44:23.7588056Z         "texBytes": 32256
+2026-11-05T00:44:23.7588750Z       },
+2026-11-05T00:44:23.7589258Z       "mon.dust.moth": {
+2026-11-05T00:44:23.7589909Z         "ms": 0.2,
+2026-11-05T00:44:23.7590414Z         "totalFrames": 14,
+2026-11-05T00:44:23.7590884Z         "texW": 336,
+2026-11-05T00:44:23.7591379Z         "texH": 24,
+2026-11-05T00:44:23.7591885Z         "texBytes": 32256
+2026-11-05T00:44:23.7592437Z       },
+2026-11-05T00:44:23.7593162Z       "mon.windup.robot": {
+2026-11-05T00:44:23.7593712Z         "ms": 0.2,
+2026-11-05T00:44:23.7594225Z         "totalFrames": 14,
+2026-11-05T00:44:23.7596573Z         "texW": 336,
+2026-11-05T00:44:23.7597188Z         "texH": 24,
+2026-11-05T00:44:23.7597703Z         "texBytes": 32256
+2026-11-05T00:44:23.7598121Z       },
+2026-11-05T00:44:23.7598644Z       "mon.box.fort.knight": {
+2026-11-05T00:44:23.7599258Z         "ms": 0.3,
+2026-11-05T00:44:23.7599765Z         "totalFrames": 14,
+2026-11-05T00:44:23.7600244Z         "texW": 392,
+2026-11-05T00:44:23.7600926Z         "texH": 28,
+2026-11-05T00:44:23.7601521Z         "texBytes": 43904
+2026-11-05T00:44:23.7602093Z       },
+2026-11-05T00:44:23.7602558Z       "mon.vacuum.beast": {
+2026-11-05T00:44:23.7603198Z         "ms": 0.7,
+2026-11-05T00:44:23.7603646Z         "totalFrames": 23,
+2026-11-05T00:44:23.7604205Z         "texW": 920,
+2026-11-05T00:44:23.7611968Z         "texH": 40,
+2026-11-05T00:44:23.7612610Z         "texBytes": 147200
+2026-11-05T00:44:23.7613347Z       }
+2026-11-05T00:44:23.7614015Z     }
+2026-11-05T00:44:23.7614563Z   },
+2026-11-05T00:44:23.7615176Z   "5": {
+2026-11-05T00:44:23.7615789Z     "chapter": 5,
+2026-11-05T00:44:23.7616380Z     "totalBakeMs": 1,
+2026-11-05T00:44:23.7616968Z     "monsters": {
+2026-11-05T00:44:23.7617669Z       "mon.shadow.crow": {
+2026-11-05T00:44:23.7618395Z         "ms": 0.3,
+2026-11-05T00:44:23.7619003Z         "totalFrames": 13,
+2026-11-05T00:44:23.7619593Z         "texW": 312,
+2026-11-05T00:44:23.7620106Z         "texH": 24,
+2026-11-05T00:44:23.7620842Z         "texBytes": 29952
+2026-11-05T00:44:23.7621416Z       },
+2026-11-05T00:44:23.7621960Z       "mon.moth.swarm": {
+2026-11-05T00:44:23.7622547Z         "ms": 0.1,
+2026-11-05T00:44:23.7623282Z         "totalFrames": 13,
+2026-11-05T00:44:23.7624069Z         "texW": 312,
+2026-11-05T00:44:23.7624585Z         "texH": 24,
+2026-11-05T00:44:23.7625223Z         "texBytes": 29952
+2026-11-05T00:44:23.7625786Z       },
+2026-11-05T00:44:23.7626213Z       "mon.neon.dot": {
+2026-11-05T00:44:23.7626782Z         "ms": 0.1,
+2026-11-05T00:44:23.7627316Z         "totalFrames": 13,
+2026-11-05T00:44:23.7627928Z         "texW": 312,
+2026-11-05T00:44:23.7628496Z         "texH": 24,
+2026-11-05T00:44:23.7629105Z         "texBytes": 29952
+2026-11-05T00:44:23.7629744Z       },
+2026-11-05T00:44:23.7630611Z       "mon.chimney.ghost": {
+2026-11-05T00:44:23.7631984Z         "ms": 0.2,
+2026-11-05T00:44:23.7632604Z         "totalFrames": 13,
+2026-11-05T00:44:23.7638181Z         "texW": 364,
+2026-11-05T00:44:23.7638715Z         "texH": 28,
+2026-11-05T00:44:23.7639176Z         "texBytes": 40768
+2026-11-05T00:44:23.7639626Z       },
+2026-11-05T00:44:23.7639997Z       "mon.laser.dot.phantom": {
+2026-11-05T00:44:23.7640417Z         "ms": 0.3,
+2026-11-05T00:44:23.7640757Z         "totalFrames": 23,
+2026-11-05T00:44:23.7641092Z         "texW": 920,
+2026-11-05T00:44:23.7641567Z         "texH": 40,
+2026-11-05T00:44:23.7641932Z         "texBytes": 147200
+2026-11-05T00:44:23.7642297Z       }
+2026-11-05T00:44:23.7642613Z     }
+2026-11-05T00:44:23.7643124Z   }
+2026-11-05T00:44:23.7643667Z }
+2026-11-05T00:45:03.2379221Z ··············G1 metrics {"phase":"after","before":{"visibilityListeners":6,"JSEventListeners":342,"Nodes":14651,"JSHeapUsedSize":15230984},"after":{"visibilityListeners":6,"JSEventListeners":342,"Nodes":14574,"JSHeapUsedSize":16297256},"plainClaimRebuilds":0,"feedback":{"equip":{"clickToPendingMs":12.099999999976717,"nextFrameMs":127.5,"eventTiming":[{"name":"click","duration":160,"inputDelay":4.199999999953434}]},"craft":{"clickToPendingMs":1.099999999976717,"nextFrameMs":36.699999999953434,"eventTiming":[{"name":"click","duration":56,"inputDelay":0.9000000000232831}]},"fight":{"clickToPendingMs":2.199999999953434,"nextFrameMs":42.199999999953434,"eventTiming":[{"name":"click","duration":64,"inputDelay":1.8999999999068677}]}},"visibility":"synthetic hidden/visible events, including resize while paused"}
+2026-11-05T00:45:39.3695086Z ···························G3 stage frame metrics { p95: 16.799999999999727, frames: 180 }
+2026-11-05T00:46:12.6205881Z ················
+2026-11-05T00:47:57.1177584Z ·····································································[livingroom 1600x900] outer: 53.77, center: 77.03
+2026-11-05T00:47:58.0471260Z ·[livingroom 390x844] outer: 47.07, center: 77.79
+2026-11-05T00:47:59.1010905Z ·[kitchen 1600x900] outer: 66.82, center: 78.94
+2026-11-05T00:48:00.0125510Z ·[kitchen 390x844] outer: 60.22, center: 76.98
+2026-11-05T00:48:01.0679270Z ·[bathroom 1600x900] outer: 67.83, center: 83.44
+2026-11-05T00:48:02.0311489Z ·[bathroom 390x844] outer: 59.87, center: 80.57
+2026-11-05T00:48:03.1019086Z ·[basement 1600x900] outer: 63.34, center: 79.95
+2026-11-05T00:48:04.0134536Z ·[basement 390x844] outer: 55.72, center: 77.65
+2026-11-05T00:48:05.0687539Z ·[rooftops 1600x900] outer: 52.76, center: 65.49
+2026-11-05T00:48:05.9636705Z ·[rooftops 390x844] outer: 46.40, center: 69.87
+2026-11-05T00:48:06.0924517Z ·
+2026-11-05T00:48:06.0942345Z   399 passed (11.3m)
+2026-11-05T00:48:06.1353370Z Post job cleanup.
+2026-11-05T00:48:06.1361140Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:48:06.3828149Z (node:6662) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T00:48:06.3834582Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T00:48:06.4159699Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /__w/taskbar-hero/taskbar-hero --files-from manifest.txt --use-compress-program zstdmt
+2026-11-05T00:48:10.0470592Z (node:6662) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-05T00:48:11.0359871Z Sent 1907458 of 136125186 (1.4%), 1.8 MBs/sec
+2026-11-05T00:48:11.6696535Z Sent 136125186 of 136125186 (100.0%), 79.4 MBs/sec
+2026-11-05T00:48:11.9174038Z Cache saved with the key: node-cache-Linux-x64-pnpm-d28bad3b2fb436d5259233e52a0530931c0aa171c50457a6f66d6f3d4ba7612d
+2026-11-05T00:48:11.9351812Z Post job cleanup.
+2026-11-05T00:48:11.9356936Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:48:12.1909663Z Pruning is unnecessary.
+2026-11-05T00:48:12.2314497Z Post job cleanup.
+2026-11-05T00:48:12.2351622Z ##[command]/usr/bin/docker exec  9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e sh -c "cat /etc/*release | grep ^ID"
+2026-11-05T00:48:12.4603141Z [command]/usr/bin/git version
+2026-11-05T00:48:12.4694546Z git version 2.43.0
+2026-11-05T00:48:12.4774767Z Temporarily overriding HOME='/__w/_temp/785d4c52-e9f6-4f24-9a98-1cbefcc8ccc2' before making global git config changes
+2026-11-05T00:48:12.4794635Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T00:48:12.4815206Z [command]/usr/bin/git config --global --add safe.directory /__w/taskbar-hero/taskbar-hero
+2026-11-05T00:48:12.4853607Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T00:48:12.4914861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T00:48:12.5289770Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T00:48:12.5325699Z http.https://github.com/.extraheader
+2026-11-05T00:48:12.5346787Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-05T00:48:12.5395134Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T00:48:12.5747338Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T00:48:12.5848024Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T00:48:12.6278168Z Stop and remove container: 86c60d5b77dc4f608fade5608152a03d_mcrmicrosoftcomplaywrightv1641noblesha2562f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f_0de805
+2026-11-05T00:48:12.6284018Z ##[command]/usr/bin/docker rm --force 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:48:13.0848584Z 9a6e0dd0314a5e5055e26e3f11672dd1a146ab3f52927a5a6c0e5dbfae01750e
+2026-11-05T00:48:13.0876674Z Remove container network: github_network_ad6b8fbf4cb94ff2ba3125c7e54002e4
+2026-11-05T00:48:13.0881386Z ##[command]/usr/bin/docker network rm github_network_ad6b8fbf4cb94ff2ba3125c7e54002e4
+2026-11-05T00:48:13.1617346Z github_network_ad6b8fbf4cb94ff2ba3125c7e54002e4
+2026-11-05T00:48:13.1702000Z Cleaning up orphan processes
+2026-11-05T00:48:13.2093631Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
