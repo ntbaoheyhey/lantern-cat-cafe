@@ -104,3 +104,15 @@ Nothing is required from the owner to use this local candidate.
    change would be a separate future decision; none is required or performed here.
 
 Report: `reports/turn3d/TURN3D-REPORT.md`. No Avalanche integration is added by 3D art.
+
+
+## Round-and-gear polish candidate — November 5, 2026
+
+Nothing is required from the owner to finish this delivery.
+
+1. Optionally double-click `/Users/bao/taskbar-hero-turn3d-polish/docs/turn3d-polish/index.html`. It works offline and saves nothing.
+2. Try a different weapon/outfit before Begin patrol, read both round orders, then choose loot and re-equip at cafe rest. Supplies spend an ordinary action.
+3. Effects, Miniatures and the item catalog expose 43 effects, 12 models, 22 clips and 30 equipment items. Sound is synthesized and muted until clicked.
+4. Keep all ten PRs #300–#309 draft-only and flags off. Software-renderer performance and independent art/human pacing review remain open; the sandbox adds no Avalanche integration.
+
+Report: `reports/turn3d-polish/TURN3D-POLISH-REPORT.md`. No merge or deployment is required or performed.
