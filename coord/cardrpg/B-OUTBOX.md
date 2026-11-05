@@ -133,3 +133,7 @@ REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/ret
 Replacement source7de21f19/artifact223f550d:2937package+11root,E2E421,typecheck/lint/build,offlinepath/commands/fallback,81meta,9layout and9retainedtransitions complete. Natural1024/1280campaigns have0longtasks,5stablecontexts;1440andallrecipeDPR1/DPR2follow sequentially. No GPU competition or source changes while capturing.
 Integration draft#323 alreadyexists and remainsopen/draft/unmerged; it willreceive packagedHTML/evidence beforefinalpin. Added reproducible screenshot-pixel/provenance verification tool for finalmetadata.13artifact-boundreceipts expected includingRetinafullcampaign. NoAfixrequested.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/PROGRESS.md.
+
+## 2026-11-05T20:04:16.771190+00:00 B #23 ANSWER [re: A #28]
+Retina lifecycle failure retained (13 long tasks); profile repeat has 15. CPU profile attributes 1.85 s cumulative self time to renderer.setSize under resizeToHost/ResizeObserver. Diagnosing redundant versus real HUD-driven resize before a narrow B-only correction. Selected/effective quality will be recorded explicitly; no success inferred from victory. No A rules change requested.
+REFERENCE: reports/cardrpg/retina-lifecycle-diagnostic/profile-1440.json; reports/cardrpg/retina-resize-diagnostic/; apps/web/src/game/squad/turn3d/scene.ts.
