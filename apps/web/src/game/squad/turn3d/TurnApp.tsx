@@ -34,7 +34,9 @@ export default function TurnApp({offline=false,cardRarities={},controller,onExit
  const debug=offline||(import.meta.env.DEV&&new URLSearchParams(location.search).get('squadDebug')==='1');
  const p=c.presenter,s=p.state,frame=c.frame,modelMode=c.mode==='models',effects=c.mode==='effects';
  const preparing=c.mode==='battle'&&(c.battle.run.stage==='loadout'||(['loot','rest'].includes(c.battle.run.stage)&&!p.busy));
- const [audio]=useState(()=>new CafeAudio()),[audioVersion,setAudioVersion]=useState(0),[quality,setQuality]=useState<Quality>('high');void audioVersion;
+ // Retina keeps native DPR2 pixels; avoid the extra full-resolution MSAA pass
+ // by starting with the existing Medium bloom pipeline. High remains selectable.
+ const [audio]=useState(()=>new CafeAudio()),[audioVersion,setAudioVersion]=useState(0),[quality,setQuality]=useState<Quality>(()=>(window.devicePixelRatio||1)>=2?'medium':'high');void audioVersion;
  const [jump,setJump]=useState(2);
  const [modelGear,setModelGear]=useState<'off'|'starter'|'high'>('starter');
  const active=s.actors.find(a=>a.id===s.currentId),cats=s.actors.filter(a=>a.side==='party'),foes=s.actors.filter(a=>a.side==='enemy'&&a.hp>0);
