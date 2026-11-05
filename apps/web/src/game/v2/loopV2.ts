@@ -275,8 +275,13 @@ export class GameLoopV2 {
     const first = this.snap.state?.cat.classId === null;
     const result = await this.action('chooseClass', (api) => api.chooseClass(classId));
     if (first && result && this.doc && this.firstClaimTimer === null) {
+      // Anchor the regular cadence after the first claim. An independent timer
+      // could otherwise request again inside the server's ten-second minimum.
+      if (this.timer !== null) clearInterval(this.timer);
+      this.timer = null;
       this.firstClaimTimer = setTimeout(() => {
         this.firstClaimTimer = null;
+        this.updateVisibility();
         void this.claimNow();
       }, CONFIG.gameplay.firstClaimMs);
     }

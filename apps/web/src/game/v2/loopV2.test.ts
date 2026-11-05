@@ -63,7 +63,7 @@ beforeEach(() => {
 afterEach(() => { loop.stop(); vi.useRealTimers(); });
 const start = () => loop.start(doc.asDocument());
 
-it('loads once, publishes the server answer and claims once every 30 seconds', async () => {
+it('loads once, publishes the server answer and claims on the configured cadence', async () => {
   const changed = vi.fn();
   loop.subscribe(changed);
   await start();
@@ -87,7 +87,7 @@ it('skips all claims without a class', async () => {
   expect(api.claim).not.toHaveBeenCalled();
 });
 
-it('pauses hidden tabs and claims immediately on return, then every 30 seconds', async () => {
+it('pauses hidden tabs and claims immediately on return, then on the configured cadence', async () => {
   doc.setVisibility('hidden');
   await start();
   expect(loop.getSnapshot().paused).toBe(true);
@@ -97,7 +97,7 @@ it('pauses hidden tabs and claims immediately on return, then every 30 seconds',
   await vi.advanceTimersByTimeAsync(0);
   expect(api.claim).toHaveBeenCalledTimes(1);
   expect(loop.getSnapshot().paused).toBe(false);
-  await vi.advanceTimersByTimeAsync(30_000);
+  await vi.advanceTimersByTimeAsync(CLAIM_INTERVAL_MS_V2);
   expect(api.claim).toHaveBeenCalledTimes(2);
   doc.setVisibility('hidden');
   await vi.advanceTimersByTimeAsync(60_000);
@@ -490,4 +490,13 @@ it('does not claim the early reward while hidden or after stopping', async () =>
   await start(); await loop.chooseClass('warrior'); doc.setVisibility('hidden');
   await vi.advanceTimersByTimeAsync(10000); expect(api.claim).not.toHaveBeenCalled();
   loop.stop(); await vi.advanceTimersByTimeAsync(30000); expect(api.claim).not.toHaveBeenCalled();
+});
+
+it('anchors normal claims after the early claim so every request can meet the server minimum', async () => {
+  const unchosen = state(); unchosen.cat.classId = null; api.getState.mockResolvedValue(unchosen);
+  await start(); await vi.advanceTimersByTimeAsync(5000); await loop.chooseClass('warrior');
+  await vi.advanceTimersByTimeAsync(10000); expect(api.claim).toHaveBeenCalledTimes(1);
+  await vi.advanceTimersByTimeAsync(CLAIM_INTERVAL_MS_V2 - 1); expect(api.claim).toHaveBeenCalledTimes(1);
+  await vi.advanceTimersByTimeAsync(1); expect(api.claim).toHaveBeenCalledTimes(2);
+  await vi.advanceTimersByTimeAsync(CLAIM_INTERVAL_MS_V2); expect(api.claim).toHaveBeenCalledTimes(3);
 });

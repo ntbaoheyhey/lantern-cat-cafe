@@ -8,7 +8,7 @@ import { RARITY_IDS, SLOT_IDS } from './content';
  */
 export const CONFIG = {
   /** ORIG1 gameplay remains OFF. The local catalog uses this default and opts in without changing it. */
-  features: { originalEconomy: false },
+  features: { originalEconomy: false, cafeAdventure: false },
   /** Original draft tables; see docs/design/original-economy.md for units and rationale. */
   originalEconomy: {
     revision: 'orig1-2026-11-02',
@@ -84,7 +84,7 @@ export const CONFIG = {
   /** Client presentation only. No grants, drops or server combat rules depend on these. */
   gameplay: {
     firstClaimMs: 10_000,
-    claimIntervalMs: 30_000,
+    claimIntervalMs: 18_000,
     closeCallHpFraction: 0.2,
     greatRollThreshold: 0.8,
     keyStats: 3,
@@ -95,6 +95,40 @@ export const CONFIG = {
       labelMs: 650, calmLabelMs: 220, shakeMs: 80, resourceGainMs: 900,
       burstNormal: 3, burstCrit: 6, burstDefeat: 8 },
     actor: { idleFrameMs: [700, 180, 120, 180, 600, 100, 120, 200], napFrameMs: 1400, equipFrameMs: [100, 140, 140, 180], napAfterMs: 12000 },
+  },
+  /** Default-off, local-only Sample adventure. Never used by server grants or replay. */
+  cafe: {
+    version: 1, seed: 1105, tickMs: 1000, maxStepSeconds: 3600, saveEverySeconds: 5,
+    firstFindSeconds: 8, encounterSeconds: 16, decisionSeconds: 8, bossGate: 8,
+    maxLog: 80, maxItems: 48, maxPatches: 999, startingPatches: 4,
+    gatherPatches: 2, riskPatches: 5, riskChance: 0.6, riskConsolation: 1,
+    encounters: { swiftChance: 0.5, swiftPatches: 7, thiefChance: 0.75, thiefPatches: 4,
+      hazardChance: 0.4, hazardPatches: 7, hazardInsight: 2, armorBonus: 1 },
+    luckyCapPerTour: 6, luckyExtra: 2, itemEvery: 2, maxInsight: 3, insightDamage: 0.08,
+    encounterXp: 2, bossXp: 12, questXp: 6, questPatches: 2,
+    hero: { hp: 160, damage: 13, guard: 0.35, guardCap: 0.7, regenCap: 5, pounceMultiplier: 2.4, pounceCooldown: 8 },
+    gear: { baseDamage: 2, baseHp: 6, chapterDamage: 1, chapterHp: 3, levelDamage: 1, levelHp: 4,
+      maxLevel: 3, keenDamage: 3, cushionedHp: 18, steadyGuard: 0.04, luckyPatches: 1,
+      fineChance: 0.28, brightChance: 0.08, fineMultiplier: 1.2, brightMultiplier: 1.4 },
+    sets: { two: 2, three: 3, four: 4, emberDamage: 0.18, emberCooldown: 2, emberExposure: 0.5,
+      mossHp: 0.2, mossRegen: 2, mossGuard: 0.12, starPatches: 1, starLuck: 0.1 },
+    forge: { craftCost: 8, steadyCost: 6, sparkCost: 3, sparkChance: 0.55, sparkLevels: 2, pityMisses: 3 },
+    boss: { hp: [480, 2200, 3400, 4800, 6600], damage: [25, 38, 49, 63, 78],
+      variance: 0.08, shieldReduction: 0.55, phaseThresholds: [0.67, 0.34], phaseDamage: [1, 1.12, 1.25], windupSeconds: 3, finalWindupSeconds: 2,
+      recoverySeconds: 2, enrageSeconds: 55, enrageDamage: 1.7, maxSeconds: 90,
+      correctExposureSeconds: 2, exposureDamage: 0.4, retrySeconds: 3, closeCallFraction: 0.2,
+      firstRewardPatches: 8, repeatRewardPatches: 2 },
+    tiers: [
+      { id: 'cozy', name: 'Cozy', hp: 1, damage: 1, quality: 0 },
+      { id: 'spirited', name: 'Spirited', hp: 1.25, damage: 1.15, quality: 0.1 },
+      { id: 'daring', name: 'Daring', hp: 1.55, damage: 1.35, quality: 0.2 },
+    ],
+    assist: { afterLosses: 2, damageReduction: 0.15, hpReduction: 0.1 },
+    mastery: { xpPerLevel: 40, maxLevel: 5, damagePerLevel: 0.02, hpPerLevel: 0.03, scoutPatches: 1 },
+    tour: { unlockClears: 3, maxBonusTours: 3, damagePerTour: 0.05 },
+    away: { minSeconds: 60, capSeconds: 7200, secondsPerPatch: 120, maxPatches: 30 },
+    quests: { patrol: 6, variety: 4, counters: 3, crafts: 2, boss: 1, perfect: 1, tour: 1 },
+    debug: { seconds: 60, patches: 80 },
   },
   /** Gear slots, in display order (content.ts). */
   slots: SLOT_IDS,
