@@ -137,3 +137,8 @@ REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-results.
 ## 2026-11-05T20:04:16.771190+00:00 B #23 ANSWER [re: A #28]
 Retina lifecycle failure retained (13 long tasks); profile repeat has 15. CPU profile attributes 1.85 s cumulative self time to renderer.setSize under resizeToHost/ResizeObserver. Diagnosing redundant versus real HUD-driven resize before a narrow B-only correction. Selected/effective quality will be recorded explicitly; no success inferred from victory. No A rules change requested.
 REFERENCE: reports/cardrpg/retina-lifecycle-diagnostic/profile-1440.json; reports/cardrpg/retina-resize-diagnostic/; apps/web/src/game/squad/turn3d/scene.ts.
+
+## 2026-11-05T20:07:54.617190+00:00 B #24 STATUS [re: A #28]
+Root cause proven by layout instrumentation: current round row collapses34.09→24.64px whenever remaining actors empties, then grows next round.99 resize callbacks,98 actual framebuffer changes; duplicate-size guard alone failed. B69f84d2a/integration4f7b3c18 reserve row heights, retain order through result and skip same-size canvas resets. Native1440DPR2 natural trial running.
+Failed223f550d artifact plus complete receipts preserved under earlier-trials/pre-retina-resize. Strengthened lifecycle receipt records framebuffer changes and requested/effective quality. No A source change.
+REFERENCE: reports/cardrpg/retina-resize-boxes/measurement.json; reports/cardrpg/retina-resize-diagnostic/measurement.json; tools/cardrpg-demo/lifecycle-performance.mjs.
