@@ -1,7 +1,7 @@
 # Session A — Systems delivery report
 
-Status: **PARTIAL — A systems complete; final artifact functional/lifecycle checks passed, new per-skill performance and B publication pending.**
-Updated: 2026-11-05T19:23:52.205511+00:00.
+Status: **PARTIAL — A systems complete and frozen; B Retina default correction is undergoing final artifact validation before publication.**
+Updated: 2026-11-05T19:40:56.458990+00:00.
 
 Base: `3bf2cfa3bd32d8355c5c967e979240330a595682` on `ai/codex-turn3d-polish-2026-11-05`. Systems head: `9ccf88e7eeac6814229e2b8d919b608bb4cee478` on `ai/codex-cardrpg-systems-2026-11-05`; worktree `/Users/bao/taskbar-hero-cardrpg-a`. Contract **0.4.0**. The no-limits update supersedes all clock/size/retry ceilings; checkpoints record content order only. No extra agents or model-calling helpers were used.
 
@@ -249,15 +249,21 @@ All 32 pinned evidence links resolve to 26 existing files; all recorded evidence
 
 ## C4 verification in progress — 2026-11-05 UTC
 
+**Latest candidate supersedes the measurements below.** B #21 changes initial Retina quality to the existing Medium pipeline at native DPR 2, retains bloom and High selection, and initializes that quality before loading. It follows measured High-mode p99 misses at Retina; no A-owned rule source changes. New clean source is `7de21f19dbacc52d28f844c1ea09d2662711f0cb`, artifact SHA-256 `223f550d0be863d8a55a3b0d2d30be5f1d1afe25a6dc800bdc374ac12fe59477`, 14,503,235 bytes. Full source-matched validation is in progress, expanded to all 258 DPR-2 recipe casts and a real 1440 Retina campaign. Do not treat the prior candidate's completed checks as validation of this replacement.
+REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `apps/web/src/game/squad/turn3d/TurnApp.tsx`; `apps/web/src/game/squad/turn3d/scene.ts`; `reports/cardrpg/earlier-trials/pre-retina-default/`.
+
+### Prior candidate observations, retained for traceability
+
+
 Clean runtime `79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8` passes the recorded delivery rerun: 2,937 package tests plus 11 root tests, 421 browser tests, workspace typecheck/lint/build, and zero differing flag-off pixels at all three desktop sizes. A's 76 changed systems paths remain byte-identical to frozen `9ccf88e7`. Six A PRs were read back as draft/open/unmerged. The earlier 96 local Foundry tests concern unchanged contracts; no remote execution or deployment occurred.
 
-The current artifact is 14,503,140 bytes, SHA-256 `016ba4191f6a45613fb73d8566dec467642d91ebda95a64cbad9030734da6f38`. A verified all build-source hashes and matching receipts for 3 offline journeys, 3 command/keyboard sets, 4 fallback modes, 81 meta-screen cases and 9 internal-layout cases. No recorded external requests, storage writes or console errors in the strengthened functional paths. A visually inspected the final battle, collection and 1024 planning captures; party-card status text fits internally.
+The prior artifact is 14,503,140 bytes, SHA-256 `016ba4191f6a45613fb73d8566dec467642d91ebda95a64cbad9030734da6f38`. A verified all build-source hashes and matching receipts for 3 offline journeys, 3 command/keyboard sets, 4 fallback modes, 81 meta-screen cases and 9 internal-layout cases. No recorded external requests, storage writes or console errors in the strengthened functional paths. A visually inspected the final battle, collection and 1024 planning captures; party-card status text fits internally.
 REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `reports/cardrpg/offline-path/check.json`; `reports/cardrpg/offline-commands/check.json`; `reports/cardrpg/fallback/check.json`; `reports/cardrpg/meta/checks.json`; `reports/cardrpg/layout-delivery/checks.json`.
 
 The exact artifact also passes all three natural x4 full campaigns: three loot/rest entries, equipment picker, continuations and real boss victory at each size. Each run retains the battle renderer and five total contexts, with zero added contexts after loading, zero long tasks, zero errors and zero warnings. Lifecycle p95 values are 16.8/16.8/16.7 ms; the first two remain above a strict 16.7 ms goal. These automated scenarios do not establish human-perceived smoothness on all hardware. The nine separate wave-entry cases likewise have no long tasks or console diagnostics.
 REFERENCE: `docs/cardrpg/index.html`; `reports/cardrpg/lifecycle-delivery/measurement.json`; `reports/cardrpg/performance-delivery/transitions.json`.
 
-Earlier context eviction, embedded-texture CSP failures, and natural loot/rest shader-link stalls were retained as historical trials. B corrected retained battle scenes, local blob loading and run-owned warmed preview pools. A log containing 258 passing casts from a previous artifact is not final evidence: the new per-skill measurement is still running and must match the current artifact hash. Final per-skill/software performance receipts and B's published artifact/evidence commit remain the only C4 verification dependencies. Local paths above are provisional until pinned to that published commit.
+Earlier context eviction, embedded-texture CSP failures, and natural loot/rest shader-link stalls were retained as historical trials. B corrected retained battle scenes, local blob loading and run-owned warmed preview pools. A log containing 258 passing casts from a previous artifact is not final evidence: the new per-skill measurement is still running and must match the current artifact hash. Those prior per-skill and software measurements subsequently completed and were retained with that candidate; software had 3 long tasks in 8 low-quality samples. Final replacement validation and B's published artifact/evidence commit remain the C4 dependencies. Local paths above are provisional until pinned to that published commit.
 REFERENCE: `docs/cardrpg/index.html`; `reports/cardrpg/validation/delivery-results.json`; `reports/cardrpg/transition-context-diagnostic/`; `reports/cardrpg/lifecycle-diagnostic/`; `reports/cardrpg/earlier-trials/`; `apps/web/src/game/squad/turn3d/PreviewPool.tsx`.
 
 ## Draft review stack
