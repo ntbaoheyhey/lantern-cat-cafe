@@ -62,6 +62,8 @@ Additional requested checks:
 | Hidden pause, idle and calm motion | Measured below. Synthetic visibility events prove lifecycle behavior, not OS battery/background scheduling. |
 | Overall self-review >=8 | Not met: 7.9/10; art 7.7. No human playtest, enjoyment or retention claim. |
 
+![Eight-enemy layout at 1280×720](screens/group-1280.webp)
+
 ## Numerical balance evidence
 
 160 deterministic runs: two presets × two policies × 20 seeds × patrol/boss. Seeds 1–20
@@ -164,7 +166,8 @@ max-width and explicit instant scrolling fixed them. The final document also has
 local navigation anchors and displays the below-8 score.
 
 verification.json hashes the authoritative final logs. Compact JSON receipts preserve data;
-full raw logs are on this ledger branch rather than bloating the product PRs.
+full raw logs are on this ledger branch rather than bloating the product PRs. Raw terminal
+logs retain their original whitespace so recorded hashes remain verifiable.
 
 ## Subjective review, kept separate from numbers
 
