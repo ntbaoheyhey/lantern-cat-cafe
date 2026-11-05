@@ -4,12 +4,12 @@ import { CONSUMABLE_SKILLS, TURN_KITS, TURN_SKILLS } from '@taskbar-hero/game-ru
 import type { Hero, TurnEvent, TurnBattle } from '@taskbar-hero/game-rules/src/squad/turn/types';
 
 export interface EffectFixture { battle:TurnBattle; initial:TurnEvent[]; events:TurnEvent[]; requested:string }
-export function createEffectFixture(requested:string):EffectFixture {
-  const special:Record<string,string>={relicProc:'rally',thorns:'guardAttack',steadfast:'shieldBash',warmWick:'emberOrb',lastSip:'milkFlask',lastLight:'milkFlask',needleLantern:'witchBasic',status_apply:'threadSnare',status_expire:'rally',burn:'guardAttack',death:'guardianBasic',wave_clear:'guardianBasic',victory:'guardianBasic',defeat:'guardAttack'};
+export function createEffectFixture(requested:string,gearMode:'off'|'starter'|'high'='off'):EffectFixture {
+  const special:Record<string,string>={bossIntro:'crossSweep',relicProc:'rally',thorns:'guardAttack',steadfast:'shieldBash',warmWick:'emberOrb',lastSip:'milkFlask',lastLight:'milkFlask',needleLantern:'witchBasic',status_apply:'threadSnare',status_expire:'rally',burn:'guardAttack',death:'guardianBasic',wave_clear:'guardianBasic',victory:'guardianBasic',defeat:'guardAttack'};
   const skillId=special[requested]??requested;
   const hero=(CONSUMABLE_SKILLS[requested]?'guardian':undefined)??Object.entries(TURN_KITS).find(([,kit])=>kit.includes(skillId))?.[0] as Hero|undefined;
   const boss=['yarnAttack','bindThread','crossSweep'].includes(skillId);
-  const b=createTurnBattle({seed:11,encounter:boss?'boss':['victory','wave_clear','death'].includes(requested)?'dummy':'group',preset:requested==='needleLantern'?'lanternbreakers':'hearthkeepers'});
+  const b=createTurnBattle({seed:11,gearMode,encounter:boss?'boss':['victory','wave_clear','death'].includes(requested)?'dummy':'group',preset:requested==='needleLantern'?'lanternbreakers':'hearthkeepers'});
   let actor=b.actors.find(a=>a.id===hero)??b.actors.find(a=>`${a.role}Attack`===skillId)??b.actors.find(a=>a.role==='yarn');
   if(!actor&&skillId==='threadAttack'){
     // Obtain a real summoned thread by resolving the boss bind, then inspect Tighten.
@@ -39,5 +39,6 @@ export function createEffectFixture(requested:string):EffectFixture {
   const target=getLegalTargets(b,skillId).find(t=>t.legal&&(actor!.side!=='enemy'||t.actorId===b.intents[actor!.id]?.targetId))!;
   if(!target||!chooseAction(b,{actorId:actor.id,skillId,targetId:target.actorId}))throw Error(`Illegal fixture action ${requested}`);
   resolveAction(b);endTurn(b);if(requested==='status_expire'){b.queue=[];startTurn(b)}let events=b.events.slice(initial.length);
+  if(requested==='bossIntro')events=[{...events[0]!,type:'boss_phase',skillId:'bossIntro',actors:structuredClone(b.actors),targetIds:[actor.id]}];
   return {battle:b,initial,events,requested};
 }
