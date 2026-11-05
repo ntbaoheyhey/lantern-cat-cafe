@@ -52,3 +52,19 @@ describe('scarcity design', () => {
   it('cannot claim twice, bypass effort materials, or turn a draw into a tradeable item', () => {const s=eligible();const r=ok(R.forge(s,'design-golden-maneki'));expect(R.forge(r.state,'design-golden-maneki').ok).toBe(false);expect(r.state.inventory.items.every(i=>i.soulbound)).toBe(true);expect(r.state.scarcity['golden-maneki']!.mintedSoFar).toBe(0);s.inventory.stacks['boss-proof']=0;expect(R.forge(s,'design-moon-collar').ok).toBe(false);});
   it('metadata preserves existing Relic ids, rarity indices and Fuji-only design status', () => {const s=eligible();for(const x of R.SCARCITY){const m=R.relicDesignMetadata(s,x.id);expect(m.properties.chainId).toBe(43113);expect(m.properties.relicId).toBe(x.rarity==='epic'?3:4);expect(m.properties.rarityIndex).toBe(x.rarity==='epic'?2:3);expect(m.description).toBe(R.CHAIN_NOTICE);expect(m.properties.enforcement).toContain('no supply cap');}});
 });
+
+describe('deterministic spending and capped progress', () => {
+ it('spare threads can buy a chosen consumable and cannot return through a salvage loop', () => {
+  let s=rich(); const start={...s.currencies}; const key=ok(R.forge(s,'mend-pantry-key'));s=key.state;
+  const brew=ok(R.forge(s,'pantry-shield-biscuit'));s=brew.state;
+  expect(s.currencies.threads).toBe(start.threads-40);expect(s.currencies.fish).toBe(start.fish-40);expect(s.inventory.stacks['shield-biscuit']).toBe(1);
+ });
+ it('earned essence has a repeatable deterministic epic-gear sink with a strictly losing salvage loop', () => {
+  let s=rich();s.chapter=2;const before={...s.currencies};for(let n=0;n<10;n++){const r=ok(R.forge(s,'tailor-moonwick-weapon'));s=step(R.salvage(r.state,r.value));}
+  expect(s.currencies.essence).toBe(before.essence-50);expect(s.currencies.threads).toBe(before.threads-1680);expect(s.currencies.fish).toBe(before.fish-1200);
+ });
+ it('repeatable XP rewards respect the daily cap while achievements remain one-time', () => {
+  let s=rich();s.daily.xpEarned=180;s.quests['daily-patrol']!.progress=2;const daily=ok(R.claimQuest(s,'daily-patrol'));expect(daily.value.xp).toBe(0);
+  s=daily.state;s.quests['first-boss']!.progress=1;const first=ok(R.claimQuest(s,'first-boss'));expect(first.value.xp).toBe(150);expect(R.claimQuest(first.state,'first-boss').ok).toBe(false);
+ });
+});

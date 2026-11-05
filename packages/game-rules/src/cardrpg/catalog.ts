@@ -17,32 +17,30 @@ const roster = [
 ] as const;
 export const CARDS: readonly Card[] = roster.map(([id, name, rarity, role, flavour, lore]) => {
   const s = TURN_CONFIG.stats[role];
-  const baseStats: Stats = { hp: s.hp, attack: s.attack, defense: s.defense, critBp: Math.round(s.crit * 10000), critDamageBp: 5000, effectHitBp: 0, effectResistBp: 0, healingBp: 0, shieldBp: 0, initiative: s.initiative };
+  const baseStats: Stats = { hp: C.roleStats[role].hp, attack: s.attack, defense: C.roleStats[role].defense, critBp: Math.round(s.crit * 10000), critDamageBp: C.baseCritDamageBp, effectHitBp: 0, effectResistBp: 0, healingBp: 0, shieldBp: 0, initiative: s.initiative };
   // Role variants, not disguised new combat kits. Signature trait is a horizontal stat choice.
   if (id !== 'mochi' && id !== 'soot' && id !== 'clover') {
-    if (flavour === 'hearth') { baseStats.shieldBp = 500; baseStats.effectResistBp = 500; }
-    if (flavour === 'moon') { baseStats.critBp += 200; baseStats.effectHitBp = 500; }
-    if (flavour === 'garden') { baseStats.healingBp = 500; baseStats.hp += 15; }
+    for (const [stat,value] of Object.entries(C.cardTraits[flavour])) baseStats[stat as keyof Stats] += value;
   }
   return { id, name, rarity, role, flavour, lore, baseStats, levelCap: C.rarity[rarity].cap,
-    skills: TURN_KITS[role].map(skillId => { const s = TURN_SKILLS[skillId]!; return { id: s.id, name: s.name, description: s.description, cooldownRounds: s.cooldown, chargeCost: s.chargeCost, powerBp: Math.round(s.power * 10000), target: s.target }; }),
+    skills: TURN_KITS[role].map(skillId => { const s = TURN_SKILLS[skillId]!; return { id: s.id, name: s.name, description: s.description.replaceAll('Mochi',name), cooldownRounds: s.cooldown, chargeCost: s.chargeCost, powerBp: Math.round(s.power * 10000), target: s.target }; }),
     passive: { id: `${id}-hospitality`, name: `${name}'s Hospitality`, description: role === 'guardian' ? 'A trained guard shelters allies; flavour traits are included in base stats.' : role === 'witch' ? 'A trained caster gathers charge; flavour traits are included in base stats.' : 'A trained brewer shields an injured patient; flavour traits are included in base stats.' } };
 });
 export const CARD_BY_ID = Object.fromEntries(CARDS.map(c => [c.id, c])) as Record<string, Card>;
 export const SET_BONUSES: readonly SetBonus[] = [
-  { id: 'hearthloom', name: 'Hearthloom', pieces: 2, stats: { defense: 5, shieldBp: 600 }, description: '+5 DEF, +6% shielding.' },
-  { id: 'hearthloom', name: 'Hearthloom', pieces: 4, stats: { hp: 30, shieldBp: 600 }, description: '+30 HP, another +6% shielding.' },
-  { id: 'moonwick', name: 'Moonwick', pieces: 2, stats: { attack: 6, critBp: 200 }, description: '+6 ATK, +2% critical chance.' },
-  { id: 'moonwick', name: 'Moonwick', pieces: 4, stats: { effectHitBp: 800, critDamageBp: 1000 }, description: '+8% effect hit, +10% critical bonus damage.' },
-  { id: 'mossbrew', name: 'Mossbrew', pieces: 2, stats: { healingBp: 600, hp: 15 }, description: '+6% healing, +15 HP.' },
-  { id: 'mossbrew', name: 'Mossbrew', pieces: 4, stats: { healingBp: 600, effectResistBp: 1000 }, description: 'Another +6% healing, +10% effect resistance.' },
+  { id: 'hearthloom', name: 'Hearthloom', pieces: 2, stats: { ...C.sets.hearthTwo }, description: '+5 DEF, +6% shielding.' },
+  { id: 'hearthloom', name: 'Hearthloom', pieces: 4, stats: { ...C.sets.hearthFour }, description: '+30 HP, another +6% shielding.' },
+  { id: 'moonwick', name: 'Moonwick', pieces: 2, stats: { ...C.sets.moonTwo }, description: '+6 ATK, +2% critical chance.' },
+  { id: 'moonwick', name: 'Moonwick', pieces: 4, stats: { ...C.sets.moonFour }, description: '+8% effect hit, +10% critical bonus damage.' },
+  { id: 'mossbrew', name: 'Mossbrew', pieces: 2, stats: { ...C.sets.mossTwo }, description: '+6% healing, +15 HP.' },
+  { id: 'mossbrew', name: 'Mossbrew', pieces: 4, stats: { ...C.sets.mossFour }, description: 'Another +6% healing, +10% effect resistance.' },
 ];
 export const ITEMS: readonly Item[] = (['hearthloom', 'moonwick', 'mossbrew'] as const).flatMap((setId, si) => RARITY_ORDER.flatMap((rarity, ri) => EQUIPMENT_SLOTS.map((slot, sl) => {
   const role = (['guardian', 'witch', 'alchemist'] as const)[si]!;
   const name = ({ weapon: ['Pan', 'Needle', 'Kettle'], outfit: ['Apron', 'Shawl', 'Vest'], charm: ['Bell', 'Button', 'Leaf'], relic: ['Cup', 'Wick', 'Snowdrop'] })[slot][si]!;
   const mainStat = (['attack', 'hp', 'defense', 'hp'] as const)[sl]!;
-  const mainValue = ([12, 45, 6, 25][sl]!) + ri * ([4, 12, 2, 8][sl]!);
-  const pools: Item['affixes'] = [{ stat: 'defense', value: 2 + ri, tier: 1 }, { stat: 'critBp', value: 100 + ri * 50, tier: 2 }, { stat: 'effectResistBp', value: 300, tier: 3 }];
+  const mainValue = C.gear.mainBase[sl]! + ri * C.gear.mainPerTier[sl]!;
+  const pools: Item['affixes'] = [{ stat: 'defense', value: C.gear.defenseAffix + ri, tier: 1 }, { stat: 'critBp', value: C.gear.critAffix + ri * C.gear.critPerTier, tier: 2 }, { stat: 'effectResistBp', value: C.gear.resistAffix, tier: 3 }];
   return { id: `${setId}-${slot}-${rarity}`, name: `${C.rarity[rarity].name} ${SET_BONUSES[si * 2]!.name} ${name}`, kind: 'equipment', rarity, slot, fit: slot === 'weapon' ? [role] : ['guardian', 'witch', 'alchemist'] as Role[], main: { stat: mainStat, value: mainValue, tier: 1 }, affixes: pools.slice(0, C.rarity[rarity].affixes), setId, ...(rarity === 'legendary' ? { uniqueEffect: ['neighborShield', 'efficient', 'renew'][si] } : {}), description: rarity === 'legendary' ? ['Shelter the next ally when guarding.', 'Ultimate skills cost 15 less charge (minimum 70).', 'Healing skills restore 18 extra HP.'][si]! : 'A cafe-made piece with a predictable enhancement path.' };
 })));
 export const ITEM_BY_ID = Object.fromEntries(ITEMS.map(i => [i.id, i])) as Record<string, Item>;
@@ -54,22 +52,26 @@ export const BANNERS: readonly GachaBanner[] = [
 export const STACK_ITEMS: readonly StackItem[] = [
   { id: 'boss-proof', name: 'Yarnkeeper Seal', kind: 'material', rarity: 'epic', source: 'First rewarded boss clear of a local day', sink: 'Deterministic Relic design recipes', description: 'Earned effort evidence; never sold or drawn.' },
   { id: 'milk-tonic', name: 'Warm Milk Tonic', kind: 'consumable', rarity: 'common', source: 'Pantry recipe', sink: 'One battle action', description: 'Restore 150 HP; finite battle supplies.' },
-  { id: 'pantry-key', name: 'Pantry Key', kind: 'key', rarity: 'rare', source: 'Weekly quest', sink: 'Pantry refill recipe', description: 'One key becomes one tonic; never an NFT.' },
+  ...([['shield-biscuit','Shield Biscuit','shieldBiscuit'],['quicken-yarn','Quicken Yarn','quickenYarn'],['cleanse-tea','Clearleaf Tea','cleanseTea'],['ultimate-treat','Starlight Treat','ultimateTreat']] as const).map(([id,name,skill]) => ({ id,name,kind:'consumable' as const,rarity:'rare' as const,source:'Pantry recipe',sink:'One battle action',description:TURN_SKILLS[skill]!.description })),
+  { id: 'pantry-key', name: 'Pantry Key', kind: 'key', rarity: 'rare', source: 'Weekly quest or deterministic thread mending', sink: 'Pantry refill recipe', description: 'One key becomes one tonic; never an NFT.' },
   { id: 'cafe-ribbon', name: 'Cafe Ribbon', kind: 'cosmetic', rarity: 'epic', source: 'Deterministic essence recipe', sink: 'Permanent local collection unlock', description: 'A collection badge with no battle stats.' },
 ];
 export const QUESTS: readonly Quest[] = [
-  { id: 'daily-patrol', name: 'A Table for Three', description: 'Complete two battles.', cadence: 'daily', metric: 'battles', target: 2, reward: { currencies: { stamps: 100, fish: 100 }, xp: 40 } },
-  { id: 'daily-service', name: 'Warm the Kettle', description: 'Complete one ten-minute local cafe service.', cadence: 'daily', metric: 'service', target: 1, reward: { currencies: { stamps: 100, threads: 10 }, xp: 40 } },
-  { id: 'weekly-wins', name: 'Seven Good Evenings', description: 'Win ten battles in this local week.', cadence: 'weekly', metric: 'wins', target: 10, reward: { currencies: { stamps: 300, essence: 5 }, xp: 100, stacks: { 'pantry-key': 1 } } },
-  { id: 'first-boss', name: 'Untangle the Giant', description: 'Win a campaign.', cadence: 'achievement', metric: 'bossWins', target: 1, reward: { currencies: { essence: 15 }, xp: 150 } },
-  { id: 'mender', name: 'A Stitch Remembered', description: 'Enhance equipment six times.', cadence: 'achievement', metric: 'enhances', target: 6, reward: { currencies: { stamps: 100 }, xp: 100 } },
+  { id: 'daily-patrol', name: 'A Table for Three', description: 'Complete two battles.', cadence: 'daily', metric: 'battles', ...C.quests.dailyBattles },
+  { id: 'daily-service', name: 'Warm the Kettle', description: 'Complete one ten-minute local cafe service.', cadence: 'daily', metric: 'service', ...C.quests.dailyService },
+  { id: 'weekly-wins', name: 'Seven Good Evenings', description: 'Win three battles in this local week.', cadence: 'weekly', metric: 'wins', ...C.quests.weeklyWins },
+  { id: 'first-boss', name: 'Untangle the Giant', description: 'Win a campaign.', cadence: 'achievement', metric: 'bossWins', ...C.quests.boss },
+  { id: 'mender', name: 'A Stitch Remembered', description: 'Enhance equipment six times.', cadence: 'achievement', metric: 'enhances', ...C.quests.mender },
 ];
 export const RECIPES: readonly ForgeRecipe[] = [
-  ...(['hearthloom', 'moonwick', 'mossbrew'] as const).flatMap(set => EQUIPMENT_SLOTS.map(slot => ({ id: `sew-${set}-${slot}`, name: `Sew ${set} ${slot}`, outputItemId: `${set}-${slot}-rare`, cost: { fish: 180, threads: 30 }, materials: {}, requiredChapter: 1, description: 'Choose a guaranteed rare piece. Completing a set never needs a lucky draw.' }))),
-  { id: 'pantry-tonic', name: 'Brew Warm Milk', outputStackId: 'milk-tonic', cost: { fish: 40 }, materials: { 'pantry-key': 1 }, requiredChapter: 1, description: 'One key, one finite battle tonic.' },
-  { id: 'cafe-ribbon', name: 'Weave Cafe Ribbon', outputStackId: 'cafe-ribbon', cost: { essence: 10, threads: 20 }, materials: {}, requiredChapter: 1, description: 'One cosmetic collection badge; duplicates rejected.' },
-  { id: 'design-moon-collar', name: 'Moon Collar Design', cost: { fish: 900, threads: 120, essence: 15 }, materials: { 'boss-proof': 3 }, requiredChapter: 2, scarcityId: 'moon-collar', description: 'Three rewarded boss days; local capped eligibility only. Design only, not minted.' },
-  { id: 'design-golden-maneki', name: 'Golden Maneki Design', cost: { fish: 2400, threads: 300, essence: 30 }, materials: { 'boss-proof': 10 }, requiredChapter: 2, scarcityId: 'golden-maneki', description: 'Ten rewarded boss days; local capped eligibility only. Design only, not minted.' },
+  ...(['hearthloom', 'moonwick', 'mossbrew'] as const).flatMap(set => EQUIPMENT_SLOTS.map(slot => ({ id: `sew-${set}-${slot}`, name: `Sew ${set} ${slot}`, outputItemId: `${set}-${slot}-rare`, cost: C.recipes.gear, materials: {}, requiredChapter: 1, description: 'Choose a guaranteed rare piece. Completing a set never needs a lucky draw.' }))),
+  ...(['hearthloom', 'moonwick', 'mossbrew'] as const).flatMap(set => EQUIPMENT_SLOTS.map(slot => ({ id: `tailor-${set}-${slot}`, name: `Tailor ${set} ${slot}`, outputItemId: `${set}-${slot}-epic`, cost: C.recipes.epicGear, materials: {}, requiredChapter: 2, description: 'Choose an epic piece using earned essence and spare threads. No random affix roll.' }))),
+  { id: 'mend-pantry-key', name: 'Mend Pantry Key', outputStackId: 'pantry-key', cost: C.recipes.pantryKey, materials: {}, requiredChapter: 1, description: 'Forty spare threads become one pantry key for a chosen finite supply.' },
+  { id: 'pantry-tonic', name: 'Brew Warm Milk', outputStackId: 'milk-tonic', cost: C.recipes.pantry, materials: { 'pantry-key': 1 }, requiredChapter: 1, description: 'One key, one finite battle tonic.' },
+  ...(['shield-biscuit','quicken-yarn','cleanse-tea','ultimate-treat'] as const).map(id => ({id:`pantry-${id}`,name:`Prepare ${id}`,outputStackId:id,cost:C.recipes.pantry,materials:{'pantry-key':1},requiredChapter:1,description:'One pantry key becomes one finite battle supply.'})),
+  { id: 'cafe-ribbon', name: 'Weave Cafe Ribbon', outputStackId: 'cafe-ribbon', cost: C.recipes.ribbon, materials: {}, requiredChapter: 1, description: 'One cosmetic collection badge; duplicates rejected.' },
+  { id: 'design-moon-collar', name: 'Moon Collar Design', cost: C.recipes.epicDesign, materials: { 'boss-proof': C.recipes.epicProof }, requiredChapter: 2, scarcityId: 'moon-collar', description: 'Three rewarded boss days; local capped eligibility only. Design only, not minted.' },
+  { id: 'design-golden-maneki', name: 'Golden Maneki Design', cost: C.recipes.legendaryDesign, materials: { 'boss-proof': C.recipes.legendaryProof }, requiredChapter: 2, scarcityId: 'golden-maneki', description: 'Ten rewarded boss days; local capped eligibility only. Design only, not minted.' },
 ];
 export const SCARCITY: readonly ScarcityInfo[] = [
   { id: 'moon-collar', name: 'Moon Collar', rarity: 'epic', relicId: 3, rarityIndex: 2, globalCap: C.scarcity.epic.global, seasonCap: C.scarcity.epic.season, issuedDesign: 0, seasonIssuedDesign: 0, mintedSoFar: 0, soulbound: true, futureTradeable: true, chainId: 43113, status: CHAIN_NOTICE, path: 'Three rewarded boss days + deterministic forge; one eligibility per account per season.' },

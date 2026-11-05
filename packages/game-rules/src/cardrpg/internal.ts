@@ -25,7 +25,9 @@ export function grant(s: AccountState, reward: Reward, capped = true, events: Ev
     if (value) { s.currencies[key] += value; actual.currencies[key] = value; if (capped) s.daily.earned[key] += value; }
   }
   requireRule(integer(reward.xp), 'INVALID_AMOUNT', 'XP must be a nonnegative integer.');
-  s.accountXp = Math.min(C.accountXpStep * (C.accountLevelCap - 1), s.accountXp + reward.xp);
+  const xp = capped ? Math.min(reward.xp, Math.max(0, C.dailyXpCap - (s.daily.xpEarned ?? 0))) : reward.xp;
+  actual.xp = xp; if (capped) s.daily.xpEarned = (s.daily.xpEarned ?? 0) + xp;
+  s.accountXp = Math.min(C.accountXpStep * (C.accountLevelCap - 1), s.accountXp + xp);
   const level = Math.min(C.accountLevelCap, 1 + Math.floor(s.accountXp / C.accountXpStep));
   if (level > s.accountLevel) events.push({ type: 'levelUp', level }); s.accountLevel = level;
   for (const [id, amount] of Object.entries(reward.stacks ?? {})) { requireRule(integer(amount), 'INVALID_AMOUNT', 'Stack count must be an integer.'); s.inventory.stacks[id] = (s.inventory.stacks[id] ?? 0) + amount; }

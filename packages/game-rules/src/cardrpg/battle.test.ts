@@ -14,3 +14,29 @@ describe('account to numbered-round combat',()=>{
  it('an enhanced item changes battle damage inputs and rare traits remain soulbound',()=>{const s=R.createStarterAccount();s.inventory.items[2]!.enhancement=12;const r=R.startBattle(s,11);if(!r.ok)throw Error();expect(r.value.battle.actors.find(a=>a.id==='witch')!.attack).toBeGreaterThan(E.createTurnBattle(R.toBattleOptions(R.createStarterAccount(),11)).actors.find(a=>a.id==='witch')!.attack);expect(s.inventory.items.every(i=>i.soulbound)).toBe(true);});
  it('default-off turn engine keeps the original non-meta shape and values',()=>{const b=E.createTurnBattle({gearMode:'starter'});expect(b.run.cardRpg).toBeUndefined();expect(b.actors.every(a=>a.cardRpg===undefined)).toBe(true);expect(b.actors.find(a=>a.id==='witch')!.name).toBe('Soot');});
 });
+
+describe('complete reward and equipment presentation contract', () => {
+ it('preview exactly equals settlement, including first-clear gear and seal, without mutation', () => {
+  const r=R.startBattle(R.createStarterAccount(),11); if(!r.ok)throw Error();
+  const before=JSON.stringify(r.state), b=play(r.value.battle), p=R.previewBattleRewards(r.state,b);if(!p.ok)throw Error();
+  const settled=R.finishBattle(r.state,b);if(!settled.ok)throw Error();
+  expect(JSON.stringify(r.state)).toBe(before);expect(p.value.reward).toEqual(settled.value);
+  if(b.result!.winner==='party'){expect(p.value.reward.currencies.fish).toBe(290);expect(p.value.reward.items).toHaveLength(1);expect(p.value.reward.stacks).toEqual({'boss-proof':1});}
+ });
+ it('preview shows the capped amounts actually received', () => {
+  const state=R.createStarterAccount();state.daily.earned={...R.CARD_RPG_CONFIG.dailyCaps};state.daily.xpEarned=R.CARD_RPG_CONFIG.dailyXpCap;state.clearedChapters=['cafe-patrol'];
+  const r=R.startBattle(state,11);if(!r.ok)throw Error();const b=play(r.value.battle),p=R.previewBattleRewards(r.state,b);if(!p.ok)throw Error();
+  expect(p.value.reward.currencies).toEqual({});expect(p.value.reward.xp).toBe(0);const done=R.finishBattle(r.state,b);if(!done.ok)throw Error();expect(done.value).toEqual(p.value.reward);
+ });
+ it('freezes all equipped template identities and stable card identities for the renderer', () => {
+  const s=R.createStarterAccount(),r=R.startBattle(s,5);if(!r.ok)throw Error();const c=r.value.battle.run.cardRpg!.cards.guardian;
+  expect(c.cardId).toBe('mochi');expect(c.instanceId).toBe('mochi');expect(c.rarity).toBe('common');expect(c.itemIds).toEqual(['hearthloom-weapon-common','hearthloom-outfit-common']);
+  s.inventory.items[0]!.itemId='moonwick-weapon-legendary';expect(c.itemIds![0]).toBe('hearthloom-weapon-common');
+ });
+ it('all five pantry supplies transfer once and replay with the same finite quantities', () => {
+  const s=R.createStarterAccount();for(const id of Object.keys(R.CARD_RPG_CONFIG.supplies))s.inventory.stacks[id]=3;
+  const r=R.startBattle(s,23);if(!r.ok)throw Error();for(const [id,v] of Object.entries(R.CARD_RPG_CONFIG.supplies))expect(r.state.inventory.stacks[id]).toBe(3-v.max);
+  expect(r.value.battle.run.consumables).toEqual({healTonic:4,shieldBiscuit:4,quickenYarn:4,cleanseTea:4,ultimateTreat:2});
+  const b=play(r.value.battle),replay=E.replayRun(r.value.options,b.run.commands);expect(replay.events).toEqual(b.events);
+ });
+});
