@@ -23,7 +23,8 @@
 .t3-shell .sq-tools select {min-width:145px; font-size:10px; padding:5px;}
 .t3-shell .sq-tools button {font-size:10px; min-height:27px; padding:5px 9px;}
 .t3-shell .t3-rounds {flex:none; margin:0; gap:3px;}
-.t3-shell .t3-round {gap:6px;}
+.t3-shell .t3-round {gap:6px; min-height:35px;}
+.t3-shell .t3-round.is-next {min-height:25px;}
 .t3-shell .t3-round>b {width:58px; font-size:10px;}
 .t3-shell .t3-round>b small {font-size:7px;}
 .t3-shell .t3-round li {font-size:10px; padding:3px 6px;}
@@ -129,6 +130,7 @@
 .t3-shell .t3-anchor>b small {font-size:8px;}
 .t3-shell .t3-controls {order:-1; margin:0; border-top:0; border-bottom:1px solid #514351; padding:0 0 7px;}
 @media (max-height:650px) {
+ .t3-shell .t3-round {min-height:25px;}
  .t3-shell .sq-topbar {height:42px;}
  .t3-shell .sq-prototype {padding-block:2px; font-size:8px;}
  .t3-shell .t3-round li small {display:none;}

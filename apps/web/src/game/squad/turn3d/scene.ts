@@ -158,7 +158,12 @@ export class TurnScene {
     mesh(new RoundedBoxGeometry(15,.14,.6,2,.04),woodMat,0,.7,-5.25);
     return group;
   }
-  private resizeToHost(){if(!this.host.clientWidth||!this.host.clientHeight)return;this.width=this.host.clientWidth;this.height=this.host.clientHeight;this.renderer.setSize(this.width,this.height,false);this.post.resize(this.width,this.height);this.camera.aspect=this.width/this.height;this.camera.updateProjectionMatrix();this.dirty=true;}
+  private resizeToHost(){
+    const width=this.host.clientWidth,height=this.host.clientHeight;
+    if(!width||!height||(width===this.width&&height===this.height))return;
+    this.width=width;this.height=height;this.renderer.setSize(width,height,false);this.post.resize(width,height);
+    this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.dirty=true;
+  }
   invalidate(){this.dirty=true;}
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
