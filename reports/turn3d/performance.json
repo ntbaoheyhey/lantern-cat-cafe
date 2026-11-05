@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-05T12:30:23.358Z",
+  "machine": {
+    "os": "Darwin arm64",
+    "cpu": "Apple M3 Pro",
+    "node": "v24.22.2"
+  },
+  "method": "Production Vite build. Headless Chromium; browser RAF intervals and CDP renderer TaskDuration. GL calls/buffer allocations counted through instrumented native methods. Software/hardware identity included. No hardware-GPU or whole-machine CPU claim.",
+  "errors": [],
+  "rows": [
+    {
+      "viewport": "1280x720",
+      "mode": "ultimate-six-enemies",
+      "durationMs": 15000,
+      "p50Ms": 33.3,
+      "p95Ms": 33.4,
+      "maxMs": 83.40000000000146,
+      "rendererTaskPercent": 99.922,
+      "heapStartBytes": 14374208,
+      "heapEndBytes": 21452156,
+      "drawCalls": 206,
+      "triangles": 34852,
+      "bufferBytes": 1301778,
+      "buffers": 720,
+      "textures": 5,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "reviewHook": false,
+      "models": 9
+    },
+    {
+      "viewport": "1280x720",
+      "mode": "paused",
+      "durationMs": 5000,
+      "p50Ms": 16.7,
+      "p95Ms": 16.7,
+      "maxMs": 16.80000000000291,
+      "rendererTaskPercent": 0.999,
+      "heapStartBytes": 16528104,
+      "heapEndBytes": 16950716,
+      "drawCalls": 206,
+      "triangles": 34852,
+      "bufferBytes": 1301778,
+      "buffers": 720,
+      "textures": 5,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "reviewHook": false,
+      "models": 9
+    },
+    {
+      "viewport": "1280x720",
+      "mode": "local-load",
+      "resources": [
+        {
+          "name": "index-D3Y05sRD.js",
+          "durationMs": 5.8999999994412065,
+          "bytes": 24910
+        },
+        {
+          "name": "rolldown-runtime-XKyaHtl9.js",
+          "durationMs": 5.5,
+          "bytes": 726
+        },
+        {
+          "name": "react-trdGxmaQ.js",
+          "durationMs": 13.900000000372529,
+          "bytes": 218754
+        },
+        {
+          "name": "web3-D6_Jr5Bd.js",
+          "durationMs": 16.200000000186265,
+          "bytes": 363854
+        },
+        {
+          "name": "entry-DmN5IHDI.js",
+          "durationMs": 22.59999999962747,
+          "bytes": 689962
+        }
+      ]
+    },
+    {
+      "viewport": "1440x900",
+      "mode": "ultimate-six-enemies",
+      "durationMs": 15000,
+      "p50Ms": 33.3,
+      "p95Ms": 33.4,
+      "maxMs": 50.100000000000364,
+      "rendererTaskPercent": 99.945,
+      "heapStartBytes": 18454020,
+      "heapEndBytes": 21629896,
+      "drawCalls": 206,
+      "triangles": 34852,
+      "bufferBytes": 1301778,
+      "buffers": 720,
+      "textures": 5,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "reviewHook": false,
+      "models": 9
+    },
+    {
+      "viewport": "1440x900",
+      "mode": "paused",
+      "durationMs": 5000,
+      "p50Ms": 16.7,
+      "p95Ms": 16.8,
+      "maxMs": 16.80000000000291,
+      "rendererTaskPercent": 0.486,
+      "heapStartBytes": 16753312,
+      "heapEndBytes": 16928380,
+      "drawCalls": 0,
+      "triangles": 0,
+      "bufferBytes": 1301778,
+      "buffers": 720,
+      "textures": 5,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "reviewHook": false,
+      "models": 9
+    },
+    {
+      "viewport": "1440x900",
+      "mode": "local-load",
+      "resources": [
+        {
+          "name": "rolldown-runtime-XKyaHtl9.js",
+          "durationMs": 4.900000000372529,
+          "bytes": 726
+        },
+        {
+          "name": "index-D3Y05sRD.js",
+          "durationMs": 5.5,
+          "bytes": 24910
+        },
+        {
+          "name": "react-trdGxmaQ.js",
+          "durationMs": 12.099999999627471,
+          "bytes": 218754
+        },
+        {
+          "name": "web3-D6_Jr5Bd.js",
+          "durationMs": 16.09999999962747,
+          "bytes": 363854
+        },
+        {
+          "name": "entry-DmN5IHDI.js",
+          "durationMs": 20.5,
+          "bytes": 689962
+        }
+      ]
+    }
+  ]
+}
