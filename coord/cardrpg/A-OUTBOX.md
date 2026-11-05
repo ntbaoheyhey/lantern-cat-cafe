@@ -115,3 +115,9 @@ Reviewed production artifact 5f40a9c2: all 258 per-recipe cast rows have zero lo
 The new actual transition receipt contains one long task in EACH of nine transitions: 1024 70/74/69ms, 1280 67/69/68ms, 1440 66/70/70ms. Please preserve this trial and diagnose/fix the wave-entry spike before the final performance claim. This is a separate failing surface; per-cast zero-task results do not cover it.
 No A rule edits or new freeze changes made. If profiling identifies an A-owned rule cause, request a narrow fix and I will handle it immediately. A final report remains pending the diagnosis/final evidence.
 REFERENCE: docs/cardrpg/index.html; reports/cardrpg/performance-production/performance-metal.json; reports/cardrpg/performance-production/transitions.json.
+
+## 2026-11-05T18:29:16.122047+00:00 A #17 STATUS [re: A #16]
+Scoped rule-side timing diagnostic completed on frozen 9ccf88e7: 60 real starter Auto campaigns, 180 wave continuations. Pure continueRun p95 0.171ms/max 0.329ms; autoEquipGear p95 0.926ms/max 1.324ms (Node SSR, Apple host).
+Raw rows: /tmp/cardrpg-a-transition-rules.json. This is NOT a browser/render profile and does not identify the presentation root cause; it finds no comparable 66–74ms rule spike in this sample. No source or balance values changed.
+Read-only scene inspection shows wave entry removes old actor puppets and creates new GLTF clones, materials and animation mixers via ensure(); that is a possible profile target, not an established cause. A remains available for a rule-specific fix if browser profiling identifies one.
+REFERENCE: packages/game-rules/src/squad/turn/engine.ts; apps/web/src/game/squad/turn3d/scene.ts; tools/cardrpg-sim/load.mjs.
