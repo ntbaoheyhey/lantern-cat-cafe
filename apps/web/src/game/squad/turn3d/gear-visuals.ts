@@ -1,5 +1,6 @@
 /** Original socket attachments. One merged draw per item, independent of real inventory. */
 import * as T from 'three';
+import type {EquipmentAppearance} from './appearance';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {ITEM_BY_ID,type SquadItem} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
@@ -59,15 +60,29 @@ function createPiece(item:SquadItem,role:string):Piece{
  const geometry=mergeGeometries(parts,false);parts.forEach(g=>g.dispose());geometry.computeBoundingSphere();
  const material=new T.MeshStandardMaterial({vertexColors:true,roughness:item.slot==='outfit'?.86:.38,metalness:item.slot==='outfit'?0:.35,emissive:accent,emissiveIntensity:item.rarity==='Legendary'?.14:item.rarity==='Epic'?.07:0});group.add(new T.Mesh(geometry,material));return {group,geometry,material};
 }
+/** A renderer owns the prepared item resources until its run ends. Releasing a
+ * preview must not evict the last gear shader just before the next preview. */
+export class GearResources{
+ private items=new Map<string,Piece>();
+ acquire(item:SquadItem,role:string):Piece{
+  const key=JSON.stringify([role,item]);let piece=this.items.get(key);
+  if(!piece){piece=createPiece(item,role);this.items.set(key,piece)}
+  return {...piece,group:piece.group.clone(true)};
+ }
+ dispose(){for(const piece of this.items.values()){piece.geometry.dispose();piece.material.dispose()}this.items.clear()}
+}
 export class GearAttachments{
- private pieces:Piece[]=[];private key='';private aura:T.Mesh|null=null;
- constructor(private model:T.Group,private role:string){}
- update(actor:TurnActor){
-  const key=JSON.stringify([actor.equipment,actor.setBonuses]);if(key===this.key)return;this.clear();this.key=key;
+ private pieces:Piece[]=[];private key='';private lastEquipment:TurnActor["equipment"]={};private lastSets:string[]=[];private lastAppearance?:EquipmentAppearance;private aura:T.Mesh|null=null;
+ constructor(private model:T.Group,private role:string,private resources:GearResources){}
+ update(actor:TurnActor,appearance?:EquipmentAppearance){
+  let sameSets=actor.setBonuses.length===this.lastSets.length;for(let i=0;sameSets&&i<this.lastSets.length;i++)sameSets=actor.setBonuses[i]===this.lastSets[i];
+  const e=actor.equipment,o=this.lastEquipment;if(this.key&&sameSets&&appearance===this.lastAppearance&&e.weapon===o.weapon&&e.outfit===o.outfit&&e.charm===o.charm&&e.relic===o.relic)return;
+  this.lastEquipment={...e};this.lastSets=[...actor.setBonuses];this.lastAppearance=appearance;
+  const key=JSON.stringify([actor.equipment,actor.setBonuses,appearance]);if(key===this.key)return;this.clear();this.key=key;
   // Built-in role props remain available in the immutable before model; here loadouts own the hands.
   for(const name of ['ladle','wand','lantern','satchel']){const o=this.model.getObjectByName(`${this.role}_${name}`);if(o)o.visible=false}
   this.model.traverse(o=>{if(o.name.includes('armR_flask'))o.visible=false});
-  for(const [slot,id] of Object.entries(actor.equipment)){const item=ITEM_BY_ID[id!];if(!item)continue;const p=createPiece(item,this.role);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
+  for(const [slot,value] of Object.entries(appearance??actor.equipment)){const item=typeof value==='string'?ITEM_BY_ID[value]:value;const id=item?.id;if(!item)continue;const p=this.resources.acquire(item,this.role);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
    const parent=this.model.getObjectByName(slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`)??this.model;parent.add(p.group);this.pieces.push(p);
    if(slot==='outfit'){
     // Tint the original garment consistently while preserving fur/face vertex color.
@@ -77,7 +92,7 @@ export class GearAttachments{
   if(actor.setBonuses.length){const count=Math.max(...actor.setBonuses.map(x=>Number(x.split(':')[1]))),material=new T.MeshBasicMaterial({color:actor.role==='witch'?'#bea1ed':actor.role==='alchemist'?'#9bd9b4':'#edc57d',transparent:true,opacity:.22,depthWrite:false});this.aura=new T.Mesh(new T.TorusGeometry(.42,.012,5,count===3?6:32),material);this.aura.rotation.x=Math.PI/2;this.aura.position.y=.09;this.model.add(this.aura)}
  }
  animate(time:number){if(this.aura)this.aura.rotation.z=time*.22;for(const p of this.pieces)if(p.group.name.includes('gear_r-'))p.group.rotation.z=Math.sin(time*1.2)*.08}
- private clear(){for(const p of this.pieces){p.group.removeFromParent();p.geometry.dispose();p.material.dispose()}this.pieces=[];if(this.aura){this.aura.removeFromParent();this.aura.geometry.dispose();(this.aura.material as T.Material).dispose();this.aura=null}}
+ private clear(){for(const p of this.pieces){p.group.removeFromParent()}this.pieces=[];if(this.aura){this.aura.removeFromParent();this.aura.geometry.dispose();(this.aura.material as T.Material).dispose();this.aura=null}}
  dispose(){this.clear()}
 }
 export function gearAccent(actor:TurnActor|undefined):string|undefined{if(!actor)return;const item=ITEM_BY_ID[actor.equipment.weapon??''];return item&&['Legendary','Epic'].includes(item.rarity)?rarity[item.rarity]:undefined}

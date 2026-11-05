@@ -1,23 +1,26 @@
 import { TURN_CONFIG as C, HEROES } from '../turn/config';
-import type { Hero, TurnBattle, TurnChoice, TurnOptions } from '../turn/types';
+import type { CardRpgCombat, Hero, TurnBattle, TurnChoice, TurnOptions } from '../turn/types';
 import { GEAR_SLOTS, ITEM_BY_ID, SQUAD_ITEMS, type GearSlot, type Loadout } from './catalog';
 import { applyEquipment, bestLoadouts, initialLoadout, startingInventory, itemScore, gearBonuses } from './equipment';
 export type GearMode='off'|'starter'|'high';
 export type ConsumableId='healTonic'|'shieldBiscuit'|'quickenYarn'|'cleanseTea'|'ultimateTreat';
 export type RunCommand={kind:'begin'}|{kind:'equip';hero:Hero;slot:GearSlot;itemId:string|null}|{kind:'loot';itemId:string}|{kind:'continue'}|{kind:'action';choice:TurnChoice};
 export interface SquadRun {
+  cardRpg?: CardRpgCombat;
   stage:'loadout'|'battle'|'loot'|'rest'|'complete';interactive:boolean;gearMode:GearMode;
   inventory:string[];loot:string[];itemsFound:string[];consumables:Record<ConsumableId,number>;
   commands:RunCommand[];nextWave:number|null;
 }
 export function createSquadRun(options:TurnOptions):SquadRun {
   const mode=options.gearMode??'off';
-  return {stage:options.interactive?'loadout':'battle',interactive:!!options.interactive,gearMode:mode,
-    inventory:mode==='off'?[]:mode==='high'?SQUAD_ITEMS.map(i=>i.id):startingInventory(),loot:[],itemsFound:[],
-    consumables:{...C.consumables.counts},commands:[],nextWave:null};
+  const supplies:Record<ConsumableId,number>={...C.consumables.counts};
+  for(const [id,count] of Object.entries(options.cardRpg?.extraSupplies??{}))supplies[id as ConsumableId]+=count;
+  return {...(options.cardRpg ? { cardRpg: JSON.parse(JSON.stringify(options.cardRpg)) as CardRpgCombat } : {}),stage:options.interactive?'loadout':'battle',interactive:!!options.interactive,gearMode:mode,
+    inventory:options.cardRpg?[]:mode==='off'?[]:mode==='high'?SQUAD_ITEMS.map(i=>i.id):startingInventory(),loot:[],itemsFound:[],
+    consumables:{...supplies, healTonic:C.consumables.counts.healTonic+(options.cardRpg?.extraTonics??0)},commands:[],nextWave:null};
 }
 export function outfitParty(b:TurnBattle):void {
-  for(const a of b.actors.filter(a=>a.side==='party')){a.equipment=initialLoadout(a.role as Hero,b.run.gearMode);applyEquipment(a,b.preset,true)}
+  for(const a of b.actors.filter(a=>a.side==='party')){if(b.run.cardRpg){a.cardRpg=b.run.cardRpg.cards[a.role as Hero];a.name=a.cardRpg.name;}a.equipment=b.run.cardRpg?{}:initialLoadout(a.role as Hero,b.run.gearMode);applyEquipment(a,b.preset,true)}
 }
 export function canEquip(b:TurnBattle,hero:Hero,slot:GearSlot,itemId:string|null):boolean {
   if(!['loadout','rest'].includes(b.run.stage)||b.result||!GEAR_SLOTS.includes(slot))return false;

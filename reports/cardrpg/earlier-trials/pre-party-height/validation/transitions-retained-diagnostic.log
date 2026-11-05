@@ -1,0 +1,8 @@
+file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/transition-performance.mjs:20
+   if(!resting.hasScene){await p.screenshot({path:`${out}/failure-${width}.png`});throw Error(`Renderer unavailable in preparation: ${JSON.stringify(resting)}`)}
+                                                                                        ^
+
+Error: Renderer unavailable in preparation: {"hasScene":false,"failure":"3D unavailable — turn combat remains playable.WebGL context lost. Turn controls remain available.◈ Mochi608 HP⚒♜❖✧Ready · Round 13✦ Soot478 HP⚒♜❖✧Ready · Round 13♧ Clover426 HP⚒♜❖✧Ready · Round 13","stage":"rest"}
+    at file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/transition-performance.mjs:20:89
+
+Node.js v24.22.2

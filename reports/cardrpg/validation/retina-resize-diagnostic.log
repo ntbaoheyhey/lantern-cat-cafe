@@ -1,0 +1,143 @@
+{"width":1440,"long":[{"start":6068.39999999851,"duration":71,"stage":"battle"},{"start":22617.699999999255,"duration":53,"stage":"battle"},{"start":28566.099999997765,"duration":54,"stage":"battle"},{"start":40800.300000000745,"duration":50,"stage":"battle"},{"start":42800.300000000745,"duration":75,"stage":"battle"},{"start":49931.599999997765,"duration":52,"stage":"battle"},{"start":50032,"duration":69,"stage":"battle"},{"start":54966.5,"duration":51,"stage":"battle"},{"start":61499.5,"duration":55,"stage":"battle"},{"start":61555.300000000745,"duration":51,"stage":"battle"},{"start":61632.800000000745,"duration":60,"stage":"battle"},{"start":64538.599999997765,"duration":60,"stage":"battle"},{"start":64631.199999999255,"duration":82,"stage":"battle"},{"start":66228.69999999925,"duration":52,"stage":"battle"},{"start":66399.30000000075,"duration":55,"stage":"battle"},{"start":69366,"duration":50,"stage":"battle"},{"start":73876.59999999776,"duration":60,"stage":"battle"},{"start":74028.09999999776,"duration":58,"stage":"battle"},{"start":77011.69999999925,"duration":67,"stage":"battle"},{"start":78815.5,"duration":54,"stage":"battle"}],"contexts":5,"atStart":5,"result":{"winner":"party","turns":148,"rounds":33,"deaths":[],"firstDeath":null,"wavesCleared":3,"fishFound":42,"cause":"The cafe is safe for tonight."}}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: No lifecycle long tasks after loading
++ actual - expected
+
++ [
++   {
++     duration: 71,
++     stage: 'battle',
++     start: 6068.39999999851
++   },
++   {
++     duration: 53,
++     stage: 'battle',
++     start: 22617.699999999255
++   },
++   {
++     duration: 54,
++     stage: 'battle',
++     start: 28566.099999997765
++   },
++   {
++     duration: 50,
++     stage: 'battle',
++     start: 40800.300000000745
++   },
++   {
++     duration: 75,
++     stage: 'battle',
++     start: 42800.300000000745
++   },
++   {
++     duration: 52,
++     stage: 'battle',
++     start: 49931.599999997765
++   },
++   {
++     duration: 69,
++     stage: 'battle',
++     start: 50032
++   },
++   {
++     duration: 51,
++     stage: 'battle',
++     start: 54966.5
++   },
++   {
++     duration: 55,
++     stage: 'battle',
++     start: 61499.5
++   },
++   {
++     duration: 51,
++     stage: 'battle',
++     start: 61555.300000000745
++   },
++   {
++     duration: 60,
++     stage: 'battle',
++     start: 61632.800000000745
++   },
++   {
++     duration: 60,
++     stage: 'battle',
++     start: 64538.599999997765
++   },
++   {
++     duration: 82,
++     stage: 'battle',
++     start: 64631.199999999255
++   },
++   {
++     duration: 52,
++     stage: 'battle',
++     start: 66228.69999999925
++   },
++   {
++     duration: 55,
++     stage: 'battle',
++     start: 66399.30000000075
++   },
++   {
++     duration: 50,
++     stage: 'battle',
++     start: 69366
++   },
++   {
++     duration: 60,
++     stage: 'battle',
++     start: 73876.59999999776
++   },
++   {
++     duration: 58,
++     stage: 'battle',
++     start: 74028.09999999776
++   },
++   {
++     duration: 67,
++     stage: 'battle',
++     start: 77011.69999999925
++   },
++   {
++     duration: 54,
++     stage: 'battle',
++     start: 78815.5
++   }
++ ]
+- []
+
+    at file:///private/tmp/cardrpg-resize-probe.mjs:39:238 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    { start: 6068.39999999851, duration: 71, stage: 'battle' },
+    { start: 22617.699999999255, duration: 53, stage: 'battle' },
+    { start: 28566.099999997765, duration: 54, stage: 'battle' },
+    { start: 40800.300000000745, duration: 50, stage: 'battle' },
+    { start: 42800.300000000745, duration: 75, stage: 'battle' },
+    { start: 49931.599999997765, duration: 52, stage: 'battle' },
+    { start: 50032, duration: 69, stage: 'battle' },
+    { start: 54966.5, duration: 51, stage: 'battle' },
+    { start: 61499.5, duration: 55, stage: 'battle' },
+    { start: 61555.300000000745, duration: 51, stage: 'battle' },
+    { start: 61632.800000000745, duration: 60, stage: 'battle' },
+    { start: 64538.599999997765, duration: 60, stage: 'battle' },
+    { start: 64631.199999999255, duration: 82, stage: 'battle' },
+    { start: 66228.69999999925, duration: 52, stage: 'battle' },
+    { start: 66399.30000000075, duration: 55, stage: 'battle' },
+    { start: 69366, duration: 50, stage: 'battle' },
+    { start: 73876.59999999776, duration: 60, stage: 'battle' },
+    { start: 74028.09999999776, duration: 58, stage: 'battle' },
+    { start: 77011.69999999925, duration: 67, stage: 'battle' },
+    { start: 78815.5, duration: 54, stage: 'battle' }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

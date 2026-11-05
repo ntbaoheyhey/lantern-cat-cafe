@@ -1,0 +1,27 @@
+2026-11-05T18:40:03.969Z pw:browser <launching> /Users/bao/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --use-angle=metal --user-data-dir=/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/playwright_chromiumdev_profile-DFmYxl --remote-debugging-pipe --no-startup-window
+2026-11-05T18:40:03.971Z pw:browser <launched> pid=4041
+2026-11-05T18:40:04.398Z pw:browser [pid=4041][err] [4049:924329:1106/014004.398349:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.399Z pw:browser [pid=4041][err] [4049:924386:1106/014004.398629:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.400Z pw:browser [pid=4041][err] [4049:924329:1106/014004.400115:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.400Z pw:browser [pid=4041][err] [4049:924386:1106/014004.400176:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.400Z pw:browser [pid=4041][err] [4049:924329:1106/014004.400517:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.400Z pw:browser [pid=4041][err] [4049:924386:1106/014004.400567:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.400Z pw:browser [pid=4041][err] [4049:924329:1106/014004.400905:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.401Z pw:browser [pid=4041][err] [4049:924386:1106/014004.400951:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.401Z pw:browser [pid=4041][err] [4049:924329:1106/014004.401045:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:04.401Z pw:browser [pid=4041][err] [4049:924386:1106/014004.401090:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+2026-11-05T18:40:15.675Z pw:browser [pid=4041] <gracefully close start>
+2026-11-05T18:40:15.682Z pw:browser [pid=4041][err] [4041:924327:1106/014015.682031:ERROR:base/process/process_mac.cc:45] task_policy_set TASK_CATEGORY_POLICY: (os/kern) invalid argument (4)
+2026-11-05T18:40:15.682Z pw:browser [pid=4041][err] [4041:924327:1106/014015.682049:ERROR:base/process/process_mac.cc:90] task_policy_set TASK_SUPPRESSION_POLICY: (os/kern) invalid argument (4)
+2026-11-05T18:40:15.781Z pw:browser [pid=4041] <process did exit: exitCode=0, signal=null>
+2026-11-05T18:40:15.781Z pw:browser [pid=4041] starting temporary directories cleanup
+2026-11-05T18:40:15.788Z pw:browser [pid=4041] finished temporary directories cleanup
+2026-11-05T18:40:15.788Z pw:browser [pid=4041] <gracefully close end>
+file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/transition-performance.mjs:20
+   if(!resting.hasScene){await p.screenshot({path:`${out}/failure-${width}.png`});throw Error(`Renderer unavailable in preparation: ${JSON.stringify(resting)}`)}
+                                                                                        ^
+
+Error: Renderer unavailable in preparation: {"hasScene":false,"failure":"3D unavailable — turn combat remains playable.WebGL context lost. Turn controls remain available.◈ Mochi608 HP⚒♜❖✧Ready · Round 13✦ Soot478 HP⚒♜❖✧Ready · Round 13♧ Clover426 HP⚒♜❖✧Ready · Round 13","stage":"rest"}
+    at file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/transition-performance.mjs:20:89
+
+Node.js v24.22.2

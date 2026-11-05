@@ -1,0 +1,262 @@
+[
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "test-delivery",
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "exit": 0,
+    "seconds": 49.75,
+    "date": "2026-11-05T19:12:38.774867+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "typecheck-delivery",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exit": 0,
+    "seconds": 8.7,
+    "date": "2026-11-05T19:12:47.472684+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "lint-delivery",
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "exit": 0,
+    "seconds": 8.23,
+    "date": "2026-11-05T19:12:55.707216+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "build-delivery",
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 9.33,
+    "date": "2026-11-05T19:13:05.033780+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "isolation-build-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-build.mjs"
+    ],
+    "exit": 0,
+    "seconds": 1.17,
+    "date": "2026-11-05T19:13:06.202104+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "isolation-check-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 16.41,
+    "date": "2026-11-05T19:13:22.615959+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "e2e-delivery",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "test:e2e",
+      "--workers=2"
+    ],
+    "exit": 0,
+    "seconds": 229.44,
+    "date": "2026-11-05T19:17:12.062013+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "offline-path-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/path-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 13.07,
+    "date": "2026-11-05T19:17:25.134452+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "offline-commands-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/commands-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 5.99,
+    "date": "2026-11-05T19:17:31.121728+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "fallback-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/fallback-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 5.37,
+    "date": "2026-11-05T19:17:36.491098+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "meta-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/meta-inspect.mjs"
+    ],
+    "exit": 0,
+    "seconds": 12.41,
+    "date": "2026-11-05T19:17:48.899486+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "transitions-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/transition-performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 39.2,
+    "date": "2026-11-05T19:18:28.097279+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "layout-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/inspect.mjs"
+    ],
+    "exit": 0,
+    "seconds": 7.0,
+    "date": "2026-11-05T19:18:35.096765+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "lifecycle-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/lifecycle-performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 240.02,
+    "date": "2026-11-05T19:22:35.117481+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "performance-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 392.39,
+    "date": "2026-11-05T19:29:07.507614+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "performance-software-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 30.19,
+    "date": "2026-11-05T19:29:37.701465+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "cadence-control",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/cadence-control.mjs"
+    ],
+    "exit": 0,
+    "seconds": 16.03,
+    "date": "2026-11-05T19:29:53.761774+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "preview-lifetime",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/preview-lifetime-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 5.19,
+    "date": "2026-11-05T19:29:58.949566+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "retina-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 56.55,
+    "date": "2026-11-05T19:30:55.502417+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "layout-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/inspect.mjs"
+    ],
+    "exit": 0,
+    "seconds": 7.1,
+    "date": "2026-11-05T19:31:02.603986+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "art-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/skills-capture.mjs"
+    ],
+    "exit": 0,
+    "seconds": 92.73,
+    "date": "2026-11-05T19:32:35.333243+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "distinctness-effects",
+    "command": [
+      "/tmp/cardrpg-presentation-py/bin/python",
+      "tools/cardrpg-demo/distinctness.py",
+      "reports/cardrpg/art",
+      "effects"
+    ],
+    "exit": 0,
+    "seconds": 3.72,
+    "date": "2026-11-05T19:32:39.049545+00:00"
+  },
+  {
+    "source": "79cdc7b9a2f26a48589ccedd0b4aab7c2b3199d8",
+    "check": "distinctness-signatures",
+    "command": [
+      "/tmp/cardrpg-presentation-py/bin/python",
+      "tools/cardrpg-demo/distinctness.py",
+      "reports/cardrpg/art",
+      "signatures"
+    ],
+    "exit": 0,
+    "seconds": 1.71,
+    "date": "2026-11-05T19:32:40.761514+00:00"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "time": "2026-11-05T17:58:37.529984+00:00",
+  "request": "B #11",
+  "contractVersion": "0.4.0",
+  "change": "Explicit .ts type-only import for Rarity and Stats; no runtime, API, data or balance changes.",
+  "sourceSha256": "db3fb5020d5bd98e8be352fdbc7b55049800952705bb8c6928977bc907845124",
+  "checks": [
+    {
+      "command": "node scripts/check-deno-imports.mjs",
+      "exitCode": 0,
+      "output": "Deno import guard: 18 functions clean"
+    },
+    {
+      "command": "pnpm --filter @taskbar-hero/game-rules typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter @taskbar-hero/supabase-tests exec vitest run src/deno-imports.test.ts",
+      "exitCode": 0,
+      "testFilesPassed": 1,
+      "testsPassed": 4,
+      "durationSeconds": 1.78
+    }
+  ],
+  "scope": "Local import-graph guard and TypeScript only; no Edge Function deployment or Deno runtime execution."
+}

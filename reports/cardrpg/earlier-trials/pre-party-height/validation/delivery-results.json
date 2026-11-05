@@ -1,0 +1,145 @@
+[
+  {
+    "check": "test-delivery",
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "exit": 0,
+    "seconds": 51.32,
+    "date": "2026-11-05T18:47:48.175566+00:00"
+  },
+  {
+    "check": "typecheck-delivery",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exit": 0,
+    "seconds": 8.73,
+    "date": "2026-11-05T18:47:56.907118+00:00"
+  },
+  {
+    "check": "lint-delivery",
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "exit": 0,
+    "seconds": 8.25,
+    "date": "2026-11-05T18:48:05.161567+00:00"
+  },
+  {
+    "check": "build-delivery",
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 8.97,
+    "date": "2026-11-05T18:48:14.133110+00:00"
+  },
+  {
+    "check": "isolation-build-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-build.mjs"
+    ],
+    "exit": 0,
+    "seconds": 1.12,
+    "date": "2026-11-05T18:48:15.248948+00:00"
+  },
+  {
+    "check": "isolation-check-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/isolation-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 15.75,
+    "date": "2026-11-05T18:48:30.998444+00:00"
+  },
+  {
+    "check": "e2e-delivery",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "test:e2e",
+      "--workers=2"
+    ],
+    "exit": 0,
+    "seconds": 229.45,
+    "date": "2026-11-05T18:52:20.444723+00:00"
+  },
+  {
+    "check": "offline-path-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/path-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 18.42,
+    "date": "2026-11-05T18:52:38.870033+00:00"
+  },
+  {
+    "check": "offline-commands-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/commands-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 5.99,
+    "date": "2026-11-05T18:52:44.858193+00:00"
+  },
+  {
+    "check": "fallback-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/fallback-check.mjs"
+    ],
+    "exit": 0,
+    "seconds": 4.45,
+    "date": "2026-11-05T18:52:49.309501+00:00"
+  },
+  {
+    "check": "meta-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/meta-inspect.mjs"
+    ],
+    "exit": 0,
+    "seconds": 12.36,
+    "date": "2026-11-05T18:53:01.665989+00:00"
+  },
+  {
+    "check": "transitions-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/transition-performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 41.55,
+    "date": "2026-11-05T18:53:43.213923+00:00"
+  },
+  {
+    "check": "performance-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 387.61,
+    "date": "2026-11-05T19:00:10.825129+00:00"
+  },
+  {
+    "check": "performance-software-delivery",
+    "command": [
+      "node",
+      "tools/cardrpg-demo/performance.mjs"
+    ],
+    "exit": 0,
+    "seconds": 27.67,
+    "date": "2026-11-05T19:00:38.493038+00:00"
+  }
+]

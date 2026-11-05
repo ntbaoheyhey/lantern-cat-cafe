@@ -1,0 +1,27 @@
+{"width":1440,"long":[{"start":45014.5,"duration":68,"stage":"battle"}],"contexts":5,"atStart":5,"result":{"winner":"party","turns":148,"rounds":33,"deaths":[],"firstDeath":null,"wavesCleared":3,"fishFound":42,"cause":"The cafe is safe for tonight."}}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: No lifecycle long tasks after loading
++ actual - expected
+
++ [
++   {
++     duration: 68,
++     stage: 'battle',
++     start: 45014.5
++   }
++ ]
+- []
+
+    at file:///Users/bao/taskbar-hero-cardrpg-int/tools/cardrpg-demo/lifecycle-performance.mjs:38:322 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [ { start: 45014.5, duration: 68, stage: 'battle' } ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
