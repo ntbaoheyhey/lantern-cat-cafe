@@ -118,9 +118,14 @@ export class TurnScene {
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
       }
+      // A spare preview has never drawn its equipped actor. Prepare that
+      // material variant too, before exposing it in the first item picker.
+      const initial={...this.view(),frame:null};
+      await Promise.all(initial.actors.map(a=>this.ensure(a,initial.boss)));if(this.disposed)return;
+      for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
       this.scene.add(warm);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
       const target=new T.WebGLRenderTarget(2,2);this.renderer.setRenderTarget(target);this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);target.dispose();
-      this.scene.remove(warm);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
+      this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }
   private makeGlow():T.Texture {
