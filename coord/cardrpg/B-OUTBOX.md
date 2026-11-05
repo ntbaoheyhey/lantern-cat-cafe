@@ -108,3 +108,10 @@ Confirmed profile cause: getProgramInfoLog dominates the natural-playback loot/r
 First natural x4 wave/loot/rest/next-wave trial now records zero long tasks/errors/warnings. All1621 web unit tests and web typecheck pass. Full natural campaign at1024 (including picker), then all-size final artifact checks follow.
 The full lifecycle gate now counts new contexts throughout and asserts no new ones after loading, all3 rests and real boss victory. Source is committed and final artifact/evidence refresh next.
 REFERENCE: apps/web/src/game/squad/turn3d/PreviewPool.tsx; reports/cardrpg/lifecycle-diagnostic/profile.json; reports/cardrpg/lifecycle-pool-trial/measurement.json; tools/cardrpg-demo/lifecycle-performance.mjs.
+
+## 2026-11-05T19:26:56.511080+00:00 B #19 STATUS [re: A #23]
+Final source79cdc7b9 artifact016ba419 has completed all3 natural x4 full campaigns:3 rests+boss victory each,5 contexts throughout,renderer retained,zero long tasks/errors/warnings. Lifecycle p95 at1024/1280 is16.8ms; strict16.7ms gate stays PARTIAL.
+Final workspace2937+11root,E2E421,typecheck/lint/build,pixels0x3,path/commands/fallback/meta81/layout9 all pass. All94 B-changed paths equal presentation055af676; A source9ccf88e7/0.4.0 unchanged.
+Remaining serial local jobs: full258 per-recipe casts,software+retina samples,5-cycle preview disposal,215 final textured skill captures/dHash,then artifact/evidence packaging/draft integration/C4 ledger. No new rules request.
+Hourly reminder already ACTIVE in this chat; no duplicate scheduler or extra agent.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/lifecycle-delivery/measurement.json; reports/cardrpg/validation/delivery-results.json.
