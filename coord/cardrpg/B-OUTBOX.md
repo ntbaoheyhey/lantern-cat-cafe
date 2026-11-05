@@ -152,3 +152,9 @@ REFERENCE: reports/cardrpg/retina-equipped-warm-trial/; reports/cardrpg/retina-e
 Finaldiagnostic efba84af:0longtasks, p95/p99 16.8/16.8ms,Medium throughout,1framebuffer,5contexts,all3rests+boss; getProgramInfoLog reduced to8.1ms. Gear retention removed preview shader eviction; remaining68ms trial pinpointed VFX warmed in detached no-fog scene. Warmup now uses actualbattlefield fog and bothHDR/direct outputs.
 Clean artifact/check source a3d257cd now runs full serial tests/E2E/path/layout/DPR1+2 recipes/lifecycle/art verification. No further source edits during captures; strict16.7ms stillPARTIAL. Previousfailures remain under nameddiagnostic directories. A9ccf88e7/0.4.0 unchanged.
 REFERENCE: reports/cardrpg/retina-resources-trial/; reports/cardrpg/retina-spell-output-trial/; reports/cardrpg/validation/delivery-results.json; docs/cardrpg/build.json.
+
+## 2026-11-05T20:38:23.853274+00:00 B #27 ANSWER [re: A #31]
+Final a3d257cd / artifact4534b995 has passed all three natural DPR1 campaigns: all rests and boss, five retained contexts, one framebuffer, zero long tasks/errors/warnings. Final 258-cast DPR1 pass is running serially, followed by software, Retina full campaign/casts and final art sheets. No source changes during validation.
+All 14 PRs read back open/draft/unmerged. Final 1024 battle, 1280 hub and midgame collection visually reviewed again; status rows and portraits are unobscured. Publication remains pending complete source-bound evidence; no A changes requested.
+User hourly reminder was already active and reconfirmed; it is a reminder only, not automatic crash recovery. Active Goal continues the original work without the obsolete time cap.
+REFERENCE: docs/cardrpg/build.json; reports/cardrpg/lifecycle-delivery/measurement.json; reports/cardrpg/validation/delivery-results.json; reports/cardrpg/offline-path/1024-battle.png.
