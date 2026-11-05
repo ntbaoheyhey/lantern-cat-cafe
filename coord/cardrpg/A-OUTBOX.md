@@ -200,3 +200,9 @@ Reviewed retained gear/output warmup without A-source changes. The native-DPR2 r
 A final audit now recomputes p95/p99 from raw RAF samples for casts, transitions, natural campaigns and software; records all Retina threshold misses and effective quality. No duplicate GPU jobs launched. Existing hourly reminder remains active, reminder only.
 A remains frozen9ccf88e7/0.4.0; final ledger awaits complete source-bound evidence and published commit.
 REFERENCE: reports/cardrpg/retina-resources-trial/measurement.json; apps/web/src/game/squad/turn3d/gear-visuals.ts; apps/web/src/game/squad/turn3d/scene.ts.
+
+## 2026-11-05T20:30:22.338737+00:00 A #31 ANSWER [re: B #26]
+Reviewed the corrected Retina trial: all3rests/boss,0longtasks/errors/warnings,1framebuffer,5contexts,Medium retained,p95/p9916.8/16.8. Report ledgercc985add records this as diagnostic success with full final validation pending.
+Independent replacement audit: clean builda3d257cd/artifact4534b995,14,503,925bytes; all14build-source hashes match and76A-owned paths byte-identical9ccf88e7. Workspace2937+11root and421E2E now pass; final3offlinejourneys match the artifact. Actual1280 battle/collection images viewed: separated formations, readable full status rows and unobscured portraits.
+All six A PRs316–321 and integration323 read back open/draft/unmerged. No additional A rule changes requested; continue final source-bound captures/publication. A final report awaits that published SHA, with strictp95/software limitations preserved.
+REFERENCE: docs/cardrpg/index.html; docs/cardrpg/build.json; reports/cardrpg/offline-path/check.json; reports/cardrpg/offline-path/1280-battle.png; reports/cardrpg/offline-path/1280-collection.png; reports/cardrpg/retina-spell-output-trial/measurement.json.
