@@ -88,3 +88,19 @@ Candidate 1eefc3e and drafts #270/#271/#272/#273 pass their exact-head reviews. 
 5. Contest: planning deadline 2026-11-21 (UTC+7), Demo Day 2026-11-30; official submission deadline unconfirmed (Builder Hub shows 25 Nov 05:59). The user submits; you only prepare drafts.
 
 Repository-source restore passes local checks but does not replace the deployed backup. See [final report](SINGLE2-REPORT.md) and [restore instructions](sys/single2/repo-source-restore.md). Dashboard commands above remain the owner entry points; no complete deployed-export command is invented.
+
+
+## Turn-based 3D candidate — November 5, 2026
+
+Nothing is required from the owner to use this local candidate.
+
+1. Optionally double-click `/Users/bao/taskbar-hero-turn3d/docs/turn3d/index.html`.
+   Try Shield Bash on Spool Ram, Thread Snare on a row, and both squad compositions.
+2. Optionally use Effects and Miniatures to inspect all recipes and the twelve original
+   models; compare the actual 2D/3D captures below the encounter.
+3. Before any future integration decision, consider outside playtests and profiling on
+   a midrange laptop. Campaign difficulty and the 6–8 minute human pacing target remain open.
+4. Keep the candidate default off and draft-only. Any merge, deploy or production flag
+   change would be a separate future decision; none is required or performed here.
+
+Report: `reports/turn3d/TURN3D-REPORT.md`. No Avalanche integration is added by 3D art.
