@@ -1,4 +1,6 @@
 /** Local-only turn format. No verified replay, save, economy or renderer dependencies. */
+import type { Loadout } from '../gear/catalog';
+import type { GearMode, SquadRun } from '../gear/run';
 import type { Hero, Preset, Role, Side, StatusKind } from '../types';
 export type { Hero, Preset, Role, Side, StatusKind } from '../types';
 export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
@@ -6,6 +8,7 @@ export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
 export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
 export interface TurnStatus { kind: StatusKind; source: string; rounds: number; strength: number; appliedRound: number }
 export interface TurnActor {
+  equipment: Loadout; setBonuses: string[];
   id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
   hp: number; maxHp: number; shield: number; shieldRounds: number; shieldAppliedRound: number; charge: number;
   attack: number; defense: number; initiative: number; crit: number; auto: boolean;
@@ -16,7 +19,7 @@ export interface TurnSkill {
   id: string; name: string; description: string; target: TurnTargetRule;
   power: number; cooldown: number; chargeCost: number; heal?: number; shield?: number;
   status?: StatusKind; duration?: number; delay?: number; hits?: number; cleanse?: boolean;
-  heavy?: boolean; melee?: boolean; icon: string;
+  heavy?: boolean; melee?: boolean; consumable?: boolean; orderSteps?: number; chargeGrant?: number; icon: string;
 }
 export interface TurnIntent {
   actorId: string; skillId: string; targetId: string; targetIds: string[];
@@ -33,7 +36,7 @@ export interface TurnResult {
 export type TurnEventKind = 'round_start' | 'turn_start' | 'action_start' | 'travel' | 'damage' | 'heal'
   | 'shield' | 'status_apply' | 'status_expire' | 'interrupt' | 'passive' | 'death'
   | 'intent' | 'wave_clear' | 'wave_start' | 'boss_phase' | 'victory' | 'defeat'
-  | 'turn_end' | 'charge' | 'delay' | 'spawn' | 'fizzle' | 'snapshot';
+  | 'loot' | 'rest' | 'gear_proc' | 'turn_end' | 'charge' | 'delay' | 'spawn' | 'fizzle' | 'snapshot';
 export interface TurnEvent {
   version: 3; seq: number; turn: number; round: number; actionId: number; beat: number;
   type: TurnEventKind; actorId: string; skillId: string; targetIds: string[];
@@ -43,14 +46,15 @@ export interface TurnEvent {
 }
 export interface TurnBattle {
   version: 3; seed: number; rng: number; encounter: TurnEncounter; preset: Preset;
+  run: SquadRun;
   actors: TurnActor[]; queue: RoundSlot[]; round: number; acted: string[]; turn: number;
   activeId: string | null; phase: TurnPhase; selected: TurnChoice | null;
   events: TurnEvent[]; history: TurnChoice[]; intents: Record<string, TurnIntent>;
   wave: number; bossPhase: number; bossRounds: number; bossCountdown: number;
   settledWaves: number[]; fishFound: number; deaths: string[]; result: TurnResult | null;
-  totals: Record<string, { damage: number; healing: number; shielding: number }>;
+  totals: Record<string, { damage: number; healing: number; shielding: number; taken: number }>;
 }
-export interface TurnOptions { seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number }
+export interface TurnOptions { seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number; gearMode?: GearMode; interactive?: boolean }
 
 /** Stable integration API implemented in engine.ts:
  * createTurnBattle(options?), getTimeline(b), startTurn(b): TurnActor|null,

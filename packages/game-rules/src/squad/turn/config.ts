@@ -23,11 +23,16 @@ export const TURN_CONFIG = {
     exposedRounds: 2, exposedMultiplier: 1.6, bindRounds: 3,
     addsEvery: 4, addsPerWave: 2, maxEnemies: 8, threadSlot: 7, addSlots: [2, 3, 1, 4, 5, 6],
     cycleOne: ['yarnAttack', 'bindThread'], cycleTwo: ['yarnAttack', 'bindThread', 'crossSweep'] },
-  gear: { pierceMultiplier: 0.5, afterhealShield: 20 },
+  equipment: { statScale: 1, maxCooldownReduction: 1, minUltimateCost: 70, costReduction: 15,
+    chainPower: .5, neighborShield: 24, afterheal: 20, extraBurnRounds: 1, renew: 18,
+    extraBreak: 15, vampiric: 12, actionCharge: 6, thorns: 10, maxStatusChance: .35,
+    sets: { hearthDefense: 5, hearthShield: .12, moonAttack: 6, moonCrit: .03, mossHealing: .15, mossHp: 25 } },
+  consumables: { counts: { healTonic: 2, shieldBiscuit: 2, quickenYarn: 2, cleanseTea: 2, ultimateTreat: 1 },
+    tonic: 150, biscuit: 80, quickenSteps: 2, tea: 40, treat: 40 },
   localFish: { wave: 9, boss: 15 },
   presets: {
-    hearthkeepers: { name: 'Hearthkeepers', hp: 1.12, attack: 1, healing: 1.12, shield: 1.15, initiative: 0, gear: 'last-light' },
-    lanternbreakers: { name: 'Lanternbreakers', hp: 0.95, attack: 1.12, healing: 1, shield: 1, initiative: 1, gear: 'needle-lantern' },
+    hearthkeepers: { name: 'Hearthkeepers', hp: 1.12, attack: 1, healing: 1.12, shield: 1.15, initiative: 0 },
+    lanternbreakers: { name: 'Lanternbreakers', hp: 0.95, attack: 1.12, healing: 1, shield: 1, initiative: 1 },
   },
   stats: {
     guardian: { hp: 610, attack: 52, defense: 42, initiative: 8, crit: 0.08 },
@@ -52,8 +57,17 @@ const skill = (id: string, target: TurnSkill['target'], values: Partial<TurnSkil
   target, power: 1, cooldown: 0, chargeCost: 0, icon: ABILITIES[id]!.shape, ...values,
 });
 
+export const CONSUMABLE_SKILLS:Record<string,TurnSkill>={
+  healTonic: { id:'healTonic',name:'Warm Milk Tonic',description:`Restore ${TURN_CONFIG.consumables.tonic} HP. Uses this cat's action.`,target:'ally',power:0,cooldown:0,chargeCost:0,heal:TURN_CONFIG.consumables.tonic,icon:'flask',consumable:true },
+  shieldBiscuit: { id:'shieldBiscuit',name:'Shield Biscuit',description:`Grant ${TURN_CONFIG.consumables.biscuit} shield for 2 rounds. Uses an action.`,target:'ally',power:0,cooldown:0,chargeCost:0,shield:TURN_CONFIG.consumables.biscuit,icon:'wall',consumable:true },
+  quickenYarn: { id:'quickenYarn',name:'Quicken Yarn',description:`Move a pending ally ${TURN_CONFIG.consumables.quickenSteps} places earlier this round; once per recipient per round.`,target:'ally',power:0,cooldown:0,chargeCost:0,orderSteps:TURN_CONFIG.consumables.quickenSteps,icon:'snare',consumable:true },
+  cleanseTea: { id:'cleanseTea',name:'Clearleaf Tea',description:`Cleanse harmful effects and restore ${TURN_CONFIG.consumables.tea} HP. Uses an action.`,target:'ally',power:0,cooldown:0,chargeCost:0,heal:TURN_CONFIG.consumables.tea,cleanse:true,icon:'moss',consumable:true },
+  ultimateTreat: { id:'ultimateTreat',name:'Starlight Treat',description:`Grant ${TURN_CONFIG.consumables.treat} ultimate charge. Uses an action.`,target:'ally',power:0,cooldown:0,chargeCost:0,chargeGrant:TURN_CONFIG.consumables.treat,icon:'spark',consumable:true },
+};
+
 /** Three basics and nine activated hero skills; enemy identities match the comparison engine. */
 export const TURN_SKILLS: Record<string, TurnSkill> = {
+  ...CONSUMABLE_SKILLS,
   guardianBasic: skill('guardianBasic', 'enemy', { melee: true }),
   witchBasic: skill('witchBasic', 'enemy'),
   alchemistBasic: skill('alchemistBasic', 'enemy'),

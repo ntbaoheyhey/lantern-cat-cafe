@@ -56,7 +56,7 @@ export class TurnController {
   gallery(id:string){
     const fixture=createEffectFixture(id);this.mode='effects';this.galleryId=id;this.battle=fixture.battle;this.presenter.reset(fixture.initial);while(this.presenter.busy)this.presenter.skip();
     const type=['status_apply','status_expire','death','wave_clear','victory','defeat'].includes(id)?id:'passive';
-    const special=fixture.events.find(e=>e.type===type&&(type!=='passive'||e.skillId===id));
+    const special=fixture.events.find(e=>(id==='relicProc'?e.type==='gear_proc':id==='thorns'?e.type==='damage'&&e.skillId==='thorns':e.type===type)&&(type!=='passive'||e.skillId===id));
     if(special){const cue=createActionPlan([special]);cue.events=[];this.captureFrame=sampleActionPlan(cue,0);}
     else this.captureFrame=null;
     this.presenter.push(fixture.events);this.galleryWait=0;this.running=true;this.presenter.paused=false;this.fixedTime=undefined;this.notify();

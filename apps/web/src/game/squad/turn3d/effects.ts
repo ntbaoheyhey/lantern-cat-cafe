@@ -10,6 +10,13 @@ const recipe=(name:string,color:string,shape:string,options:Partial<EffectRecipe
 
 /** Authored choreography, not damage logic. Milliseconds here never advance rules. */
 export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
+  healTonic:recipe('Warm Milk Tonic','#ffe4bd','mend',{clip:'cast',shake:0,motifs:['cork-pop','cream-helix','milk-crown','heart-rise','cream-drops']}),
+  shieldBiscuit:recipe('Shield Biscuit','#eebc6e','wall',{clip:'guard',shake:.2,motifs:['biscuit-sigil','crumb-spiral','honey-facets','warm-shell','crumb-dust']}),
+  quickenYarn:recipe('Quicken Yarn','#b7d6ff','thread',{clip:'cast',shake:0,motifs:['unspool','sky-loop','forward-chevron','step-lights','blue-fibres']}),
+  cleanseTea:recipe('Clearleaf Tea','#bcecc9','patch',{clip:'heal-receive',shake:0,motifs:['tea-steam','leaf-helix','clear-ripple','veil-lift','mint-dew']}),
+  ultimateTreat:recipe('Starlight Treat','#ffcaee','storm',{clip:'cast',shake:.1,motifs:['treat-glint','sugar-orbit','five-star','charge-rings','sugar-stars']}),
+  relicProc:recipe('Relic Resonance','#edc888','rally',{clip:'cast',shake:0,duration:[160,140,70,180,250],motifs:['engraved-sigil','relic-orbit','diamond-crown','brass-echo','fine-sparks']}),
+  thorns:recipe('Quilted Return','#dcb080','arrow',{shake:.4,motifs:['stitch-tense','return-needles','sewn-cross','thread-snap','cotton-dust']}),
   guardianBasic:recipe('Hearthblade',gold,'slash',{motifs:['ladle-glint','crescent','star','recoil','gold-dust']}),
   shieldBash:recipe('Shield Bash',gold,'bash',{clip:'special',duration:[360,230,100,240,330],shake:1.5,motifs:['shield-charge','shield-rush','hexagon','stagger','shield-shards']}),
   rally:recipe('Rally',gold,'rally',{clip:'cast',motifs:['paw-sigil','gold-ribbons','shield','salute','guard-dome'],shake:.3}),
@@ -49,7 +56,7 @@ export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
 const kinds:BeatKind[]=['anticipation','travel','impact','reaction','residue'];
 export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
   const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['passive','damage','status_apply','status_expire','death'].includes(e.type))??events[0];
-  const key=first?.type==='action_start'||first?.type==='damage'||first?.type==='passive'?first.skillId:first?.type??'status_apply';
+  const key=first?.type==='action_start'||first?.type==='damage'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
   const data=EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
   let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=data.duration[i]!;const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
     shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?.22:0,

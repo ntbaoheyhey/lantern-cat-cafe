@@ -1,4 +1,6 @@
-import { TURN_KITS, TURN_SKILLS } from './config';
+import { effectiveSkill } from '../gear/equipment';
+import type { ConsumableId } from '../gear/run';
+import { CONSUMABLE_SKILLS, TURN_KITS, TURN_SKILLS } from './config';
 import type { Hero, LegalTurnAction, LegalTurnTarget, TurnActor, TurnBattle, TurnSkill } from './types';
 
 export const living = (a: TurnActor): boolean => a.hp > 0;
@@ -16,7 +18,7 @@ export function affected(b: TurnBattle, source: TurnActor, skill: TurnSkill, tar
   return living(target) ? [target] : [];
 }
 export function skillIds(b: TurnBattle, a: TurnActor): readonly string[] {
-  if (a.side === 'party') return TURN_KITS[a.role as Hero];
+  if (a.side === 'party') return [...TURN_KITS[a.role as Hero], ...Object.keys(CONSUMABLE_SKILLS)];
   const committed = b.intents[a.id]?.skillId;
   return [committed ?? `${a.role}Attack`];
 }
@@ -33,6 +35,7 @@ export function getLegalTargets(b: TurnBattle, skillId: string, actorId: string 
     else if (skill.target === 'self' && source.id !== target.id) reason = 'This skill targets its caster.';
     else if (['self', 'ally', 'allAllies'].includes(skill.target) && source.side !== target.side) reason = 'Choose a living ally.';
     else if (['enemy', 'row', 'allEnemies'].includes(skill.target) && source.side === target.side) reason = 'Choose a living opponent.';
+    else if (skill.orderSteps && (target.id === b.activeId || target.quickenedRound === b.round || b.queue.findIndex(s=>s.actorId===target.id)<=0)) reason = 'Choose a pending ally who can move earlier this round.';
     else if (forced && forced.id !== target.id) reason = `Taunted by ${forced.name}; target ${forced.id}.`;
     return { actorId: target.id, legal: !reason, reason: reason || (skill?.target === 'row' ? `Affects the ${target.row} row.` : 'Legal target.'),
       affectedIds: !reason && source && skill ? affected(b, source, skill, target).map(a => a.id) : [] };
@@ -41,9 +44,12 @@ export function getLegalTargets(b: TurnBattle, skillId: string, actorId: string 
 export function getLegalActions(b: TurnBattle, actorId: string = b.activeId ?? ''): LegalTurnAction[] {
   const a = b.actors.find(a => a.id === actorId);
   if (!a) return [];
-  return skillIds(b, a).map(id => TURN_SKILLS[id]).filter((s): s is TurnSkill => !!s).map(skill => {
+  return skillIds(b, a).map(id => TURN_SKILLS[id]).filter((s): s is TurnSkill => !!s).map(base => {
+    const skill = effectiveSkill(a, base);
     let reason = '';
     if (b.result) reason = 'Battle has finished.';
+    else if (b.run.stage !== 'battle') reason = 'Prepare the party or finish the cafe rest first.';
+    else if (skill.consumable && b.run.consumables[skill.id as ConsumableId] <= 0) reason = 'No uses remaining in this run.';
     else if (!living(a)) reason = 'Actor is defeated.';
     else if (a.id !== b.activeId) reason = 'It is not this actor’s turn.';
     else if (b.phase !== 'choose') reason = b.phase === 'chosen' ? 'An action is already locked.' : 'This turn is not accepting a choice.';

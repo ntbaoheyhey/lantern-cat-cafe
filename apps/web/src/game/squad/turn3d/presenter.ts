@@ -28,7 +28,7 @@ export class TurnPresenter {
     for(const group of groups){const plan=createActionPlan(group);if(group[0]?.actionId===0||!group.some(e=>visible.has(e.type)))plan.duration=0;this.queue.push(plan);
       // Passive and KO follow-ups are derived visual cues. Their events have already
       // resolved in the main action; empty event lists ensure they never apply twice.
-      if(group.some(e=>e.type==='action_start'))for(const e of group.filter(e=>e.type==='passive'||e.type==='death')){
+      if(group.some(e=>e.type==='action_start'))for(const e of group.filter(e=>e.type==='passive'||e.type==='death'||e.type==='gear_proc')){
         const cue=createActionPlan([e]);cue.events=[];this.queue.push(cue);
       }
     }

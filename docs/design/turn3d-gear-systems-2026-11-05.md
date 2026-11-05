@@ -1,0 +1,28 @@
+# A run with builds · sandbox equipment and progression
+2026-11-05 · Candidate, not live. References: packages/game-rules/src/squad/gear/, packages/game-rules/src/squad/turn/, packages/game-rules/src/v2/content/items.ts, packages/game-rules/src/v2/content/rarities.ts, packages/game-rules/src/v2/forge/relic.ts, docs/proposals/rune-skill-system/demo/index.html, docs/design/squad-combat-review-2026-11-05.md.
+
+## A small, complete local loop
+Prepare three cats → inspect enemy intents → play one action per actor per round → choose one of three seeded items after a wave → cafe rest and equipment changes → next wave → Yarn Giant → run summary. All state lives in memory. Restart discards it; copying the seed is the only export affordance. No real items, currency, account progression or rewards are granted.
+
+Each cat has Weapon, Outfit, Charm and Relic slots. Thirty original items comprise eight class pieces per cat and six shared charms/Relics. The catalogue uses the main gear vocabulary Common, Uncommon, Rare, Epic and Legendary, with attack, defense, HP, crit, healing, shield and explicit integer Initiative. Cooldown reduction is measured in whole rounds. A few flask/whisk weapons fit both Witch and Alchemist. Shared instances cannot be equipped by two cats at once.
+
+Every item has one main stat and zero to two affixes. Rare and higher items have exactly one named behavior. Chain shots, neighboring shields, afterheal shields, longer burns, guard cleanses, healing returns, reduced ultimate costs, extra stagger and ultimate charge all affect resolved outcomes. Descriptions print real base values; normal healing/shield and defense bonuses still apply. Three sets have separate two-piece stat bonuses and three-piece behaviors. Auto-equip is a transparent weighted stat heuristic, not a guarantee of the best tactical build; properties and sets remain visible for manual choices.
+
+Equipment derives hero stats from original squad base values each time, rather than multiplying an already-equipped result. Between-wave swaps cannot heal lost HP by toggling an HP item. Dead cats cannot equip. Combat locks equipment until a rest. First Customer changes the next round’s Initiative rank after the owner’s action, never grants another action. Status affixes can add a seeded one-round burn. Cost and reduction caps live in the independent turn configuration.
+
+Five shared consumables are limited per run: Warm Milk Tonic, Shield Biscuit, Quicken Yarn, Clearleaf Tea and Starlight Treat. Each uses the acting cat’s action. Quicken only moves a pending ally and is capped once per recipient per round. Supplies cannot underflow. The rest screen exposes equipment and remaining supplies; the player can reserve them for a dangerous boss intent.
+
+Loot uses an independent hash/seed stream: reading or changing the picker never rerolls damage. Offers are distinct and prefer unowned items. A wave settles once, the run pauses for a valid choice, and a separate Continue command opens the next round/wave. Headless policy experiments choose the first offer; they do not pretend to be human item decisions. High-gear review can already own the full catalogue; a duplicate draft choice grants no new instance.
+
+The summary ranks MVP by damage + healing + shielding, and lists each cat’s damage dealt/taken, healing, shielding, rounds/actions and items found. This is a transparent contribution score, not an assertion that support or tanking has one objectively correct value.
+
+## Presentation and future mapping
+The engine owns choices, status application, healing, damage, gear procs and order changes. The renderer consumes actor snapshots including equipped IDs and active sets. Sockets on the head, back, hands, neck and tail hold original meshes; weapon silhouettes, fabric palettes, charms, Relic glow and set accents all update from that snapshot. A preview uses a copied actor with a candidate item, never mutates the real loadout until Equip is chosen. The same renderer is used for battle, item previews and the offline viewer.
+
+Version-3 commands record preparation, equipment changes, accepted combat actions, loot picks and continuation. Replaying a run rebuilds its events and final state from seed/options and commands. This is a local development replay, not a signed or server-verified record. Debug grants and externally mutated fixtures are not ordinary replay claims.
+
+The existing game has nine gear slots, separate immutable item IDs, inventory protection, forge/craft systems and Relic metadata/rarity IDs. This prototype deliberately has its own four-slot shape and own tunables. A later approved integration could map Weapon/Outfit to existing equipment categories, Charm to accessories, and named skill modifications to a versioned rune/socket schema. That would require an explicit adapter, server-authoritative validation, save-version handling and reward budgets. None is implemented here.
+
+The production Relic token vocabulary has four pinned tiers (Common, Rare, Epic, Legendary); ordinary gear has five. Prototype Relics use only existing Relic tier names. “Avalanche Relic” on Snowmelt Hearth is a flavor label. **This adds no Avalanche integration by itself**, no wallet access, minting, contracts, database writes, migrations, forge costs, market changes or production inventory reads. The rune proposal is an ideas reference, not an economy specification adopted by this task.
+
+All entry points remain behind default-off squadCombat and squadCombat3d, guest/local only. A separate squadGear flag is unnecessary because the entire round runtime is already isolated. Future integration work is outside this draft stack.
