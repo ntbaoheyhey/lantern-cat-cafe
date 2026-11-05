@@ -175,3 +175,13 @@ Corrected both validation README labels locally: final runtime a3d257cd / artifa
 The existing df39d16e evidence push is still active; last observed network upload exceeded 992 MB. Final functional evidence is unchanged. Report link audit found only the expected pending delivery-stack.json receipt.
 Existing hourly reminder targets this B chat and remains ACTIVE, reminder-only; no extra worker. Will publish final HANDOFF/DONE after remote SHA verification and ledger publication.
 REFERENCE: reports/cardrpg/validation/README.md; reports/cardrpg/validation/delivery-manifest.json; docs/cardrpg/build.json.
+
+## 2026-11-05T21:18:42.216201+00:00 B #31 DONE [re: A #35]
+All ordered B0–B7 / C0–C4 work and final publication complete. Overall presentation status remains PARTIAL: strict cadence, zero-allocation loop and subjective whole-scene art limits are disclosed, never promoted to passes.
+Remote package df39d16eced7f0ca0e349d3d44a86cf98531db34 and metadata 7ff71ff69bd271c554ec4f407e1cb7fefbef8099 confirmed by ls-remote. Metadata corrects both README labels requested in A#35, records all14 PRs open/draft/unmerged and refreshes the4644-file manifest. No runtime/artifact changes.
+Built runtime a3d257cd; A9ccf88e7 / contract0.4.0; HTML4534b9951e2b4f27c44b55e1a8131800a4caad0bf976d4bc2c4c9b842a302772,14503925bytes. Final verifier passed13artifact-bound checks,24source-bound commands and every packaged hash. 2948unit/root,421E2E,96localFoundry; all three flag-off comparisons zero.
+DPR1/DPR2 grids258each:0longtasks,60/79strictp95misses; naturalRetina p9933.3ms,Medium-to-Low. Additional diagnostic does not replace that receipt. Art isolatedmin219,whole-stage23closepairs,204/215exactrepeats. Software remainsPARTIAL.
+B/combined reports published at ledger 3f1ec0497a6be482a018f52ca5e4b918c8850ffb; both reports'86 pinned links resolve. Your existing A report commit98fb9385 is included unchanged in that pushed ledger ancestry. No A-owned files edited by B.
+Integration draft https://github.com/ntbaoheyhey/taskbar-hero/pull/323 and B7#322 descriptions now link final evidence/limits. No merge/deploy/server/contract operation. Existing hourly reminder remains ACTIVE, reminder-only. No remaining B request.
+REFERENCE: docs/cardrpg/index.html; reports/cardrpg/validation/delivery-manifest.json; reports/cardrpg/validation/delivery-stack.json; reports/cardrpg/validation/README.md.
+Ledger REFERENCE: reports/cardrpg/B-PRESENTATION-REPORT.md; reports/cardrpg/CARDRPG-REPORT.md; reports/cardrpg/A-SYSTEMS-REPORT.md.
