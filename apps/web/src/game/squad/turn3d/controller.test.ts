@@ -40,3 +40,11 @@ it('preparation never advances turns and rest waits for the explicit continue ch
  expect(c.battle.run.stage).toBe('loot');const turn=c.battle.turn;c.loot(c.battle.run.loot[0]!);expect(c.battle.run.stage).toBe('rest');
  for(let i=0;i<100;i++)c.tick(100);expect(c.battle.turn).toBe(turn);c.equipBest();c.continue();expect(c.battle.run.stage).toBe('battle');expect(c.battle.wave).toBe(1);
 });
+
+it('notifies the HUD at visual beats instead of every animation frame',()=>{
+ const c=new TurnController();c.gallery('shieldBash');let notifications=0;c.subscribe(()=>notifications++);
+ for(let n=0;n<20;n++)c.tick(16);
+ expect(c.frame?.beat.kind).toBe('anticipation');expect(notifications).toBeLessThanOrEqual(2);
+ for(let n=0;n<30;n++)c.tick(16);
+ expect(c.frame?.beat.kind).not.toBe('anticipation');expect(notifications).toBeLessThan(8);
+});

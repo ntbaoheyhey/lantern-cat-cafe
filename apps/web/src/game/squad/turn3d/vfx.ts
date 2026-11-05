@@ -59,34 +59,40 @@ function signature(glyph:string):T.BufferGeometry{
  const geometry=mergeGeometries(parts,false);parts.forEach(g=>g.dispose());return geometry;
 }
 const random=(i:number,seed:number)=>{const n=Math.sin(i*127.1+seed*19.19)*43758.5453;return n-Math.floor(n)};
-const shapes=new Map<string,T.BufferGeometry>();
+
 export class SpellVfx{
  readonly root=new T.Group();count=0;
+ private shapes=new Map<string,T.BufferGeometry>();
+ private scratch=Array.from({length:1024},()=>new T.Vector3());private cursor=0;private axis=new T.Vector3(0,0,1);private spin=new T.Quaternion();
+ private v(x=0,y=0,z=0){const v=this.scratch[this.cursor++];if(!v)throw Error("VFX scratch capacity exceeded");return v.set(x,y,z)}
+ private copy(v:T.Vector3){return this.v(v.x,v.y,v.z)}
  private ribbons:T.Mesh<T.BufferGeometry,T.ShaderMaterial>[]=[];private emblems:T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>[]=[];
  private flames:T.Mesh<T.PlaneGeometry,T.ShaderMaterial>[]=[];private motes:T.InstancedMesh<T.PlaneGeometry,T.ShaderMaterial>;
  private bolts:T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>[]=[];private matrix=new T.Matrix4();private scale=new T.Vector3();private rgb=new T.Color();private quat=new T.Quaternion();
  constructor(scene:T.Scene){
   scene.add(this.root);
+  for(const d of Object.values(EFFECT_DIRECTION))if(!this.shapes.has(d.glyph))this.shapes.set(d.glyph,signature(d.glyph));
   for(let i=0;i<6;i++){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(49*2*3),3));const uv=[],indices=[];for(let j=0;j<49;j++){uv.push(j/48,0,j/48,1);if(j<48){const k=j*2;indices.push(k,k+1,k+2,k+1,k+3,k+2)}}g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(indices);const m=new T.ShaderMaterial({vertexShader:vertex,fragmentShader:ribbonFragment,uniforms:{color:{value:new T.Color()},accent:{value:new T.Color()},phase:{value:0},fade:{value:0}},transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending});const mesh=new T.Mesh(g,m);mesh.frustumCulled=false;mesh.visible=false;this.ribbons.push(mesh);this.root.add(mesh)}
   for(let i=0;i<10;i++){const mesh=new T.Mesh(new T.BufferGeometry(),new T.MeshBasicMaterial({color:'#ffffff',transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;this.emblems.push(mesh);this.root.add(mesh)}
   for(let i=0;i<9;i++){const mesh=new T.Mesh(new T.PlaneGeometry(1,1),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:flameFragment,uniforms:{color:{value:new T.Color()},accent:{value:new T.Color()},phase:{value:0},fade:{value:0},water:{value:0}},transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;this.flames.push(mesh);this.root.add(mesh)}
   for(let i=0;i<8;i++){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(25*2*3),3));const idx=[];for(let j=0;j<24;j++){const k=j*2;idx.push(k,k+1,k+2,k+1,k+3,k+2)}g.setIndex(idx);const mesh=new T.Mesh(g,new T.MeshBasicMaterial({color:'#c6b4ff',transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;mesh.frustumCulled=false;this.bolts.push(mesh);this.root.add(mesh)}
-  this.motes=new T.InstancedMesh(new T.PlaneGeometry(1,1),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:moteFragment,uniforms:{motif:{value:0}},transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide}),192);this.motes.count=0;this.motes.instanceMatrix.setUsage(T.DynamicDrawUsage);this.motes.frustumCulled=false;this.root.add(this.motes);
+  this.motes=new T.InstancedMesh(new T.PlaneGeometry(1,1),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:moteFragment,uniforms:{motif:{value:0}},transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide}),192);this.motes.count=0;this.motes.instanceMatrix.setUsage(T.DynamicDrawUsage);this.motes.frustumCulled=false;this.motes.setColorAt(0,new T.Color());this.root.add(this.motes);
  }
  render(frame:EffectFrame|null,actors:TurnActor[],positions:Map<string,T.Vector3>,camera:T.Camera,time:number,calm:boolean){
+  this.cursor=0;
   this.ribbons.forEach(m=>m.visible=false);this.emblems.forEach(m=>m.visible=false);this.flames.forEach(m=>m.visible=false);this.bolts.forEach(m=>m.visible=false);let used=0,flames=0;
-  const particle=(p:T.Vector3,size:number,c:string,alpha:number,angle=0)=>{if(used>=192)return;this.quat.copy(camera.quaternion).multiply(new T.Quaternion().setFromAxisAngle(new T.Vector3(0,0,1),angle));this.matrix.compose(p,this.quat,this.scale.set(size,size,1));this.motes.setMatrixAt(used,this.matrix);this.motes.setColorAt(used++,this.rgb.set(c).multiplyScalar(Math.max(0,alpha)))};
+  const particle=(p:T.Vector3,size:number,c:string,alpha:number,angle=0)=>{if(used>=192)return;this.quat.copy(camera.quaternion).multiply(this.spin.setFromAxisAngle(this.axis,angle));this.matrix.compose(p,this.quat,this.scale.set(size,size,1));this.motes.setMatrixAt(used,this.matrix);this.motes.setColorAt(used++,this.rgb.set(c).multiplyScalar(Math.max(0,alpha)))};
   const flame=(p:T.Vector3,size:number,color:string,accent:string,fade:number,water=false)=>{const m=this.flames[flames++];if(!m)return;m.visible=true;m.position.copy(p);m.quaternion.copy(camera.quaternion);m.scale.set(size*.6,size,1);m.material.uniforms.color!.value.set(color);m.material.uniforms.accent!.value.set(accent);m.material.uniforms.fade!.value=fade;m.material.uniforms.phase!.value=calm?0:time;m.material.uniforms.water!.value=water?1:0;};
   for(const a of actors){const p=positions.get(a.id);if(!p||a.hp<=0)continue;
-   if(a.statuses.some(s=>s.kind==='burn'))for(const side of [-1,1])flame(p.clone().add(new T.Vector3(side*.35,.32,.06)),.58,'#e87848','#ffce8a',.65);
-   if(a.statuses.some(s=>s.kind==='taunt'))for(let i=0;i<4;i++){const t=i*Math.PI/2+(calm?0:time*.7);particle(p.clone().add(new T.Vector3(Math.cos(t)*.65,.12,Math.sin(t)*.65)),.13,'#efc177',.65)}
+   if(a.statuses.some(s=>s.kind==='burn'))for(const side of [-1,1])flame(this.copy(p).add(this.v(side*.35,.32,.06)),.58,'#e87848','#ffce8a',.65);
+   if(a.statuses.some(s=>s.kind==='taunt'))for(let i=0;i<4;i++){const t=i*Math.PI/2+(calm?0:time*.7);particle(this.copy(p).add(this.v(Math.cos(t)*.65,.12,Math.sin(t)*.65)),.13,'#efc177',.65)}
   }
-  if(frame){const dir=EFFECT_DIRECTION[frame.plan.skillId]!;if(dir){const actor=actors.find(a=>a.id===frame.plan.actorId),start=(positions.get(frame.plan.actorId)??new T.Vector3()).clone().add(new T.Vector3(0,.9,0));const targets=frame.plan.targetIds.map(id=>positions.get(id)).filter((x):x is T.Vector3=>!!x);if(!targets.length)targets.push(start.clone().setY(0));const end=targets[0]!.clone().add(new T.Vector3(0,.65,0));const phase=frame.beat.kind,t=frame.progress,color=frame.color,accent=gearAccent(actor)??frame.plan.accent,seed=[...frame.plan.skillId].reduce((n,c)=>n+c.charCodeAt(0),0);
+  if(frame){const dir=EFFECT_DIRECTION[frame.plan.skillId]!;if(dir){const actor=actors.find(a=>a.id===frame.plan.actorId),start=this.copy(positions.get(frame.plan.actorId)??this.v()).add(this.v(0,.9,0));const targets=frame.plan.targetIds.map(id=>positions.get(id)).filter((x):x is T.Vector3=>!!x);if(!targets.length)targets.push(this.copy(start).setY(0));const end=this.copy(targets[0]!).add(this.v(0,.65,0));const phase=frame.beat.kind,t=frame.progress,color=frame.color,accent=gearAccent(actor)??frame.plan.accent,seed=[...frame.plan.skillId].reduce((n,c)=>n+c.charCodeAt(0),0);
    const life=phase==='anticipation'?t:phase==='travel'?t:phase==='impact'?.12:phase==='reaction'?.12+t*.48:.6+t*.4;
    const fade=phase==='residue'?1-t:1;
-   let geometry=shapes.get(dir.glyph);if(!geometry){geometry=signature(dir.glyph);shapes.set(dir.glyph,geometry)}
+   const geometry=this.shapes.get(dir.glyph)!;
    const emblem=(index:number,center:T.Vector3,size:number,ground=false,alpha=1)=>{const mesh=this.emblems[index];if(!mesh)return;if(mesh.geometry!==geometry&&mesh.geometry.attributes.position===undefined)mesh.geometry.dispose();mesh.geometry=geometry;mesh.visible=true;mesh.position.copy(center);mesh.scale.setScalar(size);mesh.quaternion.copy(camera.quaternion);if(ground)mesh.rotation.set(-Math.PI/2,0,time*.1);mesh.material.color.set(index%2?accent:color).multiplyScalar(1.5);mesh.material.opacity=alpha*fade*.93;};
-   const ribbon=(index:number,a:T.Vector3,b:T.Vector3,mode:Direction['trace'],progress:number,width:number,offset=0)=>{const m=this.ribbons[index];if(!m)return;m.visible=true;const attr=m.geometry.attributes.position!;for(let j=0;j<49;j++){const u=j/48,along=phase==='travel'?Math.max(0,progress-.35)+u*Math.min(progress,.35):u;const q=a.clone().lerp(b,along);const wave=Math.sin(along*Math.PI),angle=along*Math.PI*2*dir.twist+offset;
+   const ribbon=(index:number,a:T.Vector3,b:T.Vector3,mode:Direction['trace'],progress:number,width:number,offset=0)=>{const m=this.ribbons[index];if(!m)return;m.visible=true;const attr=m.geometry.attributes.position!;for(let j=0;j<49;j++){const u=j/48,along=phase==='travel'?Math.max(0,progress-.35)+u*Math.min(progress,.35):u;const q=this.scratch[1022]!.copy(a).lerp(b,along);const wave=Math.sin(along*Math.PI),angle=along*Math.PI*2*dir.twist+offset;
     if(mode==='lob')q.y+=wave*1.35;
     if(mode==='helix'){q.y+=Math.sin(angle)*.28*wave;q.z+=Math.cos(angle)*.4*wave}
     if(mode==='cut'||mode==='fan'){q.y+=wave*(.32+dir.twist*.12)+Math.sin(along*(5+dir.twist)+offset)*.12;q.z+=wave*(offset-.8+dir.twist*.65)*.5}
@@ -97,33 +103,40 @@ export class SpellVfx{
    }attr.needsUpdate=true;m.material.uniforms.color!.value.set(color);m.material.uniforms.accent!.value.set(accent);m.material.uniforms.phase!.value=time;m.material.uniforms.fade!.value=fade*(calm?.5:.85);};
    this.motes.material.uniforms.motif!.value=['dust','petal','spark','ink','star','ember'].indexOf(dir.particles);
    if(phase==='anticipation'){
-    emblem(0,start.clone().setY(.06),.5+t*.45,true,.6);emblem(1,start.clone().add(new T.Vector3(-.25,.25,-.2)),.18+t*.32,false,.75);
-    for(let i=0;i<Math.min(16,dir.count);i++){const a=i*2.399+time*.7,r=(1-t)*1.1+.2;particle(start.clone().add(new T.Vector3(Math.cos(a)*r,Math.sin(a)*r*.55,Math.sin(a)*r*.3)),.09,color,.5)}
+    emblem(0,this.copy(start).setY(.06),.5+t*.45,true,.6);emblem(1,this.copy(start).add(this.v(-.25,.25,-.2)),.18+t*.32,false,.75);
+    for(let i=0;i<Math.min(16,dir.count);i++){const a=i*2.399+time*.7,r=(1-t)*1.1+.2;particle(this.copy(start).add(this.v(Math.cos(a)*r,Math.sin(a)*r*.55,Math.sin(a)*r*.3)),.09,color,.5)}
    }else if(phase==='travel'){
-    const q=start.clone().lerp(end,t*t*(3-2*t));if(dir.trace==='lob')q.y+=Math.sin(t*Math.PI)*1.35;
+    const q=this.copy(start).lerp(end,t*t*(3-2*t));if(dir.trace==='lob')q.y+=Math.sin(t*Math.PI)*1.35;
     emblem(0,q,dir.trace==='needle'?.25:.35,false,.9);ribbon(0,start,end,dir.trace,t,.12);if(frame.plan.ultimate||dir.trace==='helix')ribbon(1,start,end,dir.trace,t,.06,Math.PI);
     if(gearAccent(actor))ribbon(2,start,end,'helix',t,.035,2.1);
     if(dir.element==='fire')flame(q,.6,color,accent,.8);
-    for(let i=0;i<12;i++){const u=Math.max(0,t-i*.018),p=start.clone().lerp(end,u);p.y+=dir.trace==='lob'?Math.sin(u*Math.PI)*1.35:Math.sin(u*14)*.08;particle(p,.12*(1-i/15),i%3?color:accent,.75*(1-i/15),u*4)}
+    for(let i=0;i<12;i++){const u=Math.max(0,t-i*.018),p=this.copy(start).lerp(end,u);p.y+=dir.trace==='lob'?Math.sin(u*Math.PI)*1.35:Math.sin(u*14)*.08;particle(p,.12*(1-i/15),i%3?color:accent,.75*(1-i/15),u*4)}
    }else{
     const quietCue=['steadfast','warmWick','lastSip','lastLight','needleLantern','burn','status_apply','status_expire','death','wave_clear','defeat','thorns','dummyAttack','guardAttack'].includes(frame.plan.skillId);
     const centers=targets.slice(0,3);centers.forEach((p,j)=>{
-     emblem(j,p.clone().setY(.06),(.65+life*1.0)*dir.spread*(quietCue?1.35:1),true,.7);
-     if(!['fire','water','thread'].includes(dir.element))emblem(j+3,p.clone().add(new T.Vector3(quietCue?.45:0,quietCue?.36:.62,.52)),(.62+life*.35)*dir.spread,false,.7);
-     if(['fire','water'].includes(dir.element))for(const side of [-1,1])flame(p.clone().add(new T.Vector3(side*.3,.4,.1)),.8,color,accent,fade,dir.element==='water');
-     if(['thread','slash','pierce'].includes(dir.element))ribbon(j,p.clone().add(new T.Vector3(-.9,.25,-.2)),p.clone().add(new T.Vector3(.9,.9,.2)),dir.trace,life,.10,j*.85);
-     if(frame.plan.skillId==='hearthwall')ribbon(j,p.clone().add(new T.Vector3(-.4,.05,0)),p.clone(), 'pillar',life,.17,j);
-     if(frame.plan.skillId==='nineLives')ribbon(j,p.clone().setY(.1),p.clone().setY(.8),'orbit',life,.09,j);
+     emblem(j,this.copy(p).setY(.06),(.65+life*1.0)*dir.spread*(quietCue?1.35:1),true,.7);
+     if(!['fire','water','thread'].includes(dir.element))emblem(j+3,this.copy(p).add(this.v(quietCue?.45:0,quietCue?.36:.62,.52)),(.62+life*.35)*dir.spread,false,.7);
+     if(['fire','water'].includes(dir.element))for(const side of [-1,1])flame(this.copy(p).add(this.v(side*.3,.4,.1)),.8,color,accent,fade,dir.element==='water');
+     if(['thread','slash','pierce'].includes(dir.element))ribbon(j,this.copy(p).add(this.v(-.9,.25,-.2)),this.copy(p).add(this.v(.9,.9,.2)),dir.trace,life,.10,j*.85);
+     if(frame.plan.skillId==='hearthwall')ribbon(j,this.copy(p).add(this.v(-.4,.05,0)),this.copy(p), 'pillar',life,.17,j);
+     if(frame.plan.skillId==='nineLives')ribbon(j,this.copy(p).setY(.1),this.copy(p).setY(.8),'orbit',life,.09,j);
      const n=Math.round(dir.count/centers.length);for(let i=0;i<n;i++){const a=random(i+j*33,seed)*Math.PI*2,v=.3+random(i+70,seed)*.7,r=v*Math.sin(life*Math.PI*.65)*dir.spread;
-      const q=p.clone().add(new T.Vector3(Math.cos(a)*r,.12+Math.sin(life*Math.PI)*(.3+random(i+18,seed)*.9),Math.sin(a)*r*.65));const size=(dir.particles==='petal'?.22:.12)*(1-life*.55);particle(q,size,i%4?color:accent,fade*(.5+v*.35),a+life*dir.twist);
+      const q=this.copy(p).add(this.v(Math.cos(a)*r,.12+Math.sin(life*Math.PI)*(.3+random(i+18,seed)*.9),Math.sin(a)*r*.65));const size=(dir.particles==='petal'?.22:.12)*(1-life*.55);particle(q,size,i%4?color:accent,fade*(.5+v*.35),a+life*dir.twist);
      }
     });
     // Real branching bolts with independently offset child branches. No white face-covering core.
-    if(frame.plan.skillId==='lanternstorm'||frame.plan.skillId==='ultimateTreat')for(let i=0;i<Math.min(8,targets.length*2+2);i++){const target=targets[i%targets.length]!,m=this.bolts[i]!;m.visible=true;m.material.color.set(i%2?accent:color).multiplyScalar(1.6);m.material.opacity=fade*.8;const a=target.clone().add(new T.Vector3((i%3-1)*.3,2.6,0)),b=target.clone().add(new T.Vector3(i%2?.35:0,.18,0)),attr=m.geometry.attributes.position!;for(let k=0;k<25;k++){const u=k/24,q=a.clone().lerp(b,u),jitter=Math.sin(u*Math.PI)*.19;q.x+=(random(k+i*45,seed)-.5)*jitter;q.z+=(random(k+82+i*19,seed)-.5)*jitter;const w=i%2?.012:.024;attr.setXYZ(k*2,q.x-w,q.y,q.z);attr.setXYZ(k*2+1,q.x+w,q.y,q.z)}attr.needsUpdate=true;}
-    if(frame.plan.events.some(e=>e.critical)&&phase==='impact'){const m=this.ribbons[5]!;ribbon(5,end.clone().add(new T.Vector3(-1.6,0,0)),end.clone().add(new T.Vector3(1.6,0,0)),'needle',1,.025);m.material.uniforms.fade!.value=.9}
+    if(frame.plan.skillId==='lanternstorm'||frame.plan.skillId==='ultimateTreat')for(let i=0;i<Math.min(8,targets.length*2+2);i++){const target=targets[i%targets.length]!,m=this.bolts[i]!;m.visible=true;m.material.color.set(i%2?accent:color).multiplyScalar(1.6);m.material.opacity=fade*.8;const a=this.copy(target).add(this.v((i%3-1)*.3,2.6,0)),b=this.copy(target).add(this.v(i%2?.35:0,.18,0)),attr=m.geometry.attributes.position!;for(let k=0;k<25;k++){const u=k/24,q=this.scratch[1023]!.copy(a).lerp(b,u),jitter=Math.sin(u*Math.PI)*.19;q.x+=(random(k+i*45,seed)-.5)*jitter;q.z+=(random(k+82+i*19,seed)-.5)*jitter;const w=i%2?.012:.024;attr.setXYZ(k*2,q.x-w,q.y,q.z);attr.setXYZ(k*2+1,q.x+w,q.y,q.z)}attr.needsUpdate=true;}
+    if(frame.plan.events.some(e=>e.critical)&&phase==='impact'){const m=this.ribbons[5]!;ribbon(5,this.copy(end).add(this.v(-1.6,0,0)),this.copy(end).add(this.v(1.6,0,0)),'needle',1,.025);m.material.uniforms.fade!.value=.9}
    }
   }}
   this.motes.count=used;this.motes.instanceMatrix.needsUpdate=true;if(this.motes.instanceColor)this.motes.instanceColor.needsUpdate=true;this.count=used;
  }
- dispose(){this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
+ warm(renderer:T.WebGLRenderer,camera:T.Camera){
+  // Compile every shader variant and upload every original glyph behind loading.
+  const target=new T.WebGLRenderTarget(2,2),stage=new T.Scene();stage.add(this.root);
+  for(const m of this.root.children){m.visible=true;m.frustumCulled=false;}this.motes.count=1;
+  renderer.setRenderTarget(target);for(const geometry of this.shapes.values()){this.emblems[0]!.geometry=geometry;renderer.render(stage,camera)}
+  renderer.setRenderTarget(null);target.dispose();for(const m of this.root.children)m.visible=false;this.motes.visible=true;this.motes.count=0;
+ }
+ dispose(){this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
 }
