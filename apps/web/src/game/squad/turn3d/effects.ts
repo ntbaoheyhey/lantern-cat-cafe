@@ -53,9 +53,9 @@ export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
   const data=EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
   let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=data.duration[i]!;const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
     shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?.22:0,
-    clip:i===0?data.clip:i===1&&['slash','bash','charge'].includes(data.shape)?'step':i>=3?'idle':data.clip,vfx:data.motifs[i]??'glow',soundCue:`${key}.${kind}`};at+=duration;return beat;});
-  const targetIds=[...new Set((events.find(e=>e.type==='action_start')?.targetIds??events.flatMap(e=>['damage','heal','shield','status_apply','passive'].includes(e.type)?e.targetIds:[])))];
-  return {id:events[0]?.actionId??0,actorId:first?.actorId??'',skillId:key,targetIds,color:data.color,accent:data.accent,shape:data.shape,duration:at,ultimate:data.ultimate,beats,events:[...events],name:data.name,motifs:data.motifs};
+    clip:data.clip==='down'||data.clip==='victory'?data.clip:i===0?data.clip:i===1&&['slash','bash','charge'].includes(data.shape)?'step':i>=3?'idle':data.clip,vfx:data.motifs[i]??'glow',soundCue:`${key}.${kind}`};at+=duration;return beat;});
+  const targetIds=[...new Set((events.find(e=>e.type==='action_start')?.targetIds??events.flatMap(e=>['damage','heal','shield','status_apply','passive','death'].includes(e.type)?e.targetIds:[])))];
+  return {id:events[0]?.actionId??0,actorId:(first?.type==='death'?first.targetIds[0]:first?.actorId)||first?.actors?.find(a=>a.side==='party'&&a.hp>0)?.id||'guardian',skillId:key,targetIds,color:data.color,accent:data.accent,shape:data.shape,duration:at,ultimate:data.ultimate,beats,events:[...events],name:data.name,motifs:data.motifs};
 }
 export function sampleActionPlan(plan:EffectPlan,elapsed:number,reducedMotion=false):EffectFrame {
   const t=Math.max(0,Math.min(plan.duration,elapsed));const beat=plan.beats.find(b=>t<b.start+b.duration)??plan.beats[4]!;
