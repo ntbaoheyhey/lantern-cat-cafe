@@ -168,8 +168,8 @@ export class TurnScene {
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
     this.raf=requestAnimationFrame(this.loop);const view=this.view();const raw=this.last?Math.min(100,now-this.last):0;this.last=now;
-    const interval=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
-    if(!this.dirty&&now-this.renderAt<interval)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
+    const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
+    if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
     this.time=view.fixedTime??this.time+delta;this.render(view,delta);
   };
   render(view:SceneView,delta=0){

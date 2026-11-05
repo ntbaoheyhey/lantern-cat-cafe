@@ -9,7 +9,7 @@
 | Backend mocks | 581 passed |
 | Auth / chain / API contract | 24 / 32 / 16 passed |
 | Root Node scripts | 11 passed |
-| Inherited E2E | Pending completion; raw/base-e2e.log |
+| Inherited E2E | 421 passed, 3.6 minutes; raw/base-e2e.log |
 | Before set | 96 live captures: opening + 35 mid-impact recipes + 12 idle figures at both 1280×720 and 1440×900; zero browser errors |
 
 Before captures load the unchanged e1731dc offline HTML with its actual runtime, GLBs and event fixtures. Hashes and renderer stats are in before-captures.json. They include all heroes, enemies, boss, wave clear, victory and defeat. This is not a human review.

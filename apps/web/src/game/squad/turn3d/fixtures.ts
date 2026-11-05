@@ -14,26 +14,26 @@ export function createEffectFixture(requested:string):EffectFixture {
   if(!actor&&skillId==='threadAttack'){
     // Obtain a real summoned thread by resolving the boss bind, then inspect Tighten.
     const parent=createEffectFixture('bindThread');const thread=parent.battle.actors.find(a=>a.role==='thread')!;
-    b.actors.push(structuredClone(thread));b.queue.push({actorId:thread.id,at:0});b.intents[thread.id]=structuredClone(parent.battle.intents[thread.id]!);actor=b.actors.at(-1);
+    b.actors.push(structuredClone(thread));b.queue.push({actorId:thread.id,round:b.round});b.intents[thread.id]=structuredClone(parent.battle.intents[thread.id]!);actor=b.actors.at(-1);
   }
-  if(!actor&&skillId==='dummyAttack'){const a=createTurnBattle({encounter:'dummy'}).actors.find(a=>a.role==='dummy')!;b.actors.push(a);b.queue.push({actorId:a.id,at:0});actor=a;}
+  if(!actor&&skillId==='dummyAttack'){const a=createTurnBattle({encounter:'dummy'}).actors.find(a=>a.role==='dummy')!;b.actors.push(a);b.queue.push({actorId:a.id,round:b.round});actor=a;}
   if(!actor)throw Error(`No fixture actor for ${requested}`);
   b.actors.forEach(a=>{if(a.side==='party'){a.charge=100;a.hp=Math.round(a.maxHp*.55);}if(a.side==='enemy')a.hp=a.maxHp=Math.max(a.maxHp,600);});
   if(['death','wave_clear','victory'].includes(requested))b.actors.filter(a=>a.side==='enemy').forEach(a=>a.hp=1);
   if(requested==='defeat')b.actors.filter(a=>a.side==='party').forEach((a,i)=>a.hp=i?0:1);
-  if(requested==='warmWick')b.actors.filter(a=>a.side==='enemy').forEach(a=>a.statuses.push({kind:'burn',source:'witch',turns:2,strength:1,appliedTurn:0}));
-  if(requested==='burn')actor.statuses.push({kind:'burn',source:'witch',turns:2,strength:1,appliedTurn:-1});
-  if(requested==='status_expire')actor.statuses.push({kind:'snare',source:'witch',turns:1,strength:1,appliedTurn:-1});
+  if(requested==='warmWick')b.actors.filter(a=>a.side==='enemy').forEach(a=>a.statuses.push({kind:'burn',source:'witch',rounds:2,strength:1,appliedRound:0}));
+  if(requested==='burn')actor.statuses.push({kind:'burn',source:'witch',rounds:2,strength:1,appliedRound:-1});
+  if(requested==='status_expire')actor.statuses.push({kind:'snare',source:'witch',rounds:1,strength:1,appliedRound:-1});
   if(actor.side==='enemy'){
     const friendly=TURN_SKILLS[skillId]!.target==='ally';const t=b.actors.find(a=>a.hp>0&&a.side===(friendly?'enemy':'party'))!;
     b.intents[actor.id]={actorId:actor.id,skillId,targetId:t.id,targetIds:[t.id],icon:TURN_SKILLS[skillId]!.icon,label:TURN_SKILLS[skillId]!.name,countdown:1,interrupted:false};
   }
-  b.queue=b.queue.filter(s=>s.actorId!==actor.id);b.queue.unshift({actorId:actor.id,at:0});
+  b.queue=b.queue.filter(s=>s.actorId!==actor.id);b.queue.unshift({actorId:actor.id,round:b.round});
   // Replace stale creation snapshots with a fresh complete snapshot of the documented fixture.
-  const init:TurnEvent={version:2,seq:0,turn:0,actionId:0,beat:4,type:'snapshot',actorId:'',skillId:'',targetIds:[],amount:0,actors:structuredClone(b.actors),intents:structuredClone(b.intents),wave:b.wave,bossPhase:b.bossPhase};
+  const init:TurnEvent={version: 3,seq:0,turn:0,round:b.round,actionId:0,beat:4,type:'snapshot',actorId:'',skillId:'',targetIds:[],amount:0,actors:structuredClone(b.actors),intents:structuredClone(b.intents),wave:b.wave,bossPhase:b.bossPhase};
   b.events=[init];startTurn(b);const initial=b.events.slice();
   const target=getLegalTargets(b,skillId).find(t=>t.legal&&(actor!.side!=='enemy'||t.actorId===b.intents[actor!.id]?.targetId))!;
   if(!target||!chooseAction(b,{actorId:actor.id,skillId,targetId:target.actorId}))throw Error(`Illegal fixture action ${requested}`);
-  resolveAction(b);endTurn(b);let events=b.events.slice(initial.length);
+  resolveAction(b);endTurn(b);if(requested==='status_expire'){b.queue=[];startTurn(b)}let events=b.events.slice(initial.length);
   return {battle:b,initial,events,requested};
 }

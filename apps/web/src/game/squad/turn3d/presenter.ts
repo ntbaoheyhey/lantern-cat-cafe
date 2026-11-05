@@ -1,14 +1,14 @@
 import type { TurnActor, TurnEvent, TurnIntent, TurnResult } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { createActionPlan, sampleActionPlan, type EffectFrame, type EffectPlan } from './effects';
 
-export interface PresentedState { actors:TurnActor[]; intents:Record<string,TurnIntent>; wave:number; bossPhase:number; result:TurnResult|null; currentId:string|null; turn:number }
-const initial=():PresentedState=>({actors:[],intents:{},wave:0,bossPhase:0,result:null,currentId:null,turn:0});
+export interface PresentedState { actors:TurnActor[]; intents:Record<string,TurnIntent>; wave:number; bossPhase:number; result:TurnResult|null; currentId:string|null; turn:number; round:number }
+const initial=():PresentedState=>({actors:[],intents:{},wave:0,bossPhase:0,result:null,currentId:null,turn:0,round:1});
 const clone=<T>(v:T):T=>JSON.parse(JSON.stringify(v)) as T;
 const visible=new Set(['action_start','damage','heal','shield','passive','status_apply','status_expire','death','wave_clear','victory','defeat','fizzle']);
 
 /** Consumes resolved events only. There is intentionally no Battle/engine reference. */
 export class TurnPresenter {
-  speed=1; fast=false; reducedMotion=false; paused=false;
+  playbackRate=1; fast=false; reducedMotion=false; paused=false;
   state:PresentedState=initial();
   readonly recent:TurnEvent[]=[];
   appliedSeq=-1;
@@ -47,7 +47,7 @@ export class TurnPresenter {
     if(e.intents)this.state.intents=clone(e.intents);
     if(e.wave!==undefined)this.state.wave=e.wave;if(e.bossPhase!==undefined)this.state.bossPhase=e.bossPhase;
     if(e.result)this.state.result=clone(e.result);if(e.type==='turn_start')this.state.currentId=e.actorId;if(e.type==='turn_end')this.state.currentId=null;
-    this.state.turn=e.turn;this.appliedSeq=e.seq;this.recent.push(e);if(this.recent.length>40)this.recent.shift();
+    this.state.turn=e.turn;this.state.round=e.round;this.appliedSeq=e.seq;this.recent.push(e);if(this.recent.length>40)this.recent.shift();
   }
   private applyThrough(elapsed:number){
     const p=this.active;if(!p)return;
@@ -56,7 +56,7 @@ export class TurnPresenter {
   }
   tick(deltaMs:number){
     if(this.paused||!Number.isFinite(deltaMs)||deltaMs<=0)return;
-    let remaining=deltaMs*Math.max(1,Math.min(4,this.speed))*(this.fast?1.8:1);this.begin();
+    let remaining=deltaMs*Math.max(1,Math.min(4,this.playbackRate))*(this.fast?1.8:1);this.begin();
     while(this.active&&remaining>0){const take=Math.min(remaining,this.active.duration-this.elapsed);this.elapsed+=take;remaining-=take;this.applyThrough(this.elapsed);
       if(this.elapsed>=this.active.duration){this.applyThrough(Infinity);this.active=null;this.begin();}else break;}
   }

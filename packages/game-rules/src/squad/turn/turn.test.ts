@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fc from 'fast-check';
+import { openRound } from './test-support';
 import { createTurnBattle, startTurn, chooseAction, resolveAction, endTurn, getAutoAction,
   getTimeline, getLegalActions, getLegalTargets, delayActor, advanceActor, replayTurns } from './engine';
 import { TURN_KITS, TURN_SKILLS } from './config';
@@ -79,21 +80,26 @@ describe('turn skills, targets and committed intentions',()=>{
     expect(b.actors.find(a=>a.id==='guardian')!.shield).toBeGreaterThan(0);expect(b.events.some(e=>e.type==='passive'&&e.skillId==='steadfast')).toBe(true);
     expect(b.queue.filter(s=>s.actorId===target.id)).toHaveLength(1);
   });
-  it('cooldown two excludes the next two own turns, with no timer ticking',()=>{
-    const b=ready();const target=b.actors.find(a=>a.side==='enemy')!;act(b,'shieldBash',target.id);endTurn(b);
-    const g=b.actors.find(a=>a.id==='guardian')!;expect(g.cooldowns.shieldBash).toBe(2);
-    for(let n=2;n>=1;n--){b.queue.sort((a,z)=>Number(z.actorId==='guardian')-Number(a.actorId==='guardian'));startTurn(b);expect(getLegalActions(b).find(a=>a.skill.id==='shieldBash')!.legal).toBe(false);
-      act(b,'guardianBasic',b.actors.find(a=>a.side==='enemy'&&a.hp>0)!.id);endTurn(b);expect(g.cooldowns.shieldBash).toBe(n-1);}
+  it('cooldown two blocks rounds two and three and is ready in round four',()=>{
+    const b=ready('guardian','dummy');b.actors.forEach(a=>a.attack=1);
+    act(b,'shieldBash',b.actors.find(a=>a.side==='enemy')!.id);endTurn(b);
+    const g=b.actors.find(a=>a.id==='guardian')!;
+    for(const [round,remaining] of [[2,2],[3,1],[4,0]]){
+      openRound(b,round!);expect(b.activeId).toBe('guardian');
+      expect(g.cooldowns.shieldBash).toBe(remaining);
+      expect(getLegalActions(b).find(a=>a.skill.id==='shieldBash')!.legal).toBe(remaining===0);
+      act(b,'guardianBasic',b.actors.find(a=>a.side==='enemy')!.id);endTurn(b);
+    }
   });
   it('cleanse clears harmful statuses before healing and shielding the team',()=>{
     const b=ready('alchemist');const a=b.actors.find(a=>a.id==='alchemist')!;a.charge=100;
-    const g=b.actors.find(a=>a.id==='guardian')!;g.hp-=100;g.statuses.push({kind:'burn',source:'enemy',turns:2,strength:1,appliedTurn:0});
+    const g=b.actors.find(a=>a.id==='guardian')!;g.hp-=100;g.statuses.push({kind:'burn',source:'enemy',rounds:2,strength:1,appliedRound:0});
     const events=act(b,'nineLives','guardian');expect(g.statuses.some(s=>s.kind==='burn')).toBe(false);expect(g.hp).toBeGreaterThan(g.maxHp-100);expect(g.shield).toBeGreaterThan(0);
     expect(events.findIndex(e=>e.type==='status_expire')).toBeLessThan(events.findIndex(e=>e.type==='heal'));expect(a.charge).toBeLessThan(100);
   });
   it('guard and shields reduce incoming HP damage',()=>{
     const plain=createTurnBattle({seed:9}), guarded=createTurnBattle({seed:9});
-    const target=guarded.actors.find(a=>a.id==='witch')!;target.shield=30;target.shieldTurns=2;target.statuses.push({kind:'guard',source:'guardian',turns:2,strength:.3,appliedTurn:0});
+    const target=guarded.actors.find(a=>a.id==='witch')!;target.shield=30;target.shieldRounds=2;target.statuses.push({kind:'guard',source:'guardian',rounds:2,strength:.3,appliedRound:0});
     for(const b of [plain,guarded]){b.queue.sort((a,z)=>Number(z.actorId.includes('flanker'))-Number(a.actorId.includes('flanker')));startTurn(b);const c=getAutoAction(b)!;expect(c.targetId).toBe('witch');chooseAction(b,c);resolveAction(b);}
     expect(target.hp).toBeGreaterThan(plain.actors.find(a=>a.id==='witch')!.hp);
   });

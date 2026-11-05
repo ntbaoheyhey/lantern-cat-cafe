@@ -2,9 +2,9 @@ import { TURN_KITS, TURN_SKILLS } from './config';
 import type { Hero, LegalTurnAction, LegalTurnTarget, TurnActor, TurnBattle, TurnSkill } from './types';
 
 export const living = (a: TurnActor): boolean => a.hp > 0;
-export const hasStatus = (a: TurnActor, kind: string): boolean => a.statuses.some(s => s.kind === kind && s.turns > 0);
+export const hasStatus = (a: TurnActor, kind: string): boolean => a.statuses.some(s => s.kind === kind && s.rounds > 0);
 export function taunter(b: TurnBattle, source: TurnActor): TurnActor | undefined {
-  const status = source.statuses.find(s => s.kind === 'taunt' && s.turns > 0 &&
+  const status = source.statuses.find(s => s.kind === 'taunt' && s.rounds > 0 &&
     b.actors.some(a => a.id === s.source && a.hp > 0 && a.side !== source.side));
   return status ? b.actors.find(a => a.id === status.source) : undefined;
 }
@@ -48,7 +48,7 @@ export function getLegalActions(b: TurnBattle, actorId: string = b.activeId ?? '
     else if (a.id !== b.activeId) reason = 'It is not this actor’s turn.';
     else if (b.phase !== 'choose') reason = b.phase === 'chosen' ? 'An action is already locked.' : 'This turn is not accepting a choice.';
     else if (hasStatus(a, 'stun') || hasStatus(a, 'restrain')) reason = 'This actor cannot act this turn.';
-    else if ((a.cooldowns[skill.id] ?? 0) > 0) reason = `Cooldown: ${a.cooldowns[skill.id]} own turn(s).`;
+    else if ((a.cooldowns[skill.id] ?? 0) > 0) reason = `Cooldown: ${a.cooldowns[skill.id]} round(s).`;
     else if (a.charge < skill.chargeCost) reason = `Requires ${skill.chargeCost} charge (${a.charge} available).`;
     else if (!getLegalTargets(b, skill.id, a.id).some(t => t.legal)) reason = 'No living legal target.';
     return { skill, legal: !reason, reason: reason || 'Ready.' };
