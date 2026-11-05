@@ -1,7 +1,7 @@
 # Session A — Systems delivery report
 
-Status: **PARTIAL — A systems complete and frozen; B Retina default correction is undergoing final artifact validation before publication.**
-Updated: 2026-11-05T19:40:56.458990+00:00.
+Status: **PARTIAL — A systems complete and frozen; final Retina natural-campaign performance failed and is under B diagnosis.**
+Updated: 2026-11-05T20:00:22.697307+00:00.
 
 Base: `3bf2cfa3bd32d8355c5c967e979240330a595682` on `ai/codex-turn3d-polish-2026-11-05`. Systems head: `9ccf88e7eeac6814229e2b8d919b608bb4cee478` on `ai/codex-cardrpg-systems-2026-11-05`; worktree `/Users/bao/taskbar-hero-cardrpg-a`. Contract **0.4.0**. The no-limits update supersedes all clock/size/retry ceilings; checkpoints record content order only. No extra agents or model-calling helpers were used.
 
@@ -251,6 +251,13 @@ All 32 pinned evidence links resolve to 26 existing files; all recorded evidence
 
 **Latest candidate supersedes the measurements below.** B #21 changes initial Retina quality to the existing Medium pipeline at native DPR 2, retains bloom and High selection, and initializes that quality before loading. It follows measured High-mode p99 misses at Retina; no A-owned rule source changes. New clean source is `7de21f19dbacc52d28f844c1ea09d2662711f0cb`, artifact SHA-256 `223f550d0be863d8a55a3b0d2d30be5f1d1afe25a6dc800bdc374ac12fe59477`, 14,503,235 bytes. Full source-matched validation is in progress, expanded to all 258 DPR-2 recipe casts and a real 1440 Retina campaign. Do not treat the prior candidate's completed checks as validation of this replacement.
 REFERENCE: `docs/cardrpg/index.html`; `docs/cardrpg/build.json`; `apps/web/src/game/squad/turn3d/TurnApp.tsx`; `apps/web/src/game/squad/turn3d/scene.ts`; `reports/cardrpg/earlier-trials/pre-retina-default/`.
+
+### Replacement validation — actual failed Retina gate
+
+On artifact `223f550d`, all 258 DPR-1 casts completed with zero >50 ms tasks; 59/258 exceed the strict 16.7 ms p95 threshold and p99 is at most 16.8 ms. All 9 wave transitions have zero long tasks, with one p95 miss. All three DPR-1 natural campaigns clear the boss with three rests, five stable contexts, no long tasks, errors or warnings. Five preview exit cycles release all contexts. The eight software-renderer samples still contain three long tasks and p95 50.0–316.7 ms, explicitly PARTIAL.
+
+The additional **1440×900 native-DPR-2 natural campaign fails its long-task assertion**: 13 tasks of 51–98 ms, p95 16.8 ms and p99 33.4 ms. Gameplay wins, all three rests complete, five contexts stay stable, and no console errors/warnings occur. Final effective quality is recorded as Low despite the initial Medium selection; adaptive quality is part of what B must diagnose and disclose. Functional victory does not turn this performance failure into a pass. A #28 requests diagnosis and retention of the failed receipt; no A rule change is implicated. Full DPR-2 casts and final publication remain pending. These are provisional local receipts, not yet a pinned delivery commit.
+REFERENCE: `docs/cardrpg/index.html`; `reports/cardrpg/performance-delivery/performance-metal.json`; `reports/cardrpg/performance-delivery/transitions.json`; `reports/cardrpg/lifecycle-delivery/measurement.json`; `reports/cardrpg/lifecycle-retina-delivery/measurement.json`; `reports/cardrpg/validation/lifecycle-retina-delivery.log`; `coord/cardrpg/A-OUTBOX.md` #28.
 
 ### Prior candidate observations, retained for traceability
 
