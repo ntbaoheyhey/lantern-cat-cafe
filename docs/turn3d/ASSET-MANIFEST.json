@@ -777,12 +777,12 @@
         "stagger",
         "down"
       ],
-      "triangles": 3468,
+      "triangles": 6416,
       "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 320980,
-      "gzipBytes": 130381,
-      "sha256": "668de42aef7156d9a6dd41be27b710285c9fdd691c42e15d9cec26995b410637"
+      "bytes": 404304,
+      "gzipBytes": 189140,
+      "sha256": "13724e8b52eada07c9304984e42c81e0e68a12fd1541efe4e0ae726aebc6494d"
     },
     {
       "id": "dummy",
@@ -848,24 +848,124 @@
         "stagger",
         "down"
       ],
-      "triangles": 4322,
+      "triangles": 5628,
       "triangleBudget": 10000,
       "drawCalls": 10,
-      "bytes": 412244,
-      "gzipBytes": 153216,
-      "sha256": "7c49fbb49cb4117990704707f802ad25be83a61e1fb92557ad5423e4a996e109"
+      "bytes": 467776,
+      "gzipBytes": 177137,
+      "sha256": "13d2e6f7603091d742969020687530b4f2b92b570f7eab60afedfffd34d37890"
     }
   ],
   "proceduralAssets": [
     {
-      "id": "cafe-stage-and-vfx",
-      "source": "apps/web/src/game/squad/turn3d/scene.ts",
-      "author": "OpenAI Codex primary session",
+      "id": "cafe-stage",
+      "source": [
+        "apps/web/src/game/squad/turn3d/scene.ts",
+        "apps/web/src/game/squad/turn3d/surfaces.ts"
+      ],
+      "parameters": "Wood/cloth/ceramic procedural canvas maps, deterministic integer noise; warm key/cool rim; contact gradients and fog.",
+      "tool": "Authored TypeScript / Three.js 0.180.0 / WebAudio",
+      "author": "OpenAI Codex primary polish session",
       "date": "2026-11-05",
-      "tool": "three.js 0.180.0",
-      "recipe": "makeStage, makeGlow and signatureGeometry: original primitive diorama; 64px radial canvas gradient; hand-authored shield, flame, flask, droplet and petal paths; rings, curved lines and bounded instanced sprites",
       "license": "CC0-1.0",
-      "externalReferences": []
+      "externalReferences": [],
+      "sourceSha256": [
+        {
+          "path": "apps/web/src/game/squad/turn3d/scene.ts",
+          "sha256": "e3b0af5f150d1acbe8c6375b280e1022c53b60354872ef425516a3eb703c9dca"
+        },
+        {
+          "path": "apps/web/src/game/squad/turn3d/surfaces.ts",
+          "sha256": "0603f5facd63d24d4fcc606b15d15846a2eba07d9b63b33dae797efd6dcad252"
+        }
+      ]
+    },
+    {
+      "id": "spell-language",
+      "source": [
+        "apps/web/src/game/squad/turn3d/vfx.ts",
+        "apps/web/src/game/squad/turn3d/effect-direction.ts",
+        "apps/web/src/game/squad/turn3d/effects.ts"
+      ],
+      "parameters": "43 authored signatures, tapered noisy ribbon meshes, at most 192 instanced motes, eight branching bolts, nine flame/water planes. Fixed integer recipe seeds; five beats; .73 nonultimate motion duration scale, impact and 1.45s portraits retained.",
+      "tool": "Authored TypeScript / Three.js 0.180.0 / WebAudio",
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "sourceSha256": [
+        {
+          "path": "apps/web/src/game/squad/turn3d/vfx.ts",
+          "sha256": "a2220f1cab29eaf6ff90089235e22d9f1a6db00cea6fd59fc08c6fced54f694f"
+        },
+        {
+          "path": "apps/web/src/game/squad/turn3d/effect-direction.ts",
+          "sha256": "70ca6451c74c61c019339cfb60b79ede7edf3456454034fb47be30947a2b6ca5"
+        },
+        {
+          "path": "apps/web/src/game/squad/turn3d/effects.ts",
+          "sha256": "14ae698aaee14fd92bc03342aa670a018d2f82fa9064da97f386d47d6d151848"
+        }
+      ]
+    },
+    {
+      "id": "equipment-sockets",
+      "source": [
+        "apps/web/src/game/squad/turn3d/gear-visuals.ts",
+        "packages/game-rules/src/squad/gear/catalog.ts"
+      ],
+      "parameters": "30 original items; four weapon profiles and four outfit patterns per role, shared charm/relic silhouettes; one merged draw per item; rarity emissive colors; set aura.",
+      "tool": "Authored TypeScript / Three.js 0.180.0 / WebAudio",
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "sourceSha256": [
+        {
+          "path": "apps/web/src/game/squad/turn3d/gear-visuals.ts",
+          "sha256": "ebe75c125aa08866f5d15a17b1247f5ce762a0d7c2481157879926ddd2e0600c"
+        },
+        {
+          "path": "packages/game-rules/src/squad/gear/catalog.ts",
+          "sha256": "b9684a35dd892709061e951a5639945765970e484fd3e61d956d3c763d98061a"
+        }
+      ]
+    },
+    {
+      "id": "post-processing",
+      "source": [
+        "apps/web/src/game/squad/turn3d/post.ts"
+      ],
+      "parameters": "Half-float bright-pass threshold 1.12, separable quarter-resolution High bloom, grade, edge contrast, vignette and radial impact ripple. Medium at sixth-resolution; Low bypasses post; p95>25ms degrades after warmup.",
+      "tool": "Authored TypeScript / Three.js 0.180.0 / WebAudio",
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "sourceSha256": [
+        {
+          "path": "apps/web/src/game/squad/turn3d/post.ts",
+          "sha256": "724827dee829eced79362a0924f00b71e32ce9dc3d1942822c5214d0301e9c57"
+        }
+      ]
+    },
+    {
+      "id": "cafe-synth-audio",
+      "source": [
+        "apps/web/src/game/squad/turn3d/audio.ts"
+      ],
+      "parameters": "WebAudio oscillators + seeded filtered noise; six cue families × five beats, UI/turn/round/stingers; 8-note sine ambience; 44.1kHz/master .14. Muted by default; context only after click; no downloaded samples.",
+      "tool": "Authored TypeScript / Three.js 0.180.0 / WebAudio",
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": [],
+      "sourceSha256": [
+        {
+          "path": "apps/web/src/game/squad/turn3d/audio.ts",
+          "sha256": "16de69e77087021e2a899c5a68dcb4dbd3007886fb71b1c7ac2c459775465207"
+        }
+      ]
     }
   ],
   "libraries": [
@@ -901,6 +1001,80 @@
       "version": "8.3.5",
       "license": "MIT",
       "buildOnly": true
+    }
+  ],
+  "portraits": [
+    {
+      "id": "guardian-portrait",
+      "output": "apps/web/public/art/turn3d/portraits/guardian.png",
+      "bytes": 101798,
+      "sha256": "e4926a14f28c83acc53ed12f5709b9c6b3866be2f5286fd51452a9d47d521623",
+      "source": [
+        "tools/turn3d/polish-portraits.mjs",
+        "apps/web/public/art/turn3d/guardian.glb"
+      ],
+      "tool": "Playwright 1.64.1 / Chromium / Three.js 0.180.0",
+      "parameters": {
+        "viewport": [
+          320,
+          440
+        ],
+        "clip": "ready",
+        "angle": 0.15,
+        "fixedTime": 1
+      },
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": []
+    },
+    {
+      "id": "witch-portrait",
+      "output": "apps/web/public/art/turn3d/portraits/witch.png",
+      "bytes": 78714,
+      "sha256": "77d619ad19208dc73d94e549fd30602a9da9ca4ff83875f9c61b479b1c58b5cd",
+      "source": [
+        "tools/turn3d/polish-portraits.mjs",
+        "apps/web/public/art/turn3d/witch.glb"
+      ],
+      "tool": "Playwright 1.64.1 / Chromium / Three.js 0.180.0",
+      "parameters": {
+        "viewport": [
+          320,
+          440
+        ],
+        "clip": "ready",
+        "angle": 0.15,
+        "fixedTime": 1
+      },
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": []
+    },
+    {
+      "id": "alchemist-portrait",
+      "output": "apps/web/public/art/turn3d/portraits/alchemist.png",
+      "bytes": 94974,
+      "sha256": "b3f2041d006547a6971d80d6abb71c17919e5e4d3bd9d8124a254bd8939dea7c",
+      "source": [
+        "tools/turn3d/polish-portraits.mjs",
+        "apps/web/public/art/turn3d/alchemist.glb"
+      ],
+      "tool": "Playwright 1.64.1 / Chromium / Three.js 0.180.0",
+      "parameters": {
+        "viewport": [
+          320,
+          440
+        ],
+        "clip": "ready",
+        "angle": 0.15,
+        "fixedTime": 1
+      },
+      "author": "OpenAI Codex primary polish session",
+      "date": "2026-11-05",
+      "license": "CC0-1.0",
+      "externalReferences": []
     }
   ]
 }

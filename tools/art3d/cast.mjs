@@ -1,6 +1,6 @@
 // THE LAST LANTERN — twelve original sculpted household miniatures.
 // No imported model, texture, font, silhouette, or reference-game asset is used.
-import { THREE, PALETTE as C, group, ellipsoid as ball, cylinder as cyl, torus, tube, rod, polygon, roundedBox as box, loft, leaf, star, stitch, finish } from './geometry.mjs';
+import { THREE, PALETTE as C, add, group, ellipsoid as ball, cylinder as cyl, torus, tube, rod, polygon, roundedBox as box, loft, leaf, star, stitch, finish } from './geometry.mjs';
 
 export const CAST = [
   ['guardian', 'Mochi', 'hero', 1.72, 25000], ['witch', 'Soot', 'hero', 1.82, 25000],
@@ -363,8 +363,9 @@ function bindingThread(r) {
   const b = r.part('body', [0, .72, 0]);
   // Open binding arch, not a solid cocoon: the captive remains visible inside.
   const pts = Array.from({ length: 35 }, (_, i) => { const a = i / 34 * Math.PI * 2; return [Math.cos(a) * .43, Math.sin(a) * .60, .015 * Math.sin(a * 3)]; });
-  tube(b, C.redDark, pts, .067, 34, 6);
-  const pts2 = pts.map(([x, y, z]) => [x * .85, y * .88, z + .045]); tube(b, C.coral, pts2, .025, 34, 5);
+  // Three raised helical plies form a soft braided loop, visible from the back too.
+  for(let strand=0;strand<3;strand++){const braid=Array.from({length:97},(_,i)=>{const a=i/96*Math.PI*2,t=a*18+strand*Math.PI*2/3;return [Math.cos(a)*(.43+Math.cos(t)*.026),Math.sin(a)*(.60+Math.cos(t)*.026),Math.sin(t)*.027]});tube(b,[C.redDark,C.red,C.coral][strand],braid,.034,96,6)}
+  for(const side of [-1,1])tube(b,C.knot,[[side*.39,-.1,.02],[side*.47,-.16,.03],[side*.45,-.23,.03],[side*.38,-.2,.05]],.016,12,5);
   for (const y of [-.23, .12]) tube(b, C.red, [[-.35, y, .035], [-.12, y - .035, .08], [.14, y + .02, .06], [.36, y + .06, .03]], .03, 10, 5);
   const h = r.part('head', [0, 1.20, .025]);
   ball(h, C.red, [0, 0, 0], [.18, .14, .105], 12, 6); eyes(r, h, .01, .10, .075, .53); mouth(h, -.06, .115, .40);
@@ -377,11 +378,13 @@ function bindingThread(r) {
 function practiceCushion(r) {
   feet(r, C.wood, .23, 0, .8);
   const b = r.part('body', [0, .71, 0]);
-  // Pillow perimeter is a bevelled custom polygon, with stuffed front and back panels.
-  const outline = [[-.40, -.33], [-.46, -.18], [-.45, .24], [-.34, .38], [.34, .38], [.45, .24], [.46, -.18], [.40, -.33]];
-  polygon(b, C.copper, outline, .30, [0, 0, 0], .075);
-  ball(b, C.cream, [0, .02, .11], [.445, .365, .17], 16, 8);
-  ball(b, C.wood, [0, .02, -.11], [.445, .365, .12], 14, 7);
+  // Sculpted superellipsoid: stuffed curved panels with a pinched sewn perimeter.
+  const plush=new THREE.SphereGeometry(1,32,20),v=plush.attributes.position;
+  for(let i=0;i<v.count;i++){const x=v.getX(i),y=v.getY(i),z=v.getZ(i);v.setXYZ(i,Math.sign(x)*Math.abs(x)**.58*.46,Math.sign(y)*Math.abs(y)**.58*.38,Math.sign(z)*Math.abs(z)**.78*.25)}
+  plush.computeVertexNormals();add(b,plush,C.cream);
+  const edge=Array.from({length:65},(_,i)=>{const a=i/64*Math.PI*2,x=Math.cos(a),y=Math.sin(a);return [Math.sign(x)*Math.abs(x)**.58*.465,Math.sign(y)*Math.abs(y)**.58*.385,0]});
+  tube(b,C.wood,edge,.024,64,5);
+  for(const side of [-1,1]){stitch(b,C.copper,[side*.42,-.26,.13],[side*.42,.27,.13],8,.006,[.022,0,0]);leaf(b,C.teal,[side*.13,.02,-.25],.8,[0,Math.PI,side*.6])}
   stitch(b, C.ivory, [-.35, -.32, .17], [.35, -.32, .17], 9, .008, [.018, .025, 0]);
   stitch(b, C.ivory, [-.36, .34, .16], [.36, .34, .16], 9, .008, [.018, .025, 0]);
   const h = r.part('head', [0, .85, .0]); eyes(r, h, .04, .279, .15, .95); nose(h, [0, -.045, .30], .8); mouth(h, -.08, .288, .70);
