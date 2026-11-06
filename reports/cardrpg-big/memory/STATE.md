@@ -4,23 +4,23 @@ PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 
 ## NOW
-Phase F0 · full validation passed. Corrected 610-case skill matrix running, pid 5413, exec session 2427, log validation/baseline-skills.log.
+Phase F0 · full validation passed. Precision matrix 534/610 at 11:30 +07, pid 5413, exec session 2427. validation/baseline-skills.log.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
 Last work commit c7ffaeb4 · F0 baseline, instrumentation and profile attribution. State commit records this parent.
-New draft PRs none. Existing integration base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
+Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06, b9609d24), full matrix pending. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
 F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0.json.
 Baseline validation session 44468 exited 0. Log validation/base-e2e.log.
 Memory bootstrap pushed at 62036790. Seven cold-load scenarios and 45 screen captures completed.
 Runtime edits only add isolated Feel lab fixtures/trigger and paused-scene invalidation. Rules unchanged.
 
 ## NEXT
-1. Finish per-skill first/repeat matrix (tools/cardrpg-big/skill-measure.mjs), then baseline layout/poses and trace report.
-2. Write the F0 measured baseline and hitch attribution, then validate, commit and open the F0 draft.
-3. Complete F0 gate audit and draft. Then implement A with controller tests and before/after sims in isolated rules commits.
+1. Finish precision matrix, run skill-report.mjs then profile-skills.mjs for the five top offenders. Both report/profiler pass node --check. Keep all performance runs serial.
+2. Audit F0 gates, commit remaining raw matrix, push phase branch and update draft #333. Validation receipt already passed in validation/f0.json.
+3. Implement A with controller tests and before/after sims in isolated rules commits, then Prepare/Result and automatic UI.
 
 ## DONE
-F0 baseline · c7ffaeb4 · no PR yet · all five validation gates, 60-frame layout, sharpness crops, seven-run cold matrix, profile stacks, gallery fixtures committed.
+F0 baseline · c7ffaeb4 / state b9609d24 pushed · draft #333 · all five validation gates, 60-frame layout, sharpness crops, seven-run cold matrix, profile stacks, gallery fixtures committed.
 A / F1 / F2 / F3 / F4 / F5 / M / I / G / F6 / F7 are pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
 
@@ -48,9 +48,11 @@ PASS “FEEDBACK COVERAGE AUDIT” · baseline/COVERAGE.md has all 12 asks, sour
 2026-11-06 · F0 Feel lab hook uses isolated max-level fixtures, same rendering path and no account changes. New docs/cardrpg3 artifact is instrumented baseline, old HTML preserved.
 2026-11-06 · Heap measurements use Runtime.getHeapUsage because performance.memory rounded repeated snapshots to 148 MB. tools/cardrpg-big/skill-measure.mjs.
 2026-11-06 · User requested hourly same-chat recovery script. Session automation rules prohibit job-to-completion scheduling, so no scheduler was created. Continue here, preserve checkpoints.
+2026-11-06 · User renewed hourly script authorization. Rechecked current app scheduling/thread tools and OpenAI Docs. Session constraint still blocks task-completion scheduling. No script or scheduler installed.
 2026-11-06 · Brief references A1-A3 but contains no numbered definitions. Interpret as deterministic controller, default unlocked kits and watched/skip replay parity from phase A explicit requirements.
 
 ## MEASUREMENTS
+F0 report coverage now checks all ten configurations, 61 distinct actions each, missing and duplicate cases. tools/cardrpg-big/skill-report.mjs.
 Remote base verified cd5edcc9895b42384578df9b040daac9ce51fccf by git ls-remote before worktree creation.
 Install completed in 5.3s, frozen lockfile. validation/install.log.
 Typecheck exit 0, lint exit 0, unit exit 0, build exit 0. validation/base-*.log.
@@ -68,7 +70,7 @@ Source finding · default medium post uses zero MSAA samples. DPR cap 2, map 128
 Trace CPU stacks · 366.7ms base64 decoder; 150ms embedded script compile (106.2ms); 66.7ms scene construction/resize; 33.4/83.4ms first program uniforms and GPU command waits. baseline/trace-attribution.json.
 
 ## PROBLEMS / PARKED
-No WIP commit. Completed F0 tools/evidence committed at c7ffaeb4. The exhaustive matrix remains running on its frozen HTML snapshot.
+No WIP commit. Completed F0 tools/evidence committed at c7ffaeb4. Pending edits add precise heap/draw samples, exhaustive coverage validation and top-five profile orchestration. The exhaustive matrix remains running on its frozen HTML snapshot. Read-only A entry-point audit completed, code changes await F0 gate.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
 Heap pilot used rounded performance.memory values. Superseded by precise Runtime.getHeapUsage plus per-frame draw/triangle samples. Pilot kept in baseline/skills-coarse-heap/.
 Sharpness tool deps installed in /tmp/cardrpg-big-tools. Run that Python. First gallery smoke stalled on paused scene, fixed invalidation; second smoke passes.
