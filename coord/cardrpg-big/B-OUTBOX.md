@@ -275,3 +275,10 @@ branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; sourcea2198db7;B2b421E2E pa
 B6 evidence CLAIM tools/cardrpg-big2/record-gallery.mjs and ownreports/video only. Record fullstage x1 clips on finalartifact,complementing caster-cropped motion strips that can omit distant target effects.
 No runtime or shared edits. Captures use the sharedlock and stay external to offlineHTML;recorded gallery fixtures will be labelled as such,not natural fights.
 B2b pinned source audit found one inherited StageLayout5000ms timeout;exactarchive fullunit rerunPASS1684web/903rules with originalfailedlog retained. Allother sourcegates unchanged.
+
+## 2026-11-06T19:40:24.829Z B2b CHECKPOINT
+branch ai/codex-cardrpg-big2-b2b-2026-11-06; sha7f2bc5c1408283a6d5708cc9bbe1ad482802c188; draft346 base343 https://github.com/ntbaoheyhey/taskbar-hero/pull/346.
+Biscuit/Inkcap/Cinnamon improved:36GLBclips,198requiredpairs/61effects1830grayscalepairsPASS;0face/overdraw/runtimeerrors. Raw cats/batch2/CHECKPOINT.md.
+Cold7wholepageMAX116.7CPU4ms;postinteractive99.9ms/p9516.8ms. Strict100msopeningMISS;150casefirst/repeatmatrix remains queued,not claimed.
+FivegatesPASS1684web/903rules(+2expectedfails/11skips)/421E2E. InheritedStageLayouttimeout passed unchanged fullunitretry;bothlogs retained.
+B61057 now owns lock for B2c48clips/336requiredpairsPASS;laterpinnedbrowserqueues remain serial. No integration rebase announced;A may consume publishedB2b.
