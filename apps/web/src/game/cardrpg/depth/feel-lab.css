@@ -1,11 +1,16 @@
 .dp-feel-home { position: fixed; right: 16px; bottom: 18px; z-index: 30; }
-.dp-feel-lab .dp-lab-drawer { position: fixed; top: 78px; bottom: 76px; right: 16px; width: min(650px, calc(100vw - 32px)); box-sizing: border-box; display: flex; flex-direction: column; padding: 16px; overflow: hidden; }
+.dp-feel-lab .dp-lab-drawer { position: fixed; top: 78px; bottom: 76px; right: 16px; width: min(650px, calc(100vw - 32px)); box-sizing: border-box; display: flex; flex-direction: column; padding: 16px; overflow: hidden; background: #211d2e; }
 .dp-lab-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .dp-lab-header h2 { margin: 0; }
 .dp-lab-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid #655469; }
 .dp-lab-tabs button { padding: 7px 10px; font-size: 12px; }
-.dp-lab-tabs button[aria-pressed=true] { background: #f4cd93; color: #292332; }
+.dp-app .dp-feel-lab .dp-lab-tabs button[aria-pressed=false] { background: #3a3040; color: #f5ebdc; }
+.dp-app .dp-feel-lab .dp-lab-tabs button[aria-pressed=false]:hover { background: #50404d; }
+.dp-app .dp-feel-lab .dp-lab-tabs button[aria-pressed=true] { background: #f4cd93; color: #292332; }
 .dp-lab-body { overflow: auto; min-height: 0; padding-top: 14px; }
+.dp-feel-lab .dp-lab-body > label { align-items: stretch; text-align: left; }
+.dp-feel-lab .dp-lab-body .dp-lab-check { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; }
+.dp-feel-lab .dp-lab-check input[type=checkbox] { flex: none; width: auto; margin: 0; }
 .dp-lab-body p, .dp-lab-body figcaption { font-size: 12px; line-height: 1.6; }
 .dp-lab-body .cr-panel { padding: 12px; margin: 12px 0; }
 .dp-lab-body .dp-crop-grid { grid-template-columns: 1fr; }

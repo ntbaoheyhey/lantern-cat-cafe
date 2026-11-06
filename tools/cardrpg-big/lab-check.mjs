@@ -39,9 +39,39 @@ try {
       assert.equal(layout.pageOverflow, 0);
       assert.equal(layout.panelOverflow, 0);
       assert.equal(layout.bodyOverflow, 0);
+      const controls = await drawer.evaluate(element => {
+        const luminance = color => {
+          const [red, green, blue] = color.match(/[\d.]+/g).slice(0, 3).map(Number)
+            .map(channel => channel / 255)
+            .map(channel => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4);
+          return red * .2126 + green * .7152 + blue * .0722;
+        };
+        const tabs = [...element.querySelectorAll('.dp-lab-tabs button')].map(button => {
+          const style = getComputedStyle(button);
+          const foreground = luminance(style.color), background = luminance(style.backgroundColor);
+          return { text: button.textContent, selected: button.getAttribute('aria-pressed'),
+            foreground: style.color, background: style.backgroundColor,
+            contrast: (Math.max(foreground, background) + .05) / (Math.min(foreground, background) + .05) };
+        });
+        const checks = [...element.querySelectorAll('input[type=checkbox]')].map(input => {
+          const label = input.closest('label');
+          const text = [...label.childNodes].find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+          const range = document.createRange();
+          range.selectNode(text);
+          const inputBox = input.getBoundingClientRect(), textBox = range.getBoundingClientRect();
+          return { text: text.textContent.trim(), gap: textBox.left - inputBox.right,
+            centerDifference: Math.abs(inputBox.top + inputBox.height / 2 - textBox.top - textBox.height / 2) };
+        });
+        return { tabs, checks };
+      });
+      for (const tab of controls.tabs) assert(tab.contrast >= 4.5, `${tab.text} contrast ${tab.contrast} is below 4.5`);
+      for (const check of controls.checks) {
+        assert(check.gap >= 0 && check.gap <= 12, `${check.text} is detached from its checkbox`);
+        assert(check.centerDifference <= 3, `${check.text} is vertically misaligned`);
+      }
       const path = `${output}/${width}-${name}.png`;
       await page.screenshot({ path });
-      captures.push({ name, path, layout });
+      captures.push({ name, path, layout, controls });
     };
     await capture('gallery-home');
     await drawer.getByRole('button', { name: 'Before / after', exact: true }).click();

@@ -63,7 +63,7 @@ export function FeelLab({ m, home = false }: { m: DepthModel; home?: boolean }) 
             <label>Preview speed<select value={m.gallerySpeed} onChange={event => { m.gallerySpeed = Number(event.target.value); m.notify(false); }}>
               <option value={.25}>0.25×</option><option value={1}>1×</option>
             </select></label>
-            <label><input type="checkbox" checked={m.galleryEffectOnly} onChange={event => { m.galleryEffectOnly = event.target.checked; if (!m.galleryBattle) m.inspect(m.galleryId); else m.notify(false); }} /> Effect only</label>
+            <label className="dp-lab-check"><input type="checkbox" checked={m.galleryEffectOnly} onChange={event => { m.galleryEffectOnly = event.target.checked; if (!m.galleryBattle) m.inspect(m.galleryId); else m.notify(false); }} /> Effect only</label>
           </div>
           <label>Action progress<input ref={progress} type="range" min={0} max={.999} step={.001} defaultValue={0}
             onChange={event => m.inspect(m.galleryId, Number(event.target.value))} /></label>
@@ -76,7 +76,7 @@ export function FeelLab({ m, home = false }: { m: DepthModel; home?: boolean }) 
         {m.labPanel === 'motion' && <><MotionEvidence /><EffectEvidence /></>}
         {m.labPanel === 'checklist' && <BriefChecklist m={m} />}
         {m.labPanel === 'performance' && <>
-          <label><input type="checkbox" checked={m.labPerformance} onChange={event => { m.labPerformance = event.target.checked; m.notify(false); }} /> Show live frame overlay</label>
+          <label className="dp-lab-check"><input type="checkbox" checked={m.labPerformance} onChange={event => { m.labPerformance = event.target.checked; m.notify(false); }} /> Show live frame overlay</label>
           <p>The offline demo samples from its first page animation frame. Max and hitch counts include loading and navigation. The graph shows the latest 240 visible-page frames.</p>
           <label>Quality tier<select value={m.state.settings.quality} onChange={event => { m.state.settings.quality = event.target.value as typeof m.state.settings.quality; m.notify(false); }}>
             {['low', 'medium', 'high'].map(quality => <option key={quality}>{quality}</option>)}
