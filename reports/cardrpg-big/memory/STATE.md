@@ -3,20 +3,27 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F4 starter verification complete, publication next.720/720 cases and5 profiles finish session28669 exit0.249394 raw frames, pageMAX266.7ms (>25=4727,>50=1374), first/repeatMAX33.4/16.8ms (>25=7/0,>50=0/0). Peak207 calls/93802 triangles. Effect identity465/465, min0.542308, zero face failures, overdraw16/24 and instances36/96. Layout3240 poses zero overlap/crop/occlusion/missing plates. Runtime124/124 including SwiftShader Low. Final validation1661 web/903 rules/421 E2E. CPU4 opening gate remains missed. slice.html/CHECKPOINT.md prepared against measured artifact061fe9251a7eb546682a4aac6fba9bfa723ccf5a0f1506c0dc7ff1f8ff52bf03.
+Phase F5 starts after published F4 slice. F4 source 7c312fd8886657b39168bbb5f386f3d831e4dfff verified on primary and F4 remote. Draft #338 verified on F3. F4 measures 720/720 cases, 5 profiles, first/repeat MAX33.4/16.8ms, CPU4 page MAX266.7ms (miss).
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed memoryf52850a2f1848636db4ca1af6b05a0e2c0b37616, source a6c093de6801b234603a10ee3fdb5e01d5a4955b, primary/F3 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
+Last pushed source 7c312fd8886657b39168bbb5f386f3d831e4dfff. Draft F4 #338 (codex/cardrpg-big-f4-2026-11-06) on F3, primary/F4 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
-1. Refresh builder receipt, assert byte-identical measured HTML, check phase-only diff and commit F4 source/evidence.
-2. Push F4 draft on F3 with slice.html and CHECKPOINT.md, verify remote SHA/draft and publish the user checkpoint.
-3. Start F5 impact-synchronized HP/KO, aggregate labels and pacing, then M/I/G/F6/F7 and remaining cats.
+1. Synchronize visible battle state and HP/KO to action impact, then group numbers and round ticks.
+2. Add focus/banner/drama and tighten pacing. Measure Fight/Pause/Skip response and chapter-1 duration spread.
+3. Run F5 validation and full hitch harness, publish F5 draft, then continue M/I/G/F6/F7 and remaining cats.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
-A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full610 matrix and5 profiles complete, evidence52e9e94a46c970ad3c373cebbbb4fdc17421e1b9. F3 ·a6c093de / draft#337 / motion/GATES.md, PERFORMANCE.md,610 cases+5 profiles. F4–F7 pending.
+A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full610 matrix and5 profiles complete, evidence52e9e94a46c970ad3c373cebbbb4fdc17421e1b9. F3 ·a6c093de / draft#337 / motion/GATES.md, PERFORMANCE.md,610 cases+5 profiles. F4 ·7c312fd8 / draft#338 / effects/GATES.md, PERFORMANCE.md, CHECKPOINT.md /720 cases+5 profiles. F5–F7 pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
-## PHASE GATES · F4 slice (copied requirements)
+## PHASE GATES · F5 (copied requirements)
+NOT YET “Unmistakable focus ... spotlight ring ... target line/arc ... skill banner0.5–0.7s ... result chips.”
+NOT YET “one action resolves fully ... never two actors’ effects ... multi-hit numbers aggregate ... status ticks ... grouped beat.”
+NOT YET “Auto camera director ... return to framing ... respects ... camera preset and reduced motion.”
+NOT YET “basic<=1.2s, skill<=1.8s, ultimate<=2.8s, enemy<=1.4s, gap<=0.25s, round gap<=0.4s ... x2/x4 ... Skip ... instantly ... chapter1 ...45–90s.”
+NOT YET “low-HP warning tint ... comeback/clutch ... boss phase changes ... Victory/defeat ... reward reveal bursts.”
+NOT YET “smooth short transitions ... idle life ... hover/press ...100ms max ... Fight/Skip/Pause ... Reduced-motion.”
+## F4 SLICE GATES
 PASS implementation “library of >=30 reusable primitives ... compose a UNIQUE effect” ·40 primitives/31 recipes, structural tests8/8. Rendered465/465 pairs pass. effects/PLAN.md, validation/f4-focused.log.
 PASS measured identity ·465/465 pairs, minimum0.542308>0.16. Zero face samples exceed1% pixels at RGBdelta>8 after bloom fix. effects/uniqueness.json. Palette/rhythm/camera authored, broader runtime review pending.
 PARTIAL “Cinematography ... hit-stop60–110ms ... slow-motion ... skippable bespoke ULTIMATE ...1.2–1.8s” ·starter duration assertions and real preview/skip clicks PASS. Kill/crit/number flow pending F5. effects/runtime/checks.json.
@@ -31,6 +38,7 @@ F2 · renderer/DPR/textures/portraits/budgets PASS, sharpness2/10 target pairs P
 A · functional PASS, cast33.4/16.8ms PASS, page1616.6ms FAIL. auto/GATES.md, PERFORMANCE.md.
 F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, hero13.189–32.975% band MISSED, pageMAX1583.3ms FAIL. layout/README.md, PERFORMANCE.md.
 ## DECISIONS · append only
+2026-11-06 recovery · Verified PROMPT45001 bytes/hash and exact attachment prefix. F4 source7c312fd8 remotely published, draft338 confirmed. Rechecked hourly recovery request against current tools, session instruction still blocks task-to-completion scheduler. No scheduler installed. Continue F5 with presentation-only changes.
 2026-11-06 19:00 · F4 matrix720/720 and5 profiles complete. Seven first-use33ms intervals retained, one profile interval straddles fixture/cast boundary, others unreproduced. Report all and carry CPU4 opening266.7ms miss to F6. Publish starter checkpoint before F5.
 2026-11-06 17:45 · Recovery verifies45001-byte PROMPT hash and exact original attachment prefix. Runtime source hashes match build. The measurement-only gzip trace writer changed after the receipt, recorded in effects/PERFORMANCE.md. Cold7 and final-effect captures complete. Full720/profiles session28669 runs alone. Renewed hourly recovery request remains blocked by session Automations instruction, no script installed.
 2026-11-06 17:24 · Recovered supplied summary and verified45001-byte PROMPT digest. Face-aware bloom rerun already completed, zero failures. Compact1024px ultimate panel first to156px, then120px after three-camera probe after measured overlap. Rechecked scheduler tools, session rule still blocks job-to-completion scheduling despite user authorization. No scheduler installed.
