@@ -28,6 +28,15 @@ try {
     const drawer = page.getByRole('region', { name: 'Feel lab', exact: true });
     const capture = async name => {
       await drawer.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+      if (name === 'gallery-effect' || name === 'gallery-stage') {
+        await page.waitForFunction(() => {
+          const scene = window.__depthScene;
+          const model = window.__depthReview;
+          return scene?.ready && scene.stats.frames > 0 && scene.stats.calls > 0
+            && scene.stats.triangles > 0
+            && model.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
+        }, null, { timeout: 120000 });
+      }
       await page.waitForTimeout(180);
       const layout = await drawer.evaluate(element => {
         const bounds = element.getBoundingClientRect();
@@ -43,7 +52,12 @@ try {
       assert.equal(layout.bodyOverflow, 0);
       const path = `${output}/${width}-${name}.png`;
       await page.screenshot({ path });
-      captures.push({ name, path, layout });
+      const scene = await page.evaluate(() => {
+        const scene = window.__depthScene;
+        return scene ? { ready: scene.ready, frames: scene.stats.frames, calls: scene.stats.calls,
+          triangles: scene.stats.triangles, loaded: scene.stats.loaded } : null;
+      });
+      captures.push({ name, path, layout, scene });
     };
     await capture('gallery-home');
     await drawer.getByRole('button', { name: 'Before / after', exact: true }).click();
