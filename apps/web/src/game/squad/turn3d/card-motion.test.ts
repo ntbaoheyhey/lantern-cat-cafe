@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import * as T from 'three';
+import { ROSTER_SKILL_CLIPS } from './card-roster-motion';
 import { STARTER_MODELS, CHAPTER_ONE_MODELS, STARTER_SKILL_CLIPS } from './card-motion-data';
 import { cardClipDefinitions, cardIdleFrame, cardTravelFraction, cardHitClip,
   cardSkillMotion, createCardClips, sampleCardPose } from './card-motion';
 
 describe('authored starter motion', () => {
   it('covers each starter slot and at least twelve clips per slice model', () => {
-    for (const asset of [...STARTER_MODELS, ...CHAPTER_ONE_MODELS]) {
+    for (const asset of [...STARTER_MODELS, ...Object.keys(ROSTER_SKILL_CLIPS), ...CHAPTER_ONE_MODELS]) {
       const clips = cardClipDefinitions(asset);
       expect(clips.length).toBeGreaterThanOrEqual(12);
       expect(new Set(clips.map(clip => clip.id)).size).toBe(clips.length);
@@ -20,12 +21,12 @@ describe('authored starter motion', () => {
       expect(STARTER_SKILL_CLIPS[asset]!.map(clip => clip.id))
         .toEqual([1, 2, 3, 4].map(slot => `${asset}-${slot}`));
     }
-    expect(cardClipDefinitions('panko')).toEqual([]);
+    expect(cardClipDefinitions('panko').map(clip => clip.id)).toContain('panko-4');
     expect(cardClipDefinitions('unknown')).toEqual([]);
   });
 
   it('keeps authored times ordered and sampled transforms finite', () => {
-    for (const asset of [...STARTER_MODELS, ...CHAPTER_ONE_MODELS]) {
+    for (const asset of [...STARTER_MODELS, ...Object.keys(ROSTER_SKILL_CLIPS), ...CHAPTER_ONE_MODELS]) {
       for (const clip of cardClipDefinitions(asset)) {
         expect(clip.duration).toBeGreaterThan(0);
         expect(clip.keys[0]![0]).toBe(0);

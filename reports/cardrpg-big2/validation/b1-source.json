@@ -1,0 +1,80 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T16:37:55.461Z",
+    "ended": "2026-11-06T16:38:04.196Z",
+    "log": "reports/cardrpg-big2/validation/b1-source-typecheck.log",
+    "sha256": "a4eb6423ec3f2507f58d916f3f3aacb2223122f5332582f84f5c816fc8ebab35",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T16:38:04.197Z",
+    "ended": "2026-11-06T16:38:12.529Z",
+    "log": "reports/cardrpg-big2/validation/b1-source-lint.log",
+    "sha256": "0b7737e3ef44ade6b91201f7a417fa907cc2b8d55bf2b309012b74c73ec0cdb7",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T16:38:12.529Z",
+    "ended": "2026-11-06T16:38:59.265Z",
+    "log": "reports/cardrpg-big2/validation/b1-source-tests.log",
+    "sha256": "866fed732466785c450be4e7727128a71d7c09038d104880274e1041b338c9ee",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  49 passed | 3 skipped (52)",
+      "packages/game-rules test:       Tests  903 passed | 2 expected fail | 11 skipped (916)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  161 passed (161)",
+      "apps/web test:       Tests  1681 passed (1681)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T16:38:59.266Z",
+    "ended": "2026-11-06T16:39:08.494Z",
+    "log": "reports/cardrpg-big2/validation/b1-source-build.log",
+    "sha256": "15968f0df3445c5ffe204efeea278a5e93e5285fe0105a2a77a0029b633f36d3",
+    "counts": []
+  },
+  {
+    "name": "e2e",
+    "args": [
+      "--filter",
+      "@taskbar-hero/web",
+      "test:e2e",
+      "--workers=4"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T16:39:08.495Z",
+    "ended": "2026-11-06T16:41:15.128Z",
+    "log": "reports/cardrpg-big2/validation/b1-source-e2e.log",
+    "sha256": "e468b5de15c14a90cfe4ec1387d3a10a5079eff207db523f7cc298b08a7548c7",
+    "counts": [
+      "  421 passed (2.1m)"
+    ]
+  }
+]

@@ -19,6 +19,9 @@ import { CardSurfaces } from './card-surfaces';
 import { CardEffects, cardRecipeFor } from './card-effects';
 import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSkillMotion } from './card-motion';
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
+import { loadingFrame, warmScene } from './loading';
+import { CardUtensil } from './card-utensils';
+import { cardEntrancePose } from './card-entrance';
 
 export interface SceneView {
   decorateStage?: (stage: T.Group) => void;
@@ -36,7 +39,7 @@ export interface SceneView {
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { enteredAt:number; face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { enteredAt:number; utensil?:CardUtensil; face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -67,6 +70,7 @@ export class TurnScene {
   private renderAt = 0;
   private dirty = true;
   private time = 0;
+  private entrance?: { asset: string; startedAt: number };
   private width = 1;
   private height = 1;
   private resize: ResizeObserver;
@@ -139,12 +143,14 @@ export class TurnScene {
   private async warmModels(){
     const warm=new T.Group();
     try{
-      await new Promise(resolve=>setTimeout(resolve,0));if(this.disposed)return;
+      await loadingFrame();if(this.disposed)return;
       if(this.view().autoBattle){
         for(const kind of ['wood','cloth','window'] as const){
           const texture=await prepareStageTexture(kind);
           if(this.disposed){texture.dispose();return;}
           this.stageTextures.push(texture);
+          this.renderer.initTexture(texture);
+          await loadingFrame();
         }
       }
       this.stage=this.makeStage();this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
@@ -162,40 +168,29 @@ export class TurnScene {
       for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
+        await loadingFrame();
       }
       // A spare preview has never drawn its equipped actor. Prepare that
       // material variant too, before exposing it in the first item picker.
       this.loading.completed=2;this.loading.label='Preparing companion motion';
       const initial={...this.view(),frame:null};
-      await Promise.all(initial.actors.map(a=>this.ensure(a,initial.boss)));if(this.disposed)return;
+      for(const actor of initial.actors){await this.ensure(actor,initial.boss);await loadingFrame();if(this.disposed)return;}
       for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
       this.loading.completed=3;this.loading.label='Compiling lighting';
       await new Promise(resolve=>setTimeout(resolve,0));
       this.scene.add(warm);
       // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
       // Prepare both while loading so adaptive quality never links at a hit.
-      const viewport=this.renderer.getViewport(new T.Vector4());
-      const target=new T.WebGLRenderTarget(2,2);
-      try{
-        for(const destination of [null,target]){
-          this.renderer.setRenderTarget(destination);
-          this.renderer.setViewport(0,0,2,2);
-          for(const model of warm.children)model.visible=true;
-          await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
-          for(const model of warm.children)model.visible=false;
-          for(const model of warm.children){
-            if(this.disposed)return;
-            model.visible=true;this.renderer.render(this.scene,this.camera);model.visible=false;
-            await new Promise(resolve=>setTimeout(resolve,0));
-          }
-        }
-      }finally{
-        this.renderer.setRenderTarget(null);this.renderer.setViewport(viewport);target.dispose();
-      }
+      await warmScene(this.renderer,this.scene,this.camera,()=>this.disposed,
+        fraction=>{this.loading.completed=3+fraction;});
+      if(this.disposed)return;
       this.scene.remove(warm);
       this.loading.completed=4;this.loading.label='Preparing skill effects';
       await this.spells.warm(this.renderer,this.camera,this.scene);if(this.disposed)return;
       await this.cardEffects?.warm(this.renderer,this.camera);if(this.disposed)return;
+      this.loading.label='Preparing the final lighting';
+      await this.post.warm(()=>this.disposed);if(this.disposed)return;
+      await loadingFrame();
       this.loading.completed=5;this.loading.label='Ready';
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
@@ -245,6 +240,20 @@ export class TurnScene {
     this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.dirty=true;
   }
   invalidate(){this.dirty=true;}
+  /** Call after setting the preview's selected cat. Resolves false on teardown,
+   * failed preparation, or absent cat; no controls or account state are changed. */
+  async playEntrance(catId: string): Promise<boolean> {
+    await this.warming;
+    if (this.disposed || !this.ready) return false;
+    const view = this.view();
+    const actor = view.actors.find(actor => (view.models?.[actor.id] ?? actor.role) === catId);
+    if (!actor) return false;
+    await this.ensure(actor, view.boss);
+    if (this.disposed || !this.puppets.has(actor.id)) return false;
+    this.entrance = { asset: catId, startedAt: this.time };
+    this.dirty = true;
+    return true;
+  }
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
     try{
@@ -263,8 +272,9 @@ export class TurnScene {
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
-      const face = this.view().autoBattle && a.side === 'party' ? new CardFace(model, a.role, a.id) : undefined;
-      this.puppets.set(a.id,{enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      const face = this.view().autoBattle && a.side === 'party' ? new CardFace(model, a.role, asset) : undefined;
+      const utensil = this.view().autoBattle ? new CardUtensil(model, a.role, asset) : undefined;
+      this.puppets.set(a.id,{utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -333,6 +343,13 @@ export class TurnScene {
         const other=source===p?targets.find(t=>t!==p):targets.includes(p)?source:undefined;
         if(other)p.model.rotation.y=view.autoBattle?cardBodyYaw(a.side,targetYaw(p.base,other.base),weight):blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
       }
+      if (this.entrance?.asset === p.asset && !frame) {
+        const entrance = cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion);
+        if (p.actions.has('victory')) { clip = 'victory'; progress = entrance.progress; }
+        p.root.position.y += entrance.lift;
+        p.model.rotation.y = cardBodyYaw('party', 0, 0) + entrance.turn;
+        if (entrance.finished) this.entrance = undefined;
+      }
       // Restore the last mixer pose before gaze. PropertyMixer skips unchanged values.
       if(view.autoBattle && p.head) p.head.quaternion.copy(p.headPose);
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
@@ -368,6 +385,7 @@ export class TurnScene {
     if(frame&&!view.reducedMotion&&!view.model){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
     if(frame&&!view.reducedMotion&&!view.model){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
+    if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion).zoom;
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
     if(view.autoBattle && !view.model) {
       for(const actor of view.actors) {
@@ -428,7 +446,7 @@ export class TurnScene {
     const view=this.view();
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
-  private disposePuppet(p:Puppet){p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
+  private disposePuppet(p:Puppet){p.utensil?.dispose();p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
   dispose() {
     if (this.disposed) return;
     this.disposed = true;

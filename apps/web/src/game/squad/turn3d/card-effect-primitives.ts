@@ -1,7 +1,11 @@
 import * as T from 'three';
+import { BATCH2_PRIMITIVES, createBatch2Primitive, type Batch2Primitive } from './card-roster-batch2-primitives';
+import { ROSTER_PRIMITIVES, createRosterPrimitive, type RosterPrimitive } from './card-roster-primitives';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 export const CARD_EFFECT_PRIMITIVES = [
+  ...ROSTER_PRIMITIVES,
+  ...BATCH2_PRIMITIVES,
   'door', 'knock-ring', 'handle', 'lantern', 'light-pool', 'apron', 'bow', 'roof',
   'window', 'ember', 'spark', 'cup', 'steam', 'ink-drop', 'ink-stain', 'wick',
   'flame', 'tray', 'star', 'comet', 'leaf', 'stem', 'droplet', 'wave',
@@ -13,6 +17,8 @@ type Point = [number, number, number?];
 
 /** Original cafe silhouettes, authored in local XY with a small physical depth. */
 export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry {
+  if ((ROSTER_PRIMITIVES as readonly string[]).includes(kind)) return createRosterPrimitive(kind as RosterPrimitive);
+  if ((BATCH2_PRIMITIVES as readonly string[]).includes(kind)) return createBatch2Primitive(kind as Batch2Primitive);
   const parts: T.BufferGeometry[] = [];
   const path = (points: Point[], radius = .035) => {
     const curve = new T.CatmullRomCurve3(points.map(([x, y, z = 0]) => new T.Vector3(x, y, z)));
@@ -46,7 +52,7 @@ export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry
     panel(points.map(([px, py]) => [x + (px * Math.cos(angle) - py * Math.sin(angle)) * size,
       y + (px * Math.sin(angle) + py * Math.cos(angle)) * size]));
   };
-  const builders: Record<CardEffectPrimitive, () => void> = {
+  const builders: Record<Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive>, () => void> = {
     door() {
       path([[-.46, -.58], [-.46, .5], [0, .68], [.46, .5], [.46, -.58]], .055);
       path([[-.31, -.52], [-.31, .39], [.10, .48], [.10, -.44]], .032);
@@ -221,7 +227,7 @@ export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry
       path([[-.24, .10], [-.21, .24], [-.08, .31]], .035);
     },
   };
-  builders[kind]();
+  builders[kind as Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive>]();
   const flattened = parts.map(geometry => geometry.index ? geometry.toNonIndexed() : geometry);
   const merged = mergeGeometries(flattened, false);
   for (const geometry of new Set([...parts, ...flattened])) geometry.dispose();

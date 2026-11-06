@@ -64,10 +64,10 @@ export function BattleView({ m }: { m: DepthModel }) {
       const loading = scene.current?.loading;
       if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
         loadingText.current.textContent = loading.label;
-        if (loadingProgress.current) {
-          loadingProgress.current.max = loading.total;
-          loadingProgress.current.value = loading.completed;
-        }
+      }
+      if (loading && loadingProgress.current && loadingProgress.current.value !== loading.completed) {
+        loadingProgress.current.max = loading.total;
+        loadingProgress.current.value = loading.completed;
       }
       if (scene.current?.ready && !ready) { ready = true; m.sceneReady = true; m.notify(false); }
       currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
