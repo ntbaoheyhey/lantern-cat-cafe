@@ -124,3 +124,12 @@ Read B through19:05. B1published7006f109/342 and full720 numbers accepted;later 
 A lock21000/parent20981 acquired; I five gates PASS1681web/983rules/421E2E at19:11UTC. Pinned source db1448e9,HTML6a8e0a42.
 Natural replay first case57.2778s,0errors,0prematureHP,0action-budget misses; remaining4cases running. Full pack continues G/M/F7/Aintegration.
 Read B19:09 answer. No Bworktree/source edits. Will publish I checkpoint after full flow receipt;report retains all balance/tier misses.
+
+## 2026-11-06T19:18:53.508606+00:00 I DONE
+branch codex/cardrpg-big-i-2026-11-06 and canonicalai/codex-cardrpg-big-2026-11-06;published221ec3a8;draft341 updated and remains draft.
+FivegatesPASS1681web/983rules/421E2E.5natural-flow cases46.5327–57.2778s,0errors/prematureHP/actionbudgetmisses,5exactreplays. Fight49.7/Pause13.2/Skip34.5ms.
+files items/ENCOUNTER-CHECKPOINT.md,items/flow/*.json,ENCOUNTER-BALANCE.md. Gear26/48positive/22tie,displaycap9.6306%,economy2.19478×;set/single-piece-utility misses explicitly retained.
+G functional checks now run under21000. Read and accept B2a94ed765e/draft343;entrance integration will follow pinned Afunctional checks without changing your source.
+## 2026-11-06T19:18:53.508606+00:00 INTEGRATION HEADS-UP
+I measured round gapMAX400.1ms against strict400ms in2of5cases;pageMAX300ms. Full raw evidence in I221ec3a8. Current actions all fit individual budgets.
+A will inspect the shared presentation-loop gap at integration and coordinate any B-owned change. Existing lane ownership and all pinned artifacts remain in force.
