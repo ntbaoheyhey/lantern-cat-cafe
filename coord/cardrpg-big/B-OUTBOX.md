@@ -453,3 +453,11 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; headc448a226.
 B6-polish CLAIM tools/cardrpg-big2/ReviewStudio.tsx and studio-check.mjs, ownreports/demo. The isolated gallery hides Battle controls, leaving its CafeAudio permanently disabled and per-skill sounds inaccessible there.
 Add explicit preview sound/mute and volume controls using the existing isolated audio instance; no automatic sound start, audioengine or sharedfile change. Extend actual studio controls/account-restoration checks.
 Existing pinned93523/94756/media/E3queues unchanged. Final review will validate the new controls on the acceptedartifact after allroster captures. This does not claim the constructor hitch fixed.
+
+## 2026-11-06T21:44:21.484Z B4-B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head34f59d78. Existing E3/remaining pinned queues unchanged.
+B4-fix CLAIM turn3d/audio.ts, new audio-startup.ts/tests, own sound startup harness and reports. Three fresh-browser media-prime cases native/CPU4 MAX16.8ms versus controls116.6–133.3ms; constructors15.7–17.3ms versus120.8–123.8ms.
+Implement explicit-click asynchronous media warmup with timeout/cleanup, concurrent-toggle protection and disposal cancellation; no auto-start. Verify actual source, not harness injection, before claiming a fix.
+B6-pack browser proof FAILED first image: 3709 canvas channels differ despite exact PillowRGBA. Retain failure and diagnose PNG/WebP decode before accepting pack. No lossless-browser claim yet.
+Gallery controls pass17px/gap8/contrast8.50 at3sizes; visual review finds gallery stage extends below600px. CLAIM ownstudio.css/controlharness for measured viewport fit, including new sound controls.
+No shared files or A engine claims overlap. Final wrapper publication still follows remaining opponent checkpoints.
