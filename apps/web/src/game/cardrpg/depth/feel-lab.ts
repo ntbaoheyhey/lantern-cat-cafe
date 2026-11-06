@@ -27,12 +27,14 @@ export function galleryFixture(id: string) {
   const battle = R.createBattle({ seed: 71, chapter: enemy?.chapter ?? 1, cats: R.battleCats(account), enemies: [action.enemy ? action.owner : 'button-guard'] });
   const caster = battle.actors.find(actor => actor.catalogId === action.owner)!;
   const skill = R.skillById(id);
-  const friendly = skill && ['ally', 'allies', 'self', 'fallen'].includes(skill.target);
+  const enemySupport = action.enemy && ['heal', 'shield'].includes(enemy!.mechanic);
+  const friendly = enemySupport || skill && ['ally', 'allies', 'self', 'fallen'].includes(skill.target);
   const targets = battle.actors.filter(actor => actor.side === (friendly ? caster.side : caster.side === 'party' ? 'enemy' : 'party'));
   const targetIds = (skill?.target === 'self' ? [caster] : ['allies', 'foes', 'row'].includes(skill?.target ?? '') ? targets : targets.slice(0, 1)).map(actor => actor.id);
   const skillId = action.enemy ? `${enemy!.role}Attack` : id;
   const start: TurnEvent = { version: 3, seq: 0, turn: 1, round: 1, actionId: 1, beat: 0, type: 'action_start', actorId: caster.id, skillId, targetIds, amount: 0 };
-  const effect = skill?.effects.some(item => item.kind === 'heal') ? 'heal' : friendly ? 'shield' : 'damage';
+  const healing = enemy?.mechanic === 'heal' || skill?.effects.some(item => item.kind === 'heal');
+  const effect = healing ? 'heal' : friendly ? 'shield' : 'damage';
   const plan = createActionPlan([start, { ...start, seq: 1, beat: 2, type: effect, amount: 42 }]);
   return { battle, plan, action };
 }

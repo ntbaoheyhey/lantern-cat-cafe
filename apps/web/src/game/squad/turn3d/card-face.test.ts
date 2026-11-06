@@ -10,6 +10,8 @@ describe('card face expressions', () => {
     expect(cardExpression('mochi-1', true)).toBe('casting');
     expect(cardExpression('KO', true)).toBe('KO');
     expect(cardExpression('victory', true)).toBe('happy');
+    expect(cardExpression('hit-right')).toBe('hurt');
+    expect(cardExpression('heavy-hit-left', true)).toBe('hurt');
   });
 
   it('keeps repeated fixed poses stable and bounds eye tracking', () => {

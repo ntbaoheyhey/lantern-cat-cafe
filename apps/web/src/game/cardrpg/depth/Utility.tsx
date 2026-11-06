@@ -1,4 +1,5 @@
 import { SharpnessEvidence } from './SharpnessEvidence';
+import { MotionEvidence } from './MotionEvidence';
 import { useState } from 'react';
 import type { EIP1193Provider } from 'viem';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -34,5 +35,5 @@ export function SaveSettings({ m }: { m: DepthModel }) {
 }
 export function Evidence() {
   const rows = [['Companion kits', '3', '12'], ['Battle skills', 'Fixed', 'All unlocked skills, chosen automatically'], ['Playable enemies', '9', '13'], ['Phased bosses', '1', '3'], ['Keywords', '7', '16'], ['Playable chapters', '1', '3'], ['Route choices', 'Fixed waves', '9 nodes, 2 branches'], ['Run charms', '0', '30 across 6 archetypes'], ['Equipment templates', '48', String(R.GEAR.length)], ['Affixes / sets', '3 / 3', `${R.AFFIXES.length} / ${R.SETS.length}`], ['Progress transfer', 'Reload resets', 'Versioned export / import'], ['Fuji integration', 'Design preview', 'Read-only wallet adapter and offline fixtures']];
-  return <><PageTitle eyebrow="Depth pass · source-bound census" title="More choices at every table." /><section className="cr-panel"><table className="dp-table"><thead><tr><th>Content</th><th>Before</th><th>This build</th></tr></thead><tbody>{rows.map(row => <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{cell}</td>)}</tr>)}</tbody></table><p className="dp-reference">REFERENCE — reports/cardrpg-depth/baseline/audit.json · packages/game-rules/src/cardrpg/depth/catalog.ts · equipment.ts · run.ts · save.ts · bridge.ts</p></section><p>Measured balance, performance, test results and remaining gates are recorded in reports/cardrpg-depth/CARDRPG-DEPTH-REPORT.md.</p><SharpnessEvidence /></>;
+  return <><PageTitle eyebrow="Depth pass · source-bound census" title="More choices at every table." /><section className="cr-panel"><table className="dp-table"><thead><tr><th>Content</th><th>Before</th><th>This build</th></tr></thead><tbody>{rows.map(row => <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{cell}</td>)}</tr>)}</tbody></table><p className="dp-reference">REFERENCE — reports/cardrpg-depth/baseline/audit.json · packages/game-rules/src/cardrpg/depth/catalog.ts · equipment.ts · run.ts · save.ts · bridge.ts</p></section><p>Measured balance, performance, test results and remaining gates are recorded in reports/cardrpg-depth/CARDRPG-DEPTH-REPORT.md.</p><SharpnessEvidence /><MotionEvidence /></>;
 }

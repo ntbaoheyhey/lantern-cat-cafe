@@ -1,0 +1,160 @@
+{
+  "artifact": "/tmp/cardrpg-big-f3-index.html",
+  "sha256": "71192cc4983f43affa14eab1fb250eacabee7ce6ceee221901a1fc105ef73eee",
+  "started": "2026-11-06T10:07:10.647Z",
+  "rows": [
+    {
+      "name": "1280x720-dpr2-cpu4-medium-enemy-sock-skipper",
+      "action": {
+        "id": "enemy:sock-skipper",
+        "owner": "sock-skipper",
+        "name": "Sock Skipper · Pocket skip steals 1 shared energy and hits the rear.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1280,
+      "height": 720,
+      "dpr": 2,
+      "cpu": 4,
+      "quality": "medium",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1186,
+          "before": {
+            "at": 3712.7999999970198,
+            "frames": 4,
+            "calls": 187,
+            "triangles": 71796,
+            "geometries": 573,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3762352,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 573,
+              "textures": 120
+            },
+            "heap": 30303960,
+            "heapDetail": {
+              "usedSize": 30303960,
+              "totalSize": 76972032,
+              "embedderHeapUsedSize": 4978496,
+              "backingStorageSize": 48792129
+            }
+          },
+          "after": {
+            "at": 4921,
+            "frames": 76,
+            "calls": 195,
+            "triangles": 73372,
+            "geometries": 573,
+            "textures": 120,
+            "particles": 20,
+            "estimatedGpuBytes": 3538540,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 573,
+              "textures": 120
+            },
+            "heap": 43449068,
+            "heapDetail": {
+              "usedSize": 43449068,
+              "totalSize": 77234176,
+              "embedderHeapUsedSize": 2784752,
+              "backingStorageSize": 33427454
+            }
+          },
+          "summary": {
+            "frames": 72,
+            "max": 16.800000000000182,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 195,
+            "triangles": 73372,
+            "particles": 20
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1186,
+          "before": {
+            "at": 4923,
+            "frames": 76,
+            "calls": 195,
+            "triangles": 73372,
+            "geometries": 573,
+            "textures": 120,
+            "particles": 20,
+            "estimatedGpuBytes": 3538540,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 573,
+              "textures": 120
+            },
+            "heap": 43461708,
+            "heapDetail": {
+              "usedSize": 43461708,
+              "totalSize": 77234176,
+              "embedderHeapUsedSize": 2784752,
+              "backingStorageSize": 33427454
+            }
+          },
+          "after": {
+            "at": 6119.5,
+            "frames": 148,
+            "calls": 195,
+            "triangles": 73372,
+            "geometries": 573,
+            "textures": 120,
+            "particles": 20,
+            "estimatedGpuBytes": 3538540,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 573,
+              "textures": 120
+            },
+            "heap": 32406076,
+            "heapDetail": {
+              "usedSize": 32406076,
+              "totalSize": 77234176,
+              "embedderHeapUsedSize": 2913800,
+              "backingStorageSize": 33427454
+            }
+          },
+          "summary": {
+            "frames": 72,
+            "max": 16.800000000000182,
+            "p95": 16.800000000000182,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 195,
+            "triangles": 73372,
+            "particles": 20
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 298,
+        "max": 366.7000000000003,
+        "p95": 16.800000000000182,
+        "above25": 11,
+        "above50": 7,
+        "within20": 0.9630872483221476
+      }
+    }
+  ],
+  "ended": "2026-11-06T10:07:19.068Z"
+}

@@ -16,6 +16,7 @@ import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 import { CardFace, cardExpression } from './card-face';
 import { CardSurfaces } from './card-surfaces';
+import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSkillMotion } from './card-motion';
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
 
 export interface SceneView {
@@ -31,7 +32,7 @@ export interface SceneView {
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { enteredAt:number; face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -198,16 +199,20 @@ export class TurnScene {
       const asset=this.view().models?.[a.id]??a.role;
       const gltf=await loadModel(asset);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
+      const cardClips=this.view().autoBattle?await createCardClips(model,a.role,asset):[];
+      if(this.disposed)return;
       const height=new T.Box3().setFromObject(model).max.y;
       const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(this.view().autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
-      const mixer=new T.AnimationMixer(model);const actions=new Map(gltf.animations.map(c=>[c.name,mixer.clipAction(c)]));
+      const mixer=new T.AnimationMixer(model);
+      const clips=new Map([...gltf.animations,...cardClips].map(clip=>[clip.name,clip]));
+      const actions=new Map([...clips].map(([name,clip])=>[name,mixer.clipAction(clip)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
       const face = this.view().autoBattle && a.side === 'party' ? new CardFace(model, a.role, a.id) : undefined;
-      this.puppets.set(a.id,{face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -235,23 +240,46 @@ export class TurnScene {
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       p.gear.update(a,view.appearance?.(a));p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
+      if(view.autoBattle&&!view.model&&clip==='idle'){
+        const idle=cardIdleFrame(a.id,this.time,view.reducedMotion);
+        if(p.actions.has(idle.clip)){clip=idle.clip;progress=idle.progress;}
+      }
+      if(view.autoBattle&&!view.model&&clip==='ready'&&a.side==='enemy'&&p.actions.has('telegraph'))clip='telegraph';
+      if(view.autoBattle&&!view.model&&!view.reducedMotion&&a.hp>0&&this.time-p.enteredAt<1.14&&p.actions.has('walk-in')){
+        clip='walk-in';progress=(this.time-p.enteredAt)/1.14;
+      }
       if(frame&&source===p){
-        const direction=SKILL_MOTION[frame.plan.skillId];
+        const direction=(view.autoBattle?cardSkillMotion(p.asset,frame.plan.skillId):undefined)??SKILL_MOTION[frame.plan.skillId];
         clip=p.actions.has(frame.plan.skillId)?frame.plan.skillId:frame.clip;progress=clipProgress(frame);
         if(!view.reducedMotion&&direction){const t=movementProgress(frame),target=targets[0]?.base??p.base;
-          p.root.position.lerpVectors(p.base,this.scratch.copy(p.base).lerp(target,direction.travel),t);
+          const distance=p.base.distanceTo(target);
+          const travel=view.autoBattle?cardTravelFraction(distance,direction.travel):direction.travel;
+          p.root.position.lerpVectors(p.base,this.scratch.copy(p.base).lerp(target,travel),t);
           const lift=Math.sin(frame.actionProgress*Math.PI);p.root.position.y+=Math.sin(t*Math.PI)*direction.arc+lift*direction.float;
           p.root.position.z+=Math.sin(t*Math.PI)*direction.side;
         }
       }
-      if(frame&&targets.includes(p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';progress=frame.beat.kind==='impact'?.45:frame.progress;if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}}
+      if(frame&&targets.includes(p)&&(!view.autoBattle||source!==p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){
+        const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));
+        clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';
+        if(hurt&&view.autoBattle&&source){
+          const localDirection=(source.base.x-p.base.x)*Math.cos(p.model.rotation.y)
+            -(source.base.z-p.base.z)*Math.sin(p.model.rotation.y);
+          const reaction=cardHitClip(frame.plan.ultimate,localDirection);
+          if(p.actions.has(reaction))clip=reaction;
+        }
+        progress=frame.beat.kind==='impact'?.45:frame.progress;
+        if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}
+      }
       if(frame&&!view.model&&!view.reducedMotion){
         const phase=frame.beat.kind,weight=phase==='anticipation'?ease(frame.progress):phase==='residue'?1-ease(frame.progress):1;
         const other=source===p?targets.find(t=>t!==p):targets.includes(p)?source:undefined;
         if(other)p.model.rotation.y=view.autoBattle?cardBodyYaw(a.side,targetYaw(p.base,other.base),weight):blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
       }
-      if(view.autoBattle && p.head) p.head.quaternion.copy(p.headRest);
+      // Restore the last mixer pose before gaze. PropertyMixer skips unchanged values.
+      if(view.autoBattle && p.head) p.head.quaternion.copy(p.headPose);
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
+      if(view.autoBattle && p.head) p.headPose.copy(p.head.quaternion);
       p.face?.animate(cardExpression(clip, !!frame && source === p), this.time, p.gaze.yaw, view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
