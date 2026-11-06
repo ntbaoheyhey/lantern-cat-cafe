@@ -4,10 +4,10 @@ PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 
 ## NOW
-Phase A · A2 default kits and 0.5→0.6 migration implemented, 240 depth tests pass. Matched starter/level-6 sims complete. Full A2 validation running as session 74891.
+Phase A · A2 complete at 74aa770e, all full validation gates pass (421 E2E). A3 UI/model edits are local and under focused validation.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed commit fee8d000 · A1 controller 6b48e0a2 plus full validation/state. A2 is the current isolated change.
+Last work commit 74aa770e · A2 default kits and save migration. This state commit publishes A2 validation and records its parent.
 Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06), published and verified via gh + ls-remote. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
 F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0-final.json.
 Baseline validation session 44468 exited 0. Log validation/base-e2e.log.
@@ -15,13 +15,13 @@ Recovery checkpoint pushed at c0f1c72a. Memory bootstrap pushed at 62036790. Sev
 A1 validation session 39205 exited 0. Rules units 899 pass +2 expected fail +11 skip, web units 1630, E2E 421. validation/a1.json.
 
 ## NEXT
-1. Commit A2 tests and sims, finish full validation session 74891 before pushing.
-2. Wire Prepare and Result with prediction, statistics and replay, and remove manual controls.
-3. Wire Prepare → automatic Fight → Result, skip/replay parity and every battle entry path, then phase validation.
+1. Complete A3 UI/model tests for Prepare, auto playback, skip, replay, import and rewards.
+2. Build offline demo and verify real-click paths at all three required sizes.
+3. Run phase-A performance harness/full validation, record gates, then open stacked draft A.
 
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
-A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2/A3 / F1 / F2 / F3 / F4 / F5 / M / I / G / F6 / F7 pending.
+A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 / F1 / F2 / F3 / F4 / F5 / M / I / G / F6 / F7 pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
 
 ## PHASE GATES · A (copied requirements)
@@ -53,6 +53,7 @@ IN PROGRESS “rules tests ... deterministic replay, skip-to-result == watched r
 2026-11-06 · A2 will use all unlocked default skills (3 ordinary + ultimate). The wider battle kit gets an explicit 0.6 save version and 0.5 migration, preserving old pending battles and recorded choices.
 
 ## MEASUREMENTS
+A2 full validation pass · rules 903 +2 expected fail +11 skip, web 1630, E2E 421. validation/a2.json.
 A2 level-6 train/held-out · ch1 100/100%, ch2 98/100%, ch3 100/100%. Before 74/74%, 98/98%, 76/90%. All 50 seeds per cell. Starter matches A1. auto/A2.md and sim/auto-a2*.json.
 A1 starter campaign train/held-out · ch1 56/44%, ch2 88/90%, ch3 58/60% (50 seeds each). Before 66/74%, 48/46%, 48/42%. sim/auto-a1*.json, auto/A1.md. Chapter 1 regression parked for I.
 A1 focused tests 19/19. Worst whole campaign runtime 14.03ms in headless held-out sample. validation/a1-controller-tests.log and sim/auto-a1-heldout.json.
@@ -76,7 +77,7 @@ Source finding · default medium post uses zero MSAA samples. DPR cap 2, map 128
 Trace CPU stacks · 366.7ms base64 decoder; 150ms embedded script compile (106.2ms); 66.7ms scene construction/resize; 33.4/83.4ms first program uniforms and GPU command waits. baseline/trace-attribution.json.
 
 ## PROBLEMS / PARKED
-A1 validated and committed. A2 sims completed. A2 full validation running as session 74891. Weak-target unit regression fixed before inspecting campaign results. A1 chapter-1 campaign rate drops 10pp training / 30pp held-out, pending I balance review. F0 original 33.4ms spike causes remain unresolved.
+A1 validated and committed. A2 sims completed. A2 validation session 74891 exited 0. A3 local edits in model/Battle/App/Pages/RunMap/Utility/depth.css, Encounter.tsx and battle-summary.ts, awaiting tests. Weak-target unit regression fixed before inspecting campaign results. A1 chapter-1 campaign rate drops 10pp training / 30pp held-out, pending I balance review. F0 original 33.4ms spike causes remain unresolved.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
 Heap pilot used rounded performance.memory values. Superseded by precise Runtime.getHeapUsage plus per-frame draw/triangle samples. Pilot kept in baseline/skills-coarse-heap/.
 Sharpness tool deps installed in /tmp/cardrpg-big-tools. Run that Python. First gallery smoke stalled on paused scene, fixed invalidation; second smoke passes.
