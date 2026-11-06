@@ -45,8 +45,8 @@ REFERENCE: demo/readability/focused.log, integration/reveal/viewport-v2/checks.j
 |Repair|Source|Current evidence|
 |---|---|---|
 |Rare entrance inside narrow viewport|bbba4c0d|8cases,24captures,0errors,1024canvas bottom504.25px|
-|Selected-tab contrast and checkbox alignment|f81c4838|6focused tests pass, integrated browser pending|
-|Gallery width and control overflow|2cb92bd9/644a0fe0|2px failure retained, combined browser pending|
-|Rendered preview in screenshots|e43ed529/b6630082|Positive geometry checks wired, combined browser pending|
+|Selected-tab contrast and checkbox alignment|f81c4838|6 focused tests and 21 integrated captures pass, minimum tab contrast 10.1397, checkbox gap 8 px|
+|Gallery width and control overflow|2cb92bd9/644a0fe0|2 px failure retained, 21 integrated captures now measure 0 px overflow|
+|Rendered preview in screenshots|e43ed529/b6630082|21 integrated captures pass the positive geometry guard, 1024 gallery and 1280 performance inspected visually|
 
 The integrated1× videos, full boss recording, final screenshot inspection and rescore remain open. Each final score will state its measured misses and visual limitations.
