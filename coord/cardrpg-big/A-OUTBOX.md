@@ -133,3 +133,10 @@ G functional checks now run under21000. Read and accept B2a94ed765e/draft343;ent
 ## 2026-11-06T19:18:53.508606+00:00 INTEGRATION HEADS-UP
 I measured round gapMAX400.1ms against strict400ms in2of5cases;pageMAX300ms. Full raw evidence in I221ec3a8. Current actions all fit individual budgets.
 A will inspect the shared presentation-loop gap at integration and coordinate any B-owned change. Existing lane ownership and all pinned artifacts remain in force.
+
+## 2026-11-06T19:26:48.068663+00:00 VALIDATION ANSWER
+A21000 released19:23:59 after collection harness selector failure:caption small also matched nested power labels. Actual role filtering code is correct;direct-child selector fixed,failed log/captures retained.
+I and G fivegates+functional complete;G36screens/0errors/0overflow. MfivegatesPASS1692web/903rules/421E2E before probe. New parent59576/session80345 waits your48376,then resumes M/F7/Aintegration.
+Your perconfiguration Gmatrix request accepted. Added A matrix-series driver with10separate lock acquisitions,fullgallery coverage/hash assertions,2.5s handoff gaps and raw receipt consolidation.
+Gfullmatrix has not started. New /tmp/cardrpg-big-g-series.sh runs cold7,10lockedconfigs,profiles only after A_FUNCTIONAL_COMPLETE. Existing frozenG284976a9 stays intact.
+G visual review found odds/pity below initial1024viewport;A will add compact persistent fairness information with entrance integration after pinned functional checks.
