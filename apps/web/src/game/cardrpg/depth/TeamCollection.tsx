@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_BY_ID, EQUIPMENT_SLOTS, RARITY_ORDER } from '@taskbar-hero/game-rules/cardrpg';
 import { PageTitle, Stats, ItemIcon } from '../shared';
@@ -86,6 +86,7 @@ export function Team({ m }: { m: DepthModel }) {
 }
 
 export function Collection({ m }: { m: DepthModel }) {
+  const detail = useRef<HTMLElement>(null);
   const [role, setRole] = useState('all');
   const [rarity, setRarity] = useState('all');
   const [ownership, setOwnership] = useState('all');
@@ -112,10 +113,17 @@ export function Collection({ m }: { m: DepthModel }) {
     </div>
     <div className="dp-collection-layout">
       <div className="cr-card-grid">{cards.map(card => <CompanionCard key={card.id} id={card.id} m={m}
-        selected={card.id === cat.id} onSelect={() => { m.cardId = card.id; setPreview('model'); m.notify(false); }} />)}
+        selected={card.id === cat.id} onSelect={() => {
+          m.cardId = card.id;
+          setPreview('model');
+          m.notify(false);
+          if (window.innerWidth <= 1100) requestAnimationFrame(() => detail.current?.scrollIntoView({
+            block: 'start', behavior: m.state.settings.reducedMotion ? 'instant' : 'smooth',
+          }));
+        }} />)}
         {!cards.length && <p>No companions match these filters.</p>}
       </div>
-      <section className="cr-panel dp-detail">
+      <section className="cr-panel dp-detail" ref={detail}>
         <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {cat.flavour}</small><h2>{cat.name}</h2></header>
         <CompanionPreview m={m} id={cat.id} skillId={skill?.id} />
         <div className="cr-actions"><button aria-pressed={!skill} onClick={() => setPreview('model')}>Rotate model</button></div>

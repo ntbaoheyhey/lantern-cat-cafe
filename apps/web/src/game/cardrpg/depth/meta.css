@@ -85,9 +85,9 @@
 .dp-formation-card[draggable=true] { cursor: grab; }
 .dp-presets .dp-three > div { border: 1px solid #76607866; border-radius: 8px; padding: 14px; }
 .dp-presets p { min-height: 28px; font-size: 11px; }
-.dp-collection-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(310px, .8fr); align-items: start; gap: 22px; }
+.dp-collection-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(380px, 1fr); align-items: start; gap: 22px; }
 .dp-collection-layout .cr-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.dp-collection-layout .dp-detail { position: static; min-width: 0; }
+.dp-collection-layout .dp-detail { position: static; min-width: 0; scroll-margin-top: 16px; }
 .dp-detail header { margin-bottom: 14px; }
 .dp-detail header h2 { margin: 5px 0; font-size: 28px; }
 .dp-preview-skills { display: grid; gap: 7px; }
