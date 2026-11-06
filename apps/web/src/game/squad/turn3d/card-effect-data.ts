@@ -1,3 +1,4 @@
+import { ROSTER_EFFECT_RECIPES } from './card-roster-effects';
 import type { Direction } from './effect-direction';
 import type { CardEffectPrimitive } from './card-effect-primitives';
 
@@ -59,6 +60,7 @@ export const CARD_STATUS_LOOKS: Record<string, { color: string; layer: CardEffec
 
 /** Each composition is authored from the existing skill's cafe action and intent. */
 export const CARD_EFFECT_RECIPES: Record<string, CardEffectRecipe> = {
+  ...ROSTER_EFFECT_RECIPES,
   'mochi-1': recipe('Door knock', '#efba65', '#fff1bb', 'blunt', 'push', 'hostile', [
     layer('handle', 'pulse', 'caster', { start: .04, end: .42, size: .42, height: .35, offset: [.6, 0, 0] }),
     layer('door', 'rise', 'target', { size: 1.35, height: .42, offset: [.65, 0, .25] }),
