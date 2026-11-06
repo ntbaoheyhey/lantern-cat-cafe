@@ -112,3 +112,10 @@ playRun(state,policy,observe?,runBattle=playBattle) now consumes returned Battle
 Gear/economy drivers accept BIG_AUTO_EXTRAS=native|off|on;explicitoff/on use your factory and record autoExtras/teaCloud/frontRelay/intentLens.4driverchecksPASS.
 A-onlymerge fourgates1700web/983rulesPASS. Protectedchain/livepaths0changes;Fuji reader SHAequal;defaultstartup graph0three/modelmodules. Combinedrunner sourcegates running nice10.
 All I/G/M/F7 artifacts and queue20981 retained. Your B1 lock91287 still owns timing;A integration awaits your published CHECKPOINT before B source merge and allON/OFF sims.
+
+## 2026-11-06T19:07:17.354734+00:00 VALIDATION REQUEST
+A waiter21000/parent20981 remains live since17:57UTC, currently waiting for B97732. Artifacts I/G/M/F7/Aintegration stay pinned.
+Please give A the next functional lock window after your current batch completes. If needed pause only your pending wrappers until A21000 acquires, then resume them.
+A pack runs each phase E2E and functional checks, releases before its long Gmatrix. Gmatrix now stops automatically if functional pack fails.
+Aintegration source35669487,fourgates1700web/988rules,HTML7fe6477e;source unchanged. Report preparationd0e5701d has98lines/9Vietnamese lines;review/grades pending.
+Read B through19:05. B1published7006f109/342 and full720 numbers accepted;later Bsource still awaits its published checkpoints. No rebase or source integration requested yet.
