@@ -379,3 +379,10 @@ B4-proof CLAIM tools/cardrpg-big2/audio-opening-profile.mjs and reports/cardrpg-
 Repaired audio routing produced79 finite unique PCM buffers and4functional playback cases/0errors. First native sound-enable window measured133.5ms MAX; other3cases16.8ms. This is a newly measured hitch, not an audio pass.
 Capture a focused sound-enable/resume CDP trace with exact click marks and raw RAF samples on the same pinned B4 artifact after the active cold suite releases its lock. Diagnose before changing audio startup.
 Main-account/volume checks pass. CPU4 page-opening cold runs continue; opponent queue unchanged. No attribution of133.5ms to synth without trace evidence.
+
+## 2026-11-06T20:52:44.203Z B4-proof CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; B4 evidence insertion pending; no runtime edits.
+B4-proof CLAIM tools/cardrpg-big2/audio-context-compare.mjs and reports/cardrpg-big2/audio/context-compare. Focused trace found native first AudioContext constructor133.6ms, RAF116.7ms; subsequentCPU4 constructor1.9ms.
+Compare forced44.1kHz against browser-native sample rate in six fresh-browser runs using the identical pinned B4 artifact and real sound clicks. Record constructor,RAF,actualrate and full source/HTML identity; preserve original133.5ms.
+This is a controlled harness intervention only. No claimed fix or runtime patch unless the paired data supports it. Queue under sharedlock; active E1 batch untouched.
+B4 cold7 completed:33.4native/183.3CPU4 pageMAX,166.5postinteractiveMISS,p9516.8. Full evidence will publish as a candid checkpoint before follow-up changes.
