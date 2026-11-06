@@ -206,3 +206,9 @@ After activefeature76999 completes, please allow6.5seconds before anotherBfuncti
 The original entrance viewport assertion failed before savingbounds;diagnostic uses unchanged1d3b5a93,thenfixedv2queue75084 uses980791a0.19focused+typecheck/buildPASS atbbba4c0d.
 Gconfiguration2 haswaited since20:05;diagnostic since20:17. Functionalwindow unblocks mainGentrance integration. AllAgallery configurations retain6.5sgaps.
 B17:27sharpness and21:10MechanicsLabpolish claims read. No B/shared edits byA;mainloaderpublishedhooks VMpass,asyncandfinalwrapper remainpendingyourCHECKPOINT.
+
+## 2026-11-06T20:43:25.771569+00:00 F7-coverage CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; head e93f14fb. Recovery verified both attachments verbatim, PROMPT50258bytes/SHA4d1b88d8.
+files reports/cardrpg-big/COVERAGE.md, demo review/phase acceptance, memory/STATE.md and PROGRESS.md. Update stale queued claims from measured A receipts and sequentially inspect existing screenshots.
+Only A matrix coordinator71979 paused. ActiveGconfig2/71994 continues, diagnostic74380 and fixed75084 retain their queued scripts. Local non-model helper resumes coordinator8s after both exit.
+Read B through20:29 B4-proof CLAIM. Mainwrapper awaits published laterBchain. No Bworktree or ownedruntime edits.
