@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T20:18:51.824Z",
+  "generatedAt": "2026-11-06T20:44:12.144Z",
   "method": "Computed directly from phase raw receipts. Null means unmeasured or unavailable. Cold/visual/matrix artifacts remain separately identified; successful earlier builds do not certify the delivered HTML.",
   "rows": [
     {
@@ -154,15 +154,49 @@
     },
     {
       "phase": "B3",
-      "cold": null,
+      "cold": {
+        "source": "stage/cold/summary.json",
+        "sha256": "faa8671172a5e0611666868972348e55105cb0c004ddea12d915a6d57d3a9769",
+        "scenarios": 7,
+        "pageMax": 116.59999999999991,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 99.99999999999977,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
       "matrix": null,
       "motion": null,
       "effects": null,
-      "lifecycle": null
+      "lifecycle": {
+        "source": "stage/lifecycle/summary.json",
+        "sha256": "faa8671172a5e0611666868972348e55105cb0c004ddea12d915a6d57d3a9769",
+        "battles": 21,
+        "tolerance": {
+          "retainedHeapGrowthBytes": 2097152,
+          "gpuObjectsGrowth": 0
+        },
+        "growth": {
+          "heap": 1093980,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "passed": true,
+        "errors": []
+      }
     },
     {
       "phase": "B5",
-      "cold": null,
+      "cold": {
+        "source": "b5/cold/summary.json",
+        "sha256": "bdf621365486924dc2c2037b4db515d4f9b12e4aa2498c04f948c7353854c125",
+        "scenarios": 7,
+        "pageMax": 199.89999999999998,
+        "p95Worst": 16.799999999999955,
+        "postInteractiveMax": 133.4000000000001,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
       "matrix": null,
       "motion": null,
       "effects": null,
