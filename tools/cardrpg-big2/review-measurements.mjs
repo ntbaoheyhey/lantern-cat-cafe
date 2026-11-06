@@ -28,7 +28,7 @@ for (const [prefix, steps] of [['review-source', ['typecheck','demo-types','lint
   for (const name of [`${prefix}.json`, ...steps.map(step => `${prefix}-${step}.log`)])
     await cp(`${source}/reports/cardrpg-big2/validation/${name}`, `reports/cardrpg-big2/validation/${name}`);
 }
-await locked('tools/cardrpg-big2/studio-check.mjs', { BIG_STUDIO_OUT: `${out}/studio` });
+await locked('tools/cardrpg-big2/studio-check.mjs', { BIG_STUDIO_OUT: `${out}/studio`, BIG_STUDIO_EXPECT_SOUND: '1' });
 await locked('tools/cardrpg-big2/gallery-controls-check.mjs', { BIG_GALLERY_CONTROLS_OUT: `${out}/gallery-controls`, BIG_GALLERY_EXPECT_POLISH: '1' });
 await locked('tools/cardrpg-big2/loading-screens.mjs', { BIG_LOADING_OUT: `${out}/loading` });
 await locked('tools/cardrpg-big2/stage-life-check.mjs', { BIG_STAGE_LIFE_FINAL: '1', BIG_STAGE_LIFE_OUT: `${out}/stage-life` });

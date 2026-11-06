@@ -19,6 +19,13 @@ try{for(const [width,height]of [[1280,720],[1440,900],[1024,600]]){
   for(const id of actions){await page.getByLabel('Gallery action',{exact:true}).selectOption(id);{const slider=page.getByLabel('Gallery progress',{exact:true}),box=await slider.boundingBox();await slider.click({position:{x:box.width*.46,y:box.height/2}});}const check=await page.evaluate(()=>({id:window.__b2Gallery.galleryId,at:window.__b2Gallery.animationAt,plan:window.__b2Gallery.plan.presentationId}));assert.equal(check.id,id);assert.equal(check.plan,id);assert.ok(check.at>0);covered.push(id);}
  }
  assert.equal(covered.length,86);
+ if(process.env.BIG_STUDIO_EXPECT_SOUND==='1'){
+ await page.getByRole('button',{name:'Preview sound off',exact:true}).click();await page.getByRole('button',{name:'Preview sound on',exact:true}).waitFor();
+ const previewVolume=page.getByRole('slider',{name:'Preview sound volume',exact:true});await previewVolume.focus();await previewVolume.press('Home');for(let n=0;n<7;n++)await previewVolume.press('ArrowRight');
+ assert.equal(await page.evaluate(()=>window.__b2Gallery.audio.volume),.35);
+ await page.getByRole('button',{name:'Preview sound on',exact:true}).click();await page.getByRole('button',{name:'Preview sound off',exact:true}).waitFor();
+ assert.equal(await page.evaluate(()=>window.__b2Gallery.audio.enabled),false);
+ }
  await page.getByLabel('Gallery unit',{exact:true}).selectOption('marigold');await page.getByLabel('Gallery action',{exact:true}).selectOption('marigold-4');
  for(const camera of ['close','wide','far']){await page.getByLabel('Gallery camera',{exact:true}).selectOption(camera);{const slider=page.getByLabel('Gallery progress',{exact:true}),box=await slider.boundingBox();await slider.click({position:{x:box.width*.46,y:box.height/2}});}await page.screenshot({path:`${out}/${width}-${camera}.png`});}
  await page.getByRole('button',{name:'Frame meter',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.b2-frame-meter output')?.textContent.includes('triangles'));await page.screenshot({path:`${out}/${width}-meter.png`});await page.getByRole('button',{name:'Frame meter',exact:true}).click();

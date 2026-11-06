@@ -33,6 +33,8 @@ function Gallery(){
    <label>Companion or opponent<select aria-label="Gallery unit" value={owner} onChange={e=>{setOwner(e.target.value);m.inspect(m.galleryActions.find(a=>a.owner===e.target.value)!.id);}}>{owners.map(id=><option key={id} value={id}>{m.galleryActions.find(a=>a.owner===id)!.name.split(' · ')[0]}</option>)}</select></label>
    <label>Action<select aria-label="Gallery action" value={m.galleryId} onChange={e=>m.inspect(e.target.value)}>{actions.map(a=><option key={a.id} value={a.id}>{a.name.split(' · ').slice(1).join(' · ')}</option>)}</select></label>
    <button onClick={()=>m.inspect(m.galleryId,0,true)}>Play preview</button>
+   <button onClick={()=>{void m.audio.toggle().then(()=>m.notify(false));}}>Preview sound {m.audio.enabled?'on':'off'}</button>
+   {m.audio.enabled&&<label>Volume<input aria-label="Preview sound volume" type="range" min="0" max="100" step="5" value={Math.round(m.audio.volume*100)} onChange={e=>{m.audio.setVolume(Number(e.target.value)/100);m.notify(false);}}/></label>}
    <label>Preview speed<select value={m.gallerySpeed} onChange={e=>{m.gallerySpeed=Number(e.target.value);m.notify(false);}}><option value={.25}>0.25×</option><option value={1}>1×</option></select></label>
    <label><input type="checkbox" checked={m.galleryEffectOnly} onChange={e=>{m.galleryEffectOnly=e.target.checked;m.notify(false);}}/>Effect only</label>
    <label>Camera<select aria-label="Gallery camera" value={m.camera} onChange={e=>{m.camera=e.target.value as typeof m.camera;m.notify(false);}}><option value="close">A · portrait</option><option value="wide">B · balanced</option><option value="far">C · stage</option></select></label>
