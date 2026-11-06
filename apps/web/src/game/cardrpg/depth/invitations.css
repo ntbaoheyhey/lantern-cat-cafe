@@ -9,7 +9,17 @@
 .dp-invitation-fairness a { align-self: center; color: #f2d1a4; }
 #invitation-history { scroll-margin-top: 125px; }
 .dp-invitation-stage.is-rare-reveal .dp-invitation-preview { position: absolute; top: 55px; left: 12px; right: calc(50% + 8px); height: 220px; margin-top: 0; }
-.dp-invitation-stage.is-rare-reveal .dp-flip-result > .dp-cat { width: min(136px, 45%); align-self: flex-end; margin-right: 8px; }
+.dp-invitation-stage.is-rare-reveal .dp-ceremony { min-height: 0; padding-top: 10px; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result { display: grid; grid-template-columns: minmax(0, 1fr) 136px; gap: 7px 12px; align-items: start; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result > .dp-cat { grid-column: 2; grid-row: 1 / span 3; width: 136px; align-self: start; margin: 0; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result > p { grid-column: 1; grid-row: 1; margin: 228px 0 0; font-size: 12px; line-height: 16px; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result > small { grid-column: 1; grid-row: 2; text-align: center; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result > button { grid-column: 1; grid-row: 3; margin: 0; padding: 6px 8px; font-size: 12px; }
+@media (max-height: 650px) {
+  .dp-invitation-stage.is-rare-reveal .dp-invitation-preview { height: 170px; }
+  .dp-invitation-stage.is-rare-reveal .dp-flip-result > p { margin-top: 178px; }
+  .dp-app .dp-invitation-stage.is-rare-reveal .dp-cat .cr-portrait { height: 128px; aspect-ratio: auto; }
+}
 .dp-invitation-grid { display: grid; grid-template-columns: minmax(310px, 1fr) minmax(300px, .95fr); gap: 20px; align-items: start; }
 .dp-banner-info { padding: 24px; }
 .dp-banner-info h2 { margin-top: 0; }
