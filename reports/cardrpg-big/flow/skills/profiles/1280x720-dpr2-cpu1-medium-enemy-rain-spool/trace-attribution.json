@@ -1,0 +1,558 @@
+{
+  "source": "1280x720-dpr2-cpu1-medium-enemy-rain-spool-trace.json.gz",
+  "origin": 96459678731,
+  "mainThread": 3242598,
+  "method": "RAF intervals aligned to navigationStart. Main renderer thread only. Task durations are inclusive. CPU samples are statistical stack evidence, never additive to nested task durations.",
+  "hitches": [
+    {
+      "at": 99.1,
+      "ms": 33.19999999999999,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 59.936,
+          "ms": 38.634,
+          "overlap": 32.67
+        },
+        {
+          "name": "RunTask",
+          "start": 98.574,
+          "ms": 3.071,
+          "overlap": 0.526
+        },
+        {
+          "name": "ParseHTML",
+          "start": 98.576,
+          "ms": 2.212,
+          "overlap": 0.524
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 33.22400000000004,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 2815.8,
+      "ms": 33.40000000000009,
+      "calls": 198,
+      "triangles": 76506,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 2783.21,
+          "ms": 39.477,
+          "overlap": 32.59
+        },
+        {
+          "name": "TimerFire",
+          "start": 2783.214,
+          "ms": 39.464,
+          "overlap": 32.586,
+          "data": {
+            "frame": "B91660F8AA9E12CC3D6D7FA20ABFC48D",
+            "timerId": 627
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 2783.225,
+          "ms": 39.448,
+          "overlap": 32.575
+        },
+        {
+          "name": "Decode Image",
+          "start": 2795.96,
+          "ms": 6.945,
+          "overlap": 6.945
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 2805.012,
+          "ms": 6.724,
+          "overlap": 6.724
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 2805.013,
+          "ms": 6.72,
+          "overlap": 6.72
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 2805.014,
+          "ms": 6.718,
+          "overlap": 6.718
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 2805.021,
+          "ms": 6.709,
+          "overlap": 6.709
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 2814.235,
+          "ms": 2.489,
+          "overlap": 1.565
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 2814.235,
+          "ms": 2.488,
+          "overlap": 1.565
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 2814.236,
+          "ms": 2.486,
+          "overlap": 1.564
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 2814.241,
+          "ms": 2.48,
+          "overlap": 1.559
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 11.336000000000002,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Bh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 9.826,
+          "stack": [
+            {
+              "function": "Ce",
+              "script": 16,
+              "line": 3815,
+              "column": 11795
+            },
+            {
+              "function": "ue",
+              "script": 16,
+              "line": 3815,
+              "column": 24552
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20510
+            },
+            {
+              "function": "Mm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.792,
+          "stack": [
+            {
+              "function": "P",
+              "script": 16,
+              "line": 3815,
+              "column": 10020
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.882,
+          "stack": [
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.778,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.738,
+          "stack": [
+            {
+              "function": "(idle)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.531,
+          "stack": [
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.438,
+          "stack": [
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

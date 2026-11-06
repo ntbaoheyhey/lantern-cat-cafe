@@ -6,6 +6,7 @@ import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 import { createCardActionPlan } from './card-action-plan';
+import { snapshotBattle, splitPresentation } from './battle-presentation';
 
 export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
@@ -31,6 +32,11 @@ export class DepthModel {
   replayReturn: Screen = 'save';
   plan: EffectPlan | null = null;
   animationAt = 0;
+  momentNote = '';
+  private beforeImpact: R.Battle | null = null;
+  private afterImpact: R.Battle | null = null;
+  private roundPlan: EffectPlan | null = null;
+  private impactApplied = false;
   sceneStarted = false;
   sceneReady = false;
   sceneError = '';
@@ -72,6 +78,11 @@ export class DepthModel {
     for (const listener of this.listeners) listener();
   }
   get battle() { return this.galleryBattle ?? this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
+  get visualBattle() {
+    if (this.galleryBattle || !this.plan || this.plan.skillId === 'round-status') return this.battle;
+    return (this.impactApplied ? this.afterImpact : this.beforeImpact) ?? this.battle;
+  }
+  get impactVisible() { return !!this.plan && this.animationAt >= this.plan.beats[2]!.start; }
   get showBattle() { return !!this.battle && (!!this.galleryBattle || this.watching); }
   get saveStatus() { return this.offline ? 'Export to keep progress' : this.storageFailed ? 'Export to keep progress · local saving unavailable' : 'Saved locally'; }
   get busy() { return !!this.plan; }
@@ -158,6 +169,7 @@ export class DepthModel {
     if (!battle || !this.canAct) return;
     const actor = R.currentActor(battle);
     if (!actor) return;
+    const snapshot = snapshotBattle(battle);
     const before = battle.log.length;
     const passiveBefore = actor.passiveUsed;
     const shieldBefore = actor.shield;
@@ -174,17 +186,25 @@ export class DepthModel {
       accepted = R.enemyAct(battle);
     } else accepted = R.act(battle, selected!);
     if (!accepted) { this.notice = 'This recorded action could not be resolved.'; this.error = true; this.showResult(); return; }
-    const targets = [...new Set(battle.log.slice(before).map(e => e.targetId))];
-    const events: TurnEvent[] = [{ version: 3, seq: 0, turn: actor.turns, round: battle.round,
-      actionId: battle.log.length, beat: 0, type: 'action_start', actorId: actor.id, skillId, targetIds: targets, amount: 0 }];
-    for (const event of battle.log.slice(before)) {
-      const type = ({ damage: 'damage', dot: 'damage', detonate: 'damage', heal: 'heal', shield: 'shield', defeat: 'death', status: 'status_apply' } as const)[event.kind as 'damage'];
-      if (type) events.push({ version: 3, seq: events.length, turn: actor.turns, round: event.round,
-        actionId: battle.log.length, beat: 2, type, actorId: event.actorId, skillId,
-        targetIds: [event.targetId], amount: event.amount });
-    }
+    const presentation = splitPresentation(snapshot, battle, skillId);
+    const targets = [...new Set(presentation.events.flatMap(event => event.targetIds))];
+    if (!targets.length) targets.push(selected?.targetId ?? intent?.targetId ?? actor.id);
+    const events: TurnEvent[] = [{ version: 3, seq: 0, turn: actor.turns, round: snapshot.round,
+      actionId: battle.log.length, beat: 0, type: 'action_start', actorId: actor.id, skillId, targetIds: targets, amount: 0 },
+      ...presentation.events];
+    this.beforeImpact = snapshot;
+    this.afterImpact = presentation.impact;
+    this.roundPlan = presentation.roundPlan;
+    this.impactApplied = false;
     const identity = actor.side === 'enemy'
       ? `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
+    const savingHeal = events.find(event => event.type === 'heal' && event.amount > 0
+      && snapshot.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp <= .25)
+      && presentation.impact.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp > .25));
+    const lastHit = events.some(event => event.type === 'death')
+      && presentation.impact.actors.filter(target => target.side === 'enemy').every(target => target.hp <= 0);
+    this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
+    if (savingHeal) savingHeal.note = 'Clutch heal';
     this.plan = createCardActionPlan(events, identity);
     const actionEvents = battle.log.slice(before);
     const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
@@ -200,11 +220,23 @@ export class DepthModel {
     if (this.paused || !this.showBattle) return;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
     this.animationAt += milliseconds * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
-    if (this.animationAt >= this.plan.duration) {
-      this.plan = null;
-      if (this.battle?.result && !this.galleryBattle) this.showResult();
-      else this.notify(false);
+    if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
+      this.impactApplied = true;
+      this.notify(false);
     }
+    if (this.animationAt >= this.plan.duration) this.finishMoment();
+  }
+  finishMoment() {
+    if (this.galleryBattle) { this.plan = null; this.notify(false); return; }
+    this.momentNote = '';
+    this.plan = this.roundPlan;
+    this.roundPlan = null;
+    this.animationAt = 0;
+    this.beforeImpact = null;
+    this.afterImpact = null;
+    this.impactApplied = true;
+    if (this.battle?.result && !this.plan) this.showResult();
+    else this.notify(false);
   }
   step(policy: R.Policy = 'auto') {
     if (!this.canAct || !this.battle) return;

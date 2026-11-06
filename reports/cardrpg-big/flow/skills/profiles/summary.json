@@ -1,0 +1,961 @@
+{
+  "artifactSha256": "4536494f37c372d9f623c01b7a8eddbc10d512933ad13418b32253707e95cdc8",
+  "method": "Five largest cast MAX cases, breaking ties by page MAX. Separate cold reruns include CPU traces. Profiling can change timing, and a transient cast spike may not recur.",
+  "results": [
+    {
+      "original": {
+        "name": "1440x900-dpr2-cpu4-medium-enemy-teacup-healer",
+        "action": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+        "page": {
+          "frames": 412,
+          "max": 233.29999999999995,
+          "p95": 16.800000000000182,
+          "above25": 13,
+          "above50": 4,
+          "within20": 0.9684466019417476
+        },
+        "first": {
+          "frames": 77,
+          "max": 33.400000000000546,
+          "p95": 16.700000000000728,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.987012987012987,
+          "calls": 192,
+          "triangles": 75516,
+          "particles": 8
+        },
+        "repeat": {
+          "frames": 78,
+          "max": 16.800000000000182,
+          "p95": 16.800000000000182,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 192,
+          "triangles": 75516,
+          "particles": 8
+        },
+        "firstDuration": 1286.699999988079,
+        "repeatDuration": 1296.5
+      },
+      "profiled": {
+        "name": "1440x900-dpr2-cpu4-medium-enemy-teacup-healer",
+        "action": {
+          "id": "enemy:teacup-healer",
+          "owner": "teacup-healer",
+          "name": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+          "ultimate": false,
+          "enemy": true
+        },
+        "width": 1440,
+        "height": 900,
+        "dpr": 2,
+        "cpu": 4,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1289,
+            "before": {
+              "at": 6071.5,
+              "frames": 3,
+              "calls": 187,
+              "triangles": 72780,
+              "geometries": 613,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 613,
+                "textures": 120
+              },
+              "heap": 30364224,
+              "heapDetail": {
+                "usedSize": 30364224,
+                "totalSize": 70156288,
+                "embedderHeapUsedSize": 3118568,
+                "backingStorageSize": 35045731
+              }
+            },
+            "after": {
+              "at": 7373.5,
+              "frames": 81,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 49188844,
+              "heapDetail": {
+                "usedSize": 49188844,
+                "totalSize": 78544896,
+                "embedderHeapUsedSize": 3616024,
+                "backingStorageSize": 35045744
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.800000000000182,
+              "p95": 16.800000000000182,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 75516,
+              "particles": 8
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1289,
+            "before": {
+              "at": 7375.20000000298,
+              "frames": 81,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 49199108,
+              "heapDetail": {
+                "usedSize": 49199108,
+                "totalSize": 78544896,
+                "embedderHeapUsedSize": 3616024,
+                "backingStorageSize": 35045744
+              }
+            },
+            "after": {
+              "at": 8676.79999999702,
+              "frames": 159,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 38139948,
+              "heapDetail": {
+                "usedSize": 38139948,
+                "totalSize": 83001344,
+                "embedderHeapUsedSize": 3604336,
+                "backingStorageSize": 35045744
+              }
+            },
+            "summary": {
+              "frames": 79,
+              "max": 16.800000000000182,
+              "p95": 16.799999999999272,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 75516,
+              "particles": 8
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 475,
+          "max": 133.30000000000018,
+          "p95": 16.800000000000182,
+          "above25": 15,
+          "above50": 7,
+          "within20": 0.968421052631579
+        }
+      },
+      "evidence": "reports/cardrpg-big/flow/skills/profiles/1440x900-dpr2-cpu4-medium-enemy-teacup-healer/trace-attribution.json"
+    },
+    {
+      "original": {
+        "name": "2560x1440-dpr1-cpu1-medium-enemy-teacup-healer",
+        "action": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+        "page": {
+          "frames": 320,
+          "max": 50,
+          "p95": 16.800000000000182,
+          "above25": 6,
+          "above50": 0,
+          "within20": 0.98125
+        },
+        "first": {
+          "frames": 77,
+          "max": 33.40000000000009,
+          "p95": 16.800000000000182,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.987012987012987,
+          "calls": 198,
+          "triangles": 76506,
+          "particles": 8
+        },
+        "repeat": {
+          "frames": 78,
+          "max": 16.800000000000182,
+          "p95": 16.800000000000182,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 192,
+          "triangles": 75516,
+          "particles": 8
+        },
+        "firstDuration": 1282.2999999970198,
+        "repeatDuration": 1299.7999999970198
+      },
+      "profiled": {
+        "name": "2560x1440-dpr1-cpu1-medium-enemy-teacup-healer",
+        "action": {
+          "id": "enemy:teacup-healer",
+          "owner": "teacup-healer",
+          "name": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+          "ultimate": false,
+          "enemy": true
+        },
+        "width": 2560,
+        "height": 1440,
+        "dpr": 1,
+        "cpu": 1,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1289,
+            "before": {
+              "at": 2899.5,
+              "frames": 3,
+              "calls": 198,
+              "triangles": 76506,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 5,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 31267756,
+              "heapDetail": {
+                "usedSize": 31267756,
+                "totalSize": 85360640,
+                "embedderHeapUsedSize": 3189664,
+                "backingStorageSize": 35046001
+              }
+            },
+            "after": {
+              "at": 4180.9000000059605,
+              "frames": 80,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 49933444,
+              "heapDetail": {
+                "usedSize": 49933444,
+                "totalSize": 85622784,
+                "embedderHeapUsedSize": 3489256,
+                "backingStorageSize": 35046014
+              }
+            },
+            "summary": {
+              "frames": 77,
+              "max": 33.399999999999636,
+              "p95": 16.700000000000273,
+              "above25": 1,
+              "above50": 0,
+              "within20": 0.987012987012987,
+              "calls": 198,
+              "triangles": 76506,
+              "particles": 8
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1289,
+            "before": {
+              "at": 4181.600000008941,
+              "frames": 80,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 49943708,
+              "heapDetail": {
+                "usedSize": 49943708,
+                "totalSize": 85622784,
+                "embedderHeapUsedSize": 3489256,
+                "backingStorageSize": 35046014
+              }
+            },
+            "after": {
+              "at": 5480.4000000059605,
+              "frames": 158,
+              "calls": 189,
+              "triangles": 72940,
+              "geometries": 614,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4797748,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 614,
+                "textures": 120
+              },
+              "heap": 38566624,
+              "heapDetail": {
+                "usedSize": 38566624,
+                "totalSize": 86409216,
+                "embedderHeapUsedSize": 3614784,
+                "backingStorageSize": 35046014
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 75516,
+              "particles": 8
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 325,
+          "max": 33.399999999999636,
+          "p95": 16.799999999999955,
+          "above25": 3,
+          "above50": 0,
+          "within20": 0.9907692307692307
+        }
+      },
+      "evidence": "reports/cardrpg-big/flow/skills/profiles/2560x1440-dpr1-cpu1-medium-enemy-teacup-healer/trace-attribution.json"
+    },
+    {
+      "original": {
+        "name": "1280x720-dpr2-cpu1-medium-enemy-rain-spool",
+        "action": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+        "page": {
+          "frames": 337,
+          "max": 50.10000000000002,
+          "p95": 16.799999999999955,
+          "above25": 4,
+          "above50": 1,
+          "within20": 0.9881305637982196
+        },
+        "first": {
+          "frames": 82,
+          "max": 33.399999999999636,
+          "p95": 16.700000000000273,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.9878048780487805,
+          "calls": 203,
+          "triangles": 81412,
+          "particles": 35
+        },
+        "repeat": {
+          "frames": 83,
+          "max": 16.800000000000182,
+          "p95": 16.700000000000728,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 203,
+          "triangles": 81412,
+          "particles": 35
+        },
+        "firstDuration": 1365.5999999940395,
+        "repeatDuration": 1381.9000000059605
+      },
+      "profiled": {
+        "name": "1280x720-dpr2-cpu1-medium-enemy-rain-spool",
+        "action": {
+          "id": "enemy:rain-spool",
+          "owner": "rain-spool",
+          "name": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+          "ultimate": false,
+          "enemy": true
+        },
+        "width": 1280,
+        "height": 720,
+        "dpr": 2,
+        "cpu": 1,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1374,
+            "before": {
+              "at": 2843.1000000089407,
+              "frames": 4,
+              "calls": 183,
+              "triangles": 71158,
+              "geometries": 621,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 621,
+                "textures": 120
+              },
+              "heap": 45812008,
+              "heapDetail": {
+                "usedSize": 45812008,
+                "totalSize": 75661312,
+                "embedderHeapUsedSize": 4173344,
+                "backingStorageSize": 36731008
+              }
+            },
+            "after": {
+              "at": 4220,
+              "frames": 87,
+              "calls": 202,
+              "triangles": 81412,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 35,
+              "estimatedGpuBytes": 4773024,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 45028016,
+              "heapDetail": {
+                "usedSize": 45028016,
+                "totalSize": 86933504,
+                "embedderHeapUsedSize": 4599056,
+                "backingStorageSize": 36731184
+              }
+            },
+            "summary": {
+              "frames": 83,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000273,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 203,
+              "triangles": 81412,
+              "particles": 35
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1374,
+            "before": {
+              "at": 4221.100000008941,
+              "frames": 87,
+              "calls": 202,
+              "triangles": 81412,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 35,
+              "estimatedGpuBytes": 4773024,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 45038268,
+              "heapDetail": {
+                "usedSize": 45038268,
+                "totalSize": 86933504,
+                "embedderHeapUsedSize": 4599056,
+                "backingStorageSize": 36731184
+              }
+            },
+            "after": {
+              "at": 5603.4000000059605,
+              "frames": 170,
+              "calls": 202,
+              "triangles": 81412,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 35,
+              "estimatedGpuBytes": 4773024,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 37328644,
+              "heapDetail": {
+                "usedSize": 37328644,
+                "totalSize": 87719936,
+                "embedderHeapUsedSize": 4735456,
+                "backingStorageSize": 36731184
+              }
+            },
+            "summary": {
+              "frames": 83,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 203,
+              "triangles": 81412,
+              "particles": 35
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 333,
+          "max": 33.40000000000009,
+          "p95": 16.700000000000728,
+          "above25": 2,
+          "above50": 0,
+          "within20": 0.993993993993994
+        }
+      },
+      "evidence": "reports/cardrpg-big/flow/skills/profiles/1280x720-dpr2-cpu1-medium-enemy-rain-spool/trace-attribution.json"
+    },
+    {
+      "original": {
+        "name": "1440x900-dpr1-cpu4-medium-enemy-sock-skipper-basic",
+        "action": "Sock Skipper · Sock kick",
+        "page": {
+          "frames": 439,
+          "max": 250,
+          "p95": 16.800000000000182,
+          "above25": 16,
+          "above50": 4,
+          "within20": 0.9635535307517085
+        },
+        "first": {
+          "frames": 70,
+          "max": 33.30000000000018,
+          "p95": 16.700000000000728,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.9857142857142858,
+          "calls": 191,
+          "triangles": 72348,
+          "particles": 2
+        },
+        "repeat": {
+          "frames": 71,
+          "max": 16.800000000000182,
+          "p95": 16.800000000000182,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 191,
+          "triangles": 72348,
+          "particles": 2
+        },
+        "firstDuration": 1166.0999999940395,
+        "repeatDuration": 1179
+      },
+      "profiled": {
+        "name": "1440x900-dpr1-cpu4-medium-enemy-sock-skipper-basic",
+        "action": {
+          "id": "enemy:sock-skipper:basic",
+          "owner": "sock-skipper",
+          "name": "Sock Skipper · Sock kick",
+          "ultimate": false,
+          "enemy": true
+        },
+        "width": 1440,
+        "height": 900,
+        "dpr": 1,
+        "cpu": 4,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1170,
+            "before": {
+              "at": 6290.5999999940395,
+              "frames": 4,
+              "calls": 187,
+              "triangles": 71796,
+              "geometries": 613,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 613,
+                "textures": 120
+              },
+              "heap": 31544512,
+              "heapDetail": {
+                "usedSize": 31544512,
+                "totalSize": 71204864,
+                "embedderHeapUsedSize": 3310384,
+                "backingStorageSize": 35073235
+              }
+            },
+            "after": {
+              "at": 7471.79999999702,
+              "frames": 75,
+              "calls": 189,
+              "triangles": 71956,
+              "geometries": 615,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4760780,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 615,
+                "textures": 120
+              },
+              "heap": 49038624,
+              "heapDetail": {
+                "usedSize": 49038624,
+                "totalSize": 78807040,
+                "embedderHeapUsedSize": 3593760,
+                "backingStorageSize": 35073268
+              }
+            },
+            "summary": {
+              "frames": 71,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 191,
+              "triangles": 72348,
+              "particles": 2
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1170,
+            "before": {
+              "at": 7473.70000000298,
+              "frames": 75,
+              "calls": 189,
+              "triangles": 71956,
+              "geometries": 615,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4760780,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 615,
+                "textures": 120
+              },
+              "heap": 49048892,
+              "heapDetail": {
+                "usedSize": 49048892,
+                "totalSize": 79069184,
+                "embedderHeapUsedSize": 3593760,
+                "backingStorageSize": 35073268
+              }
+            },
+            "after": {
+              "at": 8655.40000000596,
+              "frames": 146,
+              "calls": 189,
+              "triangles": 71956,
+              "geometries": 615,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4760780,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 615,
+                "textures": 120
+              },
+              "heap": 37026464,
+              "heapDetail": {
+                "usedSize": 37026464,
+                "totalSize": 83525632,
+                "embedderHeapUsedSize": 3682608,
+                "backingStorageSize": 35073268
+              }
+            },
+            "summary": {
+              "frames": 71,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 191,
+              "triangles": 72348,
+              "particles": 2
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 470,
+          "max": 150,
+          "p95": 16.800000000000182,
+          "above25": 16,
+          "above50": 6,
+          "within20": 0.9659574468085106
+        }
+      },
+      "evidence": "reports/cardrpg-big/flow/skills/profiles/1440x900-dpr1-cpu4-medium-enemy-sock-skipper-basic/trace-attribution.json"
+    },
+    {
+      "original": {
+        "name": "1440x900-dpr1-cpu4-medium-enemy-pollen-scout",
+        "action": "Pollen Scout · Every third round plants a Binding Thread, up to two.",
+        "page": {
+          "frames": 404,
+          "max": 233.29999999999995,
+          "p95": 16.800000000000182,
+          "above25": 13,
+          "above50": 4,
+          "within20": 0.9678217821782178
+        },
+        "first": {
+          "frames": 74,
+          "max": 33.30000000000018,
+          "p95": 16.800000000000182,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.9864864864864865,
+          "calls": 198,
+          "triangles": 74880,
+          "particles": 18
+        },
+        "repeat": {
+          "frames": 75,
+          "max": 16.800000000000182,
+          "p95": 16.700000000000728,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 198,
+          "triangles": 74880,
+          "particles": 18
+        },
+        "firstDuration": 1232.4000000059605,
+        "repeatDuration": 1247.9000000059605
+      },
+      "profiled": {
+        "name": "1440x900-dpr1-cpu4-medium-enemy-pollen-scout",
+        "action": {
+          "id": "enemy:pollen-scout",
+          "owner": "pollen-scout",
+          "name": "Pollen Scout · Every third round plants a Binding Thread, up to two.",
+          "ultimate": false,
+          "enemy": true
+        },
+        "width": 1440,
+        "height": 900,
+        "dpr": 1,
+        "cpu": 4,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1249,
+            "before": {
+              "at": 5841.70000000298,
+              "frames": 4,
+              "calls": 190,
+              "triangles": 73148,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 31287808,
+              "heapDetail": {
+                "usedSize": 31287808,
+                "totalSize": 70156288,
+                "embedderHeapUsedSize": 3277528,
+                "backingStorageSize": 35073889
+              }
+            },
+            "after": {
+              "at": 7104.20000000298,
+              "frames": 79,
+              "calls": 198,
+              "triangles": 74880,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 18,
+              "estimatedGpuBytes": 4829868,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 52160632,
+              "heapDetail": {
+                "usedSize": 52160632,
+                "totalSize": 81952768,
+                "embedderHeapUsedSize": 3605720,
+                "backingStorageSize": 35073924
+              }
+            },
+            "summary": {
+              "frames": 75,
+              "max": 16.800000000000182,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 198,
+              "triangles": 74880,
+              "particles": 18
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1249,
+            "before": {
+              "at": 7106.70000000298,
+              "frames": 79,
+              "calls": 198,
+              "triangles": 74880,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 18,
+              "estimatedGpuBytes": 4829868,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 52170896,
+              "heapDetail": {
+                "usedSize": 52170896,
+                "totalSize": 81952768,
+                "embedderHeapUsedSize": 3605720,
+                "backingStorageSize": 35073924
+              }
+            },
+            "after": {
+              "at": 8352.59999999404,
+              "frames": 154,
+              "calls": 198,
+              "triangles": 74880,
+              "geometries": 622,
+              "textures": 120,
+              "particles": 18,
+              "estimatedGpuBytes": 4829868,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 622,
+                "textures": 120
+              },
+              "heap": 42986456,
+              "heapDetail": {
+                "usedSize": 42986456,
+                "totalSize": 83001344,
+                "embedderHeapUsedSize": 3847376,
+                "backingStorageSize": 35073924
+              }
+            },
+            "summary": {
+              "frames": 74,
+              "max": 16.800000000000182,
+              "p95": 16.799999999999272,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 198,
+              "triangles": 74880,
+              "particles": 18
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 454,
+          "max": 150.10000000000002,
+          "p95": 16.800000000000182,
+          "above25": 15,
+          "above50": 7,
+          "within20": 0.9669603524229075
+        }
+      },
+      "evidence": "reports/cardrpg-big/flow/skills/profiles/1440x900-dpr1-cpu4-medium-enemy-pollen-scout/trace-attribution.json"
+    }
+  ]
+}

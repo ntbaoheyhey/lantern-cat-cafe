@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 
-const output = 'reports/cardrpg-big/effects/screens';
+const output = process.env.BIG_SCREEN_OUT || 'reports/cardrpg-big/effects/screens';
 const artifact = resolve('docs/cardrpg3/index.html');
 const rows = [];
 await mkdir(output, { recursive: true });
@@ -40,6 +40,7 @@ try {
         const model = window.__depthReview;
         const scene = window.__depthScene;
         model.animationAt = model.plan.duration * .6;
+        model.notify(false);
         scene.render({ ...scene.view(), frame: model.frame, fixedTime: 10 });
       });
       await capture(id.replace(':', '-'));

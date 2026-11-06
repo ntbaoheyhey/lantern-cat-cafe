@@ -112,3 +112,37 @@
 }
 .dp-ultimate-soot { border-color: #c2a1ed; border-radius: 50% 50% 12px 12px; background: radial-gradient(circle at top, #68528d, #29203ced 70%); }
 .dp-ultimate-clover { border-color: #a3cb9b; border-radius: 8px 40px 8px 40px; background: linear-gradient(135deg, #526c4fed, #233c38ed); }
+
+/* F5 presentation uses the reserved caption row, keeping faces and HP plates clear. */
+.dp-skill-banner { display: flex; align-items: center; gap: 6px; flex: none; padding-right: 12px; border-right: 1px solid #ac8c65; pointer-events: none; }
+.dp-skill-banner[hidden] { display: none; }
+.dp-skill-banner img { width: 18px; height: 18px; }
+.dp-skill-banner strong { color: #fff1d3; font-size: 12px; }
+.dp-low-health { box-shadow: inset 0 0 28px #b9453a5c; }
+.dp-low-health::after { content: ''; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 28px #b9453a5c; }
+.dp-health-critical progress { accent-color: #ef8d83; }
+.dp-result-chips { display: flex; align-items: center; gap: 16px; min-width: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+.dp-result-chip { display: inline-flex; align-items: center; gap: 5px; }
+.dp-result-chip > b { font-size: 10px; color: #e6d7c6; }
+.dp-number { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; color: #ffb7a0; }
+.dp-number-heal { color: #a7edbc; }
+.dp-number-shield { color: #a5daed; }
+.dp-number-status_apply { color: #dec7f7; font-size: 10px; }
+.dp-number small { margin-left: 2px; font-size: 12px; letter-spacing: 1px; }
+.dp-page { animation: dp-page-enter 180ms ease-out; }
+.dp-result-banner { animation: dp-result-enter 360ms ease-out; }
+.dp-app button { transition: background-color 100ms ease-out, border-color 100ms ease-out, transform 100ms ease-out; }
+.dp-app button:not(:disabled):active { transform: translateY(1px) scale(.985); }
+.dp-cafe .cr-hero-art .cr-portrait img, .dp-cafe .dp-cat-heading img { animation: dp-breathe 5.5s ease-in-out infinite; transform-origin: 50% 90%; }
+.dp-cafe .cr-hero-art .dp-cat:nth-child(2) img { animation-delay: -1.8s; }
+.dp-cafe .cr-hero-art .dp-cat:nth-child(3) img { animation-delay: -3.5s; }
+.dp-node:enabled > span { animation: dp-map-glow 3s ease-in-out infinite; }
+.dp-reward { animation: dp-result-enter 300ms ease-out backwards; }
+.dp-reward:nth-child(2) { animation-delay: 70ms; }
+.dp-reward:nth-child(3) { animation-delay: 140ms; }
+@keyframes dp-page-enter { from { opacity: .55; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes dp-result-enter { from { opacity: .3; transform: translateY(8px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes dp-breathe { 50% { transform: translateY(-2px) scaleY(1.012); } }
+@keyframes dp-map-glow { 50% { color: #fff2c7; } }
+.dp-reduced-motion *, .dp-reduced-motion *::before, .dp-reduced-motion *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) { .dp-app *, .dp-app *::before, .dp-app *::after { animation: none !important; transition: none !important; } }
