@@ -7,7 +7,7 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 Phase A · A3 UI/model first validation passed all five gates, including 421 E2E and 1,637 web units. Three-size real-click path passed. Fight/result actions moved above the fold after screenshot review. Natural watched/replay click checks passed at all three sizes. Final validation passed all five gates (421 E2E). Cold-load and 610-case timing session 36918 running.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed commit dfdbc4c820dc1a1c159c89780d3fe537bb6c0294 · A2 plus validation. Current A3 UI/demo work is uncommitted.
+A3 source commit c8695d6c873c17fe6eabd61aaa1cefa11dce97c6, with final validation and click evidence. Publishing this checkpoint now. Previously pushed dfdbc4c820dc1a1c159c89780d3fe537bb6c0294.
 Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06), published and verified via gh + ls-remote. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
 F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0-final.json.
 Baseline validation session 44468 exited 0. Log validation/base-e2e.log.
@@ -21,7 +21,7 @@ A1 validation session 39205 exited 0. Rules units 899 pass +2 expected fail +11 
 
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
-A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 / F1 / F2 / F3 / F4 / F5 / M / I / G / F6 / F7 pending.
+A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. Phase-A timing / F1–F7 pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
 
 ## PHASE GATES · A (copied requirements)
@@ -81,7 +81,7 @@ Source finding · default medium post uses zero MSAA samples. DPR cap 2, map 128
 Trace CPU stacks · 366.7ms base64 decoder; 150ms embedded script compile (106.2ms); 66.7ms scene construction/resize; 33.4/83.4ms first program uniforms and GPU command waits. baseline/trace-attribution.json.
 
 ## PROBLEMS / PARKED
-A1/A2 validated and committed. A3 local edits in model/Battle/App/Pages/RunMap/Utility/depth.css, Encounter.tsx and battle-summary.ts, first full validation and three-size path pass, natural-playback recheck/final gates running. Initial path selector included an aria-hidden icon and timed out. Fixed accessible name to Cafe and reran successfully. Offline builder and path tool generated current docs/cardrpg3 artifact. Skill harness now clicks Fight then Pause before fixture and asserts zero prior actions. Weak-target unit regression fixed before inspecting campaign results. A1 chapter-1 campaign rate drops 10pp training / 30pp held-out, pending I balance review. F0 original 33.4ms spike causes remain unresolved.
+A1/A2 validated and committed. A3 c8695d6c committed, natural-playback and final five-gate validation pass. Cold/skill timing running. Initial path selector included an aria-hidden icon and timed out. Fixed accessible name to Cafe and reran successfully. Offline builder and path tool generated current docs/cardrpg3 artifact. Skill harness now clicks Fight then Pause before fixture and asserts zero prior actions. Weak-target unit regression fixed before inspecting campaign results. A1 chapter-1 campaign rate drops 10pp training / 30pp held-out, pending I balance review. F0 original 33.4ms spike causes remain unresolved.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
 Heap pilot used rounded performance.memory values. Superseded by precise Runtime.getHeapUsage plus per-frame draw/triangle samples. Pilot kept in baseline/skills-coarse-heap/.
 Sharpness tool deps installed in /tmp/cardrpg-big-tools. Run that Python. First gallery smoke stalled on paused scene, fixed invalidation; second smoke passes.
