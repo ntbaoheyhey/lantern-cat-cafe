@@ -3,14 +3,14 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F4 starter verification. Final five-gate validation PASS1661 web/903 rules/421 E2E. Three-camera3240 poses have zero HUD overlap/crop/occlusion/missing plates. Final-artifact31 effects pass465 pairs, minimum0.542308, zero face failures, overdraw16/24 and instances36/96. Runtime124/124 tier cases pass including SwiftShader Low and actual viewing controls. Cold7 complete, nativeMAX33.3–50ms and CPU4MAX216.7/233.4ms. CPU4 trace rerunMAX116.6ms identifies112.0ms EvaluateScript/75.5ms compile and92.2ms click EventDispatch. Full720 matrix then five profiles running session28669 against artifact061fe9251a7eb546682a4aac6fba9bfa723ccf5a0f1506c0dc7ff1f8ff52bf03.
+Phase F4 starter verification. Final five-gate validation PASS1661 web/903 rules/421 E2E. Three-camera3240 poses have zero HUD overlap/crop/occlusion/missing plates. Final-artifact31 effects pass465 pairs, minimum0.542308, zero face failures, overdraw16/24 and instances36/96. Runtime124/124 tier cases pass including SwiftShader Low and actual viewing controls. Cold7 complete, nativeMAX33.3–50ms and CPU4MAX216.7/233.4ms. CPU4 trace rerunMAX116.6ms identifies112.0ms EvaluateScript/75.5ms compile and92.2ms click EventDispatch. Local slice.html/CHECKPOINT.md prepared, publication awaits timing. Full720 matrix409/720 complete at18:25, pageMAX250.1ms and first/repeatMAX16.8ms, zero page errors. Five profiles follow in session28669 against artifact061fe9251a7eb546682a4aac6fba9bfa723ccf5a0f1506c0dc7ff1f8ff52bf03.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed source a6c093de6801b234603a10ee3fdb5e01d5a4955b, primary/F3 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
+Last pushed memory279e082e, source a6c093de6801b234603a10ee3fdb5e01d5a4955b, primary/F3 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
 1. Finish720-case F4 cast matrix and five profiles in session28669. Keep source/HTML fixed and avoid CPU-heavy concurrent work.
-2. Finish F4 PERFORMANCE/GATES and slice CHECKPOINT with raw cold7, cast results, screenshots, filmstrips and honest grades.
+2. Complete the pending cast/profiles fields in effects/PERFORMANCE.md and CHECKPOINT.md. Local docs/cardrpg3/slice.html already matches measured HTML061fe925, with screenshots and eleven honest self-grades.
 3. Publish docs/cardrpg3/slice.html and CHECKPOINT.md with F4 draft before F5/M/I/G/F6/F7 and remaining cats.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
@@ -31,7 +31,7 @@ F2 · renderer/DPR/textures/portraits/budgets PASS, sharpness2/10 target pairs P
 A · functional PASS, cast33.4/16.8ms PASS, page1616.6ms FAIL. auto/GATES.md, PERFORMANCE.md.
 F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, hero13.189–32.975% band MISSED, pageMAX1583.3ms FAIL. layout/README.md, PERFORMANCE.md.
 ## DECISIONS · append only
-2026-11-06 17:45 · Recovery verifies45001-byte PROMPT hash and exact original attachment prefix. Final source hashes match build. Cold7 and final-effect captures complete. Full720/profiles session28669 runs alone. Renewed hourly recovery request remains blocked by session Automations instruction, no script installed.
+2026-11-06 17:45 · Recovery verifies45001-byte PROMPT hash and exact original attachment prefix. Runtime source hashes match build. The measurement-only gzip trace writer changed after the receipt, recorded in effects/PERFORMANCE.md. Cold7 and final-effect captures complete. Full720/profiles session28669 runs alone. Renewed hourly recovery request remains blocked by session Automations instruction, no script installed.
 2026-11-06 17:24 · Recovered supplied summary and verified45001-byte PROMPT digest. Face-aware bloom rerun already completed, zero failures. Compact1024px ultimate panel first to156px, then120px after three-camera probe after measured overlap. Rechecked scheduler tools, session rule still blocks job-to-completion scheduling despite user authorization. No scheduler installed.
 2026-11-06 17:12 · F3 source a6c093de6801b234603a10ee3fdb5e01d5a4955b pushed to primary/F3, draft#337 on#336 verified. F4 gallery now72 actions. Harness records explicit inventory and retains legacy61-action compatibility. First F4 validation fails only the old61-length expectation, corrected.
 2026-11-06 17:09 · F3 full matrix and five profiles completed. Record whole-pageMAX566.7ms increase and unresolved transient cast causes. Proceed to F4 cooperative loading with F3 misses disclosed in motion/GATES.md and PERFORMANCE.md.
@@ -73,6 +73,7 @@ F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, her
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
+F4 partial timing18:25 ·409/720 cases, pageMAX250.1ms, first/repeatMAX16.8ms, zero errors. effects/skills/summary.json.
 F4 final ·effects/verified/uniqueness.json passes465/465, minimum0.542308, zero face failures. Cold7 nativeMAX33.3–50ms, CPU4MAX216.7/233.4ms, p95<=16.8ms. Trace rerunMAX116.6ms with14 intervals>33ms. effects/performance[-cpu4]/summary.json and performance-cpu4/HITCHES.md.
 F4 cold7 ·1280 nativeDPR1/2 MAX49.9/33.3ms,1440 native50/50ms,2560 MAX50ms. CPU4 MAX216.7/233.4ms,5 hitches>50ms each. All page errors0. effects/performance/summary.json. CPU4 max100ms gate remains missed.
 F4 effects31/186frames/465pairs · minDistance0.542308,faceFailures0,peakInstances36,overdraw16,zero page errors. effects/uniqueness.json SHA340054172c2605781f42a36e6e0147b0e04df0fdc2eaa014467e220093486c5a. Layout3240 poses zero overlaps/crops/face occlusions/missing plates. B18.86–47.50% action heights. effects/layout/measurements.json.
@@ -108,7 +109,7 @@ E2E resize-burst.spec.ts passed in this baseline run. Full E2E 421 passed in 2.3
 User main/old worktrees contain existing untracked files. Leave them alone. Ledger copy is authorized only for requested report/state.
 ## COVERAGE
 REFERENCE: reports/cardrpg-big/baseline/COVERAGE.md
-Effects/motion · F3 starter20 actions/30 required joint pairs pass. All20 strips embedded and verified. F4 effect identity pending. motion/variety.json.
+Effects/motion · F3 starter20 actions/30 joint pairs pass. F4 starter31 compositions/465 pairs pass.20 motion strips and31 effect sheets embedded. motion/variety.json, effects/verified/uniqueness.json.
 Image sharpness · F2 ten crop pairs embedded, target2/10 passes. MSAA4/DPR/texture and 2x portraits verified. sharpness/README.md.
 Layout/scale/faces · F1 2745 poses, zero overlaps/crops, <=55° facing. Scale band partial. layout/README.md.
 Turn clarity/lag · seven cold-load runs and trace attribution complete, 610-case matrix complete, opening hitch fixes pending.
