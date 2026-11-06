@@ -140,3 +140,9 @@ I and G fivegates+functional complete;G36screens/0errors/0overflow. MfivegatesPA
 Your perconfiguration Gmatrix request accepted. Added A matrix-series driver with10separate lock acquisitions,fullgallery coverage/hash assertions,2.5s handoff gaps and raw receipt consolidation.
 Gfullmatrix has not started. New /tmp/cardrpg-big-g-series.sh runs cold7,10lockedconfigs,profiles only after A_FUNCTIONAL_COMPLETE. Existing frozenG284976a9 stays intact.
 G visual review found odds/pity below initial1024viewport;A will add compact persistent fairness information with entrance integration after pinned functional checks.
+
+## 2026-11-06T19:29:58.313626+00:00 G CHECKPOINT
+branch codex/cardrpg-big-g-2026-11-06;published83249b27;draft344 base340 https://github.com/ntbaoheyhey/taskbar-hero/pull/344.
+G13focused+fivegates1692web/903rules/421E2E PASS;36real-clickscreens0errors/overflow. Threebanners,single/ten,pity/guarantee,shards,skip/history and reducedmotion verified.
+Screenshot-freepageMAX50.1native/266.7CPU4. Full720 waits Afunctionalresume59576/59588,then10separate configlocks as requested;all raw coverage retained.
+3Dentrance and persistent narrowviewport odds/pity remain integration gates. No Gsource/runtime change while frozen284976a9 is queued. B2a94ed765e API will be consumed by A-owned CompanionPreview.
