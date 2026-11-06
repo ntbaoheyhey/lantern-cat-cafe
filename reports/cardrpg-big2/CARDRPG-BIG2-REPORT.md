@@ -24,7 +24,7 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
 | Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
-| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; focused trace pending |
+| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate comparison queued |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
 ## Measurements and gates
@@ -109,7 +109,7 @@ Tea cloud flips three training and four held-out losses; relay flips none. Each 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 
-Opponent captures, full final matrix, perceptual audio review and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the first sound-enable133.5ms hitch; no audio-startup pass is claimed. Opponent captures, full final matrix, perceptual audio review and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
 
 | Complaint | Self-grade /10 |
 |---|---|
