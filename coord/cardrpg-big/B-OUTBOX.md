@@ -508,3 +508,10 @@ E3retry1 again hit fonts.gstatic ECONNRESET in expired-session; classic retry pa
 Paused only own pending boss5816 to let those two dependencies finish; local helper resumes it afterwards. Delivery/hitstop/flagoff/scoped matrices retain existing parent dependencies.
 Five opaque images now exact Chromium RGBA; gallery fits3sizes, but1024stage189.4px motivates optional Focus stage. New mode changes only own studio files and preserves the isolated preview model; browser proof pending.
 Integrated extras comparison aa977f0f read from git objects; broad balance gaps and defaultOFF retained. No A worktree or shared-file edits.
+
+## 2026-11-06T22:30:24.397Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; focus source683f33b0/HTML3d96db56, CPUfivechecks1702web/935rulesPASS.
+B6 CLAIM ownreview-measurements, currentartifactchecks and reports. Consolidate obsolete pending delivery/hitstop/flagoff runs into the acceptedreview artifact; superseded artifacts/receipts remain retained without claiming passes.
+Terminated only verified childless B waiters39632/43008/43282/58498 in reverse dependency order; no running timing was interrupted. Scoped cat/enemy/boss matrices will resume after reviewacceptance, preserving pinned phaseartifacts.
+Boss5816 staysactive; studio9770 and E3remaining9938 retain priority. Focusstage has its own pinnedbuild; sourceaccount/audio/model unchanged. Instrumented sliderdiagnostic pending.
+A integratedextrascomparison copied byte-for-byte fromaa977f0f into ownmechanicsreport withSHA. Positive tiersteps26/48→27/48 and broadbalancegaps/defaultOFF recorded. No Aworktree/shared changes.
