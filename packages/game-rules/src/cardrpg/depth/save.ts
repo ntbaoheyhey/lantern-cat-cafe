@@ -1,4 +1,4 @@
-import type { AccountState } from '../contract';
+import { EQUIPMENT_SLOTS, type AccountState, type Slot } from '../contract';
 import { clone } from '../internal';
 import { createStarterAccount } from '../state';
 import { CAT_BY_ID, SKILLS } from './catalog';
@@ -66,7 +66,10 @@ export function migrateAccount(legacy: AccountState, now = 0): DepthAccount {
 }
 export function validateDepth(value: unknown): asserts value is DepthAccount {
   safeTree(value);
-  shape(value, createDepthAccount());
+  const example = createDepthAccount();
+  // Equipment is a dynamic map. Valid unequips and transfers remove starter keys.
+  example.equipment = {};
+  shape(value, example);
   const state = value as DepthAccount;
   validateAccount(state.account);
   if (state.version !== CONTRACT_VERSION || state.team.length !== 3 || new Set(state.team).size !== 3) fail();
@@ -79,6 +82,17 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   for (const gear of state.gear) {
     if (!GEAR_BY_ID[gear.templateId] || !Number.isInteger(gear.enhancement) || gear.enhancement < 0
       || gear.enhancement > 12 || !Array.isArray(gear.affixes) || !record(gear.rolls)) fail();
+  }
+  const equipped = new Set<string>();
+  for (const [cardId, loadout] of Object.entries(state.equipment)) {
+    if (!state.account.cards.some(card => card.cardId === cardId) || !record(loadout)) fail();
+    for (const [slot, instanceId] of Object.entries(loadout)) {
+      if (!EQUIPMENT_SLOTS.includes(slot as Slot) || typeof instanceId !== 'string'
+        || equipped.has(instanceId)) fail();
+      const item = state.gear.find(gear => gear.id === instanceId);
+      if (!item || GEAR_BY_ID[item.templateId]!.slot !== slot) fail();
+      equipped.add(instanceId);
+    }
   }
   if (state.run) {
     const run = state.run;

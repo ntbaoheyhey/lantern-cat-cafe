@@ -1,0 +1,75 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/game-rules
+
+ ❯ src/cardrpg/depth/save-equipment.test.ts (9 tests | 3 failed) 7ms
+   × round trips a team after every starter equipment slot is unequipped 4ms
+   × round trips after an item transfer removes its original starter slot 1ms
+   × reads the typed empty equipment map in current and migrated saves 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/save-equipment.test.ts > round trips a team after every starter equipment slot is unequipped
+Error: Save code has an unsupported or damaged structure.
+ ❯ fail src/cardrpg/depth/save.ts:19:32
+     17|   return (hash >>> 0).toString(16).padStart(8, '0');
+     18| }
+     19| function fail(): never { throw new Error('Save code has an unsupported…
+       |                                ^
+     20| function record(value: unknown): value is Record<string, unknown> {
+     21|   return value !== null && typeof value === 'object' && !Array.isArray…
+ ❯ shape src/cardrpg/depth/save.ts:42:47
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ validateDepth src/cardrpg/depth/save.ts:69:3
+ ❯ exportSave src/cardrpg/depth/save.ts:95:3
+ ❯ src/cardrpg/depth/save-equipment.test.ts:16:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/cardrpg/depth/save-equipment.test.ts > round trips after an item transfer removes its original starter slot
+Error: Save code has an unsupported or damaged structure.
+ ❯ fail src/cardrpg/depth/save.ts:19:32
+     17|   return (hash >>> 0).toString(16).padStart(8, '0');
+     18| }
+     19| function fail(): never { throw new Error('Save code has an unsupported…
+       |                                ^
+     20| function record(value: unknown): value is Record<string, unknown> {
+     21|   return value !== null && typeof value === 'object' && !Array.isArray…
+ ❯ shape src/cardrpg/depth/save.ts:42:47
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ validateDepth src/cardrpg/depth/save.ts:69:3
+ ❯ exportSave src/cardrpg/depth/save.ts:95:3
+ ❯ src/cardrpg/depth/save-equipment.test.ts:25:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/cardrpg/depth/save-equipment.test.ts > reads the typed empty equipment map in current and migrated saves
+Error: Save code has an unsupported or damaged structure.
+ ❯ fail src/cardrpg/depth/save.ts:19:32
+     17|   return (hash >>> 0).toString(16).padStart(8, '0');
+     18| }
+     19| function fail(): never { throw new Error('Save code has an unsupported…
+       |                                ^
+     20| function record(value: unknown): value is Record<string, unknown> {
+     21|   return value !== null && typeof value === 'object' && !Array.isArray…
+ ❯ shape src/cardrpg/depth/save.ts:40:25
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ validateDepth src/cardrpg/depth/save.ts:69:3
+ ❯ exportSave src/cardrpg/depth/save.ts:95:3
+ ❯ src/cardrpg/depth/save-equipment.test.ts:31:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+   Start at  23:18:52
+   Duration  156ms (transform 46%, import 37%, tests 13%, worker 4%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-big/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/save-equipment.test.ts
