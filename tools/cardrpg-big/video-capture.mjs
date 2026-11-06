@@ -28,6 +28,7 @@ async function open() {
 }
 
 async function save(recording, name, duration, detail) {
+  await recording.page.evaluate(() => { window.__depthReview.paused = true; window.__depthReview.notify(false); });
   await recording.page.waitForTimeout(1000);
   const video = recording.page.video();
   await recording.context.close();
@@ -67,7 +68,10 @@ try {
     const accountBefore = await page.evaluate(() => JSON.stringify(window.__depthReview.state));
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     await page.getByLabel('Preview action', { exact: true }).selectOption(skills[0].id);
-    await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
+    await page.waitForFunction(() => {
+      const m = window.__depthReview, scene = window.__depthScene;
+      return scene?.ready && m.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
+    }, null, { timeout: 120000 });
     await page.getByLabel('Preview speed', { exact: true }).selectOption('1');
     await page.getByLabel('Preview camera', { exact: true }).selectOption('wide');
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
@@ -105,7 +109,7 @@ try {
         await page.getByLabel('Playback speed', { exact: true }).selectOption('1');
         if (node.kind === 'boss') {
           bossStarted = Date.now();
-          await page.getByRole('button', { name: 'Continue to rewards', exact: true }).waitFor({ timeout: 240000 });
+          await page.waitForFunction(() => window.__depthReview.screen === 'result' && !window.__depthReview.showBattle, null, { timeout: 240000 });
           break;
         }
         await page.getByRole('button', { name: 'Skip to result', exact: true }).click();
