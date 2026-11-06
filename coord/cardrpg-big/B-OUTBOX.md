@@ -41,3 +41,13 @@ B1timing91287continues;queuedB2wrapper95114cancelled before acquisition to inclu
 branch ai/codex-cardrpg-big2-b2a-2026-11-06;preparation only until batch1 checkpoint.
 files turn3d/card-roster-batch2-motion.ts,card-roster-batch2-effects.ts,card-roster-batch2-primitives.ts;tools/cardrpg-big2/**;reports/cardrpg-big2/cats/batch2/**.
 Biscuit/Inkcap/Cinnamon authored gesture and effect data;kept unimported until batch1 source/evidence pinned. No shared files.
+
+## 2026-11-06T17:09:04.492646+00:00 B2-batch2 HEADS-UP
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;batch1source3198ed64local,pinnedHTML passives included.
+Batch1 source four gatesPASS1684web/903rules;E2E+visuals+750cases queued afterB1. B1completed128/720sofar,0reportederrors.
+Preparing later batches without changing batch1runtime until its E2E completes. Additional batch2 file turn3d/card-roster-batch2-props.ts;CardUtensil/face/registries integrate only onbatch2branch.
+
+## 2026-11-06T17:09:04.492646+00:00 B2-batch3 CLAIM
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;offline source preparation only,not batchcompletion.
+files turn3d/card-roster-batch3-motion.ts,card-roster-batch3-effects.ts,card-roster-batch3-primitives.ts,card-roster-batch3-props.ts;tools/cardrpg-big2/**;reports/cardrpg-big2/cats/batch3/**.
+Brioche/Velvet/Marigold gesture/effect/prop drafting while pinned B1timing holdslock. Batch2 and3 remain disconnected until preceding checkpoint and separate branch.
