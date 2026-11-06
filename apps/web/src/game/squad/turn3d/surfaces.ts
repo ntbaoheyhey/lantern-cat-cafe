@@ -61,7 +61,7 @@ export function stageTexture(kind: StageSurface): T.CanvasTexture {
 
 export async function prepareStageTexture(kind: StageSurface): Promise<T.Texture> {
   const texture = await new T.TextureLoader().loadAsync({ wood: woodUrl, cloth: clothUrl, window: windowUrl }[kind]);
-  texture.name = `original_baked_stage_${kind}_256`;
+  texture.name = `original_baked_stage_${kind}_1024`;
   texture.colorSpace = T.SRGBColorSpace;
   texture.wrapS = texture.wrapT = T.RepeatWrapping;
   texture.repeat.set(kind === 'wood' ? 3 : kind === 'cloth' ? 5 : 1,

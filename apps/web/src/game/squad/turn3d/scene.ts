@@ -15,6 +15,8 @@ import {screenBounds,auditBounds} from './scene-audit';
 import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 import { CardFace, cardExpression } from './card-face';
+import { groundCardContact, cardShieldGeometry } from './card-contact';
+import { applyCardLighting } from './card-lighting';
 import { CardSurfaces } from './card-surfaces';
 import { CardEffects, cardRecipeFor } from './card-effects';
 import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSkillMotion } from './card-motion';
@@ -70,6 +72,7 @@ export class TurnScene {
   private renderAt = 0;
   private dirty = true;
   private time = 0;
+  private litChapter = 0;
   private entrance?: { asset: string; startedAt: number };
   private width = 1;
   private height = 1;
@@ -115,8 +118,8 @@ export class TurnScene {
     this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',15,27);
     this.scene.add(new T.HemisphereLight('#f4e9e8','#675166',1.35));
-    const key=new T.DirectionalLight('#ffe0ba',3.3); key.position.set(-4,8,5); this.scene.add(key);
-    const rim=new T.DirectionalLight('#bdd2ff',2.3);rim.position.set(4,4,-5);this.scene.add(rim);
+    const key=new T.DirectionalLight('#ffe0ba',3.3); key.name='cafe-key'; key.position.set(-4,8,5); this.scene.add(key);
+    const rim=new T.DirectionalLight('#bdd2ff',2.3);rim.name='cafe-rim';rim.position.set(4,4,-5);this.scene.add(rim);
     this.aura=new T.PointLight(GOLD,0,7);this.scene.add(this.aura);
 
     this.bossBackdrop=new T.Group();
@@ -147,6 +150,7 @@ export class TurnScene {
       if(this.view().autoBattle){
         for(const kind of ['wood','cloth','window'] as const){
           const texture=await prepareStageTexture(kind);
+          texture.anisotropy=Math.min(16,this.renderer.capabilities.getMaxAnisotropy());
           if(this.disposed){texture.dispose();return;}
           this.stageTextures.push(texture);
           this.renderer.initTexture(texture);
@@ -268,7 +272,7 @@ export class TurnScene {
       const clips=new Map([...gltf.animations,...cardClips].map(clip=>[clip.name,clip]));
       const actions=new Map([...clips].map(([name,clip])=>[name,mixer.clipAction(clip)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
-      const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
+      const guard=new T.Mesh(this.view().autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:this.view().autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
@@ -361,8 +365,10 @@ export class TurnScene {
       for(const child of p.snare.children)(child as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>).material.color.set(a.statuses.some(s=>s.kind==='restrain')?'#ed869b':VIOLET);
       p.root.visible=a.hp>0||!!(frame&&frame.plan.targetIds.includes(a.id));
       if(a.hp<=0&&p.root.visible)p.root.scale.multiplyScalar(Math.max(.6,1-(frame?.progress??0)*.4));
+      if(view.autoBattle)groundCardContact(p.shadow,p.root);
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
+    if(view.autoBattle && this.litChapter!==(view.chapter??1)){this.litChapter=view.chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
     this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
     for (const group of this.stage.children) {
       if (group.userData.chapter) group.visible = group.userData.chapter === view.chapter;
