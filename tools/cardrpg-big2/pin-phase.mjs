@@ -1,0 +1,17 @@
+import { execFileSync } from 'node:child_process';
+import { mkdirSync, copyFileSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+const [phase, artifactName] = process.argv.slice(2);
+if (!/^[-a-z0-9]+$/.test(phase) || !/^[-a-z0-9]+$/.test(artifactName)) throw Error('Named phase and artifact required');
+const root = `/tmp/cardrpg-big2-${phase}-validation`, archive = `/tmp/cardrpg-big2-${phase}-source.tar`;
+const head = execFileSync('git', ['rev-parse', 'HEAD'], { encoding:'utf8' }).trim();
+mkdirSync(root, { recursive:true });
+execFileSync('git', ['archive','HEAD','--output',archive]);
+execFileSync('tar', ['-x','-f',archive,'-C',root]); rmSync(archive);
+const artifact = `/tmp/cardrpg-big2-${artifactName}-index.html`;
+copyFileSync('docs/cardrpg3b/index.html', artifact);
+copyFileSync('docs/cardrpg3b/build.json', `/tmp/cardrpg-big2-${artifactName}-build.json`);
+execFileSync('pnpm',['install','--offline','--frozen-lockfile'],{cwd:root,stdio:'ignore'});
+const receipt = { root, head, artifact, sha256:createHash('sha256').update(readFileSync(artifact)).digest('hex') };
+writeFileSync(`/tmp/cardrpg-big2-${phase}-validation.json`,JSON.stringify(receipt,null,2));
+console.log(JSON.stringify(receipt));
