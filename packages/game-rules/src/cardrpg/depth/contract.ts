@@ -45,7 +45,7 @@ export interface Battle {
   boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
-  seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[] }>;
+  seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
 }
 export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'treasure' | 'boss';
@@ -63,7 +63,7 @@ export interface GearTemplate {
   source: string; main: keyof Stats; value: number; affixes: string[]; unique?: string; story: string;
 }
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
-export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[] }
+export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
   version: typeof CONTRACT_VERSION; account: AccountState; team: string[]; rows: Record<string, Row>; skills: Record<string, string[]>;
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];

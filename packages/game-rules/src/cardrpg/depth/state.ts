@@ -1,6 +1,6 @@
 import { createStarterAccount } from '../state';
 import { applyCommand } from '../commands';
-import { computeCardStats } from '../equipment';
+import { depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
 import { clone, grant, requireRule, RuleFailure } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
@@ -9,7 +9,9 @@ export const DEPTH_CAPS = {fish:420,threads:90,stamps:180,essence:12};
 export function createDepthAccount(seed=11, now=0): DepthAccount {
   const account=createStarterAccount(seed);
   const team=account.cards.map(c=>c.cardId);
-  return {version:CONTRACT_VERSION,account,team,rows:Object.fromEntries(team.map(id=>[id,CAT_BY_ID[id]!.row])),skills:Object.fromEntries(team.map(id=>[id,CAT_BY_ID[id]!.skills.slice(0,3).map(s=>s.id)])),run:null,nextRunId:1,cleared:[],towerBest:0,lastBattle:null,lastChoices:[],gear:[],equipment:{},awakened:{},materials:0,seals:0,masteries:[],challengeClaims:[],claimedRuns:[],idle:{lastAt:now,receiptIds:[]},tutorial:0,freeInvite:false,settings:{sound:false,speed:1,reducedMotion:false,quality:'medium'},relics:[],selectedRelic:null,designClaims:[]};
+  const state:DepthAccount = {version:CONTRACT_VERSION,account,team,rows:Object.fromEntries(team.map(id=>[id,CAT_BY_ID[id]!.row])),skills:Object.fromEntries(team.map(id=>[id,CAT_BY_ID[id]!.skills.slice(0,3).map(s=>s.id)])),run:null,nextRunId:1,cleared:[],towerBest:0,lastBattle:null,lastChoices:[],gear:[],equipment:{},awakened:{},materials:0,seals:0,masteries:[],challengeClaims:[],claimedRuns:[],idle:{lastAt:now,receiptIds:[]},tutorial:0,freeInvite:false,settings:{sound:false,speed:1,reducedMotion:false,quality:'medium'},relics:[],selectedRelic:null,designClaims:[]};
+  initializeEquipment(state);
+  return state;
 }
 export function transactDepth(state: DepthAccount, fn: (draft: DepthAccount)=>void): RuleResult<DepthAccount> {
   const next=clone(state);
@@ -40,6 +42,10 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
     const before=clone(s.account),result=applyCommand(s.account,command);
     requireRule(result.ok,'INVALID_AMOUNT',result.ok?'':result.error.message);
     s.account=result.state;
+    for(const item of s.account.inventory.items.filter(item=>!before.inventory.items.some(old=>old.id===item.id))) {
+      const gear=makeGear(s,item.itemId,s.account.nextId);
+      s.gear.push(gear);
+    }
     for(const id of Object.keys(DEPTH_CAPS) as Array<keyof typeof DEPTH_CAPS>) {
       const excess=Math.max(0,s.account.daily.earned[id]-DEPTH_CAPS[id]);
       s.account.currencies[id]-=excess;s.account.daily.earned[id]-=excess;
@@ -50,7 +56,7 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
 }
 export function battleCats(state: DepthAccount) {
   return state.team.map(id=>{
-    const owned=state.account.cards.find(c=>c.cardId===id)!;
-    return {id,stats:computeCardStats(state.account,owned.id),skills:[...state.skills[id]!],row:state.rows[id]!,equipment:Object.values(state.account.loadouts[owned.id]??{}).map(i=>state.account.inventory.items.find(item=>item.id===i)!.itemId)};
+    const {effects,bonuses}=equipmentEffects(state,id);
+    return {id,stats:depthStats(state,id),skills:[...state.skills[id]!],row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
   });
 }

@@ -5,6 +5,7 @@ import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos 
 import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Effect, type Intent, type Skill, type StatusId } from './contract';
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
+const hasEffect = (actor: Actor, id: string) => actor.setEffects.includes(id);
 export const stacks = (actor: Actor, id: StatusId) => actor.statuses.find(s => s.id === id)?.stacks ?? 0;
 const living = (battle: Battle, side: Actor['side']) => battle.actors.filter(a => a.side === side && a.hp > 0);
 function roll(battle: Battle, max = 10000) {
@@ -39,13 +40,15 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
     target.statuses.push(status);
   }
   status.stacks = Math.min(rule.cap, status.stacks + count);
-  status.remaining = rule.duration + (id === 'scald' && source.side === 'party' ? boonValue(b,'scaldDuration') : 0) + (id === 'steep' && target.catalogId === 'marigold' ? 1 : 0);
+  status.remaining = rule.duration + (id === 'steep' ? Math.min(2,source.bonuses.statusDuration??0) : 0) + (id === 'scald' && hasEffect(source,'long-scald') ? 1 : 0) + (id === 'scald' && source.side === 'party' ? boonValue(b,'scaldDuration') : 0) + (id === 'steep' && target.catalogId === 'marigold' ? 1 : 0);
   if (control && ENEMY_BY_ID[target.catalogId]?.tier === 'boss') status.remaining = 1;
   status.source = source.id;
   status.appliedRound = b.round;
   if (control) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
   if (source.side === 'party') {
+    if (id === 'steep' && hasEffect(source,'steep-cozy')) applyStatus(b,source,target,'cozy');
+    if (id === 'scald' && hasEffect(source,'unique:warmwick')) heal(b,source,source,6);
     if (id === 'scald' && boonValue(b,'scaldBrittle')) applyStatus(b,source,target,'brittle');
     if (id === 'scald' && boonValue(b,'scaldCrumb')) applyStatus(b,source,target,'crumb');
     if (id === 'scent' && boonValue(b,'markCrumb')) applyStatus(b,source,target,'crumb');
@@ -54,13 +57,16 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   return true;
 }
 function shield(b: Battle, source: Actor, target: Actor, amount: number) {
+  if(amount<=0)return;
+  amount*=1+(source.bonuses.shieldBp??0)/10000;
   const actual = Math.min(Math.round(amount), Math.max(0, Math.floor(target.maxHp * .6) - target.shield));
   target.shield += actual;
   record(b, source, target, 'shield', actual);
   if (source.catalogId === 'mochi' && source.id !== target.id) source.shield = Math.min(Math.floor(source.maxHp * .6), source.shield + 12);
 }
 function heal(b: Battle, source: Actor, target: Actor, amount: number) {
-  if (target.hp <= 0) return;
+  if (target.hp <= 0 || amount<=0) return;
+  amount*=1+(source.bonuses.healingBp??0)/10000;
   if (source.catalogId === 'cinnamon' && target.hp < target.maxHp / 2) shield(b, source, target, 15);
   const actual = Math.min(target.maxHp - target.hp, Math.round(amount));
   const overflow = Math.max(0, Math.round(amount) - actual);
@@ -98,7 +104,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const weak = hasAdvantage(source.flavour, target.flavour) ? 1 : 0;
   const extraPressure = source.side === 'party' && source.bonuses.pressureRound !== b.round ? boonValue(b,'breakPressure') : 0;
   source.bonuses.pressureRound = b.round;
-  const pressureTotal = pressure + weak + stacks(target, 'tangle') + extraPressure;
+  const pressureTotal = pressure + weak + stacks(target, 'tangle') + extraPressure + (hasEffect(source,'marked-break')&&stacks(target,'scent')?1:0);
   target.break = Math.min(target.breakCap, target.break + pressureTotal);
   if (target.break >= target.breakCap) {
     const intent = b.intents.find(i => i.actorId === target.id);
@@ -110,13 +116,21 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
     }
   }
   const extraDamage = source.side === 'party' ? (source.shield > 0 ? boonValue(b,'shieldStrike') : 0) + (source.row === 'rear' ? boonValue(b,'rearDamage') : 0) : 0;
-  const attack = source.attack * power / 100 + extraDamage;
+  const bonus=source.bonuses;
+  const conditional=(source.row==='front'?bonus.frontDamage??0:bonus.rearDamage??0)
+    +(ENEMY_BY_ID[target.catalogId]?.tier==='boss'?bonus.bossDamage??0:0)
+    +(ENEMY_BY_ID[target.catalogId]?.tier==='elite'?bonus.eliteDamage??0:0)
+    +(stacks(target,'scald')?bonus.scaldDamage??0:0)+(stacks(target,'scent')?bonus.markedDamage??0:0)
+    +(target.break>=target.breakCap?bonus.brokenDamage??0:0)+(source.shield>0?bonus.shieldedDamage??0:0)
+    +(source.hp<source.maxHp/2?bonus.lowHpDamage??0:0);
+  const attack = source.attack * power / 100 + extraDamage + conditional;
+  const critical=(bonus.critBp??0)>0&&roll(b)<bonus.critBp! ? 1+(bonus.critDamageBp??5000)/10000 : 1;
   const mitigation = 80 / (80 + target.defense);
   const cozy = 1 - stacks(target, 'cozy') * .1;
   const rattled = 1 - stacks(source, 'rattled') * .15;
   const scent = stacks(target, 'scent') ? 1.2 : 1;
   const broken = target.break >= target.breakCap ? 1.2 : 1;
-  const amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance));
+  const amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance * critical));
   target.shield = Math.max(0, target.shield - stacks(target, 'brittle') * 15);
   const absorbed = Math.min(target.shield, amount);
   target.shield -= absorbed;
@@ -129,6 +143,9 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
     loseHp(b, source, protector, shared, 'shared');
   }
   loseHp(b, source, target, hpDamage, 'damage');
+  if(target.break>=target.breakCap)shield(b,source,source,source.bonuses.breakShield??0);
+  if(hasEffect(source,'third-crumb')&&(source.turns+1)%3===0)applyStatus(b,source,target,'crumb');
+  if(hasEffect(source,'unique:nightglass')&&stacks(target,'scent')&&source.bonuses.nightglassRound!==b.round){b.energy=Math.min(10,b.energy+1);source.bonuses.nightglassRound=b.round;}
   source.charge = Math.min(100, source.charge + 8);
   target.charge = Math.min(100, target.charge + 7);
   if (source.side === 'party' && stacks(target,'scald')) source.charge = Math.min(100,source.charge + boonValue(b,'scaldCharge'));
@@ -136,14 +153,15 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   if (source.catalogId === 'biscuit' && source.hp < source.maxHp / 2 && !source.passiveUsed) {
     source.passiveUsed = true; shield(b, source, source, 30);
   }
-  const reflect = stacks(target, 'riposte') * 16 + (target.catalogId === 'kettle-knight' && target.shield > 0 ? 12 : 0);
+  const reflect = stacks(target, 'riposte') * (16+(target.bonuses.counterPower??0)+(hasEffect(target,'counter-plus')?8:0)) + (target.catalogId === 'kettle-knight' && target.shield > 0 ? 12 : 0);
   if (reflect && source.hp > 0) loseHp(b, target, source, reflect, 'reflect');
 }
 export function tickStatuses(b: Battle, actor: Actor) {
   if (actor.hp <= 0) return;
   for (const s of [...actor.statuses]) {
     const rule = STATUS_BY_ID[s.id], source = b.actors.find(a => a.id === s.source) ?? actor;
-    if (rule.tick === 'damage') loseHp(b, source, actor, (rule.strength + (source.side === 'party' ? boonValue(b,'scaldPower') : 0)) * s.stacks, 'dot');
+    if (rule.tick === 'damage') loseHp(b, source, actor, (rule.strength + (source.side === 'party' ? boonValue(b,'scaldPower')+(source.bonuses.dotPower??0) : 0)) * s.stacks, 'dot');
+    if(rule.tick==='damage'&&hasEffect(source,'scald-charge'))source.charge=Math.min(100,source.charge+3);
     if (actor.hp <= 0) break;
     if (rule.tick === 'heal') {
       heal(b, source, actor, (rule.strength + (actor.side === 'party' ? boonValue(b,'steepPower') : 0)) * s.stacks);
@@ -168,14 +186,16 @@ export function createBattle(setup: BattleSetup): Battle {
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
     if (!cat || c.skills.length !== 3 || new Set(c.skills).size !== 3 || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid three-skill loadout');
-    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[] };
+    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial)));
   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial:clone(setup)};
   const combos = teamCombos(setup.cats.map(c => c.id));
   for (const actor of living(b,'party')) {
-    actor.shield += boonValue(b,'openingShield');
-    actor.charge += boonValue(b,'openingCharge');
+    actor.shield += boonValue(b,'openingShield')+(actor.bonuses.openingShield??0);
+    actor.charge = Math.min(100,actor.charge+boonValue(b,'openingCharge')+(actor.bonuses.openingCharge??0));
+    if(hasEffect(actor,'opening-decoy'))applyStatus(b,actor,actor,'decoy');
+    if(hasEffect(actor,'unique:softcollar'))applyStatus(b,actor,actor,'sprout');
     if (boonValue(b,'openingSteep')) applyStatus(b,actor,actor,'steep',boonValue(b,'openingSteep'));
     if (combos.some(c => c.id==='warm-table')) actor.shield += 20;
     if (combos.some(c => c.id==='night-garden')) actor.charge += 10;
@@ -214,6 +234,7 @@ function beginRound(b: Battle) {
   for (const a of b.actors) {
     for (const id of Object.keys(a.cooldowns)) a.cooldowns[id]=Math.max(0,a.cooldowns[id]!-1);
     if (a.hp>0 && a.side==='party' && a.row==='front') shield(b,a,a,boonValue(b,'roundShield'));
+    if(a.hp>0&&a.side==='party')heal(b,a,a,(a.bonuses.roundHeal??0)+(hasEffect(a,'rear-heal')&&a.row==='rear'?16:0));
     if (a.hp>0 && a.catalogId==='brioche') shield(b,a,a,12);
     if (a.hp>0 && a.catalogId==='sorrel' && b.round%2===1) b.energy++;
     const enemy = ENEMY_BY_ID[a.catalogId];
@@ -231,7 +252,7 @@ export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {
   if (skill.target==='self') return [actor];
   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);
   if (skill.target==='ally'||skill.target==='allies') return allies;
-  if (skill.target==='foe') {
+  if (skill.target==='foe'&&!hasEffect(actor,'pierce-row')) {
     const front=foes.filter(a=>a.row==='front');
     return front.length ? foes.filter(a=>a.row==='front'||stacks(a,'scent')) : foes;
   }
@@ -255,10 +276,11 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
   const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0)));
   switch (effect.kind) {
     case 'hit': damage(b,actor,target,power,skill.breakPower); break;
-    case 'shield': shield(b,actor,target,power);if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
+    case 'shield': shield(b,actor,target,power+(actor.bonuses.shieldFlat??0));if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
     case 'heal':
-      heal(b,actor,target,power+boonValue(b,'healing'));
-      if (boonValue(b,'healCleanse')) {
+      heal(b,actor,target,power+boonValue(b,'healing')+(actor.bonuses.healFlat??0));
+      if(hasEffect(actor,'unique:seedcup')&&!actor.bonuses.seedcupUsed){applyStatus(b,actor,target,'sprout');actor.bonuses.seedcupUsed=1;}
+      if (boonValue(b,'healCleanse')||hasEffect(actor,'healing-cleanse')) {
         const debuff=target.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);
         if(debuff)target.statuses=target.statuses.filter(s=>s!==debuff);
       }
@@ -267,6 +289,7 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
     case 'cleanse': {
       const before=target.statuses.length;
       dispel(b,actor,target,'debuff');
+      if(before>target.statuses.length){shield(b,actor,target,actor.bonuses.cleanseShield??0);if(hasEffect(actor,'unique:gardenkey'))heal(b,actor,target,25);}
       if(before>target.statuses.length&&!actor.bonuses.cleanseProc){b.energy=Math.min(10,b.energy+boonValue(b,'cleanseEnergy'));actor.bonuses.cleanseProc=1;}
       break;
     }
@@ -276,19 +299,21 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       loseHp(b,actor,target,count*(24+boonValue(b,'detonatePower'))*power/100,'detonate');
       target.statuses=target.statuses.filter(s=>s.id!=='crumb'&&s.id!=='scald');
       if(count&&boonValue(b,'detonateSplash'))for(const other of living(b,target.side).filter(a=>a.id!==target.id))loseHp(b,actor,other,boonValue(b,'detonateSplash'),'detonate');
+      if(count&&hasEffect(actor,'detonate-energy'))b.energy=Math.min(10,b.energy+1);
+      if(count&&hasEffect(actor,'unique:crumbbook'))shield(b,actor,actor,35);
       if (count && actor.catalogId==='soot') actor.charge=Math.min(100,actor.charge+10);
       break;
     }
     case 'transfer': { const amount=actor.shield;actor.shield=0;shield(b,actor,target,amount);break; }
     case 'revive': target.hp=Math.round(target.maxHp*power/100);target.statuses=[];actor.passiveUsed=true;record(b,actor,target,'revive',target.hp);break;
-    case 'execute': damage(b,actor,target,power*(target.hp/target.maxHp<.3?2:1),skill.breakPower);break;
+    case 'execute': damage(b,actor,target,power*(target.hp/target.maxHp<.3+(actor.bonuses.executeThreshold??0)/100?2:1),skill.breakPower);break;
     case 'chain': {
       const others=living(b,target.side).filter(t=>t.id!==target.id);
       for (const [i,t] of [target,...others].slice(0,3).entries()) damage(b,actor,t,power*(1-i*.15),skill.breakPower);
       break;
     }
     case 'energy': b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);break;
-    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield'));shield(b,actor,target,boonValue(b,'swapShield'));break; }
+    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?25:0));shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?25:0));if(hasEffect(actor,'unique:rainbell'))dispel(b,actor,actor,'debuff');break; }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }
     case 'break': target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
@@ -323,6 +348,19 @@ export function act(b: Battle, choice: Choice): boolean {
     else for (const t of affected) executeEffect(b,actor,t,effect,skill);
   }
   if (actor.catalogId==='panko'&&skill.id==='defend') applyStatus(b,actor,actor,'riposte');
+  if(skill.id==='defend'){
+    if(hasEffect(actor,'defend-shield'))shield(b,actor,actor,25);
+    if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link');}
+    if(hasEffect(actor,'defend-riposte')){applyStatus(b,actor,actor,'shelter');applyStatus(b,actor,actor,'riposte');}
+    if(hasEffect(actor,'unique:panlid'))applyStatus(b,actor,actor,'riposte',2);
+    if(hasEffect(actor,'unique:doorstop'))heal(b,actor,actor,25);
+  }
+  if(skill.id==='wait'&&hasEffect(actor,'unique:tidetray'))shield(b,actor,weakest(living(b,'party')),30);
+  if(skill.charge){
+    actor.charge=Math.min(100,actor.charge+(actor.bonuses.ultimateCharge??0)+(hasEffect(actor,'ultimate-refund')?20:0));
+    if(hasEffect(actor,'unique:starladle')&&!actor.bonuses.starladleUsed){actor.charge=Math.min(100,actor.charge+25);actor.bonuses.starladleUsed=1;}
+    if(hasEffect(actor,'unique:silkspool')&&!actor.bonuses.silkspoolUsed){applyStatus(b,actor,actor,'decoy');actor.bonuses.silkspoolUsed=1;}
+  }
   if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
   if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
   if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
