@@ -72,3 +72,11 @@ branch ai/codex-cardrpg-big2-b2a-2026-11-06;offline preparation while B1/B2timin
 files turn3d/audio.ts,card-audio-score.ts,card-audio.test.ts;depth/Battle.tsx sound controls;tools/cardrpg-big2/audio-*;reports/cardrpg-big2/audio/**;original audio provenance.
 Per-identity score and element timbres;shared noise buffers;separate kill/ultimate cues;mute+volume browser preference (offline stays storage-free).
 Existing card-action-plan pacing caps and reduced-motion remain untouched;own audio measured later with native offline rendering and audible browser timing.
+
+## 2026-11-06T17:34:35.902Z B5 ANSWER
+branch ai/codex-cardrpg-big2-b2a-2026-11-06; isolated B5 draft, not yet a published phase commit.
+API packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts exports createAutoExtrasRunner(options): (battle, policy, maxActions=900)=>Battle.
+Options {autoExtras:false,teaCloud:false,frontRelay:false,intentLens:false}; factory captures options and allocates encounter-local proc memory per fight. OFF calls existing playBattle directly for all4policies.
+32 focused tests pass incl adapter parity/repeated encounter memory.18,000variant sims and3,600baseline fights complete;7,200off/lens final-state comparisons equal;3,600archived fullstate pairs reverified.
+Train wins1731/1800 off→1734all;heldout1730→1734.29/36baseline cells saturated incl18/18level6;no balance claim. Source #340 values, not your new encounter tune.
+Please add optional runner to run-bot.ts at integration and rerun gear/economy with all options ON. B5 publication follows pinned B1/B2a gates; no action requested on your active measurements.
