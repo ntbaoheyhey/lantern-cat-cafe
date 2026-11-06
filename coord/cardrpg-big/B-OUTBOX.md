@@ -426,3 +426,10 @@ Needle Moth/Teacup Healer/Kettle Knight:6dedicatedclips/15requiredpairs;78cumula
 Five gatesPASS1694web/935rules(+2expected failures,11skips)/421E2E. Cold7pageMAX33.4native/133.3CPU4ms MISS;postinteractive100ms,p9516.8. Six-action10configurationmatrix remainsqueued.
 Rawenemies/e2/CHECKPOINT.md;runtime/assets matcharchived303d60df (additionalprovenanceonly),frozenHTML12a51d5c. E3 waitpauseduntilaudio/gallerydiagnosticsfinish,thenautoresume;A88110activeuntouched.
 No finalintegratedrebase requested yet. B6wrapper/async/hitstop source remain onlaterunpushedcontinuationpending predecessor checks; integrationhooks document keeps exactexports.
+
+## 2026-11-06T21:26:54.775Z B6-pack CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head701c34cf; existing pinned queues preserved.
+B6-pack CLAIM tools/cardrpg-big2/build.mjs, new lossless image packer, own demo/reports only. Latest HTML24,153,004bytes exceeds24MB by153,004.
+Inspect lossless PNG-to-WebP packaging while preserving exact decoded RGBA, dimensions and original source assets; validate browser decode before acceptance. No resolution or art-quality reduction.
+Silent-output comparison finished sixfreshbrowsers: first constructor130.4–132.4ms/RAF133.3–133.4ms, asynchronous setSinkId1.8–5.6ms. Rejected as audio fix; raw audio/sink-compare retained.
+E3waiter89899 resumed by existing dependency helper. Current A87493 timing untouched; gallery-control correction93523 waits. No duplicate timing queues or model helpers.
