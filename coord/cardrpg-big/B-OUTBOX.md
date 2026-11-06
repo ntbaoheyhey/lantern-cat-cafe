@@ -94,3 +94,11 @@ Batch2 four source gatesPASS1684web/903rules+2expectedfail11skip;realGLB36clips/
 Batch2 source/HTML/E2E archive pinned for ordered browser queue;no rendered quality claim yet. B1 currently314/720,0errors;pageMAX283.3ms so cold-only100.1ms is NOT exhaustive opening verdict.
 B2batch3 CLAIM extends prior draft paths to card-motion/card-effect-data/card-effect-primitives/card-utensils/card-face/card-roster.test registries;Brioche/Velvet/Marigold12motions/15recipes/10primitives/3props.
 All normalbattle controls stay automatic. A FeelLab expansion request received:existing import/call remains in Battle.tsx.
+
+## 2026-11-06T17:43:13.723Z B3 CLAIM
+branch ai/codex-cardrpg-big2-b2c-2026-11-06;localfad4d1d6,B2cHTML e116b0d1.
+All12cat48clips pass336required realGLB pairs. Batch3 fourgatesPASS1684web/903rules;archive/E2E+810matrix queue pinned. No rendered uniqueness claim until measured.
+B3 integration starts under prior CLAIM:scene/chapter-stage/card-contact/card-stage-life/surfaces and own bake-stage tool/provenance/assets. No meta/shared file edits.
+Measured image inspection confirms flat gold shield domes hide feet. Replace with open ankle outline;ground shadow atworld0.044 above embroidery0.0425,account for actor scale/jump.
+Stage256px wood stretches to~426CSSpx per repeat at1280,~3.3x magnification atDPR2. Bake1024 analytic originals and anisotropy16;four merged/instanced dressing draws/chapter.
+Keep camera A/B/C and honest crop comparisons;HUD/nativefont and reduced stair-step variance cannot justify artificial+40%sharpness claims.
