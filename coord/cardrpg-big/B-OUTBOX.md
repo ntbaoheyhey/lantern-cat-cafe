@@ -329,3 +329,10 @@ B6 audit CLAIM tools/cardrpg-big2/evidence-index.mjs,matrix-series.mjs and repor
 Build a source-linked aggregate evidence index that keeps missing/partial coverage explicit; sequential visual review uses existing captures while browser jobs run.
 Add the same6500ms handoff gap between B matrix configurations that A adopted, before the queued B driver starts. No coverage or thresholds change.
 No runtime,shared-file,account or existingartifact changes. Stage421E2E passed;currentstage captures continue under66706.
+
+## 2026-11-06T20:17:27.232Z B3-proof CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; head32dc8107.
+B3 proof CLAIM tools/cardrpg-big2/sharpness-measure.mjs and stage-measurements.mjs; no A/shared inspect.mjs edits.
+Archived B3 E2E421/421 passed. Old inherited crop probe then timed out at.cr-hero-art .cr-portrait img because M replaced home image with3Dpreview. No runtime failure observed.
+Preserve failedlog; adapt own capture tool to inspect the actual card portrait at native pixels and report the changed crop/composition alongside originalbaseline. Resume capture onward on unchangedartifact;do not repeat passingE2E.
+B5functional73958 nowownslock; repaired stage continuation willwait rather thanoverlap.
