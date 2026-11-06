@@ -5,7 +5,7 @@ import type { Actor, Battle, Choice } from './contract';
 export type Policy = 'random' | 'auto' | 'greedy' | 'smart';
 
 function previewCopy(b: Battle): Battle {
-  return {...b,actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
+  return {...b,procRounds:{...b.procRounds},actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
 }
 function actorValue(a: Actor): number {
   if(a.hp<=0)return -180;

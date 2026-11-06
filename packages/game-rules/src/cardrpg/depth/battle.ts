@@ -1,4 +1,5 @@
 import { clone } from '../internal';
+import { boonValue } from './boons';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
 import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Effect, type Intent, type Skill, type StatusId } from './contract';
@@ -38,12 +39,18 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
     target.statuses.push(status);
   }
   status.stacks = Math.min(rule.cap, status.stacks + count);
-  status.remaining = rule.duration + (id === 'steep' && target.catalogId === 'marigold' ? 1 : 0);
+  status.remaining = rule.duration + (id === 'scald' && source.side === 'party' ? boonValue(b,'scaldDuration') : 0) + (id === 'steep' && target.catalogId === 'marigold' ? 1 : 0);
   if (control && ENEMY_BY_ID[target.catalogId]?.tier === 'boss') status.remaining = 1;
   status.source = source.id;
   status.appliedRound = b.round;
   if (control) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
+  if (source.side === 'party') {
+    if (id === 'scald' && boonValue(b,'scaldBrittle')) applyStatus(b,source,target,'brittle');
+    if (id === 'scald' && boonValue(b,'scaldCrumb')) applyStatus(b,source,target,'crumb');
+    if (id === 'scent' && boonValue(b,'markCrumb')) applyStatus(b,source,target,'crumb');
+    if (id === 'tangle' && boonValue(b,'tangleRattle')) applyStatus(b,source,target,'rattled');
+  }
   return true;
 }
 function shield(b: Battle, source: Actor, target: Actor, amount: number) {
@@ -56,6 +63,8 @@ function heal(b: Battle, source: Actor, target: Actor, amount: number) {
   if (target.hp <= 0) return;
   if (source.catalogId === 'cinnamon' && target.hp < target.maxHp / 2) shield(b, source, target, 15);
   const actual = Math.min(target.maxHp - target.hp, Math.round(amount));
+  const overflow = Math.max(0, Math.round(amount) - actual);
+  if (source.side === 'party' && overflow) shield(b,source,target,overflow * boonValue(b,'overhealShield') / 100);
   target.hp += actual;
   record(b, source, target, 'heal', actual);
   if (source.catalogId === 'clover' && !source.passiveUsed) { source.passiveUsed = true; dispel(b, source, target, 'debuff'); }
@@ -74,6 +83,7 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;
     record(b, source, target, 'defeat');
     if (source.catalogId === 'velvet') source.charge = Math.min(100, source.charge + 15);
+    if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));
   }
   return actual;
 }
@@ -86,14 +96,21 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   }
   const variance = (9200 + roll(b, 1601)) / 10000;
   const weak = hasAdvantage(source.flavour, target.flavour) ? 1 : 0;
-  const pressureTotal = pressure + weak + stacks(target, 'tangle');
+  const extraPressure = source.side === 'party' && source.bonuses.pressureRound !== b.round ? boonValue(b,'breakPressure') : 0;
+  source.bonuses.pressureRound = b.round;
+  const pressureTotal = pressure + weak + stacks(target, 'tangle') + extraPressure;
   target.break = Math.min(target.breakCap, target.break + pressureTotal);
   if (target.break >= target.breakCap) {
     const intent = b.intents.find(i => i.actorId === target.id);
     if (intent) intent.interrupted = true;
     record(b, source, target, 'break', pressureTotal, 'Intent interrupted');
+    if (source.side === 'party' && b.procRounds.breakEnergy !== b.round) {
+      b.energy = Math.min(10,b.energy + boonValue(b,'breakEnergy'));
+      b.procRounds.breakEnergy = b.round;
+    }
   }
-  const attack = source.attack * power / 100;
+  const extraDamage = source.side === 'party' ? (source.shield > 0 ? boonValue(b,'shieldStrike') : 0) + (source.row === 'rear' ? boonValue(b,'rearDamage') : 0) : 0;
+  const attack = source.attack * power / 100 + extraDamage;
   const mitigation = 80 / (80 + target.defense);
   const cozy = 1 - stacks(target, 'cozy') * .1;
   const rattled = 1 - stacks(source, 'rattled') * .15;
@@ -114,6 +131,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   loseHp(b, source, target, hpDamage, 'damage');
   source.charge = Math.min(100, source.charge + 8);
   target.charge = Math.min(100, target.charge + 7);
+  if (source.side === 'party' && stacks(target,'scald')) source.charge = Math.min(100,source.charge + boonValue(b,'scaldCharge'));
   if (source.catalogId === 'mallow' && stacks(target, 'scald')) source.charge = Math.min(100, source.charge + 8);
   if (source.catalogId === 'biscuit' && source.hp < source.maxHp / 2 && !source.passiveUsed) {
     source.passiveUsed = true; shield(b, source, source, 30);
@@ -125,10 +143,10 @@ export function tickStatuses(b: Battle, actor: Actor) {
   if (actor.hp <= 0) return;
   for (const s of [...actor.statuses]) {
     const rule = STATUS_BY_ID[s.id], source = b.actors.find(a => a.id === s.source) ?? actor;
-    if (rule.tick === 'damage') loseHp(b, source, actor, rule.strength * s.stacks, 'dot');
+    if (rule.tick === 'damage') loseHp(b, source, actor, (rule.strength + (source.side === 'party' ? boonValue(b,'scaldPower') : 0)) * s.stacks, 'dot');
     if (actor.hp <= 0) break;
     if (rule.tick === 'heal') {
-      heal(b, source, actor, rule.strength * s.stacks);
+      heal(b, source, actor, (rule.strength + (actor.side === 'party' ? boonValue(b,'steepPower') : 0)) * s.stacks);
       const scald = actor.statuses.find(x => x.id === 'scald');
       if (scald) scald.stacks--;
     }
@@ -153,12 +171,24 @@ export function createBattle(setup: BattleSetup): Battle {
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[] };
   });
   actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial)));
-  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,boons:{...setup.boons},mutator:setup.mutator??'',initial:clone(setup)};
+  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial:clone(setup)};
   const combos = teamCombos(setup.cats.map(c => c.id));
   for (const actor of living(b,'party')) {
+    actor.shield += boonValue(b,'openingShield');
+    actor.charge += boonValue(b,'openingCharge');
+    if (boonValue(b,'openingSteep')) applyStatus(b,actor,actor,'steep',boonValue(b,'openingSteep'));
     if (combos.some(c => c.id==='warm-table')) actor.shield += 20;
     if (combos.some(c => c.id==='night-garden')) actor.charge += 10;
     if (actor.catalogId==='inkcap') applyStatus(b,actor,actor,'decoy');
+  }
+  if (setup.mutator === 'thin-pot') b.maxEnergy = 4;
+  for (const actor of b.actors) {
+    if (setup.mutator === 'rainy' && actor.side === 'enemy') actor.shield += 20;
+    if (setup.mutator === 'warm-floor' && actor.row === 'front') applyStatus(b,actor,actor,'cozy');
+    if (setup.mutator === 'late-shift') {
+      if (actor.side === 'enemy') actor.attack = Math.round(actor.attack * 1.1);
+      else actor.charge += 15;
+    }
   }
   beginRound(b);
   if (combos.some(c => c.id==='crumb-circuit')) b.energy++;
@@ -179,10 +209,11 @@ function setIntents(b: Battle) {
 function beginRound(b: Battle) {
   b.round++;
   b.acted=[];
-  b.energy=b.maxEnergy;
+  b.energy=Math.min(10,b.maxEnergy+boonValue(b,'roundEnergy'));
   b.queue=b.actors.filter(a=>a.hp>0).sort((a,c)=>c.initiative-a.initiative||a.id.localeCompare(c.id)).map(a=>a.id);
   for (const a of b.actors) {
     for (const id of Object.keys(a.cooldowns)) a.cooldowns[id]=Math.max(0,a.cooldowns[id]!-1);
+    if (a.hp>0 && a.side==='party' && a.row==='front') shield(b,a,a,boonValue(b,'roundShield'));
     if (a.hp>0 && a.catalogId==='brioche') shield(b,a,a,12);
     if (a.hp>0 && a.catalogId==='sorrel' && b.round%2===1) b.energy++;
     const enemy = ENEMY_BY_ID[a.catalogId];
@@ -221,17 +252,30 @@ export function legalChoices(b: Battle): Choice[] {
   });
 }
 function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, skill: Skill) {
-  const power=effect.power??0;
+  const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0)));
   switch (effect.kind) {
     case 'hit': damage(b,actor,target,power,skill.breakPower); break;
-    case 'shield': shield(b,actor,target,power); break;
-    case 'heal': heal(b,actor,target,power); break;
-    case 'cleanse': dispel(b,actor,target,'debuff'); break;
+    case 'shield': shield(b,actor,target,power);if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
+    case 'heal':
+      heal(b,actor,target,power+boonValue(b,'healing'));
+      if (boonValue(b,'healCleanse')) {
+        const debuff=target.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);
+        if(debuff)target.statuses=target.statuses.filter(s=>s!==debuff);
+      }
+      if(!actor.bonuses.healProc){actor.charge=Math.min(100,actor.charge+boonValue(b,'healCharge'));actor.bonuses.healProc=1;}
+      break;
+    case 'cleanse': {
+      const before=target.statuses.length;
+      dispel(b,actor,target,'debuff');
+      if(before>target.statuses.length&&!actor.bonuses.cleanseProc){b.energy=Math.min(10,b.energy+boonValue(b,'cleanseEnergy'));actor.bonuses.cleanseProc=1;}
+      break;
+    }
     case 'dispel': dispel(b,actor,target,'buff'); break;
     case 'detonate': {
       const count=stacks(target,'crumb')+stacks(target,'scald');
-      loseHp(b,actor,target,count*24*power/100,'detonate');
+      loseHp(b,actor,target,count*(24+boonValue(b,'detonatePower'))*power/100,'detonate');
       target.statuses=target.statuses.filter(s=>s.id!=='crumb'&&s.id!=='scald');
+      if(count&&boonValue(b,'detonateSplash'))for(const other of living(b,target.side).filter(a=>a.id!==target.id))loseHp(b,actor,other,boonValue(b,'detonateSplash'),'detonate');
       if (count && actor.catalogId==='soot') actor.charge=Math.min(100,actor.charge+10);
       break;
     }
@@ -244,7 +288,7 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       break;
     }
     case 'energy': b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);break;
-    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;break; }
+    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield'));shield(b,actor,target,boonValue(b,'swapShield'));break; }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }
     case 'break': target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
@@ -269,6 +313,7 @@ export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
   const actor=currentActor(b)!, skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
   b.choices.push({...choice});
+  actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
   b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;
   actor.cooldowns[skill.id]=skill.cooldown+1;
   shield(b,actor,actor,stacks(actor,'glaze')*20);
@@ -278,6 +323,9 @@ export function act(b: Battle, choice: Choice): boolean {
     else for (const t of affected) executeEffect(b,actor,t,effect,skill);
   }
   if (actor.catalogId==='panko'&&skill.id==='defend') applyStatus(b,actor,actor,'riposte');
+  if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
+  if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
+  if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
   record(b,actor,target,'action',0,skill.name,skill.id);
   finishAction(b,actor);
   return true;
