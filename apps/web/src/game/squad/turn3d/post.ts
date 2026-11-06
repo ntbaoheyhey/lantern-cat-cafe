@@ -1,5 +1,6 @@
 /** Small explicit HDR bloom stack: bright-pass → separable blur → grade/distortion. */
 import * as T from 'three';
+import { loadingFrame } from './loading';
 export type Quality='high'|'medium'|'low';
 const vertex=`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}`;
 const blur=`varying vec2 vUv;uniform sampler2D source;uniform vec2 stepUV;uniform float threshold;void main(){vec3 c=texture2D(source,vUv).rgb*.227027; c+=texture2D(source,vUv+stepUV*1.384615).rgb*.316216;c+=texture2D(source,vUv-stepUV*1.384615).rgb*.316216;c+=texture2D(source,vUv+stepUV*3.230769).rgb*.070270;c+=texture2D(source,vUv-stepUV*3.230769).rgb*.070270;float bright=max(c.r,max(c.g,c.b));c*=max(0.,bright-threshold)/max(.0001,bright);gl_FragColor=vec4(c,1.);}`;
@@ -69,6 +70,28 @@ export class CafePost{
   if(this.sceneTarget.samples!==samples){this.sceneTarget.dispose();this.sceneTarget.samples=samples;}
   this.sceneTarget.setSize(w,h);this.final.uniforms.pixel!.value.set(1/w,1/h);
   this.a.setSize(Math.ceil(w/div),Math.ceil(h/div));this.b.setSize(Math.ceil(w/div),Math.ceil(h/div));
+ }
+ async warm(cancelled:()=>boolean){
+  const previous=this.renderer.getRenderTarget();
+  const viewport=this.renderer.getViewport(new T.Vector4());
+  try{
+   for(const target of [this.sceneTarget,this.a,this.b]){
+    if(cancelled())return;
+    this.renderer.initRenderTarget(target);
+    await loadingFrame();
+   }
+   for(const [material,target] of [[this.filter,this.a],[this.final,null]] as const){
+    if(cancelled())return;
+    this.plane.material=material;
+    this.renderer.setRenderTarget(target);this.renderer.setViewport(0,0,2,2);
+    await this.renderer.compileAsync(this.scene,this.camera);
+    if(cancelled())return;
+    // Initialize sampler uniforms too. Render targets are already allocated.
+    this.filter.uniforms.source!.value=this.sceneTarget.texture;
+    this.renderer.render(this.scene,this.camera);
+    await loadingFrame();
+   }
+  }finally{this.renderer.setRenderTarget(previous);this.renderer.setViewport(viewport);}
  }
  render(scene:T.Scene,camera:T.Camera,impact:number,pulse:number,color:string,calm:boolean){
   if(this.mode==='low'){this.renderer.setRenderTarget(null);this.renderer.render(scene,camera);return}
