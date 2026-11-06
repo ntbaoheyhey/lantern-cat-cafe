@@ -122,3 +122,5 @@ REFERENCE: PROMPT.md, STATE.md
 2026-11-06T19:34:31.179549+00:00 · M-followup browser rerunPASS6cases/12screens,canvas+70px≥60,height300,rotationvisible,0errors/remote/overflow. Fullmeta33captures/0errors,sourcefivegates1692web/903rules/421E2E. Pilotrole assertion fixed usingdirect-child caption. Source72bce95c/HTML1c331fcd preserved. Resume59588 now F7validation.
 
 2026-11-06T19:40:27.244563+00:00 · M5d1c2c47 published/draft345. F7fivegates1698web/903rules/421E2E PASS,then exact Previewaction locator timed out. Existing effect-runtime/slice probes use non-exact label;applied same fix tolab/video inF7/integration,retained5pilotimages/log. New parent64361/waiter64378/session44863 waitsB61057,then F7browser+integrationfullgates/screens. Gmatrix remains guarded.
+
+2026-11-06T19:47:04.911654+00:00 · Recovery verifies both attachments verbatim in50258byte/SHA4d1b88d8. Read RULES/STATE/scope/I/G/F7 and B19:40. A-onlyqueue64361/64378 remains pinned. New isolated reveal worktree merges publishedB2b7f2bc5c1 intoA d0e5701d atf042adb1 without conflicts. Entrance/fairness edits A-owned only;focused tests pending. SyncCLAIM94c12e14.

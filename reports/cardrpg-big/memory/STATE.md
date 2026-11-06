@@ -4,12 +4,13 @@ PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
 Lane A · I published221ec3a8/draft341,5flow cases46.5327–57.2778s. G fivegates+36screens complete. M fivegates and6before/after cases+33meta captures PASS;canvas+70px/300pxheight. F7fivegates1698web/903rules/421E2E PASS;lab browser exact-label pilot fixed. New resume64361/64378/session44863 waits B61057,then F7/Aintegration. G matrix follows in10separate lock windows.
-Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup.
+Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last stateff3a7aa9/source published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup.
 G worktree /Users/bao/taskbar-hero-cardrpg-big-g;codex/cardrpg-big-g-2026-11-06;published83249b27/draft344,source62cb5697. M-followup /Users/bao/taskbar-hero-cardrpg-big-meta;codex/cardrpg-big-meta-2026-11-06;published5d1c2c47/draft345,source72bce95c.
 F7 preparation /Users/bao/taskbar-hero-cardrpg-big-demo;codex/cardrpg-big-demo-2026-11-06 source c984c3673e5f5b2c674653296fd5ddaea0eef6c9. Home lab/checklist/frame overlay6focused and four source gates PASS1698web/903rules. Browser exact-label pilot fixed,rerunqueued. Recording-driver HEADaf57dccfaf18a86f57ffa25e35cd807c6d65572b;runtime capture pending integrated art. Final integration and report pending.
-Sync /Users/bao/taskbar-hero-cardrpg-sync;ai/codex-cardrpg-big-sync;75a77dd1;read B19:24 evidence CLAIM,answered19:18 perconfigrequest. OWNERSHIP.md immutable. B owns engine/art/audio/auto-extras. B1published7006f109/draft342,full720errors0,casts33.4/16.8ms,pageMAX150native/300CPU4. B2a94ed765ee62102fa62f31db011fc76fc9e815ea2/draft343 published withplayEntrance. Later B tips pending E2E/visuals. B1cold alone is an incomplete opening bound.
+Sync /Users/bao/taskbar-hero-cardrpg-sync;ai/codex-cardrpg-big-sync;94c12e14;read B19:40 B2b7f2bc5c1/draft346;A entrance CLAIM pushed. OWNERSHIP.md immutable. B owns engine/art/audio/auto-extras. B1published7006f109/draft342,full720errors0,casts33.4/16.8ms,pageMAX150native/300CPU4. B2a94ed765ee62102fa62f31db011fc76fc9e815ea2/draft343 published withplayEntrance. Later B tips pending E2E/visuals. B1cold alone is an incomplete opening bound.
 Frozen HTML I /tmp/cardrpg-big-i-enemy-index.html SHA6a8e0a42b6b05be1157119df1b66cd35bbe2716768356327bcca1fe5f3784764;G /tmp/cardrpg-big-g-index.html SHA284976a9db6da0cbca0f1e5272959281bf87f9263a20e18c17fd79e9d176598d;M /tmp/cardrpg-big-meta-index.html SHA1c331fcdd08742270e6ecccc9148cd1be80b7db202aeff0e0e5abb9bd8285149.
 A integration preparation /Users/bao/taskbar-hero-cardrpg-big-integration;codex/cardrpg-big-integration-2026-11-06;source356694870cda3ff47bfc7765f5fea4ef58608e50;runner01502d5c,simdrivers2e926be7. FourgatesPASS1700web/988rules. Runner5tests+4driverchecks,300routes900encounters nativeparity PASS. FrozenHTML7fe6477e/20,617,021bytes. ON/OFF waitsB.
+A+B2b reveal worktree /Users/bao/taskbar-hero-cardrpg-big-reveal;codex/cardrpg-big-reveal-2026-11-07;merge f042adb1873f02fd3d7dd961354d281b514c8bf8 fromA d0e5701d and publishedB7f2bc5c1. Entrance/fairness source in progress. Pinned A-only queues unchanged.
 ## NEXT
 1. Finish corrected F7/Aintegration browser queue64361;review screenshots and repair failures. M345 published5d1c2c47 with +70px narrow preview proof.
 2. Run Gfull720 in10separate locked configurations via matrix-series.mjs;retain frozenG284976a9. Integration adds persistent odds/pity and B3Dentrance after A-only source check.
@@ -38,6 +39,7 @@ F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-06T19:47:04.911654+00:00 · Recovery verifies both attachments verbatim in50258byte/SHA4d1b88d8. Read RULES/STATE/scope/I/G/F7 and B19:40. A-onlyqueue64361/64378 remains pinned. New isolated reveal worktree merges publishedB2b7f2bc5c1 intoA d0e5701d atf042adb1 without conflicts. Entrance/fairness edits A-owned only;focused tests pending. SyncCLAIM94c12e14.
 2026-11-06T19:40:27.244563+00:00 · M5d1c2c47 published/draft345. F7fivegates1698web/903rules/421E2E PASS,then exact Previewaction locator timed out. Existing effect-runtime/slice probes use non-exact label;applied same fix tolab/video inF7/integration,retained5pilotimages/log. New parent64361/waiter64378/session44863 waitsB61057,then F7browser+integrationfullgates/screens. Gmatrix remains guarded.
 2026-11-06T19:34:31.179549+00:00 · M-followup browser rerunPASS6cases/12screens,canvas+70px≥60,height300,rotationvisible,0errors/remote/overflow. Fullmeta33captures/0errors,sourcefivegates1692web/903rules/421E2E. Pilotrole assertion fixed usingdirect-child caption. Source72bce95c/HTML1c331fcd preserved. Resume59588 now F7validation.
 2026-11-06T19:29:53.938478+00:00 · G published83249b27/draft344 fromM340.36screens,13focusedtests,allfivegates pass. Added matrix-series localdriver forB19:18 request,syntax/planPASS;runtimepending10×fullgallery. Direct-child collection probe fix inM/demo/integration. Integration planned to reuse one preview forplayEntrance and add persistent narrow fairness summary after frozen source checks.
@@ -69,7 +71,7 @@ Full history retained verbatim in reports/cardrpg-big/memory/DECISIONS.md. Appen
 ## MEASUREMENTS
 M followup ·canvaswidth+70px,height300px,rotationvisible,6cases12screens +33meta captures,0errors/remote/overflow. meta-followup/screens/summary.json,all-screens/checks.json.
 I browser ·5cases,17601frames,>25=36/>50=11,pageMAX300ms,roundMAX400.1ms. Duration46.5327–57.2778s,0errors/prematureHP/actionbudgetmisses;Fight49.7/Pause13.2/Skip34.5ms. items/flow/summary.json.
-I final source ·typecheck/lint/build/unit/E2E PASS1681web/983rules/421E2E. validation/i-enemy-final.json;flow wall-clock pending.
+I final source ·typecheck/lint/build/unit/E2E PASS1681web/983rules/421E2E. validation/i-enemy-final.json;flow 5/5 measured.
 Integration prep ·300routes/900encounters nativeparity PASS;5runner+4driverchecks. Startup2319565bytes/0three-modelmodules;protected0changes/Fujiequal. integration/runner-parity.json,scope/proof.json in integration worktree.
 I encounter ·26/48positive tiers,22ties,legendary9.63060686%,economyMAX2.1947756956×. Raw sim/gear-encounter-{train,heldout}.json,economy-encounter.json;items/encounter-summary.json.
 I encounter gear TRAIN only ·level1 chapter1 wins4/38/45/47/50,chapter2 2/17/32/36/50,chapter3 1/10/15/37/50,eachof50 fornone/common/rare/epic/legendary.12/12level1 steps improve;level6ceilings persist. Fullheldout/economy pending. sim/gear-encounter-train.json.
@@ -104,7 +106,7 @@ Equipment ·384template/model visibility cases pass,transactions/paper-doll veri
 Items ·five inventory categories verified,source-audited tier table and I sims recorded. meta/screens,docs/design/cardrpg/ITEM-TIERS.md.
 Rarity ·four frames/12legendary geometries, single-piece9.63%cap PASS, tier separation partial. meta/gear,items/PLAN.md.
 Balance ·I encounter receipts complete,26/48tier steps positive,22ties,0declines;economy2.19478×. sim/auto-a*.json.
-Gacha ·G three banners/single+ten/ceremony/skip/history200/odds+guarantees wired on sibling340;13/13 focused PASS, browser/fullgatespending. invitations/PLAN.md.
+Gacha ·G344 published83249b27,13focused/fivegates+36screensPASS;3Dentrance/persistentfairness inreveal worktree,fullmatrixqueued. invitations/screens/checks.json.
 NFT-value limits ·25cap/2UItests and12screens PASS, local counters/help verified. Chain paths protected.
 Research-based identity ·existing research and original cafe assets used,one-page addendum written.
 ## TOOLING / RESUME
