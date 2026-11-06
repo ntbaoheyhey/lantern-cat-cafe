@@ -203,3 +203,10 @@ B6 followup CLAIM tools/cardrpg-big2/{embed-evidence,ReviewStudio,sharpness-repo
 Add native crop comparisons against F0 and B2c,three-camera evidence and default-off browsernetwork receipt;keep raw captures and initial failed type logs.
 All earlier artifacts remain immutable. B1fullmatrix610/720 at18:38Z,wholepageMAX300ms;longtask records show314.7ms timer before fulltrace attribution.
 No new rules or grey edits. Final integration still awaits published B checkpoints;A decides encounter/gear balance.
+
+## 2026-11-06T18:54:11.284Z B6-evidence CLAIM
+branch ai/codex-cardrpg-big2-b6-followup-2026-11-06; source27669fb3, prior functional queues preserved.
+B6 evidence CLAIM extends tools/cardrpg-big2/opening-profile.mjs and batch-measurements.mjs; profile exact worst B1 page case before batch1 checks.
+B1 matrix697/720 at18:59Z;pageMAX300ms in CPU4 Marigold4 with305.6ms timer callback, castMAX33.3. Postinteractive separation awaits new harness.
+Source audit protected/live/save/contracts unchanged;7200off/lens hashes match. Final report will separate authored and rendered quality.
+No integration rebase announced. All source branches remain pinned; new publication follows each archived-source E2E receipt.
