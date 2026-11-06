@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-B6 followup source27669fb3 on ai/codex-cardrpg-big2-b6-followup-2026-11-06; complete source through nine cats,13opponents,stage,lab,audio,studio/hit-stop. Final report draft115lines; browser receipts pending.
-B1 720/720 finished18:56:31Z,0errors;first/repeatMAX33.4/16.8ms;page native150/CPU4300ms;worst per-case CPU4p9533.3ms. Cast/geometry pass;opening strict100/p9533 misses.
-B1PID91287 doing5cast profiles; batch1 then adds2worst-opening traces. Functional queues and pinned artifacts preserved. Untracked raw datasets intentional.
+All B source implemented through async-loader candidate 14953637; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Functional receipts serialize under shared lock; A21000 currently owns it.
+B2a checkpoint94ed765e contains rendered24motions/46effects,421E2E,cold7; push running /tmp/cardrpg-big2-b2a-push.log. Draft pending.
+B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
-1. Inspect sequential functional receipts (batch1PID97732,then10738/12051/14757/18479/22596/enemies/delivery39632/hitstop43008/flagoff43282);fix actual failures.
-2. Publish each source branch/draft after its archived E2E plus existingfour gates;finish measured batch checkpoints and final matrices.
-3. Complete report/demo,ledger mirror and A checkpoint. A18:15 runner hooks await B publication;no integration rebase requested. Read A only at milestones.
+1. Finish B2a draft publication + ledger mirror; later phases publish after each pinned E2E and rendered/cold receipts.
+2. Inspect functional queues10738/12051/14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
+3. Run scoped batch matrices (owners encoded matrix-series.mjs), then full final-roster matrix and lifecycle on accepted final artifact. Finish report/demo/evidence/ledger;A integration sync remains pending.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -50,3 +50,7 @@ B1pending;B2pending;B3pending;B4pending;B5pending;B6pending.
 - Recovery18:36Z: re-read both prompts/RULES/STATE/A-outbox. Full B4hit-stop test passed but TS18048 travel optional;fixed ?.hold,allsourcegates pass1698web/935rules. Source89d8c99c,artifact /tmp/cardrpg-big2-hitstop-index.html pinned.
 
 - B1 complete720cases18:56:31Z:150msnative/300msCPU4pageMAX;worstCPU4casep9533.3ms;first33.4/repeat16.8ms,207draws/93802tris,0runtimeerrors. Allconfigurationcast>=99.9814%within20ms. Do not confuse cold7 with exhaustive result. Exact opening offender profiles added before batch1 checks.
+
+- Recovery19:11Z: B2a evidence94ed765e inserted on its branch; all UNPUBLISHED descendant refs rebased --update-refs to keep the draft chain linear. Runtime/source trees unchanged, original phase artifacts and source receipts keep originalSHA; no remote history rewritten. Current source branches have newSHAs: inspect git refs, do not rely on earlier summary SHAs.
+- B2a:24GLBclips/276pairs,46effects/1035pairs,0failures/faceissues/errors. Cold7CPU4MAX116.6ms/p9516.8ms;improved tier after viewing ultimate strips (Mallow small/dark,Sorrel groupcrowded). CHECKPOINT.md and allraw published on branch.
+- Scoped skill harness records fullGalleryActions + selection, filters only once, full receipts only when declared coverage complete. Matrixseries owners:3cats/batch,3enemies/batch,Crumb1,bosses3;finalreview all86. No per-phase sampling inside scope.
