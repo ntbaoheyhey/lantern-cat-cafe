@@ -8,6 +8,16 @@ const paths = {
   economyBefore: 'reports/cardrpg-big/sim/economy-before.json',
   economyAfter: 'reports/cardrpg-big/sim/economy-after.json',
 };
+const encounterBalance = process.argv.includes('--encounter');
+if (encounterBalance) {
+  Object.assign(paths, {
+    before: 'reports/cardrpg-big/sim/gear-after-train.json',
+    train: 'reports/cardrpg-big/sim/gear-encounter-train.json',
+    held: 'reports/cardrpg-big/sim/gear-encounter-heldout.json',
+    economyBefore: 'reports/cardrpg-big/sim/economy-after.json',
+    economyAfter: 'reports/cardrpg-big/sim/economy-encounter.json',
+  });
+}
 const data = {}, hashes = {};
 for (const [name, path] of Object.entries(paths)) {
   const bytes = await readFile(path);
@@ -91,7 +101,10 @@ for (const row of data.economyAfter.summary) {
 }
 const runtimeChanges = Object.keys(data.train.sourceHashes).filter(path => !path.endsWith('.test.ts')
   && data.before.sourceHashes[path] !== data.train.sourceHashes[path]);
-if (runtimeChanges.join() !== 'packages/game-rules/src/cardrpg/depth/equipment.ts') {
+const expectedChanges = encounterBalance
+  ? ['battle.ts', 'catalog.ts', 'contract.ts', 'run.ts', 'save.ts'].map(name => `packages/game-rules/src/cardrpg/depth/${name}`)
+  : ['packages/game-rules/src/cardrpg/depth/equipment.ts'];
+if (runtimeChanges.slice().sort().join() !== expectedChanges.slice().sort().join()) {
   throw Error('Unexpected runtime rules diff: ' + runtimeChanges.join(', '));
 }
 const summary = { paths, hashes, runtimeChanges, powerBounds, tierSteps,
@@ -99,8 +112,21 @@ const summary = { paths, hashes, runtimeChanges, powerBounds, tierSteps,
     rows.slice(0, 12).map(({ runs, ...row }) => row)])),
   heavyCasual45: data.economyAfter.heavyCasual45 };
 await mkdir('reports/cardrpg-big/items', { recursive: true });
-await writeFile('reports/cardrpg-big/items/summary.json', JSON.stringify(summary, null, 2));
-await writeFile('reports/cardrpg-big/items/BALANCE.md', lines.join('\n') + '\n');
+let report = lines.join('\n') + '\n';
+if (encounterBalance) {
+  report = report
+    .replace('# I automatic-battle equipment balance', '# I encounter balance with equipment')
+    .replaceAll('gear-complete-before.json', 'gear-after-train.json')
+    .replaceAll('gear-after-heldout.json', 'gear-encounter-heldout.json')
+    .replaceAll('../sim/gear-after-train.json, ../sim/gear-after-train.json', '../sim/gear-after-train.json, ../sim/gear-encounter-train.json')
+    .replaceAll('../sim/gear-after-train.json, ../sim/gear-encounter-heldout.json', '../sim/gear-encounter-train.json, ../sim/gear-encounter-heldout.json')
+    .replaceAll('economy-before.json', 'economy-after.json')
+    .replaceAll('../sim/economy-after.json, ../sim/economy-after.json', '../sim/economy-after.json, ../sim/economy-encounter.json')
+    .replace('The item adjustment leaves their inputs equal between before and training.', 'The enemy adjustment changes the boss inputs. Enemy-stat snapshots preserve earlier saves and replays.')
+    .replace('Heldout seeds were opened after selecting these values.', 'Enemy values come from the frozen pilot-five-b candidate. See ENCOUNTERS.md for the separate duration holdout and existing-knob table.');
+}
+await writeFile(`reports/cardrpg-big/items/${encounterBalance ? 'encounter-summary' : 'summary'}.json`, JSON.stringify(summary, null, 2));
+await writeFile(`reports/cardrpg-big/items/${encounterBalance ? 'ENCOUNTER-BALANCE' : 'BALANCE'}.md`, report);
 console.log(JSON.stringify({ runtimeChanges, powerBound: powerBounds.train.contributionFraction,
   positiveTierSteps: tierSteps.filter(row => row.delta > 0).length, tierSteps: tierSteps.length,
   heavyCasual45: summary.heavyCasual45 }));

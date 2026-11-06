@@ -1,7 +1,7 @@
 # Card RPG item tiers and local supply
 REFERENCE: DESIGN.md, BALANCE.md, ../../../packages/game-rules/src/cardrpg/depth/equipment.ts, ../../../packages/game-rules/src/cardrpg/depth/run.ts, ../../../packages/game-rules/src/cardrpg/config.ts
 
-Source audit and automatic-battle measurements for phase I, 6 November 2026. Raw before/training/heldout receipts and tables appear in reports/cardrpg-big/items/BALANCE.md. The table describes the depth game's current rules. All random rewards and spendable balances are account-bound.
+Source audit and automatic-battle measurements for phase I, 6 November 2026. Equipment-only receipts are in reports/cardrpg-big/items/BALANCE.md. The later encounter tuning and its paired gear/economy receipts are in reports/cardrpg-big/items/ENCOUNTER-BALANCE.md. The table describes the depth game's current rules. All random rewards and spendable balances are account-bound.
 
 ## Equipment bands
 REFERENCE: ../../../packages/game-rules/src/cardrpg/depth/equipment.ts, ../../../packages/game-rules/src/cardrpg/catalog.ts
@@ -25,7 +25,7 @@ There are 128 templates across eight sets and four slots. Two and four matching 
 
 Tailoring common/rare costs180 fish and30 threads. Epic costs120 fish,180 threads and5 essence. Legendary costs500 fish,100 threads,20 essence,20 mastery materials and1 boss seal, with a Midnight Pantry clear. Enhancement level n costs30×n² fish and3×n threads. Reforge costs90 fish and15 threads for a compatible different affix at its minimum tier roll.
 
-The strongest tested legendary at maximum compatible rolls and+12 contributes9.63% of the bare level1 starter team's final displayed power, passing the stated10%cap. The earlier maximum was15.22%. Paired boss results separately measure utility omitted by the display score. The display score uses HP/5 +2×ATK +1.5×DEF. Per-cat stat caps and the existing unique-effect rules bound combat values. Paired boss utility peaks at+22percentage points in training and+34in heldout.21/48adjacent tier steps raise wins and27tie. The all-tier separation gate remains open.45-day heavy/casual earned ratios peak at2.17765×, passing3×.
+The strongest tested legendary at maximum compatible rolls and+12 contributes9.63% of the bare level1 starter team's final displayed power, passing the stated10%cap. The earlier maximum was15.22%. Paired boss results separately measure utility omitted by the display score. The display score uses HP/5 +2×ATK +1.5×DEF. Per-cat stat caps and the existing unique-effect rules bound combat values. After encounter tuning, paired boss utility peaks at+42percentage points in training and+34in heldout.26/48adjacent tier steps raise wins and22tie. Level1 heldout bare/common/rare/epic/legendary route wins are0/33/40/48/50 in chapter1,0/16/29/41/50 in chapter2 and0/4/11/33/49 in chapter3, each out of50. Level6 saturation and wide set/cat utility spreads keep the balance gate open.45-day heavy/casual earned ratios peak at2.194775696×, passing3×.
 
 ## Item types, sources and sinks
 REFERENCE: ../../../packages/game-rules/src/cardrpg/depth/state.ts, ../../../packages/game-rules/src/cardrpg/depth/run.ts, ../../../packages/game-rules/src/cardrpg/depth/bridge.ts, ../../../packages/game-rules/src/cardrpg/catalog.ts
