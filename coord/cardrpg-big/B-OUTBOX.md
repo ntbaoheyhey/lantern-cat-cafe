@@ -190,3 +190,9 @@ Reviewstudio covers25units/86previews;isolatedDepthModel,play/scrub/effect-only/
 Before-after evidence embeds480pxWebP thumbnails lazily;full1280pxstrips remainreports. Currentbuild~22MBwith12inheritedstrips;finalsize measured after remaining captures.
 Boss sourcefa9683e2/pinned8c21bc00;B6 pinned artifact/source,locked functionalqueue afterboss37902. Browserclaims pending.
 B1draft342 published separately,720matrix stillactive. Allsource/evidencefiles preserved;no protected/livechanges.
+
+## 2026-11-06T18:33:33.617Z B4-hit-stop CLAIM
+branch ai/codex-cardrpg-big2-b6-2026-11-06;source9a2bc955,studio artifactpinned4ad2bfe3.
+B4 followup CLAIM:turn3d/card-impact.ts,card-impact.test.ts,effects.ts;own tools/reports. Readthrough found new authored travel.hold values are unused by sampleActionPlan,which still consults legacySKILL_MOTION only.
+Fix by puredata presentation-ID hold registry;no3D imports,rulechanges,durationchanges or delay. Reducedmotion continuesbypass. Cover all48cat+26enemyattacks and unchangedlegacy behavior.
+Existing B4artifact690a070f remains pinned;newfix gets separate source/browserreceipt so older timing never mislabeled. Later finalmatrix includes fix.
