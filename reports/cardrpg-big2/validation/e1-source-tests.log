@@ -1,0 +1,105 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big2
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.901083ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.781417ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.055666ms)
+✔ output order is stable regardless of file creation order (3.58075ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.069292ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (21.615125ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.962458ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (12.301916ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (11.854625ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (12.730083ms)
+✔ auth health fails closed when the transport is unavailable (12.287292ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.731791
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  01:05:31
+packages/chain test:    Duration  519ms (import 51%, tests 41%, transform 7%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  01:05:31
+packages/auth test:    Duration  660ms (import 66%, tests 31%, transform 2%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  01:05:31
+supabase/tests test:    Duration  11.47s (tests 85%, import 13%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  51 passed | 3 skipped (54)
+packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)
+packages/game-rules test:    Start at  01:05:31
+packages/game-rules test:    Duration  33.26s (tests 97%, import 2%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  01:06:04
+packages/api-contract test:    Duration  147ms (transform 53%, import 39%, tests 5%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big2/apps/web
+apps/web test:  ❯ src/game/squad/turn3d/card-motion.test.ts (5 tests | 1 failed) 305ms
+apps/web test:    ❯ authored starter motion (5)
+apps/web test:      × stops root travel before contact and keeps intent data scoped to the asset 7ms
+apps/web test:  ❯ src/game/cardrpg/depth/card-action-plan.test.ts (3 tests | 1 failed) 19ms
+apps/web test:    × changes presentation identity while preserving existing action and target IDs 5ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/game/cardrpg/depth/card-action-plan.test.ts > changes presentation identity while preserving existing action and target IDs
+apps/web test: AssertionError: expected 'Cuff flick' to be 'Button tap' // Object.is equality
+apps/web test: Expected: "Button tap"
+apps/web test: Received: "Cuff flick"
+apps/web test:  ❯ src/game/cardrpg/depth/card-action-plan.test.ts:11:29
+apps/web test:       9|   expect(fixture.plan.skillId).toBe('guardAttack');
+apps/web test:      10|   expect(fixture.plan.presentationId).toBe('enemy:button-guard:basic');
+apps/web test:      11|   expect(fixture.plan.name).toBe('Button tap');
+apps/web test:        |                             ^
+apps/web test:      12|   const events = fixture.plan.events;
+apps/web test:      13|   const unknown = createCardActionPlan(events, 'future-effect');
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+apps/web test:  FAIL  src/game/squad/turn3d/card-motion.test.ts > authored starter motion > stops root travel before contact and keeps intent data scoped to the asset
+apps/web test: AssertionError: expected undefined to be +0 // Object.is equality
+apps/web test: - Expected:
+apps/web test: 0
+apps/web test: + Received:
+apps/web test: undefined
+apps/web test:  ❯ src/game/squad/turn3d/card-motion.test.ts:73:68
+apps/web test:      71|     expect(cardTravelFraction(3, -1)).toBe(0);
+apps/web test:      72|     expect(cardSkillMotion('mochi', 'mochi-1')?.travel).toBe(.48);
+apps/web test:      73|     expect(cardSkillMotion('button-guard', 'guardAttack')?.travel).toB…
+apps/web test:        |                                                                    ^
+apps/web test:      74|     expect(cardSkillMotion('crumb-sentinel', 'guardAttack')).toBeUndef…
+apps/web test:      75|     expect(cardHitClip(false, -2)).toBe('hit-left');
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+apps/web test:  Test Files  2 failed | 164 passed (166)
+apps/web test:       Tests  2 failed | 1692 passed (1694)
+apps/web test:    Start at  01:06:05
+apps/web test:    Duration  20.68s (environment 48%, tests 40%, import 10%, transform 2%)
+apps/web test: Environment  jsdom was created 166 times · 97.86s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-cardrpg-big2/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

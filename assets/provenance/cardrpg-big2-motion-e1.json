@@ -1,0 +1,152 @@
+{
+  "tool": "Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs",
+  "authorship": "Original authored gestures on the existing original Taskbar Hero rigid-node rigs",
+  "artifactSha256": "ca797d87a29beb0a4ffc8b89535d2c22f686e88927efcc8533e07c5f04e19b40",
+  "buildReceipt": "/tmp/cardrpg-big2-e1-build.json",
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "d0a2874c9f838bf0abbc16bad76edcbc039974eb240eb73bc13aee60dde69895",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-effects.ts": "c437666920cabd90b79ddf6fd2754a6b26c11f87a7405fcaae45793b62d72296",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-motion.ts": "14fbefc2614ed5a56bce76c72288e12f4e92c3f14f6dae8b0d55feb9954b01a3",
+    "apps/web/src/game/squad/turn3d/card-enemy-motion.ts": "2c82e118d55a0a0c74547880aaf6be5787acc979bb67326fc509b24cb740b41f",
+    "apps/web/src/game/squad/turn3d/card-enemy.test.ts": "894dfb7f4393f09c362cde1d5dda131f0b09b8cb65ec54bea1ab8a26d4c4d599",
+    "apps/web/src/game/squad/turn3d/card-motion-data.ts": "b30ed2192fa8bd0cdb49c52452947bf6eeb471e88e3a08b1b92f1c25cb994fe1",
+    "apps/web/src/game/squad/turn3d/card-motion.test.ts": "a665f9dc99865020c08c9732e2f677c0ae77b01672fd3cf032caa1ef0798fc83",
+    "apps/web/src/game/squad/turn3d/card-motion.ts": "6d0f15ae122a4e696555615e89981e34c017ddf35faa681550337040f25ed258",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-effects.ts": "a90f12b5ed50e815dcb8c3567fd2f3e4ffffaf3c81f8d434860a21464e8439e0",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-motion.ts": "b33a394c263369b2991626e0a67673cff61a4a1c86d51c8ed43f648d26db2715",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-primitives.ts": "41efa7340e45993429d96e8aebbe57911ffa6685c3e635b3ad639dbe252b721b",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-props.ts": "028246b2f92afd414cba7376e9be1cf07c7bf5566ad106da0430ef0f26f79d3a",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-effects.ts": "ee35aab5ae41ff15e411c586aaef1ea31697de580575b51a781e7fb166203ab2",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-motion.ts": "a28addfbd6226e607c327463f8e360705d8fe7a65ae6da5816c08546f13e8c36",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-primitives.ts": "fdbbc8128d3db32873dc479a1b80151e2c1be15e77099fded6e3e52afc06de3c",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-props.ts": "48a7a0a087ccb1d1962a4f63e1851a965d6cbd2b846aecfa2981fd1f50e86f33",
+    "apps/web/src/game/squad/turn3d/card-roster-effects.ts": "e9c6719af39d5136ebb4905c7941f2110bffd239d1931fb53784b12bf7c9935c",
+    "apps/web/src/game/squad/turn3d/card-roster-motion.ts": "c65f5653d9bd2e8c811f95396b56edaa4e47548b77092c7e4ada2f8dab105612",
+    "apps/web/src/game/squad/turn3d/card-roster-primitives.ts": "b6954d4a0c720916e945ed0b07e63b7be86f016066c6b684aff419f1abed41f7",
+    "apps/web/src/game/squad/turn3d/card-roster.test.ts": "079aee4e8cf3757eec621aa9d0c484bb09e303cb4797180223e8da4ae5650c9d"
+  },
+  "sampledKeys": 41,
+  "interpolation": "Smoothstep between authored pose keys, quaternion tracks",
+  "secondaryMotion": {
+    "lagFraction": 0.06,
+    "weights": {
+      "tailTip": 0.55,
+      "tailMid": 0.4,
+      "other": 0.24
+    }
+  },
+  "fidgets": {
+    "minimumIntervalSeconds": 4,
+    "maximumIntervalSeconds": 8,
+    "durationSeconds": 1.5
+  },
+  "stopDistance": 1.2,
+  "assets": [
+    {
+      "model": "button-guard",
+      "clip": "enemy:button-guard:basic",
+      "duration": 1.3,
+      "tracks": [
+        "guard_motion.quaternion",
+        "guard_head.quaternion",
+        "guard_armL.quaternion",
+        "guard_armR.quaternion",
+        "guard_tail.quaternion",
+        "guard_earL.quaternion",
+        "guard_earR.quaternion",
+        "guard_motion.position",
+        "guard_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-button-guard-basic.webp"
+    },
+    {
+      "model": "sock-skipper",
+      "clip": "enemy:sock-skipper:basic",
+      "duration": 1.3,
+      "tracks": [
+        "flanker_motion.quaternion",
+        "flanker_head.quaternion",
+        "flanker_armL.quaternion",
+        "flanker_armR.quaternion",
+        "flanker_footL.quaternion",
+        "flanker_footR.quaternion",
+        "flanker_tail.quaternion",
+        "flanker_earL.quaternion",
+        "flanker_earR.quaternion",
+        "flanker_motion.position",
+        "flanker_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-sock-skipper-basic.webp"
+    },
+    {
+      "model": "spool-ram",
+      "clip": "enemy:spool-ram:basic",
+      "duration": 1.3,
+      "tracks": [
+        "charger_motion.quaternion",
+        "charger_head.quaternion",
+        "charger_armL.quaternion",
+        "charger_armR.quaternion",
+        "charger_tail.quaternion",
+        "charger_earL.quaternion",
+        "charger_earR.quaternion",
+        "charger_motion.position",
+        "charger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-spool-ram-basic.webp"
+    },
+    {
+      "model": "button-guard",
+      "clip": "enemy:button-guard",
+      "duration": 1.3,
+      "tracks": [
+        "guard_motion.quaternion",
+        "guard_head.quaternion",
+        "guard_armL.quaternion",
+        "guard_armR.quaternion",
+        "guard_tail.quaternion",
+        "guard_earL.quaternion",
+        "guard_earR.quaternion",
+        "guard_motion.position",
+        "guard_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-button-guard.webp"
+    },
+    {
+      "model": "sock-skipper",
+      "clip": "enemy:sock-skipper",
+      "duration": 1.3,
+      "tracks": [
+        "flanker_motion.quaternion",
+        "flanker_head.quaternion",
+        "flanker_armL.quaternion",
+        "flanker_armR.quaternion",
+        "flanker_footL.quaternion",
+        "flanker_footR.quaternion",
+        "flanker_tail.quaternion",
+        "flanker_earL.quaternion",
+        "flanker_earR.quaternion",
+        "flanker_motion.position",
+        "flanker_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-sock-skipper.webp"
+    },
+    {
+      "model": "spool-ram",
+      "clip": "enemy:spool-ram",
+      "duration": 1.3,
+      "tracks": [
+        "charger_motion.quaternion",
+        "charger_head.quaternion",
+        "charger_armL.quaternion",
+        "charger_armR.quaternion",
+        "charger_tail.quaternion",
+        "charger_earL.quaternion",
+        "charger_earR.quaternion",
+        "charger_motion.position",
+        "charger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e1/filmstrips/enemy-spool-ram.webp"
+    }
+  ]
+}
