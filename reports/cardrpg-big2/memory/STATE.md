@@ -2,11 +2,11 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published B1/B2a/b/c/B3/B5/B4/E1 draft PRs342/343/346/347/349/350/351/352. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
-E2 functional/cold job86401 active; subsequent E3/E4/boss/delivery/hitstop/flag-off/matrices retain existing queue. Silent audio-sink probe87349 and gallery control probe88227 await shared lock.
+Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
+E2 published f166e0f3. Gallery control probe88227 active; silent audio87349 pending. E3 lockwaiter89899 paused; local dependency session21853 resumes it eightseconds after both probes exit. Downstream queues unchanged.
 No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
 ## NEXT
-1. Finish E2 cold proof; review three strips (viewed needle/healer/kettle at21:11Z), append checkpoint, publish E2 draft on352. Preserve raw arrays.
+1. Inspect gallery control and silent audio-sink diagnostics, fix only confirmed issues, pin source and rerun relevant gates. E3 resumes automatically; do not duplicate queues.
 2. Read silent-sink and gallery-control results before source fixes; publish remaining enemy/boss checkpoints in order. No duplicate queued jobs.
 3. After roster captures and fixes, build/pin review; full functional860matrix/20replays/video; report misses and grades. Rebase only after A integrated CHECKPOINT.
 ## DONE
@@ -85,3 +85,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 
 - Recovery21:12Z: read LaneB fullprompt/RULES/STATE/Aoutbox and verifiedremote. E1 draft352 created on351 at8fb80e35; sixclips/15pairs,76effects/2850pairs and421E2Epass. E2 three signaturestrips viewed: needlewings/pour/kettle themesread, whiteeffects and small motions remain; improved tier.
 - B1clarification7e6e21b0 preserved: >=99.9814%castframes<=20ms perconfiguration passes inheritedaggregation; worstindividualcast98.7654% remainsstrictdiagnostic. No openingpass.
+
+- 21:22Z: E2 f166e0f3/draft353 published on352.6clips15pairs/78effects3003pairs/421E2Epass; cold7page33.4native/133.3CPU4ms MISS,postinteractive100ms,p9516.8. E2runtime303d60df unchanged; onlyearlierprovenance differs. E3pausedwaiter89899 autorestarts after87349/88227 via/tmp/cardrpg-big2-diagnostic-order.py(session21853).
