@@ -158,3 +158,7 @@ REFERENCE: PROMPT.md, STATE.md
 2026-11-06T22:15:00Z · RecoveryreadRULES/STATE/SCOPE/I/G/F7/lanes+Bthrough22:11. PROMPT50258bytes/SHA4d1b88d8verified. Controls85592fae fivegates1722web/1020rules/421E2E+81capturesPASS;Mochi25svideo/first10s20framesviewed. Extrasaa977f0f fullON/OFF26→27/48positive/0lostgains,ratio2.194775696→2.189801700. Baseline692.09375px resultbottommiss92.09375;v2queued5099. Probe nextselector alsoselectscardbutton,correct afterpinnedrun andretainwhole-resultassertion.
 
 2026-11-06T22:19:03.976277+00:00 · Controls/extraevidencepublished3a173cf5,coordc1228863. Revealv2eightcases32capturesfitswholecard/actionbutwelcomeheaderoverlap7.9375px;source089843c5 accountsforcr-contentpadding,compactsresultheading,excludescardbuttonfromnextselector,waitsimage.decodebeforecaptures. V3frozen1e43bc72/23,377,009bytes/19focused/typecheck/buildPASS;queueusesownsharedlock. Ghelper5207resumedownwaiters22:14:26.
+
+2026-11-06T22:27:48.239881+00:00 · V3retained1.296875pxwelcome-cardbottommiss;source9d094241usesdp-appprefix tooverrideglobalh2/p typography. V4a5d0fa64/23,377,017bytesqueuedafterB9770+9938per22:24request. OwnG71979+12086pausedbyhelper/session18346,auto-resume8safterdependencies. G360/720/0errors. Mainwalkthrough32e273fe andmatrix64140c53 prepared;Mochi50frames/25sviewedd25d0ffe. Sync73fd97a7.
+
+Full decision history remains verbatim and append-only in memory/DECISIONS.md.
