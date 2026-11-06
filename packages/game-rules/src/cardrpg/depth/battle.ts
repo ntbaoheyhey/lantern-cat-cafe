@@ -334,9 +334,26 @@ function finishAction(b: Battle, actor: Actor) {
   }
 }
 /** Mutates only an accepted legal choice. Rejected actions leave the snapshot identical. */
+function actionDescription(b: Battle, actor: Actor, target: Actor, skill: Skill): string {
+  const health = Math.round(target.hp / target.maxHp * 100);
+  if (skill.effects.some(effect => effect.kind === 'revive')) return `${actor.name} revives ${target.name} · ${skill.name}`;
+  if (skill.target === 'allies') {
+    const lowest = Math.min(...living(b, 'party').map(ally => Math.round(ally.hp / ally.maxHp * 100)));
+    return `${actor.name} supports the team (lowest HP ${lowest}%) · ${skill.name}`;
+  }
+  if (target.side === 'enemy') {
+    const weakest = Math.min(...targets(b, actor, skill).map(foe => foe.hp));
+    const reason = target.hp === weakest ? 'focuses the weakest reachable foe' : 'pressures a foe';
+    return `${actor.name} ${reason}, ${target.name} (HP ${health}%) · ${skill.name}`;
+  }
+  const verb = skill.effects.some(effect => effect.kind === 'heal') ? 'heals' : 'protects';
+  if (skill.id === 'wait') return `${actor.name} restores shared energy for the team`;
+  return `${actor.name} ${verb} ${target.name} (HP ${health}%) · ${skill.name}`;
+}
 export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
   const actor=currentActor(b)!, skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
   b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;
@@ -364,7 +381,7 @@ export function act(b: Battle, choice: Choice): boolean {
   if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
   if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
   if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
-  record(b,actor,target,'action',0,skill.name,skill.id);
+  record(b,actor,target,'action',0,description,skill.id);
   finishAction(b,actor);
   return true;
 }

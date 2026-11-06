@@ -24,16 +24,31 @@ function value(b: Battle): number {
   },0);
   return party - foes*1.1 + pressure + b.energy*3;
 }
+/** One-action lookahead keeps playback cheap and makes every decision reproducible. */
+function automatic(b: Battle): Choice {
+  const scored = legalChoices(b).map(choice => {
+    const preview = previewCopy(b);
+    act(preview, choice);
+    let score = value(preview);
+    for (const actor of b.actors) {
+      const after = preview.actors.find(candidate => candidate.id === actor.id)!;
+      // Removing an enemy also removes its future turns, even when little HP remains.
+      if (actor.side === 'enemy' && actor.hp > 0 && after.hp === 0) score += 200;
+      if (actor.side === 'party' && actor.hp > 0 && actor.hp < actor.maxHp * .5) {
+        score += Math.max(0, after.hp - actor.hp) * (1 - actor.hp / actor.maxHp) * 2;
+      }
+    }
+    return { choice, score };
+  });
+  scored.sort((a, c) => c.score - a.score
+    || a.choice.skillId.localeCompare(c.choice.skillId)
+    || a.choice.targetId.localeCompare(c.choice.targetId));
+  return scored[0]!.choice;
+}
 function ordinary(b: Battle, policy: 'auto' | 'greedy'): Choice {
-  const choices=legalChoices(b),actor=currentActor(b)!;
+  if (policy === 'auto') return automatic(b);
+  const choices=legalChoices(b);
   const offensive=choices.filter(c=>skillById(c.skillId)!.effects.some(e=>['hit','execute','chain'].includes(e.kind)));
-  if(policy==='auto') {
-    const patient=b.actors.filter(a=>a.side==='party'&&a.hp>0&&a.hp<a.maxHp*.3).sort((a,c)=>a.hp-c.hp)[0];
-    const heal=patient&&choices.find(c=>c.targetId===patient.id&&skillById(c.skillId)!.effects.some(e=>e.kind==='heal'));
-    if(heal)return heal;
-    // Convenience rotation follows equipped order and spends on the signature when ready.
-    return offensive.find(c=>c.skillId===actor.skills[2])??offensive[0]??choices[0]!;
-  }
   return [...offensive].sort((a,c)=>{
     const power=(choice:Choice)=>skillById(choice.skillId)!.effects.reduce((n,e)=>n+(['hit','chain','execute'].includes(e.kind)?e.power??0:0),0);
     return power(c)-power(a);
