@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest';
 import { clone } from '../internal';
 import { BOONS, boonValue } from './boons';
-import { createDepthAccount, configureTeam, availableSkills } from './state';
+import { createDepthAccount, configureTeam, availableSkills, battleCats, defaultSkills } from './state';
 import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
 import { playRun } from './run-bot';
 
@@ -23,6 +23,24 @@ it('unlocks the fourth skill through either level or duplicate stars',()=>{
   const s=createDepthAccount();expect(availableSkills(s,'mochi')).toHaveLength(3);
   s.account.cards[0]!.stars=3;expect(availableSkills(s,'mochi')).toHaveLength(4);
   s.account.cards[0]!.stars=1;s.account.cards[0]!.level=6;expect(availableSkills(s,'mochi')).toHaveLength(4);
+});
+it('uses the complete default kit in new encounters regardless of a saved loadout order', () => {
+  const state = createDepthAccount();
+  expect(defaultSkills(state, 'mochi')).toEqual(['mochi-1', 'mochi-2', 'mochi-3']);
+  state.account.cards[0]!.level = 6;
+  state.skills.mochi = ['mochi-4', 'mochi-1', 'mochi-2'];
+  expect(battleCats(state)[0]!.skills).toEqual(['mochi-1', 'mochi-2', 'mochi-3', 'mochi-4']);
+  const entered = enterNode(startRun(state, 1, 11).state, '0-0').state;
+  expect(entered.run!.battle!.actors[0]!.skills).toHaveLength(4);
+  expect(state.skills.mochi).toEqual(['mochi-4', 'mochi-1', 'mochi-2']);
+});
+it('allows unlocked ultimates at campfires while rejecting locked skills', () => {
+  const state = createDepthAccount();
+  state.account.cards[0]!.stars = 3;
+  const started = startRun(state, 1, 11).state;
+  started.run!.current = '4-0';
+  expect(resolveNode(started, 'upgrade', 'mochi-4').state.run!.upgrades['mochi-4']).toBe(1);
+  expect(resolveNode(started, 'upgrade', 'clover-4').ok).toBe(false);
 });
 it('has thirty stack-capped charms across six build archetypes',()=>{
   expect(BOONS).toHaveLength(30);expect(new Set(BOONS.map(b=>b.archetype)).size).toBe(6);

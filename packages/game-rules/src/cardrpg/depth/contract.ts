@@ -1,7 +1,7 @@
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
 
-/** Additive depth-mode boundary. Legacy 0.4 accounts remain nested and migratable. */
-export const CONTRACT_VERSION = '0.5.0' as const;
+/** Automatic kits include unlocked ultimates. Earlier accounts migrate at import. */
+export const CONTRACT_VERSION = '0.6.0' as const;
 export type Flavour = 'hearth' | 'moon' | 'garden' | 'tide' | 'ember';
 export type CatRole = 'guardian' | 'striker' | 'witch' | 'healer' | 'controller' | 'hexer';
 export type Row = 'front' | 'rear';

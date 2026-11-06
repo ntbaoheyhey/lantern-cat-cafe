@@ -94,7 +94,14 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC5.${saveChecksum(payload)}.${payload}`;
+  return `THC6.${saveChecksum(payload)}.${payload}`;
+}
+function migrateDepth(value: unknown): unknown {
+  if (!record(value) || value.version !== '0.5.0') fail();
+  const next = clone(value);
+  next.version = CONTRACT_VERSION;
+  if (record(next.run) && record(next.run.battle)) next.run.battle.version = CONTRACT_VERSION;
+  return next;
 }
 export function importSave(code: string, now = 0): DepthAccount {
   const trimmed = code.trim();
@@ -105,9 +112,11 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC5\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
-  if (!match || saveChecksum(match[2]!) !== match[1]) throw new Error('Save checksum failed. Copy the complete code again.');
-  const state: unknown = JSON.parse(match[2]!);
+  const match = /^THC([56])\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
+  const parsed: unknown = JSON.parse(match[3]!);
+  safeTree(parsed);
+  const state = match[1] === '5' ? migrateDepth(parsed) : parsed;
   validateDepth(state);
   return state;
 }

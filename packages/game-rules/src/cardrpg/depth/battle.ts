@@ -185,7 +185,7 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
 export function createBattle(setup: BattleSetup): Battle {
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
-    if (!cat || c.skills.length !== 3 || new Set(c.skills).size !== 3 || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid three-skill loadout');
+    if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial)));

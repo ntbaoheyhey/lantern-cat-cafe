@@ -3,7 +3,7 @@ import { clone, integer, requireRule, progress } from '../internal';
 import { BOONS, BOON_BY_ID } from './boons';
 import { dropGear } from './equipment';
 import { createBattle } from './battle';
-import { battleCats, grantDepth, requireHome, transactDepth } from './state';
+import { battleCats, defaultSkills, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
 export const CHAPTERS = [
   {id:1,name:'Tangled Cafe',boss:'yarn-giant',palette:'#d8a76d',ambience:174,pool:['button-guard','sock-skipper','needle-moth','teacup-healer'],elites:['spool-ram','kettle-knight'],reward:'A Yarnkeeper Seal and 80 mastery materials'},
@@ -109,7 +109,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
     const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
     if(drop)run.earnedItems.push(drop);
     if(node.kind==='boss'){finishNode(run);settleRun(s,true);return;}
-    run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>s.skills[id]!));
+    run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
   });
 }
 export function chooseReward(state: DepthAccount,id: string): RuleResult<DepthAccount> {
@@ -128,7 +128,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
     const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):Math.max(1,Math.round(old*(1+percent/100)));}};
     if(node.kind==='campfire') {
       if(choice==='heal')healTeam(35);
-      else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>s.skills[id]!.includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an equipped skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}
+      else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>defaultSkills(s,id).includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an unlocked skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}
     } else if(node.kind==='event') {
       const event=EVENTS.find(e=>e.id===node.eventId)!,option=event.choices.find(c=>c.id===choice);requireRule(option,'UNKNOWN_ID','Choose a story option.');
       requireRule(run.points>=option.cost,'INSUFFICIENT_FUNDS','Insufficient earned run points.');run.points+=option.points-option.cost;

@@ -24,6 +24,10 @@ export function availableSkills(state: DepthAccount, id: string) {
   const owned=state.account.cards.find(c=>c.cardId===id);
   return CAT_BY_ID[id]?.skills.filter(s=>owned&&(owned.level>=s.unlockLevel||owned.stars>=s.unlockStars))??[];
 }
+/** New encounters derive their complete kit from progression, including old accounts. */
+export function defaultSkills(state: DepthAccount, id: string): string[] {
+  return availableSkills(state, id).map(skill => skill.id);
+}
 export function configureTeam(state: DepthAccount, team: string[], rows: Record<string,Row>, skills: Record<string,string[]>): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     requireHome(s);
@@ -61,6 +65,6 @@ export function battleCats(state: DepthAccount) {
     const relic = id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
       ? RELIC_EFFECTS.find(r => r.id === state.selectedRelic) : undefined;
     if (relic) bonuses[relic.bonus] = (bonuses[relic.bonus] ?? 0) + relic.value;
-    return {id,stats:depthStats(state,id),skills:[...state.skills[id]!],row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
+    return {id,stats:depthStats(state,id),skills:defaultSkills(state,id),row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
   });
 }
