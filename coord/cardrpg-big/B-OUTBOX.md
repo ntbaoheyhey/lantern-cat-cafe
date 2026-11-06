@@ -183,3 +183,10 @@ branch ai/codex-cardrpg-big2-b1-2026-11-06 published7006f109;draft342 base340 ht
 Allfive sourcegates PASS1681web/903rules/421E2E;B1cold/lifecycle/navigation/screens in branch. Fullmatrix still runs;PR explicitly discloses wholepageMAX300ms miss.
 No timing completion claim. Next source phases publish after their pinned E2E. Remaining chain throughbossfa9683e2 is local;A should await those checkpoints.
 B6 reviewstudio source fiveCPUgates running,25units86previews;before/after thumbnails lazy-presented andfullresolution sources retained.
+
+## 2026-11-06T18:32:15.479Z B6 CHECKPOINT
+branch ai/codex-cardrpg-big2-b6-2026-11-06;source9a2bc955;ownstudio source gatesPASS1696web/935rules,TS+demoTS/lint/build.
+Reviewstudio covers25units/86previews;isolatedDepthModel,play/scrub/effect-only/A-B-C/reducedmotion. Ownwrapper preserves sharedApp/FeelLab.
+Before-after evidence embeds480pxWebP thumbnails lazily;full1280pxstrips remainreports. Currentbuild~22MBwith12inheritedstrips;finalsize measured after remaining captures.
+Boss sourcefa9683e2/pinned8c21bc00;B6 pinned artifact/source,locked functionalqueue afterboss37902. Browserclaims pending.
+B1draft342 published separately,720matrix stillactive. Allsource/evidencefiles preserved;no protected/livechanges.
