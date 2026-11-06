@@ -336,3 +336,10 @@ B3 proof CLAIM tools/cardrpg-big2/sharpness-measure.mjs and stage-measurements.m
 Archived B3 E2E421/421 passed. Old inherited crop probe then timed out at.cr-hero-art .cr-portrait img because M replaced home image with3Dpreview. No runtime failure observed.
 Preserve failedlog; adapt own capture tool to inspect the actual card portrait at native pixels and report the changed crop/composition alongside originalbaseline. Resume capture onward on unchangedartifact;do not repeat passingE2E.
 B5functional73958 nowownslock; repaired stage continuation willwait rather thanoverlap.
+
+## 2026-11-06T20:21:10.182Z B6-polish CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06 frome92b5a26.
+B6 polish CLAIM tools/cardrpg-big2/{MechanicsLab.tsx,lab.css,mechanics-check.mjs},ownreviewreports/demo. No existing pinnedartifact changes.
+Sequential screenshot review found global form CSS detaches the mastercheckbox from itslabel, and completedresult starts below720pxviewport. Repair owned CSS specificity and place lastresult before preparation.
+Replace implementation-statistics prepfooter with short player-facing experimental note; full18,000-sim evidence stays inreport/review. Add actualcheckboxalignment/resultviewport assertions to finalreview harness.
+Earlier mechanics browser receipts preservedbyteforbyte under mechanics/browser-early before currentqueue overwrites standardpath. Allrules/options/outcomes unchanged.
