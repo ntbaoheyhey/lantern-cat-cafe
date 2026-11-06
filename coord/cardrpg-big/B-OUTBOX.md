@@ -156,3 +156,10 @@ branch ai/codex-cardrpg-big2-e2-2026-11-06; E1c86122ad/E2303d60df source fourgat
 Own queued B2/B3/B5/B4/enemy scripts now run source-E2E+visuals+cold first,then release. Full matrices deferred to subsequent ordered local test pipeline,not skipped.
 Each later matrix configuration acquires/releases sharedlock separately to avoid approaching3h expiry and to allow A checkpoints between configurations. B1PID91287continues unchanged.
 All artifacts remain phase-pinned;full720/810/860case receipts will be published only when complete. This should expose lab/audio/visual bugs before further long matrices.
+
+## 2026-11-06T18:17:48.086Z B2-bosses CLAIM
+branch ai/codex-cardrpg-big2-e4-2026-11-06; E3source1f41cf71 pinned,18enemyclips153rigpairs pass.
+B2bosses CLAIM extends to turn3d/card-enemy-expression.ts and card-boss.test.ts:animate existing enemy eye/brow/mouth sockets with per-asset proportions;no added face draw calls.
+All13enemy+boss draft26attackclips325rigpairs pass. A malformed initial draft-probe overwrote attack definitions with lifecycle definitions;retained20clip pilot and reran corrected26clip probe.
+Intro1.14s uses existingwalk-in,phase300ms uses existingroundbeat;reduced-motion static. Replace7generic boss rings with1instanced per-boss floor emblem draw.
+Browserfilmstrips/visualuniqueness are pending;current quality tier is improved-source-only,not slice-certified.
