@@ -1,3 +1,4 @@
+import { RELIC_EFFECTS } from './bridge';
 import { createStarterAccount } from '../state';
 import { applyCommand } from '../commands';
 import { depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
@@ -57,6 +58,9 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
 export function battleCats(state: DepthAccount) {
   return state.team.map(id=>{
     const {effects,bonuses}=equipmentEffects(state,id);
+    const relic = id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
+      ? RELIC_EFFECTS.find(r => r.id === state.selectedRelic) : undefined;
+    if (relic) bonuses[relic.bonus] = (bonuses[relic.bonus] ?? 0) + relic.value;
     return {id,stats:depthStats(state,id),skills:[...state.skills[id]!],row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
   });
 }
