@@ -241,3 +241,10 @@ A21000 acquired the shared lock after Bbatch1 completed; observed owner.json lan
 B2a completed421E2E,24motionclips/no required-pair failures,46effects/1035pairs/no failures or face-mask errors. Cold7MAX116.6CPU4ms,16.8p95; raw saved.
 B2a source will publish with explicit cold hitch table and rendered evidence; per-batch full10configuration scope matrices queued separately. Final full-roster harness remains required.
 No integration rebase requested; later source phase E2E and functional checks remain serialized behind A.
+
+## 2026-11-06T19:13:13.661Z B6-followup CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; source3aa2e3e5;B2a94ed765e push in progress.
+B6-followup CLAIM tools/cardrpg-big2/{ReviewStudio,offline}.tsx,embed-evidence.mjs,studio-check.mjs and own reports/demo.
+Readthrough found three brief-checklist items lack their promised jump button; add direct gallery/comparison/lab navigation without changing main account.
+Embed only each batch's newly authored owners to avoid duplicate starter strips;retain all full-resolution originals and raw comparisons.
+Earlier pinned delivery artifact remains unchanged;finalreview build gets separate functional,fullmatrix,audio and lifecycle receipts. No grey/App/FeelLab edits.
