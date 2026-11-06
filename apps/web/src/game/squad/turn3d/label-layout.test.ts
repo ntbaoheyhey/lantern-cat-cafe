@@ -9,3 +9,11 @@ it('reports an impossible label without hiding a head or overlapping a card',()=
  const placed=layoutLabels([{id:'x',x:50,y:30,height:45,head:{x:0,y:0,width:100,height:80}}],100,80);
  expect(placed.size).toBe(0);
 });
+
+it('keeps enemy plates clear of companion silhouettes that have no floating label', () => {
+ const companion = { x: 45, y: 30, width: 100, height: 180 };
+ const input = [{ id: 'enemy', x: 130, y: 85, height: 48, head: { x: 175, y: 100, width: 70, height: 130 } }];
+ const boxes = layoutLabels(input, 400, 280, 138, [companion]);
+ expect(boxes.size).toBe(1);
+ expect(intersects(boxes.get('enemy')!, companion, 5)).toBe(false);
+});
