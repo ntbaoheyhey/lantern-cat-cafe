@@ -2,7 +2,7 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented through studio navigation a0cf9422; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Functional receipts serialize under shared lock; A21000 currently owns it.
+All B source implemented through studio navigation a0cf9422; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. B2b archived E2E/visuals now running under48376 after A released21000; remaining receipts serialize under shared lock.
 B2a checkpoint94ed765e contains rendered24motions/46effects,421E2E,cold7; published draft343 on342.
 B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
@@ -57,4 +57,4 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 
 - B2a94ed765e published draft343 on342 at19:13Z. Allfive gates passed on source3198ed64; evidence-only checkpoint adds no runtime changes. Perbatch matrices wait after functional queues underPID50663.
 
-- Recovery19:28Z:12later phase archives independently matched11,634app/rules/assetfile hashes andHTML receipts,0mismatches;validation/pinned-source-audit.json. Old matrixPID50663 absent; restored one queuedrunner58498 after43282. Scope:threecatbatches+fiveenemy/bossbatches,then finalreview860cases separately. No redundant full-roster matrix for obsolete feature artifacts. Existing stage/audio/lab functional+cold receipts remain required.
+- Recovery19:25Z:12later phase archives independently matched11,634app/rules/assetfile hashes andHTML receipts,0mismatches;validation/pinned-source-audit.json. Old matrixPID50663 absent; restored one queuedrunner58498 after43282. Scope:threecatbatches+fiveenemy/bossbatches,then finalreview860cases separately. No redundant full-roster matrix for obsolete feature artifacts. Existing stage/audio/lab functional+cold receipts remain required.
