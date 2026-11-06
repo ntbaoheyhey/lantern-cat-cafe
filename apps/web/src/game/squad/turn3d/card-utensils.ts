@@ -1,10 +1,25 @@
 /** Original physical props, attached to the authored hand joint. Two materials
  * at most; all geometry is made during actor loading and released with it. */
 import * as T from 'three';
+import { batch2Prop } from './card-roster-batch2-props';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 export class CardUtensil {
   private meshes: T.Mesh[] = [];
   constructor(model: T.Object3D, role: string, asset: string) {
+    const authored = batch2Prop(asset);
+    if (authored) {
+      const hand = model.getObjectByName(`${role}_${authored.hand}`);
+      for (const [index, group] of authored.parts.entries()) {
+        const flat = group.map(g => g.index ? g.toNonIndexed() : g);
+        const geometry = mergeGeometries(flat, false)!;
+        for (const g of new Set([...group, ...flat])) g.dispose();
+        if (!hand) { geometry.dispose(); continue; }
+        const material = new T.MeshStandardMaterial({ color: authored.colors[index], roughness: .55, metalness: .08 });
+        const mesh = new T.Mesh(geometry, material); mesh.name = `original-${asset}-utensil-${index}`;
+        mesh.position.set(0, .14, .12); hand.add(mesh); this.meshes.push(mesh);
+      }
+      return;
+    }
     if (!['panko', 'mallow', 'sorrel'].includes(asset)) return;
     const arm = model.getObjectByName(`${role}_${asset === 'sorrel' ? 'armL' : 'armR'}`);
     if (!arm) return;

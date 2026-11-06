@@ -21,6 +21,9 @@ export function cardExpression(clip: string, casting = false): CardExpression {
 }
 
 const IDENTITIES: Record<string, { spacing: number; width: number; height: number; iris: string; glint: string; brow: number }> = {
+  biscuit: { spacing: .196, width: 1.09, height: .82, iris: '#50351c', glint: '#ffe0a1', brow: -.045 },
+  inkcap: { spacing: .176, width: .87, height: 1.13, iris: '#322747', glint: '#d5b5fa', brow: .085 },
+  cinnamon: { spacing: .202, width: 1.03, height: .97, iris: '#54322d', glint: '#ffd0aa', brow: -.025 },
   panko: { spacing: .205, width: 1.12, height: .88, iris: '#463022', glint: '#fbd392', brow: .055 },
   mallow: { spacing: .177, width: .91, height: 1.12, iris: '#482730', glint: '#ffb68e', brow: -.07 },
   sorrel: { spacing: .184, width: .96, height: .92, iris: '#24394e', glint: '#b9e8f1', brow: .035 },
