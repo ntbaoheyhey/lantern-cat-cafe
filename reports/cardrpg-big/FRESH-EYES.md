@@ -8,7 +8,7 @@ REFERENCE: meta/screens/1280-cafe.png, meta/screens/1280-team.png, meta/screens/
 
 1. The selected Performance tab has dark text on its muted hover background. Sourcef81c4838 gives selected and hovered tabs explicit contrasting colors. The browser guard requires4.5 contrast in every panel.
 2. The live-overlay checkbox sits above its label. Sourcef81c4838 groups checkbox and label horizontally. The browser guard measures the gap and vertical alignment.
-3. The rare companion entrance extends39.25px below a600px viewport. Sourcebbba4c0d places model and card side by side below visible fairness. Eight browser cases now pass.
+3. The rare companion entrance extends39.25px below a600px viewport. Sourcebbba4c0d places model and card side by side below visible fairness. Eight browser cases pass the canvas bounds. Further inspection of the integrated1024legendary screenshot shows the card/footer below the viewport. Source4fa7989f adds settled card and action bounds, with diagnosis and correction queued separately.
 4. Team row controls begin near the bottom of the720px capture, while preset management requires scrolling. Recheck the full normal team-building path in the integrated walkthrough. The existing card sizing and role information remain part of that review.
 5. The equipment comparison shows equal values when inspecting the worn item, while enhancement and salvage actions sit farther down. Inspecting an unequipped item and its colored deltas must be included in the integrated walkthrough before grading clarity.
 
