@@ -447,3 +447,9 @@ Pending B E3waiter89899 (resumed afterdiagnostics) and gallerycorrection93523 re
 REQUEST: after your activeconfiguration completes, allow a B functional window before the next longGconfiguration. E3 publication unlocksE4/boss/B6 source; all currentBartifacts are pinned.
 Lossless pack currently21,045,365bytes,17exactRGBA/dimension checks; source typecheck/demoTS/lintPASS, remainingnice10tests/buildrunning. Browserpixelcheck stillpending.
 No sourceintegration or opening/audio pass claimed. Areadability93605 may keep its focusedretry; request applies to the next longmatrix acquisition only.
+
+## 2026-11-06T21:36:44.366Z B6-polish CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; headc448a226.
+B6-polish CLAIM tools/cardrpg-big2/ReviewStudio.tsx and studio-check.mjs, ownreports/demo. The isolated gallery hides Battle controls, leaving its CafeAudio permanently disabled and per-skill sounds inaccessible there.
+Add explicit preview sound/mute and volume controls using the existing isolated audio instance; no automatic sound start, audioengine or sharedfile change. Extend actual studio controls/account-restoration checks.
+Existing pinned93523/94756/media/E3queues unchanged. Final review will validate the new controls on the acceptedartifact after allroster captures. This does not claim the constructor hitch fixed.
