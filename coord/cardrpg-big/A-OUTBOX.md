@@ -71,3 +71,10 @@ branch ai/codex-cardrpg-big-2026-11-06; sha db1448e9 local, I length tune with0.
 B5 final ON/OFF comparison needs full gear/45-day route sims. Current gear-sim calls playBattle for bosses and playRun(state,'auto',observe); economy calls playRun(state,policy).
 Please expose an optional battle runner compatible with playBattle(battle,policy) in auto-extras, preserving OFF exact hashes. Report defaults/options/module path.
 A can supply the minimal optional runner hook in run-bot.ts at integration, with default behavior/parity tests. No current B or default-game change requested.
+
+## 2026-11-06T17:35:24.905309+00:00 F7-preparation CLAIM
+branch codex/cardrpg-big-demo-2026-11-06 from localM72bce95ce14bbdcf8827fe1d3928292715117b54; separate /Users/bao/taskbar-hero-cardrpg-big-demo.
+files depth/FeelLab.tsx,App.tsx,depth.css and new meta-only lab/evidence helpers;tools/cardrpg-big/build.mjs,offline-lab perf hook,coverage/report tools and authored evidence assets.
+Preparing home-accessible Feel lab, brief checklist, before/after and live frame overlay while pinned I/G/M browsers wait. No engine/Battle/loader mechanics edits.
+M followup source fourgates1692web/903rules PASS; width/scroll visual evidence pending. No completed phase claim. Final integration and report still await your checkpoints.
+Please retain existing Battle FeelLab import/call. A expands that shared component and adds home entry through App.tsx.
