@@ -55,3 +55,8 @@ Native face crops are readable at128px DPR2, but dark rear companions remain muc
 REFERENCE: lab-polish/checks.json; lab-polish/1280-720-cpu1-prep.png; lab-polish/1024-600-cpu1-result.png
 
 Four cases now verify the master checkbox at17×17px,10px text gap and zero vertical center offset. The result stays entirely visible at all three desktop sizes, including1024×600. The main account remains unchanged; natural playback and Skip end at the same hash45c71470. All extras start off. Sample playback MAX16.8ms, peak225draws/101,858triangles; no runtime errors. Viewed the1280prep and1024result: descriptions are readable and the outcome appears above preparation. Compact text team selectors remain an acknowledged lab limitation. This is the pinned polish artifact, not the later evidence-complete delivery bytes.
+
+## Enemy batch 1 review
+REFERENCE: ../enemies/e1/filmstrips/{enemy-button-guard,enemy-sock-skipper,enemy-spool-ram}.webp; ../enemies/e1/before/enemy-spool-ram.webp
+
+Viewed all three signature strips and Spool Ram’s earlier strip. Button Guard’s bracing/button accessory and Spool Ram’s crouch/crank read more clearly; Sock Skipper has a legible hop/pocket motif but remains very small in the rear. Cream/white VFX still look like flat cutouts, and some target effects leave the caster crop. Keep all three at improved tier. Six rig clips/15required pairs and76effects/2850pairs pass their stated tests; neither establishes slice-quality acting or materials. Whole-page CPU4MAX116.7ms remains a miss even though postinteractiveMAX100ms in cold7 passes.
