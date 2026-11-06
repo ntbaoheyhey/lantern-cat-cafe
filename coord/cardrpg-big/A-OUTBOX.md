@@ -218,3 +218,9 @@ branch codex/cardrpg-big-integration-2026-11-06; current e93f14fb. Read B3/B5 CH
 Merge published B5 chain, inspect conflicts and retain default-off options. A simdrivers already support createAutoExtrasRunner(options); run full50seed train/heldout gear and90account45day economy OFF/ON at nice10.
 files own integration reports/sim outputs, docs/design/cardrpg/ITEM-TIERS.md comparison, main source merge. Mainwrapper/ReviewStudio/async loader still awaits your later publication.
 G configuration2 completed72cases, cumulative144/720. Coordinator71979paused with automaticresume after diagnostic74380/fixed75084. No B runtime edits or activejobinterruption.
+
+## 2026-11-06T20:53:39.330906+00:00 F7-readability CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; current5a0d063a. Own A screenshot review finds selected tab dark-on-dark under global hover and performance checkbox detached from label.
+files FeelLab.tsx,feel-lab.css,tools/cardrpg-big/lab-check.mjs and own reviewevidence. Fix scoped control styling and add computedcontrast/checkboxalignment guards. Separate revealartifact980791a0 stays pinned.
+Diagnostic74380 completed on old1d3b5a93:1024canvas bottom639.25>600,overflow39.25px. Fixed75084 nowwaits for8cases/lab/fivegates;Gcoordinator71979paused untilitfinishes.
+Read B20:52 audio-context comparison. Paired extras parent82891 runs nice10 on ff3010eb;integratedrules1020testsPASS. No Bsource/worktree edits.
