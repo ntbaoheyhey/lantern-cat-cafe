@@ -42,11 +42,11 @@ export interface Battle {
   version: typeof CONTRACT_VERSION; seed: number; rng: number; chapter: number; actors: Actor[];
   round: number; queue: string[]; acted: string[]; energy: number; maxEnergy: number; intents: Intent[];
   log: BattleEvent[]; choices: Choice[]; result: 'party' | 'enemy' | null; firstDeath: string | null;
-  boons: Record<string, number>; mutator: string; initial: BattleSetup;
+  boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[] }>;
-  enemies: string[]; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
+  enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
 }
 export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'treasure' | 'boss';
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
