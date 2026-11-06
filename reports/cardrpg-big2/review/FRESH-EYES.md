@@ -60,3 +60,8 @@ Four cases now verify the master checkbox at17×17px,10px text gap and zero vert
 REFERENCE: ../enemies/e1/filmstrips/{enemy-button-guard,enemy-sock-skipper,enemy-spool-ram}.webp; ../enemies/e1/before/enemy-spool-ram.webp
 
 Viewed all three signature strips and Spool Ram’s earlier strip. Button Guard’s bracing/button accessory and Spool Ram’s crouch/crank read more clearly; Sock Skipper has a legible hop/pocket motif but remains very small in the rear. Cream/white VFX still look like flat cutouts, and some target effects leave the caster crop. Keep all three at improved tier. Six rig clips/15required pairs and76effects/2850pairs pass their stated tests; neither establishes slice-quality acting or materials. Whole-page CPU4MAX116.7ms remains a miss even though postinteractiveMAX100ms in cold7 passes.
+
+## Enemy batch 2 review
+REFERENCE: ../enemies/e2/filmstrips/{enemy-needle-moth,enemy-teacup-healer,enemy-kettle-knight}.webp
+
+Viewed all three signature strips. Needle Moth has readable wing opening and a pinching/release gesture; Teacup Healer tilts into a pouring motif with a separate steam tail. Kettle Knight has a clear spout/handle silhouette and braced impact. Small poses and cream-white additive effects still flatten the image, particularly the overlapping kettle facets. The crops cut some HP plates and omit distant target impacts; this is a capture limitation, not a full-stage clipping measurement. All three remain improved, with source/rig and rendered-composition metrics reported separately from art judgement.
