@@ -71,7 +71,7 @@ export function initializeEquipment(state:DepthAccount) {
     for(const card of state.account.cards)for(const [slot,id] of Object.entries(state.account.loadouts[card.id]??{}))if(id===item.id){state.equipment[card.cardId]??={};state.equipment[card.cardId]![slot as Slot]=g.id;}
   }
 }
-export function equippedItems(state:DepthAccount,cardId:string){return Object.values(state.equipment[cardId]??{}).map(id=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
+export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
 export function equipmentEffects(state:DepthAccount,cardId:string) {
   const items=equippedItems(state,cardId),counts:Record<string,number>={},effects:string[]=[],bonuses:Record<string,number>={};
   for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+(item.rolls[id]??a.tiers[item.tier-1]![0]);}}

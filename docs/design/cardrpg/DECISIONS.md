@@ -44,3 +44,13 @@ No runtime dependency added. Existing TypeScript, Vitest, fast-check and Vite ru
 | Original transform-node silhouettes | Each cat has individually authored body/head/ear/tail proportions, costume geometry and motion rhythm. Later art review must judge identity beyond file hash distinctness | `assets/provenance/cardrpg-depth-models.json`, portrait captures |
 
 REFERENCE: packages/game-rules/src/cardrpg/depth/; docs/proposals/rune-skill-system/demo/index.html; tools/cardrpg-depth/models.mjs; assets/provenance/cardrpg-depth-portraits.json.
+
+## Read-only bridges
+
+The idle adapter accepts an immutable main-game result receipt containing a stable receipt ID, local day, chapter, boss wins and loot count. Its production data provider remains a fixture because the card entry has an isolated account graph. Each receipt contributes at most six materials, shares the run's 30-material daily ceiling and is deduplicated. Cafe service applies the existing eight-hour offline cap and 50% offline efficiency, then the existing two-service allowance and shared currency limits.
+
+Fuji reads use `eth_accounts`, `eth_chainId`, a pinned block number, `balanceOfBatch` and `rarityOf` through viem. The supported ERC-1155 IDs are the existing four rarity IDs. One selected Relic replaces the first team member's relic equipment slot. Quantity adds no power. Each effect is smaller than the corresponding legendary affix or item effect. Fixture ownership is explicitly labelled. Imported ownership is cleared when live mode starts until a fresh read succeeds.
+
+Moon Collar eligibility spends three seals after a chapter clear. Golden Maneki spends ten seals after all three chapter masteries or Tower floor five. Preview reservations use the existing global and seasonal edition limits. A server would need authoritative receipts, supply reservation and voucher issuance before live minting. This pass displays the local effort counters and design preview.
+
+REFERENCE: packages/game-rules/src/cardrpg/depth/bridge.ts; packages/game-rules/src/cardrpg/depth/bridge.test.ts; apps/web/src/game/cardrpg/depth/relic-reader.ts; contracts/src/RelicNFT.sol; packages/game-rules/src/content.ts.
