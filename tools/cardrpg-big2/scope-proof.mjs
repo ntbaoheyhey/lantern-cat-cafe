@@ -5,7 +5,8 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 const root=resolve(import.meta.dirname,'../..'),base='97c18853550000deb211912fdbaf66e9229b0c81';
-const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
+// Raw visual evidence includes thousands of frame files; inspect the full diff.
+const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:32*1024*1024}).trim();
 const changed=git('diff','--name-only',base,'HEAD').split('\n').filter(Boolean);
 const rules=changed.filter(p=>p.startsWith('packages/game-rules/'));
 const forbidden=changed.filter(p=>/^(?:contracts|supabase|packages\/chain|packages\/auth)\//.test(p)
@@ -19,7 +20,7 @@ const parity=await Promise.all(immutable.map(async path=>{
  assert.equal(hash(before),hash(after));return{path,before:hash(before),after:hash(after),equal:true};
 }));
 const report={base,head:git('rev-parse','HEAD'),method:'Committed path diff against #340 and exact source bytes for protected flags/config/save/contract. Simulation state parity is measured separately in mechanics/summary.json.',changed,rules,forbidden,parity,
- sharedEdits:[{path:'apps/web/src/game/cardrpg/depth/feel-lab.ts',commit:'29b32479',authorization:'Lane A 2026-11-06T16:59:02Z ANSWER: recipe-driven passive gallery IDs.'}]};
+ sharedEdits:['feel-lab.ts','model.test.ts'].map(file=>({path:`apps/web/src/game/cardrpg/depth/${file}`,commit:'29b32479',authorization:'Lane A 2026-11-06T16:59:02Z ANSWER: recipe-driven passive gallery IDs and corresponding model expectations.'}))};
 await mkdir(resolve(root,'reports/cardrpg-big2/delivery'),{recursive:true});
 await writeFile(resolve(root,'reports/cardrpg-big2/delivery/scope.json'),JSON.stringify(report,null,2));
 console.log(JSON.stringify({head:report.head,changed:changed.length,rules:rules.length,forbidden,parity:parity.length}));
