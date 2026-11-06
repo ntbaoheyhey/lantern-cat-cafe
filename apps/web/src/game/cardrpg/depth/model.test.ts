@@ -132,7 +132,9 @@ it('restores an unstarted encounter to Prepare and a completed encounter to Resu
 it('previews every authored skill and enemy without mutating account progress', () => {
   const model = new DepthModel(true);
   const original = exportSave(model.state);
-  expect(model.galleryActions).toHaveLength(61);
+  expect(model.galleryActions).toHaveLength(72);
+  expect(model.galleryActions.filter(action => action.id.endsWith('-passive'))).toHaveLength(3);
+  expect(model.galleryActions.filter(action => action.id.endsWith(':basic'))).toHaveLength(8);
   for (const action of model.galleryActions) {
     model.inspect(action.id, .5);
     expect(model.battle?.actors.some(actor => actor.catalogId === action.owner)).toBe(true);

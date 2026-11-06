@@ -33,7 +33,6 @@ const ranked = receipt.rows.map(row => ({ name: row.name, action: row.action.nam
   firstDuration: row.casts[0].after.at - row.casts[0].before.at,
   repeatDuration: row.casts[1].after.at - row.casts[1].before.at,
 })).sort((a, b) => Math.max(b.first.max, b.repeat.max) - Math.max(a.first.max, a.repeat.max) || b.page.max - a.page.max);
-const expected = 610;
 const expectedConfigurations = [
   '1280×720 DPR1 CPU1 medium', '1280×720 DPR2 CPU1 medium',
   '1440×900 DPR1 CPU1 medium', '1440×900 DPR2 CPU1 medium',
@@ -42,24 +41,29 @@ const expectedConfigurations = [
   '1280×720 DPR1 CPU1 low', '2560×1440 DPR1 CPU1 medium',
 ];
 const actionIds = [...new Set(receipt.rows.map(row => row.action.id))].sort();
+const expectedIds = receipt.actions?.map(action => action.id).sort() ?? actionIds;
+const expectedActionCount = receipt.actions?.length ?? 61;
+const expected = expectedActionCount * expectedConfigurations.length;
 const coverage = expectedConfigurations.map(configuration => {
   const rows = groups.get(configuration) ?? [];
   const ids = rows.map(row => row.action.id);
   return {
     configuration,
     measured: rows.length,
-    missing: actionIds.filter(id => !ids.includes(id)),
+    missing: expectedIds.filter(id => !ids.includes(id)),
+    unexpected: ids.filter(id => !expectedIds.includes(id)),
     duplicates: ids.filter((id, index) => ids.indexOf(id) !== index),
   };
 });
-const complete = receipt.rows.length === expected && !!receipt.ended && actionIds.length === 61
+const complete = receipt.rows.length === expected && !!receipt.ended && actionIds.length === expectedActionCount
   && groups.size === expectedConfigurations.length
-  && coverage.every(row => row.measured === 61 && !row.missing.length && !row.duplicates.length);
+  && coverage.every(row => row.measured === expectedActionCount && !row.missing.length
+    && !row.unexpected.length && !row.duplicates.length);
 const errors = receipt.rows.flatMap(row => row.errors.map(message => ({ name: row.name, message })));
 const result = { complete, expected, measured: receipt.rows.length, artifactSha256: receipt.sha256,
   started: receipt.started, ended: receipt.ended, errors, coverage, configurations, ranked };
 await writeFile(`${directory}/ranked.json`, JSON.stringify(result, null, 2));
 const table = configurations.map(row => `| ${row.name} | ${row.cases} | ${row.pageMax.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.first.above25} / ${row.repeat.above25} | ${row.first.above50} / ${row.repeat.above50} | ${(row.first.within20 * 100).toFixed(2)} / ${(row.repeat.within20 * 100).toFixed(2)} |`).join('\n');
 const ranking = ranked.map(row => `| [${row.name}](${row.name}.json) | ${row.page.max.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.firstDuration.toFixed(1)} / ${row.repeatDuration.toFixed(1)} |`).join('\n');
-await writeFile(`${directory}/README.md`, `# Exhaustive skill timing\nREFERENCE: summary.json; ranked.json; tools/cardrpg-big/skill-measure.mjs; tools/cardrpg-big/skill-report.mjs\n\n${complete ? 'Complete' : 'In progress'} · ${receipt.rows.length}/${expected} cases. ${errors.length} page errors. Each case opens a fresh context and cold file, clicks the campaign and battle node, then uses the isolated Feel lab fixture. Every raw file includes page-open RAF deltas, long tasks/frames, heap/GPU snapshots, two cast windows and planned/observed duration. First-use fixture setup hides every spell frame until the measured trigger. CPU4 throttles CPU only. Cast duration includes the measurement endpoint polling interval, so it can exceed the authored duration by approximately one RAF.\n\nThe catalogue contains 48 skills, including 12 ultimates, and 13 enemies, including 3 bosses. Ten configurations yield 610 cases and 1,220 casts. Low and 2560×1440 use DPR1 CPU1.\n\n| Configuration | Cases | Page MAX ms | First / repeat MAX ms | >25 first / repeat | >50 first / repeat | ≤20 ms % first / repeat |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n${table}\n\n## Ranked cases\nREFERENCE: ranked.json; ../HITCHES.md; ../trace-attribution.json\n\nSort by the larger cast MAX, then page MAX. The raw CPU profile identifies decoder, script compilation, scene construction and first program/uniform initialization during page-open spikes. Skill-body effects lack direction registrations in the F0 artifact, which must be considered when comparing these timings with later complete effects. Profile evidence for individual later cast spikes must be captured before claiming their cause.\n\n| Case and raw frames | Page MAX ms | First / repeat MAX ms | First / repeat duration ms |\n| --- | ---: | ---: | ---: |\n${ranking}\n`);
+await writeFile(`${directory}/README.md`, `# Exhaustive skill timing\nREFERENCE: summary.json; ranked.json; tools/cardrpg-big/skill-measure.mjs; tools/cardrpg-big/skill-report.mjs\n\n${complete ? 'Complete' : 'In progress'} · ${receipt.rows.length}/${expected} cases. ${errors.length} page errors. Each case opens a fresh context and cold file, clicks the campaign and battle node, then uses the isolated Feel lab fixture. Every raw file includes page-open RAF deltas, long tasks/frames, heap/GPU snapshots, two cast windows and planned/observed duration. First-use fixture setup hides every spell frame until the measured trigger. CPU4 throttles CPU only. Cast duration includes the measurement endpoint polling interval, so it can exceed the authored duration by approximately one RAF.\n\nThe catalogue contains 48 skills, including 12 ultimates, and 13 enemies, including 3 bosses. ${expectedActionCount - 61} additional passive/basic presentation previews are included. Ten configurations yield ${expected} cases and ${expected * 2} casts. Low and 2560×1440 use DPR1 CPU1.\n\n| Configuration | Cases | Page MAX ms | First / repeat MAX ms | >25 first / repeat | >50 first / repeat | ≤20 ms % first / repeat |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n${table}\n\n## Ranked cases\nREFERENCE: ranked.json; profiles/summary.json; ../PERFORMANCE.md\n\nCases are sorted by the larger cast MAX, then page MAX. Five separate profiling reruns are recorded under profiles when available. Consult the phase PERFORMANCE.md for trace-backed attribution, transient spikes and differences from earlier artifacts.\n\n| Case and raw frames | Page MAX ms | First / repeat MAX ms | First / repeat duration ms |\n| --- | ---: | ---: | ---: |\n${ranking}\n`);
 console.log(JSON.stringify({ complete, measured: receipt.rows.length, errors: errors.length, configurations }));

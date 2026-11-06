@@ -62,6 +62,8 @@ const random=(i:number,seed:number)=>{const n=Math.sin(i*127.1+seed*19.19)*43758
 
 export class SpellVfx{
  readonly root=new T.Group();count=0;
+ readonly ready:Promise<void>;
+ private disposed=false;
  private shapes=new Map<string,T.BufferGeometry>();
  private scratch=Array.from({length:1024},()=>new T.Vector3());private cursor=0;private axis=new T.Vector3(0,0,1);private spin=new T.Quaternion();
  private v(x=0,y=0,z=0){const v=this.scratch[this.cursor++];if(!v)throw Error("VFX scratch capacity exceeded");return v.set(x,y,z)}
@@ -69,14 +71,22 @@ export class SpellVfx{
  private ribbons:T.Mesh<T.BufferGeometry,T.ShaderMaterial>[]=[];private emblems:T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>[]=[];
  private flames:T.Mesh<T.PlaneGeometry,T.ShaderMaterial>[]=[];private motes:T.InstancedMesh<T.PlaneGeometry,T.ShaderMaterial>;
  private bolts:T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>[]=[];private matrix=new T.Matrix4();private scale=new T.Vector3();private rgb=new T.Color();private quat=new T.Quaternion();
- constructor(scene:T.Scene){
+ constructor(scene:T.Scene,private cooperative=false){
   scene.add(this.root);
-  for(const d of Object.values(EFFECT_DIRECTION))if(!this.shapes.has(d.glyph))this.shapes.set(d.glyph,signature(d.glyph));
+  this.ready=this.prepareShapes();
   for(let i=0;i<6;i++){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(49*2*3),3));const uv=[],indices=[];for(let j=0;j<49;j++){uv.push(j/48,0,j/48,1);if(j<48){const k=j*2;indices.push(k,k+1,k+2,k+1,k+3,k+2)}}g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(indices);const m=new T.ShaderMaterial({vertexShader:vertex,fragmentShader:ribbonFragment,uniforms:{color:{value:new T.Color()},accent:{value:new T.Color()},phase:{value:0},fade:{value:0}},transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending});const mesh=new T.Mesh(g,m);mesh.frustumCulled=false;mesh.visible=false;this.ribbons.push(mesh);this.root.add(mesh)}
   for(let i=0;i<10;i++){const mesh=new T.Mesh(new T.BufferGeometry(),new T.MeshBasicMaterial({color:'#ffffff',transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;this.emblems.push(mesh);this.root.add(mesh)}
   for(let i=0;i<9;i++){const mesh=new T.Mesh(new T.PlaneGeometry(1,1),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:flameFragment,uniforms:{color:{value:new T.Color()},accent:{value:new T.Color()},phase:{value:0},fade:{value:0},water:{value:0}},transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;this.flames.push(mesh);this.root.add(mesh)}
   for(let i=0;i<8;i++){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(25*2*3),3));const idx=[];for(let j=0;j<24;j++){const k=j*2;idx.push(k,k+1,k+2,k+1,k+3,k+2)}g.setIndex(idx);const mesh=new T.Mesh(g,new T.MeshBasicMaterial({color:'#c6b4ff',transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending}));mesh.visible=false;mesh.frustumCulled=false;this.bolts.push(mesh);this.root.add(mesh)}
   this.motes=new T.InstancedMesh(new T.PlaneGeometry(1,1),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:moteFragment,uniforms:{motif:{value:0}},transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide}),192);this.motes.count=0;this.motes.instanceMatrix.setUsage(T.DynamicDrawUsage);this.motes.frustumCulled=false;this.motes.setColorAt(0,new T.Color());this.root.add(this.motes);
+ }
+ private async prepareShapes(){
+  for(const direction of Object.values(EFFECT_DIRECTION)){
+   if(this.shapes.has(direction.glyph))continue;
+   if(this.cooperative)await new Promise(resolve=>setTimeout(resolve,0));
+   if(this.disposed)return;
+   this.shapes.set(direction.glyph,signature(direction.glyph));
+  }
  }
  render(frame:EffectFrame|null,actors:TurnActor[],positions:Map<string,T.Vector3>,camera:T.Camera,time:number,calm:boolean){
   this.cursor=0;
@@ -157,14 +167,19 @@ export class SpellVfx{
   }}
   this.motes.count=used;this.motes.instanceMatrix.needsUpdate=true;if(this.motes.instanceColor)this.motes.instanceColor.needsUpdate=true;this.count=used;
  }
- warm(renderer:T.WebGLRenderer,camera:T.Camera,stage:T.Scene){
+ async warm(renderer:T.WebGLRenderer,camera:T.Camera,stage:T.Scene){
+  await this.ready;if(this.disposed)return;
   // Compile every shader variant and upload every original glyph behind loading.
   const target=new T.WebGLRenderTarget(2,2);
   for(const m of this.root.children){m.visible=true;m.frustumCulled=false;}this.motes.count=1;
-  renderer.setRenderTarget(target);for(const geometry of this.shapes.values()){this.emblems[0]!.geometry=geometry;renderer.render(stage,camera)}
+  renderer.setRenderTarget(target);for(const geometry of this.shapes.values()){
+   if(this.disposed){renderer.setRenderTarget(null);target.dispose();return;}
+   this.emblems[0]!.geometry=geometry;renderer.render(stage,camera);
+   if(this.cooperative)await new Promise(resolve=>setTimeout(resolve,0));
+  }
   // Prepare the direct output with the battlefield's actual fog/light state,
   // as well as its HDR target. A detached no-fog scene is a different shader.
   renderer.setRenderTarget(null);renderer.render(stage,camera);target.dispose();for(const m of this.root.children)m.visible=false;this.motes.visible=true;this.motes.count=0;
  }
- dispose(){this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
+ dispose(){this.disposed=true;this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
 }

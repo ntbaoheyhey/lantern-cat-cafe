@@ -1,10 +1,11 @@
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
-import { createActionPlan, sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
+import { sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
+import { createCardActionPlan } from './card-action-plan';
 
 export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
@@ -16,6 +17,9 @@ export class DepthModel {
   error = false;
   galleryBattle: R.Battle | null = null;
   galleryId = GALLERY_ACTIONS[0]!.id;
+  galleryEffectOnly = false;
+  gallerySpeed = 1;
+  private galleryReturn?: { plan: EffectPlan | null; animationAt: number; paused: boolean };
   readonly galleryActions = GALLERY_ACTIONS;
   watching = false;
   camera: 'wide' | 'close' | 'far' = 'wide';
@@ -75,6 +79,7 @@ export class DepthModel {
   get frame() { return this.plan ? sampleActionPlan(this.plan, this.animationAt, this.state.settings.reducedMotion) : null; }
   inspect(id: string, progress = 0, play = false) {
     const fixture = galleryFixture(id);
+    if (!this.galleryBattle) this.galleryReturn = { plan: this.plan, animationAt: this.animationAt, paused: this.paused };
     this.galleryId = id;
     this.galleryBattle = fixture.battle;
     this.plan = progress < 0 ? null : fixture.plan;
@@ -85,8 +90,11 @@ export class DepthModel {
   }
   closeGallery() {
     this.galleryBattle = null;
-    this.plan = null;
-    this.paused = false;
+    this.plan = this.galleryReturn?.plan ?? null;
+    this.animationAt = this.galleryReturn?.animationAt ?? 0;
+    this.paused = this.galleryReturn?.paused ?? false;
+    this.galleryReturn = undefined;
+    this.galleryEffectOnly = false;
     this.notify(false);
   }
   apply(result: R.RuleResult<R.DepthAccount>, message = 'Saved to your cafe account.') {
@@ -151,6 +159,13 @@ export class DepthModel {
     const actor = R.currentActor(battle);
     if (!actor) return;
     const before = battle.log.length;
+    const passiveBefore = actor.passiveUsed;
+    const shieldBefore = actor.shield;
+    const intent = battle.intents.find(candidate => candidate.actorId === actor.id);
+    const softened = intent?.interrupted || actor.statuses.some(status => status.id === 'drowsy');
+    const utility = ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
+      && !actor.statuses.some(status => status.id === 'hush');
+    const signature = !softened && (intent?.signature || utility);
     const selected = actor.side === 'party' ? choice ?? R.chooseAction(battle, 'auto') : null;
     let skillId = selected?.skillId ?? '';
     let accepted = false;
@@ -168,14 +183,23 @@ export class DepthModel {
         actionId: battle.log.length, beat: 2, type, actorId: event.actorId, skillId,
         targetIds: [event.targetId], amount: event.amount });
     }
-    this.plan = createActionPlan(events);
+    const identity = actor.side === 'enemy'
+      ? `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
+    this.plan = createCardActionPlan(events, identity);
+    const actionEvents = battle.log.slice(before);
+    const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
+      && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
+    const sootDetonation = actor.catalogId === 'soot'
+      && actionEvents.some(event => event.kind === 'detonate' && event.amount > 0);
+    const cloverCleanse = actor.catalogId === 'clover' && !passiveBefore && actor.passiveUsed;
+    if (mochiShield || sootDetonation || cloverCleanse) this.plan.presentationCues = [`${actor.catalogId}-passive`];
     this.animationAt = 0;
     this.notify();
   }
   tick(milliseconds: number) {
     if (this.paused || !this.showBattle) return;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
-    this.animationAt += milliseconds * this.state.settings.speed;
+    this.animationAt += milliseconds * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
     if (this.animationAt >= this.plan.duration) {
       this.plan = null;
       if (this.battle?.result && !this.galleryBattle) this.showResult();

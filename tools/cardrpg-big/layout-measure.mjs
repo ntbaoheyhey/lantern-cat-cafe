@@ -67,12 +67,12 @@ try {
         };
         const overlap = (a, b) => Math.max(0, Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x))
           * Math.max(0, Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y));
-        const hud = [...document.querySelectorAll('.dp-battle-top,.dp-roundbar,.dp-party-card,.dp-enemy,.dp-decision,.dp-skill-banner,.dp-world-plate')]
+        const hud = [...document.querySelectorAll('.dp-battle-top,.dp-roundbar,.dp-party-card,.dp-enemy,.dp-decision,.dp-skill-banner,.dp-world-plate,.dp-ultimate-moment,.dp-feel-lab>button')]
           .filter(element => element.checkVisibility({ checkVisibilityCSS: true }))
           .map(element => ({ label: element.className, box: rectangle(element) }));
         const units = audit.units.map(unit => {
           const puppet = scene.puppets.get(unit.id);
-          const head = puppet.model.getObjectByName(puppet.role + '_head') ?? puppet.model;
+          const head = puppet.head ?? puppet.model;
           const position = head.getWorldPosition(scene.camera.position.clone());
           const occluded = point => {
             const distance = scene.camera.position.distanceTo(point);
