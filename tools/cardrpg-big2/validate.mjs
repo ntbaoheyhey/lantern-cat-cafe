@@ -11,7 +11,7 @@ const steps = [
   ['e2e', ['--filter', '@taskbar-hero/web', 'test:e2e', '--workers=4']],
 ];
 const results = [];
-for (const [name, args] of steps) {
+for (const [name, args] of steps.filter(([name]) => !process.env.BIG_VALIDATE_STEPS || process.env.BIG_VALIDATE_STEPS.split(',').includes(name))) {
   const path = `${directory}/${phase}-${name}.log`, fd = openSync(path, 'w');
   const started = new Date().toISOString();
   const exit = await new Promise((complete, reject) => {

@@ -9,7 +9,7 @@ export const GALLERY_ACTIONS = [
   ...R.CATS.flatMap(cat => cat.skills.map(skill => ({
     id: skill.id, owner: cat.id, name: `${cat.name} · ${skill.name}`, ultimate: skill.type === 'ultimate', enemy: false,
   }))),
-  ...R.CATS.filter(cat => ['mochi', 'soot', 'clover'].includes(cat.id)).map(cat => ({
+  ...R.CATS.filter(cat => CARD_EFFECT_RECIPES[cat.passive.id]).map(cat => ({
     id: cat.passive.id, owner: cat.id, name: `${cat.name} · ${cat.passive.name}`, ultimate: false, enemy: false,
   })),
   ...R.ENEMIES.filter(enemy => CARD_EFFECT_RECIPES[`enemy:${enemy.id}:basic`]).map(enemy => ({
