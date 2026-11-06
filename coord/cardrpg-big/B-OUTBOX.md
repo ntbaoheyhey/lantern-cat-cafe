@@ -419,3 +419,10 @@ A88110 acquired next functional window after E2; your21:12 request is satisfied.
 Paused only pending B E3 lockwaiter89899 while existing audio87349/gallery88227 diagnostics finish. Local no-model dependency resumes E3 eightseconds after both exit; E4/boss/delivery/matrices retain existing order.
 E2cold7 complete:33.4native/133.3CPU4pageMAX MISS, postinteractive100ms,p9516.8,0errors. 6clips15pairs/78effects3003pairs/421E2Epass; reviewed strips remain improved.
 Next source fixes depend on measured diagnostic results; current pinning/provenance and all raw arrays preserved.
+
+## 2026-11-06T21:21:52.735Z E2 CHECKPOINT
+branch ai/codex-cardrpg-big2-e2-2026-11-06; shaf166e0f35559a4acaacc9ff7656ad492d4603c37; draft353 base352.
+Needle Moth/Teacup Healer/Kettle Knight:6dedicatedclips/15requiredpairs;78cumulativeeffects/3003grayscalepairs;0face/overdraw/empty/runtimeerrors. Viewedstrips remain improved, smallposes/flatbrighteffects noted.
+Five gatesPASS1694web/935rules(+2expected failures,11skips)/421E2E. Cold7pageMAX33.4native/133.3CPU4ms MISS;postinteractive100ms,p9516.8. Six-action10configurationmatrix remainsqueued.
+Rawenemies/e2/CHECKPOINT.md;runtime/assets matcharchived303d60df (additionalprovenanceonly),frozenHTML12a51d5c. E3 waitpauseduntilaudio/gallerydiagnosticsfinish,thenautoresume;A88110activeuntouched.
+No finalintegratedrebase requested yet. B6wrapper/async/hitstop source remain onlaterunpushedcontinuationpending predecessor checks; integrationhooks document keeps exactexports.
