@@ -56,3 +56,10 @@ REFERENCE: ../../../packages/game-rules/src/cardrpg/depth/bridge.ts, ../../../pa
 The in-game label is “Design only - not minted”. A reservation checks both local counters before consuming seals and increments both in one successful transaction. Local save counters support the prototype's cap checks. Network-wide issuance authority is a future integration. The existing read-only Fuji holdings panel separately applies one selected cup's fixed effect to the leading companion. Quantity contributes zero extra power.
 
 Earned invitations cost150 stamps each, with up to10 per batch and30 per local day. Soft pity starts on pull41 at +3 percentage points legendary chance per pull. Pull60 guarantees legendary. Each banner group carries its own pity and the featured banner guarantees its featured cat after a legendary miss. Every invitation result remains account-bound.
+
+## Experimental automatic-battle comparison
+REFERENCE: ../../../reports/cardrpg-big/integration/extras/README.md, ../../../reports/cardrpg-big/integration/extras/comparison.json
+
+Paired 50-seed training and heldout samples switch `autoExtras`, `teaCloud`, `frontRelay` and `intentLens` together. OFF matches all six native gear arrays and all six native economy groups. Positive tier steps total 26/48 OFF and 27/48 ON, with zero lost positive gains or new reversals. Level 6 saturation persists. Heldout set rates span 8–92% in both modes, while cat rates span 49.15–83.76% OFF and 51.15–85.52% ON. The largest single-piece boss gain falls from 34 to 24 percentage points heldout, and from 42 to 26 points training. Its displayed share stays 9.6306%.
+
+Across 90 accounts and 45 days, the maximum heavy/casual earned ratio is 2.194775696× OFF and 2.189801700× ON, both within 3×. The combined options pass the measured tier-regression check, while tier saturation and wide utility spreads keep the broader balance gate open. These results assess the combined settings. Default gameplay uses OFF, and promotion remains the user's decision.

@@ -78,7 +78,7 @@ REFERENCE: auto/A1.md, auto/A2.md, auto/A3.md, integration/scope/rules-commits.t
 
 Người chơi chọn ba mèo, hàng và trang bị trước trận. Bộ điều khiển tự dùng toàn bộ kỹ năng đã mở. Trong trận có tốc độ, pause, skip, camera, sound. Thời lượng chương 1 ước tính bằng kế hoạch trình diễn có trung vị 51,411 s training và 53,569 s heldout. 48/50 và 44/50 nằm trong 45–90 s. Năm ca trình duyệt đo 46,5327–57,2778 s, cả năm replay trùng kết quả. Các ca có 0 lỗi HP hoặc vượt ngân sách hành động.
 
-Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh đầy đủ autoExtras ON/OFF đang chạy với runner B5 đã công bố. Các tùy chọn thử nghiệm giữ mặc định OFF.
+Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh autoExtras ON/OFF đã chạy đủ50seed training và heldout, cùng90tài khoản trong45ngày. Số bước tăng tier là26/48OFF và27/48ON,0bước mất lợi thế hoặc đảo chiều. Tỉ lệ tài nguyên tối đa2,194775696×OFF và2,189801700×ON. Bảng ở integration/extras/README.md. Các tùy chọn thử nghiệm giữ mặc định OFF.
 
 ## Lane B delivered
 REFERENCE: coord/cardrpg-big/B-OUTBOX.md trên nhánh ai/codex-cardrpg-big-sync
@@ -88,7 +88,7 @@ B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 
 ## Các điểm còn thiếu và tự chấm
 REFERENCE: memory/STATE.md, COVERAGE.md, demo/PLAN.md
 
-Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, ON/OFF sims và kiểm chứng bản ghép. Entrance3D đạt8ca/24ảnh trên bản riêng. Tab/checkbox lab đã sửa trong nguồn, 21ảnh lab đo tràn ngang0px. Nút ẩn điều khiển và card/footer600px đang kiểm tra bổ sung. Đã xem ảnh/filmstrip tuần tự qua4vai, ghi20điểm cần kiểm tra trong FRESH-EYES.md. Video12mèo, boss, ultimate và lượt chấm lại chờ bản ghép đủ hình ảnh.
+Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, kiểm chứng bản ghép và video. Entrance3D đạt8ca/24ảnh trên bản riêng. Tab/checkbox lab đã sửa trong nguồn, 21ảnh lab đo tràn ngang0px. Nút ẩn điều khiển và card/footer600px đang kiểm tra bổ sung. Đã xem ảnh/filmstrip tuần tự qua4vai, ghi20điểm cần kiểm tra trong FRESH-EYES.md. Video12mèo, boss, ultimate và lượt chấm lại chờ bản ghép đủ hình ảnh.
 
 11 mục tự chấm đang chờ review gồm hiệu ứng, độ nét, bố cục/góc mặt, nhịp/khựng, cảm giác chơi, sân trống, tự động hoàn toàn, phần ngoài trận, trang bị/cân bằng, gacha và giới hạn collectible. Mục tiêu là 8,5/10 mỗi mục. Bản báo cáo bàn giao sẽ ghi điểm thực tế và từng cổng thiếu.
 
