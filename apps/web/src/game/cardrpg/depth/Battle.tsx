@@ -72,6 +72,9 @@ export function BattleView({ m }: { m: DepthModel }) {
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
   }, [m]);
   useEffect(() => {
+    scene.current?.invalidate();
+  });
+  useEffect(() => {
     if (!m.canAct || !m.battle) return;
     if (m.replay || m.auto || R.currentActor(m.battle)?.side === 'enemy') {
       const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 350 / m.state.settings.speed);
