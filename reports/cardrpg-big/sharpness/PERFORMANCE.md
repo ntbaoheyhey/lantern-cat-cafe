@@ -42,7 +42,7 @@ REFERENCE: performance/HITCHES.md, performance/trace-attribution.json, performan
 
 The captured DPR1 profile has five intervals above 33 ms. The 100.1 ms interval overlaps 97.0 ms EventDispatch. Samples identify stageTexture canvas generation inside makeStage, WebGL getContext, resize and garbage collection. The 116.6 ms interval overlaps first program-uniform setup and texture upload. Largest leaves include getUniforms shader-program checks and texSubImage2D. Source offsets are retained in trace-attribution.json and map to the embedded application JavaScript.
 
-These are specific measured startup costs. The complete 610-case cast matrix and top-five profiles remain pending. The seven-case results cannot establish all-skill first-use safety.
+These are specific measured startup costs. The complete610-case cast matrix and top-five profiles are recorded below.
 
 ## Marked screenshot profile
 REFERENCE: capture-profile/summary.json, capture-profile/trace-attribution.json, capture-profile/HITCHES.md
@@ -50,3 +50,12 @@ REFERENCE: capture-profile/summary.json, capture-profile/trace-attribution.json,
 A fresh 1440×900 DPR2 rerun adds start/end marks around each capture. Four RAF gaps of 466.6, 466.6, 466.6 and 483.4 ms overlap the battle/cast screenshot windows. Their largest main-thread work items last 1.0–2.7 ms, with 461.9–481.0 ms sampled in idle. The rerun ties these long RAF gaps to screenshot capture. It leaves the original unmarked 450.0 ms sample intact. The capture-disabled run gives the interaction-only measurement while preserving page-open frames.
 
 The captured profile MAX483.4 ms is also retained. It cannot be substituted for an application-only frame budget. Scene creation and shader/texture startup remain the measured application costs discussed above.
+
+## All-skill matrix and profiles
+REFERENCE: skills/ranked.json, skills/summary.json, skills/profiles/summary.json
+
+All610 cases across ten configurations completed with zero page errors and156241 raw frames. Page-open MAX is533.4ms, with4679 frames above25ms and2231 above50ms. First-use MAX is33.5ms with49 frames above25ms. Repeat-use MAX is16.8ms. Both cast windows have zero frames above50ms. The full-session startup gate remains missed.
+
+F1 measured first-use MAX33.4ms with45 frames above25ms. F2 measured33.5ms with49. The complete matrix is retained, including this small increase. Every configuration, action, raw interval and heap/GPU snapshot is linked from skills/README.md.
+
+Five cold profile reruns measured first-use MAX16.8,16.8,16.8,33.4 and33.4ms. All repeat windows measured16.8ms. The largest original33.5ms Sorrel spike did not recur. Clover and Marigold33.4ms windows overlap14.2–14.3ms animation callbacks and13.1–19.9ms BeginMainFrame work following the fixture's first rendering. Their preceding316.6/316.7ms startup gaps overlap322.2/332.9ms TimerFire tasks, image decode and renderer/shader work. Main-thread stacks and source offsets remain in each trace-attribution.json. A single source cause for the transient cast intervals remains unresolved.

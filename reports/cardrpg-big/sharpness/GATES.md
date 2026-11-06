@@ -13,7 +13,7 @@ REFERENCE: ../memory/PROMPT.md lines 91–94, README.md, PERFORMANCE.md, checks.
 | Before/after crops side by side in demo | PASS, all ten pairs embedded under Evidence | SharpnessEvidence.tsx, assets/cardrpg3/evidence/ |
 | Explain crop misses | PASS disclosure, pose/composition and AA affect face metric, HUD0%, displayed portrait−0.19/−3.34% | README.md |
 | Rerun F0 harness and avoid added hitches | PARTIAL, cold7×2 complete, captured1440 DPR2 MAX rose16.6ms, marked profile identifies capture-related gaps, full-session CPU4 still fails | PERFORMANCE.md |
-| Full skill matrix and profiles after phase | NOT YET,610 cases scheduled against frozen F2 artifact | memory/STATE.md |
+| Full skill matrix and profiles after phase | PASS coverage610/610, zero page errors, five profiles. Startup MAX533.4ms still misses hitch gate | skills/ranked.json, PERFORMANCE.md |
 | Typecheck, lint, unit, E2E and build | PASS,1646 web,903 rules,421 E2E, two expected failures and11 skips retained | validation/f2-fixed.json |
 
-The missed crop gate and pending full matrix are carried into the F2 draft. The phase keeps fully automatic combat and has an empty game-rules diff. Wider geometry and motion proceed with Mochi, Soot, Clover and chapter1 first.
+The missed crop and startup hitch gates are carried into the F2 draft. The phase keeps fully automatic combat and has an empty game-rules diff. Wider geometry and motion proceed with Mochi, Soot, Clover and chapter1 first.
