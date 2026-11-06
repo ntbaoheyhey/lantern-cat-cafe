@@ -19,6 +19,7 @@ import { CardSurfaces } from './card-surfaces';
 import { CardEffects, cardRecipeFor } from './card-effects';
 import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSkillMotion } from './card-motion';
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
+import { loadingFrame, warmScene } from './loading';
 
 export interface SceneView {
   decorateStage?: (stage: T.Group) => void;
@@ -139,12 +140,14 @@ export class TurnScene {
   private async warmModels(){
     const warm=new T.Group();
     try{
-      await new Promise(resolve=>setTimeout(resolve,0));if(this.disposed)return;
+      await loadingFrame();if(this.disposed)return;
       if(this.view().autoBattle){
         for(const kind of ['wood','cloth','window'] as const){
           const texture=await prepareStageTexture(kind);
           if(this.disposed){texture.dispose();return;}
           this.stageTextures.push(texture);
+          this.renderer.initTexture(texture);
+          await loadingFrame();
         }
       }
       this.stage=this.makeStage();this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
@@ -162,40 +165,29 @@ export class TurnScene {
       for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
+        await loadingFrame();
       }
       // A spare preview has never drawn its equipped actor. Prepare that
       // material variant too, before exposing it in the first item picker.
       this.loading.completed=2;this.loading.label='Preparing companion motion';
       const initial={...this.view(),frame:null};
-      await Promise.all(initial.actors.map(a=>this.ensure(a,initial.boss)));if(this.disposed)return;
+      for(const actor of initial.actors){await this.ensure(actor,initial.boss);await loadingFrame();if(this.disposed)return;}
       for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
       this.loading.completed=3;this.loading.label='Compiling lighting';
       await new Promise(resolve=>setTimeout(resolve,0));
       this.scene.add(warm);
       // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
       // Prepare both while loading so adaptive quality never links at a hit.
-      const viewport=this.renderer.getViewport(new T.Vector4());
-      const target=new T.WebGLRenderTarget(2,2);
-      try{
-        for(const destination of [null,target]){
-          this.renderer.setRenderTarget(destination);
-          this.renderer.setViewport(0,0,2,2);
-          for(const model of warm.children)model.visible=true;
-          await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;
-          for(const model of warm.children)model.visible=false;
-          for(const model of warm.children){
-            if(this.disposed)return;
-            model.visible=true;this.renderer.render(this.scene,this.camera);model.visible=false;
-            await new Promise(resolve=>setTimeout(resolve,0));
-          }
-        }
-      }finally{
-        this.renderer.setRenderTarget(null);this.renderer.setViewport(viewport);target.dispose();
-      }
+      await warmScene(this.renderer,this.scene,this.camera,()=>this.disposed,
+        fraction=>{this.loading.completed=3+fraction;});
+      if(this.disposed)return;
       this.scene.remove(warm);
       this.loading.completed=4;this.loading.label='Preparing skill effects';
       await this.spells.warm(this.renderer,this.camera,this.scene);if(this.disposed)return;
       await this.cardEffects?.warm(this.renderer,this.camera);if(this.disposed)return;
+      this.loading.label='Preparing the final lighting';
+      await this.post.warm(()=>this.disposed);if(this.disposed)return;
+      await loadingFrame();
       this.loading.completed=5;this.loading.label='Ready';
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
