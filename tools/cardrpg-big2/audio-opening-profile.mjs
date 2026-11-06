@@ -67,7 +67,7 @@ try {
     await cdp.send('IO.close', { handle: stream });
     await writeFile(`${directory}/${name}-trace.json.gz`, gzipSync(trace));
     await writeFile(`${directory}/${name}.json`, JSON.stringify(measurement, null, 2));
-    await page.getByRole('button', { name: 'Replay', exact: true }).click();
+    await page.getByRole('button', { name: 'Watch replay', exact: true }).click();
     await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.screenshot({ path: `${directory}/after-sound.png` });
