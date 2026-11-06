@@ -81,7 +81,7 @@ All nine nonstarter cats have rendered batch evidence and remain “improved”:
 | Rain Spool | improved | Rain attacks, 1.14 s intro, 300 ms phase pose |
 | Pantry Crown | improved | Pantry attacks, 1.14 s intro, 300 ms phase pose |
 
-Enemy checkpoints: [E1 #352](https://github.com/ntbaoheyhey/taskbar-hero/pull/352), [E2 evidence](enemies/e2/CHECKPOINT.md). Both have six clips/15required motion pairs and421E2E; E1/E2 CPU4 page MAX116.7/133.3ms, post-interactive100ms. Scoped cast matrices remain queued.
+Enemy checkpoints: [E1 #352](https://github.com/ntbaoheyhey/taskbar-hero/pull/352), [E2 #353](https://github.com/ntbaoheyhey/taskbar-hero/pull/353). Both have six clips/15required motion pairs and421E2E; E1/E2 CPU4 page MAX116.7/133.3ms, post-interactive100ms. Scoped cast matrices remain queued.
 
 Cat checkpoints: [B2a #343](https://github.com/ntbaoheyhey/taskbar-hero/pull/343), [B2b #346](https://github.com/ntbaoheyhey/taskbar-hero/pull/346), [B2c #347](https://github.com/ntbaoheyhey/taskbar-hero/pull/347). Each passes typecheck/lint/build, 1,684 web / 903 rules tests (+2 expected failures, 11 skips) and 421 archived-source E2E tests. Their ten-configuration scoped cast matrices remain queued.
 
