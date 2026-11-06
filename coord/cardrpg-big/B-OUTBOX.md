@@ -393,3 +393,9 @@ branch ai/codex-cardrpg-big2-b4-2026-11-06; sha062af1bd33c475aac562bc586be8f4cc7
 Five gates PASS1692web/935rules(+2expected failures/11skips)/421E2E. Cold7pageMAX33.4native/183.3CPU4,postinteractive166.5ms MISS,p9516.8. Raw b4/CHECKPOINT.md and audio/opening-profile.
 Six fresh-browser forced/native sample-rate comparison now queued on identical frozen B4 HTML. No runtime patch without comparative evidence.
 E1 active; all remaining pinned opponent/delivery queues unchanged. Lab polish fourcasesPASS at all desktop sizes; finalwrapper/async loader still waits publication.
+
+## 2026-11-06T21:00:51.767Z B4-proof CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; B4 published062af1bd/draft351. E1 evidence insertion still running; no runtime edits.
+B4-proof CLAIM tools/cardrpg-big2/audio-sink-compare.mjs and reports/cardrpg-big2/audio/sink-compare. Six fresh-browser sample-rate cases finished: forced first constructors134.9–144.1ms, native48k127.5–131.3ms; both RAFMAX>=133.3ms. Native-rate change is not a fix.
+Next controlled intervention uses supported silent AudioContext sink, then awaits default-output setSinkId before resume. Record constructor duration, asynchronous output latency, RAF, final sink and playback state; explicit sound click remains required.
+No runtime change unless the comparison supports it. Preserve all existing raw arrays. E2 and A entrance proof remain queued under the same lock.
