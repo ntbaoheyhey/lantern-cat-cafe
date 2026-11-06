@@ -65,6 +65,13 @@ try {
       const action = actions[index];
       await page.getByRole('button', { name: /Tangled Cafe/ }).click();
       await page.locator('.dp-node:enabled').first().click();
+      const fight = page.getByRole('button', { name: 'Fight', exact: true });
+      if (await fight.count()) {
+        await fight.click();
+        await page.getByRole('button', { name: 'Pause', exact: true }).click();
+        const automaticActions = await page.evaluate(() => window.__depthReview.battle.choices.length);
+        if (automaticActions) throw new Error('A battle action preceded the first-use gallery fixture');
+      }
       await page.waitForFunction(() => window.__depthScene?.ready, { timeout: 120000 });
       await page.evaluate(({ action, quality }) => {
         const m = window.__depthReview;
