@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-11-06T19:24:57.774Z",
+  "recordedAt": "2026-11-06T21:53:09.197Z",
   "method": "Compare all application, game-rules and asset file SHA256 values embedded in each saved build receipt with its immutable validation archive. Verify saved HTML against both build and archive receipts. Report tooling is excluded because measurement tools may evolve independently. This proves source identity, not runtime correctness.",
   "rows": [
     {
@@ -132,6 +132,30 @@
       "actualArtifact": "654a13cfca44c515f9d9941413f58681c345e28077ea8fecadbac200e2b9ba64",
       "artifactMatches": true,
       "comparedFiles": 987,
+      "mismatches": []
+    },
+    {
+      "receipt": "/tmp/cardrpg-big2-lab-polish-validation.json",
+      "archive": "/tmp/cardrpg-big2-lab-polish-validation",
+      "sourceHead": "8f7a8241c10d4436b8ccf9a37c487a5abf27684b",
+      "artifact": "/tmp/cardrpg-big2-lab-polish-index.html",
+      "buildHead": "8f7a8241c10d4436b8ccf9a37c487a5abf27684b",
+      "expectedArtifact": "5b3b35756fefdf0a55aa0602440483ce25472cb0ef1ea13a4a6716743043bbef",
+      "actualArtifact": "5b3b35756fefdf0a55aa0602440483ce25472cb0ef1ea13a4a6716743043bbef",
+      "artifactMatches": true,
+      "comparedFiles": 990,
+      "mismatches": []
+    },
+    {
+      "receipt": "/tmp/cardrpg-big2-sound-startup-validation.json",
+      "archive": "/tmp/cardrpg-big2-sound-startup-validation",
+      "sourceHead": "0f0b6f53e7705f6be210217d512516c81e932a07",
+      "artifact": "/tmp/cardrpg-big2-sound-startup-index.html",
+      "buildHead": "34f59d78771342de442010acfcb5a934b96158f0",
+      "expectedArtifact": "3b82f45c0669aa0ebfc6220277290258d8943febe1c5692b8f865fe3b2968ec4",
+      "actualArtifact": "3b82f45c0669aa0ebfc6220277290258d8943febe1c5692b8f865fe3b2968ec4",
+      "artifactMatches": true,
+      "comparedFiles": 994,
       "mismatches": []
     },
     {
