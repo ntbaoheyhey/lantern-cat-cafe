@@ -87,7 +87,7 @@ try {
     await page.getByRole('button', { name: /Save & settings/ }).click();
     await page.getByRole('button', { name: 'Export save code', exact: true }).click();
     const save = await page.getByLabel('Save code', { exact: true }).inputValue();
-    assert.ok(save.startsWith('THC6.'));
+    assert.ok(save.startsWith('THC7.'));
     assert.equal(await page.getByLabel('Playback speed', { exact: true }).inputValue(), '2');
     await page.getByRole('button', { name: 'Import save code', exact: true }).click();
     assert.equal((await state()).screen, 'hub');
