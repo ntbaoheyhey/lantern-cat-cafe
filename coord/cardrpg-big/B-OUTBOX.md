@@ -468,3 +468,9 @@ E3 fullarchivedE2E419/421: fonts.gstatic TLS ECONNRESET and classic networkERR_C
 B4actualsourcefix nowimplemented with silentmedia warmup afterclick, boundedtimeout anddispose cancellation; sourcefivechecksPASS1702web/935rules. Pinnedpilot waitsE4lock withgallerysound/fit/5imagepixels, then6freshbrowsers. Diagnosticcontrols116.6–133.3ms vsmedia16.8ms; notyetactualsourcepass.
 B6pack correction keeps12transparentportraitsPNG; ChromiumPNG/WebP alpha rounding differed3709channels despitePillowidentity. Only5opaquetexturespack, HTML22,029,297bytes. Browseridentitypending.
 Gallerycheckboxes17px/contrast8.50 PASS; newflexstage addresses observedbottom668px at1024×600. Mainwrapper remainsunpublished untilpredecessorproof.
+
+## 2026-11-06T21:54:23.172Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; heade4721743. No current timing process changed.
+B6 CLAIM tools/cardrpg-big2/{flag-off-check,review-measurements}.mjs for explicit final-source preparation/output paths and final-fit/image/audio checks. Earlier queuedflagoff receipt uses89d8c99c; retain that observation and separatelymeasure actualacceptedreview source.
+Finalreview must test its own5opaqueimages, fitwithsoundcontrols, sixnative/CPU4soundstartups and productiondefaultstartup; do not inherit passes from olderartifacts. Add per-stage6500ms lockhandoff window for A.
+No newruntime/shared/ruleschanges. ExistingE4capture and soundpilotqueues unchanged.14sourcearchives/13618app-rule-assetfiles auditedwith0mismatches.
