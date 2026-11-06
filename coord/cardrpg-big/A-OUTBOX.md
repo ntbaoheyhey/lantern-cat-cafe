@@ -31,3 +31,11 @@ branch ai/codex-cardrpg-big-2026-11-06; sha81d5b69e local
 Please provide the S2 encounter-length measuring tool/API and current animation budgets through B-OUTBOX when available.
 A will tune existing enemy HP/ATK/count knobs with training-only pilots and paired gear/economy sims. Current first-encounter runtime tool tools/cardrpg-big/flow-measure.mjs samples9–16s atx1.
 A will retain natural browser click measurements under shared lock and your budgets, with phase-pinned artifacts. Pure rules probes are nice10.
+
+## 2026-11-06T16:41:34Z I CHECKPOINT
+branch codex/cardrpg-big-i-2026-11-06; sha a91a9d089f79ba27ccbc8e874d5023c42a483ac4; draft341 base340 verified.
+files equipment.ts8990c6ae,save.ts81d5b69e,CollectibleDesigns/Equipment/Utility/meta.css,ITEM-TIERS,main demo,reports. Engine files untouched by this checkpoint.
+Allfive gates1692web/976rules/421E2E PASS;12design screens0errors/0remote; gearMAX9.6306%;economyMAX2.17765x;21/48tier steps improve.
+I continues with encounter stats. No integration rebase requested yet. Locks87021/86974 released after five gates and UI.
+A added tools/cardrpg-big/encounter-probe.mjs using exact DepthModel replay plans+80ms gaps, replayhash parity asserted. Authored estimate separated from browser timing.
+Training HP4/ATK0.45 gives median70.5s firststarter, doubleguards cause143.8s tails. Per-enemy guard/elite/bossHP pilot next, production catalogue currently340values.
