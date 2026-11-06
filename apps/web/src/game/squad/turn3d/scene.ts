@@ -14,18 +14,22 @@ import { loadModel } from './assets';
 import {screenBounds,auditBounds} from './scene-audit';
 import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
+import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
 
 export interface SceneView {
   decorateStage?: (stage: T.Group) => void;
+  animateStage?: (stage: T.Group, time: number, reducedMotion: boolean) => void;
+  autoBattle?: boolean;
+  rows?: Record<string, string>;
   chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
   targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
-  modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
+  modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { head?:T.Object3D; headRest:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -107,7 +111,7 @@ export class TurnScene {
     }
     this.spells=new SpellVfx(this.scene);
     void this.warmModels();
-    this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
+    this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
     this.renderer.domElement.addEventListener('pointerup',this.pick);
     this.renderer.domElement.addEventListener('webglcontextlost',this.lost);
@@ -165,8 +169,8 @@ export class TurnScene {
     const pot=mesh(new T.CylinderGeometry(.33,.23,.5,12),mat('#d2a580'),-5.35,.27,2.65);
     for(let i=0;i<7;i++){const leaf=mesh(new T.SphereGeometry(.2,8,5),mat(i%2?'#7eac8a':'#a6ba8b'),pot.position.x+Math.sin(i*2.4)*.22,.75+(i%3)*.12,2.65+Math.cos(i*2.4)*.18);leaf.scale.set(.5,1.7,.8);leaf.rotation.z=Math.sin(i)*.7;}
     mesh(new T.CylinderGeometry(.16,.19,.55,16),mat('#f8d6a1'),-1.1,.28,-3.2);
-    const flame=mesh(new T.SphereGeometry(.12,8,6),new T.MeshBasicMaterial({color:'#ffe6ad'}),-1.1,.67,-3.2);flame.scale.y=1.7;
-    const glow=new T.Sprite(new T.SpriteMaterial({map:this.glow,color:'#ffc27b',transparent:true,opacity:.6,blending:T.AdditiveBlending,depthWrite:false}));glow.position.copy(flame.position);glow.scale.set(1.1,1.1,1);group.add(glow);
+    const flame=mesh(new T.SphereGeometry(.12,8,6),new T.MeshBasicMaterial({color:'#ffe6ad'}),-1.1,.67,-3.2);flame.scale.y=1.7;flame.name='cafe-candle-flame';
+    const glow=new T.Sprite(new T.SpriteMaterial({map:this.glow,color:'#ffc27b',transparent:true,opacity:.6,blending:T.AdditiveBlending,depthWrite:false}));glow.position.copy(flame.position);glow.scale.set(1.1,1.1,1);glow.name='cafe-candle-halo';group.add(glow);
     // Dark cafe backdrop with softly lit panes; props fall into the cool fog.
     mesh(new RoundedBoxGeometry(16,6,.15,2,.12),mat('#342d3c'),0,2.3,-5.7);
     const pane=new T.MeshBasicMaterial({map:windowTexture,color:'#b59491'});
@@ -194,7 +198,8 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      const head = model.getObjectByName(`${a.role}_head`);
+      this.puppets.set(a.id,{head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -218,7 +223,7 @@ export class TurnScene {
     for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss);
     const frame=view.frame, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:formationPoint(a,view.boss);p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:restYaw(a.side);
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       p.gear.update(a,view.appearance?.(a));p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
       if(frame&&source===p){
@@ -234,8 +239,9 @@ export class TurnScene {
       if(frame&&!view.model&&!view.reducedMotion){
         const phase=frame.beat.kind,weight=phase==='anticipation'?ease(frame.progress):phase==='residue'?1-ease(frame.progress):1;
         const other=source===p?targets.find(t=>t!==p):targets.includes(p)?source:undefined;
-        if(other)p.model.rotation.y=blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
+        if(other)p.model.rotation.y=view.autoBattle?cardBodyYaw(a.side,targetYaw(p.base,other.base),weight):blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
       }
+      if(view.autoBattle && p.head) p.head.quaternion.copy(p.headRest);
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
@@ -258,8 +264,8 @@ export class TurnScene {
       const a=active.root.position,b=p.root.position,attr=line.geometry.attributes.position!;attr.setXYZ(0,a.x,.1,a.z);attr.setXYZ(1,b.x,.1,b.z);attr.needsUpdate=true;line.visible=true;line.material.color.set(frame?.color??TEAL);
     });
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
-    this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=view.camera==='close'?1.05:1;
-    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):stageHeight(this.camera.aspect);
+    this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
+    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
@@ -268,24 +274,35 @@ export class TurnScene {
     if(frame&&!view.reducedMotion&&!view.model){const shot=EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();
+    if(view.autoBattle && !view.model) {
+      for(const actor of view.actors) {
+        const puppet = this.puppets.get(actor.id);
+        if(!puppet?.head || actor.hp <= 0) continue;
+        const focus = puppet === source ? targets.find(target => target !== puppet) : source;
+        focusCardHead(puppet.head, this.camera, focus?.root.position, puppet.gaze, delta, view.fixedTime !== undefined);
+      }
+    }
+    view.animateStage?.(this.stage, this.time, view.reducedMotion);
     this.positions.clear();for(const [id,p] of this.puppets)this.positions.set(id,p.root.position);
     this.spells.render(frame,view.actors,this.positions,this.camera,this.time,view.reducedMotion);this.stats.particles=this.spells.count;
     this.renderer.info.reset();this.post.render(this.scene,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
-    if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line)geometries.add(o.geometry);});let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
+    if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);});let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
     // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
     const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0||(view.autoBattle&&a.side==='party'))continue;
       if(frame?.plan.ultimate&&['anticipation','travel','impact'].includes(frame.beat.kind)&&a.id!==frame.plan.actorId&&!frame.plan.targetIds.includes(a.id))continue;
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
       const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?48:a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
-    const placed=layoutLabels(labels,this.width,this.height,90);
-    this.labelAudit.heads=labels.map(p=>p.head);this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);
+    const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
+      .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];
+    const placed=layoutLabels(labels,this.width,this.height,view.autoBattle?138:90,obstacles);
+    this.labelAudit.heads=[...labels.map(p=>p.head),...obstacles];this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);
     for(const a of projected){const box=placed.get(a.id);if(box){a.labelX=box.x+box.width/2;a.labelY=box.y}else a.visible=false;}
     this.onAnchors(projected);
   }

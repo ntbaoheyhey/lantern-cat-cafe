@@ -18,7 +18,7 @@ export class DepthModel {
   galleryId = GALLERY_ACTIONS[0]!.id;
   readonly galleryActions = GALLERY_ACTIONS;
   watching = false;
-  camera: 'wide' | 'close' | 'overhead' = 'wide';
+  camera: 'wide' | 'close' | 'far' = 'wide';
   paused = false;
   tutorialBattle: R.Battle | null = null;
   replay: R.Battle | null = null;

@@ -31,3 +31,51 @@
 .dp-cat-result label { display: block; }
 .dp-cat-result label span { display: flex; justify-content: space-between; font-size: 12px; }
 .dp-cat-result progress { width: 100%; height: 8px; accent-color: #a6c9b1; }
+
+/* The battlefield owns the centre. Status strips reserve their own space. */
+.dp-battle-top { height: 48px; box-sizing: border-box; padding: 5px 16px; gap: 9px; }
+.dp-app .dp-battle-top h1 { display: inline; font-size: 17px; margin-left: 10px; }
+.dp-battle-top > div:first-child { white-space: nowrap; }
+.dp-battle-top label { gap: 5px; font-size: 10px; }
+.dp-battle-top button { padding: 5px 8px; min-height: 29px; }
+.dp-roundbar { height: 28px; padding: 2px 16px; gap: 5px; }
+.dp-roundbar > span { height: 21px; padding: 0 7px 0 2px; font-size: 10px; }
+.dp-roundbar img { width: 19px; height: 21px; }
+.dp-party { position: static; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; max-width: none; height: 52px; flex: none; background: #262330; border-top: 1px solid #685468; }
+.dp-party-card { display: flex; align-items: center; gap: 9px; width: auto; height: 52px; min-height: 0; box-sizing: border-box; padding: 4px 16px; border: 0; border-right: 1px solid #504554; border-radius: 0; background: transparent; }
+.dp-party-card.current { background: #493e39; box-shadow: inset 0 2px #e8c38c; }
+.dp-party-card > img { width: 33px; height: 42px; }
+.dp-party-health { flex: 1; min-width: 0; }
+.dp-party-health > span { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.dp-party-health > span strong { font: 10px/1.3 system-ui; color: #e9dfce; }
+.dp-party-health > span b { font-size: 11px; }
+.dp-party-health progress { display: block; height: 4px; width: 100%; margin-top: 3px; accent-color: #a8d4b6; }
+.dp-party .dp-statuses { height: 12px; overflow: hidden; margin-top: 2px; white-space: nowrap; }
+.dp-statuses > span { border: 0; padding: 0 3px; font-size: 8px; }
+.dp-charge { display: grid; place-items: center; width: 29px; height: 29px; flex: none; border-radius: 50%; background: conic-gradient(#e8c38c var(--charge),#534653 0); }
+.dp-party-card .dp-charge small { display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: #292431; font-size: 9px; }
+.dp-action-caption { height: 24px; min-height: 24px; box-sizing: border-box; padding: 3px 16px; gap: 12px; font-size: 10px; }
+.dp-action-caption > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.dp-world-plate { position: absolute; top: 0; left: 0; width: 138px; height: 48px; box-sizing: border-box; padding: 4px 6px; border: 1px solid #ac8994; border-radius: 6px; background: #27222be8; color: #f1e5d5; font: 10px/1.2 system-ui; overflow: hidden; }
+.dp-world-plate[hidden] { display: none; }
+.dp-world-plate > div:first-child { display: flex; justify-content: space-between; align-items: baseline; gap: 4px; }
+.dp-world-plate b { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 10px; }
+.dp-world-plate small { white-space: nowrap; font-size: 8px; }
+.dp-world-plate progress { display: block; height: 4px; width: 100%; margin: 3px 0; accent-color: #e8b29a; }
+.dp-world-plate .dp-intent { display: block; text-overflow: ellipsis; overflow: hidden; }
+.dp-world-plate .dp-statuses { margin: 1px 0 0; white-space: nowrap; }
+@media (max-width:1100px) {
+  .dp-battle-top { gap: 6px; padding-inline: 10px; }
+  .dp-battle-top button { padding-inline: 6px; font-size: 10px; }
+  .dp-app .dp-battle-top h1 { margin-left: 5px; font-size: 15px; }
+  .dp-battle-top small { font-size: 10px; }
+  .dp-party-card { padding-inline: 10px; }
+}
+@media (max-height:650px) {
+  .dp-battle-top { height: 42px; }
+  .dp-roundbar { height: 24px; }
+  .dp-party, .dp-party-card { height: 44px; }
+  .dp-party-card > img { width: 27px; height: 34px; }
+  .dp-party .dp-statuses { height: 9px; }
+  .dp-action-caption { height: 20px; min-height: 20px; padding-block: 1px; }
+}

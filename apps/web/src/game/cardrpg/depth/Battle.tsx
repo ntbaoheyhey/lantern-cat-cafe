@@ -1,18 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_BY_ID } from '@taskbar-hero/game-rules/cardrpg';
 import { SQUAD_ITEMS, type SquadItem } from '@taskbar-hero/game-rules/src/squad/gear/catalog';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EquipmentAppearance } from '../../squad/turn3d/appearance';
-import { TurnScene, type SceneView } from '../../squad/turn3d/scene';
+import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
+import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { MODEL_IDS, portrait } from './assets';
 import type { DepthModel } from './model';
-import { decorateChapterStage } from './chapter-stage';
+import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 
 function project(battle: R.Battle): TurnActor[] {
   const slots = { party: 0, enemy: 0 };
   return battle.actors.map(actor => ({
-    ...actor, slot: slots[actor.side]++, role: (CARD_BY_ID[actor.catalogId]?.role ?? R.ENEMY_BY_ID[actor.catalogId]?.role ?? 'guard') as TurnActor['role'],
+    ...actor, slot: actor.side === 'enemy' && actor.hp <= 0 ? slots.enemy : slots[actor.side]++, role: (CARD_BY_ID[actor.catalogId]?.role ?? R.ENEMY_BY_ID[actor.catalogId]?.role ?? 'guard') as TurnActor['role'],
     equipment: {}, setBonuses: [], statuses: [], shieldRounds: 1, shieldAppliedRound: battle.round,
     crit: 0, auto: false, cooldownApplied: {}, turnsTaken: actor.turns, controlCount: 0, passiveReady: 0, quickenedRound: 0,
     cardRpg: { cardId: actor.catalogId, name: actor.name, stats: {} as never, properties: [], sets: [], itemIds: actor.equipment },
@@ -32,14 +33,15 @@ function appearance(actor: TurnActor): EquipmentAppearance {
   return result;
 }
 function Statuses({ actor }: { actor: R.Actor }) {
-  return <div className="dp-statuses">{actor.statuses.map(status => <details key={status.id}>
-    <summary>{R.STATUS_BY_ID[status.id].name} {status.stacks} · {status.remaining}r</summary>
-    <p className="dp-keyword-tip">{R.STATUS_BY_ID[status.id].description} Stacks {status.stacks}/{R.STATUS_BY_ID[status.id].cap}. {status.remaining} rounds remaining.</p>
-  </details>)}</div>;
+  return <div className="dp-statuses">{actor.statuses.map(status => <span key={status.id}
+    title={`${R.STATUS_BY_ID[status.id].description} Stacks ${status.stacks}/${R.STATUS_BY_ID[status.id].cap}. ${status.remaining} rounds remaining.`}>
+    {R.STATUS_BY_ID[status.id].name} {status.stacks} · {status.remaining}r
+  </span>)}</div>;
 }
 export function BattleView({ m }: { m: DepthModel }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
+  const plates = useRef(new Map<string, HTMLDivElement>());
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
   const [logOpen, setLogOpen] = useState(false);
@@ -48,7 +50,9 @@ export function BattleView({ m }: { m: DepthModel }) {
   lastBattle.current = battle;
   view.current = { actors: project(battle), currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance,
-    decorateStage: decorateChapterStage, chapter: battle.chapter, camera: m.camera,
+    decorateStage: decorateChapterStage, animateStage: animateChapterStage,
+    autoBattle: true, rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
+    chapter: battle.chapter, camera: m.camera,
     targetIds: m.plan?.targetIds ?? [], legalIds: [],
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
@@ -56,7 +60,16 @@ export function BattleView({ m }: { m: DepthModel }) {
     let animation = 0, last = 0, ready = false;
     const currentAudio = m.audio;
     try {
-      scene.current = new TurnScene(host.current!, () => ({ ...view.current!, frame: m.frame }), () => {}, () => {}, message => {
+      const anchorPlates = (anchors: Anchor[]) => {
+        for (const plate of plates.current.values()) plate.hidden = true;
+        for (const anchor of anchors) {
+          const plate = plates.current.get(anchor.id);
+          if (!plate) continue;
+          plate.hidden = !anchor.visible;
+          plate.style.transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
+        }
+      };
+      scene.current = new TurnScene(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
         m.sceneError = message; m.notify(false);
       });
       window.__depthScene = scene.current;
@@ -92,24 +105,31 @@ export function BattleView({ m }: { m: DepthModel }) {
       <label>Speed<select aria-label="Playback speed" value={m.state.settings.speed} onChange={event => { m.state.settings.speed = Number(event.target.value); m.notify(); }}>{[1, 2, 4].map(speed => <option key={speed} value={speed}>{speed}×</option>)}</select></label>
       <button onClick={() => { m.paused = !m.paused; m.notify(false); }}>{m.paused ? 'Resume' : 'Pause'}</button>
       <button onClick={() => m.skip()}>Skip to result</button>
-      <label>Camera<select aria-label="Camera preset" value={m.camera} onChange={event => { m.camera = event.target.value as typeof m.camera; m.notify(false); }}><option value="close">Close</option><option value="wide">Medium</option><option value="overhead">Overhead</option></select></label>
+      <label>Camera<select aria-label="Camera preset" value={m.camera} onChange={event => { m.camera = event.target.value as typeof m.camera; m.notify(false); }}>{Object.entries(CARD_CAMERAS).map(([id, preset]) => <option key={id} value={id}>{preset.name}</option>)}</select></label>
       <button onClick={() => { void m.audio.toggle().then(() => { setSound(m.audio.enabled); m.state.settings.sound = m.audio.enabled; m.notify(); }); }}>Sound {sound ? 'on' : 'off'}</button>
       <button onClick={() => setLogOpen(!logOpen)}>Battle log</button><button onClick={() => m.leave()}>Leave table</button>
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>
-    {m.tutorialBattle && <p className="dp-tutorial" role="status">Your team chooses every action. Watch who needs help, then improve your team and equipment after the fight.</p>}
     <div className={`dp-arena chapter-${battle.chapter}`}><div className="dp-canvas" ref={host} />
       {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status">Preparing the cafe miniatures…</div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
-      <div className="dp-enemies">{battle.actors.filter(candidate => candidate.side === 'enemy').map(enemy => {
+      {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
-        return <div className="dp-enemy" key={enemy.id}><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp} HP</small><progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} /><small>{intent?.interrupted ? 'Interrupted' : intent?.label ?? 'Defeated'}</small><Statuses actor={enemy} /></div>;
-      })}</div>
-      <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''}`} key={cat.id}>
-        <div className="dp-party-status"><img src={portrait(cat.catalogId)} alt="" /><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong><small>Ultimate {cat.charge}/100</small></span></div><Statuses actor={cat} />
-      </div>)}</div>
+        return <div className="dp-world-plate" key={enemy.id} data-actor={enemy.id} data-hp-plate hidden
+          ref={element => { if (element) plates.current.set(enemy.id, element); else plates.current.delete(enemy.id); }}>
+          <div><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp}</small></div>
+          <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
+          <small className="dp-intent" title={intent?.label}>{intent?.interrupted ? 'Interrupted' : intent?.label}</small>
+          <Statuses actor={enemy} />
+        </div>;
+      })}
     </div>
-    <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : actor?.name}</b><span>{action?.text ?? 'Your companions are ready.'}</span></div>
+    <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''}`} key={cat.id} data-hp-plate>
+      <img src={portrait(cat.catalogId)} alt="" />
+      <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
+      <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>
+    </div>)}</div>
+    <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : actor?.name}</b><span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span></div>
     {logOpen && <aside className="dp-log" aria-label="Battle log"><button onClick={() => setLogOpen(false)}>Close log</button>{battle.log.slice(-100).reverse().map((event, index) => <p key={index}>R{event.round} · {event.text || `${battle.actors.find(candidate => candidate.id === event.actorId)?.name} → ${battle.actors.find(candidate => candidate.id === event.targetId)?.name} · ${event.kind} ${event.amount || ''}`}</p>)}</aside>}
   </section>;
 }
