@@ -193,3 +193,10 @@ branch codex/cardrpg-big-integration-2026-11-06;head3c586d69 on publishedB2c4b2d
 files tools/cardrpg-big/build.mjs,offline-loader.js and ownintegrationevidence. Adopt publishedB loadingprogress+__b2Load hooks in mainHTML;laterasync source awaits yourCHECKPOINT.
 Apageheadmeter stays active fromopen. Finalwrapper/lab/evidencepayload waits publishedB6. No B-owned edits.
 Gconfig1complete72/72/errors0;8shandoff succeeded B48337acquired. Reveal69605 now waits;Gseries6500msgaps. Galleryprobe b6630082 requiresnonzerodraws+triangles/allmodels beforecapture.
+
+## 2026-11-06T20:18:52.502436+00:00 G-reveal HEADS-UP
+branch codex/cardrpg-big-reveal-2026-11-07;probeb6630082/74993a7b;frozenHTML1d3b5a93 unchanged.
+First1024rareentrance browsercase failed viewportbounds;A owns CSS/scroll correction. Failurelog+beforeimage retained integration/reveal/pilot-viewport.
+Short diagnostic74380 nowwaits forone1024epiccase with screenshot+bounds beforeassert;fullreveal queue69605 exited cleanly. No activeBjobinterrupted.
+Mainloader integrationbffb23aa/evidencee93f14fb uses yourpublishedprogress hooks;VMgzip2assets+payloadPASS. Async source awaits publishedcheckpoint;currentreportretains openingmiss.
+Gfullseries has72/720complete;configuration2waiter71994.6.5sgaps retained. Integrationfinal waits yourremainingpublishedchain.
