@@ -57,3 +57,19 @@ it('starts a new lesson and resets without inheriting a paused battle', () => {
   expect(model.sceneStarted).toBe(false);
   expect(model.battle).toBeNull();
 });
+
+it('previews every authored skill and enemy without mutating account progress', () => {
+  const model = new DepthModel(true);
+  const original = exportSave(model.state);
+  expect(model.galleryActions).toHaveLength(61);
+  for (const action of model.galleryActions) {
+    model.inspect(action.id, .5);
+    expect(model.battle?.actors.some(actor => actor.catalogId === action.owner)).toBe(true);
+    expect(model.plan?.actorId).toBeTruthy();
+    expect(model.frame?.actionProgress).toBeCloseTo(.5);
+    expect(model.canAct).toBe(false);
+  }
+  model.closeGallery();
+  expect(model.battle).toBeNull();
+  expect(exportSave(model.state)).toBe(original);
+});

@@ -3,6 +3,7 @@ import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onbo
 import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
 import { createActionPlan, sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
+import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 
 export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence';
@@ -13,6 +14,9 @@ export class DepthModel {
   itemId = '';
   notice = 'Your next step is a short lesson at the practice table.';
   error = false;
+  galleryBattle: R.Battle | null = null;
+  galleryId = GALLERY_ACTIONS[0]!.id;
+  readonly galleryActions = GALLERY_ACTIONS;
   auto = false;
   paused = false;
   selectedSkill = '';
@@ -63,11 +67,27 @@ export class DepthModel {
     this.revision++;
     for (const listener of this.listeners) listener();
   }
-  get battle() { return this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
+  get battle() { return this.galleryBattle ?? this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
   get saveStatus() { return this.offline ? 'Export to keep progress' : this.storageFailed ? 'Export to keep progress · local saving unavailable' : 'Saved locally'; }
   get busy() { return !!this.plan; }
-  get canAct() { return !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
+  get canAct() { return !this.galleryBattle && !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
   get frame() { return this.plan ? sampleActionPlan(this.plan, this.animationAt, this.state.settings.reducedMotion) : null; }
+  inspect(id: string, progress = 0, play = false) {
+    const fixture = galleryFixture(id);
+    this.galleryId = id;
+    this.galleryBattle = fixture.battle;
+    this.plan = progress < 0 ? null : fixture.plan;
+    this.animationAt = fixture.plan.duration * Math.max(0, Math.min(1, progress));
+    this.paused = !play;
+    this.sceneStarted = true;
+    this.notify(false);
+  }
+  closeGallery() {
+    this.galleryBattle = null;
+    this.plan = null;
+    this.paused = false;
+    this.notify(false);
+  }
   apply(result: R.RuleResult<R.DepthAccount>, message = 'Saved to your cafe account.') {
     this.error = !result.ok;
     if (result.ok) { this.state = result.state; this.notice = message; this.audio.ui(); }
