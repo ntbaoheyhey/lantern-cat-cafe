@@ -8,8 +8,8 @@ import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { portrait } from './assets';
 import type { DepthModel } from './model';
 
-export function CompanionPreview({ m, id, skillId, home = false, visible = true }: {
-  m: DepthModel; id?: string; skillId?: string; home?: boolean; visible?: boolean;
+export function CompanionPreview({ m, id, skillId, entranceKey, home = false, visible = true }: {
+  m: DepthModel; id?: string; skillId?: string; entranceKey?: string; home?: boolean; visible?: boolean;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
@@ -38,8 +38,8 @@ export function CompanionPreview({ m, id, skillId, home = false, visible = true 
       decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     };
   }, [fixture, home, id, skillId, state.settings.reducedMotion, state.settings.quality]);
-  const options = useRef({ view, fixture, rotating, angle, skillId, visible });
-  options.current = { view, fixture, rotating, angle, skillId, visible };
+  const options = useRef({ view, fixture, rotating, angle, skillId, visible, id, entranceKey });
+  options.current = { view, fixture, rotating, angle, skillId, visible, id, entranceKey };
 
   useEffect(() => {
     if (!host.current) return;
@@ -48,6 +48,9 @@ export function CompanionPreview({ m, id, skillId, home = false, visible = true 
     let prepared = false;
     let elapsed = 0;
     let last = 0;
+    let playedEntrance: string | undefined;
+    let entrancePending = false;
+    let nextEntranceAttempt = 0;
     let currentFixture = options.current.fixture;
     const getView = () => {
       const current = options.current;
@@ -56,7 +59,7 @@ export function CompanionPreview({ m, id, skillId, home = false, visible = true 
       const actionAt = plan ? elapsed % (plan.duration + 900) : 0;
       current.view.frame = plan && actionAt < plan.duration ? sampleActionPlan(plan, actionAt, current.view.reducedMotion) : null;
       current.view.suspended = m.showBattle || !current.visible;
-      if (current.view.model) current.view.model.angle = current.angle + (current.rotating && !current.view.reducedMotion ? elapsed * .00016 : 0);
+      if (current.view.model) current.view.model.angle = current.angle + (current.rotating && !current.entranceKey && !current.view.reducedMotion ? elapsed * .00016 : 0);
       return current.view;
     };
     const start = window.setTimeout(() => {
@@ -69,6 +72,19 @@ export function CompanionPreview({ m, id, skillId, home = false, visible = true 
           if (scene.current?.ready && !m.showBattle && options.current.visible) {
             elapsed += last ? Math.min(100, now - last) : 0;
             if (!prepared) { prepared = true; setStatus(''); }
+            const current = options.current;
+            if (current.entranceKey && current.id && current.entranceKey !== playedEntrance
+              && !entrancePending && now >= nextEntranceAttempt) {
+              const key = current.entranceKey;
+              entrancePending = true;
+              nextEntranceAttempt = now + 100;
+              void scene.current.playEntrance(current.id).then(played => {
+                if (!stopped && played && options.current.entranceKey === key) playedEntrance = key;
+              }).catch(() => {
+                if (!stopped) setStatus('The companion portrait is ready. The miniature is unavailable.');
+                playedEntrance = key;
+              }).finally(() => { entrancePending = false; });
+            }
           }
           last = now;
           timer = requestAnimationFrame(tick);
@@ -90,7 +106,7 @@ export function CompanionPreview({ m, id, skillId, home = false, visible = true 
   return <div className={`dp-miniature ${home ? 'dp-miniature-home' : ''}`}>
     <div className="dp-miniature-canvas" ref={host} aria-label={home ? 'Your team at the cafe' : `${R.CAT_BY_ID[id!]!.name} miniature`} />
     {status && <div className="dp-miniature-loading" role="status"><img src={portrait(id ?? state.team[0]!)} alt="" /><span>{status}</span></div>}
-    {!home && !skillId && <div className="dp-miniature-controls">
+    {!home && !skillId && !entranceKey && <div className="dp-miniature-controls">
       <button aria-pressed={rotating} onClick={() => setRotating(!rotating)}>{rotating ? 'Pause rotation' : 'Rotate miniature'}</button>
       <label>Angle<input type="range" min={-180} max={180} value={angle * 180 / Math.PI}
         onChange={event => { setRotating(false); setAngle(Number(event.target.value) * Math.PI / 180); }} /></label>

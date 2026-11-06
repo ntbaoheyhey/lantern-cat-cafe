@@ -31,6 +31,11 @@ export function Invitations({ m }: { m: DepthModel }) {
   const available = CARD_RPG_CONFIG.maxDrawsPerDay - m.state.account.daily.draws;
   const featuredId = banner.kind === 'cat' ? banner.featuredCardId ?? 'clover' : undefined;
   const history = [...m.state.account.history].reverse();
+  const rareCard = revealing && active?.cardId && (active.rarity === 'epic' || active.rarity === 'legendary')
+    ? active.cardId : undefined;
+  const entranceKey = rareCard && active && phase === 'reveal' ? `${active.bannerId}-${active.index}` : undefined;
+  const previewId = rareCard ?? featuredId;
+  const previewVisible = !revealing || !!entranceKey;
 
   useEffect(() => {
     const preference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
@@ -75,6 +80,15 @@ export function Invitations({ m }: { m: DepthModel }) {
     <div className="cr-tabs dp-banner-tabs" aria-label="Invitation banners">{BANNERS.map(choice =>
       <button key={choice.id} aria-pressed={bannerId === choice.id} disabled={revealing}
         onClick={() => { setBannerId(choice.id); setResults([]); }}>{choice.name}</button>)}</div>
+    <section className="dp-invitation-fairness" aria-label="Invitation fairness">
+      <div className="dp-fairness-pity"><strong>Legendary guaranteed in {banner.hardPity - pity.sinceLegendary}</strong>
+        <span>{pity.sinceLegendary}/{banner.hardPity} pulls · Next legendary {(odds.legendary / 100).toFixed(2)}%</span></div>
+      <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
+        <span key={rarity}>{rarity} {value / 100}%</span>)}</div>
+      <p>{cost} stamps each · Earn stamps from cafe service, routes and quests.</p>
+      <a href="#invitation-history">{history[0] ? `Latest · ${resultName(history[0])} · ${history[0].rarity}` : 'Recent invitations'}
+        {history[0]?.cardId && history[0].duplicate ? ` · ${history[0].shards} shards` : ''} · View history ({history.length})</a>
+    </section>
     <div className="dp-invitation-grid">
       <section className="cr-panel dp-banner-info" aria-label="Invitation costs and odds">
         <h2>{banner.name}</h2><p>{banner.description}</p>
@@ -90,7 +104,7 @@ export function Invitations({ m }: { m: DepthModel }) {
         </div>
         <small>{available} invitations left today · Account-bound</small>
         {inRun && <p>Finish your current route to open invitations.</p>}
-        <div className="dp-pity"><strong>Legendary guaranteed in {banner.hardPity - pity.sinceLegendary}</strong>
+        <div className="dp-pity"><strong>Legendary pity progress</strong>
           <progress aria-label="Legendary pity" value={pity.sinceLegendary} max={banner.hardPity} />
           <small>{pity.sinceLegendary}/{banner.hardPity} · Soft pity begins on pull {banner.softPity}</small>
         </div>
@@ -106,7 +120,7 @@ export function Invitations({ m }: { m: DepthModel }) {
             {CARD_BY_ID[item.id]?.name ?? R.GEAR_BY_ID[item.id]?.name ?? item.id} · {(item.probability * 100).toFixed(4)}%</p>)}
         </details>
       </section>
-      <section className={`cr-panel dp-invitation-stage ${revealing ? 'is-revealing' : ''}`} aria-label="Invitation reveal">
+      <section className={`cr-panel dp-invitation-stage ${revealing ? 'is-revealing' : ''} ${entranceKey ? 'is-rare-reveal' : ''}`} aria-label="Invitation reveal">
         {revealing && active ? <>
           <div className="dp-reveal-toolbar"><span>Invitation {index + 1} of {results.length}</span>
             <button onClick={() => setPhase('summary')}>Skip reveal</button></div>
@@ -130,8 +144,9 @@ export function Invitations({ m }: { m: DepthModel }) {
             : <div className="dp-equipment-banner"><ItemIcon slot="weapon" /><ItemIcon slot="outfit" />
               <ItemIcon slot="charm" /><ItemIcon slot="relic" /><p>Four equipment slots · Account-bound</p></div>}
         </div>}
-        {featuredId && <div className="dp-invitation-preview" hidden={revealing}>
-          <CompanionPreview m={m} id={featuredId} skillId={`${featuredId}-1`} visible={!revealing} />
+        {previewId && <div className="dp-invitation-preview" hidden={!previewVisible}>
+          <CompanionPreview m={m} id={previewId} skillId={rareCard ? undefined : `${previewId}-1`}
+            entranceKey={entranceKey} visible={previewVisible} />
         </div>}
       </section>
     </div>
@@ -143,7 +158,7 @@ export function Invitations({ m }: { m: DepthModel }) {
         <p>{result.cardId && result.duplicate ? `Duplicate → ${result.shards} shards` : result.duplicate ? 'Another equipment piece' : 'New to your collection'}</p>
       </article>)}</div><div className="cr-actions"><button onClick={() => m.go('team')}>Build your team</button><button onClick={() => m.go('inventory')}>View inventory</button></div>
     </section>}
-    <section className="cr-panel dp-pull-history"><h2>Recent invitations</h2>
+    <section id="invitation-history" className="cr-panel dp-pull-history"><h2>Recent invitations</h2>
       <p>{history.length} recorded results · Latest first · Each banner keeps its own pity</p>
       {history.length === 0 ? <p>Your opened invitations will appear here.</p> : <div className="dp-history-scroll"><table>
         <thead><tr><th>Banner / pull</th><th>Result</th><th>Rarity</th><th>Received</th></tr></thead>
