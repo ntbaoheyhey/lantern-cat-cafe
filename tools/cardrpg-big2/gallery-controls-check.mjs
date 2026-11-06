@@ -30,7 +30,7 @@ try {
         return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
       };
       const a = luminance(style.color), b = luminance(style.backgroundColor);
-      return { checkboxes, tab: { color: style.color, background: style.backgroundColor, contrast: (Math.max(a, b) + .05) / (Math.min(a, b) + .05) }, overflow: document.documentElement.scrollWidth > innerWidth };
+      return { checkboxes, stage: rect(document.querySelector('.b2-gallery-stage').getBoundingClientRect()), tab: { color: style.color, background: style.backgroundColor, contrast: (Math.max(a, b) + .05) / (Math.min(a, b) + .05) }, overflow: document.documentElement.scrollWidth > innerWidth };
     });
     rows.push({ width, height, ...controls });
     await page.screenshot({ path: `${output}/${width}-gallery.png` });

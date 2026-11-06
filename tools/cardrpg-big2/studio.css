@@ -2,3 +2,7 @@
 @media(max-height:650px){.b2-studio>header{padding:8px 18px}.b2-studio h1{font-size:21px}.b2-gallery-tools{padding:6px 14px;gap:6px}.b2-gallery-stage{height:calc(100vh - 272px);min-height:240px}.b2-checklist{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .b2-comparison img{max-width:480px}body:has(.dp-battle:not(.dp-hidden)) .b2-demo-tools:has(.b2-lab-entry){display:none}
+
+/* Keep native checkbox hit boxes square despite the main form's minimum height. */
+.b2-gallery-tools label:has(input[type=checkbox]){gap:8px}
+.b2-gallery-tools input[type=checkbox]{appearance:auto;flex:none;width:17px;height:17px;min-height:0;margin:0;padding:0;accent-color:#debb83}
