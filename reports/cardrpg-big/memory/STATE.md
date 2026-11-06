@@ -5,12 +5,12 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
 Lane A · Phase I balance/caps. New lane split appended verbatim, rules30 lines. Train/heldout/economy complete. Gear cap9.6306% PASS, positive tier steps21/48 MISS, economyMAX2.17765x PASS. Focused120/120 pass. Candidate main0.75/affix0.25.
 Worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06
-Last pushed50373df5. Local equipment commit8990c6ae awaits five-gate validation/push. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M #340 head97c18853, baseF5 verified.
-Sync /Users/bao/taskbar-hero-cardrpg-sync branch ai/codex-cardrpg-big-sync. Sync pusha8df79c3 contains A-OUTBOX I CLAIM/G API REQUEST/S2 ownership REQUEST. B1 CLAIM read; B owns F6/art and will supply encounter measure tool. OWNERSHIP.md now created verbatim by B and read at89b21bd5. G API promisedB2.
+Last pusheda91a9d08. Includes equipment8990c6ae, save81d5b69e andcaps/UI checkpoint afterfive gates. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I. I draft341 head a91a9d08 base340 verified. M #340 head97c18853, baseF5 verified.
+Sync /Users/bao/taskbar-hero-cardrpg-sync branch ai/codex-cardrpg-big-sync. Sync pusha8df79c3 contains A-OUTBOX I CLAIM/G API REQUEST/S2 ownership REQUEST. B1 ANSWER read16:44UTC. Same flow-measure API and80ms gap confirmed, B lock91287 active; native pilotMAX33.4ms,CPU4/full720pending. OWNERSHIP.md now created verbatim by B and read at89b21bd5. G API promisedB2.
 B owns F6/engine/performance, remaining9cats/enemies/bosses, art/audio and default-off auto-extras. No B-owned uncommitted edits in A. G WIP b5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 ## NEXT
-1. Equipment8990c6ae local. Save repair81d5b69e local,53/53tests and150routes/450encounters match. i-checkpoint93991 allfive PASS1692web/976rules/421E2E. Design12captures0errors, actual artifact2806debe. Locks released. Push checkpoint after gates.
-2. Verify caps/help/UI, tune encounter duration with existing rules knobs and before/after sims; I draft sibling off340. Then G sibling off340 and narrow collection preview.
+1. Three encounter pilots complete in-memory. Long-doubleguard and early tier saturation need per-enemy follow-up before final30001+heldout. Raw JSON gzip preserves hashes.
+2. Finish encounter balance with isolated rules commit, full gear/economy sims and locked browser timing, update I draft off340. Then G sibling off340 and narrow collection preview.
 3. Merge A/B checkpoints into integration draft, allfive gates and extrasON/OFF gear/economy sims, then fresh-eyes/F7 merged report and ledger STATE. B owns all engine timing fixes.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
@@ -32,6 +32,8 @@ F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-06 23:44 · Evidence commit e9b5cd9c push rejected because pilot-two raw133092080bytes exceedsGitHub100MiB. Compress raw JSON losslessly, record raw/gzip SHA and amend only this unpublished commit. Future probes write compact progress summaries plus raw.json.gz.
+2026-11-06 23:41 · Draft341 opened and verified, a91a9d08 on340. Pilot2 long outliers are double Button Guards with shield/defense. Next in-memory pilot3 uses guardHP2.1×,elite/bossHP2.5×,others4×,ATK0.45× on2001–2020. Plan and exactHP overrides retained.
 2026-11-06 23:38 · I five gates1692web/976rules/421E2E and12design UI captures PASS. Visually reviewed1024help and1280last-cap screens. First enemy-stat pilot training2001–2010 stays in-memory. HP4/ATK0.4 starter planned median66.394s,max143.786s,route1/10; actual browser timing pending.
 2026-11-06 23:35 · Read immutable OWNERSHIP supplied by B at sync89b21bd5, satisfying section2 ownership read. B1 owns loading/profile, G API promisedB2. A requested encounter measuring tool, keeps enemyHP/ATK/count decisions. I validation under lock87021 has4gates pass, E2E and UI pending. Encounter probe authored, seed2001+ training and30001+final heldout declared in items/PLAN.md.
 2026-11-06 23:33 · Equipment8990c6ae committed locally with50files raw receipts, only equipment.ts runtime rules change. Save fix passes53 focused cases and150 paired routes with matching encounter hashes. Timing wrapper prepared for all forthcoming browser/E2E runs.
@@ -134,11 +136,11 @@ Layout/scale/faces ·stage78.889%,2745poses0overlap/crop,<=55deg. Scale band par
 Turn clarity/lag ·F5 cold7/full720/profiles5 complete,opening hitch fixes pending. flow/PERFORMANCE.md.
 Beyond battle ·ten destinations plus Prepare/Result, M cards/team/home pass UI33. meta/screens/checks.json.
 Equipment ·384template/model visibility cases pass,transactions/paper-doll verified. meta/gear/summary.json.
-Items ·five inventory categories verified,source-audited tier draft awaits I sims. meta/screens,docs/design/cardrpg/ITEM-TIERS.md.
-Rarity ·four frames and12legendary geometries authored, balance pending. meta/gear,items/PLAN.md.
-Balance ·A1/A2 sims recorded,starter chapter1 regression parked for I. sim/auto-a*.json.
+Items ·five inventory categories verified,source-audited tier table and I sims recorded. meta/screens,docs/design/cardrpg/ITEM-TIERS.md.
+Rarity ·four frames/12legendary geometries, single-piece9.63%cap PASS, tier separation partial. meta/gear,items/PLAN.md.
+Balance ·I gear/economy receipts recorded,21/48tier steps positive, encounterHP/ATK pilots running. sim/auto-a*.json.
 Gacha ·earned-only odds/pity exist,shared card component,ceremony/batch/history pending G.
-NFT-value limits ·local capped effort design exists,labels in M inventory,help/cap tests pending I. Chain paths protected.
+NFT-value limits ·25cap/2UItests and12screens PASS, local counters/help verified. Chain paths protected.
 Research-based identity ·existing research and original cafe assets used,one-page addendum written.
 ## TOOLING / RESUME
 Use worktree above, installed pnpm, Chromium ANGLE Metal, Python /tmp/cardrpg-big-tools. validate.mjs names phase logs and runs five gates serially on5910–5913. Avoid CPU-heavy validation during performance timing.

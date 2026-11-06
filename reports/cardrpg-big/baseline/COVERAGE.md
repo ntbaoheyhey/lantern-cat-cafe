@@ -23,3 +23,23 @@ REFERENCE: docs/design/cardrpg/RESEARCH-ADDENDUM-AUTO.md; apps/web/src/game/card
 Source audit identifies 48 total skills including 12 ultimates. The brief's separate counts of 48 plus 12 overlap. Testing will cover all 48 actual skills and every authored enemy. The implementation preserves that catalogue.
 
 Fresh path evidence includes 45 screen captures at three sizes, with zero console errors, remote requests or storage writes. Those path fixtures use explicit unlock shortcuts to inspect later chapters and equipment. The timing runs start from the untouched starter account. Detailed source/timing evidence is in README.md.
+
+## Lane A checkpoint after I caps and gear balance
+REFERENCE: ../items/CHECKPOINT.md, ../memory/STATE.md, coord/cardrpg-big/OWNERSHIP.md on ai/codex-cardrpg-big-sync
+
+| Brief point | Current status | Evidence and next owner |
+| --- | --- | --- |
+| Effects and motion | Starter20actions/30motion pairs and31effect recipes/465pairs verified. Nine cats and enemy/boss coverage pending | ../motion/variety.json, ../effects/verified/uniqueness.json. Lane B |
+| Sharp images |2/10crop targets pass. Remaining8miss | ../sharpness/README.md. Lane B |
+| Layout, scale and facing |Stage78.889%viewport,2745poses with0overlap/crop, maximum facing55degrees. Scale band partial | ../layout/README.md. Lane B |
+| Turn clarity and lag |Fully automatic controls, first/repeat castMAX33.4/16.8ms. M pageMAX250.1ms exceeds100ms | ../meta/PERFORMANCE.md. Lane B |
+| Features beyond battle |Ten destinations plus Prepare/Result,33screen captures pass | ../meta/screens/checks.json. Lane A narrow-collection follow-up |
+| Equipment |384model/template visibility cases pass, paper doll and transactions verified | ../meta/gear/summary.json. Lane A |
+| Item organisation |Five inventory categories, source/rate/sink table and local collectible help implemented | ../../../docs/design/cardrpg/ITEM-TIERS.md, ../items/screens/checks.json. Lane A |
+| Rarity tiers |Four frame styles,12legendary geometries. Maximum single legendary9.63%of bare starter display power | ../items/BALANCE.md. Lane A tier separation continues |
+| Balance |21/48adjacent tier steps improve,27tie.45-day heavy/casual earnedMAX2.17765×. Encounter length under existing-stat probes | ../items/summary.json, ../items/PLAN.md. Lane A |
+| Invitations |Existing earned-only odds/pity. Ceremony/history preparation has11passing UI tests, wiring pending G | ../invitations/PLAN.md. Lane A, B2 entrance API requested |
+| NFT-value limits |Two deterministic designs,25cap tests and2UItests pass.12real-click captures,0errors,0remote requests | ../items/CHECKPOINT.md. Lane A |
+| Original identity |Existing research reused, original cafe assets and one-page auto addendum | ../../../docs/design/cardrpg/RESEARCH-ADDENDUM-AUTO.md. Both lanes within owned assets |
+
+Scores will be reassessed during the sequential four-perspective review, using final integrated evidence. The initial scores above describe the baseline.

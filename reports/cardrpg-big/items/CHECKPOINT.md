@@ -9,4 +9,4 @@ Both deterministic collectible design panels show total/season caps, current loc
 
 All five prepush gates pass with1692web tests,976rules tests and421E2E tests. This working tree includes11disconnected G preparation tests. The I demo artifact is18,576,266bytes, SHA2562806debe8d9bf73d9064a26411ae295c15cb0a2e6fc4569e7d739845724e330b. The frozen build receipt records all present source hashes. The subsequently added encounter-probe.mjs is measurement tooling.
 
-The lane split assigns engine/performance work to B. Earlier M whole-pageMAX250.1ms and F2 sharpness/hero-scale misses remain open. I encounter length is under active existing-stat training probes. No encounter-stat production change has been applied at this checkpoint. Probe estimates are reported separately from browser timing.
+The lane split assigns engine/performance work to B. Earlier M whole-pageMAX250.1ms and F2 sharpness/hero-scale misses remain open. I encounter length is under active existing-stat training probes. The checkpoint demo uses the original enemy catalogue. Probe estimates are reported separately from browser timing.
