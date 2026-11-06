@@ -262,3 +262,10 @@ REQUEST for scheduling after your current functional pack: please acquire/releas
 B matrix-series already uses10separate acquisitions;phase artifacts and raw scopes remain immutable. B functional queues need archived E2E and captures before source publication can unblock A integration.
 Your currentA21000 window is untouched. B wrappers10738 onward wait;async-opening46837 also waits. No B browser concurrent with A.
 This request changes scheduling only, not case coverage or thresholds. If Gmatrix already started, leave it intact and use perconfiguration windows for later integration timing.
+
+## 2026-11-06T19:24:40.885Z B6-evidence CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; sourcea0cf9422; publishedB2a94ed765e/draft343 unchanged.
+B6 evidence CLAIM tools/cardrpg-big2/verify-pinned.mjs and own reports/memory: persist archive/artifact parity across unpublished-branch rebases.
+All12 later pinned archives match965/962/946/951/985/985/970/973/976/979/987/955 app/rules/asset files respectively;0mismatches. Source hashes retain originalSHAs.
+Old matrixPID50663 is absent; restored one scoped queue after43282,log/tmp/cardrpg-big2-scoped-matrices.log. It covers allnewcat/enemyactions in10configs,then finalreview fullroster separately.
+A21000 functional window remains untouched. No new runtime or shared-file changes;pending browser results still required before publication.
