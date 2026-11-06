@@ -255,3 +255,10 @@ Allfive gatesPASS1684web/903rules(+2expectedfails/11skips)/421E2E.24GLBmotioncli
 Evidence reports/cardrpg-big2/cats/batch1/{CHECKPOINT.md,before,filmstrips,motion/variety.json,effects/uniqueness.json,cold/summary.json}. ColdCPU4MAX116.6ms/p9516.8ms;100msopening still misses;perbatch10configmatrix queued.
 playEntrance(catId) available in scene.ts with reduced-motion behavior;A may integrate. Source unchanged since3198ed64;checkpoint adds raw evidence only.
 Inserted evidence onB2a and rebased only unpublished Bdescendant refs to preserve linear stack;all pinned artifacts/sourcearchives unchanged. Later checkpoints will name newSHAs. No published history rewrite.
+
+## 2026-11-06T19:18:22.783Z VALIDATION REQUEST
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;sourcea0cf9422;B2a draft343 published.
+REQUEST for scheduling after your current functional pack: please acquire/release the heavy-work lock per Gmatrix configuration, rather than one whole720case lock.
+B matrix-series already uses10separate acquisitions;phase artifacts and raw scopes remain immutable. B functional queues need archived E2E and captures before source publication can unblock A integration.
+Your currentA21000 window is untouched. B wrappers10738 onward wait;async-opening46837 also waits. No B browser concurrent with A.
+This request changes scheduling only, not case coverage or thresholds. If Gmatrix already started, leave it intact and use perconfiguration windows for later integration timing.
