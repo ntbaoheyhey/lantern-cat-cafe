@@ -1,12 +1,13 @@
 /** Original physical props, attached to the authored hand joint. Two materials
  * at most; all geometry is made during actor loading and released with it. */
 import * as T from 'three';
+import { batch3Prop } from './card-roster-batch3-props';
 import { batch2Prop } from './card-roster-batch2-props';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 export class CardUtensil {
   private meshes: T.Mesh[] = [];
   constructor(model: T.Object3D, role: string, asset: string) {
-    const authored = batch2Prop(asset);
+    const authored = batch2Prop(asset) ?? batch3Prop(asset);
     if (authored) {
       const hand = model.getObjectByName(`${role}_${authored.hand}`);
       for (const [index, group] of authored.parts.entries()) {

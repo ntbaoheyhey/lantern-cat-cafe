@@ -1,0 +1,984 @@
+{
+  "tool": "Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs",
+  "authorship": "Original authored gestures on the existing original Taskbar Hero rigid-node rigs",
+  "artifactSha256": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+  "buildReceipt": "/tmp/cardrpg-big2-b2c-build.json",
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-motion.ts": "2c82e118d55a0a0c74547880aaf6be5787acc979bb67326fc509b24cb740b41f",
+    "apps/web/src/game/squad/turn3d/card-motion-data.ts": "b30ed2192fa8bd0cdb49c52452947bf6eeb471e88e3a08b1b92f1c25cb994fe1",
+    "apps/web/src/game/squad/turn3d/card-motion.test.ts": "a665f9dc99865020c08c9732e2f677c0ae77b01672fd3cf032caa1ef0798fc83",
+    "apps/web/src/game/squad/turn3d/card-motion.ts": "b05180a7c87e1f8eb06bdbd1cb6120b07580679e89006277a58d2de233a214c4",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-effects.ts": "a90f12b5ed50e815dcb8c3567fd2f3e4ffffaf3c81f8d434860a21464e8439e0",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-motion.ts": "b33a394c263369b2991626e0a67673cff61a4a1c86d51c8ed43f648d26db2715",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-primitives.ts": "41efa7340e45993429d96e8aebbe57911ffa6685c3e635b3ad639dbe252b721b",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-props.ts": "028246b2f92afd414cba7376e9be1cf07c7bf5566ad106da0430ef0f26f79d3a",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-effects.ts": "ee35aab5ae41ff15e411c586aaef1ea31697de580575b51a781e7fb166203ab2",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-motion.ts": "a28addfbd6226e607c327463f8e360705d8fe7a65ae6da5816c08546f13e8c36",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-primitives.ts": "fdbbc8128d3db32873dc479a1b80151e2c1be15e77099fded6e3e52afc06de3c",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-props.ts": "48a7a0a087ccb1d1962a4f63e1851a965d6cbd2b846aecfa2981fd1f50e86f33",
+    "apps/web/src/game/squad/turn3d/card-roster-effects.ts": "e9c6719af39d5136ebb4905c7941f2110bffd239d1931fb53784b12bf7c9935c",
+    "apps/web/src/game/squad/turn3d/card-roster-motion.ts": "c65f5653d9bd2e8c811f95396b56edaa4e47548b77092c7e4ada2f8dab105612",
+    "apps/web/src/game/squad/turn3d/card-roster-primitives.ts": "b6954d4a0c720916e945ed0b07e63b7be86f016066c6b684aff419f1abed41f7",
+    "apps/web/src/game/squad/turn3d/card-roster.test.ts": "079aee4e8cf3757eec621aa9d0c484bb09e303cb4797180223e8da4ae5650c9d"
+  },
+  "sampledKeys": 41,
+  "interpolation": "Smoothstep between authored pose keys, quaternion tracks",
+  "secondaryMotion": {
+    "lagFraction": 0.06,
+    "weights": {
+      "tailTip": 0.55,
+      "tailMid": 0.4,
+      "other": 0.24
+    }
+  },
+  "fidgets": {
+    "minimumIntervalSeconds": 4,
+    "maximumIntervalSeconds": 8,
+    "durationSeconds": 1.5
+  },
+  "stopDistance": 1.2,
+  "assets": [
+    {
+      "model": "mochi",
+      "clip": "mochi-1",
+      "duration": 1.08,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mochi-1.webp"
+    },
+    {
+      "model": "mochi",
+      "clip": "mochi-2",
+      "duration": 1.38,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mochi-2.webp"
+    },
+    {
+      "model": "mochi",
+      "clip": "mochi-3",
+      "duration": 1.46,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footL.quaternion",
+        "guardian_footR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mochi-3.webp"
+    },
+    {
+      "model": "mochi",
+      "clip": "mochi-4",
+      "duration": 1.72,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mochi-4.webp"
+    },
+    {
+      "model": "soot",
+      "clip": "soot-1",
+      "duration": 1.02,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_wand.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/soot-1.webp"
+    },
+    {
+      "model": "soot",
+      "clip": "soot-2",
+      "duration": 1.44,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/soot-2.webp"
+    },
+    {
+      "model": "soot",
+      "clip": "soot-3",
+      "duration": 1.5,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/soot-3.webp"
+    },
+    {
+      "model": "soot",
+      "clip": "soot-4",
+      "duration": 1.78,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/soot-4.webp"
+    },
+    {
+      "model": "clover",
+      "clip": "clover-1",
+      "duration": 1.1,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_footL.quaternion",
+        "alchemist_footR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/clover-1.webp"
+    },
+    {
+      "model": "clover",
+      "clip": "clover-2",
+      "duration": 1.42,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/clover-2.webp"
+    },
+    {
+      "model": "clover",
+      "clip": "clover-3",
+      "duration": 1.48,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/clover-3.webp"
+    },
+    {
+      "model": "clover",
+      "clip": "clover-4",
+      "duration": 1.76,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_footL.quaternion",
+        "alchemist_footR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/clover-4.webp"
+    },
+    {
+      "model": "panko",
+      "clip": "panko-1",
+      "duration": 1.1,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/panko-1.webp"
+    },
+    {
+      "model": "panko",
+      "clip": "panko-2",
+      "duration": 1.42,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/panko-2.webp"
+    },
+    {
+      "model": "panko",
+      "clip": "panko-3",
+      "duration": 1.6,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/panko-3.webp"
+    },
+    {
+      "model": "panko",
+      "clip": "panko-4",
+      "duration": 1.76,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/panko-4.webp"
+    },
+    {
+      "model": "mallow",
+      "clip": "mallow-1",
+      "duration": 1.08,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mallow-1.webp"
+    },
+    {
+      "model": "mallow",
+      "clip": "mallow-2",
+      "duration": 1.46,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mallow-2.webp"
+    },
+    {
+      "model": "mallow",
+      "clip": "mallow-3",
+      "duration": 1.62,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_footR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mallow-3.webp"
+    },
+    {
+      "model": "mallow",
+      "clip": "mallow-4",
+      "duration": 1.78,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_footL.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/mallow-4.webp"
+    },
+    {
+      "model": "sorrel",
+      "clip": "sorrel-1",
+      "duration": 1.1,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/sorrel-1.webp"
+    },
+    {
+      "model": "sorrel",
+      "clip": "sorrel-2",
+      "duration": 1.52,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/sorrel-2.webp"
+    },
+    {
+      "model": "sorrel",
+      "clip": "sorrel-3",
+      "duration": 1.62,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/sorrel-3.webp"
+    },
+    {
+      "model": "sorrel",
+      "clip": "sorrel-4",
+      "duration": 1.76,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/sorrel-4.webp"
+    },
+    {
+      "model": "biscuit",
+      "clip": "biscuit-1",
+      "duration": 1.12,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footL.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/biscuit-1.webp"
+    },
+    {
+      "model": "biscuit",
+      "clip": "biscuit-2",
+      "duration": 1.46,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footL.quaternion",
+        "guardian_footR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/biscuit-2.webp"
+    },
+    {
+      "model": "biscuit",
+      "clip": "biscuit-3",
+      "duration": 1.65,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/biscuit-3.webp"
+    },
+    {
+      "model": "biscuit",
+      "clip": "biscuit-4",
+      "duration": 1.79,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footL.quaternion",
+        "guardian_footR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/biscuit-4.webp"
+    },
+    {
+      "model": "inkcap",
+      "clip": "inkcap-1",
+      "duration": 1.13,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/inkcap-1.webp"
+    },
+    {
+      "model": "inkcap",
+      "clip": "inkcap-2",
+      "duration": 1.49,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/inkcap-2.webp"
+    },
+    {
+      "model": "inkcap",
+      "clip": "inkcap-3",
+      "duration": 1.64,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/inkcap-3.webp"
+    },
+    {
+      "model": "inkcap",
+      "clip": "inkcap-4",
+      "duration": 1.78,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/inkcap-4.webp"
+    },
+    {
+      "model": "cinnamon",
+      "clip": "cinnamon-1",
+      "duration": 1.11,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/cinnamon-1.webp"
+    },
+    {
+      "model": "cinnamon",
+      "clip": "cinnamon-2",
+      "duration": 1.48,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/cinnamon-2.webp"
+    },
+    {
+      "model": "cinnamon",
+      "clip": "cinnamon-3",
+      "duration": 1.61,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/cinnamon-3.webp"
+    },
+    {
+      "model": "cinnamon",
+      "clip": "cinnamon-4",
+      "duration": 1.78,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_footL.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/cinnamon-4.webp"
+    },
+    {
+      "model": "brioche",
+      "clip": "brioche-1",
+      "duration": 1.13,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/brioche-1.webp"
+    },
+    {
+      "model": "brioche",
+      "clip": "brioche-2",
+      "duration": 1.48,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/brioche-2.webp"
+    },
+    {
+      "model": "brioche",
+      "clip": "brioche-3",
+      "duration": 1.63,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/brioche-3.webp"
+    },
+    {
+      "model": "brioche",
+      "clip": "brioche-4",
+      "duration": 1.79,
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/brioche-4.webp"
+    },
+    {
+      "model": "velvet",
+      "clip": "velvet-1",
+      "duration": 1.1,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_footL.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/velvet-1.webp"
+    },
+    {
+      "model": "velvet",
+      "clip": "velvet-2",
+      "duration": 1.47,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/velvet-2.webp"
+    },
+    {
+      "model": "velvet",
+      "clip": "velvet-3",
+      "duration": 1.62,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/velvet-3.webp"
+    },
+    {
+      "model": "velvet",
+      "clip": "velvet-4",
+      "duration": 1.79,
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_footR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/velvet-4.webp"
+    },
+    {
+      "model": "marigold",
+      "clip": "marigold-1",
+      "duration": 1.13,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/marigold-1.webp"
+    },
+    {
+      "model": "marigold",
+      "clip": "marigold-2",
+      "duration": 1.48,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/marigold-2.webp"
+    },
+    {
+      "model": "marigold",
+      "clip": "marigold-3",
+      "duration": 1.63,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/marigold-3.webp"
+    },
+    {
+      "model": "marigold",
+      "clip": "marigold-4",
+      "duration": 1.78,
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/cats/batch3/filmstrips/marigold-4.webp"
+    }
+  ]
+}
