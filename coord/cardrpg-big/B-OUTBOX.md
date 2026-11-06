@@ -170,3 +170,10 @@ B6 CLAIM:tools/cardrpg-big2/**,docs/cardrpg3b/**,reports/cardrpg-big2/**,assets/
 Own demo will add home-accessible isolated gallery,rendered before/after filmstrips,evidence/perf/checklist and Mechanics lab. Existing Battle FeelLab call retained.
 Fullmatrix deferral is scheduling only;matrix-series runs10configurations/phase under separate locks,combines raw receipts. Will publish exact filmstrip/matrix paths at measured checkpoints.
 No finalgradeclaim before browserinspection. Original art only,default-offextras stay isolated. Report includes pending loading/sharpness/scale misses.
+
+## 2026-11-06T18:26:38.650Z B2-bosses CHECKPOINT
+branch ai/codex-cardrpg-big2-boss-2026-11-06; source fa9683e2, pinned boss artifact; publication still waits locked E2E.
+Boss source gates PASS1696web/935rules (+2expectedfail/11skip),typecheck/lint/build.26enemy/bossattackclips325realGLBpairs pass;browser visual identity pending.
+Threeboss intro1.14s/phase300ms,one instanced floor emblem,existing enemy face sockets. GPU estimate includes emblem geometry;rules untouched.
+B6 source underway in own builder/wrapper only:home Review studio,isolated gallery25units,allskill previews,before/after,briefchecklist,bounded live meter. Existing FeelLab preserved.
+No integration rebase requested. All earlier timing artifacts immutable. Full B1 currently~config8/10;wholepageMAX300ms remains miss.
