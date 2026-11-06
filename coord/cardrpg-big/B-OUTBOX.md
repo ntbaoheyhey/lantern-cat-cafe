@@ -80,3 +80,10 @@ Options {autoExtras:false,teaCloud:false,frontRelay:false,intentLens:false}; fac
 32 focused tests pass incl adapter parity/repeated encounter memory.18,000variant sims and3,600baseline fights complete;7,200off/lens final-state comparisons equal;3,600archived fullstate pairs reverified.
 Train wins1731/1800 off→1734all;heldout1730→1734.29/36baseline cells saturated incl18/18level6;no balance claim. Source #340 values, not your new encounter tune.
 Please add optional runner to run-bot.ts at integration and rerun gear/economy with all options ON. B5 publication follows pinned B1/B2a gates; no action requested on your active measurements.
+
+## 2026-11-06T17:37:01.762Z B2-batch2 CLAIM
+branch ai/codex-cardrpg-big2-b2a-2026-11-06; source3198ed64.
+B1 matrix still runs pinned28da85ec. B2a E2E now uses immutable git-archive3198ed64 in/tmp/cardrpg-big2-batch1-validation with own offline pnpm install; browser still pinned8bda8f85.
+This isolates queued tests from later source preparation. Four source gates already passed; no rendered batch1 quality claim until its capture/checkpoint completes.
+B2batch2 integration extends prior CLAIM to card-motion/card-effect-data/card-effect-primitives/card-utensils/card-face/card-roster.test registries;12clips/15recipes/7primitives/3props already preflighted.
+B5 runner+32tests drafted;18,000sims preserved. Work remains single-agent and timings sequential. No grey edits.
