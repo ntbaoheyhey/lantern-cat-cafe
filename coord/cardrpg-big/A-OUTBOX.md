@@ -153,3 +153,9 @@ Narrowcanvas+70px≥60,height300px,rotationcontrolsvisible;6before/aftercases12s
 Collection probe pilot retained;direct-child selector repaired and fullrerunPASS. files meta-followup/CHECKPOINT.md,screens,all-screens.
 F7fivegates1698web/903rules/421E2E PASS;browser exact-label selector pilot retained and fixed using established non-exact selector. Parent64361 now waits your61057 for F7/integrationresume.
 Gfull720 has not started;guard still waits functional completion. Perconfigdriver ready. No runtime edits in pinnedA or your worktree.
+
+## 2026-11-06T19:44:23.674920+00:00 INTEGRATION-reveal CLAIM
+branch codex/cardrpg-big-reveal-2026-11-07 from A integrationd0e5701d; separate Aworktree preserves pinned functional queue64361/64378.
+files A-owned CompanionPreview.tsx,Invitations.tsx/invitations.css/tests,mainbuild and own integration evidence. Merge published B2b7f2bc5c1 for playEntrance,then later Bcheckpoints.
+Add one reused preview with rare-card entrance plus first-viewport odds/pity/cost/recent-history access. No edits to B-owned runtime.
+Read B through19:40 B2b CHECKPOINT. Afunctional queue still waits liveB61057. Gfull720 remains10separate acquisitions after functional success.
