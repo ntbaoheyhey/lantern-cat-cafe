@@ -150,3 +150,35 @@ Off-chain duplicates are consumed into bounded development or salvage. No NFT bu
 The regulation review is historical source-backed design research, not an opinion that this prototype is universally lawful. Belgium paid loot-box scrutiny, the Dutch fact-specific FIFA judgment, China's historical disclosure notice, Japan's complete-gacha restrictions and Apple/Google purchase-odds rules are distinguished in RESEARCH.md.
 
 The implemented guardrail is stronger than an odds label: no purchase path at all; only free/earned stamps; exact published base and conditional odds; visible pity; no tradeable random prize. Paid draws, purchased draw-enabling currency, transferable draw rewards and paid completion sets are out of scope and **need legal review** before any design discussion could become implementation. No fungible asset, mainnet, custom L1 or tradeable currency is introduced before the stated 2026-11-30 contest end; the current task authorizes none afterward either.
+
+## Depth mode 0.5.0
+
+The opt-in depth entry uses `?demo&squad=1&cardrpg2=1`. Its account encloses the 0.4.0 account and adds versioned run, equipment, bridge and save state. The preceding sections document the earlier 0.4.0 prototype. The following rules govern depth mode.
+
+Each of twelve cats has four individually defined skills and one passive. A team equips three skills per cat before a run. Level six or three stars opens the ultimate slot. Six roles, front/rear targeting and three displayed team interactions provide composition choices. Five shared energy refreshes each numbered round. Every living actor receives one action. Individual ultimate charge rewards dealing and receiving damage. Flavour advantage supplies one extra break pressure. Reaching a foe's break cap interrupts its telegraphed signature while preserving its turn.
+
+REFERENCE: packages/game-rules/src/cardrpg/depth/catalog.ts; packages/game-rules/src/cardrpg/depth/battle.ts; packages/game-rules/src/cardrpg/depth/catalog.test.ts; packages/game-rules/src/cardrpg/depth/battle.test.ts.
+
+Three chapters have nine connected map nodes and seven-stop routes. Two branches trade events against elites. All routes reach a treasure, shop and campfire before the boss. Rewards offer stack-capped charms or an equipped-skill upgrade. Thirty charms span Shelter, Garden, Ember, Trail, Night and Flow. Defeat settles partial rewards once. Daily seeds use UTC dates and weekly mutators. Tower access follows the Pantry clear and records the highest local floor.
+
+REFERENCE: packages/game-rules/src/cardrpg/depth/run.ts; packages/game-rules/src/cardrpg/depth/run.test.ts; packages/game-rules/src/cardrpg/depth/boons.ts.
+
+The four established equipment slots hold 128 templates, including every original ID. Thirty compatible affixes, eight two/four-piece sets and twelve legendary effects create interactions with healing, row swaps, marks, break, counters, ultimates and status consumption. Failure-free enhancement preserves the +12 cap. Three awakening ranks consume mastery materials and currencies. Legendary tailoring additionally consumes a boss seal.
+
+| Resource | Depth faucet and cap | Repeatable sink |
+| --- | --- | --- |
+| Fish points | Service, quests and run settlements share 420/day | Levels, stars, enhancement, tailoring, reforge, awakening |
+| Threads | Capped grants share 90/day, finite gear salvage adds recycling proceeds | Enhancement, tailoring, reforge, awakening |
+| Stamps | Service, quests and settlements share 180/day | 150 per earned invitation |
+| Essence | Earned grants share 6/day | Epic/legendary tailoring and awakening |
+| Matching shards | Duplicate invitations | Star ascension and capped overflow conversion |
+| Mastery materials | Run settlements and idle receipts share 30/day, chapter first clears add 80/100/120 once | Awakening and legendary tailoring |
+| Boss seals | First rewarded boss clear per day | Local effort reservations and legendary tailoring |
+| Run points | Encounter, event and treasure outcomes within one run | Charm or tonic shop choices and events |
+| Tonics | One initial supply per run and shop purchases | Between-encounter healing |
+
+REFERENCE: packages/game-rules/src/cardrpg/depth/state.ts; packages/game-rules/src/cardrpg/depth/equipment.ts; packages/game-rules/src/cardrpg/depth/bridge.ts; reports/cardrpg-depth/sim/economy-45.json.
+
+LocalStorage persistence belongs to the app entry. The self-contained file demo uses visible manual export/import codes. Both share checksum validation, legacy migration and active-encounter continuation. Reviewer shortcuts are limited to the offline entry. The production idle receipt provider remains a fixture adapter. Connected-wallet reads are restricted to Fuji and the existing ERC-1155 contract. Effort reservations display local seasonal/global counters under the required design-only label.
+
+REFERENCE: docs/cardrpg2/index.html; packages/game-rules/src/cardrpg/depth/save.ts; apps/web/src/game/cardrpg/depth/model.ts; apps/web/src/game/cardrpg/depth/relic-reader.ts; reports/cardrpg-depth/browser/app-check.json.

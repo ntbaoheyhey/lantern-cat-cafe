@@ -1,14 +1,14 @@
 import { playBattle, type Policy } from './policies';
 import { availableNodes, chooseReward, enterNode, EVENTS, finishEncounter, resolveNode, shopStock } from './run';
-import type { DepthAccount, RuleResult } from './contract';
+import type { Battle, DepthAccount, RuleResult } from './contract';
 function accept(result: RuleResult<DepthAccount>) {if(!result.ok)throw Error(result.error);return result.state;}
 /** Headless client uses the same public node commands as the UI. */
-export function playRun(state: DepthAccount, policy: Policy): DepthAccount {
+export function playRun(state: DepthAccount, policy: Policy, observe?: (battle: Battle) => void): DepthAccount {
   let next=state;
   for(let step=0;step<100&&!next.run?.complete;step++) {
     const run=next.run;
     if(!run)throw Error('Start a run before calling its bot');
-    if(run.battle){playBattle(run.battle,policy);next=accept(finishEncounter(next));continue;}
+    if(run.battle){playBattle(run.battle,policy);observe?.(run.battle);next=accept(finishEncounter(next));continue;}
     if(run.rewardChoices.length){next=accept(chooseReward(next,run.rewardChoices[0]!));continue;}
     if(run.current){
       const node=run.nodes.find(n=>n.id===run.current)!;

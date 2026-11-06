@@ -8,16 +8,16 @@ function previewCopy(b: Battle): Battle {
   return {...b,procRounds:{...b.procRounds},actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
 }
 function actorValue(a: Actor): number {
-  if(a.hp<=0)return -180;
+  if(a.hp<=0)return a.side === 'party' ? -300 : -35;
   const health=a.hp + (a.hp/a.maxHp<.3?-65:0);
   const beneficial=stacks(a,'steep')*28+stacks(a,'cozy')*8+stacks(a,'decoy')*25+stacks(a,'sprout')*30;
   const harmful=stacks(a,'scald')*27+stacks(a,'crumb')*13+stacks(a,'rattled')*14+stacks(a,'hush')*12;
   return health + Math.min(a.shield,a.maxHp*.35)*.45 + beneficial - harmful;
 }
 function value(b: Battle): number {
-  if(b.result)return b.result==='party'?100000:-100000;
   const party=b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+actorValue(a),0);
-  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+actorValue(a),0);
+  if (b.result) return b.result === 'party' ? 100000 + party * 2 - b.round * 40 - b.choices.length * 3 : -100000;
+  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+actorValue(a)*(a.catalogId === 'binding-thread' ? .2 : 1),0);
   const pressure=b.actors.filter(a=>a.side==='enemy'&&a.hp>0).reduce((n,a)=>{
     const intent=b.intents.find(i=>i.actorId===a.id);
     return n+a.break*(intent?.signature?12:5)+(intent?.interrupted?35:0);
@@ -48,9 +48,9 @@ export function chooseAction(b: Battle, policy: Policy): Choice {
     const preview=previewCopy(b),round=preview.round;
     act(preview,choice);
     // Evaluate the committed enemy response with the same public state and RNG.
-    // Remaining allies use the ordinary greedy policy in this bounded one-round search.
+    // Remaining allies use the ordinary greedy policy in this bounded two-round search.
     let steps=0;
-    while(!preview.result&&preview.round===round&&steps++<16) {
+    while(!preview.result&&preview.round<round+2&&steps++<32) {
       if(currentActor(preview)?.side==='enemy')enemyAct(preview);
       else act(preview,ordinary(preview,'greedy'));
     }

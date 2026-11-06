@@ -156,7 +156,13 @@ export function useTonic(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{const r=s.run;requireRule(r&&!r.battle&&!r.complete&&r.supplies>0,'NOT_READY','Use a packed tonic between encounters.');for(const cat of battleCats(s))r.hp[cat.id]=Math.min(cat.stats.hp,(r.hp[cat.id]??0)+100);r.supplies--;});
 }
 export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
-  return transactDepth(state,s=>{requireRule(s.run&&!s.run.complete,'NOT_READY','No active run.');settleRun(s,false);});
+  return transactDepth(state, s => {
+    requireRule(s.run && !s.run.complete, 'NOT_READY', 'No active run.');
+    if (s.run.battle) s.lastChoices = clone(s.run.battle.choices);
+    s.run.battle = null;
+    s.run.rewardChoices = [];
+    settleRun(s, false);
+  });
 }
 export function nextTowerFloor(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{

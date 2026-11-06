@@ -23,7 +23,7 @@ export class CafeAudio{
   try{this.ctx??=new AudioContext({sampleRate:AUDIO_SETTINGS.sampleRate});this.master??=this.ctx.createGain();this.master.disconnect();this.master.connect(this.ctx.destination);await this.ctx.resume();this.enabled=this.ctx.state==='running';this.blocked=!this.enabled;this.master.gain.setTargetAtTime(AUDIO_SETTINGS.master,this.ctx.currentTime,.04);this.nextNote=this.ctx.currentTime;this.ui()}catch{this.blocked=true;this.enabled=false}
  }
  ui(){if(this.enabled&&this.ctx&&this.master)synthCue(this.ctx,this.master,'chime',0,this.ctx.currentTime,4)}
- update(frame:EffectFrame|null,round:number,actor:string|null,quiet:boolean){
+ update(frame:EffectFrame|null,round:number,actor:string|null,quiet:boolean,ambienceScale=1){
   if(!this.enabled||!this.ctx||!this.master||this.ctx.state!=='running')return;const now=this.ctx.currentTime;
   const key=frame?`${frame.plan.id}/${frame.plan.skillId}/${frame.beat.kind}`:'';
   if(key&&key!==this.key){this.key=key;const beat=['anticipation','travel','impact','reaction','residue'].indexOf(frame!.beat.kind),id=frame!.plan.skillId;let variant=[...id].reduce((s,c)=>s+c.charCodeAt(0),0);synthCue(this.ctx,this.master,cueFamily(frame!.plan.shape),beat,now,variant);
@@ -32,7 +32,7 @@ export class CafeAudio{
   }
   if(round!==this.round){this.round=round;synthCue(this.ctx,this.master,'chime',0,now,2)}
   if(actor&&actor!==this.actor){this.actor=actor;synthCue(this.ctx,this.master,'glass',0,now,1)}
-  if(!quiet&&now>=this.nextNote){this.nextNote=now+.65;const oscillator=this.ctx.createOscillator(),gain=this.ctx.createGain();oscillator.type='sine';oscillator.frequency.value=AUDIO_SETTINGS.notes[this.note++%AUDIO_SETTINGS.notes.length]!;gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(AUDIO_SETTINGS.ambient,now+.10);gain.gain.exponentialRampToValueAtTime(.0001,now+1.2);oscillator.connect(gain).connect(this.master);oscillator.start(now);oscillator.stop(now+1.25);oscillator.onended=()=>{oscillator.disconnect();gain.disconnect()}}
+  if(!quiet&&now>=this.nextNote){this.nextNote=now+.65;const oscillator=this.ctx.createOscillator(),gain=this.ctx.createGain();oscillator.type='sine';oscillator.frequency.value=AUDIO_SETTINGS.notes[this.note++%AUDIO_SETTINGS.notes.length]! * ambienceScale;gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(AUDIO_SETTINGS.ambient,now+.10);gain.gain.exponentialRampToValueAtTime(.0001,now+1.2);oscillator.connect(gain).connect(this.master);oscillator.start(now);oscillator.stop(now+1.25);oscillator.onended=()=>{oscillator.disconnect();gain.disconnect()}}
  }
  dispose(){this.enabled=false;void this.ctx?.close();this.ctx=null;this.master=null}
 }

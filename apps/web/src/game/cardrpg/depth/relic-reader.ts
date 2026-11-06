@@ -18,9 +18,10 @@ export async function readConnectedRelics(provider: EIP1193Provider) {
     address: FUJI_RELIC_ADDRESS, abi: relicNftAbi, functionName: 'balanceOfBatch',
     args: [RELIC_EFFECTS.map(() => address), RELIC_EFFECTS.map(r => BigInt(r.id))], blockNumber,
   });
-  const holdings: RelicHolding[] = await Promise.all(RELIC_EFFECTS.map(async (relic, index) => ({
+  const owned = RELIC_EFFECTS.filter((_, index) => balances[index]! > 0n);
+  const holdings: RelicHolding[] = await Promise.all(owned.map(async relic => ({
     id: relic.id,
-    balance: balances[index]!.toString(),
+    balance: balances[RELIC_EFFECTS.indexOf(relic)]!.toString(),
     rarity: await client.readContract({ address: FUJI_RELIC_ADDRESS, abi: relicNftAbi,
       functionName: 'rarityOf', args: [BigInt(relic.id)], blockNumber }),
   })));

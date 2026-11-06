@@ -2,7 +2,7 @@ import { expect, it } from 'vitest';
 import { clone } from '../internal';
 import { BOONS, boonValue } from './boons';
 import { createDepthAccount, configureTeam, availableSkills } from './state';
-import { availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
+import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
 import { playRun } from './run-bot';
 
 it('generates nine connected nodes and seven-node routes with guaranteed shop and campfire',()=>{
@@ -51,4 +51,16 @@ it.each(CHAPTERS)('finishes a headless $name run with actual rules',chapter=>{
   const start=startRun(s,chapter.id,11);expect(start.ok).toBe(true);
   const finish=playRun(start.state,'smart');expect(finish.run!.complete).toBe(true);
   expect(availableNodes(finish.run!)).toEqual([]);expect(finish.claimedRuns).toContain(finish.run!.id);
+});
+
+it('abandons an active encounter, preserves partial rewards and rejects duplicate settlement', () => {
+  const started = startRun(createDepthAccount(), 1, 42).state;
+  const encounter = enterNode(started, '0-0').state;
+  const result = abandonRun(encounter);
+  expect(result.ok).toBe(true);
+  expect(result.state.run!.battle).toBeNull();
+  expect(result.state.run!.complete).toBe(true);
+  expect(result.state.run!.won).toBe(false);
+  expect(result.state.claimedRuns).toContain(encounter.run!.id);
+  expect(abandonRun(result.state).ok).toBe(false);
 });
