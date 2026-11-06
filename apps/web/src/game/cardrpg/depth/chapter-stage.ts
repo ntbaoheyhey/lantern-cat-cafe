@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { addCardStageLife, animateCardStageLife } from '../../squad/turn3d/card-stage-life';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 interface AmbientStage {
@@ -102,6 +103,7 @@ export function decorateChapterStage(stage: T.Group) {
       geometries.forEach(part => part.dispose());
     }
 
+    addCardStageLife(group, index + 1);
     const particles = new Float32Array(44 * 3);
     for (let mote = 0; mote < 44; mote++) {
       particles[mote * 3] = Math.sin(mote * 12.9898) * 6;
@@ -149,6 +151,7 @@ export function animateChapterStage(stage: T.Group, time: number, reducedMotion:
   for (const chapter of stage.children) {
     const ambient = chapter.userData.ambient as AmbientStage | undefined;
     if (!chapter.visible || !ambient) continue;
+    animateCardStageLife(chapter as T.Group, time, reducedMotion);
     ambient.dust.position.set(Math.sin(t * .13) * .16, Math.sin(t * .3) * .13, 0);
     for (const [index, plume] of ambient.steam.entries()) {
       plume.position.y = .62 + (Math.sin(t * .7 + index) + 1) * .08;

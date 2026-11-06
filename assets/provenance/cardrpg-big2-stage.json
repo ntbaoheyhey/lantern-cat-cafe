@@ -1,11 +1,11 @@
 {
   "tool": "Original Node scalar bake and repository PNG writer",
   "command": "node tools/cardrpg-big2/bake-stage.mjs",
-  "sourceSha256": "747a027a35c7621d2360cbe27ebb06b422886e6171006616c74c983caf59027d",
+  "sourceSha256": "2879af6bac234de7449d5a36762caf54840dfbd1e26e010027b09fb168ecd8cf",
   "parameters": {
-    "size": 256,
+    "size": 1024,
     "wood": "prior sine-grain formula",
-    "cloth": "prior 5px weave",
+    "cloth": "prior weave at4x analytic resolution",
     "window": "three-stop gradient and 18 original circles with scalar edge coverage"
   },
   "externalReferences": [],
@@ -13,18 +13,18 @@
   "assets": [
     {
       "path": "assets/cardrpg3b/textures/stage-wood.png",
-      "bytes": 88082,
-      "sha256": "32262f129032d45ca5ca70b81ee8498f926d07c67edfacf20cc9d5098b0f4892"
+      "bytes": 1270516,
+      "sha256": "e118429e2b6f12f44975a75c87611c8eca0d7c8f570d2250e1b27c8470a891c9"
     },
     {
       "path": "assets/cardrpg3b/textures/stage-cloth.png",
-      "bytes": 76683,
-      "sha256": "c8f9dbe9f705c83cc9c25b2c97e28539a3e3e0f296898123c833064b2b743077"
+      "bytes": 1143972,
+      "sha256": "4e4ceea521f2a1fd65174f46cd9d268bf62736174f46ff9fdeffb5dae4c1c210"
     },
     {
       "path": "assets/cardrpg3b/textures/stage-window.png",
-      "bytes": 6785,
-      "sha256": "4076bd8e9ad132ee60d484e6ea819f64549ebc5a5adecd509b9789e68307785d"
+      "bytes": 49841,
+      "sha256": "20dee305fc063077f070b44d97c92de0895f4e003a47dd665ccc5a401dc6adb7"
     }
   ]
 }
