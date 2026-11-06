@@ -1,7 +1,7 @@
 # Lane B offline integration hooks
 REFERENCE: tools/cardrpg-big2/{offline,MechanicsLab,ReviewStudio}.tsx; tools/cardrpg-big2/mechanics-model.ts; tools/cardrpg-big2/{build,embed-evidence}.mjs; tools/cardrpg-big2/offline-loader.js
 
-These are the concrete dependencies of Lane B’s separate offline demo. Source is implemented locally; only B1 and the three cat batches are published as of 2026-11-06 19:55 UTC. Do not copy unpublished source into an accepted integration. Later checkpoints identify the published head and browser receipts. Keep all existing feature flags and automatic extras default off.
+These are the concrete dependencies of Lane B’s separate offline demo. Source is implemented locally; B1, the three cat batches, B3 (draft349) and B5 (draft350) are published as of 2026-11-06 20:43 UTC. Do not copy unpublished source into an accepted integration. Later checkpoints identify the published head and browser receipts. Keep all existing feature flags and automatic extras default off.
 
 ## Entry and isolated accounts
 REFERENCE: tools/cardrpg-big2/offline.tsx; tools/cardrpg-big2/MechanicsLab.tsx; tools/cardrpg-big2/mechanics-model.ts; tools/cardrpg-big2/ReviewStudio.tsx
@@ -27,7 +27,7 @@ REFERENCE: tools/cardrpg-big2/offline-loader.js; tools/cardrpg-big2/opening-comp
 
 B1’s published loader decodes one asset at a time through `DecompressionStream`, yields between assets and advances real `<progress id="opening-progress">`. The fallback message uses `#loading`. It records `window.__b2Load.started`, `assets[]` and `scriptStarted`. Keep the progress element alongside the loading text in `#root`.
 
-The current local follow-up uses a `blob:` URL and asynchronous script loading, rather than inline synchronous compilation. It additionally records `scriptLoaded` and revokes the temporary application URL after load. It requires `script-src 'unsafe-inline' blob:` in the offline CSP. Only local embedded data/blob resources are permitted. This strategy is **not accepted yet**: the identical-JS/CSS inline/async cold comparison is queued, and the exhaustive final matrix must follow. Do not describe it as an opening fix before those receipts exist. Existing B1 whole-page MAX 300 ms remains a miss.
+The current local follow-up uses a `blob:` URL and asynchronous script loading, rather than inline synchronous compilation. It additionally records `scriptLoaded` and revokes the temporary application URL after load. It requires `script-src 'unsafe-inline' blob:` in the offline CSP. Only local embedded data/blob resources are permitted. The identical-JS/CSS paired cold comparison is complete: CPU4 whole-page MAX116.7→100ms and compile81.9→6.5ms, with zero runtime errors. It is retained provisionally; the exhaustive final matrix must follow. One CPU4 battle-ready sample rose9.12→10.12s. Do not describe the strict opening gate as fixed; existing B1 exhaustive MAX300ms remains a miss. See performance/async-opening/CHECKPOINT.md. This loader source will be published after its later predecessor gates.
 
 ## Rules runner and integration gates
 REFERENCE: packages/game-rules/src/cardrpg/depth/auto-extras/{index,runner}.ts; reports/cardrpg-big2/mechanics/SUMMARY.md

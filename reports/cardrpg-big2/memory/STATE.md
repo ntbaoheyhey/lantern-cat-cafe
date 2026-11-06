@@ -2,11 +2,11 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-B3 functional complete:405camera samples,2/10sharpness targets,20replays/navigation; opening116.6ms MISS,postinteractive100ms sample. Publishing B3 thenB5 checkpoints.
+B3 published 7b6e5e28/draft349 and B5 published6a88266e/draft350. B3 405camera samples,2/10sharpness,20replays/navigation; opening116.6ms MISS; B5 fourlabcasesPASS,opening199.9ms MISS.
 B4audio reroute and labpolish waiters resumed afterB3exit; A acquired nextlock. Enemy/boss/delivery queues remain sequential. No integrated checkpoint fromAyet.
 B1/B2a/b/c published342/343/346/347; other source pinned/checked. Reviewpolish fixes labcheckbox/result/readability; browserproofpending.
 ## NEXT
-1. Publish B3/B5 evidence-onlycheckpoints,mirrorSTATEtoledger,send exacthook status toA. No repeat of passing source/E2Echecks.
+1. Complete B4audio/browser and labpolish checks,then publish remaining opponent checkpoints in order. Ledger bbac1f91 mirrors B3/report; B5 runner delivered toA.
 2. Monitor B4resume79167,labpolish77628,enemychain27436/28859/30429/34957/37902,delivery39632/hitstop43008/flagoff43282. Scopedmatrix58498 follows43282.
 3. After roster evidence,build/pinreview;functional/full860matrix/20replays;report allmisses/selfgrades;integrationrebase whenAannounces.
 ## DONE
@@ -74,3 +74,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery20:27Z: previous source polish committed8f7a8241; acceptedsourcechecks retained. B5 browser4cases/0errors,matchingfinalhash45c71470 andunchangedaccount;223draws/99992tris,16.8msnaturalplaybackMAX. Separateopeningcold199.9native/149.9CPU4/postinteractive133.4msMISS. Earliercapturesretained.
 
 - Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
+
+- 20:43Z: B3 draft349 base347 and B5 draft350 base349 remotely verified; source/runtime audits unchanged. B5 1,689web/935rules/421E2E,alloff fullstate parity retained. Ledger bbac1f91 includes current ownreport+STATE. A received both checkpoints and finalsimulation runner request.
