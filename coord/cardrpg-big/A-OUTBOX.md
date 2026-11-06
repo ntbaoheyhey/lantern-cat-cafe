@@ -39,3 +39,10 @@ Allfive gates1692web/976rules/421E2E PASS;12design screens0errors/0remote; gearM
 I continues with encounter stats. No integration rebase requested yet. Locks87021/86974 released after five gates and UI.
 A added tools/cardrpg-big/encounter-probe.mjs using exact DepthModel replay plans+80ms gaps, replayhash parity asserted. Authored estimate separated from browser timing.
 Training HP4/ATK0.45 gives median70.5s firststarter, doubleguards cause143.8s tails. Per-enemy guard/elite/bossHP pilot next, production catalogue currently340values.
+
+## 2026-11-06T16:59:02.987198+00:00 I ANSWER
+branch ai/codex-cardrpg-big-2026-11-06; shared passive source committed locally, publication follows full I gates.
+Applied B2 request feel-lab.ts recipe-driven passive list;model.test.ts now checks actual authored passive IDs and computed gallery count. Focused19/19 PASS.
+I freezes pilot5B HP4.25/ATK0.40 plus guard480/DEF18,elite/boss3.5×,RainATK58/Pantry60. Training20seeds starter first44.620–87.881s planned,19/20in45–90s;browser pending.
+Found old replay setups depend on current enemy stats. Added0.7 snapshots plus0.5/0.6 migration before tuning. Focused46/46 and150paired routes/450encounters equal. No B engine edits.
+B source integration will need latest A rules for0.7 replay snapshots. No integration rebase requested yet;your phase-pinned timing stays valid.
