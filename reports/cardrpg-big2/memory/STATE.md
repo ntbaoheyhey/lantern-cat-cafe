@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented; current dee9faf7. Branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. A64378 owns timing lock; B stage/async comparison and later phases wait.
-B2a94ed765e/draft343, B2b7f2bc5c1/draft346 and B2c4b2d5df0/draft347 published. All9cats rendered; B2c48motions/76effects,421E2E,cold7CPU4MAX133.3ms.
-B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
+B3 functional complete:405camera samples,2/10sharpness targets,20replays/navigation; opening116.6ms MISS,postinteractive100ms sample. Publishing B3 thenB5 checkpoints.
+B4audio reroute and labpolish waiters resumed afterB3exit; A acquired nextlock. Enemy/boss/delivery queues remain sequential. No integrated checkpoint fromAyet.
+B1/B2a/b/c published342/343/346/347; other source pinned/checked. Reviewpolish fixes labcheckbox/result/readability; browserproofpending.
 ## NEXT
-1. Publish stage/features/opponents after pinned browser receipts; all source implementations already committed. Inspect queued async opening comparison before accepting loader.
-2. Inspect functional queues14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
-3. Scoped matrices queuedPID58498 after43282 (log/tmp/cardrpg-big2-scoped-matrices.log); finalreview full-roster matrix/lifecycle follows accepted final build. Finish report/demo/ledger;A integration sync pending.
+1. Publish B3/B5 evidence-onlycheckpoints,mirrorSTATEtoledger,send exacthook status toA. No repeat of passing source/E2Echecks.
+2. Monitor B4resume79167,labpolish77628,enemychain27436/28859/30429/34957/37902,delivery39632/hitstop43008/flagoff43282. Scopedmatrix58498 follows43282.
+3. After roster evidence,build/pinreview;functional/full860matrix/20replays;report allmisses/selfgrades;integrationrebase whenAannounces.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -66,3 +66,11 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery19:40Z: B2b draft346 created on343 after remote7f2bc5c1 verified. B2c48motionclips/336requiredpairs pass;effects/cold continue under61057. Later functional and matrix queues remain live;do not duplicate. Aoutbox read through19:29Gcheckpoint;no integration rebase announced.
 
 - Recovery19:55Z: third batch remote4b2d5df0 verified and draft347 created on346. All9nonstarters retain improved tier; source+421E2E pass. B2c cold7postinteractive83.3ms/p9516.8ms,wholepage133.3msMISS. Aoutbox read through19:54;A requests final offlinewrapper/loader hook list. Stage66706 and async48337 awaitA64378;no duplicate browser runs.
+
+- Recovery20:16Z: async paired14runs finished; identicalJS/CSS verified. CPU4pageMAX116.7→100ms/postinteractive100.1→100ms/p9516.8;0errors. Tracecompile81.9→6.5ms,remainingcontext/resize+layout at100ms. Retainasync provisionally;fullmatrix remainsrequired. Stage66706 nowownslock. Originalarrays and comparativeCHECKPOINT retained.
+
+- B3capture initialfail retained stage/initial-portrait-selector-error.log: inherited inspector referenced home image removed by M. Own sharpness-measure now captures actual teamcard/nativepixels with explicit composition caveat; no sharedtool edit. Stage resume74597/session98566 skips only archived421passingE2E. B6evidence-index distinguishes incomplete matrix, cold samples and art metrics;Bmatrix handoff6500ms added beforequeueddriver starts.
+
+- Recovery20:27Z: previous source polish committed8f7a8241; acceptedsourcechecks retained. B5 browser4cases/0errors,matchingfinalhash45c71470 andunchangedaccount;223draws/99992tris,16.8msnaturalplaybackMAX. Separateopeningcold199.9native/149.9CPU4/postinteractive133.4msMISS. Earliercapturesretained.
+
+- Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
