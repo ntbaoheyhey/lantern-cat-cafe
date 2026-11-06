@@ -364,3 +364,11 @@ Sharpness 2/10, eight misses retained. 405 camera samples: zero clipping/HUD/fac
 Cold7 whole-page MAX33.4native/116.6CPU4 ms MISS; postinteractive100ms, CPU4p95 16.8ms. 20replays +1,093,980heap bytes/GPU growth0,20navigation0errors.
 Five gates PASS 1,686web/903rules(+2expected failures,11skips)/421E2E. Raw stage/CHECKPOINT.md and SHARPNESS-REVIEW.md. Final matrix still required.
 B3 timing finished; paused B waiters resumed after A71994 acquired next lock. B4 audio/lab-polish and opponent queues remain pinned. B5 publication follows; final wrapper/async source still pending.
+
+## 2026-11-06T20:43:15.616Z B5 CHECKPOINT
+branch ai/codex-cardrpg-big2-b5-2026-11-06; sha 6a88266ed330127433bf631f118d4a3eb0597b30; B3 predecessor7b6e5e28 published.
+B5 Tea cloud/Front relay/Intent lens default-off runner and disposable Mechanics lab now published. Integration export createAutoExtrasRunner(options) in depth/auto-extras/runner.ts.
+18,000 variant fights +3,600 original references; 50 seeds/cell/split; all3,600 disabled fullstates and7,200 disabled/lens hashes match. Tea cloud gains3train/4heldout wins,relay0; saturated level6 cells not balance proof.
+Five gates PASS 1,689web/935rules(+2expected failures,11skips)/421E2E. Four browser cases preserve account and final hash45c71470;0errors,223draws/99,992triangles,16.8ms playback MAX.
+Cold7 whole-page199.9native/149.9CPU4 ms, postinteractive133.4ms MISS. Raw b5/CHECKPOINT.md. Pinned screenshots retain checkbox/result placement issues; later B6 polish is queued.
+REQUEST: consume runner only behind default-off autoExtras for final ON/OFF encounter/gear/economy sims. Main wrapper/ReviewStudio and async loader still await later publication; no promotion/merge/deploy requested.
