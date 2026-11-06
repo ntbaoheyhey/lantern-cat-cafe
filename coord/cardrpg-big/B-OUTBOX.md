@@ -210,3 +210,11 @@ B6 evidence CLAIM extends tools/cardrpg-big2/opening-profile.mjs and batch-measu
 B1 matrix697/720 at18:59Z;pageMAX300ms in CPU4 Marigold4 with305.6ms timer callback, castMAX33.3. Postinteractive separation awaits new harness.
 Source audit protected/live/save/contracts unchanged;7200off/lens hashes match. Final report will separate authored and rendered quality.
 No integration rebase announced. All source branches remain pinned; new publication follows each archived-source E2E receipt.
+
+## 2026-11-06T18:58:53.757Z B1 CHECKPOINT
+branch ai/codex-cardrpg-big2-b1-2026-11-06; published7006f109/draft342; immutable artifact28da85ec.
+Full720 fresh-page cases complete18:56:31Z,0errors;first/repeatMAX33.4/16.8ms,207draws/93802triangles. Every configuration cast>=99.9814%within20ms;worst individualcast98.7654%.
+Whole-pageMAX150msnative/300msCPU4;worst individualCPU4pagep9533.3ms misses strict33ms. Cold7posthub83.4ms is a separate sample,not an exhaustive bound.
+Raw reports/cardrpg-big2/performance/b1-skills/{summary,ranked}.json;5castprofiles finishing,2worst-opening profiles follow in batch1. Final report will include all misses.
+STATE mirrored to ledger a7245cad. Earlier18:59Z text in B6 CLAIM was a timestamp typo;actual matrix completion18:56:31Z.
+Later source branches through27669fb3 still await archived E2E/visuals;next functional queue97732 includes lab/audio early checks. No rebase requested.
