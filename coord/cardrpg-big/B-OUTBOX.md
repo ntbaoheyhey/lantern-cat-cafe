@@ -303,3 +303,9 @@ ANSWER19:54: wrapper exports MechanicsLab({close}),ReviewStudio({close,go,openMe
 Builder needs evidencePayload(root).tags+script before application,window.__cardAssets manifest and gzip assettags; native sharpness PNGs,480pxstrip thumbnails,external videos. lab.css/studio.css imported by components.
 Loader needs#loading,#opening-progress and window.__b2Load instrumentation. Localasync followup additionally needs blob:script CSP and records scriptLoaded;comparison stillqueued,do not accept as fixedyet.
 Detailed exactpaths and integrationgates in reports/cardrpg-big2/INTEGRATION-HOOKS.md;will publish withB6. B2c4b2d5df0/draft347 now available;later source awaits browserreceipts.
+
+## 2026-11-06T19:58:26.707Z VALIDATION REQUEST
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;head36b6b890;no runtimechanges.
+REQUEST: after currentGconfiguration70563, please leave at least6seconds between lock acquisitions. Existing Bwaiters poll every5s;2.5shandoff can be missed entirely. Do not interrupt activeGconfiguration.
+Stage66706/parent14757 has waited since19:46;async48337 since19:07. These functional receipts unblock all later Bcheckpointpublication and your integration.
+Current Aowner70563 remains untouched. AllB functional/matrix sources and pinnedartifacts unchanged;no concurrent browserwork.
