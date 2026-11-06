@@ -68,6 +68,10 @@ try {
         });
         assert.equal(layout.overflow, 0);
         assert(layout.fairness.top >= 0 && layout.fairness.bottom <= height, 'Fairness summary stays in the viewport');
+        if (name === 'entrance') {
+          assert(layout.canvas && layout.canvas.top >= layout.fairness.bottom && layout.canvas.bottom <= height,
+            'The rare companion entrance fits below the fairness summary');
+        }
         const path = `${output}/${width}-cpu${cpu}-${rarity}-${name}.png`;
         await page.screenshot({ path });
         captures.push({ name, path, layout });
