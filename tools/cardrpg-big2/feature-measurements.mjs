@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 // Run only inside the shared timing lock, on a pinned source archive and HTML.
 import {spawn} from 'node:child_process';
 import {cp} from 'node:fs/promises';
@@ -12,6 +13,9 @@ for(const f of [`${phase}-e2e.json`,`${phase}-e2e-e2e.log`])await cp(`${validati
 if(phase==='b5')await run('tools/cardrpg-big2/mechanics-check.mjs');
 if(phase==='b4')await run('tools/cardrpg-big2/audio-check.mjs');
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
+if (!existsSync('/tmp/cardrpg-big2-defer-matrices')) {
 await run('tools/cardrpg-big2/skill-measure.mjs',[],{BIG_SKILL_OUT:`${out}/skills`});
 await run('tools/cardrpg-big/skill-report.mjs',[`${out}/skills`]);
 await run('tools/cardrpg-big/profile-skills.mjs',[`${out}/skills`]);
+
+} else console.log(JSON.stringify({matrixDeferred: true, artifact, out, phase: typeof phase === 'undefined' ? 'b3' : phase}));

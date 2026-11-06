@@ -1,3 +1,4 @@
+import { ENEMY_BATCH3_CLIPS } from './card-enemy-batch3-motion';
 import { ENEMY_BATCH2_CLIPS } from './card-enemy-batch2-motion';
 import { expect, it } from 'vitest';
 import * as T from 'three';
@@ -7,7 +8,7 @@ import { CardUtensil } from './card-utensils';
 import { ENEMY_BATCH1_CLIPS } from './card-enemy-batch1-motion';
 
 it('gives basic and signature enemy actions distinct gestures and compositions', () => {
-  for (const [owner, clips] of Object.entries({ ...ENEMY_BATCH1_CLIPS, ...ENEMY_BATCH2_CLIPS })) {
+  for (const [owner, clips] of Object.entries({ ...ENEMY_BATCH3_CLIPS, ...ENEMY_BATCH1_CLIPS, ...ENEMY_BATCH2_CLIPS })) {
     const basic = `enemy:${owner}:basic`, signature = `enemy:${owner}`;
     expect(cardClipDefinitions(owner).map(c => c.id)).toEqual(expect.arrayContaining([basic, signature, 'hit-left', 'heavy-hit-right', 'KO']));
     expect(cardEffectSignature(CARD_EFFECT_RECIPES[basic]!)).not.toBe(cardEffectSignature(CARD_EFFECT_RECIPES[signature]!));
@@ -16,7 +17,7 @@ it('gives basic and signature enemy actions distinct gestures and compositions',
   }
 });
 it('releases both merged enemy adornment draws when actors leave', () => {
-  for (const owner of Object.keys({ ...ENEMY_BATCH1_CLIPS, ...ENEMY_BATCH2_CLIPS })) {
+  for (const owner of Object.keys({ ...ENEMY_BATCH3_CLIPS, ...ENEMY_BATCH1_CLIPS, ...ENEMY_BATCH2_CLIPS })) {
     const model = new T.Group();
     for (const joint of ['armL', 'armR']) { const node = new T.Group(); node.name = `guard_${joint}`; model.add(node); }
     const prop = new CardUtensil(model, 'guard', owner); let draws = 0, disposed = 0;
