@@ -197,3 +197,23 @@ it.each(['funds', 'daily-cap', 'active-route'])('disables invitations at the %s 
   fireEvent.click(once);
   expect(model.state).toEqual(before);
 });
+
+
+it('brings the ceremony below the visible fairness summary once per pull', () => {
+  vi.useFakeTimers();
+  const model = paidAccount();
+  render(<Invitations m={model} />);
+  const fairness = screen.getByRole('region', { name: 'Invitation fairness' });
+  const stage = screen.getByRole('region', { name: 'Invitation reveal' });
+  Object.defineProperty(fairness, 'offsetHeight', { value: 130 });
+  const scroll = vi.fn();
+  stage.scrollIntoView = scroll;
+  fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
+  expect(stage.style.scrollMarginTop).toBe('142px');
+  expect(scroll).toHaveBeenCalledWith({ block: 'start', behavior: 'instant' });
+  act(() => vi.advanceTimersByTime(550));
+  act(() => vi.advanceTimersByTime(500));
+  expect(scroll).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
+  expect(scroll).toHaveBeenCalledTimes(1);
+});

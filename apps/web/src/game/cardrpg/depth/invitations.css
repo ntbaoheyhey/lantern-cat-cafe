@@ -8,10 +8,8 @@
 .dp-invitation-fairness p { margin: 0; }
 .dp-invitation-fairness a { align-self: center; color: #f2d1a4; }
 #invitation-history { scroll-margin-top: 125px; }
-.dp-invitation-stage.is-rare-reveal .dp-invitation-preview { position: absolute; top: 55px; left: 16px; right: 16px; }
-.dp-invitation-stage.is-rare-reveal .dp-miniature-canvas { height: 220px; }
-.dp-invitation-stage.is-rare-reveal .dp-ceremony { padding-top: 235px; }
-.dp-invitation-stage.is-rare-reveal .dp-flip-result > .dp-cat { width: 136px; }
+.dp-invitation-stage.is-rare-reveal .dp-invitation-preview { position: absolute; top: 55px; left: 12px; right: calc(50% + 8px); height: 220px; margin-top: 0; }
+.dp-invitation-stage.is-rare-reveal .dp-flip-result > .dp-cat { width: min(136px, 45%); align-self: flex-end; margin-right: 8px; }
 .dp-invitation-grid { display: grid; grid-template-columns: minmax(310px, 1fr) minmax(300px, .95fr); gap: 20px; align-items: start; }
 .dp-banner-info { padding: 24px; }
 .dp-banner-info h2 { margin-top: 0; }

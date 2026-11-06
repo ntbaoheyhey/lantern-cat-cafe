@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BANNERS, CARD_BY_ID, ITEM_BY_ID, CARD_RPG_CONFIG, emptyPity, getBannerOdds, getDrawPool,
   type GachaResult } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -14,6 +14,8 @@ const resultName = (result: GachaResult) => result.cardId
   ? CARD_BY_ID[result.cardId]!.name : R.GEAR_BY_ID[result.itemId!]!.name;
 
 export function Invitations({ m }: { m: DepthModel }) {
+  const fairness = useRef<HTMLElement>(null);
+  const stage = useRef<HTMLElement>(null);
   const [systemReducedMotion, setSystemReducedMotion] = useState(false);
   const [bannerId, setBannerId] = useState('standard');
   const [results, setResults] = useState<GachaResult[]>([]);
@@ -36,6 +38,12 @@ export function Invitations({ m }: { m: DepthModel }) {
   const entranceKey = rareCard && active && phase === 'reveal' ? `${active.bannerId}-${active.index}` : undefined;
   const previewId = rareCard ?? featuredId;
   const previewVisible = !revealing || !!entranceKey;
+
+  useLayoutEffect(() => {
+    if (!revealing || !stage.current) return;
+    stage.current.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + 12}px`;
+    stage.current.scrollIntoView?.({ block: 'start', behavior: 'instant' });
+  }, [revealing]);
 
   useEffect(() => {
     const preference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
@@ -80,7 +88,7 @@ export function Invitations({ m }: { m: DepthModel }) {
     <div className="cr-tabs dp-banner-tabs" aria-label="Invitation banners">{BANNERS.map(choice =>
       <button key={choice.id} aria-pressed={bannerId === choice.id} disabled={revealing}
         onClick={() => { setBannerId(choice.id); setResults([]); }}>{choice.name}</button>)}</div>
-    <section className="dp-invitation-fairness" aria-label="Invitation fairness">
+    <section ref={fairness} className="dp-invitation-fairness" aria-label="Invitation fairness">
       <div className="dp-fairness-pity"><strong>Legendary guaranteed in {banner.hardPity - pity.sinceLegendary}</strong>
         <span>{pity.sinceLegendary}/{banner.hardPity} pulls · Next legendary {(odds.legendary / 100).toFixed(2)}%</span></div>
       <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
@@ -120,7 +128,7 @@ export function Invitations({ m }: { m: DepthModel }) {
             {CARD_BY_ID[item.id]?.name ?? R.GEAR_BY_ID[item.id]?.name ?? item.id} · {(item.probability * 100).toFixed(4)}%</p>)}
         </details>
       </section>
-      <section className={`cr-panel dp-invitation-stage ${revealing ? 'is-revealing' : ''} ${entranceKey ? 'is-rare-reveal' : ''}`} aria-label="Invitation reveal">
+      <section ref={stage} className={`cr-panel dp-invitation-stage ${revealing ? 'is-revealing' : ''} ${entranceKey ? 'is-rare-reveal' : ''}`} aria-label="Invitation reveal">
         {revealing && active ? <>
           <div className="dp-reveal-toolbar"><span>Invitation {index + 1} of {results.length}</span>
             <button onClick={() => setPhase('summary')}>Skip reveal</button></div>
