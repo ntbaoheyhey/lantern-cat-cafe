@@ -1,0 +1,69 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-depth
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.455125ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.716333ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.994417ms)
+✔ output order is stable regardless of file creation order (3.399375ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.618125ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (21.900125ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (13.713792ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (11.20925ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (11.079708ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (10.712792ms)
+✔ auth health fails closed when the transport is unavailable (10.803125ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.324167
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  08:37:44
+packages/chain test:    Duration  478ms (import 48%, tests 39%, transform 11%, worker 3%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  08:37:44
+packages/auth test:    Duration  628ms (import 60%, tests 32%, transform 7%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  08:37:44
+supabase/tests test:    Duration  9.25s (tests 81%, import 15%, transform 3%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  48 passed | 3 skipped (51)
+packages/game-rules test:       Tests  890 passed | 2 expected fail | 11 skipped (903)
+packages/game-rules test:    Start at  08:37:44
+packages/game-rules test:    Duration  28.59s (tests 96%, import 3%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  08:38:13
+packages/api-contract test:    Duration  121ms (transform 52%, import 39%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-depth/apps/web
+apps/web test:  Test Files  149 passed (149)
+apps/web test:       Tests  1629 passed (1629)
+apps/web test:    Start at  08:38:13
+apps/web test:    Duration  14.12s (environment 46%, tests 40%, import 11%, transform 2%, worker 1%)
+apps/web test: Environment  jsdom was created 149 times · 63.33s total, 46% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

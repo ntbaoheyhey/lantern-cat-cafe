@@ -12,7 +12,9 @@ try {
   for(let index=1;index<=count;index++){
    const seed=index+offset,s=createDepthAccount(seed);s.cleared=Array.from({length:chapter-1},(_,i)=>i+1);
    const begin=startRun(s,chapter,seed);if(!begin.ok)throw Error(begin.error);
-   const finish=playRun(begin.state,policy);runs.push({seed,won:finish.run.won,nodes:finish.run.visited.length,finalHp:finish.run.hp,firstDeath:finish.run.battle?.firstDeath??null,boons:finish.run.boons});
+   const encounters=[];
+   const finish=playRun(begin.state,policy,b=>encounters.push({firstDeath:b.firstDeath,turns:b.choices.length,rounds:b.round,won:b.result==='party'}));
+   runs.push({seed,won:finish.run.won,nodes:finish.run.visited.length,finalHp:finish.run.hp,firstDeath:encounters.find(b=>b.firstDeath)?.firstDeath??null,encounters,boons:finish.run.boons});
   }
   const row={chapter,policy,wins:runs.filter(r=>r.won).length,count,winRate:runs.filter(r=>r.won).length/count,runs};rows.push(row);
   console.log(JSON.stringify({...row,runs:undefined}));

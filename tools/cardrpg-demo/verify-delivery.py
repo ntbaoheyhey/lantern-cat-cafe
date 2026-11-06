@@ -10,6 +10,11 @@ import json
 import subprocess
 import sys
 
+if '--depth' in sys.argv:
+    import runpy
+    runpy.run_path(str(Path(__file__).resolve().parents[1] / 'cardrpg-depth/verify-delivery.py'), run_name='__main__')
+    raise SystemExit(0)
+
 root = Path(__file__).resolve().parents[2]
 report = root / 'reports/cardrpg'
 manifest_path = report / 'validation/delivery-manifest.json'
