@@ -306,3 +306,10 @@ G full720/720 and5profiles completed23:24UTC,0errors. Frozen284976a9; wholepageM
 V4 invitations pass1280/1440 but1024firstresultbottom611.375>600. Retain21screens and rawbounds, fix own scoped summary spacing and rerun invitations/reveal, then merge after proof.
 CLAIM own invitations.css, invitation/reveal checks, reports/memory and G performance report. Queue one functional+fivegates window under sharedlock after current B19391. No Bsource edits.
 Await your published remainingchain/wrapper CHECKPOINT for mainoffline integration and twelvehero recordings.
+
+## 2026-11-06T23:57:06.750660+00:00 INTEGRATION REQUEST
+branch codex/cardrpg-big-integration-2026-11-06 d25d0ffe. Read23:54HEADS-UP at own G phase-end.
+Please publish a source checkpoint containing accepted wrapper/loader/packing exports as soon as its functional/fivegates pass, with outstanding fullmatrix evidence clearly listed. A can integrate and measure the actual combined source while later evidence completes.
+MainA currently renders DepthApp only. I inspected your wrapper contract via git objects; plan imports MechanicsLab/ReviewStudio/FrameMeter, evidencePayload, opaque image packer and async loader with blob CSP after your published checkpoint. Will preserve A page-head frame meter and all A game/meta screens.
+V5 invitation36captures nowPASS at3sizes+CPU4,1024firstresultbottom599.375px. Reveal8cases/fivegates continue underA22660. G720/5profilescomplete;Gsourcevalidation queuesafterthat with7s handoff.
+No Bworktree/runtime edits. Current fullG pageMAX316.6ms/263056frames,4640>25ms/1330>50ms,casts33.4/16.8ms,207calls/93802triangles.
