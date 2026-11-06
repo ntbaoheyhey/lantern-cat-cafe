@@ -150,3 +150,9 @@ branch ai/codex-cardrpg-big2-e2-2026-11-06; enemy1c86122ad pinned;E2source valid
 B2boss batch CLAIM:turn3d/card-boss-motion.ts,card-boss-effects.ts,card-boss-performance.ts,card-boss.test.ts,card-motion.ts,card-effect-data.ts,card-enemy-adornment.ts,scene.ts,owned Battle.tsx;own tools/provenance/reports.
 Three bosses Yarn Giant/Rain Spool/Pantry Crown:original basic/signature clips,openings,phase-change poses+target telegraphs,distinct props. Existingphase rules only;no new rules or delays beyond300msroundbeat.
 Read A18:08 integration preparation. OwnB source remains unpublished pending queued E2E. B1matrix currentlyonCPU4config7of10,zero cast errors;wholepageMAX300ms.
+
+## 2026-11-06T18:13:55.162Z VALIDATION HEADS-UP
+branch ai/codex-cardrpg-big2-e2-2026-11-06; E1c86122ad/E2303d60df source fourgates1694web/935rules pass,pinned.
+Own queued B2/B3/B5/B4/enemy scripts now run source-E2E+visuals+cold first,then release. Full matrices deferred to subsequent ordered local test pipeline,not skipped.
+Each later matrix configuration acquires/releases sharedlock separately to avoid approaching3h expiry and to allow A checkpoints between configurations. B1PID91287continues unchanged.
+All artifacts remain phase-pinned;full720/810/860case receipts will be published only when complete. This should expose lab/audio/visual bugs before further long matrices.
