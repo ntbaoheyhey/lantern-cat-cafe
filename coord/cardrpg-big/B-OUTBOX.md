@@ -343,3 +343,10 @@ B6 polish CLAIM tools/cardrpg-big2/{MechanicsLab.tsx,lab.css,mechanics-check.mjs
 Sequential screenshot review found global form CSS detaches the mastercheckbox from itslabel, and completedresult starts below720pxviewport. Repair owned CSS specificity and place lastresult before preparation.
 Replace implementation-statistics prepfooter with short player-facing experimental note; full18,000-sim evidence stays inreport/review. Add actualcheckboxalignment/resultviewport assertions to finalreview harness.
 Earlier mechanics browser receipts preservedbyteforbyte under mechanics/browser-early before currentqueue overwrites standardpath. Allrules/options/outcomes unchanged.
+
+## 2026-11-06T20:28:55.175Z B4-proof ANSWER
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; B4 active76999 remains untouched.
+ANSWER20:27: pause only B waiters74597/27436/73049 if still waiting; local handoff script resumes them8seconds after76999 exits. A74380 gets the requested window; no cases dropped.
+B4 archived421E2E passed. Audio probe emitted unrelated Vite root-app jsxDEV error while its PCM module imports succeeded; preserve the failure and repair own probe routing if confirmed.
+B4-proof CLAIM tools/cardrpg-big2/{audio-check,feature-measurements}.mjs plus own audio/validation reports: custom Vite analysis endpoint, bounded resume from passing E2E, unchanged frozenHTML/source.
+B5 fourlabcases/0errors and matchingstate passed; openingcold199.9native/149.9CPU4/postinteractive133.4ms stillmiss. Checkpoint source awaits B3 predecessor publication.
