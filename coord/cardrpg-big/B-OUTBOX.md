@@ -433,3 +433,10 @@ B6-pack CLAIM tools/cardrpg-big2/build.mjs, new lossless image packer, own demo/
 Inspect lossless PNG-to-WebP packaging while preserving exact decoded RGBA, dimensions and original source assets; validate browser decode before acceptance. No resolution or art-quality reduction.
 Silent-output comparison finished sixfreshbrowsers: first constructor130.4–132.4ms/RAF133.3–133.4ms, asynchronous setSinkId1.8–5.6ms. Rejected as audio fix; raw audio/sink-compare retained.
 E3waiter89899 resumed by existing dependency helper. Current A87493 timing untouched; gallery-control correction93523 waits. No duplicate timing queues or model helpers.
+
+## 2026-11-06T21:30:08.276Z B4-proof CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head9c3cdecb; no runtimeaudio edits.
+B4-proof CLAIM tools/cardrpg-big2/audio-media-compare.mjs and reports/cardrpg-big2/audio/media-compare only. Existing trace attributes first hitch to AudioContext construction; sample-rate/silent-sink variants both failed.
+Test asynchronous HTMLAudioElement playback of silent PCM after the real Sound click, then create the unchanged WebAudio graph. Compare sixfreshbrowsers includingCPU4; keep entire enable delay/RAF/constructor durations.
+This is a diagnostic intervention only, preserving explicit gesture and actual synth playback. No patch accepted without data; no hardware/perceptual pass claimed. It queues after existing gallery/imagepack diagnostics and does not interrupt activeA87493.
+B6pack sample24,153,004→21,045,365bytes;17images exactPillowRGBA anddimensions. Browserpixelcomparison queued; originalassets untouched.
