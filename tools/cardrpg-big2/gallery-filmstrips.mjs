@@ -21,7 +21,7 @@ try {
   await page.getByRole('button', { name: 'Fight', exact: true }).click();
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
   await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
-  const actions = await page.evaluate(owners => window.__depthReview.galleryActions.filter(action => owners.includes(action.owner) && /-[1-4]$/.test(action.id)), owners);
+  const actions = await page.evaluate(owners => window.__depthReview.galleryActions.filter(action => owners.includes(action.owner) && (/-[1-4]$/.test(action.id) || action.id.startsWith('enemy:'))), owners);
   for (const action of actions) {
     await page.evaluate(id => window.__depthReview.inspect(id, 0), action.id);
     await page.waitForFunction(() => window.__depthReview.battle.actors.every(actor => window.__depthScene.puppets.get(actor.id)?.asset === actor.catalogId));
@@ -35,10 +35,10 @@ try {
         return { clip: { x: bounds.x, y: bounds.y, width: bounds.width, height: bounds.height }, sourceClip: caster.clip,
           progress, time: caster.actions.get(caster.clip)?.time, casterBounds: scene.audit().units.find(unit => unit.id === model.plan.actorId).box };
       }, index / 7);
-      const path = resolve(temporary, `${action.id}-${index}.png`);
+      const path = resolve(temporary, `${action.id.replaceAll(':', '-')}-${index}.png`);
       await page.screenshot({ path, clip: state.clip }); frames.push(path); checks.push(state);
     }
-    rows.push({ name: action.name, id: action.id, frames, bounds: checks.map(row => row.casterBounds), checks, output: resolve(`${output}/${action.id}.webp`) });
+    rows.push({ name: action.name, owner: action.owner, id: action.id, frames, bounds: checks.map(row => row.casterBounds), checks, output: resolve(`${output}/${action.id.replaceAll(':', '-')}.webp`) });
   }
 } finally { await browser.close(); }
 const manifest = resolve(temporary, 'frames.json'); await writeFile(manifest, JSON.stringify(rows));
@@ -47,4 +47,4 @@ for (const row of rows) { delete row.frames; row.sha256 = createHash('sha256').u
 await writeFile(`${output}/captures.json`, JSON.stringify({ artifact, sha256: createHash('sha256').update(await readFile(artifact)).digest('hex'), method: 'Eight actual gallery render frames at the same normalized times as the after filmstrips. Legacy fallback clip identities retained; no authored-clip claim.', rows, errors }, null, 2));
 await rm(temporary, { recursive: true, force: true });
 console.log(JSON.stringify({ beforeFilmstrips: rows.length, errors }));
-if (errors.length || rows.length !== owners.length * 4) process.exitCode = 1;
+if (errors.length || new Set(rows.map(row => row.owner)).size !== owners.length || (!process.env.BIG_ENEMY_BATCH && rows.length !== owners.length * 4)) process.exitCode = 1;

@@ -1,3 +1,5 @@
+import { ENEMY_BATCH2_EFFECTS } from './card-enemy-batch2-effects';
+import { ENEMY_BATCH1_EFFECTS } from './card-enemy-batch1-effects';
 import { BATCH3_EFFECT_RECIPES } from './card-roster-batch3-effects';
 import { BATCH2_EFFECT_RECIPES } from './card-roster-batch2-effects';
 import { ROSTER_EFFECT_RECIPES } from './card-roster-effects';
@@ -236,3 +238,7 @@ for (const [owner, name, primary, residue] of enemyBasics) {
     ],
   };
 }
+
+Object.assign(CARD_EFFECT_RECIPES, ENEMY_BATCH1_EFFECTS);
+
+Object.assign(CARD_EFFECT_RECIPES, ENEMY_BATCH2_EFFECTS);

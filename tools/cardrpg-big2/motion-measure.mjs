@@ -29,7 +29,7 @@ try {
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
   await page.waitForFunction(() => window.__depthScene?.ready);
   const actions = await page.evaluate(owners => window.__depthReview.galleryActions
-    .filter(action => owners.includes(action.owner) && !action.id.endsWith('-passive') && !action.id.endsWith(':basic')), owners);
+    .filter(action => owners.includes(action.owner) && !action.id.endsWith('-passive')), owners);
   for (const action of actions) {
     await page.evaluate(id => window.__depthReview.inspect(id, 0), action.id);
     await page.waitForFunction(() => {
@@ -39,7 +39,7 @@ try {
     const row = await page.evaluate(({ action, joints, loopOnce }) => {
       const scene = window.__depthScene, model = window.__depthReview;
       const puppet = scene.puppets.get(model.plan.actorId);
-      const clip = puppet.actions.get(model.plan.skillId);
+      const clip = puppet.actions.get(model.plan.presentationId) ?? puppet.actions.get(model.plan.skillId);
       if (!clip) throw new Error(`Missing authored clip ${action.id}`);
       puppet.mixer.stopAllAction();
       puppet.head?.quaternion.copy(puppet.headRest);
@@ -90,7 +90,7 @@ try {
         model.animationAt = model.plan.duration * progress;
         scene.render({ ...scene.view(), frame: model.frame, fixedTime: 10 });
         const caster = scene.puppets.get(model.plan.actorId);
-        if (caster.clip !== model.plan.skillId) {
+        if (caster.clip !== (model.plan.presentationId ?? model.plan.skillId)) {
           throw new Error(`Caster clip ${caster.clip} replaces ${model.plan.skillId} at ${progress}`);
         }
         const heads = [...scene.puppets.values()].filter(puppet => puppet.head);
@@ -149,7 +149,7 @@ const pairs = [];
 for (let left = 0; left < rows.length; left++) {
   for (let right = left + 1; right < rows.length; right++) {
     const a = rows[left].action, b = rows[right].action;
-    const required = !a.enemy && !b.enemy && (a.owner === b.owner || a.id.at(-1) === b.id.at(-1));
+    const required = a.enemy && b.enemy || !a.enemy && !b.enemy && (a.owner === b.owner || a.id.at(-1) === b.id.at(-1));
     const distance = matrix[left][right];
     pairs.push({ left: a.id, right: b.id, required, ...distance,
       pass: distance.angleRms >= thresholds.angleRms && distance.positionRms >= thresholds.positionRms });

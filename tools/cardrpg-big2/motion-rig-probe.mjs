@@ -37,7 +37,7 @@ try {
     const model = gltf.scene;
     let role; model.traverse(node => { if (node.name.endsWith('_motion')) role = node.name.slice(0, -7); });
     const height = new T.Box3().setFromObject(model).max.y;
-    const clips = (await createCardClips(model, role, owner)).filter(clip => /^[a-z]+-[1-4]$/.test(clip.name));
+    const clips = (await createCardClips(model, role, owner)).filter(clip => (/^[a-z]+-[1-4]$/.test(clip.name) || clip.name.startsWith('enemy:')));
     for (const definition of clips) {
       const nodes = joints.map(name => ({ name, node: model.getObjectByName(`${role}_${name}`) }));
       if (nodes.some(({ node }) => !node)) throw Error(`Missing joints ${owner}`);
@@ -73,7 +73,7 @@ for (let i = 0; i < rows.length; i++) for (let j = i + 1; j < rows.length; j++) 
     position += x.position.reduce((sum, v, n) => sum + (v - y.position[n]) ** 2, 0); count++;
   }
   const angleRms = Math.sqrt(angle / count), positionRms = Math.sqrt(position / count);
-  pairs.push({ left: a.id, right: b.id, required: a.owner === b.owner || a.id.at(-1) === b.id.at(-1),
+  pairs.push({ left: a.id, right: b.id, required: a.owner === b.owner || (a.id.startsWith('enemy:') && b.id.startsWith('enemy:')) || a.id.at(-1) === b.id.at(-1),
     angleRms, positionRms, pass: angleRms >= .10 && positionRms >= .012 });
 }
 const offenders = pairs.filter(pair => pair.required && !pair.pass);
