@@ -2,23 +2,23 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented through async-loader candidate 14953637; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Functional receipts serialize under shared lock; A21000 currently owns it.
+All B source implemented through studio navigation a0cf9422; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Functional receipts serialize under shared lock; A21000 currently owns it.
 B2a checkpoint94ed765e contains rendered24motions/46effects,421E2E,cold7; published draft343 on342.
 B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
 1. B2a draft343 published; mirror STATE. Later phases publish after each pinned E2E and rendered/cold receipts.
 2. Inspect functional queues10738/12051/14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
-3. Run scoped batch matrices (owners encoded matrix-series.mjs), then full final-roster matrix and lifecycle on accepted final artifact. Finish report/demo/evidence/ledger;A integration sync remains pending.
+3. Scoped matrices queuedPID58498 after43282 (log/tmp/cardrpg-big2-scoped-matrices.log); finalreview full-roster matrix/lifecycle follows accepted final build. Finish report/demo/ledger;A integration sync pending.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
-Pending own measurements;inherited opening250.1/CPU4233.3ms,casts33.4/16.8ms,207draws/93802triangles.
+B1 castsPASS33.4/16.8ms,207draws/93802tris;openingMISS150native/300CPU4ms;worstCPU4p9533.3msMISS. Later stages pending browser proof.
 ## DECISIONS (append-only)
 - Single agent. A already repurposed sync to big-sync;create immutable OWNERSHIP from S2 section2.
 ## MEASUREMENTS
-None yet;inherited data not own measurement.
+Own B1 720matrix and cold7,20replays;B2a rendered and cold7. Raw links in phaseCHECKPOINTs;laterphase source/sim checks are not browserproof.
 ## COVERAGE
-B1pending;B2pending;B3pending;B4pending;B5pending;B6pending.
+B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,bosses,B6 implemented,sourcechecked,queuedbrowserproof.
 
 - B1 baseline own: nativeMAX33.4ms/CPU4MAX216.6ms,0errors. Separate CPU4 tracedMAX116.7ms;startup script88ms sample,final rendertexture41ms/uniform13ms. reports/cardrpg-big2/performance/baseline and baseline-cpu4-profile.
 - B1 pilot1 build603fc44b:offline bakedstage,bounded12drawable compile/render batches,texture upload per frame,explicitpostwarm. Typecheck pass;fullvalidation pending.
@@ -56,3 +56,5 @@ B1pending;B2pending;B3pending;B4pending;B5pending;B6pending.
 - Scoped skill harness records fullGalleryActions + selection, filters only once, full receipts only when declared coverage complete. Matrixseries owners:3cats/batch,3enemies/batch,Crumb1,bosses3;finalreview all86. No per-phase sampling inside scope.
 
 - B2a94ed765e published draft343 on342 at19:13Z. Allfive gates passed on source3198ed64; evidence-only checkpoint adds no runtime changes. Perbatch matrices wait after functional queues underPID50663.
+
+- Recovery19:28Z:12later phase archives independently matched11,634app/rules/assetfile hashes andHTML receipts,0mismatches;validation/pinned-source-audit.json. Old matrixPID50663 absent; restored one queuedrunner58498 after43282. Scope:threecatbatches+fiveenemy/bossbatches,then finalreview860cases separately. No redundant full-roster matrix for obsolete feature artifacts. Existing stage/audio/lab functional+cold receipts remain required.

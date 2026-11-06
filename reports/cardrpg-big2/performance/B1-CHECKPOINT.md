@@ -16,11 +16,11 @@ The loading screen now advances while textures, models, shader programs, uniform
 | Geometry/texture/program growth,20 replays |not measured here|0/0/0|PASS|
 | Navigate away during warmup,20 cases |inherited fix|0 errors;20 correct disposal|PASS|
 | Screenshot checks |not measured here|3sizes,0overflow/0manual controls|PASS|
-| Exhaustive720 skill cases /5 profiles |inherited207calls/93802triangles|running on pinned artifact|PENDING|
+| Exhaustive720 skill cases /5 profiles |inherited207calls/93802triangles|complete:33.4/16.8ms first/repeat|PASS casts; opening MISS below|
 
 REFERENCE: baseline/summary.json; baseline-cpu4-profile/HITCHES.md; b1-cold/summary.json; lifecycle/summary.json; navigation/checks.json; screens/checks.json; ../validation/b1-source.json
 
-Cold traces show the remaining maximum before the hub's first interactive frame; post-interactive timings include the entire 3D preparation. This is not a claim that every opening interval meets100ms. The 20-battle sample is a natural recorded encounter replayed atx4, not20different encounters. Garbage collection intervals are marked and retained in raw arrays. Full gallery coverage is still running.
+Cold traces show the remaining maximum before the hub's first interactive frame; post-interactive timings include the entire 3D preparation. This is not a claim that every opening interval meets100ms. The 20-battle sample is a natural recorded encounter replayed atx4, not20different encounters. Garbage collection intervals are marked and retained in raw arrays. Full gallery coverage is recorded below; its larger whole-page maxima supersede the cold-sample bound.
 
 Five source gates passed: typecheck/lint/build,1681web tests,903rules+2expectedfail/11skip,581Supabase,32chain,24auth,16contract,421E2E. No rules or economy files changed. Default flag-off static entry graph has no model URLs or WebGLRenderer markers; see flag-off-startup.json. A runtime flag-off network audit is still needed before the broadest exclusion claim.
 
