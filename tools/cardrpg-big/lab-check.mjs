@@ -27,6 +27,8 @@ try {
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     const drawer = page.getByRole('region', { name: 'Feel lab', exact: true });
     const capture = async name => {
+      await drawer.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+      await page.waitForTimeout(180);
       const layout = await drawer.evaluate(element => {
         const bounds = element.getBoundingClientRect();
         const body = element.querySelector('.dp-lab-body');
@@ -60,7 +62,7 @@ try {
     await page.waitForFunction(() => document.querySelector('.dp-frame-overlay output')?.textContent.includes('Max'));
     await capture('performance');
     await drawer.getByRole('button', { name: 'Skill gallery', exact: true }).click();
-    await drawer.getByLabel('Preview action', { exact: true }).selectOption('clover-4');
+    await drawer.getByLabel('Preview action', { exact: false }).selectOption('clover-4');
     await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
     await drawer.getByLabel('Preview camera').selectOption('far');
     await drawer.getByLabel('Preview speed').selectOption('0.25');
@@ -72,6 +74,11 @@ try {
     });
     assert(Math.abs(preview.ratio - .999) < 1e-9);
     assert.deepEqual({ ...preview, ratio: .999 }, { id: 'clover-4', ratio: .999, speed: .25, camera: 'far', effectOnly: true });
+    const scrubber = drawer.getByRole('slider', { name: 'Action progress', exact: true });
+    const scrubberBounds = await scrubber.boundingBox();
+    await scrubber.click({ position: { x: scrubberBounds.width * .55, y: scrubberBounds.height / 2 } });
+    await capture('gallery-effect');
+    await drawer.getByLabel('Effect only', { exact: true }).uncheck();
     await capture('gallery-stage');
     await drawer.getByRole('button', { name: 'Play preview', exact: true }).click();
     await page.waitForFunction(() => window.__depthReview.plan === null, null, { timeout: 20000 });

@@ -49,7 +49,7 @@ export function FeelLab({ m, home = false }: { m: DepthModel; home?: boolean }) 
   if (!visible) return null;
   return <div className={`dp-feel-lab ${home ? 'dp-feel-home' : ''}`}>
     <button aria-expanded={open} aria-controls="feel-lab-controls" onClick={() => { m.labOpen = !open; m.notify(false); }}>Feel lab</button>
-    {open && <section id="feel-lab-controls" className="dp-lab-drawer" aria-label="Feel lab">
+    {open && <section id="feel-lab-controls" className={`dp-lab-drawer ${m.galleryBattle && m.labPanel === 'gallery' ? 'dp-lab-gallery' : ''}`} aria-label="Feel lab">
       <header className="dp-lab-header"><h2>Feel lab</h2><button ref={closeButton} onClick={close}>{m.watching ? 'Return to battle' : 'Return to cafe'}</button></header>
       <nav className="dp-lab-tabs" aria-label="Feel lab panels">{panels.map(([id, name]) =>
         <button key={id} aria-pressed={m.labPanel === id} onClick={() => { m.labPanel = id; m.notify(false); }}>{name}</button>)}</nav>

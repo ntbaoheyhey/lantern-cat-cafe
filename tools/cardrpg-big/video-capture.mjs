@@ -67,7 +67,7 @@ try {
     assert(skills.length > 0);
     const accountBefore = await page.evaluate(() => JSON.stringify(window.__depthReview.state));
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
-    await page.getByLabel('Preview action', { exact: true }).selectOption(skills[0].id);
+    await page.getByLabel('Preview action', { exact: false }).selectOption(skills[0].id);
     await page.waitForFunction(() => {
       const m = window.__depthReview, scene = window.__depthScene;
       return scene?.ready && m.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
