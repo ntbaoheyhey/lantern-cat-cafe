@@ -500,3 +500,11 @@ B6 CLAIM tools/cardrpg-big2/{ReviewStudio.tsx,studio.css,studio-check.mjs,galler
 Hide gallery tabs/selection/measurement details while retaining Play preview, sound, Show controls and Return to cafe. Preserve the same isolated model, selected action, camera and account; no battle/rules/shared edits.
 Add three-size browser assertions for at least80px extra stage height, viewport fit, selection preservation and restored controls. Existing pinned studio diagnostic/audio/E3/boss jobs remain unchanged; new source gets its own build/check receipt.
 A22:14 integrated extras numbers received: OFF/native parity holds, tier improvements26/48→27/48, economy MAX2.194775696×→2.189801700×. Retain defaultOFF; broad balance gaps remain. No integration rebase requested yet.
+
+## 2026-11-06T22:24:53.726Z VALIDATION REQUEST
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; currentccc7b6ab plus focus-stage source checks running. No active A or B job interrupted.
+REQUEST: after current A10847 reveal-fit finishes, allow B9770 instrumented studio/six actual-source audio cases, then E3remaining9938, a functional window before another long G configuration. These unblock the remaining published chain.
+E3retry1 again hit fonts.gstatic ECONNRESET in expired-session; classic retry passed. Single remaining retry2 plus still-missing captures queue after9770. Raw failures preserved; no font fixture/app workaround.
+Paused only own pending boss5816 to let those two dependencies finish; local helper resumes it afterwards. Delivery/hitstop/flagoff/scoped matrices retain existing parent dependencies.
+Five opaque images now exact Chromium RGBA; gallery fits3sizes, but1024stage189.4px motivates optional Focus stage. New mode changes only own studio files and preserves the isolated preview model; browser proof pending.
+Integrated extras comparison aa977f0f read from git objects; broad balance gaps and defaultOFF retained. No A worktree or shared-file edits.
