@@ -102,3 +102,10 @@ B3 integration starts under prior CLAIM:scene/chapter-stage/card-contact/card-st
 Measured image inspection confirms flat gold shield domes hide feet. Replace with open ankle outline;ground shadow atworld0.044 above embroidery0.0425,account for actor scale/jump.
 Stage256px wood stretches to~426CSSpx per repeat at1280,~3.3x magnification atDPR2. Bake1024 analytic originals and anisotropy16;four merged/instanced dressing draws/chapter.
 Keep camera A/B/C and honest crop comparisons;HUD/nativefont and reduced stair-step variance cannot justify artificial+40%sharpness claims.
+
+## 2026-11-06T17:47:27.144Z B5 CLAIM
+branch ai/codex-cardrpg-big2-b3-2026-11-06; locala886b026; B3source fourgates1686web/903rules pass, browser pending.
+B3 artifact faa86711 and immutable archive pinned; source free for B5. New queue follows B2c12051, no concurrent timing.
+B5 integration extends existing CLAIM to tools/cardrpg-big2/{MechanicsLab,mechanics-model,lab.css,offline.tsx},turn3d/card-lab-effects.ts,effects.ts,card-effect-data.ts,card-effects.ts and tests.
+Recipient-specific effect targets prevent friendly combo cues appearing on hostile skill targets. No shared model/barrel/save edits.
+32 isolated rules tests and18,000variant sims retained; no balance claim from saturated cells. Existing Battle FeelLab import/call preserved.
