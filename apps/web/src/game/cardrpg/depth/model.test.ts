@@ -3,6 +3,7 @@ import { DepthModel } from './model';
 import { SAVE_KEY } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { exportSave } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
+import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 afterEach(() => { vi.unstubAllGlobals(); });
 it('keeps the offline entry free of storage access and writes', () => {
   const getItem = vi.fn(() => { throw Error('forbidden'); });
@@ -32,6 +33,9 @@ it('mounts the battle scene when resuming a local or imported active encounter',
   const source = new DepthModel(true);
   source.start(1);
   source.enter('0-0');
+  source.fight();
+  source.sceneReady = true;
+  source.step();
   const code = exportSave(source.state);
   vi.stubGlobal('localStorage', { getItem: () => code, setItem: vi.fn() });
   const restored = new DepthModel(false);
@@ -48,14 +52,81 @@ it('starts a new lesson and resets without inheriting a paused battle', () => {
   model.tutorial();
   expect(model.paused).toBe(false);
   model.paused = true;
-  model.auto = true;
-  model.selectedSkill = 'mochi-1';
+  model.fight();
   model.reset();
   expect(model.paused).toBe(false);
-  expect(model.auto).toBe(false);
-  expect(model.selectedSkill).toBe('');
+  expect(model.watching).toBe(false);
   expect(model.sceneStarted).toBe(false);
   expect(model.battle).toBeNull();
+});
+
+it('waits at Prepare, then completes a fully automatic watched fight', () => {
+  const model = new DepthModel(true);
+  model.start(1); model.enter('0-0');
+  expect(model.screen).toBe('prepare');
+  expect(model.showBattle).toBe(false);
+  expect(model.canAct).toBe(false);
+  const expected = R.playBattle(R.createBattle(model.battle!.initial), 'auto');
+  model.fight(); model.sceneReady = true;
+  for (let index = 0; index < 900 && model.showBattle; index++) { model.step(); model.tick(100000); }
+  expect(model.screen).toBe('result');
+  expect(model.battle).toEqual(expected);
+  expect(model.showBattle).toBe(false);
+});
+
+it.each(['campaign', 'daily', 'tower'] as const)('skips %s from a paused, partly watched fight and replays the same result', mode => {
+  const model = new DepthModel(true);
+  model.state.cleared = [1, 2, 3];
+  model.start(1, mode); model.enter('0-0'); model.fight(); model.sceneReady = true;
+  const expected = R.playBattle(R.createBattle(model.battle!.initial), 'auto');
+  model.step(); model.paused = true;
+  const paused = JSON.stringify(model.battle);
+  model.tick(100000); model.step();
+  expect(JSON.stringify(model.battle)).toBe(paused);
+  model.skip();
+  expect(model.battle).toEqual(expected);
+  const account = exportSave(model.state);
+  model.replayLast();
+  for (let index = 0; index < 900 && model.showBattle; index++) { model.replayStep(); model.tick(100000); }
+  expect(model.replay).toEqual(expected);
+  expect(exportSave(model.state)).toBe(account);
+  model.finish();
+  expect(model.screen).toBe('result');
+  model.replayLast(); model.skip();
+  expect(model.replay).toEqual(expected);
+});
+
+it('keeps lesson, immediate battle, reward settlement and improvement usable', () => {
+  const model = new DepthModel(true);
+  model.tutorial();
+  expect(model.screen).toBe('prepare');
+  model.fight(); model.skip();
+  expect(model.screen).toBe('result');
+  model.finish();
+  expect(model.state.tutorial).toBe(3);
+  expect(model.screen).toBe('gacha');
+  model.watchNow();
+  expect(model.showBattle).toBe(true);
+  model.skip(); model.improveTeam();
+  expect(model.screen).toBe('team');
+  expect(model.state.run!.complete).toBe(true);
+  expect(model.battle).toBeNull();
+  const saved = exportSave(model.state);
+  model.finish();
+  expect(exportSave(model.state)).toBe(saved);
+});
+
+it('restores an unstarted encounter to Prepare and a completed encounter to Result', () => {
+  const source = new DepthModel(true);
+  source.start(1); source.enter('0-0');
+  const restored = new DepthModel(true);
+  restored.import(exportSave(source.state));
+  expect(restored.screen).toBe('prepare');
+  expect(restored.sceneStarted).toBe(false);
+  source.skip();
+  restored.import(exportSave(source.state));
+  expect(restored.screen).toBe('result');
+  expect(restored.showBattle).toBe(false);
 });
 
 it('previews every authored skill and enemy without mutating account progress', () => {

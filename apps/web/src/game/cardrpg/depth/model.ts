@@ -6,25 +6,25 @@ import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 
-export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence';
+export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
   state: R.DepthAccount;
   screen: Screen = 'hub';
   cardId = 'mochi';
   itemId = '';
-  notice = 'Your next step is a short lesson at the practice table.';
+  notice = 'Build your team, press Fight, then watch your companions take the lead.';
   error = false;
   galleryBattle: R.Battle | null = null;
   galleryId = GALLERY_ACTIONS[0]!.id;
   readonly galleryActions = GALLERY_ACTIONS;
-  auto = false;
+  watching = false;
+  camera: 'wide' | 'close' | 'overhead' = 'wide';
   paused = false;
-  selectedSkill = '';
-  selectedTarget = '';
   tutorialBattle: R.Battle | null = null;
   replay: R.Battle | null = null;
   replayChoices: R.Choice[] = [];
   replayIndex = 0;
+  replayReturn: Screen = 'save';
   plan: EffectPlan | null = null;
   animationAt = 0;
   sceneStarted = false;
@@ -55,7 +55,7 @@ export class DepthModel {
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
     this.itemId = this.state.gear[0]?.id ?? '';
-    this.sceneStarted = !!this.battle;
+    this.restoreEncounter();
   }
   snapshot = () => this.revision;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
@@ -68,9 +68,10 @@ export class DepthModel {
     for (const listener of this.listeners) listener();
   }
   get battle() { return this.galleryBattle ?? this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
+  get showBattle() { return !!this.battle && (!!this.galleryBattle || this.watching); }
   get saveStatus() { return this.offline ? 'Export to keep progress' : this.storageFailed ? 'Export to keep progress · local saving unavailable' : 'Saved locally'; }
   get busy() { return !!this.plan; }
-  get canAct() { return !this.galleryBattle && !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
+  get canAct() { return !this.galleryBattle && this.showBattle && !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
   get frame() { return this.plan ? sampleActionPlan(this.plan, this.animationAt, this.state.settings.reducedMotion) : null; }
   inspect(id: string, progress = 0, play = false) {
     const fixture = galleryFixture(id);
@@ -96,6 +97,7 @@ export class DepthModel {
     return result.ok;
   }
   go(screen: Screen) {
+    if (screen === 'map' && this.battle && !this.watching) screen = this.battle.result ? 'result' : 'prepare';
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
     this.screen = screen; this.error = false; this.notify(false); }
   command(command: Command) { this.apply(R.metaCommand(this.state, command)); }
@@ -103,20 +105,45 @@ export class DepthModel {
     if (this.apply(R.startRun(this.state, chapter, this.state.account.seed + this.state.nextRunId * 7919, mode, this.offline ? '2026-11-06' : new Date().toISOString().slice(0, 10)), 'Choose the first stop on your route.')) this.go('map');
   }
   enter(id: string) {
-    if (this.apply(R.enterNode(this.state, id), 'Read the intent, then choose your response.')) {
-      this.selectedSkill = ''; this.selectedTarget = ''; this.auto = false;
-      if (this.battle) this.sceneStarted = true;
+    if (this.apply(R.enterNode(this.state, id), 'Prepare your companions, then press Fight.')) {
+      this.plan = null; this.paused = false; this.watching = false;
+      if (this.battle) this.screen = 'prepare';
       this.notify(false);
     }
   }
   tutorial() {
     this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true });
-    this.sceneStarted = true; this.auto = false; this.paused = false; this.selectedSkill = ''; this.go('map');
+    this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
   }
-  choose(skillId: string) {
-    this.selectedSkill = skillId;
-    this.selectedTarget = R.legalChoices(this.battle!).find(c => c.skillId === skillId)?.targetId ?? '';
+  fight() {
+    if (!this.battle || this.battle.result) return;
+    this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
     this.notify(false);
+  }
+  watchNow() {
+    if (!this.state.run || this.state.run.complete) {
+      this.start(1);
+      const node = R.availableNodes(this.state.run!)[0];
+      if (node) this.enter(node.id);
+    }
+    this.go('map');
+    this.fight();
+  }
+  private restoreEncounter() {
+    this.watching = !!this.battle && !this.battle.result && this.battle.choices.length > 0;
+    this.sceneStarted = this.watching;
+    this.screen = this.battle ? this.battle.result ? 'result' : this.watching ? 'map' : 'prepare' : 'hub';
+  }
+  private showResult() {
+    this.watching = false; this.paused = false; this.plan = null; this.screen = 'result'; this.notify();
+  }
+  skip() {
+    if (!this.battle || this.galleryBattle) return;
+    if (this.replay) {
+      this.replay = R.replayBattle(this.replay.initial, this.replayChoices);
+      this.replayIndex = this.replayChoices.length;
+    } else R.playBattle(this.battle, 'auto');
+    this.showResult();
   }
   act(choice?: R.Choice) {
     const battle = this.battle;
@@ -124,14 +151,14 @@ export class DepthModel {
     const actor = R.currentActor(battle);
     if (!actor) return;
     const before = battle.log.length;
-    let skillId = choice?.skillId ?? this.selectedSkill;
-    const targetId = choice?.targetId ?? this.selectedTarget;
+    const selected = actor.side === 'party' ? choice ?? R.chooseAction(battle, 'auto') : null;
+    let skillId = selected?.skillId ?? '';
     let accepted = false;
     if (actor.side === 'enemy') {
       skillId = `${R.ENEMY_BY_ID[actor.catalogId]!.role}Attack`;
       accepted = R.enemyAct(battle);
-    } else accepted = R.act(battle, choice ?? { actorId: actor.id, skillId, targetId });
-    if (!accepted) { this.notice = 'Choose an available skill and one of its highlighted targets.'; this.notify(false); return; }
+    } else accepted = R.act(battle, selected!);
+    if (!accepted) { this.notice = 'This recorded action could not be resolved.'; this.error = true; this.showResult(); return; }
     const targets = [...new Set(battle.log.slice(before).map(e => e.targetId))];
     const events: TurnEvent[] = [{ version: 3, seq: 0, turn: actor.turns, round: battle.round,
       actionId: battle.log.length, beat: 0, type: 'action_start', actorId: actor.id, skillId, targetIds: targets, amount: 0 }];
@@ -143,20 +170,24 @@ export class DepthModel {
     }
     this.plan = createActionPlan(events);
     this.animationAt = 0;
-    this.selectedSkill = ''; this.selectedTarget = '';
     this.notify();
   }
   tick(milliseconds: number) {
-    if (this.paused || !this.plan) return;
+    if (this.paused || !this.showBattle) return;
+    if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
     this.animationAt += milliseconds * this.state.settings.speed;
-    if (this.animationAt >= this.plan.duration) { this.plan = null; this.notify(false); }
+    if (this.animationAt >= this.plan.duration) {
+      this.plan = null;
+      if (this.battle?.result && !this.galleryBattle) this.showResult();
+      else this.notify(false);
+    }
   }
   step(policy: R.Policy = 'auto') {
     if (!this.canAct || !this.battle) return;
     this.act(R.currentActor(this.battle)?.side === 'party' ? R.chooseAction(this.battle, policy) : undefined);
   }
   finish() {
-    if (this.replay) { this.replay = null; this.plan = null; this.go('save'); return; }
+    if (this.replay) { this.replay = null; this.plan = null; this.watching = false; this.go(this.replayReturn); return; }
     if (this.tutorialBattle?.result) {
       this.tutorialBattle = null;
       this.sceneStarted = false;
@@ -164,18 +195,34 @@ export class DepthModel {
       this.notice = 'A welcome invitation is ready. Then equip your first piece.';
       this.go('gacha'); this.notify(); return;
     }
-    this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one equipped skill.');
+    if (this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one unlocked skill.')) this.go('map');
+  }
+  improveTeam() {
+    this.finish();
+    if (this.state.run && !this.state.run.complete) this.apply(R.abandonRun(this.state), 'Route rewards kept. Improve your team for the next route.');
+    this.go('team');
+  }
+  leave() {
+    if (this.galleryBattle) { this.closeGallery(); return; }
+    if (this.replay) { this.finish(); return; }
+    this.paused = false; this.plan = null; this.watching = false;
+    if (this.tutorialBattle) { this.tutorialBattle = null; this.state.tutorial = 3; }
+    else this.apply(R.abandonRun(this.state), 'Partial route rewards kept.');
+    this.go('hub'); this.notify();
   }
   invite(free = false) {
     const seed = this.state.account.seed + this.state.account.history.length * 101 + 39;
     this.apply(free ? firstInvitation(this.state, 4) : R.metaCommand(this.state, { type: 'pull', bannerId: 'standard', seed }), 'Your invitation is open. Every companion has their own kit.');
   }
   replayLast() {
-    if (!this.state.lastBattle) return;
-    this.replay = R.createBattle(this.state.lastBattle);
-    this.replayChoices = this.state.lastChoices;
+    const completed = this.screen === 'result' ? this.battle : null;
+    const setup = completed?.initial ?? this.state.lastBattle;
+    if (!setup) return;
+    this.replayReturn = this.screen;
+    this.replayChoices = [...(completed?.choices ?? this.state.lastChoices)];
+    this.replay = R.createBattle(setup);
     this.replayIndex = 0;
-    this.sceneStarted = true; this.auto = false; this.paused = false; this.go('map');
+    this.sceneStarted = true; this.watching = true; this.paused = false; this.plan = null; this.go('map');
   }
   replayStep() {
     if (!this.replay || !this.canAct) return;
@@ -183,26 +230,24 @@ export class DepthModel {
     else {
       const choice = this.replayChoices[this.replayIndex++];
       if (choice) this.act(choice);
-      else { this.notice = 'Replay reached its last recorded action.'; this.paused = true; this.notify(false); }
+      else { this.notice = 'Replay reached its last recorded action.'; this.showResult(); }
     }
   }
   import(code: string) {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now());
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = next; this.tutorialBattle = null; this.replay = null; this.plan = null;
-      this.sceneStarted = !!this.battle;
+      this.state = next; this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.restoreEncounter();
       this.paused = false;
-      this.selectedSkill = ''; this.selectedTarget = '';
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
       this.storageFailed = false; this.notice = 'Save imported and checksum verified.'; this.error = false; this.notify();
     } catch (error) { this.error = true; this.notice = String(error); this.notify(false); }
   }
   reset() {
     this.state = R.createDepthAccount(11, this.offline ? 0 : Date.now());
-    this.tutorialBattle = null; this.replay = null; this.plan = null;
-    this.paused = false; this.auto = false;
-    this.selectedSkill = ''; this.selectedTarget = '';
+    this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+    this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';
     this.storageFailed = false; this.notice = 'A fresh cafe is ready.'; this.go('hub'); this.notify();
   }

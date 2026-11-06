@@ -18,6 +18,7 @@ export function Hub({ m }: { m: DepthModel }) {
   return <><PageTitle eyebrow={`Cafe day ${m.state.account.day}`} title="A small light. A brave little team." />
     <section className="cr-hero"><div><small>THE FIRST LANTERN</small><h2>Keep the cafe<br />warm tonight.</h2><p>{next}</p>
       <button className="cr-primary" onClick={() => active ? m.go('map') : m.state.tutorial < 3 ? m.tutorial() : m.go('team')}>{active ? 'Continue your route' : m.state.tutorial < 3 ? 'Try the practice table' : 'Prepare your team'} →</button>
+      <button disabled={!!active} onClick={() => m.watchNow()}>Watch a battle now</button>
       {m.state.tutorial < 3 && <button onClick={() => { m.state.tutorial = 3; m.notify(); }}>Skip lesson</button>}</div>
       <div className="cr-hero-art">{m.state.team.map(id => <Companion key={id} id={id} m={m} />)}</div></section>
     <div className="cr-hub-grid"><section className="cr-panel"><h2>Tonight’s route</h2><div className="cr-route-list">{R.CHAPTERS.map(chapter => <button key={chapter.id} disabled={active || chapter.id > 1 && !m.state.cleared.includes(chapter.id - 1)} onClick={() => m.start(chapter.id)}>
@@ -31,16 +32,16 @@ export function Hub({ m }: { m: DepthModel }) {
 }
 export function Team({ m }: { m: DepthModel }) {
   const state = m.state, locked = !!state.run && !state.run.complete;
-  const update = (team = state.team, rows = state.rows, skills = state.skills) => m.apply(R.configureTeam(state, team, rows, skills), 'Team, rows and three-card loadouts updated.');
-  return <><PageTitle eyebrow="Three companions · three equipped skills each" title="Build your evening shift." />
+  const update = (team = state.team, rows = state.rows) => m.apply(R.configureTeam(state, team, rows, state.skills), 'Team and rows updated. Your companions use their unlocked kits.');
+  return <><PageTitle eyebrow="Three companions · automatic battles" title="Build your evening shift." />
     <section className="cr-panel"><div className="dp-three">{state.team.map((id, index) => <label key={index}>Seat {index + 1}<select disabled={locked} value={id} onChange={e => update(state.team.map((old, i) => i === index ? e.target.value : old))}>{state.account.cards.map(c => <option key={c.cardId} value={c.cardId}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select></label>)}</div>
       <div className="dp-combos">{R.TEAM_COMBOS.map(combo => <span key={combo.id} className={R.teamCombos(state.team).some(c => c.id === combo.id) ? 'active' : ''} title={combo.description}>{combo.name} · {R.teamCombos(state.team).some(c => c.id === combo.id) ? 'active' : combo.tags.join(' + ')}</span>)}</div></section>
     <div className="dp-three">{state.team.map(id => { const cat = R.CAT_BY_ID[id]!; return <section className="cr-panel" key={id}>
       <div className="dp-cat-heading"><img src={portrait(id)} alt="" /><div><h2>{cat.name}</h2><small>{cat.role} · {cat.flavour}</small></div></div>
       <label>Battle row<select disabled={locked} value={state.rows[id]} onChange={e => update(state.team, { ...state.rows, [id]: e.target.value as R.Row })}><option value="front">Front · protects the rear</option><option value="rear">Rear · protected by front</option></select></label>
       <p title={cat.passive.description}><b>{cat.passive.name}</b> · {cat.passive.description}</p>
-      {state.skills[id]!.map((skillId, slot) => <label key={slot}>Card {slot + 1}<select aria-label={`${cat.name} card ${slot + 1}`} disabled={locked} value={skillId} onChange={e => update(state.team, state.rows, { ...state.skills, [id]: state.skills[id]!.map((s, i) => i === slot ? e.target.value : s) })}>{R.availableSkills(state, id).map(skill => <option key={skill.id} value={skill.id}>{skill.name} · {skill.cost} energy</option>)}</select><small>{R.SKILLS[skillId]!.description}</small></label>)}
-      <small>Level 6 or three stars unlocks {cat.skills[3]!.name}. Replace one of your three cards.</small>
+      {R.availableSkills(state, id).map(skill => <div className="dp-skill-summary" key={skill.id}><img src={skillIcon(skill.id)} alt="" /><span><b>{skill.name}</b><small>{skill.description}</small></span></div>)}
+      <small>{R.availableSkills(state, id).length === 4 ? 'Ultimate unlocked and included in the automatic kit.' : `Level 6 or three stars unlocks ${cat.skills[3]!.name}.`}</small>
     </section>; })}</div><div className="cr-actions">{R.CHAPTERS.map(chapter => <button disabled={locked || chapter.id > 1 && !state.cleared.includes(chapter.id - 1)} key={chapter.id} onClick={() => m.start(chapter.id)}>Begin {chapter.name}</button>)}</div></>;
 }
 export function Collection({ m }: { m: DepthModel }) {
