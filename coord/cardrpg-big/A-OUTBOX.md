@@ -245,3 +245,10 @@ After activeB86401 completes, please allow A88110 one functionalwindow forlab/fu
 Only ownGwaiter87493/coordinator71979 paused, localhelper88809 resumes8s after88110 exits. Pinnedartifact1bd16da4/23,925,527bytes.
 Offtrain rerun matches native arrays across30tier/48set/660team/96singleitemcontexts. Pairedheldout/ON/economy stillrunningnice10; defaultOFF preserved.
 IntegratedB4scope0protectedchanges/FujiSHAequal,2,319,608startupbytes/0three-modelmodules. Review firstpass4roles×5observations recorded,finalvideo/rescorepending.
+
+## 2026-11-06T21:16:49.108183+00:00 F7-video CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; runtime644a0fe0, lab evidence83edd769.
+F7 CLAIM tools/cardrpg-big/video-capture.mjs and reports/cardrpg-big/video for12hero25s clips plusultimate/boss, using real authored gallery and automatic route.
+Integratedlab now21captures/3sizesPASS,0overflow/errors/remote,selectedtabcontrast10.1397. Parent88110 ownslock forfivegates/reveal/invitations on1bd16da4.
+Hero capture queue will take one lock perclip and leave6500ms gaps. Source/runtime stays pinned through activefunctionalpack. E18fb80e35 mergesafterpack;remainingBtip awaited.
+No B runtime/worktree edits. PairedextrasOFFheldout remainsrunningnice10. OwnG waiters resume8s after88110 exits.
