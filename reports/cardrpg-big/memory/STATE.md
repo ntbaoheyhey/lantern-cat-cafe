@@ -3,29 +3,35 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F3 starter motion verification complete with disclosed misses. F3 source hashes17/17 verified, focused12/12, five gates pass1653 web/903 rules/421 E2E, actual-rig30/30 required pairs pass,20 embedded filmstrips and915 layout poses. Cold7, full610 matrix and five profiles complete. First/repeatMAX33.4/16.8ms, pageMAX566.7ms fails. F3 commit/push and draft next. F4 unverified source adds40 primitives/31 compositions, status cues, preview UI, ultimate panels and cooperative loading. F4 focused8/8 now passes. Use F3 snapshots when staging shared paths.
+Phase F4 starter effect verification. F3 source a6c093de pushed and draft#337 opened on#336. F4 has40 original primitives/31 compositions, three passives, eight enemy basic variants, six status cues, preview UI, ultimate panels and cooperative loading. Focused8/8 passes. First full validation found one stale gallery-length assertion61→72, corrected with explicit passive/basic counts. Build/E2E still running session73389. F4 captures and timing pending.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed52e9e94a46c970ad3c373cebbbb4fdc17421e1b9, F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
+Last pushed source a6c093de6801b234603a10ee3fdb5e01d5a4955b, primary/F3 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
-1. Commit/push F3 source snapshots and evidence, open stacked draft on F2 after rereading memory and phase.
+1. Finish F4 validation, rerun corrected gallery tests, build offline artifact and capture all31 six-frame effect sequences.
 2. Validate/build F4 starter effects, capture six-frame grayscale comparisons and face protection, fix failures and remeasure cold hitches.
 3. Publish docs/cardrpg3/slice.html and CHECKPOINT.md on F4 before extending other nine cats, then F5/M/I/G/F6/F7.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
-A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full610 matrix and5 profiles complete, evidence52e9e94a46c970ad3c373cebbbb4fdc17421e1b9. F3–F7 pending.
+A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full610 matrix and5 profiles complete, evidence52e9e94a46c970ad3c373cebbbb4fdc17421e1b9. F3 ·a6c093de / draft#337 / motion/GATES.md, PERFORMANCE.md,610 cases+5 profiles. F4–F7 pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
-## PHASE GATES · F3 slice (copied requirements)
-PASS slice “at least12 distinct clips ... one unique clip per skill ... enemies telegraph, attack ... KO” ·22/19 authored clips per hero/enemy,36/33 mixer actions across11 models, focused12/12. Remaining roster deferred. motion/GATES.md.
-PASS implementation “anticipation, squash and stretch, overshoot, secondary motion ... root motion ... stop distance and return” ·unit checks, actual-rig41-time samples and20 filmstrips. Visual gestures remain subtle in early anticipation frames.
-PASS slice “sample joint trajectories ... pairwise distance matrix ... fix every offender ...8-frame filmstrip per skill” ·20 actions/160 frames,30/30 required pairs pass, angular min0.227023rad>=0.10, position min0.031135>=0.012 height. motion/variety.json.
-FAIL full-session, PASS casts “after each phase rerun the F0 harness; no phase may add a new hitch” ·cold7+610+5 profiles complete. PageMAX566.7ms vs F2 533.4ms, cast33.4/16.8ms and zero>50. motion/PERFORMANCE.md.
+## PHASE GATES · F4 slice (copied requirements)
+PASS implementation “library of >=30 reusable primitives ... compose a UNIQUE effect” ·40 primitives/31 recipes, structural tests8/8. Rendered uniqueness pending. effects/PLAN.md, validation/f4-focused.log.
+NOT YET “Identity ... silhouette, palette ... rhythm ... camera move ... status effects ... never hide face” ·six-frame grayscale/edge/motion distance>=0.16 and face-pixel gate predeclared, captures pending. effects/PLAN.md.
+NOT YET “Cinematography ... hit-stop60–110ms ... slow-motion ... skippable bespoke ULTIMATE ...1.2–1.8s” ·starter duration unit assertions pass, real viewing/capture pending. card-action-plan.test.ts.
+NOT YET “real post stack ... High/Medium/Low ... automatic degrade ... Low ... software/weak GPUs” ·existing post retained, new geometry budget tests pass, runtime tier and software checks pending.
+NOT YET “effects never cover ... face or HP ... max active particles and overdraw ... capped and tested” ·96 instances/eight primitive calls enforced in unit tests. Bloom/face captures pending.
+NOT YET “render each effect ...6 frames ... GRAYSCALE silhouettes/edge maps ... motion ... recipe signature ... fix offenders” ·tool authored,31-effect capture pending.
+NOT YET “after each phase rerun F0 harness ... no ... new hitch” ·F3 pageMAX566.7ms carried, F4 cooperative loading requires new cold/full measurements.
+PARKED “Sound ... after F5 if time allows” ·current synthesized audio retained. New per-skill layers pending.
 ## PRIOR PHASE GATES
+F3 ·slice motion30/30 pairs,20 filmstrips,915 layout poses and five validations PASS. PageMAX566.7ms FAIL, cast33.4/16.8ms PASS. motion/GATES.md, PERFORMANCE.md.
 F2 · renderer/DPR/textures/portraits/budgets PASS, sharpness2/10 target pairs PASS and8 MISS, geometry detail PARTIAL, full-page performance FAIL. Exact requirements and measurements in sharpness/GATES.md and PERFORMANCE.md.
 A · functional PASS, cast33.4/16.8ms PASS, page1616.6ms FAIL. auto/GATES.md, PERFORMANCE.md.
 F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, hero13.189–32.975% band MISSED, pageMAX1583.3ms FAIL. layout/README.md, PERFORMANCE.md.
 ## DECISIONS · append only
+2026-11-06 17:12 · F3 source a6c093de6801b234603a10ee3fdb5e01d5a4955b pushed to primary/F3, draft#337 on#336 verified. F4 gallery now72 actions. Harness records explicit inventory and retains legacy61-action compatibility. First F4 validation fails only the old61-length expectation, corrected.
 2026-11-06 17:09 · F3 full matrix and five profiles completed. Record whole-pageMAX566.7ms increase and unresolved transient cast causes. Proceed to F4 cooperative loading with F3 misses disclosed in motion/GATES.md and PERFORMANCE.md.
 2026-11-06 17:06 · Recovery verified17 F3 source/snapshot hashes and resumed timing. F4 capture now records only active face masks, asserts the selected identity and reports a predeclared1% face-pixel tolerance at RGB delta>8. tools/cardrpg-big/effect-measure.mjs and effect-report.py.
 2026-11-06 16:55 · F4 preparation now includes six existing-status ambient cues and explicit per-frame96-instance/eight-primitive-call enforcement. Fixed-camera grayscale probe preserves RGB frames, binary masks, edges, motion arrays and every pair. Real-stage effect-on/off captures will quantify bloom inside projected face regions. All measurements pending F3 timing completion.
