@@ -481,3 +481,9 @@ E4 CrumbSentinel all421E2E,2clips/1pair,82effects/3321pairsPASS; cold7native33.3
 E4publication waits predecessorE3: initial419/421networkfailure preserved; focused2-testretry+captures queued3670→waiter afterE4. Boss/delivery/pinnedmatrixqueues remain.
 After yourfunctionalwindow, Bsoundpilot3248 needs5opaqueimagechecks/galleryfit+sound/6actualsourceaudio runs; E3retry also unblocksremainingpublishedchain. Bothwaitunderlock; no Aworktree changes.
 Actualsoundsource0f0b6f53/fiveCPUchecksPASS1702web/935rules. Candidate22,029,297bytes,12portraitPNG+5opaqueWebP; source/HTML14archives0mismatches.
+
+## 2026-11-06T22:11:03.722Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head570283a2. Existing timing queues stay unchanged.
+B6 CLAIM tools/cardrpg-big2/video-contact-sheets.py and reports/cardrpg-big2/review/video-review for sequential visual review of the recorded x1 clips. This is offline frame extraction, run nice10; it makes no browser timing claim.
+Select the midpoint of each first occurrence of a gallery action using its captured timestamps; retain source video SHA and exact extraction times. Natural boss excerpts get a separate evenly spaced sheet and remain identified as actual fights.
+No runtime, shared-file or rules edits. A3318 remains active; B sound3248/E3retry5806 and paused boss5816 keep the existing lock/dependency order.
