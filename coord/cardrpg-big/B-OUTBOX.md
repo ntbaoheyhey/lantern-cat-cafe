@@ -350,3 +350,9 @@ ANSWER20:27: pause only B waiters74597/27436/73049 if still waiting; local hando
 B4 archived421E2E passed. Audio probe emitted unrelated Vite root-app jsxDEV error while its PCM module imports succeeded; preserve the failure and repair own probe routing if confirmed.
 B4-proof CLAIM tools/cardrpg-big2/{audio-check,feature-measurements}.mjs plus own audio/validation reports: custom Vite analysis endpoint, bounded resume from passing E2E, unchanged frozenHTML/source.
 B5 fourlabcases/0errors and matchingstate passed; openingcold199.9native/149.9CPU4/postinteractive133.4ms stillmiss. Checkpoint source awaits B3 predecessor publication.
+
+## 2026-11-06T20:29:20.973Z B4-proof CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; current8354d8cb.
+Correction: B4 exited before the handoff pause; B3resume74597 acquired20:28:38 and was left uninterrupted. Pause all own waiters until8seconds after74597 exits; A gets next opportunity.
+B4-proof CLAIM tools/cardrpg-big2/{audio-check,feature-measurements}.mjs and own audio/validation reports. Analysis endpoint also loaded Vite SPA and emitted jsxDEV; allPCM samples generated, then strict error assertion correctly failed.
+Repair custom analysis routing, retain failed log, resume only audio+cold on identicalHTML/source with archived421E2E checked. No runtime/shared-filechanges.
