@@ -5,7 +5,7 @@ This table separates measured checkpoints from queued browser work. Initial scor
 
 | User point | F0 visible score | Current evidence and entry | Status / remaining work |
 | --- | ---: | --- | --- |
-| Effects and motion | 4/10 | Feel lab gallery. Starter20actions,30required motion pairs,31effect compositions and465image pairs. [Motion](motion/GATES.md), [effects](effects/GATES.md) | Starter checks pass. Remaining9cats, enemies and bosses await B rendered checkpoints and integration. |
+| Effects and motion | 4/10 | Feel lab gallery. Starter20actions,30required motion pairs,31effect compositions and465image pairs. [Motion](motion/GATES.md), [effects](effects/GATES.md) | Starter checks pass. B2c4b2d5df0 supplies all9remainingcats with48GLBclips/336requiredpairs and76effects/2850grayscalepairs. Enemies,bosses and finalintegration remain pending. |
 | Image sharpness | 5/10 | Before / after native DPR1/2 crops. Skill-icon variance+366.30/+421.26%,face−53.10/−49.84%. [Measurements](sharpness.json) |2/10crop targets pass,8miss. B owns texture/light/contact-shadow follow-up. |
 | Layout, scale and faces | 4/10 | Battle cameraA/B/C. Stage57.120→78.889%at1280×720. F1faceMAX55°,2745sampled poses with0overlaps/crops. [Layout](layout/README.md) | Stage/facing checks pass. Hero height band remains partial. Integration requires all-size repetition. |
 | Turn clarity and lag | 4/10 | Fight, action banner, target reactions, Result. F5castsMAX33.4/16.8ms(first/repeat),pageMAX300ms. [Flow](flow/GATES.md), [raw timing](flow/PERFORMANCE.md) | Automatic path/HP timing pass. Page-opening100ms gate misses. B owns fixes and exhaustive reruns. |

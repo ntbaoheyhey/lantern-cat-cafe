@@ -14,7 +14,7 @@ Bản ghép cuối, video, kiểm tra lại hình ảnh và báo cáo lane B đa
 ## Tình trạng bản ghép
 REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
 
-Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Bốn cổng nguồn đạt, gồm 1.700 test web và 988 test luật. HTML 20.617.021 byte. Kiểm thử trình duyệt của từng mốc và bản ghép A đang chờ khóa đo dùng chung. Các số bên dưới ghi rõ mốc đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
+Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản ghép tại 9d29c760 đã nhận các mốc A cùng B2c, đang chờ dựng lại với các mốc B tiếp theo. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
 
 ## Sáu nơi nên xem
 REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
@@ -36,16 +36,16 @@ REFERENCE: COVERAGE.md, baseline/COVERAGE.md, memory/STATE.md
 
 | Yêu cầu | Trước | Mốc đã đo | Còn phải xác minh |
 | --- | --- | --- | --- |
-| Kỹ năng có bản sắc | Nhiều động tác và công thức dùng chung | Starter đạt 30 cặp chuyển động, 31 hiệu ứng và 465 cặp ảnh |9 mèo còn lại, địch, boss của B |
+| Kỹ năng có bản sắc | Nhiều động tác và công thức dùng chung | Starter đạt 30 cặp chuyển động, 31 hiệu ứng và 465 cặp ảnh |B2c bổ sung 9 mèo, địch và boss còn chờ ghép |
 | Ảnh sắc nét | F0 có crop DPR 1/2 |2/10 cặp đạt ở F2,icon +366,30/+421,26% |8 mục tiêu còn thiếu và ảnh ghép |
 | Bố cục, góc mặt | Sân 57,120% |78,889%,2.745 tư thế có 0 che/cắt, góc mặt ≤55° |Dải kích thước nhân vật và mọi model mới |
 | Nhịp lượt, khựng | Điều khiển thủ công |F5 cast MAX 33,4/16,8 ms, mở trang 300 ms |Cổng mở trang 100 ms và B đo lại |
-| Phần chơi ngoài trận | Chức năng hiện hữu khó thấy |M có 33 ảnh ở 3 kích thước |Bản ghép và preview hẹp |
+| Phần chơi ngoài trận | Chức năng hiện hữu khó thấy |M có 33 ảnh ở 3 kích thước |Preview hẹp tăng 70 px, bản ghép A có 66 ảnh kiểm tra |
 | Trang bị đầy đủ | Nhiều hình cùng họ |384 ca model/trang bị, 0 lỗi |Socket của model mới |
 | Vật phẩm đầy đủ | Hệ thống đã có trong luật |5 nhóm, bảng nguồn/drop/sink |Đi trọn vòng trong bản ghép |
 | Tầng độ hiếm | Trần một món 10,4575% |9,6306% hiển thị, 4 khung và 12 hình huyền thoại |Tác dụng thực chiến lớn ở một số ca |
 | Cân bằng tự động | Nhiều ô thắng 100% |26/48 bước tăng, 22 hòa, 0 giảm |Level 6 bão hòa, độ chênh set/mèo |
-| Gacha | Odds và pity đã có |13 test ceremony, nguồn G62cb5697 |Browser, 3D entrance và bản ghép |
+| Gacha | Odds và pity đã có |13 test ceremony, 36 ảnh và 421 E2E đạt ở G |3D entrance và odds/pity luôn thấy đang kiểm chứng |
 | Giới hạn collectible | Thiết kế giới hạn đã có |25 test biên, 2 UI, 12 ảnh, 0 lỗi/network |Scope và walkthrough cuối |
 | Bản sắc có nghiên cứu |34 game được nghiên cứu trước |Tái dùng nghiên cứu, art procedural có provenance |Đánh giá hình ảnh ghép |
 
@@ -76,23 +76,23 @@ Mô phỏng 45 ngày với 90 tài khoản cho tỉ lệ heavy/casual ≤2,1948�
 ## Tự động hóa và phạm vi
 REFERENCE: auto/A1.md, auto/A2.md, auto/A3.md, integration/scope/rules-commits.txt, integration/runner-parity.json
 
-Người chơi chọn ba mèo, hàng và trang bị trước trận. Bộ điều khiển tự dùng toàn bộ kỹ năng đã mở. Trong trận có tốc độ, pause, skip, camera, sound. Thời lượng chương 1 ước tính bằng kế hoạch trình diễn có trung vị 51,411 s training và 53,569 s heldout. 48/50 và 44/50 nằm trong 45–90 s. Bằng chứng wall-clock đang chờ.
+Người chơi chọn ba mèo, hàng và trang bị trước trận. Bộ điều khiển tự dùng toàn bộ kỹ năng đã mở. Trong trận có tốc độ, pause, skip, camera, sound. Thời lượng chương 1 ước tính bằng kế hoạch trình diễn có trung vị 51,411 s training và 53,569 s heldout. 48/50 và 44/50 nằm trong 45–90 s. Năm ca trình duyệt đo 46,5327–57,2778 s, cả năm replay trùng kết quả. Các ca có 0 lỗi HP hoặc vượt ngân sách hành động.
 
 Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh đầy đủ autoExtras ON/OFF chờ checkpoint B. Các tùy chọn thử nghiệm giữ mặc định OFF.
 
 ## Lane B delivered
 REFERENCE: coord/cardrpg-big/B-OUTBOX.md trên nhánh ai/codex-cardrpg-big-sync
 
-B đã báo các nguồn mèo, địch, stage, audio và lab đang được kiểm chứng. Thông báo 18:13 UTC ngày 6 Nov chuyển các matrix sau sang khóa theo từng cấu hình. Matrix B1 đang chạy, MAX mở trang 300 ms là số tạm thời. Phần này sẽ nhận số headline và đường dẫn bằng chứng từ CHECKPOINT được công bố.
+B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 ms, page MAX 150 ms native và 300 ms CPU4. B2c tại 4b2d5df0/draft347 đã bổ sung cả 9 mèo còn lại, 48 clip GLB/336 cặp bắt buộc và 76 hiệu ứng/2.850 cặp grayscale đạt ngưỡng. Cold7 của B2c đo page MAX 133,3 ms, post-interactive MAX 83,3 ms và p95 16,8 ms. Cổng mở trang 100 ms còn thiếu. Stage, địch, boss, audio, lab và matrix các batch tiếp theo đang được kiểm chứng. Bằng chứng ở `../cardrpg-big2/cats/batch3/CHECKPOINT.md` và `../cardrpg-big2/performance/b1-skills/`.
 
 ## Các điểm còn thiếu và tự chấm
 REFERENCE: memory/STATE.md, COVERAGE.md, demo/PLAN.md
 
-Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, wall-clock encounter, 3D entrance gacha, ON/OFF sims và kiểm chứng bản ghép. Video 12 mèo, boss, ultimate và bốn lượt fresh-eyes chờ hình ảnh ghép. Mỗi lượt phải ghi 5 điểm yếu, sửa phần nghiêm trọng rồi chấm lại.
+Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, 3D entrance gacha, ON/OFF sims và kiểm chứng bản ghép. Video 12 mèo, boss, ultimate và bốn lượt fresh-eyes chờ hình ảnh ghép. Mỗi lượt phải ghi 5 điểm yếu, sửa phần nghiêm trọng rồi chấm lại.
 
 11 mục tự chấm đang chờ review gồm hiệu ứng, độ nét, bố cục/góc mặt, nhịp/khựng, cảm giác chơi, sân trống, tự động hoàn toàn, phần ngoài trận, trang bị/cân bằng, gacha và giới hạn collectible. Mục tiêu là 8,5/10 mỗi mục. Bản báo cáo bàn giao sẽ ghi điểm thực tế và từng cổng thiếu.
 
 ## Draft PR
 REFERENCE: memory/STATE.md
 
-F0 #333, A #334, F1 #335, F2 #336, F3 #337, F4 #338, F5 #339, M #340, I #341 đều là draft. G, M follow-up, F7 và integration chờ các cổng trình duyệt trước khi công bố. Báo cáo và STATE sẽ được chép sang ledger ở bước bàn giao.
+F0 #333, A #334, F1 #335, F2 #336, F3 #337, F4 #338, F5 #339, M #340, I #341, G #344, M follow-up #345 và F7 preparation #348 đều là draft. B đã công bố #342, #343, #346, #347. Integration chờ đủ các mốc B và kiểm chứng bản ghép. Báo cáo và STATE sẽ được chép sang ledger ở bước bàn giao.
