@@ -1,3 +1,4 @@
+import { LAB_EFFECT_RECIPES } from './card-lab-effects';
 import * as T from 'three';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EffectFrame } from './effects';
@@ -212,8 +213,12 @@ export class CardEffects {
     const progress = span[0] + (span[1] - span[0]) * frame.progress;
     this.drawRecipe(recipe, progress, camera, quality, calm);
     for (const id of frame.plan.presentationCues ?? []) {
-      const cue = CARD_EFFECT_RECIPES[id];
-      if (cue) this.drawRecipe(cue, (progress - .65) / .35, camera, quality, calm);
+      const cue = CARD_EFFECT_RECIPES[id] ?? LAB_EFFECT_RECIPES[id];
+      if (cue) {
+        const target = positions.get(frame.plan.presentationCueTargets?.[id] ?? '');
+        if (target) { this.targets.length = 0; this.targets.push(target); }
+        this.drawRecipe(cue, (progress - .65) / .35, camera, quality, calm);
+      }
     }
   }
 

@@ -4,7 +4,7 @@ import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 export type BeatKind = 'anticipation'|'travel'|'impact'|'reaction'|'residue';
 export interface EffectBeat { kind:BeatKind; start:number; duration:number; camera:number; shake:number; flash:number; clip:string; vfx:string; soundCue:string }
 export interface EffectRecipe { name:string; color:string; accent:string; shape:string; ultimate:boolean; duration:number[]; clip:string; motifs:string[]; shake:number }
-export interface EffectPlan { presentationId?:string; presentationCues?:string[]; id:number; actorId:string; skillId:string; targetIds:string[]; color:string; accent:string; shape:string; duration:number; ultimate:boolean; beats:EffectBeat[]; events:TurnEvent[]; name:string; motifs:string[] }
+export interface EffectPlan { presentationId?:string; presentationCues?:string[]; presentationCueTargets?:Record<string,string>; id:number; actorId:string; skillId:string; targetIds:string[]; color:string; accent:string; shape:string; duration:number; ultimate:boolean; beats:EffectBeat[]; events:TurnEvent[]; name:string; motifs:string[] }
 export interface EffectFrame { plan:EffectPlan; beat:EffectBeat; progress:number; actionProgress:number; elapsed:number; color:string; camera:number; shake:number; flash:number; clip:string; intensity:number }
 const gold='#ffd48a', violet='#c49aff', teal='#86ebc7', red='#ff8b9e';
 const recipe=(name:string,color:string,shape:string,options:Partial<EffectRecipe>={}):EffectRecipe=>({name,color,accent:'#fff3d4',shape,ultimate:false,duration:[300,260,80,210,310],clip:'attack',motifs:['glow','ribbon','ring','sparks','afterglow'],shake:1,...options});

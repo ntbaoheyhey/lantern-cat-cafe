@@ -1,0 +1,350 @@
+{
+  "method": "Four-neighbour grayscale Laplacian variance at native DPR1/2 pixels. Same named crops and idle time; composition, projected scale, lighting and antialiasing can change this measure. No resizing or filtering. rows compare pinned B2c with B3; baselineRows compare original F0 with B3 for the requested cumulative +40% target. This is an edge metric, not a perceptual score.",
+  "rows": [
+    {
+      "crop": "dpr1-hero-face",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr1-hero-face.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 5912.311091734785
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-hero-face.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 6545.634681493437
+      },
+      "changePercent": 10.711946308847264,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-enemy",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr1-enemy.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 4356.56875500124
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-enemy.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 4365.389731527492
+      },
+      "changePercent": 0.2024753199665552,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-hud-text",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr1-hud-text.png",
+        "width": 131,
+        "height": 33,
+        "laplacianVariance": 14168.023889693353
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-hud-text.png",
+        "width": 131,
+        "height": 33,
+        "laplacianVariance": 14168.023889693353
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-portrait",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr1-portrait.png",
+        "width": 181,
+        "height": 145,
+        "laplacianVariance": 1321.8347492415937
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-portrait.png",
+        "width": 181,
+        "height": 145,
+        "laplacianVariance": 1321.8347492415937
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-skill-icon",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr1-skill-icon.png",
+        "width": 44,
+        "height": 44,
+        "laplacianVariance": 5196.440791131267
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-skill-icon.png",
+        "width": 44,
+        "height": 44,
+        "laplacianVariance": 5196.440791131267
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-hero-face",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr2-hero-face.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 2957.917014029934
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-hero-face.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 3202.4463813977572
+      },
+      "changePercent": 8.26694481988428,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-enemy",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr2-enemy.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 2285.8728671509757
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-enemy.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 2288.9975797724637
+      },
+      "changePercent": 0.13669669325846456,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-hud-text",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr2-hud-text.png",
+        "width": 262,
+        "height": 66,
+        "laplacianVariance": 5188.714205513678
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-hud-text.png",
+        "width": 262,
+        "height": 66,
+        "laplacianVariance": 5188.714205513678
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-portrait",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr2-portrait.png",
+        "width": 362,
+        "height": 290,
+        "laplacianVariance": 607.3859757940952
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-portrait.png",
+        "width": 362,
+        "height": 290,
+        "laplacianVariance": 607.3859757940952
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-skill-icon",
+      "before": {
+        "path": "reports/cardrpg-big2/stage/before/dpr2-skill-icon.png",
+        "width": 88,
+        "height": 88,
+        "laplacianVariance": 2313.326960296168
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-skill-icon.png",
+        "width": 88,
+        "height": 88,
+        "laplacianVariance": 2313.326960296168
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    }
+  ],
+  "passes": 0,
+  "total": 10,
+  "baselineRows": [
+    {
+      "crop": "dpr1-hero-face",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr1-hero-face.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 8762.423332753127
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-hero-face.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 6545.634681493437
+      },
+      "changePercent": -25.298807956168247,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-enemy",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr1-enemy.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 8952.590940812392
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-enemy.png",
+        "width": 64,
+        "height": 64,
+        "laplacianVariance": 4365.389731527492
+      },
+      "changePercent": -51.23881164248347,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-hud-text",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr1-hud-text.png",
+        "width": 131,
+        "height": 33,
+        "laplacianVariance": 14168.023889693353
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-hud-text.png",
+        "width": 131,
+        "height": 33,
+        "laplacianVariance": 14168.023889693353
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-portrait",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr1-portrait.png",
+        "width": 186,
+        "height": 217,
+        "laplacianVariance": 1081.7028645510115
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-portrait.png",
+        "width": 181,
+        "height": 145,
+        "laplacianVariance": 1321.8347492415937
+      },
+      "changePercent": 22.199431337389974,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr1-skill-icon",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr1-skill-icon.png",
+        "width": 44,
+        "height": 44,
+        "laplacianVariance": 1138.0294321810359
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr1-skill-icon.png",
+        "width": 44,
+        "height": 44,
+        "laplacianVariance": 5196.440791131267
+      },
+      "changePercent": 356.617433977281,
+      "targetPass": true
+    },
+    {
+      "crop": "dpr2-hero-face",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr2-hero-face.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 4517.3984603592935
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-hero-face.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 3202.4463813977572
+      },
+      "changePercent": -29.108613962226194,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-enemy",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr2-enemy.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 4200.522546031188
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-enemy.png",
+        "width": 128,
+        "height": 128,
+        "laplacianVariance": 2288.9975797724637
+      },
+      "changePercent": -45.50683743061455,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-hud-text",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr2-hud-text.png",
+        "width": 262,
+        "height": 66,
+        "laplacianVariance": 5188.714205513678
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-hud-text.png",
+        "width": 262,
+        "height": 66,
+        "laplacianVariance": 5188.714205513678
+      },
+      "changePercent": 0.0,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-portrait",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr2-portrait.png",
+        "width": 372,
+        "height": 434,
+        "laplacianVariance": 564.1468614183191
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-portrait.png",
+        "width": 362,
+        "height": 290,
+        "laplacianVariance": 607.3859757940952
+      },
+      "changePercent": 7.664513858513522,
+      "targetPass": false
+    },
+    {
+      "crop": "dpr2-skill-icon",
+      "before": {
+        "path": "reports/cardrpg-big/baseline/sharpness/dpr2-skill-icon.png",
+        "width": 88,
+        "height": 88,
+        "laplacianVariance": 453.1257389652104
+      },
+      "after": {
+        "path": "reports/cardrpg-big2/stage/after/dpr2-skill-icon.png",
+        "width": 88,
+        "height": 88,
+        "laplacianVariance": 2313.326960296168
+      },
+      "changePercent": 410.5264965921034,
+      "targetPass": true
+    }
+  ],
+  "baselinePasses": 2
+}
