@@ -7,7 +7,7 @@ const phase = process.argv[2] || 'delivery';
 const directory = resolve(root, 'reports/cardrpg-big2/validation');
 mkdirSync(directory, { recursive: true });
 const steps = [
-  ['typecheck', ['typecheck']], ['lint', ['lint']], ['tests', ['test']], ['build', ['build']],
+  ['typecheck', ['typecheck']], ['demo-types', ['--filter','@taskbar-hero/web','exec','tsc','-p','../../tools/cardrpg-big2/tsconfig.json','--noEmit']], ['lint', ['lint']], ['tests', ['test']], ['build', ['build']],
   ['e2e', ['--filter', '@taskbar-hero/web', 'test:e2e', '--workers=4']],
 ];
 const results = [];

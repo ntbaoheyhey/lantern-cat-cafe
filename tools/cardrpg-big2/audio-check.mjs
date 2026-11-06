@@ -39,7 +39,7 @@ try{
   await page.getByRole('button',{name:'Pause',exact:true}).click();
   await page.evaluate(()=>{window.__audioPerf={frames:[],last:0,active:true};requestAnimationFrame(function sample(t){const d=window.__audioPerf;if(!d.active)return;if(d.last)d.frames.push(t-d.last);d.last=t;requestAnimationFrame(sample)});});
   await page.getByRole('button',{name:'Sound off',exact:true}).click();await page.getByRole('button',{name:'Sound on',exact:true}).waitFor();
-  const volume=page.getByRole('slider',{name:'Sound volume',exact:true});await volume.fill('35');assert.equal(await page.evaluate(()=>window.__depthReview.audio.volume),.35);
+  const volume=page.getByRole('slider',{name:'Sound volume',exact:true});await volume.focus();await volume.press('Home');for(let n=0;n<7;n++)await volume.press('ArrowRight');assert.equal(await page.evaluate(()=>window.__depthReview.audio.volume),.35);
   await page.getByRole('button',{name:'Resume',exact:true}).click();await page.getByLabel('Playback speed',{exact:true}).selectOption('4');
   await page.waitForFunction(()=>window.__depthReview.screen==='result',null,{timeout:120000});
   const result=await page.evaluate(()=>{const d=window.__audioPerf;d.active=false;return{frames:d.frames,enabled:window.__depthReview.audio.enabled,volume:window.__depthReview.audio.volume,overflow:document.documentElement.scrollWidth>innerWidth}});

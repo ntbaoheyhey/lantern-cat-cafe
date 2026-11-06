@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { root, web, requireWeb } from '../visual-support.mjs';
+import { evidencePayload } from './embed-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
 const embeddedAssets = new Map();
 const mimeTypes = { '.glb': 'model/gltf-binary', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
@@ -32,8 +33,11 @@ const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCo
 const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
 const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big2/offline-loader.js'), 'utf8');
-const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big2/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline';connect-src data: blob:;media-src data: blob:"><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{padding:40px;font:18px system-ui}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const evidence = evidencePayload(root);
+const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big2/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline';connect-src data: blob:;media-src data: blob:"><title>The Lantern · Lane B review</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{padding:40px;font:18px system-ui}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
+${evidence.tags}
+<script>${evidence.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
 mkdirSync(resolve(root, 'docs/cardrpg3b'), { recursive: true });
 writeFileSync(resolve(root, 'docs/cardrpg3b/index.html'), html);
@@ -43,6 +47,7 @@ const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...sourceRoots], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+  evidence: {rows:evidence.rows.length,files:evidence.files,bytes:Buffer.byteLength(evidence.tags)},
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   references: ['docs/cardrpg3b/index.html', 'tools/cardrpg-big2/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
