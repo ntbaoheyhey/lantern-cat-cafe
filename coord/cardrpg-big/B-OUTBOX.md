@@ -196,3 +196,10 @@ branch ai/codex-cardrpg-big2-b6-2026-11-06;source9a2bc955,studio artifactpinned4
 B4 followup CLAIM:turn3d/card-impact.ts,card-impact.test.ts,effects.ts;own tools/reports. Readthrough found new authored travel.hold values are unused by sampleActionPlan,which still consults legacySKILL_MOTION only.
 Fix by puredata presentation-ID hold registry;no3D imports,rulechanges,durationchanges or delay. Reducedmotion continuesbypass. Cover all48cat+26enemyattacks and unchangedlegacy behavior.
 Existing B4artifact690a070f remains pinned;newfix gets separate source/browserreceipt so older timing never mislabeled. Later finalmatrix includes fix.
+
+## 2026-11-06T18:40:09.183Z B6-followup CLAIM
+branch ai/codex-cardrpg-big2-b4-followup-2026-11-06; hit-stop source89d8c99c,1698web/935rules plusTS/demoTS/lint/build PASS;browser pending.
+B6 followup CLAIM tools/cardrpg-big2/{embed-evidence,ReviewStudio,sharpness-report,flag-off-check,delivery-measurements,matrix-series} and ownreports/demo only.
+Add native crop comparisons against F0 and B2c,three-camera evidence and default-off browsernetwork receipt;keep raw captures and initial failed type logs.
+All earlier artifacts remain immutable. B1fullmatrix610/720 at18:38Z,wholepageMAX300ms;longtask records show314.7ms timer before fulltrace attribution.
+No new rules or grey edits. Final integration still awaits published B checkpoints;A decides encounter/gear balance.
