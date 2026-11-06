@@ -29,3 +29,12 @@ REFERENCE: items/ENCOUNTERS.md, items/REPLAY.md, memory/STATE.md, items/encounte
 Draft341 received losslessly compressed pilot evidence at32e9fef0. The user’s lane split assigns engine/art/audio to B and items/gacha/meta/integration to A. Shared passive previews are committed at97715e55. Replay repair3263cece adds0.7 enemy-stat snapshots and0.5/0.6 migration, with46 focused tests and150 paired routes/450 identical encounter records.
 
 The frozen pilot5B candidate now changes only existing enemy HP/attack/defense.320 depth rules tests pass. Duration planning from50 seeds per cell gives chapter1 starter medians51.411s training and53.569s heldout.48/50 and44/50 fall within45–90s. Full-route success13/50 and10/50 remains a progression cost. Full gear/economy sims continue atnice10. Five-gate validation and natural browser flow wait for the shared timing lock. G source remains disconnected and parked atb5a068b3.
+
+## Lane A source integration · 7 November, 01:19 local
+REFERENCE: memory/STATE.md, items/ENCOUNTER-BALANCE.md, /Users/bao/taskbar-hero-cardrpg-big-integration/reports/cardrpg-big/integration/
+
+Full I gear/economy evidence gives26/48positive tier steps,22ties and0declines. The largest45-day earned-resource ratio is2.1947756956×. Level6saturation and set/cat spreads remain missed gates. G, narrow collection and F7 home lab have their own pinned source/artifacts. Browser checks wait for B's active timing lock.
+
+A-only integration35669487 combines those sources,passes1700web/988rules and the other three source gates,and builds20,617,021-byte offlineHTML. Optional encounter runner01502d5c preserves300routes900encounters and allfour policies in focused tests. ExplicitON/OFF simulation drivers await B's published checkpoint. Protectedchain/livefiles have0changes,Fuji readerpanel hashes match,and defaultstartup staticclosure contains0three/modelmodules.
+
+Parent20981 schedules I/G/M/F7 plus the A-only integration functional checks before the long G matrix. B18:13 reports its later matrices will release the lock between configurations. Work pushes still await their own fullfivegates. Final merged art,captures,ON/OFFsims,fresh-eyes review and ledger report remain open.
