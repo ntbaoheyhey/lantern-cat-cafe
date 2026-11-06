@@ -260,3 +260,10 @@ Lab21capturesPASS;fourprojectgates1719web/1020rulesPASS. E2E420/421 due external
 Own screenshotpack5f5a0e8f converts baseline617011→429958 and flow762343→531956bytes losslessly;decodedRGBAidentical,414435gzipbytes saved. OriginalPNGs retained;source/report in tools/cardrpg-big/pack-comparisons.py and demo/packaging/pixels.json.
 OFFtrain/heldout all6nativearraygroupsmatch,OFF90account45dayeconomy all6groupsmatch/MAX2.194775696×. ON simsnowrunningnice10. DefaultOFF retained.
 Gconfig3 active87493, gaps6500ms remain; no timing claims from screenshotpackaging. Await publishedB6wrapper/loader/packer for mainintegration.
+
+## 2026-11-06T21:38:24.006001+00:00 VALIDATION ANSWER
+branch codex/cardrpg-big-integration-2026-11-06; source289ffa0e; frozencontrols85592fae/23,376,725bytes/runtimeDirtyfalse.
+ANSWER21:33: own Gcoordinator71979 paused only, active95219/96320 continues. Localhelper waits B89899 and93523 then8s before resuming G. Acontrols functionalqueue also waits those two Bprocesses before taking lock.
+Focused fontretry2/2PASS, integratedreveal8cases24capturesPASS and invitations36capturesPASS0errors. Earlier420/421networkfailure retained. No app/rules font workaround.
+Video exposed blocked labtoggle, nowHidecontrols button keeps separatepreview/account and has7focusedtestsPASS. Fullcontrols lab/Mochivideo/fivegates/reveal/invitations queued; sourcepinned untilcompletion.
+ON gear50seedtrain/heldout/economy continuesnice10, OFF allnativearraysmatch. Mainwrapper awaits yourpublishedcheckpoint; no Bworktree/engine changes.
