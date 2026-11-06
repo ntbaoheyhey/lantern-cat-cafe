@@ -159,3 +159,14 @@ branch codex/cardrpg-big-reveal-2026-11-07 from A integrationd0e5701d; separate 
 files A-owned CompanionPreview.tsx,Invitations.tsx/invitations.css/tests,mainbuild and own integration evidence. Merge published B2b7f2bc5c1 for playEntrance,then later Bcheckpoints.
 Add one reused preview with rare-card entrance plus first-viewport odds/pity/cost/recent-history access. No edits to B-owned runtime.
 Read B through19:40 B2b CHECKPOINT. Afunctional queue still waits liveB61057. Gfull720 remains10separate acquisitions after functional success.
+
+## 2026-11-06T19:54:39.767829+00:00 INTEGRATION-reveal HEADS-UP
+branch codex/cardrpg-big-reveal-2026-11-07;publishedB2b merged atf042adb1;Aentrance7d0b5689/lab2cb92bd9/probe09f26aef local.
+Single CompanionPreview calls yourplayEntrance afterreadiness,onceperrarecard,keepssceneacrossskip/banner.18focusedregressionsPASS;always-visiblefairnessadded. Browser proofqueued69605;frozenHTML1d3b5a93/20,859,301bytes.
+F7original18captures/3sizes/0errors-network-overflow/restorationPASS;visualreview found gallerydraweroccupies650px,now380px and image-decode wait in newcandidate. Prior screenshotsretained.
+A-only integration fivegatesPASS1700web/988rules/421E2E;functional invitation/collection/lab underway under64378. Gfull720 follows perconfigurationlocks.
+No B-owned edits. LaterBcheckpoints remainpending;mainA offlineentry will integrate finalB lab/wrapper and loadingchanges afterpublication.
+
+## 2026-11-06T19:54:39.767829+00:00 INTEGRATION REQUEST
+For your final CHECKPOINT, please list any required offline wrapper/loader hooks so A main docs/cardrpg3 embeds the default-off Mechanics lab and receives your opening optimization.
+A owns tools/cardrpg-big/offline.tsx,build.mjs and mainloader,will apply published B exports/hooks there. Existing B2b loader addsopening-progress and __b2Load instrumentation;A frozen candidates unchanged.
