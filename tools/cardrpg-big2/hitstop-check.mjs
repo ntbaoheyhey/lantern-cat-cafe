@@ -1,7 +1,7 @@
 // REFERENCE: turn3d/card-impact.ts; real mixer and effect-frame samples in the offline build.
 import{chromium}from'../../apps/web/node_modules/@playwright/test/index.mjs';
 import{mkdir,writeFile,readFile}from'node:fs/promises';import{createHash}from'node:crypto';import assert from'node:assert/strict';
-const artifact=process.env.BIG_ARTIFACT||'/tmp/cardrpg-big2-hitstop-index.html',out='reports/cardrpg-big2/audio/hitstop';await mkdir(out,{recursive:true});
+const artifact=process.env.BIG_ARTIFACT||'/tmp/cardrpg-big2-hitstop-index.html',out=process.env.BIG_HITSTOP_OUT||'reports/cardrpg-big2/audio/hitstop';await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),errors=[],rows=[];
 try{const page=await browser.newPage({viewport:{width:1280,height:720}});page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+artifact);await page.getByRole('button',{name:'Watch a battle now',exact:true}).click();await page.getByRole('button',{name:'Pause',exact:true}).click();await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
  const ids=await page.evaluate(()=>window.__depthReview.galleryActions.filter(a=>/^[a-z]+-[1-4]$/.test(a.id)||a.id.startsWith('enemy:')).map(a=>a.id));
