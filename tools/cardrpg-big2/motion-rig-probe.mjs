@@ -9,8 +9,16 @@ const server = await createServer({ configFile: false, root: web, envDir: false,
 const owners = (process.env.BIG_OWNERS || 'mochi,soot,clover,panko,mallow,sorrel').split(',');
 const output = process.env.BIG_RIG_OUT || 'reports/cardrpg-big2/cats/batch1/rig';
 const joints = ['motion', 'head', 'armL', 'armR', 'footL', 'footR', 'tail'];
-const rows = [], hashes = {};
+const rows = [], hashes = {}, draftSources = {};
 try {
+  if (process.env.BIG_DRAFT_MOTION) {
+    const { ROSTER_SKILL_CLIPS } = await server.ssrLoadModule('/src/game/squad/turn3d/card-roster-motion.ts');
+    for (const path of process.env.BIG_DRAFT_MOTION.split(',')) {
+      const definitions = await server.ssrLoadModule('/@fs' + path);
+      for (const value of Object.values(definitions)) Object.assign(ROSTER_SKILL_CLIPS, value);
+      draftSources[path] = createHash('sha256').update(await readFile(path)).digest('hex');
+    }
+  }
   const { createCardClips } = await server.ssrLoadModule('/src/game/squad/turn3d/card-motion.ts');
   for (const owner of owners) {
     const bytes = await readFile(`${root}/assets/cardrpg2/models/${owner}.glb`);
@@ -70,8 +78,8 @@ for (let i = 0; i < rows.length; i++) for (let j = i + 1; j < rows.length; j++) 
 }
 const offenders = pairs.filter(pair => pair.required && !pair.pass);
 await mkdir(output, { recursive: true });
-await writeFile(`${output}/trajectories.json`, JSON.stringify({ method: 'Real GLB rigid hierarchy; materials omitted only to remove DOM dependencies;41 runtime AnimationMixer samples. Not a rendering or timing proof.', hashes, joints, rows, pairs, offenders }));
-await writeFile(`${output}/summary.json`, JSON.stringify({ owners, clips: rows.length, pairs: pairs.length,
+await writeFile(`${output}/trajectories.json`, JSON.stringify({ method: 'Real GLB rigid hierarchy; materials omitted only to remove DOM dependencies;41 runtime AnimationMixer samples. Not a rendering or timing proof.', hashes, draftSources, joints, rows, pairs, offenders }));
+await writeFile(`${output}/summary.json`, JSON.stringify({ owners, draftSources, clips: rows.length, pairs: pairs.length,
   required: pairs.filter(p => p.required).length, minimumRequiredAngle: Math.min(...pairs.filter(p => p.required).map(p => p.angleRms)),
   minimumRequiredPosition: Math.min(...pairs.filter(p => p.required).map(p => p.positionRms)), offenders }, null, 2));
 console.log(JSON.stringify({ clips: rows.length, required: pairs.filter(p => p.required).length, offenders }));
