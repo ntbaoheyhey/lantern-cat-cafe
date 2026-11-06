@@ -1,6 +1,7 @@
 import { Rng, deriveSeed } from '../../rng';
 import { clone, integer, requireRule, progress } from '../internal';
 import { BOONS, BOON_BY_ID } from './boons';
+import { dropGear } from './equipment';
 import { createBattle } from './battle';
 import { battleCats, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
@@ -105,6 +106,8 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
     run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
+    const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
+    if(drop)run.earnedItems.push(drop);
     if(node.kind==='boss'){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>s.skills[id]!));
   });
