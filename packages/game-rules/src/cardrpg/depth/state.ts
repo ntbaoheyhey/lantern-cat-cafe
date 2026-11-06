@@ -6,7 +6,7 @@ import { clone, grant, requireRule, RuleFailure } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
 import { CONTRACT_VERSION, type DepthAccount, type Row, type RuleResult } from './contract';
-export const DEPTH_CAPS = {fish:420,threads:90,stamps:180,essence:12};
+export const DEPTH_CAPS = {fish:420,threads:90,stamps:180,essence:6};
 export function createDepthAccount(seed=11, now=0): DepthAccount {
   const account=createStarterAccount(seed);
   const team=account.cards.map(c=>c.cardId);

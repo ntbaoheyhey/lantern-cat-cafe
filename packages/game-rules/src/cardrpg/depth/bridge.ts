@@ -1,5 +1,6 @@
 import { CONFIG } from '../../config';
-import { SCARCITY } from '../catalog';
+import { advanceLocalDay } from '../progression';
+import { QUESTS, SCARCITY } from '../catalog';
 import { CARD_RPG_CONFIG } from '../config';
 import { integer, requireRule } from '../internal';
 import { metaCommand, requireHome, transactDepth } from './state';
@@ -91,5 +92,25 @@ export function reserveDesignPreview(state: DepthAccount, id: string) {
     draft.account.scarcity[id]!.issuedDesign++;
     draft.account.scarcity[id]!.seasonIssuedDesign++;
     draft.designClaims.push(id);
+  });
+}
+
+/** Daily allowances follow UTC dates in the app, without granting skipped-day rewards. */
+export function syncCalendarDay(state: DepthAccount, now: number) {
+  return transactDepth(state, draft => {
+    requireRule(Number.isSafeInteger(now) && now >= draft.idle.lastAt, 'INVALID_AMOUNT', 'The calendar clock must move forward.');
+    const key = Math.floor(now / 86400000);
+    const previous = draft.idle.dayKey ?? Math.floor(draft.idle.lastAt / 86400000);
+    if (key > previous) {
+      const oldDay = draft.account.day;
+      const advanced = advanceLocalDay(draft.account);
+      requireRule(advanced.ok, 'NOT_READY', 'Calendar refresh is unavailable.');
+      draft.account = advanced.state;
+      draft.account.day = oldDay + key - previous;
+      if (Math.floor((draft.account.day - 1) / 7) > Math.floor((oldDay - 1) / 7)) {
+        for (const quest of QUESTS.filter(q => q.cadence === 'weekly')) draft.account.quests[quest.id] = { progress: 0, claimed: false };
+      }
+    }
+    draft.idle.dayKey = Math.max(previous, key);
   });
 }

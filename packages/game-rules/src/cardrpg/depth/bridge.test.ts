@@ -43,3 +43,14 @@ it('reserves effort designs atomically against global and seasonal caps', () => 
   state.account.scarcity['golden-maneki']!.seasonIssuedDesign = state.account.scarcity['golden-maneki']!.seasonCap;
   expect(reserveDesignPreview(state, 'golden-maneki').ok).toBe(false);
 });
+
+it('refreshes actual calendar allowances once and never grants skipped-day rewards', async () => {
+  const { syncCalendarDay } = await import('./bridge');
+  const state = createDepthAccount(1, 0);
+  state.account.daily.service = 2;
+  const first = syncCalendarDay(state, 86400000 * 8);
+  expect(first.state.account.day).toBe(9);
+  expect(first.state.account.daily.service).toBe(0);
+  expect(first.state.account.currencies).toEqual(state.account.currencies);
+  expect(syncCalendarDay(first.state, 86400000 * 8).state.account.day).toBe(9);
+});

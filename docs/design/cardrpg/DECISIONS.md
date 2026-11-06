@@ -54,3 +54,18 @@ Fuji reads use `eth_accounts`, `eth_chainId`, a pinned block number, `balanceOfB
 Moon Collar eligibility spends three seals after a chapter clear. Golden Maneki spends ten seals after all three chapter masteries or Tower floor five. Preview reservations use the existing global and seasonal edition limits. A server would need authoritative receipts, supply reservation and voucher issuance before live minting. This pass displays the local effort counters and design preview.
 
 REFERENCE: packages/game-rules/src/cardrpg/depth/bridge.ts; packages/game-rules/src/cardrpg/depth/bridge.test.ts; apps/web/src/game/cardrpg/depth/relic-reader.ts; contracts/src/RelicNFT.sol; packages/game-rules/src/content.ts.
+
+## Measured depth refinements
+
+| Decision | Reason and evidence |
+| --- | --- |
+| Retain four equipment slots | Keeps the established loadout and all 48 IDs valid. Eight sets across four rarities produce 128 templates. Builds compete for four slots and the Relic bridge consumes one existing slot. `depth/equipment.test.ts` |
+| Daily depth caps of 420 fish points, 90 threads, 180 stamps and 6 essence | The initial essence cap of 12 produced a 4.42 heavy/casual weekly ratio. The final 90-account simulation reduces the maximum currency ratio to 2.34. `reports/cardrpg-depth/sim/economy-before-cap.json`, `economy-45.json` |
+| Legendary tailoring consumes one boss seal | Gives repeatable seal spending after the two local design reservations. It competes with effort previews and requires a Pantry clear. `depth/equipment.ts` |
+| Versioned plaintext save with FNV checksum | Enables manual transfer in a storage-free file demo and automatic local saving in the app. Corruption detection, legacy migration and active-battle continuation have rule and browser checks. `depth/save.test.ts`, `depth/model.test.ts`, `reports/cardrpg-depth/browser/app-check.json` |
+| Fixed battle decision-panel height | The first natural playback trial changed the drawing buffer 46 times. Reserving panel space keeps one buffer size through actions, rewards and boss results. `reports/cardrpg-depth/performance-trial/measurement.json`, `performance-stable/measurement.json` |
+| Read rarity attributes only for positive holdings | Public Fuji reads showed IDs 3 and 4 have never been minted at the sampled block, and their mapping values default to zero. The reader now omits zero balances before validating the attributes. `reports/cardrpg-depth/validation/fuji-attributes.json`, `depth/relic-reader.test.ts` |
+
+The three chapter stages share the cafe camera and geometry foundation. Original chapter props, light-facing palettes and transposed synthesized ambience distinguish the route. Skill sounds use unique registry signatures and existing sound synthesis. Audio begins after an explicit user click. Transform-node clips use individually varied rhythm and amplitude on the established rig vocabulary.
+
+REFERENCE: apps/web/src/game/cardrpg/depth/chapter-stage.ts; apps/web/src/game/cardrpg/depth/assets.ts; apps/web/src/game/squad/turn3d/audio.ts; assets/provenance/cardrpg-depth-runtime.json; apps/web/src/game/cardrpg/depth/assets.test.ts.

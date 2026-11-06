@@ -16,6 +16,8 @@ import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 
 export interface SceneView {
+  decorateStage?: (stage: T.Group) => void;
+  chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
   targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
@@ -92,7 +94,7 @@ export class TurnScene {
     const key=new T.DirectionalLight('#ffe0ba',3.3); key.position.set(-4,8,5); this.scene.add(key);
     const rim=new T.DirectionalLight('#bdd2ff',2.3);rim.position.set(4,4,-5);this.scene.add(rim);
     this.aura=new T.PointLight(GOLD,0,7);this.scene.add(this.aura);
-    this.stage=this.makeStage();this.scene.add(this.stage);
+    this.stage=this.makeStage();this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
     this.bossBackdrop=new T.Group();
     for(let i=0;i<7;i++){const t=new T.Mesh(new T.TorusGeometry(2.5+i*.24,.025,4,60),new T.MeshBasicMaterial({color:'#d77889',transparent:true,opacity:.18}));t.rotation.x=Math.PI/2;t.position.set(2.3,.035+i*.004,0);this.bossBackdrop.add(t);}
     this.scene.add(this.bossBackdrop);
@@ -244,6 +246,9 @@ export class TurnScene {
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
     this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
+    for (const group of this.stage.children) {
+      if (group.userData.chapter) group.visible = group.userData.chapter === view.chapter;
+    }
     this.activeRing.visible=false;this.targetRings.forEach(r=>r.visible=false);
     const active=source??this.puppets.get(view.currentId??'');if(active&&!view.model){this.activeRing.visible=true;this.activeRing.position.set(active.base.x,.045,active.base.z);this.activeRing.material.color.set(roleColor(active.role));this.activeRing.scale.setScalar(1+.035*Math.sin(this.time*3));}
     this.aura.intensity=active&&!view.model?1.2:0;if(active)this.aura.position.set(active.root.position.x,active.root.position.y+1.4,active.root.position.z+.3);

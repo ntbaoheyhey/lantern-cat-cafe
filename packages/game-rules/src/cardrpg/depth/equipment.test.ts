@@ -43,7 +43,7 @@ it('gates and charges awakening and deterministic legendary tailoring',()=>{
   const s=createDepthAccount();expect(awakenCat(s,'mochi').ok).toBe(false);s.account.cards[0]!.level=10;s.account.cards[0]!.stars=2;s.materials=500;
   s.account.currencies={fish:20000,threads:1000,stamps:0,essence:100};const before=depthStats(s,'mochi');
   const result=awakenCat(s,'mochi');expect(result.ok).toBe(true);expect(result.state.materials).toBe(470);expect(depthStats(result.state,'mochi').attack).toBeGreaterThan(before.attack);
-  expect(craftGear(s,'hearthloom-weapon-legendary').ok).toBe(false);s.cleared=[1,2,3];expect(craftGear(s,'hearthloom-weapon-legendary').ok).toBe(true);
+  expect(craftGear(s,'hearthloom-weapon-legendary').ok).toBe(false);s.cleared=[1,2,3];s.seals=1;expect(craftGear(s,'hearthloom-weapon-legendary').ok).toBe(true);
 });
 it('changes actual combat with the Bellsteel four-piece rule',()=>{
   let s=createDepthAccount();for(const slot of ['weapon','outfit','charm','relic']){const g=makeGear(s,`bellsteel-${slot}-common`,1);s.gear.push(g);s=equipGear(s,'mochi',g.id).state;}

@@ -180,7 +180,7 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   const e = ENEMY_BY_ID[id];
   if (!e) throw Error('Unknown enemy');
   const scale = tutorial ? .55 : 1 + Math.max(0, chapter - e.chapter) * .16;
-  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(e.hp*scale),maxHp:Math.round(e.hp*scale),attack:Math.round(e.attack*scale),defense:e.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
+  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(e.hp*scale),maxHp:Math.round(e.hp*scale),attack:Math.round(e.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:e.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
   const actors: Actor[] = setup.cats.map((c,index) => {
