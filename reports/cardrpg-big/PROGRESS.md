@@ -1,31 +1,9 @@
-# Progress · 6 November 2026, 21:12 local
-REFERENCE: memory/PROMPT.md, memory/STATE.md, flow/GATES.md, meta/PLAN.md
+# Lane A progress
+REFERENCE: memory/PROMPT.md, memory/STATE.md, COVERAGE.md
+Updated 2026-11-06T19:17:28.588866+00:00
 
-F0, A, F1, F2, starter F3 and F4 are published as stacked drafts333–338. The starter slice is available in docs/cardrpg3/slice.html. F4 has31 original effect compositions,465 grayscale pairs above0.16, and zero face failures. Earlier misses remain recorded in their phase gates.
+I now has five passing source gates and five measured browser flows. Encounters last46.5327–57.2778s. Page MAX300ms and round gap400.1ms remain measured misses. Gear/economy results retain26/48 positive tier steps,22ties and a maximum2.1947756956× heavy/casual ratio.
 
-F5 corrected source7e054608 passes1669 web units,903 rules units and421 E2E cases plus typecheck, lint and build. Seven cold runs complete with nativeMAX33.3–50.1ms andCPU4 MAX216.7–250.1ms. CPU4 opening misses100ms. Fight/Pause/Skip react within66.9/14.5/14.7ms across measured runs. Corrected3240 poses have zero overlaps or clipping. Chapter1 first encounters9.306–16.195s miss45–90s.
+G, M narrow layout, F7 lab and A-only integration are source-pinned in the shared functional queue under PID21000. The G full720-case harness follows that queue. B has published B1draft342 and first-cat-batch draft343. Engine integration awaits the remaining published chain.
 
-F5 matrix720 and five profiles complete against HTML4536494f with268286 frames and zero errors. PageMAX300ms, first/repeat33.4/16.8ms. The page maximum is33.3ms above F4 and remains a reported miss. flow/PERFORMANCE.md contains the measured table and profile attribution. The phase draft is next.
-
-M source now includes shared rarity cards, model/skill previews, front/back drag and drop, three team presets, paper-doll equipment comparison, grouped inventory, a three-cat cafe tableau and twelve named original legendary geometries. Focused10/10 and web1679 unit tests pass. Initial typecheck/build finds preview actor identity errors, now corrected. Five gates and actual screenshots remain pending. Browser presets use a versioned UI key, offline presets last for the visit. An all128-template visibility probe is being prepared against three starter models.
-
-I preparation declares gear-tier and roster sims in items/PLAN.md. Rules tuning waits for the M checkpoint. G, F6 and F7 remain open. Hourly same-chat recovery scripting remains blocked by this session’s Automations instruction. No recovery scheduler has been installed.
-
-## M checkpoint · 21:30 local
-REFERENCE: meta/GATES.md, memory/STATE.md, validation/m-final.json
-
-M now passes1679web/903rules/421E2E,33screen captures,384equipment/model visibility cases and20early-navigation lifecycle cases. Allthree team cards fit the first viewport at allthree sizes. Frozen HTML9ed1953f records the runtime source hashes. Performance reruns follow the source push and completion of baseline sims. Gear balance baseline finds tier saturation and a10.4575% nominal single-piece score contribution against the proposed10% threshold. These remain open I gates.
-
-## M complete timing and I preparation · 22:59 local
-REFERENCE: meta/PERFORMANCE.md, memory/STATE.md, validation/ig-focused.log, validation/i-caps.log
-
-M records720/720 cases,265,761 raw frames,0 errors and castMAX33.4/16.8ms. Whole-pageMAX250.1ms improves fromF5 300ms while missing100ms. Cold CPU4 MAX233.3ms also misses. Allfive profile casts stay16.8ms.
-
-I now has25 passing design-cap boundary tests and2 passing local-design UI tests. G preparation has11 passing ceremony/transaction cases and waits for its own phase. The expanded balance baseline tests bothlevels1/6 and max-enhancement/roll power. Four30-seed training pilots follow, with source-free existing-main-stat overrides recorded explicitly. Heldout seeds remain untouched.
-
-## Lane A encounter balance · 7 November, 00:05 local
-REFERENCE: items/ENCOUNTERS.md, items/REPLAY.md, memory/STATE.md, items/encounter-pilot-hashes.json
-
-Draft341 received losslessly compressed pilot evidence at32e9fef0. The user’s lane split assigns engine/art/audio to B and items/gacha/meta/integration to A. Shared passive previews are committed at97715e55. Replay repair3263cece adds0.7 enemy-stat snapshots and0.5/0.6 migration, with46 focused tests and150 paired routes/450 identical encounter records.
-
-The frozen pilot5B candidate now changes only existing enemy HP/attack/defense.320 depth rules tests pass. Duration planning from50 seeds per cell gives chapter1 starter medians51.411s training and53.569s heldout.48/50 and44/50 fall within45–90s. Full-route success13/50 and10/50 remains a progression cost. Full gear/economy sims continue atnice10. Five-gate validation and natural browser flow wait for the shared timing lock. G source remains disconnected and parked atb5a068b3.
+Source74a8d12b is pushed to the canonical branch and I draft341 branch. I detailed phase acceptance is in items/ENCOUNTER-CHECKPOINT.md. Current next actions, exact paths and source hashes are in memory/STATE.md.
