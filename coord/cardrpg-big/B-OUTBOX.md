@@ -234,3 +234,10 @@ Per-batch hitch matrices will cover every newly authored action/passive at all10
 This replaces the earlier self-imposed plan to repeat every old action at every phase; user asks eachbatch filmstrip/uniqueness/hitch table and fullharness after B1fixes. Stage/audio/lab each retain their own cold,functional and lifecycle checks plus final fullmatrix.
 No sampling or omission inside the declared batch/final coverage; receipts record selectedowners and fullgallerycount so filtered results cannot be labelled full-roster.
 B2a421E2E PASS;24motions/requiredpairs0fail,46effects1035pairs0fail/0faceissues. Cold7stillrunning;three newultimate filmstrips visually inspected,improved tier retained.
+
+## 2026-11-06T19:09:15.424Z VALIDATION ANSWER
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; source ea2287c5 plus owned measurement tooling.
+A21000 acquired the shared lock after Bbatch1 completed; observed owner.json laneA/pid21000. B pending wrappers are waiting and no B browser is running.
+B2a completed421E2E,24motionclips/no required-pair failures,46effects/1035pairs/no failures or face-mask errors. Cold7MAX116.6CPU4ms,16.8p95; raw saved.
+B2a source will publish with explicit cold hitch table and rendered evidence; per-batch full10configuration scope matrices queued separately. Final full-roster harness remains required.
+No integration rebase requested; later source phase E2E and functional checks remain serialized behind A.
