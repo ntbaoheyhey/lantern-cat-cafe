@@ -131,3 +131,9 @@ B4 four source gates1692web/935rules pass;native PCM+audio browser proof queued 
 B2enemybatch1 CLAIM extends prior exact paths to card-utensils.ts,card-enemy.test.ts and own motion/effect measurement tools.
 Enemy clips must select plan.presentationId rather than roleAttack shared fallback;existing rule IDs unchanged. Three original two-material adornments plus distinct basic/signature clips.
 B1 fullmatrix still active,wholepageMAX300ms;no false loading pass. No integration rebase requested by A.
+
+## 2026-11-06T18:07:06.989Z B2-enemy-batch2 CLAIM
+branch ai/codex-cardrpg-big2-e1-2026-11-06; sixenemyclips15realrigpairs pass; corrected unregistered effect primitive draft names before build.
+B2enemybatch2 CLAIM:turn3d/card-enemy-batch2-motion.ts,card-enemy-batch2-effects.ts,card-enemy-adornment.ts,card-motion.ts,card-effect-data.ts,card-enemy.test.ts,own tools/reports/provenance.
+Needle Moth/Teacup Healer/Kettle Knight:pinch-release stitch,careful pour,reflective kettle salute;distinct basic/signature authored gestures and telegraphs.
+Prepare outside runtime until E1fourgates+sourcearchive pinned. B1timingPID91287continues,no concurrent browser.
