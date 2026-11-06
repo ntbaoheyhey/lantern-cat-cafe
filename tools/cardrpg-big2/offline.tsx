@@ -19,7 +19,7 @@ function Demo() {
  return <div className={panel?'b2-demo-lab-open':''}><DepthApp offline />
   <div className="b2-demo-tools">{!panel&&<><button onClick={()=>open('studio')}>Review studio</button><button className="b2-lab-entry" onClick={()=>open('mechanics')}>Mechanics lab</button></>}<button aria-pressed={meter} onClick={()=>setMeter(!meter)}>Frame meter</button></div>
   {meter&&<FrameMeter/>}
-  {panel&&createPortal(panel.kind==='mechanics'?<MechanicsLab close={panel.close}/>:<ReviewStudio close={panel.close} go={(screen:Screen)=>{panel.close();window.__depthReview?.go(screen);}}/>,panel.host)}
+  {panel&&createPortal(panel.kind==='mechanics'?<MechanicsLab close={panel.close}/>:<ReviewStudio close={panel.close} openMechanics={()=>setPanel({...panel,kind:'mechanics'})} go={(screen:Screen)=>{panel.close();window.__depthReview?.go(screen);}}/>,panel.host)}
  </div>;
 }
 createRoot(document.getElementById('root')!).render(<Demo/>);

@@ -3,10 +3,10 @@ PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa0633
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
 All B source implemented through async-loader candidate 14953637; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Functional receipts serialize under shared lock; A21000 currently owns it.
-B2a checkpoint94ed765e contains rendered24motions/46effects,421E2E,cold7; push running /tmp/cardrpg-big2-b2a-push.log. Draft pending.
+B2a checkpoint94ed765e contains rendered24motions/46effects,421E2E,cold7; published draft343 on342.
 B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
-1. Finish B2a draft publication + ledger mirror; later phases publish after each pinned E2E and rendered/cold receipts.
+1. B2a draft343 published; mirror STATE. Later phases publish after each pinned E2E and rendered/cold receipts.
 2. Inspect functional queues10738/12051/14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
 3. Run scoped batch matrices (owners encoded matrix-series.mjs), then full final-roster matrix and lifecycle on accepted final artifact. Finish report/demo/evidence/ledger;A integration sync remains pending.
 ## DONE
@@ -54,3 +54,5 @@ B1pending;B2pending;B3pending;B4pending;B5pending;B6pending.
 - Recovery19:11Z: B2a evidence94ed765e inserted on its branch; all UNPUBLISHED descendant refs rebased --update-refs to keep the draft chain linear. Runtime/source trees unchanged, original phase artifacts and source receipts keep originalSHA; no remote history rewritten. Current source branches have newSHAs: inspect git refs, do not rely on earlier summary SHAs.
 - B2a:24GLBclips/276pairs,46effects/1035pairs,0failures/faceissues/errors. Cold7CPU4MAX116.6ms/p9516.8ms;improved tier after viewing ultimate strips (Mallow small/dark,Sorrel groupcrowded). CHECKPOINT.md and allraw published on branch.
 - Scoped skill harness records fullGalleryActions + selection, filters only once, full receipts only when declared coverage complete. Matrixseries owners:3cats/batch,3enemies/batch,Crumb1,bosses3;finalreview all86. No per-phase sampling inside scope.
+
+- B2a94ed765e published draft343 on342 at19:13Z. Allfive gates passed on source3198ed64; evidence-only checkpoint adds no runtime changes. Perbatch matrices wait after functional queues underPID50663.

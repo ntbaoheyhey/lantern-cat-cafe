@@ -7,15 +7,15 @@ import './studio.css';
 type Evidence = { owner:string; name:string; before?:string; after?:string; beforeLabel?:string; afterLabel?:string; source:string; note:string };
 type Check = {label:string;kind:string;actions:number;pairs:number;offenders:number;faceOffenders:number;errors:number;source:string};
 declare global { interface Window { __b2Evidence?:Evidence[]; __b2Checks?:Check[]; __b2Gallery?:DepthModel } }
-const checklist: Array<{name:string;detail:string;screen?:Screen}> = [
+const checklist: Array<{name:string;detail:string;screen?:Screen;panel?:'gallery'|'comparison'|'mechanics'}> = [
  {name:'Collect companions',detail:'Cards, portraits and skill descriptions.',screen:'collection'},
  {name:'Prepare a team',detail:'Choose three companions and their rows before fighting.',screen:'team'},
  {name:'Dress the team',detail:'Equipment, comparisons and set progress.',screen:'inventory'},
  {name:'Watch an automatic battle',detail:'Prepare → Fight. Speed, pause, skip, camera and sound.',screen:'map'},
  {name:'Invite a companion',detail:'Earned invitations, published odds and pity.',screen:'gacha'},
- {name:'Inspect every skill',detail:'Gallery below: twelve cats, ten enemies and three bosses.'},
- {name:'Compare the artwork',detail:'Before / after pairs use measured, pinned captures.'},
- {name:'Try automatic extras',detail:'Return to cafe → Mechanics lab. All experiments start off.'},
+ {name:'Inspect every skill',detail:'Gallery below: twelve cats, ten enemies and three bosses.',panel:'gallery'},
+ {name:'Compare the artwork',detail:'Before / after pairs use measured, pinned captures.',panel:'comparison'},
+ {name:'Try automatic extras',detail:'Try the Mechanics lab. All experiments start off.',panel:'mechanics'},
 ];
 function Gallery(){
  const [m]=useState(()=>{const model=new DepthModel(true);model.state.settings.reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;model.inspect(model.galleryId);return model;});
@@ -51,11 +51,11 @@ function Comparison(){
   {!row?<p>Capture evidence is not included in this build yet.</p>:<><label>Capture<select value={index} onChange={e=>setIndex(Number(e.target.value))}>{rows.map((r,i)=><option value={i} key={`${r.owner}-${i}`}>{r.name}</option>)}</select></label><div className="b2-comparison">{[[row.beforeLabel??'Earlier',row.before],[row.afterLabel??'Current',row.after]].map(([label,id])=><figure key={label}><figcaption>{label}</figcaption>{id?<img src={image(id)} alt={`${row.name} ${label} comparison`} style={row.owner==='sharpness'?{width:'auto',maxWidth:'100%'}:undefined} loading="lazy"/>:<p>Not captured for this view.</p>}</figure>)}</div><p>{row.note}</p><p className="b2-reference">REFERENCE: {row.source}</p></>}
  </div>;
 }
-export function ReviewStudio({close,go}:{close:()=>void;go:(screen:Screen)=>void}){
+export function ReviewStudio({close,go,openMechanics}:{close:()=>void;go:(screen:Screen)=>void;openMechanics:()=>void}){
  const [tab,setTab]=useState<'gallery'|'comparison'|'checklist'>('gallery');
  return <section className="b2-studio" aria-label="Review studio"><header><div><small>THE LANTERN · REVIEW STUDIO</small><h1>Meet the whole cast</h1></div><button onClick={close}>Return to cafe</button></header>
  <nav aria-label="Review panels"><button aria-pressed={tab==='gallery'} onClick={()=>setTab('gallery')}>Skill gallery</button><button aria-pressed={tab==='comparison'} onClick={()=>setTab('comparison')}>Before / after</button><button aria-pressed={tab==='checklist'} onClick={()=>setTab('checklist')}>Brief checklist</button></nav>
- {tab==='gallery'?<Gallery/>:tab==='comparison'?<Comparison/>:<div className="b2-studio-body"><h2>A cafe outside. A show inside.</h2><div className="b2-checklist">{checklist.map(item=><article key={item.name}><h3>{item.name}</h3><p>{item.detail}</p>{item.screen&&<button onClick={()=>go(item.screen!)}>Open screen</button>}</article>)}</div><p className="b2-reference">REFERENCE: reports/cardrpg-big2/CARDRPG-BIG2-REPORT.md · items, invitations and final integration belong to Lane A.</p></div>}
+ {tab==='gallery'?<Gallery/>:tab==='comparison'?<Comparison/>:<div className="b2-studio-body"><h2>A cafe outside. A show inside.</h2><div className="b2-checklist">{checklist.map(item=><article key={item.name}><h3>{item.name}</h3><p>{item.detail}</p>{item.screen&&<button onClick={()=>go(item.screen!)}>Open screen</button>}{item.panel&&<button onClick={()=>item.panel==='mechanics'?openMechanics():setTab(item.panel! as 'gallery'|'comparison')}>Open {item.panel==='gallery'?'gallery':item.panel==='comparison'?'comparison':'Mechanics lab'}</button>}</article>)}</div><p className="b2-reference">REFERENCE: reports/cardrpg-big2/CARDRPG-BIG2-REPORT.md · items, invitations and final integration belong to Lane A.</p></div>}
  </section>;
 }
 export function FrameMeter(){

@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 export function evidencePayload(root){
  const rows=[],checks=[],files=new Map(),cache='/tmp/cardrpg-big2-evidence-cache';mkdirSync(cache,{recursive:true});
  const add=(path,native=false)=>{if(!existsSync(resolve(root,path)))return undefined;if(files.has(path))return files.get(path).id;const hash=createHash('sha256').update(readFileSync(resolve(root,path))).digest('hex');const item={id:`b2-evidence-${files.size}`,path:resolve(root,path),out:native?resolve(root,path):`${cache}/${hash}-480-q48.webp`,sha256:hash,native};files.set(path,item);return item.id;};
- const groups=[['reports/cardrpg-big/filmstrips',null,['mochi','soot','clover']],...[1,2,3].map(i=>[`reports/cardrpg-big2/cats/batch${i}/filmstrips`,`reports/cardrpg-big2/cats/batch${i}/before`,null]),...['e1','e2','e3','e4','boss'].map(p=>[`reports/cardrpg-big2/enemies/${p}/filmstrips`,`reports/cardrpg-big2/enemies/${p}/before`,null])];
+ const groups=[['reports/cardrpg-big/filmstrips',null,['mochi','soot','clover']],...[['panko','mallow','sorrel'],['biscuit','inkcap','cinnamon'],['brioche','velvet','marigold']].map((owners,i)=>[`reports/cardrpg-big2/cats/batch${i+1}/filmstrips`,`reports/cardrpg-big2/cats/batch${i+1}/before`,owners]),...['e1','e2','e3','e4','boss'].map(p=>[`reports/cardrpg-big2/enemies/${p}/filmstrips`,`reports/cardrpg-big2/enemies/${p}/before`,null])];
  for(const [after,before,owners]of groups){if(!existsSync(resolve(root,after)))continue;for(const name of readdirSync(resolve(root,after)).filter(n=>n.endsWith('.webp')).sort()){
   if(owners&&!owners.some(o=>name.startsWith(o+'-')))continue;
   const slug=name.slice(0,-5),owner=slug.startsWith('enemy-')?slug.slice(6).replace(/-basic$/,''):slug.replace(/-[1-4]$/,'');

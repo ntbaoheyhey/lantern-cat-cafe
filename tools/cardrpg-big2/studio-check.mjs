@@ -26,6 +26,11 @@ try{for(const [width,height]of [[1280,720],[1440,900],[1024,600]]){
  const badImages=await page.locator('.b2-comparison img').evaluateAll(async imgs=>{await Promise.all(imgs.map(i=>i.decode()));return imgs.filter(i=>!i.naturalWidth).length;});assert.equal(badImages,0);await page.screenshot({path:`${out}/${width}-comparison.png`});
  await page.getByRole('button',{name:'Brief checklist',exact:true}).click();await page.screenshot({path:`${out}/${width}-checklist.png`});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ if(await page.getByRole('button',{name:'Open gallery',exact:true}).count()){
+ await page.getByRole('button',{name:'Open gallery',exact:true}).click();await page.getByLabel('Gallery unit',{exact:true}).waitFor();
+ await page.getByRole('button',{name:'Brief checklist',exact:true}).click();await page.getByRole('button',{name:'Open comparison',exact:true}).click();await page.getByRole('heading',{name:'Look closer',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Brief checklist',exact:true}).click();await page.getByRole('button',{name:'Open Mechanics lab',exact:true}).click();assert.equal(await page.locator('.b2-lab input[type=checkbox]:checked').count(),0);
+ }
  await page.getByRole('button',{name:'Return to cafe',exact:true}).click();assert.equal(await page.evaluate(()=>JSON.stringify(window.__depthReview.state)),before);
  await page.getByRole('button',{name:'Mechanics lab',exact:true}).click();assert.equal(await page.locator('.b2-lab input[type=checkbox]:checked').count(),0);await page.getByRole('button',{name:'Return to cafe',exact:true}).click();
  rows.push({width,height,owners:owners.length,actions:covered,captures,accountUnchanged:true,overflow:false});await page.close();
