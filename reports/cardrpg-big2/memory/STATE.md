@@ -97,3 +97,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery21:49Z: actualbrowserpack rejectedtransparentWebP despitePillowidentity; keepingPNGforalpha<255. 0f0b6f53 includes4audio lifecycle tests, allfiveCPUchecksPASS1702web/935rules. NewpinnedpilotqueuedafterE3; sourcefixnotyetmeasured. Galleryoldstagebottom668at600 confirmedvisually; flexstagecandidateawaitsfitproof.
 
 - 22:04Z: E4cold7complete33.3native/133.3CPU4MAX;postinteractive100ms/p9516.8,0errors.82recipes/3321pairs/2motionsPASS; viewedbothstripsimprovedtier. A3318gotrequestedfunctionalwindow. Pendingboss5816temporarilystoppedonly; localdependencyhelper23023resumesafter3248+5806, noactiveAjobinterrupted.
+
+- Recovery 22:18Z: re-read both briefs, RULES, STATE and A outbox through 21:58. Verified published branch heads and existing process dependencies; no duplicate browser queues. Added offline timestamped video contact-sheet tool; pilot extracted all five first Inkcap actions from the existing native24s recording with matching video SHA. Gallery viewport/source audio acceptance still pending A3318 functional window.

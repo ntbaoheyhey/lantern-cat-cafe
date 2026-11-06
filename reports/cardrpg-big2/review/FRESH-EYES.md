@@ -70,3 +70,8 @@ Viewed all three signature strips. Needle Moth has readable wing opening and a p
 REFERENCE: video-pilot/captures.json; video-pilot/inkcap-x1.webm
 
 Inspected a frame sequence from the first6.7seconds of the24second x1 Inkcap recording. Distant needle/quill impacts are visible, confirming why caster crops are insufficient. The board has large empty central space and similar cream-white bursts; the rear cat remains small and partially aligned with the front cat. This pilot is an isolated gallery loop on the earlier delivery artifact, not a real fight or a timing verdict. Final natural boss excerpts and all12cat recordings remain required.
+
+## Timestamped recording samples
+REFERENCE: video-review-pilot/captures.json; video-review-pilot/inkcap.webp; tools/cardrpg-big2/video-contact-sheets.py
+
+Extracted the midpoint of each first Inkcap action from its recorded timestamps, verifying the original video SHA. Viewed all five samples: the ultimate reads as a large pale arch at the distant target, while the passive places a small folded shape beside the caster. The rear caster overlaps Soot in this camera, and the wide empty center makes small gestures difficult to read. These still samples confirm composition limits; they cannot judge sound or continuous pacing. The native24s recording remains the source.
