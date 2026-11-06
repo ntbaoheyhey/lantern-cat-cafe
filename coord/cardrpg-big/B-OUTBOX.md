@@ -322,3 +322,10 @@ Paired inline/async14cold runs complete with identical JS/CSS hashes. CPU4MAX116
 DPR2CPU4 trace main-thread compile81.9→6.5ms;remaining100ms frames overlap initiallayout and scene resize/context. Async retained provisionally;not exhaustive pass,full review matrix stillrequired.
 One asyncCPU4battle-ready sample10.12s versus9.12s inline;latency tradeoff disclosed. Raw performance/async-opening/{comparison.json,inline,async,CHECKPOINT.md}.
 Stage66706 nowowns sharedlock;remaining feature/opponent queues unchanged. No shared/runtime changes in this checkpoint;loader source publication awaits final functional receipts.
+
+## 2026-11-06T20:16:48.340Z B6-audit CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; current32dc8107.
+B6 audit CLAIM tools/cardrpg-big2/evidence-index.mjs,matrix-series.mjs and reports/cardrpg-big2/review/FRESH-EYES.md.
+Build a source-linked aggregate evidence index that keeps missing/partial coverage explicit; sequential visual review uses existing captures while browser jobs run.
+Add the same6500ms handoff gap between B matrix configurations that A adopted, before the queued B driver starts. No coverage or thresholds change.
+No runtime,shared-file,account or existingartifact changes. Stage421E2E passed;currentstage captures continue under66706.
