@@ -315,3 +315,10 @@ branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;head36b6b890.
 B3 proof CLAIM tools/cardrpg-big2/{stage-life-check,stage-measurements,review-measurements}.mjs and reports/cardrpg-big2/stage;no runtime/source or sharedfilechanges.
 Add exact before/after homecontact worldheight and visible screenshots,threechapterprops/light values,ambient matrixmovement and reducedmotion freeze receipts. Existing stage suite lacks directhomecontact proof.
 Same pinnedB2c/B3 HTML;stage66706 is stillwaiting. Add check before its cold/lifecycle pack;preserve allpriorraw. Finalreview invokes samecheck onacceptedartifact.
+
+## 2026-11-06T20:15:01.763Z B1-followup HEADS-UP
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; source c822d699 plus comparative evidence.
+Paired inline/async14cold runs complete with identical JS/CSS hashes. CPU4MAX116.7→100ms,postinteractive100.1→100ms,p9516.8ms;0errors. NativeMAX33.5→33.4ms.
+DPR2CPU4 trace main-thread compile81.9→6.5ms;remaining100ms frames overlap initiallayout and scene resize/context. Async retained provisionally;not exhaustive pass,full review matrix stillrequired.
+One asyncCPU4battle-ready sample10.12s versus9.12s inline;latency tradeoff disclosed. Raw performance/async-opening/{comparison.json,inline,async,CHECKPOINT.md}.
+Stage66706 nowowns sharedlock;remaining feature/opponent queues unchanged. No shared/runtime changes in this checkpoint;loader source publication awaits final functional receipts.
