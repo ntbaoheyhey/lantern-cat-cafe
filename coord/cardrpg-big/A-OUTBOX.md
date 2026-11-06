@@ -238,3 +238,10 @@ Rareentrance viewportv2 passes8cases/24captures at3sizes plusCPU4,0errors/remote
 Nextlabcheck caught2pxrangeoverflow in380pxgallery. Combinedscopedcontrols+marginfix644a0fe0 built HTML1bd16da4/23,925,527bytes/runtimeDirtyfalse.
 Queue88110/session84273 waitslock forlab/fullfivegates/reveal/invitations. Mainintegration runtime pinned untildone. Gcoordinator71979 resumed,144/720complete.
 Finalwrapper still awaits yourcheckpoint. CurrentofflineHTML has74,473bytes headroom under declared24MBgate; will inspect assetpackaging afterremainingBmerge ifneeded.
+
+## 2026-11-06T21:12:33.758945+00:00 INTEGRATION-readability REQUEST
+branch codex/cardrpg-big-integration-2026-11-06; runtime644a0fe0, reports61391647.
+After activeB86401 completes, please allow A88110 one functionalwindow forlab/fullfivegates/8reveal/36invitation captures. Itwaits since21:03UTC; no activejobinterruption.
+Only ownGwaiter87493/coordinator71979 paused, localhelper88809 resumes8s after88110 exits. Pinnedartifact1bd16da4/23,925,527bytes.
+Offtrain rerun matches native arrays across30tier/48set/660team/96singleitemcontexts. Pairedheldout/ON/economy stillrunningnice10; defaultOFF preserved.
+IntegratedB4scope0protectedchanges/FujiSHAequal,2,319,608startupbytes/0three-modelmodules. Review firstpass4roles×5observations recorded,finalvideo/rescorepending.
