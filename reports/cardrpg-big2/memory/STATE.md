@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-B6 review studio in progress on ai/codex-cardrpg-big2-b6-2026-11-06. Boss source fa9683e2 committed;four gates1696web/935rules PASS. Boss E2E/visual queue waits E4.
-B1matrixPID91287 still active,pinned28da85ec,config9of10;wholepageMAX300ms,castMAX33.3ms so far. B1published7006f109/draft342;later phases await browser receipts.
-B2/B3/B5/B4/enemy functional queues remain ordered;matrix-series.mjs not started. Untracked raw datasets are intentional, preserve them.
+B6 followup source27669fb3 on ai/codex-cardrpg-big2-b6-followup-2026-11-06; complete source through nine cats,13opponents,stage,lab,audio,studio/hit-stop. Final report draft115lines; browser receipts pending.
+B1 720/720 finished18:56:31Z,0errors;first/repeatMAX33.4/16.8ms;page native150/CPU4300ms;worst per-case CPU4p9533.3ms. Cast/geometry pass;opening strict100/p9533 misses.
+B1PID91287 doing5cast profiles; batch1 then adds2worst-opening traces. Functional queues and pinned artifacts preserved. Untracked raw datasets intentional.
 ## NEXT
-1. Finish B6 studio/evidence builder and typecheck;pin artifact/source and queue own browser checks.
-2. Inspect functional results as shared lock becomes available;fix actual failures;publish checkpoints/stacked drafts after fivegates.
-3. Complete perf/sharpness/uniqueness evidence, report+ledger copy, notify A. A18:15 runnerhooks await publishedB;no integration rebase requested.
+1. Inspect sequential functional receipts (batch1PID97732,then10738/12051/14757/18479/22596/enemies/delivery39632/hitstop43008/flagoff43282);fix actual failures.
+2. Publish each source branch/draft after its archived E2E plus existingfour gates;finish measured batch checkpoints and final matrices.
+3. Complete report/demo,ledger mirror and A checkpoint. A18:15 runner hooks await B publication;no integration rebase requested. Read A only at milestones.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -46,3 +46,7 @@ B1pending;B2pending;B3pending;B4pending;B5pending;B6pending.
 - Boss source fa9683e2:26attacks325rigpairs;intro1.14s/phase.30s;source1696web/935rules. Browserclaims pending. B6 studio uses isolated DepthModel and local imperative bounded frame meter.
 
 - B1source7006f109 published;draft342 on340. Fivegates previouslypassed,720matrix stillactive and openingMAX300ms disclosed. B6source1696web/935rules+demoTS PASS;studio browser notyet measured.
+
+- Recovery18:36Z: re-read both prompts/RULES/STATE/A-outbox. Full B4hit-stop test passed but TS18048 travel optional;fixed ?.hold,allsourcegates pass1698web/935rules. Source89d8c99c,artifact /tmp/cardrpg-big2-hitstop-index.html pinned.
+
+- B1 complete720cases18:56:31Z:150msnative/300msCPU4pageMAX;worstCPU4casep9533.3ms;first33.4/repeat16.8ms,207draws/93802tris,0runtimeerrors. Allconfigurationcast>=99.9814%within20ms. Do not confuse cold7 with exhaustive result. Exact opening offender profiles added before batch1 checks.
