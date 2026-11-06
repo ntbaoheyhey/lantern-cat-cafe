@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 const baseline = process.argv.includes('--baseline');
 const output = process.env.BIG_OUT || `reports/cardrpg-big/${baseline ? 'baseline' : 'performance'}`;
 const file = resolve(baseline ? 'docs/cardrpg2/index.html' : 'docs/cardrpg3/index.html');
+const captureScreenshots = process.env.BIG_CAPTURE !== '0';
 const scenarios = JSON.parse(process.env.BIG_SCENARIOS || '[[1280,720,1,1],[1280,720,2,1],[1440,900,1,1],[1440,900,2,1],[1280,720,1,4],[1280,720,2,4],[2560,1440,1,1]]');
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
@@ -39,14 +40,20 @@ try {
       });
     });
     const mark = async label => page.evaluate(label => window.__bigPerf.marks.push({ label, at: performance.now() }), label);
+    const capture = async label => {
+      if (!captureScreenshots) return;
+      await mark(`capture-${label}-start`);
+      await page.screenshot({ path: `${output}/${name}-${label}.png` });
+      await mark(`capture-${label}-end`);
+    };
     await page.goto('file://' + file);
     await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 60000 });
     await mark('hub-interactive');
-    await page.screenshot({ path: `${output}/${name}-hub.png` });
+    await capture('hub');
     if (baseline) {
       await page.getByRole('button', { name: /Tangled Cafe/ }).click();
       await mark('map-click');
-      await page.screenshot({ path: `${output}/${name}-map.png` });
+      await capture('map');
       await page.locator('.dp-node:enabled').first().click();
       await mark('fight-click');
     } else {
@@ -56,10 +63,10 @@ try {
     await page.waitForFunction(() => window.__depthScene?.ready || window.__depthReview?.sceneError, { timeout: 60000 });
     await mark('scene-ready');
     if (baseline) await page.getByLabel('Auto', { exact: true }).check();
-    await page.screenshot({ path: `${output}/${name}-battle.png` });
+    await capture('battle');
     for (let cast = 0; cast < 3; cast++) {
       await page.waitForTimeout(1200);
-      await page.screenshot({ path: `${output}/${name}-cast${cast}.png` });
+      await capture(`cast${cast}`);
     }
     await page.waitForTimeout(Number(process.env.BIG_WINDOW_MS || 20000));
     await mark('measurement-end');
@@ -100,5 +107,5 @@ try {
   }
 } finally {
   await browser.close();
-  await writeFile(`${output}/summary.json`, JSON.stringify({ date: new Date().toISOString(), artifact: file, sha256: createHash('sha256').update(await readFile(file)).digest('hex'), method: 'Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.', rows }, null, 2));
+  await writeFile(`${output}/summary.json`, JSON.stringify({ date: new Date().toISOString(), artifact: file, sha256: createHash('sha256').update(await readFile(file)).digest('hex'), captureScreenshots, method: 'Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.', rows }, null, 2));
 }

@@ -1,0 +1,32 @@
+{
+  "tool": "Original deterministic Node.js scalar bake and PNG writer",
+  "command": "node tools/cardrpg-big/surfaces.mjs",
+  "source": "tools/cardrpg-big/surfaces.mjs",
+  "sourceSha256": "13915e9a2c522287b3fa8889e0c3909412ba77263937075734d06d3197feab22",
+  "externalReferences": [],
+  "license": "CC0-1.0",
+  "parameters": {
+    "size": 1024,
+    "weavePeriod": 16,
+    "warpPeriod": 64,
+    "noiseSeed": "x+37,y+59 integer hash",
+    "channels": "sRGB color and tangent normal",
+    "reuse": "shared tiled surface on each hero, mipmapped and anisotropic"
+  },
+  "assets": [
+    {
+      "path": "assets/cardrpg3/textures/felt-color.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 346129,
+      "sha256": "0a46f0e4e7b506a9f6171eab31bf627a64f58cea34612151d34990d70270bce0"
+    },
+    {
+      "path": "assets/cardrpg3/textures/felt-normal.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1725034,
+      "sha256": "c6388118d24463bb1786cdd89a7191d7dd5f8e47edafaaddaef666d104f7f5ba"
+    }
+  ]
+}

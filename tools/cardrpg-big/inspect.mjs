@@ -2,14 +2,14 @@ import { chromium } from '../../apps/web/node_modules/@playwright/test/index.mjs
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 const baseline = process.argv.includes('--baseline');
-const output = `reports/cardrpg-big/${baseline ? 'baseline' : 'current'}/sharpness`;
+const output = process.env.BIG_CROP_OUT || `reports/cardrpg-big/${baseline ? 'baseline' : 'current'}/sharpness`;
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 const rows = [];
 try {
   for (const dpr of [1, 2]) {
     const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: dpr });
-    await page.goto('file://' + resolve(`docs/${baseline ? 'cardrpg2' : 'cardrpg3'}/index.html`));
+    await page.goto('file://' + resolve(process.env.BIG_ARTIFACT || `docs/${baseline ? 'cardrpg2' : 'cardrpg3'}/index.html`));
     await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor();
     const crops = [];
     async function crop(label, rectangle) {
@@ -52,8 +52,18 @@ try {
     for (const [label, face] of [['hero-face', diagnostics.faces.find(f => f.id === 'mochi')], ['enemy', diagnostics.faces.find(f => !['mochi', 'soot', 'clover'].includes(f.id))]]) {
       await crop(label, { x: face.x - 32, y: face.y - 32, width: 64, height: 64 });
     }
-    const icon = page.locator(baseline ? '.dp-skill img' : '.dp-skill-banner img').first();
-    if (await icon.count()) await crop('skill-icon', await icon.boundingBox());
+    if (!baseline) {
+      await page.getByRole('button', { name: 'Leave table' }).click();
+      await page.getByRole('button', { name: 'Team & cards', exact: true }).click();
+    }
+    const icon = page.locator(baseline ? '.dp-skill img' : '.dp-skill-summary img').first();
+    await icon.waitFor();
+    await crop('skill-icon', await icon.boundingBox());
+    const displayedImages = await page.locator('img').evaluateAll(images => images.filter(image => image.getBoundingClientRect().width > 0)
+      .map(image => ({ src: image.currentSrc.startsWith('data:') ? 'embedded' : image.currentSrc,
+        naturalWidth: image.naturalWidth, naturalHeight: image.naturalHeight,
+        displayWidth: image.getBoundingClientRect().width, displayHeight: image.getBoundingClientRect().height })));
+    diagnostics.displayedImages = displayedImages;
     rows.push({ dpr, crops, ...diagnostics });
     await page.close();
   }

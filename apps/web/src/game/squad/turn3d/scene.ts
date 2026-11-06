@@ -14,6 +14,8 @@ import { loadModel } from './assets';
 import {screenBounds,auditBounds} from './scene-audit';
 import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
+import { CardFace, cardExpression } from './card-face';
+import { CardSurfaces } from './card-surfaces';
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
 
 export interface SceneView {
@@ -29,7 +31,7 @@ export interface SceneView {
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { head?:T.Object3D; headRest:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -37,6 +39,7 @@ const lerp = T.MathUtils.lerp;
 const point=(a:TurnActor,boss:boolean)=>{const p=formationPoint(a,boss);return new T.Vector3(p.x,p.y,p.z)};
 
 export class TurnScene {
+  private cardSurfaces?: CardSurfaces;
   ready=false;
   readonly renderer: T.WebGLRenderer;
   readonly scene = new T.Scene();
@@ -90,7 +93,8 @@ export class TurnScene {
     this.renderer.toneMapping=T.ACESFilmicToneMapping; this.renderer.toneMappingExposure=1.04;
     this.renderer.setClearColor('#252332'); this.renderer.domElement.setAttribute('aria-label','Original 3D cafe battlefield');
     this.renderer.domElement.setAttribute('role','img'); host.appendChild(this.renderer.domElement);
-    this.post=new CafePost(this.renderer);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;
+    if(this.view().autoBattle)this.cardSurfaces=new CardSurfaces(this.renderer);
+    this.post=new CafePost(this.renderer, this.view().autoBattle);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;
     this.glow=this.makeGlow();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',15,27);
@@ -122,6 +126,7 @@ export class TurnScene {
   private async warmModels(){
     const warm=new T.Group();
     try{
+      await this.cardSurfaces?.ready;if(this.disposed)return;
       for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
@@ -180,7 +185,9 @@ export class TurnScene {
   }
   private resizeToHost(){
     const width=this.host.clientWidth,height=this.host.clientHeight;
-    if(!width||!height||(width===this.width&&height===this.height))return;
+    const ratio=Math.min(window.devicePixelRatio||1,2);
+    if(!width||!height||(width===this.width&&height===this.height&&ratio===this.renderer.getPixelRatio()))return;
+    if(ratio!==this.renderer.getPixelRatio())this.renderer.setPixelRatio(ratio);
     this.width=width;this.height=height;this.renderer.setSize(width,height,false);this.post.resize(width,height);
     this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.dirty=true;
   }
@@ -192,14 +199,15 @@ export class TurnScene {
       const gltf=await loadModel(asset);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
       const height=new T.Box3().setFromObject(model).max.y;
-      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
+      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(this.view().autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
       const mixer=new T.AnimationMixer(model);const actions=new Map(gltf.animations.map(c=>[c.name,mixer.clipAction(c)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
-      this.puppets.set(a.id,{head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      const face = this.view().autoBattle && a.side === 'party' ? new CardFace(model, a.role, a.id) : undefined;
+      this.puppets.set(a.id,{face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -210,6 +218,7 @@ export class TurnScene {
   }
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
+    if(this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2))this.resizeToHost();
     this.raf=requestAnimationFrame(this.loop);const view=this.view();if(!this.ready||view.suspended){this.last=now;this.renderAt=now;return}const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
     const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
     if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
@@ -243,6 +252,7 @@ export class TurnScene {
       }
       if(view.autoBattle && p.head) p.head.quaternion.copy(p.headRest);
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
+      p.face?.animate(cardExpression(clip, !!frame && source === p), this.time, p.gaze.yaw, view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
       p.guard.visible=a.hp>0&&a.shield>0;p.snare.visible=a.hp>0&&a.statuses.some(s=>['snare','restrain'].includes(s.kind));
@@ -310,8 +320,8 @@ export class TurnScene {
     const view=this.view();
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
-  private disposePuppet(p:Puppet){p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
-  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.gearResources.dispose();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.post.dispose();this.renderer.dispose();
+  private disposePuppet(p:Puppet){p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
+  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.gearResources.dispose();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.cardSurfaces?.dispose();this.post.dispose();this.renderer.dispose();
     // Loot/rest previews own separate contexts. Release them immediately so
     // Chromium cannot evict the retained battlefield before garbage collection.
     this.renderer.forceContextLoss();this.renderer.domElement.remove();}
