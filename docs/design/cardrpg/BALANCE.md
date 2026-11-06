@@ -110,3 +110,30 @@ CARDRPG_PLAYERS=1 CARDRPG_NO_DRAWS=1 CARDRPG_TRIAL=no-draws node tools/cardrpg-s
 ```
 
 Run from the systems worktree with pnpm 10.28.0 and its frozen-lockfile install. Tools use existing local Vite/TypeScript/Vitest/fast-check, no new runtime dependencies or model calls. Never substitute fixture balances for real play when reporting a simulated outcome. Rendered integration, flag-off screenshots and actual offline behavior belong to Session B and are linked by the final ledger report.
+
+## Depth mode 0.5.0 — final seeded measurements
+
+This section governs the opt-in depth contract. Earlier sections preserve the 0.4.0 measurements. Final and held-out samples use 150 paired seeds per chapter/policy, with starter equipment and identical between-battle choices. Seeds 1–150 and 1001–1150 total 3,600 full seven-stop runs.
+
+| Sample | Chapter | Random | Auto | Greedy | Smart | Smart − Auto |
+| --- | --- | --- | --- | --- | --- | --- |
+| final | 1 | 0.00% | 66.67% | 78.00% | 87.33% | 20.67 pp |
+| final | 2 | 0.00% | 50.67% | 61.33% | 100.00% | 49.33 pp |
+| final | 3 | 0.67% | 46.00% | 63.33% | 100.00% | 54.00 pp |
+| heldout | 1 | 0.00% | 71.33% | 90.67% | 93.33% | 22.00 pp |
+| heldout | 2 | 0.00% | 51.33% | 69.33% | 100.00% | 48.67 pp |
+| heldout | 3 | 0.00% | 41.33% | 56.00% | 100.00% | 58.67 pp |
+
+Auto targets are 55–75%, 45–60% and 30–50% for chapters one through three. Both final samples fall inside those bands. Smart clears the chapter-two/three minimum improvement of 15 percentage points, while its perfect results exceed the desired 15–30-point improvement band. Smart uses bounded two-round evaluation of the public seeded state. These rates require human playtesting before translation into manual-player expectations.
+
+REFERENCE: reports/cardrpg-depth/sim/combat-final.json; reports/cardrpg-depth/sim/combat-heldout.json; packages/game-rules/src/cardrpg/depth/policies.ts; packages/game-rules/src/cardrpg/depth/run-bot.ts.
+
+The roster sweep covers all 220 three-cat teams with four omitted-skill patterns, two chapter bosses and three seat/seed rotations. It totals 5,280 encounters and 247,256 party actions. Every cat has 1,320 observations. Team-context win rates range from 83.71% for Sorrel to 99.85% for Mallow. Conditional skill selection ranges from 5.37% to 86.25% among skills offered at least 30 times. All six roles occur among first deaths. Shared omission patterns and the smart evaluator limit the conclusion. Build dominance remains PARTIAL.
+
+REFERENCE: reports/cardrpg-depth/sim/roster-broad.json; tools/cardrpg-depth/roster-sim.mjs; packages/game-rules/src/cardrpg/depth/skills.test.ts; packages/game-rules/src/cardrpg/depth/builds.test.ts.
+
+Ninety accounts, thirty per casual/regular/heavy style, use real capped commands for 45 days. The regular cohort owns 60.56%/73.89%/83.06% of cats and 31.77%/66.95%/76.35% of equipment templates on days 8/30/45. All thirty regular accounts retain missing cats through day 45. Mean first epic, legendary and four-slot set arrive on days 1.13, 5.00 and 2.63. These milestones refer to equipment. The six weekly heavy/casual cohort-mean ratios peak at 2.3334× across each currency and draw count. The report exposes all balances and mastery/seal accumulation separately.
+
+The earlier essence cap of twelve produced a 4.42× ratio and was reduced to six. Legendary tailoring now spends a boss seal. Fish points remain the bot's main constraint, leaving mastery materials and seals underused. The simulation demonstrates capped progression under stated play policies. Retention and authoritative anti-bot behavior require live evidence.
+
+REFERENCE: reports/cardrpg-depth/sim/economy-before-cap.json; reports/cardrpg-depth/sim/economy-45.json; tools/cardrpg-depth/economy.mjs; docs/design/cardrpg/DESIGN.md.
