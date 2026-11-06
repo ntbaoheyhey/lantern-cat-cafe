@@ -30,6 +30,7 @@ for (const [prefix, steps] of [['review-source', ['typecheck','demo-types','lint
 }
 await locked('tools/cardrpg-big2/studio-check.mjs', { BIG_STUDIO_OUT: `${out}/studio` });
 await locked('tools/cardrpg-big2/loading-screens.mjs', { BIG_LOADING_OUT: `${out}/loading` });
+await locked('tools/cardrpg-big2/stage-life-check.mjs', { BIG_STAGE_LIFE_FINAL: '1', BIG_STAGE_LIFE_OUT: `${out}/stage-life` });
 await locked('tools/cardrpg-big2/mechanics-check.mjs', { BIG_LAB_OUT: `${out}/mechanics` });
 await locked('tools/cardrpg-big2/audio-check.mjs', { BIG_AUDIO_SOURCE: source, BIG_AUDIO_OUT: `${out}/audio` });
 await locked('tools/cardrpg-big2/hitstop-check.mjs', { BIG_HITSTOP_OUT: `${out}/hitstop` });
