@@ -56,7 +56,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     run.current=id;
     if(node.enemies.length){
       const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator};
-      run.battle=createBattle(setup);s.lastBattle=clone(setup);s.lastChoices=[];
+      run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });
 }

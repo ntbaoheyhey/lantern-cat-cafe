@@ -132,3 +132,11 @@
 }
 
 .dp-team-set { display: block; color: #b8dcc5; margin-top: 4px; }
+
+.dp-collectibles-help { margin: 16px 0 22px; padding: 12px 16px; border: 1px solid #8b756959; border-radius: 8px; }
+.dp-collectibles-help summary { cursor: pointer; color: #f2d1a4; }
+.dp-collectibles-help p { max-width: 76ch; }
+.dp-design-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.dp-design-grid article { padding: 18px; border: 1px solid #b8947866; border-radius: 10px; background: #d9b88208; }
+.dp-design-grid .cr-stats { grid-template-columns: 1fr; }
+.dp-design-grid .cr-stats dt { font-size: 11px; }

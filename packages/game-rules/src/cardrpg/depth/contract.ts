@@ -1,7 +1,7 @@
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
 
-/** Automatic kits include unlocked ultimates. Earlier accounts migrate at import. */
-export const CONTRACT_VERSION = '0.6.0' as const;
+/** Battle snapshots retain enemy stats across later balance changes. */
+export const CONTRACT_VERSION = '0.7.0' as const;
 export type Flavour = 'hearth' | 'moon' | 'garden' | 'tide' | 'ember';
 export type CatRole = 'guardian' | 'striker' | 'witch' | 'healer' | 'controller' | 'hexer';
 export type Row = 'front' | 'rear';
@@ -47,6 +47,7 @@ export interface Battle {
 export interface BattleSetup {
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
+  enemyStats?: Record<string, Pick<Enemy, 'hp' | 'attack' | 'defense'>>;
 }
 export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'treasure' | 'boss';
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }

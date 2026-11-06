@@ -3,6 +3,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_RPG_CONFIG, EQUIPMENT_SLOTS, RARITY_ORDER, STACK_ITEMS, type Stats as CatStats } from '@taskbar-hero/game-rules/cardrpg';
 import { CostView, ItemIcon, PageTitle, statName, statValue, rarityStyle } from '../shared';
 import { CompanionPreview } from './CompanionPreview';
+import { CollectibleDesigns } from './CollectibleDesigns';
 import { gearComparison } from './meta-presentation';
 import type { DepthModel } from './model';
 
@@ -121,7 +122,7 @@ export function Inventory({ m }: { m: DepthModel }) {
               <button disabled={locked || Object.values(state.equipment).some(loadout => Object.values(loadout).includes(item.id))}
                 onClick={() => act(R.salvageGear(state, item.id), `${template.name} salvaged for ${CARD_RPG_CONFIG.rarity[template.rarity].salvage} threads.`)}>Salvage</button>
             </div>
-            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {item.rolls[id]} · {R.AFFIX_BY_ID[id]!.description}</p>)}
+            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {R.AFFIX_BY_ID[id]!.description}</p>)}
             {item.affixes.length > 0 && <div className="cr-actions"><label>Replace first affix
               <select value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
                 {compatible.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.name} · {candidate.tiers[item.tier - 1]!.join('–')}</option>)}
@@ -151,13 +152,7 @@ export function Inventory({ m }: { m: DepthModel }) {
     </article>{STACK_ITEMS.filter(stack => stack.kind === 'consumable' && (state.account.inventory.stacks[stack.id] ?? 0) > 0).map(stack => <article key={stack.id}>
       <h2>{state.account.inventory.stacks[stack.id]} {stack.name}</h2><p>Stored in the account pantry.</p><small>{stack.rarity} · Account-bound</small>
     </article>)}</div>}
-    {category === 'Collectibles' && <div className="dp-three">{['moon-collar', 'golden-maneki'].map(id => {
-      const entry = R.designEligibility(state, id);
-      return <article className="cr-panel" key={id}><h2>{entry.name}</h2><strong>Design only - not minted</strong>
-        <p>{state.designClaims.includes(id) ? 'Local design reserved' : `${entry.seals} seals and chapter effort required`}</p>
-        <p>Season remaining {entry.seasonRemaining}/{entry.seasonCap}<br />Global remaining {entry.globalRemaining}/{entry.globalCap}</p>
-        <button onClick={() => m.go('relics')}>View effort and supply</button></article>;
-    })}</div>}
+    {category === 'Collectibles' && <CollectibleDesigns m={m} />}
     {category === 'Currencies' && <div className="cr-stack-grid">{Object.entries(state.account.currencies).map(([id, amount]) => <article key={id}>
       <h2>{amount.toLocaleString('en-US')} {id === 'fish' ? 'fish points' : id}</h2>
       <p>{({ fish: 'Level companions, enhance and tailor equipment.', threads: 'Enhance, tailor and reforge equipment.', stamps: 'Invite companions with earned stamps.', essence: 'Ascend and awaken companions.' } as Record<string, string>)[id]}</p>
