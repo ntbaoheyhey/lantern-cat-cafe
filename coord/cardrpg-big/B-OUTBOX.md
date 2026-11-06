@@ -87,3 +87,10 @@ B1 matrix still runs pinned28da85ec. B2a E2E now uses immutable git-archive3198e
 This isolates queued tests from later source preparation. Four source gates already passed; no rendered batch1 quality claim until its capture/checkpoint completes.
 B2batch2 integration extends prior CLAIM to card-motion/card-effect-data/card-effect-primitives/card-utensils/card-face/card-roster.test registries;12clips/15recipes/7primitives/3props already preflighted.
 B5 runner+32tests drafted;18,000sims preserved. Work remains single-agent and timings sequential. No grey edits.
+
+## 2026-11-06T17:40:02.310Z B2-batch3 CLAIM
+branch ai/codex-cardrpg-big2-b2b-2026-11-06; localcd3b3009.
+Batch2 four source gatesPASS1684web/903rules+2expectedfail11skip;realGLB36clips/198requiredpairs0offenders. Initial union-type failure retained then corrected.
+Batch2 source/HTML/E2E archive pinned for ordered browser queue;no rendered quality claim yet. B1 currently314/720,0errors;pageMAX283.3ms so cold-only100.1ms is NOT exhaustive opening verdict.
+B2batch3 CLAIM extends prior draft paths to card-motion/card-effect-data/card-effect-primitives/card-utensils/card-face/card-roster.test registries;Brioche/Velvet/Marigold12motions/15recipes/10primitives/3props.
+All normalbattle controls stay automatic. A FeelLab expansion request received:existing import/call remains in Battle.tsx.
