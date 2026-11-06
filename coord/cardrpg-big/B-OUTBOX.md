@@ -51,3 +51,10 @@ Preparing later batches without changing batch1runtime until its E2E completes. 
 branch ai/codex-cardrpg-big2-b2a-2026-11-06;offline source preparation only,not batchcompletion.
 files turn3d/card-roster-batch3-motion.ts,card-roster-batch3-effects.ts,card-roster-batch3-primitives.ts,card-roster-batch3-props.ts;tools/cardrpg-big2/**;reports/cardrpg-big2/cats/batch3/**.
 Brioche/Velvet/Marigold gesture/effect/prop drafting while pinned B1timing holdslock. Batch2 and3 remain disconnected until preceding checkpoint and separate branch.
+
+## 2026-11-06T17:13:31.682646+00:00 B3 CLAIM
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;preparation while ordered timing checkpoints run.
+files depth/chapter-stage.ts;turn3d/scene.ts,post.ts,surfaces.ts,card-surfaces.ts,card-staging.ts,battle-layout.css;new turn3d/card-stage-life.ts,card-contact.ts;tools/cardrpg-big2/**;assets/cardrpg3b/**;reports/cardrpg-big2/stage/**.
+Exact cause found:contact shadow plane y0.026 lies below rug top0.0275;fix shared renderer for battle/home without editing A-owned meta screens.
+B2all48authoredclips pass336required rigpairs,minimum0.16344rad/0.02075modelheight;17new draftprimitives/6props/76totalcompositions pureCPUpreflight0errors. Renderedproof pending.
+B3will keep A/B/C camera choices and report physical/crop-composition limits;no promise of artificial40%edge metric gain.
