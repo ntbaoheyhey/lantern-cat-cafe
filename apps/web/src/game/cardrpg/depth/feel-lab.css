@@ -3,7 +3,7 @@
 .dp-feel-lab .dp-lab-gallery { width: min(380px, calc(100vw - 32px)); }
 .dp-feel-lab .dp-lab-gallery .dp-lab-body > label { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: stretch; text-align: left; }
 .dp-feel-lab .dp-lab-gallery .dp-lab-body > label select,
-.dp-feel-lab .dp-lab-gallery .dp-lab-body > label input { width: 100%; }
+.dp-feel-lab .dp-lab-gallery .dp-lab-body > label input { box-sizing: border-box; width: 100%; margin: 0; }
 .dp-feel-lab .dp-lab-gallery .cr-actions { display: flex; align-items: center; margin: 12px 0; }
 .dp-feel-lab .dp-lab-gallery .cr-actions label { margin: 0; }
 .dp-lab-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }

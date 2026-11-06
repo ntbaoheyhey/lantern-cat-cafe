@@ -50,8 +50,18 @@ try {
         return { left: bounds.left, right: bounds.right, top: bounds.top, bottom: bounds.bottom,
           pageOverflow: document.documentElement.scrollWidth - innerWidth,
           panelOverflow: element.scrollWidth - element.clientWidth,
-          bodyOverflow: body.scrollWidth - body.clientWidth };
+          bodyOverflow: body.scrollWidth - body.clientWidth,
+          overflowElements: [...body.querySelectorAll('*')].flatMap(child => {
+            const box = child.getBoundingClientRect();
+            const bodyBox = body.getBoundingClientRect();
+            return box.right > bodyBox.right + .1 ? [{ tag: child.tagName, className: child.className,
+              right: box.right, bodyRight: bodyBox.right, width: box.width,
+              margin: getComputedStyle(child).margin, boxSizing: getComputedStyle(child).boxSizing }] : [];
+          }) };
       });
+      const path = `${output}/${width}-${name}.png`;
+      await page.screenshot({ path });
+      await writeFile(`${output}/${width}-${name}-layout.json`, JSON.stringify(layout, null, 2));
       assert(layout.left >= 0 && layout.top >= 0 && layout.right <= width && layout.bottom <= height);
       assert.equal(layout.pageOverflow, 0);
       assert.equal(layout.panelOverflow, 0);
@@ -86,8 +96,6 @@ try {
         assert(check.gap >= 0 && check.gap <= 12, `${check.text} is detached from its checkbox`);
         assert(check.centerDifference <= 3, `${check.text} is vertically misaligned`);
       }
-      const path = `${output}/${width}-${name}.png`;
-      await page.screenshot({ path });
       const scene = await page.evaluate(() => {
         const scene = window.__depthScene;
         return scene ? { ready: scene.ready, frames: scene.stats.frames, calls: scene.stats.calls,
