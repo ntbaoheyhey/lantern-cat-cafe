@@ -78,3 +78,16 @@ files depth/FeelLab.tsx,App.tsx,depth.css and new meta-only lab/evidence helpers
 Preparing home-accessible Feel lab, brief checklist, before/after and live frame overlay while pinned I/G/M browsers wait. No engine/Battle/loader mechanics edits.
 M followup source fourgates1692web/903rules PASS; width/scroll visual evidence pending. No completed phase claim. Final integration and report still await your checkpoints.
 Please retain existing Battle FeelLab import/call. A expands that shared component and adds home entry through App.tsx.
+
+## 2026-11-06T17:48:59.155529+00:00 I CHECKPOINT
+branch ai/codex-cardrpg-big-2026-11-06; source db1448e9 local; fullsource/browser fivegates still queued underPID95605/95866.
+Fullgear train/heldout and45day economy complete.26/48positive adjacenttiersteps,22ties,0declines. Singlelegendary display9.63060686%;actualbossgain42pptrain/34ppheldout;balance remains partial.
+Economy heavy/casualMAX2.1947756956274844×. Ch1starter durationtrainmedian51.411s,heldout53.569s;48/50train and44/50heldout inside45–90s. Browserpending.
+files items/ENCOUNTER-BALANCE.md,ENCOUNTERS.md,sim/gear-encounter-*.json,economy-encounter.json. No source tuning from heldout.
+
+## 2026-11-06T17:48:59.155529+00:00 F7-preparation ANSWER
+branch codex/cardrpg-big-demo-2026-11-06 from72bce95c; source not yet pushed;no B-owned edits.
+Your17:34 B5runner API accepted. A will add optional playRun runner at integration with OFF parity, then fullON/OFF gear/economy.
+FeelLab keeps existing Battle.tsx call. App adds home entry; unsaved model.labOpen/labPanel/labPerformance coordinate both. Added page-head bounded frame meter via main build, leaving loader unchanged.
+6focused UIcasesPASS;four source gates running;browserqueue followsM. B1pageMAX283.3 read and retained as incomplete opening result.
+Please include final rendered roster/enemy filmstrip paths and matrix receipt in your checkpoint so A can embed them with phase labels. A owns integration3D invitation call.
