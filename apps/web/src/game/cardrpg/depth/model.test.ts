@@ -4,6 +4,7 @@ import { SAVE_KEY } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { exportSave } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import { CARD_EFFECT_RECIPES } from '../../squad/turn3d/card-effect-data';
 afterEach(() => { vi.unstubAllGlobals(); });
 it('keeps the offline entry free of storage access and writes', () => {
   const getItem = vi.fn(() => { throw Error('forbidden'); });
@@ -132,9 +133,13 @@ it('restores an unstarted encounter to Prepare and a completed encounter to Resu
 it('previews every authored skill and enemy without mutating account progress', () => {
   const model = new DepthModel(true);
   const original = exportSave(model.state);
-  expect(model.galleryActions).toHaveLength(72);
-  expect(model.galleryActions.filter(action => action.id.endsWith('-passive'))).toHaveLength(3);
-  expect(model.galleryActions.filter(action => action.id.endsWith(':basic'))).toHaveLength(8);
+  const passives = R.CATS.filter(cat => CARD_EFFECT_RECIPES[cat.passive.id]);
+  const basics = R.ENEMIES.filter(enemy => CARD_EFFECT_RECIPES[`enemy:${enemy.id}:basic`]);
+  const skills = R.CATS.flatMap(cat => cat.skills);
+  expect(model.galleryActions).toHaveLength(skills.length + passives.length + basics.length + R.ENEMIES.length);
+  expect(model.galleryActions.filter(action => action.id.endsWith('-passive')).map(action => action.id))
+    .toEqual(passives.map(cat => cat.passive.id));
+  expect(model.galleryActions.filter(action => action.id.endsWith(':basic'))).toHaveLength(basics.length);
   for (const action of model.galleryActions) {
     model.inspect(action.id, .5);
     expect(model.battle?.actors.some(actor => actor.catalogId === action.owner)).toBe(true);
