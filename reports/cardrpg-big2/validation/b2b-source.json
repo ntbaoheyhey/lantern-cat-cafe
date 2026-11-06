@@ -1,0 +1,63 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 2,
+    "started": "2026-11-06T17:37:05.237Z",
+    "ended": "2026-11-06T17:37:15.332Z",
+    "log": "reports/cardrpg-big2/validation/b2b-source-typecheck.log",
+    "sha256": "6248897d2e060ec48ff5d56f0f366efc044f288e95897186228fe2d8e2e6cdb1",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 2,
+    "started": "2026-11-06T17:37:15.333Z",
+    "ended": "2026-11-06T17:37:24.758Z",
+    "log": "reports/cardrpg-big2/validation/b2b-source-lint.log",
+    "sha256": "db1faec9c283416267d8d6ab6919f35c761c1b52b2e05da5355aa66d71e528b3",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T17:37:24.758Z",
+    "ended": "2026-11-06T17:38:18.670Z",
+    "log": "reports/cardrpg-big2/validation/b2b-source-tests.log",
+    "sha256": "9d82f74dc4426d67eaf96ef8b6dde6fb3e7b64cdb00f9c4a10765179ae31a765",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  49 passed | 3 skipped (52)",
+      "packages/game-rules test:       Tests  903 passed | 2 expected fail | 11 skipped (916)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  162 passed (162)",
+      "apps/web test:       Tests  1684 passed (1684)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T17:38:18.671Z",
+    "ended": "2026-11-06T17:38:29.217Z",
+    "log": "reports/cardrpg-big2/validation/b2b-source-build.log",
+    "sha256": "81dab6b2590d85174497c304c72791cb963b4fb531fe15fbf40be4b2a094c684",
+    "counts": []
+  }
+]
