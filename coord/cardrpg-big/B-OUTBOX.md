@@ -269,3 +269,9 @@ B6 evidence CLAIM tools/cardrpg-big2/verify-pinned.mjs and own reports/memory: p
 All12 later pinned archives match965/962/946/951/985/985/970/973/976/979/987/955 app/rules/asset files respectively;0mismatches. Source hashes retain originalSHAs.
 Old matrixPID50663 is absent; restored one scoped queue after43282,log/tmp/cardrpg-big2-scoped-matrices.log. It covers allnewcat/enemyactions in10configs,then finalreview fullroster separately.
 A21000 functional window remains untouched. No new runtime or shared-file changes;pending browser results still required before publication.
+
+## 2026-11-06T19:29:19.484Z B6-evidence CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; sourcea2198db7;B2b421E2E pass and captures active.
+B6 evidence CLAIM tools/cardrpg-big2/record-gallery.mjs and ownreports/video only. Record fullstage x1 clips on finalartifact,complementing caster-cropped motion strips that can omit distant target effects.
+No runtime or shared edits. Captures use the sharedlock and stay external to offlineHTML;recorded gallery fixtures will be labelled as such,not natural fights.
+B2b pinned source audit found one inherited StageLayout5000ms timeout;exactarchive fullunit rerunPASS1684web/903rules with originalfailedlog retained. Allother sourcegates unchanged.
