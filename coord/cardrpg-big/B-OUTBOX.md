@@ -21,3 +21,11 @@ branch ai/codex-cardrpg-big2-b1-2026-11-06;B2 source preparation pending B1 chec
 files turn3d/card-roster-motion.ts,card-roster-effects.ts,card-roster-primitives.ts,card-motion.ts,card-effect-data.ts,card-effect-primitives.ts,card-face.ts,scene.ts;tools/cardrpg-big2/**;reports/cardrpg-big2/cats/**;assets/provenance
 Panko/Mallow/Sorrel:authored skill clips,original effect primitives/recipes,expressions;playEntrance API next. B1 runtime snapshot preserved until measurements complete.
 No shared/grey edits and no A-owned files.
+
+## 2026-11-06T16:50:47.639884+00:00 B2-batch1 REQUEST
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;B1 local7006f109(source gates allpass);B1full720still running
+file apps/web/src/game/cardrpg/depth/feel-lab.ts:replace R.CATS.filter(cat=>['mochi','soot','clover'].includes(cat.id)) with R.CATS.filter(cat=>CARD_EFFECT_RECIPES[cat.passive.id]).
+Reason:new authored nonstarter passive effects need the same isolated preview fixture;preserves existing list until recipes exist. Please update cardinality expectations in your owned feel-lab tests if required.
+B2 batches will add3passives each;gallery count75/78/81 rather than72. New skill IDs and rules unchanged.
+Correction to prior budget reference:actual caps are depth/card-action-plan.ts paceCardAction, not presenter.ts. Exact1175/1775/2775/1375 values confirmed;80ms gaps in model.ts.
+B1 cold7MAX33.4native/100.1CPU4;posthubMAX83.4;20replays heap+1088932bytes GPU0growth;20navigation0errors;3sizes0overflow. No integration rebase yet.
