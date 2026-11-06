@@ -1,0 +1,70 @@
+import { readFile, writeFile } from 'node:fs/promises';
+
+const directory = process.argv[2] || 'reports/cardrpg-big/baseline/skills';
+const receipt = JSON.parse(await readFile(`${directory}/summary.json`, 'utf8'));
+const groups = new Map();
+for (const row of receipt.rows) {
+  const configuration = `${row.width}×${row.height} DPR${row.dpr} CPU${row.cpu} ${row.quality}`;
+  if (!groups.has(configuration)) groups.set(configuration, []);
+  groups.get(configuration).push(row);
+}
+function summarize(rows, use) {
+  const windows = rows.map(row => row.casts.find(cast => cast.use === use));
+  const totalFrames = windows.reduce((sum, cast) => sum + cast.summary.frames, 0);
+  return {
+    max: Math.max(...windows.map(cast => cast.summary.max)),
+    above25: windows.reduce((sum, cast) => sum + cast.summary.above25, 0),
+    above50: windows.reduce((sum, cast) => sum + cast.summary.above50, 0),
+    within20: windows.reduce((sum, cast) => sum + cast.summary.frames * cast.summary.within20, 0) / totalFrames,
+    maxHeapDelta: Math.max(...windows.map(cast => cast.after.heap - cast.before.heap)),
+    maxGeometryDelta: Math.max(...windows.map(cast => cast.after.gpuObjects.geometries - cast.before.gpuObjects.geometries)),
+    maxTextureDelta: Math.max(...windows.map(cast => cast.after.gpuObjects.textures - cast.before.gpuObjects.textures)),
+    maxDuration: Math.max(...windows.map(cast => cast.after.at - cast.before.at)),
+  };
+}
+const windowSummary = (rows,key) => ({max:Math.max(0,...rows.map(r=>r[key]?.max??0)), p95Worst:Math.max(0,...rows.map(r=>r[key]?.p95??0)),above50:rows.reduce((s,r)=>s+(r[key]?.above50??0),0),available:rows.every(r=>!!r[key])});
+const configurations = [...groups].map(([name, rows]) => ({
+  name, cases: rows.length, postInteractive:windowSummary(rows,'postInteractive'),postReady:windowSummary(rows,'postReady'), pageMax: Math.max(...rows.map(row => row.pageOpen.max)),
+  pageAbove25: rows.reduce((sum, row) => sum + row.pageOpen.above25, 0),
+  pageAbove50: rows.reduce((sum, row) => sum + row.pageOpen.above50, 0),
+  first: summarize(rows, 'first'), repeat: summarize(rows, 'repeat'),
+}));
+const ranked = receipt.rows.map(row => ({ name: row.name, action: row.action.name,
+  page: row.pageOpen, first: row.casts[0].summary, repeat: row.casts[1].summary,
+  firstDuration: row.casts[0].after.at - row.casts[0].before.at,
+  repeatDuration: row.casts[1].after.at - row.casts[1].before.at,
+})).sort((a, b) => Math.max(b.first.max, b.repeat.max) - Math.max(a.first.max, a.repeat.max) || b.page.max - a.page.max);
+const expectedConfigurations = [
+  '1280×720 DPR1 CPU1 medium', '1280×720 DPR2 CPU1 medium',
+  '1440×900 DPR1 CPU1 medium', '1440×900 DPR2 CPU1 medium',
+  '1280×720 DPR1 CPU4 medium', '1280×720 DPR2 CPU4 medium',
+  '1440×900 DPR1 CPU4 medium', '1440×900 DPR2 CPU4 medium',
+  '1280×720 DPR1 CPU1 low', '2560×1440 DPR1 CPU1 medium',
+];
+const actionIds = [...new Set(receipt.rows.map(row => row.action.id))].sort();
+const expectedIds = receipt.actions?.map(action => action.id).sort() ?? actionIds;
+const expectedActionCount = receipt.actions?.length ?? 61;
+const expected = expectedActionCount * expectedConfigurations.length;
+const coverage = expectedConfigurations.map(configuration => {
+  const rows = groups.get(configuration) ?? [];
+  const ids = rows.map(row => row.action.id);
+  return {
+    configuration,
+    measured: rows.length,
+    missing: expectedIds.filter(id => !ids.includes(id)),
+    unexpected: ids.filter(id => !expectedIds.includes(id)),
+    duplicates: ids.filter((id, index) => ids.indexOf(id) !== index),
+  };
+});
+const complete = receipt.rows.length === expected && !!receipt.ended && actionIds.length === expectedActionCount
+  && groups.size === expectedConfigurations.length
+  && coverage.every(row => row.measured === expectedActionCount && !row.missing.length
+    && !row.unexpected.length && !row.duplicates.length);
+const errors = receipt.rows.flatMap(row => row.errors.map(message => ({ name: row.name, message })));
+const result = { scope: receipt.selection?.scope ?? 'full roster', selection: receipt.selection, complete, expected, measured: receipt.rows.length, artifactSha256: receipt.sha256,
+  started: receipt.started, ended: receipt.ended, errors, coverage, configurations, ranked };
+await writeFile(`${directory}/ranked.json`, JSON.stringify(result, null, 2));
+const table = configurations.map(row => `| ${row.name} | ${row.cases} | ${row.pageMax.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.first.above25} / ${row.repeat.above25} | ${row.first.above50} / ${row.repeat.above50} | ${(row.first.within20 * 100).toFixed(2)} / ${(row.repeat.within20 * 100).toFixed(2)} |`).join('\n');
+const ranking = ranked.map(row => `| [${row.name}](${row.name}.json) | ${row.page.max.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.firstDuration.toFixed(1)} / ${row.repeatDuration.toFixed(1)} |`).join('\n');
+await writeFile(`${directory}/README.md`, `# Declared-coverage skill timing\nREFERENCE: summary.json; ranked.json; tools/cardrpg-big2/skill-measure.mjs; tools/cardrpg-big2/skill-report.mjs\n\n${complete ? 'Complete' : 'In progress'} · ${receipt.rows.length}/${expected} cases. ${errors.length} page errors. Each case opens a fresh context and cold file, clicks the campaign and battle node, then uses the isolated Feel lab fixture. Every raw file includes page-open RAF deltas, long tasks/frames, heap/GPU snapshots, two cast windows and planned/observed duration. First-use fixture setup hides every spell frame until the measured trigger. CPU4 throttles CPU only. Cast duration includes the measurement endpoint polling interval, so it can exceed the authored duration by approximately one RAF.\n\nScope: ${receipt.selection?.scope ?? 'full roster'}; ${expectedActionCount} selected actions of ${receipt.selection?.fullGalleryCount ?? expectedActionCount} available. Owners: ${receipt.selection?.owners?.join(', ') ?? 'all'}. The complete action IDs are recorded in summary.json; a batch subset is never described as full-roster coverage. Ten configurations yield ${expected} cases and ${expected * 2} casts. Low and 2560×1440 use DPR1 CPU1.\n\n| Configuration | Cases | Page MAX ms | First / repeat MAX ms | >25 first / repeat | >50 first / repeat | ≤20 ms % first / repeat |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n${table}\n\n## Ranked cases\nREFERENCE: ranked.json; profiles/summary.json; ../PERFORMANCE.md\n\nCases are sorted by the larger cast MAX, then page MAX. Five separate profiling reruns are recorded under profiles when available. Consult the phase PERFORMANCE.md for trace-backed attribution, transient spikes and differences from earlier artifacts.\n\n| Case and raw frames | Page MAX ms | First / repeat MAX ms | First / repeat duration ms |\n| --- | ---: | ---: | ---: |\n${ranking}\n`);
+console.log(JSON.stringify({ complete, measured: receipt.rows.length, errors: errors.length, configurations }));
