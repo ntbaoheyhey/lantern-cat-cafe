@@ -15,3 +15,10 @@ I preparation declares gear-tier and roster sims in items/PLAN.md. Rules tuning 
 REFERENCE: meta/GATES.md, memory/STATE.md, validation/m-final.json
 
 M now passes1679web/903rules/421E2E,33screen captures,384equipment/model visibility cases and20early-navigation lifecycle cases. Allthree team cards fit the first viewport at allthree sizes. Frozen HTML9ed1953f records the runtime source hashes. Performance reruns follow the source push and completion of baseline sims. Gear balance baseline finds tier saturation and a10.4575% nominal single-piece score contribution against the proposed10% threshold. These remain open I gates.
+
+## M complete timing and I preparation · 22:59 local
+REFERENCE: meta/PERFORMANCE.md, memory/STATE.md, validation/ig-focused.log, validation/i-caps.log
+
+M records720/720 cases,265,761 raw frames,0 errors and castMAX33.4/16.8ms. Whole-pageMAX250.1ms improves fromF5 300ms while missing100ms. Cold CPU4 MAX233.3ms also misses. Allfive profile casts stay16.8ms.
+
+I now has25 passing design-cap boundary tests and2 passing local-design UI tests. G preparation has11 passing ceremony/transaction cases and waits for its own phase. The expanded balance baseline tests bothlevels1/6 and max-enhancement/roll power. Four30-seed training pilots follow, with source-free existing-main-stat overrides recorded explicitly. Heldout seeds remain untouched.

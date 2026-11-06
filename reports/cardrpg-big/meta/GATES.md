@@ -13,7 +13,7 @@ REFERENCE: ../memory/PROMPT.md lines119–127, PLAN.md, screens/checks.json
 | Reduced motion and offline operation | PASS saved preference disables frame/foil animations and scene motion.33 screen captures record0 page errors and0 remote requests |
 | Navigate while model lighting compiles | PASS20 real-click cases,10 native and10 CPU4. Each detaches the canvas, waits for warmup, disposes once and releases its context.0 page errors and0 early disposals. lifecycle/checks.json |
 | Typecheck, lint, unit, E2E and build before push | PASS m-final passes1679web,903rules and421E2E, plus typecheck/lint/build. Rules retain2 expected failures and11 skips. ../validation/m-final.json |
-| Rerun F0 harness, avoid a new hitch | NOT YET. Cold7,720 skill matrix and five profile reruns are queued after validation and baseline sims. F5 pageMAX300ms remains the comparison |
+| Rerun F0 harness, avoid a new hitch | PASS complete Cold7/720/five profiles,0 errors. CastMAX33.4/16.8ms. PageMAX250.1ms improves from300ms. MISS absolute100ms opening gate, retained for F6. PERFORMANCE.md |
 
 ## Visual review and corrections
 REFERENCE: screens/1280-team.png, screens/1280-cafe.png, screens/1024-collection.png, ../validation/m-focused*.log

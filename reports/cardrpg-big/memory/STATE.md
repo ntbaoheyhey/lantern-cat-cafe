@@ -3,14 +3,14 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase M source checkpoint ready. m-final five gates,33screens,384gear and20lifecycle checks pass on HTML9ed1953f. Source draft publish next, phase timing remains open.
+Phase I balance/caps. M Cold7/720/profiles complete,0errors. I/G focused13/13 and cap25/25 pass. Expanded baseline/four pilots complete. M prepush validation31264 passes allfive gates. Seven main/affix training pilots68873/37830 running.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed dbf8127d2095a3ae152afbb5d9dee6bfe466e873, F5 source7e054608. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5 verified.
-Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf. M validation32820,UI/lifecycle88143,gear13470 complete. Frozen /tmp/cardrpg-big-m-index.html SHA9ed1953f02adcede5af9ee3483d29a8c42f7d95a9804fbccadfbe43c29f87ade. I62542 economy running.
+Last pushed8790c9a139f71658fe3e9931732adb8bc49b61c8. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M draft340 verified on339.
+Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf. M validation32820,UI/lifecycle88143,gear13470 complete. Frozen /tmp/cardrpg-big-m-index.html SHA9ed1953f02adcede5af9ee3483d29a8c42f7d95a9804fbccadfbe43c29f87ade. I62542 baseline complete. M56141 complete. I expanded baseline/pilots51873 complete, no active timing browser.
 ## NEXT
-1. Publish M source draft with m-final gates,33screens,384gear and20lifecycle proof.
-2. Finish baseline62542, then isolated M cold7/720/profiles on HTML9ed1953f.
+1. Publish M complete timing and update draft340. G is parked locally atb5a068b3.
+2. Expand training pilots to affix magnitude after main-stat-only saturation. Choose existing item knobs, run train/heldout sims and45-day economy, build I and verify design UI.
 3. Finish I/G/F6/F7 and remaining cats, publish report and ledger STATE mirror.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
@@ -21,21 +21,28 @@ F2 ·d1425018/source,52e9e94a/evidence,draft336. sharpness/GATES.md,PERFORMANCE.
 F3 ·a6c093de/draft337. motion/GATES.md,PERFORMANCE.md,610 cases+5 profiles.
 F4 ·7c312fd8/draft338. effects/GATES.md,PERFORMANCE.md,CHECKPOINT.md,720 cases+5 profiles,docs/cardrpg3/slice.html.
 F5 ·7e054608/source,dbf8127d/evidence,draft339. flow/GATES.md,PERFORMANCE.md,720 cases+5 profiles.
-M ·source checkpoint ready, meta/GATES.md,validation/m-final.json. Timing pending. I–F7 open. I baseline gear-before.json measured, economy running.
-## PHASE GATES · M (copied requirements)
-PASS “consistent original card frame per rarity ... crisp 3D-rendered portrait ... role icon, stars, level, power ... same card component ... collection, team, invitation reveals and rewards.” Four frames and existing2x portraits, shared CompanionCard. meta/screens and sharpness/README.md. Aesthetic review remains F7.
-PASS “grid ... owned/locked ... filters ... rotating3D ... looping skill previews ... stats, gear, awakening.”33 real-click captures at3 sizes, errors0/remoteRequests0. meta/screens/checks.json. Preview is small at narrow detail widths, qualitative F7 weakness.
-PASS “choose3 cats ... front/back ... drag and drop ... synergy/set hints ... power ... best team ... saved presets ... low power.” Tests10/10 and real drag/drop/preset restoration at3 sizes. Best team corrected to guardian/offense/healer. All3cards fit first viewport at3sizes in corrected recapture.
-PASS “every gear piece visible ... legendary ... own geometry ... paper-doll ... compare ... set progress ... enhance/tailor/salvage.”384/384 visibility, minimum450 changed pixels versus8 threshold,12 unique designs,36 legendary/model captures. Transactions pass. meta/gear/summary.json and screens/checks.json.
-PASS “Inventory ... Equipment, Materials, Consumables, Collectibles ... Currencies ... sort/filter ... rarity colours.” Five tabs captured at3 sizes. meta/screens/checks.json.
-PASS “Hub ... team idling in3D ... clear next goal ... daily/quest ... readable entry points.” Home loads3 models and next power hint,33 captures include3 homes. meta/screens/checks.json.
-PASS “No new screens beyond Prepare/Result ... reuse ... ten destinations.” Existing sidebar destinations retained. meta/PLAN.md, baseline/COVERAGE.md.
-NOT YET performance/cold720/profiles. PASS m-final five gates,1679web/903rules/421E2E. PASS early-navigation20/20 CPU1/4 zeroerrors. New first-viewport assertion passes at3sizes. validation/m-final.json,meta/lifecycle/checks.json.
+M ·8790c9a1/draft340. meta/GATES.md,PERFORMANCE.md,validation/m-final.json.33screens/384gear/20lifecycle,Cold7/720/profiles5 complete. Opening gate misses.
+## PHASE GATES · I (copied requirements)
+NOT YET “ITEM-TIERS.md (max 2 pages, tables) ... every item type ... drop rates ... sink ... power band ... account-bound or collectible-eligible ... one legendary <= X%.” Source-audited draft exists.10% proposed bare starter limit misses nominal10.4575%, expanded +12/max-roll15.2228% MISS. Main/affix pilot factors recorded in items/PLAN.md.
+NOT YET “starter team without gear ... common, rare, epic, legendary ... chapters1–3 ... each tier step raises win rate ... no single set or cat dominates ...45-day ... <=3x ... fix outliers.” Baseline rare+100% saturation. Economy max2.1658x PASS. Expanded baseline/main-only pilots complete. Seven main/affix pilots queued, heldout untouched.
+PARTIAL “only deterministic, effort-gated, supply-capped Relic designs ... total ... season ... current local counter ... effort ... gameplay effect ... Design only - not minted ... Account-bound ... help panel ... Tests for every cap boundary.” UI2/2 and rules25/25 pass. Counter/help UI captures and full validation pending. design-caps.test.ts,CollectibleDesigns.tsx.
+PASS “existing Fuji read-only Relic panel stays as is.” Source edits replace only local design section. Full protected-path diff remains F7 proof.
 ## PRIOR PHASE GATES
 F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–16.195s MISS45–90s, clutch/boss natural evidence pending. flow/GATES.md.
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-06 23:09 · M evidence prepush five gates pass,1692web/928rules/421E2E including uncommitted I/G tests. M runtime retains its original1679/903/421 receipt. Publish only M evidence and state, keeping I/G source out. validation/m-evidence-fixed.json.
+2026-11-06 23:08 · Fresh prepush validation caught structuredClone outside the rules TypeScript lib in new cap tests. Reused existing clone helper, retain m-evidence failed logs. Corrected31264 runs serial E2E after87913, then pilot queues68873/37830. Production balance remains unchanged.
+2026-11-06 23:03 · Recovery verified PROMPT45001 bytes/SHA, printed STATE15 and reread scope/M/I/G/F6. M prepush validation31264 passes allfive gates. Seven main/affix training pilots68873/37830 running. G preparation parked locally on codex/cardrpg-big-g-wip-2026-11-06 atb5a068b3016f97e3b4aee8a0fa041b2e83e93493, excluded from phase branches. Four30-seed main-only pilots remain epic/legendary100%; expanded max-roll/+12 legendary15.2228% exceeds10%. sim/gear-expanded-before.json.
+2026-11-06 22:59 · M720/265761frames, pageMAX250.1ms,casts33.4/16.8ms,0errors complete. ColdCPU4MAX233.3ms and five profile casts16.8ms. Functional M gates pass,100ms opening misses. Enter I after rereading prompt. Focused I/G13/13 and cap25/25 pass. meta/PERFORMANCE.md.
+2026-11-06 22:08 · Prepared invitation-check.mjs for3sizes andCPU4, real welcome/ten/featured/equipment clicks, skip-state parity, duplicates, odds/caps/history200 and screenshot-free RAF timing. Syntax passes. G remains disconnected until I checkpoint.
+2026-11-06 21:56 · Prepared design-check.mjs for12 real-click captures at3sizes, effort locks, local help, both counters, last supply and retry-disabled UI. Syntax passes, browser execution waits for I build after M timing.
+2026-11-06 21:54 · Queued local non-model checks/sims in51873 after M parentPID67839 exits. Expanded baseline covers single-piece bosses atlevels1/6 and max-roll/+12 power. Four30-seed training pilots scale existing main stats0.3/0.4/0.5/0.65 in memory only, exact overrides recorded. Production rules remain unchanged.
+2026-11-06 21:50 · Prepared G Invitations.tsx/invitations.css and11 UI cases while M timing runs. Kept it disconnected from Pages.tsx until I checkpoint. Uses existing commands for welcome/three banners/one or ten pulls, commits before reveal, skip retains history. Added original envelope provenance. gear-sim adds explicit partial scopes and max-roll/+12 bounds. All new code awaits validation.
+2026-11-06 21:49 · Recovery verified PROMPT45001 bytes/hash and attachment prefix, printed STATE15, reread scope/M/I. M timingPID68227 remains isolated. Baseline level6 bare98/98/100% is saturated. Expand single-piece audit to max enhancement/max compatible rolls before any cap claim. Added design-caps.test.ts for both designs, global/season/effort/account boundaries and atomic zero-power reservations. Validation pending timing.
+2026-11-06 21:35 · I preparation shares a local-design help/reservation panel between Inventory and the existing design section. Fuji read-only panel code preserved. UI shows exact caps/counters, effort, account limit and0 battle stats. Tests prepared, runtime validation waits for M56141. CollectibleDesigns.tsx.
+2026-11-06 21:32 · Published M8790c9a1/draft340 on339 after allfive gates. Latest33screens/384gear/20lifecycle share9ed1953f. M timing56141 runs alone after I baseline62542 completed. Raw validation logs retain trailing whitespace to preserve their hashes.
 2026-11-06 21:30 · M33screens,384gear,20lifecycle and five gates pass on9ed1953f, source hashes verified. I baseline50seeds shows level1 rare/epic/legendary100% allchapters, common88/98/92%, bare6/56/66%. Nominal singlepieceMAX10.4575% misses proposed10%. Keep raw sim/gear-before.json, tune existing item knobs after checkpoint.
 2026-11-06 21:23 · Recovery verified PROMPT45001 bytes/hash, read scope/M/I. m-fixed gates and lifecycle20/20 pass. Screenshot exposed base portrait selector overriding compact height, corrected specificity and added first-viewport assertion for all3team cards. meta.css,meta-check.mjs.
 2026-11-06 21:14 · M gear probe384/384 visibility passes but early navigation disposes materials during compileAsync, causing one isReady page error. Keep pilot, defer GPU/resource teardown until warmModels settles while stopping input/render immediately. scene.ts. F5 draft339 verified at dbf8127d on338.
@@ -92,7 +99,8 @@ F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-pag
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
-I baseline ·nominal legendaryMAX10.45751634%, cat-context84.606–97.818%,24setcells100%. sim/gear-before.json.
+M timing ·720/265761frames,0errors,pageMAX250.1ms,>25=4989/>50=1367,casts33.4/16.8ms,cast>25=8/0/>50=0/0,207calls/93802triangles. Cold7CPU4MAX233.3ms. meta/PERFORMANCE.md.
+I baseline ·legendaryMAX10.45751634%,cat-context84.606–97.818%,24setcells100%. Economy45heavy/casual pulls1/fish1.7713/threads1.8820/stamps1/essence2.1658 PASS3x. sim/gear-before.json,economy-before.json.
 M ·corrected384 visibility cases,0 errors/failures,min450 pixels versus8 threshold,peak28calls/19350triangles.33 screen captures/errors0. meta/gear/summary.json,meta/screens/checks.json. Initial disposal pilot retained.
 F5 ·720 cases/268286 frames/errors0,pageMAX300ms,>25=5165/>50=1425,first/repeat33.4/16.8ms,cast>25=9/0/>50=0/0,207calls/93802triangles. Cold7 MAX250.1msCPU4. flow/PERFORMANCE.md.
 F5 flow ·3240 poses0 failures,18 HP-snapshot captures,controls6/6. Fight66.9/Pause14.5/Skip14.7ms inclspeeds,round383.4ms,banner583.3–600ms. Encounters9.306–16.195s MISS. flow/GATES.md.
@@ -103,7 +111,7 @@ F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/
 A ·A1 starter campaign train/heldout ch1 56/44%,ch2 88/90%,ch3 58/60%;before66/74%,48/46%,48/42%. A2 level6 100/100%,98/100%,100/100%;before74/74%,98/98%,76/90%.50seeds/cell. sim/auto-a*.json. A matrix610 pageMAX1616.6ms,casts33.4/16.8ms. auto/PERFORMANCE.md.
 F0 ·stage57.1202%,face96.5996deg,40/60overlapframes,610/129685frames,pageMAX1616.5ms,casts33.4/16.8ms. baseline/README.md,skills/integrity.json. Earlier complete measurement notes preserved at dbf8127d:reports/cardrpg-big/memory/STATE.md.
 ## PROBLEMS / PARKED
-M initial role mapping selected2cats, derived6roles incorrectly selected6. Corrected guardian/offense/healer and typed cardRpg identity. Retain m-focused*.log and m.json. M source passes latest complete validation, ready to commit.
+M initial role mapping selected2cats, derived6roles incorrectly selected6. Corrected guardian/offense/healer and typed cardRpg identity. Retain m-focused*.log and m.json. M source8790c9a1 committed/pushed. I CollectibleDesigns2/2 and caps25/25 pass. G disconnected11/11 passes. Full build/screens pending, G WIP parked atb5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 M early-navigation gear pilot recorded1 isReady page error. Defer GPU disposal until warmup settles. Corrected384cases0errors, dedicated20-navigation regression passes atCPU1/4. meta/gear-pilot-disposal and validation/m-gear*.log.
 F5 opening and fight-duration gates miss, clutch/boss visual proof pending. F2 sharpness8/10 misses and F1 hero scale band miss remain reported. F7 must include every miss.
 Earlier pilots retained at baseline/skills-pilot,baseline/skills-coarse-heap,motion/pilot-zero-weight,flow/pilot-banner. User old/main worktrees contain edits, preserve them. Ledger edits limited to requested report/state.
