@@ -22,3 +22,10 @@ REFERENCE: meta/PERFORMANCE.md, memory/STATE.md, validation/ig-focused.log, vali
 M records720/720 cases,265,761 raw frames,0 errors and castMAX33.4/16.8ms. Whole-pageMAX250.1ms improves fromF5 300ms while missing100ms. Cold CPU4 MAX233.3ms also misses. Allfive profile casts stay16.8ms.
 
 I now has25 passing design-cap boundary tests and2 passing local-design UI tests. G preparation has11 passing ceremony/transaction cases and waits for its own phase. The expanded balance baseline tests bothlevels1/6 and max-enhancement/roll power. Four30-seed training pilots follow, with source-free existing-main-stat overrides recorded explicitly. Heldout seeds remain untouched.
+
+## Lane A encounter balance · 7 November, 00:05 local
+REFERENCE: items/ENCOUNTERS.md, items/REPLAY.md, memory/STATE.md, items/encounter-pilot-hashes.json
+
+Draft341 received losslessly compressed pilot evidence at32e9fef0. The user’s lane split assigns engine/art/audio to B and items/gacha/meta/integration to A. Shared passive previews are committed at97715e55. Replay repair3263cece adds0.7 enemy-stat snapshots and0.5/0.6 migration, with46 focused tests and150 paired routes/450 identical encounter records.
+
+The frozen pilot5B candidate now changes only existing enemy HP/attack/defense.320 depth rules tests pass. Duration planning from50 seeds per cell gives chapter1 starter medians51.411s training and53.569s heldout.48/50 and44/50 fall within45–90s. Full-route success13/50 and10/50 remains a progression cost. Full gear/economy sims continue atnice10. Five-gate validation and natural browser flow wait for the shared timing lock. G source remains disconnected and parked atb5a068b3.
