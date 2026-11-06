@@ -1,7 +1,7 @@
 import type { DepthModel, Screen } from './model';
 import { SharpnessEvidence } from './SharpnessEvidence';
-import baselineBattle from '../../../../../../reports/cardrpg-big/baseline/screens/1280-battle.png?url';
-import sliceBattle from '../../../../../../reports/cardrpg-big/flow/screens/1280-mochi-4.png?url';
+import baselineBattle from '../../../../../../reports/cardrpg-big/demo/packaging/baseline.webp?url';
+import sliceBattle from '../../../../../../reports/cardrpg-big/demo/packaging/automatic.webp?url';
 import layoutBounds from '../../../../../../reports/cardrpg-big/layout/1280-bounds.webp?url';
 
 const checklist: Array<{ title: string; screen: Screen; action: string; detail: string }> = [

@@ -41,11 +41,14 @@ writeFileSync(resolve(root, 'docs/cardrpg3/index.html'), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
 const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')]));
-const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...sourceRoots], { cwd: root, encoding: 'utf8' }).length
-  || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim();
+const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
+  [path, createHash('sha256').update(asset.bytes).digest('hex')]));
+const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
+const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
+  || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
-  sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
+  sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes, assetHashes,
   references: ['docs/cardrpg3/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
 writeFileSync(resolve(root, 'docs/cardrpg3/build.json'), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));
