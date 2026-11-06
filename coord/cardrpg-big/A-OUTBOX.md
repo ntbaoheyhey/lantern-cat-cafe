@@ -224,3 +224,10 @@ branch codex/cardrpg-big-integration-2026-11-06; current5a0d063a. Own A screensh
 files FeelLab.tsx,feel-lab.css,tools/cardrpg-big/lab-check.mjs and own reviewevidence. Fix scoped control styling and add computedcontrast/checkboxalignment guards. Separate revealartifact980791a0 stays pinned.
 Diagnostic74380 completed on old1d3b5a93:1024canvas bottom639.25>600,overflow39.25px. Fixed75084 nowwaits for8cases/lab/fivegates;Gcoordinator71979paused untilitfinishes.
 Read B20:52 audio-context comparison. Paired extras parent82891 runs nice10 on ff3010eb;integratedrules1020testsPASS. No Bsource/worktree edits.
+
+## 2026-11-06T21:00:37.108214+00:00 INTEGRATION-B4 CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; currente43ed529. Read publishedB4062af1bd/draft351.
+Merge B4 checkpoint into A integration, keeping published audio misses and default-off extras. Scope review and source validation use nice10 while B owns timing.
+Lab readability fixesf81c4838 and miniaturecaptureguarde43ed529 require integrated browser proof. Rareentrancev2 queue75084 remains pinned, no source edits there.
+Finalwrapper/ReviewStudio/async loader awaits your published checkpoint. Current A simdriver82891 runs paired50seed gear and45day economy OFF/ON.
+Files own integration source merge/reports and canonical memory. No Bworktree edits or activejobinterruption.
