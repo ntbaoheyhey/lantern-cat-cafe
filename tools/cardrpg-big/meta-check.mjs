@@ -19,11 +19,12 @@ try {
     const nav = name => page.getByRole('navigation', { name: 'Cafe screens' }).getByRole('button', { name, exact: true }).click();
     const previewReady = () => page.waitForFunction(() => {
       const scene = window.__depthPreviewScene;
-      return scene?.ready && scene.view().actors.every(actor =>
+      return scene?.ready && scene.stats.calls > 0 && scene.stats.triangles > 0 && scene.view().actors.every(actor =>
         scene.puppets.get(actor.id)?.asset === actor.cardRpg?.cardId);
     }, null, { timeout: 60000 });
     const capture = async name => {
       await page.locator('.cr-content').evaluate(element => element.scrollTo(0, 0));
+      await page.locator('.cr-content img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
       await page.waitForTimeout(250);
       const layout = await page.evaluate(() => {
         const elements = [...document.querySelectorAll('.cr-content button,.cr-content select,.cr-content h1')]
@@ -77,10 +78,17 @@ try {
     await page.locator('.cr-card-grid').getByRole('button', { name: /^Soot,/ }).click();
     await previewReady();
     await page.getByRole('button', { name: 'Pause rotation', exact: true }).click();
+    await capture('collection');
     await page.getByRole('slider', { name: 'Angle', exact: true }).press('End');
     const angle = await page.evaluate(() => window.__depthPreviewScene.view().model.angle);
     assert.ok(Math.abs(angle - Math.PI) < .001);
-    await capture('collection');
+    await capture('collection-rotation');
+    const angleControl = page.getByRole('slider', { name: 'Angle', exact: true });
+    await angleControl.scrollIntoViewIfNeeded();
+    const angleBounds = await angleControl.boundingBox();
+    assert(angleBounds);
+    await angleControl.click({ position: { x: angleBounds.width / 2, y: angleBounds.height / 2 } });
+    assert(Math.abs(await page.evaluate(() => window.__depthPreviewScene.view().model.angle)) < Math.PI / 90);
     await page.locator('.dp-preview-skills button').nth(3).click();
     await page.waitForFunction(() => window.__depthPreviewScene.view().frame?.plan.skillId === 'soot-4');
     await capture('skill-preview');
@@ -102,6 +110,8 @@ try {
     await page.getByRole('combobox', { name: 'Rarity', exact: true }).selectOption('rare');
     await page.locator('.dp-gear-grid button').filter({ hasText: 'Hearthloom' }).first().click();
     const selected = await page.evaluate(() => window.__depthReview.itemId);
+    assert(await page.locator('.dp-compare dd.up').count() > 0);
+    await capture('equipment-compare');
     await page.getByRole('button', { name: 'Equip selected', exact: true }).click();
     assert.equal(await page.evaluate(() => window.__depthReview.state.equipment.mochi.weapon), selected);
     await page.getByRole('button', { name: 'Enhance equipment', exact: true }).click();

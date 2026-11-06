@@ -1,13 +1,16 @@
 import { chromium } from '../../apps/web/node_modules/@playwright/test/index.mjs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 
-const output = 'reports/cardrpg-big/auto/screens';
+const output = process.env.BIG_PATH_OUT || 'reports/cardrpg-big/auto/screens';
+const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html');
+const sha256 = createHash('sha256').update(await readFile(artifact)).digest('hex');
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 const rows = [];
-const file = 'file://' + resolve('docs/cardrpg3/index.html');
+const file = 'file://' + artifact;
 const sizes = [[1280, 720], [1440, 900], [1024, 600]];
 try {
   for (const [width, height] of sizes) {
@@ -15,8 +18,17 @@ try {
     const errors = [];
     page.on('pageerror', error => errors.push(String(error)));
     await page.goto(file);
-    await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor();
-    const screenshot = async name => page.screenshot({ path: `${output}/${width}-${name}.png` });
+    await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 120000 });
+    const screenshot = async name => {
+      await page.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+      if (name === 'hub') {
+        await page.waitForFunction(() => {
+          const scene = window.__depthPreviewScene;
+          return scene?.ready && scene.stats.calls > 0 && scene.stats.triangles > 0;
+        }, null, { timeout: 120000 });
+      }
+      await page.screenshot({ path: `${output}/${width}-${name}.png` });
+    };
     const state = () => page.evaluate(() => {
       const m = window.__depthReview;
       return { screen: m.screen, battle: m.battle && JSON.parse(JSON.stringify(m.battle)), phase: m.animationAt, choices: m.battle?.choices.length, tutorial: m.state.tutorial };
@@ -111,6 +123,7 @@ try {
     await page.close();
   }
 } finally {
-  await writeFile(`${output}/checks.json`, JSON.stringify({ method: 'Real UI clicks in fresh offline Chromium pages. Read-only evaluation inspects progress and node metadata. No policy-command playback.', rows }, null, 2));
+  await writeFile(`${output}/checks.json`, JSON.stringify({ artifact, sha256,
+    method: 'Real UI clicks in fresh offline Chromium pages. Read-only evaluation inspects progress and node metadata. Screenshots await image decoding and the home scene geometry.', rows }, null, 2));
   await browser.close();
 }
