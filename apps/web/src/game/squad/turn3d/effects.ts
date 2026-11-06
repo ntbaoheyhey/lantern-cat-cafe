@@ -1,4 +1,5 @@
 import {SKILL_MOTION} from './choreography';
+import {cardImpactHold} from './card-impact';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 
 export type BeatKind = 'anticipation'|'travel'|'impact'|'reaction'|'residue';
@@ -68,7 +69,7 @@ export function createActionPlan(events:readonly TurnEvent[],override?:EffectRec
 }
 export function sampleActionPlan(plan:EffectPlan,elapsed:number,reducedMotion=false):EffectFrame {
   const t=Math.max(0,Math.min(plan.duration,elapsed));const beat=plan.beats.find(b=>t<b.start+b.duration)??plan.beats[4]!;
-  const hold=beat.kind==='impact'&&!reducedMotion?Math.min(beat.duration*.8,SKILL_MOTION[plan.skillId]?.hold??0):0;
+  const hold=beat.kind==='impact'&&!reducedMotion?Math.min(beat.duration*.8,cardImpactHold(plan.presentationId)??SKILL_MOTION[plan.skillId]?.hold??0):0;
   const progress=Math.max(0,Math.min(1,(t-beat.start-hold)/(beat.duration-hold)));
   return {plan,beat,progress,actionProgress:t/plan.duration,elapsed:t,color:plan.color,camera:reducedMotion?0:beat.camera,
     shake:reducedMotion?0:beat.shake*(1-progress),flash:reducedMotion?0:beat.flash*(1-progress),clip:beat.clip,intensity:beat.kind==='impact'?1:Math.sin(progress*Math.PI)*.7+.3};
