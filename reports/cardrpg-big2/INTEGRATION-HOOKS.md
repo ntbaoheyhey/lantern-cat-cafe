@@ -1,5 +1,5 @@
 # Lane B offline integration hooks
-REFERENCE: tools/cardrpg-big2/{offline,MechanicsLab,ReviewStudio,mechanics-model}.tsx; tools/cardrpg-big2/{build,embed-evidence}.mjs; tools/cardrpg-big2/offline-loader.js
+REFERENCE: tools/cardrpg-big2/{offline,MechanicsLab,ReviewStudio}.tsx; tools/cardrpg-big2/mechanics-model.ts; tools/cardrpg-big2/{build,embed-evidence}.mjs; tools/cardrpg-big2/offline-loader.js
 
 These are the concrete dependencies of Lane B’s separate offline demo. Source is implemented locally; only B1 and the three cat batches are published as of 2026-11-06 19:55 UTC. Do not copy unpublished source into an accepted integration. Later checkpoints identify the published head and browser receipts. Keep all existing feature flags and automatic extras default off.
 

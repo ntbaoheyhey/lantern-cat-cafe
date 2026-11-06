@@ -2,7 +2,7 @@
 REFERENCE: memory/PROMPT.md; docs/cardrpg3b/index.html; tools/cardrpg-big2/build.mjs
 
 Đã giữ nguyên cách chơi: sưu tầm thẻ mèo, chuẩn bị đội rồi xem trận tự động.  
-Chín mèo còn lại đã có động tác, đạo cụ và hiệu ứng riêng trong mã nguồn.  
+Chín mèo còn lại đã có động tác, đạo cụ và hiệu ứng riêng, kèm ảnh kiểm chứng.  
 Mười quái thường và ba trùm đã có phần trình diễn riêng; bằng chứng hình ảnh đang được kiểm tra.  
 Màn tải có tiến độ thật và chuẩn bị tài nguyên theo từng khung hình.  
 Chưa đạt toàn bộ mục tiêu hết giật: phép đo B1 đã ghi nhận khung mở trang 300 ms.  
@@ -19,7 +19,7 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
-| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; rendered checks pending |
+| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; all 12 cats rendered, opponents pending |
 | Blurry images | Review studio → Before / after → Sharpness | Native DPR1/2 crops queued; no +40% claim yet |
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | Camera measurements queued; user chooses preference |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
@@ -51,7 +51,7 @@ Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance
 ## Unit coverage
 REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
 
-“Improved” below means authored implementation plus source tests, with rendered acceptance still pending. No new unit is certified as slice quality solely from different recipe hashes or rig trajectories. Starter slice status is inherited and will be separately checked for regressions.
+All nine nonstarter cats have rendered batch evidence and remain “improved”: the art still has small/dark rear characters and crowded group effects. Opponent rendered acceptance is pending. Different recipes or rig trajectories alone do not establish slice quality. Starter slice status is inherited; regressions are checked in the same motion/effect captures.
 
 | Unit | Tier | Distinct authored feature |
 |---|---|---|
@@ -80,6 +80,16 @@ REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; c
 | Yarn Giant | improved | Loom attacks, 1.14 s intro, 300 ms phase pose |
 | Rain Spool | improved | Rain attacks, 1.14 s intro, 300 ms phase pose |
 | Pantry Crown | improved | Pantry attacks, 1.14 s intro, 300 ms phase pose |
+
+Cat checkpoints: [B2a #343](https://github.com/ntbaoheyhey/taskbar-hero/pull/343), [B2b #346](https://github.com/ntbaoheyhey/taskbar-hero/pull/346), [B2c #347](https://github.com/ntbaoheyhey/taskbar-hero/pull/347). Each passes typecheck/lint/build, 1,684 web / 903 rules tests (+2 expected failures, 11 skips) and 421 archived-source E2E tests. Their ten-configuration scoped cast matrices remain queued.
+
+| Cumulative cat checkpoint | Motion clips / required pairs | Effects / grayscale pairs | Cold page / post-interactive MAX ms |
+|---|---:|---:|---:|
+| [Batch 1](cats/batch1/CHECKPOINT.md) | 24 / 96 | 46 / 1,035 | 116.6 / 83.4 |
+| [Batch 2](cats/batch2/CHECKPOINT.md) | 36 / 198 | 61 / 1,830 | 116.7 / 99.9 |
+| [Batch 3](cats/batch3/CHECKPOINT.md) | 48 / 336 | 76 / 2,850 | 133.3 / 83.3 |
+
+All declared required pairs pass; no face-mask/overdraw/runtime errors. These seven-case cold values are samples, not exhaustive limits. Raw arrays and native before/after strips are linked in each checkpoint.
 
 ## Mechanics experiments
 REFERENCE: docs/design/cardrpg/MECHANICS-LAB.md; packages/game-rules/src/cardrpg/depth/auto-extras; mechanics/SUMMARY.md
@@ -112,4 +122,4 @@ Browser captures, full final matrix, sharpness/scale attribution, audio listenin
 | Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
 | Mechanics lab | Pending browser proof; sim evidence complete |
 
-Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
+Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
