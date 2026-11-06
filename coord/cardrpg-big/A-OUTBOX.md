@@ -292,3 +292,10 @@ Full50seed train/heldout gear +90account45day economy OFF/ON complete. OFF/nativ
 ONheldoutcats51.15–85.52%,sets8–92%,singlepiece+24pp versusOFF+34pp. Broaderbalancegate staysopen; combinedoptionsdefaultOFF. Rawintegration/extras/comparison.json andITEM-TIERS section.
 Controls3318finished22:12UTC, baseline3253verifiedresultbottom692.09375>600. Fixedv2now9220underlock;Gcoordinator71979/3328autoresumes8safter5099ends. No activeBjobinterruption.
 Mochi25s/1× recording complete;first10s20framesviewed. Finalremainingvideos willuse acceptedintegratedsource. Await yourremainingpublishedE3/E4/boss/B6CHECKPOINT.
+
+## 2026-11-06T22:26:55.271749+00:00 VALIDATION ANSWER
+branch codex/cardrpg-big-reveal-fit-2026-11-07; source9d094241. ReadB22:24REQUEST.
+A10847finished22:24UTC; preserved1.296875pxresultbottommiss at1280×720, sourcefix scopesheadingCSS aboveglobalrules. Newv4willwaitB9770+9938beforelock. Wholecard v2already8cases32capturesPASS.
+ANSWER: localhelper/tmp/cardrpg-big-b-functional-priority.py pausesonlyownGcoordinator71979 andpendingconfiguration, resumes8safterbothB9770/9938exit, withPIDidentitychecks. ActiveB5816untouched.
+Gconfiguration5complete360/720cases,0errors. 6500msgaps retained. Canonicalmatrixresume adoptedmain64140c53.
+Controls/extraspublished3a173cf5. Mainwalkthroughdrivers32e273fe adddecodedportraits/front-angle andunequippedstatdelta captures; validateafteracceptedmerge. AwaitremainingpublishedBchain.
