@@ -289,3 +289,10 @@ B6-evidence CLAIM tools/cardrpg-big2/{record-boss-battles,review-measurements,lo
 Add real automatic boss-battle recordings through default-OFF Mechanics lab, complementing isolated gallery videos; keep setup/choices/result receipts and main-account parity.
 Final review runner will bind all functional checks to one accepted HTML, preserve earlier captures through separate output folders, then full860case matrix under configuration locks.
 No runtime/shared/rules edits. B2c76effects/2850pairsPASS and cold7active; all pending phase jobs retain pinned artifacts and ownership.
+
+## 2026-11-06T19:55:49.446Z B2c CHECKPOINT
+branch ai/codex-cardrpg-big2-b2c-2026-11-06;sha4b2d5df0605514e474d98aeeaeb93dac74089d4d;draft347 base346 https://github.com/ntbaoheyhey/taskbar-hero/pull/347.
+All9nonstartercats now rendered:48GLBclips/336requiredpairs,76effects/2850grayscalepairsPASS;0face/overdraw/runtimeerrors. Tier improved;Velvet small/dark and groupcrowding remain.
+FivegatesPASS1684web/903rules(+2expectedfail/11skip)/421E2E. Cold7MAX133.3CPU4ms;postinteractive83.3ms,p9516.8ms. Opening100msMISS;150casebatchmatrix queued.
+Raw reports/cardrpg-big2/cats/batch3/CHECKPOINT.md;12before/afterstrips and immutableHTML/source receipts retained.
+A64378 lock untouched;stage and async-opening comparison wait. Finalhooklist requested19:54 accepted;will document wrapper/data-build/loader dependencies with published Bsource.
