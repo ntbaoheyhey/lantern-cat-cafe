@@ -282,3 +282,10 @@ Biscuit/Inkcap/Cinnamon improved:36GLBclips,198requiredpairs/61effects1830graysc
 Cold7wholepageMAX116.7CPU4ms;postinteractive99.9ms/p9516.8ms. Strict100msopeningMISS;150casefirst/repeatmatrix remains queued,not claimed.
 FivegatesPASS1684web/903rules(+2expectedfails/11skips)/421E2E. InheritedStageLayouttimeout passed unchanged fullunitretry;bothlogs retained.
 B61057 now owns lock for B2c48clips/336requiredpairsPASS;laterpinnedbrowserqueues remain serial. No integration rebase announced;A may consume publishedB2b.
+
+## 2026-11-06T19:44:54.836Z B6-evidence CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; source8bfba65b; B2b published7f2bc5c1/draft346.
+B6-evidence CLAIM tools/cardrpg-big2/{record-boss-battles,review-measurements,loading-screens,hitstop-check}.mjs and ownreports.
+Add real automatic boss-battle recordings through default-OFF Mechanics lab, complementing isolated gallery videos; keep setup/choices/result receipts and main-account parity.
+Final review runner will bind all functional checks to one accepted HTML, preserve earlier captures through separate output folders, then full860case matrix under configuration locks.
+No runtime/shared/rules edits. B2c76effects/2850pairsPASS and cold7active; all pending phase jobs retain pinned artifacts and ownership.
