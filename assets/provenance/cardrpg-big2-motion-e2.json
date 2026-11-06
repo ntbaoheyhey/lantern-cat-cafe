@@ -1,0 +1,154 @@
+{
+  "tool": "Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs",
+  "authorship": "Original authored gestures on the existing original Taskbar Hero rigid-node rigs",
+  "artifactSha256": "12a51d5cac2dfe473bffac12329178e5f54c615b47ff1ae72fb5af8b6003cc18",
+  "buildReceipt": "/tmp/cardrpg-big2-e2-build.json",
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "bdb72ca9e42ab50468d89f472a387c2d117341872e34c0ffbaf5fa5bf800480b",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-effects.ts": "c437666920cabd90b79ddf6fd2754a6b26c11f87a7405fcaae45793b62d72296",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-motion.ts": "14fbefc2614ed5a56bce76c72288e12f4e92c3f14f6dae8b0d55feb9954b01a3",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-effects.ts": "e2bb1c488212e976f568872ccd4fbf849a813fcd78ceaddff809ddc035884876",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-motion.ts": "9ebe983dcaefd7fbec1724cbea4df6e8502e87259aa5d2d8f83f916121a15055",
+    "apps/web/src/game/squad/turn3d/card-enemy-motion.ts": "2c82e118d55a0a0c74547880aaf6be5787acc979bb67326fc509b24cb740b41f",
+    "apps/web/src/game/squad/turn3d/card-enemy.test.ts": "161cbd6e097c000b0265f6a2ea048b002101b38248ae5e81051c120882b8a44a",
+    "apps/web/src/game/squad/turn3d/card-motion-data.ts": "b30ed2192fa8bd0cdb49c52452947bf6eeb471e88e3a08b1b92f1c25cb994fe1",
+    "apps/web/src/game/squad/turn3d/card-motion.test.ts": "a665f9dc99865020c08c9732e2f677c0ae77b01672fd3cf032caa1ef0798fc83",
+    "apps/web/src/game/squad/turn3d/card-motion.ts": "68a5e74e135a199bd013522f08d1c8feec634f84534661660ed1505b6f70fb13",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-effects.ts": "a90f12b5ed50e815dcb8c3567fd2f3e4ffffaf3c81f8d434860a21464e8439e0",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-motion.ts": "b33a394c263369b2991626e0a67673cff61a4a1c86d51c8ed43f648d26db2715",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-primitives.ts": "41efa7340e45993429d96e8aebbe57911ffa6685c3e635b3ad639dbe252b721b",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-props.ts": "028246b2f92afd414cba7376e9be1cf07c7bf5566ad106da0430ef0f26f79d3a",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-effects.ts": "ee35aab5ae41ff15e411c586aaef1ea31697de580575b51a781e7fb166203ab2",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-motion.ts": "a28addfbd6226e607c327463f8e360705d8fe7a65ae6da5816c08546f13e8c36",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-primitives.ts": "fdbbc8128d3db32873dc479a1b80151e2c1be15e77099fded6e3e52afc06de3c",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-props.ts": "48a7a0a087ccb1d1962a4f63e1851a965d6cbd2b846aecfa2981fd1f50e86f33",
+    "apps/web/src/game/squad/turn3d/card-roster-effects.ts": "e9c6719af39d5136ebb4905c7941f2110bffd239d1931fb53784b12bf7c9935c",
+    "apps/web/src/game/squad/turn3d/card-roster-motion.ts": "c65f5653d9bd2e8c811f95396b56edaa4e47548b77092c7e4ada2f8dab105612",
+    "apps/web/src/game/squad/turn3d/card-roster-primitives.ts": "b6954d4a0c720916e945ed0b07e63b7be86f016066c6b684aff419f1abed41f7",
+    "apps/web/src/game/squad/turn3d/card-roster.test.ts": "079aee4e8cf3757eec621aa9d0c484bb09e303cb4797180223e8da4ae5650c9d"
+  },
+  "sampledKeys": 41,
+  "interpolation": "Smoothstep between authored pose keys, quaternion tracks",
+  "secondaryMotion": {
+    "lagFraction": 0.06,
+    "weights": {
+      "tailTip": 0.55,
+      "tailMid": 0.4,
+      "other": 0.24
+    }
+  },
+  "fidgets": {
+    "minimumIntervalSeconds": 4,
+    "maximumIntervalSeconds": 8,
+    "durationSeconds": 1.5
+  },
+  "stopDistance": 1.2,
+  "assets": [
+    {
+      "model": "needle-moth",
+      "clip": "enemy:needle-moth:basic",
+      "duration": 1.34,
+      "tracks": [
+        "ranger_motion.quaternion",
+        "ranger_head.quaternion",
+        "ranger_armL.quaternion",
+        "ranger_armR.quaternion",
+        "ranger_tail.quaternion",
+        "ranger_earL.quaternion",
+        "ranger_earR.quaternion",
+        "ranger_wingL.quaternion",
+        "ranger_wingR.quaternion",
+        "ranger_motion.position",
+        "ranger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-needle-moth-basic.webp"
+    },
+    {
+      "model": "teacup-healer",
+      "clip": "enemy:teacup-healer:basic",
+      "duration": 1.34,
+      "tracks": [
+        "healer_motion.quaternion",
+        "healer_head.quaternion",
+        "healer_armL.quaternion",
+        "healer_armR.quaternion",
+        "healer_tail.quaternion",
+        "healer_earL.quaternion",
+        "healer_earR.quaternion",
+        "healer_motion.position",
+        "healer_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-teacup-healer-basic.webp"
+    },
+    {
+      "model": "kettle-knight",
+      "clip": "enemy:kettle-knight:basic",
+      "duration": 1.34,
+      "tracks": [
+        "elite_motion.quaternion",
+        "elite_head.quaternion",
+        "elite_armL.quaternion",
+        "elite_armR.quaternion",
+        "elite_tail.quaternion",
+        "elite_earL.quaternion",
+        "elite_earR.quaternion",
+        "elite_motion.position",
+        "elite_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-kettle-knight-basic.webp"
+    },
+    {
+      "model": "needle-moth",
+      "clip": "enemy:needle-moth",
+      "duration": 1.34,
+      "tracks": [
+        "ranger_motion.quaternion",
+        "ranger_head.quaternion",
+        "ranger_armL.quaternion",
+        "ranger_armR.quaternion",
+        "ranger_tail.quaternion",
+        "ranger_earL.quaternion",
+        "ranger_earR.quaternion",
+        "ranger_wingL.quaternion",
+        "ranger_wingR.quaternion",
+        "ranger_motion.position",
+        "ranger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-needle-moth.webp"
+    },
+    {
+      "model": "teacup-healer",
+      "clip": "enemy:teacup-healer",
+      "duration": 1.34,
+      "tracks": [
+        "healer_motion.quaternion",
+        "healer_head.quaternion",
+        "healer_armL.quaternion",
+        "healer_armR.quaternion",
+        "healer_tail.quaternion",
+        "healer_earL.quaternion",
+        "healer_earR.quaternion",
+        "healer_motion.position",
+        "healer_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-teacup-healer.webp"
+    },
+    {
+      "model": "kettle-knight",
+      "clip": "enemy:kettle-knight",
+      "duration": 1.34,
+      "tracks": [
+        "elite_motion.quaternion",
+        "elite_head.quaternion",
+        "elite_armL.quaternion",
+        "elite_armR.quaternion",
+        "elite_tail.quaternion",
+        "elite_earL.quaternion",
+        "elite_earR.quaternion",
+        "elite_motion.position",
+        "elite_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e2/filmstrips/enemy-kettle-knight.webp"
+    }
+  ]
+}
