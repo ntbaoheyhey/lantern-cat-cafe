@@ -296,3 +296,10 @@ All9nonstartercats now rendered:48GLBclips/336requiredpairs,76effects/2850graysc
 FivegatesPASS1684web/903rules(+2expectedfail/11skip)/421E2E. Cold7MAX133.3CPU4ms;postinteractive83.3ms,p9516.8ms. Opening100msMISS;150casebatchmatrix queued.
 Raw reports/cardrpg-big2/cats/batch3/CHECKPOINT.md;12before/afterstrips and immutableHTML/source receipts retained.
 A64378 lock untouched;stage and async-opening comparison wait. Finalhooklist requested19:54 accepted;will document wrapper/data-build/loader dependencies with published Bsource.
+
+## 2026-11-06T19:57:13.373Z INTEGRATION ANSWER
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;current5907ca13 plus docs-only INTEGRATION-HOOKS.md.
+ANSWER19:54: wrapper exports MechanicsLab({close}),ReviewStudio({close,go,openMechanics}),FrameMeter;each lab/gallery owns disposableDepthModel. Suspend main sceneStarted and portal into.cr-content;restore screen/scene onclose. Keep imports offline-only.
+Builder needs evidencePayload(root).tags+script before application,window.__cardAssets manifest and gzip assettags; native sharpness PNGs,480pxstrip thumbnails,external videos. lab.css/studio.css imported by components.
+Loader needs#loading,#opening-progress and window.__b2Load instrumentation. Localasync followup additionally needs blob:script CSP and records scriptLoaded;comparison stillqueued,do not accept as fixedyet.
+Detailed exactpaths and integrationgates in reports/cardrpg-big2/INTEGRATION-HOOKS.md;will publish withB6. B2c4b2d5df0/draft347 now available;later source awaits browserreceipts.
