@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-11-06T20:18:51.824Z",
+  "method": "Computed directly from phase raw receipts. Null means unmeasured or unavailable. Cold/visual/matrix artifacts remain separately identified; successful earlier builds do not certify the delivered HTML.",
+  "rows": [
+    {
+      "phase": "B1",
+      "cold": {
+        "source": "performance/b1-cold/summary.json",
+        "sha256": "28da85ec36d0f217a0d0f14b77a446cc2c79a7871479869ad0d1b8652e195344",
+        "scenarios": 7,
+        "pageMax": 100.10000000000002,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 83.39999999999986,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
+      "matrix": {
+        "source": "performance/b1-skills/summary.json",
+        "sha256": "28da85ec36d0f217a0d0f14b77a446cc2c79a7871479869ad0d1b8652e195344",
+        "complete": true,
+        "scope": "full roster",
+        "owners": null,
+        "cases": 720,
+        "expected": 720,
+        "configurations": 10,
+        "firstMax": 33.400000000001455,
+        "repeatMax": 16.80000000000109,
+        "wholePageMax": 300,
+        "postInteractiveMax": null,
+        "postInteractiveAvailable": false,
+        "cpu4P95Worst": 33.30000000000109,
+        "castFramesWithin20WorstCase": 0.9876543209876543,
+        "draws": 207,
+        "triangles": 93802,
+        "castFramesAbove50": 0,
+        "errors": [],
+        "castGate": false
+      },
+      "motion": null,
+      "effects": null,
+      "lifecycle": {
+        "source": "performance/lifecycle/summary.json",
+        "sha256": "28da85ec36d0f217a0d0f14b77a446cc2c79a7871479869ad0d1b8652e195344",
+        "battles": 21,
+        "tolerance": {
+          "retainedHeapGrowthBytes": 2097152,
+          "gpuObjectsGrowth": 0
+        },
+        "growth": {
+          "heap": 1088932,
+          "geometries": 0,
+          "textures": 0,
+          "programs": 0
+        },
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "phase": "B2a",
+      "cold": {
+        "source": "cats/batch1/cold/summary.json",
+        "sha256": "8bda8f8561d3f9e3108f6d84688bc130164f3d08b404f44104e49c933ca49981",
+        "scenarios": 7,
+        "pageMax": 116.60000000000014,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 83.40000000000009,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
+      "matrix": null,
+      "motion": {
+        "source": "cats/batch1/motion/variety.json",
+        "clips": 24,
+        "requiredPairs": 96,
+        "offenders": 0,
+        "errors": [],
+        "note": "Trajectory distinction, not an art-quality score."
+      },
+      "effects": {
+        "source": "cats/batch1/effects/uniqueness.json",
+        "recipes": 46,
+        "pairs": 1035,
+        "offenders": 0,
+        "faceOffenders": 0,
+        "errors": [],
+        "note": "Declared grayscale/edge threshold, not semantic identity proof."
+      },
+      "lifecycle": null
+    },
+    {
+      "phase": "B2b",
+      "cold": {
+        "source": "cats/batch2/cold/summary.json",
+        "sha256": "d4cec177bac587a8607b27b66e288fe486b9689d858ff6825feb0261648dfada",
+        "scenarios": 7,
+        "pageMax": 116.69999999999999,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 99.89999999999964,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
+      "matrix": null,
+      "motion": {
+        "source": "cats/batch2/motion/variety.json",
+        "clips": 36,
+        "requiredPairs": 198,
+        "offenders": 0,
+        "errors": [],
+        "note": "Trajectory distinction, not an art-quality score."
+      },
+      "effects": {
+        "source": "cats/batch2/effects/uniqueness.json",
+        "recipes": 61,
+        "pairs": 1830,
+        "offenders": 0,
+        "faceOffenders": 0,
+        "errors": [],
+        "note": "Declared grayscale/edge threshold, not semantic identity proof."
+      },
+      "lifecycle": null
+    },
+    {
+      "phase": "B2c",
+      "cold": {
+        "source": "cats/batch3/cold/summary.json",
+        "sha256": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+        "scenarios": 7,
+        "pageMax": 133.29999999999998,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 83.30000000000018,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
+      "matrix": null,
+      "motion": {
+        "source": "cats/batch3/motion/variety.json",
+        "clips": 48,
+        "requiredPairs": 336,
+        "offenders": 0,
+        "errors": [],
+        "note": "Trajectory distinction, not an art-quality score."
+      },
+      "effects": {
+        "source": "cats/batch3/effects/uniqueness.json",
+        "recipes": 76,
+        "pairs": 2850,
+        "offenders": 0,
+        "faceOffenders": 0,
+        "errors": [],
+        "note": "Declared grayscale/edge threshold, not semantic identity proof."
+      },
+      "lifecycle": null
+    },
+    {
+      "phase": "B3",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "B5",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "B4",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "e1",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "e2",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "e3",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "e4",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "boss",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    },
+    {
+      "phase": "review",
+      "cold": null,
+      "matrix": null,
+      "motion": null,
+      "effects": null,
+      "lifecycle": null
+    }
+  ]
+}

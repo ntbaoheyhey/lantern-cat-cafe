@@ -1,5 +1,5 @@
 # Asynchronous opening comparison
-REFERENCE: tools/cardrpg-big2/{opening-compare,offline-loader}.mjs; tools/cardrpg-big2/offline-loader.js; comparison.json
+REFERENCE: tools/cardrpg-big2/opening-compare.mjs; tools/cardrpg-big2/offline-loader.js; comparison.json
 
 Retain the asynchronous local script loader for the review build. This is a seven-scenario paired sample, not an exhaustive opening pass. Application JavaScript and CSS were independently decoded and compared byte for byte; only loading strategy differs. Both artifacts and their build receipts are preserved. All 14 real-click runs held the shared machine lock and retained page-open RAF arrays and traces.
 

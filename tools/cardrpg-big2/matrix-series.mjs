@@ -29,6 +29,8 @@ for(const phase of phases){
   }
   receipt.configurationsComplete=i+1;await writeFile(`${directory}/summary.json`,JSON.stringify(receipt,null,2));
   console.log(JSON.stringify({phase,configuration:i+1,cases:receipt.rows.length}));
+  // Other lane waiters poll every five seconds; leave a genuine handoff window.
+  await new Promise(resolve => setTimeout(resolve, 6500));
  }
  receipt.ended=new Date().toISOString();await writeFile(`${directory}/summary.json`,JSON.stringify(receipt,null,2));
  await run(['tools/cardrpg-big2/skill-report.mjs',directory]);

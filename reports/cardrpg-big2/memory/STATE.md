@@ -2,7 +2,7 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Async comparison finished; B66706 owns timing lock for stage proof. Later pinned functional queues wait.
+All B source implemented; branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. Async comparison finished. B3 E2E421pass; crop probe failed on removed home image. Own tool repaired; resume74597 waits. B5functional73958 running.
 B2a94ed765e/draft343, B2b7f2bc5c1/draft346 and B2c4b2d5df0/draft347 published. All9cats rendered; B2c48motions/76effects,421E2E,cold7CPU4MAX133.3ms.
 B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
@@ -68,3 +68,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery19:55Z: third batch remote4b2d5df0 verified and draft347 created on346. All9nonstarters retain improved tier; source+421E2E pass. B2c cold7postinteractive83.3ms/p9516.8ms,wholepage133.3msMISS. Aoutbox read through19:54;A requests final offlinewrapper/loader hook list. Stage66706 and async48337 awaitA64378;no duplicate browser runs.
 
 - Recovery20:16Z: async paired14runs finished; identicalJS/CSS verified. CPU4pageMAX116.7→100ms/postinteractive100.1→100ms/p9516.8;0errors. Tracecompile81.9→6.5ms,remainingcontext/resize+layout at100ms. Retainasync provisionally;fullmatrix remainsrequired. Stage66706 nowownslock. Originalarrays and comparativeCHECKPOINT retained.
+
+- B3capture initialfail retained stage/initial-portrait-selector-error.log: inherited inspector referenced home image removed by M. Own sharpness-measure now captures actual teamcard/nativepixels with explicit composition caveat; no sharedtool edit. Stage resume74597/session98566 skips only archived421passingE2E. B6evidence-index distinguishes incomplete matrix, cold samples and art metrics;Bmatrix handoff6500ms added beforequeueddriver starts.
