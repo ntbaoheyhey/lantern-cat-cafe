@@ -1,17 +1,17 @@
 # Taskbar Hero session state
-PROMPT.md bytes (wc -c) = 45001
-PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
+PROMPT.md bytes (wc -c) = 50258
+PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase I balance/caps. M Cold7/720/profiles complete,0errors. I/G focused13/13 and cap25/25 pass. Expanded baseline/four pilots complete. M prepush validation31264 passes allfive gates. Seven main/affix training pilots68873/37830 running.
-Worktree /Users/bao/taskbar-hero-cardrpg-big
-Branch ai/codex-cardrpg-big-2026-11-06
-M evidence commitfad2dfc8100a8cb453b605843b20e5a79cf5c22a, push next. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M draft340 verified on339.
-Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf. M validation32820,UI/lifecycle88143,gear13470 complete. Frozen /tmp/cardrpg-big-m-index.html SHA9ed1953f02adcede5af9ee3483d29a8c42f7d95a9804fbccadfbe43c29f87ade. I62542 baseline complete. M56141 complete. I expanded baseline/pilots51873 complete, no active timing browser.
+Lane A · Phase I balance/caps. New lane split appended verbatim, rules30 lines. Train/heldout/economy complete. Gear cap9.6306% PASS, positive tier steps21/48 MISS, economyMAX2.17765x PASS. Focused120/120 pass. Candidate main0.75/affix0.25.
+Worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06
+Last pushed97c18853550000deb211912fdbaf66e9229b0c81. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M #340 head97c18853, baseF5 verified.
+Sync /Users/bao/taskbar-hero-cardrpg-sync branch ai/codex-cardrpg-big-sync. Sync pusha8df79c3 contains A-OUTBOX I CLAIM/G API REQUEST/S2 ownership REQUEST. B-OUTBOX absent at initial read. S2 /mnt prompt absent locally.
+B owns F6/engine/performance, remaining9cats/enemies/bosses, art/audio and default-off auto-extras. No B-owned uncommitted edits in A. G WIP b5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 ## NEXT
-1. Publish M complete timing and update draft340. G is parked locally atb5a068b3.
-2. Expand training pilots to affix magnitude after main-stat-only saturation. Choose existing item knobs, run train/heldout sims and45-day economy, build I and verify design UI.
-3. Finish I/G/F6/F7 and remaining cats, publish report and ledger STATE mirror.
+1. Finish I balance receipts and isolated equipment commit, repair saved-equipment shape bug separately with sims. Add shared timing-lock wrapper before any browser run.
+2. Verify caps/help/UI, tune encounter duration with existing rules knobs and before/after sims; I draft sibling off340. Then G sibling off340 and narrow collection preview.
+3. Merge A/B checkpoints into integration draft, allfive gates and extrasON/OFF gear/economy sims, then fresh-eyes/F7 merged report and ledger STATE. B owns all engine timing fixes.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
 F0 ·7a49705b/state5f72e4a1/draft333. baseline/GATES.md and README.md,610 cases+5 profiles.
@@ -32,9 +32,14 @@ F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-06 23:29 · Full I training/heldout/economy complete with equipment.ts as sole runtime rules delta. Legendary cap9.630606860%,21/48positive tier steps, economyMAX2.177645788x. Sync bootstrapa8df79c3 pushed, S2 exact ownership request pending.
+2026-11-06 23:28 · User lane split adds encounter-length existing-knob balance to I and assigns engine/F6/art/audio/default-off auto-extras to B. I/G sibling drafts base340, A integrates. Exact S2 prompt absent at /mnt and attachments, OWNERSHIP verbatim creation requested through A-OUTBOX. New brief50258bytes/SHA4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d.
+2026-11-06 23:18 · Applied equipment-only main0.75/affix0.25 and gearAffixRoll effective bound, shared by combat/UI. Baseline complete30tier/48set/660team/96piece/192bound rows. Focused test exposed pre-existing save validator requiring starter equipment keys. Existing-loadout compatibility fixture corrected, empty-loadout bug parked for separate commit after balance sims.
+2026-11-06 23:15 · Expanded full baseline2083 adds level1 set comparisons. Production edits wait for completion. New regression file covers every legendary max-roll/+12 bound and old-save affix reads, currently awaits gearAffixRoll implementation. gear-report.mjs syntax passes and awaits after receipts.
+2026-11-06 23:12 · Main0.75/affix0.25 pilot keeps starter first enhancement positive under6% rounding and max legendary9.6306%<10%. Lower-main pilots separate chapter1 tiers better but make starter weapon enhancement round to0. Freeze conservative candidate for full train/heldout/economy, retain tier saturation as an explicit miss. sim/gear-pilot-m0-75-a0-25*.json.
 2026-11-06 23:09 · M evidence prepush five gates pass,1692web/928rules/421E2E including uncommitted I/G tests. M runtime retains its original1679/903/421 receipt. Publish only M evidence and state, keeping I/G source out. validation/m-evidence-fixed.json.
 2026-11-06 23:08 · Fresh prepush validation caught structuredClone outside the rules TypeScript lib in new cap tests. Reused existing clone helper, retain m-evidence failed logs. Corrected31264 runs serial E2E after87913, then pilot queues68873/37830. Production balance remains unchanged.
-2026-11-06 23:03 · Recovery verified PROMPT45001 bytes/SHA, printed STATE15 and reread scope/M/I/G/F6. M prepush validation31264 passes allfive gates. Seven main/affix training pilots68873/37830 running. G preparation parked locally on codex/cardrpg-big-g-wip-2026-11-06 atb5a068b3016f97e3b4aee8a0fa041b2e83e93493, excluded from phase branches. Four30-seed main-only pilots remain epic/legendary100%; expanded max-roll/+12 legendary15.2228% exceeds10%. sim/gear-expanded-before.json.
+2026-11-06 23:03 · Recovery verified PROMPT45001 bytes/SHA, printed STATE15 and reread scope/M/I/G/F6. M prepush validation31264 passes allfive gates. Seven main/affix pilots complete. Candidate main0.75/affix0.25 applied. Focused120/120 pass. Full after train/heldout/economy pipeline88333 running, no timing browser. G preparation parked locally on codex/cardrpg-big-g-wip-2026-11-06 atb5a068b3016f97e3b4aee8a0fa041b2e83e93493, excluded from phase branches. Four30-seed main-only pilots remain epic/legendary100%; expanded max-roll/+12 legendary15.2228% exceeds10%. sim/gear-expanded-before.json.
 2026-11-06 22:59 · M720/265761frames, pageMAX250.1ms,casts33.4/16.8ms,0errors complete. ColdCPU4MAX233.3ms and five profile casts16.8ms. Functional M gates pass,100ms opening misses. Enter I after rereading prompt. Focused I/G13/13 and cap25/25 pass. meta/PERFORMANCE.md.
 2026-11-06 22:08 · Prepared invitation-check.mjs for3sizes andCPU4, real welcome/ten/featured/equipment clicks, skip-state parity, duplicates, odds/caps/history200 and screenshot-free RAF timing. Syntax passes. G remains disconnected until I checkpoint.
 2026-11-06 21:56 · Prepared design-check.mjs for12 real-click captures at3sizes, effort locks, local help, both counters, last supply and retry-disabled UI. Syntax passes, browser execution waits for I build after M timing.
@@ -99,6 +104,7 @@ F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-pag
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
+I adjusted ·single-pieceMAX15.2228→9.6306%,21/48positive tier steps,45day heavy/casualMAX2.177645788x. items/summary.json,BALANCE.md,sim/gear-after-{train,heldout}.json,economy-after.json.
 M timing ·720/265761frames,0errors,pageMAX250.1ms,>25=4989/>50=1367,casts33.4/16.8ms,cast>25=8/0/>50=0/0,207calls/93802triangles. Cold7CPU4MAX233.3ms. meta/PERFORMANCE.md.
 I baseline ·legendaryMAX10.45751634%,cat-context84.606–97.818%,24setcells100%. Economy45heavy/casual pulls1/fish1.7713/threads1.8820/stamps1/essence2.1658 PASS3x. sim/gear-before.json,economy-before.json.
 M ·corrected384 visibility cases,0 errors/failures,min450 pixels versus8 threshold,peak28calls/19350triangles.33 screen captures/errors0. meta/gear/summary.json,meta/screens/checks.json. Initial disposal pilot retained.
@@ -111,6 +117,7 @@ F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/
 A ·A1 starter campaign train/heldout ch1 56/44%,ch2 88/90%,ch3 58/60%;before66/74%,48/46%,48/42%. A2 level6 100/100%,98/100%,100/100%;before74/74%,98/98%,76/90%.50seeds/cell. sim/auto-a*.json. A matrix610 pageMAX1616.6ms,casts33.4/16.8ms. auto/PERFORMANCE.md.
 F0 ·stage57.1202%,face96.5996deg,40/60overlapframes,610/129685frames,pageMAX1616.5ms,casts33.4/16.8ms. baseline/README.md,skills/integrity.json. Earlier complete measurement notes preserved at dbf8127d:reports/cardrpg-big/memory/STATE.md.
 ## PROBLEMS / PARKED
+I discovered save bug · exportSave rejects a valid empty/rearranged equipment map because generic shape requires starter keys. Repro in i-balance-focused.log. Fix separately after isolated balance commit, with valid unequip/transfer and malformed-loadout regression tests, paired auto sim hashes.
 M initial role mapping selected2cats, derived6roles incorrectly selected6. Corrected guardian/offense/healer and typed cardRpg identity. Retain m-focused*.log and m.json. M source8790c9a1 committed/pushed. I CollectibleDesigns2/2 and caps25/25 pass. G disconnected11/11 passes. Full build/screens pending, G WIP parked atb5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 M early-navigation gear pilot recorded1 isReady page error. Defer GPU disposal until warmup settles. Corrected384cases0errors, dedicated20-navigation regression passes atCPU1/4. meta/gear-pilot-disposal and validation/m-gear*.log.
 F5 opening and fight-duration gates miss, clutch/boss visual proof pending. F2 sharpness8/10 misses and F1 hero scale band miss remain reported. F7 must include every miss.
