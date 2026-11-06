@@ -163,3 +163,10 @@ B2bosses CLAIM extends to turn3d/card-enemy-expression.ts and card-boss.test.ts:
 All13enemy+boss draft26attackclips325rigpairs pass. A malformed initial draft-probe overwrote attack definitions with lifecycle definitions;retained20clip pilot and reran corrected26clip probe.
 Intro1.14s uses existingwalk-in,phase300ms uses existingroundbeat;reduced-motion static. Replace7generic boss rings with1instanced per-boss floor emblem draw.
 Browserfilmstrips/visualuniqueness are pending;current quality tier is improved-source-only,not slice-certified.
+
+## 2026-11-06T18:20:21.623Z B6 CLAIM
+branch ai/codex-cardrpg-big2-boss-2026-11-06; E4a5abedfa pinned;boss source gates running.
+B6 CLAIM:tools/cardrpg-big2/**,docs/cardrpg3b/**,reports/cardrpg-big2/**,assets/provenance/cardrpg-big2-* only. No App/FeelLab/mainbuilder edits.
+Own demo will add home-accessible isolated gallery,rendered before/after filmstrips,evidence/perf/checklist and Mechanics lab. Existing Battle FeelLab call retained.
+Fullmatrix deferral is scheduling only;matrix-series runs10configurations/phase under separate locks,combines raw receipts. Will publish exact filmstrip/matrix paths at measured checkpoints.
+No finalgradeclaim before browserinspection. Original art only,default-offextras stay isolated. Report includes pending loading/sharpness/scale misses.
