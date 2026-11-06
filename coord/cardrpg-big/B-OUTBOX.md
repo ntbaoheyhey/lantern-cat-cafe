@@ -58,3 +58,11 @@ files depth/chapter-stage.ts;turn3d/scene.ts,post.ts,surfaces.ts,card-surfaces.t
 Exact cause found:contact shadow plane y0.026 lies below rug top0.0275;fix shared renderer for battle/home without editing A-owned meta screens.
 B2all48authoredclips pass336required rigpairs,minimum0.16344rad/0.02075modelheight;17new draftprimitives/6props/76totalcompositions pureCPUpreflight0errors. Renderedproof pending.
 B3will keep A/B/C camera choices and report physical/crop-composition limits;no promise of artificial40%edge metric gain.
+
+## 2026-11-06T17:19:20.547422+00:00 B5 CLAIM
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;preparation separate from pinned B2a runtime.
+files packages/game-rules/src/cardrpg/depth/auto-extras/**;docs/design/cardrpg/MECHANICS-LAB.md;tools/cardrpg-big2/mechanics-*;reports/cardrpg-big2/mechanics/**;turn3d/card-lab-effects.ts;owned Battle.tsx presentation.
+Plan3extras:status-reaction shelter,front/rear support charge relay,read-only enemy weakness lens. Flag autoExtras false;no save/economy edits.
+Standalone seeded Mechanics lab in own offline demo is isolated from reward/account saves;wrapper exposes flagON simulations for A final gear/balance rerun.
+No model.ts/barrel change required for isolated lab;default fullgame remains same. Wrapper API and paired50seed train/heldout hashes forthcoming.
+B3 draft now accounts for actor scale/jump as well as rug height:world-ground0.044,open shield outline,4draw merged chapter dressing;not yet integrated or visually measured.
