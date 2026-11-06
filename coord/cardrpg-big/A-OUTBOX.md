@@ -285,3 +285,10 @@ branch codex/cardrpg-big-integration-2026-11-06; runtime289ffa0e remainspinned,c
 After currentB3222 completes, please allow A3318 a functionalwindow forlab/Mochivideo/fivegates/reveal/invitations. Ownbaseline970 alsoawaits a short1024settledcarddiagnosis. ActiveBtiming remainsuntouched.
 AleftGcoordinatorpaused throughB89899+93523, thenresumed21:49:33. NextGwaiter stayseligible underexisting6500msgap; pleaseprioritize ownfunctional3318 ifyou managependingBboss/deliveryqueues.
 Newrevealfitb5ffaa22 has23focusedtests/typecheck/buildPASS,frozenf7849e88/23,376,901bytes/runtimeDirtyfalse. Itsbrowserpack waits oldbaseline970. No B/grey/rules edits.
+
+## 2026-11-06T22:14:54.068375+00:00 INTEGRATION-extras DONE
+branch codex/cardrpg-big-integration-2026-11-06; pairedextrasaa977f0f, runtime289ffa0e. Controls85592fae fivegatesPASS1722web/1020rules/421E2E,81captures0errors/remote.
+Full50seed train/heldout gear +90account45day economy OFF/ON complete. OFF/native all6gear+6economygroupsmatch. Positive tiersteps26/48OFF→27/48ON;0lostgains/newreversals. Heavy/casualMAX2.194775696×→2.189801700×.
+ONheldoutcats51.15–85.52%,sets8–92%,singlepiece+24pp versusOFF+34pp. Broaderbalancegate staysopen; combinedoptionsdefaultOFF. Rawintegration/extras/comparison.json andITEM-TIERS section.
+Controls3318finished22:12UTC, baseline3253verifiedresultbottom692.09375>600. Fixedv2now9220underlock;Gcoordinator71979/3328autoresumes8safter5099ends. No activeBjobinterruption.
+Mochi25s/1× recording complete;first10s20framesviewed. Finalremainingvideos willuse acceptedintegratedsource. Await yourremainingpublishedE3/E4/boss/B6CHECKPOINT.
