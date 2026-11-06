@@ -2,14 +2,15 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published drafts: B1 #342; cats #343/#346/#347; B3 #349; B5 #350; B4 #351; E1 #352; E2 #353. Current branch b6-polish; runtime candidate 0f0b6f53 has 1,702 web /935 rules source checks PASS. Later local commits change evidence/tools only.
-Sound pilot: five opaque images have exact Chromium RGBA; gallery fits 3 sizes (1024 stage height189.4px). Studio FAILED slider animationAt=0; original log/receipt retained in review/sound-studio. Instrumented retry + previously skipped six actual-source audio cases queued via /tmp/cardrpg-big2-sound-studio-resume.sh (session86358; waiter9770).
-E3: initial419/421; retry1 passed classic but failed expired-session on external fonts.gstatic ECONNRESET again. Retry2 one remaining test + captures queue after9770 via /tmp/cardrpg-big2-e3-remaining.sh (session85191). Preserve every failed log. E4 complete421E2E/2clips/82effects/cold133.3ms MISS; checkpoint authored, unpublished pending E3.
-Boss waiter5816 resumed after prior pilot/E3 exited; parent37902. Delivery39632 → hitstop43008 → flagoff43282 → scoped matrices58498 remain existing queue. A3328 owns current CPU4 configuration; no duplicate timing jobs. Offline video-contact-sheets.py pilot extracts five timestamped Inkcap actions with matching video SHA.
+Published drafts through E2 #353. Current b6-polish head d46a04c7 plus measured focus HTML and harness correction. No new runtime edits after focus683f33b0, five CPUchecks1702web/935rules PASS.
+Actual shipped audio fix passes sixfresh Chromium processes, native/CPU4MAX16.8ms, constructor15.6–20.9ms. Five opaque images exactChromiumRGBA. Focus3sizesPASS, 1024stage189.4→390.9px. Studio-corrected2 covers258actions/accountrestore/zeroerrors-requestsPASS.
+E3 allcaptures6clips/80effects/cold116.6ms MISS and postinteractive100.1ms MISS. Original419/421, classicretryPASS, fontfailed retries1/2, retry3serverstartup120s timeout. Focusedretry4 usescachednpmoffline butsamepinnedpnpm/testbyte source, awaitinglock.
+E4complete421E2E/2clips/82effects/cold133.3ms MISS. Boss420/421 thenonefocusedfontretryPASS; sixattackclips86effects3655pairs/sixintro-phase strips/calm3PASS. Boss coldwhole/postinteractive133.3ms MISS. Allopponents stayimproved.
+Scopedmatrices resumed under21713→21723 (session8794), exact8phase pinnedartifacts,6500msgaps. Originalpendingobsolete39632/43008/43282/58498 retiredwithreceipt. No duplicate timing jobs.
 ## NEXT
-1. Inspect instrumented studio retry and six audio cases. Diagnose slider from recorded owner/action/value/bounds; do not hide failure or change application without evidence. No audio-source pass yet.
-2. Publish E3/E4/boss evidence once captures and source checks complete; use /tmp/cardrpg-big2-insert-evidence.py with a clean tracked tree. Read A outbox at phase end/before PR. No integration rebase checkpoint yet.
-3. After remaining captures/fixes, build/pin review and run review-measurements.mjs plus full86-action matrix. Review x1 recordings, finish grades/report/ledger/drafts. Existing scoped matrices58498 already queue all cat/enemy/boss batches; do not duplicate.
+1. Publish E3/E4/boss with sourcevalidation/rawcaptures and observednetwork failures. Use /tmp/cardrpg-big2-insert-evidence.py only after trackedWIP committed. ReadAoutbox beforePR. No integrationrebasecheckpoint yet.
+2. Build/pin acceptedreview afterallcaptures, run review-measurements and860casefullmatrix. Preserve completedchecks onfailure, exactartifactreceipts and alloriginalfailedlogs.
+3. Review x1 cat/boss recordings, finishreport/selfgrades/ledger/drafts, hand remainingchain toA and rebase afterits integrationcheckpoint. ReadRules/phase/Aoutbox atphaseboundaries.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -103,4 +104,6 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 
 - 2026-11-06T22:17Z: opaque pack5/5 browser RGBA PASS and gallery fit3sizes PASS; studio slider0 assertion retained with instrumented retry queued. E3 retry1 external font ECONNRESET again, classic test passed; single remaining retry2 and captures queued after studio. Boss dependency resumed normally. No source UI patch or audio acceptance yet.
 
-- Recovery22:36Z: read both briefs, RULES/STATE and A outbox through22:26; noagents. Focus source683f33b0 passes fiveCPUchecks1702web/935rules; browserproof pending. A integratedextrasraw copied fromaa977f0f, exactSHA recorded; broadbalance gaps/defaultOFF remain. Boss5816 is actively running archived421E2E; studio9770/E3remaining9938 still pending.
+- Recovery22:32Z: read both briefs, RULES/STATE and A outbox through22:26; noagents. Focus source683f33b0 passes fiveCPUchecks1702web/935rules; browserproof pending. A integratedextrasraw copied fromaa977f0f, exactSHA recorded; broadbalance gaps/defaultOFF remain. Boss5816 is actively running archived421E2E; studio9770/E3remaining9938 still pending.
+
+- Recovery2026-11-06T23:51Z: latestuser twiceaskscontinue, objectiveunchanged. All25unitmotion/effectcapturescomplete. Studiofailureprovenharnessfocusheldsliderat.459 acrossselectOption; correctedfocusandscopedReviewpanelsselector,258actions/3sizesPASS. Bossfontretry1PASS, E3retry4awaitslockafterserverstarttimeout. Rawfailuresretained.
