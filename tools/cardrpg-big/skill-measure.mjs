@@ -3,6 +3,7 @@ import { mkdir, mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 
 const directory = process.env.BIG_SKILL_OUT || 'reports/cardrpg-big/baseline/skills';
 const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html');
@@ -35,6 +36,10 @@ try {
       await cdp.send('Emulation.setCPUThrottlingRate', { rate: cpu });
       await cdp.send('Network.enable');
       await cdp.send('Network.setCacheDisabled', { cacheDisabled: true });
+      if (process.env.BIG_SKILL_PROFILE) await cdp.send('Tracing.start', {
+        categories: 'devtools.timeline,v8,blink.user_timing,gpu,cc,disabled-by-default-devtools.timeline,disabled-by-default-v8.cpu_profiler',
+        transferMode: 'ReturnAsStream',
+      });
       await page.addInitScript(() => {
         const data = window.__skillPerf = { frames: [], longTasks: [], longFrames: [], marks: [], last: 0 };
         for (const type of ['longtask', 'long-animation-frame']) {
@@ -54,6 +59,8 @@ try {
       await page.goto('file://' + frozenArtifact);
       await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 120000 });
       actions ??= await page.evaluate(() => window.__depthReview.galleryActions);
+      if (process.env.BIG_SKILL_IDS) actions = actions.filter(action => process.env.BIG_SKILL_IDS.split(',').includes(action.id));
+      if (!actions.length) throw new Error('The gallery action filter matched no actions');
       if (process.env.BIG_SKILL_LIMIT) actions = actions.slice(0, Number(process.env.BIG_SKILL_LIMIT));
       const action = actions[index];
       await page.getByRole('button', { name: /Tangled Cafe/ }).click();
@@ -97,6 +104,19 @@ try {
       }
       const name = `${width}x${height}-dpr${dpr}-cpu${cpu}-${quality}-${action.id.replace(':', '-')}`;
       const row = { name, action, width, height, dpr, cpu, quality, errors, casts, pageOpen: summarize(data.frames) };
+      if (process.env.BIG_SKILL_PROFILE) {
+        const completed = new Promise(resolve => cdp.once('Tracing.tracingComplete', resolve));
+        await cdp.send('Tracing.end');
+        const { stream } = await completed;
+        let trace = '';
+        for (;;) {
+          const chunk = await cdp.send('IO.read', { handle: stream });
+          trace += chunk.data;
+          if (chunk.eof) break;
+        }
+        await cdp.send('IO.close', { handle: stream });
+        await writeFile(`${directory}/${name}-trace.json.gz`, gzipSync(trace));
+      }
       await writeFile(`${directory}/${name}.json`, JSON.stringify({ ...row, ...data }));
       receipt.rows.push(row);
       await writeFile(`${directory}/summary.json`, JSON.stringify(receipt, null, 2));

@@ -1,8 +1,8 @@
 # Progress · 6 November 2026
-REFERENCE: reports/cardrpg-big/memory/PROMPT.md; reports/cardrpg-big/memory/STATE.md
+REFERENCE: reports/cardrpg-big/memory/PROMPT.md; reports/cardrpg-big/memory/STATE.md; baseline/GATES.md
 
-F0 baseline validation passed all five gates. Web unit tests 1630, E2E 421. The old demo cold-load matrix shows MAX 1383.3 ms under CPU4. Seven >33 ms intervals in the traced default run now have main-thread task and CPU-stack evidence. Scene height is 57.12% at 1280×720, and 40 of 60 sampled frames have HUD-body intersections.
+F0 now has 610 cold cases, 1,220 casts, 129,685 raw frames and five profiled reruns. Whole-session MAX is 1,616.5 ms under CPU4. First/repeat cast MAX is 33.4/16.8 ms. There are 58 first-cast frames above 25 ms and zero repeat-cast frames above 25 ms. Both cast windows have zero frames above 50 ms. The profiles attribute opening spikes to the synchronous payload decoder and GC. The original 33.4 ms cast spikes were absent on profiled rerun, leaving a recorded attribution gap.
 
-Source review found every depth skill missing an EFFECT_DIRECTION registration. The corrected 610-case measurement matrix runs serially against a frozen HTML snapshot, preserving first-use/repeat-use and page-open intervals. The heap pilot was superseded because browser memory values were rounded. The current run uses CDP heap readings and per-frame draw/triangle samples.
+All five final validation gates pass. E2E 421, web units 1,630, root scripts 11. The source rules diff is empty. Stage height remains 57.12%, and 40/60 sampled frames have HUD-body intersections. All 48 actual skills lack effect-direction registrations.
 
-Next are the F0 phase-end audit/draft and phase A automatic controller, Prepare, Result and all-route tests. Ordered work remains F0, A, F1, F2, starter F3/F4, checkpoint, F5, M, I, G, F6, F7. The user's requested hourly self-recovery script is blocked by this session's automation rules. One agent continues in this chat.
+Next is A automatic controller, default kits, Prepare/Result and all-entry-path checks, then F1 layout and F2 sharpness. The starter slice remains the priority for F3/F4. The requested hourly recovery script remains blocked by the session scheduling constraint. Checkpoints are pushed for handoff.

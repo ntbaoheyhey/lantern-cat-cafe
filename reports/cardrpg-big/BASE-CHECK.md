@@ -8,7 +8,8 @@ Base cd5edcc9895b42384578df9b040daac9ce51fccf, newest #332 tip verified against 
 | pnpm typecheck | Exit 0 |
 | pnpm lint | Exit 0 |
 | pnpm test | Exit 0 |
-| Web unit | 1629 passed |
+| Root script tests | 11 passed |
+| Web unit at base / after F0 hook | 1629 / 1630 passed |
 | Rules unit | 890 passed, 2 expected failures, 11 skipped |
 | Chain / auth / API unit | 32 / 24 / 16 passed |
 | Supabase tests package | 581 passed |

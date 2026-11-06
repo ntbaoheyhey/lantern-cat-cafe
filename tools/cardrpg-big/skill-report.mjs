@@ -34,10 +34,30 @@ const ranked = receipt.rows.map(row => ({ name: row.name, action: row.action.nam
   repeatDuration: row.casts[1].after.at - row.casts[1].before.at,
 })).sort((a, b) => Math.max(b.first.max, b.repeat.max) - Math.max(a.first.max, a.repeat.max) || b.page.max - a.page.max);
 const expected = 610;
-const complete = receipt.rows.length === expected && !!receipt.ended;
+const expectedConfigurations = [
+  '1280×720 DPR1 CPU1 medium', '1280×720 DPR2 CPU1 medium',
+  '1440×900 DPR1 CPU1 medium', '1440×900 DPR2 CPU1 medium',
+  '1280×720 DPR1 CPU4 medium', '1280×720 DPR2 CPU4 medium',
+  '1440×900 DPR1 CPU4 medium', '1440×900 DPR2 CPU4 medium',
+  '1280×720 DPR1 CPU1 low', '2560×1440 DPR1 CPU1 medium',
+];
+const actionIds = [...new Set(receipt.rows.map(row => row.action.id))].sort();
+const coverage = expectedConfigurations.map(configuration => {
+  const rows = groups.get(configuration) ?? [];
+  const ids = rows.map(row => row.action.id);
+  return {
+    configuration,
+    measured: rows.length,
+    missing: actionIds.filter(id => !ids.includes(id)),
+    duplicates: ids.filter((id, index) => ids.indexOf(id) !== index),
+  };
+});
+const complete = receipt.rows.length === expected && !!receipt.ended && actionIds.length === 61
+  && groups.size === expectedConfigurations.length
+  && coverage.every(row => row.measured === 61 && !row.missing.length && !row.duplicates.length);
 const errors = receipt.rows.flatMap(row => row.errors.map(message => ({ name: row.name, message })));
 const result = { complete, expected, measured: receipt.rows.length, artifactSha256: receipt.sha256,
-  started: receipt.started, ended: receipt.ended, errors, configurations, ranked };
+  started: receipt.started, ended: receipt.ended, errors, coverage, configurations, ranked };
 await writeFile(`${directory}/ranked.json`, JSON.stringify(result, null, 2));
 const table = configurations.map(row => `| ${row.name} | ${row.cases} | ${row.pageMax.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.first.above25} / ${row.repeat.above25} | ${row.first.above50} / ${row.repeat.above50} | ${(row.first.within20 * 100).toFixed(2)} / ${(row.repeat.within20 * 100).toFixed(2)} |`).join('\n');
 const ranking = ranked.map(row => `| [${row.name}](${row.name}.json) | ${row.page.max.toFixed(1)} | ${row.first.max.toFixed(1)} / ${row.repeat.max.toFixed(1)} | ${row.firstDuration.toFixed(1)} / ${row.repeatDuration.toFixed(1)} |`).join('\n');

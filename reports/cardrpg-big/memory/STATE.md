@@ -4,20 +4,20 @@ PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 
 ## NOW
-Phase F0 · full validation passed. Precision matrix 534/610 at 11:30 +07, pid 5413, exec session 2427. validation/baseline-skills.log.
+Phase F0 · 610/610 precision matrix, five profiles and final validation passed. Phase closes with the transient cast-spike attribution gap below. Ready to publish.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
 Last work commit c7ffaeb4 · F0 baseline, instrumentation and profile attribution. State commit records this parent.
-Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06, b9609d24), full matrix pending. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
-F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0.json.
+Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06), matrix publication pending. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
+F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0-final.json.
 Baseline validation session 44468 exited 0. Log validation/base-e2e.log.
-Memory bootstrap pushed at 62036790. Seven cold-load scenarios and 45 screen captures completed.
+Recovery checkpoint pushed at c0f1c72a. Memory bootstrap pushed at 62036790. Seven cold-load scenarios and 45 screen captures completed.
 Runtime edits only add isolated Feel lab fixtures/trigger and paused-scene invalidation. Rules unchanged.
 
 ## NEXT
-1. Finish precision matrix, run skill-report.mjs then profile-skills.mjs for the five top offenders. Both report/profiler pass node --check. Keep all performance runs serial.
-2. Audit F0 gates, commit remaining raw matrix, push phase branch and update draft #333. Validation receipt already passed in validation/f0.json.
-3. Implement A with controller tests and before/after sims in isolated rules commits, then Prepare/Result and automatic UI.
+1. Publish F0 matrix and profiles to integration branch and draft #333, including the explicit attribution gap.
+2. Start phase A with isolated controller commit, deterministic replay tests and before/after training/held-out sims.
+3. Complete A default kits, Prepare/Result and automatic UI, then validate all battle entry paths.
 
 ## DONE
 F0 baseline · c7ffaeb4 / state b9609d24 pushed · draft #333 · all five validation gates, 60-frame layout, sharpness crops, seven-run cold matrix, profile stacks, gallery fixtures committed.
@@ -30,8 +30,9 @@ PASS “Install, typecheck, lint, unit, E2E counts into reports/cardrpg-big/BASE
 PASS “Record sim output hashes (scope lock proof).” baseline/sim-hashes.txt captures existing JSON hashes.
 PASS “open docs/cardrpg2/index.html exactly as the user does (file://, fresh profile, cold cache), play the first battle by real mouse clicks at x1 with a Chrome performance trace” · baseline/1280x720-dpr1-cpu1-trace.json.gz.
 PASS “list every frame > 33 ms with its cause” · seven intervals with main-thread events and CPU stacks in baseline/HITCHES.md + trace-attribution.json.
-NOT YET “for every skill and ultimate of every cat” first/repeat, two sizes/DPR, 4x CPU, Low and 2560x1440 · gallery hook and full matrix pending.
-PARTIAL “raw per-frame RAF deltas” and MAX, >25/>50 counts, heap/GPU, long entries, calls, triangles, duration · seven page-open runs saved in baseline/ and baseline/matrix/.
+PASS “for every skill and ultimate of every cat” first/repeat, two sizes/DPR, 4x CPU, Low and 2560x1440 · 610/610 cases, 1,220 casts, zero errors. baseline/skills/ranked.json.
+PASS “raw per-frame RAF deltas” and MAX, >25/>50 counts, heap/GPU, long entries, calls, triangles, duration · 129,685 raw frames verified. baseline/skills/integrity.json.
+PARTIAL “root-cause note per top offender” · five traced reruns identify decoder/GC opening spikes. Original 33.4 ms cast spikes were absent on rerun, exact causes unresolved. baseline/skills/profiles/README.md.
 PASS “Sharpness baseline” fixed crops DPR1/2 and renderer/texture diagnostics · ten crops and variance in sharpness.json.
 PASS screenshots battle idle, hero turn, three casts, enemy attack, boss, reward, map, hub · baseline/*.png, screens/ and layout/.
 PASS “Layout baseline” stage %, hero %, facing angles, overlap and baseline/README.md · 60 frames / 3 sizes. 40 frames have HUD-body overlap, max face angle 96.60°.
@@ -52,11 +53,13 @@ PASS “FEEDBACK COVERAGE AUDIT” · baseline/COVERAGE.md has all 12 asks, sour
 2026-11-06 · Brief references A1-A3 but contains no numbered definitions. Interpret as deterministic controller, default unlocked kits and watched/skip replay parity from phase A explicit requirements.
 
 ## MEASUREMENTS
+610 cases / 1,220 casts / 129,685 raw frames. Whole-session MAX 1616.5ms, >25=5490, >50=3326. First cast MAX 33.4ms, >25=58. Repeat MAX 16.8ms, >25=0. Cast >50=0. baseline/skills/integrity.json.
+Five profile reruns first/repeat MAX 16.8ms. Opening MAX 1450.0–1516.7ms, decoder 1243.7–1295.2ms sampled plus GC. baseline/skills/profiles/summary.json and README.md.
 F0 report coverage now checks all ten configurations, 61 distinct actions each, missing and duplicate cases. tools/cardrpg-big/skill-report.mjs.
 Remote base verified cd5edcc9895b42384578df9b040daac9ce51fccf by git ls-remote before worktree creation.
 Install completed in 5.3s, frozen lockfile. validation/install.log.
 Typecheck exit 0, lint exit 0, unit exit 0, build exit 0. validation/base-*.log.
-Unit counts from logs · web 1629 pass, rules 890 pass +2 expected fail +11 skip, chain 32 pass, auth 24 pass, API 16 pass, Supabase test package 581 pass. Script test count needs extraction.
+Unit counts from logs · web 1629 pass, rules 890 pass +2 expected fail +11 skip, chain 32 pass, auth 24 pass, API 16 pass, Supabase test package 581 pass. Root script tests 11 pass.
 Cold 1280x720 DPR1 MAX 366.7ms, >25ms 7, >50ms 4, p95 16.7ms. DPR2 MAX 333.3ms, >25ms 11, >50ms 7, p95 16.8ms. baseline/*cpu1.json.
 Pose audit 60 frames · 40 HUD-body overlap frames (20 at 1280, 20 at 1024, zero at 1440); max face angle 96.5996°. baseline/layout/measurements.json.
 Stage 57.1202% viewport height. Canvas DPR1 1280x411, DPR2 2560x822. Post samples 0. Metal Apple M3 Pro. 158 calls / 54,270 triangles at sampled end.
@@ -70,7 +73,7 @@ Source finding · default medium post uses zero MSAA samples. DPR cap 2, map 128
 Trace CPU stacks · 366.7ms base64 decoder; 150ms embedded script compile (106.2ms); 66.7ms scene construction/resize; 33.4/83.4ms first program uniforms and GPU command waits. baseline/trace-attribution.json.
 
 ## PROBLEMS / PARKED
-No WIP commit. Completed F0 tools/evidence committed at c7ffaeb4. Pending edits add precise heap/draw samples, exhaustive coverage validation and top-five profile orchestration. The exhaustive matrix remains running on its frozen HTML snapshot. Read-only A entry-point audit completed, code changes await F0 gate.
+No WIP commit. F0 raw matrix/profile changes passed final validation and await their publication commit. The exhaustive matrix and five profiles completed on the same frozen HTML SHA. The original 33.4ms cast spike causes remain unresolved. Read-only A entry-point audit completed, code changes await F0 gate.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
 Heap pilot used rounded performance.memory values. Superseded by precise Runtime.getHeapUsage plus per-frame draw/triangle samples. Pilot kept in baseline/skills-coarse-heap/.
 Sharpness tool deps installed in /tmp/cardrpg-big-tools. Run that Python. First gallery smoke stalled on paused scene, fixed invalidation; second smoke passes.
@@ -82,7 +85,7 @@ REFERENCE: reports/cardrpg-big/baseline/COVERAGE.md
 Effects/motion · audited, improvement pending.
 Image sharpness · all five DPR1/2 baseline crops measured, improvement pending.
 Layout/scale/faces · 60 frames measured, 40 overlap frames, improvement pending.
-Turn clarity/lag · seven cold-load runs and trace attribution complete, full per-skill matrix running.
+Turn clarity/lag · seven cold-load runs and trace attribution complete, 610-case matrix complete, opening hitch fixes pending.
 Beyond battle · ten destinations exist, Prepare/Result pending.
 Equipment · equip/enhance/reforge/salvage/tailor/set counts exist, visibility polish pending.
 Items · existing types scattered, categorisation pending.

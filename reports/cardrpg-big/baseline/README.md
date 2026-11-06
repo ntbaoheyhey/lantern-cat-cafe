@@ -47,4 +47,8 @@ REFERENCE: COVERAGE.md; skills/summary.json; docs/cardrpg3/build.json
 
 The old file remains the cold-page baseline. The new cardrpg3 file adds only an isolated gallery fixture hook and paused-view invalidation for exhaustive skill sampling. Every first use gets a fresh page. Each raw JSON retains page-open RAF deltas, long tasks, long animation frames, heap/GPU snapshots, duration and first/repeat boundaries. Preview fixtures bypass progression eligibility to expose ultimates and all enemies, with zero account mutation. This fixture coverage complements actual battle clicks.
 
-The capture script uses max-level equipment fixtures for later meta destinations. Actual cold-load runs use the untouched starter account. Counts and rankings for the full skill matrix are written after its run completes.
+The capture script uses max-level equipment fixtures for later meta destinations. Actual cold-load runs use the untouched starter account. The exhaustive matrix completed 610 cases and 1,220 casts across ten configurations. Its 129,685 raw RAF intervals pass the integrity check. Whole-session MAX is 1,616.5 ms, with 5,490 frames above 25 ms and 3,326 above 50 ms across all 610 cold sessions. First-cast MAX is 33.4 ms with 58 frames above 25 ms. Repeat-cast MAX is 16.8 ms with zero frames above 25 ms. All cast windows have zero frames above 50 ms. Each session window starts at page open and includes navigation, fixture setup and both casts.
+
+REFERENCE: skills/integrity.json; skills/ranked.json; skills/profiles/README.md
+
+Five profiled reruns identify synchronous decoding and GC in the largest opening frames. Their original first-cast 33.4 ms intervals were absent on rerun, leaving those transient causes unresolved. No page errors occurred. The catalogue has 48 total skills including 12 ultimates, and 13 enemies including three bosses.
