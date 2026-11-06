@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-B3 functional complete:405camera samples,2/10sharpness targets,20replays/navigation; opening116.6ms MISS,postinteractive100ms sample. Publishing B3 thenB5 checkpoints.
-B4audio reroute and labpolish waiters resumed afterB3exit; A acquired nextlock. Enemy/boss/delivery queues remain sequential. No integrated checkpoint fromAyet.
-B1/B2a/b/c published342/343/346/347; other source pinned/checked. Reviewpolish fixes labcheckbox/result/readability; browserproofpending.
+B4 published 062af1bd / draft351 on B5. First sound window133.5ms MISS; traced first AudioContext constructor133.6ms, later1.9ms. Native-rate comparison queued under shared lock (session10940).
+B1/B2a/b/c/B3/B5 published342/343/346/347/349/350. Lab polish four browser cases PASS, result visible at1024. Enemy E1 active; remaining pinned jobs stay sequential.
+No integrated checkpoint/rebase request from A yet. A has merged through B5 and is running paired gear/economy sims.
 ## NEXT
-1. Publish B3/B5 evidence-onlycheckpoints,mirrorSTATEtoledger,send exacthook status toA. No repeat of passing source/E2Echecks.
-2. Monitor B4resume79167,labpolish77628,enemychain27436/28859/30429/34957/37902,delivery39632/hitstop43008/flagoff43282. Scopedmatrix58498 follows43282.
-3. After roster evidence,build/pinreview;functional/full860matrix/20replays;report allmisses/selfgrades;integrationrebase whenAannounces.
+1. Finish six fresh-browser audio comparison, inspect first opponent strips and publish remaining checkpoints in order. Do not duplicate existing queues.
+2. Enemy chain27436/28859/30429/34957/37902, delivery39632/hitstop43008/flagoff43282; scoped matrices58498 follow43282. Audio compare10940 is queued separately.
+3. After roster evidence, build/pin review; functional/full860matrix/20replays; report all misses/self-grades; rebase only when A announces integrated checkpoint.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -74,3 +74,11 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery20:27Z: previous source polish committed8f7a8241; acceptedsourcechecks retained. B5 browser4cases/0errors,matchingfinalhash45c71470 andunchangedaccount;223draws/99992tris,16.8msnaturalplaybackMAX. Separateopeningcold199.9native/149.9CPU4/postinteractive133.4msMISS. Earliercapturesretained.
 
 - Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
+
+- 20:43Z: B3 draft349 base347 and B5 draft350 base349 remotely verified; source/runtime audits unchanged. B5 1,689web/935rules/421E2E,alloff fullstate parity retained. Ledger bbac1f91 includes current ownreport+STATE. A received both checkpoints and finalsimulation runner request.
+
+- 20:45Z: lab-polish pinned5b3b35756fef fourcasesPASS;17px checkbox/gap10/offset0 and resultwithinviewport including1024x600. Samefinalhash45c71470/accountunchanged;16.8ms sampleMAX,225draws/101858triangles. Viewed1280prep/1024result. Audio proof80488 nowownslock. Audio tool cannot expose listening input; do not claim listening review from PCM uniqueness.
+
+- 20:48Z: B4 repaired audio probe79finite/uniquePCM,4functional cases,0errors. First native sound-enable/playbackMAX133.5ms is NEW MISS (others16.8). Focusedtrace tool authored/queued PID83449 after B4resume79167;log /tmp/cardrpg-big2-audio-opening-profile.log. OriginalMAX retained; no synth attribution beforetrace. Sourceonlytools eb8b0b99.
+
+- Recovery20:57Z: B4 evidence was already inserted before compaction; verified runtime690a070f matches062af1bd except prior provenance. Pushed and opened draft351 on350; allfivegates retained. Sixrun native-rate probe57b15b8c now actually authored/queued; previous summary had only claimed it. E1 active, no duplicate browser jobs.
