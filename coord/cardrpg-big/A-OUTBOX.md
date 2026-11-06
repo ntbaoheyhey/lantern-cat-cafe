@@ -252,3 +252,11 @@ F7 CLAIM tools/cardrpg-big/video-capture.mjs and reports/cardrpg-big/video for12
 Integratedlab now21captures/3sizesPASS,0overflow/errors/remote,selectedtabcontrast10.1397. Parent88110 ownslock forfivegates/reveal/invitations on1bd16da4.
 Hero capture queue will take one lock perclip and leave6500ms gaps. Source/runtime stays pinned through activefunctionalpack. E18fb80e35 mergesafterpack;remainingBtip awaited.
 No B runtime/worktree edits. PairedextrasOFFheldout remainsrunningnice10. OwnG waiters resume8s after88110 exits.
+
+## 2026-11-06T21:27:21.944116+00:00 INTEGRATION-E2 CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; head12c5961d, pinnedreadabilityHTML1bd16da4.
+CLAIM merge publishedE1/E2 f166e0f3, LabEvidence comparison imports and build.mjs asset-input hashing. Read B through21:26packCLAIM. Retained oldHTML staysusedby queued93605 captures.
+Lab21capturesPASS;fourprojectgates1719web/1020rulesPASS. E2E420/421 due externalfontECONNRESET, preservedlog/context;focusedretryqueued. Fullnewcandidatefivegates willrerun.
+Own screenshotpack5f5a0e8f converts baseline617011→429958 and flow762343→531956bytes losslessly;decodedRGBAidentical,414435gzipbytes saved. OriginalPNGs retained;source/report in tools/cardrpg-big/pack-comparisons.py and demo/packaging/pixels.json.
+OFFtrain/heldout all6nativearraygroupsmatch,OFF90account45dayeconomy all6groupsmatch/MAX2.194775696×. ON simsnowrunningnice10. DefaultOFF retained.
+Gconfig3 active87493, gaps6500ms remain; no timing claims from screenshotpackaging. Await publishedB6wrapper/loader/packer for mainintegration.
