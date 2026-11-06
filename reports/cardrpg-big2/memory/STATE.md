@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Review polish source8f7a8241 fixes lab checkbox/result/readability. Typecheck/demoTS/lint/build and1698web/935rules(+2expectedfails11skips) PASS. Separate lab-polish artifact pinned; browser proof awaitslock.
-B5 functional421E2E+4labcases PASS; seven-casecold MAX199.9native/149.9CPU4,postinteractive133.4ms MISS. B4 functional76999 nowownslock; B3resume74597 waits after repaired crop tool.
-B1/B2a/b/c published342/343/346/347; other source implemented and pinned; no integration checkpoint from A yet.
+B3 functional complete:405camera samples,2/10sharpness targets,20replays/navigation; opening116.6ms MISS,postinteractive100ms sample. Publishing B3 thenB5 checkpoints.
+B4audio reroute and labpolish waiters resumed afterB3exit; A acquired nextlock. Enemy/boss/delivery queues remain sequential. No integrated checkpoint fromAyet.
+B1/B2a/b/c published342/343/346/347; other source pinned/checked. Reviewpolish fixes labcheckbox/result/readability; browserproofpending.
 ## NEXT
-1. Preserve/publish B3 and B5 evidence checkpoints without changing pinned runtime; remaining B4/enemy/boss/delivery checks are queued. No duplicate runs.
-2. Inspect queues22596/27436/28859/30429/34957/37902/39632/43008/43282 andstage74597/video60916. Scoped matrices58498 follow43282.
-3. After rendered roster evidence,build/pin acceptedreview and run functionalchecks/full860matrix/final20replays;update report,selfgrades,ledger and A hooks.
+1. Publish B3/B5 evidence-onlycheckpoints,mirrorSTATEtoledger,send exacthook status toA. No repeat of passing source/E2Echecks.
+2. Monitor B4resume79167,labpolish77628,enemychain27436/28859/30429/34957/37902,delivery39632/hitstop43008/flagoff43282. Scopedmatrix58498 follows43282.
+3. After roster evidence,build/pinreview;functional/full860matrix/20replays;report allmisses/selfgrades;integrationrebase whenAannounces.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -72,3 +72,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - B3capture initialfail retained stage/initial-portrait-selector-error.log: inherited inspector referenced home image removed by M. Own sharpness-measure now captures actual teamcard/nativepixels with explicit composition caveat; no sharedtool edit. Stage resume74597/session98566 skips only archived421passingE2E. B6evidence-index distinguishes incomplete matrix, cold samples and art metrics;Bmatrix handoff6500ms added beforequeueddriver starts.
 
 - Recovery20:27Z: previous source polish committed8f7a8241; acceptedsourcechecks retained. B5 browser4cases/0errors,matchingfinalhash45c71470 andunchangedaccount;223draws/99992tris,16.8msnaturalplaybackMAX. Separateopeningcold199.9native/149.9CPU4/postinteractive133.4msMISS. Earliercapturesretained.
+
+- Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
