@@ -3,14 +3,14 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F5 evidence, M source preparation. Corrected controls6/6 and real-click x1/x2/x4 pass. Cold7 complete, CPU4 MAX250.1ms misses100ms. Pipeline89206/PID37256 now runs720 matrix then5 profiles against frozen HTML /tmp/cardrpg-big-f5-index.html SHA4536494f37c372d9f623c01b7a8eddbc10d512933ad13418b32253707e95cdc8. M cards/TeamCollection/Equipment/CompanionPreview/meta.css and12 legendary geometries are authored, unvalidated.10 regression cases, real-click tool and384-case gear visibility probe ready. M validation pipeline79296/PID42698 waits for F5 PID37256, then focused tests/build/five gates/UI/gear captures. I preparation plan items/PLAN.md, draft58-line docs/design/cardrpg/ITEM-TIERS.md and sim drivers ready, no rules edits. F5 partial580/720 at20:44, errors0, pageMAX300ms/castMAX33.4ms. M build/checks wait for timing.
+Phase F5 evidence complete, M validation repair. Full720 cases and5 profiles complete, pageMAX300ms/castMAX33.4/16.8ms/errors0. M focused10/10 and1679 web tests pass. Preview identity uses cardRpg.cardId after initial typecheck errors. Validation96015 runs E2E, then rerun corrected build/checks. F5 draft remains to publish.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed memory b7bb52eba9bb8e33eb201cdb9d515fca4c65b6df. Source F5 7e0546087a95edf80b6cd3f08e0fe95a1f0d44e1, primary verified. Draft F4 #338 (codex/cardrpg-big-f4-2026-11-06) on F3, primary/F4 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
+Last pushed memory 1dbc8fdd37461b2c86a987cc1d98db8b9c635183. Source F5 7e0546087a95edf80b6cd3f08e0fe95a1f0d44e1, primary verified. Draft F4 #338 (codex/cardrpg-big-f4-2026-11-06) on F3, primary/F4 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
-1. Finish frozen F5 matrix720/profiles, update flow/GATES.md and publish F5 draft.
-2. Run queued M validation79296 after F5, fix failures and inspect screenshots/384 gear combinations.
+1. Publish completed F5 evidence and draft after scope check.
+2. Rerun M corrected build, real-click screens/384 gear visibility cases and five gates.
 3. Publish verified M and its timing, then I/G/F6/F7 and remaining cats. I simulation drivers may be prepared while timing runs.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
@@ -23,7 +23,7 @@ PASS “Auto camera director ... return to framing ... respects ... camera prese
 PASS budgets “basic<=1.2s, skill<=1.8s, ultimate<=2.8s, enemy<=1.4s, gap<=0.25s, round gap<=0.4s ... x2/x4 ... Skip ... instantly.”0 measured action misses, gap83.4ms, round383.4ms, Skip14.7ms. FAIL “chapter1 ...45–90s”,9.306–16.195s first encounters.
 PARTIAL “low-HP warning tint ... comeback/clutch ... boss phase changes ... Victory/defeat ... reward reveal bursts.” Authored and tested, natural clutch/boss transition evidence pending.
 PASS “smooth short transitions ... idle life ... hover/press ...100ms max ... Fight/Skip/Pause ... Reduced-motion.” Corrected Fight66.9/Pause14.5/Skip14.7ms inclCPU4 andx2/x4. Home3D pending M.
-NOT YET full F0 rerun720/profiles. Cold7 complete MAX250.1ms CPU4 FAIL100ms. Frozen4536494f. flow/GATES.md.
+PASS full F0 matrix720 and5 profiles. FAIL pageMAX300ms, CPU4 cold250.1ms against100ms. Cast33.4/16.8ms PASS50ms. flow/PERFORMANCE.md.
 ## PRIOR PHASE GATES
 F4 ·starter31 recipes/465 pairs/40 primitives PASS, face maskPASS,124 runtime casesPASS,3240 layoutPASS,720 matrix+5 profilesPASS. Opening266.7msFAIL. Slice checkpoint published. effects/GATES.md, PERFORMANCE.md, CHECKPOINT.md.
 F3 ·slice motion30/30 pairs,20 filmstrips,915 layout poses and five validations PASS. PageMAX566.7ms FAIL, cast33.4/16.8ms PASS. motion/GATES.md, PERFORMANCE.md.
@@ -31,6 +31,7 @@ F2 · renderer/DPR/textures/portraits/budgets PASS, sharpness2/10 target pairs P
 A · functional PASS, cast33.4/16.8ms PASS, page1616.6ms FAIL. auto/GATES.md, PERFORMANCE.md.
 F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, hero13.189–32.975% band MISSED, pageMAX1583.3ms FAIL. layout/README.md, PERFORMANCE.md.
 ## DECISIONS · append only
+2026-11-06 21:08 · F5 complete matrix increases pageMAX266.7→300ms, keep regression visible for F6. M best-team/filter found legacy role assumptions against6-role depth catalogue. Select strongest guardian, offensive cat and healer, derive filters from catalogue. Focused10/10 now pass. Preview identity type failures pending. User given10–14h remaining estimate, update if timing changes.
 2026-11-06 20:12 · I item-tier draft now records source-audited bands, drop odds, sinks and local design counters. The10% single-piece contribution threshold remains explicitly pending. Economy/gear tools syntax pass. Draft docs/design/cardrpg/ITEM-TIERS.md awaits sims and any tuning. F5 partial322/720 had zero errors, pageMAX249.9ms/castMAX33.4ms at20:11, flow/skills/summary.json.
 2026-11-06 20:00 · Prepared I drivers without running during F5. gear-sim.mjs now records paired single-legendary boss outcomes. Existing economy.mjs accepts explicit all-auto policy/output and records source hashes plus45-day earned ratios. M384 gear probes wait for the actual template name and selected model. Queued validation79296/PID42698 starts only after timingPID37256 exits.
 2026-11-06 19:58 · Recovery verified exact41027-byte attachment prefix in45001-byte PROMPT/SHA288a635d, read scope/F5/M. F5 timingPID37256 remains active, sourceM stays unvalidated. M review fixes maximum-awakening cost copy and preview probes now wait for actual selected assets. Gear visibility gate declared before measurement in meta/PLAN.md. M probe syntax checks pass. Current Automations instruction still blocks hourly task-completion restart script despite renewed authorization.
@@ -83,7 +84,7 @@ F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, her
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
-F5 partial580/720 at20:44 ·errors0, pageMAX300ms/castMAX33.4ms. Native low/2560 cases and five profiles still running. flow/skills/summary.json.
+F5 full720 ·268286 frames/errors0, pageMAX300ms, >25=5165/>50=1425, first/repeat33.4/16.8ms, cast>25=9/0/>50=0/0. Five profiles complete. Peak207calls/93802triangles. flow/PERFORMANCE.md.
 F5 corrected ·controls6/6, x1 first encounters9.306–16.195s MISS, speed2/4 seed11 4.664/2.346s. FightMAX66.9/Pause10.9/Skip14.7ms, action misses0, prematureHP0, roundMAX383.4ms, banner583.3–600ms. flow/{controls,runtime,speed2,speed4}. Cold7 MAX250.1ms CPU4, native33.3–50.1ms, page errors0. flow/performance/summary.json.
 F5 corrected layout3240 poses ·0 overlaps/crops/face occlusions/missing plates,226 peakcalls/93802triangles. flow/layout/measurements.json. Natural action captures18/18 pass with DOM HP matching snapshot. flow/action-screens/checks.json.
 F4 full720 ·249394 frames, pageMAX266.7ms, >25=4727/>50=1374, first/repeatMAX33.4/16.8ms, >25=7/0/>50=0/0. Five profiles complete.207 calls/93802 triangles peak. effects/skills/{summary,ranked}.json, profiles/summary.json. F4 final ·effects/verified/uniqueness.json passes465/465, minimum0.542308, zero face failures. Cold7 nativeMAX33.3–50ms, CPU4MAX216.7/233.4ms, p95<=16.8ms. Trace rerunMAX116.6ms with14 intervals>33ms. effects/performance[-cpu4]/summary.json and performance-cpu4/HITCHES.md.
