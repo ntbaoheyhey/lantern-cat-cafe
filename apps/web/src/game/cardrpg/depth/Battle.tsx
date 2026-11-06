@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_BY_ID } from '@taskbar-hero/game-rules/cardrpg';
 import { SQUAD_ITEMS, type SquadItem } from '@taskbar-hero/game-rules/src/squad/gear/catalog';
@@ -6,10 +6,11 @@ import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EquipmentAppearance } from '../../squad/turn3d/appearance';
 import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
-import { MODEL_IDS, portrait } from './assets';
+import { MODEL_IDS, portrait, skillIcon } from './assets';
 import type { DepthModel } from './model';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
+import { impactLabels } from '../../squad/turn3d/impact-labels';
 
 function project(battle: R.Battle): TurnActor[] {
   const slots = { party: 0, enemy: 0 };
@@ -42,6 +43,7 @@ function Statuses({ actor }: { actor: R.Actor }) {
 export function BattleView({ m }: { m: DepthModel }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
+  const skillBanner = useRef<HTMLDivElement>(null);
   const loadingText = useRef<HTMLSpanElement>(null);
   const loadingProgress = useRef<HTMLProgressElement>(null);
   const plates = useRef(new Map<string, HTMLDivElement>());
@@ -49,7 +51,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const view = useRef<SceneView | null>(null);
   const [logOpen, setLogOpen] = useState(false);
   const [sound, setSound] = useState(m.audio.enabled);
-  const battle = m.battle ?? lastBattle.current;
+  const battle = m.visualBattle ?? lastBattle.current;
   lastBattle.current = battle;
   view.current = { actors: project(battle), currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance,
@@ -81,6 +83,9 @@ export function BattleView({ m }: { m: DepthModel }) {
     } catch (error) { m.sceneError = `3D preview unavailable. ${String(error)}`; m.notify(false); }
     const tick = (now: number) => {
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
+      if (skillBanner.current) {
+        skillBanner.current.hidden = !m.plan || m.animationAt >= 600 || m.galleryEffectOnly;
+      }
       const loading = scene.current?.loading;
       if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
         loadingText.current.textContent = loading.label;
@@ -100,7 +105,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   useEffect(() => { scene.current?.invalidate(); });
   useEffect(() => {
     if (!m.canAct) return;
-    const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 350 / m.state.settings.speed);
+    const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 80 / m.state.settings.speed);
     return () => clearTimeout(timer);
   });
   useEffect(() => {
@@ -112,7 +117,14 @@ export function BattleView({ m }: { m: DepthModel }) {
     return () => window.removeEventListener('keydown', key);
   }, [m]);
   const actor = battle.actors.find(candidate => candidate.id === m.plan?.actorId) ?? R.currentActor(battle);
-  const action = [...battle.log].reverse().find(event => event.kind === 'action' || event.kind === 'enemy-action');
+  const action = [...(m.battle?.log ?? battle.log)].reverse().find(event => event.kind === 'action' || event.kind === 'enemy-action');
+  const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
+    id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
+    labels: impactLabels(m.plan!.events, id).filter(event =>
+      ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
+      && (event.amount > 0 || event.type === 'death')),
+  })).filter(result => result.labels.length) : [], [m.plan, battle.actors]);
+  const lowHealth = battle.actors.some(candidate => candidate.side === 'party' && candidate.hp > 0 && candidate.hp / candidate.maxHp <= .25);
   return <section className={`dp-battle ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
     <header className="dp-battle-top"><div><small>{m.replay ? 'Recorded replay' : m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name}</small><h1>Round {battle.round}</h1></div>
       <label>Speed<select aria-label="Playback speed" value={m.state.settings.speed} onChange={event => { m.state.settings.speed = Number(event.target.value); m.notify(); }}>{[1, 2, 4].map(speed => <option key={speed} value={speed}>{speed}×</option>)}</select></label>
@@ -124,10 +136,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>
     {m.offline && <FeelLab m={m} />}
-    <div className={`dp-arena chapter-${battle.chapter} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
+    <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
         <img src={portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
-        <button onClick={() => { m.plan = null; m.animationAt = 0; m.notify(false); }}>Skip moment</button>
+        <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
       {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status"><span ref={loadingText}>Preparing the cafe miniatures…</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
@@ -142,12 +154,24 @@ export function BattleView({ m }: { m: DepthModel }) {
         </div>;
       })}
     </div>
-    <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''}`} key={cat.id} data-hp-plate>
+    <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
       <img src={portrait(cat.catalogId)} alt="" />
       <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
       <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>
     </div>)}</div>
-    <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : actor?.name}</b><span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span></div>
+    <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : m.impactVisible && !m.galleryBattle && m.momentNote || actor?.name}</b>
+      <div className="dp-skill-banner" ref={skillBanner} hidden={!m.plan || m.animationAt >= 600 || m.galleryEffectOnly}>
+        {m.plan && <>{skillIcon(m.plan.skillId) && <img src={skillIcon(m.plan.skillId)} alt="" />}<strong>{m.plan.name}</strong></>}
+      </div>
+      {m.impactVisible && results.length ? <div className="dp-result-chips" aria-label="Action results">
+        {results.map(result => <span className="dp-result-chip" key={result.id}><b>{result.name}</b>
+          {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type}`} key={index}>
+            {event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
+            {event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
+          </span>)}
+        </span>)}
+      </div> : <span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span>}
+    </div>
     {logOpen && <aside className="dp-log" aria-label="Battle log"><button onClick={() => setLogOpen(false)}>Close log</button>{battle.log.slice(-100).reverse().map((event, index) => <p key={index}>R{event.round} · {event.text || `${battle.actors.find(candidate => candidate.id === event.actorId)?.name} → ${battle.actors.find(candidate => candidate.id === event.targetId)?.name} · ${event.kind} ${event.amount || ''}`}</p>)}</aside>}
   </section>;
 }

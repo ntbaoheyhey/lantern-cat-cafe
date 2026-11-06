@@ -298,7 +298,7 @@ export class TurnScene {
       if(view.autoBattle&&!view.model&&!view.reducedMotion&&a.hp>0&&this.time-p.enteredAt<1.14&&p.actions.has('walk-in')){
         clip='walk-in';progress=(this.time-p.enteredAt)/1.14;
       }
-      if(frame&&source===p){
+      if(frame&&source===p&&(!view.autoBattle||a.hp>0)){
         const direction=(view.autoBattle?cardSkillMotion(p.asset,frame.plan.skillId):undefined)??SKILL_MOTION[frame.plan.skillId];
         clip=p.actions.has(frame.plan.skillId)?frame.plan.skillId:frame.clip;progress=clipProgress(frame);
         if(!view.reducedMotion&&direction){const t=movementProgress(frame),target=targets[0]?.base??p.base;
@@ -358,7 +358,7 @@ export class TurnScene {
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
-    if(frame&&!view.reducedMotion&&!view.model){const push=frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
+    if(frame&&!view.reducedMotion&&!view.model){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
     if(frame&&!view.reducedMotion&&!view.model){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();

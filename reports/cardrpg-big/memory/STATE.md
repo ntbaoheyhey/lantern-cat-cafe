@@ -3,15 +3,15 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F5 starts after published F4 slice. F4 source 7c312fd8886657b39168bbb5f386f3d831e4dfff verified on primary and F4 remote. Draft #338 verified on F3. F4 measures 720/720 cases, 5 profiles, first/repeat MAX33.4/16.8ms, CPU4 page MAX266.7ms (miss).
+Phase F5 correction. Final five-gate validation passes1669 web/903 rules/421 E2E. Five real-click runs pass all action/response budgets, zero premature HP. Banner overlaps22/3240 poses corrected to0/3240 by reserved caption placement. Corrected natural action captures18/18 pass. Corrected validation session80587 passes1669 web/903 rules/421 E2E plus typecheck/lint/build. Pilot evidence flow/pilot-banner. Timing pipeline32559 and measure33900 stopped before correction.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
 Last pushed source 7c312fd8886657b39168bbb5f386f3d831e4dfff. Draft F4 #338 (codex/cardrpg-big-f4-2026-11-06) on F3, primary/F4 verified. Draft F3 #337 (codex/cardrpg-big-f3-2026-11-06). F2 source d1425018fb13900c9f805a95a7c486a90f79deb4, primary/F2 verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
-1. Synchronize visible battle state and HP/KO to action impact, then group numbers and round ticks.
-2. Add focus/banner/drama and tighten pacing. Measure Fight/Pause/Skip response and chapter-1 duration spread.
-3. Run F5 validation and full hitch harness, publish F5 draft, then continue M/I/G/F6/F7 and remaining cats.
+1. Run corrected F5 reduced-motion controls, real-click x1/x2/x4 and cold7 after source checkpoint.
+2. Run full720/profiles on frozen corrected F5 HTML, preserve source snapshot before M integration.
+3. Publish F5 draft with measured misses, then continue M/I/G/F6/F7 and remaining cats.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
 A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full610 matrix and5 profiles complete, evidence52e9e94a46c970ad3c373cebbbb4fdc17421e1b9. F3 ·a6c093de / draft#337 / motion/GATES.md, PERFORMANCE.md,610 cases+5 profiles. F4 ·7c312fd8 / draft#338 / effects/GATES.md, PERFORMANCE.md, CHECKPOINT.md /720 cases+5 profiles. F5–F7 pending.
@@ -23,21 +23,15 @@ NOT YET “Auto camera director ... return to framing ... respects ... camera pr
 NOT YET “basic<=1.2s, skill<=1.8s, ultimate<=2.8s, enemy<=1.4s, gap<=0.25s, round gap<=0.4s ... x2/x4 ... Skip ... instantly ... chapter1 ...45–90s.”
 NOT YET “low-HP warning tint ... comeback/clutch ... boss phase changes ... Victory/defeat ... reward reveal bursts.”
 NOT YET “smooth short transitions ... idle life ... hover/press ...100ms max ... Fight/Skip/Pause ... Reduced-motion.”
-## F4 SLICE GATES
-PASS implementation “library of >=30 reusable primitives ... compose a UNIQUE effect” ·40 primitives/31 recipes, structural tests8/8. Rendered465/465 pairs pass. effects/PLAN.md, validation/f4-focused.log.
-PASS measured identity ·465/465 pairs, minimum0.542308>0.16. Zero face samples exceed1% pixels at RGBdelta>8 after bloom fix. effects/uniqueness.json. Palette/rhythm/camera authored, broader runtime review pending.
-PARTIAL “Cinematography ... hit-stop60–110ms ... slow-motion ... skippable bespoke ULTIMATE ...1.2–1.8s” ·starter duration assertions and real preview/skip clicks PASS. Kill/crit/number flow pending F5. effects/runtime/checks.json.
-PASS “real post stack ... High/Medium/Low ... automatic degrade ... Low ... software/weak GPUs” ·124 rendered cases,31×4 configurations, Metal High/Medium/Low and SwiftShader Low. Synthetic30ms samples reduce High→Medium→Low. effects/runtime/checks.json.
-PASS starter “effects never cover ... face or HP ... max active particles and overdraw ... capped and tested” ·zero face failures,36/96 instances,16/24 fragments per pixel and3240 poses with zero HUD overlap. effects/uniqueness.json, layout/measurements.json.
-PASS starter “render each effect ...6 frames ... GRAYSCALE silhouettes/edge maps ... motion ... recipe signature ... fix offenders” ·186 frames/465 pairs, minimum0.542308>0.16 and all signatures distinct. effects/uniqueness.json, features.npz. Remaining9 cats pending checkpoint.
-PASS harness720/720+5profiles, castMAX33.4/16.8ms. FAIL CPU4 openingMAX266.7ms>100ms, improves F3 page566.7ms. effects/PERFORMANCE.md.
-PARKED “Sound ... after F5 if time allows” ·current synthesized audio retained. New per-skill layers pending.
 ## PRIOR PHASE GATES
+F4 ·starter31 recipes/465 pairs/40 primitives PASS, face maskPASS,124 runtime casesPASS,3240 layoutPASS,720 matrix+5 profilesPASS. Opening266.7msFAIL. Slice checkpoint published. effects/GATES.md, PERFORMANCE.md, CHECKPOINT.md.
 F3 ·slice motion30/30 pairs,20 filmstrips,915 layout poses and five validations PASS. PageMAX566.7ms FAIL, cast33.4/16.8ms PASS. motion/GATES.md, PERFORMANCE.md.
 F2 · renderer/DPR/textures/portraits/budgets PASS, sharpness2/10 target pairs PASS and8 MISS, geometry detail PARTIAL, full-page performance FAIL. Exact requirements and measurements in sharpness/GATES.md and PERFORMANCE.md.
 A · functional PASS, cast33.4/16.8ms PASS, page1616.6ms FAIL. auto/GATES.md, PERFORMANCE.md.
 F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, hero13.189–32.975% band MISSED, pageMAX1583.3ms FAIL. layout/README.md, PERFORMANCE.md.
 ## DECISIONS · append only
+2026-11-06 19:29 · Recovery verified PROMPT45001 bytes/hash and build source hashes. Five F5 runs pass FightMAX67.8ms/Pause11.2/Skip17.6, roundMAX400ms, first encounters9.307–16.226s MISS. Banner overlap22/3240 poses fixed by moving it into caption. Retain pilot-banner raw data, rerun validation and timing. Scheduler request rechecked against current Automations instruction, still prohibited.
+2026-11-06 19:20 · F5 uses presentation snapshots at impact, action-marker separation for grouped round HP and80ms gaps. Rules are untouched. Pilot seven-action first encounter9.408s misses45–90s target, retain pacing caps and defer balance to I. Reserve25ms in authored action maxima to absorb display-frame quantization. Pilot source validation passes, next rerun verifies this small timing change.
 2026-11-06 recovery · Verified PROMPT45001 bytes/hash and exact attachment prefix. F4 source7c312fd8 remotely published, draft338 confirmed. Rechecked hourly recovery request against current tools, session instruction still blocks task-to-completion scheduler. No scheduler installed. Continue F5 with presentation-only changes.
 2026-11-06 19:00 · F4 matrix720/720 and5 profiles complete. Seven first-use33ms intervals retained, one profile interval straddles fixture/cast boundary, others unreproduced. Report all and carry CPU4 opening266.7ms miss to F6. Publish starter checkpoint before F5.
 2026-11-06 17:45 · Recovery verifies45001-byte PROMPT hash and exact original attachment prefix. Runtime source hashes match build. The measurement-only gzip trace writer changed after the receipt, recorded in effects/PERFORMANCE.md. Cold7 and final-effect captures complete. Full720/profiles session28669 runs alone. Renewed hourly recovery request remains blocked by session Automations instruction, no script installed.
@@ -82,6 +76,7 @@ F1 · stage78.889% PASS,2745 poses zero overlap/crop PASS, face<=55deg PASS, her
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
+F5 corrected layout3240 poses ·0 overlaps/crops/face occlusions/missing plates,226 peakcalls/93802triangles. flow/layout/measurements.json. Natural action captures18/18 pass with DOM HP matching snapshot. flow/action-screens/checks.json.
 F4 full720 ·249394 frames, pageMAX266.7ms, >25=4727/>50=1374, first/repeatMAX33.4/16.8ms, >25=7/0/>50=0/0. Five profiles complete.207 calls/93802 triangles peak. effects/skills/{summary,ranked}.json, profiles/summary.json. F4 final ·effects/verified/uniqueness.json passes465/465, minimum0.542308, zero face failures. Cold7 nativeMAX33.3–50ms, CPU4MAX216.7/233.4ms, p95<=16.8ms. Trace rerunMAX116.6ms with14 intervals>33ms. effects/performance[-cpu4]/summary.json and performance-cpu4/HITCHES.md.
 F4 cold7 ·1280 nativeDPR1/2 MAX49.9/33.3ms,1440 native50/50ms,2560 MAX50ms. CPU4 MAX216.7/233.4ms,5 hitches>50ms each. All page errors0. effects/performance/summary.json. CPU4 max100ms gate remains missed.
 F4 effects31/186frames/465pairs · minDistance0.542308,faceFailures0,peakInstances36,overdraw16,zero page errors. effects/uniqueness.json SHA340054172c2605781f42a36e6e0147b0e04df0fdc2eaa014467e220093486c5a. Layout3240 poses zero overlaps/crops/face occlusions/missing plates. B18.86–47.50% action heights. effects/layout/measurements.json.
@@ -100,7 +95,7 @@ A2 level-6 train/held-out · ch1 100/100%, ch2 98/100%, ch3 100/100%. Before 74/
 A1 focused tests 19/19. Worst whole campaign runtime 14.03ms in headless held-out sample. validation/a1-controller-tests.log and sim/auto-a1-heldout.json. 610 cases / 1,220 casts / 129,685 raw frames. Whole-session MAX 1616.5ms, >25=5490, >50=3326. First cast MAX 33.4ms, >25=58. Repeat MAX 16.8ms, >25=0. Cast >50=0. baseline/skills/integrity.json.
 Five profile reruns first/repeat MAX 16.8ms. Opening MAX 1450.0–1516.7ms, decoder 1243.7–1295.2ms sampled plus GC. baseline/skills/profiles/summary.json and README.md. F0 baseline ·stage57.1202%, faceMAX96.5996°,40/60 overlap frames. ColdDPR1/2 MAX366.7/333.3ms, CPU4 1383.3/1333.3ms. Full610 MAX1616.5ms. Exact raw data, sim seeds/hashes and five-gate counts in baseline/README.md, BASE-CHECK.md, baseline/skills and sim/auto-before*.json.
 ## PROBLEMS / PARKED
-F5 source-review findings pending checkpoint · HP/KO uses already-resolved rules before visual impact, number overlay absent in Battle.tsx, inter-action timer350ms exceeds250ms. Fix presentation snapshot/impact labels/pacing without rules edits.
+F5 pilot misses ·22/3240 poses overlap skill banner, correction authored. First encounters9.307–16.226s miss45–90s target. Pilot retained in flow/pilot-banner.
 F1 source passes final five-gate validation. Seven cold scenarios, full matrix and five profiles complete. Camera B action bounds 13.189–32.975% miss the 24–30% target. Optical DOF and independent pupil tracking deferred to F2/F3.
 A1/A2 validated and committed. A3 c8695d6c committed, natural-playback and final five-gate validation pass. Full cold/skill timing complete. Initial path selector included an aria-hidden icon and timed out. Fixed accessible name to Cafe and reran successfully. Offline builder and path tool generated current docs/cardrpg3 artifact. Skill harness now clicks Fight then Pause before fixture and asserts zero prior actions. Weak-target unit regression fixed before inspecting campaign results. A1 chapter-1 campaign rate drops 10pp training / 30pp held-out, pending I balance review. F0 original 33.4ms spike causes remain unresolved.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
