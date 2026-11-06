@@ -14,6 +14,7 @@ await run('tools/cardrpg-big2/validate.mjs',[`${phase}-e2e`],{BIG_VALIDATE_STEPS
 for(const f of [`${phase}-e2e.json`,`${phase}-e2e-e2e.log`])await cp(`${validation}/reports/cardrpg-big2/validation/${f}`,`reports/cardrpg-big2/validation/${f}`);
 await run('tools/cardrpg-big2/gallery-filmstrips.mjs',[],{BIG_NEW_OWNERS:owners,BIG_ENEMY_BATCH:'1',BIG_BEFORE_OUT:`${out}/before`});
 await run('tools/cardrpg-big2/motion-measure.mjs',[],{BIG_MOTION_OUT:`${out}/motion`,BIG_FILMSTRIP_OUT:`${out}/filmstrips`,BIG_PROVENANCE:`assets/provenance/cardrpg-big2-motion-${phase}.json`});
+if(phase==='boss')await run('tools/cardrpg-big2/boss-measure.mjs');
 await run('tools/cardrpg-big2/effect-measure.mjs',[],{BIG_EFFECT_OUT:`${out}/effects`});
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
 if (!existsSync('/tmp/cardrpg-big2-defer-matrices')) {

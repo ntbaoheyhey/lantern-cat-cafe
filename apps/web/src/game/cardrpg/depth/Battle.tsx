@@ -38,6 +38,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.statuses.map(status => status.id)])),
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera,
+    bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, a.phase])),
     targetIds: m.plan?.targetIds ?? [], legalIds: [],
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
@@ -129,6 +130,7 @@ export function BattleView({ m }: { m: DepthModel }) {
           <div><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp}</small></div>
           <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
           <small className="dp-intent" title={intent?.label}>{intent?.interrupted ? 'Interrupted' : intent?.label}</small>
+          {R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {enemy.phase} · {enemy.phase === 1 ? R.ENEMY_BY_ID[enemy.catalogId]!.phases[0] : 'Awakened'}</small>}
           <Statuses actor={enemy} />
         </div>;
       })}
