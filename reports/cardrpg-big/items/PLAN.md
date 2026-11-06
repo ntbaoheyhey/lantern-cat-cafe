@@ -21,3 +21,10 @@ The first four main-stat-only probes leave epic and legendary campaigns at100%. 
 Also evaluate main0.75 with affix0.25 before heldout seeds. It preserves a positive first enhancement for the starter weapon under the existing6% rounding formula. This candidate reduces the maximum-roll legendary bound while keeping common main stats closer to the starter experience.
 
 Full before/after receipts now measure all eight sets at both levels1 and6. Preserve the earlier level6-only receipt. The selected main0.75/affix0.25 values will be evaluated on the original50 training seeds and50 heldout seeds, plus the full45-day economy. UI and combat will read old saved rolls against the current affix bounds so the measured power ceiling also applies to previously created equipment.
+
+## Encounter length after lane split
+REFERENCE: ../memory/PROMPT.md ADDENDUM LANES 2026-11-06, ../flow/GATES.md, ../../../tools/cardrpg-big/encounter-probe.mjs
+
+Lane A owns the existing enemy-stat/count knobs. Lane B owns animation budgets and supplies its measurement tool. First use a headless probe through the actual DepthModel replay plans with inter-action80ms and explicit plan durations. Keep the estimate separate from browser wall-clock evidence. The first training pilot uses seeds2001–2010, level1, chapter1, with starter gear, bare and four complete rarity sets. Explore enemyHP factors1/2/3/4/5 with paired attack factors1/.5/.55/.4/.35. Values stay in memory, the tutorial cushion keeps its existing stats, and every override is recorded. Further candidates use training seeds only. Reuse initial gear heldout10001–10050 solely for comparison and reserve30001–30050 for the final encounter candidate.
+
+The acceptance target remains45–90seconds for typical chapter1 encounters atx1, bounded action/round budgets and sensible progression. Record route wins, first-encounter distribution, all encounter plans, and every stall. Rerun the complete gear-tier/set/cat/single-piece and45-day economy receipts after any production enemy-stat change. Actual first-open/click/frame evidence uses a frozen artifact and the shared timing lock.

@@ -5,11 +5,11 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
 Lane A · Phase I balance/caps. New lane split appended verbatim, rules30 lines. Train/heldout/economy complete. Gear cap9.6306% PASS, positive tier steps21/48 MISS, economyMAX2.17765x PASS. Focused120/120 pass. Candidate main0.75/affix0.25.
 Worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06
-Last pushed97c18853550000deb211912fdbaf66e9229b0c81. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M #340 head97c18853, baseF5 verified.
-Sync /Users/bao/taskbar-hero-cardrpg-sync branch ai/codex-cardrpg-big-sync. Sync pusha8df79c3 contains A-OUTBOX I CLAIM/G API REQUEST/S2 ownership REQUEST. B-OUTBOX absent at initial read. S2 /mnt prompt absent locally.
+Last pushed50373df5. Local equipment commit8990c6ae awaits five-gate validation/push. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M #340 head97c18853, baseF5 verified.
+Sync /Users/bao/taskbar-hero-cardrpg-sync branch ai/codex-cardrpg-big-sync. Sync pusha8df79c3 contains A-OUTBOX I CLAIM/G API REQUEST/S2 ownership REQUEST. B1 CLAIM read; B owns F6/art and will supply encounter measure tool. OWNERSHIP.md now created verbatim by B and read at89b21bd5. G API promisedB2.
 B owns F6/engine/performance, remaining9cats/enemies/bosses, art/audio and default-off auto-extras. No B-owned uncommitted edits in A. G WIP b5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 ## NEXT
-1. Finish I balance receipts and isolated equipment commit, repair saved-equipment shape bug separately with sims. Add shared timing-lock wrapper before any browser run.
+1. Equipment8990c6ae local. Save repair81d5b69e local,53/53tests and150routes/450encounters match. i-checkpoint93991 allfive PASS1692web/976rules/421E2E. Design12captures0errors, actual artifact2806debe. Locks released. Push checkpoint after gates.
 2. Verify caps/help/UI, tune encounter duration with existing rules knobs and before/after sims; I draft sibling off340. Then G sibling off340 and narrow collection preview.
 3. Merge A/B checkpoints into integration draft, allfive gates and extrasON/OFF gear/economy sims, then fresh-eyes/F7 merged report and ledger STATE. B owns all engine timing fixes.
 ## DONE
@@ -23,15 +23,18 @@ F4 ·7c312fd8/draft338. effects/GATES.md,PERFORMANCE.md,CHECKPOINT.md,720 cases+
 F5 ·7e054608/source,dbf8127d/evidence,draft339. flow/GATES.md,PERFORMANCE.md,720 cases+5 profiles.
 M ·8790c9a1/source,fad2dfc8/evidence,draft340. meta/GATES.md,PERFORMANCE.md,validation/m-final.json.33screens/384gear/20lifecycle,Cold7/720/profiles5 complete. Opening gate misses.
 ## PHASE GATES · I (copied requirements)
-NOT YET “ITEM-TIERS.md (max 2 pages, tables) ... every item type ... drop rates ... sink ... power band ... account-bound or collectible-eligible ... one legendary <= X%.” Source-audited draft exists.10% proposed bare starter limit misses nominal10.4575%, expanded +12/max-roll15.2228% MISS. Main/affix pilot factors recorded in items/PLAN.md.
-NOT YET “starter team without gear ... common, rare, epic, legendary ... chapters1–3 ... each tier step raises win rate ... no single set or cat dominates ...45-day ... <=3x ... fix outliers.” Baseline rare+100% saturation. Economy max2.1658x PASS. Expanded baseline/main-only pilots complete. Seven main/affix pilots queued, heldout untouched.
-PARTIAL “only deterministic, effort-gated, supply-capped Relic designs ... total ... season ... current local counter ... effort ... gameplay effect ... Design only - not minted ... Account-bound ... help panel ... Tests for every cap boundary.” UI2/2 and rules25/25 pass. Counter/help UI captures and full validation pending. design-caps.test.ts,CollectibleDesigns.tsx.
+NOT YET “ITEM-TIERS.md (max 2 pages, tables) ... every item type ... drop rates ... sink ... power band ... account-bound or collectible-eligible ... one legendary <= X%.” Source-audited draft exists. Single legendary9.6306% PASS10% after tuning, from15.2228%. items/BALANCE.md,summary.json.
+NOT YET “starter team without gear ... common, rare, epic, legendary ... chapters1–3 ... each tier step raises win rate ... no single set or cat dominates ...45-day ... <=3x ... fix outliers.” Before/after train+heldout complete.21/48tier steps increase MISS. EconomyMAX2.177645788x PASS3x. Encounter-length existing-knob tuning pending per lane addendum.
+PASS “only deterministic, effort-gated, supply-capped Relic designs ... total ... season ... current local counter ... effort ... gameplay effect ... Design only - not minted ... Account-bound ... help panel ... Tests for every cap boundary.” UI2/2 and rules25/25 pass. Counter/help12captures/3sizes PASS,0errors/0network. Full five gates PASS. items/screens/checks.json,validation/i-checkpoint.json.
 PASS “existing Fuji read-only Relic panel stays as is.” Source edits replace only local design section. Full protected-path diff remains F7 proof.
 ## PRIOR PHASE GATES
 F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–16.195s MISS45–90s, clutch/boss natural evidence pending. flow/GATES.md.
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-06 23:38 · I five gates1692web/976rules/421E2E and12design UI captures PASS. Visually reviewed1024help and1280last-cap screens. First enemy-stat pilot training2001–2010 stays in-memory. HP4/ATK0.4 starter planned median66.394s,max143.786s,route1/10; actual browser timing pending.
+2026-11-06 23:35 · Read immutable OWNERSHIP supplied by B at sync89b21bd5, satisfying section2 ownership read. B1 owns loading/profile, G API promisedB2. A requested encounter measuring tool, keeps enemyHP/ATK/count decisions. I validation under lock87021 has4gates pass, E2E and UI pending. Encounter probe authored, seed2001+ training and30001+final heldout declared in items/PLAN.md.
+2026-11-06 23:33 · Equipment8990c6ae committed locally with50files raw receipts, only equipment.ts runtime rules change. Save fix passes53 focused cases and150 paired routes with matching encounter hashes. Timing wrapper prepared for all forthcoming browser/E2E runs.
 2026-11-06 23:29 · Full I training/heldout/economy complete with equipment.ts as sole runtime rules delta. Legendary cap9.630606860%,21/48positive tier steps, economyMAX2.177645788x. Sync bootstrapa8df79c3 pushed, S2 exact ownership request pending.
 2026-11-06 23:28 · User lane split adds encounter-length existing-knob balance to I and assigns engine/F6/art/audio/default-off auto-extras to B. I/G sibling drafts base340, A integrates. Exact S2 prompt absent at /mnt and attachments, OWNERSHIP verbatim creation requested through A-OUTBOX. New brief50258bytes/SHA4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d.
 2026-11-06 23:18 · Applied equipment-only main0.75/affix0.25 and gearAffixRoll effective bound, shared by combat/UI. Baseline complete30tier/48set/660team/96piece/192bound rows. Focused test exposed pre-existing save validator requiring starter equipment keys. Existing-loadout compatibility fixture corrected, empty-loadout bug parked for separate commit after balance sims.
@@ -104,6 +107,7 @@ F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-pag
 2026-11-06 · Repeat A cold timing after detecting overlap with checkpoint git packing. Retain pilot raw data, use isolated rerun for comparison.
 2026-11-06 · F1 render profile is opt-in through SceneView.autoBattle. Shared formation remains available for existing callers. Three provisional camera widths 12.4/13.8/15.4 await measured comparison. card-staging.ts.
 ## MEASUREMENTS
+I checkpoint ·1692web/976rules/421E2E PASSfive gates,25cap+2UItests,12screens at3sizes/errors0/network0. Artifact2806debe8d9bf73d9064a26411ae295c15cb0a2e6fc4569e7d739845724e330b. items/CHECKPOINT.md.
 I adjusted ·single-pieceMAX15.2228→9.6306%,21/48positive tier steps,45day heavy/casualMAX2.177645788x. items/summary.json,BALANCE.md,sim/gear-after-{train,heldout}.json,economy-after.json.
 M timing ·720/265761frames,0errors,pageMAX250.1ms,>25=4989/>50=1367,casts33.4/16.8ms,cast>25=8/0/>50=0/0,207calls/93802triangles. Cold7CPU4MAX233.3ms. meta/PERFORMANCE.md.
 I baseline ·legendaryMAX10.45751634%,cat-context84.606–97.818%,24setcells100%. Economy45heavy/casual pulls1/fish1.7713/threads1.8820/stamps1/essence2.1658 PASS3x. sim/gear-before.json,economy-before.json.
@@ -117,7 +121,7 @@ F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/
 A ·A1 starter campaign train/heldout ch1 56/44%,ch2 88/90%,ch3 58/60%;before66/74%,48/46%,48/42%. A2 level6 100/100%,98/100%,100/100%;before74/74%,98/98%,76/90%.50seeds/cell. sim/auto-a*.json. A matrix610 pageMAX1616.6ms,casts33.4/16.8ms. auto/PERFORMANCE.md.
 F0 ·stage57.1202%,face96.5996deg,40/60overlapframes,610/129685frames,pageMAX1616.5ms,casts33.4/16.8ms. baseline/README.md,skills/integrity.json. Earlier complete measurement notes preserved at dbf8127d:reports/cardrpg-big/memory/STATE.md.
 ## PROBLEMS / PARKED
-I discovered save bug · exportSave rejects a valid empty/rearranged equipment map because generic shape requires starter keys. Repro in i-balance-focused.log. Fix separately after isolated balance commit, with valid unequip/transfer and malformed-loadout regression tests, paired auto sim hashes.
+I save bug · repaired locally,53/53 focused tests and150 paired routes match. items/SAVE.md,save-validation.json. Full validation/push pending.
 M initial role mapping selected2cats, derived6roles incorrectly selected6. Corrected guardian/offense/healer and typed cardRpg identity. Retain m-focused*.log and m.json. M source8790c9a1 committed/pushed. I CollectibleDesigns2/2 and caps25/25 pass. G disconnected11/11 passes. Full build/screens pending, G WIP parked atb5a068b3016f97e3b4aee8a0fa041b2e83e93493.
 M early-navigation gear pilot recorded1 isReady page error. Defer GPU disposal until warmup settles. Corrected384cases0errors, dedicated20-navigation regression passes atCPU1/4. meta/gear-pilot-disposal and validation/m-gear*.log.
 F5 opening and fight-duration gates miss, clutch/boss visual proof pending. F2 sharpness8/10 misses and F1 hero scale band miss remain reported. F7 must include every miss.
