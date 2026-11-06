@@ -53,6 +53,28 @@ it('restores the watched battle and paused presentation after an isolated previe
   expect(JSON.stringify(model.state)).toBe(before);
 });
 
+it('hides gallery controls while preserving the preview and account', () => {
+  const model = new DepthModel(true);
+  const before = JSON.stringify(model.state);
+  render(<Lab model={model} />);
+  fireEvent.click(screen.getByRole('button', { name: 'Feel lab' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Play preview' }));
+  const gallery = model.galleryBattle;
+  const plan = model.plan;
+  fireEvent.click(screen.getByRole('button', { name: 'Hide controls' }));
+  expect(screen.queryByRole('region', { name: 'Feel lab' })).toBeNull();
+  expect(model.galleryBattle).toBe(gallery);
+  expect(model.plan).toBe(plan);
+  expect(model.showBattle).toBe(true);
+  expect(model.paused).toBe(false);
+  expect(JSON.stringify(model.state)).toBe(before);
+  fireEvent.click(screen.getByRole('button', { name: 'Feel lab' }));
+  expect(screen.getByRole('region', { name: 'Feel lab' })).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Return to cafe' }));
+  expect(model.galleryBattle).toBeNull();
+  expect(JSON.stringify(model.state)).toBe(before);
+});
+
 it('keeps the performance overlay enabled after closing the drawer', () => {
   const model = new DepthModel(true);
   render(<Lab model={model} />);

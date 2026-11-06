@@ -6,7 +6,8 @@
 .dp-feel-lab .dp-lab-gallery .dp-lab-body > label input { box-sizing: border-box; width: 100%; margin: 0; }
 .dp-feel-lab .dp-lab-gallery .cr-actions { display: flex; align-items: center; margin: 12px 0; }
 .dp-feel-lab .dp-lab-gallery .cr-actions label { margin: 0; }
-.dp-lab-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.dp-lab-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.dp-lab-header-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .dp-lab-header h2 { margin: 0; }
 .dp-lab-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid #655469; }
 .dp-lab-tabs button { padding: 7px 10px; font-size: 12px; }

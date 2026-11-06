@@ -75,7 +75,7 @@ try {
     }, null, { timeout: 120000 });
     await page.getByLabel('Preview speed', { exact: false }).selectOption('1');
     await page.getByLabel('Preview camera', { exact: false }).selectOption('wide');
-    await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
+    await page.getByRole('button', { name: 'Hide controls', exact: true }).click();
     const duration = owner === 'clover-ultimate' ? 8 : 25;
     const started = Date.now();
     const played = [];

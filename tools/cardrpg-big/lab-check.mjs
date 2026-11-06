@@ -139,7 +139,12 @@ try {
     await drawer.getByLabel('Effect only', { exact: true }).uncheck();
     await capture('gallery-stage');
     await drawer.getByRole('button', { name: 'Play preview', exact: true }).click();
+    await drawer.getByRole('button', { name: 'Hide controls', exact: true }).click();
+    assert.equal(await drawer.count(), 0);
+    assert.equal(await page.evaluate(() => !!window.__depthReview.galleryBattle), true);
+    assert.equal(await page.evaluate(() => JSON.stringify(window.__depthReview.state)), accountBefore);
     await page.waitForFunction(() => window.__depthReview.plan === null, null, { timeout: 20000 });
+    await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     await drawer.getByRole('button', { name: 'Return to cafe', exact: true }).click();
     assert.equal(await page.evaluate(() => JSON.stringify(window.__depthReview.state)), accountBefore);
     assert.equal(await page.evaluate(() => window.__depthReview.showBattle), false);
@@ -153,7 +158,7 @@ try {
     assert.equal(await page.getByRole('complementary', { name: 'Live frame performance' }).count(), 0);
     assert.deepEqual(errors, []);
     assert.deepEqual(requests, []);
-    rows.push({ width, height, captures, preview, opening, closing, errors, requests, accountRestored: true });
+    rows.push({ width, height, captures, preview, opening, closing, errors, requests, accountRestored: true, controlsHiddenDuringPlayback: true });
     await writeFile(`${output}/checks.json`, JSON.stringify({ artifact, sha256, bytes: artifactBytes.length,
       method: 'Fresh offline pages and real lab/gallery/checklist/performance clicks. Screenshots verify layout. Overlay counts include screenshot overhead and are diagnostic only. Controlled performance uses the separate raw-frame harness.', rows }, null, 2));
     console.log(JSON.stringify({ width, captures: captures.length, errors: errors.length, requests: requests.length }));
