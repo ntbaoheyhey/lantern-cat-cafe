@@ -13,7 +13,7 @@ A integration /Users/bao/taskbar-hero-cardrpg-big-integration;codex/cardrpg-big-
 Reveal /Users/bao/taskbar-hero-cardrpg-big-reveal;codex/cardrpg-big-reveal-2026-11-07;bbba4c0d19focusedPASS. Artifact980791a0a52ce56bd6c76ed51e346514804b0797faa7cc2c6eecd64ecd65468c8cases/24capturesPASS. Queue75084 ended onlab2pxoverflow, fivegates skipped. Source merged472d5110;rawcopiedintegration/reveal/viewport-v2 anddemo/readability/pilot-overflow. Old1d3b5a93 diagnostic retained.
 ## NEXT
 1. Finish integration88110/session84273 lab/fivegates/reveal/invitations on pinned1bd16da4. Logs /tmp/cardrpg-big-integration-readability-{functional,lab,validation,reveal,invitations}.log. Source644a0fe0 includes scope-owned readability/range fixes, B4 and reveal.
-2. Finish Gfull720 via coordinator71979, nowresumed144/720 and6500ms lockgaps. Retain284976a9 artifact. Finish extras82891 OFF/ON sims and ITEM-TIERS comparison. Check Bfinalwrapper only at phase boundaries,then integrate its published checkpoint.
+2. Finish Gfull720,144/720. Helper/tmp/cardrpg-big-readability-priority.py pauses only ownwaiter87493/coordinator71979 until88110exits+8s,thenresumes6500ms lockgaps. Retain284976a9 artifact. Finish extras82891 OFF/ON sims and ITEM-TIERS comparison. Check Bfinalwrapper only at phase boundaries,then integrate its published checkpoint.
 3. Run final integrated fivegates/fullart browser checks, announce CHECKPOINT forBremeasurement, capture12hero/boss/ultimate videos, sequentialfresh-eyes4×5 review, merged report and ledger mirror. Current23.9255MB HTML is close to24MB predeclaredgate.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
