@@ -487,3 +487,9 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head570283a2. Existing timing
 B6 CLAIM tools/cardrpg-big2/video-contact-sheets.py and reports/cardrpg-big2/review/video-review for sequential visual review of the recorded x1 clips. This is offline frame extraction, run nice10; it makes no browser timing claim.
 Select the midpoint of each first occurrence of a gallery action using its captured timestamps; retain source video SHA and exact extraction times. Natural boss excerpts get a separate evenly spaced sheet and remain identified as actual fights.
 No runtime, shared-file or rules edits. A3318 remains active; B sound3248/E3retry5806 and paused boss5816 keep the existing lock/dependency order.
+
+## 2026-11-06T22:15:20.678Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; headf8282bb3. E3retry5806 now holds the lock.
+B6 CLAIM tools/cardrpg-big2/studio-check.mjs and own review reports for diagnosis of the first current-artifact studio failure: slider click left animationAt=0. Preserve initial log/receipt; instrument exact unit/action, slider value and bounds before deciding whether source or harness needs correction.
+Five opaque WebP textures now pass Chromium RGBA equivalence with zero differing channels; allthree gallery sizes fit,17pxcheckboxes/contrast8.50. At1024 the stage is only189.4px high; this remains a visual limitation despite viewport-fit pass.
+The failed studio assertion prevented actual-source audio cases from running. A separate continuation will retry instrumented studio and run the skipped six audio cases under the shared lock; no pack/fit rerun, no duplicate active capture or rules/shared edit.
