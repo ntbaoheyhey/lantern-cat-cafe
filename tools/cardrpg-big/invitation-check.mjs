@@ -32,6 +32,7 @@ try {
     });
     const mark = label => page.evaluate(label => window.__invitePerf.marks.push({ label, at: performance.now() }), label);
     const capture = async name => {
+      await page.locator('.cr-content img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
       const layout = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - innerWidth,
         rightOverflow: [...document.querySelectorAll('.cr-content button, .cr-content table')]

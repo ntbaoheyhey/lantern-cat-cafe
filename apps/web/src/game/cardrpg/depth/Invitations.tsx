@@ -43,7 +43,9 @@ export function Invitations({ m }: { m: DepthModel }) {
   useLayoutEffect(() => {
     const destination = revealing ? stage.current : summary.current;
     if (!results.length || !destination) return;
-    destination.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + 12}px`;
+    const content = destination.closest('.cr-content');
+    const padding = content ? Number.parseFloat(getComputedStyle(content).paddingTop) || 0 : 0;
+    destination.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + padding + 12}px`;
     destination.scrollIntoView?.({ block: 'start', behavior: 'instant' });
   }, [revealing, results.length]);
 

@@ -61,6 +61,7 @@ try {
         };
       });
       const capture = async name => {
+        await page.locator('.cr-content img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
         const layout = await page.evaluate(() => {
           const fairness = document.querySelector('.dp-invitation-fairness');
           const bounds = fairness.getBoundingClientRect();
@@ -69,7 +70,8 @@ try {
             canvas: document.querySelector('.dp-invitation-preview canvas')?.getBoundingClientRect().toJSON(),
             result: document.querySelector('.dp-flip-result')?.getBoundingClientRect().toJSON(),
             card: document.querySelector('.dp-flip-result > .dp-cat')?.getBoundingClientRect().toJSON(),
-            next: document.querySelector('.dp-flip-result > button')?.getBoundingClientRect().toJSON() };
+            next: document.querySelector('.dp-flip-result > button:not(.dp-cat)')?.getBoundingClientRect().toJSON(),
+            nextText: document.querySelector('.dp-flip-result > button:not(.dp-cat)')?.textContent };
         });
         const path = `${output}/${width}-cpu${cpu}-${rarity}-${name}.png`;
         await page.screenshot({ path });
@@ -87,6 +89,7 @@ try {
           assert(layout.result && layout.result.top >= layout.fairness.bottom && layout.result.bottom <= height,
             'The entire reveal, including its next action, fits in the viewport');
           assert(layout.next && layout.next.bottom <= height, 'The next invitation action stays visible');
+          assert.equal(layout.nextText, 'View results');
         }
       };
       await capture('before');
