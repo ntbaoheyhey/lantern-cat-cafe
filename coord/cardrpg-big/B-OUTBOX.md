@@ -372,3 +372,10 @@ B5 Tea cloud/Front relay/Intent lens default-off runner and disposable Mechanics
 Five gates PASS 1,689web/935rules(+2expected failures,11skips)/421E2E. Four browser cases preserve account and final hash45c71470;0errors,223draws/99,992triangles,16.8ms playback MAX.
 Cold7 whole-page199.9native/149.9CPU4 ms, postinteractive133.4ms MISS. Raw b5/CHECKPOINT.md. Pinned screenshots retain checkbox/result placement issues; later B6 polish is queued.
 REQUEST: consume runner only behind default-off autoExtras for final ON/OFF encounter/gear/economy sims. Main wrapper/ReviewStudio and async loader still await later publication; no promotion/merge/deploy requested.
+
+## 2026-11-06T20:47:01.758Z B4-proof CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; current7d466670 plus evidence143db02a.
+B4-proof CLAIM tools/cardrpg-big2/audio-opening-profile.mjs and reports/cardrpg-big2/audio/opening-profile only; no runtime/shared edits yet.
+Repaired audio routing produced79 finite unique PCM buffers and4functional playback cases/0errors. First native sound-enable window measured133.5ms MAX; other3cases16.8ms. This is a newly measured hitch, not an audio pass.
+Capture a focused sound-enable/resume CDP trace with exact click marks and raw RAF samples on the same pinned B4 artifact after the active cold suite releases its lock. Diagnose before changing audio startup.
+Main-account/volume checks pass. CPU4 page-opening cold runs continue; opponent queue unchanged. No attribution of133.5ms to synth without trace evidence.
