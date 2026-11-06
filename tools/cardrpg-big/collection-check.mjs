@@ -59,7 +59,7 @@ try {
       await page.locator('.dp-preview-note').waitFor();
       await capture('skill');
       await page.getByRole('combobox', { name: 'Role', exact: true }).selectOption('healer');
-      const roles = await page.locator('.cr-card-grid .cr-card-caption small').allTextContents();
+      const roles = await page.locator('.cr-card-grid .cr-card-caption > small').allTextContents();
       assert(roles.length > 0 && roles.every(role => role.startsWith('healer')));
       rows.push({ sample, artifact, sha256, width, height, errors, requests, captures, healerCards: roles.length });
       await writeFile(`${output}/checks.json`, JSON.stringify({ method: 'Fresh offline pages, real collection/card/rotation/skill/filter controls. Screenshots are layout evidence. Browser timing is measured separately.', rows }, null, 2));

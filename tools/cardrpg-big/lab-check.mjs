@@ -60,7 +60,7 @@ try {
     await page.waitForFunction(() => document.querySelector('.dp-frame-overlay output')?.textContent.includes('Max'));
     await capture('performance');
     await drawer.getByRole('button', { name: 'Skill gallery', exact: true }).click();
-    await drawer.getByLabel('Preview action', { exact: true }).selectOption('clover-4');
+    await drawer.getByLabel('Preview action', { exact: false }).selectOption('clover-4');
     await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
     await drawer.getByLabel('Preview camera').selectOption('far');
     await drawer.getByLabel('Preview speed').selectOption('0.25');
