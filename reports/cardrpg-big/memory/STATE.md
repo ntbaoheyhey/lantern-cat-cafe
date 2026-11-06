@@ -6,7 +6,7 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 Phase I balance/caps. M Cold7/720/profiles complete,0errors. I/G focused13/13 and cap25/25 pass. Expanded baseline/four pilots complete. M prepush validation31264 passes allfive gates. Seven main/affix training pilots68873/37830 running.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed8790c9a139f71658fe3e9931732adb8bc49b61c8. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M draft340 verified on339.
+M evidence commitfad2dfc8100a8cb453b605843b20e5a79cf5c22a, push next. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M. M draft340 verified on339.
 Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf. M validation32820,UI/lifecycle88143,gear13470 complete. Frozen /tmp/cardrpg-big-m-index.html SHA9ed1953f02adcede5af9ee3483d29a8c42f7d95a9804fbccadfbe43c29f87ade. I62542 baseline complete. M56141 complete. I expanded baseline/pilots51873 complete, no active timing browser.
 ## NEXT
 1. Publish M complete timing and update draft340. G is parked locally atb5a068b3.
@@ -21,7 +21,7 @@ F2 ·d1425018/source,52e9e94a/evidence,draft336. sharpness/GATES.md,PERFORMANCE.
 F3 ·a6c093de/draft337. motion/GATES.md,PERFORMANCE.md,610 cases+5 profiles.
 F4 ·7c312fd8/draft338. effects/GATES.md,PERFORMANCE.md,CHECKPOINT.md,720 cases+5 profiles,docs/cardrpg3/slice.html.
 F5 ·7e054608/source,dbf8127d/evidence,draft339. flow/GATES.md,PERFORMANCE.md,720 cases+5 profiles.
-M ·8790c9a1/draft340. meta/GATES.md,PERFORMANCE.md,validation/m-final.json.33screens/384gear/20lifecycle,Cold7/720/profiles5 complete. Opening gate misses.
+M ·8790c9a1/source,fad2dfc8/evidence,draft340. meta/GATES.md,PERFORMANCE.md,validation/m-final.json.33screens/384gear/20lifecycle,Cold7/720/profiles5 complete. Opening gate misses.
 ## PHASE GATES · I (copied requirements)
 NOT YET “ITEM-TIERS.md (max 2 pages, tables) ... every item type ... drop rates ... sink ... power band ... account-bound or collectible-eligible ... one legendary <= X%.” Source-audited draft exists.10% proposed bare starter limit misses nominal10.4575%, expanded +12/max-roll15.2228% MISS. Main/affix pilot factors recorded in items/PLAN.md.
 NOT YET “starter team without gear ... common, rare, epic, legendary ... chapters1–3 ... each tier step raises win rate ... no single set or cat dominates ...45-day ... <=3x ... fix outliers.” Baseline rare+100% saturation. Economy max2.1658x PASS. Expanded baseline/main-only pilots complete. Seven main/affix pilots queued, heldout untouched.
