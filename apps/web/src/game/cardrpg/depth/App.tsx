@@ -5,6 +5,8 @@ import { Hub, Team, Collection, Invitations, Inventory, Codex } from './Pages';
 import { RunMap } from './RunMap';
 import { Prepare, BattleResult } from './Encounter';
 import { Relics, SaveSettings, Evidence } from './Utility';
+import { FeelLab } from './FeelLab';
+import { FrameOverlay } from './FrameOverlay';
 import '../cardrpg.css';
 import './depth.css';
 import './meta.css';
@@ -40,6 +42,8 @@ export default function DepthApp({ offline = false }: { offline?: boolean }) {
         {m.screen === 'codex' && <Codex />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}
       </div></main></div></div>
     {m.sceneStarted && <BattleView m={m} />}
+    {offline && <FeelLab m={m} home />}
+    {offline && m.labPerformance && <FrameOverlay m={m} />}
   </div>;
 }
 declare global { interface Window { __depthReview?: DepthModel } }

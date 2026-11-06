@@ -11,7 +11,7 @@ const labels: Record<string, string> = { 'hero-face': 'Mochi face', enemy: 'Enem
 
 export function SharpnessEvidence() {
   if (!rows.length) return null;
-  return <section className="cr-panel dp-sharpness"><h2>Image clarity</h2>
+  return <section className="cr-panel dp-sharpness"><h2>Image clarity · F2 checkpoint</h2>
     <p>Native-pixel crops at each display density. Laplacian variance measures edge contrast and also responds to composition and lighting.</p>
     {[1, 2].map(dpr => <details key={dpr} open={dpr === 1}><summary>DPR {dpr}</summary>
       <div className="dp-crop-grid">{rows.filter(row => row.phase === 'current' && row.crop.startsWith(`dpr${dpr}-`)).map(row => {

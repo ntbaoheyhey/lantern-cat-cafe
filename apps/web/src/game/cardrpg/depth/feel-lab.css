@@ -1,0 +1,21 @@
+.dp-feel-home { position: fixed; right: 16px; bottom: 18px; z-index: 30; }
+.dp-feel-lab .dp-lab-drawer { position: fixed; top: 78px; bottom: 76px; right: 16px; width: min(650px, calc(100vw - 32px)); box-sizing: border-box; display: flex; flex-direction: column; padding: 16px; overflow: hidden; }
+.dp-lab-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.dp-lab-header h2 { margin: 0; }
+.dp-lab-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid #655469; }
+.dp-lab-tabs button { padding: 7px 10px; font-size: 12px; }
+.dp-lab-tabs button[aria-pressed=true] { background: #f4cd93; color: #292332; }
+.dp-lab-body { overflow: auto; min-height: 0; padding-top: 14px; }
+.dp-lab-body p, .dp-lab-body figcaption { font-size: 12px; line-height: 1.6; }
+.dp-lab-body .cr-panel { padding: 12px; margin: 12px 0; }
+.dp-lab-body .dp-crop-grid { grid-template-columns: 1fr; }
+.dp-brief-list { list-style: none; margin: 0; padding: 0; }
+.dp-brief-list li { padding: 12px 0; border-bottom: 1px solid #514358; }
+.dp-brief-list h3 { margin: 0; font-size: 15px; }
+.dp-lab-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dp-lab-comparison figure { margin: 0; }
+.dp-lab-comparison img, .dp-lab-layout { width: 100%; height: auto; border-radius: 6px; }
+.dp-frame-overlay { position: fixed; z-index: 45; left: 16px; bottom: 16px; box-sizing: border-box; width: 280px; padding: 10px 14px; background: #171824ee; border: 1px solid #7c807c; border-radius: 9px; color: #f5f1e9; }
+.dp-frame-overlay output { display: block; white-space: pre-line; font: 10px/1.6 monospace; }
+.dp-frame-overlay button { position: absolute; top: 4px; right: 5px; padding: 0 5px; }
+.dp-frame-overlay canvas { display: block; width: 240px; height: 54px; margin-top: 8px; }
