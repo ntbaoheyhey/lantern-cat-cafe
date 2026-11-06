@@ -76,3 +76,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
 
 - 20:43Z: B3 draft349 base347 and B5 draft350 base349 remotely verified; source/runtime audits unchanged. B5 1,689web/935rules/421E2E,alloff fullstate parity retained. Ledger bbac1f91 includes current ownreport+STATE. A received both checkpoints and finalsimulation runner request.
+
+- 20:45Z: lab-polish pinned5b3b35756fef fourcasesPASS;17px checkbox/gap10/offset0 and resultwithinviewport including1024x600. Samefinalhash45c71470/accountunchanged;16.8ms sampleMAX,225draws/101858triangles. Viewed1280prep/1024result. Audio proof80488 nowownslock. Audio tool cannot expose listening input; do not claim listening review from PCM uniqueness.

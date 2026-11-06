@@ -50,3 +50,8 @@ REFERENCE: ../stage/life/{before,after}-1280-home.png; ../stage/life/after-chapt
 The stage is visibly populated with shelves, plants and tabletop props, but remains one broad flat tabletop with similar composition across chapters. Colours and ambient leaves distinguish chapters more than architecture. Contact shadows are now above the rug (0.044 world height versus rug top0.0425); the still frame remains subtle and the bright selection rings dominate. No high-quality contact-shadow claim is made from the geometry assertion alone.
 
 Native face crops are readable at128px DPR2, but dark rear companions remain much smaller in the full stage. The 800×960 card render has enough pixels for362×290 DPR2 display; the card crop itself is short and compositionally different from F0. The rendering fixes do not deliver the requested eight remaining+40% metric gains. B and C preserve>8% stage margin; A misses it, and none satisfy the24–30% full-body band across poses.
+
+## Lab polish browser result
+REFERENCE: lab-polish/checks.json; lab-polish/1280-720-cpu1-prep.png; lab-polish/1024-600-cpu1-result.png
+
+Four cases now verify the master checkbox at17×17px,10px text gap and zero vertical center offset. The result stays entirely visible at all three desktop sizes, including1024×600. The main account remains unchanged; natural playback and Skip end at the same hash45c71470. All extras start off. Sample playback MAX16.8ms, peak225draws/101,858triangles; no runtime errors. Viewed the1280prep and1024result: descriptions are readable and the outcome appears above preparation. Compact text team selectors remain an acknowledged lab limitation. This is the pinned polish artifact, not the later evidence-complete delivery bytes.
