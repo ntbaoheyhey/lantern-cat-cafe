@@ -12,7 +12,7 @@ export const CARD_EXPRESSIONS = {
 
 export function cardExpression(clip: string, casting = false): CardExpression {
   if (clip === 'KO' || clip === 'down') return 'KO';
-  if (clip === 'hit' || clip === 'heavy-hit' || clip === 'stagger') return 'hurt';
+  if (/^(heavy-)?hit(?:-|$)/.test(clip) || clip === 'stagger') return 'hurt';
   if (clip === 'victory' || clip === 'heal-receive') return 'happy';
   if (casting) return 'casting';
   if (clip === 'cast' || clip === 'ultimate' || clip === 'special') return 'casting';

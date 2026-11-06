@@ -1,0 +1,6747 @@
+{
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-big/docs/cardrpg3/index.html",
+  "sha256": "b5634287435536188e60063575bf0e38b3c2f84d77d1b70b553aec9a630af56f",
+  "measuredAt": "2026-11-06T09:07:21.917Z",
+  "joints": [
+    "motion",
+    "head",
+    "armL",
+    "armR",
+    "footL",
+    "footR",
+    "tail"
+  ],
+  "thresholds": {
+    "angleRms": 0.1,
+    "positionRms": 0.012
+  },
+  "errors": [],
+  "rows": [
+    {
+      "action": {
+        "id": "mochi-1",
+        "owner": "mochi",
+        "name": "Mochi · Door knock",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.7156188110510455,
+      "clip": "mochi-1",
+      "duration": 1.08,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ],
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "mochi-1",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 373.17697635102803,
+            "y": 108.24294988802407,
+            "width": 200.84644335409342,
+            "height": 223.10160322805982
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.06612171428571428,
+          "casterBounds": {
+            "x": 374.90057774155116,
+            "y": 109.7207241124446,
+            "width": 201.2807895598795,
+            "height": 221.01918318463999
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.06612171428571428
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.13224342857142857,
+          "casterBounds": {
+            "x": 380.50194875280283,
+            "y": 111.95432047235911,
+            "width": 199.65947376851966,
+            "height": 222.42093344408082
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.13224342857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.19836514285714288,
+          "casterBounds": {
+            "x": 384.87068271060036,
+            "y": 114.21071845509805,
+            "width": 199.8296802686309,
+            "height": 222.42164208695152
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.19836514285714288
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.32025909980430517,
+          "casterBounds": {
+            "x": 407.32522028035646,
+            "y": 111.41592304240734,
+            "width": 198.9639988914795,
+            "height": 215.50875913494585
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.32025909980430517
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.5394269387755102,
+          "casterBounds": {
+            "x": 553.5586342066002,
+            "y": 114.29246336909907,
+            "width": 196.8686873334467,
+            "height": 218.25005400952452
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.5394269387755102
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "mochi-1",
+          "clipTime": 0.860237964774951,
+          "casterBounds": {
+            "x": 382.61015944233606,
+            "y": 109.66590345722,
+            "width": 199.72149302309327,
+            "height": 225.25282281428605
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.860237964774951
+        },
+        {
+          "progress": 1,
+          "sourceClip": "mochi-1",
+          "clipTime": 1.07892,
+          "casterBounds": {
+            "x": 373.07420861776427,
+            "y": 109.2650791052593,
+            "width": 199.88441979011304,
+            "height": 221.94103198790015
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.07892
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/mochi-1.webp",
+      "filmstripSha256": "4b73ee6de1dc085e7f4440d1aba834f817e9635eea3b07f33f50a2f94c4bb562"
+    },
+    {
+      "action": {
+        "id": "mochi-2",
+        "owner": "mochi",
+        "name": "Mochi · Warm welcome",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.7156188110510455,
+      "clip": "mochi-2",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ],
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "mochi-2",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 375.86379917012266,
+            "y": 125.15989859780468,
+            "width": 168.6765524515704,
+            "height": 189.2193601975415
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "mochi-2",
+          "clipTime": 0.08448885714285712,
+          "casterBounds": {
+            "x": 373.55303942505645,
+            "y": 124.53296668836782,
+            "width": 169.11038685454423,
+            "height": 193.07733739584904
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.08448885714285712
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "mochi-2",
+          "clipTime": 0.16897771428571423,
+          "casterBounds": {
+            "x": 368.8052850564335,
+            "y": 124.76337172469016,
+            "width": 170.24454162718712,
+            "height": 199.08562453676143
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.245011812706537e-9,
+          "capturedTime": 0.16897771428571423
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "mochi-2",
+          "clipTime": 0.25346657142857143,
+          "casterBounds": {
+            "x": 364.44957232832564,
+            "y": 126.12897319463501,
+            "width": 172.0785675755941,
+            "height": 202.37497209444513
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 6.863226431619296e-9,
+          "capturedTime": 0.25346657142857143
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "mochi-2",
+          "clipTime": 0.40921996086105655,
+          "casterBounds": {
+            "x": 371.4434909583081,
+            "y": 126.66944198306808,
+            "width": 168.92970689780964,
+            "height": 198.98891181170873
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.0968732810923143e-8,
+          "capturedTime": 0.40921996086105655
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "mochi-2",
+          "clipTime": 0.7440171428571426,
+          "casterBounds": {
+            "x": 381.3309532165749,
+            "y": 124.13650856574942,
+            "width": 177.37423890813852,
+            "height": 174.75714621037713
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.7440171428571426
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "mochi-2",
+          "clipTime": 1.0991929549902149,
+          "casterBounds": {
+            "x": 370.83309634848194,
+            "y": 124.79671306997221,
+            "width": 170.12139673777654,
+            "height": 193.740897726291
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 1.7475405122979737e-8,
+          "capturedTime": 1.0991929549902149
+        },
+        {
+          "progress": 1,
+          "sourceClip": "mochi-2",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 375.7356754396044,
+            "y": 126.0691128543571,
+            "width": 167.90882883941117,
+            "height": 188.31707424536563
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/mochi-2.webp",
+      "filmstripSha256": "b2b7c48e27c0065c962941da6860e3f22db62ac68bbfb880f81c2d888880103f"
+    },
+    {
+      "action": {
+        "id": "mochi-3",
+        "owner": "mochi",
+        "name": "Mochi · Apron crossing",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.7156188110510455,
+      "clip": "mochi-3",
+      "duration": 1.46,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ],
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_footL.quaternion",
+        "guardian_footR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "mochi-3",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 375.86379917012266,
+            "y": 125.15989859780468,
+            "width": 168.6765524515704,
+            "height": 189.2193601975415
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "mochi-3",
+          "clipTime": 0.08938676190476189,
+          "casterBounds": {
+            "x": 374.24550177517096,
+            "y": 124.65693531166545,
+            "width": 172.19478849127904,
+            "height": 195.93895535905335
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.08938676190476189
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "mochi-3",
+          "clipTime": 0.17877352380952377,
+          "casterBounds": {
+            "x": 360.5694961703084,
+            "y": 123.15551207460638,
+            "width": 188.92798633934376,
+            "height": 207.67084579268996
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 2.2077704775469442e-8,
+          "capturedTime": 0.17877352380952377
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "mochi-3",
+          "clipTime": 0.2681602857142857,
+          "casterBounds": {
+            "x": 354.4022931357141,
+            "y": 122.34906556680846,
+            "width": 196.33748208601855,
+            "height": 212.58855117504976
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.110721234049322e-9,
+          "capturedTime": 0.2681602857142857
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "mochi-3",
+          "clipTime": 0.43294285714285696,
+          "casterBounds": {
+            "x": 386.4660093218438,
+            "y": 121.31747163680785,
+            "width": 165.4438956673348,
+            "height": 187.21951144395052
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.0693358198921032e-8,
+          "capturedTime": 0.43294285714285696
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "mochi-3",
+          "clipTime": 0.7871485714285712,
+          "casterBounds": {
+            "x": 390.4439655242725,
+            "y": 136.91102722091713,
+            "width": 155.83674540748535,
+            "height": 182.42578948122596
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.7871485714285712
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "mochi-3",
+          "clipTime": 1.1629142857142853,
+          "casterBounds": {
+            "x": 369.99311794935807,
+            "y": 121.90592514313056,
+            "width": 171.8049060657561,
+            "height": 189.52789374061973
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1629142857142853
+        },
+        {
+          "progress": 1,
+          "sourceClip": "mochi-3",
+          "clipTime": 1.45854,
+          "casterBounds": {
+            "x": 375.73477703134654,
+            "y": 126.065138084343,
+            "width": 167.91239074308976,
+            "height": 188.30909074524192
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.45854
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/mochi-3.webp",
+      "filmstripSha256": "3dcf77255b3b33ba148ea61aa8b18f79a86bcc7bdb02763e1098e77c91cd912f"
+    },
+    {
+      "action": {
+        "id": "mochi-4",
+        "owner": "mochi",
+        "name": "Mochi · Last light shelter",
+        "ultimate": true,
+        "enemy": false
+      },
+      "height": 1.7156188110510455,
+      "clip": "mochi-4",
+      "duration": 1.72,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ],
+      "tracks": [
+        "guardian_motion.quaternion",
+        "guardian_head.quaternion",
+        "guardian_armL.quaternion",
+        "guardian_armR.quaternion",
+        "guardian_tail.quaternion",
+        "guardian_tailMid.quaternion",
+        "guardian_tailTip.quaternion",
+        "guardian_earL.quaternion",
+        "guardian_earR.quaternion",
+        "guardian_ladle.quaternion",
+        "guardian_motion.position",
+        "guardian_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "mochi-4",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 358.62102142526714,
+            "y": 108.10501511561277,
+            "width": 192.01480744892217,
+            "height": 222.54694540549565
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "mochi-4",
+          "clipTime": 0.1280990476190476,
+          "casterBounds": {
+            "x": 331.8198851167883,
+            "y": 104.76083962611287,
+            "width": 223.43479905156494,
+            "height": 236.62171603875257
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 5.769396071997335e-11,
+          "capturedTime": 0.1280990476190476
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "mochi-4",
+          "clipTime": 0.2561980952380952,
+          "casterBounds": {
+            "x": 322.60015777364566,
+            "y": 115.67923200072677,
+            "width": 233.44164117186364,
+            "height": 229.29910050068924
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.2650547276393809e-11,
+          "capturedTime": 0.2561980952380952
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "mochi-4",
+          "clipTime": 0.38429714285714284,
+          "casterBounds": {
+            "x": 322.4740147186792,
+            "y": 114.9478209624287,
+            "width": 233.56325683037312,
+            "height": 229.40205315018636
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.7804979712821023e-11,
+          "capturedTime": 0.38429714285714284
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "mochi-4",
+          "clipTime": 0.7764571428571428,
+          "casterBounds": {
+            "x": 345.44867904307637,
+            "y": 100.30949778334826,
+            "width": 207.25943463082479,
+            "height": 213.18632035807974
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 1.5474175052432315e-8,
+          "capturedTime": 0.7764571428571428
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "mochi-4",
+          "clipTime": 1.120808163265306,
+          "casterBounds": {
+            "x": 330.2574527277467,
+            "y": 110.53511244434821,
+            "width": 216.48294030958562,
+            "height": 218.93910748407382
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.4676483906537214e-11,
+          "capturedTime": 1.120808163265306
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "mochi-4",
+          "clipTime": 1.419245714285714,
+          "casterBounds": {
+            "x": 328.49741601657945,
+            "y": 114.74315001974837,
+            "width": 219.9186551758105,
+            "height": 221.31600609308242
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.2650547276393809e-11,
+          "capturedTime": 1.419245714285714
+        },
+        {
+          "progress": 1,
+          "sourceClip": "mochi-4",
+          "clipTime": 1.71828,
+          "casterBounds": {
+            "x": 357.74565706097457,
+            "y": 116.49429889420556,
+            "width": 184.08012413373848,
+            "height": 212.85439121315466
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.71828
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/mochi-4.webp",
+      "filmstripSha256": "924b6fe632fbafef7fd27d272609e614b0cc9bf4ff58c9289962e7023a1661e0"
+    },
+    {
+      "action": {
+        "id": "soot-1",
+        "owner": "soot",
+        "name": "Soot · Cocoa spark",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.8861042936570127,
+      "clip": "soot-1",
+      "duration": 1.02,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ],
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_wand.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "soot-1",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 261.42311424824663,
+            "y": 144.766823209367,
+            "width": 150.87627308780162,
+            "height": 171.82285957461212
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "soot-1",
+          "clipTime": 0.062448285714285706,
+          "casterBounds": {
+            "x": 262.4227740734369,
+            "y": 144.25307743734803,
+            "width": 151.7558546119012,
+            "height": 168.30857280581043
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.062448285714285706
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "soot-1",
+          "clipTime": 0.12489657142857141,
+          "casterBounds": {
+            "x": 264.81812961841655,
+            "y": 143.75804483428945,
+            "width": 150.37491938179727,
+            "height": 167.73338321822362
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.12489657142857141
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "soot-1",
+          "clipTime": 0.18734485714285715,
+          "casterBounds": {
+            "x": 267.02110316094127,
+            "y": 143.80541378619859,
+            "width": 148.9576796607144,
+            "height": 166.98425998329867
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.18734485714285715
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "soot-1",
+          "clipTime": 0.30246692759295485,
+          "casterBounds": {
+            "x": 263.4346696010638,
+            "y": 144.818211092537,
+            "width": 149.89958854026872,
+            "height": 167.01305922536852
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.30246692759295485
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "soot-1",
+          "clipTime": 0.509458775510204,
+          "casterBounds": {
+            "x": 251.4030860061527,
+            "y": 142.6469977214582,
+            "width": 158.45428942225539,
+            "height": 163.3241434603068
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.235141485928409e-9,
+          "capturedTime": 0.509458775510204
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "soot-1",
+          "clipTime": 0.8124469667318981,
+          "casterBounds": {
+            "x": 263.9600003169463,
+            "y": 147.29299092977857,
+            "width": 150.44044870883374,
+            "height": 165.41603145984004
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.8124469667318981
+        },
+        {
+          "progress": 1,
+          "sourceClip": "soot-1",
+          "clipTime": 1.01898,
+          "casterBounds": {
+            "x": 260.65061524654584,
+            "y": 145.7966324129199,
+            "width": 150.3049137180534,
+            "height": 170.95539389583655
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.01898
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/soot-1.webp",
+      "filmstripSha256": "afcae4363520f2c037652844a83cab0a2846c9f0be2a788547bd85821940537d"
+    },
+    {
+      "action": {
+        "id": "soot-2",
+        "owner": "soot",
+        "name": "Soot · Black cup",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.8861042936570127,
+      "clip": "soot-2",
+      "duration": 1.44,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ],
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "soot-2",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 261.42311424824663,
+            "y": 144.766823209367,
+            "width": 150.87627308780162,
+            "height": 171.82285957461212
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "soot-2",
+          "clipTime": 0.08816228571428569,
+          "casterBounds": {
+            "x": 261.300881944885,
+            "y": 142.94925369203514,
+            "width": 152.6631655958588,
+            "height": 171.67431404879113
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.08816228571428569
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "soot-2",
+          "clipTime": 0.17632457142857139,
+          "casterBounds": {
+            "x": 261.3113571495272,
+            "y": 142.04398346505653,
+            "width": 153.76677507348177,
+            "height": 176.41355118604227
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.17632457142857139
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "soot-2",
+          "clipTime": 0.26448685714285713,
+          "casterBounds": {
+            "x": 261.17194027273354,
+            "y": 142.68475197343412,
+            "width": 155.15487239599838,
+            "height": 179.10629986152696
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.26448685714285713
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "soot-2",
+          "clipTime": 0.4270121330724068,
+          "casterBounds": {
+            "x": 259.15411766516087,
+            "y": 140.44039768457802,
+            "width": 156.69494809516408,
+            "height": 172.6546782145481
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.4270121330724068
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "soot-2",
+          "clipTime": 0.7763657142857141,
+          "casterBounds": {
+            "x": 258.1333979472614,
+            "y": 141.0872703611819,
+            "width": 153.28381387139518,
+            "height": 162.79638562634116
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.154859452512369e-8,
+          "capturedTime": 0.7763657142857141
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "soot-2",
+          "clipTime": 1.1469839530332677,
+          "casterBounds": {
+            "x": 257.11437954829427,
+            "y": 143.91199379125962,
+            "width": 157.0594853983833,
+            "height": 168.6546136260578
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1469839530332677
+        },
+        {
+          "progress": 1,
+          "sourceClip": "soot-2",
+          "clipTime": 1.4385599999999998,
+          "casterBounds": {
+            "x": 260.6426155541336,
+            "y": 145.79165046912962,
+            "width": 150.3092970752278,
+            "height": 170.96419974584214
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.4385599999999998
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/soot-2.webp",
+      "filmstripSha256": "d9bc0e9ce0660b154d65e2b53b1f191ccaf9eceb4b60b56e3268e5340299e140"
+    },
+    {
+      "action": {
+        "id": "soot-3",
+        "owner": "soot",
+        "name": "Soot · Lantern wick",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.8861042936570127,
+      "clip": "soot-3",
+      "duration": 1.5,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ],
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "soot-3",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 261.42311424824663,
+            "y": 144.766823209367,
+            "width": 150.87627308780162,
+            "height": 171.82285957461212
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "soot-3",
+          "clipTime": 0.09183571428571427,
+          "casterBounds": {
+            "x": 262.4141772595075,
+            "y": 142.18751782167922,
+            "width": 151.3131560159016,
+            "height": 170.72883949132748
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.09183571428571427
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "soot-3",
+          "clipTime": 0.18367142857142854,
+          "casterBounds": {
+            "x": 264.7396700389604,
+            "y": 140.29947393780873,
+            "width": 149.60164996984554,
+            "height": 174.1200710589103
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.18367142857142854
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "soot-3",
+          "clipTime": 0.27550714285714284,
+          "casterBounds": {
+            "x": 266.04436775590534,
+            "y": 139.60519971130037,
+            "width": 148.76192785276083,
+            "height": 175.8701746443968
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.27550714285714284
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "soot-3",
+          "clipTime": 0.44480430528375714,
+          "casterBounds": {
+            "x": 259.12463595292536,
+            "y": 136.85520103825195,
+            "width": 152.68872248194157,
+            "height": 165.47326336820038
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 2.1533180571964294e-8,
+          "capturedTime": 0.44480430528375714
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "soot-3",
+          "clipTime": 0.749204081632653,
+          "casterBounds": {
+            "x": 284.33707354338964,
+            "y": 146.31611265125724,
+            "width": 154.31504925273913,
+            "height": 170.73092568027937
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 2.4622082150926872e-11,
+          "capturedTime": 0.749204081632653
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "soot-3",
+          "clipTime": 1.1947749510763206,
+          "casterBounds": {
+            "x": 256.6295988382276,
+            "y": 140.0268376406053,
+            "width": 153.20111498609242,
+            "height": 169.35495495892891
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1947749510763206
+        },
+        {
+          "progress": 1,
+          "sourceClip": "soot-3",
+          "clipTime": 1.4985,
+          "casterBounds": {
+            "x": 260.63538835616464,
+            "y": 145.79008047091642,
+            "width": 150.3169331854706,
+            "height": 170.95856549375443
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.4985
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/soot-3.webp",
+      "filmstripSha256": "cf9b7b07dac885f73c7a4684e9791d819221c444da78862f29cbf4a138c4a37a"
+    },
+    {
+      "action": {
+        "id": "soot-4",
+        "owner": "soot",
+        "name": "Soot · Midnight service",
+        "ultimate": true,
+        "enemy": false
+      },
+      "height": 1.8861042936570127,
+      "clip": "soot-4",
+      "duration": 1.78,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ],
+      "tracks": [
+        "witch_motion.quaternion",
+        "witch_head.quaternion",
+        "witch_armL.quaternion",
+        "witch_armR.quaternion",
+        "witch_tail.quaternion",
+        "witch_tailMid.quaternion",
+        "witch_tailTip.quaternion",
+        "witch_earL.quaternion",
+        "witch_earR.quaternion",
+        "witch_hat.quaternion",
+        "witch_lantern.quaternion",
+        "witch_motion.position",
+        "witch_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "soot-4",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 269.68417138307586,
+            "y": 135.64992431604122,
+            "width": 155.89600581726728,
+            "height": 179.6049228385478
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "soot-4",
+          "clipTime": 0.13256761904761905,
+          "casterBounds": {
+            "x": 265.30386224360745,
+            "y": 130.9438893994156,
+            "width": 161.05410745083157,
+            "height": 181.52046662197458
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.13256761904761905
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "soot-4",
+          "clipTime": 0.2651352380952381,
+          "casterBounds": {
+            "x": 259.8807715617466,
+            "y": 129.51151885569334,
+            "width": 166.41060689527825,
+            "height": 185.78927121292259
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.2651352380952381
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "soot-4",
+          "clipTime": 0.39770285714285714,
+          "casterBounds": {
+            "x": 260.7087311044161,
+            "y": 124.21385533480888,
+            "width": 164.61353872894807,
+            "height": 185.49934529814385
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.39770285714285714
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "soot-4",
+          "clipTime": 0.8035428571428571,
+          "casterBounds": {
+            "x": 259.58215804154463,
+            "y": 120.19790645768066,
+            "width": 160.24023976880426,
+            "height": 159.10146381102655
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.8035428571428571
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "soot-4",
+          "clipTime": 1.1599061224489795,
+          "casterBounds": {
+            "x": 261.2280250608121,
+            "y": 134.47619559022618,
+            "width": 154.95568563903305,
+            "height": 175.81168273362502
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1599061224489795
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "soot-4",
+          "clipTime": 1.4687542857142855,
+          "casterBounds": {
+            "x": 262.908208101066,
+            "y": 137.06078694954923,
+            "width": 150.41639009235206,
+            "height": 170.65031969314433
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.4687542857142855
+        },
+        {
+          "progress": 1,
+          "sourceClip": "soot-4",
+          "clipTime": 1.7782200000000001,
+          "casterBounds": {
+            "x": 261.96212780788693,
+            "y": 144.07966834459023,
+            "width": 151.24894485569428,
+            "height": 172.39647779248048
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.7782200000000001
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/soot-4.webp",
+      "filmstripSha256": "cc7fd82db9a5b7fc7c055f2c2607f5c56156d061d58cd61410688eb6d181fa3d"
+    },
+    {
+      "action": {
+        "id": "clover-1",
+        "owner": "clover",
+        "name": "Clover · Leaf tap",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.5763313694434498,
+      "clip": "clover-1",
+      "duration": 1.1,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ],
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_footL.quaternion",
+        "alchemist_footR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "clover-1",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 235.83147460478926,
+            "y": 119.27857505524508,
+            "width": 202.4283616055328,
+            "height": 208.26789536121436
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "clover-1",
+          "clipTime": 0.06734619047619048,
+          "casterBounds": {
+            "x": 233.3964775822247,
+            "y": 120.7778081914269,
+            "width": 205.23807184019023,
+            "height": 208.95725841307387
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.06734619047619048
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "clover-1",
+          "clipTime": 0.13469238095238095,
+          "casterBounds": {
+            "x": 227.5556722236847,
+            "y": 122.8105371798225,
+            "width": 209.89243704734204,
+            "height": 216.89104498421176
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.13469238095238095
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "clover-1",
+          "clipTime": 0.20203857142857143,
+          "casterBounds": {
+            "x": 223.27402413784782,
+            "y": 125.09171655542252,
+            "width": 213.4948968747133,
+            "height": 220.79922060187818
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.20203857142857143
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "clover-1",
+          "clipTime": 0.32618982387475526,
+          "casterBounds": {
+            "x": 267.39343325794505,
+            "y": 115.19211162719604,
+            "width": 204.04691862574327,
+            "height": 208.63128269819248
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.505062906583589e-11,
+          "capturedTime": 0.32618982387475526
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "clover-1",
+          "clipTime": 0.5494163265306122,
+          "casterBounds": {
+            "x": 458.07643249226857,
+            "y": 123.34971925602355,
+            "width": 190.91319497784554,
+            "height": 193.79429629350045
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.080235900730031e-11,
+          "capturedTime": 0.5494163265306122
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "clover-1",
+          "clipTime": 0.8761682974559686,
+          "casterBounds": {
+            "x": 236.75287294928074,
+            "y": 117.23226850093394,
+            "width": 203.3001940410229,
+            "height": 204.98303949450482
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.8761682974559686
+        },
+        {
+          "progress": 1,
+          "sourceClip": "clover-1",
+          "clipTime": 1.0989,
+          "casterBounds": {
+            "x": 235.13734485713186,
+            "y": 120.41758003822531,
+            "width": 201.64057411856928,
+            "height": 207.23564500230816
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.0989
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/clover-1.webp",
+      "filmstripSha256": "846a4c48b00975cef6ffa571487ea163737a7fb2f50a11c3dd63fe2f8d829186"
+    },
+    {
+      "action": {
+        "id": "clover-2",
+        "owner": "clover",
+        "name": "Clover · Patient steep",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.5763313694434498,
+      "clip": "clover-2",
+      "duration": 1.42,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ],
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "clover-2",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 240.7260625033532,
+            "y": 135.59185947652506,
+            "width": 169.65693962947387,
+            "height": 175.93168428051567
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "clover-2",
+          "clipTime": 0.0869378095238095,
+          "casterBounds": {
+            "x": 239.41039418811513,
+            "y": 134.51280906379162,
+            "width": 169.69296874421647,
+            "height": 179.46678055504265
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.90390763949489e-9,
+          "capturedTime": 0.0869378095238095
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "clover-2",
+          "clipTime": 0.173875619047619,
+          "casterBounds": {
+            "x": 236.74828888160164,
+            "y": 133.92239287477173,
+            "width": 169.89791724135716,
+            "height": 185.5789936761899
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.65491681153918e-9,
+          "capturedTime": 0.173875619047619
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "clover-2",
+          "clipTime": 0.26081342857142853,
+          "casterBounds": {
+            "x": 234.12153215856057,
+            "y": 134.3956765785881,
+            "width": 170.34109701264123,
+            "height": 189.76923958680226
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 6.378759742631246e-9,
+          "capturedTime": 0.26081342857142853
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "clover-2",
+          "clipTime": 0.42108140900195673,
+          "casterBounds": {
+            "x": 237.6435191129221,
+            "y": 134.35245962742783,
+            "width": 168.05787823591203,
+            "height": 188.92554572705706
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 7.263514456568032e-9,
+          "capturedTime": 0.42108140900195673
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "clover-2",
+          "clipTime": 0.7655828571428569,
+          "casterBounds": {
+            "x": 247.942917143883,
+            "y": 135.36032649918002,
+            "width": 171.70972991251426,
+            "height": 181.7348922918024
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.7655828571428569
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "clover-2",
+          "clipTime": 1.13105362035225,
+          "casterBounds": {
+            "x": 234.77397154981213,
+            "y": 135.087176140689,
+            "width": 172.4622803195681,
+            "height": 174.29107065836837
+          },
+          "maxHeadAngle": 0.0000034150945850063755,
+          "maxQuaternionLengthError": 2.1072418143752714e-8,
+          "capturedTime": 1.13105362035225
+        },
+        {
+          "progress": 1,
+          "sourceClip": "clover-2",
+          "clipTime": 1.41858,
+          "casterBounds": {
+            "x": 240.01708712764588,
+            "y": 136.6139638033195,
+            "width": 169.04294039948905,
+            "height": 175.19358301051818
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.41858
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/clover-2.webp",
+      "filmstripSha256": "204b41644ce06ac0344118b696a9abd1391eef30db5a485c342117550d240fed"
+    },
+    {
+      "action": {
+        "id": "clover-3",
+        "owner": "clover",
+        "name": "Clover · Clearleaf rinse",
+        "ultimate": false,
+        "enemy": false
+      },
+      "height": 1.5763313694434498,
+      "clip": "clover-3",
+      "duration": 1.48,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ],
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "clover-3",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 238.7497777249299,
+            "y": 127.83422546197386,
+            "width": 181.45195205302576,
+            "height": 200.66567998931572
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "clover-3",
+          "clipTime": 0.09061123809523808,
+          "casterBounds": {
+            "x": 232.1566607789864,
+            "y": 125.08379063692456,
+            "width": 188.88744745582875,
+            "height": 207.2975707610584
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 2.810116805918028e-9,
+          "capturedTime": 0.09061123809523808
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "clover-3",
+          "clipTime": 0.18122247619047616,
+          "casterBounds": {
+            "x": 220.8836983620318,
+            "y": 121.63882537509416,
+            "width": 201.55796575258,
+            "height": 217.36693994583578
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 2.20777074400047e-8,
+          "capturedTime": 0.18122247619047616
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "clover-3",
+          "clipTime": 0.2718337142857143,
+          "casterBounds": {
+            "x": 215.8205324175941,
+            "y": 119.99053530188918,
+            "width": 207.0442477797095,
+            "height": 220.9931468030963
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 6.632285276531036e-9,
+          "capturedTime": 0.2718337142857143
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "clover-3",
+          "clipTime": 0.43887358121330705,
+          "casterBounds": {
+            "x": 226.80484884546837,
+            "y": 123.53860912509276,
+            "width": 195.829868045453,
+            "height": 207.06213686136317
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 8.877057311451608e-9,
+          "capturedTime": 0.43887358121330705
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "clover-3",
+          "clipTime": 0.7979314285714284,
+          "casterBounds": {
+            "x": 258.974425879021,
+            "y": 130.8918001012261,
+            "width": 156.39339567521546,
+            "height": 177.0968568880145
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.5411729104595224e-10,
+          "capturedTime": 0.7979314285714284
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "clover-3",
+          "clipTime": 1.178844618395303,
+          "casterBounds": {
+            "x": 230.34227723697109,
+            "y": 128.02243505910212,
+            "width": 187.86881614469598,
+            "height": 206.61190705363083
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 8.084310998413002e-12,
+          "capturedTime": 1.178844618395303
+        },
+        {
+          "progress": 1,
+          "sourceClip": "clover-3",
+          "clipTime": 1.47852,
+          "casterBounds": {
+            "x": 238.01478327082663,
+            "y": 128.90072301652182,
+            "width": 180.83234872202473,
+            "height": 199.79556874406276
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.47852
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/clover-3.webp",
+      "filmstripSha256": "47ecc6c7c2bcf0e9600641b7612f27fca68668296ec8b2af148c259195361b90"
+    },
+    {
+      "action": {
+        "id": "clover-4",
+        "owner": "clover",
+        "name": "Clover · Greenhouse morning",
+        "ultimate": true,
+        "enemy": false
+      },
+      "height": 1.5763313694434498,
+      "clip": "clover-4",
+      "duration": 1.76,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ],
+      "tracks": [
+        "alchemist_motion.quaternion",
+        "alchemist_head.quaternion",
+        "alchemist_armL.quaternion",
+        "alchemist_armR.quaternion",
+        "alchemist_footL.quaternion",
+        "alchemist_footR.quaternion",
+        "alchemist_tail.quaternion",
+        "alchemist_tailMid.quaternion",
+        "alchemist_tailTip.quaternion",
+        "alchemist_earL.quaternion",
+        "alchemist_earR.quaternion",
+        "alchemist_motion.position",
+        "alchemist_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "clover-4",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 246.51069760504825,
+            "y": 118.37657487317543,
+            "width": 187.03617957545745,
+            "height": 208.53838543683705
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "clover-4",
+          "clipTime": 0.13107809523809524,
+          "casterBounds": {
+            "x": 248.44453998796027,
+            "y": 118.75699337928945,
+            "width": 185.1324538610427,
+            "height": 212.01992456650993
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 2.03991734615272e-9,
+          "capturedTime": 0.13107809523809524
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "clover-4",
+          "clipTime": 0.2621561904761905,
+          "casterBounds": {
+            "x": 252.8541225548807,
+            "y": 125.95672775066389,
+            "width": 187.12883842699495,
+            "height": 212.26112771946907
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 2.1435014874171543e-8,
+          "capturedTime": 0.2621561904761905
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "clover-4",
+          "clipTime": 0.3932342857142857,
+          "casterBounds": {
+            "x": 254.52959370819485,
+            "y": 129.46932271631044,
+            "width": 187.11402870610073,
+            "height": 211.58997453630968
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.2650325231788884e-11,
+          "capturedTime": 0.3932342857142857
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "clover-4",
+          "clipTime": 0.7945142857142856,
+          "casterBounds": {
+            "x": 240.1905135976513,
+            "y": 107.1877419637555,
+            "width": 191.21768854677848,
+            "height": 188.31464967855146
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.658002335425124e-8,
+          "capturedTime": 0.7945142857142856
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "clover-4",
+          "clipTime": 1.146873469387755,
+          "casterBounds": {
+            "x": 236.14945077845917,
+            "y": 117.05327640190289,
+            "width": 182.32633091440007,
+            "height": 200.5166492522954
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 2.20848173082544e-8,
+          "capturedTime": 1.146873469387755
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "clover-4",
+          "clipTime": 1.4522514285714283,
+          "casterBounds": {
+            "x": 239.07227698814182,
+            "y": 124.00639622209148,
+            "width": 181.59368264460358,
+            "height": 201.57382077412484
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.2650325231788884e-11,
+          "capturedTime": 1.4522514285714283
+        },
+        {
+          "progress": 1,
+          "sourceClip": "clover-4",
+          "clipTime": 1.75824,
+          "casterBounds": {
+            "x": 239.2437622607686,
+            "y": 127.11324285660456,
+            "width": 181.87350352298253,
+            "height": 201.24632668412184
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.75824
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/clover-4.webp",
+      "filmstripSha256": "c1faab6d3861d4568231b75da104296457c6e489d51253b3e72be88f56fd3328"
+    },
+    {
+      "action": {
+        "id": "enemy:button-guard",
+        "owner": "button-guard",
+        "name": "Button Guard · Button brace grants shields to its row.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.4,
+      "clip": "guardAttack",
+      "duration": 1.2,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "guardAttack"
+      ],
+      "tracks": [
+        "guard_motion.quaternion",
+        "guard_head.quaternion",
+        "guard_armL.quaternion",
+        "guard_armR.quaternion",
+        "guard_tail.quaternion",
+        "guard_earL.quaternion",
+        "guard_earR.quaternion",
+        "guard_motion.position",
+        "guard_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "guardAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 772.2109904110287,
+            "y": 190.6588221478233,
+            "width": 80.06557803624366,
+            "height": 97.24866159165401
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "guardAttack",
+          "clipTime": 0.08207714285714285,
+          "casterBounds": {
+            "x": 770.6541022332792,
+            "y": 191.21356646714014,
+            "width": 81.36843098019199,
+            "height": 96.60992420258486
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 1.1564227131444227e-8,
+          "capturedTime": 0.08207714285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "guardAttack",
+          "clipTime": 0.1641542857142857,
+          "casterBounds": {
+            "x": 768.2414311482655,
+            "y": 194.01892942948695,
+            "width": 83.78705110586134,
+            "height": 94.65298058920246
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.1641542857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "guardAttack",
+          "clipTime": 0.24623142857142855,
+          "casterBounds": {
+            "x": 766.4797442613028,
+            "y": 195.26450554670848,
+            "width": 85.68627334689359,
+            "height": 94.42976791944378
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.6525596779892737e-8,
+          "capturedTime": 0.24623142857142855
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "guardAttack",
+          "clipTime": 0.45554887218045104,
+          "casterBounds": {
+            "x": 766.0414487312556,
+            "y": 197.13654464998896,
+            "width": 89.16698837316233,
+            "height": 94.4373309842695
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.634037993802906e-8,
+          "capturedTime": 0.45554887218045104
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "guardAttack",
+          "clipTime": 0.7274173669467786,
+          "casterBounds": {
+            "x": 777.3594873438271,
+            "y": 187.571492906522,
+            "width": 83.08834131732647,
+            "height": 97.0023686126828
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.7274173669467786
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "guardAttack",
+          "clipTime": 1.029466498103666,
+          "casterBounds": {
+            "x": 771.4471683216661,
+            "y": 190.52612214859226,
+            "width": 77.62064861673673,
+            "height": 95.75051192679098
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 1.029466498103666
+        },
+        {
+          "progress": 1,
+          "sourceClip": "guardAttack",
+          "clipTime": 1.1987999999999999,
+          "casterBounds": {
+            "x": 772.936912861984,
+            "y": 191.24942732707433,
+            "width": 79.67934662911739,
+            "height": 96.75670849331601
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1987999999999999
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-button-guard.webp",
+      "filmstripSha256": "c6fc5e71f24f29c8747fa77b79dbe2eac533b76b879537f16d4fa3bc3b684713"
+    },
+    {
+      "action": {
+        "id": "enemy:sock-skipper",
+        "owner": "sock-skipper",
+        "name": "Sock Skipper · Pocket skip steals 1 shared energy and hits the rear.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.48,
+      "clip": "flankerAttack",
+      "duration": 1.16,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "flankerAttack"
+      ],
+      "tracks": [
+        "flanker_motion.quaternion",
+        "flanker_armL.quaternion",
+        "flanker_armR.quaternion",
+        "flanker_footL.quaternion",
+        "flanker_footR.quaternion",
+        "flanker_tail.quaternion",
+        "flanker_earL.quaternion",
+        "flanker_earR.quaternion",
+        "flanker_motion.position",
+        "flanker_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 910.4188730653216,
+            "y": 189.62289078321615,
+            "width": 83.09215663999726,
+            "height": 99.58765655956634
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.07533923809523808,
+          "casterBounds": {
+            "x": 915.9404089976729,
+            "y": 194.9931332908902,
+            "width": 83.59812701992337,
+            "height": 98.46439388791057
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.07533923809523808
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.15067847619047617,
+          "casterBounds": {
+            "x": 925.1166041046237,
+            "y": 204.00342784552979,
+            "width": 83.61016147039902,
+            "height": 94.08937437154319
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.15067847619047617
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.22601771428571427,
+          "casterBounds": {
+            "x": 928.1951269967983,
+            "y": 206.34567636201015,
+            "width": 83.39978137155322,
+            "height": 92.67610330940809
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.22601771428571427
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.39558367346938766,
+          "casterBounds": {
+            "x": 770.5915687601049,
+            "y": 145.0964092428951,
+            "width": 73.93938006905603,
+            "height": 101.71313504492588
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.39558367346938766
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.6830722271517301,
+          "casterBounds": {
+            "x": 591.6577955450854,
+            "y": 191.47831503680388,
+            "width": 78.05754079106191,
+            "height": 99.99325113434278
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.6830722271517301
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "flankerAttack",
+          "clipTime": 0.9738069172932329,
+          "casterBounds": {
+            "x": 918.386934739176,
+            "y": 186.74241129058055,
+            "width": 84.293915493324,
+            "height": 102.06144576016203
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.9738069172932329
+        },
+        {
+          "progress": 1,
+          "sourceClip": "flankerAttack",
+          "clipTime": 1.1588399999999999,
+          "casterBounds": {
+            "x": 911.6111592297475,
+            "y": 190.42805897824084,
+            "width": 82.75195736902572,
+            "height": 99.1168735125635
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1588399999999999
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-sock-skipper.webp",
+      "filmstripSha256": "bf477599707300c054f4d00d30d68e59dab9c2422e5689e476963618a9da4889"
+    },
+    {
+      "action": {
+        "id": "enemy:spool-ram",
+        "owner": "spool-ram",
+        "name": "Spool Ram · Every third round charges a double-power front-row sweep.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.34,
+      "clip": "chargerAttack",
+      "duration": 1.28,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "chargerAttack"
+      ],
+      "tracks": [
+        "charger_motion.quaternion",
+        "charger_head.quaternion",
+        "charger_armL.quaternion",
+        "charger_armR.quaternion",
+        "charger_tail.quaternion",
+        "charger_earL.quaternion",
+        "charger_earR.quaternion",
+        "charger_motion.position",
+        "charger_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 767.6001159629111,
+            "y": 180.99782579725127,
+            "width": 97.09851314167975,
+            "height": 112.22518382602112
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0.0888513155033703,
+          "casterBounds": {
+            "x": 767.6834115769832,
+            "y": 181.38422673982944,
+            "width": 99.34726683192139,
+            "height": 114.39118798978421
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.0888513155033703
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0.1777026310067406,
+          "casterBounds": {
+            "x": 764.3148999124259,
+            "y": 184.4207519208813,
+            "width": 101.91744719919643,
+            "height": 114.08065362578407
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1777026310067406
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0.2665539465101109,
+          "casterBounds": {
+            "x": 760.7867108943528,
+            "y": 187.864837452044,
+            "width": 106.64793919395231,
+            "height": 112.81068746184567
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.2665539465101109
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0.5537197278911564,
+          "casterBounds": {
+            "x": 575.5289070312342,
+            "y": 188.24884823815506,
+            "width": 105.95784662542928,
+            "height": 108.34306018565229
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.5537197278911564
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "chargerAttack",
+          "clipTime": 0.8246375939849624,
+          "casterBounds": {
+            "x": 600.9693973817015,
+            "y": 187.4207301913782,
+            "width": 104.92776615410128,
+            "height": 110.5201165346075
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580948022304824e-9,
+          "capturedTime": 0.8246375939849624
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "chargerAttack",
+          "clipTime": 1.1062926670287885,
+          "casterBounds": {
+            "x": 769.3161650620556,
+            "y": 177.97221676729413,
+            "width": 97.55253623277247,
+            "height": 114.41820665796439
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1062926670287885
+        },
+        {
+          "progress": 1,
+          "sourceClip": "chargerAttack",
+          "clipTime": 1.27872,
+          "casterBounds": {
+            "x": 768.3565040912453,
+            "y": 181.62924613289746,
+            "width": 96.64055482719812,
+            "height": 111.66727178483043
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.27872
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-spool-ram.webp",
+      "filmstripSha256": "c2599533ad92a30e5d627472e91eb8adba113ac41503661d10f83fbd9309b253"
+    },
+    {
+      "action": {
+        "id": "enemy:needle-moth",
+        "owner": "needle-moth",
+        "name": "Needle Moth · Needle rain applies Scald to the rear row.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.48,
+      "clip": "rangerAttack",
+      "duration": 1.22,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "rangerAttack"
+      ],
+      "tracks": [
+        "ranger_motion.quaternion",
+        "ranger_armL.quaternion",
+        "ranger_armR.quaternion",
+        "ranger_tail.quaternion",
+        "ranger_earL.quaternion",
+        "ranger_earR.quaternion",
+        "ranger_wingL.quaternion",
+        "ranger_wingR.quaternion",
+        "ranger_motion.position",
+        "ranger_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 900.8142064657761,
+            "y": 184.35434462450107,
+            "width": 108.59881913374602,
+            "height": 100.95998007334512
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0.08344509523809522,
+          "casterBounds": {
+            "x": 906.5259278450335,
+            "y": 176.73623089834166,
+            "width": 103.74657152604937,
+            "height": 103.9059349110043
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08344509523809522
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0.16689019047619044,
+          "casterBounds": {
+            "x": 912.9649481089282,
+            "y": 171.67212087430846,
+            "width": 97.55206299830206,
+            "height": 105.5670670740588
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.16689019047619044
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0.2503352857142857,
+          "casterBounds": {
+            "x": 912.3238695138685,
+            "y": 169.7827230352592,
+            "width": 97.63964596036817,
+            "height": 105.73454174343806
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.2503352857142857
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0.4631413533834585,
+          "casterBounds": {
+            "x": 909.9685943225137,
+            "y": 163.72837831723655,
+            "width": 110.39785650826764,
+            "height": 106.19164966141221
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.4631413533834585
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "rangerAttack",
+          "clipTime": 0.7395409897292249,
+          "casterBounds": {
+            "x": 913.2172737859065,
+            "y": 163.52645629962535,
+            "width": 97.2433366790832,
+            "height": 105.44737953971782
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 7.143541758125593e-9,
+          "capturedTime": 0.7395409897292249
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "rangerAttack",
+          "clipTime": 1.0466242730720605,
+          "casterBounds": {
+            "x": 904.318261089082,
+            "y": 176.89437195131597,
+            "width": 107.7646171285486,
+            "height": 102.06889429175374
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.0466242730720605
+        },
+        {
+          "progress": 1,
+          "sourceClip": "rangerAttack",
+          "clipTime": 1.21878,
+          "casterBounds": {
+            "x": 902.0383820770638,
+            "y": 185.17722655656777,
+            "width": 108.17582953532292,
+            "height": 100.48348198868908
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.21878
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-needle-moth.webp",
+      "filmstripSha256": "555bdcfe4d76ea00c01f0820c37ac2e96fedf9665b860a1047a16178aba8e22e"
+    },
+    {
+      "action": {
+        "id": "enemy:teacup-healer",
+        "owner": "teacup-healer",
+        "name": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.42,
+      "clip": "healerAttack",
+      "duration": 1.34,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "healerAttack"
+      ],
+      "tracks": [
+        "healer_motion.quaternion",
+        "healer_head.quaternion",
+        "healer_armL.quaternion",
+        "healer_armR.quaternion",
+        "healer_tail.quaternion",
+        "healer_earL.quaternion",
+        "healer_earR.quaternion",
+        "healer_motion.position",
+        "healer_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "healerAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 909.4316099368342,
+            "y": 190.83502894297817,
+            "width": 89.64574510575801,
+            "height": 97.80758806494595
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "healerAttack",
+          "clipTime": 0.09165280952380953,
+          "casterBounds": {
+            "x": 909.391894706978,
+            "y": 190.07189069213118,
+            "width": 93.98656841297043,
+            "height": 98.46755096078093
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 1.1277894174099856e-8,
+          "capturedTime": 0.09165280952380953
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "healerAttack",
+          "clipTime": 0.18330561904761905,
+          "casterBounds": {
+            "x": 908.9407879603685,
+            "y": 190.47566644715872,
+            "width": 100.66471110214877,
+            "height": 99.13892769000293
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 6.194226243039225e-9,
+          "capturedTime": 0.18330561904761905
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "healerAttack",
+          "clipTime": 0.27495842857142855,
+          "casterBounds": {
+            "x": 907.264057441706,
+            "y": 191.3534651014572,
+            "width": 105.23615723257103,
+            "height": 99.0579175727822
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 1.2884383782107989e-8,
+          "capturedTime": 0.27495842857142855
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "healerAttack",
+          "clipTime": 0.5086962406015036,
+          "casterBounds": {
+            "x": 907.0274461771121,
+            "y": 186.4769663233725,
+            "width": 96.95582376785944,
+            "height": 93.6750579913388
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 7.563243253905227e-9,
+          "capturedTime": 0.5086962406015036
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "healerAttack",
+          "clipTime": 0.8122827264239029,
+          "casterBounds": {
+            "x": 906.7407462555099,
+            "y": 190.8228768564989,
+            "width": 94.45350069296933,
+            "height": 93.4442378360767
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 5.151993498486718e-9,
+          "capturedTime": 0.8122827264239029
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "healerAttack",
+          "clipTime": 1.1495709228824271,
+          "casterBounds": {
+            "x": 912.1647127232886,
+            "y": 192.36974527616394,
+            "width": 93.78983148297164,
+            "height": 97.75535894316118
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1495709228824271
+        },
+        {
+          "progress": 1,
+          "sourceClip": "healerAttack",
+          "clipTime": 1.3386600000000002,
+          "casterBounds": {
+            "x": 910.6120054912458,
+            "y": 191.63457956192022,
+            "width": 89.30874536301985,
+            "height": 97.35571281730594
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.3386600000000002
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-teacup-healer.webp",
+      "filmstripSha256": "9136643c7beba0b451ac514ee9a7050a46a67b06107517f16203c0ce4c1d80e4"
+    },
+    {
+      "action": {
+        "id": "enemy:yarn-giant",
+        "owner": "yarn-giant",
+        "name": "Yarn Giant · Every third round Loomfall sweeps the front and Tangled threads appear.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 2.6,
+      "clip": "yarnAttack",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "yarnAttack"
+      ],
+      "tracks": [
+        "yarn_motion.quaternion",
+        "yarn_head.quaternion",
+        "yarn_armL.quaternion",
+        "yarn_armR.quaternion",
+        "yarn_tail.quaternion",
+        "yarn_earL.quaternion",
+        "yarn_earR.quaternion",
+        "yarn_motion.position",
+        "yarn_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 757.8468195355997,
+            "y": 108.68826289694591,
+            "width": 271.2257332592351,
+            "height": 235.57961877857775
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0.09478520547945204,
+          "casterBounds": {
+            "x": 762.6709520669999,
+            "y": 109.54249922887581,
+            "width": 259.2143962100306,
+            "height": 239.76216536750727
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.09478520547945204
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0.1895704109589041,
+          "casterBounds": {
+            "x": 763.5691092014174,
+            "y": 114.37106280910247,
+            "width": 247.8209913600391,
+            "height": 239.951483181088
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1895704109589041
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0.28435561643835616,
+          "casterBounds": {
+            "x": 763.8225909604716,
+            "y": 118.05314596724581,
+            "width": 244.21184811918067,
+            "height": 240.12635976821406
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.28435561643835616
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0.5752421052631579,
+          "casterBounds": {
+            "x": 745.618778985556,
+            "y": 89.64706824154558,
+            "width": 242.5451192478996,
+            "height": 231.48106769445553
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 7.080266928305434e-9,
+          "capturedTime": 0.5752421052631579
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "yarnAttack",
+          "clipTime": 0.888070588235294,
+          "casterBounds": {
+            "x": 712.2551982427348,
+            "y": 111.65275968742301,
+            "width": 255.19818434373292,
+            "height": 236.33267088694296
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.888070588235294
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "yarnAttack",
+          "clipTime": 1.1945506849315066,
+          "casterBounds": {
+            "x": 762.7306859889211,
+            "y": 105.86780489725041,
+            "width": 261.9614560443599,
+            "height": 237.37802145938267
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1945506849315066
+        },
+        {
+          "progress": 1,
+          "sourceClip": "yarnAttack",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 759.1244604442062,
+            "y": 109.75347782613382,
+            "width": 269.95087182392206,
+            "height": 234.4568522486748
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-yarn-giant.webp",
+      "filmstripSha256": "c9077cbf5461e0ff19d8e68bfadda0681d3f8992ee247c27022cda38e809dabe"
+    },
+    {
+      "action": {
+        "id": "enemy:binding-thread",
+        "owner": "binding-thread",
+        "name": "Binding Thread · Knots apply Tangle to the weakest cat.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.34,
+      "clip": "threadAttack",
+      "duration": 1.16,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "threadAttack"
+      ],
+      "tracks": [
+        "thread_motion.quaternion",
+        "thread_head.quaternion",
+        "thread_armL.quaternion",
+        "thread_armR.quaternion",
+        "thread_tail.quaternion",
+        "thread_earL.quaternion",
+        "thread_earR.quaternion",
+        "thread_motion.position",
+        "thread_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "threadAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 909.7346061268856,
+            "y": 191.6200325440482,
+            "width": 80.3411854859803,
+            "height": 94.92391731064006
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.07438638095238094,
+          "casterBounds": {
+            "x": 910.1030948493877,
+            "y": 191.66296507465788,
+            "width": 79.6149168635219,
+            "height": 96.03690438124872
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.07438638095238094
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.14877276190476188,
+          "casterBounds": {
+            "x": 912.2805855736481,
+            "y": 192.9844452916055,
+            "width": 79.47528585436703,
+            "height": 97.17867696864911
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.14877276190476188
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.22315914285714283,
+          "casterBounds": {
+            "x": 915.704138739052,
+            "y": 194.49986129262365,
+            "width": 76.29511989322259,
+            "height": 97.46179656689853
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.22315914285714283
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.3913430346051463,
+          "casterBounds": {
+            "x": 865.7694727309299,
+            "y": 189.945145952426,
+            "width": 76.30238397906487,
+            "height": 95.54658588912542
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.3913430346051463
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.6918457925636007,
+          "casterBounds": {
+            "x": 785.4660915205358,
+            "y": 191.96735062424037,
+            "width": 78.71643256365644,
+            "height": 97.18150716052477
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 6.509915051466919e-9,
+          "capturedTime": 0.6918457925636007
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "threadAttack",
+          "clipTime": 0.9887781512605041,
+          "casterBounds": {
+            "x": 912.9724243221823,
+            "y": 191.45295820820436,
+            "width": 77.3195637853014,
+            "height": 94.71505502249167
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.9887781512605041
+        },
+        {
+          "progress": 1,
+          "sourceClip": "threadAttack",
+          "clipTime": 1.1588399999999999,
+          "casterBounds": {
+            "x": 910.9132563321843,
+            "y": 192.40927022032386,
+            "width": 79.99284939741642,
+            "height": 94.4779543380013
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1588399999999999
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-binding-thread.webp",
+      "filmstripSha256": "a7270a422f62a86e33acaa248a8fbfcb8095aa87feb92ae984a3af8b772643fd"
+    },
+    {
+      "action": {
+        "id": "enemy:practice-cushion",
+        "owner": "practice-cushion",
+        "name": "Practice Cushion · A gentle third-round bump teaches a break interrupt.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.3600000000000003,
+      "clip": "dummyAttack",
+      "duration": 1.22,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "dummyAttack"
+      ],
+      "tracks": [
+        "dummy_motion.quaternion",
+        "dummy_armL.quaternion",
+        "dummy_armR.quaternion",
+        "dummy_tail.quaternion",
+        "dummy_earL.quaternion",
+        "dummy_earR.quaternion",
+        "dummy_motion.position",
+        "dummy_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 772.37865294573,
+            "y": 191.5069660617174,
+            "width": 92.9737788152097,
+            "height": 96.40479813108666
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0.08344509523809522,
+          "casterBounds": {
+            "x": 773.6045740640186,
+            "y": 191.84980578897202,
+            "width": 92.14067986480575,
+            "height": 98.201742792908
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08344509523809522
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0.16689019047619044,
+          "casterBounds": {
+            "x": 772.7181240579444,
+            "y": 194.80340895708653,
+            "width": 91.89820171836288,
+            "height": 97.67029813576502
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.16689019047619044
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0.2503352857142857,
+          "casterBounds": {
+            "x": 770.1516093829695,
+            "y": 197.23536265720747,
+            "width": 93.47999866867019,
+            "height": 97.27098160657391
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.2503352857142857
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0.4631413533834585,
+          "casterBounds": {
+            "x": 721.4237237558812,
+            "y": 168.89856794142463,
+            "width": 90.7503849422286,
+            "height": 100.75015399254761
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.4631413533834585
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "dummyAttack",
+          "clipTime": 0.7395409897292249,
+          "casterBounds": {
+            "x": 686.4929188027356,
+            "y": 197.5855743981037,
+            "width": 91.71440436784212,
+            "height": 95.99138676997694
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 7.143541758125593e-9,
+          "capturedTime": 0.7395409897292249
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "dummyAttack",
+          "clipTime": 1.0466242730720605,
+          "casterBounds": {
+            "x": 774.7850190468287,
+            "y": 186.89011892516717,
+            "width": 92.44912049744335,
+            "height": 98.39901926356995
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.0466242730720605
+        },
+        {
+          "progress": 1,
+          "sourceClip": "dummyAttack",
+          "clipTime": 1.21878,
+          "casterBounds": {
+            "x": 773.1084651483432,
+            "y": 192.0805923080982,
+            "width": 92.51432404062666,
+            "height": 95.92667653933412
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.21878
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big/filmstrips/enemy-practice-cushion.webp",
+      "filmstripSha256": "46c8a9d68957a1f04933096bd51ba0b919311eaaf01a3b7bb1e981fc56a3eb55"
+    }
+  ],
+  "matrix": [
+    [
+      {
+        "angleRms": 2.4312288669681492e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.38056918044801213,
+        "positionRms": 0.04324202579314131
+      },
+      {
+        "angleRms": 0.4076458475439374,
+        "positionRms": 0.07114637861545611
+      },
+      {
+        "angleRms": 0.5324480195320879,
+        "positionRms": 0.04173781586093328
+      },
+      {
+        "angleRms": 0.4260083383160434,
+        "positionRms": 0.03524800140609793
+      },
+      {
+        "angleRms": 0.3733894473611667,
+        "positionRms": 0.03172217237114927
+      },
+      {
+        "angleRms": 0.32600329700340086,
+        "positionRms": 0.040529963348600935
+      },
+      {
+        "angleRms": 0.5271051614108181,
+        "positionRms": 0.057826262704048066
+      },
+      {
+        "angleRms": 0.2587060982133383,
+        "positionRms": 0.06602056755040987
+      },
+      {
+        "angleRms": 0.3146772694080852,
+        "positionRms": 0.03941232280367294
+      },
+      {
+        "angleRms": 0.3674268447907633,
+        "positionRms": 0.06433034061901959
+      },
+      {
+        "angleRms": 0.4558987219685974,
+        "positionRms": 0.07153471939212001
+      },
+      {
+        "angleRms": 0.33598760433416225,
+        "positionRms": 0.04705702067773156
+      },
+      {
+        "angleRms": 0.40424964025049315,
+        "positionRms": 0.11701006609529419
+      },
+      {
+        "angleRms": 0.3595354920038137,
+        "positionRms": 0.0760557937938032
+      },
+      {
+        "angleRms": 0.2883695171786652,
+        "positionRms": 0.06794409115181449
+      },
+      {
+        "angleRms": 0.29178627395102213,
+        "positionRms": 0.050629761741817506
+      },
+      {
+        "angleRms": 0.3759139204622343,
+        "positionRms": 0.07391251194143776
+      },
+      {
+        "angleRms": 0.34860139620864267,
+        "positionRms": 0.057129284166793144
+      },
+      {
+        "angleRms": 0.3084242060069872,
+        "positionRms": 0.07979783414729727
+      }
+    ],
+    [
+      {
+        "angleRms": 0.38056918044801213,
+        "positionRms": 0.04324202579314131
+      },
+      {
+        "angleRms": 1.9980392491542408e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.390768077910635,
+        "positionRms": 0.056069073594380264
+      },
+      {
+        "angleRms": 0.3954777439007925,
+        "positionRms": 0.042287321983052455
+      },
+      {
+        "angleRms": 0.3746309888135907,
+        "positionRms": 0.045397953965545926
+      },
+      {
+        "angleRms": 0.40965857031225866,
+        "positionRms": 0.03488960649202787
+      },
+      {
+        "angleRms": 0.3479488705635355,
+        "positionRms": 0.05198523642589572
+      },
+      {
+        "angleRms": 0.46570987792342217,
+        "positionRms": 0.05019117920519179
+      },
+      {
+        "angleRms": 0.3466804529254594,
+        "positionRms": 0.05726400529906214
+      },
+      {
+        "angleRms": 0.31523272330225377,
+        "positionRms": 0.037479085526195735
+      },
+      {
+        "angleRms": 0.30927566635524245,
+        "positionRms": 0.039966547059923585
+      },
+      {
+        "angleRms": 0.3400420973522429,
+        "positionRms": 0.06500611800720088
+      },
+      {
+        "angleRms": 0.2927745945400867,
+        "positionRms": 0.05602634348667185
+      },
+      {
+        "angleRms": 0.4318302668175244,
+        "positionRms": 0.1377889717605588
+      },
+      {
+        "angleRms": 0.41274378642016113,
+        "positionRms": 0.09084387623060887
+      },
+      {
+        "angleRms": 0.35040682251428884,
+        "positionRms": 0.054517883208609376
+      },
+      {
+        "angleRms": 0.3000332260132574,
+        "positionRms": 0.06980765356252179
+      },
+      {
+        "angleRms": 0.4134408341885083,
+        "positionRms": 0.0820042628675571
+      },
+      {
+        "angleRms": 0.35723526270414485,
+        "positionRms": 0.07162966772548009
+      },
+      {
+        "angleRms": 0.3472019866987461,
+        "positionRms": 0.08042648906290216
+      }
+    ],
+    [
+      {
+        "angleRms": 0.4076458475439374,
+        "positionRms": 0.07114637861545611
+      },
+      {
+        "angleRms": 0.390768077910635,
+        "positionRms": 0.056069073594380264
+      },
+      {
+        "angleRms": 2.340430737678826e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4730179874786947,
+        "positionRms": 0.07580707251113353
+      },
+      {
+        "angleRms": 0.419684379342082,
+        "positionRms": 0.07836794551284842
+      },
+      {
+        "angleRms": 0.2566955344149265,
+        "positionRms": 0.07028569199561996
+      },
+      {
+        "angleRms": 0.4187739510113879,
+        "positionRms": 0.06659040835644583
+      },
+      {
+        "angleRms": 0.5104371355968775,
+        "positionRms": 0.0815233198171301
+      },
+      {
+        "angleRms": 0.4360040124384357,
+        "positionRms": 0.050311608674818036
+      },
+      {
+        "angleRms": 0.27136837332255626,
+        "positionRms": 0.049352733863844395
+      },
+      {
+        "angleRms": 0.30497084021104964,
+        "positionRms": 0.06174549324242103
+      },
+      {
+        "angleRms": 0.3954227201488527,
+        "positionRms": 0.10121745239448063
+      },
+      {
+        "angleRms": 0.3710712122073397,
+        "positionRms": 0.08058746879347328
+      },
+      {
+        "angleRms": 0.5336063005521121,
+        "positionRms": 0.16033061595647374
+      },
+      {
+        "angleRms": 0.5008103112745853,
+        "positionRms": 0.09437882819284217
+      },
+      {
+        "angleRms": 0.3465807914968452,
+        "positionRms": 0.08206021797158759
+      },
+      {
+        "angleRms": 0.383541401207245,
+        "positionRms": 0.08696756551905975
+      },
+      {
+        "angleRms": 0.442803577858859,
+        "positionRms": 0.07760596262667467
+      },
+      {
+        "angleRms": 0.3649814644673184,
+        "positionRms": 0.08405437077920837
+      },
+      {
+        "angleRms": 0.40082654277363333,
+        "positionRms": 0.07951407390275235
+      }
+    ],
+    [
+      {
+        "angleRms": 0.5324480195320879,
+        "positionRms": 0.04173781586093328
+      },
+      {
+        "angleRms": 0.3954777439007925,
+        "positionRms": 0.042287321983052455
+      },
+      {
+        "angleRms": 0.4730179874786947,
+        "positionRms": 0.07580707251113353
+      },
+      {
+        "angleRms": 2.0057686368137412e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4871548759436691,
+        "positionRms": 0.03757312075809404
+      },
+      {
+        "angleRms": 0.47547077376596364,
+        "positionRms": 0.03281215805813971
+      },
+      {
+        "angleRms": 0.3888575208575233,
+        "positionRms": 0.046564364344990394
+      },
+      {
+        "angleRms": 0.2981666275365673,
+        "positionRms": 0.03302014732202332
+      },
+      {
+        "angleRms": 0.525172967632621,
+        "positionRms": 0.05070913664952741
+      },
+      {
+        "angleRms": 0.40529874329562254,
+        "positionRms": 0.05242217252042194
+      },
+      {
+        "angleRms": 0.3381489674248386,
+        "positionRms": 0.05749099002651235
+      },
+      {
+        "angleRms": 0.2270229876140475,
+        "positionRms": 0.04508908898350162
+      },
+      {
+        "angleRms": 0.43022487625757083,
+        "positionRms": 0.06432480738359389
+      },
+      {
+        "angleRms": 0.5179828445197878,
+        "positionRms": 0.1168184986765867
+      },
+      {
+        "angleRms": 0.6023150655002917,
+        "positionRms": 0.09122981883147811
+      },
+      {
+        "angleRms": 0.4667039829891927,
+        "positionRms": 0.0479075411493046
+      },
+      {
+        "angleRms": 0.41603165030423644,
+        "positionRms": 0.06626326208463244
+      },
+      {
+        "angleRms": 0.3882442539495761,
+        "positionRms": 0.07393046088617009
+      },
+      {
+        "angleRms": 0.4632247777880739,
+        "positionRms": 0.06295879280214922
+      },
+      {
+        "angleRms": 0.5492938472443512,
+        "positionRms": 0.0691095300523176
+      }
+    ],
+    [
+      {
+        "angleRms": 0.4260083383160434,
+        "positionRms": 0.03524800140609793
+      },
+      {
+        "angleRms": 0.3746309888135907,
+        "positionRms": 0.045397953965545926
+      },
+      {
+        "angleRms": 0.419684379342082,
+        "positionRms": 0.07836794551284842
+      },
+      {
+        "angleRms": 0.4871548759436691,
+        "positionRms": 0.03757312075809404
+      },
+      {
+        "angleRms": 2.3338099868256283e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3886858568289741,
+        "positionRms": 0.03113491936741965
+      },
+      {
+        "angleRms": 0.39948111654659946,
+        "positionRms": 0.043408615333584415
+      },
+      {
+        "angleRms": 0.5162363882719241,
+        "positionRms": 0.04709762120165465
+      },
+      {
+        "angleRms": 0.4300271388835331,
+        "positionRms": 0.06883257624382444
+      },
+      {
+        "angleRms": 0.3775654125661111,
+        "positionRms": 0.05122789223315047
+      },
+      {
+        "angleRms": 0.40522747873679427,
+        "positionRms": 0.06400112808547141
+      },
+      {
+        "angleRms": 0.41251840601320144,
+        "positionRms": 0.06787993414279565
+      },
+      {
+        "angleRms": 0.2717117442096346,
+        "positionRms": 0.05560355720040763
+      },
+      {
+        "angleRms": 0.36782390788793473,
+        "positionRms": 0.1169317410462126
+      },
+      {
+        "angleRms": 0.3706137848759052,
+        "positionRms": 0.09054993207872138
+      },
+      {
+        "angleRms": 0.3316098000912539,
+        "positionRms": 0.05992255091225832
+      },
+      {
+        "angleRms": 0.37070205829678327,
+        "positionRms": 0.06073716559105066
+      },
+      {
+        "angleRms": 0.4358925701459657,
+        "positionRms": 0.0788238901502754
+      },
+      {
+        "angleRms": 0.40370809815109493,
+        "positionRms": 0.06581994640813982
+      },
+      {
+        "angleRms": 0.33355922689177686,
+        "positionRms": 0.08231067761972281
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3733894473611667,
+        "positionRms": 0.03172217237114927
+      },
+      {
+        "angleRms": 0.40965857031225866,
+        "positionRms": 0.03488960649202787
+      },
+      {
+        "angleRms": 0.2566955344149265,
+        "positionRms": 0.07028569199561996
+      },
+      {
+        "angleRms": 0.47547077376596364,
+        "positionRms": 0.03281215805813971
+      },
+      {
+        "angleRms": 0.3886858568289741,
+        "positionRms": 0.03113491936741965
+      },
+      {
+        "angleRms": 2.043977186944541e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4142121575574405,
+        "positionRms": 0.04548732439715201
+      },
+      {
+        "angleRms": 0.5162197078341272,
+        "positionRms": 0.04898416276598735
+      },
+      {
+        "angleRms": 0.4237234322770621,
+        "positionRms": 0.06192076086851841
+      },
+      {
+        "angleRms": 0.260941100531035,
+        "positionRms": 0.04324461395198739
+      },
+      {
+        "angleRms": 0.35863899180448144,
+        "positionRms": 0.05774892282874408
+      },
+      {
+        "angleRms": 0.41390357827212293,
+        "positionRms": 0.05697677072530393
+      },
+      {
+        "angleRms": 0.3145017715204944,
+        "positionRms": 0.04795044633845746
+      },
+      {
+        "angleRms": 0.4619224337452186,
+        "positionRms": 0.12317408141397192
+      },
+      {
+        "angleRms": 0.4344876184799233,
+        "positionRms": 0.08555861447561566
+      },
+      {
+        "angleRms": 0.34162946615792894,
+        "positionRms": 0.056787033941008376
+      },
+      {
+        "angleRms": 0.375173021176811,
+        "positionRms": 0.06206055211156347
+      },
+      {
+        "angleRms": 0.4430825764198872,
+        "positionRms": 0.0775918350883856
+      },
+      {
+        "angleRms": 0.29754529803522534,
+        "positionRms": 0.059320052569567745
+      },
+      {
+        "angleRms": 0.39697011373294167,
+        "positionRms": 0.07940765484415431
+      }
+    ],
+    [
+      {
+        "angleRms": 0.32600329700340086,
+        "positionRms": 0.040529963348600935
+      },
+      {
+        "angleRms": 0.3479488705635355,
+        "positionRms": 0.05198523642589572
+      },
+      {
+        "angleRms": 0.4187739510113879,
+        "positionRms": 0.06659040835644583
+      },
+      {
+        "angleRms": 0.3888575208575233,
+        "positionRms": 0.046564364344990394
+      },
+      {
+        "angleRms": 0.39948111654659946,
+        "positionRms": 0.043408615333584415
+      },
+      {
+        "angleRms": 0.4142121575574405,
+        "positionRms": 0.04548732439715201
+      },
+      {
+        "angleRms": 2.3470328121133427e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4826453157980748,
+        "positionRms": 0.06017894111542145
+      },
+      {
+        "angleRms": 0.33717239856806536,
+        "positionRms": 0.054840927167818763
+      },
+      {
+        "angleRms": 0.30576474292957745,
+        "positionRms": 0.04843455458236961
+      },
+      {
+        "angleRms": 0.3694962593998841,
+        "positionRms": 0.062331645746383606
+      },
+      {
+        "angleRms": 0.33896211305339,
+        "positionRms": 0.08312591043105196
+      },
+      {
+        "angleRms": 0.3316384340264909,
+        "positionRms": 0.06118941729528206
+      },
+      {
+        "angleRms": 0.3598936856016695,
+        "positionRms": 0.10539285902249566
+      },
+      {
+        "angleRms": 0.4534533469512175,
+        "positionRms": 0.090004678902605
+      },
+      {
+        "angleRms": 0.28277602996444895,
+        "positionRms": 0.06783102032255854
+      },
+      {
+        "angleRms": 0.28936732155504546,
+        "positionRms": 0.0603323988744968
+      },
+      {
+        "angleRms": 0.2653543702529707,
+        "positionRms": 0.05160638145962972
+      },
+      {
+        "angleRms": 0.3342726302165526,
+        "positionRms": 0.06199190091769155
+      },
+      {
+        "angleRms": 0.345984552521688,
+        "positionRms": 0.06777630827315073
+      }
+    ],
+    [
+      {
+        "angleRms": 0.5271051614108181,
+        "positionRms": 0.057826262704048066
+      },
+      {
+        "angleRms": 0.46570987792342217,
+        "positionRms": 0.05019117920519179
+      },
+      {
+        "angleRms": 0.5104371355968775,
+        "positionRms": 0.0815233198171301
+      },
+      {
+        "angleRms": 0.2981666275365673,
+        "positionRms": 0.03302014732202332
+      },
+      {
+        "angleRms": 0.5162363882719241,
+        "positionRms": 0.04709762120165465
+      },
+      {
+        "angleRms": 0.5162197078341272,
+        "positionRms": 0.04898416276598735
+      },
+      {
+        "angleRms": 0.4826453157980748,
+        "positionRms": 0.06017894111542145
+      },
+      {
+        "angleRms": 2.1972094550385462e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.5290573508850223,
+        "positionRms": 0.05820415892974969
+      },
+      {
+        "angleRms": 0.4273622631145458,
+        "positionRms": 0.06049213234137242
+      },
+      {
+        "angleRms": 0.34432374466457893,
+        "positionRms": 0.057723224627967494
+      },
+      {
+        "angleRms": 0.3761178175478551,
+        "positionRms": 0.04972578189262639
+      },
+      {
+        "angleRms": 0.4651998589333136,
+        "positionRms": 0.07740337914863905
+      },
+      {
+        "angleRms": 0.5525794079349193,
+        "positionRms": 0.12692712842433293
+      },
+      {
+        "angleRms": 0.6274244739490623,
+        "positionRms": 0.10569913199008224
+      },
+      {
+        "angleRms": 0.4932468313604328,
+        "positionRms": 0.046664861311292494
+      },
+      {
+        "angleRms": 0.4365305870183919,
+        "positionRms": 0.0726340136545596
+      },
+      {
+        "angleRms": 0.43467526305025567,
+        "positionRms": 0.0885862055073421
+      },
+      {
+        "angleRms": 0.4965267450781188,
+        "positionRms": 0.07523938134732525
+      },
+      {
+        "angleRms": 0.5722745717819491,
+        "positionRms": 0.07766575468260957
+      }
+    ],
+    [
+      {
+        "angleRms": 0.2587060982133383,
+        "positionRms": 0.06602056755040987
+      },
+      {
+        "angleRms": 0.3466804529254594,
+        "positionRms": 0.05726400529906214
+      },
+      {
+        "angleRms": 0.4360040124384357,
+        "positionRms": 0.050311608674818036
+      },
+      {
+        "angleRms": 0.525172967632621,
+        "positionRms": 0.05070913664952741
+      },
+      {
+        "angleRms": 0.4300271388835331,
+        "positionRms": 0.06883257624382444
+      },
+      {
+        "angleRms": 0.4237234322770621,
+        "positionRms": 0.06192076086851841
+      },
+      {
+        "angleRms": 0.33717239856806536,
+        "positionRms": 0.054840927167818763
+      },
+      {
+        "angleRms": 0.5290573508850223,
+        "positionRms": 0.05820415892974969
+      },
+      {
+        "angleRms": 2.175979880310557e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.36079137016694496,
+        "positionRms": 0.055635580429170356
+      },
+      {
+        "angleRms": 0.4085137642380037,
+        "positionRms": 0.062429002606729525
+      },
+      {
+        "angleRms": 0.4484533697291844,
+        "positionRms": 0.07778777686053226
+      },
+      {
+        "angleRms": 0.3472126935150249,
+        "positionRms": 0.08644101547439932
+      },
+      {
+        "angleRms": 0.3555487038884302,
+        "positionRms": 0.13145901211293584
+      },
+      {
+        "angleRms": 0.2918549939506481,
+        "positionRms": 0.09210240667427506
+      },
+      {
+        "angleRms": 0.27328345603432624,
+        "positionRms": 0.05891650874489609
+      },
+      {
+        "angleRms": 0.3505079311160811,
+        "positionRms": 0.08111974371677008
+      },
+      {
+        "angleRms": 0.35879532835212813,
+        "positionRms": 0.05747997551484955
+      },
+      {
+        "angleRms": 0.36151201812713807,
+        "positionRms": 0.07211289988266315
+      },
+      {
+        "angleRms": 0.2477829251375991,
+        "positionRms": 0.04603331633949499
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3146772694080852,
+        "positionRms": 0.03941232280367294
+      },
+      {
+        "angleRms": 0.31523272330225377,
+        "positionRms": 0.037479085526195735
+      },
+      {
+        "angleRms": 0.27136837332255626,
+        "positionRms": 0.049352733863844395
+      },
+      {
+        "angleRms": 0.40529874329562254,
+        "positionRms": 0.05242217252042194
+      },
+      {
+        "angleRms": 0.3775654125661111,
+        "positionRms": 0.05122789223315047
+      },
+      {
+        "angleRms": 0.260941100531035,
+        "positionRms": 0.04324461395198739
+      },
+      {
+        "angleRms": 0.30576474292957745,
+        "positionRms": 0.04843455458236961
+      },
+      {
+        "angleRms": 0.4273622631145458,
+        "positionRms": 0.06049213234137242
+      },
+      {
+        "angleRms": 0.36079137016694496,
+        "positionRms": 0.055635580429170356
+      },
+      {
+        "angleRms": 2.1183277776108788e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.279691875226001,
+        "positionRms": 0.0513813461275731
+      },
+      {
+        "angleRms": 0.3626159175196551,
+        "positionRms": 0.0791828077775828
+      },
+      {
+        "angleRms": 0.24886396779396652,
+        "positionRms": 0.051572591333394355
+      },
+      {
+        "angleRms": 0.42973807515063256,
+        "positionRms": 0.13280498634585422
+      },
+      {
+        "angleRms": 0.42954671849558995,
+        "positionRms": 0.07815121449579307
+      },
+      {
+        "angleRms": 0.2788096705468768,
+        "positionRms": 0.07460854776024677
+      },
+      {
+        "angleRms": 0.3022244812584417,
+        "positionRms": 0.0623954155852603
+      },
+      {
+        "angleRms": 0.3610604574490269,
+        "positionRms": 0.07355764296265806
+      },
+      {
+        "angleRms": 0.2988384080729826,
+        "positionRms": 0.06168124638544798
+      },
+      {
+        "angleRms": 0.3397863827710554,
+        "positionRms": 0.07575451264179536
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3674268447907633,
+        "positionRms": 0.06433034061901959
+      },
+      {
+        "angleRms": 0.30927566635524245,
+        "positionRms": 0.039966547059923585
+      },
+      {
+        "angleRms": 0.30497084021104964,
+        "positionRms": 0.06174549324242103
+      },
+      {
+        "angleRms": 0.3381489674248386,
+        "positionRms": 0.05749099002651235
+      },
+      {
+        "angleRms": 0.40522747873679427,
+        "positionRms": 0.06400112808547141
+      },
+      {
+        "angleRms": 0.35863899180448144,
+        "positionRms": 0.05774892282874408
+      },
+      {
+        "angleRms": 0.3694962593998841,
+        "positionRms": 0.062331645746383606
+      },
+      {
+        "angleRms": 0.34432374466457893,
+        "positionRms": 0.057723224627967494
+      },
+      {
+        "angleRms": 0.4085137642380037,
+        "positionRms": 0.062429002606729525
+      },
+      {
+        "angleRms": 0.279691875226001,
+        "positionRms": 0.0513813461275731
+      },
+      {
+        "angleRms": 2.300420426418392e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.31368678506947023,
+        "positionRms": 0.07918852345101443
+      },
+      {
+        "angleRms": 0.3188247142751438,
+        "positionRms": 0.068794031233851
+      },
+      {
+        "angleRms": 0.47653326767703086,
+        "positionRms": 0.14810404404793862
+      },
+      {
+        "angleRms": 0.49107287651255976,
+        "positionRms": 0.10363652652896574
+      },
+      {
+        "angleRms": 0.3578605071120259,
+        "positionRms": 0.07308127520416821
+      },
+      {
+        "angleRms": 0.3221589129369139,
+        "positionRms": 0.081081417633086
+      },
+      {
+        "angleRms": 0.38476862489233354,
+        "positionRms": 0.09088692551674703
+      },
+      {
+        "angleRms": 0.3538585243982909,
+        "positionRms": 0.08472476604922087
+      },
+      {
+        "angleRms": 0.4143302189280542,
+        "positionRms": 0.08739719239034141
+      }
+    ],
+    [
+      {
+        "angleRms": 0.4558987219685974,
+        "positionRms": 0.07153471939212001
+      },
+      {
+        "angleRms": 0.3400420973522429,
+        "positionRms": 0.06500611800720088
+      },
+      {
+        "angleRms": 0.3954227201488527,
+        "positionRms": 0.10121745239448063
+      },
+      {
+        "angleRms": 0.2270229876140475,
+        "positionRms": 0.04508908898350162
+      },
+      {
+        "angleRms": 0.41251840601320144,
+        "positionRms": 0.06787993414279565
+      },
+      {
+        "angleRms": 0.41390357827212293,
+        "positionRms": 0.05697677072530393
+      },
+      {
+        "angleRms": 0.33896211305339,
+        "positionRms": 0.08312591043105196
+      },
+      {
+        "angleRms": 0.3761178175478551,
+        "positionRms": 0.04972578189262639
+      },
+      {
+        "angleRms": 0.4484533697291844,
+        "positionRms": 0.07778777686053226
+      },
+      {
+        "angleRms": 0.3626159175196551,
+        "positionRms": 0.0791828077775828
+      },
+      {
+        "angleRms": 0.31368678506947023,
+        "positionRms": 0.07918852345101443
+      },
+      {
+        "angleRms": 1.8782854128669185e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.36521875694417966,
+        "positionRms": 0.08471206285666828
+      },
+      {
+        "angleRms": 0.45636547665921395,
+        "positionRms": 0.13490800939374983
+      },
+      {
+        "angleRms": 0.4986151596318531,
+        "positionRms": 0.1117683234362706
+      },
+      {
+        "angleRms": 0.3906179972467986,
+        "positionRms": 0.053926125243085765
+      },
+      {
+        "angleRms": 0.35803637649655257,
+        "positionRms": 0.08861340520635828
+      },
+      {
+        "angleRms": 0.37265764516145156,
+        "positionRms": 0.10437552723765338
+      },
+      {
+        "angleRms": 0.3991067777318538,
+        "positionRms": 0.08068637797942445
+      },
+      {
+        "angleRms": 0.45401115401506975,
+        "positionRms": 0.09204289459613602
+      }
+    ],
+    [
+      {
+        "angleRms": 0.33598760433416225,
+        "positionRms": 0.04705702067773156
+      },
+      {
+        "angleRms": 0.2927745945400867,
+        "positionRms": 0.05602634348667185
+      },
+      {
+        "angleRms": 0.3710712122073397,
+        "positionRms": 0.08058746879347328
+      },
+      {
+        "angleRms": 0.43022487625757083,
+        "positionRms": 0.06432480738359389
+      },
+      {
+        "angleRms": 0.2717117442096346,
+        "positionRms": 0.05560355720040763
+      },
+      {
+        "angleRms": 0.3145017715204944,
+        "positionRms": 0.04795044633845746
+      },
+      {
+        "angleRms": 0.3316384340264909,
+        "positionRms": 0.06118941729528206
+      },
+      {
+        "angleRms": 0.4651998589333136,
+        "positionRms": 0.07740337914863905
+      },
+      {
+        "angleRms": 0.3472126935150249,
+        "positionRms": 0.08644101547439932
+      },
+      {
+        "angleRms": 0.24886396779396652,
+        "positionRms": 0.051572591333394355
+      },
+      {
+        "angleRms": 0.3188247142751438,
+        "positionRms": 0.068794031233851
+      },
+      {
+        "angleRms": 0.36521875694417966,
+        "positionRms": 0.08471206285666828
+      },
+      {
+        "angleRms": 2.2321434330335605e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.36714305653724694,
+        "positionRms": 0.13504248464043828
+      },
+      {
+        "angleRms": 0.34672325854203145,
+        "positionRms": 0.07603245417318587
+      },
+      {
+        "angleRms": 0.30260975220941516,
+        "positionRms": 0.08671545795017722
+      },
+      {
+        "angleRms": 0.3016627935919709,
+        "positionRms": 0.07348519302919042
+      },
+      {
+        "angleRms": 0.38773706341245057,
+        "positionRms": 0.09117373822192823
+      },
+      {
+        "angleRms": 0.32037638476051505,
+        "positionRms": 0.0811439428365701
+      },
+      {
+        "angleRms": 0.3216752437670074,
+        "positionRms": 0.099824070645197
+      }
+    ],
+    [
+      {
+        "angleRms": 0.40424964025049315,
+        "positionRms": 0.11701006609529419
+      },
+      {
+        "angleRms": 0.4318302668175244,
+        "positionRms": 0.1377889717605588
+      },
+      {
+        "angleRms": 0.5336063005521121,
+        "positionRms": 0.16033061595647374
+      },
+      {
+        "angleRms": 0.5179828445197878,
+        "positionRms": 0.1168184986765867
+      },
+      {
+        "angleRms": 0.36782390788793473,
+        "positionRms": 0.1169317410462126
+      },
+      {
+        "angleRms": 0.4619224337452186,
+        "positionRms": 0.12317408141397192
+      },
+      {
+        "angleRms": 0.3598936856016695,
+        "positionRms": 0.10539285902249566
+      },
+      {
+        "angleRms": 0.5525794079349193,
+        "positionRms": 0.12692712842433293
+      },
+      {
+        "angleRms": 0.3555487038884302,
+        "positionRms": 0.13145901211293584
+      },
+      {
+        "angleRms": 0.42973807515063256,
+        "positionRms": 0.13280498634585422
+      },
+      {
+        "angleRms": 0.47653326767703086,
+        "positionRms": 0.14810404404793862
+      },
+      {
+        "angleRms": 0.45636547665921395,
+        "positionRms": 0.13490800939374983
+      },
+      {
+        "angleRms": 0.36714305653724694,
+        "positionRms": 0.13504248464043828
+      },
+      {
+        "angleRms": 2.074037288432628e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3912689230969669,
+        "positionRms": 0.14022161079622322
+      },
+      {
+        "angleRms": 0.3702425100813379,
+        "positionRms": 0.130004639007569
+      },
+      {
+        "angleRms": 0.3767481470367404,
+        "positionRms": 0.12227046927993261
+      },
+      {
+        "angleRms": 0.39940006134822315,
+        "positionRms": 0.11256248873037338
+      },
+      {
+        "angleRms": 0.3951857067266157,
+        "positionRms": 0.11486628587827896
+      },
+      {
+        "angleRms": 0.36616504887488815,
+        "positionRms": 0.11687188310032058
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3595354920038137,
+        "positionRms": 0.0760557937938032
+      },
+      {
+        "angleRms": 0.41274378642016113,
+        "positionRms": 0.09084387623060887
+      },
+      {
+        "angleRms": 0.5008103112745853,
+        "positionRms": 0.09437882819284217
+      },
+      {
+        "angleRms": 0.6023150655002917,
+        "positionRms": 0.09122981883147811
+      },
+      {
+        "angleRms": 0.3706137848759052,
+        "positionRms": 0.09054993207872138
+      },
+      {
+        "angleRms": 0.4344876184799233,
+        "positionRms": 0.08555861447561566
+      },
+      {
+        "angleRms": 0.4534533469512175,
+        "positionRms": 0.090004678902605
+      },
+      {
+        "angleRms": 0.6274244739490623,
+        "positionRms": 0.10569913199008224
+      },
+      {
+        "angleRms": 0.2918549939506481,
+        "positionRms": 0.09210240667427506
+      },
+      {
+        "angleRms": 0.42954671849558995,
+        "positionRms": 0.07815121449579307
+      },
+      {
+        "angleRms": 0.49107287651255976,
+        "positionRms": 0.10363652652896574
+      },
+      {
+        "angleRms": 0.4986151596318531,
+        "positionRms": 0.1117683234362706
+      },
+      {
+        "angleRms": 0.34672325854203145,
+        "positionRms": 0.07603245417318587
+      },
+      {
+        "angleRms": 0.3912689230969669,
+        "positionRms": 0.14022161079622322
+      },
+      {
+        "angleRms": 2.44392466539148e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.31789918968354747,
+        "positionRms": 0.10935015724318198
+      },
+      {
+        "angleRms": 0.43419526874492803,
+        "positionRms": 0.09357696338019551
+      },
+      {
+        "angleRms": 0.46839694848604535,
+        "positionRms": 0.09649968075445635
+      },
+      {
+        "angleRms": 0.42086672056370317,
+        "positionRms": 0.08939042270403542
+      },
+      {
+        "angleRms": 0.23819201982564073,
+        "positionRms": 0.09137601222269773
+      }
+    ],
+    [
+      {
+        "angleRms": 0.2883695171786652,
+        "positionRms": 0.06794409115181449
+      },
+      {
+        "angleRms": 0.35040682251428884,
+        "positionRms": 0.054517883208609376
+      },
+      {
+        "angleRms": 0.3465807914968452,
+        "positionRms": 0.08206021797158759
+      },
+      {
+        "angleRms": 0.4667039829891927,
+        "positionRms": 0.0479075411493046
+      },
+      {
+        "angleRms": 0.3316098000912539,
+        "positionRms": 0.05992255091225832
+      },
+      {
+        "angleRms": 0.34162946615792894,
+        "positionRms": 0.056787033941008376
+      },
+      {
+        "angleRms": 0.28277602996444895,
+        "positionRms": 0.06783102032255854
+      },
+      {
+        "angleRms": 0.4932468313604328,
+        "positionRms": 0.046664861311292494
+      },
+      {
+        "angleRms": 0.27328345603432624,
+        "positionRms": 0.05891650874489609
+      },
+      {
+        "angleRms": 0.2788096705468768,
+        "positionRms": 0.07460854776024677
+      },
+      {
+        "angleRms": 0.3578605071120259,
+        "positionRms": 0.07308127520416821
+      },
+      {
+        "angleRms": 0.3906179972467986,
+        "positionRms": 0.053926125243085765
+      },
+      {
+        "angleRms": 0.30260975220941516,
+        "positionRms": 0.08671545795017722
+      },
+      {
+        "angleRms": 0.3702425100813379,
+        "positionRms": 0.130004639007569
+      },
+      {
+        "angleRms": 0.31789918968354747,
+        "positionRms": 0.10935015724318198
+      },
+      {
+        "angleRms": 2.5310127490426108e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3110059644146504,
+        "positionRms": 0.08363457769239373
+      },
+      {
+        "angleRms": 0.2614825524202836,
+        "positionRms": 0.08788354530148011
+      },
+      {
+        "angleRms": 0.32539002116791443,
+        "positionRms": 0.07802720591649275
+      },
+      {
+        "angleRms": 0.16824564720161855,
+        "positionRms": 0.07020928960722164
+      }
+    ],
+    [
+      {
+        "angleRms": 0.29178627395102213,
+        "positionRms": 0.050629761741817506
+      },
+      {
+        "angleRms": 0.3000332260132574,
+        "positionRms": 0.06980765356252179
+      },
+      {
+        "angleRms": 0.383541401207245,
+        "positionRms": 0.08696756551905975
+      },
+      {
+        "angleRms": 0.41603165030423644,
+        "positionRms": 0.06626326208463244
+      },
+      {
+        "angleRms": 0.37070205829678327,
+        "positionRms": 0.06073716559105066
+      },
+      {
+        "angleRms": 0.375173021176811,
+        "positionRms": 0.06206055211156347
+      },
+      {
+        "angleRms": 0.28936732155504546,
+        "positionRms": 0.0603323988744968
+      },
+      {
+        "angleRms": 0.4365305870183919,
+        "positionRms": 0.0726340136545596
+      },
+      {
+        "angleRms": 0.3505079311160811,
+        "positionRms": 0.08111974371677008
+      },
+      {
+        "angleRms": 0.3022244812584417,
+        "positionRms": 0.0623954155852603
+      },
+      {
+        "angleRms": 0.3221589129369139,
+        "positionRms": 0.081081417633086
+      },
+      {
+        "angleRms": 0.35803637649655257,
+        "positionRms": 0.08861340520635828
+      },
+      {
+        "angleRms": 0.3016627935919709,
+        "positionRms": 0.07348519302919042
+      },
+      {
+        "angleRms": 0.3767481470367404,
+        "positionRms": 0.12227046927993261
+      },
+      {
+        "angleRms": 0.43419526874492803,
+        "positionRms": 0.09357696338019551
+      },
+      {
+        "angleRms": 0.3110059644146504,
+        "positionRms": 0.08363457769239373
+      },
+      {
+        "angleRms": 2.280152009952086e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3629771162458235,
+        "positionRms": 0.08486662215233906
+      },
+      {
+        "angleRms": 0.3042017086681773,
+        "positionRms": 0.06856498819148373
+      },
+      {
+        "angleRms": 0.3619038652358278,
+        "positionRms": 0.09137147250857726
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3759139204622343,
+        "positionRms": 0.07391251194143776
+      },
+      {
+        "angleRms": 0.4134408341885083,
+        "positionRms": 0.0820042628675571
+      },
+      {
+        "angleRms": 0.442803577858859,
+        "positionRms": 0.07760596262667467
+      },
+      {
+        "angleRms": 0.3882442539495761,
+        "positionRms": 0.07393046088617009
+      },
+      {
+        "angleRms": 0.4358925701459657,
+        "positionRms": 0.0788238901502754
+      },
+      {
+        "angleRms": 0.4430825764198872,
+        "positionRms": 0.0775918350883856
+      },
+      {
+        "angleRms": 0.2653543702529707,
+        "positionRms": 0.05160638145962972
+      },
+      {
+        "angleRms": 0.43467526305025567,
+        "positionRms": 0.0885862055073421
+      },
+      {
+        "angleRms": 0.35879532835212813,
+        "positionRms": 0.05747997551484955
+      },
+      {
+        "angleRms": 0.3610604574490269,
+        "positionRms": 0.07355764296265806
+      },
+      {
+        "angleRms": 0.38476862489233354,
+        "positionRms": 0.09088692551674703
+      },
+      {
+        "angleRms": 0.37265764516145156,
+        "positionRms": 0.10437552723765338
+      },
+      {
+        "angleRms": 0.38773706341245057,
+        "positionRms": 0.09117373822192823
+      },
+      {
+        "angleRms": 0.39940006134822315,
+        "positionRms": 0.11256248873037338
+      },
+      {
+        "angleRms": 0.46839694848604535,
+        "positionRms": 0.09649968075445635
+      },
+      {
+        "angleRms": 0.2614825524202836,
+        "positionRms": 0.08788354530148011
+      },
+      {
+        "angleRms": 0.3629771162458235,
+        "positionRms": 0.08486662215233906
+      },
+      {
+        "angleRms": 2.3862617041568473e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3965113588465242,
+        "positionRms": 0.0839130346834742
+      },
+      {
+        "angleRms": 0.36955277592973157,
+        "positionRms": 0.06369587670211928
+      }
+    ],
+    [
+      {
+        "angleRms": 0.34860139620864267,
+        "positionRms": 0.057129284166793144
+      },
+      {
+        "angleRms": 0.35723526270414485,
+        "positionRms": 0.07162966772548009
+      },
+      {
+        "angleRms": 0.3649814644673184,
+        "positionRms": 0.08405437077920837
+      },
+      {
+        "angleRms": 0.4632247777880739,
+        "positionRms": 0.06295879280214922
+      },
+      {
+        "angleRms": 0.40370809815109493,
+        "positionRms": 0.06581994640813982
+      },
+      {
+        "angleRms": 0.29754529803522534,
+        "positionRms": 0.059320052569567745
+      },
+      {
+        "angleRms": 0.3342726302165526,
+        "positionRms": 0.06199190091769155
+      },
+      {
+        "angleRms": 0.4965267450781188,
+        "positionRms": 0.07523938134732525
+      },
+      {
+        "angleRms": 0.36151201812713807,
+        "positionRms": 0.07211289988266315
+      },
+      {
+        "angleRms": 0.2988384080729826,
+        "positionRms": 0.06168124638544798
+      },
+      {
+        "angleRms": 0.3538585243982909,
+        "positionRms": 0.08472476604922087
+      },
+      {
+        "angleRms": 0.3991067777318538,
+        "positionRms": 0.08068637797942445
+      },
+      {
+        "angleRms": 0.32037638476051505,
+        "positionRms": 0.0811439428365701
+      },
+      {
+        "angleRms": 0.3951857067266157,
+        "positionRms": 0.11486628587827896
+      },
+      {
+        "angleRms": 0.42086672056370317,
+        "positionRms": 0.08939042270403542
+      },
+      {
+        "angleRms": 0.32539002116791443,
+        "positionRms": 0.07802720591649275
+      },
+      {
+        "angleRms": 0.3042017086681773,
+        "positionRms": 0.06856498819148373
+      },
+      {
+        "angleRms": 0.3965113588465242,
+        "positionRms": 0.0839130346834742
+      },
+      {
+        "angleRms": 2.437585031715621e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.3653530116654769,
+        "positionRms": 0.07500609024955728
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3084242060069872,
+        "positionRms": 0.07979783414729727
+      },
+      {
+        "angleRms": 0.3472019866987461,
+        "positionRms": 0.08042648906290216
+      },
+      {
+        "angleRms": 0.40082654277363333,
+        "positionRms": 0.07951407390275235
+      },
+      {
+        "angleRms": 0.5492938472443512,
+        "positionRms": 0.0691095300523176
+      },
+      {
+        "angleRms": 0.33355922689177686,
+        "positionRms": 0.08231067761972281
+      },
+      {
+        "angleRms": 0.39697011373294167,
+        "positionRms": 0.07940765484415431
+      },
+      {
+        "angleRms": 0.345984552521688,
+        "positionRms": 0.06777630827315073
+      },
+      {
+        "angleRms": 0.5722745717819491,
+        "positionRms": 0.07766575468260957
+      },
+      {
+        "angleRms": 0.2477829251375991,
+        "positionRms": 0.04603331633949499
+      },
+      {
+        "angleRms": 0.3397863827710554,
+        "positionRms": 0.07575451264179536
+      },
+      {
+        "angleRms": 0.4143302189280542,
+        "positionRms": 0.08739719239034141
+      },
+      {
+        "angleRms": 0.45401115401506975,
+        "positionRms": 0.09204289459613602
+      },
+      {
+        "angleRms": 0.3216752437670074,
+        "positionRms": 0.099824070645197
+      },
+      {
+        "angleRms": 0.36616504887488815,
+        "positionRms": 0.11687188310032058
+      },
+      {
+        "angleRms": 0.23819201982564073,
+        "positionRms": 0.09137601222269773
+      },
+      {
+        "angleRms": 0.16824564720161855,
+        "positionRms": 0.07020928960722164
+      },
+      {
+        "angleRms": 0.3619038652358278,
+        "positionRms": 0.09137147250857726
+      },
+      {
+        "angleRms": 0.36955277592973157,
+        "positionRms": 0.06369587670211928
+      },
+      {
+        "angleRms": 0.3653530116654769,
+        "positionRms": 0.07500609024955728
+      },
+      {
+        "angleRms": 2.353616367295545e-8,
+        "positionRms": 0
+      }
+    ]
+  ],
+  "pairs": [
+    {
+      "left": "mochi-1",
+      "right": "mochi-2",
+      "required": true,
+      "angleRms": 0.38056918044801213,
+      "positionRms": 0.04324202579314131,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "mochi-3",
+      "required": true,
+      "angleRms": 0.4076458475439374,
+      "positionRms": 0.07114637861545611,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "mochi-4",
+      "required": true,
+      "angleRms": 0.5324480195320879,
+      "positionRms": 0.04173781586093328,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "soot-1",
+      "required": true,
+      "angleRms": 0.4260083383160434,
+      "positionRms": 0.03524800140609793,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "soot-2",
+      "required": false,
+      "angleRms": 0.3733894473611667,
+      "positionRms": 0.03172217237114927,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "soot-3",
+      "required": false,
+      "angleRms": 0.32600329700340086,
+      "positionRms": 0.040529963348600935,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "soot-4",
+      "required": false,
+      "angleRms": 0.5271051614108181,
+      "positionRms": 0.057826262704048066,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "clover-1",
+      "required": true,
+      "angleRms": 0.2587060982133383,
+      "positionRms": 0.06602056755040987,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.3146772694080852,
+      "positionRms": 0.03941232280367294,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.3674268447907633,
+      "positionRms": 0.06433034061901959,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.4558987219685974,
+      "positionRms": 0.07153471939212001,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.33598760433416225,
+      "positionRms": 0.04705702067773156,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.40424964025049315,
+      "positionRms": 0.11701006609529419,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.3595354920038137,
+      "positionRms": 0.0760557937938032,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.2883695171786652,
+      "positionRms": 0.06794409115181449,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.29178627395102213,
+      "positionRms": 0.050629761741817506,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.3759139204622343,
+      "positionRms": 0.07391251194143776,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.34860139620864267,
+      "positionRms": 0.057129284166793144,
+      "pass": true
+    },
+    {
+      "left": "mochi-1",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3084242060069872,
+      "positionRms": 0.07979783414729727,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "mochi-3",
+      "required": true,
+      "angleRms": 0.390768077910635,
+      "positionRms": 0.056069073594380264,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "mochi-4",
+      "required": true,
+      "angleRms": 0.3954777439007925,
+      "positionRms": 0.042287321983052455,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "soot-1",
+      "required": false,
+      "angleRms": 0.3746309888135907,
+      "positionRms": 0.045397953965545926,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "soot-2",
+      "required": true,
+      "angleRms": 0.40965857031225866,
+      "positionRms": 0.03488960649202787,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "soot-3",
+      "required": false,
+      "angleRms": 0.3479488705635355,
+      "positionRms": 0.05198523642589572,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "soot-4",
+      "required": false,
+      "angleRms": 0.46570987792342217,
+      "positionRms": 0.05019117920519179,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.3466804529254594,
+      "positionRms": 0.05726400529906214,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "clover-2",
+      "required": true,
+      "angleRms": 0.31523272330225377,
+      "positionRms": 0.037479085526195735,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.30927566635524245,
+      "positionRms": 0.039966547059923585,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.3400420973522429,
+      "positionRms": 0.06500611800720088,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.2927745945400867,
+      "positionRms": 0.05602634348667185,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.4318302668175244,
+      "positionRms": 0.1377889717605588,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.41274378642016113,
+      "positionRms": 0.09084387623060887,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.35040682251428884,
+      "positionRms": 0.054517883208609376,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3000332260132574,
+      "positionRms": 0.06980765356252179,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.4134408341885083,
+      "positionRms": 0.0820042628675571,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.35723526270414485,
+      "positionRms": 0.07162966772548009,
+      "pass": true
+    },
+    {
+      "left": "mochi-2",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3472019866987461,
+      "positionRms": 0.08042648906290216,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "mochi-4",
+      "required": true,
+      "angleRms": 0.4730179874786947,
+      "positionRms": 0.07580707251113353,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "soot-1",
+      "required": false,
+      "angleRms": 0.419684379342082,
+      "positionRms": 0.07836794551284842,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "soot-2",
+      "required": false,
+      "angleRms": 0.2566955344149265,
+      "positionRms": 0.07028569199561996,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "soot-3",
+      "required": true,
+      "angleRms": 0.4187739510113879,
+      "positionRms": 0.06659040835644583,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "soot-4",
+      "required": false,
+      "angleRms": 0.5104371355968775,
+      "positionRms": 0.0815233198171301,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.4360040124384357,
+      "positionRms": 0.050311608674818036,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.27136837332255626,
+      "positionRms": 0.049352733863844395,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "clover-3",
+      "required": true,
+      "angleRms": 0.30497084021104964,
+      "positionRms": 0.06174549324242103,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.3954227201488527,
+      "positionRms": 0.10121745239448063,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.3710712122073397,
+      "positionRms": 0.08058746879347328,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.5336063005521121,
+      "positionRms": 0.16033061595647374,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.5008103112745853,
+      "positionRms": 0.09437882819284217,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.3465807914968452,
+      "positionRms": 0.08206021797158759,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.383541401207245,
+      "positionRms": 0.08696756551905975,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.442803577858859,
+      "positionRms": 0.07760596262667467,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3649814644673184,
+      "positionRms": 0.08405437077920837,
+      "pass": true
+    },
+    {
+      "left": "mochi-3",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.40082654277363333,
+      "positionRms": 0.07951407390275235,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "soot-1",
+      "required": false,
+      "angleRms": 0.4871548759436691,
+      "positionRms": 0.03757312075809404,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "soot-2",
+      "required": false,
+      "angleRms": 0.47547077376596364,
+      "positionRms": 0.03281215805813971,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "soot-3",
+      "required": false,
+      "angleRms": 0.3888575208575233,
+      "positionRms": 0.046564364344990394,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "soot-4",
+      "required": true,
+      "angleRms": 0.2981666275365673,
+      "positionRms": 0.03302014732202332,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.525172967632621,
+      "positionRms": 0.05070913664952741,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.40529874329562254,
+      "positionRms": 0.05242217252042194,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.3381489674248386,
+      "positionRms": 0.05749099002651235,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "clover-4",
+      "required": true,
+      "angleRms": 0.2270229876140475,
+      "positionRms": 0.04508908898350162,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.43022487625757083,
+      "positionRms": 0.06432480738359389,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.5179828445197878,
+      "positionRms": 0.1168184986765867,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.6023150655002917,
+      "positionRms": 0.09122981883147811,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.4667039829891927,
+      "positionRms": 0.0479075411493046,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.41603165030423644,
+      "positionRms": 0.06626326208463244,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.3882442539495761,
+      "positionRms": 0.07393046088617009,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.4632247777880739,
+      "positionRms": 0.06295879280214922,
+      "pass": true
+    },
+    {
+      "left": "mochi-4",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.5492938472443512,
+      "positionRms": 0.0691095300523176,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "soot-2",
+      "required": true,
+      "angleRms": 0.3886858568289741,
+      "positionRms": 0.03113491936741965,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "soot-3",
+      "required": true,
+      "angleRms": 0.39948111654659946,
+      "positionRms": 0.043408615333584415,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "soot-4",
+      "required": true,
+      "angleRms": 0.5162363882719241,
+      "positionRms": 0.04709762120165465,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "clover-1",
+      "required": true,
+      "angleRms": 0.4300271388835331,
+      "positionRms": 0.06883257624382444,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.3775654125661111,
+      "positionRms": 0.05122789223315047,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.40522747873679427,
+      "positionRms": 0.06400112808547141,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.41251840601320144,
+      "positionRms": 0.06787993414279565,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.2717117442096346,
+      "positionRms": 0.05560355720040763,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.36782390788793473,
+      "positionRms": 0.1169317410462126,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.3706137848759052,
+      "positionRms": 0.09054993207872138,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.3316098000912539,
+      "positionRms": 0.05992255091225832,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.37070205829678327,
+      "positionRms": 0.06073716559105066,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.4358925701459657,
+      "positionRms": 0.0788238901502754,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.40370809815109493,
+      "positionRms": 0.06581994640813982,
+      "pass": true
+    },
+    {
+      "left": "soot-1",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.33355922689177686,
+      "positionRms": 0.08231067761972281,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "soot-3",
+      "required": true,
+      "angleRms": 0.4142121575574405,
+      "positionRms": 0.04548732439715201,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "soot-4",
+      "required": true,
+      "angleRms": 0.5162197078341272,
+      "positionRms": 0.04898416276598735,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.4237234322770621,
+      "positionRms": 0.06192076086851841,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "clover-2",
+      "required": true,
+      "angleRms": 0.260941100531035,
+      "positionRms": 0.04324461395198739,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.35863899180448144,
+      "positionRms": 0.05774892282874408,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.41390357827212293,
+      "positionRms": 0.05697677072530393,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.3145017715204944,
+      "positionRms": 0.04795044633845746,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.4619224337452186,
+      "positionRms": 0.12317408141397192,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.4344876184799233,
+      "positionRms": 0.08555861447561566,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.34162946615792894,
+      "positionRms": 0.056787033941008376,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.375173021176811,
+      "positionRms": 0.06206055211156347,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.4430825764198872,
+      "positionRms": 0.0775918350883856,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.29754529803522534,
+      "positionRms": 0.059320052569567745,
+      "pass": true
+    },
+    {
+      "left": "soot-2",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.39697011373294167,
+      "positionRms": 0.07940765484415431,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "soot-4",
+      "required": true,
+      "angleRms": 0.4826453157980748,
+      "positionRms": 0.06017894111542145,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.33717239856806536,
+      "positionRms": 0.054840927167818763,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.30576474292957745,
+      "positionRms": 0.04843455458236961,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "clover-3",
+      "required": true,
+      "angleRms": 0.3694962593998841,
+      "positionRms": 0.062331645746383606,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "clover-4",
+      "required": false,
+      "angleRms": 0.33896211305339,
+      "positionRms": 0.08312591043105196,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.3316384340264909,
+      "positionRms": 0.06118941729528206,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.3598936856016695,
+      "positionRms": 0.10539285902249566,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.4534533469512175,
+      "positionRms": 0.090004678902605,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.28277602996444895,
+      "positionRms": 0.06783102032255854,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.28936732155504546,
+      "positionRms": 0.0603323988744968,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.2653543702529707,
+      "positionRms": 0.05160638145962972,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3342726302165526,
+      "positionRms": 0.06199190091769155,
+      "pass": true
+    },
+    {
+      "left": "soot-3",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.345984552521688,
+      "positionRms": 0.06777630827315073,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "clover-1",
+      "required": false,
+      "angleRms": 0.5290573508850223,
+      "positionRms": 0.05820415892974969,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "clover-2",
+      "required": false,
+      "angleRms": 0.4273622631145458,
+      "positionRms": 0.06049213234137242,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "clover-3",
+      "required": false,
+      "angleRms": 0.34432374466457893,
+      "positionRms": 0.057723224627967494,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "clover-4",
+      "required": true,
+      "angleRms": 0.3761178175478551,
+      "positionRms": 0.04972578189262639,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.4651998589333136,
+      "positionRms": 0.07740337914863905,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.5525794079349193,
+      "positionRms": 0.12692712842433293,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.6274244739490623,
+      "positionRms": 0.10569913199008224,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.4932468313604328,
+      "positionRms": 0.046664861311292494,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.4365305870183919,
+      "positionRms": 0.0726340136545596,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.43467526305025567,
+      "positionRms": 0.0885862055073421,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.4965267450781188,
+      "positionRms": 0.07523938134732525,
+      "pass": true
+    },
+    {
+      "left": "soot-4",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.5722745717819491,
+      "positionRms": 0.07766575468260957,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "clover-2",
+      "required": true,
+      "angleRms": 0.36079137016694496,
+      "positionRms": 0.055635580429170356,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "clover-3",
+      "required": true,
+      "angleRms": 0.4085137642380037,
+      "positionRms": 0.062429002606729525,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "clover-4",
+      "required": true,
+      "angleRms": 0.4484533697291844,
+      "positionRms": 0.07778777686053226,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.3472126935150249,
+      "positionRms": 0.08644101547439932,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.3555487038884302,
+      "positionRms": 0.13145901211293584,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.2918549939506481,
+      "positionRms": 0.09210240667427506,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.27328345603432624,
+      "positionRms": 0.05891650874489609,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3505079311160811,
+      "positionRms": 0.08111974371677008,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.35879532835212813,
+      "positionRms": 0.05747997551484955,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.36151201812713807,
+      "positionRms": 0.07211289988266315,
+      "pass": true
+    },
+    {
+      "left": "clover-1",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.2477829251375991,
+      "positionRms": 0.04603331633949499,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "clover-3",
+      "required": true,
+      "angleRms": 0.279691875226001,
+      "positionRms": 0.0513813461275731,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "clover-4",
+      "required": true,
+      "angleRms": 0.3626159175196551,
+      "positionRms": 0.0791828077775828,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.24886396779396652,
+      "positionRms": 0.051572591333394355,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.42973807515063256,
+      "positionRms": 0.13280498634585422,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.42954671849558995,
+      "positionRms": 0.07815121449579307,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.2788096705468768,
+      "positionRms": 0.07460854776024677,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3022244812584417,
+      "positionRms": 0.0623954155852603,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.3610604574490269,
+      "positionRms": 0.07355764296265806,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.2988384080729826,
+      "positionRms": 0.06168124638544798,
+      "pass": true
+    },
+    {
+      "left": "clover-2",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3397863827710554,
+      "positionRms": 0.07575451264179536,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "clover-4",
+      "required": true,
+      "angleRms": 0.31368678506947023,
+      "positionRms": 0.07918852345101443,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.3188247142751438,
+      "positionRms": 0.068794031233851,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.47653326767703086,
+      "positionRms": 0.14810404404793862,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.49107287651255976,
+      "positionRms": 0.10363652652896574,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.3578605071120259,
+      "positionRms": 0.07308127520416821,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3221589129369139,
+      "positionRms": 0.081081417633086,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.38476862489233354,
+      "positionRms": 0.09088692551674703,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3538585243982909,
+      "positionRms": 0.08472476604922087,
+      "pass": true
+    },
+    {
+      "left": "clover-3",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.4143302189280542,
+      "positionRms": 0.08739719239034141,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:button-guard",
+      "required": false,
+      "angleRms": 0.36521875694417966,
+      "positionRms": 0.08471206285666828,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.45636547665921395,
+      "positionRms": 0.13490800939374983,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.4986151596318531,
+      "positionRms": 0.1117683234362706,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.3906179972467986,
+      "positionRms": 0.053926125243085765,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.35803637649655257,
+      "positionRms": 0.08861340520635828,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.37265764516145156,
+      "positionRms": 0.10437552723765338,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3991067777318538,
+      "positionRms": 0.08068637797942445,
+      "pass": true
+    },
+    {
+      "left": "clover-4",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.45401115401506975,
+      "positionRms": 0.09204289459613602,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:sock-skipper",
+      "required": false,
+      "angleRms": 0.36714305653724694,
+      "positionRms": 0.13504248464043828,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.34672325854203145,
+      "positionRms": 0.07603245417318587,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.30260975220941516,
+      "positionRms": 0.08671545795017722,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3016627935919709,
+      "positionRms": 0.07348519302919042,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.38773706341245057,
+      "positionRms": 0.09117373822192823,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.32037638476051505,
+      "positionRms": 0.0811439428365701,
+      "pass": true
+    },
+    {
+      "left": "enemy:button-guard",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3216752437670074,
+      "positionRms": 0.099824070645197,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:spool-ram",
+      "required": false,
+      "angleRms": 0.3912689230969669,
+      "positionRms": 0.14022161079622322,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.3702425100813379,
+      "positionRms": 0.130004639007569,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3767481470367404,
+      "positionRms": 0.12227046927993261,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.39940006134822315,
+      "positionRms": 0.11256248873037338,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3951857067266157,
+      "positionRms": 0.11486628587827896,
+      "pass": true
+    },
+    {
+      "left": "enemy:sock-skipper",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.36616504887488815,
+      "positionRms": 0.11687188310032058,
+      "pass": true
+    },
+    {
+      "left": "enemy:spool-ram",
+      "right": "enemy:needle-moth",
+      "required": false,
+      "angleRms": 0.31789918968354747,
+      "positionRms": 0.10935015724318198,
+      "pass": true
+    },
+    {
+      "left": "enemy:spool-ram",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.43419526874492803,
+      "positionRms": 0.09357696338019551,
+      "pass": true
+    },
+    {
+      "left": "enemy:spool-ram",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.46839694848604535,
+      "positionRms": 0.09649968075445635,
+      "pass": true
+    },
+    {
+      "left": "enemy:spool-ram",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.42086672056370317,
+      "positionRms": 0.08939042270403542,
+      "pass": true
+    },
+    {
+      "left": "enemy:spool-ram",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.23819201982564073,
+      "positionRms": 0.09137601222269773,
+      "pass": true
+    },
+    {
+      "left": "enemy:needle-moth",
+      "right": "enemy:teacup-healer",
+      "required": false,
+      "angleRms": 0.3110059644146504,
+      "positionRms": 0.08363457769239373,
+      "pass": true
+    },
+    {
+      "left": "enemy:needle-moth",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.2614825524202836,
+      "positionRms": 0.08788354530148011,
+      "pass": true
+    },
+    {
+      "left": "enemy:needle-moth",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.32539002116791443,
+      "positionRms": 0.07802720591649275,
+      "pass": true
+    },
+    {
+      "left": "enemy:needle-moth",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.16824564720161855,
+      "positionRms": 0.07020928960722164,
+      "pass": true
+    },
+    {
+      "left": "enemy:teacup-healer",
+      "right": "enemy:yarn-giant",
+      "required": false,
+      "angleRms": 0.3629771162458235,
+      "positionRms": 0.08486662215233906,
+      "pass": true
+    },
+    {
+      "left": "enemy:teacup-healer",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3042017086681773,
+      "positionRms": 0.06856498819148373,
+      "pass": true
+    },
+    {
+      "left": "enemy:teacup-healer",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3619038652358278,
+      "positionRms": 0.09137147250857726,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant",
+      "right": "enemy:binding-thread",
+      "required": false,
+      "angleRms": 0.3965113588465242,
+      "positionRms": 0.0839130346834742,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.36955277592973157,
+      "positionRms": 0.06369587670211928,
+      "pass": true
+    },
+    {
+      "left": "enemy:binding-thread",
+      "right": "enemy:practice-cushion",
+      "required": false,
+      "angleRms": 0.3653530116654769,
+      "positionRms": 0.07500609024955728,
+      "pass": true
+    }
+  ],
+  "offenders": [],
+  "method": "41 normalized-time samples of actual AnimationMixer tracks on loaded GLB rigs. Joint world transforms are expressed relative to each model, then relative to its unanimated rest pose. Positions are divided by model height. Quaternion distance is geodesic angular RMS. Every same-cat pair and every same-slot pair across starter cats must pass both thresholds. Colour, silhouette and camera do not enter the metric. Filmstrips use the actual gallery render path at eight equally spaced action times."
+}
