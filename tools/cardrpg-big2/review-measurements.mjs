@@ -32,7 +32,7 @@ for (const [prefix, steps] of [['review-source', ['typecheck','demo-types','lint
     await cp(`${source}/reports/cardrpg-big2/validation/${name}`, `reports/cardrpg-big2/validation/${name}`);
 }
 await locked('tools/cardrpg-big2/studio-check.mjs', { BIG_STUDIO_OUT: `${out}/studio`, BIG_STUDIO_EXPECT_SOUND: '1' });
-await locked('tools/cardrpg-big2/gallery-controls-check.mjs', { BIG_GALLERY_CONTROLS_OUT: `${out}/gallery-controls`, BIG_GALLERY_EXPECT_POLISH: '1', BIG_GALLERY_EXPECT_FIT: '1' });
+await locked('tools/cardrpg-big2/gallery-controls-check.mjs', { BIG_GALLERY_CONTROLS_OUT: `${out}/gallery-controls`, BIG_GALLERY_EXPECT_POLISH: '1', BIG_GALLERY_EXPECT_FIT: '1', BIG_GALLERY_EXPECT_FOCUS: '1' });
 await locked('tools/cardrpg-big2/image-pack-check.mjs', { BIG_PACK_RECEIPT: '/tmp/cardrpg-big2-review-build.json', BIG_PACK_OUT: `${out}/image-pack` });
 await locked('tools/cardrpg-big2/loading-screens.mjs', { BIG_LOADING_OUT: `${out}/loading` });
 await locked('tools/cardrpg-big2/stage-life-check.mjs', { BIG_STAGE_LIFE_FINAL: '1', BIG_STAGE_LIFE_OUT: `${out}/stage-life` });

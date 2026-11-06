@@ -106,7 +106,7 @@ REFERENCE: docs/design/cardrpg/MECHANICS-LAB.md; packages/game-rules/src/cardrpg
 | Intent lens | Existing target/phase/weakness hint made visible; choose roles/flavours | 1731 | 1730 |
 | All | Combined, each proc capped once per team/round | 1734 | 1734 |
 
-Tea cloud flips three training and four held-out losses; relay flips none. Each split has 29/36 baseline cells at 50/50 wins, including all level-6 cells. These saturated cells cannot establish balance. Lane A must run updated encounter/gear/45-day economy comparisons; promotion remains the user's decision. Existing rules, live config, saves, contracts and wallet paths are unchanged.
+Tea cloud flips three training and four held-out losses; relay flips none. Each split has 29/36 baseline cells at 50/50 wins, including all level-6 cells. These saturated cells cannot establish balance. Lane A completed the integrated 50-seed gear and 90-account/45-day economy comparisons: all six OFF/native gear groups and six economy groups match; positive tier steps26/48→27/48, with no lost gains/new reversals. Heavy/casual MAX2.194775696×→2.189801700×. ON held-out cats51.15–85.52%,sets8–92%,single-item uplift+24pp (OFF+34pp). Broader balance gaps remain; extras stay default OFF. See [integrated evidence](mechanics/INTEGRATION-COMPARISON.md); promotion remains the user's decision. Existing rules, live config, saves, contracts and wallet paths are unchanged.
 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
@@ -124,4 +124,4 @@ REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 | Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
 | Mechanics lab | 7 provisional: four browser cases and sims pass; polish/integrated balance pending |
 
-Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: finish ON/OFF gear/economy sims using the supplied runner; integrate the remaining published B chain and offline wrapper, then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
+Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the remaining published B chain and offline wrapper, then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
