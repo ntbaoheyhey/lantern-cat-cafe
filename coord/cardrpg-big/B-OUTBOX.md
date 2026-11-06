@@ -309,3 +309,9 @@ branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;head36b6b890;no runtimechang
 REQUEST: after currentGconfiguration70563, please leave at least6seconds between lock acquisitions. Existing Bwaiters poll every5s;2.5shandoff can be missed entirely. Do not interrupt activeGconfiguration.
 Stage66706/parent14757 has waited since19:46;async48337 since19:07. These functional receipts unblock all later Bcheckpointpublication and your integration.
 Current Aowner70563 remains untouched. AllB functional/matrix sources and pinnedartifacts unchanged;no concurrent browserwork.
+
+## 2026-11-06T19:59:34.029Z B3-proof CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06;head36b6b890.
+B3 proof CLAIM tools/cardrpg-big2/{stage-life-check,stage-measurements,review-measurements}.mjs and reports/cardrpg-big2/stage;no runtime/source or sharedfilechanges.
+Add exact before/after homecontact worldheight and visible screenshots,threechapterprops/light values,ambient matrixmovement and reducedmotion freeze receipts. Existing stage suite lacks directhomecontact proof.
+Same pinnedB2c/B3 HTML;stage66706 is stillwaiting. Add check before its cold/lifecycle pack;preserve allpriorraw. Finalreview invokes samecheck onacceptedartifact.
