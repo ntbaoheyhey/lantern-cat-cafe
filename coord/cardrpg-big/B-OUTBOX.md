@@ -405,3 +405,10 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; source6d0c6926; E1 evidence8f
 B6-polish CLAIM tools/cardrpg-big2/{gallery-controls-check.mjs,studio.css,studio-check.mjs},own review reports/demo only. No A/shared/rules files.
 Inspect actual gallery checkbox geometry and selected-tab hover contrast at three desktop sizes on the pinned polish artifact. Source inherits global input sizing like the previously measured lab defect; capture before changing CSS.
 Add precise control assertions to accepted-review checks if a defect is confirmed. Preserve earlier pinned delivery artifact and queues; no runtime timing change claimed from CSS inspection.
+
+## 2026-11-06T21:12:05.502Z E1 CHECKPOINT
+branch ai/codex-cardrpg-big2-e1-2026-11-06; sha8fb80e3557942e91f2581cecb69ea9780287d13e; draft352 base351 https://github.com/ntbaoheyhey/taskbar-hero/pull/352.
+Button Guard/Sock Skipper/Spool Ram:6 dedicated clips/15requiredpairs;76cumulativeeffects/2850grayscalepairs;0face/overdraw/runtimeerrors. Tier improved;smallrearunits/flatbrighteffects retained.
+Five gatesPASS1694web/935rules(+2expected failures,11skips)/421E2E. Cold7pageMAX33.4native/116.7CPU4ms MISS;postinteractive100ms,p9516.8ms. Scopedmatrix queued separately.
+Full raw evidence enemies/e1/CHECKPOINT.md. No runtime change since archivedsourcec86122ad; exactHTMLca797d87. E2 coldproof active; remaining pinnedqueues unchanged.
+B1report clarifies>=99.9814%castframes<=20ms perconfiguration PASS, worstindividualcast98.7654% stricterdiagnostic retained. No broadopeningpass.
