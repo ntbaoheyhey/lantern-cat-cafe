@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}canvas{display:block}</style></head><body><script type="module">
+import * as T from '../../apps/web/node_modules/three/build/three.module.js';
+import {GLTFLoader} from '../../apps/web/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+const id=new URLSearchParams(location.search).get('id');
+const gltf=await new GLTFLoader().loadAsync('../../assets/cardrpg2/models/'+id+'.glb');
+const renderer=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});renderer.setSize(400,480);renderer.setPixelRatio(1);renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;document.body.append(renderer.domElement);
+const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,400/480,.1,40);camera.position.set(0,1.7,5.8);camera.lookAt(0,1,0);
+scene.add(new T.HemisphereLight('#fff1d7','#8b84bd',2.8));const key=new T.DirectionalLight('#fff0d4',4);key.position.set(-3,5,5);scene.add(key);const rim=new T.DirectionalLight('#a8c4ef',2.5);rim.position.set(3,2,-2);scene.add(rim);
+scene.add(gltf.scene);gltf.scene.rotation.y=.2;const mixer=new T.AnimationMixer(gltf.scene);mixer.clipAction(gltf.animations.find(c=>c.name==='ready')).play();mixer.update(.48);await renderer.compileAsync(scene,camera);renderer.render(scene,camera);window.__portrait={ready:true,triangles:renderer.info.render.triangles};
+</script></body></html>

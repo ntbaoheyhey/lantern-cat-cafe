@@ -16,13 +16,14 @@ import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
 
 export interface SceneView {
+  models?: Record<string,string>; warmModelIds?: string[];
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
   targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -115,7 +116,7 @@ export class TurnScene {
   private async warmModels(){
     const warm=new T.Group();
     try{
-      for(const role of ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy'] as const){
+      for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
       }
@@ -181,7 +182,8 @@ export class TurnScene {
   private async ensure(a:TurnActor,boss:boolean){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
     try{
-      const gltf=await loadModel(a.role);if(this.disposed)return;
+      const asset=this.view().models?.[a.id]??a.role;
+      const gltf=await loadModel(asset);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
       const height=new T.Box3().setFromObject(model).max.y;
       const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
@@ -190,7 +192,7 @@ export class TurnScene {
       const guard=new T.Mesh(new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.1;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
-      this.puppets.set(a.id,{height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -209,7 +211,7 @@ export class TurnScene {
   render(view:SceneView,delta=0){
     if(view.fixedTime!==undefined)this.time=view.fixedTime;
     const ids=new Set(view.actors.map(a=>a.id));
-    for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
+    for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role||(view.models?.[id]??p.role)!==p.asset){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
     this.stats.loaded=this.puppets.size;
     for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss);
     const frame=view.frame, source=frame?this.puppets.get(frame.plan.actorId):undefined;
