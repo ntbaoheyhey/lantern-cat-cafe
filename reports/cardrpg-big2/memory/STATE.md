@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-B4 published 062af1bd / draft351 on B5. First sound window133.5ms MISS; traced first AudioContext constructor133.6ms, later1.9ms. Native-rate comparison queued under shared lock (session10940).
-B1/B2a/b/c/B3/B5 published342/343/346/347/349/350. Lab polish four browser cases PASS, result visible at1024. Enemy E1 active; remaining pinned jobs stay sequential.
-No integrated checkpoint/rebase request from A yet. A has merged through B5 and is running paired gear/economy sims.
+Published B1/B2a/b/c/B3/B5/B4/E1 draft PRs342/343/346/347/349/350/351/352. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
+E2 functional/cold job86401 active; subsequent E3/E4/boss/delivery/hitstop/flag-off/matrices retain existing queue. Silent audio-sink probe87349 and gallery control probe88227 await shared lock.
+No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
 ## NEXT
-1. Finish six fresh-browser audio comparison, inspect first opponent strips and publish remaining checkpoints in order. Do not duplicate existing queues.
-2. Enemy chain27436/28859/30429/34957/37902, delivery39632/hitstop43008/flagoff43282; scoped matrices58498 follow43282. Audio compare10940 is queued separately.
-3. After roster evidence, build/pin review; functional/full860matrix/20replays; report all misses/self-grades; rebase only when A announces integrated checkpoint.
+1. Finish E2 cold proof; review three strips (viewed needle/healer/kettle at21:11Z), append checkpoint, publish E2 draft on352. Preserve raw arrays.
+2. Read silent-sink and gallery-control results before source fixes; publish remaining enemy/boss checkpoints in order. No duplicate queued jobs.
+3. After roster captures and fixes, build/pin review; full functional860matrix/20replays/video; report misses and grades. Rebase only after A integrated CHECKPOINT.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -82,3 +82,6 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - 20:48Z: B4 repaired audio probe79finite/uniquePCM,4functional cases,0errors. First native sound-enable/playbackMAX133.5ms is NEW MISS (others16.8). Focusedtrace tool authored/queued PID83449 after B4resume79167;log /tmp/cardrpg-big2-audio-opening-profile.log. OriginalMAX retained; no synth attribution beforetrace. Sourceonlytools eb8b0b99.
 
 - Recovery20:57Z: B4 evidence was already inserted before compaction; verified runtime690a070f matches062af1bd except prior provenance. Pushed and opened draft351 on350; allfivegates retained. Sixrun native-rate probe57b15b8c now actually authored/queued; previous summary had only claimed it. E1 active, no duplicate browser jobs.
+
+- Recovery21:12Z: read LaneB fullprompt/RULES/STATE/Aoutbox and verifiedremote. E1 draft352 created on351 at8fb80e35; sixclips/15pairs,76effects/2850pairs and421E2Epass. E2 three signaturestrips viewed: needlewings/pour/kettle themesread, whiteeffects and small motions remain; improved tier.
+- B1clarification7e6e21b0 preserved: >=99.9814%castframes<=20ms perconfiguration passes inheritedaggregation; worstindividualcast98.7654% remainsstrictdiagnostic. No openingpass.

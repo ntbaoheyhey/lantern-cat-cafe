@@ -38,7 +38,7 @@ The seven-case cold run and the exhaustive fresh-page matrix are separate sample
 | CPU4 p95 ≤33 ms | 16.8 ms cold | 16.8 ms cold; worst matrix case 33.3 ms | MISS strict 33 ms by 0.3 ms |
 | After first hub interaction MAX ≤100 ms | Not separated | 83.4 ms in seven-case cold sample | Sample PASS; explicit matrix window pending |
 | Cast MAX ≤50 ms | Inherited first 33.4 / repeat 16.8 ms | First 33.4 / repeat 16.8 ms | B1 PASS, 720 cases |
-| 99% cast frames ≤20 ms, DPR1/2 | Inherited receipts | ≥99.9814% within each configuration | B1 PASS; per-case values retained |
+| 99% cast frames ≤20 ms, DPR1/2 | Inherited receipts | ≥99.9814% per configuration; worst single cast98.7654% | B1 PASS; per-case values retained |
 | ≤250 draws / ≤150k triangles | Inherited 207 / 93,802 | B1 207 / 93,802; final roster pending | B1 PASS |
 | 20 natural replays: flat heap/GPU | Not measured here | +1,088,932 retained bytes; geometry/texture/program growth 0/0/0 | B1 PASS at 2 MiB heap tolerance |
 | Load to interaction / battle ready | Raw baseline | Hub 924–936 ms native, 1716–1724 ms CPU4; battle ready 6540–6572 / 8332–8353 ms | Reported, not hidden in cast time |
@@ -46,7 +46,7 @@ The seven-case cold run and the exhaustive fresh-page matrix are separate sample
 | Sharpness +40%, ten native crop pairs | Inherited 2/10 | B3 2/10; face crops +10.71%/+8.27% versus B2c | MISS: eight targets; composition caveats |
 | Flag-off startup excludes three/models | Static graph checked | Production browser request inventory queued | PENDING |
 
-Raw arrays: [B1 cold](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/performance/b1-cold/summary.json), [B1 matrix](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/performance/b1-skills/summary.json), [baseline trace](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/performance/baseline-cpu4-profile/HITCHES.md), [20 replays](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/performance/lifecycle/summary.json), [navigation](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/performance/navigation/checks.json). [B3 stage/camera/sharpness](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/stage/CHECKPOINT.md): 405 camera samples, 20 replays, 20 navigation cycles; opening 116.6 ms MISS, post-interactive 100 ms in cold7, retained heap +1,093,980 bytes/GPU growth 0. Final-build lifecycle and full matrix remain pending.
+Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance/b1-skills/summary.json), [baseline trace](performance/baseline-cpu4-profile/HITCHES.md), [20 replays](performance/lifecycle/summary.json), [navigation](performance/navigation/checks.json). [B3 stage/camera/sharpness](stage/CHECKPOINT.md): 405 camera samples, 20 replays, 20 navigation cycles; opening 116.6 ms MISS, post-interactive 100 ms in cold7, retained heap +1,093,980 bytes/GPU growth 0. Final-build lifecycle and full matrix remain pending.
 
 ## Unit coverage
 REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
@@ -85,9 +85,9 @@ Cat checkpoints: [B2a #343](https://github.com/ntbaoheyhey/taskbar-hero/pull/343
 
 | Cumulative cat checkpoint | Motion clips / required pairs | Effects / grayscale pairs | Cold page / post-interactive MAX ms |
 |---|---:|---:|---:|
-| [Batch 1](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/cats/batch1/CHECKPOINT.md) | 24 / 96 | 46 / 1,035 | 116.6 / 83.4 |
-| [Batch 2](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/cats/batch2/CHECKPOINT.md) | 36 / 198 | 61 / 1,830 | 116.7 / 99.9 |
-| [Batch 3](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/cats/batch3/CHECKPOINT.md) | 48 / 336 | 76 / 2,850 | 133.3 / 83.3 |
+| [Batch 1](cats/batch1/CHECKPOINT.md) | 24 / 96 | 46 / 1,035 | 116.6 / 83.4 |
+| [Batch 2](cats/batch2/CHECKPOINT.md) | 36 / 198 | 61 / 1,830 | 116.7 / 99.9 |
+| [Batch 3](cats/batch3/CHECKPOINT.md) | 48 / 336 | 76 / 2,850 | 133.3 / 83.3 |
 
 All declared required pairs pass; no face-mask/overdraw/runtime errors. These seven-case cold values are samples, not exhaustive limits. Raw arrays and native before/after strips are linked in each checkpoint.
 
@@ -109,7 +109,7 @@ Tea cloud flips three training and four held-out losses; relay flips none. Each 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 
-[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the first sound-enable133.5ms hitch; no audio-startup pass is claimed. Opponent captures, full final matrix, perceptual audio review and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the first sound-enable133.5ms hitch; no audio-startup pass is claimed. Opponent captures, full final matrix, perceptual audio review and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
 
 | Complaint | Self-grade /10 |
 |---|---|
@@ -122,4 +122,4 @@ REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 | Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
 | Mechanics lab | 7 provisional: four browser cases and sims pass; polish/integrated balance pending |
 
-Integration hook details: [INTEGRATION-HOOKS.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-big2-b4-2026-11-06/reports/cardrpg-big2/INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
+Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.

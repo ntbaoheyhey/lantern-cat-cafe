@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented; current788f62f1. Branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. B61057 owns lock for B2c; async comparison and later phases wait.
-B2a94ed765e/draft343 and B2b7f2bc5c1/draft346 published. B2b36motions/61effects,421E2E,cold7CPU4MAX116.7ms.
-B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
+Published B1/B2a/b/c/B3/B5/B4/E1 draft PRs342/343/346/347/349/350/351/352. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
+E2 functional/cold job86401 active; subsequent E3/E4/boss/delivery/hitstop/flag-off/matrices retain existing queue. Silent audio-sink probe87349 and gallery control probe88227 await shared lock.
+No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
 ## NEXT
-1. Publish B2c/stage/features/opponents after pinned browser receipts; all source implementations already committed. Inspect queued async opening comparison before accepting loader.
-2. Inspect functional queues12051/14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
-3. Scoped matrices queuedPID58498 after43282 (log/tmp/cardrpg-big2-scoped-matrices.log); finalreview full-roster matrix/lifecycle follows accepted final build. Finish report/demo/ledger;A integration sync pending.
+1. Finish E2 cold proof; review three strips (viewed needle/healer/kettle at21:11Z), append checkpoint, publish E2 draft on352. Preserve raw arrays.
+2. Read silent-sink and gallery-control results before source fixes; publish remaining enemy/boss checkpoints in order. No duplicate queued jobs.
+3. After roster captures and fixes, build/pin review; full functional860matrix/20replays/video; report misses and grades. Rebase only after A integrated CHECKPOINT.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -64,3 +64,24 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Fullstage 24s x1 canvasvideo harness authored because caster crops omit distant targetVFX;pilot60916 waits async46837,outputreview/video-pilot. Final15unit recordings wait acceptedreviewartifact;no natural-bossfight claim for gallery fixtures.
 
 - Recovery19:40Z: B2b draft346 created on343 after remote7f2bc5c1 verified. B2c48motionclips/336requiredpairs pass;effects/cold continue under61057. Later functional and matrix queues remain live;do not duplicate. Aoutbox read through19:29Gcheckpoint;no integration rebase announced.
+
+- Recovery19:55Z: third batch remote4b2d5df0 verified and draft347 created on346. All9nonstarters retain improved tier; source+421E2E pass. B2c cold7postinteractive83.3ms/p9516.8ms,wholepage133.3msMISS. Aoutbox read through19:54;A requests final offlinewrapper/loader hook list. Stage66706 and async48337 awaitA64378;no duplicate browser runs.
+
+- Recovery20:16Z: async paired14runs finished; identicalJS/CSS verified. CPU4pageMAX116.7→100ms/postinteractive100.1→100ms/p9516.8;0errors. Tracecompile81.9→6.5ms,remainingcontext/resize+layout at100ms. Retainasync provisionally;fullmatrix remainsrequired. Stage66706 nowownslock. Originalarrays and comparativeCHECKPOINT retained.
+
+- B3capture initialfail retained stage/initial-portrait-selector-error.log: inherited inspector referenced home image removed by M. Own sharpness-measure now captures actual teamcard/nativepixels with explicit composition caveat; no sharedtool edit. Stage resume74597/session98566 skips only archived421passingE2E. B6evidence-index distinguishes incomplete matrix, cold samples and art metrics;Bmatrix handoff6500ms added beforequeueddriver starts.
+
+- Recovery20:27Z: previous source polish committed8f7a8241; acceptedsourcechecks retained. B5 browser4cases/0errors,matchingfinalhash45c71470 andunchangedaccount;223draws/99992tris,16.8msnaturalplaybackMAX. Separateopeningcold199.9native/149.9CPU4/postinteractive133.4msMISS. Earliercapturesretained.
+
+- Recovery20:37Z: B3job74597 finished allchecks. Resumed ownedwaiters77628/78828/79167 afterA71994 tooknextlock. Unrelatedolder /tmp/cardrpg-B-finalization-handoff.md ignored. Sourceaudit excludes evidence-only provenance additions; runtime/assets matcharchivedB3.
+
+- 20:43Z: B3 draft349 base347 and B5 draft350 base349 remotely verified; source/runtime audits unchanged. B5 1,689web/935rules/421E2E,alloff fullstate parity retained. Ledger bbac1f91 includes current ownreport+STATE. A received both checkpoints and finalsimulation runner request.
+
+- 20:45Z: lab-polish pinned5b3b35756fef fourcasesPASS;17px checkbox/gap10/offset0 and resultwithinviewport including1024x600. Samefinalhash45c71470/accountunchanged;16.8ms sampleMAX,225draws/101858triangles. Viewed1280prep/1024result. Audio proof80488 nowownslock. Audio tool cannot expose listening input; do not claim listening review from PCM uniqueness.
+
+- 20:48Z: B4 repaired audio probe79finite/uniquePCM,4functional cases,0errors. First native sound-enable/playbackMAX133.5ms is NEW MISS (others16.8). Focusedtrace tool authored/queued PID83449 after B4resume79167;log /tmp/cardrpg-big2-audio-opening-profile.log. OriginalMAX retained; no synth attribution beforetrace. Sourceonlytools eb8b0b99.
+
+- Recovery20:57Z: B4 evidence was already inserted before compaction; verified runtime690a070f matches062af1bd except prior provenance. Pushed and opened draft351 on350; allfivegates retained. Sixrun native-rate probe57b15b8c now actually authored/queued; previous summary had only claimed it. E1 active, no duplicate browser jobs.
+
+- Recovery21:12Z: read LaneB fullprompt/RULES/STATE/Aoutbox and verifiedremote. E1 draft352 created on351 at8fb80e35; sixclips/15pairs,76effects/2850pairs and421E2Epass. E2 three signaturestrips viewed: needlewings/pour/kettle themesread, whiteeffects and small motions remain; improved tier.
+- B1clarification7e6e21b0 preserved: >=99.9814%castframes<=20ms perconfiguration passes inheritedaggregation; worstindividualcast98.7654% remainsstrictdiagnostic. No openingpass.
