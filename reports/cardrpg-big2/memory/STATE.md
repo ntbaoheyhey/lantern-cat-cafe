@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
-E2 published f166e0f3. Audio sink comparison rejected (constructor130.4–132.4ms); gallery fix93523 pending. E3waiter89899 resumed; downstream pinned queues unchanged. Lossless demo pack9c3cdecb reduces24,153,004→21,045,365bytes;17images exactRGBA/dimensions. Browserpixel94756 waits gallery93523; media-prime93703 waits94756. Pack-source fiveCPUchecksPASS1698web/935rules. Newgallerysound40a60403 hasdemoTSPASS; notyetrebuilt/pinned.
-No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
+Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Continuation b6-polish source0f0b6f53 implements explicit gallery sound, gallery viewport fit and asynchronous sound-device startup; source fivechecksPASS1702web/935rules. No runtimebrowser acceptance yet.
+E3 pinned queue30429/89899 active; E4→boss→delivery→hitstop→flagoff→scopedmatrices remain existing queue. Do not duplicate. New sound/pack/gallery pilot waits30429 under session47507. Frozen /tmp/cardrpg-big2-sound-startup-{index.html,build.json,validation.json}; script /tmp/cardrpg-big2-sound-startup-checks.sh.
+Audio media diagnostic6cases: controls116.6–133.3ms vs asynchronoussilentmedia16.8ms, constructors120.8–123.8→15.7–17.3ms. Sourcefixawaitsbrowserproof. TransparentWebP FAILED Chromium3709channels; newpacker keepsallportraitsPNG andonlypacks5opaque textures. RevisedHTML22,029,297bytes.
 ## NEXT
-1. Verify lossless demo pack in Pillow and browser, record size; inspect gallery fix93523. Commit/pin accepted review only after remaining roster captures; no duplicate queues.
-2. Publish remaining E3/E4/boss checkpoints after pinned measurements. Sourcebranches remain unpublished; use existing evidence insertion script only when tracked tree clean.
-3. After roster captures and fixes, build/pin review; full functional860matrix/20replays/video; report misses and grades. Rebase only after A integrated CHECKPOINT.
+1. Inspect sound-startup pilot afterE3: 5opaqueimagepixels, galleryfit3sizes, studiocontrols86actions/3sizes, sixactualsourceaudio runs. Failure must be fixed and pinned again. Preserve rejectedtransparentpack.
+2. Publish E3/E4/boss evidence when eachpinnedqueue completes using /tmp/cardrpg-big2-insert-evidence.py; no unrelatedtrackedWIP. Read Aoutboxphaseend/beforePR. No integratedcheckpoint/rebaserequest yet.
+3. After remainingcaptures/fixes build/pin acceptedreview and run review-measurements.mjs+matrix-series.mjs review; finalreport/grades,ledger+drafts. Existing scopedbatchmatrices58498 wait43282. No duplicatequeues/agents.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -93,3 +93,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - 21:34Z: B6pack candidate74d0d861 pinned /tmp/cardrpg-big2-lossless-pack-{index.html,build.json}, fileexactRGBA17/17PASS, nativeimagesunchanged. Newaudio diagnostic667fdecd primes audio service using silentHTMLMedia afterrealclick beforeunchangedWebAudio; queuedafter94756, no runtimepatch. RequestedBfunctionalwindow afteractiveA95219; E3/E4/boss/delivery/hitstop/flagoff/matrixqueues unchanged.
 
 - 21:37Z: sourceaudit8132a0e3 fixed ENOBUFS for14,133pathdiff via32MiBbuffer; protectedchanges0/rules4allauto-extras/4immutablehashesidentical. BothA-approved gallery/testfiles recorded. pack-sourceCPUfivechecksPASS1698web/935rules+inherited2expectedfail/11skip; E2E onlyinlockedpipeline. GallerysilentbyhiddenBattlecontrols fixed40a60403 with explicitsound/volume; finalstudio expectscontrols onlyunderBIG_STUDIO_EXPECT_SOUND=1 sooldpinned deliveryqueue remainsvalid.
+
+- Recovery21:49Z: actualbrowserpack rejectedtransparentWebP despitePillowidentity; keepingPNGforalpha<255. 0f0b6f53 includes4audio lifecycle tests, allfiveCPUchecksPASS1702web/935rules. NewpinnedpilotqueuedafterE3; sourcefixnotyetmeasured. Galleryoldstagebottom668at600 confirmedvisually; flexstagecandidateawaitsfitproof.
