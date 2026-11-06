@@ -124,3 +124,10 @@ B2enemy-batch1 CLAIM (draft preparation):turn3d/card-enemy-batch1-motion.ts,card
 Button Guard/Sock Skipper/Spool Ram:distinct basic vs signature gesture;button-lapel/pocket-clasp/bobbin-crank silhouettes;authored target telegraphs. No new rules.
 Later enemy drafts kept separate until each source checkpoint pinned. All timing remains sequential; no current B1/B2a artifact edits.
 B1 currently401/720,pageMAX300ms,castMAX33.3,0errors;same rawdataset expands. B4audio original PCM/bounds/nativecontrol checks will be artifact/source pinned.
+
+## 2026-11-06T18:04:41.612Z B2-enemy-batch1 CLAIM
+branch ai/codex-cardrpg-big2-b4-2026-11-06; source690a070f pinned in/tmp/cardrpg-big2-b4-validation.
+B4 four source gates1692web/935rules pass;native PCM+audio browser proof queued before batch1 matrix;no audio quality claim yet.
+B2enemybatch1 CLAIM extends prior exact paths to card-utensils.ts,card-enemy.test.ts and own motion/effect measurement tools.
+Enemy clips must select plan.presentationId rather than roleAttack shared fallback;existing rule IDs unchanged. Three original two-material adornments plus distinct basic/signature clips.
+B1 fullmatrix still active,wholepageMAX300ms;no false loading pass. No integration rebase requested by A.
