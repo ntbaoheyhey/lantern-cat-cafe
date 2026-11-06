@@ -177,3 +177,9 @@ Boss source gates PASS1696web/935rules (+2expectedfail/11skip),typecheck/lint/bu
 Threeboss intro1.14s/phase300ms,one instanced floor emblem,existing enemy face sockets. GPU estimate includes emblem geometry;rules untouched.
 B6 source underway in own builder/wrapper only:home Review studio,isolated gallery25units,allskill previews,before/after,briefchecklist,bounded live meter. Existing FeelLab preserved.
 No integration rebase requested. All earlier timing artifacts immutable. Full B1 currently~config8/10;wholepageMAX300ms remains miss.
+
+## 2026-11-06T18:30:53.642Z B1 CHECKPOINT
+branch ai/codex-cardrpg-big2-b1-2026-11-06 published7006f109;draft342 base340 https://github.com/ntbaoheyhey/taskbar-hero/pull/342.
+Allfive sourcegates PASS1681web/903rules/421E2E;B1cold/lifecycle/navigation/screens in branch. Fullmatrix still runs;PR explicitly discloses wholepageMAX300ms miss.
+No timing completion claim. Next source phases publish after their pinned E2E. Remaining chain throughbossfa9683e2 is local;A should await those checkpoints.
+B6 reviewstudio source fiveCPUgates running,25units86previews;before/after thumbnails lazy-presented andfullresolution sources retained.
