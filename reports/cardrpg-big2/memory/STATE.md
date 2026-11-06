@@ -2,12 +2,12 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-All B source implemented; current788f62f1. Branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. B61057 owns lock for B2c; async comparison and later phases wait.
-B2a94ed765e/draft343 and B2b7f2bc5c1/draft346 published. B2b36motions/61effects,421E2E,cold7CPU4MAX116.7ms.
+All B source implemented; current dee9faf7. Branch ai/codex-cardrpg-big2-b1-followup-2026-11-06. A64378 owns timing lock; B stage/async comparison and later phases wait.
+B2a94ed765e/draft343, B2b7f2bc5c1/draft346 and B2c4b2d5df0/draft347 published. All9cats rendered; B2c48motions/76effects,421E2E,cold7CPU4MAX133.3ms.
 B1 complete720cases: first/repeatMAX33.4/16.8ms,207draws/93802tris,0errors;page150native/300CPU4ms;worstCPU4p9533.3ms. Opening misses disclosed.
 ## NEXT
-1. Publish B2c/stage/features/opponents after pinned browser receipts; all source implementations already committed. Inspect queued async opening comparison before accepting loader.
-2. Inspect functional queues12051/14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
+1. Publish stage/features/opponents after pinned browser receipts; all source implementations already committed. Inspect queued async opening comparison before accepting loader.
+2. Inspect functional queues14757/18479/22596/27436/28859/30429/34957/37902/39632/43008/43282;async opening46837 separately. Allwait on sharedlock, no duplicate runs.
 3. Scoped matrices queuedPID58498 after43282 (log/tmp/cardrpg-big2-scoped-matrices.log); finalreview full-roster matrix/lifecycle follows accepted final build. Finish report/demo/ledger;A integration sync pending.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
@@ -64,3 +64,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Fullstage 24s x1 canvasvideo harness authored because caster crops omit distant targetVFX;pilot60916 waits async46837,outputreview/video-pilot. Final15unit recordings wait acceptedreviewartifact;no natural-bossfight claim for gallery fixtures.
 
 - Recovery19:40Z: B2b draft346 created on343 after remote7f2bc5c1 verified. B2c48motionclips/336requiredpairs pass;effects/cold continue under61057. Later functional and matrix queues remain live;do not duplicate. Aoutbox read through19:29Gcheckpoint;no integration rebase announced.
+
+- Recovery19:55Z: third batch remote4b2d5df0 verified and draft347 created on346. All9nonstarters retain improved tier; source+421E2E pass. B2c cold7postinteractive83.3ms/p9516.8ms,wholepage133.3msMISS. Aoutbox read through19:54;A requests final offlinewrapper/loader hook list. Stage66706 and async48337 awaitA64378;no duplicate browser runs.
