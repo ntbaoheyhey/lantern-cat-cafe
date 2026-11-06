@@ -4,8 +4,9 @@ import { DepthModel, type Screen } from '../../apps/web/src/game/cardrpg/depth/m
 import { BattleView } from '../../apps/web/src/game/cardrpg/depth/Battle';
 import './studio.css';
 
-type Evidence = { owner:string; name:string; before?:string; after?:string; source:string; note:string };
-declare global { interface Window { __b2Evidence?:Evidence[]; __b2Gallery?:DepthModel } }
+type Evidence = { owner:string; name:string; before?:string; after?:string; beforeLabel?:string; afterLabel?:string; source:string; note:string };
+type Check = {label:string;kind:string;actions:number;pairs:number;offenders:number;faceOffenders:number;errors:number;source:string};
+declare global { interface Window { __b2Evidence?:Evidence[]; __b2Checks?:Check[]; __b2Gallery?:DepthModel } }
 const checklist: Array<{name:string;detail:string;screen?:Screen}> = [
  {name:'Collect companions',detail:'Cards, portraits and skill descriptions.',screen:'collection'},
  {name:'Prepare a team',detail:'Choose three companions and their rows before fighting.',screen:'team'},
@@ -40,13 +41,14 @@ function Gallery(){
   </div>
   <div className="b2-gallery-stage"><BattleView m={m}/></div>
   <p className="b2-reference">REFERENCE: apps/web/src/game/cardrpg/depth/feel-lab.ts · {m.galleryActions.length} previews · isolated fixtures; your collection is unchanged.</p>
+  {!!window.__b2Checks?.length&&<details><summary>Measured motion and effect comparisons</summary><p>Motion compares rig trajectories. Effects compare grayscale silhouettes, edges and their change over six frames. These checks do not replace judging the artwork.</p><table><thead><tr><th>Batch</th><th>Check</th><th>Actions</th><th>Pairs</th><th>Below threshold</th><th>Face / runtime issues</th></tr></thead><tbody>{window.__b2Checks.map(c=><tr key={`${c.label}-${c.kind}`}><td>{c.label}</td><td>{c.kind}</td><td>{c.actions}</td><td>{c.pairs}</td><td>{c.offenders}</td><td>{c.faceOffenders} / {c.errors}</td></tr>)}</tbody></table><p className="b2-reference">REFERENCE: {window.__b2Checks.map(c=>c.source).join(' · ')}</p></details>}
  </div>;
 }
 function Comparison(){
  const rows=window.__b2Evidence??[],[index,setIndex]=useState(0),row=rows[index];
  const image=(id?:string)=>id?document.getElementById(id)?.textContent??undefined:undefined;
- return <div className="b2-studio-body"><h2>Motion, up close</h2><p>Eight equally spaced samples from each performance. The earlier capture keeps the actual fallback animation. Colour alone is not counted as a distinct effect.</p>
-  {!row?<p>Capture evidence is not included in this build yet.</p>:<><label>Capture<select value={index} onChange={e=>setIndex(Number(e.target.value))}>{rows.map((r,i)=><option value={i} key={`${r.owner}-${i}`}>{r.name}</option>)}</select></label><div className="b2-comparison">{[['Earlier',row.before],['Current',row.after]].map(([label,id])=><figure key={label}><figcaption>{label}</figcaption>{id?<img src={image(id)} alt={`${row.name} ${label} filmstrip`} loading="lazy"/>:<p>Not captured for this view.</p>}</figure>)}</div><p>{row.note}</p><p className="b2-reference">REFERENCE: {row.source}</p></>}
+ return <div className="b2-studio-body"><h2>Look closer</h2><p>Compare performance filmstrips, native sharpness crops and camera views. The earlier motion capture keeps the actual fallback animation. Colour alone is not counted as a distinct effect.</p>
+  {!row?<p>Capture evidence is not included in this build yet.</p>:<><label>Capture<select value={index} onChange={e=>setIndex(Number(e.target.value))}>{rows.map((r,i)=><option value={i} key={`${r.owner}-${i}`}>{r.name}</option>)}</select></label><div className="b2-comparison">{[[row.beforeLabel??'Earlier',row.before],[row.afterLabel??'Current',row.after]].map(([label,id])=><figure key={label}><figcaption>{label}</figcaption>{id?<img src={image(id)} alt={`${row.name} ${label} comparison`} style={row.owner==='sharpness'?{width:'auto',maxWidth:'100%'}:undefined} loading="lazy"/>:<p>Not captured for this view.</p>}</figure>)}</div><p>{row.note}</p><p className="b2-reference">REFERENCE: {row.source}</p></>}
  </div>;
 }
 export function ReviewStudio({close,go}:{close:()=>void;go:(screen:Screen)=>void}){

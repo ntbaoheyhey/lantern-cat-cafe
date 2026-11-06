@@ -13,6 +13,7 @@ for(const file of ['b3-e2e.json','b3-e2e-e2e.log'])await cp(`${validation}/repor
 await run('tools/cardrpg-big/inspect.mjs',[],{BIG_ARTIFACT:'/tmp/cardrpg-big2-b2c-index.html',BIG_CROP_OUT:`${out}/before`});
 await run('tools/cardrpg-big/inspect.mjs',[],{BIG_CROP_OUT:`${out}/after`});
 await run('tools/cardrpg-big2/sharpness-check.mjs');
+await new Promise((done,reject)=>{const c=spawn('/tmp/cardrpg-big-tools/bin/python',['tools/cardrpg-big2/sharpness-report.py'],{stdio:'inherit'});c.once('error',reject);c.once('close',code=>code===0?done():reject(Error('Sharpness metric failed')));});
 await run('tools/cardrpg-big2/layout-measure.mjs',[],{BIG_LAYOUT_OUT:`${out}/layout`});
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
 await run('tools/cardrpg-big2/lifecycle.mjs',[],{BIG_LIFECYCLE_OUT:`${out}/lifecycle`});

@@ -4,7 +4,7 @@ import {spawn} from 'node:child_process';
 import {mkdir,readFile,writeFile,link,readdir,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const configs=[[1280,720,1,1,'medium'],[1280,720,2,1,'medium'],[1440,900,1,1,'medium'],[1440,900,2,1,'medium'],[1280,720,1,4,'medium'],[1280,720,2,4,'medium'],[1440,900,1,4,'medium'],[1440,900,2,4,'medium'],[1280,720,1,1,'low'],[2560,1440,1,1,'medium']];
-const outputs={b2a:'cats/batch1',b2b:'cats/batch2',b2c:'cats/batch3',b3:'stage',b5:'b5',b4:'b4',e1:'enemies/e1',e2:'enemies/e2',e3:'enemies/e3',e4:'enemies/e4',boss:'enemies/boss',delivery:'delivery'};
+const outputs={b2a:'cats/batch1',b2b:'cats/batch2',b2c:'cats/batch3',b3:'stage',b5:'b5',b4:'b4',e1:'enemies/e1',e2:'enemies/e2',e3:'enemies/e3',e4:'enemies/e4',boss:'enemies/boss',delivery:'delivery',hitstop:'audio/hitstop',review:'review'};
 const phases=process.argv.slice(2);if(!phases.length||phases.some(p=>!outputs[p]))throw Error('Explicit known phases required');
 async function run(args,env={}){
  const exit=await new Promise((done,reject)=>{const child=spawn(process.execPath,args,{env:{...process.env,...env},stdio:'inherit'});child.once('error',reject);child.once('close',done)});if(exit!==0)throw Error(`Matrix command exited ${exit}: ${args.join(' ')}`);
