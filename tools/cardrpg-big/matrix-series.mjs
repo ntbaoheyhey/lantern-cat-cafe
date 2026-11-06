@@ -9,6 +9,7 @@ import assert from 'node:assert/strict';
 const output = resolve(process.env.BIG_SKILL_OUT || 'reports/cardrpg-big/invitations/skills');
 const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html');
 const label = process.env.BIG_MATRIX_LABEL || 'A-skill-matrix';
+const resume = process.argv.includes('--resume');
 const configurations = [
   [1280, 720, 1, 1, 'medium'], [1280, 720, 2, 1, 'medium'],
   [1440, 900, 1, 1, 'medium'], [1440, 900, 2, 1, 'medium'],
@@ -43,11 +44,24 @@ if (process.argv.includes('--plan')) {
   for (const configuration of configurations) {
     const key = configuration.join('-');
     const directory = resolve(output, 'configurations', key);
-    await run([lock, `${label}-${key}`, process.execPath, measure], {
-      BIG_ARTIFACT: artifact,
-      BIG_SKILL_OUT: directory,
-      BIG_SKILL_CONFIGS: JSON.stringify([configuration]),
-    });
+    let completed = false;
+    if (resume) {
+      try {
+        const saved = JSON.parse(await readFile(`${directory}/summary.json`, 'utf8'));
+        assert(saved.ended, `Existing configuration ${key} is incomplete. Preserve and inspect it before rerunning.`);
+        assert.equal(saved.sha256, sha256, 'A resumed configuration used a different artifact');
+        completed = true;
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+      }
+    }
+    if (!completed) {
+      await run([lock, `${label}-${key}`, process.execPath, measure], {
+        BIG_ARTIFACT: artifact,
+        BIG_SKILL_OUT: directory,
+        BIG_SKILL_CONFIGS: JSON.stringify([configuration]),
+      });
+    }
     const receipt = JSON.parse(await readFile(`${directory}/summary.json`, 'utf8'));
     assert.equal(receipt.sha256, sha256, 'A configuration used a different artifact');
     assert(receipt.ended && receipt.actions.length > 0, 'Configuration receipt is incomplete');
@@ -66,7 +80,7 @@ if (process.argv.includes('--plan')) {
     await writeFile(`${output}/summary.json`, JSON.stringify(combined, null, 2));
     console.log(JSON.stringify({ configuration, completed: combined.rows.length, sha256 }));
     // Let an existing waiter take the shared timing lock between configurations.
-    await delay(2500);
+    await delay(6500);
   }
   assert.equal(new Set(combined.rows.map(row => row.name)).size, combined.rows.length);
   combined.ended = new Date().toISOString();
