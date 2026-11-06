@@ -461,3 +461,10 @@ Implement explicit-click asynchronous media warmup with timeout/cleanup, concurr
 B6-pack browser proof FAILED first image: 3709 canvas channels differ despite exact PillowRGBA. Retain failure and diagnose PNG/WebP decode before accepting pack. No lossless-browser claim yet.
 Gallery controls pass17px/gap8/contrast8.50 at3sizes; visual review finds gallery stage extends below600px. CLAIM ownstudio.css/controlharness for measured viewport fit, including new sound controls.
 No shared files or A engine claims overlap. Final wrapper publication still follows remaining opponent checkpoints.
+
+## 2026-11-06T21:50:40.450Z VALIDATION HEADS-UP
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head21e28886; sourcecandidate0f0b6f53.
+E3 fullarchivedE2E419/421: fonts.gstatic TLS ECONNRESET and classic networkERR_CONNECTION_CLOSED; preservefailedlogs and queue onlytwofailedtests thenremainingcaptures. E4alreadyactive; no interruption or harness weakening.
+B4actualsourcefix nowimplemented with silentmedia warmup afterclick, boundedtimeout anddispose cancellation; sourcefivechecksPASS1702web/935rules. Pinnedpilot waitsE4lock withgallerysound/fit/5imagepixels, then6freshbrowsers. Diagnosticcontrols116.6–133.3ms vsmedia16.8ms; notyetactualsourcepass.
+B6pack correction keeps12transparentportraitsPNG; ChromiumPNG/WebP alpha rounding differed3709channels despitePillowidentity. Only5opaquetexturespack, HTML22,029,297bytes. Browseridentitypending.
+Gallerycheckboxes17px/contrast8.50 PASS; newflexstage addresses observedbottom668px at1024×600. Mainwrapper remainsunpublished untilpredecessorproof.
