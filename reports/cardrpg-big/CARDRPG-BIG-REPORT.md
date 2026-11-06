@@ -14,7 +14,7 @@ Bản ghép cuối, video, kiểm tra lại hình ảnh và báo cáo lane B đa
 ## Tình trạng bản ghép
 REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
 
-Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản nguồn289ffa0e đã nhận A cùng B2c/B3/B5/B4/E1/E2. HTML23.376.725byte/SHA85592fae đang chờ kiểm tra đầy đủ. Bản trước đạt21ảnh lab,8ca entrance và36ảnh lời mời. E2E420/421 gặp lỗi mạng tải font, chạy lại cả2ca trong spec đã đạt. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
+Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản nguồn289ffa0e đã nhận A cùng B2c/B3/B5/B4/E1/E2. HTML23.376.725byte/SHA85592fae đạt năm cổng với1.722test web,1.020test luật và421E2E, cùng21ảnh lab,24ảnh entrance và36ảnh lời mời. VideoMochi25s đã ghi và xem20frame trong10sđầu. E2E420/421 gặp lỗi mạng tải font, chạy lại cả2ca trong spec đã đạt. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
 
 ## Sáu nơi nên xem
 REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md

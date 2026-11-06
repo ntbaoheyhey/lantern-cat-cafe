@@ -50,3 +50,8 @@ REFERENCE: demo/readability/focused.log, integration/reveal/viewport-v2/checks.j
 |Rendered preview in screenshots|e43ed529/b6630082|21 integrated captures pass the positive geometry guard, 1024 gallery and 1280 performance inspected visually|
 
 The integrated1× videos, full boss recording, final screenshot inspection and rescore remain open. Each final score will state its measured misses and visual limitations.
+
+## Mochi recording review
+REFERENCE: video/mochi/captures.json, video/mochi/review/first-ten-seconds.png, integration/controls/CHECKPOINT.md
+
+Twenty frames at0.5s intervals from the first10s of the25s clip show four authored actions. The dash, guard rings and lantern group effect have distinct travel and silhouettes. The wide camera leaves a large central rug around small figures. Thin amber effects lose contrast against warm floor colors. The1024gallery controls fit within the viewport, and Hide controls exposes the full playback stage. Full clip sampling and the remaining hero/boss/ultimate review remain pending.
