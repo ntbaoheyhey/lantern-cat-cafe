@@ -3,18 +3,18 @@ PROMPT.md bytes (wc -c) = 45001
 PROMPT.md SHA-256 = 288a635dd3436298f12d203c8174d0d75a62ad818f4be26908a8916a3542281f
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Phase F2 · six resize/DPR cases and 40 portrait/expression renders complete. Corrected five-gate run passes (validation/f2-fixed.json), 1646 web units, 903 rules units, 421 E2E. F1 matrix610 and five profiles complete, evidence01376850 pushed to draft #335 and primary. F2 crop +40% target passes2/10. Cold7 completed, CPU4 MAX283.3/283.4ms versus F1 1316.5/1466.5ms. Captured 1440 DPR2 MAX450ms, without capture83.4ms. No-capture CPU4 MAX333.4/416.7ms. Marked profile confirms capture-associated466.6–483.4ms gaps with idle main thread. Full skill timing pending. F2 self-check sharpness/GATES.md records misses.
+Phase F2 timing / F3 starter-source authoring. F2 source d1425018 published as draft #336. Six DPR/resize cases,40 renders and five validation gates pass (1646 web units,903 rules,421 E2E). Sharpness target2/10 and full-session startup hitch gate missed. Self-check sharpness/GATES.md. Starting frozen F2 full610 matrix, with builds/tests/git packing held until completion.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last pushed commit 01376850674e9576323415992d3e44e3b8bcf85b, primary and F1 remotes verified. Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
+Last source commit d1425018fb13900c9f805a95a7c486a90f79deb4, primary and F2 remotes verified. Draft F2 #336 (codex/cardrpg-big-f2-2026-11-06). Draft F1 #335 (codex/cardrpg-big-f1-2026-11-06). Draft A #334 (codex/cardrpg-big-a-2026-11-06), F0 #333 (codex/cardrpg-big-f0-2026-11-06). Base #332 cd5edcc9895b42384578df9b040daac9ce51fccf.
 Memory bootstrap 62036790, recovery c0f1c72a. F1 validation reports/cardrpg-big/validation/f1-final.json.
 ## NEXT
-1. Commit/push validated F2 and open a stacked draft, disclosing crop2/10, startup hitch gate and pending matrix.
-2. Run frozen F2 610-case matrix and five offender profiles, without concurrent builds/tests or git packing.
-3. Author starter F3 motion data while F2 times, then validate F3 and build F4 effects before the slice checkpoint.
+1. Finish frozen F2 610-case matrix and profiles, then update draft #336. Artifact /tmp/cardrpg-big-f2-index.html, SHA0394611aca99d6999cf4e1dc4bdaa0113703670052e9ae76aa8ffd795ef51879.
+2. Author runtime AnimationClips for Mochi/Soot/Clover and chapter1 enemies using existing rig sockets, unique authored skill keyframes and deterministic fidgets.
+3. After timing ends, test motion data/trajectory distances, capture eight-frame filmstrips and recheck layout before F3 draft and F4.
 ## DONE
 F0 · 7a49705b / state 5f72e4a1 / draft #333 · baseline/GATES.md, 610 cases, 5 profiles, validation. Original 33.4ms cast attribution unresolved.
-A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2–F7 pending.
+A1 · 6b48e0a2 · auto/A1.md, sim/auto-a1*.json, validation/a1.json. A2 · 74aa770e · auto/A2.md, sim/auto-a2*.json, validation/a2.json. A3 · c8695d6c · auto/A3.md, auto/screens/checks.json, validation/a3-final.json. A timing complete, 610 cases +7 cold +5 profiles in auto/PERFORMANCE.md. F1 source1bc9da20 / evidence01376850 / draft #335 / layout/README.md, validation/f1-final.json, complete 610-case matrix and 5 profiles in layout/PERFORMANCE.md. F2 · d1425018 / draft #336 / sharpness/README.md, GATES.md, PERFORMANCE.md, validation/f2-fixed.json. Full matrix pending. F3–F7 pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
 ## PHASE GATES · F2 (copied requirements)
 PASS “renderer pixel ratio = min(devicePixelRatio, 2) with proper resize ... composer targets sized in device pixels with MSAA” · six resize/DPR cases, same-size DPR switch, cap2, MSAA4, matching canvas/post sizes. sharpness/checks.json.
@@ -32,6 +32,7 @@ PARTIAL “coherent ... scene per chapter ... layered parallax ... warm key ... 
 PARTIAL “after each phase rerun the F0 harness; no phase may add a new hitch” · cold7 +610 cases +5 profiles complete. Whole-page MAX1583.3ms fails. Cast MAX33.4/16.8ms passes, first >25 counts45 versus A32. Original spikes did not recur in profiles. layout/PERFORMANCE.md.
 A self-check complete · auto/GATES.md and PERFORMANCE.md. Cast gate passes 33.4/16.8ms. Whole-session gate fails 1616.6ms, deferred loader fix. Isolated cold rerun retained alongside pilot.
 ## DECISIONS · append only
+2026-11-06 15:01 · F3 starter motion will create AnimationClips from authored data on existing rig nodes, preserving GLB byte budget. F2 source d1425018 and draft336 verified remotely. Frozen F2 HTML retained in /tmp for matrix/profiles.
 2026-11-06 14:56 · Retain captured and capture-disabled cold runs separately. Both start at page open. Main-thread profiles identify stage texture generation, getContext, shader uniform setup and texture uploads. F2 depth falloff/eye tracking now implemented. sharpness/PERFORMANCE.md.
 2026-11-06 14:39 · F1 profile source offsets identify the async loader wrapper containing synchronous base64 conversion, not its callback alone. Corrected attribution wording in layout/PERFORMANCE.md. F2 first crop target passes2/10, all misses retained.
 2026-11-06 13:59 · Recovered from user-supplied summary, verified PROMPT 45001 bytes/SHA and printed STATE first15. Renewed script request still conflicts with session Automations task-completion restriction, user informed. No recovery scheduler installed.
