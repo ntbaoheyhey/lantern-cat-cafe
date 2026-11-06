@@ -10,10 +10,10 @@ const artifact=resolve(process.env.BIG_ARTIFACT||'/tmp/cardrpg-big2-b4-index.htm
 const source=await realpath(resolve(process.env.BIG_AUDIO_SOURCE||'/tmp/cardrpg-big2-b4-validation'));
 const out=process.env.BIG_AUDIO_OUT||'reports/cardrpg-big2/audio';await mkdir(out,{recursive:true});
 const require=createRequire(resolve(source,'apps/web/package.json')),{createServer}=await import(require.resolve('vite'));
-const server=await createServer({configFile:false,root:resolve(source,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5920,strictPort:true,fs:{allow:[source]},watch:null,hmr:false},optimizeDeps:{noDiscovery:true,include:[]}});
+const server=await createServer({configFile:false,appType:'custom',root:resolve(source,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5920,strictPort:true,fs:{allow:[source]},watch:null,hmr:false},optimizeDeps:{noDiscovery:true,include:[]}});
 server.middlewares.use((req,res,next)=>{if(req.url==='/__audio'){res.setHeader('content-type','text/html');res.end('<!doctype html><title>Original audio analysis</title>');}else next()});
 await server.listen();
-const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});const errors=[],scores=[],playback=[];
+const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});const errors=[],scores=[],playback=[];let complete=false;
 try{
  const analysis=await browser.newPage();analysis.on('pageerror',e=>errors.push(String(e)));await analysis.goto('http://127.0.0.1:5920/__audio');
  const ids=await analysis.evaluate(async()=>{const a=await import('/src/game/squad/turn3d/audio.ts'),r=await import('/src/game/squad/turn3d/card-effect-data.ts'),l=await import('/src/game/squad/turn3d/card-lab-effects.ts');window.__audioModule=a;return [...Object.keys(r.CARD_EFFECT_RECIPES),...Object.keys(l.LAB_EFFECT_RECIPES),'kill'];});
@@ -47,6 +47,9 @@ try{
   assert.equal(result.enabled,true);assert.equal(result.overflow,false);const times=[...result.frames].sort((a,b)=>a-b);playback.push({width,height,cpu,...result,max:times.at(-1),p95:times[Math.floor(times.length*.95)]});await page.close();
  }
  assert.deepEqual(errors,[]);
- await writeFile(`${out}/checks.json`,JSON.stringify({artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),source,method:'Native OfflineAudioContext PCM hashes and 256-sample RMS envelopes; 7 audible WAV examples. Unique waveforms are not a perceptual similarity test. Real sound/volume/playback clicks with RAF intervals at three sizes and CPU4.',scores,playback,errors},null,2));
+ complete=true;
  console.log(JSON.stringify({scores:scores.length,peak:Math.max(...scores.map(r=>r.peak)),playback:playback.map(({frames,...r})=>({...r,frames:frames.length})),errors}));
-}finally{await browser.close();await server.close()}
+}finally{
+ await writeFile(`${out}/checks.json`,JSON.stringify({artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),source,complete,method:'Native OfflineAudioContext PCM hashes and 256-sample RMS envelopes; 7 audible WAV examples. Unique waveforms are not a perceptual similarity test. Real sound/volume/playback clicks with RAF intervals at three sizes and CPU4.',scores,playback,errors},null,2));
+ await browser.close();await server.close();
+}
