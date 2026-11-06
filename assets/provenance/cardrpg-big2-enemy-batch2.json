@@ -1,0 +1,32 @@
+{
+  "tool": "Original hand-authored keyframes and Three.js geometry",
+  "referenceArtUsed": false,
+  "units": [
+    "needle-moth",
+    "teacup-healer",
+    "kettle-knight"
+  ],
+  "parameters": {
+    "bakedKeyCount": 41,
+    "interpolation": "smoothstep",
+    "propDraws": 2,
+    "propMaterials": 2,
+    "torus": [
+      5,
+      18
+    ],
+    "cylinderRadialSegments": [
+      8,
+      10,
+      14,
+      16
+    ]
+  },
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-motion.ts": "9ebe983dcaefd7fbec1724cbea4df6e8502e87259aa5d2d8f83f916121a15055",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-effects.ts": "e2bb1c488212e976f568872ccd4fbf849a813fcd78ceaddff809ddc035884876",
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "bdb72ca9e42ab50468d89f472a387c2d117341872e34c0ffbaf5fa5bf800480b"
+  },
+  "rigProof": "reports/cardrpg-big2/enemies/e2/rig/summary.json",
+  "renderedProof": "pending"
+}

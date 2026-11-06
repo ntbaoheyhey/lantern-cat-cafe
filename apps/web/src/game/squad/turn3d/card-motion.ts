@@ -1,3 +1,4 @@
+import { ENEMY_BATCH2_CLIPS } from './card-enemy-batch2-motion';
 import { ENEMY_BATCH1_CLIPS } from './card-enemy-batch1-motion';
 import * as T from 'three';
 import { BATCH3_SKILL_CLIPS } from './card-roster-batch3-motion';
@@ -41,7 +42,7 @@ export function cardIdleFrame(id: string, time: number, reducedMotion = false) {
 }
 
 export function cardSkillMotion(asset: string, skillId: string) {
-  const skills = STARTER_SKILL_CLIPS[asset] ?? ROSTER_SKILL_CLIPS[asset] ?? BATCH2_SKILL_CLIPS[asset] ?? BATCH3_SKILL_CLIPS[asset] ?? ENEMY_BATCH1_CLIPS[asset] ?? [CHAPTER_ONE_ATTACKS[asset]];
+  const skills = STARTER_SKILL_CLIPS[asset] ?? ROSTER_SKILL_CLIPS[asset] ?? BATCH2_SKILL_CLIPS[asset] ?? BATCH3_SKILL_CLIPS[asset] ?? ENEMY_BATCH2_CLIPS[asset] ?? ENEMY_BATCH1_CLIPS[asset] ?? [CHAPTER_ONE_ATTACKS[asset]];
   return skills.find(clip => clip?.id === skillId)?.travel
     ?? (CHAPTER_ONE_ATTACKS[asset]?.id === skillId ? CHAPTER_ONE_ATTACKS[asset]?.travel : undefined);
 }
@@ -196,7 +197,7 @@ function lifecycleDefinitions(): CardClipDefinition[] {
 export function cardClipDefinitions(asset: string): CardClipDefinition[] {
   const skills = STARTER_SKILL_CLIPS[asset] ?? ROSTER_SKILL_CLIPS[asset] ?? BATCH2_SKILL_CLIPS[asset] ?? BATCH3_SKILL_CLIPS[asset];
   const enemy = CHAPTER_ONE_ATTACKS[asset];
-  const enemySkills = ENEMY_BATCH1_CLIPS[asset];
+  const enemySkills = ENEMY_BATCH2_CLIPS[asset] ?? ENEMY_BATCH1_CLIPS[asset];
   if (!skills && !enemy && !enemySkills) return [];
   return [...lifecycleDefinitions(), ...(skills ?? enemySkills ?? []), ...(enemy ? [enemy] : [])];
 }
