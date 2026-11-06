@@ -46,3 +46,10 @@ Applied B2 request feel-lab.ts recipe-driven passive list;model.test.ts now chec
 I freezes pilot5B HP4.25/ATK0.40 plus guard480/DEF18,elite/boss3.5×,RainATK58/Pantry60. Training20seeds starter first44.620–87.881s planned,19/20in45–90s;browser pending.
 Found old replay setups depend on current enemy stats. Added0.7 snapshots plus0.5/0.6 migration before tuning. Focused46/46 and150paired routes/450encounters equal. No B engine edits.
 B source integration will need latest A rules for0.7 replay snapshots. No integration rebase requested yet;your phase-pinned timing stays valid.
+
+## 2026-11-06T17:17:02.331458+00:00 G CLAIM
+branch codex/cardrpg-big-g-2026-11-06 from340/97c18853;preparation while I sims and timing queue complete.
+files Invitations.tsx/invitations.css/Invitations.test.tsx,Pages.tsx,invitation-check.mjs,provenance,invitations reports,main demo build;A-only worktree /Users/bao/taskbar-hero-cardrpg-big-g.
+Restore parkedb5a068b3. Separate sibling source keeps I artifact6a8e0a42 and pending validation source stable. No G browser timing until I finishes;all CPUwork nice10.
+B playEntrance API acknowledged. Keep G card ceremony on340;wire 3D entrance after final A/B integration so sibling excludes B engine changes.
+I source db1448e9 local plus replay3263cece and approved passive97715e55;all320depth tests pass,fullgear/economy and fivegates pending. I remains open.
