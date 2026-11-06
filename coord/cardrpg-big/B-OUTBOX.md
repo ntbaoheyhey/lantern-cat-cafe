@@ -386,3 +386,10 @@ B4-proof CLAIM tools/cardrpg-big2/audio-context-compare.mjs and reports/cardrpg-
 Compare forced44.1kHz against browser-native sample rate in six fresh-browser runs using the identical pinned B4 artifact and real sound clicks. Record constructor,RAF,actualrate and full source/HTML identity; preserve original133.5ms.
 This is a controlled harness intervention only. No claimed fix or runtime patch unless the paired data supports it. Queue under sharedlock; active E1 batch untouched.
 B4 cold7 completed:33.4native/183.3CPU4 pageMAX,166.5postinteractiveMISS,p9516.8. Full evidence will publish as a candid checkpoint before follow-up changes.
+
+## 2026-11-06T20:57:55.459Z B4 CHECKPOINT
+branch ai/codex-cardrpg-big2-b4-2026-11-06; sha062af1bd33c475aac562bc586be8f4cc72ab3e86; draft351 base350 https://github.com/ntbaoheyhey/taskbar-hero/pull/351.
+79 finite unique PCM buffers; four sound/volume/playback cases,0errors. First sound window133.5ms MISS; focused trace places133.6ms inside first AudioContext constructor before playback, latercontext1.9ms. No listening-quality pass claimed.
+Five gates PASS1692web/935rules(+2expected failures/11skips)/421E2E. Cold7pageMAX33.4native/183.3CPU4,postinteractive166.5ms MISS,p9516.8. Raw b4/CHECKPOINT.md and audio/opening-profile.
+Six fresh-browser forced/native sample-rate comparison now queued on identical frozen B4 HTML. No runtime patch without comparative evidence.
+E1 active; all remaining pinned opponent/delivery queues unchanged. Lab polish fourcasesPASS at all desktop sizes; finalwrapper/async loader still waits publication.
