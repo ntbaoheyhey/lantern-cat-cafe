@@ -2,13 +2,14 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Continuation b6-polish source0f0b6f53 implements explicit gallery sound, gallery viewport fit and asynchronous sound-device startup; source fivechecksPASS1702web/935rules. No runtimebrowser acceptance yet.
-E3 initial419/421 E2E failed2networkcases; focusedretry+captures queuedafter34957 via /tmp/cardrpg-big2-e3-resume.sh session79527. E4finished:421E2E/2clips/82effects/cold133.3msMISS; CHECKPOINT+VISUAL-REVIEW authored, notyetinserted/published. A3318nowownslock. Bosswaiter5816 pauseduntilsound3248+E3retry5806exit; helper /tmp/cardrpg-big2-finish-pilots.py session23023 autoresumes. Delivery→hitstop→flagoff→scopedmatrices remain existingqueue. Do not duplicate. New sound/pack/gallery pilot waits30429 under session47507. Frozen /tmp/cardrpg-big2-sound-startup-{index.html,build.json,validation.json}; script /tmp/cardrpg-big2-sound-startup-checks.sh.
-Audio media diagnostic6cases: controls116.6–133.3ms vs asynchronoussilentmedia16.8ms, constructors120.8–123.8→15.7–17.3ms. Sourcefixawaitsbrowserproof. TransparentWebP FAILED Chromium3709channels; newpacker keepsallportraitsPNG andonlypacks5opaque textures. RevisedHTML22,029,297bytes.
+Published drafts: B1 #342; cats #343/#346/#347; B3 #349; B5 #350; B4 #351; E1 #352; E2 #353. Current branch b6-polish; runtime candidate 0f0b6f53 has 1,702 web /935 rules source checks PASS. Later local commits change evidence/tools only.
+Sound pilot: five opaque images have exact Chromium RGBA; gallery fits 3 sizes (1024 stage height189.4px). Studio FAILED slider animationAt=0; original log/receipt retained in review/sound-studio. Instrumented retry + previously skipped six actual-source audio cases queued via /tmp/cardrpg-big2-sound-studio-resume.sh (session86358; waiter9770).
+E3: initial419/421; retry1 passed classic but failed expired-session on external fonts.gstatic ECONNRESET again. Retry2 one remaining test + captures queue after9770 via /tmp/cardrpg-big2-e3-remaining.sh (session85191). Preserve every failed log. E4 complete421E2E/2clips/82effects/cold133.3ms MISS; checkpoint authored, unpublished pending E3.
+Boss waiter5816 resumed after prior pilot/E3 exited; parent37902. Delivery39632 → hitstop43008 → flagoff43282 → scoped matrices58498 remain existing queue. A3328 owns current CPU4 configuration; no duplicate timing jobs. Offline video-contact-sheets.py pilot extracts five timestamped Inkcap actions with matching video SHA.
 ## NEXT
-1. Inspect sound-startup pilot afterE3: 5opaqueimagepixels, galleryfit3sizes, studiocontrols86actions/3sizes, sixactualsourceaudio runs. Failure must be fixed and pinned again. Preserve rejectedtransparentpack.
-2. Publish E3/E4/boss evidence when eachpinnedqueue completes using /tmp/cardrpg-big2-insert-evidence.py; no unrelatedtrackedWIP. Read Aoutboxphaseend/beforePR. No integratedcheckpoint/rebaserequest yet.
-3. After remainingcaptures/fixes build/pin acceptedreview and run review-measurements.mjs+matrix-series.mjs review; finalreport/grades,ledger+drafts. Existing scopedbatchmatrices58498 wait43282. No duplicatequeues/agents.
+1. Inspect instrumented studio retry and six audio cases. Diagnose slider from recorded owner/action/value/bounds; do not hide failure or change application without evidence. No audio-source pass yet.
+2. Publish E3/E4/boss evidence once captures and source checks complete; use /tmp/cardrpg-big2-insert-evidence.py with a clean tracked tree. Read A outbox at phase end/before PR. No integration rebase checkpoint yet.
+3. After remaining captures/fixes, build/pin review and run review-measurements.mjs plus full86-action matrix. Review x1 recordings, finish grades/report/ledger/drafts. Existing scoped matrices58498 already queue all cat/enemy/boss batches; do not duplicate.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -98,4 +99,6 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 
 - 22:04Z: E4cold7complete33.3native/133.3CPU4MAX;postinteractive100ms/p9516.8,0errors.82recipes/3321pairs/2motionsPASS; viewedbothstripsimprovedtier. A3318gotrequestedfunctionalwindow. Pendingboss5816temporarilystoppedonly; localdependencyhelper23023resumesafter3248+5806, noactiveAjobinterrupted.
 
-- Recovery 22:18Z: re-read both briefs, RULES, STATE and A outbox through 21:58. Verified published branch heads and existing process dependencies; no duplicate browser queues. Added offline timestamped video contact-sheet tool; pilot extracted all five first Inkcap actions from the existing native24s recording with matching video SHA. Gallery viewport/source audio acceptance still pending A3318 functional window.
+- Recovery 22:12Z: re-read both briefs, RULES, STATE and A outbox through 21:58. Verified published branch heads and existing process dependencies; no duplicate browser queues. Added offline timestamped video contact-sheet tool; pilot extracted all five first Inkcap actions from the existing native24s recording with matching video SHA. Gallery viewport/source audio acceptance still pending A3318 functional window.
+
+- 2026-11-06T22:17Z: opaque pack5/5 browser RGBA PASS and gallery fit3sizes PASS; studio slider0 assertion retained with instrumented retry queued. E3 retry1 external font ECONNRESET again, classic test passed; single remaining retry2 and captures queued after studio. Boss dependency resumed normally. No source UI patch or audio acceptance yet.

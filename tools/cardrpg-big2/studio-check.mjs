@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 const artifact=resolve(process.env.BIG_ARTIFACT||'/tmp/cardrpg-big2-delivery-index.html'),out=process.env.BIG_STUDIO_OUT||'reports/cardrpg-big2/delivery/studio';
-await mkdir(out,{recursive:true});const errors=[],rows=[],requests=[];
+await mkdir(out,{recursive:true});const errors=[],rows=[],requests=[],interactions=[];
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{for(const [width,height]of [[1280,720],[1440,900],[1024,600]]){
  const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
@@ -16,7 +16,7 @@ try{for(const [width,height]of [[1280,720],[1440,900],[1024,600]]){
  const covered=[];
  for(const owner of owners){await page.getByLabel('Gallery unit',{exact:true}).selectOption(owner);await page.waitForFunction(()=>window.__b2Gallery.battle.actors.every(a=>window.__depthScene.puppets.get(a.id)?.asset===a.catalogId));
   const actions=await page.getByLabel('Gallery action',{exact:true}).locator('option').evaluateAll(os=>os.map(o=>o.value));
-  for(const id of actions){await page.getByLabel('Gallery action',{exact:true}).selectOption(id);{const slider=page.getByLabel('Gallery progress',{exact:true}),box=await slider.boundingBox();await slider.click({position:{x:box.width*.46,y:box.height/2}});}const check=await page.evaluate(()=>({id:window.__b2Gallery.galleryId,at:window.__b2Gallery.animationAt,plan:window.__b2Gallery.plan.presentationId}));assert.equal(check.id,id);assert.equal(check.plan,id);assert.ok(check.at>0);covered.push(id);}
+  for(const id of actions){await page.getByLabel('Gallery action',{exact:true}).selectOption(id);{const slider=page.getByLabel('Gallery progress',{exact:true}),box=await slider.boundingBox();await slider.click({position:{x:box.width*.46,y:box.height/2}});}const check=await page.evaluate(()=>{const input=document.querySelector('[aria-label="Gallery progress"]'),r=input.getBoundingClientRect();return{id:window.__b2Gallery.galleryId,at:window.__b2Gallery.animationAt,plan:window.__b2Gallery.plan.presentationId,value:input.value,bounds:{x:r.x,y:r.y,width:r.width,height:r.height},focused:document.activeElement===input};});interactions.push({width,height,owner,id,...check});if(check.at<=0)await page.screenshot({path:`${out}/failed-slider-${width}-${id}.png`});assert.equal(check.id,id);assert.equal(check.plan,id);assert.ok(check.at>0,JSON.stringify(interactions.at(-1)));covered.push(id);}
  }
  assert.equal(covered.length,86);
  if(process.env.BIG_STUDIO_EXPECT_SOUND==='1'){
@@ -43,5 +43,5 @@ try{for(const [width,height]of [[1280,720],[1440,900],[1024,600]]){
  rows.push({width,height,owners:owners.length,actions:covered,captures,accountUnchanged:true,overflow:false});await page.close();
 }
 assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
-}finally{await browser.close();await writeFile(`${out}/checks.json`,JSON.stringify({artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),rows,errors,requests},null,2));}
+}finally{await browser.close();await writeFile(`${out}/checks.json`,JSON.stringify({artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),rows,errors,requests,interactions},null,2));}
 console.log(JSON.stringify({sizes:rows.length,errors,requests}));
