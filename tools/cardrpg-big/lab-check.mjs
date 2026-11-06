@@ -27,6 +27,12 @@ try {
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     const drawer = page.getByRole('region', { name: 'Feel lab', exact: true });
     const capture = async name => {
+      if (name === 'gallery-home' || name === 'performance') {
+        await page.waitForFunction(() => {
+          const scene = window.__depthPreviewScene;
+          return scene?.ready && scene.stats.frames > 0 && scene.stats.calls > 0 && scene.stats.triangles > 0;
+        }, null, { timeout: 120000 });
+      }
       const layout = await drawer.evaluate(element => {
         const bounds = element.getBoundingClientRect();
         const body = element.querySelector('.dp-lab-body');
