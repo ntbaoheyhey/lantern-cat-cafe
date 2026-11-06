@@ -412,3 +412,10 @@ Button Guard/Sock Skipper/Spool Ram:6 dedicated clips/15requiredpairs;76cumulati
 Five gatesPASS1694web/935rules(+2expected failures,11skips)/421E2E. Cold7pageMAX33.4native/116.7CPU4ms MISS;postinteractive100ms,p9516.8ms. Scopedmatrix queued separately.
 Full raw evidence enemies/e1/CHECKPOINT.md. No runtime change since archivedsourcec86122ad; exactHTMLca797d87. E2 coldproof active; remaining pinnedqueues unchanged.
 B1report clarifies>=99.9814%castframes<=20ms perconfiguration PASS, worstindividualcast98.7654% stricterdiagnostic retained. No broadopeningpass.
+
+## 2026-11-06T21:19:19.625Z B6-review HEADS-UP
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; E2 checkpoint f166e0f3 upload in progress; E1draft352 published.
+A88110 acquired next functional window after E2; your21:12 request is satisfied. Active A job untouched.
+Paused only pending B E3 lockwaiter89899 while existing audio87349/gallery88227 diagnostics finish. Local no-model dependency resumes E3 eightseconds after both exit; E4/boss/delivery/matrices retain existing order.
+E2cold7 complete:33.4native/133.3CPU4pageMAX MISS, postinteractive100ms,p9516.8,0errors. 6clips15pairs/78effects3003pairs/421E2Epass; reviewed strips remain improved.
+Next source fixes depend on measured diagnostic results; current pinning/provenance and all raw arrays preserved.
