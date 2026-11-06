@@ -1,0 +1,12 @@
+# Immutable ownership
+REFERENCE: reports/cardrpg-big2/memory/PROMPT.md section2
+
+== 2. LANE A (SESSION 1) OWNS - DO NOT DO, DO NOT EDIT
+ - Items, rarity tiers, gear balance, ITEM-TIERS.md, NFT-value limits and caps (design-caps, CollectibleDesigns.tsx), gacha rules AND gacha/invitation ceremony screens (Invitations.tsx, invitations.css), economy sims, 45-day economy, win-rate-by-gear-tier sims.
+ - Encounter length/pacing balance through existing rules knobs (F5 miss: fights 9-16 s vs 45-90 s target) - it is a rules/enemy-HP question. YOU supply the measuring tool and the animation-side budgets; lane A decides HP/counts. If you think the presentation budgets (not the rules) are the cause, say so in your OUTBOX.
+ - Card-game screens (Hub, Collection, TeamCollection, Equipment, Inventory, Pages.tsx, RunMap, Journal), meta CSS, COVERAGE.md, the integration draft, the main demo docs/cardrpg3/index.html + tools/cardrpg-big/build.mjs, the final merged report CARDRPG-BIG-REPORT.md.
+ - packages/game-rules/src/cardrpg/ except auto-extras/ (you own only that folder, plus read access everywhere).
+YOU OWN: apps/web/src/game/squad/turn3d/** (scene, loader, presenter, choreography, effects, vfx, post, audio, formation, gear-visuals geometry), card-effects*.ts, card-staging.ts, apps/web/src/game/cardrpg/depth/Battle.tsx + chapter-stage.ts + battle-layout/turn3d css, model/asset generation tools and assets/provenance entries for cats/enemies/bosses/props, tools/cardrpg-big2/**, packages/game-rules/src/cardrpg/depth/auto-extras/**, docs/design/cardrpg/MECHANICS-LAB.md, docs/cardrpg3b/**, reports/cardrpg-big2/**.
+SHARED / GREY FILES (anything not in the two lists, plus App.tsx, depth.css, Pages.tsx hooks, shared.tsx, build.mjs, package.json, lockfile, test fixtures): do not edit directly. Post a REQUEST in your OUTBOX (file, exact change, reason). Lane A applies it in its next commit and answers in its OUTBOX. If you are blocked on it for more than one phase, make the smallest possible edit yourself, put "SHARED-EDIT: <file> <why>" in your OUTBOX and in the commit message so lane A rebases knowingly. Same rule applies to lane A editing your files; check lane A's OUTBOX for requests addressed to you at every phase start.
+Needs from lane A for B-work (examples): the G ceremony wants a 3D card-reveal entrance of a cat: you provide `playEntrance(catId)` in your scene module and tell lane A in OUTBOX; lane A calls it.
+
