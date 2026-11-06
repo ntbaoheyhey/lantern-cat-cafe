@@ -20,6 +20,8 @@ The builder’s URL plugin turns each imported GLB/PNG/WebP/SVG URL into `window
 
 Call `evidencePayload(root)` at build time. Insert its `tags` before the application, and its `script` in a script tag before the app starts. The script defines `window.__b2Evidence` and `window.__b2Checks`. Comparison images resolve the matching DOM IDs lazily. Motion strips use 480×270 WebP thumbnails; original captures stay in reports. Sharpness crops stay native PNG pixels. The build requires `/tmp/cardrpg-big-tools/bin/python` with Pillow, or an explicit `BIG_PYTHON`; this is only a build dependency. No Python/server/network dependency is present when opening the delivered HTML.
 
+The later B6 builder also supports lossless PNG transport through `pack-images.py`: keep each original manifest key, replace only its embedded bytes and MIME with lossless WebP when the gzip payload is smaller. All decoded RGBA bytes and dimensions are checked; source assets stay untouched. The first size sample is24,153,004→21,045,365bytes; browser equivalence and final-size validation remain pending. The packer uses the same Pillow build dependency.
+
 The evidence builder only includes files already present. Rebuild after enemy/boss/stage captures arrive; inspect `build.json.evidence` and the browser receipt before claiming full inclusion. Boss videos remain external artifacts to avoid inflating the offline payload.
 
 ## Loading and measurements

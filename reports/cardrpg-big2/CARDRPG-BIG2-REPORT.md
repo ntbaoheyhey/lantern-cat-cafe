@@ -24,7 +24,7 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
 | Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
-| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate change rejected in six fresh browsers; asynchronous-output comparison queued |
+| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate change rejected in six fresh browsers; silent-output comparison also rejected (130.4–132.4ms constructor) |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
 ## Measurements and gates

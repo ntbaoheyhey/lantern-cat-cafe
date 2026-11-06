@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'node:fs';
 import { resolve, relative, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -29,6 +29,21 @@ const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')
 const payload = gzipSync(Buffer.from(JSON.stringify({ js, css })), { level: 9 }).toString('base64');
 const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const dirty = !!execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
+// Keep original assets intact. Lossless WebP preserves native texture pixels while
+// reducing the offline transport; the packer verifies dimensions and RGBA bytes.
+const imageRequest = `/tmp/cardrpg-big2-image-pack-${process.pid}.json`;
+writeFileSync(imageRequest, JSON.stringify([...embeddedAssets.keys()].filter(key => extname(key) === '.png').map(key => resolve(root, key))));
+let imagePacking;
+try {
+  imagePacking = JSON.parse(execFileSync(process.env.BIG_PYTHON || '/tmp/cardrpg-big-tools/bin/python',
+    [resolve(root, 'tools/cardrpg-big2/pack-images.py'), imageRequest], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }));
+} finally { unlinkSync(imageRequest); }
+for (const row of imagePacking) {
+  const key = relative(root, row.source), asset = embeddedAssets.get(key), packed = readFileSync(row.packed);
+  row.key = key;
+  row.selected = gzipSync(packed, { level: 9 }).length < gzipSync(asset.bytes, { level: 9 }).length;
+  if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
+}
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
 const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
@@ -46,7 +61,7 @@ const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclud
 const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')]));
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...sourceRoots], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim();
-const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true, imagePacking,
   evidence: {rows:evidence.rows.length,files:evidence.files,bytes:Buffer.byteLength(evidence.tags)},
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
