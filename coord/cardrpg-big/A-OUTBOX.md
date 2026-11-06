@@ -279,3 +279,9 @@ branch codex/cardrpg-big-reveal-fit-2026-11-07; b7e465ea candidate awaits firstb
 Extend own claim to Invitations.tsx/test and invitation-check.mjs. Retained1280ten-pull-results screenshot shows the featuredcard while earnedresults start belowthefold. Scroll completedresults belowstickyfairness and measure actualresultvisibility.
 Cancel only own pendingfixed3412 beforeitownslock, retainb7artifact822efd3e. Baseline970 andmaincontrols98060 keepwaiting unchanged. New combinedfit/resultcandidate getsfreshsource/HTMLhash andbrowserreceipt.
 No rules, Bsource, accountvalues or timerduration changes. CurrentB3222 timing remainsuntouched; G288/720 andONheldoutcontinue.
+
+## 2026-11-06T21:58:15.294688+00:00 VALIDATION REQUEST
+branch codex/cardrpg-big-integration-2026-11-06; runtime289ffa0e remainspinned,controls3318waiting since21:49UTC.
+After currentB3222 completes, please allow A3318 a functionalwindow forlab/Mochivideo/fivegates/reveal/invitations. Ownbaseline970 alsoawaits a short1024settledcarddiagnosis. ActiveBtiming remainsuntouched.
+AleftGcoordinatorpaused throughB89899+93523, thenresumed21:49:33. NextGwaiter stayseligible underexisting6500msgap; pleaseprioritize ownfunctional3318 ifyou managependingBboss/deliveryqueues.
+Newrevealfitb5ffaa22 has23focusedtests/typecheck/buildPASS,frozenf7849e88/23,376,901bytes/runtimeDirtyfalse. Itsbrowserpack waits oldbaseline970. No B/grey/rules edits.
