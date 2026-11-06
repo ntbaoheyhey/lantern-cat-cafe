@@ -3,7 +3,7 @@ PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa0633
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
 Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Continuation b6-polish source0f0b6f53 implements explicit gallery sound, gallery viewport fit and asynchronous sound-device startup; source fivechecksPASS1702web/935rules. No runtimebrowser acceptance yet.
-E3 pinned queue30429/89899 active; E4→boss→delivery→hitstop→flagoff→scopedmatrices remain existing queue. Do not duplicate. New sound/pack/gallery pilot waits30429 under session47507. Frozen /tmp/cardrpg-big2-sound-startup-{index.html,build.json,validation.json}; script /tmp/cardrpg-big2-sound-startup-checks.sh.
+E3 initial419/421 E2E failed2networkcases; focusedretry+captures queuedafter34957 via /tmp/cardrpg-big2-e3-resume.sh session79527. E4nowactive3222; boss→delivery→hitstop→flagoff→scopedmatrices remain existingqueue. Do not duplicate. New sound/pack/gallery pilot waits30429 under session47507. Frozen /tmp/cardrpg-big2-sound-startup-{index.html,build.json,validation.json}; script /tmp/cardrpg-big2-sound-startup-checks.sh.
 Audio media diagnostic6cases: controls116.6–133.3ms vs asynchronoussilentmedia16.8ms, constructors120.8–123.8→15.7–17.3ms. Sourcefixawaitsbrowserproof. TransparentWebP FAILED Chromium3709channels; newpacker keepsallportraitsPNG andonlypacks5opaque textures. RevisedHTML22,029,297bytes.
 ## NEXT
 1. Inspect sound-startup pilot afterE3: 5opaqueimagepixels, galleryfit3sizes, studiocontrols86actions/3sizes, sixactualsourceaudio runs. Failure must be fixed and pinned again. Preserve rejectedtransparentpack.
