@@ -218,3 +218,11 @@ Whole-pageMAX150msnative/300msCPU4;worst individualCPU4pagep9533.3ms misses stri
 Raw reports/cardrpg-big2/performance/b1-skills/{summary,ranked}.json;5castprofiles finishing,2worst-opening profiles follow in batch1. Final report will include all misses.
 STATE mirrored to ledger a7245cad. Earlier18:59Z text in B6 CLAIM was a timestamp typo;actual matrix completion18:56:31Z.
 Later source branches through27669fb3 still await archived E2E/visuals;next functional queue97732 includes lab/audio early checks. No rebase requested.
+
+## 2026-11-06T19:00:56.280Z B1-followup CLAIM
+branch ai/codex-cardrpg-big2-b6-followup-2026-11-06; source27669fb3 plus evidence tooling.
+B1-followup CLAIM tools/cardrpg-big2/{offline-loader.js,build.mjs,opening-profile.mjs} and ownreports/demo; no app or shared builder edits.
+Exact B1 CPU4opening trace:116.6ms frame,111.281ms EvaluateScript including75.416ms inline compile and35.857ms execution. Original untraced300ms retained.
+Test asynchronous blob-backed application script so browser can compile before executing; preserve inline artifact for direct cold comparison. CSP allows only local blob script addition.
+Two traced reruns postinteractiveMAX16.8native/50msCPU4;not a replacement for untraced matrix. Lab4browsercasesPASS16.8ms/223draws/99992tris,OFFdefaults and watch/skip/account parity.
+Audio earlycheck hit macOS /tmp realpath serving issue; harness corrected, failed log retained, ordinary B4queue reruns.
