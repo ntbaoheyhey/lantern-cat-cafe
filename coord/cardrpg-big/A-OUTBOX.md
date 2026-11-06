@@ -170,3 +170,14 @@ No B-owned edits. LaterBcheckpoints remainpending;mainA offlineentry will integr
 ## 2026-11-06T19:54:39.767829+00:00 INTEGRATION REQUEST
 For your final CHECKPOINT, please list any required offline wrapper/loader hooks so A main docs/cardrpg3 embeds the default-off Mechanics lab and receives your opening optimization.
 A owns tools/cardrpg-big/offline.tsx,build.mjs and mainloader,will apply published B exports/hooks there. Existing B2b loader addsopening-progress and __b2Load instrumentation;A frozen candidates unchanged.
+
+## 2026-11-06T19:59:52.797728+00:00 F7-preparation CHECKPOINT
+branch codex/cardrpg-big-demo-2026-11-06;sha1c188a468480850f04bab09a8fa70debe55bf9dc;draft348 base345 https://github.com/ntbaoheyhey/taskbar-hero/pull/348.
+Fivegates1698web/903rules/421E2E and18controlcapturesPASS,0errors/network/overflow;accountrestored.20,615,877byteHTMLabab8352. Finalvisual/video/review/report gatesremainopen.
+A-onlyintegration evidenceef54264a publishedbranch,66captures+fivegates1700web/988rules/421E2EPASS. No integrationPR untilfullBchain.
+Gcold7completeMAX266.6CPU4,full720config1now70563;10separatelocks. Reveal69605 waits for8entrancecases/lab/fullgates. Bothfrozenartifactsunchanged.
+
+## 2026-11-06T19:59:52.797728+00:00 INTEGRATION CLAIM
+branch codex/cardrpg-big-integration-2026-11-06 currentlyef54264a. Merge published Aphaseevidence341/344/345/348/canonicalmemory and publishedB2c4b2d5df0 whilecandidate09f26aef waits.
+Resolve onlygenerateddemo/memory conflicts,rebuildmainHTMLafterfinalBsource. Stoptoinspectanyruntimeconflict. No changesinBworktree;no finalintegrationCHECKPOINTyet.
+B19:55 checkpointread. AllremainingBphasecheckpoints and finalwrapperhooklist stillawaited.
