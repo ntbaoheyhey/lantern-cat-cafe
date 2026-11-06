@@ -52,6 +52,6 @@ REFERENCE: demo/readability/focused.log, integration/reveal/viewport-v2/checks.j
 The integrated1× videos, full boss recording, final screenshot inspection and rescore remain open. Each final score will state its measured misses and visual limitations.
 
 ## Mochi recording review
-REFERENCE: video/mochi/captures.json, video/mochi/review/first-ten-seconds.png, integration/controls/CHECKPOINT.md
+REFERENCE: video/mochi/captures.json, video/mochi/review/sampling.json, integration/controls/CHECKPOINT.md
 
-Twenty frames at0.5s intervals from the first10s of the25s clip show four authored actions. The dash, guard rings and lantern group effect have distinct travel and silhouettes. The wide camera leaves a large central rug around small figures. Thin amber effects lose contrast against warm floor colors. The1024gallery controls fit within the viewport, and Hide controls exposes the full playback stage. Full clip sampling and the remaining hero/boss/ultimate review remain pending.
+Fifty frames at0.5s intervals across the25s clip were viewed in chronological order on three sheets. sampling.json records source SHA and extraction intervals. The four authored actions repeat the dash, circular guard, apron and lantern motifs. Amber trails and pale rings share the rug palette, and broad lantern flashes briefly cover much of the trio. The wide camera leaves a large central rug around small figures. The1024gallery controls fit within the viewport, and Hide controls exposes the full playback stage. The remaining hero/boss/ultimate review remains open.
