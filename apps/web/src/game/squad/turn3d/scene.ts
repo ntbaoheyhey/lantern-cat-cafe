@@ -320,8 +320,9 @@ export class TurnScene {
         clip='walk-in';progress=(this.time-p.enteredAt)/1.14;
       }
       if(frame&&source===p&&(!view.autoBattle||a.hp>0)){
-        const direction=(view.autoBattle?cardSkillMotion(p.asset,frame.plan.skillId):undefined)??SKILL_MOTION[frame.plan.skillId];
-        clip=p.actions.has(frame.plan.skillId)?frame.plan.skillId:frame.clip;progress=clipProgress(frame);
+        const identity=frame.plan.presentationId??frame.plan.skillId;
+        const direction=(view.autoBattle?cardSkillMotion(p.asset,identity):undefined)??SKILL_MOTION[frame.plan.skillId];
+        clip=p.actions.has(identity)?identity:p.actions.has(frame.plan.skillId)?frame.plan.skillId:frame.clip;progress=clipProgress(frame);
         if(!view.reducedMotion&&direction){const t=movementProgress(frame),target=targets[0]?.base??p.base;
           const distance=p.base.distanceTo(target);
           const travel=view.autoBattle?cardTravelFraction(distance,direction.travel):direction.travel;

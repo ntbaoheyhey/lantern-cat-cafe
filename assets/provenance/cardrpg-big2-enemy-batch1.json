@@ -1,0 +1,22 @@
+{
+  "tool": "Original hand-authored rigid-node keys and Three.js primitive construction; no model or reference art inputs",
+  "units": [
+    "button-guard",
+    "sock-skipper",
+    "spool-ram"
+  ],
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-motion.ts": "14fbefc2614ed5a56bce76c72288e12f4e92c3f14f6dae8b0d55feb9954b01a3",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-effects.ts": "c437666920cabd90b79ddf6fd2754a6b26c11f87a7405fcaae45793b62d72296",
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "d0a2874c9f838bf0abbc16bad76edcbc039974eb240eb73bc13aee60dde69895"
+  },
+  "parameters": {
+    "poseInterpolation": "smoothstep baked at41keys",
+    "adornments": "two merged materials; torus radial5/tubular18; cylinder14; extrusion0.05",
+    "travelStopDistance": 1.2,
+    "effectInstances": 96,
+    "effectPrimitiveDraws": 8
+  },
+  "rig": "reports/cardrpg-big2/enemies/batch1/rig/summary.json",
+  "renderedProof": "pending"
+}
