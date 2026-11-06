@@ -1,0 +1,18 @@
+{
+  "method": "Compare all application, game-rules and asset file SHA256 values embedded in each saved build receipt with its immutable validation archive. Verify saved HTML against both build and archive receipts. Report tooling is excluded because measurement tools may evolve independently. This proves source identity, not runtime correctness.",
+  "recordedAt": "2026-11-06T19:24:57.774Z",
+  "rows": [
+    {
+      "receipt": "/tmp/cardrpg-big2-batch3-validation.json",
+      "archive": "/tmp/cardrpg-big2-batch3-validation",
+      "sourceHead": "fad4d1d6c92a975302673c6d8258377423f761b7",
+      "artifact": "/tmp/cardrpg-big2-b2c-index.html",
+      "buildHead": "fad4d1d6c92a975302673c6d8258377423f761b7",
+      "expectedArtifact": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+      "actualArtifact": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+      "artifactMatches": true,
+      "comparedFiles": 951,
+      "mismatches": []
+    }
+  ]
+}
