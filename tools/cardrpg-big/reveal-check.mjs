@@ -25,8 +25,10 @@ await mkdir(output, { recursive: true });
 const rows = [];
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 try {
-  for (const [width, height, cpu] of [[1024, 600, 1], [1280, 720, 1], [1440, 900, 1], [1280, 720, 4]]) {
-    for (const rarity of ['epic', 'legendary']) {
+  const configurations = process.env.BIG_REVEAL_DIAGNOSTIC ? [[1024, 600, 1]]
+    : [[1024, 600, 1], [1280, 720, 1], [1440, 900, 1], [1280, 720, 4]];
+  for (const [width, height, cpu] of configurations) {
+    for (const rarity of process.env.BIG_REVEAL_DIAGNOSTIC ? ['epic'] : ['epic', 'legendary']) {
       const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1 });
       const page = await context.newPage();
       const cdp = await context.newCDPSession(page);
@@ -66,15 +68,16 @@ try {
             overflow: document.documentElement.scrollWidth - innerWidth,
             canvas: document.querySelector('.dp-invitation-preview canvas')?.getBoundingClientRect().toJSON() };
         });
+        const path = `${output}/${width}-cpu${cpu}-${rarity}-${name}.png`;
+        await page.screenshot({ path });
+        captures.push({ name, path, layout });
+        await writeFile(`${output}/${width}-cpu${cpu}-${rarity}-layout.json`, JSON.stringify({ artifact, sha256, width, height, cpu, rarity, captures }, null, 2));
         assert.equal(layout.overflow, 0);
         assert(layout.fairness.top >= 0 && layout.fairness.bottom <= height, 'Fairness summary stays in the viewport');
         if (name === 'entrance') {
           assert(layout.canvas && layout.canvas.top >= layout.fairness.bottom && layout.canvas.bottom <= height,
             'The rare companion entrance fits below the fairness summary');
         }
-        const path = `${output}/${width}-cpu${cpu}-${rarity}-${name}.png`;
-        await page.screenshot({ path });
-        captures.push({ name, path, layout });
       };
       await capture('before');
       await page.getByRole('button', { name: 'Invite once · 150 stamps', exact: true }).click();
