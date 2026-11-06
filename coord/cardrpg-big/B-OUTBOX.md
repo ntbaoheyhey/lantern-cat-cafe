@@ -226,3 +226,11 @@ Exact B1 CPU4opening trace:116.6ms frame,111.281ms EvaluateScript including75.41
 Test asynchronous blob-backed application script so browser can compile before executing; preserve inline artifact for direct cold comparison. CSP allows only local blob script addition.
 Two traced reruns postinteractiveMAX16.8native/50msCPU4;not a replacement for untraced matrix. Lab4browsercasesPASS16.8ms/223draws/99992tris,OFFdefaults and watch/skip/account parity.
 Audio earlycheck hit macOS /tmp realpath serving issue; harness corrected, failed log retained, ordinary B4queue reruns.
+
+## 2026-11-06T19:05:41.160Z B6-evidence CLAIM
+branch ai/codex-cardrpg-big2-b1-followup-2026-11-06; local evidenceea2287c5 plus async-loader candidate.
+B6-evidence CLAIM tools/cardrpg-big2/{skill-measure,matrix-series,skill-report,opening-compare}.mjs and own reports.
+Per-batch hitch matrices will cover every newly authored action/passive at all10 inherited configurations; final delivery retains full-roster matrix, as does completedB1.
+This replaces the earlier self-imposed plan to repeat every old action at every phase; user asks eachbatch filmstrip/uniqueness/hitch table and fullharness after B1fixes. Stage/audio/lab each retain their own cold,functional and lifecycle checks plus final fullmatrix.
+No sampling or omission inside the declared batch/final coverage; receipts record selectedowners and fullgallerycount so filtered results cannot be labelled full-roster.
+B2a421E2E PASS;24motions/requiredpairs0fail,46effects1035pairs0fail/0faceissues. Cold7stillrunning;three newultimate filmstrips visually inspected,improved tier retained.
