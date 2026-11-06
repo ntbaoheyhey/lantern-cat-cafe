@@ -12,3 +12,12 @@ Evaluate the power contribution of every legendary piece on each starter cat wit
 Reuse the45-day economy driver with the automatic controller for casual, regular and heavy cohorts. Preserve30 accounts per cohort and every daily record. Report the heavy/casual ratio for each tracked earned currency and pulls, with the brief's3× ceiling. Record saturation and goals still open at day45. Keep seeds and action strategy fixed between revisions.
 
 Read the current depth drop path for the tier table. The older base-game design table uses different drop rules. Include source, exact probabilities, sinks, power ranges, binding and caps from the actual depth implementation. Keep the existing Fuji reader untouched. Add only local eligibility explanations and boundary tests.
+
+## Expanded training probes
+REFERENCE: ../sim/gear-expanded-before.json, ../sim/gear-pilot-0-3.json, ../../../tools/cardrpg-big/gear-sim.mjs
+
+The first four main-stat-only probes leave epic and legendary campaigns at100%. Before opening heldout seeds, evaluate main-stat factors0.3/0.4 crossed with affix-range factors0.25/0.5/0.75, with30 training seeds per cell. Overrides stay in memory and each receipt records every original/effective value. Include the maximum compatible-roll/+12 bound before selecting production values. Level6 bare teams already win98–100%, so report that ceiling explicitly when assessing tier separation.
+
+Also evaluate main0.75 with affix0.25 before heldout seeds. It preserves a positive first enhancement for the starter weapon under the existing6% rounding formula. This candidate reduces the maximum-roll legendary bound while keeping common main stats closer to the starter experience.
+
+Full before/after receipts now measure all eight sets at both levels1 and6. Preserve the earlier level6-only receipt. The selected main0.75/affix0.25 values will be evaluated on the original50 training seeds and50 heldout seeds, plus the full45-day economy. UI and combat will read old saved rolls against the current affix bounds so the measured power ceiling also applies to previously created equipment.

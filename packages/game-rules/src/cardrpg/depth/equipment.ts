@@ -49,13 +49,18 @@ const affixSpecs: Array<[string,string,Slot[],number,number,string]> = [
   ['executeThreshold','Fine recipe',['weapon','charm'],1,2,'Raise execute HP threshold by percentage points'],['statusDuration','Slow steep',['charm','relic'],1,1,'Extend your Steep by rounds, capped at 2'],
   ['breakShield','Soft landing',['outfit','relic'],4,9,'Gain shield after breaking a foe'],
 ];
-export const AFFIXES: AffixRule[]=affixSpecs.map(([stat,name,slots,min,max])=>({id:`affix-${stat}`,name,slots,stat,tiers:[[min,max],[min*2,max*2],[min*3,max*3]],description:affixSpecs.find(row=>row[0]===stat)![5]}));
+// Phase I keeps the existing affixes and tiers while reducing their magnitude.
+export const AFFIXES: AffixRule[] = affixSpecs.map(([stat, name, slots, min, max, description]) => ({
+  id: `affix-${stat}`, name, slots, stat, description,
+  tiers: [1, 2, 3].map(tier => [Math.max(1, Math.round(min * tier * .25)),
+    Math.max(1, Math.round(max * tier * .25))]),
+}));
 export const AFFIX_BY_ID=Object.fromEntries(AFFIXES.map(a=>[a.id,a])) as Record<string,AffixRule>;
 const pieceNames:Record<Slot,string>={weapon:'Utensil',outfit:'Apron',charm:'Clasp',relic:'Keepsake'};
 export const GEAR: GearTemplate[]=SETS.flatMap((set,si)=>RARITY_ORDER.flatMap((rarity,ri)=>EQUIPMENT_SLOTS.map((slot,sl)=>{
   const id=`${set.id}-${slot}-${rarity}`,old=LEGACY_ITEMS.find(i=>i.id===id),legendary=rarity==='legendary';
   const unique=legendary?UNIQUES[(si*4+sl)%UNIQUES.length]!:undefined;
-  return {id,name:unique?`${unique.name} · ${set.name} ${pieceNames[slot]}`:old?.name??`${rarity[0]!.toUpperCase()+rarity.slice(1)} ${set.name} ${pieceNames[slot]}`,slot,rarity,setId:set.id,level:1+ri*8+Math.floor(si/3)*4,chapter:si<3?1:si<6?2:3,source:legendary?'Chapter bosses, elites and mastery tailoring':si<3?'Tangled Cafe and chosen tailoring':si<6?'Rooftop Orchard and chosen tailoring':'Midnight Pantry and chosen tailoring',main:old?.main.stat??(['attack','hp','defense','hp'] as const)[sl]!,value:old?.main.value??[12+ri*4,45+ri*12,6+ri*2,25+ri*8][sl]!,affixes:AFFIXES.filter(a=>a.slots.includes(slot)).slice(si%5,si%5+ri).map(a=>a.id),unique:unique?.id,story:unique?unique.description:`${set.name} changes your ${set.two.toLowerCase()} Collect two or four matching pieces.`};
+  return {id,name:unique?`${unique.name} · ${set.name} ${pieceNames[slot]}`:old?.name??`${rarity[0]!.toUpperCase()+rarity.slice(1)} ${set.name} ${pieceNames[slot]}`,slot,rarity,setId:set.id,level:1+ri*8+Math.floor(si/3)*4,chapter:si<3?1:si<6?2:3,source:legendary?'Chapter bosses, elites and mastery tailoring':si<3?'Tangled Cafe and chosen tailoring':si<6?'Rooftop Orchard and chosen tailoring':'Midnight Pantry and chosen tailoring',main:old?.main.stat??(['attack','hp','defense','hp'] as const)[sl]!,value:Math.round((old?.main.value??[12+ri*4,45+ri*12,6+ri*2,25+ri*8][sl]!)*.75),affixes:AFFIXES.filter(a=>a.slots.includes(slot)).slice(si%5,si%5+ri).map(a=>a.id),unique:unique?.id,story:unique?unique.description:`${set.name} changes your ${set.two.toLowerCase()} Collect two or four matching pieces.`};
 })));
 export const GEAR_BY_ID=Object.fromEntries(GEAR.map(g=>[g.id,g])) as Record<string,GearTemplate>;
 export function makeGear(state:DepthAccount,id:string,seed:number):GearInstance {
@@ -72,9 +77,14 @@ export function initializeEquipment(state:DepthAccount) {
   }
 }
 export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
+/** Apply current balance bounds when reading both new and older saved rolls. */
+export function gearAffixRoll(item: GearInstance, id: string): number {
+  const [minimum, maximum] = AFFIX_BY_ID[id]!.tiers[item.tier - 1]!;
+  return Math.min(maximum, Math.max(minimum, item.rolls[id] ?? minimum));
+}
 export function equipmentEffects(state:DepthAccount,cardId:string) {
   const items=equippedItems(state,cardId),counts:Record<string,number>={},effects:string[]=[],bonuses:Record<string,number>={};
-  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+(item.rolls[id]??a.tiers[item.tier-1]![0]);}}
+  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+gearAffixRoll(item,id);}}
   for(const set of SETS){if((counts[set.id]??0)>=2)effects.push(set.twoEffect);if((counts[set.id]??0)>=4)effects.push(set.fourEffect);}
   return {effects:[...new Set(effects)],bonuses,counts};
 }

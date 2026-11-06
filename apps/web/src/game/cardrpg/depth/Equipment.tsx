@@ -121,7 +121,7 @@ export function Inventory({ m }: { m: DepthModel }) {
               <button disabled={locked || Object.values(state.equipment).some(loadout => Object.values(loadout).includes(item.id))}
                 onClick={() => act(R.salvageGear(state, item.id), `${template.name} salvaged for ${CARD_RPG_CONFIG.rarity[template.rarity].salvage} threads.`)}>Salvage</button>
             </div>
-            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {item.rolls[id]} · {R.AFFIX_BY_ID[id]!.description}</p>)}
+            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {R.AFFIX_BY_ID[id]!.description}</p>)}
             {item.affixes.length > 0 && <div className="cr-actions"><label>Replace first affix
               <select value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
                 {compatible.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.name} · {candidate.tiers[item.tier - 1]!.join('–')}</option>)}
