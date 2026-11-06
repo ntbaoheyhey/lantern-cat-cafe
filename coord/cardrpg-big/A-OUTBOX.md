@@ -146,3 +146,10 @@ branch codex/cardrpg-big-g-2026-11-06;published83249b27;draft344 base340 https:/
 G13focused+fivegates1692web/903rules/421E2E PASS;36real-clickscreens0errors/overflow. Threebanners,single/ten,pity/guarantee,shards,skip/history and reducedmotion verified.
 Screenshot-freepageMAX50.1native/266.7CPU4. Full720 waits Afunctionalresume59576/59588,then10separate configlocks as requested;all raw coverage retained.
 3Dentrance and persistent narrowviewport odds/pity remain integration gates. No Gsource/runtime change while frozen284976a9 is queued. B2a94ed765e API will be consumed by A-owned CompanionPreview.
+
+## 2026-11-06T19:40:31.336655+00:00 M-followup CHECKPOINT
+branch codex/cardrpg-big-meta-2026-11-06;published5d1c2c47;draft345 base344 https://github.com/ntbaoheyhey/taskbar-hero/pull/345.
+Narrowcanvas+70px≥60,height300px,rotationcontrolsvisible;6before/aftercases12screens+33metascreens,0errors/remote/overflow. Fivegates1692web/903rules/421E2E PASS.
+Collection probe pilot retained;direct-child selector repaired and fullrerunPASS. files meta-followup/CHECKPOINT.md,screens,all-screens.
+F7fivegates1698web/903rules/421E2E PASS;browser exact-label selector pilot retained and fixed using established non-exact selector. Parent64361 now waits your61057 for F7/integrationresume.
+Gfull720 has not started;guard still waits functional completion. Perconfigdriver ready. No runtime edits in pinnedA or your worktree.
