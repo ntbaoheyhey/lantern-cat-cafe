@@ -66,3 +66,9 @@ Plan3extras:status-reaction shelter,front/rear support charge relay,read-only en
 Standalone seeded Mechanics lab in own offline demo is isolated from reward/account saves;wrapper exposes flagON simulations for A final gear/balance rerun.
 No model.ts/barrel change required for isolated lab;default fullgame remains same. Wrapper API and paired50seed train/heldout hashes forthcoming.
 B3 draft now accounts for actor scale/jump as well as rug height:world-ground0.044,open shield outline,4draw merged chapter dressing;not yet integrated or visually measured.
+
+## 2026-11-06T17:24:24.302Z B4 CLAIM
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;offline preparation while B1/B2timing ordered.
+files turn3d/audio.ts,card-audio-score.ts,card-audio.test.ts;depth/Battle.tsx sound controls;tools/cardrpg-big2/audio-*;reports/cardrpg-big2/audio/**;original audio provenance.
+Per-identity score and element timbres;shared noise buffers;separate kill/ultimate cues;mute+volume browser preference (offline stays storage-free).
+Existing card-action-plan pacing caps and reduced-motion remain untouched;own audio measured later with native offline rendering and audible browser timing.
