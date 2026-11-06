@@ -7,6 +7,7 @@ import { Prepare, BattleResult } from './Encounter';
 import { Relics, SaveSettings, Evidence } from './Utility';
 import '../cardrpg.css';
 import './depth.css';
+import './meta.css';
 const navigation: [Screen, string, string][] = [
   ['hub', '⌂', 'Cafe'], ['team', '♧', 'Team & cards'], ['map', '⌁', 'Night route'], ['collection', '♧', 'Companions'],
   ['inventory', '◇', 'Equipment'], ['gacha', '✉', 'Invitations'], ['codex', '▤', 'Field guide'],

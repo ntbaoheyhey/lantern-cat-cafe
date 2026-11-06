@@ -1,0 +1,52 @@
+{
+  "reference": "reports/cardrpg-big/memory/PROMPT.md phase M",
+  "origin": "Original source-authored cafe card frames and equipment geometry",
+  "tools": [
+    "CSS gradients and keyframes",
+    "three.js parametric geometry",
+    "existing 2x render pipeline"
+  ],
+  "card_frames": {
+    "common": "linen crosshatch with ridge edge",
+    "rare": "blue enamel and double edge",
+    "epic": "violet diagonal foil, 7s cycle",
+    "legendary": "engraved gold edge, 4s glow and 7s foil"
+  },
+  "portraits": "Reuse assets/cardrpg3/portraits at their rendered resolution, provenance cardrpg-big-portraits.json",
+  "heirlooms": {
+    "source": "apps/web/src/game/squad/turn3d/gear-visuals.ts",
+    "designs": [
+      "doorstop",
+      "nightglass",
+      "seedcup",
+      "rainbell",
+      "crumbbook",
+      "panlid",
+      "warmwick",
+      "silkspool",
+      "starladle",
+      "softcollar",
+      "tidetray",
+      "gardenkey"
+    ],
+    "primitives": [
+      "rounded boxes",
+      "lathed profiles",
+      "cylinders",
+      "torus rings",
+      "spheres",
+      "octahedra",
+      "extruded leaves and stars"
+    ],
+    "socket_scale": {
+      "weapon": 1,
+      "outfit": 0.85,
+      "charm": 0.45,
+      "relic": 0.6
+    },
+    "draws_per_piece": 1,
+    "geometry_parameters": "Explicit per-design positions, dimensions and segments in the source"
+  },
+  "generation_model_calls": 0,
+  "external_reference_art": []
+}

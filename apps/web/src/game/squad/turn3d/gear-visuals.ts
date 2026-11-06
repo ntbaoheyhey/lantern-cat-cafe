@@ -1,14 +1,15 @@
 /** Original socket attachments. One merged draw per item, independent of real inventory. */
 import * as T from 'three';
-import type {EquipmentAppearance} from './appearance';
+import type {EquipmentAppearance, VisualItem} from './appearance';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
-import {ITEM_BY_ID,type SquadItem} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
+import {ITEM_BY_ID} from '@taskbar-hero/game-rules/src/squad/gear/catalog';
 import type {TurnActor} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const rarity={Common:'#bfb5a3',Uncommon:'#9aba8b',Rare:'#8fc2e5',Epic:'#c8a2f0',Legendary:'#ffce78'};
 const colors={guardian:['#ebc189','#557b75','#e5a44e','#f3d992'],witch:['#765589','#b595c6','#586791','#9d7ac9'],alchemist:['#80bda2','#4b8f85','#e0b997','#a4cea0']};
+const cardDesigns = new Set(['doorstop', 'nightglass', 'seedcup', 'rainbell', 'crumbbook', 'panlid', 'warmwick', 'silkspool', 'starladle', 'softcollar', 'tidetray', 'gardenkey']);
 interface Piece {group:T.Group;geometry:T.BufferGeometry;material:T.MeshStandardMaterial}
-function createPiece(item:SquadItem,role:string):Piece{
+function createPiece(item:VisualItem,role:string):Piece{
  const group=new T.Group(),parts:T.BufferGeometry[]=[];group.name=`gear_${item.id}`;group.userData.itemId=item.id;
  const color=(colors[role as keyof typeof colors]??colors.guardian)[item.visual%4]!,gold='#e6b875',ivory='#f8e7c5',dark='#3a3043',accent=rarity[item.rarity];
  const add=(g:T.BufferGeometry,c:string,pos=[0,0,0],scale=[1,1,1],rot=[0,0,0])=>{const q=g.index?g.toNonIndexed():g.clone();g.dispose();q.applyMatrix4(new T.Matrix4().compose(new T.Vector3(...pos),new T.Quaternion().setFromEuler(new T.Euler(...rot)),new T.Vector3(...scale)));q.deleteAttribute('uv');const a=new Float32Array(q.attributes.position!.count*3),rgb=new T.Color(c);for(let i=0;i<a.length;i+=3){a[i]=rgb.r;a[i+1]=rgb.g;a[i+2]=rgb.b}q.setAttribute('color',new T.BufferAttribute(a,3));parts.push(q)};
@@ -17,7 +18,79 @@ function createPiece(item:SquadItem,role:string):Piece{
  const ring=(c:string,pos:number[],r:number,t=.025,rot=[0,0,0])=>add(new T.TorusGeometry(r,t,6,24),c,pos,[1,1,1],rot);
  const leaf=(c:string,pos:number[],size:number,angle=0)=>{const sh=new T.Shape();sh.moveTo(0,-size*.4);sh.bezierCurveTo(-size*.6,0,-size*.25,size*.5,0,size*.7);sh.bezierCurveTo(size*.25,size*.5,size*.6,0,0,-size*.4);add(new T.ExtrudeGeometry(sh,{depth:.025,bevelEnabled:true,bevelSize:.012,bevelThickness:.01,bevelSegments:2,steps:1,curveSegments:8}),c,pos,[1,1,1],[0,0,angle])};
  const star=(c:string,pos:number[],r=.15)=>{const s=new T.Shape();for(let i=0;i<10;i++){const a=i*Math.PI/5+Math.PI/2,rr=i%2?r*.45:r;const x=Math.cos(a)*rr,y=Math.sin(a)*rr;i?s.lineTo(x,y):s.moveTo(x,y)}s.closePath();add(new T.ExtrudeGeometry(s,{depth:.04,bevelEnabled:true,bevelSize:.008,bevelThickness:.008,bevelSegments:2,steps:1}),c,pos)};
- if(item.slot==='weapon'){
+ if(item.cardDesign && cardDesigns.has(item.cardDesign)){
+  // Each named card-RPG heirloom owns its silhouette. These are original cafe objects.
+  const designs: Record<string, () => void> = {
+   doorstop: () => {
+    add(new RoundedBoxGeometry(.36,.18,.28,2,.025),color,[0,.15,0]);
+    add(new T.ConeGeometry(.18,.28,3),gold,[0,.35,0],[1,1,.7],[0,0,Math.PI/2]);
+    ring(ivory,[0,.14,.16],.065,.013);
+   },
+   nightglass: () => {
+    rod(gold,[0,-.15,0],[0,.5,0],.018);
+    add(new T.OctahedronGeometry(.18,0),accent,[0,.52,0],[.6,1.5,.5]);
+    ring(ivory,[0,.38,0],.16,.012,[0,.7,0]);
+   },
+   seedcup: () => {
+    add(new T.CylinderGeometry(.19,.13,.24,20),ivory,[0,.17,0]);
+    ring(gold,[0,.3,0],.19,.016,[Math.PI/2,0,0]);
+    rod(color,[0,.3,0],[0,.61,0],.02);
+    leaf(accent,[-.07,.46,0],.18,-.8);leaf(color,[.07,.57,0],.17,.7);
+   },
+   rainbell: () => {
+    add(new T.LatheGeometry([new T.Vector2(.24,0),new T.Vector2(.18,.07),new T.Vector2(.14,.27),new T.Vector2(0,.34)],24),gold,[0,.08,0]);
+    ring(ivory,[0,.48,0],.07,.018);ball(accent,[0,.04,0],[.055,.08,.055]);
+    for(const side of [-1,1])rod(accent,[side*.12,.22,0],[side*.26,-.12,0],.012);
+   },
+   crumbbook: () => {
+    add(new RoundedBoxGeometry(.38,.46,.09,2,.025),color,[0,.25,0]);
+    add(new RoundedBoxGeometry(.31,.39,.07,2,.015),ivory,[.02,.25,.045]);
+    rod(gold,[-.14,.02,.09],[-.14,.48,.09],.025);
+    for(let i=0;i<3;i++)ball(gold,[(i-1)*.085,.28,.1],[.025,.025,.015]);
+   },
+   panlid: () => {
+    add(new T.CylinderGeometry(.27,.24,.07,32),color,[0,.24,0],[1,1,1],[Math.PI/2,0,0]);
+    ring(gold,[0,.24,.05],.25,.02);ring(ivory,[0,.24,.08],.07,.024,[Math.PI/2,0,0]);
+    rod(dark,[0,-.18,0],[0,.01,0],.035);
+   },
+   warmwick: () => {
+    add(new T.CylinderGeometry(.12,.15,.33,16),ivory,[0,.19,0]);
+    ring(gold,[0,.02,0],.19,.03,[Math.PI/2,0,0]);
+    leaf('#ffbd76',[0,.49,0],.25);leaf(ivory,[0,.48,.035],.14);
+   },
+   silkspool: () => {
+    add(new T.CylinderGeometry(.15,.15,.35,20),accent,[0,.22,0]);
+    for(const y of [.03,.41])add(new T.CylinderGeometry(.23,.23,.055,20),gold,[0,y,0]);
+    for(let i=0;i<5;i++)ring(ivory,[0,.08+i*.065,0],.153,.01,[Math.PI/2,0,0]);
+    rod(gold,[.2,-.1,0],[-.12,.55,0],.014);
+   },
+   starladle: () => {
+    rod(gold,[0,-.18,0],[0,.38,0],.022);
+    ball(ivory,[0,.5,0],[.21,.15,.07]);star(accent,[0,.5,.075],.12);
+    ring(gold,[0,.5,.04],.19,.015);
+   },
+   softcollar: () => {
+    ring(color,[0,.23,0],.22,.055);ring(gold,[0,.23,.035],.22,.01);
+    for(const side of [-1,1])leaf(ivory,[side*.12,.01,.03],.19,side*.9);
+    ball(accent,[0,.01,.07],[.06,.06,.04]);
+   },
+   tidetray: () => {
+    add(new RoundedBoxGeometry(.48,.32,.05,3,.08),ivory,[0,.24,0]);
+    for(const side of [-1,1])ring(gold,[side*.29,.24,0],.075,.018);
+    for(let i=0;i<3;i++)rod(accent,[-.14,.16+i*.07,.04],[.14,.20+i*.07,.04],.012);
+   },
+   gardenkey: () => {
+    ring(gold,[0,.43,0],.14,.03);rod(gold,[0,-.13,0],[0,.3,0],.025);
+    for(const y of [-.09,.01])rod(gold,[0,y,0],[.13,y,0],.027);
+    leaf(color,[-.11,.48,.03],.16,-.7);leaf(accent,[.1,.5,.03],.15,.7);
+   },
+  };
+  designs[item.cardDesign]?.();
+  group.userData.cardDesign=item.cardDesign;
+  if(item.slot==='outfit'){group.scale.setScalar(.85);group.position.set(0,-.2,.39);}
+  if(item.slot==='charm'){group.scale.setScalar(.45);group.position.set(0,-.22,.08);}
+  if(item.slot==='relic'){group.scale.setScalar(.6);group.position.y=-.3;}
+ }else if(item.slot==='weapon'){
   const family=item.id[0],v=item.visual%4;
   if(family==='g'){
    rod(dark,[0,-.2,0],[0,.45,0],.035);
@@ -64,7 +137,7 @@ function createPiece(item:SquadItem,role:string):Piece{
  * preview must not evict the last gear shader just before the next preview. */
 export class GearResources{
  private items=new Map<string,Piece>();
- acquire(item:SquadItem,role:string):Piece{
+ acquire(item:VisualItem,role:string):Piece{
   const key=JSON.stringify([role,item]);let piece=this.items.get(key);
   if(!piece){piece=createPiece(item,role);this.items.set(key,piece)}
   return {...piece,group:piece.group.clone(true)};
