@@ -17,7 +17,7 @@ const checklist: Array<{name:string;detail:string;screen?:Screen;panel?:'gallery
  {name:'Compare the artwork',detail:'Before / after pairs use measured, pinned captures.',panel:'comparison'},
  {name:'Try automatic extras',detail:'Try the Mechanics lab. All experiments start off.',panel:'mechanics'},
 ];
-function Gallery(){
+function Gallery({focused}:{focused:boolean}){
  const [m]=useState(()=>{const model=new DepthModel(true);model.state.settings.reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;model.inspect(model.galleryId);return model;});
  useSyncExternalStore(m.subscribe,m.snapshot);
  const scrub=useRef<HTMLInputElement>(null);
@@ -28,8 +28,9 @@ function Gallery(){
   return()=>{cancelAnimationFrame(frame);m.audio.dispose();delete window.__b2Gallery;};
  },[m]);
  const owners=[...new Set(m.galleryActions.map(a=>a.owner))],actions=m.galleryActions.filter(a=>a.owner===owner);
- return <div className="b2-gallery">
+ return <div className="b2-gallery" data-focused={focused}>
   <div className="b2-gallery-tools">
+   {focused&&<strong className="b2-focus-title">{m.galleryActions.find(a=>a.id===m.galleryId)?.name}</strong>}
    <label>Companion or opponent<select aria-label="Gallery unit" value={owner} onChange={e=>{setOwner(e.target.value);m.inspect(m.galleryActions.find(a=>a.owner===e.target.value)!.id);}}>{owners.map(id=><option key={id} value={id}>{m.galleryActions.find(a=>a.owner===id)!.name.split(' · ')[0]}</option>)}</select></label>
    <label>Action<select aria-label="Gallery action" value={m.galleryId} onChange={e=>m.inspect(e.target.value)}>{actions.map(a=><option key={a.id} value={a.id}>{a.name.split(' · ').slice(1).join(' · ')}</option>)}</select></label>
    <button onClick={()=>m.inspect(m.galleryId,0,true)}>Play preview</button>
@@ -55,9 +56,10 @@ function Comparison(){
 }
 export function ReviewStudio({close,go,openMechanics}:{close:()=>void;go:(screen:Screen)=>void;openMechanics:()=>void}){
  const [tab,setTab]=useState<'gallery'|'comparison'|'checklist'>('gallery');
- return <section className="b2-studio" aria-label="Review studio"><header><div><small>THE LANTERN · REVIEW STUDIO</small><h1>Meet the whole cast</h1></div><button onClick={close}>Return to cafe</button></header>
+ const [focused,setFocused]=useState(false);
+ return <section className="b2-studio" aria-label="Review studio" data-focused={tab==='gallery'&&focused}><header><div><small>THE LANTERN · REVIEW STUDIO</small><h1>Meet the whole cast</h1></div><div className="b2-studio-actions">{tab==='gallery'&&<button aria-pressed={focused} onClick={()=>setFocused(value=>!value)}>{focused?'Show controls':'Focus stage'}</button>}<button onClick={close}>Return to cafe</button></div></header>
  <nav aria-label="Review panels"><button aria-pressed={tab==='gallery'} onClick={()=>setTab('gallery')}>Skill gallery</button><button aria-pressed={tab==='comparison'} onClick={()=>setTab('comparison')}>Before / after</button><button aria-pressed={tab==='checklist'} onClick={()=>setTab('checklist')}>Brief checklist</button></nav>
- {tab==='gallery'?<Gallery/>:tab==='comparison'?<Comparison/>:<div className="b2-studio-body"><h2>A cafe outside. A show inside.</h2><div className="b2-checklist">{checklist.map(item=><article key={item.name}><h3>{item.name}</h3><p>{item.detail}</p>{item.screen&&<button onClick={()=>go(item.screen!)}>Open screen</button>}{item.panel&&<button onClick={()=>item.panel==='mechanics'?openMechanics():setTab(item.panel! as 'gallery'|'comparison')}>Open {item.panel==='gallery'?'gallery':item.panel==='comparison'?'comparison':'Mechanics lab'}</button>}</article>)}</div><p className="b2-reference">REFERENCE: reports/cardrpg-big2/CARDRPG-BIG2-REPORT.md · items, invitations and final integration belong to Lane A.</p></div>}
+ {tab==='gallery'?<Gallery focused={focused}/>:tab==='comparison'?<Comparison/>:<div className="b2-studio-body"><h2>A cafe outside. A show inside.</h2><div className="b2-checklist">{checklist.map(item=><article key={item.name}><h3>{item.name}</h3><p>{item.detail}</p>{item.screen&&<button onClick={()=>go(item.screen!)}>Open screen</button>}{item.panel&&<button onClick={()=>item.panel==='mechanics'?openMechanics():setTab(item.panel! as 'gallery'|'comparison')}>Open {item.panel==='gallery'?'gallery':item.panel==='comparison'?'comparison':'Mechanics lab'}</button>}</article>)}</div><p className="b2-reference">REFERENCE: reports/cardrpg-big2/CARDRPG-BIG2-REPORT.md · items, invitations and final integration belong to Lane A.</p></div>}
  </section>;
 }
 export function FrameMeter(){

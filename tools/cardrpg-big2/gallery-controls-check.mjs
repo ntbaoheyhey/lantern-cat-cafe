@@ -40,6 +40,28 @@ try {
       assert.ok(controls.tab.contrast >= 4.5); assert.equal(controls.overflow, false);
       if (process.env.BIG_GALLERY_EXPECT_FIT === '1') assert.ok(controls.stage.y + controls.stage.height <= height, JSON.stringify(controls.stage));
     }
+    if (process.env.BIG_GALLERY_EXPECT_FOCUS === '1') {
+      const before = await page.evaluate(() => {
+        window.__b2FocusModel = window.__b2Gallery;
+        return { id: window.__b2Gallery.galleryId, camera: window.__b2Gallery.camera, at: window.__b2Gallery.animationAt };
+      });
+      await page.getByRole('button', { name: 'Focus stage', exact: true }).click();
+      const focus = await page.evaluate(() => {
+        const r = document.querySelector('.b2-gallery-stage').getBoundingClientRect(), m = window.__b2Gallery;
+        return { stage: { x:r.x,y:r.y,width:r.width,height:r.height }, sameModel: m === window.__b2FocusModel,
+          selection:{id:m.galleryId,camera:m.camera,at:m.animationAt}, overflow:document.documentElement.scrollWidth>innerWidth };
+      });
+      rows.at(-1).focus = focus;
+      await page.screenshot({ path: `${output}/${width}-focused.png` });
+      assert.equal(focus.sameModel, true); assert.deepEqual(focus.selection, before);
+      assert.ok(focus.stage.height >= controls.stage.height + 80, JSON.stringify(focus));
+      assert.ok(focus.stage.y + focus.stage.height <= height); assert.equal(focus.overflow, false);
+      assert.equal(await page.getByRole('button', { name: 'Play preview', exact: true }).isVisible(), true);
+      assert.equal(await page.getByRole('button', { name: 'Preview sound off', exact: true }).isVisible(), true);
+      await page.getByRole('button', { name: 'Show controls', exact: true }).click();
+      assert.equal(await page.getByLabel('Gallery unit', { exact: true }).isVisible(), true);
+      assert.equal(await page.evaluate(() => window.__b2Gallery === window.__b2FocusModel), true);
+    }
     await page.close();
   }
   assert.deepEqual(errors, []);

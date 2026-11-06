@@ -16,3 +16,12 @@
 .b2-gallery>.b2-reference{flex:none;margin:2px 0}
 .b2-gallery>details{flex:none;padding:0 24px 6px}
 @media(max-height:650px){.b2-gallery-stage{flex-basis:180px;min-height:180px}.b2-gallery-tools select{max-width:175px}.b2-gallery-tools button{padding:5px 8px}}
+
+/* Focus keeps the same preview model while giving its stage the control space. */
+.b2-studio-actions{display:flex;align-items:center;gap:8px}
+.b2-studio[data-focused=true]>nav{display:none}
+.b2-gallery[data-focused=true]>.b2-reference,.b2-gallery[data-focused=true]>details,
+.b2-gallery[data-focused=true] .b2-gallery-tools>label{display:none}
+.b2-gallery[data-focused=true] .b2-gallery-tools{align-items:center}
+.b2-focus-title{flex:1;min-width:180px;font:16px Georgia}
+.b2-gallery[data-focused=true] .b2-gallery-stage{margin-bottom:12px}
