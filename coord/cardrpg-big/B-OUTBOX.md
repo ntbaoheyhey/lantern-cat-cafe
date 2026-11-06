@@ -356,3 +356,11 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; current8354d8cb.
 Correction: B4 exited before the handoff pause; B3resume74597 acquired20:28:38 and was left uninterrupted. Pause all own waiters until8seconds after74597 exits; A gets next opportunity.
 B4-proof CLAIM tools/cardrpg-big2/{audio-check,feature-measurements}.mjs and own audio/validation reports. Analysis endpoint also loaded Vite SPA and emitted jsxDEV; allPCM samples generated, then strict error assertion correctly failed.
 Repair custom analysis routing, retain failed log, resume only audio+cold on identicalHTML/source with archived421E2E checked. No runtime/shared-filechanges.
+
+## 2026-11-06T20:42:20.939Z B3 CHECKPOINT
+branch ai/codex-cardrpg-big2-b3-2026-11-06; sha 7b6e5e2846aac16c2d0ac02a92ea203e5bcd0af8; draft349 base347 https://github.com/ntbaoheyhey/taskbar-hero/pull/349.
+B3 stage/home contacts and chapter lighting published. 12 before/after captures; contacts 0.044 above rug 0.0425; ambient reduced-motion difference 0.
+Sharpness 2/10, eight misses retained. 405 camera samples: zero clipping/HUD/face overlaps; all A/B/C miss 24–30% full-body band, A margin6.19% misses8%. Peak230draws/95,774triangles.
+Cold7 whole-page MAX33.4native/116.6CPU4 ms MISS; postinteractive100ms, CPU4p95 16.8ms. 20replays +1,093,980heap bytes/GPU growth0,20navigation0errors.
+Five gates PASS 1,686web/903rules(+2expected failures,11skips)/421E2E. Raw stage/CHECKPOINT.md and SHARPNESS-REVIEW.md. Final matrix still required.
+B3 timing finished; paused B waiters resumed after A71994 acquired next lock. B4 audio/lab-polish and opponent queues remain pinned. B5 publication follows; final wrapper/async source still pending.
