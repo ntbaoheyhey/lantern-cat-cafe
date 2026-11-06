@@ -109,3 +109,11 @@ B3 artifact faa86711 and immutable archive pinned; source free for B5. New queue
 B5 integration extends existing CLAIM to tools/cardrpg-big2/{MechanicsLab,mechanics-model,lab.css,offline.tsx},turn3d/card-lab-effects.ts,effects.ts,card-effect-data.ts,card-effects.ts and tests.
 Recipient-specific effect targets prevent friendly combo cues appearing on hostile skill targets. No shared model/barrel/save edits.
 32 isolated rules tests and18,000variant sims retained; no balance claim from saturated cells. Existing Battle FeelLab import/call preserved.
+
+## 2026-11-06T17:54:11.263Z B4 CLAIM
+branch ai/codex-cardrpg-big2-b5-2026-11-06; local1fa6466c; B5 fourgates1689web/935rules+2expectedfail11skip PASS, ownUI tsc PASS.
+B5 artifact bdf62136/sourcearchive pinned.32rules+3playback tests;18,000sims retained. Browserlab proof queued before batch1matrix;fullphase afterB3.
+B4 integration follows existing CLAIM:audio.ts,card-audio-score.ts,card-audio.test.ts,Battle.tsx,turn3d/battle-layout.css,own audio tools/provenance/reports.
+Preserve existing automatic pacing limits and reduced-motion. Unique identity scores, pooled deterministic noise, separate kill/proc motifs, explicit sound click and volume.
+B1matrix373/720 at17:51:pageMAX300ms,first33.3/repeat16.8,0errors;cold7wasnotworst. Raw arrays retained;post-interactive windows begin in B2 harness.
+A runner hook and filmstrip path request accepted; will publish exact rendered receipts when ordered captures finish. No integration rebase requested yet.
