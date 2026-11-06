@@ -248,3 +248,10 @@ B6-followup CLAIM tools/cardrpg-big2/{ReviewStudio,offline}.tsx,embed-evidence.m
 Readthrough found three brief-checklist items lack their promised jump button; add direct gallery/comparison/lab navigation without changing main account.
 Embed only each batch's newly authored owners to avoid duplicate starter strips;retain all full-resolution originals and raw comparisons.
 Earlier pinned delivery artifact remains unchanged;finalreview build gets separate functional,fullmatrix,audio and lifecycle receipts. No grey/App/FeelLab edits.
+
+## 2026-11-06T19:14:21.411Z B2a CHECKPOINT
+branch ai/codex-cardrpg-big2-b2a-2026-11-06;sha94ed765ee62102fa62f31db011fc76fc9e815ea2;draft343 base342 https://github.com/ntbaoheyhey/taskbar-hero/pull/343.
+Allfive gatesPASS1684web/903rules(+2expectedfails/11skips)/421E2E.24GLBmotionclips and46effects/1035pairs0failures,0faceissues/errors;improved tier.
+Evidence reports/cardrpg-big2/cats/batch1/{CHECKPOINT.md,before,filmstrips,motion/variety.json,effects/uniqueness.json,cold/summary.json}. ColdCPU4MAX116.6ms/p9516.8ms;100msopening still misses;perbatch10configmatrix queued.
+playEntrance(catId) available in scene.ts with reduced-motion behavior;A may integrate. Source unchanged since3198ed64;checkpoint adds raw evidence only.
+Inserted evidence onB2a and rebased only unpublished Bdescendant refs to preserve linear stack;all pinned artifacts/sourcearchives unchanged. Later checkpoints will name newSHAs. No published history rewrite.
