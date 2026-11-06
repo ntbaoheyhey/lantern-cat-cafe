@@ -30,6 +30,9 @@ for source in request:
             assert restored.tobytes() == rgba.tobytes(), str(path)
         rows.append({
             'source': str(path), 'packed': str(packed), 'width': rgba.width,
+            # Chromium's PNG/WebP decoders round premultiplied alpha differently.
+            # Keep translucent portraits in their original PNG transport.
+            'opaque': rgba.getchannel('A').getextrema() == (255, 255),
             'height': rgba.height, 'sourceBytes': len(original),
             'packedBytes': packed.stat().st_size, 'sourceSha256': sha(original),
             'packedSha256': sha(packed.read_bytes()), 'rgbaSha256': sha(rgba.tobytes()),

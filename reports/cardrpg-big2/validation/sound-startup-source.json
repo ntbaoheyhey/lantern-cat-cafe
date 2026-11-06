@@ -1,0 +1,81 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T21:46:46.000Z",
+    "ended": "2026-11-06T21:46:56.214Z",
+    "log": "reports/cardrpg-big2/validation/sound-startup-source-typecheck.log",
+    "sha256": "a4eb6423ec3f2507f58d916f3f3aacb2223122f5332582f84f5c816fc8ebab35",
+    "counts": []
+  },
+  {
+    "name": "demo-types",
+    "args": [
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "tsc",
+      "-p",
+      "../../tools/cardrpg-big2/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T21:46:56.215Z",
+    "ended": "2026-11-06T21:47:03.353Z",
+    "log": "reports/cardrpg-big2/validation/sound-startup-source-demo-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T21:47:03.353Z",
+    "ended": "2026-11-06T21:47:12.631Z",
+    "log": "reports/cardrpg-big2/validation/sound-startup-source-lint.log",
+    "sha256": "0b7737e3ef44ade6b91201f7a417fa907cc2b8d55bf2b309012b74c73ec0cdb7",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T21:47:12.632Z",
+    "ended": "2026-11-06T21:48:07.700Z",
+    "log": "reports/cardrpg-big2/validation/sound-startup-source-tests.log",
+    "sha256": "1310e6dc445ec4ac317fae517c90677e5931b5a3dacbce22624b54541385e78b",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  169 passed (169)",
+      "apps/web test:       Tests  1702 passed (1702)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T21:48:07.701Z",
+    "ended": "2026-11-06T21:48:18.179Z",
+    "log": "reports/cardrpg-big2/validation/sound-startup-source-build.log",
+    "sha256": "b413c090d9cfb396500f10b16fa20e4cf31d56431d197c7d5cd69b2be61f01ce",
+    "counts": []
+  }
+]

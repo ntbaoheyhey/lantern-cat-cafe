@@ -29,8 +29,8 @@ const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')
 const payload = gzipSync(Buffer.from(JSON.stringify({ js, css })), { level: 9 }).toString('base64');
 const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const dirty = !!execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
-// Keep original assets intact. Lossless WebP preserves native texture pixels while
-// reducing the offline transport; the packer verifies dimensions and RGBA bytes.
+// Keep original assets intact. Opaque textures use lossless WebP; translucent PNGs
+// stay PNG because Chromium rounds their premultiplied alpha differently in WebP.
 const imageRequest = `/tmp/cardrpg-big2-image-pack-${process.pid}.json`;
 writeFileSync(imageRequest, JSON.stringify([...embeddedAssets.keys()].filter(key => extname(key) === '.png').map(key => resolve(root, key))));
 let imagePacking;
@@ -41,7 +41,7 @@ try {
 for (const row of imagePacking) {
   const key = relative(root, row.source), asset = embeddedAssets.get(key), packed = readFileSync(row.packed);
   row.key = key;
-  row.selected = gzipSync(packed, { level: 9 }).length < gzipSync(asset.bytes, { level: 9 }).length;
+  row.selected = row.opaque && gzipSync(packed, { level: 9 }).length < gzipSync(asset.bytes, { level: 9 }).length;
   if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
 }
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));

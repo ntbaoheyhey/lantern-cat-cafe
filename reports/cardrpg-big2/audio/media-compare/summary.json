@@ -1,0 +1,242 @@
+{
+  "artifact": "/tmp/cardrpg-big2-b4-index.html",
+  "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f",
+  "source": {
+    "root": "/tmp/cardrpg-big2-b4-validation",
+    "head": "690a070f703a67fd83c25184973c88ad75dad5f1",
+    "artifact": "/tmp/cardrpg-big2-b4-index.html",
+    "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f"
+  },
+  "method": "Six fresh Chromium processes at DPR1, native/CPU4. Real Sound click starts silent one-second PCM using HTMLAudioElement, awaits actual playback advance, then constructs the unchanged WebAudio graph. Entire enable wait remains inside raw RAF window. Controls use the same 44.1kHz graph without media priming. No screenshots/tracing; no claim of OS-cold restart or perceptual quality.",
+  "rows": [
+    {
+      "index": 1,
+      "mode": "forced",
+      "cpu": 1,
+      "media": [],
+      "max": 116.60000000000036,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7157.5,
+          "ms": 120.80000001192093,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7127.800000011921
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7286.300000011921
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "media",
+      "cpu": 1,
+      "media": [
+        {
+          "started": 7169.0999999940395,
+          "play": 7170.29999999702,
+          "playing": 7320.0999999940395,
+          "ready": 7339,
+          "ended": 7356,
+          "currentTime": 0.02322,
+          "paused": false
+        }
+      ],
+      "max": 16.80000000000109,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7339.0999999940395,
+          "ms": 15.700000002980232,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7139.699999988079
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7361.199999988079
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "media",
+      "cpu": 4,
+      "media": [
+        {
+          "started": 9034.79999999702,
+          "play": 9036,
+          "playing": 9180.59999999404,
+          "ready": 9201.29999999702,
+          "ended": 9221.79999999702,
+          "currentTime": 0.02322,
+          "paused": false
+        }
+      ],
+      "max": 16.80000000000109,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 9201.39999999106,
+          "ms": 15.799999997019768,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 9006.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 9239.39999999106
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "forced",
+      "cpu": 4,
+      "media": [],
+      "max": 133.29999999999927,
+      "p95": 16.80000000000109,
+      "constructors": [
+        {
+          "at": 9120.79999999702,
+          "ms": 123.79999999701977,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 9087.59999999404
+        },
+        {
+          "label": "sound-enabled",
+          "at": 9271.59999999404
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "forced",
+      "cpu": 1,
+      "media": [],
+      "max": 116.69999999999982,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7168.399999991059,
+          "ms": 121.90000000596046,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7138.699999988079
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7297.699999988079
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "media",
+      "cpu": 1,
+      "media": [
+        {
+          "started": 7151.5999999940395,
+          "play": 7152,
+          "playing": 7294.0999999940395,
+          "ready": 7313,
+          "ended": 7331.5,
+          "currentTime": 0.02322,
+          "paused": false
+        }
+      ],
+      "max": 16.80000000000109,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7313.0999999940395,
+          "ms": 17.30000001192093,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7121.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7337.79999999702
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

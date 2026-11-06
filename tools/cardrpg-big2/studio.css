@@ -6,3 +6,13 @@
 /* Keep native checkbox hit boxes square despite the main form's minimum height. */
 .b2-gallery-tools label:has(input[type=checkbox]){gap:8px}
 .b2-gallery-tools input[type=checkbox]{appearance:auto;flex:none;width:17px;height:17px;min-height:0;margin:0;padding:0;accent-color:#debb83}
+
+/* The stage takes the space left by the actual wrapped controls at each size. */
+.b2-studio{display:flex;flex-direction:column}
+.b2-studio>header,.b2-studio>nav{flex:none}
+.b2-gallery{display:flex;flex:1;min-height:0;flex-direction:column;overflow:auto}
+.b2-gallery-tools{flex:none}
+.b2-gallery-stage{flex:1 0 210px;height:auto;min-height:210px}
+.b2-gallery>.b2-reference{flex:none;margin:2px 0}
+.b2-gallery>details{flex:none;padding:0 24px 6px}
+@media(max-height:650px){.b2-gallery-stage{flex-basis:180px;min-height:180px}.b2-gallery-tools select{max-width:175px}.b2-gallery-tools button{padding:5px 8px}}

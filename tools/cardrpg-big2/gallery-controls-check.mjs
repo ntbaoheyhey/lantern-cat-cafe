@@ -38,6 +38,7 @@ try {
       assert.equal(controls.checkboxes.length, 2);
       for (const c of controls.checkboxes) { assert.ok(c.box.width >= 16 && c.box.width <= 22); assert.ok(c.box.height >= 16 && c.box.height <= 22); assert.ok(c.gap >= 5 && c.gap <= 14); assert.ok(c.centerOffset <= 3); }
       assert.ok(controls.tab.contrast >= 4.5); assert.equal(controls.overflow, false);
+      if (process.env.BIG_GALLERY_EXPECT_FIT === '1') assert.ok(controls.stage.y + controls.stage.height <= height, JSON.stringify(controls.stage));
     }
     await page.close();
   }
