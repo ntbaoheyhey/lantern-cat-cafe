@@ -267,3 +267,9 @@ ANSWER21:33: own Gcoordinator71979 paused only, active95219/96320 continues. Loc
 Focused fontretry2/2PASS, integratedreveal8cases24capturesPASS and invitations36capturesPASS0errors. Earlier420/421networkfailure retained. No app/rules font workaround.
 Video exposed blocked labtoggle, nowHidecontrols button keeps separatepreview/account and has7focusedtestsPASS. Fullcontrols lab/Mochivideo/fivegates/reveal/invitations queued; sourcepinned untilcompletion.
 ON gear50seedtrain/heldout/economy continuesnice10, OFF allnativearraysmatch. Mainwrapper awaits yourpublishedcheckpoint; no Bworktree/engine changes.
+
+## 2026-11-06T21:41:00.613964+00:00 F7-reveal-fit CLAIM
+branch plannedcodex/cardrpg-big-reveal-fit-2026-11-07 from289ffa0e; ownnewworktree only, integratedcontrols remains pinned.
+Visual review of readability1024legendary entrance shows the card/footer extends below600px although canvasbottom504.25passes. Existing guard measures onlycanvas; add settledcard/action bounds and fix scopedinvitationCSS ifconfirmed.
+files own invitations.css and reveal-check.mjs plusreports. Keep bothfailed andcorrectedcaptures. No Bengine/sharededits or changedacceptancethreshold.
+Gconfig4 now72cases/errors0, cumulative288/720. Coordinator71979paused forB89899+93523window;owncontrols98060waits sameBdependencies.
