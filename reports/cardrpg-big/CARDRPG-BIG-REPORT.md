@@ -14,7 +14,7 @@ Bản ghép cuối, video, kiểm tra lại hình ảnh và báo cáo lane B đa
 ## Tình trạng bản ghép
 REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
 
-Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản ghép tại 9d29c760 đã nhận các mốc A cùng B2c, đang chờ dựng lại với các mốc B tiếp theo. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
+Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản ghép nguồn644a0fe0 đã nhận A cùng B2c/B3/B5/B4 và entrance3D. HTML23.925.527byte/SHA1bd16da4 đang chạy lại lab và năm cổng trước khi công bố. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
 
 ## Sáu nơi nên xem
 REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
@@ -45,7 +45,7 @@ REFERENCE: COVERAGE.md, baseline/COVERAGE.md, memory/STATE.md
 | Vật phẩm đầy đủ | Hệ thống đã có trong luật |5 nhóm, bảng nguồn/drop/sink |Đi trọn vòng trong bản ghép |
 | Tầng độ hiếm | Trần một món 10,4575% |9,6306% hiển thị, 4 khung và 12 hình huyền thoại |Tác dụng thực chiến lớn ở một số ca |
 | Cân bằng tự động | Nhiều ô thắng 100% |26/48 bước tăng, 22 hòa, 0 giảm |Level 6 bão hòa, độ chênh set/mèo |
-| Gacha | Odds và pity đã có |13 test ceremony, 36 ảnh và 421 E2E đạt ở G |3D entrance và odds/pity luôn thấy đang kiểm chứng |
+| Gacha | Odds và pity đã có |13 test ceremony, 36 ảnh và 421 E2E đạt ở G |Entrance3D và fairness đạt8ca/24ảnh ở bảnv2, bản ghép đang kiểm chứng |
 | Giới hạn collectible | Thiết kế giới hạn đã có |25 test biên, 2 UI, 12 ảnh, 0 lỗi/network |Scope và walkthrough cuối |
 | Bản sắc có nghiên cứu |34 game được nghiên cứu trước |Tái dùng nghiên cứu, art procedural có provenance |Đánh giá hình ảnh ghép |
 
@@ -78,21 +78,21 @@ REFERENCE: auto/A1.md, auto/A2.md, auto/A3.md, integration/scope/rules-commits.t
 
 Người chơi chọn ba mèo, hàng và trang bị trước trận. Bộ điều khiển tự dùng toàn bộ kỹ năng đã mở. Trong trận có tốc độ, pause, skip, camera, sound. Thời lượng chương 1 ước tính bằng kế hoạch trình diễn có trung vị 51,411 s training và 53,569 s heldout. 48/50 và 44/50 nằm trong 45–90 s. Năm ca trình duyệt đo 46,5327–57,2778 s, cả năm replay trùng kết quả. Các ca có 0 lỗi HP hoặc vượt ngân sách hành động.
 
-Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh đầy đủ autoExtras ON/OFF chờ checkpoint B. Các tùy chọn thử nghiệm giữ mặc định OFF.
+Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh đầy đủ autoExtras ON/OFF đang chạy với runner B5 đã công bố. Các tùy chọn thử nghiệm giữ mặc định OFF.
 
 ## Lane B delivered
 REFERENCE: coord/cardrpg-big/B-OUTBOX.md trên nhánh ai/codex-cardrpg-big-sync
 
-B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 ms, page MAX 150 ms native và 300 ms CPU4. B2c tại 4b2d5df0/draft347 đã bổ sung cả 9 mèo còn lại, 48 clip GLB/336 cặp bắt buộc và 76 hiệu ứng/2.850 cặp grayscale đạt ngưỡng. Cold7 của B2c đo page MAX 133,3 ms, post-interactive MAX 83,3 ms và p95 16,8 ms. Cổng mở trang 100 ms còn thiếu. Stage, địch, boss, audio, lab và matrix các batch tiếp theo đang được kiểm chứng. Bằng chứng ở `../cardrpg-big2/cats/batch3/CHECKPOINT.md` và `../cardrpg-big2/performance/b1-skills/`.
+B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 ms, page MAX 150 ms native và 300 ms CPU4. B2c tại 4b2d5df0/draft347 đã bổ sung cả 9 mèo còn lại, 48 clip GLB/336 cặp bắt buộc và 76 hiệu ứng/2.850 cặp grayscale đạt ngưỡng. Cold7 của B2c đo page MAX 133,3 ms, post-interactive MAX 83,3 ms và p95 16,8 ms. Cổng mở trang 100 ms còn thiếu. B3 đạt405mẫu camera có0cắt/che, giữ8mục tiêu độ nét còn thiếu, coldCPU4MAX116,6ms. B5 có18.000trận biến thể và3.600tham chiếu, defaultOFF khớp toàn trạng thái. B4 có79bufferâm thanh hữu hạn/khác nhau và4ca thao tác, nhưng bật âm thanh lần đầu133,5ms và coldCPU4MAX183,3ms. Địch, boss, wrapper/lab và matrix các batch tiếp theo đang được kiểm chứng. Bằng chứng ở `../cardrpg-big2/cats/batch3/CHECKPOINT.md` và `../cardrpg-big2/performance/b1-skills/`.
 
 ## Các điểm còn thiếu và tự chấm
 REFERENCE: memory/STATE.md, COVERAGE.md, demo/PLAN.md
 
-Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, 3D entrance gacha, ON/OFF sims và kiểm chứng bản ghép. Video 12 mèo, boss, ultimate và bốn lượt fresh-eyes chờ hình ảnh ghép. Mỗi lượt phải ghi 5 điểm yếu, sửa phần nghiêm trọng rồi chấm lại.
+Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, ON/OFF sims và kiểm chứng bản ghép. Entrance3D đạt8ca/24ảnh trên bản riêng. Tab/checkbox lab đã sửa trong nguồn, phần tràn ngang2px đang đo lại. Đã xem ảnh/filmstrip tuần tự qua4vai, ghi20điểm cần kiểm tra trong FRESH-EYES.md. Video12mèo, boss, ultimate và lượt chấm lại chờ bản ghép đủ hình ảnh.
 
 11 mục tự chấm đang chờ review gồm hiệu ứng, độ nét, bố cục/góc mặt, nhịp/khựng, cảm giác chơi, sân trống, tự động hoàn toàn, phần ngoài trận, trang bị/cân bằng, gacha và giới hạn collectible. Mục tiêu là 8,5/10 mỗi mục. Bản báo cáo bàn giao sẽ ghi điểm thực tế và từng cổng thiếu.
 
 ## Draft PR
 REFERENCE: memory/STATE.md
 
-F0 #333, A #334, F1 #335, F2 #336, F3 #337, F4 #338, F5 #339, M #340, I #341, G #344, M follow-up #345 và F7 preparation #348 đều là draft. B đã công bố #342, #343, #346, #347. Integration chờ đủ các mốc B và kiểm chứng bản ghép. Báo cáo và STATE sẽ được chép sang ledger ở bước bàn giao.
+F0 #333, A #334, F1 #335, F2 #336, F3 #337, F4 #338, F5 #339, M #340, I #341, G #344, M follow-up #345 và F7 preparation #348 đều là draft. B đã công bố #342, #343, #346, #347, #349, #350 và #351. Integration chờ đủ các mốc B và kiểm chứng bản ghép. Báo cáo và STATE sẽ được chép sang ledger ở bước bàn giao.
