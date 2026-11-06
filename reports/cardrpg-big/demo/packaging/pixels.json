@@ -1,0 +1,44 @@
+{
+  "references": [
+    "tools/cardrpg-big/pack-comparisons.py",
+    "reports/cardrpg-big/baseline/screens/1280-battle.png",
+    "reports/cardrpg-big/flow/screens/1280-mochi-4.png"
+  ],
+  "tool": "Pillow 11.3.0",
+  "parameters": {
+    "format": "WEBP",
+    "lossless": true,
+    "method": 6,
+    "exact": true
+  },
+  "rows": [
+    {
+      "source": "reports/cardrpg-big/baseline/screens/1280-battle.png",
+      "output": "reports/cardrpg-big/demo/packaging/baseline.webp",
+      "width": 1280,
+      "height": 720,
+      "pngBytes": 617011,
+      "webpBytes": 429958,
+      "gzipPngBytes": 614413,
+      "gzipWebpBytes": 430086,
+      "sourceSha256": "8fe02076a6f9820daeb2c3e7a10ae9a1c44561225fb1f573cf9853d795e9520d",
+      "outputSha256": "e4f7d2916b69ce9748f85e7544a9c024b6cadf127f97363926cdcafca9368fbb",
+      "decodedRgbaSha256": "8d46cc5718ef63fdf4635e2e52f9f34c9e1c253704c89bb0343841e6a58b82e5",
+      "pixelsEqual": true
+    },
+    {
+      "source": "reports/cardrpg-big/flow/screens/1280-mochi-4.png",
+      "output": "reports/cardrpg-big/demo/packaging/automatic.webp",
+      "width": 1280,
+      "height": 720,
+      "pngBytes": 762343,
+      "webpBytes": 531956,
+      "gzipPngBytes": 761529,
+      "gzipWebpBytes": 531421,
+      "sourceSha256": "002d9de298e2482a292929237964934da727c51dcdfbe3c25775045d086bc63c",
+      "outputSha256": "78952c660134e79159e8b00e76d33c5fba111a7879cda20ac5de4a30fde16dad",
+      "decodedRgbaSha256": "28aa1313ab4c1af146a8bd672271eb8bdcde53abdfd0fbfd802478f3169fd52a",
+      "pixelsEqual": true
+    }
+  ]
+}

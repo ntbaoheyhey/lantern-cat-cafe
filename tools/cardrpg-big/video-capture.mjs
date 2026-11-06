@@ -70,10 +70,11 @@ try {
     await page.getByLabel('Preview action', { exact: false }).selectOption(skills[0].id);
     await page.waitForFunction(() => {
       const m = window.__depthReview, scene = window.__depthScene;
-      return scene?.ready && m.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
+      return scene?.ready && scene.renderer.info.render.calls > 0 && scene.renderer.info.render.triangles > 0
+        && m.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
     }, null, { timeout: 120000 });
-    await page.getByLabel('Preview speed', { exact: true }).selectOption('1');
-    await page.getByLabel('Preview camera', { exact: true }).selectOption('wide');
+    await page.getByLabel('Preview speed', { exact: false }).selectOption('1');
+    await page.getByLabel('Preview camera', { exact: false }).selectOption('wide');
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     const duration = owner === 'clover-ultimate' ? 8 : 25;
     const started = Date.now();
