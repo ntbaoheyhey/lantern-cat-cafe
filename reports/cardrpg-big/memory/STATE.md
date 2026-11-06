@@ -7,7 +7,7 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 Phase F0 · 610/610 precision matrix, five profiles and final validation passed. Phase closes with the transient cast-spike attribution gap below. Ready to publish.
 Worktree /Users/bao/taskbar-hero-cardrpg-big
 Branch ai/codex-cardrpg-big-2026-11-06
-Last work commit c7ffaeb4 · F0 baseline, instrumentation and profile attribution. State commit records this parent.
+Last work commit 7a49705b2cd2803acf846574b683013edf30637e · F0 complete matrix and profile evidence. State commit records this parent.
 Draft F0 #333 (codex/cardrpg-big-f0-2026-11-06), matrix publication pending. Base #332 at cd5edcc9895b42384578df9b040daac9ce51fccf.
 F0 typecheck, lint, unit tests, build and E2E passed. E2E 421/421, web unit 1630. validation/f0-final.json.
 Baseline validation session 44468 exited 0. Log validation/base-e2e.log.
@@ -20,7 +20,7 @@ Runtime edits only add isolated Feel lab fixtures/trigger and paused-scene inval
 3. Complete A default kits, Prepare/Result and automatic UI, then validate all battle entry paths.
 
 ## DONE
-F0 baseline · c7ffaeb4 / state b9609d24 pushed · draft #333 · all five validation gates, 60-frame layout, sharpness crops, seven-run cold matrix, profile stacks, gallery fixtures committed.
+F0 · 7a49705b / draft #333 · baseline/GATES.md records 610 cases, 5 profiles, all validation, layout/sharpness/coverage and one attribution gap.
 A / F1 / F2 / F3 / F4 / F5 / M / I / G / F6 / F7 are pending.
 Memory bootstrap · 62036790 pushed · source prefix byte-for-byte verified · memory/PROMPT.md, RULES.md and STATE.md created.
 
@@ -73,7 +73,7 @@ Source finding · default medium post uses zero MSAA samples. DPR cap 2, map 128
 Trace CPU stacks · 366.7ms base64 decoder; 150ms embedded script compile (106.2ms); 66.7ms scene construction/resize; 33.4/83.4ms first program uniforms and GPU command waits. baseline/trace-attribution.json.
 
 ## PROBLEMS / PARKED
-No WIP commit. F0 raw matrix/profile changes passed final validation and await their publication commit. The exhaustive matrix and five profiles completed on the same frozen HTML SHA. The original 33.4ms cast spike causes remain unresolved. Read-only A entry-point audit completed, code changes await F0 gate.
+No WIP commit. F0 evidence and tools committed at 7a49705b. The exhaustive matrix and five profiles completed on the same frozen HTML SHA. The original 33.4ms cast spike causes remain unresolved. Read-only A entry-point audit completed, code changes await F0 gate.
 Pilot skill run stopped after noticing preview frame 0 preceded first-cast boundary. Page-open data valid, cast windows excluded from claims. Saved as baseline/skills-pilot/. Corrected fixture uses progress -1 to hide all spell frames until cast.
 Heap pilot used rounded performance.memory values. Superseded by precise Runtime.getHeapUsage plus per-frame draw/triangle samples. Pilot kept in baseline/skills-coarse-heap/.
 Sharpness tool deps installed in /tmp/cardrpg-big-tools. Run that Python. First gallery smoke stalled on paused scene, fixed invalidation; second smoke passes.
