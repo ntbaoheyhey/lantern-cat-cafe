@@ -38,12 +38,23 @@ try {
           .filter(element => element.getClientRects().length && element.getBoundingClientRect().right > innerWidth + 1)
           .map(element => element.textContent.slice(0, 90)),
         phase: document.querySelector('.dp-ceremony')?.className ?? 'summary',
+        results: document.querySelector('.dp-batch-results')?.getBoundingClientRect().toJSON(),
+        firstResult: document.querySelector('.dp-batch-grid article')?.getBoundingClientRect().toJSON(),
+        fairness: document.querySelector('.dp-invitation-fairness')?.getBoundingClientRect().toJSON(),
       }));
       assert.equal(layout.overflow, 0, `${name} document overflow`);
       assert.deepEqual(layout.rightOverflow, [], `${name} content overflow`);
       const path = `${output}/${width}x${height}-cpu${cpu}-${name}.png`;
       if (captureScreenshots) await page.screenshot({ path });
       captures.push({ name, path: captureScreenshots ? path : null, layout });
+      await writeFile(`${output}/${width}x${height}-cpu${cpu}-${name}-layout.json`,
+        JSON.stringify({ artifact, width, height, cpu, name, layout }, null, 2));
+      if (name === 'ten-pull-results' || name === 'welcome-result') {
+        assert(layout.results && layout.results.top >= layout.fairness.bottom && layout.results.top < height,
+          'Completed invitation results appear below the fairness summary');
+        assert(layout.firstResult && layout.firstResult.top < height && layout.firstResult.bottom <= height,
+          'The first earned result is visible after the ceremony');
+      }
     };
     const once = () => page.getByRole('button', { name: 'Invite once · 150 stamps', exact: true });
     const ten = () => page.getByRole('button', { name: 'Invite ten · 1500 stamps', exact: true });

@@ -216,4 +216,5 @@ it('brings the ceremony below the visible fairness summary once per pull', () =>
   expect(scroll).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
   expect(scroll).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole('region', { name: 'Invitation results' }).style.scrollMarginTop).toBe('142px');
 });
