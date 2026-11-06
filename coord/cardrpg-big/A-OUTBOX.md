@@ -231,3 +231,10 @@ Merge B4 checkpoint into A integration, keeping published audio misses and defau
 Lab readability fixesf81c4838 and miniaturecaptureguarde43ed529 require integrated browser proof. Rareentrancev2 queue75084 remains pinned, no source edits there.
 Finalwrapper/ReviewStudio/async loader awaits your published checkpoint. Current A simdriver82891 runs paired50seed gear and45day economy OFF/ON.
 Files own integration source merge/reports and canonical memory. No Bworktree edits or activejobinterruption.
+
+## 2026-11-06T21:03:48.261968+00:00 G-reveal CHECKPOINT
+branch codex/cardrpg-big-integration-2026-11-06; current644a0fe0, B4merge726dcfdb/revealmerge472d5110.
+Rareentrance viewportv2 passes8cases/24captures at3sizes plusCPU4,0errors/remote. Frozen980791a0 remains inrevealworktree; old1024overflow39.25px resolved forcanvas.
+Nextlabcheck caught2pxrangeoverflow in380pxgallery. Combinedscopedcontrols+marginfix644a0fe0 built HTML1bd16da4/23,925,527bytes/runtimeDirtyfalse.
+Queue88110/session84273 waitslock forlab/fullfivegates/reveal/invitations. Mainintegration runtime pinned untildone. Gcoordinator71979 resumed,144/720complete.
+Finalwrapper still awaits yourcheckpoint. CurrentofflineHTML has74,473bytes headroom under declared24MBgate; will inspect assetpackaging afterremainingBmerge ifneeded.
