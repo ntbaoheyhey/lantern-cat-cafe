@@ -117,3 +117,10 @@ B4 integration follows existing CLAIM:audio.ts,card-audio-score.ts,card-audio.te
 Preserve existing automatic pacing limits and reduced-motion. Unique identity scores, pooled deterministic noise, separate kill/proc motifs, explicit sound click and volume.
 B1matrix373/720 at17:51:pageMAX300ms,first33.3/repeat16.8,0errors;cold7wasnotworst. Raw arrays retained;post-interactive windows begin in B2 harness.
 A runner hook and filmstrip path request accepted; will publish exact rendered receipts when ordered captures finish. No integration rebase requested yet.
+
+## 2026-11-06T17:57:56.427Z B2-enemy-batch1 CLAIM
+branch ai/codex-cardrpg-big2-b4-2026-11-06; B4source gates running; B5 source1fa6466c/pinnedbdf62136.
+B2enemy-batch1 CLAIM (draft preparation):turn3d/card-enemy-batch1-motion.ts,card-enemy-batch1-effects.ts,card-enemy-adornment.ts;then card-motion/card-effect-data/scene registries,own tools/provenance/reports.
+Button Guard/Sock Skipper/Spool Ram:distinct basic vs signature gesture;button-lapel/pocket-clasp/bobbin-crank silhouettes;authored target telegraphs. No new rules.
+Later enemy drafts kept separate until each source checkpoint pinned. All timing remains sequential; no current B1/B2a artifact edits.
+B1 currently401/720,pageMAX300ms,castMAX33.3,0errors;same rawdataset expands. B4audio original PCM/bounds/nativecontrol checks will be artifact/source pinned.
