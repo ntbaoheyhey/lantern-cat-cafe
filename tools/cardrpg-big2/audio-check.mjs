@@ -1,12 +1,13 @@
 // REFERENCE: turn3d/audio.ts; card-audio-score.ts. Run under the shared timing lock.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
-import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,readFile,writeFile,realpath} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 const artifact=resolve(process.env.BIG_ARTIFACT||'/tmp/cardrpg-big2-b4-index.html');
-const source=resolve(process.env.BIG_AUDIO_SOURCE||'/tmp/cardrpg-big2-b4-validation');
+// macOS resolves /tmp to /private/tmp before Vite checks the serving allow-list.
+const source=await realpath(resolve(process.env.BIG_AUDIO_SOURCE||'/tmp/cardrpg-big2-b4-validation'));
 const out=process.env.BIG_AUDIO_OUT||'reports/cardrpg-big2/audio';await mkdir(out,{recursive:true});
 const require=createRequire(resolve(source,'apps/web/package.json')),{createServer}=await import(require.resolve('vite'));
 const server=await createServer({configFile:false,root:resolve(source,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5920,strictPort:true,fs:{allow:[source]},watch:null,hmr:false},optimizeDeps:{noDiscovery:true,include:[]}});

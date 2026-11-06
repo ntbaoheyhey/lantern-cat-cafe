@@ -29,3 +29,9 @@ Five source gates passed: typecheck/lint/build,1681web tests,903rules+2expectedf
 
 REFERENCE: docs/cardrpg3b/build.json; tools/cardrpg-big2/b1-measurements.mjs
 Artifact SHA25628da85ec36d0f217a0d0f14b77a446cc2c79a7871479869ad0d1b8652e195344, immutable local input /tmp/cardrpg-big2-b1-index.html. Screenshot and navigation checks are separate from frame-time samples. Original first pilot replaced HTML between cases; retained only as diagnostic.
+
+## Exhaustive B1 matrix, 2026-11-06T18:56:31Z
+REFERENCE: b1-skills/summary.json; b1-skills/ranked.json; b1-skills/profiles/summary.json
+
+All720 fresh-page cases completed with zero runtime errors on the same28da85ec artifact. First-use MAX33.4ms, repeatMAX16.8ms,207draws and93,802triangles. Everyconfiguration exceeds99.9814% cast frames≤20ms. Per-case percentages remain in raw data; these configuration aggregates are not a promise about every single cast.
+Whole-page MAX150ms native/300msCPU4 misses100ms. Worst per-case CPU4whole-pagep95=33.3ms also misses strict33ms by0.3ms. The seven-case cold values above remain valid observations but are not the exhaustive worst case. First-interactive boundaries were not recorded by this inherited matrix harness, so83.4ms is still only the separate cold7 measurement. Fivecast-offender profiles plus twoexplicit opening-offender reruns preserve traced and untraced observations separately.

@@ -1,0 +1,115 @@
+# Taskbar Hero · Lane B review
+REFERENCE: memory/PROMPT.md; docs/cardrpg3b/index.html; tools/cardrpg-big2/build.mjs
+
+Đã giữ nguyên cách chơi: sưu tầm thẻ mèo, chuẩn bị đội rồi xem trận tự động.  
+Chín mèo còn lại đã có động tác, đạo cụ và hiệu ứng riêng trong mã nguồn.  
+Mười quái thường và ba trùm đã có phần trình diễn riêng; bằng chứng hình ảnh đang được kiểm tra.  
+Màn tải có tiến độ thật và chuẩn bị tài nguyên theo từng khung hình.  
+Chưa đạt toàn bộ mục tiêu hết giật: phép đo B1 đã ghi nhận khung mở trang 300 ms.  
+Ba cơ chế thử nghiệm đều mặc định tắt, không sửa tài khoản hay phần thưởng của trò chơi chính.  
+Đã chạy 18.000 trận biến thể; kết quả khi tắt cơ chế khớp chính xác với luật cũ.  
+Demo có thư viện kỹ năng, so sánh hình ảnh, bảng thời gian khung hình và Mechanics lab.  
+Chưa gộp nhánh, triển khai hay thay đổi kinh tế, ví hoặc hợp đồng.  
+Đây là báo cáo đang hoàn thiện bằng chứng; các mục chờ đo không được tính là đạt.
+
+## Verdict and review route
+REFERENCE: tools/cardrpg-big2/{ReviewStudio,MechanicsLab,offline}.tsx; apps/web/src/game/cardrpg/depth/Battle.tsx
+
+Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/index.html` directly; no server or external requests are required by the offline design. Exact delivered-byte offline verification is pending.
+
+| Complaint | Where to look | Current evidence / limit |
+|---|---|---|
+| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; rendered checks pending |
+| Blurry images | Review studio → Before / after → Sharpness | Native DPR1/2 crops queued; no +40% claim yet |
+| Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | Camera measurements queued; user chooses preference |
+| Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
+| Sparse stage / flat shadows | Chapters 1–3; home companion feet | Depth props, ambient motion and rug-aware contacts authored; visual proof pending |
+| Skills lack sound identity | Battle Sound on and volume | Original synth motifs, kill/proc cues and authored hit-stop; browser PCM check pending |
+| Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
+
+## Measurements and gates
+REFERENCE: performance/B1-CHECKPOINT.md; performance/b1-skills/summary.json; validation; delivery/scope.json
+
+The seven-case cold run and the exhaustive fresh-page matrix are separate samples. The larger matrix supersedes a reassuring cold maximum; it does not erase its raw data. All browser work holds the shared machine lock. Captures use phase-pinned HTML and source hashes.
+
+| Gate / measurement | Before | B1 observed | Status |
+|---|---:|---:|---|
+| Whole-page MAX ≤100 ms | Own cold CPU4 216.6 ms | Cold 100.1 ms; exhaustive 150 ms native / 300 ms CPU4 | MISS; 720 cases complete |
+| CPU4 p95 ≤33 ms | 16.8 ms cold | 16.8 ms cold; worst matrix case 33.3 ms | MISS strict 33 ms by 0.3 ms |
+| After first hub interaction MAX ≤100 ms | Not separated | 83.4 ms in seven-case cold sample | Sample PASS; explicit matrix window pending |
+| Cast MAX ≤50 ms | Inherited first 33.4 / repeat 16.8 ms | First 33.4 / repeat 16.8 ms | B1 PASS, 720 cases |
+| 99% cast frames ≤20 ms, DPR1/2 | Inherited receipts | ≥99.9814% within each configuration | B1 PASS; per-case values retained |
+| ≤250 draws / ≤150k triangles | Inherited 207 / 93,802 | B1 207 / 93,802; final roster pending | B1 PASS |
+| 20 natural replays: flat heap/GPU | Not measured here | +1,088,932 retained bytes; geometry/texture/program growth 0/0/0 | B1 PASS at 2 MiB heap tolerance |
+| Load to interaction / battle ready | Raw baseline | Hub 924–936 ms native, 1716–1724 ms CPU4; battle ready 6540–6572 / 8332–8353 ms | Reported, not hidden in cast time |
+| Desktop 1280×720, 1440×900, 1024×600 | Inherited | B1 three sizes: zero overflow/manual controls | B1 PASS; final studio pending |
+| Sharpness +40%, ten native crop pairs | Inherited 2/10 | B3 cumulative and incremental comparisons queued | PENDING |
+| Flag-off startup excludes three/models | Static graph checked | Production browser request inventory queued | PENDING |
+
+Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance/b1-skills/summary.json), [baseline trace](performance/baseline-cpu4-profile/HITCHES.md), [20 replays](performance/lifecycle/summary.json), [navigation](performance/navigation/checks.json). Final-build lifecycle and full matrix remain pending.
+
+## Unit coverage
+REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
+
+“Improved” below means authored implementation plus source tests, with rendered acceptance still pending. No new unit is certified as slice quality solely from different recipe hashes or rig trajectories. Starter slice status is inherited and will be separately checked for regressions.
+
+| Unit | Tier | Distinct authored feature |
+|---|---|---|
+| Mochi | slice, inherited | Starter guardian performance |
+| Soot | slice, inherited | Starter witch performance |
+| Clover | slice, inherited | Starter alchemist performance |
+| Panko | improved | Four authored action clips and utensil compositions |
+| Mallow | improved | Four authored action clips and soft dessert compositions |
+| Sorrel | improved | Four authored action clips and garden compositions |
+| Biscuit | improved | Four authored action clips and original prop |
+| Inkcap | improved | Four authored action clips and original prop |
+| Cinnamon | improved | Four authored action clips and original prop |
+| Brioche | improved | Four authored action clips and original prop |
+| Velvet | improved | Four authored action clips and original prop |
+| Marigold | improved | Four authored action clips and original prop |
+| Button Guard | improved | Button lapel, distinct basic/signature clips |
+| Sock Skipper | improved | Pocket clasp, distinct basic/signature clips |
+| Spool Ram | improved | Bobbin crank, distinct basic/signature clips |
+| Needle Moth | improved | Pinch-release stitch and target tell |
+| Teacup Healer | improved | Careful pour and target tell |
+| Kettle Knight | improved | Kettle salute and target tell |
+| Binding Thread | improved | Weaving knot and target tell |
+| Practice Cushion | improved | Soft bounce and target tell |
+| Pollen Scout | improved | Seed planting and target tell |
+| Crumb Sentinel | improved | Separate sugar pinch and burst |
+| Yarn Giant | improved | Loom attacks, 1.14 s intro, 300 ms phase pose |
+| Rain Spool | improved | Rain attacks, 1.14 s intro, 300 ms phase pose |
+| Pantry Crown | improved | Pantry attacks, 1.14 s intro, 300 ms phase pose |
+
+## Mechanics experiments
+REFERENCE: docs/design/cardrpg/MECHANICS-LAB.md; packages/game-rules/src/cardrpg/depth/auto-extras; mechanics/SUMMARY.md
+
+18,000 variant fights = 36 level/team/chapter/encounter cells × 5 variants × 50 seeds × train/held-out. Another 3,600 original fights form the paired reference. Training seeds 4001–4050; held-out 50001–50050. No tuning after held-out. Full states are archived; all 3,600 original/disabled JSON pairs were independently compared byte for byte, and all 7,200 disabled/lens hash comparisons match.
+
+| Extra | Viewer / preparation decision | Train wins /1800 | Held-out wins /1800 |
+|---|---|---:|---:|
+| Off | Existing automatic controller | 1731 | 1730 |
+| Tea cloud | Scald then tide/garden hit → lowest-health ally shield; pair compatible cats | 1734 | 1734 |
+| Front relay | Rear support heals/shields front → +6 charge; choose rows | 1731 | 1730 |
+| Intent lens | Existing target/phase/weakness hint made visible; choose roles/flavours | 1731 | 1730 |
+| All | Combined, each proc capped once per team/round | 1734 | 1734 |
+
+Tea cloud flips three training and four held-out losses; relay flips none. Each split has 29/36 baseline cells at 50/50 wins, including all level-6 cells. These saturated cells cannot establish balance. Lane A must run updated encounter/gear/45-day economy comparisons; promotion remains the user's decision. Existing rules, live config, saves, contracts and wallet paths are unchanged.
+
+## Remaining work and self-grades
+REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
+
+Browser captures, full final matrix, sharpness/scale attribution, audio listening and final demo verification are pending. B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+
+| Complaint | Self-grade /10 |
+|---|---|
+| Effects / identity | Pending rendered review |
+| Sharpness | Pending crop comparison |
+| Layout / scale / faces | Pending camera and face audit |
+| Turn clarity + smoothness | Pending full matrix; opening miss known |
+| Overall feel | Pending complete demo review |
+| Sparse stage | Pending chapter captures |
+| Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
+| Mechanics lab | Pending browser proof; sim evidence complete |
+
+Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
