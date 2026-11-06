@@ -2,6 +2,7 @@ import { loadRules } from '../cardrpg-sim/load.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { simulationBattleRunner } from './sim-battle-runner.mjs';
 
 const phase = process.argv[2] || 'before';
 if (!/^[a-z0-9-]+$/.test(phase)) throw Error('Use a simple phase name');
@@ -12,6 +13,7 @@ if (!['all', 'tiers', 'power'].includes(scope)) throw Error('BIG_SCOPE must be a
 const { load, vite, rules: legacy } = await loadRules();
 const R = await load('packages/game-rules/src/cardrpg/depth/index.ts');
 const { playRun } = await load('packages/game-rules/src/cardrpg/depth/run-bot.ts');
+const simulation = await simulationBattleRunner(load, R.playBattle, process.env.BIG_AUTO_EXTRAS);
 const mainScale = Number(process.env.BIG_MAIN_SCALE || 1);
 if (!(mainScale > 0 && mainScale <= 1)) throw Error('BIG_MAIN_SCALE must be in (0, 1]');
 const affixScale = Number(process.env.BIG_AFFIX_SCALE || 1);
@@ -67,7 +69,7 @@ try {
       if (!begin.ok) throw Error(begin.error);
       const encounters = [];
       const end = playRun(begin.state, 'auto', battle => encounters.push({ won: battle.result === 'party',
-        actions: battle.choices.length, rounds: battle.round, logHash: hash(battle.log) }));
+        actions: battle.choices.length, rounds: battle.round, logHash: hash(battle.log) }), simulation.runBattle);
       runs.push({ seed, won: end.run.won, power: power(initial), encounters });
     }
     const row = { level, chapter, rarity, count, wins: runs.filter(run => run.won).length, runs };
@@ -81,7 +83,7 @@ try {
       const initial = fixture(seed, level, 'epic', set.id);
       const begin = R.startRun(initial, chapter, seed);
       if (!begin.ok) throw Error(begin.error);
-      const end = playRun(begin.state, 'auto');
+      const end = playRun(begin.state, 'auto', undefined, simulation.runBattle);
       runs.push({ seed, won: end.run.won, power: power(initial), runHash: hash(end.run) });
     }
     sets.push({ chapter, setId: set.id, level, rarity: 'epic', count, wins: runs.filter(run => run.won).length, runs });
@@ -95,7 +97,7 @@ try {
           for (let index = 1; index <= 20; index++) {
             const seed = offset + 50000 + index;
             const state = fixture(seed, 6, 'none', null, team);
-            const battle = R.playBattle(R.createBattle({ seed, chapter, cats: R.battleCats(state), enemies: [R.CHAPTERS[chapter - 1].boss] }), 'auto');
+            const battle = simulation.runBattle(R.createBattle({ seed, chapter, cats: R.battleCats(state), enemies: [R.CHAPTERS[chapter - 1].boss] }), 'auto');
             runs.push({ seed, won: battle.result === 'party', actions: battle.choices.length, logHash: hash(battle.log) });
           }
           teams.push({ team, chapter, count: runs.length, wins: runs.filter(run => run.won).length, runs });
@@ -121,7 +123,7 @@ try {
         improved.gear.push(piece);
         improved.equipment[cardId] = { [template.slot]: piece.id };
         const results = [baseline, improved].map(account => {
-          const battle = R.playBattle(R.createBattle({ seed, chapter, cats: R.battleCats(account),
+          const battle = simulation.runBattle(R.createBattle({ seed, chapter, cats: R.battleCats(account),
             enemies: [R.CHAPTERS[chapter - 1].boss] }), 'auto');
           return { won: battle.result === 'party', actions: battle.choices.length, logHash: hash(battle.log) };
         });
@@ -163,7 +165,7 @@ try {
   });
   await mkdir('reports/cardrpg-big/sim', { recursive: true });
   await writeFile(`reports/cardrpg-big/sim/gear-${phase}.json`, JSON.stringify({ phase, count, offset, scope, mainScale,
-    templateValues, affixScale, affixValues, sourceHashes,
+    templateValues, affixScale, affixValues, sourceHashes, battleRunner: simulation.evidence,
     fixture: 'Actual campaigns, phase-A auto controller. Level1/6, stars1, enhancements0, deterministic affixes. Thematic sets for tier rows, one uniform set for set rows. All220 distinct three-cat teams versus each boss at level6 with20 seeds, ordinary gear absent. At least one front-row cat. One-piece display-score attribution uses a bare level1 starter team. No outcomes invented.',
     powerMethod: 'Power bounds use each legendary at +0 and +12 with the maximum compatible affix rolls and highest display-score affix combination, on each member of a bare level1 starter team. Utility is evaluated separately by paired boss outcomes in full runs. Partial scopes leave unrelated arrays empty.',
     rows, sets, teams, cats, singleItems, powerBounds }, null, 2));
