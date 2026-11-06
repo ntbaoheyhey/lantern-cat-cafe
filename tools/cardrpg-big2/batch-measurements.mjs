@@ -24,6 +24,10 @@ if (phase === 'batch1') {
     catch (error) { console.log(JSON.stringify({ mechanicsCheckFailed: String(error) })); }
   }
 }
+if (phase === 'batch1' && await access('/tmp/cardrpg-big2-b4-index.html').then(() => true, () => false)) {
+  try { await run('tools/cardrpg-big2/audio-check.mjs', [], { BIG_ARTIFACT: '/tmp/cardrpg-big2-b4-index.html' }); }
+  catch (error) { console.log(JSON.stringify({ audioCheckFailed: String(error) })); }
+}
 const validationRoot = process.env.BIG_VALIDATION_ROOT || (phase === 'batch1' ? '/tmp/cardrpg-big2-batch1-validation' : process.cwd());
 await run(resolve(validationRoot, 'tools/cardrpg-big2/validate.mjs'), [`${phase}-e2e`], { BIG_VALIDATE_STEPS: 'e2e' }, validationRoot);
 if (validationRoot !== process.cwd()) for (const file of [`${phase}-e2e.json`, `${phase}-e2e-e2e.log`]) await cp(resolve(validationRoot, 'reports/cardrpg-big2/validation', file), resolve('reports/cardrpg-big2/validation', file));
