@@ -9,8 +9,8 @@ import { resolve, relative, extname } from 'node:path';
 import assert from 'node:assert/strict';
 
 const root=resolve(import.meta.dirname,'../..');
-const directory='/tmp/cardrpg-big2-flag-off-dist';
-const output=resolve(root,'reports/cardrpg-big2/delivery/flag-off');
+const directory=resolve(process.env.BIG_FLAG_OFF_DIST || '/tmp/cardrpg-big2-flag-off-dist');
+const output=resolve(root,process.env.BIG_FLAG_OFF_OUT || 'reports/cardrpg-big2/delivery/flag-off');
 await mkdir(output,{recursive:true});
 if(process.argv.includes('--prepare')){
  const chunks={};
@@ -22,7 +22,7 @@ if(process.argv.includes('--prepare')){
     imports:file.imports,dynamicImports:file.dynamicImports,modules:Object.keys(file.modules).map(id=>relative(root,id)),
    };
   }}]});
- await writeFile(`${directory}/build-receipt.json`,JSON.stringify({head:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),chunks},null,2));
+ await writeFile(`${directory}/build-receipt.json`,JSON.stringify({head:process.env.BIG_FLAG_OFF_HEAD || execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),chunks},null,2));
  console.log(JSON.stringify({prepared:true,chunks:Object.keys(chunks).length,directory}));
 }else{
  const receipt=JSON.parse(await readFile(`${directory}/build-receipt.json`,'utf8'));
