@@ -399,3 +399,9 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; B4 published062af1bd/draft351
 B4-proof CLAIM tools/cardrpg-big2/audio-sink-compare.mjs and reports/cardrpg-big2/audio/sink-compare. Six fresh-browser sample-rate cases finished: forced first constructors134.9–144.1ms, native48k127.5–131.3ms; both RAFMAX>=133.3ms. Native-rate change is not a fix.
 Next controlled intervention uses supported silent AudioContext sink, then awaits default-output setSinkId before resume. Record constructor duration, asynchronous output latency, RAF, final sink and playback state; explicit sound click remains required.
 No runtime change unless the comparison supports it. Preserve all existing raw arrays. E2 and A entrance proof remain queued under the same lock.
+
+## 2026-11-06T21:03:42.839Z B6-polish CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; source6d0c6926; E1 evidence8fb80e35 push in progress.
+B6-polish CLAIM tools/cardrpg-big2/{gallery-controls-check.mjs,studio.css,studio-check.mjs},own review reports/demo only. No A/shared/rules files.
+Inspect actual gallery checkbox geometry and selected-tab hover contrast at three desktop sizes on the pinned polish artifact. Source inherits global input sizing like the previously measured lab defect; capture before changing CSS.
+Add precise control assertions to accepted-review checks if a defect is confirmed. Preserve earlier pinned delivery artifact and queues; no runtime timing change claimed from CSS inspection.
