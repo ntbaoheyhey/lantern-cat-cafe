@@ -65,3 +65,8 @@ Viewed all three signature strips and Spool Ramâ€™s earlier strip. Button Guardâ
 REFERENCE: ../enemies/e2/filmstrips/{enemy-needle-moth,enemy-teacup-healer,enemy-kettle-knight}.webp
 
 Viewed all three signature strips. Needle Moth has readable wing opening and a pinching/release gesture; Teacup Healer tilts into a pouring motif with a separate steam tail. Kettle Knight has a clear spout/handle silhouette and braced impact. Small poses and cream-white additive effects still flatten the image, particularly the overlapping kettle facets. The crops cut some HP plates and omit distant target impacts; this is a capture limitation, not a full-stage clipping measurement. All three remain improved, with source/rig and rendered-composition metrics reported separately from art judgement.
+
+## Full-stage recording pilot
+REFERENCE: video-pilot/captures.json; video-pilot/inkcap-x1.webm
+
+Inspected a frame sequence from the first6.7seconds of the24second x1 Inkcap recording. Distant needle/quill impacts are visible, confirming why caster crops are insufficient. The board has large empty central space and similar cream-white bursts; the rear cat remains small and partially aligned with the front cat. This pilot is an isolated gallery loop on the earlier delivery artifact, not a real fight or a timing verdict. Final natural boss excerpts and all12cat recordings remain required.
