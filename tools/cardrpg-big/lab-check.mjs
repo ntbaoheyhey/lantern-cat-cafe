@@ -27,12 +27,23 @@ try {
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     const drawer = page.getByRole('region', { name: 'Feel lab', exact: true });
     const capture = async name => {
+      await drawer.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
       if (name === 'gallery-home' || name === 'performance') {
         await page.waitForFunction(() => {
           const scene = window.__depthPreviewScene;
           return scene?.ready && scene.stats.frames > 0 && scene.stats.calls > 0 && scene.stats.triangles > 0;
         }, null, { timeout: 120000 });
       }
+      if (name === 'gallery-effect' || name === 'gallery-stage') {
+        await page.waitForFunction(() => {
+          const scene = window.__depthScene;
+          const model = window.__depthReview;
+          return scene?.ready && scene.stats.frames > 0 && scene.stats.calls > 0
+            && scene.stats.triangles > 0
+            && model.battle.actors.every(actor => scene.puppets.get(actor.id)?.asset === actor.catalogId);
+        }, null, { timeout: 120000 });
+      }
+      await page.waitForTimeout(180);
       const layout = await drawer.evaluate(element => {
         const bounds = element.getBoundingClientRect();
         const body = element.querySelector('.dp-lab-body');
@@ -77,7 +88,12 @@ try {
       }
       const path = `${output}/${width}-${name}.png`;
       await page.screenshot({ path });
-      captures.push({ name, path, layout, controls });
+      const scene = await page.evaluate(() => {
+        const scene = window.__depthScene;
+        return scene ? { ready: scene.ready, frames: scene.stats.frames, calls: scene.stats.calls,
+          triangles: scene.stats.triangles, loaded: scene.stats.loaded } : null;
+      });
+      captures.push({ name, path, layout, controls, scene });
     };
     await capture('gallery-home');
     await drawer.getByRole('button', { name: 'Before / after', exact: true }).click();
@@ -108,6 +124,11 @@ try {
     });
     assert(Math.abs(preview.ratio - .999) < 1e-9);
     assert.deepEqual({ ...preview, ratio: .999 }, { id: 'clover-4', ratio: .999, speed: .25, camera: 'far', effectOnly: true });
+    const scrubber = drawer.getByRole('slider', { name: 'Action progress', exact: true });
+    const scrubberBounds = await scrubber.boundingBox();
+    await scrubber.click({ position: { x: scrubberBounds.width * .55, y: scrubberBounds.height / 2 } });
+    await capture('gallery-effect');
+    await drawer.getByLabel('Effect only', { exact: true }).uncheck();
     await capture('gallery-stage');
     await drawer.getByRole('button', { name: 'Play preview', exact: true }).click();
     await page.waitForFunction(() => window.__depthReview.plan === null, null, { timeout: 20000 });

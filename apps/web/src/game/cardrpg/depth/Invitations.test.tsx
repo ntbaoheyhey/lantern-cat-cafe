@@ -1,12 +1,13 @@
 // @vitest-environment jsdom
 import { afterEach, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
-import { CARDS, emptyPity } from '@taskbar-hero/game-rules/cardrpg';
+import { BANNERS, CARDS, emptyPity } from '@taskbar-hero/game-rules/cardrpg';
 import { GEAR_BY_ID } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { DepthModel } from './model';
 import { Invitations } from './Invitations';
 
-vi.mock('./CompanionPreview', () => ({ CompanionPreview: ({ id }: { id: string }) => <div>Model preview {id}</div> }));
+vi.mock('./CompanionPreview', () => ({ CompanionPreview: ({ id, entranceKey }: { id: string; entranceKey?: string }) =>
+  <div data-testid="invitation-miniature" data-entrance={entranceKey}>Model preview {id}</div> }));
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 function paidAccount() {
@@ -145,6 +146,43 @@ it('retains the featured miniature while the card ceremony hides it', () => {
   expect(miniature.closest('[hidden]')).toBeNull();
 });
 
+it('reuses the miniature for a legendary entrance, then restores the banner preview', () => {
+  vi.useFakeTimers();
+  const model = paidAccount();
+  model.state.account.pity['cats-featured'] = { ...emptyPity(), sinceLegendary: 59, featuredGuaranteed: true };
+  render(<Invitations m={model} />);
+  fireEvent.click(screen.getByRole('button', { name: 'Marigold at Closing Time' }));
+  const miniature = screen.getByTestId('invitation-miniature');
+  fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
+  expect(miniature.closest('[hidden]')).toBeTruthy();
+  act(() => vi.advanceTimersByTime(550));
+  act(() => vi.advanceTimersByTime(500));
+  expect(screen.getByTestId('invitation-miniature')).toBe(miniature);
+  expect(miniature.getAttribute('data-entrance')).toBe(`featured-${model.state.account.history[0]!.index}`);
+  expect(miniature.closest('[hidden]')).toBeNull();
+  const committed = structuredClone(model.state);
+  fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
+  expect(screen.getByTestId('invitation-miniature')).toBe(miniature);
+  expect(miniature.getAttribute('data-entrance')).toBeNull();
+  expect(model.state).toEqual(committed);
+});
+
+it('keeps published odds, earned cost, pity and the latest result together', () => {
+  const model = paidAccount();
+  model.state.settings.reducedMotion = true;
+  render(<Invitations m={model} />);
+  const fairness = within(screen.getByRole('region', { name: 'Invitation fairness' }));
+  expect(fairness.getByText('Base odds')).toBeTruthy();
+  expect(fairness.getByText(`legendary ${BANNERS[0]!.oddsBp.legendary / 100}%`)).toBeTruthy();
+  expect(fairness.getByText(/150 stamps each.*Earn stamps from cafe service/)).toBeTruthy();
+  expect(fairness.getByText('Legendary guaranteed in 60')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
+  expect(fairness.getByRole('link').getAttribute('href')).toBe('#invitation-history');
+  expect(fairness.getByRole('link').textContent).toContain('Latest');
+  expect(fairness.getByRole('link').textContent).toContain('View history (1)');
+  expect(screen.getByTestId('invitation-miniature').getAttribute('data-entrance')).toBeNull();
+});
+
 it.each(['funds', 'daily-cap', 'active-route'])('disables invitations at the %s boundary', boundary => {
   const model = paidAccount();
   if (boundary === 'funds') model.state.account.currencies.stamps = 149;
@@ -158,4 +196,24 @@ it.each(['funds', 'daily-cap', 'active-route'])('disables invitations at the %s 
   expect(ten.disabled).toBe(true);
   fireEvent.click(once);
   expect(model.state).toEqual(before);
+});
+
+
+it('brings the ceremony below the visible fairness summary once per pull', () => {
+  vi.useFakeTimers();
+  const model = paidAccount();
+  render(<Invitations m={model} />);
+  const fairness = screen.getByRole('region', { name: 'Invitation fairness' });
+  const stage = screen.getByRole('region', { name: 'Invitation reveal' });
+  Object.defineProperty(fairness, 'offsetHeight', { value: 130 });
+  const scroll = vi.fn();
+  stage.scrollIntoView = scroll;
+  fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
+  expect(stage.style.scrollMarginTop).toBe('142px');
+  expect(scroll).toHaveBeenCalledWith({ block: 'start', behavior: 'instant' });
+  act(() => vi.advanceTimersByTime(550));
+  act(() => vi.advanceTimersByTime(500));
+  expect(scroll).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
+  expect(scroll).toHaveBeenCalledTimes(1);
 });
