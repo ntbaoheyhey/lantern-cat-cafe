@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T20:44:12.144Z",
+  "generatedAt": "2026-11-06T21:05:43.534Z",
   "method": "Computed directly from phase raw receipts. Null means unmeasured or unavailable. Cold/visual/matrix artifacts remain separately identified; successful earlier builds do not certify the delivered HTML.",
   "rows": [
     {
@@ -34,7 +34,191 @@
         "triangles": 93802,
         "castFramesAbove50": 0,
         "errors": [],
-        "castGate": false
+        "castGate": false,
+        "castGateDefinition": "Stricter diagnostic: every individual first/repeat cast must itself have 99% of frames <=20ms. This is distinct from the inherited per-configuration aggregate used in the phase report.",
+        "configurationCastWindows": [
+          {
+            "configuration": "1280/720/1/1/medium",
+            "use": "first",
+            "frames": 5393,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/1/1/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/2/1/medium",
+            "use": "first",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/2/1/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/1/1/medium",
+            "use": "first",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/1/1/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/2/1/medium",
+            "use": "first",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/2/1/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/1/4/medium",
+            "use": "first",
+            "frames": 5396,
+            "within20": 0.9998146775389177,
+            "max": 33.30000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/1/4/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/2/4/medium",
+            "use": "first",
+            "frames": 5403,
+            "within20": 0.9998149176383491,
+            "max": 33.400000000001455,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/2/4/medium",
+            "use": "repeat",
+            "frames": 5403,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/1/4/medium",
+            "use": "first",
+            "frames": 5401,
+            "within20": 0.9998148491020181,
+            "max": 33.29999999999927,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/1/4/medium",
+            "use": "repeat",
+            "frames": 5395,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/2/4/medium",
+            "use": "first",
+            "frames": 5395,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1440/900/2/4/medium",
+            "use": "repeat",
+            "frames": 5398,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "1280/720/1/1/low",
+            "use": "first",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 203,
+            "triangles": 93794
+          },
+          {
+            "configuration": "1280/720/1/1/low",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 203,
+            "triangles": 93794
+          },
+          {
+            "configuration": "2560/1440/1/1/medium",
+            "use": "first",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          },
+          {
+            "configuration": "2560/1440/1/1/medium",
+            "use": "repeat",
+            "frames": 5392,
+            "within20": 1,
+            "max": 16.80000000000109,
+            "draws": 207,
+            "triangles": 93802
+          }
+        ],
+        "inheritedConfigurationCastGate": true
       },
       "motion": null,
       "effects": null,
@@ -204,7 +388,16 @@
     },
     {
       "phase": "B4",
-      "cold": null,
+      "cold": {
+        "source": "b4/cold/summary.json",
+        "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f",
+        "scenarios": 7,
+        "pageMax": 183.29999999999973,
+        "p95Worst": 16.80000000000291,
+        "postInteractiveMax": 166.5,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
       "matrix": null,
       "motion": null,
       "effects": null,
@@ -212,10 +405,34 @@
     },
     {
       "phase": "e1",
-      "cold": null,
+      "cold": {
+        "source": "enemies/e1/cold/summary.json",
+        "sha256": "ca797d87a29beb0a4ffc8b89535d2c22f686e88927efcc8533e07c5f04e19b40",
+        "scenarios": 7,
+        "pageMax": 116.70000000000005,
+        "p95Worst": 16.799999999999272,
+        "postInteractiveMax": 100,
+        "errors": [],
+        "note": "Cold sample only, never a full-roster cast verdict."
+      },
       "matrix": null,
-      "motion": null,
-      "effects": null,
+      "motion": {
+        "source": "enemies/e1/motion/variety.json",
+        "clips": 6,
+        "requiredPairs": 15,
+        "offenders": 0,
+        "errors": [],
+        "note": "Trajectory distinction, not an art-quality score."
+      },
+      "effects": {
+        "source": "enemies/e1/effects/uniqueness.json",
+        "recipes": 76,
+        "pairs": 2850,
+        "offenders": 0,
+        "faceOffenders": 0,
+        "errors": [],
+        "note": "Declared grayscale/edge threshold, not semantic identity proof."
+      },
       "lifecycle": null
     },
     {

@@ -38,7 +38,7 @@ The seven-case cold run and the exhaustive fresh-page matrix are separate sample
 | CPU4 p95 ≤33 ms | 16.8 ms cold | 16.8 ms cold; worst matrix case 33.3 ms | MISS strict 33 ms by 0.3 ms |
 | After first hub interaction MAX ≤100 ms | Not separated | 83.4 ms in seven-case cold sample | Sample PASS; explicit matrix window pending |
 | Cast MAX ≤50 ms | Inherited first 33.4 / repeat 16.8 ms | First 33.4 / repeat 16.8 ms | B1 PASS, 720 cases |
-| 99% cast frames ≤20 ms, DPR1/2 | Inherited receipts | ≥99.9814% within each configuration | B1 PASS; per-case values retained |
+| 99% cast frames ≤20 ms, DPR1/2 | Inherited receipts | ≥99.9814% per configuration; worst single cast98.7654% | B1 PASS; per-case values retained |
 | ≤250 draws / ≤150k triangles | Inherited 207 / 93,802 | B1 207 / 93,802; final roster pending | B1 PASS |
 | 20 natural replays: flat heap/GPU | Not measured here | +1,088,932 retained bytes; geometry/texture/program growth 0/0/0 | B1 PASS at 2 MiB heap tolerance |
 | Load to interaction / battle ready | Raw baseline | Hub 924–936 ms native, 1716–1724 ms CPU4; battle ready 6540–6572 / 8332–8353 ms | Reported, not hidden in cast time |

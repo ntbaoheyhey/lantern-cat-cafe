@@ -37,6 +37,14 @@ for (const [phase, directory, coldName, skillName] of phases) {
     && cases.every(r => r.casts?.length === 2
       && ['first', 'repeat'].every(use => r.casts.filter(c => c.use === use).length === 1));
   const timing = casts.map(c => c.summary);
+  const configurationCastWindows = [...configurations].flatMap(([configuration, group]) =>
+    ['first', 'repeat'].map(use => {
+      const windows = group.flatMap(r => r.casts ?? []).filter(c => c.use === use).map(c => c.summary);
+      const frames = windows.reduce((sum, c) => sum + c.frames, 0);
+      const within20 = windows.reduce((sum, c) => sum + Math.round(c.frames * c.within20), 0);
+      return { configuration, use, frames, within20: frames ? within20 / frames : null,
+        max: maximum(windows.map(c => c.max)), draws: maximum(windows.map(c => c.calls)), triangles: maximum(windows.map(c => c.triangles)) };
+    }));
   const errors = cases.flatMap(r => r.errors ?? []);
   const motion = await read(`${directory}/motion/variety.json`);
   const effects = await read(`${directory}/effects/uniqueness.json`);
@@ -58,6 +66,9 @@ for (const [phase, directory, coldName, skillName] of phases) {
       draws: maximum(timing.map(c => c.calls)), triangles: maximum(timing.map(c => c.triangles)),
       castFramesAbove50: timing.reduce((sum, c) => sum + c.above50, 0), errors,
       castGate: complete ? timing.every(c => c.max <= 50 && c.within20 >= .99 && c.calls <= 250 && c.triangles <= 150000) && !errors.length : null,
+      castGateDefinition: 'Stricter diagnostic: every individual first/repeat cast must itself have 99% of frames <=20ms. This is distinct from the inherited per-configuration aggregate used in the phase report.',
+      configurationCastWindows,
+      inheritedConfigurationCastGate: complete ? configurationCastWindows.every(c => c.frames > 0 && c.within20 >= .99 && c.max <= 50 && c.draws <= 250 && c.triangles <= 150000) && !errors.length : null,
     } : null,
     motion: motion ? { source: `${directory}/motion/variety.json`, clips: motion.rows.length,
       requiredPairs: motion.pairs.filter(p => p.required).length, offenders: motion.offenders.length,
