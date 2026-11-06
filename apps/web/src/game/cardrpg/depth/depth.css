@@ -33,6 +33,14 @@
 .dp-cat-result progress { width: 100%; height: 8px; accent-color: #a6c9b1; }
 
 /* The battlefield owns the centre. Status strips reserve their own space. */
+.dp-skill-summary img { width: 44px; height: 44px; object-fit: contain; }
+.dp-crop-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 16px; }
+.dp-crop-grid article { min-width: 0; padding: 12px; border: 1px solid #685468; border-radius: 8px; }
+.dp-crop-pair { display: flex; gap: 12px; align-items: start; }
+.dp-crop-pair figure { margin: 0; min-width: 0; flex: 1; }
+.dp-crop-pair img { max-width: 100%; height: auto; object-fit: contain; }
+.dp-crop-pair figcaption { margin-top: 6px; font-size: 11px; }
+.dp-sharpness summary { padding-block: 10px; cursor: pointer; }
 .dp-battle-top { height: 48px; box-sizing: border-box; padding: 5px 16px; gap: 9px; }
 .dp-app .dp-battle-top h1 { display: inline; font-size: 17px; margin-left: 10px; }
 .dp-battle-top > div:first-child { white-space: nowrap; }

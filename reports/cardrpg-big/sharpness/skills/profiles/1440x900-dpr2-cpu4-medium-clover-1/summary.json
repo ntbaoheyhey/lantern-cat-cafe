@@ -1,0 +1,160 @@
+{
+  "artifact": "/tmp/cardrpg-big-f2-index.html",
+  "sha256": "0394611aca99d6999cf4e1dc4bdaa0113703670052e9ae76aa8ffd795ef51879",
+  "started": "2026-11-06T08:53:22.628Z",
+  "rows": [
+    {
+      "name": "1440x900-dpr2-cpu4-medium-clover-1",
+      "action": {
+        "id": "clover-1",
+        "owner": "clover",
+        "name": "Clover · Leaf tap",
+        "ultimate": false,
+        "enemy": false
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 2,
+      "cpu": 4,
+      "quality": "medium",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1118,
+          "before": {
+            "at": 4381.20000000298,
+            "frames": 4,
+            "calls": 187,
+            "triangles": 72636,
+            "geometries": 573,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3762352,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 573,
+              "textures": 120
+            },
+            "heap": 31521516,
+            "heapDetail": {
+              "usedSize": 31521516,
+              "totalSize": 60719104,
+              "embedderHeapUsedSize": 5066688,
+              "backingStorageSize": 45633486
+            }
+          },
+          "after": {
+            "at": 5491.79999999702,
+            "frames": 71,
+            "calls": 189,
+            "triangles": 72796,
+            "geometries": 575,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3574580,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 575,
+              "textures": 120
+            },
+            "heap": 47637228,
+            "heapDetail": {
+              "usedSize": 47637228,
+              "totalSize": 66224128,
+              "embedderHeapUsedSize": 5256184,
+              "backingStorageSize": 45633510
+            }
+          },
+          "summary": {
+            "frames": 67,
+            "max": 33.399999999999636,
+            "p95": 16.800000000000182,
+            "above25": 1,
+            "above50": 0,
+            "within20": 0.9850746268656716,
+            "calls": 190,
+            "triangles": 72796,
+            "particles": 0
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1118,
+          "before": {
+            "at": 5493.600000008941,
+            "frames": 71,
+            "calls": 189,
+            "triangles": 72796,
+            "geometries": 575,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3574580,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 575,
+              "textures": 120
+            },
+            "heap": 47647492,
+            "heapDetail": {
+              "usedSize": 47647492,
+              "totalSize": 66224128,
+              "embedderHeapUsedSize": 5256184,
+              "backingStorageSize": 45633510
+            }
+          },
+          "after": {
+            "at": 6625.100000008941,
+            "frames": 139,
+            "calls": 189,
+            "triangles": 72796,
+            "geometries": 575,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3574580,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 575,
+              "textures": 120
+            },
+            "heap": 34465680,
+            "heapDetail": {
+              "usedSize": 34465680,
+              "totalSize": 73302016,
+              "embedderHeapUsedSize": 5312312,
+              "backingStorageSize": 45633510
+            }
+          },
+          "summary": {
+            "frames": 68,
+            "max": 16.800000000000182,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 190,
+            "triangles": 72796,
+            "particles": 0
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 327,
+        "max": 316.60000000000036,
+        "p95": 16.800000000000182,
+        "above25": 13,
+        "above50": 7,
+        "within20": 0.9602446483180428
+      }
+    }
+  ],
+  "ended": "2026-11-06T08:53:31.363Z"
+}

@@ -1,8 +1,10 @@
-# Progress · 6 November 2026, 13:19 local
-REFERENCE: memory/PROMPT.md, memory/STATE.md, auto/PERFORMANCE.md, layout/PLAN.md
+# Progress · 6 November 2026, 14:59 local
+REFERENCE: memory/PROMPT.md, memory/STATE.md, sharpness/GATES.md, sharpness/PERFORMANCE.md
 
-A automatic battle is validated and published as draft #334. Its complete 610-case matrix has 1,220 casts and 131,670 raw frames. First/repeat MAX is 33.4/16.8ms, with 32/0 frames above 25ms and zero above 50ms. Page-session MAX is 1616.6ms. Seven isolated cold scenarios and five top-offender profiles are complete. Two profiles reproduce first-window fixture/render intervals. Opening decode/compile hitches remain a recorded failure.
+F0, automatic battle A and layout F1 are published as stacked drafts333–335. F1 has610 cases and five profiles, with cast MAX33.4/16.8ms and page MAX1583.3ms. Its layout audit covers2745 poses with zero overlaps or clipping, but the hero24–30% scale band is missed in some action bounds.
 
-F1 source implements reserved HUD strips, model-anchored enemy plates, three camera presets, formation rows, damped/clamped head gaze and three chapter stages. Initial 405 pose samples give zero HUD/body overlaps, missing plates, cropped figures or prop-face occlusions. Face angles stay within 55 degrees. Stage height is 568/720px. Medium camera starts at 131–148px hero height, closer at 146–165px. A 254-call peak prompted merging static stage decorations by material. Full all-skill pose validation is now running, followed by hitch measurements.
+F2 passes typecheck, lint, build,1646 web units,903 rules units and421 E2E. Six DPR/resize checks and40 portrait/expression renders pass. Ten before/after crop pairs are embedded. Only2/10 reach the40% metric target and the eight misses remain disclosed. The HTML is15952212 bytes and models total15650856 bytes.
 
-The source remains on the requested branch. F1 code is local until its validation and timing gates. Next are F2 sharpness and the Mochi/Soot/Clover chapter-1 motion/effects slice. The hourly recovery request remains blocked by the current session scheduling constraint. Checkpoints remain the recovery mechanism.
+Streamed offline decoding reduces captured CPU4 MAX to283.3/283.4ms. Capture-disabled cold runs reach333.4/416.7ms. The marked1440 DPR2 trace ties466.6–483.4ms gaps to screenshot windows, with the main thread idle. All raw arrays and traces remain in the report. The full-session hitch gate still fails.
+
+Next comes the frozen F2 610-case matrix and startup work, followed by the Mochi/Soot/Clover chapter1 motion/effect slice. The renewed hourly recovery script remains uncreated under the session scheduling restriction. Durable repository checkpoints carry the continuation state.

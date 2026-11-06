@@ -1,0 +1,480 @@
+{
+  "tool": "Three.js / Chromium ANGLE Metal, native WebP quality .94",
+  "command": "node tools/cardrpg-big/portraits.mjs",
+  "externalReferences": [],
+  "license": "CC0-1.0",
+  "parameters": {
+    "cssSize": [
+      400,
+      480
+    ],
+    "pixelRatio": 2,
+    "exposure": 1.18,
+    "camera": [
+      0,
+      1.7,
+      5.8
+    ],
+    "facing": 0.2
+  },
+  "sources": [
+    {
+      "path": "tools/cardrpg-big/portrait.html",
+      "sha256": "b7d3ca6816a15ff5746a890e7922d715452b3842cd7a55c262de384eeda85123"
+    },
+    {
+      "path": "tools/cardrpg-big/portraits.mjs",
+      "sha256": "e1f01c36cf6d916de14d1e8b39967a23a9ede12bc643d932076534e18fdcb79d"
+    },
+    {
+      "path": "apps/web/src/game/squad/turn3d/card-face.ts",
+      "sha256": "553b27e0991dc2de6f745d0fb407384bc05148b182fc27efecfb166cc7764cb4"
+    },
+    {
+      "path": "apps/web/src/game/squad/turn3d/card-surfaces.ts",
+      "sha256": "ab75cbbb08d3ffd762b3bbb46d340a25bb13276f7af77f84159fcfc06dac9944"
+    }
+  ],
+  "assets": [
+    {
+      "id": "mochi",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/mochi.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 33284,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "f9feae0025d4e17cd1063a3ab42450a99fcfea8e4ebb1024b18c6ce5eae1dbef"
+    },
+    {
+      "id": "mochi",
+      "expression": "happy",
+      "path": "reports/cardrpg-big/sharpness/expressions/mochi-happy.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 32890,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "6b2bcd2ec70d558f16a1bdfe53d3c6a1089e4f83e1f10f0a42157712a0a0a974"
+    },
+    {
+      "id": "mochi",
+      "expression": "hurt",
+      "path": "reports/cardrpg-big/sharpness/expressions/mochi-hurt.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 32180,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "ae6ecec2be368b01674489a1aa276b5e3b37f459286332f88d09ce083e7cedbb"
+    },
+    {
+      "id": "mochi",
+      "expression": "determined",
+      "path": "reports/cardrpg-big/sharpness/expressions/mochi-determined.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 32980,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "345b56adfc39dbf4c3a550d67794cdaa78ab3d4006099d10fac5be41f707f9e7"
+    },
+    {
+      "id": "mochi",
+      "expression": "casting",
+      "path": "reports/cardrpg-big/sharpness/expressions/mochi-casting.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 33404,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "53971f41d3682d055913fab6708f9b8cba9d62334e921c50131771b1520104a5"
+    },
+    {
+      "id": "mochi",
+      "expression": "KO",
+      "path": "reports/cardrpg-big/sharpness/expressions/mochi-KO.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17600,
+      "bytes": 31470,
+      "modelSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "sha256": "3b4ffd99b0bdc87f9c858c209e31a811eb321722d6aed280bb1f833cb21f3ed9"
+    },
+    {
+      "id": "soot",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/soot.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 30856,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "7099374d20de8b5204e3014770e620f50cbbb6d6164132c1d3f8e17601157276"
+    },
+    {
+      "id": "soot",
+      "expression": "happy",
+      "path": "reports/cardrpg-big/sharpness/expressions/soot-happy.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 30656,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "c582ae92eb46d1852f86fd852f667dd1b1eb97c356c772714e247b873fc7c35b"
+    },
+    {
+      "id": "soot",
+      "expression": "hurt",
+      "path": "reports/cardrpg-big/sharpness/expressions/soot-hurt.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 30308,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "74fb70db032fcd7eee16e4f92a9f29e5ff58f5a6fab175dc1ffa35d9274ace69"
+    },
+    {
+      "id": "soot",
+      "expression": "determined",
+      "path": "reports/cardrpg-big/sharpness/expressions/soot-determined.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 30750,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "0c71096ba77b634c275b8223f2fafde6b337c9ad1bf42c080a40baac83ab30ef"
+    },
+    {
+      "id": "soot",
+      "expression": "casting",
+      "path": "reports/cardrpg-big/sharpness/expressions/soot-casting.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 31148,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "2b1388fc588382eb69d7ab54ae3d12544c9957d7f85ed54a2cdad600bd62f73e"
+    },
+    {
+      "id": "soot",
+      "expression": "KO",
+      "path": "reports/cardrpg-big/sharpness/expressions/soot-KO.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 18094,
+      "bytes": 29876,
+      "modelSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "sha256": "7ed6fa73bdaf354039405606606f1e91cdb6bc64b0787b801bd6df228930c77d"
+    },
+    {
+      "id": "clover",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/clover.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 26230,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "3dab551cf951ca19b69161f336cb8cff9049a3e270f228cd15c943497cae6c5f"
+    },
+    {
+      "id": "clover",
+      "expression": "happy",
+      "path": "reports/cardrpg-big/sharpness/expressions/clover-happy.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 25482,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "e21498f33006cd7509b9ae227e6cf4f780c4df44e7a3a94a35397332f3ea70b7"
+    },
+    {
+      "id": "clover",
+      "expression": "hurt",
+      "path": "reports/cardrpg-big/sharpness/expressions/clover-hurt.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 24852,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "b0276133bfccabee6187b5e9805d4c487cee25f5d40b2ae4197ea287b3c530ad"
+    },
+    {
+      "id": "clover",
+      "expression": "determined",
+      "path": "reports/cardrpg-big/sharpness/expressions/clover-determined.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 25676,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "2613c3e970e8a693a65ad01e65ff7f0018ad3ed19deb95abc93047e4bf8a8626"
+    },
+    {
+      "id": "clover",
+      "expression": "casting",
+      "path": "reports/cardrpg-big/sharpness/expressions/clover-casting.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 26196,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "fa0b982c39ace570b274c285476a49901efb073dcea01bee45dd0431238db616"
+    },
+    {
+      "id": "clover",
+      "expression": "KO",
+      "path": "reports/cardrpg-big/sharpness/expressions/clover-KO.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16426,
+      "bytes": 24108,
+      "modelSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "sha256": "4fba5ca94a9d6235a0c38f8264faf5cd8bd46bb9f96b258f46c5368e0d3b9be3"
+    },
+    {
+      "id": "panko",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/panko.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 15198,
+      "bytes": 26138,
+      "modelSha256": "74127ecfce48c817deba33fbe83a7d4bc0f1e9f406bf6a25189a5e3918cf9e5a",
+      "sha256": "b591ebf9ee10dc1d58a711ff5baa5694b0440686d3be2f231f0f8ee4d9611d1d"
+    },
+    {
+      "id": "mallow",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/mallow.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 15194,
+      "bytes": 25142,
+      "modelSha256": "7a4148e196c6edec328080d6eadca6939f460a3009dd0dfc08daac6439553e05",
+      "sha256": "e8069d4c8d542e7124ca111435f6fa8fc600e84879d35016278643e7fdfcb96b"
+    },
+    {
+      "id": "sorrel",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/sorrel.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16592,
+      "bytes": 33824,
+      "modelSha256": "ba9fbd068f80a6e534af557aa1a33da92115cb8a5d23048104fa757d44b90d5d",
+      "sha256": "20472f0760286f442a6c9b7f3a5d8ff90bb39f7f648d39f2d8932b89354e79d5"
+    },
+    {
+      "id": "biscuit",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/biscuit.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 14878,
+      "bytes": 27942,
+      "modelSha256": "967bb55ad745b333d5afb0405df86b7d2c6530cefa5f8c854c72f0ea11a713f5",
+      "sha256": "60a0f5a53cb42db54ca69de62bbeefd100d253ec3ffa7701ec33fb01436a5731"
+    },
+    {
+      "id": "inkcap",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/inkcap.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 15818,
+      "bytes": 18240,
+      "modelSha256": "196d80fd47c708def37265045ebdcd104e09a44064525d4f9bedb19e27191660",
+      "sha256": "df70ee7e28086ade760dff17fe5b7d724b98020e7ccb78d55b00a95b42c15653"
+    },
+    {
+      "id": "cinnamon",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/cinnamon.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 16538,
+      "bytes": 30910,
+      "modelSha256": "c33e933ffcc6c0f818b5c15b31387dd7a2f0f64ee3e6627197cf75b7c1db1c3d",
+      "sha256": "5799ec5a45d9bd80397fa591fd63077e39adf1d9648d1f42f2fba71f3937b4f8"
+    },
+    {
+      "id": "brioche",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/brioche.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 15488,
+      "bytes": 29906,
+      "modelSha256": "d554d8e8946cfea368bdafe611a6351e66dd5329a983d08b4a458a3c090712ad",
+      "sha256": "9cfa5287b28cd9e028ccaad02533a6d406e2923fe01003ba7e3994059d035314"
+    },
+    {
+      "id": "velvet",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/velvet.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 14862,
+      "bytes": 25522,
+      "modelSha256": "bebc3f14363a99c4f71c631093a04a1c5c7e940224044037ec93285278a74f7b",
+      "sha256": "b2c9d36fc83e4bfa7823a0f9462e33a9313b135f85520e81afe66bd4461747c6"
+    },
+    {
+      "id": "marigold",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/marigold.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 17192,
+      "bytes": 30110,
+      "modelSha256": "c937fdd0263d39a572c3448cbb1adf7e04fc87d1e0c674e226fab5245d7ba8a6",
+      "sha256": "b87c6e572eae677aa11b44ec64d05b4615dafc44ed4fdd32da6e19ebe2cd38de"
+    },
+    {
+      "id": "button-guard",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/button-guard.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 4564,
+      "bytes": 27044,
+      "modelSha256": "f8373d6882e09b7fe487d7ed8472098f24e0be903ae1232d9c9031a7eb52c619",
+      "sha256": "fbacc2b2889d3bb7ee564983ed8d599b975c0f9c2f6d6ce53a90701c00617471"
+    },
+    {
+      "id": "sock-skipper",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/sock-skipper.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 3724,
+      "bytes": 19402,
+      "modelSha256": "8457f9df0dd3269e261381b7eb76151d78a5887b44c159d7827debe4d99cc8ae",
+      "sha256": "ab4ae58c359b9df1fc58138b198969468757b55d6e7b55a925d74fad27e10515"
+    },
+    {
+      "id": "spool-ram",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/spool-ram.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 4414,
+      "bytes": 29510,
+      "modelSha256": "9d7434b5aea300e92a55616c7197f4311283e0a1d96cdf6bd2b4b67de332a620",
+      "sha256": "e2190de9b1bfaa69e86cf67bfd64745120a7cbbf8d20c0e200a48d89f33bf79d"
+    },
+    {
+      "id": "needle-moth",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/needle-moth.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 5164,
+      "bytes": 32170,
+      "modelSha256": "11335b8e194ade91ba990898d41b66472dd1749daf8cb98a91628c4c905b600a",
+      "sha256": "4e6567a0c1fdc7f421ae301509a10f5db598e03ce71ad43fc9e817404cd3f5f2"
+    },
+    {
+      "id": "teacup-healer",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/teacup-healer.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 4708,
+      "bytes": 20624,
+      "modelSha256": "42ac6bb3fe40521580d41a520576af39fea513d81dcb457d252065d6079b0e5f",
+      "sha256": "9178f824daafb377e21d01e6f8293caddeddfd5aa8888f2567cd507907c61057"
+    },
+    {
+      "id": "kettle-knight",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/kettle-knight.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 6032,
+      "bytes": 27006,
+      "modelSha256": "3fd9b7b4a2a1e73bb4fdce82127ea690842683764c685f486ac0e594360b0c1d",
+      "sha256": "88019ab667bc0bf068f8831d2f5c17b9f0db361941cb64a730bc194318aa15af"
+    },
+    {
+      "id": "yarn-giant",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/yarn-giant.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 20050,
+      "bytes": 92858,
+      "modelSha256": "33357b16bf8a476001f8589cb3745c95d4545866e786fe9e3d57343c3f71d444",
+      "sha256": "d9208eaac639fb415fb713bef5f3bd52870143a45e25789b1fd6a1cef517442b"
+    },
+    {
+      "id": "binding-thread",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/binding-thread.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 6416,
+      "bytes": 28228,
+      "modelSha256": "2ade57ef05fde5db22d86246d018679aa008aacb9c7676079b427b29d3a07262",
+      "sha256": "f756ce7cd0883a55a1e620516d56cce63fff54420235bc078ca503d43458806c"
+    },
+    {
+      "id": "practice-cushion",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/practice-cushion.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 5628,
+      "bytes": 22908,
+      "modelSha256": "27c617005cad3b588181b6e9af568690e4393d40f50dfa8121a9122b1e9a9554",
+      "sha256": "fac99dbeee992a3fffa0b227de5f7f36595c240ca9a5861986408cd289f5a23a"
+    },
+    {
+      "id": "pollen-scout",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/pollen-scout.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 5348,
+      "bytes": 30376,
+      "modelSha256": "5fcbdbbf83011c75aabc39b7fe9488d27ebb08e1aaccc94823e45583a6bbdc4a",
+      "sha256": "b0d8f14a8f9612740279c73529c37d9f36ad283e10e0f403cd08e0804e87a258"
+    },
+    {
+      "id": "rain-spool",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/rain-spool.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 4582,
+      "bytes": 35862,
+      "modelSha256": "42cbebadd578bd1e01327e1e7977619c91f5a088796e92a83018fdc160ac1769",
+      "sha256": "b94ff29c48422da50d1dc90040c3b725084f65e4c3a0a8e3aae10b6fe75ba985"
+    },
+    {
+      "id": "crumb-sentinel",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/crumb-sentinel.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 4672,
+      "bytes": 29134,
+      "modelSha256": "8203bfe37601513442b8dca7feb177b533228fdd8c5a588e4163182b02247418",
+      "sha256": "fd202af761b5690e0664fba7dcc3d8d43f61bfa7b61679fc821a80c14d819d77"
+    },
+    {
+      "id": "pantry-crown",
+      "expression": "idle",
+      "path": "assets/cardrpg3/portraits/pantry-crown.webp",
+      "width": 800,
+      "height": 960,
+      "triangles": 20210,
+      "bytes": 84958,
+      "modelSha256": "544fc8d17e8e3cf4dbe819968537bd6b92d60e8e1afe12c15fdffe83c3168433",
+      "sha256": "4725dc56f5e47a1a62e5bf11b8b156f007c19b94408c85a2cf88ab87958a783b"
+    }
+  ]
+}
