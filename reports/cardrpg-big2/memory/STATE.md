@@ -3,7 +3,7 @@ PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa0633
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
 Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
-E2 published f166e0f3. Audio sink comparison rejected (constructor130.4–132.4ms); gallery fix93523 pending. E3waiter89899 resumed; downstream pinned queues unchanged. Lossless demo pack9c3cdecb reduces24,153,004→21,045,365bytes;17images exactRGBA/dimensions. Browserpixel94756 waits gallery93523; media-prime93703 waits94756. Sourcevalidation81206 runs nice10(typecheck/demoTS/lint passed).
+E2 published f166e0f3. Audio sink comparison rejected (constructor130.4–132.4ms); gallery fix93523 pending. E3waiter89899 resumed; downstream pinned queues unchanged. Lossless demo pack9c3cdecb reduces24,153,004→21,045,365bytes;17images exactRGBA/dimensions. Browserpixel94756 waits gallery93523; media-prime93703 waits94756. Pack-source fiveCPUchecksPASS1698web/935rules. Newgallerysound40a60403 hasdemoTSPASS; notyetrebuilt/pinned.
 No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
 ## NEXT
 1. Verify lossless demo pack in Pillow and browser, record size; inspect gallery fix93523. Commit/pin accepted review only after remaining roster captures; no duplicate queues.
@@ -91,3 +91,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Recovery21:30Z: read Bprompt/RULES/STATE/Aoutbox and basebrief; noagents. Rejected silent AudioContext sink: first130.4–132.4ms andRAF133.3–133.4ms, setSinkId1.8–5.6ms. Retain rawsixruns; noaudio runtimepatch. B6packclaimed ownbuilder/newpacker to test losslessWebP exactRGBA against PNG assets; source images untouched.
 
 - 21:34Z: B6pack candidate74d0d861 pinned /tmp/cardrpg-big2-lossless-pack-{index.html,build.json}, fileexactRGBA17/17PASS, nativeimagesunchanged. Newaudio diagnostic667fdecd primes audio service using silentHTMLMedia afterrealclick beforeunchangedWebAudio; queuedafter94756, no runtimepatch. RequestedBfunctionalwindow afteractiveA95219; E3/E4/boss/delivery/hitstop/flagoff/matrixqueues unchanged.
+
+- 21:37Z: sourceaudit8132a0e3 fixed ENOBUFS for14,133pathdiff via32MiBbuffer; protectedchanges0/rules4allauto-extras/4immutablehashesidentical. BothA-approved gallery/testfiles recorded. pack-sourceCPUfivechecksPASS1698web/935rules+inherited2expectedfail/11skip; E2E onlyinlockedpipeline. GallerysilentbyhiddenBattlecontrols fixed40a60403 with explicitsound/volume; finalstudio expectscontrols onlyunderBIG_STUDIO_EXPECT_SOUND=1 sooldpinned deliveryqueue remainsvalid.
