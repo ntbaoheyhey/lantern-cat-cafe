@@ -19,12 +19,12 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
-| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; all 12 cats rendered, opponents pending |
+| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; all 12 cats and first six opponents rendered; later opponents pending |
 | Blurry images | Review studio → Before / after → Sharpness | 2/10 cumulative targets pass; eight misses and crop limitations retained |
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
 | Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
-| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate comparison queued |
+| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate change rejected in six fresh browsers; asynchronous-output comparison queued |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
 ## Measurements and gates
@@ -51,7 +51,7 @@ Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance
 ## Unit coverage
 REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
 
-All nine nonstarter cats have rendered batch evidence and remain “improved”: the art still has small/dark rear characters and crowded group effects. Opponent rendered acceptance is pending. Different recipes or rig trajectories alone do not establish slice quality. Starter slice status is inherited; regressions are checked in the same motion/effect captures.
+All nine nonstarter cats have rendered batch evidence and remain “improved”: the art still has small/dark rear characters and crowded group effects. The first six opponents have rendered batch evidence; the remainder awaits acceptance. Different recipes or rig trajectories alone do not establish slice quality. Starter slice status is inherited; regressions are checked in the same motion/effect captures.
 
 | Unit | Tier | Distinct authored feature |
 |---|---|---|
@@ -80,6 +80,8 @@ All nine nonstarter cats have rendered batch evidence and remain “improved”:
 | Yarn Giant | improved | Loom attacks, 1.14 s intro, 300 ms phase pose |
 | Rain Spool | improved | Rain attacks, 1.14 s intro, 300 ms phase pose |
 | Pantry Crown | improved | Pantry attacks, 1.14 s intro, 300 ms phase pose |
+
+Enemy checkpoints: [E1 #352](https://github.com/ntbaoheyhey/taskbar-hero/pull/352), [E2 evidence](enemies/e2/CHECKPOINT.md). Both have six clips/15required motion pairs and421E2E; E1/E2 CPU4 page MAX116.7/133.3ms, post-interactive100ms. Scoped cast matrices remain queued.
 
 Cat checkpoints: [B2a #343](https://github.com/ntbaoheyhey/taskbar-hero/pull/343), [B2b #346](https://github.com/ntbaoheyhey/taskbar-hero/pull/346), [B2c #347](https://github.com/ntbaoheyhey/taskbar-hero/pull/347). Each passes typecheck/lint/build, 1,684 web / 903 rules tests (+2 expected failures, 11 skips) and 421 archived-source E2E tests. Their ten-configuration scoped cast matrices remain queued.
 
@@ -122,4 +124,4 @@ REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 | Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
 | Mechanics lab | 7 provisional: four browser cases and sims pass; polish/integrated balance pending |
 
-Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
+Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: finish ON/OFF gear/economy sims using the supplied runner; integrate the remaining published B chain and offline wrapper, then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
