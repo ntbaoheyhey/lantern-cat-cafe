@@ -8,6 +8,7 @@ import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
 import { impactLabels } from '../../squad/turn3d/impact-labels';
 import { project, appearance } from './scene-actors';
+import '../../squad/turn3d/battle-layout.css';
 
 function Statuses({ actor }: { actor: R.Actor }) {
   return <div className="dp-statuses">{actor.statuses.map(status => <span key={status.id}
@@ -26,6 +27,8 @@ export function BattleView({ m }: { m: DepthModel }) {
   const view = useRef<SceneView | null>(null);
   const [logOpen, setLogOpen] = useState(false);
   const [sound, setSound] = useState(m.audio.enabled);
+  const [volume, setVolume] = useState(m.audio.volume);
+  useEffect(() => { m.audio.useBrowserPreferences(!m.offline); setVolume(m.audio.volume); }, [m]);
   const battle = m.visualBattle ?? lastBattle.current;
   lastBattle.current = battle;
   view.current = { actors: project(battle), currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
@@ -107,6 +110,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       <button onClick={() => m.skip()}>Skip to result</button>
       <label>Camera<select aria-label="Camera preset" value={m.camera} onChange={event => { m.camera = event.target.value as typeof m.camera; m.notify(false); }}>{Object.entries(CARD_CAMERAS).map(([id, preset]) => <option key={id} value={id}>{preset.name}</option>)}</select></label>
       <button onClick={() => { void m.audio.toggle().then(() => { setSound(m.audio.enabled); m.state.settings.sound = m.audio.enabled; m.notify(); }); }}>Sound {sound ? 'on' : 'off'}</button>
+      <label className="dp-sound-volume">Vol<input type="range" aria-label="Sound volume" min="0" max="100" step="5" value={Math.round(volume * 100)} onChange={event => { const next = Number(event.target.value) / 100; m.audio.setVolume(next); setVolume(next); }} /></label>
       <button onClick={() => setLogOpen(!logOpen)}>Battle log</button><button onClick={() => m.leave()}>Leave table</button>
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>

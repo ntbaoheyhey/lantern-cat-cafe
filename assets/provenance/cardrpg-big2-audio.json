@@ -1,0 +1,7 @@
+{
+ "reference":"apps/web/src/game/squad/turn3d/{audio,card-audio-score}.ts",
+ "tool":"Original WebAudio synthesis; no samples or generator inputs",
+ "parameters":{"sampleRate":44100,"masterGain":0.14,"defaultVolume":0.7,"noiseSeed":7919,"noiseBufferSeconds":0.6,"noteSeed":"FNV-1a skill ID","elementRootsHz":[261.63,220,349.23,293.66,196,110,329.63,440,246.94,164.81,523.25]},
+ "families":"Per-identity three-note anticipation, pitched/noise impact, ultimate arpeggio/residue, two descending kill tones, reaction cue arpeggios",
+ "mix":"8:1 compressor at -8dB; target peak ceiling0.72. Actual PCM metrics and browser RAF arrays are recorded separately; parameters alone do not prove sound quality."
+}
