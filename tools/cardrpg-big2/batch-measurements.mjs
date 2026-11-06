@@ -1,6 +1,6 @@
 // Execute only inside with-timing-lock.mjs. Artifacts are captured before queuing.
 import { spawn } from 'node:child_process';
-import { readFile, cp } from 'node:fs/promises';
+import { readFile, cp, access } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 const artifact = process.env.BIG_ARTIFACT;
@@ -14,6 +14,15 @@ async function run(script, args = [], environment = {}, cwd = process.cwd()) {
     child.once('error', reject); child.once('close', resolve);
   });
   if (code !== 0) throw Error(`${script} exited ${code}`);
+}
+// Quick isolated lab proof before the long batch1 matrix. A failure is recorded
+// without discarding this unrelated cat phase's measurement queue.
+if (phase === 'batch1') {
+  const labArtifact = '/tmp/cardrpg-big2-b5-index.html';
+  if (await access(labArtifact).then(() => true, () => false)) {
+    try { await run('tools/cardrpg-big2/mechanics-check.mjs', [], { BIG_ARTIFACT: labArtifact }); }
+    catch (error) { console.log(JSON.stringify({ mechanicsCheckFailed: String(error) })); }
+  }
 }
 const validationRoot = process.env.BIG_VALIDATION_ROOT || (phase === 'batch1' ? '/tmp/cardrpg-big2-batch1-validation' : process.cwd());
 await run(resolve(validationRoot, 'tools/cardrpg-big2/validate.mjs'), [`${phase}-e2e`], { BIG_VALIDATE_STEPS: 'e2e' }, validationRoot);

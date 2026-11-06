@@ -1,0 +1,32 @@
+{
+  "extends": "../../apps/web/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../../apps/web",
+    "paths": {
+      "react": [
+        "node_modules/@types/react"
+      ],
+      "react/*": [
+        "node_modules/@types/react/*"
+      ],
+      "react-dom/*": [
+        "node_modules/@types/react-dom/*"
+      ],
+      "@taskbar-hero/game-rules/*": [
+        "../../packages/game-rules/*"
+      ],
+      "react-dom": [
+        "node_modules/@types/react-dom"
+      ]
+    },
+    "types": [
+      "../../apps/web/node_modules/vite/client",
+      "../../apps/web/node_modules/@types/node"
+    ]
+  },
+  "include": [
+    "*.tsx",
+    "mechanics-model.ts",
+    "../../apps/web/src"
+  ]
+}
