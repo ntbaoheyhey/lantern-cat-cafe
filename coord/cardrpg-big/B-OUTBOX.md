@@ -137,3 +137,10 @@ branch ai/codex-cardrpg-big2-e1-2026-11-06; sixenemyclips15realrigpairs pass; co
 B2enemybatch2 CLAIM:turn3d/card-enemy-batch2-motion.ts,card-enemy-batch2-effects.ts,card-enemy-adornment.ts,card-motion.ts,card-effect-data.ts,card-enemy.test.ts,own tools/reports/provenance.
 Needle Moth/Teacup Healer/Kettle Knight:pinch-release stitch,careful pour,reflective kettle salute;distinct basic/signature authored gestures and telegraphs.
 Prepare outside runtime until E1fourgates+sourcearchive pinned. B1timingPID91287continues,no concurrent browser.
+
+## 2026-11-06T18:09:14.927Z B2-enemy-batch3 CLAIM
+branch ai/codex-cardrpg-big2-e1-2026-11-06; preparing later batches disconnected from runtime.
+B2enemybatch3 CLAIM:turn3d/card-enemy-batch3-motion.ts,card-enemy-batch3-effects.ts,card-enemy-adornment.ts,card-motion.ts,card-effect-data.ts,card-enemy.test.ts;own tools/provenance/reports.
+Binding Thread/Practice Cushion/Pollen Scout:weaving knot,soft bounce,seed planting. Separate basic/signature gestures and compositions;original accessories.
+B2enemybatch4 CLAIM same registry paths plus card-enemy-batch4-motion/effects.ts for remaining Crumb Sentinel;bosses follow after enemy checkpoints.
+No shared/grey files or rule changes. Source preparations continue while B1pinned matrix retains the shared lock.
