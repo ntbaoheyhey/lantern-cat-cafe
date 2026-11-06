@@ -3,15 +3,15 @@ PROMPT.md bytes (wc -c) = 50258
 PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Lane A · I source db1448e9. Full gear/economy complete. I five-gates PID95605 and flow PID95866 await B timing lock PID91287. G queue PID3081 follows I. M queue PID5628 follows G. Browser gates remain open.
-Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last source db1448e9ffae26d6001a16dc05dbaefbbb9a4116; pushed32e9fef0. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I.
+Lane A · I source db1448e9,full gear/economy complete. New queue parent20981 waits B lock91287, then runs I/G/M/F7 pinned functional checks, releases, then G cold/full720/profiles. Old queuedPIDs stopped safely. Browser gates remain open.
+Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last work commit b6c46e6d2ddcab1d3eaa72493cec24c2b9ea9d8e;rules source db1448e9; pushed32e9fef0. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I.
 G worktree /Users/bao/taskbar-hero-cardrpg-big-g; codex/cardrpg-big-g-2026-11-06;62cb569778161e6d961fdc4c9fdabfcc5a03b9da. M-followup /Users/bao/taskbar-hero-cardrpg-big-meta;codex/cardrpg-big-meta-2026-11-06;72bce95ce14bbdcf8827fe1d3928292715117b54.
 F7 preparation /Users/bao/taskbar-hero-cardrpg-big-demo;codex/cardrpg-big-demo-2026-11-06 source c984c3673e5f5b2c674653296fd5ddaea0eef6c9. Home lab/checklist/frame overlay6focused and four source gates PASS1698web/903rules. Browser pending. Final integration and report pending.
 Sync /Users/bao/taskbar-hero-cardrpg-sync;ai/codex-cardrpg-big-sync;212fec04b297984892d10bc1a8142e1b50a87eea pushed A I-checkpoint/F7-answer;read B through17:47 B5 CLAIM. OWNERSHIP.md immutable. B owns engine/art/audio/auto-extras. Its B1 full matrix partial pageMAX283.3ms; earlier cold100.1ms is an incomplete opening result.
 Frozen HTML I /tmp/cardrpg-big-i-enemy-index.html SHA6a8e0a42b6b05be1157119df1b66cd35bbe2716768356327bcca1fe5f3784764;G /tmp/cardrpg-big-g-index.html SHA284976a9db6da0cbca0f1e5272959281bf87f9263a20e18c17fd79e9d176598d;M /tmp/cardrpg-big-meta-index.html SHA1c331fcdd08742270e6ecccc9148cd1be80b7db202aeff0e0e5abb9bd8285149.
 ## NEXT
 1. Complete I locked five gates and natural-flow browser evidence. Record missed balance/duration gates honestly, commit evidence and update draft341 after rereading rules/sync.
-2. Complete G and M queues, review captures, fix any failures, publish their draft checkpoints. F7source c984c367 pinned HTMLabab8352;queuePID16922 waits M5628 for fivegates+3size lab checks.
+2. Complete G and M queues, review captures, fix any failures, publish their draft checkpoints. F7source c984c367 pinned HTMLabab8352;all functional checks now share parent20981 before the long G matrix.
 3. Integrate A and published B checkpoints, wire G entrance and optional extras runner, run five gates plus extrasON/OFF gear/economy sims, announce integrated CHECKPOINT, finish F7 review/report and ledger mirror.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
@@ -30,13 +30,14 @@ PASS “only deterministic,effort-gated,supply-capped Relic designs...total...se
 PASS “existing Fuji read-only Relic panel stays as is.” Local design UI only;scope proof still needed at F7.
 PARTIAL lane encounter target45–90s via existing knobs. Starter ch1 train48/50,heldout44/50 first encounters insideband,medians51.411/53.569s. Full-route starter wins13/50train/10/50heldout. Browser NOT YET. items/ENCOUNTERS.md.
 NOT YET G exact requirements “per pull and per10-pull...anticipation...rarity...cardflip...epic/legendary3Dentrance...duplicate shards...skip...odds,pity,history,cost,earned...featured art/skillloop.” Card source13/13focused and1692web/903rules pass;browserpending;3Dentrance integrationpending.
-NOT YET M-followup widthgain>=60px at1024;300px canvasheight;rotation visible;0overflow/errors/remote. Source72bce95c,1692web/903rulespass. Browserqueue5628.
+NOT YET M-followup widthgain>=60px at1024;300px canvasheight;rotation visible;0overflow/errors/remote. Source72bce95c,1692web/903rulespass. Browserqueueparent20981.
 NOT YET F7 static offline<=24MB;five labpanels;before/after,filmstrips,matrix,liveframes,briefjumpbuttons;videos/sequences;3sizes;fresh-eyes4roles×5weaknesses;11honestgrades;<=150line report with8–10Vietnamese lines;draftintegration+ledger. demo/PLAN.md.
 ## PRIOR PHASE GATES
 F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–16.195s MISS45–90s, clutch/boss natural evidence pending. flow/GATES.md.
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only
+2026-11-07 01:00 · Rescheduled only owned pending queues95605/95866/3081/5628/16922 after verifying B still owns lock91287. New parent20981 sequentially acquires A-pinned-functional-checkpoints for I/G/M/F7 fivegates+screens/flow, releases, then reacquires for G cold7/full720/profiles. Artifacts unchanged. This exposes UI failures before the long G matrix. Scripts /tmp/cardrpg-big-a-functional.sh and /tmp/cardrpg-big-g-timing.sh;logs /tmp/cardrpg-big-a-functional.log and /tmp/cardrpg-big-g-timing-matrix.log.
 2026-11-07 00:54 · F7 frozen /tmp/cardrpg-big-demo-index.html SHAabab83522d22774d940b6654efd2a8d70b1f13062815ef709ea0d36eff28dbab, 20615877bytes, runtimeDirtyfalse,sourcec984c367. Queue PID16922 waits M5628 then atomiclock for fivegates+lab3sizes. Log /tmp/cardrpg-big-demo-checks.log. Canonical state stays in main A worktree.
 2026-11-07 00:50 · F7 source c984c367affirms home drawer/shared model preferences. Allfour source gatesPASS1698web/903rules;6focusedPASS. Initial test-only exact-option type error corrected and retained in demo-source-typecheck-pilot.log. Page meter VM504samples/ring240 preserves opening150ms spike. HTML20,615,877bytes,under24MB;frozen rebuild queued.
 Full history retained verbatim in reports/cardrpg-big/memory/DECISIONS.md. Append there and repeat newest decisions here.
@@ -67,13 +68,13 @@ F3 ·610/156687frames,pageMAX566.7ms,cast33.4/16.8ms,20actions30jointpairs PASS,
 F2 ·610/156241frames,pageMAX533.4ms,>25=4679/>50=2231,cast33.5/16.8ms. Sharpnessface-53.10/-49.84%,enemy-51.82/-46.28%,HUD0/0%,portrait-0.19/-3.34%,icon+366.30/+421.26%.2/10 targets PASS. sharpness/PERFORMANCE.md,sharpness.json.
 F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/131781frames,pageMAX1583.3ms,>25=5529/>50=3100,cast33.4/16.8ms. layout/README.md,PERFORMANCE.md.
 ## PROBLEMS / PARKED
-I save bugs · equipment81d5b69e pushed; replay3263cece local,46/46 focused/150routes450encounters match. items/SAVE.md,REPLAY.md. Full0.7validation and push queued.
-M initial role mapping selected2cats, derived6roles incorrectly selected6. Corrected guardian/offense/healer and typed cardRpg identity. Retain m-focused*.log and m.json. M source8790c9a1 committed/pushed. I CollectibleDesigns2/2 and caps25/25 pass. G disconnected11/11 passes. Full build/screens pending, G WIP parked atb5a068b3016f97e3b4aee8a0fa041b2e83e93493.
+I save bugs · equipment81d5b69e pushed; replay3263cece local,46/46focused/150routes450encounters match. Full0.7validation and pushqueued. items/SAVE.md,REPLAY.md.
+Earlier M role mapping pilot corrected to guardian/offense/healer and typed card identity;logsretained. G WIPb5a068b3 restored/wired in62cb5697;13focusedPASS. G/M/F7 each source-pinned,queued browserproof. No half-wired engine files in A.
 M early-navigation gear pilot recorded1 isReady page error. Defer GPU disposal until warmup settles. Corrected384cases0errors, dedicated20-navigation regression passes atCPU1/4. meta/gear-pilot-disposal and validation/m-gear*.log.
 F5 opening and fight-duration gates miss, clutch/boss visual proof pending. F2 sharpness8/10 misses and F1 hero scale band miss remain reported. F7 must include every miss.
 Earlier pilots retained at baseline/skills-pilot,baseline/skills-coarse-heap,motion/pilot-zero-weight,flow/pilot-banner. User old/main worktrees contain edits, preserve them. Ledger edits limited to requested report/state.
 ## COVERAGE
-REFERENCE: reports/cardrpg-big/baseline/COVERAGE.md
+REFERENCE: reports/cardrpg-big/COVERAGE.md;baseline/COVERAGE.md
 Effects/motion ·starter20actions/30motionpairs and31recipes/465effectpairs pass. motion/variety.json,effects/verified/uniqueness.json. Remaining9cats pending.
 Image sharpness ·2/10 target crop pairs pass,8miss. sharpness/README.md.
 Layout/scale/faces ·stage78.889%,2745poses0overlap/crop,<=55deg. Scale band partial. layout/README.md.
@@ -89,4 +90,4 @@ Research-based identity ·existing research and original cafe assets used,one-pa
 ## TOOLING / RESUME
 Use worktree above, installed pnpm, Chromium ANGLE Metal, Python /tmp/cardrpg-big-tools. validate.mjs names phase logs and runs five gates serially on5910–5913. Avoid CPU-heavy validation during performance timing.
 Frozen F5 /tmp/cardrpg-big-f5-index.html SHA4536494f37c372d9f623c01b7a8eddbc10d512933ad13418b32253707e95cdc8. M build via tools/cardrpg-big/build.mjs, UI/meta-check.mjs,gear/meta-gear-measure.mjs,lifecycle/meta-lifecycle.mjs. I drivers gear-sim.mjs and cardrpg-depth/economy.mjs.
-Queue logs /tmp/cardrpg-big-i-enemy-validation.log,/tmp/cardrpg-big-i-flow.log,/tmp/cardrpg-big-g-checks.log,/tmp/cardrpg-big-meta-checks.log. Capture/run scripts use atomic timing lock. Kill only own PIDs.
+Queue parent20981,session89144. Mainlogs /tmp/cardrpg-big-a-functional.log and /tmp/cardrpg-big-g-timing-matrix.log. Phase logs use i-enemy-validation/i-flow,g-validation/g-screens/g-timing,meta-validation/meta-collection/meta-screens,demo-validation/demo-screens prefixes under/tmp/cardrpg-big-. Atomic timing lock;kill only owned PIDs.
