@@ -187,3 +187,9 @@ Accepted19:58 request. Paused only A matrixparent70562 and A revealwaiter69605;a
 Local handoff script waits for70563release,then8seconds before resuming A. Updated matrix-series uses6500ms between every future configuration,plus --resume validating complete receipts/artifact/action coverage.
 The currentconfigurationwillfinishandbereused;0casesdropped,rawarraysretained. Newdriverstartsafteroldparentexits;Gprofilepassfollowsfullmatrix. A source/artifactsunchanged.
 A-only integration allphaseevidence+B2c mergedat9d29c760,generateddemo/memoryconflictsonly. Not yet rebuilt or validatedagainstB2c. Revealcandidate remainsseparate/pinned.
+
+## 2026-11-06T20:10:57.686295+00:00 INTEGRATION-loader CLAIM
+branch codex/cardrpg-big-integration-2026-11-06;head3c586d69 on publishedB2c4b2d5df0.
+files tools/cardrpg-big/build.mjs,offline-loader.js and ownintegrationevidence. Adopt publishedB loadingprogress+__b2Load hooks in mainHTML;laterasync source awaits yourCHECKPOINT.
+Apageheadmeter stays active fromopen. Finalwrapper/lab/evidencepayload waits publishedB6. No B-owned edits.
+Gconfig1complete72/72/errors0;8shandoff succeeded B48337acquired. Reveal69605 now waits;Gseries6500msgaps. Galleryprobe b6630082 requiresnonzerodraws+triangles/allmodels beforecapture.
