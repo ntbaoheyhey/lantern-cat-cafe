@@ -1,0 +1,31 @@
+{"complete":32,"failures":0}
+{"complete":64,"failures":0}
+{"complete":96,"failures":0}
+{"complete":128,"failures":0}
+{"complete":160,"failures":0}
+{"complete":192,"failures":0}
+{"complete":224,"failures":0}
+{"complete":256,"failures":0}
+{"complete":288,"failures":0}
+{"complete":320,"failures":0}
+{"complete":352,"failures":0}
+{"complete":384,"failures":0}
+{"artifact":"/Users/bao/taskbar-hero-cardrpg-big/docs/cardrpg3/index.html","sha256":"0012a523d9f35ff4af5ffada425834485479cf70627f1dbc703c3c4a1e574427","method":"Isolated existing-rule equipment fixture in the normal inventory preview. Fixed clock and pose. Per-pixel RGB difference with only the equipped group hidden. At least one of three model angles must meet the declared visibility threshold.","minimumVisiblePixels":8,"channelThreshold":8,"angles":[0,-1.1,1.1],"cases":384,"errors":["TypeError: Cannot read properties of undefined (reading 'isReady')"],"failures":[],"captured":["mochi-doorstop","mochi-nightglass","mochi-seedcup","mochi-rainbell","mochi-crumbbook","mochi-panlid","mochi-warmwick","mochi-silkspool","mochi-starladle","mochi-softcollar","mochi-tidetray","mochi-gardenkey","soot-doorstop","soot-nightglass","soot-seedcup","soot-rainbell","soot-crumbbook","soot-panlid","soot-warmwick","soot-silkspool","soot-starladle","soot-softcollar","soot-tidetray","soot-gardenkey","clover-doorstop","clover-nightglass","clover-seedcup","clover-rainbell","clover-crumbbook","clover-panlid","clover-warmwick","clover-silkspool","clover-starladle","clover-softcollar","clover-tidetray","clover-gardenkey"],"peakCalls":28,"peakTriangles":19350}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at file:///Users/bao/taskbar-hero-cardrpg-big/tools/cardrpg-big/meta-gear-measure.mjs:115:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

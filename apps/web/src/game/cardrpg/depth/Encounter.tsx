@@ -4,6 +4,7 @@ import { PageTitle } from '../shared';
 import { portrait } from './assets';
 import type { DepthModel } from './model';
 import { summarizeBattle } from './battle-summary';
+import { CompanionCard } from './CompanionCard';
 
 export function Prepare({ m }: { m: DepthModel }) {
   const battle = m.battle!;
@@ -51,7 +52,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
   const labels = { damage: 'Damage', healing: 'Healing', taken: 'Damage taken' };
   return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · ${battle.round} rounds · seed ${battle.seed}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
     <div className="cr-actions"><button className="cr-primary" onClick={() => m.finish()}>{m.replay ? 'Close replay' : m.tutorialBattle ? 'Complete lesson' : 'Continue to rewards'}</button>{!m.replay && <><button onClick={() => m.replayLast()}>Watch replay</button><button onClick={() => m.improveTeam()}>Improve team</button></>}</div>
-    <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><img src={portrait(summary.mvp!.catalogId)} alt="" /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + one quarter of shields granted.</small></div></section>
+    <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><CompanionCard id={summary.mvp!.catalogId} m={m} /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + one quarter of shields granted.</small></div></section>
     <div className="dp-three">{summary.cats.map(cat => <section className="cr-panel dp-cat-result" key={cat.id}><h2>{cat.name}</h2>{(['damage', 'healing', 'taken'] as const).map(metric => <label key={metric}><span>{labels[metric]} <b>{cat[metric]}</b></span><progress aria-label={`${cat.name} ${labels[metric]}`} value={cat[metric]} max={maxima[metric]} /></label>)}</section>)}</div>
     <section className="cr-panel"><h2>Key moments</h2>{summary.firstUltimate && <p>First ultimate · round {summary.firstUltimate.round} · {name(summary.firstUltimate.actorId)} used {R.SKILLS[summary.firstUltimate.skillId]!.name}</p>}
       {summary.biggestHit && <p>Biggest hit · round {summary.biggestHit.round} · {name(summary.biggestHit.actorId)} dealt {summary.biggestHit.amount} to {name(summary.biggestHit.targetId)}</p>}

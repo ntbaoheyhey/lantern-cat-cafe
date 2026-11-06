@@ -1,0 +1,24 @@
+
+> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero-cardrpg-big
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: src/game/cardrpg/depth/CompanionPreview.tsx(27,85): error TS2339: Property 'catalogId' does not exist on type 'TurnActor'.
+apps/web build: src/game/cardrpg/depth/CompanionPreview.tsx(31,71): error TS2339: Property 'catalogId' does not exist on type 'TurnActor'.
+apps/web build: src/game/cardrpg/depth/CompanionPreview.tsx(32,47): error TS2339: Property 'catalogId' does not exist on type 'TurnActor'.
+apps/web build: Failed
+/Users/bao/taskbar-hero-cardrpg-big/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 build: `tsc --noEmit && vite build`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

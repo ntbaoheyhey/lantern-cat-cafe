@@ -24,6 +24,7 @@ export interface SceneView {
   decorateStage?: (stage: T.Group) => void;
   animateStage?: (stage: T.Group, time: number, reducedMotion: boolean) => void;
   autoBattle?: boolean;
+  tableau?: boolean;
   effectOnly?: boolean;
   cardStatuses?: Record<string, readonly string[]>;
   rows?: Record<string, string>;
@@ -60,6 +61,7 @@ export class TurnScene {
   private gearResources = new GearResources();
   private pending = new Set<string>();
   private disposed = false;
+  private warming: Promise<void>;
   private raf = 0;
   private last = 0;
   private renderAt = 0;
@@ -125,7 +127,7 @@ export class TurnScene {
     }
     this.spells=new SpellVfx(this.scene,!!this.view().autoBattle);
     if(this.view().autoBattle)this.cardEffects=new CardEffects(this.scene);
-    void this.warmModels();
+    this.warming = this.warmModels();
     this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
     this.renderer.domElement.addEventListener('pointerup',this.pick);
@@ -288,6 +290,11 @@ export class TurnScene {
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+      if (view.tableau) {
+        p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
+        p.root.position.copy(p.base);
+        p.model.rotation.y = (1 - a.slot) * .12;
+      }
       p.gear.update(a,view.appearance?.(a));p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
       if(view.autoBattle&&!view.model&&clip==='idle'){
@@ -353,7 +360,7 @@ export class TurnScene {
     });
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
-    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
+    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
@@ -422,8 +429,34 @@ export class TurnScene {
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
   private disposePuppet(p:Puppet){p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
-  dispose(){this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('pointerup',this.pick);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const p of this.puppets.values())this.disposePuppet(p);this.puppets.clear();this.gearResources.dispose();this.geometryOwned.forEach(g=>g.dispose());this.materialOwned.forEach(m=>m.dispose());this.stageTextures.forEach(t=>t.dispose());this.glow.dispose();this.blobMaterial.dispose();this.spells.dispose();this.cardEffects?.dispose();this.cardSurfaces?.dispose();this.post.dispose();this.renderer.dispose();
-    // Loot/rest previews own separate contexts. Release them immediately so
-    // Chromium cannot evict the retained battlefield before garbage collection.
-    this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+  dispose() {
+    if (this.disposed) return;
+    this.disposed = true;
+    cancelAnimationFrame(this.raf);
+    this.resize.disconnect();
+    document.removeEventListener('visibilitychange', this.visibility);
+    this.renderer.domElement.removeEventListener('pointerup', this.pick);
+    this.renderer.domElement.removeEventListener('webglcontextlost', this.lost);
+    this.renderer.domElement.remove();
+    // compileAsync polls material programs. Keep them alive until its work
+    // and render-target cleanup finish, even after the preview is unmounted.
+    void this.warming.then(() => this.releaseResources(), () => this.releaseResources());
+  }
+
+  private releaseResources() {
+    for (const puppet of this.puppets.values()) this.disposePuppet(puppet);
+    this.puppets.clear();
+    this.gearResources.dispose();
+    this.geometryOwned.forEach(geometry => geometry.dispose());
+    this.materialOwned.forEach(material => material.dispose());
+    this.stageTextures.forEach(texture => texture.dispose());
+    this.glow.dispose();
+    this.blobMaterial.dispose();
+    this.spells.dispose();
+    this.cardEffects?.dispose();
+    this.cardSurfaces?.dispose();
+    this.post.dispose();
+    this.renderer.dispose();
+    this.renderer.forceContextLoss();
+  }
 }

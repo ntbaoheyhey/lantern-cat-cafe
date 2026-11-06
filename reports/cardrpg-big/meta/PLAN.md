@@ -5,7 +5,7 @@ Reuse depthStats, configureTeam, equipmentEffects and the existing gear transact
 
 Reuse TurnScene for one active preview at a time. Home shows three idling companions. Collection rotates one model and loops an isolated F4 skill fixture. Equipment uses the same sockets and current instance appearance. Lazy preview creation will be measured from page opening. All additional rendering work must pass cold/frame gates.
 
-Team formation supports row drop targets plus keyboard-accessible row selects. The Best team heuristic chooses the highest displayed-power owned cat in each role. Presets are three versioned browser UI preferences, validated against current ownership and applied through configureTeam. They contain team IDs and rows only. Offline presets last for the visit, preserving the existing storage-free demo contract. Blocked storage surfaces an explicit session-only message. Battle state remains authoritative in the existing save.
+Team formation supports row drop targets plus keyboard-accessible row selects. The Best team heuristic chooses the highest displayed-power owned guardian, offensive cat and healer. Presets are three versioned browser UI preferences, validated against current ownership and applied through configureTeam. They contain team IDs and rows only. Offline presets last for the visit, preserving the existing storage-free demo contract. Blocked storage surfaces an explicit session-only message. Battle state remains authoritative in the existing save.
 
 Inventory groups Equipment, Materials, Consumables, Collectibles and Currencies in its existing destination. Equipment gains rarity filters, sorting, paper-doll slots and stat deltas from the actual equip transaction result. Existing live Relic reading stays in its current panel.
 

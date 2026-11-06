@@ -7,6 +7,7 @@ import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
+import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
 export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
@@ -16,6 +17,7 @@ export class DepthModel {
   itemId = '';
   notice = 'Build your team, press Fight, then watch your companions take the lead.';
   error = false;
+  teamPresets: Array<TeamPreset | null> = [null, null, null];
   galleryBattle: R.Battle | null = null;
   galleryId = GALLERY_ACTIONS[0]!.id;
   galleryEffectOnly = false;
@@ -65,7 +67,32 @@ export class DepthModel {
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
     this.itemId = this.state.gear[0]?.id ?? '';
+    if (!offline) {
+      try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
+    }
     this.restoreEncounter();
+  }
+  saveTeamPreset(index: number) {
+    if (!Number.isInteger(index) || index < 0 || index >= 3) return;
+    this.teamPresets[index] = { name: `Shift ${index + 1}`, team: [...this.state.team],
+      rows: Object.fromEntries(this.state.team.map(id => [id, this.state.rows[id]!])) };
+    if (this.offline) {
+      this.notice = `Shift ${index + 1} saved for this offline visit.`;
+      this.error = false;
+      this.notify(false);
+      return;
+    }
+    try {
+      localStorage.setItem(TEAM_PRESETS_KEY, JSON.stringify({ version: 1, slots: this.teamPresets }));
+      this.notice = `Shift ${index + 1} saved in this browser.`;
+    } catch { this.notice = `Shift ${index + 1} saved for this visit. Browser storage is unavailable.`; }
+    this.error = false;
+    this.notify(false);
+  }
+  loadTeamPreset(index: number) {
+    const preset = this.teamPresets[index];
+    if (!preset) return;
+    this.apply(R.configureTeam(this.state, preset.team, preset.rows, this.state.skills), `${preset.name} restored.`);
   }
   snapshot = () => this.revision;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
