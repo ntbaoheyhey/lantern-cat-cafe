@@ -22,6 +22,9 @@ export class DepthModel {
   galleryId = GALLERY_ACTIONS[0]!.id;
   galleryEffectOnly = false;
   gallerySpeed = 1;
+  labOpen = false;
+  labPanel: 'gallery' | 'compare' | 'motion' | 'performance' | 'checklist' = 'gallery';
+  labPerformance = false;
   private galleryReturn?: { plan: EffectPlan | null; animationAt: number; paused: boolean };
   readonly galleryActions = GALLERY_ACTIONS;
   watching = false;

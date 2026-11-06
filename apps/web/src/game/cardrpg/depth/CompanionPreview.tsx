@@ -8,8 +8,8 @@ import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { portrait } from './assets';
 import type { DepthModel } from './model';
 
-export function CompanionPreview({ m, id, skillId, home = false }: {
-  m: DepthModel; id?: string; skillId?: string; home?: boolean;
+export function CompanionPreview({ m, id, skillId, home = false, visible = true }: {
+  m: DepthModel; id?: string; skillId?: string; home?: boolean; visible?: boolean;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
@@ -38,8 +38,8 @@ export function CompanionPreview({ m, id, skillId, home = false }: {
       decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     };
   }, [fixture, home, id, skillId, state.settings.reducedMotion, state.settings.quality]);
-  const options = useRef({ view, fixture, rotating, angle, skillId });
-  options.current = { view, fixture, rotating, angle, skillId };
+  const options = useRef({ view, fixture, rotating, angle, skillId, visible });
+  options.current = { view, fixture, rotating, angle, skillId, visible };
 
   useEffect(() => {
     if (!host.current) return;
@@ -55,7 +55,7 @@ export function CompanionPreview({ m, id, skillId, home = false }: {
       const plan = current.skillId ? current.fixture.plan : null;
       const actionAt = plan ? elapsed % (plan.duration + 900) : 0;
       current.view.frame = plan && actionAt < plan.duration ? sampleActionPlan(plan, actionAt, current.view.reducedMotion) : null;
-      current.view.suspended = m.showBattle;
+      current.view.suspended = m.showBattle || !current.visible;
       if (current.view.model) current.view.model.angle = current.angle + (current.rotating && !current.view.reducedMotion ? elapsed * .00016 : 0);
       return current.view;
     };
@@ -66,7 +66,7 @@ export function CompanionPreview({ m, id, skillId, home = false }: {
         if (m.offline || import.meta.env.DEV) window.__depthPreviewScene = scene.current;
         const tick = (now: number) => {
           if (stopped) return;
-          if (scene.current?.ready && !m.showBattle) {
+          if (scene.current?.ready && !m.showBattle && options.current.visible) {
             elapsed += last ? Math.min(100, now - last) : 0;
             if (!prepared) { prepared = true; setStatus(''); }
           }
@@ -85,7 +85,7 @@ export function CompanionPreview({ m, id, skillId, home = false }: {
       scene.current = null;
     };
   }, [m]);
-  useEffect(() => { scene.current?.invalidate(); }, [view, rotating, angle]);
+  useEffect(() => { scene.current?.invalidate(); }, [view, rotating, angle, visible]);
 
   return <div className={`dp-miniature ${home ? 'dp-miniature-home' : ''}`}>
     <div className="dp-miniature-canvas" ref={host} aria-label={home ? 'Your team at the cafe' : `${R.CAT_BY_ID[id!]!.name} miniature`} />
