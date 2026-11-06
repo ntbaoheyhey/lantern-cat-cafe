@@ -1,0 +1,5010 @@
+{
+  "base": "7ff71ff69bd271c554ec4f407e1cb7fefbef8099",
+  "artifactSha256": "4534b9951e2b4f27c44b55e1a8131800a4caad0bf976d4bc2c4c9b842a302772",
+  "census": {
+    "cats": 12,
+    "distinctKits": 3,
+    "skills": 12,
+    "enemiesDesigned": 13,
+    "enemiesPlayable": 9,
+    "items": 48,
+    "affixStats": 3,
+    "sets": 3,
+    "chapters": 1,
+    "nodeTypes": [
+      "battle",
+      "loot",
+      "rest",
+      "boss"
+    ],
+    "screens": 12
+  },
+  "captures": [
+    {
+      "width": 1024,
+      "height": 600,
+      "screen": "hub",
+      "path": "reports/cardrpg-depth/baseline/1024-hub.png",
+      "sha256": "7c5e82c7f7a70ec103db77fbdc8d2a7fde3d171dd7665f81881cc384f355ab8d"
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "screen": "collection",
+      "path": "reports/cardrpg-depth/baseline/1024-collection.png",
+      "sha256": "06f15cbc0e2479fd1b35b2cfbe633df8f2cae041db022e2e43d03d4291d0cdd4"
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "screen": "gacha",
+      "path": "reports/cardrpg-depth/baseline/1024-gacha.png",
+      "sha256": "51609cdc5903b347bebde163f3306f3181678c600df2fa4680bc3f8f5d98ab40"
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "screen": "codex",
+      "path": "reports/cardrpg-depth/baseline/1024-codex.png",
+      "sha256": "dd0f228fa4c7718fa4418b11f58874107b25dfc1e7c08b1745f3404d9d4a8617"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "screen": "hub",
+      "path": "reports/cardrpg-depth/baseline/1280-hub.png",
+      "sha256": "5730b1e5cde58ca985f3a2fc15016ae7c84badf5563b4d175b7d53dfac29e4a0"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "screen": "collection",
+      "path": "reports/cardrpg-depth/baseline/1280-collection.png",
+      "sha256": "5a743dbf6fd6a36bdd57379137dd599294c86ef2a281d1d3c39137006fca59a7"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "screen": "gacha",
+      "path": "reports/cardrpg-depth/baseline/1280-gacha.png",
+      "sha256": "a6d9877f9a740d307898e82ed629b1ea67c6e7ec4365f72bdf86f09da2341f8c"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "screen": "codex",
+      "path": "reports/cardrpg-depth/baseline/1280-codex.png",
+      "sha256": "40d50da7b7b9d2bebfce4351262b073af9fccf36b9ee35dcebfdd3bc6c6eac28"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screen": "hub",
+      "path": "reports/cardrpg-depth/baseline/1440-hub.png",
+      "sha256": "0debf5a70dcf78a2b91ee991e610b21af1a2886038897ea479e4a234dfea352d"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screen": "collection",
+      "path": "reports/cardrpg-depth/baseline/1440-collection.png",
+      "sha256": "73f09c9ae13b57f7282de0c3112097c67be8bd9cf42efc2dd155cbc2f1052a54"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screen": "gacha",
+      "path": "reports/cardrpg-depth/baseline/1440-gacha.png",
+      "sha256": "7734aad24cd16e2d5fc2b720e7e09cbf71bef217014ccec968ebd1a6f745143a"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screen": "codex",
+      "path": "reports/cardrpg-depth/baseline/1440-codex.png",
+      "sha256": "c27e99410dc49918ab759f2a9ad975e82e4e1d12e5fa474a3119986f1552d77d"
+    }
+  ],
+  "errors": [],
+  "runs": [
+    {
+      "seed": 1,
+      "policy": "random",
+      "decisions": 66,
+      "choices": 68,
+      "winner": "enemy",
+      "turns": 165,
+      "rounds": 28,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 2,
+      "policy": "random",
+      "decisions": 90,
+      "choices": 97,
+      "winner": "enemy",
+      "turns": 248,
+      "rounds": 39,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 3,
+      "policy": "random",
+      "decisions": 89,
+      "choices": 94,
+      "winner": "enemy",
+      "turns": 211,
+      "rounds": 38,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 4,
+      "policy": "random",
+      "decisions": 41,
+      "choices": 42,
+      "winner": "enemy",
+      "turns": 83,
+      "rounds": 20,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 5,
+      "policy": "random",
+      "decisions": 87,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 207,
+      "rounds": 36,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 6,
+      "policy": "random",
+      "decisions": 91,
+      "choices": 96,
+      "winner": "enemy",
+      "turns": 202,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 7,
+      "policy": "random",
+      "decisions": 45,
+      "choices": 46,
+      "winner": "enemy",
+      "turns": 102,
+      "rounds": 20,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 8,
+      "policy": "random",
+      "decisions": 110,
+      "choices": 113,
+      "winner": "enemy",
+      "turns": 269,
+      "rounds": 44,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 9,
+      "policy": "random",
+      "decisions": 25,
+      "choices": 25,
+      "winner": "enemy",
+      "turns": 52,
+      "rounds": 14,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 10,
+      "policy": "random",
+      "decisions": 29,
+      "choices": 29,
+      "winner": "enemy",
+      "turns": 76,
+      "rounds": 14,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 11,
+      "policy": "random",
+      "decisions": 79,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 143,
+      "rounds": 30,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 12,
+      "policy": "random",
+      "decisions": 98,
+      "choices": 101,
+      "winner": "enemy",
+      "turns": 208,
+      "rounds": 40,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 13,
+      "policy": "random",
+      "decisions": 84,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 208,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 14,
+      "policy": "random",
+      "decisions": 80,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 192,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 15,
+      "policy": "random",
+      "decisions": 74,
+      "choices": 76,
+      "winner": "enemy",
+      "turns": 188,
+      "rounds": 32,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 16,
+      "policy": "random",
+      "decisions": 86,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 192,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 17,
+      "policy": "random",
+      "decisions": 77,
+      "choices": 81,
+      "winner": "enemy",
+      "turns": 161,
+      "rounds": 32,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 18,
+      "policy": "random",
+      "decisions": 59,
+      "choices": 63,
+      "winner": "enemy",
+      "turns": 128,
+      "rounds": 25,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 19,
+      "policy": "random",
+      "decisions": 79,
+      "choices": 81,
+      "winner": "enemy",
+      "turns": 200,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 20,
+      "policy": "random",
+      "decisions": 64,
+      "choices": 66,
+      "winner": "enemy",
+      "turns": 150,
+      "rounds": 28,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 21,
+      "policy": "random",
+      "decisions": 34,
+      "choices": 34,
+      "winner": "enemy",
+      "turns": 90,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 22,
+      "policy": "random",
+      "decisions": 45,
+      "choices": 46,
+      "winner": "enemy",
+      "turns": 94,
+      "rounds": 18,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "decisions": 29,
+      "choices": 29,
+      "winner": "enemy",
+      "turns": 90,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "decisions": 65,
+      "choices": 68,
+      "winner": "enemy",
+      "turns": 143,
+      "rounds": 30,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "decisions": 70,
+      "choices": 72,
+      "winner": "enemy",
+      "turns": 140,
+      "rounds": 28,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 26,
+      "policy": "random",
+      "decisions": 80,
+      "choices": 82,
+      "winner": "enemy",
+      "turns": 151,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 27,
+      "policy": "random",
+      "decisions": 30,
+      "choices": 31,
+      "winner": "enemy",
+      "turns": 84,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 28,
+      "policy": "random",
+      "decisions": 79,
+      "choices": 82,
+      "winner": "enemy",
+      "turns": 184,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 29,
+      "policy": "random",
+      "decisions": 31,
+      "choices": 33,
+      "winner": "enemy",
+      "turns": 86,
+      "rounds": 16,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 30,
+      "policy": "random",
+      "decisions": 51,
+      "choices": 57,
+      "winner": "enemy",
+      "turns": 129,
+      "rounds": 23,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 31,
+      "policy": "random",
+      "decisions": 40,
+      "choices": 41,
+      "winner": "enemy",
+      "turns": 109,
+      "rounds": 18,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 32,
+      "policy": "random",
+      "decisions": 41,
+      "choices": 41,
+      "winner": "enemy",
+      "turns": 97,
+      "rounds": 16,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 33,
+      "policy": "random",
+      "decisions": 56,
+      "choices": 57,
+      "winner": "enemy",
+      "turns": 121,
+      "rounds": 23,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 34,
+      "policy": "random",
+      "decisions": 71,
+      "choices": 75,
+      "winner": "enemy",
+      "turns": 156,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 35,
+      "policy": "random",
+      "decisions": 74,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 177,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 36,
+      "policy": "random",
+      "decisions": 52,
+      "choices": 53,
+      "winner": "enemy",
+      "turns": 132,
+      "rounds": 21,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 37,
+      "policy": "random",
+      "decisions": 70,
+      "choices": 73,
+      "winner": "enemy",
+      "turns": 222,
+      "rounds": 35,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 38,
+      "policy": "random",
+      "decisions": 86,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 200,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 39,
+      "policy": "random",
+      "decisions": 62,
+      "choices": 67,
+      "winner": "enemy",
+      "turns": 188,
+      "rounds": 30,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 40,
+      "policy": "random",
+      "decisions": 41,
+      "choices": 42,
+      "winner": "enemy",
+      "turns": 96,
+      "rounds": 17,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 41,
+      "policy": "random",
+      "decisions": 55,
+      "choices": 58,
+      "winner": "enemy",
+      "turns": 127,
+      "rounds": 25,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 42,
+      "policy": "random",
+      "decisions": 35,
+      "choices": 37,
+      "winner": "enemy",
+      "turns": 96,
+      "rounds": 18,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 43,
+      "policy": "random",
+      "decisions": 34,
+      "choices": 36,
+      "winner": "enemy",
+      "turns": 84,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 44,
+      "policy": "random",
+      "decisions": 73,
+      "choices": 76,
+      "winner": "enemy",
+      "turns": 177,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 45,
+      "policy": "random",
+      "decisions": 57,
+      "choices": 59,
+      "winner": "enemy",
+      "turns": 134,
+      "rounds": 25,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 46,
+      "policy": "random",
+      "decisions": 42,
+      "choices": 42,
+      "winner": "enemy",
+      "turns": 104,
+      "rounds": 22,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 47,
+      "policy": "random",
+      "decisions": 72,
+      "choices": 75,
+      "winner": "enemy",
+      "turns": 174,
+      "rounds": 30,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 48,
+      "policy": "random",
+      "decisions": 71,
+      "choices": 72,
+      "winner": "enemy",
+      "turns": 151,
+      "rounds": 29,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 49,
+      "policy": "random",
+      "decisions": 80,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 181,
+      "rounds": 34,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 50,
+      "policy": "random",
+      "decisions": 81,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 225,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 51,
+      "policy": "random",
+      "decisions": 59,
+      "choices": 66,
+      "winner": "enemy",
+      "turns": 149,
+      "rounds": 26,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 52,
+      "policy": "random",
+      "decisions": 92,
+      "choices": 95,
+      "winner": "enemy",
+      "turns": 221,
+      "rounds": 39,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 53,
+      "policy": "random",
+      "decisions": 36,
+      "choices": 36,
+      "winner": "enemy",
+      "turns": 93,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 54,
+      "policy": "random",
+      "decisions": 84,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 181,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 55,
+      "policy": "random",
+      "decisions": 31,
+      "choices": 31,
+      "winner": "enemy",
+      "turns": 81,
+      "rounds": 15,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 56,
+      "policy": "random",
+      "decisions": 46,
+      "choices": 48,
+      "winner": "enemy",
+      "turns": 107,
+      "rounds": 22,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 57,
+      "policy": "random",
+      "decisions": 87,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 169,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 58,
+      "policy": "random",
+      "decisions": 48,
+      "choices": 48,
+      "winner": "enemy",
+      "turns": 115,
+      "rounds": 19,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 59,
+      "policy": "random",
+      "decisions": 49,
+      "choices": 53,
+      "winner": "enemy",
+      "turns": 127,
+      "rounds": 23,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 60,
+      "policy": "random",
+      "decisions": 66,
+      "choices": 69,
+      "winner": "enemy",
+      "turns": 150,
+      "rounds": 27,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 61,
+      "policy": "random",
+      "decisions": 64,
+      "choices": 66,
+      "winner": "enemy",
+      "turns": 143,
+      "rounds": 27,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 62,
+      "policy": "random",
+      "decisions": 54,
+      "choices": 56,
+      "winner": "enemy",
+      "turns": 134,
+      "rounds": 24,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 63,
+      "policy": "random",
+      "decisions": 68,
+      "choices": 71,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 28,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 64,
+      "policy": "random",
+      "decisions": 58,
+      "choices": 62,
+      "winner": "enemy",
+      "turns": 134,
+      "rounds": 26,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 65,
+      "policy": "random",
+      "decisions": 190,
+      "choices": 202,
+      "winner": "enemy",
+      "turns": 650,
+      "rounds": 99,
+      "deaths": [
+        "witch"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The turn limit was reached."
+    },
+    {
+      "seed": 66,
+      "policy": "random",
+      "decisions": 81,
+      "choices": 85,
+      "winner": "enemy",
+      "turns": 232,
+      "rounds": 36,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 67,
+      "policy": "random",
+      "decisions": 106,
+      "choices": 114,
+      "winner": "enemy",
+      "turns": 259,
+      "rounds": 44,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 68,
+      "policy": "random",
+      "decisions": 114,
+      "choices": 119,
+      "winner": "enemy",
+      "turns": 248,
+      "rounds": 46,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 69,
+      "policy": "random",
+      "decisions": 54,
+      "choices": 58,
+      "winner": "enemy",
+      "turns": 145,
+      "rounds": 26,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 70,
+      "policy": "random",
+      "decisions": 66,
+      "choices": 67,
+      "winner": "enemy",
+      "turns": 138,
+      "rounds": 27,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 71,
+      "policy": "random",
+      "decisions": 243,
+      "choices": 259,
+      "winner": "enemy",
+      "turns": 650,
+      "rounds": 125,
+      "deaths": [
+        "witch"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The turn limit was reached."
+    },
+    {
+      "seed": 72,
+      "policy": "random",
+      "decisions": 56,
+      "choices": 57,
+      "winner": "enemy",
+      "turns": 147,
+      "rounds": 25,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 73,
+      "policy": "random",
+      "decisions": 73,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 176,
+      "rounds": 32,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 74,
+      "policy": "random",
+      "decisions": 27,
+      "choices": 27,
+      "winner": "enemy",
+      "turns": 64,
+      "rounds": 13,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 75,
+      "policy": "random",
+      "decisions": 77,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 76,
+      "policy": "random",
+      "decisions": 45,
+      "choices": 46,
+      "winner": "enemy",
+      "turns": 93,
+      "rounds": 19,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 77,
+      "policy": "random",
+      "decisions": 76,
+      "choices": 79,
+      "winner": "enemy",
+      "turns": 175,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 78,
+      "policy": "random",
+      "decisions": 27,
+      "choices": 28,
+      "winner": "enemy",
+      "turns": 72,
+      "rounds": 13,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 79,
+      "policy": "random",
+      "decisions": 48,
+      "choices": 50,
+      "winner": "enemy",
+      "turns": 115,
+      "rounds": 27,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 80,
+      "policy": "random",
+      "decisions": 42,
+      "choices": 43,
+      "winner": "enemy",
+      "turns": 89,
+      "rounds": 18,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 81,
+      "policy": "random",
+      "decisions": 53,
+      "choices": 55,
+      "winner": "enemy",
+      "turns": 129,
+      "rounds": 23,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 82,
+      "policy": "random",
+      "decisions": 49,
+      "choices": 51,
+      "winner": "enemy",
+      "turns": 111,
+      "rounds": 21,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 83,
+      "policy": "random",
+      "decisions": 55,
+      "choices": 57,
+      "winner": "enemy",
+      "turns": 121,
+      "rounds": 24,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 84,
+      "policy": "random",
+      "decisions": 87,
+      "choices": 95,
+      "winner": "enemy",
+      "turns": 202,
+      "rounds": 38,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 85,
+      "policy": "random",
+      "decisions": 73,
+      "choices": 74,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 86,
+      "policy": "random",
+      "decisions": 48,
+      "choices": 50,
+      "winner": "enemy",
+      "turns": 109,
+      "rounds": 21,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 87,
+      "policy": "random",
+      "decisions": 38,
+      "choices": 38,
+      "winner": "enemy",
+      "turns": 90,
+      "rounds": 16,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 88,
+      "policy": "random",
+      "decisions": 34,
+      "choices": 34,
+      "winner": "enemy",
+      "turns": 79,
+      "rounds": 17,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 89,
+      "policy": "random",
+      "decisions": 91,
+      "choices": 95,
+      "winner": "enemy",
+      "turns": 219,
+      "rounds": 38,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 90,
+      "policy": "random",
+      "decisions": 51,
+      "choices": 53,
+      "winner": "enemy",
+      "turns": 117,
+      "rounds": 23,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 91,
+      "policy": "random",
+      "decisions": 84,
+      "choices": 88,
+      "winner": "enemy",
+      "turns": 204,
+      "rounds": 36,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 92,
+      "policy": "random",
+      "decisions": 44,
+      "choices": 46,
+      "winner": "enemy",
+      "turns": 115,
+      "rounds": 17,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 93,
+      "policy": "random",
+      "decisions": 30,
+      "choices": 30,
+      "winner": "enemy",
+      "turns": 93,
+      "rounds": 13,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 94,
+      "policy": "random",
+      "decisions": 26,
+      "choices": 26,
+      "winner": "enemy",
+      "turns": 71,
+      "rounds": 12,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 1,
+      "fishFound": 9,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 95,
+      "policy": "random",
+      "decisions": 65,
+      "choices": 68,
+      "winner": "enemy",
+      "turns": 153,
+      "rounds": 30,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 96,
+      "policy": "random",
+      "decisions": 61,
+      "choices": 66,
+      "winner": "enemy",
+      "turns": 143,
+      "rounds": 27,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 97,
+      "policy": "random",
+      "decisions": 47,
+      "choices": 50,
+      "winner": "enemy",
+      "turns": 108,
+      "rounds": 21,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 98,
+      "policy": "random",
+      "decisions": 45,
+      "choices": 46,
+      "winner": "enemy",
+      "turns": 101,
+      "rounds": 21,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 99,
+      "policy": "random",
+      "decisions": 41,
+      "choices": 41,
+      "winner": "enemy",
+      "turns": 106,
+      "rounds": 19,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 2,
+      "fishFound": 18,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 100,
+      "policy": "random",
+      "decisions": 52,
+      "choices": 55,
+      "winner": "enemy",
+      "turns": 126,
+      "rounds": 24,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 1,
+      "policy": "auto",
+      "decisions": 100,
+      "choices": 100,
+      "winner": "enemy",
+      "turns": 183,
+      "rounds": 38,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 2,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "party",
+      "turns": 148,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 3,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "party",
+      "turns": 173,
+      "rounds": 36,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 4,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 5,
+      "policy": "auto",
+      "decisions": 95,
+      "choices": 95,
+      "winner": "party",
+      "turns": 157,
+      "rounds": 34,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 6,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "party",
+      "turns": 137,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 7,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 155,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 8,
+      "policy": "auto",
+      "decisions": 80,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 149,
+      "rounds": 31,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 9,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "enemy",
+      "turns": 172,
+      "rounds": 37,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 10,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 158,
+      "rounds": 33,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 11,
+      "policy": "auto",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 12,
+      "policy": "auto",
+      "decisions": 77,
+      "choices": 77,
+      "winner": "party",
+      "turns": 125,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 13,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 151,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 14,
+      "policy": "auto",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 139,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 15,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 151,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 16,
+      "policy": "auto",
+      "decisions": 100,
+      "choices": 100,
+      "winner": "party",
+      "turns": 173,
+      "rounds": 36,
+      "deaths": [
+        "witch",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 17,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 141,
+      "rounds": 32,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 18,
+      "policy": "auto",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 142,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 19,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 147,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 20,
+      "policy": "auto",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 146,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 21,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "enemy",
+      "turns": 169,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 22,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 154,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 23,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "enemy",
+      "turns": 178,
+      "rounds": 38,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 24,
+      "policy": "auto",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 130,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 25,
+      "policy": "auto",
+      "decisions": 96,
+      "choices": 96,
+      "winner": "party",
+      "turns": 164,
+      "rounds": 35,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 26,
+      "policy": "auto",
+      "decisions": 77,
+      "choices": 77,
+      "winner": "party",
+      "turns": 129,
+      "rounds": 29,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 27,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 146,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 28,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 152,
+      "rounds": 33,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 29,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 135,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 30,
+      "policy": "auto",
+      "decisions": 102,
+      "choices": 102,
+      "winner": "party",
+      "turns": 170,
+      "rounds": 36,
+      "deaths": [
+        "witch",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 31,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 142,
+      "rounds": 33,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 32,
+      "policy": "auto",
+      "decisions": 94,
+      "choices": 94,
+      "winner": "party",
+      "turns": 155,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 33,
+      "policy": "auto",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 144,
+      "rounds": 31,
+      "deaths": [
+        "alchemist",
+        "witch",
+        "guardian"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 34,
+      "policy": "auto",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "enemy",
+      "turns": 164,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 35,
+      "policy": "auto",
+      "decisions": 101,
+      "choices": 101,
+      "winner": "party",
+      "turns": 177,
+      "rounds": 38,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 36,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 175,
+      "rounds": 37,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 37,
+      "policy": "auto",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "enemy",
+      "turns": 146,
+      "rounds": 33,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 38,
+      "policy": "auto",
+      "decisions": 97,
+      "choices": 97,
+      "winner": "enemy",
+      "turns": 177,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 39,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 153,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 40,
+      "policy": "auto",
+      "decisions": 80,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 137,
+      "rounds": 31,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 41,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "enemy",
+      "turns": 167,
+      "rounds": 38,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 42,
+      "policy": "auto",
+      "decisions": 100,
+      "choices": 100,
+      "winner": "party",
+      "turns": 168,
+      "rounds": 36,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 43,
+      "policy": "auto",
+      "decisions": 103,
+      "choices": 103,
+      "winner": "enemy",
+      "turns": 184,
+      "rounds": 39,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 44,
+      "policy": "auto",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "enemy",
+      "turns": 161,
+      "rounds": 34,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 45,
+      "policy": "auto",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 131,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 46,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 145,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 47,
+      "policy": "auto",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 140,
+      "rounds": 32,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 48,
+      "policy": "auto",
+      "decisions": 96,
+      "choices": 96,
+      "winner": "enemy",
+      "turns": 168,
+      "rounds": 36,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 49,
+      "policy": "auto",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "party",
+      "turns": 147,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 50,
+      "policy": "auto",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 51,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 152,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 52,
+      "policy": "auto",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 128,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 53,
+      "policy": "auto",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "party",
+      "turns": 146,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 54,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 142,
+      "rounds": 32,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 55,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "party",
+      "turns": 155,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 56,
+      "policy": "auto",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 126,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 57,
+      "policy": "auto",
+      "decisions": 73,
+      "choices": 73,
+      "winner": "enemy",
+      "turns": 130,
+      "rounds": 29,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 58,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 163,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 59,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "enemy",
+      "turns": 176,
+      "rounds": 38,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 60,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "party",
+      "turns": 153,
+      "rounds": 33,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 61,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 141,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 62,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 144,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 63,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 136,
+      "rounds": 30,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 64,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 150,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 65,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 66,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "enemy",
+      "turns": 172,
+      "rounds": 37,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 67,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "enemy",
+      "turns": 172,
+      "rounds": 37,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 68,
+      "policy": "auto",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 156,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 69,
+      "policy": "auto",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 161,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 70,
+      "policy": "auto",
+      "decisions": 73,
+      "choices": 73,
+      "winner": "party",
+      "turns": 119,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 71,
+      "policy": "auto",
+      "decisions": 98,
+      "choices": 98,
+      "winner": "party",
+      "turns": 176,
+      "rounds": 35,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 72,
+      "policy": "auto",
+      "decisions": 85,
+      "choices": 85,
+      "winner": "party",
+      "turns": 144,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 73,
+      "policy": "auto",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 130,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 74,
+      "policy": "auto",
+      "decisions": 68,
+      "choices": 68,
+      "winner": "party",
+      "turns": 117,
+      "rounds": 25,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 75,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 141,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 76,
+      "policy": "auto",
+      "decisions": 85,
+      "choices": 85,
+      "winner": "party",
+      "turns": 137,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 77,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "enemy",
+      "turns": 160,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 78,
+      "policy": "auto",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 155,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 79,
+      "policy": "auto",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "enemy",
+      "turns": 159,
+      "rounds": 34,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 80,
+      "policy": "auto",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 128,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 81,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "enemy",
+      "turns": 153,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 82,
+      "policy": "auto",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 140,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 83,
+      "policy": "auto",
+      "decisions": 69,
+      "choices": 69,
+      "winner": "party",
+      "turns": 115,
+      "rounds": 24,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 84,
+      "policy": "auto",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 85,
+      "policy": "auto",
+      "decisions": 71,
+      "choices": 71,
+      "winner": "party",
+      "turns": 113,
+      "rounds": 25,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 86,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "enemy",
+      "turns": 143,
+      "rounds": 32,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 87,
+      "policy": "auto",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 140,
+      "rounds": 31,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 88,
+      "policy": "auto",
+      "decisions": 85,
+      "choices": 85,
+      "winner": "enemy",
+      "turns": 142,
+      "rounds": 32,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 89,
+      "policy": "auto",
+      "decisions": 101,
+      "choices": 101,
+      "winner": "party",
+      "turns": 166,
+      "rounds": 35,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 90,
+      "policy": "auto",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 155,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 91,
+      "policy": "auto",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 153,
+      "rounds": 34,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 92,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "enemy",
+      "turns": 142,
+      "rounds": 32,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 93,
+      "policy": "auto",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "party",
+      "turns": 137,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 94,
+      "policy": "auto",
+      "decisions": 99,
+      "choices": 99,
+      "winner": "party",
+      "turns": 168,
+      "rounds": 37,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 95,
+      "policy": "auto",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 128,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 96,
+      "policy": "auto",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "enemy",
+      "turns": 136,
+      "rounds": 30,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 97,
+      "policy": "auto",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "party",
+      "turns": 156,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 98,
+      "policy": "auto",
+      "decisions": 73,
+      "choices": 73,
+      "winner": "party",
+      "turns": 114,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 99,
+      "policy": "auto",
+      "decisions": 76,
+      "choices": 76,
+      "winner": "enemy",
+      "turns": 134,
+      "rounds": 30,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 100,
+      "policy": "auto",
+      "decisions": 95,
+      "choices": 95,
+      "winner": "enemy",
+      "turns": 177,
+      "rounds": 38,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 1,
+      "policy": "active",
+      "decisions": 73,
+      "choices": 73,
+      "winner": "party",
+      "turns": 123,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 2,
+      "policy": "active",
+      "decisions": 77,
+      "choices": 77,
+      "winner": "enemy",
+      "turns": 140,
+      "rounds": 29,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 3,
+      "policy": "active",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 165,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 4,
+      "policy": "active",
+      "decisions": 80,
+      "choices": 80,
+      "winner": "enemy",
+      "turns": 141,
+      "rounds": 32,
+      "deaths": [
+        "guardian",
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 5,
+      "policy": "active",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "party",
+      "turns": 140,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 6,
+      "policy": "active",
+      "decisions": 96,
+      "choices": 96,
+      "winner": "party",
+      "turns": 159,
+      "rounds": 36,
+      "deaths": [
+        "witch"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 7,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 130,
+      "rounds": 29,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 8,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 145,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 9,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 134,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 10,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 11,
+      "policy": "active",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "enemy",
+      "turns": 156,
+      "rounds": 35,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 12,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 13,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "enemy",
+      "turns": 151,
+      "rounds": 33,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 14,
+      "policy": "active",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 125,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 15,
+      "policy": "active",
+      "decisions": 80,
+      "choices": 80,
+      "winner": "party",
+      "turns": 135,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 16,
+      "policy": "active",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "party",
+      "turns": 132,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 17,
+      "policy": "active",
+      "decisions": 97,
+      "choices": 97,
+      "winner": "party",
+      "turns": 163,
+      "rounds": 35,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 18,
+      "policy": "active",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "party",
+      "turns": 135,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 19,
+      "policy": "active",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 129,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 20,
+      "policy": "active",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 135,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 21,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 141,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 22,
+      "policy": "active",
+      "decisions": 100,
+      "choices": 100,
+      "winner": "party",
+      "turns": 184,
+      "rounds": 39,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 23,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 140,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 24,
+      "policy": "active",
+      "decisions": 74,
+      "choices": 74,
+      "winner": "party",
+      "turns": 125,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 25,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 168,
+      "rounds": 37,
+      "deaths": [
+        "alchemist",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 26,
+      "policy": "active",
+      "decisions": 70,
+      "choices": 70,
+      "winner": "party",
+      "turns": 115,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 27,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 165,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 28,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 145,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 29,
+      "policy": "active",
+      "decisions": 98,
+      "choices": 98,
+      "winner": "enemy",
+      "turns": 174,
+      "rounds": 37,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 30,
+      "policy": "active",
+      "decisions": 96,
+      "choices": 96,
+      "winner": "enemy",
+      "turns": 171,
+      "rounds": 36,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 31,
+      "policy": "active",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "party",
+      "turns": 142,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 32,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 33,
+      "policy": "active",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 133,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 34,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 132,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 35,
+      "policy": "active",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "party",
+      "turns": 147,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 36,
+      "policy": "active",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 152,
+      "rounds": 33,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 37,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 141,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 38,
+      "policy": "active",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 149,
+      "rounds": 33,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 39,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 40,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "enemy",
+      "turns": 157,
+      "rounds": 35,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 41,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 141,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 42,
+      "policy": "active",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "enemy",
+      "turns": 151,
+      "rounds": 31,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 43,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 158,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 44,
+      "policy": "active",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "party",
+      "turns": 152,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 45,
+      "policy": "active",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 156,
+      "rounds": 34,
+      "deaths": [
+        "guardian",
+        "witch",
+        "alchemist"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 46,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 47,
+      "policy": "active",
+      "decisions": 68,
+      "choices": 68,
+      "winner": "party",
+      "turns": 113,
+      "rounds": 24,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 48,
+      "policy": "active",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "enemy",
+      "turns": 154,
+      "rounds": 33,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 49,
+      "policy": "active",
+      "decisions": 88,
+      "choices": 88,
+      "winner": "enemy",
+      "turns": 169,
+      "rounds": 36,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 50,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 133,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 51,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 137,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 52,
+      "policy": "active",
+      "decisions": 72,
+      "choices": 72,
+      "winner": "party",
+      "turns": 130,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 53,
+      "policy": "active",
+      "decisions": 86,
+      "choices": 86,
+      "winner": "enemy",
+      "turns": 153,
+      "rounds": 33,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 54,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 156,
+      "rounds": 34,
+      "deaths": [
+        "witch"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 55,
+      "policy": "active",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "enemy",
+      "turns": 158,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 56,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 151,
+      "rounds": 33,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 57,
+      "policy": "active",
+      "decisions": 67,
+      "choices": 67,
+      "winner": "party",
+      "turns": 116,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 58,
+      "policy": "active",
+      "decisions": 79,
+      "choices": 79,
+      "winner": "party",
+      "turns": 132,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 59,
+      "policy": "active",
+      "decisions": 87,
+      "choices": 87,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 60,
+      "policy": "active",
+      "decisions": 72,
+      "choices": 72,
+      "winner": "party",
+      "turns": 118,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 61,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 122,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 62,
+      "policy": "active",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "party",
+      "turns": 146,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 63,
+      "policy": "active",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 145,
+      "rounds": 32,
+      "deaths": [
+        "alchemist",
+        "guardian",
+        "witch"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 64,
+      "policy": "active",
+      "decisions": 72,
+      "choices": 72,
+      "winner": "party",
+      "turns": 119,
+      "rounds": 25,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 65,
+      "policy": "active",
+      "decisions": 80,
+      "choices": 80,
+      "winner": "party",
+      "turns": 133,
+      "rounds": 30,
+      "deaths": [
+        "alchemist"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 66,
+      "policy": "active",
+      "decisions": 89,
+      "choices": 89,
+      "winner": "enemy",
+      "turns": 156,
+      "rounds": 34,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 67,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 137,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 68,
+      "policy": "active",
+      "decisions": 76,
+      "choices": 76,
+      "winner": "party",
+      "turns": 124,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 69,
+      "policy": "active",
+      "decisions": 94,
+      "choices": 94,
+      "winner": "party",
+      "turns": 155,
+      "rounds": 34,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 70,
+      "policy": "active",
+      "decisions": 64,
+      "choices": 64,
+      "winner": "party",
+      "turns": 103,
+      "rounds": 23,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 71,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 72,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 144,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 73,
+      "policy": "active",
+      "decisions": 84,
+      "choices": 84,
+      "winner": "enemy",
+      "turns": 156,
+      "rounds": 33,
+      "deaths": [
+        "witch",
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 74,
+      "policy": "active",
+      "decisions": 73,
+      "choices": 73,
+      "winner": "party",
+      "turns": 125,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 75,
+      "policy": "active",
+      "decisions": 78,
+      "choices": 78,
+      "winner": "party",
+      "turns": 122,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 76,
+      "policy": "active",
+      "decisions": 76,
+      "choices": 76,
+      "winner": "party",
+      "turns": 139,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 77,
+      "policy": "active",
+      "decisions": 92,
+      "choices": 92,
+      "winner": "party",
+      "turns": 159,
+      "rounds": 35,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 78,
+      "policy": "active",
+      "decisions": 94,
+      "choices": 94,
+      "winner": "party",
+      "turns": 159,
+      "rounds": 34,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 79,
+      "policy": "active",
+      "decisions": 90,
+      "choices": 90,
+      "winner": "party",
+      "turns": 152,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 80,
+      "policy": "active",
+      "decisions": 75,
+      "choices": 75,
+      "winner": "party",
+      "turns": 123,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 81,
+      "policy": "active",
+      "decisions": 91,
+      "choices": 91,
+      "winner": "party",
+      "turns": 148,
+      "rounds": 32,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 82,
+      "policy": "active",
+      "decisions": 81,
+      "choices": 81,
+      "winner": "party",
+      "turns": 143,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 83,
+      "policy": "active",
+      "decisions": 63,
+      "choices": 63,
+      "winner": "party",
+      "turns": 104,
+      "rounds": 23,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 84,
+      "policy": "active",
+      "decisions": 75,
+      "choices": 75,
+      "winner": "party",
+      "turns": 124,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 85,
+      "policy": "active",
+      "decisions": 76,
+      "choices": 76,
+      "winner": "party",
+      "turns": 127,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 86,
+      "policy": "active",
+      "decisions": 74,
+      "choices": 74,
+      "winner": "party",
+      "turns": 129,
+      "rounds": 29,
+      "deaths": [
+        "alchemist",
+        "guardian"
+      ],
+      "firstDeath": "alchemist",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 87,
+      "policy": "active",
+      "decisions": 85,
+      "choices": 85,
+      "winner": "party",
+      "turns": 138,
+      "rounds": 30,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 88,
+      "policy": "active",
+      "decisions": 71,
+      "choices": 71,
+      "winner": "party",
+      "turns": 128,
+      "rounds": 25,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 89,
+      "policy": "active",
+      "decisions": 71,
+      "choices": 71,
+      "winner": "party",
+      "turns": 114,
+      "rounds": 25,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 90,
+      "policy": "active",
+      "decisions": 93,
+      "choices": 93,
+      "winner": "party",
+      "turns": 153,
+      "rounds": 33,
+      "deaths": [
+        "guardian"
+      ],
+      "firstDeath": "guardian",
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 91,
+      "policy": "active",
+      "decisions": 82,
+      "choices": 82,
+      "winner": "party",
+      "turns": 148,
+      "rounds": 31,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 92,
+      "policy": "active",
+      "decisions": 83,
+      "choices": 83,
+      "winner": "party",
+      "turns": 135,
+      "rounds": 29,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 93,
+      "policy": "active",
+      "decisions": 95,
+      "choices": 95,
+      "winner": "enemy",
+      "turns": 166,
+      "rounds": 36,
+      "deaths": [
+        "witch",
+        "guardian",
+        "alchemist"
+      ],
+      "firstDeath": "witch",
+      "wavesCleared": 3,
+      "fishFound": 27,
+      "cause": "The party fell under enemy pressure."
+    },
+    {
+      "seed": 94,
+      "policy": "active",
+      "decisions": 76,
+      "choices": 76,
+      "winner": "party",
+      "turns": 136,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 95,
+      "policy": "active",
+      "decisions": 74,
+      "choices": 74,
+      "winner": "party",
+      "turns": 113,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 96,
+      "policy": "active",
+      "decisions": 77,
+      "choices": 77,
+      "winner": "party",
+      "turns": 121,
+      "rounds": 28,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 97,
+      "policy": "active",
+      "decisions": 95,
+      "choices": 95,
+      "winner": "party",
+      "turns": 166,
+      "rounds": 35,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 98,
+      "policy": "active",
+      "decisions": 77,
+      "choices": 77,
+      "winner": "party",
+      "turns": 130,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 99,
+      "policy": "active",
+      "decisions": 70,
+      "choices": 70,
+      "winner": "party",
+      "turns": 126,
+      "rounds": 27,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    },
+    {
+      "seed": 100,
+      "policy": "active",
+      "decisions": 74,
+      "choices": 74,
+      "winner": "party",
+      "turns": 117,
+      "rounds": 26,
+      "deaths": [],
+      "firstDeath": null,
+      "wavesCleared": 3,
+      "fishFound": 42,
+      "cause": "The cafe is safe for tonight."
+    }
+  ],
+  "method": "100 identical seeds per policy. Decisions counts legal alternatives, an upper bound on non-obvious choices. Random picks legal skills and targets. Auto and active use existing policies."
+}
