@@ -4,7 +4,7 @@ import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 export type BeatKind = 'anticipation'|'travel'|'impact'|'reaction'|'residue';
 export interface EffectBeat { kind:BeatKind; start:number; duration:number; camera:number; shake:number; flash:number; clip:string; vfx:string; soundCue:string }
 export interface EffectRecipe { name:string; color:string; accent:string; shape:string; ultimate:boolean; duration:number[]; clip:string; motifs:string[]; shake:number }
-export interface EffectPlan { id:number; actorId:string; skillId:string; targetIds:string[]; color:string; accent:string; shape:string; duration:number; ultimate:boolean; beats:EffectBeat[]; events:TurnEvent[]; name:string; motifs:string[] }
+export interface EffectPlan { presentationId?:string; presentationCues?:string[]; id:number; actorId:string; skillId:string; targetIds:string[]; color:string; accent:string; shape:string; duration:number; ultimate:boolean; beats:EffectBeat[]; events:TurnEvent[]; name:string; motifs:string[] }
 export interface EffectFrame { plan:EffectPlan; beat:EffectBeat; progress:number; actionProgress:number; elapsed:number; color:string; camera:number; shake:number; flash:number; clip:string; intensity:number }
 const gold='#ffd48a', violet='#c49aff', teal='#86ebc7', red='#ff8b9e';
 const recipe=(name:string,color:string,shape:string,options:Partial<EffectRecipe>={}):EffectRecipe=>({name,color,accent:'#fff3d4',shape,ultimate:false,duration:[300,260,80,210,310],clip:'attack',motifs:['glow','ribbon','ring','sparks','afterglow'],shake:1,...options});
@@ -56,10 +56,10 @@ export const EFFECT_REGISTRY:Record<string,EffectRecipe>={
   defeat:recipe('A lesson for tomorrow',red,'mend',{duration:[300,150,60,300,500],shake:0,clip:'down'}),
 };
 const kinds:BeatKind[]=['anticipation','travel','impact','reaction','residue'];
-export function createActionPlan(events:readonly TurnEvent[]):EffectPlan {
+export function createActionPlan(events:readonly TurnEvent[],override?:EffectRecipe):EffectPlan {
   const first=events.find(e=>e.type==='action_start')??['victory','defeat','wave_clear'].map(type=>events.find(e=>e.type===type)).find(Boolean)??events.find(e=>['boss_phase','passive','damage','status_apply','status_expire','death','gear_proc','shield'].includes(e.type))??events[0];
   const key=first?.type==='boss_phase'?'bossIntro':first?.type==='action_start'||first?.type==='damage'||first?.type==='shield'||first?.type==='passive'||first?.type==='gear_proc'?first.skillId:first?.type??'status_apply';
-  const data=EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
+  const data=override??EFFECT_REGISTRY[key]??EFFECT_REGISTRY.status_apply!;
   let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=Math.max(i===0&&events.some(e=>e.type==='action_start')?600:0,Math.round(data.duration[i]!*(i===3&&(data.ultimate||events.some(e=>e.type==='death'))?1.4:1)*(!data.ultimate&&i!==2?.73:1)));const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
     shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?(data.ultimate?.055:.025):0,
     clip:data.clip==='down'||data.clip==='victory'?data.clip:i===0?data.clip:i===1&&['slash','bash','charge'].includes(data.shape)?'step':i>=3?'idle':data.clip,vfx:data.motifs[i]??'glow',soundCue:`${key}.${kind}`};at+=duration;return beat;});

@@ -9,6 +9,7 @@ import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { MODEL_IDS, portrait } from './assets';
 import type { DepthModel } from './model';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
+import { FeelLab } from './FeelLab';
 
 function project(battle: R.Battle): TurnActor[] {
   const slots = { party: 0, enemy: 0 };
@@ -41,6 +42,8 @@ function Statuses({ actor }: { actor: R.Actor }) {
 export function BattleView({ m }: { m: DepthModel }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
+  const loadingText = useRef<HTMLSpanElement>(null);
+  const loadingProgress = useRef<HTMLProgressElement>(null);
   const plates = useRef(new Map<string, HTMLDivElement>());
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
@@ -51,7 +54,9 @@ export function BattleView({ m }: { m: DepthModel }) {
   view.current = { actors: project(battle), currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance,
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
-    autoBattle: true, rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
+    autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
+    cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.statuses.map(status => status.id)])),
+    rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera,
     targetIds: m.plan?.targetIds ?? [], legalIds: [],
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
@@ -76,6 +81,14 @@ export function BattleView({ m }: { m: DepthModel }) {
     } catch (error) { m.sceneError = `3D preview unavailable. ${String(error)}`; m.notify(false); }
     const tick = (now: number) => {
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
+      const loading = scene.current?.loading;
+      if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
+        loadingText.current.textContent = loading.label;
+        if (loadingProgress.current) {
+          loadingProgress.current.max = loading.total;
+          loadingProgress.current.value = loading.completed;
+        }
+      }
       if (scene.current?.ready && !ready) { ready = true; m.sceneReady = true; m.notify(false); }
       currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
         m.paused || !m.showBattle, R.CHAPTERS[(m.battle?.chapter ?? 1) - 1]!.ambience / 174);
@@ -110,8 +123,13 @@ export function BattleView({ m }: { m: DepthModel }) {
       <button onClick={() => setLogOpen(!logOpen)}>Battle log</button><button onClick={() => m.leave()}>Leave table</button>
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>
-    <div className={`dp-arena chapter-${battle.chapter}`}><div className="dp-canvas" ref={host} />
-      {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status">Preparing the cafe miniatures…</div>}
+    {m.offline && <FeelLab m={m} />}
+    <div className={`dp-arena chapter-${battle.chapter} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
+      {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
+        <img src={portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
+        <button onClick={() => { m.plan = null; m.animationAt = 0; m.notify(false); }}>Skip moment</button>
+      </aside>}
+      {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status"><span ref={loadingText}>Preparing the cafe miniatures…</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
       {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);

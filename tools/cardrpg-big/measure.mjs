@@ -2,6 +2,7 @@ import { chromium } from '../../apps/web/node_modules/@playwright/test/index.mjs
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 
 const baseline = process.argv.includes('--baseline');
 const output = process.env.BIG_OUT || `reports/cardrpg-big/${baseline ? 'baseline' : 'performance'}`;
@@ -91,7 +92,7 @@ try {
       let trace = '';
       for (;;) { const chunk = await cdp.send('IO.read', { handle: stream }); trace += chunk.data; if (chunk.eof) break; }
       await cdp.send('IO.close', { handle: stream });
-      await writeFile(`${output}/${name}-trace.json`, trace);
+      await writeFile(`${output}/${name}-trace.json.gz`, gzipSync(trace));
       const events = JSON.parse(trace).traceEvents;
       const origin = events.find(e => e.name === 'navigationStart' && e.args?.data?.documentLoaderURL?.startsWith('file:'))?.ts;
       row.hitchAttribution = data.frames.filter(f => f.ms > 33).map(frame => {

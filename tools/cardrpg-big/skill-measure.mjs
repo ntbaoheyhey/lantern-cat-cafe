@@ -58,7 +58,10 @@ try {
       });
       await page.goto('file://' + frozenArtifact);
       await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 120000 });
-      actions ??= await page.evaluate(() => window.__depthReview.galleryActions);
+      if (!actions) {
+        actions = await page.evaluate(() => window.__depthReview.galleryActions);
+        receipt.actions = actions;
+      }
       if (process.env.BIG_SKILL_IDS) actions = actions.filter(action => process.env.BIG_SKILL_IDS.split(',').includes(action.id));
       if (!actions.length) throw new Error('The gallery action filter matched no actions');
       if (process.env.BIG_SKILL_LIMIT) actions = actions.slice(0, Number(process.env.BIG_SKILL_LIMIT));
@@ -72,7 +75,7 @@ try {
         const automaticActions = await page.evaluate(() => window.__depthReview.battle.choices.length);
         if (automaticActions) throw new Error('A battle action preceded the first-use gallery fixture');
       }
-      await page.waitForFunction(() => window.__depthScene?.ready, { timeout: 120000 });
+      await page.waitForFunction(() => window.__depthScene?.ready, null, { timeout: 120000 });
       await page.evaluate(({ action, quality }) => {
         const m = window.__depthReview;
         m.state.settings.quality = quality;
@@ -99,7 +102,7 @@ try {
           window.__depthReview.inspect(id, 0, true);
         }, action.id);
         const duration = await page.evaluate(() => window.__depthReview.plan.duration);
-        await page.waitForFunction(() => !window.__depthReview.plan, { timeout: 30000 });
+        await page.waitForFunction(() => !window.__depthReview.plan, null, { timeout: 30000 });
         const after = await snapshot();
         casts.push({ use, duration, before, after });
       }
@@ -109,7 +112,7 @@ try {
         cast.summary = { ...summarize(frames), calls: Math.max(...frames.map(frame => frame.calls ?? 0)),
           triangles: Math.max(...frames.map(frame => frame.triangles ?? 0)), particles: Math.max(...frames.map(frame => frame.particles ?? 0)) };
       }
-      const name = `${width}x${height}-dpr${dpr}-cpu${cpu}-${quality}-${action.id.replace(':', '-')}`;
+      const name = `${width}x${height}-dpr${dpr}-cpu${cpu}-${quality}-${action.id.replaceAll(':', '-')}`;
       const row = { name, action, width, height, dpr, cpu, quality, errors, casts, pageOpen: summarize(data.frames) };
       if (process.env.BIG_SKILL_PROFILE) {
         const completed = new Promise(resolve => cdp.once('Tracing.tracingComplete', resolve));
