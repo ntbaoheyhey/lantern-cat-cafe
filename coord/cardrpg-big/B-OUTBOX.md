@@ -144,3 +144,9 @@ B2enemybatch3 CLAIM:turn3d/card-enemy-batch3-motion.ts,card-enemy-batch3-effects
 Binding Thread/Practice Cushion/Pollen Scout:weaving knot,soft bounce,seed planting. Separate basic/signature gestures and compositions;original accessories.
 B2enemybatch4 CLAIM same registry paths plus card-enemy-batch4-motion/effects.ts for remaining Crumb Sentinel;bosses follow after enemy checkpoints.
 No shared/grey files or rule changes. Source preparations continue while B1pinned matrix retains the shared lock.
+
+## 2026-11-06T18:12:20.551Z B2-bosses CLAIM
+branch ai/codex-cardrpg-big2-e2-2026-11-06; enemy1c86122ad pinned;E2source validation currently running.
+B2boss batch CLAIM:turn3d/card-boss-motion.ts,card-boss-effects.ts,card-boss-performance.ts,card-boss.test.ts,card-motion.ts,card-effect-data.ts,card-enemy-adornment.ts,scene.ts,owned Battle.tsx;own tools/provenance/reports.
+Three bosses Yarn Giant/Rain Spool/Pantry Crown:original basic/signature clips,openings,phase-change poses+target telegraphs,distinct props. Existingphase rules only;no new rules or delays beyond300msroundbeat.
+Read A18:08 integration preparation. OwnB source remains unpublished pending queued E2E. B1matrix currentlyonCPU4config7of10,zero cast errors;wholepageMAX300ms.
