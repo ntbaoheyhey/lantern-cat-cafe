@@ -1,0 +1,22 @@
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-cardrpg-big2
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: src/game/squad/turn3d/card-effect-primitives.ts(55,9): error TS2740: Type '{ door(): void; 'knock-ring'(): void; handle(): void; lantern(): void; 'light-pool'(): void; apron(): void; bow(): void; roof(): void; window(): void; ember(): void; spark(): void; cup(): void; ... 27 more ...; bubble(): void; }' is missing the following properties from type 'Record<"spark" | "bow" | "comet" | "star" | "button" | "ember" | "leaf" | "sprout" | "wave" | "crescent" | "wick" | "knot" | "roller" | "crumb-crown" | "paper-cat" | "ink-cap" | "spice-star" | ... 29 more ... | "bubble", () => void>': roller, "crumb-crown", "paper-cat", "ink-cap", and 3 more.
+apps/web lint: Failed
+/Users/bao/taskbar-hero-cardrpg-big2/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 lint: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

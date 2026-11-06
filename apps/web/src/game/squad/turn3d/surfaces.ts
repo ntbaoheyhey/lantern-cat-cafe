@@ -1,5 +1,8 @@
 /** Original canvas bakes for cafe wood, woven cloth and warm windows. */
 import * as T from 'three';
+import woodUrl from '../../../../../../assets/cardrpg3b/textures/stage-wood.png?url';
+import clothUrl from '../../../../../../assets/cardrpg3b/textures/stage-cloth.png?url';
+import windowUrl from '../../../../../../assets/cardrpg3b/textures/stage-window.png?url';
 
 type StageSurface = 'wood' | 'cloth' | 'window';
 
@@ -56,12 +59,13 @@ export function stageTexture(kind: StageSurface): T.CanvasTexture {
   return step.value;
 }
 
-export async function prepareStageTexture(kind: StageSurface): Promise<T.CanvasTexture> {
-  const work = bakeStageTexture(kind);
-  let step = work.next();
-  while (!step.done) {
-    await new Promise(resolve => setTimeout(resolve, 0));
-    step = work.next();
-  }
-  return step.value;
+export async function prepareStageTexture(kind: StageSurface): Promise<T.Texture> {
+  const texture = await new T.TextureLoader().loadAsync({ wood: woodUrl, cloth: clothUrl, window: windowUrl }[kind]);
+  texture.name = `original_baked_stage_${kind}_256`;
+  texture.colorSpace = T.SRGBColorSpace;
+  texture.wrapS = texture.wrapT = T.RepeatWrapping;
+  texture.repeat.set(kind === 'wood' ? 3 : kind === 'cloth' ? 5 : 1,
+    kind === 'wood' ? 1 : kind === 'cloth' ? 3 : 1);
+  texture.anisotropy = 4;
+  return texture;
 }

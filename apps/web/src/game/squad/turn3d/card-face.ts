@@ -20,6 +20,18 @@ export function cardExpression(clip: string, casting = false): CardExpression {
   return 'idle';
 }
 
+const IDENTITIES: Record<string, { spacing: number; width: number; height: number; iris: string; glint: string; brow: number }> = {
+  biscuit: { spacing: .196, width: 1.09, height: .82, iris: '#50351c', glint: '#ffe0a1', brow: -.045 },
+  inkcap: { spacing: .176, width: .87, height: 1.13, iris: '#322747', glint: '#d5b5fa', brow: .085 },
+  cinnamon: { spacing: .202, width: 1.03, height: .97, iris: '#54322d', glint: '#ffd0aa', brow: -.025 },
+  brioche: { spacing: .208, width: 1.14, height: .78, iris: '#423346', glint: '#dcc4ed', brow: .065 },
+  velvet: { spacing: .174, width: .89, height: 1.06, iris: '#362c50', glint: '#efb4e4', brow: -.095 },
+  marigold: { spacing: .199, width: .99, height: 1.09, iris: '#365044', glint: '#f9e6a8', brow: -.035 },
+  panko: { spacing: .205, width: 1.12, height: .88, iris: '#463022', glint: '#fbd392', brow: .055 },
+  mallow: { spacing: .177, width: .91, height: 1.12, iris: '#482730', glint: '#ffb68e', brow: -.07 },
+  sorrel: { spacing: .184, width: .96, height: .92, iris: '#24394e', glint: '#b9e8f1', brow: .035 },
+};
+
 /** Small geometry shared by each pair of eyes. Authored rig sockets stay intact. */
 export class CardFace {
   private eyes?: T.Object3D;
@@ -32,6 +44,7 @@ export class CardFace {
   private geometry = new T.SphereGeometry(1, 24, 16);
   private meshes: T.InstancedMesh[] = [];
   private phase = 0;
+  private browOffset = 0;
 
   constructor(model: T.Object3D, role: string, id: string) {
     this.eyes = model.getObjectByName(`${role}_eyes`);
@@ -45,10 +58,12 @@ export class CardFace {
     this.eyeScale.copy(this.eyes.scale);
     for (const child of this.eyes.children) child.visible = false;
 
+    const identity = IDENTITIES[id];
+    this.browOffset = identity?.brow ?? 0;
     const layers = [
-      { color: role === 'witch' ? '#211e32' : '#292535', offset: [0, 0, 0], size: [.088, .120, .038], glossy: true },
+      { color: identity?.iris ?? (role === 'witch' ? '#211e32' : '#292535'), offset: [0, 0, 0], size: [.088, .120, .038], glossy: true },
       { color: '#fff9e8', offset: [-.023, .045, .034], size: [.028, .036, .015], glossy: false },
-      { color: '#ffcd68', offset: [.028, -.05, .031], size: [.015, .018, .009], glossy: false },
+      { color: identity?.glint ?? '#ffcd68', offset: [.028, -.05, .031], size: [.015, .018, .009], glossy: false },
     ];
     const transform = new T.Object3D();
     for (const [index, layer] of layers.entries()) {
@@ -58,8 +73,9 @@ export class CardFace {
       const mesh = new T.InstancedMesh(this.geometry, material, 2);
       mesh.name = `${role}_eye_layer_${index}`;
       for (let eye = 0; eye < 2; eye++) {
-        transform.position.set((eye === 0 ? -.19 : .19) + layer.offset[0]!, layer.offset[1]!, layer.offset[2]!);
+        transform.position.set((eye === 0 ? -1 : 1) * (identity?.spacing ?? .19) + layer.offset[0]!, layer.offset[1]!, layer.offset[2]!);
         transform.scale.fromArray(layer.size);
+        transform.scale.x *= identity?.width ?? 1; transform.scale.y *= identity?.height ?? 1;
         transform.updateMatrix();
         mesh.setMatrixAt(eye, transform.matrix);
       }
@@ -78,8 +94,8 @@ export class CardFace {
       this.eyes.position.copy(this.eyePosition);
       this.eyes.position.x += T.MathUtils.clamp(yaw, -.61, .61) * .034;
     }
-    if (this.browLeft) this.browLeft.rotation.z = shape.brow;
-    if (this.browRight) this.browRight.rotation.z = -shape.brow;
+    if (this.browLeft) this.browLeft.rotation.z = shape.brow + this.browOffset;
+    if (this.browRight) this.browRight.rotation.z = -shape.brow - this.browOffset;
     if (this.mouth) this.mouth.scale.set(this.mouthScale.x * shape.width, this.mouthScale.y * shape.mouth, this.mouthScale.z);
   }
 
