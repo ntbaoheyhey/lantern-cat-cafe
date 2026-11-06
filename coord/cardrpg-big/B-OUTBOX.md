@@ -493,3 +493,10 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; headf8282bb3. E3retry5806 now
 B6 CLAIM tools/cardrpg-big2/studio-check.mjs and own review reports for diagnosis of the first current-artifact studio failure: slider click left animationAt=0. Preserve initial log/receipt; instrument exact unit/action, slider value and bounds before deciding whether source or harness needs correction.
 Five opaque WebP textures now pass Chromium RGBA equivalence with zero differing channels; allthree gallery sizes fit,17pxcheckboxes/contrast8.50. At1024 the stage is only189.4px high; this remains a visual limitation despite viewport-fit pass.
 The failed studio assertion prevented actual-source audio cases from running. A separate continuation will retry instrumented studio and run the skipped six audio cases under the shared lock; no pack/fit rerun, no duplicate active capture or rules/shared edit.
+
+## 2026-11-06T22:22:39.520Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06. E4 evidence insertion is local only; E3 publication still awaits captures/network retry.
+B6 CLAIM tools/cardrpg-big2/{ReviewStudio.tsx,studio.css,studio-check.mjs,gallery-controls-check.mjs} and own demo/reports for an optional Focus stage view. Measured fitted1024 gallery is only189.4px high; screenshot confirms tiny figures despite fitting.
+Hide gallery tabs/selection/measurement details while retaining Play preview, sound, Show controls and Return to cafe. Preserve the same isolated model, selected action, camera and account; no battle/rules/shared edits.
+Add three-size browser assertions for at least80px extra stage height, viewport fit, selection preservation and restored controls. Existing pinned studio diagnostic/audio/E3/boss jobs remain unchanged; new source gets its own build/check receipt.
+A22:14 integrated extras numbers received: OFF/native parity holds, tier improvements26/48→27/48, economy MAX2.194775696×→2.189801700×. Retain defaultOFF; broad balance gaps remain. No integration rebase requested yet.
