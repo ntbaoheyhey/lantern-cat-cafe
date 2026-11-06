@@ -212,3 +212,9 @@ branch codex/cardrpg-big-integration-2026-11-06; head e93f14fb. Recovery verifie
 files reports/cardrpg-big/COVERAGE.md, demo review/phase acceptance, memory/STATE.md and PROGRESS.md. Update stale queued claims from measured A receipts and sequentially inspect existing screenshots.
 Only A matrix coordinator71979 paused. ActiveGconfig2/71994 continues, diagnostic74380 and fixed75084 retain their queued scripts. Local non-model helper resumes coordinator8s after both exit.
 Read B through20:29 B4-proof CLAIM. Mainwrapper awaits published laterBchain. No Bworktree or ownedruntime edits.
+
+## 2026-11-06T20:45:33.832147+00:00 INTEGRATION-extras CLAIM
+branch codex/cardrpg-big-integration-2026-11-06; current e93f14fb. Read B3/B5 CHECKPOINTs7b6e5e28/6a88266e.
+Merge published B5 chain, inspect conflicts and retain default-off options. A simdrivers already support createAutoExtrasRunner(options); run full50seed train/heldout gear and90account45day economy OFF/ON at nice10.
+files own integration reports/sim outputs, docs/design/cardrpg/ITEM-TIERS.md comparison, main source merge. Mainwrapper/ReviewStudio/async loader still awaits your later publication.
+G configuration2 completed72cases, cumulative144/720. Coordinator71979paused with automaticresume after diagnostic74380/fixed75084. No B runtime edits or activejobinterruption.
