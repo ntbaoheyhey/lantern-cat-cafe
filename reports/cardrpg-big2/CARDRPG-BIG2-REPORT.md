@@ -20,10 +20,10 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
 | Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; all 12 cats rendered, opponents pending |
-| Blurry images | Review studio → Before / after → Sharpness | Native DPR1/2 crops queued; no +40% claim yet |
-| Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | Camera measurements queued; user chooses preference |
+| Blurry images | Review studio → Before / after → Sharpness | 2/10 cumulative targets pass; eight misses and crop limitations retained |
+| Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
-| Sparse stage / flat shadows | Chapters 1–3; home companion feet | Depth props, ambient motion and rug-aware contacts authored; visual proof pending |
+| Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
 | Skills lack sound identity | Battle Sound on and volume | Original synth motifs, kill/proc cues and authored hit-stop; browser PCM check pending |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
@@ -43,10 +43,10 @@ The seven-case cold run and the exhaustive fresh-page matrix are separate sample
 | 20 natural replays: flat heap/GPU | Not measured here | +1,088,932 retained bytes; geometry/texture/program growth 0/0/0 | B1 PASS at 2 MiB heap tolerance |
 | Load to interaction / battle ready | Raw baseline | Hub 924–936 ms native, 1716–1724 ms CPU4; battle ready 6540–6572 / 8332–8353 ms | Reported, not hidden in cast time |
 | Desktop 1280×720, 1440×900, 1024×600 | Inherited | B1 three sizes: zero overflow/manual controls | B1 PASS; final studio pending |
-| Sharpness +40%, ten native crop pairs | Inherited 2/10 | B3 cumulative and incremental comparisons queued | PENDING |
+| Sharpness +40%, ten native crop pairs | Inherited 2/10 | B3 2/10; face crops +10.71%/+8.27% versus B2c | MISS: eight targets; composition caveats |
 | Flag-off startup excludes three/models | Static graph checked | Production browser request inventory queued | PENDING |
 
-Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance/b1-skills/summary.json), [baseline trace](performance/baseline-cpu4-profile/HITCHES.md), [20 replays](performance/lifecycle/summary.json), [navigation](performance/navigation/checks.json). Final-build lifecycle and full matrix remain pending.
+Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance/b1-skills/summary.json), [baseline trace](performance/baseline-cpu4-profile/HITCHES.md), [20 replays](performance/lifecycle/summary.json), [navigation](performance/navigation/checks.json). [B3 stage/camera/sharpness](stage/CHECKPOINT.md): 405 camera samples, 20 replays, 20 navigation cycles; opening 116.6 ms MISS, post-interactive 100 ms in cold7, retained heap +1,093,980 bytes/GPU growth 0. Final-build lifecycle and full matrix remain pending.
 
 ## Unit coverage
 REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
@@ -109,17 +109,17 @@ Tea cloud flips three training and four held-out losses; relay flips none. Each 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 
-Browser captures, full final matrix, sharpness/scale attribution, audio listening and final demo verification are pending. B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+Opponent captures, full final matrix, audio listening and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
 
 | Complaint | Self-grade /10 |
 |---|---|
 | Effects / identity | Pending rendered review |
-| Sharpness | Pending crop comparison |
-| Layout / scale / faces | Pending camera and face audit |
+| Sharpness | 5: native targets correct, 8/10 metric targets still miss |
+| Layout / scale / faces | 6: no clipping/face occlusion; size band still misses |
 | Turn clarity + smoothness | Pending full matrix; opening miss known |
 | Overall feel | Pending complete demo review |
-| Sparse stage | Pending chapter captures |
+| Sparse stage | 6: richer props/ambient motion; shared flat tabletop remains |
 | Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
-| Mechanics lab | Pending browser proof; sim evidence complete |
+| Mechanics lab | 7 provisional: four browser cases and sims pass; polish/integrated balance pending |
 
 Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the optional battle runner and repeat ON/OFF gear/economy sims; call `playEntrance(catId)` from its invitation ceremony; combine the two source chains and announce the integrated checkpoint for rebase/revalidation; retain ownership of encounter balance and shared meta-screen fixes. No request to promote `autoExtras` or merge/deploy.
