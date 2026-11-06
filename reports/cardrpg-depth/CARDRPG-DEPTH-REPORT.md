@@ -1,6 +1,6 @@
 # Taskbar Hero — Card RPG depth pass
 
-**PARTIAL.** The playable depth prototype and validation package are delivered. G4 remains partial for build dominance and the desired manual-win margin. G7 has a fixture idle provider and local effort-supply accounting. G10 passes the measured offline journey while all four self-review scores remain below 8.5.
+**PARTIAL.** The playable depth prototype and validation package are delivered. G4 remains partial for build dominance and the desired manual-win margin. G6 retains shared equipment attachment families, with individual legendary visual identity partial. G7 has a fixture idle provider and local effort-supply accounting. G10 passes the measured offline journey while all four self-review scores remain below 8.5.
 
 The fetched base is `7ff71ff69bd271c554ec4f407e1cb7fefbef8099`, draft #323. The base remained the remote tip at final fetch. Frozen source is `ca31a25a02845cfff2d8ce0a16b1ba599fdcaacc`, depth contract 0.5.0. The nested legacy account retains contract 0.4.0. Worktree is `/Users/bao/taskbar-hero-cardrpg-depth`. This pass used one primary agent and local tests, scripts and browser tools. Runtime dependencies added — zero.
 
@@ -210,7 +210,7 @@ REFERENCE: [reports/cardrpg-depth/performance/measurement.json](https://github.c
 | G3 keywords and flavours | MET in tested screens | 16 lifecycle-tested statuses, five-flavour wheel, glossary and expandable intent/status details |
 | G4 decisions and balance | PARTIAL | Loadouts, energy, charge and break work. Chapter 2–3 policy separation exceeds 15 points. Dominance and the desired 15–30-point margin remain open. |
 | G5 campaign and returns | MET functionally | Three branching chapters, 30 charms, six archetypes, Tower and seeded daily/weekly rules. Event writing and route topology remain small. |
-| G6 equipment and economy | MET in simulation | 128 templates, 30 affixes, eight sets, 12 uniques, visible gear, repeated sinks, zero saturated regular accounts through day 45, weekly ratios below 3× |
+| G6 equipment and economy | PARTIAL visually, MET in simulation | 128 templates, 30 affixes, eight sets and 12 unique effects. Gear appears through existing attachment families, with shared legendary geometry. All currencies have sinks. Regular accounts retain collection goals through day 45 and weekly ratios stay below 3×. |
 | G7 idle and Avalanche | PARTIAL | Capped fixture adapter, read-only Fuji panel and tested effort counters. Live idle receipts, holder journey and authoritative supply remain open. |
 | G8 onboarding and save | MET functionally | Three prompts, free invitation, equip action, automatic app save, manual demo codes and migration/corruption tests |
 | G9 regressions and performance | MET in measured scope | Full suites, byte-identical flag-off captures, zero campaign long tasks, frame percentile floor, retained buffer and released contexts |
@@ -229,7 +229,7 @@ REFERENCE: [reports/cardrpg-depth/FRESH-EYES.md](https://github.com/ntbaoheyhey/
 
 ## Draft stack and delivery
 
-D0 #324 → D1 #325 → D2 #326 → D3 #327 → D4 #328 → D5 #329 → D6 #330 are stacked on #323. D7 and the integration draft links are recorded in the final publication receipt below. Draft/open/unmerged states are verified after publication. The report is also copied to `/Users/bao/taskbar-hero-ui-ledger/reports/cardrpg-depth/CARDRPG-DEPTH-REPORT.md` and pushed on `ai/codex-ui-ledger`.
+D0 #324 → D1 #325 → D2 #326 → D3 #327 → D4 #328 → D5 #329 → D6 #330 are stacked on #323. D7 #331 completes the phase stack. Integration #332 targets #323. The publication readback confirms all nine depth PRs are open drafts. The report is also copied to `/Users/bao/taskbar-hero-ui-ledger/reports/cardrpg-depth/CARDRPG-DEPTH-REPORT.md` and pushed on `ai/codex-ui-ledger`.
 
 The delivery verifier checks artifact/source hashes, raw frame samples, command log hashes, path assertions, provenance, roster coverage, economic limits and a full file manifest. Reproduction uses `node tools/cardrpg-depth/build.mjs`, `node tools/cardrpg-depth/validate.mjs`, then `python3 tools/cardrpg-demo/verify-delivery.py --depth --write-manifest`. Reports and evidence can be added after the frozen runtime commit. The packaged source hashes detect subsequent runtime edits.
 
@@ -240,3 +240,19 @@ REFERENCE: [tools/cardrpg-depth/verify-delivery.py](https://github.com/ntbaoheyh
 Human players should establish whether loadout trade-offs remain interesting after mastering the starter squad, whether the 45-day goals feel rewarding under the fish-point constraint, and how much event/map variety the return loop needs. Live integration requires a separate decision about authoritative idle receipts and effort reservations. The local demo is ready for review now.
 
 REFERENCE: [reports/cardrpg-depth/FRESH-EYES.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-depth-2026-11-06/reports/cardrpg-depth/FRESH-EYES.md) · [reports/cardrpg-depth/sim/economy-45.json](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-depth-2026-11-06/reports/cardrpg-depth/sim/economy-45.json) · [docs/design/cardrpg/DECISIONS.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-depth-2026-11-06/docs/design/cardrpg/DECISIONS.md)
+
+## Publication receipt
+
+The packaged evidence commit is `cfbc40939deeb68ff8fa5547983bf3f19e19a06e`. The following readback records the published phase stack and integration draft. Subsequent report metadata keeps the frozen runtime and artifact hashes recorded above.
+
+- [D0 · Card RPG depth baseline · #324](https://github.com/ntbaoheyhey/taskbar-hero/pull/324)
+- [D1 · Independent cat kits and original roster identities · #325](https://github.com/ntbaoheyhey/taskbar-hero/pull/325)
+- [D2 · Card choices and deterministic policy evaluation · #326](https://github.com/ntbaoheyhey/taskbar-hero/pull/326)
+- [D3 · Branching campaign and run-only builds · #327](https://github.com/ntbaoheyhey/taskbar-hero/pull/327)
+- [D4 · Equipment builds and awakening sinks · #328](https://github.com/ntbaoheyhey/taskbar-hero/pull/328)
+- [D5 · Capped idle and read-only Fuji bridge · #329](https://github.com/ntbaoheyhey/taskbar-hero/pull/329)
+- [Card RPG D6: saved depth journey, tutorial and accessible controls · #330](https://github.com/ntbaoheyhey/taskbar-hero/pull/330)
+- [D7 · Depth demo and source-bound delivery evidence · #331](https://github.com/ntbaoheyhey/taskbar-hero/pull/331)
+- [Card RPG depth integration · three chapters and distinct builds · #332](https://github.com/ntbaoheyhey/taskbar-hero/pull/332)
+
+REFERENCE: [reports/cardrpg-depth/validation/delivery-stack.json](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-depth-2026-11-06/reports/cardrpg-depth/validation/delivery-stack.json) · [apps/web/src/game/cardrpg/depth/Battle.tsx](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-depth-2026-11-06/apps/web/src/game/cardrpg/depth/Battle.tsx).
