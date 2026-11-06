@@ -43,3 +43,10 @@ REFERENCE: ../cats/batch3/filmstrips; ../cats/batch3/motion/variety.json; ../cat
 REFERENCE: tools/cardrpg-big2/mechanics-check.mjs; ../memory/STATE.md
 
 The four concrete lab readability defects above are corrected in source and receive real viewport/alignment assertions on the accepted review artifact. No rules or defaults changed. Current nonstarter tier stays “improved”; no numerical art grade is assigned before the final images/videos are reviewed. Remaining art concerns must either be visibly corrected and remeasured or appear in the delivered limitations and self-grades.
+
+## B3 image follow-up
+REFERENCE: ../stage/life/{before,after}-1280-home.png; ../stage/life/after-chapter-2.png; ../stage/SHARPNESS-REVIEW.md
+
+The stage is visibly populated with shelves, plants and tabletop props, but remains one broad flat tabletop with similar composition across chapters. Colours and ambient leaves distinguish chapters more than architecture. Contact shadows are now above the rug (0.044 world height versus rug top0.0425); the still frame remains subtle and the bright selection rings dominate. No high-quality contact-shadow claim is made from the geometry assertion alone.
+
+Native face crops are readable at128px DPR2, but dark rear companions remain much smaller in the full stage. The 800×960 card render has enough pixels for362×290 DPR2 display; the card crop itself is short and compositionally different from F0. The rendering fixes do not deliver the requested eight remaining+40% metric gains. B and C preserve>8% stage margin; A misses it, and none satisfy the24–30% full-body band across poses.
