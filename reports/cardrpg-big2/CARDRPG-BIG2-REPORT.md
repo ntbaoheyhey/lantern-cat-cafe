@@ -3,7 +3,7 @@ REFERENCE: memory/PROMPT.md; docs/cardrpg3b/index.html; tools/cardrpg-big2/build
 
 Đã giữ nguyên cách chơi: sưu tầm thẻ mèo, chuẩn bị đội rồi xem trận tự động.  
 Chín mèo còn lại đã có động tác, đạo cụ và hiệu ứng riêng, kèm ảnh kiểm chứng.  
-Mười quái thường và ba trùm đã có phần trình diễn riêng; bằng chứng hình ảnh đang được kiểm tra.  
+Mười quái thường và ba trùm đã có phần trình diễn riêng và ảnh kiểm chứng.  
 Màn tải có tiến độ thật và chuẩn bị tài nguyên theo từng khung hình.  
 Chưa đạt toàn bộ mục tiêu hết giật: phép đo B1 đã ghi nhận khung mở trang 300 ms.  
 Ba cơ chế thử nghiệm đều mặc định tắt, không sửa tài khoản hay phần thưởng của trò chơi chính.  
@@ -19,12 +19,12 @@ Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/
 
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
-| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units / 86 previews authored; all 12 cats and first six opponents rendered; later opponents pending |
+| Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units /86 previews rendered, with258 selections/scrubs checked across three desktop sizes |
 | Blurry images | Review studio → Before / after → Sharpness | 2/10 cumulative targets pass; eight misses and crop limitations retained |
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
 | Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
 | Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
-| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers; four control/playback cases pass, but first sound window hits133.5ms; trace isolates133.6ms first AudioContext constructor; native-rate change rejected in six fresh browsers; silent-output comparison also rejected (130.4–132.4ms constructor) |
+| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers. Original startup133.5ms, corrected shipped-source sixfreshbrowser runs MAX16.8ms native/CPU4. Click-to-enabled223.6–232.8ms. Listening quality remains unverified |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
 ## Measurements and gates
@@ -42,7 +42,7 @@ The seven-case cold run and the exhaustive fresh-page matrix are separate sample
 | ≤250 draws / ≤150k triangles | Inherited 207 / 93,802 | B1 207 / 93,802; final roster pending | B1 PASS |
 | 20 natural replays: flat heap/GPU | Not measured here | +1,088,932 retained bytes; geometry/texture/program growth 0/0/0 | B1 PASS at 2 MiB heap tolerance |
 | Load to interaction / battle ready | Raw baseline | Hub 924–936 ms native, 1716–1724 ms CPU4; battle ready 6540–6572 / 8332–8353 ms | Reported, not hidden in cast time |
-| Desktop 1280×720, 1440×900, 1024×600 | Inherited | B1 three sizes: zero overflow/manual controls | B1 PASS; final studio pending |
+| Desktop 1280×720, 1440×900, 1024×600 | Inherited | B1 three sizes: zero overflow/manual controls | B1 PASS. Focus/gallery three-size checks pass on the current candidate |
 | Sharpness +40%, ten native crop pairs | Inherited 2/10 | B3 2/10; face crops +10.71%/+8.27% versus B2c | MISS: eight targets; composition caveats |
 | Flag-off startup excludes three/models | Static graph checked | Production browser request inventory queued | PENDING |
 
@@ -51,7 +51,7 @@ Raw arrays: [B1 cold](performance/b1-cold/summary.json), [B1 matrix](performance
 ## Unit coverage
 REFERENCE: apps/web/src/game/squad/turn3d/card-*-motion.ts; card-*-effects.ts; cats; enemies
 
-All nine nonstarter cats have rendered batch evidence and remain “improved”: the art still has small/dark rear characters and crowded group effects. The first six opponents have rendered batch evidence; the remainder awaits acceptance. Different recipes or rig trajectories alone do not establish slice quality. Starter slice status is inherited; regressions are checked in the same motion/effect captures.
+All nine nonstarter cats have rendered batch evidence and remain “improved”: the art still has small/dark rear characters and crowded group effects. All ten ordinary opponents and three bosses now have rendered batch evidence. Boss introductions and phase clips have six additional strips and three reduced-motion checks. Different recipes or rig trajectories alone do not establish slice quality. Starter slice status is inherited; regressions are checked in the same motion/effect captures.
 
 | Unit | Tier | Distinct authored feature |
 |---|---|---|
@@ -111,7 +111,7 @@ Tea cloud flips three training and four held-out losses; relay flips none. Each 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 
-[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the first sound-enable133.5ms hitch; no audio-startup pass is claimed. Opponent captures, full final matrix, perceptual audio review and final demo verification are pending. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the original sound-enable133.5ms hitch. The later shipped-source fix passes sixfreshbrowser runs at16.8ms MAX. The full final matrix, listening review and final demo verification remain pending. Opponent captures are complete. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
 
 | Complaint | Self-grade /10 |
 |---|---|
@@ -121,7 +121,7 @@ REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 | Turn clarity + smoothness | Pending full matrix; opening miss known |
 | Overall feel | Pending complete demo review |
 | Sparse stage | 6: richer props/ambient motion; shared flat tabletop remains |
-| Auto-only battles | 9 provisional: B1 controls verified, final lab check pending |
-| Mechanics lab | 7 provisional: four browser cases and sims pass; polish/integrated balance pending |
+| Auto-only battles | 9 provisional: B1 controls verified, current isolated lab/account checks pass |
+| Mechanics lab | 7 provisional: four browser cases and sims pass; polish passes, integrated balance remains weak |
 
 Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the remaining published B chain and offline wrapper, then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
