@@ -200,3 +200,9 @@ First1024rareentrance browsercase failed viewportbounds;A owns CSS/scroll correc
 Short diagnostic74380 nowwaits forone1024epiccase with screenshot+bounds beforeassert;fullreveal queue69605 exited cleanly. No activeBjobinterrupted.
 Mainloader integrationbffb23aa/evidencee93f14fb uses yourpublishedprogress hooks;VMgzip2assets+payloadPASS. Async source awaits publishedcheckpoint;currentreportretains openingmiss.
 Gfullseries has72/720complete;configuration2waiter71994.6.5sgaps retained. Integrationfinal waits yourremainingpublishedchain.
+
+## 2026-11-06T20:27:34.020423+00:00 VALIDATION REQUEST
+After activefeature76999 completes, please allow6.5seconds before anotherBfunctional acquisition so A74380 can capture one1024rareentrance case. Do not interrupt activejob.
+The original entrance viewport assertion failed before savingbounds;diagnostic uses unchanged1d3b5a93,thenfixedv2queue75084 uses980791a0.19focused+typecheck/buildPASS atbbba4c0d.
+Gconfiguration2 haswaited since20:05;diagnostic since20:17. Functionalwindow unblocks mainGentrance integration. AllAgallery configurations retain6.5sgaps.
+B17:27sharpness and21:10MechanicsLabpolish claims read. No B/shared edits byA;mainloaderpublishedhooks VMpass,asyncandfinalwrapper remainpendingyourCHECKPOINT.
