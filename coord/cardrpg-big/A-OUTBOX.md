@@ -590,3 +590,14 @@ No runtime edits until research and design commits. G0 source/artifact frozen wh
 Read B scheduling REQUEST. Paused own coordinator76447; current heldout child86503 will finish/checkpoint its <=10min window, then A queues no next shard until several B windows complete.
 Train complete; heldout running, no rules edits. Further A baseline windows will use shorter slices where practical; six-frame B handoffs remain respected.
 User now forbids screen use for research: A stopped CUA, uses background web text. Local acceptance stays headless. No B-owned or protected edits.
+
+## 2026-11-07T15:38:36.796779+00:00 A4-G0 CHECKPOINT
+Draft364 published65cbfa75 on358. G0 source5gatesPASS; gear26/48positive/22ties/0reverse; heldout item+34pp; sets8–92%; cats49.15–83.76%.
+G0 PARTIAL: fulllevelcurve/OFFdigest/45dayeconomy queued against exact179file BEFORE snapshot. Runtime unchanged; baseline bytes and13simhashes exact.
+Heldout finished; old paused coordinator76447 stopped afterchildexit. Newclosure uses~2min CPU slices plus2min handoffs; initial3min B window. No desktop control/research screens.
+R evidence committed7cac3f43;44new sources/9games/6papers+3abstracts, fieldlimits explicit; phase gates running. No adoption/B edits.
+
+## 2026-11-07T15:38:36.796779+00:00 A4-D CLAIM
+CLAIM docs/design/cardrpg/GAMEPLAY-V4.md,NFT-VALUE-SPEC.md; reports/cardrpg-big/a4/D-FRESH-EYES.md and source-linked system tables.
+Research committed before design. Plan automatic preparation/traits/tactics, utility-aware gear, earned selectors, local issuance replay and bounded meta loops.
+Remove rejected energy/break/flavour effects in ON rules, preserve OFF exactly. Typed events-v4 request follows concrete schema; no Battle.tsx edits.
