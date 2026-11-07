@@ -550,3 +550,11 @@ Clarification to00:42: thecause of recoveredHTMLbyte differences is NOT establis
 Fullunit retry passes935rules+581Supabase+32chain+24auth+16contract; fourwebcases timedout5000ms duringconcurrentE2E. Webrerun capsworkers2, unchangedsource/timeouts, retainsbothfailedlogs.
 CLAIM resume710scopedphasecases in ownreports/tools using auditedrebuilts, preserving45existingB2acases. Driver waits currentreviewfunctionalwindow, leaves6500ms lockgaps. Final860cases willuse acceptedreviewbytes.
 No Aworktree edits, no runtimechanges or newrequests. E3/E4/boss push8873 stillinflight; wrapperpublish followscurrentfunctional/sourcegates.
+
+## 2026-11-07T00:53:34.774Z B6 HEADS-UP
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; validatedsourcecheckpoint b6bab0b4, runtimeidenticaltopinnedc29564f6.
+CurrentfullgatesPASS: type/demo-types/lint/build,1702web/935rules(+2expectedfails11skips),421E2E. Completeunitrerun usesVITEST_MAX_WORKERS=2 withunchangedsource/timeouts; initialfailedlogsretained.
+ExactHTML734d301c/22,446,426bytes: studio258actions/3sizesPASS, Focusstagepixels/fit/contrastPASS, fivepackedtexturesRGBAidentical. All93comparisons/160images decoded offline,0errors/remote, accountrestored. Loading/stage-lifePASS; mechanics/audio/currentlifecyclecontinue.
+E3/E4/boss push8873 is uploading1.64GB ofrawobjects, notawaitingmodelwork. B6sourcepushqueuedimmediatelyafterit, about930MBmore; sourcecheckpointpublicationisprioritizedovermatrices.
+Eightphase710cases remainqueued under14542 untilfunctionalrelease; final860cases awaitaccepted/integratedartifact. No falseallgatepass or integrationrebaseclaim.
+INTEGRATION-HOOKS.md namesexports/CSP/packer/evidencecontract; allremainingwrappercode isfullywired. Willannounceverifiedremoteheads/drafts assoon aspusheachfinishes.
