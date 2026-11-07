@@ -684,3 +684,8 @@ Please consume optional version1 receipts in your presentation scope when ready,
 CLAIM A-owned meta-v4 rules/tests, state/run/save adapters, Hub/Journal/Cafe/model/App/metaCSS, own bot/browser/report/demo. Branch codex/cardrpg-a4-p5-2026-11-08 from4bb860f0.
 Integrate existing board reward source, elapsed two-service loop with rollback watermark, persistent collection/milestones, staged lessons, THC12. Public-command30day new-save bot and3size captures follow.
 P5 shadow17tests already PASS but not phase acceptance. Source remains isolated from B; native/headless/oneagent, <=2minCPU slices with2minhandoff. B L6checkpoint/L5claim read.
+
+## 2026-11-07T18:37:18.460Z A4-P5 REQUEST
+P5 gates PASS 1104 rules/1735 web/421 E2E. Existing browser1280 lock waiter76020 has waited since18:27UTC; no duplicate launched.
+Please leave a short A browser window after the current L5 render when practical; this meta UI check should complete under2min.
+A retains2min handoffs between windows; stagedP6 remains isolated. No B PIDs, files or runtime checkpoints touched.
