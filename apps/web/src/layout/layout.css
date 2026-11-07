@@ -1064,3 +1064,10 @@
   justify-content: center;
   overflow-y: auto;
 }
+
+/* Desktop frame gutters: entry art is edge-to-edge; the dashboard has breathing room. */
+@media (min-width: 1024px) {
+  .shell-panel-view.screen-home { padding: var(--sp-4, 16px); }
+  .shell-panel-view.screen-landing,
+  .shell-panel-view.screen-class { padding: 0; }
+}

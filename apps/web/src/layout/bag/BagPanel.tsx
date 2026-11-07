@@ -392,7 +392,7 @@ function ItemDetail({
           {((item.slot as string) === 'relic' || (item.rarity as string) === 'relic' || item.itemKey.startsWith('relic.') || ('relicId' in item && Boolean(item.relicId))) && (
             <li className="detail-stat-row relic-stat">
               <span className="stat-label">Relic</span>
-              <span className="stat-value">#1042 · minted</span>
+              <span className="stat-value">Token details unavailable</span>
             </li>
           )}
         </ul>

@@ -1,5 +1,6 @@
 // Wallet-free audit. Run from apps/web (paths also work from other directories).
-// Usage: SCREENSHOTS=1 node tools/ui-audit.mjs [outDir] [fixture] [--signed-in] [--mobile] [--strict]
+// Usage: SCREENSHOTS=1 node tools/ui-audit.mjs [outDir] [fixture] [--signed-in] [--mobile] [--strict] [--capture=id,id]
+// --capture selects PNGs only; every manifest state is still measured.
 // Desktop: 1280x720 + 1600x900. --mobile adds 390x844 measurements only.
 // Demo fixtures: fresh|bossReadyStrong|bossReadyWeak|forgeRich|bagNearFull|midGame.
 // --signed-in uses loopback-only PGlite, never a live account. Fixtures: fresh|stocked|strong|weak|equip.
@@ -14,12 +15,17 @@ import { layoutFindings } from './layout-findings.mjs';
 const webRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const flags = new Set(['--signed-in', '--mobile', '--strict']);
-for (const arg of args) if (arg.startsWith('--') && !flags.has(arg)) throw new Error(`Unknown option: ${arg}`);
+for (const arg of args) if (arg.startsWith('--') && !flags.has(arg) && !arg.startsWith('--capture=')) throw new Error(`Unknown option: ${arg}`);
 const positional = args.filter(arg => !arg.startsWith('--'));
 const out = resolve(positional[0] ?? resolve(webRoot, '../../reports/ui-audit'));
 const signedIn = args.includes('--signed-in');
 const kind = positional[1] ?? (signedIn ? 'stocked' : 'bossReadyStrong');
 const manifest = JSON.parse(readFileSync(new URL('./screen-manifest.json', import.meta.url), 'utf8'));
+const captureArg = args.find(arg => arg.startsWith('--capture='));
+const captureIds = captureArg ? new Set(captureArg.slice('--capture='.length).split(',')) : null;
+if (captureIds && [...captureIds].some(id => !manifest.screens.some(screen => screen.id === id))) {
+  throw new Error('--capture must name existing manifest screen ids');
+}
 const sizes = [...manifest.viewports, ...(args.includes('--mobile') ? [{ width: 390, height: 844 }] : [])];
 const port = signedIn ? 4175 : 5199, apiPort = 4176;
 const base = `http://localhost:${port}`;
@@ -33,7 +39,7 @@ async function requireFreePort(port) {
   await new Promise(ok => socket.close(ok));
 }
 let server, local, browser;
-const report = { fixture: kind, signedIn, viewports: sizes, screens: [] };
+const report = { fixture: kind, signedIn, viewports: sizes, capture: captureIds ? [...captureIds] : 'manifest defaults', screens: [] };
 let closing;
 const close = () => closing ??= (async () => {
   await browser?.close();
@@ -110,7 +116,7 @@ try {
         for (const selector of screen.required) if (!await root.locator(selector).filter({ visible: true }).first().isVisible()) missing.push(selector);
         const findings = await page.evaluate(layoutFindings);
         const item = { viewport: `${size.width}x${size.height}`, screen: screen.id, navigation: contract ? 'rail' : 'legacy baseline', ...findings, missingRequired: missing, consoleErrors: [...new Set(errors.splice(0))] };
-        if (process.env.SCREENSHOTS === '1' && screen.screenshot && size.width >= 1280) {
+        if (process.env.SCREENSHOTS === '1' && (captureIds ? captureIds.has(screen.id) : screen.screenshot) && size.width >= 1280) {
           item.screenshot = `${screen.id}-${size.width}x${size.height}.png`;
           await page.screenshot({ path: resolve(out, item.screenshot) });
         }

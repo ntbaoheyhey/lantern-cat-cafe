@@ -1,7 +1,7 @@
 /* Cat Café Quest theme tokens. Loaded last so it re-skins the older component CSS.
    New UI should use these tokens and the shared classes below. */
 :root {
-  --bg: #1a1220;
+  --bg: #120b19;
   --surface: #2a1f36;
   --surface-2: #3a2c4a;
   --border: #72578d;
@@ -13,7 +13,7 @@
   --shard: #8fd8ff;
   --key: #ff8fb1;
   --good: #6be08a;
-  --bad: #ff6b6b;
+  --bad: #ff8f8f;
   --focus: #ffd75e;
   --rarity-common: #b9b6c9;
   --rarity-rare: #4aa8ff;
@@ -45,7 +45,7 @@
 }
 body {
   font-family: var(--font-body);
-  font-size: var(--fs-md, 1rem);
+  font-size: var(--fs-sm, .875rem);
   line-height: 1.5;
 }
 h1, h2, h3, .tab, .toggle { font-family: var(--font-display); }

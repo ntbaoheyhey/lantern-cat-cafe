@@ -362,3 +362,22 @@
   opacity: 0.001 !important;
   pointer-events: none !important;
 }
+
+@media (min-width: 1024px) {
+  .shell-rail { background: var(--bg); }
+  .rail-item { border-radius: 0; }
+  .shell-hud.v2-topbar { height: 56px; min-height: 56px; max-height: 56px; flex-shrink: 0; }
+  .shell-hud .v2-title {
+    flex: 0 0 84px; width: 84px; font-size: var(--fs-sm, .875rem); line-height: 1.1;
+    white-space: normal;
+  }
+  .shell-hud .hud-progress-wrap { flex: 0 0 128px; width: 128px; min-width: 0; }
+  .shell-hud .hud-progress-chip { min-width: 0; white-space: normal; line-height: 1.2; }
+  .shell-hud .hud-progress-chip > span { white-space: normal; }
+  .shell-hud .hud-center { flex: 1 1 auto; }
+  .shell-hud .v2-hint { width: 100%; max-width: none; min-width: 0; border-radius: 0; }
+  .shell-hud .v2-hint-btn {
+    min-width: 0; white-space: normal; overflow: visible; text-overflow: clip;
+    font-size: var(--fs-xs, .75rem); line-height: 1.15;
+  }
+}

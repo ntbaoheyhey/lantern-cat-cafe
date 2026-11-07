@@ -330,3 +330,29 @@
     box-shadow: none;
   }
 }
+
+@media (min-width: 1024px) {
+  .screen-landing .landing__hero {
+    max-width: none; grid-template-columns: 1fr 1fr;
+    padding: 40px 40px 80px;
+  }
+  /* Size the existing SVG by its intrinsic ratio, then crop in the scene wrapper.
+     No backdrop source or preserveAspectRatio implementation is changed. */
+  .screen-landing .landing__backdrop {
+    inset: 0 auto 0 50%; width: auto !important; min-width: 100%;
+    height: 100% !important; aspect-ratio: 640 / 96;
+    transform: translateX(-50%);
+  }
+  .screen-landing .landing__hero-right { align-items: center; }
+  .screen-landing .landing__cats-group { padding-bottom: 70px; }
+  .screen-landing .landing__network-pill {
+    color: var(--on-accent); background: var(--good);
+    border: var(--pixel-border); border-radius: 0; padding: 2px 8px;
+    font-family: var(--font-display);
+  }
+  .screen-landing .landing__network-dot { box-shadow: none; background: currentColor; }
+  .screen-landing .landing__proof-item { font-family: var(--font-body); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing__guest-btn:active { transform: none; }
+}

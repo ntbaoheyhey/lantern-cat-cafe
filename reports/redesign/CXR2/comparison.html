@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>CXR2 comparison — living draft</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:20px;background:#120b19;color:#fff3e0;font:14px system-ui,sans-serif}h1{font-size:24px;margin:0 0 8px}p{color:#c3aed0}label{display:inline-flex;gap:8px;align-items:center;margin-right:16px}select{padding:7px;background:#3a2c4a;color:#fff3e0;border:1px solid #72578d}main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}.pane{min-width:0;border:1px solid #72578d;background:#2a1f36;padding:8px}h2{font-size:14px;margin:0 0 8px}.frame{position:relative;overflow:hidden}iframe{border:0;display:block;transform-origin:0 0}img{display:block;width:100%;height:auto}#status{min-height:20px}a{color:#ffb86b}
+</style>
+<h1>CXR2 — approved reference and current app</h1>
+<p>Living draft. The reference is the existing HTML mockup; the app images are local demo fixtures using unchanged real art. They do not prove live wallet or server state.</p>
+<label>Screen <select id="screen"></select></label><label>Frame <select id="size"><option value="1280">1280×720</option><option value="1600">1600×900</option></select></label>
+<main><section class="pane"><h2>Approved mockup</h2><div class="frame" id="reference-box"><iframe id="reference" title="Approved UI mockup"></iframe></div></section><section class="pane"><h2>Current app</h2><img id="current" alt="Current application screenshot"></section></main>
+<p id="status" role="status"></p>
+<p>Serve the repository root locally to synchronize the reference: <code>python3 -m http.server 8768 --bind 127.0.0.1</code>, then open <code>/reports/redesign/CXR2/comparison.html</code>. <a href="../../ui-redesign/index.html">Open the original reference</a>.</p>
+<script>
+const entries=[['landing','Landing','landing','screens/landing'],['class','Class','class','screens/class'],['home','Home','stage','screens/home'],['bag','Bag','bag','screens/bag'],['map','Map (legacy)','map','audit/map'],['forge','Forge (legacy)','forge','audit/forge-craft'],['market','Market (legacy)','market','audit/market']];
+const screen=document.querySelector('#screen'),size=document.querySelector('#size'),frame=document.querySelector('#reference'),box=document.querySelector('#reference-box'),current=document.querySelector('#current'),status=document.querySelector('#status');
+for(const [id,label] of entries){const option=document.createElement('option');option.value=id;option.textContent=label;screen.append(option)}
+function fit(){const width=Number(size.value),height=width*9/16,scale=box.clientWidth/width;frame.style.width=width+'px';frame.style.height=height+'px';frame.style.transform='scale('+scale+')';box.style.height=height*scale+'px'}
+let revision=0;
+function render(){const generation=++revision;const entry=entries.find(row=>row[0]===screen.value),width=Number(size.value),height=width*9/16;status.textContent='Loading paired view…';frame.dataset.ready='';current.src=entry[3]+'-'+width+'x'+height+'.png';current.alt=entry[1]+' at '+width+'×'+height;frame.onload=async()=>{try{const doc=frame.contentDocument;if(new URL(doc.URL).searchParams.get('revision')!==String(generation))return;doc.querySelector('[data-w="'+width+'"]').click();doc.querySelector('#tabs [data-k="'+entry[2]+'"]').click();const css=doc.createElement('style');css.textContent='#vp{position:fixed;inset:0;margin:0;width:100vw!important;height:100vh!important;z-index:9999;border:0;padding:0}#vp>.app{transform:none!important}';doc.head.append(css);await doc.fonts.ready;if(generation!==revision)return;frame.dataset.ready=entry[0]+'-'+width;status.textContent='Reference '+width+'×'+height+' · current app '+width+'×'+height+' · real data/art differences are listed in CXR2.md';fit()}catch(error){status.textContent='Open through the local HTTP server to synchronize the reference frame.'}};frame.src='../../ui-redesign/index.html?comparison-width='+width+'&revision='+generation+'#'+entry[2];fit()}
+screen.addEventListener('change',render);size.addEventListener('change',render);addEventListener('resize',fit);render();
+</script>
+</html>

@@ -122,11 +122,11 @@ describe('Home and Landing Components (AGR1)', () => {
       expect(onStartGuest).toHaveBeenCalledTimes(1);
 
       // Proof strip items
-      expect(screen.getByText('ERC-721')).toBeTruthy();
+      expect(screen.getByText('ERC-1155')).toBeTruthy();
       expect(screen.getByText('Relic NFT')).toBeTruthy();
       expect(screen.getByText(/Verified on Routescan/i)).toBeTruthy();
       expect(screen.getByText(/Server-checked fights/i)).toBeTruthy();
-      expect(screen.getByText(/Open source/i)).toBeTruthy();
+      expect(screen.getByRole('link', { name: /Repository/i }).getAttribute('href')).toBe('https://github.com/ntbaoheyhey/taskbar-hero');
 
       // Help link
       const helpBtn = screen.getByTestId('landing-help-link');

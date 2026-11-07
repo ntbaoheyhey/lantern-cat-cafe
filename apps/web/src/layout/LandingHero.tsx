@@ -73,7 +73,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
       {/* Proof strip pinned to bottom */}
       <div className="landing__proof-strip" role="region" aria-label="Game guarantees and proof">
         <div className="landing__proof-item">
-          <span className="landing__proof-pill">ERC-721</span>
+          <span className="landing__proof-pill">ERC-1155</span>
           <span>Relic NFT</span>
         </div>
 
@@ -106,7 +106,7 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
             target="_blank"
             rel="noreferrer"
           >
-            Open source ↗
+            Repository ↗
           </a>
         </div>
 
