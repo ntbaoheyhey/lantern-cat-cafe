@@ -3,17 +3,17 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T04:25:38.972959+00:00: F7 baseline v1 report committed and pushed b092ed0cbfdc362dbf78ce4f6418187bff029695; ledger/358 update next. LOOK adoption remains open; no baseline long matrix.
+ACTIVE 2026-11-07T04:25:38.972959+00:00: F7 baseline v1 report committed and pushed b092ed0cbfdc362dbf78ce4f6418187bff029695; ledger published a2728798831acc86619e6772205c7fefb4b58fcf;358 body updated/open/draft. Phase LOOK-A preparation; no baseline long matrix.
 Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · last work commit b092ed0cbfdc362dbf78ce4f6418187bff029695. Draft358 open against332/cd5edcc. Accepted runtime a106dfcac755d42f91b2467adf6d888ca0b41a9c unchanged.
 HTML index/baseline-v1:9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3;23,937,000bytes. Five existing sourcegate logs reverified;1730web/1020rules(+2expectedfail,11skip)/421E2E+demo-types. This documentation audit is not a new suite run.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent ce857581;source221ec3a8a462597f55579a319018961cd5cd9d21. A drafts333–341,344–345,348,358.359 is now closed/merged into integration (observed GitHub),not an open draft.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent c0298460;source221ec3a8a462597f55579a319018961cd5cd9d21. A drafts333–341,344–345,348,358.359 is now closed/merged into integration (observed GitHub),not an open draft.
 Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·49727837. LOOK request03:55/helperAPI+publishedL0tip pending. Ledger /Users/bao/taskbar-hero-ui-ledger ·ai/codex-ui-ledger. Never touch other worktrees.
 ## NEXT
-1. Source report pushed b092ed0c; copy identical report and currentSTATE to ledger; update358 body and publish A baseline CHECKPOINT. Keep visual/performance misses explicit.
+1. Prepare original neutral paper/felt/grain textures and meta screenshot/contrast plan; preserve baseline bytes. Published LOOK helper/tokens required before shared wiring.
 2. At phase boundary read B-OUTBOX; adopt published LOOK L0 helper/tokens. Wire shared appOFF/lookdemoON/live toggle in next source commit, answer exact API. Do not invent B contract.
 3. Meta restyle+original textures and portrait/icon/frame wiring; each adopted B tip gets rebuild/newhash,fivegates+functionalpack,exact-hash checkpoint. Final860matrix only LOOK B/finallookV2.
 ## DONE
-Baseline audit ·b092ed0c/draft358;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
+Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
 Baseline review ·ef400fc3/draft358;14recordings/12,385decodedframes/991samples/57sheets;video/delivery/{audit,review/observations}.json. FRESH-EYES has20weaknesses/11grades;reportdraft107lines;not baseline publication.
 Functional complete ·5254757c/draft358;10/10groups,204screenshothashes,Mechanics4cases/8captures. delivery/functional-complete.md;no runtime/builder changes.
 Saved-evidence audit ·be40bc91/draft358;9complete receipts,196screenshot hashes,five accepted gate-log hashes. delivery/functional-audit.json;mechanicspending,not a new browser run.
@@ -45,7 +45,7 @@ PASS “20–30s...perhero...boss...ultimate...screenshotsatthreesizes”:12hero
 PARTIAL “fourroles...fiveweaknesseseach,fixtheworst,rescore”:20weaknesses/11scorescomplete;worstvisualfixesassignedLOOK. FRESH-EYES.md,video/delivery/review/observations.json.
 PASS reporting;FAIL target “>=8.5each”:scores6.5/5/6.5/6/6.5/5/9/7.5/6.5/7.5/8.5;9/11miss. No inflated visual acceptance.
 PASS report “about150lines,8–10Vietnamese...sixroutes...tables...raw...scope...PRs”:105lines/9Vietnamese/6routes;delivery/baseline-report-audit.json. Startervslevel6chapterrates added fromENCOUNTERS.md.
-NOTYET “copytoledgerandpush”:reportready;publication next.358open/draft;359observedclosed/merged atprior ef400fc3. No newmergeAPI/deploy/mainpush.
+PASS “copytoledgerandpush”:identical105linereport/STATE/HANDOFF atledgera2728798831acc86619e6772205c7fefb4b58fcf;358bodyupdated/open/draft.359closed/merged atprior ef400fc3. No newmergeAPI/deploy/mainpush.
 NOTYET LOOKtokens/portraits/icons adoption,UIbefore/after,Brubrics,freshhash/fivegates/functionalpack. Final860matrix notrun;oldBqueuesretired.
 ## PRIOR PHASE GATES
 I balance FAIL26/48positive tiers22ties0declines;setspread8–92%,cats49.15–83.76%,singlepiece+34ppheldout. Power9.63060686%<=10%PASS;45day2.1947756956x<=3xPASS. items/ENCOUNTER-BALANCE.md.
@@ -54,6 +54,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T04:30:13.377652+00:00 · Baseline publication complete atb092ed0c/ledgera2728798831acc86619e6772205c7fefb4b58fcf;358descriptionupdated. Begin LOOK-A texture prep while L0 helper/tokens pending.
 2026-11-07T04:25:38.972959+00:00 · Baseline report uses branch-qualified evidence URLs so identical ledger copy has working links. Audit verifies underlying tracked paths. No baseline recapture or new matrix.
 2026-11-07T04:25:38.972959+00:00 · GitHub359 closed/merged viaef400fc3,358open/draft;old “no GitHubmerge”claim corrected. Localmergeparents verified;no mergeAPI action this continuation.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-baseline-publication.md; never delete them. Historical worktrees inHISTORY.md.
