@@ -16,5 +16,5 @@ Baseline-v1 byte-identical23,937,000bytes/SHA9a5f6ebbb04af56c19f11cf43cf2763b35d
 ## LIMITS
 24MB gate MISS under32MB exception; startup strict parity+4bytes MISS. Historical main coldCPU4>100ms; no new controlled main cold/cast claim. Current invitation capture diagnosticCPU4 MAX183.4ms/p9516.8ms,17frames>25/7>50; not a cold benchmark.
 Partial task3-full interrupted after6groups on Team602.53px overflow, corrected14px. Stale copy assertion, E2E timeout and missingPython diagnostics/retries retained. One complete204pack only; no860.
-B14:03 L3 local9b1a04a4/runtime71da901f reports sliced allocation, coldCPU4 133.3ms MISS, startup+44bytes on its own artifact; upload in progress and L4 claimed. L2/L3 not adopted here; next tip is B responsibility.
+B14:09 published L3 draft363/checkpoint9b1a04a4/runtime71da901f: sliced allocation, coldCPU4 133.3ms MISS, startup+44bytes on its own artifact; L4 claimed. B rebased its L1/L2 refs to914a991f/82cf6d5c; original eb568fda receipts and A copies remain unchanged. L2/L3 not adopted here; next tip is B responsibility.
 One agent/no model calls; no merge/deploy/main push; only A-OUTBOX append. Preserve B worktrees and main checkout. Future timing uses shared lock/5910–5913; kill only own PIDs.
