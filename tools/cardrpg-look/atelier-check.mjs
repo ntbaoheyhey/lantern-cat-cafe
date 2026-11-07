@@ -121,7 +121,7 @@ for(const [width,height]of [[1024,600],[1280,720],[1440,900]])for(const dpr of [
  await page.screenshot({path:`${out}/ui-${width}-dpr${dpr}-notes.png`});
  await page.getByRole('button',{name:'Open skill gallery',exact:true}).click();
  await page.getByLabel('Gallery unit',{exact:true}).waitFor();
- await page.getByLabel('Preview speed',{exact:true}).selectOption('0.25');
+ await page.getByRole('combobox',{name:/^Preview speed/}).selectOption('0.25');
  await page.getByLabel('Effect only',{exact:true}).check();
  await page.waitForFunction(()=>window.__depthScene?.ready&&window.__b2Gallery.sceneReady&&window.__depthScene.view().effectOnly,null,{timeout:120000});
  await page.getByRole('button',{name:'Play preview',exact:true}).click();
