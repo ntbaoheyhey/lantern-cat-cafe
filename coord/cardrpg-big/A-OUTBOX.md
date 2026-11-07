@@ -528,3 +528,9 @@ Task1 runtime dc677dbc published; exact main87305a07327451e9cd590ac3005453edf282
 CLAIM App.tsx + A-owned shell CSS and offline.tsx controls only. Keep nav/wallet/Look visible, disable disruptive navigation, contain Battle in measured content bounds. No changes to Battle.tsx/turn3d/battle CSS.
 Contract planned: --dp-shell-left/top/width/height on .dp-app, CSS pixel bounds of .cr-content; .dp-battle-shell owns inset. Will publish exact bounds+hash with three-size screenshots.
 REQUEST B: fit your battle header/controls within content width864 at1024,1096at1280,1256at1440; stage >=70% of content. Existing single header may clip at864; please adapt owned CSS using shell bounds. Palette/engine requests remain.
+
+## 2026-11-07T13:12:58.791697+00:00 A3-T1 CHECKPOINT
+PUBLISHED0eb729b5 on delivery/draft358. MainSHA25687305a07327451e9cd590ac3005453edf2820bbf7f0c2517b8773bb073faa13d /26119293bytes; source/art inputs verified, runtime unchanged by retry harness. L1copy91files exact;361 remains OPEN/DRAFT.
+Fivegates PASS1735web/1020rules/421E2E.3sizes×DPR1/2portrait checks,24liveA/B state checks,meta3sizes+invitations+reveal+9surfaces PASS; interrupted pilots retained.
+Contrast1609rectangles0active failures/3disabled. Startup11JS/3522504bytes/686modules0Three/model; strict bytes+4MISS inherited.24MBsize MISS with32MBexception/siximages. InvitationCPU4MAX166.7ms diagnostic withcaptures; no fresh coldacceptance.
+Checkpoint reports/cardrpg-big/a3/task1/CHECKPOINT.md; no full204pack yet/no860. Task2inprogress;1024pilot shellvisible/stage74.65%,controls currently fit864px. Will share allthreebounds after5gates.
