@@ -1,0 +1,10 @@
+
+# Historical worktree checkpoints 2026-11-07T03:28:05.172204+00:00
+REFERENCE: STATE.md; PROMPT.md
+
+G worktree /Users/bao/taskbar-hero-cardrpg-big-g;codex/cardrpg-big-g-2026-11-06;publisheda75ae753/draft344,source62cb5697. M-followup /Users/bao/taskbar-hero-cardrpg-big-meta;codex/cardrpg-big-meta-2026-11-06;published5d1c2c47/draft345,source72bce95c.
+F7 preparation /Users/bao/taskbar-hero-cardrpg-big-demo;codex/cardrpg-big-demo-2026-11-06 source c984c3673e5f5b2c674653296fd5ddaea0eef6c9. Home lab/checklist/frame overlay6focused and four source gates PASS1698web/903rules. Browser18captures/3sizesPASS,0errors/network/overflow,accountrestored. Visualdecode/narrowdrawer followup onreveal candidate. Published evidence1c188a468480850f04bab09a8fa70debe55bf9dc/draft348;runtime capture pending integrated art. Final integration and report pending.
+Phase HTML survives in each worktree docs/cardrpg3/index.html (rehash verified): I big6a8e0a42; G big-g284976a9; M big-meta1c331fcd. Old /tmp artifact copies/queues were lost; do not resume obsolete PIDs.
+A integration /Users/bao/taskbar-hero-cardrpg-big-integration; codex/cardrpg-big-integration-2026-11-06; tipf68e7c2b, published3a173cf5. HTML162f3d24 complete header evidence retained. Delivery separately merges full B; no rebuild of historical artifact.
+Reveal /Users/bao/taskbar-hero-cardrpg-big-reveal;codex/cardrpg-big-reveal-2026-11-07;bbba4c0d19focusedPASS. Artifact980791a0a52ce56bd6c76ed51e346514804b0797faa7cc2c6eecd64ecd65468c8cases/24capturesPASS. Queue75084 ended onlab2pxoverflow, fivegates skipped. Source merged472d5110;rawcopiedintegration/reveal/viewport-v2 anddemo/readability/pilot-overflow. Old1d3b5a93 diagnostic retained.
+Revealfit /Users/bao/taskbar-hero-cardrpg-big-reveal-fit;codex/cardrpg-big-reveal-fit-2026-11-07;published69b994eb. Source9db6b57e;HTML419fc50d/23,377,025bytes. 68captures,0errors;1024firstresult599.375px,card570.015625px,action582.9375px. FullfivegatesPASS1722web/1020rules/421E2E. integration/reveal-fit/README.md;validation/reveal-fit-v7.json.
