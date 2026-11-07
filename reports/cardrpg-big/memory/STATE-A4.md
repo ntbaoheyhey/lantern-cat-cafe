@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P7 measurements and review complete on codex/cardrpg-a4-p7-2026-11-08. Actual workdir /Users/bao/taskbar-hero-cardrpg-a4. Runtime and offline game remain byte-identical to P6; only evidence/report publication remains. All coordinator processes exited.
+P7 measurements and review complete on codex/cardrpg-a4-p7-2026-11-08. Actual workdir /Users/bao/taskbar-hero-cardrpg-a4. Runtime and offline game remain byte-identical to P6; draft376 is published at ed32af18. All coordinator processes exited.
 ## NEXT
-Commit final reports, performance receipts and handoff; open draft P7 stacked on draft375; publish ledger and append A-OUTBOX. No simulation, build or screenshot rerun is needed. Numeric/performance misses remain blockers to promotion.
+P7 implementation, measurements and draft publication are complete. Mirror final handoff to ledger and append A-OUTBOX; then stop this delivery. Future balance/startup fixes and B presentation integration are separate follow-up work. Do not rerun simulations or accepted captures.
 ## DONE
 G0/R/D/P1–P6 drafts364/365/366/367/369/370/372/373/375. P7 five source gates PASS: type/lint/build, 1,106 rules (+2 expected failures/11 skips), 1,735 web, 421 E2E. Accepted 204 full-pack +120 new-screen +16 journey +9 guide captures reviewed; source/log/artifact hashes audited.
 ## GATES
@@ -277,3 +277,6 @@ Guide1,314,680 bytes/SHA9dca8fe6; mincontrast7.211. Baseline-v1 and13 historic s
 ## 2026-11-07T23:20:50.236431+00:00 P7 evidence closure
 - Existing coordinator completed all remaining performance, audit, report and scope steps with exit0. Gallery alone retried for missing Python; original failure retained. No successful group or simulation repeated.
 - Final publication preserves 13PASS/5MISS and seven offline cold observations; the default-app/main comparison is separate. See a4/A4-GAMEPLAY-REPORT.md and p7/performance/summary.json.
+
+## P7 published
+- Draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on P6 draft375. Final publication links are report-only; game and guide hashes unchanged.

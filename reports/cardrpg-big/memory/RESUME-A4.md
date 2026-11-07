@@ -4,7 +4,7 @@ Read RULES-A4.md, STATE-A4.md first20 lines and both latest sync outboxes. One a
 
 All acceptance work is complete: five source gates, byte-identical offline rebuild, 204 accepted full-pack captures, 120 new screens, 16 journey and nine guide captures, 14 performance steps, evidence audit and scope. Source/video/receipt history is retained. Coordinators17925/23136 and sessions60441/45202 are finished; do not restart them or rerun P6 simulations/accepted screenshots.
 
-Remaining work is publication only: final evidence/report commit, draft PR stacked on codex/cardrpg-a4-p6-2026-11-08 (#375), mirror A report/STATE/HANDOFF to ai/codex-ui-ledger via /private/tmp/cardrpg-a4-ledger, then append A-OUTBOX in /Users/bao/taskbar-hero-cardrpg-sync. Preserve unrelated ledger work and retry non-fast-forward pushes cooperatively.
+Published draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on draft375. Finish only ledger mirror and A-OUTBOX checkpoint; no additional runtime task is queued by this delivery. Publication commit tips belong in the append-only A-OUTBOX. Preserve unrelated ledger work.
 
 13 PASS/5 MISS target rows remain explicit. Four numeric balance misses plus startup/size are not fixed. Default app JS +552,596 bytes vs main340f88b9; one CPU observation/configuration is descriptive. Offline native max33.4ms/CPU4 max166.6ms. Earned day7 boss55.151s ends in crew defeat. No human playtest or victorious boss-finishing claim.
 
