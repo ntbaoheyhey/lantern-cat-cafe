@@ -1,0 +1,232 @@
+Updating e5da52a..14b1f8a
+Fast-forward (no commit created; -m option ignored)
+ apps/web/e2e/ui/cxr2-state-matrix.spec.ts          |    6 +
+ apps/web/src/motion.css                            |    3 +
+ reports/ui/cards/MOTION/REPORT.md                  |    4 +
+ reports/ui/cards/MOTION/performance-final/fps.json | 1017 ++++++++++++++++++++
+ .../motion-1280-no-preference.png                  |  Bin 0 -> 69892 bytes
+ .../performance-final/motion-1280-reduce.png       |  Bin 0 -> 69892 bytes
+ .../motion-1600-no-preference.png                  |  Bin 0 -> 77023 bytes
+ .../performance-final/motion-1600-reduce.png       |  Bin 0 -> 77023 bytes
+ .../animation-inventory.json                       |   36 +
+ .../motion-effects-final-1280x720/combat-end.png   |  Bin 0 -> 77937 bytes
+ .../ui/motion-effects-final-1280x720/summary.json  |   62 ++
+ .../page@5529373a921ec43860a11ff78067d2ac.webm     |  Bin 0 -> 1408002 bytes
+ .../page@329e8f235cdfbc8be48dd199309ebdd6.webm     |  Bin 0 -> 3662038 bytes
+ .../page@3160a2d537ccb792c36fffe230bc81c0.webm     |  Bin 0 -> 1974293 bytes
+ .../page@cbbac9f4d0ea45f085c01b193c24df90.webm     |  Bin 0 -> 2908447 bytes
+ .../animation-inventory.json                       |   36 +
+ .../motion-effects-final-1600x900/combat-end.png   |  Bin 0 -> 83178 bytes
+ .../ui/motion-effects-final-1600x900/summary.json  |   62 ++
+ .../page@e62599d28ec821786276cd99ed7f7245.webm     |  Bin 0 -> 2555904 bytes
+ .../page@3a603d3d418f3e096150eed09c7eec98.webm     |  Bin 0 -> 4079130 bytes
+ .../page@4a22671073a84868e9f237c4b9fe51a9.webm     |  Bin 0 -> 2382233 bytes
+ .../page@4f8879f2b087a9b4951715bf8c95a7b6.webm     |  Bin 0 -> 4021809 bytes
+ .../ui/motion-max-after/bag-full-bag-1280.png      |  Bin 0 -> 55772 bytes
+ .../ui/motion-max-after/bag-full-bag-1600.png      |  Bin 0 -> 58286 bytes
+ .../ui/motion-max-after/bag-maximum-long-1280.png  |  Bin 0 -> 62119 bytes
+ .../ui/motion-max-after/bag-maximum-long-1600.png  |  Bin 0 -> 69171 bytes
+ .../ui/motion-max-after/bag-normal-1280.png        |  Bin 0 -> 59337 bytes
+ .../ui/motion-max-after/bag-normal-1600.png        |  Bin 0 -> 66446 bytes
+ .../ui/motion-max-after/bag-offline-1280.png       |  Bin 0 -> 64632 bytes
+ .../ui/motion-max-after/bag-offline-1600.png       |  Bin 0 -> 72083 bytes
+ .../ui/motion-max-after/bag-zero-empty-1280.png    |  Bin 0 -> 65154 bytes
+ .../ui/motion-max-after/bag-zero-empty-1600.png    |  Bin 0 -> 73083 bytes
+ .../ui/motion-max-after/forge-full-bag-1280.png    |  Bin 0 -> 164532 bytes
+ .../ui/motion-max-after/forge-full-bag-1600.png    |  Bin 0 -> 278867 bytes
+ .../motion-max-after/forge-maximum-long-1280.png   |  Bin 0 -> 170739 bytes
+ .../motion-max-after/forge-maximum-long-1600.png   |  Bin 0 -> 288001 bytes
+ .../ui/motion-max-after/forge-normal-1280.png      |  Bin 0 -> 164578 bytes
+ .../ui/motion-max-after/forge-normal-1600.png      |  Bin 0 -> 282007 bytes
+ .../ui/motion-max-after/forge-offline-1280.png     |  Bin 0 -> 158069 bytes
+ .../ui/motion-max-after/forge-offline-1600.png     |  Bin 0 -> 268556 bytes
+ .../motion-max-after/forge-relic-full-bag-1280.png |  Bin 0 -> 167995 bytes
+ .../motion-max-after/forge-relic-full-bag-1600.png |  Bin 0 -> 281701 bytes
+ .../forge-relic-maximum-long-1280.png              |  Bin 0 -> 173451 bytes
+ .../forge-relic-maximum-long-1600.png              |  Bin 0 -> 290305 bytes
+ .../motion-max-after/forge-relic-normal-1280.png   |  Bin 0 -> 167995 bytes
+ .../motion-max-after/forge-relic-normal-1600.png   |  Bin 0 -> 281701 bytes
+ .../motion-max-after/forge-relic-offline-1280.png  |  Bin 0 -> 161268 bytes
+ .../motion-max-after/forge-relic-offline-1600.png  |  Bin 0 -> 267687 bytes
+ .../forge-relic-zero-empty-1280.png                |  Bin 0 -> 167440 bytes
+ .../forge-relic-zero-empty-1600.png                |  Bin 0 -> 281226 bytes
+ .../forge-salvage-full-bag-1280.png                |  Bin 0 -> 72020 bytes
+ .../forge-salvage-full-bag-1600.png                |  Bin 0 -> 81657 bytes
+ .../forge-salvage-maximum-long-1280.png            |  Bin 0 -> 75768 bytes
+ .../forge-salvage-maximum-long-1600.png            |  Bin 0 -> 87527 bytes
+ .../motion-max-after/forge-salvage-normal-1280.png |  Bin 0 -> 72020 bytes
+ .../motion-max-after/forge-salvage-normal-1600.png |  Bin 0 -> 79095 bytes
+ .../forge-salvage-offline-1280.png                 |  Bin 0 -> 73190 bytes
+ .../forge-salvage-offline-1600.png                 |  Bin 0 -> 84977 bytes
+ .../forge-salvage-zero-empty-1280.png              |  Bin 0 -> 52503 bytes
+ .../forge-salvage-zero-empty-1600.png              |  Bin 0 -> 54895 bytes
+ .../ui/motion-max-after/forge-zero-empty-1280.png  |  Bin 0 -> 159497 bytes
+ .../ui/motion-max-after/forge-zero-empty-1600.png  |  Bin 0 -> 269894 bytes
+ .../ui/motion-max-after/help-full-bag-1280.png     |  Bin 0 -> 69531 bytes
+ .../ui/motion-max-after/help-full-bag-1600.png     |  Bin 0 -> 72265 bytes
+ .../ui/motion-max-after/help-maximum-long-1280.png |  Bin 0 -> 72168 bytes
+ .../ui/motion-max-after/help-maximum-long-1600.png |  Bin 0 -> 74703 bytes
+ .../ui/motion-max-after/help-normal-1280.png       |  Bin 0 -> 69531 bytes
+ .../ui/motion-max-after/help-normal-1600.png       |  Bin 0 -> 72265 bytes
+ .../ui/motion-max-after/help-offline-1280.png      |  Bin 0 -> 70039 bytes
+ .../ui/motion-max-after/help-offline-1600.png      |  Bin 0 -> 72914 bytes
+ .../ui/motion-max-after/help-zero-empty-1280.png   |  Bin 0 -> 69202 bytes
+ .../ui/motion-max-after/help-zero-empty-1600.png   |  Bin 0 -> 71926 bytes
+ .../ui/motion-max-after/hero-full-bag-1280.png     |  Bin 0 -> 146032 bytes
+ .../ui/motion-max-after/hero-full-bag-1600.png     |  Bin 0 -> 210689 bytes
+ .../ui/motion-max-after/hero-maximum-long-1280.png |  Bin 0 -> 150378 bytes
+ .../ui/motion-max-after/hero-maximum-long-1600.png |  Bin 0 -> 215020 bytes
+ .../ui/motion-max-after/hero-normal-1280.png       |  Bin 0 -> 146032 bytes
+ .../ui/motion-max-after/hero-normal-1600.png       |  Bin 0 -> 210689 bytes
+ .../ui/motion-max-after/hero-offline-1280.png      |  Bin 0 -> 138430 bytes
+ .../ui/motion-max-after/hero-offline-1600.png      |  Bin 0 -> 183572 bytes
+ .../ui/motion-max-after/hero-zero-empty-1280.png   |  Bin 0 -> 146475 bytes
+ .../ui/motion-max-after/hero-zero-empty-1600.png   |  Bin 0 -> 210734 bytes
+ .../ui/motion-max-after/home-full-bag-1280.png     |  Bin 0 -> 79685 bytes
+ .../ui/motion-max-after/home-full-bag-1600.png     |  Bin 0 -> 90809 bytes
+ .../ui/motion-max-after/home-maximum-long-1280.png |  Bin 0 -> 87366 bytes
+ .../ui/motion-max-after/home-maximum-long-1600.png |  Bin 0 -> 101705 bytes
+ .../ui/motion-max-after/home-normal-1280.png       |  Bin 0 -> 79685 bytes
+ .../ui/motion-max-after/home-normal-1600.png       |  Bin 0 -> 90809 bytes
+ .../ui/motion-max-after/home-offline-1280.png      |  Bin 0 -> 80172 bytes
+ .../ui/motion-max-after/home-offline-1600.png      |  Bin 0 -> 91434 bytes
+ .../ui/motion-max-after/home-zero-empty-1280.png   |  Bin 0 -> 79339 bytes
+ .../ui/motion-max-after/home-zero-empty-1600.png   |  Bin 0 -> 84269 bytes
+ .../ui/motion-max-after/map-full-bag-1280.png      |  Bin 0 -> 139601 bytes
+ .../ui/motion-max-after/map-full-bag-1600.png      |  Bin 0 -> 144870 bytes
+ .../ui/motion-max-after/map-maximum-long-1280.png  |  Bin 0 -> 127600 bytes
+ .../ui/motion-max-after/map-maximum-long-1600.png  |  Bin 0 -> 131886 bytes
+ .../ui/motion-max-after/map-normal-1280.png        |  Bin 0 -> 139601 bytes
+ .../ui/motion-max-after/map-normal-1600.png        |  Bin 0 -> 144870 bytes
+ .../ui/motion-max-after/map-offline-1280.png       |  Bin 0 -> 137795 bytes
+ .../ui/motion-max-after/map-offline-1600.png       |  Bin 0 -> 151611 bytes
+ .../ui/motion-max-after/map-zero-empty-1280.png    |  Bin 0 -> 139402 bytes
+ .../ui/motion-max-after/map-zero-empty-1600.png    |  Bin 0 -> 144661 bytes
+ .../ui/motion-max-after/market-full-bag-1280.png   |  Bin 0 -> 59337 bytes
+ .../ui/motion-max-after/market-full-bag-1600.png   |  Bin 0 -> 62225 bytes
+ .../motion-max-after/market-maximum-long-1280.png  |  Bin 0 -> 61954 bytes
+ .../motion-max-after/market-maximum-long-1600.png  |  Bin 0 -> 64623 bytes
+ .../ui/motion-max-after/market-normal-1280.png     |  Bin 0 -> 59337 bytes
+ .../ui/motion-max-after/market-normal-1600.png     |  Bin 0 -> 62225 bytes
+ .../ui/motion-max-after/market-offline-1280.png    |  Bin 0 -> 59844 bytes
+ .../ui/motion-max-after/market-offline-1600.png    |  Bin 0 -> 62879 bytes
+ .../ui/motion-max-after/market-zero-empty-1280.png |  Bin 0 -> 58982 bytes
+ .../ui/motion-max-after/market-zero-empty-1600.png |  Bin 0 -> 61879 bytes
+ .../motion-max-after/motion-1280-no-preference.png |  Bin 0 -> 69899 bytes
+ .../ui/motion-max-after/motion-1280-reduce.png     |  Bin 0 -> 69892 bytes
+ .../motion-max-after/motion-1600-no-preference.png |  Bin 0 -> 77024 bytes
+ .../ui/motion-max-after/motion-1600-reduce.png     |  Bin 0 -> 77023 bytes
+ 116 files changed, 1226 insertions(+)
+ create mode 100644 reports/ui/cards/MOTION/performance-final/fps.json
+ create mode 100644 reports/ui/cards/MOTION/performance-final/motion-1280-no-preference.png
+ create mode 100644 reports/ui/cards/MOTION/performance-final/motion-1280-reduce.png
+ create mode 100644 reports/ui/cards/MOTION/performance-final/motion-1600-no-preference.png
+ create mode 100644 reports/ui/cards/MOTION/performance-final/motion-1600-reduce.png
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/animation-inventory.json
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/combat-end.png
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/summary.json
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/video-boss-ready/page@5529373a921ec43860a11ff78067d2ac.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/video-combat/page@329e8f235cdfbc8be48dd199309ebdd6.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/video-motion-normal/page@3160a2d537ccb792c36fffe230bc81c0.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1280x720/video-motion-reduced/page@cbbac9f4d0ea45f085c01b193c24df90.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/animation-inventory.json
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/combat-end.png
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/summary.json
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/video-boss-ready/page@e62599d28ec821786276cd99ed7f7245.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/video-combat/page@3a603d3d418f3e096150eed09c7eec98.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/video-motion-normal/page@4a22671073a84868e9f237c4b9fe51a9.webm
+ create mode 100644 screenshots/ui/motion-effects-final-1600x900/video-motion-reduced/page@4f8879f2b087a9b4951715bf8c95a7b6.webm
+ create mode 100644 screenshots/ui/motion-max-after/bag-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/bag-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-relic-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-salvage-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/forge-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/help-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/help-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/help-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/help-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/help-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/help-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/help-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/help-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/help-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/help-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/hero-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/home-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/home-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/home-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/home-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/home-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/home-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/home-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/home-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/home-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/home-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/map-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/map-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/map-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/map-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/map-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/map-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/map-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/map-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/map-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/map-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/market-full-bag-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/market-full-bag-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/market-maximum-long-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/market-maximum-long-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/market-normal-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/market-normal-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/market-offline-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/market-offline-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/market-zero-empty-1280.png
+ create mode 100644 screenshots/ui/motion-max-after/market-zero-empty-1600.png
+ create mode 100644 screenshots/ui/motion-max-after/motion-1280-no-preference.png
+ create mode 100644 screenshots/ui/motion-max-after/motion-1280-reduce.png
+ create mode 100644 screenshots/ui/motion-max-after/motion-1600-no-preference.png
+ create mode 100644 screenshots/ui/motion-max-after/motion-1600-reduce.png
