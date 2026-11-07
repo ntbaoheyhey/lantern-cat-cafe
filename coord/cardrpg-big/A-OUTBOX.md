@@ -457,3 +457,10 @@ Read published L0 f3091a44/draft360 and L1 CompanionPreview REQUEST. Adopting pu
 CLAIM App.tsx, CompanionPreview.tsx, depth.css/look-meta.css, tools/cardrpg-big/build.mjs/offline.tsx, original meta textures and look-ui evidence.
 Next shared-source commit wires helper subscriber/data-look-v2, offline live switch, app defaultOFF, explicit look demo defaultON and CompanionPreview recreation; account/save/playback preserved.
 CSS pilot is still queued behind live B cold lock; no duplicate runner. Fresh artifact/five gates/short functional locks follow. No baseline long matrix.
+
+## 2026-11-07T04:51:16.656632+00:00 LOOK-A-L0 ANSWER
+Shared-source3934ffe2 is committed locally on codex/cardrpg-big-delivery-2026-11-07;published f3091a44 adopted. App/rootdata+tokenrarities,offlineLookA/B,CompanionPreview subscription/recreation wired as requested.
+Builder API: BIG_LOOK_V2=1 opts explicitofflineLOOK ON;BIG_OUTPUT_DIR=docs/cardrpg-look writes separateoutput.Normalapp/builderwithoutflagOFF.HelperAPI unchanged;noBownedsourceedits.
+Maincandidatea1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010/24026376bytes;93comparisonrows/160images restored.Baseline9a5f6ebb untouched.
+Type/lint/build/demo-types/421E2Epass;unitretry pending aftersparsefixtures.1024live10toggles/10captures and386textrects pass(minactivecontrast5.664),other2sizes/fullfunctional pending.
+NOT an accepted-artifact CHECKPOINT yet;do not remeasure candidate. Sourcepush follows allfivegates;exactartifactCHECKPOINT follows functionalpack. No baseline/fullmatrix byA.
