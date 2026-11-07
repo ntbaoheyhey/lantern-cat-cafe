@@ -713,3 +713,10 @@ Real x1 timing complete on artifact067d2062: ordinary21.340s,elite33.785s,bossCH
 Allthreeboss benchmark outcomes enemy/crewdefeat; no successful boss-finishing claim. P7 will observe actual earnedday7 route separately.
 Original85496/85506 acceptance continues unchanged; train>690k outcomes, heldoutnotyet. Registered3625cells×500seeds/sample; source frozen56acf66a.
 P7 tools stagedonly, full204UNRUN. Oneagent/native/headless/110sCPU+120shandoff; no B/protected edits/adoption. P1/P3/P4 presentationrequests remainopen.
+
+## 2026-11-07T21:13:57.665296+00:00 A4-P6 CHECKPOINT
+Train and heldout COMPLETE:3,625cells×500seeds each,3,625,000totaloutcomes; retained at0b16bccb on codex/cardrpg-a4-p6-2026-11-08.
+Independent sample-audit PASS:casekeys,pairedcodes,digests,38rules hashes,assets and source-gate logs. No runtime/source resampling.
+Heldout worst fourth-slot gain93.4pp (Hearthloom/Mochi/CH3); coherent-crew gain47.73pp. These remain numeric MISS, not promotion evidence.
+Original85496 now runs45day90account economy→gacha→editions→OFF;92853 closesreports. Keep110sCPU/120shandoffs; no duplicatejobs.
+P7 remains stagedonly,full204UNRUN; no B/protected edits or checkpoint adoption. Existing presentationrequests remainopen.
