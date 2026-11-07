@@ -1,5 +1,5 @@
 // REFERENCE: reports/cardrpg-big/memory/PROMPT-A4.md G0; fresh behavioral OFF receipt.
-import { loadRules } from '../cardrpg-sim/load.mjs';
+import { loadRules } from './a4-load.mjs';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
@@ -9,9 +9,13 @@ const { playRun } = await load('packages/game-rules/src/cardrpg/depth/run-bot.ts
 const { firstInvitation } = await load('packages/game-rules/src/cardrpg/depth/onboarding.ts');
 const out = 'reports/cardrpg-big/a4/g0';
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const rows = [], saturation = [];
+const checkpointPath=`${out}/off.partial.json`;
+const checkpoint=JSON.parse(await readFile(checkpointPath,'utf8').catch(()=>'{}'));
+const {rows=[],saturation=[]}=process.argv.includes('--check')?{}:checkpoint;
+const started=Date.now(), checkpointExit=new Error('Checkpoint');
 try {
-  for (const level of [1,2,3,4,5,6,7,8,9,10,50]) for (const chapter of [1,2,3]) for (const rarity of ['none', ...legacy.RARITY_ORDER]) {
+  if(!process.argv.includes('--day7'))for (const level of [1,2,3,4,5,6,7,8,9,10,50]) for (const chapter of [1,2,3]) for (const rarity of ['none', ...legacy.RARITY_ORDER]) {
+    if(rows.some(r=>r.level===level&&r.chapter===chapter&&r.rarity===rarity))continue;
     const runs = [];
     for (let seed = 1; seed <= 50; seed++) {
       const state = R.createDepthAccount(seed);
@@ -37,6 +41,9 @@ try {
     }
     saturation.push({level,chapter,rarity,count:runs.length,wins:runs.filter(r=>r.won).length});
     rows.push({level,chapter,rarity,runs});
+    if(!process.argv.includes('--check'))await writeFile(checkpointPath,JSON.stringify({rows,saturation}));
+    console.log(JSON.stringify(saturation.at(-1)));
+    if(!process.argv.includes('--check')&&Date.now()-started>10*60*1000){process.exitCode=75;throw checkpointExit;}
   }
   await mkdir(out,{recursive:true});
   const receipt = { method:'Actual auto routes, 50 paired seeds per cell; fixed chapters expose original saturation. Current A3 source. No timing fields.', sha256:hash(rows), rows };
@@ -45,8 +52,8 @@ try {
     assert.equal(receipt.sha256,before.sha256,'OFF behavior differs from G0');
     console.log(JSON.stringify({offBehavior:'PASS',sha256:receipt.sha256}));
   } else {
-    await writeFile(`${out}/off-behavior.json`,JSON.stringify(receipt,null,2));
-    await writeFile(`${out}/saturation.json`,JSON.stringify(saturation,null,2));
+    if(!process.argv.includes('--day7'))await writeFile(`${out}/off-behavior.json`,JSON.stringify(receipt,null,2));
+    if(!process.argv.includes('--day7'))await writeFile(`${out}/saturation.json`,JSON.stringify(saturation,null,2));
     let day7 = firstInvitation(R.createDepthAccount(3001),4).state;
     day7.tutorial=3;
     for(let day=1;day<=7;day++) {
@@ -59,4 +66,4 @@ try {
     await writeFile(`${out}/day7.save.txt`,R.exportSave(day7));
     console.log(JSON.stringify({sha256:receipt.sha256,saturation,day7:{day:day7.account.day,team:day7.account.cards,cleared:day7.cleared}}));
   }
-} finally { await vite.close(); }
+} catch(error) { if(error!==checkpointExit)throw error; } finally { await vite.close(); }

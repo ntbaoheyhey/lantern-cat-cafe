@@ -48,6 +48,19 @@ try {
    await nav('Cafe');
   }
   const before=await page.evaluate(()=>structuredClone(window.__depthReview.state));
+  // A compressed first-session route uses earned resources only; no unlock fixture.
+  for(let attempt=0;attempt<(fixture==='new-save'?3:1);attempt++){
+  if(fixture==='new-save'){
+   await nav('Cafe');
+   const service=page.getByRole('button',{name:'Claim fixture hour of service',exact:true});
+   if(await service.isEnabled())await service.click();
+   for(let claim=0;claim<8;claim++){
+    const ready=page.getByRole('button',{name:'Claim',exact:true}).and(page.locator(':enabled'));
+    if(!await ready.count())break;await ready.first().click();
+   }
+   if(attempt>0){await nav('Companions');await page.getByRole('button',{name:'Level up',exact:true}).click();}
+   await nav('Cafe');
+  }
   await page.getByRole('button',{name:/Tangled Cafe/}).click();
   for(let step=0;step<7;step++){
    const node=await page.evaluate(()=>{
@@ -57,7 +70,7 @@ try {
    if(!node||await page.locator('.dp-node:enabled').count()===0)break;
    await page.locator('.dp-node:enabled').filter({has:page.locator('b',{hasText:new RegExp(`^${node.kind}$`)})}).first().click();
    if(['battle','elite','boss'].includes(node.kind)){
-    await capture(`prepare-${step}`);
+    await capture(`prepare-${attempt}-${step}`);
     await page.evaluate(()=>{window.__a4Timing={start:performance.now(),bossDeath:null};
      const tick=()=>{const m=window.__depthReview,t=window.__a4Timing;
       const boss=m.battle?.actors.find(a=>['yarn-giant','rain-spool','pantry-crown'].includes(a.catalogId));
@@ -72,7 +85,7 @@ try {
     encounters.push(await page.evaluate(({kind,timed})=>{const b=window.__depthReview.battle;
      return {kind,timed,wallMs:performance.now()-window.__a4Timing.start,bossDeathMs:window.__a4Timing.bossDeath,
       result:b.result,choices:b.choices.length,round:b.round,enemies:b.initial.enemies,initial:b.initial};},{kind:node.kind,timed}));
-    await capture(`result-${step}`);
+    await capture(`result-${attempt}-${step}`);
     const won=await page.evaluate(()=>window.__depthReview.battle.result==='party');
     await page.getByRole('button',{name:'Continue to rewards',exact:true}).click();
     if(!won)break;
@@ -82,8 +95,9 @@ try {
    else if(node.kind==='shop')await page.getByRole('button',{name:'Save your points and leave',exact:true}).click();
    else if(node.kind==='campfire')await page.getByRole('button',{name:'Heal the team · 35% HP',exact:true}).click();
   }
+  }
   rows.push({fixture,errors,captures,encounters,before,after:await page.evaluate(()=>structuredClone(window.__depthReview.state))});
-  await writeFile(`${out}/audit.json`,JSON.stringify({artifact,sha256,method:'Real clicks. New-save progression and deterministic seven-day reducer fixture. A3 comparison uses the identical visible level10/3star unlock. x1 timing includes Fight loading; screenshots occur outside timing.',rows},null,2));
+  await writeFile(`${out}/audit.json`,JSON.stringify({artifact,sha256,method:'Real clicks. New-save compressed first-session progression: practice, welcome, service, claims, three legal chapter-one attempts and available level upgrades; not sixty elapsed minutes. Deterministic seven-day reducer fixture. A3 comparison uses the identical visible level10/3star unlock. x1 timing includes Fight loading; screenshots occur outside timing.',rows},null,2));
   assert.deepEqual(errors,[]);console.log(JSON.stringify({fixture,encounters:encounters.map(({initial,...e})=>e),captures:captures.length}));
   await page.close();
  }
