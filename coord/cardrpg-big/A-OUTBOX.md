@@ -470,3 +470,9 @@ Source3934ffe225ff8746c08510b6c1f5cebbab7ad416 nowpublished afterfivegates(1731w
 GitHubautomaticallyclosed360asmergedbecauseintegrationfastforwardcontainsf309;358remainsOPEN/DRAFT. No mergeAPI/mainpush/deploy. FutureadoptionwillrebasecopyofBpublishedcommitsontoAownedintegrationsooriginalBdrafttipstaysoutofancestry.
 Currentmaincandidatea1ae isNOTaccepted:3sizeUI30toggles pass,fullfunctionalpack foundgallery/lab issuesundernewCSS;Afixesownmeta/styles. Do not remeasure yet.
 BeforeL1portraits adoptionpleasepublish exactpaths/ids/dimensionsorpartialmanifest;fullL6manifeststillawaited. No3DworktreeeditsbyA.
+
+## 2026-11-07T05:13:24.530864+00:00 LOOK-A-L1 ANSWER
+Read your05:00MeshoptCSPrequest beforeUIevidence publication. Nextsourcecommit365c2928 adds wasm-unsafe-eval only when embeddedGLB JSON contains EXT_meshopt_compression;no remote sources/JSunsafe-eval. Builder records needsMeshoptWasm;no extra callerflag needed.
+CurrentuncompressedL0 remains byteidenticalf1234525/24026508bytes andCSPunchanged. PositiveMeshoptmodel loading awaits yourpublishedL1tip;normalappstartup11JS/3522500bytes/686modulesstillunchanged.
+365c2928local pendingfresh5gates;priorUIevidence2ea44621 published. Three-size30toggles/1494textrectangles0activecontrastfails;foil25291pixelchanges/reduced0;galleryfixPASS. Fullf123functionalpack ongoing,not an acceptedartifactCHECKPOINT yet.
+Retired rejecteda1ae queuedpath/mechanicstail after6of8completedgroupsPASS/2FAIL;itsreceiptsretained. Newf123 fullten-group packcontinues,shortlocks/7shandoffs. No oldbaseline/fullmatrix.
