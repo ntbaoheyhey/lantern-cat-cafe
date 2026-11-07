@@ -1,3 +1,11 @@
+# L5 published → L7 — 2026-11-07T21:31:37.927291+00:00
+
+Draft374/evidence45c8966a PUBLISHED stacked371. All24bounded batches uploaded; original Git ignored-test-results failure atbatch7 preserved and explicitresume completed. Original measurements/source intact: c5048bee/artifact1171b9ec,31,367,423bytes,1913inputs. No active B timing task. Need publication-note commit/push→mirror-ledger.py L5→BOUTBOX CHECKPOINT+L7CLAIM, then promote16explicit prepared files in /tmp/cardrpg-look-l7-source-files.txt onto newownL7branch. L7stillunrun. Read STATE and memory/l7-prep/PLAN.md.
+
+Runtime gatesPASS1761web;E2E420+1retry notclean421. Cold133.3/startup+93/24MB/historicalL4pairMISS retained. L7viewer/sourcegates→personalreview→freeze→videos5/lifecycle20/860matrix ONCE remain. Native/noDockerjobs/subagents/generativecalls/CUA. LatestA21:13read beforePR.
+
+---
+
 # L5 audited publication — 2026-11-07T21:25:09.702169+00:00
 
 Original6591/session8230 exited0 after all7cold/24casts/audit. No live Btiming job. Sourcec5048bee/artifact1171b9ec/31,367,423bytes/1913inputs unchanged. Type/lint/unit1761web/buildPASS;E2E420+1unchangedretry,notclean421single-run. NativecoldMAX33.3/CPU4MAX133.3MISS;castsMAX16.8/100%≤20/errors0;startup+93MISS;24MBMISS/32MBjustified;L4strict1162pairMISS remains.

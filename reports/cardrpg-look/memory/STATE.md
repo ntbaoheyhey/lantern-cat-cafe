@@ -1,10 +1,10 @@
 # LOOK state
 ## NOW
-L5 source committed c5048bee, branch ai/codex-cardrpg-look-l5-2026-11-07. Native macOS; DockerDesktop open, docker ps empty. No subagents/generative calls/CUA. All22 raw/packed models and nine refreshed portraits committed; only owned paths.
+L5 PUBLISHED draft374/evidence45c8966a, runtime source c5048bee, branch ai/codex-cardrpg-look-l5-2026-11-07. Native macOS; DockerDesktop open, docker ps empty. No subagents/generative calls/CUA. All22 raw/packed models and nine refreshed portraits committed; only owned paths.
 Fresh framing pilot1171b9ec/31,367,423bytes: all36 Pollen/Yarn/Rain basic+special samples personally viewed,0projected-bound failures/0errors; prior foot crops preserved. Brioche/Marigold48poses reviewed with0framefail. Sock/Rain24poses reviewed; Rain oldcrop fixed in freshpilot.
 ## NEXT
 L5 measurements and independent audit COMPLETE on immutable c5048bee/artifact1171b9ec. All1913inputs,22models/turntables,66stills,372poses,6portraitUIconfigs verified. Type/lint/unit1761web/build PASS. E2E420initial passes+1focused unchanged-source pass, not a clean421run; original timeout retained. Cold7 nativeMAX33.3/CPU4MAX133.3;casts24MAX16.8/100%≤20/errors0. Flagoff0Three/model;startup+93bytes MISS. HTML31,367,423bytes:24MBMISS/documented32MBallowance. HistoricalL4strict1162pairMISS remains.
-Selective evidence inventory and report generated; explicit publication list /tmp/cardrpg-look-l5-publication-extra.txt. Next l5-publish.py→draftPR stacked371→ledger mirror→BOUTBOX checkpoint. No active B timing job; original6591/session8230 exited0. Do not repeat L5 measurements.
+Selected evidence3440files/1,018,720,566bytes plus explicit documentation published in24 bounded fast-forward batches. Draft374 stacked371; remote45c8966a verified. Original ignored-test-results upload failure preserved and resumed atbatch7 without repeated tests. Next mirror-ledger.pyL5→BOUTBOX checkpoint/L7claim. No active B timing job; original6591/session8230 exited0. Do not repeat L5 measurements.
 L7 still staged ONLY in memory/l7-prep. Promote afterL5publication, then committedUI/sourcegates→personalreview→freeze→videos5/lifecycle20/860matrix once. Prepared9review-sheet aids in memory/l7-review-sheets.py. Finalmatrix/lifecycle/CPU4BalancedLow remainunrun. NoA4adoption/shared/rules edits; latestA21:13 read.
 
 ## DONE
@@ -105,3 +105,5 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T21:14:39.269472+00:00: Resumed native; docker ps empty. Retry1passed, original420pass/1timeout preserved; no source/test/timeout edits. Existing6591/6884 coordinator continues flagoff/cold7/casts24/audit. Read latestA21:13 train+heldout completion with numericMISS; noA4adoption. L7staged tools reviewed, stillunpromoted/unrun.
 
 - 2026-11-07T21:25:09.702169+00:00: L5audit complete; source/artifact unchanged. Selectivepublication/report stage active; allmisses and originalE2E failure retained.
+
+- 2026-11-07T21:31:37.927291+00:00: Published draft374/evidence45c8966a. All portable evidence hashes unchanged; original local-only1278files/2,096,889,266bytes retained. No runtime changes during publication.

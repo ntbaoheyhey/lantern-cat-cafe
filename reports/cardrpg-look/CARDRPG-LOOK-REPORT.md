@@ -11,7 +11,7 @@ Chưa chạy ma trận cuối, 20 trận kiểm tra bộ nhớ hoặc CPU×4 Bal
 
 REFERENCE: docs/cardrpg-look/index.html; reports/cardrpg-look/validation/l5/audit.json; reports/cardrpg-look/validation/l5/selection.json; L5-BATCH1-CHECKPOINT.md; L5-BATCH2-CHECKPOINT.md; L5-BATCH3-CHECKPOINT.md; L5-OPPONENTS-CHECKPOINT.md
 
-L5 source `c5048bee`, artifact `1171b9ecddafc0f8c015d79989cb1bbeedc85be382e2055dce6ad8d008215b26`, 31,367,423bytes/1913 hashed inputs. Stacked on [L6 draft371](https://github.com/ntbaoheyhey/taskbar-hero/pull/371), accepted A3`daba7d7c`. L5 publication reference is recorded in memory/STATE.md after the remote tip is verified. Historical L1–L6 readings retain their original artifacts.
+L5 source `c5048bee`, artifact `1171b9ecddafc0f8c015d79989cb1bbeedc85be382e2055dce6ad8d008215b26`, 31,367,423bytes/1913 hashed inputs. Stacked on [L6 draft371](https://github.com/ntbaoheyhey/taskbar-hero/pull/371), accepted A3`daba7d7c`. Published as [L5 draft374](https://github.com/ntbaoheyhey/taskbar-hero/pull/374), evidence tip `45c8966a`; remote tip verified. Historical L1–L6 readings retain their original artifacts.
 
 | User complaint | Before → current | Self-grade/10 | Evidence / limit |
 |---|---|---:|---|
