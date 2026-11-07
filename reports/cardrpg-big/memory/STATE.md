@@ -3,14 +3,14 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T05:03:32.972257+00:00: LOOK-A L0 reviewfix verification; sources f2a43ad1(selectedcontrols+evidencedsizegate),b173715f(questionbadge),089201e3(receiptaudit) local;notyetpushed/accepted.
+ACTIVE 2026-11-07T05:03:32.972257+00:00: LOOK-A L0 reviewfix verification; sources f2a43ad1(selectedcontrols+evidencedsizegate),b173715f(questionbadge),089201e3(receiptaudit) local;sourcepushed;e056d1fe;artifactnotyetaccepted.
 Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · published3934ffe2;locale056d1fe;358draft. B360closed/mergedbyGitHubcontainmentafterAfastforward;L1pending.
 Baseline runtime a106dfca, HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes unchanged;14videos/204screens/report b092ed0c and ledger a2728798 published.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · last memoryc146bf34. Open A drafts333–341,344–345,348,358;359closed/merged,notopen.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · last memory7f189d1a. Open A drafts333–341,344–345,348,358;359closed/merged,notopen.
 Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · e2310482. B L0 helper adopted;L1 CompanionPreview request answered in3934ffe2. Ownership unchanged.
 ## NEXT
 1. Finish queued olda1ae packPID64887 preserving failures;7groupscomplete/5PASS,design/path/mechanicspending. Newcandidatef1234525/24026508bytes at/tmp/cardrpg-a-look-l0-contrastfix/index.html;runtimeDirtyfalse atb173715f.
-2. FivegatesreviewfixALLPASS:1731web/1020rules/421E2E(2.2min)/type/lint/build. UIseries55241 onf123 (l0-reviewfix/),flagoff48789 queued;finaltype/lintPASS,demotypes71380PASS (wrongpathfailure retained). No duplicate tasks.
+2. FivegatesreviewfixALLPASS:1731web/1020rules/421E2E(2.2min)/type/lint/build. f123UI30toggles/1494textrectangles0activefailsPASS;flagoff11JS/3522500bytes/686modulesunchangedPASS;finaltype/lint/demotypesPASS. No duplicate tasks.
 3. Exacthash32MBexceptionwritten fromnew1024before/after;new10groupfunctionalpack53114queued;then mainrebuild (sameexpectedf123),sourceaudit/publish A CHECKPOINT. AwaitL1/L6 phaseboundary;final860matrix onlyLOOK B.
 ## DONE
 LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
@@ -39,8 +39,8 @@ F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18captur
 ## PHASE GATES · LOOK-A L0
 PASS “rebase/merge lane B’s published tip into your integration branch”: fast-forward f3091a44;189baselineassets unchanged. look-ui/build-iterations.json.
 PASS implementation “lookV2 plumbing...App.tsx, depth.css, build.mjs, offline wrapper...default startup graph unchanged”: App/root+scopedCSS/offline/builder/preview wired;normalstartup11JS/3522500bytes/686modules0added/removed/Three/GLB PASS. No need to editdepth.css because scopedimport followsit.
-PARTIAL “restyle ONLY meta screens/cards/panels/typography...real foil/gloss...panel textures”:3originaltiles105652bytes,4tokenrarities,CSSscopedto.dp-cafe;no3Druleschanges. Reallegendarymotion/fullfunctional pending.
-PARTIAL “Playwright before/after screenshots, contrast checks”:pilot10togglespreserveaccount/screen;496textrects,5activebuttonfailsfixed;acceptedartifacta1ae1280/1440pending;30toggles/30screensPASS;1440contrast3activeFAIL2.1089–2.3301;galleryselectedtabFAIL1.07885. look-ui/l0/*/contrast.json.
+PARTIAL “restyle ONLY meta screens/cards/panels/typography...real foil/gloss...panel textures”:3originaltiles105652bytes,4tokenrarities,CSSscopedto.dp-cafe;no3Druleschanges. ReallegendarymotionPASS25291pixelchanges/reduced0;fullfunctional pending.
+PARTIAL “Playwright before/after screenshots, contrast checks”:pilot10togglespreserveaccount/screen;496textrects,5activebuttonfailsfixed;acceptedartifacta1ae1280/1440pending;f12330toggles/30screens/1494textrects0activeFAIL PASS;old1440question/selectedtabfailurespreserved;galleryrerunpending. look-ui/l0/*/contrast.json.
 PARTIAL “rebuild main HTML...newhash...five gates and functional pack...short lock windows”:a1ae7ea4/24026376bytes/93rows160images,type/lint/build/421E2Epass;1731web/1020rulesPASS;10functionalgroupsNOTYET.
 NOTYET “publish an A CHECKPOINT with the exact HTML hash...previous hash’s receipts”:source3934ffe2pushedafter5gates;baseline9a5f6ebb preserved. Finalmatrix onlyLOOK B.
 NOTYET “hero portraits(L1)...full portrait/icon/frame set...look-assets.json(L6)” and finalmergedreportLookbefore/after/Brubrics;upstreamnotyetpublished.
@@ -63,6 +63,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T05:08:30.101584+00:00 · Newf123UIandfoilverified;32MBexceptionpins6off/onimages;default24MBmiss26,508bytesretained. Memorypushtransientremote--stdinfailedonce,sequencedretryPASS;sourcee056published.
 2026-11-07T05:00:21.482132+00:00 · Raw1440contrastreceiptcorrectsimplicitallsizepass:3activequestionmarkFAIL2.1089–2.3301;30togglepassesremaintrue. Token-darkbackingfixprepared;oldreceiptretained.
 2026-11-07T04:59:06.300231+00:00 · Resumedfromcanonicalmemory;activeAfunctionalPID64887retained,no duplicaterun. a1aegallerycontrast1.07885fails;lab24MBdefaultfails;32MBexceptionallowedbyLOOKbriefsection2/6onlywithbeforeafterevidence. Fixselectedstylesandpinexceptiontohash.
 2026-11-07T04:55:09.864037+00:00 · GitHub360closed/merged04:52whenA3934pushcontainedBtipf309;358open/draft. No mergeAPI/mainpush/deploy. FutureBtipadoption:rebasecopyofpublishedcommitstoAownedintegrationbranchsooriginalBPRtipdoesnotbecomeancestor;preserveBbranch. pr-snapshot.json.
@@ -75,6 +76,7 @@ F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS.
 2026-11-07T04:25:38.972959+00:00 · GitHub359 closed/merged viaef400fc3,358open/draft;old “no GitHubmerge”claim corrected. Localmergeparents verified;no mergeAPI action this continuation.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-baseline-publication.md; never delete them. Historical worktrees inHISTORY.md.
 ## MEASUREMENTS
+LOOK UI ·f12330toggles/30captures/1494textrectangles0activefails,min5.60834:1;8inactivefailuresreportedseparately. foil25291/58647pixelschanged;reducedmotion0. look-ui/{l0-reviewfix,foil-l0/pixels.json}.
 LOOK reviewfix ·f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes;oldfca3496pilotunused. 3size30togglePASS,a1ae1440contrast3FAIL correctedsource;freshproofqueued.
 LOOK candidate ·a1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010/24026376bytes;93comparisonrows/160imagesrestored. Notacceptedpending3sizeUI/functionalpack. look-ui/build-iterations.json.
 LOOK prep ·3original256pxpaper/felt/grain tiles105652bytes;RGBAroundtrip/seamsPASS;look-ui/materials.json. 7palettebounds:3PASS4FAIL4.5threshold;usecream/papertextonraised/darkbacking. Notbrowserproof. No runtimeadoption.
