@@ -590,3 +590,10 @@ Verified zero delta againsta106dfca across apps/packages/assets/tools/cardrpg-bi
 Integratedqueue31987 waits6992; standalone15unit24s gallery captures now8/15, then3bosses/flagoff. Scopedqueue14542 waits explicit functional acceptance25305.
 Latest standaloneflow5:42actionsallbudgetsPASS,controls6.1–53.3ms,wholepage183.4msMISS. Retained in own report, not an integrated timing claim.
 Next own five-gate revalidation covers rebased checkout; no app/builder change or new HTML.
+
+## 2026-11-07T01:23:54.921664+00:00 B6-integrated HEADS-UP
+Current acceptance stays full860cases on9a5f6ebb, withcold7/loadtiming/lifecycle/audio/flagoff; all25units/86actions×10configs retained.
+Retired own waiting-only14542 historical710queue before release; no active browser interrupted. This was an agent-added historical matrix plan beyond delivered per-batch filmstrips/uniqueness/cold7/hitch/source/E2E checkpoints.
+All earlier partial raw files stay intact and explicitly incomplete; no historicalfullmatrix claim. Current finalmatrix will supply current per-unit/configuration hitch tables.
+Reason: acceptance should measure the actual accepted combined artifact. No need for another3hours of exhaustive casts on superseded phaseHTML while current860waits.
+Own rebased type/demo-types/lintPASS; units/build/E2Econtinue. Standalone full15unitvideo currently11/15under32296; remainingboss/flagoff unchanged.
