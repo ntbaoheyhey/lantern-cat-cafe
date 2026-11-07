@@ -1,0 +1,81 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:01:15.085Z",
+    "ended": "2026-11-07T00:01:29.470Z",
+    "log": "reports/cardrpg-big2/validation/review-prepublish-typecheck.log",
+    "sha256": "a4eb6423ec3f2507f58d916f3f3aacb2223122f5332582f84f5c816fc8ebab35",
+    "counts": []
+  },
+  {
+    "name": "demo-types",
+    "args": [
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "tsc",
+      "-p",
+      "../../tools/cardrpg-big2/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:01:29.472Z",
+    "ended": "2026-11-07T00:01:37.437Z",
+    "log": "reports/cardrpg-big2/validation/review-prepublish-demo-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:01:37.437Z",
+    "ended": "2026-11-07T00:01:47.942Z",
+    "log": "reports/cardrpg-big2/validation/review-prepublish-lint.log",
+    "sha256": "b63c7a73e500355790e30636abe5792108bb5bb176bc1165891ca71590c6ba21",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:01:47.943Z",
+    "ended": "2026-11-07T00:02:56.248Z",
+    "log": "reports/cardrpg-big2/validation/review-prepublish-tests.log",
+    "sha256": "accfe3c40b899f19ec42d09171f44729cc88fa6b7361fa7b2aa0e3cb9c536c46",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  169 passed (169)",
+      "apps/web test:       Tests  1702 passed (1702)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:02:56.248Z",
+    "ended": "2026-11-07T00:03:08.085Z",
+    "log": "reports/cardrpg-big2/validation/review-prepublish-build.log",
+    "sha256": "1a74833be93df72c13d3378619b244d3dbb013d51577cd89bca42264d93a72a9",
+    "counts": []
+  }
+]
