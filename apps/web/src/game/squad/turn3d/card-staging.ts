@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { isLookV2 } from './look-v2';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { Position } from './formation';
 
@@ -22,6 +23,10 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
 }
 
 export function cardFrameHeight(aspect: number, preset: CardCamera) {
+  if (isLookV2()) {
+    const medium = Math.max(4.8, CARD_CAMERAS.wide.worldWidth / aspect);
+    return medium * CARD_CAMERAS[preset].worldWidth / CARD_CAMERAS.wide.worldWidth;
+  }
   return Math.max(4.8, CARD_CAMERAS[preset].worldWidth / aspect);
 }
 

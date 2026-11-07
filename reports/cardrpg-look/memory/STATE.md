@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L1 checkpoint audited for publication. Runtime b9c521e3; audit-only176493da; eadac6b2 remains20,287,129bytes with1,263verifiedinputs. Type/lint/unit/build/421E2E pass. Startup bytes corrected to3,522,504 (+4preload metadata),686modules/0Three/model.
+L1 published eb568fda/draft361. L2 source cea0a9df/artifact dac82f01/22,290,293bytes; source-bound audit1,280inputs complete. Five gates421E2E,18pixel-identical stills,9camera/lifetime cases,6AB,7cold/24casts all recorded. CastMAX16.8ms/100%≤20; nativecoldMAX33.4/CPU4MAX166.6 (MISS).
 ## NEXT
-Commit/push L1 evidence and draft; mirror own report/STATE to ledger and notify A. Then create stacked L2, restore preserved stage from WIP436a10dd, VIEW round3 first, integrate/dispose/prewarm and review three runtime rounds. No duplicate L1 cold7/casts/A-B.
+Publish L2 owned evidence/report/draft, notify A and mirror ledger. Then L3 branch/claim and integrate durable memory/l3-prep drafts; type/lint/browser/visual3rounds required. Trace points to constructor/resize; startup strictbyteparity remains+4. No finalmatrix/lifecycle20/CPU4Balanced-Low acceptance.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -56,3 +56,13 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T05:58:34.323275+00:00 USER PAUSE: owned coordinator87651/gate89499 and live descendants stopped by verified process tree; own lock released (STOP-RECEIPT.json). Stage round3 had already finished49600tri/3meshes/color+AO+roughness+normal+irradiance2048; unreviewed output preserved in memory/l2-prep. No runtime changes after b9c521e3, no L1push/PR, no finalmatrix.
 
 - 2026-11-07T07:02:44.275351+00:00 Resume publication audit: full E2E421pass after network/font failure23 archived; unit1731web/1020rules/581Supabase/32chain/24auth/16contractpass,2expectedfail/11skips retained. Audit first rejected inaccurate startup3522500 claim; measured3522504, +4 dormant preload bytes. Comparison confirms default dependency list/686modules unchanged; strict-byte gate explicitly MISS. Audit-only rebuild leaves HTML eadac6b2 exactly unchanged.
+
+- 2026-11-07T07:13:59.204553+00:00 User supplied original prompt again. Attachment matches saved PROMPT exactly:21,456bytes/SHA2567731bd7aead155972c7111b7c69d91e8135587b408e25183825c1a6408ea4802. All original LOOK constraints remain active.
+
+- 2026-11-07T07:31Z L1 draft361 published/portrait contract sent in sync9ef45513. Runtime2 camera FOVs1280 A18.424/B20.463/C22.776 now distinct; source disposal race fixed, not yet browser-verified. Stage4 reduces floor saturation, restores matte contact clearance, emits paper lamps; bake pending. No new perf acceptance.
+
+- 2026-11-07T08:10Z L2 round3 stage440d3cb7 visual/pass,9camera106draw/101148tri,20stage resources dispose,6AB. First L2 unit1733web and421E2E pass,casts24MAX16.8/100percent≤20. Cold233.4 rejected; exact trace hasDecodeImage175.762ms. Fix0d7edc7b explicitly decodes HTMLImageElement offthread before upload; probe pending. Shared shell visibility requestfad581cf; future skills[id].icon1x/2x contract sent.
+
+- 2026-11-07T13:03:10.072735+00:00 Resume after turn interruption: source cea0a9df and dac82f01 unchanged. Original cold batch timed out on third scenario; first2 MAX333.3/250.0ms retained under validation/attempts/l2-interrupted-cold. New perf-only runner uses caffeinate and LOOK_FLAG_CHECK=0, no repeated source/AB/camera gates. L3 drafts durable in memory/l3-prep; unintegrated/untested. A latest08:22claims L1adoption and future shell fix, no new accepted CHECKPOINT.
+
+- 2026-11-07T13:11:23.487176+00:00 L2 complete audit:1,280source hashes; nativehub.908–.948s/battle6.497–6.623s,CPU4hub1.733–1.843s/battle8.631–9.125s. All24casts16.8MAX/100%≤20/errors0. Complete cold7MAX166.6, preserved interrupted333.3/250.0andthirdtimeout; imageBitmap matches18PNGs. L3 drafts remain unintegrated; source tipcea0a9df.

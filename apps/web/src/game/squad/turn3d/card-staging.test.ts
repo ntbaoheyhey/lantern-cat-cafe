@@ -12,6 +12,25 @@ it('orders the three camera widths and keeps front and rear rows distinct', () =
   }
 });
 
+it('keeps atelier camera choices distinct when a short desktop stage reaches the height floor', () => {
+  const previous = window.__LOOK_V2__;
+  try {
+    window.__LOOK_V2__ = true;
+    for (const aspect of [3.2, 4.5]) {
+      const close = cardFrameHeight(aspect, 'close');
+      const wide = cardFrameHeight(aspect, 'wide');
+      const far = cardFrameHeight(aspect, 'far');
+      expect(close).toBeLessThan(wide);
+      expect(wide).toBeLessThan(far);
+      expect(wide).toBe(4.8);
+    }
+    window.__LOOK_V2__ = false;
+    for (const preset of ['close', 'wide', 'far'] as const) {
+      expect(cardFrameHeight(4.5, preset)).toBe(4.8);
+    }
+  } finally { window.__LOOK_V2__ = previous; }
+});
+
 it('keeps head yaw bounded and animated face directions inside the 55 degree cone', () => {
   const model = new T.Group();
   const head = new T.Object3D();

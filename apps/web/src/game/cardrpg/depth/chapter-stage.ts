@@ -15,6 +15,7 @@ const themes = [
 
 /** Original café scenery, built once from primitives and instanced shelf details. */
 export function decorateChapterStage(stage: T.Group) {
+  if (stage.userData.lookV2) return;
   stage.userData.candle = { flame: stage.getObjectByName('cafe-candle-flame'), halo: stage.getObjectByName('cafe-candle-halo') };
   for (const [index, theme] of themes.entries()) {
     const group = new T.Group();
@@ -143,6 +144,7 @@ export function decorateChapterStage(stage: T.Group) {
 }
 
 export function animateChapterStage(stage: T.Group, time: number, reducedMotion: boolean) {
+  if (stage.userData.lookV2) { stage.userData.animateLook?.(time, reducedMotion); return; }
   const t = reducedMotion ? 0 : time;
   const candle = stage.userData.candle as { flame: T.Mesh; halo: T.Sprite };
   const flicker = Math.sin(t * 8.3) * .06 + Math.sin(t * 13.7) * .025;

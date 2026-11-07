@@ -25,6 +25,7 @@ import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSk
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
 import { loadingFrame, warmScene } from './loading';
 import { CardUtensil } from './card-utensils';
+import { isLookV2 } from './look-v2';
 import { cardEntrancePose } from './card-entrance';
 
 export interface SceneView {
@@ -90,6 +91,7 @@ export class TurnScene {
   private aura: T.PointLight;
   private targetLines:T.Line<T.BufferGeometry,T.LineBasicMaterial>[]=[];
   private stage = new T.Group();
+  private readonly lookStageEnabled: boolean;
   private bossBackdrop: T.Group;
   private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
@@ -109,6 +111,7 @@ export class TurnScene {
   };
 
   constructor(private host: HTMLElement, private view: ()=>SceneView, private onAnchors: (v:Anchor[])=>void, private onTarget:(id:string)=>void, private onFailure:(message:string)=>void) {
+    this.lookStageEnabled = !!this.view().autoBattle && isLookV2();
     this.renderer = new T.WebGLRenderer({ antialias:true, alpha:false, powerPreference:'low-power', preserveDrawingBuffer:true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
     this.renderer.outputColorSpace=T.SRGBColorSpace;
@@ -152,7 +155,7 @@ export class TurnScene {
     const warm=new T.Group();
     try{
       await loadingFrame();if(this.disposed)return;
-      if(this.view().autoBattle){
+      if(this.view().autoBattle && !this.lookStageEnabled){
         for(const kind of ['wood','cloth','window'] as const){
           const texture=await prepareStageTexture(kind);
           texture.anisotropy=Math.min(16,this.renderer.capabilities.getMaxAnisotropy());
@@ -162,7 +165,15 @@ export class TurnScene {
           await loadingFrame();
         }
       }
-      this.stage=this.makeStage();this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
+      if(this.lookStageEnabled){
+        const {createLookStage,disposeLookStage}=await import('./look-stage');
+        if(this.disposed)return;
+        const stage=await createLookStage(this.renderer);
+        if(this.disposed){disposeLookStage(stage);return;}
+        this.stage=stage;
+      }else this.stage=this.makeStage();
+      this.stageTextures.push(...(this.stage.userData.ownedTextures ?? []));
+      this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
       this.stage.traverse(object=>{
         if(object instanceof T.Mesh||object instanceof T.Line||object instanceof T.Points){
           this.geometryOwned.add(object.geometry);
@@ -171,6 +182,7 @@ export class TurnScene {
         }
         if(object instanceof T.Sprite)this.materialOwned.add(object.material);
       });
+      if(this.disposed)return;
       this.loading.completed=1;this.loading.label='Preparing miniature models';
       await new Promise(resolve=>setTimeout(resolve,0));
       await this.cardSurfaces?.ready;if(this.disposed)return;
@@ -381,6 +393,7 @@ export class TurnScene {
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
     if(view.autoBattle && this.litChapter!==(view.chapter??1)){this.litChapter=view.chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
+    this.stage.userData.setChapter?.(view.chapter??1);
     this.bossBackdrop.visible=view.boss&&!view.model&&!view.autoBattle;this.stage.visible=!view.model;
     const boss=view.actors.find(a=>a.hp>0&&BOSS_STYLES[this.puppets.get(a.id)?.asset??'']);
     const bossPuppet=boss?this.puppets.get(boss.id):undefined;
@@ -399,6 +412,7 @@ export class TurnScene {
     });
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
+    if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}

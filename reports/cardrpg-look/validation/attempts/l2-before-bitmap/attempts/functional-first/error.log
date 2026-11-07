@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"B-LOOK","pid":10686,"startedAt":"2026-11-07T07:41:35.506Z","task":"LOOK L2 battle 1024"}
+{"lock":"released","task":"LOOK L2 battle 1024"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Look A/B', exact: true })[22m
+
+    at /Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/l2-check.mjs:60:63
+    at async withTimingLock (/Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/lock.mjs:35:16)
+    at async file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/l2-check.mjs:12:68 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Look A/B', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

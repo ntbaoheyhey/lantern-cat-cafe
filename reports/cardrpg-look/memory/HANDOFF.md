@@ -1,3 +1,19 @@
+# Active continuation — 2026-11-07 (not a pause)
+
+User resumed Lane B and re-supplied the original brief. The historical pause below is superseded by that explicit resume.
+
+- Current checkout `/Users/bao/taskbar-hero-cardrpg-look`, branch `ai/codex-cardrpg-look-l2-2026-11-07`, runtime tip `cea0a9df`.
+- L1 **published** `eb568fda`, draft361; ledger `ef603305`. No new A accepted CHECKPOINT beyond86005b84; latest A08:22 claims its L1-adoption work and future shared shell fix.
+- L2 source/diorama complete:4Blender/3runtime review rounds; exact artifact `dac82f01dfefe213fd24c23a1cab04fe785713060fcac70bc03e16264766abf2`,22,290,293bytes, runtimeDirty=false. Eighteen PNGs exactly match reviewed runtime3 despite ImageBitmap decode fix.
+- Fresh5gates passed including421E2E/1733web unit;9actual camera cases and20/20resource disposal;6liveAB; startup11JS/3,522,504bytes/686modules/0Three-model (strict-byte parity remains+4).
+- Initial phase coordinator23426 finished all visual/functional/flagoff then cold timed out on third scenario. Failed2cases333.3/250.0ms and logs retained in validation/attempts/l2-interrupted-cold. Earlier233.4ms GPU-upload decode and unsuccessful HTML.decode probes retained in attempts/l2-before-bitmap.
+- Perf-only retry PID32025/session41855 completed; no remaining runner: cold7 completed nativeMAX33.4,CPU4MAX166.6 (DPR2CPU4 133.4). Actual38.164ms sampled in resizeToHost during97.549ms click; trace-attribution.json retained. All24castsMAX16.8/100%≤20/errors0; audit1,280inputs passed. Do not launch duplicate gates/camera/cold jobs.
+- Next: completed L2 audit/report/STATE are ready; commit only owned docs/evidence and publish stacked draftL2. Read A-OUTBOX at publication boundary. Mirror report/STATE to ledger via isolatedindex (script /tmp/cardrpg-look-mirror-ledger.py, adjust L1label toL2), never touch ledger worktree.
+- L3 drafts are durable **unintegrated/untested** under memory/l3-prep. README documents sequence/risks. allocate.py splits constructor, firstresize and legacy stage/decorations across loadingFrame; integrate.py adds LookPost/analytic LUT/environment/materialfill. Do not apply until L2 publication and L3 branch/claim. Check exact diff/type/lint/actualbrowser after applying. Draft syntax only checked, no runtime/visual/perf acceptance.
+- Remaining original phases L3/L4/L6/L5/L7 and final-only matrix/lifecycle/CPU4Balanced-Low remain open. No subagents/generative calls/sharedmeta or rules changes; no merge/deploy/mainpush.
+
+---
+
 # Resume addendum — 2026-11-07T07:02:44.275351+00:00
 
 User resumed Lane B from this handoff. L1 source gates and independent audit now complete; runtime b9c521e3 unchanged, audit-only176493da. See current STATE.md and CHECKPOINT.md. Startup byte correction:3,522,504 (+4 dormant preload metadata), not3,522,500; loaded module graph still686/0Three/model. Failed resumed E2E retained; retry421passed. Original pause handoff below is historical. L2 source is still preserved on WIP436a10dd and unintegrated.
