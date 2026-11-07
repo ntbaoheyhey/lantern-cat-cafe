@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
+P6 train/heldout COMPLETE; remaining acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
-Reuse original coordinator85496/heldoutwindow97965; train COMPLETE; heldout then45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
+Reuse original coordinator85496; train and heldout COMPLETE; remaining45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; train COMPLETE1,812,500outcomes; heldout running on seeds10001–10500 (last checked 1352500outcomes). Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+3625cells×500seeds/sample registered; train and heldout each COMPLETE1,812,500outcomes; raw sample-audit.json PASS on all3625cells/sample and38source hashes. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -222,3 +222,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Recovered original coordinator85496/heldout97965/closure92853; source and existing sample order unchanged. No duplicate simulations.
 - Added read-only a4-p6-audit.mjs to validate both complete raw samples, paired codes, case keys, digests and source hashes before publication. Syntax passed; run after heldout completes, then retain sample-audit.json.
 - Read current sync through latest B L5 CLAIM; no DONE/adoption instruction. P7 remains staged only.
+
+## 2026-11-07T21:10Z heldout completion
+- Original heldout finished21:09:50.881Z,3625cells/1,812,500outcomes. Combined3,625,000outcomes; independent sample-audit.json/log PASS, including paired codes, digests, source/asset and gate-log hashes. No simulation rerun.
+- Broad P6 build inventory retains original runtimeDirty:true and one documented report-only change, a4-p6-summary.py. Runtime input and assets remain exact; P7 rebuilds after source commit.
+- Original85496 now owns economy/gacha/editions/OFF; closure92853 still owns report/numeric tests/summary/scope. Do not duplicate them.
