@@ -6,7 +6,7 @@ Reuse original coordinator85496/heldoutwindow97965; train COMPLETE; heldout then
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; train COMPLETE1,812,500outcomes; heldout running on seeds10001–10500. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+3625cells×500seeds/sample registered; train COMPLETE1,812,500outcomes; heldout running on seeds10001–10500 (last checked 988500outcomes). Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -211,3 +211,9 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Original coordinator completed train at2026-11-07T20:13:11.675Z:3625cells/1,812,500outcomes. Independent train-audit.json verifies every500-outcome row, summary count, digest and38rule source hashes.
 - Train-only worst is Bellsteel legendary charm as fourth slot on Mochi, band6/chapter3:35→493wins/500 (+91.6pp), displayed share2.9724% (+12display-only3.8918%). This is a residual MISS; do not claim share is calibrated to win probability. Heldout untouched before its registered start.
 - Heldout window97965 began20:15UTC under original85496; closure92853 still waits. No duplicate jobs or source changes. P7 staged archive in p6/p7-staging.
+
+## Heldout continuation / publication preparation
+- P6 current WIPf6b7c8ee preserves completed train and source audit. Original85496/heldout97965/closure92853 retained. Heldout past halfway; no duplicate simulations or source edits.
+- GitHub connector confirmed P5 #373 remains open/draft; correct base is codex/cardrpg-a4-p5-2026-11-08 (not Nov7). Use create_pull_request(repository_full_name,head,base,draft:true,title,body) after P6 receipt review. Structured result payload is in structuredContent.content (JSON string).
+- /tmp/cardrpg-a4-status.py is a read-only progress helper. P7 staged backup remains p6/p7-staging/selected-tools.tar.gz; original22-file manifest in /tmp/cardrpg-a4-p7/adoption-manifest.json.
+- Staged P7 journey now labels encounter routes and records day7BossReached. Receipt audit/report distinguish an earned day7 boss measurement from an early route defeat; syntax checks passed. Manifest and22-file backup refreshed; no P7 run or runtime edits.
