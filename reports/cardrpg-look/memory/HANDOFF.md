@@ -1,3 +1,9 @@
+# L6 draft published — 2026-11-07T18:01:07.918099+00:00
+
+L6evidence738bb530 remoteverified, draft371 stacked368. Sourcee71db1d6/artifact4696d62c/26,392,592bytes. Allmeasurements completed, no rerun. NativeMac/noDocker. Report+STATE publicationnote beingpushed; ledger/finalB-OUTBOX andL5CLAIM stillnext. Fullportable893files357MB includes~212MB tracegz;2failedHTML33MB localonly;noL4rawstage. Originalfailurelogs/test-results preservedbyte-for-byte despite whitespace. L5noauthoring/render yet;onlyPLAN/TECHNICAL-NOTES. NoA4adoption,optionalpresentationopen.
+
+---
+
 # L6 audited, publication active — 2026-11-07T17:58:37.030132+00:00
 
 Native macOS; B does NOT use Docker. Last docker ps empty. No model/subagent/CUA/shared/A-worktree changes.

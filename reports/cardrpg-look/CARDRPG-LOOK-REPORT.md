@@ -11,7 +11,7 @@ Chưa xongL5/L7, ma trận cuối,20 trận kiểm tra bộ nhớ và CPU×4 ở
 
 REFERENCE: docs/cardrpg-look/index.html; docs/cardrpg-look/art.html; reports/cardrpg-look/L6-CHECKPOINT.md; reports/cardrpg-look/validation/l6/audit.json
 
-L6 source `e71db1d6`, HTML `4696d62cd47cbf28ede7a30f2f661ef8198c46ac50b11f20b75bfd138f5cbdba`, 26,392,592bytes/1844hashed inputs. Stacked on [L4 #368](https://github.com/ntbaoheyhey/taskbar-hero/pull/368), accepted A3`daba7d7c`. Publication details are appended after remote verification. Historical L4 evidence remains bound to`fb56cd44`/23,995,962bytes; it is not a new measurement of L6.
+L6 source `e71db1d6`, HTML `4696d62cd47cbf28ede7a30f2f661ef8198c46ac50b11f20b75bfd138f5cbdba`, 26,392,592bytes/1844hashed inputs. Stacked on [L4 #368](https://github.com/ntbaoheyhey/taskbar-hero/pull/368), accepted A3`daba7d7c`. Published [draft L6 #371](https://github.com/ntbaoheyhey/taskbar-hero/pull/371), evidence commit `738bb530` (remote verified). Historical L4 evidence remains bound to`fb56cd44`/23,995,962bytes; it is not a new measurement of L6.
 
 | User complaint | Before → current | Self-grade/10 | Evidence/limitation |
 |---|---|---:|---|

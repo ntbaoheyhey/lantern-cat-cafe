@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L6 audited immutablee71db1d6/4696d62c/26392592bytes/1844inputs.12portraits/48icons/4plates delivered;all art/sixUI configs reviewed. Type/lint/unit1751web/build pass;E2E420+1focusedretry (not single421pass),attempts retained. Previewready4models/2toggles/0errors. Cold7MAX133.3;24castsMAX16.8;startup+93bytes. Audit lists misses;L6 publication/ledger/sync pending.
+L6 audited immutablee71db1d6/4696d62c/26392592bytes/1844inputs.12portraits/48icons/4plates delivered;all art/sixUI configs reviewed. Type/lint/unit1751web/build pass;E2E420+1focusedretry (not single421pass),attempts retained. Previewready4models/2toggles/0errors. Cold7MAX133.3;24castsMAX16.8;startup+93bytes. Audit lists misses;L6 published evidence738bb530/draft371;ledger/finalsync pending.
 ## NEXT
-Inventory/stage onlyL6art+receipts, publish draft stacked368 afterremotecheck, mirrorreport/STATE and notifyA. ThenL5ninecats+13opponents→L7. L4strict1162pairMISS remains;L6size>24MB justified≤32MB;CPU4cold/startupparity misses. Finalmatrix/lifecycle20/CPU4BalancedLow unrun. A4schema/fixtures read,optionalpresentationrequestopen;acceptedbaseA3daba7d7c.
+Mirrorreport/STATE and finalsync; claimL5ninecats+13opponents→L7. L6evidence738bb530/draft371 published, no repeatcoordinators. L4strict1162pairMISS remains;L6size>24MB justified≤32MB;CPU4cold/startupparity misses. Finalmatrix/lifecycle20/CPU4BalancedLow unrun. A4schema/fixtures read,optionalpresentationrequestopen;acceptedbaseA3daba7d7c.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -80,3 +80,5 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T16:43:17.557960+00:00 L4 phase audit passed1580source hashes and all receipt bindings; three misses remain explicit (1162pairs/startup+93/cold183.4). All19sheets/four-role self-review completed. Source unchanged during gates. Portable evidence selection retains all raw local originals.
 
 - 2026-11-07T17:57:55.740647+00:00 L6 audit completed; seeL6-CHECKPOINT andvalidation/l6/audit.json. NativeMac;noDocker/subagents/generativecalls. Source immutable; all original failures preserved.
+
+- 2026-11-07T18:01:07.918099+00:00 L6draft371 published/remote738bb530 verified. Sourcee71db1d6 immutable;allgates/measurements unchanged.

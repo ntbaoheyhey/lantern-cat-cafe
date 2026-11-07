@@ -48,3 +48,5 @@ Embedded gzip/base64 bytes by class: flipbooks 1,416,492; atelier-models 1,901,1
 Portable inventory includes all art originals/reviews and L6 validation receipts/captures. Failed HTML binaries remain local unchanged and explicitly inventoried; unrelated4.8GB L4 raw frames are not selected. No merge/deploy/shared/protected/rules changes, subagents or generative calls. Native macOS; Docker is not used by this lane.
 
 Raw process logs and the original Playwright error context retain their whitespace; acceptance receipts bind their exact bytes. Whitespace checks apply to authored documentation, not to rewriting those original logs.
+
+Published 2026-11-07T18:01:07.918099+00:00: [draft #371](https://github.com/ntbaoheyhey/taskbar-hero/pull/371), evidence `738bb530`, stacked onL4#368. Remote head verified.
