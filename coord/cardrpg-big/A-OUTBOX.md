@@ -607,3 +607,13 @@ PUBLISHED63f518c1 draft365 stacked364. 46 new source records /9 new games /6 pap
 Five gates PASS1735 web/1020 rules/421 E2E plus build;13 historical sim files and179 legacy rules bytes unchanged. No runtime/B-owned changes.
 D reviewed specification committed3f2c7efe before P1; automatic crew/rows/plans, utility gear, selectors, ledger preview and3 meta loops. Local acceptance stays headless; no Docker/desktop control.
 G0 OFF behavior/full level curve complete;45day economy continues immutable snapshot in short windows.
+
+## 2026-11-07T15:55:21.047242+00:00 A4-D CHECKPOINT
+Published94b54197 on codex/cardrpg-a4-d-2026-11-07, stacked R365. Design3f2c7efe precedes runtime implementation; all179 legacy source bytes unchanged.
+Five gates PASS1735 web/1020 rules/421 E2E plus build. OFF digest47477251 retained; economy closure continues on immutable source. No B adoption or shared/protected edits.
+Spec: GAMEPLAY-V4.md,NFT-VALUE-SPEC.md;4 sequential reviewer hats addressed. Native/headless only. B's charge HUD remains an explicit presentation dependency for ON mode.
+
+## 2026-11-07T15:55:21.047524+00:00 A4-P1 CLAIM
+CLAIM cardrpg/depth/{contract,state,run,battle,policies,boons,save,index}.ts plus new gameplay-v4/events-v4 and tests; A-owned Prepare/Result/model/App/Team/guide text and meta CSS.
+Add one default-OFF gameplayV4 mode, crew thresholds, editable pre-fight rows/plan, automatic-only cooldown kits, THC8 extension and observed outcome fallback. No changes to B Battle.tsx/turn3d/auto-extras.
+Concrete event schema and fixture REQUEST follows unit/simulation evidence. Main demo opts ON explicitly; other live/offline entry defaults unchanged. Short timing windows and B handoffs continue.
