@@ -3,16 +3,17 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T05:15:57.404630+00:00: LOOK-A L0 acceptance; resumed saved runtime/evidence, no duplicate runs. Delivery HEAD365c2928 (Meshopt CSP conditional), published2ea44621; draft358.
+ACTIVE 2026-11-07T05:15:57.404630+00:00: LOOK-A L0 acceptance; resumed saved runtime/evidence, no duplicate runs. Delivery HEAD1933d944 published (Meshopt source365c2928; fresh five-gate receipts); draft358.
 Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07. Main f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56 /24,026,508bytes; not accepted yet.
 Baseline HTML9a5f6ebb/23,937,000bytes immutable;14videos/204screens/report b092ed0c and ledger a2728798 published. Visual complaint remains open.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent45c4e797. Open A drafts333–341,344–345,348,358;359/360closed by containment.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parentb99c7529. Open A drafts333–341,344–345,348,358;359/360closed by containment.
 Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·4c50e3ee;05:13ANSWER records Meshopt conditional CSP request. B L1 portraits/manifest unpublished; ownership unchanged.
 ## NEXT
-1. Continue existing functional PID70538, f123 artifact: studio/gallery PASS, comparisons queued. Preserve old a1ae 6/8PASS,2FAIL; old path/mechanics tail retired. No rerun of baseline videos/functional pack.
-2. Continue existing five-gate PID74695 for365c2928: type/lint/unit/build PASS1731web/1020rules;E2E queued. Rehash logs, publish source after all5PASS. Do not duplicate jobs.
+1. Continue existing functional PID70538, f123 artifact: studio/gallery/comparisons PASS, lab active. Preserve old a1ae 6/8PASS,2FAIL; old path/mechanics tail retired. No rerun of baseline videos/functional pack.
+2. Five-gate365c2928 run COMPLETE: type/lint/build/1731web/1020rules/421E2E(2.4min)PASS;all5loghashes verified;1933d944pushed. No repeated source suites needed without changes.
 3. Finish10-group functional pack; audit exact source/HTML/30toggles/foil/flagoff/sizeexception; publish L0 A CHECKPOINT. Then read B boundary and adopt published L1 only. Final860matrix only LOOK B.
 ## DONE
+LOOK Meshopt source ·365c2928/receipts1933d944 published;conditionalCSP uncompressedf123unchanged,all5gates1731web/1020rules/421E2E PASS. validation/look-l0-wasmhook.json;1177sourceinputs hashmatch.
 LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
 Baseline review ·ef400fc3/draft358;14recordings/12,385decodedframes/991samples/57sheets;video/delivery/{audit,review/observations}.json. FRESH-EYES has20weaknesses/11grades;reportdraft107lines;not baseline publication.
@@ -63,6 +64,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T05:19:01.981816+00:00 · Meshopt source365c2928 and fresh5gates published1933d944;1177buildinputs0mismatches. L1adapter preparation only, unpublishedBmanifest neveradopted. Source1933commit excluded sparse docs;include them in next checkpoint with gitadd--sparse.
 2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
 2026-11-07T05:08:30.101584+00:00 · Newf123UIandfoilverified;32MBexceptionpins6off/onimages;default24MBmiss26,508bytesretained. Memorypushtransientremote--stdinfailedonce,sequencedretryPASS;sourcee056published.
 2026-11-07T05:00:21.482132+00:00 · Raw1440contrastreceiptcorrectsimplicitallsizepass:3activequestionmarkFAIL2.1089–2.3301;30togglepassesremaintrue. Token-darkbackingfixprepared;oldreceiptretained.
