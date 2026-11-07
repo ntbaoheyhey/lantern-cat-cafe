@@ -1,6 +1,7 @@
+import { drawInvitationsV4 } from './gacha-v4';
 import { RELIC_EFFECTS } from './bridge';
 import { createStarterAccount } from '../state';
-import { BANNERS, RECIPES, QUESTS } from '../catalog';
+import { RECIPES, QUESTS } from '../catalog';
 import { GEAR_CAP_V4 } from './equipment-v4';
 import { stackCapV4 } from './items-v4';
 import { applyCommand } from '../commands';
@@ -49,11 +50,12 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
   return transactDepth(state,s=>{
     requireHome(s);
     if(gameplayV4(s)){
+      if(command.type==='pull'){drawInvitationsV4(s,command.bannerId,command.seed,command.count);return;}
       requireRule(!['equip','unequip','enhance','reforge','salvage','lock','selectTeam'].includes(command.type),'NOT_READY','Use the equipment workbench or crew screen for Gameplay v4.');
       const recipe=command.type==='forge'?RECIPES.find(r=>r.id===command.recipeId):undefined;
-      const banner=command.type==='pull'?BANNERS.find(b=>b.id===command.bannerId):undefined;
+      requireRule(!recipe?.scarcityId,'NOT_READY','Use the local edition ledger to reserve a design.');
       const quest=command.type==='claimQuest'?QUESTS.find(q=>q.id===command.questId):undefined;
-      const slots=recipe?.outputItemId?1:banner?.kind==='equipment'&&command.type==='pull'?(command.count??1):quest?.reward.items?.length??0;
+      const slots=recipe?.outputItemId?1:quest?.reward.items?.length??0;
       requireRule(s.gear.length+slots<=GEAR_CAP_V4||slots===0,'MAX_LEVEL','Equipment shelf is full (240). Make room for the entire reward before spending.');
       for(const [id,count] of Object.entries({...quest?.reward.stacks,...(recipe?.outputStackId?{[recipe.outputStackId]:1}:{})})){
         requireRule((s.account.inventory.stacks[id]??0)+count<=stackCapV4(id),'MAX_LEVEL',`The ${id} stack is full. Spend one before claiming or crafting.`);

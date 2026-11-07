@@ -1,0 +1,34 @@
+{
+  "schema": "packages/game-rules/src/cardrpg/depth/events-v4.ts",
+  "method": "createDepthAccount(17), firstInvitation(seed4), one earned standard draw(seed19). Default starter currency only.",
+  "events": [
+    {
+      "version": 1,
+      "sequence": 0,
+      "round": 0,
+      "kind": "earned-reveal",
+      "bannerId": "standard",
+      "draw": 1,
+      "itemId": "sorrel",
+      "rarity": "rare",
+      "duplicate": 0,
+      "pityBefore": 0,
+      "pityAfter": 1,
+      "text": "Earned invitation 1: sorrel."
+    },
+    {
+      "version": 1,
+      "sequence": 1,
+      "round": 0,
+      "kind": "earned-reveal",
+      "bannerId": "standard",
+      "draw": 2,
+      "itemId": "mochi",
+      "rarity": "common",
+      "duplicate": 2,
+      "pityBefore": 1,
+      "pityAfter": 2,
+      "text": "Earned invitation 2: mochi → 2 shards."
+    }
+  ]
+}

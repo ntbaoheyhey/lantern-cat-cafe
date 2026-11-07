@@ -177,3 +177,9 @@
 .dp-app :is(.dp-v4-loadouts,.dp-v4-utility) :is(h2,h3,p,summary,label){color:#302835}
 .dp-app[data-look-v2="true"] .dp-cafe :is(.dp-v4-loadouts,.dp-v4-utility){background:#21332e;color:#f5ebdc}
 .dp-app[data-look-v2="true"] .dp-cafe :is(.dp-v4-loadouts,.dp-v4-utility) :is(h2,h3,p,summary,label){color:#f5ebdc}
+
+/* Gameplay v4 earned choice and local edition records. */
+.dp-v4-selector,.dp-v4-editions{color:#f7efdc;background:#172c34;border:1px solid #75858a;padding:20px;line-height:1.5}
+.dp-v4-selector label{display:block;margin:12px 0}.dp-v4-selector select{display:block;max-width:100%;width:100%;margin-top:5px;padding:8px;color:#f7efdc;background:#172c34}
+.dp-v4-selector button,.dp-v4-editions button{color:#f7efdc;background:#344550;border:1px solid #97a3a0;padding:9px 12px;margin:6px 8px 6px 0}
+.dp-v4-editions .dp-design-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:16px}.dp-v4-editions article,.dp-edition-record{padding:14px;border:1px solid #75858a;border-radius:10px;overflow-wrap:anywhere}

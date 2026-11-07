@@ -8,6 +8,7 @@ import { CompanionCard } from './CompanionCard';
 import { CompanionPreview } from './CompanionPreview';
 import type { DepthModel } from './model';
 import './invitations.css';
+import { SelectorV4 } from './SelectorV4';
 
 type RevealPhase = 'sealed' | 'hint' | 'reveal' | 'summary';
 const resultName = (result: GachaResult) => result.cardId
@@ -32,6 +33,7 @@ export function Invitations({ m }: { m: DepthModel }) {
   const stamps = m.state.account.currencies.stamps;
   const cost = banner.cost.stamps!;
   const available = CARD_RPG_CONFIG.maxDrawsPerDay - m.state.account.daily.draws;
+  const shelfRoom = m.state.gameplayV4 && banner.kind==='equipment' ? Math.max(0,R.GEAR_CAP_V4-m.state.gear.length) : Infinity;
   const featuredId = banner.kind === 'cat' ? banner.featuredCardId ?? 'clover' : undefined;
   const history = [...m.state.account.history].reverse();
   const rareCard = revealing && active?.cardId && (active.rarity === 'epic' || active.rarity === 'legendary')
@@ -123,13 +125,14 @@ export function Invitations({ m }: { m: DepthModel }) {
         <div className="cr-actions">
           {bannerId === 'standard' && !m.state.freeInvite && <button className="cr-primary"
             disabled={revealing || inRun || available < 1} onClick={() => invite(1, true)}>Open free welcome invitation</button>}
-          <button className="cr-primary" disabled={revealing || inRun || stamps < cost || available < 1}
+          <button className="cr-primary" disabled={revealing || inRun || stamps < cost || available < 1 || shelfRoom < 1}
             onClick={() => invite(1)}>Invite once · {cost} stamps</button>
-          <button disabled={revealing || inRun || stamps < cost * 10 || available < 10}
+          <button disabled={revealing || inRun || stamps < cost * 10 || available < 10 || shelfRoom < 10}
             onClick={() => invite(10)}>Invite ten · {cost * 10} stamps</button>
         </div>
-        <small>{available} invitations left today · Account-bound</small>
+        <small>{available} invitations left today · Account-bound{m.state.gameplayV4?` · ${R.selectorMarksV4(m.state)} selector marks · shelf ${m.state.gear.length}/240`:''}</small><p>Uncollected rewards are preferred within the rolled rarity and featured partition. Each draw commits before the skippable reveal.</p>
         <p>{banner.description} Earn stamps from cafe service, routes and quests.</p>
+        {shelfRoom<10&&<p>{shelfRoom} equipment spaces free. Make room for the whole basket before inviting.</p>}
         {inRun && <p>Finish your current route to open invitations.</p>}
         <div className="dp-pity"><strong>Legendary pity progress</strong>
           <progress aria-label="Legendary pity" value={pity.sinceLegendary} max={banner.hardPity} />
@@ -143,7 +146,7 @@ export function Invitations({ m }: { m: DepthModel }) {
             <th scope="row">{rarity}</th><td>{banner.oddsBp[rarity as keyof typeof odds] / 100}%</td><td>{(value / 100).toFixed(2)}%</td>
           </tr>)}</tbody></table>
         <details className="dp-exact-odds"><summary>Exact next-pull probabilities</summary>
-          {getDrawPool(m.state.account, bannerId).map(item => <p key={item.id}>
+          {(m.state.gameplayV4?R.getDrawPoolV4(m.state,bannerId):getDrawPool(m.state.account,bannerId)).map(item => <p key={item.id}>
             {CARD_BY_ID[item.id]?.name ?? R.GEAR_BY_ID[item.id]?.name ?? item.id} · {(item.probability * 100).toFixed(4)}%</p>)}
         </details>
       </section>
@@ -157,7 +160,7 @@ export function Invitations({ m }: { m: DepthModel }) {
               <p>{phase === 'sealed' ? 'A little knock at the door…' : `${active.rarity} invitation`}</p>
             </div> : <div className="dp-flip-result">
               {active.cardId ? <CompanionCard id={active.cardId} m={m} />
-                : <div className="dp-invitation-item"><ItemIcon slot={ITEM_BY_ID[active.itemId!]!.slot} /><h3>{resultName(active)}</h3><p>{active.rarity}</p></div>}
+                : <div className="dp-invitation-item"><ItemIcon slot={(R.GEAR_BY_ID[active.itemId!]??ITEM_BY_ID[active.itemId!])!.slot} /><h3>{resultName(active)}</h3><p>{active.rarity}</p></div>}
               <p role="status">{active.cardId && active.duplicate ? `Duplicate → ${active.shards} ${resultName(active)} shards`
                 : active.cardId ? 'A new companion joins your collection.' : 'Equipment added to your inventory.'}</p>
               <small>Account-bound</small>
@@ -181,10 +184,11 @@ export function Invitations({ m }: { m: DepthModel }) {
       <h2>Your invitations</h2><p>Every result is account-bound. Duplicate companions grant matching shards.</p>
       <div className="dp-batch-grid">{results.map((result, resultIndex) => <article key={`${result.index}-${resultIndex}`} style={rarityStyle(result.rarity)}>
         {result.cardId ? <CompanionCard id={result.cardId} m={m} />
-          : <div className="dp-invitation-item"><ItemIcon slot={ITEM_BY_ID[result.itemId!]!.slot} /><h3>{resultName(result)}</h3><small>{result.rarity} · Account-bound</small></div>}
+          : <div className="dp-invitation-item"><ItemIcon slot={(R.GEAR_BY_ID[result.itemId!]??ITEM_BY_ID[result.itemId!])!.slot} /><h3>{resultName(result)}</h3><small>{result.rarity} · Account-bound</small></div>}
         <p>{result.cardId && result.duplicate ? `Duplicate → ${result.shards} shards` : result.duplicate ? 'Another equipment piece' : 'New to your collection'}</p>
       </article>)}</div><div className="cr-actions"><button onClick={() => m.go('team')}>Build your team</button><button onClick={() => m.go('inventory')}>View inventory</button></div>
     </section>}
+    {m.state.gameplayV4&&<SelectorV4 m={m}/>}
     <section id="invitation-history" className="cr-panel dp-pull-history"><h2>Recent invitations</h2>
       <p>{history.length} recorded results · Latest first · Each banner keeps its own pity</p>
       {history.length === 0 ? <p>Your opened invitations will appear here.</p> : <div className="dp-history-scroll"><table>

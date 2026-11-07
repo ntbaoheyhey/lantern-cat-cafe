@@ -14,3 +14,7 @@ export * from './pacing-v4';
 export * from './equipment-v4';
 export * from './loadouts-v4';
 export * from './items-v4';
+export * from './gacha-v4';
+export * from './scarcity';
+export * from './editions-v4';
+export { reserveDesignPreviewV4Guard as reserveDesignPreview } from './editions-v4';
