@@ -1,41 +1,331 @@
-/* Cat Café Quest - Relic Market styles */
+/* Cat Café Quest - Relic Market styles (AGR3 Redesign) */
 
 .market {
   display: flex;
   flex-direction: column;
   gap: var(--sp-4, 16px);
-  max-width: 65ch;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   color: var(--text, #fff3e0);
   box-sizing: border-box;
 }
 
-.market section {
-  min-width: 0;
-  background: var(--surface, #2a1f36);
-  border: 2px solid var(--border, #5b4572);
-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
-  border-radius: 0;
-  padding: var(--sp-3, 12px) var(--sp-4, 16px);
+/* 2-column desktop layout */
+.market-cols {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--sp-4, 16px);
+  align-items: start;
+  width: 100%;
   box-sizing: border-box;
 }
 
-.market h3 {
-  margin: 0 0 var(--sp-1, 4px) 0;
+@media (max-width: 860px) {
+  .market-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.market-col-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4, 16px);
+  min-width: 0;
+}
+
+.market-col-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, 14px);
+  min-width: 0;
+}
+
+/* Cards */
+.market-card {
+  background: var(--surface, #2a1f36);
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: var(--sp-3, 14px) var(--sp-4, 16px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+}
+
+.market-card h2,
+.market-card h3 {
+  margin: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
-  font-size: var(--fs-md, 1rem);
+  font-size: var(--fs-md, 1.1rem);
   color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
 }
 
-.market-hint {
-  font-family: var(--font-body, 'DM Sans', sans-serif);
-  font-size: var(--fs-xs, .75rem);
-  color: var(--muted, #c3aed0);
-  margin: 0 0 var(--sp-2, 8px) 0;
+.market-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-2, 8px);
+  margin-bottom: var(--sp-2, 8px);
 }
 
-/* My Relics list */
+/* Filter chips */
+.market-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.market-chip {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 0;
+  cursor: pointer;
+  border: 1px solid var(--border, #5b4572);
+  background: var(--surface-2, #3a2c4a);
+  color: var(--muted, #c3aed0);
+  transition: all 0.1s ease;
+}
+
+.market-chip:hover {
+  color: var(--text, #fff3e0);
+  border-color: var(--accent, #ffb86b);
+}
+
+.market-chip.active {
+  background: var(--accent, #ffb86b);
+  color: var(--on-accent, #1a1200);
+  border-color: var(--gold, #ffb86b);
+  font-weight: 800;
+  box-shadow: var(--pixel-shadow, 2px 2px 0 #000);
+}
+
+/* Sortable Table */
+.market-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border, #5b4572);
+  background: var(--surface-2, #3a2c4a);
+}
+
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.market-table th {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted, #c3aed0);
+  padding: 8px 10px;
+  background: var(--bg, #1a1220);
+  border-bottom: 2px solid var(--border, #5b4572);
+  white-space: nowrap;
+}
+
+.market-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.market-table th.sortable:hover {
+  color: var(--accent, #ffb86b);
+}
+
+.market-table th.sorted {
+  color: var(--gold, #ffb86b);
+}
+
+.market-table th.text-right,
+.market-table td.text-right {
+  text-align: right;
+}
+
+.market-row {
+  cursor: pointer;
+  border-bottom: 1px solid var(--border, #453358);
+  transition: background 0.1s ease;
+}
+
+.market-row:hover {
+  background: rgba(255, 184, 107, 0.08);
+}
+
+.market-row.hl,
+.market-row.selected {
+  background: rgba(255, 184, 107, 0.16) !important;
+  outline: 1px solid var(--accent, #ffb86b);
+}
+
+.market-table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.market-art-cell {
+  width: 44px;
+  padding-right: 0 !important;
+}
+
+.market-art-thumb {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--bg, #1a1220);
+  border: 1px solid var(--border, #5b4572);
+}
+
+.market-art-thumb img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Rarity Pill */
+.rarity-pill {
+  display: inline-block;
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  letter-spacing: 0.03em;
+}
+
+.rarity-pill.common {
+  color: var(--rarity-common, #b9b6c9);
+  background: rgba(185, 182, 201, 0.1);
+}
+
+.rarity-pill.rare {
+  color: var(--rarity-rare, #4aa8ff);
+  background: rgba(74, 168, 255, 0.1);
+}
+
+.rarity-pill.epic {
+  color: var(--rarity-epic, #bb74ff);
+  background: rgba(187, 116, 255, 0.1);
+}
+
+.rarity-pill.legendary {
+  color: var(--rarity-legendary, #ff9a3c);
+  background: rgba(255, 154, 60, 0.1);
+}
+
+/* Right Detail Panel */
+.market-detail-card {
+  background: var(--surface, #2a1f36);
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: var(--sp-3, 14px) var(--sp-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 10px);
+}
+
+.market-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.market-detail-art {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: var(--bg, #1a1220);
+  border: 2px solid var(--border, #72578d);
+  box-shadow: var(--pixel-shadow, 2px 2px 0 #000);
+}
+
+.market-detail-art img {
+  image-rendering: pixelated;
+}
+
+.market-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.market-detail-meta h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.market-stat-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 0;
+  border-top: 1px dashed var(--border, #5b4572);
+  border-bottom: 1px dashed var(--border, #5b4572);
+}
+
+.market-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.market-stat-row span:first-child {
+  color: var(--muted, #c3aed0);
+}
+
+.market-stat-row span:last-child {
+  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  font-weight: 700;
+}
+
+.market-routescan-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--accent, #ffb86b);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.market-routescan-link:hover {
+  color: var(--gold, #ffd34e);
+}
+
+/* Your listings */
+.market-your-listings {
+  background: var(--surface, #2a1f36);
+  border: 2px solid var(--border, #5b4572);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  padding: var(--sp-3, 14px) var(--sp-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+}
+
+.market-user-listing-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: var(--surface-2, #3a2c4a);
+  border: 1px solid var(--border, #5b4572);
+  font-size: 12px;
+}
+
+/* My Relics and Sell sections */
 .market-relics {
   display: flex;
   flex-wrap: wrap;
@@ -52,193 +342,12 @@
   padding: var(--sp-1, 4px) var(--sp-2, 8px);
   background: var(--surface-2, #3a2c4a);
   border: 1px solid var(--border, #5b4572);
-  border-radius: 0;
-  box-shadow: none;
   font-size: var(--fs-xs, .75rem);
 }
 
 .market-relics img {
   image-rendering: pixelated;
   flex: none;
-}
-
-.market-relics li > span {
-  min-width: 0;
-  color: var(--text, #fff3e0);
-  overflow-wrap: anywhere;
-}
-
-.market-relics small {
-  color: var(--muted, #c3aed0);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
-}
-
-/* Market listings: list rows */
-.market-listings {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2, 8px);
-  margin: var(--sp-2, 8px) 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.market-listings li.market-listing {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  align-items: center;
-  gap: var(--sp-3, 12px);
-  padding: var(--sp-2, 8px) var(--sp-3, 12px);
-  background: var(--surface-2, #3a2c4a);
-  border: 1px solid var(--border, #5b4572);
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-  .market-listings li.market-listing {
-    grid-template-columns: auto 1fr;
-    gap: var(--sp-2, 8px);
-  }
-  .market-price {
-    grid-column: 1 / -1;
-    justify-content: flex-start !important;
-    margin-left: 0 !important;
-  }
-  .market-seller {
-    grid-column: 1 / 2;
-  }
-  .market-listing .forge-btn {
-    grid-column: 2 / 3;
-    justify-self: end;
-  }
-}
-
-.market-relic {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2, 8px);
-  min-width: 0;
-  --market-glow: var(--rarity-common, #b9b6c9);
-}
-
-.market-relic.rarity-rare {
-  --market-glow: var(--rarity-rare, #4aa8ff);
-}
-
-.market-relic.rarity-epic {
-  --market-glow: var(--rarity-epic, #bb74ff);
-}
-
-.market-relic.rarity-legendary {
-  --market-glow: var(--rarity-legendary, #ff9a3c);
-}
-
-.market-art {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 44px;
-  height: 44px;
-  background: var(--bg, #1a1220);
-  border: var(--pixel-border, 2px solid #000);
-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
-  border-radius: 0;
-}
-
-.market-art img {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-}
-
-.market-relic-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-  color: var(--text, #fff3e0);
-  overflow-wrap: anywhere;
-}
-
-.market-relic-info strong {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
-  font-size: var(--fs-sm, .875rem);
-}
-
-.market-relic-info small {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
-  font-size: var(--fs-xs, .75rem);
-  color: var(--muted, #c3aed0);
-}
-
-.market-seller {
-  font-family: var(--font-body, 'DM Sans', sans-serif);
-  font-size: var(--fs-xs, .75rem);
-  color: var(--muted, #c3aed0);
-  white-space: nowrap;
-}
-
-/* Price in --font-num right aligned */
-.market-price {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-1, 4px);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
-  font-size: var(--fs-sm, .875rem);
-  font-weight: 700;
-  color: var(--gold, #ffb86b);
-  margin-left: auto;
-  text-align: right;
-  justify-content: flex-end;
-  white-space: nowrap;
-}
-
-.market-price svg {
-  flex: none;
-}
-
-/* Actions: Secondary View/Cancel, Primary Buy */
-.market-listing .forge-btn {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
-  font-size: var(--fs-xs, .75rem);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  min-height: 36px;
-  padding: var(--sp-1, 4px) var(--sp-3, 12px);
-  cursor: pointer;
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 0;
-}
-
-@media (max-width: 600px) {
-  .market-listing .forge-btn {
-    min-height: var(--tap, 44px);
-    padding: var(--sp-2, 8px) var(--sp-3, 12px);
-  }
-}
-
-.market-listing .forge-btn:not(.pixel-btn) {
-  color: var(--text, #fff3e0);
-  background: var(--surface-2, #3a2c4a);
-  border: 1px solid var(--border, #5b4572);
-  box-shadow: none;
-}
-
-.market-listing .forge-btn.pixel-btn {
-  color: var(--on-accent, #1a1200);
-  background: var(--accent, #ffb86b);
-  border: var(--pixel-border, 2px solid #000);
-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
-  font-weight: 800;
-}
-
-.market-listing .forge-btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
 }
 
 /* Sell Form */
@@ -275,44 +384,57 @@
   font-size: var(--fs-xs, .75rem);
 }
 
-@media (max-width: 600px) {
-  .market-form input,
-  .market-form select {
-    min-height: var(--tap, 44px);
-  }
-}
-
 .market-form input::placeholder {
   color: var(--muted, #c3aed0);
   opacity: 0.7;
 }
 
-.market-form .forge-btn {
-  min-height: 36px;
+/* Shared Modal Styles */
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.modal {
+  background: var(--surface, #2a1f36);
+  border: 2px solid var(--border, #72578d);
+  box-shadow: var(--pixel-shadow, 4px 4px 0 #000);
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal h2 {
+  margin: 0;
   font-family: var(--font-display, 'Pixelify Sans', monospace);
-  font-size: var(--fs-xs, .75rem);
-  font-weight: 700;
-  padding: 0 var(--sp-3, 12px);
-  background: var(--surface-2, #3a2c4a);
-  border: 1px solid var(--border, #5b4572);
-  border-radius: 0;
+  font-size: 20px;
+  color: var(--gold, #ffb86b);
+}
+
+.modal p {
+  margin: 0;
+  line-height: 1.5;
   color: var(--text, #fff3e0);
-  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  .market-form .forge-btn {
-    min-height: var(--tap, 44px);
-    padding: var(--sp-2, 8px) var(--sp-3, 12px);
-  }
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-.market-form .forge-btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* Empty states: 32px muted icon + one sentence */
+/* Empty states */
 [data-testid='relics-empty'],
 [data-testid='listings-empty'] {
   display: flex;
@@ -331,27 +453,64 @@
   margin: var(--sp-2, 8px) 0 0 0;
 }
 
-[data-testid='relics-empty']::before,
-[data-testid='listings-empty']::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: var(--muted, #c3aed0);
-  opacity: 0.6;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
+/* Button variants */
+.btn {
+  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 0;
+  cursor: pointer;
+  border: var(--pixel-border, 2px solid #000);
+  background: var(--accent, #ffb86b);
+  color: var(--on-accent, #1a1200);
+  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn.sec {
+  background: var(--surface-2, #3a2c4a);
+  color: var(--text, #fff3e0);
+  border: 1px solid var(--border, #5b4572);
+  box-shadow: none;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--muted, #c3aed0);
+  border: 1px solid var(--border, #5b4572);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  color: var(--text, #fff3e0);
+}
+
+.btn.lg {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.btn.sm {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .market-listings li.market-listing {
+  .market-row,
+  .market-chip,
+  .btn,
+  .modal,
+  .scrim {
     transition: none !important;
+    animation: none !important;
     transform: none !important;
   }
 }

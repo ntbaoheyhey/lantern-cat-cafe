@@ -1,11 +1,20 @@
 import { FUJI_CHAIN_ID, getAddresses, relicMarketAbi, relicNftAbi } from '@taskbar-hero/chain';
 import { useQueryClient } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { formatEther, parseEther } from 'viem';
 import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
 import { PixelIcon } from '../art/pixelIcons';
 import { relicName } from '../forge/forgeText';
-import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
+import {
+  RELIC_IDS,
+  rarityOf,
+  relicCategory,
+  relicImageUrl,
+  relicPower,
+  routescanTokenUrl,
+  shortAddress,
+  txErrorText,
+} from './marketText';
 import { ErrorNote } from '../game/LoadNotice';
 import '../forge/forge.css';
 import '../inventory/inventory.css';
@@ -15,6 +24,7 @@ const PAGE = 50n;
 const TESTNET = 'Fuji testnet, test AVAX';
 
 type Address = `0x${string}`;
+
 interface Listing {
   id: bigint;
   seller: Address;
@@ -22,6 +32,10 @@ interface Listing {
   amount: bigint;
   price: bigint;
 }
+
+type FilterChip = 'All' | 'Weapon' | 'Armor' | 'Cheapest' | 'Common' | 'Rare' | 'Epic' | 'Legendary';
+type SortField = 'name' | 'rarity' | 'power' | 'seller' | 'price' | 'id';
+type SortDir = 'asc' | 'desc';
 
 /** Parses a positive AVAX amount; undefined for anything invalid or zero. */
 function parsePrice(text: string): bigint | undefined {
@@ -32,6 +46,13 @@ function parsePrice(text: string): bigint | undefined {
     return undefined;
   }
 }
+
+const RARITY_ORDER: Record<string, number> = {
+  common: 1,
+  rare: 2,
+  epic: 3,
+  legendary: 4,
+};
 
 /** My Relics (on-chain balances) and the RelicMarket: browse, buy, cancel and list. Fully on chain. */
 export function MarketTab() {
@@ -89,6 +110,20 @@ export function MarketTab() {
   const [listAmount, setListAmount] = useState('1');
   const [listPrice, setListPrice] = useState('');
 
+  // Market UI state
+  const [activeFilter, setActiveFilter] = useState<FilterChip>('All');
+  const [sortField, setSortField] = useState<SortField>('price');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const [selectedListingId, setSelectedListingId] = useState<bigint | null>(null);
+
+  // Shared Confirmation Modal State
+  const [confirmBuyListing, setConfirmBuyListing] = useState<Listing | null>(null);
+  const [confirmListPayload, setConfirmListPayload] = useState<{
+    relicId: bigint;
+    amount: bigint;
+    price: bigint;
+  } | null>(null);
+
   if (!nft || !market) {
     return <p className="forge-note">The Relic contracts are not deployed on Fuji yet, so the market is not available.</p>;
   }
@@ -98,8 +133,15 @@ export function MarketTab() {
   if (chainId !== FUJI_CHAIN_ID) {
     return (
       <div className="forge-mint">
-        <p className="forge-note" role="alert">Wrong network. Switch to Avalanche Fuji to use the market.</p>
-        <button type="button" className="forge-btn" disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
+        <p className="forge-note" role="alert">
+          Wrong network. Switch to Avalanche Fuji to use the market.
+        </p>
+        <button
+          type="button"
+          className="forge-btn"
+          disabled={switching}
+          onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}
+        >
           Switch to Fuji
         </button>
       </div>
@@ -118,184 +160,620 @@ export function MarketTab() {
       if (item) byId.set(id, { id, ...item });
     });
   }
-  const listings = [...byId.values()].sort((a, b) => (a.id < b.id ? -1 : 1));
+  const allListings = [...byId.values()];
   const isMine = (l: Listing) => l.seller.toLowerCase() === address.toLowerCase();
-  // Relics in escrow: the wallet balance no longer counts them, so show them as "listed".
-  const listedBy = (relicId: bigint) =>
-    listings.filter((l) => isMine(l) && l.relicId === relicId).reduce((sum, l) => sum + l.amount, 0n);
-  const holdings = owned.map((r) => ({ ...r, listed: listedBy(r.relicId) })).filter((r) => r.balance > 0n || r.listed > 0n);
-  const sellable = holdings.filter((r) => r.balance > 0n);
 
-  const selected = owned.find((r) => r.relicId.toString() === listId);
-  const amount = /^\d+$/.test(listAmount.trim()) ? BigInt(listAmount.trim()) : 0n;
-  const price = parsePrice(listPrice);
-  const canList = !busy && !!selected && amount > 0n && amount <= selected.balance && price !== undefined;
+  // Relics in escrow: the wallet balance no longer counts them, so show them as "listed"
+  const listedCount = (relicId: bigint) =>
+    allListings
+      .filter((l) => isMine(l) && l.relicId === relicId)
+      .reduce((sum, l) => sum + l.amount, 0n);
 
-  const send = async (label: string, write: () => Promise<Address>) => {
-    if (!client) throw new Error('No Fuji connection');
-    setBusy(label);
-    const hash = await write();
-    const receipt = await client.waitForTransactionReceipt({ hash });
-    if (receipt.status !== 'success') throw new Error('Transaction reverted');
+  const holdings = owned
+    .map((r) => ({ ...r, listed: listedCount(r.relicId) }))
+    .filter((r) => r.balance > 0n || r.listed > 0n);
+
+  const sellable = owned.filter((r) => r.balance > 0n);
+  const parsedPrice = parsePrice(listPrice);
+  const parsedAmount = (() => {
+    try {
+      const v = BigInt(listAmount.trim());
+      return v > 0n ? v : undefined;
+    } catch {
+      return undefined;
+    }
+  })();
+  const selectedRelic = owned.find((r) => r.relicId.toString() === listId);
+  const canList =
+    !busy &&
+    Boolean(
+      selectedRelic &&
+        parsedAmount &&
+        parsedPrice &&
+        parsedAmount <= selectedRelic.balance,
+    );
+
+  // Filtered and sorted listings
+  const filteredListings = useMemo(() => {
+    return allListings.filter((l) => {
+      const rarity = rarityOf(l.relicId);
+      const cat = relicCategory(l.relicId);
+      if (activeFilter === 'All' || activeFilter === 'Cheapest') return true;
+      if (activeFilter === 'Weapon') return cat === 'Weapon';
+      if (activeFilter === 'Armor') return cat === 'Armor';
+      if (activeFilter === 'Common') return rarity === 'common';
+      if (activeFilter === 'Rare') return rarity === 'rare';
+      if (activeFilter === 'Epic') return rarity === 'epic';
+      if (activeFilter === 'Legendary') return rarity === 'legendary';
+      return false;
+    });
+  }, [allListings, activeFilter]);
+
+  const sortedListings = useMemo(() => {
+    const list = [...filteredListings];
+    list.sort((a, b) => {
+      if (activeFilter === 'Cheapest') {
+        return a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
+      }
+      let cmp = 0;
+      if (sortField === 'name') {
+        const nameA = rarityOf(a.relicId) ? relicName(rarityOf(a.relicId)!) : `Relic #${a.relicId}`;
+        const nameB = rarityOf(b.relicId) ? relicName(rarityOf(b.relicId)!) : `Relic #${b.relicId}`;
+        cmp = nameA.localeCompare(nameB);
+      } else if (sortField === 'rarity') {
+        const orderA = RARITY_ORDER[rarityOf(a.relicId) ?? ''] ?? 0;
+        const orderB = RARITY_ORDER[rarityOf(b.relicId) ?? ''] ?? 0;
+        cmp = orderA - orderB;
+      } else if (sortField === 'power') {
+        cmp = relicPower(a.relicId) - relicPower(b.relicId);
+      } else if (sortField === 'seller') {
+        const sellerA = isMine(a) ? 'You' : a.seller;
+        const sellerB = isMine(b) ? 'You' : b.seller;
+        cmp = sellerA.localeCompare(sellerB);
+      } else if (sortField === 'price') {
+        cmp = a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
+      } else {
+        cmp = a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+      }
+      return sortDir === 'asc' ? cmp : -cmp;
+    });
+    return list;
+  }, [filteredListings, sortField, sortDir, activeFilter, address]);
+
+  const toggleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'));
+    } else {
+      setSortField(field);
+      setSortDir('asc');
+    }
   };
 
-  const run = async (steps: () => Promise<string>) => {
+  // Currently selected listing for right detail card
+  const activeDetailListing =
+    sortedListings.find((l) => l.id === selectedListingId) ??
+    sortedListings[0] ??
+    null;
+
+  // User's own listings
+  const myListings = allListings.filter(isMine);
+
+  const refreshAfterTx = async () => {
+    await queryClient.invalidateQueries();
+    await retryReads();
+  };
+
+  const executeBuy = async (l: Listing) => {
+    setBusy('Confirm in your wallet…');
     setMessage(null);
     try {
-      setMessage(await steps());
+      const hash = await writeContractAsync({
+        address: market,
+        abi: relicMarketAbi,
+        functionName: 'buy',
+        args: [l.id],
+        value: l.price,
+      });
+      setBusy('Waiting for Avalanche…');
+      if (client) await client.waitForTransactionReceipt({ hash });
+      setMessage('Bought! The Relic is in your wallet.');
+      await refreshAfterTx();
+    } catch (e) {
+      setMessage(txErrorText(e));
+      await refreshAfterTx();
+    } finally {
+      setBusy(null);
+    }
+  };
+
+  const cancel = async (l: Listing) => {
+    setBusy('Confirm in your wallet…');
+    setMessage(null);
+    try {
+      const hash = await writeContractAsync({
+        address: market,
+        abi: relicMarketAbi,
+        functionName: 'cancel',
+        args: [l.id],
+      });
+      setBusy('Waiting for Avalanche…');
+      if (client) await client.waitForTransactionReceipt({ hash });
+      setMessage('Listing cancelled.');
+      await refreshAfterTx();
+    } catch (e) {
+      setMessage(txErrorText(e));
+      await refreshAfterTx();
+    } finally {
+      setBusy(null);
+    }
+  };
+
+  const executeList = async (targetRelicId: bigint, amount: bigint, price: bigint) => {
+    setBusy('Confirm in your wallet…');
+    setMessage(null);
+    try {
+      if (!approval.data) {
+        setBusy('Step 1 of 2: approve the market contract in your wallet…');
+        const approveHash = await writeContractAsync({
+          address: nft,
+          abi: relicNftAbi,
+          functionName: 'setApprovalForAll',
+          args: [market, true],
+        });
+        if (client) await client.waitForTransactionReceipt({ hash: approveHash });
+      }
+
+      setBusy('Step 2 of 2: create the listing in your wallet…');
+      const listHash = await writeContractAsync({
+        address: market,
+        abi: relicMarketAbi,
+        functionName: 'list',
+        args: [targetRelicId, amount, price],
+      });
+      if (client) await client.waitForTransactionReceipt({ hash: listHash });
+      setMessage('Listed!');
+      setListId('');
+      setListPrice('');
+      await refreshAfterTx();
     } catch (e) {
       setMessage(txErrorText(e));
     } finally {
       setBusy(null);
-      await queryClient.invalidateQueries();
     }
   };
 
-  const buy = (l: Listing) =>
-    run(async () => {
-      await send('Buying…', () =>
-        writeContractAsync({ address: market, abi: relicMarketAbi, functionName: 'buy', args: [l.id], value: l.price, chainId: FUJI_CHAIN_ID }),
-      );
-      return 'Bought! The Relic is in your wallet.';
-    });
-
-  const cancel = (l: Listing) =>
-    run(async () => {
-      await send('Cancelling…', () =>
-        writeContractAsync({ address: market, abi: relicMarketAbi, functionName: 'cancel', args: [l.id], chainId: FUJI_CHAIN_ID }),
-      );
-      return 'Listing cancelled. The Relic is back in your wallet.';
-    });
-
-  const list = () => {
-    if (!canList || !selected || price === undefined) return;
-    void run(async () => {
-      if (approval.data !== true) {
-        await send('Approving the market…', () =>
-          writeContractAsync({ address: nft, abi: relicNftAbi, functionName: 'setApprovalForAll', args: [market, true], chainId: FUJI_CHAIN_ID }),
-        );
-      }
-      await send('Listing…', () =>
-        writeContractAsync({
-          address: market,
-          abi: relicMarketAbi,
-          functionName: 'list',
-          args: [selected.relicId, amount, price],
-          chainId: FUJI_CHAIN_ID,
-        }),
-      );
-      setListPrice('');
-      return 'Listed!';
+  const handleListClick = () => {
+    if (!canList || !selectedRelic || !parsedAmount || !parsedPrice) return;
+    setConfirmListPayload({
+      relicId: selectedRelic.relicId,
+      amount: parsedAmount,
+      price: parsedPrice,
     });
   };
 
   return (
     <div className="market">
       {readFailed && (
-        <ErrorNote text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again." onRetry={retryReads} />
+        <ErrorNote
+          text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again."
+          onRetry={retryReads}
+        />
       )}
-      <section aria-labelledby="my-relics">
-        <h3 id="my-relics">My Relics</h3>
-        {balances.isLoading ? (
-          <p>Loading…</p>
-        ) : balances.isError ? null : holdings.length === 0 ? (
-          <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p>
-        ) : (
-          <ul className="market-relics" data-testid="my-relics">
-            {holdings.map((r) => (
-              <li key={r.rarity} className={`pixel-card rarity-${r.rarity}`}>
-                <img src={relicImageUrl(r.relicId)} alt={relicName(r.rarity)} width={40} height={40} />
-                <span>
-                  {relicName(r.rarity)}
-                  {r.balance > 0n && <> × {r.balance.toString()}</>}
-                  {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
 
-      <section aria-labelledby="market-listings">
-        <h3 id="market-listings">Market</h3>
-        <p className="market-hint">Prices are in {TESTNET}.</p>
-        {readFailed ? null : listings.length === 0 ? (
-          <p data-testid="listings-empty">No Relics for sale right now.</p>
-        ) : (
-          <ul className="market-listings" data-testid="listings">
-            {listings.map((l) => {
-              const rarity = rarityOf(l.relicId);
-              return (
-                <li key={l.id.toString()} className="pixel-card market-listing" data-testid={`listing-${l.id}`}>
-                  <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
-                    <span className="market-art">
-                      {rarity ? (
-                        <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={56} height={56} />
-                      ) : (
-                        <PixelIcon name="bag" size={5} />
-                      )}
-                    </span>
-                    <span className="market-relic-info">
-                      <strong>{rarity ? relicName(rarity) : `Relic #${l.relicId}`}</strong>
-                      <small> × {l.amount.toString()} listed</small>
-                    </span>
-                  </span>
-                  <span className="market-price">
-                    <PixelIcon name="shop" size={2} />
-                    <span>{formatEther(l.price)} AVAX</span>
-                  </span>
-                  <span className="market-seller">Seller · {isMine(l) ? 'You' : shortAddress(l.seller)}</span>
-                  {isMine(l) ? (
-                    <button type="button" className="forge-btn" disabled={!!busy} onClick={() => void cancel(l)}>
-                      Cancel
+      {/* 2-Column Desktop Layout */}
+      <div className="market-cols">
+        {/* Left Column: Market Table & Controls */}
+        <div className="market-col-main">
+          <section className="market-card" aria-labelledby="market-listings">
+            <div className="market-header-row">
+              <h2 id="market-listings">Relic market</h2>
+              <div className="market-filter-chips" role="group" aria-label="Filter listings">
+                {(['All', 'Weapon', 'Armor', 'Cheapest', 'Common', 'Rare', 'Epic', 'Legendary'] as FilterChip[]).map(
+                  (f) => (
+                    <button
+                      key={f}
+                      type="button"
+                      className={`market-chip ${activeFilter === f ? 'active' : ''}`}
+                      onClick={() => setActiveFilter(f)}
+                    >
+                      {f}
                     </button>
-                  ) : (
-                    <button type="button" className="forge-btn pixel-btn" disabled={!!busy} onClick={() => void buy(l)}>
-                      Buy
-                    </button>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
+                  ),
+                )}
+              </div>
+            </div>
 
-      <section aria-labelledby="market-sell">
-        <h3 id="market-sell">Sell a Relic</h3>
-        <div className="market-form">
-          <label>
-            Relic
-            <select value={listId} onChange={(e) => setListId(e.target.value)}>
-              <option value="">Choose…</option>
-              {sellable.map((r) => (
-                <option key={r.rarity} value={r.relicId.toString()}>
-                  {relicName(r.rarity)} (you have {r.balance.toString()})
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Amount
-            <input inputMode="numeric" value={listAmount} onChange={(e) => setListAmount(e.target.value)} />
-          </label>
-          <label>
-            Price (AVAX)
-            <input inputMode="decimal" placeholder="0.1" value={listPrice} onChange={(e) => setListPrice(e.target.value)} />
-          </label>
-          <button type="button" className="forge-btn" disabled={!canList} onClick={list}>
-            List
-          </button>
+            <p className="market-hint">Prices are in {TESTNET}.</p>
+
+            {readFailed ? null : sortedListings.length === 0 ? (
+              <p data-testid="listings-empty">No Relics for sale right now.</p>
+            ) : (
+              <div className="market-table-wrap">
+                <table className="market-table" data-testid="listings" aria-label="Relic market listings">
+                  <thead>
+                    <tr>
+                      <th className="market-art-cell" aria-label="Thumbnail" />
+                      <th
+                        className={`sortable ${sortField === 'name' ? 'sorted' : ''}`}
+                        onClick={() => toggleSort('name')}
+                      >
+                        Relic {sortField === 'name' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </th>
+                      <th
+                        className={`sortable ${sortField === 'rarity' ? 'sorted' : ''}`}
+                        onClick={() => toggleSort('rarity')}
+                      >
+                        Rarity {sortField === 'rarity' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </th>
+                      <th
+                        className={`sortable ${sortField === 'power' ? 'sorted' : ''}`}
+                        onClick={() => toggleSort('power')}
+                      >
+                        Power {sortField === 'power' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </th>
+                      <th
+                        className={`sortable ${sortField === 'seller' ? 'sorted' : ''}`}
+                        onClick={() => toggleSort('seller')}
+                      >
+                        Seller {sortField === 'seller' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </th>
+                      <th
+                        className={`sortable text-right ${sortField === 'price' ? 'sorted' : ''}`}
+                        onClick={() => toggleSort('price')}
+                      >
+                        Price (AVAX) {sortField === 'price' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sortedListings.map((l) => {
+                      const rarity = rarityOf(l.relicId);
+                      const isSelected = activeDetailListing?.id === l.id;
+                      const power = relicPower(l.relicId);
+                      const relicTitle = rarity ? relicName(rarity) : `Relic #${l.relicId}`;
+
+                      return (
+                        <tr
+                          key={l.id.toString()}
+                          className={`market-row ${isSelected ? 'hl selected' : ''}`}
+                          data-testid={`listing-${l.id}`}
+                          onClick={() => setSelectedListingId(l.id)}
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              setSelectedListingId(l.id);
+                            }
+                          }}
+                        >
+                          <td className="market-art-cell">
+                            <span className="market-art-thumb">
+                              {rarity ? (
+                                <img
+                                  src={relicImageUrl(l.relicId)}
+                                  alt={relicName(rarity)}
+                                  width={32}
+                                  height={32}
+                                />
+                              ) : (
+                                <PixelIcon name="bag" size={3} />
+                              )}
+                            </span>
+                          </td>
+                          <td>
+                            <strong>{relicTitle}</strong>
+                            {l.amount > 1n && <span className="muted"> × {l.amount.toString()}</span>}
+                          </td>
+                          <td>
+                            {rarity && (
+                              <span className={`rarity-pill ${rarity}`}>
+                                {rarity}
+                              </span>
+                            )}
+                          </td>
+                          <td className="num">{power}</td>
+                          <td className="num muted">{isMine(l) ? 'You' : shortAddress(l.seller)}</td>
+                          <td className="num text-right">{formatEther(l.price)} AVAX</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </section>
+
+          {/* My Relics Shelf */}
+          <section className="market-card" aria-labelledby="my-relics">
+            <h3 id="my-relics">My Relics</h3>
+            {balances.isLoading ? (
+              <p>Loading…</p>
+            ) : balances.isError ? null : holdings.length === 0 ? (
+              <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p>
+            ) : (
+              <ul className="market-relics" data-testid="my-relics">
+                {holdings.map((r) => (
+                  <li key={r.rarity} className={`pixel-card rarity-${r.rarity}`}>
+                    <img src={relicImageUrl(r.relicId)} alt={relicName(r.rarity)} width={36} height={36} />
+                    <span>
+                      {relicName(r.rarity)}
+                      {r.balance > 0n && <> × {r.balance.toString()}</>}
+                      {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+
+          {/* Sell Form */}
+          <section className="market-card" aria-labelledby="market-sell">
+            <h3 id="market-sell">Sell a Relic</h3>
+            <div className="market-form">
+              <label>
+                Relic
+                <select value={listId} onChange={(e) => setListId(e.target.value)}>
+                  <option value="">Choose…</option>
+                  {sellable.map((r) => (
+                    <option key={r.rarity} value={r.relicId.toString()}>
+                      {relicName(r.rarity)} (you have {r.balance.toString()})
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Amount
+                <input
+                  inputMode="numeric"
+                  value={listAmount}
+                  onChange={(e) => setListAmount(e.target.value)}
+                  aria-label="Amount"
+                />
+              </label>
+              <label>
+                Price (AVAX)
+                <input
+                  inputMode="decimal"
+                  placeholder="0.1"
+                  value={listPrice}
+                  onChange={(e) => setListPrice(e.target.value)}
+                  aria-label="Price (AVAX)"
+                />
+              </label>
+              <button
+                type="button"
+                className="forge-btn btn"
+                disabled={!canList}
+                onClick={handleListClick}
+              >
+                List
+              </button>
+            </div>
+            <p className="market-hint">{TESTNET}. The total price covers all copies in the listing.</p>
+            <p className="market-hint">
+              Approving lets the market contract transfer all Relics in your wallet, including future Relics, until
+              you revoke approval.
+            </p>
+          </section>
         </div>
-        <p className="market-hint">{TESTNET}. The total price covers all copies in the listing.</p>
-        <p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
-      </section>
+
+        {/* Right Column: Selected Relic Details & Your Listings */}
+        <div className="market-col-side">
+          {activeDetailListing ? (
+            <div className="market-detail-card">
+              {(() => {
+                const rarity = rarityOf(activeDetailListing.relicId);
+                const title = rarity
+                  ? relicName(rarity)
+                  : `Relic #${activeDetailListing.relicId}`;
+                const power = relicPower(activeDetailListing.relicId);
+
+                return (
+                  <>
+                    <div className="market-detail-hero">
+                      <div className="market-detail-art">
+                        {rarity ? (
+                          <img
+                            src={relicImageUrl(activeDetailListing.relicId)}
+                            alt={title}
+                            width={48}
+                            height={48}
+                          />
+                        ) : (
+                          <PixelIcon name="bag" size={4} />
+                        )}
+                      </div>
+                      <div className="market-detail-meta">
+                        <h3>{title}</h3>
+                        {rarity && <span className={`rarity-pill ${rarity}`}>{rarity}</span>}
+                      </div>
+                    </div>
+
+                    <div className="market-stat-rows">
+                      <div className="market-stat-row">
+                        <span>Token</span>
+                        <span data-testid="token-id">#{activeDetailListing.relicId.toString()}</span>
+                      </div>
+                      <div className="market-stat-row">
+                        <span>Contract</span>
+                        <span data-testid="contract-addr">{shortAddress(nft)}</span>
+                      </div>
+                      <div className="market-stat-row">
+                        <span>Price</span>
+                        <span data-testid="market-detail-price" style={{ color: 'var(--gold, #ffb86b)' }}>
+                          {formatEther(activeDetailListing.price)} AVAX
+                        </span>
+                      </div>
+                      <div className="market-stat-row">
+                        <span>Power</span>
+                        <span>{power}</span>
+                      </div>
+                      <div className="market-stat-row">
+                        <span>Seller</span>
+                        <span>{isMine(activeDetailListing) ? 'You' : shortAddress(activeDetailListing.seller)}</span>
+                      </div>
+                    </div>
+
+                    {isMine(activeDetailListing) ? (
+                      <button
+                        type="button"
+                        className="btn sec"
+                        data-testid="market-cancel-btn"
+                        disabled={!!busy}
+                        onClick={() => void cancel(activeDetailListing)}
+                      >
+                        Cancel Listing
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        className="btn"
+                        data-testid="market-buy-btn"
+                        disabled={!!busy}
+                        onClick={() => setConfirmBuyListing(activeDetailListing)}
+                      >
+                        Buy Relic
+                      </button>
+                    )}
+
+                    <a
+                      href={routescanTokenUrl(nft, activeDetailListing.relicId)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="market-routescan-link"
+                      data-testid="routescan-link"
+                    >
+                      View on Routescan ↗
+                    </a>
+                  </>
+                );
+              })()}
+            </div>
+          ) : null}
+
+          {/* Your listings */}
+          <div className="market-your-listings">
+            <h3>Your listings</h3>
+            {myListings.length === 0 ? (
+              <div className="muted" data-testid="your-listings-empty" style={{ fontSize: '13px' }}>
+                Nothing listed. Open the Bag and choose List on a Relic.
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {myListings.map((l) => {
+                  const rarity = rarityOf(l.relicId);
+                  const title = rarity ? relicName(rarity) : `Relic #${l.relicId}`;
+                  return (
+                    <div key={l.id.toString()} className="market-user-listing-item">
+                      <div>
+                        <strong>{title}</strong>
+                        <div className="muted" style={{ fontSize: '11px' }}>
+                          {formatEther(l.price)} AVAX
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="btn sec sm"
+                        data-testid={`cancel-listing-${l.id}`}
+                        disabled={!!busy}
+                        onClick={() => void cancel(l)}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
 
       {busy && <p role="status">{busy}</p>}
       {message && !busy && (
         <p className="forge-note" role="status" data-testid="market-message">
           {message}
         </p>
+      )}
+
+      {/* Shared Confirmation Modal for Buying */}
+      {confirmBuyListing && (
+        <div className="scrim" data-testid="market-confirm-modal" role="dialog" aria-modal="true">
+          <div className="modal">
+            <h2>Buy this Relic?</h2>
+            <p>
+              {rarityOf(confirmBuyListing.relicId)
+                ? relicName(rarityOf(confirmBuyListing.relicId)!)
+                : `Relic #${confirmBuyListing.relicId}`}{' '}
+              (Token #{confirmBuyListing.relicId.toString()}) from {shortAddress(confirmBuyListing.seller)} for{' '}
+              <b className="num" style={{ color: 'var(--gold, #ffb86b)' }}>
+                {formatEther(confirmBuyListing.price)} AVAX
+              </b>
+              . Your wallet will ask you to sign.
+            </p>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => setConfirmBuyListing(null)}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn"
+                data-testid="modal-confirm-btn"
+                onClick={() => {
+                  const item = confirmBuyListing;
+                  setConfirmBuyListing(null);
+                  void executeBuy(item);
+                }}
+              >
+                Confirm Buy
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Shared Confirmation Modal for Listing */}
+      {confirmListPayload && (
+        <div className="scrim" data-testid="market-confirm-modal" role="dialog" aria-modal="true">
+          <div className="modal">
+            <h2>List this Relic?</h2>
+            <p>
+              {rarityOf(confirmListPayload.relicId)
+                ? relicName(rarityOf(confirmListPayload.relicId)!)
+                : `Relic #${confirmListPayload.relicId}`}{' '}
+              #{confirmListPayload.relicId.toString()} will be listed for{' '}
+              <b className="num" style={{ color: 'var(--gold, #ffb86b)' }}>
+                {formatEther(confirmListPayload.price)} AVAX
+              </b>
+              . You can cancel the listing any time. Your wallet will ask you to sign.
+            </p>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => setConfirmListPayload(null)}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn"
+                data-testid="modal-confirm-btn"
+                onClick={() => {
+                  const payload = confirmListPayload;
+                  setConfirmListPayload(null);
+                  void executeList(payload.relicId, payload.amount, payload.price);
+                }}
+              >
+                Confirm Listing
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

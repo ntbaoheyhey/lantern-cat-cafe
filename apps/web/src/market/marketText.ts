@@ -1,6 +1,19 @@
 import { CONFIG, relicIdFor, type Rarity } from '@taskbar-hero/game-rules';
 import { isUserRejection } from '../forge/forgeText';
 
+/** Routescan Fuji testnet block explorer URL base */
+export const ROUTESCAN_FUJI_BASE = 'https://testnet.routescan.io';
+
+/** Builds a Routescan address explorer URL */
+export function routescanAddressUrl(address: string): string {
+  return `${ROUTESCAN_FUJI_BASE}/address/${address}`;
+}
+
+/** Builds a Routescan token explorer URL */
+export function routescanTokenUrl(contract: string, tokenId: bigint | number): string {
+  return `${ROUTESCAN_FUJI_BASE}/token/${contract}?a=${tokenId.toString()}`;
+}
+
 /** relicIds for every rarity, lowest first (one token id per tier). */
 export const RELIC_IDS: { rarity: Rarity; relicId: bigint }[] = CONFIG.rarities.map((rarity) => ({
   rarity,
@@ -9,6 +22,27 @@ export const RELIC_IDS: { rarity: Rarity; relicId: bigint }[] = CONFIG.rarities.
 
 export function rarityOf(relicId: bigint): Rarity | undefined {
   return RELIC_IDS.find((r) => r.relicId === relicId)?.rarity;
+}
+
+/** Relative relic power rating for display and sorting */
+export function relicPower(relicId: bigint | number): number {
+  const r = rarityOf(BigInt(relicId));
+  switch (r) {
+    case 'legendary':
+      return 148;
+    case 'epic':
+      return 112;
+    case 'rare':
+      return 74;
+    default:
+      return 31;
+  }
+}
+
+/** Relic equipment classification for market filters */
+export function relicCategory(relicId: bigint | number): 'Weapon' | 'Armor' {
+  // Odd relic IDs (1=common Paw Charm, 3=epic Moon Collar) -> Weapon; Even (2=rare Silver Bell, 4=legendary Golden Maneki) -> Armor
+  return BigInt(relicId) % 2n === 1n ? 'Weapon' : 'Armor';
 }
 
 export const shortAddress = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
