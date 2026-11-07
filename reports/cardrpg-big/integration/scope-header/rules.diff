@@ -1,0 +1,1266 @@
+diff --git a/packages/game-rules/src/cardrpg/depth/auto-extras/auto-extras.test.ts b/packages/game-rules/src/cardrpg/depth/auto-extras/auto-extras.test.ts
+new file mode 100644
+index 00000000..15b7e534
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/auto-extras/auto-extras.test.ts
+@@ -0,0 +1,133 @@
++import { describe, expect, it } from 'vitest';
++import { clone } from '../../internal';
++import { createBattle } from '../battle';
++import { playBattle } from '../policies';
++import { battleCats, createDepthAccount } from '../state';
++import { CAT_BY_ID } from '../catalog';
++import { actAutoExtras, autoIntentHints, createAutoExtrasMemory, DEFAULT_AUTO_EXTRAS, playAutoExtras } from './index';
++import type { AutoExtrasOptions } from './index';
++
++const on: AutoExtrasOptions = { autoExtras: true, teaCloud: true, frontRelay: true, intentLens: true };
++function fixture(seed = 11) {
++  const cats = battleCats(createDepthAccount(seed));
++  cats[1] = { ...cats[1]!, id: 'mallow', row: 'front', skills: CAT_BY_ID.mallow!.skills.map(s => s.id) };
++  const b = createBattle({ seed, chapter: 1, cats, enemies: ['kettle-knight', 'yarn-giant'] });
++  return b;
++}
++function reaction(seed = 11) {
++  const b = fixture(seed), source = b.actors.find(a => a.id === 'clover')!, target = b.actors.find(a => a.side === 'enemy')!;
++  b.queue = [source.id, ...b.queue.filter(id => id !== source.id)];
++  target.statuses = [{ id: 'scald', stacks: 1, remaining: 3, source: 'mallow', appliedRound: b.round }];
++  b.actors[0]!.hp = 100;
++  return { b, source, target, choice: { actorId: source.id, skillId: 'clover-1', targetId: target.id } };
++}
++function relay() {
++  const b = fixture(), source = b.actors.find(a => a.id === 'clover')!, target = b.actors[0]!;
++  b.queue = [source.id, ...b.queue.filter(id => id !== source.id)]; target.hp = 100; target.shield = 0;
++  return { b, source, target, choice: { actorId: source.id, skillId: 'clover-2', targetId: target.id } };
++}
++
++describe('default-off automatic extras', () => {
++  it('starts with every toggle off', () => expect(Object.values(DEFAULT_AUTO_EXTRAS)).toEqual([false, false, false, false]));
++  it.each([1, 7, 11, 37, 10001])('preserves the complete serialized battle with flags off, seed %i', seed => {
++    const b = fixture(seed), expected = playBattle(clone(b), 'auto');
++    const actual = playAutoExtras(b);
++    expect(JSON.stringify(actual)).toBe(JSON.stringify(expected));
++  });
++  it('master-off defeats independently enabled experiments', () => {
++    const b = fixture(), expected = playBattle(clone(b), 'auto');
++    expect(JSON.stringify(playAutoExtras(b, createAutoExtrasMemory(), { ...on, autoExtras: false }))).toBe(JSON.stringify(expected));
++  });
++  it('rejected choices do not change rules state or consume a proc', () => {
++    const { b, source } = reaction(), before = JSON.stringify(b), memory = createAutoExtrasMemory();
++    expect(actAutoExtras(b, memory, on, { actorId: source.id, skillId: 'missing', targetId: 'missing' })).toBe(false);
++    expect(JSON.stringify(b)).toBe(before); expect(memory.rounds).toEqual({});
++  });
++  it('is seeded and independent of rendering speed or number of read-only lens polls', () => {
++    const b = fixture(44), expected = playAutoExtras(clone(b), createAutoExtrasMemory(), on);
++    const memory = createAutoExtrasMemory();
++    while (!b.result) { for (let i = 0; i < 9; i++) autoIntentHints(b, on); actAutoExtras(b, memory, on); }
++    expect(JSON.stringify(b)).toBe(JSON.stringify(expected));
++  });
++});
++
++describe('tea cloud', () => {
++  it('turns an ally Scald follow-up into bounded shield on the most injured living ally', () => {
++    const { b, choice } = reaction(), memory = createAutoExtrasMemory();
++    expect(actAutoExtras(b, memory, on, choice)).toBe(true);
++    expect(memory.cues).toContainEqual(expect.objectContaining({ id: 'tea-cloud', targetId: 'mochi', amount: 18 }));
++    expect(b.actors[0]!.shield).toBeGreaterThanOrEqual(18);
++  });
++  it.each(['self', 'enemy', 'none', 'blocked'] as const)('does not react to %s Scald/damage', kind => {
++    const { b, source, target, choice } = reaction(), memory = createAutoExtrasMemory();
++    if (kind === 'none') target.statuses = [];
++    if (kind === 'self') target.statuses[0]!.source = source.id;
++    if (kind === 'enemy') target.statuses[0]!.source = target.id;
++    if (kind === 'blocked') target.shield = 10000;
++    actAutoExtras(b, memory, on, choice);
++    expect(memory.cues.some(c => c.id === 'tea-cloud')).toBe(false);
++  });
++  it('caps shield and does not select a defeated ally', () => {
++    const { b, choice } = reaction(), memory = createAutoExtrasMemory();
++    b.actors[0]!.hp = 0;
++    const living = b.actors.filter(a => a.side === 'party' && a.hp > 0);
++    for (const actor of living) { actor.hp = actor.maxHp; actor.shield = Math.floor(actor.maxHp * .6) - 2; }
++    actAutoExtras(b, memory, on, choice);
++    expect(memory.cues.find(c => c.id === 'tea-cloud')?.amount).toBe(2);
++    expect(memory.cues.every(c => c.targetId !== b.actors[0]!.id)).toBe(true);
++    expect(living.every(a => a.shield <= Math.floor(a.maxHp * .6))).toBe(true);
++  });
++  it('fires at most once in a round and can fire again next round', () => {
++    const { b, source, choice } = reaction(), memory = createAutoExtrasMemory();
++    actAutoExtras(b, memory, on, choice);
++    b.queue = [source.id, ...b.queue.filter(id => id !== source.id)]; source.cooldowns = {};
++    actAutoExtras(b, memory, on, choice); expect(memory.cues).toEqual([]);
++    b.round++; b.queue = [source.id, ...b.queue.filter(id => id !== source.id)]; source.cooldowns = {};
++    actAutoExtras(b, memory, on, choice); expect(memory.cues.some(c => c.id === 'tea-cloud')).toBe(true);
++  });
++  it('cannot add a post-victory bonus or resurrect a resolved fight', () => {
++    const { b, choice } = reaction(), memory = createAutoExtrasMemory(); b.result = 'party';
++    const before = JSON.stringify(b); expect(actAutoExtras(b, memory, on, choice)).toBe(false); expect(JSON.stringify(b)).toBe(before);
++  });
++});
++
++describe('front relay', () => {
++  it('grants charge when rear support actually restores a front ally', () => {
++    const { b, target, choice } = relay(), before = target.charge, memory = createAutoExtrasMemory();
++    actAutoExtras(b, memory, on, choice);
++    expect(target.charge).toBe(before + 6);
++    expect(memory.cues).toContainEqual(expect.objectContaining({ id: 'front-relay', targetId: target.id, amount: 6 }));
++  });
++  it.each(['front-caster', 'rear-target', 'full-health', 'self'] as const)('excludes %s', kind => {
++    const { b, source, target, choice } = relay(), memory = createAutoExtrasMemory();
++    if (kind === 'front-caster') source.row = 'front';
++    if (kind === 'rear-target') target.row = 'rear';
++    if (kind === 'full-health') target.hp = target.maxHp;
++    if (kind === 'self') { choice.targetId = source.id; source.hp = 10; }
++    actAutoExtras(b, memory, on, choice);
++    expect(memory.cues.some(c => c.id === 'front-relay')).toBe(false);
++  });
++  it('caps ultimate charge at 100 and records the actual gain', () => {
++    const { b, target, choice } = relay(), memory = createAutoExtrasMemory(); target.charge = 98;
++    actAutoExtras(b, memory, on, choice); expect(target.charge).toBe(100);
++    expect(memory.cues.find(c => c.id === 'front-relay')?.amount).toBe(2);
++  });
++  it('respects its individual toggle', () => {
++    const { b, target, choice } = relay(), before = target.charge;
++    actAutoExtras(b, createAutoExtrasMemory(), { ...on, frontRelay: false }, choice); expect(target.charge).toBe(before);
++  });
++});
++
++describe('intent lens', () => {
++  it('is absent by default and exposes only public intents with the flag on', () => {
++    const b = fixture(), before = JSON.stringify(b);
++    expect(autoIntentHints(b)).toEqual([]); expect(autoIntentHints(b, on).length).toBe(b.intents.length);
++    for (const hint of autoIntentHints(b, on)) expect(b.intents.find(i => i.actorId === hint.actorId)?.targetId).toBe(hint.targetId);
++    expect(JSON.stringify(b)).toBe(before);
++  });
++  it('has byte-identical outcomes when it is the only enabled experiment', () => {
++    const b = fixture(), expected = playBattle(clone(b), 'auto');
++    const actual = playAutoExtras(b, createAutoExtrasMemory(), { ...on, teaCloud: false, frontRelay: false });
++    expect(JSON.stringify(actual)).toBe(JSON.stringify(expected));
++  });
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/auto-extras/index.ts b/packages/game-rules/src/cardrpg/depth/auto-extras/index.ts
+new file mode 100644
+index 00000000..d5c0c90a
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/auto-extras/index.ts
+@@ -0,0 +1,101 @@
++/** Opt-in, encounter-local experiments. Nothing is added to Battle/Account/save.
++ * Disabled calls dispatch directly to the existing deterministic rules. */
++import { act, currentActor, enemyAct, stacks } from '../battle';
++import { chooseAction } from '../policies';
++import { ENEMY_BY_ID, hasAdvantage } from '../catalog';
++import type { Actor, Battle, Choice, Flavour } from '../contract';
++
++export interface AutoExtrasOptions {
++  autoExtras: boolean;
++  teaCloud: boolean;
++  frontRelay: boolean;
++  intentLens: boolean;
++}
++export const DEFAULT_AUTO_EXTRAS: Readonly<AutoExtrasOptions> = Object.freeze({
++  autoExtras: false, teaCloud: false, frontRelay: false, intentLens: false,
++});
++export interface AutoExtraCue {
++  id: 'tea-cloud' | 'front-relay'; actorId: string; targetId: string;
++  round: number; amount: number; label: string;
++}
++export interface AutoExtrasMemory { rounds: Partial<Record<AutoExtraCue['id'], number>>; cues: AutoExtraCue[] }
++export function createAutoExtrasMemory(): AutoExtrasMemory { return { rounds: {}, cues: [] }; }
++
++function addCue(b: Battle, memory: AutoExtrasMemory, cue: AutoExtraCue) {
++  memory.rounds[cue.id] = cue.round; memory.cues.push(cue);
++  b.log.push({ round: cue.round, actorId: cue.actorId, targetId: cue.targetId,
++    skillId: `auto-extra:${cue.id}`, kind: 'auto-extra', amount: cue.amount, text: cue.label });
++}
++
++export function actAutoExtras(b: Battle, memory: AutoExtrasMemory,
++  options: Readonly<AutoExtrasOptions> = DEFAULT_AUTO_EXTRAS, choice?: Choice): boolean {
++  memory.cues = [];
++  if (b.result) return false;
++  const source = currentActor(b);
++  if (!source) return false;
++  const selected = source.side === 'party' ? choice ?? chooseAction(b, 'auto') : undefined;
++  // This exact path does not inspect, attach fields to, or clone the battle.
++  if (!options.autoExtras) return source.side === 'enemy' ? enemyAct(b) : act(b, selected!);
++  const round = b.round, logStart = b.log.length;
++  const scaldedByAlly = new Set(b.actors.filter(target => target.side === 'enemy'
++    && target.statuses.some(status => status.id === 'scald' && status.stacks > 0
++      && status.source !== source.id && b.actors.some(a => a.id === status.source && a.side === 'party'))).map(a => a.id));
++  const accepted = source.side === 'enemy' ? enemyAct(b) : act(b, selected!);
++  if (!accepted || b.result || source.side !== 'party' || source.hp <= 0) return accepted;
++  const events = b.log.slice(logStart);
++  const boundary = events.findIndex(event => event.kind === 'action');
++  const actionEvents = boundary < 0 ? [] : events.slice(0, boundary);
++  if (options.teaCloud && memory.rounds['tea-cloud'] !== round
++    && (source.flavour === 'tide' || source.flavour === 'garden')
++    && actionEvents.some(e => e.actorId === source.id && e.kind === 'damage' && e.amount > 0 && scaldedByAlly.has(e.targetId))) {
++    const recipient = b.actors.filter(a => a.side === 'party' && a.hp > 0 && a.shield < Math.floor(a.maxHp * .6))
++      .sort((a, c) => a.hp / a.maxHp - c.hp / c.maxHp || a.id.localeCompare(c.id))[0];
++    if (recipient) {
++      const amount = Math.min(18, Math.floor(recipient.maxHp * .6) - recipient.shield);
++      recipient.shield += amount;
++      b.log.push({ round, actorId: source.id, targetId: recipient.id, skillId: 'auto-extra:tea-cloud', kind: 'shield', amount, text: 'Tea cloud' });
++      addCue(b, memory, { id: 'tea-cloud', round, actorId: source.id, targetId: recipient.id,
++        amount, label: `${source.name} follows an ally’s Scald · ${recipient.name} +${amount} shield` });
++    }
++  }
++  if (options.frontRelay && source.row === 'rear' && memory.rounds['front-relay'] !== round) {
++    const recipients = b.actors.filter(a => a.side === 'party' && a.row === 'front' && a.hp > 0 && a.charge < 100
++      && a.id !== source.id && actionEvents.some(e => e.actorId === source.id && e.targetId === a.id
++        && (e.kind === 'heal' || e.kind === 'shield') && e.amount > 0)).sort((a, c) => a.id.localeCompare(c.id));
++    const recipient = recipients[0];
++    if (recipient) {
++      const amount = Math.min(6, 100 - recipient.charge); recipient.charge += amount;
++      addCue(b, memory, { id: 'front-relay', round, actorId: source.id, targetId: recipient.id,
++        amount, label: `Front relay · ${source.name} supports ${recipient.name}, +${amount} charge` });
++    }
++  }
++  return accepted;
++}
++
++export function playAutoExtras(b: Battle, memory = createAutoExtrasMemory(),
++  options: Readonly<AutoExtrasOptions> = DEFAULT_AUTO_EXTRAS, maxActions = 900): Battle {
++  for (let action = 0; action < maxActions && !b.result; action++) {
++    if (!actAutoExtras(b, memory, options)) throw Error('Automatic experiment stalled');
++  }
++  if (!b.result) throw Error('Automatic experiment exceeded its action bound');
++  return b;
++}
++
++/** Existing public tells and flavour advantage, never a target-selection control. */
++export function autoIntentHints(b: Battle, options: Readonly<AutoExtrasOptions> = DEFAULT_AUTO_EXTRAS) {
++  if (!options.autoExtras || !options.intentLens) return [];
++  const flavours: Flavour[] = ['hearth', 'moon', 'garden', 'tide', 'ember'];
++  return b.intents.flatMap(intent => {
++    const enemy = b.actors.find(a => a.id === intent.actorId && a.hp > 0);
++    if (!enemy) return [];
++    const spec = ENEMY_BY_ID[enemy.catalogId];
++    const target = b.actors.find(a => a.id === intent.targetId);
++    return [{ actorId: enemy.id, name: enemy.name, targetId: target?.id ?? '',
++      target: target?.name ?? 'Living companion', row: target?.row ?? 'front',
++      softened: intent.interrupted || stacks(enemy, 'drowsy') > 0,
++      phase: enemy.phase, signature: intent.signature, counter: spec?.counter ?? '',
++      weakTo: flavours.filter(flavour => hasAdvantage(flavour, enemy.flavour)),
++      label: intent.label }];
++  });
++}
++export type { Actor };
+diff --git a/packages/game-rules/src/cardrpg/depth/auto-extras/runner.test.ts b/packages/game-rules/src/cardrpg/depth/auto-extras/runner.test.ts
+new file mode 100644
+index 00000000..372fb587
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/auto-extras/runner.test.ts
+@@ -0,0 +1,24 @@
++import { describe, expect, it } from 'vitest';
++import { createBattle } from '../battle';
++import { battleCats, createDepthAccount } from '../state';
++import { playBattle } from '../policies';
++import { DEFAULT_AUTO_EXTRAS, playAutoExtras, createAutoExtrasMemory } from './index';
++import { createAutoExtrasRunner } from './runner';
++const fixture = () => createBattle({ seed: 71, chapter: 1, cats: battleCats(createDepthAccount(71)), enemies: ['kettle-knight', 'yarn-giant'] });
++describe('whole-run integration adapter', () => {
++  it.each(['auto', 'greedy', 'random', 'smart'] as const)('off preserves %s exactly', policy => {
++    expect(JSON.stringify(createAutoExtrasRunner()(fixture(), policy))).toBe(JSON.stringify(playBattle(fixture(), policy)));
++  });
++  it('owns independent encounter memory and captures options before a run', () => {
++    const options = { ...DEFAULT_AUTO_EXTRAS, autoExtras: true, teaCloud: true, frontRelay: true };
++    const run = createAutoExtrasRunner(options);
++    const expected = JSON.stringify(playAutoExtras(fixture(), createAutoExtrasMemory(), options));
++    options.autoExtras = false;
++    expect(JSON.stringify(run(fixture(), 'auto'))).toBe(expected);
++    expect(JSON.stringify(run(fixture(), 'auto'))).toBe(expected);
++  });
++  it('retains the action bound for both paths', () => {
++    expect(() => createAutoExtrasRunner()(fixture(), 'auto', 0)).toThrow('action bound');
++    expect(() => createAutoExtrasRunner({ ...DEFAULT_AUTO_EXTRAS, autoExtras: true })(fixture(), 'auto', 0)).toThrow('action bound');
++  });
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts b/packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts
+new file mode 100644
+index 00000000..ac8298a3
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts
+@@ -0,0 +1,19 @@
++import { currentActor } from '../battle';
++import { chooseAction, playBattle, type Policy } from '../policies';
++import type { Battle } from '../contract';
++import { actAutoExtras, createAutoExtrasMemory, DEFAULT_AUTO_EXTRAS, type AutoExtrasOptions } from './index';
++
++/** Compatible with playBattle; captures options once and owns fresh memory per fight. */
++export function createAutoExtrasRunner(options: Readonly<AutoExtrasOptions> = DEFAULT_AUTO_EXTRAS) {
++  const fixed = Object.freeze({ ...options });
++  return (battle: Battle, policy: Policy, maxActions = 900): Battle => {
++    if (!fixed.autoExtras) return playBattle(battle, policy, maxActions);
++    const memory = createAutoExtrasMemory();
++    for (let step = 0; step < maxActions && !battle.result; step++) {
++      const choice = currentActor(battle)?.side === 'party' ? chooseAction(battle, policy) : undefined;
++      if (!actAutoExtras(battle, memory, fixed, choice)) throw Error('Automatic experiment stalled');
++    }
++    if (!battle.result) throw Error('Automatic experiment exceeded its action bound');
++    return battle;
++  };
++}
+diff --git a/packages/game-rules/src/cardrpg/depth/battle.ts b/packages/game-rules/src/cardrpg/depth/battle.ts
+index 98999653..e2db9380 100644
+--- a/packages/game-rules/src/cardrpg/depth/battle.ts
++++ b/packages/game-rules/src/cardrpg/depth/battle.ts
+@@ -176,20 +176,23 @@ export function tickStatuses(b: Battle, actor: Actor) {
+ function actorBase(): Pick<Actor, 'shield' | 'charge' | 'break' | 'statuses' | 'cooldowns' | 'passiveUsed' | 'phase' | 'equipment' | 'setEffects' | 'bonuses' | 'turns'> {
+   return { shield:0,charge:20,break:0,statuses:[],cooldowns:{},passiveUsed:false,phase:1,equipment:[],setEffects:[],bonuses:{},turns:0 };
+ }
+-function enemyActor(id: string, index: number, chapter: number, tutorial = false): Actor {
++function enemyActor(id: string, index: number, chapter: number, tutorial = false, enemyStats?: BattleSetup['enemyStats']): Actor {
+   const e = ENEMY_BY_ID[id];
+   if (!e) throw Error('Unknown enemy');
++  const stats = enemyStats?.[id] ?? e;
+   const scale = tutorial ? .55 : 1 + Math.max(0, chapter - e.chapter) * .16;
+-  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(e.hp*scale),maxHp:Math.round(e.hp*scale),attack:Math.round(e.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:e.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
++  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
+ }
+ export function createBattle(setup: BattleSetup): Battle {
++  const initial = clone(setup);
++  initial.enemyStats ??= Object.fromEntries(Object.values(ENEMY_BY_ID).map(({ id, hp, attack, defense }) => [id, { hp, attack, defense }]));
+   const actors: Actor[] = setup.cats.map((c,index) => {
+     const cat = CAT_BY_ID[c.id];
+-    if (!cat || c.skills.length !== 3 || new Set(c.skills).size !== 3 || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid three-skill loadout');
++    if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
+     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
+   });
+-  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial)));
+-  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial:clone(setup)};
++  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
++  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
+   const combos = teamCombos(setup.cats.map(c => c.id));
+   for (const actor of living(b,'party')) {
+     actor.shield += boonValue(b,'openingShield')+(actor.bonuses.openingShield??0);
+@@ -334,9 +337,26 @@ function finishAction(b: Battle, actor: Actor) {
+   }
+ }
+ /** Mutates only an accepted legal choice. Rejected actions leave the snapshot identical. */
++function actionDescription(b: Battle, actor: Actor, target: Actor, skill: Skill): string {
++  const health = Math.round(target.hp / target.maxHp * 100);
++  if (skill.effects.some(effect => effect.kind === 'revive')) return `${actor.name} revives ${target.name} · ${skill.name}`;
++  if (skill.target === 'allies') {
++    const lowest = Math.min(...living(b, 'party').map(ally => Math.round(ally.hp / ally.maxHp * 100)));
++    return `${actor.name} supports the team (lowest HP ${lowest}%) · ${skill.name}`;
++  }
++  if (target.side === 'enemy') {
++    const weakest = Math.min(...targets(b, actor, skill).map(foe => foe.hp));
++    const reason = target.hp === weakest ? 'focuses the weakest reachable foe' : 'pressures a foe';
++    return `${actor.name} ${reason}, ${target.name} (HP ${health}%) · ${skill.name}`;
++  }
++  const verb = skill.effects.some(effect => effect.kind === 'heal') ? 'heals' : 'protects';
++  if (skill.id === 'wait') return `${actor.name} restores shared energy for the team`;
++  return `${actor.name} ${verb} ${target.name} (HP ${health}%) · ${skill.name}`;
++}
+ export function act(b: Battle, choice: Choice): boolean {
+   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
+   const actor=currentActor(b)!, skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
++  const description = actionDescription(b, actor, target, skill);
+   b.choices.push({...choice});
+   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
+   b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;
+@@ -364,13 +384,13 @@ export function act(b: Battle, choice: Choice): boolean {
+   if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
+   if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
+   if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
+-  record(b,actor,target,'action',0,skill.name,skill.id);
++  record(b,actor,target,'action',0,description,skill.id);
+   finishAction(b,actor);
+   return true;
+ }
+ function spawnThread(b: Battle, source: Actor) {
+   if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;
+-  const actor=enemyActor('binding-thread',b.actors.length,b.chapter);
++  const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);
+   b.actors.push(actor);
+   record(b,source,actor,'summon',0,'Binding Thread joins next round');
+ }
+diff --git a/packages/game-rules/src/cardrpg/depth/catalog.ts b/packages/game-rules/src/cardrpg/depth/catalog.ts
+index ab717bad..b3a7c832 100644
+--- a/packages/game-rules/src/cardrpg/depth/catalog.ts
++++ b/packages/game-rules/src/cardrpg/depth/catalog.ts
+@@ -131,18 +131,18 @@ export const TEAM_COMBOS = [
+ export const teamCombos = (ids: string[]) => TEAM_COMBOS.filter(c => c.tags.every(tag => ids.some(id => CAT_BY_ID[id]?.tags.includes(tag))));
+ 
+ export const ENEMIES: Enemy[] = [
+-  {id:'button-guard',name:'Button Guard',role:'guard',flavour:'garden',row:'front',tier:'regular',hp:210,attack:48,defense:25,breakCap:4,mechanic:'shield',intent:'Button brace grants shields to its row.',counter:'Hush stops the brace. Brittle strips shield faster.',phases:[],chapter:1},
+-  {id:'sock-skipper',name:'Sock Skipper',role:'flanker',flavour:'ember',row:'rear',tier:'regular',hp:165,attack:54,defense:8,breakCap:3,mechanic:'steal',intent:'Pocket skip steals 1 shared energy and hits the rear.',counter:'Break it before its turn or lure it with Shelter.',phases:[],chapter:1},
+-  {id:'spool-ram',name:'Spool Ram',role:'charger',flavour:'moon',row:'front',tier:'elite',hp:300,attack:74,defense:16,breakCap:5,mechanic:'charge',intent:'Every third round charges a double-power front-row sweep.',counter:'Fill break to interrupt. Defend reduces the sweep.',phases:[],chapter:1},
+-  {id:'needle-moth',name:'Needle Moth',role:'ranger',flavour:'tide',row:'rear',tier:'regular',hp:155,attack:43,defense:6,breakCap:3,mechanic:'dot',intent:'Needle rain applies Scald to the rear row.',counter:'Cleanse Scald or interrupt with Drowsy.',status:'scald',phases:[],chapter:1},
+-  {id:'teacup-healer',name:'Teacup Healer',role:'healer',flavour:'garden',row:'rear',tier:'regular',hp:180,attack:35,defense:10,breakCap:3,mechanic:'heal',intent:'Refills the most wounded ally by 65 HP.',counter:'Apply Hush or reach the rear with a Scented mark.',phases:[],chapter:1},
+-  {id:'kettle-knight',name:'Kettle Knight',role:'elite',flavour:'ember',row:'front',tier:'elite',hp:340,attack:62,defense:35,breakCap:6,mechanic:'reflect',intent:'Reflects 12 damage per hit while its shield holds.',counter:'Dispel Cozy, apply Brittle, then break its shield.',phases:[],chapter:2},
+-  {id:'yarn-giant',name:'Yarn Giant',role:'yarn',flavour:'garden',row:'front',tier:'boss',hp:820,attack:80,defense:22,breakCap:7,mechanic:'bind',intent:'Every third round Loomfall sweeps the front and Tangled threads appear.',counter:'Hearth hits add break. Break before Loomfall, cleanse Tangle.',status:'tangle',phases:['Winding','At 50% HP, Loomfall also reaches the rear'],chapter:1},
+-  {id:'binding-thread',name:'Binding Thread',role:'thread',flavour:'moon',row:'rear',tier:'regular',hp:90,attack:25,defense:0,breakCap:2,mechanic:'snare',intent:'Knots apply Tangle to the weakest cat.',counter:'Clear the small thread or cleanse the knot.',status:'tangle',phases:[],chapter:1},
++  {id:'button-guard',name:'Button Guard',role:'guard',flavour:'garden',row:'front',tier:'regular',hp:480,attack:19,defense:18,breakCap:4,mechanic:'shield',intent:'Button brace grants shields to its row.',counter:'Hush stops the brace. Brittle strips shield faster.',phases:[],chapter:1},
++  {id:'sock-skipper',name:'Sock Skipper',role:'flanker',flavour:'ember',row:'rear',tier:'regular',hp:701,attack:22,defense:8,breakCap:3,mechanic:'steal',intent:'Pocket skip steals 1 shared energy and hits the rear.',counter:'Break it before its turn or lure it with Shelter.',phases:[],chapter:1},
++  {id:'spool-ram',name:'Spool Ram',role:'charger',flavour:'moon',row:'front',tier:'elite',hp:1050,attack:30,defense:16,breakCap:5,mechanic:'charge',intent:'Every third round charges a double-power front-row sweep.',counter:'Fill break to interrupt. Defend reduces the sweep.',phases:[],chapter:1},
++  {id:'needle-moth',name:'Needle Moth',role:'ranger',flavour:'tide',row:'rear',tier:'regular',hp:659,attack:17,defense:6,breakCap:3,mechanic:'dot',intent:'Needle rain applies Scald to the rear row.',counter:'Cleanse Scald or interrupt with Drowsy.',status:'scald',phases:[],chapter:1},
++  {id:'teacup-healer',name:'Teacup Healer',role:'healer',flavour:'garden',row:'rear',tier:'regular',hp:765,attack:14,defense:10,breakCap:3,mechanic:'heal',intent:'Refills the most wounded ally by 65 HP.',counter:'Apply Hush or reach the rear with a Scented mark.',phases:[],chapter:1},
++  {id:'kettle-knight',name:'Kettle Knight',role:'elite',flavour:'ember',row:'front',tier:'elite',hp:1190,attack:25,defense:35,breakCap:6,mechanic:'reflect',intent:'Reflects 12 damage per hit while its shield holds.',counter:'Dispel Cozy, apply Brittle, then break its shield.',phases:[],chapter:2},
++  {id:'yarn-giant',name:'Yarn Giant',role:'yarn',flavour:'garden',row:'front',tier:'boss',hp:2870,attack:32,defense:22,breakCap:7,mechanic:'bind',intent:'Every third round Loomfall sweeps the front and Tangled threads appear.',counter:'Hearth hits add break. Break before Loomfall, cleanse Tangle.',status:'tangle',phases:['Winding','At 50% HP, Loomfall also reaches the rear'],chapter:1},
++  {id:'binding-thread',name:'Binding Thread',role:'thread',flavour:'moon',row:'rear',tier:'regular',hp:383,attack:10,defense:0,breakCap:2,mechanic:'snare',intent:'Knots apply Tangle to the weakest cat.',counter:'Clear the small thread or cleanse the knot.',status:'tangle',phases:[],chapter:1},
+   {id:'practice-cushion',name:'Practice Cushion',role:'dummy',flavour:'garden',row:'front',tier:'regular',hp:230,attack:14,defense:0,breakCap:3,mechanic:'lesson',intent:'A gentle third-round bump teaches a break interrupt.',counter:'Two Hearth hits and a break skill stop the bump.',phases:[],chapter:1},
+-  {id:'pollen-scout',name:'Pollen Scout',role:'ranger',flavour:'tide',row:'rear',tier:'elite',hp:270,attack:54,defense:10,breakCap:5,mechanic:'summon',intent:'Every third round plants a Binding Thread, up to two.',counter:'Hush prevents planting. Defeat threads before they multiply pressure.',phases:[],chapter:2},
+-  {id:'rain-spool',name:'Rain Spool',role:'charger',flavour:'ember',row:'front',tier:'boss',hp:1050,attack:85,defense:24,breakCap:8,mechanic:'storm',intent:'Every third round Cloudburst washes shields away before a row hit.',counter:'Tide adds break. Use Steep and healing instead of stacking shields.',status:'rattled',phases:['Collecting rain','At 50% HP, Cloudburst targets both rows'],chapter:2},
+-  {id:'crumb-sentinel',name:'Crumb Sentinel',role:'guard',flavour:'moon',row:'front',tier:'elite',hp:360,attack:68,defense:22,breakCap:6,mechanic:'bomb',intent:'Every third round Sugar burst detonates Crumb trails on cats.',counter:'Cleanse Crumb trails before the signature, or break the sentinel.',status:'crumb',phases:[],chapter:3},
+-  {id:'pantry-crown',name:'Pantry Crown',role:'yarn',flavour:'tide',row:'rear',tier:'boss',hp:1220,attack:92,defense:25,breakCap:9,mechanic:'banquet',intent:'Every third round Empty banquet drains energy and silences the table.',counter:'Garden adds break. Reserve energy and cleanse Hush.',status:'hush',phases:['Counting cups','At 50% HP, signatures summon a Binding Thread'],chapter:3},
++  {id:'pollen-scout',name:'Pollen Scout',role:'ranger',flavour:'tide',row:'rear',tier:'elite',hp:945,attack:22,defense:10,breakCap:5,mechanic:'summon',intent:'Every third round plants a Binding Thread, up to two.',counter:'Hush prevents planting. Defeat threads before they multiply pressure.',phases:[],chapter:2},
++  {id:'rain-spool',name:'Rain Spool',role:'charger',flavour:'ember',row:'front',tier:'boss',hp:3675,attack:58,defense:24,breakCap:8,mechanic:'storm',intent:'Every third round Cloudburst washes shields away before a row hit.',counter:'Tide adds break. Use Steep and healing instead of stacking shields.',status:'rattled',phases:['Collecting rain','At 50% HP, Cloudburst targets both rows'],chapter:2},
++  {id:'crumb-sentinel',name:'Crumb Sentinel',role:'guard',flavour:'moon',row:'front',tier:'elite',hp:1260,attack:27,defense:22,breakCap:6,mechanic:'bomb',intent:'Every third round Sugar burst detonates Crumb trails on cats.',counter:'Cleanse Crumb trails before the signature, or break the sentinel.',status:'crumb',phases:[],chapter:3},
++  {id:'pantry-crown',name:'Pantry Crown',role:'yarn',flavour:'tide',row:'rear',tier:'boss',hp:4270,attack:60,defense:25,breakCap:9,mechanic:'banquet',intent:'Every third round Empty banquet drains energy and silences the table.',counter:'Garden adds break. Reserve energy and cleanse Hush.',status:'hush',phases:['Counting cups','At 50% HP, signatures summon a Binding Thread'],chapter:3},
+ ];
+ export const ENEMY_BY_ID = Object.fromEntries(ENEMIES.map(e => [e.id,e])) as Record<string, Enemy>;
+diff --git a/packages/game-rules/src/cardrpg/depth/contract.ts b/packages/game-rules/src/cardrpg/depth/contract.ts
+index 2c3fd621..71680cc0 100644
+--- a/packages/game-rules/src/cardrpg/depth/contract.ts
++++ b/packages/game-rules/src/cardrpg/depth/contract.ts
+@@ -1,7 +1,7 @@
+ import type { AccountState, Slot, Rarity, Stats } from '../contract';
+ 
+-/** Additive depth-mode boundary. Legacy 0.4 accounts remain nested and migratable. */
+-export const CONTRACT_VERSION = '0.5.0' as const;
++/** Battle snapshots retain enemy stats across later balance changes. */
++export const CONTRACT_VERSION = '0.7.0' as const;
+ export type Flavour = 'hearth' | 'moon' | 'garden' | 'tide' | 'ember';
+ export type CatRole = 'guardian' | 'striker' | 'witch' | 'healer' | 'controller' | 'hexer';
+ export type Row = 'front' | 'rear';
+@@ -47,6 +47,7 @@ export interface Battle {
+ export interface BattleSetup {
+   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
+   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
++  enemyStats?: Record<string, Pick<Enemy, 'hp' | 'attack' | 'defense'>>;
+ }
+ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'treasure' | 'boss';
+ export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
+diff --git a/packages/game-rules/src/cardrpg/depth/design-caps.test.ts b/packages/game-rules/src/cardrpg/depth/design-caps.test.ts
+new file mode 100644
+index 00000000..0fafecfe
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/design-caps.test.ts
+@@ -0,0 +1,88 @@
++import { clone } from '../internal';
++import { expect, it } from 'vitest';
++import { SCARCITY } from '../catalog';
++import { designEligibility, reserveDesignPreview } from './bridge';
++import { battleCats, createDepthAccount } from './state';
++
++function eligibleAccount() {
++  const state = createDepthAccount(11);
++  state.seals = 10;
++  state.cleared = [1, 2, 3];
++  state.masteries = [1, 2, 3];
++  return state;
++}
++
++for (const design of SCARCITY) {
++  for (const counter of ['issuedDesign', 'seasonIssuedDesign'] as const) {
++    const cap = counter === 'issuedDesign' ? design.globalCap : design.seasonCap;
++    for (const distance of [-1, 0, 1]) {
++      it(`${design.id} checks ${counter} at cap ${distance >= 0 ? '+' : ''}${distance} atomically`, () => {
++        const state = eligibleAccount();
++        state.account.scarcity[design.id]![counter] = cap + distance;
++        const before = clone(state);
++        const result = reserveDesignPreview(state, design.id);
++        expect(result.ok).toBe(distance === -1);
++        expect(state).toEqual(before);
++        if (distance === -1) {
++          expect(result.state.account.scarcity[design.id]![counter]).toBe(cap);
++          expect(result.state.seals).toBe(state.seals - designEligibility(state, design.id).seals);
++          expect(result.state.designClaims).toEqual([design.id]);
++          expect(battleCats(result.state)).toEqual(battleCats(state));
++          const retry = reserveDesignPreview(result.state, design.id);
++          expect(retry.ok).toBe(false);
++          expect(retry.state).toEqual(result.state);
++        } else {
++          expect(result.state).toEqual(before);
++        }
++      });
++    }
++  }
++
++  it(`${design.id} consumes the last global and seasonal places together`, () => {
++    const state = eligibleAccount();
++    const counter = state.account.scarcity[design.id]!;
++    counter.issuedDesign = design.globalCap - 1;
++    counter.seasonIssuedDesign = design.seasonCap - 1;
++    const result = reserveDesignPreview(state, design.id);
++    expect(result.ok).toBe(true);
++    expect(result.state.account.scarcity[design.id]).toMatchObject({
++      issuedDesign: design.globalCap, seasonIssuedDesign: design.seasonCap,
++    });
++    expect(designEligibility(result.state, design.id).supply).toBe(false);
++  });
++
++  it(`${design.id} rejects an account's second reservation while supply remains`, () => {
++    const state = eligibleAccount();
++    state.designClaims = [design.id];
++    const result = reserveDesignPreview(state, design.id);
++    expect(result.ok).toBe(false);
++    expect(result.state).toEqual(state);
++  });
++
++  for (const difference of [-1, 0]) {
++    it(`${design.id} checks the seal boundary at required ${difference}`, () => {
++      const state = eligibleAccount();
++      state.seals = designEligibility(state, design.id).seals + difference;
++      const result = reserveDesignPreview(state, design.id);
++      expect(result.ok).toBe(difference === 0);
++      expect(result.state.seals).toBe(difference === 0 ? 0 : state.seals);
++    });
++  }
++}
++
++it.each([0, 1])('Moon Collar requires a chapter clear, with %i recorded', count => {
++  const state = eligibleAccount();
++  state.cleared = count ? [1] : [];
++  expect(reserveDesignPreview(state, 'moon-collar').ok).toBe(count === 1);
++});
++
++it.each([
++  { masteries: [1, 2], tower: 4, eligible: false },
++  { masteries: [1, 2, 3], tower: 4, eligible: true },
++  { masteries: [], tower: 5, eligible: true },
++])('Golden Maneki checks both existing effort routes with $masteries and floor $tower', fixture => {
++  const state = eligibleAccount();
++  state.masteries = fixture.masteries;
++  state.towerBest = fixture.tower;
++  expect(reserveDesignPreview(state, 'golden-maneki').ok).toBe(fixture.eligible);
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/equipment-balance.test.ts b/packages/game-rules/src/cardrpg/depth/equipment-balance.test.ts
+new file mode 100644
+index 00000000..378dc759
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/equipment-balance.test.ts
+@@ -0,0 +1,84 @@
++import { expect, it } from 'vitest';
++import { EQUIPMENT_SLOTS, RARITY_ORDER } from '../contract';
++import { clone } from '../internal';
++import { AFFIXES, AFFIX_BY_ID, depthStats, equipmentEffects, GEAR, gearAffixRoll, makeGear, SETS } from './equipment';
++import { exportSave, importSave } from './save';
++import { battleCats, createDepthAccount } from './state';
++import type { DepthAccount } from './contract';
++
++function teamPower(state: DepthAccount) {
++  return state.team.reduce((total, id) => {
++    const stats = depthStats(state, id);
++    return total + Math.round(stats.hp / 5 + stats.attack * 2 + stats.defense * 1.5);
++  }, 0);
++}
++
++it('keeps every main-stat rarity band increasing in all eight sets and four slots', () => {
++  for (const set of SETS) for (const slot of EQUIPMENT_SLOTS) {
++    const values = RARITY_ORDER.map(rarity => GEAR.find(item =>
++      item.setId === set.id && item.slot === slot && item.rarity === rarity)!.value);
++    for (let index = 1; index < values.length; index++) {
++      expect(values[index]).toBeGreaterThan(values[index - 1]!);
++    }
++  }
++});
++
++it.each(GEAR.filter(template => template.rarity === 'legendary'))(
++  '$id contributes at most 10% of bare starter team power even at maximum rolls and enhancement', template => {
++    const weights: Record<string, number> = { hp: .2, attack: 2, defense: 1.5 };
++    for (const id of ['mochi', 'soot', 'clover']) for (const enhancement of [0, 12]) {
++      const state = createDepthAccount(101);
++      state.gear = [];
++      state.equipment = {};
++      const before = teamPower(state);
++      const item = makeGear(state, template.id, 101);
++      const compatible = AFFIXES.filter(affix => affix.slots.includes(template.slot));
++      const score = (affix: typeof AFFIXES[number]) =>
++        (weights[affix.stat] ?? 0) * affix.tiers[item.tier - 1]![1];
++      const strongest = compatible.sort((left, right) => score(right) - score(left))
++        .slice(0, item.affixes.length);
++      item.affixes = strongest.map(affix => affix.id);
++      // Old saves can hold larger pre-balance rolls. The effective range must
++      // also bound those items when battle stats are read.
++      item.rolls = Object.fromEntries(strongest.map(affix =>
++        [affix.id, affix.tiers[item.tier - 1]![1] * 4]));
++      item.enhancement = enhancement;
++      state.gear.push(item);
++      state.equipment[id] = { [template.slot]: item.id };
++      const after = teamPower(state);
++      expect((after - before) / after).toBeLessThanOrEqual(.1);
++    }
++  },
++);
++
++it('reads and displays old saved affix rolls within current bounds without rewriting the save', () => {
++  const state = createDepthAccount(11);
++  const item = makeGear(state, 'hearthloom-relic-legendary', 11);
++  item.affixes = ['affix-hp'];
++  item.rolls = { 'affix-hp': 54 };
++  state.gear.push(item);
++  state.equipment.mochi!.relic = item.id;
++  const before = clone(state);
++  const restored = importSave(exportSave(state));
++  const restoredItem = restored.gear.find(gear => gear.id === item.id)!;
++  expect(restoredItem.rolls['affix-hp']).toBe(54);
++  expect(gearAffixRoll(restoredItem, 'affix-hp')).toBe(14);
++  expect(equipmentEffects(restored, 'mochi').bonuses.hp).toBe(14);
++  expect(battleCats(restored)[0]!.stats).toEqual(depthStats(restored, 'mochi'));
++  expect(state).toEqual(before);
++});
++
++it('keeps newly rolled and missing-roll affixes inside their stated tier', () => {
++  const state = createDepthAccount(19);
++  for (const template of GEAR) {
++    const item = makeGear(state, template.id, 19);
++    for (const id of item.affixes) {
++      const range = AFFIX_BY_ID[id]!.tiers[item.tier - 1]!;
++      expect(gearAffixRoll(item, id)).toBe(item.rolls[id]);
++      expect(item.rolls[id]).toBeGreaterThanOrEqual(range[0]);
++      expect(item.rolls[id]).toBeLessThanOrEqual(range[1]);
++      delete item.rolls[id];
++      expect(gearAffixRoll(item, id)).toBe(range[0]);
++    }
++  }
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/equipment.ts b/packages/game-rules/src/cardrpg/depth/equipment.ts
+index c3a2068b..1d49329a 100644
+--- a/packages/game-rules/src/cardrpg/depth/equipment.ts
++++ b/packages/game-rules/src/cardrpg/depth/equipment.ts
+@@ -49,13 +49,18 @@ const affixSpecs: Array<[string,string,Slot[],number,number,string]> = [
+   ['executeThreshold','Fine recipe',['weapon','charm'],1,2,'Raise execute HP threshold by percentage points'],['statusDuration','Slow steep',['charm','relic'],1,1,'Extend your Steep by rounds, capped at 2'],
+   ['breakShield','Soft landing',['outfit','relic'],4,9,'Gain shield after breaking a foe'],
+ ];
+-export const AFFIXES: AffixRule[]=affixSpecs.map(([stat,name,slots,min,max])=>({id:`affix-${stat}`,name,slots,stat,tiers:[[min,max],[min*2,max*2],[min*3,max*3]],description:affixSpecs.find(row=>row[0]===stat)![5]}));
++// Phase I keeps the existing affixes and tiers while reducing their magnitude.
++export const AFFIXES: AffixRule[] = affixSpecs.map(([stat, name, slots, min, max, description]) => ({
++  id: `affix-${stat}`, name, slots, stat, description,
++  tiers: [1, 2, 3].map(tier => [Math.max(1, Math.round(min * tier * .25)),
++    Math.max(1, Math.round(max * tier * .25))]),
++}));
+ export const AFFIX_BY_ID=Object.fromEntries(AFFIXES.map(a=>[a.id,a])) as Record<string,AffixRule>;
+ const pieceNames:Record<Slot,string>={weapon:'Utensil',outfit:'Apron',charm:'Clasp',relic:'Keepsake'};
+ export const GEAR: GearTemplate[]=SETS.flatMap((set,si)=>RARITY_ORDER.flatMap((rarity,ri)=>EQUIPMENT_SLOTS.map((slot,sl)=>{
+   const id=`${set.id}-${slot}-${rarity}`,old=LEGACY_ITEMS.find(i=>i.id===id),legendary=rarity==='legendary';
+   const unique=legendary?UNIQUES[(si*4+sl)%UNIQUES.length]!:undefined;
+-  return {id,name:unique?`${unique.name} · ${set.name} ${pieceNames[slot]}`:old?.name??`${rarity[0]!.toUpperCase()+rarity.slice(1)} ${set.name} ${pieceNames[slot]}`,slot,rarity,setId:set.id,level:1+ri*8+Math.floor(si/3)*4,chapter:si<3?1:si<6?2:3,source:legendary?'Chapter bosses, elites and mastery tailoring':si<3?'Tangled Cafe and chosen tailoring':si<6?'Rooftop Orchard and chosen tailoring':'Midnight Pantry and chosen tailoring',main:old?.main.stat??(['attack','hp','defense','hp'] as const)[sl]!,value:old?.main.value??[12+ri*4,45+ri*12,6+ri*2,25+ri*8][sl]!,affixes:AFFIXES.filter(a=>a.slots.includes(slot)).slice(si%5,si%5+ri).map(a=>a.id),unique:unique?.id,story:unique?unique.description:`${set.name} changes your ${set.two.toLowerCase()} Collect two or four matching pieces.`};
++  return {id,name:unique?`${unique.name} · ${set.name} ${pieceNames[slot]}`:old?.name??`${rarity[0]!.toUpperCase()+rarity.slice(1)} ${set.name} ${pieceNames[slot]}`,slot,rarity,setId:set.id,level:1+ri*8+Math.floor(si/3)*4,chapter:si<3?1:si<6?2:3,source:legendary?'Chapter bosses, elites and mastery tailoring':si<3?'Tangled Cafe and chosen tailoring':si<6?'Rooftop Orchard and chosen tailoring':'Midnight Pantry and chosen tailoring',main:old?.main.stat??(['attack','hp','defense','hp'] as const)[sl]!,value:Math.round((old?.main.value??[12+ri*4,45+ri*12,6+ri*2,25+ri*8][sl]!)*.75),affixes:AFFIXES.filter(a=>a.slots.includes(slot)).slice(si%5,si%5+ri).map(a=>a.id),unique:unique?.id,story:unique?unique.description:`${set.name} changes your ${set.two.toLowerCase()} Collect two or four matching pieces.`};
+ })));
+ export const GEAR_BY_ID=Object.fromEntries(GEAR.map(g=>[g.id,g])) as Record<string,GearTemplate>;
+ export function makeGear(state:DepthAccount,id:string,seed:number):GearInstance {
+@@ -72,9 +77,14 @@ export function initializeEquipment(state:DepthAccount) {
+   }
+ }
+ export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
++/** Apply current balance bounds when reading both new and older saved rolls. */
++export function gearAffixRoll(item: GearInstance, id: string): number {
++  const [minimum, maximum] = AFFIX_BY_ID[id]!.tiers[item.tier - 1]!;
++  return Math.min(maximum, Math.max(minimum, item.rolls[id] ?? minimum));
++}
+ export function equipmentEffects(state:DepthAccount,cardId:string) {
+   const items=equippedItems(state,cardId),counts:Record<string,number>={},effects:string[]=[],bonuses:Record<string,number>={};
+-  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+(item.rolls[id]??a.tiers[item.tier-1]![0]);}}
++  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+gearAffixRoll(item,id);}}
+   for(const set of SETS){if((counts[set.id]??0)>=2)effects.push(set.twoEffect);if((counts[set.id]??0)>=4)effects.push(set.fourEffect);}
+   return {effects:[...new Set(effects)],bonuses,counts};
+ }
+diff --git a/packages/game-rules/src/cardrpg/depth/policies.test.ts b/packages/game-rules/src/cardrpg/depth/policies.test.ts
+new file mode 100644
+index 00000000..c0acc319
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/policies.test.ts
+@@ -0,0 +1,65 @@
++import { describe, expect, it } from 'vitest';
++import { clone } from '../internal';
++import { act, createBattle, currentActor, enemyAct, legalChoices, replayBattle, skillById } from './battle';
++import { chooseAction, playBattle } from './policies';
++import { battleCats, createDepthAccount } from './state';
++
++function fixture(seed = 11) {
++  return createBattle({ seed, chapter: 1, cats: battleCats(createDepthAccount(seed)), enemies: ['button-guard', 'sock-skipper'] });
++}
++
++describe('automatic battle controller', () => {
++  it('evaluates legal choices without changing the battle or consuming RNG', () => {
++    const battle = fixture();
++    const before = clone(battle);
++    const choice = chooseAction(battle, 'auto');
++    expect(legalChoices(battle)).toContainEqual(choice);
++    expect(chooseAction(battle, 'auto')).toEqual(choice);
++    expect(battle).toEqual(before);
++  });
++
++  it('heals a low-health ally and explains the action using pre-heal HP', () => {
++    const battle = fixture();
++    battle.queue = ['clover', ...battle.queue.filter(id => id !== 'clover')];
++    const mochi = battle.actors.find(actor => actor.id === 'mochi')!;
++    mochi.hp = Math.ceil(mochi.maxHp * .22);
++    const choice = chooseAction(battle, 'auto');
++    expect(skillById(choice.skillId)!.effects.some(effect => effect.kind === 'heal')).toBe(true);
++    act(battle, choice);
++    expect(mochi.hp).toBeGreaterThan(mochi.maxHp * .22);
++    expect(battle.log.find(event => event.kind === 'action')?.text).toContain('22%');
++  });
++
++  it('finishes a weak reachable foe', () => {
++    const battle = fixture();
++    battle.queue = ['soot', ...battle.queue.filter(id => id !== 'soot')];
++    const weak = battle.actors.find(actor => actor.catalogId === 'sock-skipper')!;
++    weak.hp = 1;
++    const choice = chooseAction(battle, 'auto');
++    expect(choice.targetId).toBe(weak.id);
++    act(battle, choice);
++    expect(weak.hp).toBe(0);
++  });
++
++  it('uses a charged ultimate when it protects an injured team', () => {
++    const battle = fixture();
++    const clover = battle.actors.find(actor => actor.id === 'clover')!;
++    clover.skills = ['clover-1', 'clover-2', 'clover-4'];
++    clover.charge = 100;
++    battle.queue = [clover.id, ...battle.queue.filter(id => id !== clover.id)];
++    for (const actor of battle.actors.filter(actor => actor.side === 'party')) actor.hp = Math.ceil(actor.maxHp * .25);
++    expect(chooseAction(battle, 'auto').skillId).toBe('clover-4');
++  });
++
++  it.each([1, 7, 11, 42, 10001])('matches watched, skipped and recorded replay for seed %i', seed => {
++    const watched = fixture(seed);
++    let steps = 0;
++    while (!watched.result && steps++ < 900) {
++      if (currentActor(watched)?.side === 'enemy') enemyAct(watched);
++      else act(watched, chooseAction(watched, 'auto'));
++    }
++    expect(watched.result).toBeTruthy();
++    expect(playBattle(fixture(seed), 'auto')).toEqual(watched);
++    expect(replayBattle(watched.initial, watched.choices)).toEqual(watched);
++  });
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/policies.ts b/packages/game-rules/src/cardrpg/depth/policies.ts
+index b9bf6949..17de731e 100644
+--- a/packages/game-rules/src/cardrpg/depth/policies.ts
++++ b/packages/game-rules/src/cardrpg/depth/policies.ts
+@@ -24,16 +24,31 @@ function value(b: Battle): number {
+   },0);
+   return party - foes*1.1 + pressure + b.energy*3;
+ }
++/** One-action lookahead keeps playback cheap and makes every decision reproducible. */
++function automatic(b: Battle): Choice {
++  const scored = legalChoices(b).map(choice => {
++    const preview = previewCopy(b);
++    act(preview, choice);
++    let score = value(preview);
++    for (const actor of b.actors) {
++      const after = preview.actors.find(candidate => candidate.id === actor.id)!;
++      // Removing an enemy also removes its future turns, even when little HP remains.
++      if (actor.side === 'enemy' && actor.hp > 0 && after.hp === 0) score += 200;
++      if (actor.side === 'party' && actor.hp > 0 && actor.hp < actor.maxHp * .5) {
++        score += Math.max(0, after.hp - actor.hp) * (1 - actor.hp / actor.maxHp) * 2;
++      }
++    }
++    return { choice, score };
++  });
++  scored.sort((a, c) => c.score - a.score
++    || a.choice.skillId.localeCompare(c.choice.skillId)
++    || a.choice.targetId.localeCompare(c.choice.targetId));
++  return scored[0]!.choice;
++}
+ function ordinary(b: Battle, policy: 'auto' | 'greedy'): Choice {
+-  const choices=legalChoices(b),actor=currentActor(b)!;
++  if (policy === 'auto') return automatic(b);
++  const choices=legalChoices(b);
+   const offensive=choices.filter(c=>skillById(c.skillId)!.effects.some(e=>['hit','execute','chain'].includes(e.kind)));
+-  if(policy==='auto') {
+-    const patient=b.actors.filter(a=>a.side==='party'&&a.hp>0&&a.hp<a.maxHp*.3).sort((a,c)=>a.hp-c.hp)[0];
+-    const heal=patient&&choices.find(c=>c.targetId===patient.id&&skillById(c.skillId)!.effects.some(e=>e.kind==='heal'));
+-    if(heal)return heal;
+-    // Convenience rotation follows equipped order and spends on the signature when ready.
+-    return offensive.find(c=>c.skillId===actor.skills[2])??offensive[0]??choices[0]!;
+-  }
+   return [...offensive].sort((a,c)=>{
+     const power=(choice:Choice)=>skillById(choice.skillId)!.effects.reduce((n,e)=>n+(['hit','chain','execute'].includes(e.kind)?e.power??0:0),0);
+     return power(c)-power(a);
+diff --git a/packages/game-rules/src/cardrpg/depth/run-bot.test.ts b/packages/game-rules/src/cardrpg/depth/run-bot.test.ts
+new file mode 100644
+index 00000000..6bc92dfe
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/run-bot.test.ts
+@@ -0,0 +1,40 @@
++import { expect, it, vi } from 'vitest';
++import { clone } from '../internal';
++import type { Battle } from './contract';
++import { playBattle, type Policy } from './policies';
++import { CHAPTERS, startRun } from './run';
++import { playRun } from './run-bot';
++import { createDepthAccount } from './state';
++
++it.each<Policy>(['auto', 'greedy', 'random', 'smart'])(
++  'preserves the complete route and observations with the native %s runner', policy => {
++    for (const chapter of CHAPTERS) for (let seed = 1; seed <= 5; seed++) {
++      const account = createDepthAccount(seed);
++      account.cleared = [1, 2];
++      const initial = startRun(account, chapter.id, seed).state;
++      const originalBattles: Battle[] = [];
++      const injectedBattles: Battle[] = [];
++      const original = playRun(clone(initial), policy, battle => originalBattles.push(clone(battle)));
++      const runner = vi.fn(playBattle);
++      const injected = playRun(clone(initial), policy, battle => injectedBattles.push(clone(battle)), runner);
++      expect(injected).toEqual(original);
++      expect(injectedBattles).toEqual(originalBattles);
++      expect(runner).toHaveBeenCalledTimes(originalBattles.length);
++      expect(runner.mock.calls.every(([, receivedPolicy]) => receivedPolicy === policy)).toBe(true);
++    }
++  }, 30000,
++);
++
++it('settles and observes the battle returned by an isolated runner', () => {
++  const initial = startRun(createDepthAccount(19), 1, 19).state;
++  const completed: Battle[] = [];
++  const observed: Battle[] = [];
++  const result = playRun(clone(initial), 'auto', battle => observed.push(battle), (battle, policy) => {
++    const outcome = playBattle(clone(battle), policy);
++    completed.push(outcome);
++    return outcome;
++  });
++  expect(result).toEqual(playRun(clone(initial), 'auto'));
++  expect(observed.length).toBeGreaterThan(0);
++  expect(observed.every((battle, index) => battle === completed[index])).toBe(true);
++});
+diff --git a/packages/game-rules/src/cardrpg/depth/run-bot.ts b/packages/game-rules/src/cardrpg/depth/run-bot.ts
+index 693437b0..331c9bf8 100644
+--- a/packages/game-rules/src/cardrpg/depth/run-bot.ts
++++ b/packages/game-rules/src/cardrpg/depth/run-bot.ts
+@@ -3,12 +3,22 @@ import { availableNodes, chooseReward, enterNode, EVENTS, finishEncounter, resol
+ import type { Battle, DepthAccount, RuleResult } from './contract';
+ function accept(result: RuleResult<DepthAccount>) {if(!result.ok)throw Error(result.error);return result.state;}
+ /** Headless client uses the same public node commands as the UI. */
+-export function playRun(state: DepthAccount, policy: Policy, observe?: (battle: Battle) => void): DepthAccount {
++export function playRun(
++  state: DepthAccount,
++  policy: Policy,
++  observe?: (battle: Battle) => void,
++  runBattle: typeof playBattle = playBattle,
++): DepthAccount {
+   let next=state;
+   for(let step=0;step<100&&!next.run?.complete;step++) {
+     const run=next.run;
+     if(!run)throw Error('Start a run before calling its bot');
+-    if(run.battle){playBattle(run.battle,policy);observe?.(run.battle);next=accept(finishEncounter(next));continue;}
++    if (run.battle) {
++      run.battle = runBattle(run.battle, policy);
++      observe?.(run.battle);
++      next = accept(finishEncounter(next));
++      continue;
++    }
+     if(run.rewardChoices.length){next=accept(chooseReward(next,run.rewardChoices[0]!));continue;}
+     if(run.current){
+       const node=run.nodes.find(n=>n.id===run.current)!;
+diff --git a/packages/game-rules/src/cardrpg/depth/run.test.ts b/packages/game-rules/src/cardrpg/depth/run.test.ts
+index d2f15937..ef2fdb75 100644
+--- a/packages/game-rules/src/cardrpg/depth/run.test.ts
++++ b/packages/game-rules/src/cardrpg/depth/run.test.ts
+@@ -1,7 +1,7 @@
+ import { expect, it } from 'vitest';
+ import { clone } from '../internal';
+ import { BOONS, boonValue } from './boons';
+-import { createDepthAccount, configureTeam, availableSkills } from './state';
++import { createDepthAccount, configureTeam, availableSkills, battleCats, defaultSkills } from './state';
+ import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
+ import { playRun } from './run-bot';
+ 
+@@ -24,6 +24,24 @@ it('unlocks the fourth skill through either level or duplicate stars',()=>{
+   s.account.cards[0]!.stars=3;expect(availableSkills(s,'mochi')).toHaveLength(4);
+   s.account.cards[0]!.stars=1;s.account.cards[0]!.level=6;expect(availableSkills(s,'mochi')).toHaveLength(4);
+ });
++it('uses the complete default kit in new encounters regardless of a saved loadout order', () => {
++  const state = createDepthAccount();
++  expect(defaultSkills(state, 'mochi')).toEqual(['mochi-1', 'mochi-2', 'mochi-3']);
++  state.account.cards[0]!.level = 6;
++  state.skills.mochi = ['mochi-4', 'mochi-1', 'mochi-2'];
++  expect(battleCats(state)[0]!.skills).toEqual(['mochi-1', 'mochi-2', 'mochi-3', 'mochi-4']);
++  const entered = enterNode(startRun(state, 1, 11).state, '0-0').state;
++  expect(entered.run!.battle!.actors[0]!.skills).toHaveLength(4);
++  expect(state.skills.mochi).toEqual(['mochi-4', 'mochi-1', 'mochi-2']);
++});
++it('allows unlocked ultimates at campfires while rejecting locked skills', () => {
++  const state = createDepthAccount();
++  state.account.cards[0]!.stars = 3;
++  const started = startRun(state, 1, 11).state;
++  started.run!.current = '4-0';
++  expect(resolveNode(started, 'upgrade', 'mochi-4').state.run!.upgrades['mochi-4']).toBe(1);
++  expect(resolveNode(started, 'upgrade', 'clover-4').ok).toBe(false);
++});
+ it('has thirty stack-capped charms across six build archetypes',()=>{
+   expect(BOONS).toHaveLength(30);expect(new Set(BOONS.map(b=>b.archetype)).size).toBe(6);
+   for(const boon of BOONS)expect(boonValue({boons:{[boon.id]:99}},boon.trigger)).toBe(boon.value*boon.cap);
+diff --git a/packages/game-rules/src/cardrpg/depth/run.ts b/packages/game-rules/src/cardrpg/depth/run.ts
+index 6af35d26..6eedf384 100644
+--- a/packages/game-rules/src/cardrpg/depth/run.ts
++++ b/packages/game-rules/src/cardrpg/depth/run.ts
+@@ -3,7 +3,7 @@ import { clone, integer, requireRule, progress } from '../internal';
+ import { BOONS, BOON_BY_ID } from './boons';
+ import { dropGear } from './equipment';
+ import { createBattle } from './battle';
+-import { battleCats, grantDepth, requireHome, transactDepth } from './state';
++import { battleCats, defaultSkills, grantDepth, requireHome, transactDepth } from './state';
+ import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
+ export const CHAPTERS = [
+   {id:1,name:'Tangled Cafe',boss:'yarn-giant',palette:'#d8a76d',ambience:174,pool:['button-guard','sock-skipper','needle-moth','teacup-healer'],elites:['spool-ram','kettle-knight'],reward:'A Yarnkeeper Seal and 80 mastery materials'},
+@@ -56,7 +56,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
+     run.current=id;
+     if(node.enemies.length){
+       const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator};
+-      run.battle=createBattle(setup);s.lastBattle=clone(setup);s.lastChoices=[];
++      run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
+     }
+   });
+ }
+@@ -109,7 +109,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
+     const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
+     if(drop)run.earnedItems.push(drop);
+     if(node.kind==='boss'){finishNode(run);settleRun(s,true);return;}
+-    run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>s.skills[id]!));
++    run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
+   });
+ }
+ export function chooseReward(state: DepthAccount,id: string): RuleResult<DepthAccount> {
+@@ -128,7 +128,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
+     const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):Math.max(1,Math.round(old*(1+percent/100)));}};
+     if(node.kind==='campfire') {
+       if(choice==='heal')healTeam(35);
+-      else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>s.skills[id]!.includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an equipped skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}
++      else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>defaultSkills(s,id).includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an unlocked skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}
+     } else if(node.kind==='event') {
+       const event=EVENTS.find(e=>e.id===node.eventId)!,option=event.choices.find(c=>c.id===choice);requireRule(option,'UNKNOWN_ID','Choose a story option.');
+       requireRule(run.points>=option.cost,'INSUFFICIENT_FUNDS','Insufficient earned run points.');run.points+=option.points-option.cost;
+diff --git a/packages/game-rules/src/cardrpg/depth/save-equipment.test.ts b/packages/game-rules/src/cardrpg/depth/save-equipment.test.ts
+new file mode 100644
+index 00000000..164f7e5c
+--- /dev/null
++++ b/packages/game-rules/src/cardrpg/depth/save-equipment.test.ts
+@@ -0,0 +1,57 @@
++import { expect, it } from 'vitest';
++import type { Slot } from '../contract';
++import { equipGear } from './equipment';
++import { exportSave, importSave, saveChecksum } from './save';
++import { createDepthAccount } from './state';
++
++it('round trips a team after every starter equipment slot is unequipped', () => {
++  let state = createDepthAccount(37);
++  for (const id of state.team) {
++    for (const slot of Object.keys(state.equipment[id] ?? {}) as Slot[]) {
++      const result = equipGear(state, id, null, slot);
++      expect(result.ok).toBe(true);
++      state = result.state;
++    }
++  }
++  expect(importSave(exportSave(state))).toEqual(state);
++});
++
++it('round trips after an item transfer removes its original starter slot', () => {
++  const state = createDepthAccount(37);
++  const item = state.equipment.mochi!.weapon!;
++  const moved = equipGear(state, 'clover', item);
++  expect(moved.ok).toBe(true);
++  expect(moved.state.equipment.mochi!.weapon).toBeUndefined();
++  expect(importSave(exportSave(moved.state))).toEqual(moved.state);
++});
++
++it('reads the typed empty equipment map in current and migrated saves', () => {
++  const state = createDepthAccount(37);
++  state.equipment = {};
++  expect(importSave(exportSave(state))).toEqual(state);
++  const legacy = JSON.stringify({ ...state, version: '0.5.0' });
++  expect(importSave(`THC5.${saveChecksum(legacy)}.${legacy}`)).toEqual(state);
++});
++
++it.each([null, [], 5, { weapon: 5 }, { weapon: null }, { invalid: 'gear' }])(
++  'rejects malformed equipment slot maps %#', equipment => {
++    const state = createDepthAccount(37);
++    Object.assign(state.equipment, { mochi: equipment });
++    expect(() => exportSave(state)).toThrow(/unsupported or damaged/);
++  },
++);
++
++it.each(['missing-item', 'wrong-slot', 'duplicate', 'unowned-card'])(
++  'rejects inconsistent equipment references (%s)', problem => {
++    const state = createDepthAccount(37);
++    const weapon = state.equipment.mochi!.weapon!;
++    if (problem === 'missing-item') state.equipment.mochi!.weapon = 'missing-gear';
++    if (problem === 'wrong-slot') {
++      delete state.equipment.mochi!.weapon;
++      state.equipment.mochi!.outfit = weapon;
++    }
++    if (problem === 'duplicate') state.equipment.clover!.weapon = weapon;
++    if (problem === 'unowned-card') state.equipment.unowned = {};
++    expect(() => exportSave(state)).toThrow(/unsupported or damaged/);
++  },
++);
+diff --git a/packages/game-rules/src/cardrpg/depth/save.test.ts b/packages/game-rules/src/cardrpg/depth/save.test.ts
+index 9e732844..d8a69f9c 100644
+--- a/packages/game-rules/src/cardrpg/depth/save.test.ts
++++ b/packages/game-rules/src/cardrpg/depth/save.test.ts
+@@ -1,8 +1,30 @@
+ import { expect, it } from 'vitest';
+ import { createStarterAccount } from '../state';
+-import { createDepthAccount } from './state';
++import { battleCats, createDepthAccount } from './state';
++import { act, createBattle, legalChoices, replayBattle } from './battle';
++import { playBattle } from './policies';
+ import { exportSave, importSave, saveChecksum } from './save';
+ import { enterNode, startRun } from './run';
++import { clone } from '../internal';
++import { ENEMIES, ENEMY_BY_ID } from './catalog';
++import type { BattleSetup } from './contract';
++
++// Independently fixed launch values exercise imports after catalogue tuning.
++const launchStats: NonNullable<BattleSetup['enemyStats']> = {
++  'button-guard': { hp: 210, attack: 48, defense: 25 },
++  'sock-skipper': { hp: 165, attack: 54, defense: 8 },
++  'spool-ram': { hp: 300, attack: 74, defense: 16 },
++  'needle-moth': { hp: 155, attack: 43, defense: 6 },
++  'teacup-healer': { hp: 180, attack: 35, defense: 10 },
++  'kettle-knight': { hp: 340, attack: 62, defense: 35 },
++  'yarn-giant': { hp: 820, attack: 80, defense: 22 },
++  'binding-thread': { hp: 90, attack: 25, defense: 0 },
++  'practice-cushion': { hp: 230, attack: 14, defense: 0 },
++  'pollen-scout': { hp: 270, attack: 54, defense: 10 },
++  'rain-spool': { hp: 1050, attack: 85, defense: 24 },
++  'crumb-sentinel': { hp: 360, attack: 68, defense: 22 },
++  'pantry-crown': { hp: 1220, attack: 92, defense: 25 },
++};
+ 
+ it('round trips account, equipment, settings and an active battle', () => {
+   let state = createDepthAccount(42, 1000);
+@@ -22,10 +44,96 @@ it('migrates a 0.4 account while preserving currencies, items, levels and card i
+   const legacy = createStarterAccount(18);
+   legacy.cards[0]!.level = 4;
+   const next = importSave(JSON.stringify(legacy), 1234);
+-  expect(next.version).toBe('0.5.0');
++  expect(next.version).toBe('0.7.0');
+   expect(next.account.currencies).toEqual(legacy.currencies);
+   expect(next.account.cards).toEqual(legacy.cards);
+   expect(next.gear).toHaveLength(legacy.inventory.items.length);
+   expect(next.idle.lastAt).toBe(1234);
+   expect(importSave(exportSave(next))).toEqual(next);
+ });
++
++it('migrates a 0.5 save with a partially played three-skill battle and recorded replay', () => {
++  let state = startRun(createDepthAccount(42), 1, 42).state;
++  state = enterNode(state, '0-0').state;
++  const battle = createBattle({ ...state.lastBattle!, enemyStats: launchStats });
++  state.run!.battle = battle;
++  state.lastBattle = clone(battle.initial);
++  act(battle, legalChoices(battle)[0]!);
++  state.lastChoices = [...battle.choices];
++  for (const card of state.account.cards) card.level = 6;
++  const old = JSON.parse(JSON.stringify(state));
++  old.version = '0.5.0';
++  old.run.battle.version = '0.5.0';
++  delete old.run.battle.initial.enemyStats;
++  delete old.lastBattle.enemyStats;
++  const payload = JSON.stringify(old);
++  const next = importSave(`THC5.${saveChecksum(payload)}.${payload}`);
++  expect(next).toEqual(state);
++  expect(next.run!.battle!.actors.filter(actor => actor.side === 'party').every(actor => actor.skills.length === 3)).toBe(true);
++  expect(replayBattle(next.lastBattle!, next.lastChoices)).toEqual(battle);
++  expect(battleCats(next).every(cat => cat.skills.length === 4)).toBe(true);
++  expect(importSave(exportSave(next))).toEqual(next);
++});
++
++it('round trips a four-skill encounter without replacing its pending actions', () => {
++  let state = createDepthAccount(31);
++  for (const card of state.account.cards) card.stars = 3;
++  state = enterNode(startRun(state, 1, 31).state, '0-0').state;
++  expect(state.run!.battle!.initial.cats.every(cat => cat.skills.length === 4)).toBe(true);
++  expect(importSave(exportSave(state))).toEqual(state);
++  expect(createBattle(state.run!.battle!.initial)).toEqual(state.run!.battle);
++});
++
++for (const version of ['0.5.0', '0.6.0']) it(`preserves ${version} active battles, replays and later summons`, () => {
++  const state = startRun(createDepthAccount(42), 1, 42).state;
++  const cats = battleCats(state).map(cat => ({ ...cat, stats: { ...cat.stats, hp: 10000, attack: 1 } }));
++  const battle = createBattle({ seed: 42, chapter: 2, cats, enemies: ['pollen-scout'], enemyStats: launchStats });
++  act(battle, legalChoices(battle)[0]!);
++  state.run!.battle = battle;
++  state.lastBattle = clone(battle.initial);
++  state.lastChoices = [...battle.choices];
++  const old = JSON.parse(JSON.stringify(state));
++  old.version = version;
++  old.run.battle.version = version;
++  delete old.lastBattle.enemyStats;
++  delete old.run.battle.initial.enemyStats;
++  const payload = JSON.stringify(old);
++  const next = importSave(`THC${version === '0.5.0' ? '5' : '6'}.${saveChecksum(payload)}.${payload}`);
++  expect(next).toEqual(state);
++  expect(replayBattle(next.lastBattle!, next.lastChoices)).toEqual(battle);
++  const expected = playBattle(clone(battle), 'auto');
++  const original = { ...ENEMY_BY_ID['binding-thread']! };
++  try {
++    Object.assign(ENEMY_BY_ID['binding-thread']!, { hp: 9999, attack: 999, defense: 999 });
++    const continued = playBattle(next.run!.battle!, 'auto');
++    expect(continued.log.some(event => event.kind === 'summon')).toBe(true);
++    expect(continued).toEqual(expected);
++    expect(replayBattle(next.lastBattle!, continued.choices)).toEqual(expected);
++  } finally { Object.assign(ENEMY_BY_ID['binding-thread']!, original); }
++});
++
++it('snapshots current enemy stats for new battles and keeps replays independent of catalogue edits', () => {
++  const state = enterNode(startRun(createDepthAccount(42), 1, 42).state, '0-0').state;
++  const initial = clone(state.run!.battle!);
++  expect(state.lastBattle).toEqual(initial.initial);
++  for (const enemy of ENEMIES) expect(initial.initial.enemyStats![enemy.id])
++    .toEqual({ hp: enemy.hp, attack: enemy.attack, defense: enemy.defense });
++  const expected = playBattle(clone(initial), 'auto');
++  const originals = ENEMIES.map(enemy => ({ ...enemy }));
++  try {
++    for (const enemy of ENEMIES) Object.assign(enemy, { hp: 9999, attack: 999, defense: 999 });
++    expect(replayBattle(initial.initial, expected.choices)).toEqual(expected);
++    const fresh = createBattle({ ...initial.initial, enemyStats: undefined });
++    expect(fresh.actors.find(actor => actor.side === 'enemy')!.maxHp).toBe(9999);
++  } finally { ENEMIES.forEach((enemy, index) => Object.assign(enemy, originals[index])); }
++});
++
++for (const invalid of [undefined, null, {}, { 'button-guard': { hp: 0, attack: 1, defense: 0 } }]) {
++  it(`rejects an incomplete current enemy snapshot ${JSON.stringify(invalid)}`, () => {
++    const state = enterNode(startRun(createDepthAccount(42), 1, 42).state, '0-0').state;
++    const value = JSON.parse(JSON.stringify(state));
++    value.run.battle.initial.enemyStats = invalid;
++    const payload = JSON.stringify(value);
++    expect(() => importSave(`THC7.${saveChecksum(payload)}.${payload}`)).toThrow('structure');
++  });
++}
+diff --git a/packages/game-rules/src/cardrpg/depth/save.ts b/packages/game-rules/src/cardrpg/depth/save.ts
+index 5f338feb..aaf94a03 100644
+--- a/packages/game-rules/src/cardrpg/depth/save.ts
++++ b/packages/game-rules/src/cardrpg/depth/save.ts
+@@ -1,11 +1,28 @@
+-import type { AccountState } from '../contract';
++import { EQUIPMENT_SLOTS, type AccountState, type Slot } from '../contract';
+ import { clone } from '../internal';
+ import { createStarterAccount } from '../state';
+-import { CAT_BY_ID, SKILLS } from './catalog';
+-import { CONTRACT_VERSION, type DepthAccount } from './contract';
++import { CAT_BY_ID, ENEMY_BY_ID, SKILLS } from './catalog';
++import { CONTRACT_VERSION, type BattleSetup, type DepthAccount } from './contract';
+ import { GEAR_BY_ID, initializeEquipment } from './equipment';
+ import { createDepthAccount } from './state';
+ 
++// Enemy catalogue used by 0.5 and 0.6 save codes. Keep these migration values fixed.
++const legacyEnemyStats: NonNullable<BattleSetup['enemyStats']> = {
++  'button-guard': { hp: 210, attack: 48, defense: 25 },
++  'sock-skipper': { hp: 165, attack: 54, defense: 8 },
++  'spool-ram': { hp: 300, attack: 74, defense: 16 },
++  'needle-moth': { hp: 155, attack: 43, defense: 6 },
++  'teacup-healer': { hp: 180, attack: 35, defense: 10 },
++  'kettle-knight': { hp: 340, attack: 62, defense: 35 },
++  'yarn-giant': { hp: 820, attack: 80, defense: 22 },
++  'binding-thread': { hp: 90, attack: 25, defense: 0 },
++  'practice-cushion': { hp: 230, attack: 14, defense: 0 },
++  'pollen-scout': { hp: 270, attack: 54, defense: 10 },
++  'rain-spool': { hp: 1050, attack: 85, defense: 24 },
++  'crumb-sentinel': { hp: 360, attack: 68, defense: 22 },
++  'pantry-crown': { hp: 1220, attack: 92, defense: 25 },
++};
++
+ export const SAVE_KEY = 'taskbar-hero-cardrpg-depth-v1';
+ /** Detects accidental copy/paste corruption. Local saves are user-editable. */
+ export function saveChecksum(text: string): string {
+@@ -64,9 +81,21 @@ export function migrateAccount(legacy: AccountState, now = 0): DepthAccount {
+   state.tutorial = 3;
+   return state;
+ }
++function validateEnemySnapshot(value: unknown): void {
++  if (!record(value) || !record(value.enemyStats)) fail();
++  for (const id of Object.keys(ENEMY_BY_ID)) {
++    const stats = value.enemyStats[id];
++    if (!record(stats) || !Number.isInteger(stats.hp) || Number(stats.hp) <= 0
++      || !Number.isInteger(stats.attack) || Number(stats.attack) <= 0
++      || !Number.isInteger(stats.defense) || Number(stats.defense) < 0) fail();
++  }
++}
+ export function validateDepth(value: unknown): asserts value is DepthAccount {
+   safeTree(value);
+-  shape(value, createDepthAccount());
++  const example = createDepthAccount();
++  // Equipment is a dynamic map. Valid unequips and transfers remove starter keys.
++  example.equipment = {};
++  shape(value, example);
+   const state = value as DepthAccount;
+   validateAccount(state.account);
+   if (state.version !== CONTRACT_VERSION || state.team.length !== 3 || new Set(state.team).size !== 3) fail();
+@@ -80,6 +109,17 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
+     if (!GEAR_BY_ID[gear.templateId] || !Number.isInteger(gear.enhancement) || gear.enhancement < 0
+       || gear.enhancement > 12 || !Array.isArray(gear.affixes) || !record(gear.rolls)) fail();
+   }
++  const equipped = new Set<string>();
++  for (const [cardId, loadout] of Object.entries(state.equipment)) {
++    if (!state.account.cards.some(card => card.cardId === cardId) || !record(loadout)) fail();
++    for (const [slot, instanceId] of Object.entries(loadout)) {
++      if (!EQUIPMENT_SLOTS.includes(slot as Slot) || typeof instanceId !== 'string'
++        || equipped.has(instanceId)) fail();
++      const item = state.gear.find(gear => gear.id === instanceId);
++      if (!item || GEAR_BY_ID[item.templateId]!.slot !== slot) fail();
++      equipped.add(instanceId);
++    }
++  }
+   if (state.run) {
+     const run = state.run;
+     if (!record(run) || !Array.isArray(run.nodes) || !Array.isArray(run.visited) || !Array.isArray(run.rewardChoices)
+@@ -89,12 +129,25 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
+     if (run.battle && (!Array.isArray(run.battle.actors) || !Array.isArray(run.battle.queue)
+       || !Array.isArray(run.battle.log) || !Array.isArray(run.battle.choices) || !record(run.battle.initial))) fail();
+   }
++  if (state.lastBattle) validateEnemySnapshot(state.lastBattle);
++  if (state.run?.battle) validateEnemySnapshot(state.run.battle.initial);
+   if (![1, 2, 4].includes(state.settings.speed) || !['low', 'medium', 'high'].includes(state.settings.quality)) fail();
+ }
+ export function exportSave(state: DepthAccount): string {
+   validateDepth(state);
+   const payload = JSON.stringify(state);
+-  return `THC5.${saveChecksum(payload)}.${payload}`;
++  return `THC7.${saveChecksum(payload)}.${payload}`;
++}
++function migrateDepth(value: unknown): unknown {
++  if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
++  const next = clone(value);
++  next.version = CONTRACT_VERSION;
++  if (record(next.lastBattle)) next.lastBattle.enemyStats = clone(legacyEnemyStats);
++  if (record(next.run) && record(next.run.battle)) {
++    next.run.battle.version = CONTRACT_VERSION;
++    if (record(next.run.battle.initial)) next.run.battle.initial.enemyStats = clone(legacyEnemyStats);
++  }
++  return next;
+ }
+ export function importSave(code: string, now = 0): DepthAccount {
+   const trimmed = code.trim();
+@@ -105,9 +158,11 @@ export function importSave(code: string, now = 0): DepthAccount {
+     validateAccount(legacy);
+     return migrateAccount(legacy, now);
+   }
+-  const match = /^THC5\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+-  if (!match || saveChecksum(match[2]!) !== match[1]) throw new Error('Save checksum failed. Copy the complete code again.');
+-  const state: unknown = JSON.parse(match[2]!);
++  const match = /^THC([567])\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
++  if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
++  const parsed: unknown = JSON.parse(match[3]!);
++  safeTree(parsed);
++  const state = match[1] === '7' ? parsed : migrateDepth(parsed);
+   validateDepth(state);
+   return state;
+ }
+diff --git a/packages/game-rules/src/cardrpg/depth/state.ts b/packages/game-rules/src/cardrpg/depth/state.ts
+index db474603..33c41460 100644
+--- a/packages/game-rules/src/cardrpg/depth/state.ts
++++ b/packages/game-rules/src/cardrpg/depth/state.ts
+@@ -24,6 +24,10 @@ export function availableSkills(state: DepthAccount, id: string) {
+   const owned=state.account.cards.find(c=>c.cardId===id);
+   return CAT_BY_ID[id]?.skills.filter(s=>owned&&(owned.level>=s.unlockLevel||owned.stars>=s.unlockStars))??[];
+ }
++/** New encounters derive their complete kit from progression, including old accounts. */
++export function defaultSkills(state: DepthAccount, id: string): string[] {
++  return availableSkills(state, id).map(skill => skill.id);
++}
+ export function configureTeam(state: DepthAccount, team: string[], rows: Record<string,Row>, skills: Record<string,string[]>): RuleResult<DepthAccount> {
+   return transactDepth(state,s=>{
+     requireHome(s);
+@@ -61,6 +65,6 @@ export function battleCats(state: DepthAccount) {
+     const relic = id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
+       ? RELIC_EFFECTS.find(r => r.id === state.selectedRelic) : undefined;
+     if (relic) bonuses[relic.bonus] = (bonuses[relic.bonus] ?? 0) + relic.value;
+-    return {id,stats:depthStats(state,id),skills:[...state.skills[id]!],row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
++    return {id,stats:depthStats(state,id),skills:defaultSkills(state,id),row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
+   });
+ }
