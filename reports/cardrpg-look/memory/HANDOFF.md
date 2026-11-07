@@ -1,3 +1,134 @@
+# Active L4 publication — 2026-11-07T16:44:14.887169+00:00
+
+User resumed Lane B; Docker question answered: B uses native Mac Node/pnpm/Blender/Playwright. Docker Desktop is running independently; latest docker ps had no running containers. No CUA/subagents/generative calls/shared or A-worktree edits.
+
+ONE phase coordinator11183/session24638 COMPLETED successfully. Do not rerun. Runtime b5e7c16c, artifactfb56cd44/23,995,962bytes; audit1580inputs. Full67effects/2211pairs, all19contact sheets personally inspected and four-role review written.0threshold/face/overdraw/empty/errors. Strict1162/2211pair regressions worst-.122392341 MISS. GPU6/cancel6/post36/cameras9/AB6 pass;370resources released exactly once/0newprograms. Allfivegates1749web/421E2E pass. Cold7nativeMAX50.1/CPU4MAX183.4ms MISS;24castsMAX16.8/100%≤20/errors0. Startup11JS/3522593bytes/686modules/0Three-model; exactparity+93 MISS. Opening183.4ms is pre-Hub/layout; see cold-profile.json. No totalGPUbyte claim from legacyestimatedGpuBytes.
+
+L4-CHECKPOINT/mainreport/STATE/PROGRESS updated. Portable evidence inventory built; includes sheets/metrics/logs/traces/sourceatlasrounds, deliberately omits~4.8GBrawframes retained unchanged locally. Stage only /tmp/cardrpg-look-l4-stage-files.txt + explicit owned reports/docs/memory; never git add all raw screenshots. Publication/lease-reconcile/draft/ledger/sync still pending at this header.
+
+L1/L2/L3 rebased tips8579a805/60b78d4d/3a10f569, mappingmemory/l4-rebase.json; old remote refs914a991f/82cf6d5c/9b1a04a4 atlastcheck. Use exact leases. NewL4source b5e7c16c. MainacceptedA3stilldaba7d7c; A4P1 separate. LatestBsync d9c15aa3 acknowledgesA event schema/fixture request; no A4 runtime adopted. Read A latest beforepublication.
+
+L6/L5 scratch preserved outside phase PRs on codex/look-l6-prep-wip-2026-11-07 at776db6119a939e0bf0b6374e1b5af919add88c09. No L6 renders/export/integration yet. Icon scratch now bounds-protects camera. Need claimL6 thenpromotetools and render12portraits/48icons/4plates with2+reviewrounds; heroes3rounds. Existing translucent PNG transport remains becausebrowserPNG/WebPpremultiplication differs. L4only4038bytesbelow24MB; L6size needs actualevidence. ThenL5→L7. Fullmatrix/lifecycle20/CPU4BalancedLow unrun.
+
+---
+
+# Active L4 phase validation — 2026-11-07T16:17:50.930586+00:00
+
+User resumed Lane B and asked whether Docker is used. Answered accurately: our Lane B pipeline is native Mac Node/pnpm/Blender/Playwright; Docker Desktop now runs an unrelated lifemate-v16-cpu-production-03 container. Do not stop unrelated processes. No subagents/generative calls/A-worktree or shared edits.
+
+Material6 completed before this continuation; all7 sheets/16recipes personally inspected now, REVIEW.md added. Paper curved/cans rounded/flame shell reduced, but broad paper/late pale shell and pale cans remain limitations. All6GPU/6cancel pass,370resources disposed once/0newprograms;16recipes min.730769/0threshold-face-overdraw-empty-error offenders,77/120 strict pair regressions remain MISS. Type/lint/17focused pass. Older material4/5 jobs completed; never rerun them.
+
+Source committed791d76c7 then own11commit chain rebased onto acceptedA daba7d7c. New source b5e7c16c, L3tip3a10f569, L2tip60b78d4d, L1tip8579a805; memory/l4-rebase.json maps all commits. Owned runtime bytes identical across rebase. Backups codex/look-l4-before-a3-rebase-2026-11-07 and codex/look-l4-report-wip-2026-11-07; tracked report stash applied and retained. Published branch refs NOT moved yet; use exact leases only after fresh gates.
+
+ONE phase coordinator PID11183/session24638: node reports/cardrpg-look/memory/l4-finish-checks.mjs > /tmp/cardrpg-look-l4-finish.log. Build fb56cd44/23,995,962bytes from clean runtime b5e7c16c completed. Child effect-series11599 awaiting shared lock behind A at last check. It runs full67captures→metrics→functional/post/GPU/cancel→fivegates→cold7/24casts→audit. Do not duplicate or change runtime/tool/asset source while it runs. Phase output validation/l4. Recheck actual process state; IDs may have exited.
+
+Remaining: review phase captures, resolve actual failures, audit/commit compact evidence and report, lease-reconcile L1/L2/L3 refs, draftL4/ledger/sync. Raw effect PNGs now3.9GiB retained local; do not blindly stage all. Current evidence includes131MB contact images/81MB metric PNGs/34MB JSON; choose transparent selective portable evidence, retain originals. L6 scratch only (icons.py/export-icon-forms.mjs/compositions/PLAN), then L6→L5→L7. Final matrix/lifecycle20/CPU4 BalancedLow unrun.
+
+---
+
+# Active L4 continuation — 2026-11-07T15:53Z
+
+ONE material4 coordinator93505/session27719 still running. Immutable282e67a5/24,001,542bytes uses R3; GPU6/cancel6 PASS369resources once/0newprograms/0errors. Captures42/67 at last check; log/tmp/cardrpg-look-l4-material4.log. No rerun yet. Personally viewed3earlyhero sheets all12skills plus Clover4/Soot3GPU captures; REVIEW.md created, remaining25+allrest review pending.
+
+Lossless build coordinator95012/session66879 COMPLETED before the latest runtime edits. Owned build.mjs chooses smaller gzip9 streams atmemLevel8or9 per payload. Real proof: all207decodedpayloads and HTMLshell exactly match material4, saving7160bytes; current docs57b30c3c/23,994,382bytes. Receipt rounds/effects/round-4-material/lossless-packing/checks.json; saved/tmp/cardrpg-look-l4-lossless.html. Initial mem9-only probe made bytes worse; preserved. No quality reduction/gate raise.
+
+CURRENT SOURCE AFTER material4: actual12hero review exposed hollow lanterns and cream flames. look-vfx.ts now adds original24-segment lathed lantern body and warm rib-lit finish5, flame chroma multiplier(1,.48,.18). Other masks/timing/pools unchanged. ONE focused follow-up running/queued: session23610, log/tmp/cardrpg-look-l4-focused7.log. Must verify then build a separate material5 pilot, GPU/cancel and targeted12hero captures (plus relevant rest) before final source. Do not claim current docs include these newer changes. Keep source stable while own build/checks run.
+
+No R3 renderer/packer remains; all216frames reviewed/packed. Main acceptedA3 daba7d7c still phase rebase target; A4 separate. Sync1edac8ea last B publication. No subagents/modelcalls/sharededits. L4 phasefinalgates/rebase/audit/publish still open, thenL6/L5/L7. Strict pair regressions need material4 metrics; old1015MISS remains. Raw PNGs retained locally; stage selectively, not2.6GiB blindly.
+
+---
+
+# Active L4 continuation — 2026-11-07T15:46Z
+
+R3 renderer65141 and pack71847 have COMPLETED; no rerender. All216images/hash/border checks pass,1,064,346bytes. Personally viewed ALL6full36frame atlascontact sheets; review at rounds/flipbooks/round-3/REVIEW.md, packed.reviewed=true means inspected, NOT visualacceptance. Smoke/steam sparse,flame separated lobes remain concerns for runtime. Blender script unchanged1577ff08.
+
+Preflight763ef7bd/23,720,242bytes withR2atlas completed:6GPU/0newprograms/stable89texture574geometry49program/369resources once/0errors;6cancel resources158/162/216/297/297/148 once. Actually viewedMochiHigh,CloverHigh,SootLow. Greenhouse too opaque/hard face holes: current look-vfx.ts nowglassalpha.16+rim.3/bodycolour.78 andfacealpha smooth outside unchanged radius1to squared1.6. New type/lint/17focused PASS, memory/l4-focused-material4-glass.json; old receipts preserved.
+
+ONE material4 coordinator launched: session27719, script memory/l4-material4.mjs, log/tmp/cardrpg-look-l4-material4.log. Output rounds/effects/round-4-material. It waits sharedlock then builds→GPU6→cancel6→67captures→metrics. Check process/log; do not duplicate. It includes R3atlases/currentglasssource. Need inspect actual67sheets then fix failures. Source not committed/rebased/phaseaccepted yet.
+
+Sync1edac8ea published preflight/scheduling progress. A15:38 G0checkpoint65cbfa75 is separateA4tooling; main acceptedA3 daba7d7c remains reconciliationtarget. A G0 now advertises~2min slices/handoffs. No Aprocess/worktree/shared edits; nativeMac noDocker; nosubagents/modelcalls. Remaining finishL4review→commit/rebase/gates/perf/audit/publish, thenL6→L5→L7. RawPNG originals retained; do not bulkstage2.6GiB.
+
+---
+
+# Active L4 continuation — 2026-11-07T15:36Z
+
+User asks whether Docker is used; answered no, native Mac Node/pnpm/Blender/Playwright, no Docker process observed. Continued earlier Lane B request. Original prompt/RULES/STATE/outboxes read; no subagents/model calls/shared edits.
+- Existing render65141 and pack71847 are alive, not restarted.108/216 R3 frames (smoke/steam/flame) individually SHA-verified with script1577ff08; remaining sparkle/yarn/ribbon still R2. Do not edit flipbooks.py during rendering.
+- Existing preflight87615 (started by prior context, not in older handoff) now acquired the lock15:36:10 after A heldout shard finished. Script memory/l4-preflight.mjs; log/tmp/cardrpg-look-l4-preflight.log; out rounds/effects/round-4-preflight. It builds current runtime with the old packed atlases, then GPU6/cancellation6. Do not duplicate. Source matches all7 focused hashes;17tests/type/lint PASS retained.
+- A15:30ANSWER says coordinator76447 paused after its child shard to leave several B windows. Actual child86503 completed by15:36. No A process touched.
+- Next inspect preflight actual result/fix runtime failures; finish existing R3pack, personally view6atlases, markreviewed, launch material4 exactly once for GPU/cancel/67captures+metrics. Then art review/fixes, phase-boundary rebase acceptedA daba7d7c, full L4gates/perf/audit/publication; L6/L5/L7 remain open. Raw evidence originals retained; archive policy not yet decided.
+
+---
+
+# Active L4 continuation — 2026-11-07T15:20Z
+
+Completion update 2026-11-07T15:28:19.907353+00:00: web type/lint and17focused PASS on current runtime source, receipt memory/l4-focused-material4.json. V1 actual144-image pack73,368,602→54,873,067bytes; improved V2 pairs real/without and spatially filters residuals, actual14473,368,602→27,957,247bytes with all decoded pixels verified. V1 script preserved; independent tiny V1/V2 restoration including hidden RGB passes in memory/l4-evidence-codec-v2-probe.json. V2probe session90104 completed. Renderer65141 now108/216 (smoke/steam/flame36each), sparkle/yarn/ribbon remain. A gear-heldout shard1 owns lock atlastcheck. Scheduling request published sync3c918f2b, count/timestamp correction21b71e16; readappendonly entries beforephaseend. Partial R3flame sample sheet viewed too; orange now but still detached upper lobes; all6 fullatlas review pending. No material4 job launched.
+
+User resumed Lane B and asked whether Docker is used. Answered: native Mac Node/pnpm, Blender, Playwright; no Docker process observed. Keep working; no subagents/generative calls/shared/A-worktree edits. Original prompt/RULES/STATE/outboxes read this turn.
+- Existing ONLY R3 render65141, pack71847, focused78078 (session16119, focused5.log) and evidence-probe80450 were the existing jobs (see completion update below). Render paused after flame18–23. A browser70863 completed; gear-shard77647 now holds lock. Its owner.startedAt14:55 is pre-wait, not actual acquisition (~15:13). Do not misreport a24min lock or interrupt A. No duplicate B jobs.
+- Current unvalidated source now also corrects instance inverse-scale normals and direct-Low tone mapping/sRGB before premultiplication in look-vfx.ts. Added actual lathed cup, rounded teapot and bevelled greenhouse surfaces, keeping original vertices/pools/timing. Prior material3 Soot sheet actually viewed again: outline-only ceramic shapes were inadequate.
+- Found source-level legacy double ownership: scene's ownSceneResources registered SpellVfx pools that SpellVfx.dispose also releases. scene traversal now excludes module-owned effect subtrees; vfx.ts disposes unused emblem placeholders, disposes the replaced placeholder during warm(), and guards repeated dispose. Three meaningful regression cases in look-vfx.test.ts (cancelled/prepared/warmed). Existing focused78078 has not run yet and will see these changes. No runtime proof yet.
+- Extra scope CLAIM published sync2a999fa4 for vfx.ts/scene cleanup. L4 GPU harness now counts scene-owned warmup resources + legacy spell pools + L4 effects; cancellation harness demands exactly once/zero duplicates. Audit updated. All JS syntax/diff checks pass; TS/lint/17focused expected pending (verify actual count).
+- Partial source-hash-checked R3 smoke/steam 12sample sheet actually viewed; notes memory/l4-prep/ROUND3-PARTIAL-REVIEW.md. Smoke neutral/clearer; steam still sparse. NOT full6atlas review. Do not mark packed.reviewed until all6 are inspected; do not edit Blender script midseries.
+- Next wait existing jobs; verify focused; finish R3pack→view6atlases→markreviewed→run memory/l4-material4.mjs once (build→GPU→cancel→67captures→metrics). Correct real failures, reconcile acceptedA daba7d7c at phase boundary, then cleanL4gates/perf/audit/publish. L6 scratch remains unrendered/unintegrated. L4 raw evidence packing probe queued; preserve raw screenshots.
+
+---
+
+# Active L4 continuation — 2026-11-07T14:58:22.056543+00:00
+
+User resumed Lane B. Most recent user question asked whether Docker is in use: answered no; local Node/pnpm, Blender, Playwright on this Mac. Keep working. RULES/STATE/original brief/A outbox reread; no subagents/generative calls/shared edits.
+
+- Existing R3 Blender coordinator PID65141 and pack coordinator71847 remain the ONLY render/pack jobs. Source hash1577ff08; last observed flame18–23 complete. Do not edit flipbooks.py mid-render. Logs /tmp/cardrpg-look-l4-round3-render.log and -round3-pack.log. Check real process state.
+- Material3 capture coordinator65427 completed all67. Metrics now generated in rounds/effects/round-3-material: min distance.681068193; no threshold/face/overdraw/empty/error offenders; strict numeric regressions1015/worst−.065656477 remain a MISS. Viewed Marigold4, all3 passive sheets, two16-enemy sheets; REVIEW.md updated. These captures still use R2 atlases/older material3 shader.
+- GPU diagnostic73602 completed6rows. Extra Low programs are original_felt_baked guard surfaces and button-guard MeshStandardMaterial utensils; no new effect shader programs. Cause: warm GLB clones did not receive actual CardSurfaces/utensils. Current scene.ts now prepares Look warm clones with real material variants/utensils, retaining resources to teardown. Not browser-validated. l4-check/audit now require newPrograms empty.
+- Previous focused coordinator72446 passed type/lint/14tests before the warmup fix. ONE follow-up /tmp/cardrpg-look-l4-focused.mjs launched, session16119, log /tmp/cardrpg-look-l4-focused5.log. It waits for shared lock; do not duplicate.
+- Newest shader source includes bent-paper normals, narrow HDR ribbon core, glass rim energy, ceramic/metal finishes, flame max-channel emission. Need material4 with R3 atlases, then actual67review/GPU/cancel checks.
+- Sync HEADS-UP67455901 published; A acknowledged only through existing A4-G0 claim at this point. Latest accepted A remains daba7d7c; own phase chain still9b1a04a4; reconcile at phase boundary.
+- Raw effect PNG evidence currently2.6GiB local. Preserve raw data; choose compact portable evidence packaging before phase publication instead of accidentally staging every raw frame. Contact sheets and immutable raw JSON remain available. No changes to raw metrics/thresholds to hide regressions.
+- Next finish R3pack→view6 atlases→build material4→67captures+GPU/cancel→review/correct→source commit/rebase acceptedA→clean phase gates/cold7/24casts/audit→L4 draft/ledger/sync. L6scratch only, then L6→L5→L7 and one final matrix/lifecycle/CPU4 BalancedLow.
+
+---
+
+# Active L4 continuation — 2026-11-07T14:43:06.786200+00:00
+
+User resumes original laneB; fullprompt/rules/state/outboxes reread. Ownbranch ai/codex-cardrpg-look-l4-2026-11-07 at9b1a04a4, acceptedA fetched daba7d7c pendingphaseboundaryrebase. No subagents/modelcalls/shared/rulesedits/mainpush/merge/deploy. A4 G0 currentlyuses sharedlock; do notinterrupt.
+- ONE R3Blender coordinatorPID65141 stillrunning;216frames/sixlockwindows. Log/tmp/cardrpg-look-l4-round3-render.log. Smoke/steam complete, flamefirst6 done atlastcheck. Do not edittools/blender/flipbooks.py untilfinished. Wait→validate216sourcehashes→pack→archive coordinator memory/l4-round3-pack.mjs session84938 (do notlaunchduplicate), log/tmp/cardrpg-look-l4-round3-pack.log. Mustviewall6packedatlaseswhenready.
+- Material3 artifact/tmp/cardrpg-look-l4-material3.html 23,718,990bytes usesR2atlases. 67capture coordinatorPID65427 has66done, lastmarigold4waitinglock. Log/tmp/cardrpg-look-l4-material3-review.log; outputrounds/effects/round-3-material. Aftercomplete runmetrics/effect-review.py withbefore-all, viewmarigold4 andremainingenemy/passives; do notoverwritefirstfailedGPUreceipt.
+- Material3GPU6light/tierpass,82resourcesreleasedEXACTLYONCE/errors0 aftercorrectharness waitsasyncs.warming. Firstfailure82/0/0duplicates washarnessreadingbeforedeferredcleanup, NOTruntimeleak; GPUretryreceiptretained. Floor183–506pixels,facefractions<1%,stablewithin-tierGPUcounts. L4loadingharness nowdetectsactualatlasGPUupload forwarmboundary; notrunyet.
+- Newpossibleconcern: firstLowtier raisedprograms49→51 (within-tierstable). l4-checknowrecordsnewPrograms+matchingmaterial/objectnames beforefirstrender. Diagnosticqueued withunchangedmaterial3 artifact, outgpu-programs/log/tmp/cardrpg-look-l4-gpu-programs.log. Investigate; no claimallprogramsprecompileduntilresolved.
+- Personallyviewed3hero1200x952sheets and3ninecats1440x648 groups(.76); marigold4blank/unrevieweduntilcapture. Detailed5flaws/nextfixeseach inround-3-material/REVIEW.md. CurrentSOURCEAFTERmaterial3: paperbentnormals,ribbonnarrowHDRcore,glassFresnelenergy,ceramicglaze/metalhighlightfinishes;scenegeometryestimateincludesseparateeffectroot. NOTbrowservalidatedyet.
+- Focusedtype/lint/14testcoordinator/tmp/cardrpg-look-l4-focused.mjs PID72446/session8262 waitinglock atlastcheck,log/tmp/cardrpg-look-l4-focused4.log. Newsourceeditscompletedbeforeitstartsatlastcheck; verifylog/actualstatus.
+- L6scratchPLAN.md and48iconcompositionchoices inmemory/l6-prep ONLY, noassets/render/sourceintegration/claim. KeepoutofL4runtimeclaims.
+- Nextfinishpilots/R3pack→view→buildmaterial4/capture67→correctactualfailures→sourcecommit/rebaseownchainontoAaccepted→cleanbuild/fivegates/functionals/post/cancellation/flagoff/cold7/24casts/audit→publishL4draft+ledger+sync. No duplicateL3checks orfinalmatrix. RemainingL6→L5→L7/fullmatrix/lifecycle20/CPU4BalancedLow.
+
+---
+
+# Active L4 continuation — 2026-11-07T14:29:28.558789+00:00
+
+User explicitly resumed original lane B. Read RULES, STATE, prompt, A/B outboxes. Latest accepted A is daba7d7c (14:14 checkpoint); current L4 branch still based9b1a04a4/acceptedA4d525a8a. Reconcile at phase boundary before final L4gates/publish. No subagents/generativecalls/sharededits/merge/deploy.
+- Old author57138/58565 completed. Round1 six atlases1128882bytes and all source/script preserved rounds/flipbooks/round-1. Round2 six853646bytes preserved round-2. Personally viewed all6 each round, source REVIEWs written. R2 volumes too faint; successful six-frame flame3probe inspected (orange now). Current tools/blender/flipbooks.py is R3 source; DO NOT edit during render.
+- ONE Blender R3coordinator session56598 log/tmp/cardrpg-look-l4-round3-render.log,216frames/six-lockwindows. Check actual PID before any restart. Build material3 session7042 log/tmp/cardrpg-look-l4-material3-build.log uses R2packedatlases; after finish copy to/tmp/cardrpg-look-l4-material3.html and preservebuildreceipt, then capture67IDs from before-all.
+- Before67 captured:31starter+36othercats,merged before-all;2211pairs/min.6030/zero face+overdraw+empty+errors. RuntimeR1 cbbb1bef/24086006,mergedround-1-all:67/min.60446/0thresholdfail/64facefail/peak18/0errors. R1other36 actuallyreviewed3groupimages; reportswritten. Strictnumericpairregressions are reported honestly incomparison.json, not waived.
+- MaterialR2 cd9279fa/24086402:12hero skills/0threshold/4facefail/0errors; all3hero sheets actuallyviewed/reviewed. Separate diagnostic3offendingIDs with lights disabled yields0facefail, isolating pointlights. Runtimecurrent reduces range.85→.42,height.08→.06 and keeps2pooledlights; must validateactualfloorcontribution+faces.
+- Runtimecurrent adds directional fibre/paper/glass/volume finishes, plane/ribbon atlases (original structures retained), depthfade inisolatedeffecttarget, shortimpactlights and impactpost. Effectroot now permanentlyownedbyPost toavoidperframe reparent allocations; Low draws scene theneffectspreservingdepth/autoclear. Scene skipsoldreparentonlyinLook. Cancellationbitmapunitadded;14focusedtests pass, webtype/lint pass prior latestfinishing edits. No finalL4browsergates/perfacceptanceyet.
+- Newownedtools: effect-series/capture-effects (optionaldiagnosticlights), metrics/effect-review.py, merge-effect-reviews.mjs, l4-loading-check.mjs (notrunyet). L4loadingneedsreview warm boundaryprecision. Captureharness thresholdsunmodified. CurrentL4passes are pilots withdirty source; finalneeds sourcecommit/rebase/build/gates/cold7/24casts/audit.
+- Next: waitbuildmaterial3→67runtimecapture; waitR3render→pack→viewall6; resolveface/qualityfailures; finalactualruntime reviews≥3hero/≥2rest,metrics/deliverL4. RemainingL6→L5→L7+finalmatrix/lifecycle/CPU4BalancedLow. No duplicateL3checks.
+
+---
+
+# Active L4 authoring — 2026-11-07T14:12:54.828736+00:00
+
+Continued user-authorized Lane B work. Read RULES, STATE first15, original PROMPT andAOUTBOX. No subagents/generativecalls/sharedrulesedits/merge/deploy.
+- Own checkout /Users/bao/taskbar-hero-cardrpg-look, branch ai/codex-cardrpg-look-l4-2026-11-07 from9b1a04a4. L3 PUBLISHED draft363, ledger2a2fa83e; L1/L2 atomicallylease-rebased914a991f/82cf6d5c; oldrefs preserved aslocalbefore-rebase branches. RemoteL3exact9b1a04a4; noforcemerge.
+- L3exact02ffd9cb/22,578,111bytes remainsdocsindex and/tmp/cardrpg-look-l4-before.html. All1301inputs/fivegates421E2E/1740web +9camera/6AB/36faces/6cancel/7cold/24casts verified. Startup3,522,544/+44 MISS; nativecold33.4/CPU4 133.3 MISS; casts16.8. Completedcoordinator46983 no longer running. No duplicateL3tests.
+- ONE author coordinator57138/session14944 log/tmp/cardrpg-look-l4-author.log: before31 DONE (minimumdistance.7240,0face/overdraw/emptyoffenders), now render-flipbooks child58565→216originalBlenderframes in6framelockwindows→pack. Check actualprocessbefore restart. Currentfilesassets/cardrpg-look/flipbooks/source; donotchangeflipbooks.py midseries, receipts bindscripthash.
+- RuntimeL4 dirty implementation: look-vfx.ts/.test.ts;card-effects.ts;look-post.ts/.test.ts;scene.ts. Existing primitivegeometry retained with appendedtexturedquad/ribbon sameinstance pool96/8calls; sharedface/overdraw controls; premultipliedatlas,depthfadesampling separateeffecttarget, short2lights, impact-centeredpost. Typecheck and12focusedtests pass; NO L4browserbuild/visual/perfacceptance yet. Beware newresource/cancellation/alpha/depth/hotpath checks.
+- Firstsmokecontact actuallyviewed, flaws+fixes inrounds/flipbooks/round-1/REVIEW.md. Too beanlike/noisy/cyan; waitcurrentseriesfinish thenarchivefirstsource/receipts before round2sourcechange. Increase64samples, softenalpha slightly, disperseagelobes, neutralizerim, latefade. Other5families notyetviewed.
+- Newtools promoted from memory/l4-prep intoownedtools, currentlyuncommitted. Captureharness copy preservesoriginalthresholds; nowturnsoff2lights infaceablation, disablesdepthforcanonical/overdraw. Baselinefirst6batch usedbeforeoptionalhooks, sameoldartifact nohooks soequivalent. Capturehighercount onlytargets; finalmatrix remainsL7-only.
+- A latest13:44hasnoacceptedcheckpointbeyond4d525a8a. Bsyncf23006e4 DONE/L4CLAIMpublished. Next finishBlenderfirstpass→viewall6→correctround2→pack/buildactualgame→threehero/twootherreviewrounds+metrics→sourcefreeze/gates+cold/casts/audit. ThenL6→L5→L7; finalmatrix/lifecycle/CPU4BalancedLow open.
+
+---
+
 # Active L3 publication → L4 — 2026-11-07T14:02:33.458295+00:00
 
 User resumed; continue authorized work. Owncheckout/branch unchanged; RULES/PROMPT remain active. No subagents/generativecalls/rules/sharededits/merge/deploy.

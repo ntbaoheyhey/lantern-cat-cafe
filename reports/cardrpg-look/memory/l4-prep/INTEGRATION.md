@@ -49,3 +49,6 @@ close and pooled object cleanup; only final L7 gets exhaustive matrix/lifecycle.
 
 `flipbooks.py` and `pack-flipbooks.py` are syntax-checked drafts only. No Blender
 image, runtime VFX, performance or visual quality has been accepted at this point.
+
+
+2026-11-07 continuation: proposed final coordinator memory/l4-finish-checks.mjs is syntax-checked only, NOT RUN. It requires committed runtime and accepted-A rebase, uses67targets (all48cat skills within starter31+other36), then real functional/GPU/post/cancel/fivegates/cold7/24casts/audit. Personally review resulting sheets before publication; successful automated checks never substitute for visual review.

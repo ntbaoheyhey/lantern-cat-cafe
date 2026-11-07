@@ -1,48 +1,54 @@
-# Báo cáo LOOK — L3 đã kiểm chứng, tiếp tục L4
-Ba mèo Mochi, Soot và Clover đã được dựng lại bằng Blender; ảnh thẻ lấy từ chính mô hình trò chơi.
+# Báo cáo LOOK — checkpoint L4, hình ảnh vẫn cần cải thiện
+Ba mèo Mochi, Soot và Clover đã được dựng lại bằng Blender; ảnh thẻ lấy từ mô hình trò chơi.
 Quán cà phê có cửa sổ đêm, rèm, đèn giấy, cây, đồ gốm, sách, bàn trà và thảm có đường may.
-L3 thêm ánh sáng tạo khối, phản chiếu, bóng tiếp xúc, bloom, bảng màu theo chương và khử răng cưa.
-Hậu kỳ giữ vùng mắt/mặt rõ; 36 mẫu kiểm tra và ba mức chất lượng đã qua trên bản kết hợp hiện tại.
-Đã nhận khung giao diện của Lane A: điều hướng và HUD vẫn hiện ở cả ba kích thước màn hình.
-Sáu lần đổi Look trong trận giữ nguyên tài khoản/trận đấu; sáu trường hợp hủy tải đều dọn tài nguyên đầy đủ.
-Demo22,58MB; năm kiểm tra mã nguồn đã qua,24lượt thi triển đầu/lặp đều đạt tối đa16,8ms, không lỗi.
-Thân Soot còn chìm, lọ trên kệ lặp, chụp đèn thiếu vân; hiệu ứng kỹ năng và phần lớn dàn nhân vật vẫn là bản cũ.
-Điểm bên dưới là tự đánh giá; bộ chân dung/icon đầy đủ và các kiểm tra cuối toàn trò chơi chưa hoàn tất.
+Ánh sáng và hậu kỳ tạo khối, giữ vùng mắt/mặt rõ; HUD vẫn tách khỏi hiệu ứng làm mờ.
+L4 thêm sáu bộ ảnh động gốc, giấy cong, đồ gốm/kính, dải sáng, ánh sáng va chạm và biến dạng nhẹ.
+Đã chụp67 hiệu ứng, xem đủ19 ảnh tổng hợp; không có lỗi trình duyệt hoặc trường hợp vượt ngưỡng che mặt.
+Năm kiểm tra mã nguồn đều qua;24 lượt thi triển đầu/lặp đạt tối đa16,8ms; demo23.995.962byte.
+Chưa đạt:1.162 cặp có điểm phân biệt giảm, khởi động tăng93byte, tải lạnh CPU×4 có đỉnh183,4ms.
+Mái giấy/bình tưới còn nhạt, đèn lồng trong suốt lộ lớp mặt; chưa đạt trọn mục tiêu chất lượng hình ảnh.
+Điểm bên dưới là tự đánh giá. L6 chân dung/icon, L5 dàn nhân vật và kiểm tra cuối L7 vẫn còn việc.
 
-REFERENCE: docs/cardrpg-look/index.html; docs/cardrpg-look/slice.html; reports/cardrpg-look/L3-CHECKPOINT.md; reports/cardrpg-look/validation/l3
+REFERENCE: docs/cardrpg-look/index.html; reports/cardrpg-look/L4-CHECKPOINT.md; reports/cardrpg-look/validation/l4/checkpoint-audit.json; reports/cardrpg-look/validation/l4/REVIEW.md
 
-| User complaint | Current L3 | Self-grade /10 | Evidence / limitation |
+Runtime sạch `b5e7c16c` trên checkpoint A3 `daba7d7c`; demo SHA256 `fb56cd44b7472b82670bfd8e9712259c036e2aa49d1911c139c4fe2b2641f494`. Audit xác nhận1.580 đầu vào. Nhánh L1/L2/L3 được đối chiếu lại với A3; số đo cũ vẫn gắn với đúng artifact lịch sử, không dùng thay cho L4.
+
+| User complaint | Before → current | Self-grade /10 | Evidence / limitation |
 |---|---|---:|---|
-| Cat quality | Three original Blender cats, named rig, fitted gear |7.5|Each<12ktri,72reviewedposes;9cats remain inherited|
-| Lighting/depth | Analytic environment, form ramp, contact shadow, compact depth AO |6.5|Three visual rounds; Soot projected-box separation.0506 vs L2.0524 misses.18proxy|
-| Stage richness | Authored room, fabrics, ceramics, plants, original night window |6.8|4Blender/3runtime stage rounds; shelf mirroring/paper fibre remain|
-| Colour/UI harmony | Teal/honey battle HUD, chapter LUT, A's retained shell |7|9camera cases at1024/1280/1440; no overflow or shell overlap|
-| Effects quality | Stage steam/dust/shafts; old skill compositions |5|L4 flipbook/ribbon/light pipeline only prepared, no new skill VFX accepted|
-| Sharpness |1024hero/2048stage maps; face-protected focus/bloom |7|36component samples pass; SMAA lowers whole-crop edge energy, not claimed as sharper|
-| Post look | Threshold/knee bloom, grade, restrained focus/vignette/grain, SMAA |7|High/Balanced/Low checked; compact AO, no GTAO/TAA/full shadow maps claim|
+| Cat quality | Blocky bodies →3 original Blender cats/rigs/material maps |7.5|Each hero<12k triangles;72 reviewed poses;9 cats still inherited |
+| Lighting/depth | Flat fill →analytic environment, form ramp, contact/depth shading |6.5|36 face post ablations pass; Soot separation proxy.0506 still below.18 target |
+| Stage richness | Sparse tabletop →authored cafe, textiles/ceramics/plants/night window |6.8|4 Blender/3 runtime stage rounds; mirrored shelves/uniform shades remain |
+| Colour/UI harmony | Muddy field →teal/honey battle and A's retained shell |7|9 camera cases/6 live toggles pass;1024 layout is dense |
+| Effects quality | Thin/flat effects →6 original36-frame atlases, ribbons, surfaces, impact lights |6|67 recipes, minimum distance.6030→.6530;1162 numeric pair regressions remain MISS; pale paper/cans |
+| Sharpness | Flat maps →1024 hero/2048 stage maps, protected eyes/focus |7|36 inner-face samples pass; whole-body edge energy did not improve in L3; no blanket sharpness claim |
+| Post look | No complete stack →bloom/grade/focus/vignette/grain/SMAA tiers |7|High/Balanced/Low checked; compact AO, not full shadow maps/GTAO/TAA |
 
-Current exact artifact:02ffd9cb351fba4984dffac98036a2853bde5fe06e0a1ce503ceccc53655cb70,22,578,111bytes; source71da901f rebased onto acceptedA4d525a8a. All1,301source hashes still match the clean runtime build. L1 draft361 and L2 draft362 retain their historical artifact receipts; their branch chain is reconciled onto acceptedA4d525a8a before L3 publication (mapping in memory/l3-rebase.json). L3 audit passes all1,301inputs.
+Matched before/after effect sheets and all pilot reviews: `rounds/effects/` and `validation/l4/captures/`. Three original atlas rounds: `rounds/flipbooks/`. All19 phase sheets were personally inspected; sampled frames do not prove continuous-play quality. The large pale Soot3 object is an expanding/fading lantern, not the orange flame. Hero material work spans six pilots, remaining cats have at least two full-roster rounds. Current visuals still require improvement.
 
-| Validation | Current receipt |
+| Validation | Current L4 receipt |
 |---|---|
-| Source gates | Typecheck/lint/unit/build/421E2E pass;1740web/1020rules/581Supabase/32chain/24auth/16contract;2expectedfail/11skips retained |
-| Actual battle cameras |3sizes×3presets; no clipping/overflow/errors; sample106draws/101148tri |
-| Live A/B and leaving |6toggles preserve battle/account; replaced scenes disposed;20/20stage resources released in each of3leave-table cases |
-| Post components |36inner-face samples/0offenders; warm High/Balanced/Low123textures/552geometries/52programs unchanged |
-| Loading cancellation |6boundaries;0/21/167/0/186/294resources fully released; context/canvas cleanup pass |
-| Startup L3 | Fresh11scripts/3,522,544bytes/686modules/0Three-model; strict parity+44bytes MISS versus original3,522,500 (L2 was+4) |
-| Cold7 /24casts L3 | Cold7 complete: nativeMAX33.4ms,CPU4MAX133.3ms MISS; all24cast windowsMAX16.8ms/100%≤20ms/errors0 |
-| Offline size |22,578,111bytes,1,421,889bytes below24MB |
-| Final-only checks |25×86×10matrix,20battle lifetime, CPU4Balanced/Low casts UNRUN |
+| Source gates | Type/lint/unit/build/421E2E pass;1749web/1020rules/581Supabase/32chain/24auth/16contract;2expectedfail/11skip retained |
+| Recipe/face/cost |67 effects/2211pairs;0threshold/face/overdraw/empty/error offenders; peak107calls/118752tri/36instances/18overdraw |
+| Strict uniqueness |**MISS**1162 pairs decrease, worst−.122392341; fixed threshold remains.16 |
+| GPU/prewarm |6 tier/light actions stable89textures/574geometries/49programs;0new programs; light changes193–582floor pixels |
+| Teardown |370resources exactly once/0duplicates;6cancellation boundaries release159/159/218/298/298/148; context/canvas/root/lights cleaned |
+| Battle/post |3sizes×3cameras,6state-preserving Look toggles,36inner-face samples pass |
+| First/repeat casts |24windowsMAX16.8ms/100%≤20ms/errors0; sampled High DPR1 slice, not final matrix |
+| Cold7 |NativeMAX50.1ms; CPU4MAX183.4ms **MISS**, up fromL3 133.3ms |
+| Flag-off startup |11JS/3,522,593bytes/686modules;0Three/model requests/errors; exact byte parity **MISS +93** |
+| Offline size |23,995,962bytes,4,038 below24MB; no size-limit raise |
+| Final-only checks |25×86×10matrix,20battle lifetime, CPU4Balanced/Low casts **UNRUN** |
 
-Embedded bytes by class (base64 gzip payload, excluding loader/code/evidence): ateliermodels1,901,124; atelierstage1,998,272; classicmodels2,867,752; portraits4,068,016; textures/other8,046,172; icons20,280. Full raw/gzip counts in docs/cardrpg-look/build.json.
+Native Hub881.5–939.8ms/battle6067.7–6223.9ms; CPU4Hub2243.3–2261.3ms/battle9380.6–9876.8ms. The worst183.4ms opening frame precedes Hub readiness and overlaps a MessagePort callback/layout; a later133.3ms frame overlaps an anonymous scene-loading timer. Next best profiling targets: A's initial Hub mount/layout and the loading timer. The CPU4 DPR1 post-ready sample stays≤16.8ms; it does not erase the opening miss. Original traces/arrays are preserved.
 
-L2 historical performance:24castsMAX16.8ms/100%≤20; complete cold7 nativeMAX33.4ms/CPU4MAX166.6ms MISS. Rejected233.4ms decode,199.9ms HTML.decode and interrupted333.3/250.0ms plus timeout retained. L3 splits constructor/resize/decorations: CPU4peak133.3ms vsL2 166.6; native hub894.2–918.7ms/battle6742.9–7719.0ms, CPU4hub1693.5–1699.7/battle8832.4–8992.4ms. Slower1440DPR2ready7719ms retained; no general load-time improvement claim. L3 original Classic cancellation295/294 was a harness counting the shared Three.Sprite geometry; diagnostic kept and ownership corrected, not described as a new engine leak fix.
+Embedded gzip/base64 bytes by class: flipbooks1,416,492; atelier models1,901,124; stage1,998,112; classic models2,867,752; portraits4,064,880; textures/other8,042,804; icons20,280. Full raw/gzip counts in build.json. Six1536² RGBA8 effect atlases alone occupy56,623,104 uncompressed bytes; legacy estimatedGpuBytes is not total GPU memory.
 
 | Unit group | Delivered tier |
 |---|---|
-| Mochi/Soot/Clover |look-slice; three-plus reviewed rounds, actual-model portraits |
-| Remaining9cats |inherited unchanged; L5 pending |
-|10enemies/3bosses |inherited unchanged; L5 pending |
+| Mochi/Soot/Clover |look-slice; three-plus reviewed model rounds, actual-model portraits |
+| Remaining9cats |inherited models; effects improved, L5 sculpture pending |
+|10enemies/3bosses |inherited models; covered starter effect variants improved, L5 pending |
 
-Lane A has adopted the published L1 portrait contract. Future skills[id].icon1x/2x contract confirmed; remaining9portraits/48icons/rarity plates await L6. A shell request is satisfied by accepted4d525a8a and freshly verified in B. B engine-slicing request5e2cd90f is implemented and measured; CPU4cold peak remains133.3ms. Remaining order L4→L6→L5→L7; original25×86×10 final matrix runs only after the L7 source is ready. No combat/rule/package/lockfile changes, merge/mainpush/deploy, subagents or generative calls.
+Portable evidence includes contact sheets, original metrics/signatures/pair comparisons, source logs, timing traces and Blender atlas rounds. Full per-effect raw PNGs (~4.8GB) remain local unchanged; evidence-inventory.json states exactly what is omitted. This is not a full raw-image archive. No failed pilot or numeric regression is hidden.
+
+A already adopted the L1 portrait contract. L6 must deliver12 portraits/48icons/rarity plates using the confirmed skills[id].icon1x/icon2x keys. A4's Battle.tsx presentation request is acknowledged; published event schema/fixture is still needed before implementation, with OFF behavior and action duration preserved. Hub opening profile is an A-owned follow-up. Next order L6→L5→L7; remaining L4 art/identity misses stay open. No rules/shared/protected changes, merge/main push/deploy, subagents or generative calls.
