@@ -6,7 +6,7 @@ Reuse original coordinator85496/window85506; train then heldout,45day economy,ga
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; last saved train1159749outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+3625cells×500seeds/sample registered; last saved train1710395outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -201,3 +201,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 ## P7 staged coordinator (not executed)
 - /tmp/cardrpg-a4-p7/adoption-manifest.json identifies21selected scripts and destinations; do not adopt obsolete guide.mjs/a4-p7-guide.py. Selected source all syntax checked. Master a4-p7-series.mjs preserves per-attempt source-gate receipts, serializes full204/new120/journey/guide/cold, asserts P6source and artifact equality. Must claim P7, copy selected tools, commit source, then start coordinator.
 - Guide/report ordering handles local-link dependency: generate guide and provisional report before guide-link check; audit then rewrite report. Publication and visual review remain manual agent steps. No runtime or P7 source integrated.
+
+## 2026-11-07T20:07:00.110646+00:00 P6 continuation audit
+- Reused original85496/85506/92853; train3420completecells/1710395outcomes. Exact38rule hashes and artifact067d2062/26,215,694bytes verified. No duplicate job or heldout/runtime change.
+- Remote main still340f88b9; cached current-main snapshot is correct despite stale localmain6144d42c. P7 staged performance coordinator now retains failures, accepts successful retries and enforces max2corrections; adoption manifest22files rehashed.
+- Personally viewed G0newsave/P6band1 Prepare local captures for32MBpreview explanation; no desktop control. P7 remains staged and full204unrun.
