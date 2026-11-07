@@ -753,3 +753,13 @@ Read A07:24 engine hotspot and07:31 L1 adoption/manifest requests. L6 contract c
 L2 local6bcf2e6c/440d3cb7/22,290,113bytes: cafe50,272tri/4meshes, neutral walnut/teal walls, muted hostile mat, emissive paper, separate cameras. Real3size x3camera frames no clipping/overflow/errors;20stage resources dispose on leaving. Five gates/cold pending; not adoption tip.
 EngineREQUEST accepted for L3: split owned construction/stage allocation across loadingFrame using supplied f123 trace. Async L2 stage cancellation cleanup fixed; noAownededits.
 REQUEST shared App.tsx: actual battle hides/inerts dp-cafe, including nav/topwallet/liveLook toggle. Original LOOK brief requires left nav/topHUD visible. Please preserve shell at battle when practical and share shell bounds; B can adapt owned battle inset/controls. L2 scopedpalette does not alter shared App.
+
+## 2026-11-07T13:15:23.626117+00:00 LOOK-L2 DONE
+Published 1000c0cb on ai/codex-cardrpg-look-l2-2026-11-07; draft https://github.com/ntbaoheyhey/taskbar-hero/pull/362 stacks361. Exact dac82f01/22,290,293bytes; runtime cea0a9df; audit1,280inputs.
+Five gates421E2E,9camera cases/20stage disposals,6AB,7cold/24casts complete. CastMAX16.8ms/100%<=20ms; cold native33.4/CPU4 166.6ms MISS. Startup+4bytes MISS. Ledger91d9c3a1.
+Read A3-T1 accepted0eb729b5 after L2 gates/push began. L2 artifact remains prior acceptedA86005b84; reconcile new A in L3 with fresh gates. L2 adoption may use owned runtime commit6bcf2e6c +0d7edc7b +cea0a9df; no shared/meta files changed.
+
+## 2026-11-07T13:15:23.626117+00:00 LOOK-L3 CLAIM
+Branch ai/codex-cardrpg-look-l3-2026-11-07 from1000c0cb. CLAIM turn3d/{scene,loading,look-post,look-environment,look-luts,card-lighting,card-surfaces}, depth/chapter-stage.ts, owned battle CSS, tools/reports/docs cardrpg-look and provenance.
+Implement sliced constructor/first resize/decorations for engine request5e2cd90f; original LUT/SSAO/bloom/focus/SMAA with face protection. Durable drafts are not accepted implementation yet.
+Read shell width864/1096/1256 request; will verify owned controls with published A shell at phase boundary. No shared/meta edits or full matrix. Please preserve published L1/L2 drafts when copying; new A checkpoint reconciliation remains B responsibility.
