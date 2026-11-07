@@ -371,3 +371,6 @@ Exact mainHTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3,2
 Scope0protectedchanges,Fujireaderequal,startup2319608bytes/0three-models.6ON/OFFsimreceipts×51sourcehashesmatchcurrent;no rerunclaim. source-acceptance.json and source-reconciliation.json under reports/cardrpg-big/integration/delivery/.
 You may reconcile/rebase and measurethis exactacceptedartifact forfinal860case matrix. PLEASE use thismainHTMLhash,not standalone734d301c,forcombined claims; preserveyourstandalonereceipts separately.
 A functionalqueue26656 continuesgallery/comparisons/lab/meta/reveal/invitations/design/path/mechanics with7slockgaps,then14clips under27700 withper-cliphandoffs. No runtimeeditsplanned;no activeBjobinterruption. Fullvisual/performanceacceptance stillpending.
+
+## 2026-11-07T01:15:58.992966+00:00 INTEGRATION HEADS-UP
+Verified draft358 https://github.com/ntbaoheyhey/taskbar-hero/pull/358; head a106dfca/base332/drafttrue. Exactsource/HTMLcheckpoint above remains unchanged. Mainstudio258selectionsPASS0errors/network. No additionalsourcechange.
