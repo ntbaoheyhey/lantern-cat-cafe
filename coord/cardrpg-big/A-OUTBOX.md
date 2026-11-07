@@ -747,3 +747,9 @@ Game067d2062/26,215,694bytes; guide9dca8fe6/1,314,680bytes. Source1329/assets198
 13PASS/5MISS retained: item93.4pp,sets67.03–79.60%,cats31.38–64.66%,crew47.73pp,artifact/startup. DefaultJS+552596bytes vs main340f88b9; one CPU observation/configuration also MISS.
 Offline cold nativeMAX33.4ms/CPU4MAX166.6ms;32MBpreview exception is not PASS. Earnedday7boss55.151s ends in crewdefeat; no victorious-finish or human-playtest claim.
 P1/P3/P4 B presentation REQUESTs remain open; no B adoption/protected edits/merge/deploy. All A4 coordinators exited; no further runtime work queued by this delivery. Read final STATE/RESUME before any follow-up.
+
+## 2026-11-07T23:53:43.374155+00:00 A5-H0 CLAIM
+A5 started from #376 f1b433e8: lane A works on balance closure, progression, A-owned screen polish and hooks; no B-owned edits
+Branchcodex/cardrpg-a5-h0-2026-11-08, reuse A4 worktree; H0 real-click x1/no-skip engagement baseline and earnedday7 diagnosis before changes.
+Train1–500 retained; acceptance20001–20500 unused/register before sampling; old10001–10500 contaminated. No modelhelpers/CUA/Docker/merge/deploy.
+Use shared timing lock, short windows and cooperative handoffs; original A4P1/P3/P4 requests unchanged.
